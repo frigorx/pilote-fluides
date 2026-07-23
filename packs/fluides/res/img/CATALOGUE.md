@@ -18,32 +18,53 @@ professionnels, c'est disqualifiant.
 
 | Fichier | Type | Carte | Source |
 |---|---|---|---|
-| `../svg/croix-frigoriste.svg` | schéma | `g1a` (illustration de tête) + ressource globale | SVG à la main ; symboles compresseur, détendeur thermostatique à égalisation externe et ventilateur axial repris de `usine-contenu/bibliotheque-symboles/svg/frigo_schema/` |
+| `../svg/croix-frigoriste.svg` | schéma | `g1a`, dans le corps + ressource globale | SVG à la main ; symboles compresseur, détendeur thermostatique à égalisation externe et ventilateur axial repris de `usine-contenu/bibliotheque-symboles/svg/frigo_schema/` |
+| `../svg/points-de-fuite.svg` | schéma | `g4a`, dans le corps + ressource globale | SVG à la main, même disposition que la croix ; 6 familles de points de fuite numérotées |
+| `illu-a1.jpg` | ambiance | `m-a1` (bandeau) | Gemini, 23/07/2026 — voir prompts ci-dessous |
+| `illu-a2.jpg` | ambiance | `m-a2` (bandeau) | Gemini, 23/07/2026 |
+| `illu-d.jpg` | ambiance | `m-d` (bandeau) | Gemini, 23/07/2026 |
+| `illu-e.jpg` | ambiance | `m-e` (bandeau) | Gemini, 23/07/2026 |
+
+> ⚠️ **Un schéma ne se met pas en `illus`** : la charte recadre l'illustration de tête
+> (`object-fit: cover`, hauteur max 340 px) et tronquerait le dessin. Les schémas passent par
+> l'assistant `schema()` de `cartes.js`, qui les insère dans le corps en largeur pleine.
+> Les images d'ambiance, elles, sont faites pour le bandeau — elles sont recadrées en **1400 × 520**
+> (rapport du bandeau, en gardant le haut) et exportées en JPEG qualité 85, ≈ 120 Ko pièce.
+
+### Prompts utilisés (à réutiliser tels quels pour rester homogène)
+
+Préfixe commun, posé sur la première image et rappelé ensuite par « même style, même palette,
+16:9, sans texte » :
+
+> *Illustration technique éditoriale, dessin plat en aplats, sobre, fond clair, palette bleu marine
+> `#1b3a63` et orange `#ff6b35`, lumière d'atelier neutre, aucun texte ni logo ni chiffre dans
+> l'image. Cadrage large, ambiance calme et professionnelle.*
+
+| Image | Sujet demandé |
+|---|---|
+| `illu-a1.jpg` | atelier de formation en froid et climatisation, deux techniciens adultes en tenue de travail avec lunettes et gants devant un banc d'essai frigorifique, l'un tenant un manifold à deux manomètres relié par des flexibles |
+| `illu-a2.jpg` | local technique avec du petit équipement — monosplit mural, vitrine réfrigérée, meuble monobloc — et un technicien accroupi, balance électronique et bouteille de fluide au sol |
+| `illu-d.jpg` | poste de récupération : groupe de récupération portable relié par deux flexibles à une bouteille grise posée sur une balance, bidon d'huile usagée à côté |
+| `illu-e.jpg` | contrôle d'étanchéité en extérieur : technicien devant un groupe de condensation, manifold branché d'une main, détecteur électronique à sonde souple de l'autre |
 
 ---
 
-## À produire — schémas (SVG, prioritaires)
+## Reste à produire
+
+### Schémas (SVG, prioritaires)
 
 | Cible | Contenu attendu | Carte |
 |---|---|---|
-| `points-de-fuite.svg` | circuit type avec pastilles numérotées sur chaque point à risque : raccords flare, presse-étoupes, brasures, bornes hermétiques, vibrations | `g4a` |
 | `lecture-croisee.svg` | extrait de table de saturation avec la ligne surlignée : pression théorique / pression mesurée / écart | `g1b`, `g4b` |
 | `balayage-azote.svg` | montage du balayage à l'azote pendant le brasage : bouteille, détendeur, tuyau, sortie | `g10` |
 | `recuperation.svg` | montage du groupe de récupération : machine, flexibles, cylindre sur balance | `g5a` |
+| `manifold.svg` | raccordement d'un manifold : BP à gauche, HP à droite, flexible de service | `g4b`, `g5b` |
 
-## À produire — ambiance (génératif)
-
-Préfixe de prompt commun à conserver d'une image à l'autre, pour garder un style homogène :
-
-> *Illustration technique éditoriale, style plat et sobre, fonds clairs, palette bleu marine
-> `#1b3a63` et orange `#ff6b35`, lumière d'atelier neutre, sans aucun texte ni logo, cadrage large.*
+### Ambiance (génératif)
 
 | Cible | Sujet | Carte |
 |---|---|---|
-| `illu-a1.png` | atelier frigorifique, plusieurs postes, ambiance formation adulte | `m-a1` |
-| `illu-a2.png` | petit équipement : monosplit, vitrine, monobloc | `m-a2` |
-| `illu-d.png` | poste de récupération, cylindres, balance | `m-d` |
-| `illu-e.png` | technicien manomètre en main devant un groupe extérieur | `m-e` |
-| `illu-securite.png` | EPI du poste de brasage : lunettes, gants, bouteille d'azote | `g10`, `g12` |
+| `illu-securite.jpg` | poste de brasage : lunettes, gants, bouteille d'azote, extincteur | `g10`, `g12` |
+| `illu-hc.jpg` | intervention sur un monobloc au R-290 : ventilation, détecteur de gaz, outillage dédié | `g12` |
 
 **Tenir à jour** : une ligne par image produite, avec sa source et le prompt exact utilisé.

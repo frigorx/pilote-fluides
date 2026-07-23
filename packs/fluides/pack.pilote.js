@@ -1422,6 +1422,7 @@ window.PILOTE_PACK = {
   {
    "id": "m-a1",
    "type": "menu",
+   "illus": "img/illu-a1.jpg",
    "titre": "Catégorie A1 — tous équipements, toutes charges",
    "dc": "Parcours A1",
    "corps": "<p>Groupes évalués : <b>1, 2, 3, 4, 5, 10, 11</b>, <b>au moins un</b> des groupes composants 6/7/8/9 tiré au sort le jour de l'épreuve — donc les quatre s'apprennent — et <b>12</b> (hydrocarbures), la nouveauté de cette catégorie.</p><p>Formation indicative ≈ 35 h. Épreuve : <b>4 h 15</b>.</p>",
@@ -1506,6 +1507,7 @@ window.PILOTE_PACK = {
   {
    "id": "m-a2",
    "type": "menu",
+   "illus": "img/illu-a2.jpg",
    "titre": "Catégorie A2 — mêmes activités, charge limitée",
    "dc": "Parcours A2",
    "corps": "<p>Le référentiel est <b>le même qu'A1</b>. Ce qui change, ce n'est pas le contenu : c'est le <b>parc</b>. On travaille sur des équipements de charge <b>&lt; 3 kg</b>, ou <b>&lt; 6 kg</b> s'ils sont hermétiquement scellés et étiquetés comme tels : monosplit, PAC air/air, vitrine, meuble frigorifique, monobloc.</p><p>Une grande partie de ce parc fonctionne au <b>R-290</b> : le module hydrocarbures est ici encore plus central qu'en A1. Formation indicative ≈ 28 h. Épreuve : <b>3 h 55</b>.</p>",
@@ -1584,6 +1586,7 @@ window.PILOTE_PACK = {
   {
    "id": "m-d",
    "type": "menu",
+   "illus": "img/illu-d.jpg",
    "titre": "Catégorie D — récupération seule",
    "dc": "Parcours D",
    "corps": "<p>Une seule activité autorisée : <b>récupérer le fluide</b>. Public type : opérateur de fin de vie, filière DEEE, dépanneur qui ne fait que récupérer.</p><p><b>Ne fait pas partie de D</b> : contrôles d'étanchéité (G4), composants (G6 à G9), tuyauterie et brasage (G10), épreuves de pression. Du groupe 3, seul le code <b>3.03</b> (utiliser une pompe à vide) est dans le champ.</p><p>Formation indicative ≈ 10 h. Épreuve : <b>1 h 30</b>.</p>",
@@ -1644,6 +1647,7 @@ window.PILOTE_PACK = {
   {
    "id": "m-e",
    "type": "menu",
+   "illus": "img/illu-e.jpg",
    "titre": "Catégorie E — contrôle d'étanchéité, sans ouvrir",
    "dc": "Parcours E",
    "corps": "<p>Une seule activité : le <b>contrôle d'étanchéité</b>, à la condition expresse de <b>ne pas accéder au circuit frigorifique</b>. C'est la frontière du métier : <b>on contrôle, on n'ouvre pas</b>.</p><p>Le code <b>4.06</b> (méthode directe nécessitant d'intervenir dans le circuit) <b>n'est pas de la catégorie E</b>. Le code 4.07, lui, l'est : c'est la méthode directe qui reste à l'extérieur.</p><p>Public type : agent de maintenance réalisant les contrôles périodiques. Formation indicative ≈ 10 h. Épreuve : <b>1 h 30</b>.</p>",

@@ -148,6 +148,7 @@ export const CARTES = [
   {
     id: "m-a1",
     type: "menu",
+    illus: "img/illu-a1.jpg",
     titre: "Catégorie A1 — tous équipements, toutes charges",
     dc: "Parcours A1",
     corps:
@@ -178,6 +179,7 @@ export const CARTES = [
   {
     id: "m-a2",
     type: "menu",
+    illus: "img/illu-a2.jpg",
     titre: "Catégorie A2 — mêmes activités, charge limitée",
     dc: "Parcours A2",
     corps:
@@ -209,6 +211,7 @@ export const CARTES = [
   {
     id: "m-d",
     type: "menu",
+    illus: "img/illu-d.jpg",
     titre: "Catégorie D — récupération seule",
     dc: "Parcours D",
     corps:
@@ -238,6 +241,7 @@ export const CARTES = [
   {
     id: "m-e",
     type: "menu",
+    illus: "img/illu-e.jpg",
     titre: "Catégorie E — contrôle d'étanchéité, sans ouvrir",
     dc: "Parcours E",
     corps:
