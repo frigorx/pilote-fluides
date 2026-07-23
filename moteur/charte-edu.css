@@ -1,0 +1,145 @@
+/* ===========================================================================
+   inerWeb Pilote — Charte "inerWeb Édu" (PRO, fonds clairs, anti-TDAH)
+   Bleu #1B3A63 · Orange #FF6B35 · Trebuchet MS (titres) · Calibri (texte)
+   Règle : fonds clairs uniquement, jamais de dark mode. Une chose à la fois.
+   =========================================================================== */
+:root{
+  --bleu:#1B3A63; --bleu-clair:#2f5689; --orange:#FF6B35; --orange-clair:#ffe2d6;
+  --txt:#1d2a38; --mut:#5a6b7d; --fond:#eef2f6; --carte:#ffffff; --ligne:#d6dee7;
+  --ok:#1e7e54; --ok-bg:#e3f5ec; --ko:#c0392b; --ko-bg:#fbe7e4; --attente:#b06a00;
+  --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--fond); color:var(--txt);
+  font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif; font-size:16px; line-height:1.6;
+}
+h1,h2,h3,.tt{font-family:"Trebuchet MS",Calibri,Arial,sans-serif; font-weight:700; color:var(--bleu)}
+
+/* ---- Bandeau ---- */
+.barre{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  background:var(--bleu); color:#fff; padding:10px 18px;
+}
+.barre .logo{font-family:"Trebuchet MS";font-weight:700;font-size:18px;letter-spacing:.5px}
+.barre .logo b{color:var(--orange)}
+.barre .pack-titre{font-size:14px;color:#cdd9e6}
+.barre .spacer{flex:1}
+.barre .mode-tag{
+  background:#fff; color:var(--bleu); font-weight:700; font-size:13px;
+  padding:5px 12px; border-radius:999px; border:2px solid var(--orange);
+}
+
+/* ---- Progression ---- */
+.fil{display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  padding:8px 18px;background:#fff;border-bottom:1px solid var(--ligne);font-size:13px;color:var(--mut)}
+.fil a{color:var(--bleu-clair);text-decoration:none;cursor:pointer}
+.fil .sep{color:var(--ligne)}
+
+/* ---- Zone carte (UNE carte à la fois) ---- */
+.scene{max-width:920px;margin:24px auto;padding:0 18px 60px}
+.carte{
+  background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r);
+  box-shadow:var(--ombre); overflow:hidden;
+}
+.carte > .illus{width:100%;max-height:340px;object-fit:cover;display:block;background:#dde6ef}
+.carte .corps{padding:22px 26px}
+.carte .dc{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--orange);
+  padding:3px 10px;border-radius:999px;margin-bottom:10px;letter-spacing:.3px}
+.carte h1{margin:.1em 0 .5em;font-size:26px}
+.carte p{margin:0 0 12px}
+.carte ul{margin:0 0 12px;padding-left:22px}
+.carte li{margin:4px 0}
+
+/* encadrés pédagogiques */
+.bloc{border-left:4px solid var(--bleu);background:#f3f7fb;border-radius:8px;padding:12px 16px;margin:14px 0}
+.bloc.cle{border-color:var(--ok);background:var(--ok-bg)}
+.bloc.piege{border-color:var(--orange);background:var(--orange-clair)}
+.bloc .t{font-weight:700;color:var(--bleu);margin-bottom:4px}
+
+/* ---- Question ---- */
+.question{margin-top:18px;border-top:2px dashed var(--ligne);padding-top:16px}
+.question .enonce{font-weight:700;color:var(--bleu);margin-bottom:10px;font-size:17px}
+.choix{display:flex;flex-direction:column;gap:8px}
+.choix button{
+  text-align:left; font:inherit; cursor:pointer; padding:11px 14px;
+  background:#fff; border:2px solid var(--ligne); border-radius:10px; color:var(--txt);
+  transition:.12s;
+}
+.choix button:hover{border-color:var(--bleu-clair);background:#f5f9fd}
+.choix button.bon{border-color:var(--ok);background:var(--ok-bg)}
+.choix button.mauvais{border-color:var(--ko);background:var(--ko-bg)}
+.choix button:disabled{cursor:default;opacity:.95}
+.retour{margin-top:12px;padding:12px 14px;border-radius:10px;font-size:14.5px}
+.retour.ok{background:var(--ok-bg);border:1px solid var(--ok);color:var(--ok)}
+.retour.ko{background:var(--ko-bg);border:1px solid var(--ko);color:var(--ko)}
+
+/* ---- Critères (couche évaluation) ---- */
+.criteres{margin-top:16px}
+.criteres .crit{display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  border:1px solid var(--ligne);border-radius:10px;padding:8px 12px;margin:6px 0;background:#fff}
+.criteres .code{font-weight:700;color:var(--bleu);font-size:13px;min-width:54px}
+.criteres .lib{flex:1;font-size:14.5px}
+.criteres .etats{display:flex;gap:6px}
+.criteres .etats button{font:inherit;font-size:12.5px;cursor:pointer;border-radius:999px;
+  border:1.5px solid var(--ligne);background:#fff;padding:4px 10px}
+.criteres .etats button.sel.acquis{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.criteres .etats button.sel.non{background:var(--ko-bg);border-color:var(--ko);color:var(--ko)}
+.criteres .etats button.sel.cours{background:#fff4e0;border-color:var(--attente);color:var(--attente)}
+
+/* ---- Couche pilote (formateur seulement) ---- */
+.pilote{margin-top:16px;border:2px solid var(--orange);background:#fff8f4;border-radius:10px;padding:12px 16px}
+.pilote .t{font-weight:700;color:var(--orange);margin-bottom:4px;font-size:13px;letter-spacing:.4px}
+
+/* ---- Ressources ---- */
+.ressources{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.ressources a{font-size:13.5px;text-decoration:none;color:var(--bleu);background:#eef4fa;
+  border:1px solid var(--ligne);border-radius:999px;padding:6px 12px}
+.ressources a:hover{background:#e0ecf7}
+
+/* ---- Navigation (liens sortants) ---- */
+.liens{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.liens button{font:inherit;font-weight:700;cursor:pointer;border:none;border-radius:12px;
+  padding:14px 18px;text-align:left;color:#fff;background:var(--bleu);box-shadow:var(--ombre)}
+.liens button:hover{background:var(--bleu-clair)}
+.liens button.sec{background:#fff;color:var(--bleu);border:2px solid var(--ligne);box-shadow:none}
+.liens button.sec:hover{border-color:var(--bleu-clair)}
+
+/* ---- Barre basse (minuteur, accès secours) ---- */
+.pied{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--ligne);
+  display:flex;align-items:center;gap:14px;padding:8px 18px;font-size:13px;color:var(--mut)}
+.pied .chrono{font-weight:700;color:var(--bleu)}
+.pied .spacer{flex:1}
+.pied a,.pied button{color:var(--bleu-clair);background:none;border:none;font:inherit;cursor:pointer;text-decoration:underline}
+.docs-btn{font-weight:700}
+
+/* ---- Voile (accès docs / accès secours) ---- */
+.voile{position:fixed;inset:0;background:rgba(27,58,99,.55);display:none;align-items:center;justify-content:center;z-index:60;padding:20px}
+.voile.on{display:flex}
+.voile .modale{background:#fff;border-radius:14px;max-width:560px;width:100%;padding:22px 24px;box-shadow:var(--ombre)}
+.voile h3{margin:0 0 12px}
+.voile .x{float:right;cursor:pointer;color:var(--mut);font-size:20px;border:none;background:none}
+
+/* ---- PAGE D'ACCUEIL / PORTAIL ---- */
+.accueil{max-width:1000px;margin:0 auto;padding:0 18px 80px}
+.hero{position:relative;margin:24px 0 6px;border-radius:var(--r);overflow:hidden;border:1px solid var(--ligne);box-shadow:var(--ombre);background:#fff}
+.hero img{width:100%;height:250px;object-fit:cover;display:block}
+.hero .cap{padding:22px 28px}
+.hero h1{font-size:32px;margin:0 0 8px}
+.hero p{margin:0;color:var(--mut);font-size:17px}
+.hero .lead{color:var(--txt)}
+.sct{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--bleu);font-weight:700;font-size:14px;letter-spacing:.6px;text-transform:uppercase;margin:28px 4px 14px}
+.tuiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.tuile{cursor:pointer;text-align:left;font:inherit;background:#fff;border:1px solid var(--ligne);border-radius:14px;padding:20px 22px;box-shadow:var(--ombre);transition:.14s;display:flex;flex-direction:column;gap:6px;color:var(--txt)}
+.tuile:hover{transform:translateY(-3px);border-color:var(--bleu-clair)}
+.tuile .ic{font-size:34px;line-height:1}
+.tuile h3{margin:4px 0 0;font-size:19px;color:var(--bleu)}
+.tuile p{margin:0;color:var(--mut);font-size:14px;line-height:1.5}
+.tuile .go{margin-top:auto;padding-top:8px;color:var(--orange);font-weight:700;font-size:14px}
+.tuile.primaire{grid-column:1/-1;border-top:5px solid var(--orange);background:linear-gradient(180deg,#fff,#fff7f3)}
+.tuile.primaire{flex-direction:row;align-items:center;gap:18px;flex-wrap:wrap}
+.tuile.primaire .ic{font-size:40px}
+.tuile.primaire .txt{flex:1;min-width:200px}
+.tuile.primaire .go{margin:0}
+@media(max-width:560px){ .hero img{height:170px} .hero h1{font-size:24px} .carte .corps{padding:16px} .carte h1{font-size:22px} }

@@ -1,0 +1,29 @@
+# ============================================================
+#  DÉPÔT PUBLIC (GitHub Pages) — RÈGLE D'OR
+#  Tout ce qui ne doit pas arriver chez l'élève reste hors du dépôt.
+# ============================================================
+#
+#  Ce qui EST publié ici, en connaissance de cause (cf. README) :
+#   · build/          → les deux scripts de fabrication, aucun secret
+#   · formateur.html  → console formateur (mode pilotage verrouillé)
+#   · pack.pilote.js  → notes d'animation, PAS des corrigés d'examen
+#
+#  Ce qui ne doit JAMAIS entrer dans ce dépôt :
+#   · la banque officielle des 85 questions d'examen
+#   · les 10 examens blancs officiels
+#   → ils vivent dans le dépôt PRIVÉ `habilitation-fluide`, et publier
+#     un sujet est irréversible.
+
+# Source Mission F-GAZ (fichier de travail local, 750 Ko)
+FGAZ-COMPLETE-V6.html
+questions-habilitation.json
+examen-*.json
+
+# Documents sources à droits tiers
+packs/fluides/res/docs/
+
+# Divers
+*.pdf
+.DS_Store
+Thumbs.db
+node_modules/
