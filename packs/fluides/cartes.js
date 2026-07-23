@@ -80,6 +80,12 @@ export const RESSOURCES = [
 /* --- raccourcis de rédaction ------------------------------------- */
 const SOMMAIRE = { vers: "c00", libelle: "↺ Sommaire", sec: true };
 const suite = (vers, quoi) => ({ vers, libelle: "Suite ▸ " + quoi });
+/* Un schéma se place dans le CORPS et non en `illus` : la charte recadre les
+   illustrations de tête (object-fit: cover), ce qui tronquerait le dessin. */
+const schema = (fichier, alt) =>
+  '<img src="packs/fluides/res/svg/' + fichier + '" alt="' + alt + '" ' +
+  'style="width:100%;height:auto;display:block;margin:0 0 18px;' +
+  'border:1px solid #d7e0e8;border-radius:8px">';
 
 export const CARTES = [
   /* ==================================================================
@@ -270,9 +276,9 @@ export const CARTES = [
     type: "cours",
     titre: "Unités, pression, thermodynamique utile",
     dc: "G1 · codes 1.01 · 1.02 · 1.04",
-    illus: "svg/croix-frigoriste.svg",
     minuteur_s: 300,
     corps:
+      schema("croix-frigoriste.svg", "La croix du frigoriste : détendeur à gauche, compresseur à droite, condenseur en haut, évaporateur en bas.") +
       "<p>Tout le métier tient sur un couple : <b>pression et température vont ensemble</b>. " +
       "Chauffer un fluide enfermé fait monter sa pression ; abaisser sa pression le fait bouillir plus froid. " +
       "C'est cette relation qu'on exploite d'un bout à l'autre du circuit.</p>" +
@@ -565,9 +571,9 @@ export const CARTES = [
     type: "cours",
     titre: "Où fuit une installation ?",
     dc: "G4 · codes 4.01 · 4.02 · 4.03",
-    illus: "svg/points-de-fuite.svg",
     minuteur_s: 300,
     corps:
+      schema("points-de-fuite.svg", "Six familles de points de fuite repérées sur un circuit type.") +
       "<p>Une fuite ne sort pas d'un tube plein. Elle sort d'un <b>point d'assemblage</b> ou d'une " +
       "<b>pièce en mouvement</b> : raccords mécaniques (flare, à visser), brasures poreuses ou mal " +
       "pénétrées, presse-étoupes de vannes, joints, raccords vissés des voyants, filtres et pressostats, " +
