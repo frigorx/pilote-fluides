@@ -31,6 +31,13 @@ window.PILOTE_PACK = {
    "url": "https://aida.ineris.fr/reglementation/arrete-211125-relatif-a-delivrance-attestations-daptitude-prevues-a-larticle-r-543"
   },
   {
+   "id": "r-fuites",
+   "titre": "🔎 Schéma : où fuit une installation ?",
+   "type": "image",
+   "global": true,
+   "src": "packs/fluides/res/svg/points-de-fuite.svg"
+  },
+  {
    "id": "r-mollier",
    "titre": "📈 FRIGOLO — diagramme log p-h interactif",
    "type": "lien",
@@ -1998,6 +2005,7 @@ window.PILOTE_PACK = {
    "type": "cours",
    "titre": "Où fuit une installation ?",
    "dc": "G4 · codes 4.01 · 4.02 · 4.03",
+   "illus": "svg/points-de-fuite.svg",
    "minuteur_s": 300,
    "corps": "<p>Une fuite ne sort pas d'un tube plein. Elle sort d'un <b>point d'assemblage</b> ou d'une <b>pièce en mouvement</b> : raccords mécaniques (flare, à visser), brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints, raccords vissés des voyants, filtres et pressostats, et tout ce qui <b>vibre</b> — compresseur, tuyauteries mal fixées.</p><p>Avant de sortir le moindre instrument, on <b>lit le registre</b> : quelle charge, quel fluide, quelles fuites déjà détectées, qu'a-t-on réparé et quand. Un point déjà réparé est un point <b>à recontrôler en priorité</b>, pas un point clos.</p><p>Vient ensuite le <b>contrôle visuel et manuel</b>, sans électronique : traces d'huile (le fluide entraîne l'huile en fuyant), corrosion, givre anormal, serrage des raccords accessibles, état des fixations.</p>",
    "blocs": [

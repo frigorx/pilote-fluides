@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img"
+     aria-label="Les points de fuite potentiels d'une installation frigorifique, numérotés sur un circuit type.">
+  <title>Où fuit une installation ?</title>
+  <desc>Circuit frigorifique type. Six familles de points de fuite repérées par des pastilles
+        numérotées : brasures, accessoires de ligne liquide, presse-étoupes, compresseur et
+        vibrations, raccords mécaniques, vannes de service. Même disposition que la croix du
+        frigoriste : détendeur à gauche, compresseur à droite, condenseur en haut,
+        évaporateur en bas.</desc>
+
+  <style>
+    .trait  { fill:none; stroke:#33475b; stroke-width:2.2; }
+    .fine   { fill:none; stroke:#33475b; stroke-width:1; stroke-dasharray:3 5; }
+    .pt     { fill:#33475b; }
+    .tube   { fill:none; stroke:#8fa3b8; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+    .organe { font:700 16px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .num    { font:700 16px Calibri,Segoe UI,sans-serif; fill:#ffffff; }
+    .leg    { font:400 15px Calibri,Segoe UI,sans-serif; fill:#33475b; }
+    .legt   { font:700 15px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .titre  { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  </style>
+
+  <rect width="900" height="700" fill="#ffffff"/>
+
+  <!-- ======================= TUYAUTERIES ======================= -->
+  <path class="tube" d="M 670 245 L 670 110 L 560 110"/>
+  <path class="tube" d="M 340 110 L 230 110 L 230 244"/>
+  <path class="tube" d="M 230 296 L 230 430 L 340 430"/>
+  <path class="tube" d="M 560 430 L 670 430 L 670 295"/>
+
+  <!-- ======================= CONDENSEUR ======================= -->
+  <g transform="translate(450,110)">
+    <rect x="-110" y="-34" width="220" height="68" rx="4" fill="#fff" stroke="#33475b" stroke-width="2.2"/>
+    <path class="fine" d="M -72 -34 L -72 34 M -36 -34 L -36 34 M 0 -34 L 0 34 M 36 -34 L 36 34 M 72 -34 L 72 34"/>
+    <path class="trait" d="M -110 -19 L 88 -19 A 9.5 9.5 0 0 1 88 0 L -88 0 A 9.5 9.5 0 0 0 -88 19 L 110 19"/>
+    <circle class="pt" cx="-110" cy="0" r="3.5"/>
+    <circle class="pt" cx="110" cy="0" r="3.5"/>
+  </g>
+  <text class="organe" x="450" y="166" text-anchor="middle">CONDENSEUR</text>
+
+  <!-- ======================= ÉVAPORATEUR ======================= -->
+  <g transform="translate(450,430)">
+    <rect x="-110" y="-34" width="220" height="68" rx="4" fill="#fff" stroke="#33475b" stroke-width="2.2"/>
+    <path class="fine" d="M -72 -34 L -72 34 M -36 -34 L -36 34 M 0 -34 L 0 34 M 36 -34 L 36 34 M 72 -34 L 72 34"/>
+    <path class="trait" d="M -110 -19 L 88 -19 A 9.5 9.5 0 0 1 88 0 L -88 0 A 9.5 9.5 0 0 0 -88 19 L 110 19"/>
+    <circle class="pt" cx="-110" cy="0" r="3.5"/>
+    <circle class="pt" cx="110" cy="0" r="3.5"/>
+  </g>
+  <text class="organe" x="450" y="486" text-anchor="middle">ÉVAPORATEUR</text>
+
+  <!-- ======================= COMPRESSEUR ======================= -->
+  <g transform="translate(670,270) rotate(-90) scale(1.9)" stroke="#33475b" stroke-width="1.2" fill="none">
+    <circle cx="0" cy="0" r="15" fill="#fff"/>
+    <path d="M -15 0 L -16 0 M 15 0 L 16 0"/>
+    <path d="M -7 -13 L 13 -7 M -7 13 L 13 7"/>
+    <circle class="pt" cx="-16" cy="0" r="1.5" stroke="none"/>
+    <circle class="pt" cx="16" cy="0" r="1.5" stroke="none"/>
+  </g>
+  <text class="organe" x="716" y="275">COMPRESSEUR</text>
+
+  <!-- ======================= DÉTENDEUR ======================= -->
+  <g transform="translate(230,270) rotate(-90) scale(2)" stroke="#33475b" stroke-width="1.2" fill="none">
+    <circle cx="0" cy="-12" r="5.83" fill="#fff"/>
+    <path d="M 0 -18 L 0 -20"/>
+    <polygon points="2,1 0,3 -2,1 -10,5 -10,-5 10,5 10,-5 -2,1 0,0" fill="#fff"/>
+    <path d="M 0 0 L 0 -6 M 10 0 L 11 0 M -10 0 L -11 0"/>
+    <circle class="pt" cx="0" cy="-20" r="1.5" stroke="none"/>
+    <circle class="pt" cx="11" cy="0" r="1.5" stroke="none"/>
+    <circle class="pt" cx="-11" cy="0" r="1.5" stroke="none"/>
+  </g>
+  <text class="organe" x="168" y="275" text-anchor="end">DÉTENDEUR</text>
+
+  <!-- filtre déshydrateur sur la ligne liquide -->
+  <g transform="translate(300,110)">
+    <rect x="-20" y="-11" width="40" height="22" rx="3" fill="#fff" stroke="#33475b" stroke-width="2"/>
+    <path class="trait" d="M -20 11 L 20 -11"/>
+  </g>
+
+  <!-- ======================= PASTILLES ======================= -->
+  <g>
+    <!-- 1 · coude brasé -->
+    <circle cx="230" cy="110" r="17" fill="#ff6b35"/>
+    <text class="num" x="230" y="116" text-anchor="middle">1</text>
+    <!-- 2 · accessoires de ligne liquide -->
+    <circle cx="300" cy="72" r="17" fill="#ff6b35"/>
+    <text class="num" x="300" y="78" text-anchor="middle">2</text>
+    <path class="fine" d="M 300 89 L 300 99"/>
+    <!-- 3 · vanne de service, presse-étoupe -->
+    <circle cx="670" cy="196" r="17" fill="#ff6b35"/>
+    <text class="num" x="670" y="202" text-anchor="middle">3</text>
+    <!-- 4 · compresseur : bornes, garnitures, vibrations -->
+    <circle cx="608" cy="270" r="17" fill="#ff6b35"/>
+    <text class="num" x="608" y="276" text-anchor="middle">4</text>
+    <path class="fine" d="M 625 270 L 638 270"/>
+    <!-- 5 · raccord mécanique à l'échangeur -->
+    <circle cx="296" cy="388" r="17" fill="#ff6b35"/>
+    <text class="num" x="296" y="394" text-anchor="middle">5</text>
+    <path class="fine" d="M 307 402 L 332 424"/>
+    <!-- 6 · ligne d'aspiration : supports et vibrations -->
+    <circle cx="614" cy="392" r="17" fill="#ff6b35"/>
+    <text class="num" x="614" y="398" text-anchor="middle">6</text>
+    <path class="fine" d="M 614 409 L 614 421"/>
+  </g>
+
+  <!-- ======================= LÉGENDE ======================= -->
+  <text class="titre" x="60" y="552">Une fuite ne sort jamais d'un tube plein.</text>
+  <text class="leg"   x="60" y="576">Elle sort d'un point d'assemblage ou d'une pièce en mouvement — voilà où regarder.</text>
+
+  <g transform="translate(60,600)">
+    <circle cx="14" cy="14" r="13" fill="#ff6b35"/><text class="num" x="14" y="20" text-anchor="middle">1</text>
+    <text class="legt" x="36" y="12">Brasures</text>
+    <text class="leg"  x="36" y="30">porosité, manque de pénétration</text>
+
+    <circle cx="14" cy="70" r="13" fill="#ff6b35"/><text class="num" x="14" y="76" text-anchor="middle">2</text>
+    <text class="legt" x="36" y="68">Accessoires de ligne liquide</text>
+    <text class="leg"  x="36" y="86">filtre, voyant, pressostat : raccords vissés</text>
+
+    <circle cx="424" cy="14" r="13" fill="#ff6b35"/><text class="num" x="424" y="20" text-anchor="middle">3</text>
+    <text class="legt" x="446" y="12">Presse-étoupes</text>
+    <text class="leg"  x="446" y="30">vannes de service, robinets</text>
+
+    <circle cx="424" cy="70" r="13" fill="#ff6b35"/><text class="num" x="424" y="76" text-anchor="middle">4</text>
+    <text class="legt" x="446" y="68">Compresseur</text>
+    <text class="leg"  x="446" y="86">bornes hermétiques, garnitures, vibrations</text>
+
+    <circle cx="14" cy="126" r="13" fill="#ff6b35"/><text class="num" x="14" y="132" text-anchor="middle">5</text>
+    <text class="legt" x="36" y="124">Raccords mécaniques</text>
+    <text class="leg"  x="36" y="142">flare, raccords à visser</text>
+
+    <circle cx="424" cy="126" r="13" fill="#ff6b35"/><text class="num" x="424" y="132" text-anchor="middle">6</text>
+    <text class="legt" x="446" y="124">Supports et vibrations</text>
+    <text class="leg"  x="446" y="142">tuyauterie mal fixée : fatigue du joint</text>
+  </g>
+</svg>
