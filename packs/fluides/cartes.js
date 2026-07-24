@@ -234,7 +234,9 @@ export const CARTES = [
       { vers: "g11", icone: "11", titre: "Substitution et efficacité", desc: "G11 — choisir un fluide, gagner du rendement." },
       { vers: "g12", icone: "12", titre: "Hydrocarbures", desc: "G12 — spécifique A1 et A2 : le R-290 est A3.", primaire: true },
       { vers: "g13", icone: "ℹ", titre: "CO₂ et NH₃ — information", desc: "G13/G14 — reconnaître, ne pas intervenir." },
+      { vers: "ex-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "12 questions fondamentales, seuil 60 %. Pour se lancer." },
       { vers: "ex-a1", icone: "📝", titre: "Examen blanc A1", desc: "20 questions tirées de tous les groupes." },
+      { vers: "ex-defi", icone: "🔴", titre: "Défi technicien — niveau 2", desc: "15 diagnostics et mises en situation, seuil 80 %." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
     notes_pilote:
@@ -266,7 +268,9 @@ export const CARTES = [
       { vers: "g10", icone: "10", titre: "Tuyauterie et brasage sous azote", desc: "G10 — petits diamètres." },
       { vers: "g11", icone: "11", titre: "Substitution et efficacité", desc: "G11 — conception à charge réduite." },
       { vers: "g12", icone: "12", titre: "Hydrocarbures", desc: "G12 — cœur du parc A2 (R-290 en monobloc et PAC).", primaire: true },
+      { vers: "ex-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "12 questions fondamentales, seuil 60 %. Pour se lancer." },
       { vers: "ex-a2", icone: "📝", titre: "Examen blanc A2", desc: "15 questions tirées de tous les groupes." },
+      { vers: "ex-defi", icone: "🔴", titre: "Défi technicien — niveau 2", desc: "15 diagnostics et mises en situation, seuil 80 %." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
     notes_pilote:
@@ -295,6 +299,8 @@ export const CARTES = [
       { vers: "g5b", icone: "5", titre: "Peser, stocker, tracer", desc: "G5 — la balance et le registre." },
       { vers: "g3", icone: "3", titre: "Pompe à vide (code 3.03 seul)", desc: "G3 partiel — le seul code du groupe 3 dans le champ D." },
       { vers: "g11", icone: "11", titre: "Substitution — notions", desc: "G11 partiel (11.01 · 11.05)." },
+      { vers: "x3", icone: "🕵", titre: "Détective : la bouteille de récupération", desc: "Mise en situation — le niveau maxi est atteint." },
+      { vers: "ex-d-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "8 questions fondamentales, seuil 60 %." },
       { vers: "ex-d", icone: "📝", titre: "Examen blanc D", desc: "10 questions sur le périmètre D." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
@@ -328,6 +334,8 @@ export const CARTES = [
       { vers: "g4b", icone: "4", titre: "Méthode indirecte", desc: "G4 — mesurer, comparer, interpréter." },
       { vers: "g4c", icone: "4", titre: "Méthode directe et consignation", desc: "G4 — détecteur, traceur, registre." },
       { vers: "g11", icone: "11", titre: "Substitution — notions", desc: "G11 partiel (11.01)." },
+      { vers: "x4", icone: "🕵", titre: "Détective : le contrôle qui tourne mal", desc: "Mise en situation — registre, détecteur, incohérence." },
+      { vers: "ex-e-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "8 questions fondamentales, seuil 60 %." },
       { vers: "ex-e", icone: "📝", titre: "Examen blanc E", desc: "10 questions sur le périmètre E." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
@@ -838,7 +846,7 @@ export const CARTES = [
       { code: "4.09", libelle: "Consigner le contrôle dans le registre", etat: "a_evaluer" },
     ],
     ressources: ["r-cerfa"],
-    liens: [suite("g5a", "Récupérer sans émettre"), SOMMAIRE],
+    liens: [suite("x4", "Détective : le contrôle qui tourne mal"), SOMMAIRE],
     notes_pilote:
       "Insister sur la frontière 4.06 / 4.07 avec un groupe E : elle définit le métier. « Je contrôle, " +
       "je n'ouvre pas. » Faire manipuler le détecteur sur une fuite calibrée d'atelier et faire " +
@@ -849,6 +857,55 @@ export const CARTES = [
   /* ==================================================================
      G5 — RÉCUPÉRATION (2 fiches — cœur de la catégorie D)
      ================================================================== */
+  {
+    id: "x4",
+    type: "exercice",
+    titre: "Détective — le contrôle qui tourne mal",
+    dc: "G4 · mise en situation · parcours E",
+    minuteur_s: 420,
+    corps:
+      "<p>Contrôle périodique d'étanchéité chez un client. Le <b>registre</b> t'apprend qu'une fuite " +
+      "a été réparée il y a trois mois sur un raccord flare de la ligne liquide.</p>" +
+      "<ul>" +
+      "<li>Le contrôle visuel ne montre <b>rien</b> sur le raccord réparé.</li>" +
+      "<li>Ton détecteur électronique <b>sonne</b> en passant près du condenseur — ventilateur en marche.</li>" +
+      "<li>Sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier.</li>" +
+      "</ul>",
+    blocs: [
+      {
+        type: "piege",
+        t: "Trois indices, trois réflexes",
+        html:
+          "Un point réparé se <b>recontrôle en priorité</b>, même s'il semble propre. Une alerte détecteur " +
+          "près d'un ventilateur en marche <b>se confirme</b> brassage arrêté. Et une incohérence " +
+          "plaque/registre se <b>signale</b> — elle change la table de saturation à utiliser.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Le détecteur a sonné près du condenseur, ventilateur en marche. Quelle est la suite correcte ?",
+      choix: [
+        "Consigner « fuite au condenseur » dans le registre",
+        "Arrêter le ventilateur, refaire un passage lent, et recontrôler aussi le raccord réparé",
+        "Resserrer tous les raccords du condenseur par précaution",
+        "Ignorer l'alerte : l'air brassé fausse toujours le détecteur",
+      ],
+      bonne: 1,
+      explication:
+        "L'air brassé disperse le nuage de fluide : l'appareil peut sonner loin de la fuite réelle. On confirme ventilateur à l'arrêt, et le registre a déjà désigné le suspect n° 1 : le point réparé.",
+      remediation_vers: "g4c",
+    },
+    criteres: [
+      { code: "4.02", libelle: "Exploiter le registre pour orienter le contrôle", etat: "a_evaluer" },
+      { code: "4.08", libelle: "Utiliser le détecteur dans de bonnes conditions", etat: "a_evaluer" },
+    ],
+    liens: [suite("g5a", "Récupérer sans émettre"), { vers: "g4a", libelle: "↩ Revoir : où fuit une installation ?", sec: true }, SOMMAIRE],
+    notes_pilote:
+      "Exercice taillé pour le parcours E : tout se joue SANS ouvrir le circuit. Laisser débattre sur " +
+      "la proposition « resserrer tous les raccords » — elle paraît professionnelle mais c'est une " +
+      "intervention non justifiée, et sur un parcours E on ne touche pas au circuit. L'incohérence " +
+      "plaque/registre est le détail que presque personne ne relève : celui qui le voit a le réflexe métier.",
+  },
   {
     id: "g5a",
     type: "cours",
@@ -964,7 +1021,7 @@ export const CARTES = [
       { code: "5.08", libelle: "Appliquer les prescriptions de gestion, stockage et transport", etat: "a_evaluer" },
     ],
     ressources: ["r-tp-peser", "r-cerfa"],
-    liens: [suite("g6", "Le compresseur"), SOMMAIRE],
+    liens: [suite("x3", "Détective : la bouteille de récupération"), SOMMAIRE],
     notes_pilote:
       "Le geste à faire répéter : peser AVANT. Beaucoup de stagiaires pèsent après et déduisent — " +
       "c'est faux dès qu'il reste du fluide dans le cylindre. Sur un groupe A2, insister sur la " +
@@ -975,6 +1032,54 @@ export const CARTES = [
   /* ==================================================================
      G6 → G9 — LES COMPOSANTS (tirés au sort à l'épreuve)
      ================================================================== */
+  {
+    id: "x3",
+    type: "exercice",
+    titre: "Détective — la bouteille de récupération",
+    dc: "G5 · mise en situation · parcours D",
+    minuteur_s: 420,
+    corps:
+      "<p>Récupération sur une chambre froide avant remplacement d'un composant. Tu as pesé la " +
+      "bouteille <b>avant</b> de commencer — bon réflexe. La récupération avance, et la balance " +
+      "approche du <b>niveau maximal admissible</b> de la bouteille… mais il reste visiblement du " +
+      "fluide dans le circuit.</p>" +
+      "<p>Sur l'étagère du fourgon : une bouteille de récupération <b>vide</b>, et une bouteille " +
+      "<b>entamée</b> qui contient déjà un autre fluide.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "Ce qui ne se négocie pas",
+        html:
+          "Le taux de remplissage maximal protège contre la <b>dilatation du liquide</b> : dépassé, " +
+          "la bouteille devient dangereuse à la première montée en température. Et un mélange de " +
+          "fluides est <b>impossible à recycler ou régénérer</b> : il part en destruction.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "La bouteille atteint son niveau maximal et il reste du fluide à récupérer. Que fais-tu ?",
+      choix: [
+        "Je complète un peu au-delà du niveau : quelques centaines de grammes ne changent rien",
+        "Je bascule sur la bouteille vide, et je pèse celle-ci avant de continuer",
+        "Je termine dans la bouteille entamée de l'autre fluide, elle a de la place",
+        "J'arrête là : le fluide restant peut rester dans le circuit ouvert",
+      ],
+      bonne: 1,
+      explication:
+        "On change de bouteille, on pèse la nouvelle avant, et on continue. Dépasser le niveau est un risque mécanique réel ; mélanger deux fluides condamne le lot ; laisser du fluide dans un circuit qu'on va ouvrir finit à l'atmosphère.",
+      remediation_vers: "g5a",
+    },
+    criteres: [
+      { code: "5.02", libelle: "Gérer le remplissage des cylindres en sécurité", etat: "a_evaluer" },
+      { code: "5.06", libelle: "Peser à chaque étape", etat: "a_evaluer" },
+    ],
+    liens: [suite("g6", "Le compresseur"), { vers: "g5a", libelle: "↩ Revoir : récupérer sans émettre", sec: true }, SOMMAIRE],
+    notes_pilote:
+      "Cœur de cible du parcours D. La proposition « quelques centaines de grammes » fait toujours " +
+      "débat — c'est voulu : elle ressemble au bon sens de chantier. Rappeler l'anecdote de la " +
+      "bouteille au soleil. En atelier, faire refaire la double pesée : bouteille pleine fermée, " +
+      "étiquetée, consignée au registre ; nouvelle bouteille pesée AVANT le premier gramme.",
+  },
   {
     id: "g6",
     type: "cours",
@@ -1484,7 +1589,7 @@ export const CARTES = [
       { code: "12.04", libelle: "Réaliser l'analyse de risques avant intervention", etat: "a_evaluer" },
       { code: "12.06", libelle: "Récupérer et inerter à l'azote", etat: "a_evaluer" },
     ],
-    liens: [suite("g13", "CO₂ et NH₃ — information"), SOMMAIRE],
+    liens: [suite("x5", "Détective : intervention R-290"), SOMMAIRE],
     notes_pilote:
       "Module le plus important d'A1 et d'A2 — c'est la nouveauté du référentiel, et le parc A2 y est " +
       "largement passé. Faire manipuler le raccord spécifique hydrocarbure et le comparer physiquement " +
@@ -1496,6 +1601,53 @@ export const CARTES = [
   /* ==================================================================
      G13 / G14 — CO₂ et NH₃ : information
      ================================================================== */
+  {
+    id: "x5",
+    type: "exercice",
+    titre: "Détective — intervention sur monobloc R-290",
+    dc: "G12 · mise en situation · A1 et A2",
+    minuteur_s: 480,
+    corps:
+      "<p>Une vitrine réfrigérée au <b>R-290</b> à remplacer de compresseur, dans l'arrière-boutique " +
+      "d'une boulangerie : local <b>petit</b>, <b>sans ventilation</b>, un four à quelques mètres.</p>" +
+      "<p>Ton collègue propose de « faire vite » : récupérer, ouvrir, braser le nouveau compresseur, " +
+      "recharger — comme sur un circuit HFC classique, « vu la petite charge ».</p>",
+    blocs: [
+      {
+        type: "piege",
+        t: "« Petite charge » ne veut pas dire « petit risque »",
+        html:
+          "Le R-290 est <b>A3</b> : la charge est petite précisément <b>parce que</b> le fluide est " +
+          "très inflammable. Un local exigu non ventilé avec une source de flamme à proximité, " +
+          "c'est le scénario d'accident type — pas un chantier ordinaire.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Que réponds-tu, analyse de risques en main ?",
+      choix: [
+        "D'accord : la charge est faible, les précautions HFC suffisent",
+        "On ventile, on éloigne ou neutralise toute source d'ignition (four compris), on récupère, on inerte à l'azote — et seulement alors on chauffe",
+        "On brase d'abord, la récupération se fera après",
+        "On contrôle au détecteur HFC classique avant de commencer",
+      ],
+      bonne: 1,
+      explication:
+        "Séquence hydrocarbures : analyse de risques, ventilation active, zéro ignition, récupération, inertage azote, et seulement ensuite la flamme. Un détecteur HFC classique n'est pas conçu pour les hydrocarbures — il faut l'appareil adapté.",
+      remediation_vers: "g12",
+    },
+    criteres: [
+      { code: "12.04", libelle: "Conduire l'analyse de risques avant intervention", etat: "a_evaluer" },
+      { code: "12.05", libelle: "Préparer la zone : ventilation, ignition, EPI", etat: "a_evaluer" },
+      { code: "12.06", libelle: "Récupérer puis inerter avant toute flamme", etat: "a_evaluer" },
+    ],
+    liens: [suite("g13", "CO₂ et NH₃ — information"), { vers: "g12", libelle: "↩ Revoir : hydrocarbures", sec: true }, SOMMAIRE],
+    notes_pilote:
+      "Le scénario est volontairement banal : c'est le quotidien du parc A2. Faire construire la " +
+      "séquence AU TABLEAU par le groupe avant d'afficher la réponse — chaque oubli (le four !, le " +
+      "détecteur inadapté) se paie cher en vrai. Prolonger avec la question : « et si le client " +
+      "refuse qu'on coupe le four ? » — réponse attendue : on ne fait pas l'intervention.",
+  },
   {
     id: "g13",
     type: "cours",
@@ -1565,6 +1717,58 @@ export const CARTES = [
   /* ==================================================================
      EXAMENS BLANCS — entraînement, pas l'épreuve officielle
      ================================================================== */
+  {
+    id: "ex-ech",
+    type: "examen",
+    titre: "Échauffement — les fondamentaux (niveau 1)",
+    dc: "Entraînement · niveau 1 · A1 et A2",
+    examen: {
+      dc: ["G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+      niveau: 1,
+      n: 12,
+      seuil: 60,
+    },
+    notes_pilote:
+      "Tirage limité aux questions de niveau 1 (définitions, rôles, gestes de base), seuil abaissé " +
+      "à 60 % : c'est un test de démarrage, pas un examen. À proposer en début de formation pour " +
+      "positionner, puis en milieu de parcours pour mesurer le chemin parcouru.",
+  },
+  {
+    id: "ex-defi",
+    type: "examen",
+    titre: "Défi technicien — diagnostics (niveau 2)",
+    dc: "Entraînement · niveau 2 · A1 et A2",
+    examen: {
+      dc: ["G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+      niveau: 2,
+      n: 15,
+      seuil: 80,
+    },
+    notes_pilote:
+      "Que du niveau 2 : diagnostics, mises en situation, subtilités (huile, transformations du " +
+      "cycle, glissement). Seuil relevé à 80 % : réservé à la fin de parcours, ou aux stagiaires " +
+      "déjà expérimentés qui veulent se jauger. Un score moyen ici n'est PAS un échec en formation.",
+  },
+  {
+    id: "ex-e-ech",
+    type: "examen",
+    titre: "Échauffement — catégorie E (niveau 1)",
+    dc: "Entraînement · niveau 1 · périmètre E",
+    examen: { dc: ["G1", "G2", "G4", "G11"], niveau: 1, n: 8, seuil: 60 },
+    notes_pilote:
+      "Fondamentaux du périmètre E, seuil 60 % : à faire dès la première demi-journée pour " +
+      "dédramatiser le QCM et repérer les bases manquantes.",
+  },
+  {
+    id: "ex-d-ech",
+    type: "examen",
+    titre: "Échauffement — catégorie D (niveau 1)",
+    dc: "Entraînement · niveau 1 · périmètre D",
+    examen: { dc: ["G1", "G2", "G5", "G11"], niveau: 1, n: 8, seuil: 60 },
+    notes_pilote:
+      "Fondamentaux du périmètre D, seuil 60 % : positionnement de début de parcours, à refaire " +
+      "en fin de première journée.",
+  },
   {
     id: "ex-e",
     type: "examen",

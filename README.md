@@ -15,8 +15,9 @@ tournant dans le moteur générique **inerWeb Pilote**.
 | | |
 |---|---|
 | **4 parcours** | A1, A2, D, E — un seul pack, une carte menu par catégorie, périmètres réglementaires respectés |
-| **29 cartes** | 1 accueil · 4 menus · 17 fiches de cours · 2 exercices en situation · 4 examens blancs · 1 bilan |
-| **94 questions** | banque étiquetée par groupe du référentiel (G1 → G13) |
+| **36 cartes** | 1 accueil · 4 menus · 17 fiches de cours · 5 exercices « frigoriste-détective » · 8 examens · 1 bilan |
+| **158 questions** | banque étiquetée par groupe (G1 → G13) ET par niveau : 110 fondamentales · 48 diagnostics |
+| **3 paliers** | Échauffement (niveau 1, seuil 60 %) · Examen blanc (mixte, 70 %) · Défi technicien (niveau 2, 80 %) |
 | **Remédiation** | réponse fausse → bouton « Revoir la fiche » vers la fiche concernée |
 | **Mode pilotage** | la couche de notes formateur, invisible côté élève |
 | **Critères 0-4** | codes du référentiel positionnables en mode notation |
@@ -40,6 +41,9 @@ critiques**. Rien de tout cela n'existe dans `moteur/moteur.js`.
 
 Les examens de ce pack sont donc des **entraînements**. Étendre le moteur aux règles de
 composition de l'arrêté est un chantier à part, à décider séparément.
+
+**Écart assumé avec le moteur r408** : `initExamen` accepte un champ optionnel `examen.niveau`
+(filtrage des questions par difficulté). Sans ce champ, comportement d'origine — rétrocompatible.
 
 ---
 

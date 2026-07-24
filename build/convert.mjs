@@ -32,35 +32,66 @@ const SOURCE_DEFAUT =
    --------------------------------------------------------------------- */
 const SELECTION = {
   // G1 — Législation & thermodynamique élémentaire
-  G1: ["151", "160", "62", "v6_042", "v6_041", "v6_048", "v6_145"],
+  G1: ["151", "160", "62", "v6_042", "v6_041", "v6_048", "v6_145",
+       "153", "154", "157", "158", "v6_141", "v6_142", "v6_146",
+       "v6_040", "v6_045", "v6_046", "v6_143"],
   // G2 — Incidence environnementale & réglementations
   G2: ["v6_001", "5", "v6_003", "v6_004", "v6_113", "v6_011", "v6_017"],
   // G3 — Contrôles avant mise en service / après réparation
   G3: ["v6_058", "v6_059", "v6_062", "v6_159", "66"],
   // G4 — Contrôles d'étanchéité (cœur de la catégorie E)
   G4: ["v6_074", "v6_072", "v6_163", "v6_069", "v6_168", "104", "114", "68",
-       "v6_174", "107"],
+       "v6_174", "107", "180", "110"],
   // G5 — Gestion écologique & récupération (cœur de la catégorie D)
   G5: ["v6_063", "v6_156", "v6_060", "v6_064", "v6_082", "v6_083", "v6_176",
-       "135", "v6_175", "141"],
-  // G6 — Compresseurs
-  G6: ["152", "231", "233", "247", "240", "186"],
+       "135", "v6_175", "141", "175", "176", "179", "v6_161", "v6_170",
+       "v6_079", "v6_081", "128", "133", "143", "147", "v6_177",
+       "v6_158", "130", "146"],
+  // G6 — Compresseurs (dont le circuit d'huile, central pour le code 6.05)
+  G6: ["152", "231", "233", "247", "240", "186", "174", "234", "235",
+       "v6_054", "v6_150", "173", "177", "190", "241", "243", "245",
+       "246", "248", "249", "251", "252", "v6_152", "v6_153"],
   // G7 — Condenseurs
-  G7: ["159", "164", "163", "182", "169", "170"],
+  G7: ["159", "164", "163", "182", "169", "170", "v6_057", "71"],
   // G8 — Évaporateurs
-  G8: ["v6_039", "181", "183", "184", "178", "v6_043"],
+  G8: ["v6_039", "181", "183", "184", "178", "v6_043", "166", "167",
+       "171", "70"],
   // G9 — Détendeurs & organes annexes
   G9: ["v6_049", "v6_055", "v6_149", "187", "188", "v6_050", "v6_051",
-       "v6_052", "v6_155", "172"],
+       "v6_052", "v6_155", "172", "168", "161", "162", "v6_053",
+       "v6_151", "v6_154", "189"],
   // G10 — Tuyauterie, brasage
   G10: ["v6_061", "v6_065", "87", "84", "v6_157", "69"],
   // G11 — Substitution & efficacité énergétique
-  G11: ["v6_033", "v6_140", "54", "v6_030", "v6_035", "v6_092", "185", "v6_047"],
+  G11: ["v6_033", "v6_140", "54", "v6_030", "v6_035", "v6_092", "185",
+        "v6_047", "v6_147", "v6_183"],
   // G12 — Hydrocarbures (spécifique A1/A2)
   G12: ["v6_091", "v6_181", "v6_093", "v6_184", "291", "286", "289"],
   // G13 — CO₂ / NH₃ : information et sensibilisation
-  G13: ["v6_088", "v6_089", "v6_185", "v6_090", "v6_094", "v6_182"],
+  G13: ["v6_088", "v6_089", "v6_185", "v6_090", "v6_094", "v6_182",
+        "283", "v6_180", "302"],
 };
+
+/* ---------------------------------------------------------------------
+   1 bis. NIVEAUX
+   ---------------------------------------------------------------------
+   niveau 1 (défaut) : fondamentaux — définitions, rôles, gestes de base.
+   niveau 2 : approfondissement — diagnostics, mises en situation, calculs,
+   subtilités (isentropique/isenthalpe, glissement, huile en froid négatif).
+   Le moteur filtre les examens par `examen.niveau` ; une question sans
+   niveau entre dans tous les tirages.
+   --------------------------------------------------------------------- */
+const NIVEAU2 = new Set([
+  // existantes
+  "v6_113", "v6_059", "68", "v6_165", "164", "170", "183", "184", "178",
+  "186", "187", "188", "v6_043", "v6_140", "286", "289", "291",
+  "v6_088", "v6_089", "v6_060",
+  // repêchées
+  "v6_040", "v6_045", "v6_046", "v6_143", "166", "167", "171", "168",
+  "189", "190", "173", "177", "241", "243", "245", "246", "248", "249",
+  "251", "252", "v6_152", "v6_153", "v6_158", "130", "146",
+  "v6_147", "v6_183", "v6_180", "302",
+]);
 
 /* ---------------------------------------------------------------------
    2. CORRECTIONS ÉDITORIALES
@@ -109,6 +140,31 @@ const CORRECTIONS = {
     ],
     explication:
       "Le R-290 est A3 : très inflammable. Le R-32 est A2L : faiblement inflammable, vitesse de flamme ≤ 10 cm/s. Piège classique.",
+  },
+
+  283: {
+    enonce:
+      "Pourquoi installe-t-on des détecteurs de CO₂ dans les locaux abritant une installation au R-744 ?",
+    choix: [
+      "Pour mesurer la performance de l'installation",
+      "Parce que le CO₂ est inodore et incolore : sans appareil, une fuite est indétectable et le risque est l'asphyxie",
+      "Parce que la réglementation impose un détecteur pour tous les fluides",
+      "Pour compter les ouvertures de porte",
+    ],
+    explication:
+      "Le CO₂ ne se voit pas et ne se sent pas : en cas de fuite dans un local fermé, il remplace l'air sans prévenir. Seul un détecteur alerte avant l'asphyxie.",
+  },
+  302: {
+    enonce:
+      "Pourquoi les portes des locaux techniques CO₂ doivent-elles s'ouvrir vers l'extérieur ?",
+    choix: [
+      "Pour gagner de la place dans le local",
+      "Pour faciliter l'évacuation d'urgence : une porte qui s'ouvre vers l'intérieur peut se bloquer en cas de surpression ou de panique",
+      "Pour des raisons esthétiques",
+      "Pour empêcher les intrusions",
+    ],
+    explication:
+      "En cas de fuite massive, on doit pouvoir sortir en poussant la porte, même en panique et même si la pression du local a monté. Le sens d'ouverture est un choix de sécurité.",
   },
 };
 
@@ -187,6 +243,7 @@ function main() {
       banque.push({
         id: "q-" + dc.toLowerCase() + "-" + id,
         dc,
+        niveau: NIVEAU2.has(id) ? 2 : 1,
         type: choix.length === 2 ? "vf" : "qcm",
         enonce: fix.enonce || q.question,
         choix,

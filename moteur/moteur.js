@@ -119,7 +119,14 @@
   }
 
   function initExamen(c) {
-    var pool = BANQUE.filter(function (q) { return (c.examen.dc || []).indexOf(q.dc) >= 0; });
+    // Extension pack fluides : filtrage optionnel par niveau de difficulté.
+    // `examen.niveau` absent → comportement d'origine ; question sans
+    // `niveau` → éligible à tous les tirages. (Écart documenté avec r408.)
+    var pool = BANQUE.filter(function (q) {
+      if ((c.examen.dc || []).indexOf(q.dc) < 0) return false;
+      if (c.examen.niveau && q.niveau && q.niveau !== c.examen.niveau) return false;
+      return true;
+    });
     melange(pool);
     var n = Math.min(c.examen.n || 6, pool.length);
     S.examen = { carteId: c.id, items: pool.slice(0, n), i: 0, rep: [], fini: false, score: null };

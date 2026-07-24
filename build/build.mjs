@@ -68,14 +68,20 @@ function valider() {
       if (!RESSOURCES.some((x) => x.id === r)) err.push(c.id + " : ressource « " + r + " » inexistante");
   }
 
-  // examens : le pool doit exister et être assez grand
+  // examens : le pool doit exister et être assez grand — avec le même
+  // filtrage par niveau que le moteur, sinon la validation ment
   const groupes = new Set(BANQUE.map((q) => q.dc));
   for (const c of CARTES.filter((x) => x.examen)) {
     const inconnus = (c.examen.dc || []).filter((d) => !groupes.has(d));
     if (inconnus.length) err.push(c.id + " : groupe(s) absent(s) de la banque : " + inconnus.join(", "));
-    const pool = BANQUE.filter((q) => (c.examen.dc || []).includes(q.dc)).length;
+    const pool = BANQUE.filter(
+      (q) =>
+        (c.examen.dc || []).includes(q.dc) &&
+        !(c.examen.niveau && q.niveau && q.niveau !== c.examen.niveau)
+    ).length;
     if (pool < (c.examen.n || 6))
-      err.push(c.id + " : " + pool + " questions disponibles pour " + c.examen.n + " demandées");
+      err.push(c.id + " : " + pool + " questions disponibles pour " + c.examen.n + " demandées" +
+        (c.examen.niveau ? " (niveau " + c.examen.niveau + ")" : ""));
   }
 
   // banque
