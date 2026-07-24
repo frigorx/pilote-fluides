@@ -151,6 +151,14 @@
   bLiq.onclick = function () { setMode("liq"); };
   sel.onchange = calc; rng.oninput = calc; inT.oninput = calc;
   calc();
+
+  /* annonce la hauteur réelle à la page hôte (iframe auto-ajustée) */
+  function annonceHauteur() {
+    try { parent.postMessage({ piloteOutilH: document.body.offsetHeight + 8 }, '*'); } catch (e) {}
+  }
+  window.addEventListener('load', annonceHauteur);
+  window.addEventListener('resize', annonceHauteur);
+  new MutationObserver(annonceHauteur).observe(document.body, { childList: true, subtree: true, attributes: true });
 })();
 </script>
 </body>

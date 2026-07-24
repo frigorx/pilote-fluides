@@ -350,6 +350,16 @@
       if (reste <= 0) { clearInterval(S.chrono); S.chrono = null; el.textContent = "⏱ temps indicatif écoulé"; } }, 1000);
   }
 
+  /* --- auto-hauteur des outils embarqués (extension pack fluides) ---
+     Les pages outils postent {piloteOutilH: hauteur} ; on ajuste l'iframe
+     émettrice. Indispensable sur téléphone, où le contenu wrappe. */
+  window.addEventListener("message", function (e) {
+    if (!e.data || typeof e.data.piloteOutilH !== "number") return;
+    onAll("iframe", function (f) {
+      if (f.contentWindow === e.source) f.style.height = Math.min(1400, Math.max(200, e.data.piloteOutilH)) + "px";
+    });
+  });
+
   /* --- historique local (extension pack fluides, auto-formation) --- */
   function lireHist(id) {
     try { var o = JSON.parse(localStorage.getItem("pilote_hist_" + PACK.pack.id) || "{}"); return o[id] != null ? o[id] : null; }
