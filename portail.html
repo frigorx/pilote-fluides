@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portail — Habilitation fluides frigorigènes</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Le point d'entrée du pack : espace élève, révisions, console formateur, atelier numérique relié, document de relecture.">
+<style>
+  :root{
+    --bleu:#1B3A63; --bleu-clair:#2f5689; --orange:#FF6B35; --orange-clair:#ffe2d6;
+    --txt:#1d2a38; --mut:#5a6b7d; --fond:#eef2f6; --carte:#ffffff; --ligne:#d6dee7;
+    --ok:#1e7e54; --ok-bg:#e3f5ec; --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--fond);color:var(--txt);font:16px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif}
+  h1,h2,h3{font-family:'Trebuchet MS',Calibri,Arial,sans-serif;font-weight:700;color:var(--bleu);margin:0}
+  a{color:inherit}
+  .barre{background:var(--bleu);color:#fff;padding:22px 24px}
+  .barre .fil{max-width:980px;margin:0 auto}
+  .barre .logo{font-family:'Trebuchet MS';font-weight:700;font-size:22px}
+  .barre .logo b{color:var(--orange)}
+  .barre p{margin:6px 0 0;color:#cdd9e6;font-size:15px;max-width:640px}
+  main{max-width:980px;margin:0 auto;padding:28px 24px 60px}
+  .lead{background:var(--carte);border-radius:var(--r);box-shadow:var(--ombre);padding:22px 26px;margin-bottom:32px;border-left:5px solid var(--orange)}
+  .lead p{margin:0 0 10px}
+  .lead p:last-child{margin-bottom:0}
+  section{margin-bottom:38px}
+  h2{font-size:20px;margin-bottom:4px}
+  .souligne{color:var(--mut);font-size:14px;margin-bottom:16px;display:block}
+  .grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .carte{background:var(--carte);border:1.5px solid var(--ligne);border-radius:12px;padding:18px 20px;box-shadow:var(--ombre);display:flex;flex-direction:column;gap:8px}
+  .carte .ic{font-size:26px}
+  .carte h3{font-size:16.5px}
+  .carte p{margin:0;color:var(--mut);font-size:13.5px;flex:1}
+  .carte a.bouton{align-self:flex-start;margin-top:6px;font-weight:700;color:var(--orange);text-decoration:none;font-size:14px}
+  .carte a.bouton:hover{text-decoration:underline}
+  .carte.accent{border-color:var(--orange);background:var(--orange-clair)}
+  .outils{display:flex;flex-direction:column;gap:10px}
+  .outil{background:var(--carte);border:1.5px solid var(--ligne);border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .outil .dc{display:inline-block;font-size:11.5px;font-weight:700;color:#fff;background:var(--bleu-clair);padding:2px 9px;border-radius:999px;white-space:nowrap}
+  .outil .nom{font-weight:700;color:var(--bleu);flex:1;min-width:180px}
+  .outil .desc{color:var(--mut);font-size:13.5px;flex-basis:100%}
+  .outil a{font-size:13.5px;font-weight:700;color:var(--orange);text-decoration:none;white-space:nowrap}
+  .outil a:hover{text-decoration:underline}
+  .liste-simple{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+  .liste-simple li{background:var(--carte);border:1.5px solid var(--ligne);border-radius:8px;padding:9px 14px;font-size:14px}
+  .liste-simple b{color:var(--bleu)}
+  .regles{background:var(--carte);border-radius:var(--r);box-shadow:var(--ombre);padding:18px 22px}
+  .regles ul{margin:8px 0 0;padding-left:20px}
+  .regles li{margin-bottom:6px;font-size:14.5px}
+  .attention{background:#fff6f2;border:1.5px solid #ffc7ad;border-radius:10px;padding:14px 18px;font-size:14.5px;margin-top:14px}
+  .attention b{color:#c9451a}
+  footer{text-align:center;color:var(--mut);font-size:13px;padding:20px 24px 40px}
+  footer a{color:var(--bleu-clair)}
+</style>
+</head>
+<body>
+  <div class="barre"><div class="fil">
+    <div class="logo">inerWeb <b>Pilote</b></div>
+    <p>Habilitation fluides frigorigènes — A1 · A2 · D · E — le point d'entrée du pack.</p>
+  </div></div>
+
+  <main>
+    <div class="lead">
+      <p><b>Ce pack fait tourner la formation « habilitation fluides frigorigènes » dans le moteur inerWeb Pilote</b>,
+      avec un objectif double : servir de support de séance ET d'outil d'<b>auto-formation</b> — le stagiaire
+      garde le lien avant la formation, pendant les périodes en entreprise, jusqu'à l'épreuve.</p>
+      <p>Cette page réunit tout ce qui compose le projet : les espaces internes du pack et les outils de
+      l'atelier numérique déjà publiés (FRIGOLO, pressostats, Diagramme Enthalpique+…) auxquels chaque fiche renvoie.
+      <b>Démonstrateur, pas version définitive</b> : à relire avant diffusion large.</p>
+    </div>
+
+    <section>
+      <h2>Les espaces du pack</h2>
+      <span class="souligne">Quatre pages, un seul dépôt — chacune pour un usage différent.</span>
+      <div class="grille">
+        <div class="carte accent">
+          <div class="ic">🎓</div>
+          <h3>Espace élève</h3>
+          <p>Les 4 parcours (A1, A2, D, E), les 17 fiches, les exercices « frigoriste-détective »,
+          et l'espace <b>Réviser par thème</b> en auto-formation.</p>
+          <a class="bouton" href="index.html" target="_blank">Ouvrir ▸</a>
+        </div>
+        <div class="carte">
+          <div class="ic">📣</div>
+          <h3>Affiche à projeter / QR</h3>
+          <p>Format A4 ou plein écran, à distribuer en salle : le lien, le QR code, les trois temps d'usage.</p>
+          <a class="bouton" href="partage.html" target="_blank">Ouvrir ▸</a>
+        </div>
+        <div class="carte">
+          <div class="ic">👁</div>
+          <h3>Console formateur</h3>
+          <p>Le pack complet avec la couche pilote : notes d'animation, anecdotes, gestes à faire manipuler.</p>
+          <a class="bouton" href="formateur.html" target="_blank">Ouvrir ▸</a>
+        </div>
+        <div class="carte">
+          <div class="ic">📋</div>
+          <h3>Document de relecture</h3>
+          <p>Fiches, exercices et 158 questions à plat avec cases ✅/✏ — le « bon à tirer » avant diffusion.</p>
+          <a class="bouton" href="relecture.html" target="_blank">Ouvrir ▸</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>L'atelier numérique relié</h2>
+      <span class="souligne">Chaque fiche renvoie vers un outil interactif existant, publié dans son propre dépôt inerWeb.</span>
+      <div class="outils">
+        <div class="outil">
+          <span class="dc">G1 / G4</span>
+          <span class="nom">📈 Diagramme Enthalpique+ v3.2</span>
+          <a href="https://frigorx.github.io/diagramme-enthalpique/" target="_blank">Ouvrir ▸</a>
+          <span class="desc">Cycle complet sur log(p-h), embarqué en direct dans l'exercice de diagnostic.</span>
+        </div>
+        <div class="outil">
+          <span class="dc">G1 / G4</span>
+          <span class="nom">📊 FRIGOLO — Mollier, réglette, bilan thermique</span>
+          <a href="https://frigorx.github.io/inerweb-frigolo/" target="_blank">Ouvrir ▸</a>
+          <span class="desc">Le portail d'origine : Mollier v3 Pro, Bilan Thermique, Psychro v2, TP COP PAC.</span>
+        </div>
+        <div class="outil">
+          <span class="dc">G6</span>
+          <span class="nom">🔧 Pressostat BP — simulateur KP1</span>
+          <a href="https://frigorx.github.io/inerweb-frigolo/outils/kp1-pressostat-bp.html" target="_blank">Ouvrir ▸</a>
+          <span class="desc">Réglage et diagnostic interactifs.</span>
+        </div>
+        <div class="outil">
+          <span class="dc">G7</span>
+          <span class="nom">🔧 Pressostat HP sécurité — simulateur KP5</span>
+          <a href="https://frigorx.github.io/inerweb-frigolo/outils/kp5-pressostat-hp.html" target="_blank">Ouvrir ▸</a>
+          <span class="desc">Sécurité surpression, réglage et diagnostic.</span>
+        </div>
+        <div class="outil">
+          <span class="dc">G6</span>
+          <span class="nom">🧩 Module compresseur — leçon complète</span>
+          <a href="https://frigorx.github.io/inerweb-frigolo/outils/module-compresseur.html" target="_blank">Ouvrir ▸</a>
+          <span class="desc">Leçon interactive détaillée, toutes technologies.</span>
+        </div>
+        <div class="outil">
+          <span class="dc">G6</span>
+          <span class="nom">🌀 Le compresseur scroll — leçon interactive</span>
+          <a href="https://frigorx.github.io/inerweb-frigolo/outils/lecon-scroll.html" target="_blank">Ouvrir ▸</a>
+          <span class="desc">Focus sur la technologie scroll.</span>
+        </div>
+        <div class="outil">
+          <span class="dc">G7 / G8</span>
+          <span class="nom">♨ Échangeurs — évaporateur & condenseur</span>
+          <a href="https://frigorx.github.io/inerweb-frigolo/outils/echangeurs.html" target="_blank">Ouvrir ▸</a>
+          <span class="desc">Manipulation interactive des deux échangeurs.</span>
+        </div>
+        <div class="outil">
+          <span class="dc">G4</span>
+          <span class="nom">🧪 TP formatif — pose/dépose des manomètres</span>
+          <a href="https://frigorx.github.io/inerweb-frigolo/outils/tp-manometres-formatif.html" target="_blank">Ouvrir ▸</a>
+          <span class="desc">2 h, 7 activités, évaluation par compétences.</span>
+        </div>
+        <div class="outil">
+          <span class="dc">G5</span>
+          <span class="nom">⚖ TP — inventaire et pesée des bouteilles</span>
+          <a href="https://frigorx.github.io/inerweb-tp-peser-bouteilles/" target="_blank">Ouvrir ▸</a>
+          <span class="desc">Utilise le collecteur universel inerWeb.</span>
+        </div>
+        <div class="outil">
+          <span class="dc">G4 / G5</span>
+          <span class="nom">📋 inerWeb Fluide — CERFA, FI, BSD</span>
+          <a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/" target="_blank">Ouvrir ▸</a>
+          <span class="desc">S'entraîner à remplir une vraie fiche d'intervention et un BSD.</span>
+        </div>
+        <div class="outil">
+          <span class="dc">Toutes fiches</span>
+          <span class="nom">✏ Bibliothèque de symboles frigorifiques + jeux</span>
+          <a href="https://frigorx.github.io/inerweb-frigolo/outils/symboles-frigorifiques.html" target="_blank">Ouvrir ▸</a>
+          <span class="desc">Reconnaître les symboles normalisés du circuit.</span>
+        </div>
+        <div class="outil">
+          <span class="dc">Entraînement</span>
+          <span class="nom">🎯 Mission F-GAZ — 558 questions</span>
+          <a href="https://frigorx.github.io/inerweb-fgaz/" target="_blank">Ouvrir ▸</a>
+          <span class="desc">La source publique de la banque de questions du pack.</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Le projet en bref</h2>
+      <div class="regles">
+        <p><b>Ce que ça montre</b> — 4 parcours réglementaires, 50 cartes (17 fiches, 5 exercices,
+        21 séries/examens dont 13 de révision par thème), 158 questions avec indice et remédiation
+        complète, 13 planches SVG animées, mode pilotage formateur.</p>
+        <ul>
+          <li><b>Zéro invention chiffrée</b> — surchauffe 5-10 K, sous-refroidissement 4-8 K, pression
+          absolue ≈ relative + 1 bar, classes NF EN 378 (R-290 = A3, CO₂ = A1, NH₃ = B2L), PRP CO₂ = 1.
+          Le reste renvoie à la doc constructeur.</li>
+          <li><b>Azote seul</b> pour toute mise en pression — jamais d'oxygène, jamais d'air comprimé.</li>
+          <li><b>Croix du frigoriste</b> : détendeur gauche, compresseur droite, condenseur haut, évaporateur bas.</li>
+          <li><b>Mode Évaluation désactivé</b> — le moteur ne sait pas encore appliquer les règles de
+          composition de l'arrêté (groupe tiré au sort, pondération, plancher par groupe). Les examens
+          du pack sont des entraînements.</li>
+        </ul>
+        <div class="attention">
+          <b>⚠ Sources des questions.</b> La banque vient de Mission F-GAZ, application publique.
+          La banque officielle des 85 questions d'examen et les 10 examens blancs du dispositif de
+          certification ne sont <b>jamais</b> publiés ici — publier un sujet d'épreuve est irréversible.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pour aller plus loin</h2>
+      <ul class="liste-simple">
+        <li><b>Code source</b> — <a href="https://github.com/frigorx/pilote-fluides" target="_blank">github.com/frigorx/pilote-fluides</a> (dépôt public)</li>
+        <li><b>Catalogue des visuels</b> — <code>packs/fluides/res/img/CATALOGUE.md</code>, dans le dépôt</li>
+        <li><b>README technique</b> — fabrication, structure des fichiers, écarts avec le moteur d'origine</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>inerWeb Édu · F. Henninot — page générée le 25/07/2026, à mettre à jour à chaque évolution du pack.</footer>
+</body>
+</html>

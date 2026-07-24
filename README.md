@@ -6,6 +6,8 @@ tournant dans le moteur générique **inerWeb Pilote**.
 > ⚠️ **Démonstrateur, pas version définitive.** Il est là pour être montré à des collègues
 > enseignants et formateurs, et pour recueillir leurs remarques. Le contenu est un premier jet.
 
+**Portail (point d'entrée)** → [`portail.html`](portail.html) — tout est là : élève, révisions, formateur, partage, atelier relié.
+
 **Élève** → [`index.html`](index.html) · **Formateur** → [`formateur.html`](formateur.html)
 
 ---
