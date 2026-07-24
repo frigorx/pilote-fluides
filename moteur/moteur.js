@@ -197,10 +197,28 @@
       h += "<button class='" + cls + "' " + (rep ? "disabled" : "") + " data-" + ns + "='" + i + "'>" + esc(txt) + "</button>";
     });
     h += "</div>";
+    // Extension pack fluides : la feuille d'aide, AVANT de répondre
+    // (auto-formation : un indice guide, il ne donne pas la réponse).
+    if (!rep && m.feedback && q.aide) {
+      h += "<div class='liens' style='margin-top:4px'><button class='sec' data-aide='1'>💡 Un indice</button></div>" +
+           "<div class='bloc' style='display:none'>" + esc(q.aide) + "</div>";
+    }
     if (rep) {
       if (m.feedback) {
         var ok = rep.choix === q.bonne;
-        h += "<div class='retour " + (ok ? "ok" : "ko") + "'>" + (ok ? "✅ Bonne réponse. " : "❌ Réponse incorrecte. ") + esc(q.explication || "") + "</div>";
+        h += "<div class='retour " + (ok ? "ok" : "ko") + "'>" + (ok ? "✅ Bonne réponse." : "❌ Réponse incorrecte.") +
+             (q.remed ? "" : " " + esc(q.explication || "")) + "</div>";
+        // Extension pack fluides : la remédiation complète — apprendre et
+        // comprendre, pas seulement corriger.
+        if (q.remed) {
+          h += "<div class='bloc'><div class='t'>📚 Comprendre</div>";
+          if (q.remed.texte) h += "<p style='margin:0'>" + esc(q.remed.texte) + "</p>";
+          [["regle", "📏 La règle"], ["pourquoi", "🎯 Pourquoi"], ["exemple", "🧮 Exemple"], ["piege", "⚠️ Le piège"]]
+            .forEach(function (p) {
+              if (q.remed[p[0]]) h += "<p style='margin:4px 0 0'><b>" + p[1] + " :</b> " + esc(q.remed[p[0]]) + "</p>";
+            });
+          h += "</div>";
+        }
         if (!ok && m.remediation && q.remediation_vers) h += "<div class='liens'><button class='sec' data-go='" + q.remediation_vers + "'>↩ Revoir la fiche</button></div>";
       } else {
         h += "<div class='retour ok'>Réponse enregistrée.</div>";
@@ -258,6 +276,13 @@
   }
   function nav() { onAll("[data-go]", function (el) { el.addEventListener("click", function () { aller(el.getAttribute("data-go")); }); }); }
   function commun() {
+    // Extension pack fluides : le bouton d'indice révèle le bloc qui le suit.
+    onAll("[data-aide]", function (el) {
+      el.addEventListener("click", function () {
+        var d = el.parentNode.nextElementSibling;
+        if (d) d.style.display = d.style.display === "none" ? "" : "none";
+      });
+    });
     var b;
     if ((b = document.getElementById("btn-mode")) && !S.verrouMode) b.onclick = menuMode;
     if ((b = document.getElementById("btn-retour"))) b.onclick = retour;

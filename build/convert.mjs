@@ -184,6 +184,52 @@ const REMEDIATION = {
   G13: "g13",
 };
 
+/* ---------------------------------------------------------------------
+   1 quater. LA FEUILLE D'AIDE ET LA REMÉDIATION COMPLÈTE
+   ---------------------------------------------------------------------
+   Mission F-GAZ porte, pour chaque question, un indice (`aide`) et une
+   remédiation complète — structurée Règle/Pourquoi/Exemple/Piège sur une
+   partie du fonds, en paragraphe pédagogique sur le reste. C'est le cœur
+   de l'auto-formation : on la conserve EN ENTIER (l'`explication` courte
+   ne sert plus que de résumé et de secours).
+   --------------------------------------------------------------------- */
+function structurer(remediation) {
+  if (!remediation) return null;
+  const lignes = String(remediation)
+    .replace(/\\n/g, "\n")
+    .split("\n")
+    .map((l) => l.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+  if (!lignes.length) return null;
+
+  const prendre = (prefixe) => {
+    const l = lignes.find((x) => x.startsWith(prefixe));
+    if (!l) return undefined;
+    // la source double parfois le préfixe (« Exemple : Exemple : … »)
+    return l.slice(prefixe.length).replace(/^\s*(Exemple|Piège classique|Piège)\s*:\s*/, "").trim() || undefined;
+  };
+
+  const remed = {
+    regle: prendre("Règle :"),
+    pourquoi: prendre("Pourquoi :"),
+    exemple: prendre("Exemple :"),
+    piege: prendre("Piège :"),
+  };
+  if (remed.regle || remed.pourquoi || remed.exemple || remed.piege) {
+    // une partie du fonds porte un gabarit générique sans contenu
+    // (« Retenez la notion-clé demandée… ») : aucune valeur, on le jette
+    if (remed.regle && /^Retenez la notion-clé/.test(remed.regle)) return null;
+    Object.keys(remed).forEach((k) => remed[k] === undefined && delete remed[k]);
+    return remed;
+  }
+
+  // pas de structure : paragraphe complet, sans la ligne « ✅ Réponse : X »
+  // (redondante avec le feedback du moteur) sauf si elle est seule
+  const sansReponse = lignes.filter((l) => !/^✅\s*Réponse\s*:/.test(l));
+  const texte = (sansReponse.length ? sansReponse : lignes.map((l) => l.replace(/^✅\s*Réponse\s*:\s*/, ""))).join(" ");
+  return texte ? { texte } : null;
+}
+
 const LIMITE_EXPLICATION = 200;
 
 function couperNet(txt, limite) {
@@ -260,6 +306,8 @@ function main() {
         choix,
         bonne: q.reponse,
         explication: fix.explication || condenser(q.remediation),
+        aide: (q.aide || "").replace(/\s+/g, " ").trim() || undefined,
+        remed: fix.explication ? undefined : structurer(q.remediation) || undefined,
         remediation_vers: REMEDIATION[dc],
       });
     }
