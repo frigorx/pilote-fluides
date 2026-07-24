@@ -173,6 +173,17 @@ const CORRECTIONS = {
 /* Une explication s'affiche sous la question, en séance, sur une seule
    respiration : on vise ≤ 200 caractères. La source mélange de vrais
    sauts de ligne et des « \n » littéraux — on normalise les deux. */
+/* ---------------------------------------------------------------------
+   1 ter. REMÉDIATION — chaque groupe renvoie vers sa fiche du pack.
+   Une question ratée en révision ou en examen blanc propose « Revoir la
+   fiche » ; le bilan de fin de série liste les fiches des groupes ratés.
+   --------------------------------------------------------------------- */
+const REMEDIATION = {
+  G1: "g1a", G2: "g2", G3: "g3", G4: "g4b", G5: "g5a", G6: "g6",
+  G7: "g7", G8: "g8", G9: "g9", G10: "g10", G11: "g11", G12: "g12",
+  G13: "g13",
+};
+
 const LIMITE_EXPLICATION = 200;
 
 function couperNet(txt, limite) {
@@ -249,6 +260,7 @@ function main() {
         choix,
         bonne: q.reponse,
         explication: fix.explication || condenser(q.remediation),
+        remediation_vers: REMEDIATION[dc],
       });
     }
   }

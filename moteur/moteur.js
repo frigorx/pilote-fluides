@@ -140,7 +140,27 @@
     var reussi = pct >= seuil;
     var h = "<div id='ex-result'>";
     if (m.feedback) {
-      h += "<div class='retour " + (reussi ? "ok" : "ko") + "'><b>Score : " + bons + " / " + sur + " (" + pct + "%)</b> — seuil " + seuil + "%. " + (reussi ? "Réussi ✅" : "À retravailler.") + "</div>";
+      // Extension pack fluides (auto-formation) : mémoire du score précédent.
+      if (ex.prevLu === undefined) { ex.prevLu = lireHist(c.id); ecrireHist(c.id, pct); }
+      var evol = "";
+      if (ex.prevLu !== null && ex.prevLu !== undefined) {
+        var d = pct - ex.prevLu;
+        evol = " <span style='color:var(--mut);font-weight:400'>· précédent : " + ex.prevLu + "%" +
+               (d > 0 ? " — +" + d + " 📈" : d < 0 ? " — " + d : " — stable") + "</span>";
+      }
+      h += "<div class='retour " + (reussi ? "ok" : "ko") + "'><b>Score : " + bons + " / " + sur + " (" + pct + "%)</b> — seuil " + seuil + "%. " + (reussi ? "Réussi ✅" : "À retravailler.") + evol + "</div>";
+      // Extension pack fluides : les fiches des questions ratées, dédupliquées.
+      var aRevoir = {};
+      ex.rep.forEach(function (r, i) {
+        var q = ex.items[i];
+        if (r && r.choix !== q.bonne && q.remediation_vers && idxCartes[q.remediation_vers]) aRevoir[q.remediation_vers] = true;
+      });
+      var fiches = Object.keys(aRevoir);
+      if (fiches.length) {
+        h += "<div style='margin-top:12px;font-weight:700;color:var(--bleu)'>À revoir en priorité :</div><div class='liens'>";
+        fiches.forEach(function (fid) { h += "<button class='sec' data-go='" + fid + "'>↩ " + esc(idxCartes[fid].titre) + "</button>"; });
+        h += "</div>";
+      }
     } else {
       // évaluation : on n'affiche pas le détail des bonnes réponses
       h += "<div class='retour ok'>Examen terminé. Tes réponses sont enregistrées.</div>";
@@ -328,6 +348,18 @@
     S.chrono = setInterval(function () { reste--; if (!el) return;
       el.textContent = "⏱ " + fmt(Math.max(0, reste));
       if (reste <= 0) { clearInterval(S.chrono); S.chrono = null; el.textContent = "⏱ temps indicatif écoulé"; } }, 1000);
+  }
+
+  /* --- historique local (extension pack fluides, auto-formation) --- */
+  function lireHist(id) {
+    try { var o = JSON.parse(localStorage.getItem("pilote_hist_" + PACK.pack.id) || "{}"); return o[id] != null ? o[id] : null; }
+    catch (e) { return null; }
+  }
+  function ecrireHist(id, pct) {
+    try {
+      var k = "pilote_hist_" + PACK.pack.id, o = JSON.parse(localStorage.getItem(k) || "{}");
+      o[id] = pct; localStorage.setItem(k, JSON.stringify(o));
+    } catch (e) { /* mode privé : tant pis, pas d'historique */ }
   }
 
   /* --- utilitaires --- */

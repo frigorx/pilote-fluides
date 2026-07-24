@@ -164,8 +164,9 @@ export const CARTES = [
     corps:
       "<p class=\"lead\">Quatre catégories, un seul référentiel : <b>A1</b> et <b>A2</b> couvrent toute l'activité, " +
       "<b>D</b> la récupération seule, <b>E</b> le contrôle d'étanchéité sans ouvrir le circuit.</p>" +
-      "<p>Choisis ton parcours. Chaque fiche se lit en quelques minutes, pose une question, " +
-      "et renvoie vers la fiche à revoir si la réponse est fausse. " +
+      "<p>Choisis ton parcours — ou va directement <b>réviser par thème</b> : cet outil est fait " +
+      "pour t'accompagner <b>avant</b> la formation, <b>pendant</b> les périodes en entreprise et " +
+      "jusqu'à l'épreuve. Chaque question corrigée renvoie vers la fiche à relire. " +
       "Progression conseillée en formation : <b>E → D → A2 → A1</b>.</p>",
     menu_titre: "Choisir un parcours",
     liens: [
@@ -193,6 +194,12 @@ export const CARTES = [
         icone: "E",
         titre: "Catégorie E",
         desc: "Contrôle d'étanchéité seul, sans accéder au circuit. Épreuve 1 h 30.",
+      },
+      {
+        vers: "m-rev",
+        icone: "📚",
+        titre: "Réviser par thème",
+        desc: "En autonomie : 13 séries corrigées, reliées aux fiches. Avant la formation, pendant le stage, avant l'épreuve.",
       },
       {
         vers: "cfin",
@@ -349,6 +356,43 @@ export const CARTES = [
   /* ==================================================================
      G1 — LÉGISLATION & THERMODYNAMIQUE ÉLÉMENTAIRE
      ================================================================== */
+  {
+    id: "m-rev",
+    type: "menu",
+    titre: "Réviser par thème",
+    dc: "Auto-formation · avant, pendant, après",
+    corps:
+      "<p class=\"lead\">Cet espace est fait pour être utilisé <b>seul</b> : avant la formation pour " +
+      "arriver préparé, pendant les périodes de stage pour entretenir, avant l'épreuve pour cibler.</p>" +
+      "<p>Chaque série corrige <b>immédiatement</b>, chaque erreur renvoie vers la fiche à relire, " +
+      "et le bilan de fin liste tes points faibles. Ton <b>score précédent</b> s'affiche à chaque " +
+      "nouvelle tentative : bats-le.</p>",
+    menu_titre: "Choisir un thème",
+    liens: [
+      { vers: "rev-g1", icone: "1", titre: "Les bases : pression, température, cycle", desc: "unités, relation P-T, les quatre organes, le log p-h — 10 questions." },
+      { vers: "rev-g2", icone: "2", titre: "Environnement et F-Gas", desc: "PRP, tonnes équivalent CO₂, règlement (UE) 2024/573 — 7 questions." },
+      { vers: "rev-g3", icone: "3", titre: "Contrôles avant mise en service", desc: "épreuve azote, tirage au vide — 5 questions." },
+      { vers: "rev-g4", icone: "4", titre: "Contrôles d'étanchéité", desc: "registre, méthode indirecte, détecteur — le cœur du parcours E — 10 questions." },
+      { vers: "rev-g5", icone: "5", titre: "Récupération, charge, traçabilité", desc: "cylindres, pesée, registre, fin de vie — le cœur du parcours D — 10 questions." },
+      { vers: "rev-g6", icone: "6", titre: "Compresseur et circuit d'huile", desc: "principe, sécurités, retour d'huile, diagnostics — 10 questions." },
+      { vers: "rev-g7", icone: "7", titre: "Condenseur", desc: "principe, pressostats, incondensables, entretien — 8 questions." },
+      { vers: "rev-g8", icone: "8", titre: "Évaporateur", desc: "surchauffe, givrage, dégivrage, diagnostics — 10 questions." },
+      { vers: "rev-g9", icone: "9", titre: "Détendeur et accessoires", desc: "TXV, capillaire, filtre, voyant, électrovanne — 10 questions." },
+      { vers: "rev-g10", icone: "10", titre: "Tuyauterie et brasage", desc: "balayage azote, alliages, cintrage — 6 questions." },
+      { vers: "rev-g11", icone: "11", titre: "Substitution et efficacité", desc: "classes de sécurité, COP, drop-in et retrofit — 10 questions." },
+      { vers: "rev-g12", icone: "12", titre: "Hydrocarbures", desc: "R-290, analyse de risques, zéro ignition — 7 questions." },
+      { vers: "rev-g13", icone: "13", titre: "CO₂ et NH₃", desc: "reconnaître, respecter les catégories, ne pas intervenir — 9 questions." },
+      { vers: "ex-ech", icone: "🟢", titre: "Se tester — Échauffement (niveau 1)", desc: "12 questions fondamentales, tous thèmes, seuil 60 %." },
+      { vers: "ex-defi", icone: "🔴", titre: "Se tester — Défi technicien (niveau 2)", desc: "15 diagnostics, tous thèmes, seuil 80 %." },
+      { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Revenir aux parcours." },
+    ],
+    notes_pilote:
+      "Le concept : le stagiaire reçoit le lien AVANT la formation, le garde pendant les périodes " +
+      "en entreprise, et révise en fonction de son niveau — c'est un outil de préparation à l'examen, " +
+      "pas seulement un support de séance. Les scores restent dans le navigateur de l'élève " +
+      "(localStorage) : rien ne remonte, RGPD tranquille. En séance, ouvrir cette page en début de " +
+      "semaine et laisser 20 minutes de révision libre : chacun travaille SON point faible.",
+  },
   {
     id: "g1a",
     type: "cours",
@@ -1717,6 +1761,149 @@ export const CARTES = [
   /* ==================================================================
      EXAMENS BLANCS — entraînement, pas l'épreuve officielle
      ================================================================== */
+  {
+    id: "rev-g1",
+    type: "examen",
+    titre: "Réviser — Les bases : pression, température, cycle",
+    dc: "Révision · G1",
+    examen: { dc: ["G1"], n: 10, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g2",
+    type: "examen",
+    titre: "Réviser — Environnement et F-Gas",
+    dc: "Révision · G2",
+    examen: { dc: ["G2"], n: 7, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g3",
+    type: "examen",
+    titre: "Réviser — Contrôles avant mise en service",
+    dc: "Révision · G3",
+    examen: { dc: ["G3"], n: 5, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g4",
+    type: "examen",
+    titre: "Réviser — Contrôles d'étanchéité",
+    dc: "Révision · G4",
+    examen: { dc: ["G4"], n: 10, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g5",
+    type: "examen",
+    titre: "Réviser — Récupération, charge, traçabilité",
+    dc: "Révision · G5",
+    examen: { dc: ["G5"], n: 10, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g6",
+    type: "examen",
+    titre: "Réviser — Compresseur et circuit d'huile",
+    dc: "Révision · G6",
+    examen: { dc: ["G6"], n: 10, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g7",
+    type: "examen",
+    titre: "Réviser — Condenseur",
+    dc: "Révision · G7",
+    examen: { dc: ["G7"], n: 8, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g8",
+    type: "examen",
+    titre: "Réviser — Évaporateur",
+    dc: "Révision · G8",
+    examen: { dc: ["G8"], n: 10, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g9",
+    type: "examen",
+    titre: "Réviser — Détendeur et accessoires",
+    dc: "Révision · G9",
+    examen: { dc: ["G9"], n: 10, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g10",
+    type: "examen",
+    titre: "Réviser — Tuyauterie et brasage",
+    dc: "Révision · G10",
+    examen: { dc: ["G10"], n: 6, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g11",
+    type: "examen",
+    titre: "Réviser — Substitution et efficacité",
+    dc: "Révision · G11",
+    examen: { dc: ["G11"], n: 10, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g12",
+    type: "examen",
+    titre: "Réviser — Hydrocarbures",
+    dc: "Révision · G12",
+    examen: { dc: ["G12"], n: 7, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
+  {
+    id: "rev-g13",
+    type: "examen",
+    titre: "Réviser — CO₂ et NH₃",
+    dc: "Révision · G13",
+    examen: { dc: ["G13"], n: 9, seuil: 60 },
+    notes_pilote:
+      "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
+      "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +
+      "À donner AVANT la formation et pendant les périodes de stage.",
+  },
   {
     id: "ex-ech",
     type: "examen",
