@@ -36,6 +36,14 @@ professionnels, c'est disqualifiant.
 | `illu-d.jpg` | ambiance | `m-d` (bandeau) | Gemini, 23/07/2026 |
 | `illu-e.jpg` | ambiance | `m-e` (bandeau) | Gemini, 23/07/2026 |
 
+## Outils interactifs embarqués (res/outils/)
+
+| Fichier | Rôle | Cartes |
+|---|---|---|
+| `fluides-data.js` | base de 17 fluides (tables P/T, PRP, classe, glide, statut) extraite de la réglette FRIGOLO `frigorx/inerweb-frigolo` ; GWP de R-32/R-134a/R-404A/R-410A alignés sur Mission F-GAZ pour la cohérence du pack | — |
+| `reglette.html` | réglette P ↔ T : fluide + pression relative → P abs, T° sat, puis surchauffe ou sous-refroidissement avec verdict (5-10 K / 4-8 K) | `g1b`, `g4b` (iframe dans un bloc « À toi ») |
+| `fiche-fluide.html` | carte d'identité : famille, classe NF EN 378, PRP, glide, statut + calcul charge → t éq. CO₂ | `g2`, `g11` (iframe) |
+
 > ℹ️ **Animations** : CSS pur embarqué dans le SVG (`stroke-dashoffset` pour les flux, `transform`
 > pour piston/hélice/sonde) — fonctionne dans une balise `<img>`, sans JavaScript, et respecte
 > `prefers-reduced-motion`. Bilan : 16 des 17 fiches de cours portent au moins un visuel.

@@ -82,6 +82,10 @@ const SOMMAIRE = { vers: "c00", libelle: "↺ Sommaire", sec: true };
 const suite = (vers, quoi) => ({ vers, libelle: "Suite ▸ " + quoi });
 /* Un schéma se place dans le CORPS et non en `illus` : la charte recadre les
    illustrations de tête (object-fit: cover), ce qui tronquerait le dessin. */
+/* Outil interactif embarqué (iframe, même origine — fonctionne en local et sur Pages). */
+const outil = (fichier, titre, h) =>
+  '<iframe src="packs/fluides/res/outils/' + fichier + '" title="' + titre + '" ' +
+  'style="width:100%;height:' + h + 'px;border:0;background:#fff;border-radius:6px" loading="lazy"></iframe>';
 const schema = (fichier, alt) =>
   '<img src="packs/fluides/res/svg/' + fichier + '" alt="' + alt + '" ' +
   'style="width:100%;height:auto;display:block;margin:0 0 18px;' +
@@ -367,6 +371,12 @@ export const CARTES = [
           "<b>quel fluide</b> est dans le circuit. On le vérifie sur la plaque signalétique et dans le " +
           "registre, jamais « à la couleur de la bouteille ».",
       },
+      {
+        t: "À toi : la réglette P ↔ T",
+        html:
+          "<p style=\"margin:0 0 10px\">Choisis un fluide, règle la pression lue au manomètre, entre la température du tube : la surchauffe se calcule sous tes yeux. C est exactement le geste de la méthode indirecte.</p>" +
+          outil("reglette.html", "Réglette pression-température interactive", 445),
+      },
     ],
     question: {
       type: "qcm",
@@ -430,6 +440,12 @@ export const CARTES = [
           "Un HFC a un <b>ODP nul</b> (il ne détruit pas l'ozone) et pourtant un <b>PRP fort</b>. " +
           "Dire « il ne touche pas l'ozone, donc il est propre » est faux. Et un PRP bas ne veut pas dire " +
           "zéro impact : la question des <b>PFAS</b> se pose désormais sur certains fluides à bas PRP.",
+      },
+      {
+        t: "À toi : la carte d identité du fluide",
+        html:
+          "<p style=\"margin:0 0 10px\">Choisis un fluide, entre une charge : les tonnes équivalent CO₂ se calculent. Compare deux fluides à charge égale — c est l exercice qui suit.</p>" +
+          outil("fiche-fluide.html", "Carte d identité du fluide interactive", 415),
       },
     ],
     question: {
@@ -669,6 +685,12 @@ export const CARTES = [
           "Toujours le même piège : ne pas confondre pression <b>relative</b> (lue au manomètre) et " +
           "pression <b>absolue</b> (souvent utilisée dans les tables). Écart : environ 1 bar. " +
           "Et un fluide n'a jamais la table d'un autre.",
+      },
+      {
+        t: "À toi : refais la lecture croisée",
+        html:
+          "<p style=\"margin:0 0 10px\">Reprends la réglette : pression relative, conversion en absolu, température de saturation, écart avec la mesure. Hors plage → on soupçonne.</p>" +
+          outil("reglette.html", "Réglette pression-température interactive", 445),
       },
     ],
     question: {
@@ -1294,6 +1316,12 @@ export const CARTES = [
           "Se tromper de classe, c'est se tromper d'EPI, de matériel électrique et de charge " +
           "admissible. À l'inverse, le <b>CO₂ est A1</b> : ni toxique ni inflammable — son danger " +
           "est la <b>pression</b>.",
+      },
+      {
+        t: "À toi : compare les candidats à la substitution",
+        html:
+          "<p style=\"margin:0 0 10px\">Passe en revue R-290, R-1234yf, R-744, R-32 : classe de sécurité, PRP, glide. Le fluide « parfait » n existe pas — c est tout l objet de ce groupe.</p>" +
+          outil("fiche-fluide.html", "Carte d identité du fluide interactive", 415),
       },
     ],
     question: {

@@ -71,8 +71,8 @@
   <text class="t" x="40" y="278">La ligne liquide, dans l'ordre</text>
 
   <!-- tuyauterie HP liquide, de la bouteille au détendeur -->
-  <path class="pipe" d="M 95 350 L 810 350"/>
-  <path class="flux" d="M 95 350 L 810 350"/>
+  <path class="pipe" d="M 148 350 L 810 350"/>
+  <path class="flux" d="M 148 350 L 810 350"/>
 
   <!-- réserve de liquide -->
   <g transform="translate(105,350) scale(2.4)" class="sym">

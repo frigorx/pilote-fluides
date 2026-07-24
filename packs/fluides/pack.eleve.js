@@ -1788,6 +1788,10 @@ window.PILOTE_PACK = {
      "type": "piege",
      "t": "Un fluide, une table",
      "html": "Chaque fluide a sa propre table : la pression lue ne veut rien dire tant qu'on ne sait pas <b>quel fluide</b> est dans le circuit. On le vérifie sur la plaque signalétique et dans le registre, jamais « à la couleur de la bouteille »."
+    },
+    {
+     "t": "À toi : la réglette P ↔ T",
+     "html": "<p style=\"margin:0 0 10px\">Choisis un fluide, règle la pression lue au manomètre, entre la température du tube : la surchauffe se calcule sous tes yeux. C est exactement le geste de la méthode indirecte.</p><iframe src=\"packs/fluides/res/outils/reglette.html\" title=\"Réglette pression-température interactive\" style=\"width:100%;height:445px;border:0;background:#fff;border-radius:6px\" loading=\"lazy\"></iframe>"
     }
    ],
    "question": {
@@ -1847,6 +1851,10 @@ window.PILOTE_PACK = {
      "type": "piege",
      "t": "ODP et PRP ne se confondent pas",
      "html": "Un HFC a un <b>ODP nul</b> (il ne détruit pas l'ozone) et pourtant un <b>PRP fort</b>. Dire « il ne touche pas l'ozone, donc il est propre » est faux. Et un PRP bas ne veut pas dire zéro impact : la question des <b>PFAS</b> se pose désormais sur certains fluides à bas PRP."
+    },
+    {
+     "t": "À toi : la carte d identité du fluide",
+     "html": "<p style=\"margin:0 0 10px\">Choisis un fluide, entre une charge : les tonnes équivalent CO₂ se calculent. Compare deux fluides à charge égale — c est l exercice qui suit.</p><iframe src=\"packs/fluides/res/outils/fiche-fluide.html\" title=\"Carte d identité du fluide interactive\" style=\"width:100%;height:415px;border:0;background:#fff;border-radius:6px\" loading=\"lazy\"></iframe>"
     }
    ],
    "question": {
@@ -2081,6 +2089,10 @@ window.PILOTE_PACK = {
      "type": "piege",
      "t": "Relatif ou absolu ?",
      "html": "Toujours le même piège : ne pas confondre pression <b>relative</b> (lue au manomètre) et pression <b>absolue</b> (souvent utilisée dans les tables). Écart : environ 1 bar. Et un fluide n'a jamais la table d'un autre."
+    },
+    {
+     "t": "À toi : refais la lecture croisée",
+     "html": "<p style=\"margin:0 0 10px\">Reprends la réglette : pression relative, conversion en absolu, température de saturation, écart avec la mesure. Hors plage → on soupçonne.</p><iframe src=\"packs/fluides/res/outils/reglette.html\" title=\"Réglette pression-température interactive\" style=\"width:100%;height:445px;border:0;background:#fff;border-radius:6px\" loading=\"lazy\"></iframe>"
     }
    ],
    "question": {
@@ -2709,6 +2721,10 @@ window.PILOTE_PACK = {
      "type": "piege",
      "t": "Le piège de l'année",
      "html": "<b>Le R-290 est A3</b>, pas A2L. Tout hydrocarbure est très inflammable. Se tromper de classe, c'est se tromper d'EPI, de matériel électrique et de charge admissible. À l'inverse, le <b>CO₂ est A1</b> : ni toxique ni inflammable — son danger est la <b>pression</b>."
+    },
+    {
+     "t": "À toi : compare les candidats à la substitution",
+     "html": "<p style=\"margin:0 0 10px\">Passe en revue R-290, R-1234yf, R-744, R-32 : classe de sécurité, PRP, glide. Le fluide « parfait » n existe pas — c est tout l objet de ce groupe.</p><iframe src=\"packs/fluides/res/outils/fiche-fluide.html\" title=\"Carte d identité du fluide interactive\" style=\"width:100%;height:415px;border:0;background:#fff;border-radius:6px\" loading=\"lazy\"></iframe>"
     }
    ],
    "question": {
