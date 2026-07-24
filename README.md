@@ -1,5 +1,7 @@
 # Pilote — Habilitation fluides frigorigènes (démonstrateur)
 
+> 👉 **Nouvelle session ? Lire [`REPRISE.md`](REPRISE.md) en premier** — état, décisions, pièges, prochaines étapes.
+
 Le contenu de la formation **habilitation fluides frigorigènes** (catégories **A1 · A2 · D · E**)
 tournant dans le moteur générique **inerWeb Pilote**.
 
@@ -91,6 +93,7 @@ d'interdiction). Ces valeurs sont à revalider sur pièce avant tout usage en fo
 ```bash
 node build/convert.mjs   # Mission F-GAZ → packs/fluides/banque.gen.json
 node build/build.mjs      # cartes.js + banque → pack.pilote.js ET pack.eleve.js
+node build/relecture.mjs  # → relecture.html (document de bon à tirer)
 ```
 
 | Fichier | Rôle |

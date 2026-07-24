@@ -1,10 +1,9 @@
-/* Génère le document de relecture « bon à tirer » : fiches + exercices + banque
-   (indices et remédiations compris), avec cases à cocher. Publié à la racine
-   pour être partageable par lien. Usage : node build/relecture.mjs */
+/* Génère le document de relecture à plat : fiches + exercices + banque,
+   avec cases à cocher. Sortie : Bureau de Franck. */
 import { readFileSync, writeFileSync } from "node:fs";
 
 global.window = {};
-eval(readFileSync("packs/fluides/pack.pilote.js", "utf8"));
+eval(readFileSync(new URL("../packs/fluides/pack.pilote.js", import.meta.url), "utf8"));
 const P = window.PILOTE_PACK;
 
 const esc = (s) => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -99,6 +98,6 @@ h += "</ul>";
 
 h += `<p class="meta" style="margin-top:30px">Fin du document. Une fois annoté, renvoyez-le tel quel : chaque ✏ sera reporté dans le pack, fiche par fiche.</p></body></html>`;
 
-const SORTIE = "relecture.html";
+const SORTIE = new URL("../relecture.html", import.meta.url);
 writeFileSync(SORTIE, h, "utf8");
-console.log("écrit :", SORTIE, "—", Math.round(h.length / 1024), "Ko");
+console.log("✓ relecture.html écrit —", Math.round(h.length / 1024), "Ko");
