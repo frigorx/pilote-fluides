@@ -18,12 +18,27 @@ professionnels, c'est disqualifiant.
 
 | Fichier | Type | Carte | Source |
 |---|---|---|---|
-| `../svg/croix-frigoriste.svg` | schéma | `g1a`, dans le corps + ressource globale | SVG à la main ; symboles compresseur, détendeur thermostatique à égalisation externe et ventilateur axial repris de `usine-contenu/bibliotheque-symboles/svg/frigo_schema/` |
-| `../svg/points-de-fuite.svg` | schéma | `g4a`, dans le corps + ressource globale | SVG à la main, même disposition que la croix ; 6 familles de points de fuite numérotées |
+| `../svg/croix-frigoriste.svg` | schéma **animé** (flux + hélice) | `g1a` + ressource globale | SVG à la main ; symboles compresseur, détendeur thermo externe et ventilateur axial repris de `usine-contenu/bibliotheque-symboles/svg/frigo_schema/` |
+| `../svg/points-de-fuite.svg` | schéma | `g4a` + ressource globale | SVG à la main, même disposition que la croix ; 6 familles de points de fuite numérotées |
+| `../svg/compresseurs.svg` | schéma **animé** (piston) | `g6` | coupe animée aspiration/refoulement + les 4 symboles bibliothèque (piston, scroll, vis, rotatif) |
+| `../svg/detendeurs-ligne.svg` | schéma animé (flux) | `g9` | 4 détendeurs (thermo int/ext, électronique, capillaire) + la ligne liquide : réserve, filtre, voyant, électrovanne — symboles bibliothèque |
+| `../svg/prp-echelle.svg` | infographie animée | `g2` | barres comparées CO₂ 1 / R-32 675 / R-410A 2088 / R-404A 3922 (valeurs Mission F-GAZ, indicatives) |
+| `../svg/classes-securite.svg` | infographie | `g11` + `g12` | matrice NF EN 378, uniquement les classements autorisés par la charte |
+| `../svg/lecture-table.svg` | schéma | `g1b` + `g4b` | la lecture croisée : manomètre → +1 bar → table → sonde de contact |
+| `../svg/epreuve-azote.svg` | schéma animé (flux) | `g3` | bouteille N₂, manifold, circuit + pictogrammes O₂/air barrés |
+| `../svg/balayage-azote.svg` | schéma **animé** (flux + flamme) | `g10` | balayage pendant le brasage, sortie libre |
+| `../svg/balayage-detecteur.svg` | schéma **animé** (sonde) | `g4c` | la sonde balaie le raccord, nuage de fuite pulsant |
+| `../svg/recuperation.svg` | schéma animé (flux) | `g5a` + `g5b` | installation isolée → groupe → bouteille sur balance, niveau maxi marqué |
+| `../svg/mesure-surchauffe.svg` | schéma animé (flux) | `g8` | les 2 points de mesure + formule + repère 5-10 K |
+| `../svg/echangeur-air.svg` | schéma **animé** (air + hélice) | `g7` | batterie ailetée traversée par l'air, encart « batterie sale » |
 | `illu-a1.jpg` | ambiance | `m-a1` (bandeau) | Gemini, 23/07/2026 — voir prompts ci-dessous |
 | `illu-a2.jpg` | ambiance | `m-a2` (bandeau) | Gemini, 23/07/2026 |
 | `illu-d.jpg` | ambiance | `m-d` (bandeau) | Gemini, 23/07/2026 |
 | `illu-e.jpg` | ambiance | `m-e` (bandeau) | Gemini, 23/07/2026 |
+
+> ℹ️ **Animations** : CSS pur embarqué dans le SVG (`stroke-dashoffset` pour les flux, `transform`
+> pour piston/hélice/sonde) — fonctionne dans une balise `<img>`, sans JavaScript, et respecte
+> `prefers-reduced-motion`. Bilan : 16 des 17 fiches de cours portent au moins un visuel.
 
 > ⚠️ **Un schéma ne se met pas en `illus`** : la charte recadre l'illustration de tête
 > (`object-fit: cover`, hauteur max 340 px) et tronquerait le dessin. Les schémas passent par
@@ -51,13 +66,10 @@ Préfixe commun, posé sur la première image et rappelé ensuite par « même s
 
 ## Reste à produire
 
-### Schémas (SVG, prioritaires)
+### Schémas (SVG)
 
 | Cible | Contenu attendu | Carte |
 |---|---|---|
-| `lecture-croisee.svg` | extrait de table de saturation avec la ligne surlignée : pression théorique / pression mesurée / écart | `g1b`, `g4b` |
-| `balayage-azote.svg` | montage du balayage à l'azote pendant le brasage : bouteille, détendeur, tuyau, sortie | `g10` |
-| `recuperation.svg` | montage du groupe de récupération : machine, flexibles, cylindre sur balance | `g5a` |
 | `manifold.svg` | raccordement d'un manifold : BP à gauche, HP à droite, flexible de service | `g4b`, `g5b` |
 
 ### Ambiance (génératif)

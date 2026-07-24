@@ -340,6 +340,7 @@ export const CARTES = [
     dc: "G1 · code 1.03",
     minuteur_s: 300,
     corps:
+      schema("lecture-table.svg", "La lecture croisée : manomètre + 1 bar, table de saturation du fluide, sonde de contact.") +
       "<p>Une <b>table de saturation</b> donne, pour un fluide donné, la correspondance entre pression " +
       "et température d'équilibre liquide-vapeur. Elle se lit dans les deux sens : je mesure une pression, " +
       "j'en déduis une température ; je mesure une température, j'en déduis une pression.</p>" +
@@ -401,6 +402,7 @@ export const CARTES = [
     dc: "G2 · codes 2.01 · 2.02",
     minuteur_s: 300,
     corps:
+      schema("prp-echelle.svg", "Comparaison du PRP : CO2 = 1, R-32 = 675, R-410A = 2088, R-404A = 3922.") +
       "<p>Deux accords internationaux, deux problèmes différents. Le <b>protocole de Montréal</b> (1987) " +
       "visait la <b>couche d'ozone</b> : il a fait disparaître les CFC puis les HCFC. La " +
       "<b>convention climat</b> (Kyoto, Paris) vise le <b>réchauffement</b> : c'est elle qui s'attaque " +
@@ -508,6 +510,7 @@ export const CARTES = [
     dc: "G3 · codes 3.01 → 3.05",
     minuteur_s: 360,
     corps:
+      schema("epreuve-azote.svg", "Montage de l épreuve de pression : bouteille d azote, manifold, circuit — oxygène et air comprimé barrés.") +
       "<p>Deux épreuves, deux buts, souvent enchaînées. L'<b>épreuve de résistance</b> vérifie que " +
       "l'assemblage tient mécaniquement. L'<b>épreuve d'étanchéité</b> vérifie qu'il ne laisse rien " +
       "passer. Les pressions d'épreuve se prennent <b>sur la documentation constructeur</b> et la " +
@@ -640,6 +643,7 @@ export const CARTES = [
     dc: "G4 · codes 4.04 · 4.05",
     minuteur_s: 360,
     corps:
+      schema("lecture-table.svg", "La lecture croisée : manomètre + 1 bar, table de saturation du fluide, sonde de contact.") +
       "<p>La méthode indirecte <b>ne détecte pas la fuite</b> : elle détecte un <b>fonctionnement " +
       "anormal</b> qui la trahit. On relève les <b>pressions</b> (BP et HP) au manomètre et les " +
       "<b>températures</b> au thermomètre de contact, puis on compare à la <b>table de saturation</b> " +
@@ -700,6 +704,7 @@ export const CARTES = [
     dc: "G4 · codes 4.07 · 4.08 · 4.09",
     minuteur_s: 330,
     corps:
+      schema("balayage-detecteur.svg", "La sonde du détecteur longe le raccord lentement ; une alerte se confirme par un second passage.") +
       "<p>La méthode directe <b>localise physiquement</b> la fuite. Pour la catégorie E, elle se " +
       "pratique <b>sans accéder au circuit</b> : c'est le code <b>4.07</b>. Le code 4.06, qui suppose " +
       "d'intervenir dans le circuit, n'est pas dans le champ de la catégorie E.</p>" +
@@ -766,6 +771,7 @@ export const CARTES = [
     dc: "G5 · codes 5.01 → 5.04",
     minuteur_s: 360,
     corps:
+      schema("recuperation.svg", "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.") +
       "<p>Chaque connexion et chaque déconnexion est un <b>point de fuite</b> : le geste est lent, " +
       "contrôlé, flexibles purgés. Avant de récupérer, on <b>arrête et on isole</b> le système.</p>" +
       "<p>Le <b>groupe de récupération</b> transfère le fluide vers un cylindre prévu pour, en phase " +
@@ -829,6 +835,7 @@ export const CARTES = [
     dc: "G5 · codes 5.05 → 5.09",
     minuteur_s: 330,
     corps:
+      schema("recuperation.svg", "Rappel du montage : la bouteille se pèse avant, ne se remplit jamais à ras, ne mélange jamais deux fluides.") +
       "<p>Pour charger, on détermine d'abord l'<b>état du fluide</b> et la <b>quantité prévue</b> " +
       "(plaque signalétique, doc constructeur). La charge se contrôle à la <b>balance</b>, jamais " +
       "« au manomètre » : le manomètre dit comment la machine se comporte, la balance dit combien " +
@@ -888,6 +895,7 @@ export const CARTES = [
     dc: "G6 · codes 6.01 → 6.08",
     minuteur_s: 300,
     corps:
+      schema("compresseurs.svg", "Coupe animée d un compresseur à piston et les quatre technologies : piston, scroll, vis, rotatif.") +
       "<p>Le compresseur est le <b>seul organe actif</b> du cycle : il aspire la vapeur basse pression " +
       "et la refoule en haute pression. Tout le reste est passif.</p>" +
       "<p>Ses points de fuite privilégiés : <b>raccords, vannes de service, presse-étoupe, bornes " +
@@ -948,6 +956,7 @@ export const CARTES = [
     dc: "G7 · codes 7.01 → 7.10",
     minuteur_s: 300,
     corps:
+      schema("echangeur-air.svg", "Le condenseur à air : l air ambiant traverse la batterie poussé par le ventilateur et ressort réchauffé.") +
       "<p>Le condenseur <b>évacue vers l'extérieur</b> la chaleur prise dans l'évaporateur, plus celle " +
       "apportée par la compression. La vapeur haute pression s'y refroidit, se liquéfie, puis se " +
       "<b>sous-refroidit</b> : <b>4 à 8 K</b> en sortie, pour garantir du liquide pur au détendeur.</p>" +
@@ -1008,6 +1017,7 @@ export const CARTES = [
     dc: "G8 · codes 8.01 → 8.11",
     minuteur_s: 300,
     corps:
+      schema("mesure-surchauffe.svg", "La surchauffe se mesure en deux points : manomètre BP vers la table, sonde de contact sur le tube.") +
       "<p>C'est le point <b>froid</b> du circuit : le fluide y absorbe la chaleur du milieu à refroidir " +
       "et se vaporise. En sortie, il doit être <b>entièrement vapeur</b>, avec une <b>surchauffe de " +
       "5 à 10 K</b> — c'est ce qui protège le compresseur du coup de liquide.</p>" +
@@ -1122,6 +1132,7 @@ export const CARTES = [
     dc: "G9 · codes 9.01 → 9.10",
     minuteur_s: 300,
     corps:
+      schema("detendeurs-ligne.svg", "Les quatre types de détendeurs et la ligne liquide avec ses accessoires dans l ordre.") +
       "<p>Le détendeur fait chuter la pression et <b>dose le débit de liquide</b> envoyé à " +
       "l'évaporateur. Le <b>détendeur thermostatique</b> régule sur la <b>surchauffe</b> : son bulbe, " +
       "fixé sur la ligne d'aspiration, sent la température du gaz et ouvre ou ferme en conséquence. " +
@@ -1189,6 +1200,7 @@ export const CARTES = [
     dc: "G10 · codes 10.01 · 10.02",
     minuteur_s: 300,
     corps:
+      schema("balayage-azote.svg", "Brasage sous balayage d azote : l azote traverse le tube pendant la chauffe et ressort librement.") +
       "<p>Braser un circuit frigorifique, ce n'est pas braser une tuyauterie d'eau. À la flamme, " +
       "l'intérieur du cuivre s'oxyde et forme une <b>calamine</b> noire qui se détache plus tard, " +
       "circule, et bouche le déshydrateur ou abîme le compresseur — des mois après, loin de la cause.</p>" +
@@ -1253,6 +1265,7 @@ export const CARTES = [
     dc: "G11 · codes 11.01 → 11.05",
     minuteur_s: 300,
     corps:
+      schema("classes-securite.svg", "Matrice des classes NF EN 378 : CO2 en A1, R-32 et R-1234yf en A2L, R-290 en A3, NH3 en B2L.") +
       "<p>Remplacer un fluide à fort PRP se fait dans deux directions : les <b>fluides naturels</b> " +
       "(CO₂, ammoniac, hydrocarbures) et les fluides de synthèse à faible PRP (<b>HFO</b>, HFC bas PRP). " +
       "Il n'existe <b>pas de fluide universel</b> : le choix dépend de l'application, du climat, et de " +
@@ -1321,6 +1334,7 @@ export const CARTES = [
     dc: "G12 · codes 12.01 → 12.14",
     minuteur_s: 360,
     corps:
+      schema("classes-securite.svg", "Matrice des classes NF EN 378 : CO2 en A1, R-32 et R-1234yf en A2L, R-290 en A3, NH3 en B2L.") +
       "<p>Les hydrocarbures — <b>R-290</b> (propane), <b>R-600a</b> (isobutane) — sont classés " +
       "<b>A3</b> : très inflammables. Ils s'imposent pourtant, parce que leur PRP est très bas et " +
       "leurs performances excellentes : on les trouve dans les réfrigérateurs domestiques, les " +

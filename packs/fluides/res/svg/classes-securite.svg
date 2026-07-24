@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-label="Matrice des classes de sécurité NF EN 378 : toxicité en lignes, inflammabilité en colonnes. CO2 en A1, R-32 et R-1234yf en A2L, R-290 en A3, NH3 en B2L.">
+  <title>Classes de sécurité NF EN 378</title>
+
+  <style>
+    .t  { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .h  { font:700 15px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .cl { font:700 22px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .fl { font:700 16px Calibri,Segoe UI,sans-serif; fill:#33475b; }
+    .s  { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .cell { stroke:#c9d4de; stroke-width:1.5; rx:8; }
+  </style>
+
+  <rect width="900" height="400" fill="#ffffff"/>
+
+  <text class="t" x="40" y="36">La classe du fluide commande tout le reste</text>
+  <text class="s" x="40" y="58">EPI, matériel électrique, détection, charge admissible dans le local : tout part de là (NF EN 378).</text>
+
+  <!-- en-têtes colonnes : inflammabilité -->
+  <text class="h" x="330" y="102" text-anchor="middle">1 — aucune flamme</text>
+  <text class="h" x="545" y="102" text-anchor="middle">2L — faible, lente</text>
+  <text class="h" x="760" y="102" text-anchor="middle">3 — forte</text>
+  <text class="s" x="855" y="80" text-anchor="end">inflammabilité →</text>
+
+  <!-- en-têtes lignes : toxicité -->
+  <text class="h" x="120" y="180" text-anchor="middle">A</text>
+  <text class="s" x="120" y="200" text-anchor="middle">faible toxicité</text>
+  <text class="h" x="120" y="295" text-anchor="middle">B</text>
+  <text class="s" x="120" y="315" text-anchor="middle">toxique</text>
+  <text class="s" x="45" y="130">toxicité ↓</text>
+
+  <!-- ligne A -->
+  <rect class="cell" x="230" y="120" width="200" height="110" fill="#e9f5ee"/>
+  <text class="cl" x="330" y="160" text-anchor="middle">A1</text>
+  <text class="fl" x="330" y="190" text-anchor="middle">CO₂ (R-744)</text>
+  <text class="s"  x="330" y="212" text-anchor="middle">danger = la pression</text>
+
+  <rect class="cell" x="445" y="120" width="200" height="110" fill="#fdf3e4"/>
+  <text class="cl" x="545" y="160" text-anchor="middle">A2L</text>
+  <text class="fl" x="545" y="190" text-anchor="middle">R-32 · R-1234yf</text>
+  <text class="s"  x="545" y="212" text-anchor="middle">outillage adapté, ventilation</text>
+
+  <rect class="cell" x="660" y="120" width="200" height="110" fill="#fbe7e0"/>
+  <text class="cl" x="760" y="160" text-anchor="middle">A3</text>
+  <text class="fl" x="760" y="190" text-anchor="middle">R-290 (propane)</text>
+  <text class="s"  x="760" y="212" text-anchor="middle">charge limitée, zéro ignition</text>
+
+  <!-- ligne B -->
+  <rect class="cell" x="230" y="245" width="200" height="110" fill="#f2f5f8"/>
+  <text class="s" x="330" y="305" text-anchor="middle">—</text>
+
+  <rect class="cell" x="445" y="245" width="200" height="110" fill="#efe6f3"/>
+  <text class="cl" x="545" y="285" text-anchor="middle">B2L</text>
+  <text class="fl" x="545" y="315" text-anchor="middle">NH₃ (R-717)</text>
+  <text class="s"  x="545" y="337" text-anchor="middle">toxique ET inflammable : catégorie C</text>
+
+  <rect class="cell" x="660" y="245" width="200" height="110" fill="#f2f5f8"/>
+  <text class="s" x="760" y="305" text-anchor="middle">—</text>
+
+  <!-- le piège -->
+  <g transform="translate(330,375)">
+    <text class="fl" x="-290" y="0" style="fill:#c9451a">⚠ Le piège de l'année :</text>
+    <text class="s" x="-115" y="0">le R-290 est <tspan style="font-weight:700;fill:#c9451a">A3</tspan>, pas A2L — tout hydrocarbure est très inflammable.</text>
+  </g>
+</svg>

@@ -16,6 +16,16 @@
     .etiqhp { font:700 14px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
     .etiqbp { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
     .pos    { font:700 12px Calibri,Segoe UI,sans-serif; fill:#8494a4; letter-spacing:2px; }
+    /* le fluide circule : pointillés blancs animés par-dessus les tuyauteries */
+    .flux   { fill:none; stroke:#ffffff; stroke-opacity:.9; stroke-width:2.6;
+              stroke-linecap:round; stroke-dasharray:0.1 17;
+              animation:flux 1.1s linear infinite; }
+    @keyframes flux { to { stroke-dashoffset:-17.1; } }
+    /* l'hélice du ventilateur tourne */
+    .helice { transform-box:fill-box; transform-origin:center;
+              animation:spin 1.8s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @media (prefers-reduced-motion:reduce) { .flux, .helice { animation:none; } }
   </style>
 
   <defs>
@@ -42,6 +52,12 @@
   <!-- aspiration : évaporateur → compresseur — BP vapeur surchauffée -->
   <path class="bp" d="M 560 500 L 670 500 L 670 351" marker-end="url(#fb)"/>
 
+  <!-- circulation animée du fluide (tracés identiques, pointillés blancs) -->
+  <path class="flux" d="M 670 275 L 670 120 L 566 120"/>
+  <path class="flux" d="M 340 120 L 230 120 L 230 278"/>
+  <path class="flux" d="M 230 336 L 230 500 L 334 500"/>
+  <path class="flux" d="M 560 500 L 670 500 L 670 351"/>
+
   <!-- ======================= CONDENSEUR (HAUT) ======================= -->
   <g transform="translate(450,120)">
     <rect x="-110" y="-38" width="220" height="76" rx="4" fill="#fff" stroke="#33475b" stroke-width="2.2"/>
@@ -54,10 +70,12 @@
   <!-- ventilateur axial — symbole normalisé (bibliothèque inerWeb) -->
   <g transform="translate(450,46) scale(1.5)" stroke="#33475b" stroke-width="1.5" fill="none">
     <circle cx="0" cy="0" r="15" fill="#fff"/>
-    <path d="M -6 -7 A 6 6 0 0 1 0 -1"/>
-    <path d="M -1 0 A 6 6 0 0 1 -7 -6"/>
-    <path d="M -7 6 A 6 6 0 0 1 -1 0"/>
-    <path d="M 0 1 A 6 6 0 0 1 -6 7"/>
+    <g class="helice">
+      <path d="M -6 -7 A 6 6 0 0 1 0 -1"/>
+      <path d="M -1 0 A 6 6 0 0 1 -7 -6"/>
+      <path d="M -7 6 A 6 6 0 0 1 -1 0"/>
+      <path d="M 0 1 A 6 6 0 0 1 -6 7"/>
+    </g>
     <ellipse cx="4.5" cy="0" rx="4.5" ry="2.5"/>
     <path d="M -7 -13 L 13 -7 M -7 13 L 13 7"/>
   </g>
