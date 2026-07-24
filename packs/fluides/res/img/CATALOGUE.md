@@ -42,6 +42,7 @@ professionnels, c'est disqualifiant.
 |---|---|---|
 | `fluides-data.js` | base de 17 fluides (tables P/T, PRP, classe, glide, statut) extraite de la réglette FRIGOLO `frigorx/inerweb-frigolo` ; GWP de R-32/R-134a/R-404A/R-410A alignés sur Mission F-GAZ pour la cohérence du pack | — |
 | `reglette.html` | réglette P ↔ T : fluide + pression relative → P abs, T° sat, puis surchauffe ou sous-refroidissement avec verdict (5-10 K / 4-8 K) | `g1b`, `g4b` (iframe dans un bloc « À toi ») |
+| — iframe externe | **Diagramme Enthalpique+ v3.2** (`frigorx/diagramme-enthalpique`) embarqué dans l'exercice `x2` : l'élève entre les relevés de la panne et voit le cycle | `x2` |
 | `fiche-fluide.html` | carte d'identité : famille, classe NF EN 378, PRP, glide, statut + calcul charge → t éq. CO₂ | `g2`, `g11` (iframe) |
 
 > ℹ️ **Animations** : CSS pur embarqué dans le SVG (`stroke-dashoffset` pour les flux, `transform`

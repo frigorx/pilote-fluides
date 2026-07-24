@@ -20,7 +20,8 @@ tournant dans le moteur générique **inerWeb Pilote**.
 | **Remédiation** | réponse fausse → bouton « Revoir la fiche » vers la fiche concernée |
 | **Mode pilotage** | la couche de notes formateur, invisible côté élève |
 | **Critères 0-4** | codes du référentiel positionnables en mode notation |
-| **Outils embarqués** | réglette P ↔ T et carte d'identité du fluide (iframes), sur les données de la réglette FRIGOLO |
+| **Outils embarqués** | réglette P ↔ T, carte d'identité du fluide (données FRIGOLO), Diagramme Enthalpique+ v3.2 dans l'exercice de diagnostic |
+| **Atelier numérique** | 10 ressources reliées aux fiches : simulateurs KP1/KP5, module compresseur, leçon scroll, échangeurs, TP manomètres, TP pesée, CERFA/FI/BSD, symboles |
 
 Devise du moteur : **2 min avant / rien pendant / 30 s après**.
 

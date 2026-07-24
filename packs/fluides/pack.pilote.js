@@ -31,6 +31,68 @@ window.PILOTE_PACK = {
    "url": "https://aida.ineris.fr/reglementation/arrete-211125-relatif-a-delivrance-attestations-daptitude-prevues-a-larticle-r-543"
   },
   {
+   "id": "r-enthalpique",
+   "titre": "📈 Diagramme Enthalpique+ v3.2 — tracer le cycle complet",
+   "type": "lien",
+   "global": true,
+   "url": "https://frigorx.github.io/diagramme-enthalpique/"
+  },
+  {
+   "id": "r-symboles",
+   "titre": "✏ Bibliothèque de symboles frigorifiques + jeux",
+   "type": "lien",
+   "global": true,
+   "url": "https://frigorx.github.io/inerweb-frigolo/outils/symboles-frigorifiques.html"
+  },
+  {
+   "id": "r-kp1",
+   "titre": "🔧 Simulateur — pressostat BP (KP1) : réglage et diagnostic",
+   "type": "lien",
+   "url": "https://frigorx.github.io/inerweb-frigolo/outils/kp1-pressostat-bp.html"
+  },
+  {
+   "id": "r-kp5",
+   "titre": "🔧 Simulateur — pressostat HP de sécurité (KP5)",
+   "type": "lien",
+   "url": "https://frigorx.github.io/inerweb-frigolo/outils/kp5-pressostat-hp.html"
+  },
+  {
+   "id": "r-module-comp",
+   "titre": "🧩 Module compresseur — leçon interactive complète",
+   "type": "lien",
+   "url": "https://frigorx.github.io/inerweb-frigolo/outils/module-compresseur.html"
+  },
+  {
+   "id": "r-scroll",
+   "titre": "🌀 Le compresseur scroll — leçon interactive",
+   "type": "lien",
+   "url": "https://frigorx.github.io/inerweb-frigolo/outils/lecon-scroll.html"
+  },
+  {
+   "id": "r-echangeurs",
+   "titre": "♨ Échangeurs — évaporateur et condenseur en interactif",
+   "type": "lien",
+   "url": "https://frigorx.github.io/inerweb-frigolo/outils/echangeurs.html"
+  },
+  {
+   "id": "r-tp-mano",
+   "titre": "🧪 TP formatif — pose et dépose des manomètres (2 h, 7 activités)",
+   "type": "lien",
+   "url": "https://frigorx.github.io/inerweb-frigolo/outils/tp-manometres-formatif.html"
+  },
+  {
+   "id": "r-tp-peser",
+   "titre": "⚖ TP — inventaire et pesée des bouteilles frigorigènes",
+   "type": "lien",
+   "url": "https://frigorx.github.io/inerweb-tp-peser-bouteilles/"
+  },
+  {
+   "id": "r-cerfa",
+   "titre": "📋 inerWeb Fluide — s'entraîner : fiche d'intervention CERFA et BSD",
+   "type": "lien",
+   "url": "https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/"
+  },
+  {
    "id": "r-fuites",
    "titre": "🔎 Schéma : où fuit une installation ?",
    "type": "image",
@@ -2132,7 +2194,8 @@ window.PILOTE_PACK = {
     }
    ],
    "ressources": [
-    "r-mollier"
+    "r-mollier",
+    "r-tp-mano"
    ],
    "liens": [
     {
@@ -2195,6 +2258,9 @@ window.PILOTE_PACK = {
      "libelle": "Consigner le contrôle dans le registre",
      "etat": "a_evaluer"
     }
+   ],
+   "ressources": [
+    "r-cerfa"
    ],
    "liens": [
     {
@@ -2263,6 +2329,9 @@ window.PILOTE_PACK = {
      "etat": "a_evaluer"
     }
    ],
+   "ressources": [
+    "r-tp-peser"
+   ],
    "liens": [
     {
      "vers": "g5b",
@@ -2329,6 +2398,10 @@ window.PILOTE_PACK = {
      "libelle": "Appliquer les prescriptions de gestion, stockage et transport",
      "etat": "a_evaluer"
     }
+   ],
+   "ressources": [
+    "r-tp-peser",
+    "r-cerfa"
    ],
    "liens": [
     {
@@ -2397,6 +2470,11 @@ window.PILOTE_PACK = {
      "etat": "a_evaluer"
     }
    ],
+   "ressources": [
+    "r-module-comp",
+    "r-scroll",
+    "r-kp1"
+   ],
    "liens": [
     {
      "vers": "g7",
@@ -2463,6 +2541,10 @@ window.PILOTE_PACK = {
      "libelle": "Inspecter la surface d'échange",
      "etat": "a_evaluer"
     }
+   ],
+   "ressources": [
+    "r-kp5",
+    "r-echangeurs"
    ],
    "liens": [
     {
@@ -2531,6 +2613,10 @@ window.PILOTE_PACK = {
      "etat": "a_evaluer"
     }
    ],
+   "ressources": [
+    "r-echangeurs",
+    "r-kp1"
+   ],
    "liens": [
     {
      "vers": "x2",
@@ -2556,6 +2642,10 @@ window.PILOTE_PACK = {
      "type": "cle",
      "t": "Méthode",
      "html": "On ne conclut pas sur un relevé isolé : on cherche la cause qui explique <b>tous</b> les indices à la fois. Ici, trois indices convergent."
+    },
+    {
+     "t": "À toi : rejoue la panne sur le Diagramme Enthalpique+",
+     "html": "<p style=\"margin:0 0 10px\">Entre les relevés de l’énoncé dans l’outil (fluide, BP, HP, températures) et regarde le cycle se tracer : la panne se VOIT sur le log p-h.</p><iframe src=\"https://frigorx.github.io/diagramme-enthalpique/\" title=\"Diagramme Enthalpique+ v3.2\" style=\"width:100%;height:760px;border:0;background:#fff;border-radius:6px\" loading=\"lazy\"></iframe>"
     }
    ],
    "question": {
@@ -2582,6 +2672,9 @@ window.PILOTE_PACK = {
      "libelle": "Réaliser les mesures en fonctionnement",
      "etat": "a_evaluer"
     }
+   ],
+   "ressources": [
+    "r-enthalpique"
    ],
    "liens": [
     {

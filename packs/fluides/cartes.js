@@ -48,6 +48,68 @@ export const RESSOURCES = [
     url: "https://aida.ineris.fr/reglementation/arrete-211125-relatif-a-delivrance-attestations-daptitude-prevues-a-larticle-r-543",
   },
   {
+    id: "r-enthalpique",
+    titre: "📈 Diagramme Enthalpique+ v3.2 — tracer le cycle complet",
+    type: "lien",
+    global: true,
+    url: "https://frigorx.github.io/diagramme-enthalpique/",
+  },
+  {
+    id: "r-symboles",
+    titre: "✏ Bibliothèque de symboles frigorifiques + jeux",
+    type: "lien",
+    global: true,
+    url: "https://frigorx.github.io/inerweb-frigolo/outils/symboles-frigorifiques.html",
+  },
+  {
+    id: "r-kp1",
+    titre: "🔧 Simulateur — pressostat BP (KP1) : réglage et diagnostic",
+    type: "lien",
+    url: "https://frigorx.github.io/inerweb-frigolo/outils/kp1-pressostat-bp.html",
+  },
+  {
+    id: "r-kp5",
+    titre: "🔧 Simulateur — pressostat HP de sécurité (KP5)",
+    type: "lien",
+    url: "https://frigorx.github.io/inerweb-frigolo/outils/kp5-pressostat-hp.html",
+  },
+  {
+    id: "r-module-comp",
+    titre: "🧩 Module compresseur — leçon interactive complète",
+    type: "lien",
+    url: "https://frigorx.github.io/inerweb-frigolo/outils/module-compresseur.html",
+  },
+  {
+    id: "r-scroll",
+    titre: "🌀 Le compresseur scroll — leçon interactive",
+    type: "lien",
+    url: "https://frigorx.github.io/inerweb-frigolo/outils/lecon-scroll.html",
+  },
+  {
+    id: "r-echangeurs",
+    titre: "♨ Échangeurs — évaporateur et condenseur en interactif",
+    type: "lien",
+    url: "https://frigorx.github.io/inerweb-frigolo/outils/echangeurs.html",
+  },
+  {
+    id: "r-tp-mano",
+    titre: "🧪 TP formatif — pose et dépose des manomètres (2 h, 7 activités)",
+    type: "lien",
+    url: "https://frigorx.github.io/inerweb-frigolo/outils/tp-manometres-formatif.html",
+  },
+  {
+    id: "r-tp-peser",
+    titre: "⚖ TP — inventaire et pesée des bouteilles frigorigènes",
+    type: "lien",
+    url: "https://frigorx.github.io/inerweb-tp-peser-bouteilles/",
+  },
+  {
+    id: "r-cerfa",
+    titre: "📋 inerWeb Fluide — s'entraîner : fiche d'intervention CERFA et BSD",
+    type: "lien",
+    url: "https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/",
+  },
+  {
     id: "r-fuites",
     titre: "🔎 Schéma : où fuit une installation ?",
     type: "image",
@@ -711,7 +773,7 @@ export const CARTES = [
       { code: "4.04", libelle: "Mettre en œuvre la méthode indirecte (mesures et tables)", etat: "a_evaluer" },
       { code: "4.05", libelle: "Utiliser les instruments portables et interpréter les mesures", etat: "a_evaluer" },
     ],
-    ressources: ["r-mollier"],
+    ressources: ["r-mollier", "r-tp-mano"],
     liens: [suite("g4c", "Méthode directe et registre"), SOMMAIRE],
     notes_pilote:
       "Le cœur du parcours E, et le module qui prend le plus de temps d'atelier. Faire manipuler " +
@@ -775,6 +837,7 @@ export const CARTES = [
       { code: "4.08", libelle: "Utiliser un détecteur électronique de fuites", etat: "a_evaluer" },
       { code: "4.09", libelle: "Consigner le contrôle dans le registre", etat: "a_evaluer" },
     ],
+    ressources: ["r-cerfa"],
     liens: [suite("g5a", "Récupérer sans émettre"), SOMMAIRE],
     notes_pilote:
       "Insister sur la frontière 4.06 / 4.07 avec un groupe E : elle définit le métier. « Je contrôle, " +
@@ -842,6 +905,7 @@ export const CARTES = [
       { code: "5.03", libelle: "Utiliser un dispositif de récupération", etat: "a_evaluer" },
       { code: "5.04", libelle: "Vidanger l'huile contaminée", etat: "a_evaluer" },
     ],
+    ressources: ["r-tp-peser"],
     liens: [suite("g5b", "Peser, stocker, tracer"), SOMMAIRE],
     notes_pilote:
       "Cœur du parcours D : chaque stagiaire branche, purge et pèse lui-même, sans exception. " +
@@ -899,6 +963,7 @@ export const CARTES = [
       { code: "5.07", libelle: "Consigner l'opération dans le registre", etat: "a_evaluer" },
       { code: "5.08", libelle: "Appliquer les prescriptions de gestion, stockage et transport", etat: "a_evaluer" },
     ],
+    ressources: ["r-tp-peser", "r-cerfa"],
     liens: [suite("g6", "Le compresseur"), SOMMAIRE],
     notes_pilote:
       "Le geste à faire répéter : peser AVANT. Beaucoup de stagiaires pèsent après et déduisent — " +
@@ -964,6 +1029,7 @@ export const CARTES = [
       { code: "6.05", libelle: "Vérifier le retour d'huile", etat: "a_evaluer" },
       { code: "6.07", libelle: "Rédiger un rapport d'état", etat: "a_evaluer" },
     ],
+    ressources: ["r-module-comp", "r-scroll", "r-kp1"],
     liens: [suite("g7", "Le condenseur"), SOMMAIRE],
     notes_pilote:
       "Rappeler que le composant est TIRÉ AU SORT à l'épreuve : les quatre modules se travaillent. " +
@@ -1025,6 +1091,7 @@ export const CARTES = [
       { code: "7.06", libelle: "Purger les incondensables", etat: "a_evaluer" },
       { code: "7.08", libelle: "Inspecter la surface d'échange", etat: "a_evaluer" },
     ],
+    ressources: ["r-kp5", "r-echangeurs"],
     liens: [suite("g8", "L'évaporateur"), SOMMAIRE],
     notes_pilote:
       "Faire mesurer HP, BP et sous-refroidissement AVANT de donner la plage attendue, puis confronter " +
@@ -1089,6 +1156,7 @@ export const CARTES = [
       { code: "8.08", libelle: "Réaliser la mise en marche/arrêt et les mesures", etat: "a_evaluer" },
       { code: "8.09", libelle: "Inspecter la surface d'échange et le bac de condensats", etat: "a_evaluer" },
     ],
+    ressources: ["r-echangeurs", "r-kp1"],
     liens: [suite("x2", "Exercice : diagnostic"), SOMMAIRE],
     notes_pilote:
       "Faire relever la surchauffe sur banc réel : manomètre + sonde de contact, puis calcul. " +
@@ -1120,6 +1188,12 @@ export const CARTES = [
           "On ne conclut pas sur un relevé isolé : on cherche la cause qui explique " +
           "<b>tous</b> les indices à la fois. Ici, trois indices convergent.",
       },
+      {
+        t: "À toi : rejoue la panne sur le Diagramme Enthalpique+",
+        html:
+          "<p style=\"margin:0 0 10px\">Entre les relevés de l’énoncé dans l’outil (fluide, BP, HP, températures) et regarde le cycle se tracer : la panne se VOIT sur le log p-h.</p>" +
+          '<iframe src="https://frigorx.github.io/diagramme-enthalpique/" title="Diagramme Enthalpique+ v3.2" style="width:100%;height:760px;border:0;background:#fff;border-radius:6px" loading="lazy"></iframe>',
+      },
     ],
     question: {
       type: "qcm",
@@ -1139,6 +1213,7 @@ export const CARTES = [
       { code: "4.04", libelle: "Interpréter des mesures par la méthode indirecte", etat: "a_evaluer" },
       { code: "8.08", libelle: "Réaliser les mesures en fonctionnement", etat: "a_evaluer" },
     ],
+    ressources: ["r-enthalpique"],
     liens: [suite("g9", "Le détendeur"), { vers: "g4b", libelle: "↩ Revoir la méthode indirecte", sec: true }, SOMMAIRE],
     notes_pilote:
       "Exercice charnière : il rebranche les composants (G6-G9) sur l'étanchéité (G4). Le laisser " +
