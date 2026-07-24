@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 510" role="img"
+     aria-label="Décoder un code fluide : dans R-134a, centaines = carbone moins un, dizaines = hydrogène plus un, unités = fluor. Les séries R-4xx, R-5xx, R-6xx et R-7xx.">
+  <title>Décoder un code fluide</title>
+
+  <style>
+    .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .kod { font:700 64px 'Trebuchet MS',Calibri,sans-serif; fill:#1b3a63; }
+    .l   { font:700 15px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .s   { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .k   { font:700 14px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+    .res { font:700 22px Calibri,Segoe UI,sans-serif; fill:#1e7e54; }
+    .fl  { stroke:#ff6b35; stroke-width:2.5; fill:none; }
+    .cell{ fill:#f5f8fb; stroke:#d7e0e8; stroke-width:1.5; }
+  </style>
+
+  <rect width="900" height="510" fill="#ffffff"/>
+
+  <text class="t" x="40" y="36">Le code dit la molécule</text>
+
+  <!-- ===== décodage R-134a ===== -->
+  <g transform="translate(70,80)">
+    <text class="kod" x="0" y="60">R-</text>
+    <text class="kod" x="72" y="60" fill="#c0392b">1</text>
+    <text class="kod" x="112" y="60" fill="#1e7e54">3</text>
+    <text class="kod" x="152" y="60" fill="#2f5689">4</text>
+    <text class="kod" x="192" y="60" style="font-size:40px">a</text>
+
+    <path class="fl" d="M 90 75 L 90 105" marker-end="url(#fo2)"/>
+    <path class="fl" d="M 130 75 L 130 150" marker-end="url(#fo2)"/>
+    <path class="fl" d="M 170 75 L 170 195" marker-end="url(#fo2)"/>
+    <defs><marker id="fo2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ff6b35"/></marker></defs>
+
+    <text class="l" x="210" y="118" ><tspan fill="#c0392b">centaines + 1</tspan> = atomes de <tspan fill="#c0392b">carbone</tspan> → C = 2</text>
+    <text class="l" x="210" y="163"><tspan fill="#1e7e54">dizaines − 1</tspan> = atomes d'<tspan fill="#1e7e54">hydrogène</tspan> → H = 2</text>
+    <text class="l" x="210" y="208"><tspan fill="#2f5689">unités</tspan> = atomes de <tspan fill="#2f5689">fluor</tspan> → F = 4</text>
+    <text class="s" x="210" y="232">la lettre minuscule (a) = l'isomère : même formule, arrangement différent</text>
+
+    <text class="res" x="0" y="150">= C₂H₂F₄</text>
+    <text class="s" x="0" y="174">tétrafluoroéthane :</text>
+    <text class="s" x="0" y="192">zéro chlore → HFC</text>
+  </g>
+
+  <!-- astuce +90 -->
+  <g transform="translate(660,88)">
+    <rect x="-24" y="-26" width="230" height="150" rx="10" fill="#fff3e8" stroke="#ffc7ad" stroke-width="1.5"/>
+    <text class="k" x="91" y="0" text-anchor="middle">🎩 L'astuce du + 90</text>
+    <text class="s" x="91" y="26" text-anchor="middle">code + 90 → on lit C H F</text>
+    <text class="l" x="91" y="52" text-anchor="middle">134 + 90 = <tspan fill="#c9451a">2</tspan><tspan fill="#1e7e54">2</tspan><tspan fill="#2f5689">4</tspan> → C₂H₂F₄</text>
+    <text class="l" x="91" y="76" text-anchor="middle">22 + 90 = <tspan fill="#c9451a">1</tspan><tspan fill="#1e7e54">1</tspan><tspan fill="#2f5689">2</tspan> → CHClF₂</text>
+    <text class="s" x="91" y="100" text-anchor="middle">les liaisons restantes = du chlore !</text>
+  </g>
+
+  <!-- ===== les séries ===== -->
+  <text class="t" x="40" y="356">Et les numéros à trois chiffres qui commencent par 4, 5, 6, 7 ?</text>
+  <g transform="translate(40,376)">
+    <rect class="cell" x="0" width="196" height="96" rx="10"/>
+    <text class="l" x="98" y="26" text-anchor="middle">R-4xx</text>
+    <text class="s" x="98" y="48" text-anchor="middle">mélanges zéotropes</text>
+    <text class="s" x="98" y="66" text-anchor="middle">R-404A · R-407C · R-410A</text>
+    <text class="s" x="98" y="84" text-anchor="middle">majuscule = les proportions</text>
+
+    <rect class="cell" x="208" width="196" height="96" rx="10"/>
+    <text class="l" x="306" y="26" text-anchor="middle">R-5xx</text>
+    <text class="s" x="306" y="48" text-anchor="middle">mélanges azéotropes</text>
+    <text class="s" x="306" y="66" text-anchor="middle">R-507A</text>
+    <text class="s" x="306" y="84" text-anchor="middle">se comportent en corps pur</text>
+
+    <rect class="cell" x="416" width="196" height="96" rx="10"/>
+    <text class="l" x="514" y="26" text-anchor="middle">R-6xx</text>
+    <text class="s" x="514" y="48" text-anchor="middle">organiques divers</text>
+    <text class="s" x="514" y="66" text-anchor="middle">R-600a (isobutane)</text>
+    <text class="s" x="514" y="84" text-anchor="middle">frigos domestiques</text>
+
+    <rect class="cell" x="624" width="196" height="96" rx="10"/>
+    <text class="l" x="722" y="26" text-anchor="middle">R-7xx</text>
+    <text class="s" x="722" y="48" text-anchor="middle">inorganiques : 7 + masse molaire</text>
+    <text class="s" x="722" y="66" text-anchor="middle">R-717 = NH₃ (17 g/mol)</text>
+    <text class="s" x="722" y="84" text-anchor="middle">R-744 = CO₂ (44 g/mol)</text>
+  </g>
+</svg>

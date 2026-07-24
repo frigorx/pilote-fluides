@@ -232,6 +232,8 @@ export const CARTES = [
     menu_titre: "Les modules du parcours",
     liens: [
       { vers: "g1a", icone: "1", titre: "Unités, pression, thermodynamique utile", desc: "G1 — le socle de tout le reste." },
+      { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
+      { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
       { vers: "g2", icone: "2", titre: "Impact environnemental et F-Gas", desc: "G2 — PRP, phase-down, ce qui justifie le métier." },
       { vers: "g3", icone: "3", titre: "Contrôles avant mise en service", desc: "G3 — épreuve à l'azote, tirage au vide." },
       { vers: "g4a", icone: "4", titre: "Contrôles d'étanchéité", desc: "G4 — trois fiches : points de fuite, indirecte, directe." },
@@ -267,6 +269,8 @@ export const CARTES = [
     menu_titre: "Les modules du parcours",
     liens: [
       { vers: "g1a", icone: "1", titre: "Unités, pression, thermodynamique utile", desc: "G1 — insister sur les seuils de charge." },
+      { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
+      { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
       { vers: "g2", icone: "2", titre: "Impact environnemental et F-Gas", desc: "G2 — PRP et tonnes équivalent CO₂." },
       { vers: "g3", icone: "3", titre: "Contrôles avant mise en service", desc: "G3 — sur petits circuits, raccords flare." },
       { vers: "g4a", icone: "4", titre: "Contrôles d'étanchéité", desc: "G4 — trois fiches." },
@@ -301,6 +305,8 @@ export const CARTES = [
     menu_titre: "Les modules du parcours",
     liens: [
       { vers: "g1a", icone: "1", titre: "Bases : fluides, thermo utile, composants", desc: "G1 partiel — savoir de quoi on parle." },
+      { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
+      { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
       { vers: "g2", icone: "2", titre: "Enjeu environnemental", desc: "G2 — pourquoi on ne rejette pas." },
       { vers: "g5a", icone: "5", titre: "Récupérer sans émettre", desc: "G5 — le cœur du métier D.", primaire: true },
       { vers: "g5b", icone: "5", titre: "Peser, stocker, tracer", desc: "G5 — la balance et le registre." },
@@ -336,6 +342,8 @@ export const CARTES = [
     liens: [
       { vers: "g1a", icone: "1", titre: "Bases : pression, température, fluides", desc: "G1 partiel — dont la pression absolue." },
       { vers: "g1b", icone: "1", titre: "Lire une table de saturation", desc: "G1 · code 1.03 — indispensable à la méthode indirecte.", primaire: true },
+      { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
+      { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
       { vers: "g2", icone: "2", titre: "Enjeu environnemental", desc: "G2 — pourquoi une fuite compte." },
       { vers: "g4a", icone: "4", titre: "Où fuit une installation ?", desc: "G4 — points de fuite et registre." },
       { vers: "g4b", icone: "4", titre: "Méthode indirecte", desc: "G4 — mesurer, comparer, interpréter." },
@@ -507,7 +515,7 @@ export const CARTES = [
       { code: "1.06", libelle: "Situer les caractéristiques des fluides de substitution", etat: "a_evaluer" },
     ],
     ressources: ["r-mollier"],
-    liens: [suite("g2", "Impact environnemental"), SOMMAIRE],
+    liens: [suite("g1c", "Familles et codes des fluides"), SOMMAIRE],
     notes_pilote:
       "Fiche indispensable au parcours E : sans elle, la méthode indirecte est du bricolage. " +
       "Utiliser FRIGOLO en projection, puis faire refaire la lecture sur une table papier — le passage " +
@@ -519,6 +527,136 @@ export const CARTES = [
   /* ==================================================================
      G2 — ENVIRONNEMENT
      ================================================================== */
+  {
+    id: "g1c",
+    type: "cours",
+    titre: "Les familles de fluides et leurs codes",
+    dc: "G1 · codes 1.06 · 1.07",
+    minuteur_s: 420,
+    corps:
+      schema("familles-fluides.svg", "Les cinq familles : CFC, HCFC, HFC, HFO et naturels, avec leur composition atomique.") +
+      "<p>Derrière chaque code se cache une <b>molécule</b>, et trois atomes y décident de tout : " +
+      "le <b>chlore</b> détruit l'ozone — c'est lui qui a condamné les CFC puis les HCFC ; " +
+      "le <b>fluor</b> rend la molécule stable, donc durable dans l'atmosphère, donc à fort effet " +
+      "de serre ; l'<b>hydrogène</b> raccourcit la durée de vie. Les <b>HFC</b> ont éliminé le " +
+      "chlore (ozone sauvé), gardé le fluor (climat pénalisé). Les <b>HFO</b> ajoutent une double " +
+      "liaison fragile : la molécule casse en quelques jours, PRP ≈ 1. Les <b>naturels</b> — " +
+      "propane, isobutane, ammoniac, CO₂ — existent sans chimie de synthèse, chacun avec son " +
+      "revers : inflammabilité, toxicité ou pression.</p>" +
+      schema("nomenclature.svg", "Décoder R-134a : centaines = carbone moins un, dizaines = hydrogène plus un, unités = fluor. Les séries R-4xx, R-5xx, R-6xx, R-7xx.") +
+      "<p>Et le numéro n'est pas un matricule : il <b>décrit la molécule</b>. Centaines + 1 = " +
+      "carbone, dizaines − 1 = hydrogène, unités = fluor — les liaisons restantes sont du chlore. " +
+      "Les mélanges et les fluides inorganiques ont leurs séries : 4xx, 5xx, 6xx, 7xx.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "L'astuce du + 90",
+        html:
+          "Ajoute 90 au code, et tu lis directement C, H, F : " +
+          "<b>134 + 90 = 224</b> → C₂H₂F₄ (R-134a). <b>22 + 90 = 112</b> → C·H·F₂… plus un " +
+          "<b>chlore</b> pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. " +
+          "<b>290 + 90 = 380</b> → C₃H₈ : le propane, zéro fluor, zéro chlore.",
+      },
+      {
+        type: "piege",
+        t: "Le code dit la molécule, pas le danger",
+        html:
+          "R-32 et R-290 se ressemblent sur l'étiquette — l'un est A2L, l'autre A3. " +
+          "La famille chimique dit l'<b>impact environnemental</b> ; la classe NF EN 378 dit le " +
+          "<b>risque de manipulation</b>. Il faut les deux lectures, à chaque fois.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Un fluide dont le code commence par R-4 (R-404A, R-407C, R-410A…) est toujours :",
+      choix: [
+        "Un corps pur de la famille HFO",
+        "Un mélange zéotrope de plusieurs fluides",
+        "Un fluide naturel",
+        "Un fluide contenant du chlore",
+      ],
+      bonne: 1,
+      explication:
+        "La série R-4xx désigne les mélanges zéotropes : plusieurs fluides assemblés, avec un glissement de température. La lettre majuscule finale (A, B, C) distingue les proportions du mélange.",
+      remediation_vers: "g1c",
+    },
+    criteres: [
+      { code: "1.06", libelle: "Identifier la famille et les caractéristiques d'un fluide", etat: "a_evaluer" },
+      { code: "1.07", libelle: "Décoder la nomenclature R-xyz et les séries de mélanges", etat: "a_evaluer" },
+    ],
+    liens: [suite("g2a", "L'histoire : ozone et climat"), SOMMAIRE],
+    notes_pilote:
+      "Faire décoder AU TABLEAU deux ou trois codes avant de donner la règle : R-32, R-290, " +
+      "R-744 — le groupe trouve la logique lui-même, elle se retient dix fois mieux. L'astuce du " +
+      "+90 fait mouche à tous les coups. Point d'attention : le R-22 est le meilleur exemple " +
+      "pédagogique (le chlore « caché » dans les liaisons restantes explique son interdiction). " +
+      "Relier à la carte d'identité interactive : chaque stagiaire décode un fluide puis vérifie.",
+  },
+  {
+    id: "g2a",
+    type: "cours",
+    titre: "Quarante ans d'histoire : de l'ozone au climat",
+    dc: "G2 · code 2.01",
+    minuteur_s: 420,
+    corps:
+      schema("frise-histoire.svg", "Frise : CFC années 1930, trou d'ozone 1985, Montréal 1987, Kyoto 1997, Paris 2015, Kigali 2016, F-Gas III 2024.") +
+      "<p>Dans les années 1930, les <b>CFC</b> sont des fluides « miracle » : stables, ni toxiques, " +
+      "ni inflammables. Cinquante ans plus tard, la facture arrive : en <b>1985</b>, on découvre le " +
+      "<b>trou dans la couche d'ozone</b> au-dessus de l'Antarctique — le chlore des CFC casse " +
+      "l'ozone qui filtre les <b>UV-B</b>. En <b>1987</b>, le <b>protocole de Montréal</b> organise " +
+      "leur sortie, puis celle des HCFC : la couche se répare, c'est le plus grand succès " +
+      "environnemental mondial.</p>" +
+      "<p>Mais les remplaçants, les <b>HFC</b>, inoffensifs pour l'ozone, sont de puissants gaz à " +
+      "effet de serre. Le combat change de terrain : <b>Kyoto</b> (1997) les inscrit parmi les six " +
+      "gaz visés, l'<b>accord de Paris</b> (2015) fixe le cap des +1,5 °C, et l'<b>amendement de " +
+      "Kigali</b> (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le " +
+      "règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations — celles " +
+      "de ton métier.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "L'effet de serre en deux phrases",
+        html:
+          "Le rayonnement solaire entre, la Terre renvoie de l'infrarouge, et certains gaz " +
+          "(CO₂, vapeur d'eau, méthane…) retiennent cette chaleur. Cet effet est <b>vital</b> — " +
+          "sans lui, il ferait environ <b>−18 °C</b> au lieu de +15 : c'est son <b>renforcement</b> " +
+          "par nos émissions qui pose problème.",
+      },
+      {
+        type: "piege",
+        t: "Ozone et climat : deux problèmes, pas un",
+        html:
+          "L'<b>ODP</b> mesure l'attaque de l'ozone (affaire de <b>chlore et de brome</b>) ; le " +
+          "<b>PRP</b> mesure l'effet de serre. Un HFC a un ODP <b>nul</b> et un PRP <b>énorme</b> : " +
+          "excellent élève d'un côté, cancre de l'autre. Ne jamais confondre les deux bulletins.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Pourquoi les HFC, qui ont sauvé la couche d'ozone, sont-ils aujourd'hui visés à leur tour ?",
+      choix: [
+        "Parce qu'ils contiennent encore un peu de chlore",
+        "Parce qu'ils sont de puissants gaz à effet de serre, malgré leur ODP nul",
+        "Parce qu'ils sont tous très inflammables",
+        "Parce qu'ils sont toxiques pour l'homme",
+      ],
+      bonne: 1,
+      explication:
+        "Zéro chlore : l'ozone est tranquille. Mais leur stabilité leur donne un fort pouvoir de réchauffement — d'où Kyoto, Kigali et le phase-down F-Gas. Le problème a changé de terrain, pas de molécules.",
+      remediation_vers: "g2a",
+    },
+    criteres: [
+      { code: "2.01", libelle: "Situer l'histoire : couche d'ozone, protocoles, politique climat", etat: "a_evaluer" },
+    ],
+    liens: [suite("g2", "Le PRP et F-Gas aujourd'hui"), SOMMAIRE],
+    notes_pilote:
+      "Cette fiche se RACONTE — le miracle, la catastrophe invisible, le sursaut mondial, la " +
+      "rechute climatique. Question à lancer avant d'afficher quoi que ce soit : « pourquoi " +
+      "a-t-on interdit des fluides techniquement parfaits ? ». Le pivot à faire retenir : " +
+      "KIGALI — les HFC, qui ne touchent pas l'ozone, entrent quand même dans Montréal, parce " +
+      "que c'est le traité qui fonctionne. Lien direct avec la fiche suivante (PRP, quotas) : " +
+      "l'histoire explique la réglementation, la réglementation explique les gestes du métier.",
+  },
   {
     id: "g2",
     type: "cours",
@@ -1777,7 +1915,7 @@ export const CARTES = [
     type: "examen",
     titre: "Réviser — Environnement et F-Gas",
     dc: "Révision · G2",
-    examen: { dc: ["G2"], n: 7, seuil: 60 },
+    examen: { dc: ["G2"], n: 10, seuil: 60 },
     notes_pilote:
       "Série de révision en autonomie : correction immédiate, chaque erreur renvoie vers la fiche, " +
       "le bilan liste les fiches à revoir et le score précédent s'affiche (mémoire locale du navigateur). " +

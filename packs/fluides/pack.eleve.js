@@ -480,6 +480,185 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1a"
   },
   {
+   "id": "q-g1-31",
+   "dc": "G1",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Que signifie HFC ?",
+   "choix": [
+    "Hydro-Fluoro-Carbone",
+    "Haute-Fluoro-Compression",
+    "Hydro-Fluide-Climatique",
+    "Hydro-Frigorigène-Commercial"
+   ],
+   "bonne": 0,
+   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+   "remediation_vers": "g1c"
+  },
+  {
+   "id": "q-g1-33",
+   "dc": "G1",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Dans la nomenclature R134a, que signifie le 'a' ?",
+   "choix": [
+    "Version améliorée",
+    "Isomère",
+    "Azéotrope",
+    "Azeotropic"
+   ],
+   "bonne": 1,
+   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+   "remediation_vers": "g1c"
+  },
+  {
+   "id": "q-g1-34",
+   "dc": "G1",
+   "niveau": 2,
+   "type": "qcm",
+   "enonce": "Le R410A est un mélange :",
+   "choix": [
+    "Azéotrope",
+    "Quasi-azéotrope",
+    "Zéotrope",
+    "Corps pur"
+   ],
+   "bonne": 1,
+   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+   "remediation_vers": "g1c"
+  },
+  {
+   "id": "q-g1-36",
+   "dc": "G1",
+   "niveau": 2,
+   "type": "qcm",
+   "enonce": "Quelle est la composition du R410A ?",
+   "choix": [
+    "50% R32 / 50% R125",
+    "23% R32 / 25% R125 / 52% R134a",
+    "75% R134a / 25% R32",
+    "100% R32"
+   ],
+   "bonne": 0,
+   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+   "remediation_vers": "g1c"
+  },
+  {
+   "id": "q-g1-41",
+   "dc": "G1",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Le R22 appartient à quelle famille ?",
+   "choix": [
+    "CFC",
+    "HCFC",
+    "HFC",
+    "HFO"
+   ],
+   "bonne": 1,
+   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+   "remediation_vers": "g1c"
+  },
+  {
+   "id": "q-g1-45",
+   "dc": "G1",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Le R717 est :",
+   "choix": [
+    "Du propane",
+    "De l'ammoniac",
+    "Du CO2",
+    "De l'eau"
+   ],
+   "bonne": 1,
+   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+   "remediation_vers": "g1c"
+  },
+  {
+   "id": "q-g1-51",
+   "dc": "G1",
+   "niveau": 2,
+   "type": "qcm",
+   "enonce": "Le R407C est composé de :",
+   "choix": [
+    "R32 / R125 / R134a",
+    "R32 / R125",
+    "R125 / R143a / R134a",
+    "100% R32"
+   ],
+   "bonne": 0,
+   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+   "remediation_vers": "g1c"
+  },
+  {
+   "id": "q-g1-v6_031",
+   "dc": "G1",
+   "niveau": 2,
+   "type": "qcm",
+   "enonce": "Dans la nomenclature Rxyz, le chiffre des dizaines (y) correspond à :",
+   "choix": [
+    "Nombre d'atomes de carbone − 1",
+    "Nombre d'atomes d'hydrogène + 1",
+    "Nombre d'atomes de fluor",
+    "Nombre d'atomes de chlore"
+   ],
+   "bonne": 1,
+   "explication": "H + 1 (atomes d'hydrogène + 1) — Règle de nomenclature : centaines = C−1, dizaines = H+1, unités = F. Ex: R134a → C=1+1=2, H=3−1=2, F=4.",
+   "aide": "La formule mnémotechnique est : C−1, H+1, F pour les trois chiffres.",
+   "remed": {
+    "texte": "Règle de nomenclature : centaines = C−1, dizaines = H+1, unités = F. Ex: R134a → C=1+1=2, H=3−1=2, F=4."
+   },
+   "remediation_vers": "g1c"
+  },
+  {
+   "id": "q-g1-v6_132",
+   "dc": "G1",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Le R410A est un mélange de :",
+   "choix": [
+    "R134a + R125",
+    "R32 + R125",
+    "R32 + R134a",
+    "R290 + R600a"
+   ],
+   "bonne": 1,
+   "explication": "R32 + R125 — Le R410A est un mélange quasi-azéotrope de R32 (50%) + R125 (50%). Ses hautes pressions le distinguent.",
+   "aide": "C'est le fluide le plus courant en climatisation résidentielle.",
+   "remed": {
+    "texte": "Le R410A est un mélange quasi-azéotrope de R32 (50%) + R125 (50%). Ses hautes pressions le distinguent."
+   },
+   "remediation_vers": "g1c"
+  },
+  {
+   "id": "q-g1-v6_137",
+   "dc": "G1",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Le R12 est un :",
+   "choix": [
+    "HFC",
+    "HCFC",
+    "CFC",
+    "HFO"
+   ],
+   "bonne": 2,
+   "explication": "CFC — Le R12 (dichlorodifluorométhane) est un CFC interdit depuis 1995. Il détruit la couche d'ozone (ODP élevé).",
+   "aide": "Le R12 est le CFC historique des anciens frigos.",
+   "remed": {
+    "texte": "Le R12 (dichlorodifluorométhane) est un CFC interdit depuis 1995. Il détruit la couche d'ozone (ODP élevé)."
+   },
+   "remediation_vers": "g1c"
+  },
+  {
    "id": "q-g2-v6_001",
    "dc": "G2",
    "niveau": 1,
@@ -514,7 +693,7 @@ window.PILOTE_PACK = {
    "bonne": 1,
    "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-   "remediation_vers": "g2"
+   "remediation_vers": "g2a"
   },
   {
    "id": "q-g2-v6_003",
@@ -534,7 +713,7 @@ window.PILOTE_PACK = {
    "remed": {
     "texte": "Kigali (2016) étend le Protocole de Montréal aux HFC pour lutter contre le réchauffement climatique."
    },
-   "remediation_vers": "g2"
+   "remediation_vers": "g2a"
   },
   {
    "id": "q-g2-v6_004",
@@ -554,7 +733,7 @@ window.PILOTE_PACK = {
    "remed": {
     "texte": "Les HFC ne contiennent pas de chlore, donc ODP = 0. Mais leur GWP est élevé."
    },
-   "remediation_vers": "g2"
+   "remediation_vers": "g2a"
   },
   {
    "id": "q-g2-v6_113",
@@ -614,6 +793,243 @@ window.PILOTE_PACK = {
    "remed": {
     "texte": "Les quotas sont des droits de mise sur le marché en tCO₂e, attribués aux importateurs et fabricants de HFC."
    },
+   "remediation_vers": "g2"
+  },
+  {
+   "id": "q-g2-v6_002",
+   "dc": "G2",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Quel type de rayonnement la couche d'ozone filtre-t-elle principalement ?",
+   "choix": [
+    "Les infrarouges",
+    "Les UV-B",
+    "Les micro-ondes",
+    "Les rayons X"
+   ],
+   "bonne": 1,
+   "explication": "Les UV-B — La couche d'ozone (O₃) dans la stratosphère absorbe les UV-B nocifs pour la santé humaine.",
+   "aide": "Ce sont des rayonnements solaires dangereux pour la peau et les yeux.",
+   "remed": {
+    "texte": "La couche d'ozone (O₃) dans la stratosphère absorbe les UV-B nocifs pour la santé humaine."
+   },
+   "remediation_vers": "g2a"
+  },
+  {
+   "id": "q-g2-v6_005",
+   "dc": "G2",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Quel accord international de 2015 vise à limiter le réchauffement à +1,5°C ?",
+   "choix": [
+    "Protocole de Montréal",
+    "Accord de Paris (COP21)",
+    "Amendement de Kigali",
+    "Protocole de Kyoto"
+   ],
+   "bonne": 1,
+   "explication": "Accord de Paris (COP21) — Signé en 2015 par 196 pays, il fixe l'objectif de +1,5°C maximum vs ère préindustrielle.",
+   "aide": "C'est le traité climatique le plus récent et le plus ambitieux.",
+   "remed": {
+    "texte": "Signé en 2015 par 196 pays, il fixe l'objectif de +1,5°C maximum vs ère préindustrielle."
+   },
+   "remediation_vers": "g2a"
+  },
+  {
+   "id": "q-g2-v6_008",
+   "dc": "G2",
+   "niveau": 2,
+   "type": "qcm",
+   "enonce": "Le Protocole de Kyoto (1997) cible combien de gaz à effet de serre ?",
+   "choix": [
+    "3",
+    "4",
+    "6",
+    "8"
+   ],
+   "bonne": 2,
+   "explication": "6 — Kyoto vise 6 GES : CO₂, CH₄, N₂O, HFC, PFC, SF₆. Les HFC y sont inclus.",
+   "aide": "Comptez les familles principales de gaz à effet de serre réglementées.",
+   "remed": {
+    "texte": "Kyoto vise 6 GES : CO₂, CH₄, N₂O, HFC, PFC, SF₆. Les HFC y sont inclus."
+   },
+   "remediation_vers": "g2a"
+  },
+  {
+   "id": "q-g2-v6_010",
+   "dc": "G2",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Le « trou dans la couche d'ozone » est localisé principalement au-dessus de :",
+   "choix": [
+    "L'équateur",
+    "L'Antarctique",
+    "L'Arctique",
+    "L'Europe"
+   ],
+   "bonne": 1,
+   "explication": "L'Antarctique — Le trou d'ozone se forme chaque printemps austral au-dessus du pôle Sud, là où les conditions de froid stratosphérique favorisent la destruction de l'O₃.",
+   "aide": "C'est le pôle le plus froid de la planète qui est le plus touché.",
+   "remed": {
+    "texte": "Le trou d'ozone se forme chaque printemps austral au-dessus du pôle Sud, là où les conditions de froid stratosphérique favorisent la destruction de l'O₃."
+   },
+   "remediation_vers": "g2a"
+  },
+  {
+   "id": "q-g2-v6_106",
+   "dc": "G2",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Les principaux gaz à effet de serre naturels sont :",
+   "choix": [
+    "CO₂, vapeur d'eau, méthane",
+    "Oxygène, azote, hélium",
+    "HFC, CFC, HCFC",
+    "Ozone, argon, néon"
+   ],
+   "bonne": 0,
+   "explication": "CO₂, vapeur d'eau, méthane — L'effet de serre naturel est principalement dû à la vapeur d'eau, au CO₂ et au méthane. Les HFC sont des GES industriels.",
+   "aide": "Pensez aux gaz naturellement présents dans l'atmosphère.",
+   "remed": {
+    "texte": "L'effet de serre naturel est principalement dû à la vapeur d'eau, au CO₂ et au méthane. Les HFC sont des GES industriels."
+   },
+   "remediation_vers": "g2a"
+  },
+  {
+   "id": "q-g2-v6_107",
+   "dc": "G2",
+   "niveau": 2,
+   "type": "qcm",
+   "enonce": "Sans l'effet de serre naturel, la température moyenne de la Terre serait d'environ :",
+   "choix": [
+    "+15°C",
+    "-18°C",
+    "+30°C",
+    "0°C"
+   ],
+   "bonne": 1,
+   "explication": "-18°C — Sans effet de serre, la Terre serait à -18°C au lieu de +15°C. L'effet de serre naturel réchauffe de +33°C.",
+   "aide": "L'effet de serre naturel est bénéfique — c'est son amplification qui pose problème.",
+   "remed": {
+    "texte": "Sans effet de serre, la Terre serait à -18°C au lieu de +15°C. L'effet de serre naturel réchauffe de +33°C."
+   },
+   "remediation_vers": "g2a"
+  },
+  {
+   "id": "q-g2-v6_110",
+   "dc": "G2",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Le Protocole de Montréal a principalement permis :",
+   "choix": [
+    "D'augmenter la production de CFC",
+    "De commencer la réparation de la couche d'ozone",
+    "De créer de nouveaux fluides",
+    "D'interdire le CO₂"
+   ],
+   "bonne": 1,
+   "explication": "De commencer la réparation de la couche d'ozone",
+   "aide": "C'est considéré comme le traité environnemental le plus réussi.",
+   "remed": {
+    "texte": "Grâce à l'élimination des CFC et HCFC, la couche d'ozone montre des signes de reconstitution progressive."
+   },
+   "remediation_vers": "g2a"
+  },
+  {
+   "id": "q-g2-v6_111",
+   "dc": "G2",
+   "niveau": 2,
+   "type": "qcm",
+   "enonce": "Les HFO ont un faible GWP car :",
+   "choix": [
+    "Ils ne contiennent pas de carbone",
+    "Ils se décomposent rapidement dans l'atmosphère",
+    "Ils sont très lourds",
+    "Ils ne s'évaporent pas"
+   ],
+   "bonne": 1,
+   "explication": "Décomposition rapide — Les HFO ont une double liaison C=C qui les rend instables chimiquement. Ils se dégradent en quelques jours dans l'atmosphère.",
+   "aide": "La durée de vie atmosphérique courte = faible GWP.",
+   "remed": {
+    "texte": "Les HFO ont une double liaison C=C qui les rend instables chimiquement. Ils se dégradent en quelques jours dans l'atmosphère."
+   },
+   "remediation_vers": "g2a"
+  },
+  {
+   "id": "q-g2-v6_114",
+   "dc": "G2",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "L'ODP (Ozone Depletion Potential) est lié à la présence dans la molécule de :",
+   "choix": [
+    "Fluor",
+    "Hydrogène",
+    "Chlore ou brome",
+    "Carbone"
+   ],
+   "bonne": 2,
+   "explication": "Chlore ou brome — Le chlore (CFC, HCFC) et le brome (halons) détruisent catalytiquement l'ozone stratosphérique.",
+   "aide": "Les HFC n'ont ni chlore ni brome, d'où leur ODP de 0.",
+   "remed": {
+    "texte": "Le chlore (CFC, HCFC) et le brome (halons) détruisent catalytiquement l'ozone stratosphérique."
+   },
+   "remediation_vers": "g2a"
+  },
+  {
+   "id": "q-g2-v6_115",
+   "dc": "G2",
+   "niveau": 2,
+   "type": "qcm",
+   "enonce": "Le concept de « durée de vie atmosphérique » d'un fluide influence directement :",
+   "choix": [
+    "Sa couleur",
+    "Son prix",
+    "Son GWP",
+    "Sa pression de service"
+   ],
+   "bonne": 2,
+   "explication": "Son GWP — Plus un gaz reste longtemps dans l'atmosphère, plus son impact cumulé sur le réchauffement est important.",
+   "aide": "Longue durée de vie = GWP élevé. Courte durée = GWP faible.",
+   "remed": {
+    "texte": "Plus un gaz reste longtemps dans l'atmosphère, plus son impact cumulé sur le réchauffement est important."
+   },
+   "remediation_vers": "g2a"
+  },
+  {
+   "id": "q-g2-v6_037",
+   "dc": "G2",
+   "niveau": 2,
+   "type": "qcm",
+   "enonce": "Le R22 (HCFC) est interdit dans l'UE depuis :",
+   "choix": [
+    "2000",
+    "2010",
+    "2015",
+    "2020"
+   ],
+   "bonne": 2,
+   "explication": "2015 — Le R22 a été totalement interdit dans l'UE depuis le 1er janvier 2015, même en recyclé/régénéré.",
+   "aide": "C'est un HCFC — la dernière étape de leur élimination dans l'UE.",
+   "remed": {
+    "texte": "Le R22 a été totalement interdit dans l'UE depuis le 1er janvier 2015, même en recyclé/régénéré."
+   },
+   "remediation_vers": "g2a"
+  },
+  {
+   "id": "q-g2-42",
+   "dc": "G2",
+   "niveau": 1,
+   "type": "qcm",
+   "enonce": "Quel fluide a le GWP le plus élevé ?",
+   "choix": [
+    "R134a",
+    "R410A",
+    "R404A",
+    "R32"
+   ],
+   "bonne": 2,
+   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g2"
   },
   {
@@ -3295,6 +3711,18 @@ window.PILOTE_PACK = {
      "desc": "G1 — le socle de tout le reste."
     },
     {
+     "vers": "g1c",
+     "icone": "1",
+     "titre": "Familles et codes des fluides",
+     "desc": "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a."
+    },
+    {
+     "vers": "g2a",
+     "icone": "2",
+     "titre": "L'histoire : ozone et climat",
+     "desc": "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali."
+    },
+    {
      "vers": "g2",
      "icone": "2",
      "titre": "Impact environnemental et F-Gas",
@@ -3391,6 +3819,18 @@ window.PILOTE_PACK = {
      "desc": "G1 — insister sur les seuils de charge."
     },
     {
+     "vers": "g1c",
+     "icone": "1",
+     "titre": "Familles et codes des fluides",
+     "desc": "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a."
+    },
+    {
+     "vers": "g2a",
+     "icone": "2",
+     "titre": "L'histoire : ozone et climat",
+     "desc": "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali."
+    },
+    {
      "vers": "g2",
      "icone": "2",
      "titre": "Impact environnemental et F-Gas",
@@ -3481,6 +3921,18 @@ window.PILOTE_PACK = {
      "desc": "G1 partiel — savoir de quoi on parle."
     },
     {
+     "vers": "g1c",
+     "icone": "1",
+     "titre": "Familles et codes des fluides",
+     "desc": "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a."
+    },
+    {
+     "vers": "g2a",
+     "icone": "2",
+     "titre": "L'histoire : ozone et climat",
+     "desc": "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali."
+    },
+    {
      "vers": "g2",
      "icone": "2",
      "titre": "Enjeu environnemental",
@@ -3558,6 +4010,18 @@ window.PILOTE_PACK = {
      "titre": "Lire une table de saturation",
      "desc": "G1 · code 1.03 — indispensable à la méthode indirecte.",
      "primaire": true
+    },
+    {
+     "vers": "g1c",
+     "icone": "1",
+     "titre": "Familles et codes des fluides",
+     "desc": "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a."
+    },
+    {
+     "vers": "g2a",
+     "icone": "2",
+     "titre": "L'histoire : ozone et climat",
+     "desc": "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali."
     },
     {
      "vers": "g2",
@@ -3839,8 +4303,115 @@ window.PILOTE_PACK = {
    ],
    "liens": [
     {
+     "vers": "g1c",
+     "libelle": "Suite ▸ Familles et codes des fluides"
+    },
+    {
+     "vers": "c00",
+     "libelle": "↺ Sommaire",
+     "sec": true
+    }
+   ]
+  },
+  {
+   "id": "g1c",
+   "type": "cours",
+   "titre": "Les familles de fluides et leurs codes",
+   "dc": "G1 · codes 1.06 · 1.07",
+   "minuteur_s": 420,
+   "corps": "<img src=\"packs/fluides/res/svg/familles-fluides.svg\" alt=\"Les cinq familles : CFC, HCFC, HFC, HFO et naturels, avec leur composition atomique.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Derrière chaque code se cache une <b>molécule</b>, et trois atomes y décident de tout : le <b>chlore</b> détruit l'ozone — c'est lui qui a condamné les CFC puis les HCFC ; le <b>fluor</b> rend la molécule stable, donc durable dans l'atmosphère, donc à fort effet de serre ; l'<b>hydrogène</b> raccourcit la durée de vie. Les <b>HFC</b> ont éliminé le chlore (ozone sauvé), gardé le fluor (climat pénalisé). Les <b>HFO</b> ajoutent une double liaison fragile : la molécule casse en quelques jours, PRP ≈ 1. Les <b>naturels</b> — propane, isobutane, ammoniac, CO₂ — existent sans chimie de synthèse, chacun avec son revers : inflammabilité, toxicité ou pression.</p><img src=\"packs/fluides/res/svg/nomenclature.svg\" alt=\"Décoder R-134a : centaines = carbone moins un, dizaines = hydrogène plus un, unités = fluor. Les séries R-4xx, R-5xx, R-6xx, R-7xx.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Et le numéro n'est pas un matricule : il <b>décrit la molécule</b>. Centaines + 1 = carbone, dizaines − 1 = hydrogène, unités = fluor — les liaisons restantes sont du chlore. Les mélanges et les fluides inorganiques ont leurs séries : 4xx, 5xx, 6xx, 7xx.</p>",
+   "blocs": [
+    {
+     "type": "cle",
+     "t": "L'astuce du + 90",
+     "html": "Ajoute 90 au code, et tu lis directement C, H, F : <b>134 + 90 = 224</b> → C₂H₂F₄ (R-134a). <b>22 + 90 = 112</b> → C·H·F₂… plus un <b>chlore</b> pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. <b>290 + 90 = 380</b> → C₃H₈ : le propane, zéro fluor, zéro chlore."
+    },
+    {
+     "type": "piege",
+     "t": "Le code dit la molécule, pas le danger",
+     "html": "R-32 et R-290 se ressemblent sur l'étiquette — l'un est A2L, l'autre A3. La famille chimique dit l'<b>impact environnemental</b> ; la classe NF EN 378 dit le <b>risque de manipulation</b>. Il faut les deux lectures, à chaque fois."
+    }
+   ],
+   "question": {
+    "type": "qcm",
+    "enonce": "Un fluide dont le code commence par R-4 (R-404A, R-407C, R-410A…) est toujours :",
+    "choix": [
+     "Un corps pur de la famille HFO",
+     "Un mélange zéotrope de plusieurs fluides",
+     "Un fluide naturel",
+     "Un fluide contenant du chlore"
+    ],
+    "bonne": 1,
+    "explication": "La série R-4xx désigne les mélanges zéotropes : plusieurs fluides assemblés, avec un glissement de température. La lettre majuscule finale (A, B, C) distingue les proportions du mélange.",
+    "remediation_vers": "g1c"
+   },
+   "criteres": [
+    {
+     "code": "1.06",
+     "libelle": "Identifier la famille et les caractéristiques d'un fluide",
+     "etat": "a_evaluer"
+    },
+    {
+     "code": "1.07",
+     "libelle": "Décoder la nomenclature R-xyz et les séries de mélanges",
+     "etat": "a_evaluer"
+    }
+   ],
+   "liens": [
+    {
+     "vers": "g2a",
+     "libelle": "Suite ▸ L'histoire : ozone et climat"
+    },
+    {
+     "vers": "c00",
+     "libelle": "↺ Sommaire",
+     "sec": true
+    }
+   ]
+  },
+  {
+   "id": "g2a",
+   "type": "cours",
+   "titre": "Quarante ans d'histoire : de l'ozone au climat",
+   "dc": "G2 · code 2.01",
+   "minuteur_s": 420,
+   "corps": "<img src=\"packs/fluides/res/svg/frise-histoire.svg\" alt=\"Frise : CFC années 1930, trou d'ozone 1985, Montréal 1987, Kyoto 1997, Paris 2015, Kigali 2016, F-Gas III 2024.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Dans les années 1930, les <b>CFC</b> sont des fluides « miracle » : stables, ni toxiques, ni inflammables. Cinquante ans plus tard, la facture arrive : en <b>1985</b>, on découvre le <b>trou dans la couche d'ozone</b> au-dessus de l'Antarctique — le chlore des CFC casse l'ozone qui filtre les <b>UV-B</b>. En <b>1987</b>, le <b>protocole de Montréal</b> organise leur sortie, puis celle des HCFC : la couche se répare, c'est le plus grand succès environnemental mondial.</p><p>Mais les remplaçants, les <b>HFC</b>, inoffensifs pour l'ozone, sont de puissants gaz à effet de serre. Le combat change de terrain : <b>Kyoto</b> (1997) les inscrit parmi les six gaz visés, l'<b>accord de Paris</b> (2015) fixe le cap des +1,5 °C, et l'<b>amendement de Kigali</b> (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations — celles de ton métier.</p>",
+   "blocs": [
+    {
+     "type": "cle",
+     "t": "L'effet de serre en deux phrases",
+     "html": "Le rayonnement solaire entre, la Terre renvoie de l'infrarouge, et certains gaz (CO₂, vapeur d'eau, méthane…) retiennent cette chaleur. Cet effet est <b>vital</b> — sans lui, il ferait environ <b>−18 °C</b> au lieu de +15 : c'est son <b>renforcement</b> par nos émissions qui pose problème."
+    },
+    {
+     "type": "piege",
+     "t": "Ozone et climat : deux problèmes, pas un",
+     "html": "L'<b>ODP</b> mesure l'attaque de l'ozone (affaire de <b>chlore et de brome</b>) ; le <b>PRP</b> mesure l'effet de serre. Un HFC a un ODP <b>nul</b> et un PRP <b>énorme</b> : excellent élève d'un côté, cancre de l'autre. Ne jamais confondre les deux bulletins."
+    }
+   ],
+   "question": {
+    "type": "qcm",
+    "enonce": "Pourquoi les HFC, qui ont sauvé la couche d'ozone, sont-ils aujourd'hui visés à leur tour ?",
+    "choix": [
+     "Parce qu'ils contiennent encore un peu de chlore",
+     "Parce qu'ils sont de puissants gaz à effet de serre, malgré leur ODP nul",
+     "Parce qu'ils sont tous très inflammables",
+     "Parce qu'ils sont toxiques pour l'homme"
+    ],
+    "bonne": 1,
+    "explication": "Zéro chlore : l'ozone est tranquille. Mais leur stabilité leur donne un fort pouvoir de réchauffement — d'où Kyoto, Kigali et le phase-down F-Gas. Le problème a changé de terrain, pas de molécules.",
+    "remediation_vers": "g2a"
+   },
+   "criteres": [
+    {
+     "code": "2.01",
+     "libelle": "Situer l'histoire : couche d'ozone, protocoles, politique climat",
+     "etat": "a_evaluer"
+    }
+   ],
+   "liens": [
+    {
      "vers": "g2",
-     "libelle": "Suite ▸ Impact environnemental"
+     "libelle": "Suite ▸ Le PRP et F-Gas aujourd'hui"
     },
     {
      "vers": "c00",
@@ -5142,7 +5713,7 @@ window.PILOTE_PACK = {
     "dc": [
      "G2"
     ],
-    "n": 7,
+    "n": 10,
     "seuil": 60
    }
   },

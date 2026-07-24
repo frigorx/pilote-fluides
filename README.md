@@ -17,8 +17,8 @@ tournant dans le moteur générique **inerWeb Pilote**.
 | | |
 |---|---|
 | **4 parcours** | A1, A2, D, E — un seul pack, une carte menu par catégorie, périmètres réglementaires respectés |
-| **50 cartes** | 1 accueil · 5 menus · 17 fiches · 5 exercices « frigoriste-détective » · 21 séries et examens · 1 bilan |
-| **158 questions** | banque étiquetée par groupe (G1 → G13) ET par niveau : 110 fondamentales · 48 diagnostics |
+| **52 cartes** | 1 accueil · 5 menus · 19 fiches · 5 exercices « frigoriste-détective » · 21 séries et examens · 1 bilan |
+| **180 questions** | banque étiquetée par groupe (G1 → G13) ET par niveau, avec indice et remédiation complète |
 | **3 paliers** | Échauffement (niveau 1, seuil 60 %) · Examen blanc (mixte, 70 %) · Défi technicien (niveau 2, 80 %) |
 | **Auto-formation** | espace « Réviser par thème » : 13 séries corrigées, chaque erreur renvoie vers sa fiche, bilan des fiches à revoir, score précédent mémorisé (localStorage, rien ne sort du navigateur) |
 | **Remédiation** | réponse fausse → bouton « Revoir la fiche » vers la fiche concernée |

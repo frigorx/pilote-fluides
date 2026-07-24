@@ -31,12 +31,17 @@ const SOURCE_DEFAUT =
    tout le chapitre ch12 (lot généré, distracteurs non sérieux).
    --------------------------------------------------------------------- */
 const SELECTION = {
-  // G1 — Législation & thermodynamique élémentaire
+  // G1 — Législation & thermodynamique élémentaire (dont familles et
+  // nomenclature des fluides, codes 1.06/1.07 → fiche g1c)
   G1: ["151", "160", "62", "v6_042", "v6_041", "v6_048", "v6_145",
        "153", "154", "157", "158", "v6_141", "v6_142", "v6_146",
-       "v6_040", "v6_045", "v6_046", "v6_143"],
-  // G2 — Incidence environnementale & réglementations
-  G2: ["v6_001", "5", "v6_003", "v6_004", "v6_113", "v6_011", "v6_017"],
+       "v6_040", "v6_045", "v6_046", "v6_143",
+       "31", "33", "34", "36", "41", "45", "51", "v6_031", "v6_132", "v6_137"],
+  // G2 — Incidence environnementale & réglementations (dont l'histoire
+  // effet de serre / ozone / protocoles, code 2.01 → fiche g2a)
+  G2: ["v6_001", "5", "v6_003", "v6_004", "v6_113", "v6_011", "v6_017",
+       "v6_002", "v6_005", "v6_008", "v6_010", "v6_106", "v6_107",
+       "v6_110", "v6_111", "v6_114", "v6_115", "v6_037", "42"],
   // G3 — Contrôles avant mise en service / après réparation
   G3: ["v6_058", "v6_059", "v6_062", "v6_159", "66"],
   // G4 — Contrôles d'étanchéité (cœur de la catégorie E)
@@ -91,6 +96,8 @@ const NIVEAU2 = new Set([
   "189", "190", "173", "177", "241", "243", "245", "246", "248", "249",
   "251", "252", "v6_152", "v6_153", "v6_158", "130", "146",
   "v6_147", "v6_183", "v6_180", "302",
+  // nomenclature et histoire (niveau 2 = compositions précises, subtilités)
+  "34", "36", "51", "v6_031", "v6_008", "v6_107", "v6_111", "v6_115", "v6_037",
 ]);
 
 /* ---------------------------------------------------------------------
@@ -182,6 +189,16 @@ const REMEDIATION = {
   G1: "g1a", G2: "g2", G3: "g3", G4: "g4b", G5: "g5a", G6: "g6",
   G7: "g7", G8: "g8", G9: "g9", G10: "g10", G11: "g11", G12: "g12",
   G13: "g13",
+};
+
+// renvois plus fins que le groupe : nomenclature → g1c, histoire → g2a
+const REMEDIATION_FINE = {
+  "31": "g1c", "33": "g1c", "34": "g1c", "36": "g1c", "41": "g1c",
+  "45": "g1c", "51": "g1c", "v6_031": "g1c", "v6_132": "g1c", "v6_137": "g1c",
+  "v6_002": "g2a", "v6_005": "g2a", "v6_008": "g2a", "v6_010": "g2a",
+  "v6_106": "g2a", "v6_107": "g2a", "v6_110": "g2a", "v6_111": "g2a",
+  "v6_114": "g2a", "v6_115": "g2a", "v6_037": "g2a",
+  "5": "g2a", "v6_003": "g2a", "v6_004": "g2a",
 };
 
 /* ---------------------------------------------------------------------
@@ -308,7 +325,7 @@ function main() {
         explication: fix.explication || condenser(q.remediation),
         aide: (q.aide || "").replace(/\s+/g, " ").trim() || undefined,
         remed: fix.explication ? undefined : structurer(q.remediation) || undefined,
-        remediation_vers: REMEDIATION[dc],
+        remediation_vers: REMEDIATION_FINE[id] || REMEDIATION[dc],
       });
     }
   }
