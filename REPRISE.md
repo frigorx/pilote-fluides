@@ -154,6 +154,7 @@ que « G6 · codes 6.01 → 6.08 » promettait huit compétences pour quatre ens
 | **Console formateur publiée** | `formateur.html` + `pack.pilote.js` sont publics : ce sont des conseils d'animation, pas des corrigés. **Arbitrage à confirmer** — pour revenir en arrière : supprimer ces 2 fichiers du dépôt, le build les régénère en local. |
 | **PRP alignés sur Mission F-GAZ** | R-32 = 675, R-134a = 1430, R-404A = 3922, R-410A = 2088 — pas les valeurs AR5 de la réglette FRIGOLO, pour une seule vérité côté élève. |
 | **Génératif interdit sur les schémas** | Aucun modèle d'image ne respecte la croix du frigoriste. Schémas = SVG faits main. Ambiance = génératif autorisé. |
+| **Examens derrière un code d'accès — un rideau, pas un coffre** | Les 8 examens demandent un code (donné par le formateur en salle). Assumé comme portillon pédagogique : les questions restent lisibles dans le code source de la page, et une empreinte se force par essais. Le code en clair n'est écrit **nulle part** — ni dans le dépôt, ni sur le site : seule son empreinte djb2 est versionnée. Décidé le 25/07 (F. Henninot). |
 | **Le référentiel est une donnée de BUILD, jamais de runtime** | Le navigateur ne charge pas les 74 Ko du JSON : le build résout les libellés et n'injecte que les codes réellement utilisés. Une seule source, zéro divergence possible. |
 | **Deux libellés par compétence, jamais un seul** | `libelle` = la reformulation accessible écrite pour l'élève ; `officiel` = le texte de l'arrêté, injecté, jamais retouché. Le public réel ne lit pas « au sens du règlement (CE) n° 1516/2007 », mais l'organisme doit pouvoir montrer le texte. |
 | **Le groupe est un rangement, le code est la règle** | `dc` (G1…G13) range pédagogiquement — le voyant liquide s'apprend avec les composants. Le `code` rattache réglementairement — ce même voyant est évalué au titre de 1.05. Les deux divergent parfois : 19 questions portent un code hors de leur groupe de rangement, et c'est voulu. |
@@ -164,9 +165,11 @@ que « G6 · codes 6.01 → 6.08 » promettait huit compétences pour quatre ens
 
 ## 5. Pièges — lus dans le sang, à ne pas réapprendre
 
-**Moteur** — 4 extensions par rapport au r408 d'origine, toutes rétrocompatibles :
+**Moteur** — 5 extensions par rapport au r408 d'origine, toutes rétrocompatibles :
 `examen.niveau` (filtrage par difficulté) · bilan listant les fiches ratées · historique
-`localStorage` · auto-hauteur des iframes par `postMessage`.
+`localStorage` · auto-hauteur des iframes par `postMessage` · **portillon d'accès par code**
+(`acces.code_empreinte` sur une carte examen — les 8 `ex-*` le portent, les 13 séries `rev-*`
+restent libres ; déverrouillage mémorisé sur l'appareil).
 
 - **Un schéma ne se met JAMAIS en `illus`** : la charte recadre l'illustration de tête
   (`object-fit: cover`, 340 px max) et le tronque. Les schémas passent par l'assistant

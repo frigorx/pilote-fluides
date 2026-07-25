@@ -188,7 +188,55 @@
   }
 
   /* ---- Carte EXAMEN BLANC (séquence de questions tirées de la banque) ---- */
+  /* Extension pack fluides n° 5 : portillon d'accès par code — un RIDEAU
+     pédagogique assumé, pas un secret (le contenu reste dans la page pour
+     qui lit le code source ; l'empreinte djb2 se force par essais).
+     Une carte examen portant `acces.code_empreinte` demande le code une
+     fois ; le déverrouillage est mémorisé sur l'appareil. Le code en clair
+     n'existe nulle part dans le dépôt. Carte sans `acces` : comportement
+     d'origine (r408 intact). */
+  function empreinteCode(txt) {
+    var h = 5381;
+    for (var i = 0; i < txt.length; i++) h = (h * 33 + txt.charCodeAt(i)) >>> 0;
+    return h;
+  }
+  function accesOuvert(c) {
+    if (!c.acces || !c.acces.code_empreinte) return true;
+    try { return localStorage.getItem("pilote_acces_" + PACK.pack.id) === "oui"; }
+    catch (e) { return false; }
+  }
+  function renderAcces(c, m) {
+    var html = barre(m) + fil() + "<div class='scene'><div class='carte'><div class='corps'>";
+    html += "<span class='dc'>" + esc(c.dc || "Examen") + "</span>";
+    html += "<h1>" + esc(c.titre) + "</h1>";
+    html += "<p>🔒 Cet examen s'ouvre avec le <b>code d'accès</b> donné par le formateur.</p>";
+    html += "<p><input id='acces-code' type='text' inputmode='numeric' autocomplete='off' ";
+    html += "placeholder='Le code…' aria-label='Code d&#39;accès' ";
+    html += "style='font-size:1.2em; padding:.5em .7em; width:9em; border:2px solid var(--bleu); border-radius:8px'> ";
+    html += "<button id='acces-ok'>Ouvrir ▸</button></p>";
+    html += "<p id='acces-err' style='display:none; font-weight:600'>Ce n'est pas le bon code. Vérifiez auprès du formateur.</p>";
+    html += "<p style='color:var(--mut)'>Une fois le bon code saisi, cet appareil reste déverrouillé.</p>";
+    html += "</div></div></div>" + pied({}) + voiles();
+    app.innerHTML = html;
+    nav();
+    var champ = document.getElementById("acces-code");
+    var verifier = function () {
+      if (empreinteCode(champ.value.trim()) === c.acces.code_empreinte) {
+        try { localStorage.setItem("pilote_acces_" + PACK.pack.id, "oui"); } catch (e) {}
+        render();
+      } else {
+        var err = document.getElementById("acces-err");
+        err.style.display = "block";
+        champ.select(); champ.focus();
+      }
+    };
+    document.getElementById("acces-ok").onclick = verifier;
+    champ.addEventListener("keydown", function (e) { if (e.key === "Enter") verifier(); });
+    champ.focus();
+  }
+
   function renderExamen(c, m) {
+    if (!accesOuvert(c)) return renderAcces(c, m);
     if (!S.examen || S.examen.carteId !== c.id) initExamen(c);
     var ex = S.examen;
     var html = barre(m) + fil() + "<div class='scene'><div class='carte'><div class='corps'>";

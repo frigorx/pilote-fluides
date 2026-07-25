@@ -11967,6 +11967,9 @@ window.PILOTE_PACK = {
   },
   {
    "id": "ex-ech",
+   "acces": {
+    "code_empreinte": 3069038059
+   },
    "type": "examen",
    "titre": "Échauffement — les fondamentaux (niveau 1)",
    "dc": "Entraînement · niveau 1 · A1 et A2",
@@ -11993,6 +11996,9 @@ window.PILOTE_PACK = {
   },
   {
    "id": "ex-defi",
+   "acces": {
+    "code_empreinte": 3069038059
+   },
    "type": "examen",
    "titre": "Défi technicien — diagnostics (niveau 2)",
    "dc": "Entraînement · niveau 2 · A1 et A2",
@@ -12019,6 +12025,9 @@ window.PILOTE_PACK = {
   },
   {
    "id": "ex-e-ech",
+   "acces": {
+    "code_empreinte": 3069038059
+   },
    "type": "examen",
    "titre": "Échauffement — catégorie E (niveau 1)",
    "dc": "Entraînement · niveau 1 · périmètre E",
@@ -12037,6 +12046,9 @@ window.PILOTE_PACK = {
   },
   {
    "id": "ex-d-ech",
+   "acces": {
+    "code_empreinte": 3069038059
+   },
    "type": "examen",
    "titre": "Échauffement — catégorie D (niveau 1)",
    "dc": "Entraînement · niveau 1 · périmètre D",
@@ -12055,6 +12067,9 @@ window.PILOTE_PACK = {
   },
   {
    "id": "ex-e",
+   "acces": {
+    "code_empreinte": 3069038059
+   },
    "type": "examen",
    "titre": "Examen blanc — catégorie E",
    "dc": "Entraînement · périmètre E",
@@ -12072,6 +12087,9 @@ window.PILOTE_PACK = {
   },
   {
    "id": "ex-d",
+   "acces": {
+    "code_empreinte": 3069038059
+   },
    "type": "examen",
    "titre": "Examen blanc — catégorie D",
    "dc": "Entraînement · périmètre D",
@@ -12089,6 +12107,9 @@ window.PILOTE_PACK = {
   },
   {
    "id": "ex-a2",
+   "acces": {
+    "code_empreinte": 3069038059
+   },
    "type": "examen",
    "titre": "Examen blanc — catégorie A2",
    "dc": "Entraînement · périmètre A2",
@@ -12114,6 +12135,9 @@ window.PILOTE_PACK = {
   },
   {
    "id": "ex-a1",
+   "acces": {
+    "code_empreinte": 3069038059
+   },
    "type": "examen",
    "titre": "Examen blanc — catégorie A1",
    "dc": "Entraînement · périmètre A1",
