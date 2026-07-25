@@ -101,6 +101,108 @@ const NIVEAU2 = new Set([
 ]);
 
 /* ---------------------------------------------------------------------
+   1 ter. RATTACHEMENT AU RÉFÉRENTIEL — un code de compétence par question
+   ---------------------------------------------------------------------
+   Le groupe (`dc`) est un RANGEMENT PÉDAGOGIQUE : le voyant liquide
+   s'apprend avec les composants du circuit. Le code est le rattachement
+   RÉGLEMENTAIRE : ce même voyant est évalué au titre du code 1.05
+   (« repères transparents et indicateurs d'humidité »). Les deux ne
+   coïncident pas toujours — la marque « ← G1 » en fin de ligne signale
+   les questions dont le code sort de leur groupe de rangement.
+
+   Sans ce rattachement, le bilan de fin d'examen ne savait dire que
+   « revoyez la fiche G4 » ; il peut désormais nommer la compétence.
+
+   HORS_REFERENTIEL : les questions qu'aucun code de l'annexe II.B ne
+   couvre honnêtement. On ne les force pas — un faux rattachement ferait
+   croire à une couverture qui n'existe pas. Elles restent dans la banque,
+   le savoir étant utile au métier, mais sont comptées à part.
+   --------------------------------------------------------------------- */
+const CODES = {
+  // G1 — 20 question(s)
+  "62": "1.01", // Connaître les unités normalisées ISO pour la température, la pression, l…
+  "160": "1.02", "v6_048": "1.02", "v6_145": "1.02", "157": "1.02", "158": "1.02", "34": "1.02", // Comprendre la théorie élémentaire des systèmes de réfrigération : thermo…
+  "v6_042": "1.03", "v6_041": "1.03", "v6_046": "1.03", "v6_143": "1.03", // Utiliser les tableaux et graphiques correspondants et les interpréter da…
+  "151": "1.04", "153": "1.04", "154": "1.04", "v6_141": "1.04", "v6_142": "1.04", "v6_146": "1.04", "v6_040": "1.04", "v6_045": "1.04", // Décrire la fonction des principales composantes du système (compresseur,…
+  "45": "1.07", // Connaître les caractéristiques des hydrocarbures, du CO2, et du NH3 et d…
+  // G2 — 19 question(s)
+  "5": "2.01", "v6_003": "2.01", "v6_002": "2.01", "v6_005": "2.01", "v6_008": "2.01", "v6_010": "2.01", "v6_106": "2.01", "v6_107": "2.01", "v6_110": "2.01", "v6_114": "2.01", "v6_037": "2.01", // Avoir une connaissance élémentaire de la politique de l'UE et internatio…
+  "v6_001": "2.02", "v6_004": "2.02", "v6_113": "2.02", "v6_011": "2.02", "v6_017": "2.02", "v6_111": "2.02", "v6_115": "2.02", "42": "2.02", // Avoir une connaissance élémentaire du concept de « potentiel de réchauff…
+  // G3 — 5 question(s)
+  "66": "1.02", // Comprendre la théorie élémentaire des systèmes de réfrigération : thermo…  ← G1
+  "v6_062": "3.01", // Effectuer une épreuve de pression pour contrôler la résistance du systèm…
+  "v6_159": "3.03", // Utiliser une pompe à vide
+  "v6_058": "3.04", "v6_059": "3.04", // Faire le vide dans le système pour évacuer l'air et l'humidité selon la …
+  // G4 — 12 question(s)
+  "v6_174": "1.00", "107": "1.00", // Connaissance élémentaire de la législation de l'Union européenne et nati…  ← G1
+  "104": "4.03", "114": "4.03", "110": "4.03", // Effectuer un contrôle visuel et manuel de tout le système au sens du règ…
+  "v6_074": "4.04", // Effectuer un contrôle de l'étanchéité du système au moyen d'une méthode …
+  "68": "4.06", "180": "4.06", // Contrôler l'étanchéité du système au moyen d'une des méthodes directes v…
+  "v6_072": "4.07", // Contrôler l'étanchéité du système au moyen d'une des méthodes directes n…
+  "v6_163": "4.08", "v6_069": "4.08", "v6_168": "4.08", // Utiliser un dispositif électronique de détection des fuites
+  // G5 — 25 question(s)
+  "175": "5.01", "176": "5.01", // Connecter et déconnecter les jauges et lignes en produisant le minimum d…
+  "v6_063": "5.02", // Vider et remplir un cylindre de réfrigérant à l'état liquide et à l'état…
+  "141": "5.03", "179": "5.03", // Utiliser un dispositif de récupération des réfrigérants et connecter et …
+  "135": "5.04", // Vider l'huile contaminée par le réfrigérant d'un système
+  "v6_060": "5.05", "v6_161": "5.05", "v6_158": "5.05", // Déterminer l'état (liquide, gazeux) et les conditions (sous-refroidi, sa…
+  "v6_064": "5.06", // Choisir le bon type de balance et l'utiliser pour peser le réfrigérant
+  "v6_170": "5.07", "v6_079": "5.07", // Consigner dans le registre de l'équipement toutes les informations perti…
+  "v6_156": "5.08", "v6_082": "5.08", "v6_083": "5.08", "v6_176": "5.08", "v6_175": "5.08", "v6_081": "5.08", "128": "5.08", "133": "5.08", "143": "5.08", "147": "5.08", "v6_177": "5.08", "130": "5.08", "146": "5.08", // Connaître les prescriptions et les procédures de gestion, de réutilisati…
+  // G6 — 24 question(s)
+  "152": "6.01", "231": "6.01", "233": "6.01", "247": "6.01", "177": "6.01", "249": "6.01", "252": "6.01", "v6_152": "6.01", "v6_153": "6.01", // Expliquer le principe de fonctionnement d'un compresseur (y compris le r…
+  "174": "6.05", "234": "6.05", "235": "6.05", "v6_054": "6.05", "241": "6.05", "243": "6.05", "245": "6.05", "246": "6.05", // Vérifier le circuit de retour de l'huile
+  "186": "6.06", "v6_150": "6.06", "173": "6.06", "190": "6.06", // Mettre en marche et arrêter un compresseur et en vérifier le bon fonctio…
+  "240": "6.07", "248": "6.07", "251": "6.07", // Rédiger un rapport sur l'état du compresseur en indiquant tout problème …
+  // G7 — 8 question(s)
+  "170": "4.05", // Utiliser des instruments de mesure portables tels que des manomètres, de…  ← G4
+  "159": "7.01", "163": "7.01", "169": "7.01", // Expliquer le principe de fonctionnement d'un condenseur et les risques d…
+  "v6_057": "7.04", // Régler les interrupteurs de sécurité et de contrôle
+  "182": "7.07", "71": "7.07", // Mettre en marche et arrêter un condenseur et en vérifier le bon fonction…
+  "164": "7.08", // Inspecter la surface du condenseur
+  // G8 — 10 question(s)
+  "171": "4.05", // Utiliser des instruments de mesure portables tels que des manomètres, de…  ← G4
+  "v6_039": "8.01", "v6_043": "8.01", // Expliquer le principe de fonctionnement d'un évaporateur (y compris le s…
+  "181": "8.08", "183": "8.08", "184": "8.08", "166": "8.08", "167": "8.08", "70": "8.08", // Mettre en marche et arrêter un évaporateur et en vérifier le bon fonctio…
+  "178": "8.09", // Inspecter la surface de l'évaporateur
+  // G9 — 17 question(s)
+  "v6_052": "1.05", "v6_155": "1.05", "168": "1.05", "162": "1.05", "v6_053": "1.05", "v6_154": "1.05", // Connaître le fonctionnement élémentaire des composantes suivantes utilis…  ← G1
+  "v6_049": "9.01", "v6_055": "9.01", "v6_149": "9.01", "187": "9.01", "188": "9.01", "189": "9.01", // Expliquer le principe de fonctionnement de différents types de vannes d'…
+  "v6_050": "9.08", "v6_051": "9.08", "172": "9.08", "161": "9.08", "v6_151": "9.08", // Vérifier l'état d'un filtre sécheur
+  // G10 — 3 question(s)
+  "v6_061": "10.01", "v6_065": "10.01", "69": "10.01", // Soudage, brasage fort et/ou brasage tendre des joints étanches sur des t…
+  // G11 — 10 question(s)
+  "v6_047": "1.02", "v6_147": "1.02", // Comprendre la théorie élémentaire des systèmes de réfrigération : thermo…  ← G1
+  "v6_030": "11.01", "v6_035": "11.01", // Connaître les technologies de substitution pertinentes permettant de rem…
+  "185": "11.02", // Connaître les systèmes de conception pertinents afin de réduire la charg…
+  "v6_033": "11.03", "v6_140": "11.03", "54": "11.03", "v6_092": "11.03", "v6_183": "11.03", // Connaître les réglementations et les normes de sécurité applicables pour…
+  // G12 — 7 question(s)
+  "v6_181": "1.07", // Connaître les caractéristiques des hydrocarbures, du CO2, et du NH3 et d…  ← G1
+  "289": "1.08", // Connaître la combustibilité, la propagation des flammes, les restriction…  ← G1
+  "v6_093": "12.02", "v6_184": "12.02", // Connaître les prescriptions en matière de sécurité pour les outils d'ent…
+  "v6_091": "12.03", // Calculer la charge de réfrigérant inflammable dans un système conforméme…
+  "286": "12.04", // Réaliser une analyse des risques avant le début du travail et éliminer o…
+  "291": "12.06", // Récupérer les réfrigérants inflammables du système en toute sécurité et …
+  // G13 — 6 question(s)
+  "v6_088": "1.09", "v6_089": "1.09", "v6_180": "1.09", // Connaître la pression du CO2, le cycle transcritique ou subcritique, le …  ← G1
+  "283": "13.14", "302": "13.14", // Vérifier que les mesures de santé et de sécurité conformes aux règles ap…
+  "v6_185": "2.02", // Avoir une connaissance élémentaire du concept de « potentiel de réchauff…  ← G2
+};
+
+const HORS_REFERENTIEL = {
+  // nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l annexe II.B
+  "31": true, "33": true, "36": true, "41": true, "51": true, "v6_031": true, "v6_132": true, "v6_137": true,
+  // cintrage : geste métier ; le groupe 10 ne couvre que le brasage (10.01) et les supports (10.02)
+  "87": true,
+  // dudgeonnage : raccord mécanique, hors du groupe 10 (brasage, supports)
+  "84": true,
+  // raccordement sur vanne Schrader : geste métier non listé à l annexe II.B
+  "v6_157": true,
+  // relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack
+  "v6_090": true, "v6_094": true, "v6_182": true,
+};
+
+/* ---------------------------------------------------------------------
    2. CORRECTIONS ÉDITORIALES
    ---------------------------------------------------------------------
    a) plages alignées sur les seules valeurs autorisées par la charte
@@ -326,18 +428,52 @@ function main() {
         aide: (q.aide || "").replace(/\s+/g, " ").trim() || undefined,
         remed: fix.explication ? undefined : structurer(q.remediation) || undefined,
         remediation_vers: REMEDIATION_FINE[id] || REMEDIATION[dc],
+        code: CODES[id],
+        hors_ref: HORS_REFERENTIEL[id] ? true : undefined,
       });
     }
   }
 
+  /* -------------------------------------------------------------------
+     QUESTIONS ÉCRITES POUR LE PACK
+     -------------------------------------------------------------------
+     Mission F-GAZ n'interrogeait pas les compétences ajoutées au pack :
+     cinq fiches se retrouvaient sans une seule question sur leurs codes,
+     et le mini-questionnaire de leur séquence aurait été vide.
+     Ces questions sont ORIGINALES — elles ne viennent ni de la banque
+     officielle des 85, ni des examens blancs du dépôt privé, qui ne
+     sortent jamais (cf. § décisions du REPRISE).
+     ------------------------------------------------------------------- */
+  const QUESTIONS_PACK = JSON.parse(
+    readFileSync(resolve(RACINE, "packs/fluides/questions-pack.json"), "utf8")
+  );
+  for (const q of QUESTIONS_PACK) {
+    banque.push({
+      ...q,
+      // le moteur n'affiche `explication` que faute de remédiation structurée ;
+      // on la dérive de la règle pour satisfaire le contrôle ci-dessous.
+      explication: q.explication || (q.remed && q.remed.regle) || "",
+      origine: "pack",
+    });
+  }
+
   /* --- contrôles --- */
   const erreurs = [];
+  const vus = new Set();
+  for (const q of banque) {
+    if (vus.has(q.id)) erreurs.push("identifiant de question en double : " + q.id);
+    vus.add(q.id);
+  }
   for (const q of banque) {
     if (!Number.isInteger(q.bonne) || q.bonne < 0 || q.bonne >= q.choix.length)
       erreurs.push(q.id + " : index de bonne réponse hors plage");
     if (!q.enonce || !q.explication) erreurs.push(q.id + " : énoncé ou explication vide");
     if (q.choix.some((c) => !c || !String(c).trim())) erreurs.push(q.id + " : proposition vide");
   }
+  for (const ids of Object.values(SELECTION))
+    for (const id of ids)
+      if (!CODES[id] && !HORS_REFERENTIEL[id])
+        erreurs.push("question " + id + " : ni code de compétence, ni classement hors référentiel");
   if (manquants.length) erreurs.push("ids introuvables : " + manquants.join(", "));
   if (erreurs.length) {
     console.error("✗ " + erreurs.length + " anomalie(s) :");

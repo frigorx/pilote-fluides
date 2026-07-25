@@ -3,219 +3,383 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portail — Habilitation fluides frigorigènes</title>
-<meta name="robots" content="noindex">
-<meta name="description" content="Le point d'entrée du pack : espace élève, révisions, console formateur, atelier numérique relié, document de relecture.">
+<title>Habilitation fluides frigorigènes — dossier de présentation</title>
+<meta name="description" content="Dispositif de formation à l'habilitation aux fluides frigorigènes (A1, A2, D, E) — autoformation, projection en salle, préparation pratique. Conforme à l'arrêté du 21 novembre 2025.">
 <style>
   :root{
-    --bleu:#1B3A63; --bleu-clair:#2f5689; --orange:#FF6B35; --orange-clair:#ffe2d6;
-    --txt:#1d2a38; --mut:#5a6b7d; --fond:#eef2f6; --carte:#ffffff; --ligne:#d6dee7;
-    --ok:#1e7e54; --ok-bg:#e3f5ec; --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+    --bleu:#1B3A63; --bleu2:#2f5689; --bleu3:#3d6ea8; --orange:#FF6B35; --orange-cl:#ffe2d6;
+    --txt:#1d2a38; --mut:#5a6b7d; --fond:#eef2f6; --blanc:#fff; --ligne:#d6dee7;
+    --ok:#1e7e54; --ok-bg:#e3f5ec; --attente:#b06a00;
+    --r:16px; --ombre:0 2px 14px rgba(27,58,99,.09); --ombre2:0 8px 30px rgba(27,58,99,.16);
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--fond);color:var(--txt);font:16px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif}
-  h1,h2,h3{font-family:'Trebuchet MS',Calibri,Arial,sans-serif;font-weight:700;color:var(--bleu);margin:0}
-  a{color:inherit}
-  .barre{background:var(--bleu);color:#fff;padding:22px 24px}
-  .barre .fil{max-width:980px;margin:0 auto}
-  .barre .logo{font-family:'Trebuchet MS';font-weight:700;font-size:22px}
-  .barre .logo b{color:var(--orange)}
-  .barre p{margin:6px 0 0;color:#cdd9e6;font-size:15px;max-width:640px}
-  main{max-width:980px;margin:0 auto;padding:28px 24px 60px}
-  .lead{background:var(--carte);border-radius:var(--r);box-shadow:var(--ombre);padding:22px 26px;margin-bottom:32px;border-left:5px solid var(--orange)}
-  .lead p{margin:0 0 10px}
-  .lead p:last-child{margin-bottom:0}
-  section{margin-bottom:38px}
-  h2{font-size:20px;margin-bottom:4px}
-  .souligne{color:var(--mut);font-size:14px;margin-bottom:16px;display:block}
-  .grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-  .carte{background:var(--carte);border:1.5px solid var(--ligne);border-radius:12px;padding:18px 20px;box-shadow:var(--ombre);display:flex;flex-direction:column;gap:8px}
-  .carte .ic{font-size:26px}
-  .carte h3{font-size:16.5px}
-  .carte p{margin:0;color:var(--mut);font-size:13.5px;flex:1}
-  .carte a.bouton{align-self:flex-start;margin-top:6px;font-weight:700;color:var(--orange);text-decoration:none;font-size:14px}
-  .carte a.bouton:hover{text-decoration:underline}
-  .carte.accent{border-color:var(--orange);background:var(--orange-clair)}
-  .outils{display:flex;flex-direction:column;gap:10px}
-  .outil{background:var(--carte);border:1.5px solid var(--ligne);border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  .outil .dc{display:inline-block;font-size:11.5px;font-weight:700;color:#fff;background:var(--bleu-clair);padding:2px 9px;border-radius:999px;white-space:nowrap}
-  .outil .nom{font-weight:700;color:var(--bleu);flex:1;min-width:180px}
-  .outil .desc{color:var(--mut);font-size:13.5px;flex-basis:100%}
-  .outil a{font-size:13.5px;font-weight:700;color:var(--orange);text-decoration:none;white-space:nowrap}
-  .outil a:hover{text-decoration:underline}
-  .liste-simple{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
-  .liste-simple li{background:var(--carte);border:1.5px solid var(--ligne);border-radius:8px;padding:9px 14px;font-size:14px}
-  .liste-simple b{color:var(--bleu)}
-  .regles{background:var(--carte);border-radius:var(--r);box-shadow:var(--ombre);padding:18px 22px}
-  .regles ul{margin:8px 0 0;padding-left:20px}
-  .regles li{margin-bottom:6px;font-size:14.5px}
-  .attention{background:#fff6f2;border:1.5px solid #ffc7ad;border-radius:10px;padding:14px 18px;font-size:14.5px;margin-top:14px}
-  .attention b{color:#c9451a}
-  footer{text-align:center;color:var(--mut);font-size:13px;padding:20px 24px 40px}
-  footer a{color:var(--bleu-clair)}
+  html{scroll-behavior:smooth}
+  body{margin:0;font:17px/1.65 'Segoe UI',Calibri,system-ui,sans-serif;color:var(--txt);background:var(--fond)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{line-height:1.25}
+  a{color:var(--bleu2)}
+
+  /* ---- Bandeau de tête ---- */
+  header{background:linear-gradient(160deg,var(--bleu) 0%,var(--bleu2) 60%,var(--bleu3) 100%);color:#fff;
+    padding:56px 0 62px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;right:-90px;top:-90px;width:340px;height:340px;
+    border-radius:50%;background:rgba(255,107,53,.16)}
+  header .wrap{position:relative;z-index:1}
+  .marque{font-size:14px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:14px}
+  .marque b{color:var(--orange)}
+  header h1{font-size:clamp(30px,5vw,46px);margin:0 0 14px;font-weight:700}
+  header .sous{font-size:clamp(17px,2.2vw,21px);max-width:720px;opacity:.94;margin:0 0 10px}
+  header .cats{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 28px}
+  header .cats span{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+    border-radius:999px;padding:5px 15px;font-size:14.5px;font-weight:600}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .bt{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:700;
+    padding:13px 26px;border-radius:999px;box-shadow:var(--ombre2);transition:transform .12s}
+  .bt:hover{transform:translateY(-2px)}
+  .bt.sec{background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.45);box-shadow:none}
+
+  /* ---- Sections ---- */
+  section{padding:52px 0}
+  section.clair{background:var(--blanc)}
+  h2{font-size:clamp(22px,3vw,30px);color:var(--bleu);margin:0 0 8px}
+  .chapo{color:var(--mut);font-size:18px;max-width:760px;margin:0 0 30px}
+
+  /* ---- Les trois portes ---- */
+  .portes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .porte{background:var(--blanc);border:1.5px solid var(--ligne);border-radius:var(--r);padding:26px 24px;
+    text-decoration:none;color:inherit;display:flex;flex-direction:column;box-shadow:var(--ombre);
+    transition:border-color .15s,transform .12s,box-shadow .15s}
+  .porte:hover{border-color:var(--orange);transform:translateY(-3px);box-shadow:var(--ombre2)}
+  .porte .ic{font-size:34px;margin-bottom:10px}
+  .porte h3{margin:0 0 8px;font-size:20px;color:var(--bleu)}
+  .porte p{margin:0 0 16px;color:var(--mut);font-size:15.5px;flex:1}
+  .porte .go{font-weight:700;color:var(--orange)}
+  .porte.pr{border-color:var(--orange);border-width:2px;background:linear-gradient(180deg,#fff9f6,#fff)}
+  .porte .tag{display:inline-block;background:var(--orange-cl);color:#a33d12;font-size:12px;font-weight:700;
+    border-radius:999px;padding:2px 10px;margin-bottom:10px;align-self:flex-start}
+
+  /* ---- Chiffres ---- */
+  .chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .ch{background:var(--blanc);border:1.5px solid var(--ligne);border-radius:var(--r);padding:20px;text-align:center}
+  .ch b{display:block;font-size:34px;color:var(--bleu);line-height:1.1}
+  .ch span{font-size:14.5px;color:var(--mut)}
+  .ch.fort{background:var(--ok-bg);border-color:var(--ok)}
+  .ch.fort b{color:var(--ok)}
+
+  /* ---- Les trois temps ---- */
+  .temps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:8px}
+  .tp{background:var(--blanc);border:1.5px solid var(--ligne);border-left:6px solid var(--bleu2);
+    border-radius:12px;padding:22px}
+  .tp:nth-child(2){border-left-color:var(--orange)}
+  .tp:nth-child(3){border-left-color:var(--ok)}
+  .tp h3{margin:0 0 6px;font-size:18px;color:var(--bleu)}
+  .tp .qui{font-size:13.5px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+  .tp p{margin:0;font-size:15.5px;color:var(--mut)}
+
+  /* ---- Blocs de contenu ---- */
+  .grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .carte{background:var(--blanc);border:1.5px solid var(--ligne);border-radius:var(--r);padding:22px 24px}
+  .carte h3{margin:0 0 8px;font-size:18px;color:var(--bleu)}
+  .carte p{margin:0 0 14px;color:var(--mut);font-size:15.5px}
+  .carte .lien{display:inline-block;text-decoration:none;font-weight:700;color:var(--orange)}
+  .carte .ic{font-size:26px;margin-bottom:6px}
+
+  ul.pts{margin:0;padding-left:20px}
+  ul.pts li{margin:9px 0;font-size:16px}
+  ul.pts b{color:var(--bleu)}
+
+  /* ---- Encadrés ---- */
+  .note{border-left:5px solid var(--bleu);background:#f3f7fb;border-radius:10px;padding:16px 20px;margin:18px 0}
+  .note.att{border-color:var(--attente);background:#fff9ef}
+  .note .t{font-weight:700;color:var(--bleu);margin-bottom:4px}
+  .note.att .t{color:var(--attente)}
+
+  /* ---- Outils ---- */
+  .outils{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+  .outils a{background:var(--blanc);border:1px solid var(--ligne);border-radius:10px;padding:12px 15px;
+    text-decoration:none;color:var(--txt);font-size:15px;display:flex;gap:9px;align-items:center;
+    transition:border-color .15s}
+  .outils a:hover{border-color:var(--orange)}
+
+  /* ---- Retour ---- */
+  .retour{background:linear-gradient(150deg,var(--bleu) 0%,var(--bleu2) 100%);color:#fff;border-radius:var(--r);
+    padding:34px 32px;box-shadow:var(--ombre2)}
+  .retour h2{color:#fff;margin-bottom:10px}
+  .retour p{opacity:.93;max-width:640px}
+  .retour .bt{margin-top:14px}
+
+  footer{background:var(--bleu);color:rgba(255,255,255,.82);padding:34px 0;font-size:14.5px;margin-top:10px}
+  footer a{color:#fff}
+  footer .sep{opacity:.4;margin:0 8px}
 </style>
 </head>
 <body>
-  <div class="barre"><div class="fil">
-    <div class="logo">inerWeb <b>Pilote</b></div>
-    <p>Habilitation fluides frigorigènes — A1 · A2 · D · E — le point d'entrée du pack.</p>
-  </div></div>
 
-  <main>
-    <div class="lead">
-      <p><b>Ce pack fait tourner la formation « habilitation fluides frigorigènes » dans le moteur inerWeb Pilote</b>,
-      avec un objectif double : servir de support de séance ET d'outil d'<b>auto-formation</b> — le stagiaire
-      garde le lien avant la formation, pendant les périodes en entreprise, jusqu'à l'épreuve.</p>
-      <p>Cette page réunit tout ce qui compose le projet : les espaces internes du pack et les outils de
-      l'atelier numérique déjà publiés (FRIGOLO, pressostats, Diagramme Enthalpique+…) auxquels chaque fiche renvoie.
-      <b>Démonstrateur, pas version définitive</b> : à relire avant diffusion large.</p>
+<header>
+  <div class="wrap">
+    <div class="marque">inerWeb <b>Édu</b> · F. Henninot</div>
+    <h1>Habilitation aux fluides frigorigènes</h1>
+    <p class="sous">Un dispositif de formation complet — le stagiaire révise seul, le formateur projette
+    en salle, et chaque compétence du référentiel est nommée, enseignée et vérifiée.</p>
+    <div class="cats"><span>Catégorie A1</span><span>A2</span><span>D</span><span>E</span>
+      <span>arrêté du 21 novembre 2025</span></div>
+    <div class="cta">
+      <a class="bt" href="index.html">Essayer maintenant ▸</a>
+      <a class="bt sec" href="#essayer">Voir les différents espaces</a>
     </div>
+  </div>
+</header>
 
-    <section>
-      <h2>Les espaces du pack</h2>
-      <span class="souligne">Quatre pages, un seul dépôt — chacune pour un usage différent.</span>
-      <div class="grille">
-        <div class="carte accent">
-          <div class="ic">🎓</div>
-          <h3>Espace élève</h3>
-          <p>Les 4 parcours (A1, A2, D, E), les 17 fiches, les exercices « frigoriste-détective »,
-          et l'espace <b>Réviser par thème</b> en auto-formation.</p>
-          <a class="bouton" href="index.html" target="_blank">Ouvrir ▸</a>
-        </div>
-        <div class="carte">
-          <div class="ic">📣</div>
-          <h3>Affiche à projeter / QR</h3>
-          <p>Format A4 ou plein écran, à distribuer en salle : le lien, le QR code, les trois temps d'usage.</p>
-          <a class="bouton" href="partage.html" target="_blank">Ouvrir ▸</a>
-        </div>
-        <div class="carte">
-          <div class="ic">👁</div>
-          <h3>Console formateur</h3>
-          <p>Le pack complet avec la couche pilote : notes d'animation, anecdotes, gestes à faire manipuler.</p>
-          <a class="bouton" href="formateur.html" target="_blank">Ouvrir ▸</a>
-        </div>
-        <div class="carte">
-          <div class="ic">📋</div>
-          <h3>Document de relecture</h3>
-          <p>Fiches, exercices et 158 questions à plat avec cases ✅/✏ — le « bon à tirer » avant diffusion.</p>
-          <a class="bouton" href="relecture.html" target="_blank">Ouvrir ▸</a>
-        </div>
+<section id="essayer">
+  <div class="wrap">
+    <h2>Par où entrer</h2>
+    <p class="chapo">Trois portes selon qui vous êtes. Rien à installer, rien à créer comme compte :
+    ce sont des pages web, elles s'ouvrent sur n'importe quel appareil.</p>
+    <div class="portes">
+      <a class="porte pr" href="index.html">
+        <span class="tag">le plus simple</span>
+        <div class="ic">🎓</div>
+        <h3>Je veux voir ce que fait le stagiaire</h3>
+        <p>L'application d'autoformation : les fiches, les questions, la remédiation quand on se
+        trompe, et le suivi de ses compétences. C'est le lien que reçoivent les stagiaires.</p>
+        <span class="go">Ouvrir l'espace élève ▸</span>
+      </a>
+      <a class="porte" href="projection.html">
+        <div class="ic">📽</div>
+        <h3>Je veux voir la formation en salle</h3>
+        <p>Le déroulé des trois jours, séquence par séquence : diapositives plein écran, minuteur,
+        questions à révéler devant le groupe, et notes d'animation pour le formateur.</p>
+        <span class="go">Ouvrir la projection ▸</span>
+      </a>
+      <a class="porte" href="relecture.html">
+        <div class="ic">📋</div>
+        <h3>Je veux lire tout le contenu d'un coup</h3>
+        <p>Tout à plat sur une seule page : les fiches, les compétences officielles qu'elles
+        couvrent, les questions et leurs corrigés. C'est le document sur lequel on annote.</p>
+        <span class="go">Ouvrir le document complet ▸</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="clair">
+  <div class="wrap">
+    <h2>Ce que c'est</h2>
+    <p class="chapo">Un contenu de formation à l'habilitation aux fluides frigorigènes, construit
+    directement sur le référentiel de l'arrêté du 21 novembre 2025.</p>
+    <ul class="pts">
+      <li><b>Le stagiaire s'en sert seul</b> — avant la formation pour arriver préparé, pendant les
+      périodes en entreprise, et jusqu'à la veille de l'épreuve. Il voit sur chaque fiche ce que
+      l'examen va lui demander, et son bilan lui nomme les compétences à retravailler.</li>
+      <li><b>Le formateur s'en sert en salle</b> — il projette, il explique, il pose le
+      questionnaire, il révèle la réponse, il avance. Les questions projetées sont exactement
+      celles que le stagiaire retrouve chez lui le soir.</li>
+      <li><b>Rien ne sort du navigateur.</b> Aucun compte, aucune inscription, aucune donnée
+      envoyée nulle part. Le lien se distribue sans précaution particulière.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Les trois temps de la formation</h2>
+    <p class="chapo">Ils ne se mélangent jamais. Ce document couvre les deux premiers ; le troisième
+    relève du dispositif d'évaluation, qui n'est pas public.</p>
+    <div class="temps">
+      <div class="tp">
+        <div class="qui">Le stagiaire, seul</div>
+        <h3>Autoformation</h3>
+        <p>Fiches, questions, remédiation complète quand on se trompe, et la carte de progression
+        sur les compétences de sa catégorie.</p>
       </div>
-    </section>
-
-    <section>
-      <h2>L'atelier numérique relié</h2>
-      <span class="souligne">Chaque fiche renvoie vers un outil interactif existant, publié dans son propre dépôt inerWeb.</span>
-      <div class="outils">
-        <div class="outil">
-          <span class="dc">G1 / G4</span>
-          <span class="nom">📈 Diagramme Enthalpique+ v3.2</span>
-          <a href="https://frigorx.github.io/diagramme-enthalpique/" target="_blank">Ouvrir ▸</a>
-          <span class="desc">Cycle complet sur log(p-h), embarqué en direct dans l'exercice de diagnostic.</span>
-        </div>
-        <div class="outil">
-          <span class="dc">G1 / G4</span>
-          <span class="nom">📊 FRIGOLO — Mollier, réglette, bilan thermique</span>
-          <a href="https://frigorx.github.io/inerweb-frigolo/" target="_blank">Ouvrir ▸</a>
-          <span class="desc">Le portail d'origine : Mollier v3 Pro, Bilan Thermique, Psychro v2, TP COP PAC.</span>
-        </div>
-        <div class="outil">
-          <span class="dc">G6</span>
-          <span class="nom">🔧 Pressostat BP — simulateur KP1</span>
-          <a href="https://frigorx.github.io/inerweb-frigolo/outils/kp1-pressostat-bp.html" target="_blank">Ouvrir ▸</a>
-          <span class="desc">Réglage et diagnostic interactifs.</span>
-        </div>
-        <div class="outil">
-          <span class="dc">G7</span>
-          <span class="nom">🔧 Pressostat HP sécurité — simulateur KP5</span>
-          <a href="https://frigorx.github.io/inerweb-frigolo/outils/kp5-pressostat-hp.html" target="_blank">Ouvrir ▸</a>
-          <span class="desc">Sécurité surpression, réglage et diagnostic.</span>
-        </div>
-        <div class="outil">
-          <span class="dc">G6</span>
-          <span class="nom">🧩 Module compresseur — leçon complète</span>
-          <a href="https://frigorx.github.io/inerweb-frigolo/outils/module-compresseur.html" target="_blank">Ouvrir ▸</a>
-          <span class="desc">Leçon interactive détaillée, toutes technologies.</span>
-        </div>
-        <div class="outil">
-          <span class="dc">G6</span>
-          <span class="nom">🌀 Le compresseur scroll — leçon interactive</span>
-          <a href="https://frigorx.github.io/inerweb-frigolo/outils/lecon-scroll.html" target="_blank">Ouvrir ▸</a>
-          <span class="desc">Focus sur la technologie scroll.</span>
-        </div>
-        <div class="outil">
-          <span class="dc">G7 / G8</span>
-          <span class="nom">♨ Échangeurs — évaporateur & condenseur</span>
-          <a href="https://frigorx.github.io/inerweb-frigolo/outils/echangeurs.html" target="_blank">Ouvrir ▸</a>
-          <span class="desc">Manipulation interactive des deux échangeurs.</span>
-        </div>
-        <div class="outil">
-          <span class="dc">G4</span>
-          <span class="nom">🧪 TP formatif — pose/dépose des manomètres</span>
-          <a href="https://frigorx.github.io/inerweb-frigolo/outils/tp-manometres-formatif.html" target="_blank">Ouvrir ▸</a>
-          <span class="desc">2 h, 7 activités, évaluation par compétences.</span>
-        </div>
-        <div class="outil">
-          <span class="dc">G5</span>
-          <span class="nom">⚖ TP — inventaire et pesée des bouteilles</span>
-          <a href="https://frigorx.github.io/inerweb-tp-peser-bouteilles/" target="_blank">Ouvrir ▸</a>
-          <span class="desc">Utilise le collecteur universel inerWeb.</span>
-        </div>
-        <div class="outil">
-          <span class="dc">G4 / G5</span>
-          <span class="nom">📋 inerWeb Fluide — CERFA, FI, BSD</span>
-          <a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/" target="_blank">Ouvrir ▸</a>
-          <span class="desc">S'entraîner à remplir une vraie fiche d'intervention et un BSD.</span>
-        </div>
-        <div class="outil">
-          <span class="dc">Toutes fiches</span>
-          <span class="nom">✏ Bibliothèque de symboles frigorifiques + jeux</span>
-          <a href="https://frigorx.github.io/inerweb-frigolo/outils/symboles-frigorifiques.html" target="_blank">Ouvrir ▸</a>
-          <span class="desc">Reconnaître les symboles normalisés du circuit.</span>
-        </div>
-        <div class="outil">
-          <span class="dc">Entraînement</span>
-          <span class="nom">🎯 Mission F-GAZ — 558 questions</span>
-          <a href="https://frigorx.github.io/inerweb-fgaz/" target="_blank">Ouvrir ▸</a>
-          <span class="desc">La source publique de la banque de questions du pack.</span>
-        </div>
+      <div class="tp">
+        <div class="qui">Le formateur, en salle</div>
+        <h3>Formation</h3>
+        <p>Trois jours de théorie puis la préparation pratique. Diapositives, vidéo, mini-questionnaire,
+        correction commentée.</p>
       </div>
-    </section>
-
-    <section>
-      <h2>Le projet en bref</h2>
-      <div class="regles">
-        <p><b>Ce que ça montre</b> — 4 parcours réglementaires, 50 cartes (17 fiches, 5 exercices,
-        21 séries/examens dont 13 de révision par thème), 158 questions avec indice et remédiation
-        complète, 13 planches SVG animées, mode pilotage formateur.</p>
-        <ul>
-          <li><b>Zéro invention chiffrée</b> — surchauffe 5-10 K, sous-refroidissement 4-8 K, pression
-          absolue ≈ relative + 1 bar, classes NF EN 378 (R-290 = A3, CO₂ = A1, NH₃ = B2L), PRP CO₂ = 1.
-          Le reste renvoie à la doc constructeur.</li>
-          <li><b>Azote seul</b> pour toute mise en pression — jamais d'oxygène, jamais d'air comprimé.</li>
-          <li><b>Croix du frigoriste</b> : détendeur gauche, compresseur droite, condenseur haut, évaporateur bas.</li>
-          <li><b>Mode Évaluation désactivé</b> — le moteur ne sait pas encore appliquer les règles de
-          composition de l'arrêté (groupe tiré au sort, pondération, plancher par groupe). Les examens
-          du pack sont des entraînements.</li>
-        </ul>
-        <div class="attention">
-          <b>⚠ Sources des questions.</b> La banque vient de Mission F-GAZ, application publique.
-          La banque officielle des 85 questions d'examen et les 10 examens blancs du dispositif de
-          certification ne sont <b>jamais</b> publiés ici — publier un sujet d'épreuve est irréversible.
-        </div>
+      <div class="tp">
+        <div class="qui">L'organisme évaluateur</div>
+        <h3>Évaluation</h3>
+        <p>Session officielle, nominative, tracée et archivée. Hors de ce document : publier un sujet
+        d'examen serait irréversible.</p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h2>Pour aller plus loin</h2>
-      <ul class="liste-simple">
-        <li><b>Code source</b> — <a href="https://github.com/frigorx/pilote-fluides" target="_blank">github.com/frigorx/pilote-fluides</a> (dépôt public)</li>
-        <li><b>Catalogue des visuels</b> — <code>packs/fluides/res/img/CATALOGUE.md</code>, dans le dépôt</li>
-        <li><b>README technique</b> — fabrication, structure des fichiers, écarts avec le moteur d'origine</li>
-      </ul>
-    </section>
-  </main>
+<section class="clair">
+  <div class="wrap">
+    <h2>En chiffres</h2>
+    <p class="chapo">Ce que contient le dossier aujourd'hui.</p>
+    <div class="chiffres">
+      <div class="ch fort"><b>100 %</b><span>du référentiel couvert<br>en A1, A2, D et E</span></div>
+      <div class="ch"><b>33</b><span>fiches de cours</span></div>
+      <div class="ch"><b>206</b><span>questions</span></div>
+      <div class="ch"><b>270</b><span>diapositives</span></div>
+      <div class="ch"><b>39</b><span>séquences de formation</span></div>
+      <div class="ch"><b>21 h</b><span>de face-à-face</span></div>
+    </div>
+    <div class="note">
+      <div class="t">Ce que « 100 % » veut dire exactement</div>
+      Le référentiel compte <b>136 compétences</b>. Selon la catégorie visée, l'examen en exige
+      94 (A1), 93 (A2), 21 (D) ou 17 (E). Chacune est déclarée par au moins une fiche, et la mesure
+      est refaite <b>à chaque construction du pack</b> — elle ne peut pas se périmer en silence.
+      Cela garantit qu'aucune compétence n'est oubliée. Cela ne dit pas que chacune est enseignée
+      en profondeur : c'est le travail de relecture qui est en cours.
+    </div>
+  </div>
+</section>
 
-  <footer>inerWeb Édu · F. Henninot — page générée le 25/07/2026, à mettre à jour à chaque évolution du pack.</footer>
+<section>
+  <div class="wrap">
+    <h2>Ce qu'il y a dedans</h2>
+    <div class="grille">
+      <div class="carte">
+        <div class="ic">📘</div>
+        <h3>26 fiches de théorie</h3>
+        <p>Du cadre réglementaire au diagramme enthalpique, des quatre composants aux hydrocarbures.
+        Chaque fiche annonce les compétences officielles qu'elle couvre, avec le texte de l'arrêté
+        consultable en un clic.</p>
+        <a class="lien" href="index.html">Parcourir ▸</a>
+      </div>
+      <div class="carte">
+        <div class="ic">🔧</div>
+        <h3>7 fiches de préparation pratique</h3>
+        <p>Le manifold, la station de récupération, la pompe à vide, la bouteille d'azote,
+        <b>l'ordre des vannes</b>, la pesée, la préparation de chantier. Elles ne remplacent pas
+        l'atelier : elles le préparent.</p>
+        <a class="lien" href="index.html">Parcourir ▸</a>
+      </div>
+      <div class="carte">
+        <div class="ic">🎯</div>
+        <h3>Un suivi par compétence</h3>
+        <p>Le stagiaire voit où il en est sur les compétences de sa catégorie : acquise, fragile,
+        à revoir, jamais testée. Chaque question répondue met la page à jour. Tout reste chez lui.</p>
+        <a class="lien" href="index.html">Voir ▸</a>
+      </div>
+      <div class="carte">
+        <div class="ic">🕵</div>
+        <h3>5 mises en situation</h3>
+        <p>Des exercices « frigoriste-détective » : plusieurs indices à croiser, une conclusion à
+        bâtir. C'est là qu'on vérifie qu'on a compris, pas seulement retenu.</p>
+        <a class="lien" href="index.html">Essayer ▸</a>
+      </div>
+      <div class="carte">
+        <div class="ic">📽</div>
+        <h3>La projection en salle</h3>
+        <p>Quatre blocs — trois jours de théorie et la préparation pratique. Minuteur par séquence,
+        vue orateur avec les notes d'animation et la réponse attendue.</p>
+        <a class="lien" href="projection.html">Ouvrir ▸</a>
+      </div>
+      <div class="carte">
+        <div class="ic">📣</div>
+        <h3>L'affiche pour la salle</h3>
+        <p>Format A4 ou plein écran, avec le lien et son QR code, à projeter ou à imprimer pour
+        distribuer l'accès aux stagiaires.</p>
+        <a class="lien" href="partage.html">Ouvrir ▸</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="clair">
+  <div class="wrap">
+    <h2>Les règles qu'on s'est données</h2>
+    <p class="chapo">Elles expliquent ce que vous trouverez — et ce que vous ne trouverez pas.</p>
+    <ul class="pts">
+      <li><b>Zéro invention chiffrée.</b> Une pression d'épreuve, un niveau de vide, un couple de
+      serrage ne s'inventent pas. Partout où une valeur serait attendue, le contenu renvoie à la
+      fiche constructeur ou à la norme. Les seules valeurs affirmées sont celles qui font consensus :
+      surchauffe 5-10 K, sous-refroidissement 4-8 K, pression absolue = relative + 1 bar environ.</li>
+      <li><b>Azote seul</b> pour toute mise en pression — jamais d'oxygène, jamais d'air comprimé,
+      jamais sans mano-détendeur. Consignation électrique systématique.</li>
+      <li><b>Le R-290 est A3</b>, pas A2L. C'est le piège le plus fréquent du métier, et il commande
+      les EPI, le matériel et la charge admissible.</li>
+      <li><b>Croix du frigoriste</b> sur tous les schémas : détendeur à gauche, compresseur à droite,
+      condenseur en haut, évaporateur en bas.</li>
+      <li><b>Schémas dessinés à la main.</b> Aucune image générée automatiquement : aucun modèle ne
+      respecte la disposition d'un circuit frigorifique.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="retour">
+      <h2>Vos retours sont attendus</h2>
+      <p>Ce dossier est un <b>démonstrateur</b>. Il est publié précisément pour être essayé,
+      critiqué et corrigé. Une erreur technique, une formulation qui passe mal devant un groupe,
+      une compétence traitée trop vite, un chiffre qui vous fait tiquer : dites-le.</p>
+      <p>Chaque signalement est traité et reporté à la source du contenu.</p>
+      <a class="bt" href="https://github.com/frigorx/pilote-fluides/issues/new" target="_blank" rel="noopener">
+        Signaler une erreur ou proposer une amélioration ▸</a>
+    </div>
+  </div>
+</section>
+
+<section class="clair">
+  <div class="wrap">
+    <h2>L'atelier numérique relié</h2>
+    <p class="chapo">Des outils interactifs indépendants, utilisables seuls ou depuis les fiches.</p>
+    <div class="outils">
+      <a href="https://frigorx.github.io/diagramme-enthalpique/" target="_blank" rel="noopener">📈 Diagramme enthalpique</a>
+      <a href="https://frigorx.github.io/inerweb-frigolo/" target="_blank" rel="noopener">🧊 FRIGOLO</a>
+      <a href="https://frigorx.github.io/inerweb-frigolo/outils/kp1-pressostat-bp.html" target="_blank" rel="noopener">🔧 Pressostat BP (KP1)</a>
+      <a href="https://frigorx.github.io/inerweb-frigolo/outils/kp5-pressostat-hp.html" target="_blank" rel="noopener">🔧 Pressostat HP (KP5)</a>
+      <a href="https://frigorx.github.io/inerweb-frigolo/outils/module-compresseur.html" target="_blank" rel="noopener">⚙ Le compresseur</a>
+      <a href="https://frigorx.github.io/inerweb-frigolo/outils/lecon-scroll.html" target="_blank" rel="noopener">🌀 Le scroll</a>
+      <a href="https://frigorx.github.io/inerweb-frigolo/outils/echangeurs.html" target="_blank" rel="noopener">♨ Les échangeurs</a>
+      <a href="https://frigorx.github.io/inerweb-frigolo/outils/tp-manometres-formatif.html" target="_blank" rel="noopener">📊 TP manomètres</a>
+      <a href="https://frigorx.github.io/inerweb-tp-peser-bouteilles/" target="_blank" rel="noopener">⚖ TP peser les bouteilles</a>
+      <a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/" target="_blank" rel="noopener">📄 CERFA / FI / BSD</a>
+      <a href="https://frigorx.github.io/inerweb-frigolo/outils/symboles-frigorifiques.html" target="_blank" rel="noopener">✏ Symboles frigorifiques</a>
+      <a href="https://frigorx.github.io/inerweb-fgaz/" target="_blank" rel="noopener">🎮 Mission F-GAZ</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Ce qui n'est pas encore fait</h2>
+    <p class="chapo">Autant le dire franchement : c'est un démonstrateur, pas un produit fini.</p>
+    <div class="note att">
+      <div class="t">La relecture métier est en cours</div>
+      Le contenu n'a pas encore été relu intégralement par un œil de frigoriste. Certaines fiches
+      ont été écrites récemment et n'ont jamais été éprouvées devant un groupe. C'est exactement
+      pour cela que vos retours comptent.
+    </div>
+    <ul class="pts">
+      <li><b>Les valeurs terrain</b> — pression d'épreuve, niveau de vide visé, durées, couples —
+      restent à figer depuis un plateau réel. Elles sont volontairement absentes plutôt qu'inventées.</li>
+      <li><b>Les photos de matériel</b> manquent : les schémas expliquent les principes, mais une
+      photo du vrai appareil aide bien davantage à le reconnaître.</li>
+      <li><b>Les vidéos</b> ont leur emplacement prêt dans chaque séquence ; la sélection est en
+      cours de validation.</li>
+      <li><b>Le mode d'évaluation officielle</b> n'est pas dans ce document, et n'y sera jamais :
+      les examens proposés ici sont des <b>entraînements</b>.</li>
+      <li><b>La manipulation fluidique</b> — évaluation et TP formatifs — viendra s'y greffer.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>inerWeb Édu</b> — F. Henninot, LP privé Jacques Raynaud, Marseille
+    <span class="sep">·</span> arrêté du 21 novembre 2025
+    <span class="sep">·</span> règlement (UE) 2024/573
+    <br><br>
+    <a href="https://github.com/frigorx/pilote-fluides" target="_blank" rel="noopener">Code source et contenu sur GitHub</a>
+    <span class="sep">·</span>
+    <a href="https://github.com/frigorx/pilote-fluides/issues/new" target="_blank" rel="noopener">Signaler une erreur</a>
+    <span class="sep">·</span>
+    <a href="formateur.html">Console formateur</a>
+    <br><br>
+    <span style="opacity:.7;font-size:13.5px">Démonstrateur pédagogique. Les questions proviennent de
+    Mission F-GAZ, application publique du même auteur, et de questions écrites pour ce dossier.
+    Aucun sujet d'examen officiel n'y figure.</span>
+  </div>
+</footer>
+
 </body>
 </html>

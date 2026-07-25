@@ -1,0 +1,579 @@
+{
+  "_doc": "Référentiel des compétences et connaissances de l'attestation d'aptitude fluides frigorigènes — régime F-Gas III. Transcription VERBATIM de l'annexe II de l'arrêté du 21 novembre 2025 (JORF du 10 décembre 2025, texte 9 sur 135, NOR TECP2532494A). Source de vérité UNIQUE du logiciel pour : composition des épreuves, périmètre par catégorie, durées, remises à niveau. Aucune valeur de ce fichier n'est une interprétation : les écarts et coquilles relevés dans le texte publié sont listés dans anomalies_source, et les choix qui en découlent dans arbitrages.",
+  "_regle_modification": "Ce fichier ne se modifie que sur pièce (nouveau texte publié au JO). Toute autre adaptation se fait dans un fichier de configuration séparé, jamais ici.",
+
+  "source": {
+    "texte": "Arrêté du 21 novembre 2025 relatif à la délivrance des attestations d'aptitude prévues à l'article R. 543-106 du code de l'environnement",
+    "nor": "TECP2532494A",
+    "publication": "JORF du 10 décembre 2025, texte 9 sur 135",
+    "annexe": "Annexe II — Modalités d'évaluation des compétences et des connaissances",
+    "fondement_ue": [
+      "Règlement (UE) 2024/573 du 7 février 2024 relatif aux gaz à effet de serre fluorés (abroge le règlement (UE) 517/2014)",
+      "Règlement d'exécution (UE) 2024/2215 de la Commission du 6 septembre 2024 (abroge le règlement d'exécution (UE) 2015/2067)"
+    ],
+    "entree_en_vigueur": "lendemain de la publication",
+    "obligatoire_le": "2027-01-01",
+    "abrogation_arrete_2008": "2026-12-31",
+    "regime_transitoire": "Jusqu'au 31/12/2026, les attestations peuvent encore être délivrées selon l'arrêté du 13 octobre 2008 ; elles restent soumises à l'obligation de remise à niveau ponctuelle de l'article 7."
+  },
+
+  "categories": [
+    {
+      "id": "A1",
+      "libelle": "Attestation catégorie A1",
+      "perimetre": "Toutes les activités de l'article 4, pour les gaz à effet de serre fluorés et les hydrocarbures",
+      "limite_charge": null,
+      "correspondance_2008": "I"
+    },
+    {
+      "id": "A2",
+      "libelle": "Attestation catégorie A2",
+      "perimetre": "Toutes les activités de l'article 4, pour les gaz à effet de serre fluorés et les hydrocarbures, limitées aux équipements de faible charge",
+      "limite_charge": {
+        "standard_kg": 3,
+        "hermetique_scelle_etiquete_kg": 6,
+        "libelle_source": "limitées aux équipements ayant une charge inférieure à 3 kg ou, s'ils sont dotés de systèmes hermétiquement scellés et étiquetés comme tels, inférieure à 6 kg"
+      },
+      "correspondance_2008": "II"
+    },
+    {
+      "id": "B",
+      "libelle": "Attestation catégorie B",
+      "perimetre": "Toutes les activités de l'article 4, pour le dioxyde de carbone (R-744/CO2)",
+      "limite_charge": null,
+      "correspondance_2008": null
+    },
+    {
+      "id": "C",
+      "libelle": "Attestation catégorie C",
+      "perimetre": "Toutes les activités de l'article 4, pour l'ammoniac (R-717/NH3)",
+      "limite_charge": null,
+      "correspondance_2008": null
+    },
+    {
+      "id": "D",
+      "libelle": "Attestation catégorie D",
+      "perimetre": "Article 4 point d uniquement — récupération des gaz à effet de serre fluorés",
+      "limite_charge": {
+        "standard_kg": 3,
+        "hermetique_scelle_etiquete_kg": 6,
+        "libelle_source": "équipements contenant moins de 3 kg de gaz à effet de serre fluorés ou, s'ils sont dotés de systèmes hermétiquement scellés et étiquetés comme tels, moins de 6 kg"
+      },
+      "correspondance_2008": "III"
+    },
+    {
+      "id": "E",
+      "libelle": "Attestation catégorie E",
+      "perimetre": "Article 4 point a uniquement — contrôles d'étanchéité, à condition que l'activité ne nécessite pas d'accéder au circuit frigorifique",
+      "limite_charge": null,
+      "correspondance_2008": "IV"
+    },
+    {
+      "id": "V",
+      "libelle": "Attestation catégorie V",
+      "perimetre": "Article 4 point e — climatisation des véhicules, engins et matériels mentionnés à l'article R. 311-1 du code de la route",
+      "limite_charge": null,
+      "correspondance_2008": "V",
+      "referentiel_distinct": "II.D"
+    }
+  ],
+
+  "regles_composition": {
+    "categories_concernees": ["A1", "A2", "B", "C", "D", "E"],
+    "groupes_obligatoires": ["G1", "G2", "G3", "G4", "G5", "G10", "G11"],
+    "groupes_tirage_au_sort": {
+      "parmi": ["G6", "G7", "G8", "G9"],
+      "nombre_minimum": 1,
+      "libelle_source": "Elle porte également sur au moins un des groupes de compétences et de connaissances 6, 7, 8 et 9. Le candidat ne sait pas, avant l'évaluation, sur lequel de ces quatre groupes il sera évalué.",
+      "consequence_logicielle": "Une variante d'examen par groupe tiré au sort ; le tirage est effectué par le système et non par l'évaluateur, et il est journalisé."
+    },
+    "groupes_specifiques_categorie": {
+      "A1": ["G12"],
+      "A2": ["G12"],
+      "B": ["G13"],
+      "C": ["G14"]
+    },
+    "questions_imposees": {
+      "A1": [
+        "au moins une question sur les spécificités du dioxyde de carbone (CO2) et de l'ammoniac (NH3)",
+        "au moins une question sur l'efficacité énergétique des équipements"
+      ],
+      "A2": [
+        "au moins une question sur les spécificités du dioxyde de carbone (CO2) et de l'ammoniac (NH3)",
+        "au moins une question sur l'efficacité énergétique des équipements"
+      ],
+      "B": ["au moins une question sur les spécificités des hydrocarbures"],
+      "C": ["au moins une question sur les spécificités des hydrocarbures"]
+    },
+    "structure_tronc_commun": {
+      "categories_concernees": ["A1", "A2", "B", "C"],
+      "libelle_source": "le système d'évaluation consiste en un tronc commun d'épreuves théoriques et pratiques et de parties spécifiques théoriques et pratiques pour chaque catégorie (Annexe II.C)",
+      "extension": "En cas de demande d'extension à ces catégories d'une attestation d'aptitude existante, seules les épreuves théoriques et pratiques spécifiques à la catégorie demandée sont évaluées."
+    },
+    "dispenses": {
+      "fondement": "article 4 paragraphe 3 du règlement d'exécution (UE) 2024/2215",
+      "dispense_totale": "qualifications, compétences et connaissances équivalentes acquises dans le cadre d'un diplôme professionnel, d'un titre professionnel, d'un certificat de qualification ou d'une certification enregistrée au RNCP, tels que définis dans un avis publié au Journal officiel du ministère chargé de l'environnement",
+      "dispense_partielle": "examen complémentaire lorsque les acquis ne couvrent que partiellement l'annexe II",
+      "avis_jo_reference": null,
+      "consequence_logicielle": "Table d'équivalences pilotée par configuration (référence de l'avis, date, diplôme, catégories couvertes, codes couverts). Jamais en dur : l'avis n'est pas encore publié."
+    }
+  },
+
+  "durees_epreuves": {
+    "unite": "minutes",
+    "tronc_commun_A1_A2_B_C": { "theorique": 60, "pratique": 120, "total": null },
+    "A1": { "theorique_specifique": 15, "pratique_specifique": 60, "total": 255 },
+    "A2": { "theorique_specifique": 15, "pratique_specifique": 40, "total": 235 },
+    "B": { "theorique_specifique": 15, "pratique_specifique": 30, "total": 225 },
+    "C": { "theorique_specifique": 15, "pratique_specifique": 45, "total": 240 },
+    "D": { "theorique": 30, "pratique": 60, "total": 90 },
+    "E": { "theorique": 30, "pratique": 60, "total": 90 },
+    "V": { "theorique": 30, "pratique": 90, "total": 120 },
+    "V_demolisseurs": { "theorique": 30, "pratique": 60, "total": 90 },
+    "amenagement_handicap": {
+      "majoration_maximale": "un tiers du temps total de l'examen",
+      "justificatifs_admis": [
+        "reconnaissance de la qualité de travailleur handicapé (RQTH)",
+        "reconnaissance de handicap auprès de la maison départementale des personnes handicapées (MDPH)",
+        "reconnaissance d'aménagement aux épreuves nationales de l'éducation nationale au titre des troubles de l'apprentissage du langage écrit, du langage oral et/ou écrit et/ou de l'acquisition de la coordination",
+        "certificat délivré depuis moins de six mois attestant d'un trouble spécifique du langage et/ou de la lecture et/ou de l'acquisition de la coordination et nécessitant un aménagement"
+      ],
+      "consequence_logicielle": "Le chronomètre applique la majoration. Ne stocker que le FAIT de l'aménagement et la référence de la pièce fournie — jamais la nature du trouble (donnée de santé)."
+    }
+  },
+
+  "legende": {
+    "T": "épreuve théorique — une ou plusieurs questions",
+    "P": "épreuve pratique — le candidat exécute la tâche avec le matériel, l'outillage et l'équipement nécessaires",
+    "D": "démonstration pratique réalisée par le formateur ou sous sa responsabilité, et/ou via des supports numériques (uniquement en remise à niveau, annexes VII et VIII)",
+    "—": "non évalué pour cette catégorie"
+  },
+
+  "groupes": [
+    {
+      "id": "G1",
+      "numero": 1,
+      "titre": "Législation et thermodynamique élémentaire",
+      "codes": [
+        { "code": "1.00", "nouveau_2025": true, "libelle": "Connaissance élémentaire de la législation de l'Union européenne et nationale applicable, notamment celle relative aux gaz à effet de serre fluoré, aux DEEE et à l'écoconception", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" }, "tronc_commun": "T" },
+        { "code": "1.01", "nouveau_2025": false, "libelle": "Connaître les unités normalisées ISO pour la température, la pression, la masse, la densité et l'énergie", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" }, "tronc_commun": "T" },
+        { "code": "1.02", "nouveau_2025": false, "libelle": "Comprendre la théorie élémentaire des systèmes de réfrigération : thermodynamique élémentaire (terminologie, paramètres et processus essentiels tels que « surchauffe », « côté haute pression », « chaleur de compression », « enthalpie », « effet de réfrigération », « côté basse pression », « sous-refroidissement »), propriétés et transformations thermodynamiques des réfrigérants, y compris l'identification des mélanges zéotropiques et des états des fluides", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "—" }, "tronc_commun": "T" },
+        { "code": "1.03", "nouveau_2025": false, "libelle": "Utiliser les tableaux et graphiques correspondants et les interpréter dans le cadre de contrôles d'étanchéité indirects (y compris le contrôle du bon fonctionnement du système) : diagramme log p/h, tables de saturation d'un réfrigérant, diagramme d'un cycle frigorifique simple à compression", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "T" }, "tronc_commun": "T" },
+        { "code": "1.04", "nouveau_2025": false, "libelle": "Décrire la fonction des principales composantes du système (compresseur, évaporateur, condenseur, détendeurs thermostatiques) et les transformations thermodynamiques du réfrigérant", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "—" }, "tronc_commun": "T" },
+        { "code": "1.05", "nouveau_2025": false, "libelle": "Connaître le fonctionnement élémentaire des composantes suivantes utilisées dans un système de réfrigération ainsi que leur rôle et leur importance dans la prévention et la détection des fuites de réfrigérant : a) valves (robinets à boule, diaphragmes, robinets à soupape) ; b) contrôles de la température et de la pression ; c) repères transparents et indicateurs d'humidité ; d) contrôles du dégivrage ; e) protecteurs du système ; f) instruments de mesure tels que les thermomètres ; g) systèmes de contrôle de l'huile ; h) réservoirs ; i) séparateurs de liquides et d'huile, en tenant compte des spécificités du fonctionnement comportant des réfrigérants hautement inflammables ou toxiques (hydrocarbures ou NH3) et des réfrigérants fonctionnant à haute pression (CO2)", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" },
+        { "code": "1.06", "nouveau_2025": false, "libelle": "Connaître le comportement spécifique, les paramètres physiques, les systèmes, les solutions, les déviances de tous les réfrigérants de substitution dans le cycle de réfrigération et les composants pour leur utilisation", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" }, "tronc_commun": "T" },
+        { "code": "1.07", "nouveau_2025": true, "libelle": "Connaître les caractéristiques des hydrocarbures, du CO2, et du NH3 et des autres réfrigérants non fluorés par rapport aux réfrigérants à gaz à effet de serre fluorés", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" }, "tronc_commun": "T" },
+        { "code": "1.08", "nouveau_2025": true, "libelle": "Connaître la combustibilité, la propagation des flammes, les restrictions relatives à la capacité de charge, les limites d'occupation pour les HFC, H(C)FO et hydrocarbures", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" }, "tronc_commun": "T" },
+        { "code": "1.09", "nouveau_2025": true, "libelle": "Connaître la pression du CO2, le cycle transcritique ou subcritique, le diagramme log p/h, les tables de saturation du CO2, l'état d'agrégation du CO2 (formation de glace carbonique)", "cat": { "A1": "—", "A2": "—", "B": "T", "C": "—", "D": "—", "E": "—" }, "tronc_commun": null, "specifique": { "B": "T" } },
+        { "code": "1.10", "nouveau_2025": true, "libelle": "Connaître la toxicité du NH3, les différences entre les systèmes à détente directe et les systèmes noyés, la pression négative dans les systèmes de congélation", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "T", "D": "—", "E": "—" }, "tronc_commun": null, "specifique": { "C": "T" } }
+      ]
+    },
+    {
+      "id": "G2",
+      "numero": 2,
+      "titre": "Incidence sur l'environnement des réfrigérants et réglementations pertinentes en matière d'environnement",
+      "codes": [
+        { "code": "2.01", "nouveau_2025": false, "enrichi_2025": "ajout du Protocole de Montréal", "libelle": "Avoir une connaissance élémentaire de la politique de l'UE et internationale en matière de changement climatique, y compris la convention-cadre des Nations unies sur les changements climatiques (CCNUCC) et le Protocole de Montréal relatif à des substances qui appauvrissent la couche d'ozone", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" }, "tronc_commun": "T" },
+        { "code": "2.02", "nouveau_2025": false, "enrichi_2025": "renvoi au règlement (UE) 2024/573 et ajout des produits de décomposition des substances fluorées (PFAS)", "libelle": "Avoir une connaissance élémentaire du concept de « potentiel de réchauffement planétaire » (PRP), de l'utilisation des gaz à effet de serre fluorés et d'autres substances en tant que fluides frigorigènes, de l'incidence des émissions de gaz à effet de serre fluorés sur le climat (ordre de grandeur de leur PRP) ainsi que des dispositions correspondantes du règlement (UE) n° 2024/573 et des actes d'exécution pertinents, de même que des menaces éventuelles pour l'environnement, y compris celles issues des produits de décomposition de certaines substances fluorées (PFAS) tels que les HFC, HFO et HCFO", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" }, "tronc_commun": "T" }
+      ]
+    },
+    {
+      "id": "G3",
+      "numero": 3,
+      "titre": "Contrôles à effectuer préalablement à la mise en service d'un équipement, après une longue période d'interruption, après un entretien ou une réparation, ou contrôles durant le fonctionnement",
+      "codes": [
+        { "code": "3.01", "nouveau_2025": false, "libelle": "Effectuer une épreuve de pression pour contrôler la résistance du système", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "3.02", "nouveau_2025": false, "libelle": "Effectuer une épreuve de pression pour contrôler l'étanchéité du système", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "3.03", "nouveau_2025": false, "libelle": "Utiliser une pompe à vide", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "P", "E": "—" }, "tronc_commun": "P" },
+        { "code": "3.04", "nouveau_2025": false, "libelle": "Faire le vide dans le système pour évacuer l'air et l'humidité selon la pratique habituelle", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "3.05", "nouveau_2025": false, "libelle": "Consigner les données dans le registre de l'équipement et rédiger un rapport portant sur un ou plusieurs des essais et des contrôles effectués durant l'examen", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" }
+      ]
+    },
+    {
+      "id": "G4",
+      "numero": 4,
+      "titre": "Contrôles d'étanchéité",
+      "codes": [
+        { "code": "4.01", "nouveau_2025": false, "libelle": "Connaître les points de fuite potentiels des équipements de réfrigération, de climatisation et de pompes à chaleur", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "T" }, "tronc_commun": "T" },
+        { "code": "4.02", "nouveau_2025": false, "libelle": "Consulter le registre de l'équipement avant tout contrôle d'étanchéité et relever les informations pertinentes concernant des problèmes récurrents ou des parties problématiques du système nécessitant une attention particulière", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "T" }, "tronc_commun": "T" },
+        { "code": "4.03", "nouveau_2025": false, "libelle": "Effectuer un contrôle visuel et manuel de tout le système au sens du règlement (CE) n° 1516/2007 de la Commission", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "P" }, "tronc_commun": "P" },
+        { "code": "4.04", "nouveau_2025": false, "libelle": "Effectuer un contrôle de l'étanchéité du système au moyen d'une méthode indirecte conformément au règlement (CE) n° 1516/2007 et du manuel d'utilisation du système", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "P" }, "tronc_commun": "P" },
+        { "code": "4.05", "nouveau_2025": false, "libelle": "Utiliser des instruments de mesure portables tels que des manomètres, des thermomètres et des multimètres pour mesurer les volts, ampères et ohms en appliquant des méthodes indirectes de contrôle de l'étanchéité, et interpréter les paramètres mesurés", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "P" }, "tronc_commun": "P" },
+        { "code": "4.06", "nouveau_2025": false, "libelle": "Contrôler l'étanchéité du système au moyen d'une des méthodes directes visées au règlement (CE) n° 1516/2007", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "—", "E": "—" }, "tronc_commun": null, "specifique": { "A1": "P", "A2": "P" }, "note": "Exclu de E : cette méthode impose d'intervenir dans le circuit frigorifique, ce que le périmètre de E interdit." },
+        { "code": "4.07", "nouveau_2025": false, "libelle": "Contrôler l'étanchéité du système au moyen d'une des méthodes directes ne nécessitant pas d'intervenir dans le circuit de réfrigération et visées au règlement (CE) n° 1516/2007", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "P" }, "tronc_commun": "P" },
+        { "code": "4.08", "nouveau_2025": false, "libelle": "Utiliser un dispositif électronique de détection des fuites", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "P" }, "tronc_commun": "P" },
+        { "code": "4.09", "nouveau_2025": false, "libelle": "Consigner les données dans le registre de l'équipement", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "T" }, "tronc_commun": "T" }
+      ]
+    },
+    {
+      "id": "G5",
+      "numero": 5,
+      "titre": "Gestion écologique du système et du réfrigérant lors de l'installation, de la maintenance, de l'entretien ou de la récupération",
+      "codes": [
+        { "code": "5.01", "nouveau_2025": false, "libelle": "Connecter et déconnecter les jauges et lignes en produisant le minimum d'émissions", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "P", "E": "—" }, "tronc_commun": "P" },
+        { "code": "5.02", "nouveau_2025": false, "libelle": "Vider et remplir un cylindre de réfrigérant à l'état liquide et à l'état gazeux", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "P", "E": "—" }, "tronc_commun": "P" },
+        { "code": "5.03", "nouveau_2025": false, "libelle": "Utiliser un dispositif de récupération des réfrigérants et connecter et déconnecter ce dispositif en produisant le minimum d'émissions", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "P", "D": "P", "E": "—" }, "tronc_commun": null, "specifique": { "A1": "P", "A2": "P", "C": "P" } },
+        { "code": "5.04", "nouveau_2025": false, "libelle": "Vider l'huile contaminée par le réfrigérant d'un système", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "P", "E": "—" }, "tronc_commun": null, "specifique": { "A1": "P", "A2": "P" } },
+        { "code": "5.05", "nouveau_2025": false, "libelle": "Déterminer l'état (liquide, gazeux) et les conditions (sous-refroidi, saturé ou surchauffé) d'un réfrigérant avant tout remplissage afin de choisir la méthode et le volume de remplissage les plus adaptés. Remplir le système de réfrigérant (à l'état liquide et gazeux) sans provoquer de pertes", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "P", "E": "—" }, "tronc_commun": "P" },
+        { "code": "5.06", "nouveau_2025": false, "libelle": "Choisir le bon type de balance et l'utiliser pour peser le réfrigérant", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "P", "E": "—" }, "tronc_commun": "P" },
+        { "code": "5.07", "nouveau_2025": false, "libelle": "Consigner dans le registre de l'équipement toutes les informations pertinentes concernant le réfrigérant récupéré ou ajouté", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "—" }, "tronc_commun": "T" },
+        { "code": "5.08", "nouveau_2025": false, "libelle": "Connaître les prescriptions et les procédures de gestion, de réutilisation, de récupération, de stockage et de transport des réfrigérants et huiles fluorés, y compris lorsqu'ils sont contaminés", "cat": { "A1": "T", "A2": "T", "B": "—", "C": "—", "D": "T", "E": "—" }, "tronc_commun": null, "specifique": { "A1": "T", "A2": "T" } },
+        { "code": "5.09", "nouveau_2025": true, "libelle": "Connaître les prescriptions et les procédures de gestion, de remplissage, de récupération, de stockage et de transport des hydrocarbures et des huiles, y compris lorsqu'ils sont contaminés, ainsi que d'installation d'équipements et de systèmes tributaires des hydrocarbures", "cat": { "A1": "T", "A2": "T", "B": "—", "C": "—", "D": "T", "E": "—" }, "tronc_commun": null, "specifique": { "A1": "T", "A2": "T" } },
+        { "code": "5.10", "nouveau_2025": true, "libelle": "Connaître les prescriptions et les procédures de gestion, de remplissage, de stockage et de transport du R744 (CO2) et des huiles, y compris lorsqu'ils sont contaminés, ainsi que d'installation d'équipements et de systèmes tributaires du R744", "cat": { "A1": "—", "A2": "—", "B": "T", "C": "—", "D": "—", "E": "—" }, "tronc_commun": null, "specifique": { "B": "T" } },
+        { "code": "5.11", "nouveau_2025": true, "libelle": "Connaître les prescriptions et les procédures de gestion, de remplissage, de récupération, de stockage et de transport du R717 (NH3) et des huiles, y compris lorsqu'ils sont contaminés, ainsi que d'installation d'équipements et de systèmes tributaires du R717. Connaître les effets des dégagements de R717 pendant les travaux d'installation et de maintenance, en cas de fuites ou d'accidents, et la manière de réduire ces effets (au moyen d'épurateurs, par exemple) grâce à une bonne planification", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "T", "D": "—", "E": "—" }, "tronc_commun": null, "specifique": { "C": "T" } }
+      ]
+    },
+    {
+      "id": "G6",
+      "numero": 6,
+      "titre": "Composant : installation, mise en service et maintenance de compresseurs à piston alternatif, à vis et à spirales, à un ou deux étages",
+      "tirage_au_sort": true,
+      "codes": [
+        { "code": "6.01", "nouveau_2025": false, "libelle": "Expliquer le principe de fonctionnement d'un compresseur (y compris le réglage de la puissance et le circuit de lubrification) et les risques de fuite ou d'émission de réfrigérant qui y sont liés", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" },
+        { "code": "6.02", "nouveau_2025": false, "libelle": "Installer correctement un compresseur, y compris le matériel de contrôle et de sécurité, de telle sorte qu'aucune fuite ni aucune émission ne se produisent une fois le système en fonctionnement", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "6.03", "nouveau_2025": false, "libelle": "Régler les interrupteurs de sécurité et de contrôle", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "6.04", "nouveau_2025": false, "libelle": "Régler les soupapes d'aspiration", "cat": { "A1": "P", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "tronc_commun": null, "specifique": { "A1": "P", "C": "P" } },
+        { "code": "6.05", "nouveau_2025": false, "libelle": "Vérifier le circuit de retour de l'huile", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "6.06", "nouveau_2025": false, "libelle": "Mettre en marche et arrêter un compresseur et en vérifier le bon fonctionnement, y compris en effectuant des mesures durant son fonctionnement", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "6.07", "nouveau_2025": false, "libelle": "Rédiger un rapport sur l'état du compresseur en indiquant tout problème de fonctionnement susceptible d'endommager le système et d'entraîner à terme, faute de mesure, des fuites ou des émissions de réfrigérant", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" },
+        { "code": "6.08", "nouveau_2025": true, "libelle": "Connaître les mesures d'amélioration ou de maintien de l'efficacité énergétique des équipements lors de l'installation ou de la maintenance des compresseurs", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" }
+      ]
+    },
+    {
+      "id": "G7",
+      "numero": 7,
+      "titre": "Composant : installation, mise en service et maintenance de condenseurs à air froid et à eau froide",
+      "tirage_au_sort": true,
+      "codes": [
+        { "code": "7.01", "nouveau_2025": false, "libelle": "Expliquer le principe de fonctionnement d'un condenseur et les risques de fuite qui y sont associés", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" },
+        { "code": "7.02", "nouveau_2025": false, "libelle": "Mettre au point le régulateur de pression de sortie du condenseur", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "7.03", "nouveau_2025": false, "libelle": "Installer correctement un condenseur/une unité extérieure y compris le matériel de réglage et de sécurité, de telle sorte qu'aucune fuite ni aucune émission ne se produise une fois que le système fonctionnera", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "7.04", "nouveau_2025": false, "libelle": "Régler les interrupteurs de sécurité et de contrôle", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "7.05", "nouveau_2025": false, "libelle": "Inspecter les conduites de refoulement et de liquide", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P", "note": "Le tableau publié ne porte que cinq valeurs sur cette ligne (voir anomalies_source AN-02) ; lecture retenue : D et E non évalués, par cohérence avec tout le groupe 7." },
+        { "code": "7.06", "nouveau_2025": false, "libelle": "Extraire les gaz non condensables du condenseur à l'aide d'un appareil de purge pour système de réfrigération", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "7.07", "nouveau_2025": false, "libelle": "Mettre en marche et arrêter un condenseur et en vérifier le bon fonctionnement, y compris en effectuant des mesures durant son fonctionnement", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "7.08", "nouveau_2025": false, "libelle": "Inspecter la surface du condenseur", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "7.09", "nouveau_2025": false, "libelle": "Rédiger un rapport sur l'état du condenseur en indiquant tout problème de fonctionnement susceptible d'endommager le système et d'entraîner à terme, faute de mesure, des fuites ou des émissions de réfrigérant", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" },
+        { "code": "7.10", "nouveau_2025": true, "libelle": "Connaître les mesures d'amélioration ou de maintien de l'efficacité énergétique des équipements lors de l'installation ou de la maintenance des condenseurs", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" }
+      ]
+    },
+    {
+      "id": "G8",
+      "numero": 8,
+      "titre": "Composant : installation, mise en service et maintenance d'évaporateurs à refroidissement par air et à refroidissement par liquide",
+      "tirage_au_sort": true,
+      "codes": [
+        { "code": "8.01", "nouveau_2025": false, "libelle": "Expliquer le principe de fonctionnement d'un évaporateur (y compris le système de dégivrage) et les risques de fuite qui y sont associés", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" },
+        { "code": "8.02", "nouveau_2025": false, "libelle": "Mettre au point un régulateur de pression d'évaporation de l'évaporateur", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "8.03", "nouveau_2025": false, "libelle": "Installer correctement un évaporateur, y compris le matériel de contrôle et de sécurité, de telle sorte qu'aucune fuite ni aucune émission ne se produise une fois le système en fonctionnement", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "8.04", "nouveau_2025": false, "libelle": "Régler les interrupteurs de sécurité et de contrôle", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "8.05", "nouveau_2025": false, "libelle": "Vérifier que les conduites de liquide et d'aspiration sont dans la bonne position", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "8.06", "nouveau_2025": false, "libelle": "Inspecter le conduit de dégivrage à l'air chaud", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "8.07", "nouveau_2025": false, "libelle": "Régler la soupape de régulation de la pression d'évaporation", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "8.08", "nouveau_2025": false, "libelle": "Mettre en marche et arrêter un évaporateur et en vérifier le bon fonctionnement, y compris en effectuant des mesures durant son fonctionnement", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "8.09", "nouveau_2025": false, "libelle": "Inspecter la surface de l'évaporateur", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "8.10", "nouveau_2025": false, "libelle": "Rédiger un rapport sur l'état de l'évaporateur en indiquant tout problème de fonctionnement susceptible d'endommager le système et d'entraîner à terme, faute de mesure, des fuites ou des émissions de réfrigérant", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" },
+        { "code": "8.11", "nouveau_2025": true, "libelle": "Connaître les mesures pour améliorer ou maintenir l'efficacité énergétique de l'équipement pendant l'installation ou la maintenance des évaporateurs", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" }
+      ]
+    },
+    {
+      "id": "G9",
+      "numero": 9,
+      "titre": "Composant : installation, mise en service et entretien des détendeurs thermostatiques et autres composants",
+      "tirage_au_sort": true,
+      "codes": [
+        { "code": "9.01", "nouveau_2025": false, "libelle": "Expliquer le principe de fonctionnement de différents types de vannes d'expansion (détendeurs thermostatiques, tubes capillaires) et les risques de fuite qui y sont liés", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" },
+        { "code": "9.02", "nouveau_2025": false, "libelle": "Installer des vannes dans la bonne position", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "9.03", "nouveau_2025": false, "libelle": "Régler un détendeur mécanique/électronique", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "9.04", "nouveau_2025": false, "libelle": "Régler des thermostats mécaniques et électroniques", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "9.05", "nouveau_2025": false, "libelle": "Régler la soupape de régulation de la pression", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "9.06", "nouveau_2025": false, "libelle": "Régler des limiteurs de pression mécaniques et électroniques", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "9.07", "nouveau_2025": false, "libelle": "Vérifier le fonctionnement d'un séparateur d'huile", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "9.08", "nouveau_2025": false, "libelle": "Vérifier l'état d'un filtre sécheur", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "9.09", "nouveau_2025": false, "libelle": "Rédiger un rapport sur l'état de ces composants en indiquant tout problème de fonctionnement susceptible d'endommager le système et d'entraîner à terme, faute de mesure, des fuites ou des émissions de réfrigérant", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" },
+        { "code": "9.10", "nouveau_2025": true, "libelle": "Connaître les mesures pour améliorer ou maintenir l'efficacité énergétique de l'équipement pendant l'installation ou la maintenance des détendeurs thermostatiques et d'autres composants", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" }
+      ]
+    },
+    {
+      "id": "G10",
+      "numero": 10,
+      "titre": "Tuyauterie : monter un réseau de tuyauterie étanche dans une installation de réfrigération",
+      "codes": [
+        { "code": "10.01", "nouveau_2025": false, "libelle": "Soudage, brasage fort et/ou brasage tendre des joints étanches sur des tubes, des tuyaux et des composants métalliques pouvant être utilisés dans des systèmes de réfrigération, de climatisation et de pompes à chaleur", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P" },
+        { "code": "10.02", "nouveau_2025": false, "libelle": "Fabriquer/vérifier des supports de tuyaux et de composants", "cat": { "A1": "P", "A2": "P", "B": "P", "C": "P", "D": "—", "E": "—" }, "tronc_commun": "P", "note": "L'arrêté de 2008 numérotait ce code « 1.02 » par coquille ; corrigé en 2025." }
+      ]
+    },
+    {
+      "id": "G11",
+      "numero": 11,
+      "titre": "Informations sur les technologies pertinentes permettant de remplacer les gaz à effet de serre fluorés ou d'en réduire l'utilisation, et sur leur manipulation sans danger",
+      "codes": [
+        { "code": "11.01", "nouveau_2025": false, "libelle": "Connaître les technologies de substitution pertinentes permettant de remplacer les gaz à effet de serre fluorés ou d'en réduire l'utilisation, et savoir les manipuler sans danger", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" }, "tronc_commun": "T" },
+        { "code": "11.02", "nouveau_2025": false, "libelle": "Connaître les systèmes de conception pertinents afin de réduire la charge des gaz à effet de serre fluorés et d'augmenter l'efficacité énergétique", "cat": { "A1": "T", "A2": "T", "B": "—", "C": "—", "D": "—", "E": "—" }, "tronc_commun": null, "specifique": { "A1": "T", "A2": "T" } },
+        { "code": "11.03", "nouveau_2025": false, "enrichi_2025": "ajout des conditions de site permettant d'utiliser des équipements dérogeant à l'annexe IV du règlement (UE) 2024/573", "libelle": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" },
+        { "code": "11.04", "nouveau_2025": false, "libelle": "Comprendre les avantages et inconvénients respectifs, notamment en ce qui concerne l'efficacité énergétique, des réfrigérants de substitution en fonction de leur application prévue et des conditions climatiques des différentes régions", "cat": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }, "tronc_commun": "T" },
+        { "code": "11.05", "nouveau_2025": true, "libelle": "Connaître les différences de conception des composants et des systèmes pour les équipements et les systèmes tributaires des hydrocarbures", "cat": { "A1": "T", "A2": "T", "B": "—", "C": "—", "D": "T", "E": "—" }, "tronc_commun": null, "specifique": { "A1": "T", "A2": "T" } },
+        { "code": "11.06", "nouveau_2025": true, "libelle": "Connaître les différences de conception des composants et des systèmes pour les équipements et les systèmes tributaires du R744 (CO2), telles que les exigences relatives aux matériaux des tuyauteries, le fonctionnement des systèmes de surpression, des soupapes de commande à pression moyenne et à haute pression, l'optimisation du système et du processus des systèmes de réfrigération au R744 (CO2) afin d'accroître l'efficacité du système, comme les compresseurs parallèles, la technologie des éjecteurs (éjecteur de liquide et de gaz) et les systèmes à noyage partiel ; connaître les concepts de sécurité permettant de limiter la pression d'arrêt et l'utilisation de systèmes de refroidissement à stagnation", "cat": { "A1": "—", "A2": "—", "B": "T", "C": "—", "D": "—", "E": "—" }, "tronc_commun": null, "specifique": { "B": "T" } },
+        { "code": "11.07", "nouveau_2025": true, "libelle": "Connaître les différences de conception des composants et des systèmes pour les équipements et les systèmes tributaires du R717 (NH3), telles que la conception des compresseurs, les compresseurs équipés de moteurs séparés, le contrôle de la capacité des compresseurs à piston alternatif et à vis, les circuits de compresseurs, la compression à un ou deux étages, les condenseurs évaporatifs, le fonctionnement du séparateur et le contrôle du niveau, les interrupteurs flotteurs, le thermosyphon, les différences dans la gestion de l'huile (utilisation d'huiles non miscibles), la régulation de l'huile, avoir une connaissance élémentaire des systèmes directs (DX, inondés, fonctionnement par recirculation et LCA) et des systèmes indirects", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "T", "D": "—", "E": "—" }, "tronc_commun": null, "specifique": { "C": "T" } }
+      ]
+    },
+    {
+      "id": "G12",
+      "numero": 12,
+      "titre": "Installation et bonne pratique d'entretien des équipements et des systèmes tributaires des hydrocarbures",
+      "nouveau_2025": true,
+      "specifique_categories": ["A1", "A2"],
+      "codes": [
+        { "code": "12.01", "nouveau_2025": true, "libelle": "Connaître les règles d'étiquetage et les prescriptions spéciales pour les réfrigérants inflammables dans les équipements, systèmes et cylindres de refroidissement ainsi que les prescriptions spéciales relatives au raccordement des bombonnes", "cat": { "A1": "T", "A2": "T", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "T", "A2": "T" } },
+        { "code": "12.02", "nouveau_2025": true, "libelle": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés", "cat": { "A1": "T", "A2": "T", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "T", "A2": "T" } },
+        { "code": "12.03", "nouveau_2025": true, "libelle": "Calculer la charge de réfrigérant inflammable dans un système conformément aux normes de sécurité en vigueur", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "P", "A2": "P" } },
+        { "code": "12.04", "nouveau_2025": true, "libelle": "Réaliser une analyse des risques avant le début du travail et éliminer ou, si l'élimination n'est pas possible, identifier les sources de danger", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "P", "A2": "P" } },
+        { "code": "12.05", "nouveau_2025": true, "libelle": "Préparer la zone de travail et sélectionner les outils, le matériel et les équipements de protection adéquats pour travailler sur des systèmes dépendant des réfrigérants inflammables", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "P", "A2": "P" } },
+        { "code": "12.06", "nouveau_2025": true, "libelle": "Récupérer les réfrigérants inflammables du système en toute sécurité et remplir le système avec de l'azote", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "P", "A2": "P" } },
+        { "code": "12.07", "nouveau_2025": true, "libelle": "Ouvrir le système, enlever et remplacer un composant, refermer le système", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "P", "A2": "P" } },
+        { "code": "12.08", "nouveau_2025": true, "libelle": "Effectuer une épreuve de pression pour contrôler l'étanchéité du système", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "P", "A2": "P" } },
+        { "code": "12.09", "nouveau_2025": true, "libelle": "Réaliser un essai sous vide pour éliminer l'humidité et vérifier l'étanchéité du système", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "P", "A2": "P" } },
+        { "code": "12.10", "nouveau_2025": true, "libelle": "Charger le système avec le volume approprié de réfrigérant à base d'hydrocarbures", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "P", "A2": "P" } },
+        { "code": "12.11", "nouveau_2025": true, "libelle": "Réaliser un contrôle d'étanchéité sur le système au moyen d'une méthode directe", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "P", "A2": "P" } },
+        { "code": "12.12", "nouveau_2025": true, "libelle": "Rédiger un rapport sur le travail d'entretien effectué", "cat": { "A1": "P", "A2": "P", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "P", "A2": "P" } },
+        { "code": "12.13", "nouveau_2025": true, "libelle": "Vérifier que les mesures de santé et de sécurité conformes aux règles applicables sont appliquées à l'emplacement du système (par exemple, panneaux de signalisation, issues de secours, capteurs de gaz, alarmes au gaz, etc.)", "cat": { "A1": "T", "A2": "T", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "T", "A2": "T" } },
+        { "code": "12.14", "nouveau_2025": true, "libelle": "Connaître les mesures d'amélioration ou de maintien de l'efficacité énergétique des équipements lors de l'installation ou de la maintenance avec des réfrigérants inflammables", "cat": { "A1": "T", "A2": "T", "B": "—", "C": "—", "D": "—", "E": "—" }, "specifique": { "A1": "T", "A2": "T" } }
+      ]
+    },
+    {
+      "id": "G13",
+      "numero": 13,
+      "titre": "Installation et bonne pratique d'entretien des équipements et des systèmes tributaires du R744 (CO2)",
+      "nouveau_2025": true,
+      "specifique_categories": ["B"],
+      "codes": [
+        { "code": "13.01", "nouveau_2025": true, "libelle": "Connaître les prescriptions en matière d'étiquetage pour le R744 dans les systèmes et les récipients à pression", "cat": { "A1": "—", "A2": "—", "B": "T", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "T" } },
+        { "code": "13.02", "nouveau_2025": true, "libelle": "Lire et comprendre les diagrammes de tuyauterie et d'instrumentation des systèmes de réfrigération au R744", "cat": { "A1": "—", "A2": "—", "B": "T", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "T" } },
+        { "code": "13.03", "nouveau_2025": true, "libelle": "Connaître les exigences particulières pour les cylindres de réfrigérant et les doubles vannes, ainsi que pour l'extraction des gaz", "cat": { "A1": "—", "A2": "—", "B": "T", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "T" } },
+        { "code": "13.04", "nouveau_2025": true, "libelle": "Connaître les prescriptions en matière de sécurité pour les outils et équipements d'entretien, tels que la détection de gaz, la détection des fuites, les équipements de protection individuelle", "cat": { "A1": "—", "A2": "—", "B": "T", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "T" } },
+        { "code": "13.05", "nouveau_2025": true, "libelle": "Calculer la charge de R744 dans un système conformément aux normes de sécurité en vigueur", "cat": { "A1": "—", "A2": "—", "B": "T", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "T" } },
+        { "code": "13.06", "nouveau_2025": true, "libelle": "Réaliser une analyse des risques avant le début du travail et éliminer ou, si l'élimination n'est pas possible, identifier les sources de danger", "cat": { "A1": "—", "A2": "—", "B": "P", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "P" } },
+        { "code": "13.07", "nouveau_2025": true, "libelle": "Préparer la zone de travail et sélectionner les outils, le matériel et les équipements de protection adéquats pour travailler sur des systèmes tributaires du R744", "cat": { "A1": "—", "A2": "—", "B": "P", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "P" } },
+        { "code": "13.08", "nouveau_2025": true, "libelle": "Réaliser une épreuve de pression pour contrôler la résistance à la pression et l'étanchéité du système", "cat": { "A1": "—", "A2": "—", "B": "P", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "P" } },
+        { "code": "13.09", "nouveau_2025": true, "libelle": "Réaliser un essai sous vide pour éliminer l'humidité et vérifier l'étanchéité du système", "cat": { "A1": "—", "A2": "—", "B": "P", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "P" } },
+        { "code": "13.10", "nouveau_2025": true, "libelle": "Éliminer en toute sécurité le réfrigérant R744 du système", "cat": { "A1": "—", "A2": "—", "B": "P", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "P" } },
+        { "code": "13.11", "nouveau_2025": true, "libelle": "Charger le système avec le volume approprié de R744 à l'état gazeux", "cat": { "A1": "—", "A2": "—", "B": "P", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "P" } },
+        { "code": "13.12", "nouveau_2025": true, "libelle": "Réaliser un contrôle d'étanchéité sur le système au moyen d'une méthode directe", "cat": { "A1": "—", "A2": "—", "B": "P", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "P" } },
+        { "code": "13.13", "nouveau_2025": true, "libelle": "Rédiger un rapport sur le travail d'entretien effectué", "cat": { "A1": "—", "A2": "—", "B": "P", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "P" } },
+        { "code": "13.14", "nouveau_2025": true, "libelle": "Vérifier que les mesures de santé et de sécurité conformes aux règles applicables sont appliquées à l'emplacement du système (par exemple, panneaux de signalisation, issues de secours, capteurs de gaz, alarmes au gaz, etc.)", "cat": { "A1": "—", "A2": "—", "B": "P", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "P" } },
+        { "code": "13.15", "nouveau_2025": true, "libelle": "Connaître l'importance de la haute pression au point triple et de la formation de glace carbonique", "cat": { "A1": "—", "A2": "—", "B": "T", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "T" } },
+        { "code": "13.16", "nouveau_2025": true, "libelle": "Connaître les prescriptions de sécurité applicables au fonctionnement d'un système contenant le réfrigérant R744", "cat": { "A1": "—", "A2": "—", "B": "T", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "T" } },
+        { "code": "13.17", "nouveau_2025": true, "libelle": "Connaître les mesures d'amélioration ou de maintien de l'efficacité énergétique des équipements lors de l'installation ou de la maintenance utilisant des réfrigérants à haute pression", "cat": { "A1": "—", "A2": "—", "B": "T", "C": "—", "D": "—", "E": "—" }, "specifique": { "B": "T" } }
+      ]
+    },
+    {
+      "id": "G14",
+      "numero": 14,
+      "titre": "Installation et bonne pratique d'entretien des équipements et des systèmes tributaires du R717 (NH3)",
+      "nouveau_2025": true,
+      "specifique_categories": ["C"],
+      "codes": [
+        { "code": "14.01", "nouveau_2025": true, "libelle": "Lire et comprendre les diagrammes de tuyauterie et d'instrumentation des systèmes de réfrigération au R717 (NH3)", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "T", "D": "—", "E": "—" }, "specifique": { "C": "T" } },
+        { "code": "14.02", "nouveau_2025": true, "libelle": "Connaître les exigences particulières pour les cylindres de réfrigérant et pour l'extraction des gaz", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "T", "D": "—", "E": "—" }, "specifique": { "C": "T" } },
+        { "code": "14.03", "nouveau_2025": true, "libelle": "Connaître les prescriptions en matière d'étiquetage pour les réfrigérants toxiques dans les systèmes et les récipients à pression", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "T", "D": "—", "E": "—" }, "specifique": { "C": "T" } },
+        { "code": "14.04", "nouveau_2025": true, "libelle": "Connaître les prescriptions en matière de sécurité pour les outils et équipements d'entretien (stations de récupération, pompes à vide, détecteurs électroniques de fuites) y compris la détection de gaz, la détection des fuites, les équipements de protection individuelle, en particulier les masques à gaz", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "T", "D": "—", "E": "—" }, "specifique": { "C": "T" } },
+        { "code": "14.05", "nouveau_2025": true, "libelle": "Connaître les règles permettant le fonctionnement en toute sécurité, y compris les précautions à prendre pour éviter les incendies et les explosions ainsi que les blessures dues à la toxicité", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "T", "D": "—", "E": "—" }, "specifique": { "C": "T" } },
+        { "code": "14.06", "nouveau_2025": true, "libelle": "Connaître les matériaux compatibles avec le R717 (NH3)", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "T", "D": "—", "E": "—" }, "specifique": { "C": "T" } },
+        { "code": "14.07", "nouveau_2025": true, "libelle": "Préparer la zone de travail et sélectionner les outils, le matériel et les équipements de protection adéquats pour travailler sur des systèmes tributaires du R717 (NH3)", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "specifique": { "C": "P" } },
+        { "code": "14.08", "nouveau_2025": true, "libelle": "Réaliser une analyse des risques avant le début du travail et éliminer ou, si l'élimination n'est pas possible, identifier les sources de danger", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "specifique": { "C": "P" } },
+        { "code": "14.09", "nouveau_2025": true, "libelle": "Avoir une connaissance élémentaire de la construction et de l'installation correctes ou des opérations d'entretien des systèmes", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "specifique": { "C": "P" } },
+        { "code": "14.10", "nouveau_2025": true, "libelle": "Effectuer une épreuve de pression pour contrôler l'étanchéité du système", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "specifique": { "C": "P" } },
+        { "code": "14.11", "nouveau_2025": true, "libelle": "Réaliser un essai sous vide pour éliminer l'humidité et vérifier l'étanchéité du système", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "specifique": { "C": "P" } },
+        { "code": "14.12", "nouveau_2025": true, "libelle": "Charger le système avec la charge désignée de réfrigérant toxique", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "specifique": { "C": "P" } },
+        { "code": "14.13", "nouveau_2025": true, "libelle": "Contrôler l'étanchéité du système au moyen d'une des méthodes directes", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "specifique": { "C": "P" } },
+        { "code": "14.14", "nouveau_2025": true, "libelle": "Récupérer les réfrigérants inflammables du système en toute sécurité et remplir le système avec de l'azote", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "specifique": { "C": "P" }, "note": "Le tableau publié ne porte que cinq valeurs sur cette ligne (voir anomalies_source AN-03) ; lecture retenue : P en catégorie C." },
+        { "code": "14.15", "nouveau_2025": true, "libelle": "Rédiger un rapport sur le travail de réparation effectué", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "specifique": { "C": "P" } },
+        { "code": "14.16", "nouveau_2025": true, "libelle": "Contrôler visuellement l'étanchéité des composants du système tels que les soupapes de sécurité et leur intervalle d'inspection", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "specifique": { "C": "P" } },
+        { "code": "14.17", "nouveau_2025": true, "libelle": "Vérifier que les mesures de santé et de sécurité conformes aux règles applicables sont appliquées à l'emplacement du système (par exemple, panneaux de signalisation, issues de secours, capteurs de gaz, alarmes au gaz, etc.)", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "P", "D": "—", "E": "—" }, "specifique": { "C": "P" } },
+        { "code": "14.18", "nouveau_2025": true, "libelle": "Calculer la charge de réfrigérant toxique autorisée dans un système conformément aux normes de sécurité en vigueur", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "T", "D": "—", "E": "—" }, "specifique": { "C": "T" } },
+        { "code": "14.19", "nouveau_2025": true, "libelle": "Connaître les mesures d'amélioration ou de maintien de l'efficacité énergétique des équipements lors de l'installation ou de la maintenance utilisant des réfrigérants toxiques", "cat": { "A1": "—", "A2": "—", "B": "—", "C": "T", "D": "—", "E": "—" }, "specifique": { "C": "T" } }
+      ]
+    }
+  ],
+
+  "categorie_V": {
+    "_doc": "Annexe II.D — référentiel propre à la catégorie V (climatisation de véhicules). Numérotation distincte des groupes 1 à 14. Reprise à l'identique de l'annexe I de l'arrêté de 2008, y compris ses renvois au règlement (UE) 517/2014 et à la directive 2006/40/CE (voir anomalies_source AN-04).",
+    "chapitres": [
+      { "id": "V1", "titre": "Incidence sur l'environnement des fluides frigorigènes et réglementations correspondantes en matière d'environnement", "codes": [
+        { "code": "1.1", "libelle": "Posséder des connaissances de base sur la politique européenne et internationale en matière de changement climatique, y compris la convention-cadre des Nations unies sur les changements climatiques", "eval": "T" },
+        { "code": "1.2", "libelle": "Avoir une connaissance élémentaire du concept de « potentiel de réchauffement planétaire » (PRP), de l'utilisation des gaz à effet de serre fluorés et d'autres substances en tant que fluides frigorigènes, de l'incidence des émissions de gaz à effet de serre fluorés sur le climat (ordre de grandeur de leur PRP) ainsi que des dispositions correspondantes du règlement (UE) n° 517/2014, de la directive 2006/40/CE, et des articles R. 543-75 à R. 543-123 du code de l'environnement", "eval": "T" }
+      ] },
+      { "id": "V2", "titre": "Prise en compte générale de l'équipement", "codes": [
+        { "code": "2.1", "libelle": "Connaître le fonctionnement des systèmes de climatisation dans les véhicules à moteur", "eval": "T" },
+        { "code": "2.2", "libelle": "Savoir identifier les principaux composants d'un système frigorifique et connaître leur fonctionnement", "eval": "T" },
+        { "code": "2.3", "libelle": "Analyser les documents fournis (données du constructeur, registres de l'équipement, plaque signalétique...)", "eval": "P" },
+        { "code": "2.4", "libelle": "Identifier le fluide contenu dans l'équipement", "eval": "P" },
+        { "code": "2.5", "libelle": "Vérifier le fonctionnement normal de l'équipement", "eval": "P" },
+        { "code": "2.6", "libelle": "Savoir associer les dysfonctionnements et les symptômes de fuites", "eval": "P et T" }
+      ] },
+      { "id": "V3", "titre": "Tests d'étanchéité", "codes": [
+        { "code": "3.1", "libelle": "Connaître les différentes méthodes de détection des fuites et choisir la plus appropriée à une situation donnée", "eval": "P" },
+        { "code": "3.2", "libelle": "Connaître la procédure à suivre en cas de fuite", "eval": "P" },
+        { "code": "3.3", "libelle": "Remplir les documents attestant que l'équipement a fait l'objet d'un contrôle d'étanchéité", "eval": "P" },
+        { "code": "3.4", "libelle": "Consigner les données dans le registre", "eval": "P" }
+      ] },
+      { "id": "V4", "titre": "Gestion écologique du système et du fluide frigorigène lors de l'installation, de l'entretien, de la réparation ou de la récupération", "codes": [
+        { "code": "4.1", "libelle": "Manipuler un cylindre de fluide frigorigène", "eval": "P" },
+        { "code": "4.2", "libelle": "Effectuer un transfert de fluide d'un cylindre vers une station", "eval": "P" },
+        { "code": "4.3", "libelle": "Connexion d'un dispositif de récupération aux vannes de service d'un système de climatisation et déconnexion de ce dispositif", "eval": "P" },
+        { "code": "4.4", "libelle": "Procéder à la récupération totale du fluide", "eval": "P" },
+        { "code": "4.5", "libelle": "Contrôler la pression finale de récupération", "eval": "P" },
+        { "code": "4.6", "libelle": "Déterminer la quantité de fluide récupéré", "eval": "P" },
+        { "code": "4.7", "libelle": "Déterminer la quantité d'huile récupérée", "eval": "P" },
+        { "code": "4.8", "libelle": "Remonter un élément neuf en respectant les conditions d'étanchéité et de conformité d'origine", "eval": "P" },
+        { "code": "4.9", "libelle": "Déterminer la quantité d'huile", "eval": "P" },
+        { "code": "4.10", "libelle": "Procéder au tirage au vide", "eval": "P" },
+        { "code": "4.11", "libelle": "Savoir en déterminer la durée", "eval": "P" },
+        { "code": "4.12", "libelle": "Déterminer la qualité et la quantité d'huile à introduire", "eval": "P" },
+        { "code": "4.13", "libelle": "Introduire l'huile", "eval": "P" },
+        { "code": "4.14", "libelle": "Déterminer la charge normale de l'installation suivant les données du constructeur", "eval": "P" },
+        { "code": "4.15", "libelle": "Charger en fluide frigorigène", "eval": "P" },
+        { "code": "4.16", "libelle": "Remplir la fiche d'intervention", "eval": "P" }
+      ] },
+      { "id": "V5", "titre": "Informations sur les technologies pertinentes permettant de remplacer les gaz à effet de serre fluorés ou d'en réduire l'utilisation, et sur leur manipulation sans danger", "codes": [
+        { "code": "5.1", "libelle": "Connaître les technologies de substitution pertinentes permettant de remplacer les gaz à effet de serre fluorés ou d'en réduire l'utilisation, et savoir les manipuler sans danger", "eval": "T" },
+        { "code": "5.2", "libelle": "Connaître les systèmes de conception pertinents afin de réduire la charge des gaz à effet de serre fluorés et d'augmenter l'efficacité énergétique", "eval": "T" },
+        { "code": "5.3", "libelle": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des fluides frigorigènes inflammables ou toxiques ou des fluides frigorigènes nécessitant une pression de fonctionnement plus élevée", "eval": "T" },
+        { "code": "5.4", "libelle": "Comprendre les avantages et inconvénients respectifs, notamment en ce qui concerne l'efficacité énergétique, des fluides frigorigènes de substitution en fonction de leur application prévue et des conditions climatiques des différentes régions", "eval": "T" }
+      ] }
+    ],
+    "cas_demolisseurs": {
+      "libelle_source": "Sont contrôlées les compétences et connaissances du chapitre 1er ; du chapitre 2, à l'exception des points 2.5 et 2.6 ; du chapitre 4, à l'exception des points 4.8, 4.11, 4.12, 4.13, 4.14 et 4.15.",
+      "chapitres_retenus": ["V1", "V2", "V4"],
+      "codes_exclus": ["2.5", "2.6", "4.8", "4.11", "4.12", "4.13", "4.14", "4.15"]
+    },
+    "remise_a_niveau_periodique": false
+  },
+
+  "remise_a_niveau_ponctuelle": {
+    "_doc": "Annexe VIII — mise en conformité des titulaires des anciennes catégories I, II, III, IV (règlements (UE) 2015/2067 ou (CE) 303/2008) avec le nouveau référentiel. Dispensée par un ORGANISME FORMATEUR CERTIFIÉ (annexe IV), pas nécessairement par l'organisme évaluateur.",
+    "echeance": "2029-03-12",
+    "sanction_defaut": "L'attestation délivrée sous le régime (UE) 2015/2067 ou (CE) 303/2008 n'est plus valide ; le titulaire doit repasser l'examen de l'article 1er.",
+    "modalites": "Partie théorique (T) + démonstrations pratiques (D) réalisées pour le groupe par le formateur ou sous sa responsabilité, et/ou via des supports numériques. QCM en fin de session. Présentiel ou distanciel (annexe IX).",
+    "parcours": [
+      { "de": "I", "vers": "A1", "duree_minutes": 210,
+        "codes_T": ["1.00", "1.05", "1.07", "1.08", "2.02", "5.09", "6.08", "7.10", "8.11", "9.10", "11.03", "11.05", "12.01", "12.02", "12.13", "12.14"],
+        "codes_D": ["12.03", "12.04", "12.05", "12.06", "12.07", "12.08", "12.09", "12.10", "12.11", "12.12"] },
+      { "de": "II", "vers": "A2", "duree_minutes": 210,
+        "codes_T": ["1.00", "1.05", "1.07", "1.08", "2.02", "5.09", "6.08", "7.10", "8.11", "9.10", "11.03", "11.05", "12.01", "12.02", "12.13", "12.14"],
+        "codes_D": ["12.03", "12.04", "12.05", "12.06", "12.07", "12.08", "12.09", "12.10", "12.11", "12.12"] },
+      { "de": "III", "vers": "D", "duree_minutes": 90,
+        "codes_T": ["1.00", "1.01", "1.02", "1.04", "1.07", "1.08", "2.02", "5.07", "5.09", "11.05", "12.01"],
+        "codes_D": ["3.03", "5.01", "5.05"] },
+      { "de": "IV", "vers": "E", "duree_minutes": 90,
+        "codes_T": ["1.00", "1.03", "1.07", "1.08", "2.02", "12.01"],
+        "codes_D": [] }
+    ],
+    "attestation_delivree": {
+      "intitule": "Attestation d'aptitude de remise à niveau ponctuelle",
+      "mentions_obligatoires": [
+        "nom et cachet de l'organisme formateur certifié",
+        "mention « Prestation de délivrance de l'attestation d'aptitude de remise à niveau ponctuelle par l'organisme formateur (nom) certifié par (nom du certificateur) »",
+        "nom et prénom du titulaire",
+        "numéro de l'attestation d'aptitude de remise à niveau ponctuelle",
+        "catégories couvertes et dates d'obtention",
+        "numéro d'attestation d'aptitude selon les anciennes catégories ainsi que les catégories couvertes"
+      ],
+      "delai_delivrance": "dans le mois qui suit la formation"
+    }
+  },
+
+  "remise_a_niveau_periodique": {
+    "_doc": "Annexe VII — maintien des compétences des titulaires du nouveau régime. Dispensée par un organisme de formation certifié Qualiopi (annexe VI), la démonstration pratique étant réalisée par une entité titulaire d'une attestation de capacité et une personne titulaire d'une attestation d'aptitude.",
+    "periodicite": "a minima tous les 7 ans à partir de la date de délivrance de l'attestation d'aptitude ou de remise à niveau ponctuelle",
+    "categories_concernees": ["A1", "A2", "B", "C", "D", "E"],
+    "categorie_exclue": "V",
+    "sanction_defaut": "Suspension de l'attestation ; le titulaire ne peut plus exercer jusqu'à mise en conformité dans un délai maximum de 3 ans. Au-delà, l'attestation n'est plus valide et le titulaire doit repasser l'examen.",
+    "modalites": "Partie théorique (T) + démonstrations pratiques (D) pour le groupe. QCM en fin de session. Présentiel ou distanciel (annexe IX).",
+    "durees_minutes": { "tronc_commun": 240, "complement_A1": 60, "complement_A2": 60, "complement_B": 60, "complement_C": 60 },
+    "tronc_commun_theorique": {
+      "codes": ["1.00", "1.06", "1.07", "1.08", "2.01", "2.02", "4.09", "5.07", "6.08", "7.10", "8.11", "9.10", "11.01", "11.03", "11.04"],
+      "matrice": {
+        "1.00": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" },
+        "1.06": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" },
+        "1.07": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" },
+        "1.08": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" },
+        "2.01": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" },
+        "2.02": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" },
+        "4.09": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "T" },
+        "5.07": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "—" },
+        "6.08": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" },
+        "7.10": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" },
+        "8.11": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" },
+        "9.10": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" },
+        "11.01": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "T", "E": "T" },
+        "11.03": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" },
+        "11.04": { "A1": "T", "A2": "T", "B": "T", "C": "T", "D": "—", "E": "—" }
+      }
+    },
+    "tronc_commun_pratique": {
+      "matrice": {
+        "4.04": { "A1": "D", "A2": "D", "B": "D", "C": "D", "D": "—", "E": "D" },
+        "4.07": { "A1": "D", "A2": "D", "B": "D", "C": "D", "D": "—", "E": "D" },
+        "4.08": { "A1": "D", "A2": "D", "B": "D", "C": "D", "D": "—", "E": "D" },
+        "5.01": { "A1": "D", "A2": "D", "B": "D", "C": "D", "D": "D", "E": "—" },
+        "5.03": { "A1": "D", "A2": "D", "B": "—", "C": "D", "D": "D", "E": "—" }
+      }
+    },
+    "complements": {
+      "A1_A2": { "T": ["5.08", "5.09", "11.02", "12.02", "12.13", "12.14"], "D": ["4.06", "5.03", "12.04", "12.05", "12.06"] },
+      "B": { "T": ["1.09", "13.04", "13.15", "13.16", "13.17"], "D": ["13.06", "13.07", "13.14"] },
+      "C": { "T": ["1.10", "5.11", "14.04", "14.05", "14.19"], "D": ["14.07", "14.08", "14.17"] }
+    }
+  },
+
+  "anomalies_source": [
+    {
+      "id": "AN-01",
+      "objet": "Contradiction apparente entre II.B et II.C sur les groupes 6 à 9",
+      "constat": "II.B impose que l'évaluation porte sur AU MOINS UN des groupes 6, 7, 8, 9, tiré au sort et inconnu du candidat. Mais le tableau du tronc commun de II.C reprend l'intégralité des codes des quatre groupes.",
+      "lecture_retenue": "Le tirage au sort de II.B est la règle d'épreuve ; II.C énumère le vivier de compétences mobilisables. Le logiciel produit donc une variante d'examen par groupe tiré au sort.",
+      "motif": "Règle la plus explicite et la plus contraignante ; elle est motivée dans le texte par une finalité (« le candidat ne sait pas »). Ne jamais évaluer moins que ce qui est exigé.",
+      "a_confirmer_aupres_de": "organisme certificateur retenu"
+    },
+    {
+      "id": "AN-02",
+      "objet": "Ligne 7.05 du tableau II.B incomplète",
+      "constat": "Cinq valeurs publiées au lieu de six (« P P P P — »).",
+      "lecture_retenue": "A1=P, A2=P, B=P, C=P, D=—, E=—, par cohérence avec l'ensemble du groupe 7."
+    },
+    {
+      "id": "AN-03",
+      "objet": "Ligne 14.14 du tableau II.B incomplète",
+      "constat": "Cinq valeurs publiées au lieu de six (« — — — P — »).",
+      "lecture_retenue": "C=P, toutes les autres catégories non concernées, le groupe 14 étant propre à la catégorie C."
+    },
+    {
+      "id": "AN-04",
+      "objet": "Renvois périmés dans le référentiel de la catégorie V (II.D)",
+      "constat": "Le code 1.2 de la catégorie V renvoie encore au règlement (UE) 517/2014 et à la directive 2006/40/CE, alors que 517/2014 est abrogé par 2024/573.",
+      "lecture_retenue": "Reprise verbatim du texte publié. Toute question portant sur ce code doit citer le texte tel qu'il est écrit dans l'arrêté."
+    },
+    {
+      "id": "AN-05",
+      "objet": "Table des durées de l'annexe VIII.2",
+      "constat": "La table écrit « Catégorie III vers E : 1 h 30 » alors que le tableau des compétences de l'annexe VIII et l'article 7 établissent le parcours III → D.",
+      "lecture_retenue": "III → D, durée 1 h 30. Coquille de la table des durées."
+    },
+    {
+      "id": "AN-06",
+      "objet": "Terminologie « directive » employée dans les supports pédagogiques",
+      "constat": "Les supports de présentation parlent de « directive (UE) 2024/573 ».",
+      "lecture_retenue": "2024/573 est un RÈGLEMENT, d'application directe. Employer « règlement » dans tous les contenus produits."
+    }
+  ],
+
+  "arbitrages": {
+    "_doc": "Choix internes de l'organisme, opposables en audit, qui ne figurent PAS dans l'arrêté. Ils ne sont pas dans ce fichier : ils vivent dans la configuration du logiciel et dans les procédures écrites.",
+    "renvois": [
+      "Barème pondéré par conséquence environnementale (exigé par l'annexe III.B, mais dont la valeur est laissée à l'organisme) — voir NOTE-EXAMEN-OFFICIEL.md § 2",
+      "Seuil de réussite (aucun seuil n'est fixé par l'arrêté) — voir PR-02",
+      "Nombre de questions disponibles par catégorie (l'annexe III.A point 4 impose de le déclarer, pas de valeur minimale)"
+    ]
+  }
+}

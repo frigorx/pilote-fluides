@@ -23,6 +23,9 @@
   var idxCartes = {}; PACK.cartes.forEach(function (c) { idxCartes[c.id] = c; });
   var idxRes = {}; (PACK.ressources || []).forEach(function (r) { idxRes[r.id] = r; });
   var BANQUE = PACK.banque || [];
+  /* Extension pack fluides : dictionnaire des compétences du référentiel
+     (injecté au build). Permet de NOMMER une compétence non acquise. */
+  var COMP = PACK.competences || {};
 
   /* --- État de session --- */
   var forced = window.PILOTE_MODE && MODES[window.PILOTE_MODE] ? window.PILOTE_MODE : null;
@@ -31,6 +34,7 @@
     verrouMode: !!forced,            // formateur.html verrouille le mode
     carteId: PACK.pack.carte_initiale,
     historique: [], criteres: {}, reponses: {},
+    categorie: null,                 // catégorie d'aptitude visée (A1, A2, D, E)
     examen: null,                    // état d'un examen blanc en cours
     debut: nowSec(), chrono: null
   };
@@ -46,6 +50,11 @@
     var m = MODES[S.modeId];
     var c = idxCartes[S.carteId];
     if (!c) { app.innerHTML = "<p style='padding:24px'>Carte introuvable.</p>"; return; }
+    // Extension pack fluides : entrer par un menu de catégorie (A1, A2, D, E)
+    // fixe le champ visé. Le référentiel n'exige pas les mêmes compétences
+    // selon la catégorie — un candidat D n'a pas à réviser les compresseurs.
+    if (c.categorie) S.categorie = c.categorie;
+    if (c.type === "progression") return renderProgression(c, m);
     if (c.examen) return renderExamen(c, m);
     if (c.type === "accueil" || c.type === "menu") return renderAccueil(c, m);
 
@@ -54,6 +63,7 @@
     html += "<div class='corps'>";
     if (c.dc) html += "<span class='dc'>" + esc(c.dc) + "</span>";
     html += "<h1>" + esc(c.titre) + "</h1>";
+    html += zoneCompetences(c); // l'objectif d'examen, annoncé avant le contenu
     if (c.corps) html += c.corps;
     (c.blocs || []).forEach(function (b) {
       html += "<div class='bloc " + (b.type || "") + "'><div class='t'>" + esc(b.t || "") + "</div>" + (b.html || "") + "</div>";
@@ -93,6 +103,90 @@
     if (S.historique[S.historique.length - 1] !== c.id) S.historique.push(c.id);
   }
 
+  /* ---- Carte PROGRESSION (extension pack fluides) ----
+     « Où j'en suis, compétence par compétence » — la vue qui manque à tout
+     outil de préparation qui ne sait afficher qu'un score. Les états sont
+     déduits des réponses données aux questions de la banque, qui portent
+     chacune son code du référentiel. */
+  function renderProgression(c, m) {
+    var suivi = lireComp();
+    var cat = S.categorie;
+    var codes = Object.keys(COMP).filter(function (k) {
+      if (!cat) return true;
+      return COMP[k].cat && COMP[k].cat.indexOf(cat) >= 0;
+    });
+    codes.sort(function (a, b) {
+      var na = parseFloat(a), nb = parseFloat(b);
+      return na - nb || a.localeCompare(b);
+    });
+
+    var cpt = { acquis: 0, fragile: 0, revoir: 0, vierge: 0 };
+    codes.forEach(function (k) { cpt[etatComp(suivi[k])]++; });
+    var teste = cpt.acquis + cpt.fragile + cpt.revoir;
+
+    var h = barre(m) + fil() + "<div class='scene'><div class='carte'><div class='corps'>";
+    h += "<span class='dc'>" + esc(cat ? "Catégorie " + cat : "Toutes catégories") + "</span>";
+    h += "<h1>" + esc(c.titre) + "</h1>";
+    h += "<p>Voici où vous en êtes sur les <b>" + codes.length + " compétences</b> que l'examen peut " +
+         "vous demander" + (cat ? " en catégorie <b>" + esc(cat) + "</b>" : "") + ". " +
+         "Chaque question à laquelle vous répondez met cette page à jour. " +
+         "<b>Tout reste dans votre navigateur</b> : rien n'est envoyé nulle part.</p>";
+
+    h += "<div class='prog-resume'>" +
+      pastille("acquis", cpt.acquis, "acquises") +
+      pastille("fragile", cpt.fragile, "fragiles") +
+      pastille("revoir", cpt.revoir, "à revoir") +
+      pastille("vierge", cpt.vierge, "jamais testées") + "</div>";
+
+    if (!teste)
+      h += "<div class='bloc'><div class='t'>Par où commencer</div>Répondez à une série de " +
+           "révision ou à un examen blanc : les compétences se coloreront au fur et à mesure.</div>";
+
+    // regroupées par groupe du référentiel, dans l'ordre du programme
+    var parGroupe = {}, ordre = [];
+    codes.forEach(function (k) {
+      var g = COMP[k].groupe || "?";
+      if (!parGroupe[g]) { parGroupe[g] = []; ordre.push(g); }
+      parGroupe[g].push(k);
+    });
+    ordre.sort(function (a, b) { return (parseInt(a.slice(1), 10) || 99) - (parseInt(b.slice(1), 10) || 99); });
+
+    ordre.forEach(function (g) {
+      h += "<div class='prog-groupe'><div class='gt'>" + esc(g) + " — " + esc(COMP[parGroupe[g][0]].groupe_titre || "") + "</div>";
+      parGroupe[g].forEach(function (k) {
+        var e = suivi[k], et = etatComp(e);
+        var lib = COMP[k].libelle || COMP[k].officiel || k;
+        h += "<div class='pc " + et + "'><span class='cd'>" + esc(k) + "</span>" +
+             "<span class='lb'>" + esc(lib) + "</span>" +
+             "<span class='st'>" + libelleEtat(et, e) + "</span></div>";
+      });
+      h += "</div>";
+    });
+
+    h += "<div class='liens'><button data-go='c00' class='sec'>↺ Sommaire</button>" +
+         "<button id='prog-raz' class='sec'>Effacer ma progression</button></div>";
+    h += "</div></div></div>" + pied({}) + voiles();
+
+    app.innerHTML = h;
+    nav(); commun();
+    var b = document.getElementById("prog-raz");
+    if (b) b.onclick = function () {
+      if (confirm("Effacer votre progression ? Les compétences repasseront toutes en « jamais testée ».")) {
+        effacerComp(); render();
+      }
+    };
+    if (S.historique[S.historique.length - 1] !== c.id) S.historique.push(c.id);
+  }
+  function pastille(cls, n, lib) {
+    return "<span class='pst " + cls + "'><b>" + n + "</b> " + esc(lib) + "</span>";
+  }
+  function libelleEtat(et, e) {
+    if (et === "acquis") return "✅ acquise";
+    if (et === "fragile") return "⚠️ fragile";
+    if (et === "revoir") return "❌ à revoir";
+    return "· jamais testée";
+  }
+
   /* ---- Carte EXAMEN BLANC (séquence de questions tirées de la banque) ---- */
   function renderExamen(c, m) {
     if (!S.examen || S.examen.carteId !== c.id) initExamen(c);
@@ -127,6 +221,17 @@
       if (c.examen.niveau && q.niveau && q.niveau !== c.examen.niveau) return false;
       return true;
     });
+    // Extension pack fluides : filtrage par catégorie d'aptitude. Une question
+    // sans `categories` reste servie à tous — c'est le cas des questions de
+    // socle et de celles sur le CO₂ / NH₃, imposées en A1 et A2 par l'annexe
+    // II.C alors même que leurs codes n'y sont pas évalués.
+    if (S.categorie) {
+      var cible = pool.filter(function (q) {
+        return !q.categories || q.categories.indexOf(S.categorie) >= 0;
+      });
+      // Repli : mieux vaut un entraînement large qu'un examen tronqué.
+      if (cible.length >= Math.min(c.examen.n || 6, pool.length)) pool = cible;
+    }
     melange(pool);
     var n = Math.min(c.examen.n || 6, pool.length);
     S.examen = { carteId: c.id, items: pool.slice(0, n), i: 0, rep: [], fini: false, score: null };
@@ -149,12 +254,30 @@
                (d > 0 ? " — +" + d + " 📈" : d < 0 ? " — " + d : " — stable") + "</span>";
       }
       h += "<div class='retour " + (reussi ? "ok" : "ko") + "'><b>Score : " + bons + " / " + sur + " (" + pct + "%)</b> — seuil " + seuil + "%. " + (reussi ? "Réussi ✅" : "À retravailler.") + evol + "</div>";
-      // Extension pack fluides : les fiches des questions ratées, dédupliquées.
-      var aRevoir = {};
+      // Extension pack fluides : les COMPÉTENCES non acquises, nommées, puis
+      // les fiches où les retravailler. Dire « revoyez la fiche G4 » n'apprend
+      // rien ; dire quelle compétence de l'arrêté n'est pas tenue, si.
+      var ratees = {}, aRevoir = {}, ratesHorsRef = 0;
       ex.rep.forEach(function (r, i) {
         var q = ex.items[i];
-        if (r && r.choix !== q.bonne && q.remediation_vers && idxCartes[q.remediation_vers]) aRevoir[q.remediation_vers] = true;
+        if (!r || r.choix === q.bonne) return;
+        if (q.code) ratees[q.code] = (ratees[q.code] || 0) + 1;
+        else ratesHorsRef++;
+        if (q.remediation_vers && idxCartes[q.remediation_vers]) aRevoir[q.remediation_vers] = true;
       });
+      var codes = Object.keys(ratees).sort();
+      if (codes.length) {
+        h += "<div class='bilan-comp'><div class='t'>🎯 Compétences à retravailler</div>";
+        codes.forEach(function (code) {
+          var d = COMP[code] || {};
+          h += "<div class='bc'><span class='code'>" + esc(code) + "</span>" +
+               "<span class='lib'>" + esc(d.libelle || d.officiel || code) + "</span>" +
+               (ratees[code] > 1 ? "<span class='n'>" + ratees[code] + " erreurs</span>" : "") + "</div>";
+        });
+        if (ratesHorsRef)
+          h += "<div class='hr'>+ " + ratesHorsRef + " question(s) de culture métier, hors référentiel d'examen.</div>";
+        h += "</div>";
+      }
       var fiches = Object.keys(aRevoir);
       if (fiches.length) {
         h += "<div style='margin-top:12px;font-weight:700;color:var(--bleu)'>À revoir en priorité :</div><div class='liens'>";
@@ -178,7 +301,28 @@
   function barre(m) {
     return "<div class='barre'><span class='logo'>inerWeb <b>Pilote</b></span>" +
       "<span class='pack-titre'>" + esc(PACK.pack.titre) + "</span><span class='spacer'></span>" +
+      // Extension pack fluides : la catégorie visée, toujours visible et modifiable.
+      (S.categorie ? "<button class='mode-tag' id='btn-cat' title='Catégorie d’aptitude visée'>Catégorie : " + esc(S.categorie) + " ▾</button>" : "") +
       "<button class='mode-tag' id='btn-mode'" + (S.verrouMode ? " disabled title='mode verrouillé'" : "") + ">Mode : " + esc(m.nom) + (S.verrouMode ? " 🔒" : " ▾") + "</button></div>";
+  }
+
+  /* Extension pack fluides : changer ou effacer la catégorie visée. */
+  function menuCategorie() {
+    var liste = PACK.pack.categories || [];
+    var h = "<h3>Catégorie d'aptitude visée</h3><p style='color:var(--mut);font-size:13.5px'>" +
+      "Les tirages ne vous serviront que les compétences exigées pour cette catégorie. " +
+      "Les questions de socle et celles sur le CO₂ et l'ammoniac restent posées à tous.</p><div class='liens'>";
+    liste.forEach(function (id) {
+      h += "<button data-cat='" + id + "'" + (id === S.categorie ? " class='sec'" : "") + ">" + esc(id) + "</button>";
+    });
+    h += "<button class='sec' data-cat=''>Toutes catégories</button></div>";
+    ouvrirVoile(h);
+    onAll("[data-cat]", function (el) {
+      el.addEventListener("click", function () {
+        S.categorie = el.getAttribute("data-cat") || null;
+        S.examen = null; fermerVoile(); render();
+      });
+    });
   }
   function fil() {
     if (!S.historique.length) return "<div class='fil'>Début du parcours</div>";
@@ -226,6 +370,55 @@
     }
     return h + "</div>";
   }
+  /* Extension pack fluides : LES COMPÉTENCES VISÉES, côté élève.
+     Ces libellés existaient déjà mais n'étaient rendus qu'en mode notation :
+     le stagiaire ne lisait qu'une ligne de numéros de codes, jamais ce que
+     l'examen allait lui demander. `libelle` est la reformulation
+     accessible, `officiel` le texte de l'arrêté (injecté au build depuis
+     referentiel-2025.json, donc jamais recopié à la main). */
+  function zoneCompetences(c) {
+    var crs = c.criteres || [];
+    if (!crs.length) return "";
+    var h = "<div class='competences'><div class='t'>🎯 Ce que l'examen attend de vous</div>";
+    crs.forEach(function (cr, i) {
+      var ep = cr.epreuve || {}, cats = Object.keys(ep);
+      // Si une catégorie est visée, c'est SON épreuve qui compte : le même
+      // code peut être théorique ici et pratique là.
+      var mien = S.categorie ? ep[S.categorie] : null;
+      var pratique = mien ? mien === "P" : cats.some(function (k) { return ep[k] === "P"; });
+      var horsChamp = S.categorie && !cr.information && !mien;
+      var cls = cr.information || horsChamp ? "i" : pratique ? "p" : "t";
+      var tag = cr.information ? "ℹ information"
+              : horsChamp ? "○ hors de votre catégorie"
+              : pratique ? "🛠 pratique" : "📖 théorique";
+      h += "<div class='comp" + (i ? "" : " prem") + "'><span class='tp " + cls + "'>" + tag + "</span>" +
+           "<span class='lib'>" + esc(cr.libelle) + "</span>";
+      h += cr.information
+        ? "<span class='cat'>évalué en " + esc((cr.evalue_en || []).join(" · ")) + "</span>"
+        : mien ? "<span class='cat'>votre catégorie : " + esc(S.categorie) + "</span>"
+        : "<span class='cat'>" + esc(cats.join(" · ")) + "</span>";
+      if (cr.nouveau) h += "<span class='neuf'>★ nouveau 2025</span>";
+      h += "</div>";
+    });
+    // Groupes 6 à 9 : le candidat ignore lequel tombera. Le lui dire, c'est
+    // lui éviter de faire l'impasse sur trois quarts des composants.
+    if (crs.some(function (cr) { return cr.tirage_au_sort; }))
+      h += "<div class='avert'>⚠️ Ce groupe est tiré au sort le jour de l'épreuve : vous ne saurez pas à l'avance si c'est celui-ci qui tombe.</div>";
+    h += "<div class='plus'><button data-deplie='1'>📜 Voir le texte officiel de l'arrêté</button></div>" +
+         "<div class='officiel' style='display:none'>";
+    crs.forEach(function (cr) {
+      h += "<p><b>" + esc(cr.code) + "</b> — " + esc(cr.officiel || cr.libelle) + "</p>";
+    });
+    var grp = [];
+    crs.forEach(function (cr) {
+      var g = cr.groupe ? cr.groupe + " · " + cr.groupe_titre : null;
+      if (g && grp.indexOf(g) < 0) grp.push(g);
+    });
+    h += "<p class='src'>Arrêté du 21 novembre 2025, annexe II.B" +
+         (grp.length ? " — " + esc(grp.join(" ; ")) : "") + "</p>";
+    return h + "</div></div>";
+  }
+
   function zoneCriteres(c) {
     var h = "<div class='criteres'><div style='font-weight:700;color:var(--bleu);margin-bottom:6px'>Critères à positionner</div>";
     c.criteres.forEach(function (cr) {
@@ -276,8 +469,9 @@
   }
   function nav() { onAll("[data-go]", function (el) { el.addEventListener("click", function () { aller(el.getAttribute("data-go")); }); }); }
   function commun() {
-    // Extension pack fluides : le bouton d'indice révèle le bloc qui le suit.
-    onAll("[data-aide]", function (el) {
+    // Extension pack fluides : indice de question et texte officiel de
+    // l'arrêté — même mécanique, le bouton révèle le bloc qui suit son parent.
+    onAll("[data-aide],[data-deplie]", function (el) {
       el.addEventListener("click", function () {
         var d = el.parentNode.nextElementSibling;
         if (d) d.style.display = d.style.display === "none" ? "" : "none";
@@ -285,6 +479,7 @@
     });
     var b;
     if ((b = document.getElementById("btn-mode")) && !S.verrouMode) b.onclick = menuMode;
+    if ((b = document.getElementById("btn-cat"))) b.onclick = menuCategorie;
     if ((b = document.getElementById("btn-retour"))) b.onclick = retour;
     if ((b = document.getElementById("btn-docs"))) b.onclick = ouvrirDocs;
     if ((b = document.getElementById("btn-secours"))) b.onclick = ouvrirSecours;
@@ -300,6 +495,9 @@
   function repondreExamen(choix) {
     var ex = S.examen; if (ex.rep[ex.i]) return;
     ex.rep[ex.i] = { choix: choix };
+    // chaque réponse alimente le suivi par compétence (extension pack fluides)
+    var q = ex.items[ex.i];
+    if (q && q.code) noterComp(q.code, choix === q.bonne);
     if (!MODES[S.modeId].feedback && ex.i >= ex.items.length - 1) ex.fini = true;
     render();
   }
@@ -384,6 +582,39 @@
       if (f.contentWindow === e.source) f.style.height = Math.min(1400, Math.max(200, e.data.piloteOutilH)) + "px";
     });
   });
+
+  /* --- suivi par COMPÉTENCE (extension pack fluides, auto-formation) ---
+     Un score d'examen dit « 14/20 ». Il ne dit pas ce qu'il faut réviser.
+     Comme chaque question porte son code du référentiel, on peut tenir un
+     compte par compétence : combien de fois juste, combien de fois faux, et
+     le résultat de la dernière tentative. C'est ce qui transforme le pack en
+     outil de préparation — le stagiaire voit où il en est, code par code.
+     Tout reste dans SON navigateur : rien ne remonte. */
+  function lireComp() {
+    try { return JSON.parse(localStorage.getItem("pilote_comp_" + PACK.pack.id) || "{}"); }
+    catch (e) { return {}; }
+  }
+  function noterComp(code, ok) {
+    if (!code) return;
+    try {
+      var o = lireComp();
+      var e = o[code] || { ok: 0, ko: 0 };
+      if (ok) e.ok++; else e.ko++;
+      e.dernier = ok ? 1 : 0;
+      o[code] = e;
+      localStorage.setItem("pilote_comp_" + PACK.pack.id, JSON.stringify(o));
+    } catch (e) { /* navigation privée : pas de suivi, tant pis */ }
+  }
+  function effacerComp() {
+    try { localStorage.removeItem("pilote_comp_" + PACK.pack.id); } catch (e) {}
+  }
+  /* Quatre états lisibles, sans jargon : jamais testée · acquise · fragile · à revoir. */
+  function etatComp(e) {
+    if (!e || (!e.ok && !e.ko)) return "vierge";
+    if (e.dernier === 1 && e.ko === 0) return "acquis";
+    if (e.dernier === 1) return "fragile";
+    return "revoir";
+  }
 
   /* --- historique local (extension pack fluides, auto-formation) --- */
   function lireHist(id) {

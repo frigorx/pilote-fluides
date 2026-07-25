@@ -1,0 +1,574 @@
+[
+ {
+  "id": "pk-g8b-1",
+  "dc": "G8",
+  "code": "8.03",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Un évaporateur est installé avec son pressostat et son régulateur de pression. Une fois l'installation terminée, qu'est-ce qui doit être sans aucune fuite ni émission ?",
+  "choix": [
+   "L'évaporateur et tout le matériel de contrôle et de sécurité posé avec lui",
+   "Seulement le tube de l'évaporateur",
+   "Seulement les raccords visibles depuis l'extérieur",
+   "Seulement les organes électriques"
+  ],
+  "bonne": 0,
+  "aide": "Relis la première phrase de la fiche : elle ne parle pas seulement du tube.",
+  "remed": {
+   "regle": "Un évaporateur installé doit fonctionner sans aucune fuite ni émission. Cela vaut pour le tube, mais aussi pour tout le matériel de contrôle et de sécurité posé avec lui.",
+   "pourquoi": "Un pressostat ou un régulateur mal raccordé peut fuir, tout comme un tube mal serti. L'exigence porte sur l'ensemble de ce qui est installé.",
+   "piege": "Croire que seul le tube frigorifique compte pour l'étanchéité, et négliger les raccords des appareils de contrôle."
+  },
+  "remediation_vers": "g8b"
+ },
+ {
+  "id": "pk-g8b-2",
+  "dc": "G8",
+  "code": "8.04",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Un interrupteur de sécurité et de contrôle détecte une pression qui sort de la plage prévue. Que fait-il ?",
+  "choix": [
+   "Il déclenche le dégivrage",
+   "Il augmente la vitesse du ventilateur",
+   "Il coupe l'alimentation électrique du compresseur",
+   "Il ouvre le régulateur de pression d'évaporation"
+  ],
+  "bonne": 2,
+  "aide": "C'est un interrupteur électrique. Il agit sur l'alimentation, pas sur la pression elle-même.",
+  "remed": {
+   "regle": "Les interrupteurs de sécurité et de contrôle, ou pressostats, protègent la machine. Ils coupent l'alimentation électrique du compresseur si la pression sort de la plage prévue.",
+   "pourquoi": "Le pressostat met le compresseur à l'arrêt avant qu'une pression anormale ne l'endommage. Il ne régule rien, il coupe.",
+   "piege": "Confondre le pressostat, qui coupe, avec le régulateur de pression d'évaporation, qui maintient une pression sans rien couper."
+  },
+  "remediation_vers": "g8b"
+ },
+ {
+  "id": "pk-g8b-3",
+  "dc": "G8",
+  "code": "8.06",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Un évaporateur dégivre à l'air chaud. Lors de la visite, que dois-tu inspecter sur le conduit qui transporte cet air ?",
+  "choix": [
+   "Le niveau d'huile du compresseur",
+   "L'étanchéité, l'isolation et l'écoulement des condensats",
+   "La pression d'aspiration uniquement",
+   "Le débit d'air du ventilateur uniquement"
+  ],
+  "bonne": 1,
+  "aide": "La fiche liste trois points précis à vérifier sur ce conduit.",
+  "remed": {
+   "regle": "Le conduit de dégivrage à l'air chaud s'inspecte à chaque visite. On vérifie l'étanchéité, l'isolation et l'écoulement des condensats.",
+   "pourquoi": "Un conduit percé, mal isolé ou qui laisse stagner les condensats perd son efficacité. Il peut endommager ce qui l'entoure.",
+   "piege": "Se contenter de vérifier que l'air chaud sort du conduit, sans contrôler ces trois points précis."
+  },
+  "remediation_vers": "g8b"
+ },
+ {
+  "id": "pk-g8b-4",
+  "dc": "G8",
+  "code": "8.11",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "La batterie d'un évaporateur est sale et le débit d'air a baissé. Quel est l'effet sur la consommation d'énergie du compresseur ?",
+  "choix": [
+   "Aucun effet, seule la surchauffe compte",
+   "Le dégivrage devient inutile",
+   "La pression d'évaporation augmente automatiquement",
+   "Le compresseur tourne plus longtemps pour le même résultat"
+  ],
+  "bonne": 3,
+  "aide": "Pense à ce que doit faire le compresseur si l'échange de chaleur devient moins bon.",
+  "remed": {
+   "regle": "Une batterie sale ou un mauvais débit d'air font tourner le compresseur plus longtemps pour le même résultat. C'est ce qui coûte le plus cher en énergie.",
+   "pourquoi": "Moins la batterie échange de chaleur, plus le compresseur doit fonctionner longtemps pour le même froid. Il consomme donc plus.",
+   "piege": "Penser que seule la surchauffe détermine l'efficacité énergétique, en oubliant l'état de la batterie et le débit d'air."
+  },
+  "remediation_vers": "g8b"
+ },
+ {
+  "id": "pk-g9b-1",
+  "dc": "G9",
+  "code": "9.04",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Comment un thermostat mécanique détecte-t-il la température ?",
+  "choix": [
+   "Avec une sonde reliée à un régulateur numérique",
+   "Avec un capteur de pression relié à un module",
+   "Avec une résistance électrique chauffante",
+   "Avec un bulbe relié par un tube fin à des contacts électriques"
+  ],
+  "bonne": 3,
+  "aide": "C'est la version simple et robuste, pas la version numérique.",
+  "remed": {
+   "regle": "Le thermostat mécanique utilise un bulbe relié par un tube fin à des contacts électriques.",
+   "pourquoi": "Cette liaison directe, sans électronique, rend le thermostat mécanique simple et robuste.",
+   "piege": "Confondre le bulbe du thermostat mécanique avec la sonde du thermostat électronique. La sonde, elle, est reliée à un régulateur numérique."
+  },
+  "remediation_vers": "g9b"
+ },
+ {
+  "id": "pk-g9b-2",
+  "dc": "G9",
+  "code": "9.07",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Vérifier le fonctionnement d'un séparateur d'huile, c'est contrôler quoi ?",
+  "choix": [
+   "Que l'huile reste bloquée dans le séparateur en permanence",
+   "Que l'huile retenue retourne bien, automatiquement, au carter du compresseur",
+   "Que le condenseur reçoit un mélange d'huile et de fluide",
+   "Que la pression d'aspiration reste constante"
+  ],
+  "bonne": 1,
+  "aide": "Le séparateur ne doit pas garder l'huile pour lui. Il doit la rendre.",
+  "remed": {
+   "regle": "Le séparateur d'huile retient l'huile, puis la renvoie automatiquement au carter du compresseur dès que le niveau monte. Vérifier son fonctionnement, c'est contrôler que ce retour se fait bien.",
+   "pourquoi": "Une huile qui s'accumule plus loin dans le circuit réduit l'échange de chaleur. Elle finit par manquer au compresseur, qui en a besoin pour se lubrifier.",
+   "piege": "Croire que le rôle du séparateur s'arrête à retenir l'huile, en oubliant qu'il doit aussi la restituer au compresseur."
+  },
+  "remediation_vers": "g9b"
+ },
+ {
+  "id": "pk-g9b-3",
+  "dc": "G9",
+  "code": "9.09",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Pendant une visite, tu remarques qu'un limiteur de pression ne coupe plus correctement. Tu ne le notes pas dans ton rapport. Quel est le risque, si ce défaut reste sans suite ?",
+  "choix": [
+   "Le défaut peut endommager le système et provoquer à terme une fuite ou une émission",
+   "Aucun, le limiteur se corrige tout seul avec le temps",
+   "Le compresseur s'arrête immédiatement par sécurité",
+   "Le séparateur d'huile compense automatiquement le défaut"
+  ],
+  "bonne": 0,
+  "aide": "Relis la fin de la fiche : que se passe-t-il quand un défaut n'est pas signalé ?",
+  "remed": {
+   "regle": "Un défaut non signalé (thermostat qui dérive, limiteur qui ne coupe plus, séparateur qui laisse passer l'huile) finit par endommager le système. À terme, faute de mesure, cela provoque une fuite ou une émission de réfrigérant.",
+   "pourquoi": "Le rapport écrit permet d'agir avant que le défaut ne s'aggrave. C'est un outil de prévention, pas une simple formalité.",
+   "piege": "Penser qu'un défaut mineur peut attendre la prochaine visite sans conséquence."
+  },
+  "remediation_vers": "g9b"
+ },
+ {
+  "id": "pk-g9b-4",
+  "dc": "G9",
+  "code": "9.10",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Un séparateur d'huile laisse l'huile encrasser les échangeurs. Quel est l'effet sur le compresseur ?",
+  "choix": [
+   "Il s'arrête automatiquement",
+   "Il consomme moins d'énergie",
+   "Il travaille plus pour le même résultat",
+   "Il n'est pas concerné, seul l'évaporateur est affecté"
+  ],
+  "bonne": 2,
+  "aide": "Un échangeur encrassé fait le même travail, mais moins bien.",
+  "remed": {
+   "regle": "Un séparateur d'huile qui laisse l'huile encrasser les échangeurs fait travailler le compresseur plus, pour le même résultat.",
+   "pourquoi": "L'huile qui encrasse un échangeur réduit l'échange de chaleur. Il faut alors plus de temps de fonctionnement pour le même effet, donc plus d'énergie consommée.",
+   "piege": "Penser que seul l'entretien de l'évaporateur influence l'efficacité énergétique, en oubliant les organes annexes comme le séparateur d'huile."
+  },
+  "remediation_vers": "g9b"
+ },
+ {
+  "id": "pk-g12b-1",
+  "dc": "G12",
+  "code": "12.07",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Vous devez rebraser un composant sur un circuit au R-290. Quelle affirmation est vraie ?",
+  "choix": [
+   "Le R-290 est classé A2L, comme le R-32 : une flamme brève est possible sans risque particulier.",
+   "Le R-290 est classé A3, très inflammable : aucune flamme tant que l'inertage à l'azote n'est pas confirmé.",
+   "Le R-290 est classé A2, inflammable, mais moins que les hydrocarbures purs.",
+   "Le R-290 est classé A1, non inflammable : le risque vient seulement de la pression."
+  ],
+  "bonne": 1,
+  "aide": "Cherchez dans le texte la phrase qui compare le R-290 à un autre fluide.",
+  "remed": {
+   "regle": "Le R-290 (et le R-600a) sont classés A3 : très inflammables. Aucune flamme n'est autorisée tant que l'inertage à l'azote n'est pas confirmé.",
+   "pourquoi": "La classe A3 signale un risque d'inflammation élevé. Contrairement à un A2L comme le R-32, une fuite résiduelle de R-290 s'enflamme facilement au contact d'une flamme.",
+   "piege": "Confondre le R-290 avec un A2L parce que c'est un fluide « naturel » perçu comme peu dangereux. C'est l'inverse : c'est le plus inflammable des deux."
+  },
+  "remediation_vers": "g12b"
+ },
+ {
+  "id": "pk-g12b-2",
+  "dc": "G12",
+  "code": "12.09",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Après le tirage au vide, vous fermez la vanne de la pompe. Sur le manomètre, le vide remonte doucement au lieu de rester stable. Que devez-vous conclure ?",
+  "choix": [
+   "C'est normal, vous pouvez passer directement à la charge du réfrigérant.",
+   "C'est le signe que la charge de réfrigérant a été mal pesée.",
+   "Il y a un problème sur le circuit : une fuite ou de l'humidité restante.",
+   "Le vide remonte toujours un peu, il suffit de refaire l'épreuve à l'azote."
+  ],
+  "bonne": 2,
+  "aide": "Le texte dit ce que signifie un vide qui ne reste pas stable.",
+  "remed": {
+   "regle": "Si le vide remonte après l'arrêt de la pompe, il y a un problème sur le circuit : une fuite ou de l'humidité restante. On ne charge pas dans ces conditions.",
+   "pourquoi": "Un circuit étanche et sec garde un vide stable. Une remontée trahit une entrée d'air par un point non étanche, ou de l'humidité qui s'évapore.",
+   "piege": "Continuer la procédure et charger le circuit malgré un vide instable. La charge doit attendre un vide stable, sinon le défaut reste caché."
+  },
+  "remediation_vers": "g12b"
+ },
+ {
+  "id": "pk-g12b-3",
+  "dc": "G12",
+  "code": "12.10",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Comment détermine-t-on la quantité de réfrigérant hydrocarbure à charger dans le circuit ?",
+  "choix": [
+   "Par pesée, selon la valeur indiquée sur la plaque signalétique.",
+   "En estimant la quantité à l'oreille, selon le bruit du compresseur.",
+   "En remplissant jusqu'à ce que le manomètre baisse.",
+   "En reprenant la quantité utilisée lors de la dernière intervention."
+  ],
+  "bonne": 0,
+  "aide": "Le texte dit clairement quelle méthode ne jamais utiliser pour doser la charge.",
+  "remed": {
+   "regle": "La charge de réfrigérant hydrocarbure se fait par pesée, avec le volume indiqué sur la plaque signalétique.",
+   "pourquoi": "La pesée garantit la quantité exacte prévue par le constructeur. Une estimation fait courir un risque de sous-charge ou de surcharge, plus dangereux encore avec un fluide A3.",
+   "piege": "Se fier à une impression (bruit, pression observée) au lieu de peser. Avec un hydrocarbure A3, une quantité approximative est un risque de sécurité, pas seulement un problème de performance."
+  },
+  "remediation_vers": "g12b"
+ },
+ {
+  "id": "pk-g12b-4",
+  "dc": "G12",
+  "code": "12.11",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Pour le contrôle d'étanchéité direct d'un circuit au R-290, quel détecteur utilise-t-on ?",
+  "choix": [
+   "Le détecteur habituel réglé pour les HFC : tous les détecteurs se valent.",
+   "N'importe quel détecteur, à condition de doubler la durée du contrôle.",
+   "Un détecteur d'azote, puisque le circuit a été inerté à l'azote.",
+   "Un détecteur adapté aux hydrocarbures."
+  ],
+  "bonne": 3,
+  "aide": "Relisez la dernière étape avant le rapport : un type de détecteur est écarté.",
+  "remed": {
+   "regle": "Le contrôle d'étanchéité direct sur un circuit hydrocarbure se fait avec un détecteur adapté aux hydrocarbures.",
+   "pourquoi": "Chaque détecteur est calibré pour une famille de gaz. Un détecteur pour HFC classique ne réagit pas correctement à une fuite d'hydrocarbure.",
+   "piege": "Utiliser par habitude le détecteur HFC parce que « c'est toujours le même geste ». Avec le mauvais détecteur, une fuite réelle peut passer inaperçue."
+  },
+  "remediation_vers": "g12b"
+ },
+ {
+  "id": "pk-g13-1",
+  "dc": "G13",
+  "code": "13.01",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Le CO₂ (R-744) est classé A1. Quel est son principal danger ?",
+  "choix": [
+   "La pression, très élevée dans les installations au CO₂.",
+   "La toxicité, le CO₂ étant dangereux à respirer même à faible dose.",
+   "L'inflammabilité, car il peut s'enflammer comme un hydrocarbure.",
+   "Aucun danger particulier : la classe A1 signifie qu'il est totalement sans danger."
+  ],
+  "bonne": 0,
+  "aide": "A1 renseigne sur deux critères précis. Lesquels ? Et qu'est-ce que cela ne dit pas ?",
+  "remed": {
+   "regle": "Le CO₂ est classé A1 (ni toxique ni inflammable), mais son danger principal est la pression, très élevée dans ces installations.",
+   "pourquoi": "La classification A1/A2L/A2/A3/B1/B2L ne décrit que deux risques : la toxicité et l'inflammabilité. Elle ne dit rien sur la pression de service, qui est le point critique du CO₂.",
+   "piege": "Croire que « A1 » veut dire « sans danger ». Ce n'est vrai que pour la toxicité et l'inflammabilité, pas pour la pression."
+  },
+  "remediation_vers": "g13"
+ },
+ {
+  "id": "pk-g13-2",
+  "dc": "G13",
+  "code": "14.01",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Vous sentez une odeur piquante caractéristique dans un local qui abrite une installation à l'ammoniac. Que faites-vous ?",
+  "choix": [
+   "Vous entrez identifier l'origine de la fuite : votre odorat vous alertera si le seuil devient dangereux.",
+   "Vous coupez vous-même l'installation avant de sortir, pour limiter la fuite.",
+   "Vous attendez que l'odeur se dissipe avant d'agir.",
+   "Vous alertez et vous évacuez, sans intervenir seul."
+  ],
+  "bonne": 3,
+  "aide": "Le texte donne la conduite à tenir en cas de fuite d'ammoniac, juste avant la fin de la fiche.",
+  "remed": {
+   "regle": "En cas de fuite d'ammoniac : alerter, évacuer, ne jamais intervenir seul.",
+   "pourquoi": "L'ammoniac est toxique (le B de B2L). Un titulaire A1/A2 n'a ni la catégorie C, ni l'équipement pour intervenir sur cette installation.",
+   "piege": "Se fier à son odorat pour rester sur place, ou vouloir agir seul par réflexe technique. La seule conduite correcte est d'alerter et d'évacuer."
+  },
+  "remediation_vers": "g13"
+ },
+ {
+  "id": "pk-g13-3",
+  "dc": "G13",
+  "code": "13.04",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Sur une installation au CO₂, pourquoi ne peut-on pas utiliser le matériel de raccordement courant ?",
+  "choix": [
+   "Parce que le CO₂ nécessite le même matériel qu'un circuit HFC classique.",
+   "Parce que les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
+   "Parce que le CO₂, comme l'ammoniac, est un fluide toxique qui impose un matériel étanche renforcé.",
+   "Parce qu'il n'existe aucun matériel spécifique pour le CO₂, il faut en fabriquer un sur mesure."
+  ],
+  "bonne": 1,
+  "aide": "Le texte décrit un équipement particulier sur les cylindres de CO₂.",
+  "remed": {
+   "regle": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
+   "pourquoi": "La très haute pression de service du CO₂ impose un matériel et des raccords spécifiques, différents de ceux des circuits HFC. Ce n'est pas une question de toxicité : le CO₂ est A1, son danger est la pression.",
+   "piege": "Confondre le CO₂ avec l'ammoniac en lui prêtant une toxicité qu'il n'a pas, ou croire qu'un raccord HFC classique peut convenir « pour une fois »."
+  },
+  "remediation_vers": "g13"
+ },
+ {
+  "id": "pk-g13-4",
+  "dc": "G13",
+  "code": "14.01",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Vous détenez une attestation A1. Sur le site, une fuite se déclare sur l'installation à l'ammoniac. Un collègue vous demande de venir l'aider. Que répondez-vous ?",
+  "choix": [
+   "D'accord : une attestation A1 permet d'intervenir sur tous les fluides en cas d'urgence.",
+   "D'accord, à condition de porter un masque de protection.",
+   "Non : l'ammoniac relève de la catégorie C, mon attestation A1/A2 ne donne aucun droit d'intervention dessus.",
+   "J'y vais quand même : l'urgence prime sur la catégorie d'attestation."
+  ],
+  "bonne": 2,
+  "aide": "Relisez le bloc « La règle des catégories » : les catégories se remplacent-elles les unes les autres ?",
+  "remed": {
+   "regle": "Une attestation A1 ou A2 ne donne aucun droit d'intervention sur une installation à l'ammoniac (catégorie C) ou au CO₂ (catégorie B).",
+   "pourquoi": "Les catégories d'attestation correspondent à des fluides et des risques différents. Elles ne se remplacent pas les unes les autres, même en urgence.",
+   "piege": "Penser qu'une attestation « couvre large » et qu'on peut aider ponctuellement sur un autre fluide. La bonne conduite reste d'alerter et de laisser intervenir les personnes habilitées catégorie C."
+  },
+  "remediation_vers": "g13"
+ },
+ {
+  "id": "pk-g0-1",
+  "dc": "G1",
+  "code": "1.00",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Vous voulez intervenir vous-même sur un circuit frigorifique contenant des fluides frigorigènes. Quel document personnel devez-vous posséder ?",
+  "choix": [
+   "Le registre de l'équipement",
+   "L'attestation de capacité",
+   "L'attestation d'aptitude",
+   "Le certificat DEEE"
+  ],
+  "bonne": 2,
+  "aide": "Un des documents est pour la personne, l'autre pour l'entreprise. Lequel vous concerne, vous ?",
+  "remed": {
+   "regle": "L'attestation d'aptitude est un document personnel. Elle autorise une personne à intervenir sur les fluides frigorigènes.",
+   "pourquoi": "L'entreprise doit avoir un autre document : l'attestation de capacité. Ce sont deux papiers différents, pour deux niveaux différents.",
+   "piege": "Confondre les deux attestations. Croire qu'un seul document suffit pour la personne et pour l'entreprise."
+  },
+  "remediation_vers": "g0"
+ },
+ {
+  "id": "pk-g0-2",
+  "dc": "G1",
+  "code": "1.00",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Un climatiseur trop vieux part au rebut, dans la filière DEEE. Que devient le fluide frigorigène qu'il contient encore ?",
+  "choix": [
+   "Il doit être récupéré à part, avant que la carcasse parte en DEEE",
+   "Il part avec la carcasse, la filière DEEE s'en occupe aussi",
+   "Il est automatiquement détruit par le centre de tri DEEE",
+   "Il n'y a aucune obligation, la quantité restante est négligeable"
+  ],
+  "bonne": 0,
+  "aide": "La filière DEEE s'occupe d'un objet, la carcasse. Le fluide est une matière. Suivent-ils le même chemin ?",
+  "remed": {
+   "regle": "La filière DEEE traite la carcasse de l'équipement en fin de vie. Le fluide frigorigène doit être récupéré à part, avant, par un professionnel habilité.",
+   "pourquoi": "Le fluide et la carcasse ne suivent pas le même circuit. Les mélanger relâcherait le fluide dans l'environnement.",
+   "piege": "Croire que la filière DEEE gère aussi le fluide. Elle ne traite que la carcasse de la machine."
+  },
+  "remediation_vers": "g0"
+ },
+ {
+  "id": "pk-g1c-1",
+  "dc": "G1",
+  "code": "1.06",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Les codes R-32 et R-290 se ressemblent. Pourtant leurs classes de sécurité NF EN 378 sont très différentes. Que faut-il comprendre ?",
+  "choix": [
+   "Le code du fluide donne déjà sa classe de sécurité, inutile de vérifier autre chose",
+   "Deux codes proches veulent toujours dire deux dangers proches",
+   "La classe NF EN 378 remplace le code : on peut oublier le code une fois la classe connue",
+   "Le code décrit la molécule ; la classe NF EN 378 décrit le risque de manipulation : il faut connaître les deux"
+  ],
+  "bonne": 3,
+  "aide": "La fiche parle de deux lectures différentes pour un même fluide. Laquelle donne le risque de manipulation ?",
+  "remed": {
+   "regle": "Le code du fluide (R-xyz) décrit la molécule. La classe NF EN 378 (A1, A2L, A3…) décrit le risque de manipulation. Il faut toujours lire les deux.",
+   "pourquoi": "Des codes proches, comme R-32 et R-290, peuvent cacher des molécules différentes. Donc des classes de sécurité différentes.",
+   "piege": "Penser que des codes qui se ressemblent veulent dire des dangers qui se ressemblent. Il faut vérifier la classe à chaque fois."
+  },
+  "remediation_vers": "g1c"
+ },
+ {
+  "id": "pk-g1c-2",
+  "dc": "G1",
+  "code": "1.07",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Le propane, l'isobutane, l'ammoniac et le CO₂ sont des fluides naturels. En quoi se distinguent-ils des HFC et des HFO, d'après la fiche ?",
+  "choix": [
+   "Ils ont tous un fort effet de serre, comme les HFC",
+   "Ils existent sans chimie de synthèse, contrairement aux HFC et HFO",
+   "Ils contiennent tous du fluor, comme les HFO",
+   "Ils ont été condamnés par le protocole de Montréal, comme les CFC"
+  ],
+  "bonne": 1,
+  "aide": "Relis la phrase sur les fluides « naturels ». De quoi n'ont-ils pas besoin, contrairement aux HFC et HFO ?",
+  "remed": {
+   "regle": "Les fluides naturels (propane, isobutane, ammoniac, CO₂) existent sans chimie de synthèse. Les HFC et les HFO sont des molécules fabriquées.",
+   "pourquoi": "C'est une des raisons du retour en force des fluides naturels. Ils n'ont pas le fort impact climatique des molécules de synthèse comme les HFC.",
+   "piege": "Confondre « fluide frigorigène » et « contient du fluor ». Les mots se ressemblent, mais les fluides naturels n'ont pas de fluor dans leur formule."
+  },
+  "remediation_vers": "g1c"
+ },
+ {
+  "id": "pk-g7b-1",
+  "dc": "G7",
+  "code": "7.03",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Vous installez une unité extérieure neuve. Avant la mise en service, vous contrôlez l'étanchéité du circuit sous pression. Quel gaz utilisez-vous ?",
+  "choix": [
+   "De l'air comprimé, plus simple à trouver sur le chantier",
+   "De l'azote",
+   "De l'oxygène",
+   "Le fluide frigorigène lui-même, en petite quantité"
+  ],
+  "bonne": 1,
+  "aide": "La fiche interdit deux gaz par leur nom pour ce contrôle. Le bon gaz est neutre, ni l'un ni l'autre.",
+  "remed": {
+   "regle": "Le contrôle d'étanchéité avant mise en service se fait sous azote, un gaz neutre.",
+   "pourquoi": "L'azote ne réagit pas et ne brûle pas. L'oxygène et l'air comprimé sont dangereux pour ce contrôle : risque d'explosion.",
+   "piege": "Utiliser de l'air comprimé parce qu'il est sur le chantier, ou de l'oxygène par confusion avec une autre bouteille. Les deux sont interdits."
+  },
+  "remediation_vers": "g7b"
+ },
+ {
+  "id": "pk-g7b-2",
+  "dc": "G7",
+  "code": "7.02",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Vous réglez le régulateur de pression de sortie du condenseur. Comment procédez-vous, d'après la fiche ?",
+  "choix": [
+   "Vous suivez la fiche constructeur",
+   "Vous réglez à l'estime, selon votre expérience",
+   "Vous copiez le réglage de la dernière installation, quel que soit le modèle",
+   "Vous laissez le réglage d'usine sans jamais le vérifier"
+  ],
+  "bonne": 0,
+  "aide": "La fiche insiste sur un document précis à suivre pour ce réglage : jamais au jugé.",
+  "remed": {
+   "regle": "Le régulateur de pression de sortie du condenseur se règle selon la fiche constructeur, jamais à l'estime.",
+   "pourquoi": "Chaque modèle a ses propres valeurs de réglage. La fiche constructeur garantit une pression de condensation correcte, même par temps froid.",
+   "piege": "Régler « à l'estime », selon l'expérience ou une installation précédente, sans consulter la documentation du modèle installé."
+  },
+  "remediation_vers": "g7b"
+ },
+ {
+  "id": "pk-p4-1",
+  "dc": "G3",
+  "code": "3.01",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
+  "choix": [
+   "De l'oxygène",
+   "De l'azote sec",
+   "De l'air comprimé",
+   "Du fluide frigorigène du circuit"
+  ],
+  "bonne": 1,
+  "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
+  "remed": {
+   "regle": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
+   "pourquoi": "L'azote est neutre et sec : il n'entretient pas la combustion et n'introduit pas d'eau dans le circuit.",
+   "piege": "L'oxygène au contact de l'huile du circuit peut provoquer une réaction violente. L'air comprimé, lui, apporte de l'humidité qui restera dans l'installation."
+  },
+  "remediation_vers": "p4"
+ },
+ {
+  "id": "pk-p4-2",
+  "dc": "G3",
+  "code": "3.02",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Pourquoi une bouteille d'azote se raccorde-t-elle toujours au travers d'un mano-détendeur ?",
+  "choix": [
+   "Pour connaître la quantité restante",
+   "Pour filtrer l'humidité du gaz",
+   "Parce que la pression de la bouteille dépasse largement ce que le circuit peut supporter",
+   "Pour réchauffer le gaz avant l'entrée"
+  ],
+  "bonne": 2,
+  "aide": "Comparez la pression dans la bouteille et celle que supporte l'installation.",
+  "remed": {
+   "regle": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
+   "pourquoi": "La bouteille est à une pression très supérieure à celle admissible par l'installation : le mano-détendeur ramène la pression à la valeur voulue, lue sur son second cadran.",
+   "piege": "Ouvrir la bouteille directement sur le circuit peut le détruire instantanément. La pression d'épreuve se règle selon la fiche constructeur, jamais à l'estime."
+  },
+  "remediation_vers": "p4"
+ },
+ {
+  "id": "pk-p7-1",
+  "dc": "G12",
+  "code": "12.04",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "À quel moment réalise-t-on l'analyse de risques d'une intervention ?",
+  "choix": [
+   "Avant d'engager le moindre geste technique",
+   "Après avoir ouvert le circuit",
+   "À la fin, au moment de rédiger le rapport",
+   "Seulement si le client le demande"
+  ],
+  "bonne": 0,
+  "aide": "Une analyse de risques sert à éviter l'accident, pas à le raconter.",
+  "remed": {
+   "regle": "L'analyse de risques se fait AVANT le premier geste, sur place.",
+   "pourquoi": "Elle sert à identifier et à supprimer les dangers tant qu'on peut encore agir : source d'inflammation, ventilation, issue, présence de public.",
+   "piege": "Une analyse faite après coup n'est plus une analyse, c'est un constat. La sécurité se démontre et s'impose : on ne découvre jamais un risque par l'erreur."
+  },
+  "remediation_vers": "p7"
+ },
+ {
+  "id": "pk-p7-2",
+  "dc": "G12",
+  "code": "12.05",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Avant d'intervenir sur une installation au R-290, que vérifie-t-on dans la zone de travail ?",
+  "choix": [
+   "Que l'éclairage est suffisant",
+   "Que la zone est balisée et ventilée, l'issue dégagée et les sources d'inflammation supprimées",
+   "Que la température ambiante est stable",
+   "Que le sol est parfaitement sec"
+  ],
+  "bonne": 1,
+  "aide": "Le R-290 est un hydrocarbure de classe A3 : pensez à ce qui pourrait l'enflammer.",
+  "remed": {
+   "regle": "Zone balisée, ventilation en service, issue dégagée, aucune source d'inflammation, EPI et matériel adaptés, consignation électrique faite.",
+   "pourquoi": "Le R-290 est classé A3 : très inflammable. Une fuite dans un local mal ventilé forme une atmosphère explosive, et la moindre étincelle suffit.",
+   "piege": "On confond souvent A2L et A3. Le R-32 est A2L, le R-290 est A3 : la propagation de flamme n'a rien à voir, et les précautions non plus."
+  },
+  "remediation_vers": "p7"
+ }
+]
