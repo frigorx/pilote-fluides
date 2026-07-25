@@ -496,8 +496,6 @@ export const CARTES = [
     minuteur_s: 330,
     corps:
       schema("recuperation.svg", "Le principe de branchement : installation à l arrêt, isolée, flexibles raccordés à l appareil, minimum d émissions à chaque connexion.") +
-      photo("manifold-branche.jpg", "Un manifold raccordé sur une installation, flexibles bleu et rouge en place.",
-            "Le manifold en situation : à gauche le manomètre BP (bleu), à droite le HP (rouge), et le flexible central qui part vers la bouteille ou la pompe.") +
       "<p>Le <b>manifold</b> (ensemble manométrique) réunit deux manomètres — <b>BP en bleu</b>, <b>HP en rouge</b> — " +
       "et deux vannes, une par côté, qui commandent le passage vers le <b>flexible central jaune</b> : celui qui " +
       "part vers la pompe à vide, la bouteille de récupération, ou une bouteille d'azote équipée de son " +
@@ -630,10 +628,6 @@ export const CARTES = [
     dc: "Préparation pratique · codes 3.03 · 3.04",
     minuteur_s: 330,
     corps:
-      photo("pompe-a-vide.png", "Une pompe à vide d'atelier.",
-            "La pompe à vide : elle aspire l'air et l'humidité du circuit. Vérifier son niveau d'huile avant chaque usage.") +
-      photo("vacuometre.png", "Un vacuomètre électronique.",
-            "Le vacuomètre électronique : lui seul mesure vraiment le vide. Le manomètre du manifold n'est pas assez précis pour cela.") +
       "<p>Le <b>tirage au vide</b> retire l'air et l'humidité du circuit avant charge — ce n'est pas du fluide " +
       "qu'on évacue ici, mais de l'air et de la vapeur d'eau : la question du rejet à l'atmosphère ne se pose pas " +
       "à ce stade. La <b>pompe à vide</b> aspire ; le <b>vacuomètre</b> électronique indique jusqu'où on est " +
@@ -829,8 +823,6 @@ export const CARTES = [
     dc: "Préparation pratique · codes 5.05 · 5.06",
     minuteur_s: 330,
     corps:
-      photo("balance.jpg", "Une balance électronique de charge avec une bouteille de fluide posée dessus.",
-            "La balance de charge : la bouteille est posée dessus pendant toute l'opération. On lit la variation de masse, pas la masse totale.") +
       "<p>La quantité de fluide qui entre ou sort d'un circuit se lit sur une <b>balance</b>, jamais sur un manomètre. Le manomètre dit comment la machine se comporte. La balance dit <b>combien</b> il y a de fluide.</p>" +
       "<p>Avant toute pesée, on choisit une balance <b>adaptée</b> à la quantité attendue. On la pose à plat, stable, vérifiée. Une balance douteuse ne sert à rien : son résultat n'est pas fiable.</p>" +
       "<ol>" +

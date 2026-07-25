@@ -6230,12 +6230,6 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
-       "type": "schema",
-       "src": "packs/fluides/res/photos/pompe-a-vide.png",
-       "alt": "Une pompe à vide d'atelier.",
-       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
-      },
-      {
        "type": "point",
        "html": "Le <b>tirage au vide</b> retire l'air et l'humidité du circuit avant charge — ce n'est pas du fluide qu'on évacue ici, mais de l'air et de la vapeur d'eau : la question du rejet à l'atmosphère ne se pose pas à ce stade. La <b>pompe à vide</b> aspire ; le <b>vacuomètre</b> électronique indique jusqu'où on est descendu, bien plus finement qu'un manomètre.",
        "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
@@ -6489,12 +6483,6 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/photos/balance.jpg",
-       "alt": "Une balance électronique de charge avec une bouteille de fluide posée dessus.",
-       "titre": "La balance et la pesée — avant, après, ce qu'on note"
       },
       {
        "type": "point",
