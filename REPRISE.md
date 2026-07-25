@@ -17,7 +17,9 @@ tournant dans le moteur générique **inerWeb Pilote** (repris de `frigorx/r408`
    le garde **pendant** les périodes en entreprise, révise **selon son niveau** jusqu'à l'épreuve.
 
 > ⚠️ **Démonstrateur, pas version définitive.** Contenu jamais relu par un œil de frigoriste
-> (voir § 6). Ne pas diffuser largement avant la relecture de F. Henninot.
+> (voir § 6). **Publié et diffusable en lien** depuis le 25/07 — la vitrine annonce elle-même
+> ses limites, section « ce qui n'est pas encore fait ». Les retours passent par les
+> [issues GitHub](https://github.com/frigorx/pilote-fluides/issues).
 
 > 📐 **Plan d'ensemble des deux projets** : `C:\git\habilitation-fluide\ARCHITECTURE-DISPOSITIF.md`.
 > Il pose la frontière **public / privé** — ce dépôt-ci porte la formation, le dépôt privé porte
@@ -30,7 +32,8 @@ tournant dans le moteur générique **inerWeb Pilote** (repris de `frigorx/r408`
 | Page | Rôle | Pour qui |
 |---|---|---|
 | [`projection.html`](https://frigorx.github.io/pilote-fluides/projection.html) | **le déroulé des 3 jours** : diapositives, minuteur, questions à révéler, vue orateur | formateur, en salle |
-| [`portail.html`](https://frigorx.github.io/pilote-fluides/portail.html) | **point d'entrée** : explique le projet, relie tout | vous, les collègues |
+| [`pratique.html`](https://frigorx.github.io/pilote-fluides/pratique.html) | présentation de la **manipulation fluidique** : démonstration de feuille de guidance, grille par compétence. Aucune donnée de stagiaire | vitrine |
+| [`portail.html`](https://frigorx.github.io/pilote-fluides/portail.html) | **la vitrine** : dossier de présentation à envoyer en lien à des fournisseurs et des collègues pour qu'ils testent | tous publics |
 | [`index.html`](https://frigorx.github.io/pilote-fluides/) | l'application élève | **le lien à distribuer** |
 | [`formateur.html`](https://frigorx.github.io/pilote-fluides/formateur.html) | mode pilotage verrouillé, notes d'animation visibles | formateur |
 | [`partage.html`](https://frigorx.github.io/pilote-fluides/partage.html) | affiche A4 / écran avec QR code | à projeter en salle |
