@@ -17,7 +17,9 @@
     test:       { nom: "Test blanc",         pilote:false, feedback:true,  remediation:true,  notation:false },
     evaluation: { nom: "Évaluation",         pilote:false, feedback:false, remediation:false, notation:true  }
   };
-  var MDP_FORMATEUR = "prof"; // MVP — vraie protection = build élève séparé + scoring serveur
+  /* Le mode Pilotage formateur s'ouvre avec le même code d'accès que les
+     examens (empreinte djb2 portée par le pack — jamais de mot de passe en
+     clair dans le dépôt). Vraie protection = build élève séparé, inchangé. */
 
   /* --- Index --- */
   var idxCartes = {}; PACK.cartes.forEach(function (c) { idxCartes[c.id] = c; });
@@ -558,7 +560,11 @@
     ouvrirVoile(h);
     onAll("[data-mode]", function (el) { el.addEventListener("click", function () {
       var id = el.getAttribute("data-mode");
-      if (id === "pilotage" && prompt("Mot de passe formateur :") !== MDP_FORMATEUR) { alert("Mot de passe incorrect."); return; }
+      if (id === "pilotage") {
+        var saisie = prompt("Code d'accès formateur :");
+        if (saisie === null) return; // annulation : pas de message d'erreur
+        if (empreinteCode(String(saisie).trim()) !== (PACK.pack.code_empreinte || 0)) { alert("Ce n'est pas le bon code."); return; }
+      }
       S.modeId = id; S.examen = null; fermerVoile(); window.scrollTo(0, 0); render();
     }); });
   }

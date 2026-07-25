@@ -4,6 +4,7 @@ window.PILOTE_PACK = {
   "id": "fluides-habilitation",
   "titre": "Habilitation fluides frigorigènes — A1 · A2 · D · E (démonstrateur)",
   "version": "0.1",
+  "code_empreinte": 3069038059,
   "type": "habilitation",
   "charte": "inerweb-edu",
   "categories": [

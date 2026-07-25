@@ -24,6 +24,9 @@ export const PACK_META = {
   id: "fluides-habilitation",
   titre: "Habilitation fluides frigorigènes — A1 · A2 · D · E (démonstrateur)",
   version: "0.1",
+  // Empreinte djb2 du code d'accès unique (examens + mode Pilotage formateur).
+  // Le code en clair n'est écrit nulle part : il se donne en salle.
+  code_empreinte: 3069038059,
   type: "habilitation",
   charte: "inerweb-edu",
   // Les catégories d'aptitude visées par ce pack. Sert de filtre au
