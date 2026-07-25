@@ -4327,5 +4327,701 @@
   "remediation_vers": "p7",
   "explication": "Zone balisée, ventilation en service, issue dégagée, aucune source d'inflammation, EPI et matériel adaptés, consignation électrique faite.",
   "origine": "pack"
+ },
+ {
+  "id": "pk-q-10.02",
+  "dc": "G10",
+  "code": "10.02",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Un joint brasé était parfait à la pose, mais il finit par se fissurer des mois plus tard. La tuyauterie est posée sur un support trop serré, avec un point dur. Quelle est la cause la plus probable ?",
+  "choix": [
+   "Le tube n'a pas été ébavuré après la coupe",
+   "Le support transmet les vibrations du compresseur au joint, qui rompt par fatigue",
+   "Le balayage à l'azote n'a pas été fait pendant le brasage",
+   "L'alliage d'apport utilisé n'était pas du cuivre-phosphore"
+  ],
+  "bonne": 1,
+  "aide": "Pense à ce qui se passe sur un tube mal soutenu quand le compresseur vibre en permanence, jour après jour.",
+  "remed": {
+   "regle": "Les supports de tuyauterie doivent être bien positionnés, sans point dur ni serrage excessif sur le tube.",
+   "pourquoi": "Le compresseur vibre en continu. Un tube mal soutenu transmet ces vibrations jusqu'au joint brasé, qui finit par céder par fatigue, même s'il était parfait au départ.",
+   "piege": "Croire qu'un joint brasé réussi à la pose restera bon pour toujours. La rupture peut arriver des mois après, loin du geste de brasage, et on cherche alors la cause au mauvais endroit."
+  },
+  "remediation_vers": "g10",
+  "explication": "Les supports de tuyauterie doivent être bien positionnés, sans point dur ni serrage excessif sur le tube.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-11.04",
+  "dc": "G11",
+  "code": "11.04",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Un fluide de substitution est très performant en froid commercial, mais son efficacité baisse nettement quand l'air extérieur est très chaud. Quel est ce fluide ?",
+  "choix": [
+   "Le CO2 (R-744)",
+   "L'ammoniac (NH3)",
+   "Un hydrocarbure comme le R-290",
+   "Le R-1234yf"
+  ],
+  "bonne": 0,
+  "aide": "Relis ce que dit la fiche sur les limites de chaque fluide de substitution selon le climat du site.",
+  "remed": {
+   "regle": "Le CO2 est performant en froid commercial, mais son efficacité baisse quand le climat extérieur est très chaud. Aucun fluide de substitution n'est le meilleur dans l'absolu : le choix dépend de l'application et du climat du site.",
+   "pourquoi": "Installer un fluide sans regarder le climat du site expose à une installation qui fonctionne mal une partie de l'année. Le choix doit toujours être validé avec la documentation constructeur.",
+   "piege": "Croire qu'un fluide performant sur un site l'est partout : les hydrocarbures sont efficaces mais limités par l'inflammabilité, l'ammoniac est réservé à l'industriel à cause de sa toxicité, chaque fluide a ses propres limites."
+  },
+  "remediation_vers": "g11",
+  "explication": "Le CO2 est performant en froid commercial, mais son efficacité baisse quand le climat extérieur est très chaud. Aucun fluide de substitution n'est le meilleur dans l'absolu : le choix dépend de l'application et du climat du site.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-11.05",
+  "dc": "G11",
+  "code": "11.05",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Sur une machine fonctionnant au R-290 (propane), en cas de fuite dans le local, où le gaz s'accumule-t-il en priorité ?",
+  "choix": [
+   "En haut, près du plafond",
+   "De façon uniforme dans tout le local",
+   "Uniquement à l'extérieur du local",
+   "En bas, près du sol"
+  ],
+  "bonne": 3,
+  "aide": "Compare la densité du propane à celle de l'air : est-il plus lourd ou plus léger ?",
+  "remed": {
+   "regle": "Le propane est plus lourd que l'air. En cas de fuite, il s'accumule en bas, près du sol. La ventilation du local est conçue en tenant compte de cela, dès la conception de la machine.",
+   "pourquoi": "Une machine aux hydrocarbures n'est pas construite comme les autres : composants électriques antidéflagrants ou non étincelants, charge de fluide limitée, et ventilation adaptée à un gaz qui s'accumule au sol. Ignorer ce point, c'est placer la détection ou la ventilation au mauvais endroit.",
+   "piege": "Copier la logique d'un local avec un gaz plus léger que l'air (détection au plafond) alors que le propane impose l'inverse : surveillance et ventilation basses."
+  },
+  "remediation_vers": "g11",
+  "explication": "Le propane est plus lourd que l'air. En cas de fuite, il s'accumule en bas, près du sol. La ventilation du local est conçue en tenant compte de cela, dès la conception de la machine.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-12.01",
+  "dc": "G12",
+  "code": "12.01",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Une bouteille de R-290 (propane) a un raccord et un filetage à gauche, différents d'une bouteille de HFC. Que faites-vous si votre raccord habituel ne se visse pas dessus ?",
+  "choix": [
+   "Vous utilisez un adaptateur pour forcer le raccordement",
+   "Vous respectez le raccord spécifique prévu pour les hydrocarbures, sans adaptateur",
+   "Vous serrez plus fort avec un outil",
+   "Vous changez de sens de filetage sur votre propre raccord"
+  ],
+  "bonne": 1,
+  "aide": "La fiche dit que ce raccord différent est une sécurité, pas un obstacle à contourner.",
+  "remed": {
+   "regle": "Les bouteilles d'hydrocarbure ont un raccord spécifique et un filetage à gauche : on utilise le matériel prévu pour ce raccord, jamais un adaptateur.",
+   "pourquoi": "Ce raccord différent empêche physiquement de charger un hydrocarbure inflammable sur un circuit prévu pour un autre fluide, ou l'inverse : c'est une sécurité contre l'erreur de fluide.",
+   "piege": "Penser qu'un adaptateur est juste pratique alors qu'il supprime la sécurité voulue par la norme."
+  },
+  "remediation_vers": "g12",
+  "explication": "Les bouteilles d'hydrocarbure ont un raccord spécifique et un filetage à gauche : on utilise le matériel prévu pour ce raccord, jamais un adaptateur.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-12.08",
+  "dc": "G12",
+  "code": "12.08",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Vous devez régler la valeur de la pression d'épreuve à l'azote pour contrôler une brasure neuve sur un circuit R-290. Où trouvez-vous cette valeur ?",
+  "choix": [
+   "Elle correspond à la pression de service habituelle du compresseur",
+   "Vous l'estimez selon votre expérience",
+   "Dans la documentation constructeur et la norme applicable",
+   "Elle correspond toujours à la pression atmosphérique"
+  ],
+  "bonne": 2,
+  "aide": "La fiche insiste : cette valeur ne se devine jamais.",
+  "remed": {
+   "regle": "La pression d'épreuve à appliquer se trouve dans la documentation constructeur et la norme applicable, jamais à l'estime.",
+   "pourquoi": "Une pression d'épreuve mal choisie ne détecte pas un défaut de brasure, ou au contraire risque de forcer sur un circuit qui n'est pas prévu pour cette pression.",
+   "piege": "Utiliser par habitude la même valeur que sur un circuit HFC classique, sans vérifier la documentation propre à cet équipement."
+  },
+  "remediation_vers": "g12b",
+  "explication": "La pression d'épreuve à appliquer se trouve dans la documentation constructeur et la norme applicable, jamais à l'estime.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-12.12",
+  "dc": "G12",
+  "code": "12.12",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Vous venez de terminer une intervention sur un circuit hydrocarbure : remplacement du composant, épreuve, vide, charge et contrôle direct. Que devez-vous obligatoirement faire ensuite ?",
+  "choix": [
+   "Rédiger un rapport avec le composant changé, les résultats de l'épreuve et du contrôle, et la quantité chargée",
+   "Rien, l'intervention se termine avec le contrôle direct",
+   "Noter juste la date de passage",
+   "Informer oralement le client, sans écrit"
+  ],
+  "bonne": 0,
+  "aide": "La fiche le dit clairement : sans cette dernière étape écrite, l'intervention n'a pas de valeur.",
+  "remed": {
+   "regle": "Le rapport d'intervention doit contenir le composant changé, les résultats de l'épreuve et du contrôle, et la quantité chargée.",
+   "pourquoi": "Ce rapport est la preuve écrite du travail réalisé et de sa conformité : sans lui, rien ne prouve que l'étanchéité et la charge ont bien été vérifiées.",
+   "piege": "Croire qu'un contrôle direct réussi suffit et négliger la trace écrite qui en atteste."
+  },
+  "remediation_vers": "g12b",
+  "explication": "Le rapport d'intervention doit contenir le composant changé, les résultats de l'épreuve et du contrôle, et la quantité chargée.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-12.13",
+  "dc": "G12",
+  "code": "12.13",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Vous arrivez pour intervenir sur un équipement au R-290 et constatez que les capteurs de gaz du local ne sont pas en service. Que faites-vous ?",
+  "choix": [
+   "Vous réparez vous-même les capteurs avant de commencer",
+   "Vous ne commencez pas et vous signalez le problème",
+   "Vous demandez à un collègue de surveiller l'air à votre place",
+   "Vous commencez l'intervention en redoublant de prudence"
+  ],
+  "bonne": 1,
+  "aide": "La fiche donne une règle claire pour ce cas : que fait-on si une mesure de sécurité du site manque ?",
+  "remed": {
+   "regle": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
+   "pourquoi": "Sur un fluide très inflammable comme le R-290, un capteur de gaz hors service prive le technicien de la seule alerte en cas de fuite pendant l'intervention.",
+   "piege": "Penser que sa propre vigilance remplace un dispositif de détection défaillant."
+  },
+  "remediation_vers": "g12",
+  "explication": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-12.14",
+  "dc": "G12",
+  "code": "12.14",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Sur une machine au R-290, un léger écart de charge fait chuter les performances plus vite que sur une machine à grosse charge de HFC. Pourquoi ?",
+  "choix": [
+   "Parce que le R-290 n'a pas de sous-refroidissement",
+   "Parce que le R-290 chauffe plus que les autres fluides",
+   "Parce que le R-290 est incompressible",
+   "Parce que ces circuits sont conçus avec une charge volontairement petite, donc le moindre écart déséquilibre vite l'échange"
+  ],
+  "bonne": 3,
+  "aide": "La fiche compare une charge petite à une charge importante : lequel tolère le moins l'écart ?",
+  "remed": {
+   "regle": "Sur un fluide inflammable, la charge exacte compte double car ces circuits sont conçus avec une charge volontairement petite.",
+   "pourquoi": "Avec une charge faible, le moindre écart en trop ou en moins pèse proportionnellement plus lourd et dérègle vite l'échange thermique.",
+   "piege": "Croire que seule la sécurité est affectée par une mauvaise charge, en oubliant que la performance chute aussi, et plus vite qu'ailleurs."
+  },
+  "remediation_vers": "g12",
+  "explication": "Sur un fluide inflammable, la charge exacte compte double car ces circuits sont conçus avec une charge volontairement petite.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-3.05",
+  "dc": "G3",
+  "code": "3.05",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Vous venez de terminer l'épreuve d'étanchéité et le tirage au vide sur un circuit. Que devez-vous faire avant de considérer l'intervention comme terminée ?",
+  "choix": [
+   "Attendre la validation du client avant toute trace écrite",
+   "Refaire une deuxième fois l'épreuve d'étanchéité pour confirmer",
+   "Ranger le matériel, aucune autre formalité n'est nécessaire",
+   "Consigner les données dans le registre de l'équipement et rédiger un rapport sur les essais et contrôles effectués"
+  ],
+  "bonne": 3,
+  "aide": "Pense au tout dernier geste professionnel décrit dans la fiche, juste après les contrôles.",
+  "remed": {
+   "regle": "Après tout contrôle ou essai (épreuve de résistance, épreuve d'étanchéité, tirage au vide), on consigne les résultats dans le registre de l'équipement et on rédige un rapport sur les essais et contrôles effectués.",
+   "pourquoi": "La trace écrite prouve que les contrôles réglementaires ont bien eu lieu. Elle protège le professionnel, informe l'exploitant, et permet de suivre l'état de l'équipement dans le temps.",
+   "piege": "Croire que le geste technique (épreuve, tirage au vide) suffit à lui seul. Sans registre ni rapport, rien ne prouve que le contrôle a été fait : le geste professionnel n'est complet qu'avec la consignation."
+  },
+  "remediation_vers": "g3",
+  "explication": "Après tout contrôle ou essai (épreuve de résistance, épreuve d'étanchéité, tirage au vide), on consigne les résultats dans le registre de l'équipement et on rédige un rapport sur les essais et contrôles effectués.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-4.01",
+  "dc": "G4",
+  "code": "4.01",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Sur une installation frigorifique, où se situent le plus souvent les points de fuite potentiels ?",
+  "choix": [
+   "Aux points d'assemblage (raccords, brasures) et aux pièces qui vibrent, comme le compresseur",
+   "Uniquement sur le pressostat de sécurité",
+   "Uniquement dans l'isolant qui recouvre les tuyauteries",
+   "Sur un tube plein, loin de tout raccord ou de toute pièce en mouvement"
+  ],
+  "bonne": 0,
+  "aide": "Une fuite ne sort pas d'un tube plein : pense à ce qui assemble deux pièces, ou à ce qui bouge.",
+  "remed": {
+   "regle": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
+   "pourquoi": "Un tube plein et correctement fixé ne peut pas fuir ; c'est la jonction entre deux pièces, ou la fatigue due au mouvement, qui crée un passage pour le fluide.",
+   "piege": "Chercher au hasard sur toute la tuyauterie au lieu de cibler d'abord les raccords, les brasures et les points qui vibrent."
+  },
+  "remediation_vers": "g4a",
+  "explication": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-4.02",
+  "dc": "G4",
+  "code": "4.02",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Avant un contrôle d'étanchéité, vous consultez le registre de l'équipement. Il indique qu'un raccord flare de la ligne liquide a déjà été réparé pour fuite trois mois plus tôt. Que faites-vous de cette information ?",
+  "choix": [
+   "Vous notez que c'est réparé et vous passez directement au reste de l'installation",
+   "Vous démontez le raccord pour le remplacer par précaution",
+   "Vous l'ignorez, puisque la réparation est déjà faite",
+   "Vous recontrôlez ce raccord en priorité, car un point réparé reste une partie à surveiller"
+  ],
+  "bonne": 3,
+  "aide": "Le registre sert à repérer les parties problématiques avant même de sortir un instrument : un point déjà réparé n'est pas un point clos.",
+  "remed": {
+   "regle": "Le registre de l'équipement doit être consulté avant tout contrôle pour relever les problèmes récurrents et les parties nécessitant une attention particulière ; un point déjà réparé est à recontrôler en priorité.",
+   "pourquoi": "Une réparation n'est pas une garantie définitive : le point reste plus fragile que le reste du circuit, et une fuite peut y réapparaître en premier.",
+   "piege": "Croire qu'un point déjà réparé est un point clos et ne plus s'y attarder pendant le contrôle."
+  },
+  "remediation_vers": "x4",
+  "explication": "Le registre de l'équipement doit être consulté avant tout contrôle pour relever les problèmes récurrents et les parties nécessitant une attention particulière ; un point déjà réparé est à recontrôler en priorité.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-4.09",
+  "dc": "G4",
+  "code": "4.09",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Un contrôle d'étanchéité vient de se terminer, sans fuite détectée. Que devez-vous faire ensuite ?",
+  "choix": [
+   "Consigner dans le registre la date, la méthode utilisée, les points contrôlés et le résultat",
+   "Attendre le prochain contrôle pour tout noter en une seule fois",
+   "Informer seulement le client à l'oral",
+   "Rien, puisqu'il n'y a pas de fuite à signaler"
+  ],
+  "bonne": 0,
+  "aide": "Un contrôle qui n'est écrit nulle part n'a, réglementairement, jamais eu lieu.",
+  "remed": {
+   "regle": "Toutes les données du contrôle doivent être consignées dans le registre de l'équipement : date, méthode utilisée, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
+   "pourquoi": "Un contrôle non consigné n'a aucune valeur réglementaire : le registre est la preuve écrite du suivi de l'installation.",
+   "piege": "Penser que l'absence de fuite dispense de consigner le contrôle dans le registre."
+  },
+  "remediation_vers": "g4c",
+  "explication": "Toutes les données du contrôle doivent être consignées dans le registre de l'équipement : date, méthode utilisée, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-5.09",
+  "dc": "G5",
+  "code": "5.09",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Le fluide et l'huile d'une installation aux hydrocarbures ont un point commun qui impose des précautions particulières de stockage et de transport. Lequel ?",
+  "choix": [
+   "Ils sont inflammables",
+   "Ils sont toxiques par contact",
+   "Ils sont sous une pression bien plus élevée que les autres fluides",
+   "Ils sont incompatibles avec tout récipient métallique"
+  ],
+  "bonne": 0,
+  "aide": "Relis ce qui distingue les hydrocarbures des autres fluides frigorigènes du point de vue du risque.",
+  "remed": {
+   "regle": "Pour les hydrocarbures, le fluide ET l'huile sont inflammables : ils se stockent et se transportent dans des récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, selon la réglementation applicable et la fiche de données de sécurité.",
+   "pourquoi": "Un hydrocarbure qui fuit près d'une flamme ou d'une étincelle peut s'enflammer, contrairement à la plupart des autres fluides frigorigènes courants. C'est ce risque supplémentaire qui justifie des règles de gestion, de stockage et de transport renforcées.",
+   "piege": "Confondre le risque des hydrocarbures avec un risque de toxicité ou de pression : le danger propre aux hydrocarbures est l'inflammabilité, pas un poison ni une surpression particulière."
+  },
+  "remediation_vers": "g5b",
+  "explication": "Pour les hydrocarbures, le fluide ET l'huile sont inflammables : ils se stockent et se transportent dans des récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, selon la réglementation applicable et la fiche de données de sécurité.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-6.02",
+  "dc": "G6",
+  "code": "6.02",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Un compresseur est posé directement sur son châssis, sans plot antivibratile. Quel risque apparaît à moyen terme ?",
+  "choix": [
+   "La tuyauterie vibre en permanence et finit par se fissurer, ce qui provoque une fuite",
+   "Aucun risque particulier, c'est juste plus bruyant",
+   "Le compresseur consomme automatiquement moins d'énergie",
+   "Le niveau d'huile au voyant augmente"
+  ],
+  "bonne": 0,
+  "aide": "Pense à ce qui protège normalement la tuyauterie des vibrations du compresseur.",
+  "remed": {
+   "regle": "Un compresseur se fixe toujours sur des plots antivibratiles (silent-blocs), jamais directement sur son châssis ou le sol.",
+   "pourquoi": "Sans ces plots, la vibration du compresseur se transmet en permanence à toute la tuyauterie raccordée, qui finit par se fissurer : c'est une cause classique de fuite.",
+   "piege": "Une tuyauterie montée en contrainte (tordue pour rejoindre un piquage) ajoute le même risque, même quand les plots antivibratiles sont bien posés."
+  },
+  "remediation_vers": "g6b",
+  "explication": "Un compresseur se fixe toujours sur des plots antivibratiles (silent-blocs), jamais directement sur son châssis ou le sol.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-6.03",
+  "dc": "G6",
+  "code": "6.03",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Selon quoi règle-t-on les pressostats HP et BP et la protection thermique d'un compresseur ?",
+  "choix": [
+   "Selon la fiche constructeur de l'appareil",
+   "Toujours à la même valeur, quel que soit le modèle",
+   "Selon la température du local technique ce jour-là",
+   "À l'estime, selon l'expérience du technicien"
+  ],
+  "bonne": 0,
+  "aide": "Cherche à quel document un frigoriste se réfère toujours avant de toucher une sécurité.",
+  "remed": {
+   "regle": "Les interrupteurs de sécurité et de contrôle (pressostats HP et BP, protection thermique) se règlent toujours selon la fiche constructeur, jamais à l'estime.",
+   "pourquoi": "Chaque compresseur a ses propres seuils de sécurité ; un réglage approximatif peut laisser passer une surpression dangereuse ou couper la machine trop tôt.",
+   "piege": "Croire qu'une valeur retenue sur une autre installation convient partout : chaque modèle a sa propre fiche constructeur à respecter."
+  },
+  "remediation_vers": "g6",
+  "explication": "Les interrupteurs de sécurité et de contrôle (pressostats HP et BP, protection thermique) se règlent toujours selon la fiche constructeur, jamais à l'estime.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-6.04",
+  "dc": "G6",
+  "code": "6.04",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Une soupape d'aspiration mal réglée sur un compresseur : quelle conséquence directe ?",
+  "choix": [
+   "Une baisse automatique de la consommation électrique",
+   "Un excès d'huile visible au voyant",
+   "Une perte de puissance, ou un compresseur qui s'abîme",
+   "Aucune conséquence tant que la machine démarre"
+  ],
+  "bonne": 2,
+  "aide": "Relis ce que fait la soupape d'aspiration à chaque cycle du compresseur.",
+  "remed": {
+   "regle": "La soupape d'aspiration, qui laisse entrer la vapeur basse pression à chaque cycle, se règle toujours selon la fiche constructeur, jamais au jugé.",
+   "pourquoi": "Un mauvais réglage perturbe l'entrée de vapeur dans le compresseur : cela fait perdre de la puissance ou abîme la mécanique.",
+   "piege": "Penser qu'un réglage approximatif suffit tant que la machine continue de tourner : le dommage peut être progressif et invisible au début."
+  },
+  "remediation_vers": "g6b",
+  "explication": "La soupape d'aspiration, qui laisse entrer la vapeur basse pression à chaque cycle, se règle toujours selon la fiche constructeur, jamais au jugé.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-6.08",
+  "dc": "G6",
+  "code": "6.08",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Pourquoi bien installer, bien régler et bien entretenir un compresseur améliore l'efficacité énergétique ?",
+  "choix": [
+   "Parce que cela dispense de tester l'étanchéité à l'azote",
+   "Parce que cela augmente automatiquement la puissance frigorifique de la machine",
+   "Parce qu'un compresseur bien installé, bien réglé et bien entretenu consomme moins et dure plus longtemps",
+   "Parce que cela change la classe de sécurité du fluide frigorigène"
+  ],
+  "bonne": 2,
+  "aide": "Pense à ce que devient la consommation électrique d'une machine bien entretenue.",
+  "remed": {
+   "regle": "Une bonne installation, un bon réglage et un bon entretien du compresseur sont aussi des gestes d'efficacité énergétique : la machine consomme moins et dure plus longtemps.",
+   "pourquoi": "Une installation soignée réduit les pertes (vibrations, fuites, réglages hors plage) qui font travailler le compresseur inutilement, donc pour rien.",
+   "piege": "Croire que l'efficacité énergétique ne dépend que du choix du fluide frigorigène, alors que l'installation et l'entretien du compresseur y contribuent directement."
+  },
+  "remediation_vers": "g6b",
+  "explication": "Une bonne installation, un bon réglage et un bon entretien du compresseur sont aussi des gestes d'efficacité énergétique : la machine consomme moins et dure plus longtemps.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-7.05",
+  "dc": "G7",
+  "code": "7.05",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "En inspectant les conduites de refoulement et de liquide d'un condenseur, quels signes doivent alerter ?",
+  "choix": [
+   "La tension d'alimentation du ventilateur",
+   "La température de l'air ambiant du local",
+   "Des traces d'huile, de la corrosion, ou un isolant abîmé",
+   "Le niveau d'huile dans le carter du compresseur"
+  ],
+  "bonne": 2,
+  "aide": "Pense à ce qu'on voit sur un tube quand une fuite commence à apparaître.",
+  "remed": {
+   "regle": "On inspecte visuellement la conduite de refoulement (gaz chaud, entre compresseur et condenseur) et la conduite de liquide (juste après le condenseur), après consignation électrique. On cherche des traces d'huile, de la corrosion, un isolant abîmé.",
+   "pourquoi": "Ces signes annoncent souvent une fuite avant qu'elle ne se produise vraiment : les repérer tôt évite une perte de fluide plus tard.",
+   "piege": "Confondre cette inspection visuelle avec une mesure chiffrée comme le sous-refroidissement : ce sont deux contrôles différents, l'un se regarde, l'autre se mesure."
+  },
+  "remediation_vers": "g7b",
+  "explication": "On inspecte visuellement la conduite de refoulement (gaz chaud, entre compresseur et condenseur) et la conduite de liquide (juste après le condenseur), après consignation électrique. On cherche des traces d'huile, de la corrosion, un isolant abîmé.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-7.06",
+  "dc": "G7",
+  "code": "7.06",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Dans quelles conditions doit-on purger les gaz non condensables (incondensables) d'un condenseur ?",
+  "choix": [
+   "Juste après le démarrage du compresseur",
+   "Installation en fonctionnement, fluide en mouvement",
+   "Installation à l'arrêt, froide, avec récupération du fluide",
+   "Uniquement pendant la mise sous vide de l'installation"
+  ],
+  "bonne": 2,
+  "aide": "Pense à l'état de l'installation qui rend la purge sûre pour le technicien et pour l'environnement.",
+  "remed": {
+   "regle": "Les incondensables se purgent à l'arrêt, installation froide, avec récupération du fluide — jamais fluide en mouvement.",
+   "pourquoi": "Purger pendant que le fluide circule disperse du réfrigérant dans l'air et fausse le résultat de la purge : on ne sépare plus proprement l'air du fluide.",
+   "piege": "Croire qu'on peut purger pendant que le compresseur tourne pour gagner du temps : c'est justement le moment où on risque une émission de fluide."
+  },
+  "remediation_vers": "g7",
+  "explication": "Les incondensables se purgent à l'arrêt, installation froide, avec récupération du fluide — jamais fluide en mouvement.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-7.09",
+  "dc": "G7",
+  "code": "7.09",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Que doit contenir le rapport écrit rédigé après une visite d'un condenseur ?",
+  "choix": [
+   "Le nom du fabricant du compresseur",
+   "Le prix de l'intervention pour le client",
+   "Ailettes encrassées, ventilateur bruyant, trace d'huile, pression anormale",
+   "Uniquement la date de la dernière charge de fluide"
+  ],
+  "bonne": 2,
+  "aide": "Pense aux signes visuels et sonores relevés pendant la visite du condenseur.",
+  "remed": {
+   "regle": "Chaque visite se termine par un rapport écrit notant les ailettes encrassées, le ventilateur bruyant, les traces d'huile, une pression anormale.",
+   "pourquoi": "Un problème noté tôt évite une fuite ou une émission de réfrigérant demain : le rapport sert à agir avant la panne.",
+   "piege": "Se contenter d'un rapport oral rapide ou incomplet, sans détailler les anomalies observées : sans trace écrite, le suivi se perd."
+  },
+  "remediation_vers": "g7b",
+  "explication": "Chaque visite se termine par un rapport écrit notant les ailettes encrassées, le ventilateur bruyant, les traces d'huile, une pression anormale.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-7.10",
+  "dc": "G7",
+  "code": "7.10",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Comment un condenseur bien entretenu permet-il de faire des économies d'énergie ?",
+  "choix": [
+   "Des ailettes propres et un ventilateur en bon état font travailler le compresseur moins fort",
+   "En augmentant volontairement la pression de condensation",
+   "En réduisant le sous-refroidissement à zéro",
+   "En arrêtant le ventilateur pendant la nuit"
+  ],
+  "bonne": 0,
+  "aide": "Pense à ce qui empêche l'air de bien circuler à travers la batterie du condenseur.",
+  "remed": {
+   "regle": "Des ailettes propres et un ventilateur en bon état limitent la haute pression et donc la consommation électrique.",
+   "pourquoi": "Un condenseur encrassé fait travailler le compresseur plus fort pour évacuer la même quantité de chaleur, ce qui augmente la facture d'électricité.",
+   "piege": "Penser que le nettoyage du condenseur n'est qu'une question d'esthétique, sans lien avec la consommation d'énergie."
+  },
+  "remediation_vers": "g7b",
+  "explication": "Des ailettes propres et un ventilateur en bon état limitent la haute pression et donc la consommation électrique.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-8.02",
+  "dc": "G8",
+  "code": "8.02",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Vous installez un régulateur de pression d'évaporation sur une nouvelle installation. Comment déterminez-vous sa valeur de réglage ?",
+  "choix": [
+   "En copiant le réglage du pressostat BP",
+   "Il n'y a rien à régler, il fonctionne seul",
+   "En fixant une valeur basse par sécurité",
+   "En suivant la fiche constructeur de l'organe"
+  ],
+  "bonne": 3,
+  "aide": "Pense à qui décide de la valeur de réglage : une estimation, ou un document précis ?",
+  "remed": {
+   "regle": "Le réglage d'un régulateur de pression d'évaporation (mise au point comme réglage) suit toujours la fiche constructeur, jamais une valeur estimée.",
+   "pourquoi": "Cet organe protège le produit ou équilibre plusieurs évaporateurs sur un même compresseur ; un mauvais réglage abîme le produit ou déséquilibre l'installation.",
+   "piege": "Confondre avec le pressostat BP, qui protège la machine en coupant le compresseur : deux organes, deux réglages différents."
+  },
+  "remediation_vers": "g8b",
+  "explication": "Le réglage d'un régulateur de pression d'évaporation (mise au point comme réglage) suit toujours la fiche constructeur, jamais une valeur estimée.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-8.05",
+  "dc": "G8",
+  "code": "8.05",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "La conduite d'aspiration relie l'évaporateur au compresseur. Pourquoi la pose-t-on en légère pente vers le compresseur ?",
+  "choix": [
+   "Pour que l'huile transportée par la vapeur revienne vers le compresseur au lieu de stagner",
+   "Pour réduire la surchauffe",
+   "Pour empêcher le givre de se former",
+   "Pour diminuer la vitesse du gaz"
+  ],
+  "bonne": 0,
+  "aide": "Repense à ce qui circule avec le gaz dans la conduite d'aspiration, et à ce qui se passerait s'il restait bloqué dans un point bas.",
+  "remed": {
+   "regle": "La conduite d'aspiration se pose en légère pente vers le compresseur, avec un siphon en pied de toute colonne montante.",
+   "pourquoi": "La vapeur aspirée transporte toujours un peu d'huile, celle qui lubrifie le compresseur ; sans pente ni siphon, cette huile stagne dans les points bas au lieu de revenir.",
+   "piege": "Une conduite posée à plat ou en contre-pente semble fonctionner un moment, mais l'huile manque peu à peu au compresseur, jusqu'au grippage."
+  },
+  "remediation_vers": "g8",
+  "explication": "La conduite d'aspiration se pose en légère pente vers le compresseur, avec un siphon en pied de toute colonne montante.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-8.07",
+  "dc": "G8",
+  "code": "8.07",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Plusieurs évaporateurs sont raccordés à un même compresseur. Pourquoi règle-t-on la soupape de régulation de pression d'évaporation sur chacun d'eux ?",
+  "choix": [
+   "Pour remplacer le pressostat de chaque évaporateur",
+   "Pour couper l'alimentation électrique du compresseur en cas de défaut",
+   "Pour équilibrer la pression entre les évaporateurs, ou protéger un produit sensible au froid",
+   "Pour mesurer la surchauffe à l'aspiration"
+  ],
+  "bonne": 2,
+  "aide": "Cette soupape ne coupe pas le compresseur : que fait-elle alors ?",
+  "remed": {
+   "regle": "On règle la soupape de régulation de pression d'évaporation selon la fiche constructeur, pour maintenir une pression minimale adaptée au produit ou pour équilibrer plusieurs évaporateurs sur un même compresseur.",
+   "pourquoi": "Sans ce réglage, un produit sensible au froid peut geler, ou un évaporateur peut prendre toute la capacité du compresseur au détriment des autres.",
+   "piege": "Croire que cette soupape coupe le compresseur comme un pressostat : elle ne coupe rien, elle maintient une pression."
+  },
+  "remediation_vers": "g8b",
+  "explication": "On règle la soupape de régulation de pression d'évaporation selon la fiche constructeur, pour maintenir une pression minimale adaptée au produit ou pour équilibrer plusieurs évaporateurs sur un même compresseur.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-8.10",
+  "dc": "G8",
+  "code": "8.10",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Après une visite de l'évaporateur, que doit contenir le rapport d'état pour être utile ?",
+  "choix": [
+   "La liste des outils utilisés pendant la visite",
+   "Seulement la date et la durée de l'intervention",
+   "La description des anomalies observées : corrosion, fixation desserrée, bac sale, conduit de dégivrage abîmé",
+   "Uniquement la valeur de la surchauffe mesurée"
+  ],
+  "bonne": 2,
+  "aide": "Un bon rapport dit ce qui pourrait mal tourner plus tard, pas seulement ce qui va bien.",
+  "remed": {
+   "regle": "Toute visite de l'évaporateur se termine par un rapport écrit qui décrit précisément les anomalies observées : corrosion, fixation desserrée, bac de condensats sale, conduit de dégivrage abîmé.",
+   "pourquoi": "Ces anomalies, laissées telles quelles, finissent tôt ou tard en fuite ou en émission de fluide frigorigène ; le rapport permet d'agir avant que ça n'arrive.",
+   "piege": "Se contenter d'un rapport vague (« RAS », juste la date de passage) sans décrire ce qui pourrait s'aggraver."
+  },
+  "remediation_vers": "g8b",
+  "explication": "Toute visite de l'évaporateur se termine par un rapport écrit qui décrit précisément les anomalies observées : corrosion, fixation desserrée, bac de condensats sale, conduit de dégivrage abîmé.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-9.02",
+  "dc": "G9",
+  "code": "9.02",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Une vanne doit toujours être montée dans le sens de la flèche gravée sur son corps, comme un filtre déshydrateur. Que risque-t-on si on la monte à l'envers ?",
+  "choix": [
+   "Une erreur de montage irréversible, qu'on ne peut corriger qu'en découpant l'installation",
+   "Une simple baisse de rendement, sans conséquence sur le montage",
+   "Un dérèglement du bulbe du détendeur thermostatique",
+   "Rien, on peut la remonter plus tard sans problème"
+  ],
+  "bonne": 0,
+  "aide": "Pense à ce que dit la fiche sur les erreurs de montage des vannes et du filtre déshydrateur.",
+  "remed": {
+   "regle": "Une vanne, comme un filtre déshydrateur, se monte toujours dans le sens de circulation du fluide, indiqué par la flèche gravée sur son corps.",
+   "pourquoi": "Le sens de montage conditionne le sens de circulation du fluide dans l'organe (clapet interne, tamis moléculaire...). Une fois la vanne brasée à l'envers, aucun réglage ne peut corriger l'erreur.",
+   "piege": "Croire qu'une vanne est symétrique donc que n'importe quel sens convient : beaucoup de vannes se ressemblent des deux côtés mais ne fonctionnent que dans un seul sens."
+  },
+  "remediation_vers": "g9",
+  "explication": "Une vanne, comme un filtre déshydrateur, se monte toujours dans le sens de circulation du fluide, indiqué par la flèche gravée sur son corps.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-9.03",
+  "dc": "G9",
+  "code": "9.03",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Quelle est la différence entre un détendeur thermostatique (mécanique) et un détendeur électronique ?",
+  "choix": [
+   "Le détendeur électronique ne sert que sur les petits appareils, comme le capillaire",
+   "Le détendeur électronique coupe le circuit quand un seuil de pression est franchi",
+   "Le détendeur électronique régule la pression de condensation, le mécanique régule la surchauffe",
+   "Le détendeur électronique utilise une sonde et un régulateur, ce qui le rend plus précis et plus rapide que le bulbe du détendeur mécanique"
+  ],
+  "bonne": 3,
+  "aide": "Cherche dans la fiche ce qui remplace le bulbe sur un détendeur électronique.",
+  "remed": {
+   "regle": "Le détendeur thermostatique mécanique régule la surchauffe grâce à un bulbe fixé sur la ligne d'aspiration. Le détendeur électronique fait la même régulation, mais avec une sonde et un régulateur : plus précis, plus rapide.",
+   "pourquoi": "Une sonde électronique associée à un régulateur réagit plus vite et plus finement qu'un bulbe rempli de fluide, ce qui donne un réglage de surchauffe plus stable.",
+   "piege": "Confondre le détendeur électronique avec le capillaire : le capillaire est un tube calibré fixe, sans aucun réglage, alors que le thermostatique et l'électronique se règlent tous les deux sur la surchauffe."
+  },
+  "remediation_vers": "g9",
+  "explication": "Le détendeur thermostatique mécanique régule la surchauffe grâce à un bulbe fixé sur la ligne d'aspiration. Le détendeur électronique fait la même régulation, mais avec une sonde et un régulateur : plus précis, plus rapide.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-9.05",
+  "dc": "G9",
+  "code": "9.05",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Que fait la soupape de régulation de pression sur une installation frigorifique ?",
+  "choix": [
+   "Elle coupe le circuit dès qu'un seuil de pression est franchi",
+   "Elle module en continu pour maintenir une pression stable à un point du circuit",
+   "Elle règle la surchauffe en sortie d'évaporateur",
+   "Elle commande le compresseur selon une température mesurée par une sonde"
+  ],
+  "bonne": 1,
+  "aide": "Compare avec le rôle du limiteur de pression, qui lui coupe le circuit à un seuil : la soupape de régulation agit autrement.",
+  "remed": {
+   "regle": "La soupape de régulation de pression module en continu pour maintenir une pression stable à un point du circuit. Elle ne coupe jamais le circuit.",
+   "pourquoi": "Une pression stable à un point clé du circuit garantit un fonctionnement régulier de l'installation, sans à-coups, et évite de solliciter le compresseur pour rien.",
+   "piege": "Confondre la soupape de régulation avec le limiteur de pression : le limiteur est une sécurité qui coupe à un seuil, la soupape de régulation module en continu. Ce sont deux logiques différentes, avec deux réglages différents."
+  },
+  "remediation_vers": "g9b",
+  "explication": "La soupape de régulation de pression module en continu pour maintenir une pression stable à un point du circuit. Elle ne coupe jamais le circuit.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-q-9.06",
+  "dc": "G9",
+  "code": "9.06",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Comment est réglé un limiteur de pression mécanique ?",
+  "choix": [
+   "Par un ressort",
+   "Par une sonde reliée à un régulateur numérique",
+   "Par un bulbe relié à des contacts électriques par un tube fin",
+   "Par un capteur relié à un module électronique"
+  ],
+  "bonne": 0,
+  "aide": "Pense à la pièce mécanique qui tare le limiteur, différente du capteur du limiteur électronique.",
+  "remed": {
+   "regle": "Le limiteur de pression mécanique est réglé par un ressort (tarage mécanique). Le limiteur de pression électronique utilise un capteur relié à un module. Dans les deux cas, il coupe le circuit dès qu'un seuil de pression est franchi, en haute comme en basse pression.",
+   "pourquoi": "Le type de technologie détermine comment on accède au réglage et comment on le vérifie, mais le rôle reste le même : une sécurité qui coupe avant l'incident.",
+   "piege": "Ne jamais retoucher un limiteur de sécurité « pour voir » : son seuil se règle selon la fiche constructeur, jamais à l'estime. Ne pas le confondre avec le bulbe et le tube fin, qui appartiennent au thermostat mécanique."
+  },
+  "remediation_vers": "g9b",
+  "explication": "Le limiteur de pression mécanique est réglé par un ressort (tarage mécanique). Le limiteur de pression électronique utilise un capteur relié à un module. Dans les deux cas, il coupe le circuit dès qu'un seuil de pression est franchi, en haute comme en basse pression.",
+  "origine": "pack"
  }
 ]

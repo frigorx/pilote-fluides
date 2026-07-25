@@ -45,11 +45,21 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ## 2. État au 25/07/2026
 
-**68 cartes** · **206 questions** · **16 planches SVG** (dont 10 animées) · 4 illustrations · **3 outils embarqués**
+**68 cartes** · **235 questions** · **16 planches SVG** (dont 10 animées) · 4 illustrations · **3 outils embarqués**
 
 > **Couverture du référentiel officiel : A1 100 % · A2 100 % · D 100 % · E 100 %.**
 > Mesurée à chaque build, écrite dans `COUVERTURE-REFERENTIEL.md`. Elle valait 60 % en A1
 > avant la refonte compétences du 25/07 — personne ne pouvait le voir, faute de mesure.
+>
+> **Profondeur (25/07 soir)** : la couverture dit qu'un code est **cité** ;
+> `PROFONDEUR-REFERENTIEL.md` (généré au même build) mesure qu'il est **tenu** — les notions
+> que le libellé officiel énumère se retrouvent-elles dans le contenu que l'élève lit ?
+> Mesure asymétrique et assumée : elle prouve les trous, jamais la qualité. Première mesure :
+> **22 codes cités sans être pleinement tenus** (hydrocarbures G11-G12, compresseur G6 —
+> groupe du tirage au sort). **Comblés le soir même** : 13 fiches enrichies (rédaction
+> sous règles strictes + vérification adversariale + intégration), **94/94 tenus** au build
+> suivant. La mesure tourne à chaque build : ça ne peut plus se redégrader en silence.
+> L'instrument : `packs/fluides/profondeur-attendus.json` (v0.3, à faire relire).
 
 | | |
 |---|---|
@@ -58,7 +68,7 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 | 1 carte « Ma progression » | où j'en suis, compétence par compétence — tout en local |
 | 5 exercices « frigoriste-détective » | mises en situation à indices croisés |
 | 21 séries et examens | 13 séries de révision par thème + 8 examens sur 3 paliers |
-| 206 questions | rattachées à un **code de compétence**, un niveau, une catégorie |
+| 235 questions | rattachées à un **code de compétence**, un niveau, une catégorie — **99 compétences interrogées = 99 enseignées**, plus aucun code muet |
 
 **La refonte compétences (25/07)** — le pack enseignait des thèmes, il enseigne désormais des
 compétences opposables :
@@ -72,7 +82,7 @@ compétences opposables :
 
 **Le produit de formation (25/07, second temps)** — le pack est devenu un outil de stage :
 - **`projection.html`** : le déroulé en salle. 4 blocs (3 jours de théorie + la préparation
-  pratique), 39 séquences, 270 diapositives. La boucle est celle voulue par F. Henninot :
+  pratique), 39 séquences, 318 diapositives. La boucle est celle voulue par F. Henninot :
   on projette et on explique → la vidéo → le mini-questionnaire → on révèle → on avance.
   Les diapositives sont **générées depuis les fiches** (`build/parcours.mjs`) : une fiche
   corrigée = une projection corrigée, et **une seule relecture** au lieu de deux.
@@ -114,6 +124,9 @@ node build/relecture.mjs  # → relecture.html (document de bon à tirer)
 | `packs/fluides/referentiel-2025.json` | **le référentiel officiel, 136 codes** — copie conforme de `habilitation-fluide`, ne se modifie **que sur pièce** (texte au JO) |
 | `build/referentiel.mjs` | index des codes, résolution des libellés, calcul de couverture, contrôle de synchro avec le dépôt amont |
 | `COUVERTURE-REFERENTIEL.md` | **généré à chaque build** — couverture par catégorie, codes manquants, codes évalués sans fiche |
+| `packs/fluides/profondeur-attendus.json` | **l'instrument de profondeur** — chaque code décomposé en notions sentinelles (motifs regex) tirées du libellé officiel. Ne s'ajuste que si la fiche enseigne la notion sous un autre mot, jamais pour verdir un chiffre |
+| `build/profondeur.mjs` | mesure que chaque code cité est **tenu** — lancé par `build.mjs`, avertit sans bloquer (`--strict` pour bloquer). Corpus = contenu visible de l'élève, hors notes formateur |
+| `PROFONDEUR-REFERENTIEL.md` | **généré à chaque build** — codes cités non tenus, notions absentes, motifs aveugles |
 | `build/convert.mjs` | sélection + niveaux + **codes de compétence** + remédiation, depuis Mission F-GAZ |
 | `packs/fluides/banque.gen.json` | banque générée — **ne jamais éditer à la main** |
 | `packs/fluides/pack.eleve.js` | build élève, **purgé** de la couche pilote |
@@ -183,8 +196,11 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 ### 🔴 Priorité 1 — la relecture métier (bloquant pour la diffusion)
 
 Personne n'a relu le contenu avec un œil de frigoriste : **26 fiches, 5 exercices,
-180 questions** avec leurs indices et remédiations. **Dont 7 fiches écrites le 25/07** et jamais
-relues (`g0`, `g1d`, `g6b`, `g7b`, `g8b`, `g9b`, `g12b`).
+209 questions** avec leurs indices et remédiations. **Dont 7 fiches écrites le 25/07** et jamais
+relues (`g0`, `g1d`, `g6b`, `g7b`, `g8b`, `g9b`, `g12b`), **et le comblement du 25/07 soir** :
+13 fiches enrichies (`g1a`, `g1c`, `g3`, `g4a`, `g5a`, `g5b`, `g6`, `g6b`, `g8`, `g11`, `g12`,
+`p7`, `g13`) + 29 questions `pk-q-*` — rédigés par IA sous règles strictes (zéro invention
+chiffrée, vérification adversariale), jamais vus par un humain.
 
 → Ouvrir [`relecture.html`](https://frigorx.github.io/pilote-fluides/relecture.html), annoter
 les ✏, renvoyer les corrections. Elles se reportent dans `packs/fluides/cartes.js` (fiches) ou
@@ -193,6 +209,11 @@ les ✏, renvoyer les corrections. Elles se reportent dans `packs/fluides/cartes
 Le document de relecture affiche désormais, pour chaque fiche, **les compétences qu'elle prétend
 couvrir** — libellé de l'arrêté + reformulation élève. C'est là que porte l'essentiel du travail :
 l'écart entre ce que le code exige et ce que le contenu enseigne vraiment.
+
+Cet écart est désormais **mesuré et gardé** : `PROFONDEUR-REFERENTIEL.md` liste les codes cités
+sans être tenus. Les 22 trous du 25/07 sont **comblés** (94/94 tenus) ; la mesure tourne à chaque
+build et signalera toute régression. Rappel : 12.03 (calcul de charge inflammable) est enseigné
+en **méthode seule** — les valeurs sont dans la NF EN 378, à ne citer que sur pièce.
 
 **Question ouverte du § 6 précédent — RÉPONDUE le 25/07, sur mesure et non à l'intuition :**
 - le **glissement des zéotropes** était bien traité (3 mentions, charge en phase liquide) ;
@@ -241,9 +262,9 @@ paragraphes ; les SVG sont bons pour les principes, pas pour reconnaître un obj
   Schrader) et trois questions **ammoniac** rangées à tort en G13 (CO₂).
   La nomenclature est un savoir-outil indispensable — mais l'annexe II.B ne l'évalue pas comme
   telle. À vous de trancher : c'est une décision pédagogique, pas technique.
-- **Deux codes évalués sans fiche qui les enseigne** : `1.09` et `13.14`, tous deux CO₂. Hors des
-  catégories du pack (ils relèvent de B), donc sans gravité — mais la fiche `g13` pourrait les
-  déclarer si son contenu les tient.
+- ~~**Deux codes évalués sans fiche qui les enseigne** : `1.09` et `13.14`~~ — **résolu le
+  25/07 soir** : `g13` enrichie (pressions élevées du CO₂ sans valeur chiffrée, log p/h,
+  glace carbonique, sécurité de site) et déclare désormais les deux codes, en information.
 
 ### 🟠 Priorité 2 — à décider (ne pas engager sans arbitrage)
 

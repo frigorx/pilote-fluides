@@ -1,0 +1,385 @@
+{
+  "_meta": {
+    "role": "INSTRUMENT DE MESURE de la profondeur d'enseignement — décomposition de chaque code de l'annexe II.B (arrêté du 21/11/2025) en notions sentinelles détectables",
+    "version": "0.3",
+    "date": "2026-07-25",
+    "statut": "instrument NON relu par F. Henninot — les verdicts qu'il produit sont provisoires",
+    "principe": "Chaque libellé officiel énumère des notions. Pour chacune, des motifs (regex) détectent son vocabulaire technique dans le contenu VISIBLE DE L'ÉLÈVE des fiches qui déclarent le code (titre, corps, blocs, question — jamais notes_pilote).",
+    "asymetrie": "L'ABSENCE de tout motif prouve que la notion n'est pas enseignée (fiable). La PRÉSENCE d'un motif ne prouve pas qu'elle est bien enseignée. Cet instrument mesure des trous, pas de la qualité.",
+    "regles_motifs": "Regex appliquées au texte NORMALISÉ : minuscules, accents supprimés (é→e), indices chimiques dépliés (₂→2, ₃→3), balises HTML retirées. Écrire les motifs sans accents, en minuscules. Un motif trop générique (>40 % des cartes) est signalé 'aveugle' par le mesureur.",
+    "regle_de_modification": "Ajouter un synonyme UNIQUEMENT quand la fiche enseigne réellement la notion sous un autre mot, jamais pour verdir un chiffre. Chaque ajustement se justifie en une ligne dans _historique.",
+    "_historique": [
+      "0.1 — création, 94 codes (union A1∪A2∪D∪E), décomposition depuis les libellés officiels",
+      "0.2 — après confrontation au texte réel des fiches : 4.07 la distinction est enseignée par contraste (« intervenir dans le circuit ») ; 6.03 g6 dit « se règlent » ; 12.04 les fiches disent « analyse de risques » (sans « des ») ; 1.03 g1b écrit « log p-h » avec tiret ; 5.05 le libellé distingue état (liquide/gazeux, enseigné) et conditions (saturé/sous-refroidi, non enseignées) — notion scindée ; 7.03 g7b dit « espace autour / air circule »",
+      "0.3 — après le comblement du 25/07 : 6.04 accepte le pluriel « vannes de service » (bug, la fiche l'enseignait) ; durcissement de 5 motifs aveugles (6.01 huile → circuit/retour/niveau d'huile, 6.02 install → montage/pose/fixe, 6.03 regl → se regl, 12.10 charge retiré) — un motif présent dans la moitié des cartes ne mesure rien"
+    ]
+  },
+  "attendus": {
+    "1.00": [
+      { "notion": "règlement F-Gas (UE) 2024/573", "motifs": ["2024/573", "f-?ga[sz]"] },
+      { "notion": "DEEE — déchets d'équipements électriques", "motifs": ["deee", "dechets? d'?equipements? electr"] },
+      { "notion": "écoconception", "motifs": ["ecoconception", "eco-conception"] }
+    ],
+    "1.01": [
+      { "notion": "unités normalisées (kelvin, pascal, joule)", "motifs": ["kelvin", "pascal", "joule", "unites? (si|iso|normalisee)"] },
+      { "notion": "masse volumique / densité", "motifs": ["masse volumique", "densite"] }
+    ],
+    "1.02": [
+      { "notion": "surchauffe", "motifs": ["surchauffe"] },
+      { "notion": "sous-refroidissement", "motifs": ["sous-refroidi", "sous refroidi"] },
+      { "notion": "enthalpie", "motifs": ["enthalpi"] },
+      { "notion": "mélanges zéotropiques", "motifs": ["zeotrop", "glissement"] },
+      { "notion": "côtés haute et basse pression", "motifs": ["haute pression", "basse pression"] }
+    ],
+    "1.03": [
+      { "notion": "diagramme log p/h", "motifs": ["log ?p[-/]h", "diagramme enthalpique", "\\bp[-/]h\\b"] },
+      { "notion": "tables de saturation / relation pression-température", "motifs": ["tables? de saturation", "relation pression[- ]temperature", "\\bp/t\\b"] },
+      { "notion": "usage en contrôle d'étanchéité indirect", "motifs": ["indirect"] }
+    ],
+    "1.04": [
+      { "notion": "le détendeur, quatrième organe", "motifs": ["detendeur"] },
+      { "notion": "transformations du fluide (évaporation / condensation)", "motifs": ["evapor", "condens"] }
+    ],
+    "1.05": [
+      { "notion": "voyant liquide / indicateur d'humidité", "motifs": ["voyant", "indicateur d'?humidite"] },
+      { "notion": "pressostats et thermostats", "motifs": ["pressostat", "thermostat"] },
+      { "notion": "séparateurs (huile, liquide)", "motifs": ["separateur"] },
+      { "notion": "réservoirs", "motifs": ["reservoir", "bouteille (anti-coup|accumul|liquide)"] },
+      { "notion": "contrôles du dégivrage", "motifs": ["degivr"] }
+    ],
+    "1.06": [
+      { "notion": "HFO / R-1234yf", "motifs": ["hfo", "1234"] },
+      { "notion": "glissement des mélanges", "motifs": ["glissement", "zeotrop"] },
+      { "notion": "rétrofit / drop-in", "motifs": ["retrofit", "drop-?in"] }
+    ],
+    "1.07": [
+      { "notion": "hydrocarbures (R-290, propane)", "motifs": ["r-?290", "propane", "hydrocarbure"] },
+      { "notion": "CO2 / R-744", "motifs": ["co2", "r-?744", "dioxyde de carbone"] },
+      { "notion": "NH3 / ammoniac", "motifs": ["nh3", "ammoniac", "r-?717"] }
+    ],
+    "1.08": [
+      { "notion": "classes d'inflammabilité (A2L, A3)", "motifs": ["a2l", "\\ba3\\b", "inflammab"] },
+      { "notion": "limites de charge", "motifs": ["limite de charge", "charge maximale", "capacite de charge"] },
+      { "notion": "propagation de flamme", "motifs": ["propagation"] }
+    ],
+    "2.01": [
+      { "notion": "protocole de Montréal", "motifs": ["montreal"] },
+      { "notion": "CCNUCC / convention climat", "motifs": ["ccnucc", "convention-?cadre", "kyoto", "paris"] },
+      { "notion": "couche d'ozone", "motifs": ["ozone"] }
+    ],
+    "2.02": [
+      { "notion": "PRP — potentiel de réchauffement planétaire", "motifs": ["prp", "potentiel de rechauffement"] },
+      { "notion": "règlement (UE) 2024/573", "motifs": ["2024/573"] },
+      { "notion": "produits de décomposition (PFAS / TFA)", "motifs": ["pfas", "\\btfa\\b", "trifluoroacetique", "decomposition"] }
+    ],
+    "3.01": [
+      { "notion": "épreuve de pression de résistance", "motifs": ["epreuve"] },
+      { "notion": "azote seul", "motifs": ["azote"] }
+    ],
+    "3.02": [
+      { "notion": "contrôle d'étanchéité sous pression", "motifs": ["etancheite"] },
+      { "notion": "stabilité de la pression / eau savonneuse", "motifs": ["stabilis", "chute de pression", "savonneuse", "bulle"] }
+    ],
+    "3.03": [
+      { "notion": "pompe à vide", "motifs": ["pompe a vide"] },
+      { "notion": "vacuomètre", "motifs": ["vacuometre"] }
+    ],
+    "3.04": [
+      { "notion": "tirage au vide", "motifs": ["tirage au vide", "faire le vide", "mise sous vide"] },
+      { "notion": "évacuation de l'humidité", "motifs": ["humidite", "vapeur d'eau", "deshydrat"] },
+      { "notion": "tenue au vide / remontée de pression", "motifs": ["remontee", "tenue au vide", "casse du vide", "cassage"] }
+    ],
+    "3.05": [
+      { "notion": "consignation au registre", "motifs": ["registre"] },
+      { "notion": "rédaction d'un rapport", "motifs": ["rapport", "compte[- ]rendu"] }
+    ],
+    "4.01": [
+      { "notion": "points de fuite typiques (raccords, brasures…)", "motifs": ["raccord", "brasure", "dudgeon", "presse-?etoupe", "schrader", "vibration"] }
+    ],
+    "4.02": [
+      { "notion": "consultation du registre avant contrôle", "motifs": ["registre"] },
+      { "notion": "problèmes récurrents / historique", "motifs": ["recurrent", "historique", "precedent"] }
+    ],
+    "4.03": [
+      { "notion": "contrôle visuel et manuel", "motifs": ["visuel"] },
+      { "notion": "règlement (CE) 1516/2007", "motifs": ["1516"] }
+    ],
+    "4.04": [
+      { "notion": "méthode indirecte", "motifs": ["indirect"] },
+      { "notion": "interprétation des paramètres de fonctionnement", "motifs": ["surchauffe", "sous-refroidi", "parametres? de fonctionnement"] }
+    ],
+    "4.05": [
+      { "notion": "manomètres", "motifs": ["manometre", "manifold"] },
+      { "notion": "multimètre (volts, ampères, ohms)", "motifs": ["multimetre", "ampere", "\\bohm", "\\bvolt", "intensite"] },
+      { "notion": "thermomètres", "motifs": ["thermometre", "sonde de temperature"] }
+    ],
+    "4.06": [
+      { "notion": "méthode directe", "motifs": ["direct"] },
+      { "notion": "moyens directs (savonneuse, traceur, détecteur)", "motifs": ["savonneuse", "traceur", "\\buv\\b", "lampe", "detecteur"] }
+    ],
+    "4.07": [
+      { "notion": "méthode directe sans ouvrir le circuit", "motifs": ["sans ouvrir", "sans intervenir", "sans intervention", "n'?ouvre pas", "exterieur du circuit", "intervenir dans le circuit"] }
+    ],
+    "4.08": [
+      { "notion": "détecteur électronique de fuite", "motifs": ["detecteur electronique", "detecteur de fuite"] },
+      { "notion": "sensibilité (g/an)", "motifs": ["sensibilite", "g/an", "grammes? par an"] },
+      { "notion": "vérification / étalonnage périodique", "motifs": ["etalonn", "12 mois", "verifie tous les"] }
+    ],
+    "4.09": [
+      { "notion": "consignation au registre", "motifs": ["registre"] }
+    ],
+    "5.01": [
+      { "notion": "manifold et flexibles", "motifs": ["manifold", "flexible"] },
+      { "notion": "purge des flexibles / minimum d'émissions", "motifs": ["purge", "minimum d'?emission", "moins d'?emission"] },
+      { "notion": "vanne Schrader / obus", "motifs": ["schrader", "obus"] }
+    ],
+    "5.02": [
+      { "notion": "bouteille / cylindre de fluide", "motifs": ["bouteille", "cylindre"] },
+      { "notion": "phase liquide et phase gazeuse", "motifs": ["phase liquide", "phase gazeuse", "phase vapeur"] },
+      { "notion": "taux de remplissage maximal", "motifs": ["taux de remplissage", "a ras", "jamais.{0,20}(pleine|remplie)"] }
+    ],
+    "5.03": [
+      { "notion": "station de récupération", "motifs": ["station de recuperation", "unite de recuperation", "groupe de transfert"] },
+      { "notion": "branchement à émissions minimales", "motifs": ["purge", "court", "minimum d'?emission"] }
+    ],
+    "5.04": [
+      { "notion": "vidange de l'huile contaminée", "motifs": ["vidange", "vider l'?huile", "huile contamin"] },
+      { "notion": "huile chargée en fluide dissous", "motifs": ["fluide dissous", "contamin"] },
+      { "notion": "filière déchet dangereux", "motifs": ["dechet dangereux", "filiere"] }
+    ],
+    "5.05": [
+      { "notion": "état du fluide avant charge (liquide / gazeux)", "motifs": ["etat du fluide", "liquide ou gazeux"] },
+      { "notion": "conditions du fluide (saturé, sous-refroidi, surchauffé)", "motifs": ["sature", "sous-refroidi", "surchauff"] },
+      { "notion": "charge en phase liquide des zéotropes", "motifs": ["phase liquide"] },
+      { "notion": "choix de la méthode de remplissage", "motifs": ["methode de (charge|remplissage)", "charge[nrt]* en phase", "determine[nrt]* (d'abord )?l'etat"] }
+    ],
+    "5.06": [
+      { "notion": "balance adaptée", "motifs": ["balance"] },
+      { "notion": "pesée", "motifs": ["pese", "pesee"] }
+    ],
+    "5.07": [
+      { "notion": "consignation au registre", "motifs": ["registre"] },
+      { "notion": "quantités récupérées / ajoutées", "motifs": ["quantite"] }
+    ],
+    "5.08": [
+      { "notion": "stockage et transport", "motifs": ["stockage", "transport", "arrime"] },
+      { "notion": "réutilisation / recyclage / régénération", "motifs": ["recycl", "regener", "reemploi", "reutilis"] },
+      { "notion": "fluides et huiles contaminés", "motifs": ["contamin", "dechet"] }
+    ],
+    "5.09": [
+      { "notion": "hydrocarbures (R-290, propane)", "motifs": ["hydrocarbure", "r-?290", "propane"] },
+      { "notion": "règles propres aux inflammables", "motifs": ["inflammab", "etincel", "source de chaleur"] }
+    ],
+    "6.01": [
+      { "notion": "lubrification / circuit d'huile", "motifs": ["lubrif", "circuit d'?huile", "retour d'?huile", "niveau d'?huile"] },
+      { "notion": "principe et types de compresseurs", "motifs": ["piston", "scroll", "volumetrique", "vis\\b"] },
+      { "notion": "points de fuite propres au compresseur", "motifs": ["garniture", "presse-?etoupe", "carter", "joint"] }
+    ],
+    "6.02": [
+      { "notion": "installation / montage du compresseur", "motifs": ["montage", "\\bpose", "\\bfixe"] },
+      { "notion": "fixation, antivibratiles", "motifs": ["fixation", "antivibratile", "silent-?bloc", "vibration"] }
+    ],
+    "6.03": [
+      { "notion": "pressostats de sécurité et de régulation", "motifs": ["pressostat", "kp1", "kp5"] },
+      { "notion": "réglage de la consigne", "motifs": ["consigne", "se regl"] }
+    ],
+    "6.04": [
+      { "notion": "vannes / soupapes d'aspiration", "motifs": ["aspiration"] },
+      { "notion": "vannes de service", "motifs": ["vannes? de service", "robinet"] }
+    ],
+    "6.05": [
+      { "notion": "retour d'huile", "motifs": ["retour d'?huile"] },
+      { "notion": "niveau d'huile / voyant", "motifs": ["niveau d'?huile", "voyant"] }
+    ],
+    "6.06": [
+      { "notion": "mise en marche / arrêt", "motifs": ["mise en (marche|service)", "demarrage", "arret"] },
+      { "notion": "mesures en fonctionnement (intensité, pressions)", "motifs": ["intensite", "ampere", "mesure"] }
+    ],
+    "6.07": [
+      { "notion": "rapport sur l'état du compresseur", "motifs": ["rapport"] }
+    ],
+    "6.08": [
+      { "notion": "efficacité énergétique (compresseur)", "motifs": ["efficacite energetique", "consommation", "\\bcop\\b", "\\beer\\b"] }
+    ],
+    "7.01": [
+      { "notion": "désurchauffe puis condensation", "motifs": ["desurchauffe", "condensation"] },
+      { "notion": "sous-refroidissement en sortie", "motifs": ["sous-refroidi"] }
+    ],
+    "7.02": [
+      { "notion": "régulation de la pression de condensation", "motifs": ["pression de condensation", "regulation de condensation", "condensation flottante"] }
+    ],
+    "7.03": [
+      { "notion": "installation du condenseur / unité extérieure", "motifs": ["install", "montage"] },
+      { "notion": "emplacement, dégagement, recirculation d'air", "motifs": ["emplacement", "degagement", "recirculation", "recyclage d'?air", "espace autour", "air circule"] }
+    ],
+    "7.04": [
+      { "notion": "pressostat HP de sécurité", "motifs": ["pressostat", "\\bhp\\b", "kp5"] }
+    ],
+    "7.05": [
+      { "notion": "conduite de refoulement", "motifs": ["refoulement"] },
+      { "notion": "conduite / ligne liquide", "motifs": ["ligne liquide", "conduite de liquide"] }
+    ],
+    "7.06": [
+      { "notion": "gaz incondensables", "motifs": ["incondensable", "non condensable"] },
+      { "notion": "purge", "motifs": ["purge"] }
+    ],
+    "7.07": [
+      { "notion": "vérification en fonctionnement (température de condensation)", "motifs": ["temperature de condensation", "ecart de temperature", "mesure"] }
+    ],
+    "7.08": [
+      { "notion": "encrassement / nettoyage de la surface", "motifs": ["encrass", "nettoy", "ailette"] }
+    ],
+    "7.09": [
+      { "notion": "rapport sur l'état du condenseur", "motifs": ["rapport"] }
+    ],
+    "7.10": [
+      { "notion": "efficacité énergétique (condenseur)", "motifs": ["efficacite energetique", "consommation", "encrass"] }
+    ],
+    "8.01": [
+      { "notion": "évaporation et surchauffe", "motifs": ["surchauffe", "evaporation"] },
+      { "notion": "système de dégivrage", "motifs": ["degivr"] }
+    ],
+    "8.02": [
+      { "notion": "régulation de la pression d'évaporation", "motifs": ["pression d'?evaporation", "kvp"] }
+    ],
+    "8.03": [
+      { "notion": "installation de l'évaporateur", "motifs": ["install", "montage"] },
+      { "notion": "écoulement des condensats", "motifs": ["condensat", "ecoulement", "evacuation"] }
+    ],
+    "8.04": [
+      { "notion": "organes de sécurité et de contrôle", "motifs": ["pressostat", "thermostat"] }
+    ],
+    "8.05": [
+      { "notion": "conduite d'aspiration", "motifs": ["aspiration"] },
+      { "notion": "pente / siphon / position des conduites", "motifs": ["pente", "siphon", "position"] }
+    ],
+    "8.06": [
+      { "notion": "dégivrage (air chaud, gaz chauds ou électrique)", "motifs": ["degivr"] }
+    ],
+    "8.07": [
+      { "notion": "soupape de régulation de la pression d'évaporation", "motifs": ["pression d'?evaporation"] }
+    ],
+    "8.08": [
+      { "notion": "vérification en fonctionnement (surchauffe mesurée)", "motifs": ["surchauffe", "mesure"] }
+    ],
+    "8.09": [
+      { "notion": "givre, ailettes, nettoyage de la surface", "motifs": ["givr", "ailette", "nettoy"] }
+    ],
+    "8.10": [
+      { "notion": "rapport sur l'état de l'évaporateur", "motifs": ["rapport"] }
+    ],
+    "8.11": [
+      { "notion": "efficacité énergétique (évaporateur)", "motifs": ["efficacite energetique", "consommation", "givr"] }
+    ],
+    "9.01": [
+      { "notion": "tube capillaire", "motifs": ["capillaire"] },
+      { "notion": "détendeur thermostatique / bulbe", "motifs": ["thermostatique", "bulbe"] },
+      { "notion": "détendeur électronique", "motifs": ["electronique"] }
+    ],
+    "9.02": [
+      { "notion": "position de montage (bulbe, vannes)", "motifs": ["bulbe", "position"] }
+    ],
+    "9.03": [
+      { "notion": "réglage du détendeur (surchauffe, vis de réglage)", "motifs": ["vis de reglage", "surchauffe"] }
+    ],
+    "9.04": [
+      { "notion": "réglage des thermostats (consigne, différentiel)", "motifs": ["thermostat", "differentiel", "consigne"] }
+    ],
+    "9.05": [
+      { "notion": "soupape de régulation de pression", "motifs": ["regulation", "soupape"] }
+    ],
+    "9.06": [
+      { "notion": "limiteurs de pression / réarmement", "motifs": ["limiteur", "rearmement", "pressostat"] }
+    ],
+    "9.07": [
+      { "notion": "séparateur d'huile", "motifs": ["separateur d'?huile"] }
+    ],
+    "9.08": [
+      { "notion": "filtre déshydrateur", "motifs": ["filtre secheur", "deshydrateur", "filtre deshydrateur"] }
+    ],
+    "9.09": [
+      { "notion": "rapport sur l'état de ces composants", "motifs": ["rapport"] }
+    ],
+    "9.10": [
+      { "notion": "efficacité énergétique (détente)", "motifs": ["efficacite energetique", "surchauffe", "consommation"] }
+    ],
+    "10.01": [
+      { "notion": "brasage fort", "motifs": ["brasage", "brasure"] },
+      { "notion": "balayage à l'azote", "motifs": ["balayage", "azote"] },
+      { "notion": "sécurité au chalumeau", "motifs": ["chalumeau", "lunettes", "flamme"] }
+    ],
+    "10.02": [
+      { "notion": "supports de tuyauteries", "motifs": ["support", "collier", "fixation"] }
+    ],
+    "11.01": [
+      { "notion": "technologies de substitution", "motifs": ["substitution", "naturel", "alternative"] },
+      { "notion": "manipulation sans danger", "motifs": ["inflammab", "toxique", "securite"] }
+    ],
+    "11.02": [
+      { "notion": "réduction de la charge", "motifs": ["reduction de (la )?charge", "charge reduite", "limiter la charge", "reduire la charge"] },
+      { "notion": "systèmes indirects / cascade", "motifs": ["cascade", "boucle secondaire", "indirect", "eau glacee", "eau glycolee"] }
+    ],
+    "11.03": [
+      { "notion": "norme NF EN 378", "motifs": ["en ?378"] },
+      { "notion": "limites selon le local / l'occupation", "motifs": ["occupation", "local", "acces"] },
+      { "notion": "annexe IV — interdictions et dérogations de sécurité", "motifs": ["annexe iv", "interdiction", "derogation"] }
+    ],
+    "11.04": [
+      { "notion": "avantages / inconvénients selon l'application", "motifs": ["avantage", "inconvenient"] },
+      { "notion": "conditions climatiques", "motifs": ["climat"] }
+    ],
+    "11.05": [
+      { "notion": "composants propres aux hydrocarbures (antidéflagrant, non étincelant)", "motifs": ["antideflagrant", "etincel", "atex"] },
+      { "notion": "ventilation / conception spécifique", "motifs": ["ventilation", "conception"] }
+    ],
+    "12.01": [
+      { "notion": "étiquetage des inflammables (pictogramme flamme)", "motifs": ["etiquet", "pictogramme", "flamme"] },
+      { "notion": "raccordement des bouteilles (filetage à gauche…)", "motifs": ["filetage", "raccord"] }
+    ],
+    "12.02": [
+      { "notion": "détection de gaz", "motifs": ["detect"] },
+      { "notion": "ventilation", "motifs": ["ventilation", "aerer", "aeration"] },
+      { "notion": "équipements de protection individuelle", "motifs": ["\\bepi\\b", "protection individuelle"] },
+      { "notion": "élimination des gaz récupérés", "motifs": ["eliminat", "destruction", "torchere", "brulage"] }
+    ],
+    "12.03": [
+      { "notion": "calcul de la charge maximale admissible", "motifs": ["charge maximale", "calcul", "volume de la piece", "surface"] }
+    ],
+    "12.04": [
+      { "notion": "analyse des risques avant travaux", "motifs": ["analyse (des? |de )risques", "evaluation des risques"] },
+      { "notion": "sources d'inflammation", "motifs": ["source[s]? d'?(inflammation|ignition)", "etincel", "flamme"] }
+    ],
+    "12.05": [
+      { "notion": "préparation et balisage de la zone", "motifs": ["zone", "perimetre", "balis"] },
+      { "notion": "outillage adapté aux inflammables", "motifs": ["antideflagrant", "atex", "outillage"] }
+    ],
+    "12.06": [
+      { "notion": "récupération de l'hydrocarbure", "motifs": ["recuper"] },
+      { "notion": "remplissage à l'azote", "motifs": ["azote"] }
+    ],
+    "12.07": [
+      { "notion": "ouverture, remplacement d'un composant, refermeture", "motifs": ["remplac", "composant", "ouvrir le (circuit|systeme)"] }
+    ],
+    "12.08": [
+      { "notion": "épreuve de pression (contexte inflammable)", "motifs": ["epreuve"] }
+    ],
+    "12.09": [
+      { "notion": "essai sous vide (contexte inflammable)", "motifs": ["vide"] }
+    ],
+    "12.10": [
+      { "notion": "charge pesée de l'hydrocarbure", "motifs": ["balance", "pese"] }
+    ],
+    "12.11": [
+      { "notion": "contrôle d'étanchéité direct (contexte inflammable)", "motifs": ["detecteur", "savonneuse", "direct"] }
+    ],
+    "12.12": [
+      { "notion": "rapport d'entretien", "motifs": ["rapport"] }
+    ],
+    "12.13": [
+      { "notion": "santé-sécurité sur site (signalisation, issues, alarmes)", "motifs": ["signalisation", "issue[s]? de secours", "alarme", "capteur de gaz"] }
+    ],
+    "12.14": [
+      { "notion": "efficacité énergétique (réfrigérants inflammables)", "motifs": ["efficacite energetique", "consommation"] }
+    ]
+  }
+}

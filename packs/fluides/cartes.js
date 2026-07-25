@@ -909,7 +909,10 @@ export const CARTES = [
       "<li>Sélectionner les <b>équipements de protection</b> adaptés au fluide et au geste prévu : protection des yeux, gants adaptés au produit et au froid, détecteur de gaz porté si le fluide l'exige.</li>" +
       "<li>Vérifier le matériel avant de l'emporter sur zone. Un flexible douteux ou un détecteur non vérifié <b>ne sort pas</b> de l'atelier.</li>" +
       "<li>Consigner électriquement l'installation avant toute ouverture de circuit.</li>" +
-      "</ol>",
+      "</ol>" +
+      "<p>Sur une machine aux <b>hydrocarbures</b> (par exemple au R-290), le choix de l'outillage se fait <b>avant</b> d'ouvrir la zone, pas une fois dessus. Ces fluides sont inflammables : un outil ordinaire, prévu pour un gaz qui ne l'est pas, peut suffire à déclencher un accident. Une simple étincelle au mauvais endroit, au mauvais moment, enflamme le gaz qui s'est accumulé.</p>" +
+      "<p>Certains outils se vérifient en particulier. La <b>station de récupération</b> doit être <b>compatible hydrocarbures</b> : conçue pour aspirer et stocker un gaz inflammable sans créer d'étincelle interne. Une station ordinaire, prévue pour un fluide non inflammable, n'a pas cette protection. Le <b>détecteur de fuite</b> doit lui aussi être adapté au gaz recherché : un détecteur réglé pour un autre fluide peut ne rien signaler alors que du gaz inflammable s'échappe.</p>" +
+      "<p>Dans la zone balisée, tout le <b>matériel électrique</b> utilisé doit être <b>antidéflagrant</b> (on dit aussi « <b>ATEX</b> », pour les zones à risque d'explosion) : lampe, outillage électroportatif, appareils de mesure. Un matériel électrique ordinaire peut produire une étincelle interne invisible, suffisante pour enflammer un gaz inflammable présent dans l'air. La <b>ventilation</b> reste en marche pendant toute l'intervention, pour empêcher le gaz de s'accumuler.</p>",
     blocs: [
       {
         type: "piege",
@@ -925,6 +928,7 @@ export const CARTES = [
           "Analyser → éliminer ce qui peut l'être → signaler le reste → baliser → s'équiper → vérifier le " +
           "matériel → consigner. Et alors seulement, intervenir.",
       },
+      { type: "cle", t: "Compatible, pas juste disponible", html: "<b>Compatible</b> ne veut pas dire « qui marche quand même ». Une station, un détecteur ou un outil électrique doit être conçu pour les gaz inflammables, sinon on ne l'emmène pas sur une machine aux hydrocarbures — même s'il fonctionne très bien sur un autre chantier." },
     ],
     question: {
       type: "qcm",
@@ -1005,7 +1009,9 @@ export const CARTES = [
       "<p>Quatre organes, dans l'ordre du cycle : le <b>compresseur</b> aspire la vapeur basse pression " +
       "et la refoule en haute pression ; le <b>condenseur</b> évacue la chaleur et liquéfie ; " +
       "le <b>détendeur</b> fait chuter la pression ; l'<b>évaporateur</b> absorbe la chaleur du milieu " +
-      "à refroidir. Basse pression du côté froid, haute pression du côté chaud.</p>",
+      "à refroidir. Basse pression du côté froid, haute pression du côté chaud.</p>" +
+      "<p>Une autre grandeur sert tous les jours au frigoriste : la <b>masse volumique</b> (on dit aussi <b>densité</b>). C'est la masse contenue dans un volume donné, en <b>kg/m³</b>. Pour un même fluide, la vapeur et le liquide n'ont pas du tout la même masse volumique : un litre de liquide pèse beaucoup plus lourd qu'un litre de vapeur. C'est pour ça qu'on charge un circuit en <b>phase liquide</b> plutôt qu'en vapeur : on fait entrer beaucoup plus de matière pour le même volume de bouteille, et le dimensionnement des tuyauteries en tient compte.</p>" +
+      "<p>Sur le diagramme du fluide, la grandeur qu'on lit en abscisse s'appelle l'<b>enthalpie</b>. C'est l'énergie contenue dans un kilo de fluide, en <b>kJ/kg</b> (kilojoule par kilo). Elle sert à calculer ce que l'évaporateur absorbe et ce que le condenseur évacue : plus l'écart d'enthalpie entre l'entrée et la sortie est grand, plus l'échange de chaleur est important.</p>",
     blocs: [
       {
         type: "cle",
@@ -1025,6 +1031,7 @@ export const CARTES = [
           "c'est se tromper de plusieurs kelvins sur la température de saturation — et diagnostiquer une " +
           "fuite qui n'existe pas.",
       },
+      { type: "piege", t: "Mélanges zéotropes : le glissement", html: "<p>Certains fluides sont des <b>mélanges zéotropes</b> : plusieurs fluides purs mélangés dont les composants ne s'évaporent pas ensemble. Résultat, pendant tout le changement d'état, la température n'est pas constante : elle <b>glisse</b>, on parle de <b>glissement</b>. Conséquence pratique : on charge et on soutire toujours ces mélanges en <b>phase liquide</b>, jamais en phase vapeur, sinon la composition change et le fluide qui reste dans la bouteille n'est plus le même.</p>" },
     ],
     question: {
       type: "qcm",
@@ -1136,7 +1143,8 @@ export const CARTES = [
       schema("nomenclature.svg", "Décoder R-134a : centaines = carbone moins un, dizaines = hydrogène plus un, unités = fluor. Les séries R-4xx, R-5xx, R-6xx, R-7xx.") +
       "<p>Et le numéro n'est pas un matricule : il <b>décrit la molécule</b>. Centaines + 1 = " +
       "carbone, dizaines − 1 = hydrogène, unités = fluor — les liaisons restantes sont du chlore. " +
-      "Les mélanges et les fluides inorganiques ont leurs séries : 4xx, 5xx, 6xx, 7xx.</p>",
+      "Les mélanges et les fluides inorganiques ont leurs séries : 4xx, 5xx, 6xx, 7xx.</p>" +
+      "<p>Un fluide de substitution ne se charge pas forcément « comme l'ancien ». On distingue deux cas. Le <b>drop-in</b> : le nouveau fluide est compatible avec l'huile et les composants déjà en place, la machine ne change pas, on vidange, on tire au vide, on recharge. Le <b>retrofit</b> : le nouveau fluide n'est pas compatible tel quel, il impose d'adapter la machine — huile, joints, détendeur — selon la <b>documentation constructeur</b>, avant toute recharge.</p><p>Cette distinction n'est pas un détail administratif : un fluide de substitution ne se comporte pas forcément comme l'ancien sur chaque composant du circuit. Le <b>détendeur</b> a été calé pour une courbe de pression donnée ; avec un autre fluide, il peut ne plus détendre au bon point. Les <b>joints</b> ont été choisis pour une huile donnée ; une huile incompatible les fait gonfler ou durcir. C'est pour cela que seule la documentation constructeur dit si un couple machine/fluide est un simple drop-in ou impose un retrofit — jamais l'habitude ou le « ça a l'air pareil ».</p>",
     blocs: [
       {
         type: "cle",
@@ -1155,6 +1163,7 @@ export const CARTES = [
           "La famille chimique dit l'<b>impact environnemental</b> ; la classe NF EN 378 dit le " +
           "<b>risque de manipulation</b>. Il faut les deux lectures, à chaque fois.",
       },
+      { type: "piege", t: "Drop-in ou retrofit : ne pas deviner", html: "<p>Un fluide vendu comme « remplacement direct » n'est pas automatiquement un <b>drop-in</b> sur toutes les machines. Sans vérifier la documentation constructeur, on peut charger un fluide de substitution dans une machine qui aurait exigé un <b>retrofit</b> — huile non changée, détendeur non réglé. Le fluide tourne, mais la machine ne fonctionne plus comme prévu. Toujours vérifier avant de charger, jamais deviner.</p>" },
     ],
     question: {
       type: "qcm",
@@ -1493,7 +1502,9 @@ export const CARTES = [
       "l'<b>air</b> (incondensable, qui fait monter la haute pression) et l'<b>humidité</b> " +
       "(qui gèle au détendeur et attaque l'huile). Sous vide, l'eau bout à température ambiante — " +
       "c'est exactement ce qu'on cherche.</p>" +
-      "<p>Enfin, on <b>consigne</b> : registre et rapport d'essais font partie du geste professionnel.</p>",
+      "<p>Enfin, on <b>consigne</b> : registre et rapport d'essais font partie du geste professionnel.</p>" +
+      "<p>Comment conclut-on l'épreuve d'étanchéité ? On relève la pression d'azote au <b>manomètre</b> (l'appareil qui mesure la pression) au début de l'essai, puis on attend la durée prévue — selon la documentation constructeur, à faire valider. Si la pression reste <b>stable</b> (ou « stabilisée ») pendant toute cette durée, le circuit est déclaré étanche. À l'inverse, une <b>chute de pression</b> signale une fuite quelque part dans le circuit, même si elle est minime.</p>" +
+      "<p>Un piège classique : la température de l'atelier fait elle aussi varier la pression, sans qu'il y ait de fuite. Dans un circuit fermé, la pression de l'azote <b>augmente</b> un peu quand l'air ambiant se réchauffe, et <b>diminue</b> un peu quand il refroidit. On regarde donc la tendance sur toute la durée de l'épreuve, pas un seul chiffre isolé, et on corrige qualitativement une petite variation liée à la température avant de conclure trop vite à une fuite.</p>",
     blocs: [
       {
         type: "piege",
@@ -1512,6 +1523,7 @@ export const CARTES = [
           "ou de l'humidité résiduelle. Un tirage au vide réussi, c'est un vide qui <b>tient</b>. " +
           "Valeurs cibles et durées : selon doc constructeur, à faire valider.",
       },
+      { type: "cle", t: "Localiser la fuite : l'eau savonneuse", html: "<p>Si la pression chute, on cherche la fuite <b>raccord par raccord et brasure par brasure</b>, en badigeonnant de l'<b>eau savonneuse</b> au pinceau ou au pulvérisateur. Une <b>bulle</b> qui apparaît et grossit indique l'endroit exact de la fuite. Ce geste simple, sans appareil, vient <b>après</b> le contrôle de stabilité de la pression : il sert à localiser précisément une fuite déjà détectée.</p>" },
     ],
     question: {
       type: "qcm",
@@ -1564,7 +1576,8 @@ export const CARTES = [
       "<b>à recontrôler en priorité</b>, pas un point clos.</p>" +
       "<p>Vient ensuite le <b>contrôle visuel et manuel</b>, sans électronique : traces d'huile " +
       "(le fluide entraîne l'huile en fuyant), corrosion, givre anormal, serrage des raccords " +
-      "accessibles, état des fixations.</p>",
+      "accessibles, état des fixations.</p>" +
+      "<p>Ce contrôle visuel et manuel n'est pas une habitude d'atelier. Il est <b>cadré par un texte européen</b> : le règlement (CE) n° 1516/2007. C'est ce règlement qui définit les méthodes de contrôle d'étanchéité déjà vues ici. La méthode <b>indirecte</b> (lecture des pressions et des températures) et la méthode <b>directe</b> (détecteur, bulles de savon) sont toutes les deux cadrées par ce texte. Contrôler « au sens » de ce règlement, c'est appliquer ces méthodes, pas improviser à sa façon.</p>",
     blocs: [
       {
         type: "cle",
@@ -1815,7 +1828,9 @@ export const CARTES = [
       "— jamais rempli à ras : le liquide se dilate avec la température, et un cylindre plein est un " +
       "danger. On <b>pèse avant</b>, sinon on ne saura jamais combien on a réellement récupéré.</p>" +
       "<p>L'<b>huile</b> du compresseur est contaminée par nature : elle se récupère à part, comme " +
-      "un déchet dangereux. Elle ne se dégaze pas, elle ne se mélange pas au fluide.</p>",
+      "un déchet dangereux. Elle ne se dégaze pas, elle ne se mélange pas au fluide.</p>" +
+      "<p>Une fois le fluide récupéré, il reste un dernier geste : <b>vidanger l'huile</b> du compresseur. Cette huile garde du <b>fluide dissous</b> dedans. Ce fluide dissous continue à <b>dégazer</b> : il relâche lentement des vapeurs, même une fois l'huile sortie de la machine. On vide l'huile dans un <b>récipient fermé et étiqueté</b>, jamais dans un bidon ouvert. Sinon, ces vapeurs s'échappent : c'est une émission de plus, exactement comme une fuite.</p>" +
+      "<p>On <b>note la quantité</b> d'huile vidangée, comme on pèse le fluide récupéré : sans cette trace, personne ne peut vérifier que rien n'a été perdu en route. L'huile contaminée part ensuite en <b>déchet dangereux</b>, avec son <b>bordereau</b> — le document qui suit le déchet jusqu'à son traitement final.</p>",
     blocs: [
       {
         type: "cle",
@@ -1835,6 +1850,7 @@ export const CARTES = [
           "recycler ou à régénérer</b> : il part en destruction, aux frais de l'entreprise. " +
           "Un cylindre, un fluide, une étiquette.",
       },
+      { type: "cle", t: "Vider l'huile : le bon ordre", html: "<p>On vide l'huile <b>après</b> avoir récupéré le fluide, jamais avant : sinon on relâche dans l'air du fluide encore dissous dedans, sans même le mesurer. Récipient fermé et étiqueté, quantité notée, déchet dangereux avec bordereau — c'est le geste complet de la vidange.</p>" },
     ],
     question: {
       type: "qcm",
@@ -1893,7 +1909,9 @@ export const CARTES = [
       "selon la réglementation applicable et la fiche de données de sécurité.</p>" +
       "<p>Le <b>registre</b> est la preuve légale de toute opération sur le fluide : quantité ajoutée, " +
       "quantité récupérée, date, intervenant. Le rejet volontaire à l'atmosphère est strictement " +
-      "interdit et sanctionné.</p>",
+      "interdit et sanctionné.</p>" +
+      "<p>Avant de charger, on regarde aussi dans quelle <b>condition</b> se trouve le fluide, en plus de savoir s'il est liquide ou gazeux. À une pression donnée, le fluide peut être <b>saturé</b> : le liquide et la vapeur sont présents ensemble, à la température de changement d'état. Il peut être <b>sous-refroidi</b> : c'est un liquide plus froid que sa température de saturation, donc sans aucune vapeur mélangée. Il peut être <b>surchauffé</b> : c'est une vapeur plus chaude que sa température de saturation, donc sans aucune goutte de liquide. Cette condition guide la méthode de remplissage : on ne prélève pas de la même façon un liquide sous-refroidi, pris en bas de la bouteille, et une vapeur surchauffée, prise en haut.</p>" +
+      "<p>Un fluide récupéré n'est pas forcément perdu : il a trois devenirs possibles. La <b>réutilisation</b> (ou réemploi) : le fluide récupéré est rechargé tel quel, sans retraitement, dans la machine d'où il vient, chez le même détenteur (celui qui possède ou utilise l'installation). Le <b>recyclage</b> : le fluide subit un nettoyage de base, comme une filtration et un séchage. La <b>régénération</b> : un retraitement complet, réalisé en filière spécialisée, qui redonne au fluide les caractéristiques du fluide neuf. Un fluide régénéré <b>s'achète</b> : on ne le régénère jamais soi-même à l'atelier.</p>",
     blocs: [
       {
         type: "cle",
@@ -1910,6 +1928,7 @@ export const CARTES = [
           "(hydrocarbures, A2L) obéissent en plus aux règles de leur classe. Conditions détaillées : " +
           "selon la réglementation applicable et la fiche de données de sécurité, à faire valider.",
       },
+      { type: "piege", t: "Réemploi n'est pas retraitement", html: "On pourrait croire qu'un fluide récupéré doit toujours passer par le recyclage ou la régénération avant de resservir. C'est faux : réutiliser le fluide récupéré sur <b>sa machine d'origine</b>, chez le <b>même détenteur</b> (celui qui possède ou utilise cette machine), est légal et ne demande aucun retraitement." },
     ],
     question: {
       type: "qcm",
@@ -2002,7 +2021,11 @@ export const CARTES = [
       "thermique — se règlent <b>selon la fiche constructeur</b>, jamais à l'estime.</p>" +
       "<p>L'<b>huile</b> lubrifie, refroidit et assure l'étanchéité interne. Elle circule avec le " +
       "fluide et doit <b>revenir</b> : un retour d'huile défaillant est une cause fréquente de panne " +
-      "prématurée, et souvent le premier signe visible d'un problème de conception des lignes.</p>",
+      "prématurée, et souvent le premier signe visible d'un problème de conception des lignes.</p>" +
+      "<p>On distingue plusieurs <b>types</b> de compresseur, selon la façon dont la vapeur est comprimée. Le compresseur à <b>piston</b> comprime par un mouvement de va-et-vient, comme une pompe à vélo. Le compresseur <b>scroll</b> (deux spirales imbriquées, une fixe et une mobile qui tourne à l'intérieur) comprime en continu, sans à-coups : c'est la technologie la plus répandue en climatisation. Le compresseur à <b>vis</b> comprime la vapeur entre deux rotors qui s'engrènent ; on le trouve sur les grosses puissances.</p>" +
+      "<p>Il existe aussi trois <b>architectures</b>, selon la manière dont le moteur électrique entraîne le compresseur. En <b>hermétique</b>, le moteur et le compresseur sont enfermés ensemble dans une coque soudée : aucun arbre ne sort à l'extérieur, donc aucune fuite possible à cet endroit, mais la coque ne s'ouvre pas et le compresseur n'est pas réparable. En <b>semi-hermétique</b>, la coque est boulonnée : on peut l'ouvrir pour intervenir à l'intérieur, en refaisant les joints au remontage. En <b>ouvert</b>, le moteur est séparé du compresseur et l'entraîne par un arbre qui traverse la coque de part en part ; cet arbre passe par une <b>garniture</b> (un joint tournant), qui est un point de fuite classique à surveiller sur ce type de machine.</p>" +
+      "<p>Pour vérifier que le retour d'huile fonctionne bien, on contrôle le <b>niveau d'huile</b> au <b>voyant d'huile</b> : un petit hublot placé sur le carter du compresseur. On regarde ce voyant <b>machine en marche stabilisée</b> (après quelques minutes de fonctionnement, pas juste au démarrage) : le niveau doit rester visible dans la zone du voyant, sans descendre en dessous. La zone exacte à respecter est donnée par la <b>documentation constructeur</b>, à faire valider avant de conclure sur un manque ou un excès d'huile.</p>" +
+      "<p>Après toute intervention sur un compresseur, on rédige un <b>rapport</b>. Il rassemble trois choses : ce qu'on a <b>observé</b> (bruits anormaux, niveau d'huile au voyant, valeurs relevées comme les pressions ou la température de refoulement), ce qu'on a <b>fait</b> (pièce changée, réglage effectué, essai réalisé), et tout <b>problème restant</b> qui pourrait, plus tard, entraîner une panne ou une fuite. Ce rapport est <b>daté et signé</b> : c'est ce qui permet au prochain intervenant de savoir où en est la machine, sans tout redécouvrir.</p>",
     blocs: [
       {
         type: "cle",
@@ -2020,6 +2043,7 @@ export const CARTES = [
           "du compresseur. Et un compresseur à l'arrêt peut rester <b>sous pression</b> longtemps : " +
           "on ne le dépose jamais sans avoir vérifié.",
       },
+      { type: "cle", t: "À quoi sert le rapport", html: "Un <b>rapport</b> n'est pas une formalité administrative : c'est la mémoire de la machine. Un problème noté mais non résolu (par exemple un bruit anormal ou une trace d'huile suspecte) doit être signalé dans le rapport même s'il n'empêche pas la machine de tourner aujourd'hui." },
     ],
     question: {
       type: "qcm",
@@ -2073,7 +2097,10 @@ export const CARTES = [
       "5 à 10 K) et le <b>sous-refroidissement</b> (repère : 4 à 8 K). À l'<b>arrêt</b>, on suit la " +
       "procédure inverse, sans geste brusque.</p>" +
       "<p>Ces bons gestes sont aussi des gestes d'<b>efficacité énergétique</b> : un compresseur " +
-      "bien installé, bien réglé et bien entretenu consomme moins et dure plus longtemps.</p>",
+      "bien installé, bien réglé et bien entretenu consomme moins et dure plus longtemps.</p>" +
+      "<p>Le compresseur ne se pose jamais directement sur son châssis ou sur le sol. On le fixe sur des <b>plots antivibratiles</b> (des « silent-blocs ») : des cales en caoutchouc qui absorbent les vibrations pendant qu'il tourne. Sans eux, la vibration se transmet à toute la tuyauterie qui y est raccordée. Une tuyauterie qui vibre en permanence, ou montée en contrainte (tordue pour rejoindre un piquage), finit tôt ou tard par se fissurer : c'est une cause classique de fuite, qu'on évite dès l'installation.</p>" +
+      "<p>Le compresseur porte aussi des <b>vannes de service</b>, une côté aspiration et une côté refoulement. Elles ont plusieurs positions : <b>ouverte en arrière</b> pour le fonctionnement normal, une <b>position intermédiaire</b> qui permet de brancher un manomètre sans isoler le compresseur, et <b>fermée</b> pour le couper complètement du reste du circuit, par exemple avant une intervention. On manœuvre chaque vanne selon la documentation constructeur : le nombre de tours et le sens de manœuvre ne sont pas les mêmes d'un modèle à l'autre.</p>" +
+      "<p>Au démarrage, on ne se contente pas de regarder le compresseur tourner : on <b>mesure</b>. On relève l'<b>intensité</b> absorbée par le moteur (le courant électrique qu'il consomme) et on la compare à la valeur inscrite sur la <b>plaque signalétique</b> du compresseur — jamais à un chiffre appris par cœur ou approximatif. Une intensité trop haute annonce un défaut (moteur qui force, réglage à revoir). On vérifie en même temps que les pressions se stabilisent dans les plages attendues, toujours selon la documentation constructeur.</p>",
     blocs: [
       { type: "cle", t: "Le test qui doit précéder la mise en service",
         html: "Avant de mettre un compresseur neuf sous tension, on vérifie que le circuit ne fuit " +
@@ -2083,6 +2110,7 @@ export const CARTES = [
         html: "<b>Consignation électrique</b> (couper et verrouiller l'alimentation) avant toute " +
           "intervention sur les soupapes ou les sécurités. Un réglage de soupape ne s'improvise " +
           "jamais : toujours <b>selon la fiche constructeur</b>, jamais « à l'oreille »." },
+      { type: "cle", t: "La valeur plaque, jamais un chiffre inventé", html: "<p>Pour juger si un compresseur fonctionne normalement, on compare toujours ce qu'on mesure (intensité, pression) à la <b>valeur plaque</b> : celle inscrite sur la plaque signalétique de l'appareil, ou celle donnée par la documentation constructeur. On ne compare jamais à un chiffre retenu de mémoire ou à vue de nez : chaque compresseur a ses propres valeurs de référence.</p>" },
     ],
     question: {
       type: "qcm",
@@ -2244,7 +2272,9 @@ export const CARTES = [
       "chauds). Un évaporateur qui givre <b>complètement</b> en fonctionnement signale d'abord un " +
       "problème de <b>débit d'air</b> : filtre encrassé, ventilateur arrêté.</p>" +
       "<p>Points de vigilance propres : corrosion, condensats, et le <b>bac</b> — une fuite peut s'y " +
-      "dissimuler sous l'eau de dégivrage.</p>",
+      "dissimuler sous l'eau de dégivrage.</p>" +
+      "<p>La conduite d'<b>aspiration</b> relie l'évaporateur au compresseur. Elle transporte le fluide en vapeur, mais cette vapeur emporte toujours un peu d'<b>huile</b>, celle qui lubrifie le compresseur. Pour que l'huile revienne avec le gaz, on pose cette conduite en légère <b>pente</b>, inclinée vers le compresseur. Ainsi, l'huile glisse avec le fluide au lieu de stagner dans un creux du tube.</p>" +
+      "<p>Parfois, le tracé oblige la conduite d'aspiration à remonter. Par exemple, le compresseur est placé plus haut que l'évaporateur. Dans ce cas, la pente seule ne suffit plus : au ralenti, le gaz n'a pas toujours assez de vitesse pour porter l'huile vers le haut. On pose alors un <b>siphon</b> en pied de cette colonne montante. C'est un petit coude en U qui retient un peu d'huile le temps qu'elle s'accumule. Puis il la relance d'un coup vers le haut, dès que le gaz reprend de la vitesse.</p>",
     blocs: [
       {
         type: "cle",
@@ -2263,6 +2293,7 @@ export const CARTES = [
           "de descendre trop bas). Le <b>pressostat BP</b> protège le compresseur. Fonctions " +
           "différentes, réglages différents.",
       },
+      { type: "piege", t: "Conduite mal posée = huile piégée", html: "<p>Une conduite d'aspiration posée à plat, en contre-pente, ou une colonne montante sans <b>siphon</b> : l'huile ne circule plus, elle reste bloquée dans les points bas. Le compresseur tourne alors avec de moins en moins d'huile, jusqu'au <b>grippage</b> : les pièces internes, plus assez lubrifiées, se bloquent et le compresseur casse. C'est exactement ce que contrôle le code <b>8.05</b> : vérifier que les conduites de liquide et d'aspiration sont dans la bonne position, avec la <b>pente</b> et le <b>siphon</b> là où il faut.</p>" },
     ],
     question: {
       type: "qcm",
@@ -2699,7 +2730,11 @@ export const CARTES = [
       "<p>Côté énergie, le <b>COP</b> est le rapport de la puissance frigorifique produite à la " +
       "puissance électrique consommée. On l'améliore en <b>rapprochant</b> la température de " +
       "condensation de celle d'évaporation : condenseur propre, échangeurs bien dimensionnés, " +
-      "réglages justes. Réduire la charge, enfin, améliore à la fois la sécurité et le rendement.</p>",
+      "réglages justes. Réduire la charge, enfin, améliore à la fois la sécurité et le rendement.</p>" +
+      "<p>Pour réduire la charge de fluide frigorigène, on peut aussi changer la <b>conception</b> du système. Dans un système à <b>boucle secondaire</b>, le fluide frigorigène reste confiné dans la machinerie, avec une charge réduite. Un fluide caloporteur — de l'<b>eau glacée</b> ou de l'<b>eau glycolée</b> — circule ensuite dans les postes (vitrines, centrales de traitement d'air) pour transporter le froid jusqu'à eux. Le fluide frigorigène ne quitte jamais la salle des machines.</p>" +
+      "<p>Le système en <b>cascade</b> pousse cette logique plus loin : deux circuits frigorifiques séparés sont montés en série, chacun avec sa propre charge, réduite elle aussi. Le circuit basse température évacue sa chaleur dans le circuit haute température, qui la rejette à l'extérieur. Chaque circuit reste petit, donc plus facile à confiner en cas de fuite.</p>" +
+      "<p>Chaque fluide de substitution a ses <b>avantages</b> et ses <b>inconvénients</b>, selon l'application et le <b>climat</b>. Le <b>CO₂</b> est performant en froid commercial, mais son efficacité baisse quand l'air extérieur est très chaud. Les <b>hydrocarbures</b> sont efficaces, mais leur inflammabilité limite la charge autorisée. L'<b>ammoniac</b> est réservé aux installations industrielles, à cause de sa toxicité. Il n'y a pas de meilleur fluide dans l'absolu : le choix se fait selon l'application, le climat du site, et la documentation constructeur, à faire valider avant tout choix.</p>" +
+      "<p>Une machine aux <b>hydrocarbures</b> n'est pas construite comme les autres. Tous les composants électriques en contact possible avec le gaz — relais, thermostats, ventilateurs — sont <b>antidéflagrants</b> ou <b>non étincelants</b> : ils sont conçus pour ne jamais produire d'étincelle qui pourrait enflammer le gaz. La charge de fluide est aussi limitée dès la conception. Enfin, l'implantation prévoit une <b>ventilation</b> adaptée : le propane est plus lourd que l'air, il s'accumule donc en bas, près du sol, en cas de fuite.</p>",
     blocs: [
       {
         type: "cle",
@@ -2724,6 +2759,7 @@ export const CARTES = [
           "<p style=\"margin:0 0 10px\">Passe en revue R-290, R-1234yf, R-744, R-32 : classe de sécurité, PRP, glide. Le fluide « parfait » n existe pas — c est tout l objet de ce groupe.</p>" +
           outil("fiche-fluide.html", "Carte d identité du fluide interactive", 415),
       },
+      { type: "cle", t: "Hydrocarbures : une machine pas comme les autres", html: "<b>Antidéflagrant</b> ou <b>non étincelant</b> : sur une machine aux hydrocarbures, tout composant électrique proche du gaz doit respecter cette règle, pour ne jamais produire d'étincelle. Et comme le propane est plus lourd que l'air, il s'accumule en bas en cas de fuite — la <b>ventilation</b> du local en tient compte dès la conception." },
     ],
     question: {
       type: "qcm",
@@ -2789,7 +2825,10 @@ export const CARTES = [
       "<p>Enfin, bien travailler économise l'énergie. Une charge <b>juste</b> — et les charges " +
       "hydrocarbures sont faibles —, des échangeurs propres et des réglages exacts font qu'une " +
       "machine au R-290 tient ses performances. Une charge approximative dégrade le rendement " +
-      "<b>et</b> la sécurité en même temps.</p>",
+      "<b>et</b> la sécurité en même temps.</p>" +
+      "<p>Un hydrocarbure récupéré qu'on ne peut pas réutiliser ne part <b>jamais</b> à l'atmosphère, et jamais à l'égout : il part en <b>élimination</b>. C'est une filière agréée qui détruit le fluide dans des conditions contrôlées, comme pour tout déchet dangereux. La bouteille envoyée en <b>destruction</b> est accompagnée d'un bordereau qui trace le mouvement, du technicien jusqu'au centre de traitement. On garde ce bordereau : c'est la preuve que le fluide a bien été éliminé, pas relâché.</p>" +
+      "<p>Calculer la <b>charge maximale</b> admissible d'un fluide inflammable, ce n'est pas la deviner. Ce calcul dépend du <b>volume de la pièce</b> desservie et de la <b>limite pratique</b> du fluide, c'est-à-dire la quantité maximale tolérée dans l'air ambiant sans risque. Plus la pièce est petite, moins on a le droit de charge : un même compresseur au R-290 n'a pas la même charge autorisée dans un grand local et dans une pièce exiguë. La méthode et les valeurs à utiliser se trouvent dans la norme <b>NF EN 378</b> et dans la documentation du constructeur — on les <b>lit</b>, on ne les invente jamais, et le résultat du calcul se fait <b>valider</b> avant toute mise en service.</p>" +
+      "<p>Sur un équipement à fluide inflammable, l'<b>efficacité énergétique</b> se travaille avec les mêmes gestes que sur toutes les machines. La différence, c'est que la charge exacte compte double : ces circuits sont conçus avec une charge volontairement petite, alors le moindre écart — un peu trop, un peu pas assez — dérègle vite l'échange et fait chuter la performance, bien avant que ça n'arrive sur une machine à grosse charge.</p>",
     blocs: [
       {
         type: "piege",
@@ -2808,6 +2847,7 @@ export const CARTES = [
           "détecteur en place. Jamais d'oxygène, jamais d'air comprimé, jamais de flamme sur un " +
           "circuit non inerté.",
       },
+      { type: "cle", t: "Charge maximale : jamais estimée", html: "Le <b>calcul</b> de la charge maximale dépend du <b>volume de la pièce</b> et de la limite pratique du fluide. Il se fait avec la <b>NF EN 378</b> et la documentation constructeur, jamais de mémoire. Petite pièce = charge autorisée plus faible." },
     ],
     question: {
       type: "qcm",
@@ -2965,7 +3005,10 @@ export const CARTES = [
       "<p><b>Ammoniac (R-717)</b> — classé <b>B2L</b> : <b>toxique</b> et faiblement inflammable. " +
       "Fluide du froid industriel (agroalimentaire, entrepôts), jamais du résidentiel. " +
       "Son odeur piquante alerte bien avant le seuil dangereux. En cas de fuite : <b>alerter, " +
-      "évacuer, ne jamais intervenir seul</b>.</p>",
+      "évacuer, ne jamais intervenir seul</b>.</p>" +
+      "<p>Sur le terrain, le CO₂ ne se manipule pas avec le matériel courant : ses pressions de travail sont bien plus élevées que celles des fluides classiques. Manifold, flexibles, vannes — tout doit être <b>dédié au CO₂</b>. Les valeurs exactes dépendent du point de fonctionnement et se lisent toujours dans la <b>documentation constructeur</b>, à faire valider.</p>" +
+      "<p>Le diagramme <b>log p/h</b> (pression selon l'enthalpie) et les <b>tables de saturation</b> du CO₂ se lisent comme ceux de tout autre fluide — mêmes repères de bulle et de rosée — mais dans un domaine de pression qui lui est propre. C'est ce domaine particulier qui explique un comportement que les autres fluides n'ont pas : la formation de glace carbonique.</p>" +
+      "<p>Avant de commencer une intervention sur un site au CO₂ ou à l'ammoniac, on prend un instant pour vérifier ce qui est déjà en place. La <b>signalisation</b> à l'entrée du local doit être visible et à jour. Les <b>issues de secours</b> doivent rester dégagées, jamais encombrées, pour permettre une évacuation rapide en cas de fuite. On contrôle aussi que les <b>capteurs</b> de gaz et les <b>alarmes</b> qui leur sont associées sont en état de marche, pas seulement présents dans le local.</p>",
     blocs: [
       {
         type: "piege",
@@ -2983,6 +3026,8 @@ export const CARTES = [
           "un coup de main sur une fuite d'ammoniac » est <b>faux</b> : il faut la catégorie C, " +
           "sans exception.",
       },
+      { type: "piege", t: "La glace carbonique, un double danger", html: "<p>La fiche l'a déjà signalé : le CO₂ peut se solidifier à la détente. Ce solide a un nom : c'est la <b>glace carbonique</b>, aussi appelée <b>neige carbonique</b>. Elle se forme quand le CO₂ passe directement de l'état gazeux à l'état solide, à la détente à l'air libre. C'est le domaine de pression propre au CO₂, visible sur son diagramme log p/h, qui explique ce comportement que les fluides courants n'ont pas. On garde en tête le double danger à chaque détente de CO₂ à l'air libre : la <b>brûlure par le froid</b> au contact de la peau, et le <b>bouchon solide</b> qui peut obstruer une vanne ou une tuyauterie.</p>" },
+      { type: "cle", t: "Le réflexe d'arrivée sur site", html: "<p>Sur un site CO₂ ou ammoniac, on ne commence jamais le travail sans ce contrôle rapide : <b>signalisation</b> en place, <b>issues de secours</b> dégagées, <b>capteurs</b> et <b>alarmes</b> fonctionnels. Ce réflexe fait partie du travail, au même titre que le port du matériel de protection.</p>" },
     ],
     question: {
       type: "qcm",
@@ -3002,6 +3047,8 @@ export const CARTES = [
       { code: "13.01", libelle: "Reconnaître une installation CO₂ et ses risques (pression)", etat: "a_evaluer" },
       { code: "13.04", libelle: "Identifier les cylindres et matériels dédiés, et ne pas intervenir", etat: "a_evaluer" },
       { code: "14.01", libelle: "Reconnaître une installation NH₃ et la conduite à tenir", etat: "a_evaluer" },
+      { code: "1.09", libelle: "Connaître les pressions élevées du CO₂, son diagramme log p/h, ses tables de saturation et le risque de glace carbonique." },
+      { code: "13.14", libelle: "Vérifier avant d'intervenir que la signalisation, les issues de secours, les capteurs et les alarmes du site sont bien en état." },
     ],
     liens: [suite("cfin", "Bilan"), SOMMAIRE],
     notes_pilote:

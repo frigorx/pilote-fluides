@@ -14,6 +14,7 @@
    Usage : node build/build.mjs
    ===================================================================== */
 import { readFileSync, writeFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { PACK_META, RESSOURCES, CARTES } from "../packs/fluides/cartes.js";
@@ -415,6 +416,13 @@ function main() {
   rapportCouverture(CARTES);
   console.log("  texte des cartes : " + texte.toLocaleString("fr-FR") + " caractères");
   console.log("  poids élève : " + Math.round(Buffer.byteLength(jsEleve) / 1024) + " Ko");
+
+  /* --- profondeur : la couverture dit qu'un code est CITÉ, la profondeur
+     mesure qu'il est TENU. Lancée ici pour qu'elle ne soit jamais oubliée ;
+     elle avertit, elle ne bloque pas (le jour venu : --strict). --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/profondeur.mjs")], {
+    stdio: "inherit",
+  });
 }
 
 main();
