@@ -140,7 +140,14 @@ export function couverture(codesCites, categories) {
    --------------------------------------------------------------------- */
 export function verifierSynchro() {
   if (!existsSync(SOURCE_AMONT)) return null;
-  const h = (p) => createHash("sha256").update(readFileSync(p)).digest("hex");
+  // On normalise les fins de ligne avant de comparer : git convertit en CRLF
+  // sous Windows, et deux copies identiques auraient sinon des empreintes
+  // différentes. Une garde qui crie au loup finit par être ignorée — ce qui
+  // est pire que pas de garde du tout.
+  const h = (p) =>
+    createHash("sha256")
+      .update(readFileSync(p, "utf8").replace(/\r\n/g, "\n"))
+      .digest("hex");
   const local = h(FICHIER);
   const amont = h(SOURCE_AMONT);
   return local === amont
