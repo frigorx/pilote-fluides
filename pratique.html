@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La partie pratique — manipulation fluidique</title>
+<meta name="description" content="TP formatif et évaluation de la manipulation fluidique : feuilles de guidance pas-à-pas, visas formateur, grille par compétence. Présentation.">
+<style>
+  :root{
+    --bleu:#1B3A63; --bleu2:#2f5689; --bleu3:#3d6ea8; --orange:#FF6B35; --orange-cl:#ffe2d6;
+    --txt:#1d2a38; --mut:#5a6b7d; --fond:#eef2f6; --blanc:#fff; --ligne:#d6dee7;
+    --ok:#1e7e54; --ok-bg:#e3f5ec; --ko:#c0392b; --ko-bg:#fbe7e4; --attente:#b06a00;
+    --r:16px; --ombre:0 2px 14px rgba(27,58,99,.09); --ombre2:0 8px 30px rgba(27,58,99,.16);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font:17px/1.65 'Segoe UI',Calibri,system-ui,sans-serif;color:var(--txt);background:var(--fond)}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{line-height:1.25}
+  a{color:var(--bleu2)}
+  button{font:inherit;cursor:pointer}
+
+  header{background:linear-gradient(160deg,var(--bleu) 0%,var(--bleu2) 60%,var(--bleu3) 100%);
+    color:#fff;padding:44px 0 50px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;right:-70px;top:-70px;width:300px;height:300px;
+    border-radius:50%;background:rgba(255,107,53,.16)}
+  header .wrap{position:relative;z-index:1}
+  .fil{font-size:14.5px;opacity:.85;margin-bottom:14px}
+  .fil a{color:#fff}
+  header h1{font-size:clamp(27px,4.5vw,40px);margin:0 0 12px}
+  header .sous{font-size:clamp(16px,2vw,20px);max-width:700px;opacity:.94;margin:0}
+  .etiq{display:inline-block;background:var(--orange);color:#fff;font-size:13px;font-weight:700;
+    border-radius:999px;padding:4px 14px;margin-bottom:14px;letter-spacing:.03em}
+
+  section{padding:46px 0}
+  section.clair{background:var(--blanc)}
+  h2{font-size:clamp(21px,2.8vw,28px);color:var(--bleu);margin:0 0 8px}
+  .chapo{color:var(--mut);font-size:17.5px;max-width:740px;margin:0 0 26px}
+
+  .duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .rg{background:var(--blanc);border:1.5px solid var(--ligne);border-left:6px solid var(--bleu2);
+    border-radius:12px;padding:22px 24px}
+  .rg.som{border-left-color:var(--ko)}
+  .rg h3{margin:0 0 6px;font-size:19px;color:var(--bleu)}
+  .rg .q{font-size:13px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+  .rg p{margin:0 0 10px;font-size:15.5px;color:var(--mut)}
+  .rg ul{margin:0;padding-left:19px;font-size:15.5px;color:var(--mut)}
+  .rg li{margin:5px 0}
+
+  /* ---- Démonstration ---- */
+  .demo{background:var(--blanc);border:2px solid var(--bleu);border-radius:var(--r);overflow:hidden;
+    box-shadow:var(--ombre2)}
+  .demo .tete{background:var(--bleu);color:#fff;padding:12px 22px;display:flex;align-items:center;
+    gap:12px;flex-wrap:wrap;font-size:14.5px}
+  .demo .tete b{font-size:16px}
+  .demo .tete .sp{flex:1}
+  .demo .tete .ver{background:rgba(255,255,255,.16);border-radius:999px;padding:3px 12px;font-size:13px}
+  .demo .corps{padding:26px 28px}
+  .etape{display:none}
+  .etape.on{display:block}
+  .etape .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;
+    border-radius:50%;background:var(--orange);color:#fff;font-weight:700;font-size:19px;margin-right:12px}
+  .etape .tt{display:flex;align-items:center;margin-bottom:6px}
+  .etape .tt h3{margin:0;font-size:23px;color:var(--bleu)}
+  .etape .pic{font-size:30px;margin-left:auto}
+  .etape .act{font-size:19px;margin:14px 0 18px;line-height:1.55}
+  .chk{background:#f3f7fb;border-radius:10px;padding:14px 18px;margin-bottom:16px}
+  .chk .t{font-weight:700;color:var(--bleu);font-size:14.5px;margin-bottom:8px}
+  .chk label{display:flex;align-items:flex-start;gap:10px;padding:5px 0;font-size:16px;cursor:pointer}
+  .chk input{width:19px;height:19px;margin-top:2px;accent-color:var(--ok);flex:none}
+  .aide{border-left:5px solid var(--attente);background:#fff9ef;border-radius:8px;padding:12px 16px;
+    font-size:15.5px;color:#7a4d00;margin-bottom:14px}
+  .aide b{color:var(--attente)}
+  .stop{border:2px solid var(--ko);background:var(--ko-bg);border-radius:10px;padding:14px 18px;
+    font-size:16px;font-weight:600;color:#8c2318}
+  .stop .t{font-weight:800;letter-spacing:.03em;margin-bottom:3px}
+  .barre{display:flex;align-items:center;gap:12px;padding:14px 28px;border-top:1px solid var(--ligne);
+    background:#fafcfe;flex-wrap:wrap}
+  .barre .sp{flex:1}
+  .barre button{border:1.5px solid var(--ligne);background:#fff;border-radius:8px;padding:8px 16px;color:var(--txt)}
+  .barre button:hover{border-color:var(--bleu)}
+  .barre button.pr{background:var(--orange);border-color:var(--orange);color:#fff;font-weight:700}
+  .barre .pos{font-size:14px;color:var(--mut)}
+  .duree{font-size:14px;color:var(--mut)}
+
+  /* ---- Grille ---- */
+  table{width:100%;border-collapse:collapse;background:var(--blanc);border-radius:12px;overflow:hidden;
+    box-shadow:var(--ombre);font-size:15.5px}
+  th{background:var(--bleu);color:#fff;text-align:left;padding:11px 14px;font-size:14px}
+  td{padding:11px 14px;border-top:1px solid var(--ligne)}
+  td.c{text-align:center}
+  .p3{background:var(--ko-bg);color:#8c2318;font-weight:700;border-radius:999px;padding:2px 9px;font-size:13px}
+  .p2{background:#fff4e0;color:var(--attente);font-weight:700;border-radius:999px;padding:2px 9px;font-size:13px}
+  .p1{background:var(--ok-bg);color:var(--ok);font-weight:700;border-radius:999px;padding:2px 9px;font-size:13px}
+  .code{font-weight:700;color:var(--bleu);font-size:14px}
+  .scroll{overflow-x:auto}
+
+  .note{border-left:5px solid var(--bleu);background:#f3f7fb;border-radius:10px;padding:16px 20px;margin:18px 0}
+  .note.att{border-color:var(--attente);background:#fff9ef}
+  .note.ko{border-color:var(--ko);background:var(--ko-bg)}
+  .note .t{font-weight:700;color:var(--bleu);margin-bottom:4px}
+  .note.att .t{color:var(--attente)} .note.ko .t{color:#8c2318}
+
+  ul.pts{margin:0;padding-left:20px} ul.pts li{margin:9px 0}
+  ul.pts b{color:var(--bleu)}
+
+  footer{background:var(--bleu);color:rgba(255,255,255,.82);padding:30px 0;font-size:14.5px}
+  footer a{color:#fff}
+  .bt{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:700;
+    padding:12px 24px;border-radius:999px;box-shadow:var(--ombre2)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="fil"><a href="portail.html">◂ Dossier de présentation</a></div>
+    <div class="etiq">EN CONSTRUCTION</div>
+    <h1>La partie pratique — manipulation fluidique</h1>
+    <p class="sous">Le même écran sert deux fois : en TP le formateur accompagne, en évaluation il
+    valide. Voici à quoi ça ressemble.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Deux régimes, un seul outil</h2>
+    <p class="chapo">C'est le principe qui tient tout le reste : le stagiaire apprend le geste avec
+    exactement le support qui servira à l'évaluer. Rien n'est découvert le jour de l'épreuve.</p>
+    <div class="duo">
+      <div class="rg">
+        <div class="q">Pendant la formation</div>
+        <h3>TP formatif</h3>
+        <p>La fiche guide pas à pas. À chaque étape : ce que je fais, ce que je vérifie, et l'aide
+        si je bloque.</p>
+        <ul>
+          <li>deux versions — <b>guidée</b> pour démarrer, <b>consolidée</b> quand on se rapproche de l'épreuve</li>
+          <li>le formateur passe aux points d'arrêt, il <b>accompagne</b></li>
+          <li>un défi pour celui qui finit en avance</li>
+          <li>des ateliers de reprise de 20 à 30 min quand une notion ne passe pas</li>
+        </ul>
+      </div>
+      <div class="rg som">
+        <div class="q">Le jour de l'épreuve</div>
+        <h3>Évaluation</h3>
+        <p>Même déroulé, même vocabulaire. Ce qui change : le formateur ne guide plus, il constate.</p>
+        <ul>
+          <li>chaque tâche est rattachée à un <b>code du référentiel</b></li>
+          <li>la pondération tient compte des <b>conséquences environnementales</b> de l'erreur</li>
+          <li>les points d'arrêt deviennent des <b>visas bloquants</b></li>
+          <li>certains gestes de sécurité sont <b>éliminatoires</b> — ils arrêtent l'épreuve</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="clair">
+  <div class="wrap">
+    <h2>Une fiche de guidance, en vrai</h2>
+    <p class="chapo">Voici quatre étapes d'un TP de pose de manifold et de tirage au vide, dans la
+    version guidée. Une action par carte, trois lignes maximum, un pictogramme, et l'aide toujours
+    accessible. Naviguez avec les boutons.</p>
+
+    <div class="demo">
+      <div class="tete">
+        <b>TP — Poser le manifold, tirer au vide</b>
+        <span class="ver">version guidée</span>
+        <span class="sp"></span>
+        <span>codes 5.01 · 3.03 · 3.04</span>
+      </div>
+      <div class="corps" id="corps"></div>
+      <div class="barre">
+        <button id="prec">◂ Précédent</button>
+        <button class="pr" id="suiv">Étape suivante ▸</button>
+        <span class="sp"></span>
+        <span class="duree" id="duree"></span>
+        <span class="pos" id="pos"></span>
+      </div>
+    </div>
+
+    <div class="note">
+      <div class="t">Pourquoi les cases à cocher</div>
+      Elles ne servent pas à noter : elles servent au stagiaire à <b>ne rien oublier</b> et à savoir
+      où il en est. Sur une manipulation en douze gestes, c'est ce qui évite de sauter la pesée
+      initiale ou de laisser une vanne ouverte.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Comment la manipulation est évaluée</h2>
+    <p class="chapo">Un extrait de la grille. Chaque tâche porte son code du référentiel et son
+    poids : plus l'erreur a de conséquences sur l'environnement ou la sécurité, plus elle pèse.</p>
+    <div class="scroll">
+      <table>
+        <tr><th>Tâche</th><th>Compétence</th><th>Poids</th><th>Ce qu'on regarde</th></tr>
+        <tr><td><b>Poser le manifold sans fuite</b></td><td class="c"><span class="code">5.01</span></td>
+            <td class="c"><span class="p3">×3</span></td>
+            <td>Vannes fermées avant raccordement, flexibles purgés, aucune émission perceptible</td></tr>
+        <tr><td><b>Tirer au vide</b></td><td class="c"><span class="code">3.03 · 3.04</span></td>
+            <td class="c"><span class="p2">×2</span></td>
+            <td>Montage correct, vacuomètre en dérivation, <b>vanne fermée avant l'arrêt</b> de la pompe</td></tr>
+        <tr><td><b>Mettre sous azote</b></td><td class="c"><span class="code">3.01 · 3.02</span></td>
+            <td class="c"><span class="p2">×2</span></td>
+            <td>Mano-détendeur monté, montée en pression progressive, valeur selon la fiche constructeur</td></tr>
+        <tr><td><b>Récupérer le fluide</b></td><td class="c"><span class="code">5.03</span></td>
+            <td class="c"><span class="p3">×3</span></td>
+            <td>Cylindre pesé avant et après, aucune émission, consignation au registre</td></tr>
+        <tr><td><b>Contrôler l'étanchéité</b></td><td class="c"><span class="code">4.03 · 4.08</span></td>
+            <td class="c"><span class="p3">×3</span></td>
+            <td>Balayage lent au détecteur, alerte confirmée par un second passage</td></tr>
+        <tr><td><b>Déposer sans perdre de fluide</b></td><td class="c"><span class="code">5.01</span></td>
+            <td class="c"><span class="p3">×3</span></td>
+            <td>Ce qui reste dans les flexibles est récupéré, pas relâché</td></tr>
+        <tr><td><b>Renseigner les documents</b></td><td class="c"><span class="code">5.07</span></td>
+            <td class="c"><span class="p1">×1</span></td>
+            <td>Registre complété, quantités réelles — jamais une estimation</td></tr>
+      </table>
+    </div>
+
+    <div class="note ko">
+      <div class="t">⛔ Quatre gestes arrêtent l'épreuve</div>
+      Ils ne coûtent pas des points, ils sont <b>éliminatoires</b> — parce qu'en situation réelle,
+      ils blessent ou ils polluent :
+      <ul style="margin:8px 0 0">
+        <li>mettre en pression à l'<b>oxygène</b> ou à l'<b>air comprimé</b> au lieu de l'azote ;</li>
+        <li>intervenir <b>sans consignation électrique</b> ;</li>
+        <li><b>relâcher volontairement</b> du fluide à l'atmosphère ;</li>
+        <li>ne pas porter les <b>équipements de protection</b>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="clair">
+  <div class="wrap">
+    <h2>Ce qui vient</h2>
+    <p class="chapo">Cette partie s'appuie sur un outil d'évaluation déjà éprouvé en CAP, qui est
+    en cours d'adaptation au référentiel de l'habilitation.</p>
+    <ul class="pts">
+      <li><b>Le froid d'abord, la climatisation ensuite.</b> L'essentiel du geste est commun :
+      manifold, tirage au vide, azote, récupération, étanchéité, documents. Seuls les organes de
+      régulation et quelques consignes changent.</li>
+      <li><b>Les fluides inflammables</b> — analyse de risques, charge limite, zone de travail —
+      formeront un module à part : c'est le changement de fond du nouveau régime.</li>
+      <li><b>Tout reste sur l'ordinateur.</b> Aucune donnée en ligne, aucun compte, aucun service
+      externe : une base locale sur le poste du formateur, sauvegardée comme un fichier.</li>
+      <li><b>Les photos et les machines</b> viendront du plateau réel — c'est ce qui manque le plus
+      aujourd'hui, et ce qu'aucune illustration ne remplace.</li>
+    </ul>
+    <div class="note att">
+      <div class="t">Cette page est une présentation, pas l'outil</div>
+      La démonstration ci-dessus est fidèle au format retenu, mais elle ne contient <b>aucune donnée
+      de stagiaire</b> et n'enregistre rien. L'outil d'évaluation, lui, restera sur le poste du
+      formateur et ne sera pas publié.
+    </div>
+    <p style="margin-top:24px"><a class="bt" href="portail.html">◂ Retour au dossier de présentation</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>inerWeb Édu</b> — F. Henninot, LP privé Jacques Raynaud, Marseille
+    · arrêté du 21 novembre 2025
+    <br><br>
+    <a href="portail.html">Dossier de présentation</a> ·
+    <a href="index.html">Espace élève</a> ·
+    <a href="https://github.com/frigorx/pilote-fluides/issues/new" target="_blank" rel="noopener">Signaler une erreur</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  /* Quatre étapes réelles, au format exact des feuilles de guidance :
+     une action par carte, checklist, aide, et point d'arrêt formateur.
+     Aucune valeur chiffrée n'est affirmée : elles se lisent sur la fiche
+     constructeur, jamais dans un support de cours. */
+  var ETAPES = [
+    { num:1, titre:"Je prépare et je consigne", pic:"🦺", duree:"5 min",
+      action:"Je mets mes <b>EPI</b>. Je coupe l'alimentation, je <b>consigne</b>, et je vérifie l'absence de tension avant de toucher quoi que ce soit.",
+      chk:["EPI portés : gants, lunettes","Alimentation coupée et consignée","Absence de tension vérifiée","Bouteille de récupération pesée"],
+      aide:"La pesée de la bouteille se fait <b>avant</b>. Sans elle, la quantité récupérée n'est qu'une estimation — et une estimation ne se consigne pas dans un registre.",
+      stop:null },
+    { num:2, titre:"Je raccorde le manifold", pic:"🔧", duree:"10 min",
+      action:"Les <b>deux vannes du manifold fermées</b>, je raccorde le flexible bleu côté BP, le rouge côté HP. Je purge les flexibles avant d'ouvrir.",
+      chk:["Les deux vannes du manifold sont fermées","Flexible bleu sur BP, rouge sur HP","Flexibles purgés","Aucun sifflement au raccordement"],
+      aide:"Un raccordement vanne ouverte relâche du fluide. C'est le geste qui distingue un professionnel : on ferme <b>avant</b>, toujours.",
+      stop:"Le formateur vérifie le montage avant la mise en service" },
+    { num:3, titre:"Je tire au vide", pic:"🌀", duree:"15 min",
+      action:"Je monte la pompe sur le flexible central et le <b>vacuomètre en dérivation, près du circuit</b> — pas collé à la pompe, il mentirait.",
+      chk:["Niveau d'huile de la pompe vérifié","Vacuomètre en dérivation, côté circuit","Vide atteint selon la fiche constructeur","Vide stable, il ne remonte pas"],
+      aide:"Si le vide <b>remonte</b> après l'arrêt, c'est qu'il reste de l'humidité ou qu'il y a une fuite. On ne charge pas : on cherche.",
+      stop:"Le formateur constate la valeur de vide et sa stabilité" },
+    { num:4, titre:"Je dépose sans rien perdre", pic:"♻", duree:"10 min",
+      action:"Je ferme les vannes, je laisse la pression se <b>stabiliser</b>, puis je desserre <b>lentement</b>. Ce qui reste dans les flexibles se récupère.",
+      chk:["Vannes fermées avant toute déconnexion","Pression stabilisée","Desserrage lent, sans à-coup","Fluide des flexibles récupéré","Bouchons remis en place"],
+      aide:"Fermer, attendre, desserrer lentement : c'est la chorégraphie qui évite le rejet. Un desserrage brutal projette de l'huile et relâche du fluide.",
+      stop:null }
+  ];
+
+  var i = 0;
+  var corps = document.getElementById("corps");
+
+  function rendre(){
+    var e = ETAPES[i];
+    var h = "<div class='etape on'>";
+    h += "<div class='tt'><span class='num'>" + e.num + "</span><h3>" + e.titre + "</h3>" +
+         "<span class='pic'>" + e.pic + "</span></div>";
+    h += "<p class='act'>" + e.action + "</p>";
+    h += "<div class='chk'><div class='t'>Je vérifie</div>";
+    e.chk.forEach(function(c, n){
+      h += "<label><input type='checkbox' id='c" + i + "_" + n + "'><span>" + c + "</span></label>";
+    });
+    h += "</div>";
+    h += "<div class='aide'><b>💡 Un coup de main :</b> " + e.aide + "</div>";
+    if (e.stop)
+      h += "<div class='stop'><div class='t'>⛔ POINT D'ARRÊT</div>" + e.stop + "</div>";
+    h += "</div>";
+    corps.innerHTML = h;
+    document.getElementById("pos").textContent = "Étape " + (i + 1) + " sur " + ETAPES.length;
+    document.getElementById("duree").textContent = "⏱ " + e.duree;
+    document.getElementById("prec").disabled = (i === 0);
+    document.getElementById("suiv").textContent = (i === ETAPES.length - 1) ? "↺ Revenir au début" : "Étape suivante ▸";
+  }
+  document.getElementById("suiv").onclick = function(){ i = (i + 1) % ETAPES.length; rendre(); };
+  document.getElementById("prec").onclick = function(){ if (i > 0) { i--; rendre(); } };
+  rendre();
+})();
+</script>
+</body>
+</html>
