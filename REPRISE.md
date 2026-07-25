@@ -19,11 +19,17 @@ tournant dans le moteur générique **inerWeb Pilote** (repris de `frigorx/r408`
 > ⚠️ **Démonstrateur, pas version définitive.** Contenu jamais relu par un œil de frigoriste
 > (voir § 6). Ne pas diffuser largement avant la relecture de F. Henninot.
 
+> 📐 **Plan d'ensemble des deux projets** : `C:\git\habilitation-fluide\ARCHITECTURE-DISPOSITIF.md`.
+> Il pose la frontière **public / privé** — ce dépôt-ci porte la formation, le dépôt privé porte
+> l'évaluation officielle. Les 85 questions d'examen et les 10 sujets **n'entrent jamais ici** :
+> publier un sujet est irréversible. Le référentiel des 136 codes est la seule chose partagée.
+
 **Dépôt** : `C:\git\pilote-fluides` → `github.com/frigorx/pilote-fluides` (public)
 **En ligne** : https://frigorx.github.io/pilote-fluides/
 
 | Page | Rôle | Pour qui |
 |---|---|---|
+| [`projection.html`](https://frigorx.github.io/pilote-fluides/projection.html) | **le déroulé des 3 jours** : diapositives, minuteur, questions à révéler, vue orateur | formateur, en salle |
 | [`portail.html`](https://frigorx.github.io/pilote-fluides/portail.html) | **point d'entrée** : explique le projet, relie tout | vous, les collègues |
 | [`index.html`](https://frigorx.github.io/pilote-fluides/) | l'application élève | **le lien à distribuer** |
 | [`formateur.html`](https://frigorx.github.io/pilote-fluides/formateur.html) | mode pilotage verrouillé, notes d'animation visibles | formateur |
@@ -36,15 +42,48 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ## 2. État au 25/07/2026
 
-**52 cartes** · **180 questions** · **16 planches SVG** (dont 10 animées) · 4 illustrations · **3 outils embarqués**
+**68 cartes** · **206 questions** · **16 planches SVG** (dont 10 animées) · 4 illustrations · **3 outils embarqués**
+
+> **Couverture du référentiel officiel : A1 100 % · A2 100 % · D 100 % · E 100 %.**
+> Mesurée à chaque build, écrite dans `COUVERTURE-REFERENTIEL.md`. Elle valait 60 % en A1
+> avant la refonte compétences du 25/07 — personne ne pouvait le voir, faute de mesure.
 
 | | |
 |---|---|
-| 1 accueil · 5 menus | A1, A2, D, E + **Réviser par thème** |
-| 19 fiches de cours | G1 → G13 du référentiel |
+| 1 accueil · 6 menus | A1, A2, D, E · **Réviser par thème** · **Préparation pratique** |
+| 33 fiches de cours | dont **7 de préparation pratique** (le matériel et les gestes) |
+| 1 carte « Ma progression » | où j'en suis, compétence par compétence — tout en local |
 | 5 exercices « frigoriste-détective » | mises en situation à indices croisés |
 | 21 séries et examens | 13 séries de révision par thème + 8 examens sur 3 paliers |
-| 180 questions | étiquetées par groupe **et** par niveau (1 fondamental / 2 diagnostic) |
+| 206 questions | rattachées à un **code de compétence**, un niveau, une catégorie |
+
+**La refonte compétences (25/07)** — le pack enseignait des thèmes, il enseigne désormais des
+compétences opposables :
+- le **référentiel officiel est une donnée de build** (`referentiel-2025.json`, 136 codes) : les
+  libellés de l'arrêté ne sont plus recopiés à la main, ils sont **résolus et injectés** ;
+- l'élève lit sur chaque fiche **« 🎯 Ce que l'examen attend de vous »** — reformulation accessible,
+  marqueur théorique/pratique, ★ nouveau 2025, et le texte de l'arrêté à un clic ;
+- le **bilan d'examen nomme la compétence** non acquise au lieu de renvoyer à un numéro de fiche ;
+- **A1/A2/D/E sont de vrais filtres** : entrer par un menu de catégorie fixe le champ, et un
+  candidat D ne reçoit plus que la moitié des questions — celles qui le concernent.
+
+**Le produit de formation (25/07, second temps)** — le pack est devenu un outil de stage :
+- **`projection.html`** : le déroulé en salle. 4 blocs (3 jours de théorie + la préparation
+  pratique), 39 séquences, 270 diapositives. La boucle est celle voulue par F. Henninot :
+  on projette et on explique → la vidéo → le mini-questionnaire → on révèle → on avance.
+  Les diapositives sont **générées depuis les fiches** (`build/parcours.mjs`) : une fiche
+  corrigée = une projection corrigée, et **une seule relecture** au lieu de deux.
+  Vue orateur (touche N) : notes d'animation + réponse attendue — la « troisième face » du
+  cahier des charges. Minuteur par séquence, plein écran, navigation clavier.
+- **Les questions projetées sont celles que l'élève retrouve chez lui** : tirage déterministe
+  sur les codes de la séquence. C'est la spirale — vu ensemble, refait seul le soir.
+- **« Ma progression »** : les 93 compétences de sa catégorie, en quatre états lisibles
+  (acquise · fragile · à revoir · jamais testée), mis à jour à chaque réponse. Distingués par
+  la couleur **et** par un mot, jamais par la couleur seule. Rien ne sort du navigateur.
+- **Module « Préparation pratique »** (7 fiches) : manifold, station de récupération, pompe à
+  vide et vacuomètre, bouteille d'azote et mano-détendeur, **ordre des vannes**, balance et
+  pesée, préparation de chantier. Il ne remplace pas l'atelier, il le prépare — charte
+  FrigorX : préparation ≤ 1 h, sécurité démontrée et imposée, jamais découverte.
 
 **Les 3 paliers d'examen** : 🟢 Échauffement (niveau 1, seuil 60 %) · 📝 Examen blanc (mixte, 70 %)
 · 🔴 Défi technicien (niveau 2, seuil 80 %).
@@ -58,15 +97,21 @@ ratées → score précédent affiché (localStorage élève, **rien ne remonte*
 ## 3. Comment c'est fabriqué
 
 ```bash
-node build/convert.mjs    # Mission F-GAZ → packs/fluides/banque.gen.json (180 questions)
+node build/convert.mjs    # Mission F-GAZ + questions-pack.json → banque.gen.json (202 questions)
 node build/build.mjs      # cartes.js + banque → pack.pilote.js ET pack.eleve.js
+node build/parcours.mjs   # parcours.js + fiches → projection.gen.js (le support de salle)
 node build/relecture.mjs  # → relecture.html (document de bon à tirer)
 ```
 
 | Fichier | Rôle |
 |---|---|
 | `packs/fluides/cartes.js` | **source éditoriale — c'est ici qu'on écrit le contenu** |
-| `build/convert.mjs` | sélection + niveaux + remédiation, depuis Mission F-GAZ |
+| `packs/fluides/parcours.js` | **le déroulé des 3 jours** — aucun contenu, seulement l'ordre et les durées. Déplacer une ligne suffit à changer une séance. |
+| `packs/fluides/questions-pack.json` | les questions **écrites pour le pack** (hors Mission F-GAZ), là où la banque d'origine n'interrogeait aucune des compétences ajoutées |
+| `packs/fluides/referentiel-2025.json` | **le référentiel officiel, 136 codes** — copie conforme de `habilitation-fluide`, ne se modifie **que sur pièce** (texte au JO) |
+| `build/referentiel.mjs` | index des codes, résolution des libellés, calcul de couverture, contrôle de synchro avec le dépôt amont |
+| `COUVERTURE-REFERENTIEL.md` | **généré à chaque build** — couverture par catégorie, codes manquants, codes évalués sans fiche |
+| `build/convert.mjs` | sélection + niveaux + **codes de compétence** + remédiation, depuis Mission F-GAZ |
 | `packs/fluides/banque.gen.json` | banque générée — **ne jamais éditer à la main** |
 | `packs/fluides/pack.eleve.js` | build élève, **purgé** de la couche pilote |
 | `packs/fluides/pack.pilote.js` | build formateur, **avec** les notes |
@@ -75,7 +120,10 @@ node build/relecture.mjs  # → relecture.html (document de bon à tirer)
 | `moteur/` | moteur générique — **4 extensions documentées**, voir § 5 |
 
 **Le build refuse de construire** si : un lien pointe vers une carte inexistante · un examen
-demande plus de questions que son pool · **une note formateur se retrouve dans la sortie élève**.
+demande plus de questions que son pool · **une note formateur se retrouve dans la sortie élève** ·
+un code cité n'existe pas au référentiel · une question n'a **ni** code **ni** classement hors
+référentiel · le bandeau `dc` d'une fiche **annonce un code qu'elle ne déclare pas** (c'est ainsi
+que « G6 · codes 6.01 → 6.08 » promettait huit compétences pour quatre enseignées).
 
 ---
 
@@ -85,11 +133,16 @@ demande plus de questions que son pool · **une note formateur se retrouve dans 
 |---|---|
 | **Questions = Mission F-GAZ uniquement** | Les 85 questions officielles et les 10 examens blancs du dépôt privé `habilitation-fluide` **ne sortent jamais** : publier un sujet est irréversible (forks, archives, caches). |
 | **Questions à seuil réglementaire écartées** | Délais de réparation, seuils de contrôle, dates d'interdiction — susceptibles d'avoir bougé avec F-Gas III, à revalider sur pièce. |
-| **Mode Évaluation désactivé** | Le moteur ne sait pas appliquer les règles de composition de l'arrêté (groupe composant tiré au sort, pondération ×3/×2/×1, plancher par groupe). Les examens sont des **entraînements**. |
+| **Mode Évaluation désactivé** | Le moteur ne sait pas appliquer les règles de composition de l'arrêté (groupe composant tiré au sort, pondération ×3/×2/×1, plancher par groupe). Les examens restent des **entraînements**. *Depuis le 25/07, le prérequis est posé* : chaque question porte son code, sa catégorie et son groupe, et `build/referentiel.mjs` expose `REGLES` (les règles de composition lues au référentiel, pas en dur). |
 | **Pas de PWA / pas d'installation** | Une **page web universelle** — « tout le monde peut ouvrir une page web » (crainte iPhone fondée pour le public réel). |
 | **Console formateur publiée** | `formateur.html` + `pack.pilote.js` sont publics : ce sont des conseils d'animation, pas des corrigés. **Arbitrage à confirmer** — pour revenir en arrière : supprimer ces 2 fichiers du dépôt, le build les régénère en local. |
 | **PRP alignés sur Mission F-GAZ** | R-32 = 675, R-134a = 1430, R-404A = 3922, R-410A = 2088 — pas les valeurs AR5 de la réglette FRIGOLO, pour une seule vérité côté élève. |
 | **Génératif interdit sur les schémas** | Aucun modèle d'image ne respecte la croix du frigoriste. Schémas = SVG faits main. Ambiance = génératif autorisé. |
+| **Le référentiel est une donnée de BUILD, jamais de runtime** | Le navigateur ne charge pas les 74 Ko du JSON : le build résout les libellés et n'injecte que les codes réellement utilisés. Une seule source, zéro divergence possible. |
+| **Deux libellés par compétence, jamais un seul** | `libelle` = la reformulation accessible écrite pour l'élève ; `officiel` = le texte de l'arrêté, injecté, jamais retouché. Le public réel ne lit pas « au sens du règlement (CE) n° 1516/2007 », mais l'organisme doit pouvoir montrer le texte. |
+| **Le groupe est un rangement, le code est la règle** | `dc` (G1…G13) range pédagogiquement — le voyant liquide s'apprend avec les composants. Le `code` rattache réglementairement — ce même voyant est évalué au titre de 1.05. Les deux divergent parfois : 19 questions portent un code hors de leur groupe de rangement, et c'est voulu. |
+| **On ne force jamais un rattachement** | 14 questions ne relèvent d'aucun code de l'annexe II.B : elles sont marquées `hors_ref` avec leur raison, pas rattachées de force. Un faux rattachement ferait croire à une couverture qui n'existe pas. |
+| **Les questions CO₂ / NH₃ ne se filtrent pas** | Leurs codes (13.xx, 14.xx) ne sont évalués ni en A1 ni en A2, mais l'annexe II.C **impose au moins une question dessus** dans ces sujets. Une question sans champ `categories` est donc servie à tout le monde — ne pas « corriger » cela. |
 
 ---
 
@@ -126,16 +179,68 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 
 ### 🔴 Priorité 1 — la relecture métier (bloquant pour la diffusion)
 
-Personne n'a relu le contenu avec un œil de frigoriste : **19 fiches, 5 exercices,
-180 questions** avec leurs indices et remédiations.
+Personne n'a relu le contenu avec un œil de frigoriste : **26 fiches, 5 exercices,
+180 questions** avec leurs indices et remédiations. **Dont 7 fiches écrites le 25/07** et jamais
+relues (`g0`, `g1d`, `g6b`, `g7b`, `g8b`, `g9b`, `g12b`).
 
 → Ouvrir [`relecture.html`](https://frigorx.github.io/pilote-fluides/relecture.html), annoter
 les ✏, renvoyer les corrections. Elles se reportent dans `packs/fluides/cartes.js` (fiches) ou
 `build/convert.mjs` (questions : `CORRECTIONS` ou retrait de la sélection).
 
-**Question ouverte posée à F. Henninot, sans réponse à ce jour** : d'autres savoirs du
-référentiel ont-ils été survolés ? Pistes évoquées — le **glissement de température** des
-zéotropes, les **huiles** (POE / minérale, compatibilités, retrofit).
+Le document de relecture affiche désormais, pour chaque fiche, **les compétences qu'elle prétend
+couvrir** — libellé de l'arrêté + reformulation élève. C'est là que porte l'essentiel du travail :
+l'écart entre ce que le code exige et ce que le contenu enseigne vraiment.
+
+**Question ouverte du § 6 précédent — RÉPONDUE le 25/07, sur mesure et non à l'intuition :**
+- le **glissement des zéotropes** était bien traité (3 mentions, charge en phase liquide) ;
+- les **huiles** ne l'étaient **pas du tout** : zéro occurrence de POE, minérale ou retrofit, alors
+  que les fiches déclaraient couvrir 5.04, 5.08, 6.01 et 6.05. Le code était revendiqué, le contenu
+  ne le tenait pas. **Comblé** dans `g5b` (minérale / POE, non-miscibilité, hygroscopie de la POE,
+  huile contaminée = déchet dangereux, cas des hydrocarbures) ;
+- au-delà de ces deux pistes, la mesure a révélé **38 codes A1 non couverts**, dont les 25 gestes
+  des groupes 6 à 9 — ceux du **groupe tiré au sort**, donc certains de tomber. Tous comblés.
+
+### 🔴 Priorité 1 bis — les valeurs terrain (personne d'autre ne peut le faire)
+
+Tout le contenu pratique renvoie à « selon la fiche constructeur, à faire valider » : **pression
+d'épreuve à l'azote, niveau de vide visé, durée de tirage, débit de balayage, couples de serrage,
+taux de remplissage d'une bouteille**. C'est rigoureux — on n'invente aucun chiffre — mais pour un
+stagiaire c'est frustrant, et pour le module pratique c'est un squelette.
+
+Ces nombres sont sur le plateau du LP et dans la pratique de F. Henninot, pas dans un texte.
+**Tant qu'ils ne sont pas figés, le module pratique reste au niveau du geste et de l'ordre.**
+Les figer, c'est aussi les rendre opposables : une fois écrits, ils engagent l'organisme.
+
+Manque aussi, et pour la même raison : des **photos du matériel réel** (manifold, station de
+récupération, mano-détendeur). Pour un public FLE/DYS, une photo du vrai appareil vaut trois
+paragraphes ; les SVG sont bons pour les principes, pas pour reconnaître un objet.
+
+### 🟠 Priorité 1 quater — deux livrables à valider
+
+- **`VIDEOS-PRESELECTION.md`** — 11 sujets sur 13 pourvus, chaque titre et chaque durée relevés
+  sur la fiche de la vidéo, pas de mémoire. Rien n'est intégré au pack : **à visionner
+  intégralement avant tout usage**. Deux sujets sans proposition : la réglementation F-Gas (rien
+  au bon format) et la nomenclature des fluides (seule ressource trouvée antérieure au règlement
+  de 2024).
+- **`packs/fluides/res/photos/CATALOGUE.md`** — 4 photos d'atelier intégrées au module pratique
+  (manifold branché, pompe à vide, vacuomètre, balance). Elles viennent des séquences CAP IFCA
+  26-27 et **leur origine reste à confirmer** : ce dépôt est public. Si l'une provient d'une
+  documentation constructeur, elle doit être retirée.
+  Les **31 visuels AFPA** (dont 5 photos de matériel) n'ont **délibérément pas été repris** :
+  extraits de supports de 2009-2011, droits non détenus. Utilisables en interne, pas ici.
+
+### 🟠 Priorité 1 ter — décisions éditoriales ouvertes par la refonte
+
+- **Les 14 questions hors référentiel** — section « 2 bis » de `relecture.html`, chacune avec trois
+  cases : garder (culture métier), retirer, ou rattacher à un code jugé légitime. Ce sont surtout
+  la **nomenclature des fluides** (8 questions : que signifie HFC, le « a » de R-134a, composition
+  du R-410A…), trois **gestes mécaniques** hors annexe II.B (cintrage, dudgeonnage, raccord
+  Schrader) et trois questions **ammoniac** rangées à tort en G13 (CO₂).
+  La nomenclature est un savoir-outil indispensable — mais l'annexe II.B ne l'évalue pas comme
+  telle. À vous de trancher : c'est une décision pédagogique, pas technique.
+- **Deux codes évalués sans fiche qui les enseigne** : `1.09` et `13.14`, tous deux CO₂. Hors des
+  catégories du pack (ils relèvent de B), donc sans gravité — mais la fiche `g13` pourrait les
+  déclarer si son contenu les tient.
 
 ### 🟠 Priorité 2 — à décider (ne pas engager sans arbitrage)
 

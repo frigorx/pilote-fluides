@@ -26,6 +26,10 @@ export const PACK_META = {
   version: "0.1",
   type: "habilitation",
   charte: "inerweb-edu",
+  // Les catégories d'aptitude visées par ce pack. Sert de filtre au
+  // référentiel : le build ne réclame que les codes exigés pour celles-ci
+  // (B = CO₂ et C = NH₃ sont hors périmètre, traités en information).
+  categories: ["A1", "A2", "D", "E"],
   modes_actifs: ["auto", "test", "pilotage"], // pas d'« évaluation » : cf. README § moteur
   vue_stagiaire: false,
   carte_initiale: "c00",
@@ -153,6 +157,20 @@ const schema = (fichier, alt) =>
   'style="width:100%;height:auto;display:block;margin:0 0 18px;' +
   'border:1px solid #d7e0e8;border-radius:8px">';
 
+/* Une PHOTO d'atelier, avec sa légende. Elle ne remplace pas le schéma :
+   le schéma explique le principe, la photo fait reconnaître l'objet — et
+   pour un public FLE ou DYS, reconnaître l'objet vaut trois paragraphes.
+   Origine et droits de chaque cliché : res/photos/CATALOGUE.md */
+const photo = (fichier, alt, legende) =>
+  '<figure style="margin:0 0 18px">' +
+  '<img src="packs/fluides/res/photos/' + fichier + '" alt="' + alt + '" ' +
+  'style="width:100%;height:auto;display:block;border:1px solid #d7e0e8;border-radius:8px">' +
+  (legende
+    ? '<figcaption style="font-size:13px;color:#5a6b7d;margin-top:6px;font-style:italic">' +
+      legende + '</figcaption>'
+    : "") +
+  "</figure>";
+
 export const CARTES = [
   /* ==================================================================
      ACCUEIL
@@ -201,6 +219,7 @@ export const CARTES = [
         titre: "Réviser par thème",
         desc: "En autonomie : 13 séries corrigées, reliées aux fiches. Avant la formation, pendant le stage, avant l'épreuve.",
       },
+      { vers: "m-prat", icone: "🔧", titre: "Préparation pratique", desc: "Le matériel et les gestes, à revoir avant l atelier." },
       {
         vers: "cfin",
         icone: "?",
@@ -221,6 +240,9 @@ export const CARTES = [
   {
     id: "m-a1",
     type: "menu",
+    // Entrer par ce menu fixe la catégorie visée : le moteur filtre ensuite
+    // les tirages sur les seules compétences exigées en A1 (cf. § lot 4).
+    categorie: "A1",
     illus: "img/illu-a1.jpg",
     titre: "Catégorie A1 — tous équipements, toutes charges",
     dc: "Parcours A1",
@@ -231,21 +253,26 @@ export const CARTES = [
       "<p>Formation indicative ≈ 35 h. Épreuve : <b>4 h 15</b>.</p>",
     menu_titre: "Les modules du parcours",
     liens: [
+      { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Unités, pression, thermodynamique utile", desc: "G1 — le socle de tout le reste." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
+      { vers: "g1d", icone: "1", titre: "Les organes qui trahissent une fuite", desc: "G1 — voyant, vannes, pressostats : lire les signes." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
       { vers: "g2", icone: "2", titre: "Impact environnemental et F-Gas", desc: "G2 — PRP, phase-down, ce qui justifie le métier." },
       { vers: "g3", icone: "3", titre: "Contrôles avant mise en service", desc: "G3 — épreuve à l'azote, tirage au vide." },
       { vers: "g4a", icone: "4", titre: "Contrôles d'étanchéité", desc: "G4 — trois fiches : points de fuite, indirecte, directe." },
       { vers: "g5a", icone: "5", titre: "Récupération et charge", desc: "G5 — deux fiches : récupérer, puis charger sans perte." },
-      { vers: "g6", icone: "6", titre: "Les quatre composants", desc: "G6 à G9 — compresseur, condenseur, évaporateur, détendeur." },
+      { vers: "g6", icone: "6", titre: "Les quatre composants", desc: "G6 à G9 — huit fiches : le principe, puis les gestes." },
       { vers: "g10", icone: "10", titre: "Tuyauterie et brasage sous azote", desc: "G10 — un joint étanche, sans calamine." },
       { vers: "g11", icone: "11", titre: "Substitution et efficacité", desc: "G11 — choisir un fluide, gagner du rendement." },
       { vers: "g12", icone: "12", titre: "Hydrocarbures", desc: "G12 — spécifique A1 et A2 : le R-290 est A3.", primaire: true },
+      { vers: "g12b", icone: "12", titre: "Intervenir sur un circuit hydrocarbure", desc: "G12 — le mode opératoire, étape par étape." },
       { vers: "g13", icone: "ℹ", titre: "CO₂ et NH₃ — information", desc: "G13/G14 — reconnaître, ne pas intervenir." },
       { vers: "ex-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "12 questions fondamentales, seuil 60 %. Pour se lancer." },
       { vers: "ex-a1", icone: "📝", titre: "Examen blanc A1", desc: "20 questions tirées de tous les groupes." },
       { vers: "ex-defi", icone: "🔴", titre: "Défi technicien — niveau 2", desc: "15 diagnostics et mises en situation, seuil 80 %." },
+      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j en suis, compétence par compétence. Rien ne sort de votre navigateur." },
+      { vers: "m-prat", icone: "🔧", titre: "Préparation pratique", desc: "Le matériel et les gestes, à revoir avant l atelier." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
     notes_pilote:
@@ -256,6 +283,7 @@ export const CARTES = [
   {
     id: "m-a2",
     type: "menu",
+    categorie: "A2",
     illus: "img/illu-a2.jpg",
     titre: "Catégorie A2 — mêmes activités, charge limitée",
     dc: "Parcours A2",
@@ -268,8 +296,10 @@ export const CARTES = [
       "encore plus central qu'en A1. Formation indicative ≈ 28 h. Épreuve : <b>3 h 55</b>.</p>",
     menu_titre: "Les modules du parcours",
     liens: [
+      { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Unités, pression, thermodynamique utile", desc: "G1 — insister sur les seuils de charge." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
+      { vers: "g1d", icone: "1", titre: "Les organes qui trahissent une fuite", desc: "G1 — voyant, vannes, pressostats : lire les signes." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
       { vers: "g2", icone: "2", titre: "Impact environnemental et F-Gas", desc: "G2 — PRP et tonnes équivalent CO₂." },
       { vers: "g3", icone: "3", titre: "Contrôles avant mise en service", desc: "G3 — sur petits circuits, raccords flare." },
@@ -279,9 +309,12 @@ export const CARTES = [
       { vers: "g10", icone: "10", titre: "Tuyauterie et brasage sous azote", desc: "G10 — petits diamètres." },
       { vers: "g11", icone: "11", titre: "Substitution et efficacité", desc: "G11 — conception à charge réduite." },
       { vers: "g12", icone: "12", titre: "Hydrocarbures", desc: "G12 — cœur du parc A2 (R-290 en monobloc et PAC).", primaire: true },
+      { vers: "g12b", icone: "12", titre: "Intervenir sur un circuit hydrocarbure", desc: "G12 — le mode opératoire, étape par étape." },
       { vers: "ex-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "12 questions fondamentales, seuil 60 %. Pour se lancer." },
       { vers: "ex-a2", icone: "📝", titre: "Examen blanc A2", desc: "15 questions tirées de tous les groupes." },
       { vers: "ex-defi", icone: "🔴", titre: "Défi technicien — niveau 2", desc: "15 diagnostics et mises en situation, seuil 80 %." },
+      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j en suis, compétence par compétence. Rien ne sort de votre navigateur." },
+      { vers: "m-prat", icone: "🔧", titre: "Préparation pratique", desc: "Le matériel et les gestes, à revoir avant l atelier." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
     notes_pilote:
@@ -292,6 +325,7 @@ export const CARTES = [
   {
     id: "m-d",
     type: "menu",
+    categorie: "D",
     illus: "img/illu-d.jpg",
     titre: "Catégorie D — récupération seule",
     dc: "Parcours D",
@@ -304,6 +338,7 @@ export const CARTES = [
       "<p>Formation indicative ≈ 10 h. Épreuve : <b>1 h 30</b>.</p>",
     menu_titre: "Les modules du parcours",
     liens: [
+      { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Bases : fluides, thermo utile, composants", desc: "G1 partiel — savoir de quoi on parle." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
@@ -315,6 +350,8 @@ export const CARTES = [
       { vers: "x3", icone: "🕵", titre: "Détective : la bouteille de récupération", desc: "Mise en situation — le niveau maxi est atteint." },
       { vers: "ex-d-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "8 questions fondamentales, seuil 60 %." },
       { vers: "ex-d", icone: "📝", titre: "Examen blanc D", desc: "10 questions sur le périmètre D." },
+      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j en suis, compétence par compétence. Rien ne sort de votre navigateur." },
+      { vers: "m-prat", icone: "🔧", titre: "Préparation pratique", desc: "Le matériel et les gestes, à revoir avant l atelier." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
     notes_pilote:
@@ -326,6 +363,7 @@ export const CARTES = [
   {
     id: "m-e",
     type: "menu",
+    categorie: "E",
     illus: "img/illu-e.jpg",
     titre: "Catégorie E — contrôle d'étanchéité, sans ouvrir",
     dc: "Parcours E",
@@ -340,6 +378,7 @@ export const CARTES = [
       "Formation indicative ≈ 10 h. Épreuve : <b>1 h 30</b>.</p>",
     menu_titre: "Les modules du parcours",
     liens: [
+      { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Bases : pression, température, fluides", desc: "G1 partiel — dont la pression absolue." },
       { vers: "g1b", icone: "1", titre: "Lire une table de saturation", desc: "G1 · code 1.03 — indispensable à la méthode indirecte.", primaire: true },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
@@ -352,6 +391,8 @@ export const CARTES = [
       { vers: "x4", icone: "🕵", titre: "Détective : le contrôle qui tourne mal", desc: "Mise en situation — registre, détecteur, incohérence." },
       { vers: "ex-e-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "8 questions fondamentales, seuil 60 %." },
       { vers: "ex-e", icone: "📝", titre: "Examen blanc E", desc: "10 questions sur le périmètre E." },
+      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j en suis, compétence par compétence. Rien ne sort de votre navigateur." },
+      { vers: "m-prat", icone: "🔧", titre: "Préparation pratique", desc: "Le matériel et les gestes, à revoir avant l atelier." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
     notes_pilote:
@@ -392,6 +433,7 @@ export const CARTES = [
       { vers: "rev-g13", icone: "13", titre: "CO₂ et NH₃", desc: "reconnaître, respecter les catégories, ne pas intervenir — 9 questions." },
       { vers: "ex-ech", icone: "🟢", titre: "Se tester — Échauffement (niveau 1)", desc: "12 questions fondamentales, tous thèmes, seuil 60 %." },
       { vers: "ex-defi", icone: "🔴", titre: "Se tester — Défi technicien (niveau 2)", desc: "15 diagnostics, tous thèmes, seuil 80 %." },
+      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j en suis, compétence par compétence. Rien ne sort de votre navigateur." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Revenir aux parcours." },
     ],
     notes_pilote:
@@ -400,6 +442,554 @@ export const CARTES = [
       "pas seulement un support de séance. Les scores restent dans le navigateur de l'élève " +
       "(localStorage) : rien ne remonte, RGPD tranquille. En séance, ouvrir cette page en début de " +
       "semaine et laisser 20 minutes de révision libre : chacun travaille SON point faible.",
+  },
+  {
+    id: "c-prog",
+    type: "progression",
+    titre: "Ma progression",
+    dc: "Auto-formation · où j'en suis",
+    liens: [SOMMAIRE],
+    notes_pilote:
+      "À montrer au stagiaire dès le premier jour : c'est ce qui donne du sens aux séries. " +
+      "Insister sur le fait que rien ne remonte — la page ne sert qu'à LUI. En fin de stage, " +
+      "faire ouvrir cette page avant l'examen blanc : les compétences rouges disent quoi réviser.",
+  },
+
+  /* ==================================================================
+     PRÉPARATION PRATIQUE — le matériel et les gestes, AVANT l'atelier
+     Ce module ne remplace pas la manipulation : il la prépare. Charte
+     FrigorX : préparation de chantier ≤ 1 h, sécurité démontrée et
+     imposée — jamais découverte par l'erreur.
+     ================================================================== */
+  {
+    id: "m-prat",
+    type: "menu",
+    titre: "Préparation pratique — le matériel et les gestes",
+    dc: "Avant de toucher au fluide",
+    corps:
+      "<p>Ce module ne remplace pas l'atelier : il le <b>prépare</b>. On y revoit le matériel et " +
+      "l'ordre des gestes <b>avant</b> d'avoir le fluide dans les mains — à quoi sert cet appareil, " +
+      "comment il se branche, dans quel ordre on ouvre et on ferme, ce qu'on regarde, ce qu'on note.</p>" +
+      "<p>La sécurité s'y <b>démontre et s'impose</b> : on ne découvre jamais un risque par l'erreur.</p>",
+    menu_titre: "Les sept préparations",
+    liens: [
+      { vers: "p1", icone: "1", titre: "Le manifold — lire, brancher, ne pas polluer", desc: "Lire les manomètres, brancher et débrancher sans polluer." },
+      { vers: "p2", icone: "2", titre: "La station de récupération — ce que c'est, comment on la branche", desc: "Le groupe de récupération : à quoi il sert, comment on le raccorde." },
+      { vers: "p3", icone: "3", titre: "Pompe à vide et vacuomètre — monter, tirer, lire", desc: "Monter la pompe, tirer au vide, lire le vacuomètre — et dans quel ordre arrêter." },
+      { vers: "p4", icone: "4", titre: "La bouteille d'azote et son mano-détendeur", desc: "Monter le mano-détendeur, régler, mettre en pression. Azote seul, toujours." },
+      { vers: "p5", icone: "5", titre: "L'ordre des vannes — la chorégraphie de l'intervention", desc: "Fermer, laisser stabiliser, desserrer lentement. La chorégraphie qui évite le rejet." },
+      { vers: "p6", icone: "6", titre: "La balance et la pesée — avant, après, ce qu'on note", desc: "Peser avant, peser après. Une estimation ne se consigne pas." },
+      { vers: "p7", icone: "7", titre: "Préparation de chantier — risques, EPI, zone de travail", desc: "Analyse de risques, EPI, zone balisée : ce qui se fait AVANT le premier geste." },
+      { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
+    ],
+    notes_pilote:
+      "À faire passer en préparation de chantier, dans l'heure qui précède le plateau — jamais la " +
+      "veille au soir, l'oubli est total. Faire tenir le matériel réel pendant la lecture de la " +
+      "fiche : le geste s'ancre par l'objet, pas par l'écran. Les valeurs chiffrées (pression " +
+      "d'épreuve, niveau de vide, débit d'azote) restent À FIXER par le formateur depuis son plateau.",
+  },
+  {
+    id: "p1",
+    type: "cours",
+    titre: "Le manifold — lire, brancher, ne pas polluer",
+    dc: "Préparation pratique · codes 5.01 · 4.05",
+    minuteur_s: 330,
+    corps:
+      schema("recuperation.svg", "Le principe de branchement : installation à l arrêt, isolée, flexibles raccordés à l appareil, minimum d émissions à chaque connexion.") +
+      photo("manifold-branche.jpg", "Un manifold raccordé sur une installation, flexibles bleu et rouge en place.",
+            "Le manifold en situation : à gauche le manomètre BP (bleu), à droite le HP (rouge), et le flexible central qui part vers la bouteille ou la pompe.") +
+      "<p>Le <b>manifold</b> (ensemble manométrique) réunit deux manomètres — <b>BP en bleu</b>, <b>HP en rouge</b> — " +
+      "et deux vannes, une par côté, qui commandent le passage vers le <b>flexible central jaune</b> : celui qui " +
+      "part vers la pompe à vide, la bouteille de récupération, ou une bouteille d'azote équipée de son " +
+      "<b>mano-détendeur</b>.</p>" +
+      "<ol>" +
+      "<li>Consigner électriquement l'installation avant tout branchement.</li>" +
+      "<li>Vérifier que les deux vannes du manifold sont fermées.</li>" +
+      "<li>Visser le flexible bleu sur le raccord à obus côté basse pression — côté évaporateur, en bas de la croix du frigoriste.</li>" +
+      "<li>Visser le flexible rouge sur le raccord à obus côté haute pression — côté condenseur et compresseur, en haut à droite.</li>" +
+      "<li>Purger l'air de chaque flexible par un bref coup d'ouverture-fermeture — jamais un rejet prolongé.</li>" +
+      "<li>Ouvrir les vannes une par une, jamais les deux ensemble, en surveillant les aiguilles.</li>" +
+      "<li>Lire : pression BP, pression HP, température à la pince.</li>" +
+      "<li>Refermer les deux vannes du manifold avant toute déconnexion.</li>" +
+      "<li>Débrancher en purgeant chaque flexible — minimum d'émission, jamais de rejet volontaire.</li>" +
+      "</ol>" +
+      "<p>Le manomètre affiche une <b>pression relative</b> : pour obtenir la pression absolue, on ajoute environ " +
+      "<b>1 bar</b>. La pince de température et le multimètre servent à la <b>méthode indirecte</b> de contrôle " +
+      "d'étanchéité : on compare les valeurs mesurées — surchauffe (plage normale <b>5 à 10 K</b>), " +
+      "sous-refroidissement (plage normale <b>4 à 8 K</b>), intensité absorbée — à celles attendues sur la fiche " +
+      "constructeur. Un écart qui se creuse alerte, sans avoir ouvert le circuit.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "Fermé avant, fermé après",
+        html:
+          "Les deux vannes du manifold restent <b>fermées</b> à chaque branchement et à chaque débranchement. " +
+          "Elles ne s'ouvrent qu'une fois les deux flexibles vissés et vérifiés, et se referment avant toute " +
+          "déconnexion. C'est ce qui évite le rejet au moment du geste.",
+      },
+      {
+        type: "piege",
+        t: "Les deux vannes ouvertes en même temps",
+        html:
+          "Ouvrir BP et HP <b>ensemble</b> fait communiquer les deux côtés du circuit et fausse la lecture. " +
+          "On ouvre <b>une vanne à la fois</b>, on lit, puis l'autre.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Sur la croix du frigoriste, où se branche le flexible bleu (BP) du manifold ?",
+      choix: [
+        "Côté condenseur, en haut",
+        "Côté évaporateur, en bas",
+        "Côté compresseur, à droite",
+        "Peu importe, les deux flexibles sont interchangeables",
+      ],
+      bonne: 1,
+      explication:
+        "Le flexible bleu (BP) se branche côté basse pression, c'est-à-dire côté évaporateur, en bas de la croix du frigoriste. Le flexible rouge (HP) se branche côté haute pression, condenseur et compresseur, en haut à droite.",
+      remediation_vers: "p1",
+    },
+    criteres: [
+      { code: "5.01", libelle: "Brancher et débrancher les flexibles du manifold avec un minimum d'émissions", etat: "a_evaluer" },
+      { code: "4.05", libelle: "Lire les instruments portables et interpréter les valeurs mesurées", etat: "a_evaluer" },
+    ],
+    liens: [suite("p2", "La station de récupération — ce que c'est, comment on la branche"), { vers: "m-prat", libelle: "↺ Module pratique", sec: true }, SOMMAIRE],
+    notes_pilote:
+      "Faire manipuler un manifold hors tension, hors fluide : vannes fermées, on visse, on vérifie, on ouvre " +
+      "une vanne à la fois. Faire dire tout haut « BP bleu, évaporateur, en bas » en pointant la croix du " +
+      "frigoriste au tableau, avant de brancher pour de vrai. Faire observer une purge courte de flexible " +
+      "plutôt qu'un rejet prolongé — c'est le geste qui distingue un professionnel.",
+  },
+  {
+    id: "p2",
+    type: "cours",
+    titre: "La station de récupération — ce que c'est, comment on la branche",
+    dc: "Préparation pratique · codes 5.03",
+    minuteur_s: 300,
+    corps:
+      schema("recuperation.svg", "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.") +
+      "<p>La <b>station de récupération</b> est un appareil autonome : elle aspire le fluide de l'installation et " +
+      "le transfère vers un <b>cylindre dédié</b>, posé sur une balance. Avant tout branchement, l'installation " +
+      "est <b>à l'arrêt et isolée</b>.</p>" +
+      "<ol>" +
+      "<li>Consigner électriquement l'installation à traiter.</li>" +
+      "<li>Vérifier l'étiquette du cylindre de récupération : le fluide indiqué doit être exactement celui de l'installation.</li>" +
+      "<li>Poser le cylindre sur la balance et noter la masse de départ, avant tout branchement.</li>" +
+      "<li>Vannes du groupe fermées, brancher le flexible d'entrée sur le circuit et le flexible de sortie sur le cylindre.</li>" +
+      "<li>Mettre le groupe sous tension et le régler selon la fiche du fabricant.</li>" +
+      "<li>Ouvrir les vannes dans l'ordre indiqué par le fabricant ; surveiller la pression et la masse affichée.</li>" +
+      "<li>En fin de transfert, purger les flexibles avant de débrancher — minimum d'émission.</li>" +
+      "<li>Repeser le cylindre, noter la masse récupérée, consigner au registre.</li>" +
+      "</ol>" +
+      "<p>Le cylindre respecte le <b>taux de remplissage maximal</b> indiqué sur son étiquette : jamais rempli " +
+      "à ras. Le liquide se dilate avec la température — un cylindre trop plein est un danger.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "Peser avant, peser après",
+        html:
+          "La différence entre la masse de départ et la masse d'arrivée est la <b>seule preuve fiable</b> de ce " +
+          "qui a été récupéré. Sans pesée avant, ce nombre n'existe pas.",
+      },
+      {
+        type: "piege",
+        t: "Un cylindre, un seul fluide",
+        html:
+          "Une étiquette qui ne correspond pas exactement au fluide de l'installation : on ne branche pas. " +
+          "Mélanger deux fluides rend le contenu du cylindre inutilisable pour le recyclage ou la régénération.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Avant de brancher le cylindre de récupération, quelle vérification est obligatoire ?",
+      choix: [
+        "Que la balance est éteinte",
+        "Que l'étiquette du cylindre correspond exactement au fluide de l'installation",
+        "Que le cylindre est déjà à moitié plein",
+        "Que le groupe est débranché du secteur",
+      ],
+      bonne: 1,
+      explication:
+        "Le fluide indiqué sur l'étiquette du cylindre doit être exactement celui de l'installation. Mélanger deux fluides différents rend le contenu du cylindre inutilisable pour le recyclage ou la régénération.",
+      remediation_vers: "p2",
+    },
+    criteres: [
+      { code: "5.03", libelle: "Brancher et débrancher un groupe de récupération avec un minimum d'émissions", etat: "a_evaluer" },
+    ],
+    liens: [suite("p3", "Pompe à vide et vacuomètre — monter, tirer, lire"), { vers: "m-prat", libelle: "↺ Module pratique", sec: true }, SOMMAIRE],
+    notes_pilote:
+      "Faire manipuler le groupe hors fluide : reconnaître le cordon secteur, le flexible d'entrée, le flexible " +
+      "de sortie, l'ordre des vannes indiqué sur l'appareil. Insister sur la pesée, avant ET après — c'est la " +
+      "seule preuve de ce qui a été récupéré. Faire vérifier l'étiquette du cylindre à voix haute avant chaque " +
+      "branchement, jamais de mémoire.",
+  },
+  {
+    id: "p3",
+    type: "cours",
+    titre: "Pompe à vide et vacuomètre — monter, tirer, lire",
+    dc: "Préparation pratique · codes 3.03 · 3.04",
+    minuteur_s: 330,
+    corps:
+      photo("pompe-a-vide.png", "Une pompe à vide d'atelier.",
+            "La pompe à vide : elle aspire l'air et l'humidité du circuit. Vérifier son niveau d'huile avant chaque usage.") +
+      photo("vacuometre.png", "Un vacuomètre électronique.",
+            "Le vacuomètre électronique : lui seul mesure vraiment le vide. Le manomètre du manifold n'est pas assez précis pour cela.") +
+      "<p>Le <b>tirage au vide</b> retire l'air et l'humidité du circuit avant charge — ce n'est pas du fluide " +
+      "qu'on évacue ici, mais de l'air et de la vapeur d'eau : la question du rejet à l'atmosphère ne se pose pas " +
+      "à ce stade. La <b>pompe à vide</b> aspire ; le <b>vacuomètre</b> électronique indique jusqu'où on est " +
+      "descendu, bien plus finement qu'un manomètre.</p>" +
+      "<ol>" +
+      "<li>Consigner électriquement l'installation avant tout montage.</li>" +
+      "<li>Vérifier le niveau d'huile de la pompe avant de la mettre en service.</li>" +
+      "<li>Fermer les deux vannes du manifold.</li>" +
+      "<li>Visser le vacuomètre sur le raccord prévu, du côté du circuit — jamais collé directement à la pompe : une lecture prise trop près de la pompe ne reflète pas le vide réel du circuit.</li>" +
+      "<li>Brancher la pompe sur le flexible central du manifold.</li>" +
+      "<li>Ouvrir les deux vannes du manifold pour tirer sur l'ensemble du circuit.</li>" +
+      "<li>Mettre la pompe en marche.</li>" +
+      "<li>Observer l'aiguille du vacuomètre descendre.</li>" +
+      "<li>Une fois le vide stabilisé — valeur cible selon la fiche constructeur — fermer d'abord la vanne côté circuit, puis seulement ensuite arrêter la pompe.</li>" +
+      "<li>Surveiller si le vide remonte, selon la pratique habituelle : une remontée signale une fuite ou de l'humidité résiduelle.</li>" +
+      "</ol>" +
+      "<p>L'ordre du neuvième geste protège le circuit : si la pompe s'arrête avant que la vanne soit fermée, " +
+      "l'huile de la pompe peut être aspirée en sens inverse vers le circuit qu'on vient de mettre sous vide.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "Isoler avant d'arrêter",
+        html:
+          "On ferme toujours la vanne côté circuit <b>avant</b> d'arrêter la pompe, jamais l'inverse. C'est " +
+          "l'ordre qui protège le circuit d'un retour d'huile.",
+      },
+      {
+        type: "piege",
+        t: "Vacuomètre collé à la pompe",
+        html:
+          "Une lecture prise juste à la sortie de la pompe ne dit rien du vide réel dans le circuit. Le " +
+          "vacuomètre se monte du <b>côté circuit</b>.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Dans quel ordre protège-t-on le circuit à la fin d'un tirage au vide ?",
+      choix: [
+        "Arrêter la pompe, puis fermer la vanne côté circuit",
+        "Fermer la vanne côté circuit, puis arrêter la pompe",
+        "Ouvrir grand le vacuomètre, puis arrêter la pompe",
+        "Débrancher directement la pompe sans toucher aux vannes",
+      ],
+      bonne: 1,
+      explication:
+        "On isole toujours le circuit — vanne fermée côté circuit — avant d'arrêter la pompe. Dans l'ordre inverse, l'huile de la pompe peut être aspirée en sens inverse vers le circuit qu'on vient de mettre sous vide.",
+      remediation_vers: "p3",
+    },
+    criteres: [
+      { code: "3.03", libelle: "Monter et mettre en service une pompe à vide", etat: "a_evaluer" },
+      { code: "3.04", libelle: "Évacuer l'air et l'humidité en tirant au vide, selon la pratique habituelle", etat: "a_evaluer" },
+    ],
+    liens: [suite("p4", "La bouteille d'azote et son mano-détendeur"), { vers: "m-prat", libelle: "↺ Module pratique", sec: true }, SOMMAIRE],
+    notes_pilote:
+      "Faire monter le montage sur un poste d'essai, jamais en première fois sur une installation cliente. " +
+      "Faire vérifier l'huile de la pompe avant de démarrer — un réflexe qu'on saute facilement. Faire dire " +
+      "tout haut « isoler, puis arrêter » avant de le faire réellement : c'est l'ordre qui compte, pas la " +
+      "vitesse. Ne donner aucune valeur de vide cible ni de durée : renvoyer systématiquement à la fiche " +
+      "constructeur du modèle utilisé en atelier.",
+  },
+  {
+    id: "p4",
+    type: "cours",
+    titre: "La bouteille d'azote et son mano-détendeur",
+    dc: "Préparation pratique · codes 3.01 · 3.02",
+    minuteur_s: 300,
+    corps:
+      schema("epreuve-azote.svg", "Le mano-détendeur monté sur la bouteille d azote sec, raccordé au manifold puis au circuit à éprouver, vanne par vanne — jamais d oxygène ni d air comprimé.") +
+      "<p>Une bouteille d'azote ne se branche jamais directement sur un circuit. Entre les deux, il y a toujours un <b>mano-détendeur</b>. Il lit la pression de la bouteille. Il règle la pression envoyée dans le circuit. Sans lui, toute la pression de la bouteille part d'un coup — largement de quoi faire éclater un circuit.</p>" +
+      "<p>Le mano-détendeur porte <b>deux cadrans</b>. Le premier indique ce qu'il reste dans la bouteille. Le second indique la pression réglée en sortie, celle qui part vers le circuit. On lit toujours les deux.</p>" +
+      "<ol>" +
+      "<li>Vérifier que le raccord est <b>propre</b>, sans trace d'huile ni de graisse : l'azote sous pression au contact d'huile est un risque.</li>" +
+      "<li>Monter le mano-détendeur sur le robinet de la bouteille. Vérifier que la <b>vis de réglage est desserrée</b> — aucune pression envoyée en sortie.</li>" +
+      "<li>Ouvrir <b>lentement</b> le robinet de la bouteille. Lire la pression bouteille sur le premier cadran.</li>" +
+      "<li>Raccorder le flexible de sortie au manifold, puis au circuit à éprouver.</li>" +
+      "<li>Visser <b>progressivement</b> la vis de réglage. La pression de sortie monte, à lire sur le second cadran, jusqu'à la valeur donnée par la documentation du constructeur ou la norme applicable.</li>" +
+      "<li>Une fois la pression atteinte, fermer le robinet de la bouteille. Observer : le cadran de sortie ne doit plus bouger.</li>" +
+      "</ol>",
+    blocs: [
+      {
+        type: "piege",
+        t: "Geste interdit — sans discussion",
+        html:
+          "Une bouteille d'azote <b>ne se branche jamais en direct</b> sur un circuit, mano-détendeur absent. " +
+          "La mise en pression se fait <b>à l'azote sec, seul</b>. Jamais d'oxygène — explosif au contact de " +
+          "l'huile. Jamais d'air comprimé — humide, chargé en oxygène.",
+      },
+      {
+        type: "cle",
+        t: "Deux cadrans, deux informations",
+        html:
+          "Cadran <b>bouteille</b> : ce qu'il reste dedans. Cadran <b>sortie</b> : ce que vous envoyez dans le " +
+          "circuit. Un cadran de sortie qui ne tient pas sa pression signale une fuite au raccord — à vérifier " +
+          "avant d'aller plus loin.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce:
+        "Vous venez de monter le mano-détendeur sur la bouteille d'azote. Avant d'ouvrir le robinet de la bouteille, dans quelle position doit être la vis de réglage ?",
+      choix: [
+        "Vissée à fond, pour avoir la pression maximale tout de suite",
+        "Desserrée, pour n'envoyer aucune pression en sortie avant d'ouvrir la bouteille",
+        "Peu importe, on règle après de toute façon",
+        "À mi-course, pour gagner du temps",
+      ],
+      bonne: 1,
+      explication:
+        "Vis desserrée : aucune pression envoyée en sortie. On ouvre la bouteille, on lit sa pression, puis on visse progressivement pour monter en pression côté circuit. Ouvrir la bouteille vis déjà serrée enverrait un à-coup de pression incontrôlé.",
+      remediation_vers: "p4",
+    },
+    criteres: [
+      { code: "3.01", libelle: "Réaliser une épreuve de pression de résistance", etat: "a_evaluer" },
+      { code: "3.02", libelle: "Réaliser une épreuve de pression d'étanchéité", etat: "a_evaluer" },
+    ],
+    liens: [suite("p5", "L'ordre des vannes — la chorégraphie de l'intervention"), { vers: "m-prat", libelle: "↺ Module pratique", sec: true }, SOMMAIRE],
+    notes_pilote:
+      "Poser le mano-détendeur démonté sur la table et faire deviner son rôle avant d'expliquer : pourquoi deux " +
+      "cadrans, pourquoi une vis. Faire monter le montage par un stagiaire, azote réel si le plateau le permet, " +
+      "en insistant sur la vis desserrée AVANT ouverture bouteille — intervenir immédiatement si quelqu'un ouvre " +
+      "la bouteille vis serrée, ne pas laisser aller au bout du geste. Rappeler que ces codes ne concernent pas " +
+      "la catégorie D : un stagiaire D observe la démonstration mais n'est pas interrogé dessus.",
+  },
+  {
+    id: "p5",
+    type: "cours",
+    titre: "L'ordre des vannes — la chorégraphie de l'intervention",
+    dc: "Préparation pratique · codes 5.01 · 5.02",
+    minuteur_s: 420,
+    corps:
+      schema("recuperation.svg", "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance — chaque flexible débranché suit le même ordre : fermer, stabiliser, desserrer lentement.") +
+      "<p>Un manifold, ce sont des <b>vannes</b>. Les ouvrir et les fermer dans le bon ordre n'est pas un détail. Un mauvais ordre peut lâcher un nuage de fluide au visage, ou libérer un flexible sous pression.</p>" +
+      "<p>À la <b>connexion</b>, l'ordre est simple : vannes fermées, on raccorde les flexibles, on chasse l'air resté à l'intérieur par une ouverture brève, puis on ouvre progressivement.</p>" +
+      "<p>C'est à la <b>déconnexion</b> que l'ordre compte le plus. Il ne change jamais :</p>" +
+      "<ol>" +
+      "<li><b>Fermer</b> la vanne, côté circuit puis côté appareil.</li>" +
+      "<li><b>Laisser la pression se stabiliser.</b> Observer le manomètre. Tant que l'aiguille bouge encore, on attend.</li>" +
+      "<li><b>Desserrer lentement</b> le raccord du flexible, à peine, par petites touches. On écoute. On continue. Jamais d'un coup.</li>" +
+      "<li>S'il reste du fluide <b>emprisonné dans le flexible</b>, le récupérer par l'appareil déjà branché. Jamais le laisser partir à l'air libre.</li>" +
+      "<li>Déconnecter seulement quand la pression est retombée et confirmée.</li>" +
+      "</ol>" +
+      "<p>La même logique s'applique pour <b>vider ou remplir un cylindre</b>, en phase liquide comme en phase gazeuse. Une bouteille de réfrigérant a une prise dédiée à chaque phase, ou s'utilise dans un sens précis pour tirer du liquide. On suit toujours le marquage de la bouteille, jamais un raccord forcé.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "La chorégraphie qui ne change jamais",
+        html:
+          "<b>Fermer → laisser stabiliser → desserrer lentement.</b> Ce triptyque revient à chaque déconnexion, " +
+          "quel que soit l'appareil branché. C'est le geste central de tout ce module : une fois automatique, " +
+          "il protège dans toutes les situations.",
+      },
+      {
+        type: "piege",
+        t: "Le geste interdit",
+        html:
+          "Desserrer un raccord <b>encore sous pression</b>, d'un coup. Purger le résidu d'un flexible " +
+          "<b>à l'air libre</b> pour aller plus vite. Chaque émission compte, même petite : l'objectif est " +
+          "toujours le <b>minimum d'émission</b>, jamais zéro effort.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce:
+        "Vous venez de fermer les deux vannes en fin de récupération. Le manomètre indique encore une pression résiduelle dans le flexible. Que faites-vous ?",
+      choix: [
+        "Je desserre le raccord d'un coup, la pression restante est faible",
+        "J'attends que la pression cesse de bouger sur le manomètre, puis je desserre lentement en récupérant le résidu",
+        "Je purge le flexible à l'air libre avant de le ranger",
+        "Je tape légèrement sur le raccord pour le débloquer plus vite",
+      ],
+      bonne: 1,
+      explication:
+        "On attend que la pression se stabilise. On desserre lentement. Le fluide encore présent dans le flexible se récupère : il n'est pas relâché. Une pression faible reste une pression — le geste brusque et la purge à l'air libre sont tous deux à écarter.",
+      remediation_vers: "p5",
+    },
+    criteres: [
+      { code: "5.01", libelle: "Connecter et déconnecter avec un minimum d'émissions", etat: "a_evaluer" },
+      { code: "5.02", libelle: "Vider et remplir un cylindre, en phase liquide et gazeuse", etat: "a_evaluer" },
+    ],
+    liens: [suite("p6", "La balance et la pesée — avant, après, ce qu'on note"), { vers: "m-prat", libelle: "↺ Module pratique", sec: true }, SOMMAIRE],
+    notes_pilote:
+      "La fiche centrale du module : y passer le temps qu'il faut. Faire manipuler un manifold et des flexibles " +
+      "réels (azote ou circuit vide) et faire répéter le triptyque fermer / stabiliser / desserrer jusqu'à ce " +
+      "que le geste soit lent par réflexe, pas par consigne. Observer AVANT d'expliquer : laisser un stagiaire " +
+      "desserrer à sa vitesse naturelle une première fois — la plupart vont trop vite, et c'est ce constat, pas " +
+      "un discours, qui doit amener la correction. Corriger immédiatement un geste brusque, ne jamais laisser " +
+      "aller au bout : la sécurité s'impose, elle ne se découvre pas par la sensation d'un jet résiduel.",
+  },
+  {
+    id: "p6",
+    type: "cours",
+    titre: "La balance et la pesée — avant, après, ce qu'on note",
+    dc: "Préparation pratique · codes 5.05 · 5.06",
+    minuteur_s: 330,
+    corps:
+      photo("balance.jpg", "Une balance électronique de charge avec une bouteille de fluide posée dessus.",
+            "La balance de charge : la bouteille est posée dessus pendant toute l'opération. On lit la variation de masse, pas la masse totale.") +
+      "<p>La quantité de fluide qui entre ou sort d'un circuit se lit sur une <b>balance</b>, jamais sur un manomètre. Le manomètre dit comment la machine se comporte. La balance dit <b>combien</b> il y a de fluide.</p>" +
+      "<p>Avant toute pesée, on choisit une balance <b>adaptée</b> à la quantité attendue. On la pose à plat, stable, vérifiée. Une balance douteuse ne sert à rien : son résultat n'est pas fiable.</p>" +
+      "<ol>" +
+      "<li>Poser la bouteille sur la balance <b>avant</b> toute opération. Relever le poids. Le noter — pas de mémoire.</li>" +
+      "<li>Avant d'ouvrir la moindre vanne, déterminer l'<b>état du fluide</b> attendu : liquide ou gazeux, selon l'opération et la documentation constructeur. Ce choix fixe le sens du remplissage.</li>" +
+      "<li>Réaliser l'opération — récupération ou charge — en surveillant la balance pendant que ça se fait, pas seulement à la fin.</li>" +
+      "<li>Fermer les vannes, laisser la pression se stabiliser, déconnecter proprement.</li>" +
+      "<li>Peser à nouveau, <b>après</b>. Relever ce second poids.</li>" +
+      "<li>Calculer l'écart entre les deux pesées. C'est la quantité réelle, pas une estimation.</li>" +
+      "<li>Reporter aussitôt le résultat au registre : date, quantité, intervenant.</li>" +
+      "</ol>" +
+      "<p>Cas particulier : un fluide <b>zéotrope</b>, composé de plusieurs corps, se charge toujours en <b>phase liquide</b>. Le sortir en phase gazeuse changerait sa composition en cours de route.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "Deux pesées, jamais une",
+        html:
+          "On pèse <b>avant</b> et <b>après</b>. Sans pesée de départ, le chiffre obtenu n'est qu'une " +
+          "<b>estimation</b>. Une estimation ne se consigne pas dans un registre.",
+      },
+      {
+        type: "piege",
+        t: "Peser seulement à la fin",
+        html:
+          "Peser une seule fois, à la fin, et déduire la quantité à vue de nez : c'est le réflexe à corriger " +
+          "en premier. Lire une quantité chargée sur un manomètre plutôt que sur la balance ne donne jamais " +
+          "un chiffre exploitable non plus.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce:
+        "Vous avez oublié de peser la bouteille avant une récupération, et vous ne l'avez pesée qu'à la fin. Que vaut ce chiffre ?",
+      choix: [
+        "La quantité récupérée, exactement",
+        "La tare de la bouteille",
+        "Une estimation qui ne peut pas remplacer une vraie double pesée",
+        "Rien, la pesée finale suffit toujours",
+      ],
+      bonne: 2,
+      explication:
+        "Sans poids de départ, impossible de connaître la quantité réellement récupérée : ce n'est qu'une estimation. Elle ne se consigne pas comme une mesure au registre. La seule solution est de recommencer, avec une pesée avant et une pesée après.",
+      remediation_vers: "p6",
+    },
+    criteres: [
+      { code: "5.05", libelle: "Déterminer l'état du fluide et charger sans perte", etat: "a_evaluer" },
+      { code: "5.06", libelle: "Choisir la balance adaptée et peser", etat: "a_evaluer" },
+    ],
+    liens: [suite("p7", "Préparation de chantier — risques, EPI, zone de travail"), { vers: "m-prat", libelle: "↺ Module pratique", sec: true }, SOMMAIRE],
+    notes_pilote:
+      "Faire peser un objet neutre (bouteille d'eau, poids étalon) deux fois avant d'expliquer la règle, et " +
+      "demander ce qui se passerait si on n'avait que la seconde pesée — laisser le groupe trouver lui-même que " +
+      "le premier chiffre est indispensable. Faire remplir une ligne de registre fictive à partir des deux " +
+      "pesées relevées. Le réflexe à traquer : le stagiaire qui commence à manipuler avant d'avoir pesé — " +
+      "l'arrêter avant le premier geste, pas après.",
+  },
+  {
+    id: "p7",
+    type: "cours",
+    titre: "Préparation de chantier — risques, EPI, zone de travail",
+    dc: "Préparation pratique · codes 12.04 · 12.05",
+    minuteur_s: 360,
+    corps:
+      "<p>Avant de sortir le moindre outil, deux choses se préparent : l'<b>analyse de risques</b> et la <b>zone de travail</b>. Ce n'est pas une formalité à cocher après coup. C'est la première étape du chantier, avant le premier geste technique.</p>" +
+      "<p><b>L'analyse de risques</b> se fait dans cet ordre :</p>" +
+      "<ol>" +
+      "<li>Identifier le fluide en jeu, à partir de la plaque signalétique ou de la documentation : inflammable, sous pression, en espace confiné.</li>" +
+      "<li>Repérer les dangers de la <b>zone elle-même</b> : ventilation, sources de chaleur ou d'étincelle à proximité, accès, présence de tiers.</li>" +
+      "<li>Éliminer ce qui peut l'être — couper une source de chaleur, dégager un passage.</li>" +
+      "<li>Signaler ce qui ne peut pas être éliminé. Si un point bloque vraiment, le chantier n'engage pas tant qu'il n'est pas corrigé.</li>" +
+      "</ol>" +
+      "<p>Vient ensuite la <b>préparation de la zone</b> :</p>" +
+      "<ol>" +
+      "<li>Baliser et signaler la zone de travail.</li>" +
+      "<li>Dégager une <b>issue</b> utilisable à tout moment de l'intervention.</li>" +
+      "<li>Sélectionner les <b>équipements de protection</b> adaptés au fluide et au geste prévu : protection des yeux, gants adaptés au produit et au froid, détecteur de gaz porté si le fluide l'exige.</li>" +
+      "<li>Vérifier le matériel avant de l'emporter sur zone. Un flexible douteux ou un détecteur non vérifié <b>ne sort pas</b> de l'atelier.</li>" +
+      "<li>Consigner électriquement l'installation avant toute ouverture de circuit.</li>" +
+      "</ol>",
+    blocs: [
+      {
+        type: "piege",
+        t: "Sécurité imposée, jamais découverte",
+        html:
+          "On ne teste pas un risque en le vivant. EPI absent, issue condamnée, détecteur en panne : chacun de " +
+          "ces points <b>arrête le chantier avant qu'il commence</b>, pas après un premier incident.",
+      },
+      {
+        type: "cle",
+        t: "L'ordre qui protège",
+        html:
+          "Analyser → éliminer ce qui peut l'être → signaler le reste → baliser → s'équiper → vérifier le " +
+          "matériel → consigner. Et alors seulement, intervenir.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce:
+        "En arrivant sur la zone d'intervention, vous constatez que l'issue de secours est encombrée par du matériel stocké. Que faites-vous ?",
+      choix: [
+        "Je dégage l'issue et je signale le point avant d'engager le chantier",
+        "Je commence le travail, je dégagerai l'issue plus tard si besoin",
+        "Je note l'anomalie dans mon rapport et je continue normalement",
+        "Je demande à un collègue de rester posté devant l'issue pendant l'intervention",
+      ],
+      bonne: 0,
+      explication:
+        "Une issue condamnée est un point bloquant de l'analyse de risques. On ne commence pas en espérant que ça n'arrivera pas. On dégage, ou on fait dégager, avant le premier geste technique.",
+      remediation_vers: "p7",
+    },
+    criteres: [
+      { code: "12.04", libelle: "Réaliser l'analyse de risques avant le travail", etat: "a_evaluer" },
+      { code: "12.05", libelle: "Préparer la zone de travail et choisir les EPI adaptés", etat: "a_evaluer" },
+    ],
+    liens: [{ vers: "m-prat", libelle: "↺ Module pratique", sec: true }, SOMMAIRE],
+    notes_pilote:
+      "Avant d'expliquer quoi que ce soit, étaler les EPI disponibles en atelier et faire trouver au groupe " +
+      "lequel correspond à quel risque — ne pas les nommer à leur place. Mettre en scène un point bloquant " +
+      "crédible (issue encombrée, détecteur déchargé) sans prévenir, et observer : le stagiaire s'arrête-t-il " +
+      "de lui-même, ou faut-il l'arrêter ? C'est ce réflexe qu'on cherche à installer. Ces deux codes sont " +
+      "spécifiques A1/A2 (réfrigérants inflammables) au référentiel — mais le réflexe d'analyse de risques " +
+      "avant intervention vaut pour tous les fluides, à généraliser au-delà de l'épreuve.",
+  },
+  {
+    id: "g0",
+    type: "cours",
+    titre: "Ce que la loi vous impose",
+    dc: "G1 · code 1.00",
+    minuteur_s: 360,
+    corps:
+      "<p>Les fluides frigorigènes peuvent réchauffer le climat s'ils s'échappent dans l'air. Deux niveaux de loi encadrent votre métier : le niveau européen et le niveau français.</p>" +
+      "<p>Au niveau européen, le texte de base est le <b>règlement (UE) 2024/573</b>. C'est un <b>règlement</b>, jamais une « directive » : il s'applique directement dans tous les pays de l'Union, sans loi française pour le recopier. Il a remplacé l'ancien règlement 517/2014.</p>" +
+      "<p>Au niveau français, l'<b>arrêté du 21 novembre 2025</b> — un texte signé par un ministre — précise comment appliquer ce règlement sur le terrain.</p>" +
+      "<p>Pour intervenir sur les fluides, il vous faut une <b>attestation d'aptitude</b> personnelle. Votre entreprise, elle, doit avoir une <b>attestation de capacité</b>. Ce sont deux papiers obligatoires, et ce n'est pas le même.</p>" +
+      "<p>Chaque équipement a un <b>registre</b> : un carnet qui garde la trace de chaque intervention (charge, contrôle, fuite, réparation). C'est l'<b>exploitant</b> (le propriétaire ou l'utilisateur de la machine) qui doit le tenir à jour, sur papier ou sur ordinateur.</p>" +
+      "<p>Quand l'équipement est trop vieux ou cassé, il part dans la filière <b>DEEE</b> (déchets d'équipements électriques et électroniques). Cette filière s'occupe de la carcasse de la machine, pas du fluide : vous devez le récupérer avant, à part.</p>" +
+      "<p>Enfin, l'<b>écoconception</b> : dès la fabrication, les constructeurs doivent concevoir des appareils qui durent plus longtemps et qui polluent moins.</p>",
+    blocs: [
+      { type: "cle", t: "Ce qu'il faut retenir", html: "<ul><li>Le texte européen est un <b>règlement</b> — (UE) 2024/573 — jamais une « directive ».</li><li><b>Attestation d'aptitude</b> : c'est pour vous, la personne.</li><li><b>Attestation de capacité</b> : c'est pour l'entreprise.</li><li><b>Registre</b> de l'équipement : tenu par l'exploitant, papier ou électronique.</li><li><b>DEEE</b> : la filière de fin de vie de la machine, pas du fluide.</li></ul>" },
+      { type: "piege", t: "L'erreur classique", html: "<p>Apprendre par cœur un chiffre précis (seuil, date, délai) vu dans une ancienne fiche. Le régime des fluides a changé avec le <b>règlement (UE) 2024/573</b> et l'<b>arrêté du 21 novembre 2025</b>. Face à un chiffre, réflexe unique : vérifier le texte en vigueur, jamais le deviner.</p>" },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Le règlement (UE) 2024/573, qui encadre les fluides frigorigènes, est...",
+      choix: [
+        "une directive, que la France doit recopier dans sa propre loi",
+        "un règlement, qui s'applique directement dans toute l'Union européenne",
+        "une norme technique facultative",
+        "une simple recommandation, sans obligation",
+      ],
+      bonne: 1,
+      explication: "C'est un <b>règlement</b>, pas une directive : il s'applique tel quel, tout de suite, dans tous les pays de l'Union européenne. Il a remplacé le règlement 517/2014.",
+      remediation_vers: "g0",
+    },
+    criteres: [
+      { code: "1.00", libelle: "Identifier les obligations légales de base liées aux fluides frigorigènes", etat: "a_evaluer" },
+    ],
+    liens: [suite("g1a", "Unités, pression, thermodynamique utile"), SOMMAIRE],
+    notes_pilote: "Partir du concret : demander qui, dans l'entreprise du stagiaire, détient l'attestation de capacité, et qui détient l'attestation d'aptitude. Insister à l'oral sur le mot RÈGLEMENT (jamais « directive ») : confusion fréquente, piège classique à l'examen. Ne pas s'attarder sur des chiffres précis : renvoyer systématiquement au texte en vigueur.",
   },
   {
     id: "g1a",
@@ -584,13 +1174,129 @@ export const CARTES = [
       { code: "1.06", libelle: "Identifier la famille et les caractéristiques d'un fluide", etat: "a_evaluer" },
       { code: "1.07", libelle: "Décoder la nomenclature R-xyz et les séries de mélanges", etat: "a_evaluer" },
     ],
-    liens: [suite("g2a", "L'histoire : ozone et climat"), SOMMAIRE],
+    liens: [suite("g1d", "Les organes qui trahissent une fuite"), SOMMAIRE],
     notes_pilote:
       "Faire décoder AU TABLEAU deux ou trois codes avant de donner la règle : R-32, R-290, " +
       "R-744 — le groupe trouve la logique lui-même, elle se retient dix fois mieux. L'astuce du " +
       "+90 fait mouche à tous les coups. Point d'attention : le R-22 est le meilleur exemple " +
       "pédagogique (le chlore « caché » dans les liaisons restantes explique son interdiction). " +
       "Relier à la carte d'identité interactive : chaque stagiaire décode un fluide puis vérifie.",
+  },
+  {
+    id: "g1d",
+    type: "cours",
+    titre: "Les organes qui trahissent une fuite",
+    dc: "G1 · code 1.05",
+    minuteur_s: 420,
+    corps:
+      schema("points-de-fuite.svg", "Sur le circuit, les organes qui alertent ou protègent avant, pendant et après une fuite.") +
+      "<p>Une fuite ne se voit pas toujours de face. Mais plusieurs organes du circuit la " +
+      "<b>trahissent</b> : ils changent d'aspect, se mettent en sécurité, ou limitent les " +
+      "dégâts. Les repérer, c'est déjà commencer le diagnostic.</p>" +
+      "<ul>" +
+      "<li><b>a) Les valves.</b> Le <b>robinet à boule</b> et le <b>robinet à soupape</b> " +
+      "isolent une portion de circuit ; leur presse-étoupe (la bague qui serre la tige de " +
+      "manœuvre) est un point de fuite classique. Le <b>robinet à diaphragme</b> n'a pas cette " +
+      "tige : une membrane souple assure l'étanchéité, donc moins d'usure. La <b>vanne " +
+      "électromagnétique</b>, dite <b>solénoïde</b>, s'ouvre et se ferme électriquement ; elle " +
+      "isole la réserve de fluide en cas d'arrêt. La <b>vanne 4 voies</b> inverse le sens du " +
+      "cycle (froid ↔ chaud) : beaucoup de raccords brasés et une pièce mobile interne, donc " +
+      "plusieurs points à surveiller.</li>" +
+      "<li><b>b) Les contrôles de température et de pression.</b> Le <b>thermostat</b> pilote " +
+      "le compresseur selon la température. Le <b>pressostat de régulation</b> fait pareil " +
+      "selon la pression : il coupe et relance en fonctionnement normal — à ne pas confondre " +
+      "avec le <b>pressostat de sécurité</b>, qui protège contre une pression anormale (détail " +
+      "ci-dessous). Un pressostat de régulation qui coupe trop tôt peut signaler un manque de " +
+      "charge, donc une fuite.</li>" +
+      "<li><b>c) Le voyant liquide et la pastille d'humidité.</b> Le <b>voyant liquide</b> est " +
+      "un hublot sur la ligne liquide. En <b>régime stable</b> (l'installation tourne depuis un " +
+      "moment), il doit rester net, sans bulle. Des <b>bulles qui persistent</b> montrent un " +
+      "manque de charge — souvent une fuite. La <b>pastille d'humidité</b>, intégrée au voyant, " +
+      "change de couleur selon l'eau présente dans le circuit ; la grille de lecture est propre " +
+      "à chaque fabricant, selon la fiche constructeur.</li>" +
+      "<li><b>d) Les contrôles du dégivrage.</b> Ils déclenchent et arrêtent le dégivrage de " +
+      "l'évaporateur. Un givre anormal — pas symétrique, ou qui ne part jamais complètement — " +
+      "n'est pas toujours un problème de dégivrage : ça peut être un manque de fluide qui prive " +
+      "une partie de la batterie.</li>" +
+      "<li><b>e) Les protecteurs du système.</b> Protection thermique du compresseur, " +
+      "<b>soupape de sécurité</b>, pressostat de sécurité (vu plus haut) : ils empêchent " +
+      "qu'une anomalie ne tourne à la casse. Une soupape de sécurité qui s'ouvre relâche " +
+      "elle-même du fluide dans l'atmosphère : une fuite volontaire, réglée pour l'urgence, à " +
+      "contrôler selon la fiche constructeur.</li>" +
+      "<li><b>f) Les instruments de mesure.</b> Un <b>thermomètre</b> à pince ou à contact " +
+      "mesure la température réelle d'un tube. Comparé à la table de saturation (revoir " +
+      "G1 · code 1.03), l'écart donne la surchauffe ou le sous-refroidissement : c'est la " +
+      "méthode indirecte, sans ouvrir le circuit.</li>" +
+      "<li><b>g) Les systèmes de contrôle de l'huile.</b> Un <b>voyant d'huile</b> sur le " +
+      "compresseur montre le niveau et l'aspect de l'huile. Un niveau qui baisse sans " +
+      "explication doit alerter : l'huile se mélange au fluide et s'échappe avec lui par une " +
+      "fuite — même logique que la trace d'huile sous un raccord (déjà vue en G4).</li>" +
+      "<li><b>h) Les réservoirs.</b> La <b>bouteille de liquide</b> stocke le fluide condensé " +
+      "avant le détendeur. Plusieurs raccords (entrée, sortie, vanne de service) : autant de " +
+      "points à contrôler. L'isoler avant une intervention limite la quantité de fluide qui " +
+      "pourrait fuir.</li>" +
+      "<li><b>i) Les séparateurs de liquide et d'huile.</b> Le <b>séparateur de liquide</b>, " +
+      "sur l'aspiration, retient le liquide résiduel pour éviter un <b>coup de liquide</b> au " +
+      "compresseur (il aspire du liquide au lieu de vapeur : casse immédiate, le liquide ne se " +
+      "comprime pas). Le <b>séparateur d'huile</b>, sur le refoulement, retient l'huile " +
+      "entraînée par le gaz chaud et la renvoie au compresseur.</li>" +
+      "</ul>" +
+      "<p>Sur les fluides très inflammables ou toxiques (hydrocarbures, ammoniac) et sur le " +
+      "CO₂, qui travaille à haute pression, ces mêmes organes existent mais avec des exigences " +
+      "renforcées propres à chaque fluide.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "Où les trouver sur la croix du frigoriste",
+        html:
+          "Détendeur à gauche, compresseur à droite, condenseur en haut, évaporateur en bas. " +
+          "Le <b>séparateur d'huile</b> se loge juste à la sortie du compresseur, côté droit, " +
+          "sur le refoulement. Le <b>réservoir</b> et le <b>voyant liquide</b> se trouvent sur " +
+          "la ligne liquide, entre le condenseur (haut) et le détendeur (gauche) — juste avant " +
+          "le détendeur. Le <b>séparateur de liquide</b> se loge juste avant l'entrée du " +
+          "compresseur, côté droit, sur l'aspiration.",
+      },
+      {
+        type: "piege",
+        t: "Deux pressostats, pas un",
+        html:
+          "Le <b>pressostat de régulation</b> pilote le fonctionnement normal : il coupe et " +
+          "relance le compresseur. Le <b>pressostat de sécurité</b> protège contre une " +
+          "pression anormale ; il n'est pas fait pour cycler en continu. Les confondre " +
+          "désactive une protection sans que ça se voie. Et avant toute intervention sur une " +
+          "vanne solénoïde, un thermostat ou un pressostat : <b>consignation électrique</b>, " +
+          "ce sont des organes électriques.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce:
+        "Sur une installation en régime stable (pas au démarrage, pas juste après un dégivrage), le voyant liquide laisse voir un défilé continu de bulles. Que faut-il en penser ?",
+      choix: [
+        "Rien : c'est le fonctionnement normal d'un voyant liquide",
+        "Le circuit manque probablement de fluide : une fuite est possible",
+        "Le compresseur aspire trop de liquide",
+        "Le dégivrage doit se déclencher",
+      ],
+      bonne: 1,
+      explication:
+        "En régime stable, un voyant liquide propre montre du liquide plein tube, sans bulle. Des bulles qui persistent trahissent un mélange liquide + vapeur, donc un manque de charge — souvent une fuite. Quelques bulles transitoires au démarrage ou après un dégivrage sont normales ; c'est leur persistance en régime stable qui doit alerter.",
+      remediation_vers: "g1d",
+    },
+    criteres: [
+      { code: "1.05", libelle: "Relier chaque organe courant du circuit à son rôle dans la prévention ou la détection d'une fuite", etat: "a_evaluer" },
+    ],
+    liens: [suite("g2a", "Quarante ans d'histoire : de l'ozone au climat"), SOMMAIRE],
+    notes_pilote:
+      "Neuf organes d'un coup : les répartir en quatre familles pour ne pas noyer le groupe — " +
+      "CE QU'ON VOIT (voyant, pastille), CE QUI PILOTE (thermostat, pressostats, dégivrage), " +
+      "CE QUI PROTÈGE (protecteurs, séparateurs) et CE QUI STOCKE (réservoir). Sur une machine " +
+      "d'atelier, coffret électrique CONSIGNÉ, faire toucher du doigt chaque organe plutôt que " +
+      "projeter une liste. Ce code est déjà interrogé ailleurs dans le pack (voyant liquide, " +
+      "vanne solénoïde, vanne 4 voies, pressostat de régulation) sans qu'aucune fiche ne " +
+      "l'enseigne : insister particulièrement sur ces quatre-là. Pédagogie de la découverte : " +
+      "montrer une photo de voyant avec des bulles et demander « fuite ou pas, et pourquoi » " +
+      "avant de donner la réponse.",
   },
   {
     id: "g2a",
@@ -975,13 +1681,18 @@ export const CARTES = [
     id: "g4c",
     type: "cours",
     titre: "Méthode directe et consignation",
-    dc: "G4 · codes 4.07 · 4.08 · 4.09",
+    dc: "G4 · codes 4.06 · 4.07 · 4.08 · 4.09",
     minuteur_s: 330,
     corps:
       schema("balayage-detecteur.svg", "La sonde du détecteur longe le raccord lentement ; une alerte se confirme par un second passage.") +
       "<p>La méthode directe <b>localise physiquement</b> la fuite. Pour la catégorie E, elle se " +
       "pratique <b>sans accéder au circuit</b> : c'est le code <b>4.07</b>. Le code 4.06, qui suppose " +
       "d'intervenir dans le circuit, n'est pas dans le champ de la catégorie E.</p>" +
+      "<p>En <b>A1</b> et <b>A2</b>, le code <b>4.06</b> s'ajoute : ce sont les méthodes directes qui " +
+      "supposent au contraire d'<b>intervenir dans le circuit</b>. On met alors le circuit en pression " +
+      "à l'<b>azote</b> pour faire apparaître la fuite à l'eau savonneuse, ou l'on introduit un " +
+      "<b>gaz traceur</b> ou un <b>traceur fluorescent</b>. Toutes ces méthodes sont celles du " +
+      "règlement <b>(CE) n° 1516/2007</b> : le choix dépend de l'installation, jamais de l'habitude.</p>" +
       "<p>Le <b>détecteur électronique</b> réagit à la présence de molécules de fluide dans l'air : " +
       "on balaie la sonde <b>lentement</b>, le long des points repérés à l'étape visuelle. " +
       "L'<b>eau savonneuse</b> localise par les bulles ; le <b>traceur UV</b> révèle les fuites " +
@@ -1023,6 +1734,7 @@ export const CARTES = [
       remediation_vers: "g4c",
     },
     criteres: [
+      { code: "4.06", libelle: "Mettre en œuvre une méthode directe en intervenant dans le circuit", etat: "a_evaluer" },
       { code: "4.07", libelle: "Mettre en œuvre la méthode directe sans intervenir dans le circuit", etat: "a_evaluer" },
       { code: "4.08", libelle: "Utiliser un détecteur électronique de fuites", etat: "a_evaluer" },
       { code: "4.09", libelle: "Consigner le contrôle dans le registre", etat: "a_evaluer" },
@@ -1167,6 +1879,18 @@ export const CARTES = [
       "on a mis.</p>" +
       "<p>Cas particulier des <b>mélanges zéotropes</b> : ils se chargent en <b>phase liquide</b>, " +
       "faute de quoi les composants se séparent et la composition du circuit dérive.</p>" +
+      "<p>L'<b>huile</b> suit le fluide, et elle en dépend. Les anciens fluides chlorés travaillaient " +
+      "avec de l'huile <b>minérale</b> ; les HFC et les HFO demandent une huile de synthèse, le plus " +
+      "souvent <b>polyolester (POE)</b>. Les deux ne se mélangent pas : sur un changement de fluide, " +
+      "l'huile se change aussi — c'est ce qui distingue un <b>retrofit</b> d'un simple drop-in. " +
+      "La POE <b>absorbe l'humidité de l'air</b> très vite : bidon refermé aussitôt, circuit jamais " +
+      "laissé ouvert. Le type exact d'huile se lit sur la <b>plaque ou la doc constructeur</b>, " +
+      "jamais au jugé.</p>" +
+      "<p>Une huile retirée d'un circuit est <b>contaminée</b> : elle contient du fluide dissous. " +
+      "Elle ne se jette pas, elle part en <b>déchet dangereux</b> vers une filière agréée, avec son " +
+      "bordereau. Pour les <b>hydrocarbures</b>, fluide et huile sont en plus <b>inflammables</b> : " +
+      "récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, transport " +
+      "selon la réglementation applicable et la fiche de données de sécurité.</p>" +
       "<p>Le <b>registre</b> est la preuve légale de toute opération sur le fluide : quantité ajoutée, " +
       "quantité récupérée, date, intervenant. Le rejet volontaire à l'atmosphère est strictement " +
       "interdit et sanctionné.</p>",
@@ -1201,6 +1925,7 @@ export const CARTES = [
       { code: "5.06", libelle: "Choisir la balance adaptée et peser", etat: "a_evaluer" },
       { code: "5.07", libelle: "Consigner l'opération dans le registre", etat: "a_evaluer" },
       { code: "5.08", libelle: "Appliquer les prescriptions de gestion, stockage et transport", etat: "a_evaluer" },
+      { code: "5.09", libelle: "Gérer les hydrocarbures et leurs huiles, y compris contaminés", etat: "a_evaluer" },
     ],
     ressources: ["r-tp-peser", "r-cerfa"],
     liens: [suite("x3", "Détective : la bouteille de récupération"), SOMMAIRE],
@@ -1266,7 +1991,7 @@ export const CARTES = [
     id: "g6",
     type: "cours",
     titre: "Le compresseur",
-    dc: "G6 · codes 6.01 → 6.08",
+    dc: "G6 · codes 6.01 · 6.03 · 6.05 · 6.07",
     minuteur_s: 300,
     corps:
       schema("compresseurs.svg", "Coupe animée d un compresseur à piston et les quatre technologies : piston, scroll, vis, rotatif.") +
@@ -1317,7 +2042,7 @@ export const CARTES = [
       { code: "6.07", libelle: "Rédiger un rapport d'état", etat: "a_evaluer" },
     ],
     ressources: ["r-module-comp", "r-scroll", "r-kp1"],
-    liens: [suite("g7", "Le condenseur"), SOMMAIRE],
+    liens: [suite("g6b", "Compresseur — installer, régler, vérifier"), SOMMAIRE],
     notes_pilote:
       "Rappeler que le composant est TIRÉ AU SORT à l'épreuve : les quatre modules se travaillent. " +
       "Faire repérer les organes de sécurité sur un compresseur d'atelier, coffret ouvert et CONSIGNÉ. " +
@@ -1325,10 +2050,77 @@ export const CARTES = [
       "cause, laisser remonter vers l'hypothèse retour d'huile ou clapet usé.",
   },
   {
+    id: "g6b",
+    type: "cours",
+    titre: "Compresseur — installer, régler, vérifier",
+    dc: "G6 · codes 6.02 · 6.04 · 6.06 · 6.08",
+    minuteur_s: 330,
+    corps:
+      schema("compresseurs.svg", "Compresseur en coupe : soupape d'aspiration, cylindre, sortie vers le refoulement.") +
+      "<p>Ce cours prolonge la fiche sur le compresseur. Il explique le geste : comment on " +
+      "l'<b>installe</b>, comment on <b>règle</b> ses soupapes, comment on le <b>démarre</b>, " +
+      "l'<b>arrête</b> et le <b>contrôle</b>.</p>" +
+      "<p>Une fois en marche, l'installation ne doit provoquer <b>aucune fuite</b>. Avant la toute " +
+      "première mise en service, on teste l'étanchéité de tout le circuit à l'<b>azote</b> — jamais " +
+      "à l'oxygène, jamais à l'air comprimé — à la pression indiquée par la norme applicable. Les " +
+      "appareils de contrôle et de sécurité (ils surveillent le compresseur et le coupent en cas " +
+      "d'anomalie) s'installent <b>en même temps</b> que lui, pas après coup.</p>" +
+      "<p>La <b>soupape d'aspiration</b> est le clapet qui laisse entrer la vapeur basse pression " +
+      "dans le compresseur à chaque cycle. Son réglage suit <b>toujours</b> la fiche constructeur : " +
+      "une soupape mal réglée fait perdre de la puissance, ou abîme le compresseur.</p>" +
+      "<p>Au <b>démarrage</b>, on vérifie le niveau d'huile et les vannes, puis on met sous tension. " +
+      "Pendant que le compresseur tourne, on relève les pressions, la <b>surchauffe</b> (repère : " +
+      "5 à 10 K) et le <b>sous-refroidissement</b> (repère : 4 à 8 K). À l'<b>arrêt</b>, on suit la " +
+      "procédure inverse, sans geste brusque.</p>" +
+      "<p>Ces bons gestes sont aussi des gestes d'<b>efficacité énergétique</b> : un compresseur " +
+      "bien installé, bien réglé et bien entretenu consomme moins et dure plus longtemps.</p>",
+    blocs: [
+      { type: "cle", t: "Le test qui doit précéder la mise en service",
+        html: "Avant de mettre un compresseur neuf sous tension, on vérifie que le circuit ne fuit " +
+          "pas, avec un essai à l'<b>azote</b>. Ce n'est qu'après ce contrôle que l'installation " +
+          "répond au code 6.02 : « aucune fuite ni aucune émission »." },
+      { type: "piege", t: "Geste interdit",
+        html: "<b>Consignation électrique</b> (couper et verrouiller l'alimentation) avant toute " +
+          "intervention sur les soupapes ou les sécurités. Un réglage de soupape ne s'improvise " +
+          "jamais : toujours <b>selon la fiche constructeur</b>, jamais « à l'oreille »." },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Un compresseur vient d'être installé. Avant sa toute première mise en marche, que fait-on ?",
+      choix: [
+        "On le met sous tension : les défauts se verront bien à l'usage",
+        "On teste l'étanchéité de tout le circuit à l'azote",
+        "On règle les soupapes d'aspiration au jugé, puis on ajuste en marche",
+        "On vérifie seulement le sens de rotation du moteur",
+      ],
+      bonne: 1,
+      explication:
+        "Une installation correcte (code 6.02) ne doit provoquer aucune fuite une fois en marche. Le seul moyen de le vérifier avant la mise en service est un essai d'étanchéité à l'azote sur tout le circuit — jamais à l'oxygène, jamais à l'air comprimé.",
+      remediation_vers: "g6b",
+    },
+    criteres: [
+      { code: "6.02", libelle: "Installer un compresseur et ses sécurités sans provoquer de fuite", etat: "a_evaluer" },
+      { code: "6.04", libelle: "Régler les soupapes d'aspiration selon la fiche constructeur", etat: "a_evaluer" },
+      { code: "6.06", libelle: "Démarrer, arrêter et contrôler un compresseur par la mesure", etat: "a_evaluer" },
+      { code: "6.08", libelle: "Connaître les leviers d'efficacité énergétique du compresseur", etat: "a_evaluer" },
+    ],
+    liens: [suite("g7", "Le condenseur"), SOMMAIRE],
+    notes_pilote:
+      "Carte complémentaire de g6 : ici, le geste plutôt que la théorie. Faire manipuler une vraie " +
+      "fiche constructeur pour montrer que le réglage des soupapes (6.04) ne s'invente jamais — " +
+      "c'est le réflexe à ancrer, plus utile qu'un chiffre mémorisé. Sur un compresseur d'atelier " +
+      "CONSIGNÉ, faire dérouler la procédure complète : contrôle avant mise en marche, relevés en " +
+      "fonctionnement, arrêt propre. Le réglage des soupapes (6.04) n'est évalué en pratique qu'en " +
+      "catégorie A1 — les stagiaires visant seulement A2 peuvent s'en tenir aux principes. Le code " +
+      "6.08 est nouveau et seulement théorique : un temps d'échange suffit (propreté des " +
+      "échangeurs, charge correcte, surchauffe bien réglée) plutôt qu'une démonstration. Relier à " +
+      "g7 pour la suite du parcours.",
+  },
+  {
     id: "g7",
     type: "cours",
     titre: "Le condenseur",
-    dc: "G7 · codes 7.01 → 7.10",
+    dc: "G7 · codes 7.01 · 7.04 · 7.06 · 7.08",
     minuteur_s: 300,
     corps:
       schema("echangeur-air.svg", "Le condenseur à air : l air ambiant traverse la batterie poussé par le ventilateur et ressort réchauffé.") +
@@ -1379,7 +2171,7 @@ export const CARTES = [
       { code: "7.08", libelle: "Inspecter la surface d'échange", etat: "a_evaluer" },
     ],
     ressources: ["r-kp5", "r-echangeurs"],
-    liens: [suite("g8", "L'évaporateur"), SOMMAIRE],
+    liens: [suite("g7b", "Condenseur — installer, régler, vérifier"), SOMMAIRE],
     notes_pilote:
       "Faire mesurer HP, BP et sous-refroidissement AVANT de donner la plage attendue, puis confronter " +
       "au repère 4-8 K. La purge des incondensables se fait sur poste dédié, avec récupération, sous " +
@@ -1387,10 +2179,60 @@ export const CARTES = [
       "d'étanchéité — en présence d'huile, c'est un risque d'explosion.",
   },
   {
+    id: "g7b",
+    type: "cours",
+    titre: "Condenseur — installer, régler, vérifier",
+    dc: "G7 · codes 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10",
+    minuteur_s: 420,
+    corps:
+      schema("echangeur-air.svg", "Schéma d'un condenseur à air, unité extérieure.") +
+      "<p>Le <b>condenseur</b> transforme le gaz chaud venu du compresseur en <b>liquide</b>. " +
+      "Il rejette la chaleur du local vers l'air extérieur. Sur un climatiseur split, il se trouve " +
+      "dans l'<b>unité extérieure</b>, la partie posée dehors.</p>" +
+      "<p>Sur la croix du frigoriste, le condenseur est toujours en <b>haut</b> : le compresseur à droite, " +
+      "le détendeur à gauche, l'évaporateur en bas.</p>" +
+      "<p>C'est un condenseur <b>à air</b> : un ventilateur souffle sur des <b>ailettes</b>, de petites lames " +
+      "en métal qui évacuent la chaleur. Il n'y a jamais de tour de refroidissement sur ce type d'appareil.</p>" +
+      "<p>Installer, régler et vérifier un condenseur, c'est protéger tout le circuit contre les <b>fuites</b>, " +
+      "dès le premier jour et pendant toute sa vie.</p>",
+    blocs: [
+      { type: "cle", t: "Bien installer l'unité extérieure",
+        html: "L'unité extérieure se fixe <b>solidement et de niveau</b>, avec de l'espace autour pour que l'air circule. Le matériel de réglage et de sécurité — pressostats, vannes — doit être en place et accessible. Avant la mise en service, on contrôle l'étanchéité du circuit sous <b>azote</b> (un gaz neutre) — jamais à l'oxygène, jamais à l'air comprimé. Tous les raccords sont vérifiés : zéro fuite dès le démarrage." },
+      { type: "cle", t: "Régler le régulateur de pression",
+        html: "Le régulateur de pression de sortie du condenseur maintient une pression de condensation correcte, même par temps froid. Il se règle <b>selon la fiche constructeur</b>, jamais à l'estime." },
+      { type: "piege", t: "Avant de toucher aux conduites",
+        html: "La conduite de <b>refoulement</b> (le tube de gaz chaud entre le compresseur et le condenseur) et la conduite de <b>liquide</b> (juste après le condenseur) s'inspectent après une <b>consignation électrique</b> systématique : couper puis verrouiller l'alimentation. On cherche des traces d'huile, de la corrosion, un isolant abîmé." },
+      { type: "cle", t: "Démarrer, mesurer, arrêter",
+        html: "Au démarrage, le ventilateur tourne et la pression monte normalement. En fonctionnement, on mesure le <b>sous-refroidissement</b> (entre 4 et 8 K) : hors de cette plage, il signale un défaut de charge. À l'arrêt, on respecte <b>l'ordre donné par la fiche constructeur</b>." },
+      { type: "cle", t: "Rédiger le rapport d'état",
+        html: "Chaque visite se termine par un <b>rapport écrit</b> : ailettes encrassées, ventilateur bruyant, trace d'huile, pression anormale. Un problème noté tôt évite une fuite demain." },
+      { type: "cle", t: "Entretenir pour économiser l'énergie",
+        html: "Des <b>ailettes propres</b> et un ventilateur en bon état font consommer moins d'électricité. Un condenseur encrassé fait travailler le compresseur plus fort pour le même résultat." },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Avant d'inspecter les conduites de refoulement et de liquide d'un condenseur, que doit-on faire en premier ?",
+      choix: ["Ouvrir le circuit à l'air comprimé", "Faire une consignation électrique", "Démonter le ventilateur", "Régler le régulateur de pression"],
+      bonne: 1,
+      explication: "On coupe puis on verrouille l'alimentation électrique avant de toucher aux conduites. Cela évite qu'un ventilateur ou un compresseur redémarre pendant l'inspection.",
+      remediation_vers: "g7b",
+    },
+    criteres: [
+      { code: "7.02", libelle: "Régler le régulateur de pression du condenseur", etat: "a_evaluer" },
+      { code: "7.03", libelle: "Installer un condenseur sans risque de fuite", etat: "a_evaluer" },
+      { code: "7.05", libelle: "Inspecter les conduites de refoulement et de liquide", etat: "a_evaluer" },
+      { code: "7.07", libelle: "Démarrer, mesurer et arrêter un condenseur", etat: "a_evaluer" },
+      { code: "7.09", libelle: "Rédiger un rapport d'état du condenseur", etat: "a_evaluer" },
+      { code: "7.10", libelle: "Entretenir un condenseur pour économiser l'énergie", etat: "a_evaluer" },
+    ],
+    liens: [suite("g8", "L'évaporateur"), SOMMAIRE],
+    notes_pilote: "Insister sur la consignation électrique avant toute inspection de conduites, et sur l'azote seul pour contrôler l'étanchéité (jamais d'oxygène). Si un stagiaire confond condenseur à air et tour de refroidissement, revenir à la croix du frigoriste au tableau. Faire rédiger un vrai rapport d'état à l'écrit, même court.",
+  },
+  {
     id: "g8",
     type: "cours",
     titre: "L'évaporateur",
-    dc: "G8 · codes 8.01 → 8.11",
+    dc: "G8 · codes 8.01 · 8.05 · 8.08 · 8.09",
     minuteur_s: 300,
     corps:
       schema("mesure-surchauffe.svg", "La surchauffe se mesure en deux points : manomètre BP vers la table, sonde de contact sur le tube.") +
@@ -1444,12 +2286,107 @@ export const CARTES = [
       { code: "8.09", libelle: "Inspecter la surface d'échange et le bac de condensats", etat: "a_evaluer" },
     ],
     ressources: ["r-echangeurs", "r-kp1"],
-    liens: [suite("x2", "Exercice : diagnostic"), SOMMAIRE],
+    liens: [suite("g8b", "Évaporateur — installer, régler, vérifier"), SOMMAIRE],
     notes_pilote:
       "Faire relever la surchauffe sur banc réel : manomètre + sonde de contact, puis calcul. " +
       "C'est le geste le plus discriminant de tout le référentiel composants. Faire observer le " +
       "givrage en direct avant d'expliquer le mécanisme. Anecdote utile : un bac de condensats bouché " +
       "a masqué une fuite pendant des semaines — d'où l'inspection visuelle systématique (8.09).",
+  },
+  {
+    id: "g8b",
+    type: "cours",
+    titre: "Évaporateur — installer, régler, vérifier",
+    dc: "G8 · codes 8.02 · 8.03 · 8.04 · 8.06 · 8.07 · 8.10 · 8.11",
+    minuteur_s: 360,
+    corps:
+      schema("mesure-surchauffe.svg", "Points de contrôle sur l évaporateur en fonctionnement : manomètre basse pression relié à la table, sonde de contact sur le tube d aspiration.") +
+      "<p>Sur la <b>croix du frigoriste</b>, l'évaporateur occupe la position <b>basse</b>. Une fois " +
+      "installé, il doit fonctionner <b>sans aucune fuite ni émission</b> — c'est vrai pour le tube, " +
+      "mais aussi pour tout le matériel de contrôle et de sécurité posé avec lui.</p>" +
+      "<p>Deux organes se règlent, pour deux raisons différentes. Le <b>régulateur de pression " +
+      "d'évaporation</b> est une soupape mécanique. Elle maintient une pression minimale dans " +
+      "l'évaporateur — par exemple pour empêcher un produit de geler, ou pour équilibrer plusieurs " +
+      "évaporateurs sur un seul compresseur. Sa mise en service et son réglage suivent <b>toujours " +
+      "la fiche constructeur</b>.</p>" +
+      "<p>Les <b>interrupteurs de sécurité et de contrôle</b> — les pressostats — protègent la " +
+      "machine, pas le produit. Ils coupent l'alimentation électrique du compresseur si la pression " +
+      "sort de la plage prévue. Deux organes, deux fonctions, deux réglages : on ne les confond pas.</p>" +
+      "<p>Le dégivrage évite que le givre n'isole la batterie. Il peut se faire à l'air, par " +
+      "résistance électrique ou par gaz chauds. Quand il se fait <b>à l'air chaud</b>, le conduit " +
+      "qui transporte cet air s'inspecte à chaque visite : étanchéité, isolation, écoulement des " +
+      "condensats.</p>" +
+      "<p>Toute visite se termine par un <b>rapport écrit</b> sur l'état de l'évaporateur : " +
+      "anomalies observées, risque pour le système, ce qui pourrait à terme provoquer une fuite. " +
+      "Une batterie propre, un bon débit d'air et une surchauffe de <b>5 à 10 K</b> préservent " +
+      "aussi l'<b>efficacité énergétique</b> de l'équipement.</p>",
+    blocs: [
+      {
+        type: "piege",
+        t: "Avant toute mise en service",
+        html:
+          "Pour vérifier que l'évaporateur ne fuit pas, la mise en pression se fait à l'<b>azote " +
+          "SEUL</b> — jamais à l'oxygène, jamais à l'air comprimé : avec de l'huile dans le circuit, " +
+          "ce mélange est explosif. Et avant toute intervention sur l'évaporateur ou ses sécurités, " +
+          "on coupe et on <b>consigne l'alimentation électrique</b>.",
+      },
+      {
+        type: "cle",
+        t: "Qui protège quoi ?",
+        html:
+          "<b>Pressostat</b> (interrupteur de sécurité) → protège la <b>machine</b> : il coupe le " +
+          "compresseur.<br>" +
+          "<b>Régulateur de pression d'évaporation</b> → protège le <b>produit</b>, ou l'équilibre " +
+          "entre évaporateurs : il ne coupe rien, il maintient une pression.<br>" +
+          "Dans les deux cas, la valeur de réglage vient de la <b>fiche constructeur</b>, jamais " +
+          "de l'estime.",
+      },
+      {
+        type: "cle",
+        t: "Ce qu'un bon rapport contient",
+        html:
+          "Un rapport d'état utile <b>décrit ce qui ne va pas</b> : corrosion, fixation desserrée, " +
+          "bac de condensats sale, conduit de dégivrage abîmé — tout ce qui, laissé tel quel, finit " +
+          "en fuite ou en émission. C'est aussi ce qui coûte le plus cher en énergie : une batterie " +
+          "sale ou un mauvais débit d'air font tourner le compresseur plus longtemps pour le même " +
+          "résultat.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce:
+        "Sur une installation, le pressostat BP coupe le compresseur. Le régulateur de pression " +
+        "d'évaporation, lui, ne coupe rien. Que fait-il ?",
+      choix: [
+        "Il coupe l'alimentation électrique du compresseur",
+        "Il maintient une pression minimale dans l'évaporateur, pour protéger le produit ou équilibrer plusieurs évaporateurs",
+        "Il remplace le pressostat sur les installations récentes",
+        "Il mesure la surchauffe en sortie d'évaporateur",
+      ],
+      bonne: 1,
+      explication:
+        "Le régulateur de pression d'évaporation est un organe mécanique : il maintient une pression minimale dans l'évaporateur, pour protéger le produit ou équilibrer plusieurs évaporateurs sur un même compresseur. Le pressostat, lui, est électrique : il coupe le compresseur pour protéger la machine. Deux fonctions, deux réglages, toujours selon la fiche constructeur.",
+      remediation_vers: "g8b",
+    },
+    criteres: [
+      { code: "8.02", libelle: "Mettre en service un régulateur de pression d'évaporation", etat: "a_evaluer" },
+      { code: "8.03", libelle: "Installer l'évaporateur et ses sécurités sans fuite", etat: "a_evaluer" },
+      { code: "8.04", libelle: "Régler les sécurités électriques de l'évaporateur", etat: "a_evaluer" },
+      { code: "8.06", libelle: "Vérifier l'état du conduit de dégivrage à l'air chaud", etat: "a_evaluer" },
+      { code: "8.07", libelle: "Ajuster la soupape de pression d'évaporation", etat: "a_evaluer" },
+      { code: "8.10", libelle: "Rédiger un rapport d'état de l'évaporateur", etat: "a_evaluer" },
+      { code: "8.11", libelle: "Connaître les leviers d'efficacité énergétique de l'évaporateur", etat: "a_evaluer" },
+    ],
+    liens: [suite("x2", "Exercice — la machine ne fait plus de froid"), SOMMAIRE],
+    notes_pilote:
+      "Fiche dense : sept codes. Ne pas tout dérouler d'une traite — s'appuyer sur les trois blocs " +
+      "pour rythmer la séance. Faire identifier sur une machine réelle (ou des photos) le régulateur " +
+      "de pression d'évaporation ET le pressostat BP, et faire dire à voix haute ce que chacun " +
+      "protège : c'est la confusion la plus fréquente du groupe G8. Rappeler systématiquement azote " +
+      "seul + consignation électrique avant toute manipulation. Pour 8.10, faire rédiger un vrai " +
+      "rapport d'état à partir d'une photo (bac encrassé, conduit abîmé) plutôt que de décrire la " +
+      "méthode dans l'abstrait. Relier 8.11 à la surchauffe déjà vue en G8 : ce n'est pas une " +
+      "nouvelle notion, c'est le même réglage regardé sous l'angle énergie.",
   },
   {
     id: "x2",
@@ -1513,7 +2450,7 @@ export const CARTES = [
     id: "g9",
     type: "cours",
     titre: "Le détendeur et les organes annexes",
-    dc: "G9 · codes 9.01 → 9.10",
+    dc: "G9 · codes 9.01 · 9.02 · 9.03 · 9.08",
     minuteur_s: 300,
     corps:
       schema("detendeurs-ligne.svg", "Les quatre types de détendeurs et la ligne liquide avec ses accessoires dans l ordre.") +
@@ -1565,13 +2502,104 @@ export const CARTES = [
       { code: "9.03", libelle: "Régler un détendeur mécanique ou électronique", etat: "a_evaluer" },
       { code: "9.08", libelle: "Vérifier un filtre déshydrateur", etat: "a_evaluer" },
     ],
-    liens: [suite("g10", "Tuyauterie et brasage"), SOMMAIRE],
+    liens: [suite("g9b", "Régler et contrôler les organes annexes"), SOMMAIRE],
     notes_pilote:
       "Faire manipuler un détendeur mécanique démonté, vis de réglage visible, AVANT d'aborder " +
       "l'électronique : le geste ancre la notion, le paramétrage logiciel l'abstrait. Faire chercher " +
       "la valeur de consigne sur la notice constructeur plutôt que de la donner — cohérent avec la " +
       "règle du zéro invention. Ce chapitre est un carrefour : le relier à G4 (étanchéité), G8 " +
       "(surchauffe) et G11 (efficacité).",
+  },
+  {
+    id: "g9b",
+    type: "cours",
+    titre: "Régler et contrôler les organes annexes",
+    dc: "G9 · codes 9.04 · 9.05 · 9.06 · 9.07 · 9.09 · 9.10",
+    minuteur_s: 420,
+    corps:
+      schema("detendeurs-ligne.svg", "La ligne liquide et ses accessoires, dans l ordre : réserve de liquide, filtre déshydrateur, voyant, électrovanne, détendeur.") +
+      "<p>Autour du détendeur, d'autres organes se <b>règlent</b> et se <b>contrôlent</b>. Ils ne " +
+      "dosent pas le fluide. Ils protègent l'installation et lui évitent de gaspiller de " +
+      "l'énergie. Cette fiche en présente quatre : les thermostats, la soupape de régulation de " +
+      "pression, les limiteurs de pression, et le séparateur d'huile.</p>" +
+      "<p>Le <b>thermostat</b> commande un organe (compresseur, vanne) selon une " +
+      "<b>température</b>. Le thermostat <b>mécanique</b> utilise un bulbe relié par un tube fin " +
+      "à des contacts électriques : simple et robuste. Le thermostat <b>électronique</b> utilise " +
+      "une sonde reliée à un régulateur numérique : plus précis, et plus simple à régler. Dans " +
+      "les deux cas, le point de consigne se règle <b>selon la fiche constructeur</b>, jamais à " +
+      "l'estime.</p>" +
+      "<p>La <b>soupape de régulation de pression</b> ne coupe rien : elle <b>module en " +
+      "continu</b> pour maintenir une pression stable à un point du circuit. Le <b>limiteur de " +
+      "pression</b> est différent : c'est une sécurité. Mécanique, il est réglé par un ressort. " +
+      "Électronique, il utilise un capteur relié à un module. Dans les deux cas, il <b>coupe le " +
+      "circuit</b> — le plus souvent le compresseur — dès qu'un seuil de pression est franchi, " +
+      "en haute comme en basse pression. Une régulation qui module, une sécurité qui coupe : " +
+      "deux logiques, deux réglages.</p>" +
+      "<p>Le <b>séparateur d'huile</b> se place juste après le compresseur (à droite), avant le " +
+      "condenseur (en haut). C'est là que passe en premier la vapeur chaude chargée d'huile. Il " +
+      "retient cette huile puis la renvoie au carter du compresseur, automatiquement, dès que le " +
+      "niveau monte. <b>Vérifier son fonctionnement</b>, c'est contrôler que ce retour se fait " +
+      "bien : une huile qui s'accumule plus loin dans le circuit réduit l'échange de chaleur, et " +
+      "finit par manquer au compresseur.</p>" +
+      "<p>Après ces réglages et ce contrôle, on <b>rédige un rapport</b> sur l'état de chaque " +
+      "organe. Un thermostat qui dérive, un limiteur qui ne coupe plus, un séparateur qui laisse " +
+      "passer l'huile : non signalés, ces défauts finissent par endommager le système. À terme, " +
+      "faute de mesure, cela provoque une fuite ou une émission de réfrigérant. Le rapport écrit " +
+      "permet d'agir <b>avant</b> ce stade.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "Un bon réglage, c'est de l'énergie économisée",
+        html:
+          "Un thermostat qui démarre et arrête le compresseur trop souvent, un limiteur qui " +
+          "coupe pour rien, un séparateur d'huile qui laisse l'huile encrasser les échangeurs : " +
+          "à chaque fois, le compresseur travaille plus pour le même résultat. <b>Bien régler et " +
+          "bien entretenir ces organes, à l'installation comme en maintenance, c'est aussi ce " +
+          "qui maintient l'efficacité énergétique</b> de l'installation.",
+      },
+      {
+        type: "piege",
+        t: "Avant de toucher un réglage électrique",
+        html:
+          "Un thermostat électronique, un limiteur de pression électrique : ce sont des " +
+          "<b>organes électriques</b>. <b>Consignation électrique</b> systématique avant toute " +
+          "intervention. Et un limiteur de sécurité ne se retouche jamais « pour voir » : son " +
+          "seuil se règle selon la fiche constructeur, comme tous les autres réglages de cette " +
+          "fiche.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Quelle est la différence entre un limiteur de pression et une soupape de régulation de pression ?",
+      choix: [
+        "Aucune différence : ce sont deux noms pour le même organe",
+        "Le limiteur coupe le circuit à un seuil de sécurité ; la soupape de régulation module en continu pour maintenir une pression stable",
+        "Le limiteur agit sur la température, la soupape de régulation sur la pression",
+        "La soupape de régulation remplace le thermostat sur les installations récentes",
+      ],
+      bonne: 1,
+      explication:
+        "Le limiteur de pression (mécanique ou électronique) est une sécurité : il coupe le circuit quand un seuil est franchi. La soupape de régulation ne coupe rien : elle module en continu pour maintenir une pression stable à un point du circuit. Deux logiques différentes, deux réglages différents.",
+      remediation_vers: "g9b",
+    },
+    criteres: [
+      { code: "9.04", libelle: "Régler un thermostat mécanique ou électronique", etat: "a_evaluer" },
+      { code: "9.05", libelle: "Régler une soupape de régulation de pression", etat: "a_evaluer" },
+      { code: "9.06", libelle: "Régler un limiteur de pression mécanique ou électronique", etat: "a_evaluer" },
+      { code: "9.07", libelle: "Vérifier le fonctionnement d'un séparateur d'huile", etat: "a_evaluer" },
+      { code: "9.09", libelle: "Rédiger un rapport d'état sur ces organes", etat: "a_evaluer" },
+      { code: "9.10", libelle: "Connaître les mesures d'efficacité énergétique liées à ces réglages", etat: "a_evaluer" },
+    ],
+    liens: [suite("g10", "Tuyauterie et brasage sous azote"), SOMMAIRE],
+    notes_pilote:
+      "Faire manipuler un pressostat démonté (ou les simulateurs KP1/KP5) pour que les stagiaires " +
+      "distinguent au toucher le limiteur, qui coupe, de la soupape de régulation, qui module en " +
+      "continu : c'est la confusion la plus fréquente à l'oral. Sur le séparateur d'huile, montrer " +
+      "un appareil réel en fonctionnement si possible — le retour d'huile par flotteur reste " +
+      "abstrait sur le seul schéma. Relier le rapport écrit (9.09) à la finalité du métier : ce " +
+      "n'est pas de la paperasse, c'est ce qui évite la fuite non détectée. Ce module referme le " +
+      "groupe G9 : le relier à G6 (mêmes sécurités électriques côté compresseur) et à G4 " +
+      "(étanchéité).",
   },
 
   /* ==================================================================
@@ -1646,7 +2674,7 @@ export const CARTES = [
     id: "g11",
     type: "cours",
     titre: "Substitution et efficacité énergétique",
-    dc: "G11 · codes 11.01 → 11.05",
+    dc: "G11 · codes 1.08 · 11.01 → 11.05",
     minuteur_s: 300,
     corps:
       schema("classes-securite.svg", "Matrice des classes NF EN 378 : CO2 en A1, R-32 et R-1234yf en A2L, R-290 en A3, NH3 en B2L.") +
@@ -1657,6 +2685,17 @@ export const CARTES = [
       "<p>La <b>classe de sécurité NF EN 378</b> commande tout le reste — EPI, zonage, détection, " +
       "charge admissible dans le local : <b>A1</b> (CO₂), <b>A2L</b> (R-32, R-1234yf), <b>A3</b> " +
       "(R-290), <b>B2L</b> (NH₃).</p>" +
+      "<p>Une classe ne dit pas seulement « ça brûle ou non ». Elle décrit la <b>combustibilité</b> et " +
+      "la <b>propagation de la flamme</b> : un <b>A2L</b> brûle difficilement et la flamme se propage " +
+      "lentement, un <b>A3</b> s'enflamme facilement et la flamme court vite. De là découlent une " +
+      "<b>charge maximale</b> admissible et des <b>limites d'occupation</b> du local — plus le local " +
+      "est petit ou recevant du public, plus la charge autorisée est faible. Ces valeurs se " +
+      "déterminent selon la <b>NF EN 378</b> et la doc constructeur, <b>jamais à l'estime</b>.</p>" +
+      "<p>Le stockage et le transport des fluides <b>inflammables</b>, <b>toxiques</b> ou à " +
+      "<b>haute pression</b> obéissent chacun à des règles propres. Et lorsqu'un site ne peut pas " +
+      "respecter les exigences de l'<b>annexe IV du règlement (UE) 2024/573</b> pour des raisons de " +
+      "<b>sécurité</b>, des équipements dérogatoires restent permis : c'est une exception encadrée, " +
+      "qui se justifie par écrit, pas un passe-droit.</p>" +
       "<p>Côté énergie, le <b>COP</b> est le rapport de la puissance frigorifique produite à la " +
       "puissance électrique consommée. On l'améliore en <b>rapprochant</b> la température de " +
       "condensation de celle d'évaporation : condenseur propre, échangeurs bien dimensionnés, " +
@@ -1701,7 +2740,9 @@ export const CARTES = [
       remediation_vers: "g11",
     },
     criteres: [
+      { code: "1.08", libelle: "Situer combustibilité, propagation de flamme et limites de charge", etat: "a_evaluer" },
       { code: "11.01", libelle: "Connaître les technologies de substitution et leur manipulation sans danger", etat: "a_evaluer" },
+      { code: "11.03", libelle: "Appliquer les règles de sécurité pour fluides inflammables, toxiques ou haute pression", etat: "a_evaluer" },
       { code: "11.02", libelle: "Expliquer la conception à charge réduite et l'efficacité", etat: "a_evaluer" },
       { code: "11.04", libelle: "Comparer les fluides de substitution selon l'application", etat: "a_evaluer" },
       { code: "11.05", libelle: "Situer les différences de conception des systèmes aux hydrocarbures", etat: "a_evaluer" },
@@ -1721,7 +2762,7 @@ export const CARTES = [
     id: "g12",
     type: "cours",
     titre: "Hydrocarbures — le spécifique A1 et A2",
-    dc: "G12 · codes 12.01 → 12.14",
+    dc: "G12 · codes 12.01 → 12.04 · 12.06 · 12.13 · 12.14",
     minuteur_s: 360,
     corps:
       schema("classes-securite.svg", "Matrice des classes NF EN 378 : CO2 en A1, R-32 et R-1234yf en A2L, R-290 en A3, NH3 en B2L.") +
@@ -1736,7 +2777,19 @@ export const CARTES = [
       "plaque signalétique — <b>jamais estimée</b>.</p>" +
       "<p>Sur le circuit : récupération, puis <b>inertage à l'azote</b> avant toute flamme. " +
       "Épreuve de pression à l'azote, essai sous vide, charge de la quantité exacte, contrôle direct, " +
-      "rapport.</p>",
+      "rapport.</p>" +
+      "<p>Tout est <b>étiqueté</b>, et l'étiquette se lit avant de toucher : l'équipement porte la " +
+      "mention du fluide et le pictogramme <b>inflammable</b>, la bouteille aussi. Les bouteilles " +
+      "d'hydrocarbure ont un <b>raccord spécifique</b> et un <b>filetage à gauche</b> — c'est une " +
+      "sécurité, jamais un obstacle à contourner avec un adaptateur.</p>" +
+      "<p>Avant d'intervenir, on vérifie que le <b>site</b> lui-même est en règle : " +
+      "<b>signalisation</b> du risque, <b>issues de secours</b> dégagées, <b>capteurs de gaz</b> et " +
+      "<b>alarmes</b> présents et en service, ventilation opérante. Si ces mesures manquent, on ne " +
+      "commence pas : on le signale.</p>" +
+      "<p>Enfin, bien travailler économise l'énergie. Une charge <b>juste</b> — et les charges " +
+      "hydrocarbures sont faibles —, des échangeurs propres et des réglages exacts font qu'une " +
+      "machine au R-290 tient ses performances. Une charge approximative dégrade le rendement " +
+      "<b>et</b> la sécurité en même temps.</p>",
     blocs: [
       {
         type: "piege",
@@ -1766,18 +2819,82 @@ export const CARTES = [
       remediation_vers: "g12",
     },
     criteres: [
+      { code: "12.01", libelle: "Lire l'étiquetage et raccorder correctement une bouteille", etat: "a_evaluer" },
       { code: "12.02", libelle: "Appliquer les règles de sécurité outils, EPI et détection gaz", etat: "a_evaluer" },
       { code: "12.03", libelle: "Déterminer la charge admissible", etat: "a_evaluer" },
       { code: "12.04", libelle: "Réaliser l'analyse de risques avant intervention", etat: "a_evaluer" },
       { code: "12.06", libelle: "Récupérer et inerter à l'azote", etat: "a_evaluer" },
+      { code: "12.13", libelle: "Vérifier la signalisation, les issues, la détection et les alarmes du site", etat: "a_evaluer" },
+      { code: "12.14", libelle: "Maintenir l'efficacité énergétique avec un fluide inflammable", etat: "a_evaluer" },
     ],
-    liens: [suite("x5", "Détective : intervention R-290"), SOMMAIRE],
+    liens: [suite("g12b", "Intervenir sur un circuit hydrocarbure"), SOMMAIRE],
     notes_pilote:
       "Module le plus important d'A1 et d'A2 — c'est la nouveauté du référentiel, et le parc A2 y est " +
       "largement passé. Faire manipuler le raccord spécifique hydrocarbure et le comparer physiquement " +
       "au raccord HFC : la confusion se prévient par le geste, pas par le discours. Faire chercher la " +
       "charge maximale sur une VRAIE plaque signalétique avant d'énoncer la règle. Répéter " +
       "« jamais de flamme, jamais d'oxygène » à chaque manipulation, jusqu'au réflexe.",
+  },
+  {
+    id: "g12b",
+    type: "cours",
+    titre: "Intervenir sur un circuit hydrocarbure",
+    dc: "G12 · codes 12.07 · 12.08 · 12.09 · 12.10 · 12.11 · 12.12",
+    minuteur_s: 420,
+    corps:
+      schema("balayage-azote.svg", "Brasage du composant remplacé sous balayage d azote : débit léger et continu, sortie libre — l épreuve sous pression vient ensuite, une fois le circuit refermé.") +
+      "<p>Le circuit est déjà <b>récupéré</b> et <b>inerté à l'azote</b> : plus d'hydrocarbure ni d'air à l'intérieur. La zone est prête : <b>ventilée</b>, balisée, sans source d'inflammation, détecteur de gaz et extincteur à portée, outillage adapté.</p>" +
+      "<p>Reste une dernière vérification avant le chalumeau : la <b>consignation électrique</b> de l'installation. Le <b>R-290 est A3</b>, très inflammable — pas un A2L comme le R-32. Tant que l'inertage n'est pas confirmé : <b>aucune flamme</b>.</p>" +
+      "<p>Le mode opératoire suit ensuite toujours le même ordre :</p>" +
+      "<ol>" +
+      "<li><b>Ouvrir, remplacer, refermer.</b> On dépose le composant en panne et on brase le nouveau. Toujours sous <b>balayage d'azote</b> : un débit léger et continu qui évite la calamine à l'intérieur du tube. Mano-détendeur sur la bouteille — jamais d'azote en direct.</li>" +
+      "<li><b>Épreuve de pression.</b> Le circuit refermé, on le met sous pression d'<b>azote sec</b>, toujours au travers du mano-détendeur, pour contrôler la brasure neuve. Pression d'épreuve : selon la documentation constructeur et la norme applicable, jamais à l'estime.</li>" +
+      "<li><b>Tirage au vide.</b> On relâche l'azote, puis on tire au vide : la pompe extrait l'air et l'<b>humidité</b> restants. Un vide qui remonte signale un problème. Valeur cible et durée : selon la documentation constructeur.</li>" +
+      "<li><b>Charge.</b> On charge le circuit avec le volume de réfrigérant hydrocarbure (R-290, R-600a) indiqué sur la <b>plaque signalétique</b>, par pesée — jamais une quantité estimée. Raccord dédié aux hydrocarbures : jamais celui d'un circuit HFC, ni l'inverse.</li>" +
+      "<li><b>Contrôle direct.</b> On confirme l'étanchéité avec un <b>détecteur adapté aux hydrocarbures</b> — un détecteur pour HFC classique ne convient pas.</li>" +
+      "<li><b>Rapport.</b> On rédige le rapport d'intervention : composant changé, résultats de l'épreuve et du contrôle, quantité chargée. Sans rapport, l'intervention n'a pas de valeur.</li>" +
+      "</ol>",
+    blocs: [
+      {
+        type: "piege",
+        t: "Geste interdit",
+        html:
+          "Mise en pression : <b>azote sec seulement</b>, jamais d'oxygène ni d'air comprimé, toujours au travers d'un <b>mano-détendeur</b> — une bouteille en direct peut faire éclater le circuit. <b>Consignation électrique</b> systématique avant d'ouvrir. Et tant que l'inertage n'est pas confirmé : <b>pas de chalumeau</b>, le R-290 est A3, très inflammable.",
+      },
+      {
+        type: "cle",
+        t: "Le fil rouge de l'intervention",
+        html:
+          "Récupérer → inerter à l'azote → ouvrir et remplacer → épreuve à l'azote → vide → charge → contrôle direct → rapport.<br>" +
+          "Chaque étape verrouille la suivante : pas de charge sans épreuve concluante, pas de contrôle sans vide correct.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce:
+        "Vous allez faire l'épreuve de pression à l'azote sur un circuit hydrocarbure qui vient d'être rebrasé. Que vérifiez-vous avant d'ouvrir la bouteille ?",
+      choix: [
+        "Que le mano-détendeur est bien monté sur la bouteille",
+        "Que le circuit est déjà chargé en R-290",
+        "Que le compresseur est en marche",
+        "Que le détendeur thermostatique est réglé",
+      ],
+      bonne: 0,
+      explication:
+        "Une bouteille d'azote est à très haute pression : sans mano-détendeur, elle peut dépasser la pression d'épreuve et faire éclater le circuit. Le circuit n'est pas encore chargé à ce stade, et le compresseur reste consigné — son détendeur thermostatique n'a rien à voir avec cette étape.",
+      remediation_vers: "g12b",
+    },
+    criteres: [
+      { code: "12.07", libelle: "Ouvrir le circuit pour remplacer un composant, puis le refermer", etat: "a_evaluer" },
+      { code: "12.08", libelle: "Réaliser l'épreuve de pression à l'azote", etat: "a_evaluer" },
+      { code: "12.09", libelle: "Tirer au vide pour sécher et vérifier le circuit", etat: "a_evaluer" },
+      { code: "12.10", libelle: "Charger le circuit avec la quantité d'hydrocarbure prévue", etat: "a_evaluer" },
+      { code: "12.11", libelle: "Contrôler l'étanchéité par une méthode directe", etat: "a_evaluer" },
+      { code: "12.12", libelle: "Rédiger le rapport d'intervention", etat: "a_evaluer" },
+    ],
+    liens: [suite("x5", "Détective — intervention sur monobloc R-290"), SOMMAIRE],
+    notes_pilote:
+      "Dérouler la séquence complète sur un poste d'atelier dédié aux hydrocarbures, jamais sur une installation client en première approche. Faire monter le mano-détendeur AVANT toute mise en flamme et faire vérifier le montage par un binôme. Sur l'ordre des gestes, être intraitable : un stagiaire qui veut charger avant un vide concluant s'arrête immédiatement, pas seulement à la correction. Faire toucher côte à côte un détecteur adapté aux hydrocarbures et un détecteur HFC classique — la différence doit être physique, pas seulement énoncée. Terminer par un vrai rapport d'intervention rempli au propre.",
   },
 
   /* ==================================================================

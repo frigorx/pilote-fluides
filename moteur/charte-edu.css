@@ -88,6 +88,72 @@ h1,h2,h3,.tt{font-family:"Trebuchet MS",Calibri,Arial,sans-serif; font-weight:70
 .criteres .etats button.sel.non{background:var(--ko-bg);border-color:var(--ko);color:var(--ko)}
 .criteres .etats button.sel.cours{background:#fff4e0;border-color:var(--attente);color:var(--attente)}
 
+/* ---- Compétences visées (extension pack fluides) ----
+   Le référentiel est la promesse faite au candidat : il doit lire, sur
+   chaque fiche, le savoir-faire qui sera évalué. Reformulation accessible
+   en avant, texte de l'arrêté à un clic. */
+.competences{border:1.5px solid var(--bleu);border-radius:12px;background:#f3f7fb;
+  padding:12px 16px;margin:0 0 18px}
+.competences > .t{font-weight:700;color:var(--bleu);margin-bottom:8px;font-size:14.5px}
+.competences .comp{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding:6px 0;border-top:1px solid #dbe6f1}
+.competences .comp.prem{border-top:0}
+.competences .lib{flex:1;min-width:200px;font-size:15px}
+.competences .tp{font-size:12px;font-weight:700;border-radius:999px;padding:2px 9px;
+  border:1.5px solid;background:#fff;white-space:nowrap}
+.competences .tp.p{color:var(--orange);border-color:var(--orange)}
+.competences .tp.t{color:var(--bleu-clair);border-color:var(--bleu-clair)}
+.competences .tp.i{color:var(--mut);border-color:var(--ligne)}
+.competences .cat{font-size:12.5px;color:var(--mut);white-space:nowrap}
+.competences .neuf{font-size:12px;color:var(--attente);font-weight:700;white-space:nowrap}
+.competences .avert{margin-top:10px;font-size:13.5px;color:var(--attente);font-weight:600}
+.competences .plus{margin-top:10px}
+.competences .plus button{font:inherit;font-size:13px;cursor:pointer;background:none;
+  border:0;color:var(--bleu);text-decoration:underline;padding:0}
+.competences .officiel{margin-top:8px;font-size:13.5px;color:var(--mut);
+  border-top:1px dashed var(--ligne);padding-top:8px}
+.competences .officiel p{margin:6px 0}
+.competences .officiel b{color:var(--bleu)}
+.competences .officiel .src{font-size:12.5px;font-style:italic}
+
+/* ---- Carte « Ma progression » (extension pack fluides) ----
+   Où j'en suis, compétence par compétence. Quatre états lisibles,
+   distingués par la couleur ET par un mot — jamais par la couleur seule. */
+.prog-resume{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 20px}
+.pst{border:1.5px solid var(--ligne);border-radius:999px;padding:6px 14px;font-size:14px;background:#fff}
+.pst b{font-size:17px}
+.pst.acquis{border-color:var(--ok);color:var(--ok);background:var(--ok-bg)}
+.pst.fragile{border-color:var(--attente);color:var(--attente);background:#fff4e0}
+.pst.revoir{border-color:var(--ko);color:var(--ko);background:var(--ko-bg)}
+.pst.vierge{color:var(--mut)}
+.prog-groupe{margin:18px 0}
+.prog-groupe .gt{font-weight:700;color:var(--bleu);font-size:14px;border-bottom:1.5px solid var(--ligne);
+  padding-bottom:4px;margin-bottom:8px}
+.pc{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:7px 12px;margin:5px 0;
+  border:1px solid var(--ligne);border-left-width:5px;border-radius:8px;background:#fff}
+.pc.acquis{border-left-color:var(--ok)}
+.pc.fragile{border-left-color:var(--attente)}
+.pc.revoir{border-left-color:var(--ko)}
+.pc.vierge{border-left-color:var(--ligne)}
+.pc .cd{font-weight:700;color:var(--bleu);font-size:13px;min-width:46px}
+.pc .lb{flex:1;min-width:190px;font-size:14.5px}
+.pc .st{font-size:13px;white-space:nowrap;color:var(--mut)}
+.pc.acquis .st{color:var(--ok);font-weight:600}
+.pc.fragile .st{color:var(--attente);font-weight:600}
+.pc.revoir .st{color:var(--ko);font-weight:600}
+
+/* ---- Bilan par compétence (extension pack fluides) ----
+   Après un examen blanc, l'élève lit ce qui n'est pas acquis en termes de
+   compétences de l'arrêté, pas seulement en numéros de fiches. */
+.bilan-comp{margin-top:14px;border:1.5px solid var(--attente);background:#fffaf2;
+  border-radius:10px;padding:10px 14px}
+.bilan-comp > .t{font-weight:700;color:var(--attente);margin-bottom:6px}
+.bilan-comp .bc{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:4px 0}
+.bilan-comp .code{font-weight:700;color:var(--bleu);font-size:13px;min-width:46px}
+.bilan-comp .lib{flex:1;min-width:180px;font-size:14.5px}
+.bilan-comp .n{font-size:12px;font-weight:700;color:var(--ko)}
+.bilan-comp .hr{margin-top:6px;font-size:13px;color:var(--mut);font-style:italic}
+
 /* ---- Couche pilote (formateur seulement) ---- */
 .pilote{margin-top:16px;border:2px solid var(--orange);background:#fff8f4;border-radius:10px;padding:12px 16px}
 .pilote .t{font-weight:700;color:var(--orange);margin-bottom:4px;font-size:13px;letter-spacing:.4px}
