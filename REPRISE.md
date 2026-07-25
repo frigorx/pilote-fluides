@@ -28,6 +28,9 @@ tournant dans le moteur générique **inerWeb Pilote** (repris de `frigorx/r408`
 
 **Dépôt** : `C:\git\pilote-fluides` → `github.com/frigorx/pilote-fluides` (public)
 **En ligne** : https://frigorx.github.io/pilote-fluides/
+**Licence** : `LICENCE.md` (25/07) — contenu pédagogique CC BY-NC-SA 4.0 (pas d'usage
+commercial sans accord), moteur et build MIT, référentiel officiel hors licence.
+Doctrine [[feedback_protection_code]] : licence + antériorité git, jamais de chiffrement.
 
 | Page | Rôle | Pour qui |
 |---|---|---|
