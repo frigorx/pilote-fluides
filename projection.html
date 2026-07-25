@@ -141,9 +141,12 @@
   </div>
 </div>
 
-<script src="packs/fluides/projection.gen.js"></script>
+<!-- CODE D'ACCÈS EXIGÉ (25/07) : le support de salle est une page formateur.
+     Le pack de projection ne se charge qu'après validation du code — rideau
+     assumé, pas un coffre (voir l'en-tête de `moteur/portillon.js`). -->
+<script src="moteur/portillon.js"></script>
 <script>
-(function(){
+function demarrerProjection(){
   "use strict";
   var P = window.PILOTE_PROJECTION;
   var som = document.getElementById("som"), scene = document.getElementById("scene");
@@ -330,7 +333,8 @@
     return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
 
   renderSommaire();
-})();
+}
+Portillon.exiger("Support de projection", ["packs/fluides/projection.gen.js"], demarrerProjection);
 </script>
 </body>
 </html>

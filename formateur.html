@@ -12,10 +12,19 @@
   <!-- Côté FORMATEUR : pack COMPLET, avec la couche pilote (notes_pilote).
        Mode « Pilotage formateur » forcé et verrouillé : pas de bascule possible,
        et rien à deviner — cette page est faite pour être projetée ou gardée
-       sur l'écran de l'animateur. -->
+       sur l'écran de l'animateur.
+
+       CODE D'ACCÈS EXIGÉ (25/07) : rien ne se charge avant validation — ni le
+       pack pilote, ni le moteur. Rideau assumé, pas un coffre : voir l'en-tête
+       de `moteur/portillon.js` et REPRISE § 4. -->
   <script>window.PILOTE_MODE = "pilotage";</script>
-  <script src="packs/fluides/pack.pilote.js"></script>
-  <script src="config.js"></script>
-  <script src="moteur/moteur.js"></script>
+  <script src="moteur/portillon.js"></script>
+  <script>
+    Portillon.exiger("Console formateur", [
+      "packs/fluides/pack.pilote.js",
+      "config.js",
+      "moteur/moteur.js"
+    ]);
+  </script>
 </body>
 </html>
