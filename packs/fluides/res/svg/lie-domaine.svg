@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" role="img"
+     aria-label="Le domaine d'explosivité d'un gaz inflammable. En dessous de la limite inférieure d'explosivité, le mélange est trop pauvre en gaz pour s'enflammer. Au-dessus de la limite supérieure, il est trop riche et manque d'oxygène. Entre les deux se trouve le domaine d'explosivité, où une étincelle suffit. L'explosimètre n'affiche pas la concentration : il affiche un pourcentage de la limite inférieure, c'est-à-dire la marge qui reste avant d'entrer dans le domaine. Les valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité.">
+  <title>LIE et LSE : le domaine d'explosivité, et ce qu'affiche l'explosimètre</title>
+  <style>
+    .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .st  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lg  { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .bad { font:700 15px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+    .p   { fill:none; stroke:#1b3a63; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+    .acc { fill:none; stroke:#c9451a; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  </style>
+
+  <rect width="880" height="340" fill="#ffffff"/>
+  <text class="t" x="30" y="32">Un gaz ne brûle qu'entre deux bornes</text>
+
+  <!-- axe -->
+  <text class="lg" x="30" y="66">quantité de gaz dans l'air →</text>
+
+  <!-- zones -->
+  <rect x="60" y="80" width="220" height="52" rx="4" fill="#eef3f7" stroke="#c9d4de" stroke-width="1.5"/>
+  <rect x="280" y="80" width="300" height="52" fill="#fbdcd2" stroke="#c9451a" stroke-width="2"/>
+  <rect x="580" y="80" width="240" height="52" rx="4" fill="#eef3f7" stroke="#c9d4de" stroke-width="1.5"/>
+
+  <text class="st" x="170" y="104" text-anchor="middle">trop PAUVRE</text>
+  <text class="lg" x="170" y="123" text-anchor="middle">pas assez de gaz</text>
+
+  <text class="bad" x="430" y="104" text-anchor="middle">DOMAINE D'EXPLOSIVITÉ</text>
+  <text class="lg" x="430" y="123" text-anchor="middle" style="fill:#8a3312">une étincelle suffit</text>
+
+  <text class="st" x="700" y="104" text-anchor="middle">trop RICHE</text>
+  <text class="lg" x="700" y="123" text-anchor="middle">pas assez d'air</text>
+
+  <!-- bornes -->
+  <line class="acc" x1="280" y1="72" x2="280" y2="146"/>
+  <line class="acc" x1="580" y1="72" x2="580" y2="146"/>
+  <text class="bad" x="280" y="166" text-anchor="middle">LIE</text>
+  <text class="lg"  x="280" y="184" text-anchor="middle">limite inférieure</text>
+  <text class="bad" x="580" y="166" text-anchor="middle">LSE</text>
+  <text class="lg"  x="580" y="184" text-anchor="middle">limite supérieure</text>
+
+  <!-- échelle explosimètre -->
+  <line x1="60" y1="222" x2="280" y2="222" stroke="#1b3a63" stroke-width="2.5"/>
+  <path class="p" d="M60,216 v12 M280,216 v12"/>
+  <text class="st" x="66" y="244">0 % LIE</text>
+  <text class="st" x="274" y="244" text-anchor="end">100 % LIE</text>
+  <text class="st" x="170" y="212" text-anchor="middle">ce que mesure l'explosimètre</text>
+
+  <path class="acc" d="M300,222 h44 m-10,-6 l10,6 -10,6"/>
+  <text class="lg" x="356" y="218">L'appareil n'affiche pas « combien il y a de gaz ».</text>
+  <text class="lg" x="356" y="238">Il affiche <tspan style="font-weight:700;fill:#c9451a">la marge qui reste</tspan> avant le domaine d'explosivité.</text>
+  <text class="lg" x="356" y="258">Son alarme se déclenche donc bien <tspan style="font-weight:700">avant</tspan> le danger.</text>
+
+  <!-- bandeau -->
+  <rect x="30" y="278" width="820" height="46" rx="8" fill="#fdf1ed" stroke="#e8b9a8" stroke-width="1.5"/>
+  <text class="lg" x="48" y="298">Les valeurs de LIE et de LSE sont <tspan style="font-weight:700">propres à chaque fluide</tspan> : elles se lisent sur sa fiche de données de sécurité, jamais de mémoire.</text>
+  <text class="lg" x="48" y="317">Et l'appareil se règle <tspan style="font-weight:700">pour un gaz donné</tspan> : réglé pour un autre, il affiche un chiffre faux. Le R-290 du froid n'a aucune odeur — le nez n'avertit de rien.</text>
+</svg>

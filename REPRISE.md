@@ -50,7 +50,8 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ## 2. État au 26/07/2026
 
-**79 cartes** · **250 questions** · **23 planches SVG** (dont 11 animées) · 4 illustrations · **3 outils embarqués**
+**79 cartes** · **250 questions** · **27 planches SVG** (dont 11 animées) · 4 illustrations · **3 outils embarqués**
+**✅ 42 fiches de cours sur 42 portent un visuel** — plus une seule fiche « mur de texte ».
 
 > **Couverture du référentiel officiel : A1 100 % · A2 100 % · D 100 % · E 100 %.**
 > Mesurée à chaque build, écrite dans `COUVERTURE-REFERENTIEL.md`. Elle valait 60 % en A1
@@ -209,7 +210,9 @@ compétences opposables :
 
 **Le volet ILLUSTRATIONS (26/07)** — constat de F. Henninot : *« s'il n'y a pas d'image ça ne
 cause pas. Le public est divers ; si je mets trop de texte écrit, je les ai perdus en dix
-minutes. »* Mesuré : **42 fiches de cours pour 16 planches**, donc 26 fiches sans aucun visuel.
+minutes. »* Mesuré **fiche par fiche** (et non « 42 − 16 planches », approximation fausse d'un
+premier jet : une planche sert parfois deux fiches, et d'autres portent photos ou outils) :
+**11 fiches de cours sur 42 n'avaient aucun visuel**.
 7 planches ajoutées, en commençant **par la sécurité** (arbitrage F. Henninot : c'est le premier
 bloc que voit tout stagiaire, quelle que soit sa catégorie — si on le perd là, le reste est
 perdu). `s1` le double accident en 3 temps · `s2` la trajectoire du jet · `s3` brasage interdit
@@ -225,6 +228,12 @@ consignation · `cl3` **animation** du CO₂ qui remplit le local par le bas · 
 - **Rien de génératif** : 7 SVG faits main, 4 à 6 Ko pièce, **36 Ko au total** — le pack reste à
   624 Ko et s'ouvre en 4G. Un modèle d'image sort un rendu plausible et faux (croix du frigoriste
   inversée, manifold à trois manomètres) et flou en projection : voir [[feedback_illustrations_ia]].
+- **Les 4 dernières fiches sans visuel comblées dans la foulée** : `cl2` l'axe des concentrations
+  (trop pauvre · domaine d'explosivité · trop riche, et l'échelle de l'explosimètre qui s'arrête
+  AVANT la LIE) · `g13` le comparatif CO₂/NH₃ aux comportements **inverses** (l'un descend,
+  l'autre monte — c'est le piège de généralisation, mis en image) · `g0` **aptitude** (la personne)
+  contre **capacité** (l'entreprise), la confusion la plus fréquente du métier · `p7` les quatre
+  temps de la préparation de chantier. **Compteur à zéro : 42/42.**
 - **Pictogrammes** : trois usages à ne pas confondre — repères de fiche (libres, notre charte),
   **pictogrammes normalisés SGH / ATEX / ISO 7010** (à reproduire fidèlement, jamais réinventer :
   ce sont ceux que le stagiaire verra sur les bouteilles, donc c'est du *contenu*), équipements et

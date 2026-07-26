@@ -1017,6 +1017,12 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/lie-domaine.svg",
+       "alt": "L'axe des concentrations : trop pauvre, puis le domaine d'explosivité entre LIE et LSE, puis trop riche. L'explosimètre affiche un pourcentage de la LIE, c'est-à-dire la marge restante.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
        "type": "point",
        "html": "<b>Ce qui arrive.</b> Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz — une étincelle ne déclenche rien. Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. <b>Entre les deux</b>, le mélange s'enflamme, et il le fait d'un coup, dans tout le volume.",
        "titre": "Explosif avant d'être perceptible — la LIE"
@@ -1704,6 +1710,12 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/aptitude-capacite.svg",
+       "alt": "L'attestation d'aptitude concerne la personne et prouve qu'elle sait faire ; l'attestation de capacité concerne l'entreprise et prouve qu'elle a le personnel, l'outillage et les procédures. Il faut les deux.",
+       "titre": "Ce que la loi vous impose"
       },
       {
        "type": "point",
@@ -2928,6 +2940,12 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/co2-nh3-compare.svg",
+       "alt": "Deux comportements inverses : le CO₂, A1 et sans odeur, est plus lourd que l'air et descend (catégorie B) ; l'ammoniac, B2L et piquant, est plus léger que l'air et monte (catégorie C).",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
       },
       {
        "type": "point",
@@ -6031,6 +6049,12 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/lie-domaine.svg",
+       "alt": "L'axe des concentrations : trop pauvre, puis le domaine d'explosivité entre LIE et LSE, puis trop riche. L'explosimètre affiche un pourcentage de la LIE, c'est-à-dire la marge restante.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
        "type": "point",
        "html": "<b>Ce qui arrive.</b> Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz — une étincelle ne déclenche rien. Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. <b>Entre les deux</b>, le mélange s'enflamme, et il le fait d'un coup, dans tout le volume.",
        "titre": "Explosif avant d'être perceptible — la LIE"
@@ -8201,6 +8225,12 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/prepa-chantier.svg",
+       "alt": "Quatre temps avant de toucher : reconnaître le lieu et le fluide, identifier les risques du jour et les supprimer, se protéger avec les EPI qui en découlent, préparer la zone et le matériel.",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
       },
       {
        "type": "point",

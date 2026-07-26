@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 350" role="img"
+     aria-label="Comparaison du CO2 et de l'ammoniac. Le CO2, R-744, est classé A1, sans odeur, plus lourd que l'air : il s'accumule en partie basse du local, et relève de la catégorie B. L'ammoniac, R-717, est classé B2L, toxique et faiblement inflammable, d'odeur piquante, plus léger que l'air : il monte vers le plafond, et relève de la catégorie C. Une attestation A1 ou A2 ne donne aucun droit d'intervention sur ces deux fluides.">
+  <title>CO₂ et ammoniac : deux fluides, deux comportements inverses</title>
+  <style>
+    .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .st  { font:700 15px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lg  { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .bad { font:700 14px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+    .p   { fill:none; stroke:#1b3a63; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+    .acc { fill:none; stroke:#c9451a; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+  </style>
+
+  <rect width="880" height="350" fill="#ffffff"/>
+  <text class="t" x="30" y="32">Le même réflexe ne marche pas pour les deux</text>
+
+  <!-- ===== CO2 ===== -->
+  <g transform="translate(30,52)">
+    <rect x="0" y="0" width="400" height="230" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5"/>
+    <text class="st" x="20" y="28">CO₂ — R-744</text>
+    <rect x="130" y="12" width="42" height="22" rx="4" fill="#e9f5ee" stroke="#7fb391" stroke-width="1.5"/>
+    <text x="151" y="28" text-anchor="middle" style="font:700 13px Calibri;fill:#2f7a4f">A1</text>
+
+    <!-- local -->
+    <g transform="translate(24,46)">
+      <path class="p" d="M10,14 v120 h180 v-120"/>
+      <line class="p" x1="0" y1="134" x2="200" y2="134"/>
+      <line class="p" x1="10" y1="14" x2="190" y2="14"/>
+      <!-- gaz en bas -->
+      <rect x="12" y="98" width="176" height="36" fill="#7fa9c9" opacity="0.8"/>
+      <line x1="12" y1="98" x2="188" y2="98" stroke="#3f7fae" stroke-width="2"/>
+      <path class="acc" d="M100,44 v40 m-6,-6 l6,6 6,-6"/>
+      <text x="100" y="122" text-anchor="middle" style="font:700 13px Calibri;fill:#123a5c">il descend</text>
+    </g>
+
+    <text class="lg" x="248" y="76">plus <tspan style="font-weight:700">lourd</tspan> que l'air</text>
+    <text class="lg" x="248" y="98">aucune odeur</text>
+    <text class="lg" x="248" y="120">capteur <tspan style="font-weight:700">en bas</tspan></text>
+    <text class="bad" x="248" y="150">catégorie B</text>
+
+    <text class="lg" x="20" y="212">Dangers : la pression, et l'atmosphère irrespirable en local fermé.</text>
+  </g>
+
+  <!-- ===== NH3 ===== -->
+  <g transform="translate(450,52)">
+    <rect x="0" y="0" width="400" height="230" rx="8" fill="#faf7fb" stroke="#d6c7de" stroke-width="1.5"/>
+    <text class="st" x="20" y="28">NH₃ — R-717</text>
+    <rect x="146" y="12" width="52" height="22" rx="4" fill="#efe6f3" stroke="#a98cba" stroke-width="1.5"/>
+    <text x="172" y="28" text-anchor="middle" style="font:700 13px Calibri;fill:#6b4a80">B2L</text>
+
+    <g transform="translate(24,46)">
+      <path class="p" d="M10,14 v120 h180 v-120"/>
+      <line class="p" x1="0" y1="134" x2="200" y2="134"/>
+      <line class="p" x1="10" y1="14" x2="190" y2="14"/>
+      <!-- gaz en haut -->
+      <rect x="12" y="16" width="176" height="36" fill="#c3a8d1" opacity="0.8"/>
+      <line x1="12" y1="52" x2="188" y2="52" stroke="#8b63a3" stroke-width="2"/>
+      <path class="acc" d="M100,110 v-40 m-6,6 l6,-6 6,6"/>
+      <text x="100" y="40" text-anchor="middle" style="font:700 13px Calibri;fill:#4a2d5c">il monte</text>
+    </g>
+
+    <text class="lg" x="248" y="76">plus <tspan style="font-weight:700">léger</tspan> que l'air</text>
+    <text class="lg" x="248" y="98">odeur piquante</text>
+    <text class="lg" x="248" y="120"><tspan style="font-weight:700">toxique</tspan> ET inflammable</text>
+    <text class="bad" x="248" y="150">catégorie C</text>
+
+    <text class="lg" x="20" y="212">L'odeur se perçoit tôt — mais elle ne remplace aucune mesure.</text>
+  </g>
+
+  <!-- bandeau -->
+  <rect x="30" y="296" width="820" height="40" rx="8" fill="#fdf1ed" stroke="#e8b9a8" stroke-width="1.5"/>
+  <text class="bad" x="48" y="322">Une attestation A1 ou A2 ne donne AUCUN droit d'intervention sur ces deux fluides.<tspan class="lg" dx="12">Ici, on apprend à reconnaître — et à ne pas toucher.</tspan></text>
+</svg>
