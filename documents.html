@@ -341,17 +341,49 @@
       zone.appendChild(h);
       cats[cat].forEach(function (d) {
         var etat = cleCrypto
-          ? "<span class='ouvert'>Déverrouillé</span>"
+          ? "<span class='ouvert'>" + (d.binaire ? "Déverrouillé — cliquer pour télécharger" : "Déverrouillé") + "</span>"
           : "<span class='cad'>🔒 Chiffré</span>";
+        var icone = cleCrypto ? (d.binaire ? "⬇ " : "📄 ") : "🔒 ";
         zone.appendChild(carte(
-          (cleCrypto ? "📄 " : "🔒 ") + d.titre, d.desc,
-          etat + " · " + Math.round(d.taille / 1024) + " Ko",
+          icone + d.titre, d.desc,
+          etat + " · " + Math.round(d.taille / 1024) + " Ko" + (d.binaire ? " · " + d.fichier.split(".").pop().toUpperCase() : ""),
           function () {
             if (!cleCrypto) { $("code").focus(); return; }
-            lire(d);
+            if (d.binaire) telecharger(d); else lire(d);
           }
         ));
       });
+    });
+  }
+
+  /* Déchiffre et rend les octets bruts — commun à la lecture et au téléchargement. */
+  function dechiffrer(d) {
+    return fetch("docs/coffre/" + d.id + ".enc").then(function (r) {
+      if (!r.ok) throw new Error("introuvable");
+      return r.arrayBuffer();
+    }).then(function (buf) {
+      var o = new Uint8Array(buf);
+      var iv = o.slice(0, 12), tag = o.slice(12, 28), corps = o.slice(28);
+      var charge = new Uint8Array(corps.length + tag.length);
+      charge.set(corps, 0);
+      charge.set(tag, corps.length);
+      return crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, cleCrypto, charge);
+    });
+  }
+
+  /* Fichiers Office : on ne les affiche pas, on les rend tels quels. */
+  function telecharger(d) {
+    dechiffrer(d).then(function (clair) {
+      var url = URL.createObjectURL(new Blob([clair]));
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = d.fichier;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 30000);
+    }).catch(function (e) {
+      alert("Impossible de récupérer ce fichier.\n(" + (e && e.message ? e.message : "erreur") + ")");
     });
   }
 

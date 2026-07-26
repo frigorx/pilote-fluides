@@ -1,258 +1,276 @@
 {
- "sel": "5gDYXr5TbWtqX2qSwRojIw==",
+ "sel": "AN4CaH8m0iNjxOInkx5Ecg==",
  "iterations": 600000,
  "documents": [
+  {
+   "id": "projet-centre",
+   "cat": "Dossier de direction",
+   "titre": "Projet d'ouverture d'un centre d'habilitation",
+   "desc": "Le dossier présenté à la direction : contexte réglementaire, périmètre, organisation, investissement, modèle économique, risques, calendrier, décisions demandées.",
+   "taille": 27428,
+   "binaire": true,
+   "fichier": "Projet_Centre_Habilitation_Fluide_LPP-JR.docx"
+  },
+  {
+   "id": "budget-centre",
+   "cat": "Dossier de direction",
+   "titre": "Budget prévisionnel sur 5 ans",
+   "desc": "Le modèle paramétrable : hypothèses, lignes d'activité, économie d'une session, plan de financement, compte de résultat, seuil de rentabilité et sensibilité.",
+   "taille": 19323,
+   "binaire": true,
+   "fichier": "Budget_previsionnel_Centre_Fluides_LPP-JR.xlsx"
+  },
   {
    "id": "architecture",
    "cat": "Architecture et ingénierie",
    "titre": "Architecture du dispositif",
    "desc": "Le plan d'ensemble : les trois temps, la frontière public/privé, qui porte quoi.",
-   "taille": 10817
+   "taille": 12026
   },
   {
    "id": "note-examen",
    "cat": "Architecture et ingénierie",
    "titre": "Note d'architecture — évaluation officielle",
    "desc": "Ce qu'exige l'arrêté pour la partie examen, l'écart avec l'existant, l'architecture retenue.",
-   "taille": 8732
+   "taille": 9128
   },
   {
    "id": "conformite",
    "cat": "Architecture et ingénierie",
    "titre": "Contrôle de conformité",
    "desc": "Point par point de l'annexe III, ce qui est tenu et ce qui manque.",
-   "taille": 3180
+   "taille": 3337
   },
   {
    "id": "etat-dossier",
    "cat": "Architecture et ingénierie",
    "titre": "État du dossier d'agrément",
    "desc": "Les marqueurs à compléter avant dépôt.",
-   "taille": 17011
+   "taille": 17804
   },
   {
    "id": "plan-manipulation",
    "cat": "Architecture et ingénierie",
    "titre": "Plan — brique manipulation fluidique",
    "desc": "En réserve : la reprise de l'outil EP3. Plan écrit, non démarré.",
-   "taille": 12138
+   "taille": 12565
   },
   {
    "id": "reprise-dispositif",
    "cat": "Architecture et ingénierie",
    "titre": "Reprise du dispositif (privé)",
    "desc": "Point d'entrée du chantier d'évaluation. ⚠ partiellement périmé.",
-   "taille": 10836
+   "taille": 11285
   },
   {
    "id": "sources",
    "cat": "Architecture et ingénierie",
    "titre": "Sources et références",
    "desc": "Les textes et documents sur lesquels le dispositif s'appuie.",
-   "taille": 6819
+   "taille": 7001
   },
   {
    "id": "bible",
    "cat": "Doctrine réglementaire",
    "titre": "Bible F-Gas III",
    "desc": "Transcription de l'arrêté du 21 novembre 2025, 23 sections. La référence opposable.",
-   "taille": 58363
+   "taille": 61174
   },
   {
    "id": "enr-11",
    "cat": "Système qualité",
    "titre": "ENR-11 — liste de la documentation à jour",
    "desc": "L'enregistrement exigé par l'annexe III.A point 8. La première pièce qu'un auditeur échantillonne.",
-   "taille": 7889
+   "taille": 8205
   },
   {
    "id": "pr-01",
    "cat": "Système qualité",
    "titre": "PR-01 — impartialité formateur/évaluateur",
    "desc": "Point 3 de l'annexe III.A.",
-   "taille": 19382
+   "taille": 20242
   },
   {
    "id": "pr-02",
    "cat": "Système qualité",
    "titre": "PR-02 — procédure d'évaluation",
    "desc": "Point 4. Porte le barème pondéré et le seuil de réussite.",
-   "taille": 34152
+   "taille": 35792
   },
   {
    "id": "pr-03",
    "cat": "Système qualité",
    "titre": "PR-03 — délivrance, suspension, retrait",
    "desc": "Point 5.",
-   "taille": 45512
+   "taille": 47500
   },
   {
    "id": "pr-04",
    "cat": "Système qualité",
    "titre": "PR-04 — plaintes et réclamations",
    "desc": "Point 8, premier bloc.",
-   "taille": 33352
+   "taille": 34754
   },
   {
    "id": "pr-05",
    "cat": "Système qualité",
    "titre": "PR-05 — gestion documentaire",
    "desc": "Point 8, second bloc.",
-   "taille": 10511
+   "taille": 10906
   },
   {
    "id": "pr-06",
    "cat": "Système qualité",
    "titre": "PR-06 — traçabilité et archivage",
    "desc": "Point 7 : le cœur du logiciel. Registre des sessions, conservation 5 ans.",
-   "taille": 9518
+   "taille": 9894
   },
   {
    "id": "cours-contenu-00-guide-sommaire",
    "cat": "Cours source (14 chapitres)",
    "titre": "00 GUIDE SOMMAIRE",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 3698
+   "taille": 3877
   },
   {
    "id": "cours-contenu-00-progressions",
    "cat": "Cours source (14 chapitres)",
    "titre": "00 PROGRESSIONS",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 7227
+   "taille": 7586
   },
   {
    "id": "cours-contenu-01-g1-legislation-thermo",
    "cat": "Cours source (14 chapitres)",
    "titre": "01 G1 legislation thermo",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 10781
+   "taille": 11336
   },
   {
    "id": "cours-contenu-02-g2-environnement",
    "cat": "Cours source (14 chapitres)",
    "titre": "02 G2 environnement",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 4502
+   "taille": 4733
   },
   {
    "id": "cours-contenu-03-g3-controles-mes",
    "cat": "Cours source (14 chapitres)",
    "titre": "03 G3 controles mes",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 9477
+   "taille": 9876
   },
   {
    "id": "cours-contenu-04-g4-etancheite",
    "cat": "Cours source (14 chapitres)",
    "titre": "04 G4 etancheite",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 12680
+   "taille": 13230
   },
   {
    "id": "cours-contenu-05-g5-recuperation",
    "cat": "Cours source (14 chapitres)",
    "titre": "05 G5 recuperation",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 11583
+   "taille": 12145
   },
   {
    "id": "cours-contenu-06-g6-compresseurs",
    "cat": "Cours source (14 chapitres)",
    "titre": "06 G6 compresseurs",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 13291
+   "taille": 13749
   },
   {
    "id": "cours-contenu-07-g7-condenseurs",
    "cat": "Cours source (14 chapitres)",
    "titre": "07 G7 condenseurs",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 10853
+   "taille": 11258
   },
   {
    "id": "cours-contenu-08-g8-evaporateurs",
    "cat": "Cours source (14 chapitres)",
    "titre": "08 G8 evaporateurs",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 11406
+   "taille": 11882
   },
   {
    "id": "cours-contenu-09-g9-detendeurs",
    "cat": "Cours source (14 chapitres)",
    "titre": "09 G9 detendeurs",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 10503
+   "taille": 10935
   },
   {
    "id": "cours-contenu-10-g10-tuyauterie-brasage",
    "cat": "Cours source (14 chapitres)",
    "titre": "10 G10 tuyauterie brasage",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 10411
+   "taille": 10760
   },
   {
    "id": "cours-contenu-11-g11-substitution-efficacite",
    "cat": "Cours source (14 chapitres)",
    "titre": "11 G11 substitution efficacite",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 13745
+   "taille": 14246
   },
   {
    "id": "cours-contenu-12-g12-hydrocarbures",
    "cat": "Cours source (14 chapitres)",
    "titre": "12 G12 hydrocarbures",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 9330
+   "taille": 9715
   },
   {
    "id": "cours-contenu-13-g13-co2-information-risques",
    "cat": "Cours source (14 chapitres)",
    "titre": "13 G13 co2 information risques",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 8352
+   "taille": 8732
   },
   {
    "id": "cours-contenu-14-g14-nh3-information-risques",
    "cat": "Cours source (14 chapitres)",
    "titre": "14 G14 nh3 information risques",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 10564
+   "taille": 10905
   },
   {
    "id": "cours-projet-consignes",
    "cat": "Cours source (14 chapitres)",
    "titre": "PROJET CONSIGNES",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 3190
+   "taille": 3306
   },
   {
    "id": "cours-projet-contexte-etat",
    "cat": "Cours source (14 chapitres)",
    "titre": "PROJET CONTEXTE ETAT",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 5462
+   "taille": 5768
   },
   {
    "id": "cours-ref-ancien-2008-abroge",
    "cat": "Cours source (14 chapitres)",
    "titre": "REF ancien 2008 abroge",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 21163
+   "taille": 21939
   },
   {
    "id": "cours-ref-arrete-21-11-2025",
    "cat": "Cours source (14 chapitres)",
    "titre": "REF arrete 21 11 2025",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 158770
+   "taille": 168922
   },
   {
    "id": "cours-etat",
    "cat": "Cours source (14 chapitres)",
    "titre": "_ETAT",
    "desc": "Chapitre source de la formation théorique.",
-   "taille": 5172
+   "taille": 5439
   }
  ]
 }

@@ -56,6 +56,11 @@ if (!code || code.length < 4) {
    F. Henninot ; ailleurs le build doit rester possible.
    -------------------------------------------------------------------- */
 const DOCUMENTS = [
+  // — Dossier de direction — (`binaire: true` → téléchargement après
+  //   déchiffrement, au lieu d'un affichage : ce sont des fichiers Office)
+  { id: "projet-centre", cat: "Dossier de direction", titre: "Projet d'ouverture d'un centre d'habilitation", desc: "Le dossier présenté à la direction : contexte réglementaire, périmètre, organisation, investissement, modèle économique, risques, calendrier, décisions demandées.", src: "C:/Users/henni/Downloads/files/Projet_Centre_Habilitation_Fluide_LPP-JR.docx", binaire: true, fichier: "Projet_Centre_Habilitation_Fluide_LPP-JR.docx" },
+  { id: "budget-centre", cat: "Dossier de direction", titre: "Budget prévisionnel sur 5 ans", desc: "Le modèle paramétrable : hypothèses, lignes d'activité, économie d'une session, plan de financement, compte de résultat, seuil de rentabilité et sensibilité.", src: "C:/Users/henni/Downloads/files/Budget_previsionnel_Centre_Fluides_LPP-JR.xlsx", binaire: true, fichier: "Budget_previsionnel_Centre_Fluides_LPP-JR.xlsx" },
+
   // — Architecture et ingénierie —
   { id: "architecture", cat: "Architecture et ingénierie", titre: "Architecture du dispositif", desc: "Le plan d'ensemble : les trois temps, la frontière public/privé, qui porte quoi.", src: PRIVE + "/ARCHITECTURE-DISPOSITIF.md" },
   { id: "note-examen", cat: "Architecture et ingénierie", titre: "Note d'architecture — évaluation officielle", desc: "Ce qu'exige l'arrêté pour la partie examen, l'écart avec l'existant, l'architecture retenue.", src: PRIVE + "/NOTE-EXAMEN-OFFICIEL.md" },
@@ -117,16 +122,20 @@ let octets = 0;
 
 for (const d of DOCUMENTS) {
   if (!existsSync(d.src)) { absents++; continue; }
-  const clair = readFileSync(d.src, "utf8");
+  // Un .docx ou .xlsx est un zip : il se lit en binaire, jamais en texte
+  // (une relecture en UTF-8 le corromprait).
+  const clair = d.binaire ? readFileSync(d.src) : Buffer.from(readFileSync(d.src, "utf8"), "utf8");
   const iv = randomBytes(12);
   const chiffreur = createCipheriv("aes-256-gcm", cle, iv);
-  const corps = Buffer.concat([chiffreur.update(clair, "utf8"), chiffreur.final()]);
+  const corps = Buffer.concat([chiffreur.update(clair), chiffreur.final()]);
   const tag = chiffreur.getAuthTag();
   // format du fichier : IV (12) + tag d'authentification (16) + données
   const paquet = Buffer.concat([iv, tag, corps]);
   writeFileSync(resolve(SORTIE, d.id + ".enc"), paquet);
   octets += paquet.length;
-  index.push({ id: d.id, cat: d.cat, titre: d.titre, desc: d.desc, taille: clair.length });
+  const entree = { id: d.id, cat: d.cat, titre: d.titre, desc: d.desc, taille: clair.length };
+  if (d.binaire) { entree.binaire = true; entree.fichier = d.fichier; }
+  index.push(entree);
 }
 
 writeFileSync(

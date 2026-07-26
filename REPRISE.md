@@ -41,7 +41,7 @@ Doctrine [[feedback_protection_code]] : licence + antériorité git, jamais de c
 | [`formateur.html`](https://frigorx.github.io/pilote-fluides/formateur.html) | mode pilotage verrouillé, notes d'animation visibles | formateur |
 | [`partage.html`](https://frigorx.github.io/pilote-fluides/partage.html) | affiche A4 / écran avec QR code | à projeter en salle |
 | [`relecture.html`](https://frigorx.github.io/pilote-fluides/relecture.html) | tout le contenu à plat, cases ✅/✏ | **le bon à tirer** |
-| [`documents.html`](https://frigorx.github.io/pilote-fluides/documents.html) | **le dossier du projet** : 6 documents libres (état, mesures, licence) + **36 documents chiffrés** (architecture, ingénierie, système qualité, 21 chapitres de cours) derrière le code d'accès | tous publics / formateur |
+| [`documents.html`](https://frigorx.github.io/pilote-fluides/documents.html) | **le dossier du projet** : 6 documents libres (état, mesures, licence) + **38 documents chiffrés** derrière le code — dossier de direction (projet + budget, en téléchargement), architecture, ingénierie, système qualité, 21 chapitres de cours | tous publics / formateur |
 
 Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « pilote-fluides ».
 
