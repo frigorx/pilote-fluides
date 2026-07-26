@@ -438,6 +438,25 @@ qu'il est **bien** enseigné. C'est ce troisième niveau qui est demandé.
   référentiel » à tort alors que **1.08** le couvrait mot pour mot. Chercher d'abord les
   **rattachements manqués** (contenu enseigné mais non déclaré), pas seulement les trous.
 
+**3. Le système de POLICE ADAPTABLE — oublié, et il manque vraiment.**
+Constat vérifié le 26/07 : **rien n'existe**. `moteur/charte-edu.css` fige `Calibri 16px` avec
+`line-height:1.6`, et l'élève n'a aucun moyen d'y toucher. Or le public visé est FLE/DYS
+([[feedback_accessibilite_cap]]) : c'est exactement celui pour qui la typographie décide si le
+texte est lu ou abandonné.
+- **Ce qu'il faut** : un réglage dans la barre du haut, mémorisé en `localStorage` comme le
+  reste, agissant sur `<html>` par des variables CSS — taille (3 crans), **police** sans
+  empattement plus lisible, **interlignage** élargi, et peut-être un **fond crème** (réduit
+  l'éblouissement, aide une partie des lecteurs DYS).
+- ⚠️ **Arbitrage à poser avant de coder : PAS d'OpenDyslexic embarquée.** Cette police coûterait
+  50 à 100 Ko de fichier — sur un pack qui tient à 626 Ko et s'ouvre en 4G, c'est cher — et son
+  bénéfice est **discuté** par la recherche. Les recommandations solides portent sur autre chose :
+  police sans empattement **déjà présente sur tous les appareils** (Verdana, Arial), corps plus
+  grand, interligne ≥ 1,5, texte **non justifié**, espacement des lettres légèrement augmenté.
+  Gratuit en poids, et mieux étayé. À confirmer avec F. Henninot.
+- **Portée** : le réglage vit dans le **moteur générique**, donc il profiterait aussi à
+  [[project_inerweb_pilote]] et au pack r408 — le poser proprement, pas en rustine sur ce pack.
+- Ne pas oublier `projection.html` : en salle, le besoin est inverse (très gros texte, lu de loin).
+
 ### 🔴 Priorité 1 — la relecture métier (bloquant pour la diffusion)
 
 Personne n'a relu le contenu avec un œil de frigoriste : **26 fiches, 5 exercices,
