@@ -52,8 +52,8 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "schema",
-       "src": "packs/fluides/res/svg/secu-espace-clos.svg",
-       "alt": "En trois temps : le gaz s'accumule dans le local fermé, le technicien entre et tombe, le collègue descend le secourir et devient la seconde victime.",
+       "src": "packs/fluides/res/svg/s1-double-accident.svg",
+       "alt": "Animation : la nappe de gaz monte dans le local fermé, le technicien descend et tombe, puis le collègue descend le secourir et devient la seconde victime. Deux victimes au lieu d'une.",
        "titre": "L'air qui manque — l'asphyxie"
       },
       {
@@ -1580,8 +1580,8 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "schema",
-       "src": "packs/fluides/res/svg/secu-espace-clos.svg",
-       "alt": "En trois temps : le gaz s'accumule dans le local fermé, le technicien entre et tombe, le collègue descend le secourir et devient la seconde victime.",
+       "src": "packs/fluides/res/svg/s1-double-accident.svg",
+       "alt": "Animation : la nappe de gaz monte dans le local fermé, le technicien descend et tombe, puis le collègue descend le secourir et devient la seconde victime. Deux victimes au lieu d'une.",
        "titre": "L'air qui manque — l'asphyxie"
       },
       {

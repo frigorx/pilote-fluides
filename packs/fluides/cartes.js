@@ -485,6 +485,7 @@ export const CARTES = [
     titre: "Sécurité — ce qui peut vous blesser",
     dc: "À voir en premier",
     corps:
+      schema("intro-securite.svg", "Introduction animée : le reste de la formation protège l'installation et l'environnement ; ce module-ci vous protège, vous. Cinq dangers, cinq fiches. La sécurité se démontre et s'impose, elle ne se découvre jamais par l'erreur.") +
       "<p>Le reste de cette formation vous apprend à protéger <b>l installation</b> et " +
       "<b>l environnement</b>. Ce module-ci vous apprend à vous protéger <b>vous</b>.</p>" +
       "<p>Cinq dangers, cinq fiches. Ce qui arrive, comment ça arrive vraiment, ce qui " +
@@ -511,7 +512,7 @@ export const CARTES = [
     dc: "Sécurité · codes 12.02 · 12.13",
     minuteur_s: 420,
     corps:
-      schema("secu-espace-clos.svg", "En trois temps : le gaz s'accumule dans le local fermé, le technicien entre et tombe, le collègue descend le secourir et devient la seconde victime.") +
+      schema("s1-double-accident.svg", "Animation : la nappe de gaz monte dans le local fermé, le technicien descend et tombe, puis le collègue descend le secourir et devient la seconde victime. Deux victimes au lieu d'une.") +
       "<p>Respirer, c'est faire entrer de l'oxygène dans le corps. Un local fermé peut se remplir d'un autre gaz : de l'azote utilisé pour mettre un circuit en pression, ou du fluide frigorigène qui a fui. Ce gaz prend la place de l'oxygène dans l'air. C'est une <b>asphyxie par manque d'oxygène</b> : vous ne respirez plus assez d'oxygène, non pas parce qu'un produit vous empoisonne, mais parce qu'il a chassé l'air respirable.</p>" +
       "<p>Face à l'<b>azote</b> et aux <b>fluides fluorés</b>, le corps ne donne <b>aucune alerte</b>. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez donc pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.</p>" +
       "<p><b>Une exception importante : le CO₂ (R-744).</b> Lui vous <b>prévient</b> — essoufflement, mal de tête, vertiges — parce qu'il agit sur la commande de la respiration. C'est une chance, mais tardive : ces signes n'arrivent qu'une fois dans le gaz. Et pour la même raison, un détecteur d'oxygène seul ne suffit pas à le surveiller. Ce fluide a sa fiche : « CO₂ : deux dangers mortels ».</p>" +

@@ -50,7 +50,8 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ## 2. État au 26/07/2026
 
-**79 cartes** · **250 questions** · **27 planches SVG** (dont 11 animées) · 4 illustrations · **3 outils embarqués**
+**79 cartes** · **250 questions** · **29 planches SVG** (dont 13 animées, et **2 dessins animés
+narratifs**) · 4 illustrations · **3 outils embarqués**
 **✅ 42 fiches de cours sur 42 portent un visuel** — plus une seule fiche « mur de texte ».
 
 > **Couverture du référentiel officiel : A1 100 % · A2 100 % · D 100 % · E 100 %.**
@@ -234,6 +235,20 @@ consignation · `cl3` **animation** du CO₂ qui remplit le local par le bas · 
   l'autre monte — c'est le piège de généralisation, mis en image) · `g0` **aptitude** (la personne)
   contre **capacité** (l'entreprise), la confusion la plus fréquente du métier · `p7` les quatre
   temps de la préparation de chantier. **Compteur à zéro : 42/42.**
+- **Les DESSINS ANIMÉS (26/07, demande F. Henninot : « le dessin animé SVG pour finaliser les
+  parties importantes, ou faire une introduction »)** — deux animations narratives, d'un cran
+  au-dessus du schéma animé simple : `intro-securite.svg` (4 scènes enchaînées : ce que protège
+  le reste de la formation → ce que protège CE module → les 5 dangers en cascade → la règle) sur
+  le menu `m-secu`, et `s1-double-accident.svg` (la nappe monte, le technicien descend et tombe,
+  le compteur passe à 1 victime, le collègue descend et tombe, 2 victimes) sur `s1`.
+  ⚠️ **Règle de conception à réutiliser** : le dessin AU REPOS doit déjà être l'image FINALE, et
+  l'animation ne fait que raconter comment on y arrive. Concrètement : valeurs de base = état
+  final ; les éléments qui bougent portent `.mobile`, l'état final porte `.final` ; et une media
+  query `prefers-reduced-motion` retire les mobiles au lieu de tout afficher. Premier jet fautif :
+  la règle affichait **les 4 scènes superposées** — vérifié et corrigé (le navigateur de test a
+  `prefers-reduced-motion` actif, ce qui l'a révélé tout de suite).
+  `secu-espace-clos.svg` (version statique en 3 vignettes) reste dans le dépôt, **non utilisée** :
+  la garder sous la main pour un support imprimé, où l'animation ne sert à rien.
 - **Pictogrammes** : trois usages à ne pas confondre — repères de fiche (libres, notre charte),
   **pictogrammes normalisés SGH / ATEX / ISO 7010** (à reproduire fidèlement, jamais réinventer :
   ce sont ceux que le stagiaire verra sur les bouteilles, donc c'est du *contenu*), équipements et
