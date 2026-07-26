@@ -63,7 +63,7 @@
   .avis b { color: var(--bleu); }
   #code-zone { margin: 1em 0 1.6em; }
   input[type=password] {
-    font-size: 1.05em; padding: .5em .7em; width: min(100%, 24em);
+    font-size: 1.05em; padding: .5em .7em; width: min(100%, 18em);
     border: 2px solid var(--bleu); border-radius: 8px;
   }
   button {
@@ -114,8 +114,7 @@
 <main>
   <div class="avis">
     <b>Comment lire cette page.</b> Les documents <b>libres</b> s'ouvrent directement.
-    Les documents <span class="cad">🔒 protégés</span> sont chiffrés : saisissez le code
-    d'accès une fois, ils s'ouvrent tous. Rien n'est déchiffré sans le code — pas même
+    Les documents <span class="cad">🔒 protégés</span> sont chiffrés : saisissez le code d'accès une fois, ils s'ouvrent tous. Rien n'est déchiffré sans le code — pas même
     en regardant le code source de la page.
   </div>
 
@@ -126,7 +125,7 @@
   <div id="code-zone">
     <input id="code" type="password" autocomplete="off" spellcheck="false"
            autocapitalize="none" autocorrect="off"
-           placeholder="La phrase d&#39;accès…" aria-label="Code d&#39;accès">
+           placeholder="Le code d&#39;accès…" aria-label="Code d&#39;accès">
     <button id="ok">Déverrouiller ▸</button>
     <p id="etat" class="m" style="color:var(--mut)"></p>
   </div>

@@ -119,8 +119,8 @@ node build/convert.mjs    # Mission F-GAZ + questions-pack.json → banque.gen.j
 node build/build.mjs      # cartes.js + banque → pack.pilote.js ET pack.eleve.js
 node build/parcours.mjs   # parcours.js + fiches → projection.gen.js (le support de salle)
 node build/relecture.mjs  # → relecture.html (document de bon à tirer)
-node build/coffre.mjs "<phrase>"      # → docs/coffre/ : les documents de travail, chiffrés
-node build/code-acces.mjs "<phrase>" # change le code PARTOUT (portillon + cartes + coffre)
+node build/coffre.mjs "<code n1>"                 # → docs/coffre/ : documents chiffrés
+node build/code-acces.mjs "<code n1>" "<phrase n2>"  # installe les DEUX niveaux, partout
 ```
 
 > ⚠️ **Le code d'accès se passe en argument** — il n'est écrit nulle part dans le dépôt.
@@ -128,17 +128,35 @@ node build/code-acces.mjs "<phrase>" # change le code PARTOUT (portillon + carte
 > version publiée reste l'ancienne ; il **refuse** les 85 questions, les 10 sujets et le registre
 > nominatif (garde-fou en dur, pas une consigne).
 >
-> **Pour CHANGER le code, utiliser `code-acces.mjs`, jamais l'édition à la main** : l'empreinte
-> vit dans **trois** endroits (`moteur/portillon.js`, les 9 `code_empreinte` de `cartes.js`, et le
-> chiffrement du coffre). En oublier un laisse une porte ouverte sur l'ancien code. Enchaîner avec
-> `node build/build.mjs` pour propager dans les packs.
->
-> **Depuis le 25/07, le code est une PHRASE de six mots**, pas un nombre — les champs de saisie ne
-> forcent donc plus le clavier numérique et désactivent la correction automatique (un correcteur
-> de téléphone cassait la phrase en silence). Ordre de grandeur, à 600 000 itérations PBKDF2 :
-> 8 chiffres tombent en **10 minutes**, 13 chiffres en **~2 ans**, six mots tirés au sort
-> demandent **plus de mille ans**. Le coffre en profite pleinement ; le portillon reste un rideau
-> (djb2 32 bits, collision possible) et c'est assumé — voir l'en-tête de `portillon.js`.
+> **Pour CHANGER les codes, utiliser `code-acces.mjs`, jamais l'édition à la main** : les
+> empreintes vivent dans **trois** endroits (`moteur/portillon.js`, les 9 `code_empreinte` de
+> `cartes.js`, et le chiffrement du coffre). En oublier un laisse une porte ouverte sur l'ancien.
+> Enchaîner avec `node build/build.mjs` pour propager dans les packs.
+
+### Deux niveaux d'accès (arbitrage F. Henninot, 25/07)
+
+| | **Niveau 1** — code court, chiffres | **Niveau 2** — phrase de six mots |
+|---|---|---|
+| Ouvre | les 38 documents · la console formateur · la projection | **les 8 examens** du pack |
+| Pour qui | direction, collègues | le formateur, en salle |
+| Registre | « confidentiel sans être secret » | on ne passe l'épreuve que porte ouverte |
+| Mémoire | `pilote_acces_<pack>` | `pilote_acces2_<pack>` — **clé distincte** |
+
+**Restent libres, sans aucun code** : les fiches de cours, les 13 séries « Réviser par thème »,
+« Ma progression », le module pratique. Réviser seul ≠ passer l'épreuve — c'est la raison
+pédagogique du niveau 2, pas seulement une raison de sécurité.
+
+**Étanchéité vérifiée** (25/07, dans le navigateur) : la phrase n'ouvre pas les documents, le code
+court n'ouvre pas les examens, et déverrouiller le niveau 1 laisse les examens fermés.
+
+> **Ce que chaque niveau protège vraiment.** Le coffre (niveau 1) est du vrai chiffrement
+> AES-256-GCM à 600 000 itérations PBKDF2 : un code de 8 chiffres y tient ~10 minutes face à du
+> matériel dédié, 13 chiffres ~2 ans, six mots plus de mille ans. Le choix de 8 chiffres au
+> niveau 1 est **assumé** pour un dossier de projet — mais il vaut pour le budget, qui porte des
+> rémunérations. Les portillons, eux, comparent un djb2 de 32 bits : ce sont des **rideaux**,
+> contournables par collision quelle que soit la longueur du code, et les bonnes réponses sont de
+> toute façon dans `pack.eleve.js` par nécessité. Allonger un code renforce le coffre, pas un
+> portillon.
 
 | Fichier | Rôle |
 |---|---|

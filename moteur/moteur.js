@@ -202,16 +202,29 @@
     for (var i = 0; i < txt.length; i++) h = (h * 33 + txt.charCodeAt(i)) >>> 0;
     return h;
   }
+  /* DEUX NIVEAUX, DEUX SERRURES DISTINCTES (25/07)
+     niveau 1 — code court : la console formateur, la projection, les documents.
+                Public : direction et collègues. « Confidentiel sans être secret. »
+     niveau 2 — la phrase : les examens. Public : le formateur, qui ouvre la
+                porte en salle. Les séries de révision restent libres, pour
+                qu'un stagiaire puisse réviser seul sans passer l'épreuve.
+     Chaque niveau a sa propre clé de mémoire : déverrouiller les documents
+     n'ouvre PAS les examens, et inversement. */
+  function cleAcces(niveau) {
+    return "pilote_acces" + (niveau === 2 ? "2" : "") + "_" + PACK.pack.id;
+  }
   function accesOuvert(c) {
     if (!c.acces || !c.acces.code_empreinte) return true;
-    try { return localStorage.getItem("pilote_acces_" + PACK.pack.id) === "oui"; }
+    try { return localStorage.getItem(cleAcces(c.acces.niveau)) === "oui"; }
     catch (e) { return false; }
   }
   function renderAcces(c, m) {
     var html = barre(m) + fil() + "<div class='scene'><div class='carte'><div class='corps'>";
     html += "<span class='dc'>" + esc(c.dc || "Examen") + "</span>";
     html += "<h1>" + esc(c.titre) + "</h1>";
-    html += "<p>🔒 Cet examen s'ouvre avec le <b>code d'accès</b> donné par le formateur.</p>";
+    html += "<p>🔒 Cet examen s'ouvre avec la <b>phrase d'accès</b> donnée par le formateur.</p>";
+    html += "<p style='color:var(--mut)'>Pour réviser seul, les séries « Réviser par thème » sont " +
+            "libres : elles posent les mêmes questions, sans note.</p>";
     // Champ en saisie de texte libre, sans clavier numérique forcé ni
     // correction automatique : le code est une phrase en minuscules.
     html += "<p><input id='acces-code' type='text' autocomplete='off' spellcheck='false' ";
@@ -227,7 +240,7 @@
     var champ = document.getElementById("acces-code");
     var verifier = function () {
       if (empreinteCode(champ.value.trim()) === c.acces.code_empreinte) {
-        try { localStorage.setItem("pilote_acces_" + PACK.pack.id, "oui"); } catch (e) {}
+        try { localStorage.setItem(cleAcces(c.acces.niveau), "oui"); } catch (e) {}
         render();
       } else {
         var err = document.getElementById("acces-err");

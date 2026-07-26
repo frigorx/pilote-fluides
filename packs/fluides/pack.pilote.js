@@ -4,7 +4,7 @@ window.PILOTE_PACK = {
   "id": "fluides-habilitation",
   "titre": "Habilitation fluides frigorigènes — A1 · A2 · D · E (démonstrateur)",
   "version": "0.1",
-  "code_empreinte": 290777612,
+  "code_empreinte": 3069038059,
   "type": "habilitation",
   "charte": "inerweb-edu",
   "categories": [
@@ -11969,7 +11969,8 @@ window.PILOTE_PACK = {
   {
    "id": "ex-ech",
    "acces": {
-    "code_empreinte": 290777612
+    "code_empreinte": 290777612,
+    "niveau": 2
    },
    "type": "examen",
    "titre": "Échauffement — les fondamentaux (niveau 1)",
@@ -11998,7 +11999,8 @@ window.PILOTE_PACK = {
   {
    "id": "ex-defi",
    "acces": {
-    "code_empreinte": 290777612
+    "code_empreinte": 290777612,
+    "niveau": 2
    },
    "type": "examen",
    "titre": "Défi technicien — diagnostics (niveau 2)",
@@ -12027,7 +12029,8 @@ window.PILOTE_PACK = {
   {
    "id": "ex-e-ech",
    "acces": {
-    "code_empreinte": 290777612
+    "code_empreinte": 290777612,
+    "niveau": 2
    },
    "type": "examen",
    "titre": "Échauffement — catégorie E (niveau 1)",
@@ -12048,7 +12051,8 @@ window.PILOTE_PACK = {
   {
    "id": "ex-d-ech",
    "acces": {
-    "code_empreinte": 290777612
+    "code_empreinte": 290777612,
+    "niveau": 2
    },
    "type": "examen",
    "titre": "Échauffement — catégorie D (niveau 1)",
@@ -12069,7 +12073,8 @@ window.PILOTE_PACK = {
   {
    "id": "ex-e",
    "acces": {
-    "code_empreinte": 290777612
+    "code_empreinte": 290777612,
+    "niveau": 2
    },
    "type": "examen",
    "titre": "Examen blanc — catégorie E",
@@ -12089,7 +12094,8 @@ window.PILOTE_PACK = {
   {
    "id": "ex-d",
    "acces": {
-    "code_empreinte": 290777612
+    "code_empreinte": 290777612,
+    "niveau": 2
    },
    "type": "examen",
    "titre": "Examen blanc — catégorie D",
@@ -12109,7 +12115,8 @@ window.PILOTE_PACK = {
   {
    "id": "ex-a2",
    "acces": {
-    "code_empreinte": 290777612
+    "code_empreinte": 290777612,
+    "niveau": 2
    },
    "type": "examen",
    "titre": "Examen blanc — catégorie A2",
@@ -12137,7 +12144,8 @@ window.PILOTE_PACK = {
   {
    "id": "ex-a1",
    "acces": {
-    "code_empreinte": 290777612
+    "code_empreinte": 290777612,
+    "niveau": 2
    },
    "type": "examen",
    "titre": "Examen blanc — catégorie A1",
