@@ -249,6 +249,13 @@ consignation · `cl3` **animation** du CO₂ qui remplit le local par le bas · 
   `prefers-reduced-motion` actif, ce qui l'a révélé tout de suite).
   `secu-espace-clos.svg` (version statique en 3 vignettes) reste dans le dépôt, **non utilisée** :
   la garder sous la main pour un support imprimé, où l'animation ne sert à rien.
+  **Les 3 autres planches de sécurité animées dans la foulée**, en enrichissant les dessins
+  existants plutôt qu'en redessinant : `s5` la frise se trace et les 5 étapes s'allument une à
+  une, l'étape 4 (le VAT, celle qui prouve) émet une onde · `s4` le soleil pulse, la bouteille
+  pleine **vibre** puis les éclats jaillissent, tandis qu'à droite le liquide monte
+  tranquillement dans son volume libre · `s2` le cône de jet s'ouvre, la silhouette placée dans
+  l'axe s'écarte, et l'aiguille du manomètre retombe à zéro. **Le module sécurité est donc
+  intégralement animé** (`s1`→`s5` + son introduction).
 - **Pictogrammes** : trois usages à ne pas confondre — repères de fiche (libres, notre charte),
   **pictogrammes normalisés SGH / ATEX / ISO 7010** (à reproduire fidèlement, jamais réinventer :
   ce sont ceux que le stagiaire verra sur les bouteilles, donc c'est du *contenu*), équipements et
