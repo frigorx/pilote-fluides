@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" role="img"
+     aria-label="Le dispositif de protection d'un local au CO2. Protection collective : capteur fixe en partie basse, alarme sonore et visuelle à l'intérieur, alarme à l'extérieur au-dessus de la porte pour prévenir avant d'ouvrir, ventilation asservie, signalisation à l'entrée et issue de secours dégagée. Protection individuelle : gants et lunettes. Un masque à cartouche ne protège ni du CO2 ni du manque d'oxygène.">
+  <title>Se protéger du CO₂ : le collectif d'abord, l'individuel ensuite</title>
+  <style>
+    .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .st  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lg  { font:400 13px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .bad { font:700 14px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+    .p   { fill:none; stroke:#1b3a63; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+    .acc { fill:none; stroke:#c9451a; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+  </style>
+
+  <rect width="880" height="360" fill="#ffffff"/>
+  <text class="t" x="30" y="30">On protège d'abord TOUT LE MONDE, ensuite soi-même</text>
+
+  <!-- ===== EPC : le local équipé ===== -->
+  <g transform="translate(30,50)">
+    <rect x="0" y="0" width="560" height="238" rx="8" fill="#eef6f1" stroke="#a9cdb8" stroke-width="1.5"/>
+    <text class="st" x="18" y="26">EPC — protection collective : elle protège même quand personne n'y pense</text>
+
+    <!-- local -->
+    <path class="p" d="M120,54 v154 h380 v-154"/>
+    <line class="p" x1="110" y1="208" x2="510" y2="208"/>
+    <line class="p" x1="120" y1="54" x2="500" y2="54"/>
+
+    <!-- nappe -->
+    <rect x="122" y="176" width="376" height="32" fill="#7fa9c9" opacity="0.7"/>
+    <line x1="122" y1="176" x2="498" y2="176" stroke="#3f7fae" stroke-width="2"/>
+
+    <!-- porte + alarme extérieure -->
+    <rect x="96" y="140" width="24" height="68" fill="#e8eef4" stroke="#1b3a63" stroke-width="2"/>
+    <g transform="translate(84,104)">
+      <circle class="acc" cx="12" cy="12" r="11" fill="#fff"/>
+      <path class="acc" d="M12,5 v8 M12,17 v1"/>
+      <path class="acc" d="M-2,4 a16,16 0 0 1 0,16 M26,4 a16,16 0 0 0 0,16"/>
+    </g>
+    <text class="bad" x="52" y="90" text-anchor="middle" style="font-size:12px">alarme</text>
+    <text class="bad" x="52" y="104" text-anchor="middle" style="font-size:12px">DEHORS</text>
+    <text class="lg"  x="40" y="176" style="font-size:12px">on sait</text>
+    <text class="lg"  x="40" y="192" style="font-size:12px">avant d'ouvrir</text>
+
+    <!-- signalisation sur la porte -->
+    <g transform="translate(100,58)">
+      <path d="M12,2 L23,22 L1,22 Z" fill="#ffdf00" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
+      <text x="12" y="19" text-anchor="middle" style="font:700 10px Calibri;fill:#111">!</text>
+    </g>
+
+    <!-- capteur bas -->
+    <g transform="translate(430,178)">
+      <rect class="p" x="0" y="0" width="34" height="24" rx="3" fill="#fff"/>
+      <circle cx="10" cy="12" r="4" fill="#c9451a"/>
+      <text x="24" y="16" text-anchor="middle" style="font:700 10px Calibri;fill:#1b3a63">ppm</text>
+    </g>
+    <text class="st" x="447" y="222" text-anchor="middle" style="font-size:11.5px">capteur EN BAS</text>
+
+    <!-- alarme intérieure -->
+    <g transform="translate(300,66)">
+      <circle class="acc" cx="12" cy="12" r="11" fill="#fff"/>
+      <path class="acc" d="M12,5 v8 M12,17 v1"/>
+    </g>
+    <text class="lg" x="312" y="104" text-anchor="middle" style="font-size:12px">alarme intérieure</text>
+
+    <!-- ventilation -->
+    <g transform="translate(452,64)">
+      <rect class="p" x="0" y="0" width="40" height="30" rx="3"/>
+      <line class="p" x1="6" y1="9"  x2="34" y2="9"/>
+      <line class="p" x1="6" y1="16" x2="34" y2="16"/>
+      <line class="p" x1="6" y1="23" x2="34" y2="23"/>
+      <path class="p" d="M44,15 h16 m-6,-6 l6,6 -6,6"/>
+    </g>
+    <text class="lg" x="472" y="112" text-anchor="middle" style="font-size:12px">ventilation</text>
+
+    <!-- lien capteur -> alarmes -->
+    <path class="acc" d="M447,178 v-16 h-135 v42" stroke-dasharray="5 4"/>
+  </g>
+
+  <!-- ===== EPI ===== -->
+  <g transform="translate(618,50)">
+    <rect x="0" y="0" width="232" height="112" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5"/>
+    <text class="st" x="18" y="26">EPI — pour vous seul</text>
+    <g transform="translate(24,44)">
+      <rect class="p" x="0" y="6" width="16" height="12" rx="3"/>
+      <rect class="p" x="20" y="6" width="16" height="12" rx="3"/>
+      <line class="p" x1="16" y1="12" x2="20" y2="12"/>
+    </g>
+    <text class="lg" x="72" y="60">lunettes</text>
+    <g transform="translate(24,74)">
+      <path class="p" d="M2,22 v-10 a2,2 0 0 1 4,0 v-7 a2,2 0 0 1 4,0 v6 a2,2 0 0 1 4,0 v1 a2,2 0 0 1 4,0 v8 a5,5 0 0 1 -5,5 h-6 a5,5 0 0 1 -5,-3 z"/>
+    </g>
+    <text class="lg" x="72" y="92">gants adaptés au froid</text>
+  </g>
+
+  <!-- ===== le masque ===== -->
+  <g transform="translate(618,176)">
+    <rect x="0" y="0" width="232" height="112" rx="8" fill="#fdf1ed" stroke="#e8b9a8" stroke-width="1.5"/>
+    <g transform="translate(24,26)">
+      <path class="acc" d="M4,14 a16,12 0 0 1 32,0 a14,16 0 0 1 -16,16 a14,16 0 0 1 -16,-16 z"/>
+      <circle class="acc" cx="20" cy="34" r="6"/>
+      <line class="acc" x1="0" y1="44" x2="42" y2="0"/>
+    </g>
+    <text class="bad" x="86" y="40">Un masque à</text>
+    <text class="bad" x="86" y="58">cartouche ne protège</text>
+    <text class="bad" x="86" y="76">PAS du CO₂.</text>
+    <text class="lg"  x="18" y="100">Il ne fabrique pas d'oxygène. La protection, c'est de ne pas entrer.</text>
+  </g>
+
+  <text class="lg" x="30" y="312">Un capteur se vérifie et se remplace selon la documentation du fabricant : une cellule usée reste allumée sans plus rien mesurer.</text>
+  <text class="lg" x="30" y="334">À l'arrivée, on contrôle trois choses : la signalisation est à jour, les issues de secours sont dégagées, les capteurs et alarmes fonctionnent.</text>
+</svg>

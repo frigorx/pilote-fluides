@@ -50,7 +50,7 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ## 2. État au 26/07/2026
 
-**79 cartes** · **250 questions** · **16 planches SVG** (dont 10 animées) · 4 illustrations · **3 outils embarqués**
+**79 cartes** · **250 questions** · **23 planches SVG** (dont 11 animées) · 4 illustrations · **3 outils embarqués**
 
 > **Couverture du référentiel officiel : A1 100 % · A2 100 % · D 100 % · E 100 %.**
 > Mesurée à chaque build, écrite dans `COUVERTURE-REFERENTIEL.md`. Elle valait 60 % en A1
@@ -206,6 +206,38 @@ compétences opposables :
   vide et vacuomètre, bouteille d'azote et mano-détendeur, **ordre des vannes**, balance et
   pesée, préparation de chantier. Il ne remplace pas l'atelier, il le prépare — charte
   FrigorX : préparation ≤ 1 h, sécurité démontrée et imposée, jamais découverte.
+
+**Le volet ILLUSTRATIONS (26/07)** — constat de F. Henninot : *« s'il n'y a pas d'image ça ne
+cause pas. Le public est divers ; si je mets trop de texte écrit, je les ai perdus en dix
+minutes. »* Mesuré : **42 fiches de cours pour 16 planches**, donc 26 fiches sans aucun visuel.
+7 planches ajoutées, en commençant **par la sécurité** (arbitrage F. Henninot : c'est le premier
+bloc que voit tout stagiaire, quelle que soit sa catégorie — si on le perd là, le reste est
+perdu). `s1` le double accident en 3 temps · `s2` la trajectoire du jet · `s3` brasage interdit
+contre brasage juste · `s4` bouteille à ras contre volume libre · `s5` la frise des 5 étapes de
+consignation · `cl3` **animation** du CO₂ qui remplit le local par le bas · `cl4` le local équipé.
+- **Règle tenue : chaque visuel ajouté RETIRE du texte.** Les paragraphes de scénario que le
+  schéma raconte ont été condensés. Une image qui s'ajoute au texte n'a rien réglé.
+- **Méthodes volontairement variées** (demande explicite : « qu'il n'y ait pas de sensation de se
+  lasser ») — séquence en 3 temps, comparaison bon/mauvais, frise numérotée, coupe animée,
+  local équipé. Pas deux fiches consécutives sur le même modèle.
+- **Double gain** : les schémas sont générés en **diapositives plein écran** par `parcours.mjs`
+  (470 diapos contre 459). Une planche faite une fois sert la fiche ET la projection.
+- **Rien de génératif** : 7 SVG faits main, 4 à 6 Ko pièce, **36 Ko au total** — le pack reste à
+  624 Ko et s'ouvre en 4G. Un modèle d'image sort un rendu plausible et faux (croix du frigoriste
+  inversée, manifold à trois manomètres) et flou en projection : voir [[feedback_illustrations_ia]].
+- **Pictogrammes** : trois usages à ne pas confondre — repères de fiche (libres, notre charte),
+  **pictogrammes normalisés SGH / ATEX / ISO 7010** (à reproduire fidèlement, jamais réinventer :
+  ce sont ceux que le stagiaire verra sur les bouteilles, donc c'est du *contenu*), équipements et
+  gestes. Échantillon validé, **intégration à faire**.
+
+**Les capsules « quelqu'un vous explique » (26/07)** — idée de F. Henninot : une voix qui explique
+au lieu d'un texte à lire, en autoformation. **`CAPSULES-SECURITE.md`** contient les 5 scripts
+prêts à enregistrer (60-90 s, une idée par phrase, plans calés sur les schémas ci-dessus) et la
+méthode. ⚠️ **Règle n° 1 de ce fichier : aucune capsule enregistrée avant la relecture métier.**
+Une vidéo est figée ; si une capsule avait été tournée la veille du 26/07, elle enseignerait
+encore que le CO₂ ne prévient pas. Le pack est déjà prêt à les recevoir (champ `video` de
+`parcours.js`, 4ᵉ argument de `seq()`), à héberger **hors dépôt** pour préserver les 624 Ko.
+Ce qui est écarté : tout **geste technique généré par IA** (opposable s'il est faux).
 
 **Les 3 paliers d'examen** : 🟢 Échauffement (niveau 1, seuil 60 %) · 📝 Examen blanc (mixte, 70 %)
 · 🔴 Défi technicien (niveau 2, seuil 80 %).

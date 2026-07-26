@@ -51,6 +51,12 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-espace-clos.svg",
+       "alt": "En trois temps : le gaz s'accumule dans le local fermé, le technicien entre et tombe, le collègue descend le secourir et devient la seconde victime.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
        "type": "point",
        "html": "Respirer, c'est faire entrer de l'oxygène dans le corps. Un local fermé peut se remplir d'un autre gaz : de l'azote utilisé pour mettre un circuit en pression, ou du fluide frigorigène qui a fui. Ce gaz prend la place de l'oxygène dans l'air. C'est une <b>asphyxie par manque d'oxygène</b> : vous ne respirez plus assez d'oxygène, non pas parce qu'un produit vous empoisonne, mais parce qu'il a chassé l'air respirable.",
        "titre": "L'air qui manque — l'asphyxie"
@@ -72,7 +78,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Vous entrez seul dans un local technique fermé, une chambre froide, ou une fosse, pour chercher une fuite ou reprendre du matériel après une mise en pression à l'azote. La porte est restée fermée depuis un moment. Vous ne sentez rien d'anormal. Vous perdez connaissance sans signe avant-coureur. Un collègue vous voit au sol et se précipite pour vous porter secours, sans se protéger ni ventiler : il respire le même air appauvri, et s'effondre à son tour. C'est le scénario le plus fréquent de ce type d'accident : <b>deux victimes au lieu d'une</b>.",
+       "html": "C'est le scénario du schéma ci-dessus, et c'est le plus fréquent de ce type d'accident : un local resté fermé, quelqu'un qui entre sans rien sentir, puis un collègue qui se précipite pour le secourir sans se protéger ni ventiler — il respire le même air appauvri et s'effondre à son tour. <b>Deux victimes au lieu d'une.</b>",
        "titre": "L'air qui manque — l'asphyxie"
       },
       {
@@ -201,6 +207,12 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-projection.svg",
+       "alt": "Le liquide jaillit dans l'axe du raccord : on se place hors de cet axe, on vérifie au manomètre que la pression est nulle, et on porte gants et lunettes.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
        "type": "point",
        "html": "Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.",
        "titre": "Le froid brûle — projections et gelures"
@@ -212,7 +224,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Vous déconnectez un flexible du <b>manifold</b> (l'appareil à manomètres utilisé pour intervenir sur un circuit). Vous pensez que le tronçon est déjà vide. La vanne n'a pas été vérifiée fermée, le manomètre n'a pas été relu. Un reste de liquide sous pression jaillit au moment où vous desserrez le raccord, et touche votre main ou votre visage.",
+       "html": "Le cas type : vous déconnectez un flexible de <b>manifold</b> (l'appareil à manomètres) en pensant le tronçon vide. La vanne n'a pas été vérifiée, le manomètre pas relu. Le liquide restant jaillit au desserrage — dans l'axe du raccord, comme sur le schéma.",
        "titre": "Le froid brûle — projections et gelures"
       },
       {
@@ -316,6 +328,12 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-flamme.svg",
+       "alt": "À gauche le geste interdit : chauffer un tronçon non récupéré, les gaz toxiques remontent vers le visage penché. À droite le geste juste : récupérer, balayer à l'azote, ventiler.",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
        "type": "point",
        "html": "Un fluide frigorigène fluoré est stable à température normale. Il ne l'est plus face à une flamme. Chauffé au contact d'une flamme ou d'une surface très chaude, il ne brûle pas comme un carburant : il se <b>décompose</b>. Sa molécule se casse et forme d'autres substances, absentes du fluide d'origine — des gaz toxiques et corrosifs.",
        "titre": "La flamme interdite — décomposition du fluide"
@@ -327,7 +345,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Vous devez braser un raccord sur un tronçon de circuit. Il reste un peu de fluide à l'intérieur, non récupéré — « une petite quantité, ça ne changera rien », pensez-vous. Vous chauffez au chalumeau. La flamme touche le fluide résiduel dans le tube. Il se décompose, et les fumées toxiques se dégagent juste sous votre visage, penché sur le brasage.",
+       "html": "Le cas type : un tronçon où il reste « une petite quantité, ça ne changera rien ». La flamme touche ce fluide résiduel, il se décompose, et les fumées se dégagent juste sous le visage penché sur le brasage.",
        "titre": "La flamme interdite — décomposition du fluide"
       },
       {
@@ -461,6 +479,12 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-bouteille.svg",
+       "alt": "À gauche, bouteille remplie à ras : le liquide n'a pas de place pour se dilater, la pression grimpe très vite. À droite, volume libre respecté. En bas, les gestes interdits.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
        "type": "point",
        "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.",
        "titre": "Ce qui éclate — la pression"
@@ -472,7 +496,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Un cas particulier mérite d'être compris. Une bouteille remplie à ras contient un liquide qui occupe presque tout le volume disponible. S'il chauffe, ce liquide se dilate, mais il n'a presque plus de place pour le faire : la pression grimpe alors très vite, bien plus vite que dans une bouteille qui garde une poche de gaz au-dessus du liquide. C'est pour cela qu'une bouteille de fluide ne se remplit <b>jamais</b> à ras : un volume libre doit toujours rester disponible. Le taux de remplissage exact à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur. Les propriétés propres à chaque fluide figurent dans sa fiche de données de sécurité (FDS).",
+       "html": "Le schéma du haut explique pourquoi une bouteille ne se remplit <b>jamais</b> à ras : un liquide qui chauffe se dilate, et s'il n'a pas de volume libre au-dessus de lui, la pression grimpe très vite. Le taux de remplissage à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur ; les propriétés du fluide, dans sa fiche de données de sécurité (FDS).",
        "titre": "Ce qui éclate — la pression"
       },
       {
@@ -609,6 +633,12 @@ window.PILOTE_PROJECTION = {
        "titre": "Consigner avant de toucher — le risque électrique",
        "dc": "Sécurité",
        "competences": []
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-consignation.svg",
+       "alt": "Les cinq étapes dans l'ordre : séparer, condamner, identifier, vérifier l'absence de tension au VAT, mettre à la terre. Le VAT se teste avant et après sur une source connue.",
+       "titre": "Consigner avant de toucher — le risque électrique"
       },
       {
        "type": "point",
@@ -1150,6 +1180,12 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/co2-point-bas.svg",
+       "alt": "Animation : le CO₂ remplit le local par le bas. Le capteur placé en partie basse se déclenche, celui du plafond ne voit rien. Respirable à hauteur de visage, mortel en bas de l'escalier.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
        "type": "point",
        "html": "<b>Ce qui arrive.</b> Le CO₂ — le R-744 — est classé <b>A1</b> : toxicité faible, non inflammable, PRP de 1. C'est la case la plus rassurante de toute la matrice. Et c'est exactement ce qui le rend dangereux : <b>sa classe n'annonce aucun des deux risques qui tuent réellement sur ces installations</b> — la <b>pression</b>, et l'<b>anoxie</b>. Qui retient « CO₂ = A1 = tranquille » a retenu quelque chose de faux.",
        "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
@@ -1335,6 +1371,12 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/co2-protection.svg",
+       "alt": "Le local équipé : capteur fixe en partie basse relié aux alarmes intérieure et extérieure, ventilation, signalisation à la porte. À droite, les EPI — et le masque à cartouche, qui ne protège pas du CO₂.",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
       },
       {
        "type": "point",
@@ -1531,6 +1573,12 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-espace-clos.svg",
+       "alt": "En trois temps : le gaz s'accumule dans le local fermé, le technicien entre et tombe, le collègue descend le secourir et devient la seconde victime.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
        "type": "point",
        "html": "Respirer, c'est faire entrer de l'oxygène dans le corps. Un local fermé peut se remplir d'un autre gaz : de l'azote utilisé pour mettre un circuit en pression, ou du fluide frigorigène qui a fui. Ce gaz prend la place de l'oxygène dans l'air. C'est une <b>asphyxie par manque d'oxygène</b> : vous ne respirez plus assez d'oxygène, non pas parce qu'un produit vous empoisonne, mais parce qu'il a chassé l'air respirable.",
        "titre": "L'air qui manque — l'asphyxie"
@@ -1552,7 +1600,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Vous entrez seul dans un local technique fermé, une chambre froide, ou une fosse, pour chercher une fuite ou reprendre du matériel après une mise en pression à l'azote. La porte est restée fermée depuis un moment. Vous ne sentez rien d'anormal. Vous perdez connaissance sans signe avant-coureur. Un collègue vous voit au sol et se précipite pour vous porter secours, sans se protéger ni ventiler : il respire le même air appauvri, et s'effondre à son tour. C'est le scénario le plus fréquent de ce type d'accident : <b>deux victimes au lieu d'une</b>.",
+       "html": "C'est le scénario du schéma ci-dessus, et c'est le plus fréquent de ce type d'accident : un local resté fermé, quelqu'un qui entre sans rien sentir, puis un collègue qui se précipite pour le secourir sans se protéger ni ventiler — il respire le même air appauvri et s'effondre à son tour. <b>Deux victimes au lieu d'une.</b>",
        "titre": "L'air qui manque — l'asphyxie"
       },
       {
@@ -3534,6 +3582,12 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-bouteille.svg",
+       "alt": "À gauche, bouteille remplie à ras : le liquide n'a pas de place pour se dilater, la pression grimpe très vite. À droite, volume libre respecté. En bas, les gestes interdits.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
        "type": "point",
        "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.",
        "titre": "Ce qui éclate — la pression"
@@ -3545,7 +3599,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Un cas particulier mérite d'être compris. Une bouteille remplie à ras contient un liquide qui occupe presque tout le volume disponible. S'il chauffe, ce liquide se dilate, mais il n'a presque plus de place pour le faire : la pression grimpe alors très vite, bien plus vite que dans une bouteille qui garde une poche de gaz au-dessus du liquide. C'est pour cela qu'une bouteille de fluide ne se remplit <b>jamais</b> à ras : un volume libre doit toujours rester disponible. Le taux de remplissage exact à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur. Les propriétés propres à chaque fluide figurent dans sa fiche de données de sécurité (FDS).",
+       "html": "Le schéma du haut explique pourquoi une bouteille ne se remplit <b>jamais</b> à ras : un liquide qui chauffe se dilate, et s'il n'a pas de volume libre au-dessus de lui, la pression grimpe très vite. Le taux de remplissage à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur ; les propriétés du fluide, dans sa fiche de données de sécurité (FDS).",
        "titre": "Ce qui éclate — la pression"
       },
       {
@@ -7871,6 +7925,12 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-bouteille.svg",
+       "alt": "À gauche, bouteille remplie à ras : le liquide n'a pas de place pour se dilater, la pression grimpe très vite. À droite, volume libre respecté. En bas, les gestes interdits.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
        "type": "point",
        "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.",
        "titre": "Ce qui éclate — la pression"
@@ -7882,7 +7942,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Un cas particulier mérite d'être compris. Une bouteille remplie à ras contient un liquide qui occupe presque tout le volume disponible. S'il chauffe, ce liquide se dilate, mais il n'a presque plus de place pour le faire : la pression grimpe alors très vite, bien plus vite que dans une bouteille qui garde une poche de gaz au-dessus du liquide. C'est pour cela qu'une bouteille de fluide ne se remplit <b>jamais</b> à ras : un volume libre doit toujours rester disponible. Le taux de remplissage exact à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur. Les propriétés propres à chaque fluide figurent dans sa fiche de données de sécurité (FDS).",
+       "html": "Le schéma du haut explique pourquoi une bouteille ne se remplit <b>jamais</b> à ras : un liquide qui chauffe se dilate, et s'il n'a pas de volume libre au-dessus de lui, la pression grimpe très vite. Le taux de remplissage à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur ; les propriétés du fluide, dans sa fiche de données de sécurité (FDS).",
        "titre": "Ce qui éclate — la pression"
       },
       {
@@ -8011,6 +8071,12 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-projection.svg",
+       "alt": "Le liquide jaillit dans l'axe du raccord : on se place hors de cet axe, on vérifie au manomètre que la pression est nulle, et on porte gants et lunettes.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
        "type": "point",
        "html": "Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.",
        "titre": "Le froid brûle — projections et gelures"
@@ -8022,7 +8088,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Vous déconnectez un flexible du <b>manifold</b> (l'appareil à manomètres utilisé pour intervenir sur un circuit). Vous pensez que le tronçon est déjà vide. La vanne n'a pas été vérifiée fermée, le manomètre n'a pas été relu. Un reste de liquide sous pression jaillit au moment où vous desserrez le raccord, et touche votre main ou votre visage.",
+       "html": "Le cas type : vous déconnectez un flexible de <b>manifold</b> (l'appareil à manomètres) en pensant le tronçon vide. La vanne n'a pas été vérifiée, le manomètre pas relu. Le liquide restant jaillit au desserrage — dans l'axe du raccord, comme sur le schéma.",
        "titre": "Le froid brûle — projections et gelures"
       },
       {

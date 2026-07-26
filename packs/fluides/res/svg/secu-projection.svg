@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" role="img"
+     aria-label="Projection de fluide liquide au débranchement d'un flexible. Le liquide sous pression jaillit dans l'axe du raccord et gèle la peau au contact. Trois règles : vérifier au manomètre que la pression est nulle et la vanne fermée avant de desserrer, porter gants et lunettes avant de commencer, et se placer hors de l'axe du raccord en desserrant progressivement.">
+  <title>Projection de liquide : rester hors de l'axe</title>
+  <style>
+    .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .st  { font:700 15px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lg  { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .bad { font:700 15px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+    .p   { fill:none; stroke:#1b3a63; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+    .acc { fill:none; stroke:#c9451a; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+  </style>
+
+  <rect width="900" height="310" fill="#ffffff"/>
+  <text class="t" x="30" y="32">Un reste de liquide sous pression jaillit dans l'axe du raccord</text>
+
+  <!-- scène -->
+  <g transform="translate(30,52)">
+    <rect x="0" y="0" width="560" height="180" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5"/>
+
+    <!-- tuyauterie + raccord -->
+    <rect class="p" x="20" y="78" width="150" height="20" rx="4"/>
+    <rect class="p" x="170" y="72" width="26" height="32" rx="3"/>
+    <text class="lg" x="183" y="122" text-anchor="middle">raccord</text>
+
+    <!-- jet -->
+    <path d="M196,88 L330,58 L330,118 Z" fill="#c9451a" opacity="0.18"/>
+    <path class="acc" d="M198,88 h56 m-12,-6 l12,6 -12,6"/>
+    <path class="acc" d="M206,78 l40,-10" opacity="0.7"/>
+    <path class="acc" d="M206,98 l40,10" opacity="0.7"/>
+    <text class="bad" x="300" y="86" >jet de liquide</text>
+    <text class="lg"  x="300" y="106">souvent invisible</text>
+
+    <!-- zone dangereuse -->
+    <text class="bad" x="300" y="150" style="font:700 13.5px Calibri">✗ ne jamais se placer ici</text>
+
+    <!-- personne hors axe -->
+    <g transform="translate(470,60)">
+      <circle class="p" cx="0" cy="0" r="14"/>
+      <path class="p" d="M0,14 v34 M0,22 l-18,12 M0,22 l18,12 M0,48 l-13,26 M0,48 l13,26"/>
+      <!-- lunettes -->
+      <rect class="p" x="-11" y="-5" width="9" height="7" rx="2"/>
+      <rect class="p" x="2" y="-5" width="9" height="7" rx="2"/>
+      <line class="p" x1="-2" y1="-2" x2="2" y2="-2"/>
+    </g>
+    <text class="st" x="470" y="152" text-anchor="middle" style="fill:#2f7a4f">✓ hors de l'axe</text>
+  </g>
+
+  <!-- manomètre -->
+  <g transform="translate(628,64)">
+    <rect x="0" y="0" width="242" height="156" rx="8" fill="#eef6f1" stroke="#a9cdb8" stroke-width="1.5"/>
+    <g transform="translate(58,30)">
+      <circle class="p" cx="30" cy="30" r="28"/>
+      <circle cx="30" cy="30" r="3" fill="#1b3a63"/>
+      <line class="p" x1="30" y1="30" x2="8" y2="20"/>
+      <text x="8" y="52" style="font:700 12px Calibri;fill:#1b3a63">0</text>
+    </g>
+    <text class="st" x="121" y="112" text-anchor="middle">Pression nulle,</text>
+    <text class="st" x="121" y="132" text-anchor="middle">vanne fermée</text>
+  </g>
+
+  <!-- règles -->
+  <rect x="30" y="246" width="840" height="46" rx="8" fill="#ffffff" stroke="#c9d4de" stroke-width="1.5"/>
+  <text class="st" x="50" y="266">Dans l'ordre :</text>
+  <text class="lg" x="145" y="266">gants et lunettes AVANT de commencer · lire le manomètre, vanne fermée · desserrer progressivement, jamais d'un coup</text>
+  <text class="lg" x="50" y="286">En cas de projection sur la peau ou les yeux : rincer sans frotter et consulter — la conduite à tenir exacte est sur la <tspan style="font-weight:700">FDS du fluide</tspan>.</text>
+</svg>
