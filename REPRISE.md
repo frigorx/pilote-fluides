@@ -254,8 +254,12 @@ consignation · `cl3` **animation** du CO₂ qui remplit le local par le bas · 
   une, l'étape 4 (le VAT, celle qui prouve) émet une onde · `s4` le soleil pulse, la bouteille
   pleine **vibre** puis les éclats jaillissent, tandis qu'à droite le liquide monte
   tranquillement dans son volume libre · `s2` le cône de jet s'ouvre, la silhouette placée dans
-  l'axe s'écarte, et l'aiguille du manomètre retombe à zéro. **Le module sécurité est donc
-  intégralement animé** (`s1`→`s5` + son introduction).
+  l'axe s'écarte, et l'aiguille du manomètre retombe à zéro · `s3` la flamme du chalumeau
+  s'allume et vacille, les fumées montent vers le visage penché, et à droite les flèches d'azote
+  défilent dans le tube. **Le module sécurité est intégralement animé : les 6 visuels**
+  (`s1`→`s5` + l'introduction), 76 animations au total.
+  *(Le « intégralement animé » du commit précédent était faux : `s3` était restée statique et le
+  contrôle en ligne l'a montré — compter les `<animate>` fichier par fichier, jamais supposer.)*
 - **Pictogrammes** : trois usages à ne pas confondre — repères de fiche (libres, notre charte),
   **pictogrammes normalisés SGH / ATEX / ISO 7010** (à reproduire fidèlement, jamais réinventer :
   ce sont ceux que le stagiaire verra sur les bouteilles, donc c'est du *contenu*), équipements et
