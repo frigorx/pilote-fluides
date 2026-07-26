@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centre d'habilitation fluides frigorigènes — dossier de présentation</title>
+<meta name="description" content="Projet d'ouverture d'un centre d'habilitation aux fluides frigorigènes au Lycée Jacques Raynaud. Dossier, budget prévisionnel et outil pédagogique en fonctionnement.">
+<meta name="robots" content="noindex, nofollow">
+<!--
+  LA PAGE D'ENTRÉE DU DOSSIER — c'est le lien unique à envoyer.
+  Elle réunit : le dossier de direction et son budget (téléchargeables après
+  code), l'outil pédagogique en fonctionnement (libre), et l'ensemble des
+  documents de travail (chiffrés, voir documents.html).
+  Ce qui n'y est pas et n'y sera pas : les 85 questions officielles, les
+  10 sujets d'examen, le registre nominatif — hors ligne, poste maîtrisé.
+-->
+<style>
+  :root{
+    --bleu:#1B3A63; --bleu2:#2f5689; --bleu3:#3d6ea8; --orange:#FF6B35; --orange-cl:#ffe2d6;
+    --txt:#1d2a38; --mut:#5a6b7d; --fond:#eef2f6; --blanc:#fff; --ligne:#d6dee7;
+    --ok:#1e7e54; --ok-bg:#e3f5ec; --attente:#b06a00; --attente-bg:#fdf3e2;
+    --r:16px; --ombre:0 2px 14px rgba(27,58,99,.09); --ombre2:0 8px 30px rgba(27,58,99,.16);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font:17px/1.65 'Segoe UI',Calibri,system-ui,sans-serif;color:var(--txt);background:var(--fond)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{line-height:1.25}
+  a{color:var(--bleu2)}
+
+  header{background:linear-gradient(160deg,var(--bleu) 0%,var(--bleu2) 60%,var(--bleu3) 100%);color:#fff;
+    padding:52px 0 56px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;right:-90px;top:-90px;width:340px;height:340px;
+    border-radius:50%;background:rgba(255,107,53,.16)}
+  header .wrap{position:relative;z-index:1}
+  .marque{font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:14px}
+  .marque b{color:var(--orange)}
+  header h1{font-size:clamp(28px,4.6vw,42px);margin:0 0 14px;font-weight:700}
+  header .sous{font-size:clamp(16.5px,2.1vw,20px);max-width:730px;opacity:.94;margin:0 0 6px}
+  .ident{margin-top:26px;font-size:15.5px;opacity:.9;line-height:1.9}
+  .ident b{opacity:1}
+
+  section{padding:48px 0}
+  section.clair{background:var(--blanc)}
+  h2{font-size:clamp(21px,2.9vw,28px);color:var(--bleu);margin:0 0 8px}
+  .chapo{color:var(--mut);font-size:17.5px;max-width:780px;margin:0 0 28px}
+
+  /* le mot d'introduction */
+  .mot{background:var(--blanc);border-left:5px solid var(--orange);border-radius:0 var(--r) var(--r) 0;
+    padding:26px 28px;box-shadow:var(--ombre);font-size:17px}
+  .mot p{margin:0 0 14px}
+  .mot p:last-child{margin-bottom:0}
+  .sign{font-weight:700;color:var(--bleu)}
+
+  /* les pièces du dossier */
+  .pieces{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin-top:6px}
+  .piece{background:var(--blanc);border:1.5px solid var(--ligne);border-radius:var(--r);padding:24px;
+    display:flex;flex-direction:column;box-shadow:var(--ombre);text-decoration:none;color:inherit;
+    transition:border-color .15s,transform .12s,box-shadow .15s}
+  .piece:hover{border-color:var(--orange);transform:translateY(-3px);box-shadow:var(--ombre2)}
+  .piece.majeure{border-color:var(--orange);border-width:2px;background:linear-gradient(180deg,#fff9f6,#fff)}
+  .piece .ic{font-size:32px;margin-bottom:10px}
+  .piece h3{margin:0 0 8px;font-size:19px;color:var(--bleu)}
+  .piece p{margin:0 0 16px;color:var(--mut);font-size:15.5px;flex:1}
+  .piece .go{font-weight:700;color:var(--orange)}
+  .etiq{display:inline-block;border-radius:999px;padding:2px 11px;font-size:12px;font-weight:700;
+    margin-bottom:10px;align-self:flex-start}
+  .etiq.libre{background:var(--ok-bg);color:var(--ok)}
+  .etiq.code{background:var(--orange-cl);color:#a33d12}
+
+  /* chiffres */
+  .chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:8px}
+  .ch{background:var(--blanc);border:1.5px solid var(--ligne);border-radius:var(--r);padding:20px 18px;text-align:center;box-shadow:var(--ombre)}
+  .ch .n{font-size:30px;font-weight:700;color:var(--bleu);line-height:1.1}
+  .ch .l{font-size:14px;color:var(--mut);margin-top:6px}
+
+  table{width:100%;border-collapse:collapse;margin-top:8px;font-size:16px;background:var(--blanc);
+    border-radius:var(--r);overflow:hidden;box-shadow:var(--ombre)}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--ligne)}
+  th{background:#f6f9fc;color:var(--bleu);font-size:14.5px;text-transform:uppercase;letter-spacing:.04em}
+  tr:last-child td{border-bottom:0}
+  td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .tw{overflow-x:auto}
+
+  .encart{border-radius:var(--r);padding:22px 24px;margin:22px 0;box-shadow:var(--ombre)}
+  .encart.franc{background:var(--attente-bg);border-left:5px solid var(--attente)}
+  .encart.sur{background:var(--ok-bg);border-left:5px solid var(--ok)}
+  .encart h3{margin:0 0 8px;font-size:18px}
+  .encart.franc h3{color:#8a5200}
+  .encart.sur h3{color:var(--ok)}
+  .encart p:last-child{margin-bottom:0}
+  .encart ul{margin:.5em 0 0;padding-left:1.3em}
+  .encart li{margin-bottom:.4em}
+
+  .code-boite{background:var(--bleu);color:#fff;border-radius:var(--r);padding:24px 26px;margin-top:8px}
+  .code-boite h3{margin:0 0 8px;color:#fff;font-size:19px}
+  .code-boite p{margin:0;opacity:.93;font-size:16px}
+  .code-boite a{color:#ffd9c9;font-weight:600}
+
+  footer{background:var(--bleu);color:#fff;padding:36px 0;font-size:15px}
+  footer a{color:#ffd9c9}
+  footer .fin{opacity:.72;font-size:14px;margin-top:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="marque">Lycée professionnel <b>Jacques Raynaud</b> — Campus Équatio · Filière énergétique</div>
+    <h1>Ouvrir un centre d'habilitation<br>aux fluides frigorigènes</h1>
+    <p class="sous">Devenir organisme évaluateur pour l'attestation d'aptitude à la manipulation
+    des fluides frigorigènes, et ouvrir une activité de formation continue sur nos plateaux techniques.</p>
+    <div class="ident">
+      <b>Porteur du projet</b> — F. Henninot, coordonnateur de la filière énergétique<br>
+      <b>Destinataire</b> — Direction de l'établissement<br>
+      <b>Date</b> — juillet 2026
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="mot">
+      <p>Messieurs,</p>
+      <p>La réglementation européenne sur les fluides frigorigènes est entièrement refondue :
+      l'arrêté du 21 novembre 2025 remplace le dispositif de 2008 et devient obligatoire au
+      1<sup>er</sup> janvier 2027. L'attestation d'aptitude, jusqu'ici délivrée à vie, devient
+      valable sept ans, et <b>tous les frigoristes en exercice doivent être remis à niveau avant
+      le 12 mars 2029</b>. Chaque titulaire du bassin redevient donc candidat, puis le redevient
+      tous les sept ans.</p>
+      <p>Nous disposons déjà des plateaux techniques, des compétences et de la légitimité
+      professionnelle pour répondre à cette demande. Je vous propose de saisir cette fenêtre.</p>
+      <p>Pour que la proposition soit examinable et non seulement annoncée, j'ai construit
+      l'ensemble du dispositif avant de vous le présenter : le dossier de projet et son budget
+      paramétrable, le système qualité exigé par l'arrêté, et l'outil pédagogique complet — que
+      vous pouvez ouvrir et essayer depuis cette page. Ce travail a été mené avec l'assistance
+      d'une intelligence artificielle, sous ma conduite et ma vérification ; ce que cela implique
+      est dit franchement plus bas.</p>
+      <p class="sign">F. Henninot</p>
+    </div>
+  </div>
+</section>
+
+<section class="clair">
+  <div class="wrap">
+    <h2>Les deux pièces à examiner</h2>
+    <p class="chapo">Le dossier et son budget. Ils se téléchargent après saisie du code d'accès,
+    que je vous transmets séparément.</p>
+    <div class="pieces">
+      <a class="piece majeure" href="documents.html">
+        <span class="etiq code">Code d'accès</span>
+        <div class="ic">📘</div>
+        <h3>Le dossier de projet</h3>
+        <p>Contexte réglementaire, périmètre retenu, organisation et exigence d'indépendance,
+        investissement et plan de financement, modèle économique, risques, calendrier, et les
+        cinq décisions qui vous sont demandées.</p>
+        <span class="go">Ouvrir les documents ▸</span>
+      </a>
+      <a class="piece majeure" href="documents.html">
+        <span class="etiq code">Code d'accès</span>
+        <div class="ic">📊</div>
+        <h3>Le budget prévisionnel sur 5 ans</h3>
+        <p>Tableur paramétrable : toutes les hypothèses sont modifiables et le modèle se
+        recalcule. Compte de résultat, plan de financement, seuil de rentabilité et tableau de
+        sensibilité au tarif et au nombre de sessions.</p>
+        <span class="go">Ouvrir les documents ▸</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Ce que le projet produit</h2>
+    <p class="chapo">Rémunération de tous les intervenants et amortissements compris.
+    Chiffres issus du tableur joint, à hypothèses inchangées.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Indicateur</th><th class="n">An 1</th><th class="n">An 2</th><th class="n">An 3</th><th class="n">An 4</th><th class="n">An 5</th></tr></thead>
+        <tbody>
+          <tr><td>Sessions externes</td><td class="n">2</td><td class="n">3</td><td class="n">4</td><td class="n">4</td><td class="n">4</td></tr>
+          <tr><td>Stagiaires externes</td><td class="n">10</td><td class="n">21</td><td class="n">32</td><td class="n">32</td><td class="n">32</td></tr>
+          <tr><td>Chiffre d'affaires</td><td class="n">19 500 €</td><td class="n">35 450 €</td><td class="n">51 400 €</td><td class="n">51 400 €</td><td class="n">51 400 €</td></tr>
+          <tr><td><b>Résultat de l'exercice</b></td><td class="n">− 8 494 €</td><td class="n">− 1 031 €</td><td class="n">8 261 €</td><td class="n">8 261 €</td><td class="n">8 261 €</td></tr>
+          <tr><td><b>Résultat cumulé</b></td><td class="n">− 8 494 €</td><td class="n">− 9 524 €</td><td class="n">− 1 263 €</td><td class="n">6 998 €</td><td class="n">15 258 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="encart sur">
+      <h3>Ce que ces chiffres veulent dire</h3>
+      <p>Les deux premières années sont une <b>phase pilote déficitaire</b>, couverte par un fonds
+      de roulement de 9 000 € inscrit à l'investissement. Le résultat devient positif en année 3,
+      le cumul s'équilibre en année 4. Le seuil de rentabilité est de <b>21 stagiaires
+      extérieurs</b>, soit moins de trois sessions pleines. En régime de croisière, le centre
+      réinjecte environ <b>4 640 € par an</b> dans les plateaux techniques utilisés par les
+      sections CAP et Bac Pro — fournitures et provision d'étalonnage.</p>
+    </div>
+  </div>
+</section>
+
+<section class="clair">
+  <div class="wrap">
+    <h2>L'outil pédagogique, en fonctionnement</h2>
+    <p class="chapo">Pas une maquette : le contenu de formation est écrit, mesuré et utilisable
+    dès maintenant. Ces trois accès sont libres, sans code.</p>
+    <div class="pieces">
+      <a class="piece" href="./">
+        <span class="etiq libre">Accès libre</span>
+        <div class="ic">🎓</div>
+        <h3>L'application du stagiaire</h3>
+        <p>Ce que reçoit le candidat : les fiches de cours, les questions avec correction
+        expliquée, et le suivi de ses compétences. Il l'ouvre avant la formation, le garde
+        pendant ses périodes en entreprise et jusqu'à l'épreuve.</p>
+        <span class="go">Essayer l'application ▸</span>
+      </a>
+      <a class="piece" href="projection.html">
+        <span class="etiq code">Code d'accès</span>
+        <div class="ic">📽</div>
+        <h3>Le déroulé de la formation</h3>
+        <p>Les quatre jours séquence par séquence : diapositives, minuteur, questions à révéler
+        devant le groupe, notes d'animation. C'est le support projeté en salle.</p>
+        <span class="go">Voir le déroulé ▸</span>
+      </a>
+      <a class="piece" href="portail.html">
+        <span class="etiq libre">Accès libre</span>
+        <div class="ic">🧰</div>
+        <h3>La présentation détaillée</h3>
+        <p>Le contenu dans le détail, les outils de calcul déjà en ligne, et les onze
+        applications de l'atelier numérique de la filière.</p>
+        <span class="go">Ouvrir la présentation ▸</span>
+      </a>
+    </div>
+
+    <h2 style="margin-top:44px">Ce qui est déjà construit</h2>
+    <p class="chapo">Chiffres relevés automatiquement à chaque fabrication du contenu, jamais
+    saisis à la main.</p>
+    <div class="chiffres">
+      <div class="ch"><div class="n">33</div><div class="l">fiches de cours</div></div>
+      <div class="ch"><div class="n">235</div><div class="l">questions d'entraînement</div></div>
+      <div class="ch"><div class="n">318</div><div class="l">diapositives de salle</div></div>
+      <div class="ch"><div class="n">100 %</div><div class="l">du référentiel officiel couvert</div></div>
+      <div class="ch"><div class="n">6</div><div class="l">procédures du système qualité</div></div>
+      <div class="ch"><div class="n">14</div><div class="l">chapitres de cours source</div></div>
+    </div>
+    <p style="color:var(--mut);font-size:15.5px;margin-top:18px">Les 136 compétences de l'annexe II.B
+    de l'arrêté sont couvertes à 100 % dans les quatre catégories visées (A1, A2, D et E). Un second
+    contrôle vérifie que chaque compétence est <i>réellement enseignée</i> et non simplement citée :
+    <b>94 sur 94</b> le sont. Les deux mesures sont recalculées à chaque modification et
+    consultables librement dans les documents.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Ce qui reste à faire — dit franchement</h2>
+    <p class="chapo">Un dossier qui ne présenterait que ses points forts vous ferait perdre du
+    temps. Voici ce qui n'est pas acquis.</p>
+
+    <div class="encart franc">
+      <h3>⚠ Une condition de recevabilité doit être levée avant toute dépense</h3>
+      <p>Le dispositif impose qu'<b>aucune entité du groupe auquel appartient l'établissement ne
+      soit elle-même organisme agréé ni organisme certificateur</b> dans le domaine des fluides
+      frigorigènes : ce serait un conflit d'intérêt, et le dossier serait irrecevable avant même
+      son instruction. Cette vérification porte sur le périmètre complet du groupe Équatio, elle
+      est sans coût, et se règle par un échange écrit avec le certificateur pressenti.
+      <b>Elle conditionne tout le reste.</b></p>
+    </div>
+
+    <div class="encart franc">
+      <h3>⚠ Le contenu n'a pas encore été relu par un second professionnel</h3>
+      <p>Le contenu pédagogique a été rédigé avec l'assistance d'une intelligence artificielle,
+      sous des règles strictes que je me suis fixées — notamment <b>aucune valeur chiffrée
+      inventée</b> : là où une pression d'épreuve ou une durée dépend de la documentation
+      constructeur, le contenu renvoie à cette documentation plutôt que d'avancer un chiffre.
+      Chaque texte produit a été contrôlé par un second passage automatique chargé de le
+      contredire.</p>
+      <p>Cela ne remplace pas une relecture par un frigoriste. Je la conduis moi-même, fiche par
+      fiche ; elle n'est pas terminée. <b>Le contenu est donc utilisable en démonstration et en
+      préparation, pas encore opposable devant un candidat.</b> Les valeurs propres à nos machines
+      (pressions, niveaux de vide, durées, couples) seront relevées sur nos plateaux : elles
+      n'existent dans aucun texte, et je préfère qu'elles manquent plutôt qu'elles soient
+      approximatives.</p>
+    </div>
+
+    <div class="encart franc">
+      <h3>⚠ Trois montants sont des estimations</h3>
+      <p>La certification et l'audit initial (4 500 €), l'attestation de capacité de
+      l'établissement (1 500 €) et le kit documentaire du système qualité (3 000 €) sont estimés.
+      C'est précisément l'objet de la première décision demandée : <b>autoriser la consultation de
+      trois organismes certificateurs</b>, sans engagement financier, pour remplacer ces
+      estimations par des devis.</p>
+    </div>
+
+    <div class="encart sur">
+      <h3>✓ Ce qui est en revanche certain</h3>
+      <ul>
+        <li>Le calendrier réglementaire : l'échéance du 12 mars 2029 est fixée par arrêté publié.</li>
+        <li>La couverture du référentiel : mesurée automatiquement, code par code, à chaque modification.</li>
+        <li>Le système qualité : les six procédures exigées par l'annexe III.A sont rédigées, en attente d'approbation.</li>
+        <li>Le modèle économique : le tableur est paramétrable, chaque hypothèse est modifiable en séance.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="clair">
+  <div class="wrap">
+    <h2>L'ensemble du travail</h2>
+    <p class="chapo">Rien n'est gardé en réserve : les 38 documents du projet sont consultables,
+    du plan d'architecture aux quatorze chapitres de cours.</p>
+    <div class="code-boite">
+      <h3>🔑 Un seul code ouvre tout</h3>
+      <p>Le code d'accès que je vous transmets séparément ouvre le dossier, le budget, les six
+      procédures qualité, l'architecture du dispositif et les chapitres de cours — soit
+      <b>38 documents</b>, réunis sur la page
+      <a href="documents.html">Documents du projet</a>. Ils sont chiffrés : sans le code, ils
+      sont illisibles, y compris pour qui inspecterait le site.</p>
+    </div>
+    <p style="color:var(--mut);font-size:15.5px;margin-top:22px">
+      <b>Ce qui n'est pas en ligne, et ne le sera pas :</b> la banque des questions d'examen
+      officielles, les sujets et le registre nominatif des candidats. Ils resteront sur un poste
+      maîtrisé, hors réseau : un candidat qui aurait vu un sujet ne serait plus évaluable, et
+      cette règle est le cœur de l'agrément.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>F. Henninot</b> — coordonnateur de la filière énergétique · Lycée professionnel Jacques Raynaud<br>
+    <a href="documents.html">Documents du projet</a> ·
+    <a href="portail.html">Présentation détaillée</a> ·
+    <a href="./">Application du stagiaire</a>
+    <div class="fin">
+      Arrêté du 21 novembre 2025 · règlement (UE) 2024/573. Contenu et outils :
+      voir la <a href="LICENCE.md">licence</a>. Page à diffusion restreinte,
+      non référencée par les moteurs de recherche.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
