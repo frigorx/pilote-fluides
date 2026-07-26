@@ -9,7 +9,726 @@ window.PILOTE_PROJECTION = {
  "base_img": "packs/fluides/res/",
  "jours": [
   {
+   "n": 0,
+   "libelle": "Accueil",
+   "titre": "Sécurité — ce qui peut vous blesser",
+   "intention": "Tout le reste de la formation apprend à protéger l'installation et l'environnement. Ce bloc-ci apprend au stagiaire à se protéger lui-même. La sécurité se démontre et s'impose : elle ne se découvre jamais par l'erreur.",
+   "sequences": [
+    {
+     "type": "cours",
+     "fiche": "s1",
+     "titre": "L'air qui manque — l'asphyxie",
+     "minutes": 25,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "L'air qui manque — l'asphyxie",
+       "dc": "Sécurité · codes 12.02 · 12.13",
+       "competences": [
+        {
+         "code": "12.02",
+         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, ventilation, EPI.",
+         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "12.13",
+         "lib": "Vérifier la sécurité du site : signalisation, issues de secours, détecteurs et alarmes gaz.",
+         "officiel": "Vérifier que les mesures de santé et de sécurité conformes aux règles applicables sont appliquées à l'emplacement du système (par exemple, panneaux de signalisation, issues de secours, capteurs de gaz, alarmes au gaz, etc.)",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "Respirer, c'est faire entrer de l'oxygène dans le corps. Un local fermé peut se remplir d'un autre gaz : de l'azote utilisé pour mettre un circuit en pression, ou du fluide frigorigène qui a fui. Ce gaz prend la place de l'oxygène dans l'air. C'est une <b>asphyxie par manque d'oxygène</b> : vous ne respirez plus assez d'oxygène, non pas parce qu'un produit vous empoisonne, mais parce qu'il a chassé l'air respirable.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "point",
+       "html": "Le corps ne donne <b>aucune alerte</b> dans cette situation. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce danger n'a pas de code dans le référentiel d'examen.</b> Vous ne serez pas interrogé dessus à l'épreuve. Il peut pourtant vous tuer. C'est pour cela qu'il est dans ce module.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "point",
+       "html": "Vous entrez seul dans un local technique fermé, une chambre froide, ou une fosse, pour chercher une fuite ou reprendre du matériel après une mise en pression à l'azote. La porte est restée fermée depuis un moment. Vous ne sentez rien d'anormal. Vous perdez connaissance sans signe avant-coureur. Un collègue vous voit au sol et se précipite pour vous porter secours, sans se protéger ni ventiler : il respire le même air appauvri, et s'effondre à son tour. C'est le scénario le plus fréquent de ce type d'accident : <b>deux victimes au lieu d'une</b>.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ol><li><b>Ventilez</b> le local avant d'entrer : ouvrez, aérez, laissez l'air circuler.</li><li><b>Contrôlez l'air</b> avec un détecteur d'oxygène avant d'entrer — pas seulement un détecteur de fuite de fluide, ce n'est pas le même appareil. Le seuil d'alerte se règle selon la FDS (fiche de données de sécurité) du fluide concerné.</li><li><b>N'entrez jamais seul</b> dans un espace clos suspect : prévenez quelqu'un, travaillez à deux.</li><li>Si un collègue est au sol dans un espace clos : <b>ne vous précipitez pas sans protection</b>. Donnez l'alerte, ventilez, faites intervenir les secours.</li></ol>",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Entrer seul dans un local fermé, une chambre froide ou une fosse, après une mise en pression à l'azote ou une fuite suspectée, <b>sans ventiler ni contrôler l'air</b>.</p><p>Conséquence : perte de connaissance sans signe avant-coureur. Risque mortel pour vous, et pour quiconque tenterait de vous secourir sans précaution.</p>",
+       "titre": "L'air qui manque — l'asphyxie"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g12-v6_093",
+       "dc": "G12",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Les fluides A2L comme le R32 nécessitent :",
+       "choix": [
+        "Aucune précaution particulière",
+        "Un outillage adapté et une formation spécifique",
+        "Un local ATEX systématique",
+        "Un détecteur d'ammoniac"
+       ],
+       "bonne": 1,
+       "explication": "Outillage adapté et formation spécifique — Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante.",
+       "aide": "'Légèrement inflammable' ne veut pas dire 'sans risque'.",
+       "remed": {
+        "texte": "Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante."
+       },
+       "remediation_vers": "g12",
+       "code": "12.02",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g12-v6_184",
+       "dc": "G12",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Pour les fluides A2L, les outils d'intervention doivent être :",
+       "choix": [
+        "Standards",
+        "Adaptés (pas de source d'ignition, ventilation)",
+        "Uniquement manuels (pas d'électricité)",
+        "En matériaux composites"
+       ],
+       "bonne": 1,
+       "explication": "Adaptés — Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention.",
+       "aide": "'Légèrement inflammable' impose des précautions, même si le risque est modéré.",
+       "remed": {
+        "texte": "Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention."
+       },
+       "remediation_vers": "g12",
+       "code": "12.02",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-q-12.13",
+       "dc": "G12",
+       "code": "12.13",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Vous arrivez pour intervenir sur un équipement au R-290 et constatez que les capteurs de gaz du local ne sont pas en service. Que faites-vous ?",
+       "choix": [
+        "Vous réparez vous-même les capteurs avant de commencer",
+        "Vous ne commencez pas et vous signalez le problème",
+        "Vous demandez à un collègue de surveiller l'air à votre place",
+        "Vous commencez l'intervention en redoublant de prudence"
+       ],
+       "bonne": 1,
+       "aide": "La fiche donne une règle claire pour ce cas : que fait-on si une mesure de sécurité du site manque ?",
+       "remed": {
+        "regle": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
+        "pourquoi": "Sur un fluide très inflammable comme le R-290, un capteur de gaz hors service prive le technicien de la seule alerte en cas de fuite pendant l'intervention.",
+        "piege": "Penser que sa propre vigilance remplace un dispositif de détection défaillant."
+       },
+       "remediation_vers": "g12",
+       "explication": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Montrez une bouteille d'azote avec son mano-détendeur : faites remarquer qu'elle ne porte aucun pictogramme « asphyxiant », contrairement à ce que les stagiaires imaginent souvent. Racontez le scénario du double accident (victime puis sauveteur) pour ancrer la règle « jamais seul, jamais sans ventiler ». Si un détecteur d'oxygène est disponible, faites-le manipuler et lire l'affichage ; comparez-le à un détecteur de fuite de fluide pour bien distinguer les deux appareils. Dites clairement à l'oral que ce risque ne sera pas noté à l'épreuve : c'est un risque réel, pas un risque de contrôle."
+    },
+    {
+     "type": "cours",
+     "fiche": "s2",
+     "titre": "Le froid brûle — projections et gelures",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Le froid brûle — projections et gelures",
+       "dc": "Sécurité · codes 12.02",
+       "competences": [
+        {
+         "code": "12.02",
+         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, ventilation, EPI.",
+         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "point",
+       "html": "Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui. Un contact avec de l'ammoniac liquide ajoute une <b>brûlure chimique</b> à la brûlure froide : ce fluide n'appartient pas à la même famille que les fluides fluorés, et ne se comporte pas comme eux.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "point",
+       "html": "Vous déconnectez un flexible du <b>manifold</b> (l'appareil à manomètres utilisé pour intervenir sur un circuit). Vous pensez que le tronçon est déjà vide. La vanne n'a pas été vérifiée fermée, le manomètre n'a pas été relu. Un reste de liquide sous pression jaillit au moment où vous desserrez le raccord, et touche votre main ou votre visage.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ol><li>Mettez vos <b>EPI</b> (équipements de protection individuelle) — ici, gants et lunettes — avant toute manipulation d'un circuit sous pression.</li><li><b>Vérifiez au manomètre</b> que la pression est nulle, et que la vanne est fermée, avant de débrancher un flexible ou de desserrer un raccord.</li><li><b>Desserrez progressivement</b>, jamais d'un coup, et restez hors de la trajectoire d'un éventuel jet.</li><li>En cas de projection sur la peau ou les yeux : rincez sans frotter, et consultez. La conduite à tenir précise figure sur la <b>FDS</b> (fiche de données de sécurité) du fluide utilisé.</li></ol>",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Débrancher un flexible ou desserrer un raccord sous pression <b>sans vérifier au manomètre</b> qu'il est vide, ou le faire sans gants ni lunettes.</p><p>Conséquence : projection de liquide qui gèle la peau ou les yeux au contact. Risque de lésion oculaire grave.</p>",
+       "titre": "Le froid brûle — projections et gelures"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g12-v6_093",
+       "dc": "G12",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Les fluides A2L comme le R32 nécessitent :",
+       "choix": [
+        "Aucune précaution particulière",
+        "Un outillage adapté et une formation spécifique",
+        "Un local ATEX systématique",
+        "Un détecteur d'ammoniac"
+       ],
+       "bonne": 1,
+       "explication": "Outillage adapté et formation spécifique — Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante.",
+       "aide": "'Légèrement inflammable' ne veut pas dire 'sans risque'.",
+       "remed": {
+        "texte": "Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante."
+       },
+       "remediation_vers": "g12",
+       "code": "12.02",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g12-v6_184",
+       "dc": "G12",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Pour les fluides A2L, les outils d'intervention doivent être :",
+       "choix": [
+        "Standards",
+        "Adaptés (pas de source d'ignition, ventilation)",
+        "Uniquement manuels (pas d'électricité)",
+        "En matériaux composites"
+       ],
+       "bonne": 1,
+       "explication": "Adaptés — Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention.",
+       "aide": "'Légèrement inflammable' impose des précautions, même si le risque est modéré.",
+       "remed": {
+        "texte": "Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention."
+       },
+       "remediation_vers": "g12",
+       "code": "12.02",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Faites observer un flexible de manifold et ses raccords rapides, et faites lire un manomètre avant de mimer un débranchement. Faites manipuler des gants de protection au froid et des lunettes ; faites justifier l'ordre dans lequel on les enfile avant d'intervenir. Racontez un cas concret de projection lors d'un débranchement trop rapide, pour ancrer le réflexe manomètre-avant-tout. Rappelez que la conduite à tenir en cas de projection se lit sur la FDS du fluide utilisé sur le chantier."
+    },
+    {
+     "type": "cours",
+     "fiche": "s3",
+     "titre": "La flamme interdite — décomposition du fluide",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "La flamme interdite — décomposition du fluide",
+       "dc": "Sécurité · codes 11.03",
+       "competences": [
+        {
+         "code": "11.03",
+         "lib": "Connaître les règles de sécurité des fluides inflammables, toxiques ou à pression plus élevée.",
+         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "Un fluide frigorigène fluoré est stable à température normale. Il ne l'est plus face à une flamme. Chauffé au contact d'une flamme ou d'une surface très chaude, il ne brûle pas comme un carburant : il se <b>décompose</b>. Sa molécule se casse et forme d'autres substances, absentes du fluide d'origine — des gaz toxiques et corrosifs.",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "point",
+       "html": "Certains fluides ajoutent un second risque. Selon la norme NF EN 378, les fluides classés <b>A2L</b> (légèrement inflammables, comme le R-32 ou le R-1234yf) ou <b>A3</b> (très inflammables, comme le R-290 ou le R-600a) peuvent eux-mêmes s'enflammer au contact d'une flamme ou d'une étincelle. La classe du fluide utilisé se lit sur sa FDS (fiche de données de sécurité).",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "point",
+       "html": "Vous devez braser un raccord sur un tronçon de circuit. Il reste un peu de fluide à l'intérieur, non récupéré — « une petite quantité, ça ne changera rien », pensez-vous. Vous chauffez au chalumeau. La flamme touche le fluide résiduel dans le tube. Il se décompose, et les fumées toxiques se dégagent juste sous votre visage, penché sur le brasage.",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ol><li><b>Récupérez</b> entièrement le fluide du tronçon à chauffer avant toute opération de brasage : jamais de brasage sur un circuit encore chargé.</li><li>Ne recherchez <b>jamais une fuite avec une flamme</b> : utilisez un détecteur électronique.</li><li>Faites circuler de l'azote à l'intérieur du tube pendant le brasage, avec un mano-détendeur, pour en chasser l'air et les résidus : c'est le <b>balayage</b>.</li><li><b>Ventilez</b> la zone de travail, et ne restez pas penché directement au-dessus de la flamme.</li></ol>",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Chauffer ou braser un tronçon de circuit sans avoir récupéré et vérifié l'absence de fluide, ou rechercher une fuite avec une flamme.</p><p>Conséquence : dégagement de gaz toxiques et corrosifs, inhalés à bout portant. Risque d'incendie en plus, si le fluide est inflammable (classe A2L ou A3).</p>",
+       "titre": "La flamme interdite — décomposition du fluide"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g11-54",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le R290 (propane) est classé :",
+       "choix": [
+        "A1",
+        "A2L",
+        "A2",
+        "A3"
+       ],
+       "bonne": 3,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g11-v6_033",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Un fluide classé A2L est :",
+       "choix": [
+        "Non inflammable, non toxique",
+        "Légèrement inflammable, faible toxicité",
+        "Très inflammable, faible toxicité",
+        "Légèrement inflammable, toxicité élevée"
+       ],
+       "bonne": 1,
+       "explication": "Légèrement inflammable, faible toxicité — A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf.",
+       "aide": "A = toxicité, le chiffre = inflammabilité. L = lower (plus faible).",
+       "remed": {
+        "texte": "A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf."
+       },
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g11-v6_092",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "La norme EN 378 définit entre autres :",
+       "choix": [
+        "Les prix des fluides",
+        "Les charges maximales de fluide selon le local et la classe de sécurité",
+        "Les horaires d'intervention",
+        "Les salaires des techniciens"
+       ],
+       "bonne": 1,
+       "explication": "Les charges maximales selon local et classe de sécurité",
+       "aide": "C'est la norme européenne centrale pour la sécurité du froid.",
+       "remed": {
+        "texte": "EN 378 est LA norme de référence pour la sécurité des installations frigorifiques en Europe."
+       },
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Montrez, sans l'allumer, un chalumeau et un poste de brasage avec son mano-détendeur d'azote ; faites nommer le balayage et sa fonction. Racontez le cas du brasage sur un tronçon mal purgé, pour ancrer le lien entre flamme et décomposition. Rappelez l'interdiction absolue de rechercher une fuite à la flamme (méthode ancienne, aujourd'hui interdite). Reliez à la classe NF EN 378 du fluide utilisé en atelier, lisible sur sa FDS, pour rappeler que certains fluides s'enflamment eux-mêmes en plus de se décomposer."
+    },
+    {
+     "type": "cours",
+     "fiche": "s4",
+     "titre": "Ce qui éclate — la pression",
+     "minutes": 25,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Ce qui éclate — la pression",
+       "dc": "Sécurité · codes 11.03 · 3.01",
+       "competences": [
+        {
+         "code": "11.03",
+         "lib": "Connaître les règles de sécurité applicables aux fluides nécessitant une pression de fonctionnement plus élevée",
+         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "3.01",
+         "lib": "Réaliser une épreuve de pression à l'azote pour vérifier la résistance du circuit",
+         "officiel": "Effectuer une épreuve de pression pour contrôler la résistance du système",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "Ce qui peut céder :",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "Un cas particulier mérite d'être compris. Une bouteille remplie à ras contient un liquide qui occupe presque tout le volume disponible. S'il chauffe, ce liquide se dilate, mais il n'a presque plus de place pour le faire : la pression grimpe alors très vite, bien plus vite que dans une bouteille qui garde une poche de gaz au-dessus du liquide. C'est pour cela qu'une bouteille de fluide ne se remplit <b>jamais</b> à ras : un volume libre doit toujours rester disponible. Le taux de remplissage exact à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur. Les propriétés propres à chaque fluide figurent dans sa fiche de données de sécurité (FDS).",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<b>Comment ça arrive vraiment.</b> Sur un chantier, une bouteille de fluide oubliée dans un véhicule en plein été, vitres fermées, en est un exemple courant : l'habitacle chauffe fortement, la bouteille avec. Autre situation : un flexible de manifold ancien, jamais contrôlé, qui cède au moment où l'on ouvre une vanne. Autre situation encore : un tronçon de tuyauterie en toiture, isolé par deux vannes fermées pendant une réparation, laissé en plein soleil sans protection ni vérification avant de reprendre le travail dessus.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "Un compresseur à l'arrêt n'est pas forcément une machine sans danger. Un circuit peut rester sous pression longtemps après l'arrêt d'une installation, sans qu'aucune fuite ne se produise. Rien à l'extérieur ne signale cette pression : ni bruit, ni mouvement, ni tiédeur. Un technicien qui desserre un raccord en se disant « de toute façon, c'est arrêté depuis longtemps » peut se retrouver face à une projection de fluide et de pièces.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui protège.</b> Dans l'ordre où on l'applique :",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li>une <b>bouteille de fluide</b> qui a chauffé au soleil ou près d'une source de chaleur ;</li><li>un <b>flexible</b> fatigué par le temps, l'usure ou de mauvais pliages ;</li><li>un <b>raccord</b> mal serré ou abîmé ;</li><li>un tronçon de circuit fermé des deux côtés par des vannes, sans aucune protection, alors qu'il reste rempli de fluide.</li></ul>",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li>Ne jamais exposer une bouteille de fluide à la chaleur ou au soleil direct : la stocker et la transporter à l'abri, à la verticale, arrimée.</li><li>Respecter le taux de remplissage indiqué par le fabricant : ne jamais remplir une bouteille à ras.</li><li>Connaître le rôle des <b>organes de sécurité</b> du circuit. Une <b>soupape de sécurité</b> s'ouvre automatiquement pour laisser échapper un peu de fluide avant que la pression n'atteigne un niveau dangereux ; son seuil de déclenchement est fixé par le fabricant et indiqué sur l'organe ou dans sa documentation. Vérifier la présence et le bon état de ces organes, sans jamais les démonter ni les bloquer.</li><li>Pour toute mise en pression du circuit — recherche de fuite, épreuve de pression — utiliser <b>uniquement de l'azote</b>, jamais de l'oxygène ni de l'air comprimé, et toujours au travers d'un <b>mano-détendeur</b> (un appareil qui réduit et règle la pression très élevée de la bouteille) réglé selon la documentation constructeur. Sans détendeur, la pression de la bouteille d'azote suffit à elle seule à faire éclater un circuit frigorifique.</li><li>Avant de desserrer quoi que ce soit sur un circuit à l'arrêt, mesurer sa pression au manomètre — même si l'installation semble arrêtée depuis longtemps.</li></ol>",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li>Un circuit reste sous pression même à l'arrêt et même par forte chaleur.</li><li>Une bouteille de fluide ne se chauffe jamais et ne se remplit jamais à ras.</li><li>Toute mise en pression se fait à l'azote seul, jamais à l'oxygène ni à l'air comprimé, toujours avec un mano-détendeur réglé selon la documentation constructeur.</li><li>Avant de toucher un raccord, vérifier la pression au manomètre, même sur une machine arrêtée depuis longtemps.</li></ul>",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>On ne chauffe <b>jamais</b> une bouteille de fluide pour accélérer un transfert ou une charge — ni flamme, ni eau chaude, ni radiateur. On ne met <b>jamais</b> un circuit sous pression avec de l'oxygène ou de l'air comprimé, et on n'utilise <b>jamais</b> une bouteille d'azote sans mano-détendeur. Conséquence : la bouteille ou le circuit peut éclater et projeter du fluide et des fragments sur la personne présente.</p>",
+       "titre": "Ce qui éclate — la pression"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-p4-1",
+       "dc": "G3",
+       "code": "3.01",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
+       "choix": [
+        "De l'oxygène",
+        "De l'azote sec",
+        "De l'air comprimé",
+        "Du fluide frigorigène du circuit"
+       ],
+       "bonne": 1,
+       "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
+       "remed": {
+        "regle": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
+        "pourquoi": "L'azote est neutre et sec : il n'entretient pas la combustion et n'introduit pas d'eau dans le circuit.",
+        "piege": "L'oxygène au contact de l'huile du circuit peut provoquer une réaction violente. L'air comprimé, lui, apporte de l'humidité qui restera dans l'installation."
+       },
+       "remediation_vers": "p4",
+       "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g11-54",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le R290 (propane) est classé :",
+       "choix": [
+        "A1",
+        "A2L",
+        "A2",
+        "A3"
+       ],
+       "bonne": 3,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g11-v6_033",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Un fluide classé A2L est :",
+       "choix": [
+        "Non inflammable, non toxique",
+        "Légèrement inflammable, faible toxicité",
+        "Très inflammable, faible toxicité",
+        "Légèrement inflammable, toxicité élevée"
+       ],
+       "bonne": 1,
+       "explication": "Légèrement inflammable, faible toxicité — A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf.",
+       "aide": "A = toxicité, le chiffre = inflammabilité. L = lower (plus faible).",
+       "remed": {
+        "texte": "A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf."
+       },
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Conseil d'animation : faire observer côte à côte une bouteille d'azote équipée de son mano-détendeur et un flexible hors service, fatigué ou fissuré. Montrer une soupape de sécurité démontée (pièce morte, jamais sur une machine en service) et expliquer son déclenchement. Demander au groupe, avant de répondre : « un compresseur arrêté depuis longtemps, est-il encore sous pression ? » — laisser les hypothèses circuler avant de trancher. Insister à l'oral sur l'interdiction absolue de l'oxygène et de l'air comprimé pour mettre un circuit en pression."
+    },
+    {
+     "type": "cours",
+     "fiche": "s5",
+     "titre": "Consigner avant de toucher — le risque électrique",
+     "minutes": 25,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Consigner avant de toucher — le risque électrique",
+       "dc": "Sécurité",
+       "competences": []
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui arrive.</b> Ce risque ne figure dans aucun code du référentiel d'examen fluides. Il n'en est pas moins réel : le risque électrique tue des professionnels chaque année, sur les installations de froid et de climatisation comme sur toute autre installation électrique.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "Le passage du courant électrique dans le corps humain porte un nom : l'<b>électrisation</b>. Ses effets vont de la simple secousse à des blessures graves — brûlures internes, troubles du cœur. Quand une électrisation entraîne la mort, on parle d'<b>électrocution</b>. C'est le même phénomène ; seule la gravité change.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "Un autre danger ne demande aucun contact : l'<b>arc électrique</b>. C'est une décharge qui jaillit dans l'air entre deux points sous tension, ou entre un point sous tension et une masse, sans qu'il soit nécessaire de toucher quoi que ce soit. Un arc électrique brûle par la chaleur et la lumière qu'il dégage, et peut projeter des matières en fusion. On peut donc se blesser gravement sans avoir touché aucun fil.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "Un dernier piège : couper l'alimentation ne vide pas forcément tous les composants de leur énergie. Un <b>condensateur</b> est un composant qui stocke de l'énergie électrique ; on en trouve par exemple dans les circuits de démarrage de certains moteurs. Il peut rester chargé après la coupure du courant. Il reste alors dangereux tant qu'il n'a pas été déchargé selon la méthode indiquée par la documentation constructeur de l'équipement.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "<b>Comment ça arrive vraiment.</b> Un technicien pressé ouvre une armoire électrique pour un dépannage rapide. Le disjoncteur qui semble commander cette armoire est coupé, alors il touche directement un bornier — la barrette où arrivent les fils. Mais personne n'a vérifié que ce disjoncteur coupait bien cette armoire précise : un autre circuit, resté sous tension, y arrive aussi. Autre situation fréquente : un condensateur de moteur touché juste après la coupure du courant, alors qu'il est encore chargé. Autre situation encore : un outil métallique approché trop près de bornes sous tension dans une armoire électrique, sans contact direct, qui déclenche un arc électrique.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui protège.</b> Avant de toucher un circuit ou un équipement électrique, la <b>consignation électrique</b> se déroule dans un ordre précis, en cinq étapes :",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "Le VAT lui-même doit être digne de confiance. On le contrôle sur une source que l'on sait sous tension <b>avant</b> de l'utiliser sur le circuit à vérifier, puis on refait le même contrôle sur cette source connue <b>après</b>. Si l'appareil fonctionnait au premier essai mais plus au second, tout ce qu'il a mesuré entre les deux doit être considéré comme non fiable.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li><b>Séparer</b> : couper l'alimentation électrique de façon visible et certaine.</li><li><b>Condamner</b> : verrouiller l'organe de coupure en position ouverte, pour qu'il ne puisse pas être refermé par quelqu'un d'autre pendant l'intervention.</li><li><b>Identifier</b> : vérifier que l'on se trouve bien sur le circuit ou l'équipement que l'on vient de séparer, et pas sur un autre.</li><li><b>Vérifier l'absence de tension</b> avec un <b>VAT</b> — un vérificateur d'absence de tension — dont le modèle et les réglages sont adaptés à l'installation, conformément à sa documentation constructeur.</li><li><b>Mettre à la terre et en court-circuit</b> quand cette étape s'impose, notamment lorsqu'une tension pourrait réapparaître par une autre source.</li></ol>",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li>Électrisation : le courant traverse le corps. Électrocution : une électrisation qui tue.</li><li>Un arc électrique brûle sans aucun contact.</li><li>Consignation en cinq étapes : séparer, condamner, identifier, vérifier l'absence de tension, mettre à la terre si besoin.</li><li>Un condensateur peut rester chargé après la coupure du courant.</li><li>Le VAT se contrôle avant et après usage, sur une source connue.</li></ul>",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>On ne travaille <b>jamais</b> sur une installation électrique sans avoir réalisé les cinq étapes de la consignation, même pour « juste vérifier » ou « deux secondes ». On ne fait <b>jamais</b> confiance à un simple arrêt visuel de la machine : seule une vérification d'absence de tension avec un VAT contrôlé fait foi. Conséquence : électrisation, électrocution, brûlure par arc électrique — ce risque tue chaque année.</p>",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-s5-1",
+       "dc": "Sécurité",
+       "code": null,
+       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Quelle est la dernière étape avant de poser les mains sur un circuit électrique consigné ?",
+       "choix": [
+        "Prévenir le client",
+        "Vérifier l absence de tension avec un VAT",
+        "Poser une pancarte",
+        "Ouvrir le coffret"
+       ],
+       "bonne": 1,
+       "aide": "Consigner ne suffit pas : il faut le prouver, appareil en main.",
+       "remed": {
+        "regle": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
+        "pourquoi": "Un disjoncteur peut être mal repéré, une alimentation de secours peut subsister : seule la mesure prouve que le circuit est hors tension.",
+        "piege": "« Je l ai coupé moi-même » ne protège de rien. Un circuit se vérifie, il ne se suppose pas."
+       },
+       "remediation_vers": "s5",
+       "explication": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
+       "origine": "pack"
+      },
+      {
+       "id": "pk-s5-2",
+       "dc": "Sécurité",
+       "code": null,
+       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s en être servi ?",
+       "choix": [
+        "Pour économiser la pile",
+        "Parce qu un VAT en panne indiquerait « pas de tension » sur un circuit pourtant sous tension",
+        "Pour l étalonner",
+        "C est une simple habitude"
+       ],
+       "bonne": 1,
+       "aide": "Demandez-vous ce qui se passe si l appareil lui-même est défaillant.",
+       "remed": {
+        "regle": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
+        "pourquoi": "Un appareil défaillant affiche l absence de tension quoi qu il arrive. Le tester après prouve qu il fonctionnait encore au moment de la mesure.",
+        "piege": "Un VAT qui n indique rien peut vouloir dire deux choses : pas de tension, ou appareil mort. Seul le double contrôle tranche."
+       },
+       "remediation_vers": "s5",
+       "explication": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
+       "origine": "pack"
+      },
+      {
+       "id": "pk-s5-3",
+       "dc": "Sécurité",
+       "code": null,
+       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Une machine vient d être mise hors tension. Que peut-il rester de dangereux dans le coffret ?",
+       "choix": [
+        "Plus rien, la coupure suffit",
+        "Des condensateurs encore chargés",
+        "Seulement de la chaleur",
+        "Uniquement du fluide"
+       ],
+       "bonne": 1,
+       "aide": "Certains composants stockent l énergie électrique et ne se vident pas instantanément.",
+       "remed": {
+        "regle": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
+        "pourquoi": "Il accumule de l énergie pour le démarrage du moteur. Coupée, cette énergie reste stockée et peut provoquer un choc.",
+        "piege": "Couper puis ouvrir aussitôt le coffret est un réflexe fréquent — et c est exactement le moment où le condensateur est encore chargé."
+       },
+       "remediation_vers": "s5",
+       "explication": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
+       "origine": "pack"
+      }
+     ],
+     "notes": "Conseil d'animation : faire manipuler un VAT hors tension et mimer le double contrôle sur une source connue, avant et après usage. Faire répéter les cinq étapes à voix haute par le groupe, dans l'ordre, jusqu'à ce qu'elles s'enchaînent sans hésitation. Montrer une photo ou une pièce réelle de condensateur pour que le mot ne reste pas abstrait. Rappeler explicitement que ce risque est absent du référentiel d'examen fluides — le dire aide à comprendre pourquoi le pack ne l'avait jamais traité, et pourquoi cette fiche existe quand même."
+    }
+   ]
+  },
+  {
    "n": 1,
+   "libelle": null,
    "titre": "Pourquoi ce métier est réglementé, et de quoi on parle",
    "intention": "Poser le cadre et le vocabulaire. À la fin de la journée, le stagiaire sait ce que la loi lui impose, pourquoi elle l'impose, comment se nomment les fluides et comment fonctionne une machine frigorifique.",
    "sequences": [
@@ -1867,6 +2586,7 @@ window.PILOTE_PROJECTION = {
   },
   {
    "n": 2,
+   "libelle": null,
    "titre": "Le circuit et ses organes",
    "intention": "Chaque organe : à quoi il sert, comment on l'installe, comment on le règle, comment on vérifie qu'il fonctionne. Les quatre composants se travaillent — un seul sera tiré au sort à l'épreuve, et le candidat ne saura pas lequel.",
    "sequences": [
@@ -4158,6 +4878,7 @@ window.PILOTE_PROJECTION = {
   },
   {
    "n": 3,
+   "libelle": null,
    "titre": "Le cœur du métier : étanchéité, récupération, sécurité",
    "intention": "Ce qui justifie l'habilitation : ne pas laisser fuir, ne pas émettre, savoir travailler sur des fluides inflammables. C'est la journée la plus lourde au barème — l'erreur y a des conséquences directes sur l'environnement ou sur la sécurité.",
    "sequences": [
@@ -5899,6 +6620,7 @@ window.PILOTE_PROJECTION = {
   },
   {
    "n": 4,
+   "libelle": null,
    "titre": "Préparation pratique — avant de toucher au fluide",
    "intention": "Le matériel et l'ordre des gestes, revus AVANT la manipulation. La sécurité s'y démontre et s'impose : on ne découvre jamais un risque par l'erreur. À projeter en préparation de chantier, dans l'heure qui précède le plateau — pas la veille.",
    "sequences": [

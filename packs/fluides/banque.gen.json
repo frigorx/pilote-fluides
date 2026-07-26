@@ -5023,5 +5023,80 @@
   "remediation_vers": "g9b",
   "explication": "Le limiteur de pression mécanique est réglé par un ressort (tarage mécanique). Le limiteur de pression électronique utilise un capteur relié à un module. Dans les deux cas, il coupe le circuit dès qu'un seuil de pression est franchi, en haute comme en basse pression.",
   "origine": "pack"
+ },
+ {
+  "id": "pk-s5-1",
+  "dc": "Sécurité",
+  "code": null,
+  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Quelle est la dernière étape avant de poser les mains sur un circuit électrique consigné ?",
+  "choix": [
+   "Prévenir le client",
+   "Vérifier l absence de tension avec un VAT",
+   "Poser une pancarte",
+   "Ouvrir le coffret"
+  ],
+  "bonne": 1,
+  "aide": "Consigner ne suffit pas : il faut le prouver, appareil en main.",
+  "remed": {
+   "regle": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
+   "pourquoi": "Un disjoncteur peut être mal repéré, une alimentation de secours peut subsister : seule la mesure prouve que le circuit est hors tension.",
+   "piege": "« Je l ai coupé moi-même » ne protège de rien. Un circuit se vérifie, il ne se suppose pas."
+  },
+  "remediation_vers": "s5",
+  "explication": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-s5-2",
+  "dc": "Sécurité",
+  "code": null,
+  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s en être servi ?",
+  "choix": [
+   "Pour économiser la pile",
+   "Parce qu un VAT en panne indiquerait « pas de tension » sur un circuit pourtant sous tension",
+   "Pour l étalonner",
+   "C est une simple habitude"
+  ],
+  "bonne": 1,
+  "aide": "Demandez-vous ce qui se passe si l appareil lui-même est défaillant.",
+  "remed": {
+   "regle": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
+   "pourquoi": "Un appareil défaillant affiche l absence de tension quoi qu il arrive. Le tester après prouve qu il fonctionnait encore au moment de la mesure.",
+   "piege": "Un VAT qui n indique rien peut vouloir dire deux choses : pas de tension, ou appareil mort. Seul le double contrôle tranche."
+  },
+  "remediation_vers": "s5",
+  "explication": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-s5-3",
+  "dc": "Sécurité",
+  "code": null,
+  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Une machine vient d être mise hors tension. Que peut-il rester de dangereux dans le coffret ?",
+  "choix": [
+   "Plus rien, la coupure suffit",
+   "Des condensateurs encore chargés",
+   "Seulement de la chaleur",
+   "Uniquement du fluide"
+  ],
+  "bonne": 1,
+  "aide": "Certains composants stockent l énergie électrique et ne se vident pas instantanément.",
+  "remed": {
+   "regle": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
+   "pourquoi": "Il accumule de l énergie pour le démarrage du moteur. Coupée, cette énergie reste stockée et peut provoquer un choc.",
+   "piege": "Couper puis ouvrir aussitôt le coffret est un réflexe fréquent — et c est exactement le moment où le condensateur est encore chargé."
+  },
+  "remediation_vers": "s5",
+  "explication": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
+  "origine": "pack"
  }
 ]

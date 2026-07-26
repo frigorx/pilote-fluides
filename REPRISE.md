@@ -68,12 +68,34 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 | | |
 |---|---|
-| 1 accueil · 6 menus | A1, A2, D, E · **Réviser par thème** · **Préparation pratique** |
-| 33 fiches de cours | dont **7 de préparation pratique** (le matériel et les gestes) |
+| 1 accueil · 7 menus | **Sécurité** · A1, A2, D, E · **Réviser par thème** · **Préparation pratique** |
+| 38 fiches de cours | dont **5 de sécurité** (ce qui blesse la personne) et **7 de préparation pratique** (le matériel et les gestes) |
 | 1 carte « Ma progression » | où j'en suis, compétence par compétence — tout en local |
 | 5 exercices « frigoriste-détective » | mises en situation à indices croisés |
 | 21 séries et examens | 13 séries de révision par thème + 8 examens sur 3 paliers |
 | 235 questions | rattachées à un **code de compétence**, un niveau, une catégorie — **99 compétences interrogées = 99 enseignées**, plus aucun code muet |
+
+**Le module SÉCURITÉ (26/07)** — le pack enseignait la sécurité de l'installation et de
+l'environnement, **jamais celle de la personne**. Mesuré avant d'agir : *asphyxie* 0 occurrence,
+*brûlure cryogénique* 0, *décomposition thermique* 0, *électrocution* 0, *arc électrique* 0 —
+alors que « jamais d'oxygène » (pour la mise en pression) apparaissait **21 fois**, et
+« consignation » 13 fois, toujours comme consigne, jamais expliquée.
+5 fiches ajoutées, en **bloc d'accueil avant tout le reste** : l'air qui manque (asphyxie) ·
+le froid brûle (gelures) · la flamme interdite (décomposition) · ce qui éclate (pression) ·
+consigner avant de toucher (risque électrique).
+- Repris de **« Découverte des métiers par le risque »** (F. Henninot, dossier inspection) :
+  on garde la **mécanique** — carte de synthèse, question adossée à un document professionnel,
+  tri obligatoire/interdit — et l'on jette l'habillage scolaire (tutoiement, emojis, gamification).
+- Le document de référence devient la **fiche de données de sécurité (FDS) du fluide**, et non
+  plus le mémo IRIS-ST (absent du dossier). Les valeurs y varient d'un fluide à l'autre : savoir
+  ouvrir une FDS est une compétence en soi.
+- **Le risque électrique n'a aucun code au référentiel** : la fiche le dit franchement, et ses
+  3 questions sont marquées hors référentiel avec leur motif. `build/parcours.mjs` sait tirer
+  un questionnaire depuis `remediation_vers` quand une fiche n'a pas de code — sans ce repli,
+  le questionnaire d'un sujet vital serait resté vide.
+- Trois corrections de fond sur le contenu d'origine : *attestation de capacité* (entreprise) ≠
+  *attestation d'aptitude* (personne) · « plus lourds que l'air » ne vaut pas pour l'ammoniac ·
+  la température de la phase liquide se lit sur la FDS, elle ne s'affirme pas.
 
 **La refonte compétences (25/07)** — le pack enseignait des thèmes, il enseigne désormais des
 compétences opposables :

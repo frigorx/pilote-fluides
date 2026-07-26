@@ -19,11 +19,13 @@
 Présents dans plus de 40 % des cartes : ils valident sans discriminer.
 À remplacer par un vocabulaire plus spécifique dans l'instrument.
 
-- `install` — 58 % des cartes (utilisé par 7.03, 8.03)
-- `mesure` — 53 % des cartes (utilisé par 6.06, 7.07, 8.08)
-- `condens` — 45 % des cartes (utilisé par 1.04)
-- `raccord` — 42 % des cartes (utilisé par 4.01, 12.01)
-- `direct` — 42 % des cartes (utilisé par 4.06, 12.11)
+- `install` — 55 % des cartes (utilisé par 7.03, 8.03)
+- `mesure` — 50 % des cartes (utilisé par 6.06, 7.07, 8.08)
+- `raccord` — 45 % des cartes (utilisé par 4.01, 12.01)
+- `direct` — 43 % des cartes (utilisé par 4.06, 12.11)
+- `securite` — 43 % des cartes (utilisé par 11.01)
+- `condens` — 40 % des cartes (utilisé par 1.04)
+- `arret` — 40 % des cartes (utilisé par 6.06)
 
 ---
 

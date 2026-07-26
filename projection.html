@@ -162,7 +162,7 @@ function demarrerProjection(){
     P.jours.forEach(function(j, ij){
       var min = j.sequences.reduce(function(n,s){return n+(s.minutes||0);},0);
       h += "<div class='jour'><span class='duree'>"+Math.floor(min/60)+" h "+pad(min%60)+"</span>";
-      h += "<h2>Jour "+j.n+" — "+esc(j.titre)+"</h2><p class='int'>"+esc(j.intention||"")+"</p><div class='seqs'>";
+      h += "<h2>"+esc(j.libelle||("Jour "+j.n))+" — "+esc(j.titre)+"</h2><p class='int'>"+esc(j.intention||"")+"</p><div class='seqs'>";
       j.sequences.forEach(function(s, is){
         var cls = s.type==="exercice" ? " ex" : s.type==="bilan" ? " bi" : "";
         var tag = s.type==="exercice" ? "mise en situation" : s.type==="bilan" ? "point d'étape" :
@@ -192,7 +192,7 @@ function demarrerProjection(){
 
   function render(){
     var j = P.jours[S.jour], s = seqCourante(), n = total();
-    document.getElementById("t-jour").textContent = "Jour "+j.n;
+    document.getElementById("t-jour").textContent = j.libelle || ("Jour "+j.n);
     document.getElementById("t-seq").textContent = s.titre;
     document.getElementById("pos").textContent = (S.i+1)+" / "+n;
     document.getElementById("prog").style.width = Math.round(100*(S.i+1)/n)+"%";

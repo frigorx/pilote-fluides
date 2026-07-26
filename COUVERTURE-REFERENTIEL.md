@@ -13,7 +13,7 @@
 ## Ce que la banque évalue
 
 - **99 compétences** couvertes par au moins une question ;
-- **14 questions hors référentiel** (aucun code de l'annexe II.B ne les couvre — elles restent utiles au métier, elles ne sont simplement pas évaluables à l'examen).
+- **17 questions hors référentiel** (aucun code de l'annexe II.B ne les couvre — elles restent utiles au métier, elles ne sont simplement pas évaluables à l'examen).
 
 
 ---

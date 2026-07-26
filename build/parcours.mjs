@@ -98,7 +98,13 @@ function decouper(carte) {
    --------------------------------------------------------------------- */
 function questionsDe(carte, combien) {
   const codes = (carte.criteres || []).map((cr) => cr.code);
-  const pool = PACK.banque.filter((q) => codes.includes(q.code));
+  // Repli : une fiche sans code du référentiel — le risque électrique, par
+  // exemple, qui n'est pas au programme de l'épreuve fluides — récupère les
+  // questions qui renvoient vers elle. Sans cela son questionnaire serait
+  // vide, alors que le sujet est vital.
+  const pool = codes.length
+    ? PACK.banque.filter((q) => codes.includes(q.code))
+    : PACK.banque.filter((q) => q.remediation_vers === carte.id);
   pool.sort((a, b) => (a.niveau || 1) - (b.niveau || 1) || a.id.localeCompare(b.id));
   return pool.slice(0, combien);
 }
@@ -136,7 +142,9 @@ function main() {
         });
       }
     }
-    jours.push({ n: j.n, titre: j.titre, intention: j.intention, sequences });
+    // `libelle` remplace « Jour N » quand un bloc n'est pas une journée —
+    // l'accueil sécurité tient en une demi-journée, pas en un jour.
+    jours.push({ n: j.n, libelle: j.libelle || null, titre: j.titre, intention: j.intention, sequences });
   }
 
   if (err.length) {

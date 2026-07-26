@@ -41,6 +41,26 @@ export const PARCOURS = {
 
   jours: [
     {
+      // Le module M0 que la progression FrigorX prévoyait — « Accueil ·
+      // positionnement · sécurité générale » — et qui n'avait jamais été
+      // produit. Ce n'est pas une journée : une demi-journée d'ouverture,
+      // à reprendre avant la première manipulation.
+      n: 0,
+      libelle: "Accueil",
+      titre: "Sécurité — ce qui peut vous blesser",
+      intention:
+        "Tout le reste de la formation apprend à protéger l'installation et l'environnement. " +
+        "Ce bloc-ci apprend au stagiaire à se protéger lui-même. La sécurité se démontre et " +
+        "s'impose : elle ne se découvre jamais par l'erreur.",
+      sequences: [
+        seq("s1", 25, 3),
+        seq("s2", 20, 2),
+        seq("s3", 20, 3),
+        seq("s4", 25, 3),
+        seq("s5", 25, 3),
+      ],
+    },
+    {
       n: 1,
       titre: "Pourquoi ce métier est réglementé, et de quoi on parle",
       intention:
