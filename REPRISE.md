@@ -410,6 +410,34 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 
 ## 6. Ce qui reste à faire
 
+### ⏭️ DEMANDÉ POUR LA PROCHAINE SESSION (F. Henninot, soir du 26/07)
+
+**1. Un fichier « compétences × contenu × questions » — pour le dossier.**
+Un document qui, pour **chaque compétence du référentiel**, met en regard : son code et son
+libellé officiel · la ou les **fiches de formation** qui l'enseignent · les **questions** qui
+l'évaluent. C'est la matrice de traçabilité qu'un organisme évaluateur doit pouvoir montrer :
+« voilà ce que j'enseigne, voilà où, voilà comment je le vérifie ».
+- **Tout existe déjà comme données** — ne pas repartir de zéro : `referentiel-2025.json`
+  (136 codes), les `criteres` de chaque carte dans `cartes.js`, et le champ `code` de chaque
+  question dans `banque.gen.json`. `build/referentiel.mjs` sait déjà indexer et résoudre.
+- Donc : **un script de build de plus** (sur le modèle de `COUVERTURE-REFERENTIEL.md`), pas une
+  saisie manuelle — sinon le document est faux au premier changement de contenu.
+- Prévoir le cas des **codes hors périmètre** (13.xx CO₂, 14.xx NH₃) et des **17 questions hors
+  référentiel**, qui doivent apparaître comme tels et non disparaître du tableau.
+- Format : à trancher avec F. Henninot (HTML pour lire, et probablement docx pour le dossier —
+  cf. règle de sortie triple de l'usine de contenu).
+
+**2. Une relecture de TOUTE la couverture du référentiel.**
+Reprendre code par code ce que le pack prétend couvrir et vérifier que le contenu le tient
+vraiment. Attention : `COUVERTURE-REFERENTIEL.md` dit qu'un code est **cité**,
+`PROFONDEUR-REFERENTIEL.md` dit qu'il est **tenu** par des motifs — mais aucun des deux ne dit
+qu'il est **bien** enseigné. C'est ce troisième niveau qui est demandé.
+- Chantier **critique** (il engage l'organisme) : c'est le cas où un workflow multi-agents avec
+  vérification adversariale se justifie — un agent par groupe de codes, puis un juge.
+- ⚠️ Point d'attention né du 26/07 : le module classification avait été déclaré « hors
+  référentiel » à tort alors que **1.08** le couvrait mot pour mot. Chercher d'abord les
+  **rattachements manqués** (contenu enseigné mais non déclaré), pas seulement les trous.
+
 ### 🔴 Priorité 1 — la relecture métier (bloquant pour la diffusion)
 
 Personne n'a relu le contenu avec un œil de frigoriste : **26 fiches, 5 exercices,
