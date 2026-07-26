@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documents du projet — Habilitation fluides frigorigènes</title>
+<meta name="robots" content="noindex, nofollow">
+<!--
+  LE DOSSIER DU PROJET, EN UNE PAGE
+  ---------------------------------
+  Deux étages :
+   · LIBRE     — ce qui est déjà public dans ce dépôt (état du pack, mesures,
+                 licence). Lecture directe, sans code.
+   · COFFRE    — les documents de travail (architecture, ingénierie, système
+                 qualité, cours source). Chiffrés AES-256-GCM, déchiffrés ici
+                 même par qui connaît le code d'accès. Voir `build/coffre.mjs`.
+
+  CE QUI N'EST PAS ICI, ET N'Y SERA PAS : les 85 questions officielles, les
+  10 sujets d'examen, le registre nominatif. Le code d'accès est distribué aux
+  stagiaires par construction — il ne peut pas les protéger d'eux.
+-->
+<style>
+  :root {
+    --bleu: #1e5fa8; --bleu-clair: #eaf1f9; --encre: #1b2430; --mut: #5b6472;
+    --bord: #d8dee7; --fond: #fbfcfd; --or: #b8860b; --vert: #157347;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--fond); color: var(--encre);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65; font-size: 16.5px;
+  }
+  header {
+    background: var(--bleu); color: #fff; padding: 1.6em 1.2em 1.3em;
+  }
+  header .in { max-width: 62em; margin: 0 auto; }
+  header h1 { margin: 0 0 .2em; font-size: 1.5em; }
+  header p { margin: 0; opacity: .92; font-size: .96em; }
+  header a { color: #fff; }
+  main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+  h2 {
+    font-size: 1.15em; margin: 2em 0 .7em; padding-bottom: .35em;
+    border-bottom: 2px solid var(--bord);
+  }
+  h2:first-child { margin-top: .5em; }
+  .doc {
+    display: block; border: 1px solid var(--bord); border-radius: 10px;
+    background: #fff; padding: .85em 1em; margin-bottom: .6em;
+    text-decoration: none; color: inherit; cursor: pointer;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .doc:hover { border-color: var(--bleu); box-shadow: 0 2px 8px rgba(30,95,168,.1); }
+  .doc .t { font-weight: 600; }
+  .doc .d { color: var(--mut); font-size: .92em; margin-top: .15em; }
+  .doc .m { color: var(--mut); font-size: .84em; margin-top: .3em; }
+  .cad { color: var(--or); font-weight: 600; }
+  .ouvert { color: var(--vert); font-weight: 600; }
+  .avis {
+    background: var(--bleu-clair); border-left: 4px solid var(--bleu);
+    padding: .8em 1em; border-radius: 0 8px 8px 0; margin: 1.2em 0;
+    font-size: .95em;
+  }
+  .avis b { color: var(--bleu); }
+  #code-zone { margin: 1em 0 1.6em; }
+  input[type=password] {
+    font-size: 1.1em; padding: .5em .7em; width: 9em;
+    border: 2px solid var(--bleu); border-radius: 8px;
+  }
+  button {
+    font-size: 1em; padding: .55em 1.1em; border: 0; border-radius: 8px;
+    background: var(--bleu); color: #fff; cursor: pointer; margin-left: .4em;
+  }
+  button:disabled { opacity: .55; cursor: progress; }
+  .err { color: #b0231f; font-weight: 600; }
+  /* --- lecteur --- */
+  #lecteur {
+    position: fixed; inset: 0; z-index: 999; background: #fff;
+    overflow: auto; display: none;
+  }
+  #lecteur .barre {
+    position: sticky; top: 0; background: var(--bleu); color: #fff;
+    padding: .7em 1.2em; display: flex; align-items: center; gap: 1em;
+  }
+  #lecteur .barre b { flex: 1; font-size: 1.02em; }
+  #lecteur .barre button { background: rgba(255,255,255,.18); }
+  #lecteur .contenu { max-width: 54em; margin: 0 auto; padding: 1.5em 1.2em 5em; }
+  #lecteur h1 { font-size: 1.6em; }
+  #lecteur h2 { border-bottom: 1px solid var(--bord); }
+  #lecteur h3 { font-size: 1.05em; margin: 1.4em 0 .4em; }
+  #lecteur table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: .93em; }
+  #lecteur th, #lecteur td { border: 1px solid var(--bord); padding: .45em .6em; text-align: left; vertical-align: top; }
+  #lecteur th { background: var(--bleu-clair); }
+  #lecteur code { background: #f1f4f8; padding: .1em .35em; border-radius: 4px; font-size: .92em; }
+  #lecteur pre { background: #f1f4f8; padding: .9em 1em; border-radius: 8px; overflow-x: auto; }
+  #lecteur pre code { background: none; padding: 0; }
+  #lecteur blockquote {
+    margin: 1em 0; padding: .6em 1em; border-left: 4px solid var(--bleu);
+    background: var(--bleu-clair); border-radius: 0 8px 8px 0;
+  }
+  #lecteur blockquote p:first-child { margin-top: 0; }
+  #lecteur blockquote p:last-child { margin-bottom: 0; }
+  .tableau-large { overflow-x: auto; }
+  footer { color: var(--mut); font-size: .9em; margin-top: 3em; }
+</style>
+</head>
+<body>
+
+<header><div class="in">
+  <h1>📁 Documents du projet</h1>
+  <p>Dispositif d'habilitation aux fluides frigorigènes — A1 · A2 · D · E ·
+     <a href="portail.html">retour au portail</a></p>
+</div></header>
+
+<main>
+  <div class="avis">
+    <b>Comment lire cette page.</b> Les documents <b>libres</b> s'ouvrent directement.
+    Les documents <span class="cad">🔒 protégés</span> sont chiffrés : saisissez le code
+    d'accès une fois, ils s'ouvrent tous. Rien n'est déchiffré sans le code — pas même
+    en regardant le code source de la page.
+  </div>
+
+  <h2>Libre — l'état du travail</h2>
+  <div id="libres"></div>
+
+  <h2>🔒 Documents de travail — protégés par le code</h2>
+  <div id="code-zone">
+    <input id="code" type="password" inputmode="numeric" autocomplete="off"
+           placeholder="Le code…" aria-label="Code d'accès">
+    <button id="ok">Déverrouiller ▸</button>
+    <p id="etat" class="m" style="color:var(--mut)"></p>
+  </div>
+  <div id="proteges"></div>
+
+  <footer>
+    <p><b>Ce qui n'est pas ici, et n'y sera pas :</b> les 85 questions officielles,
+    les 10 sujets d'examen et le registre nominatif des sessions. Le code d'accès est
+    remis aux stagiaires en salle : il ne peut pas protéger d'eux ce qu'ils ne doivent
+    pas voir. Ces documents vivent hors ligne, sur poste maîtrisé.</p>
+    <p>F. Henninot · inerWeb Édu — arrêté du 21 novembre 2025.
+       Licence : voir <a href="LICENCE.md">LICENCE.md</a>.</p>
+  </footer>
+</main>
+
+<div id="lecteur" role="dialog" aria-modal="true">
+  <div class="barre">
+    <b id="l-titre"></b>
+    <button id="l-fermer">✕ Fermer</button>
+  </div>
+  <div class="contenu" id="l-corps"></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- documents libres (déjà publics dans ce dépôt) ---------- */
+  var LIBRES = [
+    { f: "REPRISE.md", t: "Reprise du pack de formation",
+      d: "L'état complet : ce qui est fait, les décisions tranchées, les pièges, ce qui reste." },
+    { f: "PROFONDEUR-REFERENTIEL.md", t: "Profondeur du référentiel",
+      d: "Pour chaque compétence, les notions de l'arrêté sont-elles réellement enseignées ? Mesuré à chaque construction." },
+    { f: "COUVERTURE-REFERENTIEL.md", t: "Couverture du référentiel",
+      d: "Les 136 codes de l'annexe II.B : combien sont traités, par catégorie." },
+    { f: "VIDEOS-PRESELECTION.md", t: "Vidéos présélectionnées",
+      d: "11 sujets pourvus, à visionner intégralement avant tout usage." },
+    { f: "LICENCE.md", t: "Licence et propriété intellectuelle",
+      d: "Contenu pédagogique CC BY-NC-SA 4.0 · moteur MIT · référentiel officiel hors licence." },
+    { f: "README.md", t: "Présentation du dépôt",
+      d: "Ce que contient ce dépôt et comment il se fabrique." }
+  ];
+
+  var $ = function (id) { return document.getElementById(id); };
+  var CLE_ACCES = "pilote_acces_fluides-habilitation";
+  var cleCrypto = null, index = null;
+
+  /* ================= rendu markdown (maison, sans bibliothèque) ======= */
+  function esc(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function enligne(s) {
+    // le code inline se protège d'abord : son contenu ne doit plus être touché
+    var gardes = [];
+    s = s.replace(/`([^`]+)`/g, function (_, c) {
+      gardes.push("<code>" + esc(c) + "</code>");
+      return " " + (gardes.length - 1) + " ";
+    });
+    s = esc(s);
+    s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, "<i>[image : $1]</i>");
+    s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (_, t, u) {
+      var sur = /^https?:/.test(u) ? " target='_blank' rel='noopener'" : "";
+      return "<a href='" + u.replace(/'/g, "%27") + "'" + sur + ">" + t + "</a>";
+    });
+    s = s.replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>");
+    s = s.replace(/(^|[\s(])\*([^*\n]+)\*/g, "$1<i>$2</i>");
+    s = s.replace(/~~([^~]+)~~/g, "<s>$1</s>");
+    return s.replace(/ (\d+) /g, function (_, i) { return gardes[+i]; });
+  }
+  function cellules(ligne) {
+    return ligne.replace(/^\s*\|/, "").replace(/\|\s*$/, "").split("|").map(function (c) { return c.trim(); });
+  }
+  function markdown(src) {
+    var out = [], lignes = src.replace(/\r\n/g, "\n").split("\n");
+    var i = 0;
+    while (i < lignes.length) {
+      var l = lignes[i];
+
+      // bloc de code
+      if (/^\s*```/.test(l)) {
+        var buf = [];
+        i++;
+        while (i < lignes.length && !/^\s*```/.test(lignes[i])) buf.push(lignes[i++]);
+        i++;
+        out.push("<pre><code>" + esc(buf.join("\n")) + "</code></pre>");
+        continue;
+      }
+      // tableau : ligne | … | suivie d'un séparateur |---|
+      if (/^\s*\|/.test(l) && i + 1 < lignes.length && /^\s*\|[\s:|-]+\|\s*$/.test(lignes[i + 1])) {
+        var entetes = cellules(l);
+        i += 2;
+        var corps = [];
+        while (i < lignes.length && /^\s*\|/.test(lignes[i])) corps.push(cellules(lignes[i++]));
+        var t = "<div class='tableau-large'><table><thead><tr>";
+        entetes.forEach(function (c) { t += "<th>" + enligne(c) + "</th>"; });
+        t += "</tr></thead><tbody>";
+        corps.forEach(function (r) {
+          t += "<tr>";
+          r.forEach(function (c) { t += "<td>" + enligne(c) + "</td>"; });
+          t += "</tr>";
+        });
+        out.push(t + "</tbody></table></div>");
+        continue;
+      }
+      // citation (peut couvrir plusieurs lignes)
+      if (/^\s*>/.test(l)) {
+        var cit = [];
+        while (i < lignes.length && /^\s*>/.test(lignes[i])) cit.push(lignes[i++].replace(/^\s*>\s?/, ""));
+        out.push("<blockquote>" + markdown(cit.join("\n")) + "</blockquote>");
+        continue;
+      }
+      // titres
+      var h = l.match(/^(#{1,6})\s+(.*)$/);
+      if (h) {
+        var n = h[1].length;
+        // les ancres {#id} de fin de titre ne s'affichent pas
+        out.push("<h" + n + ">" + enligne(h[2].replace(/\s*\{#[^}]+\}\s*$/, "")) + "</h" + n + ">");
+        i++;
+        continue;
+      }
+      // filet
+      if (/^\s*(---|\*\*\*|___)\s*$/.test(l)) { out.push("<hr>"); i++; continue; }
+      // listes (à puces ou numérotées, imbrication à 2 niveaux)
+      if (/^\s*([-*+]|\d+\.)\s+/.test(l)) {
+        var num = /^\s*\d+\./.test(l);
+        var bal = num ? "ol" : "ul";
+        var li = [], profPrec = 0, ouverts = 0;
+        while (i < lignes.length && /^\s*([-*+]|\d+\.)\s+/.test(lignes[i])) {
+          var m = lignes[i].match(/^(\s*)([-*+]|\d+\.)\s+(.*)$/);
+          var prof = Math.floor(m[1].length / 2);
+          if (prof > profPrec) { li.push("<" + bal + ">"); ouverts++; }
+          while (prof < profPrec && ouverts > 0) { li.push("</" + bal + ">"); ouverts--; profPrec--; }
+          li.push("<li>" + enligne(m[3]) + "</li>");
+          profPrec = prof;
+          i++;
+        }
+        while (ouverts-- > 0) li.push("</" + bal + ">");
+        out.push("<" + bal + ">" + li.join("") + "</" + bal + ">");
+        continue;
+      }
+      // ligne vide
+      if (!l.trim()) { i++; continue; }
+      // paragraphe : on agrège jusqu'à la prochaine rupture
+      var p = [];
+      while (i < lignes.length && lignes[i].trim() &&
+             !/^\s*(#{1,6}\s|>|\||```|---|\*\*\*|___|([-*+]|\d+\.)\s)/.test(lignes[i])) {
+        p.push(lignes[i++]);
+      }
+      if (p.length) out.push("<p>" + enligne(p.join(" ")) + "</p>");
+      else i++; // sécurité anti-boucle
+    }
+    return out.join("\n");
+  }
+
+  /* ===================== lecteur ===================== */
+  function ouvrir(titre, texte) {
+    $("l-titre").textContent = titre;
+    $("l-corps").innerHTML = markdown(texte);
+    $("lecteur").style.display = "block";
+    $("lecteur").scrollTop = 0;
+    document.body.style.overflow = "hidden";
+  }
+  $("l-fermer").onclick = function () {
+    $("lecteur").style.display = "none";
+    document.body.style.overflow = "";
+  };
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && $("lecteur").style.display === "block") $("l-fermer").onclick();
+  });
+
+  /* ===================== documents libres ===================== */
+  function carte(titre, desc, meta, action) {
+    var d = document.createElement("div");
+    d.className = "doc";
+    d.innerHTML = "<div class='t'>" + titre + "</div><div class='d'>" + desc + "</div>" +
+                  (meta ? "<div class='m'>" + meta + "</div>" : "");
+    d.onclick = action;
+    d.setAttribute("role", "button");
+    d.setAttribute("tabindex", "0");
+    d.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); action(); } };
+    return d;
+  }
+
+  LIBRES.forEach(function (doc) {
+    $("libres").appendChild(carte(
+      "📄 " + doc.t, doc.d, "<span class='ouvert'>Libre</span> · " + doc.f,
+      function () {
+        fetch(doc.f).then(function (r) {
+          if (!r.ok) throw new Error("introuvable");
+          return r.text();
+        }).then(function (t) { ouvrir(doc.t, t); })
+          .catch(function () { alert("Document introuvable : " + doc.f); });
+      }
+    ));
+  });
+
+  /* ===================== coffre chiffré ===================== */
+  function b64versOctets(b64) {
+    var bin = atob(b64), o = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) o[i] = bin.charCodeAt(i);
+    return o;
+  }
+
+  function listerProteges() {
+    var zone = $("proteges");
+    zone.innerHTML = "";
+    var cats = {};
+    index.documents.forEach(function (d) { (cats[d.cat] = cats[d.cat] || []).push(d); });
+    Object.keys(cats).forEach(function (cat) {
+      var h = document.createElement("h3");
+      h.textContent = cat;
+      h.style.cssText = "font-size:1em; margin:1.4em 0 .5em; color:var(--mut)";
+      zone.appendChild(h);
+      cats[cat].forEach(function (d) {
+        var etat = cleCrypto
+          ? "<span class='ouvert'>Déverrouillé</span>"
+          : "<span class='cad'>🔒 Chiffré</span>";
+        zone.appendChild(carte(
+          (cleCrypto ? "📄 " : "🔒 ") + d.titre, d.desc,
+          etat + " · " + Math.round(d.taille / 1024) + " Ko",
+          function () {
+            if (!cleCrypto) { $("code").focus(); return; }
+            lire(d);
+          }
+        ));
+      });
+    });
+  }
+
+  function lire(d) {
+    fetch("docs/coffre/" + d.id + ".enc").then(function (r) {
+      if (!r.ok) throw new Error("introuvable");
+      return r.arrayBuffer();
+    }).then(function (buf) {
+      var o = new Uint8Array(buf);
+      var iv = o.slice(0, 12), tag = o.slice(12, 28), corps = o.slice(28);
+      // Web Crypto attend le tag d'authentification collé aux données
+      var charge = new Uint8Array(corps.length + tag.length);
+      charge.set(corps, 0);
+      charge.set(tag, corps.length);
+      return crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, cleCrypto, charge);
+    }).then(function (clair) {
+      ouvrir(d.titre, new TextDecoder().decode(clair));
+    }).catch(function (e) {
+      alert("Impossible d'ouvrir ce document.\n(" + (e && e.message ? e.message : "erreur") + ")");
+    });
+  }
+
+  function deriver(code) {
+    return crypto.subtle.importKey("raw", new TextEncoder().encode(code), "PBKDF2", false, ["deriveKey"])
+      .then(function (base) {
+        return crypto.subtle.deriveKey(
+          { name: "PBKDF2", salt: b64versOctets(index.sel), iterations: index.iterations, hash: "SHA-256" },
+          base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]
+        );
+      });
+  }
+
+  function essayer(code) {
+    $("etat").className = "m";
+    $("etat").textContent = "⏳ Ouverture du coffre… comptez 5 à 10 secondes. "
+      + "Cette lenteur est voulue : c'est elle qui rend inutile de tester les codes au hasard.";
+    $("ok").disabled = true;
+    deriver(code).then(function (cle) {
+      // on valide en déchiffrant réellement le premier document
+      var t = index.documents[0];
+      return fetch("docs/coffre/" + t.id + ".enc")
+        .then(function (r) { return r.arrayBuffer(); })
+        .then(function (buf) {
+          var o = new Uint8Array(buf), iv = o.slice(0, 12), tag = o.slice(12, 28), corps = o.slice(28);
+          var charge = new Uint8Array(corps.length + tag.length);
+          charge.set(corps, 0); charge.set(tag, corps.length);
+          return crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, cle, charge);
+        })
+        .then(function () { cleCrypto = cle; });
+    }).then(function () {
+      try { localStorage.setItem(CLE_ACCES, "oui"); } catch (e) {}
+      $("etat").className = "m ouvert";
+      $("etat").textContent = "✓ Déverrouillé — " + index.documents.length + " documents lisibles.";
+      $("code").value = "";
+      $("code").disabled = true;
+      $("ok").textContent = "Déverrouillé";
+      listerProteges();
+    }).catch(function () {
+      $("etat").className = "m err";
+      $("etat").textContent = "Ce n'est pas le bon code.";
+      $("ok").disabled = false;
+      $("code").select();
+      $("code").focus();
+    });
+  }
+
+  fetch("docs/coffre/index.json").then(function (r) { return r.json(); }).then(function (j) {
+    index = j;
+    listerProteges();
+    $("ok").onclick = function () {
+      var c = $("code").value.trim();
+      if (c) essayer(c);
+    };
+    $("code").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") $("ok").onclick();
+    });
+  }).catch(function () {
+    $("proteges").innerHTML = "<p class='err'>Coffre introuvable. Lancer <code>node build/coffre.mjs &lt;code&gt;</code>.</p>";
+  });
+})();
+</script>
+</body>
+</html>

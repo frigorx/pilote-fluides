@@ -27,3 +27,13 @@ packs/fluides/res/docs/
 .DS_Store
 Thumbs.db
 node_modules/
+
+# ============================================================
+#  LE COFFRE DOCUMENTAIRE (docs/coffre/) EST PUBLIÉ, CHIFFRÉ
+# ============================================================
+#  Il porte l'architecture, l'ingénierie, le système qualité et les
+#  chapitres de cours — chiffrés AES-256-GCM (voir build/coffre.mjs).
+#  Le code d'accès n'est JAMAIS dans le dépôt : il se passe en argument
+#  du build. Ne jamais y ajouter les 85 questions officielles, les
+#  10 sujets ni le registre nominatif : le code étant remis aux
+#  stagiaires, il ne peut pas les protéger d'eux.

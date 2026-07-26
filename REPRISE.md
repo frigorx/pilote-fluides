@@ -41,6 +41,7 @@ Doctrine [[feedback_protection_code]] : licence + antériorité git, jamais de c
 | [`formateur.html`](https://frigorx.github.io/pilote-fluides/formateur.html) | mode pilotage verrouillé, notes d'animation visibles | formateur |
 | [`partage.html`](https://frigorx.github.io/pilote-fluides/partage.html) | affiche A4 / écran avec QR code | à projeter en salle |
 | [`relecture.html`](https://frigorx.github.io/pilote-fluides/relecture.html) | tout le contenu à plat, cases ✅/✏ | **le bon à tirer** |
+| [`documents.html`](https://frigorx.github.io/pilote-fluides/documents.html) | **le dossier du projet** : 6 documents libres (état, mesures, licence) + **36 documents chiffrés** (architecture, ingénierie, système qualité, 21 chapitres de cours) derrière le code d'accès | tous publics / formateur |
 
 Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « pilote-fluides ».
 
@@ -117,7 +118,13 @@ node build/convert.mjs    # Mission F-GAZ + questions-pack.json → banque.gen.j
 node build/build.mjs      # cartes.js + banque → pack.pilote.js ET pack.eleve.js
 node build/parcours.mjs   # parcours.js + fiches → projection.gen.js (le support de salle)
 node build/relecture.mjs  # → relecture.html (document de bon à tirer)
+node build/coffre.mjs 8272…  # → docs/coffre/ : les documents de travail, chiffrés
 ```
+
+> ⚠️ **`coffre.mjs` prend le code d'accès en argument** — il n'est écrit nulle part dans le
+> dépôt. À relancer après toute modification d'un document du dépôt privé, sinon la version
+> publiée reste l'ancienne. Le script **refuse** les 85 questions, les 10 sujets et le registre
+> nominatif : garde-fou en dur, pas une consigne.
 
 | Fichier | Rôle |
 |---|---|
@@ -155,7 +162,7 @@ que « G6 · codes 6.01 → 6.08 » promettait huit compétences pour quatre ens
 | **Mode Évaluation désactivé** | Le moteur ne sait pas appliquer les règles de composition de l'arrêté (groupe composant tiré au sort, pondération ×3/×2/×1, plancher par groupe). Les examens restent des **entraînements**. *Depuis le 25/07, le prérequis est posé* : chaque question porte son code, sa catégorie et son groupe, et `build/referentiel.mjs` expose `REGLES` (les règles de composition lues au référentiel, pas en dur). |
 | **Pas de PWA / pas d'installation** | Une **page web universelle** — « tout le monde peut ouvrir une page web » (crainte iPhone fondée pour le public réel). |
 | **Console formateur publiée, mais derrière le code** | `formateur.html`, `projection.html` et `pack.pilote.js` restent publics (conseils d'animation, pas des corrigés) — **mais les deux pages exigent le code d'accès depuis le 25/07**, et rien ne se télécharge avant validation. Pour verrouiller pour de bon : supprimer `formateur.html`, `projection.html` et `pack.pilote.js` du dépôt — le build les régénère en local. |
-| **On ne chiffre pas le pack pour « pouvoir tout publier »** | Demandé le 25/07, écarté sur pièce. Un code à 8 chiffres = 100 millions de combinaisons, épuisées en quelques heures ; un fichier chiffré publié est cloné et archivé, donc ouvrable **pour toujours**, même après changement de code. Surtout : le code d'accès est **distribué aux stagiaires** par construction — il ne peut pas servir à protéger d'eux les sujets. Et techniquement, chiffrer la couche formateur ne cacherait rien : les **327 bonnes réponses sont déjà en clair dans `pack.eleve.js`**, obligatoirement, puisque c'est le navigateur qui corrige. La confidentialité réelle reste ce qu'elle est : les 85 questions et 10 sujets **hors ligne**, dépôt privé. |
+| **On ne chiffre pas le *pack* — on chiffre le *dossier de projet*** | Deux demandes distinctes du 25/07, deux réponses. **Écarté** : chiffrer le pack pour publier les sujets. Motifs — le code est **distribué aux stagiaires** par construction, donc il ne peut pas les protéger d'eux ; les **327 bonnes réponses sont déjà en clair dans `pack.eleve.js`**, obligatoirement (c'est le navigateur qui corrige) ; et un fichier chiffré publié est cloné puis archivé, donc ouvrable **pour toujours**, même après changement de code. **Retenu** : `documents.html` + `build/coffre.mjs` — les documents de travail (architecture, ingénierie, qualité, cours source) chiffrés AES-256-GCM, PBKDF2 600 000 itérations. Là le chiffrement est proportionné : ce ne sont pas des sujets, et il écarte l'indexation comme le visiteur de passage. Restent hors ligne, définitivement : **85 questions officielles · 10 sujets · registre nominatif**. |
 | **PRP alignés sur Mission F-GAZ** | R-32 = 675, R-134a = 1430, R-404A = 3922, R-410A = 2088 — pas les valeurs AR5 de la réglette FRIGOLO, pour une seule vérité côté élève. |
 | **Génératif interdit sur les schémas** | Aucun modèle d'image ne respecte la croix du frigoriste. Schémas = SVG faits main. Ambiance = génératif autorisé. |
 | **Un seul code d'accès pour les examens ET le mode formateur — un rideau, pas un coffre** | Les 8 examens et le mode « Pilotage formateur » demandent le **même** code (donné par F. Henninot en salle). Assumé comme portillon pédagogique : les questions restent lisibles dans le code source de la page, et une empreinte se force par essais. Le code en clair n'est écrit **nulle part** — ni dans le dépôt, ni sur le site : seule son empreinte djb2 est versionnée, dans `PACK_META.code_empreinte`. Remplace l'ancien mot de passe `"prof"`, qui était en clair dans `moteur.js` (donc public). Décidé le 25/07 (F. Henninot). |
