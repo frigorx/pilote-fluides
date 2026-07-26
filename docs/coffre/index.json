@@ -1,5 +1,5 @@
 {
- "sel": "0mb8cB6tTjo45PtscD1xBA==",
+ "sel": "0wPIFSJEkaVSvIWuUaDB0A==",
  "iterations": 600000,
  "documents": [
   {
@@ -7,7 +7,7 @@
    "cat": "Dossier de direction",
    "titre": "Projet d'ouverture d'un centre d'habilitation",
    "desc": "Le dossier présenté à la direction : contexte réglementaire, périmètre, organisation, investissement, modèle économique, risques, calendrier, décisions demandées.",
-   "taille": 27723,
+   "taille": 27705,
    "binaire": true,
    "fichier": "Projet_Centre_Habilitation_Fluide_LPP-JR.docx"
   },
