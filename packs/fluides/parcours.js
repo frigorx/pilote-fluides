@@ -28,6 +28,15 @@
 
 /* Séquence de cours : fiche, durée en minutes, nombre de questions. */
 const seq = (fiche, minutes, questions, video) => ({ type: "cours", fiche, minutes, questions, video: video || null });
+/* RAPPEL de sécurité : une fiche DÉJÀ vue, reprise en ouverture de journée.
+   Règle F. Henninot (26/07) : on ne commence jamais une journée sans sécurité —
+   1 h à l'ouverture de la formation, puis une demi-heure chaque jour, et 1 h
+   avant d'attaquer la manipulation. On ne reprojette pas la fiche entière :
+   on reprend l'essentiel, le geste interdit, et on repose les questions.
+   Techniquement c'est une séquence de cours ordinaire : la fiche est la même,
+   seule la durée change — et les questions retombent volontairement sur celles
+   déjà vues, c'est la spirale. */
+const rappel = (fiche, minutes, questions) => ({ type: "cours", fiche, minutes, questions, video: null, rappel: true });
 /* Mise en situation « frigoriste-détective » — on cherche, on croise, on conclut. */
 const act = (fiche, minutes) => ({ type: "exercice", fiche, minutes });
 /* Point d'étape : un examen blanc du pack, corrigé en salle. */
@@ -61,6 +70,29 @@ export const PARCOURS = {
       ],
     },
     {
+      // Second bloc d'accueil, demandé le 26/07 : le stagiaire voit les
+      // familles de fluides et leurs risques AVANT de savoir quelle
+      // catégorie il prépare. Séparé du bloc sécurité, et non fondu
+      // dedans : la fiche anoxie se DISTINGUE de l'asphyxie (s1), ce qui
+      // suppose s1 déjà vue — et un bloc d'accueil de plus de 3 h noierait
+      // les deux messages.
+      n: 0,
+      libelle: "Accueil",
+      titre: "Classification des fluides et risques",
+      intention:
+        "Avant de choisir sa catégorie, le stagiaire doit savoir ce qu'il aura dans les mains. " +
+        "La classification NF EN 378 s'enseigne ici comme un SYSTÈME à deux axes, pas comme une " +
+        "liste à retenir : c'est elle qui commande les EPI, le matériel électrique, la " +
+        "ventilation, la détection et la charge admise. Deux urgences la rendent nécessaire " +
+        "maintenant : le CO₂ entre dans le parc, et les hydrocarbures s'y généralisent.",
+      sequences: [
+        seq("cl1", 30, 3),
+        seq("cl2", 25, 3),
+        seq("cl3", 35, 3),   // le CO₂ tue de deux façons : on ne raccourcit pas cette fiche
+        seq("cl4", 30, 3),
+      ],
+    },
+    {
       n: 1,
       titre: "Pourquoi ce métier est réglementé, et de quoi on parle",
       intention:
@@ -71,6 +103,7 @@ export const PARCOURS = {
       // → quels fluides existent → comment on en choisit un → quels organes
       // trahissent une fuite (qui ouvre la journée 2 sur les composants).
       sequences: [
+        rappel("s1", 30, 2),   // sécurité du jour : l'air qui manque — le danger le plus fondamental
         seq("g0", 30, 4),   // vidéo attendue : le cadre réglementaire F-Gas en bref
         seq("g2a", 35, 4),  // vidéo attendue : trou d'ozone et effet de serre, vulgarisation
         seq("g2", 40, 5),
@@ -91,6 +124,7 @@ export const PARCOURS = {
         "vérifie qu'il fonctionne. Les quatre composants se travaillent — un seul sera tiré au " +
         "sort à l'épreuve, et le candidat ne saura pas lequel.",
       sequences: [
+        rappel("s4", 30, 2),   // sécurité du jour : ce qui éclate — on ouvre des organes sous pression
         seq("g6", 35, 4),   // vidéo attendue : les 4 technologies de compresseur
         seq("g6b", 40, 4),
         seq("g7", 30, 4),
@@ -112,6 +146,7 @@ export const PARCOURS = {
         "sur des fluides inflammables. C'est la journée la plus lourde au barème — l'erreur y a " +
         "des conséquences directes sur l'environnement ou sur la sécurité.",
       sequences: [
+        rappel("cl2", 30, 2),  // sécurité du jour : LIE et ATEX — c'est la journée des hydrocarbures
         seq("g4a", 30, 3),
         seq("g4b", 40, 3),  // vidéo attendue : méthode indirecte, relevé et interprétation
         seq("g4c", 40, 4),  // vidéo attendue : détecteur électronique, balayage correct
@@ -136,6 +171,10 @@ export const PARCOURS = {
         "et s'impose : on ne découvre jamais un risque par l'erreur. À projeter en préparation de " +
         "chantier, dans l'heure qui précède le plateau — pas la veille.",
       sequences: [
+        // 1 h de sécurité AVANT d'attaquer la manipulation (règle F. Henninot) :
+        // ce qui éclate, puis ce qui gèle — les deux dangers du geste qui suit.
+        rappel("s4", 20, 2),
+        rappel("s2", 15, 2),
         seq("p7", 25, 2),   // l'analyse de risques ouvre toujours
         seq("p1", 25, 3),
         seq("p5", 30, 3),

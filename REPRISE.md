@@ -2,7 +2,7 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **25 juillet 2026**.
+> Dernière mise à jour : **26 juillet 2026**.
 
 ---
 
@@ -48,9 +48,9 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
-## 2. État au 25/07/2026
+## 2. État au 26/07/2026
 
-**68 cartes** · **235 questions** · **16 planches SVG** (dont 10 animées) · 4 illustrations · **3 outils embarqués**
+**79 cartes** · **250 questions** · **16 planches SVG** (dont 10 animées) · 4 illustrations · **3 outils embarqués**
 
 > **Couverture du référentiel officiel : A1 100 % · A2 100 % · D 100 % · E 100 %.**
 > Mesurée à chaque build, écrite dans `COUVERTURE-REFERENTIEL.md`. Elle valait 60 % en A1
@@ -68,12 +68,12 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 | | |
 |---|---|
-| 1 accueil · 7 menus | **Sécurité** · A1, A2, D, E · **Réviser par thème** · **Préparation pratique** |
-| 38 fiches de cours | dont **5 de sécurité** (ce qui blesse la personne) et **7 de préparation pratique** (le matériel et les gestes) |
+| 1 accueil · 8 menus | **Sécurité** · **Classification** · A1, A2, D, E · **Réviser par thème** · **Préparation pratique** |
+| 42 fiches de cours | dont **5 de sécurité** (ce qui blesse la personne), **4 de classification** (ce qui est dans la bouteille, dont **2 sur le CO₂**) et **7 de préparation pratique** (le matériel et les gestes) |
 | 1 carte « Ma progression » | où j'en suis, compétence par compétence — tout en local |
 | 5 exercices « frigoriste-détective » | mises en situation à indices croisés |
 | 21 séries et examens | 13 séries de révision par thème + 8 examens sur 3 paliers |
-| 235 questions | rattachées à un **code de compétence**, un niveau, une catégorie — **99 compétences interrogées = 99 enseignées**, plus aucun code muet |
+| 250 questions | rattachées à un **code de compétence**, un niveau, une catégorie — **99 compétences interrogées = 99 enseignées**, plus aucun code muet |
 
 **Le module SÉCURITÉ (26/07)** — le pack enseignait la sécurité de l'installation et de
 l'environnement, **jamais celle de la personne**. Mesuré avant d'agir : *asphyxie* 0 occurrence,
@@ -97,6 +97,87 @@ consigner avant de toucher (risque électrique).
   *attestation d'aptitude* (personne) · « plus lourds que l'air » ne vaut pas pour l'ammoniac ·
   la température de la phase liquide se lit sur la FDS, elle ne s'affirme pas.
 
+**Le module CLASSIFICATION (26/07)** — même raisonnement que la sécurité, poussé d'un cran : le
+pack traitait **les classes qu'il rencontre** (A2L, A3, B2L), jamais **la classification comme
+système**. Mesuré avant d'agir : *B1* 0 occurrence, *B2* 1, *B3* 1 — la moitié toxique de la
+matrice était absente ; *explosimétrie* 0 ; *anoxie* 0 (l'asphyxie était traitée en `s1`, pas
+l'anoxie au CO₂) ; *LIE* citée 6 fois et **jamais expliquée** ; *ATEX* citée une fois.
+Deux urgences le rendaient nécessaire : le **CO₂** entre dans le parc (inodore, plus lourd que
+l'air, risque d'anoxie) et les **hydrocarbures** s'y généralisent (atmosphère explosive).
+4 fiches, en **second bloc d'accueil, après la sécurité et avant le choix de la catégorie** —
+le stagiaire voit les familles de fluides *avant* de savoir quel parcours il suit :
+`cl1` lire une classe (les deux axes, les huit cases, **et ce que la classe commande** : EPI,
+matériel électrique, ventilation, détection, charge maximale, occupation du local) ·
+`cl2` la LIE et l'explosimétrie · `cl3` et `cl4` le **CO₂**. Bloc de **2 h**.
+- **Séparé du bloc sécurité, pas fondu dedans** : `cl3` se définit *par différence* avec `s1`
+  (l'azote déplace l'oxygène, le CO₂ déplace **et** agit par lui-même), ce qui suppose `s1` déjà
+  vue ; et un bloc d'accueil unique de 4 h noierait les deux messages.
+- ⚠️ **Le module N'EST PAS hors référentiel — première version fausse, corrigée le 26/07.**
+  Il avait été écrit et étiqueté « hors référentiel » par analogie avec le risque électrique.
+  C'était une erreur, trouvée en relecture adversariale : le code **1.08** dit mot pour mot
+  « combustibilité, propagation des flammes, restrictions relatives à la capacité de charge,
+  limites d'occupation » — c'est le contenu de `cl1`. Rattachements retenus, vérifiés sur le
+  texte : `cl1` → **1.08 · 11.03** · `cl2` → **12.02 · 12.04** · `cl3` → **11.03** ·
+  `cl4` → **12.02 · 13.14**. Les 12 questions portent les mêmes codes ; le décompte des
+  questions hors référentiel est **revenu de 26 à 17**, son niveau d'avant le module.
+  *Leçon à retenir : ne jamais déclarer un contenu « hors référentiel » sans avoir relu les
+  136 libellés — le pack rattachait déjà ce contenu à 1.08 sur `g11`.*
+- **Zéro valeur chiffrée**, et c'est le cœur pédagogique : aucune LIE en %, aucune charge limite,
+  aucun seuil en ppm. Elles se lisent sur la **FDS**, dans la **NF EN 378** et sur l'appareil —
+  savoir aller les chercher est la compétence visée, les réciter de tête est une source
+  d'accident. Seules occurrences chiffrées du module : « 10 % LIE » et « 20 % LIE », qui sont
+  des **lectures d'afficheur** servant à expliquer l'unité, jamais la LIE d'un fluide.
+- Trois points de vigilance tenus : **R-290 = A3, jamais A2L** (répété en fiche et en question) ·
+  « plus lourd que l'air » **jamais généralisé à l'ammoniac** · les cases **B2 et B3 laissées sans
+  exemple**, faute de fluide courant du parc français — on ne remplit pas une case en inventant.
+
+**Le CO₂ approfondi + la sécurité récurrente (26/07, demande F. Henninot)** — première version
+jugée trop légère sur le CO₂ : *« c'est vraiment mortel, au niveau de la pression déjà, et le
+risque d'anoxie ; détecteur obligatoire ; les notions de ppm ; les EPI ; les EPC avec le
+détecteur en poste fixe dans les chambres. »* Le CO₂ passe donc d'une fiche à **deux**, et le
+déroulé change.
+- `cl3` **« CO₂ : deux dangers mortels »** — la **pression** (sans commune mesure, matériel
+  dédié obligatoire, pression maintenue machine à l'arrêt, glace carbonique) **et** l'**anoxie**.
+- ⚠️ **Erreur grave corrigée avant publication** : la première version affirmait que le CO₂ ne
+  donne « aucune gêne avant la perte de connaissance ». C'est la signature de l'**azote**, pas
+  du CO₂ — qui est un stimulant respiratoire et provoque essoufflement violent, maux de tête et
+  vertiges. L'affirmation supprimait **le seul signal d'auto-sauvetage du stagiaire**, et
+  contredisait `s1` (« l'envie de respirer vient d'un excès de gaz carbonique dans le sang »).
+  La fiche enseigne désormais la règle inverse, et c'est elle qui compte en salle :
+  **essoufflement brutal ou mal de tête soudain = on ressort immédiatement**.
+  Corrigée aussi : « les fluides fluorés sont inertes » (faux — effet sur le rythme cardiaque).
+- **La même erreur vivait ailleurs dans le pack, elle a été traquée** (2ᵉ relecture) : `g13`
+  et deux questions `pk-g13-*` écrivaient « **ni toxique ni inflammable** » et « son danger
+  **principal** est la pression » — un stagiaire qui ratait la question recevait en remédiation
+  l'inverse de la fiche. `s1`, enfin, généralisait « aucune alerte » à « **l'azote ou le fluide
+  frigorigène** », donc au CO₂, et prescrivait le détecteur d'oxygène comme LA vérification.
+  Tout est repris : `s1` porte désormais l'exception CO₂ dans son corps, sa clé et son piège,
+  `g13` dit « toxicité **faible** » et cite les deux dangers, et l'ammoniac n'« alerte » plus
+  « bien avant le seuil dangereux » (fausse assurance, contredite par sa propre question) mais
+  « se perçoit très tôt, sans remplacer aucune mesure, et s'émousse à forte concentration ».
+  *Contrôle automatique passé : zéro occurrence des formules fautives dans `pack.eleve.js`.*
+- `cl4` **« Se protéger du CO₂ — détection, EPC et EPI »** — l'ordre **EPC avant EPI** (principe
+  de prévention), la **détection fixe obligatoire** placée **en partie basse**, les alarmes
+  intérieure **et extérieure** (celle de dehors prévient avant d'ouvrir la porte), préalarme et
+  alarme d'évacuation, la **notion de ppm** et la lecture de l'afficheur, le fait qu'une
+  **cellule usée reste allumée sans plus rien mesurer**, la signalisation et les issues de
+  secours — et le point le plus contre-intuitif : **un masque à cartouche ne protège ni du CO₂
+  ni du manque d'oxygène**, seul un appareil isolant le fait, et son usage relève d'équipes
+  formées. Pour le technicien, la protection n'est pas de porter un masque, c'est de ne pas entrer.
+- **Les seuils en ppm ne sont PAS écrits** : la fiche enseigne l'unité et la lecture, les valeurs
+  sont à donner à l'oral sur le matériel réel. La liste exacte de ce que F. Henninot doit figer
+  est dans les `notes_pilote` de `cl4` (seuils de préalarme et d'évacuation du plateau,
+  périodicité de vérification des cellules, type de détecteur). Une fois écrites, ces valeurs
+  engagent l'organisme — cf. « les valeurs terrain », § 6.
+- **La sécurité devient récurrente, elle n'est plus seulement un bloc d'entrée.** Règle posée par
+  F. Henninot : *1 h à l'ouverture, une demi-heure au début de chaque jour, 1 h avant la
+  manipulation.* Traduite dans `parcours.js` par un assistant **`rappel()`** — une fiche **déjà
+  vue**, reprise en tête de journée, questions comprises (la spirale) : jour 1 → `s1` (l'air qui
+  manque) · jour 2 → `s4` (ce qui éclate, on ouvre des organes sous pression) · jour 3 → `cl2`
+  (LIE et ATEX, c'est la journée des hydrocarbures) · avant le plateau → `s4` + `s2` + `p7`,
+  soit **1 h pleine avant de toucher au fluide**. Les journées passent à 6 h 20 / 6 h 50 / 6 h 45 :
+  c'est un choix assumé, la sécurité ne se prend pas sur le temps de la sécurité.
+
 **La refonte compétences (25/07)** — le pack enseignait des thèmes, il enseigne désormais des
 compétences opposables :
 - le **référentiel officiel est une donnée de build** (`referentiel-2025.json`, 136 codes) : les
@@ -108,8 +189,9 @@ compétences opposables :
   candidat D ne reçoit plus que la moitié des questions — celles qui le concernent.
 
 **Le produit de formation (25/07, second temps)** — le pack est devenu un outil de stage :
-- **`projection.html`** : le déroulé en salle. 4 blocs (3 jours de théorie + la préparation
-  pratique), 39 séquences, 318 diapositives. La boucle est celle voulue par F. Henninot :
+- **`projection.html`** : le déroulé en salle. 6 blocs (2 blocs d'accueil — sécurité, puis
+  classification — 3 jours de théorie et la préparation pratique), 53 séquences,
+  456 diapositives. La boucle est celle voulue par F. Henninot :
   on projette et on explique → la vidéo → le mini-questionnaire → on révèle → on avance.
   Les diapositives sont **générées depuis les fiches** (`build/parcours.mjs`) : une fiche
   corrigée = une projection corrigée, et **une seule relecture** au lieu de deux.
@@ -269,6 +351,27 @@ relues (`g0`, `g1d`, `g6b`, `g7b`, `g8b`, `g9b`, `g12b`), **et le comblement du 
 13 fiches enrichies (`g1a`, `g1c`, `g3`, `g4a`, `g5a`, `g5b`, `g6`, `g6b`, `g8`, `g11`, `g12`,
 `p7`, `g13`) + 29 questions `pk-q-*` — rédigés par IA sous règles strictes (zéro invention
 chiffrée, vérification adversariale), jamais vus par un humain.
+
+**S'y ajoutent les deux blocs d'accueil du 26/07, écrits dans les mêmes conditions et non
+relus** : les 5 fiches de sécurité (`s1`→`s5`, 3 questions `pk-s5-*`) et les 4 fiches de
+classification (`cl1`, `cl2`, `cl3`, `cl4`, 12 questions `pk-cl*`). Ce sont les fiches les plus
+sensibles du pack — elles portent sur ce qui blesse ou tue la personne. Deux relectures
+adversariales par IA ont déjà tourné dessus et ont trouvé **deux erreurs graves** (les signes
+de l'exposition au CO₂, l'inertie prêtée aux fluides fluorés) plus un **rattachement au
+référentiel entièrement faux** : cela dit assez qu'un œil humain reste indispensable.
+
+Points à trancher par un frigoriste, remontés par ces relectures :
+- l'absence d'**odorisant** dans le R-290 de qualité frigorifique (`cl2`) ;
+- le fait qu'aucun fluide courant du parc ne relève des cases **B2 / B3** (`cl1`) ;
+- le double mécanisme du **CO₂** et l'insuffisance d'un détecteur d'oxygène seul (`cl3`) ;
+- ~~incohérence de schéma~~ — **tranchée et faite le 26/07 (F. Henninot)**. La planche
+  `res/svg/classes-securite.svg` montrait **6 cases** (colonnes 1 · 2L · 3), **B1 marqué « — »**
+  et, pour le CO₂, « danger = **la** pression » — soit l'erreur même que le module venait de
+  corriger partout ailleurs. Elle est **redessinée en 2 × 4 = 8 cases** : colonne « 2 » ajoutée
+  (A2 = R-152a), **B1 = R-123**, B2 et B3 grisées et libellées « aucun fluide courant » avec une
+  légende qui l'assume, et A1 porte désormais « pression, anoxie ». Elle est **affichée sur `cl1`**,
+  jusque-là seule fiche « matrice » sans schéma, et reste sur `g11` et `g12` : **une seule
+  matrice dans tout le pack**. Rendu vérifié (8 cases, aucun débordement de texte, ratio tenu).
 
 → Ouvrir [`relecture.html`](https://frigorx.github.io/pilote-fluides/relecture.html), annoter
 les ✏, renvoyer les corrections. Elles se reportent dans `packs/fluides/cartes.js` (fiches) ou

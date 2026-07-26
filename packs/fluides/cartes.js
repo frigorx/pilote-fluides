@@ -192,6 +192,7 @@ export const CARTES = [
     menu_titre: "Choisir un parcours",
     liens: [
       { vers: "m-secu", icone: "⚠", titre: "Sécurité — à voir en premier", desc: "Ce qui peut vous blesser, et comment l éviter.", primaire: true },
+      { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       {
         vers: "m-a1",
         icone: "A1",
@@ -258,6 +259,7 @@ export const CARTES = [
     menu_titre: "Les modules du parcours",
     liens: [
       { vers: "m-secu", icone: "⚠", titre: "Sécurité — à voir en premier", desc: "Ce qui peut vous blesser, et comment l éviter.", primaire: true },
+      { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Unités, pression, thermodynamique utile", desc: "G1 — le socle de tout le reste." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
@@ -302,6 +304,7 @@ export const CARTES = [
     menu_titre: "Les modules du parcours",
     liens: [
       { vers: "m-secu", icone: "⚠", titre: "Sécurité — à voir en premier", desc: "Ce qui peut vous blesser, et comment l éviter.", primaire: true },
+      { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Unités, pression, thermodynamique utile", desc: "G1 — insister sur les seuils de charge." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
@@ -345,6 +348,7 @@ export const CARTES = [
     menu_titre: "Les modules du parcours",
     liens: [
       { vers: "m-secu", icone: "⚠", titre: "Sécurité — à voir en premier", desc: "Ce qui peut vous blesser, et comment l éviter.", primaire: true },
+      { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Bases : fluides, thermo utile, composants", desc: "G1 partiel — savoir de quoi on parle." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
@@ -386,6 +390,7 @@ export const CARTES = [
     menu_titre: "Les modules du parcours",
     liens: [
       { vers: "m-secu", icone: "⚠", titre: "Sécurité — à voir en premier", desc: "Ce qui peut vous blesser, et comment l éviter.", primaire: true },
+      { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Bases : pression, température, fluides", desc: "G1 partiel — dont la pression absolue." },
       { vers: "g1b", icone: "1", titre: "Lire une table de saturation", desc: "G1 · code 1.03 — indispensable à la méthode indirecte.", primaire: true },
@@ -507,12 +512,13 @@ export const CARTES = [
     minuteur_s: 420,
     corps:
       "<p>Respirer, c'est faire entrer de l'oxygène dans le corps. Un local fermé peut se remplir d'un autre gaz : de l'azote utilisé pour mettre un circuit en pression, ou du fluide frigorigène qui a fui. Ce gaz prend la place de l'oxygène dans l'air. C'est une <b>asphyxie par manque d'oxygène</b> : vous ne respirez plus assez d'oxygène, non pas parce qu'un produit vous empoisonne, mais parce qu'il a chassé l'air respirable.</p>" +
-      "<p>Le corps ne donne <b>aucune alerte</b> dans cette situation. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.</p>" +
+      "<p>Face à l'<b>azote</b> et aux <b>fluides fluorés</b>, le corps ne donne <b>aucune alerte</b>. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez donc pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.</p>" +
+      "<p><b>Une exception importante : le CO₂ (R-744).</b> Lui vous <b>prévient</b> — essoufflement, mal de tête, vertiges — parce qu'il agit sur la commande de la respiration. C'est une chance, mais tardive : ces signes n'arrivent qu'une fois dans le gaz. Et pour la même raison, un détecteur d'oxygène seul ne suffit pas à le surveiller. Ce fluide a sa fiche : « CO₂ : deux dangers mortels ».</p>" +
       "<p><b>Ce danger n'a pas de code dans le référentiel d'examen.</b> Vous ne serez pas interrogé dessus à l'épreuve. Il peut pourtant vous tuer. C'est pour cela qu'il est dans ce module.</p>" +
       "<p>Vous entrez seul dans un local technique fermé, une chambre froide, ou une fosse, pour chercher une fuite ou reprendre du matériel après une mise en pression à l'azote. La porte est restée fermée depuis un moment. Vous ne sentez rien d'anormal. Vous perdez connaissance sans signe avant-coureur. Un collègue vous voit au sol et se précipite pour vous porter secours, sans se protéger ni ventiler : il respire le même air appauvri, et s'effondre à son tour. C'est le scénario le plus fréquent de ce type d'accident : <b>deux victimes au lieu d'une</b>.</p>",
     blocs: [
-      { type: "cle", t: "Ce qu'il faut retenir", html: "<ol><li><b>Ventilez</b> le local avant d'entrer : ouvrez, aérez, laissez l'air circuler.</li><li><b>Contrôlez l'air</b> avec un détecteur d'oxygène avant d'entrer — pas seulement un détecteur de fuite de fluide, ce n'est pas le même appareil. Le seuil d'alerte se règle selon la FDS (fiche de données de sécurité) du fluide concerné.</li><li><b>N'entrez jamais seul</b> dans un espace clos suspect : prévenez quelqu'un, travaillez à deux.</li><li>Si un collègue est au sol dans un espace clos : <b>ne vous précipitez pas sans protection</b>. Donnez l'alerte, ventilez, faites intervenir les secours.</li></ol>" },
-      { type: "piege", t: "Le geste interdit", html: "<p>Entrer seul dans un local fermé, une chambre froide ou une fosse, après une mise en pression à l'azote ou une fuite suspectée, <b>sans ventiler ni contrôler l'air</b>.</p><p>Conséquence : perte de connaissance sans signe avant-coureur. Risque mortel pour vous, et pour quiconque tenterait de vous secourir sans précaution.</p>" },
+      { type: "cle", t: "Ce qu'il faut retenir", html: "<ol><li><b>Ventilez</b> le local avant d'entrer : ouvrez, aérez, laissez l'air circuler.</li><li><b>Contrôlez l'air</b> avec un détecteur d'oxygène avant d'entrer — pas seulement un détecteur de fuite de fluide, ce n'est pas le même appareil. Le seuil d'alerte se règle selon la FDS (fiche de données de sécurité) du fluide concerné. <b>Devant une installation au CO₂, un détecteur d'oxygène ne suffit pas</b> : il faut mesurer le CO₂ lui-même.</li><li><b>N'entrez jamais seul</b> dans un espace clos suspect : prévenez quelqu'un, travaillez à deux.</li><li>Si un collègue est au sol dans un espace clos : <b>ne vous précipitez pas sans protection</b>. Donnez l'alerte, ventilez, faites intervenir les secours.</li></ol>" },
+      { type: "piege", t: "Le geste interdit", html: "<p>Entrer seul dans un local fermé, une chambre froide ou une fosse, après une mise en pression à l'azote ou une fuite suspectée, <b>sans ventiler ni contrôler l'air</b>.</p><p>Conséquence : avec l'azote ou un fluide fluoré, perte de connaissance sans signe avant-coureur. Avec le CO₂, des signes arrivent — essoufflement, mal de tête — mais quand vous êtes déjà dans le gaz. Risque mortel dans les deux cas, pour vous et pour quiconque tenterait de vous secourir sans précaution.</p>" },
     ],
     question: {
       type: "qcm",
@@ -524,7 +530,7 @@ export const CARTES = [
         "J'entre avec un collègue, sans autre précaution, pour me rassurer.",
       ],
       bonne: 1,
-      explication: "Un local fermé où du fluide ou de l'azote a pu s'accumuler ne donne aucun signal fiable. Ni la rapidité, ni l'odeur, ni la présence d'un collègue ne protègent du manque d'oxygène. Seuls la ventilation et un détecteur d'oxygène donnent une information sûre avant d'entrer.",
+      explication: "Un local fermé où du fluide ou de l'azote a pu s'accumuler ne donne aucun signal fiable. Ni la rapidité, ni l'odeur, ni la présence d'un collègue ne protègent du manque d'oxygène. Seuls la ventilation et un détecteur d'oxygène donnent une information sûre avant d'entrer. Une exception à connaître : devant une installation au CO₂, le détecteur d'oxygène ne suffit pas — il faut mesurer le CO₂ lui-même, comme l'explique la fiche qui lui est consacrée.",
       remediation_vers: "s1",
     },
     criteres: [
@@ -690,6 +696,248 @@ export const CARTES = [
     },
     liens: [{ vers: "m-secu", libelle: "↺ Module sécurité", sec: true }, SOMMAIRE],
     notes_pilote: "Conseil d'animation : faire manipuler un VAT hors tension et mimer le double contrôle sur une source connue, avant et après usage. Faire répéter les cinq étapes à voix haute par le groupe, dans l'ordre, jusqu'à ce qu'elles s'enchaînent sans hésitation. Montrer une photo ou une pièce réelle de condensateur pour que le mot ne reste pas abstrait. Rappeler explicitement que ce risque est absent du référentiel d'examen fluides — le dire aide à comprendre pourquoi le pack ne l'avait jamais traité, et pourquoi cette fiche existe quand même.",
+  },
+  /* ==================================================================
+     CLASSIFICATION DES FLUIDES ET RISQUES — le système, pas la liste
+     Demandé par F. Henninot le 26/07/2026 : « Je ne peux pas former des
+     gens sans les avoir avertis des risques. » Le pack traitait jusque-là
+     les classes qu'il RENCONTRE (A2L, A3, B2L), jamais la classification
+     comme SYSTÈME : B1/B2/B3 quasi absents, explosimétrie et anoxie à
+     zéro occurrence, la LIE citée six fois et jamais expliquée.
+     Deux urgences le rendent nécessaire : le CO₂ arrive dans le parc
+     (inodore, plus lourd que l'air) et les hydrocarbures s'y généralisent.
+     ⚠ CE MODULE EST BIEN AU RÉFÉRENTIEL — ne pas refaire l'erreur.
+     Première version écrite « hors référentiel » par analogie avec le
+     risque électrique : c'était FAUX, et une relecture l'a rattrapé. Le
+     code 1.08 dit mot pour mot « combustibilité, propagation des flammes,
+     restrictions relatives à la capacité de charge, limites d'occupation ».
+     Rattachements vérifiés sur le texte de l'arrêté :
+       cl1 → 1.08 · 11.03    cl2 → 12.02 · 12.04
+       cl3 → 11.03           cl4 → 12.02 · 13.14
+     Les 12 questions `pk-cl*` portent les mêmes codes. Ne JAMAIS annoncer
+     en salle que ce contenu n'est pas évaluable : 1.08 et 11.03 sont du
+     tronc commun théorique.
+     Codes volontairement NON déclarés : 1.09 (cycle transcritique, log p/h
+     — enseignés par g13, pas ici), 13.15 (le point triple n'est pas traité),
+     13.16. On ne déclare pas un code que la fiche n'enseigne pas.
+     ZÉRO VALEUR CHIFFRÉE : aucune LIE en %, aucune charge limite en
+     grammes, aucun seuil de détection. Ces valeurs se lisent sur la FDS
+     du fluide et dans la NF EN 378 — et c'est précisément le geste
+     professionnel que ces fiches enseignent.
+     ================================================================== */
+  {
+    id: "m-clas",
+    type: "menu",
+    titre: "Classification des fluides et risques",
+    dc: "Avant de choisir votre parcours",
+    corps:
+      "<p>Avant de savoir quelle catégorie vous préparez, il faut savoir <b>ce que vous aurez " +
+      "dans les mains</b>. Un fluide frigorigène n'est pas seulement un produit qui fait du " +
+      "froid : c'est un produit chimique qui peut vous empoisonner, s'enflammer, ou remplir " +
+      "un local d'une atmosphère où l'on ne survit pas.</p>" +
+      "<p>La norme <b>NF EN 378</b> range chaque fluide dans une case — A1, A2L, B2L… — et " +
+      "cette case n'est pas une référence commerciale : c'est un <b>avertissement</b>. Elle " +
+      "commande vos EPI, votre matériel électrique, la ventilation, la détection et la " +
+      "quantité de fluide admise dans le local.</p>" +
+      "<p>Quatre fiches : lire une classe, comprendre une atmosphère explosive, puis les deux " +
+      "dangers mortels du CO₂ et la façon de s'en protéger.</p>",
+    menu_titre: "Les quatre fiches",
+    liens: [
+      { vers: "cl1", icone: "1", titre: "Lire une classe — deux lettres, deux dangers", desc: "La matrice complète NF EN 378, et ce que chaque case vous impose." },
+      { vers: "cl2", icone: "2", titre: "Explosif avant d'être perceptible — la LIE", desc: "Ce que mesure un explosimètre, et pourquoi le nez ne protège de rien." },
+      { vers: "cl3", icone: "3", titre: "CO₂ : deux dangers mortels", desc: "La pression, sans commune mesure. Et l'air qu'il vous prend, en point bas." },
+      { vers: "cl4", icone: "4", titre: "Se protéger du CO₂ — détection, EPC et EPI", desc: "Détection fixe, lecture en ppm, et ce qu'un masque ne fait pas." },
+      { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Choisir son parcours." },
+    ],
+    notes_pilote:
+      "Ce module se projette en préliminaire, juste après le module sécurité et AVANT que le " +
+      "stagiaire ne choisisse sa catégorie : il doit voir les familles de fluides avant de " +
+      "savoir quel parcours il suit. Ordre voulu — on protège d'abord la personne (module " +
+      "sécurité), puis on nomme ce qui la menace (ce module-ci). ⚠ Contrairement au risque " +
+      "électrique, ce contenu EST au référentiel et EST évaluable : 1.08 (combustibilité, " +
+      "propagation de flamme, charge et occupation) et 11.03 sont du tronc commun théorique. " +
+      "Ne pas dire en salle qu'il ne sera pas noté. Faire ouvrir une VRAIE fiche de données " +
+      "de sécurité et y faire chercher la classe et les valeurs : c'est le geste professionnel " +
+      "visé, pas la mémorisation.",
+  },
+  {
+    id: "cl1",
+    type: "cours",
+    titre: "Lire une classe — deux lettres, deux dangers",
+    dc: "Classification · codes 1.08 · 11.03",
+    minuteur_s: 480,
+    corps:
+      schema("classes-securite.svg", "Matrice complète des classes NF EN 378 : huit cases, toxicité en lignes, inflammabilité en colonnes.") +
+      "<p><b>Ce que c'est.</b> La norme NF EN 378 (et la norme américaine ASHRAE 34, qui suit la même logique) attribue à chaque fluide frigorigène une <b>classe de sécurité</b> : A1, A2L, B2L, A3… Ce n'est pas un classement du plus dangereux au moins dangereux. C'est une <b>combinaison de deux informations distinctes</b>, et c'est pour cela qu'une classe s'écrit avec une lettre <i>et</i> un chiffre.</p>" +
+      "<p><b>La lettre dit la toxicité.</b> <b>A</b> = toxicité faible. <b>B</b> = toxicité plus élevée. Attention au contresens : « A » ne signifie pas inoffensif. Un fluide de classe A peut vous asphyxier en chassant l'oxygène d'un local, ou se décomposer en gaz toxiques au contact d'une flamme. La frontière entre A et B se fixe sur une <b>valeur limite d'exposition</b> définie par la norme : la lettre parle donc de la toxicité <b>propre</b> du produit, pas de tous les dangers qu'il présente.</p>" +
+      "<p><b>Le chiffre dit l'inflammabilité.</b> <b>1</b> = le fluide ne propage pas de flamme. <b>2L</b> = faiblement inflammable, la flamme se propage lentement. <b>2</b> = inflammable. <b>3</b> = très inflammable. Le « L » de 2L vient de l'anglais <i>lower</i> : c'est une sous-catégorie du 2, créée pour distinguer les fluides dont la flamme se propage assez lentement pour changer les mesures de prévention.</p>" +
+      "<p><b>Pourquoi deux axes et non un seul ?</b> Parce qu'un fluide peut être dangereux d'une manière sans l'être de l'autre, et que les protections ne sont pas les mêmes. Contre la toxicité, on ventile et on protège les voies respiratoires. Contre l'inflammabilité, on supprime les sources d'étincelle et on limite la quantité de fluide présente. Un fluide qui cumule les deux — l'ammoniac, classé B2L — exige les deux dispositifs à la fois. Un classement en une seule note ne permettrait pas de savoir <b>lequel</b> mettre en place.</p>" +
+      "<p><b>La matrice complète.</b> Deux axes croisés donnent huit cases :</p>" +
+      "<ul>" +
+      "<li><b>A1</b> — toxicité faible, non inflammable : R-134a, R-404A, R-410A, et le CO₂ (R-744).</li>" +
+      "<li><b>A2L</b> — toxicité faible, faiblement inflammable : R-32, R-1234yf.</li>" +
+      "<li><b>A2</b> — toxicité faible, inflammable : R-152a.</li>" +
+      "<li><b>A3</b> — toxicité faible, <b>très inflammable</b> : R-290 (propane), R-600a (isobutane).</li>" +
+      "<li><b>B1</b> — toxicité plus élevée, non inflammable : R-123, que l'on ne rencontre plus dans les installations neuves.</li>" +
+      "<li><b>B2L</b> — toxicité plus élevée, faiblement inflammable : R-717, l'ammoniac.</li>" +
+      "<li><b>B2</b> et <b>B3</b> — toxicité plus élevée, inflammable ou très inflammable. Ces deux cases existent dans la norme, mais aucun fluide courant du parc français ne s'y trouve. Retenez la logique de la case, pas un exemple.</li>" +
+      "</ul>" +
+      "<p><b>Ce que la classe commande.</b> C'est là qu'est l'enjeu réel : la classe n'est pas une étiquette, c'est ce qui détermine tout le dispositif de sécurité autour de l'installation.</p>" +
+      "<ul>" +
+      "<li>les <b>EPI</b> à porter pour intervenir ;</li>" +
+      "<li>le <b>matériel électrique</b> admis dans le local, et la suppression des sources d'étincelle pour les fluides inflammables ;</li>" +
+      "<li>la <b>ventilation</b> exigée, permanente ou de secours ;</li>" +
+      "<li>la <b>détection</b> : le type de détecteur et son seuil d'alarme ne sont pas les mêmes selon qu'on surveille un gaz inflammable ou un gaz toxique ;</li>" +
+      "<li>la <b>charge maximale</b> de fluide admise, selon le volume du local, son usage et l'endroit où se trouve l'installation ;</li>" +
+      "<li>les <b>conditions d'occupation</b> du local : qui peut y entrer, et à quelles conditions.</li>" +
+      "</ul>" +
+      "<p>Se tromper de classe, ce n'est donc pas se tromper d'étiquette : c'est se tromper de <b>tout le dispositif de sécurité</b> — installer du matériel électrique inadapté, sous-dimensionner une ventilation, choisir un détecteur qui ne verra rien, ou charger un local au-delà de ce qu'il admet.</p>" +
+      "<p><b>Le piège à ne jamais commettre.</b> Le <b>R-290 est de classe A3</b>, pas A2L. C'est du propane : un hydrocarbure, très inflammable. La confusion avec les A2L est fréquente, y compris dans des documents mal rédigés, et elle conduit à appliquer des précautions insuffisantes. Un repère simple et fiable : si le fluide est un <b>hydrocarbure</b> (propane, isobutane, propylène), il est <b>A3</b>. Les A2L sont des HFC comme le R-32, ou des HFO comme le R-1234yf.</p>" +
+      "<p><b>Où lire la classe.</b> Jamais de mémoire, et jamais par déduction à partir du nom commercial : la classe de sécurité figure sur la <b>fiche de données de sécurité (FDS)</b> du fluide, que le fournisseur doit vous remettre. Les valeurs qui en découlent — charges limites selon le local, seuils de détection — se lisent dans la <b>NF EN 378</b> et dans la documentation du constructeur. Savoir aller les chercher est une compétence en soi ; les réciter de tête est une source d'accident.</p>",
+    blocs: [
+      { type: "cle", t: "Ce qu'il faut retenir", html: "<ul><li>La <b>lettre</b> dit la toxicité : A faible, B plus élevée. « A » ne veut pas dire inoffensif.</li><li>Le <b>chiffre</b> dit l'inflammabilité : 1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable.</li><li>Huit cases au total : A1 · A2L · A2 · A3 · B1 · B2L · B2 · B3.</li><li>La classe <b>commande</b> les EPI, le matériel électrique, la ventilation, la détection, la charge maximale et l'occupation du local.</li><li><b>R-290 = A3</b>, jamais A2L. Tout hydrocarbure est A3.</li><li>La classe se lit sur la <b>FDS</b> ; les valeurs associées, dans la NF EN 378.</li></ul>" },
+      { type: "piege", t: "Le geste interdit", html: "<p>Intervenir sur une installation, ou choisir un matériel, <b>sans avoir vérifié la classe du fluide sur sa FDS</b> — en la supposant d'après le nom du fluide ou d'après l'installation précédente.</p><p>Conséquence : un fluide A3 traité comme un A2L, c'est un local ventilé trop faiblement, un matériel électrique qui peut produire une étincelle, un détecteur inadapté et une charge excessive. L'atmosphère devient explosive sans que rien ne l'ait signalé.</p>" },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Un client veut remplacer son installation par une unité au R-290. Que change cette classe pour votre intervention ?",
+      choix: [
+        "Rien de particulier : le R-290 est faiblement inflammable, comme le R-32.",
+        "Le R-290 est A3, très inflammable : EPI, matériel électrique, ventilation, détection et charge admise sont à revoir selon la FDS et la NF EN 378.",
+        "Seul le PRP change, la sécurité reste identique.",
+        "Il suffit d'aérer le local pendant l'intervention.",
+      ],
+      bonne: 1,
+      explication: "Le R-290 est du propane, donc un hydrocarbure : il est classé A3 (très inflammable), et non A2L. Cette classe commande l'ensemble du dispositif de sécurité — EPI, suppression des sources d'étincelle, ventilation, type de détecteur, charge maximale admise dans le local. Les valeurs se lisent sur la FDS du fluide et dans la NF EN 378, jamais de mémoire.",
+      remediation_vers: "cl1",
+    },
+    criteres: [
+      { code: "1.08", libelle: "Connaître la combustibilité et la propagation des flammes, les restrictions de capacité de charge et les limites d'occupation, pour les HFC, H(C)FO et hydrocarbures.", etat: "a_evaluer" },
+      { code: "11.03", libelle: "Connaître les règles de sécurité applicables aux fluides toxiques, inflammables ou nécessitant une pression de fonctionnement plus élevée.", etat: "a_evaluer" },
+    ],
+    liens: [suite("cl2", "Explosif avant d'être perceptible — la LIE"), { vers: "m-clas", libelle: "↺ Module classification", sec: true }, SOMMAIRE],
+    notes_pilote: "Construire la matrice AU TABLEAU avec le groupe, axe par axe, avant de la montrer complète : d'abord la lettre seule (A/B) avec deux exemples, puis le chiffre seul (1/2L/2/3), et seulement ensuite le croisement. La classification est un système à comprendre, pas une liste à retenir — un groupe qui a construit les deux axes retrouve n'importe quelle case sans l'avoir apprise. Faire ouvrir une vraie FDS et y faire chercher la classe : c'est le geste évalué dans la vie professionnelle, pas à l'examen. Insister sur les cases B2 et B3 laissées sans exemple : c'est volontaire, on n'invente pas un fluide pour remplir une case. Le piège R-290 = A3 se pose en question ouverte au groupe AVANT de donner la réponse — la confusion avec A2L est fréquente et il vaut mieux qu'elle sorte en salle qu'en chantier. ⚠ Cette fiche couvre le code 1.08, qui est ÉVALUABLE au QCM : le dire, cela change l'attention du groupe.",
+  },
+  {
+    id: "cl2",
+    type: "cours",
+    titre: "Explosif avant d'être perceptible — la LIE",
+    dc: "Classification · codes 12.02 · 12.04",
+    minuteur_s: 420,
+    corps:
+      "<p><b>Ce qui arrive.</b> Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz — une étincelle ne déclenche rien. Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. <b>Entre les deux</b>, le mélange s'enflamme, et il le fait d'un coup, dans tout le volume.</p>" +
+      "<p>Ces deux bornes portent un nom. La <b>LIE</b> — limite inférieure d'explosivité — est la concentration en dessous de laquelle le mélange ne s'enflamme pas. La <b>LSE</b> — limite supérieure d'explosivité — est celle au-dessus de laquelle il ne s'enflamme plus non plus. L'intervalle entre les deux s'appelle le <b>domaine d'explosivité</b>. Chaque gaz a le sien : les valeurs sont propres au fluide et figurent sur sa <b>fiche de données de sécurité</b>. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale.</p>" +
+      "<p><b>Ce qui rend ce danger particulier</b>, c'est qu'il n'y a pas de signal. Une atmosphère peut atteindre son domaine d'explosivité sans odeur, sans bruit, sans rien de visible. Le gaz domestique que l'on sent dans une cuisine contient un <b>odorisant ajouté volontairement</b> pour être détecté par le nez. Le <b>R-290 utilisé en froid est un propane de haute pureté : cet odorisant n'y est pas</b>. Le nez ne vous avertira pas. Et le seuil de perception d'une odeur, quand elle existe, n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger.</p>" +
+      "<p><b>L'appareil qui répond à cette question</b> s'appelle un <b>explosimètre</b>. Il ne mesure pas une quantité de gaz dans l'absolu : il affiche <b>un pourcentage de la LIE</b> du gaz recherché. Une valeur de 10 % LIE signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable. C'est une mesure de <b>marge restante</b>, et c'est ce qui la rend utilisable : l'alarme se déclenche bien avant que le mélange ne devienne explosif. Le seuil de réglage se fixe selon la procédure de l'entreprise et la documentation de l'appareil.</p>" +
+      "<p>Un explosimètre se règle pour un gaz donné : un appareil réglé pour un gaz et utilisé pour un autre affiche un chiffre faux. Et il ne remplace ni un détecteur de fuite de fluide frigorigène, ni un détecteur d'oxygène : ce sont trois appareils différents, qui répondent à trois questions différentes.</p>" +
+      "<p><b>Comment ça arrive vraiment.</b> Une petite fuite sur une unité au R-290, dans un local technique fermé et peu ventilé. Rien ne se voit, rien ne se sent. Le gaz, plus lourd que l'air, s'accumule lentement près du sol. Un technicien entre, actionne l'interrupteur d'éclairage, branche une lampe baladeuse, ou pose un outil électroportatif sur le sol. L'étincelle du contact suffit. Il n'y avait aucun signe avant-coureur, et l'inflammation ne laisse pas le temps de reculer.</p>" +
+      "<p><b>ATEX</b> — le mot vient de « <b>AT</b>mosphère <b>EX</b>plosive ». Lorsqu'un local peut contenir une atmosphère explosive, il fait l'objet d'un <b>zonage</b> : on délimite les zones où ce risque existe, et on n'y admet que du matériel conçu pour ne pas enflammer l'atmosphère — ni par une <b>étincelle</b>, ni par une <b>surface trop chaude</b>, car une surface chaude suffit à allumer un mélange sans la moindre flamme. Cela vaut aussi pour ce que le technicien apporte avec lui — outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir <b>reconnaître</b> qu'il entre dans une telle zone et respecter ce qui y est affiché.</p>",
+    blocs: [
+      { type: "cle", t: "Ce qu'il faut retenir", html: "<ul><li>Un gaz inflammable ne brûle qu'entre deux bornes : <b>LIE</b> (limite inférieure) et <b>LSE</b> (limite supérieure). Entre les deux, une étincelle suffit.</li><li>Les valeurs sont <b>propres à chaque fluide</b> et se lisent sur sa FDS.</li><li>Un <b>explosimètre</b> affiche un pourcentage de la LIE : une marge restante, pas une quantité.</li><li>Il se règle <b>pour un gaz donné</b>, et ne remplace ni un détecteur de fuite, ni un détecteur d'oxygène.</li><li>Le <b>R-290 du froid n'est pas odorisé</b> : le nez n'avertit de rien.</li><li><b>ATEX</b> : dans une zone à atmosphère explosive, seul le matériel <b>prévu pour ces zones</b> peut entrer — y compris celui qu'on apporte. Il est contraint sur l'étincelle <b>et</b> sur sa température de surface.</li></ul>" },
+      { type: "piege", t: "Le geste interdit", html: "<p>Entrer dans un local où une fuite de fluide inflammable est possible et y <b>actionner un interrupteur, brancher une lampe ou utiliser un outil électroportatif</b>, sans avoir contrôlé l'atmosphère à l'explosimètre.</p><p>Se fier à son odorat en est la variante la plus courante : le R-290 utilisé en froid ne contient pas l'odorisant du gaz domestique, et aucune odeur ne renseigne sur la distance à la LIE.</p><p>Conséquence : inflammation de tout le volume, sans aucun signe avant-coureur.</p>" },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Un explosimètre affiche « 10 % LIE » dans un local où une fuite de R-290 est suspectée. Qu'est-ce que cela signifie ?",
+      choix: [
+        "Que 10 % du local est rempli de gaz.",
+        "Que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable.",
+        "Que le mélange est déjà explosif à 10 %.",
+        "Que l'appareil est déréglé, car il devrait afficher une pression.",
+      ],
+      bonne: 1,
+      explication: "Un explosimètre n'affiche pas une quantité de gaz, mais un pourcentage de la limite inférieure d'explosivité du gaz recherché : il indique la marge qui reste avant que l'atmosphère ne devienne inflammable. L'appareil doit être réglé pour le gaz concerné, et la LIE de ce gaz se lit sur sa fiche de données de sécurité.",
+      remediation_vers: "cl2",
+    },
+    criteres: [
+      { code: "12.02", libelle: "Connaître le matériel de sécurité obligatoire : détection de gaz, détection des fuites, ventilation, équipements de protection individuelle.", etat: "a_evaluer" },
+      { code: "12.04", libelle: "Réaliser une analyse des risques avant de commencer le travail, et supprimer ou identifier les sources de danger.", etat: "a_evaluer" },
+    ],
+    liens: [suite("cl3", "CO₂ : deux dangers mortels"), { vers: "m-clas", libelle: "↺ Module classification", sec: true }, SOMMAIRE],
+    notes_pilote: "Dessiner l'axe des concentrations au tableau : trop pauvre / domaine d'explosivité / trop riche, et placer LIE et LSE dessus. C'est ce dessin que les stagiaires retiennent, pas la définition. Ne donner AUCUNE valeur chiffrée de LIE, même si on la connaît : faire ouvrir la FDS du R-290 et l'y faire lire — c'est l'objectif de la fiche. Montrer un explosimètre si le plateau en dispose, faire lire l'unité affichée (% LIE) et faire dire à quoi correspond le chiffre. Faire comparer côte à côte les trois appareils (explosimètre, détecteur de fuite, détecteur d'oxygène) : la confusion entre eux est fréquente et dangereuse. Le point sur l'odorisant absent du R-290 mérite d'être posé en question ouverte : « le propane, ça se sent, non ? » — la réponse surprend et se retient.",
+  },
+  {
+    id: "cl3",
+    type: "cours",
+    titre: "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend",
+    dc: "Classification · code 11.03",
+    minuteur_s: 600,
+    corps:
+      "<p><b>Ce qui arrive.</b> Le CO₂ — le R-744 — est classé <b>A1</b> : toxicité faible, non inflammable, PRP de 1. C'est la case la plus rassurante de toute la matrice. Et c'est exactement ce qui le rend dangereux : <b>sa classe n'annonce aucun des deux risques qui tuent réellement sur ces installations</b> — la <b>pression</b>, et l'<b>anoxie</b>. Qui retient « CO₂ = A1 = tranquille » a retenu quelque chose de faux.</p>" +
+      "<p>Ce fluide entre aujourd'hui dans le parc : froid commercial, supermarchés, chambres froides. Vous en rencontrerez. Ce n'est plus un sujet de culture générale.</p>" +
+      "<p><b>Premier danger : la pression.</b> Une installation au CO₂ travaille à des pressions <b>bien plus élevées</b> que celles des fluides que vous connaissez — sans commune mesure. Cela change tout le matériel : manifold, flexibles, vannes, tout doit être <b>dédié au CO₂</b>. Brancher un manifold ordinaire sur une installation au CO₂, c'est le faire éclater dans les mains. Les valeurs exactes dépendent du point de fonctionnement et se lisent dans la <b>documentation constructeur</b> ; ce qu'il faut retenir sans aucun chiffre, c'est qu'<b>aucun réflexe acquis sur un R-134a ou un R-410A ne se transpose ici</b>.</p>" +
+      "<p>Cette pression garde son danger <b>machine à l'arrêt</b>. Une installation au CO₂ arrêtée continue de monter en pression si elle se réchauffe : c'est pour cela qu'elle possède des dispositifs de sécurité qui lui sont propres. Une installation au CO₂ laissée sans surveillance après une coupure n'est pas une installation au repos.</p>" +
+      "<p>À la détente à l'air libre, le CO₂ peut passer directement à l'état solide : c'est la <b>glace carbonique</b> (ou neige carbonique). Double conséquence — une <b>brûlure par le froid</b> au contact de la peau, et un <b>bouchon solide</b> qui obstrue une vanne ou une tuyauterie. Et ce bouchon finit par fondre : le gaz qu'il libère alimente alors le second danger.</p>" +
+      "<p><b>Second danger : l'air qu'il vous prend.</b> Le mot <b>anoxie</b> désigne le manque d'oxygène dans l'organisme. Vous avez rencontré ce danger dans la fiche « L'air qui manque » : un gaz prend la place de l'air respirable. Le CO₂ fait cela — <b>mais il ne fait pas que cela</b>, et c'est toute la différence.</p>" +
+      "<p><b>Deux mécanismes, pas un seul.</b> L'azote agit uniquement par <b>déplacement</b> : il est inerte, il prend la place de l'oxygène sans réagir avec l'organisme. Le CO₂, lui, agit <b>en plus par lui-même</b> : il n'est pas inerte, il intervient dans la régulation de la respiration et devient nocif à des concentrations où l'oxygène restant serait encore suffisant. Autrement dit, le CO₂ peut vous mettre en danger <b>avant</b> d'avoir chassé assez d'oxygène pour qu'un contrôle du seul taux d'oxygène s'en alarme. C'est pourquoi, sur une installation au CO₂, <b>un détecteur d'oxygène seul ne suffit pas</b> : il faut une mesure du CO₂ lui-même.</p>" +
+      "<p>N'en concluez pas que les fluides fluorés sont inoffensifs : à forte concentration, ils agissent eux aussi sur l'organisme — effet sur le rythme du cœur, effet endormant. Leur fiche de données de sécurité le mentionne. « A » n'a jamais voulu dire inoffensif.</p>" +
+      "<p><b>Ce que vous ressentirez — et pourquoi c'est déjà tard.</b> Contrairement à l'azote, qui ne prévient pas du tout, le CO₂ <b>donne des signes</b> : souffle court puis <b>essoufflement violent</b>, <b>maux de tête</b>, <b>vertiges</b>, bourdonnements, sueurs. La raison est celle vue en fiche « L'air qui manque » : c'est l'excès de gaz carbonique dans le sang qui commande l'envie de respirer. Ces signes sont votre <b>seule chance</b> — mais ils arrivent alors que vous êtes <b>déjà dans la nappe</b>, et à forte concentration la perte de connaissance suit en quelques instants. D'où une règle simple : <b>essoufflement brutal ou mal de tête soudain dans un local technique, vous ressortez immédiatement</b>. On ne cherche pas à comprendre sur place, on ne finit pas le geste en cours.</p>" +
+      "<p><b>Pourquoi on entre sans le savoir.</b> Le CO₂ est <b>incolore</b>, <b>inodore</b>, et <b>plus lourd que l'air</b>. Il ne monte pas : il s'écoule et <b>s'accumule dans les points bas</b> — fosse, cave, sous-sol, local en contrebas, bas d'une chambre froide. Une zone peut être parfaitement respirable à hauteur de visage et déjà mortelle au niveau du sol, ou en bas de quelques marches. Descendre, c'est entrer dans la nappe.</p>" +
+      "<p><b>Attention à ne pas généraliser cette règle.</b> « Plus lourd que l'air » vaut pour le CO₂ et pour la plupart des fluides fluorés — mais <b>pas pour l'ammoniac</b> (R-717), plus léger que l'air, qui se comporte à l'inverse : il monte. Le comportement d'un fluide se lit sur sa FDS, il ne se suppose jamais par analogie avec le fluide précédent.</p>" +
+      "<p><b>Comment ça arrive vraiment.</b> Une installation au CO₂ en local technique enterré, une fuite lente pendant la nuit, porte fermée. Le gaz remplit le volume par le bas. Au matin, un technicien descend relever un paramètre. Rien ne se voit, rien ne se sent. À mi-escalier, il a mal à la tête et le souffle court — il met cela sur le compte de la fatigue et continue, parce qu'il n'en a que pour deux minutes. Il ne remonte pas. Puis vient le second accident, celui qui tue le plus souvent dans cette famille d'accidents : un collègue le voit au sol et descend le chercher, sans protection. La nappe est toujours là. <b>Deux victimes au lieu d'une.</b></p>",
+    blocs: [
+      { type: "cle", t: "Ce qu'il faut retenir", html: "<ul><li>Le CO₂ est <b>A1</b>, et pourtant il tue de <b>deux</b> façons : la <b>pression</b> et l'<b>anoxie</b>. Sa classe n'annonce ni l'une ni l'autre.</li><li>Pressions <b>sans commune mesure</b> avec les fluides courants : matériel <b>dédié au CO₂</b>, jamais un manifold ordinaire.</li><li>Une installation au CO₂ <b>à l'arrêt reste sous pression</b>, et remonte en pression si elle se réchauffe.</li><li>Glace carbonique à la détente : <b>brûlure par le froid</b> et <b>bouchon</b>.</li><li>Le CO₂ <b>déplace</b> l'oxygène <b>et agit par lui-même</b> — l'azote, lui, est inerte. Un <b>détecteur d'oxygène seul ne suffit pas</b>.</li><li><b>Essoufflement brutal, mal de tête, vertiges : on ressort tout de suite.</b> Ces signes arrivent quand on est déjà dans la nappe.</li><li>Incolore, inodore, <b>plus lourd que l'air</b> : il s'accumule en <b>point bas</b>. Pas vrai pour l'ammoniac.</li></ul>" },
+      { type: "piege", t: "Le geste interdit", html: "<p>Descendre dans une fosse, une cave, un sous-sol ou tout local en contrebas abritant une installation au CO₂ après une fuite possible, <b>sans avoir ventilé et mesuré</b>. Et, si un collègue est au sol : <b>descendre le chercher sans protection</b>.</p><p>Conséquence : vous entrez dans la nappe. Les signes que vous ressentirez — souffle coupé, mal de tête — arriveront trop tard pour remonter un escalier, et le sauveteur improvisé devient la seconde victime. C'est le scénario le plus fréquent de ces accidents.</p><p>Interdit aussi : brancher du <b>matériel non dédié au CO₂</b> sur une installation au CO₂. Sa pression n'a rien à voir avec ce que vous connaissez.</p>" },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Vous intervenez dans un local technique abritant une installation au CO₂. Au bout de quelques minutes, vous avez mal à la tête et le souffle court. Que faites-vous ?",
+      choix: [
+        "Je termine le geste en cours, je n'en ai que pour deux minutes.",
+        "Je ressors immédiatement et je donne l'alerte : ces signes veulent dire que je suis déjà dans la nappe de gaz.",
+        "Je m'assois un moment sur place pour reprendre mon souffle.",
+        "Je mets cela sur le compte de la fatigue et je continue en surveillant comment je me sens.",
+      ],
+      bonne: 1,
+      explication: "Contrairement à l'azote, le CO₂ donne des signes — essoufflement, maux de tête, vertiges — parce qu'il agit sur la régulation de la respiration. Mais ces signes n'apparaissent qu'une fois dans la nappe, et la perte de connaissance peut suivre en quelques instants. Ils ne s'interprètent pas et ne se surveillent pas : ils commandent de sortir. S'asseoir est le pire des choix, puisque le gaz s'accumule en partie basse.",
+      remediation_vers: "cl3",
+    },
+    criteres: [
+      { code: "11.03", libelle: "Connaître les règles de sécurité applicables aux fluides toxiques, inflammables ou nécessitant une pression de fonctionnement plus élevée.", etat: "a_evaluer" },
+    ],
+    liens: [suite("cl4", "Se protéger du CO₂ — détection, EPC et EPI"), { vers: "m-clas", libelle: "↺ Module classification", sec: true }, SOMMAIRE],
+    notes_pilote: "Fiche la plus importante du module : le CO₂ entre dans le parc et il tue de deux façons que sa classe A1 n'annonce pas. Prendre le temps, quitte à raccourcir ailleurs. Faire le lien explicite avec « L'air qui manque » (s1) : même famille de danger, mais un mécanisme de PLUS, et surtout des SIGNES que l'azote ne donne pas. Poser la question au groupe : « l'azote et le CO₂, même danger ? » — la réponse (déplacement seul contre déplacement + action propre) est le cœur de la fiche. NE JAMAIS enseigner que le CO₂ endort sans prévenir : c'est faux, et cela supprimerait le seul signal d'auto-sauvetage du stagiaire. Faire répéter la règle de sortie à voix haute : essoufflement ou mal de tête soudain = je sors. Matérialiser le point bas : montrer le sol du local, faire dire où va le gaz, faire remarquer qu'une fenêtre en hauteur ne le chasse pas. Rappeler l'exception ammoniac chaque fois que « plus lourd que l'air » est prononcé. Le double accident se raconte, il ne se résume pas. Sur la pression : montrer un manifold ordinaire et dire franchement ce qui arrive si on le branche sur du CO₂. Aucune valeur chiffrée en salle : faire ouvrir la FDS du R-744 et la documentation constructeur.",
+  },
+  {
+    id: "cl4",
+    type: "cours",
+    titre: "Se protéger du CO₂ — détection, EPC et EPI",
+    dc: "Classification · codes 12.02 · 13.14",
+    minuteur_s: 600,
+    corps:
+      "<p><b>Ce qui protège, dans l'ordre.</b> La règle générale de la prévention est la même partout : on protège <b>d'abord le collectif</b>, ensuite l'individu. Un équipement de <b>protection collective</b> (EPC) protège tout le monde dans le local, en permanence, sans que personne ait à y penser. Un équipement de <b>protection individuelle</b> (EPI) ne protège que celui qui le porte, et seulement s'il le porte correctement. L'EPI ne remplace jamais l'EPC : il vient <b>après</b>, pour ce que l'EPC ne couvre pas.</p>" +
+      "<p><b>La détection : ce n'est pas une option.</b> Dans un local abritant une installation au CO₂, la <b>détection de gaz est exigée</b> dès que la norme l'impose — selon la charge et le type de local — et c'est l'EPC principal. Sa présence et son état se vérifient à l'arrivée : si elle manque là où elle devrait être, c'est un signalement à faire, pas un détail. Le détecteur est <b>fixe, à poste</b> : il mesure en permanence, y compris la nuit et quand personne n'est là, et c'est précisément ce qui manque à un appareil portatif resté dans le camion. On le place <b>en partie basse</b>, là où le CO₂ s'accumule : un capteur au plafond ne verra rien.</p>" +
+      "<p>Il est associé à des <b>alarmes</b> sonores et visuelles, à l'intérieur <b>et à l'extérieur</b> du local. Celle de l'extérieur a une fonction précise : vous prévenir <b>avant d'ouvrir la porte</b>, et empêcher un sauveteur d'entrer sans savoir. Le déclenchement peut aussi commander la <b>ventilation</b> et l'arrêt de l'installation. Un dispositif complet comporte en général deux niveaux : une <b>préalarme</b>, qui avertit, et une <b>alarme d'évacuation</b>, qui ordonne de sortir.</p>" +
+      "<p><b>Le ppm : savoir lire ce que l'appareil affiche.</b> Un détecteur de CO₂ n'affiche ni des grammes ni des bars, mais des <b>ppm</b> — « parties par million ». Un ppm, c'est <b>une part de gaz pour un million de parts d'air</b> : autrement dit, un centimètre cube de CO₂ dans un mètre cube d'air. C'est une unité faite pour de <b>petites proportions</b>, celles qu'un pourcentage exprimerait mal.</p>" +
+      "<p>Pour situer l'échelle : l'air extérieur que vous respirez contient <b>naturellement</b> du CO₂, de l'ordre de quelques centaines de ppm. Un affichage qui n'est pas à zéro ne signifie donc pas « il y a une fuite ». Ce qui compte, c'est l'<b>écart</b> avec l'ambiance normale et le <b>franchissement des seuils réglés</b> sur l'appareil. Ces seuils de préalarme et d'évacuation sont fixés par la <b>réglementation du travail</b> et par la norme applicable au site ; ils figurent dans la documentation de l'appareil et sont rappelés sur la <b>FDS</b> du fluide. <b>Ne les apprenez pas par cœur d'un site à l'autre</b> : vérifiez-les sur l'installation où vous êtes. Votre formateur vous donnera ceux qui s'appliquent aux machines de l'atelier.</p>" +
+      "<p><b>Un détecteur ne vaut que s'il fonctionne.</b> Un capteur de gaz se <b>vérifie</b> et se <b>remplace</b> périodiquement, selon la documentation du fabricant : une cellule vieillit et finit par ne plus rien mesurer tout en restant allumée. À l'arrivée sur site, on contrôle donc que les capteurs et les alarmes sont <b>en état de marche</b>, et pas seulement présents au mur — exactement comme on contrôle un VAT avant de s'en servir.</p>" +
+      "<p><b>Le reste du dispositif collectif.</b> La <b>signalisation</b> à l'entrée du local doit être visible et à jour : elle prévient celui qui entre de ce qui l'attend. Les <b>issues de secours</b> doivent rester dégagées — une palette posée devant une porte de chambre froide n'est pas un défaut de rangement, c'est une issue en moins. La <b>ventilation</b> doit être adaptée au fait que le gaz est en bas. Ces trois points se contrôlent en arrivant, avant de commencer.</p>" +
+      "<p><b>Les EPI, et surtout leurs limites.</b> Contre le froid du CO₂ et la glace carbonique : <b>gants</b> adaptés au froid et <b>lunettes ou écran facial</b>, mis <b>avant</b> l'intervention et non une fois le geste commencé. Contre la pression : rester hors de la trajectoire d'un jet, et ne jamais desserrer un raccord sans avoir vérifié la pression au manomètre.</p>" +
+      "<p>Et un point que l'on ne peut pas se permettre d'ignorer : <b>un masque à cartouche ne protège pas contre le CO₂, ni contre le manque d'oxygène</b>. Une cartouche filtre certains polluants dans un air qui reste respirable ; elle ne fabrique pas d'oxygène et ne retient pas le CO₂. En atmosphère appauvrie ou chargée en CO₂, seul un appareil <b>isolant</b>, qui apporte son propre air, protège — un matériel dont l'usage relève d'équipes formées et entraînées pour cela, pas d'une improvisation de dépannage. <b>Pour vous, la protection n'est pas de porter un masque : c'est de ne pas entrer.</b></p>" +
+      "<p><b>Devant une personne au sol.</b> On alerte, on ventile, on fait intervenir les secours — <b>on ne descend pas</b>. Retenir sa respiration ne protège de rien : on ne tient que quelques dizaines de secondes, et le réflexe respiratoire finit toujours par l'emporter, au fond de la fosse.</p>",
+    blocs: [
+      { type: "cle", t: "Ce qu'il faut retenir", html: "<ul><li><b>EPC d'abord, EPI ensuite</b> : le collectif protège tout le monde en permanence, l'individuel ne protège que celui qui le porte.</li><li><b>Détection de gaz obligatoire</b> en local CO₂, par capteur <b>fixe</b>, placé <b>en partie basse</b>.</li><li>Alarmes sonores et visuelles <b>dedans et dehors</b> — celle de dehors prévient avant d'ouvrir la porte. Deux niveaux : préalarme, puis évacuation.</li><li>Le détecteur affiche des <b>ppm</b> : une part pour un million. L'air normal en contient déjà.</li><li>Les <b>seuils</b> se lisent sur l'appareil, sa documentation et la FDS — <b>jamais de mémoire d'un site à l'autre</b>.</li><li>Un capteur se <b>vérifie et se remplace</b> : une cellule morte reste allumée.</li><li>Signalisation à jour, <b>issues de secours dégagées</b>, ventilation adaptée : contrôlées en arrivant.</li><li><b>Un masque à cartouche ne protège ni du CO₂, ni du manque d'oxygène.</b> La vraie protection, c'est de ne pas entrer.</li><li>Et les règles qui ne changent jamais : <b>ventiler et mesurer avant d'entrer</b>, <b>jamais seul</b>, et devant une personne au sol : alerter, ventiler, <b>ne pas descendre</b>.</li></ul>" },
+      { type: "piege", t: "Le geste interdit", html: "<p>Entrer dans un local CO₂ en se croyant protégé par un <b>masque à cartouche</b>, ou entrer alors que l'alarme extérieure est déclenchée.</p><p>Interdit aussi : considérer un détecteur comme fiable <b>parce que son voyant est allumé</b>. Une cellule usée continue de s'allumer sans plus rien mesurer : elle se vérifie et se remplace selon la documentation du fabricant.</p><p>Conséquence : on entre dans une atmosphère mortelle avec la certitude d'être protégé. C'est la configuration où l'on ne ressort pas.</p>" },
+    ],
+    question: {
+      type: "qcm",
+      enonce: "Vous devez intervenir dans un local abritant une installation au CO₂. Un masque à cartouche est disponible dans le camion. Que vous apporte-t-il ?",
+      choix: [
+        "Il protège du CO₂ et permet d'entrer sans autre précaution.",
+        "Rien face à ce risque : une cartouche ne retient pas le CO₂ et ne fournit pas d'oxygène. La protection, c'est la détection, la ventilation, et le fait de ne pas entrer.",
+        "Il protège à condition de ne rester que quelques minutes.",
+        "Il remplace le détecteur fixe du local.",
+      ],
+      bonne: 1,
+      explication: "Un masque à cartouche filtre certains polluants dans un air qui reste respirable : il ne fabrique pas d'oxygène et ne retient pas le CO₂. Seul un appareil isolant, réservé à des équipes formées, protège en atmosphère appauvrie. La protection du technicien repose sur la protection collective — détection fixe en partie basse, alarmes intérieure et extérieure, ventilation — et sur la décision de ne pas entrer.",
+      remediation_vers: "cl4",
+    },
+    criteres: [
+      { code: "12.02", libelle: "Connaître le matériel de sécurité obligatoire : détection de gaz, détection des fuites, ventilation, équipements de protection individuelle.", etat: "a_evaluer" },
+      { code: "13.14", libelle: "Vérifier la sécurité du site : signalisation, issues de secours, capteurs et alarmes gaz.", etat: "a_evaluer" },
+    ],
+    liens: [{ vers: "m-clas", libelle: "↺ Module classification", sec: true }, { vers: "c00", libelle: "Choisir mon parcours ▸" }, SOMMAIRE],
+    notes_pilote: "⚠ VALEURS À FIGER PAR LE FORMATEUR avant la première session : les seuils de préalarme et d'évacuation des détecteurs CO₂ du plateau, la périodicité de vérification et de remplacement des cellules, et le type de détecteur utilisé. La fiche enseigne délibérément la NOTION de ppm et la LECTURE de l'appareil, sans aucun seuil chiffré : une fois écrits, ces nombres engagent l'organisme (cf. REPRISE, « les valeurs terrain »). Les donner à l'oral, sur le matériel réel. Montrer un détecteur fixe et un détecteur portatif côte à côte, faire dire la différence (permanence contre ponctualité). Faire chercher au groupe où placer le capteur dans le local — la réponse « en bas » doit venir d'eux, elle découle de la fiche précédente. Faire manipuler l'affichage en ppm et faire lire la valeur d'ambiance. Le point sur le masque à cartouche est le plus important de la fiche et le plus contre-intuitif : beaucoup d'adultes croient qu'un masque protège de tout. Le poser en question ouverte AVANT de répondre. Insister sur l'ordre EPC puis EPI : c'est un principe général de prévention, pas une préférence. Si le plateau dispose d'une installation au CO₂, y faire le tour de la signalisation, des issues et des capteurs en conditions réelles.",
   },
   /* ==================================================================
      PRÉPARATION PRATIQUE — le matériel et les gestes, AVANT l'atelier
@@ -2944,7 +3192,7 @@ export const CARTES = [
     dc: "G11 · codes 1.08 · 11.01 → 11.05",
     minuteur_s: 300,
     corps:
-      schema("classes-securite.svg", "Matrice des classes NF EN 378 : CO2 en A1, R-32 et R-1234yf en A2L, R-290 en A3, NH3 en B2L.") +
+      schema("classes-securite.svg", "Matrice complète des classes NF EN 378 : huit cases, toxicité en lignes, inflammabilité en colonnes.") +
       "<p>Remplacer un fluide à fort PRP se fait dans deux directions : les <b>fluides naturels</b> " +
       "(CO₂, ammoniac, hydrocarbures) et les fluides de synthèse à faible PRP (<b>HFO</b>, HFC bas PRP). " +
       "Il n'existe <b>pas de fluide universel</b> : le choix dépend de l'application, du climat, et de " +
@@ -2986,8 +3234,9 @@ export const CARTES = [
         html:
           "<b>Le R-290 est A3</b>, pas A2L. Tout hydrocarbure est très inflammable. " +
           "Se tromper de classe, c'est se tromper d'EPI, de matériel électrique et de charge " +
-          "admissible. À l'inverse, le <b>CO₂ est A1</b> : ni toxique ni inflammable — son danger " +
-          "est la <b>pression</b>.",
+          "admissible. À l'inverse, le <b>CO₂ est A1</b> : toxicité faible, non inflammable — mais " +
+          "cette classe n'annonce ni sa <b>pression</b>, ni l'<b>atmosphère irrespirable</b> qu'une " +
+          "fuite crée en local fermé.",
       },
       {
         t: "À toi : compare les candidats à la substitution",
@@ -3037,7 +3286,7 @@ export const CARTES = [
     dc: "G12 · codes 12.01 → 12.04 · 12.06 · 12.13 · 12.14",
     minuteur_s: 360,
     corps:
-      schema("classes-securite.svg", "Matrice des classes NF EN 378 : CO2 en A1, R-32 et R-1234yf en A2L, R-290 en A3, NH3 en B2L.") +
+      schema("classes-securite.svg", "Matrice complète des classes NF EN 378 : huit cases, toxicité en lignes, inflammabilité en colonnes.") +
       "<p>Les hydrocarbures — <b>R-290</b> (propane), <b>R-600a</b> (isobutane) — sont classés " +
       "<b>A3</b> : très inflammables. Ils s'imposent pourtant, parce que leur PRP est très bas et " +
       "leurs performances excellentes : on les trouve dans les réfrigérateurs domestiques, les " +
@@ -3233,15 +3482,18 @@ export const CARTES = [
       "<p>Ce module <b>informe</b>, il ne qualifie pas. Une attestation A1 ou A2 ne donne <b>aucun " +
       "droit d'intervention</b> sur une installation au CO₂ (catégorie B) ou à l'ammoniac " +
       "(catégorie C). Ce qu'on attend ici : <b>reconnaître</b> et <b>ne pas toucher</b>.</p>" +
-      "<p><b>CO₂ (R-744)</b> — classé <b>A1</b> : ni toxique ni inflammable, <b>PRP = 1</b>. " +
-      "Son danger est ailleurs : la <b>pression</b>, très élevée, et le risque de <b>neige " +
-      "carbonique</b> à la détente (brûlure par le froid, obstruction). En transcritique, " +
+      "<p><b>CO₂ (R-744)</b> — classé <b>A1</b> : toxicité <b>faible</b>, non inflammable, <b>PRP = 1</b>. " +
+      "Cette classe n'annonce aucun de ses vrais dangers : la <b>pression</b>, très élevée, " +
+      "l'<b>atmosphère irrespirable</b> en local fermé (il est plus lourd que l'air, s'accumule en " +
+      "point bas, et agit sur la respiration — voir « CO₂ : deux dangers mortels »), et le risque de " +
+      "<b>neige carbonique</b> à la détente (brûlure par le froid, obstruction). En transcritique, " +
       "le condenseur laisse la place à un <b>refroidisseur de gaz</b>. Les cylindres, à double vanne, " +
       "ne se raccordent pas au matériel courant.</p>" +
       "<p><b>Ammoniac (R-717)</b> — classé <b>B2L</b> : <b>toxique</b> et faiblement inflammable. " +
       "Fluide du froid industriel (agroalimentaire, entrepôts), jamais du résidentiel. " +
-      "Son odeur piquante alerte bien avant le seuil dangereux. En cas de fuite : <b>alerter, " +
-      "évacuer, ne jamais intervenir seul</b>.</p>" +
+      "Son odeur piquante se perçoit très tôt — mais elle <b>ne remplace aucune mesure</b>, et elle " +
+      "s'émousse à forte concentration : on ne se fie jamais à son nez pour décider. En cas de " +
+      "fuite : <b>alerter, évacuer, ne jamais intervenir seul</b>.</p>" +
       "<p>Sur le terrain, le CO₂ ne se manipule pas avec le matériel courant : ses pressions de travail sont bien plus élevées que celles des fluides classiques. Manifold, flexibles, vannes — tout doit être <b>dédié au CO₂</b>. Les valeurs exactes dépendent du point de fonctionnement et se lisent toujours dans la <b>documentation constructeur</b>, à faire valider.</p>" +
       "<p>Le diagramme <b>log p/h</b> (pression selon l'enthalpie) et les <b>tables de saturation</b> du CO₂ se lisent comme ceux de tout autre fluide — mêmes repères de bulle et de rosée — mais dans un domaine de pression qui lui est propre. C'est ce domaine particulier qui explique un comportement que les autres fluides n'ont pas : la formation de glace carbonique.</p>" +
       "<p>Avant de commencer une intervention sur un site au CO₂ ou à l'ammoniac, on prend un instant pour vérifier ce qui est déjà en place. La <b>signalisation</b> à l'entrée du local doit être visible et à jour. Les <b>issues de secours</b> doivent rester dégagées, jamais encombrées, pour permettre une évacuation rapide en cas de fuite. On contrôle aussi que les <b>capteurs</b> de gaz et les <b>alarmes</b> qui leur sont associées sont en état de marche, pas seulement présents dans le local.</p>",
@@ -3250,8 +3502,9 @@ export const CARTES = [
         type: "piege",
         t: "« A1 » ne veut pas dire « sans danger »",
         html:
-          "Le CO₂ est A1 du point de vue toxicité et inflammabilité — cela ne dit rien de la pression, " +
-          "qui est son vrai risque. Et le <b>B</b> de B2L signifie <b>toxique</b> : ne pas relâcher la " +
+          "Le CO₂ est A1 du point de vue toxicité et inflammabilité — cela ne dit rien de ses deux vrais " +
+          "risques : la <b>pression</b>, et l'<b>anoxie</b> en local fermé (voir la fiche « CO₂ : deux " +
+          "dangers mortels »). Et le <b>B</b> de B2L signifie <b>toxique</b> : ne pas relâcher la " +
           "vigilance sur l'ammoniac sous prétexte que son inflammabilité est faible.",
       },
       {

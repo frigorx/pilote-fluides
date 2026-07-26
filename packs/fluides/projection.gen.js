@@ -57,7 +57,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Le corps ne donne <b>aucune alerte</b> dans cette situation. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.",
+       "html": "Face à l'<b>azote</b> et aux <b>fluides fluorés</b>, le corps ne donne <b>aucune alerte</b>. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez donc pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "point",
+       "html": "<b>Une exception importante : le CO₂ (R-744).</b> Lui vous <b>prévient</b> — essoufflement, mal de tête, vertiges — parce qu'il agit sur la commande de la respiration. C'est une chance, mais tardive : ces signes n'arrivent qu'une fois dans le gaz. Et pour la même raison, un détecteur d'oxygène seul ne suffit pas à le surveiller. Ce fluide a sa fiche : « CO₂ : deux dangers mortels ».",
        "titre": "L'air qui manque — l'asphyxie"
       },
       {
@@ -74,18 +79,74 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "cle",
        "t": "Ce qu'il faut retenir",
-       "html": "<ol><li><b>Ventilez</b> le local avant d'entrer : ouvrez, aérez, laissez l'air circuler.</li><li><b>Contrôlez l'air</b> avec un détecteur d'oxygène avant d'entrer — pas seulement un détecteur de fuite de fluide, ce n'est pas le même appareil. Le seuil d'alerte se règle selon la FDS (fiche de données de sécurité) du fluide concerné.</li><li><b>N'entrez jamais seul</b> dans un espace clos suspect : prévenez quelqu'un, travaillez à deux.</li><li>Si un collègue est au sol dans un espace clos : <b>ne vous précipitez pas sans protection</b>. Donnez l'alerte, ventilez, faites intervenir les secours.</li></ol>",
+       "html": "<ol><li><b>Ventilez</b> le local avant d'entrer : ouvrez, aérez, laissez l'air circuler.</li><li><b>Contrôlez l'air</b> avec un détecteur d'oxygène avant d'entrer — pas seulement un détecteur de fuite de fluide, ce n'est pas le même appareil. Le seuil d'alerte se règle selon la FDS (fiche de données de sécurité) du fluide concerné. <b>Devant une installation au CO₂, un détecteur d'oxygène ne suffit pas</b> : il faut mesurer le CO₂ lui-même.</li><li><b>N'entrez jamais seul</b> dans un espace clos suspect : prévenez quelqu'un, travaillez à deux.</li><li>Si un collègue est au sol dans un espace clos : <b>ne vous précipitez pas sans protection</b>. Donnez l'alerte, ventilez, faites intervenir les secours.</li></ol>",
        "titre": "L'air qui manque — l'asphyxie"
       },
       {
        "type": "encadre",
        "genre": "piege",
        "t": "Le geste interdit",
-       "html": "<p>Entrer seul dans un local fermé, une chambre froide ou une fosse, après une mise en pression à l'azote ou une fuite suspectée, <b>sans ventiler ni contrôler l'air</b>.</p><p>Conséquence : perte de connaissance sans signe avant-coureur. Risque mortel pour vous, et pour quiconque tenterait de vous secourir sans précaution.</p>",
+       "html": "<p>Entrer seul dans un local fermé, une chambre froide ou une fosse, après une mise en pression à l'azote ou une fuite suspectée, <b>sans ventiler ni contrôler l'air</b>.</p><p>Conséquence : avec l'azote ou un fluide fluoré, perte de connaissance sans signe avant-coureur. Avec le CO₂, des signes arrivent — essoufflement, mal de tête — mais quand vous êtes déjà dans le gaz. Risque mortel dans les deux cas, pour vous et pour quiconque tenterait de vous secourir sans précaution.</p>",
        "titre": "L'air qui manque — l'asphyxie"
       }
      ],
      "questions": [
+      {
+       "id": "pk-cl2-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
+       "choix": [
+        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+        "La température minimale d'inflammation du gaz",
+        "La pression maximale admissible dans la bouteille",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+       ],
+       "bonne": 0,
+       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
+       "remed": {
+        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
+        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
+       },
+       "remediation_vers": "cl2",
+       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-cl4-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+       "choix": [
+        "Au plafond, comme un détecteur de fumée",
+        "En partie basse, là où le CO₂ s'accumule",
+        "À l'extérieur du local uniquement",
+        "Peu importe, le gaz se répartit uniformément"
+       ],
+       "bonne": 1,
+       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+       "remed": {
+        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+       },
+       "remediation_vers": "cl4",
+       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
       {
        "id": "q-g12-v6_093",
        "dc": "G12",
@@ -106,59 +167,6 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g12",
        "code": "12.02",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g12-v6_184",
-       "dc": "G12",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Pour les fluides A2L, les outils d'intervention doivent être :",
-       "choix": [
-        "Standards",
-        "Adaptés (pas de source d'ignition, ventilation)",
-        "Uniquement manuels (pas d'électricité)",
-        "En matériaux composites"
-       ],
-       "bonne": 1,
-       "explication": "Adaptés — Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention.",
-       "aide": "'Légèrement inflammable' impose des précautions, même si le risque est modéré.",
-       "remed": {
-        "texte": "Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention."
-       },
-       "remediation_vers": "g12",
-       "code": "12.02",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-q-12.13",
-       "dc": "G12",
-       "code": "12.13",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Vous arrivez pour intervenir sur un équipement au R-290 et constatez que les capteurs de gaz du local ne sont pas en service. Que faites-vous ?",
-       "choix": [
-        "Vous réparez vous-même les capteurs avant de commencer",
-        "Vous ne commencez pas et vous signalez le problème",
-        "Vous demandez à un collègue de surveiller l'air à votre place",
-        "Vous commencez l'intervention en redoublant de prudence"
-       ],
-       "bonne": 1,
-       "aide": "La fiche donne une règle claire pour ce cas : que fait-on si une mesure de sécurité du site manque ?",
-       "remed": {
-        "regle": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
-        "pourquoi": "Sur un fluide très inflammable comme le R-290, un capteur de gaz hors service prive le technicien de la seule alerte en cas de fuite pendant l'intervention.",
-        "piege": "Penser que sa propre vigilance remplace un dispositif de détection défaillant."
-       },
-       "remediation_vers": "g12",
-       "explication": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
-       "origine": "pack",
        "categories": [
         "A1",
         "A2"
@@ -224,50 +232,56 @@ window.PILOTE_PROJECTION = {
      ],
      "questions": [
       {
-       "id": "q-g12-v6_093",
-       "dc": "G12",
+       "id": "pk-cl2-1",
+       "dc": "Classification",
+       "code": "12.02",
        "niveau": 1,
        "type": "qcm",
-       "enonce": "Les fluides A2L comme le R32 nécessitent :",
+       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
        "choix": [
-        "Aucune précaution particulière",
-        "Un outillage adapté et une formation spécifique",
-        "Un local ATEX systématique",
-        "Un détecteur d'ammoniac"
+        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+        "La température minimale d'inflammation du gaz",
+        "La pression maximale admissible dans la bouteille",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
        ],
-       "bonne": 1,
-       "explication": "Outillage adapté et formation spécifique — Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante.",
-       "aide": "'Légèrement inflammable' ne veut pas dire 'sans risque'.",
+       "bonne": 0,
+       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
        "remed": {
-        "texte": "Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante."
+        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
+        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
        },
-       "remediation_vers": "g12",
-       "code": "12.02",
+       "remediation_vers": "cl2",
+       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+       "origine": "pack",
        "categories": [
         "A1",
         "A2"
        ]
       },
       {
-       "id": "q-g12-v6_184",
-       "dc": "G12",
+       "id": "pk-cl4-1",
+       "dc": "Classification",
+       "code": "12.02",
        "niveau": 1,
        "type": "qcm",
-       "enonce": "Pour les fluides A2L, les outils d'intervention doivent être :",
+       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
        "choix": [
-        "Standards",
-        "Adaptés (pas de source d'ignition, ventilation)",
-        "Uniquement manuels (pas d'électricité)",
-        "En matériaux composites"
+        "Au plafond, comme un détecteur de fumée",
+        "En partie basse, là où le CO₂ s'accumule",
+        "À l'extérieur du local uniquement",
+        "Peu importe, le gaz se répartit uniformément"
        ],
        "bonne": 1,
-       "explication": "Adaptés — Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention.",
-       "aide": "'Légèrement inflammable' impose des précautions, même si le risque est modéré.",
+       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
        "remed": {
-        "texte": "Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention."
+        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
        },
-       "remediation_vers": "g12",
-       "code": "12.02",
+       "remediation_vers": "cl4",
+       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+       "origine": "pack",
        "categories": [
         "A1",
         "A2"
@@ -333,6 +347,34 @@ window.PILOTE_PROJECTION = {
      ],
      "questions": [
       {
+       "id": "pk-cl3-1",
+       "dc": "Classification",
+       "code": "11.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+       "choix": [
+        "Près du plafond, car les gaz montent toujours",
+        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+        "Il se répartit uniformément et sans danger dans tout le volume",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+       ],
+       "bonne": 1,
+       "aide": "Comparez sa masse à celle de l'air.",
+       "remed": {
+        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
+        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+       },
+       "remediation_vers": "cl3",
+       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
        "id": "q-g11-54",
        "dc": "G11",
        "niveau": 1,
@@ -371,31 +413,6 @@ window.PILOTE_PROJECTION = {
        "aide": "A = toxicité, le chiffre = inflammabilité. L = lower (plus faible).",
        "remed": {
         "texte": "A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf."
-       },
-       "remediation_vers": "g11",
-       "code": "11.03",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g11-v6_092",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "La norme EN 378 définit entre autres :",
-       "choix": [
-        "Les prix des fluides",
-        "Les charges maximales de fluide selon le local et la classe de sécurité",
-        "Les horaires d'intervention",
-        "Les salaires des techniciens"
-       ],
-       "bonne": 1,
-       "explication": "Les charges maximales selon local et classe de sécurité",
-       "aide": "C'est la norme européenne centrale pour la sécurité du froid.",
-       "remed": {
-        "texte": "EN 378 est LA norme de référence pour la sécurité des installations frigorifiques en Europe."
        },
        "remediation_vers": "g11",
        "code": "11.03",
@@ -500,6 +517,34 @@ window.PILOTE_PROJECTION = {
      ],
      "questions": [
       {
+       "id": "pk-cl3-1",
+       "dc": "Classification",
+       "code": "11.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+       "choix": [
+        "Près du plafond, car les gaz montent toujours",
+        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+        "Il se répartit uniformément et sans danger dans tout le volume",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+       ],
+       "bonne": 1,
+       "aide": "Comparez sa masse à celle de l'air.",
+       "remed": {
+        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
+        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+       },
+       "remediation_vers": "cl3",
+       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
        "id": "pk-p4-1",
        "dc": "G3",
        "code": "3.01",
@@ -542,31 +587,6 @@ window.PILOTE_PROJECTION = {
        "bonne": 3,
        "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g11",
-       "code": "11.03",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g11-v6_033",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Un fluide classé A2L est :",
-       "choix": [
-        "Non inflammable, non toxique",
-        "Légèrement inflammable, faible toxicité",
-        "Très inflammable, faible toxicité",
-        "Légèrement inflammable, toxicité élevée"
-       ],
-       "bonne": 1,
-       "explication": "Légèrement inflammable, faible toxicité — A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf.",
-       "aide": "A = toxicité, le chiffre = inflammabilité. L = lower (plus faible).",
-       "remed": {
-        "texte": "A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf."
-       },
        "remediation_vers": "g11",
        "code": "11.03",
        "categories": [
@@ -727,11 +747,889 @@ window.PILOTE_PROJECTION = {
    ]
   },
   {
+   "n": 0,
+   "libelle": "Accueil",
+   "titre": "Classification des fluides et risques",
+   "intention": "Avant de choisir sa catégorie, le stagiaire doit savoir ce qu'il aura dans les mains. La classification NF EN 378 s'enseigne ici comme un SYSTÈME à deux axes, pas comme une liste à retenir : c'est elle qui commande les EPI, le matériel électrique, la ventilation, la détection et la charge admise. Deux urgences la rendent nécessaire maintenant : le CO₂ entre dans le parc, et les hydrocarbures s'y généralisent.",
+   "sequences": [
+    {
+     "type": "cours",
+     "fiche": "cl1",
+     "titre": "Lire une classe — deux lettres, deux dangers",
+     "minutes": 30,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Lire une classe — deux lettres, deux dangers",
+       "dc": "Classification · codes 1.08 · 11.03",
+       "competences": [
+        {
+         "code": "1.08",
+         "lib": "Connaître la combustibilité et la propagation des flammes, les restrictions de capacité de charge et les limites d'occupation, pour les HFC, H(C)FO et hydrocarbures.",
+         "officiel": "Connaître la combustibilité, la propagation des flammes, les restrictions relatives à la capacité de charge, les limites d'occupation pour les HFC, H(C)FO et hydrocarbures",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T",
+          "E": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "11.03",
+         "lib": "Connaître les règles de sécurité applicables aux fluides toxiques, inflammables ou nécessitant une pression de fonctionnement plus élevée.",
+         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/classes-securite.svg",
+       "alt": "Matrice complète des classes NF EN 378 : huit cases, toxicité en lignes, inflammabilité en colonnes.",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce que c'est.</b> La norme NF EN 378 (et la norme américaine ASHRAE 34, qui suit la même logique) attribue à chaque fluide frigorigène une <b>classe de sécurité</b> : A1, A2L, B2L, A3… Ce n'est pas un classement du plus dangereux au moins dangereux. C'est une <b>combinaison de deux informations distinctes</b>, et c'est pour cela qu'une classe s'écrit avec une lettre <i>et</i> un chiffre.",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "point",
+       "html": "<b>La lettre dit la toxicité.</b> <b>A</b> = toxicité faible. <b>B</b> = toxicité plus élevée. Attention au contresens : « A » ne signifie pas inoffensif. Un fluide de classe A peut vous asphyxier en chassant l'oxygène d'un local, ou se décomposer en gaz toxiques au contact d'une flamme. La frontière entre A et B se fixe sur une <b>valeur limite d'exposition</b> définie par la norme : la lettre parle donc de la toxicité <b>propre</b> du produit, pas de tous les dangers qu'il présente.",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "point",
+       "html": "<b>Le chiffre dit l'inflammabilité.</b> <b>1</b> = le fluide ne propage pas de flamme. <b>2L</b> = faiblement inflammable, la flamme se propage lentement. <b>2</b> = inflammable. <b>3</b> = très inflammable. Le « L » de 2L vient de l'anglais <i>lower</i> : c'est une sous-catégorie du 2, créée pour distinguer les fluides dont la flamme se propage assez lentement pour changer les mesures de prévention.",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "point",
+       "html": "<b>Pourquoi deux axes et non un seul ?</b> Parce qu'un fluide peut être dangereux d'une manière sans l'être de l'autre, et que les protections ne sont pas les mêmes. Contre la toxicité, on ventile et on protège les voies respiratoires. Contre l'inflammabilité, on supprime les sources d'étincelle et on limite la quantité de fluide présente. Un fluide qui cumule les deux — l'ammoniac, classé B2L — exige les deux dispositifs à la fois. Un classement en une seule note ne permettrait pas de savoir <b>lequel</b> mettre en place.",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "point",
+       "html": "<b>La matrice complète.</b> Deux axes croisés donnent huit cases :",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce que la classe commande.</b> C'est là qu'est l'enjeu réel : la classe n'est pas une étiquette, c'est ce qui détermine tout le dispositif de sécurité autour de l'installation.",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "point",
+       "html": "Se tromper de classe, ce n'est donc pas se tromper d'étiquette : c'est se tromper de <b>tout le dispositif de sécurité</b> — installer du matériel électrique inadapté, sous-dimensionner une ventilation, choisir un détecteur qui ne verra rien, ou charger un local au-delà de ce qu'il admet.",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "point",
+       "html": "<b>Le piège à ne jamais commettre.</b> Le <b>R-290 est de classe A3</b>, pas A2L. C'est du propane : un hydrocarbure, très inflammable. La confusion avec les A2L est fréquente, y compris dans des documents mal rédigés, et elle conduit à appliquer des précautions insuffisantes. Un repère simple et fiable : si le fluide est un <b>hydrocarbure</b> (propane, isobutane, propylène), il est <b>A3</b>. Les A2L sont des HFC comme le R-32, ou des HFO comme le R-1234yf.",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "point",
+       "html": "<b>Où lire la classe.</b> Jamais de mémoire, et jamais par déduction à partir du nom commercial : la classe de sécurité figure sur la <b>fiche de données de sécurité (FDS)</b> du fluide, que le fournisseur doit vous remettre. Les valeurs qui en découlent — charges limites selon le local, seuils de détection — se lisent dans la <b>NF EN 378</b> et dans la documentation du constructeur. Savoir aller les chercher est une compétence en soi ; les réciter de tête est une source d'accident.",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li><b>A1</b> — toxicité faible, non inflammable : R-134a, R-404A, R-410A, et le CO₂ (R-744).</li><li><b>A2L</b> — toxicité faible, faiblement inflammable : R-32, R-1234yf.</li><li><b>A2</b> — toxicité faible, inflammable : R-152a.</li><li><b>A3</b> — toxicité faible, <b>très inflammable</b> : R-290 (propane), R-600a (isobutane).</li><li><b>B1</b> — toxicité plus élevée, non inflammable : R-123, que l'on ne rencontre plus dans les installations neuves.</li><li><b>B2L</b> — toxicité plus élevée, faiblement inflammable : R-717, l'ammoniac.</li><li><b>B2</b> et <b>B3</b> — toxicité plus élevée, inflammable ou très inflammable. Ces deux cases existent dans la norme, mais aucun fluide courant du parc français ne s'y trouve. Retenez la logique de la case, pas un exemple.</li></ul>",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li>les <b>EPI</b> à porter pour intervenir ;</li><li>le <b>matériel électrique</b> admis dans le local, et la suppression des sources d'étincelle pour les fluides inflammables ;</li><li>la <b>ventilation</b> exigée, permanente ou de secours ;</li><li>la <b>détection</b> : le type de détecteur et son seuil d'alarme ne sont pas les mêmes selon qu'on surveille un gaz inflammable ou un gaz toxique ;</li><li>la <b>charge maximale</b> de fluide admise, selon le volume du local, son usage et l'endroit où se trouve l'installation ;</li><li>les <b>conditions d'occupation</b> du local : qui peut y entrer, et à quelles conditions.</li></ul>",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li>La <b>lettre</b> dit la toxicité : A faible, B plus élevée. « A » ne veut pas dire inoffensif.</li><li>Le <b>chiffre</b> dit l'inflammabilité : 1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable.</li><li>Huit cases au total : A1 · A2L · A2 · A3 · B1 · B2L · B2 · B3.</li><li>La classe <b>commande</b> les EPI, le matériel électrique, la ventilation, la détection, la charge maximale et l'occupation du local.</li><li><b>R-290 = A3</b>, jamais A2L. Tout hydrocarbure est A3.</li><li>La classe se lit sur la <b>FDS</b> ; les valeurs associées, dans la NF EN 378.</li></ul>",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Intervenir sur une installation, ou choisir un matériel, <b>sans avoir vérifié la classe du fluide sur sa FDS</b> — en la supposant d'après le nom du fluide ou d'après l'installation précédente.</p><p>Conséquence : un fluide A3 traité comme un A2L, c'est un local ventilé trop faiblement, un matériel électrique qui peut produire une étincelle, un détecteur inadapté et une charge excessive. L'atmosphère devient explosive sans que rien ne l'ait signalé.</p>",
+       "titre": "Lire une classe — deux lettres, deux dangers"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl1-1",
+       "dc": "Classification",
+       "code": "1.08",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans une classe de sécurité comme A2L, que disent respectivement la lettre et le chiffre ?",
+       "choix": [
+        "La lettre dit le PRP, le chiffre dit la pression de service",
+        "La lettre dit la toxicité, le chiffre dit l'inflammabilité",
+        "La lettre dit la famille chimique, le chiffre dit l'année de mise sur le marché",
+        "La lettre dit l'inflammabilité, le chiffre dit la toxicité"
+       ],
+       "bonne": 1,
+       "aide": "Deux dangers différents, deux protections différentes : c'est pour cela qu'il faut deux informations.",
+       "remed": {
+        "regle": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
+        "pourquoi": "Un fluide peut être dangereux d'une manière sans l'être de l'autre, et les mesures de prévention ne sont pas les mêmes : on ventile contre la toxicité, on supprime les sources d'étincelle contre l'inflammabilité. Une note unique ne dirait pas laquelle appliquer.",
+        "piege": "« A » ne veut pas dire inoffensif : un fluide de classe A peut asphyxier en chassant l'oxygène du local, ou se décomposer en gaz toxiques au contact d'une flamme."
+       },
+       "remediation_vers": "cl1",
+       "explication": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "D",
+        "E"
+       ]
+      },
+      {
+       "id": "pk-cl3-1",
+       "dc": "Classification",
+       "code": "11.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+       "choix": [
+        "Près du plafond, car les gaz montent toujours",
+        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+        "Il se répartit uniformément et sans danger dans tout le volume",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+       ],
+       "bonne": 1,
+       "aide": "Comparez sa masse à celle de l'air.",
+       "remed": {
+        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
+        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+       },
+       "remediation_vers": "cl3",
+       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g11-54",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le R290 (propane) est classé :",
+       "choix": [
+        "A1",
+        "A2L",
+        "A2",
+        "A3"
+       ],
+       "bonne": 3,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Construire la matrice AU TABLEAU avec le groupe, axe par axe, avant de la montrer complète : d'abord la lettre seule (A/B) avec deux exemples, puis le chiffre seul (1/2L/2/3), et seulement ensuite le croisement. La classification est un système à comprendre, pas une liste à retenir — un groupe qui a construit les deux axes retrouve n'importe quelle case sans l'avoir apprise. Faire ouvrir une vraie FDS et y faire chercher la classe : c'est le geste évalué dans la vie professionnelle, pas à l'examen. Insister sur les cases B2 et B3 laissées sans exemple : c'est volontaire, on n'invente pas un fluide pour remplir une case. Le piège R-290 = A3 se pose en question ouverte au groupe AVANT de donner la réponse — la confusion avec A2L est fréquente et il vaut mieux qu'elle sorte en salle qu'en chantier. ⚠ Cette fiche couvre le code 1.08, qui est ÉVALUABLE au QCM : le dire, cela change l'attention du groupe."
+    },
+    {
+     "type": "cours",
+     "fiche": "cl2",
+     "titre": "Explosif avant d'être perceptible — la LIE",
+     "minutes": 25,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Explosif avant d'être perceptible — la LIE",
+       "dc": "Classification · codes 12.02 · 12.04",
+       "competences": [
+        {
+         "code": "12.02",
+         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, détection des fuites, ventilation, équipements de protection individuelle.",
+         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "12.04",
+         "lib": "Réaliser une analyse des risques avant de commencer le travail, et supprimer ou identifier les sources de danger.",
+         "officiel": "Réaliser une analyse des risques avant le début du travail et éliminer ou, si l'élimination n'est pas possible, identifier les sources de danger",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui arrive.</b> Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz — une étincelle ne déclenche rien. Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. <b>Entre les deux</b>, le mélange s'enflamme, et il le fait d'un coup, dans tout le volume.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "Ces deux bornes portent un nom. La <b>LIE</b> — limite inférieure d'explosivité — est la concentration en dessous de laquelle le mélange ne s'enflamme pas. La <b>LSE</b> — limite supérieure d'explosivité — est celle au-dessus de laquelle il ne s'enflamme plus non plus. L'intervalle entre les deux s'appelle le <b>domaine d'explosivité</b>. Chaque gaz a le sien : les valeurs sont propres au fluide et figurent sur sa <b>fiche de données de sécurité</b>. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui rend ce danger particulier</b>, c'est qu'il n'y a pas de signal. Une atmosphère peut atteindre son domaine d'explosivité sans odeur, sans bruit, sans rien de visible. Le gaz domestique que l'on sent dans une cuisine contient un <b>odorisant ajouté volontairement</b> pour être détecté par le nez. Le <b>R-290 utilisé en froid est un propane de haute pureté : cet odorisant n'y est pas</b>. Le nez ne vous avertira pas. Et le seuil de perception d'une odeur, quand elle existe, n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "<b>L'appareil qui répond à cette question</b> s'appelle un <b>explosimètre</b>. Il ne mesure pas une quantité de gaz dans l'absolu : il affiche <b>un pourcentage de la LIE</b> du gaz recherché. Une valeur de 10 % LIE signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable. C'est une mesure de <b>marge restante</b>, et c'est ce qui la rend utilisable : l'alarme se déclenche bien avant que le mélange ne devienne explosif. Le seuil de réglage se fixe selon la procédure de l'entreprise et la documentation de l'appareil.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "Un explosimètre se règle pour un gaz donné : un appareil réglé pour un gaz et utilisé pour un autre affiche un chiffre faux. Et il ne remplace ni un détecteur de fuite de fluide frigorigène, ni un détecteur d'oxygène : ce sont trois appareils différents, qui répondent à trois questions différentes.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "<b>Comment ça arrive vraiment.</b> Une petite fuite sur une unité au R-290, dans un local technique fermé et peu ventilé. Rien ne se voit, rien ne se sent. Le gaz, plus lourd que l'air, s'accumule lentement près du sol. Un technicien entre, actionne l'interrupteur d'éclairage, branche une lampe baladeuse, ou pose un outil électroportatif sur le sol. L'étincelle du contact suffit. Il n'y avait aucun signe avant-coureur, et l'inflammation ne laisse pas le temps de reculer.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "<b>ATEX</b> — le mot vient de « <b>AT</b>mosphère <b>EX</b>plosive ». Lorsqu'un local peut contenir une atmosphère explosive, il fait l'objet d'un <b>zonage</b> : on délimite les zones où ce risque existe, et on n'y admet que du matériel conçu pour ne pas enflammer l'atmosphère — ni par une <b>étincelle</b>, ni par une <b>surface trop chaude</b>, car une surface chaude suffit à allumer un mélange sans la moindre flamme. Cela vaut aussi pour ce que le technicien apporte avec lui — outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir <b>reconnaître</b> qu'il entre dans une telle zone et respecter ce qui y est affiché.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li>Un gaz inflammable ne brûle qu'entre deux bornes : <b>LIE</b> (limite inférieure) et <b>LSE</b> (limite supérieure). Entre les deux, une étincelle suffit.</li><li>Les valeurs sont <b>propres à chaque fluide</b> et se lisent sur sa FDS.</li><li>Un <b>explosimètre</b> affiche un pourcentage de la LIE : une marge restante, pas une quantité.</li><li>Il se règle <b>pour un gaz donné</b>, et ne remplace ni un détecteur de fuite, ni un détecteur d'oxygène.</li><li>Le <b>R-290 du froid n'est pas odorisé</b> : le nez n'avertit de rien.</li><li><b>ATEX</b> : dans une zone à atmosphère explosive, seul le matériel <b>prévu pour ces zones</b> peut entrer — y compris celui qu'on apporte. Il est contraint sur l'étincelle <b>et</b> sur sa température de surface.</li></ul>",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Entrer dans un local où une fuite de fluide inflammable est possible et y <b>actionner un interrupteur, brancher une lampe ou utiliser un outil électroportatif</b>, sans avoir contrôlé l'atmosphère à l'explosimètre.</p><p>Se fier à son odorat en est la variante la plus courante : le R-290 utilisé en froid ne contient pas l'odorisant du gaz domestique, et aucune odeur ne renseigne sur la distance à la LIE.</p><p>Conséquence : inflammation de tout le volume, sans aucun signe avant-coureur.</p>",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl2-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
+       "choix": [
+        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+        "La température minimale d'inflammation du gaz",
+        "La pression maximale admissible dans la bouteille",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+       ],
+       "bonne": 0,
+       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
+       "remed": {
+        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
+        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
+       },
+       "remediation_vers": "cl2",
+       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-cl4-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+       "choix": [
+        "Au plafond, comme un détecteur de fumée",
+        "En partie basse, là où le CO₂ s'accumule",
+        "À l'extérieur du local uniquement",
+        "Peu importe, le gaz se répartit uniformément"
+       ],
+       "bonne": 1,
+       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+       "remed": {
+        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+       },
+       "remediation_vers": "cl4",
+       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-p7-1",
+       "dc": "G12",
+       "code": "12.04",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "À quel moment réalise-t-on l'analyse de risques d'une intervention ?",
+       "choix": [
+        "Avant d'engager le moindre geste technique",
+        "Après avoir ouvert le circuit",
+        "À la fin, au moment de rédiger le rapport",
+        "Seulement si le client le demande"
+       ],
+       "bonne": 0,
+       "aide": "Une analyse de risques sert à éviter l'accident, pas à le raconter.",
+       "remed": {
+        "regle": "L'analyse de risques se fait AVANT le premier geste, sur place.",
+        "pourquoi": "Elle sert à identifier et à supprimer les dangers tant qu'on peut encore agir : source d'inflammation, ventilation, issue, présence de public.",
+        "piege": "Une analyse faite après coup n'est plus une analyse, c'est un constat. La sécurité se démontre et s'impose : on ne découvre jamais un risque par l'erreur."
+       },
+       "remediation_vers": "p7",
+       "explication": "L'analyse de risques se fait AVANT le premier geste, sur place.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Dessiner l'axe des concentrations au tableau : trop pauvre / domaine d'explosivité / trop riche, et placer LIE et LSE dessus. C'est ce dessin que les stagiaires retiennent, pas la définition. Ne donner AUCUNE valeur chiffrée de LIE, même si on la connaît : faire ouvrir la FDS du R-290 et l'y faire lire — c'est l'objectif de la fiche. Montrer un explosimètre si le plateau en dispose, faire lire l'unité affichée (% LIE) et faire dire à quoi correspond le chiffre. Faire comparer côte à côte les trois appareils (explosimètre, détecteur de fuite, détecteur d'oxygène) : la confusion entre eux est fréquente et dangereuse. Le point sur l'odorisant absent du R-290 mérite d'être posé en question ouverte : « le propane, ça se sent, non ? » — la réponse surprend et se retient."
+    },
+    {
+     "type": "cours",
+     "fiche": "cl3",
+     "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend",
+     "minutes": 35,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend",
+       "dc": "Classification · code 11.03",
+       "competences": [
+        {
+         "code": "11.03",
+         "lib": "Connaître les règles de sécurité applicables aux fluides toxiques, inflammables ou nécessitant une pression de fonctionnement plus élevée.",
+         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui arrive.</b> Le CO₂ — le R-744 — est classé <b>A1</b> : toxicité faible, non inflammable, PRP de 1. C'est la case la plus rassurante de toute la matrice. Et c'est exactement ce qui le rend dangereux : <b>sa classe n'annonce aucun des deux risques qui tuent réellement sur ces installations</b> — la <b>pression</b>, et l'<b>anoxie</b>. Qui retient « CO₂ = A1 = tranquille » a retenu quelque chose de faux.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "point",
+       "html": "Ce fluide entre aujourd'hui dans le parc : froid commercial, supermarchés, chambres froides. Vous en rencontrerez. Ce n'est plus un sujet de culture générale.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "point",
+       "html": "<b>Premier danger : la pression.</b> Une installation au CO₂ travaille à des pressions <b>bien plus élevées</b> que celles des fluides que vous connaissez — sans commune mesure. Cela change tout le matériel : manifold, flexibles, vannes, tout doit être <b>dédié au CO₂</b>. Brancher un manifold ordinaire sur une installation au CO₂, c'est le faire éclater dans les mains. Les valeurs exactes dépendent du point de fonctionnement et se lisent dans la <b>documentation constructeur</b> ; ce qu'il faut retenir sans aucun chiffre, c'est qu'<b>aucun réflexe acquis sur un R-134a ou un R-410A ne se transpose ici</b>.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "point",
+       "html": "Cette pression garde son danger <b>machine à l'arrêt</b>. Une installation au CO₂ arrêtée continue de monter en pression si elle se réchauffe : c'est pour cela qu'elle possède des dispositifs de sécurité qui lui sont propres. Une installation au CO₂ laissée sans surveillance après une coupure n'est pas une installation au repos.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "point",
+       "html": "À la détente à l'air libre, le CO₂ peut passer directement à l'état solide : c'est la <b>glace carbonique</b> (ou neige carbonique). Double conséquence — une <b>brûlure par le froid</b> au contact de la peau, et un <b>bouchon solide</b> qui obstrue une vanne ou une tuyauterie. Et ce bouchon finit par fondre : le gaz qu'il libère alimente alors le second danger.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "point",
+       "html": "<b>Second danger : l'air qu'il vous prend.</b> Le mot <b>anoxie</b> désigne le manque d'oxygène dans l'organisme. Vous avez rencontré ce danger dans la fiche « L'air qui manque » : un gaz prend la place de l'air respirable. Le CO₂ fait cela — <b>mais il ne fait pas que cela</b>, et c'est toute la différence.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "point",
+       "html": "<b>Deux mécanismes, pas un seul.</b> L'azote agit uniquement par <b>déplacement</b> : il est inerte, il prend la place de l'oxygène sans réagir avec l'organisme. Le CO₂, lui, agit <b>en plus par lui-même</b> : il n'est pas inerte, il intervient dans la régulation de la respiration et devient nocif à des concentrations où l'oxygène restant serait encore suffisant. Autrement dit, le CO₂ peut vous mettre en danger <b>avant</b> d'avoir chassé assez d'oxygène pour qu'un contrôle du seul taux d'oxygène s'en alarme. C'est pourquoi, sur une installation au CO₂, <b>un détecteur d'oxygène seul ne suffit pas</b> : il faut une mesure du CO₂ lui-même.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "point",
+       "html": "N'en concluez pas que les fluides fluorés sont inoffensifs : à forte concentration, ils agissent eux aussi sur l'organisme — effet sur le rythme du cœur, effet endormant. Leur fiche de données de sécurité le mentionne. « A » n'a jamais voulu dire inoffensif.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce que vous ressentirez — et pourquoi c'est déjà tard.</b> Contrairement à l'azote, qui ne prévient pas du tout, le CO₂ <b>donne des signes</b> : souffle court puis <b>essoufflement violent</b>, <b>maux de tête</b>, <b>vertiges</b>, bourdonnements, sueurs. La raison est celle vue en fiche « L'air qui manque » : c'est l'excès de gaz carbonique dans le sang qui commande l'envie de respirer. Ces signes sont votre <b>seule chance</b> — mais ils arrivent alors que vous êtes <b>déjà dans la nappe</b>, et à forte concentration la perte de connaissance suit en quelques instants. D'où une règle simple : <b>essoufflement brutal ou mal de tête soudain dans un local technique, vous ressortez immédiatement</b>. On ne cherche pas à comprendre sur place, on ne finit pas le geste en cours.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "point",
+       "html": "<b>Pourquoi on entre sans le savoir.</b> Le CO₂ est <b>incolore</b>, <b>inodore</b>, et <b>plus lourd que l'air</b>. Il ne monte pas : il s'écoule et <b>s'accumule dans les points bas</b> — fosse, cave, sous-sol, local en contrebas, bas d'une chambre froide. Une zone peut être parfaitement respirable à hauteur de visage et déjà mortelle au niveau du sol, ou en bas de quelques marches. Descendre, c'est entrer dans la nappe.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "point",
+       "html": "<b>Attention à ne pas généraliser cette règle.</b> « Plus lourd que l'air » vaut pour le CO₂ et pour la plupart des fluides fluorés — mais <b>pas pour l'ammoniac</b> (R-717), plus léger que l'air, qui se comporte à l'inverse : il monte. Le comportement d'un fluide se lit sur sa FDS, il ne se suppose jamais par analogie avec le fluide précédent.",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "point",
+       "html": "<b>Comment ça arrive vraiment.</b> Une installation au CO₂ en local technique enterré, une fuite lente pendant la nuit, porte fermée. Le gaz remplit le volume par le bas. Au matin, un technicien descend relever un paramètre. Rien ne se voit, rien ne se sent. À mi-escalier, il a mal à la tête et le souffle court — il met cela sur le compte de la fatigue et continue, parce qu'il n'en a que pour deux minutes. Il ne remonte pas. Puis vient le second accident, celui qui tue le plus souvent dans cette famille d'accidents : un collègue le voit au sol et descend le chercher, sans protection. La nappe est toujours là. <b>Deux victimes au lieu d'une.</b>",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li>Le CO₂ est <b>A1</b>, et pourtant il tue de <b>deux</b> façons : la <b>pression</b> et l'<b>anoxie</b>. Sa classe n'annonce ni l'une ni l'autre.</li><li>Pressions <b>sans commune mesure</b> avec les fluides courants : matériel <b>dédié au CO₂</b>, jamais un manifold ordinaire.</li><li>Une installation au CO₂ <b>à l'arrêt reste sous pression</b>, et remonte en pression si elle se réchauffe.</li><li>Glace carbonique à la détente : <b>brûlure par le froid</b> et <b>bouchon</b>.</li><li>Le CO₂ <b>déplace</b> l'oxygène <b>et agit par lui-même</b> — l'azote, lui, est inerte. Un <b>détecteur d'oxygène seul ne suffit pas</b>.</li><li><b>Essoufflement brutal, mal de tête, vertiges : on ressort tout de suite.</b> Ces signes arrivent quand on est déjà dans la nappe.</li><li>Incolore, inodore, <b>plus lourd que l'air</b> : il s'accumule en <b>point bas</b>. Pas vrai pour l'ammoniac.</li></ul>",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Descendre dans une fosse, une cave, un sous-sol ou tout local en contrebas abritant une installation au CO₂ après une fuite possible, <b>sans avoir ventilé et mesuré</b>. Et, si un collègue est au sol : <b>descendre le chercher sans protection</b>.</p><p>Conséquence : vous entrez dans la nappe. Les signes que vous ressentirez — souffle coupé, mal de tête — arriveront trop tard pour remonter un escalier, et le sauveteur improvisé devient la seconde victime. C'est le scénario le plus fréquent de ces accidents.</p><p>Interdit aussi : brancher du <b>matériel non dédié au CO₂</b> sur une installation au CO₂. Sa pression n'a rien à voir avec ce que vous connaissez.</p>",
+       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl3-1",
+       "dc": "Classification",
+       "code": "11.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+       "choix": [
+        "Près du plafond, car les gaz montent toujours",
+        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+        "Il se répartit uniformément et sans danger dans tout le volume",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+       ],
+       "bonne": 1,
+       "aide": "Comparez sa masse à celle de l'air.",
+       "remed": {
+        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
+        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+       },
+       "remediation_vers": "cl3",
+       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g11-54",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le R290 (propane) est classé :",
+       "choix": [
+        "A1",
+        "A2L",
+        "A2",
+        "A3"
+       ],
+       "bonne": 3,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g11-v6_033",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Un fluide classé A2L est :",
+       "choix": [
+        "Non inflammable, non toxique",
+        "Légèrement inflammable, faible toxicité",
+        "Très inflammable, faible toxicité",
+        "Légèrement inflammable, toxicité élevée"
+       ],
+       "bonne": 1,
+       "explication": "Légèrement inflammable, faible toxicité — A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf.",
+       "aide": "A = toxicité, le chiffre = inflammabilité. L = lower (plus faible).",
+       "remed": {
+        "texte": "A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf."
+       },
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Fiche la plus importante du module : le CO₂ entre dans le parc et il tue de deux façons que sa classe A1 n'annonce pas. Prendre le temps, quitte à raccourcir ailleurs. Faire le lien explicite avec « L'air qui manque » (s1) : même famille de danger, mais un mécanisme de PLUS, et surtout des SIGNES que l'azote ne donne pas. Poser la question au groupe : « l'azote et le CO₂, même danger ? » — la réponse (déplacement seul contre déplacement + action propre) est le cœur de la fiche. NE JAMAIS enseigner que le CO₂ endort sans prévenir : c'est faux, et cela supprimerait le seul signal d'auto-sauvetage du stagiaire. Faire répéter la règle de sortie à voix haute : essoufflement ou mal de tête soudain = je sors. Matérialiser le point bas : montrer le sol du local, faire dire où va le gaz, faire remarquer qu'une fenêtre en hauteur ne le chasse pas. Rappeler l'exception ammoniac chaque fois que « plus lourd que l'air » est prononcé. Le double accident se raconte, il ne se résume pas. Sur la pression : montrer un manifold ordinaire et dire franchement ce qui arrive si on le branche sur du CO₂. Aucune valeur chiffrée en salle : faire ouvrir la FDS du R-744 et la documentation constructeur."
+    },
+    {
+     "type": "cours",
+     "fiche": "cl4",
+     "titre": "Se protéger du CO₂ — détection, EPC et EPI",
+     "minutes": 30,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI",
+       "dc": "Classification · codes 12.02 · 13.14",
+       "competences": [
+        {
+         "code": "12.02",
+         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, détection des fuites, ventilation, équipements de protection individuelle.",
+         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "13.14",
+         "lib": "Vérifier la sécurité du site : signalisation, issues de secours, capteurs et alarmes gaz.",
+         "officiel": "Vérifier que les mesures de santé et de sécurité conformes aux règles applicables sont appliquées à l'emplacement du système (par exemple, panneaux de signalisation, issues de secours, capteurs de gaz, alarmes au gaz, etc.)",
+         "epreuve": {},
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui protège, dans l'ordre.</b> La règle générale de la prévention est la même partout : on protège <b>d'abord le collectif</b>, ensuite l'individu. Un équipement de <b>protection collective</b> (EPC) protège tout le monde dans le local, en permanence, sans que personne ait à y penser. Un équipement de <b>protection individuelle</b> (EPI) ne protège que celui qui le porte, et seulement s'il le porte correctement. L'EPI ne remplace jamais l'EPC : il vient <b>après</b>, pour ce que l'EPC ne couvre pas.",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      },
+      {
+       "type": "point",
+       "html": "<b>La détection : ce n'est pas une option.</b> Dans un local abritant une installation au CO₂, la <b>détection de gaz est exigée</b> dès que la norme l'impose — selon la charge et le type de local — et c'est l'EPC principal. Sa présence et son état se vérifient à l'arrivée : si elle manque là où elle devrait être, c'est un signalement à faire, pas un détail. Le détecteur est <b>fixe, à poste</b> : il mesure en permanence, y compris la nuit et quand personne n'est là, et c'est précisément ce qui manque à un appareil portatif resté dans le camion. On le place <b>en partie basse</b>, là où le CO₂ s'accumule : un capteur au plafond ne verra rien.",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      },
+      {
+       "type": "point",
+       "html": "Il est associé à des <b>alarmes</b> sonores et visuelles, à l'intérieur <b>et à l'extérieur</b> du local. Celle de l'extérieur a une fonction précise : vous prévenir <b>avant d'ouvrir la porte</b>, et empêcher un sauveteur d'entrer sans savoir. Le déclenchement peut aussi commander la <b>ventilation</b> et l'arrêt de l'installation. Un dispositif complet comporte en général deux niveaux : une <b>préalarme</b>, qui avertit, et une <b>alarme d'évacuation</b>, qui ordonne de sortir.",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      },
+      {
+       "type": "point",
+       "html": "<b>Le ppm : savoir lire ce que l'appareil affiche.</b> Un détecteur de CO₂ n'affiche ni des grammes ni des bars, mais des <b>ppm</b> — « parties par million ». Un ppm, c'est <b>une part de gaz pour un million de parts d'air</b> : autrement dit, un centimètre cube de CO₂ dans un mètre cube d'air. C'est une unité faite pour de <b>petites proportions</b>, celles qu'un pourcentage exprimerait mal.",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      },
+      {
+       "type": "point",
+       "html": "Pour situer l'échelle : l'air extérieur que vous respirez contient <b>naturellement</b> du CO₂, de l'ordre de quelques centaines de ppm. Un affichage qui n'est pas à zéro ne signifie donc pas « il y a une fuite ». Ce qui compte, c'est l'<b>écart</b> avec l'ambiance normale et le <b>franchissement des seuils réglés</b> sur l'appareil. Ces seuils de préalarme et d'évacuation sont fixés par la <b>réglementation du travail</b> et par la norme applicable au site ; ils figurent dans la documentation de l'appareil et sont rappelés sur la <b>FDS</b> du fluide. <b>Ne les apprenez pas par cœur d'un site à l'autre</b> : vérifiez-les sur l'installation où vous êtes. Votre formateur vous donnera ceux qui s'appliquent aux machines de l'atelier.",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      },
+      {
+       "type": "point",
+       "html": "<b>Un détecteur ne vaut que s'il fonctionne.</b> Un capteur de gaz se <b>vérifie</b> et se <b>remplace</b> périodiquement, selon la documentation du fabricant : une cellule vieillit et finit par ne plus rien mesurer tout en restant allumée. À l'arrivée sur site, on contrôle donc que les capteurs et les alarmes sont <b>en état de marche</b>, et pas seulement présents au mur — exactement comme on contrôle un VAT avant de s'en servir.",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      },
+      {
+       "type": "point",
+       "html": "<b>Le reste du dispositif collectif.</b> La <b>signalisation</b> à l'entrée du local doit être visible et à jour : elle prévient celui qui entre de ce qui l'attend. Les <b>issues de secours</b> doivent rester dégagées — une palette posée devant une porte de chambre froide n'est pas un défaut de rangement, c'est une issue en moins. La <b>ventilation</b> doit être adaptée au fait que le gaz est en bas. Ces trois points se contrôlent en arrivant, avant de commencer.",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      },
+      {
+       "type": "point",
+       "html": "<b>Les EPI, et surtout leurs limites.</b> Contre le froid du CO₂ et la glace carbonique : <b>gants</b> adaptés au froid et <b>lunettes ou écran facial</b>, mis <b>avant</b> l'intervention et non une fois le geste commencé. Contre la pression : rester hors de la trajectoire d'un jet, et ne jamais desserrer un raccord sans avoir vérifié la pression au manomètre.",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      },
+      {
+       "type": "point",
+       "html": "Et un point que l'on ne peut pas se permettre d'ignorer : <b>un masque à cartouche ne protège pas contre le CO₂, ni contre le manque d'oxygène</b>. Une cartouche filtre certains polluants dans un air qui reste respirable ; elle ne fabrique pas d'oxygène et ne retient pas le CO₂. En atmosphère appauvrie ou chargée en CO₂, seul un appareil <b>isolant</b>, qui apporte son propre air, protège — un matériel dont l'usage relève d'équipes formées et entraînées pour cela, pas d'une improvisation de dépannage. <b>Pour vous, la protection n'est pas de porter un masque : c'est de ne pas entrer.</b>",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      },
+      {
+       "type": "point",
+       "html": "<b>Devant une personne au sol.</b> On alerte, on ventile, on fait intervenir les secours — <b>on ne descend pas</b>. Retenir sa respiration ne protège de rien : on ne tient que quelques dizaines de secondes, et le réflexe respiratoire finit toujours par l'emporter, au fond de la fosse.",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li><b>EPC d'abord, EPI ensuite</b> : le collectif protège tout le monde en permanence, l'individuel ne protège que celui qui le porte.</li><li><b>Détection de gaz obligatoire</b> en local CO₂, par capteur <b>fixe</b>, placé <b>en partie basse</b>.</li><li>Alarmes sonores et visuelles <b>dedans et dehors</b> — celle de dehors prévient avant d'ouvrir la porte. Deux niveaux : préalarme, puis évacuation.</li><li>Le détecteur affiche des <b>ppm</b> : une part pour un million. L'air normal en contient déjà.</li><li>Les <b>seuils</b> se lisent sur l'appareil, sa documentation et la FDS — <b>jamais de mémoire d'un site à l'autre</b>.</li><li>Un capteur se <b>vérifie et se remplace</b> : une cellule morte reste allumée.</li><li>Signalisation à jour, <b>issues de secours dégagées</b>, ventilation adaptée : contrôlées en arrivant.</li><li><b>Un masque à cartouche ne protège ni du CO₂, ni du manque d'oxygène.</b> La vraie protection, c'est de ne pas entrer.</li><li>Et les règles qui ne changent jamais : <b>ventiler et mesurer avant d'entrer</b>, <b>jamais seul</b>, et devant une personne au sol : alerter, ventiler, <b>ne pas descendre</b>.</li></ul>",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Entrer dans un local CO₂ en se croyant protégé par un <b>masque à cartouche</b>, ou entrer alors que l'alarme extérieure est déclenchée.</p><p>Interdit aussi : considérer un détecteur comme fiable <b>parce que son voyant est allumé</b>. Une cellule usée continue de s'allumer sans plus rien mesurer : elle se vérifie et se remplace selon la documentation du fabricant.</p><p>Conséquence : on entre dans une atmosphère mortelle avec la certitude d'être protégé. C'est la configuration où l'on ne ressort pas.</p>",
+       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl2-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
+       "choix": [
+        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+        "La température minimale d'inflammation du gaz",
+        "La pression maximale admissible dans la bouteille",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+       ],
+       "bonne": 0,
+       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
+       "remed": {
+        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
+        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
+       },
+       "remediation_vers": "cl2",
+       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-cl4-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+       "choix": [
+        "Au plafond, comme un détecteur de fumée",
+        "En partie basse, là où le CO₂ s'accumule",
+        "À l'extérieur du local uniquement",
+        "Peu importe, le gaz se répartit uniformément"
+       ],
+       "bonne": 1,
+       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+       "remed": {
+        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+       },
+       "remediation_vers": "cl4",
+       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g12-v6_093",
+       "dc": "G12",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Les fluides A2L comme le R32 nécessitent :",
+       "choix": [
+        "Aucune précaution particulière",
+        "Un outillage adapté et une formation spécifique",
+        "Un local ATEX systématique",
+        "Un détecteur d'ammoniac"
+       ],
+       "bonne": 1,
+       "explication": "Outillage adapté et formation spécifique — Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante.",
+       "aide": "'Légèrement inflammable' ne veut pas dire 'sans risque'.",
+       "remed": {
+        "texte": "Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante."
+       },
+       "remediation_vers": "g12",
+       "code": "12.02",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "⚠ VALEURS À FIGER PAR LE FORMATEUR avant la première session : les seuils de préalarme et d'évacuation des détecteurs CO₂ du plateau, la périodicité de vérification et de remplacement des cellules, et le type de détecteur utilisé. La fiche enseigne délibérément la NOTION de ppm et la LECTURE de l'appareil, sans aucun seuil chiffré : une fois écrits, ces nombres engagent l'organisme (cf. REPRISE, « les valeurs terrain »). Les donner à l'oral, sur le matériel réel. Montrer un détecteur fixe et un détecteur portatif côte à côte, faire dire la différence (permanence contre ponctualité). Faire chercher au groupe où placer le capteur dans le local — la réponse « en bas » doit venir d'eux, elle découle de la fiche précédente. Faire manipuler l'affichage en ppm et faire lire la valeur d'ambiance. Le point sur le masque à cartouche est le plus important de la fiche et le plus contre-intuitif : beaucoup d'adultes croient qu'un masque protège de tout. Le poser en question ouverte AVANT de répondre. Insister sur l'ordre EPC puis EPI : c'est un principe général de prévention, pas une préférence. Si le plateau dispose d'une installation au CO₂, y faire le tour de la signalisation, des issues et des capteurs en conditions réelles."
+    }
+   ]
+  },
+  {
    "n": 1,
    "libelle": null,
    "titre": "Pourquoi ce métier est réglementé, et de quoi on parle",
    "intention": "Poser le cadre et le vocabulaire. À la fin de la journée, le stagiaire sait ce que la loi lui impose, pourquoi elle l'impose, comment se nomment les fluides et comment fonctionne une machine frigorifique.",
    "sequences": [
+    {
+     "type": "cours",
+     "fiche": "s1",
+     "titre": "L'air qui manque — l'asphyxie",
+     "minutes": 30,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "L'air qui manque — l'asphyxie",
+       "dc": "Sécurité · codes 12.02 · 12.13",
+       "competences": [
+        {
+         "code": "12.02",
+         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, ventilation, EPI.",
+         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "12.13",
+         "lib": "Vérifier la sécurité du site : signalisation, issues de secours, détecteurs et alarmes gaz.",
+         "officiel": "Vérifier que les mesures de santé et de sécurité conformes aux règles applicables sont appliquées à l'emplacement du système (par exemple, panneaux de signalisation, issues de secours, capteurs de gaz, alarmes au gaz, etc.)",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "Respirer, c'est faire entrer de l'oxygène dans le corps. Un local fermé peut se remplir d'un autre gaz : de l'azote utilisé pour mettre un circuit en pression, ou du fluide frigorigène qui a fui. Ce gaz prend la place de l'oxygène dans l'air. C'est une <b>asphyxie par manque d'oxygène</b> : vous ne respirez plus assez d'oxygène, non pas parce qu'un produit vous empoisonne, mais parce qu'il a chassé l'air respirable.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "point",
+       "html": "Face à l'<b>azote</b> et aux <b>fluides fluorés</b>, le corps ne donne <b>aucune alerte</b>. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez donc pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "point",
+       "html": "<b>Une exception importante : le CO₂ (R-744).</b> Lui vous <b>prévient</b> — essoufflement, mal de tête, vertiges — parce qu'il agit sur la commande de la respiration. C'est une chance, mais tardive : ces signes n'arrivent qu'une fois dans le gaz. Et pour la même raison, un détecteur d'oxygène seul ne suffit pas à le surveiller. Ce fluide a sa fiche : « CO₂ : deux dangers mortels ».",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce danger n'a pas de code dans le référentiel d'examen.</b> Vous ne serez pas interrogé dessus à l'épreuve. Il peut pourtant vous tuer. C'est pour cela qu'il est dans ce module.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "point",
+       "html": "Vous entrez seul dans un local technique fermé, une chambre froide, ou une fosse, pour chercher une fuite ou reprendre du matériel après une mise en pression à l'azote. La porte est restée fermée depuis un moment. Vous ne sentez rien d'anormal. Vous perdez connaissance sans signe avant-coureur. Un collègue vous voit au sol et se précipite pour vous porter secours, sans se protéger ni ventiler : il respire le même air appauvri, et s'effondre à son tour. C'est le scénario le plus fréquent de ce type d'accident : <b>deux victimes au lieu d'une</b>.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ol><li><b>Ventilez</b> le local avant d'entrer : ouvrez, aérez, laissez l'air circuler.</li><li><b>Contrôlez l'air</b> avec un détecteur d'oxygène avant d'entrer — pas seulement un détecteur de fuite de fluide, ce n'est pas le même appareil. Le seuil d'alerte se règle selon la FDS (fiche de données de sécurité) du fluide concerné. <b>Devant une installation au CO₂, un détecteur d'oxygène ne suffit pas</b> : il faut mesurer le CO₂ lui-même.</li><li><b>N'entrez jamais seul</b> dans un espace clos suspect : prévenez quelqu'un, travaillez à deux.</li><li>Si un collègue est au sol dans un espace clos : <b>ne vous précipitez pas sans protection</b>. Donnez l'alerte, ventilez, faites intervenir les secours.</li></ol>",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Entrer seul dans un local fermé, une chambre froide ou une fosse, après une mise en pression à l'azote ou une fuite suspectée, <b>sans ventiler ni contrôler l'air</b>.</p><p>Conséquence : avec l'azote ou un fluide fluoré, perte de connaissance sans signe avant-coureur. Avec le CO₂, des signes arrivent — essoufflement, mal de tête — mais quand vous êtes déjà dans le gaz. Risque mortel dans les deux cas, pour vous et pour quiconque tenterait de vous secourir sans précaution.</p>",
+       "titre": "L'air qui manque — l'asphyxie"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl2-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
+       "choix": [
+        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+        "La température minimale d'inflammation du gaz",
+        "La pression maximale admissible dans la bouteille",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+       ],
+       "bonne": 0,
+       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
+       "remed": {
+        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
+        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
+       },
+       "remediation_vers": "cl2",
+       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-cl4-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+       "choix": [
+        "Au plafond, comme un détecteur de fumée",
+        "En partie basse, là où le CO₂ s'accumule",
+        "À l'extérieur du local uniquement",
+        "Peu importe, le gaz se répartit uniformément"
+       ],
+       "bonne": 1,
+       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+       "remed": {
+        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+       },
+       "remediation_vers": "cl4",
+       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Montrez une bouteille d'azote avec son mano-détendeur : faites remarquer qu'elle ne porte aucun pictogramme « asphyxiant », contrairement à ce que les stagiaires imaginent souvent. Racontez le scénario du double accident (victime puis sauveteur) pour ancrer la règle « jamais seul, jamais sans ventiler ». Si un détecteur d'oxygène est disponible, faites-le manipuler et lire l'affichage ; comparez-le à un détecteur de fuite de fluide pour bien distinguer les deux appareils. Dites clairement à l'oral que ce risque ne sera pas noté à l'épreuve : c'est un risque réel, pas un risque de contrôle."
+    },
     {
      "type": "cours",
      "fiche": "g0",
@@ -1990,12 +2888,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<b>CO₂ (R-744)</b> — classé <b>A1</b> : ni toxique ni inflammable, <b>PRP = 1</b>. Son danger est ailleurs : la <b>pression</b>, très élevée, et le risque de <b>neige carbonique</b> à la détente (brûlure par le froid, obstruction). En transcritique, le condenseur laisse la place à un <b>refroidisseur de gaz</b>. Les cylindres, à double vanne, ne se raccordent pas au matériel courant.",
+       "html": "<b>CO₂ (R-744)</b> — classé <b>A1</b> : toxicité <b>faible</b>, non inflammable, <b>PRP = 1</b>. Cette classe n'annonce aucun de ses vrais dangers : la <b>pression</b>, très élevée, l'<b>atmosphère irrespirable</b> en local fermé (il est plus lourd que l'air, s'accumule en point bas, et agit sur la respiration — voir « CO₂ : deux dangers mortels »), et le risque de <b>neige carbonique</b> à la détente (brûlure par le froid, obstruction). En transcritique, le condenseur laisse la place à un <b>refroidisseur de gaz</b>. Les cylindres, à double vanne, ne se raccordent pas au matériel courant.",
        "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
       },
       {
        "type": "point",
-       "html": "<b>Ammoniac (R-717)</b> — classé <b>B2L</b> : <b>toxique</b> et faiblement inflammable. Fluide du froid industriel (agroalimentaire, entrepôts), jamais du résidentiel. Son odeur piquante alerte bien avant le seuil dangereux. En cas de fuite : <b>alerter, évacuer, ne jamais intervenir seul</b>.",
+       "html": "<b>Ammoniac (R-717)</b> — classé <b>B2L</b> : <b>toxique</b> et faiblement inflammable. Fluide du froid industriel (agroalimentaire, entrepôts), jamais du résidentiel. Son odeur piquante se perçoit très tôt — mais elle <b>ne remplace aucune mesure</b>, et elle s'émousse à forte concentration : on ne se fie jamais à son nez pour décider. En cas de fuite : <b>alerter, évacuer, ne jamais intervenir seul</b>.",
        "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
       },
       {
@@ -2017,7 +2915,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "piege",
        "t": "« A1 » ne veut pas dire « sans danger »",
-       "html": "Le CO₂ est A1 du point de vue toxicité et inflammabilité — cela ne dit rien de la pression, qui est son vrai risque. Et le <b>B</b> de B2L signifie <b>toxique</b> : ne pas relâcher la vigilance sur l'ammoniac sous prétexte que son inflammabilité est faible.",
+       "html": "Le CO₂ est A1 du point de vue toxicité et inflammabilité — cela ne dit rien de ses deux vrais risques : la <b>pression</b>, et l'<b>anoxie</b> en local fermé (voir la fiche « CO₂ : deux dangers mortels »). Et le <b>B</b> de B2L signifie <b>toxique</b> : ne pas relâcher la vigilance sur l'ammoniac sous prétexte que son inflammabilité est faible.",
        "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
       },
       {
@@ -2049,22 +2947,22 @@ window.PILOTE_PROJECTION = {
        "code": "13.01",
        "niveau": 1,
        "type": "qcm",
-       "enonce": "Le CO₂ (R-744) est classé A1. Quel est son principal danger ?",
+       "enonce": "Le CO₂ (R-744) est classé A1. Quels dangers cette classe n'annonce-t-elle pas ?",
        "choix": [
-        "La pression, très élevée dans les installations au CO₂.",
-        "La toxicité, le CO₂ étant dangereux à respirer même à faible dose.",
+        "La pression, très élevée, et l'atmosphère irrespirable qu'une fuite crée en local fermé.",
+        "Aucun : la classe A1 signifie qu'il est sans danger.",
         "L'inflammabilité, car il peut s'enflammer comme un hydrocarbure.",
-        "Aucun danger particulier : la classe A1 signifie qu'il est totalement sans danger."
+        "Uniquement le risque de gel des tuyauteries en fonctionnement normal."
        ],
        "bonne": 0,
        "aide": "A1 renseigne sur deux critères précis. Lesquels ? Et qu'est-ce que cela ne dit pas ?",
        "remed": {
-        "regle": "Le CO₂ est classé A1 (ni toxique ni inflammable), mais son danger principal est la pression, très élevée dans ces installations.",
-        "pourquoi": "La classification A1/A2L/A2/A3/B1/B2L ne décrit que deux risques : la toxicité et l'inflammabilité. Elle ne dit rien sur la pression de service, qui est le point critique du CO₂.",
-        "piege": "Croire que « A1 » veut dire « sans danger ». Ce n'est vrai que pour la toxicité et l'inflammabilité, pas pour la pression."
+        "regle": "Le CO₂ est A1 : toxicité faible, non inflammable. Ses deux dangers réels sont ailleurs — la pression, très élevée, et l'atmosphère irrespirable en local fermé.",
+        "pourquoi": "La classification ne décrit que deux risques : la toxicité et l'inflammabilité. Elle ne dit rien de la pression de service, ni du fait que le CO₂ s'accumule en point bas et agit sur la régulation de la respiration.",
+        "piege": "Croire que « A1 » veut dire « sans danger ». « A » signifie toxicité FAIBLE, pas nulle : à forte concentration le CO₂ devient nocif par lui-même, avant même d'avoir chassé assez d'oxygène pour alarmer un détecteur d'oxygène."
        },
        "remediation_vers": "g13",
-       "explication": "Le CO₂ est classé A1 (ni toxique ni inflammable), mais son danger principal est la pression, très élevée dans ces installations.",
+       "explication": "Le CO₂ est A1 : toxicité faible, non inflammable. Ses deux dangers réels sont ailleurs — la pression, très élevée, et l'atmosphère irrespirable en local fermé.",
        "origine": "pack"
       },
       {
@@ -2085,7 +2983,7 @@ window.PILOTE_PROJECTION = {
        "remed": {
         "regle": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
         "pourquoi": "La très haute pression de service du CO₂ impose un matériel et des raccords spécifiques, différents de ceux des circuits HFC. Ce n'est pas une question de toxicité : le CO₂ est A1, son danger est la pression.",
-        "piege": "Confondre le CO₂ avec l'ammoniac en lui prêtant une toxicité qu'il n'a pas, ou croire qu'un raccord HFC classique peut convenir « pour une fois »."
+        "piege": "Le croire aussi toxique que l'ammoniac — il ne l'est pas, sa toxicité est faible — mais l'inverse est tout aussi faux : le CO₂ n'est pas inerte, il agit sur la régulation de la respiration et rend l'atmosphère irrespirable en local fermé. Autre piège : croire qu'un raccord HFC classique peut convenir « pour une fois »."
        },
        "remediation_vers": "g13",
        "explication": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
@@ -2110,27 +3008,27 @@ window.PILOTE_PROJECTION = {
        "code": "13.14"
       },
       {
-       "id": "pk-g13-2",
-       "dc": "G13",
-       "code": "14.01",
+       "id": "pk-cl4-3",
+       "dc": "Classification",
+       "code": "13.14",
        "niveau": 2,
        "type": "qcm",
-       "enonce": "Vous sentez une odeur piquante caractéristique dans un local qui abrite une installation à l'ammoniac. Que faites-vous ?",
+       "enonce": "Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous en conclure ?",
        "choix": [
-        "Vous entrez identifier l'origine de la fuite : votre odorat vous alertera si le seuil devient dangereux.",
-        "Vous coupez vous-même l'installation avant de sortir, pour limiter la fuite.",
-        "Vous attendez que l'odeur se dissipe avant d'agir.",
-        "Vous alertez et vous évacuez, sans intervenir seul."
+        "Que le détecteur fonctionne et mesure correctement",
+        "Rien de plus qu'une mise sous tension : une cellule usée reste allumée sans plus rien mesurer",
+        "Qu'une fuite est en cours",
+        "Que le local a été ventilé récemment"
        ],
-       "bonne": 3,
-       "aide": "Le texte donne la conduite à tenir en cas de fuite d'ammoniac, juste avant la fin de la fiche.",
+       "bonne": 1,
+       "aide": "Un voyant dit qu'un appareil est alimenté, pas qu'il voit quelque chose.",
        "remed": {
-        "regle": "En cas de fuite d'ammoniac : alerter, évacuer, ne jamais intervenir seul.",
-        "pourquoi": "L'ammoniac est toxique (le B de B2L). Un titulaire A1/A2 n'a ni la catégorie C, ni l'équipement pour intervenir sur cette installation.",
-        "piege": "Se fier à son odorat pour rester sur place, ou vouloir agir seul par réflexe technique. La seule conduite correcte est d'alerter et d'évacuer."
+        "regle": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
+        "pourquoi": "C'est le même raisonnement que le double contrôle du VAT : un appareil de sécurité défaillant affiche l'absence de danger quoi qu'il arrive. À l'arrivée sur site, on contrôle donc que les capteurs et les alarmes sont en état de marche, et pas seulement présents au mur.",
+        "piege": "Le contrôle d'arrivée porte aussi sur la signalisation à l'entrée et sur les issues de secours : une palette posée devant une porte de chambre froide n'est pas un défaut de rangement, c'est une issue en moins."
        },
-       "remediation_vers": "g13",
-       "explication": "En cas de fuite d'ammoniac : alerter, évacuer, ne jamais intervenir seul.",
+       "remediation_vers": "cl4",
+       "explication": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
        "origine": "pack"
       }
      ],
@@ -2224,7 +3122,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "schema",
        "src": "packs/fluides/res/svg/classes-securite.svg",
-       "alt": "Matrice des classes NF EN 378 : CO2 en A1, R-32 et R-1234yf en A2L, R-290 en A3, NH3 en B2L.",
+       "alt": "Matrice complète des classes NF EN 378 : huit cases, toxicité en lignes, inflammabilité en colonnes.",
        "titre": "Substitution et efficacité énergétique"
       },
       {
@@ -2283,7 +3181,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "piege",
        "t": "Le piège de l'année",
-       "html": "<b>Le R-290 est A3</b>, pas A2L. Tout hydrocarbure est très inflammable. Se tromper de classe, c'est se tromper d'EPI, de matériel électrique et de charge admissible. À l'inverse, le <b>CO₂ est A1</b> : ni toxique ni inflammable — son danger est la <b>pression</b>.",
+       "html": "<b>Le R-290 est A3</b>, pas A2L. Tout hydrocarbure est très inflammable. Se tromper de classe, c'est se tromper d'EPI, de matériel électrique et de charge admissible. À l'inverse, le <b>CO₂ est A1</b> : toxicité faible, non inflammable — mais cette classe n'annonce ni sa <b>pression</b>, ni l'<b>atmosphère irrespirable</b> qu'une fuite crée en local fermé.",
        "titre": "Substitution et efficacité énergétique"
       },
       {
@@ -2295,6 +3193,64 @@ window.PILOTE_PROJECTION = {
       }
      ],
      "questions": [
+      {
+       "id": "pk-cl1-1",
+       "dc": "Classification",
+       "code": "1.08",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans une classe de sécurité comme A2L, que disent respectivement la lettre et le chiffre ?",
+       "choix": [
+        "La lettre dit le PRP, le chiffre dit la pression de service",
+        "La lettre dit la toxicité, le chiffre dit l'inflammabilité",
+        "La lettre dit la famille chimique, le chiffre dit l'année de mise sur le marché",
+        "La lettre dit l'inflammabilité, le chiffre dit la toxicité"
+       ],
+       "bonne": 1,
+       "aide": "Deux dangers différents, deux protections différentes : c'est pour cela qu'il faut deux informations.",
+       "remed": {
+        "regle": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
+        "pourquoi": "Un fluide peut être dangereux d'une manière sans l'être de l'autre, et les mesures de prévention ne sont pas les mêmes : on ventile contre la toxicité, on supprime les sources d'étincelle contre l'inflammabilité. Une note unique ne dirait pas laquelle appliquer.",
+        "piege": "« A » ne veut pas dire inoffensif : un fluide de classe A peut asphyxier en chassant l'oxygène du local, ou se décomposer en gaz toxiques au contact d'une flamme."
+       },
+       "remediation_vers": "cl1",
+       "explication": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "D",
+        "E"
+       ]
+      },
+      {
+       "id": "pk-cl3-1",
+       "dc": "Classification",
+       "code": "11.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+       "choix": [
+        "Près du plafond, car les gaz montent toujours",
+        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+        "Il se répartit uniformément et sans danger dans tout le volume",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+       ],
+       "bonne": 1,
+       "aide": "Comparez sa masse à celle de l'air.",
+       "remed": {
+        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
+        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+       },
+       "remediation_vers": "cl3",
+       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
       {
        "id": "pk-q-11.05",
        "dc": "G11",
@@ -2347,55 +3303,6 @@ window.PILOTE_PROJECTION = {
        "categories": [
         "A1",
         "A2"
-       ]
-      },
-      {
-       "id": "q-g11-54",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le R290 (propane) est classé :",
-       "choix": [
-        "A1",
-        "A2L",
-        "A2",
-        "A3"
-       ],
-       "bonne": 3,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g11",
-       "code": "11.03",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g11-v6_030",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Les HFO (hydrofluoro-oléfines) se caractérisent par :",
-       "choix": [
-        "Un GWP très élevé",
-        "Un ODP élevé",
-        "Un GWP très bas (<10)",
-        "Une toxicité extrême"
-       ],
-       "bonne": 2,
-       "explication": "Un GWP très bas (<10) — Les HFO comme le R1234yf (GWP 4) ou R1234ze (GWP 7) ont un GWP quasi nul car ils se dégradent rapidement dans l'atmosphère.",
-       "aide": "Les HFO sont la génération de fluides la plus récente — avec un impact climatique minimal.",
-       "remed": {
-        "texte": "Les HFO comme le R1234yf (GWP 4) ou R1234ze (GWP 7) ont un GWP quasi nul car ils se dégradent rapidement dans l'atmosphère."
-       },
-       "remediation_vers": "g11",
-       "code": "11.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D",
-        "E"
        ]
       }
      ],
@@ -2590,6 +3497,157 @@ window.PILOTE_PROJECTION = {
    "titre": "Le circuit et ses organes",
    "intention": "Chaque organe : à quoi il sert, comment on l'installe, comment on le règle, comment on vérifie qu'il fonctionne. Les quatre composants se travaillent — un seul sera tiré au sort à l'épreuve, et le candidat ne saura pas lequel.",
    "sequences": [
+    {
+     "type": "cours",
+     "fiche": "s4",
+     "titre": "Ce qui éclate — la pression",
+     "minutes": 30,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Ce qui éclate — la pression",
+       "dc": "Sécurité · codes 11.03 · 3.01",
+       "competences": [
+        {
+         "code": "11.03",
+         "lib": "Connaître les règles de sécurité applicables aux fluides nécessitant une pression de fonctionnement plus élevée",
+         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "3.01",
+         "lib": "Réaliser une épreuve de pression à l'azote pour vérifier la résistance du circuit",
+         "officiel": "Effectuer une épreuve de pression pour contrôler la résistance du système",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "Ce qui peut céder :",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "Un cas particulier mérite d'être compris. Une bouteille remplie à ras contient un liquide qui occupe presque tout le volume disponible. S'il chauffe, ce liquide se dilate, mais il n'a presque plus de place pour le faire : la pression grimpe alors très vite, bien plus vite que dans une bouteille qui garde une poche de gaz au-dessus du liquide. C'est pour cela qu'une bouteille de fluide ne se remplit <b>jamais</b> à ras : un volume libre doit toujours rester disponible. Le taux de remplissage exact à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur. Les propriétés propres à chaque fluide figurent dans sa fiche de données de sécurité (FDS).",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<b>Comment ça arrive vraiment.</b> Sur un chantier, une bouteille de fluide oubliée dans un véhicule en plein été, vitres fermées, en est un exemple courant : l'habitacle chauffe fortement, la bouteille avec. Autre situation : un flexible de manifold ancien, jamais contrôlé, qui cède au moment où l'on ouvre une vanne. Autre situation encore : un tronçon de tuyauterie en toiture, isolé par deux vannes fermées pendant une réparation, laissé en plein soleil sans protection ni vérification avant de reprendre le travail dessus.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "Un compresseur à l'arrêt n'est pas forcément une machine sans danger. Un circuit peut rester sous pression longtemps après l'arrêt d'une installation, sans qu'aucune fuite ne se produise. Rien à l'extérieur ne signale cette pression : ni bruit, ni mouvement, ni tiédeur. Un technicien qui desserre un raccord en se disant « de toute façon, c'est arrêté depuis longtemps » peut se retrouver face à une projection de fluide et de pièces.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui protège.</b> Dans l'ordre où on l'applique :",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li>une <b>bouteille de fluide</b> qui a chauffé au soleil ou près d'une source de chaleur ;</li><li>un <b>flexible</b> fatigué par le temps, l'usure ou de mauvais pliages ;</li><li>un <b>raccord</b> mal serré ou abîmé ;</li><li>un tronçon de circuit fermé des deux côtés par des vannes, sans aucune protection, alors qu'il reste rempli de fluide.</li></ul>",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li>Ne jamais exposer une bouteille de fluide à la chaleur ou au soleil direct : la stocker et la transporter à l'abri, à la verticale, arrimée.</li><li>Respecter le taux de remplissage indiqué par le fabricant : ne jamais remplir une bouteille à ras.</li><li>Connaître le rôle des <b>organes de sécurité</b> du circuit. Une <b>soupape de sécurité</b> s'ouvre automatiquement pour laisser échapper un peu de fluide avant que la pression n'atteigne un niveau dangereux ; son seuil de déclenchement est fixé par le fabricant et indiqué sur l'organe ou dans sa documentation. Vérifier la présence et le bon état de ces organes, sans jamais les démonter ni les bloquer.</li><li>Pour toute mise en pression du circuit — recherche de fuite, épreuve de pression — utiliser <b>uniquement de l'azote</b>, jamais de l'oxygène ni de l'air comprimé, et toujours au travers d'un <b>mano-détendeur</b> (un appareil qui réduit et règle la pression très élevée de la bouteille) réglé selon la documentation constructeur. Sans détendeur, la pression de la bouteille d'azote suffit à elle seule à faire éclater un circuit frigorifique.</li><li>Avant de desserrer quoi que ce soit sur un circuit à l'arrêt, mesurer sa pression au manomètre — même si l'installation semble arrêtée depuis longtemps.</li></ol>",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li>Un circuit reste sous pression même à l'arrêt et même par forte chaleur.</li><li>Une bouteille de fluide ne se chauffe jamais et ne se remplit jamais à ras.</li><li>Toute mise en pression se fait à l'azote seul, jamais à l'oxygène ni à l'air comprimé, toujours avec un mano-détendeur réglé selon la documentation constructeur.</li><li>Avant de toucher un raccord, vérifier la pression au manomètre, même sur une machine arrêtée depuis longtemps.</li></ul>",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>On ne chauffe <b>jamais</b> une bouteille de fluide pour accélérer un transfert ou une charge — ni flamme, ni eau chaude, ni radiateur. On ne met <b>jamais</b> un circuit sous pression avec de l'oxygène ou de l'air comprimé, et on n'utilise <b>jamais</b> une bouteille d'azote sans mano-détendeur. Conséquence : la bouteille ou le circuit peut éclater et projeter du fluide et des fragments sur la personne présente.</p>",
+       "titre": "Ce qui éclate — la pression"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl3-1",
+       "dc": "Classification",
+       "code": "11.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+       "choix": [
+        "Près du plafond, car les gaz montent toujours",
+        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+        "Il se répartit uniformément et sans danger dans tout le volume",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+       ],
+       "bonne": 1,
+       "aide": "Comparez sa masse à celle de l'air.",
+       "remed": {
+        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
+        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+       },
+       "remediation_vers": "cl3",
+       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-p4-1",
+       "dc": "G3",
+       "code": "3.01",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
+       "choix": [
+        "De l'oxygène",
+        "De l'azote sec",
+        "De l'air comprimé",
+        "Du fluide frigorigène du circuit"
+       ],
+       "bonne": 1,
+       "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
+       "remed": {
+        "regle": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
+        "pourquoi": "L'azote est neutre et sec : il n'entretient pas la combustion et n'introduit pas d'eau dans le circuit.",
+        "piege": "L'oxygène au contact de l'huile du circuit peut provoquer une réaction violente. L'air comprimé, lui, apporte de l'humidité qui restera dans l'installation."
+       },
+       "remediation_vers": "p4",
+       "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Conseil d'animation : faire observer côte à côte une bouteille d'azote équipée de son mano-détendeur et un flexible hors service, fatigué ou fissuré. Montrer une soupape de sécurité démontée (pièce morte, jamais sur une machine en service) et expliquer son déclenchement. Demander au groupe, avant de répondre : « un compresseur arrêté depuis longtemps, est-il encore sous pression ? » — laisser les hypothèses circuler avant de trancher. Insister à l'oral sur l'interdiction absolue de l'oxygène et de l'air comprimé pour mettre un circuit en pression."
+    },
     {
      "type": "cours",
      "fiche": "g6",
@@ -4884,6 +5942,152 @@ window.PILOTE_PROJECTION = {
    "sequences": [
     {
      "type": "cours",
+     "fiche": "cl2",
+     "titre": "Explosif avant d'être perceptible — la LIE",
+     "minutes": 30,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Explosif avant d'être perceptible — la LIE",
+       "dc": "Classification · codes 12.02 · 12.04",
+       "competences": [
+        {
+         "code": "12.02",
+         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, détection des fuites, ventilation, équipements de protection individuelle.",
+         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "12.04",
+         "lib": "Réaliser une analyse des risques avant de commencer le travail, et supprimer ou identifier les sources de danger.",
+         "officiel": "Réaliser une analyse des risques avant le début du travail et éliminer ou, si l'élimination n'est pas possible, identifier les sources de danger",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui arrive.</b> Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz — une étincelle ne déclenche rien. Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. <b>Entre les deux</b>, le mélange s'enflamme, et il le fait d'un coup, dans tout le volume.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "Ces deux bornes portent un nom. La <b>LIE</b> — limite inférieure d'explosivité — est la concentration en dessous de laquelle le mélange ne s'enflamme pas. La <b>LSE</b> — limite supérieure d'explosivité — est celle au-dessus de laquelle il ne s'enflamme plus non plus. L'intervalle entre les deux s'appelle le <b>domaine d'explosivité</b>. Chaque gaz a le sien : les valeurs sont propres au fluide et figurent sur sa <b>fiche de données de sécurité</b>. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui rend ce danger particulier</b>, c'est qu'il n'y a pas de signal. Une atmosphère peut atteindre son domaine d'explosivité sans odeur, sans bruit, sans rien de visible. Le gaz domestique que l'on sent dans une cuisine contient un <b>odorisant ajouté volontairement</b> pour être détecté par le nez. Le <b>R-290 utilisé en froid est un propane de haute pureté : cet odorisant n'y est pas</b>. Le nez ne vous avertira pas. Et le seuil de perception d'une odeur, quand elle existe, n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "<b>L'appareil qui répond à cette question</b> s'appelle un <b>explosimètre</b>. Il ne mesure pas une quantité de gaz dans l'absolu : il affiche <b>un pourcentage de la LIE</b> du gaz recherché. Une valeur de 10 % LIE signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable. C'est une mesure de <b>marge restante</b>, et c'est ce qui la rend utilisable : l'alarme se déclenche bien avant que le mélange ne devienne explosif. Le seuil de réglage se fixe selon la procédure de l'entreprise et la documentation de l'appareil.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "Un explosimètre se règle pour un gaz donné : un appareil réglé pour un gaz et utilisé pour un autre affiche un chiffre faux. Et il ne remplace ni un détecteur de fuite de fluide frigorigène, ni un détecteur d'oxygène : ce sont trois appareils différents, qui répondent à trois questions différentes.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "<b>Comment ça arrive vraiment.</b> Une petite fuite sur une unité au R-290, dans un local technique fermé et peu ventilé. Rien ne se voit, rien ne se sent. Le gaz, plus lourd que l'air, s'accumule lentement près du sol. Un technicien entre, actionne l'interrupteur d'éclairage, branche une lampe baladeuse, ou pose un outil électroportatif sur le sol. L'étincelle du contact suffit. Il n'y avait aucun signe avant-coureur, et l'inflammation ne laisse pas le temps de reculer.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "<b>ATEX</b> — le mot vient de « <b>AT</b>mosphère <b>EX</b>plosive ». Lorsqu'un local peut contenir une atmosphère explosive, il fait l'objet d'un <b>zonage</b> : on délimite les zones où ce risque existe, et on n'y admet que du matériel conçu pour ne pas enflammer l'atmosphère — ni par une <b>étincelle</b>, ni par une <b>surface trop chaude</b>, car une surface chaude suffit à allumer un mélange sans la moindre flamme. Cela vaut aussi pour ce que le technicien apporte avec lui — outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir <b>reconnaître</b> qu'il entre dans une telle zone et respecter ce qui y est affiché.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li>Un gaz inflammable ne brûle qu'entre deux bornes : <b>LIE</b> (limite inférieure) et <b>LSE</b> (limite supérieure). Entre les deux, une étincelle suffit.</li><li>Les valeurs sont <b>propres à chaque fluide</b> et se lisent sur sa FDS.</li><li>Un <b>explosimètre</b> affiche un pourcentage de la LIE : une marge restante, pas une quantité.</li><li>Il se règle <b>pour un gaz donné</b>, et ne remplace ni un détecteur de fuite, ni un détecteur d'oxygène.</li><li>Le <b>R-290 du froid n'est pas odorisé</b> : le nez n'avertit de rien.</li><li><b>ATEX</b> : dans une zone à atmosphère explosive, seul le matériel <b>prévu pour ces zones</b> peut entrer — y compris celui qu'on apporte. Il est contraint sur l'étincelle <b>et</b> sur sa température de surface.</li></ul>",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Entrer dans un local où une fuite de fluide inflammable est possible et y <b>actionner un interrupteur, brancher une lampe ou utiliser un outil électroportatif</b>, sans avoir contrôlé l'atmosphère à l'explosimètre.</p><p>Se fier à son odorat en est la variante la plus courante : le R-290 utilisé en froid ne contient pas l'odorisant du gaz domestique, et aucune odeur ne renseigne sur la distance à la LIE.</p><p>Conséquence : inflammation de tout le volume, sans aucun signe avant-coureur.</p>",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl2-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
+       "choix": [
+        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+        "La température minimale d'inflammation du gaz",
+        "La pression maximale admissible dans la bouteille",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+       ],
+       "bonne": 0,
+       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
+       "remed": {
+        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
+        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
+       },
+       "remediation_vers": "cl2",
+       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-cl4-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+       "choix": [
+        "Au plafond, comme un détecteur de fumée",
+        "En partie basse, là où le CO₂ s'accumule",
+        "À l'extérieur du local uniquement",
+        "Peu importe, le gaz se répartit uniformément"
+       ],
+       "bonne": 1,
+       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+       "remed": {
+        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+       },
+       "remediation_vers": "cl4",
+       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Dessiner l'axe des concentrations au tableau : trop pauvre / domaine d'explosivité / trop riche, et placer LIE et LSE dessus. C'est ce dessin que les stagiaires retiennent, pas la définition. Ne donner AUCUNE valeur chiffrée de LIE, même si on la connaît : faire ouvrir la FDS du R-290 et l'y faire lire — c'est l'objectif de la fiche. Montrer un explosimètre si le plateau en dispose, faire lire l'unité affichée (% LIE) et faire dire à quoi correspond le chiffre. Faire comparer côte à côte les trois appareils (explosimètre, détecteur de fuite, détecteur d'oxygène) : la confusion entre eux est fréquente et dangereuse. Le point sur l'odorisant absent du R-290 mérite d'être posé en question ouverte : « le propane, ça se sent, non ? » — la réponse surprend et se retient."
+    },
+    {
+     "type": "cours",
      "fiche": "g4a",
      "titre": "Où fuit une installation ?",
      "minutes": 30,
@@ -6116,7 +7320,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "schema",
        "src": "packs/fluides/res/svg/classes-securite.svg",
-       "alt": "Matrice des classes NF EN 378 : CO2 en A1, R-32 et R-1234yf en A2L, R-290 en A3, NH3 en B2L.",
+       "alt": "Matrice complète des classes NF EN 378 : huit cases, toxicité en lignes, inflammabilité en colonnes.",
        "titre": "Hydrocarbures — le spécifique A1 et A2"
       },
       {
@@ -6188,6 +7392,62 @@ window.PILOTE_PROJECTION = {
      ],
      "questions": [
       {
+       "id": "pk-cl2-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
+       "choix": [
+        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+        "La température minimale d'inflammation du gaz",
+        "La pression maximale admissible dans la bouteille",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+       ],
+       "bonne": 0,
+       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
+       "remed": {
+        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
+        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
+       },
+       "remediation_vers": "cl2",
+       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-cl4-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+       "choix": [
+        "Au plafond, comme un détecteur de fumée",
+        "En partie basse, là où le CO₂ s'accumule",
+        "À l'extérieur du local uniquement",
+        "Peu importe, le gaz se répartit uniformément"
+       ],
+       "bonne": 1,
+       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+       "remed": {
+        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+       },
+       "remediation_vers": "cl4",
+       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
        "id": "pk-p7-1",
        "dc": "G12",
        "code": "12.04",
@@ -6238,56 +7498,6 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g12",
        "explication": "Les bouteilles d'hydrocarbure ont un raccord spécifique et un filetage à gauche : on utilise le matériel prévu pour ce raccord, jamais un adaptateur.",
        "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g12-v6_091",
-       "dc": "G12",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "La charge maximale en R290 (propane) dans un local accessible au public est très limitée car :",
-       "choix": [
-        "Son GWP est élevé",
-        "Il est très inflammable (classe A3)",
-        "Il est toxique",
-        "Il corrode le cuivre"
-       ],
-       "bonne": 1,
-       "explication": "Très inflammable (A3) — Le R290 est un hydrocarbure hautement inflammable. La norme EN 378 limite strictement les charges dans les locaux occupés.",
-       "aide": "Propane = gaz domestique = très inflammable.",
-       "remed": {
-        "texte": "Le R290 est un hydrocarbure hautement inflammable. La norme EN 378 limite strictement les charges dans les locaux occupés."
-       },
-       "remediation_vers": "g12",
-       "code": "12.03",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g12-v6_093",
-       "dc": "G12",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Les fluides A2L comme le R32 nécessitent :",
-       "choix": [
-        "Aucune précaution particulière",
-        "Un outillage adapté et une formation spécifique",
-        "Un local ATEX systématique",
-        "Un détecteur d'ammoniac"
-       ],
-       "bonne": 1,
-       "explication": "Outillage adapté et formation spécifique — Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante.",
-       "aide": "'Légèrement inflammable' ne veut pas dire 'sans risque'.",
-       "remed": {
-        "texte": "Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante."
-       },
-       "remediation_vers": "g12",
-       "code": "12.02",
        "categories": [
         "A1",
         "A2"
@@ -6624,6 +7834,272 @@ window.PILOTE_PROJECTION = {
    "titre": "Préparation pratique — avant de toucher au fluide",
    "intention": "Le matériel et l'ordre des gestes, revus AVANT la manipulation. La sécurité s'y démontre et s'impose : on ne découvre jamais un risque par l'erreur. À projeter en préparation de chantier, dans l'heure qui précède le plateau — pas la veille.",
    "sequences": [
+    {
+     "type": "cours",
+     "fiche": "s4",
+     "titre": "Ce qui éclate — la pression",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Ce qui éclate — la pression",
+       "dc": "Sécurité · codes 11.03 · 3.01",
+       "competences": [
+        {
+         "code": "11.03",
+         "lib": "Connaître les règles de sécurité applicables aux fluides nécessitant une pression de fonctionnement plus élevée",
+         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "3.01",
+         "lib": "Réaliser une épreuve de pression à l'azote pour vérifier la résistance du circuit",
+         "officiel": "Effectuer une épreuve de pression pour contrôler la résistance du système",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "Ce qui peut céder :",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "Un cas particulier mérite d'être compris. Une bouteille remplie à ras contient un liquide qui occupe presque tout le volume disponible. S'il chauffe, ce liquide se dilate, mais il n'a presque plus de place pour le faire : la pression grimpe alors très vite, bien plus vite que dans une bouteille qui garde une poche de gaz au-dessus du liquide. C'est pour cela qu'une bouteille de fluide ne se remplit <b>jamais</b> à ras : un volume libre doit toujours rester disponible. Le taux de remplissage exact à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur. Les propriétés propres à chaque fluide figurent dans sa fiche de données de sécurité (FDS).",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<b>Comment ça arrive vraiment.</b> Sur un chantier, une bouteille de fluide oubliée dans un véhicule en plein été, vitres fermées, en est un exemple courant : l'habitacle chauffe fortement, la bouteille avec. Autre situation : un flexible de manifold ancien, jamais contrôlé, qui cède au moment où l'on ouvre une vanne. Autre situation encore : un tronçon de tuyauterie en toiture, isolé par deux vannes fermées pendant une réparation, laissé en plein soleil sans protection ni vérification avant de reprendre le travail dessus.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "Un compresseur à l'arrêt n'est pas forcément une machine sans danger. Un circuit peut rester sous pression longtemps après l'arrêt d'une installation, sans qu'aucune fuite ne se produise. Rien à l'extérieur ne signale cette pression : ni bruit, ni mouvement, ni tiédeur. Un technicien qui desserre un raccord en se disant « de toute façon, c'est arrêté depuis longtemps » peut se retrouver face à une projection de fluide et de pièces.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui protège.</b> Dans l'ordre où on l'applique :",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li>une <b>bouteille de fluide</b> qui a chauffé au soleil ou près d'une source de chaleur ;</li><li>un <b>flexible</b> fatigué par le temps, l'usure ou de mauvais pliages ;</li><li>un <b>raccord</b> mal serré ou abîmé ;</li><li>un tronçon de circuit fermé des deux côtés par des vannes, sans aucune protection, alors qu'il reste rempli de fluide.</li></ul>",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li>Ne jamais exposer une bouteille de fluide à la chaleur ou au soleil direct : la stocker et la transporter à l'abri, à la verticale, arrimée.</li><li>Respecter le taux de remplissage indiqué par le fabricant : ne jamais remplir une bouteille à ras.</li><li>Connaître le rôle des <b>organes de sécurité</b> du circuit. Une <b>soupape de sécurité</b> s'ouvre automatiquement pour laisser échapper un peu de fluide avant que la pression n'atteigne un niveau dangereux ; son seuil de déclenchement est fixé par le fabricant et indiqué sur l'organe ou dans sa documentation. Vérifier la présence et le bon état de ces organes, sans jamais les démonter ni les bloquer.</li><li>Pour toute mise en pression du circuit — recherche de fuite, épreuve de pression — utiliser <b>uniquement de l'azote</b>, jamais de l'oxygène ni de l'air comprimé, et toujours au travers d'un <b>mano-détendeur</b> (un appareil qui réduit et règle la pression très élevée de la bouteille) réglé selon la documentation constructeur. Sans détendeur, la pression de la bouteille d'azote suffit à elle seule à faire éclater un circuit frigorifique.</li><li>Avant de desserrer quoi que ce soit sur un circuit à l'arrêt, mesurer sa pression au manomètre — même si l'installation semble arrêtée depuis longtemps.</li></ol>",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li>Un circuit reste sous pression même à l'arrêt et même par forte chaleur.</li><li>Une bouteille de fluide ne se chauffe jamais et ne se remplit jamais à ras.</li><li>Toute mise en pression se fait à l'azote seul, jamais à l'oxygène ni à l'air comprimé, toujours avec un mano-détendeur réglé selon la documentation constructeur.</li><li>Avant de toucher un raccord, vérifier la pression au manomètre, même sur une machine arrêtée depuis longtemps.</li></ul>",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>On ne chauffe <b>jamais</b> une bouteille de fluide pour accélérer un transfert ou une charge — ni flamme, ni eau chaude, ni radiateur. On ne met <b>jamais</b> un circuit sous pression avec de l'oxygène ou de l'air comprimé, et on n'utilise <b>jamais</b> une bouteille d'azote sans mano-détendeur. Conséquence : la bouteille ou le circuit peut éclater et projeter du fluide et des fragments sur la personne présente.</p>",
+       "titre": "Ce qui éclate — la pression"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl3-1",
+       "dc": "Classification",
+       "code": "11.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+       "choix": [
+        "Près du plafond, car les gaz montent toujours",
+        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+        "Il se répartit uniformément et sans danger dans tout le volume",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+       ],
+       "bonne": 1,
+       "aide": "Comparez sa masse à celle de l'air.",
+       "remed": {
+        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
+        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+       },
+       "remediation_vers": "cl3",
+       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-p4-1",
+       "dc": "G3",
+       "code": "3.01",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
+       "choix": [
+        "De l'oxygène",
+        "De l'azote sec",
+        "De l'air comprimé",
+        "Du fluide frigorigène du circuit"
+       ],
+       "bonne": 1,
+       "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
+       "remed": {
+        "regle": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
+        "pourquoi": "L'azote est neutre et sec : il n'entretient pas la combustion et n'introduit pas d'eau dans le circuit.",
+        "piege": "L'oxygène au contact de l'huile du circuit peut provoquer une réaction violente. L'air comprimé, lui, apporte de l'humidité qui restera dans l'installation."
+       },
+       "remediation_vers": "p4",
+       "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Conseil d'animation : faire observer côte à côte une bouteille d'azote équipée de son mano-détendeur et un flexible hors service, fatigué ou fissuré. Montrer une soupape de sécurité démontée (pièce morte, jamais sur une machine en service) et expliquer son déclenchement. Demander au groupe, avant de répondre : « un compresseur arrêté depuis longtemps, est-il encore sous pression ? » — laisser les hypothèses circuler avant de trancher. Insister à l'oral sur l'interdiction absolue de l'oxygène et de l'air comprimé pour mettre un circuit en pression."
+    },
+    {
+     "type": "cours",
+     "fiche": "s2",
+     "titre": "Le froid brûle — projections et gelures",
+     "minutes": 15,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Le froid brûle — projections et gelures",
+       "dc": "Sécurité · codes 12.02",
+       "competences": [
+        {
+         "code": "12.02",
+         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, ventilation, EPI.",
+         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "point",
+       "html": "Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui. Un contact avec de l'ammoniac liquide ajoute une <b>brûlure chimique</b> à la brûlure froide : ce fluide n'appartient pas à la même famille que les fluides fluorés, et ne se comporte pas comme eux.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "point",
+       "html": "Vous déconnectez un flexible du <b>manifold</b> (l'appareil à manomètres utilisé pour intervenir sur un circuit). Vous pensez que le tronçon est déjà vide. La vanne n'a pas été vérifiée fermée, le manomètre n'a pas été relu. Un reste de liquide sous pression jaillit au moment où vous desserrez le raccord, et touche votre main ou votre visage.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ol><li>Mettez vos <b>EPI</b> (équipements de protection individuelle) — ici, gants et lunettes — avant toute manipulation d'un circuit sous pression.</li><li><b>Vérifiez au manomètre</b> que la pression est nulle, et que la vanne est fermée, avant de débrancher un flexible ou de desserrer un raccord.</li><li><b>Desserrez progressivement</b>, jamais d'un coup, et restez hors de la trajectoire d'un éventuel jet.</li><li>En cas de projection sur la peau ou les yeux : rincez sans frotter, et consultez. La conduite à tenir précise figure sur la <b>FDS</b> (fiche de données de sécurité) du fluide utilisé.</li></ol>",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Débrancher un flexible ou desserrer un raccord sous pression <b>sans vérifier au manomètre</b> qu'il est vide, ou le faire sans gants ni lunettes.</p><p>Conséquence : projection de liquide qui gèle la peau ou les yeux au contact. Risque de lésion oculaire grave.</p>",
+       "titre": "Le froid brûle — projections et gelures"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl2-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
+       "choix": [
+        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+        "La température minimale d'inflammation du gaz",
+        "La pression maximale admissible dans la bouteille",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+       ],
+       "bonne": 0,
+       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
+       "remed": {
+        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
+        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
+       },
+       "remediation_vers": "cl2",
+       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-cl4-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+       "choix": [
+        "Au plafond, comme un détecteur de fumée",
+        "En partie basse, là où le CO₂ s'accumule",
+        "À l'extérieur du local uniquement",
+        "Peu importe, le gaz se répartit uniformément"
+       ],
+       "bonne": 1,
+       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+       "remed": {
+        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+       },
+       "remediation_vers": "cl4",
+       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Faites observer un flexible de manifold et ses raccords rapides, et faites lire un manomètre avant de mimer un débranchement. Faites manipuler des gants de protection au froid et des lunettes ; faites justifier l'ordre dans lequel on les enfile avant d'intervenir. Racontez un cas concret de projection lors d'un débranchement trop rapide, pour ancrer le réflexe manomètre-avant-tout. Rappelez que la conduite à tenir en cas de projection se lit sur la FDS du fluide utilisé sur le chantier."
+    },
     {
      "type": "cours",
      "fiche": "p7",

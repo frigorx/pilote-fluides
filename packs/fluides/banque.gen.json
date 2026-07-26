@@ -3998,22 +3998,22 @@
   "code": "13.01",
   "niveau": 1,
   "type": "qcm",
-  "enonce": "Le CO₂ (R-744) est classé A1. Quel est son principal danger ?",
+  "enonce": "Le CO₂ (R-744) est classé A1. Quels dangers cette classe n'annonce-t-elle pas ?",
   "choix": [
-   "La pression, très élevée dans les installations au CO₂.",
-   "La toxicité, le CO₂ étant dangereux à respirer même à faible dose.",
+   "La pression, très élevée, et l'atmosphère irrespirable qu'une fuite crée en local fermé.",
+   "Aucun : la classe A1 signifie qu'il est sans danger.",
    "L'inflammabilité, car il peut s'enflammer comme un hydrocarbure.",
-   "Aucun danger particulier : la classe A1 signifie qu'il est totalement sans danger."
+   "Uniquement le risque de gel des tuyauteries en fonctionnement normal."
   ],
   "bonne": 0,
   "aide": "A1 renseigne sur deux critères précis. Lesquels ? Et qu'est-ce que cela ne dit pas ?",
   "remed": {
-   "regle": "Le CO₂ est classé A1 (ni toxique ni inflammable), mais son danger principal est la pression, très élevée dans ces installations.",
-   "pourquoi": "La classification A1/A2L/A2/A3/B1/B2L ne décrit que deux risques : la toxicité et l'inflammabilité. Elle ne dit rien sur la pression de service, qui est le point critique du CO₂.",
-   "piege": "Croire que « A1 » veut dire « sans danger ». Ce n'est vrai que pour la toxicité et l'inflammabilité, pas pour la pression."
+   "regle": "Le CO₂ est A1 : toxicité faible, non inflammable. Ses deux dangers réels sont ailleurs — la pression, très élevée, et l'atmosphère irrespirable en local fermé.",
+   "pourquoi": "La classification ne décrit que deux risques : la toxicité et l'inflammabilité. Elle ne dit rien de la pression de service, ni du fait que le CO₂ s'accumule en point bas et agit sur la régulation de la respiration.",
+   "piege": "Croire que « A1 » veut dire « sans danger ». « A » signifie toxicité FAIBLE, pas nulle : à forte concentration le CO₂ devient nocif par lui-même, avant même d'avoir chassé assez d'oxygène pour alarmer un détecteur d'oxygène."
   },
   "remediation_vers": "g13",
-  "explication": "Le CO₂ est classé A1 (ni toxique ni inflammable), mais son danger principal est la pression, très élevée dans ces installations.",
+  "explication": "Le CO₂ est A1 : toxicité faible, non inflammable. Ses deux dangers réels sont ailleurs — la pression, très élevée, et l'atmosphère irrespirable en local fermé.",
   "origine": "pack"
  },
  {
@@ -4058,7 +4058,7 @@
   "remed": {
    "regle": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
    "pourquoi": "La très haute pression de service du CO₂ impose un matériel et des raccords spécifiques, différents de ceux des circuits HFC. Ce n'est pas une question de toxicité : le CO₂ est A1, son danger est la pression.",
-   "piege": "Confondre le CO₂ avec l'ammoniac en lui prêtant une toxicité qu'il n'a pas, ou croire qu'un raccord HFC classique peut convenir « pour une fois »."
+   "piege": "Le croire aussi toxique que l'ammoniac — il ne l'est pas, sa toxicité est faible — mais l'inverse est tout aussi faux : le CO₂ n'est pas inerte, il agit sur la régulation de la respiration et rend l'atmosphère irrespirable en local fermé. Autre piège : croire qu'un raccord HFC classique peut convenir « pour une fois »."
   },
   "remediation_vers": "g13",
   "explication": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
@@ -5097,6 +5097,294 @@
   },
   "remediation_vers": "s5",
   "explication": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl1-1",
+  "dc": "Classification",
+  "code": "1.08",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Dans une classe de sécurité comme A2L, que disent respectivement la lettre et le chiffre ?",
+  "choix": [
+   "La lettre dit le PRP, le chiffre dit la pression de service",
+   "La lettre dit la toxicité, le chiffre dit l'inflammabilité",
+   "La lettre dit la famille chimique, le chiffre dit l'année de mise sur le marché",
+   "La lettre dit l'inflammabilité, le chiffre dit la toxicité"
+  ],
+  "bonne": 1,
+  "aide": "Deux dangers différents, deux protections différentes : c'est pour cela qu'il faut deux informations.",
+  "remed": {
+   "regle": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
+   "pourquoi": "Un fluide peut être dangereux d'une manière sans l'être de l'autre, et les mesures de prévention ne sont pas les mêmes : on ventile contre la toxicité, on supprime les sources d'étincelle contre l'inflammabilité. Une note unique ne dirait pas laquelle appliquer.",
+   "piege": "« A » ne veut pas dire inoffensif : un fluide de classe A peut asphyxier en chassant l'oxygène du local, ou se décomposer en gaz toxiques au contact d'une flamme."
+  },
+  "remediation_vers": "cl1",
+  "explication": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl1-2",
+  "dc": "Classification",
+  "code": "1.08",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Quelle est la classe de sécurité du R-290 (propane) ?",
+  "choix": [
+   "A2L, comme le R-32",
+   "A3 : très inflammable",
+   "A1, car il n'est pas toxique",
+   "B2L, comme l'ammoniac"
+  ],
+  "bonne": 1,
+  "aide": "Demandez-vous à quelle famille chimique appartient le propane.",
+  "remed": {
+   "regle": "Le R-290 est classé A3 : toxicité faible, mais très inflammable.",
+   "pourquoi": "Le propane est un hydrocarbure. Tous les hydrocarbures utilisés en froid — R-290, R-600a (isobutane), R-1270 (propylène) — sont A3. Les A2L sont des HFC à faible PRP comme le R-32, ou des HFO comme le R-1234yf.",
+   "piege": "La confusion R-290 = A2L est l'erreur la plus fréquente, et elle se trouve même dans des documents mal rédigés. Elle conduit à appliquer des précautions insuffisantes : ventilation sous-dimensionnée, matériel électrique inadapté, charge excessive."
+  },
+  "remediation_vers": "cl1",
+  "explication": "Le R-290 est classé A3 : toxicité faible, mais très inflammable.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl1-3",
+  "dc": "Classification",
+  "code": "1.08",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "À quoi sert concrètement de connaître la classe de sécurité d'un fluide avant d'intervenir ?",
+  "choix": [
+   "Uniquement à remplir la fiche d'intervention",
+   "Elle commande les EPI, le matériel électrique admis, la ventilation, la détection et la charge maximale du local",
+   "Elle sert seulement à calculer le PRP de l'installation",
+   "Elle indique le prix du fluide au kilogramme"
+  ],
+  "bonne": 1,
+  "aide": "La classe n'est pas une étiquette : elle décide de tout ce qui vous protège.",
+  "remed": {
+   "regle": "La classe de sécurité détermine l'ensemble du dispositif : EPI, matériel électrique et suppression des sources d'étincelle, ventilation, type de détecteur et seuil d'alarme, charge maximale admise et conditions d'occupation du local.",
+   "pourquoi": "Se tromper de classe, ce n'est pas se tromper d'étiquette : c'est installer un matériel qui peut produire une étincelle près d'un fluide inflammable, choisir un détecteur qui ne verra rien, ou charger un local au-delà de ce qu'il admet.",
+   "piege": "La classe se lit sur la fiche de données de sécurité du fluide, jamais de mémoire ni par analogie avec l'installation précédente. Les valeurs qui en découlent sont dans la NF EN 378 et la documentation du constructeur."
+  },
+  "remediation_vers": "cl1",
+  "explication": "La classe de sécurité détermine l'ensemble du dispositif : EPI, matériel électrique et suppression des sources d'étincelle, ventilation, type de détecteur et seuil d'alarme, charge maximale admise et conditions d'occupation du local.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl2-1",
+  "dc": "Classification",
+  "code": "12.02",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Que désigne la LIE d'un gaz inflammable ?",
+  "choix": [
+   "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+   "La température minimale d'inflammation du gaz",
+   "La pression maximale admissible dans la bouteille",
+   "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+  ],
+  "bonne": 0,
+  "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
+  "remed": {
+   "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+   "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
+   "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
+  },
+  "remediation_vers": "cl2",
+  "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl2-2",
+  "dc": "Classification",
+  "code": "12.02",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Peut-on se fier à son odorat pour détecter une fuite de R-290 dans un local technique ?",
+  "choix": [
+   "Oui, le propane a une odeur caractéristique très reconnaissable",
+   "Non : le R-290 du froid est un propane de haute pureté, sans l'odorisant ajouté au gaz domestique",
+   "Oui, à condition de rester moins de cinq minutes dans le local",
+   "Oui, si l'on connaît bien l'odeur du gaz de ville"
+  ],
+  "bonne": 1,
+  "aide": "L'odeur du gaz domestique n'est pas celle du gaz lui-même.",
+  "remed": {
+   "regle": "Le R-290 utilisé en froid ne contient pas d'odorisant : seule une mesure à l'explosimètre renseigne sur l'état de l'atmosphère.",
+   "pourquoi": "L'odeur du gaz domestique vient d'un produit ajouté volontairement pour permettre la détection par le nez. Le propane de qualité frigorifique est de haute pureté et ne le contient pas.",
+   "piege": "Même quand une odeur existe, son seuil de perception n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger. L'atmosphère peut être explosive avant d'être perceptible."
+  },
+  "remediation_vers": "cl2",
+  "explication": "Le R-290 utilisé en froid ne contient pas d'odorisant : seule une mesure à l'explosimètre renseigne sur l'état de l'atmosphère.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl2-3",
+  "dc": "Classification",
+  "code": "12.02",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Un explosimètre affiche « 20 % LIE ». Comment lisez-vous cette valeur ?",
+  "choix": [
+   "20 % du volume du local est occupé par le gaz",
+   "L'atmosphère contient un cinquième de la concentration à partir de laquelle elle deviendrait inflammable",
+   "Le mélange est explosif dès 20 %, il faut évacuer immédiatement sans autre mesure",
+   "L'appareil signale qu'il lui reste 20 % de charge de batterie"
+  ],
+  "bonne": 1,
+  "aide": "L'appareil n'affiche pas une quantité de gaz, mais une distance au seuil.",
+  "remed": {
+   "regle": "Un explosimètre affiche un pourcentage de la LIE du gaz recherché : c'est une marge restante avant que l'atmosphère ne devienne inflammable.",
+   "pourquoi": "Exprimer la mesure en pourcentage de la LIE permet de déclencher l'alarme bien avant le domaine d'explosivité. Le seuil de réglage se fixe selon la procédure de l'entreprise et la documentation de l'appareil.",
+   "piege": "L'appareil se règle pour un gaz donné : utilisé pour un autre, il affiche un chiffre faux. Et il ne remplace ni un détecteur de fuite de fluide frigorigène, ni un détecteur d'oxygène — ce sont trois appareils qui répondent à trois questions différentes."
+  },
+  "remediation_vers": "cl2",
+  "explication": "Un explosimètre affiche un pourcentage de la LIE du gaz recherché : c'est une marge restante avant que l'atmosphère ne devienne inflammable.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl3-1",
+  "dc": "Classification",
+  "code": "11.03",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+  "choix": [
+   "Près du plafond, car les gaz montent toujours",
+   "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+   "Il se répartit uniformément et sans danger dans tout le volume",
+   "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+  ],
+  "bonne": 1,
+  "aide": "Comparez sa masse à celle de l'air.",
+  "remed": {
+   "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+   "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
+   "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+  },
+  "remediation_vers": "cl3",
+  "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl3-2",
+  "dc": "Classification",
+  "code": "11.03",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "En quoi le danger du CO₂ en local fermé diffère-t-il de celui de l'azote ?",
+  "choix": [
+   "Il n'y a aucune différence : les deux prennent la place de l'oxygène",
+   "Le CO₂ déplace l'oxygène ET agit par lui-même sur l'organisme, alors que l'azote est inerte",
+   "Le CO₂ est inflammable, contrairement à l'azote",
+   "L'azote est plus dangereux car il est toxique"
+  ],
+  "bonne": 1,
+  "aide": "L'un des deux gaz ne fait que prendre la place ; l'autre fait quelque chose de plus.",
+  "remed": {
+   "regle": "L'azote agit uniquement par déplacement de l'oxygène. Le CO₂ agit par déplacement ET par action propre sur l'organisme : il intervient dans la régulation de la respiration.",
+   "pourquoi": "Le CO₂ devient nocif à des concentrations où l'oxygène restant serait encore suffisant. Un contrôle du seul taux d'oxygène peut donc rassurer à tort : il faut un appareil qui mesure le CO₂ lui-même.",
+   "piege": "Le CO₂ est classé A1 — toxicité faible, non inflammable. Sa classe n'annonce donc ni l'anoxie, ni la haute pression de ses installations : c'est le fluide dont l'étiquette rassure le plus alors qu'il exige des précautions propres."
+  },
+  "remediation_vers": "cl3",
+  "explication": "L'azote agit uniquement par déplacement de l'oxygène. Le CO₂ agit par déplacement ET par action propre sur l'organisme : il intervient dans la régulation de la respiration.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl3-3",
+  "dc": "Classification",
+  "code": "11.03",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Vous trouvez un collègue inconscient au fond d'une fosse abritant une installation au CO₂. Que faites-vous ?",
+  "choix": [
+   "Je descends immédiatement le chercher, chaque seconde compte",
+   "Je donne l'alerte, je ventile et je fais intervenir les secours, sans descendre",
+   "Je descends en retenant ma respiration",
+   "J'attends seul quelques minutes que le gaz se dissipe de lui-même"
+  ],
+  "bonne": 1,
+  "aide": "Pensez à ce qui vous attend, vous, au fond de la fosse.",
+  "remed": {
+   "regle": "Devant une personne au sol dans un espace clos ou en contrebas : alerter, ventiler, faire intervenir les secours — sans descendre à son tour.",
+   "pourquoi": "La nappe de gaz qui a fait la première victime est toujours là. Le sauveteur improvisé y entre à son tour et devient la deuxième victime : c'est le scénario le plus fréquent de ce type d'accident.",
+   "piege": "Retenir sa respiration ne protège pas : on ne tient que quelques dizaines de secondes, et le réflexe respiratoire finit toujours par l'emporter — au fond de la fosse."
+  },
+  "remediation_vers": "cl3",
+  "explication": "Devant une personne au sol dans un espace clos ou en contrebas : alerter, ventiler, faire intervenir les secours — sans descendre à son tour.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl4-1",
+  "dc": "Classification",
+  "code": "12.02",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+  "choix": [
+   "Au plafond, comme un détecteur de fumée",
+   "En partie basse, là où le CO₂ s'accumule",
+   "À l'extérieur du local uniquement",
+   "Peu importe, le gaz se répartit uniformément"
+  ],
+  "bonne": 1,
+  "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+  "remed": {
+   "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+   "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+   "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+  },
+  "remediation_vers": "cl4",
+  "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl4-2",
+  "dc": "Classification",
+  "code": "12.02",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Un masque à cartouche protège-t-il dans un local chargé en CO₂ ?",
+  "choix": [
+   "Oui, c'est justement son rôle",
+   "Non : une cartouche ne retient pas le CO₂ et ne fournit pas d'oxygène",
+   "Oui, à condition de ne pas rester plus de quelques minutes",
+   "Oui, s'il s'agit d'une cartouche neuve"
+  ],
+  "bonne": 1,
+  "aide": "Demandez-vous ce qu'une cartouche sait faire, et ce qu'elle ne sait pas fabriquer.",
+  "remed": {
+   "regle": "Un masque à cartouche filtre certains polluants dans un air qui reste respirable. Il ne fabrique pas d'oxygène et ne retient pas le CO₂.",
+   "pourquoi": "En atmosphère appauvrie en oxygène ou chargée en CO₂, seul un appareil isolant — qui apporte son propre air — protège. Son usage relève d'équipes formées et entraînées, pas d'une improvisation de dépannage.",
+   "piege": "Croire qu'un masque autorise l'entrée est la configuration où l'on ne ressort pas : on entre dans une atmosphère mortelle avec la certitude d'être protégé. Pour un technicien, la protection n'est pas de porter un masque, c'est de ne pas entrer."
+  },
+  "remediation_vers": "cl4",
+  "explication": "Un masque à cartouche filtre certains polluants dans un air qui reste respirable. Il ne fabrique pas d'oxygène et ne retient pas le CO₂.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-cl4-3",
+  "dc": "Classification",
+  "code": "13.14",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous en conclure ?",
+  "choix": [
+   "Que le détecteur fonctionne et mesure correctement",
+   "Rien de plus qu'une mise sous tension : une cellule usée reste allumée sans plus rien mesurer",
+   "Qu'une fuite est en cours",
+   "Que le local a été ventilé récemment"
+  ],
+  "bonne": 1,
+  "aide": "Un voyant dit qu'un appareil est alimenté, pas qu'il voit quelque chose.",
+  "remed": {
+   "regle": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
+   "pourquoi": "C'est le même raisonnement que le double contrôle du VAT : un appareil de sécurité défaillant affiche l'absence de danger quoi qu'il arrive. À l'arrivée sur site, on contrôle donc que les capteurs et les alarmes sont en état de marche, et pas seulement présents au mur.",
+   "piege": "Le contrôle d'arrivée porte aussi sur la signalisation à l'entrée et sur les issues de secours : une palette posée devant une porte de chambre froide n'est pas un défaut de rangement, c'est une issue en moins."
+  },
+  "remediation_vers": "cl4",
+  "explication": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
   "origine": "pack"
  }
 ]
