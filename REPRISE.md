@@ -410,6 +410,23 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 
 ## 6. Ce qui reste à faire
 
+### 🔴🔴 LE SOCLE THÉORIQUE EST MAIGRE — consignes écrites, chantier à mener
+
+**⇒ Tout est dans [`CONSIGNES-SOCLE-THEORIQUE.md`](CONSIGNES-SOCLE-THEORIQUE.md), document
+autonome (constat mesuré, 4 chantiers ordonnés, règles, arbitrages).**
+
+Constat de F. Henninot le 27/07, **vérifié par la mesure sur ses cinq points** : `g1b` (le
+diagramme log p/h) fait **105 mots pour 45 min de cours** · **chaleur sensible et latente : 0
+occurrence** dans tout le pack, alors que « surchauffe » y apparaît **97 fois** · surchauffe
+utile/totale : 0 · le code **5.05** (état sous-refroidi/saturé/surchauffé) n'est enseigné par
+aucune fiche, seulement porté par deux fiches de manipulation · **KVP/KVL : 0**, alors que les
+régulateurs de pression sont bien au référentiel (**7.02 · 8.02 · 8.07**) et que `g7b` qui les
+déclare fait **118 mots**.
+
+⚠️ **Et cela révèle une faille de nos garde-fous** : le build annonce « profondeur 94/94 tenus »
+alors que `g1b` tient son code avec 105 mots. **La mesure de profondeur ne détecte pas la
+maigreur.** C'est exactement le troisième niveau de contrôle demandé au point 2 ci-dessous.
+
 ### ⏭️ DEMANDÉ POUR LA PROCHAINE SESSION (F. Henninot, soir du 26/07)
 
 **1. Un fichier « compétences × contenu × questions » — pour le dossier.**
