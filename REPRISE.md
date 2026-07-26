@@ -48,11 +48,11 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
-## 2. État au 26/07/2026
+## 2. État au 27/07/2026
 
-**79 cartes** · **250 questions** · **29 planches SVG** (dont 13 animées, et **2 dessins animés
+**80 cartes** · **254 questions** · **30 planches SVG** (dont 18 animées, et **2 dessins animés
 narratifs**) · 4 illustrations · **3 outils embarqués**
-**✅ 42 fiches de cours sur 42 portent un visuel** — plus une seule fiche « mur de texte ».
+**✅ 43 fiches de cours sur 43 portent un visuel** — plus une seule fiche « mur de texte ».
 
 > **Couverture du référentiel officiel : A1 100 % · A2 100 % · D 100 % · E 100 %.**
 > Mesurée à chaque build, écrite dans `COUVERTURE-REFERENTIEL.md`. Elle valait 60 % en A1
@@ -66,16 +66,55 @@ narratifs**) · 4 illustrations · **3 outils embarqués**
 > groupe du tirage au sort). **Comblés le soir même** : 13 fiches enrichies (rédaction
 > sous règles strictes + vérification adversariale + intégration), **94/94 tenus** au build
 > suivant. La mesure tourne à chaque build : ça ne peut plus se redégrader en silence.
-> L'instrument : `packs/fluides/profondeur-attendus.json` (v0.3, à faire relire).
+> L'instrument : `packs/fluides/profondeur-attendus.json` (v0.4, à faire relire).
+>
+> ⚠️ **Ce que la profondeur NE voit pas : la maigreur.** Découvert le 27/07 — `g1b` « tenait »
+> le code 1.03 avec **105 mots**, et le build annonçait 94/94. La mesure vérifie que des motifs
+> sont présents, pas que le sujet est traité. Un troisième niveau de garde-fou reste à écrire
+> (`CONSIGNES-SOCLE-THEORIQUE.md` § 5), et il n'a PAS été fait au chantier 1.
 
 | | |
 |---|---|
 | 1 accueil · 8 menus | **Sécurité** · **Classification** · A1, A2, D, E · **Réviser par thème** · **Préparation pratique** |
-| 42 fiches de cours | dont **5 de sécurité** (ce qui blesse la personne), **4 de classification** (ce qui est dans la bouteille, dont **2 sur le CO₂**) et **7 de préparation pratique** (le matériel et les gestes) |
+| 43 fiches de cours | dont **5 de sécurité** (ce qui blesse la personne), **4 de classification** (ce qui est dans la bouteille, dont **2 sur le CO₂**) et **7 de préparation pratique** (le matériel et les gestes) |
 | 1 carte « Ma progression » | où j'en suis, compétence par compétence — tout en local |
 | 5 exercices « frigoriste-détective » | mises en situation à indices croisés |
 | 21 séries et examens | 13 séries de révision par thème + 8 examens sur 3 paliers |
-| 250 questions | rattachées à un **code de compétence**, un niveau, une catégorie — **99 compétences interrogées = 99 enseignées**, plus aucun code muet |
+| 254 questions | rattachées à un **code de compétence**, un niveau, une catégorie — **99 compétences interrogées = 99 enseignées**, plus aucun code muet |
+
+**LE SOCLE THÉORIQUE — chantier 1 sur 4 (27/07)** — le pack faisait employer le mot
+« surchauffe » **97 fois** sans avoir jamais posé le concept qui le fonde : « chaleur sensible »
+et « chaleur latente » valaient **0 occurrence** dans tout le contenu élève. On demandait au
+stagiaire d'utiliser un mot dont on ne lui avait jamais donné le sens physique. Détail du constat
+mesuré et des trois chantiers restants : `CONSIGNES-SOCLE-THEORIQUE.md`.
+- **Nouvelle fiche `g1e` « Chaleur sensible et chaleur latente : le palier »** (30 min, jour 1,
+  entre `g1a` et `g1b`), qui porte désormais le code **1.02**. Elle pose le palier de changement
+  d'état, l'enthalpie, l'**effet de réfrigération**, la **chaleur de compression**, les deux côtés
+  HP/BP, puis les cinq mots du chemin : *liquide sous-refroidi → point de bulle → saturé → point
+  de rosée → vapeur surchauffée*. Elle se termine sur les deux écarts du terrain (surchauffe
+  5-10 K, sous-refroidissement 4-8 K) — **sans jamais les mesurer** : le geste reste en G4.
+- **`g1a` DÉGRAISSÉE, et renommée « Unités, pression et les quatre organes »**. Elle annonçait
+  « thermodynamique utile » et portait 1.02 en trois encadrés posés sur 250 mots. Elle rend le
+  code à `g1e` et garde ce qu'elle tenait vraiment : les unités (1.01) et la fonction des organes
+  (1.04). Jour 1 : **6 h 20 → 6 h 35** (g1a 45 → 30 min, g1e 30 min).
+- **Le glissement des zéotropes déménage** de `g1a` vers `g1e` : expliquer qu'un palier n'est pas
+  plat suppose d'avoir enseigné le palier. C'était l'ordre inverse depuis le début.
+- **5 remédiations réaiguillées** (`convert.mjs`, `REMEDIATION_FINE`) : les questions portant 1.02
+  renvoyaient vers `g1a`, qui n'enseigne plus la notion — l'élève qui se trompait n'avait plus où
+  réviser. **4 questions ajoutées** (`pk-g1e-1` à `-4`), dont deux servent le mini-questionnaire
+  de la séquence.
+- **L'instrument de profondeur DURCI (v0.4)**, et c'est le point qui compte : sa décomposition de
+  1.02 ne retenait que 5 des notions du libellé officiel. Quatre ajoutées (chaleur latente et
+  changement d'état, états du fluide, chaleur de compression, effet de réfrigération). Mesure
+  contrefactuelle **tirée, pas supposée** : sur l'ancien contenu, 1.02 tombait à **6/9 → 🟠**.
+  Après la fiche : **94/94 tenus**, avec un instrument plus sévère qu'avant.
+- **Planche `chaleur-palier.svg`** (8 Ko, faite main) : la courbe température / chaleur avec ses
+  deux pentes et son palier, un thermomètre qui monte, **s'arrête pendant tout le palier**, puis
+  repart. Modèle de dessin non encore employé dans le pack (règle : pas deux fiches sur le même
+  modèle). Vérifiée dans le navigateur en mouvement ET en `prefers-reduced-motion`.
+- ⚠️ **Le seul chiffre de la fiche est 100 °C à la pression atmosphérique** — repère de culture
+  générale servant d'ancrage, pas une valeur de fluide. Les `notes_pilote` demandent au formateur
+  d'empêcher le groupe de le généraliser. Poids élève : 626 → **641 Ko**.
 
 **Le module SÉCURITÉ (26/07)** — le pack enseignait la sécurité de l'installation et de
 l'environnement, **jamais celle de la personne**. Mesuré avant d'agir : *asphyxie* 0 occurrence,
@@ -271,7 +310,7 @@ prêts à enregistrer (60-90 s, une idée par phrase, plans calés sur les sché
 méthode. ⚠️ **Règle n° 1 de ce fichier : aucune capsule enregistrée avant la relecture métier.**
 Une vidéo est figée ; si une capsule avait été tournée la veille du 26/07, elle enseignerait
 encore que le CO₂ ne prévient pas. Le pack est déjà prêt à les recevoir (champ `video` de
-`parcours.js`, 4ᵉ argument de `seq()`), à héberger **hors dépôt** pour préserver les 624 Ko.
+`parcours.js`, 4ᵉ argument de `seq()`), à héberger **hors dépôt** pour préserver le poids du pack (641 Ko au 27/07).
 Ce qui est écarté : tout **geste technique généré par IA** (opposable s'il est faux).
 
 **Les 3 paliers d'examen** : 🟢 Échauffement (niveau 1, seuil 60 %) · 📝 Examen blanc (mixte, 70 %)
@@ -410,7 +449,7 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 
 ## 6. Ce qui reste à faire
 
-### 🔴🔴 LE SOCLE THÉORIQUE EST MAIGRE — consignes écrites, chantier à mener
+### 🔴 LE SOCLE THÉORIQUE — chantier 1 sur 4 FAIT, trois restent
 
 **⇒ Tout est dans [`CONSIGNES-SOCLE-THEORIQUE.md`](CONSIGNES-SOCLE-THEORIQUE.md), document
 autonome (constat mesuré, 4 chantiers ordonnés, règles, arbitrages).**
@@ -423,9 +462,26 @@ aucune fiche, seulement porté par deux fiches de manipulation · **KVP/KVL : 0*
 régulateurs de pression sont bien au référentiel (**7.02 · 8.02 · 8.07**) et que `g7b` qui les
 déclare fait **118 mots**.
 
-⚠️ **Et cela révèle une faille de nos garde-fous** : le build annonce « profondeur 94/94 tenus »
-alors que `g1b` tient son code avec 105 mots. **La mesure de profondeur ne détecte pas la
-maigreur.** C'est exactement le troisième niveau de contrôle demandé au point 2 ci-dessous.
+✅ **Chantier 1 — chaleur sensible et chaleur latente : FAIT le 27/07** (fiche `g1e`, détail au
+§ 2). Arbitrage tranché par F. Henninot : *nouvelle fiche dédiée **et** dégraissage de `g1a`*.
+Les deux zéros sont comblés : chaleur sensible **12**, chaleur latente **16**, vaporisation
+**1**, point de bulle **8**, point de rosée **10**.
+
+⏭️ **Restent, dans l'ordre — l'ordre suit les dépendances, ne pas le changer :**
+- **Chantier 2 — le diagramme log p/h** (`g1b`, toujours **105 mots**). Il a désormais son
+  prérequis : `g1e` pose le palier et les états, `g1b` n'a plus qu'à les faire lire sur les axes.
+- **Chantier 3 — surchauffe et sous-refroidissement**, fiche dédiée. `g1e` en donne le SENS et les
+  repères (5-10 K, 4-8 K) ; il reste le GESTE (méthode indirecte, à relier à `g4b`) et la
+  distinction **surchauffe utile / totale**, toujours à 0 occurrence et **à faire valider**.
+- **Chantier 4 — les régulateurs de pression** (`g7b` 118 mots, `g8b` 236 mots). KVP/KVL/KVR
+  toujours à 0 ; désignations commerciales Danfoss à arbitrer (consignes § 4.1).
+
+⚠️ **La faille de garde-fou est toujours ouverte, et elle a été confirmée en la corrigeant à
+moitié** : le build annonce « 94/94 tenus » alors que `g1b` tient son code avec 105 mots. La
+mesure de profondeur ne détecte pas la **maigreur**. Le chantier 1 a durci l'instrument sur 1.02
+(v0.4, 4 notions ajoutées), ce qui est un durcissement de **décomposition**, pas de **volume** :
+le contrôle de volume du § 5 des consignes **n'a pas été écrit**. Il reste à faire, et c'est
+aussi le troisième niveau de contrôle demandé au point 2 ci-dessous.
 
 ### ⏭️ DEMANDÉ POUR LA PROCHAINE SESSION (F. Henninot, soir du 26/07)
 
@@ -465,7 +521,7 @@ texte est lu ou abandonné.
   empattement plus lisible, **interlignage** élargi, et peut-être un **fond crème** (réduit
   l'éblouissement, aide une partie des lecteurs DYS).
 - ⚠️ **Arbitrage à poser avant de coder : PAS d'OpenDyslexic embarquée.** Cette police coûterait
-  50 à 100 Ko de fichier — sur un pack qui tient à 626 Ko et s'ouvre en 4G, c'est cher — et son
+  50 à 100 Ko de fichier — sur un pack qui tient à 641 Ko et s'ouvre en 4G, c'est cher — et son
   bénéfice est **discuté** par la recherche. Les recommandations solides portent sur autre chose :
   police sans empattement **déjà présente sur tous les appareils** (Verdana, Arial), corps plus
   grand, interligne ≥ 1,5, texte **non justifié**, espacement des lettres légèrement augmenté.
@@ -491,7 +547,22 @@ adversariales par IA ont déjà tourné dessus et ont trouvé **deux erreurs gra
 de l'exposition au CO₂, l'inertie prêtée aux fluides fluorés) plus un **rattachement au
 référentiel entièrement faux** : cela dit assez qu'un œil humain reste indispensable.
 
+**S'y ajoute le chantier 1 du socle théorique (27/07), même régime** : la fiche `g1e` (967 mots
+avec ses encadrés) et les 4 questions `pk-g1e-*`, plus la réécriture de `g1a`. C'est du contenu
+**théorique**, donc moins dangereux qu'une fiche de sécurité — mais c'est le contenu sur lequel
+tout le reste s'appuie : une définition fausse ici se propage à neuf fiches. La relecture
+adversariale interne a resserré deux formulations avant publication (« exactement le même
+chemin » entre condenseur et évaporateur, qui laissait croire aux mêmes températures ; et la
+question de fin, qui parlait d'« un fluide » là où le palier plat ne vaut que pour un fluide
+**pur** — contredisant l'encadré zéotropes de la même fiche).
+
 Points à trancher par un frigoriste, remontés par ces relectures :
+- la formulation de l'**effet de réfrigération** comme écart d'enthalpie aux bornes de
+  l'évaporateur, et celle de la **chaleur de compression** (`g1e`) — écrites de mémoire
+  technique, jamais lues sur une documentation ;
+- l'emploi de **point de bulle** et **point de rosée** pour un fluide **pur** : c'est l'usage du
+  métier et c'est ce que demandent les consignes, mais ce sont à l'origine les termes des
+  mélanges (`g1e`) ;
 - l'absence d'**odorisant** dans le R-290 de qualité frigorifique (`cl2`) ;
 - le fait qu'aucun fluide courant du parc ne relève des cases **B2 / B3** (`cl1`) ;
 - le double mécanisme du **CO₂** et l'insuffisance d'un détecteur d'oxygène seul (`cl3`) ;

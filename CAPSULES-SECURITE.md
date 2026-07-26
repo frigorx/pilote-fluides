@@ -56,7 +56,7 @@ explique » : c'est quelqu'un, et c'est le formateur que les stagiaires auront e
 Quatre-vingt-dix secondes s'enregistrent en trois minutes avec un téléphone, dans une pièce
 calme, sans matériel.
 
-**La synthèse vocale en secours**, pour le volume, si les 42 fiches doivent y passer un jour.
+**La synthèse vocale en secours**, pour le volume, si les 43 fiches doivent y passer un jour.
 Avantage réel : quand une fiche change, on régénère la bande-son en une minute — ce qu'un
 enregistrement humain oblige à refaire. Inconvénient : ça s'entend, et devant des adultes en
 formation professionnelle, une voix robotique décrédibilise le propos.
@@ -220,7 +220,7 @@ autoformation.
 seq("s1", 25, 3, "https://…")   // 4ᵉ argument = l'URL de la capsule
 ```
 
-**Hébergement : surtout pas dans le dépôt.** Le pack pèse aujourd'hui **624 Ko** et s'ouvre sur
+**Hébergement : surtout pas dans le dépôt.** Le pack pèse aujourd'hui **641 Ko** (27/07) et s'ouvre sur
 n'importe quel téléphone en 4G — c'est un atout majeur pour le public visé, et des fichiers vidéo
 le détruiraient. On héberge ailleurs (lien non répertorié) et on ne pousse que l'URL.
 

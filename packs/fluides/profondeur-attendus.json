@@ -1,8 +1,8 @@
 {
   "_meta": {
     "role": "INSTRUMENT DE MESURE de la profondeur d'enseignement — décomposition de chaque code de l'annexe II.B (arrêté du 21/11/2025) en notions sentinelles détectables",
-    "version": "0.3",
-    "date": "2026-07-25",
+    "version": "0.4",
+    "date": "2026-07-27",
     "statut": "instrument NON relu par F. Henninot — les verdicts qu'il produit sont provisoires",
     "principe": "Chaque libellé officiel énumère des notions. Pour chacune, des motifs (regex) détectent son vocabulaire technique dans le contenu VISIBLE DE L'ÉLÈVE des fiches qui déclarent le code (titre, corps, blocs, question — jamais notes_pilote).",
     "asymetrie": "L'ABSENCE de tout motif prouve que la notion n'est pas enseignée (fiable). La PRÉSENCE d'un motif ne prouve pas qu'elle est bien enseignée. Cet instrument mesure des trous, pas de la qualité.",
@@ -11,7 +11,8 @@
     "_historique": [
       "0.1 — création, 94 codes (union A1∪A2∪D∪E), décomposition depuis les libellés officiels",
       "0.2 — après confrontation au texte réel des fiches : 4.07 la distinction est enseignée par contraste (« intervenir dans le circuit ») ; 6.03 g6 dit « se règlent » ; 12.04 les fiches disent « analyse de risques » (sans « des ») ; 1.03 g1b écrit « log p-h » avec tiret ; 5.05 le libellé distingue état (liquide/gazeux, enseigné) et conditions (saturé/sous-refroidi, non enseignées) — notion scindée ; 7.03 g7b dit « espace autour / air circule »",
-      "0.3 — après le comblement du 25/07 : 6.04 accepte le pluriel « vannes de service » (bug, la fiche l'enseignait) ; durcissement de 5 motifs aveugles (6.01 huile → circuit/retour/niveau d'huile, 6.02 install → montage/pose/fixe, 6.03 regl → se regl, 12.10 charge retiré) — un motif présent dans la moitié des cartes ne mesure rien"
+      "0.3 — après le comblement du 25/07 : 6.04 accepte le pluriel « vannes de service » (bug, la fiche l'enseignait) ; durcissement de 5 motifs aveugles (6.01 huile → circuit/retour/niveau d'huile, 6.02 install → montage/pose/fixe, 6.03 regl → se regl, 12.10 charge retiré) — un motif présent dans la moitié des cartes ne mesure rien",
+      "0.4 — chantier 1 du socle théorique (27/07) : l'instrument DURCIT sur 1.02. Sa décomposition ne retenait que 5 des notions du libellé officiel ; celui-ci en énumère d'autres, qui manquaient : « chaleur de compression », « effet de réfrigération » et les états du fluide. Le code était donc 🟢 alors que g1a le « tenait » avec 250 mots et sans jamais poser le changement d'état. Quatre notions ajoutées — c'est un ajustement qui rend la mesure PLUS SÉVÈRE, jamais plus indulgente. Mesuré sur l'ancien contenu : 6 notions sur 9 seulement, donc 🟠 (états du fluide, chaleur de compression et effet de réfrigération absents ; « changement d'état » n'était présent que dans l'encadré zéotropes, qui EMPLOIE le mot sans jamais l'expliquer — c'est le défaut même que ce chantier corrige)."
     ]
   },
   "attendus": {
@@ -29,7 +30,11 @@
       { "notion": "sous-refroidissement", "motifs": ["sous-refroidi", "sous refroidi"] },
       { "notion": "enthalpie", "motifs": ["enthalpi"] },
       { "notion": "mélanges zéotropiques", "motifs": ["zeotrop", "glissement"] },
-      { "notion": "côtés haute et basse pression", "motifs": ["haute pression", "basse pression"] }
+      { "notion": "côtés haute et basse pression", "motifs": ["haute pression", "basse pression"] },
+      { "notion": "chaleur latente et changement d'état", "motifs": ["chaleur latente", "changement d'etat"] },
+      { "notion": "états du fluide (point de bulle, saturé, point de rosée)", "motifs": ["point de bulle", "point de rosee"] },
+      { "notion": "chaleur de compression", "motifs": ["chaleur de compression"] },
+      { "notion": "effet de réfrigération", "motifs": ["effet (de )?(refrigeration|frigorifique)"] }
     ],
     "1.03": [
       { "notion": "diagramme log p/h", "motifs": ["log ?p[-/]h", "diagramme enthalpique", "\\bp[-/]h\\b"] },

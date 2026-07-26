@@ -97,7 +97,28 @@ motifs sont présents, pas que le sujet est traité. Voir § 5, un garde-fou est
 
 L'ordre est celui des **dépendances** : chacun a besoin du précédent. Ne pas le changer.
 
-### Chantier 1 — Chaleur sensible et chaleur latente (le fondement)
+### ✅ Chantier 1 — Chaleur sensible et chaleur latente (le fondement) — FAIT le 27/07
+
+> **Fiche `g1e` « Chaleur sensible et chaleur latente : le palier »**, 30 min, jour 1, entre
+> `g1a` et `g1b`. Porte le code **1.02**, rendu par `g1a`. 544 mots de corps, 967 avec les
+> encadrés. Planche `res/svg/chaleur-palier.svg`. 4 questions `pk-g1e-*`, 5 remédiations
+> réaiguillées. Instrument de profondeur durci sur 1.02 (v0.4). Détail au § 2 de `REPRISE.md`.
+>
+> **Arbitrage n° 3 tranché par F. Henninot (27/07)** : *nouvelle fiche dédiée **ET** dégraissage
+> de `g1a`*. `g1a` passe de 45 à 30 min et rend l'enthalpie, les repères de surchauffe et de
+> sous-refroidissement, et le glissement des zéotropes ; elle est renommée « Unités, pression et
+> les quatre organes » — elle annonçait « thermodynamique utile » sans la tenir. Jour 1 :
+> **6 h 20 → 6 h 35**.
+>
+> **Arbitrage n° 2, partiellement tranché de fait** : les valeurs 5-10 K et 4-8 K sont ÉCRITES
+> dans `g1e` (la charte les autorise, et elles y étaient déjà, dans `g1a`), avec la mention
+> « à recaler sur la documentation du constructeur ». Le chantier 3 pourra revenir dessus.
+>
+> **Ce qui a été volontairement laissé au chantier 3** : la MESURE de la surchauffe (méthode
+> indirecte, geste de `g4b`) et la distinction **utile / totale** — toujours à 0 occurrence.
+> `g1e` installe le sens du mot, pas le geste.
+>
+> **Ce qui n'a PAS été fait, et qui n'est pas dans ce chantier** : le garde-fou de volume du § 5.
 
 **Nouvelle fiche**, ou développement franc de `g1a`. C'est ce qui manque à tout le reste.
 
@@ -191,11 +212,19 @@ surchauffe ne peut pas être comprise ; sans le diagramme, on ne peut pas montre
    terrain tout le monde dit « un KVP », mais un pack public ne doit pas être un catalogue de
    marque. *Proposition* : enseigner la fonction sous son nom générique, puis ajouter
    « couramment appelé KVP ». À confirmer.
-2. **Les valeurs de surchauffe** : les écrire (5-10 K, autorisées par la charte) ou renvoyer à la
-   documentation constructeur comme le reste des valeurs terrain ?
-3. **Où loger la chaleur sensible/latente** : nouvelle fiche, ou développement de `g1a` ?
-   Une fiche de plus allonge le jour 1, déjà à 6 h 20.
+2. ~~**Les valeurs de surchauffe** : les écrire ou renvoyer à la documentation constructeur ?~~
+   **Tranché de fait le 27/07** : écrites dans `g1e` (5-10 K et 4-8 K, autorisées par la charte
+   et déjà présentes dans `g1a`), assorties de « à recaler sur la documentation du constructeur ».
+   Réouvrable au chantier 3 si le geste de mesure change la donne.
+3. ~~**Où loger la chaleur sensible/latente** : nouvelle fiche, ou développement de `g1a` ?~~
+   **Tranché par F. Henninot le 27/07** : **nouvelle fiche `g1e` ET dégraissage de `g1a`**. Le
+   jour 1 passe à 6 h 35, pas à 6 h 50, parce que `g1a` rend les 15 minutes qu'elle ne remplissait
+   pas.
 4. **La distinction surchauffe utile / totale** telle que formulée au chantier 3.
+5. **Nouveau, ouvert par le chantier 1** : `g1e` emploie **point de bulle** et **point de rosée**
+   pour un fluide **pur**. C'est l'usage du métier et c'est ce que demande le § 2 ci-dessus, mais
+   ce sont à l'origine les termes des mélanges. À confirmer, ou à reformuler en « liquide saturé /
+   vapeur saturée » avec les deux appellations.
 
 ---
 
@@ -206,6 +235,27 @@ signaler, qu'une fiche portant un code THÉORIQUE fasse moins de N mots**. Un co
 fiche de 105 mots est une couverture de façade — exactement ce que la mesure de couverture était
 censée empêcher. À intégrer dans `build/profondeur.mjs`, et à écrire dans
 `PROFONDEUR-REFERENTIEL.md` au même titre que les motifs aveugles.
+
+---
+
+## 5 bis. Où en est la mesure, après le chantier 1 (mesuré le 27/07)
+
+Les zéros du § 1-b, rejoués après coup — c'est ce que le chantier 1 a comblé, et rien de plus :
+
+| Notion | Avant | Après | Chantier qui s'en charge |
+|---|---:|---:|---|
+| chaleur sensible | 0 | **12** | 1 ✅ |
+| chaleur latente | 0 | **16** | 1 ✅ |
+| vaporisation | 0 | **1** | 1 ✅ |
+| point de bulle | 0 | **8** | 1 ✅ |
+| point de rosée | 1 | **10** | 1 ✅ |
+| surchauffe utile / totale | 0 · 0 | **0 · 0** | 3, à faire |
+| titre de vapeur | 0 | **0** | 2, à faire |
+| KVP · KVL | 0 · 0 | **0 · 0** | 4, à faire |
+
+Volumes (corps seul, méthode du § 1-a) : `g1e` **544 mots** · `g1a` 250 → **191** (dégraissée,
+et passée de 45 à 30 min) · `g1b` **105** (chantier 2) · `g7b` **118** (chantier 4) ·
+`g8b` **236** (chantier 4).
 
 ---
 

@@ -1541,5 +1541,95 @@
    "piege": "Le contrôle d'arrivée porte aussi sur la signalisation à l'entrée et sur les issues de secours : une palette posée devant une porte de chambre froide n'est pas un défaut de rangement, c'est une issue en moins."
   },
   "remediation_vers": "cl4"
+ },
+ {
+  "id": "pk-g1e-1",
+  "dc": "G1",
+  "code": "1.02",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "De l'eau bout dans une casserole, à la pression atmosphérique. Vous montez le feu. Que devient sa température ?",
+  "choix": [
+   "Elle monte, puisque vous chauffez davantage",
+   "Elle ne bouge pas : l'eau bout simplement plus vite",
+   "Elle descend, parce que la vapeur emporte de la chaleur",
+   "Elle monte d'abord, puis se stabilise au bout de quelques minutes"
+  ],
+  "bonne": 1,
+  "aide": "Demandez-vous où part la chaleur que vous ajoutez, tant qu'il reste de l'eau liquide.",
+  "remed": {
+   "regle": "Pendant un changement d'état, la chaleur apportée sert au changement d'état, pas à l'élévation de température. C'est la chaleur latente, et le morceau de courbe où la température reste bloquée s'appelle le palier.",
+   "pourquoi": "Monter le feu n'augmente pas la température de l'eau qui bout : cela augmente la quantité d'eau vaporisée par minute. La température ne repartira que lorsque toute l'eau sera partie en vapeur — il n'y aura alors plus de liquide à vaporiser.",
+   "exemple": "Dans l'évaporateur, c'est exactement ce qui se passe : le fluide bout à température constante et prend sa chaleur au local. C'est le palier qui fait le froid.",
+   "piege": "La température du palier n'est pas une constante universelle : elle dépend de la PRESSION. Un fluide frigorigène bout d'autant plus froid que sa pression est basse — c'est toute l'astuce du détendeur."
+  },
+  "remediation_vers": "g1e"
+ },
+ {
+  "id": "pk-g1e-2",
+  "dc": "G1",
+  "code": "1.02",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Pourquoi une machine frigorifique utilise-t-elle un fluide qui change d'état, plutôt que de faire simplement circuler de l'air ?",
+  "choix": [
+   "Parce qu'un fluide frigorigène est plus froid que l'air",
+   "Parce que le changement d'état transporte beaucoup plus de chaleur, à masse égale",
+   "Parce que l'air ne peut pas circuler dans un tube de cuivre",
+   "Parce que la réglementation l'impose depuis le règlement (UE) 2024/573"
+  ],
+  "bonne": 1,
+  "aide": "Comparez la chaleur qu'un kilo de matière emporte en s'échauffant, et celle qu'il emporte en se vaporisant.",
+  "remed": {
+   "regle": "Une machine frigorifique déplace de la chaleur latente : l'évaporateur en absorbe en faisant bouillir le fluide, le condenseur la rend en le liquéfiant. Le palier transporte beaucoup plus de chaleur, pour un même kilo de matière déplacé.",
+   "pourquoi": "Un fluide n'est pas « froid » en lui-même. Il devient froid parce qu'on abaisse sa pression jusqu'à ce qu'il bouille à une température inférieure à celle du local. Ce qui fait le froid, ce n'est pas le fluide : c'est le changement d'état.",
+   "piege": "Croire que le fluide est froid « par nature » mène à une seconde erreur, celle-là dangereuse : oublier que dans la même machine, ce même fluide est brûlant au refoulement du compresseur."
+  },
+  "remediation_vers": "g1e"
+ },
+ {
+  "id": "pk-g1e-3",
+  "dc": "G1",
+  "code": "1.02",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "En sortie de condenseur, la température que vous mesurez sur le tube est inférieure à la température de condensation lue dans la table pour la pression relevée. Dans quel état est le fluide ?",
+  "choix": [
+   "Saturé : liquide et vapeur cohabitent",
+   "Liquide sous-refroidi : il n'y a plus de vapeur",
+   "Vapeur surchauffée : il n'y a plus de liquide",
+   "Au point de rosée"
+  ],
+  "bonne": 1,
+  "aide": "En dessous du palier, du côté liquide : quel état reste-t-il ?",
+  "remed": {
+   "regle": "Sous la température de changement d'état, à la pression où il se trouve, le fluide est du liquide sous-refroidi. L'écart entre les deux s'appelle le sous-refroidissement.",
+   "pourquoi": "Le chemin est toujours le même, dans un sens ou dans l'autre : liquide sous-refroidi → point de bulle → saturé → point de rosée → vapeur surchauffée. Savoir se placer sur ce chemin, c'est savoir ce qu'il y a dans le tube qu'on tient.",
+   "exemple": "C'est ce qui garantit du liquide pur au détendeur : de la vapeur à cet endroit dérèglerait l'alimentation de l'évaporateur. Repère courant : 4 à 8 K, à recaler sur la documentation du constructeur.",
+   "piege": "Sous-refroidissement et surchauffe sont des ÉCARTS, jamais des températures. On les compte en kelvins parce que ce sont des différences : « un sous-refroidissement de 5 °C » n'a pas de sens."
+  },
+  "remediation_vers": "g1e"
+ },
+ {
+  "id": "pk-g1e-4",
+  "dc": "G1",
+  "code": "1.02",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Vous chargez un mélange zéotrope. Pourquoi le soutire-t-on de la bouteille en phase liquide, et jamais en phase vapeur ?",
+  "choix": [
+   "Pour aller plus vite : le liquide passe mieux dans le flexible",
+   "Parce que les composants ne s'évaporent pas ensemble : soutirer en vapeur change la composition du fluide restant",
+   "Pour éviter que la bouteille ne givre",
+   "Parce que la vapeur risquerait de fausser la balance"
+  ],
+  "bonne": 1,
+  "aide": "Repensez au palier : chez un mélange zéotrope, il n'est pas plat. Qu'est-ce qui part en premier ?",
+  "remed": {
+   "regle": "Un mélange zéotrope est fait de plusieurs fluides purs dont les composants ne s'évaporent pas ensemble : le plus volatil part d'abord. Entre le point de bulle et le point de rosée, la température ne reste donc pas constante — elle glisse, on parle de glissement.",
+   "pourquoi": "Soutirer en phase vapeur revient à prélever surtout le composant le plus volatil. Le fluide qui reste dans la bouteille n'est alors plus celui qui est écrit dessus, et celui qu'on vient de charger non plus.",
+   "piege": "Le glissement explique aussi pourquoi, sur ces mélanges, on ne lit pas « la » température d'évaporation : la table en donne deux, au point de bulle et au point de rosée. Se tromper de colonne fausse la surchauffe calculée."
+  },
+  "remediation_vers": "g1e"
  }
 ]

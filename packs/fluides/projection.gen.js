@@ -2267,36 +2267,24 @@ window.PILOTE_PROJECTION = {
     {
      "type": "cours",
      "fiche": "g1a",
-     "titre": "Unités, pression, thermodynamique utile",
-     "minutes": 45,
+     "titre": "Unités, pression et les quatre organes",
+     "minutes": 30,
      "video": null,
      "slides": [
       {
        "type": "titre",
-       "titre": "Unités, pression, thermodynamique utile",
-       "dc": "G1 · codes 1.01 · 1.02 · 1.04",
+       "titre": "Unités, pression et les quatre organes",
+       "dc": "G1 · codes 1.01 · 1.04",
        "competences": [
         {
          "code": "1.01",
-         "lib": "Utiliser les unités normalisées (température, pression, masse, énergie)",
+         "lib": "Utiliser les unités normalisées (température, pression, masse, densité, énergie)",
          "officiel": "Connaître les unités normalisées ISO pour la température, la pression, la masse, la densité et l'énergie",
          "epreuve": {
           "A1": "T",
           "A2": "T",
           "D": "T",
           "E": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "1.02",
-         "lib": "Expliquer la thermodynamique élémentaire du froid",
-         "officiel": "Comprendre la théorie élémentaire des systèmes de réfrigération : thermodynamique élémentaire (terminologie, paramètres et processus essentiels tels que « surchauffe », « côté haute pression », « chaleur de compression », « enthalpie », « effet de réfrigération », « côté basse pression », « sous-refroidissement »), propriétés et transformations thermodynamiques des réfrigérants, y compris l'identification des mélanges zéotropiques et des états des fluides",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "D": "T"
          },
          "nouveau": false,
          "tirage_au_sort": false
@@ -2319,48 +2307,29 @@ window.PILOTE_PROJECTION = {
        "type": "schema",
        "src": "packs/fluides/res/svg/croix-frigoriste.svg",
        "alt": "La croix du frigoriste : détendeur à gauche, compresseur à droite, condenseur en haut, évaporateur en bas.",
-       "titre": "Unités, pression, thermodynamique utile"
+       "titre": "Unités, pression et les quatre organes"
       },
       {
        "type": "point",
        "html": "Tout le métier tient sur un couple : <b>pression et température vont ensemble</b>. Chauffer un fluide enfermé fait monter sa pression ; abaisser sa pression le fait bouillir plus froid. C'est cette relation qu'on exploite d'un bout à l'autre du circuit.",
-       "titre": "Unités, pression, thermodynamique utile"
+       "titre": "Unités, pression et les quatre organes"
       },
       {
        "type": "point",
        "html": "Quatre organes, dans l'ordre du cycle : le <b>compresseur</b> aspire la vapeur basse pression et la refoule en haute pression ; le <b>condenseur</b> évacue la chaleur et liquéfie ; le <b>détendeur</b> fait chuter la pression ; l'<b>évaporateur</b> absorbe la chaleur du milieu à refroidir. Basse pression du côté froid, haute pression du côté chaud.",
-       "titre": "Unités, pression, thermodynamique utile"
+       "titre": "Unités, pression et les quatre organes"
       },
       {
        "type": "point",
        "html": "Une autre grandeur sert tous les jours au frigoriste : la <b>masse volumique</b> (on dit aussi <b>densité</b>). C'est la masse contenue dans un volume donné, en <b>kg/m³</b>. Pour un même fluide, la vapeur et le liquide n'ont pas du tout la même masse volumique : un litre de liquide pèse beaucoup plus lourd qu'un litre de vapeur. C'est pour ça qu'on charge un circuit en <b>phase liquide</b> plutôt qu'en vapeur : on fait entrer beaucoup plus de matière pour le même volume de bouteille, et le dimensionnement des tuyauteries en tient compte.",
-       "titre": "Unités, pression, thermodynamique utile"
-      },
-      {
-       "type": "point",
-       "html": "Sur le diagramme du fluide, la grandeur qu'on lit en abscisse s'appelle l'<b>enthalpie</b>. C'est l'énergie contenue dans un kilo de fluide, en <b>kJ/kg</b> (kilojoule par kilo). Elle sert à calculer ce que l'évaporateur absorbe et ce que le condenseur évacue : plus l'écart d'enthalpie entre l'entrée et la sortie est grand, plus l'échange de chaleur est important.",
-       "titre": "Unités, pression, thermodynamique utile"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "À retenir",
-       "html": "<b>Surchauffe</b> : le fluide sort de l'évaporateur un peu plus chaud que sa température d'évaporation — elle protège le compresseur du liquide. Repère : <b>5 à 10 K</b>.<br><b>Sous-refroidissement</b> : le liquide sort du condenseur un peu plus froid que sa température de condensation — il garantit du liquide pur au détendeur. Repère : <b>4 à 8 K</b>.",
-       "titre": "Unités, pression, thermodynamique utile"
+       "titre": "Unités, pression et les quatre organes"
       },
       {
        "type": "encadre",
        "genre": "piege",
        "t": "Le piège des manomètres",
        "html": "<b>Pression absolue = pression relative + environ 1 bar.</b> Un manomètre de service lit en relatif ; les tables de saturation, elles, sont souvent en absolu. Se tromper d'un bar, c'est se tromper de plusieurs kelvins sur la température de saturation — et diagnostiquer une fuite qui n'existe pas.",
-       "titre": "Unités, pression, thermodynamique utile"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Mélanges zéotropes : le glissement",
-       "html": "<p>Certains fluides sont des <b>mélanges zéotropes</b> : plusieurs fluides purs mélangés dont les composants ne s'évaporent pas ensemble. Résultat, pendant tout le changement d'état, la température n'est pas constante : elle <b>glisse</b>, on parle de <b>glissement</b>. Conséquence pratique : on charge et on soutire toujours ces mélanges en <b>phase liquide</b>, jamais en phase vapeur, sinon la composition change et le fluide qui reste dans la bouteille n'est plus le même.</p>",
-       "titre": "Unités, pression, thermodynamique utile"
+       "titre": "Unités, pression et les quatre organes"
       }
      ],
      "questions": [
@@ -2443,6 +2412,225 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "id": "q-g1-62",
+       "dc": "G1",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "La pression absolue est égale à :",
+       "choix": [
+        "Pression relative + pression atmosphérique",
+        "Pression relative - pression atmosphérique",
+        "Pression atmosphérique uniquement",
+        "Pression relative uniquement"
+       ],
+       "bonne": 0,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g1a",
+       "code": "1.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D",
+        "E"
+       ]
+      },
+      {
+       "id": "q-g1-v6_141",
+       "dc": "G1",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "L'énergie nécessaire au fonctionnement du cycle frigorifique est apportée par :",
+       "choix": [
+        "L'évaporateur",
+        "Le condenseur",
+        "Le compresseur",
+        "Le détendeur"
+       ],
+       "bonne": 2,
+       "explication": "Le compresseur — Le compresseur est le seul organe qui reçoit de l'énergie (électrique) pour faire tourner le cycle.",
+       "aide": "C'est le 'moteur' du cycle — il consomme de l'électricité.",
+       "remed": {
+        "texte": "Le compresseur est le seul organe qui reçoit de l'énergie (électrique) pour faire tourner le cycle."
+       },
+       "remediation_vers": "g1a",
+       "code": "1.04",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      }
+     ],
+     "notes": "Faire lire un manomètre RÉEL : c'est l'ancrage de tout le contrôle indirect qui viendra en G4. Pédagogie de la découverte : faire deviner ce qui se passe si on chauffe une bouteille fermée, avant d'énoncer la relation pression-température. Ne PAS anticiper sur la surchauffe ni sur le sous-refroidissement : depuis le 27/07 ils sont enseignés en g1e, après le palier, et les prononcer ici sans le palier est exactement ce qui ne marchait pas."
+    },
+    {
+     "type": "cours",
+     "fiche": "g1e",
+     "titre": "Chaleur sensible et chaleur latente : le palier",
+     "minutes": 30,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Chaleur sensible et chaleur latente : le palier",
+       "dc": "G1 · code 1.02",
+       "competences": [
+        {
+         "code": "1.02",
+         "lib": "Comprendre la thermodynamique du froid : chaleur sensible, chaleur latente, états du fluide",
+         "officiel": "Comprendre la théorie élémentaire des systèmes de réfrigération : thermodynamique élémentaire (terminologie, paramètres et processus essentiels tels que « surchauffe », « côté haute pression », « chaleur de compression », « enthalpie », « effet de réfrigération », « côté basse pression », « sous-refroidissement »), propriétés et transformations thermodynamiques des réfrigérants, y compris l'identification des mélanges zéotropiques et des états des fluides",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/chaleur-palier.svg",
+       "alt": "On chauffe un fluide : le thermomètre monte, puis s'arrête pendant tout le changement d'état — c'est le palier, la chaleur latente — puis repart quand toute la matière est devenue vapeur.",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "point",
+       "html": "Chauffez un corps sans qu'il change d'état : sa température monte. Cette chaleur-là, le thermomètre la <b>sent</b>. On l'appelle la <b>chaleur sensible</b>.",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "point",
+       "html": "Continuez de chauffer, et il arrive un moment où le liquide se met à bouillir. Là, quelque chose de contraire au bon sens se produit : <b>vous chauffez toujours, et la température ne monte plus</b>. Toute la chaleur que vous apportez sert à faire passer la matière de l'état liquide à l'état vapeur. Ce passage porte un nom : la <b>vaporisation</b>. Et la chaleur qu'il consomme ne se voit pas sur le thermomètre : on l'appelle la <b>chaleur latente</b>, et le morceau de courbe où la température reste bloquée s'appelle le <b>palier</b>.",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "point",
+       "html": "Vous connaissez déjà ce palier. À la pression atmosphérique, l'eau d'une casserole monte jusqu'à 100 °C. Ensuite elle bout. Le feu chauffe toujours, et la température reste à 100 °C jusqu'à ce que toute l'eau soit partie en vapeur.",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "point",
+       "html": "Une machine frigorifique ne fait rien d'autre que <b>déplacer de la chaleur latente</b>. L'évaporateur en absorbe : il fait bouillir le fluide, et cette chaleur, il la prend au local à refroidir. Le condenseur la rend : il liquéfie le fluide dehors, et la chaleur repart dans l'air extérieur. C'est pour cela qu'on travaille avec un fluide qui <b>change d'état</b>, et pas avec de l'air : le palier transporte beaucoup plus de chaleur, pour un même kilo de matière déplacé.",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "point",
+       "html": "La quantité de chaleur contenue dans un kilo de fluide porte un nom : l'<b>enthalpie</b>, en <b>kJ/kg</b> (kilojoule par kilogramme). C'est la grandeur qu'on lit en abscisse sur le diagramme du fluide. L'<b>effet de réfrigération</b>, c'est justement l'écart d'enthalpie entre l'entrée et la sortie de l'évaporateur : ce que ce kilo de fluide est allé chercher de chaleur dans le local. Plus cet écart est grand, plus la machine produit de froid par kilo transporté.",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "point",
+       "html": "Le compresseur, lui, ajoute de la chaleur au fluide en le comprimant : c'est la <b>chaleur de compression</b>. C'est pour cela que la tuyauterie de refoulement est brûlante alors que celle d'aspiration est froide. Le condenseur doit donc évacuer deux choses : la chaleur prise au local, et celle ajoutée par le compresseur.",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "point",
+       "html": "Reste à nommer les états que le fluide traverse. Ce sont les mots que vous entendrez toute la semaine :",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "point",
+       "html": "Le condenseur parcourt le même chemin, mais en sens inverse : la vapeur surchauffée se refroidit, passe le point de rosée, se condense tout au long du palier, franchit le point de bulle, puis le liquide continue de se refroidir. Ce dernier morceau porte un nom que vous retrouverez partout : le <b>sous-refroidissement</b>. Attention : même chemin ne veut pas dire mêmes températures — le condenseur travaille à une pression plus haute, donc son palier est plus chaud. C'est l'objet de l'encadré ci-dessous.",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li><b>Liquide sous-refroidi</b> : du liquide plus froid que sa température de changement d'état, à la pression où il se trouve. Il n'a pas encore commencé à bouillir.</li><li><b>Point de bulle</b> : la première bulle de vapeur apparaît. Le palier commence.</li><li><b>Saturé</b> : sur le palier, liquide et vapeur cohabitent. Tant qu'il reste une goutte de liquide, la température ne bouge pas.</li><li><b>Point de rosée</b> : la dernière goutte de liquide vient de disparaître. Le palier est fini.</li><li><b>Vapeur surchauffée</b> : au-delà du palier, la température repart vers le haut. On est revenu en chaleur sensible.</li></ul>",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li><b>Chaleur sensible</b> : la température change, le thermomètre le montre.</li><li><b>Chaleur latente</b> : la température ne change pas, c'est l'état qui change. C'est le <b>palier</b>.</li><li>Le froid se fabrique <b>sur le palier</b> : l'évaporateur y absorbe la chaleur, le condenseur l'y rend.</li><li>Les cinq mots du chemin, dans l'ordre : <b>sous-refroidi → point de bulle → saturé → point de rosée → surchauffée</b>.</li></ul>",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Les deux écarts que vous mesurerez sur le terrain",
+       "html": "<b>Surchauffe</b> : le fluide sort de l'évaporateur un peu plus chaud que sa température d'évaporation. On est reparti en chaleur sensible, donc il n'y a plus de liquide — et c'est ce qui protège le compresseur. Repère : <b>5 à 10 K</b>.<br><b>Sous-refroidissement</b> : le liquide sort du condenseur un peu plus froid que sa température de condensation. On est reparti en chaleur sensible de l'autre côté, donc il n'y a plus de vapeur — et c'est ce qui garantit du liquide pur au détendeur. Repère : <b>4 à 8 K</b>.<br>Ces deux écarts se comptent en <b>kelvins</b> (K) parce que ce sont des <b>différences</b> de température, jamais des températures. Comment on les mesure : c'est la méthode indirecte, en G4.",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le palier n'est pas à une température fixe",
+       "html": "<p>La température du palier <b>dépend de la pression</b>. Baissez la pression, le fluide bout plus froid ; montez-la, il bout plus chaud. C'est toute l'astuce de la machine : le détendeur fait chuter la pression pour que le fluide bouille dans le local, le compresseur la remonte pour qu'il se condense dehors.</p><p>C'est de là que viennent les deux moitiés de la machine dont on vous parlera tous les jours : le <b>côté basse pression</b>, entre le détendeur et le compresseur, où le fluide bout froid ; et le <b>côté haute pression</b>, entre le compresseur et le détendeur, où il se condense chaud. Un même fluide, deux paliers différents, parce que la pression n'y est pas la même.</p><p>Conséquence : <b>« la température de saturation » ne veut rien dire sans une pression</b>, et l'une ne se déduit de l'autre qu'avec la table du fluide concerné. C'est l'objet de la fiche suivante.</p>",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Mélanges zéotropes : le palier n'est pas plat",
+       "html": "<p>Certains fluides sont des <b>mélanges zéotropes</b> : plusieurs fluides purs mélangés dont les composants ne s'évaporent pas ensemble. Le plus volatil part d'abord. Résultat, entre le point de bulle et le point de rosée, la température ne reste pas constante : elle <b>glisse</b>. On parle de <b>glissement</b>.</p><p>Conséquence pratique, et elle est immédiate : on charge et on soutire toujours ces mélanges en <b>phase liquide</b>, jamais en phase vapeur. Sinon la composition change, et le fluide qui reste dans la bouteille n'est plus celui qui est écrit dessus.</p>",
+       "titre": "Chaleur sensible et chaleur latente : le palier"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-g1e-1",
+       "dc": "G1",
+       "code": "1.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "De l'eau bout dans une casserole, à la pression atmosphérique. Vous montez le feu. Que devient sa température ?",
+       "choix": [
+        "Elle monte, puisque vous chauffez davantage",
+        "Elle ne bouge pas : l'eau bout simplement plus vite",
+        "Elle descend, parce que la vapeur emporte de la chaleur",
+        "Elle monte d'abord, puis se stabilise au bout de quelques minutes"
+       ],
+       "bonne": 1,
+       "aide": "Demandez-vous où part la chaleur que vous ajoutez, tant qu'il reste de l'eau liquide.",
+       "remed": {
+        "regle": "Pendant un changement d'état, la chaleur apportée sert au changement d'état, pas à l'élévation de température. C'est la chaleur latente, et le morceau de courbe où la température reste bloquée s'appelle le palier.",
+        "pourquoi": "Monter le feu n'augmente pas la température de l'eau qui bout : cela augmente la quantité d'eau vaporisée par minute. La température ne repartira que lorsque toute l'eau sera partie en vapeur — il n'y aura alors plus de liquide à vaporiser.",
+        "exemple": "Dans l'évaporateur, c'est exactement ce qui se passe : le fluide bout à température constante et prend sa chaleur au local. C'est le palier qui fait le froid.",
+        "piege": "La température du palier n'est pas une constante universelle : elle dépend de la PRESSION. Un fluide frigorigène bout d'autant plus froid que sa pression est basse — c'est toute l'astuce du détendeur."
+       },
+       "remediation_vers": "g1e",
+       "explication": "Pendant un changement d'état, la chaleur apportée sert au changement d'état, pas à l'élévation de température. C'est la chaleur latente, et le morceau de courbe où la température reste bloquée s'appelle le palier.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "pk-g1e-2",
+       "dc": "G1",
+       "code": "1.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Pourquoi une machine frigorifique utilise-t-elle un fluide qui change d'état, plutôt que de faire simplement circuler de l'air ?",
+       "choix": [
+        "Parce qu'un fluide frigorigène est plus froid que l'air",
+        "Parce que le changement d'état transporte beaucoup plus de chaleur, à masse égale",
+        "Parce que l'air ne peut pas circuler dans un tube de cuivre",
+        "Parce que la réglementation l'impose depuis le règlement (UE) 2024/573"
+       ],
+       "bonne": 1,
+       "aide": "Comparez la chaleur qu'un kilo de matière emporte en s'échauffant, et celle qu'il emporte en se vaporisant.",
+       "remed": {
+        "regle": "Une machine frigorifique déplace de la chaleur latente : l'évaporateur en absorbe en faisant bouillir le fluide, le condenseur la rend en le liquéfiant. Le palier transporte beaucoup plus de chaleur, pour un même kilo de matière déplacé.",
+        "pourquoi": "Un fluide n'est pas « froid » en lui-même. Il devient froid parce qu'on abaisse sa pression jusqu'à ce qu'il bouille à une température inférieure à celle du local. Ce qui fait le froid, ce n'est pas le fluide : c'est le changement d'état.",
+        "piege": "Croire que le fluide est froid « par nature » mène à une seconde erreur, celle-là dangereuse : oublier que dans la même machine, ce même fluide est brûlant au refoulement du compresseur."
+       },
+       "remediation_vers": "g1e",
+       "explication": "Une machine frigorifique déplace de la chaleur latente : l'évaporateur en absorbe en faisant bouillir le fluide, le condenseur la rend en le liquéfiant. Le palier transporte beaucoup plus de chaleur, pour un même kilo de matière déplacé.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
        "id": "q-g1-157",
        "dc": "G1",
        "niveau": 1,
@@ -2460,7 +2648,7 @@ window.PILOTE_PROJECTION = {
        "remed": {
         "texte": "Dans la ligne liquide (entre condenseur et détendeur), le fluide est à l'état LIQUIDE sous haute pression. C'est pour cela qu'on l'appelle 'ligne liquide'."
        },
-       "remediation_vers": "g1a",
+       "remediation_vers": "g1e",
        "code": "1.02",
        "categories": [
         "A1",
@@ -2486,7 +2674,7 @@ window.PILOTE_PROJECTION = {
        "remed": {
         "texte": "Dans la ligne d'aspiration (entre évaporateur et compresseur), le fluide est à l'état GAZEUX (vapeur) basse pression. Le compresseur aspire du gaz, jamais du liquide !"
        },
-       "remediation_vers": "g1a",
+       "remediation_vers": "g1e",
        "code": "1.02",
        "categories": [
         "A1",
@@ -2495,7 +2683,7 @@ window.PILOTE_PROJECTION = {
        ]
       }
      ],
-     "notes": "Faire lire un manomètre RÉEL et retrouver la température de saturation dans la table : c'est l'ancrage de tout le contrôle indirect qui viendra en G4. Tant que ce geste n'est pas acquis, inutile d'avancer. Pédagogie de la découverte : faire deviner ce qui se passe si on chauffe une bouteille fermée, avant d'énoncer la relation pression-température."
+     "notes": "LA fiche à ne pas bâcler : tout le vocabulaire de la semaine en sort. Commencer par la casserole d'eau, pas par le fluide frigorigène — le palier de l'eau, tout le monde l'a déjà vu. Demander au groupe : « le feu chauffe toujours, où va la chaleur ? » et laisser chercher avant de donner le mot « latente ». Le seul chiffre de la fiche est 100 °C à la pression atmosphérique : c'est un repère de culture générale, pas une valeur de fluide — ne pas laisser le groupe le généraliser. Faire ÉNONCER les cinq mots du chemin dans l'ordre, à voix haute, avant de passer à g1b : c'est le seul contrôle qui vaille. Insister sur la nuance sur laquelle tout le monde trébuche : la surchauffe et le sous-refroidissement sont des ÉCARTS, en kelvins, jamais des températures. Enfin : ne pas mesurer la surchauffe ici, c'est le geste de G4 — ici on installe le sens du mot."
     },
     {
      "type": "cours",

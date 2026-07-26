@@ -301,6 +301,13 @@ const REMEDIATION_FINE = {
   "v6_106": "g2a", "v6_107": "g2a", "v6_110": "g2a", "v6_111": "g2a",
   "v6_114": "g2a", "v6_115": "g2a", "v6_037": "g2a",
   "5": "g2a", "v6_003": "g2a", "v6_004": "g2a",
+  /* Chantier 1 du socle théorique (27/07). Le code 1.02 n'est plus enseigné
+     par g1a mais par g1e — chaleur sensible et latente, le palier, les états
+     du fluide. Ces cinq questions portent 1.02 et renvoyaient vers g1a :
+     l'élève qui se trompait retombait sur une fiche qui n'enseigne plus la
+     notion. États du fluide (157, 158), retour de liquide au compresseur
+     (160), repères de surchauffe et de sous-refroidissement (v6_048, v6_145). */
+  "160": "g1e", "157": "g1e", "158": "g1e", "v6_048": "g1e", "v6_145": "g1e",
 };
 
 /* ---------------------------------------------------------------------

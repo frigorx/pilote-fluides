@@ -261,7 +261,8 @@ export const CARTES = [
       { vers: "m-secu", icone: "⚠", titre: "Sécurité — à voir en premier", desc: "Ce qui peut vous blesser, et comment l éviter.", primaire: true },
       { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
-      { vers: "g1a", icone: "1", titre: "Unités, pression, thermodynamique utile", desc: "G1 — le socle de tout le reste." },
+      { vers: "g1a", icone: "1", titre: "Unités, pression et les quatre organes", desc: "G1 — de quoi on parle, et qui fait quoi." },
+      { vers: "g1e", icone: "1", titre: "Chaleur sensible et chaleur latente", desc: "G1 — le palier : d'où vient le froid. Le socle de tout le reste.", primaire: true },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g1d", icone: "1", titre: "Les organes qui trahissent une fuite", desc: "G1 — voyant, vannes, pressostats : lire les signes." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
@@ -306,7 +307,8 @@ export const CARTES = [
       { vers: "m-secu", icone: "⚠", titre: "Sécurité — à voir en premier", desc: "Ce qui peut vous blesser, et comment l éviter.", primaire: true },
       { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
-      { vers: "g1a", icone: "1", titre: "Unités, pression, thermodynamique utile", desc: "G1 — insister sur les seuils de charge." },
+      { vers: "g1a", icone: "1", titre: "Unités, pression et les quatre organes", desc: "G1 — insister sur les seuils de charge." },
+      { vers: "g1e", icone: "1", titre: "Chaleur sensible et chaleur latente", desc: "G1 — le palier : d'où vient le froid. Le socle de tout le reste.", primaire: true },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g1d", icone: "1", titre: "Les organes qui trahissent une fuite", desc: "G1 — voyant, vannes, pressostats : lire les signes." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
@@ -350,7 +352,8 @@ export const CARTES = [
       { vers: "m-secu", icone: "⚠", titre: "Sécurité — à voir en premier", desc: "Ce qui peut vous blesser, et comment l éviter.", primaire: true },
       { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
-      { vers: "g1a", icone: "1", titre: "Bases : fluides, thermo utile, composants", desc: "G1 partiel — savoir de quoi on parle." },
+      { vers: "g1a", icone: "1", titre: "Bases : unités, pression, composants", desc: "G1 partiel — savoir de quoi on parle." },
+      { vers: "g1e", icone: "1", titre: "Chaleur sensible et chaleur latente", desc: "G1 — le palier : ce qu'il y a dans la bouteille et pourquoi ça bout." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
       { vers: "g2", icone: "2", titre: "Enjeu environnemental", desc: "G2 — pourquoi on ne rejette pas." },
@@ -1487,14 +1490,21 @@ export const CARTES = [
     criteres: [
       { code: "1.00", libelle: "Identifier les obligations légales de base liées aux fluides frigorigènes", etat: "a_evaluer" },
     ],
-    liens: [suite("g1a", "Unités, pression, thermodynamique utile"), SOMMAIRE],
+    liens: [suite("g1a", "Unités, pression et les quatre organes"), SOMMAIRE],
     notes_pilote: "Partir du concret : demander qui, dans l'entreprise du stagiaire, détient l'attestation de capacité, et qui détient l'attestation d'aptitude. Insister à l'oral sur le mot RÈGLEMENT (jamais « directive ») : confusion fréquente, piège classique à l'examen. Ne pas s'attarder sur des chiffres précis : renvoyer systématiquement au texte en vigueur.",
   },
   {
+    // DÉGRAISSÉE le 27/07 (chantier 1 du socle théorique). Cette fiche portait
+    // le code 1.02 — la thermodynamique élémentaire — en trois encadrés posés
+    // sur 250 mots : enthalpie, surchauffe et sous-refroidissement en repères
+    // chiffrés, glissement des zéotropes. Aucun de ces mots n'avait de sens
+    // pour le stagiaire, faute du palier de changement d'état. Tout cela part
+    // dans `g1e`, qui l'enseigne. Ce qui reste ici est ce que la fiche tenait
+    // vraiment : les unités (1.01) et la fonction des organes (1.04).
     id: "g1a",
     type: "cours",
-    titre: "Unités, pression, thermodynamique utile",
-    dc: "G1 · codes 1.01 · 1.02 · 1.04",
+    titre: "Unités, pression et les quatre organes",
+    dc: "G1 · codes 1.01 · 1.04",
     minuteur_s: 300,
     corps:
       schema("croix-frigoriste.svg", "La croix du frigoriste : détendeur à gauche, compresseur à droite, condenseur en haut, évaporateur en bas.") +
@@ -1505,18 +1515,8 @@ export const CARTES = [
       "et la refoule en haute pression ; le <b>condenseur</b> évacue la chaleur et liquéfie ; " +
       "le <b>détendeur</b> fait chuter la pression ; l'<b>évaporateur</b> absorbe la chaleur du milieu " +
       "à refroidir. Basse pression du côté froid, haute pression du côté chaud.</p>" +
-      "<p>Une autre grandeur sert tous les jours au frigoriste : la <b>masse volumique</b> (on dit aussi <b>densité</b>). C'est la masse contenue dans un volume donné, en <b>kg/m³</b>. Pour un même fluide, la vapeur et le liquide n'ont pas du tout la même masse volumique : un litre de liquide pèse beaucoup plus lourd qu'un litre de vapeur. C'est pour ça qu'on charge un circuit en <b>phase liquide</b> plutôt qu'en vapeur : on fait entrer beaucoup plus de matière pour le même volume de bouteille, et le dimensionnement des tuyauteries en tient compte.</p>" +
-      "<p>Sur le diagramme du fluide, la grandeur qu'on lit en abscisse s'appelle l'<b>enthalpie</b>. C'est l'énergie contenue dans un kilo de fluide, en <b>kJ/kg</b> (kilojoule par kilo). Elle sert à calculer ce que l'évaporateur absorbe et ce que le condenseur évacue : plus l'écart d'enthalpie entre l'entrée et la sortie est grand, plus l'échange de chaleur est important.</p>",
+      "<p>Une autre grandeur sert tous les jours au frigoriste : la <b>masse volumique</b> (on dit aussi <b>densité</b>). C'est la masse contenue dans un volume donné, en <b>kg/m³</b>. Pour un même fluide, la vapeur et le liquide n'ont pas du tout la même masse volumique : un litre de liquide pèse beaucoup plus lourd qu'un litre de vapeur. C'est pour ça qu'on charge un circuit en <b>phase liquide</b> plutôt qu'en vapeur : on fait entrer beaucoup plus de matière pour le même volume de bouteille, et le dimensionnement des tuyauteries en tient compte.</p>",
     blocs: [
-      {
-        type: "cle",
-        t: "À retenir",
-        html:
-          "<b>Surchauffe</b> : le fluide sort de l'évaporateur un peu plus chaud que sa température " +
-          "d'évaporation — elle protège le compresseur du liquide. Repère : <b>5 à 10 K</b>.<br>" +
-          "<b>Sous-refroidissement</b> : le liquide sort du condenseur un peu plus froid que sa " +
-          "température de condensation — il garantit du liquide pur au détendeur. Repère : <b>4 à 8 K</b>.",
-      },
       {
         type: "piege",
         t: "Le piège des manomètres",
@@ -1526,7 +1526,6 @@ export const CARTES = [
           "c'est se tromper de plusieurs kelvins sur la température de saturation — et diagnostiquer une " +
           "fuite qui n'existe pas.",
       },
-      { type: "piege", t: "Mélanges zéotropes : le glissement", html: "<p>Certains fluides sont des <b>mélanges zéotropes</b> : plusieurs fluides purs mélangés dont les composants ne s'évaporent pas ensemble. Résultat, pendant tout le changement d'état, la température n'est pas constante : elle <b>glisse</b>, on parle de <b>glissement</b>. Conséquence pratique : on charge et on soutire toujours ces mélanges en <b>phase liquide</b>, jamais en phase vapeur, sinon la composition change et le fluide qui reste dans la bouteille n'est plus le même.</p>" },
     ],
     question: {
       type: "qcm",
@@ -1539,17 +1538,157 @@ export const CARTES = [
       remediation_vers: "g1a",
     },
     criteres: [
-      { code: "1.01", libelle: "Utiliser les unités normalisées (température, pression, masse, énergie)", etat: "a_evaluer" },
-      { code: "1.02", libelle: "Expliquer la thermodynamique élémentaire du froid", etat: "a_evaluer" },
+      { code: "1.01", libelle: "Utiliser les unités normalisées (température, pression, masse, densité, énergie)", etat: "a_evaluer" },
       { code: "1.04", libelle: "Décrire la fonction de chaque composant du circuit", etat: "a_evaluer" },
     ],
-    ressources: ["r-croix", "r-mollier"],
-    liens: [suite("g1b", "Lire une table de saturation"), SOMMAIRE],
+    ressources: ["r-croix"],
+    liens: [suite("g1e", "Chaleur sensible et chaleur latente"), SOMMAIRE],
     notes_pilote:
-      "Faire lire un manomètre RÉEL et retrouver la température de saturation dans la table : c'est " +
-      "l'ancrage de tout le contrôle indirect qui viendra en G4. Tant que ce geste n'est pas acquis, " +
-      "inutile d'avancer. Pédagogie de la découverte : faire deviner ce qui se passe si on chauffe une " +
-      "bouteille fermée, avant d'énoncer la relation pression-température.",
+      "Faire lire un manomètre RÉEL : c'est l'ancrage de tout le contrôle indirect qui viendra en G4. " +
+      "Pédagogie de la découverte : faire deviner ce qui se passe si on chauffe une bouteille fermée, " +
+      "avant d'énoncer la relation pression-température. Ne PAS anticiper sur la surchauffe ni sur le " +
+      "sous-refroidissement : depuis le 27/07 ils sont enseignés en g1e, après le palier, et les " +
+      "prononcer ici sans le palier est exactement ce qui ne marchait pas.",
+  },
+  {
+    /* ------------------------------------------------------------------
+       g1e — CHANTIER 1 DU SOCLE THÉORIQUE (27/07/2026).
+       Le suffixe est l'ordre de CRÉATION, pas l'ordre de lecture : dans le
+       fil, cette fiche se lit entre g1a et g1b. Renommer g1b/g1c/g1d pour
+       faire de la place aurait déplacé des dizaines de renvois de
+       remédiation — on ne casse pas des renvois pour une lettre.
+
+       POURQUOI ELLE EXISTE — mesure du 27/07 : « chaleur sensible » et
+       « chaleur latente » = 0 occurrence dans tout le contenu élève, alors
+       que « surchauffe » y apparaissait 97 fois. Le pack faisait employer
+       un mot dont il n'avait jamais donné le sens physique. Cette fiche
+       pose le palier, et TOUT le reste s'y adosse.
+       ------------------------------------------------------------------ */
+    id: "g1e",
+    type: "cours",
+    titre: "Chaleur sensible et chaleur latente : le palier",
+    dc: "G1 · code 1.02",
+    minuteur_s: 480,
+    corps:
+      schema("chaleur-palier.svg", "On chauffe un fluide : le thermomètre monte, puis s'arrête pendant tout le changement d'état — c'est le palier, la chaleur latente — puis repart quand toute la matière est devenue vapeur.") +
+      "<p>Chauffez un corps sans qu'il change d'état : sa température monte. " +
+      "Cette chaleur-là, le thermomètre la <b>sent</b>. On l'appelle la <b>chaleur sensible</b>.</p>" +
+      "<p>Continuez de chauffer, et il arrive un moment où le liquide se met à bouillir. " +
+      "Là, quelque chose de contraire au bon sens se produit : <b>vous chauffez toujours, et la température ne monte plus</b>. " +
+      "Toute la chaleur que vous apportez sert à faire passer la matière de l'état liquide à l'état vapeur. " +
+      "Ce passage porte un nom : la <b>vaporisation</b>. " +
+      "Et la chaleur qu'il consomme ne se voit pas sur le thermomètre : on l'appelle la <b>chaleur latente</b>, " +
+      "et le morceau de courbe où la température reste bloquée s'appelle le <b>palier</b>.</p>" +
+      "<p>Vous connaissez déjà ce palier. À la pression atmosphérique, l'eau d'une casserole monte jusqu'à 100 °C. " +
+      "Ensuite elle bout. Le feu chauffe toujours, et la température reste à 100 °C jusqu'à ce que toute l'eau soit partie en vapeur.</p>" +
+      "<p>Une machine frigorifique ne fait rien d'autre que <b>déplacer de la chaleur latente</b>. " +
+      "L'évaporateur en absorbe : il fait bouillir le fluide, et cette chaleur, il la prend au local à refroidir. " +
+      "Le condenseur la rend : il liquéfie le fluide dehors, et la chaleur repart dans l'air extérieur. " +
+      "C'est pour cela qu'on travaille avec un fluide qui <b>change d'état</b>, et pas avec de l'air : " +
+      "le palier transporte beaucoup plus de chaleur, pour un même kilo de matière déplacé.</p>" +
+      "<p>La quantité de chaleur contenue dans un kilo de fluide porte un nom : l'<b>enthalpie</b>, en <b>kJ/kg</b> (kilojoule par kilogramme). " +
+      "C'est la grandeur qu'on lit en abscisse sur le diagramme du fluide. " +
+      "L'<b>effet de réfrigération</b>, c'est justement l'écart d'enthalpie entre l'entrée et la sortie de l'évaporateur : " +
+      "ce que ce kilo de fluide est allé chercher de chaleur dans le local. Plus cet écart est grand, plus la machine produit de froid par kilo transporté.</p>" +
+      "<p>Le compresseur, lui, ajoute de la chaleur au fluide en le comprimant : c'est la <b>chaleur de compression</b>. " +
+      "C'est pour cela que la tuyauterie de refoulement est brûlante alors que celle d'aspiration est froide. " +
+      "Le condenseur doit donc évacuer deux choses : la chaleur prise au local, et celle ajoutée par le compresseur.</p>" +
+      "<p>Reste à nommer les états que le fluide traverse. Ce sont les mots que vous entendrez toute la semaine :</p>" +
+      "<ul>" +
+      "<li><b>Liquide sous-refroidi</b> : du liquide plus froid que sa température de changement d'état, à la pression où il se trouve. Il n'a pas encore commencé à bouillir.</li>" +
+      "<li><b>Point de bulle</b> : la première bulle de vapeur apparaît. Le palier commence.</li>" +
+      "<li><b>Saturé</b> : sur le palier, liquide et vapeur cohabitent. Tant qu'il reste une goutte de liquide, la température ne bouge pas.</li>" +
+      "<li><b>Point de rosée</b> : la dernière goutte de liquide vient de disparaître. Le palier est fini.</li>" +
+      "<li><b>Vapeur surchauffée</b> : au-delà du palier, la température repart vers le haut. On est revenu en chaleur sensible.</li>" +
+      "</ul>" +
+      "<p>Le condenseur parcourt le même chemin, mais en sens inverse : la vapeur surchauffée se refroidit, " +
+      "passe le point de rosée, se condense tout au long du palier, franchit le point de bulle, puis le liquide continue de se refroidir. " +
+      "Ce dernier morceau porte un nom que vous retrouverez partout : le <b>sous-refroidissement</b>. " +
+      "Attention : même chemin ne veut pas dire mêmes températures — le condenseur travaille à une pression plus haute, " +
+      "donc son palier est plus chaud. C'est l'objet de l'encadré ci-dessous.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "Ce qu'il faut retenir",
+        html:
+          "<ul>" +
+          "<li><b>Chaleur sensible</b> : la température change, le thermomètre le montre.</li>" +
+          "<li><b>Chaleur latente</b> : la température ne change pas, c'est l'état qui change. C'est le <b>palier</b>.</li>" +
+          "<li>Le froid se fabrique <b>sur le palier</b> : l'évaporateur y absorbe la chaleur, le condenseur l'y rend.</li>" +
+          "<li>Les cinq mots du chemin, dans l'ordre : <b>sous-refroidi → point de bulle → saturé → point de rosée → surchauffée</b>.</li>" +
+          "</ul>",
+      },
+      {
+        type: "cle",
+        t: "Les deux écarts que vous mesurerez sur le terrain",
+        html:
+          "<b>Surchauffe</b> : le fluide sort de l'évaporateur un peu plus chaud que sa température " +
+          "d'évaporation. On est reparti en chaleur sensible, donc il n'y a plus de liquide — et c'est " +
+          "ce qui protège le compresseur. Repère : <b>5 à 10 K</b>.<br>" +
+          "<b>Sous-refroidissement</b> : le liquide sort du condenseur un peu plus froid que sa " +
+          "température de condensation. On est reparti en chaleur sensible de l'autre côté, donc il " +
+          "n'y a plus de vapeur — et c'est ce qui garantit du liquide pur au détendeur. Repère : <b>4 à 8 K</b>.<br>" +
+          "Ces deux écarts se comptent en <b>kelvins</b> (K) parce que ce sont des <b>différences</b> de " +
+          "température, jamais des températures. Comment on les mesure : c'est la méthode indirecte, en G4.",
+      },
+      {
+        type: "piege",
+        t: "Le palier n'est pas à une température fixe",
+        html:
+          "<p>La température du palier <b>dépend de la pression</b>. Baissez la pression, le fluide bout " +
+          "plus froid ; montez-la, il bout plus chaud. C'est toute l'astuce de la machine : le détendeur " +
+          "fait chuter la pression pour que le fluide bouille dans le local, le compresseur la remonte " +
+          "pour qu'il se condense dehors.</p>" +
+          "<p>C'est de là que viennent les deux moitiés de la machine dont on vous parlera tous les jours : " +
+          "le <b>côté basse pression</b>, entre le détendeur et le compresseur, où le fluide bout froid ; " +
+          "et le <b>côté haute pression</b>, entre le compresseur et le détendeur, où il se condense chaud. " +
+          "Un même fluide, deux paliers différents, parce que la pression n'y est pas la même.</p>" +
+          "<p>Conséquence : <b>« la température de saturation » ne veut rien dire sans une pression</b>, " +
+          "et l'une ne se déduit de l'autre qu'avec la table du fluide concerné. C'est l'objet de la fiche suivante.</p>",
+      },
+      {
+        type: "piege",
+        t: "Mélanges zéotropes : le palier n'est pas plat",
+        html:
+          "<p>Certains fluides sont des <b>mélanges zéotropes</b> : plusieurs fluides purs mélangés dont " +
+          "les composants ne s'évaporent pas ensemble. Le plus volatil part d'abord. Résultat, entre le " +
+          "point de bulle et le point de rosée, la température ne reste pas constante : elle <b>glisse</b>. " +
+          "On parle de <b>glissement</b>.</p>" +
+          "<p>Conséquence pratique, et elle est immédiate : on charge et on soutire toujours ces mélanges " +
+          "en <b>phase liquide</b>, jamais en phase vapeur. Sinon la composition change, et le fluide qui " +
+          "reste dans la bouteille n'est plus celui qui est écrit dessus.</p>",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce:
+        "Un fluide pur bout dans l'évaporateur. Vous continuez d'apporter de la chaleur, et il reste du liquide. Que fait sa température ?",
+      choix: [
+        "Elle monte, proportionnellement à la chaleur apportée",
+        "Elle ne bouge pas : toute la chaleur sert au changement d'état",
+        "Elle descend, puisque le fluide produit du froid",
+        "Elle monte puis redescend",
+      ],
+      bonne: 1,
+      explication:
+        "C'est le <b>palier</b>. Tant qu'il reste du liquide à vaporiser, la chaleur apportée sert au changement d'état et non à l'élévation de température : c'est la <b>chaleur latente</b>. La température ne repartira qu'au point de rosée, quand la dernière goutte aura disparu.",
+      remediation_vers: "g1e",
+    },
+    criteres: [
+      { code: "1.02", libelle: "Comprendre la thermodynamique du froid : chaleur sensible, chaleur latente, états du fluide", etat: "a_evaluer" },
+    ],
+    ressources: ["r-mollier"],
+    liens: [suite("g1b", "Lire un log p-h et une table de saturation"), SOMMAIRE],
+    notes_pilote:
+      "LA fiche à ne pas bâcler : tout le vocabulaire de la semaine en sort. Commencer par la casserole " +
+      "d'eau, pas par le fluide frigorigène — le palier de l'eau, tout le monde l'a déjà vu. Demander au " +
+      "groupe : « le feu chauffe toujours, où va la chaleur ? » et laisser chercher avant de donner le " +
+      "mot « latente ». Le seul chiffre de la fiche est 100 °C à la pression atmosphérique : c'est un " +
+      "repère de culture générale, pas une valeur de fluide — ne pas laisser le groupe le généraliser. " +
+      "Faire ÉNONCER les cinq mots du chemin dans l'ordre, à voix haute, avant de passer à g1b : c'est le " +
+      "seul contrôle qui vaille. Insister sur la nuance sur laquelle tout le monde trébuche : la surchauffe " +
+      "et le sous-refroidissement sont des ÉCARTS, en kelvins, jamais des températures. " +
+      "Enfin : ne pas mesurer la surchauffe ici, c'est le geste de G4 — ici on installe le sens du mot.",
   },
   {
     id: "g1b",

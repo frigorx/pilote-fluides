@@ -107,7 +107,11 @@ export const PARCOURS = {
         seq("g0", 30, 4),   // vidéo attendue : le cadre réglementaire F-Gas en bref
         seq("g2a", 35, 4),  // vidéo attendue : trou d'ozone et effet de serre, vulgarisation
         seq("g2", 40, 5),
-        seq("g1a", 45, 5),  // vidéo attendue : le cycle frigorifique animé
+        // Chantier 1 du socle théorique (27/07) : g1a a rendu la
+        // thermodynamique à g1e, qui l'enseigne vraiment — d'où 45 → 30 min
+        // ici, et 30 min de plus juste après. Jour 1 : 6 h 20 → 6 h 35.
+        seq("g1a", 30, 5),  // vidéo attendue : le cycle frigorifique animé
+        seq("g1e", 30, 4),  // le palier — rien de ce qui suit ne tient sans lui
         seq("g1b", 45, 4),  // vidéo attendue : lire un diagramme enthalpique
         seq("g1c", 35, 4),  // vidéo attendue : lire un code fluide (R-134a, R-410A)
         seq("g13", 25, 4),
