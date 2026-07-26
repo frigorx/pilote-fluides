@@ -119,13 +119,26 @@ node build/convert.mjs    # Mission F-GAZ + questions-pack.json → banque.gen.j
 node build/build.mjs      # cartes.js + banque → pack.pilote.js ET pack.eleve.js
 node build/parcours.mjs   # parcours.js + fiches → projection.gen.js (le support de salle)
 node build/relecture.mjs  # → relecture.html (document de bon à tirer)
-node build/coffre.mjs 8272…  # → docs/coffre/ : les documents de travail, chiffrés
+node build/coffre.mjs "<phrase>"      # → docs/coffre/ : les documents de travail, chiffrés
+node build/code-acces.mjs "<phrase>" # change le code PARTOUT (portillon + cartes + coffre)
 ```
 
-> ⚠️ **`coffre.mjs` prend le code d'accès en argument** — il n'est écrit nulle part dans le
-> dépôt. À relancer après toute modification d'un document du dépôt privé, sinon la version
-> publiée reste l'ancienne. Le script **refuse** les 85 questions, les 10 sujets et le registre
-> nominatif : garde-fou en dur, pas une consigne.
+> ⚠️ **Le code d'accès se passe en argument** — il n'est écrit nulle part dans le dépôt.
+> `coffre.mjs` est à relancer après toute modification d'un document du dépôt privé, sinon la
+> version publiée reste l'ancienne ; il **refuse** les 85 questions, les 10 sujets et le registre
+> nominatif (garde-fou en dur, pas une consigne).
+>
+> **Pour CHANGER le code, utiliser `code-acces.mjs`, jamais l'édition à la main** : l'empreinte
+> vit dans **trois** endroits (`moteur/portillon.js`, les 9 `code_empreinte` de `cartes.js`, et le
+> chiffrement du coffre). En oublier un laisse une porte ouverte sur l'ancien code. Enchaîner avec
+> `node build/build.mjs` pour propager dans les packs.
+>
+> **Depuis le 25/07, le code est une PHRASE de six mots**, pas un nombre — les champs de saisie ne
+> forcent donc plus le clavier numérique et désactivent la correction automatique (un correcteur
+> de téléphone cassait la phrase en silence). Ordre de grandeur, à 600 000 itérations PBKDF2 :
+> 8 chiffres tombent en **10 minutes**, 13 chiffres en **~2 ans**, six mots tirés au sort
+> demandent **plus de mille ans**. Le coffre en profite pleinement ; le portillon reste un rideau
+> (djb2 32 bits, collision possible) et c'est assumé — voir l'en-tête de `portillon.js`.
 
 | Fichier | Rôle |
 |---|---|

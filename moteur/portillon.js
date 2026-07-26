@@ -7,8 +7,10 @@
    CE QUE C'EST : un RIDEAU pédagogique, pas un coffre. Le code d'accès se
    donne en salle ; il écarte le visiteur de passage, pas quelqu'un de
    déterminé. Deux raisons de ne pas se raconter d'histoires :
-     · seule l'empreinte du code est ici, mais 8 chiffres = 100 millions de
-       combinaisons, qu'un ordinateur ordinaire épuise en quelques heures ;
+     · l'empreinte comparée ici est un djb2 de 32 bits — on peut fabriquer
+       une autre chaîne qui donne le même nombre. Allonger la phrase
+       renforce le COFFRE (`documents.html`, vrai chiffrement), pas ce
+       portillon-ci ;
      · surtout, les bonnes réponses des questions d'entraînement sont
        DÉJÀ en clair dans `pack.eleve.js` — elles doivent y être, c'est le
        navigateur qui corrige. Chiffrer ces pages ne cacherait donc rien
@@ -26,7 +28,7 @@
 (function () {
   "use strict";
 
-  var EMPREINTE = 3069038059; // djb2 du code d'accès (donné en salle)
+  var EMPREINTE = 290777612; // djb2 du code d'accès (donné en salle)
   var CLE = "pilote_acces_fluides-habilitation"; // partagée avec moteur.js
 
   function empreinte(txt) {
@@ -63,8 +65,14 @@
       "<div style='max-width:32em; margin:12vh auto; padding:0 1.5em'>" +
       "<h1 style='font-size:1.4em; margin:0 0 .3em'>🔒 " + titre + "</h1>" +
       "<p style='color:#5b6472'>Cette page est réservée au formateur. Elle s'ouvre avec le <b>code d'accès</b>.</p>" +
-      "<p><input id='p-code' type='password' inputmode='numeric' autocomplete='off' aria-label=\"Code d'accès\" " +
-      "placeholder='Le code…' style='font-size:1.15em; padding:.5em .7em; width:9em; border:2px solid #1e5fa8; border-radius:8px'>" +
+      // pas de `inputmode` numérique : le code est une phrase, et un clavier
+      // de téléphone verrouillé sur les chiffres la rendrait intapable.
+      // `autocapitalize`/`autocorrect` désactivés : la phrase est en minuscules
+      // et une correction automatique la casserait silencieusement.
+      "<p><input id='p-code' type='password' autocomplete='off' spellcheck='false' " +
+      "autocapitalize='none' autocorrect='off' aria-label=\"Code d'accès\" " +
+      "placeholder='La phrase d&#39;accès…' style='font-size:1.05em; padding:.5em .7em; " +
+      "width:min(100%, 24em); border:2px solid #1e5fa8; border-radius:8px'>" +
       "<button id='p-ok' style='font-size:1.05em; padding:.55em 1.1em; margin-left:.5em; border:0; border-radius:8px; background:#1e5fa8; color:#fff; cursor:pointer'>Ouvrir ▸</button></p>" +
       "<p id='p-err' style='display:none; color:#b0231f; font-weight:600'>Ce n'est pas le bon code.</p>" +
       "<p style='color:#5b6472; font-size:.92em'>Une fois le bon code saisi, cet appareil reste déverrouillé. " +

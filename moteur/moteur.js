@@ -212,9 +212,12 @@
     html += "<span class='dc'>" + esc(c.dc || "Examen") + "</span>";
     html += "<h1>" + esc(c.titre) + "</h1>";
     html += "<p>🔒 Cet examen s'ouvre avec le <b>code d'accès</b> donné par le formateur.</p>";
-    html += "<p><input id='acces-code' type='text' inputmode='numeric' autocomplete='off' ";
-    html += "placeholder='Le code…' aria-label='Code d&#39;accès' ";
-    html += "style='font-size:1.2em; padding:.5em .7em; width:9em; border:2px solid var(--bleu); border-radius:8px'> ";
+    // Champ en saisie de texte libre, sans clavier numérique forcé ni
+    // correction automatique : le code est une phrase en minuscules.
+    html += "<p><input id='acces-code' type='text' autocomplete='off' spellcheck='false' ";
+    html += "autocapitalize='none' autocorrect='off' ";
+    html += "placeholder='La phrase d&#39;accès…' aria-label='Code d&#39;accès' ";
+    html += "style='font-size:1.05em; padding:.5em .7em; width:min(100%, 24em); border:2px solid var(--bleu); border-radius:8px'> ";
     html += "<button id='acces-ok'>Ouvrir ▸</button></p>";
     html += "<p id='acces-err' style='display:none; font-weight:600'>Ce n'est pas le bon code. Vérifiez auprès du formateur.</p>";
     html += "<p style='color:var(--mut)'>Une fois le bon code saisi, cet appareil reste déverrouillé.</p>";
