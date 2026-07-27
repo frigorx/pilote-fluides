@@ -54,6 +54,9 @@
   .doc .d { color: var(--mut); font-size: .92em; margin-top: .15em; }
   .doc .m { color: var(--mut); font-size: .84em; margin-top: .3em; }
   .cad { color: var(--or); font-weight: 600; }
+/* Le document demandé depuis le dossier : il doit sauter aux yeux, sinon
+   deux liens différents donnent l'impression d'ouvrir la même page. */
+.vise { outline: 3px solid var(--or); outline-offset: 2px; }
   .ouvert { color: var(--vert); font-weight: 600; }
   .avis {
     background: var(--bleu-clair); border-left: 4px solid var(--bleu);
@@ -155,6 +158,8 @@
 
   /* ---------- documents libres (déjà publics dans ce dépôt) ---------- */
   var LIBRES = [
+    { f: "PLANNING-FORMATION.md", t: "Planning de la formation — 35 h",
+      d: "Les cinq journées, module par module : ce qui se fait en salle, ce qui se fait au plateau, ce que le stagiaire prépare seul. Confronté au cadre à chaque construction." },
     { f: "REPRISE.md", t: "Reprise du pack de formation",
       d: "L'état complet : ce qui est fait, les décisions tranchées, les pièges, ce qui reste." },
     { f: "PROFONDEUR-REFERENTIEL.md", t: "Profondeur du référentiel",
@@ -329,31 +334,74 @@
     return o;
   }
 
+  /* Le document visé par l'ancre de l'URL, s'il existe. */
+  function docVise() {
+    var h = (location.hash || "").replace(/^#/, "");
+    if (!h || !index) return null;
+    for (var i = 0; i < index.documents.length; i++)
+      if (index.documents[i].id === h) return index.documents[i];
+    return null;
+  }
+
+  var aVoir = null;
+
   function listerProteges() {
     var zone = $("proteges");
     zone.innerHTML = "";
+    var d0 = docVise(), vise = d0 ? d0.id : null;
+    aVoir = null;
     var cats = {};
     index.documents.forEach(function (d) { (cats[d.cat] = cats[d.cat] || []).push(d); });
-    Object.keys(cats).forEach(function (cat) {
-      var h = document.createElement("h3");
-      h.textContent = cat;
-      h.style.cssText = "font-size:1em; margin:1.4em 0 .5em; color:var(--mut)";
-      zone.appendChild(h);
+
+    /* Une direction ouvre cette page pour DEUX documents. Les 21 chapitres de
+       cours source sont la matière du travail, pas une pièce du dossier : les
+       aligner au même niveau noyait le budget et le projet. On ordonne, et on
+       replie ce qui relève de la consultation. */
+    var ORDRE = ["Dossier de direction", "Système qualité", "Architecture et ingénierie",
+                 "Doctrine réglementaire"];
+    var REPLI = { "Cours source (14 chapitres)": true };
+    var ordonnees = ORDRE.filter(function (c) { return cats[c]; })
+      .concat(Object.keys(cats).filter(function (c) { return ORDRE.indexOf(c) < 0; }));
+
+    ordonnees.forEach(function (cat) {
+      var accueil = zone;
+      if (REPLI[cat] && !docVise()) {
+        var det = document.createElement("details");
+        var som = document.createElement("summary");
+        som.textContent = cat + " — " + cats[cat].length + " documents";
+        som.style.cssText = "font-size:1em; margin:1.4em 0 .5em; color:var(--mut); cursor:pointer";
+        det.appendChild(som);
+        zone.appendChild(det);
+        accueil = det;
+      } else {
+        var h = document.createElement("h3");
+        h.textContent = cat;
+        h.style.cssText = "font-size:1em; margin:1.4em 0 .5em; color:var(--mut)";
+        zone.appendChild(h);
+      }
       cats[cat].forEach(function (d) {
         var etat = cleCrypto
           ? "<span class='ouvert'>" + (d.binaire ? "Déverrouillé — cliquer pour télécharger" : "Déverrouillé") + "</span>"
           : "<span class='cad'>🔒 Chiffré</span>";
         var icone = cleCrypto ? (d.binaire ? "⬇ " : "📄 ") : "🔒 ";
-        zone.appendChild(carte(
+        var el = carte(
           icone + d.titre, d.desc,
           etat + " · " + Math.round(d.taille / 1024) + " Ko" + (d.binaire ? " · " + d.fichier.split(".").pop().toUpperCase() : ""),
           function () {
             if (!cleCrypto) { $("code").focus(); return; }
             if (d.binaire) telecharger(d); else lire(d);
           }
-        ));
+        );
+        // Le document demandé depuis le dossier (documents.html#budget-centre)
+        // se signale et se place sous les yeux : sans cela, deux liens
+        // différents ouvraient visiblement la même page.
+        if (d.id === vise) { el.classList.add("vise"); aVoir = el; }
+        accueil.appendChild(el);
       });
     });
+    if (aVoir) {
+      try { aVoir.scrollIntoView({ block: "center" }); } catch (e) { aVoir.scrollIntoView(); }
+    }
   }
 
   /* Déchiffre et rend les octets bruts — commun à la lecture et au téléchargement. */
@@ -441,6 +489,10 @@
       $("code").disabled = true;
       $("ok").textContent = "Déverrouillé";
       listerProteges();
+      // Venu du dossier par un lien ciblé : on ouvre le document demandé
+      // plutôt que de laisser le lecteur le chercher dans la liste.
+      var d = docVise();
+      if (d) { if (d.binaire) telecharger(d); else lire(d); }
     }).catch(function () {
       $("etat").className = "m err";
       $("etat").textContent = "Ce n'est pas le bon code.";
@@ -453,6 +505,14 @@
   fetch("docs/coffre/index.json").then(function (r) { return r.json(); }).then(function (j) {
     index = j;
     listerProteges();
+    // Annoncer le document demandé, avant même la saisie du code : le lecteur
+    // qui a cliqué « le budget » doit voir qu'il est arrivé sur le budget.
+    var d = docVise();
+    if (d && !cleCrypto) {
+      $("etat").className = "m";
+      $("etat").innerHTML = "Document demandé : <b>" + d.titre.replace(/[<>&]/g, "") +
+        "</b> — il s'ouvre dès que le code est saisi.";
+    }
     $("ok").onclick = function () {
       var c = $("code").value.trim();
       if (c) essayer(c);

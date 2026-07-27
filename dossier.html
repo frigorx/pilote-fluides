@@ -147,7 +147,7 @@
     <p class="chapo">Le dossier et son budget. Ils se téléchargent après saisie du code d'accès,
     que je vous transmets séparément.</p>
     <div class="pieces">
-      <a class="piece majeure" href="documents.html">
+      <a class="piece majeure" href="documents.html#projet-centre">
         <span class="etiq code">Code d'accès</span>
         <div class="ic">📘</div>
         <h3>Le dossier de projet</h3>
@@ -156,7 +156,7 @@
         cinq décisions qui vous sont demandées.</p>
         <span class="go">Ouvrir les documents ▸</span>
       </a>
-      <a class="piece majeure" href="documents.html">
+      <a class="piece majeure" href="documents.html#budget-centre">
         <span class="etiq code">Code d'accès</span>
         <div class="ic">📊</div>
         <h3>Le budget prévisionnel sur 5 ans</h3>
@@ -244,17 +244,17 @@
     <p class="chapo">Chiffres relevés automatiquement à chaque fabrication du contenu, jamais
     saisis à la main.</p>
     <div class="chiffres">
-      <div class="ch"><div class="n">44</div><div class="l">fiches de cours</div></div>
-      <div class="ch"><div class="n">266</div><div class="l">questions d'entraînement</div></div>
-      <div class="ch"><div class="n">426</div><div class="l">diapositives de salle</div></div>
-      <div class="ch"><div class="n">100 %</div><div class="l">du référentiel officiel couvert</div></div>
-      <div class="ch"><div class="n">35 h</div><div class="l">de formation, dont 38 % au plateau</div></div>
+      <div class="ch"><div class="n" data-ch="fiches">—</div><div class="l">fiches de cours</div></div>
+      <div class="ch"><div class="n" data-ch="questions">—</div><div class="l">questions d'entraînement</div></div>
+      <div class="ch"><div class="n" data-ch="diapositives">—</div><div class="l">diapositives de salle</div></div>
+      <div class="ch"><div class="n" data-ch="couverture">—</div><div class="l">du référentiel officiel couvert</div></div>
+      <div class="ch"><div class="n" data-ch="heures">—</div><div class="l">de formation, dont <span data-ch="part_pratique">—</span> au plateau</div></div>
       <div class="ch"><div class="n">6</div><div class="l">procédures du système qualité</div></div>
     </div>
     <p style="color:var(--mut);font-size:15.5px;margin-top:18px">Les 136 compétences de l'annexe II.B
-    de l'arrêté sont couvertes à 100 % dans les quatre catégories visées (A1, A2, D et E). Un second
-    contrôle vérifie que chaque compétence est <i>réellement enseignée</i> et non simplement citée :
-    <b>94 sur 94</b> le sont. Les deux mesures sont recalculées à chaque modification et
+    de l'arrêté sont couvertes à <span data-ch="couverture">—</span> dans les quatre catégories visées
+    (A1, A2, D et E). Un second contrôle vérifie que chaque compétence est <i>réellement enseignée</i>
+    et non simplement citée : <b data-ch="profondeur">—</b> le sont. Les deux mesures sont recalculées à chaque modification et
     consultables librement dans les documents.</p>
   </div>
 </section>
@@ -360,5 +360,10 @@
   </div>
 </footer>
 
+<!-- Les compteurs de cette page sont RELEVÉS au build (build/chiffres.mjs) et
+     injectés dans les <span data-ch>. Ils étaient écrits à la main jusqu'au
+     27/07 et avaient dérivé — un dossier de direction qui affiche des chiffres
+     faux perd sa valeur entière, y compris pour ce qui est juste. -->
+<script src="chiffres.gen.js"></script>
 </body>
 </html>

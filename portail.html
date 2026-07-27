@@ -237,12 +237,12 @@
     <h2>En chiffres</h2>
     <p class="chapo">Ce que contient le dossier aujourd'hui.</p>
     <div class="chiffres">
-      <div class="ch fort"><b>100 %</b><span>du référentiel couvert<br>en A1, A2, D et E</span></div>
-      <div class="ch"><b>33</b><span>fiches de cours</span></div>
-      <div class="ch"><b>206</b><span>questions</span></div>
-      <div class="ch"><b>270</b><span>diapositives</span></div>
-      <div class="ch"><b>39</b><span>séquences de formation</span></div>
-      <div class="ch"><b>21 h</b><span>de face-à-face</span></div>
+      <div class="ch fort"><b data-ch="couverture">—</b><span>du référentiel couvert<br>en A1, A2, D et E</span></div>
+      <div class="ch"><b data-ch="fiches">—</b><span>fiches de cours</span></div>
+      <div class="ch"><b data-ch="questions">—</b><span>questions</span></div>
+      <div class="ch"><b data-ch="diapositives">—</b><span>diapositives</span></div>
+      <div class="ch"><b data-ch="planches">—</b><span>planches et schémas</span></div>
+      <div class="ch"><b data-ch="heures_salle">—</b><span>de face-à-face<br>+ <span data-ch="heures_plateau">—</span> au plateau</span></div>
     </div>
     <div class="note">
       <div class="t">Ce que « 100 % » veut dire exactement</div>
@@ -417,5 +417,9 @@
   </div>
 </footer>
 
+<!-- Compteurs relevés au build (build/chiffres.mjs), jamais saisis à la main :
+     cette page annonçait encore 33 fiches, 206 questions et 270 diapositives
+     quand il y en avait 44, 266 et 425. -->
+<script src="chiffres.gen.js"></script>
 </body>
 </html>

@@ -319,6 +319,7 @@ node build/convert.mjs    # Mission F-GAZ + questions-pack.json → banque.gen.j
 node build/build.mjs      # cartes.js + banque → pack.pilote.js ET pack.eleve.js
 node build/parcours.mjs   # parcours.js + fiches → projection.gen.js (le support de salle)
 node build/relecture.mjs  # → relecture.html (document de bon à tirer)
+node build/chiffres.mjs   # → chiffres.gen.js : les compteurs des pages, RELEVÉS et non saisis
 node build/coffre.mjs "<code n1>"                 # → docs/coffre/ : documents chiffrés
 node build/code-acces.mjs "<code n1>" "<phrase n2>"  # installe les DEUX niveaux, partout
 ```
@@ -363,6 +364,7 @@ court n'ouvre pas les examens, et déverrouiller le niveau 1 laisse les examens 
 | `packs/fluides/cartes.js` | **source éditoriale — c'est ici qu'on écrit le contenu** |
 | `packs/fluides/parcours.js` | **le déroulé des 5 jours + le CADRE** — aucun contenu, seulement l'ordre, les durées, le module (M0→M8) et le régime (salle · plateau · autoformation avant / pendant). Déplacer une ligne suffit à changer une séance ; le build revérifie aussitôt le total contre les 35 h. |
 | `PLANNING-FORMATION.md` | **généré à chaque build** — le planning confronté au cadre, module par module. Ne jamais l'éditer à la main : un planning recopié est faux au premier déplacement de ligne. |
+| `build/chiffres.mjs` → `chiffres.gen.js` | **les compteurs des pages publiques**. `dossier.html` promettait « chiffres relevés automatiquement, jamais saisis à la main » — c'était faux, et ils avaient dérivé (le portail annonçait 33 fiches pour 44, 206 questions pour 266, 270 diapositives pour 425). Les pages portent désormais des `<span data-ch="…">` que ce fichier remplit. **Ne plus jamais écrire un compteur en dur dans une page.** |
 | `packs/fluides/questions-pack.json` | les questions **écrites pour le pack** (hors Mission F-GAZ), là où la banque d'origine n'interrogeait aucune des compétences ajoutées |
 | `packs/fluides/referentiel-2025.json` | **le référentiel officiel, 136 codes** — copie conforme de `habilitation-fluide`, ne se modifie **que sur pièce** (texte au JO) |
 | `build/referentiel.mjs` | index des codes, résolution des libellés, calcul de couverture, contrôle de synchro avec le dépôt amont |
