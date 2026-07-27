@@ -74,8 +74,8 @@ soit 6 h. Le réel est **4 h 15**. **1 h 45 sont rendues** au dernier jour.
 
 **Le CERFA a bien sa place dans l'épreuve pratique** : la traçabilité et le registre relèvent du
 groupe 5 du référentiel, donc remplir la fiche fait partie du geste évalué. L'intuition de
-F. Henninot est juste — ce qui rend l'absence de contenu CERFA dans le pack (§ 9) d'autant plus
-gênante.
+F. Henninot est juste. **Le CERFA est traité dans le projet `inerweb-fluide`, partie formation**
+(décision du 27/07, § 10) — pas dans ce pack.
 
 ⚠️ **À faire confirmer par l'organisme certificateur** avant d'en faire un argument commercial :
 ce document lit le texte, il ne remplace pas l'avis du certificateur.
@@ -116,7 +116,7 @@ Et une règle de rythme qui commande la structure :
 | Créneau | Durée | Contenu |
 |---|---:|---|
 | 8 h 30 – 9 h 30 | **1 h** | **Accueil et présentation.** Distribution des cahiers, des liens et des QR codes, explication du dispositif, tour de table. *« Incompressible : ça permet de juger le niveau, d'analyser les personnalités et de jauger la classe. »* |
-| 9 h 30 – 10 h 30 | **1 h** | **Test de niveau** — *« ni plus ni moins qu'un test d'habilitation fluide complet »*, sur un logiciel à créer (§ 9). |
+| 9 h 30 – 10 h 30 | **1 h** | **Test de niveau** — *« ni plus ni moins qu'un test d'habilitation fluide complet »*, sur un logiciel à créer (§ 10). |
 | 10 h 30 – 10 h 45 | 15 min | *récréation* |
 | 10 h 45 – 12 h 00 | **1 h 15** | **Sécurité** |
 | 12 h 00 – 13 h 30 | 1 h 30 | *déjeuner* |
@@ -208,7 +208,7 @@ sans risquer le fluide**. À écrire dans les consignes d'atelier.
 
 ## 5. Le plan de séance minuté — option B
 
-**Proposition, à valider.** Elle applique le critère de tri du § 8 aux fiches qui existent, et
+**Proposition, à valider.** Elle applique le critère de tri du § 9 aux fiches qui existent, et
 respecte la grille dictée le 27/07. Chaque demi-journée offre **3 h 15 effectives** (3 h 30
 comptées, une récréation déduite).
 
@@ -236,17 +236,18 @@ comptées, une récréation déduite).
 | 9 h 40 | 35 min | Familles et codes des fluides : les HFO, ce qui arrive dans le parc | `g1c` |
 | 10 h 30 | 15 min | *récréation* | |
 | 10 h 45 | 35 min | Substitution et efficacité : ce qui disparaît, ce qui le remplace | `g11` |
-| 11 h 20 | 40 min | **Questions du groupe** — c'est là qu'on récolte les fausses certitudes | — |
+| 11 h 20 | 55 min | **Sécurité des fluides avant l'atelier** : lire une classe, la LIE et l'ATEX | `cl1` `cl2` |
 
-### Mercredi après-midi — atelier : les mains, à l'azote
+### Mercredi après-midi — ATELIER 1 : le brasage et les épreuves de pression
 
-| Créneau | Durée | Contenu | Fiches |
+⚠️ **Ce créneau prépare des compétences NOTÉES et OBLIGATOIRES.** Voir l'encadré du § 6.
+
+| Créneau | Durée | Contenu | Codes · fiches |
 |---|---:|---|---|
-| 13 h 30 | 30 min | Sécurité atelier, EPI, préparation de chantier | `p7` |
-| 14 h 00 | 1 h 00 | Le matériel : manifold, station, pompe à vide, azote | `p1` `p2` `p3` `p4` |
-| 15 h 00 | 30 min | L'ordre des vannes, la pesée | `p5` `p6` |
+| 13 h 30 | 30 min | Sécurité atelier, EPI, préparation de chantier · le matériel | `p7` `p1`→`p4` |
+| 14 h 00 | 1 h 30 | **BRASAGE sous azote** — préparation du tube, balayage, joint sans calamine. Geste manuel, donc **répétition** | **10.01 · 10.02** · `g10` `s3` |
 | 15 h 30 | 15 min | *récréation* | |
-| 15 h 45 | 1 h 15 | **Manipulation sur machine — à l'azote** + technologie des composants revue sur le matériel réel | `g6`→`g9b` en support |
+| 15 h 45 | 1 h 15 | **Épreuve de résistance · épreuve d'étanchéité · pompe à vide · tirage au vide**, sur la machine brasée | **3.01 → 3.04** · `g3` |
 
 ### Jeudi matin — les points durs du référentiel
 
@@ -255,18 +256,18 @@ comptées, une récréation déduite).
 | 8 h 30 | 1 h 30 | **Contrôles d'étanchéité** : points de fuite, méthode indirecte, méthode directe | `g4a` `g4b` `g4c` |
 | 10 h 00 | 30 min | Récupération sans émettre | `g5a` |
 | 10 h 30 | 15 min | *récréation* | |
-| 10 h 45 | 40 min | Peser, stocker, **tracer — le CERFA** ⚠️ *contenu à créer, § 9* | `g5b` + CERFA |
+| 10 h 45 | 40 min | Peser, stocker, **tracer** — ce que le CERFA attend, et pourquoi | `g5b` |
 | 11 h 25 | 20 min | Mise en situation | `x4` |
 
-### Jeudi après-midi — la sécurité des fluides, puis atelier
+### Jeudi après-midi — ATELIER 2 : étanchéité, récupération, charge, CERFA
 
-| Créneau | Durée | Contenu | Fiches |
+| Créneau | Durée | Contenu | Codes · fiches |
 |---|---:|---|---|
-| 13 h 30 | 55 min | Lire une classe NF EN 378 · la LIE et l'ATEX | `cl1` `cl2` |
-| 14 h 25 | 1 h 05 | Le CO₂ : deux dangers mortels · s'en protéger | `cl3` `cl4` |
+| 13 h 30 | 1 h 00 | **Contrôle d'étanchéité** : méthode indirecte au manifold, méthode directe au détecteur | **4.01 → 4.07** · `g4b` `g4c` |
+| 14 h 30 | 1 h 00 | **Récupération, tirage, pesée, charge** sans émettre | **5.01 → 5.08** · `p5` `p6` |
 | 15 h 30 | 15 min | *récréation* | |
-| 15 h 45 | 45 min | Hydrocarbures : le R-290 est **A3**, jamais A2L | `g12` |
-| 16 h 30 | 30 min | Brasage interdit · consignation — retour à l'atelier | `s3` `s5` |
+| 15 h 45 | 45 min | **Remplir le CERFA** sur l'intervention qui vient d'être faite — sur tablette, CERFA PDF auto-remplissable *(brique `inerweb-fluide`, § 10)* | **5.xx traçabilité** |
+| 16 h 30 | 30 min | **Hydrocarbures** : le R-290 est **A3**, jamais A2L — mode opératoire | **12.01 → 12.10** · `g12` |
 
 ### Vendredi matin — l'examen blanc en conditions réelles
 
@@ -302,7 +303,66 @@ l'option B.
 
 ---
 
-## 6. La répartition salle / amont, chiffrée
+## 6. ⚠️ Le brasage, et tout ce qui est NOTÉ à la pratique
+
+> *« Dans l'épreuve il y a une épreuve de soudure. Pas l'oublier. »* — F. Henninot, 27/07
+
+**Rattrapage d'un défaut de la première version de ce plan**, qui plaçait `g10` (brasage) et `g3`
+(épreuves de pression, tirage au vide) en autoformation. C'est faux, et vérifié au texte :
+
+| Code | Libellé | A1 | Groupe |
+|---|---|---|---|
+| **10.01** | Soudage, **brasage fort et/ou brasage tendre** des joints étanches | **P** | G10 — **obligatoire** |
+| **10.02** | Fabriquer / vérifier des supports de tuyaux et de composants | **P** | G10 — **obligatoire** |
+| **3.01** | Épreuve de pression — résistance du système | **P** | G3 — **obligatoire** |
+| **3.02** | Épreuve de pression — étanchéité du système | **P** | G3 — **obligatoire** |
+| **3.03** | Utiliser une pompe à vide | **P** | G3 — **obligatoire** |
+| **3.04** | Faire le vide pour évacuer l'air et l'humidité | **P** | G3 — **obligatoire** |
+
+**G10 et G3 ne sont pas tirés au sort : ce sont des groupes obligatoires** (`regles_composition`
+`.groupes_obligatoires` : G1, G2, G3, G4, G5, G10, G11). **Le brasage tombe à coup sûr.**
+Et un brasage ne s'apprend pas en lisant une fiche : c'est un geste manuel, il demande de la
+répétition, du tube, du chalumeau et de l'azote de balayage.
+
+### Le compte des compétences PRATIQUES en A1
+
+| Groupe | Codes `P` | Statut |
+|---|---:|---|
+| G3 — contrôles avant mise en service | 4 | obligatoire |
+| G4 — contrôles d'étanchéité | 6 | obligatoire |
+| G5 — récupération, charge, traçabilité | 6 | obligatoire |
+| G10 — tuyauterie et **brasage** | 2 | obligatoire |
+| G12 — hydrocarbures | 10 | spécifique A1/A2 |
+| G6 · G7 · G8 · G9 — le composant | 5 à 8 | **un tiré au sort, inconnu du candidat** |
+| **Total à préparer** | **≈ 33 à 36** | |
+
+### Ce que le plan corrigé y consacre
+
+**Deux ateliers pleins : mercredi après-midi et jeudi après-midi, soit 6 h 30** — contre 3 h
+d'épreuve pratique. Ratio 2 pour 1, ce qui est le minimum défendable pour un geste noté.
+
+La première version n'en donnait qu'un seul (3 h 15) : **moins de temps d'atelier que d'épreuve**.
+C'est corrigé.
+
+### ⚠️ Ce qui reste tendu, et qu'il faut savoir
+
+**Le groupe composant est tiré au sort et le candidat ne sait pas lequel.** Il faudrait donc avoir
+touché les quatre — compresseur, condenseur, évaporateur, détendeur. En 6 h 30 partagées avec le
+brasage, les épreuves de pression, l'étanchéité, la récupération et le CERFA, c'est impossible de
+les traiter comme quatre modules.
+
+**La seule issue tenable** : les composants ne sont **pas un module à part**, ils sont le support
+des gestes. On brase **sur** un composant, on tire au vide **sur** une machine réelle, on charge
+**sur** un circuit complet. Les fiches `g6b` `g7b` `g8b` `g9b` — « installer, régler, vérifier » —
+deviennent les **fiches d'atelier**, consultées sur place, et le formateur fait tourner les quatre
+composants d'un poste à l'autre.
+
+**À arbitrer** : est-ce suffisant pour un groupe tiré au sort ? Si non, la seule variable qui reste
+est la salle du mercredi ou du jeudi matin — ou l'atelier déborde du budget.
+
+---
+
+## 7. La répartition salle / amont, chiffrée
 
 Mesurée sur les durées actuelles du parcours :
 
@@ -325,7 +385,7 @@ et de week-end — c'est le chiffre annoncé, et il est atteint sans rien suppri
 
 ---
 
-## 7. Le chiffre qui commande tout
+## 8. Le chiffre qui commande tout
 
 | | |
 |---|---:|
@@ -342,7 +402,7 @@ bourrer le crâne.
 
 ---
 
-## 8. Le virage : ce sont des frigoristes
+## 9. Le virage : ce sont des frigoristes
 
 C'est le point de départ, et il change tout. Le public d'une requalification **n'est pas un public
 de formation initiale**. Ce sont des professionnels qui savent faire. Ce qu'ils viennent chercher,
@@ -395,7 +455,7 @@ l'histoire de l'ozone et du climat, la description des organes.
 
 ---
 
-## 9. Ce que la grille demande au pack — et ce qui manque
+## 10. Ce que la grille demande au pack — et ce qui manque
 
 **Ce qui existe déjà et sert le nouveau modèle** — l'essentiel est là :
 
@@ -412,12 +472,24 @@ l'histoire de l'ozone et du climat, la description des organes.
 
 **Ce qui manque, et que la grille rend visible :**
 
-1. ⚠️ **LE CERFA N'EXISTE PAS DANS LE PACK.** Ton J2 après-midi prévoit « révision du CERFA », et
-   le pack ne contient que **4 mentions** du mot — aucune fiche, aucun exercice, aucune question.
-   C'est le domaine de l'autre projet (`inerweb-fluide`, le logiciel CERFA/BSD). **À créer, ou à
-   emprunter au projet voisin.** C'est le trou le plus net que ta grille met au jour — et il est
-   aggravé par le § 2 : **le CERFA est évalué à l'épreuve pratique** (traçabilité et registre,
-   groupe 5 du référentiel).
+1. ✅ **LE CERFA — TRANCHÉ le 27/07 : il ne se fera PAS dans ce pack.**
+   *« C'est le CERFA papier, on n'a pas le choix. Les élèves devront faire le CERFA papier, même
+   s'il sera rédigé sur une tablette. »*
+   **Décision** : CERFA **PDF auto-remplissable sur tablette tactile**, alimenté par un **cahier
+   des charges de mise en situation professionnelle**, réalisé dans le projet **`inerweb-fluide`,
+   partie formation** — et non ici. Les CERFA produits par les stagiaires sont **validés ensuite
+   par F. Henninot**. Cela réutilise les briques déjà en construction pour ce projet.
+   ⚠️ **Conséquence à ne pas perdre de vue : le plan de séance dépend désormais d'une brique qui
+   vit dans un AUTRE dépôt.** Le créneau du jeudi après-midi (45 min) existe, l'outil est ailleurs.
+   Si `inerweb-fluide` n'est pas prêt le jour J, ce créneau tombe — et la traçabilité est évaluée
+   à l'épreuve pratique (§ 2).
+   ⚠️ **Matériel supposé** : un terminal par stagiaire, ≈ 10 tablettes Android avec mini-clavier.
+   C'est un **prérequis d'exploitation du plan**, pas un détail : sans les tablettes, ni le CERFA
+   ni le test de niveau ne se déroulent comme prévu.
+   ✅ **Effet de bord favorable** : ces tablettes valident la décision « **page web universelle,
+   pas de PWA** » (`REPRISE.md` § 4) — le pack tourne dessus sans rien installer. Et elles règlent
+   la réserve sur les téléphones personnels des stagiaires.
+
 2. ⚠️ **LE LOGICIEL DE TEST DE NIVEAU N'EXISTE PAS, et il touche au RGPD.** Demandé le 27/07 :
    un test d'habilitation complet au J1, avec **retours agrégés** — pourcentages de réussite et
    d'échec — *« pour cerner et orienter la formation sur les points forts et les points faibles »*.
@@ -453,7 +525,7 @@ l'histoire de l'ozone et du climat, la description des organes.
 
 ---
 
-## 10. Arbitrages
+## 11. Arbitrages
 
 **Tranché** (F. Henninot, 27/07) : 4 jours de formation puis l'épreuve · **journée réduite à 7 h**
 (8 h 30 – 17 h 00) · début 8 h 30 tous les jours · quart d'heure toutes les deux heures ·
@@ -472,21 +544,27 @@ traitement local, sur des résultats transmis volontairement, est proportionné.
 **Piste donnée pour le futur logiciel d'évaluation** : **des tablettes dédiées sur un réseau
 fermé**, jamais les téléphones des stagiaires.
 
+**Tranché aussi, sur le CERFA** (27/07) : **CERFA papier obligatoire**, mais **rédigé sur tablette**
+(PDF auto-remplissable) à partir d'un **cahier des charges de mise en situation professionnelle**,
+réalisé dans **`inerweb-fluide`, partie formation** — pas dans ce pack. Validation par F. Henninot
+après coup.
+
 **En attente :**
 
 1. **La variante du jeudi** : sécurité fluides sur tout l'après-midi, ou 2 h théorie / 2 h pratique ?
    Elle fait passer la théorie salle de 8 h à 10 h.
 2. **Mercredi et jeudi s'inversent-ils ?** Tu l'as proposé. Cela déplace la sécurité fluides avant la
    première manipulation, ce qui est plus sûr — mais éloigne le CERFA du bachotage.
-3. **Le CERFA** : on le crée dans ce pack, ou on branche le projet `inerweb-fluide` ?
-   ⚠️ C'est le seul point qui **bloque le plan de séance** : le créneau du jeudi matin existe, le
-   contenu non.
+3. **Le composant tiré au sort** (§ 6) : les 6 h 30 d'atelier suffisent-elles, en traitant les
+   quatre composants comme supports de geste plutôt que comme modules ?
 4. **Le plan minuté du § 5** : à relire créneau par créneau. C'est une proposition, pas une
    décision.
+5. **Le calendrier de `inerweb-fluide`** : la brique CERFA de la partie formation doit être prête
+   avant la première session. C'est maintenant sur le chemin critique du plan de séance.
 
 ---
 
-## 11. Ce qui ne change pas
+## 12. Ce qui ne change pas
 
 - Le contenu reste **intégralement** dans le pack. Rien n'est supprimé.
 - Les chantiers 3 et 4 du socle théorique se font comme prévu, à la même densité — budgétés en

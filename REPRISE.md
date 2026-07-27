@@ -526,8 +526,12 @@ Le CERFA est bien évalué à la pratique (traçabilité, groupe 5). À faire co
 l'organisme certificateur.
 
 **Trois trous que la grille met au jour :**
-- ⚠️ **le CERFA n'existe pas dans le pack** (4 mentions, zéro fiche) alors que le J2 après-midi le
-  prévoit — et qu'il est évalué à l'épreuve pratique ;
+- ✅ **le CERFA : tranché le 27/07, il ne se fera PAS dans ce pack.** CERFA **papier** obligatoire,
+  mais **rédigé sur tablette** (PDF auto-remplissable) à partir d'un cahier des charges de mise en
+  situation, réalisé dans **`inerweb-fluide`, partie formation**. ⚠️ Le plan de séance dépend donc
+  désormais d'une brique d'un **autre dépôt**, et suppose **≈ 10 tablettes Android** — un prérequis
+  d'exploitation, pas un détail. Effet favorable : ces tablettes valident la décision « page web
+  universelle, pas de PWA » ;
 - ⚠️ **le logiciel de test de niveau agrégé n'existe pas**, et il casserait la promesse « rien ne
   sort du navigateur » : agréger les résultats d'un groupe, c'est traiter des données d'élèves
   (RGPD, priorité 2). Voie intermédiaire proposée : le stagiaire **montre** son résultat, rien ne
