@@ -157,6 +157,7 @@ export const PARCOURS = {
         act("x4", 25),
         seq("g5a", 40, 4),  // vidéo attendue : station de récupération, raccordement
         seq("g5b", 40, 5),
+        seq("g5c", 40, 3),  // la fiche d'intervention — evaluee a l'epreuve PRATIQUE
         act("x3", 25),
         seq("g12", 40, 4),  // vidéo attendue : sécurité hydrocarbures en intervention
         seq("g12b", 40, 4),

@@ -16,6 +16,16 @@ tournant dans le moteur générique **inerWeb Pilote** (repris de `frigorx/r408`
 2. **outil d'auto-préparation à l'examen** — le stagiaire reçoit le lien **avant** la formation,
    le garde **pendant** les périodes en entreprise, révise **selon son niveau** jusqu'à l'épreuve.
 
+> 🔴🔴 **CE DOSSIER VA À L'AGRÉMENT.** Décision annoncée par F. Henninot le 27/07 : *« s'il y a un
+> dossier pédagogique, c'est un dossier qui va être soumis à l'approbation pour avoir l'agrément
+> fluide, l'agrément centre de formation. »*
+> **Cela change le statut de tout ce qui est écrit ici.** Ce n'est plus seulement du contenu
+> pédagogique : c'est une **pièce opposable**. Conséquences pratiques, à tenir sans exception —
+> tout ce qui est annoncé doit **exister** ; tout chiffre doit être **traçable au texte** ; les
+> mesures de couverture et de profondeur deviennent des **preuves** et non des indicateurs ;
+> et un contenu faux n'est plus une erreur pédagogique, c'est un défaut de dossier.
+> La **relecture métier** cesse d'être un confort : sans elle, le dossier n'est pas défendable.
+
 > ⚠️ **Démonstrateur, pas version définitive.** Contenu jamais relu par un œil de frigoriste
 > (voir § 6). **Publié et diffusable en lien** depuis le 25/07 — la vitrine annonce elle-même
 > ses limites, section « ce qui n'est pas encore fait ». Les retours passent par les
@@ -526,12 +536,14 @@ Le CERFA est bien évalué à la pratique (traçabilité, groupe 5). À faire co
 l'organisme certificateur.
 
 **Trois trous que la grille met au jour :**
-- ✅ **le CERFA : tranché le 27/07, il ne se fera PAS dans ce pack.** CERFA **papier** obligatoire,
-  mais **rédigé sur tablette** (PDF auto-remplissable) à partir d'un cahier des charges de mise en
-  situation, réalisé dans **`inerweb-fluide`, partie formation**. ⚠️ Le plan de séance dépend donc
-  désormais d'une brique d'un **autre dépôt**, et suppose **≈ 10 tablettes Android** — un prérequis
-  d'exploitation, pas un détail. Effet favorable : ces tablettes valident la décision « page web
-  universelle, pas de PWA » ;
+- ✅ **le CERFA : FAIT le 27/07 — fiche `g5c` « La fiche d'intervention CERFA 15497*04 »**
+  (44ᵉ fiche de cours, 1 200 mots, planche `cerfa-cadres.svg`). Correction d'une erreur de lecture
+  de ma part : **le CERFA reste bien dans ce pack** — c'est l'**outil de saisie** qui vit dans
+  `inerweb-fluide` (CERFA PDF auto-remplissable sur tablette), et le pack y renvoie.
+  Le contenu est aligné sur les **72 champs réels** du formulaire officiel, relevés dans le
+  générateur du projet voisin — pas sur un souvenir de formulaire, donc vérifiable champ par champ.
+  Codes déclarés : **3.05 · 4.09 · 5.07**. ⚠️ Suppose **≈ 10 tablettes Android**, un prérequis
+  d'exploitation. Effet favorable : elles valident la décision « page web universelle, pas de PWA » ;
 - ⚠️ **le logiciel de test de niveau agrégé n'existe pas**, et il casserait la promesse « rien ne
   sort du navigateur » : agréger les résultats d'un groupe, c'est traiter des données d'élèves
   (RGPD, priorité 2). Voie intermédiaire proposée : le stagiaire **montre** son résultat, rien ne

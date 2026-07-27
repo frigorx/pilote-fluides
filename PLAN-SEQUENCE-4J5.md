@@ -12,6 +12,10 @@
 > Il ne jette rien : il **déplace**.
 >
 > À lire après `REPRISE.md`. Il commande `packs/fluides/parcours.js`, qui devra être refait.
+>
+> 🔴 **CE DOCUMENT EST UNE PIÈCE DU DOSSIER D'AGRÉMENT** (décision F. Henninot, 27/07 : le dossier
+> pédagogique sera soumis à approbation pour l'agrément du centre de formation). Tout ce qu'il
+> annonce doit exister, et tout chiffre doit être traçable.
 
 ---
 
@@ -472,13 +476,16 @@ l'histoire de l'ozone et du climat, la description des organes.
 
 **Ce qui manque, et que la grille rend visible :**
 
-1. ✅ **LE CERFA — TRANCHÉ le 27/07 : il ne se fera PAS dans ce pack.**
+1. ✅ **LE CERFA — FAIT le 27/07, fiche `g5c`.** Correction d'une erreur de lecture : **le CERFA
+   reste DANS ce pack**, tout expliqué. Ce qui vit ailleurs, c'est l'**outil de saisie**.
    *« C'est le CERFA papier, on n'a pas le choix. Les élèves devront faire le CERFA papier, même
    s'il sera rédigé sur une tablette. »*
-   **Décision** : CERFA **PDF auto-remplissable sur tablette tactile**, alimenté par un **cahier
-   des charges de mise en situation professionnelle**, réalisé dans le projet **`inerweb-fluide`,
-   partie formation** — et non ici. Les CERFA produits par les stagiaires sont **validés ensuite
-   par F. Henninot**. Cela réutilise les briques déjà en construction pour ce projet.
+   **Fiche `g5c`** — le formulaire cadre par cadre, aligné sur les **72 champs réels** relevés dans
+   le générateur d'`inerweb-fluide` ; planche `cerfa-cadres.svg` ; trois pièges (capacité ≠ aptitude,
+   récupéré ≠ vierge, le n° ONU se déduit de l'inflammabilité) ; codes **3.05 · 4.09 · 5.07**.
+   **La saisie** se fait sur **tablette tactile**, CERFA PDF auto-remplissable, alimenté par un
+   **cahier des charges de mise en situation professionnelle**, dans **`inerweb-fluide` partie
+   formation**. Les CERFA produits sont **validés ensuite par F. Henninot**.
    ⚠️ **Conséquence à ne pas perdre de vue : le plan de séance dépend désormais d'une brique qui
    vit dans un AUTRE dépôt.** Le créneau du jeudi après-midi (45 min) existe, l'outil est ailleurs.
    Si `inerweb-fluide` n'est pas prêt le jour J, ce créneau tombe — et la traçabilité est évaluée

@@ -7477,6 +7477,264 @@ window.PILOTE_PROJECTION = {
      "notes": "Le geste à faire répéter : peser AVANT. Beaucoup de stagiaires pèsent après et déduisent — c'est faux dès qu'il reste du fluide dans le cylindre. Sur un groupe A2, insister sur la précision : sur une charge de 800 g, 50 g d'écart changent le comportement de la machine. Faire remplir un registre à chaque manipulation d'atelier, même en exercice."
     },
     {
+     "type": "cours",
+     "fiche": "g5c",
+     "titre": "La fiche d'intervention CERFA 15497*04",
+     "minutes": 40,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "La fiche d'intervention CERFA 15497*04",
+       "dc": "G5 · codes 3.05 · 4.09 · 5.07",
+       "competences": [
+        {
+         "code": "3.05",
+         "lib": "Consigner les données dans le registre et rédiger le rapport d'intervention",
+         "officiel": "Consigner les données dans le registre de l'équipement et rédiger un rapport portant sur un ou plusieurs des essais et des contrôles effectués durant l'examen",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "4.09",
+         "lib": "Consigner le résultat du contrôle d'étanchéité dans le registre",
+         "officiel": "Consigner les données dans le registre de l'équipement",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "E": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.07",
+         "lib": "Consigner les quantités de fluide récupéré et ajouté",
+         "officiel": "Consigner dans le registre de l'équipement toutes les informations pertinentes concernant le réfrigérant récupéré ou ajouté",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/cerfa-cadres.svg",
+       "alt": "Le CERFA 15497*04 cadre par cadre : qui intervient, chez qui, sur quoi, quelle intervention, avec quel détecteur, quelles quantités de fluide, où part le fluide récupéré, et les deux signatures.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "Une intervention sur un circuit frigorifique ne se termine pas quand vous refermez la vanne. Elle se termine quand la <b>fiche d'intervention</b> est remplie et signée. C'est elle qui prouve ce que vous avez fait, avec quel fluide, en quelle quantité, et où ce fluide est parti.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "Le formulaire officiel s'appelle le <b>CERFA 15497*04</b>. Un seul feuillet, mais <b>72 cases à renseigner</b>. Il s'établit à <b>chaque</b> intervention : mise en service, maintenance, contrôle d'étanchéité, démantèlement. Pas seulement quand on met du fluide.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "Retenez qui fait quoi : c'est l'<b>opérateur</b> qui l'établit, et c'est le <b>détenteur</b> de l'équipement qui la conserve, dans le <b>registre</b> de la machine. Vous laissez la fiche chez le client. Votre entreprise en garde une copie.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "Le formulaire suit l'ordre de l'intervention. On peut le lire comme sept questions.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "<b>Qui intervient ?</b> — cadre 1. Votre entreprise, son adresse, son SIRET, et le numéro de son <b>attestation de capacité</b>. Attention : c'est bien la capacité de l'<b>entreprise</b> qu'on inscrit ici, pas votre attestation d'aptitude personnelle.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "<b>Chez qui ?</b> — cadre 2. Le détenteur de l'équipement : celui qui l'exploite, et qui devra garder cette fiche.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "<b>Sur quoi ?</b> — cadre 3. L'identification de la machine, le <b>fluide</b> qu'elle contient, sa <b>charge en kilogrammes</b>, et la même charge exprimée en <b>tonnes équivalent CO₂</b>. Ce second chiffre n'est pas décoratif : pour les fluides fluorés, c'est lui qui décide du seuil de contrôle, au cadre 7.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "<b>Quelle intervention ?</b> — cadre 4. Huit cases : assemblage, mise en service, modification, maintenance ou réparation, contrôle périodique, contrôle non périodique, démantèlement, autre. <b>Une seule se coche.</b> Si vous en cochez deux, la fiche ne dit plus ce qui a été fait.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "<b>Avec quel appareil ?</b> — cadres 5 et 6. Le cadre 5 identifie votre <b>détecteur manuel</b> de fuite et la date de son dernier <b>étalonnage</b> : un détecteur non étalonné ne prouve rien. Le cadre 6 dit si la machine possède un <b>système de détection permanente</b>, par oui ou par non.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "<b>À quelle fréquence faut-il contrôler ?</b> — cadre 7. C'est le cadre qu'on remplit le plus souvent de travers, parce qu'il se déduit et ne s'invente pas. Il se lit en deux temps :",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "<b>Qu'a donné le contrôle ?</b> — cadre 10. Fuite : oui ou non. Si oui, <b>où</b> elle se trouve — jusqu'à trois localisations — et pour chacune, si la réparation est <b>réalisée</b> ou <b>à faire</b>. Cocher « à faire » n'est pas un aveu de faiblesse : c'est ce qui déclenche l'obligation de revenir et de recontrôler.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "<b>Combien de fluide, et d'où vient-il ?</b> — cadre 11, le cœur de la traçabilité. Les quantités ne se mettent pas dans une case unique : elles se <b>ventilent</b>.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "<b>Où part le fluide, et chez qui ?</b> — cadres 12 et 13. Le cadre 12 porte le <b>numéro ONU</b> du transport, et il dépend d'une seule chose : l'<b>inflammabilité</b> du fluide. Un fluide non inflammable et un hydrocarbure ne voyagent pas sous le même numéro. Le cadre 13 nomme l'installation de destination. Le cadre 14 reste libre pour vos observations.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "Enfin, <b>deux signatures</b> : la vôtre et celle du détenteur, avec le nom, la qualité et la date de chacun. Une fiche que le détenteur n'a pas contresignée n'est pas une fiche complète.",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li>d'abord le <b>seuil</b>, qui dépend de la <b>famille</b> du fluide : les HCFC se comptent en kilogrammes, les HFC et PFC en <b>tonnes équivalent CO₂</b>, les HFO en kilogrammes. Trois familles, trois échelles ;</li><li>ensuite la <b>fréquence</b>, qui croise ce seuil avec la réponse du cadre 6. La règle est constante : <b>une machine équipée d'une détection permanente se contrôle deux fois moins souvent</b>. Les valeurs exactes se lisent sur le formulaire lui-même, qui les porte en clair — ne les récitez pas de mémoire.</li></ul>",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li>ce que vous avez <b>chargé</b>, en distinguant le fluide <b>vierge</b> (A), le <b>recyclé</b> (B) et le <b>régénéré</b> (C) ;</li><li>ce que vous avez <b>récupéré</b>, en distinguant ce qui part au <b>traitement</b> comme déchet (D) et ce qui est gardé pour <b>réutilisation</b> (E) — puis leur total ;</li><li>le <b>numéro du ou des contenants</b> utilisés, et le numéro de <b>BSFF</b> si le fluide part en déchet.</li></ul>",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li>La fiche s'établit à <b>chaque</b> intervention, pas seulement quand on charge du fluide.</li><li>L'<b>opérateur</b> l'établit, le <b>détenteur</b> la conserve dans le registre de l'équipement.</li><li>Cadre 4 : <b>une seule case</b>.</li><li>Cadre 7 : le seuil dépend de la <b>famille</b> du fluide, la fréquence dépend en plus de la <b>détection permanente</b>.</li><li>Cadre 11 : les quantités se <b>ventilent</b> — vierge, recyclé, régénéré d'un côté ; déchet et réutilisation de l'autre.</li><li><b>Deux signatures</b>, sinon la fiche est incomplète.</li></ul>",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Capacité ou aptitude ? Les deux figurent, mais pas au même endroit",
+       "html": "<p>Le cadre 1 demande le numéro de l'<b>attestation de CAPACITÉ</b> : c'est le papier de l'<b>entreprise</b>, qui prouve qu'elle a le personnel, l'outillage et les procédures.</p><p>Votre <b>attestation d'APTITUDE</b>, elle, est le papier de la <b>personne</b> — vous. Elle ne s'inscrit pas dans ce cadre. Confondre les deux est l'erreur la plus fréquente sur ce formulaire, et c'est celle qu'un contrôleur repère en premier.</p>",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Du fluide récupéré n'est jamais du fluide « vierge »",
+       "html": "<p>Au cadre 11, la case A est réservée au fluide <b>vierge</b> — du neuf, sorti d'une bouteille de fournisseur. Du fluide que vous avez récupéré sur une machine et que vous rechargez n'est pas du vierge : selon son traitement, il relève du <b>recyclé</b> (B), du <b>régénéré</b> (C), ou de la <b>réutilisation</b> (E).</p><p>Ce n'est pas une subtilité de comptable. Le règlement (UE) 2024/573 réduit progressivement les quantités de fluide <b>neuf</b> mises sur le marché : c'est le phase-down. Déclarer du récupéré en vierge fausse ce décompte au niveau national, et fait perdre à l'installation la preuve que son fluide a été réemployé.</p>",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le numéro ONU se déduit de l'inflammabilité, pas du nom du fluide",
+       "html": "<p>Au cadre 12, la case à cocher dépend de la <b>classe de sécurité</b> du fluide transporté. Un fluide <b>non inflammable</b> et un fluide <b>inflammable</b> (A2L, A2, A3) ne partent pas sous le même numéro ONU, et donc pas sous le même régime de transport.</p><p>C'est le prolongement direct de la fiche « lire une classe » : la case du tableau NF EN 378 ne commande pas seulement vos EPI et la ventilation du local — elle commande aussi <b>le camion</b>.</p>",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      },
+      {
+       "type": "encadre",
+       "genre": "",
+       "t": "À toi : remplir une vraie fiche",
+       "html": "<p style=\"margin:0 0 10px\">L'outil <b>inerWeb Fluide</b> produit le CERFA officiel rempli, à partir d'une intervention saisie pas à pas. C'est le même formulaire que celui de l'épreuve, et c'est sur tablette que vous le remplirez en formation.</p><p style=\"margin:0 0 10px\">Faites-en une du début à la fin : créez une machine, saisissez une intervention, laissez l'outil ventiler les quantités du cadre 11 — puis <b>relisez le PDF produit cadre par cadre</b> et vérifiez que vous savez justifier chaque case.</p><p style=\"margin:0\"><a href=\"https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/\" target=\"_blank\" rel=\"noopener\">Ouvrir inerWeb Fluide ↗</a></p>",
+       "titre": "La fiche d'intervention CERFA 15497*04"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-q-3.05",
+       "dc": "G3",
+       "code": "3.05",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Vous venez de terminer l'épreuve d'étanchéité et le tirage au vide sur un circuit. Que devez-vous faire avant de considérer l'intervention comme terminée ?",
+       "choix": [
+        "Attendre la validation du client avant toute trace écrite",
+        "Refaire une deuxième fois l'épreuve d'étanchéité pour confirmer",
+        "Ranger le matériel, aucune autre formalité n'est nécessaire",
+        "Consigner les données dans le registre de l'équipement et rédiger un rapport sur les essais et contrôles effectués"
+       ],
+       "bonne": 3,
+       "aide": "Pense au tout dernier geste professionnel décrit dans la fiche, juste après les contrôles.",
+       "remed": {
+        "regle": "Après tout contrôle ou essai (épreuve de résistance, épreuve d'étanchéité, tirage au vide), on consigne les résultats dans le registre de l'équipement et on rédige un rapport sur les essais et contrôles effectués.",
+        "pourquoi": "La trace écrite prouve que les contrôles réglementaires ont bien eu lieu. Elle protège le professionnel, informe l'exploitant, et permet de suivre l'état de l'équipement dans le temps.",
+        "piege": "Croire que le geste technique (épreuve, tirage au vide) suffit à lui seul. Sans registre ni rapport, rien ne prouve que le contrôle a été fait : le geste professionnel n'est complet qu'avec la consignation."
+       },
+       "remediation_vers": "g3",
+       "explication": "Après tout contrôle ou essai (épreuve de résistance, épreuve d'étanchéité, tirage au vide), on consigne les résultats dans le registre de l'équipement et on rédige un rapport sur les essais et contrôles effectués.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-q-4.09",
+       "dc": "G4",
+       "code": "4.09",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Un contrôle d'étanchéité vient de se terminer, sans fuite détectée. Que devez-vous faire ensuite ?",
+       "choix": [
+        "Consigner dans le registre la date, la méthode utilisée, les points contrôlés et le résultat",
+        "Attendre le prochain contrôle pour tout noter en une seule fois",
+        "Informer seulement le client à l'oral",
+        "Rien, puisqu'il n'y a pas de fuite à signaler"
+       ],
+       "bonne": 0,
+       "aide": "Un contrôle qui n'est écrit nulle part n'a, réglementairement, jamais eu lieu.",
+       "remed": {
+        "regle": "Toutes les données du contrôle doivent être consignées dans le registre de l'équipement : date, méthode utilisée, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
+        "pourquoi": "Un contrôle non consigné n'a aucune valeur réglementaire : le registre est la preuve écrite du suivi de l'installation.",
+        "piege": "Penser que l'absence de fuite dispense de consigner le contrôle dans le registre."
+       },
+       "remediation_vers": "g4c",
+       "explication": "Toutes les données du contrôle doivent être consignées dans le registre de l'équipement : date, méthode utilisée, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      },
+      {
+       "id": "q-g5-v6_079",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "La fiche d'intervention doit mentionner obligatoirement :",
+       "choix": [
+        "Uniquement le type de fluide",
+        "Le fluide, les quantités, l'opérateur, les opérations effectuées",
+        "Uniquement la date",
+        "Le prix de l'intervention"
+       ],
+       "bonne": 1,
+       "explication": "Fluide, quantités, opérateur, opérations — La fiche doit être exhaustive : nature du fluide, quantités (ajout/récupération), identité de l'opérateur, nature des opérations.",
+       "aide": "La traçabilité doit être complète — qui, quoi, combien.",
+       "remed": {
+        "texte": "La fiche doit être exhaustive : nature du fluide, quantités (ajout/récupération), identité de l'opérateur, nature des opérations."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.07",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      }
+     ],
+     "notes": "⚠️ FICHE DU DOSSIER D'AGRÉMENT : le CERFA est évalué à l'épreuve PRATIQUE (traçabilité, groupe 5). Ce n'est pas du confort documentaire, c'est une compétence notée. Ordre qui marche en salle : projeter le formulaire VIERGE et le faire remplir par le groupe à voix haute sur une intervention qu'ils viennent de faire à l'atelier — pas sur un cas fictif. Les cadres 7 et 11 sont ceux qui coûtent des points : le cadre 7 parce qu'il se DÉDUIT (famille du fluide, puis détection permanente), le cadre 11 parce que la ventilation vierge/recyclé/régénéré est contre-intuitive pour quelqu'un qui a toujours écrit une seule quantité. Ne PAS faire réciter les valeurs de seuil et de fréquence : elles sont imprimées sur le formulaire, et le réflexe à installer est de les y lire. La saisie se fait sur tablette avec inerWeb Fluide ; prévoir un terminal par stagiaire, et vérifier la veille que l'outil est accessible — sans lui, ce créneau tombe."
+    },
+    {
      "type": "exercice",
      "fiche": "x3",
      "titre": "Détective — la bouteille de récupération",
