@@ -57,6 +57,12 @@
 /* Le document demandé depuis le dossier : il doit sauter aux yeux, sinon
    deux liens différents donnent l'impression d'ouvrir la même page. */
 .vise { outline: 3px solid var(--or); outline-offset: 2px; }
+/* Vue ciblée : la page s'ouvre SUR le document demandé, pas sur la liste. */
+.cible-bloc {
+  background: #fff; border: 2px solid var(--bleu); border-radius: 10px;
+  padding: 1.2em 1.4em; margin: 0 0 1.6em;
+}
+.cible-bloc h2 { border: 0; padding: 0; }
   .ouvert { color: var(--vert); font-weight: 600; }
   .avis {
     background: var(--bleu-clair); border-left: 4px solid var(--bleu);
@@ -345,6 +351,55 @@
 
   var aVoir = null;
 
+  /* ---------------------------------------------------------------------
+     VUE CIBLÉE — deux liens différents doivent donner deux écrans différents.
+     Signalé par F. Henninot le 27/07 : « j'ai les 2 cases qui correspondent
+     aux mêmes choses ». C'était exact — les deux pièces du dossier menaient
+     au même écran d'accueil, et l'annonce du document demandé se trouvait
+     plus bas, invisible au premier coup d'œil. Quand l'URL vise un document,
+     la page s'ouvre donc SUR CE DOCUMENT : son titre, sa description, et le
+     champ de code juste dessous. Le reste de la bibliothèque suit.
+     --------------------------------------------------------------------- */
+  function vueCiblee() {
+    var main = document.querySelector("main");
+    var avis = document.querySelector(".avis");
+    var ancien = document.querySelector(".cible-bloc");
+    // Idempotente : on démonte l'ancienne vue avant d'en poser une nouvelle.
+    // Sans cela, revenir en arrière puis cliquer l'autre pièce laissait le
+    // bloc précédent à l'écran — les deux liens semblaient identiques.
+    if (ancien) {
+      main.insertBefore($("code-zone"), ancien);   // le champ de code repart devant
+      ancien.parentNode.removeChild(ancien);
+    }
+    var d = docVise();
+    if (!d) {
+      if (avis) avis.style.display = "";
+      return;
+    }
+    var bloc = document.createElement("section");
+    bloc.className = "cible-bloc";
+    var h = document.createElement("h2");
+    h.style.cssText = "margin:0 0 .3em";
+    h.textContent = (d.binaire ? "⬇ " : "📄 ") + d.titre;
+    var p = document.createElement("p");
+    p.style.cssText = "margin:0 0 1em; color:var(--mut)";
+    p.textContent = d.desc;
+    var q = document.createElement("p");
+    q.style.cssText = "margin:0 0 .6em";
+    q.innerHTML = cleCrypto
+      ? "Ce document est déverrouillé."
+      : "Saisissez le code d'accès : <b>ce document s'ouvrira directement</b>" +
+        (d.binaire ? " (téléchargement du fichier " + d.fichier.split(".").pop().toUpperCase() + ")" : "") + ".";
+    bloc.appendChild(h); bloc.appendChild(p); bloc.appendChild(q);
+    main.insertBefore(bloc, main.firstChild);
+    bloc.appendChild($("code-zone"));            // le champ de code vient sous le titre visé
+    if (avis) avis.style.display = "none";       // l'explication générique s'efface
+    var titres = main.querySelectorAll("h2");
+    for (var i = 0; i < titres.length; i++)
+      if (/protégés par le code/.test(titres[i].textContent))
+        titres[i].textContent = "Les autres documents du projet";
+  }
+
   function listerProteges() {
     var zone = $("proteges");
     zone.innerHTML = "";
@@ -505,14 +560,12 @@
   fetch("docs/coffre/index.json").then(function (r) { return r.json(); }).then(function (j) {
     index = j;
     listerProteges();
-    // Annoncer le document demandé, avant même la saisie du code : le lecteur
-    // qui a cliqué « le budget » doit voir qu'il est arrivé sur le budget.
-    var d = docVise();
-    if (d && !cleCrypto) {
-      $("etat").className = "m";
-      $("etat").innerHTML = "Document demandé : <b>" + d.titre.replace(/[<>&]/g, "") +
-        "</b> — il s'ouvre dès que le code est saisi.";
-    }
+    vueCiblee();
+    /* Changer d'ancre ne recharge pas la page, et un retour arrière la
+       restaure telle quelle (bfcache) : sans ces deux écouteurs, cliquer
+       « le budget » après « le projet » réaffichait le projet. */
+    window.addEventListener("hashchange", function () { vueCiblee(); listerProteges(); });
+    window.addEventListener("pageshow", function (e) { if (e.persisted) { vueCiblee(); listerProteges(); } });
     $("ok").onclick = function () {
       var c = $("code").value.trim();
       if (c) essayer(c);
