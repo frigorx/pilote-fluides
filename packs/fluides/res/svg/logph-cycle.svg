@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img"
+     aria-label="Le diagramme log p-h. La pression est en ordonnée, en échelle logarithmique ; l'enthalpie en abscisse. La courbe en cloche partage le plan en trois zones : à gauche de la courbe de bulle le liquide sous-refroidi, sous la cloche le mélange liquide et vapeur, à droite de la courbe de rosée la vapeur surchauffée. Le sommet de la cloche est le point critique. Sous la cloche, les lignes de titre de vapeur donnent la part déjà vaporisée. Le cycle se parcourt en quatre transformations : compression du point 1 au point 2, condensation du 2 au 3, détente verticale du 3 au 4, évaporation du 4 au 1. La surchauffe se lit à droite de la courbe de rosée sur la ligne basse pression ; le sous-refroidissement à gauche de la courbe de bulle sur la ligne haute pression.">
+  <title>Le diagramme log p-h : trois zones, deux courbes, quatre transformations</title>
+  <style>
+    .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .st  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .zn  { font:700 13px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lg  { font:400 13px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .xs  { font:400 11px Calibri,Segoe UI,sans-serif; fill:#7c8a99; }
+    .acct{ font:700 13px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+    .num { font:700 13px Calibri,Segoe UI,sans-serif; fill:#ffffff; }
+    .ax  { fill:none; stroke:#8a99a8; stroke-width:1.6; }
+    .clo { fill:none; stroke:#1b3a63; stroke-width:3; stroke-linecap:round; }
+    .cyc { fill:none; stroke:#c9451a; stroke-width:3; stroke-linecap:round; }
+    .gd  { fill:none; stroke:#c9d4de; stroke-width:1.3; stroke-dasharray:5 5; }
+    .tx  { fill:none; stroke:#a8b8c8; stroke-width:1.2; stroke-dasharray:3 5; }
+    /* Les quatre transformations s'allument DANS L'ORDRE — c'est le sens de
+       parcours qui se retient mal, pas le dessin. Sous « mouvement réduit »
+       tout est affiché d'emblée : rien du contenu ne dépend de l'animation. */
+    .final { opacity: 0; }
+    @media (prefers-reduced-motion: reduce) { .final { opacity: 1 !important; } }
+  </style>
+
+  <rect width="900" height="500" fill="#ffffff"/>
+  <text class="t" x="30" y="32">Le log p-h : trois zones, deux courbes, quatre transformations</text>
+
+  <!-- ================== AXES ================== -->
+  <line class="ax" x1="120" y1="360" x2="775" y2="360"/>
+  <line class="ax" x1="120" y1="360" x2="120" y2="72"/>
+  <text class="lg" x="120" y="64">p — pression, en échelle logarithmique</text>
+  <text class="lg" x="775" y="382" text-anchor="end">h — enthalpie (kJ/kg) →</text>
+
+  <!-- graduations : l'écart se resserre en montant — c'est ça, une échelle log -->
+  <g class="xs" text-anchor="end">
+    <line class="ax" x1="114" y1="330" x2="120" y2="330"/><text x="112" y="334">1</text>
+    <line class="ax" x1="114" y1="268" x2="120" y2="268"/><text x="112" y="272">2</text>
+    <line class="ax" x1="114" y1="228" x2="120" y2="228"/><text x="112" y="232">4</text>
+    <line class="ax" x1="114" y1="200" x2="120" y2="200"/><text x="112" y="204">8</text>
+    <line class="ax" x1="114" y1="180" x2="120" y2="180"/><text x="112" y="184">16</text>
+  </g>
+
+  <!-- lignes de pression du cycle -->
+  <line class="gd" x1="120" y1="150" x2="778" y2="150"/>
+  <line class="gd" x1="120" y1="290" x2="778" y2="290"/>
+  <text class="acct" x="788" y="154">HP</text>
+  <text class="acct" x="788" y="294">BP</text>
+
+  <!-- ================== LA CLOCHE ================== -->
+  <path class="clo" d="M255,360 C285,300 330,215 430,100"/>
+  <path class="clo" d="M430,100 C545,165 605,255 640,360"/>
+  <circle cx="430" cy="100" r="5.5" fill="#fff" stroke="#1b3a63" stroke-width="2.6"/>
+  <text class="st" x="430" y="88" text-anchor="middle">point critique</text>
+
+  <!-- titres de vapeur, dans la partie basse de la cloche -->
+  <path class="tx" d="M375,244 Q352,300 334,352"/>
+  <path class="tx" d="M452,244 Q450,300 448,352"/>
+  <path class="tx" d="M528,244 Q546,300 562,352"/>
+  <text class="xs" x="375" y="236" text-anchor="middle">x = 0,2</text>
+  <text class="xs" x="452" y="236" text-anchor="middle">x = 0,5</text>
+  <text class="xs" x="528" y="236" text-anchor="middle">x = 0,8</text>
+
+  <!-- ================== LES TROIS ZONES ================== -->
+  <text class="zn" x="140" y="212">liquide</text>
+  <text class="zn" x="140" y="228">sous-refroidi</text>
+  <text class="zn" x="430" y="180" text-anchor="middle">liquide + vapeur</text>
+  <text class="zn" x="430" y="196" text-anchor="middle">— saturé —</text>
+  <text class="zn" x="700" y="178" text-anchor="end">vapeur</text>
+  <text class="zn" x="700" y="194" text-anchor="end">surchauffée</text>
+
+  <!-- les deux frontières, nommées -->
+  <text class="lg" x="232" y="322" text-anchor="end">courbe</text>
+  <text class="lg" x="232" y="338" text-anchor="end">de bulle</text>
+  <line class="ax" x1="236" y1="330" x2="266" y2="336" stroke-width="1.2"/>
+  <text class="lg" x="664" y="322">courbe</text>
+  <text class="lg" x="664" y="338">de rosée</text>
+  <line class="ax" x1="632" y1="336" x2="660" y2="330" stroke-width="1.2"/>
+
+  <!-- ================== LE CYCLE, EN 4 TEMPS ================== -->
+  <!-- 1 → 2 compression -->
+  <g class="final">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.6s" fill="freeze"/>
+    <path class="cyc" d="M690,290 L748,150"/>
+    <path class="cyc" d="M736,168 l12,-18 3,21" stroke-width="2.4"/>
+    <text class="acct" x="706" y="232" text-anchor="end">compression</text>
+  </g>
+  <!-- 2 → 3 condensation -->
+  <g class="final">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.7s" fill="freeze"/>
+    <path class="cyc" d="M748,150 L345,150"/>
+    <path class="cyc" d="M363,140 l-18,10 18,10" stroke-width="2.4"/>
+    <text class="acct" x="556" y="140" text-anchor="middle">condensation</text>
+  </g>
+  <!-- 3 → 4 détente -->
+  <g class="final">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.8s" fill="freeze"/>
+    <path class="cyc" d="M345,150 L345,290"/>
+    <path class="cyc" d="M335,272 l10,18 10,-18" stroke-width="2.4"/>
+    <text class="acct" x="330" y="224" text-anchor="end">détente</text>
+  </g>
+  <!-- 4 → 1 évaporation -->
+  <g class="final">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="3.9s" fill="freeze"/>
+    <path class="cyc" d="M345,290 L690,290"/>
+    <path class="cyc" d="M672,280 l18,10 -18,10" stroke-width="2.4"/>
+    <text class="acct" x="500" y="312" text-anchor="middle">évaporation</text>
+  </g>
+
+  <!-- les quatre points, toujours visibles -->
+  <g>
+    <circle cx="690" cy="290" r="12" fill="#1b3a63"/><text class="num" x="690" y="295" text-anchor="middle">1</text>
+    <circle cx="748" cy="150" r="12" fill="#1b3a63"/><text class="num" x="748" y="155" text-anchor="middle">2</text>
+    <circle cx="345" cy="150" r="12" fill="#1b3a63"/><text class="num" x="345" y="155" text-anchor="middle">3</text>
+    <circle cx="345" cy="290" r="12" fill="#1b3a63"/><text class="num" x="345" y="295" text-anchor="middle">4</text>
+  </g>
+
+  <!-- ================== OÙ SE LISENT LES DEUX ÉCARTS ================== -->
+  <g>
+    <path d="M610,276 v-8 h80 v8" fill="none" stroke="#27823f" stroke-width="1.8"/>
+    <text x="650" y="260" text-anchor="middle" style="font:700 12px Calibri,sans-serif;fill:#27823f">surchauffe</text>
+    <path d="M345,136 v-8 h44 v8" fill="none" stroke="#2a6fae" stroke-width="1.8"/>
+    <text x="367" y="120" text-anchor="middle" style="font:700 12px Calibri,sans-serif;fill:#2a6fae">sous-refroidissement</text>
+  </g>
+
+  <!-- ================== LÉGENDE ================== -->
+  <text class="lg" x="30" y="410"><tspan style="font-weight:700;fill:#1b3a63">1 → 2</tspan> compression (le compresseur) · <tspan style="font-weight:700;fill:#1b3a63">2 → 3</tspan> condensation (le condenseur) · <tspan style="font-weight:700;fill:#1b3a63">3 → 4</tspan> détente (le détendeur) · <tspan style="font-weight:700;fill:#1b3a63">4 → 1</tspan> évaporation (l'évaporateur)</text>
+  <text class="lg" x="30" y="434">La détente est une <tspan style="font-weight:700;fill:#1b3a63">verticale</tspan> : la pression chute, l'enthalpie ne change pas. C'est le seul segment du cycle qui descend tout droit.</text>
+  <text class="lg" x="30" y="458">Sous la cloche, le <tspan style="font-weight:700;fill:#1b3a63">titre de vapeur</tspan> donne la part déjà vaporisée : x = 0 sur la courbe de bulle, x = 1 sur la courbe de rosée.</text>
+  <text class="lg" x="30" y="482">La <tspan style="font-weight:700;fill:#1b3a63">table de saturation</tspan> dit la même chose en colonnes : à chaque pression, la température de bulle et celle de rosée.</text>
+</svg>

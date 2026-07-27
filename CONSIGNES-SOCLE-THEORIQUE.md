@@ -93,11 +93,53 @@ motifs sont présents, pas que le sujet est traité. Voir § 5, un garde-fou est
 
 ---
 
+## 1 bis. ⚠️ Ce que le virage du 27/07 change pour ces chantiers
+
+Le plan de formation a été mesuré contre le temps réel le 27/07 : la salle pèse 27 h 40 pour
+24 h utiles sur 4,5 jours. Décision de F. Henninot — **c'est une requalification, pas une
+formation initiale** : le gros du volume bascule en **autoformation amont**, la salle ne garde que
+les points clés. Tout est dans [`PLAN-SEQUENCE-4J5.md`](PLAN-SEQUENCE-4J5.md).
+
+**Ces quatre chantiers restent valables tels quels, et ils ne sont pas remis en cause** — au
+contraire : un projet d'autoformation a besoin d'un **livre dense**, et c'est précisément ce qu'ils
+produisent. Deux choses seulement changent :
+
+- **Le budget se compte en amont, plus en salle.** `g1e` (30 min) et `g1b` (45 min) ne tiendront
+  plus ces durées de face-à-face. Le contenu reste, la ligne de `parcours.js` changera de bloc.
+- **Le chantier 3 garde un pied en salle** : mesurer une surchauffe est un geste de plateau, pas
+  une lecture. Le sens du mot s'apprend seul, le geste non.
+
+Ne pas alléger les fiches pour « gagner du temps de salle » : ce serait refaire l'erreur que ce
+document corrige. C'est le PLAN qui s'ajuste, pas le contenu.
+
+---
+
 ## 2. Les quatre chantiers, dans l'ordre
 
 L'ordre est celui des **dépendances** : chacun a besoin du précédent. Ne pas le changer.
 
-### Chantier 1 — Chaleur sensible et chaleur latente (le fondement)
+### ✅ Chantier 1 — Chaleur sensible et chaleur latente (le fondement) — FAIT le 27/07
+
+> **Fiche `g1e` « Chaleur sensible et chaleur latente : le palier »**, 30 min, jour 1, entre
+> `g1a` et `g1b`. Porte le code **1.02**, rendu par `g1a`. 544 mots de corps, 967 avec les
+> encadrés. Planche `res/svg/chaleur-palier.svg`. 4 questions `pk-g1e-*`, 5 remédiations
+> réaiguillées. Instrument de profondeur durci sur 1.02 (v0.4). Détail au § 2 de `REPRISE.md`.
+>
+> **Arbitrage n° 3 tranché par F. Henninot (27/07)** : *nouvelle fiche dédiée **ET** dégraissage
+> de `g1a`*. `g1a` passe de 45 à 30 min et rend l'enthalpie, les repères de surchauffe et de
+> sous-refroidissement, et le glissement des zéotropes ; elle est renommée « Unités, pression et
+> les quatre organes » — elle annonçait « thermodynamique utile » sans la tenir. Jour 1 :
+> **6 h 20 → 6 h 35**.
+>
+> **Arbitrage n° 2, partiellement tranché de fait** : les valeurs 5-10 K et 4-8 K sont ÉCRITES
+> dans `g1e` (la charte les autorise, et elles y étaient déjà, dans `g1a`), avec la mention
+> « à recaler sur la documentation du constructeur ». Le chantier 3 pourra revenir dessus.
+>
+> **Ce qui a été volontairement laissé au chantier 3** : la MESURE de la surchauffe (méthode
+> indirecte, geste de `g4b`) et la distinction **utile / totale** — toujours à 0 occurrence.
+> `g1e` installe le sens du mot, pas le geste.
+>
+> **Ce qui n'a PAS été fait, et qui n'est pas dans ce chantier** : le garde-fou de volume du § 5.
 
 **Nouvelle fiche**, ou développement franc de `g1a`. C'est ce qui manque à tout le reste.
 
@@ -112,7 +154,31 @@ de l'air.
 Enchaîner immédiatement sur les mots que le pack emploie déjà partout : **liquide sous-refroidi →
 point de bulle → palier (mélange liquide + vapeur, saturé) → point de rosée → vapeur surchauffée**.
 
-### Chantier 2 — Le diagramme log p/h (`g1b`, à passer de 105 mots à une vraie fiche)
+### ✅ Chantier 2 — Le diagramme log p/h — FAIT le 27/07
+
+> **`g1b` passe de 105 à 803 mots de corps** (1 233 avec ses encadrés), 45 min inchangées.
+> Nouvelle planche `res/svg/logph-cycle.svg` : axes, cloche, point critique, trois zones, lignes
+> de titre de vapeur, et les quatre transformations qui s'allument dans l'ordre. 4 questions
+> `pk-g1b-*`, 4 remédiations réaiguillées de `g1a` vers `g1b`. Instrument de profondeur durci
+> sur 1.03 (v0.5) : contrefactuel tiré, l'ancien contenu tombait à 3 notions sur 5.
+>
+> **Les deux outils sont exploités, comme demandé ci-dessous** — et pas seulement cités.
+> `r-mollier` (FRIGOLO Mollier) fait l'objet d'un **protocole guidé en 6 étapes**, embarqué en
+> iframe via le nouvel assistant `outilAtelier()` ; `r-enthalpique` est ajouté en ressource.
+> Demande explicite de F. Henninot le 27/07 : « utilise le logiciel ».
+>
+> **`g1b` rendait un code qu'elle n'enseignait pas** : 1.06 (comportement des réfrigérants de
+> substitution) est retiré de ses critères. Il reste porté par `g1c`. Profondeur revérifiée.
+>
+> **Trou de navigation refermé au passage** : `g1b` n'était listée que dans le menu du parcours E,
+> alors que 1.03 est exigé en A1 et A2. Elle entre dans les deux menus.
+>
+> ⚠️ **Non vérifié en bac à sable** : le navigateur de test n'a pas d'accès sortant, donc l'iframe
+> FRIGOLO n'a pas pu être chargée pour de vrai. Le gabarit d'encart a été validé sur une copie
+> locale de l'outil ; le lien de secours « en pleine page » fonctionne dans tous les cas.
+> **À contrôler une fois en ligne.**
+
+### La consigne d'origine, pour mémoire
 
 Ce que le stagiaire doit savoir faire, dans cet ordre :
 - **lire les axes** : pression en ordonnée (échelle logarithmique, et pourquoi), enthalpie en
@@ -128,7 +194,30 @@ Ce que le stagiaire doit savoir faire, dans cet ordre :
 Renvoyer vers l'outil déjà embarqué (`r-mollier`, FRIGOLO log p-h interactif) et vers
 `r-enthalpique` : ils existent, ils ne sont pas exploités.
 
-### Chantier 3 — Surchauffe et sous-refroidissement (fiche dédiée)
+### ✅ Chantier 3 — Surchauffe et sous-refroidissement — FAIT le 27/07
+
+> **Réalisé dans `g4b`, pas dans une fiche séparée. ⚠️ ÉCART ASSUMÉ à la consigne, à trancher.**
+> Motif : `g4b` — la fiche de la méthode indirecte, cœur du parcours E — faisait **91 mots** pour
+> deux codes PRATIQUES (4.04, 4.05). C'était le trou le plus grave du pack, pire que `g1b`.
+> Et la chaîne était déjà complète ailleurs : `g1e` donne le SENS de la surchauffe, `g1b` montre
+> OÙ elle se lit sur le diagramme — il ne manquait que le GESTE, et le geste est dans `g4b`.
+> Une quatrième fiche aurait fait triplon.
+>
+> `g4b` : **91 → 532 mots**. Nouvelle planche `surchauffe-utile-totale.svg`.
+> « surchauffe utile » 0 → **4**, « surchauffe totale » 0 → **3**.
+>
+> **La distinction utile / totale est enseignée avec la formulation de ce document** — utile au
+> bulbe (celle qui a fait le froid), totale à l'aspiration (utile + ce que la ligne a ajouté).
+> ⚠️ **Toujours À VALIDER**, comme demandé au § 4.
+> **Aucune valeur chiffrée n'est donnée pour utile ni pour totale**, exprès : la divergence entre
+> la charte du pack (5-10 K) et les repères de FRIGOLO n'est pas tranchée (§ 4, arbitrage 6).
+> Seuls les repères de la charte figurent, pour la surchauffe et le sous-refroidissement globaux.
+>
+> Ajouté au passage, et ce n'était pas dans la consigne : **zéro kelvin de surchauffe n'est pas
+> « une surchauffe faible »**, c'est du liquide en route vers le compresseur. La mesure ne le crie
+> pas, elle affiche un petit chiffre.
+
+### La consigne d'origine, pour mémoire
 
 Aujourd'hui : 136 emplois, zéro enseignement. À poser proprement.
 - **Ce que c'est** : nombre de kelvins au-delà (ou en deçà) du point de saturation, à la pression
@@ -144,7 +233,24 @@ Aujourd'hui : 136 emplois, zéro enseignement. À poser proprement.
 - **Valeurs** : la charte **autorise** surchauffe **5-10 K** et sous-refroidissement **4-8 K**
   (voir § 3). Les donner, en précisant qu'elles se recalent sur la doc constructeur.
 
-### Chantier 4 — Les régulateurs de pression (`g7b` 118 mots, `g8b` 236 mots)
+### ✅ Chantier 4 — Les régulateurs de pression — FAIT le 27/07
+
+> **Les trois composants sont NOMMÉS.** KVP · KVL · KVR passent de **0 à 3 occurrences** chacun.
+> Nouvelle planche `regulateurs-pression.svg` : les trois situés sur le circuit, dessiné selon la
+> croix du frigoriste. `g7b` 118 → **488 mots** (corps + encadrés), `g8b` 236 → **632**.
+>
+> **Arbitrage n° 1 appliqué tel que proposé au § 4** : la **fonction** d'abord, sous son nom
+> générique et avec son code au référentiel ; le sigle ensuite, présenté comme le mot du chantier
+> et non comme un nom officiel. ⚠️ **À confirmer.**
+>
+> Moyen mnémotechnique ajouté : le **KVP protège le FROID** (il empêche de descendre), le
+> **KVL protège le MOTEUR** (il empêche de monter).
+>
+> ⚠️ **RESTE À VALIDER, et c'est écrit dans les `notes_pilote`** : les trois descriptions sont
+> écrites de mémoire technique, pas lues sur une documentation constructeur — exactement la
+> réserve posée au § 2 de ce document. Elles n'ont pas été relues par un frigoriste.
+
+### La consigne d'origine, pour mémoire
 
 Codes 7.02, 8.02, 8.07. Développer les deux fiches et **nommer les composants**.
 - **Régulateur de pression d'évaporation** (couramment « KVP ») : monté en sortie d'évaporateur,
@@ -191,11 +297,33 @@ surchauffe ne peut pas être comprise ; sans le diagramme, on ne peut pas montre
    terrain tout le monde dit « un KVP », mais un pack public ne doit pas être un catalogue de
    marque. *Proposition* : enseigner la fonction sous son nom générique, puis ajouter
    « couramment appelé KVP ». À confirmer.
-2. **Les valeurs de surchauffe** : les écrire (5-10 K, autorisées par la charte) ou renvoyer à la
-   documentation constructeur comme le reste des valeurs terrain ?
-3. **Où loger la chaleur sensible/latente** : nouvelle fiche, ou développement de `g1a` ?
-   Une fiche de plus allonge le jour 1, déjà à 6 h 20.
+2. ~~**Les valeurs de surchauffe** : les écrire ou renvoyer à la documentation constructeur ?~~
+   **Tranché de fait le 27/07** : écrites dans `g1e` (5-10 K et 4-8 K, autorisées par la charte
+   et déjà présentes dans `g1a`), assorties de « à recaler sur la documentation du constructeur ».
+   Réouvrable au chantier 3 si le geste de mesure change la donne.
+3. ~~**Où loger la chaleur sensible/latente** : nouvelle fiche, ou développement de `g1a` ?~~
+   **Tranché par F. Henninot le 27/07** : **nouvelle fiche `g1e` ET dégraissage de `g1a`**. Le
+   jour 1 passe à 6 h 35, pas à 6 h 50, parce que `g1a` rend les 15 minutes qu'elle ne remplissait
+   pas.
 4. **La distinction surchauffe utile / totale** telle que formulée au chantier 3.
+5. **Nouveau, ouvert par le chantier 1** : `g1e` emploie **point de bulle** et **point de rosée**
+   pour un fluide **pur**. C'est l'usage du métier et c'est ce que demande le § 2 ci-dessus, mais
+   ce sont à l'origine les termes des mélanges. À confirmer, ou à reformuler en « liquide saturé /
+   vapeur saturée » avec les deux appellations. *(Vaut aussi pour `g1b` depuis le chantier 2 :
+   courbe de bulle / courbe de rosée.)*
+6. **Nouveau, ouvert par le chantier 2 — et il faudra le trancher AVANT le chantier 3.**
+   **Deux de vos outils ne donnent pas les mêmes repères.** La charte du pack autorise
+   « surchauffe **5-10 K** », et c'est ce que `g1a` écrivait déjà, donc ce que `g1e` a repris.
+   **FRIGOLO Mollier**, lui, affiche ses propres repères, distincts, et distingue surchauffe
+   **utile** et **totale** — ce que le pack ne fait pas encore.
+   `g1b` a été écrite pour ne citer **aucune valeur** de l'outil, précisément pour ne pas figer
+   cette divergence avant votre arbitrage. Trois questions à trancher ensemble au chantier 3 :
+   quel repère fait foi côté pack ; s'il faut le décliner en utile / totale ; et si FRIGOLO doit
+   être aligné sur le pack ou l'inverse.
+7. **Faut-il EMBARQUER FRIGOLO dans la fiche, ou seulement y renvoyer ?** Le chantier 2 l'a
+   embarqué (iframe de 1450 px, chargement différé, plus un lien pleine page). C'est haut dans une
+   fiche de cours, et l'outil est fait pour un écran large. L'alternative — un simple bouton
+   d'ouverture — est un `outilAtelier()` à retirer.
 
 ---
 
@@ -206,6 +334,30 @@ signaler, qu'une fiche portant un code THÉORIQUE fasse moins de N mots**. Un co
 fiche de 105 mots est une couverture de façade — exactement ce que la mesure de couverture était
 censée empêcher. À intégrer dans `build/profondeur.mjs`, et à écrire dans
 `PROFONDEUR-REFERENTIEL.md` au même titre que les motifs aveugles.
+
+---
+
+## 5 bis. Où en est la mesure, après le chantier 1 (mesuré le 27/07)
+
+Les zéros du § 1-b, rejoués après coup — c'est ce que le chantier 1 a comblé, et rien de plus :
+
+| Notion | Avant | Après | Chantier qui s'en charge |
+|---|---:|---:|---|
+| chaleur sensible | 0 | **12** | 1 ✅ |
+| chaleur latente | 0 | **16** | 1 ✅ |
+| vaporisation | 0 | **1** | 1 ✅ |
+| point de bulle | 0 | **23** | 1 ✅ puis 2 ✅ |
+| point de rosée | 1 | **23** | 1 ✅ puis 2 ✅ |
+| titre de vapeur | 0 | **6** | 2 ✅ |
+| courbe de bulle · courbe de rosée | 0 · 0 | **15 · 13** | 2 ✅ |
+| point critique | 0 | **5** | 2 ✅ |
+| échelle logarithmique | 0 | **4** | 2 ✅ |
+| surchauffe utile / totale | 0 · 0 | **0 · 0** | 3, à faire |
+| KVP · KVL | 0 · 0 | **0 · 0** | 4, à faire |
+
+Volumes (corps seul, méthode du § 1-a) : `g1e` **573 mots** · `g1b` 105 → **803** ·
+`g1a` 250 → **191** (dégraissée, et passée de 45 à 30 min) · `g7b` **118** (chantier 4) ·
+`g8b` **236** (chantier 4).
 
 ---
 

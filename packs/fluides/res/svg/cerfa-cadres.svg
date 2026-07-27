@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 590" role="img"
+     aria-label="La fiche d'intervention CERFA 15497*04, cadre par cadre. Cadre 1 l'opérateur qui intervient et son attestation de capacité. Cadre 2 le détenteur de l'équipement. Cadre 3 l'équipement, son fluide, sa charge et ses tonnes équivalent CO2. Cadre 4 la nature de l'intervention, huit cases dont une seule se coche. Cadre 5 le détecteur manuel et la date de son dernier étalonnage. Cadre 6 la détection permanente de fuite, oui ou non. Cadre 7 le seuil de charge et la fréquence de contrôle qui en découle. Cadre 10 le résultat du contrôle d'étanchéité, la localisation de la fuite et l'état de la réparation. Cadre 11 les quantités de fluide, ventilées en vierge, recyclé, régénéré, récupéré déchet et récupéré pour réutilisation. Cadre 12 le transport et le numéro UN. Cadre 13 l'installation de destination. Cadre 14 les observations. Et les deux signatures, opérateur et détenteur.">
+  <title>La fiche d'intervention CERFA 15497*04, cadre par cadre</title>
+  <style>
+    .t  { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .n  { font:700 13px Calibri,Segoe UI,sans-serif; fill:#ffffff; }
+    .h  { font:700 13px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .d  { font:400 11.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .lg { font:400 13px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .acct{ font:700 13px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+    .bloc { fill:#f7fafc; stroke:#c9d4de; stroke-width:1.4; }
+    .cle  { fill:#fdf1ed; stroke:#e8b9a8; stroke-width:1.6; }
+  </style>
+
+  <rect width="900" height="590" fill="#ffffff"/>
+  <text class="t" x="30" y="30">La fiche d'intervention CERFA 15497*04 — ce que chaque cadre attend</text>
+  <text class="d" x="30" y="50">Un seul feuillet, 72 champs. Il se remplit dans l'ordre de l'intervention : qui · chez qui · sur quoi · quoi · avec quoi · combien · où ça part.</text>
+
+  <!-- colonne gauche : QUI, CHEZ QUI, SUR QUOI -->
+  <g transform="translate(30,66)">
+    <rect class="bloc" x="0" y="0" width="270" height="58" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#1b3a63"/><text class="n" x="20" y="25" text-anchor="middle">1</text>
+    <text class="h" x="40" y="25">L'opérateur</text>
+    <text class="d" x="12" y="44">Qui intervient — et son n° d'attestation</text>
+    <text class="d" x="12" y="54">de CAPACITÉ (l'entreprise, pas vous)</text>
+  </g>
+  <g transform="translate(30,134)">
+    <rect class="bloc" x="0" y="0" width="270" height="46" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#1b3a63"/><text class="n" x="20" y="25" text-anchor="middle">2</text>
+    <text class="h" x="40" y="25">Le détenteur</text>
+    <text class="d" x="12" y="42">Chez qui — c'est LUI qui garde la fiche</text>
+  </g>
+  <g transform="translate(30,190)">
+    <rect class="bloc" x="0" y="0" width="270" height="58" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#1b3a63"/><text class="n" x="20" y="25" text-anchor="middle">3</text>
+    <text class="h" x="40" y="25">L'équipement</text>
+    <text class="d" x="12" y="44">Identification · fluide · charge en kg</text>
+    <text class="d" x="12" y="54">· et la charge en TONNES ÉQ. CO₂</text>
+  </g>
+  <g transform="translate(30,258)">
+    <rect class="cle" x="0" y="0" width="270" height="72" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#c9451a"/><text class="n" x="20" y="25" text-anchor="middle">4</text>
+    <text class="h" x="40" y="25">La nature de l'intervention</text>
+    <text class="d" x="12" y="44">8 cases : assemblage · mise en service ·</text>
+    <text class="d" x="12" y="55">modification · maintenance · contrôles ·</text>
+    <text class="d" x="12" y="66">démantèlement · autre — <tspan style="font-weight:700;fill:#c9451a">une seule se coche</tspan></text>
+  </g>
+
+  <!-- colonne milieu : AVEC QUOI, COMBIEN -->
+  <g transform="translate(316,66)">
+    <rect class="bloc" x="0" y="0" width="270" height="46" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#1b3a63"/><text class="n" x="20" y="25" text-anchor="middle">5</text>
+    <text class="h" x="40" y="25">Le détecteur manuel</text>
+    <text class="d" x="12" y="42">Son identification et la date d'étalonnage</text>
+  </g>
+  <g transform="translate(316,122)">
+    <rect class="bloc" x="0" y="0" width="270" height="40" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#1b3a63"/><text class="n" x="20" y="25" text-anchor="middle">6</text>
+    <text class="h" x="40" y="25">Détection permanente ? oui / non</text>
+  </g>
+  <g transform="translate(316,172)">
+    <rect class="cle" x="0" y="0" width="270" height="64" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#c9451a"/><text class="n" x="20" y="25" text-anchor="middle">7</text>
+    <text class="h" x="40" y="25">Seuil de charge et fréquence</text>
+    <text class="d" x="12" y="44">15 cases. Le seuil dépend de la FAMILLE du</text>
+    <text class="d" x="12" y="55">fluide ; la fréquence croise seuil et cadre 6.</text>
+  </g>
+  <g transform="translate(316,246)">
+    <rect class="bloc" x="0" y="0" width="270" height="70" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#1b3a63"/><text class="n" x="20" y="24" text-anchor="middle">10</text>
+    <text class="h" x="40" y="25">Résultat du contrôle d'étanchéité</text>
+    <text class="d" x="12" y="44">Fuite oui / non · où elle se trouve ·</text>
+    <text class="d" x="12" y="55">réparation RÉALISÉE ou À FAIRE</text>
+    <text class="d" x="12" y="66">(jusqu'à trois localisations)</text>
+  </g>
+
+  <!-- colonne droite : COMBIEN, OÙ ÇA PART -->
+  <g transform="translate(602,66)">
+    <rect class="cle" x="0" y="0" width="268" height="122" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#c9451a"/><text class="n" x="20" y="24" text-anchor="middle">11</text>
+    <text class="h" x="40" y="25">Les quantités de fluide</text>
+    <text class="d" x="12" y="46"><tspan style="font-weight:700">Chargé</tspan> — A vierge · B recyclé · C régénéré</text>
+    <text class="d" x="12" y="63"><tspan style="font-weight:700">Récupéré</tspan> — D vers traitement (déchet)</text>
+    <text class="d" x="12" y="76">· E pour réutilisation · D+E le total</text>
+    <text class="d" x="12" y="95">Plus : le n° du ou des contenants,</text>
+    <text class="d" x="12" y="108">et le n° de BSFF si c'est un déchet.</text>
+  </g>
+  <g transform="translate(602,198)">
+    <rect class="bloc" x="0" y="0" width="268" height="58" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#1b3a63"/><text class="n" x="20" y="24" text-anchor="middle">12</text>
+    <text class="h" x="40" y="25">Le transport</text>
+    <text class="d" x="12" y="44">Le n° ONU dépend de l'INFLAMMABILITÉ :</text>
+    <text class="d" x="12" y="55">UN 1078 non inflammable · UN 3161 inflammable</text>
+  </g>
+  <g transform="translate(602,266)">
+    <rect class="bloc" x="0" y="0" width="268" height="40" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#1b3a63"/><text class="n" x="20" y="24" text-anchor="middle">13</text>
+    <text class="h" x="40" y="25">L'installation de destination</text>
+  </g>
+  <g transform="translate(602,316)">
+    <rect class="bloc" x="0" y="0" width="268" height="40" rx="5"/>
+    <circle cx="20" cy="20" r="12" fill="#1b3a63"/><text class="n" x="20" y="24" text-anchor="middle">14</text>
+    <text class="h" x="40" y="25">Les observations</text>
+  </g>
+
+  <!-- signatures -->
+  <g transform="translate(30,342)">
+    <rect class="bloc" x="0" y="0" width="556" height="52" rx="5"/>
+    <text class="h" x="14" y="22">Les deux signatures — l'opérateur ET le détenteur</text>
+    <text class="d" x="14" y="41">Nom · qualité · date, pour chacun. Une fiche non contresignée par le détenteur n'est pas complète.</text>
+  </g>
+
+  <!-- les pièges -->
+  <g transform="translate(30,410)">
+    <rect x="0" y="0" width="840" height="152" rx="8" fill="#fdf1ed" stroke="#e8b9a8" stroke-width="1.6"/>
+    <text class="acct" x="18" y="26">Les quatre erreurs qui font recaler une fiche</text>
+    <circle cx="28" cy="50" r="4" fill="#c9451a"/>
+    <text class="lg" x="42" y="54"><tspan style="font-weight:700;fill:#1b3a63">Cadre 1</tspan> — c'est l'attestation de CAPACITÉ de l'entreprise qu'on inscrit, pas votre attestation d'APTITUDE.</text>
+    <circle cx="28" cy="76" r="4" fill="#c9451a"/>
+    <text class="lg" x="42" y="80"><tspan style="font-weight:700;fill:#1b3a63">Cadre 3</tspan> — la charge se donne en kg ET en tonnes équivalent CO₂ : c'est le tonnage qui commande le seuil des fluorés.</text>
+    <circle cx="28" cy="102" r="4" fill="#c9451a"/>
+    <text class="lg" x="42" y="106"><tspan style="font-weight:700;fill:#1b3a63">Cadre 11</tspan> — du fluide récupéré rechargé n'est PAS du vierge : il va en B, C ou E, jamais en A.</text>
+    <circle cx="28" cy="128" r="4" fill="#c9451a"/>
+    <text class="lg" x="42" y="132"><tspan style="font-weight:700;fill:#1b3a63">Cadre 12</tspan> — le numéro ONU se déduit de l'inflammabilité du fluide, pas de son nom : la classe commande aussi le transport.</text>
+  </g>
+</svg>

@@ -1,7 +1,7 @@
 # Profondeur d'enseignement — le code est-il tenu, pas seulement cité ?
 
 > Généré par `node build/profondeur.mjs` — ne pas éditer à la main.
-> Instrument : `packs/fluides/profondeur-attendus.json` v0.3 (instrument NON relu par F. Henninot — les verdicts qu'il produit sont provisoires).
+> Instrument : `packs/fluides/profondeur-attendus.json` v0.5 (instrument NON relu par F. Henninot — les verdicts qu'il produit sont provisoires).
 >
 > **Lecture honnête** : 🔴 et 🟠 sont fiables — le vocabulaire de la notion est absent
 > des fiches qui revendiquent le code, donc la notion n'y est pas enseignée. 🟢 signifie
@@ -19,13 +19,13 @@
 Présents dans plus de 40 % des cartes : ils valident sans discriminer.
 À remplacer par un vocabulaire plus spécifique dans l'instrument.
 
-- `install` — 61 % des cartes (utilisé par 7.03, 8.03)
-- `mesure` — 59 % des cartes (utilisé par 6.06, 7.07, 8.08)
+- `install` — 63 % des cartes (utilisé par 7.03, 8.03)
+- `mesure` — 58 % des cartes (utilisé par 6.06, 7.07, 8.08)
 - `securite` — 46 % des cartes (utilisé par 11.01)
-- `raccord` — 43 % des cartes (utilisé par 4.01, 12.01)
-- `direct` — 41 % des cartes (utilisé par 4.06, 12.11)
-- `arret` — 41 % des cartes (utilisé par 6.06)
+- `direct` — 44 % des cartes (utilisé par 4.06, 12.11)
+- `raccord` — 42 % des cartes (utilisé par 4.01, 12.01)
+- `arret` — 42 % des cartes (utilisé par 6.06)
 
 ---
 
-*94 codes mesurés (union A1∪A2∪D∪E) · 178 notions sentinelles · corpus = contenu visible de l'élève (titre, corps, blocs, question), hors notes formateur et hors libellés de critères.*
+*94 codes mesurés (union A1∪A2∪D∪E) · 184 notions sentinelles · corpus = contenu visible de l'élève (titre, corps, blocs, question), hors notes formateur et hors libellés de critères.*

@@ -38,7 +38,7 @@
   "remed": {
    "texte": "Le liquide est INCOMPRESSIBLE. Si du liquide arrive au compresseur, il peut provoquer un coup de liquide qui endommage ou détruit le compresseur (clapet cassé, bielle tordue, etc.). Le compresseur doit TOUJOURS aspirer du gaz."
   },
-  "remediation_vers": "g1a",
+  "remediation_vers": "g1e",
   "code": "1.02"
  },
  {
@@ -77,7 +77,7 @@
   "remed": {
    "texte": "Sous la courbe de saturation, le fluide est en changement de phase : liquide + vapeur coexistent."
   },
-  "remediation_vers": "g1a",
+  "remediation_vers": "g1b",
   "code": "1.03"
  },
  {
@@ -98,7 +98,7 @@
   "remed": {
    "texte": "Le diagramme de Mollier a l'enthalpie (h, en kJ/kg) en abscisse et la pression (log P) en ordonnée."
   },
-  "remediation_vers": "g1a",
+  "remediation_vers": "g1b",
   "code": "1.03"
  },
  {
@@ -119,7 +119,7 @@
   "remed": {
    "texte": "Une surchauffe de 5 à 8 K garantit que seul du gaz sec entre dans le compresseur, sans trop réduire la puissance frigorifique."
   },
-  "remediation_vers": "g1a",
+  "remediation_vers": "g1e",
   "code": "1.02"
  },
  {
@@ -140,7 +140,7 @@
   "remed": {
    "texte": "Un sous-refroidissement de 4 à 7 K assure que le liquide n'arrive pas au détendeur avec des bulles de gaz."
   },
-  "remediation_vers": "g1a",
+  "remediation_vers": "g1e",
   "code": "1.02"
  },
  {
@@ -203,7 +203,7 @@
   "remed": {
    "texte": "Dans la ligne liquide (entre condenseur et détendeur), le fluide est à l'état LIQUIDE sous haute pression. C'est pour cela qu'on l'appelle 'ligne liquide'."
   },
-  "remediation_vers": "g1a",
+  "remediation_vers": "g1e",
   "code": "1.02"
  },
  {
@@ -224,7 +224,7 @@
   "remed": {
    "texte": "Dans la ligne d'aspiration (entre évaporateur et compresseur), le fluide est à l'état GAZEUX (vapeur) basse pression. Le compresseur aspire du gaz, jamais du liquide !"
   },
-  "remediation_vers": "g1a",
+  "remediation_vers": "g1e",
   "code": "1.02"
  },
  {
@@ -350,7 +350,7 @@
   "remed": {
    "texte": "La condensation et l'évaporation se font à pression constante (lignes horizontales sur le diagramme)."
   },
-  "remediation_vers": "g1a",
+  "remediation_vers": "g1b",
   "code": "1.03"
  },
  {
@@ -371,7 +371,7 @@
   "remed": {
    "texte": "À gauche de la cloche = liquide sous-refroidi. Sous la cloche = mélange liq+vap. À droite = vapeur surchauffée."
   },
-  "remediation_vers": "g1a",
+  "remediation_vers": "g1b",
   "code": "1.03"
  },
  {
@@ -5385,6 +5385,201 @@
   },
   "remediation_vers": "cl4",
   "explication": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-g1e-1",
+  "dc": "G1",
+  "code": "1.02",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "De l'eau bout dans une casserole, à la pression atmosphérique. Vous montez le feu. Que devient sa température ?",
+  "choix": [
+   "Elle monte, puisque vous chauffez davantage",
+   "Elle ne bouge pas : l'eau bout simplement plus vite",
+   "Elle descend, parce que la vapeur emporte de la chaleur",
+   "Elle monte d'abord, puis se stabilise au bout de quelques minutes"
+  ],
+  "bonne": 1,
+  "aide": "Demandez-vous où part la chaleur que vous ajoutez, tant qu'il reste de l'eau liquide.",
+  "remed": {
+   "regle": "Pendant un changement d'état, la chaleur apportée sert au changement d'état, pas à l'élévation de température. C'est la chaleur latente, et le morceau de courbe où la température reste bloquée s'appelle le palier.",
+   "pourquoi": "Monter le feu n'augmente pas la température de l'eau qui bout : cela augmente la quantité d'eau vaporisée par minute. La température ne repartira que lorsque toute l'eau sera partie en vapeur — il n'y aura alors plus de liquide à vaporiser.",
+   "exemple": "Dans l'évaporateur, c'est exactement ce qui se passe : le fluide bout à température constante et prend sa chaleur au local. C'est le palier qui fait le froid.",
+   "piege": "La température du palier n'est pas une constante universelle : elle dépend de la PRESSION. Un fluide frigorigène bout d'autant plus froid que sa pression est basse — c'est toute l'astuce du détendeur."
+  },
+  "remediation_vers": "g1e",
+  "explication": "Pendant un changement d'état, la chaleur apportée sert au changement d'état, pas à l'élévation de température. C'est la chaleur latente, et le morceau de courbe où la température reste bloquée s'appelle le palier.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-g1e-2",
+  "dc": "G1",
+  "code": "1.02",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Pourquoi une machine frigorifique utilise-t-elle un fluide qui change d'état, plutôt que de faire simplement circuler de l'air ?",
+  "choix": [
+   "Parce qu'un fluide frigorigène est plus froid que l'air",
+   "Parce que le changement d'état transporte beaucoup plus de chaleur, à masse égale",
+   "Parce que l'air ne peut pas circuler dans un tube de cuivre",
+   "Parce que la réglementation l'impose depuis le règlement (UE) 2024/573"
+  ],
+  "bonne": 1,
+  "aide": "Comparez la chaleur qu'un kilo de matière emporte en s'échauffant, et celle qu'il emporte en se vaporisant.",
+  "remed": {
+   "regle": "Une machine frigorifique déplace de la chaleur latente : l'évaporateur en absorbe en faisant bouillir le fluide, le condenseur la rend en le liquéfiant. Le palier transporte beaucoup plus de chaleur, pour un même kilo de matière déplacé.",
+   "pourquoi": "Un fluide n'est pas « froid » en lui-même. Il devient froid parce qu'on abaisse sa pression jusqu'à ce qu'il bouille à une température inférieure à celle du local. Ce qui fait le froid, ce n'est pas le fluide : c'est le changement d'état.",
+   "piege": "Croire que le fluide est froid « par nature » mène à une seconde erreur, celle-là dangereuse : oublier que dans la même machine, ce même fluide est brûlant au refoulement du compresseur."
+  },
+  "remediation_vers": "g1e",
+  "explication": "Une machine frigorifique déplace de la chaleur latente : l'évaporateur en absorbe en faisant bouillir le fluide, le condenseur la rend en le liquéfiant. Le palier transporte beaucoup plus de chaleur, pour un même kilo de matière déplacé.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-g1e-3",
+  "dc": "G1",
+  "code": "1.02",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "En sortie de condenseur, la température que vous mesurez sur le tube est inférieure à la température de condensation lue dans la table pour la pression relevée. Dans quel état est le fluide ?",
+  "choix": [
+   "Saturé : liquide et vapeur cohabitent",
+   "Liquide sous-refroidi : il n'y a plus de vapeur",
+   "Vapeur surchauffée : il n'y a plus de liquide",
+   "Au point de rosée"
+  ],
+  "bonne": 1,
+  "aide": "En dessous du palier, du côté liquide : quel état reste-t-il ?",
+  "remed": {
+   "regle": "Sous la température de changement d'état, à la pression où il se trouve, le fluide est du liquide sous-refroidi. L'écart entre les deux s'appelle le sous-refroidissement.",
+   "pourquoi": "Le chemin est toujours le même, dans un sens ou dans l'autre : liquide sous-refroidi → point de bulle → saturé → point de rosée → vapeur surchauffée. Savoir se placer sur ce chemin, c'est savoir ce qu'il y a dans le tube qu'on tient.",
+   "exemple": "C'est ce qui garantit du liquide pur au détendeur : de la vapeur à cet endroit dérèglerait l'alimentation de l'évaporateur. Repère courant : 4 à 8 K, à recaler sur la documentation du constructeur.",
+   "piege": "Sous-refroidissement et surchauffe sont des ÉCARTS, jamais des températures. On les compte en kelvins parce que ce sont des différences : « un sous-refroidissement de 5 °C » n'a pas de sens."
+  },
+  "remediation_vers": "g1e",
+  "explication": "Sous la température de changement d'état, à la pression où il se trouve, le fluide est du liquide sous-refroidi. L'écart entre les deux s'appelle le sous-refroidissement.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-g1e-4",
+  "dc": "G1",
+  "code": "1.02",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Vous chargez un mélange zéotrope. Pourquoi le soutire-t-on de la bouteille en phase liquide, et jamais en phase vapeur ?",
+  "choix": [
+   "Pour aller plus vite : le liquide passe mieux dans le flexible",
+   "Parce que les composants ne s'évaporent pas ensemble : soutirer en vapeur change la composition du fluide restant",
+   "Pour éviter que la bouteille ne givre",
+   "Parce que la vapeur risquerait de fausser la balance"
+  ],
+  "bonne": 1,
+  "aide": "Repensez au palier : chez un mélange zéotrope, il n'est pas plat. Qu'est-ce qui part en premier ?",
+  "remed": {
+   "regle": "Un mélange zéotrope est fait de plusieurs fluides purs dont les composants ne s'évaporent pas ensemble : le plus volatil part d'abord. Entre le point de bulle et le point de rosée, la température ne reste donc pas constante — elle glisse, on parle de glissement.",
+   "pourquoi": "Soutirer en phase vapeur revient à prélever surtout le composant le plus volatil. Le fluide qui reste dans la bouteille n'est alors plus celui qui est écrit dessus, et celui qu'on vient de charger non plus.",
+   "piege": "Le glissement explique aussi pourquoi, sur ces mélanges, on ne lit pas « la » température d'évaporation : la table en donne deux, au point de bulle et au point de rosée. Se tromper de colonne fausse la surchauffe calculée."
+  },
+  "remediation_vers": "g1e",
+  "explication": "Un mélange zéotrope est fait de plusieurs fluides purs dont les composants ne s'évaporent pas ensemble : le plus volatil part d'abord. Entre le point de bulle et le point de rosée, la température ne reste donc pas constante — elle glisse, on parle de glissement.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-g1b-1",
+  "dc": "G1",
+  "code": "1.03",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Sur le diagramme log p-h, pourquoi l'axe des pressions est-il en échelle logarithmique ?",
+  "choix": [
+   "Pour que le diagramme tienne sur une feuille A4",
+   "Parce que la basse et la haute pression sont très éloignées : en échelle ordinaire, tout le côté basse pression serait écrasé et illisible",
+   "Parce que la pression se mesure en logarithmes",
+   "Pour que la courbe en cloche devienne symétrique"
+  ],
+  "bonne": 1,
+  "aide": "Regardez les graduations : de 1 à 2, de 2 à 4, de 4 à 8 — chaque doublement occupe la même hauteur.",
+  "remed": {
+   "regle": "En échelle logarithmique, on n'avance pas en ajoutant, on avance en multipliant : chaque doublement de la pression occupe la même hauteur sur l'axe.",
+   "pourquoi": "Dans une machine frigorifique, la basse pression peut être sous le bar quand la haute pression est à plusieurs dizaines de bar. Sur une échelle ordinaire, toute la zone où travaille l'évaporateur serait tassée en bas de la feuille — donc impossible à lire, alors que c'est justement là qu'on fait le froid.",
+   "piege": "La pression, elle, se mesure toujours en bar : c'est l'ÉCHELLE du dessin qui est logarithmique, pas la grandeur."
+  },
+  "remediation_vers": "g1b",
+  "explication": "En échelle logarithmique, on n'avance pas en ajoutant, on avance en multipliant : chaque doublement de la pression occupe la même hauteur sur l'axe.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-g1b-2",
+  "dc": "G1",
+  "code": "1.03",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Vous placez un point sur le diagramme : il tombe à gauche de la courbe de bulle. Dans quel état est le fluide ?",
+  "choix": [
+   "Liquide sous-refroidi",
+   "Mélange liquide + vapeur",
+   "Vapeur surchauffée",
+   "Au point critique"
+  ],
+  "bonne": 0,
+  "aide": "La cloche découpe trois zones. À gauche, le fluide n'a pas encore commencé à bouillir.",
+  "remed": {
+   "regle": "La courbe en cloche découpe le plan en trois zones : à gauche de la courbe de bulle le liquide sous-refroidi, sous la cloche le mélange liquide + vapeur (saturé), à droite de la courbe de rosée la vapeur surchauffée.",
+   "pourquoi": "Savoir dans quelle zone on est tombé, c'est savoir ce qu'il y a réellement dans le tube qu'on tient. C'est tout l'intérêt du diagramme : il transforme deux mesures — une pression et une température — en un état du fluide.",
+   "exemple": "En sortie de condenseur, un point à gauche de la courbe de bulle est la preuve qu'il n'y a plus de vapeur, donc que le détendeur sera alimenté en liquide pur.",
+   "piege": "La cloche n'est pas la même d'un fluide à l'autre. Un point lu sur le diagramme du R-134a ne dit rien du R-290 : on vérifie d'abord quel fluide est dans le circuit."
+  },
+  "remediation_vers": "g1b",
+  "explication": "La courbe en cloche découpe le plan en trois zones : à gauche de la courbe de bulle le liquide sous-refroidi, sous la cloche le mélange liquide + vapeur (saturé), à droite de la courbe de rosée la vapeur surchauffée.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-g1b-3",
+  "dc": "G1",
+  "code": "1.03",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Sous la cloche, un point se trouve sur la ligne de titre de vapeur x = 0,2. Qu'est-ce que cela signifie ?",
+  "choix": [
+   "Que la pression vaut 0,2 bar",
+   "Qu'un cinquième de la masse du fluide est déjà passée en vapeur",
+   "Que le fluide est à 20 °C",
+   "Qu'il reste 20 % de la charge dans l'installation"
+  ],
+  "bonne": 1,
+  "aide": "Le titre va de 0 sur la courbe de bulle à 1 sur la courbe de rosée. Que vaut-il au milieu du chemin ?",
+  "remed": {
+   "regle": "Le titre de vapeur, noté x, est la part de la masse déjà vaporisée : x = 0 sur la courbe de bulle (tout est encore liquide), x = 1 sur la courbe de rosée (tout est devenu vapeur). x = 0,2 signifie donc un cinquième de vapeur, quatre cinquièmes de liquide.",
+   "pourquoi": "C'est ce qui sort du détendeur : la détente fait apparaître une part de vapeur avant même l'entrée de l'évaporateur. Cette vapeur-là ne produira pas de froid, elle occupe seulement du volume.",
+   "piege": "Le titre n'est ni une pression, ni une température, ni un pourcentage de charge. C'est une proportion entre deux phases du même fluide, au point où l'on se trouve."
+  },
+  "remediation_vers": "g1b",
+  "explication": "Le titre de vapeur, noté x, est la part de la masse déjà vaporisée : x = 0 sur la courbe de bulle (tout est encore liquide), x = 1 sur la courbe de rosée (tout est devenu vapeur). x = 0,2 signifie donc un cinquième de vapeur, quatre cinquièmes de liquide.",
+  "origine": "pack"
+ },
+ {
+  "id": "pk-g1b-4",
+  "dc": "G1",
+  "code": "1.03",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Sur un cycle tracé, où se lit le sous-refroidissement ?",
+  "choix": [
+   "Entre la courbe de rosée et le point d'aspiration, sur la ligne basse pression",
+   "Entre la courbe de bulle et le point de sortie du condenseur, sur la ligne haute pression",
+   "Sur le segment vertical de la détente",
+   "Au sommet de la cloche, au point critique"
+  ],
+  "bonne": 1,
+  "aide": "Le sous-refroidissement concerne du liquide, et il se produit dans le condenseur. De quel côté de la cloche, et sur quelle ligne de pression ?",
+  "remed": {
+   "regle": "Le sous-refroidissement se lit sur la ligne HAUTE pression, entre la courbe de bulle et le point de sortie du condenseur. La surchauffe, elle, se lit sur la ligne BASSE pression, entre la courbe de rosée et le point d'aspiration.",
+   "pourquoi": "Les deux écarts sont symétriques : le sous-refroidissement est le chemin parcouru en chaleur sensible du côté liquide, la surchauffe celui parcouru en chaleur sensible du côté vapeur. Le diagramme les montre comme deux longueurs, de part et d'autre de la cloche.",
+   "piege": "Se tromper de ligne de pression est fréquent : lire un sous-refroidissement sur la basse pression n'a aucun sens, il n'y a pas de liquide sortant à cet endroit du cycle."
+  },
+  "remediation_vers": "g1b",
+  "explication": "Le sous-refroidissement se lit sur la ligne HAUTE pression, entre la courbe de bulle et le point de sortie du condenseur. La surchauffe, elle, se lit sur la ligne BASSE pression, entre la courbe de rosée et le point d'aspiration.",
   "origine": "pack"
  }
 ]

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img"
+     aria-label="Surchauffe utile et surchauffe totale sur la ligne d'aspiration. Le fluide sort de l'évaporateur à la température de saturation lue au manomètre basse pression. Au bulbe du détendeur, en sortie d'évaporateur, l'écart avec cette température de saturation est la surchauffe utile : c'est celle qui a servi à faire du froid. Plus loin, à l'entrée du compresseur, l'écart avec la même température de saturation est la surchauffe totale. La différence entre les deux est ce que la ligne d'aspiration a ajouté en se réchauffant sur son parcours. Le sous-refroidissement se lit de la même façon en sortie de condenseur, mais du côté liquide.">
+  <title>Surchauffe utile et surchauffe totale : deux points de mesure, une même référence</title>
+  <style>
+    .t  { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .st { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lg { font:400 13px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .xs { font:400 11.5px Calibri,Segoe UI,sans-serif; fill:#7c8a99; }
+    .p  { fill:none; stroke:#1b3a63; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+    .bp { fill:none; stroke:#1b3a63; stroke-width:6; stroke-linecap:round; }
+    .flux { fill:none; stroke:#fff; stroke-opacity:.9; stroke-width:2.4; stroke-linecap:round;
+            stroke-dasharray:0.1 16; animation:flux 1.3s linear infinite; }
+    @keyframes flux { to { stroke-dashoffset:-16.1; } }
+    @media (prefers-reduced-motion:reduce) { .flux { animation:none; } }
+  </style>
+
+  <rect width="900" height="430" fill="#ffffff"/>
+  <text class="t" x="30" y="30">Surchauffe utile, surchauffe totale : deux points, une seule référence</text>
+  <text class="lg" x="30" y="52">La référence est toujours la même : la <tspan style="font-weight:700;fill:#1b3a63">température de saturation</tspan>, déduite de la pression lue au manomètre BP.</text>
+
+  <!-- évaporateur -->
+  <g transform="translate(110,190)">
+    <rect x="-80" y="-52" width="160" height="104" rx="5" fill="#fff" stroke="#1b3a63" stroke-width="2.4"/>
+    <path class="p" d="M-80,-28 L60,-28 A12 12 0 0 1 60,-4 L-60,-4 A12 12 0 0 0 -60,20 L80,20" style="stroke-width:1.8"/>
+    <text class="st" x="0" y="76" text-anchor="middle">Évaporateur</text>
+    <text class="xs" x="0" y="93" text-anchor="middle">le fluide finit de bouillir</text>
+  </g>
+
+  <!-- ligne d'aspiration -->
+  <path class="bp" d="M190,210 L700,210"/>
+  <path class="flux" d="M190,210 L700,210"/>
+
+  <!-- compresseur -->
+  <g transform="translate(760,210)">
+    <circle cx="0" cy="0" r="42" fill="#fff" stroke="#1b3a63" stroke-width="2.4"/>
+    <path class="p" d="M-16,-14 L16,0 L-16,14 Z" fill="#e8eef4"/>
+    <text class="st" x="0" y="66" text-anchor="middle">Compresseur</text>
+  </g>
+
+  <!-- point B : le bulbe -->
+  <g transform="translate(250,210)">
+    <circle cx="0" cy="0" r="11" fill="#27823f"/>
+    <text style="font:700 12px Calibri;fill:#fff" x="0" y="4" text-anchor="middle">B</text>
+    <path class="p" d="M0,-11 v-30" stroke="#27823f"/>
+    <rect x="-30" y="-72" width="60" height="30" rx="4" fill="#eaf5ee" stroke="#27823f" stroke-width="1.8"/>
+    <text class="xs" x="0" y="-52" text-anchor="middle" style="fill:#27823f;font-weight:700">bulbe</text>
+    <text class="xs" x="0" y="30" text-anchor="middle">sortie évaporateur</text>
+  </g>
+
+  <!-- point 1 : entrée compresseur -->
+  <g transform="translate(660,210)">
+    <circle cx="0" cy="0" r="11" fill="#c9451a"/>
+    <text style="font:700 12px Calibri;fill:#fff" x="0" y="4" text-anchor="middle">1</text>
+    <path class="p" d="M0,-11 v-30" stroke="#c9451a"/>
+    <rect x="-42" y="-72" width="84" height="30" rx="4" fill="#fdf1ed" stroke="#c9451a" stroke-width="1.8"/>
+    <text class="xs" x="0" y="-52" text-anchor="middle" style="fill:#c9451a;font-weight:700">sonde d'aspiration</text>
+    <text class="xs" x="0" y="30" text-anchor="middle">entrée compresseur</text>
+  </g>
+
+  <!-- accolades des deux surchauffes -->
+  <path d="M190,268 v10 h60 v-10" fill="none" stroke="#27823f" stroke-width="2"/>
+  <text class="st" x="220" y="296" text-anchor="middle" style="fill:#27823f;font-size:13px">surchauffe UTILE</text>
+  <text class="xs" x="220" y="313" text-anchor="middle">mesurée au bulbe</text>
+  <text class="xs" x="220" y="328" text-anchor="middle">c'est elle qui a fait du froid</text>
+
+  <path d="M190,346 v10 h470 v-10" fill="none" stroke="#c9451a" stroke-width="2"/>
+  <text class="st" x="425" y="374" text-anchor="middle" style="fill:#c9451a;font-size:13px">surchauffe TOTALE</text>
+  <text class="xs" x="425" y="391" text-anchor="middle">mesurée à l'aspiration — utile + ce que la ligne a ajouté en se réchauffant sur son parcours</text>
+
+  <!-- rappel de la référence -->
+  <g transform="translate(30,96)">
+    <rect x="0" y="0" width="840" height="42" rx="6" fill="#f5f8fb" stroke="#d7e0e8" stroke-width="1.5"/>
+    <text class="lg" x="16" y="26"><tspan style="font-weight:700;fill:#1b3a63">Le geste, dans l'ordre</tspan> : pression au manomètre BP → conversion en absolu → température de saturation dans la table → comparaison avec la température lue sur le tube. L'écart est la surchauffe, en <tspan style="font-weight:700;fill:#1b3a63">kelvins</tspan>.</text>
+  </g>
+
+  <text class="lg" x="30" y="418">Même logique en sortie de condenseur, mais du côté liquide : température de saturation moins température du tube = <tspan style="font-weight:700;fill:#1b3a63">sous-refroidissement</tspan>.</text>
+</svg>

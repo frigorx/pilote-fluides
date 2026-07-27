@@ -301,6 +301,18 @@ const REMEDIATION_FINE = {
   "v6_106": "g2a", "v6_107": "g2a", "v6_110": "g2a", "v6_111": "g2a",
   "v6_114": "g2a", "v6_115": "g2a", "v6_037": "g2a",
   "5": "g2a", "v6_003": "g2a", "v6_004": "g2a",
+  /* Chantier 1 du socle théorique (27/07). Le code 1.02 n'est plus enseigné
+     par g1a mais par g1e — chaleur sensible et latente, le palier, les états
+     du fluide. Ces cinq questions portent 1.02 et renvoyaient vers g1a :
+     l'élève qui se trompait retombait sur une fiche qui n'enseigne plus la
+     notion. États du fluide (157, 158), retour de liquide au compresseur
+     (160), repères de surchauffe et de sous-refroidissement (v6_048, v6_145). */
+  "160": "g1e", "157": "g1e", "158": "g1e", "v6_048": "g1e", "v6_145": "g1e",
+  /* Chantier 2 (27/07) : même motif, un cran plus loin. Ces quatre questions
+     portent le code 1.03 — le diagramme log p-h — et renvoyaient vers g1a,
+     qui ne l'a jamais enseigné. C'est g1b qui le fait, et qui le fait
+     désormais vraiment (elle tenait 1.03 avec 105 mots). */
+  "v6_042": "g1b", "v6_041": "g1b", "v6_046": "g1b", "v6_143": "g1b",
 };
 
 /* ---------------------------------------------------------------------

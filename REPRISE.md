@@ -1,5 +1,8 @@
 # REPRISE — pack habilitation fluides frigorigènes
 
+> ⚡ **REPRISE RAPIDE : lire `PROMPT-REPRISE.md`, pas ce fichier.** Ce document-ci est la mémoire
+> longue du projet (794 lignes) ; `PROMPT-REPRISE.md` est le point d’entrée d’une nouvelle session.
+
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 > Dernière mise à jour : **26 juillet 2026**.
@@ -15,6 +18,16 @@ tournant dans le moteur générique **inerWeb Pilote** (repris de `frigorx/r408`
 1. **support de séance** — le formateur projette, pilote, note ;
 2. **outil d'auto-préparation à l'examen** — le stagiaire reçoit le lien **avant** la formation,
    le garde **pendant** les périodes en entreprise, révise **selon son niveau** jusqu'à l'épreuve.
+
+> 🔴🔴 **CE DOSSIER VA À L'AGRÉMENT.** Décision annoncée par F. Henninot le 27/07 : *« s'il y a un
+> dossier pédagogique, c'est un dossier qui va être soumis à l'approbation pour avoir l'agrément
+> fluide, l'agrément centre de formation. »*
+> **Cela change le statut de tout ce qui est écrit ici.** Ce n'est plus seulement du contenu
+> pédagogique : c'est une **pièce opposable**. Conséquences pratiques, à tenir sans exception —
+> tout ce qui est annoncé doit **exister** ; tout chiffre doit être **traçable au texte** ; les
+> mesures de couverture et de profondeur deviennent des **preuves** et non des indicateurs ;
+> et un contenu faux n'est plus une erreur pédagogique, c'est un défaut de dossier.
+> La **relecture métier** cesse d'être un confort : sans elle, le dossier n'est pas défendable.
 
 > ⚠️ **Démonstrateur, pas version définitive.** Contenu jamais relu par un œil de frigoriste
 > (voir § 6). **Publié et diffusable en lien** depuis le 25/07 — la vitrine annonce elle-même
@@ -48,11 +61,11 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
-## 2. État au 26/07/2026
+## 2. État au 27/07/2026
 
-**79 cartes** · **250 questions** · **29 planches SVG** (dont 13 animées, et **2 dessins animés
+**80 cartes** · **258 questions** · **31 planches SVG** (dont 19 animées, et **2 dessins animés
 narratifs**) · 4 illustrations · **3 outils embarqués**
-**✅ 42 fiches de cours sur 42 portent un visuel** — plus une seule fiche « mur de texte ».
+**✅ 43 fiches de cours sur 43 portent un visuel** — plus une seule fiche « mur de texte ».
 
 > **Couverture du référentiel officiel : A1 100 % · A2 100 % · D 100 % · E 100 %.**
 > Mesurée à chaque build, écrite dans `COUVERTURE-REFERENTIEL.md`. Elle valait 60 % en A1
@@ -66,16 +79,92 @@ narratifs**) · 4 illustrations · **3 outils embarqués**
 > groupe du tirage au sort). **Comblés le soir même** : 13 fiches enrichies (rédaction
 > sous règles strictes + vérification adversariale + intégration), **94/94 tenus** au build
 > suivant. La mesure tourne à chaque build : ça ne peut plus se redégrader en silence.
-> L'instrument : `packs/fluides/profondeur-attendus.json` (v0.3, à faire relire).
+> L'instrument : `packs/fluides/profondeur-attendus.json` (v0.5, à faire relire).
+>
+> ⚠️ **Ce que la profondeur NE voit pas : la maigreur.** Découvert le 27/07 — `g1b` « tenait »
+> le code 1.03 avec **105 mots**, et le build annonçait 94/94. La mesure vérifie que des motifs
+> sont présents, pas que le sujet est traité. Les chantiers 1 et 2 ont durci la **décomposition**
+> de 1.02 et de 1.03 (v0.4 puis v0.5) — ce n'est pas la même chose qu'un contrôle de **volume**.
+> Le garde-fou du § 5 de `CONSIGNES-SOCLE-THEORIQUE.md` **reste à écrire**, et `g7b` (118 mots)
+> le montre encore.
 
 | | |
 |---|---|
 | 1 accueil · 8 menus | **Sécurité** · **Classification** · A1, A2, D, E · **Réviser par thème** · **Préparation pratique** |
-| 42 fiches de cours | dont **5 de sécurité** (ce qui blesse la personne), **4 de classification** (ce qui est dans la bouteille, dont **2 sur le CO₂**) et **7 de préparation pratique** (le matériel et les gestes) |
+| 43 fiches de cours | dont **5 de sécurité** (ce qui blesse la personne), **4 de classification** (ce qui est dans la bouteille, dont **2 sur le CO₂**) et **7 de préparation pratique** (le matériel et les gestes) |
 | 1 carte « Ma progression » | où j'en suis, compétence par compétence — tout en local |
 | 5 exercices « frigoriste-détective » | mises en situation à indices croisés |
 | 21 séries et examens | 13 séries de révision par thème + 8 examens sur 3 paliers |
-| 250 questions | rattachées à un **code de compétence**, un niveau, une catégorie — **99 compétences interrogées = 99 enseignées**, plus aucun code muet |
+| 258 questions | rattachées à un **code de compétence**, un niveau, une catégorie — **99 compétences interrogées = 99 enseignées**, plus aucun code muet |
+
+**LE SOCLE THÉORIQUE — chantier 2 sur 4 (27/07)** — `g1b`, la fiche du diagramme, faisait
+**105 mots pour 45 minutes de cours**. Elle est passée à **803 mots** (1 233 avec ses encadrés).
+- **Nouvelle planche `logph-cycle.svg`** : les deux axes, la cloche et ses deux branches, le point
+  critique, les trois zones, les lignes de **titre de vapeur**, et le cycle en quatre
+  transformations qui **s'allument dans l'ordre** — c'est le sens de parcours qui se retient mal.
+- **Ce que la fiche enseigne maintenant** : pourquoi l'échelle des pressions est **logarithmique**
+  (la BP peut être sous le bar quand la HP est à plusieurs dizaines : en échelle ordinaire, tout
+  le côté froid serait écrasé) · la **courbe de bulle** et la **courbe de rosée**, qui ne sont que
+  les points de bulle et de rosée de `g1e` mis bout à bout pour toutes les pressions · le **point
+  critique** et le régime transcritique du CO₂ · le **titre de vapeur** (0 occurrence avant) · les
+  quatre transformations, dont la **détente, seul segment vertical** · où se lisent surchauffe et
+  sous-refroidissement · et le lien avec le **contrôle d'étanchéité indirect**, qui est la raison
+  d'être du code au référentiel.
+- **FRIGOLO Mollier est enfin EXPLOITÉ, pas seulement cité** (demande de F. Henninot) : encadré
+  « À toi » avec un protocole guidé en 6 étapes sur l'outil, embarqué en iframe (1450 px, chargement
+  différé) + lien pleine page. Nouvel assistant `outilAtelier()` dans `cartes.js` pour les outils
+  hébergés sur un autre dépôt de l'atelier. Le mode projection saute les encadrés à iframe : en
+  salle, l'outil se projette en pleine page (c'est écrit dans les `notes_pilote`).
+- **`g1b` rend le code 1.06** (comportement des réfrigérants de substitution), qu'elle déclarait
+  sans l'enseigner. Il reste porté par `g1c`, qui l'enseigne — profondeur vérifiée après retrait.
+- **4 remédiations réaiguillées** de `g1a` vers `g1b` (les questions du code 1.03 renvoyaient vers
+  une fiche qui n'a jamais montré de diagramme) et **4 questions ajoutées** (`pk-g1b-1` à `-4`).
+- **`g1b` entre enfin dans les menus A1 et A2** : le code 1.03 y est exigé, et la fiche n'était
+  listée que dans le parcours E. Un A1 qui naviguait par le menu ne la rencontrait jamais.
+- **Instrument durci une seconde fois (v0.5)** : 1.03 ignorait deux notions de son libellé officiel
+  — le « diagramme d'un cycle frigorifique simple à compression » et la lecture des axes et de la
+  cloche. Contrefactuel tiré : sur l'ancien contenu, **3 notions sur 5 → 🟠**. Après : **94/94**.
+- ⚠️ **Divergence trouvée, à trancher au chantier 3** : FRIGOLO affiche ses propres repères
+  (SR utile, SR totale) qui ne coïncident pas avec le **5-10 K** de la charte du pack. La fiche ne
+  cite **aucune valeur** de l'outil, exprès. Voir `CONSIGNES-SOCLE-THEORIQUE.md` § 4.
+- ⚠️ **Non vérifiable en bac à sable** : le navigateur de test n'a pas d'accès sortant, donc
+  **l'iframe FRIGOLO n'a pas pu être chargée pour de vrai**. Le gabarit d'encart a été validé sur
+  une copie locale de l'outil (hauteur, absence de débordement, rendu mobile) ; le lien de secours
+  fonctionne dans tous les cas. **À contrôler par F. Henninot une fois en ligne.**
+
+**LE SOCLE THÉORIQUE — chantier 1 sur 4 (27/07)** — le pack faisait employer le mot
+« surchauffe » **97 fois** sans avoir jamais posé le concept qui le fonde : « chaleur sensible »
+et « chaleur latente » valaient **0 occurrence** dans tout le contenu élève. On demandait au
+stagiaire d'utiliser un mot dont on ne lui avait jamais donné le sens physique. Détail du constat
+mesuré et des trois chantiers restants : `CONSIGNES-SOCLE-THEORIQUE.md`.
+- **Nouvelle fiche `g1e` « Chaleur sensible et chaleur latente : le palier »** (30 min, jour 1,
+  entre `g1a` et `g1b`), qui porte désormais le code **1.02**. Elle pose le palier de changement
+  d'état, l'enthalpie, l'**effet de réfrigération**, la **chaleur de compression**, les deux côtés
+  HP/BP, puis les cinq mots du chemin : *liquide sous-refroidi → point de bulle → saturé → point
+  de rosée → vapeur surchauffée*. Elle se termine sur les deux écarts du terrain (surchauffe
+  5-10 K, sous-refroidissement 4-8 K) — **sans jamais les mesurer** : le geste reste en G4.
+- **`g1a` DÉGRAISSÉE, et renommée « Unités, pression et les quatre organes »**. Elle annonçait
+  « thermodynamique utile » et portait 1.02 en trois encadrés posés sur 250 mots. Elle rend le
+  code à `g1e` et garde ce qu'elle tenait vraiment : les unités (1.01) et la fonction des organes
+  (1.04). Jour 1 : **6 h 20 → 6 h 35** (g1a 45 → 30 min, g1e 30 min).
+- **Le glissement des zéotropes déménage** de `g1a` vers `g1e` : expliquer qu'un palier n'est pas
+  plat suppose d'avoir enseigné le palier. C'était l'ordre inverse depuis le début.
+- **5 remédiations réaiguillées** (`convert.mjs`, `REMEDIATION_FINE`) : les questions portant 1.02
+  renvoyaient vers `g1a`, qui n'enseigne plus la notion — l'élève qui se trompait n'avait plus où
+  réviser. **4 questions ajoutées** (`pk-g1e-1` à `-4`), dont deux servent le mini-questionnaire
+  de la séquence.
+- **L'instrument de profondeur DURCI (v0.4)**, et c'est le point qui compte : sa décomposition de
+  1.02 ne retenait que 5 des notions du libellé officiel. Quatre ajoutées (chaleur latente et
+  changement d'état, états du fluide, chaleur de compression, effet de réfrigération). Mesure
+  contrefactuelle **tirée, pas supposée** : sur l'ancien contenu, 1.02 tombait à **6/9 → 🟠**.
+  Après la fiche : **94/94 tenus**, avec un instrument plus sévère qu'avant.
+- **Planche `chaleur-palier.svg`** (8 Ko, faite main) : la courbe température / chaleur avec ses
+  deux pentes et son palier, un thermomètre qui monte, **s'arrête pendant tout le palier**, puis
+  repart. Modèle de dessin non encore employé dans le pack (règle : pas deux fiches sur le même
+  modèle). Vérifiée dans le navigateur en mouvement ET en `prefers-reduced-motion`.
+- ⚠️ **Le seul chiffre de la fiche est 100 °C à la pression atmosphérique** — repère de culture
+  générale servant d'ancrage, pas une valeur de fluide. Les `notes_pilote` demandent au formateur
+  d'empêcher le groupe de le généraliser. Poids élève : 626 → **641 Ko**.
 
 **Le module SÉCURITÉ (26/07)** — le pack enseignait la sécurité de l'installation et de
 l'environnement, **jamais celle de la personne**. Mesuré avant d'agir : *asphyxie* 0 occurrence,
@@ -271,7 +360,7 @@ prêts à enregistrer (60-90 s, une idée par phrase, plans calés sur les sché
 méthode. ⚠️ **Règle n° 1 de ce fichier : aucune capsule enregistrée avant la relecture métier.**
 Une vidéo est figée ; si une capsule avait été tournée la veille du 26/07, elle enseignerait
 encore que le CO₂ ne prévient pas. Le pack est déjà prêt à les recevoir (champ `video` de
-`parcours.js`, 4ᵉ argument de `seq()`), à héberger **hors dépôt** pour préserver les 624 Ko.
+`parcours.js`, 4ᵉ argument de `seq()`), à héberger **hors dépôt** pour préserver le poids du pack (654 Ko au 27/07).
 Ce qui est écarté : tout **geste technique généré par IA** (opposable s'il est faux).
 
 **Les 3 paliers d'examen** : 🟢 Échauffement (niveau 1, seuil 60 %) · 📝 Examen blanc (mixte, 70 %)
@@ -410,7 +499,70 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 
 ## 6. Ce qui reste à faire
 
-### 🔴🔴 LE SOCLE THÉORIQUE EST MAIGRE — consignes écrites, chantier à mener
+### 🔴🔴 LE PLAN DE FORMATION NE TIENT PAS DANS LE TEMPS RÉEL — virage pédagogique décidé
+
+**⇒ Tout est dans [`PLAN-SEQUENCE-4J5.md`](PLAN-SEQUENCE-4J5.md)** : cadre horaire réel, modèle en
+quatre temps, critère de tri, arbitrages. **À lire avant de toucher à `parcours.js`.**
+
+Mesuré le 27/07 : le parcours pèse **27 h 40 de salle**, hors atelier, hors révision, hors épreuve.
+Or A2 annonce 28 h de formation (il resterait **20 minutes**) et **D est déjà en dépassement de
+40 minutes** — alors que D est la catégorie la plus pratique du référentiel.
+
+**Décision de F. Henninot (27/07) : c'est une REQUALIFICATION, pas une formation initiale.**
+*« Le système est magnifique, je ne dis pas que c'est nul — je dis que c'est trop. Vraiment un
+projet d'autoformation, et à la fin un bourrage de crâne. Les gens savent faire. »*
+Modèle : **amont en autoformation → test de niveau → points clés en salle → atelier → bachotage →
+épreuve**, **matin théorie, après-midi pratique**, manipulation **à l'azote**.
+
+**Calendrier tranché — option B, et elle tient dans le budget** : formation **mardi → vendredi
+midi**, **week-end d'autoformation**, **lundi matin révision**, **lundi après-midi l'épreuve**.
+Soit **4,5 jours exactement** (32 h 15), et *« 4,5 jours, sinon le plan de financement et le budget
+prévisionnel ne sont pas valables »*. Journée réduite à **7 h comptées** (8 h 30 – 17 h 00,
+6 h 30 effectives). Le week-end est le créneau que le nouveau modèle a créé : le stagiaire part en
+sachant ce qu'il doit réviser, parce qu'il vient de passer l'examen blanc du vendredi matin.
+**Plan de séance minuté demi-journée par demi-journée : `PLAN-SEQUENCE-4J5.md` § 5.**
+Répartition mesurée : **10 h 05 en salle · 12 h 55 en amont** — ça tombe juste, sans rien supprimer.
+
+**Outils : on fait la pédagogie d'abord** (décision 27/07). Le suivi des résultats attend ; en
+attendant les stagiaires envoient leurs résultats, traités **sur un PC fermé**. RGPD très allégé :
+**stagiaires majeurs, pas d'élèves mineurs**. Piste pour le futur logiciel d'évaluation :
+**tablettes dédiées sur réseau fermé**, jamais les téléphones des stagiaires.
+
+**La grille dictée par F. Henninot ne laisse que 8 h de théorie en salle** (J2 matin + J3 matin ;
+10 h avec la variante du J3). Contre 27 h 40 aujourd'hui : **≈ 20 h à basculer en amont, soit 70 %**.
+
+**Durée de l'épreuve — question tranchée sur le texte (27/07)** : les durées sont fixées par
+l'arrêté, annexe II, et ne font PAS partie des choix d'organisme (qui portent sur le barème, le
+seuil et le nombre de questions). **A1 : 1 h 15 de théorie + 3 h de pratique = 4 h 15.** Donc
+« 1 h + 2 h » est impossible — mais la grille prévoyait 6 h : **1 h 45 sont rendues**.
+Le CERFA est bien évalué à la pratique (traçabilité, groupe 5). À faire confirmer par
+l'organisme certificateur.
+
+**Trois trous que la grille met au jour :**
+- ✅ **le CERFA : FAIT le 27/07 — fiche `g5c` « La fiche d'intervention CERFA 15497*04 »**
+  (44ᵉ fiche de cours, 1 200 mots, planche `cerfa-cadres.svg`). Correction d'une erreur de lecture
+  de ma part : **le CERFA reste bien dans ce pack** — c'est l'**outil de saisie** qui vit dans
+  `inerweb-fluide` (CERFA PDF auto-remplissable sur tablette), et le pack y renvoie.
+  Le contenu est aligné sur les **72 champs réels** du formulaire officiel, relevés dans le
+  générateur du projet voisin — pas sur un souvenir de formulaire, donc vérifiable champ par champ.
+  Codes déclarés : **3.05 · 4.09 · 5.07**. ⚠️ Suppose **≈ 10 tablettes Android**, un prérequis
+  d'exploitation. Effet favorable : elles valident la décision « page web universelle, pas de PWA » ;
+- ⚠️ **le logiciel de test de niveau agrégé n'existe pas**, et il casserait la promesse « rien ne
+  sort du navigateur » : agréger les résultats d'un groupe, c'est traiter des données d'élèves
+  (RGPD, priorité 2). Voie intermédiaire proposée : le stagiaire **montre** son résultat, rien ne
+  transite ;
+- **12 h de bachotage pour 258 questions**, quand la banque entière tient en ≈ 8 h 30.
+
+⚠️ **On ne jette rien**, et les chantiers du socle théorique ne sont PAS perdus : un projet
+d'autoformation a besoin d'un **livre dense**. `g1e` (1 008 mots) et `g1b` (1 233 mots) sont trop
+lourdes pour 30 minutes de salle — elles sont au bon format pour être lues chez soi. Elles ne
+perdent pas leur place, elles **changent de place**. Chantiers 3 et 4 : même densité, budgétés en
+amont.
+
+⚠️ **Ligne fausse et publiée, à corriger dès que l'enveloppe est tranchée** : le menu A2 annonce
+« Formation indicative ≈ 28 h » alors que la salle seule en pèse 27 h 40.
+
+### 🔴 LE SOCLE THÉORIQUE — chantiers 1 et 2 FAITS, deux restent
 
 **⇒ Tout est dans [`CONSIGNES-SOCLE-THEORIQUE.md`](CONSIGNES-SOCLE-THEORIQUE.md), document
 autonome (constat mesuré, 4 chantiers ordonnés, règles, arbitrages).**
@@ -423,9 +575,30 @@ aucune fiche, seulement porté par deux fiches de manipulation · **KVP/KVL : 0*
 régulateurs de pression sont bien au référentiel (**7.02 · 8.02 · 8.07**) et que `g7b` qui les
 déclare fait **118 mots**.
 
-⚠️ **Et cela révèle une faille de nos garde-fous** : le build annonce « profondeur 94/94 tenus »
-alors que `g1b` tient son code avec 105 mots. **La mesure de profondeur ne détecte pas la
-maigreur.** C'est exactement le troisième niveau de contrôle demandé au point 2 ci-dessous.
+✅ **Chantier 1 — chaleur sensible et chaleur latente : FAIT le 27/07** (fiche `g1e`, détail au
+§ 2). Arbitrage tranché par F. Henninot : *nouvelle fiche dédiée **et** dégraissage de `g1a`*.
+Les deux zéros sont comblés : chaleur sensible **12**, chaleur latente **16**, vaporisation
+**1**, point de bulle **8**, point de rosée **10**.
+
+✅ **Chantier 2 — le diagramme log p/h : FAIT le 27/07** (`g1b`, 105 → 803 mots, détail au § 2).
+« Titre de vapeur » passe de **0 à 6** occurrences, « courbe de bulle » de 0 à 15. FRIGOLO Mollier
+est exploité dans un protocole guidé, et non plus seulement listé en ressource.
+
+⏭️ **Restent, dans l'ordre — l'ordre suit les dépendances, ne pas le changer :**
+- **Chantier 3 — surchauffe et sous-refroidissement**, fiche dédiée. `g1e` en donne le SENS et les
+  repères (5-10 K, 4-8 K), `g1b` montre OÙ ils se lisent ; il reste le **GESTE** (méthode
+  indirecte, à relier à `g4b`) et la distinction **surchauffe utile / totale**, toujours à 0
+  occurrence et **à faire valider**. ⚠️ Il faudra y trancher la divergence relevée au chantier 2
+  entre les repères de la charte du pack et ceux qu'affiche FRIGOLO.
+- **Chantier 4 — les régulateurs de pression** (`g7b` 118 mots, `g8b` 236 mots). KVP/KVL/KVR
+  toujours à 0 ; désignations commerciales Danfoss à arbitrer (consignes § 4.1).
+
+⚠️ **La faille de garde-fou est toujours ouverte, et elle a été confirmée en la corrigeant à
+moitié** : le build annonce « 94/94 tenus » alors que `g1b` tient son code avec 105 mots. La
+mesure de profondeur ne détecte pas la **maigreur**. Le chantier 1 a durci l'instrument sur 1.02
+(v0.4, 4 notions ajoutées), ce qui est un durcissement de **décomposition**, pas de **volume** :
+le contrôle de volume du § 5 des consignes **n'a pas été écrit**. Il reste à faire, et c'est
+aussi le troisième niveau de contrôle demandé au point 2 ci-dessous.
 
 ### ⏭️ DEMANDÉ POUR LA PROCHAINE SESSION (F. Henninot, soir du 26/07)
 
@@ -465,7 +638,7 @@ texte est lu ou abandonné.
   empattement plus lisible, **interlignage** élargi, et peut-être un **fond crème** (réduit
   l'éblouissement, aide une partie des lecteurs DYS).
 - ⚠️ **Arbitrage à poser avant de coder : PAS d'OpenDyslexic embarquée.** Cette police coûterait
-  50 à 100 Ko de fichier — sur un pack qui tient à 626 Ko et s'ouvre en 4G, c'est cher — et son
+  50 à 100 Ko de fichier — sur un pack qui tient à 654 Ko et s'ouvre en 4G, c'est cher — et son
   bénéfice est **discuté** par la recherche. Les recommandations solides portent sur autre chose :
   police sans empattement **déjà présente sur tous les appareils** (Verdana, Arial), corps plus
   grand, interligne ≥ 1,5, texte **non justifié**, espacement des lettres légèrement augmenté.
@@ -491,7 +664,28 @@ adversariales par IA ont déjà tourné dessus et ont trouvé **deux erreurs gra
 de l'exposition au CO₂, l'inertie prêtée aux fluides fluorés) plus un **rattachement au
 référentiel entièrement faux** : cela dit assez qu'un œil humain reste indispensable.
 
+**S'y ajoutent les chantiers 1 et 2 du socle théorique (27/07), même régime** : la fiche `g1e`
+(1 008 mots avec ses encadrés), la réécriture de `g1b` (1 233 mots) et les 8 questions
+`pk-g1e-*` / `pk-g1b-*`, plus la réécriture de `g1a`. C'est du contenu
+**théorique**, donc moins dangereux qu'une fiche de sécurité — mais c'est le contenu sur lequel
+tout le reste s'appuie : une définition fausse ici se propage à neuf fiches. La relecture
+adversariale interne a resserré deux formulations avant publication (« exactement le même
+chemin » entre condenseur et évaporateur, qui laissait croire aux mêmes températures ; et la
+question de fin, qui parlait d'« un fluide » là où le palier plat ne vaut que pour un fluide
+**pur** — contredisant l'encadré zéotropes de la même fiche).
+
 Points à trancher par un frigoriste, remontés par ces relectures :
+- la formulation de l'**effet de réfrigération** comme écart d'enthalpie aux bornes de
+  l'évaporateur, et celle de la **chaleur de compression** (`g1e`) — écrites de mémoire
+  technique, jamais lues sur une documentation ;
+- l'emploi de **point de bulle** et **point de rosée** pour un fluide **pur** : c'est l'usage du
+  métier et c'est ce que demandent les consignes, mais ce sont à l'origine les termes des
+  mélanges (`g1e`, `g1b`) ;
+- la mention du **régime transcritique du CO₂** au-dessus du point critique (`g1b`) — une phrase,
+  juste pour que le point critique ne soit pas une curiosité de dessin ;
+- le protocole guidé sur **FRIGOLO Mollier** (`g1b`) : les six étapes sont-elles dans le bon ordre
+  pour un stagiaire qui découvre l'outil, et faut-il l'embarquer dans la fiche ou seulement y
+  renvoyer ?
 - l'absence d'**odorisant** dans le R-290 de qualité frigorifique (`cl2`) ;
 - le fait qu'aucun fluide courant du parc ne relève des cases **B2 / B3** (`cl1`) ;
 - le double mécanisme du **CO₂** et l'insuffisance d'un détecteur d'oxygène seul (`cl3`) ;

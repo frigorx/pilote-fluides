@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img"
+     aria-label="On chauffe un fluide à pression constante et on suit sa température. D'abord le liquide se réchauffe et le thermomètre monte : c'est la chaleur sensible. Puis, au point de bulle, le liquide se met à bouillir : on continue de chauffer mais la température ne bouge plus. Ce palier est la chaleur latente, et c'est lui qui transporte l'essentiel de la chaleur. Au point de rosée, la dernière goutte a disparu : la température repart vers le haut, la vapeur est surchauffée. Dans l'évaporateur le fluide parcourt ce palier vers la droite en absorbant la chaleur du local ; dans le condenseur il le parcourt en sens inverse en la rendant dehors.">
+  <title>Chaleur sensible, chaleur latente : le palier de changement d'état</title>
+  <style>
+    .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .st  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .zn  { font:700 13px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lg  { font:400 13px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .acct{ font:700 14px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+    .ax  { fill:none; stroke:#8a99a8; stroke-width:1.6; }
+    .cb  { fill:none; stroke:#1b3a63; stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; }
+    .cl  { fill:none; stroke:#c9451a; stroke-width:4.6; stroke-linecap:round; }
+    .br  { fill:none; stroke:#c9d4de; stroke-width:1.6; }
+    .gd  { fill:none; stroke:#dbe3ea; stroke-width:1.4; stroke-dasharray:4 5; }
+    /* L'image AU REPOS est complète : sous « mouvement réduit », la couche
+       animée disparaît et la couche `.final` prend sa place, thermomètre
+       plein et repère en fin de course. Rien du contenu n'est perdu. */
+    .final { opacity: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      .final  { opacity: 1 !important; }
+      .mobile { display: none; }
+    }
+  </style>
+
+  <rect width="900" height="430" fill="#ffffff"/>
+  <text class="t" x="30" y="32">On chauffe, et par moments la température ne monte plus</text>
+
+  <!-- ================== THERMOMÈTRE ================== -->
+  <g transform="translate(46,60)">
+    <text class="lg" x="14" y="-8" text-anchor="middle">thermomètre</text>
+    <rect x="4" y="0" width="20" height="238" rx="10" fill="#f7fafc" stroke="#1b3a63" stroke-width="2"/>
+    <circle cx="14" cy="252" r="15" fill="#c9451a" stroke="#1b3a63" stroke-width="2"/>
+    <!-- colonne : état de fin de course (visible sans animation) -->
+    <rect class="final" x="8" y="75" width="12" height="168" rx="6" fill="#c9451a"/>
+    <!-- colonne : elle monte, s'ARRÊTE pendant le palier, puis repart -->
+    <g class="mobile">
+      <rect x="8" y="223" width="12" height="20" rx="6" fill="#c9451a">
+        <animate attributeName="y"
+                 values="223;223;155;155;75;75"
+                 keyTimes="0;0.06;0.30;0.72;0.94;1" dur="13s" repeatCount="indefinite"/>
+        <animate attributeName="height"
+                 values="20;20;88;88;168;168"
+                 keyTimes="0;0.06;0.30;0.72;0.94;1" dur="13s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <line class="gd" x1="26" y1="155" x2="44" y2="155"/>
+  </g>
+
+  <!-- ================== COURBE ================== -->
+  <g>
+    <!-- axes -->
+    <line class="ax" x1="120" y1="300" x2="632" y2="300"/>
+    <line class="ax" x1="120" y1="300" x2="120" y2="74"/>
+    <text class="lg" x="120" y="66">température</text>
+    <text class="lg" x="632" y="318" text-anchor="end">chaleur apportée →</text>
+
+    <!-- repère du palier -->
+    <line class="gd" x1="120" y1="215" x2="612" y2="215"/>
+
+    <!-- zone du palier -->
+    <rect x="215" y="90" width="240" height="125" fill="#f3f7fb"/>
+    <line class="gd" x1="215" y1="90" x2="215" y2="300"/>
+    <line class="gd" x1="455" y1="90" x2="455" y2="300"/>
+
+    <!-- la courbe : monte, palier, remonte -->
+    <path class="cb" d="M138,285 L215,215"/>
+    <path class="cl" d="M215,215 L455,215"/>
+    <path class="cb" d="M455,215 L570,135"/>
+
+    <!-- points remarquables -->
+    <circle cx="215" cy="215" r="5.5" fill="#fff" stroke="#1b3a63" stroke-width="2.6"/>
+    <circle cx="455" cy="215" r="5.5" fill="#fff" stroke="#1b3a63" stroke-width="2.6"/>
+    <text class="st" x="215" y="82" text-anchor="middle">point de bulle</text>
+    <text class="lg" x="215" y="99" text-anchor="middle">ça commence à bouillir</text>
+    <text class="st" x="455" y="82" text-anchor="middle">point de rosée</text>
+    <text class="lg" x="455" y="99" text-anchor="middle">plus une goutte de liquide</text>
+
+    <!-- états du fluide, le long de la courbe -->
+    <text class="zn" x="126" y="190">liquide</text>
+    <text class="zn" x="126" y="206">sous-refroidi</text>
+    <text class="zn" x="335" y="185" text-anchor="middle">liquide + vapeur — saturé</text>
+    <text class="zn" x="612" y="112" text-anchor="end">vapeur</text>
+    <text class="zn" x="612" y="128" text-anchor="end">surchauffée</text>
+
+    <!-- repère mobile qui parcourt le chemin -->
+    <circle class="final" cx="570" cy="135" r="7" fill="#1b3a63"/>
+    <g class="mobile">
+      <circle r="7" fill="#1b3a63">
+        <animate attributeName="cx" values="138;138;215;455;570;570"
+                 keyTimes="0;0.06;0.30;0.72;0.94;1" dur="13s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="285;285;215;215;135;135"
+                 keyTimes="0;0.06;0.30;0.72;0.94;1" dur="13s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- accolades sous l'axe : les trois portions -->
+    <path class="br" d="M138,326 v8 h77 v-8"/>
+    <path class="br" d="M215,326 v8 h240 v-8"/>
+    <path class="br" d="M455,326 v8 h115 v-8"/>
+    <text class="st" x="176" y="354" text-anchor="middle">SENSIBLE</text>
+    <text class="acct" x="335" y="354" text-anchor="middle">LATENTE — le palier</text>
+    <text class="st" x="512" y="354" text-anchor="middle">SENSIBLE</text>
+  </g>
+
+  <text class="lg" x="30" y="384"><tspan style="font-weight:700;fill:#1b3a63">Chaleur SENSIBLE</tspan> : la température change, le thermomètre le montre. — <tspan style="font-weight:700;fill:#c9451a">Chaleur LATENTE</tspan> : la température ne bouge pas, c'est l'état qui change.</text>
+
+  <!-- ================== CE QUE FAIT LA MACHINE ================== -->
+  <g transform="translate(654,60)">
+    <rect x="0" y="0" width="216" height="252" rx="8" fill="#fdf1ed" stroke="#e8b9a8" stroke-width="1.5"/>
+    <text class="st" x="16" y="28">Dans la machine</text>
+
+    <circle cx="24" cy="54" r="4" fill="#c9451a"/>
+    <text class="lg" x="38" y="58">Évaporateur : le fluide</text>
+    <text class="lg" x="38" y="75">parcourt le palier vers la</text>
+    <text class="lg" x="38" y="92">DROITE. Il prend la chaleur</text>
+    <text class="lg" x="38" y="109">du local, puis se surchauffe.</text>
+
+    <circle cx="24" cy="137" r="4" fill="#c9451a"/>
+    <text class="lg" x="38" y="141">Condenseur : le même</text>
+    <text class="lg" x="38" y="158">chemin en sens INVERSE. Il</text>
+    <text class="lg" x="38" y="175">rend la chaleur dehors, puis</text>
+    <text class="lg" x="38" y="192">se sous-refroidit.</text>
+
+    <line x1="16" y1="212" x2="200" y2="212" stroke="#e8b9a8" stroke-width="1.5"/>
+    <text class="acct" x="16" y="234">C'est le palier qui fait le froid.</text>
+  </g>
+
+  <text class="lg" x="30" y="408">L'eau bout à 100 °C à la pression atmosphérique : pendant qu'elle bout, le feu chauffe toujours et la température ne monte plus. C'est le même palier.</text>
+</svg>
