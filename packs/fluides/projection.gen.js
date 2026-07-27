@@ -2,23 +2,39 @@
    Le contenu vient de cartes.js ; l'ordre vient de parcours.js. */
 window.PILOTE_PROJECTION = {
  "parcours": {
-  "id": "fluides-3-jours",
-  "titre": "Habilitation fluides frigorigènes — parcours de formation",
-  "sous_titre": "Trois jours de théorie, puis la préparation à la pratique"
+  "id": "fluides-a1-5-jours",
+  "titre": "Habilitation fluides frigorigènes — parcours de formation A1",
+  "sous_titre": "Cinq jours, 35 heures, adossés à l'autoformation avant et pendant"
  },
  "base_img": "packs/fluides/res/",
  "jours": [
   {
-   "n": 0,
-   "libelle": "Accueil",
-   "titre": "Sécurité — ce qui peut vous blesser",
-   "intention": "Tout le reste de la formation apprend à protéger l'installation et l'environnement. Ce bloc-ci apprend au stagiaire à se protéger lui-même. La sécurité se démontre et s'impose : elle ne se découvre jamais par l'erreur.",
+   "n": 1,
+   "libelle": null,
+   "titre": "Se protéger, puis comprendre de quoi on parle",
+   "intention": "La sécurité ouvre la formation : une heure, démontrée et imposée, jamais découverte par l'erreur. Vient ensuite le cadre réglementaire et la thermodynamique qui fonde tout le reste. Les fiches lues en amont sont REPRISES, pas relues : on questionne, on corrige, on ancre.",
    "sequences": [
+    {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "Accueil, positionnement, analyse de risques du plateau, EPI en place",
+     "minutes": 20,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "Accueil, positionnement, analyse de risques du plateau, EPI en place",
+       "minutes": 20
+      }
+     ]
+    },
     {
      "type": "cours",
      "fiche": "s1",
      "titre": "L'air qui manque — l'asphyxie",
-     "minutes": 25,
+     "minutes": 20,
      "video": null,
      "slides": [
       {
@@ -183,270 +199,9 @@ window.PILOTE_PROJECTION = {
     },
     {
      "type": "cours",
-     "fiche": "s2",
-     "titre": "Le froid brûle — projections et gelures",
-     "minutes": 20,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Le froid brûle — projections et gelures",
-       "dc": "Sécurité · codes 12.02",
-       "competences": [
-        {
-         "code": "12.02",
-         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, ventilation, EPI.",
-         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/secu-projection.svg",
-       "alt": "Le liquide jaillit dans l'axe du raccord : on se place hors de cet axe, on vérifie au manomètre que la pression est nulle, et on porte gants et lunettes.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "point",
-       "html": "Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "point",
-       "html": "Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui. Un contact avec de l'ammoniac liquide ajoute une <b>brûlure chimique</b> à la brûlure froide : ce fluide n'appartient pas à la même famille que les fluides fluorés, et ne se comporte pas comme eux.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "point",
-       "html": "Le cas type : vous déconnectez un flexible de <b>manifold</b> (l'appareil à manomètres) en pensant le tronçon vide. La vanne n'a pas été vérifiée, le manomètre pas relu. Le liquide restant jaillit au desserrage — dans l'axe du raccord, comme sur le schéma.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ol><li>Mettez vos <b>EPI</b> (équipements de protection individuelle) — ici, gants et lunettes — avant toute manipulation d'un circuit sous pression.</li><li><b>Vérifiez au manomètre</b> que la pression est nulle, et que la vanne est fermée, avant de débrancher un flexible ou de desserrer un raccord.</li><li><b>Desserrez progressivement</b>, jamais d'un coup, et restez hors de la trajectoire d'un éventuel jet.</li><li>En cas de projection sur la peau ou les yeux : rincez sans frotter, et consultez. La conduite à tenir précise figure sur la <b>FDS</b> (fiche de données de sécurité) du fluide utilisé.</li></ol>",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>Débrancher un flexible ou desserrer un raccord sous pression <b>sans vérifier au manomètre</b> qu'il est vide, ou le faire sans gants ni lunettes.</p><p>Conséquence : projection de liquide qui gèle la peau ou les yeux au contact. Risque de lésion oculaire grave.</p>",
-       "titre": "Le froid brûle — projections et gelures"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl2-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
-       "choix": [
-        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
-        "La température minimale d'inflammation du gaz",
-        "La pression maximale admissible dans la bouteille",
-        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
-       ],
-       "bonne": 0,
-       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
-       "remed": {
-        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
-        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
-       },
-       "remediation_vers": "cl2",
-       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-cl4-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
-       "choix": [
-        "Au plafond, comme un détecteur de fumée",
-        "En partie basse, là où le CO₂ s'accumule",
-        "À l'extérieur du local uniquement",
-        "Peu importe, le gaz se répartit uniformément"
-       ],
-       "bonne": 1,
-       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
-       "remed": {
-        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
-        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
-       },
-       "remediation_vers": "cl4",
-       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Faites observer un flexible de manifold et ses raccords rapides, et faites lire un manomètre avant de mimer un débranchement. Faites manipuler des gants de protection au froid et des lunettes ; faites justifier l'ordre dans lequel on les enfile avant d'intervenir. Racontez un cas concret de projection lors d'un débranchement trop rapide, pour ancrer le réflexe manomètre-avant-tout. Rappelez que la conduite à tenir en cas de projection se lit sur la FDS du fluide utilisé sur le chantier."
-    },
-    {
-     "type": "cours",
-     "fiche": "s3",
-     "titre": "La flamme interdite — décomposition du fluide",
-     "minutes": 20,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "La flamme interdite — décomposition du fluide",
-       "dc": "Sécurité · codes 11.03",
-       "competences": [
-        {
-         "code": "11.03",
-         "lib": "Connaître les règles de sécurité des fluides inflammables, toxiques ou à pression plus élevée.",
-         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/secu-flamme.svg",
-       "alt": "À gauche le geste interdit : chauffer un tronçon non récupéré, les gaz toxiques remontent vers le visage penché. À droite le geste juste : récupérer, balayer à l'azote, ventiler.",
-       "titre": "La flamme interdite — décomposition du fluide"
-      },
-      {
-       "type": "point",
-       "html": "Un fluide frigorigène fluoré est stable à température normale. Il ne l'est plus face à une flamme. Chauffé au contact d'une flamme ou d'une surface très chaude, il ne brûle pas comme un carburant : il se <b>décompose</b>. Sa molécule se casse et forme d'autres substances, absentes du fluide d'origine — des gaz toxiques et corrosifs.",
-       "titre": "La flamme interdite — décomposition du fluide"
-      },
-      {
-       "type": "point",
-       "html": "Certains fluides ajoutent un second risque. Selon la norme NF EN 378, les fluides classés <b>A2L</b> (légèrement inflammables, comme le R-32 ou le R-1234yf) ou <b>A3</b> (très inflammables, comme le R-290 ou le R-600a) peuvent eux-mêmes s'enflammer au contact d'une flamme ou d'une étincelle. La classe du fluide utilisé se lit sur sa FDS (fiche de données de sécurité).",
-       "titre": "La flamme interdite — décomposition du fluide"
-      },
-      {
-       "type": "point",
-       "html": "Le cas type : un tronçon où il reste « une petite quantité, ça ne changera rien ». La flamme touche ce fluide résiduel, il se décompose, et les fumées se dégagent juste sous le visage penché sur le brasage.",
-       "titre": "La flamme interdite — décomposition du fluide"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ol><li><b>Récupérez</b> entièrement le fluide du tronçon à chauffer avant toute opération de brasage : jamais de brasage sur un circuit encore chargé.</li><li>Ne recherchez <b>jamais une fuite avec une flamme</b> : utilisez un détecteur électronique.</li><li>Faites circuler de l'azote à l'intérieur du tube pendant le brasage, avec un mano-détendeur, pour en chasser l'air et les résidus : c'est le <b>balayage</b>.</li><li><b>Ventilez</b> la zone de travail, et ne restez pas penché directement au-dessus de la flamme.</li></ol>",
-       "titre": "La flamme interdite — décomposition du fluide"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>Chauffer ou braser un tronçon de circuit sans avoir récupéré et vérifié l'absence de fluide, ou rechercher une fuite avec une flamme.</p><p>Conséquence : dégagement de gaz toxiques et corrosifs, inhalés à bout portant. Risque d'incendie en plus, si le fluide est inflammable (classe A2L ou A3).</p>",
-       "titre": "La flamme interdite — décomposition du fluide"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl3-1",
-       "dc": "Classification",
-       "code": "11.03",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
-       "choix": [
-        "Près du plafond, car les gaz montent toujours",
-        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
-        "Il se répartit uniformément et sans danger dans tout le volume",
-        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
-       ],
-       "bonne": 1,
-       "aide": "Comparez sa masse à celle de l'air.",
-       "remed": {
-        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
-        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
-       },
-       "remediation_vers": "cl3",
-       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g11-54",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le R290 (propane) est classé :",
-       "choix": [
-        "A1",
-        "A2L",
-        "A2",
-        "A3"
-       ],
-       "bonne": 3,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g11",
-       "code": "11.03",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g11-v6_033",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Un fluide classé A2L est :",
-       "choix": [
-        "Non inflammable, non toxique",
-        "Légèrement inflammable, faible toxicité",
-        "Très inflammable, faible toxicité",
-        "Légèrement inflammable, toxicité élevée"
-       ],
-       "bonne": 1,
-       "explication": "Légèrement inflammable, faible toxicité — A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf.",
-       "aide": "A = toxicité, le chiffre = inflammabilité. L = lower (plus faible).",
-       "remed": {
-        "texte": "A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf."
-       },
-       "remediation_vers": "g11",
-       "code": "11.03",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Montrez, sans l'allumer, un chalumeau et un poste de brasage avec son mano-détendeur d'azote ; faites nommer le balayage et sa fonction. Racontez le cas du brasage sur un tronçon mal purgé, pour ancrer le lien entre flamme et décomposition. Rappelez l'interdiction absolue de rechercher une fuite à la flamme (méthode ancienne, aujourd'hui interdite). Reliez à la classe NF EN 378 du fluide utilisé en atelier, lisible sur sa FDS, pour rappeler que certains fluides s'enflamment eux-mêmes en plus de se décomposer."
-    },
-    {
-     "type": "cours",
      "fiche": "s4",
      "titre": "Ce qui éclate — la pression",
-     "minutes": 25,
+     "minutes": 20,
      "video": null,
      "slides": [
       {
@@ -623,1072 +378,9 @@ window.PILOTE_PROJECTION = {
     },
     {
      "type": "cours",
-     "fiche": "s5",
-     "titre": "Consigner avant de toucher — le risque électrique",
-     "minutes": 25,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Consigner avant de toucher — le risque électrique",
-       "dc": "Sécurité",
-       "competences": []
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/secu-consignation.svg",
-       "alt": "Les cinq étapes dans l'ordre : séparer, condamner, identifier, vérifier l'absence de tension au VAT, mettre à la terre. Le VAT se teste avant et après sur une source connue.",
-       "titre": "Consigner avant de toucher — le risque électrique"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce qui arrive.</b> Ce risque ne figure dans aucun code du référentiel d'examen fluides. Il n'en est pas moins réel : le risque électrique tue des professionnels chaque année, sur les installations de froid et de climatisation comme sur toute autre installation électrique.",
-       "titre": "Consigner avant de toucher — le risque électrique"
-      },
-      {
-       "type": "point",
-       "html": "Le passage du courant électrique dans le corps humain porte un nom : l'<b>électrisation</b>. Ses effets vont de la simple secousse à des blessures graves — brûlures internes, troubles du cœur. Quand une électrisation entraîne la mort, on parle d'<b>électrocution</b>. C'est le même phénomène ; seule la gravité change.",
-       "titre": "Consigner avant de toucher — le risque électrique"
-      },
-      {
-       "type": "point",
-       "html": "Un autre danger ne demande aucun contact : l'<b>arc électrique</b>. C'est une décharge qui jaillit dans l'air entre deux points sous tension, ou entre un point sous tension et une masse, sans qu'il soit nécessaire de toucher quoi que ce soit. Un arc électrique brûle par la chaleur et la lumière qu'il dégage, et peut projeter des matières en fusion. On peut donc se blesser gravement sans avoir touché aucun fil.",
-       "titre": "Consigner avant de toucher — le risque électrique"
-      },
-      {
-       "type": "point",
-       "html": "Un dernier piège : couper l'alimentation ne vide pas forcément tous les composants de leur énergie. Un <b>condensateur</b> est un composant qui stocke de l'énergie électrique ; on en trouve par exemple dans les circuits de démarrage de certains moteurs. Il peut rester chargé après la coupure du courant. Il reste alors dangereux tant qu'il n'a pas été déchargé selon la méthode indiquée par la documentation constructeur de l'équipement.",
-       "titre": "Consigner avant de toucher — le risque électrique"
-      },
-      {
-       "type": "point",
-       "html": "<b>Comment ça arrive vraiment.</b> Un technicien pressé ouvre une armoire électrique pour un dépannage rapide. Le disjoncteur qui semble commander cette armoire est coupé, alors il touche directement un bornier — la barrette où arrivent les fils. Mais personne n'a vérifié que ce disjoncteur coupait bien cette armoire précise : un autre circuit, resté sous tension, y arrive aussi. Autre situation fréquente : un condensateur de moteur touché juste après la coupure du courant, alors qu'il est encore chargé. Autre situation encore : un outil métallique approché trop près de bornes sous tension dans une armoire électrique, sans contact direct, qui déclenche un arc électrique.",
-       "titre": "Consigner avant de toucher — le risque électrique"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce qui protège.</b> Avant de toucher un circuit ou un équipement électrique, la <b>consignation électrique</b> se déroule dans un ordre précis, en cinq étapes :",
-       "titre": "Consigner avant de toucher — le risque électrique"
-      },
-      {
-       "type": "point",
-       "html": "Le VAT lui-même doit être digne de confiance. On le contrôle sur une source que l'on sait sous tension <b>avant</b> de l'utiliser sur le circuit à vérifier, puis on refait le même contrôle sur cette source connue <b>après</b>. Si l'appareil fonctionnait au premier essai mais plus au second, tout ce qu'il a mesuré entre les deux doit être considéré comme non fiable.",
-       "titre": "Consigner avant de toucher — le risque électrique"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li><b>Séparer</b> : couper l'alimentation électrique de façon visible et certaine.</li><li><b>Condamner</b> : verrouiller l'organe de coupure en position ouverte, pour qu'il ne puisse pas être refermé par quelqu'un d'autre pendant l'intervention.</li><li><b>Identifier</b> : vérifier que l'on se trouve bien sur le circuit ou l'équipement que l'on vient de séparer, et pas sur un autre.</li><li><b>Vérifier l'absence de tension</b> avec un <b>VAT</b> — un vérificateur d'absence de tension — dont le modèle et les réglages sont adaptés à l'installation, conformément à sa documentation constructeur.</li><li><b>Mettre à la terre et en court-circuit</b> quand cette étape s'impose, notamment lorsqu'une tension pourrait réapparaître par une autre source.</li></ol>",
-       "titre": "Consigner avant de toucher — le risque électrique"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ul><li>Électrisation : le courant traverse le corps. Électrocution : une électrisation qui tue.</li><li>Un arc électrique brûle sans aucun contact.</li><li>Consignation en cinq étapes : séparer, condamner, identifier, vérifier l'absence de tension, mettre à la terre si besoin.</li><li>Un condensateur peut rester chargé après la coupure du courant.</li><li>Le VAT se contrôle avant et après usage, sur une source connue.</li></ul>",
-       "titre": "Consigner avant de toucher — le risque électrique"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>On ne travaille <b>jamais</b> sur une installation électrique sans avoir réalisé les cinq étapes de la consignation, même pour « juste vérifier » ou « deux secondes ». On ne fait <b>jamais</b> confiance à un simple arrêt visuel de la machine : seule une vérification d'absence de tension avec un VAT contrôlé fait foi. Conséquence : électrisation, électrocution, brûlure par arc électrique — ce risque tue chaque année.</p>",
-       "titre": "Consigner avant de toucher — le risque électrique"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-s5-1",
-       "dc": "Sécurité",
-       "code": null,
-       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Quelle est la dernière étape avant de poser les mains sur un circuit électrique consigné ?",
-       "choix": [
-        "Prévenir le client",
-        "Vérifier l absence de tension avec un VAT",
-        "Poser une pancarte",
-        "Ouvrir le coffret"
-       ],
-       "bonne": 1,
-       "aide": "Consigner ne suffit pas : il faut le prouver, appareil en main.",
-       "remed": {
-        "regle": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
-        "pourquoi": "Un disjoncteur peut être mal repéré, une alimentation de secours peut subsister : seule la mesure prouve que le circuit est hors tension.",
-        "piege": "« Je l ai coupé moi-même » ne protège de rien. Un circuit se vérifie, il ne se suppose pas."
-       },
-       "remediation_vers": "s5",
-       "explication": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
-       "origine": "pack"
-      },
-      {
-       "id": "pk-s5-2",
-       "dc": "Sécurité",
-       "code": null,
-       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s en être servi ?",
-       "choix": [
-        "Pour économiser la pile",
-        "Parce qu un VAT en panne indiquerait « pas de tension » sur un circuit pourtant sous tension",
-        "Pour l étalonner",
-        "C est une simple habitude"
-       ],
-       "bonne": 1,
-       "aide": "Demandez-vous ce qui se passe si l appareil lui-même est défaillant.",
-       "remed": {
-        "regle": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
-        "pourquoi": "Un appareil défaillant affiche l absence de tension quoi qu il arrive. Le tester après prouve qu il fonctionnait encore au moment de la mesure.",
-        "piege": "Un VAT qui n indique rien peut vouloir dire deux choses : pas de tension, ou appareil mort. Seul le double contrôle tranche."
-       },
-       "remediation_vers": "s5",
-       "explication": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
-       "origine": "pack"
-      },
-      {
-       "id": "pk-s5-3",
-       "dc": "Sécurité",
-       "code": null,
-       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Une machine vient d être mise hors tension. Que peut-il rester de dangereux dans le coffret ?",
-       "choix": [
-        "Plus rien, la coupure suffit",
-        "Des condensateurs encore chargés",
-        "Seulement de la chaleur",
-        "Uniquement du fluide"
-       ],
-       "bonne": 1,
-       "aide": "Certains composants stockent l énergie électrique et ne se vident pas instantanément.",
-       "remed": {
-        "regle": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
-        "pourquoi": "Il accumule de l énergie pour le démarrage du moteur. Coupée, cette énergie reste stockée et peut provoquer un choc.",
-        "piege": "Couper puis ouvrir aussitôt le coffret est un réflexe fréquent — et c est exactement le moment où le condensateur est encore chargé."
-       },
-       "remediation_vers": "s5",
-       "explication": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
-       "origine": "pack"
-      }
-     ],
-     "notes": "Conseil d'animation : faire manipuler un VAT hors tension et mimer le double contrôle sur une source connue, avant et après usage. Faire répéter les cinq étapes à voix haute par le groupe, dans l'ordre, jusqu'à ce qu'elles s'enchaînent sans hésitation. Montrer une photo ou une pièce réelle de condensateur pour que le mot ne reste pas abstrait. Rappeler explicitement que ce risque est absent du référentiel d'examen fluides — le dire aide à comprendre pourquoi le pack ne l'avait jamais traité, et pourquoi cette fiche existe quand même."
-    }
-   ]
-  },
-  {
-   "n": 0,
-   "libelle": "Accueil",
-   "titre": "Classification des fluides et risques",
-   "intention": "Avant de choisir sa catégorie, le stagiaire doit savoir ce qu'il aura dans les mains. La classification NF EN 378 s'enseigne ici comme un SYSTÈME à deux axes, pas comme une liste à retenir : c'est elle qui commande les EPI, le matériel électrique, la ventilation, la détection et la charge admise. Deux urgences la rendent nécessaire maintenant : le CO₂ entre dans le parc, et les hydrocarbures s'y généralisent.",
-   "sequences": [
-    {
-     "type": "cours",
-     "fiche": "cl1",
-     "titre": "Lire une classe — deux lettres, deux dangers",
-     "minutes": 30,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Lire une classe — deux lettres, deux dangers",
-       "dc": "Classification · codes 1.08 · 11.03",
-       "competences": [
-        {
-         "code": "1.08",
-         "lib": "Connaître la combustibilité et la propagation des flammes, les restrictions de capacité de charge et les limites d'occupation, pour les HFC, H(C)FO et hydrocarbures.",
-         "officiel": "Connaître la combustibilité, la propagation des flammes, les restrictions relatives à la capacité de charge, les limites d'occupation pour les HFC, H(C)FO et hydrocarbures",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "D": "T",
-          "E": "T"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "11.03",
-         "lib": "Connaître les règles de sécurité applicables aux fluides toxiques, inflammables ou nécessitant une pression de fonctionnement plus élevée.",
-         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/classes-securite.svg",
-       "alt": "Matrice complète des classes NF EN 378 : huit cases, toxicité en lignes, inflammabilité en colonnes.",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce que c'est.</b> La norme NF EN 378 (et la norme américaine ASHRAE 34, qui suit la même logique) attribue à chaque fluide frigorigène une <b>classe de sécurité</b> : A1, A2L, B2L, A3… Ce n'est pas un classement du plus dangereux au moins dangereux. C'est une <b>combinaison de deux informations distinctes</b>, et c'est pour cela qu'une classe s'écrit avec une lettre <i>et</i> un chiffre.",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "point",
-       "html": "<b>La lettre dit la toxicité.</b> <b>A</b> = toxicité faible. <b>B</b> = toxicité plus élevée. Attention au contresens : « A » ne signifie pas inoffensif. Un fluide de classe A peut vous asphyxier en chassant l'oxygène d'un local, ou se décomposer en gaz toxiques au contact d'une flamme. La frontière entre A et B se fixe sur une <b>valeur limite d'exposition</b> définie par la norme : la lettre parle donc de la toxicité <b>propre</b> du produit, pas de tous les dangers qu'il présente.",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "point",
-       "html": "<b>Le chiffre dit l'inflammabilité.</b> <b>1</b> = le fluide ne propage pas de flamme. <b>2L</b> = faiblement inflammable, la flamme se propage lentement. <b>2</b> = inflammable. <b>3</b> = très inflammable. Le « L » de 2L vient de l'anglais <i>lower</i> : c'est une sous-catégorie du 2, créée pour distinguer les fluides dont la flamme se propage assez lentement pour changer les mesures de prévention.",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "point",
-       "html": "<b>Pourquoi deux axes et non un seul ?</b> Parce qu'un fluide peut être dangereux d'une manière sans l'être de l'autre, et que les protections ne sont pas les mêmes. Contre la toxicité, on ventile et on protège les voies respiratoires. Contre l'inflammabilité, on supprime les sources d'étincelle et on limite la quantité de fluide présente. Un fluide qui cumule les deux — l'ammoniac, classé B2L — exige les deux dispositifs à la fois. Un classement en une seule note ne permettrait pas de savoir <b>lequel</b> mettre en place.",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "point",
-       "html": "<b>La matrice complète.</b> Deux axes croisés donnent huit cases :",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce que la classe commande.</b> C'est là qu'est l'enjeu réel : la classe n'est pas une étiquette, c'est ce qui détermine tout le dispositif de sécurité autour de l'installation.",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "point",
-       "html": "Se tromper de classe, ce n'est donc pas se tromper d'étiquette : c'est se tromper de <b>tout le dispositif de sécurité</b> — installer du matériel électrique inadapté, sous-dimensionner une ventilation, choisir un détecteur qui ne verra rien, ou charger un local au-delà de ce qu'il admet.",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "point",
-       "html": "<b>Le piège à ne jamais commettre.</b> Le <b>R-290 est de classe A3</b>, pas A2L. C'est du propane : un hydrocarbure, très inflammable. La confusion avec les A2L est fréquente, y compris dans des documents mal rédigés, et elle conduit à appliquer des précautions insuffisantes. Un repère simple et fiable : si le fluide est un <b>hydrocarbure</b> (propane, isobutane, propylène), il est <b>A3</b>. Les A2L sont des HFC comme le R-32, ou des HFO comme le R-1234yf.",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "point",
-       "html": "<b>Où lire la classe.</b> Jamais de mémoire, et jamais par déduction à partir du nom commercial : la classe de sécurité figure sur la <b>fiche de données de sécurité (FDS)</b> du fluide, que le fournisseur doit vous remettre. Les valeurs qui en découlent — charges limites selon le local, seuils de détection — se lisent dans la <b>NF EN 378</b> et dans la documentation du constructeur. Savoir aller les chercher est une compétence en soi ; les réciter de tête est une source d'accident.",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "point",
-       "html": "<ul><li><b>A1</b> — toxicité faible, non inflammable : R-134a, R-404A, R-410A, et le CO₂ (R-744).</li><li><b>A2L</b> — toxicité faible, faiblement inflammable : R-32, R-1234yf.</li><li><b>A2</b> — toxicité faible, inflammable : R-152a.</li><li><b>A3</b> — toxicité faible, <b>très inflammable</b> : R-290 (propane), R-600a (isobutane).</li><li><b>B1</b> — toxicité plus élevée, non inflammable : R-123, que l'on ne rencontre plus dans les installations neuves.</li><li><b>B2L</b> — toxicité plus élevée, faiblement inflammable : R-717, l'ammoniac.</li><li><b>B2</b> et <b>B3</b> — toxicité plus élevée, inflammable ou très inflammable. Ces deux cases existent dans la norme, mais aucun fluide courant du parc français ne s'y trouve. Retenez la logique de la case, pas un exemple.</li></ul>",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "point",
-       "html": "<ul><li>les <b>EPI</b> à porter pour intervenir ;</li><li>le <b>matériel électrique</b> admis dans le local, et la suppression des sources d'étincelle pour les fluides inflammables ;</li><li>la <b>ventilation</b> exigée, permanente ou de secours ;</li><li>la <b>détection</b> : le type de détecteur et son seuil d'alarme ne sont pas les mêmes selon qu'on surveille un gaz inflammable ou un gaz toxique ;</li><li>la <b>charge maximale</b> de fluide admise, selon le volume du local, son usage et l'endroit où se trouve l'installation ;</li><li>les <b>conditions d'occupation</b> du local : qui peut y entrer, et à quelles conditions.</li></ul>",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ul><li>La <b>lettre</b> dit la toxicité : A faible, B plus élevée. « A » ne veut pas dire inoffensif.</li><li>Le <b>chiffre</b> dit l'inflammabilité : 1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable.</li><li>Huit cases au total : A1 · A2L · A2 · A3 · B1 · B2L · B2 · B3.</li><li>La classe <b>commande</b> les EPI, le matériel électrique, la ventilation, la détection, la charge maximale et l'occupation du local.</li><li><b>R-290 = A3</b>, jamais A2L. Tout hydrocarbure est A3.</li><li>La classe se lit sur la <b>FDS</b> ; les valeurs associées, dans la NF EN 378.</li></ul>",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>Intervenir sur une installation, ou choisir un matériel, <b>sans avoir vérifié la classe du fluide sur sa FDS</b> — en la supposant d'après le nom du fluide ou d'après l'installation précédente.</p><p>Conséquence : un fluide A3 traité comme un A2L, c'est un local ventilé trop faiblement, un matériel électrique qui peut produire une étincelle, un détecteur inadapté et une charge excessive. L'atmosphère devient explosive sans que rien ne l'ait signalé.</p>",
-       "titre": "Lire une classe — deux lettres, deux dangers"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl1-1",
-       "dc": "Classification",
-       "code": "1.08",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Dans une classe de sécurité comme A2L, que disent respectivement la lettre et le chiffre ?",
-       "choix": [
-        "La lettre dit le PRP, le chiffre dit la pression de service",
-        "La lettre dit la toxicité, le chiffre dit l'inflammabilité",
-        "La lettre dit la famille chimique, le chiffre dit l'année de mise sur le marché",
-        "La lettre dit l'inflammabilité, le chiffre dit la toxicité"
-       ],
-       "bonne": 1,
-       "aide": "Deux dangers différents, deux protections différentes : c'est pour cela qu'il faut deux informations.",
-       "remed": {
-        "regle": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
-        "pourquoi": "Un fluide peut être dangereux d'une manière sans l'être de l'autre, et les mesures de prévention ne sont pas les mêmes : on ventile contre la toxicité, on supprime les sources d'étincelle contre l'inflammabilité. Une note unique ne dirait pas laquelle appliquer.",
-        "piege": "« A » ne veut pas dire inoffensif : un fluide de classe A peut asphyxier en chassant l'oxygène du local, ou se décomposer en gaz toxiques au contact d'une flamme."
-       },
-       "remediation_vers": "cl1",
-       "explication": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2",
-        "D",
-        "E"
-       ]
-      },
-      {
-       "id": "pk-cl3-1",
-       "dc": "Classification",
-       "code": "11.03",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
-       "choix": [
-        "Près du plafond, car les gaz montent toujours",
-        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
-        "Il se répartit uniformément et sans danger dans tout le volume",
-        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
-       ],
-       "bonne": 1,
-       "aide": "Comparez sa masse à celle de l'air.",
-       "remed": {
-        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
-        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
-       },
-       "remediation_vers": "cl3",
-       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g11-54",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le R290 (propane) est classé :",
-       "choix": [
-        "A1",
-        "A2L",
-        "A2",
-        "A3"
-       ],
-       "bonne": 3,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g11",
-       "code": "11.03",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Construire la matrice AU TABLEAU avec le groupe, axe par axe, avant de la montrer complète : d'abord la lettre seule (A/B) avec deux exemples, puis le chiffre seul (1/2L/2/3), et seulement ensuite le croisement. La classification est un système à comprendre, pas une liste à retenir — un groupe qui a construit les deux axes retrouve n'importe quelle case sans l'avoir apprise. Faire ouvrir une vraie FDS et y faire chercher la classe : c'est le geste évalué dans la vie professionnelle, pas à l'examen. Insister sur les cases B2 et B3 laissées sans exemple : c'est volontaire, on n'invente pas un fluide pour remplir une case. Le piège R-290 = A3 se pose en question ouverte au groupe AVANT de donner la réponse — la confusion avec A2L est fréquente et il vaut mieux qu'elle sorte en salle qu'en chantier. ⚠ Cette fiche couvre le code 1.08, qui est ÉVALUABLE au QCM : le dire, cela change l'attention du groupe."
-    },
-    {
-     "type": "cours",
-     "fiche": "cl2",
-     "titre": "Explosif avant d'être perceptible — la LIE",
-     "minutes": 25,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Explosif avant d'être perceptible — la LIE",
-       "dc": "Classification · codes 12.02 · 12.04",
-       "competences": [
-        {
-         "code": "12.02",
-         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, détection des fuites, ventilation, équipements de protection individuelle.",
-         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "12.04",
-         "lib": "Réaliser une analyse des risques avant de commencer le travail, et supprimer ou identifier les sources de danger.",
-         "officiel": "Réaliser une analyse des risques avant le début du travail et éliminer ou, si l'élimination n'est pas possible, identifier les sources de danger",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/lie-domaine.svg",
-       "alt": "L'axe des concentrations : trop pauvre, puis le domaine d'explosivité entre LIE et LSE, puis trop riche. L'explosimètre affiche un pourcentage de la LIE, c'est-à-dire la marge restante.",
-       "titre": "Explosif avant d'être perceptible — la LIE"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce qui arrive.</b> Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz — une étincelle ne déclenche rien. Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. <b>Entre les deux</b>, le mélange s'enflamme, et il le fait d'un coup, dans tout le volume.",
-       "titre": "Explosif avant d'être perceptible — la LIE"
-      },
-      {
-       "type": "point",
-       "html": "Ces deux bornes portent un nom. La <b>LIE</b> — limite inférieure d'explosivité — est la concentration en dessous de laquelle le mélange ne s'enflamme pas. La <b>LSE</b> — limite supérieure d'explosivité — est celle au-dessus de laquelle il ne s'enflamme plus non plus. L'intervalle entre les deux s'appelle le <b>domaine d'explosivité</b>. Chaque gaz a le sien : les valeurs sont propres au fluide et figurent sur sa <b>fiche de données de sécurité</b>. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale.",
-       "titre": "Explosif avant d'être perceptible — la LIE"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce qui rend ce danger particulier</b>, c'est qu'il n'y a pas de signal. Une atmosphère peut atteindre son domaine d'explosivité sans odeur, sans bruit, sans rien de visible. Le gaz domestique que l'on sent dans une cuisine contient un <b>odorisant ajouté volontairement</b> pour être détecté par le nez. Le <b>R-290 utilisé en froid est un propane de haute pureté : cet odorisant n'y est pas</b>. Le nez ne vous avertira pas. Et le seuil de perception d'une odeur, quand elle existe, n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger.",
-       "titre": "Explosif avant d'être perceptible — la LIE"
-      },
-      {
-       "type": "point",
-       "html": "<b>L'appareil qui répond à cette question</b> s'appelle un <b>explosimètre</b>. Il ne mesure pas une quantité de gaz dans l'absolu : il affiche <b>un pourcentage de la LIE</b> du gaz recherché. Une valeur de 10 % LIE signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable. C'est une mesure de <b>marge restante</b>, et c'est ce qui la rend utilisable : l'alarme se déclenche bien avant que le mélange ne devienne explosif. Le seuil de réglage se fixe selon la procédure de l'entreprise et la documentation de l'appareil.",
-       "titre": "Explosif avant d'être perceptible — la LIE"
-      },
-      {
-       "type": "point",
-       "html": "Un explosimètre se règle pour un gaz donné : un appareil réglé pour un gaz et utilisé pour un autre affiche un chiffre faux. Et il ne remplace ni un détecteur de fuite de fluide frigorigène, ni un détecteur d'oxygène : ce sont trois appareils différents, qui répondent à trois questions différentes.",
-       "titre": "Explosif avant d'être perceptible — la LIE"
-      },
-      {
-       "type": "point",
-       "html": "<b>Comment ça arrive vraiment.</b> Une petite fuite sur une unité au R-290, dans un local technique fermé et peu ventilé. Rien ne se voit, rien ne se sent. Le gaz, plus lourd que l'air, s'accumule lentement près du sol. Un technicien entre, actionne l'interrupteur d'éclairage, branche une lampe baladeuse, ou pose un outil électroportatif sur le sol. L'étincelle du contact suffit. Il n'y avait aucun signe avant-coureur, et l'inflammation ne laisse pas le temps de reculer.",
-       "titre": "Explosif avant d'être perceptible — la LIE"
-      },
-      {
-       "type": "point",
-       "html": "<b>ATEX</b> — le mot vient de « <b>AT</b>mosphère <b>EX</b>plosive ». Lorsqu'un local peut contenir une atmosphère explosive, il fait l'objet d'un <b>zonage</b> : on délimite les zones où ce risque existe, et on n'y admet que du matériel conçu pour ne pas enflammer l'atmosphère — ni par une <b>étincelle</b>, ni par une <b>surface trop chaude</b>, car une surface chaude suffit à allumer un mélange sans la moindre flamme. Cela vaut aussi pour ce que le technicien apporte avec lui — outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir <b>reconnaître</b> qu'il entre dans une telle zone et respecter ce qui y est affiché.",
-       "titre": "Explosif avant d'être perceptible — la LIE"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ul><li>Un gaz inflammable ne brûle qu'entre deux bornes : <b>LIE</b> (limite inférieure) et <b>LSE</b> (limite supérieure). Entre les deux, une étincelle suffit.</li><li>Les valeurs sont <b>propres à chaque fluide</b> et se lisent sur sa FDS.</li><li>Un <b>explosimètre</b> affiche un pourcentage de la LIE : une marge restante, pas une quantité.</li><li>Il se règle <b>pour un gaz donné</b>, et ne remplace ni un détecteur de fuite, ni un détecteur d'oxygène.</li><li>Le <b>R-290 du froid n'est pas odorisé</b> : le nez n'avertit de rien.</li><li><b>ATEX</b> : dans une zone à atmosphère explosive, seul le matériel <b>prévu pour ces zones</b> peut entrer — y compris celui qu'on apporte. Il est contraint sur l'étincelle <b>et</b> sur sa température de surface.</li></ul>",
-       "titre": "Explosif avant d'être perceptible — la LIE"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>Entrer dans un local où une fuite de fluide inflammable est possible et y <b>actionner un interrupteur, brancher une lampe ou utiliser un outil électroportatif</b>, sans avoir contrôlé l'atmosphère à l'explosimètre.</p><p>Se fier à son odorat en est la variante la plus courante : le R-290 utilisé en froid ne contient pas l'odorisant du gaz domestique, et aucune odeur ne renseigne sur la distance à la LIE.</p><p>Conséquence : inflammation de tout le volume, sans aucun signe avant-coureur.</p>",
-       "titre": "Explosif avant d'être perceptible — la LIE"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl2-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
-       "choix": [
-        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
-        "La température minimale d'inflammation du gaz",
-        "La pression maximale admissible dans la bouteille",
-        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
-       ],
-       "bonne": 0,
-       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
-       "remed": {
-        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
-        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
-       },
-       "remediation_vers": "cl2",
-       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-cl4-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
-       "choix": [
-        "Au plafond, comme un détecteur de fumée",
-        "En partie basse, là où le CO₂ s'accumule",
-        "À l'extérieur du local uniquement",
-        "Peu importe, le gaz se répartit uniformément"
-       ],
-       "bonne": 1,
-       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
-       "remed": {
-        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
-        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
-       },
-       "remediation_vers": "cl4",
-       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-p7-1",
-       "dc": "G12",
-       "code": "12.04",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "À quel moment réalise-t-on l'analyse de risques d'une intervention ?",
-       "choix": [
-        "Avant d'engager le moindre geste technique",
-        "Après avoir ouvert le circuit",
-        "À la fin, au moment de rédiger le rapport",
-        "Seulement si le client le demande"
-       ],
-       "bonne": 0,
-       "aide": "Une analyse de risques sert à éviter l'accident, pas à le raconter.",
-       "remed": {
-        "regle": "L'analyse de risques se fait AVANT le premier geste, sur place.",
-        "pourquoi": "Elle sert à identifier et à supprimer les dangers tant qu'on peut encore agir : source d'inflammation, ventilation, issue, présence de public.",
-        "piege": "Une analyse faite après coup n'est plus une analyse, c'est un constat. La sécurité se démontre et s'impose : on ne découvre jamais un risque par l'erreur."
-       },
-       "remediation_vers": "p7",
-       "explication": "L'analyse de risques se fait AVANT le premier geste, sur place.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Dessiner l'axe des concentrations au tableau : trop pauvre / domaine d'explosivité / trop riche, et placer LIE et LSE dessus. C'est ce dessin que les stagiaires retiennent, pas la définition. Ne donner AUCUNE valeur chiffrée de LIE, même si on la connaît : faire ouvrir la FDS du R-290 et l'y faire lire — c'est l'objectif de la fiche. Montrer un explosimètre si le plateau en dispose, faire lire l'unité affichée (% LIE) et faire dire à quoi correspond le chiffre. Faire comparer côte à côte les trois appareils (explosimètre, détecteur de fuite, détecteur d'oxygène) : la confusion entre eux est fréquente et dangereuse. Le point sur l'odorisant absent du R-290 mérite d'être posé en question ouverte : « le propane, ça se sent, non ? » — la réponse surprend et se retient."
-    },
-    {
-     "type": "cours",
-     "fiche": "cl3",
-     "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend",
-     "minutes": 35,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend",
-       "dc": "Classification · code 11.03",
-       "competences": [
-        {
-         "code": "11.03",
-         "lib": "Connaître les règles de sécurité applicables aux fluides toxiques, inflammables ou nécessitant une pression de fonctionnement plus élevée.",
-         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/co2-point-bas.svg",
-       "alt": "Animation : le CO₂ remplit le local par le bas. Le capteur placé en partie basse se déclenche, celui du plafond ne voit rien. Respirable à hauteur de visage, mortel en bas de l'escalier.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce qui arrive.</b> Le CO₂ — le R-744 — est classé <b>A1</b> : toxicité faible, non inflammable, PRP de 1. C'est la case la plus rassurante de toute la matrice. Et c'est exactement ce qui le rend dangereux : <b>sa classe n'annonce aucun des deux risques qui tuent réellement sur ces installations</b> — la <b>pression</b>, et l'<b>anoxie</b>. Qui retient « CO₂ = A1 = tranquille » a retenu quelque chose de faux.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "Ce fluide entre aujourd'hui dans le parc : froid commercial, supermarchés, chambres froides. Vous en rencontrerez. Ce n'est plus un sujet de culture générale.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "<b>Premier danger : la pression.</b> Une installation au CO₂ travaille à des pressions <b>bien plus élevées</b> que celles des fluides que vous connaissez — sans commune mesure. Cela change tout le matériel : manifold, flexibles, vannes, tout doit être <b>dédié au CO₂</b>. Brancher un manifold ordinaire sur une installation au CO₂, c'est le faire éclater dans les mains. Les valeurs exactes dépendent du point de fonctionnement et se lisent dans la <b>documentation constructeur</b> ; ce qu'il faut retenir sans aucun chiffre, c'est qu'<b>aucun réflexe acquis sur un R-134a ou un R-410A ne se transpose ici</b>.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "Cette pression garde son danger <b>machine à l'arrêt</b>. Une installation au CO₂ arrêtée continue de monter en pression si elle se réchauffe : c'est pour cela qu'elle possède des dispositifs de sécurité qui lui sont propres. Une installation au CO₂ laissée sans surveillance après une coupure n'est pas une installation au repos.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "À la détente à l'air libre, le CO₂ peut passer directement à l'état solide : c'est la <b>glace carbonique</b> (ou neige carbonique). Double conséquence — une <b>brûlure par le froid</b> au contact de la peau, et un <b>bouchon solide</b> qui obstrue une vanne ou une tuyauterie. Et ce bouchon finit par fondre : le gaz qu'il libère alimente alors le second danger.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "<b>Second danger : l'air qu'il vous prend.</b> Le mot <b>anoxie</b> désigne le manque d'oxygène dans l'organisme. Vous avez rencontré ce danger dans la fiche « L'air qui manque » : un gaz prend la place de l'air respirable. Le CO₂ fait cela — <b>mais il ne fait pas que cela</b>, et c'est toute la différence.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "<b>Deux mécanismes, pas un seul.</b> L'azote agit uniquement par <b>déplacement</b> : il est inerte, il prend la place de l'oxygène sans réagir avec l'organisme. Le CO₂, lui, agit <b>en plus par lui-même</b> : il n'est pas inerte, il intervient dans la régulation de la respiration et devient nocif à des concentrations où l'oxygène restant serait encore suffisant. Autrement dit, le CO₂ peut vous mettre en danger <b>avant</b> d'avoir chassé assez d'oxygène pour qu'un contrôle du seul taux d'oxygène s'en alarme. C'est pourquoi, sur une installation au CO₂, <b>un détecteur d'oxygène seul ne suffit pas</b> : il faut une mesure du CO₂ lui-même.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "N'en concluez pas que les fluides fluorés sont inoffensifs : à forte concentration, ils agissent eux aussi sur l'organisme — effet sur le rythme du cœur, effet endormant. Leur fiche de données de sécurité le mentionne. « A » n'a jamais voulu dire inoffensif.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce que vous ressentirez — et pourquoi c'est déjà tard.</b> Contrairement à l'azote, qui ne prévient pas du tout, le CO₂ <b>donne des signes</b> : souffle court puis <b>essoufflement violent</b>, <b>maux de tête</b>, <b>vertiges</b>, bourdonnements, sueurs. La raison est celle vue en fiche « L'air qui manque » : c'est l'excès de gaz carbonique dans le sang qui commande l'envie de respirer. Ces signes sont votre <b>seule chance</b> — mais ils arrivent alors que vous êtes <b>déjà dans la nappe</b>, et à forte concentration la perte de connaissance suit en quelques instants. D'où une règle simple : <b>essoufflement brutal ou mal de tête soudain dans un local technique, vous ressortez immédiatement</b>. On ne cherche pas à comprendre sur place, on ne finit pas le geste en cours.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "<b>Pourquoi on entre sans le savoir.</b> Le CO₂ est <b>incolore</b>, <b>inodore</b>, et <b>plus lourd que l'air</b>. Il ne monte pas : il s'écoule et <b>s'accumule dans les points bas</b> — fosse, cave, sous-sol, local en contrebas, bas d'une chambre froide. Une zone peut être parfaitement respirable à hauteur de visage et déjà mortelle au niveau du sol, ou en bas de quelques marches. Descendre, c'est entrer dans la nappe.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "<b>Attention à ne pas généraliser cette règle.</b> « Plus lourd que l'air » vaut pour le CO₂ et pour la plupart des fluides fluorés — mais <b>pas pour l'ammoniac</b> (R-717), plus léger que l'air, qui se comporte à l'inverse : il monte. Le comportement d'un fluide se lit sur sa FDS, il ne se suppose jamais par analogie avec le fluide précédent.",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "point",
-       "html": "<b>Comment ça arrive vraiment.</b> Une installation au CO₂ en local technique enterré, une fuite lente pendant la nuit, porte fermée. Le gaz remplit le volume par le bas. Au matin, un technicien descend relever un paramètre. Rien ne se voit, rien ne se sent. À mi-escalier, il a mal à la tête et le souffle court — il met cela sur le compte de la fatigue et continue, parce qu'il n'en a que pour deux minutes. Il ne remonte pas. Puis vient le second accident, celui qui tue le plus souvent dans cette famille d'accidents : un collègue le voit au sol et descend le chercher, sans protection. La nappe est toujours là. <b>Deux victimes au lieu d'une.</b>",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ul><li>Le CO₂ est <b>A1</b>, et pourtant il tue de <b>deux</b> façons : la <b>pression</b> et l'<b>anoxie</b>. Sa classe n'annonce ni l'une ni l'autre.</li><li>Pressions <b>sans commune mesure</b> avec les fluides courants : matériel <b>dédié au CO₂</b>, jamais un manifold ordinaire.</li><li>Une installation au CO₂ <b>à l'arrêt reste sous pression</b>, et remonte en pression si elle se réchauffe.</li><li>Glace carbonique à la détente : <b>brûlure par le froid</b> et <b>bouchon</b>.</li><li>Le CO₂ <b>déplace</b> l'oxygène <b>et agit par lui-même</b> — l'azote, lui, est inerte. Un <b>détecteur d'oxygène seul ne suffit pas</b>.</li><li><b>Essoufflement brutal, mal de tête, vertiges : on ressort tout de suite.</b> Ces signes arrivent quand on est déjà dans la nappe.</li><li>Incolore, inodore, <b>plus lourd que l'air</b> : il s'accumule en <b>point bas</b>. Pas vrai pour l'ammoniac.</li></ul>",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>Descendre dans une fosse, une cave, un sous-sol ou tout local en contrebas abritant une installation au CO₂ après une fuite possible, <b>sans avoir ventilé et mesuré</b>. Et, si un collègue est au sol : <b>descendre le chercher sans protection</b>.</p><p>Conséquence : vous entrez dans la nappe. Les signes que vous ressentirez — souffle coupé, mal de tête — arriveront trop tard pour remonter un escalier, et le sauveteur improvisé devient la seconde victime. C'est le scénario le plus fréquent de ces accidents.</p><p>Interdit aussi : brancher du <b>matériel non dédié au CO₂</b> sur une installation au CO₂. Sa pression n'a rien à voir avec ce que vous connaissez.</p>",
-       "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl3-1",
-       "dc": "Classification",
-       "code": "11.03",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
-       "choix": [
-        "Près du plafond, car les gaz montent toujours",
-        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
-        "Il se répartit uniformément et sans danger dans tout le volume",
-        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
-       ],
-       "bonne": 1,
-       "aide": "Comparez sa masse à celle de l'air.",
-       "remed": {
-        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
-        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
-       },
-       "remediation_vers": "cl3",
-       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g11-54",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le R290 (propane) est classé :",
-       "choix": [
-        "A1",
-        "A2L",
-        "A2",
-        "A3"
-       ],
-       "bonne": 3,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g11",
-       "code": "11.03",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g11-v6_033",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Un fluide classé A2L est :",
-       "choix": [
-        "Non inflammable, non toxique",
-        "Légèrement inflammable, faible toxicité",
-        "Très inflammable, faible toxicité",
-        "Légèrement inflammable, toxicité élevée"
-       ],
-       "bonne": 1,
-       "explication": "Légèrement inflammable, faible toxicité — A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf.",
-       "aide": "A = toxicité, le chiffre = inflammabilité. L = lower (plus faible).",
-       "remed": {
-        "texte": "A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf."
-       },
-       "remediation_vers": "g11",
-       "code": "11.03",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Fiche la plus importante du module : le CO₂ entre dans le parc et il tue de deux façons que sa classe A1 n'annonce pas. Prendre le temps, quitte à raccourcir ailleurs. Faire le lien explicite avec « L'air qui manque » (s1) : même famille de danger, mais un mécanisme de PLUS, et surtout des SIGNES que l'azote ne donne pas. Poser la question au groupe : « l'azote et le CO₂, même danger ? » — la réponse (déplacement seul contre déplacement + action propre) est le cœur de la fiche. NE JAMAIS enseigner que le CO₂ endort sans prévenir : c'est faux, et cela supprimerait le seul signal d'auto-sauvetage du stagiaire. Faire répéter la règle de sortie à voix haute : essoufflement ou mal de tête soudain = je sors. Matérialiser le point bas : montrer le sol du local, faire dire où va le gaz, faire remarquer qu'une fenêtre en hauteur ne le chasse pas. Rappeler l'exception ammoniac chaque fois que « plus lourd que l'air » est prononcé. Le double accident se raconte, il ne se résume pas. Sur la pression : montrer un manifold ordinaire et dire franchement ce qui arrive si on le branche sur du CO₂. Aucune valeur chiffrée en salle : faire ouvrir la FDS du R-744 et la documentation constructeur."
-    },
-    {
-     "type": "cours",
-     "fiche": "cl4",
-     "titre": "Se protéger du CO₂ — détection, EPC et EPI",
-     "minutes": 30,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI",
-       "dc": "Classification · codes 12.02 · 13.14",
-       "competences": [
-        {
-         "code": "12.02",
-         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, détection des fuites, ventilation, équipements de protection individuelle.",
-         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "13.14",
-         "lib": "Vérifier la sécurité du site : signalisation, issues de secours, capteurs et alarmes gaz.",
-         "officiel": "Vérifier que les mesures de santé et de sécurité conformes aux règles applicables sont appliquées à l'emplacement du système (par exemple, panneaux de signalisation, issues de secours, capteurs de gaz, alarmes au gaz, etc.)",
-         "epreuve": {},
-         "nouveau": true,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/co2-protection.svg",
-       "alt": "Le local équipé : capteur fixe en partie basse relié aux alarmes intérieure et extérieure, ventilation, signalisation à la porte. À droite, les EPI — et le masque à cartouche, qui ne protège pas du CO₂.",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce qui protège, dans l'ordre.</b> La règle générale de la prévention est la même partout : on protège <b>d'abord le collectif</b>, ensuite l'individu. Un équipement de <b>protection collective</b> (EPC) protège tout le monde dans le local, en permanence, sans que personne ait à y penser. Un équipement de <b>protection individuelle</b> (EPI) ne protège que celui qui le porte, et seulement s'il le porte correctement. L'EPI ne remplace jamais l'EPC : il vient <b>après</b>, pour ce que l'EPC ne couvre pas.",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "point",
-       "html": "<b>La détection : ce n'est pas une option.</b> Dans un local abritant une installation au CO₂, la <b>détection de gaz est exigée</b> dès que la norme l'impose — selon la charge et le type de local — et c'est l'EPC principal. Sa présence et son état se vérifient à l'arrivée : si elle manque là où elle devrait être, c'est un signalement à faire, pas un détail. Le détecteur est <b>fixe, à poste</b> : il mesure en permanence, y compris la nuit et quand personne n'est là, et c'est précisément ce qui manque à un appareil portatif resté dans le camion. On le place <b>en partie basse</b>, là où le CO₂ s'accumule : un capteur au plafond ne verra rien.",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "point",
-       "html": "Il est associé à des <b>alarmes</b> sonores et visuelles, à l'intérieur <b>et à l'extérieur</b> du local. Celle de l'extérieur a une fonction précise : vous prévenir <b>avant d'ouvrir la porte</b>, et empêcher un sauveteur d'entrer sans savoir. Le déclenchement peut aussi commander la <b>ventilation</b> et l'arrêt de l'installation. Un dispositif complet comporte en général deux niveaux : une <b>préalarme</b>, qui avertit, et une <b>alarme d'évacuation</b>, qui ordonne de sortir.",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "point",
-       "html": "<b>Le ppm : savoir lire ce que l'appareil affiche.</b> Un détecteur de CO₂ n'affiche ni des grammes ni des bars, mais des <b>ppm</b> — « parties par million ». Un ppm, c'est <b>une part de gaz pour un million de parts d'air</b> : autrement dit, un centimètre cube de CO₂ dans un mètre cube d'air. C'est une unité faite pour de <b>petites proportions</b>, celles qu'un pourcentage exprimerait mal.",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "point",
-       "html": "Pour situer l'échelle : l'air extérieur que vous respirez contient <b>naturellement</b> du CO₂, de l'ordre de quelques centaines de ppm. Un affichage qui n'est pas à zéro ne signifie donc pas « il y a une fuite ». Ce qui compte, c'est l'<b>écart</b> avec l'ambiance normale et le <b>franchissement des seuils réglés</b> sur l'appareil. Ces seuils de préalarme et d'évacuation sont fixés par la <b>réglementation du travail</b> et par la norme applicable au site ; ils figurent dans la documentation de l'appareil et sont rappelés sur la <b>FDS</b> du fluide. <b>Ne les apprenez pas par cœur d'un site à l'autre</b> : vérifiez-les sur l'installation où vous êtes. Votre formateur vous donnera ceux qui s'appliquent aux machines de l'atelier.",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "point",
-       "html": "<b>Un détecteur ne vaut que s'il fonctionne.</b> Un capteur de gaz se <b>vérifie</b> et se <b>remplace</b> périodiquement, selon la documentation du fabricant : une cellule vieillit et finit par ne plus rien mesurer tout en restant allumée. À l'arrivée sur site, on contrôle donc que les capteurs et les alarmes sont <b>en état de marche</b>, et pas seulement présents au mur — exactement comme on contrôle un VAT avant de s'en servir.",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "point",
-       "html": "<b>Le reste du dispositif collectif.</b> La <b>signalisation</b> à l'entrée du local doit être visible et à jour : elle prévient celui qui entre de ce qui l'attend. Les <b>issues de secours</b> doivent rester dégagées — une palette posée devant une porte de chambre froide n'est pas un défaut de rangement, c'est une issue en moins. La <b>ventilation</b> doit être adaptée au fait que le gaz est en bas. Ces trois points se contrôlent en arrivant, avant de commencer.",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "point",
-       "html": "<b>Les EPI, et surtout leurs limites.</b> Contre le froid du CO₂ et la glace carbonique : <b>gants</b> adaptés au froid et <b>lunettes ou écran facial</b>, mis <b>avant</b> l'intervention et non une fois le geste commencé. Contre la pression : rester hors de la trajectoire d'un jet, et ne jamais desserrer un raccord sans avoir vérifié la pression au manomètre.",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "point",
-       "html": "Et un point que l'on ne peut pas se permettre d'ignorer : <b>un masque à cartouche ne protège pas contre le CO₂, ni contre le manque d'oxygène</b>. Une cartouche filtre certains polluants dans un air qui reste respirable ; elle ne fabrique pas d'oxygène et ne retient pas le CO₂. En atmosphère appauvrie ou chargée en CO₂, seul un appareil <b>isolant</b>, qui apporte son propre air, protège — un matériel dont l'usage relève d'équipes formées et entraînées pour cela, pas d'une improvisation de dépannage. <b>Pour vous, la protection n'est pas de porter un masque : c'est de ne pas entrer.</b>",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "point",
-       "html": "<b>Devant une personne au sol.</b> On alerte, on ventile, on fait intervenir les secours — <b>on ne descend pas</b>. Retenir sa respiration ne protège de rien : on ne tient que quelques dizaines de secondes, et le réflexe respiratoire finit toujours par l'emporter, au fond de la fosse.",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ul><li><b>EPC d'abord, EPI ensuite</b> : le collectif protège tout le monde en permanence, l'individuel ne protège que celui qui le porte.</li><li><b>Détection de gaz obligatoire</b> en local CO₂, par capteur <b>fixe</b>, placé <b>en partie basse</b>.</li><li>Alarmes sonores et visuelles <b>dedans et dehors</b> — celle de dehors prévient avant d'ouvrir la porte. Deux niveaux : préalarme, puis évacuation.</li><li>Le détecteur affiche des <b>ppm</b> : une part pour un million. L'air normal en contient déjà.</li><li>Les <b>seuils</b> se lisent sur l'appareil, sa documentation et la FDS — <b>jamais de mémoire d'un site à l'autre</b>.</li><li>Un capteur se <b>vérifie et se remplace</b> : une cellule morte reste allumée.</li><li>Signalisation à jour, <b>issues de secours dégagées</b>, ventilation adaptée : contrôlées en arrivant.</li><li><b>Un masque à cartouche ne protège ni du CO₂, ni du manque d'oxygène.</b> La vraie protection, c'est de ne pas entrer.</li><li>Et les règles qui ne changent jamais : <b>ventiler et mesurer avant d'entrer</b>, <b>jamais seul</b>, et devant une personne au sol : alerter, ventiler, <b>ne pas descendre</b>.</li></ul>",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>Entrer dans un local CO₂ en se croyant protégé par un <b>masque à cartouche</b>, ou entrer alors que l'alarme extérieure est déclenchée.</p><p>Interdit aussi : considérer un détecteur comme fiable <b>parce que son voyant est allumé</b>. Une cellule usée continue de s'allumer sans plus rien mesurer : elle se vérifie et se remplace selon la documentation du fabricant.</p><p>Conséquence : on entre dans une atmosphère mortelle avec la certitude d'être protégé. C'est la configuration où l'on ne ressort pas.</p>",
-       "titre": "Se protéger du CO₂ — détection, EPC et EPI"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl2-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
-       "choix": [
-        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
-        "La température minimale d'inflammation du gaz",
-        "La pression maximale admissible dans la bouteille",
-        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
-       ],
-       "bonne": 0,
-       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
-       "remed": {
-        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
-        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
-       },
-       "remediation_vers": "cl2",
-       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-cl4-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
-       "choix": [
-        "Au plafond, comme un détecteur de fumée",
-        "En partie basse, là où le CO₂ s'accumule",
-        "À l'extérieur du local uniquement",
-        "Peu importe, le gaz se répartit uniformément"
-       ],
-       "bonne": 1,
-       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
-       "remed": {
-        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
-        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
-       },
-       "remediation_vers": "cl4",
-       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g12-v6_093",
-       "dc": "G12",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Les fluides A2L comme le R32 nécessitent :",
-       "choix": [
-        "Aucune précaution particulière",
-        "Un outillage adapté et une formation spécifique",
-        "Un local ATEX systématique",
-        "Un détecteur d'ammoniac"
-       ],
-       "bonne": 1,
-       "explication": "Outillage adapté et formation spécifique — Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante.",
-       "aide": "'Légèrement inflammable' ne veut pas dire 'sans risque'.",
-       "remed": {
-        "texte": "Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante."
-       },
-       "remediation_vers": "g12",
-       "code": "12.02",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "⚠ VALEURS À FIGER PAR LE FORMATEUR avant la première session : les seuils de préalarme et d'évacuation des détecteurs CO₂ du plateau, la périodicité de vérification et de remplacement des cellules, et le type de détecteur utilisé. La fiche enseigne délibérément la NOTION de ppm et la LECTURE de l'appareil, sans aucun seuil chiffré : une fois écrits, ces nombres engagent l'organisme (cf. REPRISE, « les valeurs terrain »). Les donner à l'oral, sur le matériel réel. Montrer un détecteur fixe et un détecteur portatif côte à côte, faire dire la différence (permanence contre ponctualité). Faire chercher au groupe où placer le capteur dans le local — la réponse « en bas » doit venir d'eux, elle découle de la fiche précédente. Faire manipuler l'affichage en ppm et faire lire la valeur d'ambiance. Le point sur le masque à cartouche est le plus important de la fiche et le plus contre-intuitif : beaucoup d'adultes croient qu'un masque protège de tout. Le poser en question ouverte AVANT de répondre. Insister sur l'ordre EPC puis EPI : c'est un principe général de prévention, pas une préférence. Si le plateau dispose d'une installation au CO₂, y faire le tour de la signalisation, des issues et des capteurs en conditions réelles."
-    }
-   ]
-  },
-  {
-   "n": 1,
-   "libelle": null,
-   "titre": "Pourquoi ce métier est réglementé, et de quoi on parle",
-   "intention": "Poser le cadre et le vocabulaire. À la fin de la journée, le stagiaire sait ce que la loi lui impose, pourquoi elle l'impose, comment se nomment les fluides et comment fonctionne une machine frigorifique.",
-   "sequences": [
-    {
-     "type": "cours",
-     "fiche": "s1",
-     "titre": "L'air qui manque — l'asphyxie",
-     "minutes": 30,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "L'air qui manque — l'asphyxie",
-       "dc": "Sécurité · codes 12.02 · 12.13",
-       "competences": [
-        {
-         "code": "12.02",
-         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, ventilation, EPI.",
-         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "12.13",
-         "lib": "Vérifier la sécurité du site : signalisation, issues de secours, détecteurs et alarmes gaz.",
-         "officiel": "Vérifier que les mesures de santé et de sécurité conformes aux règles applicables sont appliquées à l'emplacement du système (par exemple, panneaux de signalisation, issues de secours, capteurs de gaz, alarmes au gaz, etc.)",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/s1-double-accident.svg",
-       "alt": "Animation : la nappe de gaz monte dans le local fermé, le technicien descend et tombe, puis le collègue descend le secourir et devient la seconde victime. Deux victimes au lieu d'une.",
-       "titre": "L'air qui manque — l'asphyxie"
-      },
-      {
-       "type": "point",
-       "html": "Respirer, c'est faire entrer de l'oxygène dans le corps. Un local fermé peut se remplir d'un autre gaz : de l'azote utilisé pour mettre un circuit en pression, ou du fluide frigorigène qui a fui. Ce gaz prend la place de l'oxygène dans l'air. C'est une <b>asphyxie par manque d'oxygène</b> : vous ne respirez plus assez d'oxygène, non pas parce qu'un produit vous empoisonne, mais parce qu'il a chassé l'air respirable.",
-       "titre": "L'air qui manque — l'asphyxie"
-      },
-      {
-       "type": "point",
-       "html": "Face à l'<b>azote</b> et aux <b>fluides fluorés</b>, le corps ne donne <b>aucune alerte</b>. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez donc pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.",
-       "titre": "L'air qui manque — l'asphyxie"
-      },
-      {
-       "type": "point",
-       "html": "<b>Une exception importante : le CO₂ (R-744).</b> Lui vous <b>prévient</b> — essoufflement, mal de tête, vertiges — parce qu'il agit sur la commande de la respiration. C'est une chance, mais tardive : ces signes n'arrivent qu'une fois dans le gaz. Et pour la même raison, un détecteur d'oxygène seul ne suffit pas à le surveiller. Ce fluide a sa fiche : « CO₂ : deux dangers mortels ».",
-       "titre": "L'air qui manque — l'asphyxie"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce danger n'a pas de code dans le référentiel d'examen.</b> Vous ne serez pas interrogé dessus à l'épreuve. Il peut pourtant vous tuer. C'est pour cela qu'il est dans ce module.",
-       "titre": "L'air qui manque — l'asphyxie"
-      },
-      {
-       "type": "point",
-       "html": "C'est le scénario du schéma ci-dessus, et c'est le plus fréquent de ce type d'accident : un local resté fermé, quelqu'un qui entre sans rien sentir, puis un collègue qui se précipite pour le secourir sans se protéger ni ventiler — il respire le même air appauvri et s'effondre à son tour. <b>Deux victimes au lieu d'une.</b>",
-       "titre": "L'air qui manque — l'asphyxie"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ol><li><b>Ventilez</b> le local avant d'entrer : ouvrez, aérez, laissez l'air circuler.</li><li><b>Contrôlez l'air</b> avec un détecteur d'oxygène avant d'entrer — pas seulement un détecteur de fuite de fluide, ce n'est pas le même appareil. Le seuil d'alerte se règle selon la FDS (fiche de données de sécurité) du fluide concerné. <b>Devant une installation au CO₂, un détecteur d'oxygène ne suffit pas</b> : il faut mesurer le CO₂ lui-même.</li><li><b>N'entrez jamais seul</b> dans un espace clos suspect : prévenez quelqu'un, travaillez à deux.</li><li>Si un collègue est au sol dans un espace clos : <b>ne vous précipitez pas sans protection</b>. Donnez l'alerte, ventilez, faites intervenir les secours.</li></ol>",
-       "titre": "L'air qui manque — l'asphyxie"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>Entrer seul dans un local fermé, une chambre froide ou une fosse, après une mise en pression à l'azote ou une fuite suspectée, <b>sans ventiler ni contrôler l'air</b>.</p><p>Conséquence : avec l'azote ou un fluide fluoré, perte de connaissance sans signe avant-coureur. Avec le CO₂, des signes arrivent — essoufflement, mal de tête — mais quand vous êtes déjà dans le gaz. Risque mortel dans les deux cas, pour vous et pour quiconque tenterait de vous secourir sans précaution.</p>",
-       "titre": "L'air qui manque — l'asphyxie"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl2-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
-       "choix": [
-        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
-        "La température minimale d'inflammation du gaz",
-        "La pression maximale admissible dans la bouteille",
-        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
-       ],
-       "bonne": 0,
-       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
-       "remed": {
-        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
-        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
-       },
-       "remediation_vers": "cl2",
-       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-cl4-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
-       "choix": [
-        "Au plafond, comme un détecteur de fumée",
-        "En partie basse, là où le CO₂ s'accumule",
-        "À l'extérieur du local uniquement",
-        "Peu importe, le gaz se répartit uniformément"
-       ],
-       "bonne": 1,
-       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
-       "remed": {
-        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
-        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
-       },
-       "remediation_vers": "cl4",
-       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Montrez une bouteille d'azote avec son mano-détendeur : faites remarquer qu'elle ne porte aucun pictogramme « asphyxiant », contrairement à ce que les stagiaires imaginent souvent. Racontez le scénario du double accident (victime puis sauveteur) pour ancrer la règle « jamais seul, jamais sans ventiler ». Si un détecteur d'oxygène est disponible, faites-le manipuler et lire l'affichage ; comparez-le à un détecteur de fuite de fluide pour bien distinguer les deux appareils. Dites clairement à l'oral que ce risque ne sera pas noté à l'épreuve : c'est un risque réel, pas un risque de contrôle."
-    },
-    {
-     "type": "cours",
      "fiche": "g0",
      "titre": "Ce que la loi vous impose",
-     "minutes": 30,
+     "minutes": 25,
      "video": null,
      "slides": [
       {
@@ -1890,176 +582,9 @@ window.PILOTE_PROJECTION = {
     },
     {
      "type": "cours",
-     "fiche": "g2a",
-     "titre": "Quarante ans d'histoire : de l'ozone au climat",
-     "minutes": 35,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Quarante ans d'histoire : de l'ozone au climat",
-       "dc": "G2 · code 2.01",
-       "competences": [
-        {
-         "code": "2.01",
-         "lib": "Situer l'histoire : couche d'ozone, protocoles, politique climat",
-         "officiel": "Avoir une connaissance élémentaire de la politique de l'UE et internationale en matière de changement climatique, y compris la convention-cadre des Nations unies sur les changements climatiques (CCNUCC) et le Protocole de Montréal relatif à des substances qui appauvrissent la couche d'ozone",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "D": "T",
-          "E": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/frise-histoire.svg",
-       "alt": "Frise : CFC années 1930, trou d'ozone 1985, Montréal 1987, Kyoto 1997, Paris 2015, Kigali 2016, F-Gas III 2024.",
-       "titre": "Quarante ans d'histoire : de l'ozone au climat"
-      },
-      {
-       "type": "point",
-       "html": "Dans les années 1930, les <b>CFC</b> sont des fluides « miracle » : stables, ni toxiques, ni inflammables. Cinquante ans plus tard, la facture arrive : en <b>1985</b>, on découvre le <b>trou dans la couche d'ozone</b> au-dessus de l'Antarctique — le chlore des CFC casse l'ozone qui filtre les <b>UV-B</b>. En <b>1987</b>, le <b>protocole de Montréal</b> organise leur sortie, puis celle des HCFC : la couche se répare, c'est le plus grand succès environnemental mondial.",
-       "titre": "Quarante ans d'histoire : de l'ozone au climat"
-      },
-      {
-       "type": "point",
-       "html": "Mais les remplaçants, les <b>HFC</b>, inoffensifs pour l'ozone, sont de puissants gaz à effet de serre. Le combat change de terrain : <b>Kyoto</b> (1997) les inscrit parmi les six gaz visés, l'<b>accord de Paris</b> (2015) fixe le cap des +1,5 °C, et l'<b>amendement de Kigali</b> (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations — celles de ton métier.",
-       "titre": "Quarante ans d'histoire : de l'ozone au climat"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "L'effet de serre en deux phrases",
-       "html": "Le rayonnement solaire entre, la Terre renvoie de l'infrarouge, et certains gaz (CO₂, vapeur d'eau, méthane…) retiennent cette chaleur. Cet effet est <b>vital</b> — sans lui, il ferait environ <b>−18 °C</b> au lieu de +15 : c'est son <b>renforcement</b> par nos émissions qui pose problème.",
-       "titre": "Quarante ans d'histoire : de l'ozone au climat"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Ozone et climat : deux problèmes, pas un",
-       "html": "L'<b>ODP</b> mesure l'attaque de l'ozone (affaire de <b>chlore et de brome</b>) ; le <b>PRP</b> mesure l'effet de serre. Un HFC a un ODP <b>nul</b> et un PRP <b>énorme</b> : excellent élève d'un côté, cancre de l'autre. Ne jamais confondre les deux bulletins.",
-       "titre": "Quarante ans d'histoire : de l'ozone au climat"
-      }
-     ],
-     "questions": [
-      {
-       "id": "q-g2-5",
-       "dc": "G2",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le protocole de Montréal (1987) visait principalement :",
-       "choix": [
-        "Les gaz à effet de serre",
-        "La protection de la couche d'ozone",
-        "La réduction des émissions de CO2",
-        "L'interdiction des HFC"
-       ],
-       "bonne": 1,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g2a",
-       "code": "2.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D",
-        "E"
-       ]
-      },
-      {
-       "id": "q-g2-v6_002",
-       "dc": "G2",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Quel type de rayonnement la couche d'ozone filtre-t-elle principalement ?",
-       "choix": [
-        "Les infrarouges",
-        "Les UV-B",
-        "Les micro-ondes",
-        "Les rayons X"
-       ],
-       "bonne": 1,
-       "explication": "Les UV-B — La couche d'ozone (O₃) dans la stratosphère absorbe les UV-B nocifs pour la santé humaine.",
-       "aide": "Ce sont des rayonnements solaires dangereux pour la peau et les yeux.",
-       "remed": {
-        "texte": "La couche d'ozone (O₃) dans la stratosphère absorbe les UV-B nocifs pour la santé humaine."
-       },
-       "remediation_vers": "g2a",
-       "code": "2.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D",
-        "E"
-       ]
-      },
-      {
-       "id": "q-g2-v6_003",
-       "dc": "G2",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "L'amendement de Kigali (2016) ajoute au Protocole de Montréal la réduction progressive de :",
-       "choix": [
-        "Les CFC",
-        "Les HCFC",
-        "Les HFC",
-        "Les HFO"
-       ],
-       "bonne": 2,
-       "explication": "Les HFC — Kigali (2016) étend le Protocole de Montréal aux HFC pour lutter contre le réchauffement climatique.",
-       "aide": "Les CFC et HCFC étaient déjà visés. Quel groupe de fluides à fort GWP restait sans contrainte ?",
-       "remed": {
-        "texte": "Kigali (2016) étend le Protocole de Montréal aux HFC pour lutter contre le réchauffement climatique."
-       },
-       "remediation_vers": "g2a",
-       "code": "2.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D",
-        "E"
-       ]
-      },
-      {
-       "id": "q-g2-v6_005",
-       "dc": "G2",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Quel accord international de 2015 vise à limiter le réchauffement à +1,5°C ?",
-       "choix": [
-        "Protocole de Montréal",
-        "Accord de Paris (COP21)",
-        "Amendement de Kigali",
-        "Protocole de Kyoto"
-       ],
-       "bonne": 1,
-       "explication": "Accord de Paris (COP21) — Signé en 2015 par 196 pays, il fixe l'objectif de +1,5°C maximum vs ère préindustrielle.",
-       "aide": "C'est le traité climatique le plus récent et le plus ambitieux.",
-       "remed": {
-        "texte": "Signé en 2015 par 196 pays, il fixe l'objectif de +1,5°C maximum vs ère préindustrielle."
-       },
-       "remediation_vers": "g2a",
-       "code": "2.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D",
-        "E"
-       ]
-      }
-     ],
-     "notes": "Cette fiche se RACONTE — le miracle, la catastrophe invisible, le sursaut mondial, la rechute climatique. Question à lancer avant d'afficher quoi que ce soit : « pourquoi a-t-on interdit des fluides techniquement parfaits ? ». Le pivot à faire retenir : KIGALI — les HFC, qui ne touchent pas l'ozone, entrent quand même dans Montréal, parce que c'est le traité qui fonctionne. Lien direct avec la fiche suivante (PRP, quotas) : l'histoire explique la réglementation, la réglementation explique les gestes du métier."
-    },
-    {
-     "type": "cours",
      "fiche": "g2",
      "titre": "Impact environnemental et F-Gas",
-     "minutes": 40,
+     "minutes": 35,
      "video": null,
      "slides": [
       {
@@ -2263,6 +788,173 @@ window.PILOTE_PROJECTION = {
       }
      ],
      "notes": "Faire calculer l'équivalent CO₂ d'une machine de l'atelier, plaque signalétique en main : l'enjeu devient concret en trente secondes. Ne pas asséner les valeurs de PRP — les faire chercher sur la fiche du fluide. Relier explicitement à G4 et G5 : si le climat se joue sur les fuites, l'étanchéité et la récupération deviennent des gestes écologiques, pas des formalités."
+    },
+    {
+     "type": "cours",
+     "fiche": "g2a",
+     "titre": "Quarante ans d'histoire : de l'ozone au climat",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Quarante ans d'histoire : de l'ozone au climat",
+       "dc": "G2 · code 2.01",
+       "competences": [
+        {
+         "code": "2.01",
+         "lib": "Situer l'histoire : couche d'ozone, protocoles, politique climat",
+         "officiel": "Avoir une connaissance élémentaire de la politique de l'UE et internationale en matière de changement climatique, y compris la convention-cadre des Nations unies sur les changements climatiques (CCNUCC) et le Protocole de Montréal relatif à des substances qui appauvrissent la couche d'ozone",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T",
+          "E": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/frise-histoire.svg",
+       "alt": "Frise : CFC années 1930, trou d'ozone 1985, Montréal 1987, Kyoto 1997, Paris 2015, Kigali 2016, F-Gas III 2024.",
+       "titre": "Quarante ans d'histoire : de l'ozone au climat"
+      },
+      {
+       "type": "point",
+       "html": "Dans les années 1930, les <b>CFC</b> sont des fluides « miracle » : stables, ni toxiques, ni inflammables. Cinquante ans plus tard, la facture arrive : en <b>1985</b>, on découvre le <b>trou dans la couche d'ozone</b> au-dessus de l'Antarctique — le chlore des CFC casse l'ozone qui filtre les <b>UV-B</b>. En <b>1987</b>, le <b>protocole de Montréal</b> organise leur sortie, puis celle des HCFC : la couche se répare, c'est le plus grand succès environnemental mondial.",
+       "titre": "Quarante ans d'histoire : de l'ozone au climat"
+      },
+      {
+       "type": "point",
+       "html": "Mais les remplaçants, les <b>HFC</b>, inoffensifs pour l'ozone, sont de puissants gaz à effet de serre. Le combat change de terrain : <b>Kyoto</b> (1997) les inscrit parmi les six gaz visés, l'<b>accord de Paris</b> (2015) fixe le cap des +1,5 °C, et l'<b>amendement de Kigali</b> (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations — celles de ton métier.",
+       "titre": "Quarante ans d'histoire : de l'ozone au climat"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "L'effet de serre en deux phrases",
+       "html": "Le rayonnement solaire entre, la Terre renvoie de l'infrarouge, et certains gaz (CO₂, vapeur d'eau, méthane…) retiennent cette chaleur. Cet effet est <b>vital</b> — sans lui, il ferait environ <b>−18 °C</b> au lieu de +15 : c'est son <b>renforcement</b> par nos émissions qui pose problème.",
+       "titre": "Quarante ans d'histoire : de l'ozone au climat"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Ozone et climat : deux problèmes, pas un",
+       "html": "L'<b>ODP</b> mesure l'attaque de l'ozone (affaire de <b>chlore et de brome</b>) ; le <b>PRP</b> mesure l'effet de serre. Un HFC a un ODP <b>nul</b> et un PRP <b>énorme</b> : excellent élève d'un côté, cancre de l'autre. Ne jamais confondre les deux bulletins.",
+       "titre": "Quarante ans d'histoire : de l'ozone au climat"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g2-5",
+       "dc": "G2",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le protocole de Montréal (1987) visait principalement :",
+       "choix": [
+        "Les gaz à effet de serre",
+        "La protection de la couche d'ozone",
+        "La réduction des émissions de CO2",
+        "L'interdiction des HFC"
+       ],
+       "bonne": 1,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g2a",
+       "code": "2.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D",
+        "E"
+       ]
+      },
+      {
+       "id": "q-g2-v6_002",
+       "dc": "G2",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Quel type de rayonnement la couche d'ozone filtre-t-elle principalement ?",
+       "choix": [
+        "Les infrarouges",
+        "Les UV-B",
+        "Les micro-ondes",
+        "Les rayons X"
+       ],
+       "bonne": 1,
+       "explication": "Les UV-B — La couche d'ozone (O₃) dans la stratosphère absorbe les UV-B nocifs pour la santé humaine.",
+       "aide": "Ce sont des rayonnements solaires dangereux pour la peau et les yeux.",
+       "remed": {
+        "texte": "La couche d'ozone (O₃) dans la stratosphère absorbe les UV-B nocifs pour la santé humaine."
+       },
+       "remediation_vers": "g2a",
+       "code": "2.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D",
+        "E"
+       ]
+      },
+      {
+       "id": "q-g2-v6_003",
+       "dc": "G2",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "L'amendement de Kigali (2016) ajoute au Protocole de Montréal la réduction progressive de :",
+       "choix": [
+        "Les CFC",
+        "Les HCFC",
+        "Les HFC",
+        "Les HFO"
+       ],
+       "bonne": 2,
+       "explication": "Les HFC — Kigali (2016) étend le Protocole de Montréal aux HFC pour lutter contre le réchauffement climatique.",
+       "aide": "Les CFC et HCFC étaient déjà visés. Quel groupe de fluides à fort GWP restait sans contrainte ?",
+       "remed": {
+        "texte": "Kigali (2016) étend le Protocole de Montréal aux HFC pour lutter contre le réchauffement climatique."
+       },
+       "remediation_vers": "g2a",
+       "code": "2.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D",
+        "E"
+       ]
+      },
+      {
+       "id": "q-g2-v6_005",
+       "dc": "G2",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Quel accord international de 2015 vise à limiter le réchauffement à +1,5°C ?",
+       "choix": [
+        "Protocole de Montréal",
+        "Accord de Paris (COP21)",
+        "Amendement de Kigali",
+        "Protocole de Kyoto"
+       ],
+       "bonne": 1,
+       "explication": "Accord de Paris (COP21) — Signé en 2015 par 196 pays, il fixe l'objectif de +1,5°C maximum vs ère préindustrielle.",
+       "aide": "C'est le traité climatique le plus récent et le plus ambitieux.",
+       "remed": {
+        "texte": "Signé en 2015 par 196 pays, il fixe l'objectif de +1,5°C maximum vs ère préindustrielle."
+       },
+       "remediation_vers": "g2a",
+       "code": "2.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D",
+        "E"
+       ]
+      }
+     ],
+     "notes": "Cette fiche se RACONTE — le miracle, la catastrophe invisible, le sursaut mondial, la rechute climatique. Question à lancer avant d'afficher quoi que ce soit : « pourquoi a-t-on interdit des fluides techniquement parfaits ? ». Le pivot à faire retenir : KIGALI — les HFC, qui ne touchent pas l'ozone, entrent quand même dans Montréal, parce que c'est le traité qui fonctionne. Lien direct avec la fiche suivante (PRP, quotas) : l'histoire explique la réglementation, la réglementation explique les gestes du métier."
     },
     {
      "type": "cours",
@@ -2516,7 +1208,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g1s",
      "titre": "Chaleur sensible et chaleur latente",
-     "minutes": 30,
+     "minutes": 25,
      "video": null,
      "slides": [
       {
@@ -2904,7 +1596,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g1e",
      "titre": "Surchauffe et sous-refroidissement",
-     "minutes": 30,
+     "minutes": 25,
      "video": null,
      "slides": [
       {
@@ -3096,7 +1788,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g1c",
      "titre": "Les familles de fluides et leurs codes",
-     "minutes": 35,
+     "minutes": 30,
      "video": null,
      "slides": [
       {
@@ -3297,496 +1989,9 @@ window.PILOTE_PROJECTION = {
     },
     {
      "type": "cours",
-     "fiche": "g13",
-     "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir",
-     "minutes": 25,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir",
-       "dc": "G13 · G14 · information et sensibilisation",
-       "competences": [
-        {
-         "code": "13.01",
-         "lib": "Reconnaître une installation CO₂ et ses risques (pression)",
-         "officiel": "Connaître les prescriptions en matière d'étiquetage pour le R744 dans les systèmes et les récipients à pression",
-         "epreuve": {},
-         "nouveau": true,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "13.04",
-         "lib": "Identifier les cylindres et matériels dédiés, et ne pas intervenir",
-         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils et équipements d'entretien, tels que la détection de gaz, la détection des fuites, les équipements de protection individuelle",
-         "epreuve": {},
-         "nouveau": true,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "14.01",
-         "lib": "Reconnaître une installation NH₃ et la conduite à tenir",
-         "officiel": "Lire et comprendre les diagrammes de tuyauterie et d'instrumentation des systèmes de réfrigération au R717 (NH3)",
-         "epreuve": {},
-         "nouveau": true,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "1.09",
-         "lib": "Connaître les pressions élevées du CO₂, son diagramme log p/h, ses tables de saturation et le risque de glace carbonique.",
-         "officiel": "Connaître la pression du CO2, le cycle transcritique ou subcritique, le diagramme log p/h, les tables de saturation du CO2, l'état d'agrégation du CO2 (formation de glace carbonique)",
-         "epreuve": {},
-         "nouveau": true,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "13.14",
-         "lib": "Vérifier avant d'intervenir que la signalisation, les issues de secours, les capteurs et les alarmes du site sont bien en état.",
-         "officiel": "Vérifier que les mesures de santé et de sécurité conformes aux règles applicables sont appliquées à l'emplacement du système (par exemple, panneaux de signalisation, issues de secours, capteurs de gaz, alarmes au gaz, etc.)",
-         "epreuve": {},
-         "nouveau": true,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/co2-nh3-compare.svg",
-       "alt": "Deux comportements inverses : le CO₂, A1 et sans odeur, est plus lourd que l'air et descend (catégorie B) ; l'ammoniac, B2L et piquant, est plus léger que l'air et monte (catégorie C).",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
-      },
-      {
-       "type": "point",
-       "html": "Ce module <b>informe</b>, il ne qualifie pas. Une attestation A1 ou A2 ne donne <b>aucun droit d'intervention</b> sur une installation au CO₂ (catégorie B) ou à l'ammoniac (catégorie C). Ce qu'on attend ici : <b>reconnaître</b> et <b>ne pas toucher</b>.",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
-      },
-      {
-       "type": "point",
-       "html": "<b>CO₂ (R-744)</b> — classé <b>A1</b> : toxicité <b>faible</b>, non inflammable, <b>PRP = 1</b>. Cette classe n'annonce aucun de ses vrais dangers : la <b>pression</b>, très élevée, l'<b>atmosphère irrespirable</b> en local fermé (il est plus lourd que l'air, s'accumule en point bas, et agit sur la respiration — voir « CO₂ : deux dangers mortels »), et le risque de <b>neige carbonique</b> à la détente (brûlure par le froid, obstruction). En transcritique, le condenseur laisse la place à un <b>refroidisseur de gaz</b>. Les cylindres, à double vanne, ne se raccordent pas au matériel courant.",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ammoniac (R-717)</b> — classé <b>B2L</b> : <b>toxique</b> et faiblement inflammable. Fluide du froid industriel (agroalimentaire, entrepôts), jamais du résidentiel. Son odeur piquante se perçoit très tôt — mais elle <b>ne remplace aucune mesure</b>, et elle s'émousse à forte concentration : on ne se fie jamais à son nez pour décider. En cas de fuite : <b>alerter, évacuer, ne jamais intervenir seul</b>.",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
-      },
-      {
-       "type": "point",
-       "html": "Sur le terrain, le CO₂ ne se manipule pas avec le matériel courant : ses pressions de travail sont bien plus élevées que celles des fluides classiques. Manifold, flexibles, vannes — tout doit être <b>dédié au CO₂</b>. Les valeurs exactes dépendent du point de fonctionnement et se lisent toujours dans la <b>documentation constructeur</b>, à faire valider.",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
-      },
-      {
-       "type": "point",
-       "html": "Le diagramme <b>log p/h</b> (pression selon l'enthalpie) et les <b>tables de saturation</b> du CO₂ se lisent comme ceux de tout autre fluide — mêmes repères de bulle et de rosée — mais dans un domaine de pression qui lui est propre. C'est ce domaine particulier qui explique un comportement que les autres fluides n'ont pas : la formation de glace carbonique.",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
-      },
-      {
-       "type": "point",
-       "html": "Avant de commencer une intervention sur un site au CO₂ ou à l'ammoniac, on prend un instant pour vérifier ce qui est déjà en place. La <b>signalisation</b> à l'entrée du local doit être visible et à jour. Les <b>issues de secours</b> doivent rester dégagées, jamais encombrées, pour permettre une évacuation rapide en cas de fuite. On contrôle aussi que les <b>capteurs</b> de gaz et les <b>alarmes</b> qui leur sont associées sont en état de marche, pas seulement présents dans le local.",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "« A1 » ne veut pas dire « sans danger »",
-       "html": "Le CO₂ est A1 du point de vue toxicité et inflammabilité — cela ne dit rien de ses deux vrais risques : la <b>pression</b>, et l'<b>anoxie</b> en local fermé (voir la fiche « CO₂ : deux dangers mortels »). Et le <b>B</b> de B2L signifie <b>toxique</b> : ne pas relâcher la vigilance sur l'ammoniac sous prétexte que son inflammabilité est faible.",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "La règle des catégories",
-       "html": "Les catégories ne se remplacent pas les unes les autres. « Je suis A1, donc je peux donner un coup de main sur une fuite d'ammoniac » est <b>faux</b> : il faut la catégorie C, sans exception.",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "La glace carbonique, un double danger",
-       "html": "<p>La fiche l'a déjà signalé : le CO₂ peut se solidifier à la détente. Ce solide a un nom : c'est la <b>glace carbonique</b>, aussi appelée <b>neige carbonique</b>. Elle se forme quand le CO₂ passe directement de l'état gazeux à l'état solide, à la détente à l'air libre. C'est le domaine de pression propre au CO₂, visible sur son diagramme log p/h, qui explique ce comportement que les fluides courants n'ont pas. On garde en tête le double danger à chaque détente de CO₂ à l'air libre : la <b>brûlure par le froid</b> au contact de la peau, et le <b>bouchon solide</b> qui peut obstruer une vanne ou une tuyauterie.</p>",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Le réflexe d'arrivée sur site",
-       "html": "<p>Sur un site CO₂ ou ammoniac, on ne commence jamais le travail sans ce contrôle rapide : <b>signalisation</b> en place, <b>issues de secours</b> dégagées, <b>capteurs</b> et <b>alarmes</b> fonctionnels. Ce réflexe fait partie du travail, au même titre que le port du matériel de protection.</p>",
-       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-g13-1",
-       "dc": "G13",
-       "code": "13.01",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le CO₂ (R-744) est classé A1. Quels dangers cette classe n'annonce-t-elle pas ?",
-       "choix": [
-        "La pression, très élevée, et l'atmosphère irrespirable qu'une fuite crée en local fermé.",
-        "Aucun : la classe A1 signifie qu'il est sans danger.",
-        "L'inflammabilité, car il peut s'enflammer comme un hydrocarbure.",
-        "Uniquement le risque de gel des tuyauteries en fonctionnement normal."
-       ],
-       "bonne": 0,
-       "aide": "A1 renseigne sur deux critères précis. Lesquels ? Et qu'est-ce que cela ne dit pas ?",
-       "remed": {
-        "regle": "Le CO₂ est A1 : toxicité faible, non inflammable. Ses deux dangers réels sont ailleurs — la pression, très élevée, et l'atmosphère irrespirable en local fermé.",
-        "pourquoi": "La classification ne décrit que deux risques : la toxicité et l'inflammabilité. Elle ne dit rien de la pression de service, ni du fait que le CO₂ s'accumule en point bas et agit sur la régulation de la respiration.",
-        "piege": "Croire que « A1 » veut dire « sans danger ». « A » signifie toxicité FAIBLE, pas nulle : à forte concentration le CO₂ devient nocif par lui-même, avant même d'avoir chassé assez d'oxygène pour alarmer un détecteur d'oxygène."
-       },
-       "remediation_vers": "g13",
-       "explication": "Le CO₂ est A1 : toxicité faible, non inflammable. Ses deux dangers réels sont ailleurs — la pression, très élevée, et l'atmosphère irrespirable en local fermé.",
-       "origine": "pack"
-      },
-      {
-       "id": "pk-g13-3",
-       "dc": "G13",
-       "code": "13.04",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Sur une installation au CO₂, pourquoi ne peut-on pas utiliser le matériel de raccordement courant ?",
-       "choix": [
-        "Parce que le CO₂ nécessite le même matériel qu'un circuit HFC classique.",
-        "Parce que les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
-        "Parce que le CO₂, comme l'ammoniac, est un fluide toxique qui impose un matériel étanche renforcé.",
-        "Parce qu'il n'existe aucun matériel spécifique pour le CO₂, il faut en fabriquer un sur mesure."
-       ],
-       "bonne": 1,
-       "aide": "Le texte décrit un équipement particulier sur les cylindres de CO₂.",
-       "remed": {
-        "regle": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
-        "pourquoi": "La très haute pression de service du CO₂ impose un matériel et des raccords spécifiques, différents de ceux des circuits HFC. Ce n'est pas une question de toxicité : le CO₂ est A1, son danger est la pression.",
-        "piege": "Le croire aussi toxique que l'ammoniac — il ne l'est pas, sa toxicité est faible — mais l'inverse est tout aussi faux : le CO₂ n'est pas inerte, il agit sur la régulation de la respiration et rend l'atmosphère irrespirable en local fermé. Autre piège : croire qu'un raccord HFC classique peut convenir « pour une fois »."
-       },
-       "remediation_vers": "g13",
-       "explication": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
-       "origine": "pack"
-      },
-      {
-       "id": "q-g13-283",
-       "dc": "G13",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Pourquoi installe-t-on des détecteurs de CO₂ dans les locaux abritant une installation au R-744 ?",
-       "choix": [
-        "Pour mesurer la performance de l'installation",
-        "Parce que le CO₂ est inodore et incolore : sans appareil, une fuite est indétectable et le risque est l'asphyxie",
-        "Parce que la réglementation impose un détecteur pour tous les fluides",
-        "Pour compter les ouvertures de porte"
-       ],
-       "bonne": 1,
-       "explication": "Le CO₂ ne se voit pas et ne se sent pas : en cas de fuite dans un local fermé, il remplace l'air sans prévenir. Seul un détecteur alerte avant l'asphyxie.",
-       "aide": "CO2 invisible et inodore.",
-       "remediation_vers": "g13",
-       "code": "13.14"
-      },
-      {
-       "id": "pk-cl4-3",
-       "dc": "Classification",
-       "code": "13.14",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous en conclure ?",
-       "choix": [
-        "Que le détecteur fonctionne et mesure correctement",
-        "Rien de plus qu'une mise sous tension : une cellule usée reste allumée sans plus rien mesurer",
-        "Qu'une fuite est en cours",
-        "Que le local a été ventilé récemment"
-       ],
-       "bonne": 1,
-       "aide": "Un voyant dit qu'un appareil est alimenté, pas qu'il voit quelque chose.",
-       "remed": {
-        "regle": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
-        "pourquoi": "C'est le même raisonnement que le double contrôle du VAT : un appareil de sécurité défaillant affiche l'absence de danger quoi qu'il arrive. À l'arrivée sur site, on contrôle donc que les capteurs et les alarmes sont en état de marche, et pas seulement présents au mur.",
-        "piege": "Le contrôle d'arrivée porte aussi sur la signalisation à l'entrée et sur les issues de secours : une palette posée devant une porte de chambre froide n'est pas un défaut de rangement, c'est une issue en moins."
-       },
-       "remediation_vers": "cl4",
-       "explication": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
-       "origine": "pack"
-      }
-     ],
-     "notes": "Module volontairement court et NON évaluant : l'objectif est la reconnaissance du danger, pas la compétence d'intervention. Faire circuler un masque à gaz réel (sans manipulation dangereuse) pour que la différence avec les EPI habituels se voie. Rappeler que l'odeur d'ammoniac est perceptible bien avant le seuil dangereux : message rassurant qui évite la panique tout en imposant l'alerte. Faire deviner pourquoi le NH₃ exige une catégorie séparée alors que le R-290, également dangereux, reste dans le champ A1/A2."
-    },
-    {
-     "type": "cours",
-     "fiche": "g11",
-     "titre": "Substitution et efficacité énergétique",
-     "minutes": 35,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Substitution et efficacité énergétique",
-       "dc": "G11 · codes 1.08 · 11.01 → 11.05",
-       "competences": [
-        {
-         "code": "1.08",
-         "lib": "Situer combustibilité, propagation de flamme et limites de charge",
-         "officiel": "Connaître la combustibilité, la propagation des flammes, les restrictions relatives à la capacité de charge, les limites d'occupation pour les HFC, H(C)FO et hydrocarbures",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "D": "T",
-          "E": "T"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "11.01",
-         "lib": "Connaître les technologies de substitution et leur manipulation sans danger",
-         "officiel": "Connaître les technologies de substitution pertinentes permettant de remplacer les gaz à effet de serre fluorés ou d'en réduire l'utilisation, et savoir les manipuler sans danger",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "D": "T",
-          "E": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "11.03",
-         "lib": "Appliquer les règles de sécurité pour fluides inflammables, toxiques ou haute pression",
-         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "11.02",
-         "lib": "Expliquer la conception à charge réduite et l'efficacité",
-         "officiel": "Connaître les systèmes de conception pertinents afin de réduire la charge des gaz à effet de serre fluorés et d'augmenter l'efficacité énergétique",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "11.04",
-         "lib": "Comparer les fluides de substitution selon l'application",
-         "officiel": "Comprendre les avantages et inconvénients respectifs, notamment en ce qui concerne l'efficacité énergétique, des réfrigérants de substitution en fonction de leur application prévue et des conditions climatiques des différentes régions",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "11.05",
-         "lib": "Situer les différences de conception des systèmes aux hydrocarbures",
-         "officiel": "Connaître les différences de conception des composants et des systèmes pour les équipements et les systèmes tributaires des hydrocarbures",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "D": "T"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/classes-securite.svg",
-       "alt": "Matrice complète des classes NF EN 378 : huit cases, toxicité en lignes, inflammabilité en colonnes.",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "point",
-       "html": "Remplacer un fluide à fort PRP se fait dans deux directions : les <b>fluides naturels</b> (CO₂, ammoniac, hydrocarbures) et les fluides de synthèse à faible PRP (<b>HFO</b>, HFC bas PRP). Il n'existe <b>pas de fluide universel</b> : le choix dépend de l'application, du climat, et de la sécurité du site.",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "point",
-       "html": "La <b>classe de sécurité NF EN 378</b> commande tout le reste — EPI, zonage, détection, charge admissible dans le local : <b>A1</b> (CO₂), <b>A2L</b> (R-32, R-1234yf), <b>A3</b> (R-290), <b>B2L</b> (NH₃).",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "point",
-       "html": "Une classe ne dit pas seulement « ça brûle ou non ». Elle décrit la <b>combustibilité</b> et la <b>propagation de la flamme</b> : un <b>A2L</b> brûle difficilement et la flamme se propage lentement, un <b>A3</b> s'enflamme facilement et la flamme court vite. De là découlent une <b>charge maximale</b> admissible et des <b>limites d'occupation</b> du local — plus le local est petit ou recevant du public, plus la charge autorisée est faible. Ces valeurs se déterminent selon la <b>NF EN 378</b> et la doc constructeur, <b>jamais à l'estime</b>.",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "point",
-       "html": "Le stockage et le transport des fluides <b>inflammables</b>, <b>toxiques</b> ou à <b>haute pression</b> obéissent chacun à des règles propres. Et lorsqu'un site ne peut pas respecter les exigences de l'<b>annexe IV du règlement (UE) 2024/573</b> pour des raisons de <b>sécurité</b>, des équipements dérogatoires restent permis : c'est une exception encadrée, qui se justifie par écrit, pas un passe-droit.",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "point",
-       "html": "Côté énergie, le <b>COP</b> est le rapport de la puissance frigorifique produite à la puissance électrique consommée. On l'améliore en <b>rapprochant</b> la température de condensation de celle d'évaporation : condenseur propre, échangeurs bien dimensionnés, réglages justes. Réduire la charge, enfin, améliore à la fois la sécurité et le rendement.",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "point",
-       "html": "Pour réduire la charge de fluide frigorigène, on peut aussi changer la <b>conception</b> du système. Dans un système à <b>boucle secondaire</b>, le fluide frigorigène reste confiné dans la machinerie, avec une charge réduite. Un fluide caloporteur — de l'<b>eau glacée</b> ou de l'<b>eau glycolée</b> — circule ensuite dans les postes (vitrines, centrales de traitement d'air) pour transporter le froid jusqu'à eux. Le fluide frigorigène ne quitte jamais la salle des machines.",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "point",
-       "html": "Le système en <b>cascade</b> pousse cette logique plus loin : deux circuits frigorifiques séparés sont montés en série, chacun avec sa propre charge, réduite elle aussi. Le circuit basse température évacue sa chaleur dans le circuit haute température, qui la rejette à l'extérieur. Chaque circuit reste petit, donc plus facile à confiner en cas de fuite.",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "point",
-       "html": "Chaque fluide de substitution a ses <b>avantages</b> et ses <b>inconvénients</b>, selon l'application et le <b>climat</b>. Le <b>CO₂</b> est performant en froid commercial, mais son efficacité baisse quand l'air extérieur est très chaud. Les <b>hydrocarbures</b> sont efficaces, mais leur inflammabilité limite la charge autorisée. L'<b>ammoniac</b> est réservé aux installations industrielles, à cause de sa toxicité. Il n'y a pas de meilleur fluide dans l'absolu : le choix se fait selon l'application, le climat du site, et la documentation constructeur, à faire valider avant tout choix.",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "point",
-       "html": "Une machine aux <b>hydrocarbures</b> n'est pas construite comme les autres. Tous les composants électriques en contact possible avec le gaz — relais, thermostats, ventilateurs — sont <b>antidéflagrants</b> ou <b>non étincelants</b> : ils sont conçus pour ne jamais produire d'étincelle qui pourrait enflammer le gaz. La charge de fluide est aussi limitée dès la conception. Enfin, l'implantation prévoit une <b>ventilation</b> adaptée : le propane est plus lourd que l'air, il s'accumule donc en bas, près du sol, en cas de fuite.",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Drop-in ou retrofit ?",
-       "html": "<b>Drop-in</b> : on change le fluide sans modifier l'installation.<br><b>Retrofit</b> : on change le fluide <b>et</b> ce qu'il faut adapter — huile, détendeur, joints. Annoncer un drop-in là où il faut un retrofit, c'est préparer une panne.",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le piège de l'année",
-       "html": "<b>Le R-290 est A3</b>, pas A2L. Tout hydrocarbure est très inflammable. Se tromper de classe, c'est se tromper d'EPI, de matériel électrique et de charge admissible. À l'inverse, le <b>CO₂ est A1</b> : toxicité faible, non inflammable — mais cette classe n'annonce ni sa <b>pression</b>, ni l'<b>atmosphère irrespirable</b> qu'une fuite crée en local fermé.",
-       "titre": "Substitution et efficacité énergétique"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Hydrocarbures : une machine pas comme les autres",
-       "html": "<b>Antidéflagrant</b> ou <b>non étincelant</b> : sur une machine aux hydrocarbures, tout composant électrique proche du gaz doit respecter cette règle, pour ne jamais produire d'étincelle. Et comme le propane est plus lourd que l'air, il s'accumule en bas en cas de fuite — la <b>ventilation</b> du local en tient compte dès la conception.",
-       "titre": "Substitution et efficacité énergétique"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl1-1",
-       "dc": "Classification",
-       "code": "1.08",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Dans une classe de sécurité comme A2L, que disent respectivement la lettre et le chiffre ?",
-       "choix": [
-        "La lettre dit le PRP, le chiffre dit la pression de service",
-        "La lettre dit la toxicité, le chiffre dit l'inflammabilité",
-        "La lettre dit la famille chimique, le chiffre dit l'année de mise sur le marché",
-        "La lettre dit l'inflammabilité, le chiffre dit la toxicité"
-       ],
-       "bonne": 1,
-       "aide": "Deux dangers différents, deux protections différentes : c'est pour cela qu'il faut deux informations.",
-       "remed": {
-        "regle": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
-        "pourquoi": "Un fluide peut être dangereux d'une manière sans l'être de l'autre, et les mesures de prévention ne sont pas les mêmes : on ventile contre la toxicité, on supprime les sources d'étincelle contre l'inflammabilité. Une note unique ne dirait pas laquelle appliquer.",
-        "piege": "« A » ne veut pas dire inoffensif : un fluide de classe A peut asphyxier en chassant l'oxygène du local, ou se décomposer en gaz toxiques au contact d'une flamme."
-       },
-       "remediation_vers": "cl1",
-       "explication": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2",
-        "D",
-        "E"
-       ]
-      },
-      {
-       "id": "pk-cl3-1",
-       "dc": "Classification",
-       "code": "11.03",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
-       "choix": [
-        "Près du plafond, car les gaz montent toujours",
-        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
-        "Il se répartit uniformément et sans danger dans tout le volume",
-        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
-       ],
-       "bonne": 1,
-       "aide": "Comparez sa masse à celle de l'air.",
-       "remed": {
-        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
-        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
-       },
-       "remediation_vers": "cl3",
-       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-q-11.05",
-       "dc": "G11",
-       "code": "11.05",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Sur une machine fonctionnant au R-290 (propane), en cas de fuite dans le local, où le gaz s'accumule-t-il en priorité ?",
-       "choix": [
-        "En haut, près du plafond",
-        "De façon uniforme dans tout le local",
-        "Uniquement à l'extérieur du local",
-        "En bas, près du sol"
-       ],
-       "bonne": 3,
-       "aide": "Compare la densité du propane à celle de l'air : est-il plus lourd ou plus léger ?",
-       "remed": {
-        "regle": "Le propane est plus lourd que l'air. En cas de fuite, il s'accumule en bas, près du sol. La ventilation du local est conçue en tenant compte de cela, dès la conception de la machine.",
-        "pourquoi": "Une machine aux hydrocarbures n'est pas construite comme les autres : composants électriques antidéflagrants ou non étincelants, charge de fluide limitée, et ventilation adaptée à un gaz qui s'accumule au sol. Ignorer ce point, c'est placer la détection ou la ventilation au mauvais endroit.",
-        "piege": "Copier la logique d'un local avec un gaz plus léger que l'air (détection au plafond) alors que le propane impose l'inverse : surveillance et ventilation basses."
-       },
-       "remediation_vers": "g11",
-       "explication": "Le propane est plus lourd que l'air. En cas de fuite, il s'accumule en bas, près du sol. La ventilation du local est conçue en tenant compte de cela, dès la conception de la machine.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g11-185",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Comment optimiser le COP (Coefficient de Performance) d'une installation frigorifique ?",
-       "choix": [
-        "Augmenter la haute pression au maximum",
-        "Diminuer l'écart entre T°K (condensation) et T°O (évaporation)",
-        "Augmenter la surchauffe au maximum",
-        "Diminuer le débit d'air sur le condenseur"
-       ],
-       "bonne": 1,
-       "explication": "Le COP (efficacité énergétique) est meilleur quand l'écart T°K - T°O est FAIBLE. Pour optimiser : baisser la T°K (condenseur propre, bon refroidissement) et augmenter la T°O si possible (évaporateur…",
-       "aide": "Le COP dépend directement de l'écart de température entre condenseur et évaporateur.",
-       "remed": {
-        "texte": "Le COP (efficacité énergétique) est meilleur quand l'écart T°K - T°O est FAIBLE. Pour optimiser : baisser la T°K (condenseur propre, bon refroidissement) et augmenter la T°O si possible (évaporateur surdimensionné, bon dégivrage). Moins le compresseur force, mieux c'est !"
-       },
-       "remediation_vers": "g11",
-       "code": "11.02",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Avant de donner le tableau des classes, demander aux stagiaires de classer eux-mêmes CO₂, NH₃, R-290 et R-1234yf par intuition « je m'en méfie / pas de souci », puis confronter à la norme : l'écart entre l'intuition et la classification est le meilleur levier de mémorisation. Comparer en atelier un détecteur adapté aux hydrocarbures et un détecteur HFC classique."
-    },
-    {
-     "type": "cours",
      "fiche": "g1d",
      "titre": "Les organes qui trahissent une fuite",
-     "minutes": 35,
+     "minutes": 30,
      "video": null,
      "slides": [
       {
@@ -3948,59 +2153,49 @@ window.PILOTE_PROJECTION = {
      "notes": "Neuf organes d'un coup : les répartir en quatre familles pour ne pas noyer le groupe — CE QU'ON VOIT (voyant, pastille), CE QUI PILOTE (thermostat, pressostats, dégivrage), CE QUI PROTÈGE (protecteurs, séparateurs) et CE QUI STOCKE (réservoir). Sur une machine d'atelier, coffret électrique CONSIGNÉ, faire toucher du doigt chaque organe plutôt que projeter une liste. Ce code est déjà interrogé ailleurs dans le pack (voyant liquide, vanne solénoïde, vanne 4 voies, pressostat de régulation) sans qu'aucune fiche ne l'enseigne : insister particulièrement sur ces quatre-là. Pédagogie de la découverte : montrer une photo de voyant avec des bulles et demander « fuite ou pas, et pourquoi » avant de donner la réponse."
     },
     {
-     "type": "bilan",
-     "fiche": "ex-ech",
-     "titre": "Échauffement — les fondamentaux (niveau 1)",
-     "minutes": 25,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Échauffement — les fondamentaux (niveau 1)",
-       "dc": "Entraînement · niveau 1 · A1 et A2",
-       "competences": []
-      }
-     ],
-     "questions": [],
-     "notes": "Tirage limité aux questions de niveau 1 (définitions, rôles, gestes de base), seuil abaissé à 60 % : c'est un test de démarrage, pas un examen. À proposer en début de formation pour positionner, puis en milieu de parcours pour mesurer le chemin parcouru."
-    }
-   ]
-  },
-  {
-   "n": 2,
-   "libelle": null,
-   "titre": "Le circuit et ses organes",
-   "intention": "Chaque organe : à quoi il sert, comment on l'installe, comment on le règle, comment on vérifie qu'il fonctionne. Les quatre composants se travaillent — un seul sera tiré au sort à l'épreuve, et le candidat ne saura pas lequel.",
-   "sequences": [
-    {
      "type": "cours",
-     "fiche": "s4",
-     "titre": "Ce qui éclate — la pression",
-     "minutes": 30,
+     "fiche": "g4a",
+     "titre": "Où fuit une installation ?",
+     "minutes": 25,
      "video": null,
      "slides": [
       {
        "type": "titre",
-       "titre": "Ce qui éclate — la pression",
-       "dc": "Sécurité · codes 11.03 · 3.01",
+       "titre": "Où fuit une installation ?",
+       "dc": "G4 · codes 4.01 · 4.02 · 4.03",
        "competences": [
         {
-         "code": "11.03",
-         "lib": "Connaître les règles de sécurité applicables aux fluides nécessitant une pression de fonctionnement plus élevée",
-         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
+         "code": "4.01",
+         "lib": "Identifier les points de fuite potentiels d'une installation",
+         "officiel": "Connaître les points de fuite potentiels des équipements de réfrigération, de climatisation et de pompes à chaleur",
          "epreuve": {
           "A1": "T",
-          "A2": "T"
+          "A2": "T",
+          "E": "T"
          },
          "nouveau": false,
          "tirage_au_sort": false
         },
         {
-         "code": "3.01",
-         "lib": "Réaliser une épreuve de pression à l'azote pour vérifier la résistance du circuit",
-         "officiel": "Effectuer une épreuve de pression pour contrôler la résistance du système",
+         "code": "4.02",
+         "lib": "Consulter et exploiter le registre avant le contrôle",
+         "officiel": "Consulter le registre de l'équipement avant tout contrôle d'étanchéité et relever les informations pertinentes concernant des problèmes récurrents ou des parties problématiques du système nécessitant une attention particulière",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "E": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "4.03",
+         "lib": "Réaliser un contrôle visuel et manuel",
+         "officiel": "Effectuer un contrôle visuel et manuel de tout le système au sens du règlement (CE) n° 1516/2007 de la Commission",
          "epreuve": {
           "A1": "P",
-          "A2": "P"
+          "A2": "P",
+          "E": "P"
          },
          "nouveau": false,
          "tirage_au_sort": false
@@ -4009,94 +2204,601 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "schema",
-       "src": "packs/fluides/res/svg/secu-bouteille.svg",
-       "alt": "À gauche, bouteille remplie à ras : le liquide n'a pas de place pour se dilater, la pression grimpe très vite. À droite, volume libre respecté. En bas, les gestes interdits.",
-       "titre": "Ce qui éclate — la pression"
+       "src": "packs/fluides/res/svg/points-de-fuite.svg",
+       "alt": "Six familles de points de fuite repérées sur un circuit type.",
+       "titre": "Où fuit une installation ?"
       },
       {
        "type": "point",
-       "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.",
-       "titre": "Ce qui éclate — la pression"
+       "html": "Une fuite ne sort pas d'un tube plein. Elle sort d'un <b>point d'assemblage</b> ou d'une <b>pièce en mouvement</b> : raccords mécaniques (flare, à visser), brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints, raccords vissés des voyants, filtres et pressostats, et tout ce qui <b>vibre</b> — compresseur, tuyauteries mal fixées.",
+       "titre": "Où fuit une installation ?"
       },
       {
        "type": "point",
-       "html": "Ce qui peut céder :",
-       "titre": "Ce qui éclate — la pression"
+       "html": "Avant de sortir le moindre instrument, on <b>lit le registre</b> : quelle charge, quel fluide, quelles fuites déjà détectées, qu'a-t-on réparé et quand. Un point déjà réparé est un point <b>à recontrôler en priorité</b>, pas un point clos.",
+       "titre": "Où fuit une installation ?"
       },
       {
        "type": "point",
-       "html": "Le schéma du haut explique pourquoi une bouteille ne se remplit <b>jamais</b> à ras : un liquide qui chauffe se dilate, et s'il n'a pas de volume libre au-dessus de lui, la pression grimpe très vite. Le taux de remplissage à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur ; les propriétés du fluide, dans sa fiche de données de sécurité (FDS).",
-       "titre": "Ce qui éclate — la pression"
+       "html": "Vient ensuite le <b>contrôle visuel et manuel</b>, sans électronique : traces d'huile (le fluide entraîne l'huile en fuyant), corrosion, givre anormal, serrage des raccords accessibles, état des fixations.",
+       "titre": "Où fuit une installation ?"
       },
       {
        "type": "point",
-       "html": "<b>Comment ça arrive vraiment.</b> Sur un chantier, une bouteille de fluide oubliée dans un véhicule en plein été, vitres fermées, en est un exemple courant : l'habitacle chauffe fortement, la bouteille avec. Autre situation : un flexible de manifold ancien, jamais contrôlé, qui cède au moment où l'on ouvre une vanne. Autre situation encore : un tronçon de tuyauterie en toiture, isolé par deux vannes fermées pendant une réparation, laissé en plein soleil sans protection ni vérification avant de reprendre le travail dessus.",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "Un compresseur à l'arrêt n'est pas forcément une machine sans danger. Un circuit peut rester sous pression longtemps après l'arrêt d'une installation, sans qu'aucune fuite ne se produise. Rien à l'extérieur ne signale cette pression : ni bruit, ni mouvement, ni tiédeur. Un technicien qui desserre un raccord en se disant « de toute façon, c'est arrêté depuis longtemps » peut se retrouver face à une projection de fluide et de pièces.",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce qui protège.</b> Dans l'ordre où on l'applique :",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "<ul><li>une <b>bouteille de fluide</b> qui a chauffé au soleil ou près d'une source de chaleur ;</li><li>un <b>flexible</b> fatigué par le temps, l'usure ou de mauvais pliages ;</li><li>un <b>raccord</b> mal serré ou abîmé ;</li><li>un tronçon de circuit fermé des deux côtés par des vannes, sans aucune protection, alors qu'il reste rempli de fluide.</li></ul>",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li>Ne jamais exposer une bouteille de fluide à la chaleur ou au soleil direct : la stocker et la transporter à l'abri, à la verticale, arrimée.</li><li>Respecter le taux de remplissage indiqué par le fabricant : ne jamais remplir une bouteille à ras.</li><li>Connaître le rôle des <b>organes de sécurité</b> du circuit. Une <b>soupape de sécurité</b> s'ouvre automatiquement pour laisser échapper un peu de fluide avant que la pression n'atteigne un niveau dangereux ; son seuil de déclenchement est fixé par le fabricant et indiqué sur l'organe ou dans sa documentation. Vérifier la présence et le bon état de ces organes, sans jamais les démonter ni les bloquer.</li><li>Pour toute mise en pression du circuit — recherche de fuite, épreuve de pression — utiliser <b>uniquement de l'azote</b>, jamais de l'oxygène ni de l'air comprimé, et toujours au travers d'un <b>mano-détendeur</b> (un appareil qui réduit et règle la pression très élevée de la bouteille) réglé selon la documentation constructeur. Sans détendeur, la pression de la bouteille d'azote suffit à elle seule à faire éclater un circuit frigorifique.</li><li>Avant de desserrer quoi que ce soit sur un circuit à l'arrêt, mesurer sa pression au manomètre — même si l'installation semble arrêtée depuis longtemps.</li></ol>",
-       "titre": "Ce qui éclate — la pression"
+       "html": "Ce contrôle visuel et manuel n'est pas une habitude d'atelier. Il est <b>cadré par un texte européen</b> : le règlement (CE) n° 1516/2007. C'est ce règlement qui définit les méthodes de contrôle d'étanchéité déjà vues ici. La méthode <b>indirecte</b> (lecture des pressions et des températures) et la méthode <b>directe</b> (détecteur, bulles de savon) sont toutes les deux cadrées par ce texte. Contrôler « au sens » de ce règlement, c'est appliquer ces méthodes, pas improviser à sa façon.",
+       "titre": "Où fuit une installation ?"
       },
       {
        "type": "encadre",
        "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ul><li>Un circuit reste sous pression même à l'arrêt et même par forte chaleur.</li><li>Une bouteille de fluide ne se chauffe jamais et ne se remplit jamais à ras.</li><li>Toute mise en pression se fait à l'azote seul, jamais à l'oxygène ni à l'air comprimé, toujours avec un mano-détendeur réglé selon la documentation constructeur.</li><li>Avant de toucher un raccord, vérifier la pression au manomètre, même sur une machine arrêtée depuis longtemps.</li></ul>",
-       "titre": "Ce qui éclate — la pression"
+       "t": "L'ordre ne s'invente pas",
+       "html": "<b>Registre → visuel et manuel → méthode indirecte → méthode directe.</b><br>Chaque étape oriente la suivante. On ne contrôle jamais à l'aveugle : le registre oriente le contrôle avant même d'ouvrir la porte du local technique.",
+       "titre": "Où fuit une installation ?"
       },
       {
        "type": "encadre",
        "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>On ne chauffe <b>jamais</b> une bouteille de fluide pour accélérer un transfert ou une charge — ni flamme, ni eau chaude, ni radiateur. On ne met <b>jamais</b> un circuit sous pression avec de l'oxygène ou de l'air comprimé, et on n'utilise <b>jamais</b> une bouteille d'azote sans mano-détendeur. Conséquence : la bouteille ou le circuit peut éclater et projeter du fluide et des fragments sur la personne présente.</p>",
-       "titre": "Ce qui éclate — la pression"
+       "t": "La trace d'huile",
+       "html": "Une trace d'huile sous un raccord n'est pas une salissure : c'est la <b>signature d'une fuite</b>. Le fluide s'échappe, l'huile miscible reste. Inversement, un bac de condensats bouché peut <b>masquer</b> une fuite pendant des semaines.",
+       "titre": "Où fuit une installation ?"
       }
      ],
      "questions": [
       {
-       "id": "pk-cl3-1",
-       "dc": "Classification",
-       "code": "11.03",
+       "id": "pk-q-4.01",
+       "dc": "G4",
+       "code": "4.01",
        "niveau": 1,
        "type": "qcm",
-       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+       "enonce": "Sur une installation frigorifique, où se situent le plus souvent les points de fuite potentiels ?",
        "choix": [
-        "Près du plafond, car les gaz montent toujours",
-        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
-        "Il se répartit uniformément et sans danger dans tout le volume",
-        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+        "Aux points d'assemblage (raccords, brasures) et aux pièces qui vibrent, comme le compresseur",
+        "Uniquement sur le pressostat de sécurité",
+        "Uniquement dans l'isolant qui recouvre les tuyauteries",
+        "Sur un tube plein, loin de tout raccord ou de toute pièce en mouvement"
        ],
-       "bonne": 1,
-       "aide": "Comparez sa masse à celle de l'air.",
+       "bonne": 0,
+       "aide": "Une fuite ne sort pas d'un tube plein : pense à ce qui assemble deux pièces, ou à ce qui bouge.",
        "remed": {
-        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
-        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+        "regle": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
+        "pourquoi": "Un tube plein et correctement fixé ne peut pas fuir ; c'est la jonction entre deux pièces, ou la fatigue due au mouvement, qui crée un passage pour le fluide.",
+        "piege": "Chercher au hasard sur toute la tuyauterie au lieu de cibler d'abord les raccords, les brasures et les points qui vibrent."
        },
-       "remediation_vers": "cl3",
-       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+       "remediation_vers": "g4a",
+       "explication": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      },
+      {
+       "id": "q-g4-104",
+       "dc": "G4",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Lors d'un contrôle d'étanchéité, le contrôleur doit vérifier :",
+       "choix": [
+        "Uniquement le compresseur",
+        "Seulement les raccords visibles",
+        "Tous les éléments du circuit",
+        "Uniquement la charge de fluide"
+       ],
+       "bonne": 2,
+       "explication": "Les fréquences de contrôle d’étanchéité se déclenchent par seuils en tCO₂e (5 / 50 / 500), avec des périodicités typiques 12 / 6 / 3 mois. ⚠ raisonner en 'kg' au lieu de tCO₂e, ou inverser les seuils (5/50/500).",
+       "aide": "Indice : pensez aux seuils tCO2e (5 / 50 / 500) et aux fréquences 12 / 6 / 3 mois.",
+       "remed": {
+        "regle": "Les fréquences de contrôle d’étanchéité se déclenchent par seuils en tCO₂e (5 / 50 / 500), avec des périodicités typiques 12 / 6 / 3 mois.",
+        "pourquoi": "Le but est de réduire les fuites sur les installations à plus fort impact climatique.",
+        "exemple": "une installation à 60 tCO₂e entre dans le palier '≥ 50' (contrôle plus fréquent que le palier '≥ 5').",
+        "piege": "raisonner en 'kg' au lieu de tCO₂e, ou inverser les seuils (5/50/500)."
+       },
+       "remediation_vers": "g4b",
+       "code": "4.03",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      },
+      {
+       "id": "q-g4-110",
+       "dc": "G4",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une installation frigorifique doit faire l'objet d'un marquage indiquant :",
+       "choix": [
+        "Uniquement le type de fluide",
+        "Type et quantité de fluide",
+        "Type, quantité et pictogrammes de danger",
+        "Aucune obligation"
+       ],
+       "bonne": 2,
+       "explication": "Ici, on raisonne en tCO₂e (impact) plutôt qu’en kg. ⚠ se focaliser sur la masse de fluide seule.",
+       "aide": "Indice : raisonnez en tCO2e (pas seulement en kg).",
+       "remed": {
+        "regle": "Ici, on raisonne en tCO₂e (impact) plutôt qu’en kg.",
+        "pourquoi": "Le règlement F-Gaz déclenche des obligations en fonction de l’impact climatique.",
+        "exemple": "même une petite charge peut dépasser un seuil si le GWP est élevé.",
+        "piege": "se focaliser sur la masse de fluide seule."
+       },
+       "remediation_vers": "g4b",
+       "code": "4.03",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      }
+     ],
+     "notes": "Pédagogie de la découverte : emmener le groupe devant une machine d'atelier et faire CHERCHER les points de fuite avant de donner la liste. Les stagiaires en trouvent la moitié seuls, on complète — la liste donnée d'emblée ne se retient pas. Insister sur le registre : c'est le réflexe qui distingue le professionnel du bricoleur, et c'est évalué."
+    },
+    {
+     "type": "cours",
+     "fiche": "p7",
+     "titre": "Préparation de chantier — risques, EPI, zone de travail",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail",
+       "dc": "Préparation pratique · codes 12.04 · 12.05",
+       "competences": [
+        {
+         "code": "12.04",
+         "lib": "Réaliser l'analyse de risques avant le travail",
+         "officiel": "Réaliser une analyse des risques avant le début du travail et éliminer ou, si l'élimination n'est pas possible, identifier les sources de danger",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "12.05",
+         "lib": "Préparer la zone de travail et choisir les EPI adaptés",
+         "officiel": "Préparer la zone de travail et sélectionner les outils, le matériel et les équipements de protection adéquats pour travailler sur des systèmes dépendant des réfrigérants inflammables",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/prepa-chantier.svg",
+       "alt": "Quatre temps avant de toucher : reconnaître le lieu et le fluide, identifier les risques du jour et les supprimer, se protéger avec les EPI qui en découlent, préparer la zone et le matériel.",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      },
+      {
+       "type": "point",
+       "html": "Avant de sortir le moindre outil, deux choses se préparent : l'<b>analyse de risques</b> et la <b>zone de travail</b>. Ce n'est pas une formalité à cocher après coup. C'est la première étape du chantier, avant le premier geste technique.",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      },
+      {
+       "type": "point",
+       "html": "<b>L'analyse de risques</b> se fait dans cet ordre :",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      },
+      {
+       "type": "point",
+       "html": "Vient ensuite la <b>préparation de la zone</b> :",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      },
+      {
+       "type": "point",
+       "html": "Sur une machine aux <b>hydrocarbures</b> (par exemple au R-290), le choix de l'outillage se fait <b>avant</b> d'ouvrir la zone, pas une fois dessus. Ces fluides sont inflammables : un outil ordinaire, prévu pour un gaz qui ne l'est pas, peut suffire à déclencher un accident. Une simple étincelle au mauvais endroit, au mauvais moment, enflamme le gaz qui s'est accumulé.",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      },
+      {
+       "type": "point",
+       "html": "Certains outils se vérifient en particulier. La <b>station de récupération</b> doit être <b>compatible hydrocarbures</b> : conçue pour aspirer et stocker un gaz inflammable sans créer d'étincelle interne. Une station ordinaire, prévue pour un fluide non inflammable, n'a pas cette protection. Le <b>détecteur de fuite</b> doit lui aussi être adapté au gaz recherché : un détecteur réglé pour un autre fluide peut ne rien signaler alors que du gaz inflammable s'échappe.",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      },
+      {
+       "type": "point",
+       "html": "Dans la zone balisée, tout le <b>matériel électrique</b> utilisé doit être <b>antidéflagrant</b> (on dit aussi « <b>ATEX</b> », pour les zones à risque d'explosion) : lampe, outillage électroportatif, appareils de mesure. Un matériel électrique ordinaire peut produire une étincelle interne invisible, suffisante pour enflammer un gaz inflammable présent dans l'air. La <b>ventilation</b> reste en marche pendant toute l'intervention, pour empêcher le gaz de s'accumuler.",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li>Identifier le fluide en jeu, à partir de la plaque signalétique ou de la documentation : inflammable, sous pression, en espace confiné.</li><li>Repérer les dangers de la <b>zone elle-même</b> : ventilation, sources de chaleur ou d'étincelle à proximité, accès, présence de tiers.</li><li>Éliminer ce qui peut l'être — couper une source de chaleur, dégager un passage.</li><li>Signaler ce qui ne peut pas être éliminé. Si un point bloque vraiment, le chantier n'engage pas tant qu'il n'est pas corrigé.</li></ol>",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li>Baliser et signaler la zone de travail.</li><li>Dégager une <b>issue</b> utilisable à tout moment de l'intervention.</li><li>Sélectionner les <b>équipements de protection</b> adaptés au fluide et au geste prévu : protection des yeux, gants adaptés au produit et au froid, détecteur de gaz porté si le fluide l'exige.</li><li>Vérifier le matériel avant de l'emporter sur zone. Un flexible douteux ou un détecteur non vérifié <b>ne sort pas</b> de l'atelier.</li><li>Consigner électriquement l'installation avant toute ouverture de circuit.</li></ol>",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Sécurité imposée, jamais découverte",
+       "html": "On ne teste pas un risque en le vivant. EPI absent, issue condamnée, détecteur en panne : chacun de ces points <b>arrête le chantier avant qu'il commence</b>, pas après un premier incident.",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "L'ordre qui protège",
+       "html": "Analyser → éliminer ce qui peut l'être → signaler le reste → baliser → s'équiper → vérifier le matériel → consigner. Et alors seulement, intervenir.",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Compatible, pas juste disponible",
+       "html": "<b>Compatible</b> ne veut pas dire « qui marche quand même ». Une station, un détecteur ou un outil électrique doit être conçu pour les gaz inflammables, sinon on ne l'emmène pas sur une machine aux hydrocarbures — même s'il fonctionne très bien sur un autre chantier.",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-p7-1",
+       "dc": "G12",
+       "code": "12.04",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "À quel moment réalise-t-on l'analyse de risques d'une intervention ?",
+       "choix": [
+        "Avant d'engager le moindre geste technique",
+        "Après avoir ouvert le circuit",
+        "À la fin, au moment de rédiger le rapport",
+        "Seulement si le client le demande"
+       ],
+       "bonne": 0,
+       "aide": "Une analyse de risques sert à éviter l'accident, pas à le raconter.",
+       "remed": {
+        "regle": "L'analyse de risques se fait AVANT le premier geste, sur place.",
+        "pourquoi": "Elle sert à identifier et à supprimer les dangers tant qu'on peut encore agir : source d'inflammation, ventilation, issue, présence de public.",
+        "piege": "Une analyse faite après coup n'est plus une analyse, c'est un constat. La sécurité se démontre et s'impose : on ne découvre jamais un risque par l'erreur."
+       },
+       "remediation_vers": "p7",
+       "explication": "L'analyse de risques se fait AVANT le premier geste, sur place.",
        "origine": "pack",
        "categories": [
         "A1",
         "A2"
        ]
       },
+      {
+       "id": "pk-p7-2",
+       "dc": "G12",
+       "code": "12.05",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Avant d'intervenir sur une installation au R-290, que vérifie-t-on dans la zone de travail ?",
+       "choix": [
+        "Que l'éclairage est suffisant",
+        "Que la zone est balisée et ventilée, l'issue dégagée et les sources d'inflammation supprimées",
+        "Que la température ambiante est stable",
+        "Que le sol est parfaitement sec"
+       ],
+       "bonne": 1,
+       "aide": "Le R-290 est un hydrocarbure de classe A3 : pensez à ce qui pourrait l'enflammer.",
+       "remed": {
+        "regle": "Zone balisée, ventilation en service, issue dégagée, aucune source d'inflammation, EPI et matériel adaptés, consignation électrique faite.",
+        "pourquoi": "Le R-290 est classé A3 : très inflammable. Une fuite dans un local mal ventilé forme une atmosphère explosive, et la moindre étincelle suffit.",
+        "piege": "On confond souvent A2L et A3. Le R-32 est A2L, le R-290 est A3 : la propagation de flamme n'a rien à voir, et les précautions non plus."
+       },
+       "remediation_vers": "p7",
+       "explication": "Zone balisée, ventilation en service, issue dégagée, aucune source d'inflammation, EPI et matériel adaptés, consignation électrique faite.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Avant d'expliquer quoi que ce soit, étaler les EPI disponibles en atelier et faire trouver au groupe lequel correspond à quel risque — ne pas les nommer à leur place. Mettre en scène un point bloquant crédible (issue encombrée, détecteur déchargé) sans prévenir, et observer : le stagiaire s'arrête-t-il de lui-même, ou faut-il l'arrêter ? C'est ce réflexe qu'on cherche à installer. Ces deux codes sont spécifiques A1/A2 (réfrigérants inflammables) au référentiel — mais le réflexe d'analyse de risques avant intervention vaut pour tous les fluides, à généraliser au-delà de l'épreuve."
+    },
+    {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "Découverte du plateau : repérer les organes sur machine réelle",
+     "minutes": 45,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "Découverte du plateau : repérer les organes sur machine réelle",
+       "minutes": 45
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "libelle": null,
+   "titre": "Contrôler l'étanchéité, puis récupérer sans émettre",
+   "intention": "La journée la plus lourde au barème. On mesure sans ouvrir, on cherche la fuite, on consigne — puis on récupère le fluide sans en laisser partir un gramme.",
+   "sequences": [
+    {
+     "type": "cours",
+     "fiche": "s5",
+     "titre": "Consigner avant de toucher — le risque électrique",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Consigner avant de toucher — le risque électrique",
+       "dc": "Sécurité",
+       "competences": []
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-consignation.svg",
+       "alt": "Les cinq étapes dans l'ordre : séparer, condamner, identifier, vérifier l'absence de tension au VAT, mettre à la terre. Le VAT se teste avant et après sur une source connue.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui arrive.</b> Ce risque ne figure dans aucun code du référentiel d'examen fluides. Il n'en est pas moins réel : le risque électrique tue des professionnels chaque année, sur les installations de froid et de climatisation comme sur toute autre installation électrique.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "Le passage du courant électrique dans le corps humain porte un nom : l'<b>électrisation</b>. Ses effets vont de la simple secousse à des blessures graves — brûlures internes, troubles du cœur. Quand une électrisation entraîne la mort, on parle d'<b>électrocution</b>. C'est le même phénomène ; seule la gravité change.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "Un autre danger ne demande aucun contact : l'<b>arc électrique</b>. C'est une décharge qui jaillit dans l'air entre deux points sous tension, ou entre un point sous tension et une masse, sans qu'il soit nécessaire de toucher quoi que ce soit. Un arc électrique brûle par la chaleur et la lumière qu'il dégage, et peut projeter des matières en fusion. On peut donc se blesser gravement sans avoir touché aucun fil.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "Un dernier piège : couper l'alimentation ne vide pas forcément tous les composants de leur énergie. Un <b>condensateur</b> est un composant qui stocke de l'énergie électrique ; on en trouve par exemple dans les circuits de démarrage de certains moteurs. Il peut rester chargé après la coupure du courant. Il reste alors dangereux tant qu'il n'a pas été déchargé selon la méthode indiquée par la documentation constructeur de l'équipement.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "<b>Comment ça arrive vraiment.</b> Un technicien pressé ouvre une armoire électrique pour un dépannage rapide. Le disjoncteur qui semble commander cette armoire est coupé, alors il touche directement un bornier — la barrette où arrivent les fils. Mais personne n'a vérifié que ce disjoncteur coupait bien cette armoire précise : un autre circuit, resté sous tension, y arrive aussi. Autre situation fréquente : un condensateur de moteur touché juste après la coupure du courant, alors qu'il est encore chargé. Autre situation encore : un outil métallique approché trop près de bornes sous tension dans une armoire électrique, sans contact direct, qui déclenche un arc électrique.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui protège.</b> Avant de toucher un circuit ou un équipement électrique, la <b>consignation électrique</b> se déroule dans un ordre précis, en cinq étapes :",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "Le VAT lui-même doit être digne de confiance. On le contrôle sur une source que l'on sait sous tension <b>avant</b> de l'utiliser sur le circuit à vérifier, puis on refait le même contrôle sur cette source connue <b>après</b>. Si l'appareil fonctionnait au premier essai mais plus au second, tout ce qu'il a mesuré entre les deux doit être considéré comme non fiable.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li><b>Séparer</b> : couper l'alimentation électrique de façon visible et certaine.</li><li><b>Condamner</b> : verrouiller l'organe de coupure en position ouverte, pour qu'il ne puisse pas être refermé par quelqu'un d'autre pendant l'intervention.</li><li><b>Identifier</b> : vérifier que l'on se trouve bien sur le circuit ou l'équipement que l'on vient de séparer, et pas sur un autre.</li><li><b>Vérifier l'absence de tension</b> avec un <b>VAT</b> — un vérificateur d'absence de tension — dont le modèle et les réglages sont adaptés à l'installation, conformément à sa documentation constructeur.</li><li><b>Mettre à la terre et en court-circuit</b> quand cette étape s'impose, notamment lorsqu'une tension pourrait réapparaître par une autre source.</li></ol>",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li>Électrisation : le courant traverse le corps. Électrocution : une électrisation qui tue.</li><li>Un arc électrique brûle sans aucun contact.</li><li>Consignation en cinq étapes : séparer, condamner, identifier, vérifier l'absence de tension, mettre à la terre si besoin.</li><li>Un condensateur peut rester chargé après la coupure du courant.</li><li>Le VAT se contrôle avant et après usage, sur une source connue.</li></ul>",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>On ne travaille <b>jamais</b> sur une installation électrique sans avoir réalisé les cinq étapes de la consignation, même pour « juste vérifier » ou « deux secondes ». On ne fait <b>jamais</b> confiance à un simple arrêt visuel de la machine : seule une vérification d'absence de tension avec un VAT contrôlé fait foi. Conséquence : électrisation, électrocution, brûlure par arc électrique — ce risque tue chaque année.</p>",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-s5-1",
+       "dc": "Sécurité",
+       "code": null,
+       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Quelle est la dernière étape avant de poser les mains sur un circuit électrique consigné ?",
+       "choix": [
+        "Prévenir le client",
+        "Vérifier l absence de tension avec un VAT",
+        "Poser une pancarte",
+        "Ouvrir le coffret"
+       ],
+       "bonne": 1,
+       "aide": "Consigner ne suffit pas : il faut le prouver, appareil en main.",
+       "remed": {
+        "regle": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
+        "pourquoi": "Un disjoncteur peut être mal repéré, une alimentation de secours peut subsister : seule la mesure prouve que le circuit est hors tension.",
+        "piege": "« Je l ai coupé moi-même » ne protège de rien. Un circuit se vérifie, il ne se suppose pas."
+       },
+       "remediation_vers": "s5",
+       "explication": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
+       "origine": "pack"
+      },
+      {
+       "id": "pk-s5-2",
+       "dc": "Sécurité",
+       "code": null,
+       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s en être servi ?",
+       "choix": [
+        "Pour économiser la pile",
+        "Parce qu un VAT en panne indiquerait « pas de tension » sur un circuit pourtant sous tension",
+        "Pour l étalonner",
+        "C est une simple habitude"
+       ],
+       "bonne": 1,
+       "aide": "Demandez-vous ce qui se passe si l appareil lui-même est défaillant.",
+       "remed": {
+        "regle": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
+        "pourquoi": "Un appareil défaillant affiche l absence de tension quoi qu il arrive. Le tester après prouve qu il fonctionnait encore au moment de la mesure.",
+        "piege": "Un VAT qui n indique rien peut vouloir dire deux choses : pas de tension, ou appareil mort. Seul le double contrôle tranche."
+       },
+       "remediation_vers": "s5",
+       "explication": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
+       "origine": "pack"
+      },
+      {
+       "id": "pk-s5-3",
+       "dc": "Sécurité",
+       "code": null,
+       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Une machine vient d être mise hors tension. Que peut-il rester de dangereux dans le coffret ?",
+       "choix": [
+        "Plus rien, la coupure suffit",
+        "Des condensateurs encore chargés",
+        "Seulement de la chaleur",
+        "Uniquement du fluide"
+       ],
+       "bonne": 1,
+       "aide": "Certains composants stockent l énergie électrique et ne se vident pas instantanément.",
+       "remed": {
+        "regle": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
+        "pourquoi": "Il accumule de l énergie pour le démarrage du moteur. Coupée, cette énergie reste stockée et peut provoquer un choc.",
+        "piege": "Couper puis ouvrir aussitôt le coffret est un réflexe fréquent — et c est exactement le moment où le condensateur est encore chargé."
+       },
+       "remediation_vers": "s5",
+       "explication": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
+       "origine": "pack"
+      }
+     ],
+     "notes": "Conseil d'animation : faire manipuler un VAT hors tension et mimer le double contrôle sur une source connue, avant et après usage. Faire répéter les cinq étapes à voix haute par le groupe, dans l'ordre, jusqu'à ce qu'elles s'enchaînent sans hésitation. Montrer une photo ou une pièce réelle de condensateur pour que le mot ne reste pas abstrait. Rappeler explicitement que ce risque est absent du référentiel d'examen fluides — le dire aide à comprendre pourquoi le pack ne l'avait jamais traité, et pourquoi cette fiche existe quand même."
+    },
+    {
+     "type": "cours",
+     "fiche": "g3",
+     "titre": "Contrôles avant mise en service",
+     "minutes": 30,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Contrôles avant mise en service",
+       "dc": "G3 · codes 3.01 → 3.05",
+       "competences": [
+        {
+         "code": "3.01",
+         "lib": "Réaliser une épreuve de pression de résistance",
+         "officiel": "Effectuer une épreuve de pression pour contrôler la résistance du système",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "3.02",
+         "lib": "Réaliser une épreuve de pression d'étanchéité",
+         "officiel": "Effectuer une épreuve de pression pour contrôler l'étanchéité du système",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "3.03",
+         "lib": "Utiliser une pompe à vide",
+         "officiel": "Utiliser une pompe à vide",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "3.04",
+         "lib": "Faire le vide : évacuer l'air et l'humidité",
+         "officiel": "Faire le vide dans le système pour évacuer l'air et l'humidité selon la pratique habituelle",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "3.05",
+         "lib": "Consigner le registre et rédiger le rapport d'essais",
+         "officiel": "Consigner les données dans le registre de l'équipement et rédiger un rapport portant sur un ou plusieurs des essais et des contrôles effectués durant l'examen",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/epreuve-azote.svg",
+       "alt": "Montage de l épreuve de pression : bouteille d azote, manifold, circuit — oxygène et air comprimé barrés.",
+       "titre": "Contrôles avant mise en service"
+      },
+      {
+       "type": "point",
+       "html": "Deux épreuves, deux buts, souvent enchaînées. L'<b>épreuve de résistance</b> vérifie que l'assemblage tient mécaniquement. L'<b>épreuve d'étanchéité</b> vérifie qu'il ne laisse rien passer. Les pressions d'épreuve se prennent <b>sur la documentation constructeur</b> et la norme applicable — jamais à l'estime.",
+       "titre": "Contrôles avant mise en service"
+      },
+      {
+       "type": "point",
+       "html": "Vient ensuite le <b>tirage au vide</b>. Il ne sert pas à « faire propre » : il extrait l'<b>air</b> (incondensable, qui fait monter la haute pression) et l'<b>humidité</b> (qui gèle au détendeur et attaque l'huile). Sous vide, l'eau bout à température ambiante — c'est exactement ce qu'on cherche.",
+       "titre": "Contrôles avant mise en service"
+      },
+      {
+       "type": "point",
+       "html": "Enfin, on <b>consigne</b> : registre et rapport d'essais font partie du geste professionnel.",
+       "titre": "Contrôles avant mise en service"
+      },
+      {
+       "type": "point",
+       "html": "Comment conclut-on l'épreuve d'étanchéité ? On relève la pression d'azote au <b>manomètre</b> (l'appareil qui mesure la pression) au début de l'essai, puis on attend la durée prévue — selon la documentation constructeur, à faire valider. Si la pression reste <b>stable</b> (ou « stabilisée ») pendant toute cette durée, le circuit est déclaré étanche. À l'inverse, une <b>chute de pression</b> signale une fuite quelque part dans le circuit, même si elle est minime.",
+       "titre": "Contrôles avant mise en service"
+      },
+      {
+       "type": "point",
+       "html": "Un piège classique : la température de l'atelier fait elle aussi varier la pression, sans qu'il y ait de fuite. Dans un circuit fermé, la pression de l'azote <b>augmente</b> un peu quand l'air ambiant se réchauffe, et <b>diminue</b> un peu quand il refroidit. On regarde donc la tendance sur toute la durée de l'épreuve, pas un seul chiffre isolé, et on corrige qualitativement une petite variation liée à la température avant de conclure trop vite à une fuite.",
+       "titre": "Contrôles avant mise en service"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Geste interdit — sans discussion",
+       "html": "Toute mise en pression se fait à l'<b>azote</b>, et à l'azote seulement. <b>Jamais d'oxygène</b> — au contact de l'huile du circuit, le mélange est explosif. <b>Jamais d'air comprimé</b> — il apporte de l'humidité et contient de l'oxygène. Ce geste ne se discute pas et ne se découvre pas : il s'impose.",
+       "titre": "Contrôles avant mise en service"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Le vide qui remonte",
+       "html": "Après avoir isolé la pompe, on <b>surveille</b> : si le vide remonte, il y a une fuite ou de l'humidité résiduelle. Un tirage au vide réussi, c'est un vide qui <b>tient</b>. Valeurs cibles et durées : selon doc constructeur, à faire valider.",
+       "titre": "Contrôles avant mise en service"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Localiser la fuite : l'eau savonneuse",
+       "html": "<p>Si la pression chute, on cherche la fuite <b>raccord par raccord et brasure par brasure</b>, en badigeonnant de l'<b>eau savonneuse</b> au pinceau ou au pulvérisateur. Une <b>bulle</b> qui apparaît et grossit indique l'endroit exact de la fuite. Ce geste simple, sans appareil, vient <b>après</b> le contrôle de stabilité de la pression : il sert à localiser précisément une fuite déjà détectée.</p>",
+       "titre": "Contrôles avant mise en service"
+      }
+     ],
+     "questions": [
       {
        "id": "pk-p4-1",
        "dc": "G3",
@@ -4124,15 +2826,1985 @@ window.PILOTE_PROJECTION = {
         "A1",
         "A2"
        ]
+      },
+      {
+       "id": "pk-p4-2",
+       "dc": "G3",
+       "code": "3.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Pourquoi une bouteille d'azote se raccorde-t-elle toujours au travers d'un mano-détendeur ?",
+       "choix": [
+        "Pour connaître la quantité restante",
+        "Pour filtrer l'humidité du gaz",
+        "Parce que la pression de la bouteille dépasse largement ce que le circuit peut supporter",
+        "Pour réchauffer le gaz avant l'entrée"
+       ],
+       "bonne": 2,
+       "aide": "Comparez la pression dans la bouteille et celle que supporte l'installation.",
+       "remed": {
+        "regle": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
+        "pourquoi": "La bouteille est à une pression très supérieure à celle admissible par l'installation : le mano-détendeur ramène la pression à la valeur voulue, lue sur son second cadran.",
+        "piege": "Ouvrir la bouteille directement sur le circuit peut le détruire instantanément. La pression d'épreuve se règle selon la fiche constructeur, jamais à l'estime."
+       },
+       "remediation_vers": "p4",
+       "explication": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-q-3.05",
+       "dc": "G3",
+       "code": "3.05",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Vous venez de terminer l'épreuve d'étanchéité et le tirage au vide sur un circuit. Que devez-vous faire avant de considérer l'intervention comme terminée ?",
+       "choix": [
+        "Attendre la validation du client avant toute trace écrite",
+        "Refaire une deuxième fois l'épreuve d'étanchéité pour confirmer",
+        "Ranger le matériel, aucune autre formalité n'est nécessaire",
+        "Consigner les données dans le registre de l'équipement et rédiger un rapport sur les essais et contrôles effectués"
+       ],
+       "bonne": 3,
+       "aide": "Pense au tout dernier geste professionnel décrit dans la fiche, juste après les contrôles.",
+       "remed": {
+        "regle": "Après tout contrôle ou essai (épreuve de résistance, épreuve d'étanchéité, tirage au vide), on consigne les résultats dans le registre de l'équipement et on rédige un rapport sur les essais et contrôles effectués.",
+        "pourquoi": "La trace écrite prouve que les contrôles réglementaires ont bien eu lieu. Elle protège le professionnel, informe l'exploitant, et permet de suivre l'état de l'équipement dans le temps.",
+        "piege": "Croire que le geste technique (épreuve, tirage au vide) suffit à lui seul. Sans registre ni rapport, rien ne prouve que le contrôle a été fait : le geste professionnel n'est complet qu'avec la consignation."
+       },
+       "remediation_vers": "g3",
+       "explication": "Après tout contrôle ou essai (épreuve de résistance, épreuve d'étanchéité, tirage au vide), on consigne les résultats dans le registre de l'équipement et on rédige un rapport sur les essais et contrôles effectués.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g3-v6_058",
+       "dc": "G3",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le tirage au vide a pour but principal d'éliminer :",
+       "choix": [
+        "L'huile usagée",
+        "L'air et l'humidité du circuit",
+        "Les particules métalliques",
+        "Le fluide résiduel"
+       ],
+       "bonne": 1,
+       "explication": "L'air et l'humidité — Le tirage au vide évacue l'air (incondensable qui augmente la HP) et l'humidité (qui forme des acides avec l'huile POE).",
+       "aide": "L'air et l'eau sont les deux ennemis du circuit frigorifique.",
+       "remed": {
+        "texte": "Le tirage au vide évacue l'air (incondensable qui augmente la HP) et l'humidité (qui forme des acides avec l'huile POE)."
+       },
+       "remediation_vers": "g3",
+       "code": "3.04",
+       "categories": [
+        "A1",
+        "A2"
+       ]
       }
      ],
-     "notes": "Conseil d'animation : faire observer côte à côte une bouteille d'azote équipée de son mano-détendeur et un flexible hors service, fatigué ou fissuré. Montrer une soupape de sécurité démontée (pièce morte, jamais sur une machine en service) et expliquer son déclenchement. Demander au groupe, avant de répondre : « un compresseur arrêté depuis longtemps, est-il encore sous pression ? » — laisser les hypothèses circuler avant de trancher. Insister à l'oral sur l'interdiction absolue de l'oxygène et de l'air comprimé pour mettre un circuit en pression."
+     "notes": "Pour la catégorie D, seul le code 3.03 (pompe à vide) est dans le champ : ne pas emmener un groupe D sur l'épreuve de pression. Faire monter le montage azote sur un poste d'essai dédié, jamais sur une installation client en première approche. L'anecdote qui marque : une bouteille mal identifiée, de l'oxygène branché par erreur sur un circuit huilé. Faire lire un vacuomètre en direct pendant un tirage réel, et faire chercher « pourquoi le vide remonte-t-il ? »."
+    },
+    {
+     "type": "cours",
+     "fiche": "g4b",
+     "titre": "Méthode indirecte — mesurer et interpréter",
+     "minutes": 35,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Méthode indirecte — mesurer et interpréter",
+       "dc": "G4 · codes 4.04 · 4.05",
+       "competences": [
+        {
+         "code": "4.04",
+         "lib": "Mettre en œuvre la méthode indirecte (mesures et tables)",
+         "officiel": "Effectuer un contrôle de l'étanchéité du système au moyen d'une méthode indirecte conformément au règlement (CE) n° 1516/2007 et du manuel d'utilisation du système",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "E": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "4.05",
+         "lib": "Utiliser les instruments portables et interpréter les mesures",
+         "officiel": "Utiliser des instruments de mesure portables tels que des manomètres, des thermomètres et des multimètres pour mesurer les volts, ampères et ohms en appliquant des méthodes indirectes de contrôle de l'étanchéité, et interpréter les paramètres mesurés",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "E": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/lecture-table.svg",
+       "alt": "La lecture croisée : manomètre + 1 bar, table de saturation du fluide, sonde de contact.",
+       "titre": "Méthode indirecte — mesurer et interpréter"
+      },
+      {
+       "type": "point",
+       "html": "La méthode indirecte <b>ne détecte pas la fuite</b> : elle détecte un <b>fonctionnement anormal</b> qui la trahit. On relève les <b>pressions</b> (BP et HP) au manomètre et les <b>températures</b> au thermomètre de contact, puis on compare à la <b>table de saturation</b> du fluide présent.",
+       "titre": "Méthode indirecte — mesurer et interpréter"
+      },
+      {
+       "type": "point",
+       "html": "Une pression plus basse que la valeur théorique attendue, une <b>surchauffe</b> qui grimpe au-delà des 5 à 10 K habituels, un <b>sous-refroidissement</b> qui s'effondre sous les 4 à 8 K : autant d'indices convergents d'un manque de charge. Le multimètre complète le tableau (intensité absorbée, cohérence électrique).",
+       "titre": "Méthode indirecte — mesurer et interpréter"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Trois instruments, trois informations",
+       "html": "<b>Manomètre</b> (BP/HP) → écart avec la table de saturation.<br><b>Thermomètre de contact</b> → surchauffe et sous-refroidissement.<br><b>Multimètre</b> → cohérence électrique du compresseur.<br>Un seul indice ne conclut rien ; c'est leur <b>convergence</b> qui oriente.",
+       "titre": "Méthode indirecte — mesurer et interpréter"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Relatif ou absolu ?",
+       "html": "Toujours le même piège : ne pas confondre pression <b>relative</b> (lue au manomètre) et pression <b>absolue</b> (souvent utilisée dans les tables). Écart : environ 1 bar. Et un fluide n'a jamais la table d'un autre.",
+       "titre": "Méthode indirecte — mesurer et interpréter"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g4-v6_074",
+       "dc": "G4",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "La méthode de détection indirecte consiste à :",
+       "choix": [
+        "Utiliser un détecteur électronique",
+        "Suivre les paramètres de fonctionnement (P, T°, surchauffe)",
+        "Mettre sous pression d'azote",
+        "Utiliser un traceur UV"
+       ],
+       "bonne": 1,
+       "explication": "Suivre les paramètres de fonctionnement — La détection indirecte analyse les dérives des paramètres (baisse de HP, augmentation de surchauffe, etc.) qui signalent une perte de charge.",
+       "aide": "C'est une méthode qui n'utilise pas d'appareil de détection spécifique.",
+       "remed": {
+        "texte": "La détection indirecte analyse les dérives des paramètres (baisse de HP, augmentation de surchauffe, etc.) qui signalent une perte de charge."
+       },
+       "remediation_vers": "g4b",
+       "code": "4.04",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      },
+      {
+       "id": "q-g7-170",
+       "dc": "G7",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Un pressostat haute pression (HP) déclenche et arrête le compresseur. Quelle peut être la cause ?",
+       "choix": [
+        "Manque de fluide frigorigène",
+        "Condenseur encrassé, ventilateurs arrêtés, ou excès de charge",
+        "Évaporateur givré",
+        "Manque d'huile"
+       ],
+       "bonne": 1,
+       "explication": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le…",
+       "aide": "Le pressostat HP protège l'installation contre les pressions trop élevées côté condenseur.",
+       "remed": {
+        "texte": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le circuit, ou température ambiante trop élevée."
+       },
+       "remediation_vers": "g7",
+       "code": "4.05",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      },
+      {
+       "id": "q-g8-171",
+       "dc": "G8",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Un pressostat basse pression (BP) déclenche et arrête le compresseur. Quelle peut être la cause ?",
+       "choix": [
+        "Excès de fluide frigorigène",
+        "Manque de fluide, évaporateur givré, ou filtre bouché",
+        "Condenseur encrassé",
+        "Compresseur trop puissant"
+       ],
+       "bonne": 1,
+       "explication": "Un déclenchement PRESSOSTAT BP indique une pression d'évaporation trop basse. Causes : manque de charge frigorigène, évaporateur givré ou encrassé, filtre déshydrateur bouché, détendeur mal réglé ou…",
+       "aide": "Le pressostat BP protège l'installation contre les pressions trop basses côté évaporateur.",
+       "remed": {
+        "texte": "Un déclenchement PRESSOSTAT BP indique une pression d'évaporation trop basse. Causes : manque de charge frigorigène, évaporateur givré ou encrassé, filtre déshydrateur bouché, détendeur mal réglé ou bouché, ou débit d'air insuffisant sur l'évaporateur."
+       },
+       "remediation_vers": "g8",
+       "code": "4.05",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      }
+     ],
+     "notes": "Le cœur du parcours E, et le module qui prend le plus de temps d'atelier. Faire manipuler manomètre + thermomètre EN BINÔME sur une machine, puis confronter les relevés à une vraie table de saturation. Tant que le stagiaire ne sait pas dire « la table annonce X, je mesure Y, donc… », la compétence n'est pas acquise. Ne pas accepter un relevé recopié : faire refaire la mesure."
+    },
+    {
+     "type": "cours",
+     "fiche": "g4c",
+     "titre": "Méthode directe et consignation",
+     "minutes": 35,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Méthode directe et consignation",
+       "dc": "G4 · codes 4.06 · 4.07 · 4.08 · 4.09",
+       "competences": [
+        {
+         "code": "4.06",
+         "lib": "Mettre en œuvre une méthode directe en intervenant dans le circuit",
+         "officiel": "Contrôler l'étanchéité du système au moyen d'une des méthodes directes visées au règlement (CE) n° 1516/2007",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "4.07",
+         "lib": "Mettre en œuvre la méthode directe sans intervenir dans le circuit",
+         "officiel": "Contrôler l'étanchéité du système au moyen d'une des méthodes directes ne nécessitant pas d'intervenir dans le circuit de réfrigération et visées au règlement (CE) n° 1516/2007",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "E": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "4.08",
+         "lib": "Utiliser un détecteur électronique de fuites",
+         "officiel": "Utiliser un dispositif électronique de détection des fuites",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "E": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "4.09",
+         "lib": "Consigner le contrôle dans le registre",
+         "officiel": "Consigner les données dans le registre de l'équipement",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "E": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/balayage-detecteur.svg",
+       "alt": "La sonde du détecteur longe le raccord lentement ; une alerte se confirme par un second passage.",
+       "titre": "Méthode directe et consignation"
+      },
+      {
+       "type": "point",
+       "html": "La méthode directe <b>localise physiquement</b> la fuite. Pour la catégorie E, elle se pratique <b>sans accéder au circuit</b> : c'est le code <b>4.07</b>. Le code 4.06, qui suppose d'intervenir dans le circuit, n'est pas dans le champ de la catégorie E.",
+       "titre": "Méthode directe et consignation"
+      },
+      {
+       "type": "point",
+       "html": "En <b>A1</b> et <b>A2</b>, le code <b>4.06</b> s'ajoute : ce sont les méthodes directes qui supposent au contraire d'<b>intervenir dans le circuit</b>. On met alors le circuit en pression à l'<b>azote</b> pour faire apparaître la fuite à l'eau savonneuse, ou l'on introduit un <b>gaz traceur</b> ou un <b>traceur fluorescent</b>. Toutes ces méthodes sont celles du règlement <b>(CE) n° 1516/2007</b> : le choix dépend de l'installation, jamais de l'habitude.",
+       "titre": "Méthode directe et consignation"
+      },
+      {
+       "type": "point",
+       "html": "Le <b>détecteur électronique</b> réagit à la présence de molécules de fluide dans l'air : on balaie la sonde <b>lentement</b>, le long des points repérés à l'étape visuelle. L'<b>eau savonneuse</b> localise par les bulles ; le <b>traceur UV</b> révèle les fuites intermittentes ou d'accès difficile. Sensibilité et étalonnage : selon doc constructeur, à faire valider.",
+       "titre": "Méthode directe et consignation"
+      },
+      {
+       "type": "point",
+       "html": "Un contrôle non consigné n'a <b>aucune valeur réglementaire</b>. On note : date, méthode, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
+       "titre": "Méthode directe et consignation"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Une alerte se confirme",
+       "html": "Le détecteur qui siffle ne conclut rien tout seul. On <b>repasse</b>, ventilateurs à l'arrêt si possible — l'air brassé disperse le nuage de fluide et fait sonner l'appareil à côté de la vraie fuite. Deux passages concordants, sinon on ne conclut pas.",
+       "titre": "Méthode directe et consignation"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "L'instrument aussi se contrôle",
+       "html": "Un détecteur non étalonné donne une conformité qui ne vaut rien. Étalonnage périodique selon la réglementation applicable, et <b>vérification au gaz de référence avant utilisation</b>. Le registre doit pouvoir dire avec quel appareil le contrôle a été fait.",
+       "titre": "Méthode directe et consignation"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-q-4.09",
+       "dc": "G4",
+       "code": "4.09",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Un contrôle d'étanchéité vient de se terminer, sans fuite détectée. Que devez-vous faire ensuite ?",
+       "choix": [
+        "Consigner dans le registre la date, la méthode utilisée, les points contrôlés et le résultat",
+        "Attendre le prochain contrôle pour tout noter en une seule fois",
+        "Informer seulement le client à l'oral",
+        "Rien, puisqu'il n'y a pas de fuite à signaler"
+       ],
+       "bonne": 0,
+       "aide": "Un contrôle qui n'est écrit nulle part n'a, réglementairement, jamais eu lieu.",
+       "remed": {
+        "regle": "Toutes les données du contrôle doivent être consignées dans le registre de l'équipement : date, méthode utilisée, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
+        "pourquoi": "Un contrôle non consigné n'a aucune valeur réglementaire : le registre est la preuve écrite du suivi de l'installation.",
+        "piege": "Penser que l'absence de fuite dispense de consigner le contrôle dans le registre."
+       },
+       "remediation_vers": "g4c",
+       "explication": "Toutes les données du contrôle doivent être consignées dans le registre de l'équipement : date, méthode utilisée, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      },
+      {
+       "id": "q-g4-180",
+       "dc": "G4",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Après une intervention sur un circuit, quelle opération permet de vérifier l'étanchéité ?",
+       "choix": [
+        "Remettre en service immédiatement",
+        "Effectuer un test de pression avec un gaz inerte (azote) et rechercher les fuites",
+        "Ajouter du fluide frigorigène et observer",
+        "Attendre 24 heures sans rien faire"
+       ],
+       "bonne": 1,
+       "explication": "Après intervention, on effectue un TEST D'ÉTANCHÉITÉ avec de l'azote sous pression (environ 30 bars pour circuits HP). On recherche les fuites avec un détecteur de fuite ou de l'eau savonneuse.",
+       "aide": "Avant de charger en fluide frigorigène, il faut s'assurer que le circuit est étanche.",
+       "remed": {
+        "texte": "Après intervention, on effectue un TEST D'ÉTANCHÉITÉ avec de l'azote sous pression (environ 30 bars pour circuits HP). On recherche les fuites avec un détecteur de fuite ou de l'eau savonneuse. Si le circuit tient la pression pendant plusieurs heures, il est étanche."
+       },
+       "remediation_vers": "g4b",
+       "code": "4.06",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g4-v6_069",
+       "dc": "G4",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Un détecteur de fuites doit être calibré au minimum :",
+       "choix": [
+        "Tous les mois",
+        "Tous les 6 mois",
+        "Tous les ans",
+        "Tous les 5 ans"
+       ],
+       "bonne": 2,
+       "explication": "Tous les ans — La calibration annuelle est obligatoire pour garantir la fiabilité de la mesure.",
+       "aide": "C'est le même rythme que le contrôle d'étanchéité minimal.",
+       "remed": {
+        "texte": "La calibration annuelle est obligatoire pour garantir la fiabilité de la mesure."
+       },
+       "remediation_vers": "g4b",
+       "code": "4.08",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      },
+      {
+       "id": "q-g4-v6_072",
+       "dc": "G4",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "La détection par eau savonneuse est une méthode :",
+       "choix": [
+        "Directe et localisante",
+        "Indirecte et globale",
+        "Réglementairement suffisante seule",
+        "Utilisable uniquement en intérieur"
+       ],
+       "bonne": 0,
+       "explication": "Directe et localisante — L'eau savonneuse permet de localiser précisément les fuites par la formation de bulles. C'est un complément au détecteur électronique.",
+       "aide": "Les bulles apparaissent exactement à l'endroit de la fuite.",
+       "remed": {
+        "texte": "L'eau savonneuse permet de localiser précisément les fuites par la formation de bulles. C'est un complément au détecteur électronique."
+       },
+       "remediation_vers": "g4b",
+       "code": "4.07",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      }
+     ],
+     "notes": "Insister sur la frontière 4.06 / 4.07 avec un groupe E : elle définit le métier. « Je contrôle, je n'ouvre pas. » Faire manipuler le détecteur sur une fuite calibrée d'atelier et faire constater qu'un balayage trop rapide passe à côté. Terminer par le remplissage d'un registre réel — un contrôle non consigné n'existe pas."
+    },
+    {
+     "type": "exercice",
+     "fiche": "x4",
+     "titre": "Détective — le contrôle qui tourne mal",
+     "minutes": 25,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Détective — le contrôle qui tourne mal",
+       "dc": "G4 · mise en situation · parcours E",
+       "competences": [
+        {
+         "code": "4.02",
+         "lib": "Exploiter le registre pour orienter le contrôle",
+         "officiel": "Consulter le registre de l'équipement avant tout contrôle d'étanchéité et relever les informations pertinentes concernant des problèmes récurrents ou des parties problématiques du système nécessitant une attention particulière",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "E": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "4.08",
+         "lib": "Utiliser le détecteur dans de bonnes conditions",
+         "officiel": "Utiliser un dispositif électronique de détection des fuites",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "E": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "Contrôle périodique d'étanchéité chez un client. Le <b>registre</b> t'apprend qu'une fuite a été réparée il y a trois mois sur un raccord flare de la ligne liquide.",
+       "titre": "Détective — le contrôle qui tourne mal"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li>Le contrôle visuel ne montre <b>rien</b> sur le raccord réparé.</li><li>Ton détecteur électronique <b>sonne</b> en passant près du condenseur — ventilateur en marche.</li><li>Sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier.</li></ul>",
+       "titre": "Détective — le contrôle qui tourne mal"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Trois indices, trois réflexes",
+       "html": "Un point réparé se <b>recontrôle en priorité</b>, même s'il semble propre. Une alerte détecteur près d'un ventilateur en marche <b>se confirme</b> brassage arrêté. Et une incohérence plaque/registre se <b>signale</b> — elle change la table de saturation à utiliser.",
+       "titre": "Détective — le contrôle qui tourne mal"
+      }
+     ],
+     "questions": [],
+     "notes": "Exercice taillé pour le parcours E : tout se joue SANS ouvrir le circuit. Laisser débattre sur la proposition « resserrer tous les raccords » — elle paraît professionnelle mais c'est une intervention non justifiée, et sur un parcours E on ne touche pas au circuit. L'incohérence plaque/registre est le détail que presque personne ne relève : celui qui le voit a le réflexe métier."
+    },
+    {
+     "type": "cours",
+     "fiche": "p1",
+     "titre": "Le manifold — lire, brancher, ne pas polluer",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Le manifold — lire, brancher, ne pas polluer",
+       "dc": "Préparation pratique · codes 5.01 · 4.05",
+       "competences": [
+        {
+         "code": "5.01",
+         "lib": "Brancher et débrancher les flexibles du manifold avec un minimum d'émissions",
+         "officiel": "Connecter et déconnecter les jauges et lignes en produisant le minimum d'émissions",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "4.05",
+         "lib": "Lire les instruments portables et interpréter les valeurs mesurées",
+         "officiel": "Utiliser des instruments de mesure portables tels que des manomètres, des thermomètres et des multimètres pour mesurer les volts, ampères et ohms en appliquant des méthodes indirectes de contrôle de l'étanchéité, et interpréter les paramètres mesurés",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "E": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/photos/manifold-branche.jpg",
+       "alt": "Un manifold raccordé sur une installation, flexibles bleu et rouge en place.",
+       "titre": "Le manifold — lire, brancher, ne pas polluer"
+      },
+      {
+       "type": "point",
+       "html": "Le <b>manifold</b> (ensemble manométrique) réunit deux manomètres — <b>BP en bleu</b>, <b>HP en rouge</b> — et deux vannes, une par côté, qui commandent le passage vers le <b>flexible central jaune</b> : celui qui part vers la pompe à vide, la bouteille de récupération, ou une bouteille d'azote équipée de son <b>mano-détendeur</b>.",
+       "titre": "Le manifold — lire, brancher, ne pas polluer"
+      },
+      {
+       "type": "point",
+       "html": "Le manomètre affiche une <b>pression relative</b> : pour obtenir la pression absolue, on ajoute environ <b>1 bar</b>. La pince de température et le multimètre servent à la <b>méthode indirecte</b> de contrôle d'étanchéité : on compare les valeurs mesurées — surchauffe (plage normale <b>5 à 10 K</b>), sous-refroidissement (plage normale <b>4 à 8 K</b>), intensité absorbée — à celles attendues sur la fiche constructeur. Un écart qui se creuse alerte, sans avoir ouvert le circuit.",
+       "titre": "Le manifold — lire, brancher, ne pas polluer"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li>Consigner électriquement l'installation avant tout branchement.</li><li>Vérifier que les deux vannes du manifold sont fermées.</li><li>Visser le flexible bleu sur le raccord à obus côté basse pression — côté évaporateur, en bas de la croix du frigoriste.</li><li>Visser le flexible rouge sur le raccord à obus côté haute pression — côté condenseur et compresseur, en haut à droite.</li><li>Purger l'air de chaque flexible par un bref coup d'ouverture-fermeture — jamais un rejet prolongé.</li><li>Ouvrir les vannes une par une, jamais les deux ensemble, en surveillant les aiguilles.</li><li>Lire : pression BP, pression HP, température à la pince.</li><li>Refermer les deux vannes du manifold avant toute déconnexion.</li><li>Débrancher en purgeant chaque flexible — minimum d'émission, jamais de rejet volontaire.</li></ol>",
+       "titre": "Le manifold — lire, brancher, ne pas polluer"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Fermé avant, fermé après",
+       "html": "Les deux vannes du manifold restent <b>fermées</b> à chaque branchement et à chaque débranchement. Elles ne s'ouvrent qu'une fois les deux flexibles vissés et vérifiés, et se referment avant toute déconnexion. C'est ce qui évite le rejet au moment du geste.",
+       "titre": "Le manifold — lire, brancher, ne pas polluer"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Les deux vannes ouvertes en même temps",
+       "html": "Ouvrir BP et HP <b>ensemble</b> fait communiquer les deux côtés du circuit et fausse la lecture. On ouvre <b>une vanne à la fois</b>, on lit, puis l'autre.",
+       "titre": "Le manifold — lire, brancher, ne pas polluer"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g5-175",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
+       "choix": [
+        "Sur la ligne de refoulement",
+        "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
+        "Sur la ligne liquide",
+        "Sur le condenseur"
+       ],
+       "bonne": 1,
+       "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
+       "aide": "Le manomètre BP mesure la pression côté basse pression.",
+       "remed": {
+        "texte": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP)."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-176",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
+       "choix": [
+        "Sur la ligne d'aspiration",
+        "Sur la ligne de refoulement (entre compresseur et condenseur)",
+        "Sur l'évaporateur",
+        "Sur le détendeur"
+       ],
+       "bonne": 1,
+       "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
+       "aide": "Le manomètre HP mesure la pression côté haute pression.",
+       "remed": {
+        "texte": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP)."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g7-170",
+       "dc": "G7",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Un pressostat haute pression (HP) déclenche et arrête le compresseur. Quelle peut être la cause ?",
+       "choix": [
+        "Manque de fluide frigorigène",
+        "Condenseur encrassé, ventilateurs arrêtés, ou excès de charge",
+        "Évaporateur givré",
+        "Manque d'huile"
+       ],
+       "bonne": 1,
+       "explication": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le…",
+       "aide": "Le pressostat HP protège l'installation contre les pressions trop élevées côté condenseur.",
+       "remed": {
+        "texte": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le circuit, ou température ambiante trop élevée."
+       },
+       "remediation_vers": "g7",
+       "code": "4.05",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      }
+     ],
+     "notes": "Faire manipuler un manifold hors tension, hors fluide : vannes fermées, on visse, on vérifie, on ouvre une vanne à la fois. Faire dire tout haut « BP bleu, évaporateur, en bas » en pointant la croix du frigoriste au tableau, avant de brancher pour de vrai. Faire observer une purge courte de flexible plutôt qu'un rejet prolongé — c'est le geste qui distingue un professionnel."
+    },
+    {
+     "type": "cours",
+     "fiche": "p3",
+     "titre": "Pompe à vide et vacuomètre — monter, tirer, lire",
+     "minutes": 25,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire",
+       "dc": "Préparation pratique · codes 3.03 · 3.04",
+       "competences": [
+        {
+         "code": "3.03",
+         "lib": "Monter et mettre en service une pompe à vide",
+         "officiel": "Utiliser une pompe à vide",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "3.04",
+         "lib": "Évacuer l'air et l'humidité en tirant au vide, selon la pratique habituelle",
+         "officiel": "Faire le vide dans le système pour évacuer l'air et l'humidité selon la pratique habituelle",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/photos/pompe-a-vide.png",
+       "alt": "Une pompe à vide d atelier.",
+       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
+      },
+      {
+       "type": "point",
+       "html": "Le <b>tirage au vide</b> retire l'air et l'humidité du circuit avant charge — ce n'est pas du fluide qu'on évacue ici, mais de l'air et de la vapeur d'eau : la question du rejet à l'atmosphère ne se pose pas à ce stade. La <b>pompe à vide</b> aspire ; le <b>vacuomètre</b> électronique indique jusqu'où on est descendu, bien plus finement qu'un manomètre.",
+       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
+      },
+      {
+       "type": "point",
+       "html": "L'ordre du neuvième geste protège le circuit : si la pompe s'arrête avant que la vanne soit fermée, l'huile de la pompe peut être aspirée en sens inverse vers le circuit qu'on vient de mettre sous vide.",
+       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li>Consigner électriquement l'installation avant tout montage.</li><li>Vérifier le niveau d'huile de la pompe avant de la mettre en service.</li><li>Fermer les deux vannes du manifold.</li><li>Visser le vacuomètre sur le raccord prévu, du côté du circuit — jamais collé directement à la pompe : une lecture prise trop près de la pompe ne reflète pas le vide réel du circuit.</li><li>Brancher la pompe sur le flexible central du manifold.</li><li>Ouvrir les deux vannes du manifold pour tirer sur l'ensemble du circuit.</li><li>Mettre la pompe en marche.</li><li>Observer l'aiguille du vacuomètre descendre.</li><li>Une fois le vide stabilisé — valeur cible selon la fiche constructeur — fermer d'abord la vanne côté circuit, puis seulement ensuite arrêter la pompe.</li><li>Surveiller si le vide remonte, selon la pratique habituelle : une remontée signale une fuite ou de l'humidité résiduelle.</li></ol>",
+       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Isoler avant d'arrêter",
+       "html": "On ferme toujours la vanne côté circuit <b>avant</b> d'arrêter la pompe, jamais l'inverse. C'est l'ordre qui protège le circuit d'un retour d'huile.",
+       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Vacuomètre collé à la pompe",
+       "html": "Une lecture prise juste à la sortie de la pompe ne dit rien du vide réel dans le circuit. Le vacuomètre se monte du <b>côté circuit</b>.",
+       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g3-v6_058",
+       "dc": "G3",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le tirage au vide a pour but principal d'éliminer :",
+       "choix": [
+        "L'huile usagée",
+        "L'air et l'humidité du circuit",
+        "Les particules métalliques",
+        "Le fluide résiduel"
+       ],
+       "bonne": 1,
+       "explication": "L'air et l'humidité — Le tirage au vide évacue l'air (incondensable qui augmente la HP) et l'humidité (qui forme des acides avec l'huile POE).",
+       "aide": "L'air et l'eau sont les deux ennemis du circuit frigorifique.",
+       "remed": {
+        "texte": "Le tirage au vide évacue l'air (incondensable qui augmente la HP) et l'humidité (qui forme des acides avec l'huile POE)."
+       },
+       "remediation_vers": "g3",
+       "code": "3.04",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g3-v6_159",
+       "dc": "G3",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "La pompe à vide ne doit jamais être utilisée pour :",
+       "choix": [
+        "Évacuer l'air du circuit",
+        "Évacuer l'humidité",
+        "Récupérer du fluide frigorigène",
+        "Atteindre le vide requis"
+       ],
+       "bonne": 2,
+       "explication": "Récupérer du fluide — La pompe à vide n'est pas conçue pour pomper du fluide (ça l'endommage). La récupération se fait avec un groupe de récupération spécifique.",
+       "aide": "Pompe à vide ≠ groupe de récupération. Deux outils différents.",
+       "remed": {
+        "texte": "La pompe à vide n'est pas conçue pour pomper du fluide (ça l'endommage). La récupération se fait avec un groupe de récupération spécifique."
+       },
+       "remediation_vers": "g3",
+       "code": "3.03",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g3-v6_059",
+       "dc": "G3",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Si la pression remonte de plus de 100 µm pendant le test de maintien, cela indique :",
+       "choix": [
+        "Le circuit est étanche",
+        "Une fuite ou de l'humidité résiduelle",
+        "Le vide est suffisant",
+        "La pompe est trop puissante"
+       ],
+       "bonne": 1,
+       "explication": "Fuite ou humidité résiduelle — Une remontée > 100 µm après fermeture de la vanne indique soit une fuite, soit de l'humidité qui s'évapore.",
+       "aide": "Si le vide est bon, la pression doit rester stable.",
+       "remed": {
+        "texte": "Une remontée > 100 µm après fermeture de la vanne indique soit une fuite, soit de l'humidité qui s'évapore."
+       },
+       "remediation_vers": "g3",
+       "code": "3.04",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Faire monter le montage sur un poste d'essai, jamais en première fois sur une installation cliente. Faire vérifier l'huile de la pompe avant de démarrer — un réflexe qu'on saute facilement. Faire dire tout haut « isoler, puis arrêter » avant de le faire réellement : c'est l'ordre qui compte, pas la vitesse. Ne donner aucune valeur de vide cible ni de durée : renvoyer systématiquement à la fiche constructeur du modèle utilisé en atelier."
+    },
+    {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "Épreuve d'étanchéité à l'azote · tirage au vide · recherche de fuite au détecteur",
+     "minutes": 95,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "Épreuve d'étanchéité à l'azote · tirage au vide · recherche de fuite au détecteur",
+       "minutes": 95
+      }
+     ]
+    },
+    {
+     "type": "cours",
+     "fiche": "g5a",
+     "titre": "Récupérer sans émettre",
+     "minutes": 30,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Récupérer sans émettre",
+       "dc": "G5 · codes 5.01 → 5.04",
+       "competences": [
+        {
+         "code": "5.01",
+         "lib": "Connecter et déconnecter avec un minimum d'émissions",
+         "officiel": "Connecter et déconnecter les jauges et lignes en produisant le minimum d'émissions",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.02",
+         "lib": "Vider et remplir un cylindre, en phase liquide et gazeuse",
+         "officiel": "Vider et remplir un cylindre de réfrigérant à l'état liquide et à l'état gazeux",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.03",
+         "lib": "Utiliser un dispositif de récupération",
+         "officiel": "Utiliser un dispositif de récupération des réfrigérants et connecter et déconnecter ce dispositif en produisant le minimum d'émissions",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.04",
+         "lib": "Vidanger l'huile contaminée",
+         "officiel": "Vider l'huile contaminée par le réfrigérant d'un système",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/recuperation.svg",
+       "alt": "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.",
+       "titre": "Récupérer sans émettre"
+      },
+      {
+       "type": "point",
+       "html": "Chaque connexion et chaque déconnexion est un <b>point de fuite</b> : le geste est lent, contrôlé, flexibles purgés. Avant de récupérer, on <b>arrête et on isole</b> le système.",
+       "titre": "Récupérer sans émettre"
+      },
+      {
+       "type": "point",
+       "html": "Le <b>groupe de récupération</b> transfère le fluide vers un cylindre prévu pour, en phase gazeuse ou liquide selon la situation. Le cylindre respecte un <b>taux de remplissage maximal</b> — jamais rempli à ras : le liquide se dilate avec la température, et un cylindre plein est un danger. On <b>pèse avant</b>, sinon on ne saura jamais combien on a réellement récupéré.",
+       "titre": "Récupérer sans émettre"
+      },
+      {
+       "type": "point",
+       "html": "L'<b>huile</b> du compresseur est contaminée par nature : elle se récupère à part, comme un déchet dangereux. Elle ne se dégaze pas, elle ne se mélange pas au fluide.",
+       "titre": "Récupérer sans émettre"
+      },
+      {
+       "type": "point",
+       "html": "Une fois le fluide récupéré, il reste un dernier geste : <b>vidanger l'huile</b> du compresseur. Cette huile garde du <b>fluide dissous</b> dedans. Ce fluide dissous continue à <b>dégazer</b> : il relâche lentement des vapeurs, même une fois l'huile sortie de la machine. On vide l'huile dans un <b>récipient fermé et étiqueté</b>, jamais dans un bidon ouvert. Sinon, ces vapeurs s'échappent : c'est une émission de plus, exactement comme une fuite.",
+       "titre": "Récupérer sans émettre"
+      },
+      {
+       "type": "point",
+       "html": "On <b>note la quantité</b> d'huile vidangée, comme on pèse le fluide récupéré : sans cette trace, personne ne peut vérifier que rien n'a été perdu en route. L'huile contaminée part ensuite en <b>déchet dangereux</b>, avec son <b>bordereau</b> — le document qui suit le déchet jusqu'à son traitement final.",
+       "titre": "Récupérer sans émettre"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Récupéré, recyclé, régénéré",
+       "html": "<b>Récupéré</b> : sorti de la machine — c'est un déchet tant qu'il n'a pas été traité.<br><b>Recyclé</b> : nettoyé sommairement — réemploi limité, typiquement sur la même installation ou le même exploitant.<br><b>Régénéré</b> : ramené aux spécifications d'un fluide neuf par une filière agréée — réutilisable comme du neuf.",
+       "titre": "Récupérer sans émettre"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Ne jamais mélanger",
+       "html": "Deux fluides différents dans le même cylindre, et le contenu devient <b>impossible à recycler ou à régénérer</b> : il part en destruction, aux frais de l'entreprise. Un cylindre, un fluide, une étiquette.",
+       "titre": "Récupérer sans émettre"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Vider l'huile : le bon ordre",
+       "html": "<p>On vide l'huile <b>après</b> avoir récupéré le fluide, jamais avant : sinon on relâche dans l'air du fluide encore dissous dedans, sans même le mesurer. Récipient fermé et étiqueté, quantité notée, déchet dangereux avec bordereau — c'est le geste complet de la vidange.</p>",
+       "titre": "Récupérer sans émettre"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g5-135",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Lors de la récupération, l'huile frigorifique doit être :",
+       "choix": [
+        "Laissée dans le compresseur",
+        "Récupérée séparément",
+        "Mélangée au fluide",
+        "Dégazée à l'atmosphère"
+       ],
+       "bonne": 1,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g5a",
+       "code": "5.04",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-141",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Avant de récupérer le fluide, il faut :",
+       "choix": [
+        "Ouvrir immédiatement le circuit",
+        "Arrêter et isoler le système",
+        "Chauffer l'installation",
+        "Vidanger l'huile"
+       ],
+       "bonne": 1,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g5a",
+       "code": "5.03",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-175",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
+       "choix": [
+        "Sur la ligne de refoulement",
+        "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
+        "Sur la ligne liquide",
+        "Sur le condenseur"
+       ],
+       "bonne": 1,
+       "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
+       "aide": "Le manomètre BP mesure la pression côté basse pression.",
+       "remed": {
+        "texte": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP)."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-176",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
+       "choix": [
+        "Sur la ligne d'aspiration",
+        "Sur la ligne de refoulement (entre compresseur et condenseur)",
+        "Sur l'évaporateur",
+        "Sur le détendeur"
+       ],
+       "bonne": 1,
+       "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
+       "aide": "Le manomètre HP mesure la pression côté haute pression.",
+       "remed": {
+        "texte": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP)."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      }
+     ],
+     "notes": "Cœur du parcours D : chaque stagiaire branche, purge et pèse lui-même, sans exception. L'anecdote qui marque mieux qu'un discours : un cylindre trop rempli laissé au soleil. Relier systématiquement à G2 — un geste de récupération soigné est un geste écologique, pas une contrainte administrative. Faire chercher sur le log p-h si le fluide observé est sous-refroidi, saturé ou surchauffé avant de donner la réponse."
+    },
+    {
+     "type": "cours",
+     "fiche": "p5",
+     "titre": "L'ordre des vannes — la chorégraphie de l'intervention",
+     "minutes": 25,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention",
+       "dc": "Préparation pratique · codes 5.01 · 5.02",
+       "competences": [
+        {
+         "code": "5.01",
+         "lib": "Connecter et déconnecter avec un minimum d'émissions",
+         "officiel": "Connecter et déconnecter les jauges et lignes en produisant le minimum d'émissions",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.02",
+         "lib": "Vider et remplir un cylindre, en phase liquide et gazeuse",
+         "officiel": "Vider et remplir un cylindre de réfrigérant à l'état liquide et à l'état gazeux",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/recuperation.svg",
+       "alt": "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance — chaque flexible débranché suit le même ordre : fermer, stabiliser, desserrer lentement.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "point",
+       "html": "Un manifold, ce sont des <b>vannes</b>. Les ouvrir et les fermer dans le bon ordre n'est pas un détail. Un mauvais ordre peut lâcher un nuage de fluide au visage, ou libérer un flexible sous pression.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "point",
+       "html": "À la <b>connexion</b>, l'ordre est simple : vannes fermées, on raccorde les flexibles, on chasse l'air resté à l'intérieur par une ouverture brève, puis on ouvre progressivement.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "point",
+       "html": "C'est à la <b>déconnexion</b> que l'ordre compte le plus. Il ne change jamais :",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "point",
+       "html": "La même logique s'applique pour <b>vider ou remplir un cylindre</b>, en phase liquide comme en phase gazeuse. Une bouteille de réfrigérant a une prise dédiée à chaque phase, ou s'utilise dans un sens précis pour tirer du liquide. On suit toujours le marquage de la bouteille, jamais un raccord forcé.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li><b>Fermer</b> la vanne, côté circuit puis côté appareil.</li><li><b>Laisser la pression se stabiliser.</b> Observer le manomètre. Tant que l'aiguille bouge encore, on attend.</li><li><b>Desserrer lentement</b> le raccord du flexible, à peine, par petites touches. On écoute. On continue. Jamais d'un coup.</li><li>S'il reste du fluide <b>emprisonné dans le flexible</b>, le récupérer par l'appareil déjà branché. Jamais le laisser partir à l'air libre.</li><li>Déconnecter seulement quand la pression est retombée et confirmée.</li></ol>",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "La chorégraphie qui ne change jamais",
+       "html": "<b>Fermer → laisser stabiliser → desserrer lentement.</b> Ce triptyque revient à chaque déconnexion, quel que soit l'appareil branché. C'est le geste central de tout ce module : une fois automatique, il protège dans toutes les situations.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "Desserrer un raccord <b>encore sous pression</b>, d'un coup. Purger le résidu d'un flexible <b>à l'air libre</b> pour aller plus vite. Chaque émission compte, même petite : l'objectif est toujours le <b>minimum d'émission</b>, jamais zéro effort.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g5-175",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
+       "choix": [
+        "Sur la ligne de refoulement",
+        "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
+        "Sur la ligne liquide",
+        "Sur le condenseur"
+       ],
+       "bonne": 1,
+       "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
+       "aide": "Le manomètre BP mesure la pression côté basse pression.",
+       "remed": {
+        "texte": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP)."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-176",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
+       "choix": [
+        "Sur la ligne d'aspiration",
+        "Sur la ligne de refoulement (entre compresseur et condenseur)",
+        "Sur l'évaporateur",
+        "Sur le détendeur"
+       ],
+       "bonne": 1,
+       "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
+       "aide": "Le manomètre HP mesure la pression côté haute pression.",
+       "remed": {
+        "texte": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP)."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-v6_063",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le taux de remplissage maximal d'une bouteille de récupération est de :",
+       "choix": [
+        "60%",
+        "70%",
+        "80%",
+        "100%"
+       ],
+       "bonne": 2,
+       "explication": "80% — Max 80% du volume pour laisser de l'espace à la dilatation thermique. Un remplissage excessif est dangereux (explosion).",
+       "aide": "Il faut toujours laisser un espace de sécurité pour la dilatation.",
+       "remed": {
+        "texte": "Max 80% du volume pour laisser de l'espace à la dilatation thermique. Un remplissage excessif est dangereux (explosion)."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.02",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      }
+     ],
+     "notes": "La fiche centrale du module : y passer le temps qu'il faut. Faire manipuler un manifold et des flexibles réels (azote ou circuit vide) et faire répéter le triptyque fermer / stabiliser / desserrer jusqu'à ce que le geste soit lent par réflexe, pas par consigne. Observer AVANT d'expliquer : laisser un stagiaire desserrer à sa vitesse naturelle une première fois — la plupart vont trop vite, et c'est ce constat, pas un discours, qui doit amener la correction. Corriger immédiatement un geste brusque, ne jamais laisser aller au bout : la sécurité s'impose, elle ne se découvre pas par la sensation d'un jet résiduel."
+    },
+    {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "Récupération du fluide sur machine réelle, station raccordée dans l'ordre",
+     "minutes": 65,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "Récupération du fluide sur machine réelle, station raccordée dans l'ordre",
+       "minutes": 65
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "libelle": null,
+   "titre": "Peser, charger, puis entrer dans les quatre composants",
+   "intention": "La charge se joue au gramme près, et elle se trace. L'après-midi ouvre le module le plus exigeant : les quatre composants s'apprennent tous, puisqu'un seul sera tiré au sort le jour de l'épreuve — et que le candidat ne saura pas lequel.",
+   "sequences": [
+    {
+     "type": "cours",
+     "fiche": "s2",
+     "titre": "Le froid brûle — projections et gelures",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Le froid brûle — projections et gelures",
+       "dc": "Sécurité · codes 12.02",
+       "competences": [
+        {
+         "code": "12.02",
+         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, ventilation, EPI.",
+         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-projection.svg",
+       "alt": "Le liquide jaillit dans l'axe du raccord : on se place hors de cet axe, on vérifie au manomètre que la pression est nulle, et on porte gants et lunettes.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "point",
+       "html": "Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "point",
+       "html": "Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui. Un contact avec de l'ammoniac liquide ajoute une <b>brûlure chimique</b> à la brûlure froide : ce fluide n'appartient pas à la même famille que les fluides fluorés, et ne se comporte pas comme eux.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "point",
+       "html": "Le cas type : vous déconnectez un flexible de <b>manifold</b> (l'appareil à manomètres) en pensant le tronçon vide. La vanne n'a pas été vérifiée, le manomètre pas relu. Le liquide restant jaillit au desserrage — dans l'axe du raccord, comme sur le schéma.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ol><li>Mettez vos <b>EPI</b> (équipements de protection individuelle) — ici, gants et lunettes — avant toute manipulation d'un circuit sous pression.</li><li><b>Vérifiez au manomètre</b> que la pression est nulle, et que la vanne est fermée, avant de débrancher un flexible ou de desserrer un raccord.</li><li><b>Desserrez progressivement</b>, jamais d'un coup, et restez hors de la trajectoire d'un éventuel jet.</li><li>En cas de projection sur la peau ou les yeux : rincez sans frotter, et consultez. La conduite à tenir précise figure sur la <b>FDS</b> (fiche de données de sécurité) du fluide utilisé.</li></ol>",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Débrancher un flexible ou desserrer un raccord sous pression <b>sans vérifier au manomètre</b> qu'il est vide, ou le faire sans gants ni lunettes.</p><p>Conséquence : projection de liquide qui gèle la peau ou les yeux au contact. Risque de lésion oculaire grave.</p>",
+       "titre": "Le froid brûle — projections et gelures"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl2-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
+       "choix": [
+        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+        "La température minimale d'inflammation du gaz",
+        "La pression maximale admissible dans la bouteille",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+       ],
+       "bonne": 0,
+       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
+       "remed": {
+        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
+        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
+       },
+       "remediation_vers": "cl2",
+       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-cl4-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+       "choix": [
+        "Au plafond, comme un détecteur de fumée",
+        "En partie basse, là où le CO₂ s'accumule",
+        "À l'extérieur du local uniquement",
+        "Peu importe, le gaz se répartit uniformément"
+       ],
+       "bonne": 1,
+       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+       "remed": {
+        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+       },
+       "remediation_vers": "cl4",
+       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Faites observer un flexible de manifold et ses raccords rapides, et faites lire un manomètre avant de mimer un débranchement. Faites manipuler des gants de protection au froid et des lunettes ; faites justifier l'ordre dans lequel on les enfile avant d'intervenir. Racontez un cas concret de projection lors d'un débranchement trop rapide, pour ancrer le réflexe manomètre-avant-tout. Rappelez que la conduite à tenir en cas de projection se lit sur la FDS du fluide utilisé sur le chantier."
+    },
+    {
+     "type": "cours",
+     "fiche": "g5b",
+     "titre": "Peser, charger, stocker, tracer",
+     "minutes": 35,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Peser, charger, stocker, tracer",
+       "dc": "G5 · codes 5.05 → 5.09",
+       "competences": [
+        {
+         "code": "5.05",
+         "lib": "Déterminer l'état du fluide et charger sans perte",
+         "officiel": "Déterminer l'état (liquide, gazeux) et les conditions (sous-refroidi, saturé ou surchauffé) d'un réfrigérant avant tout remplissage afin de choisir la méthode et le volume de remplissage les plus adaptés. Remplir le système de réfrigérant (à l'état liquide et gazeux) sans provoquer de pertes",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.06",
+         "lib": "Choisir la balance adaptée et peser",
+         "officiel": "Choisir le bon type de balance et l'utiliser pour peser le réfrigérant",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.07",
+         "lib": "Consigner l'opération dans le registre",
+         "officiel": "Consigner dans le registre de l'équipement toutes les informations pertinentes concernant le réfrigérant récupéré ou ajouté",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.08",
+         "lib": "Appliquer les prescriptions de gestion, stockage et transport",
+         "officiel": "Connaître les prescriptions et les procédures de gestion, de réutilisation, de récupération, de stockage et de transport des réfrigérants et huiles fluorés, y compris lorsqu'ils sont contaminés",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.09",
+         "lib": "Gérer les hydrocarbures et leurs huiles, y compris contaminés",
+         "officiel": "Connaître les prescriptions et les procédures de gestion, de remplissage, de récupération, de stockage et de transport des hydrocarbures et des huiles, y compris lorsqu'ils sont contaminés, ainsi que d'installation d'équipements et de systèmes tributaires des hydrocarbures",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/recuperation.svg",
+       "alt": "Rappel du montage : la bouteille se pèse avant, ne se remplit jamais à ras, ne mélange jamais deux fluides.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "point",
+       "html": "Pour charger, on détermine d'abord l'<b>état du fluide</b> et la <b>quantité prévue</b> (plaque signalétique, doc constructeur). La charge se contrôle à la <b>balance</b>, jamais « au manomètre » : le manomètre dit comment la machine se comporte, la balance dit combien on a mis.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "point",
+       "html": "Cas particulier des <b>mélanges zéotropes</b> : ils se chargent en <b>phase liquide</b>, faute de quoi les composants se séparent et la composition du circuit dérive.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "point",
+       "html": "L'<b>huile</b> suit le fluide, et elle en dépend. Les anciens fluides chlorés travaillaient avec de l'huile <b>minérale</b> ; les HFC et les HFO demandent une huile de synthèse, le plus souvent <b>polyolester (POE)</b>. Les deux ne se mélangent pas : sur un changement de fluide, l'huile se change aussi — c'est ce qui distingue un <b>retrofit</b> d'un simple drop-in. La POE <b>absorbe l'humidité de l'air</b> très vite : bidon refermé aussitôt, circuit jamais laissé ouvert. Le type exact d'huile se lit sur la <b>plaque ou la doc constructeur</b>, jamais au jugé.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "point",
+       "html": "Une huile retirée d'un circuit est <b>contaminée</b> : elle contient du fluide dissous. Elle ne se jette pas, elle part en <b>déchet dangereux</b> vers une filière agréée, avec son bordereau. Pour les <b>hydrocarbures</b>, fluide et huile sont en plus <b>inflammables</b> : récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, transport selon la réglementation applicable et la fiche de données de sécurité.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "point",
+       "html": "Le <b>registre</b> est la preuve légale de toute opération sur le fluide : quantité ajoutée, quantité récupérée, date, intervenant. Le rejet volontaire à l'atmosphère est strictement interdit et sanctionné.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "point",
+       "html": "Avant de charger, on regarde aussi dans quelle <b>condition</b> se trouve le fluide, en plus de savoir s'il est liquide ou gazeux. À une pression donnée, le fluide peut être <b>saturé</b> : le liquide et la vapeur sont présents ensemble, à la température de changement d'état. Il peut être <b>sous-refroidi</b> : c'est un liquide plus froid que sa température de saturation, donc sans aucune vapeur mélangée. Il peut être <b>surchauffé</b> : c'est une vapeur plus chaude que sa température de saturation, donc sans aucune goutte de liquide. Cette condition guide la méthode de remplissage : on ne prélève pas de la même façon un liquide sous-refroidi, pris en bas de la bouteille, et une vapeur surchauffée, prise en haut.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "point",
+       "html": "Un fluide récupéré n'est pas forcément perdu : il a trois devenirs possibles. La <b>réutilisation</b> (ou réemploi) : le fluide récupéré est rechargé tel quel, sans retraitement, dans la machine d'où il vient, chez le même détenteur (celui qui possède ou utilise l'installation). Le <b>recyclage</b> : le fluide subit un nettoyage de base, comme une filtration et un séchage. La <b>régénération</b> : un retraitement complet, réalisé en filière spécialisée, qui redonne au fluide les caractéristiques du fluide neuf. Un fluide régénéré <b>s'achète</b> : on ne le régénère jamais soi-même à l'atelier.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "La balance prime",
+       "html": "On pèse <b>avant</b> et <b>après</b>. Sans pesée initiale, la quantité récupérée ou ajoutée n'est qu'une estimation — et une estimation ne se consigne pas dans un registre.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Stockage et transport",
+       "html": "Cylindres arrimés, debout, étiquetés, à l'abri de la chaleur ; les fluides <b>inflammables</b> (hydrocarbures, A2L) obéissent en plus aux règles de leur classe. Conditions détaillées : selon la réglementation applicable et la fiche de données de sécurité, à faire valider.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Réemploi n'est pas retraitement",
+       "html": "On pourrait croire qu'un fluide récupéré doit toujours passer par le recyclage ou la régénération avant de resservir. C'est faux : réutiliser le fluide récupéré sur <b>sa machine d'origine</b>, chez le <b>même détenteur</b> (celui qui possède ou utilise cette machine), est légal et ne demande aucun retraitement.",
+       "titre": "Peser, charger, stocker, tracer"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-q-5.09",
+       "dc": "G5",
+       "code": "5.09",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le fluide et l'huile d'une installation aux hydrocarbures ont un point commun qui impose des précautions particulières de stockage et de transport. Lequel ?",
+       "choix": [
+        "Ils sont inflammables",
+        "Ils sont toxiques par contact",
+        "Ils sont sous une pression bien plus élevée que les autres fluides",
+        "Ils sont incompatibles avec tout récipient métallique"
+       ],
+       "bonne": 0,
+       "aide": "Relis ce qui distingue les hydrocarbures des autres fluides frigorigènes du point de vue du risque.",
+       "remed": {
+        "regle": "Pour les hydrocarbures, le fluide ET l'huile sont inflammables : ils se stockent et se transportent dans des récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, selon la réglementation applicable et la fiche de données de sécurité.",
+        "pourquoi": "Un hydrocarbure qui fuit près d'une flamme ou d'une étincelle peut s'enflammer, contrairement à la plupart des autres fluides frigorigènes courants. C'est ce risque supplémentaire qui justifie des règles de gestion, de stockage et de transport renforcées.",
+        "piege": "Confondre le risque des hydrocarbures avec un risque de toxicité ou de pression : le danger propre aux hydrocarbures est l'inflammabilité, pas un poison ni une surpression particulière."
+       },
+       "remediation_vers": "g5b",
+       "explication": "Pour les hydrocarbures, le fluide ET l'huile sont inflammables : ils se stockent et se transportent dans des récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, selon la réglementation applicable et la fiche de données de sécurité.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-128",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Lors de la mise hors service, le fluide doit être récupéré :",
+       "choix": [
+        "Uniquement si > 5 Teq CO2",
+        "Pour toute quantité",
+        "Seulement si > 2 kg",
+        "Facultatif si hermétique"
+       ],
+       "bonne": 1,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g5a",
+       "code": "5.08",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-133",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Les équipements contenant des fluides en fin de vie relèvent de la filière :",
+       "choix": [
+        "Déchets ménagers",
+        "DEEE (Déchets d'Équipements Électriques et Électroniques)",
+        "Déchets dangereux uniquement",
+        "Recyclage ordinaire"
+       ],
+       "bonne": 1,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g5a",
+       "code": "5.08",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-143",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une bouteille de fluide récupéré doit être :",
+       "choix": [
+        "Stockée couchée",
+        "Stockée debout",
+        "Stockée comme on veut",
+        "Stockée la tête en bas"
+       ],
+       "bonne": 1,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g5a",
+       "code": "5.08",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-147",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Un frigoriste peut-il détruire lui-même le fluide récupéré ?",
+       "choix": [
+        "Oui, en le brûlant",
+        "Oui, en le diluant",
+        "Non, uniquement centre agréé",
+        "Oui, en le dégazant"
+       ],
+       "bonne": 2,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g5a",
+       "code": "5.08",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      }
+     ],
+     "notes": "Le geste à faire répéter : peser AVANT. Beaucoup de stagiaires pèsent après et déduisent — c'est faux dès qu'il reste du fluide dans le cylindre. Sur un groupe A2, insister sur la précision : sur une charge de 800 g, 50 g d'écart changent le comportement de la machine. Faire remplir un registre à chaque manipulation d'atelier, même en exercice."
+    },
+    {
+     "type": "cours",
+     "fiche": "p2",
+     "titre": "La station de récupération — ce que c'est, comment on la branche",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "La station de récupération — ce que c'est, comment on la branche",
+       "dc": "Préparation pratique · codes 5.03",
+       "competences": [
+        {
+         "code": "5.03",
+         "lib": "Brancher et débrancher un groupe de récupération avec un minimum d'émissions",
+         "officiel": "Utiliser un dispositif de récupération des réfrigérants et connecter et déconnecter ce dispositif en produisant le minimum d'émissions",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/recuperation.svg",
+       "alt": "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.",
+       "titre": "La station de récupération — ce que c'est, comment on la branche"
+      },
+      {
+       "type": "point",
+       "html": "La <b>station de récupération</b> est un appareil autonome : elle aspire le fluide de l'installation et le transfère vers un <b>cylindre dédié</b>, posé sur une balance. Avant tout branchement, l'installation est <b>à l'arrêt et isolée</b>.",
+       "titre": "La station de récupération — ce que c'est, comment on la branche"
+      },
+      {
+       "type": "point",
+       "html": "Le cylindre respecte le <b>taux de remplissage maximal</b> indiqué sur son étiquette : jamais rempli à ras. Le liquide se dilate avec la température — un cylindre trop plein est un danger.",
+       "titre": "La station de récupération — ce que c'est, comment on la branche"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li>Consigner électriquement l'installation à traiter.</li><li>Vérifier l'étiquette du cylindre de récupération : le fluide indiqué doit être exactement celui de l'installation.</li><li>Poser le cylindre sur la balance et noter la masse de départ, avant tout branchement.</li><li>Vannes du groupe fermées, brancher le flexible d'entrée sur le circuit et le flexible de sortie sur le cylindre.</li><li>Mettre le groupe sous tension et le régler selon la fiche du fabricant.</li><li>Ouvrir les vannes dans l'ordre indiqué par le fabricant ; surveiller la pression et la masse affichée.</li><li>En fin de transfert, purger les flexibles avant de débrancher — minimum d'émission.</li><li>Repeser le cylindre, noter la masse récupérée, consigner au registre.</li></ol>",
+       "titre": "La station de récupération — ce que c'est, comment on la branche"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Peser avant, peser après",
+       "html": "La différence entre la masse de départ et la masse d'arrivée est la <b>seule preuve fiable</b> de ce qui a été récupéré. Sans pesée avant, ce nombre n'existe pas.",
+       "titre": "La station de récupération — ce que c'est, comment on la branche"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Un cylindre, un seul fluide",
+       "html": "Une étiquette qui ne correspond pas exactement au fluide de l'installation : on ne branche pas. Mélanger deux fluides rend le contenu du cylindre inutilisable pour le recyclage ou la régénération.",
+       "titre": "La station de récupération — ce que c'est, comment on la branche"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g5-141",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Avant de récupérer le fluide, il faut :",
+       "choix": [
+        "Ouvrir immédiatement le circuit",
+        "Arrêter et isoler le système",
+        "Chauffer l'installation",
+        "Vidanger l'huile"
+       ],
+       "bonne": 1,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g5a",
+       "code": "5.03",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-179",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Avant d'ouvrir un circuit frigorifique pour une intervention, quelle opération est obligatoire ?",
+       "choix": [
+        "Démarrer le compresseur",
+        "Récupérer le fluide frigorigène dans un récipient adapté",
+        "Ouvrir toutes les vannes",
+        "Ajouter de l'huile"
+       ],
+       "bonne": 1,
+       "explication": "Avant toute ouverture du circuit, il est OBLIGATOIRE de RÉCUPÉRER le fluide frigorigène avec une station de récupération certifiée. C'est une obligation légale (F-Gas) et environnementale.",
+       "aide": "Pour des raisons légales et environnementales, le fluide doit être récupéré.",
+       "remed": {
+        "texte": "Avant toute ouverture du circuit, il est OBLIGATOIRE de RÉCUPÉRER le fluide frigorigène avec une station de récupération certifiée. C'est une obligation légale (F-Gas) et environnementale. Ne jamais purger le fluide dans l'atmosphère !"
+       },
+       "remediation_vers": "g5a",
+       "code": "5.03",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      }
+     ],
+     "notes": "Faire manipuler le groupe hors fluide : reconnaître le cordon secteur, le flexible d'entrée, le flexible de sortie, l'ordre des vannes indiqué sur l'appareil. Insister sur la pesée, avant ET après — c'est la seule preuve de ce qui a été récupéré. Faire vérifier l'étiquette du cylindre à voix haute avant chaque branchement, jamais de mémoire."
+    },
+    {
+     "type": "cours",
+     "fiche": "p6",
+     "titre": "La balance et la pesée — avant, après, ce qu'on note",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "La balance et la pesée — avant, après, ce qu'on note",
+       "dc": "Préparation pratique · codes 5.05 · 5.06",
+       "competences": [
+        {
+         "code": "5.05",
+         "lib": "Déterminer l'état du fluide et charger sans perte",
+         "officiel": "Déterminer l'état (liquide, gazeux) et les conditions (sous-refroidi, saturé ou surchauffé) d'un réfrigérant avant tout remplissage afin de choisir la méthode et le volume de remplissage les plus adaptés. Remplir le système de réfrigérant (à l'état liquide et gazeux) sans provoquer de pertes",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.06",
+         "lib": "Choisir la balance adaptée et peser",
+         "officiel": "Choisir le bon type de balance et l'utiliser pour peser le réfrigérant",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/photos/balance.jpg",
+       "alt": "Une balance électronique de charge avec une bouteille de fluide posée dessus.",
+       "titre": "La balance et la pesée — avant, après, ce qu'on note"
+      },
+      {
+       "type": "point",
+       "html": "La quantité de fluide qui entre ou sort d'un circuit se lit sur une <b>balance</b>, jamais sur un manomètre. Le manomètre dit comment la machine se comporte. La balance dit <b>combien</b> il y a de fluide.",
+       "titre": "La balance et la pesée — avant, après, ce qu'on note"
+      },
+      {
+       "type": "point",
+       "html": "Avant toute pesée, on choisit une balance <b>adaptée</b> à la quantité attendue. On la pose à plat, stable, vérifiée. Une balance douteuse ne sert à rien : son résultat n'est pas fiable.",
+       "titre": "La balance et la pesée — avant, après, ce qu'on note"
+      },
+      {
+       "type": "point",
+       "html": "Cas particulier : un fluide <b>zéotrope</b>, composé de plusieurs corps, se charge toujours en <b>phase liquide</b>. Le sortir en phase gazeuse changerait sa composition en cours de route.",
+       "titre": "La balance et la pesée — avant, après, ce qu'on note"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li>Poser la bouteille sur la balance <b>avant</b> toute opération. Relever le poids. Le noter — pas de mémoire.</li><li>Avant d'ouvrir la moindre vanne, déterminer l'<b>état du fluide</b> attendu : liquide ou gazeux, selon l'opération et la documentation constructeur. Ce choix fixe le sens du remplissage.</li><li>Réaliser l'opération — récupération ou charge — en surveillant la balance pendant que ça se fait, pas seulement à la fin.</li><li>Fermer les vannes, laisser la pression se stabiliser, déconnecter proprement.</li><li>Peser à nouveau, <b>après</b>. Relever ce second poids.</li><li>Calculer l'écart entre les deux pesées. C'est la quantité réelle, pas une estimation.</li><li>Reporter aussitôt le résultat au registre : date, quantité, intervenant.</li></ol>",
+       "titre": "La balance et la pesée — avant, après, ce qu'on note"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Deux pesées, jamais une",
+       "html": "On pèse <b>avant</b> et <b>après</b>. Sans pesée de départ, le chiffre obtenu n'est qu'une <b>estimation</b>. Une estimation ne se consigne pas dans un registre.",
+       "titre": "La balance et la pesée — avant, après, ce qu'on note"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Peser seulement à la fin",
+       "html": "Peser une seule fois, à la fin, et déduire la quantité à vue de nez : c'est le réflexe à corriger en premier. Lire une quantité chargée sur un manomètre plutôt que sur la balance ne donne jamais un chiffre exploitable non plus.",
+       "titre": "La balance et la pesée — avant, après, ce qu'on note"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g5-v6_064",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "La charge en fluide se mesure avec :",
+       "choix": [
+        "Un manomètre",
+        "Une balance de précision",
+        "Un thermomètre",
+        "Un vacuomètre"
+       ],
+       "bonne": 1,
+       "explication": "Une balance de précision — La charge se fait au poids : on pèse la bouteille avant et après pour connaître la quantité exacte introduite (±5g).",
+       "aide": "La quantité de fluide se mesure en kg, donc par pesage.",
+       "remed": {
+        "texte": "La charge se fait au poids : on pèse la bouteille avant et après pour connaître la quantité exacte introduite (±5g)."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.06",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-v6_161",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Pendant la charge, on surveille principalement :",
+       "choix": [
+        "La couleur du fluide",
+        "La surchauffe et le sous-refroidissement",
+        "Le bruit du compresseur uniquement",
+        "La vitesse du ventilateur"
+       ],
+       "bonne": 1,
+       "explication": "Surchauffe et sous-refroidissement — Ces deux paramètres indiquent si la quantité de fluide est correcte. Surchauffe trop haute = manque. SR trop bas = manque aussi.",
+       "aide": "Ce sont les deux indicateurs clés de la bonne charge.",
+       "remed": {
+        "texte": "Ces deux paramètres indiquent si la quantité de fluide est correcte. Surchauffe trop haute = manque. SR trop bas = manque aussi."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.05",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "pk-g1e-5",
+       "dc": "G5",
+       "code": "5.05",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Avant de charger une installation, pourquoi commence-t-on par déterminer l'état du fluide — sous-refroidi, saturé ou surchauffé ?",
+       "choix": [
+        "Parce que cet état commande la méthode et la quantité de remplissage",
+        "Parce que le registre exige de le noter",
+        "Parce que cela permet de connaître le PRP du fluide",
+        "Parce que cela dispense de peser la bouteille"
+       ],
+       "bonne": 0,
+       "aide": "Le référentiel place ce diagnostic AVANT le geste de charge. Que déciderait-on ensuite, s'il était faux ?",
+       "remed": {
+        "regle": "On détermine d'abord l'état et les conditions du fluide, puis on en déduit la méthode de remplissage — en phase liquide ou en phase vapeur — et le volume adapté.",
+        "pourquoi": "Charger en phase vapeur un mélange zéotrope modifie la composition de ce qui reste dans la bouteille ; charger sans savoir où en est l'installation conduit à sur-charger ou sous-charger.",
+        "piege": "Croire que la pesée suffit. La balance dit combien on a mis, elle ne dit pas s'il fallait le mettre en liquide ou en vapeur, ni si la charge était déjà correcte."
+       },
+       "remediation_vers": "g1e",
+       "explication": "On détermine d'abord l'état et les conditions du fluide, puis on en déduit la méthode de remplissage — en phase liquide ou en phase vapeur — et le volume adapté.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      }
+     ],
+     "notes": "Faire peser un objet neutre (bouteille d'eau, poids étalon) deux fois avant d'expliquer la règle, et demander ce qui se passerait si on n'avait que la seconde pesée — laisser le groupe trouver lui-même que le premier chiffre est indispensable. Faire remplir une ligne de registre fictive à partir des deux pesées relevées. Le réflexe à traquer : le stagiaire qui commence à manipuler avant d'avoir pesé — l'arrêter avant le premier geste, pas après."
+    },
+    {
+     "type": "exercice",
+     "fiche": "x3",
+     "titre": "Détective — la bouteille de récupération",
+     "minutes": 25,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Détective — la bouteille de récupération",
+       "dc": "G5 · mise en situation · parcours D",
+       "competences": [
+        {
+         "code": "5.02",
+         "lib": "Gérer le remplissage des cylindres en sécurité",
+         "officiel": "Vider et remplir un cylindre de réfrigérant à l'état liquide et à l'état gazeux",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.06",
+         "lib": "Peser à chaque étape",
+         "officiel": "Choisir le bon type de balance et l'utiliser pour peser le réfrigérant",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "point",
+       "html": "Récupération sur une chambre froide avant remplacement d'un composant. Tu as pesé la bouteille <b>avant</b> de commencer — bon réflexe. La récupération avance, et la balance approche du <b>niveau maximal admissible</b> de la bouteille… mais il reste visiblement du fluide dans le circuit.",
+       "titre": "Détective — la bouteille de récupération"
+      },
+      {
+       "type": "point",
+       "html": "Sur l'étagère du fourgon : une bouteille de récupération <b>vide</b>, et une bouteille <b>entamée</b> qui contient déjà un autre fluide.",
+       "titre": "Détective — la bouteille de récupération"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qui ne se négocie pas",
+       "html": "Le taux de remplissage maximal protège contre la <b>dilatation du liquide</b> : dépassé, la bouteille devient dangereuse à la première montée en température. Et un mélange de fluides est <b>impossible à recycler ou régénérer</b> : il part en destruction.",
+       "titre": "Détective — la bouteille de récupération"
+      }
+     ],
+     "questions": [],
+     "notes": "Cœur de cible du parcours D. La proposition « quelques centaines de grammes » fait toujours débat — c'est voulu : elle ressemble au bon sens de chantier. Rappeler l'anecdote de la bouteille au soleil. En atelier, faire refaire la double pesée : bouteille pleine fermée, étiquetée, consignée au registre ; nouvelle bouteille pesée AVANT le premier gramme."
+    },
+    {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "Charge en phase liquide, pesée au gramme, report immédiat au registre",
+     "minutes": 60,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "Charge en phase liquide, pesée au gramme, report immédiat au registre",
+       "minutes": 60
+      }
+     ]
     },
     {
      "type": "cours",
      "fiche": "g6",
      "titre": "Le compresseur",
-     "minutes": 35,
+     "minutes": 30,
      "video": null,
      "slides": [
       {
@@ -4360,7 +5032,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g6b",
      "titre": "Compresseur — installer, régler, vérifier",
-     "minutes": 40,
+     "minutes": 30,
      "video": null,
      "slides": [
       {
@@ -4597,7 +5269,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g7",
      "titre": "Le condenseur",
-     "minutes": 30,
+     "minutes": 25,
      "video": null,
      "slides": [
       {
@@ -4795,7 +5467,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g7b",
      "titre": "Condenseur — installer, régler, vérifier",
-     "minutes": 35,
+     "minutes": 30,
      "video": null,
      "slides": [
       {
@@ -5082,7 +5754,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g8",
      "titre": "L'évaporateur",
-     "minutes": 30,
+     "minutes": 25,
      "video": null,
      "slides": [
       {
@@ -5297,7 +5969,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g8b",
      "titre": "Évaporateur — installer, régler, vérifier",
-     "minutes": 40,
+     "minutes": 30,
      "video": null,
      "slides": [
       {
@@ -5626,10 +6298,174 @@ window.PILOTE_PROJECTION = {
      "notes": "Exercice charnière : il rebranche les composants (G6-G9) sur l'étanchéité (G4). Le laisser chercher en binôme cinq minutes avant de corriger. Erreur fréquente : s'arrêter à « le détendeur est bouché » — plausible pour la surchauffe, mais n'explique ni le sous-refroidissement nul ni les bulles au voyant. Faire verbaliser pourquoi une seule cause explique les trois indices. Enchaîner : « et maintenant, comment localises-tu la fuite ? » → retour en G4c."
     },
     {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "Mise en route, relevé des pressions et températures, calcul de la surchauffe",
+     "minutes": 50,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "Mise en route, relevé des pressions et températures, calcul de la surchauffe",
+       "minutes": 50
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "libelle": null,
+   "titre": "Le détendeur, le brasage, et le choix d'un fluide",
+   "intention": "Le geste de tuyauterie occupe la journée : un joint brasé étanche, sous balayage d'azote, ne s'obtient pas du premier coup. La fin de journée prend de la hauteur — quel fluide choisir demain, et pourquoi.",
+   "sequences": [
+    {
+     "type": "cours",
+     "fiche": "s3",
+     "titre": "La flamme interdite — décomposition du fluide",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "La flamme interdite — décomposition du fluide",
+       "dc": "Sécurité · codes 11.03",
+       "competences": [
+        {
+         "code": "11.03",
+         "lib": "Connaître les règles de sécurité des fluides inflammables, toxiques ou à pression plus élevée.",
+         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-flamme.svg",
+       "alt": "À gauche le geste interdit : chauffer un tronçon non récupéré, les gaz toxiques remontent vers le visage penché. À droite le geste juste : récupérer, balayer à l'azote, ventiler.",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "point",
+       "html": "Un fluide frigorigène fluoré est stable à température normale. Il ne l'est plus face à une flamme. Chauffé au contact d'une flamme ou d'une surface très chaude, il ne brûle pas comme un carburant : il se <b>décompose</b>. Sa molécule se casse et forme d'autres substances, absentes du fluide d'origine — des gaz toxiques et corrosifs.",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "point",
+       "html": "Certains fluides ajoutent un second risque. Selon la norme NF EN 378, les fluides classés <b>A2L</b> (légèrement inflammables, comme le R-32 ou le R-1234yf) ou <b>A3</b> (très inflammables, comme le R-290 ou le R-600a) peuvent eux-mêmes s'enflammer au contact d'une flamme ou d'une étincelle. La classe du fluide utilisé se lit sur sa FDS (fiche de données de sécurité).",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "point",
+       "html": "Le cas type : un tronçon où il reste « une petite quantité, ça ne changera rien ». La flamme touche ce fluide résiduel, il se décompose, et les fumées se dégagent juste sous le visage penché sur le brasage.",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ol><li><b>Récupérez</b> entièrement le fluide du tronçon à chauffer avant toute opération de brasage : jamais de brasage sur un circuit encore chargé.</li><li>Ne recherchez <b>jamais une fuite avec une flamme</b> : utilisez un détecteur électronique.</li><li>Faites circuler de l'azote à l'intérieur du tube pendant le brasage, avec un mano-détendeur, pour en chasser l'air et les résidus : c'est le <b>balayage</b>.</li><li><b>Ventilez</b> la zone de travail, et ne restez pas penché directement au-dessus de la flamme.</li></ol>",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Chauffer ou braser un tronçon de circuit sans avoir récupéré et vérifié l'absence de fluide, ou rechercher une fuite avec une flamme.</p><p>Conséquence : dégagement de gaz toxiques et corrosifs, inhalés à bout portant. Risque d'incendie en plus, si le fluide est inflammable (classe A2L ou A3).</p>",
+       "titre": "La flamme interdite — décomposition du fluide"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl3-1",
+       "dc": "Classification",
+       "code": "11.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+       "choix": [
+        "Près du plafond, car les gaz montent toujours",
+        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+        "Il se répartit uniformément et sans danger dans tout le volume",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+       ],
+       "bonne": 1,
+       "aide": "Comparez sa masse à celle de l'air.",
+       "remed": {
+        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
+        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+       },
+       "remediation_vers": "cl3",
+       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g11-54",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le R290 (propane) est classé :",
+       "choix": [
+        "A1",
+        "A2L",
+        "A2",
+        "A3"
+       ],
+       "bonne": 3,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g11-v6_033",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Un fluide classé A2L est :",
+       "choix": [
+        "Non inflammable, non toxique",
+        "Légèrement inflammable, faible toxicité",
+        "Très inflammable, faible toxicité",
+        "Légèrement inflammable, toxicité élevée"
+       ],
+       "bonne": 1,
+       "explication": "Légèrement inflammable, faible toxicité — A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf.",
+       "aide": "A = toxicité, le chiffre = inflammabilité. L = lower (plus faible).",
+       "remed": {
+        "texte": "A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf."
+       },
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Montrez, sans l'allumer, un chalumeau et un poste de brasage avec son mano-détendeur d'azote ; faites nommer le balayage et sa fonction. Racontez le cas du brasage sur un tronçon mal purgé, pour ancrer le lien entre flamme et décomposition. Rappelez l'interdiction absolue de rechercher une fuite à la flamme (méthode ancienne, aujourd'hui interdite). Reliez à la classe NF EN 378 du fluide utilisé en atelier, lisible sur sa FDS, pour rappeler que certains fluides s'enflamment eux-mêmes en plus de se décomposer."
+    },
+    {
      "type": "cours",
      "fiche": "g9",
      "titre": "Le détendeur et les organes annexes",
-     "minutes": 35,
+     "minutes": 25,
      "video": null,
      "slides": [
       {
@@ -5825,7 +6661,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g9b",
      "titre": "Régler et contrôler les organes annexes",
-     "minutes": 35,
+     "minutes": 25,
      "video": null,
      "slides": [
       {
@@ -6065,245 +6901,9 @@ window.PILOTE_PROJECTION = {
     },
     {
      "type": "cours",
-     "fiche": "g3",
-     "titre": "Contrôles avant mise en service",
-     "minutes": 35,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Contrôles avant mise en service",
-       "dc": "G3 · codes 3.01 → 3.05",
-       "competences": [
-        {
-         "code": "3.01",
-         "lib": "Réaliser une épreuve de pression de résistance",
-         "officiel": "Effectuer une épreuve de pression pour contrôler la résistance du système",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "3.02",
-         "lib": "Réaliser une épreuve de pression d'étanchéité",
-         "officiel": "Effectuer une épreuve de pression pour contrôler l'étanchéité du système",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "3.03",
-         "lib": "Utiliser une pompe à vide",
-         "officiel": "Utiliser une pompe à vide",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "3.04",
-         "lib": "Faire le vide : évacuer l'air et l'humidité",
-         "officiel": "Faire le vide dans le système pour évacuer l'air et l'humidité selon la pratique habituelle",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "3.05",
-         "lib": "Consigner le registre et rédiger le rapport d'essais",
-         "officiel": "Consigner les données dans le registre de l'équipement et rédiger un rapport portant sur un ou plusieurs des essais et des contrôles effectués durant l'examen",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/epreuve-azote.svg",
-       "alt": "Montage de l épreuve de pression : bouteille d azote, manifold, circuit — oxygène et air comprimé barrés.",
-       "titre": "Contrôles avant mise en service"
-      },
-      {
-       "type": "point",
-       "html": "Deux épreuves, deux buts, souvent enchaînées. L'<b>épreuve de résistance</b> vérifie que l'assemblage tient mécaniquement. L'<b>épreuve d'étanchéité</b> vérifie qu'il ne laisse rien passer. Les pressions d'épreuve se prennent <b>sur la documentation constructeur</b> et la norme applicable — jamais à l'estime.",
-       "titre": "Contrôles avant mise en service"
-      },
-      {
-       "type": "point",
-       "html": "Vient ensuite le <b>tirage au vide</b>. Il ne sert pas à « faire propre » : il extrait l'<b>air</b> (incondensable, qui fait monter la haute pression) et l'<b>humidité</b> (qui gèle au détendeur et attaque l'huile). Sous vide, l'eau bout à température ambiante — c'est exactement ce qu'on cherche.",
-       "titre": "Contrôles avant mise en service"
-      },
-      {
-       "type": "point",
-       "html": "Enfin, on <b>consigne</b> : registre et rapport d'essais font partie du geste professionnel.",
-       "titre": "Contrôles avant mise en service"
-      },
-      {
-       "type": "point",
-       "html": "Comment conclut-on l'épreuve d'étanchéité ? On relève la pression d'azote au <b>manomètre</b> (l'appareil qui mesure la pression) au début de l'essai, puis on attend la durée prévue — selon la documentation constructeur, à faire valider. Si la pression reste <b>stable</b> (ou « stabilisée ») pendant toute cette durée, le circuit est déclaré étanche. À l'inverse, une <b>chute de pression</b> signale une fuite quelque part dans le circuit, même si elle est minime.",
-       "titre": "Contrôles avant mise en service"
-      },
-      {
-       "type": "point",
-       "html": "Un piège classique : la température de l'atelier fait elle aussi varier la pression, sans qu'il y ait de fuite. Dans un circuit fermé, la pression de l'azote <b>augmente</b> un peu quand l'air ambiant se réchauffe, et <b>diminue</b> un peu quand il refroidit. On regarde donc la tendance sur toute la durée de l'épreuve, pas un seul chiffre isolé, et on corrige qualitativement une petite variation liée à la température avant de conclure trop vite à une fuite.",
-       "titre": "Contrôles avant mise en service"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Geste interdit — sans discussion",
-       "html": "Toute mise en pression se fait à l'<b>azote</b>, et à l'azote seulement. <b>Jamais d'oxygène</b> — au contact de l'huile du circuit, le mélange est explosif. <b>Jamais d'air comprimé</b> — il apporte de l'humidité et contient de l'oxygène. Ce geste ne se discute pas et ne se découvre pas : il s'impose.",
-       "titre": "Contrôles avant mise en service"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Le vide qui remonte",
-       "html": "Après avoir isolé la pompe, on <b>surveille</b> : si le vide remonte, il y a une fuite ou de l'humidité résiduelle. Un tirage au vide réussi, c'est un vide qui <b>tient</b>. Valeurs cibles et durées : selon doc constructeur, à faire valider.",
-       "titre": "Contrôles avant mise en service"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Localiser la fuite : l'eau savonneuse",
-       "html": "<p>Si la pression chute, on cherche la fuite <b>raccord par raccord et brasure par brasure</b>, en badigeonnant de l'<b>eau savonneuse</b> au pinceau ou au pulvérisateur. Une <b>bulle</b> qui apparaît et grossit indique l'endroit exact de la fuite. Ce geste simple, sans appareil, vient <b>après</b> le contrôle de stabilité de la pression : il sert à localiser précisément une fuite déjà détectée.</p>",
-       "titre": "Contrôles avant mise en service"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-p4-1",
-       "dc": "G3",
-       "code": "3.01",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
-       "choix": [
-        "De l'oxygène",
-        "De l'azote sec",
-        "De l'air comprimé",
-        "Du fluide frigorigène du circuit"
-       ],
-       "bonne": 1,
-       "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
-       "remed": {
-        "regle": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
-        "pourquoi": "L'azote est neutre et sec : il n'entretient pas la combustion et n'introduit pas d'eau dans le circuit.",
-        "piege": "L'oxygène au contact de l'huile du circuit peut provoquer une réaction violente. L'air comprimé, lui, apporte de l'humidité qui restera dans l'installation."
-       },
-       "remediation_vers": "p4",
-       "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-p4-2",
-       "dc": "G3",
-       "code": "3.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Pourquoi une bouteille d'azote se raccorde-t-elle toujours au travers d'un mano-détendeur ?",
-       "choix": [
-        "Pour connaître la quantité restante",
-        "Pour filtrer l'humidité du gaz",
-        "Parce que la pression de la bouteille dépasse largement ce que le circuit peut supporter",
-        "Pour réchauffer le gaz avant l'entrée"
-       ],
-       "bonne": 2,
-       "aide": "Comparez la pression dans la bouteille et celle que supporte l'installation.",
-       "remed": {
-        "regle": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
-        "pourquoi": "La bouteille est à une pression très supérieure à celle admissible par l'installation : le mano-détendeur ramène la pression à la valeur voulue, lue sur son second cadran.",
-        "piege": "Ouvrir la bouteille directement sur le circuit peut le détruire instantanément. La pression d'épreuve se règle selon la fiche constructeur, jamais à l'estime."
-       },
-       "remediation_vers": "p4",
-       "explication": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-q-3.05",
-       "dc": "G3",
-       "code": "3.05",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Vous venez de terminer l'épreuve d'étanchéité et le tirage au vide sur un circuit. Que devez-vous faire avant de considérer l'intervention comme terminée ?",
-       "choix": [
-        "Attendre la validation du client avant toute trace écrite",
-        "Refaire une deuxième fois l'épreuve d'étanchéité pour confirmer",
-        "Ranger le matériel, aucune autre formalité n'est nécessaire",
-        "Consigner les données dans le registre de l'équipement et rédiger un rapport sur les essais et contrôles effectués"
-       ],
-       "bonne": 3,
-       "aide": "Pense au tout dernier geste professionnel décrit dans la fiche, juste après les contrôles.",
-       "remed": {
-        "regle": "Après tout contrôle ou essai (épreuve de résistance, épreuve d'étanchéité, tirage au vide), on consigne les résultats dans le registre de l'équipement et on rédige un rapport sur les essais et contrôles effectués.",
-        "pourquoi": "La trace écrite prouve que les contrôles réglementaires ont bien eu lieu. Elle protège le professionnel, informe l'exploitant, et permet de suivre l'état de l'équipement dans le temps.",
-        "piege": "Croire que le geste technique (épreuve, tirage au vide) suffit à lui seul. Sans registre ni rapport, rien ne prouve que le contrôle a été fait : le geste professionnel n'est complet qu'avec la consignation."
-       },
-       "remediation_vers": "g3",
-       "explication": "Après tout contrôle ou essai (épreuve de résistance, épreuve d'étanchéité, tirage au vide), on consigne les résultats dans le registre de l'équipement et on rédige un rapport sur les essais et contrôles effectués.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g3-v6_058",
-       "dc": "G3",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le tirage au vide a pour but principal d'éliminer :",
-       "choix": [
-        "L'huile usagée",
-        "L'air et l'humidité du circuit",
-        "Les particules métalliques",
-        "Le fluide résiduel"
-       ],
-       "bonne": 1,
-       "explication": "L'air et l'humidité — Le tirage au vide évacue l'air (incondensable qui augmente la HP) et l'humidité (qui forme des acides avec l'huile POE).",
-       "aide": "L'air et l'eau sont les deux ennemis du circuit frigorifique.",
-       "remed": {
-        "texte": "Le tirage au vide évacue l'air (incondensable qui augmente la HP) et l'humidité (qui forme des acides avec l'huile POE)."
-       },
-       "remediation_vers": "g3",
-       "code": "3.04",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Pour la catégorie D, seul le code 3.03 (pompe à vide) est dans le champ : ne pas emmener un groupe D sur l'épreuve de pression. Faire monter le montage azote sur un poste d'essai dédié, jamais sur une installation client en première approche. L'anecdote qui marque : une bouteille mal identifiée, de l'oxygène branché par erreur sur un circuit huilé. Faire lire un vacuomètre en direct pendant un tirage réel, et faire chercher « pourquoi le vide remonte-t-il ? »."
-    },
-    {
-     "type": "cours",
      "fiche": "g10",
      "titre": "Tuyauterie et brasage sous azote",
-     "minutes": 40,
+     "minutes": 30,
      "video": null,
      "slides": [
       {
@@ -6446,20 +7046,671 @@ window.PILOTE_PROJECTION = {
       }
      ],
      "notes": "Faire monter le balayage azote — bouteille, détendeur, tuyau, position de sortie — AVANT toute mise en flamme. Le geste doit être automatique avant d'allumer le chalumeau. Pédagogie de la découverte : faire observer un joint mal brasé (calamine, porosité) et laisser les stagiaires identifier les défauts avant de donner la méthode correcte."
+    },
+    {
+     "type": "cours",
+     "fiche": "p4",
+     "titre": "La bouteille d'azote et son mano-détendeur",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "La bouteille d'azote et son mano-détendeur",
+       "dc": "Préparation pratique · codes 3.01 · 3.02",
+       "competences": [
+        {
+         "code": "3.01",
+         "lib": "Réaliser une épreuve de pression de résistance",
+         "officiel": "Effectuer une épreuve de pression pour contrôler la résistance du système",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "3.02",
+         "lib": "Réaliser une épreuve de pression d'étanchéité",
+         "officiel": "Effectuer une épreuve de pression pour contrôler l'étanchéité du système",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/epreuve-azote.svg",
+       "alt": "Le mano-détendeur monté sur la bouteille d azote sec, raccordé au manifold puis au circuit à éprouver, vanne par vanne — jamais d oxygène ni d air comprimé.",
+       "titre": "La bouteille d'azote et son mano-détendeur"
+      },
+      {
+       "type": "point",
+       "html": "Une bouteille d'azote ne se branche jamais directement sur un circuit. Entre les deux, il y a toujours un <b>mano-détendeur</b>. Il lit la pression de la bouteille. Il règle la pression envoyée dans le circuit. Sans lui, toute la pression de la bouteille part d'un coup — largement de quoi faire éclater un circuit.",
+       "titre": "La bouteille d'azote et son mano-détendeur"
+      },
+      {
+       "type": "point",
+       "html": "Le mano-détendeur porte <b>deux cadrans</b>. Le premier indique ce qu'il reste dans la bouteille. Le second indique la pression réglée en sortie, celle qui part vers le circuit. On lit toujours les deux.",
+       "titre": "La bouteille d'azote et son mano-détendeur"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li>Vérifier que le raccord est <b>propre</b>, sans trace d'huile ni de graisse : l'azote sous pression au contact d'huile est un risque.</li><li>Monter le mano-détendeur sur le robinet de la bouteille. Vérifier que la <b>vis de réglage est desserrée</b> — aucune pression envoyée en sortie.</li><li>Ouvrir <b>lentement</b> le robinet de la bouteille. Lire la pression bouteille sur le premier cadran.</li><li>Raccorder le flexible de sortie au manifold, puis au circuit à éprouver.</li><li>Visser <b>progressivement</b> la vis de réglage. La pression de sortie monte, à lire sur le second cadran, jusqu'à la valeur donnée par la documentation du constructeur ou la norme applicable.</li><li>Une fois la pression atteinte, fermer le robinet de la bouteille. Observer : le cadran de sortie ne doit plus bouger.</li></ol>",
+       "titre": "La bouteille d'azote et son mano-détendeur"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Geste interdit — sans discussion",
+       "html": "Une bouteille d'azote <b>ne se branche jamais en direct</b> sur un circuit, mano-détendeur absent. La mise en pression se fait <b>à l'azote sec, seul</b>. Jamais d'oxygène — explosif au contact de l'huile. Jamais d'air comprimé — humide, chargé en oxygène.",
+       "titre": "La bouteille d'azote et son mano-détendeur"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Deux cadrans, deux informations",
+       "html": "Cadran <b>bouteille</b> : ce qu'il reste dedans. Cadran <b>sortie</b> : ce que vous envoyez dans le circuit. Un cadran de sortie qui ne tient pas sa pression signale une fuite au raccord — à vérifier avant d'aller plus loin.",
+       "titre": "La bouteille d'azote et son mano-détendeur"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-p4-1",
+       "dc": "G3",
+       "code": "3.01",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
+       "choix": [
+        "De l'oxygène",
+        "De l'azote sec",
+        "De l'air comprimé",
+        "Du fluide frigorigène du circuit"
+       ],
+       "bonne": 1,
+       "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
+       "remed": {
+        "regle": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
+        "pourquoi": "L'azote est neutre et sec : il n'entretient pas la combustion et n'introduit pas d'eau dans le circuit.",
+        "piege": "L'oxygène au contact de l'huile du circuit peut provoquer une réaction violente. L'air comprimé, lui, apporte de l'humidité qui restera dans l'installation."
+       },
+       "remediation_vers": "p4",
+       "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-p4-2",
+       "dc": "G3",
+       "code": "3.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Pourquoi une bouteille d'azote se raccorde-t-elle toujours au travers d'un mano-détendeur ?",
+       "choix": [
+        "Pour connaître la quantité restante",
+        "Pour filtrer l'humidité du gaz",
+        "Parce que la pression de la bouteille dépasse largement ce que le circuit peut supporter",
+        "Pour réchauffer le gaz avant l'entrée"
+       ],
+       "bonne": 2,
+       "aide": "Comparez la pression dans la bouteille et celle que supporte l'installation.",
+       "remed": {
+        "regle": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
+        "pourquoi": "La bouteille est à une pression très supérieure à celle admissible par l'installation : le mano-détendeur ramène la pression à la valeur voulue, lue sur son second cadran.",
+        "piege": "Ouvrir la bouteille directement sur le circuit peut le détruire instantanément. La pression d'épreuve se règle selon la fiche constructeur, jamais à l'estime."
+       },
+       "remediation_vers": "p4",
+       "explication": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Poser le mano-détendeur démonté sur la table et faire deviner son rôle avant d'expliquer : pourquoi deux cadrans, pourquoi une vis. Faire monter le montage par un stagiaire, azote réel si le plateau le permet, en insistant sur la vis desserrée AVANT ouverture bouteille — intervenir immédiatement si quelqu'un ouvre la bouteille vis serrée, ne pas laisser aller au bout du geste. Rappeler que ces codes ne concernent pas la catégorie D : un stagiaire D observe la démonstration mais n'est pas interrogé dessus."
+    },
+    {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "Brasage sous balayage d'azote : réaliser un joint étanche, le contrôler",
+     "minutes": 190,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "Brasage sous balayage d'azote : réaliser un joint étanche, le contrôler",
+       "minutes": 190
+      }
+     ]
+    },
+    {
+     "type": "cours",
+     "fiche": "g11",
+     "titre": "Substitution et efficacité énergétique",
+     "minutes": 35,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Substitution et efficacité énergétique",
+       "dc": "G11 · codes 1.08 · 11.01 → 11.05",
+       "competences": [
+        {
+         "code": "1.08",
+         "lib": "Situer combustibilité, propagation de flamme et limites de charge",
+         "officiel": "Connaître la combustibilité, la propagation des flammes, les restrictions relatives à la capacité de charge, les limites d'occupation pour les HFC, H(C)FO et hydrocarbures",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T",
+          "E": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "11.01",
+         "lib": "Connaître les technologies de substitution et leur manipulation sans danger",
+         "officiel": "Connaître les technologies de substitution pertinentes permettant de remplacer les gaz à effet de serre fluorés ou d'en réduire l'utilisation, et savoir les manipuler sans danger",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T",
+          "E": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "11.03",
+         "lib": "Appliquer les règles de sécurité pour fluides inflammables, toxiques ou haute pression",
+         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "11.02",
+         "lib": "Expliquer la conception à charge réduite et l'efficacité",
+         "officiel": "Connaître les systèmes de conception pertinents afin de réduire la charge des gaz à effet de serre fluorés et d'augmenter l'efficacité énergétique",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "11.04",
+         "lib": "Comparer les fluides de substitution selon l'application",
+         "officiel": "Comprendre les avantages et inconvénients respectifs, notamment en ce qui concerne l'efficacité énergétique, des réfrigérants de substitution en fonction de leur application prévue et des conditions climatiques des différentes régions",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "11.05",
+         "lib": "Situer les différences de conception des systèmes aux hydrocarbures",
+         "officiel": "Connaître les différences de conception des composants et des systèmes pour les équipements et les systèmes tributaires des hydrocarbures",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/classes-securite.svg",
+       "alt": "Matrice complète des classes NF EN 378 : huit cases, toxicité en lignes, inflammabilité en colonnes.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "Remplacer un fluide à fort PRP se fait dans deux directions : les <b>fluides naturels</b> (CO₂, ammoniac, hydrocarbures) et les fluides de synthèse à faible PRP (<b>HFO</b>, HFC bas PRP). Il n'existe <b>pas de fluide universel</b> : le choix dépend de l'application, du climat, et de la sécurité du site.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "La <b>classe de sécurité NF EN 378</b> commande tout le reste — EPI, zonage, détection, charge admissible dans le local : <b>A1</b> (CO₂), <b>A2L</b> (R-32, R-1234yf), <b>A3</b> (R-290), <b>B2L</b> (NH₃).",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "Une classe ne dit pas seulement « ça brûle ou non ». Elle décrit la <b>combustibilité</b> et la <b>propagation de la flamme</b> : un <b>A2L</b> brûle difficilement et la flamme se propage lentement, un <b>A3</b> s'enflamme facilement et la flamme court vite. De là découlent une <b>charge maximale</b> admissible et des <b>limites d'occupation</b> du local — plus le local est petit ou recevant du public, plus la charge autorisée est faible. Ces valeurs se déterminent selon la <b>NF EN 378</b> et la doc constructeur, <b>jamais à l'estime</b>.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "Le stockage et le transport des fluides <b>inflammables</b>, <b>toxiques</b> ou à <b>haute pression</b> obéissent chacun à des règles propres. Et lorsqu'un site ne peut pas respecter les exigences de l'<b>annexe IV du règlement (UE) 2024/573</b> pour des raisons de <b>sécurité</b>, des équipements dérogatoires restent permis : c'est une exception encadrée, qui se justifie par écrit, pas un passe-droit.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "Côté énergie, le <b>COP</b> est le rapport de la puissance frigorifique produite à la puissance électrique consommée. On l'améliore en <b>rapprochant</b> la température de condensation de celle d'évaporation : condenseur propre, échangeurs bien dimensionnés, réglages justes. Réduire la charge, enfin, améliore à la fois la sécurité et le rendement.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "Pour réduire la charge de fluide frigorigène, on peut aussi changer la <b>conception</b> du système. Dans un système à <b>boucle secondaire</b>, le fluide frigorigène reste confiné dans la machinerie, avec une charge réduite. Un fluide caloporteur — de l'<b>eau glacée</b> ou de l'<b>eau glycolée</b> — circule ensuite dans les postes (vitrines, centrales de traitement d'air) pour transporter le froid jusqu'à eux. Le fluide frigorigène ne quitte jamais la salle des machines.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "Le système en <b>cascade</b> pousse cette logique plus loin : deux circuits frigorifiques séparés sont montés en série, chacun avec sa propre charge, réduite elle aussi. Le circuit basse température évacue sa chaleur dans le circuit haute température, qui la rejette à l'extérieur. Chaque circuit reste petit, donc plus facile à confiner en cas de fuite.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "Chaque fluide de substitution a ses <b>avantages</b> et ses <b>inconvénients</b>, selon l'application et le <b>climat</b>. Le <b>CO₂</b> est performant en froid commercial, mais son efficacité baisse quand l'air extérieur est très chaud. Les <b>hydrocarbures</b> sont efficaces, mais leur inflammabilité limite la charge autorisée. L'<b>ammoniac</b> est réservé aux installations industrielles, à cause de sa toxicité. Il n'y a pas de meilleur fluide dans l'absolu : le choix se fait selon l'application, le climat du site, et la documentation constructeur, à faire valider avant tout choix.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "Une machine aux <b>hydrocarbures</b> n'est pas construite comme les autres. Tous les composants électriques en contact possible avec le gaz — relais, thermostats, ventilateurs — sont <b>antidéflagrants</b> ou <b>non étincelants</b> : ils sont conçus pour ne jamais produire d'étincelle qui pourrait enflammer le gaz. La charge de fluide est aussi limitée dès la conception. Enfin, l'implantation prévoit une <b>ventilation</b> adaptée : le propane est plus lourd que l'air, il s'accumule donc en bas, près du sol, en cas de fuite.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Drop-in ou retrofit ?",
+       "html": "<b>Drop-in</b> : on change le fluide sans modifier l'installation.<br><b>Retrofit</b> : on change le fluide <b>et</b> ce qu'il faut adapter — huile, détendeur, joints. Annoncer un drop-in là où il faut un retrofit, c'est préparer une panne.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le piège de l'année",
+       "html": "<b>Le R-290 est A3</b>, pas A2L. Tout hydrocarbure est très inflammable. Se tromper de classe, c'est se tromper d'EPI, de matériel électrique et de charge admissible. À l'inverse, le <b>CO₂ est A1</b> : toxicité faible, non inflammable — mais cette classe n'annonce ni sa <b>pression</b>, ni l'<b>atmosphère irrespirable</b> qu'une fuite crée en local fermé.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Hydrocarbures : une machine pas comme les autres",
+       "html": "<b>Antidéflagrant</b> ou <b>non étincelant</b> : sur une machine aux hydrocarbures, tout composant électrique proche du gaz doit respecter cette règle, pour ne jamais produire d'étincelle. Et comme le propane est plus lourd que l'air, il s'accumule en bas en cas de fuite — la <b>ventilation</b> du local en tient compte dès la conception.",
+       "titre": "Substitution et efficacité énergétique"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl1-1",
+       "dc": "Classification",
+       "code": "1.08",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans une classe de sécurité comme A2L, que disent respectivement la lettre et le chiffre ?",
+       "choix": [
+        "La lettre dit le PRP, le chiffre dit la pression de service",
+        "La lettre dit la toxicité, le chiffre dit l'inflammabilité",
+        "La lettre dit la famille chimique, le chiffre dit l'année de mise sur le marché",
+        "La lettre dit l'inflammabilité, le chiffre dit la toxicité"
+       ],
+       "bonne": 1,
+       "aide": "Deux dangers différents, deux protections différentes : c'est pour cela qu'il faut deux informations.",
+       "remed": {
+        "regle": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
+        "pourquoi": "Un fluide peut être dangereux d'une manière sans l'être de l'autre, et les mesures de prévention ne sont pas les mêmes : on ventile contre la toxicité, on supprime les sources d'étincelle contre l'inflammabilité. Une note unique ne dirait pas laquelle appliquer.",
+        "piege": "« A » ne veut pas dire inoffensif : un fluide de classe A peut asphyxier en chassant l'oxygène du local, ou se décomposer en gaz toxiques au contact d'une flamme."
+       },
+       "remediation_vers": "cl1",
+       "explication": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "D",
+        "E"
+       ]
+      },
+      {
+       "id": "pk-cl3-1",
+       "dc": "Classification",
+       "code": "11.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+       "choix": [
+        "Près du plafond, car les gaz montent toujours",
+        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+        "Il se répartit uniformément et sans danger dans tout le volume",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+       ],
+       "bonne": 1,
+       "aide": "Comparez sa masse à celle de l'air.",
+       "remed": {
+        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
+        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+       },
+       "remediation_vers": "cl3",
+       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-q-11.05",
+       "dc": "G11",
+       "code": "11.05",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Sur une machine fonctionnant au R-290 (propane), en cas de fuite dans le local, où le gaz s'accumule-t-il en priorité ?",
+       "choix": [
+        "En haut, près du plafond",
+        "De façon uniforme dans tout le local",
+        "Uniquement à l'extérieur du local",
+        "En bas, près du sol"
+       ],
+       "bonne": 3,
+       "aide": "Compare la densité du propane à celle de l'air : est-il plus lourd ou plus léger ?",
+       "remed": {
+        "regle": "Le propane est plus lourd que l'air. En cas de fuite, il s'accumule en bas, près du sol. La ventilation du local est conçue en tenant compte de cela, dès la conception de la machine.",
+        "pourquoi": "Une machine aux hydrocarbures n'est pas construite comme les autres : composants électriques antidéflagrants ou non étincelants, charge de fluide limitée, et ventilation adaptée à un gaz qui s'accumule au sol. Ignorer ce point, c'est placer la détection ou la ventilation au mauvais endroit.",
+        "piege": "Copier la logique d'un local avec un gaz plus léger que l'air (détection au plafond) alors que le propane impose l'inverse : surveillance et ventilation basses."
+       },
+       "remediation_vers": "g11",
+       "explication": "Le propane est plus lourd que l'air. En cas de fuite, il s'accumule en bas, près du sol. La ventilation du local est conçue en tenant compte de cela, dès la conception de la machine.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g11-185",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Comment optimiser le COP (Coefficient de Performance) d'une installation frigorifique ?",
+       "choix": [
+        "Augmenter la haute pression au maximum",
+        "Diminuer l'écart entre T°K (condensation) et T°O (évaporation)",
+        "Augmenter la surchauffe au maximum",
+        "Diminuer le débit d'air sur le condenseur"
+       ],
+       "bonne": 1,
+       "explication": "Le COP (efficacité énergétique) est meilleur quand l'écart T°K - T°O est FAIBLE. Pour optimiser : baisser la T°K (condenseur propre, bon refroidissement) et augmenter la T°O si possible (évaporateur…",
+       "aide": "Le COP dépend directement de l'écart de température entre condenseur et évaporateur.",
+       "remed": {
+        "texte": "Le COP (efficacité énergétique) est meilleur quand l'écart T°K - T°O est FAIBLE. Pour optimiser : baisser la T°K (condenseur propre, bon refroidissement) et augmenter la T°O si possible (évaporateur surdimensionné, bon dégivrage). Moins le compresseur force, mieux c'est !"
+       },
+       "remediation_vers": "g11",
+       "code": "11.02",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Avant de donner le tableau des classes, demander aux stagiaires de classer eux-mêmes CO₂, NH₃, R-290 et R-1234yf par intuition « je m'en méfie / pas de souci », puis confronter à la norme : l'écart entre l'intuition et la classification est le meilleur levier de mémorisation. Comparer en atelier un détecteur adapté aux hydrocarbures et un détecteur HFC classique."
+    },
+    {
+     "type": "cours",
+     "fiche": "g13",
+     "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir",
+     "minutes": 25,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir",
+       "dc": "G13 · G14 · information et sensibilisation",
+       "competences": [
+        {
+         "code": "13.01",
+         "lib": "Reconnaître une installation CO₂ et ses risques (pression)",
+         "officiel": "Connaître les prescriptions en matière d'étiquetage pour le R744 dans les systèmes et les récipients à pression",
+         "epreuve": {},
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "13.04",
+         "lib": "Identifier les cylindres et matériels dédiés, et ne pas intervenir",
+         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils et équipements d'entretien, tels que la détection de gaz, la détection des fuites, les équipements de protection individuelle",
+         "epreuve": {},
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "14.01",
+         "lib": "Reconnaître une installation NH₃ et la conduite à tenir",
+         "officiel": "Lire et comprendre les diagrammes de tuyauterie et d'instrumentation des systèmes de réfrigération au R717 (NH3)",
+         "epreuve": {},
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "1.09",
+         "lib": "Connaître les pressions élevées du CO₂, son diagramme log p/h, ses tables de saturation et le risque de glace carbonique.",
+         "officiel": "Connaître la pression du CO2, le cycle transcritique ou subcritique, le diagramme log p/h, les tables de saturation du CO2, l'état d'agrégation du CO2 (formation de glace carbonique)",
+         "epreuve": {},
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "13.14",
+         "lib": "Vérifier avant d'intervenir que la signalisation, les issues de secours, les capteurs et les alarmes du site sont bien en état.",
+         "officiel": "Vérifier que les mesures de santé et de sécurité conformes aux règles applicables sont appliquées à l'emplacement du système (par exemple, panneaux de signalisation, issues de secours, capteurs de gaz, alarmes au gaz, etc.)",
+         "epreuve": {},
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/co2-nh3-compare.svg",
+       "alt": "Deux comportements inverses : le CO₂, A1 et sans odeur, est plus lourd que l'air et descend (catégorie B) ; l'ammoniac, B2L et piquant, est plus léger que l'air et monte (catégorie C).",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
+       "type": "point",
+       "html": "Ce module <b>informe</b>, il ne qualifie pas. Une attestation A1 ou A2 ne donne <b>aucun droit d'intervention</b> sur une installation au CO₂ (catégorie B) ou à l'ammoniac (catégorie C). Ce qu'on attend ici : <b>reconnaître</b> et <b>ne pas toucher</b>.",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
+       "type": "point",
+       "html": "<b>CO₂ (R-744)</b> — classé <b>A1</b> : toxicité <b>faible</b>, non inflammable, <b>PRP = 1</b>. Cette classe n'annonce aucun de ses vrais dangers : la <b>pression</b>, très élevée, l'<b>atmosphère irrespirable</b> en local fermé (il est plus lourd que l'air, s'accumule en point bas, et agit sur la respiration — voir « CO₂ : deux dangers mortels »), et le risque de <b>neige carbonique</b> à la détente (brûlure par le froid, obstruction). En transcritique, le condenseur laisse la place à un <b>refroidisseur de gaz</b>. Les cylindres, à double vanne, ne se raccordent pas au matériel courant.",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ammoniac (R-717)</b> — classé <b>B2L</b> : <b>toxique</b> et faiblement inflammable. Fluide du froid industriel (agroalimentaire, entrepôts), jamais du résidentiel. Son odeur piquante se perçoit très tôt — mais elle <b>ne remplace aucune mesure</b>, et elle s'émousse à forte concentration : on ne se fie jamais à son nez pour décider. En cas de fuite : <b>alerter, évacuer, ne jamais intervenir seul</b>.",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
+       "type": "point",
+       "html": "Sur le terrain, le CO₂ ne se manipule pas avec le matériel courant : ses pressions de travail sont bien plus élevées que celles des fluides classiques. Manifold, flexibles, vannes — tout doit être <b>dédié au CO₂</b>. Les valeurs exactes dépendent du point de fonctionnement et se lisent toujours dans la <b>documentation constructeur</b>, à faire valider.",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
+       "type": "point",
+       "html": "Le diagramme <b>log p/h</b> (pression selon l'enthalpie) et les <b>tables de saturation</b> du CO₂ se lisent comme ceux de tout autre fluide — mêmes repères de bulle et de rosée — mais dans un domaine de pression qui lui est propre. C'est ce domaine particulier qui explique un comportement que les autres fluides n'ont pas : la formation de glace carbonique.",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
+       "type": "point",
+       "html": "Avant de commencer une intervention sur un site au CO₂ ou à l'ammoniac, on prend un instant pour vérifier ce qui est déjà en place. La <b>signalisation</b> à l'entrée du local doit être visible et à jour. Les <b>issues de secours</b> doivent rester dégagées, jamais encombrées, pour permettre une évacuation rapide en cas de fuite. On contrôle aussi que les <b>capteurs</b> de gaz et les <b>alarmes</b> qui leur sont associées sont en état de marche, pas seulement présents dans le local.",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "« A1 » ne veut pas dire « sans danger »",
+       "html": "Le CO₂ est A1 du point de vue toxicité et inflammabilité — cela ne dit rien de ses deux vrais risques : la <b>pression</b>, et l'<b>anoxie</b> en local fermé (voir la fiche « CO₂ : deux dangers mortels »). Et le <b>B</b> de B2L signifie <b>toxique</b> : ne pas relâcher la vigilance sur l'ammoniac sous prétexte que son inflammabilité est faible.",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "La règle des catégories",
+       "html": "Les catégories ne se remplacent pas les unes les autres. « Je suis A1, donc je peux donner un coup de main sur une fuite d'ammoniac » est <b>faux</b> : il faut la catégorie C, sans exception.",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "La glace carbonique, un double danger",
+       "html": "<p>La fiche l'a déjà signalé : le CO₂ peut se solidifier à la détente. Ce solide a un nom : c'est la <b>glace carbonique</b>, aussi appelée <b>neige carbonique</b>. Elle se forme quand le CO₂ passe directement de l'état gazeux à l'état solide, à la détente à l'air libre. C'est le domaine de pression propre au CO₂, visible sur son diagramme log p/h, qui explique ce comportement que les fluides courants n'ont pas. On garde en tête le double danger à chaque détente de CO₂ à l'air libre : la <b>brûlure par le froid</b> au contact de la peau, et le <b>bouchon solide</b> qui peut obstruer une vanne ou une tuyauterie.</p>",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Le réflexe d'arrivée sur site",
+       "html": "<p>Sur un site CO₂ ou ammoniac, on ne commence jamais le travail sans ce contrôle rapide : <b>signalisation</b> en place, <b>issues de secours</b> dégagées, <b>capteurs</b> et <b>alarmes</b> fonctionnels. Ce réflexe fait partie du travail, au même titre que le port du matériel de protection.</p>",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-g13-1",
+       "dc": "G13",
+       "code": "13.01",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le CO₂ (R-744) est classé A1. Quels dangers cette classe n'annonce-t-elle pas ?",
+       "choix": [
+        "La pression, très élevée, et l'atmosphère irrespirable qu'une fuite crée en local fermé.",
+        "Aucun : la classe A1 signifie qu'il est sans danger.",
+        "L'inflammabilité, car il peut s'enflammer comme un hydrocarbure.",
+        "Uniquement le risque de gel des tuyauteries en fonctionnement normal."
+       ],
+       "bonne": 0,
+       "aide": "A1 renseigne sur deux critères précis. Lesquels ? Et qu'est-ce que cela ne dit pas ?",
+       "remed": {
+        "regle": "Le CO₂ est A1 : toxicité faible, non inflammable. Ses deux dangers réels sont ailleurs — la pression, très élevée, et l'atmosphère irrespirable en local fermé.",
+        "pourquoi": "La classification ne décrit que deux risques : la toxicité et l'inflammabilité. Elle ne dit rien de la pression de service, ni du fait que le CO₂ s'accumule en point bas et agit sur la régulation de la respiration.",
+        "piege": "Croire que « A1 » veut dire « sans danger ». « A » signifie toxicité FAIBLE, pas nulle : à forte concentration le CO₂ devient nocif par lui-même, avant même d'avoir chassé assez d'oxygène pour alarmer un détecteur d'oxygène."
+       },
+       "remediation_vers": "g13",
+       "explication": "Le CO₂ est A1 : toxicité faible, non inflammable. Ses deux dangers réels sont ailleurs — la pression, très élevée, et l'atmosphère irrespirable en local fermé.",
+       "origine": "pack"
+      },
+      {
+       "id": "pk-g13-3",
+       "dc": "G13",
+       "code": "13.04",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Sur une installation au CO₂, pourquoi ne peut-on pas utiliser le matériel de raccordement courant ?",
+       "choix": [
+        "Parce que le CO₂ nécessite le même matériel qu'un circuit HFC classique.",
+        "Parce que les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
+        "Parce que le CO₂, comme l'ammoniac, est un fluide toxique qui impose un matériel étanche renforcé.",
+        "Parce qu'il n'existe aucun matériel spécifique pour le CO₂, il faut en fabriquer un sur mesure."
+       ],
+       "bonne": 1,
+       "aide": "Le texte décrit un équipement particulier sur les cylindres de CO₂.",
+       "remed": {
+        "regle": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
+        "pourquoi": "La très haute pression de service du CO₂ impose un matériel et des raccords spécifiques, différents de ceux des circuits HFC. Ce n'est pas une question de toxicité : le CO₂ est A1, son danger est la pression.",
+        "piege": "Le croire aussi toxique que l'ammoniac — il ne l'est pas, sa toxicité est faible — mais l'inverse est tout aussi faux : le CO₂ n'est pas inerte, il agit sur la régulation de la respiration et rend l'atmosphère irrespirable en local fermé. Autre piège : croire qu'un raccord HFC classique peut convenir « pour une fois »."
+       },
+       "remediation_vers": "g13",
+       "explication": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
+       "origine": "pack"
+      },
+      {
+       "id": "q-g13-283",
+       "dc": "G13",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Pourquoi installe-t-on des détecteurs de CO₂ dans les locaux abritant une installation au R-744 ?",
+       "choix": [
+        "Pour mesurer la performance de l'installation",
+        "Parce que le CO₂ est inodore et incolore : sans appareil, une fuite est indétectable et le risque est l'asphyxie",
+        "Parce que la réglementation impose un détecteur pour tous les fluides",
+        "Pour compter les ouvertures de porte"
+       ],
+       "bonne": 1,
+       "explication": "Le CO₂ ne se voit pas et ne se sent pas : en cas de fuite dans un local fermé, il remplace l'air sans prévenir. Seul un détecteur alerte avant l'asphyxie.",
+       "aide": "CO2 invisible et inodore.",
+       "remediation_vers": "g13",
+       "code": "13.14"
+      },
+      {
+       "id": "pk-cl4-3",
+       "dc": "Classification",
+       "code": "13.14",
+       "niveau": 2,
+       "type": "qcm",
+       "enonce": "Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous en conclure ?",
+       "choix": [
+        "Que le détecteur fonctionne et mesure correctement",
+        "Rien de plus qu'une mise sous tension : une cellule usée reste allumée sans plus rien mesurer",
+        "Qu'une fuite est en cours",
+        "Que le local a été ventilé récemment"
+       ],
+       "bonne": 1,
+       "aide": "Un voyant dit qu'un appareil est alimenté, pas qu'il voit quelque chose.",
+       "remed": {
+        "regle": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
+        "pourquoi": "C'est le même raisonnement que le double contrôle du VAT : un appareil de sécurité défaillant affiche l'absence de danger quoi qu'il arrive. À l'arrivée sur site, on contrôle donc que les capteurs et les alarmes sont en état de marche, et pas seulement présents au mur.",
+        "piege": "Le contrôle d'arrivée porte aussi sur la signalisation à l'entrée et sur les issues de secours : une palette posée devant une porte de chambre froide n'est pas un défaut de rangement, c'est une issue en moins."
+       },
+       "remediation_vers": "cl4",
+       "explication": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
+       "origine": "pack"
+      }
+     ],
+     "notes": "Module volontairement court et NON évaluant : l'objectif est la reconnaissance du danger, pas la compétence d'intervention. Faire circuler un masque à gaz réel (sans manipulation dangereuse) pour que la différence avec les EPI habituels se voie. Rappeler que l'odeur d'ammoniac est perceptible bien avant le seuil dangereux : message rassurant qui évite la panique tout en imposant l'alerte. Faire deviner pourquoi le NH₃ exige une catégorie séparée alors que le R-290, également dangereux, reste dans le champ A1/A2."
+    },
+    {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "Travail dirigé : choisir un fluide de substitution et le justifier par écrit",
+     "minutes": 60,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "Travail dirigé : choisir un fluide de substitution et le justifier par écrit",
+       "minutes": 60
+      }
+     ]
     }
    ]
   },
   {
-   "n": 3,
+   "n": 5,
    "libelle": null,
-   "titre": "Le cœur du métier : étanchéité, récupération, sécurité",
-   "intention": "Ce qui justifie l'habilitation : ne pas laisser fuir, ne pas émettre, savoir travailler sur des fluides inflammables. C'est la journée la plus lourde au barème — l'erreur y a des conséquences directes sur l'environnement ou sur la sécurité.",
+   "titre": "Les hydrocarbures, puis l'épreuve",
+   "intention": "La spécificité d'A1, et celle qui change le plus les gestes : un fluide inflammable ne se manipule pas comme un fluorure. La journée se termine par le blanc chronométré et la remédiation, positionnement 0-4 à l'appui.",
    "sequences": [
     {
      "type": "cours",
      "fiche": "cl2",
      "titre": "Explosif avant d'être perceptible — la LIE",
-     "minutes": 30,
+     "minutes": 20,
      "video": null,
      "slides": [
       {
@@ -6603,1155 +7854,43 @@ window.PILOTE_PROJECTION = {
         "A1",
         "A2"
        ]
+      },
+      {
+       "id": "pk-p7-1",
+       "dc": "G12",
+       "code": "12.04",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "À quel moment réalise-t-on l'analyse de risques d'une intervention ?",
+       "choix": [
+        "Avant d'engager le moindre geste technique",
+        "Après avoir ouvert le circuit",
+        "À la fin, au moment de rédiger le rapport",
+        "Seulement si le client le demande"
+       ],
+       "bonne": 0,
+       "aide": "Une analyse de risques sert à éviter l'accident, pas à le raconter.",
+       "remed": {
+        "regle": "L'analyse de risques se fait AVANT le premier geste, sur place.",
+        "pourquoi": "Elle sert à identifier et à supprimer les dangers tant qu'on peut encore agir : source d'inflammation, ventilation, issue, présence de public.",
+        "piege": "Une analyse faite après coup n'est plus une analyse, c'est un constat. La sécurité se démontre et s'impose : on ne découvre jamais un risque par l'erreur."
+       },
+       "remediation_vers": "p7",
+       "explication": "L'analyse de risques se fait AVANT le premier geste, sur place.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
       }
      ],
      "notes": "Dessiner l'axe des concentrations au tableau : trop pauvre / domaine d'explosivité / trop riche, et placer LIE et LSE dessus. C'est ce dessin que les stagiaires retiennent, pas la définition. Ne donner AUCUNE valeur chiffrée de LIE, même si on la connaît : faire ouvrir la FDS du R-290 et l'y faire lire — c'est l'objectif de la fiche. Montrer un explosimètre si le plateau en dispose, faire lire l'unité affichée (% LIE) et faire dire à quoi correspond le chiffre. Faire comparer côte à côte les trois appareils (explosimètre, détecteur de fuite, détecteur d'oxygène) : la confusion entre eux est fréquente et dangereuse. Le point sur l'odorisant absent du R-290 mérite d'être posé en question ouverte : « le propane, ça se sent, non ? » — la réponse surprend et se retient."
     },
     {
      "type": "cours",
-     "fiche": "g4a",
-     "titre": "Où fuit une installation ?",
-     "minutes": 30,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Où fuit une installation ?",
-       "dc": "G4 · codes 4.01 · 4.02 · 4.03",
-       "competences": [
-        {
-         "code": "4.01",
-         "lib": "Identifier les points de fuite potentiels d'une installation",
-         "officiel": "Connaître les points de fuite potentiels des équipements de réfrigération, de climatisation et de pompes à chaleur",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "E": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "4.02",
-         "lib": "Consulter et exploiter le registre avant le contrôle",
-         "officiel": "Consulter le registre de l'équipement avant tout contrôle d'étanchéité et relever les informations pertinentes concernant des problèmes récurrents ou des parties problématiques du système nécessitant une attention particulière",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "E": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "4.03",
-         "lib": "Réaliser un contrôle visuel et manuel",
-         "officiel": "Effectuer un contrôle visuel et manuel de tout le système au sens du règlement (CE) n° 1516/2007 de la Commission",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "E": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/points-de-fuite.svg",
-       "alt": "Six familles de points de fuite repérées sur un circuit type.",
-       "titre": "Où fuit une installation ?"
-      },
-      {
-       "type": "point",
-       "html": "Une fuite ne sort pas d'un tube plein. Elle sort d'un <b>point d'assemblage</b> ou d'une <b>pièce en mouvement</b> : raccords mécaniques (flare, à visser), brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints, raccords vissés des voyants, filtres et pressostats, et tout ce qui <b>vibre</b> — compresseur, tuyauteries mal fixées.",
-       "titre": "Où fuit une installation ?"
-      },
-      {
-       "type": "point",
-       "html": "Avant de sortir le moindre instrument, on <b>lit le registre</b> : quelle charge, quel fluide, quelles fuites déjà détectées, qu'a-t-on réparé et quand. Un point déjà réparé est un point <b>à recontrôler en priorité</b>, pas un point clos.",
-       "titre": "Où fuit une installation ?"
-      },
-      {
-       "type": "point",
-       "html": "Vient ensuite le <b>contrôle visuel et manuel</b>, sans électronique : traces d'huile (le fluide entraîne l'huile en fuyant), corrosion, givre anormal, serrage des raccords accessibles, état des fixations.",
-       "titre": "Où fuit une installation ?"
-      },
-      {
-       "type": "point",
-       "html": "Ce contrôle visuel et manuel n'est pas une habitude d'atelier. Il est <b>cadré par un texte européen</b> : le règlement (CE) n° 1516/2007. C'est ce règlement qui définit les méthodes de contrôle d'étanchéité déjà vues ici. La méthode <b>indirecte</b> (lecture des pressions et des températures) et la méthode <b>directe</b> (détecteur, bulles de savon) sont toutes les deux cadrées par ce texte. Contrôler « au sens » de ce règlement, c'est appliquer ces méthodes, pas improviser à sa façon.",
-       "titre": "Où fuit une installation ?"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "L'ordre ne s'invente pas",
-       "html": "<b>Registre → visuel et manuel → méthode indirecte → méthode directe.</b><br>Chaque étape oriente la suivante. On ne contrôle jamais à l'aveugle : le registre oriente le contrôle avant même d'ouvrir la porte du local technique.",
-       "titre": "Où fuit une installation ?"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "La trace d'huile",
-       "html": "Une trace d'huile sous un raccord n'est pas une salissure : c'est la <b>signature d'une fuite</b>. Le fluide s'échappe, l'huile miscible reste. Inversement, un bac de condensats bouché peut <b>masquer</b> une fuite pendant des semaines.",
-       "titre": "Où fuit une installation ?"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-q-4.01",
-       "dc": "G4",
-       "code": "4.01",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Sur une installation frigorifique, où se situent le plus souvent les points de fuite potentiels ?",
-       "choix": [
-        "Aux points d'assemblage (raccords, brasures) et aux pièces qui vibrent, comme le compresseur",
-        "Uniquement sur le pressostat de sécurité",
-        "Uniquement dans l'isolant qui recouvre les tuyauteries",
-        "Sur un tube plein, loin de tout raccord ou de toute pièce en mouvement"
-       ],
-       "bonne": 0,
-       "aide": "Une fuite ne sort pas d'un tube plein : pense à ce qui assemble deux pièces, ou à ce qui bouge.",
-       "remed": {
-        "regle": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
-        "pourquoi": "Un tube plein et correctement fixé ne peut pas fuir ; c'est la jonction entre deux pièces, ou la fatigue due au mouvement, qui crée un passage pour le fluide.",
-        "piege": "Chercher au hasard sur toute la tuyauterie au lieu de cibler d'abord les raccords, les brasures et les points qui vibrent."
-       },
-       "remediation_vers": "g4a",
-       "explication": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2",
-        "E"
-       ]
-      },
-      {
-       "id": "q-g4-104",
-       "dc": "G4",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Lors d'un contrôle d'étanchéité, le contrôleur doit vérifier :",
-       "choix": [
-        "Uniquement le compresseur",
-        "Seulement les raccords visibles",
-        "Tous les éléments du circuit",
-        "Uniquement la charge de fluide"
-       ],
-       "bonne": 2,
-       "explication": "Les fréquences de contrôle d’étanchéité se déclenchent par seuils en tCO₂e (5 / 50 / 500), avec des périodicités typiques 12 / 6 / 3 mois. ⚠ raisonner en 'kg' au lieu de tCO₂e, ou inverser les seuils (5/50/500).",
-       "aide": "Indice : pensez aux seuils tCO2e (5 / 50 / 500) et aux fréquences 12 / 6 / 3 mois.",
-       "remed": {
-        "regle": "Les fréquences de contrôle d’étanchéité se déclenchent par seuils en tCO₂e (5 / 50 / 500), avec des périodicités typiques 12 / 6 / 3 mois.",
-        "pourquoi": "Le but est de réduire les fuites sur les installations à plus fort impact climatique.",
-        "exemple": "une installation à 60 tCO₂e entre dans le palier '≥ 50' (contrôle plus fréquent que le palier '≥ 5').",
-        "piege": "raisonner en 'kg' au lieu de tCO₂e, ou inverser les seuils (5/50/500)."
-       },
-       "remediation_vers": "g4b",
-       "code": "4.03",
-       "categories": [
-        "A1",
-        "A2",
-        "E"
-       ]
-      },
-      {
-       "id": "q-g4-110",
-       "dc": "G4",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Une installation frigorifique doit faire l'objet d'un marquage indiquant :",
-       "choix": [
-        "Uniquement le type de fluide",
-        "Type et quantité de fluide",
-        "Type, quantité et pictogrammes de danger",
-        "Aucune obligation"
-       ],
-       "bonne": 2,
-       "explication": "Ici, on raisonne en tCO₂e (impact) plutôt qu’en kg. ⚠ se focaliser sur la masse de fluide seule.",
-       "aide": "Indice : raisonnez en tCO2e (pas seulement en kg).",
-       "remed": {
-        "regle": "Ici, on raisonne en tCO₂e (impact) plutôt qu’en kg.",
-        "pourquoi": "Le règlement F-Gaz déclenche des obligations en fonction de l’impact climatique.",
-        "exemple": "même une petite charge peut dépasser un seuil si le GWP est élevé.",
-        "piege": "se focaliser sur la masse de fluide seule."
-       },
-       "remediation_vers": "g4b",
-       "code": "4.03",
-       "categories": [
-        "A1",
-        "A2",
-        "E"
-       ]
-      }
-     ],
-     "notes": "Pédagogie de la découverte : emmener le groupe devant une machine d'atelier et faire CHERCHER les points de fuite avant de donner la liste. Les stagiaires en trouvent la moitié seuls, on complète — la liste donnée d'emblée ne se retient pas. Insister sur le registre : c'est le réflexe qui distingue le professionnel du bricoleur, et c'est évalué."
-    },
-    {
-     "type": "cours",
-     "fiche": "g4b",
-     "titre": "Méthode indirecte — mesurer et interpréter",
-     "minutes": 40,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Méthode indirecte — mesurer et interpréter",
-       "dc": "G4 · codes 4.04 · 4.05",
-       "competences": [
-        {
-         "code": "4.04",
-         "lib": "Mettre en œuvre la méthode indirecte (mesures et tables)",
-         "officiel": "Effectuer un contrôle de l'étanchéité du système au moyen d'une méthode indirecte conformément au règlement (CE) n° 1516/2007 et du manuel d'utilisation du système",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "E": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "4.05",
-         "lib": "Utiliser les instruments portables et interpréter les mesures",
-         "officiel": "Utiliser des instruments de mesure portables tels que des manomètres, des thermomètres et des multimètres pour mesurer les volts, ampères et ohms en appliquant des méthodes indirectes de contrôle de l'étanchéité, et interpréter les paramètres mesurés",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "E": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/lecture-table.svg",
-       "alt": "La lecture croisée : manomètre + 1 bar, table de saturation du fluide, sonde de contact.",
-       "titre": "Méthode indirecte — mesurer et interpréter"
-      },
-      {
-       "type": "point",
-       "html": "La méthode indirecte <b>ne détecte pas la fuite</b> : elle détecte un <b>fonctionnement anormal</b> qui la trahit. On relève les <b>pressions</b> (BP et HP) au manomètre et les <b>températures</b> au thermomètre de contact, puis on compare à la <b>table de saturation</b> du fluide présent.",
-       "titre": "Méthode indirecte — mesurer et interpréter"
-      },
-      {
-       "type": "point",
-       "html": "Une pression plus basse que la valeur théorique attendue, une <b>surchauffe</b> qui grimpe au-delà des 5 à 10 K habituels, un <b>sous-refroidissement</b> qui s'effondre sous les 4 à 8 K : autant d'indices convergents d'un manque de charge. Le multimètre complète le tableau (intensité absorbée, cohérence électrique).",
-       "titre": "Méthode indirecte — mesurer et interpréter"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Trois instruments, trois informations",
-       "html": "<b>Manomètre</b> (BP/HP) → écart avec la table de saturation.<br><b>Thermomètre de contact</b> → surchauffe et sous-refroidissement.<br><b>Multimètre</b> → cohérence électrique du compresseur.<br>Un seul indice ne conclut rien ; c'est leur <b>convergence</b> qui oriente.",
-       "titre": "Méthode indirecte — mesurer et interpréter"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Relatif ou absolu ?",
-       "html": "Toujours le même piège : ne pas confondre pression <b>relative</b> (lue au manomètre) et pression <b>absolue</b> (souvent utilisée dans les tables). Écart : environ 1 bar. Et un fluide n'a jamais la table d'un autre.",
-       "titre": "Méthode indirecte — mesurer et interpréter"
-      }
-     ],
-     "questions": [
-      {
-       "id": "q-g4-v6_074",
-       "dc": "G4",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "La méthode de détection indirecte consiste à :",
-       "choix": [
-        "Utiliser un détecteur électronique",
-        "Suivre les paramètres de fonctionnement (P, T°, surchauffe)",
-        "Mettre sous pression d'azote",
-        "Utiliser un traceur UV"
-       ],
-       "bonne": 1,
-       "explication": "Suivre les paramètres de fonctionnement — La détection indirecte analyse les dérives des paramètres (baisse de HP, augmentation de surchauffe, etc.) qui signalent une perte de charge.",
-       "aide": "C'est une méthode qui n'utilise pas d'appareil de détection spécifique.",
-       "remed": {
-        "texte": "La détection indirecte analyse les dérives des paramètres (baisse de HP, augmentation de surchauffe, etc.) qui signalent une perte de charge."
-       },
-       "remediation_vers": "g4b",
-       "code": "4.04",
-       "categories": [
-        "A1",
-        "A2",
-        "E"
-       ]
-      },
-      {
-       "id": "q-g7-170",
-       "dc": "G7",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Un pressostat haute pression (HP) déclenche et arrête le compresseur. Quelle peut être la cause ?",
-       "choix": [
-        "Manque de fluide frigorigène",
-        "Condenseur encrassé, ventilateurs arrêtés, ou excès de charge",
-        "Évaporateur givré",
-        "Manque d'huile"
-       ],
-       "bonne": 1,
-       "explication": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le…",
-       "aide": "Le pressostat HP protège l'installation contre les pressions trop élevées côté condenseur.",
-       "remed": {
-        "texte": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le circuit, ou température ambiante trop élevée."
-       },
-       "remediation_vers": "g7",
-       "code": "4.05",
-       "categories": [
-        "A1",
-        "A2",
-        "E"
-       ]
-      },
-      {
-       "id": "q-g8-171",
-       "dc": "G8",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Un pressostat basse pression (BP) déclenche et arrête le compresseur. Quelle peut être la cause ?",
-       "choix": [
-        "Excès de fluide frigorigène",
-        "Manque de fluide, évaporateur givré, ou filtre bouché",
-        "Condenseur encrassé",
-        "Compresseur trop puissant"
-       ],
-       "bonne": 1,
-       "explication": "Un déclenchement PRESSOSTAT BP indique une pression d'évaporation trop basse. Causes : manque de charge frigorigène, évaporateur givré ou encrassé, filtre déshydrateur bouché, détendeur mal réglé ou…",
-       "aide": "Le pressostat BP protège l'installation contre les pressions trop basses côté évaporateur.",
-       "remed": {
-        "texte": "Un déclenchement PRESSOSTAT BP indique une pression d'évaporation trop basse. Causes : manque de charge frigorigène, évaporateur givré ou encrassé, filtre déshydrateur bouché, détendeur mal réglé ou bouché, ou débit d'air insuffisant sur l'évaporateur."
-       },
-       "remediation_vers": "g8",
-       "code": "4.05",
-       "categories": [
-        "A1",
-        "A2",
-        "E"
-       ]
-      }
-     ],
-     "notes": "Le cœur du parcours E, et le module qui prend le plus de temps d'atelier. Faire manipuler manomètre + thermomètre EN BINÔME sur une machine, puis confronter les relevés à une vraie table de saturation. Tant que le stagiaire ne sait pas dire « la table annonce X, je mesure Y, donc… », la compétence n'est pas acquise. Ne pas accepter un relevé recopié : faire refaire la mesure."
-    },
-    {
-     "type": "cours",
-     "fiche": "g4c",
-     "titre": "Méthode directe et consignation",
-     "minutes": 40,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Méthode directe et consignation",
-       "dc": "G4 · codes 4.06 · 4.07 · 4.08 · 4.09",
-       "competences": [
-        {
-         "code": "4.06",
-         "lib": "Mettre en œuvre une méthode directe en intervenant dans le circuit",
-         "officiel": "Contrôler l'étanchéité du système au moyen d'une des méthodes directes visées au règlement (CE) n° 1516/2007",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "4.07",
-         "lib": "Mettre en œuvre la méthode directe sans intervenir dans le circuit",
-         "officiel": "Contrôler l'étanchéité du système au moyen d'une des méthodes directes ne nécessitant pas d'intervenir dans le circuit de réfrigération et visées au règlement (CE) n° 1516/2007",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "E": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "4.08",
-         "lib": "Utiliser un détecteur électronique de fuites",
-         "officiel": "Utiliser un dispositif électronique de détection des fuites",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "E": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "4.09",
-         "lib": "Consigner le contrôle dans le registre",
-         "officiel": "Consigner les données dans le registre de l'équipement",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "E": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/balayage-detecteur.svg",
-       "alt": "La sonde du détecteur longe le raccord lentement ; une alerte se confirme par un second passage.",
-       "titre": "Méthode directe et consignation"
-      },
-      {
-       "type": "point",
-       "html": "La méthode directe <b>localise physiquement</b> la fuite. Pour la catégorie E, elle se pratique <b>sans accéder au circuit</b> : c'est le code <b>4.07</b>. Le code 4.06, qui suppose d'intervenir dans le circuit, n'est pas dans le champ de la catégorie E.",
-       "titre": "Méthode directe et consignation"
-      },
-      {
-       "type": "point",
-       "html": "En <b>A1</b> et <b>A2</b>, le code <b>4.06</b> s'ajoute : ce sont les méthodes directes qui supposent au contraire d'<b>intervenir dans le circuit</b>. On met alors le circuit en pression à l'<b>azote</b> pour faire apparaître la fuite à l'eau savonneuse, ou l'on introduit un <b>gaz traceur</b> ou un <b>traceur fluorescent</b>. Toutes ces méthodes sont celles du règlement <b>(CE) n° 1516/2007</b> : le choix dépend de l'installation, jamais de l'habitude.",
-       "titre": "Méthode directe et consignation"
-      },
-      {
-       "type": "point",
-       "html": "Le <b>détecteur électronique</b> réagit à la présence de molécules de fluide dans l'air : on balaie la sonde <b>lentement</b>, le long des points repérés à l'étape visuelle. L'<b>eau savonneuse</b> localise par les bulles ; le <b>traceur UV</b> révèle les fuites intermittentes ou d'accès difficile. Sensibilité et étalonnage : selon doc constructeur, à faire valider.",
-       "titre": "Méthode directe et consignation"
-      },
-      {
-       "type": "point",
-       "html": "Un contrôle non consigné n'a <b>aucune valeur réglementaire</b>. On note : date, méthode, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
-       "titre": "Méthode directe et consignation"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Une alerte se confirme",
-       "html": "Le détecteur qui siffle ne conclut rien tout seul. On <b>repasse</b>, ventilateurs à l'arrêt si possible — l'air brassé disperse le nuage de fluide et fait sonner l'appareil à côté de la vraie fuite. Deux passages concordants, sinon on ne conclut pas.",
-       "titre": "Méthode directe et consignation"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "L'instrument aussi se contrôle",
-       "html": "Un détecteur non étalonné donne une conformité qui ne vaut rien. Étalonnage périodique selon la réglementation applicable, et <b>vérification au gaz de référence avant utilisation</b>. Le registre doit pouvoir dire avec quel appareil le contrôle a été fait.",
-       "titre": "Méthode directe et consignation"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-q-4.09",
-       "dc": "G4",
-       "code": "4.09",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Un contrôle d'étanchéité vient de se terminer, sans fuite détectée. Que devez-vous faire ensuite ?",
-       "choix": [
-        "Consigner dans le registre la date, la méthode utilisée, les points contrôlés et le résultat",
-        "Attendre le prochain contrôle pour tout noter en une seule fois",
-        "Informer seulement le client à l'oral",
-        "Rien, puisqu'il n'y a pas de fuite à signaler"
-       ],
-       "bonne": 0,
-       "aide": "Un contrôle qui n'est écrit nulle part n'a, réglementairement, jamais eu lieu.",
-       "remed": {
-        "regle": "Toutes les données du contrôle doivent être consignées dans le registre de l'équipement : date, méthode utilisée, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
-        "pourquoi": "Un contrôle non consigné n'a aucune valeur réglementaire : le registre est la preuve écrite du suivi de l'installation.",
-        "piege": "Penser que l'absence de fuite dispense de consigner le contrôle dans le registre."
-       },
-       "remediation_vers": "g4c",
-       "explication": "Toutes les données du contrôle doivent être consignées dans le registre de l'équipement : date, méthode utilisée, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2",
-        "E"
-       ]
-      },
-      {
-       "id": "q-g4-180",
-       "dc": "G4",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Après une intervention sur un circuit, quelle opération permet de vérifier l'étanchéité ?",
-       "choix": [
-        "Remettre en service immédiatement",
-        "Effectuer un test de pression avec un gaz inerte (azote) et rechercher les fuites",
-        "Ajouter du fluide frigorigène et observer",
-        "Attendre 24 heures sans rien faire"
-       ],
-       "bonne": 1,
-       "explication": "Après intervention, on effectue un TEST D'ÉTANCHÉITÉ avec de l'azote sous pression (environ 30 bars pour circuits HP). On recherche les fuites avec un détecteur de fuite ou de l'eau savonneuse.",
-       "aide": "Avant de charger en fluide frigorigène, il faut s'assurer que le circuit est étanche.",
-       "remed": {
-        "texte": "Après intervention, on effectue un TEST D'ÉTANCHÉITÉ avec de l'azote sous pression (environ 30 bars pour circuits HP). On recherche les fuites avec un détecteur de fuite ou de l'eau savonneuse. Si le circuit tient la pression pendant plusieurs heures, il est étanche."
-       },
-       "remediation_vers": "g4b",
-       "code": "4.06",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g4-v6_069",
-       "dc": "G4",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Un détecteur de fuites doit être calibré au minimum :",
-       "choix": [
-        "Tous les mois",
-        "Tous les 6 mois",
-        "Tous les ans",
-        "Tous les 5 ans"
-       ],
-       "bonne": 2,
-       "explication": "Tous les ans — La calibration annuelle est obligatoire pour garantir la fiabilité de la mesure.",
-       "aide": "C'est le même rythme que le contrôle d'étanchéité minimal.",
-       "remed": {
-        "texte": "La calibration annuelle est obligatoire pour garantir la fiabilité de la mesure."
-       },
-       "remediation_vers": "g4b",
-       "code": "4.08",
-       "categories": [
-        "A1",
-        "A2",
-        "E"
-       ]
-      },
-      {
-       "id": "q-g4-v6_072",
-       "dc": "G4",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "La détection par eau savonneuse est une méthode :",
-       "choix": [
-        "Directe et localisante",
-        "Indirecte et globale",
-        "Réglementairement suffisante seule",
-        "Utilisable uniquement en intérieur"
-       ],
-       "bonne": 0,
-       "explication": "Directe et localisante — L'eau savonneuse permet de localiser précisément les fuites par la formation de bulles. C'est un complément au détecteur électronique.",
-       "aide": "Les bulles apparaissent exactement à l'endroit de la fuite.",
-       "remed": {
-        "texte": "L'eau savonneuse permet de localiser précisément les fuites par la formation de bulles. C'est un complément au détecteur électronique."
-       },
-       "remediation_vers": "g4b",
-       "code": "4.07",
-       "categories": [
-        "A1",
-        "A2",
-        "E"
-       ]
-      }
-     ],
-     "notes": "Insister sur la frontière 4.06 / 4.07 avec un groupe E : elle définit le métier. « Je contrôle, je n'ouvre pas. » Faire manipuler le détecteur sur une fuite calibrée d'atelier et faire constater qu'un balayage trop rapide passe à côté. Terminer par le remplissage d'un registre réel — un contrôle non consigné n'existe pas."
-    },
-    {
-     "type": "exercice",
-     "fiche": "x4",
-     "titre": "Détective — le contrôle qui tourne mal",
-     "minutes": 25,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Détective — le contrôle qui tourne mal",
-       "dc": "G4 · mise en situation · parcours E",
-       "competences": [
-        {
-         "code": "4.02",
-         "lib": "Exploiter le registre pour orienter le contrôle",
-         "officiel": "Consulter le registre de l'équipement avant tout contrôle d'étanchéité et relever les informations pertinentes concernant des problèmes récurrents ou des parties problématiques du système nécessitant une attention particulière",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "E": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "4.08",
-         "lib": "Utiliser le détecteur dans de bonnes conditions",
-         "officiel": "Utiliser un dispositif électronique de détection des fuites",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "E": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "point",
-       "html": "Contrôle périodique d'étanchéité chez un client. Le <b>registre</b> t'apprend qu'une fuite a été réparée il y a trois mois sur un raccord flare de la ligne liquide.",
-       "titre": "Détective — le contrôle qui tourne mal"
-      },
-      {
-       "type": "point",
-       "html": "<ul><li>Le contrôle visuel ne montre <b>rien</b> sur le raccord réparé.</li><li>Ton détecteur électronique <b>sonne</b> en passant près du condenseur — ventilateur en marche.</li><li>Sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier.</li></ul>",
-       "titre": "Détective — le contrôle qui tourne mal"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Trois indices, trois réflexes",
-       "html": "Un point réparé se <b>recontrôle en priorité</b>, même s'il semble propre. Une alerte détecteur près d'un ventilateur en marche <b>se confirme</b> brassage arrêté. Et une incohérence plaque/registre se <b>signale</b> — elle change la table de saturation à utiliser.",
-       "titre": "Détective — le contrôle qui tourne mal"
-      }
-     ],
-     "questions": [],
-     "notes": "Exercice taillé pour le parcours E : tout se joue SANS ouvrir le circuit. Laisser débattre sur la proposition « resserrer tous les raccords » — elle paraît professionnelle mais c'est une intervention non justifiée, et sur un parcours E on ne touche pas au circuit. L'incohérence plaque/registre est le détail que presque personne ne relève : celui qui le voit a le réflexe métier."
-    },
-    {
-     "type": "cours",
-     "fiche": "g5a",
-     "titre": "Récupérer sans émettre",
-     "minutes": 40,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Récupérer sans émettre",
-       "dc": "G5 · codes 5.01 → 5.04",
-       "competences": [
-        {
-         "code": "5.01",
-         "lib": "Connecter et déconnecter avec un minimum d'émissions",
-         "officiel": "Connecter et déconnecter les jauges et lignes en produisant le minimum d'émissions",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "5.02",
-         "lib": "Vider et remplir un cylindre, en phase liquide et gazeuse",
-         "officiel": "Vider et remplir un cylindre de réfrigérant à l'état liquide et à l'état gazeux",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "5.03",
-         "lib": "Utiliser un dispositif de récupération",
-         "officiel": "Utiliser un dispositif de récupération des réfrigérants et connecter et déconnecter ce dispositif en produisant le minimum d'émissions",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "5.04",
-         "lib": "Vidanger l'huile contaminée",
-         "officiel": "Vider l'huile contaminée par le réfrigérant d'un système",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/recuperation.svg",
-       "alt": "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.",
-       "titre": "Récupérer sans émettre"
-      },
-      {
-       "type": "point",
-       "html": "Chaque connexion et chaque déconnexion est un <b>point de fuite</b> : le geste est lent, contrôlé, flexibles purgés. Avant de récupérer, on <b>arrête et on isole</b> le système.",
-       "titre": "Récupérer sans émettre"
-      },
-      {
-       "type": "point",
-       "html": "Le <b>groupe de récupération</b> transfère le fluide vers un cylindre prévu pour, en phase gazeuse ou liquide selon la situation. Le cylindre respecte un <b>taux de remplissage maximal</b> — jamais rempli à ras : le liquide se dilate avec la température, et un cylindre plein est un danger. On <b>pèse avant</b>, sinon on ne saura jamais combien on a réellement récupéré.",
-       "titre": "Récupérer sans émettre"
-      },
-      {
-       "type": "point",
-       "html": "L'<b>huile</b> du compresseur est contaminée par nature : elle se récupère à part, comme un déchet dangereux. Elle ne se dégaze pas, elle ne se mélange pas au fluide.",
-       "titre": "Récupérer sans émettre"
-      },
-      {
-       "type": "point",
-       "html": "Une fois le fluide récupéré, il reste un dernier geste : <b>vidanger l'huile</b> du compresseur. Cette huile garde du <b>fluide dissous</b> dedans. Ce fluide dissous continue à <b>dégazer</b> : il relâche lentement des vapeurs, même une fois l'huile sortie de la machine. On vide l'huile dans un <b>récipient fermé et étiqueté</b>, jamais dans un bidon ouvert. Sinon, ces vapeurs s'échappent : c'est une émission de plus, exactement comme une fuite.",
-       "titre": "Récupérer sans émettre"
-      },
-      {
-       "type": "point",
-       "html": "On <b>note la quantité</b> d'huile vidangée, comme on pèse le fluide récupéré : sans cette trace, personne ne peut vérifier que rien n'a été perdu en route. L'huile contaminée part ensuite en <b>déchet dangereux</b>, avec son <b>bordereau</b> — le document qui suit le déchet jusqu'à son traitement final.",
-       "titre": "Récupérer sans émettre"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Récupéré, recyclé, régénéré",
-       "html": "<b>Récupéré</b> : sorti de la machine — c'est un déchet tant qu'il n'a pas été traité.<br><b>Recyclé</b> : nettoyé sommairement — réemploi limité, typiquement sur la même installation ou le même exploitant.<br><b>Régénéré</b> : ramené aux spécifications d'un fluide neuf par une filière agréée — réutilisable comme du neuf.",
-       "titre": "Récupérer sans émettre"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Ne jamais mélanger",
-       "html": "Deux fluides différents dans le même cylindre, et le contenu devient <b>impossible à recycler ou à régénérer</b> : il part en destruction, aux frais de l'entreprise. Un cylindre, un fluide, une étiquette.",
-       "titre": "Récupérer sans émettre"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Vider l'huile : le bon ordre",
-       "html": "<p>On vide l'huile <b>après</b> avoir récupéré le fluide, jamais avant : sinon on relâche dans l'air du fluide encore dissous dedans, sans même le mesurer. Récipient fermé et étiqueté, quantité notée, déchet dangereux avec bordereau — c'est le geste complet de la vidange.</p>",
-       "titre": "Récupérer sans émettre"
-      }
-     ],
-     "questions": [
-      {
-       "id": "q-g5-135",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Lors de la récupération, l'huile frigorifique doit être :",
-       "choix": [
-        "Laissée dans le compresseur",
-        "Récupérée séparément",
-        "Mélangée au fluide",
-        "Dégazée à l'atmosphère"
-       ],
-       "bonne": 1,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g5a",
-       "code": "5.04",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-141",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Avant de récupérer le fluide, il faut :",
-       "choix": [
-        "Ouvrir immédiatement le circuit",
-        "Arrêter et isoler le système",
-        "Chauffer l'installation",
-        "Vidanger l'huile"
-       ],
-       "bonne": 1,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g5a",
-       "code": "5.03",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-175",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
-       "choix": [
-        "Sur la ligne de refoulement",
-        "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
-        "Sur la ligne liquide",
-        "Sur le condenseur"
-       ],
-       "bonne": 1,
-       "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
-       "aide": "Le manomètre BP mesure la pression côté basse pression.",
-       "remed": {
-        "texte": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP)."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-176",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
-       "choix": [
-        "Sur la ligne d'aspiration",
-        "Sur la ligne de refoulement (entre compresseur et condenseur)",
-        "Sur l'évaporateur",
-        "Sur le détendeur"
-       ],
-       "bonne": 1,
-       "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
-       "aide": "Le manomètre HP mesure la pression côté haute pression.",
-       "remed": {
-        "texte": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP)."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      }
-     ],
-     "notes": "Cœur du parcours D : chaque stagiaire branche, purge et pèse lui-même, sans exception. L'anecdote qui marque mieux qu'un discours : un cylindre trop rempli laissé au soleil. Relier systématiquement à G2 — un geste de récupération soigné est un geste écologique, pas une contrainte administrative. Faire chercher sur le log p-h si le fluide observé est sous-refroidi, saturé ou surchauffé avant de donner la réponse."
-    },
-    {
-     "type": "cours",
-     "fiche": "g5b",
-     "titre": "Peser, charger, stocker, tracer",
-     "minutes": 40,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Peser, charger, stocker, tracer",
-       "dc": "G5 · codes 5.05 → 5.09",
-       "competences": [
-        {
-         "code": "5.05",
-         "lib": "Déterminer l'état du fluide et charger sans perte",
-         "officiel": "Déterminer l'état (liquide, gazeux) et les conditions (sous-refroidi, saturé ou surchauffé) d'un réfrigérant avant tout remplissage afin de choisir la méthode et le volume de remplissage les plus adaptés. Remplir le système de réfrigérant (à l'état liquide et gazeux) sans provoquer de pertes",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "5.06",
-         "lib": "Choisir la balance adaptée et peser",
-         "officiel": "Choisir le bon type de balance et l'utiliser pour peser le réfrigérant",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "5.07",
-         "lib": "Consigner l'opération dans le registre",
-         "officiel": "Consigner dans le registre de l'équipement toutes les informations pertinentes concernant le réfrigérant récupéré ou ajouté",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "D": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "5.08",
-         "lib": "Appliquer les prescriptions de gestion, stockage et transport",
-         "officiel": "Connaître les prescriptions et les procédures de gestion, de réutilisation, de récupération, de stockage et de transport des réfrigérants et huiles fluorés, y compris lorsqu'ils sont contaminés",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "D": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "5.09",
-         "lib": "Gérer les hydrocarbures et leurs huiles, y compris contaminés",
-         "officiel": "Connaître les prescriptions et les procédures de gestion, de remplissage, de récupération, de stockage et de transport des hydrocarbures et des huiles, y compris lorsqu'ils sont contaminés, ainsi que d'installation d'équipements et de systèmes tributaires des hydrocarbures",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "D": "T"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/recuperation.svg",
-       "alt": "Rappel du montage : la bouteille se pèse avant, ne se remplit jamais à ras, ne mélange jamais deux fluides.",
-       "titre": "Peser, charger, stocker, tracer"
-      },
-      {
-       "type": "point",
-       "html": "Pour charger, on détermine d'abord l'<b>état du fluide</b> et la <b>quantité prévue</b> (plaque signalétique, doc constructeur). La charge se contrôle à la <b>balance</b>, jamais « au manomètre » : le manomètre dit comment la machine se comporte, la balance dit combien on a mis.",
-       "titre": "Peser, charger, stocker, tracer"
-      },
-      {
-       "type": "point",
-       "html": "Cas particulier des <b>mélanges zéotropes</b> : ils se chargent en <b>phase liquide</b>, faute de quoi les composants se séparent et la composition du circuit dérive.",
-       "titre": "Peser, charger, stocker, tracer"
-      },
-      {
-       "type": "point",
-       "html": "L'<b>huile</b> suit le fluide, et elle en dépend. Les anciens fluides chlorés travaillaient avec de l'huile <b>minérale</b> ; les HFC et les HFO demandent une huile de synthèse, le plus souvent <b>polyolester (POE)</b>. Les deux ne se mélangent pas : sur un changement de fluide, l'huile se change aussi — c'est ce qui distingue un <b>retrofit</b> d'un simple drop-in. La POE <b>absorbe l'humidité de l'air</b> très vite : bidon refermé aussitôt, circuit jamais laissé ouvert. Le type exact d'huile se lit sur la <b>plaque ou la doc constructeur</b>, jamais au jugé.",
-       "titre": "Peser, charger, stocker, tracer"
-      },
-      {
-       "type": "point",
-       "html": "Une huile retirée d'un circuit est <b>contaminée</b> : elle contient du fluide dissous. Elle ne se jette pas, elle part en <b>déchet dangereux</b> vers une filière agréée, avec son bordereau. Pour les <b>hydrocarbures</b>, fluide et huile sont en plus <b>inflammables</b> : récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, transport selon la réglementation applicable et la fiche de données de sécurité.",
-       "titre": "Peser, charger, stocker, tracer"
-      },
-      {
-       "type": "point",
-       "html": "Le <b>registre</b> est la preuve légale de toute opération sur le fluide : quantité ajoutée, quantité récupérée, date, intervenant. Le rejet volontaire à l'atmosphère est strictement interdit et sanctionné.",
-       "titre": "Peser, charger, stocker, tracer"
-      },
-      {
-       "type": "point",
-       "html": "Avant de charger, on regarde aussi dans quelle <b>condition</b> se trouve le fluide, en plus de savoir s'il est liquide ou gazeux. À une pression donnée, le fluide peut être <b>saturé</b> : le liquide et la vapeur sont présents ensemble, à la température de changement d'état. Il peut être <b>sous-refroidi</b> : c'est un liquide plus froid que sa température de saturation, donc sans aucune vapeur mélangée. Il peut être <b>surchauffé</b> : c'est une vapeur plus chaude que sa température de saturation, donc sans aucune goutte de liquide. Cette condition guide la méthode de remplissage : on ne prélève pas de la même façon un liquide sous-refroidi, pris en bas de la bouteille, et une vapeur surchauffée, prise en haut.",
-       "titre": "Peser, charger, stocker, tracer"
-      },
-      {
-       "type": "point",
-       "html": "Un fluide récupéré n'est pas forcément perdu : il a trois devenirs possibles. La <b>réutilisation</b> (ou réemploi) : le fluide récupéré est rechargé tel quel, sans retraitement, dans la machine d'où il vient, chez le même détenteur (celui qui possède ou utilise l'installation). Le <b>recyclage</b> : le fluide subit un nettoyage de base, comme une filtration et un séchage. La <b>régénération</b> : un retraitement complet, réalisé en filière spécialisée, qui redonne au fluide les caractéristiques du fluide neuf. Un fluide régénéré <b>s'achète</b> : on ne le régénère jamais soi-même à l'atelier.",
-       "titre": "Peser, charger, stocker, tracer"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "La balance prime",
-       "html": "On pèse <b>avant</b> et <b>après</b>. Sans pesée initiale, la quantité récupérée ou ajoutée n'est qu'une estimation — et une estimation ne se consigne pas dans un registre.",
-       "titre": "Peser, charger, stocker, tracer"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Stockage et transport",
-       "html": "Cylindres arrimés, debout, étiquetés, à l'abri de la chaleur ; les fluides <b>inflammables</b> (hydrocarbures, A2L) obéissent en plus aux règles de leur classe. Conditions détaillées : selon la réglementation applicable et la fiche de données de sécurité, à faire valider.",
-       "titre": "Peser, charger, stocker, tracer"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Réemploi n'est pas retraitement",
-       "html": "On pourrait croire qu'un fluide récupéré doit toujours passer par le recyclage ou la régénération avant de resservir. C'est faux : réutiliser le fluide récupéré sur <b>sa machine d'origine</b>, chez le <b>même détenteur</b> (celui qui possède ou utilise cette machine), est légal et ne demande aucun retraitement.",
-       "titre": "Peser, charger, stocker, tracer"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-q-5.09",
-       "dc": "G5",
-       "code": "5.09",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le fluide et l'huile d'une installation aux hydrocarbures ont un point commun qui impose des précautions particulières de stockage et de transport. Lequel ?",
-       "choix": [
-        "Ils sont inflammables",
-        "Ils sont toxiques par contact",
-        "Ils sont sous une pression bien plus élevée que les autres fluides",
-        "Ils sont incompatibles avec tout récipient métallique"
-       ],
-       "bonne": 0,
-       "aide": "Relis ce qui distingue les hydrocarbures des autres fluides frigorigènes du point de vue du risque.",
-       "remed": {
-        "regle": "Pour les hydrocarbures, le fluide ET l'huile sont inflammables : ils se stockent et se transportent dans des récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, selon la réglementation applicable et la fiche de données de sécurité.",
-        "pourquoi": "Un hydrocarbure qui fuit près d'une flamme ou d'une étincelle peut s'enflammer, contrairement à la plupart des autres fluides frigorigènes courants. C'est ce risque supplémentaire qui justifie des règles de gestion, de stockage et de transport renforcées.",
-        "piege": "Confondre le risque des hydrocarbures avec un risque de toxicité ou de pression : le danger propre aux hydrocarbures est l'inflammabilité, pas un poison ni une surpression particulière."
-       },
-       "remediation_vers": "g5b",
-       "explication": "Pour les hydrocarbures, le fluide ET l'huile sont inflammables : ils se stockent et se transportent dans des récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, selon la réglementation applicable et la fiche de données de sécurité.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-128",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Lors de la mise hors service, le fluide doit être récupéré :",
-       "choix": [
-        "Uniquement si > 5 Teq CO2",
-        "Pour toute quantité",
-        "Seulement si > 2 kg",
-        "Facultatif si hermétique"
-       ],
-       "bonne": 1,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g5a",
-       "code": "5.08",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-133",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Les équipements contenant des fluides en fin de vie relèvent de la filière :",
-       "choix": [
-        "Déchets ménagers",
-        "DEEE (Déchets d'Équipements Électriques et Électroniques)",
-        "Déchets dangereux uniquement",
-        "Recyclage ordinaire"
-       ],
-       "bonne": 1,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g5a",
-       "code": "5.08",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-143",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Une bouteille de fluide récupéré doit être :",
-       "choix": [
-        "Stockée couchée",
-        "Stockée debout",
-        "Stockée comme on veut",
-        "Stockée la tête en bas"
-       ],
-       "bonne": 1,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g5a",
-       "code": "5.08",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-147",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Un frigoriste peut-il détruire lui-même le fluide récupéré ?",
-       "choix": [
-        "Oui, en le brûlant",
-        "Oui, en le diluant",
-        "Non, uniquement centre agréé",
-        "Oui, en le dégazant"
-       ],
-       "bonne": 2,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g5a",
-       "code": "5.08",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      }
-     ],
-     "notes": "Le geste à faire répéter : peser AVANT. Beaucoup de stagiaires pèsent après et déduisent — c'est faux dès qu'il reste du fluide dans le cylindre. Sur un groupe A2, insister sur la précision : sur une charge de 800 g, 50 g d'écart changent le comportement de la machine. Faire remplir un registre à chaque manipulation d'atelier, même en exercice."
-    },
-    {
-     "type": "exercice",
-     "fiche": "x3",
-     "titre": "Détective — la bouteille de récupération",
-     "minutes": 25,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Détective — la bouteille de récupération",
-       "dc": "G5 · mise en situation · parcours D",
-       "competences": [
-        {
-         "code": "5.02",
-         "lib": "Gérer le remplissage des cylindres en sécurité",
-         "officiel": "Vider et remplir un cylindre de réfrigérant à l'état liquide et à l'état gazeux",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "5.06",
-         "lib": "Peser à chaque étape",
-         "officiel": "Choisir le bon type de balance et l'utiliser pour peser le réfrigérant",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "point",
-       "html": "Récupération sur une chambre froide avant remplacement d'un composant. Tu as pesé la bouteille <b>avant</b> de commencer — bon réflexe. La récupération avance, et la balance approche du <b>niveau maximal admissible</b> de la bouteille… mais il reste visiblement du fluide dans le circuit.",
-       "titre": "Détective — la bouteille de récupération"
-      },
-      {
-       "type": "point",
-       "html": "Sur l'étagère du fourgon : une bouteille de récupération <b>vide</b>, et une bouteille <b>entamée</b> qui contient déjà un autre fluide.",
-       "titre": "Détective — la bouteille de récupération"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qui ne se négocie pas",
-       "html": "Le taux de remplissage maximal protège contre la <b>dilatation du liquide</b> : dépassé, la bouteille devient dangereuse à la première montée en température. Et un mélange de fluides est <b>impossible à recycler ou régénérer</b> : il part en destruction.",
-       "titre": "Détective — la bouteille de récupération"
-      }
-     ],
-     "questions": [],
-     "notes": "Cœur de cible du parcours D. La proposition « quelques centaines de grammes » fait toujours débat — c'est voulu : elle ressemble au bon sens de chantier. Rappeler l'anecdote de la bouteille au soleil. En atelier, faire refaire la double pesée : bouteille pleine fermée, étiquetée, consignée au registre ; nouvelle bouteille pesée AVANT le premier gramme."
-    },
-    {
-     "type": "cours",
      "fiche": "g12",
      "titre": "Hydrocarbures — le spécifique A1 et A2",
-     "minutes": 40,
+     "minutes": 35,
      "video": null,
      "slides": [
       {
@@ -8031,7 +8170,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g12b",
      "titre": "Intervenir sur un circuit hydrocarbure",
-     "minutes": 40,
+     "minutes": 35,
      "video": null,
      "slides": [
       {
@@ -8332,6 +8471,54 @@ window.PILOTE_PROJECTION = {
      "notes": "Le scénario est volontairement banal : c'est le quotidien du parc A2. Faire construire la séquence AU TABLEAU par le groupe avant d'afficher la réponse — chaque oubli (le four !, le détecteur inadapté) se paie cher en vrai. Prolonger avec la question : « et si le client refuse qu'on coupe le four ? » — réponse attendue : on ne fait pas l'intervention."
     },
     {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "Analyse de risques hydrocarbures, charge d'un circuit R-290, remplacement d'un composant",
+     "minutes": 185,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "Analyse de risques hydrocarbures, charge d'un circuit R-290, remplacement d'un composant",
+       "minutes": 185
+      }
+     ]
+    },
+    {
+     "type": "bilan",
+     "fiche": "ex-ech",
+     "titre": "Échauffement — les fondamentaux (niveau 1)",
+     "minutes": 25,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Échauffement — les fondamentaux (niveau 1)",
+       "dc": "Entraînement · niveau 1 · A1 et A2",
+       "competences": []
+      }
+     ],
+     "questions": [],
+     "notes": "Tirage limité aux questions de niveau 1 (définitions, rôles, gestes de base), seuil abaissé à 60 % : c'est un test de démarrage, pas un examen. À proposer en début de formation pour positionner, puis en milieu de parcours pour mesurer le chemin parcouru."
+    },
+    {
+     "type": "bilan",
+     "fiche": "ex-a1",
+     "titre": "Examen blanc — catégorie A1",
+     "minutes": 40,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "Examen blanc — catégorie A1",
+       "dc": "Entraînement · périmètre A1",
+       "competences": []
+      }
+     ],
+     "questions": [],
+     "notes": "Vingt questions sur tout le périmètre. Utile en fin de parcours pour repérer les groupes à retravailler — le score par groupe est plus intéressant que le score global."
+    },
+    {
      "type": "bilan",
      "fiche": "ex-defi",
      "titre": "Défi technicien — diagnostics (niveau 2)",
@@ -8346,1317 +8533,22 @@ window.PILOTE_PROJECTION = {
      ],
      "questions": [],
      "notes": "Que du niveau 2 : diagnostics, mises en situation, subtilités (huile, transformations du cycle, glissement). Seuil relevé à 80 % : réservé à la fin de parcours, ou aux stagiaires déjà expérimentés qui veulent se jauger. Un score moyen ici n'est PAS un échec en formation."
-    }
-   ]
-  },
-  {
-   "n": 4,
-   "libelle": null,
-   "titre": "Préparation pratique — avant de toucher au fluide",
-   "intention": "Le matériel et l'ordre des gestes, revus AVANT la manipulation. La sécurité s'y démontre et s'impose : on ne découvre jamais un risque par l'erreur. À projeter en préparation de chantier, dans l'heure qui précède le plateau — pas la veille.",
-   "sequences": [
-    {
-     "type": "cours",
-     "fiche": "s4",
-     "titre": "Ce qui éclate — la pression",
-     "minutes": 20,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Ce qui éclate — la pression",
-       "dc": "Sécurité · codes 11.03 · 3.01",
-       "competences": [
-        {
-         "code": "11.03",
-         "lib": "Connaître les règles de sécurité applicables aux fluides nécessitant une pression de fonctionnement plus élevée",
-         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "3.01",
-         "lib": "Réaliser une épreuve de pression à l'azote pour vérifier la résistance du circuit",
-         "officiel": "Effectuer une épreuve de pression pour contrôler la résistance du système",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/secu-bouteille.svg",
-       "alt": "À gauche, bouteille remplie à ras : le liquide n'a pas de place pour se dilater, la pression grimpe très vite. À droite, volume libre respecté. En bas, les gestes interdits.",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "Ce qui peut céder :",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "Le schéma du haut explique pourquoi une bouteille ne se remplit <b>jamais</b> à ras : un liquide qui chauffe se dilate, et s'il n'a pas de volume libre au-dessus de lui, la pression grimpe très vite. Le taux de remplissage à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur ; les propriétés du fluide, dans sa fiche de données de sécurité (FDS).",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "<b>Comment ça arrive vraiment.</b> Sur un chantier, une bouteille de fluide oubliée dans un véhicule en plein été, vitres fermées, en est un exemple courant : l'habitacle chauffe fortement, la bouteille avec. Autre situation : un flexible de manifold ancien, jamais contrôlé, qui cède au moment où l'on ouvre une vanne. Autre situation encore : un tronçon de tuyauterie en toiture, isolé par deux vannes fermées pendant une réparation, laissé en plein soleil sans protection ni vérification avant de reprendre le travail dessus.",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "Un compresseur à l'arrêt n'est pas forcément une machine sans danger. Un circuit peut rester sous pression longtemps après l'arrêt d'une installation, sans qu'aucune fuite ne se produise. Rien à l'extérieur ne signale cette pression : ni bruit, ni mouvement, ni tiédeur. Un technicien qui desserre un raccord en se disant « de toute façon, c'est arrêté depuis longtemps » peut se retrouver face à une projection de fluide et de pièces.",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "<b>Ce qui protège.</b> Dans l'ordre où on l'applique :",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "<ul><li>une <b>bouteille de fluide</b> qui a chauffé au soleil ou près d'une source de chaleur ;</li><li>un <b>flexible</b> fatigué par le temps, l'usure ou de mauvais pliages ;</li><li>un <b>raccord</b> mal serré ou abîmé ;</li><li>un tronçon de circuit fermé des deux côtés par des vannes, sans aucune protection, alors qu'il reste rempli de fluide.</li></ul>",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li>Ne jamais exposer une bouteille de fluide à la chaleur ou au soleil direct : la stocker et la transporter à l'abri, à la verticale, arrimée.</li><li>Respecter le taux de remplissage indiqué par le fabricant : ne jamais remplir une bouteille à ras.</li><li>Connaître le rôle des <b>organes de sécurité</b> du circuit. Une <b>soupape de sécurité</b> s'ouvre automatiquement pour laisser échapper un peu de fluide avant que la pression n'atteigne un niveau dangereux ; son seuil de déclenchement est fixé par le fabricant et indiqué sur l'organe ou dans sa documentation. Vérifier la présence et le bon état de ces organes, sans jamais les démonter ni les bloquer.</li><li>Pour toute mise en pression du circuit — recherche de fuite, épreuve de pression — utiliser <b>uniquement de l'azote</b>, jamais de l'oxygène ni de l'air comprimé, et toujours au travers d'un <b>mano-détendeur</b> (un appareil qui réduit et règle la pression très élevée de la bouteille) réglé selon la documentation constructeur. Sans détendeur, la pression de la bouteille d'azote suffit à elle seule à faire éclater un circuit frigorifique.</li><li>Avant de desserrer quoi que ce soit sur un circuit à l'arrêt, mesurer sa pression au manomètre — même si l'installation semble arrêtée depuis longtemps.</li></ol>",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ul><li>Un circuit reste sous pression même à l'arrêt et même par forte chaleur.</li><li>Une bouteille de fluide ne se chauffe jamais et ne se remplit jamais à ras.</li><li>Toute mise en pression se fait à l'azote seul, jamais à l'oxygène ni à l'air comprimé, toujours avec un mano-détendeur réglé selon la documentation constructeur.</li><li>Avant de toucher un raccord, vérifier la pression au manomètre, même sur une machine arrêtée depuis longtemps.</li></ul>",
-       "titre": "Ce qui éclate — la pression"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>On ne chauffe <b>jamais</b> une bouteille de fluide pour accélérer un transfert ou une charge — ni flamme, ni eau chaude, ni radiateur. On ne met <b>jamais</b> un circuit sous pression avec de l'oxygène ou de l'air comprimé, et on n'utilise <b>jamais</b> une bouteille d'azote sans mano-détendeur. Conséquence : la bouteille ou le circuit peut éclater et projeter du fluide et des fragments sur la personne présente.</p>",
-       "titre": "Ce qui éclate — la pression"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl3-1",
-       "dc": "Classification",
-       "code": "11.03",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
-       "choix": [
-        "Près du plafond, car les gaz montent toujours",
-        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
-        "Il se répartit uniformément et sans danger dans tout le volume",
-        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
-       ],
-       "bonne": 1,
-       "aide": "Comparez sa masse à celle de l'air.",
-       "remed": {
-        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
-        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
-       },
-       "remediation_vers": "cl3",
-       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-p4-1",
-       "dc": "G3",
-       "code": "3.01",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
-       "choix": [
-        "De l'oxygène",
-        "De l'azote sec",
-        "De l'air comprimé",
-        "Du fluide frigorigène du circuit"
-       ],
-       "bonne": 1,
-       "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
-       "remed": {
-        "regle": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
-        "pourquoi": "L'azote est neutre et sec : il n'entretient pas la combustion et n'introduit pas d'eau dans le circuit.",
-        "piege": "L'oxygène au contact de l'huile du circuit peut provoquer une réaction violente. L'air comprimé, lui, apporte de l'humidité qui restera dans l'installation."
-       },
-       "remediation_vers": "p4",
-       "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Conseil d'animation : faire observer côte à côte une bouteille d'azote équipée de son mano-détendeur et un flexible hors service, fatigué ou fissuré. Montrer une soupape de sécurité démontée (pièce morte, jamais sur une machine en service) et expliquer son déclenchement. Demander au groupe, avant de répondre : « un compresseur arrêté depuis longtemps, est-il encore sous pression ? » — laisser les hypothèses circuler avant de trancher. Insister à l'oral sur l'interdiction absolue de l'oxygène et de l'air comprimé pour mettre un circuit en pression."
     },
     {
-     "type": "cours",
-     "fiche": "s2",
-     "titre": "Le froid brûle — projections et gelures",
-     "minutes": 15,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Le froid brûle — projections et gelures",
-       "dc": "Sécurité · codes 12.02",
-       "competences": [
-        {
-         "code": "12.02",
-         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, ventilation, EPI.",
-         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/secu-projection.svg",
-       "alt": "Le liquide jaillit dans l'axe du raccord : on se place hors de cet axe, on vérifie au manomètre que la pression est nulle, et on porte gants et lunettes.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "point",
-       "html": "Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "point",
-       "html": "Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui. Un contact avec de l'ammoniac liquide ajoute une <b>brûlure chimique</b> à la brûlure froide : ce fluide n'appartient pas à la même famille que les fluides fluorés, et ne se comporte pas comme eux.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "point",
-       "html": "Le cas type : vous déconnectez un flexible de <b>manifold</b> (l'appareil à manomètres) en pensant le tronçon vide. La vanne n'a pas été vérifiée, le manomètre pas relu. Le liquide restant jaillit au desserrage — dans l'axe du raccord, comme sur le schéma.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ol><li>Mettez vos <b>EPI</b> (équipements de protection individuelle) — ici, gants et lunettes — avant toute manipulation d'un circuit sous pression.</li><li><b>Vérifiez au manomètre</b> que la pression est nulle, et que la vanne est fermée, avant de débrancher un flexible ou de desserrer un raccord.</li><li><b>Desserrez progressivement</b>, jamais d'un coup, et restez hors de la trajectoire d'un éventuel jet.</li><li>En cas de projection sur la peau ou les yeux : rincez sans frotter, et consultez. La conduite à tenir précise figure sur la <b>FDS</b> (fiche de données de sécurité) du fluide utilisé.</li></ol>",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>Débrancher un flexible ou desserrer un raccord sous pression <b>sans vérifier au manomètre</b> qu'il est vide, ou le faire sans gants ni lunettes.</p><p>Conséquence : projection de liquide qui gèle la peau ou les yeux au contact. Risque de lésion oculaire grave.</p>",
-       "titre": "Le froid brûle — projections et gelures"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl2-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
-       "choix": [
-        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
-        "La température minimale d'inflammation du gaz",
-        "La pression maximale admissible dans la bouteille",
-        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
-       ],
-       "bonne": 0,
-       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
-       "remed": {
-        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
-        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
-       },
-       "remediation_vers": "cl2",
-       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-cl4-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
-       "choix": [
-        "Au plafond, comme un détecteur de fumée",
-        "En partie basse, là où le CO₂ s'accumule",
-        "À l'extérieur du local uniquement",
-        "Peu importe, le gaz se répartit uniformément"
-       ],
-       "bonne": 1,
-       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
-       "remed": {
-        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
-        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
-       },
-       "remediation_vers": "cl4",
-       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Faites observer un flexible de manifold et ses raccords rapides, et faites lire un manomètre avant de mimer un débranchement. Faites manipuler des gants de protection au froid et des lunettes ; faites justifier l'ordre dans lequel on les enfile avant d'intervenir. Racontez un cas concret de projection lors d'un débranchement trop rapide, pour ancrer le réflexe manomètre-avant-tout. Rappelez que la conduite à tenir en cas de projection se lit sur la FDS du fluide utilisé sur le chantier."
-    },
-    {
-     "type": "cours",
-     "fiche": "p7",
-     "titre": "Préparation de chantier — risques, EPI, zone de travail",
+     "type": "plateau",
+     "fiche": null,
+     "titre": "Remédiation individuelle et positionnement 0-4 sur les compétences non acquises",
      "minutes": 25,
      "video": null,
+     "questions": [],
+     "notes": "",
      "slides": [
       {
-       "type": "titre",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail",
-       "dc": "Préparation pratique · codes 12.04 · 12.05",
-       "competences": [
-        {
-         "code": "12.04",
-         "lib": "Réaliser l'analyse de risques avant le travail",
-         "officiel": "Réaliser une analyse des risques avant le début du travail et éliminer ou, si l'élimination n'est pas possible, identifier les sources de danger",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "12.05",
-         "lib": "Préparer la zone de travail et choisir les EPI adaptés",
-         "officiel": "Préparer la zone de travail et sélectionner les outils, le matériel et les équipements de protection adéquats pour travailler sur des systèmes dépendant des réfrigérants inflammables",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/prepa-chantier.svg",
-       "alt": "Quatre temps avant de toucher : reconnaître le lieu et le fluide, identifier les risques du jour et les supprimer, se protéger avec les EPI qui en découlent, préparer la zone et le matériel.",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
-      },
-      {
-       "type": "point",
-       "html": "Avant de sortir le moindre outil, deux choses se préparent : l'<b>analyse de risques</b> et la <b>zone de travail</b>. Ce n'est pas une formalité à cocher après coup. C'est la première étape du chantier, avant le premier geste technique.",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
-      },
-      {
-       "type": "point",
-       "html": "<b>L'analyse de risques</b> se fait dans cet ordre :",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
-      },
-      {
-       "type": "point",
-       "html": "Vient ensuite la <b>préparation de la zone</b> :",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
-      },
-      {
-       "type": "point",
-       "html": "Sur une machine aux <b>hydrocarbures</b> (par exemple au R-290), le choix de l'outillage se fait <b>avant</b> d'ouvrir la zone, pas une fois dessus. Ces fluides sont inflammables : un outil ordinaire, prévu pour un gaz qui ne l'est pas, peut suffire à déclencher un accident. Une simple étincelle au mauvais endroit, au mauvais moment, enflamme le gaz qui s'est accumulé.",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
-      },
-      {
-       "type": "point",
-       "html": "Certains outils se vérifient en particulier. La <b>station de récupération</b> doit être <b>compatible hydrocarbures</b> : conçue pour aspirer et stocker un gaz inflammable sans créer d'étincelle interne. Une station ordinaire, prévue pour un fluide non inflammable, n'a pas cette protection. Le <b>détecteur de fuite</b> doit lui aussi être adapté au gaz recherché : un détecteur réglé pour un autre fluide peut ne rien signaler alors que du gaz inflammable s'échappe.",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
-      },
-      {
-       "type": "point",
-       "html": "Dans la zone balisée, tout le <b>matériel électrique</b> utilisé doit être <b>antidéflagrant</b> (on dit aussi « <b>ATEX</b> », pour les zones à risque d'explosion) : lampe, outillage électroportatif, appareils de mesure. Un matériel électrique ordinaire peut produire une étincelle interne invisible, suffisante pour enflammer un gaz inflammable présent dans l'air. La <b>ventilation</b> reste en marche pendant toute l'intervention, pour empêcher le gaz de s'accumuler.",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li>Identifier le fluide en jeu, à partir de la plaque signalétique ou de la documentation : inflammable, sous pression, en espace confiné.</li><li>Repérer les dangers de la <b>zone elle-même</b> : ventilation, sources de chaleur ou d'étincelle à proximité, accès, présence de tiers.</li><li>Éliminer ce qui peut l'être — couper une source de chaleur, dégager un passage.</li><li>Signaler ce qui ne peut pas être éliminé. Si un point bloque vraiment, le chantier n'engage pas tant qu'il n'est pas corrigé.</li></ol>",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li>Baliser et signaler la zone de travail.</li><li>Dégager une <b>issue</b> utilisable à tout moment de l'intervention.</li><li>Sélectionner les <b>équipements de protection</b> adaptés au fluide et au geste prévu : protection des yeux, gants adaptés au produit et au froid, détecteur de gaz porté si le fluide l'exige.</li><li>Vérifier le matériel avant de l'emporter sur zone. Un flexible douteux ou un détecteur non vérifié <b>ne sort pas</b> de l'atelier.</li><li>Consigner électriquement l'installation avant toute ouverture de circuit.</li></ol>",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Sécurité imposée, jamais découverte",
-       "html": "On ne teste pas un risque en le vivant. EPI absent, issue condamnée, détecteur en panne : chacun de ces points <b>arrête le chantier avant qu'il commence</b>, pas après un premier incident.",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "L'ordre qui protège",
-       "html": "Analyser → éliminer ce qui peut l'être → signaler le reste → baliser → s'équiper → vérifier le matériel → consigner. Et alors seulement, intervenir.",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Compatible, pas juste disponible",
-       "html": "<b>Compatible</b> ne veut pas dire « qui marche quand même ». Une station, un détecteur ou un outil électrique doit être conçu pour les gaz inflammables, sinon on ne l'emmène pas sur une machine aux hydrocarbures — même s'il fonctionne très bien sur un autre chantier.",
-       "titre": "Préparation de chantier — risques, EPI, zone de travail"
+       "type": "plateau",
+       "titre": "Remédiation individuelle et positionnement 0-4 sur les compétences non acquises",
+       "minutes": 25
       }
-     ],
-     "questions": [
-      {
-       "id": "pk-p7-1",
-       "dc": "G12",
-       "code": "12.04",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "À quel moment réalise-t-on l'analyse de risques d'une intervention ?",
-       "choix": [
-        "Avant d'engager le moindre geste technique",
-        "Après avoir ouvert le circuit",
-        "À la fin, au moment de rédiger le rapport",
-        "Seulement si le client le demande"
-       ],
-       "bonne": 0,
-       "aide": "Une analyse de risques sert à éviter l'accident, pas à le raconter.",
-       "remed": {
-        "regle": "L'analyse de risques se fait AVANT le premier geste, sur place.",
-        "pourquoi": "Elle sert à identifier et à supprimer les dangers tant qu'on peut encore agir : source d'inflammation, ventilation, issue, présence de public.",
-        "piege": "Une analyse faite après coup n'est plus une analyse, c'est un constat. La sécurité se démontre et s'impose : on ne découvre jamais un risque par l'erreur."
-       },
-       "remediation_vers": "p7",
-       "explication": "L'analyse de risques se fait AVANT le premier geste, sur place.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-p7-2",
-       "dc": "G12",
-       "code": "12.05",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Avant d'intervenir sur une installation au R-290, que vérifie-t-on dans la zone de travail ?",
-       "choix": [
-        "Que l'éclairage est suffisant",
-        "Que la zone est balisée et ventilée, l'issue dégagée et les sources d'inflammation supprimées",
-        "Que la température ambiante est stable",
-        "Que le sol est parfaitement sec"
-       ],
-       "bonne": 1,
-       "aide": "Le R-290 est un hydrocarbure de classe A3 : pensez à ce qui pourrait l'enflammer.",
-       "remed": {
-        "regle": "Zone balisée, ventilation en service, issue dégagée, aucune source d'inflammation, EPI et matériel adaptés, consignation électrique faite.",
-        "pourquoi": "Le R-290 est classé A3 : très inflammable. Une fuite dans un local mal ventilé forme une atmosphère explosive, et la moindre étincelle suffit.",
-        "piege": "On confond souvent A2L et A3. Le R-32 est A2L, le R-290 est A3 : la propagation de flamme n'a rien à voir, et les précautions non plus."
-       },
-       "remediation_vers": "p7",
-       "explication": "Zone balisée, ventilation en service, issue dégagée, aucune source d'inflammation, EPI et matériel adaptés, consignation électrique faite.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Avant d'expliquer quoi que ce soit, étaler les EPI disponibles en atelier et faire trouver au groupe lequel correspond à quel risque — ne pas les nommer à leur place. Mettre en scène un point bloquant crédible (issue encombrée, détecteur déchargé) sans prévenir, et observer : le stagiaire s'arrête-t-il de lui-même, ou faut-il l'arrêter ? C'est ce réflexe qu'on cherche à installer. Ces deux codes sont spécifiques A1/A2 (réfrigérants inflammables) au référentiel — mais le réflexe d'analyse de risques avant intervention vaut pour tous les fluides, à généraliser au-delà de l'épreuve."
-    },
-    {
-     "type": "cours",
-     "fiche": "p1",
-     "titre": "Le manifold — lire, brancher, ne pas polluer",
-     "minutes": 25,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Le manifold — lire, brancher, ne pas polluer",
-       "dc": "Préparation pratique · codes 5.01 · 4.05",
-       "competences": [
-        {
-         "code": "5.01",
-         "lib": "Brancher et débrancher les flexibles du manifold avec un minimum d'émissions",
-         "officiel": "Connecter et déconnecter les jauges et lignes en produisant le minimum d'émissions",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "4.05",
-         "lib": "Lire les instruments portables et interpréter les valeurs mesurées",
-         "officiel": "Utiliser des instruments de mesure portables tels que des manomètres, des thermomètres et des multimètres pour mesurer les volts, ampères et ohms en appliquant des méthodes indirectes de contrôle de l'étanchéité, et interpréter les paramètres mesurés",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "E": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/photos/manifold-branche.jpg",
-       "alt": "Un manifold raccordé sur une installation, flexibles bleu et rouge en place.",
-       "titre": "Le manifold — lire, brancher, ne pas polluer"
-      },
-      {
-       "type": "point",
-       "html": "Le <b>manifold</b> (ensemble manométrique) réunit deux manomètres — <b>BP en bleu</b>, <b>HP en rouge</b> — et deux vannes, une par côté, qui commandent le passage vers le <b>flexible central jaune</b> : celui qui part vers la pompe à vide, la bouteille de récupération, ou une bouteille d'azote équipée de son <b>mano-détendeur</b>.",
-       "titre": "Le manifold — lire, brancher, ne pas polluer"
-      },
-      {
-       "type": "point",
-       "html": "Le manomètre affiche une <b>pression relative</b> : pour obtenir la pression absolue, on ajoute environ <b>1 bar</b>. La pince de température et le multimètre servent à la <b>méthode indirecte</b> de contrôle d'étanchéité : on compare les valeurs mesurées — surchauffe (plage normale <b>5 à 10 K</b>), sous-refroidissement (plage normale <b>4 à 8 K</b>), intensité absorbée — à celles attendues sur la fiche constructeur. Un écart qui se creuse alerte, sans avoir ouvert le circuit.",
-       "titre": "Le manifold — lire, brancher, ne pas polluer"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li>Consigner électriquement l'installation avant tout branchement.</li><li>Vérifier que les deux vannes du manifold sont fermées.</li><li>Visser le flexible bleu sur le raccord à obus côté basse pression — côté évaporateur, en bas de la croix du frigoriste.</li><li>Visser le flexible rouge sur le raccord à obus côté haute pression — côté condenseur et compresseur, en haut à droite.</li><li>Purger l'air de chaque flexible par un bref coup d'ouverture-fermeture — jamais un rejet prolongé.</li><li>Ouvrir les vannes une par une, jamais les deux ensemble, en surveillant les aiguilles.</li><li>Lire : pression BP, pression HP, température à la pince.</li><li>Refermer les deux vannes du manifold avant toute déconnexion.</li><li>Débrancher en purgeant chaque flexible — minimum d'émission, jamais de rejet volontaire.</li></ol>",
-       "titre": "Le manifold — lire, brancher, ne pas polluer"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Fermé avant, fermé après",
-       "html": "Les deux vannes du manifold restent <b>fermées</b> à chaque branchement et à chaque débranchement. Elles ne s'ouvrent qu'une fois les deux flexibles vissés et vérifiés, et se referment avant toute déconnexion. C'est ce qui évite le rejet au moment du geste.",
-       "titre": "Le manifold — lire, brancher, ne pas polluer"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Les deux vannes ouvertes en même temps",
-       "html": "Ouvrir BP et HP <b>ensemble</b> fait communiquer les deux côtés du circuit et fausse la lecture. On ouvre <b>une vanne à la fois</b>, on lit, puis l'autre.",
-       "titre": "Le manifold — lire, brancher, ne pas polluer"
-      }
-     ],
-     "questions": [
-      {
-       "id": "q-g5-175",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
-       "choix": [
-        "Sur la ligne de refoulement",
-        "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
-        "Sur la ligne liquide",
-        "Sur le condenseur"
-       ],
-       "bonne": 1,
-       "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
-       "aide": "Le manomètre BP mesure la pression côté basse pression.",
-       "remed": {
-        "texte": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP)."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-176",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
-       "choix": [
-        "Sur la ligne d'aspiration",
-        "Sur la ligne de refoulement (entre compresseur et condenseur)",
-        "Sur l'évaporateur",
-        "Sur le détendeur"
-       ],
-       "bonne": 1,
-       "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
-       "aide": "Le manomètre HP mesure la pression côté haute pression.",
-       "remed": {
-        "texte": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP)."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g7-170",
-       "dc": "G7",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Un pressostat haute pression (HP) déclenche et arrête le compresseur. Quelle peut être la cause ?",
-       "choix": [
-        "Manque de fluide frigorigène",
-        "Condenseur encrassé, ventilateurs arrêtés, ou excès de charge",
-        "Évaporateur givré",
-        "Manque d'huile"
-       ],
-       "bonne": 1,
-       "explication": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le…",
-       "aide": "Le pressostat HP protège l'installation contre les pressions trop élevées côté condenseur.",
-       "remed": {
-        "texte": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le circuit, ou température ambiante trop élevée."
-       },
-       "remediation_vers": "g7",
-       "code": "4.05",
-       "categories": [
-        "A1",
-        "A2",
-        "E"
-       ]
-      }
-     ],
-     "notes": "Faire manipuler un manifold hors tension, hors fluide : vannes fermées, on visse, on vérifie, on ouvre une vanne à la fois. Faire dire tout haut « BP bleu, évaporateur, en bas » en pointant la croix du frigoriste au tableau, avant de brancher pour de vrai. Faire observer une purge courte de flexible plutôt qu'un rejet prolongé — c'est le geste qui distingue un professionnel."
-    },
-    {
-     "type": "cours",
-     "fiche": "p5",
-     "titre": "L'ordre des vannes — la chorégraphie de l'intervention",
-     "minutes": 30,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention",
-       "dc": "Préparation pratique · codes 5.01 · 5.02",
-       "competences": [
-        {
-         "code": "5.01",
-         "lib": "Connecter et déconnecter avec un minimum d'émissions",
-         "officiel": "Connecter et déconnecter les jauges et lignes en produisant le minimum d'émissions",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "5.02",
-         "lib": "Vider et remplir un cylindre, en phase liquide et gazeuse",
-         "officiel": "Vider et remplir un cylindre de réfrigérant à l'état liquide et à l'état gazeux",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/recuperation.svg",
-       "alt": "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance — chaque flexible débranché suit le même ordre : fermer, stabiliser, desserrer lentement.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "point",
-       "html": "Un manifold, ce sont des <b>vannes</b>. Les ouvrir et les fermer dans le bon ordre n'est pas un détail. Un mauvais ordre peut lâcher un nuage de fluide au visage, ou libérer un flexible sous pression.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "point",
-       "html": "À la <b>connexion</b>, l'ordre est simple : vannes fermées, on raccorde les flexibles, on chasse l'air resté à l'intérieur par une ouverture brève, puis on ouvre progressivement.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "point",
-       "html": "C'est à la <b>déconnexion</b> que l'ordre compte le plus. Il ne change jamais :",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "point",
-       "html": "La même logique s'applique pour <b>vider ou remplir un cylindre</b>, en phase liquide comme en phase gazeuse. Une bouteille de réfrigérant a une prise dédiée à chaque phase, ou s'utilise dans un sens précis pour tirer du liquide. On suit toujours le marquage de la bouteille, jamais un raccord forcé.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li><b>Fermer</b> la vanne, côté circuit puis côté appareil.</li><li><b>Laisser la pression se stabiliser.</b> Observer le manomètre. Tant que l'aiguille bouge encore, on attend.</li><li><b>Desserrer lentement</b> le raccord du flexible, à peine, par petites touches. On écoute. On continue. Jamais d'un coup.</li><li>S'il reste du fluide <b>emprisonné dans le flexible</b>, le récupérer par l'appareil déjà branché. Jamais le laisser partir à l'air libre.</li><li>Déconnecter seulement quand la pression est retombée et confirmée.</li></ol>",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "La chorégraphie qui ne change jamais",
-       "html": "<b>Fermer → laisser stabiliser → desserrer lentement.</b> Ce triptyque revient à chaque déconnexion, quel que soit l'appareil branché. C'est le geste central de tout ce module : une fois automatique, il protège dans toutes les situations.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "Desserrer un raccord <b>encore sous pression</b>, d'un coup. Purger le résidu d'un flexible <b>à l'air libre</b> pour aller plus vite. Chaque émission compte, même petite : l'objectif est toujours le <b>minimum d'émission</b>, jamais zéro effort.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      }
-     ],
-     "questions": [
-      {
-       "id": "q-g5-175",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
-       "choix": [
-        "Sur la ligne de refoulement",
-        "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
-        "Sur la ligne liquide",
-        "Sur le condenseur"
-       ],
-       "bonne": 1,
-       "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
-       "aide": "Le manomètre BP mesure la pression côté basse pression.",
-       "remed": {
-        "texte": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP)."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-176",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
-       "choix": [
-        "Sur la ligne d'aspiration",
-        "Sur la ligne de refoulement (entre compresseur et condenseur)",
-        "Sur l'évaporateur",
-        "Sur le détendeur"
-       ],
-       "bonne": 1,
-       "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
-       "aide": "Le manomètre HP mesure la pression côté haute pression.",
-       "remed": {
-        "texte": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP)."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-v6_063",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le taux de remplissage maximal d'une bouteille de récupération est de :",
-       "choix": [
-        "60%",
-        "70%",
-        "80%",
-        "100%"
-       ],
-       "bonne": 2,
-       "explication": "80% — Max 80% du volume pour laisser de l'espace à la dilatation thermique. Un remplissage excessif est dangereux (explosion).",
-       "aide": "Il faut toujours laisser un espace de sécurité pour la dilatation.",
-       "remed": {
-        "texte": "Max 80% du volume pour laisser de l'espace à la dilatation thermique. Un remplissage excessif est dangereux (explosion)."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.02",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      }
-     ],
-     "notes": "La fiche centrale du module : y passer le temps qu'il faut. Faire manipuler un manifold et des flexibles réels (azote ou circuit vide) et faire répéter le triptyque fermer / stabiliser / desserrer jusqu'à ce que le geste soit lent par réflexe, pas par consigne. Observer AVANT d'expliquer : laisser un stagiaire desserrer à sa vitesse naturelle une première fois — la plupart vont trop vite, et c'est ce constat, pas un discours, qui doit amener la correction. Corriger immédiatement un geste brusque, ne jamais laisser aller au bout : la sécurité s'impose, elle ne se découvre pas par la sensation d'un jet résiduel."
-    },
-    {
-     "type": "cours",
-     "fiche": "p2",
-     "titre": "La station de récupération — ce que c'est, comment on la branche",
-     "minutes": 25,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "La station de récupération — ce que c'est, comment on la branche",
-       "dc": "Préparation pratique · codes 5.03",
-       "competences": [
-        {
-         "code": "5.03",
-         "lib": "Brancher et débrancher un groupe de récupération avec un minimum d'émissions",
-         "officiel": "Utiliser un dispositif de récupération des réfrigérants et connecter et déconnecter ce dispositif en produisant le minimum d'émissions",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/recuperation.svg",
-       "alt": "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.",
-       "titre": "La station de récupération — ce que c'est, comment on la branche"
-      },
-      {
-       "type": "point",
-       "html": "La <b>station de récupération</b> est un appareil autonome : elle aspire le fluide de l'installation et le transfère vers un <b>cylindre dédié</b>, posé sur une balance. Avant tout branchement, l'installation est <b>à l'arrêt et isolée</b>.",
-       "titre": "La station de récupération — ce que c'est, comment on la branche"
-      },
-      {
-       "type": "point",
-       "html": "Le cylindre respecte le <b>taux de remplissage maximal</b> indiqué sur son étiquette : jamais rempli à ras. Le liquide se dilate avec la température — un cylindre trop plein est un danger.",
-       "titre": "La station de récupération — ce que c'est, comment on la branche"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li>Consigner électriquement l'installation à traiter.</li><li>Vérifier l'étiquette du cylindre de récupération : le fluide indiqué doit être exactement celui de l'installation.</li><li>Poser le cylindre sur la balance et noter la masse de départ, avant tout branchement.</li><li>Vannes du groupe fermées, brancher le flexible d'entrée sur le circuit et le flexible de sortie sur le cylindre.</li><li>Mettre le groupe sous tension et le régler selon la fiche du fabricant.</li><li>Ouvrir les vannes dans l'ordre indiqué par le fabricant ; surveiller la pression et la masse affichée.</li><li>En fin de transfert, purger les flexibles avant de débrancher — minimum d'émission.</li><li>Repeser le cylindre, noter la masse récupérée, consigner au registre.</li></ol>",
-       "titre": "La station de récupération — ce que c'est, comment on la branche"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Peser avant, peser après",
-       "html": "La différence entre la masse de départ et la masse d'arrivée est la <b>seule preuve fiable</b> de ce qui a été récupéré. Sans pesée avant, ce nombre n'existe pas.",
-       "titre": "La station de récupération — ce que c'est, comment on la branche"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Un cylindre, un seul fluide",
-       "html": "Une étiquette qui ne correspond pas exactement au fluide de l'installation : on ne branche pas. Mélanger deux fluides rend le contenu du cylindre inutilisable pour le recyclage ou la régénération.",
-       "titre": "La station de récupération — ce que c'est, comment on la branche"
-      }
-     ],
-     "questions": [
-      {
-       "id": "q-g5-141",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Avant de récupérer le fluide, il faut :",
-       "choix": [
-        "Ouvrir immédiatement le circuit",
-        "Arrêter et isoler le système",
-        "Chauffer l'installation",
-        "Vidanger l'huile"
-       ],
-       "bonne": 1,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g5a",
-       "code": "5.03",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-179",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Avant d'ouvrir un circuit frigorifique pour une intervention, quelle opération est obligatoire ?",
-       "choix": [
-        "Démarrer le compresseur",
-        "Récupérer le fluide frigorigène dans un récipient adapté",
-        "Ouvrir toutes les vannes",
-        "Ajouter de l'huile"
-       ],
-       "bonne": 1,
-       "explication": "Avant toute ouverture du circuit, il est OBLIGATOIRE de RÉCUPÉRER le fluide frigorigène avec une station de récupération certifiée. C'est une obligation légale (F-Gas) et environnementale.",
-       "aide": "Pour des raisons légales et environnementales, le fluide doit être récupéré.",
-       "remed": {
-        "texte": "Avant toute ouverture du circuit, il est OBLIGATOIRE de RÉCUPÉRER le fluide frigorigène avec une station de récupération certifiée. C'est une obligation légale (F-Gas) et environnementale. Ne jamais purger le fluide dans l'atmosphère !"
-       },
-       "remediation_vers": "g5a",
-       "code": "5.03",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      }
-     ],
-     "notes": "Faire manipuler le groupe hors fluide : reconnaître le cordon secteur, le flexible d'entrée, le flexible de sortie, l'ordre des vannes indiqué sur l'appareil. Insister sur la pesée, avant ET après — c'est la seule preuve de ce qui a été récupéré. Faire vérifier l'étiquette du cylindre à voix haute avant chaque branchement, jamais de mémoire."
-    },
-    {
-     "type": "cours",
-     "fiche": "p3",
-     "titre": "Pompe à vide et vacuomètre — monter, tirer, lire",
-     "minutes": 25,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire",
-       "dc": "Préparation pratique · codes 3.03 · 3.04",
-       "competences": [
-        {
-         "code": "3.03",
-         "lib": "Monter et mettre en service une pompe à vide",
-         "officiel": "Utiliser une pompe à vide",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "3.04",
-         "lib": "Évacuer l'air et l'humidité en tirant au vide, selon la pratique habituelle",
-         "officiel": "Faire le vide dans le système pour évacuer l'air et l'humidité selon la pratique habituelle",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/photos/pompe-a-vide.png",
-       "alt": "Une pompe à vide d atelier.",
-       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
-      },
-      {
-       "type": "point",
-       "html": "Le <b>tirage au vide</b> retire l'air et l'humidité du circuit avant charge — ce n'est pas du fluide qu'on évacue ici, mais de l'air et de la vapeur d'eau : la question du rejet à l'atmosphère ne se pose pas à ce stade. La <b>pompe à vide</b> aspire ; le <b>vacuomètre</b> électronique indique jusqu'où on est descendu, bien plus finement qu'un manomètre.",
-       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
-      },
-      {
-       "type": "point",
-       "html": "L'ordre du neuvième geste protège le circuit : si la pompe s'arrête avant que la vanne soit fermée, l'huile de la pompe peut être aspirée en sens inverse vers le circuit qu'on vient de mettre sous vide.",
-       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li>Consigner électriquement l'installation avant tout montage.</li><li>Vérifier le niveau d'huile de la pompe avant de la mettre en service.</li><li>Fermer les deux vannes du manifold.</li><li>Visser le vacuomètre sur le raccord prévu, du côté du circuit — jamais collé directement à la pompe : une lecture prise trop près de la pompe ne reflète pas le vide réel du circuit.</li><li>Brancher la pompe sur le flexible central du manifold.</li><li>Ouvrir les deux vannes du manifold pour tirer sur l'ensemble du circuit.</li><li>Mettre la pompe en marche.</li><li>Observer l'aiguille du vacuomètre descendre.</li><li>Une fois le vide stabilisé — valeur cible selon la fiche constructeur — fermer d'abord la vanne côté circuit, puis seulement ensuite arrêter la pompe.</li><li>Surveiller si le vide remonte, selon la pratique habituelle : une remontée signale une fuite ou de l'humidité résiduelle.</li></ol>",
-       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Isoler avant d'arrêter",
-       "html": "On ferme toujours la vanne côté circuit <b>avant</b> d'arrêter la pompe, jamais l'inverse. C'est l'ordre qui protège le circuit d'un retour d'huile.",
-       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Vacuomètre collé à la pompe",
-       "html": "Une lecture prise juste à la sortie de la pompe ne dit rien du vide réel dans le circuit. Le vacuomètre se monte du <b>côté circuit</b>.",
-       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
-      }
-     ],
-     "questions": [
-      {
-       "id": "q-g3-v6_058",
-       "dc": "G3",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le tirage au vide a pour but principal d'éliminer :",
-       "choix": [
-        "L'huile usagée",
-        "L'air et l'humidité du circuit",
-        "Les particules métalliques",
-        "Le fluide résiduel"
-       ],
-       "bonne": 1,
-       "explication": "L'air et l'humidité — Le tirage au vide évacue l'air (incondensable qui augmente la HP) et l'humidité (qui forme des acides avec l'huile POE).",
-       "aide": "L'air et l'eau sont les deux ennemis du circuit frigorifique.",
-       "remed": {
-        "texte": "Le tirage au vide évacue l'air (incondensable qui augmente la HP) et l'humidité (qui forme des acides avec l'huile POE)."
-       },
-       "remediation_vers": "g3",
-       "code": "3.04",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g3-v6_159",
-       "dc": "G3",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "La pompe à vide ne doit jamais être utilisée pour :",
-       "choix": [
-        "Évacuer l'air du circuit",
-        "Évacuer l'humidité",
-        "Récupérer du fluide frigorigène",
-        "Atteindre le vide requis"
-       ],
-       "bonne": 2,
-       "explication": "Récupérer du fluide — La pompe à vide n'est pas conçue pour pomper du fluide (ça l'endommage). La récupération se fait avec un groupe de récupération spécifique.",
-       "aide": "Pompe à vide ≠ groupe de récupération. Deux outils différents.",
-       "remed": {
-        "texte": "La pompe à vide n'est pas conçue pour pomper du fluide (ça l'endommage). La récupération se fait avec un groupe de récupération spécifique."
-       },
-       "remediation_vers": "g3",
-       "code": "3.03",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      }
-     ],
-     "notes": "Faire monter le montage sur un poste d'essai, jamais en première fois sur une installation cliente. Faire vérifier l'huile de la pompe avant de démarrer — un réflexe qu'on saute facilement. Faire dire tout haut « isoler, puis arrêter » avant de le faire réellement : c'est l'ordre qui compte, pas la vitesse. Ne donner aucune valeur de vide cible ni de durée : renvoyer systématiquement à la fiche constructeur du modèle utilisé en atelier."
-    },
-    {
-     "type": "cours",
-     "fiche": "p4",
-     "titre": "La bouteille d'azote et son mano-détendeur",
-     "minutes": 25,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "La bouteille d'azote et son mano-détendeur",
-       "dc": "Préparation pratique · codes 3.01 · 3.02",
-       "competences": [
-        {
-         "code": "3.01",
-         "lib": "Réaliser une épreuve de pression de résistance",
-         "officiel": "Effectuer une épreuve de pression pour contrôler la résistance du système",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "3.02",
-         "lib": "Réaliser une épreuve de pression d'étanchéité",
-         "officiel": "Effectuer une épreuve de pression pour contrôler l'étanchéité du système",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/epreuve-azote.svg",
-       "alt": "Le mano-détendeur monté sur la bouteille d azote sec, raccordé au manifold puis au circuit à éprouver, vanne par vanne — jamais d oxygène ni d air comprimé.",
-       "titre": "La bouteille d'azote et son mano-détendeur"
-      },
-      {
-       "type": "point",
-       "html": "Une bouteille d'azote ne se branche jamais directement sur un circuit. Entre les deux, il y a toujours un <b>mano-détendeur</b>. Il lit la pression de la bouteille. Il règle la pression envoyée dans le circuit. Sans lui, toute la pression de la bouteille part d'un coup — largement de quoi faire éclater un circuit.",
-       "titre": "La bouteille d'azote et son mano-détendeur"
-      },
-      {
-       "type": "point",
-       "html": "Le mano-détendeur porte <b>deux cadrans</b>. Le premier indique ce qu'il reste dans la bouteille. Le second indique la pression réglée en sortie, celle qui part vers le circuit. On lit toujours les deux.",
-       "titre": "La bouteille d'azote et son mano-détendeur"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li>Vérifier que le raccord est <b>propre</b>, sans trace d'huile ni de graisse : l'azote sous pression au contact d'huile est un risque.</li><li>Monter le mano-détendeur sur le robinet de la bouteille. Vérifier que la <b>vis de réglage est desserrée</b> — aucune pression envoyée en sortie.</li><li>Ouvrir <b>lentement</b> le robinet de la bouteille. Lire la pression bouteille sur le premier cadran.</li><li>Raccorder le flexible de sortie au manifold, puis au circuit à éprouver.</li><li>Visser <b>progressivement</b> la vis de réglage. La pression de sortie monte, à lire sur le second cadran, jusqu'à la valeur donnée par la documentation du constructeur ou la norme applicable.</li><li>Une fois la pression atteinte, fermer le robinet de la bouteille. Observer : le cadran de sortie ne doit plus bouger.</li></ol>",
-       "titre": "La bouteille d'azote et son mano-détendeur"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Geste interdit — sans discussion",
-       "html": "Une bouteille d'azote <b>ne se branche jamais en direct</b> sur un circuit, mano-détendeur absent. La mise en pression se fait <b>à l'azote sec, seul</b>. Jamais d'oxygène — explosif au contact de l'huile. Jamais d'air comprimé — humide, chargé en oxygène.",
-       "titre": "La bouteille d'azote et son mano-détendeur"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Deux cadrans, deux informations",
-       "html": "Cadran <b>bouteille</b> : ce qu'il reste dedans. Cadran <b>sortie</b> : ce que vous envoyez dans le circuit. Un cadran de sortie qui ne tient pas sa pression signale une fuite au raccord — à vérifier avant d'aller plus loin.",
-       "titre": "La bouteille d'azote et son mano-détendeur"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-p4-1",
-       "dc": "G3",
-       "code": "3.01",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
-       "choix": [
-        "De l'oxygène",
-        "De l'azote sec",
-        "De l'air comprimé",
-        "Du fluide frigorigène du circuit"
-       ],
-       "bonne": 1,
-       "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
-       "remed": {
-        "regle": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
-        "pourquoi": "L'azote est neutre et sec : il n'entretient pas la combustion et n'introduit pas d'eau dans le circuit.",
-        "piege": "L'oxygène au contact de l'huile du circuit peut provoquer une réaction violente. L'air comprimé, lui, apporte de l'humidité qui restera dans l'installation."
-       },
-       "remediation_vers": "p4",
-       "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-p4-2",
-       "dc": "G3",
-       "code": "3.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Pourquoi une bouteille d'azote se raccorde-t-elle toujours au travers d'un mano-détendeur ?",
-       "choix": [
-        "Pour connaître la quantité restante",
-        "Pour filtrer l'humidité du gaz",
-        "Parce que la pression de la bouteille dépasse largement ce que le circuit peut supporter",
-        "Pour réchauffer le gaz avant l'entrée"
-       ],
-       "bonne": 2,
-       "aide": "Comparez la pression dans la bouteille et celle que supporte l'installation.",
-       "remed": {
-        "regle": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
-        "pourquoi": "La bouteille est à une pression très supérieure à celle admissible par l'installation : le mano-détendeur ramène la pression à la valeur voulue, lue sur son second cadran.",
-        "piege": "Ouvrir la bouteille directement sur le circuit peut le détruire instantanément. La pression d'épreuve se règle selon la fiche constructeur, jamais à l'estime."
-       },
-       "remediation_vers": "p4",
-       "explication": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Poser le mano-détendeur démonté sur la table et faire deviner son rôle avant d'expliquer : pourquoi deux cadrans, pourquoi une vis. Faire monter le montage par un stagiaire, azote réel si le plateau le permet, en insistant sur la vis desserrée AVANT ouverture bouteille — intervenir immédiatement si quelqu'un ouvre la bouteille vis serrée, ne pas laisser aller au bout du geste. Rappeler que ces codes ne concernent pas la catégorie D : un stagiaire D observe la démonstration mais n'est pas interrogé dessus."
-    },
-    {
-     "type": "cours",
-     "fiche": "p6",
-     "titre": "La balance et la pesée — avant, après, ce qu'on note",
-     "minutes": 25,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "La balance et la pesée — avant, après, ce qu'on note",
-       "dc": "Préparation pratique · codes 5.05 · 5.06",
-       "competences": [
-        {
-         "code": "5.05",
-         "lib": "Déterminer l'état du fluide et charger sans perte",
-         "officiel": "Déterminer l'état (liquide, gazeux) et les conditions (sous-refroidi, saturé ou surchauffé) d'un réfrigérant avant tout remplissage afin de choisir la méthode et le volume de remplissage les plus adaptés. Remplir le système de réfrigérant (à l'état liquide et gazeux) sans provoquer de pertes",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "5.06",
-         "lib": "Choisir la balance adaptée et peser",
-         "officiel": "Choisir le bon type de balance et l'utiliser pour peser le réfrigérant",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/photos/balance.jpg",
-       "alt": "Une balance électronique de charge avec une bouteille de fluide posée dessus.",
-       "titre": "La balance et la pesée — avant, après, ce qu'on note"
-      },
-      {
-       "type": "point",
-       "html": "La quantité de fluide qui entre ou sort d'un circuit se lit sur une <b>balance</b>, jamais sur un manomètre. Le manomètre dit comment la machine se comporte. La balance dit <b>combien</b> il y a de fluide.",
-       "titre": "La balance et la pesée — avant, après, ce qu'on note"
-      },
-      {
-       "type": "point",
-       "html": "Avant toute pesée, on choisit une balance <b>adaptée</b> à la quantité attendue. On la pose à plat, stable, vérifiée. Une balance douteuse ne sert à rien : son résultat n'est pas fiable.",
-       "titre": "La balance et la pesée — avant, après, ce qu'on note"
-      },
-      {
-       "type": "point",
-       "html": "Cas particulier : un fluide <b>zéotrope</b>, composé de plusieurs corps, se charge toujours en <b>phase liquide</b>. Le sortir en phase gazeuse changerait sa composition en cours de route.",
-       "titre": "La balance et la pesée — avant, après, ce qu'on note"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li>Poser la bouteille sur la balance <b>avant</b> toute opération. Relever le poids. Le noter — pas de mémoire.</li><li>Avant d'ouvrir la moindre vanne, déterminer l'<b>état du fluide</b> attendu : liquide ou gazeux, selon l'opération et la documentation constructeur. Ce choix fixe le sens du remplissage.</li><li>Réaliser l'opération — récupération ou charge — en surveillant la balance pendant que ça se fait, pas seulement à la fin.</li><li>Fermer les vannes, laisser la pression se stabiliser, déconnecter proprement.</li><li>Peser à nouveau, <b>après</b>. Relever ce second poids.</li><li>Calculer l'écart entre les deux pesées. C'est la quantité réelle, pas une estimation.</li><li>Reporter aussitôt le résultat au registre : date, quantité, intervenant.</li></ol>",
-       "titre": "La balance et la pesée — avant, après, ce qu'on note"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Deux pesées, jamais une",
-       "html": "On pèse <b>avant</b> et <b>après</b>. Sans pesée de départ, le chiffre obtenu n'est qu'une <b>estimation</b>. Une estimation ne se consigne pas dans un registre.",
-       "titre": "La balance et la pesée — avant, après, ce qu'on note"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Peser seulement à la fin",
-       "html": "Peser une seule fois, à la fin, et déduire la quantité à vue de nez : c'est le réflexe à corriger en premier. Lire une quantité chargée sur un manomètre plutôt que sur la balance ne donne jamais un chiffre exploitable non plus.",
-       "titre": "La balance et la pesée — avant, après, ce qu'on note"
-      }
-     ],
-     "questions": [
-      {
-       "id": "q-g5-v6_064",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "La charge en fluide se mesure avec :",
-       "choix": [
-        "Un manomètre",
-        "Une balance de précision",
-        "Un thermomètre",
-        "Un vacuomètre"
-       ],
-       "bonne": 1,
-       "explication": "Une balance de précision — La charge se fait au poids : on pèse la bouteille avant et après pour connaître la quantité exacte introduite (±5g).",
-       "aide": "La quantité de fluide se mesure en kg, donc par pesage.",
-       "remed": {
-        "texte": "La charge se fait au poids : on pèse la bouteille avant et après pour connaître la quantité exacte introduite (±5g)."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.06",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-v6_161",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Pendant la charge, on surveille principalement :",
-       "choix": [
-        "La couleur du fluide",
-        "La surchauffe et le sous-refroidissement",
-        "Le bruit du compresseur uniquement",
-        "La vitesse du ventilateur"
-       ],
-       "bonne": 1,
-       "explication": "Surchauffe et sous-refroidissement — Ces deux paramètres indiquent si la quantité de fluide est correcte. Surchauffe trop haute = manque. SR trop bas = manque aussi.",
-       "aide": "Ce sont les deux indicateurs clés de la bonne charge.",
-       "remed": {
-        "texte": "Ces deux paramètres indiquent si la quantité de fluide est correcte. Surchauffe trop haute = manque. SR trop bas = manque aussi."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.05",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "pk-g1e-5",
-       "dc": "G5",
-       "code": "5.05",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Avant de charger une installation, pourquoi commence-t-on par déterminer l'état du fluide — sous-refroidi, saturé ou surchauffé ?",
-       "choix": [
-        "Parce que cet état commande la méthode et la quantité de remplissage",
-        "Parce que le registre exige de le noter",
-        "Parce que cela permet de connaître le PRP du fluide",
-        "Parce que cela dispense de peser la bouteille"
-       ],
-       "bonne": 0,
-       "aide": "Le référentiel place ce diagnostic AVANT le geste de charge. Que déciderait-on ensuite, s'il était faux ?",
-       "remed": {
-        "regle": "On détermine d'abord l'état et les conditions du fluide, puis on en déduit la méthode de remplissage — en phase liquide ou en phase vapeur — et le volume adapté.",
-        "pourquoi": "Charger en phase vapeur un mélange zéotrope modifie la composition de ce qui reste dans la bouteille ; charger sans savoir où en est l'installation conduit à sur-charger ou sous-charger.",
-        "piege": "Croire que la pesée suffit. La balance dit combien on a mis, elle ne dit pas s'il fallait le mettre en liquide ou en vapeur, ni si la charge était déjà correcte."
-       },
-       "remediation_vers": "g1e",
-       "explication": "On détermine d'abord l'état et les conditions du fluide, puis on en déduit la méthode de remplissage — en phase liquide ou en phase vapeur — et le volume adapté.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      }
-     ],
-     "notes": "Faire peser un objet neutre (bouteille d'eau, poids étalon) deux fois avant d'expliquer la règle, et demander ce qui se passerait si on n'avait que la seconde pesée — laisser le groupe trouver lui-même que le premier chiffre est indispensable. Faire remplir une ligne de registre fictive à partir des deux pesées relevées. Le réflexe à traquer : le stagiaire qui commence à manipuler avant d'avoir pesé — l'arrêter avant le premier geste, pas après."
+     ]
     }
    ]
   }

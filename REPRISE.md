@@ -34,7 +34,8 @@ Doctrine [[feedback_protection_code]] : licence + antériorité git, jamais de c
 
 | Page | Rôle | Pour qui |
 |---|---|---|
-| [`projection.html`](https://frigorx.github.io/pilote-fluides/projection.html) | **le déroulé des 3 jours** : diapositives, minuteur, questions à révéler, vue orateur | formateur, en salle |
+| [`projection.html`](https://frigorx.github.io/pilote-fluides/projection.html) | **le déroulé des 5 jours (A1, 35 h)** : diapositives, minuteur, questions à révéler, vue orateur, annonce des passages au plateau | formateur, en salle |
+| [`planning.html`](https://frigorx.github.io/pilote-fluides/planning.html) | **le planning, généré et vérifié** : les 35 h module par module (M0→M8), la part salle / plateau / autoformation, les cinq journées. Version Markdown : `PLANNING-FORMATION.md` | direction |
 | [`pratique.html`](https://frigorx.github.io/pilote-fluides/pratique.html) | présentation de la **manipulation fluidique** : démonstration de feuille de guidance, grille par compétence. Aucune donnée de stagiaire | vitrine |
 | [`dossier.html`](https://frigorx.github.io/pilote-fluides/dossier.html) | ⭐ **LE LIEN À ENVOYER À LA DIRECTION** — page d'entrée du dossier : mot d'introduction, les 2 pièces (projet + budget), le tableau de résultat sur 5 ans, l'outil en fonctionnement, et « ce qui reste à faire » sans fard (recevabilité de groupe, relecture métier non finie, 3 montants estimés) | direction |
 | [`portail.html`](https://frigorx.github.io/pilote-fluides/portail.html) | **la vitrine** : dossier de présentation à envoyer en lien à des fournisseurs et des collègues pour qu'ils testent | tous publics |
@@ -76,6 +77,34 @@ narratifs**) · 4 illustrations · **3 outils embarqués**
 | 5 exercices « frigoriste-détective » | mises en situation à indices croisés |
 | 21 séries et examens | 13 séries de révision par thème + 8 examens sur 3 paliers |
 | 266 questions | rattachées à un **code de compétence**, un niveau, une catégorie — **99 compétences interrogées = 99 enseignées**, plus aucun code muet |
+
+**LE PLANNING TIENT LE CADRE (27/07)** — jusque-là le pack décrivait « 3 jours de théorie »,
+découpage qui lui était propre. Le dossier présenté à la direction, lui, décrit la formation en
+**modules M0→M8** pour **35 h sur 5 jours** en A1 (28 h / 4 jours en A2) —
+`habilitation-fluide/cours/CONTENU-00-PROGRESSIONS.md`. **Les deux ne se recoupaient pas**, et la
+confrontation, faite pour la première fois, était sans appel : M0 pesait **6 h en salle pour 1 h
+au cadre**, M1 **5 h 15 pour 4 h**, et la **pratique — la moitié du volume — n'apparaissait
+nulle part**.
+
+Ce qui fait tenir le planning, c'est **l'autoformation** : le stagiaire a le lien **avant** et le
+garde **pendant**. La découverte se fait seul, le temps de salle sert à démontrer, questionner,
+remédier — pas à lire. Chaque séquence porte donc son **régime** : `salle` · `plateau` ·
+`avant` · `pendant`. Seuls les deux premiers comptent dans les 35 h ; l'autoformation les
+prépare et ne les gonfle pas.
+
+| | Salle | Plateau | Total | Cadre |
+|---|---:|---:|---:|---:|
+| **A1 · M0→M8** | 21 h 45 | 13 h 15 | **35 h 00** | 35 h 00 ✅ |
+
+**38 % de pratique**, cinq journées de 6 h 45 à 7 h 10, et **7 h 50 d'autoformation guidée** en
+plus, hors volume. Le contrôle tourne **à chaque build** : déplacer une ligne de `parcours.js`
+et le total est revérifié module par module. Le document présentable est généré :
+**`PLANNING-FORMATION.md`**.
+- Le **plateau** apparaît enfin dans le déroulé (10 séquences). Il ne se projette pas — on ne met
+  pas un travail d'atelier sur un écran — mais il produit une **diapositive d'annonce**, pour que
+  le formateur garde le fil de sa journée.
+- La règle de sécurité récurrente est tenue **dans** les enveloppes de module, pas en plus
+  d'elles : 1 h à l'ouverture (M0), puis une reprise en tête de chaque journée.
 
 **Le module SÉCURITÉ (26/07)** — le pack enseignait la sécurité de l'installation et de
 l'environnement, **jamais celle de la personne**. Mesuré avant d'agir : *asphyxie* 0 occurrence,
@@ -191,9 +220,9 @@ compétences opposables :
   candidat D ne reçoit plus que la moitié des questions — celles qui le concernent.
 
 **Le produit de formation (25/07, second temps)** — le pack est devenu un outil de stage :
-- **`projection.html`** : le déroulé en salle. 6 blocs (2 blocs d'accueil — sécurité, puis
-  classification — 3 jours de théorie et la préparation pratique), 53 séquences,
-  456 diapositives. La boucle est celle voulue par F. Henninot :
+- **`projection.html`** : le déroulé en salle. **5 journées, 58 séquences, 426 diapositives**
+  (structure refondue le 27/07 sur les modules M0→M8 du dossier, voir ci-dessous).
+  La boucle est celle voulue par F. Henninot :
   on projette et on explique → la vidéo → le mini-questionnaire → on révèle → on avance.
   Les diapositives sont **générées depuis les fiches** (`build/parcours.mjs`) : une fiche
   corrigée = une projection corrigée, et **une seule relecture** au lieu de deux.
@@ -332,7 +361,8 @@ court n'ouvre pas les examens, et déverrouiller le niveau 1 laisse les examens 
 | Fichier | Rôle |
 |---|---|
 | `packs/fluides/cartes.js` | **source éditoriale — c'est ici qu'on écrit le contenu** |
-| `packs/fluides/parcours.js` | **le déroulé des 3 jours** — aucun contenu, seulement l'ordre et les durées. Déplacer une ligne suffit à changer une séance. |
+| `packs/fluides/parcours.js` | **le déroulé des 5 jours + le CADRE** — aucun contenu, seulement l'ordre, les durées, le module (M0→M8) et le régime (salle · plateau · autoformation avant / pendant). Déplacer une ligne suffit à changer une séance ; le build revérifie aussitôt le total contre les 35 h. |
+| `PLANNING-FORMATION.md` | **généré à chaque build** — le planning confronté au cadre, module par module. Ne jamais l'éditer à la main : un planning recopié est faux au premier déplacement de ligne. |
 | `packs/fluides/questions-pack.json` | les questions **écrites pour le pack** (hors Mission F-GAZ), là où la banque d'origine n'interrogeait aucune des compétences ajoutées |
 | `packs/fluides/referentiel-2025.json` | **le référentiel officiel, 136 codes** — copie conforme de `habilitation-fluide`, ne se modifie **que sur pièce** (texte au JO) |
 | `build/referentiel.mjs` | index des codes, résolution des libellés, calcul de couverture, contrôle de synchro avec le dépôt amont |

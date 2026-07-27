@@ -43,6 +43,7 @@
   .seq .meta{font-size:13px;color:var(--mut);white-space:nowrap}
   .seq.ex{background:#fffaf2;border-color:#f0d9b5}
   .seq.bi{background:var(--ok-bg);border-color:#a9d9c1}
+  .seq.pl{background:#eef3f7;border-color:#b9cbdb}
 
   /* ---- Scène de projection ---- */
   .scene{display:none;height:100%;flex-direction:column}
@@ -164,8 +165,9 @@ function demarrerProjection(){
       h += "<div class='jour'><span class='duree'>"+Math.floor(min/60)+" h "+pad(min%60)+"</span>";
       h += "<h2>"+esc(j.libelle||("Jour "+j.n))+" — "+esc(j.titre)+"</h2><p class='int'>"+esc(j.intention||"")+"</p><div class='seqs'>";
       j.sequences.forEach(function(s, is){
-        var cls = s.type==="exercice" ? " ex" : s.type==="bilan" ? " bi" : "";
+        var cls = s.type==="exercice" ? " ex" : s.type==="bilan" ? " bi" : s.type==="plateau" ? " pl" : "";
         var tag = s.type==="exercice" ? "mise en situation" : s.type==="bilan" ? "point d'étape" :
+                  s.type==="plateau" ? "🛠 au plateau, sur machine" :
                   (s.slides.length+" diapos · "+s.questions.length+" questions");
         h += "<button class='seq"+cls+"' data-j='"+ij+"' data-s='"+is+"'>"+
              "<span class='n'>"+(is+1)+"</span><span class='t'>"+esc(s.titre)+"</span>"+
@@ -236,7 +238,15 @@ function demarrerProjection(){
       return "<h2 style='font-size:26px'>"+esc(sl.titre)+"</h2><img src='"+esc((P.base_img||"")+sl.src.replace(/^packs\/fluides\/res\//,""))+"' alt='"+esc(sl.alt)+"'>";
     if(sl.type==="encadre")
       return "<div class='enc "+esc(sl.genre)+"'><div class='t'>"+esc(sl.t)+"</div>"+sl.html+"</div>";
-    return "<div>"+sl.html+"</div>";
+    /* Le plateau ne se projette pas : on annonce le passage à la machine, et
+       l'écran s'efface. Une seule diapositive, pour garder le fil de la journée. */
+    if(sl.type==="plateau")
+      return "<div class='enc'><div class='t'>🛠 On passe au plateau — "+
+             Math.floor(sl.minutes/60)+" h "+pad(sl.minutes%60)+"</div>"+
+             "<p style='font-size:30px;line-height:1.35'>"+esc(sl.titre)+"</p>"+
+             "<p style='font-size:22px;color:var(--mut)'>Préparation de chantier faite, EPI en place, "+
+             "consignation vérifiée. Le support reste ouvert pour la reprise.</p></div>";
+    return "<div>"+(sl.html||"")+"</div>";
   }
 
   function vueQuestion(q){
