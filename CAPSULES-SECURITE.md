@@ -220,7 +220,7 @@ autoformation.
 seq("s1", 25, 3, "https://…")   // 4ᵉ argument = l'URL de la capsule
 ```
 
-**Hébergement : surtout pas dans le dépôt.** Le pack pèse aujourd'hui **641 Ko** (27/07) et s'ouvre sur
+**Hébergement : surtout pas dans le dépôt.** Le pack pèse aujourd'hui **654 Ko** (27/07) et s'ouvre sur
 n'importe quel téléphone en 4G — c'est un atout majeur pour le public visé, et des fichiers vidéo
 le détruiraient. On héberge ailleurs (lien non répertorié) et on ne pousse que l'URL.
 

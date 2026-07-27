@@ -2699,24 +2699,11 @@ window.PILOTE_PROJECTION = {
        "competences": [
         {
          "code": "1.03",
-         "lib": "Lire et interpréter un diagramme log p-h et une table de saturation",
+         "lib": "Lire et interpréter un diagramme log p-h, une table de saturation et le cycle d'une machine à compression",
          "officiel": "Utiliser les tableaux et graphiques correspondants et les interpréter dans le cadre de contrôles d'étanchéité indirects (y compris le contrôle du bon fonctionnement du système) : diagramme log p/h, tables de saturation d'un réfrigérant, diagramme d'un cycle frigorifique simple à compression",
          "epreuve": {
           "A1": "T",
           "A2": "T",
-          "E": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "1.06",
-         "lib": "Situer les caractéristiques des fluides de substitution",
-         "officiel": "Connaître le comportement spécifique, les paramètres physiques, les systèmes, les solutions, les déviances de tous les réfrigérants de substitution dans le cycle de réfrigération et les composants pour leur utilisation",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T",
-          "D": "T",
           "E": "T"
          },
          "nouveau": false,
@@ -2726,41 +2713,152 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "schema",
-       "src": "packs/fluides/res/svg/lecture-table.svg",
-       "alt": "La lecture croisée : manomètre + 1 bar, table de saturation du fluide, sonde de contact.",
+       "src": "packs/fluides/res/svg/logph-cycle.svg",
+       "alt": "Le diagramme log p-h : la cloche et ses deux courbes, les trois zones, le titre de vapeur, et le cycle parcouru en quatre transformations.",
        "titre": "Lire un log p-h et une table de saturation"
       },
       {
        "type": "point",
-       "html": "Une <b>table de saturation</b> donne, pour un fluide donné, la correspondance entre pression et température d'équilibre liquide-vapeur. Elle se lit dans les deux sens : je mesure une pression, j'en déduis une température ; je mesure une température, j'en déduis une pression.",
+       "html": "Dans la fiche précédente, vous avez suivi un fluide qu'on chauffe à <b>une</b> pression. Le <b>diagramme log p-h</b> fait la même chose pour <b>toutes les pressions à la fois</b>. C'est une carte : chaque point du plan est un état possible du fluide.",
        "titre": "Lire un log p-h et une table de saturation"
       },
       {
        "type": "point",
-       "html": "Le <b>diagramme log p-h</b> est la même information, en image : la pression en ordonnée (échelle logarithmique), l'enthalpie en abscisse. Sous la cloche, le fluide est un mélange liquide + vapeur ; à gauche, il est liquide ; à droite, vapeur.",
+       "html": "<b>L'axe vertical porte la pression.</b> Il est en <b>échelle logarithmique</b> : au lieu d'avancer de 1 bar en 1 bar, on avance en <b>multipliant</b>. Regardez les graduations du schéma : de 1 à 2, puis de 2 à 4, puis de 4 à 8 — chaque doublement occupe la même hauteur. C'est fait pour une raison pratique : dans une machine frigorifique, la basse pression peut être sous le bar et la haute pression à plusieurs dizaines de bar. Sur une échelle ordinaire, tout le côté basse pression serait écrasé en bas de la feuille, illisible.",
        "titre": "Lire un log p-h et une table de saturation"
       },
       {
        "type": "point",
-       "html": "C'est l'outil de la <b>méthode indirecte</b> : sans ouvrir le circuit, on compare ce qu'on mesure à ce que la table annonce.",
+       "html": "<b>L'axe horizontal porte l'enthalpie</b>, en kJ/kg — la chaleur contenue dans un kilo de fluide, celle de la fiche précédente. Aller vers la droite, c'est apporter de la chaleur ; aller vers la gauche, c'est en retirer.",
+       "titre": "Lire un log p-h et une table de saturation"
+      },
+      {
+       "type": "point",
+       "html": "Au milieu du plan, une <b>courbe en cloche</b>. Elle n'est rien d'autre que vos points de bulle et de rosée, mis bout à bout pour toutes les pressions :",
+       "titre": "Lire un log p-h et une table de saturation"
+      },
+      {
+       "type": "point",
+       "html": "La cloche découpe donc le plan en <b>trois zones</b>, et ce sont les trois états de la fiche précédente : à <b>gauche</b> de la courbe de bulle, le <b>liquide sous-refroidi</b> ; <b>sous</b> la cloche, le mélange <b>liquide + vapeur</b>, saturé ; à <b>droite</b> de la courbe de rosée, la <b>vapeur surchauffée</b>. Savoir dans quelle zone on est tombé, c'est savoir ce qu'il y a dans le tube.",
+       "titre": "Lire un log p-h et une table de saturation"
+      },
+      {
+       "type": "point",
+       "html": "Sous la cloche, des lignes en pointillé portent le <b>titre de vapeur</b>, noté <b>x</b>. C'est la part du fluide déjà vaporisée : <b>x = 0</b> sur la courbe de bulle (tout est encore liquide), <b>x = 1</b> sur la courbe de rosée (tout est devenu vapeur). Un point à x = 0,2 signifie qu'un cinquième de la masse est passée en vapeur. C'est ce qui sort du détendeur.",
+       "titre": "Lire un log p-h et une table de saturation"
+      },
+      {
+       "type": "point",
+       "html": "Le <b>cycle</b> se dessine en quatre traits, dans l'ordre de la croix du frigoriste. Partez du point 1, à l'aspiration du compresseur :",
+       "titre": "Lire un log p-h et une table de saturation"
+      },
+      {
+       "type": "point",
+       "html": "Les deux écarts que vous mesurerez sur le terrain se lisent directement sur cette carte. La <b>surchauffe</b> est la distance entre la courbe de rosée et le point 1, sur la ligne basse pression. Le <b>sous-refroidissement</b> est la distance entre la courbe de bulle et le point 3, sur la ligne haute pression. Comment on les mesure vraiment, avec un manomètre et une sonde, c'est le geste du groupe 4.",
+       "titre": "Lire un log p-h et une table de saturation"
+      },
+      {
+       "type": "point",
+       "html": "C'est d'ailleurs à cela que sert cette carte dans le métier, et c'est ce que le référentiel attend de vous : le <b>contrôle d'étanchéité indirect</b>. « Indirect » veut dire qu'on ne cherche pas la fuite elle-même — on ne la renifle pas, on n'ouvre rien. On <b>compare ce qu'on mesure à ce que le fluide devrait faire</b>. Si la pression relevée ne correspond pas à la température lue, le fluide ne se comporte pas comme sa cloche l'annonce : quelque chose a changé dans le circuit, et une fuite en fait partie. Sans cette carte, la méthode indirecte n'est qu'une suite de chiffres sans référence.",
+       "titre": "Lire un log p-h et une table de saturation"
+      },
+      {
+       "type": "point",
+       "html": "Enfin, la <b>table de saturation</b> dit exactement la même chose, mais en colonnes : pour chaque pression, la température de la courbe de bulle et celle de la courbe de rosée. Le diagramme et la table sont deux formes du même savoir. Le diagramme fait voir, la table fait lire — et c'est la table, imprimée, qui reste le jour de l'épreuve.",
+       "titre": "Lire un log p-h et une table de saturation"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li>la branche de gauche est la <b>courbe de bulle</b> — tous les points où la première bulle apparaît ;</li><li>la branche de droite est la <b>courbe de rosée</b> — tous les points où la dernière goutte disparaît ;</li><li>le sommet est le <b>point critique</b>. Au-dessus, il n'y a plus de palier du tout : liquide et vapeur ne se distinguent plus. C'est là que travaillent les installations au CO₂ en régime transcritique.</li></ul>",
+       "titre": "Lire un log p-h et une table de saturation"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li><b>1 → 2, la compression.</b> Le trait monte vers la droite : la pression augmente, et le fluide s'échauffe. C'est la chaleur de compression.</li><li><b>2 → 3, la condensation.</b> Le trait va vers la gauche, à pression constante : la vapeur se désurchauffe, traverse la cloche en se condensant, et ressort en liquide sous-refroidi.</li><li><b>3 → 4, la détente.</b> Le trait descend <b>tout droit</b> : la pression chute, l'enthalpie ne change pas. C'est le seul segment vertical du cycle, et c'est la signature du détendeur.</li><li><b>4 → 1, l'évaporation.</b> Le trait va vers la droite, à pression constante : le fluide finit de bouillir en prenant la chaleur du local, puis se surchauffe et ressort de la cloche.</li></ul>",
        "titre": "Lire un log p-h et une table de saturation"
       },
       {
        "type": "encadre",
        "genre": "cle",
-       "t": "La méthode en trois gestes",
-       "html": "1. Relever la <b>pression</b> au manomètre (et la convertir en absolu si besoin).<br>2. Lire la <b>température de saturation</b> correspondante dans la table du fluide.<br>3. Comparer à la <b>température réellement mesurée</b> sur le tube : l'écart, c'est la surchauffe (à l'aspiration) ou le sous-refroidissement (en sortie de condenseur).",
+       "t": "Placer un point sur la carte, en trois gestes",
+       "html": "1. Relever la <b>pression</b> au manomètre, et la convertir en <b>absolu</b> — le diagramme travaille en bar absolus.<br>2. Cette pression donne une <b>ligne horizontale</b> : votre point est quelque part dessus.<br>3. La <b>température mesurée sur le tube</b> dit où, sur cette ligne : avant la cloche, dedans, ou après. C'est la zone qui vous dit l'état du fluide.",
        "titre": "Lire un log p-h et une table de saturation"
       },
       {
        "type": "encadre",
        "genre": "piege",
        "t": "Un fluide, une table",
-       "html": "Chaque fluide a sa propre table : la pression lue ne veut rien dire tant qu'on ne sait pas <b>quel fluide</b> est dans le circuit. On le vérifie sur la plaque signalétique et dans le registre, jamais « à la couleur de la bouteille ».",
+       "html": "Chaque fluide a sa propre cloche et sa propre table : la pression lue ne veut rien dire tant qu'on ne sait pas <b>quel fluide</b> est dans le circuit. On le vérifie sur la plaque signalétique et dans le registre, jamais « à la couleur de la bouteille ».",
+       "titre": "Lire un log p-h et une table de saturation"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le diagramme est en ABSOLU, votre manomètre lit en RELATIF",
+       "html": "<p>C'est l'erreur la plus banale, et elle fausse tout ce qui suit. Un manomètre de service affiche la pression <b>relative</b> ; les diagrammes et les tables sont en pression <b>absolue</b>. Rappel de la fiche des unités : <b>absolue = relative + environ 1 bar</b>.</p><p>Un bar d'écart, ce sont plusieurs kelvins d'erreur sur la température de saturation. Vous concluez alors à une surchauffe qui n'existe pas, ou vous passez à côté de celle qui existe.</p>",
        "titre": "Lire un log p-h et une table de saturation"
       }
      ],
      "questions": [
+      {
+       "id": "pk-g1b-1",
+       "dc": "G1",
+       "code": "1.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Sur le diagramme log p-h, pourquoi l'axe des pressions est-il en échelle logarithmique ?",
+       "choix": [
+        "Pour que le diagramme tienne sur une feuille A4",
+        "Parce que la basse et la haute pression sont très éloignées : en échelle ordinaire, tout le côté basse pression serait écrasé et illisible",
+        "Parce que la pression se mesure en logarithmes",
+        "Pour que la courbe en cloche devienne symétrique"
+       ],
+       "bonne": 1,
+       "aide": "Regardez les graduations : de 1 à 2, de 2 à 4, de 4 à 8 — chaque doublement occupe la même hauteur.",
+       "remed": {
+        "regle": "En échelle logarithmique, on n'avance pas en ajoutant, on avance en multipliant : chaque doublement de la pression occupe la même hauteur sur l'axe.",
+        "pourquoi": "Dans une machine frigorifique, la basse pression peut être sous le bar quand la haute pression est à plusieurs dizaines de bar. Sur une échelle ordinaire, toute la zone où travaille l'évaporateur serait tassée en bas de la feuille — donc impossible à lire, alors que c'est justement là qu'on fait le froid.",
+        "piege": "La pression, elle, se mesure toujours en bar : c'est l'ÉCHELLE du dessin qui est logarithmique, pas la grandeur."
+       },
+       "remediation_vers": "g1b",
+       "explication": "En échelle logarithmique, on n'avance pas en ajoutant, on avance en multipliant : chaque doublement de la pression occupe la même hauteur sur l'axe.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      },
+      {
+       "id": "pk-g1b-2",
+       "dc": "G1",
+       "code": "1.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Vous placez un point sur le diagramme : il tombe à gauche de la courbe de bulle. Dans quel état est le fluide ?",
+       "choix": [
+        "Liquide sous-refroidi",
+        "Mélange liquide + vapeur",
+        "Vapeur surchauffée",
+        "Au point critique"
+       ],
+       "bonne": 0,
+       "aide": "La cloche découpe trois zones. À gauche, le fluide n'a pas encore commencé à bouillir.",
+       "remed": {
+        "regle": "La courbe en cloche découpe le plan en trois zones : à gauche de la courbe de bulle le liquide sous-refroidi, sous la cloche le mélange liquide + vapeur (saturé), à droite de la courbe de rosée la vapeur surchauffée.",
+        "pourquoi": "Savoir dans quelle zone on est tombé, c'est savoir ce qu'il y a réellement dans le tube qu'on tient. C'est tout l'intérêt du diagramme : il transforme deux mesures — une pression et une température — en un état du fluide.",
+        "exemple": "En sortie de condenseur, un point à gauche de la courbe de bulle est la preuve qu'il n'y a plus de vapeur, donc que le détendeur sera alimenté en liquide pur.",
+        "piege": "La cloche n'est pas la même d'un fluide à l'autre. Un point lu sur le diagramme du R-134a ne dit rien du R-290 : on vérifie d'abord quel fluide est dans le circuit."
+       },
+       "remediation_vers": "g1b",
+       "explication": "La courbe en cloche découpe le plan en trois zones : à gauche de la courbe de bulle le liquide sous-refroidi, sous la cloche le mélange liquide + vapeur (saturé), à droite de la courbe de rosée la vapeur surchauffée.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2",
+        "E"
+       ]
+      },
       {
        "id": "q-g1-v6_041",
        "dc": "G1",
@@ -2779,7 +2877,7 @@ window.PILOTE_PROJECTION = {
        "remed": {
         "texte": "Le diagramme de Mollier a l'enthalpie (h, en kJ/kg) en abscisse et la pression (log P) en ordonnée."
        },
-       "remediation_vers": "g1a",
+       "remediation_vers": "g1b",
        "code": "1.03",
        "categories": [
         "A1",
@@ -2805,63 +2903,7 @@ window.PILOTE_PROJECTION = {
        "remed": {
         "texte": "Sous la courbe de saturation, le fluide est en changement de phase : liquide + vapeur coexistent."
        },
-       "remediation_vers": "g1a",
-       "code": "1.03",
-       "categories": [
-        "A1",
-        "A2",
-        "E"
-       ]
-      },
-      {
-       "id": "pk-g1c-1",
-       "dc": "G1",
-       "code": "1.06",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Les codes R-32 et R-290 se ressemblent. Pourtant leurs classes de sécurité NF EN 378 sont très différentes. Que faut-il comprendre ?",
-       "choix": [
-        "Le code du fluide donne déjà sa classe de sécurité, inutile de vérifier autre chose",
-        "Deux codes proches veulent toujours dire deux dangers proches",
-        "La classe NF EN 378 remplace le code : on peut oublier le code une fois la classe connue",
-        "Le code décrit la molécule ; la classe NF EN 378 décrit le risque de manipulation : il faut connaître les deux"
-       ],
-       "bonne": 3,
-       "aide": "La fiche parle de deux lectures différentes pour un même fluide. Laquelle donne le risque de manipulation ?",
-       "remed": {
-        "regle": "Le code du fluide (R-xyz) décrit la molécule. La classe NF EN 378 (A1, A2L, A3…) décrit le risque de manipulation. Il faut toujours lire les deux.",
-        "pourquoi": "Des codes proches, comme R-32 et R-290, peuvent cacher des molécules différentes. Donc des classes de sécurité différentes.",
-        "piege": "Penser que des codes qui se ressemblent veulent dire des dangers qui se ressemblent. Il faut vérifier la classe à chaque fois."
-       },
-       "remediation_vers": "g1c",
-       "explication": "Le code du fluide (R-xyz) décrit la molécule. La classe NF EN 378 (A1, A2L, A3…) décrit le risque de manipulation. Il faut toujours lire les deux.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2",
-        "D",
-        "E"
-       ]
-      },
-      {
-       "id": "q-g1-v6_046",
-       "dc": "G1",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Sur le diagramme de Mollier, la condensation et l'évaporation sont des transformations :",
-       "choix": [
-        "Isenthalpiques",
-        "Isentropiques",
-        "Isobares",
-        "Isothermes"
-       ],
-       "bonne": 2,
-       "explication": "Isobares — La condensation et l'évaporation se font à pression constante (lignes horizontales sur le diagramme).",
-       "aide": "Les échangeurs (condenseur et évaporateur) travaillent à pression quasi-constante.",
-       "remed": {
-        "texte": "La condensation et l'évaporation se font à pression constante (lignes horizontales sur le diagramme)."
-       },
-       "remediation_vers": "g1a",
+       "remediation_vers": "g1b",
        "code": "1.03",
        "categories": [
         "A1",
@@ -2870,7 +2912,7 @@ window.PILOTE_PROJECTION = {
        ]
       }
      ],
-     "notes": "Fiche indispensable au parcours E : sans elle, la méthode indirecte est du bricolage. Utiliser FRIGOLO en projection, puis faire refaire la lecture sur une table papier — le passage de l'outil à la table imprimée est ce qui reste le jour de l'épreuve. Faire chercher : « la pression est plus basse que la table, qu'est-ce que ça peut vouloir dire ? » avant de donner « manque de charge »."
+     "notes": "Fiche indispensable au parcours E : sans elle, la méthode indirecte est du bricolage. Projeter FRIGOLO Mollier EN PLEINE PAGE, pas dans le cadre de la fiche — l'outil est haut, et en salle il faut le voir en entier (le mode projection saute d'ailleurs les encadrés à iframe). Ordre qui marche : d'abord la cloche seule, faire nommer les trois zones par le groupe ; ensuite seulement le cycle, transformation par transformation, en faisant DEVINER le sens avant de le montrer — le sens de parcours est ce qui se retient le plus mal. Puis faire refaire la lecture sur une table PAPIER : le passage de l'outil à la table imprimée est ce qui reste le jour de l'épreuve. Faire chercher : « la pression est plus basse que la table, qu'est-ce que ça peut vouloir dire ? » avant de donner « manque de charge ». ⚠️ Ne pas entrer ici dans la surchauffe utile / totale : l'outil les affiche, mais la distinction n'est pas encore tranchée (voir CONSIGNES-SOCLE-THEORIQUE.md, chantier 3)."
     },
     {
      "type": "cours",

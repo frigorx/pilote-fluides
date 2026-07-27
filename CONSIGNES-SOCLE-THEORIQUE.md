@@ -133,7 +133,31 @@ de l'air.
 Enchaîner immédiatement sur les mots que le pack emploie déjà partout : **liquide sous-refroidi →
 point de bulle → palier (mélange liquide + vapeur, saturé) → point de rosée → vapeur surchauffée**.
 
-### Chantier 2 — Le diagramme log p/h (`g1b`, à passer de 105 mots à une vraie fiche)
+### ✅ Chantier 2 — Le diagramme log p/h — FAIT le 27/07
+
+> **`g1b` passe de 105 à 803 mots de corps** (1 233 avec ses encadrés), 45 min inchangées.
+> Nouvelle planche `res/svg/logph-cycle.svg` : axes, cloche, point critique, trois zones, lignes
+> de titre de vapeur, et les quatre transformations qui s'allument dans l'ordre. 4 questions
+> `pk-g1b-*`, 4 remédiations réaiguillées de `g1a` vers `g1b`. Instrument de profondeur durci
+> sur 1.03 (v0.5) : contrefactuel tiré, l'ancien contenu tombait à 3 notions sur 5.
+>
+> **Les deux outils sont exploités, comme demandé ci-dessous** — et pas seulement cités.
+> `r-mollier` (FRIGOLO Mollier) fait l'objet d'un **protocole guidé en 6 étapes**, embarqué en
+> iframe via le nouvel assistant `outilAtelier()` ; `r-enthalpique` est ajouté en ressource.
+> Demande explicite de F. Henninot le 27/07 : « utilise le logiciel ».
+>
+> **`g1b` rendait un code qu'elle n'enseignait pas** : 1.06 (comportement des réfrigérants de
+> substitution) est retiré de ses critères. Il reste porté par `g1c`. Profondeur revérifiée.
+>
+> **Trou de navigation refermé au passage** : `g1b` n'était listée que dans le menu du parcours E,
+> alors que 1.03 est exigé en A1 et A2. Elle entre dans les deux menus.
+>
+> ⚠️ **Non vérifié en bac à sable** : le navigateur de test n'a pas d'accès sortant, donc l'iframe
+> FRIGOLO n'a pas pu être chargée pour de vrai. Le gabarit d'encart a été validé sur une copie
+> locale de l'outil ; le lien de secours « en pleine page » fonctionne dans tous les cas.
+> **À contrôler une fois en ligne.**
+
+### La consigne d'origine, pour mémoire
 
 Ce que le stagiaire doit savoir faire, dans cet ordre :
 - **lire les axes** : pression en ordonnée (échelle logarithmique, et pourquoi), enthalpie en
@@ -224,7 +248,21 @@ surchauffe ne peut pas être comprise ; sans le diagramme, on ne peut pas montre
 5. **Nouveau, ouvert par le chantier 1** : `g1e` emploie **point de bulle** et **point de rosée**
    pour un fluide **pur**. C'est l'usage du métier et c'est ce que demande le § 2 ci-dessus, mais
    ce sont à l'origine les termes des mélanges. À confirmer, ou à reformuler en « liquide saturé /
-   vapeur saturée » avec les deux appellations.
+   vapeur saturée » avec les deux appellations. *(Vaut aussi pour `g1b` depuis le chantier 2 :
+   courbe de bulle / courbe de rosée.)*
+6. **Nouveau, ouvert par le chantier 2 — et il faudra le trancher AVANT le chantier 3.**
+   **Deux de vos outils ne donnent pas les mêmes repères.** La charte du pack autorise
+   « surchauffe **5-10 K** », et c'est ce que `g1a` écrivait déjà, donc ce que `g1e` a repris.
+   **FRIGOLO Mollier**, lui, affiche ses propres repères, distincts, et distingue surchauffe
+   **utile** et **totale** — ce que le pack ne fait pas encore.
+   `g1b` a été écrite pour ne citer **aucune valeur** de l'outil, précisément pour ne pas figer
+   cette divergence avant votre arbitrage. Trois questions à trancher ensemble au chantier 3 :
+   quel repère fait foi côté pack ; s'il faut le décliner en utile / totale ; et si FRIGOLO doit
+   être aligné sur le pack ou l'inverse.
+7. **Faut-il EMBARQUER FRIGOLO dans la fiche, ou seulement y renvoyer ?** Le chantier 2 l'a
+   embarqué (iframe de 1450 px, chargement différé, plus un lien pleine page). C'est haut dans une
+   fiche de cours, et l'outil est fait pour un écran large. L'alternative — un simple bouton
+   d'ouverture — est un `outilAtelier()` à retirer.
 
 ---
 
@@ -247,14 +285,17 @@ Les zéros du § 1-b, rejoués après coup — c'est ce que le chantier 1 a comb
 | chaleur sensible | 0 | **12** | 1 ✅ |
 | chaleur latente | 0 | **16** | 1 ✅ |
 | vaporisation | 0 | **1** | 1 ✅ |
-| point de bulle | 0 | **8** | 1 ✅ |
-| point de rosée | 1 | **10** | 1 ✅ |
+| point de bulle | 0 | **23** | 1 ✅ puis 2 ✅ |
+| point de rosée | 1 | **23** | 1 ✅ puis 2 ✅ |
+| titre de vapeur | 0 | **6** | 2 ✅ |
+| courbe de bulle · courbe de rosée | 0 · 0 | **15 · 13** | 2 ✅ |
+| point critique | 0 | **5** | 2 ✅ |
+| échelle logarithmique | 0 | **4** | 2 ✅ |
 | surchauffe utile / totale | 0 · 0 | **0 · 0** | 3, à faire |
-| titre de vapeur | 0 | **0** | 2, à faire |
 | KVP · KVL | 0 · 0 | **0 · 0** | 4, à faire |
 
-Volumes (corps seul, méthode du § 1-a) : `g1e` **544 mots** · `g1a` 250 → **191** (dégraissée,
-et passée de 45 à 30 min) · `g1b` **105** (chantier 2) · `g7b` **118** (chantier 4) ·
+Volumes (corps seul, méthode du § 1-a) : `g1e` **573 mots** · `g1b` 105 → **803** ·
+`g1a` 250 → **191** (dégraissée, et passée de 45 à 30 min) · `g7b` **118** (chantier 4) ·
 `g8b` **236** (chantier 4).
 
 ---

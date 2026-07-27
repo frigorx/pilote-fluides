@@ -1631,5 +1631,94 @@
    "piege": "Le glissement explique aussi pourquoi, sur ces mélanges, on ne lit pas « la » température d'évaporation : la table en donne deux, au point de bulle et au point de rosée. Se tromper de colonne fausse la surchauffe calculée."
   },
   "remediation_vers": "g1e"
+ },
+ {
+  "id": "pk-g1b-1",
+  "dc": "G1",
+  "code": "1.03",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Sur le diagramme log p-h, pourquoi l'axe des pressions est-il en échelle logarithmique ?",
+  "choix": [
+   "Pour que le diagramme tienne sur une feuille A4",
+   "Parce que la basse et la haute pression sont très éloignées : en échelle ordinaire, tout le côté basse pression serait écrasé et illisible",
+   "Parce que la pression se mesure en logarithmes",
+   "Pour que la courbe en cloche devienne symétrique"
+  ],
+  "bonne": 1,
+  "aide": "Regardez les graduations : de 1 à 2, de 2 à 4, de 4 à 8 — chaque doublement occupe la même hauteur.",
+  "remed": {
+   "regle": "En échelle logarithmique, on n'avance pas en ajoutant, on avance en multipliant : chaque doublement de la pression occupe la même hauteur sur l'axe.",
+   "pourquoi": "Dans une machine frigorifique, la basse pression peut être sous le bar quand la haute pression est à plusieurs dizaines de bar. Sur une échelle ordinaire, toute la zone où travaille l'évaporateur serait tassée en bas de la feuille — donc impossible à lire, alors que c'est justement là qu'on fait le froid.",
+   "piege": "La pression, elle, se mesure toujours en bar : c'est l'ÉCHELLE du dessin qui est logarithmique, pas la grandeur."
+  },
+  "remediation_vers": "g1b"
+ },
+ {
+  "id": "pk-g1b-2",
+  "dc": "G1",
+  "code": "1.03",
+  "niveau": 1,
+  "type": "qcm",
+  "enonce": "Vous placez un point sur le diagramme : il tombe à gauche de la courbe de bulle. Dans quel état est le fluide ?",
+  "choix": [
+   "Liquide sous-refroidi",
+   "Mélange liquide + vapeur",
+   "Vapeur surchauffée",
+   "Au point critique"
+  ],
+  "bonne": 0,
+  "aide": "La cloche découpe trois zones. À gauche, le fluide n'a pas encore commencé à bouillir.",
+  "remed": {
+   "regle": "La courbe en cloche découpe le plan en trois zones : à gauche de la courbe de bulle le liquide sous-refroidi, sous la cloche le mélange liquide + vapeur (saturé), à droite de la courbe de rosée la vapeur surchauffée.",
+   "pourquoi": "Savoir dans quelle zone on est tombé, c'est savoir ce qu'il y a réellement dans le tube qu'on tient. C'est tout l'intérêt du diagramme : il transforme deux mesures — une pression et une température — en un état du fluide.",
+   "exemple": "En sortie de condenseur, un point à gauche de la courbe de bulle est la preuve qu'il n'y a plus de vapeur, donc que le détendeur sera alimenté en liquide pur.",
+   "piege": "La cloche n'est pas la même d'un fluide à l'autre. Un point lu sur le diagramme du R-134a ne dit rien du R-290 : on vérifie d'abord quel fluide est dans le circuit."
+  },
+  "remediation_vers": "g1b"
+ },
+ {
+  "id": "pk-g1b-3",
+  "dc": "G1",
+  "code": "1.03",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Sous la cloche, un point se trouve sur la ligne de titre de vapeur x = 0,2. Qu'est-ce que cela signifie ?",
+  "choix": [
+   "Que la pression vaut 0,2 bar",
+   "Qu'un cinquième de la masse du fluide est déjà passée en vapeur",
+   "Que le fluide est à 20 °C",
+   "Qu'il reste 20 % de la charge dans l'installation"
+  ],
+  "bonne": 1,
+  "aide": "Le titre va de 0 sur la courbe de bulle à 1 sur la courbe de rosée. Que vaut-il au milieu du chemin ?",
+  "remed": {
+   "regle": "Le titre de vapeur, noté x, est la part de la masse déjà vaporisée : x = 0 sur la courbe de bulle (tout est encore liquide), x = 1 sur la courbe de rosée (tout est devenu vapeur). x = 0,2 signifie donc un cinquième de vapeur, quatre cinquièmes de liquide.",
+   "pourquoi": "C'est ce qui sort du détendeur : la détente fait apparaître une part de vapeur avant même l'entrée de l'évaporateur. Cette vapeur-là ne produira pas de froid, elle occupe seulement du volume.",
+   "piege": "Le titre n'est ni une pression, ni une température, ni un pourcentage de charge. C'est une proportion entre deux phases du même fluide, au point où l'on se trouve."
+  },
+  "remediation_vers": "g1b"
+ },
+ {
+  "id": "pk-g1b-4",
+  "dc": "G1",
+  "code": "1.03",
+  "niveau": 2,
+  "type": "qcm",
+  "enonce": "Sur un cycle tracé, où se lit le sous-refroidissement ?",
+  "choix": [
+   "Entre la courbe de rosée et le point d'aspiration, sur la ligne basse pression",
+   "Entre la courbe de bulle et le point de sortie du condenseur, sur la ligne haute pression",
+   "Sur le segment vertical de la détente",
+   "Au sommet de la cloche, au point critique"
+  ],
+  "bonne": 1,
+  "aide": "Le sous-refroidissement concerne du liquide, et il se produit dans le condenseur. De quel côté de la cloche, et sur quelle ligne de pression ?",
+  "remed": {
+   "regle": "Le sous-refroidissement se lit sur la ligne HAUTE pression, entre la courbe de bulle et le point de sortie du condenseur. La surchauffe, elle, se lit sur la ligne BASSE pression, entre la courbe de rosée et le point d'aspiration.",
+   "pourquoi": "Les deux écarts sont symétriques : le sous-refroidissement est le chemin parcouru en chaleur sensible du côté liquide, la surchauffe celui parcouru en chaleur sensible du côté vapeur. Le diagramme les montre comme deux longueurs, de part et d'autre de la cloche.",
+   "piege": "Se tromper de ligne de pression est fréquent : lire un sous-refroidissement sur la basse pression n'a aucun sens, il n'y a pas de liquide sortant à cet endroit du cycle."
+  },
+  "remediation_vers": "g1b"
  }
 ]

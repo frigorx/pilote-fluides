@@ -308,6 +308,11 @@ const REMEDIATION_FINE = {
      notion. États du fluide (157, 158), retour de liquide au compresseur
      (160), repères de surchauffe et de sous-refroidissement (v6_048, v6_145). */
   "160": "g1e", "157": "g1e", "158": "g1e", "v6_048": "g1e", "v6_145": "g1e",
+  /* Chantier 2 (27/07) : même motif, un cran plus loin. Ces quatre questions
+     portent le code 1.03 — le diagramme log p-h — et renvoyaient vers g1a,
+     qui ne l'a jamais enseigné. C'est g1b qui le fait, et qui le fait
+     désormais vraiment (elle tenait 1.03 avec 105 mots). */
+  "v6_042": "g1b", "v6_041": "g1b", "v6_046": "g1b", "v6_143": "g1b",
 };
 
 /* ---------------------------------------------------------------------

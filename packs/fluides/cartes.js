@@ -155,6 +155,17 @@ const suite = (vers, quoi) => ({ vers, libelle: "Suite ▸ " + quoi });
 const outil = (fichier, titre, h) =>
   '<iframe src="packs/fluides/res/outils/' + fichier + '" title="' + titre + '" ' +
   'style="width:100%;height:' + h + 'px;border:0;background:#fff;border-radius:6px" loading="lazy"></iframe>';
+
+/* Outil de l'atelier numérique, hébergé sur un AUTRE dépôt de frigorx.github.io.
+   Même origine une fois publié, donc l'iframe passe ; en local il faut le réseau.
+   `loading="lazy"` : il ne se charge que si l'élève fait défiler jusqu'à lui —
+   le pack doit rester ouvrable en 4G. Le lien de secours ouvre l'outil en
+   pleine page, seule forme utilisable en projection ou sur un petit écran. */
+const outilAtelier = (url, titre, h) =>
+  '<iframe src="' + url + '" title="' + titre + '" ' +
+  'style="width:100%;height:' + h + 'px;border:1px solid #d7e0e8;background:#fff;border-radius:6px" loading="lazy"></iframe>' +
+  '<p style="margin:8px 0 0;font-size:13px">' +
+  '<a href="' + url + '" target="_blank" rel="noopener">Ouvrir ' + titre + ' en pleine page ↗</a></p>';
 const schema = (fichier, alt) =>
   '<img src="packs/fluides/res/svg/' + fichier + '" alt="' + alt + '" ' +
   'style="width:100%;height:auto;display:block;margin:0 0 18px;' +
@@ -263,6 +274,7 @@ export const CARTES = [
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Unités, pression et les quatre organes", desc: "G1 — de quoi on parle, et qui fait quoi." },
       { vers: "g1e", icone: "1", titre: "Chaleur sensible et chaleur latente", desc: "G1 — le palier : d'où vient le froid. Le socle de tout le reste.", primaire: true },
+      { vers: "g1b", icone: "1", titre: "Lire un log p-h et une table de saturation", desc: "G1 · code 1.03 — la carte du fluide : trois zones, quatre transformations." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g1d", icone: "1", titre: "Les organes qui trahissent une fuite", desc: "G1 — voyant, vannes, pressostats : lire les signes." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
@@ -309,6 +321,7 @@ export const CARTES = [
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Unités, pression et les quatre organes", desc: "G1 — insister sur les seuils de charge." },
       { vers: "g1e", icone: "1", titre: "Chaleur sensible et chaleur latente", desc: "G1 — le palier : d'où vient le froid. Le socle de tout le reste.", primaire: true },
+      { vers: "g1b", icone: "1", titre: "Lire un log p-h et une table de saturation", desc: "G1 · code 1.03 — la carte du fluide : trois zones, quatre transformations." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g1d", icone: "1", titre: "Les organes qui trahissent une fuite", desc: "G1 — voyant, vannes, pressostats : lire les signes." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
@@ -396,7 +409,7 @@ export const CARTES = [
       { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Bases : pression, température, fluides", desc: "G1 partiel — dont la pression absolue." },
-      { vers: "g1b", icone: "1", titre: "Lire une table de saturation", desc: "G1 · code 1.03 — indispensable à la méthode indirecte.", primaire: true },
+      { vers: "g1b", icone: "1", titre: "Lire un log p-h et une table de saturation", desc: "G1 · code 1.03 — la carte du fluide, et la table : indispensables à la méthode indirecte.", primaire: true },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
       { vers: "g2", icone: "2", titre: "Enjeu environnemental", desc: "G2 — pourquoi une fuite compte." },
@@ -1691,68 +1704,172 @@ export const CARTES = [
       "Enfin : ne pas mesurer la surchauffe ici, c'est le geste de G4 — ici on installe le sens du mot.",
   },
   {
+    /* ------------------------------------------------------------------
+       CHANTIER 2 DU SOCLE THÉORIQUE (27/07/2026).
+       Cette fiche faisait 105 mots pour 45 minutes de cours, et « tenait »
+       le code 1.03 avec trois paragraphes. Elle déclarait en plus le code
+       1.06 (comportement des réfrigérants de substitution) qu'elle
+       n'enseignait pas : rendu à g1c et g11, qui l'enseignent.
+
+       Elle a maintenant son prérequis : g1e pose le palier, les points de
+       bulle et de rosée, et le titre des états. Ici, on ne fait que les
+       LIRE — sur le diagramme, puis sur la table.
+       ------------------------------------------------------------------ */
     id: "g1b",
     type: "cours",
     titre: "Lire un log p-h et une table de saturation",
     dc: "G1 · code 1.03",
-    minuteur_s: 300,
+    minuteur_s: 540,
     corps:
-      schema("lecture-table.svg", "La lecture croisée : manomètre + 1 bar, table de saturation du fluide, sonde de contact.") +
-      "<p>Une <b>table de saturation</b> donne, pour un fluide donné, la correspondance entre pression " +
-      "et température d'équilibre liquide-vapeur. Elle se lit dans les deux sens : je mesure une pression, " +
-      "j'en déduis une température ; je mesure une température, j'en déduis une pression.</p>" +
-      "<p>Le <b>diagramme log p-h</b> est la même information, en image : la pression en ordonnée " +
-      "(échelle logarithmique), l'enthalpie en abscisse. Sous la cloche, le fluide est un mélange " +
-      "liquide + vapeur ; à gauche, il est liquide ; à droite, vapeur.</p>" +
-      "<p>C'est l'outil de la <b>méthode indirecte</b> : sans ouvrir le circuit, on compare ce qu'on " +
-      "mesure à ce que la table annonce.</p>",
+      schema("logph-cycle.svg", "Le diagramme log p-h : la cloche et ses deux courbes, les trois zones, le titre de vapeur, et le cycle parcouru en quatre transformations.") +
+      "<p>Dans la fiche précédente, vous avez suivi un fluide qu'on chauffe à <b>une</b> pression. " +
+      "Le <b>diagramme log p-h</b> fait la même chose pour <b>toutes les pressions à la fois</b>. " +
+      "C'est une carte : chaque point du plan est un état possible du fluide.</p>" +
+      "<p><b>L'axe vertical porte la pression.</b> Il est en <b>échelle logarithmique</b> : au lieu " +
+      "d'avancer de 1 bar en 1 bar, on avance en <b>multipliant</b>. Regardez les graduations du " +
+      "schéma : de 1 à 2, puis de 2 à 4, puis de 4 à 8 — chaque doublement occupe la même hauteur. " +
+      "C'est fait pour une raison pratique : dans une machine frigorifique, la basse pression peut " +
+      "être sous le bar et la haute pression à plusieurs dizaines de bar. Sur une échelle ordinaire, " +
+      "tout le côté basse pression serait écrasé en bas de la feuille, illisible.</p>" +
+      "<p><b>L'axe horizontal porte l'enthalpie</b>, en kJ/kg — la chaleur contenue dans un kilo de " +
+      "fluide, celle de la fiche précédente. Aller vers la droite, c'est apporter de la chaleur ; " +
+      "aller vers la gauche, c'est en retirer.</p>" +
+      "<p>Au milieu du plan, une <b>courbe en cloche</b>. Elle n'est rien d'autre que vos points de " +
+      "bulle et de rosée, mis bout à bout pour toutes les pressions :</p>" +
+      "<ul>" +
+      "<li>la branche de gauche est la <b>courbe de bulle</b> — tous les points où la première bulle apparaît ;</li>" +
+      "<li>la branche de droite est la <b>courbe de rosée</b> — tous les points où la dernière goutte disparaît ;</li>" +
+      "<li>le sommet est le <b>point critique</b>. Au-dessus, il n'y a plus de palier du tout : liquide et vapeur ne se distinguent plus. C'est là que travaillent les installations au CO₂ en régime transcritique.</li>" +
+      "</ul>" +
+      "<p>La cloche découpe donc le plan en <b>trois zones</b>, et ce sont les trois états de la fiche " +
+      "précédente : à <b>gauche</b> de la courbe de bulle, le <b>liquide sous-refroidi</b> ; " +
+      "<b>sous</b> la cloche, le mélange <b>liquide + vapeur</b>, saturé ; à <b>droite</b> de la " +
+      "courbe de rosée, la <b>vapeur surchauffée</b>. Savoir dans quelle zone on est tombé, c'est " +
+      "savoir ce qu'il y a dans le tube.</p>" +
+      "<p>Sous la cloche, des lignes en pointillé portent le <b>titre de vapeur</b>, noté <b>x</b>. " +
+      "C'est la part du fluide déjà vaporisée : <b>x = 0</b> sur la courbe de bulle (tout est encore " +
+      "liquide), <b>x = 1</b> sur la courbe de rosée (tout est devenu vapeur). Un point à x = 0,2 " +
+      "signifie qu'un cinquième de la masse est passée en vapeur. C'est ce qui sort du détendeur.</p>" +
+      "<p>Le <b>cycle</b> se dessine en quatre traits, dans l'ordre de la croix du frigoriste. " +
+      "Partez du point 1, à l'aspiration du compresseur :</p>" +
+      "<ul>" +
+      "<li><b>1 → 2, la compression.</b> Le trait monte vers la droite : la pression augmente, et le fluide s'échauffe. C'est la chaleur de compression.</li>" +
+      "<li><b>2 → 3, la condensation.</b> Le trait va vers la gauche, à pression constante : la vapeur se désurchauffe, traverse la cloche en se condensant, et ressort en liquide sous-refroidi.</li>" +
+      "<li><b>3 → 4, la détente.</b> Le trait descend <b>tout droit</b> : la pression chute, l'enthalpie ne change pas. C'est le seul segment vertical du cycle, et c'est la signature du détendeur.</li>" +
+      "<li><b>4 → 1, l'évaporation.</b> Le trait va vers la droite, à pression constante : le fluide finit de bouillir en prenant la chaleur du local, puis se surchauffe et ressort de la cloche.</li>" +
+      "</ul>" +
+      "<p>Les deux écarts que vous mesurerez sur le terrain se lisent directement sur cette carte. " +
+      "La <b>surchauffe</b> est la distance entre la courbe de rosée et le point 1, sur la ligne basse " +
+      "pression. Le <b>sous-refroidissement</b> est la distance entre la courbe de bulle et le point 3, " +
+      "sur la ligne haute pression. Comment on les mesure vraiment, avec un manomètre et une sonde, " +
+      "c'est le geste du groupe 4.</p>" +
+      "<p>C'est d'ailleurs à cela que sert cette carte dans le métier, et c'est ce que le référentiel " +
+      "attend de vous : le <b>contrôle d'étanchéité indirect</b>. « Indirect » veut dire qu'on ne " +
+      "cherche pas la fuite elle-même — on ne la renifle pas, on n'ouvre rien. On <b>compare ce qu'on " +
+      "mesure à ce que le fluide devrait faire</b>. Si la pression relevée ne correspond pas à la " +
+      "température lue, le fluide ne se comporte pas comme sa cloche l'annonce : quelque chose a " +
+      "changé dans le circuit, et une fuite en fait partie. Sans cette carte, la méthode indirecte " +
+      "n'est qu'une suite de chiffres sans référence.</p>" +
+      "<p>Enfin, la <b>table de saturation</b> dit exactement la même chose, mais en colonnes : pour " +
+      "chaque pression, la température de la courbe de bulle et celle de la courbe de rosée. Le " +
+      "diagramme et la table sont deux formes du même savoir. Le diagramme fait voir, la table fait " +
+      "lire — et c'est la table, imprimée, qui reste le jour de l'épreuve.</p>",
     blocs: [
       {
         type: "cle",
-        t: "La méthode en trois gestes",
+        t: "Placer un point sur la carte, en trois gestes",
         html:
-          "1. Relever la <b>pression</b> au manomètre (et la convertir en absolu si besoin).<br>" +
-          "2. Lire la <b>température de saturation</b> correspondante dans la table du fluide.<br>" +
-          "3. Comparer à la <b>température réellement mesurée</b> sur le tube : l'écart, c'est la " +
-          "surchauffe (à l'aspiration) ou le sous-refroidissement (en sortie de condenseur).",
+          "1. Relever la <b>pression</b> au manomètre, et la convertir en <b>absolu</b> — le diagramme travaille en bar absolus.<br>" +
+          "2. Cette pression donne une <b>ligne horizontale</b> : votre point est quelque part dessus.<br>" +
+          "3. La <b>température mesurée sur le tube</b> dit où, sur cette ligne : avant la cloche, dedans, ou après. C'est la zone qui vous dit l'état du fluide.",
       },
       {
         type: "piege",
         t: "Un fluide, une table",
         html:
-          "Chaque fluide a sa propre table : la pression lue ne veut rien dire tant qu'on ne sait pas " +
-          "<b>quel fluide</b> est dans le circuit. On le vérifie sur la plaque signalétique et dans le " +
-          "registre, jamais « à la couleur de la bouteille ».",
+          "Chaque fluide a sa propre cloche et sa propre table : la pression lue ne veut rien dire tant " +
+          "qu'on ne sait pas <b>quel fluide</b> est dans le circuit. On le vérifie sur la plaque " +
+          "signalétique et dans le registre, jamais « à la couleur de la bouteille ».",
+      },
+      {
+        type: "piege",
+        t: "Le diagramme est en ABSOLU, votre manomètre lit en RELATIF",
+        html:
+          "<p>C'est l'erreur la plus banale, et elle fausse tout ce qui suit. Un manomètre de service " +
+          "affiche la pression <b>relative</b> ; les diagrammes et les tables sont en pression " +
+          "<b>absolue</b>. Rappel de la fiche des unités : <b>absolue = relative + environ 1 bar</b>.</p>" +
+          "<p>Un bar d'écart, ce sont plusieurs kelvins d'erreur sur la température de saturation. " +
+          "Vous concluez alors à une surchauffe qui n'existe pas, ou vous passez à côté de celle qui existe.</p>",
+      },
+      {
+        t: "À toi : tracer un vrai cycle avec FRIGOLO Mollier",
+        html:
+          "<p style=\"margin:0 0 10px\">Cet outil de l'atelier trace le cycle à partir d'un relevé " +
+          "terrain. Faites-le tourner : c'est en déplaçant les points qu'on comprend le diagramme.</p>" +
+          "<ol style=\"margin:0 0 12px;padding-left:20px\">" +
+          "<li>Choisissez un <b>fluide</b>.</li>" +
+          "<li>Entrez les deux pressions, <b>PO — BP</b> et <b>PK — HP</b>. Elles sont demandées en " +
+          "<b>bar relatif</b>. Regardez la ligne juste en dessous : l'outil affiche côte à côte " +
+          "« PO REL » et « PO ABS ». <b>C'est le piège ci-dessus, en direct.</b></li>" +
+          "<li>Entrez les températures, puis cliquez sur <b>« Tracer le cycle complet »</b>.</li>" +
+          "<li>Retrouvez sur le tracé les <b>quatre transformations</b>, dans l'ordre. Vérifiez que la " +
+          "détente est bien la seule verticale.</li>" +
+          "<li>Cochez et décochez <b>« Zones »</b>, <b>« Titres »</b>, <b>« Isothermes »</b> : ce sont " +
+          "les couches de la carte. « Titres », ce sont les lignes de titre de vapeur.</li>" +
+          "<li>Changez <b>une seule</b> pression, retracez, et regardez le cycle se déformer. Une " +
+          "machine qui se dérègle, c'est exactement cela.</li>" +
+          "</ol>" +
+          "<p style=\"margin:0 0 10px\">L'outil affiche aussi des indicateurs de surchauffe et de " +
+          "sous-refroidissement. On les lira au <b>groupe 4</b>, quand on saura les mesurer sur " +
+          "l'installation : ici, on apprend seulement à voir <b>où</b> ils se lisent.</p>" +
+          // 1450 px : hauteur mesurée pour que le relevé, le bouton, les
+          // indicateurs ET le diagramme tracé tiennent sans défilement interne
+          // à la largeur d'une fiche sur ordinateur. Sur téléphone l'outil se
+          // remet en colonne et il reste du défilement — l'auto-hauteur par
+          // postMessage ne marche qu'avec les outils du pack.
+          outilAtelier("https://frigorx.github.io/inerweb-frigolo/outils/frigolo-mollier.html",
+            "FRIGOLO Mollier — diagramme log p-h", 1450),
       },
       {
         t: "À toi : la réglette P ↔ T",
         html:
-          "<p style=\"margin:0 0 10px\">Choisis un fluide, règle la pression lue au manomètre, entre la température du tube : la surchauffe se calcule sous tes yeux. C est exactement le geste de la méthode indirecte.</p>" +
+          "<p style=\"margin:0 0 10px\">La même information, mais en table. Choisis un fluide, règle la pression lue au manomètre, entre la température du tube : l'écart se calcule sous tes yeux. C est le geste qui restera le jour de l épreuve, sans écran.</p>" +
           outil("reglette.html", "Réglette pression-température interactive", 445),
       },
     ],
     question: {
       type: "qcm",
       enonce:
-        "Sur le diagramme log p-h, que représente l'axe horizontal ?",
-      choix: ["La température", "La pression", "L'enthalpie", "Le volume"],
-      bonne: 2,
+        "Sur le diagramme log p-h, à quoi reconnaît-on la détente dans le détendeur ?",
+      choix: [
+        "C'est le seul trait horizontal du cycle",
+        "C'est le seul trait vertical : la pression chute, l'enthalpie ne change pas",
+        "C'est le trait qui monte vers la droite",
+        "Elle ne se voit pas sur ce diagramme",
+      ],
+      bonne: 1,
       explication:
-        "L'axe horizontal porte l'enthalpie (l'énergie contenue par kilogramme de fluide) ; la pression est en ordonnée, en échelle logarithmique.",
+        "La détente descend <b>tout droit</b> : le détendeur fait chuter la pression sans que le fluide échange de chaleur avec l'extérieur, donc l'enthalpie reste la même. C'est le seul segment vertical du cycle — la compression monte vers la droite, la condensation et l'évaporation sont horizontales.",
       remediation_vers: "g1b",
     },
     criteres: [
-      { code: "1.03", libelle: "Lire et interpréter un diagramme log p-h et une table de saturation", etat: "a_evaluer" },
-      { code: "1.06", libelle: "Situer les caractéristiques des fluides de substitution", etat: "a_evaluer" },
+      { code: "1.03", libelle: "Lire et interpréter un diagramme log p-h, une table de saturation et le cycle d'une machine à compression", etat: "a_evaluer" },
     ],
-    ressources: ["r-mollier"],
+    ressources: ["r-mollier", "r-enthalpique"],
     liens: [suite("g1c", "Familles et codes des fluides"), SOMMAIRE],
     notes_pilote:
       "Fiche indispensable au parcours E : sans elle, la méthode indirecte est du bricolage. " +
-      "Utiliser FRIGOLO en projection, puis faire refaire la lecture sur une table papier — le passage " +
-      "de l'outil à la table imprimée est ce qui reste le jour de l'épreuve. " +
-      "Faire chercher : « la pression est plus basse que la table, qu'est-ce que ça peut vouloir dire ? » " +
-      "avant de donner « manque de charge ».",
+      "Projeter FRIGOLO Mollier EN PLEINE PAGE, pas dans le cadre de la fiche — l'outil est haut, et " +
+      "en salle il faut le voir en entier (le mode projection saute d'ailleurs les encadrés à iframe). " +
+      "Ordre qui marche : d'abord la cloche seule, faire nommer les trois zones par le groupe ; " +
+      "ensuite seulement le cycle, transformation par transformation, en faisant DEVINER le sens " +
+      "avant de le montrer — le sens de parcours est ce qui se retient le plus mal. " +
+      "Puis faire refaire la lecture sur une table PAPIER : le passage de l'outil à la table " +
+      "imprimée est ce qui reste le jour de l'épreuve. " +
+      "Faire chercher : « la pression est plus basse que la table, qu'est-ce que ça peut vouloir " +
+      "dire ? » avant de donner « manque de charge ». " +
+      "⚠️ Ne pas entrer ici dans la surchauffe utile / totale : l'outil les affiche, mais la " +
+      "distinction n'est pas encore tranchée (voir CONSIGNES-SOCLE-THEORIQUE.md, chantier 3).",
   },
 
   /* ==================================================================
