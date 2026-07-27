@@ -486,6 +486,32 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 
 ## 6. Ce qui reste à faire
 
+### 🔴🔴 LE PLAN DE FORMATION NE TIENT PAS DANS LE TEMPS RÉEL — virage pédagogique décidé
+
+**⇒ Tout est dans [`PLAN-SEQUENCE-4J5.md`](PLAN-SEQUENCE-4J5.md)** : cadre horaire réel, modèle en
+quatre temps, critère de tri, arbitrages. **À lire avant de toucher à `parcours.js`.**
+
+Mesuré le 27/07 : le parcours pèse **27 h 40 de salle**, hors plateau, hors révision, hors épreuve.
+Or A2 annonce 28 h de formation (il resterait **20 minutes**) et **D est déjà en dépassement de
+40 minutes** — alors que D est la catégorie la plus pratique du référentiel. Sur 4,5 jours à
+8 h 30 – 17 h 00, récréations et déjeuner déduits, il y a **29 h 15** de face-à-face, dont 4 h 15
+d'épreuve et 1 h d'accueil : **24 h utiles**. Il faut ramener la salle autour de **11 h**.
+
+**Décision de F. Henninot (27/07) : c'est une REQUALIFICATION, pas une formation initiale.**
+*« Le système est magnifique, je ne dis pas que c'est nul — je dis que c'est trop. Vraiment un
+projet d'autoformation, et à la fin un bourrage de crâne. Les gens savent faire. »*
+Modèle : **amont en autoformation → test de positionnement → points clés en salle → plateau →
+bachotage → épreuve**. ~17 h basculent de la salle vers l'amont.
+
+⚠️ **On ne jette rien**, et les chantiers du socle théorique ne sont PAS perdus : un projet
+d'autoformation a besoin d'un **livre dense**. `g1e` (1 008 mots) et `g1b` (1 233 mots) sont trop
+lourdes pour 30 minutes de salle — elles sont au bon format pour être lues chez soi. Elles ne
+perdent pas leur place, elles **changent de place**. Chantiers 3 et 4 : même densité, budgétés en
+amont.
+
+⚠️ **Ligne fausse et publiée, à corriger dès que l'enveloppe est tranchée** : le menu A2 annonce
+« Formation indicative ≈ 28 h » alors que la salle seule en pèse 27 h 40.
+
 ### 🔴 LE SOCLE THÉORIQUE — chantiers 1 et 2 FAITS, deux restent
 
 **⇒ Tout est dans [`CONSIGNES-SOCLE-THEORIQUE.md`](CONSIGNES-SOCLE-THEORIQUE.md), document

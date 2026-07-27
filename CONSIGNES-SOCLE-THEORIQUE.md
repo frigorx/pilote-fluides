@@ -93,6 +93,27 @@ motifs sont présents, pas que le sujet est traité. Voir § 5, un garde-fou est
 
 ---
 
+## 1 bis. ⚠️ Ce que le virage du 27/07 change pour ces chantiers
+
+Le plan de formation a été mesuré contre le temps réel le 27/07 : la salle pèse 27 h 40 pour
+24 h utiles sur 4,5 jours. Décision de F. Henninot — **c'est une requalification, pas une
+formation initiale** : le gros du volume bascule en **autoformation amont**, la salle ne garde que
+les points clés. Tout est dans [`PLAN-SEQUENCE-4J5.md`](PLAN-SEQUENCE-4J5.md).
+
+**Ces quatre chantiers restent valables tels quels, et ils ne sont pas remis en cause** — au
+contraire : un projet d'autoformation a besoin d'un **livre dense**, et c'est précisément ce qu'ils
+produisent. Deux choses seulement changent :
+
+- **Le budget se compte en amont, plus en salle.** `g1e` (30 min) et `g1b` (45 min) ne tiendront
+  plus ces durées de face-à-face. Le contenu reste, la ligne de `parcours.js` changera de bloc.
+- **Le chantier 3 garde un pied en salle** : mesurer une surchauffe est un geste de plateau, pas
+  une lecture. Le sens du mot s'apprend seul, le geste non.
+
+Ne pas alléger les fiches pour « gagner du temps de salle » : ce serait refaire l'erreur que ce
+document corrige. C'est le PLAN qui s'ajuste, pas le contenu.
+
+---
+
 ## 2. Les quatre chantiers, dans l'ordre
 
 L'ordre est celui des **dépendances** : chacun a besoin du précédent. Ne pas le changer.
