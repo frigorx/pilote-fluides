@@ -464,6 +464,12 @@ function main() {
   execFileSync(process.execPath, [resolve(RACINE, "build/galerie.mjs")], {
     stdio: "inherit",
   });
+
+  /* --- habillage sonore : la table porte des instants recopiés des SVG,
+     et rien ne dirait qu'ils ont cessé d'être justes. --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/sons.mjs")], {
+    stdio: "inherit",
+  });
 }
 
 main();

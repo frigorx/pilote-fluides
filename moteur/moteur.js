@@ -545,14 +545,32 @@
       var base = im.getAttribute("src").split("?")[0];
       if (animes.indexOf(base.split("/").pop()) < 0) return; // dessin fixe
       im.setAttribute("data-rejeu", "1");
+      var nom = base.split("/").pop();
       var b = document.createElement("button");
       b.type = "button";
       b.className = "rejeu";
       b.textContent = "↻ Revoir l'animation depuis le début";
       b.addEventListener("click", function () {
         im.setAttribute("src", base + "?r=" + ++nRejeu);
+        // la bande-son repart du même instant que l'image : c'est la seule
+        // synchronisation possible avec un SVG inséré en <img>
+        if (window.PiloteSons) window.PiloteSons.jouerPlanche(nom);
       });
       im.parentNode.insertBefore(b, im.nextSibling);
+
+      /* Bouton son, une seule fois par page et seulement si cette planche a
+         une bande-son : inutile de proposer le son là où il n'y en a pas. */
+      if (window.PiloteSons && window.PiloteSons.disponible() &&
+          (window.PILOTE_SONS.planches[nom] || []).length &&
+          !document.querySelector("[data-son-bouton]")) {
+        var s = document.createElement("button");
+        s.type = "button";
+        s.className = "rejeu son";
+        s.setAttribute("data-son-bouton", "");
+        s.textContent = "🔇 Son coupé";
+        b.parentNode.insertBefore(s, b.nextSibling);
+        window.PiloteSons.brancher();
+      }
     });
   }
 

@@ -175,6 +175,15 @@ Pour partager <b>toute la galerie</b> d'un coup :
 <span id="dit-galerie" style="margin-left:8px;color:#1e6b40;font-weight:700"></span>
 </div>
 
+<div class="ou" id="zone-son" style="display:none">
+<b>Habillage sonore.</b> Certaines planches ont une bande-son calée sur leur animation — un pas
+dans l'escalier, un clic de vanne, une alerte. <b>Le son est coupé par défaut</b> et rien ne se
+charge tant qu'il ne sert pas : votre choix est mémorisé sur cet appareil.
+<span id="ici-son"></span><br>
+<span class="meta">Ces sons <b>habillent</b> l'animation. Ils n'enseignent aucun diagnostic à
+l'oreille : une fuite réelle ne fait pas ce bruit-là.</span>
+</div>
+
 <div class="barre">
   <button class="f on" data-f="*">toutes</button>
   <button class="f" data-f="anime">animées</button>
@@ -207,7 +216,7 @@ for (const p of PLANCHES) {
   h += `</div>`;
   h += `<img src="packs/fluides/res/svg/${esc(p.fichier)}" alt="${esc(p.titre)}" loading="lazy">`;
   h += `<div class="sous">`;
-  if (p.anime) h += `<button class="rejeu">↻ Rejouer</button>`;
+  if (p.anime) h += `<button class="rejeu" data-svg="${esc(p.fichier)}">↻ Rejouer</button>`;
   h += `<button class="lien" data-f="${esc(p.fichier)}">🔗 Lien</button>`;
   h += `<a class="dl" href="packs/fluides/res/svg/${esc(p.fichier)}" target="_blank" rel="noopener">⬇ Fichier</a>`;
   if (p.fiches.length) {
@@ -223,6 +232,8 @@ h += `
 <p class="meta" style="margin-top:30px">Les planches sont des SVG faits à la main, dans la charte
 inerWeb Édu. Aucune n'est produite par un modèle d'image : un rendu génératif inverse la croix du
 frigoriste et invente des organes qui n'existent pas.</p>
+<script src="packs/fluides/sons.js"></script>
+<script src="moteur/sons.js"></script>
 <script>
 (function () {
   var n = 0, f = "*";
@@ -248,7 +259,11 @@ frigoriste et invente des organes qui n'existent pas.</p>
     });
   });
   [].slice.call(document.querySelectorAll("button.rejeu")).forEach(function (b) {
-    b.addEventListener("click", function () { relancer(b.closest(".planche").querySelector("img")); });
+    b.addEventListener("click", function () {
+      relancer(b.closest(".planche").querySelector("img"));
+      // la bande-son repart du même instant que l'image
+      if (window.PiloteSons) window.PiloteSons.jouerPlanche(b.dataset.svg);
+    });
   });
 
   /* Copier une adresse. navigator.clipboard n'existe qu'en HTTPS (ou sur
@@ -275,6 +290,18 @@ frigoriste et invente des organes qui n'existent pas.</p>
       copier(u, function (m) { b.textContent = m || t; });
     });
   });
+  /* Le bloc du son n'apparaît que si l'habillage est réellement disponible :
+     une commande qui ne commande rien vaut moins que pas de commande. */
+  if (window.PiloteSons && window.PiloteSons.disponible()) {
+    document.getElementById("zone-son").style.display = "";
+    document.getElementById("ici-son").innerHTML = " " + window.PiloteSons.html("");
+    window.PiloteSons.brancher();
+    // marquer les planches qui ont une bande-son
+    [].slice.call(document.querySelectorAll("button.rejeu")).forEach(function (b) {
+      var seq = window.PILOTE_SONS.planches[b.dataset.svg];
+      if (seq && seq.length) b.textContent = "↻ Rejouer 🔊";
+    });
+  }
   var champ = document.getElementById("url-galerie");
   if (champ) {
     champ.textContent = location.href.split("?")[0].split("#")[0];
