@@ -8,6 +8,12 @@
     .bad { font:700 14px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
     .p   { fill:none; stroke:#1b3a63; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
     .acc { fill:none; stroke:#c9451a; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+    /* Ici l'élément animé EST l'information (la nappe qui monte) : on ne peut
+       pas le masquer comme sur les autres planches. On neutralise donc les
+       animations elles-mêmes — un élément d'animation en display:none ne
+       s'exécute pas — et les valeurs de base, réglées sur l'état final,
+       laissent une image juste et immobile. */
+    @media (prefers-reduced-motion: reduce) { animate { display: none; } }
   </style>
 
   <rect width="880" height="380" fill="#ffffff"/>

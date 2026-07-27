@@ -40,8 +40,10 @@
 
     <!-- la silhouette DANS l'axe : elle apparaît, elle est en danger, elle s'écarte -->
     <g class="mobile" opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.6s" fill="freeze"/>
-      <animate attributeName="opacity" values="1;0" dur="0.5s" begin="3.6s" fill="freeze"/>
+      <!-- une seule animation par attribut : deux <animate fill="freeze"> sur
+           « opacity » se superposent et la silhouette ne s'effaçait pas -->
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.114;0.857;1"
+               dur="3.5s" begin="0.6s" fill="freeze"/>
       <g transform="translate(340,60)">
         <animateTransform attributeName="transform" type="translate"
           values="340,60; 340,60; 470,60" keyTimes="0;0.7;1" dur="1.6s" begin="3.2s" fill="freeze"/>

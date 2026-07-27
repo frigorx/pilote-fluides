@@ -40,10 +40,15 @@
   </line>
   <text class="lg" x="470" y="322">le gaz remplit par le bas — invisible, inodore</text>
 
-  <!-- ============ VICTIME 1 : elle descend (élément mobile) ============ -->
+  <!-- ============ VICTIME 1 : elle descend (élément mobile) ============
+       UNE SEULE animation par attribut. Deux <animate fill="freeze"> sur le
+       même « opacity » se superposent, et le navigateur peut garder la
+       PREMIÈRE : le personnage ne disparaissait alors jamais, et restait
+       debout au milieu des deux victimes au sol. Corrigé le 27/07 après
+       constat de F. Henninot (« je vois 2 cadavres avec le gars qui monte »). -->
   <g class="mobile" opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.4s" begin="5.4s" fill="freeze"/>
-    <animate attributeName="opacity" values="1;0" dur="0.35s" begin="9.1s" fill="freeze"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.099;0.914;1"
+             dur="4.05s" begin="5.4s" fill="freeze"/>
     <g transform="translate(126,192)">
       <animateTransform attributeName="transform" type="translate"
         values="126,192; 170,230; 214,268; 258,306; 302,344; 330,380"
@@ -68,8 +73,8 @@
 
   <!-- ============ VICTIME 2 : le sauveteur descend ============ -->
   <g class="mobile" opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.4s" begin="11.6s" fill="freeze"/>
-    <animate attributeName="opacity" values="1;0" dur="0.35s" begin="14.7s" fill="freeze"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.116;0.899;1"
+             dur="3.45s" begin="11.6s" fill="freeze"/>
     <g transform="translate(126,192)">
       <animateTransform attributeName="transform" type="translate"
         values="126,192; 170,230; 214,268; 250,306; 240,344; 232,380"
@@ -95,8 +100,8 @@
 
   <!-- ===================== LE COMPTEUR ===================== -->
   <text class="al mobile" x="648" y="196" opacity="0" style="font-size:21px">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="10.2s" fill="freeze"/>
-    <animate attributeName="opacity" values="1;0" dur="0.3s" begin="15.6s" fill="freeze"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.088;0.947;1"
+             dur="5.7s" begin="10.2s" fill="freeze"/>
     1 victime
   </text>
   <text class="al final" x="648" y="196" opacity="0" style="font-size:25px">
