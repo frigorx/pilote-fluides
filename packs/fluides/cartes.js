@@ -262,6 +262,9 @@ export const CARTES = [
       { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Unités, pression, thermodynamique utile", desc: "G1 — le socle de tout le reste." },
+      { vers: "g1s", icone: "1", titre: "Chaleur sensible et chaleur latente", desc: "G1 · code 1.02 — le palier de changement d état, d où vient tout le reste." },
+      { vers: "g1b", icone: "1", titre: "Lire un log p-h et une table de saturation", desc: "G1 · code 1.03 — les trois zones, et tracer le cycle." },
+      { vers: "g1e", icone: "1", titre: "Surchauffe et sous-refroidissement", desc: "G1 · codes 1.02 · 5.05 — des différences, jamais des températures." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g1d", icone: "1", titre: "Les organes qui trahissent une fuite", desc: "G1 — voyant, vannes, pressostats : lire les signes." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
@@ -307,6 +310,9 @@ export const CARTES = [
       { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Unités, pression, thermodynamique utile", desc: "G1 — insister sur les seuils de charge." },
+      { vers: "g1s", icone: "1", titre: "Chaleur sensible et chaleur latente", desc: "G1 · code 1.02 — le palier de changement d état, d où vient tout le reste." },
+      { vers: "g1b", icone: "1", titre: "Lire un log p-h et une table de saturation", desc: "G1 · code 1.03 — les trois zones, et tracer le cycle." },
+      { vers: "g1e", icone: "1", titre: "Surchauffe et sous-refroidissement", desc: "G1 · codes 1.02 · 5.05 — des différences, jamais des températures." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g1d", icone: "1", titre: "Les organes qui trahissent une fuite", desc: "G1 — voyant, vannes, pressostats : lire les signes." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
@@ -351,6 +357,8 @@ export const CARTES = [
       { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Bases : fluides, thermo utile, composants", desc: "G1 partiel — savoir de quoi on parle." },
+      { vers: "g1s", icone: "1", titre: "Chaleur sensible et chaleur latente", desc: "G1 · code 1.02 — pourquoi un fluide qui change d état, et pas de l air." },
+      { vers: "g1e", icone: "1", titre: "Dans quel état est le fluide ?", desc: "G1 · code 5.05 — sous-refroidi, saturé ou surchauffé : à savoir avant toute charge." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
       { vers: "g2", icone: "2", titre: "Enjeu environnemental", desc: "G2 — pourquoi on ne rejette pas." },
@@ -393,7 +401,9 @@ export const CARTES = [
       { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Bases : pression, température, fluides", desc: "G1 partiel — dont la pression absolue." },
-      { vers: "g1b", icone: "1", titre: "Lire une table de saturation", desc: "G1 · code 1.03 — indispensable à la méthode indirecte.", primaire: true },
+      { vers: "g1s", icone: "1", titre: "Chaleur sensible et chaleur latente", desc: "G1 — le palier de changement d état : sans lui, une table de saturation ne veut rien dire." },
+      { vers: "g1b", icone: "1", titre: "Lire un log p-h et une table de saturation", desc: "G1 · code 1.03 — indispensable à la méthode indirecte.", primaire: true },
+      { vers: "g1e", icone: "1", titre: "Surchauffe et sous-refroidissement", desc: "G1 — les deux valeurs que la méthode indirecte compare. Des différences, jamais des températures.", primaire: true },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
       { vers: "g2", icone: "2", titre: "Enjeu environnemental", desc: "G2 — pourquoi une fuite compte." },
@@ -1544,12 +1554,119 @@ export const CARTES = [
       { code: "1.04", libelle: "Décrire la fonction de chaque composant du circuit", etat: "a_evaluer" },
     ],
     ressources: ["r-croix", "r-mollier"],
-    liens: [suite("g1b", "Lire une table de saturation"), SOMMAIRE],
+    liens: [suite("g1s", "Chaleur sensible et chaleur latente"), SOMMAIRE],
     notes_pilote:
       "Faire lire un manomètre RÉEL et retrouver la température de saturation dans la table : c'est " +
       "l'ancrage de tout le contrôle indirect qui viendra en G4. Tant que ce geste n'est pas acquis, " +
       "inutile d'avancer. Pédagogie de la découverte : faire deviner ce qui se passe si on chauffe une " +
       "bouteille fermée, avant d'énoncer la relation pression-température.",
+  },
+  {
+    /* Le fondement qui manquait : « surchauffe » était employée 97 fois dans le
+       pack alors que « chaleur latente » n'y apparaissait pas une seule fois.
+       On demandait au stagiaire d'utiliser un mot dont personne ne lui avait
+       donné le sens physique. Fiche ajoutée le 27/07 (constat F. Henninot). */
+    id: "g1s",
+    type: "cours",
+    titre: "Chaleur sensible et chaleur latente",
+    dc: "G1 · code 1.02",
+    minuteur_s: 360,
+    corps:
+      schema("chaleur-sensible-latente.svg", "La courbe de chauffe d'un fluide : la température monte, puis s'arrête pendant tout le changement d'état, puis repart. Le palier commence au point de bulle et finit au point de rosée.") +
+      "<p>Chauffez de l'eau dans une casserole. Le thermomètre monte, régulièrement. " +
+      "Cette chaleur-là, l'appareil la « sent » : on l'appelle la <b>chaleur sensible</b>. " +
+      "Elle fait changer la <b>température</b>, elle ne fait pas changer l'état.</p>" +
+      "<p>Continuez à chauffer. L'eau se met à bouillir — et là, quelque chose d'étonnant se produit : " +
+      "<b>le thermomètre s'arrête</b>. Vous chauffez toujours, la température ne monte plus. " +
+      "Toute la chaleur apportée sert à transformer le liquide en vapeur, et rien d'autre. " +
+      "C'est la <b>chaleur latente</b>. Le mot vient du latin <i>latens</i>, « caché » : cette " +
+      "chaleur est bien là, elle est même considérable, mais le thermomètre ne la voit pas.</p>" +
+      "<p>Sur la courbe, ce moment forme un <b>palier</b>, une ligne plate. Il commence quand la " +
+      "première bulle se forme : c'est le <b>point de bulle</b>. Il finit quand la dernière goutte " +
+      "disparaît : c'est le <b>point de rosée</b>. Entre les deux, du liquide et de la vapeur " +
+      "cohabitent dans le même tube — on dit que le fluide est <b>saturé</b>.</p>" +
+      "<p>Voilà pourquoi une machine frigorifique ne travaille pas avec de l'air, mais avec un fluide " +
+      "qui <b>change d'état</b>. Sur le palier, le fluide encaisse beaucoup de chaleur sans " +
+      "s'échauffer : c'est exactement ce qu'on cherche. L'<b>évaporateur</b> fait bouillir le fluide, " +
+      "donc il <b>prend</b> de la chaleur au local. Le <b>condenseur</b> le liquéfie, donc il " +
+      "<b>rend</b> cette chaleur dehors. Toute la machine tient dans ces deux phrases.</p>" +
+      "<p>Deux mots du référentiel se posent ici, une fois pour toutes. La chaleur que l'évaporateur " +
+      "prend au local, rapportée à un kilo de fluide, s'appelle l'<b>effet de réfrigération</b> : " +
+      "c'est le froid produit, et c'est ce que l'on cherche à rendre le plus grand possible. " +
+      "Le compresseur, lui, ajoute au fluide sa propre chaleur en le comprimant : c'est la " +
+      "<b>chaleur de compression</b>. Le condenseur devra donc évacuer les deux — la chaleur prise " +
+      "au local <b>et</b> celle ajoutée par le compresseur. C'est pour cette raison qu'un condenseur " +
+      "évacue toujours plus de chaleur qu'un évaporateur n'en absorbe.</p>" +
+      "<p>Reste une question : à quelle température se produit la <b>vaporisation</b>, donc le " +
+      "palier ? Elle dépend de la " +
+      "<b>pression</b>. Plus la pression est basse, plus le fluide bout froid. C'est précisément ce " +
+      "que fait le <b>détendeur</b> : il fait chuter la pression pour que le fluide puisse bouillir " +
+      "à une température plus basse que le local à refroidir. La relation pression-température vue " +
+      "à la fiche précédente, c'est la <b>hauteur du palier</b>.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "Les cinq mots, dans l'ordre",
+        html:
+          "<b>1. Liquide sous-refroidi</b> — que du liquide, plus froid que son point d'ébullition.<br>" +
+          "<b>2. Point de bulle</b> — la première bulle apparaît, le palier commence.<br>" +
+          "<b>3. Saturé</b> — liquide et vapeur ensemble, la température ne bouge plus.<br>" +
+          "<b>4. Point de rosée</b> — la dernière goutte s'évapore, le palier finit.<br>" +
+          "<b>5. Vapeur surchauffée</b> — que de la vapeur, et la température peut repartir.<br>" +
+          "Ce que la vapeur gagne après le point de rosée s'appelle la <b>surchauffe</b>. " +
+          "Ce que le liquide perd avant le point de bulle s'appelle le <b>sous-refroidissement</b>. " +
+          "Ces deux mots reviendront à chaque mesure du métier.",
+      },
+      {
+        type: "piege",
+        t: "Un palier n'est pas une pause",
+        html:
+          "Sur le palier, la température ne bouge pas — et beaucoup en concluent qu'il ne se passe " +
+          "rien. C'est l'inverse : <b>c'est le moment où le fluide échange le plus de chaleur</b>. " +
+          "Un stagiaire qui croit qu'un palier est un temps mort ne comprendra jamais à quoi sert " +
+          "un évaporateur.",
+      },
+      {
+        type: "piege",
+        t: "Le palier des mélanges n'est pas plat",
+        html:
+          "Ce qui vient d'être dit vaut pour un <b>corps pur</b>. Dans un <b>mélange zéotrope</b> " +
+          "(les R-4xx), les composants ne bouillent pas tous à la même température : pendant le " +
+          "changement d'état, la température <b>monte lentement</b> au lieu de rester fixe. " +
+          "C'est le <b>glissement</b>. Conséquence directe : le point de bulle et le point de rosée " +
+          "ne sont plus à la même température, et il faut savoir <b>lequel des deux</b> la table de " +
+          "saturation vous donne avant de calculer quoi que ce soit.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce:
+        "Un fluide est en train de se vaporiser dans l'évaporateur. On continue de lui apporter de la chaleur. Que fait sa température ?",
+      choix: [
+        "Elle monte, proportionnellement à la chaleur apportée",
+        "Elle ne bouge pas : toute la chaleur sert au changement d'état",
+        "Elle descend, puisque c'est la partie froide du circuit",
+        "Elle monte puis redescend à chaque bulle",
+      ],
+      bonne: 1,
+      explication:
+        "Pendant le changement d'état, la chaleur apportée est de la chaleur latente : elle transforme le liquide en vapeur sans faire monter la température. C'est le palier — et c'est là que l'évaporateur prend l'essentiel de la chaleur du local.",
+      remediation_vers: "g1s",
+    },
+    criteres: [
+      { code: "1.02", libelle: "Distinguer chaleur sensible et chaleur latente, et nommer les états du fluide", etat: "a_evaluer" },
+    ],
+    ressources: ["r-mollier", "r-enthalpique"],
+    liens: [suite("g1b", "Lire un log p-h et une table de saturation"), SOMMAIRE],
+    notes_pilote:
+      "Ne pas énoncer la règle : la faire trouver. Question d'ouverture : « l'eau bout dans la " +
+      "casserole, je mets le feu à fond — la température monte-t-elle plus haut ? » Le groupe " +
+      "hésite toujours, et c'est de cette hésitation qu'on part. Démonstration possible en salle " +
+      "avec un thermomètre et une bouilloire ouverte. Ancrage métier immédiat : faire dire par le " +
+      "groupe où se trouve le palier dans la machine (évaporateur ET condenseur, parcouru dans les " +
+      "deux sens). Cette fiche conditionne g1b et g1e : tant que le palier n'est pas acquis, la " +
+      "surchauffe n'est qu'un mot. Le glissement des zéotropes ne se détaille pas ici — il se " +
+      "rappelle, il a été posé en g1a.",
   },
   {
     id: "g1b",
@@ -1558,13 +1675,44 @@ export const CARTES = [
     dc: "G1 · code 1.03",
     minuteur_s: 300,
     corps:
+      schema("diagramme-logph.svg", "Le diagramme log p-h : la cloche sépare le liquide, le mélange et la vapeur surchauffée ; le cycle s'y trace en quatre transformations qui forment un rectangle.") +
+      "<p>Le <b>diagramme log p-h</b> raconte en image ce que la fiche précédente a raconté en mots. " +
+      "Deux axes seulement. En <b>ordonnée</b>, la <b>pression</b>. En <b>abscisse</b>, l'<b>enthalpie</b> : " +
+      "l'énergie contenue dans un kilo de fluide.</p>" +
+      "<p>La pression y est portée sur une <b>échelle logarithmique</b> — c'est ce que veut dire le " +
+      "« log » du nom. Sur une règle ordinaire, la basse pression serait écrasée tout en bas de la " +
+      "feuille et illisible. Sur cette échelle-là, les petites pressions sont autant étalées que les " +
+      "grandes : les deux côtés du circuit se lisent aussi bien.</p>" +
+      "<p>Au milieu du diagramme, une <b>courbe en cloche</b> partage la feuille en trois. " +
+      "À <b>gauche</b> de la cloche, le fluide est entièrement <b>liquide</b>. " +
+      "<b>Sous</b> la cloche, c'est le <b>mélange</b> liquide + vapeur : le palier. " +
+      "À <b>droite</b>, c'est de la <b>vapeur surchauffée</b>. Le sommet de la cloche s'appelle le " +
+      "<b>point critique</b> : au-dessus, le fluide ne se sépare plus en liquide et vapeur.</p>" +
+      "<p>Les deux flancs de la cloche portent les noms déjà rencontrés : le flanc de gauche est la " +
+      "<b>courbe de bulle</b>, le flanc de droite la <b>courbe de rosée</b>. La cloche du diagramme " +
+      "et le palier de la courbe de chauffe sont la même chose, vue autrement.</p>" +
+      "<p>Le <b>cycle frigorifique</b> simple à compression se trace alors en " +
+      "<b>quatre transformations</b>, qui dessinent un rectangle. " +
+      "Le trait <b>montant de droite</b> : la <b>compression</b>. Le trait <b>horizontal du haut</b> : " +
+      "la <b>condensation</b>, à haute pression. Le trait <b>descendant de gauche</b> : la " +
+      "<b>détente</b>. Le trait <b>horizontal du bas</b> : l'<b>évaporation</b>, à basse pression. " +
+      "Compresseur à droite, condenseur en haut, détendeur à gauche, évaporateur en bas : " +
+      "<b>c'est la croix du frigoriste</b>. Le diagramme n'invente rien, il met le circuit à plat.</p>" +
+      "<p>Et c'est là que le diagramme devient un outil de terrain. Sur le trait du <b>bas</b>, ce qui " +
+      "dépasse à droite de la courbe de rosée, c'est la <b>surchauffe</b>. Sur le trait du <b>haut</b>, " +
+      "ce qui dépasse à gauche de la courbe de bulle, c'est le <b>sous-refroidissement</b>. " +
+      "Deux longueurs qui se voient d'un coup d'œil.</p>" +
+      "<p>Un diagramme de constructeur porte d'autres réseaux de courbes que celui dessiné ici. " +
+      "Sous la cloche, des courbes obliques donnent le <b>titre de vapeur</b> : la part du fluide " +
+      "déjà passée à l'état vapeur, de 0 sur la courbe de bulle à 1 sur la courbe de rosée. " +
+      "Il n'est pas nécessaire de les exploiter pour l'épreuve, mais il faut savoir les reconnaître " +
+      "pour ne pas les confondre avec les frontières de la cloche.</p>" +
       schema("lecture-table.svg", "La lecture croisée : manomètre + 1 bar, table de saturation du fluide, sonde de contact.") +
-      "<p>Une <b>table de saturation</b> donne, pour un fluide donné, la correspondance entre pression " +
-      "et température d'équilibre liquide-vapeur. Elle se lit dans les deux sens : je mesure une pression, " +
-      "j'en déduis une température ; je mesure une température, j'en déduis une pression.</p>" +
-      "<p>Le <b>diagramme log p-h</b> est la même information, en image : la pression en ordonnée " +
-      "(échelle logarithmique), l'enthalpie en abscisse. Sous la cloche, le fluide est un mélange " +
-      "liquide + vapeur ; à gauche, il est liquide ; à droite, vapeur.</p>" +
+      "<p>La <b>table de saturation</b> dit exactement la même chose, en chiffres. Elle donne, pour un " +
+      "fluide donné, la correspondance entre pression et température d'équilibre. Elle se lit dans les " +
+      "deux sens : je mesure une pression, j'en déduis une température ; je mesure une température, " +
+      "j'en déduis une pression. La colonne « température de saturation » de la table, c'est la cloche " +
+      "du diagramme.</p>" +
       "<p>C'est l'outil de la <b>méthode indirecte</b> : sans ouvrir le circuit, on compare ce qu'on " +
       "mesure à ce que la table annonce.</p>",
     blocs: [
@@ -1579,6 +1727,15 @@ export const CARTES = [
       },
       {
         type: "piege",
+        t: "L'échelle des pressions n'est pas une règle graduée",
+        html:
+          "Sur une échelle <b>logarithmique</b>, ce qui est constant n'est pas l'écart entre deux " +
+          "graduations, c'est le <b>rapport</b>. La même distance sépare 1 et 10, puis 10 et 100. " +
+          "Conséquence pratique : <b>on ne mesure pas une pression à la règle sur ce diagramme</b>, " +
+          "on lit la graduation. Les valeurs, elles, se prennent au manomètre et dans la table.",
+      },
+      {
+        type: "piege",
         t: "Un fluide, une table",
         html:
           "Chaque fluide a sa propre table : la pression lue ne veut rien dire tant qu'on ne sait pas " +
@@ -1586,34 +1743,153 @@ export const CARTES = [
           "registre, jamais « à la couleur de la bouteille ».",
       },
       {
-        t: "À toi : la réglette P ↔ T",
+        t: "À vous : la réglette P ↔ T",
         html:
-          "<p style=\"margin:0 0 10px\">Choisis un fluide, règle la pression lue au manomètre, entre la température du tube : la surchauffe se calcule sous tes yeux. C est exactement le geste de la méthode indirecte.</p>" +
+          "<p style=\"margin:0 0 10px\">Choisissez un fluide, réglez la pression lue au manomètre, entrez la température du tube : la surchauffe se calcule sous vos yeux. C est exactement le geste de la méthode indirecte.</p>" +
           outil("reglette.html", "Réglette pression-température interactive", 445),
       },
     ],
     question: {
       type: "qcm",
       enonce:
-        "Sur le diagramme log p-h, que représente l'axe horizontal ?",
-      choix: ["La température", "La pression", "L'enthalpie", "Le volume"],
-      bonne: 2,
+        "Sur le diagramme log p-h, le cycle forme un rectangle. Que représente le trait horizontal du bas ?",
+      choix: ["La compression", "La condensation", "La détente", "L'évaporation"],
+      bonne: 3,
       explication:
-        "L'axe horizontal porte l'enthalpie (l'énergie contenue par kilogramme de fluide) ; la pression est en ordonnée, en échelle logarithmique.",
+        "Le trait du bas est celui de la basse pression : c'est l'évaporation. Le trait du haut, à haute pression, est la condensation ; le trait montant de droite est la compression ; le trait descendant de gauche est la détente. C'est la croix du frigoriste, mise à plat.",
       remediation_vers: "g1b",
     },
     criteres: [
-      { code: "1.03", libelle: "Lire et interpréter un diagramme log p-h et une table de saturation", etat: "a_evaluer" },
-      { code: "1.06", libelle: "Situer les caractéristiques des fluides de substitution", etat: "a_evaluer" },
+      { code: "1.03", libelle: "Lire un diagramme log p-h, une table de saturation, et y tracer un cycle", etat: "a_evaluer" },
     ],
-    ressources: ["r-mollier"],
-    liens: [suite("g1c", "Familles et codes des fluides"), SOMMAIRE],
+    ressources: ["r-mollier", "r-enthalpique"],
+    liens: [suite("g1e", "Surchauffe et sous-refroidissement"), SOMMAIRE],
     notes_pilote:
       "Fiche indispensable au parcours E : sans elle, la méthode indirecte est du bricolage. " +
       "Utiliser FRIGOLO en projection, puis faire refaire la lecture sur une table papier — le passage " +
       "de l'outil à la table imprimée est ce qui reste le jour de l'épreuve. " +
       "Faire chercher : « la pression est plus basse que la table, qu'est-ce que ça peut vouloir dire ? » " +
-      "avant de donner « manque de charge ».",
+      "avant de donner « manque de charge ». " +
+      "Le TRACÉ DU CYCLE est exigé par le libellé du code 1.03 : le faire faire à la main sur un " +
+      "diagramme vierge — quatre traits, dans l'ordre — avant tout usage d'un outil. Le moment qui " +
+      "fait mouche : demander au groupe de reconnaître la croix du frigoriste dans le rectangle. " +
+      "Le code 1.06 a été retiré de cette fiche le 27/07 : elle n'enseigne pas les fluides de " +
+      "substitution, c'est g1c qui le fait. On ne déclare pas un code qu'on n'enseigne pas.",
+  },
+
+  {
+    /* 136 emplois de « surchauffe » et « sous-refroidissement » dans le pack,
+       et pas une fiche qui les enseignait. Le code 5.05 — déterminer l'état
+       d'un fluide — n'était porté que par des fiches de PESÉE et de CHARGE :
+       toutes l'utilisaient, aucune ne l'enseignait. Fiche ajoutée le 27/07. */
+    id: "g1e",
+    type: "cours",
+    titre: "Surchauffe et sous-refroidissement",
+    dc: "G1 · codes 1.02 · 5.05",
+    minuteur_s: 360,
+    corps:
+      schema("surchauffe-utile-totale.svg", "Le fluide bout dans l'évaporateur ; après la disparition de la dernière goutte, la vapeur s'échauffe : c'est la surchauffe utile dans l'échangeur, puis la surchauffe totale jusqu'au compresseur.") +
+      "<p>Voici les deux mots que vous entendrez le plus souvent sur un chantier. Et la première " +
+      "chose à comprendre est la plus importante : <b>ce sont des différences, jamais des " +
+      "températures</b>. On ne dit pas « la surchauffe est de 12 degrés » comme on dirait « il fait " +
+      "12 degrés ». On dit : le fluide est <b>12 kelvins au-dessus</b> de sa température de " +
+      "changement d'état, à la pression où il se trouve.</p>" +
+      "<p>La <b>surchauffe</b> se prend là où le fluide est devenu vapeur : après le point de rosée, " +
+      "donc en sortie d'évaporateur et sur la ligne d'aspiration. Le <b>sous-refroidissement</b> se " +
+      "prend là où le fluide est devenu liquide : après le point de bulle, donc en sortie de " +
+      "condenseur. Chacun de son côté du circuit.</p>" +
+      "<p>La mesure est toujours la même, et elle demande <b>deux instruments</b>. Le " +
+      "<b>manomètre</b> donne la pression ; la <b>table de saturation</b> du fluide traduit cette " +
+      "pression en température de changement d'état. Le <b>thermomètre de contact</b> donne la " +
+      "température réelle du tube. La différence entre les deux, c'est la valeur cherchée. " +
+      "Un seul instrument ne suffit jamais.</p>" +
+      "<p>La surchauffe se prend en deux endroits, et cela porte deux noms. La <b>surchauffe utile</b> " +
+      "est celle que la vapeur gagne <b>à l'intérieur même de l'évaporateur</b> : elle a servi à " +
+      "refroidir le local, d'où son nom. La <b>surchauffe totale</b> ajoute à celle-ci ce que la " +
+      "<b>ligne d'aspiration</b> apporte entre la sortie de l'évaporateur et le compresseur. " +
+      "Une ligne mal isolée, qui traverse un local chaud, augmente la surchauffe totale sans rien " +
+      "apporter au froid.</p>" +
+      "<p>Pourquoi la règle-t-on ? Pour deux raisons opposées, et il faut passer entre les deux. " +
+      "Une surchauffe <b>trop faible</b>, et du liquide arrive au compresseur : le liquide ne se " +
+      "comprime pas, la casse est immédiate. Une surchauffe <b>trop forte</b>, et le compresseur " +
+      "s'échauffe pendant que l'évaporateur travaille mal : le rendement chute. " +
+      "Repère usuel : <b>5 à 10 K</b>.</p>" +
+      "<p>Le <b>sous-refroidissement</b>, lui, garantit qu'il arrive du <b>liquide pur</b> au " +
+      "détendeur. S'il n'y en a pas assez, des bulles de vapeur se forment dans la ligne liquide et " +
+      "le détendeur n'alimente plus correctement. Repère usuel : <b>4 à 8 K</b>. " +
+      "Ces deux repères se <b>recalent toujours</b> sur la documentation du constructeur : ils " +
+      "orientent, ils ne remplacent pas la fiche technique de la machine.</p>" +
+      "<p>Enfin, ces deux valeurs répondent à une question que l'on se pose <b>avant de charger</b> : " +
+      "dans quel état est le fluide à cet endroit du circuit — liquide sous-refroidi, saturé, ou " +
+      "vapeur surchauffée ? C'est ce diagnostic qui commande la méthode de remplissage, et c'est " +
+      "pour cela qu'il figure au référentiel avant même le geste de charge.</p>",
+    blocs: [
+      {
+        type: "cle",
+        t: "Ce que la valeur vous dit",
+        html:
+          "<b>Surchauffe nulle</b>, ligne d'aspiration givrée → du liquide part vers le compresseur. " +
+          "On agit <b>tout de suite</b>.<br>" +
+          "<b>Surchauffe élevée</b> → l'évaporateur est mal alimenté : détendeur trop fermé, " +
+          "ou charge insuffisante.<br>" +
+          "<b>Sous-refroidissement effondré</b> → il manque du fluide, ou de la vapeur passe dans la " +
+          "ligne liquide.<br>" +
+          "<b>Sous-refroidissement anormalement élevé</b> → du liquide s'accumule dans le " +
+          "condenseur : charge excessive, ou sortie de condenseur gênée.<br>" +
+          "Aucune de ces lectures ne conclut seule : c'est la <b>convergence</b> des indices qui " +
+          "oriente le diagnostic.",
+      },
+      {
+        type: "piege",
+        t: "Une surchauffe ne se lit pas sur un thermomètre",
+        html:
+          "L'erreur la plus fréquente : relever la température de l'aspiration et l'annoncer comme " +
+          "« la surchauffe ». <b>C'est une température, pas une surchauffe.</b> Sans la pression, " +
+          "et sans la table du fluide qui est réellement dans le circuit, ce nombre ne veut rien dire. " +
+          "Et rappel du piège de base : le manomètre lit en <b>relatif</b>, la table est souvent en " +
+          "<b>absolu</b> — environ 1 bar d'écart, donc plusieurs kelvins d'erreur.",
+      },
+      {
+        type: "piege",
+        t: "Utile ou totale : ce n'est pas la même valeur",
+        html:
+          "Comparer une surchauffe <b>utile</b> à une consigne donnée en <b>totale</b> — ou " +
+          "l'inverse — conduit à dérégler une machine qui allait bien. Avant de comparer une mesure " +
+          "à une valeur de référence, vérifiez <b>où</b> la référence a été prise : en sortie " +
+          "d'évaporateur, ou à l'entrée du compresseur.",
+      },
+    ],
+    question: {
+      type: "qcm",
+      enonce:
+        "Sur la ligne d'aspiration, le thermomètre de contact indique 8 °C. Que peut-on en conclure sur la surchauffe ?",
+      choix: [
+        "Elle est de 8 K",
+        "Rien encore : il faut aussi la pression et la table du fluide",
+        "Elle est nulle, puisque la température est positive",
+        "Elle est correcte, car comprise entre 5 et 10",
+      ],
+      bonne: 1,
+      explication:
+        "La surchauffe est une différence. Il faut la température de changement d'état, que seule la pression lue au manomètre donne, par la table de saturation du fluide présent. Une température seule ne dit rien.",
+      remediation_vers: "g1e",
+    },
+    criteres: [
+      { code: "1.02", libelle: "Expliquer la surchauffe et le sous-refroidissement, et savoir les mesurer", etat: "a_evaluer" },
+      { code: "5.05", libelle: "Déterminer l'état d'un fluide : sous-refroidi, saturé ou surchauffé", etat: "a_evaluer" },
+    ],
+    ressources: ["r-mollier", "r-tp-mano"],
+    liens: [suite("g1c", "Familles et codes des fluides"), SOMMAIRE],
+    notes_pilote:
+      "⚠️ À FAIRE VALIDER (27/07) : la distinction surchauffe UTILE / TOTALE telle qu'elle est " +
+      "formulée ici, et les deux repères 5-10 K et 4-8 K — la charte les autorise, mais c'est " +
+      "l'organisme qui les endosse dès qu'ils sont écrits. " +
+      "Geste à faire refaire jusqu'à l'automatisme : manomètre, table, sonde, soustraction. " +
+      "Ne jamais accepter un relevé recopié. Faire mesurer la surchauffe en DEUX points sur la même " +
+      "machine (sortie d'évaporateur, puis entrée compresseur) : l'écart entre les deux se voit, et " +
+      "la distinction utile/totale n'a plus besoin d'être expliquée. " +
+      "Cette fiche prépare directement g4b (méthode indirecte) et g8 (réglage de l'évaporateur) : " +
+      "y renvoyer explicitement.",
   },
 
   /* ==================================================================
@@ -2717,12 +2993,28 @@ export const CARTES = [
       "<p>C'est un condenseur <b>à air</b> : un ventilateur souffle sur des <b>ailettes</b>, de petites lames " +
       "en métal qui évacuent la chaleur. Il n'y a jamais de tour de refroidissement sur ce type d'appareil.</p>" +
       "<p>Installer, régler et vérifier un condenseur, c'est protéger tout le circuit contre les <b>fuites</b>, " +
-      "dès le premier jour et pendant toute sa vie.</p>",
+      "dès le premier jour et pendant toute sa vie.</p>" +
+      schema("regulateurs-pression.svg", "Les trois régulateurs de pression situés sur le circuit : en sortie de condenseur, en sortie d'évaporateur, et sur l'aspiration juste avant le compresseur.") +
+      "<p>Un organe mérite qu'on s'y arrête, parce que le référentiel le demande nommément : le " +
+      "<b>régulateur de pression de sortie du condenseur</b>. Sur le terrain, on l'appelle " +
+      "couramment un <b>KVR</b> — c'est une référence commerciale, pas le nom de la fonction.</p>" +
+      "<p>À quoi sert-il ? Quand il fait <b>froid dehors</b>, le condenseur évacue la chaleur trop " +
+      "facilement et la haute pression descend. Or le <b>détendeur</b> a besoin d'un écart de " +
+      "pression suffisant entre l'entrée et la sortie pour alimenter correctement l'évaporateur. " +
+      "Si la haute pression tombe trop bas, cet écart disparaît, le détendeur n'alimente plus, et " +
+      "l'installation ne fait plus de froid alors que rien n'est cassé. Le régulateur <b>retient</b> " +
+      "la pression de condensation au-dessus d'une valeur réglée : c'est tout son rôle.</p>" +
+      "<p>Il ne faut le confondre avec aucun des deux autres régulateurs du circuit. Celui-ci agit " +
+      "sur la <b>haute</b> pression, en sortie de condenseur. Les deux autres — pression " +
+      "d'évaporation et pression de carter — agissent du côté <b>basse</b> pression, et se voient " +
+      "à la fiche de l'évaporateur.</p>",
     blocs: [
       { type: "cle", t: "Bien installer l'unité extérieure",
         html: "L'unité extérieure se fixe <b>solidement et de niveau</b>, avec de l'espace autour pour que l'air circule. Le matériel de réglage et de sécurité — pressostats, vannes — doit être en place et accessible. Avant la mise en service, on contrôle l'étanchéité du circuit sous <b>azote</b> (un gaz neutre) — jamais à l'oxygène, jamais à l'air comprimé. Tous les raccords sont vérifiés : zéro fuite dès le démarrage." },
       { type: "cle", t: "Régler le régulateur de pression",
         html: "Le régulateur de pression de sortie du condenseur maintient une pression de condensation correcte, même par temps froid. Il se règle <b>selon la fiche constructeur</b>, jamais à l'estime." },
+      { type: "piege", t: "Un régulateur ne coupe rien",
+        html: "Le <b>pressostat HP</b> est une sécurité : il <b>coupe</b> l'alimentation électrique du compresseur quand la pression devient dangereuse. Le <b>régulateur de pression de condensation</b> ne coupe rien du tout : c'est une vanne, elle <b>maintient</b> une pression. Deux organes, deux fonctions, deux réglages — et l'un ne remplace jamais l'autre." },
       { type: "piege", t: "Avant de toucher aux conduites",
         html: "La conduite de <b>refoulement</b> (le tube de gaz chaud entre le compresseur et le condenseur) et la conduite de <b>liquide</b> (juste après le condenseur) s'inspectent après une <b>consignation électrique</b> systématique : couper puis verrouiller l'alimentation. On cherche des traces d'huile, de la corrosion, un isolant abîmé." },
       { type: "cle", t: "Démarrer, mesurer, arrêter",
@@ -2749,7 +3041,8 @@ export const CARTES = [
       { code: "7.10", libelle: "Entretenir un condenseur pour économiser l'énergie", etat: "a_evaluer" },
     ],
     liens: [suite("g8", "L'évaporateur"), SOMMAIRE],
-    notes_pilote: "Insister sur la consignation électrique avant toute inspection de conduites, et sur l'azote seul pour contrôler l'étanchéité (jamais d'oxygène). Si un stagiaire confond condenseur à air et tour de refroidissement, revenir à la croix du frigoriste au tableau. Faire rédiger un vrai rapport d'état à l'écrit, même court.",
+    notes_pilote: "Insister sur la consignation électrique avant toute inspection de conduites, et sur l'azote seul pour contrôler l'étanchéité (jamais d'oxygène). Si un stagiaire confond condenseur à air et tour de refroidissement, revenir à la croix du frigoriste au tableau. Faire rédiger un vrai rapport d'état à l'écrit, même court. " +
+      "⚠️ À FAIRE VALIDER (27/07) : la description du régulateur de pression de sortie de condenseur (rôle par temps froid, écart de pression nécessaire au détendeur) et l'emploi de la désignation « KVR ». Arbitrage tenu dans tout le pack : on enseigne la FONCTION sous son nom générique, la référence commerciale vient ensuite, parce que c'est le mot que le stagiaire entendra sur le chantier. Montrer l'organe réel sur le plateau si le parc en possède un ; sinon, le dire franchement.",
   },
   {
     id: "g8",
@@ -2831,10 +3124,26 @@ export const CARTES = [
       "installé, il doit fonctionner <b>sans aucune fuite ni émission</b> — c'est vrai pour le tube, " +
       "mais aussi pour tout le matériel de contrôle et de sécurité posé avec lui.</p>" +
       "<p>Deux organes se règlent, pour deux raisons différentes. Le <b>régulateur de pression " +
-      "d'évaporation</b> est une soupape mécanique. Elle maintient une pression minimale dans " +
+      "d'évaporation</b> — que le référentiel appelle aussi la <b>soupape de régulation</b> de la " +
+      "pression d'évaporation — est une soupape mécanique. Elle maintient une pression minimale dans " +
       "l'évaporateur — par exemple pour empêcher un produit de geler, ou pour équilibrer plusieurs " +
       "évaporateurs sur un seul compresseur. Sa mise en service et son réglage suivent <b>toujours " +
       "la fiche constructeur</b>.</p>" +
+      schema("regulateurs-pression.svg", "Les trois régulateurs de pression situés sur le circuit : en sortie de condenseur, en sortie d'évaporateur, et sur l'aspiration juste avant le compresseur.") +
+      "<p>Cet organe se monte <b>en sortie d'évaporateur</b>, sur le départ de la ligne d'aspiration. " +
+      "Sur le terrain, on l'appelle couramment un <b>KVP</b> — c'est une référence commerciale, pas " +
+      "le nom de la fonction. Son intérêt se comprend mieux sur un cas concret : plusieurs chambres " +
+      "à des températures différentes, un seul compresseur. Sans lui, toutes les chambres " +
+      "descendraient à la pression de la plus froide. Avec lui, chaque évaporateur garde la pression " +
+      "— donc la température — que son produit demande.</p>" +
+      "<p>Un troisième régulateur existe, et il ne faut pas le confondre avec celui-ci : le " +
+      "<b>régulateur de pression de carter</b>, couramment appelé <b>KVL</b>. Il se monte sur la " +
+      "ligne d'aspiration, juste <b>avant le compresseur</b>. Il ne protège ni le produit ni " +
+      "l'évaporateur : il protège le <b>moteur du compresseur</b>, en limitant la pression " +
+      "d'aspiration. Le cas typique est le <b>redémarrage après un arrêt long</b> : la pression est " +
+      "alors remontée dans tout le circuit, et sans lui le compresseur devrait avaler d'un coup " +
+      "beaucoup trop de vapeur. Trois régulateurs, trois endroits, trois raisons — et aucun des " +
+      "trois ne coupe quoi que ce soit.</p>" +
       "<p>Les <b>interrupteurs de sécurité et de contrôle</b> — les pressostats — protègent la " +
       "machine, pas le produit. Ils coupent l'alimentation électrique du compresseur si la pression " +
       "sort de la plage prévue. Deux organes, deux fonctions, deux réglages : on ne les confond pas.</p>" +
@@ -2862,10 +3171,13 @@ export const CARTES = [
         html:
           "<b>Pressostat</b> (interrupteur de sécurité) → protège la <b>machine</b> : il coupe le " +
           "compresseur.<br>" +
-          "<b>Régulateur de pression d'évaporation</b> → protège le <b>produit</b>, ou l'équilibre " +
-          "entre évaporateurs : il ne coupe rien, il maintient une pression.<br>" +
-          "Dans les deux cas, la valeur de réglage vient de la <b>fiche constructeur</b>, jamais " +
-          "de l'estime.",
+          "<b>Régulateur de pression d'évaporation</b> (« KVP »), en sortie d'évaporateur → protège " +
+          "le <b>produit</b>, ou l'équilibre entre évaporateurs : il ne coupe rien, il maintient " +
+          "une pression.<br>" +
+          "<b>Régulateur de pression de carter</b> (« KVL »), avant le compresseur → protège le " +
+          "<b>moteur du compresseur</b> : il limite la pression d'aspiration.<br>" +
+          "Un seul des trois coupe le courant, et c'est le pressostat. Dans tous les cas, la valeur " +
+          "de réglage vient de la <b>fiche constructeur</b>, jamais de l'estime.",
       },
       {
         type: "cle",
@@ -2912,7 +3224,13 @@ export const CARTES = [
       "seul + consignation électrique avant toute manipulation. Pour 8.10, faire rédiger un vrai " +
       "rapport d'état à partir d'une photo (bac encrassé, conduit abîmé) plutôt que de décrire la " +
       "méthode dans l'abstrait. Relier 8.11 à la surchauffe déjà vue en G8 : ce n'est pas une " +
-      "nouvelle notion, c'est le même réglage regardé sous l'angle énergie.",
+      "nouvelle notion, c'est le même réglage regardé sous l'angle énergie. " +
+      "⚠️ À FAIRE VALIDER (27/07) : les désignations « KVP » et « KVL », le cas d'usage du KVP " +
+      "(plusieurs chambres à températures différentes sur un compresseur) et celui du KVL " +
+      "(redémarrage après arrêt long). Écrit de mémoire technique, pas relevé sur une documentation " +
+      "constructeur. Le KVL n'a volontairement AUCUN code rattaché : les codes 8.02 et 8.07 portent " +
+      "sur la pression d'évaporation, pas sur la pression de carter — on ne force pas un " +
+      "rattachement pour faire nombre.",
   },
   {
     id: "x2",

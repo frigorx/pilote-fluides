@@ -1,5 +1,12 @@
 # Consignes — remettre à niveau le SOCLE THÉORIQUE du pack
 
+> ## ✅ FAIT le 27/07/2026 — ce document devient l'historique du chantier
+>
+> Les quatre chantiers sont réalisés, le build passe, les mesures du § 1 ont été rejouées :
+> tous les zéros ont disparu. Ce qui a changé, et ce qui reste à trancher, est en § 7 (fin
+> de document). Les arbitrages du § 4 ont été tenus dans le sens proposé — **sauf à ce que
+> F. Henninot en décide autrement à la relecture.**
+
 > **Écrit le 27/07/2026**, après un constat de F. Henninot : *« un doute, la durée des parties
 > théorie, et le diagramme pas assez développé ; et sur surchauffe / sous-refroidissement non
 > plus ; surchauffe totale, sous-refroidissement, chaleur sensible et latente. À l'époque on
@@ -223,3 +230,88 @@ censée empêcher. À intégrer dans `build/profondeur.mjs`, et à écrire dans
 
 *Rappel : la relecture métier de F. Henninot reste le bloquant du projet. Ces consignes ajoutent
 du contenu à relire — elles ne remplacent pas cette relecture.*
+
+---
+
+## 7. Ce qui a été fait, le 27/07/2026
+
+### Les quatre chantiers
+
+| Chantier | Réalisation | Avant → après |
+|---|---|---|
+| 1 · chaleur sensible / latente | **fiche `g1s` créée** (code 1.02) — le palier, les cinq états dans l'ordre, l'effet de réfrigération et la chaleur de compression, le glissement des zéotropes expliqué comme un palier qui n'est pas plat | 0 → 651 mots |
+| 2 · diagramme log p/h | **`g1b` développée** — les deux axes, l'échelle logarithmique et sa raison, les trois zones, les courbes de bulle et de rosée, le **tracé du cycle en quatre transformations** (exigé mot pour mot par 1.03), la lecture de la surchauffe et du sous-refroidissement, le titre de vapeur, le pont avec la table | 230 → 632 mots |
+| 3 · surchauffe / sous-refroidissement | **fiche `g1e` créée** (codes 1.02 · **5.05**) — la différence et non la température, la mesure à deux instruments, utile / totale, pourquoi on règle, ce que la valeur dit | 0 → 645 mots |
+| 4 · régulateurs de pression | **`g7b` et `g8b` développées** — les trois organes nommés et situés : pression de condensation (« KVR »), d'évaporation (« KVP »), de carter (« KVL ») | 355 → 577 et 405 → 650 mots |
+
+**Le trou le plus grave était le code 5.05** : « déterminer l'état d'un réfrigérant » n'était
+porté que par des fiches de *pesée* et de *charge*. Toutes l'utilisaient, aucune ne l'enseignait.
+`g1e` le prend en charge.
+
+### Quatre planches, aux symboles normalisés
+
+`chaleur-sensible-latente.svg` (courbe de chauffe à palier, animée) ·
+`diagramme-logph.svg` (la cloche, les trois zones, le cycle, animé) ·
+`surchauffe-utile-totale.svg` · `regulateurs-pression.svg`. 27 Ko au total, le pack passe de
+672 à 673 Ko.
+
+⚠️ **Reprises le 27/07 après remarque de F. Henninot** : la première version dessinait les
+organes à la main. Les deux planches de circuit utilisent désormais les **symboles de la
+bibliothèque inerWeb** (`C:\git\usine-contenu\bibliotheque-symboles`), comme le fait déjà
+`croix-frigoriste.svg` — règle du `README.md` de la bibliothèque : *« on insère ces fichiers,
+on ne redessine jamais un symbole à la main »*.
+
+> 🔧 **Manque signalé à la bibliothèque** : il n'existe **aucun symbole de régulateur de
+> pression** (ni condensation, ni évaporation, ni carter). Conformément à la règle « si le
+> symbole n'existe pas, le signaler — ne pas l'inventer », les trois emplacements sont marqués
+> par un **repère numéroté** sur le circuit, et non par un organe dessiné. Détourner
+> `vanne_securite` aurait enseigné une forme fausse. Idem pour la **sonde de contact** :
+> aucun symbole ne correspond (celui qui existe s'insère *dans* la tuyauterie), donc les
+> instruments ne sont pas dessinés sur la planche de surchauffe.
+
+### Le garde-fou du § 5 — posé
+
+`build/profondeur.mjs` mesure désormais aussi la **maigreur** : toute fiche de **cours**
+déclarant un code **théorique** avec moins de **300 mots** visibles est signalée dans
+`PROFONDEUR-REFERENTIEL.md`. Avertissement, jamais blocage. Les exercices en sont exclus :
+une mise en situation est courte par nature.
+
+**Ce qu'il trouve encore, hors périmètre de ce chantier** — deux fiches à traiter ensuite :
+`g7` « Le condenseur » (250 mots, code 7.01) et `g9` « Le détendeur et les organes annexes »
+(276 mots, code 9.01).
+
+L'instrument `profondeur-attendus.json` passe en **v0.4** : 1.02 et 1.03 étaient déclarés
+« tenus » alors que *chaleur latente* et *chaleur sensible* avaient zéro occurrence dans tout
+le pack. Dix sentinelles ajoutées, toutes tirées du texte de l'arrêté. Elles **durcissent** la
+mesure — chacune était rouge avant d'être comblée le même jour.
+
+### Résultat au build
+
+Couverture **A1 · A2 · D · E = 100 %** · profondeur **94/94 tenus** avec l'instrument durci ·
+0 note formateur dans la sortie élève · 511 diapositives · 266 questions (+16).
+Mesures du § 1 rejouées : *chaleur sensible* 0 → 8 · *chaleur latente* 0 → 13 ·
+*surchauffe utile* 0 → 6 · *surchauffe totale* 0 → 7 · *point de bulle* 0 → 13 ·
+*point de rosée* 0 → 12 · *KVP · KVL · KVR* 0 → 4 · 3 · 3.
+
+### Les arbitrages du § 4, et comment ils ont été tenus
+
+1. **Désignations commerciales** → fonction générique d'abord, « couramment appelé KVP » ensuite.
+2. **Valeurs de surchauffe** → écrites (5-10 K, 4-8 K), avec « à recaler sur la documentation
+   du constructeur ». La charte les autorise et le pack les employait déjà 47 fois.
+3. **Où loger la chaleur sensible/latente** → fiche à part. `g1a` porte déjà 3 codes et
+   432 mots ; et une notion = une fiche = un schéma, pour un public FLE/DYS.
+4. **Surchauffe utile / totale** → écrite telle que formulée ici, **marquée à valider**.
+
+### ⚠️ Ce qui attend une décision de F. Henninot
+
+- **Le jour 1 passe de 6 h 20 à 7 h 10.** `g1a` a été descendue de 45 à 35 min (sa
+  thermodynamique part dans `g1s`), mais les deux fiches neuves ajoutent 60 min. Trois leviers
+  chiffrés sont écrits **en commentaire dans `parcours.js`**, aucun n'a été appliqué d'office.
+- **Trois passages « à faire valider »**, signalés dans les `notes_pilote` des fiches
+  concernées : la distinction surchauffe utile / totale (`g1e`), la description du régulateur
+  de pression de condensation et le mot « KVR » (`g7b`), les cas d'usage du KVP et du KVL
+  (`g8b`). Écrits de mémoire technique, non relevés sur une documentation constructeur.
+- **Le code 1.06 a été retiré de `g1b`** : la fiche n'enseigne pas les fluides de substitution,
+  `g1c` le fait. La couverture reste à 100 %.
+- **Faut-il ajouter les trois régulateurs à la bibliothèque de symboles ?** Voir l'encadré
+  ci-dessus.

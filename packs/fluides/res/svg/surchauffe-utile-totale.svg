@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-label="Le fluide sort du détendeur en mélange liquide et vapeur, et entre dans l'évaporateur. Il bout tout au long de la batterie. En un point, la dernière goutte disparaît : à partir de là il n'y a plus que de la vapeur, et la température peut de nouveau monter. Ce que la vapeur gagne à l'intérieur même de l'évaporateur s'appelle la surchauffe utile, parce qu'elle a servi à refroidir le local. Ce qu'elle gagne ensuite dans la ligne d'aspiration jusqu'au compresseur s'y ajoute : le total s'appelle la surchauffe totale. On la mesure toujours de la même façon : la pression lue au manomètre donne, par la table de saturation, la température d'évaporation ; la sonde de contact donne la température réelle du tube ; la différence entre les deux est la surchauffe, exprimée en kelvins.">
+  <title>Surchauffe utile et surchauffe totale : où elles se prennent, comment on les mesure</title>
+  <desc>Symboles issus de la bibliothèque inerWeb : détendeur thermostatique à
+        égalisation externe, échangeur à air, compresseur général. Basse pression
+        en bleu. Les instruments de mesure ne sont pas dessinés sur le circuit :
+        un manomètre se branche sur une vanne de service et une sonde de contact
+        se pose sur le tube — aucun des deux ne s'insère dans la tuyauterie.</desc>
+  <style>
+    .t      { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .st     { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lg     { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .sm     { font:400 12px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .organe { font:700 15px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .bad    { font:700 13px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+    .trait  { fill:none; stroke:#33475b; stroke-width:2.2; }
+    .fine   { fill:none; stroke:#33475b; stroke-width:1; stroke-dasharray:3 5; }
+    .pt     { fill:#33475b; }
+    .bp     { fill:none; stroke:#1b3a63; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; }
+    .acc    { fill:none; stroke:#c9451a; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+    .dash   { fill:none; stroke:#8fa3b8; stroke-width:1.5; stroke-dasharray:5 5; }
+  </style>
+
+  <rect width="900" height="440" fill="#ffffff"/>
+  <text class="t" x="30" y="30">Deux surchauffes, une seule méthode de mesure</text>
+
+  <!-- ======================= TUYAUTERIES (BP) ======================= -->
+  <path class="bp" d="M 100 150 L 152 150"/>
+  <path class="bp" d="M 388 150 L 706 150"/>
+
+  <!-- ======================= DÉTENDEUR (symbole normalisé) ======================= -->
+  <g transform="translate(78,150) scale(1.8)" stroke="#33475b" stroke-width="1.2" fill="none">
+    <circle cx="0" cy="-12" r="5.83" fill="#fff"/>
+    <path d="M 0 -18 L 0 -20"/>
+    <polygon points="2,1 0,3 -2,1 -10,5 -10,-5 10,5 10,-5 -2,1 0,0" fill="#fff"/>
+    <path d="M 0 0 L 0 -6 M 10 0 L 11 0 M -10 0 L -11 0"/>
+    <circle class="pt" cx="0" cy="-20" r="1.5" stroke="none"/>
+    <circle class="pt" cx="11" cy="0" r="1.5" stroke="none"/>
+    <circle class="pt" cx="-11" cy="0" r="1.5" stroke="none"/>
+  </g>
+  <text class="sm" x="78" y="202" text-anchor="middle">détendeur</text>
+
+  <!-- ======================= ÉVAPORATEUR ======================= -->
+  <g transform="translate(270,150)">
+    <rect x="-118" y="-32" width="236" height="64" rx="4" fill="#fff" stroke="#33475b" stroke-width="2.2"/>
+    <path class="fine" d="M -79 -32 L -79 32 M -39 -32 L -39 32 M 0 -32 L 0 32 M 39 -32 L 39 32 M 79 -32 L 79 32"/>
+    <path class="trait" d="M -118 0 L -118 -18 L 96 -18 A 9 9 0 0 1 96 0 L -96 0 A 9 9 0 0 0 -96 18 L 118 18 L 118 0"/>
+    <circle class="pt" cx="-118" cy="0" r="3.5"/>
+    <circle class="pt" cx="118" cy="0" r="3.5"/>
+  </g>
+  <text class="organe" x="270" y="96" text-anchor="middle">ÉVAPORATEUR</text>
+
+  <!-- ======================= COMPRESSEUR (symbole normalisé) ======================= -->
+  <g transform="translate(736,150) scale(1.9)" stroke="#33475b" stroke-width="1.2" fill="none">
+    <circle cx="0" cy="0" r="15" fill="#fff"/>
+    <path d="M -15 0 L -16 0 M 15 0 L 16 0"/>
+    <path d="M -7 -13 L 13 -7 M -7 13 L 13 7"/>
+    <circle class="pt" cx="-16" cy="0" r="1.5" stroke="none"/>
+    <circle class="pt" cx="16" cy="0" r="1.5" stroke="none"/>
+  </g>
+  <text class="sm" x="736" y="202" text-anchor="middle">compresseur</text>
+  <text class="sm" x="547" y="130" text-anchor="middle">ligne d'aspiration</text>
+
+  <!-- ======================= LE POINT OÙ LA VAPORISATION S'ACHÈVE ======================= -->
+  <path class="dash" d="M 320 100 L 320 250"/>
+  <text class="sm"  x="200" y="228" text-anchor="middle">liquide + vapeur : ça bout</text>
+  <text class="bad" x="330" y="228">la dernière goutte disparaît</text>
+
+  <!-- ======================= LES DEUX SURCHAUFFES ======================= -->
+  <path class="acc" d="M 320 272 L 388 272 m -8 -5 l 8 5 -8 5"/>
+  <path class="acc" d="M 320 266 L 320 278 M 388 266 L 388 278"/>
+  <text class="bad" x="354" y="296" text-anchor="middle">surchauffe UTILE</text>
+  <text class="sm"  x="354" y="314" text-anchor="middle">gagnée dans l'évaporateur :</text>
+  <text class="sm"  x="354" y="330" text-anchor="middle">elle a servi à refroidir le local</text>
+
+  <path class="acc" d="M 320 354 L 736 354 m -8 -5 l 8 5 -8 5"/>
+  <path class="acc" d="M 320 348 L 320 360 M 736 348 L 736 360"/>
+  <text class="bad" x="528" y="378" text-anchor="middle">surchauffe TOTALE — jusqu'au compresseur</text>
+  <text class="sm"  x="528" y="396" text-anchor="middle">l'utile, plus ce que la ligne d'aspiration ajoute au passage</text>
+
+  <!-- ======================= LA MESURE ======================= -->
+  <g transform="translate(520,30)">
+    <rect x="0" y="0" width="350" height="76" rx="8" fill="#fdf1ed" stroke="#e8b9a8" stroke-width="1.5"/>
+    <text class="st" x="16" y="24" style="font-size:13px">La surchauffe est une DIFFÉRENCE, jamais une température</text>
+    <text class="sm" x="16" y="44">pression au manomètre → table de saturation → température</text>
+    <text class="sm" x="16" y="60">d'évaporation. Sonde sur le tube → température réelle. L'écart, en <tspan style="font-weight:700;fill:#c9451a">kelvins</tspan>.</text>
+  </g>
+
+  <text class="lg" x="30" y="424">Une surchauffe qui <tspan style="font-weight:700">tombe à zéro</tspan> annonce du liquide au compresseur ; une surchauffe qui <tspan style="font-weight:700">grimpe</tspan> annonce un évaporateur mal alimenté.</text>
+</svg>

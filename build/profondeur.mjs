@@ -15,6 +15,11 @@
    ASYMÉTRIE ASSUMÉE — l'absence de tout motif prouve le trou (fiable) ;
    la présence ne prouve pas la qualité. On mesure des trous, rien d'autre.
 
+   TROIS MESURES, pas une · les motifs disent si la notion est CITÉE ·
+   le contrôle de maigreur (§ 3 bis) dit si le sujet a la place d'être
+   TRAITÉ · seule la relecture métier dit s'il est BIEN enseigné. Un
+   code peut être vert aux deux premières et faux à la troisième.
+
    PIÈGES · le corpus est le contenu VISIBLE DE L'ÉLÈVE (titre, corps,
    blocs, question) — jamais notes_pilote (purgées du build élève), jamais
    criteres[].libelle (auto-satisfaction : le critère paraphrase le libellé
@@ -112,6 +117,45 @@ const oranges = resultats.filter((r) => r.verdict === "orange");
 const verts = resultats.filter((r) => r.verdict === "vert");
 
 /* ---------------------------------------------------------------------
+   3 bis. MAIGREUR — la mesure ci-dessus cherche des MOTS ; elle ne voit
+   pas le VOLUME. Le 27/07, `g1b` « tenait » le code 1.03 (lire un log p/h,
+   une table de saturation, tracer un cycle) avec 105 mots pour 45 min de
+   cours : tous les motifs étaient présents, le sujet n'était pas traité.
+   Une couverture de façade, exactement ce que la mesure devait empêcher.
+
+   On ne peut pas mesurer la qualité, mais on peut mesurer le plancher :
+   sous SEUIL_MOTS mots de contenu visible, une fiche n'enseigne pas un
+   code THÉORIQUE, quoi qu'en disent les motifs. Avertissement, jamais
+   blocage : c'est un signal à instruire, pas un verdict.
+   --------------------------------------------------------------------- */
+const SEUIL_MOTS = 300;
+
+function volumeDe(carte) {
+  return CORPUS.get(carte.id).split(/\s+/).filter(Boolean).length;
+}
+
+/* Un code est « théorique » quand l'arrêté le marque T dans au moins une
+   des catégories du pack : c'est là que le volume écrit fait le cours.
+   Les codes pratiques (P) s'acquièrent au plateau — les juger au poids
+   de texte n'aurait aucun sens. */
+const estTheorique = (code) => {
+  const c = resoudre(code);
+  return PACK_META.categories.some((cat) => (c.cat || {})[cat] === "T");
+};
+
+const maigres = [];
+for (const carte of DECLARANTES) {
+  // Seules les fiches de COURS sont jugées au volume : un exercice est une
+  // mise en situation courte par nature, et l'allonger le dénaturerait.
+  if (carte.type !== "cours") continue;
+  const vol = volumeDe(carte);
+  if (vol >= SEUIL_MOTS) continue;
+  const codesT = carte.criteres.map((cr) => cr.code).filter((c) => resoudre(c) && estTheorique(c));
+  if (codesT.length) maigres.push({ id: carte.id, titre: carte.titre, mots: vol, codes: codesT });
+}
+maigres.sort((a, b) => a.mots - b.mots);
+
+/* ---------------------------------------------------------------------
    4. GARDE D'HONNÊTETÉ — un motif présent dans plus de 40 % des cartes
    déclarantes ne détecte plus rien : il dit « oui » à tout le monde.
    On le dénonce plutôt que de laisser croire à une mesure.
@@ -167,6 +211,19 @@ const bloc = (liste, titre) => {
 };
 bloc(rouges, "🔴 Cités mais non tenus — " + rouges.length + " code(s)");
 bloc(oranges, "🟠 Partiellement tenus — " + oranges.length + " code(s)");
+if (maigres.length) {
+  L.push("## 📏 Maigreur — des codes théoriques tenus par trop peu de texte");
+  L.push("");
+  L.push("Les motifs sont présents, mais la fiche fait moins de " + SEUIL_MOTS + " mots visibles :");
+  L.push("le sujet est cité, il n'est pas traité. Ce contrôle existe parce que `g1b` a « tenu »");
+  L.push("le code 1.03 avec 105 mots pour 45 minutes de cours (constaté le 27/07).");
+  L.push("");
+  L.push("| Fiche | Mots | Codes théoriques déclarés |");
+  L.push("|---|---:|---|");
+  for (const m of maigres)
+    L.push("| `" + m.id + "` — " + m.titre + " | " + m.mots + " | " + m.codes.join(" · ") + " |");
+  L.push("");
+}
 if (aveugles.length) {
   L.push("## ⚠️ Motifs aveugles — l'instrument ne mesure rien avec eux");
   L.push("");
@@ -187,7 +244,8 @@ writeFileSync(resolve(RACINE, "PROFONDEUR-REFERENTIEL.md"), L.join("\n"), "utf8"
 
 console.log("profondeur : " + resultats.length + " codes — 🔴 " + rouges.length +
   " · 🟠 " + oranges.length + " · 🟢 " + verts.length +
-  (aveugles.length ? " · ⚠️ " + aveugles.length + " motif(s) aveugle(s)" : ""));
+  (aveugles.length ? " · ⚠️ " + aveugles.length + " motif(s) aveugle(s)" : "") +
+  (maigres.length ? " · 📏 " + maigres.length + " fiche(s) sous " + SEUIL_MOTS + " mots" : ""));
 console.log("→ PROFONDEUR-REFERENTIEL.md");
 if (STRICT && rouges.length) {
   console.error("✗ --strict : des codes sont cités sans être tenus");

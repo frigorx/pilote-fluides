@@ -1,8 +1,8 @@
 {
   "_meta": {
     "role": "INSTRUMENT DE MESURE de la profondeur d'enseignement — décomposition de chaque code de l'annexe II.B (arrêté du 21/11/2025) en notions sentinelles détectables",
-    "version": "0.3",
-    "date": "2026-07-25",
+    "version": "0.4",
+    "date": "2026-07-27",
     "statut": "instrument NON relu par F. Henninot — les verdicts qu'il produit sont provisoires",
     "principe": "Chaque libellé officiel énumère des notions. Pour chacune, des motifs (regex) détectent son vocabulaire technique dans le contenu VISIBLE DE L'ÉLÈVE des fiches qui déclarent le code (titre, corps, blocs, question — jamais notes_pilote).",
     "asymetrie": "L'ABSENCE de tout motif prouve que la notion n'est pas enseignée (fiable). La PRÉSENCE d'un motif ne prouve pas qu'elle est bien enseignée. Cet instrument mesure des trous, pas de la qualité.",
@@ -11,7 +11,8 @@
     "_historique": [
       "0.1 — création, 94 codes (union A1∪A2∪D∪E), décomposition depuis les libellés officiels",
       "0.2 — après confrontation au texte réel des fiches : 4.07 la distinction est enseignée par contraste (« intervenir dans le circuit ») ; 6.03 g6 dit « se règlent » ; 12.04 les fiches disent « analyse de risques » (sans « des ») ; 1.03 g1b écrit « log p-h » avec tiret ; 5.05 le libellé distingue état (liquide/gazeux, enseigné) et conditions (saturé/sous-refroidi, non enseignées) — notion scindée ; 7.03 g7b dit « espace autour / air circule »",
-      "0.3 — après le comblement du 25/07 : 6.04 accepte le pluriel « vannes de service » (bug, la fiche l'enseignait) ; durcissement de 5 motifs aveugles (6.01 huile → circuit/retour/niveau d'huile, 6.02 install → montage/pose/fixe, 6.03 regl → se regl, 12.10 charge retiré) — un motif présent dans la moitié des cartes ne mesure rien"
+      "0.3 — après le comblement du 25/07 : 6.04 accepte le pluriel « vannes de service » (bug, la fiche l'enseignait) ; durcissement de 5 motifs aveugles (6.01 huile → circuit/retour/niveau d'huile, 6.02 install → montage/pose/fixe, 6.03 regl → se regl, 12.10 charge retiré) — un motif présent dans la moitié des cartes ne mesure rien",
+      "0.4 — DURCISSEMENT (chantier socle théorique, 27/07). L'instrument disait 1.02 et 1.03 « tenus » alors que « chaleur latente » et « chaleur sensible » avaient ZÉRO occurrence dans tout le pack et que g1b tenait 1.03 avec 105 mots. En cause : des sentinelles trop peu nombreuses, qui ne reprenaient pas tout ce que le libellé officiel énumère. Ajouts, tous tirés mot pour mot du texte de l'arrêté : 1.02 → chaleur latente, chaleur sensible, états du fluide (bulle/rosée), effet de réfrigération, chaleur de compression ; 1.03 → tracé du cycle frigorifique simple à compression, courbes de bulle et de rosée ; 7.02 → l'organe nommé et situé en sortie de condenseur ; 8.02 → situé en sortie d'évaporateur ; 8.07 → le mot « soupape de régulation ». Ces ajouts DURCISSENT la mesure, ils ne la verdissent pas : chacun était rouge avant d'être comblé dans les fiches le même jour."
     ]
   },
   "attendus": {
@@ -29,12 +30,19 @@
       { "notion": "sous-refroidissement", "motifs": ["sous-refroidi", "sous refroidi"] },
       { "notion": "enthalpie", "motifs": ["enthalpi"] },
       { "notion": "mélanges zéotropiques", "motifs": ["zeotrop", "glissement"] },
-      { "notion": "côtés haute et basse pression", "motifs": ["haute pression", "basse pression"] }
+      { "notion": "côtés haute et basse pression", "motifs": ["haute pression", "basse pression"] },
+      { "notion": "chaleur latente et palier de changement d'état", "motifs": ["chaleur latente", "latente"] },
+      { "notion": "chaleur sensible", "motifs": ["chaleur sensible"] },
+      { "notion": "états du fluide (bulle, rosée, saturé)", "motifs": ["point de bulle", "point de rosee"] },
+      { "notion": "effet de réfrigération", "motifs": ["effet de refrigeration", "effet frigorifique"] },
+      { "notion": "chaleur de compression", "motifs": ["chaleur de compression"] }
     ],
     "1.03": [
       { "notion": "diagramme log p/h", "motifs": ["log ?p[-/]h", "diagramme enthalpique", "\\bp[-/]h\\b"] },
       { "notion": "tables de saturation / relation pression-température", "motifs": ["tables? de saturation", "relation pression[- ]temperature", "\\bp/t\\b"] },
-      { "notion": "usage en contrôle d'étanchéité indirect", "motifs": ["indirect"] }
+      { "notion": "usage en contrôle d'étanchéité indirect", "motifs": ["indirect"] },
+      { "notion": "tracé du cycle frigorifique simple à compression", "motifs": ["cycle frigorifique", "quatre transformations"] },
+      { "notion": "les trois zones et leurs frontières", "motifs": ["courbe de bulle", "courbe de rosee"] }
     ],
     "1.04": [
       { "notion": "le détendeur, quatrième organe", "motifs": ["detendeur"] },
@@ -206,7 +214,8 @@
       { "notion": "sous-refroidissement en sortie", "motifs": ["sous-refroidi"] }
     ],
     "7.02": [
-      { "notion": "régulation de la pression de condensation", "motifs": ["pression de condensation", "regulation de condensation", "condensation flottante"] }
+      { "notion": "régulation de la pression de condensation", "motifs": ["pression de condensation", "regulation de condensation", "condensation flottante"] },
+      { "notion": "l'organe est nommé et situé en sortie de condenseur", "motifs": ["regulateur de pression de sortie du condenseur", "\\bkvr\\b"] }
     ],
     "7.03": [
       { "notion": "installation du condenseur / unité extérieure", "motifs": ["install", "montage"] },
@@ -240,7 +249,8 @@
       { "notion": "système de dégivrage", "motifs": ["degivr"] }
     ],
     "8.02": [
-      { "notion": "régulation de la pression d'évaporation", "motifs": ["pression d'?evaporation", "kvp"] }
+      { "notion": "régulation de la pression d'évaporation", "motifs": ["pression d'?evaporation", "kvp"] },
+      { "notion": "l'organe est situé en sortie d'évaporateur", "motifs": ["sortie d'?evaporateur"] }
     ],
     "8.03": [
       { "notion": "installation de l'évaporateur", "motifs": ["install", "montage"] },
@@ -257,7 +267,8 @@
       { "notion": "dégivrage (air chaud, gaz chauds ou électrique)", "motifs": ["degivr"] }
     ],
     "8.07": [
-      { "notion": "soupape de régulation de la pression d'évaporation", "motifs": ["pression d'?evaporation"] }
+      { "notion": "soupape de régulation de la pression d'évaporation", "motifs": ["pression d'?evaporation"] },
+      { "notion": "l'organe est nommé soupape, et distingué du pressostat", "motifs": ["soupape de regulation"] }
     ],
     "8.08": [
       { "notion": "vérification en fonctionnement (surchauffe mesurée)", "motifs": ["surchauffe", "mesure"] }

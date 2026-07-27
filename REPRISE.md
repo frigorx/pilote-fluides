@@ -48,11 +48,11 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
-## 2. État au 26/07/2026
+## 2. État au 27/07/2026
 
-**79 cartes** · **250 questions** · **29 planches SVG** (dont 13 animées, et **2 dessins animés
+**81 cartes** · **266 questions** · **33 planches SVG** (dont 15 animées, et **2 dessins animés
 narratifs**) · 4 illustrations · **3 outils embarqués**
-**✅ 42 fiches de cours sur 42 portent un visuel** — plus une seule fiche « mur de texte ».
+**✅ 44 fiches de cours sur 44 portent un visuel** — plus une seule fiche « mur de texte ».
 
 > **Couverture du référentiel officiel : A1 100 % · A2 100 % · D 100 % · E 100 %.**
 > Mesurée à chaque build, écrite dans `COUVERTURE-REFERENTIEL.md`. Elle valait 60 % en A1
@@ -71,11 +71,11 @@ narratifs**) · 4 illustrations · **3 outils embarqués**
 | | |
 |---|---|
 | 1 accueil · 8 menus | **Sécurité** · **Classification** · A1, A2, D, E · **Réviser par thème** · **Préparation pratique** |
-| 42 fiches de cours | dont **5 de sécurité** (ce qui blesse la personne), **4 de classification** (ce qui est dans la bouteille, dont **2 sur le CO₂**) et **7 de préparation pratique** (le matériel et les gestes) |
+| 44 fiches de cours | dont **5 de sécurité** (ce qui blesse la personne), **4 de classification** (ce qui est dans la bouteille, dont **2 sur le CO₂**), **7 de préparation pratique** (le matériel et les gestes) et **2 de socle théorique** ajoutées le 27/07 (le palier de changement d'état, la surchauffe et le sous-refroidissement) |
 | 1 carte « Ma progression » | où j'en suis, compétence par compétence — tout en local |
 | 5 exercices « frigoriste-détective » | mises en situation à indices croisés |
 | 21 séries et examens | 13 séries de révision par thème + 8 examens sur 3 paliers |
-| 250 questions | rattachées à un **code de compétence**, un niveau, une catégorie — **99 compétences interrogées = 99 enseignées**, plus aucun code muet |
+| 266 questions | rattachées à un **code de compétence**, un niveau, une catégorie — **99 compétences interrogées = 99 enseignées**, plus aucun code muet |
 
 **Le module SÉCURITÉ (26/07)** — le pack enseignait la sécurité de l'installation et de
 l'environnement, **jamais celle de la personne**. Mesuré avant d'agir : *asphyxie* 0 occurrence,
@@ -385,6 +385,15 @@ que « G6 · codes 6.01 → 6.08 » promettait huit compétences pour quatre ens
 (`acces.code_empreinte` sur une carte examen — les 8 `ex-*` le portent, les 13 séries `rev-*`
 restent libres ; déverrouillage mémorisé sur l'appareil).
 
+- **Les organes se PRENNENT dans la bibliothèque de symboles, ils ne se dessinent pas**
+  (`C:\git\usine-contenu\bibliotheque-symboles`, 348 symboles, famille `frigo_schema`).
+  Règle de son `README.md` : *« on insère ces fichiers, on ne redessine jamais un symbole à la
+  main »*. Modèle à recopier : `croix-frigoriste.svg`, qui reprend la géométrie exacte du
+  symbole dans un `<g transform="translate() rotate() scale()">` et l'habille de la charte
+  (`#33475b`). Rappel de F. Henninot le 27/07, après un premier jet dessiné à la main.
+  **Si le symbole n'existe pas, on le signale — on n'en détourne pas un autre** : il manque
+  aujourd'hui le **régulateur de pression** (condensation, évaporation, carter) et la **sonde
+  de contact**. Détourner `vanne_securite` aurait enseigné une forme fausse.
 - **Un schéma ne se met JAMAIS en `illus`** : la charte recadre l'illustration de tête
   (`object-fit: cover`, 340 px max) et le tronque. Les schémas passent par l'assistant
   `schema()` de `cartes.js`, qui les insère dans le corps.
@@ -410,22 +419,31 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 
 ## 6. Ce qui reste à faire
 
-### 🔴🔴 LE SOCLE THÉORIQUE EST MAIGRE — consignes écrites, chantier à mener
+### ✅ LE SOCLE THÉORIQUE — chantier mené le 27/07
 
-**⇒ Tout est dans [`CONSIGNES-SOCLE-THEORIQUE.md`](CONSIGNES-SOCLE-THEORIQUE.md), document
-autonome (constat mesuré, 4 chantiers ordonnés, règles, arbitrages).**
+**⇒ Historique complet, arbitrages et décisions en attente dans
+[`CONSIGNES-SOCLE-THEORIQUE.md`](CONSIGNES-SOCLE-THEORIQUE.md) § 7.**
 
-Constat de F. Henninot le 27/07, **vérifié par la mesure sur ses cinq points** : `g1b` (le
-diagramme log p/h) fait **105 mots pour 45 min de cours** · **chaleur sensible et latente : 0
-occurrence** dans tout le pack, alors que « surchauffe » y apparaît **97 fois** · surchauffe
-utile/totale : 0 · le code **5.05** (état sous-refroidi/saturé/surchauffé) n'est enseigné par
-aucune fiche, seulement porté par deux fiches de manipulation · **KVP/KVL : 0**, alors que les
-régulateurs de pression sont bien au référentiel (**7.02 · 8.02 · 8.07**) et que `g7b` qui les
-déclare fait **118 mots**.
+Les cinq doutes de F. Henninot étaient tous fondés, et mesurés : `g1b` (le diagramme log p/h)
+faisait **105 mots pour 45 min de cours** · **chaleur sensible et latente : 0 occurrence** dans
+tout le pack, alors que « surchauffe » y apparaissait **97 fois** · surchauffe utile/totale : 0 ·
+le code **5.05** (état sous-refroidi/saturé/surchauffé) n'était enseigné par aucune fiche, mais
+seulement *utilisé* par deux fiches de manipulation · **KVP/KVL : 0**, alors que les régulateurs
+de pression sont bien au référentiel (**7.02 · 8.02 · 8.07**).
 
-⚠️ **Et cela révèle une faille de nos garde-fous** : le build annonce « profondeur 94/94 tenus »
-alors que `g1b` tient son code avec 105 mots. **La mesure de profondeur ne détecte pas la
-maigreur.** C'est exactement le troisième niveau de contrôle demandé au point 2 ci-dessous.
+**Traité** : 2 fiches créées (`g1s` chaleur sensible/latente · `g1e` surchauffe et
+sous-refroidissement, qui prend enfin le code 5.05), 4 fiches développées (`g1b`, `g7b`, `g8b`,
+plus `g1a` allégée), 4 planches, 16 questions. Tous les zéros ont disparu.
+
+⚠️ **La faille de garde-fou qu'il avait révélée est fermée** : le build annonçait « profondeur
+94/94 tenus » alors que `g1b` tenait son code avec 105 mots — les motifs y étaient, le sujet
+n'était pas traité. `build/profondeur.mjs` mesure désormais aussi la **maigreur** (fiche de
+cours portant un code théorique sous 300 mots visibles) et l'écrit dans
+`PROFONDEUR-REFERENTIEL.md`. Il reste **2 fiches signalées**, à traiter ensuite : `g7` (250 mots,
+code 7.01) et `g9` (276 mots, code 9.01).
+
+⚠️ **Décision en attente** : le **jour 1 passe de 6 h 20 à 7 h 10**. Trois leviers de
+compensation sont chiffrés en commentaire dans `parcours.js` ; aucun n'a été appliqué d'office.
 
 ### ⏭️ DEMANDÉ POUR LA PROCHAINE SESSION (F. Henninot, soir du 26/07)
 

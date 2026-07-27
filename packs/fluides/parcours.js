@@ -102,13 +102,31 @@ export const PARCOURS = {
       // Progression : pourquoi c'est réglementé → comment marche une machine
       // → quels fluides existent → comment on en choisit un → quels organes
       // trahissent une fuite (qui ouvre la journée 2 sur les composants).
+      //
+      // ⚠️ ARBITRAGE OUVERT (27/07) — cette journée passe de 6 h 20 à 7 h 10.
+      // Le socle théorique a reçu deux fiches (g1s, g1e) : sans le palier de
+      // changement d'état, « surchauffe » n'est qu'un mot, et sans g1e le code
+      // 5.05 n'était enseigné par AUCUNE fiche. L'ordre suit les dépendances :
+      // g1a (pression/température) → g1s (le palier) → g1b (le diagramme, où
+      // le palier se voit) → g1e (ce qui se mesure de part et d'autre).
+      // g1a est descendue de 45 à 35 min : la thermodynamique du changement
+      // d'état, qu'elle survolait, est désormais traitée dans g1s.
+      // Trois leviers si la journée doit repasser sous 7 h, à trancher par
+      // F. Henninot — aucun n'a été appliqué d'office :
+      //   · g2a « Quarante ans d'histoire » 35 → 25 min (−10)
+      //   · g13 CO₂/NH₃ 25 → 15 min (−10) : le CO₂ est désormais traité au
+      //     fond dans le bloc d'accueil « classification » (cl3 + cl4, 65 min)
+      //   · déplacer g1e en ouverture du jour 2 (−30), au prix de la rupture
+      //     de la progression ci-dessus
       sequences: [
         rappel("s1", 30, 2),   // sécurité du jour : l'air qui manque — le danger le plus fondamental
         seq("g0", 30, 4),   // vidéo attendue : le cadre réglementaire F-Gas en bref
         seq("g2a", 35, 4),  // vidéo attendue : trou d'ozone et effet de serre, vulgarisation
         seq("g2", 40, 5),
-        seq("g1a", 45, 5),  // vidéo attendue : le cycle frigorifique animé
+        seq("g1a", 35, 5),  // vidéo attendue : le cycle frigorifique animé
+        seq("g1s", 30, 3),  // vidéo attendue : chaleur latente, le palier d'ébullition
         seq("g1b", 45, 4),  // vidéo attendue : lire un diagramme enthalpique
+        seq("g1e", 30, 3),  // vidéo attendue : relever une surchauffe sur machine réelle
         seq("g1c", 35, 4),  // vidéo attendue : lire un code fluide (R-134a, R-410A)
         seq("g13", 25, 4),
         seq("g11", 35, 4),
