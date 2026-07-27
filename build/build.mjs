@@ -13,7 +13,7 @@
 
    Usage : node build/build.mjs
    ===================================================================== */
-import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -77,7 +77,17 @@ function valider() {
   // toutes les destinations de navigation existent
   for (const c of CARTES) {
     for (const l of c.liens || []) {
-      if (!l.vers) err.push(c.id + " : lien sans destination");
+      // Un lien mène soit à une CARTE du pack (`vers`), soit à une PAGE du
+      // site (`url` : la galerie des planches). Les deux à la fois n'a pas de
+      // sens et cacherait une erreur d'écriture.
+      if (l.url && l.vers) err.push(c.id + " : lien avec `url` ET `vers` — choisir l'un des deux");
+      else if (l.url) {
+        if (/^https?:|^\/\//i.test(l.url))
+          err.push(c.id + " → « " + l.url + " » : lien externe interdit dans une tuile (le pack doit rester autonome)");
+        else if (!existsSync(resolve(RACINE, l.url.split("#")[0])))
+          err.push(c.id + " → « " + l.url + " » : page inexistante dans le dépôt");
+      }
+      else if (!l.vers) err.push(c.id + " : lien sans destination");
       else if (!ids.has(l.vers)) err.push(c.id + " → « " + l.vers + " » : carte inexistante");
     }
     if (c.question?.remediation_vers && !ids.has(c.question.remediation_vers))

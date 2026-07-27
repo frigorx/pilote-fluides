@@ -225,6 +225,16 @@ export const CARTES = [
         desc: "En autonomie : 13 séries corrigées, reliées aux fiches. Avant la formation, pendant le stage, avant l'épreuve.",
       },
       { vers: "m-prat", icone: "🔧", titre: "Préparation pratique", desc: "Le matériel et les gestes, à revoir avant l atelier." },
+      /* Seule tuile qui mène à une PAGE et non à une carte (extension `url` du
+         moteur, 27/07) : la galerie rassemble les schémas de TOUT le pack, y
+         compris ceux des parcours qu'on ne suit pas. La ranger dans un parcours
+         reviendrait à la cacher aux trois autres. */
+      {
+        url: "galerie.html",
+        icone: "🎬",
+        titre: "Voir toutes les animations",
+        desc: "Les schémas animés du pack sur une seule page, chacun rejouable d un clic : ce qui se passe dans le local, dans le circuit, sur la balance.",
+      },
       {
         vers: "cfin",
         icone: "?",

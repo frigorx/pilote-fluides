@@ -93,8 +93,11 @@
     (c.liens || []).forEach(function (l) {
       if (!conditionVraie(l.condition)) return;
       var t = esc(l.titre || l.libelle), d = l.desc ? "<p>" + esc(l.desc) + "</p>" : "", ic = l.icone ? "<span class='ic'>" + esc(l.icone) + "</span>" : "";
-      if (l.primaire) h += "<div class='tuile primaire' role='button' tabindex='0' data-go='" + l.vers + "'>" + ic + "<span class='txt'><h3>" + t + "</h3>" + d + "</span><span class='go'>Commencer ▸</span></div>";
-      else h += "<div class='tuile' role='button' tabindex='0' data-go='" + l.vers + "'>" + ic + "<h3>" + t + "</h3>" + d + "<span class='go'>Ouvrir ▸</span></div>";
+      // une tuile mène soit à une carte du pack (`vers`), soit à une page du
+      // site (`url`) — la galerie des planches, par exemple
+      var cible = l.url ? "data-url='" + esc(l.url) + "'" : "data-go='" + l.vers + "'";
+      if (l.primaire) h += "<div class='tuile primaire' role='button' tabindex='0' " + cible + ">" + ic + "<span class='txt'><h3>" + t + "</h3>" + d + "</span><span class='go'>Commencer ▸</span></div>";
+      else h += "<div class='tuile' role='button' tabindex='0' " + cible + ">" + ic + "<h3>" + t + "</h3>" + d + "<span class='go'>" + (l.url ? "Ouvrir la page ▸" : "Ouvrir ▸") + "</span></div>";
     });
     h += "</div>";
     if (m.pilote && c.notes_pilote) h += "<div class='pilote' style='margin-top:18px'><div class='t'>👁 NOTE PILOTE</div>" + esc(c.notes_pilote) + "</div>";
@@ -571,7 +574,17 @@
     if (S.examen && S.examen.fini && !MODES[S.modeId].feedback && CONFIG.scoring_url) soumettreServeur(c);
     commun();
   }
-  function nav() { onAll("[data-go]", function (el) { el.addEventListener("click", function () { aller(el.getAttribute("data-go")); }); }); }
+  /* `data-go` mène à une CARTE du pack ; `data-url` mène à une PAGE du site
+     (la galerie des planches, par exemple). Extension rétrocompatible : une
+     tuile sans `url` se comporte exactement comme avant. La page s'ouvre dans
+     un onglet à part — on ne fait pas perdre à l'élève l'endroit où il en
+     était dans sa progression. */
+  function nav() {
+    onAll("[data-go]", function (el) { el.addEventListener("click", function () { aller(el.getAttribute("data-go")); }); });
+    onAll("[data-url]", function (el) {
+      el.addEventListener("click", function () { window.open(el.getAttribute("data-url"), "_blank", "noopener"); });
+    });
+  }
   function commun() {
     planchesAnimees(); // le bouton « revoir » sous les planches animées
     // Extension pack fluides : indice de question et texte officiel de

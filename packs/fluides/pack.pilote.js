@@ -8095,6 +8095,12 @@ window.PILOTE_PACK = {
      "desc": "Le matériel et les gestes, à revoir avant l atelier."
     },
     {
+     "url": "galerie.html",
+     "icone": "🎬",
+     "titre": "Voir toutes les animations",
+     "desc": "Les schémas animés du pack sur une seule page, chacun rejouable d un clic : ce qui se passe dans le local, dans le circuit, sur la balance."
+    },
+    {
      "vers": "cfin",
      "icone": "?",
      "titre": "À propos de ce démonstrateur",
