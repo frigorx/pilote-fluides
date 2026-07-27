@@ -9,9 +9,16 @@
     .v  { fill:none; stroke:#c9451a; stroke-width:2.8; stroke-linecap:round; stroke-linejoin:round; }
     /* Le dessin AU REPOS est déjà l'image finale : nappe haute, deux personnes au
        sol, règle affichée. L'animation ne fait que RACONTER comment on y arrive.
-       Si l'appareil demande moins d'animations, on retire les éléments mobiles et
-       il reste l'image finale, exacte et lisible. */
-    @media (prefers-reduced-motion: reduce) {
+       À L'IMPRESSION, où rien ne s'anime, on retire les éléments mobiles et il
+       reste l'image finale, exacte et lisible.
+       Cette règle était autrefois conditionnée à `prefers-reduced-motion`, et
+       c'était une faute : sur une machine où les effets d'animation de Windows
+       sont désactivés (cas courant, et cas de la machine de F. Henninot), le
+       navigateur annonce « moins d'animations » et la planche se figeait — le
+       lecteur voyait deux personnes au sol sans jamais voir pourquoi. Ici
+       l'animation N'EST PAS décorative : elle porte la démonstration, donc elle
+       joue toujours à l'écran. */
+    @media print {
       .mobile { display: none; }
       .final  { opacity: 1 !important; }
     }

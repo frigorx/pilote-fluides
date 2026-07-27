@@ -22,7 +22,15 @@
 
    CE QU'IL VÉRIFIE
    1. deux <animate> sur le même attribut du même élément (le défaut ci-dessus)
-   2. une planche animée sans prise en compte de prefers-reduced-motion
+   2. une planche qui neutralise ses animations sous `prefers-reduced-motion`
+      — INTERDIT depuis le 27/07, et c'est le contraire de ce que ce contrôle
+      exigeait à l'origine. Motif : sur une machine où les effets d'animation
+      de Windows sont désactivés (MinAnimate = 0, cas courant et cas de la
+      machine de F. Henninot), le navigateur annonce « animations réduites » et
+      la règle supprimait la démonstration elle-même, sur les 19 planches à la
+      fois. Ces animations ne sont pas décoratives : elles PORTENT le contenu,
+      et les recommandations d'accessibilité exemptent le mouvement essentiel.
+      Le filet doit être conditionné à `print`, pas au confort visuel.
    3. les <mpath href="#id"> qui pointent vers un id absent
 
    Usage : node build/planches.mjs [--strict]
@@ -68,7 +76,10 @@ const fichiers = readdirSync(DOSSIER).filter((f) => f.endsWith(".svg")).sort();
 
 for (const f of fichiers) {
   const svg = readFileSync(resolve(DOSSIER, f), "utf8");
-  if (!/<animate/.test(svg)) continue;
+  /* SMIL (<animate>) ET animation CSS (`animation:`) : le piège du 27/07
+     frappait les deux, et ne contrôler que le SMIL laissait dix planches
+     sans surveillance — celles où `animation: none` suffisait à tout figer. */
+  if (!/<animate/.test(svg) && !/animation\s*:/.test(svg)) continue;
   animees++;
   const pb = [];
 
@@ -89,10 +100,16 @@ for (const f of fichiers) {
     }
   }
 
-  /* 2 — respect de prefers-reduced-motion */
-  if (!/prefers-reduced-motion/.test(svg))
-    pb.push({ grave: false, txt: "aucune règle prefers-reduced-motion : l'animation tourne " +
-      "même chez qui a demandé qu'on lui épargne le mouvement" });
+  /* 2 — la planche ne doit PAS se neutraliser sous prefers-reduced-motion.
+     On teste la règle CSS elle-même, pas le mot : les commentaires des
+     planches expliquent justement pourquoi cette condition a été retirée. */
+  if (/@media\s*\(\s*prefers-reduced-motion/.test(svg))
+    pb.push({ grave: true, txt: "règle @media (prefers-reduced-motion) : elle SUPPRIME " +
+      "l'animation à l'écran sur toute machine aux effets d'animation Windows désactivés — " +
+      "c'est le piège du 27/07. Conditionner le filet à `print`, jamais au confort visuel" });
+  else if (!/@media\s*print/.test(svg))
+    pb.push({ grave: false, txt: "aucune règle @media print : rien ne garantit que la planche " +
+      "reste juste une fois imprimée, où aucune animation ne se joue" });
 
   /* 3 — les trajectoires pointent vers un chemin existant */
   for (const m of svg.matchAll(/<mpath[^>]*href="#([^"]+)"/g))

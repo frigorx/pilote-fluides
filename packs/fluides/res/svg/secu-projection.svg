@@ -8,7 +8,7 @@
     .bad { font:700 15px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
     .p   { fill:none; stroke:#1b3a63; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
     .acc { fill:none; stroke:#c9451a; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
-    @media (prefers-reduced-motion: reduce) {
+    @media print {
       .final  { opacity: 1 !important; }
       .mobile { display: none; }
     }

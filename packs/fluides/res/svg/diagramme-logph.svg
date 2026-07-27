@@ -11,7 +11,7 @@
     .p   { fill:none; stroke:#1b3a63; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
     .cyc { fill:none; stroke:#c9451a; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
     .dash{ fill:none; stroke:#8fa3b8; stroke-width:1.5; stroke-dasharray:5 5; }
-    @media (prefers-reduced-motion: reduce) { .mobile { display:none; } }
+    @media print { .mobile { display:none; } }
   </style>
 
   <rect width="880" height="470" fill="#ffffff"/>

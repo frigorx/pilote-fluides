@@ -279,9 +279,10 @@ consignation · `cl3` **animation** du CO₂ qui remplit le local par le bas · 
   ⚠️ **Règle de conception à réutiliser** : le dessin AU REPOS doit déjà être l'image FINALE, et
   l'animation ne fait que raconter comment on y arrive. Concrètement : valeurs de base = état
   final ; les éléments qui bougent portent `.mobile`, l'état final porte `.final` ; et une media
-  query `prefers-reduced-motion` retire les mobiles au lieu de tout afficher. Premier jet fautif :
-  la règle affichait **les 4 scènes superposées** — vérifié et corrigé (le navigateur de test a
-  `prefers-reduced-motion` actif, ce qui l'a révélé tout de suite).
+  query **`print`** retire les mobiles au lieu de tout afficher.
+  ⚠️ **Cette media query était conditionnée à `prefers-reduced-motion` jusqu'au 27/07, et c'était
+  une faute** : sur toute machine aux effets d'animation Windows désactivés, elle supprimait les
+  animations à l'écran — c'est-à-dire la démonstration elle-même. Voir le piège du § 5.
   `secu-espace-clos.svg` (version statique en 3 vignettes) reste dans le dépôt, **non utilisée** :
   la garder sous la main pour un support imprimé, où l'animation ne sert à rien.
   **Les 3 autres planches de sécurité animées dans la foulée**, en enrichissant les dessins
@@ -419,12 +420,14 @@ que « G6 · codes 6.01 → 6.08 » promettait huit compétences pour quatre ens
 
 ## 5. Pièges — lus dans le sang, à ne pas réapprendre
 
-**Moteur** — 6 extensions par rapport au r408 d'origine, toutes rétrocompatibles :
+**Moteur** — 5 extensions par rapport au r408 d'origine, toutes rétrocompatibles :
 `examen.niveau` (filtrage par difficulté) · bilan listant les fiches ratées · historique
 `localStorage` · auto-hauteur des iframes par `postMessage` · **portillon d'accès par code**
 (`acces.code_empreinte` sur une carte examen — les 8 `ex-*` le portent, les 13 séries `rev-*`
-restent libres ; déverrouillage mémorisé sur l'appareil) · **bouton « revoir l'animation »**
-sous les planches animées (27/07, voir ci-dessous).
+restent libres ; déverrouillage mémorisé sur l'appareil).
+*(Une 6ᵉ extension — un bouton « revoir l'animation » — a été tentée puis **retirée** le 27/07 :
+elle vidait les planches. Le moteur est revenu à son état d'avant, et la cause réelle du
+problème d'animation était ailleurs, dans les SVG eux-mêmes — voir ci-dessous.)*
 
 - **Les organes se PRENNENT dans la bibliothèque de symboles, ils ne se dessinent pas**
   (`C:\git\usine-contenu\bibliotheque-symboles`, 348 symboles, famille `frigo_schema`).
@@ -443,27 +446,49 @@ sous les planches animées (27/07, voir ci-dessous).
   27/07 : *« je vois 2 mecs en bas, je ne vois pas la descente »*, et *« il n'y a plus aucune
   animation »* sur les gelures. **Rien n'était cassé** — la règle d'accessibilité privait
   simplement l'auteur de ses propres animations, sur toutes les planches à la fois.
-  Correction : cliquer sur le bouton (ou projeter une diapositive) est une demande
-  **explicite** de mouvement. Le moteur charge alors le SVG **en ligne** après avoir retiré la
-  règle `@media (prefers-reduced-motion)`, et relance l'horloge à zéro — ce qu'un `<img>` ne
-  permet pas. Le libellé s'adapte : **« ▶ Lancer l'animation »** quand l'appareil les supprime
-  (elle ne s'est jamais jouée), « ↻ Revoir » sinon. En **projection**, c'est automatique : on
-  ne fait pas cliquer un formateur devant sa classe.
-  ⚠️ **À vérifier sur les PC du lycée** : si l'image système désactive les effets d'animation,
-  tous les postes stagiaires sont dans ce cas.
+  **Première correction : ÉCHEC, annulée** (commit « Retour arrière », 27/07). Le moteur
+  chargeait le SVG **en ligne** après avoir retiré la règle, pour relancer l'horloge à zéro —
+  ce qu'un `<img>` ne permet pas. Les planches devenaient **vides** : les éléments `.final`
+  restaient à `opacity: 0`. Ce qui a réellement échoué, c'est la **vérification** — le
+  navigateur piloté ne compose pas d'images, aucune animation n'y est observable, et trois
+  correctifs ont été empilés sur un symptôme jamais reproduit.
+
+  ✅ **CORRECTION RETENUE (27/07) — on change la CONDITION, pas le mécanisme.**
+  Dans les **19 planches**, `@media (prefers-reduced-motion: reduce)` devient **`@media print`**.
+  Rien d'autre ne bouge : ni les règles elles-mêmes, ni le moteur, ni une ligne de JavaScript.
+  Le raisonnement : ces animations **portent le contenu** (la nappe qui monte, le double
+  accident, la frise de consignation) — elles ne sont pas décoratives, et les recommandations
+  d'accessibilité exemptent le mouvement *essentiel*. Le besoin réel derrière l'ancienne règle
+  — *si l'animation ne joue pas, la planche doit rester juste* — concerne l'**impression et la
+  capture** : c'est exactement ce que `@media print` couvre.
+  **Mesuré sur la machine de F. Henninot, avec son réglage réel** (`MinAnimate = 0` lu au
+  registre, et le navigateur y annonce bien `prefers-reduced-motion: reduce`) : les 10 planches
+  à animation CSS ont retrouvé un `animation-name` actif (`spin`, `flux`, `piston`, `balaye`…)
+  là où il valait `none` ; les 9 planches SMIL gardent leurs `<animate>` en `display: inline` ;
+  et la seule condition média enregistrée par le moteur CSS est `print`. Ces mesures ne
+  dépendent pas du compositing — c'est pourquoi elles valent, contrairement à celles du matin.
+  ⚠️ **Ce qui reste non observable en session** : le déroulé visuel lui-même. Il se valide
+  devant l'écran.
+  ⚠️ **Risque résiduel connu** : les `.final` sont à `opacity: 0` au repos et ne deviennent
+  visibles que **par** l'animation. Si SMIL ne s'exécutait pas, ces planches seraient
+  incomplètes — voir le piège « valeurs de base = état FINAL » ci-dessous, qui n'est pas encore
+  appliqué partout.
+  ⚠️ **PC du lycée** : le réglage du poste n'a plus d'effet sur nos animations, la question ne
+  se pose donc plus pour les postes stagiaires.
 - **Une planche animée ne se revoit qu'en la RECHARGEANT.** Un SVG inséré en `<img>` lance
   son animation au chargement de l'image, pas quand le lecteur arrive dessus. Et **6 des
   9 planches animées sont narratives** : `begin` décalés, **aucun `repeatCount`** — elles se
   déroulent **une seule fois** puis se figent sur leur état final. Qui n'était pas devant
   l'écran à cet instant ne voit jamais l'animation, seulement l'image de fin. Ce n'est pas un
   défaut : c'est le prix du choix « au repos, le dessin est déjà l'image finale ».
-  D'où l'**extension 6 du moteur** (27/07, signalé par F. Henninot) : un bouton
-  « ↻ Revoir l'animation depuis le début » sous les planches animées, qui recharge la source —
-  SMIL ne se pilote pas depuis l'extérieur d'un `<img>`, c'est le seul moyen fiable. La liste
-  des planches animées est **relevée au build** (`PACK_META.svg_animes`), jamais tenue à la
-  main, et le bouton n'apparaît pas sous un dessin fixe. En **projection**, la diapositive
-  recharge en plus la planche à chaque affichage : en salle, on montre une chronologie, pas un
-  instantané pris au hasard dans la boucle.
+  ⏭️ **Question ouverte, à décider après validation des animations** : faut-il un bouton
+  « ↻ Revoir depuis le début » ? Le besoin est réel — qui arrive sur la fiche après coup ne voit
+  que l'image de fin. Mais la tentative du 27/07 a cassé les planches et a été annulée.
+  **Si on y revient, une seule voie** : recharger l'`<img>` en changeant son `src`
+  (`?r=` + horodatage) — jamais d'injection en ligne, jamais de retrait de règle CSS. C'est
+  trois lignes, et la liste des planches animées est déjà relevée au build
+  (`PACK_META.svg_animes`). **Ne rien coder là-dessus tant que F. Henninot n'a pas confirmé,
+  devant son écran, que les animations se déroulent.**
 - **Valeurs de base d'un SVG animé = état FINAL, jamais état initial.** Si le navigateur
   n'exécute pas l'animation (impression, capture, lecteur arrivé trop tard), la planche doit
   rester **juste**. `co2-point-bas.svg` dessinait sa nappe au ras du sol et son capteur éteint :
@@ -524,6 +549,21 @@ la refonte sur les modules M0→M8 les a absorbés. État réel, relevé au buil
 **des journées de sept heures sont-elles tenables pour le public réel ?** Si non, le levier
 disponible est le basculement de séquences de `salle` vers `avant`/`pendant` (autoformation),
 qui sort du volume — pas la suppression de contenu.
+
+### ⏭️ LES PLANCHES ANIMÉES — deux suites, dans cet ordre
+
+**1. Valider le déroulé devant l'écran.** La condition qui bloquait les animations est levée et
+mesurée (§ 5), mais le déroulé visuel ne s'observe pas en session : il faut rouvrir une fiche à
+schéma animé (`s1`, `s4`, le menu sécurité, `cl3`) **avec un rechargement forcé** — le navigateur
+garde les SVG en cache — et dire ce qui se passe réellement.
+
+**2. Poser le filet d'impression : valeurs de base = état FINAL.** Aujourd'hui les éléments
+`.final` sont à `opacity: 0` et ne deviennent visibles que **par** l'animation ; si SMIL ne
+s'exécute pas, la planche est incomplète. Le patron propre : la valeur de base porte l'état
+final, et un `<set attributeName="opacity" to="0" begin="0s" dur="…"/>` masque au démarrage.
+C'est un travail **sur les SVG**, fichier par fichier — 7 planches narratives concernées — et
+surtout **pas** sur le moteur : c'est en touchant au moteur que la session du matin a cassé les
+planches.
 
 ### ⏭️ DEMANDÉ POUR LA PROCHAINE SESSION (F. Henninot, soir du 26/07)
 

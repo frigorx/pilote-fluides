@@ -14,7 +14,7 @@
     @keyframes flux { to { stroke-dashoffset:-14.1; } }
     .flamme { animation:flam 0.5s ease-in-out infinite alternate; transform-box:fill-box; transform-origin:50% 100%; }
     @keyframes flam { from { transform:scale(1); } to { transform:scale(1.12,0.94); } }
-    @media (prefers-reduced-motion:reduce) { .flux,.flamme { animation:none; } }
+    @media print { .flux,.flamme { animation:none; } }
   </style>
 
   <rect width="900" height="340" fill="#ffffff"/>

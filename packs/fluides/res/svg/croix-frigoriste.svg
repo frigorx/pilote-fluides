@@ -25,7 +25,7 @@
     .helice { transform-box:fill-box; transform-origin:center;
               animation:spin 1.8s linear infinite; }
     @keyframes spin { to { transform:rotate(360deg); } }
-    @media (prefers-reduced-motion:reduce) { .flux, .helice { animation:none; } }
+    @media print { .flux, .helice { animation:none; } }
   </style>
 
   <defs>

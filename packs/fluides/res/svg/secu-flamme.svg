@@ -9,7 +9,7 @@
     .p   { fill:none; stroke:#1b3a63; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
     .acc { fill:none; stroke:#c9451a; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
     /* Au repos, l'image est complète : l'animation ne fait que la mettre en scène. */
-    @media (prefers-reduced-motion: reduce) { .final { opacity: 1 !important; } }
+    @media print { .final { opacity: 1 !important; } }
   </style>
 
   <rect width="900" height="320" fill="#ffffff"/>

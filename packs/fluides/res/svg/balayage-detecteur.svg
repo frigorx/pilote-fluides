@@ -12,7 +12,7 @@
     @keyframes balaye { from { transform:translateX(0); } to { transform:translateX(300px); } }
     .nuage { animation:pulse 2.2s ease-in-out infinite; }
     @keyframes pulse { 0%,100% { opacity:.25; } 50% { opacity:.65; } }
-    @media (prefers-reduced-motion:reduce) { .sonde,.nuage { animation:none; } }
+    @media print { .sonde,.nuage { animation:none; } }
   </style>
 
   <rect width="900" height="300" fill="#ffffff"/>

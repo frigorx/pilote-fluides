@@ -15,7 +15,7 @@
     @keyframes asp { 0%,6% { opacity:0; } 14%,44% { opacity:1; } 52%,100% { opacity:0; } }
     .ref { animation:ref 2.6s linear infinite; }
     @keyframes ref { 0%,54% { opacity:0; } 62%,94% { opacity:1; } 100% { opacity:0; } }
-    @media (prefers-reduced-motion:reduce) { .piston,.asp,.ref { animation:none; } .asp,.ref { opacity:1; } }
+    @media print { .piston,.asp,.ref { animation:none; } .asp,.ref { opacity:1; } }
   </style>
 
   <defs>

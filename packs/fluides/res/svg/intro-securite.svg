@@ -8,10 +8,14 @@
     .pt { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
     .p  { fill:none; stroke:#1b3a63; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
     .acc{ fill:none; stroke:#c9451a; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
-    /* Confort visuel : si l'appareil demande moins d'animations, les scènes
-       intermédiaires sont retirées et SEULE l'image finale s'affiche — elle se
-       suffit à elle-même. (Les afficher toutes les superposerait.) */
-    @media (prefers-reduced-motion: reduce) {
+    /* À L'IMPRESSION, où rien ne s'anime : les scènes intermédiaires sont
+       retirées et SEULE l'image finale s'affiche — elle se suffit à elle-même.
+       (Les afficher toutes les superposerait.)
+       Cette règle ne dépend PLUS de `prefers-reduced-motion` : sur une machine
+       aux effets d'animation Windows désactivés, elle réduisait cette
+       introduction en quatre scènes à sa dernière image. L'enchaînement est le
+       contenu, pas un ornement. */
+    @media print {
       .scene    { display: none; }
       .scene-fin { display: block; opacity: 1 !important; }
     }

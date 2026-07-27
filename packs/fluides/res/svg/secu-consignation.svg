@@ -10,7 +10,7 @@
     .acc{ fill:none; stroke:#c9451a; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
     /* L'état AU REPOS est l'image complète ; l'animation ne fait que l'allumer
        étape par étape. Sans animation, tout est là — rien n'est perdu. */
-    @media (prefers-reduced-motion: reduce) { .final { opacity: 1 !important; } }
+    @media print { .final { opacity: 1 !important; } }
   </style>
 
   <rect width="900" height="300" fill="#ffffff"/>

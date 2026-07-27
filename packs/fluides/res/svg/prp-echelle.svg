@@ -9,7 +9,7 @@
     .s   { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
     .barre { animation:pousse 1.4s ease-out both; transform-origin:150px 0; }
     @keyframes pousse { from { transform:scaleX(0); } to { transform:scaleX(1); } }
-    @media (prefers-reduced-motion:reduce) { .barre { animation:none; } }
+    @media print { .barre { animation:none; } }
   </style>
 
   <rect width="900" height="330" fill="#ffffff"/>

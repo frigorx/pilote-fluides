@@ -12,7 +12,7 @@
     .flux{ fill:none; stroke:#fff; stroke-opacity:.9; stroke-width:2.4; stroke-linecap:round;
            stroke-dasharray:0.1 16; animation:flux 1.2s linear infinite; }
     @keyframes flux { to { stroke-dashoffset:-16.1; } }
-    @media (prefers-reduced-motion:reduce) { .flux { animation:none; } }
+    @media print { .flux { animation:none; } }
   </style>
 
   <rect width="900" height="360" fill="#ffffff"/>
