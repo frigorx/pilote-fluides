@@ -4729,8 +4729,8 @@ window.PILOTE_PROJECTION = {
       {
        "type": "encadre",
        "genre": "cle",
-       "t": "Régler le régulateur de pression",
-       "html": "Le régulateur de pression de sortie du condenseur maintient une pression de condensation correcte, même par temps froid. Il se règle <b>selon la fiche constructeur</b>, jamais à l'estime.",
+       "t": "Le régulateur de pression de condensation — un « KVR » sur le terrain",
+       "html": "<p>Quand il fait froid dehors, le condenseur évacue trop bien et la pression de condensation <b>chute</b>. Le détendeur, qui a besoin d'un écart de pression pour alimenter l'évaporateur, ne fait plus passer assez de fluide : la machine perd sa puissance frigorifique alors qu'elle tourne.</p><p>Le <b>régulateur de pression de sortie du condenseur</b> empêche cela. Monté sur la <b>ligne liquide</b>, il retient le liquide pour <b>maintenir la pression de condensation au-dessus d'une valeur réglée</b>, même par temps froid.</p><p>Sur le chantier, tout le monde dit un <b>« KVR »</b>. C'est une référence de constructeur, pas un nom générique — retenez la <b>fonction</b> d'abord, le sigle ensuite : c'est la fonction qui est au référentiel (<b>code 7.02</b>).</p><p>Il se règle <b>selon la fiche constructeur</b>, jamais à l'estime.</p>",
        "titre": "Condenseur — installer, régler, vérifier"
       },
       {
@@ -5217,6 +5217,13 @@ window.PILOTE_PROJECTION = {
        "genre": "piege",
        "t": "Avant toute mise en service",
        "html": "Pour vérifier que l'évaporateur ne fuit pas, la mise en pression se fait à l'<b>azote SEUL</b> — jamais à l'oxygène, jamais à l'air comprimé : avec de l'huile dans le circuit, ce mélange est explosif. Et avant toute intervention sur l'évaporateur ou ses sécurités, on coupe et on <b>consigne l'alimentation électrique</b>.",
+       "titre": "Évaporateur — installer, régler, vérifier"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Deux régulateurs sur la basse pression — « KVP » et « KVL »",
+       "html": "<p>Tous deux portent sur la basse pression, mais ils ne servent pas à la même chose et ne se posent pas au même endroit.</p><p><b>Le régulateur de pression d'évaporation</b> — sur le terrain, un <b>« KVP »</b> — se monte en <b>sortie d'évaporateur</b>. Il empêche la pression d'évaporation de <b>descendre</b> sous la valeur réglée, donc la température de l'évaporateur de descendre trop bas. C'est ce qui permet de faire tourner <b>plusieurs évaporateurs à des températures différentes sur un même compresseur</b> : chacun garde la sienne. Codes <b>8.02</b> et <b>8.07</b>.</p><p><b>Le régulateur de pression de carter</b> — un <b>« KVL »</b> — se monte sur la <b>ligne d'aspiration, juste avant le compresseur</b>, et lui <b>limite</b> la pression d'aspiration. Son cas d'école est le <b>redémarrage après un arrêt long</b> : la pression s'est égalisée dans tout le circuit, et sans lui le compresseur repartirait sur une aspiration trop haute — donc un moteur surchargé.</p><p>Pour ne pas les confondre : le <b>KVP protège le froid</b> (il empêche de descendre), le <b>KVL protège le moteur</b> (il empêche de monter).</p><p>Comme le KVR, ce sont des références de constructeur : la <b>fonction</b> est au référentiel, le sigle est le mot du chantier.</p>",
        "titre": "Évaporateur — installer, régler, vérifier"
       },
       {
@@ -6579,13 +6586,13 @@ window.PILOTE_PROJECTION = {
     {
      "type": "cours",
      "fiche": "g4b",
-     "titre": "Méthode indirecte — mesurer et interpréter",
+     "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement",
      "minutes": 40,
      "video": null,
      "slides": [
       {
        "type": "titre",
-       "titre": "Méthode indirecte — mesurer et interpréter",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement",
        "dc": "G4 · codes 4.04 · 4.05",
        "competences": [
         {
@@ -6616,33 +6623,102 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "schema",
-       "src": "packs/fluides/res/svg/lecture-table.svg",
-       "alt": "La lecture croisée : manomètre + 1 bar, table de saturation du fluide, sonde de contact.",
-       "titre": "Méthode indirecte — mesurer et interpréter"
+       "src": "packs/fluides/res/svg/surchauffe-utile-totale.svg",
+       "alt": "Surchauffe utile et surchauffe totale : deux points de mesure sur la ligne d'aspiration, une seule référence — la température de saturation déduite de la pression.",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
       },
       {
        "type": "point",
-       "html": "La méthode indirecte <b>ne détecte pas la fuite</b> : elle détecte un <b>fonctionnement anormal</b> qui la trahit. On relève les <b>pressions</b> (BP et HP) au manomètre et les <b>températures</b> au thermomètre de contact, puis on compare à la <b>table de saturation</b> du fluide présent.",
-       "titre": "Méthode indirecte — mesurer et interpréter"
+       "html": "La méthode indirecte <b>ne détecte pas la fuite</b>. Elle détecte un <b>fonctionnement anormal</b> qui la trahit. On ne cherche pas le trou : on regarde si la machine se comporte comme son fluide devrait le faire.",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
       },
       {
        "type": "point",
-       "html": "Une pression plus basse que la valeur théorique attendue, une <b>surchauffe</b> qui grimpe au-delà des 5 à 10 K habituels, un <b>sous-refroidissement</b> qui s'effondre sous les 4 à 8 K : autant d'indices convergents d'un manque de charge. Le multimètre complète le tableau (intensité absorbée, cohérence électrique).",
-       "titre": "Méthode indirecte — mesurer et interpréter"
+       "html": "Tout repose sur une <b>comparaison</b>, et elle tient en quatre temps :",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "point",
+       "html": "Cette différence porte un nom selon l'endroit où on la prend. Du côté <b>vapeur</b>, sur l'aspiration, c'est la <b>surchauffe</b>. Du côté <b>liquide</b>, en sortie de condenseur, c'est le <b>sous-refroidissement</b>.",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "point",
+       "html": "Deux choses à ne jamais perdre de vue. D'abord ce sont des <b>écarts</b>, jamais des températures : on les compte en <b>kelvins</b>, parce qu'un kelvin d'écart et un degré d'écart, c'est la même chose, alors qu'une température en kelvins et une température en degrés, non. Ensuite la référence n'est pas fixe : la température de saturation <b>dépend de la pression du moment</b>. Relevez la pression et la température <b>en même temps</b>, sinon vous comparez deux instants différents.",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "point",
+       "html": "<b>La surchauffe se mesure en deux points, et ce n'est pas la même mesure.</b>",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "point",
+       "html": "L'écart entre les deux vous renseigne sur la <b>ligne</b> elle-même : une ligne d'aspiration longue, mal isolée ou qui traverse un local chaud réchauffe le fluide sans rien produire de froid. C'est du travail perdu pour le compresseur.",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "point",
+       "html": "<b>Pourquoi on règle la surchauffe</b>, et pourquoi elle a deux bornes :",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "point",
+       "html": "Le <b>sous-refroidissement</b> répond à la même logique de l'autre côté : il garantit qu'il arrive du <b>liquide pur</b> au détendeur. De la vapeur à cet endroit dérégle l'alimentation de l'évaporateur.",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "point",
+       "html": "Repères courants, à recaler sur la documentation du constructeur : <b>surchauffe 5 à 10 K</b>, <b>sous-refroidissement 4 à 8 K</b>.",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "point",
+       "html": "Enfin, ce que l'écart raconte. Une pression plus basse que la valeur attendue, une surchauffe qui grimpe, un sous-refroidissement qui s'effondre : autant d'indices convergents d'un <b>manque de charge</b>. Le multimètre complète le tableau — intensité absorbée, cohérence électrique. <b>Un seul indice ne conclut rien</b> : c'est leur convergence qui oriente, et c'est elle qui justifie d'aller ensuite chercher la fuite par une méthode directe.",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li>relever la <b>pression</b> au manomètre, et la convertir en <b>absolu</b> ;</li><li>lire dans la table du fluide la <b>température de saturation</b> qui correspond à cette pression ;</li><li>mesurer la <b>température réelle du tube</b>, au thermomètre de contact, au bon endroit ;</li><li>faire la <b>différence</b>. C'est tout.</li></ul>",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li>À la <b>sortie de l'évaporateur</b>, là où se trouve le bulbe du détendeur : c'est la <b>surchauffe utile</b>. Utile parce que c'est celle qui s'est produite <b>dans</b> l'évaporateur, donc celle qui a servi à prendre de la chaleur au local.</li><li>À l'<b>entrée du compresseur</b>, au bout de la ligne d'aspiration : c'est la <b>surchauffe totale</b>. Elle vaut la surchauffe utile <b>plus ce que la ligne d'aspiration a ajouté</b> en se réchauffant sur son parcours.</li></ul>",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li><b>Trop peu</b> de surchauffe : le fluide n'a pas fini de bouillir. Du <b>liquide</b> arrive au compresseur — c'est le coup de liquide, et un compresseur ne comprime pas un liquide. C'est la panne grave.</li><li><b>Trop</b> de surchauffe : le fluide arrive trop chaud, le compresseur s'échauffe, son rendement chute, et l'évaporateur travaille moins bien qu'il ne pourrait.</li></ul>",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ul><li>La méthode indirecte cherche une <b>anomalie</b>, pas une fuite.</li><li>Le geste : pression → absolu → température de saturation → température du tube → <b>différence</b>.</li><li><b>Surchauffe utile</b> : au bulbe, en sortie d'évaporateur — c'est elle qui a fait le froid.</li><li><b>Surchauffe totale</b> : à l'aspiration — utile + ce que la ligne a ajouté.</li><li>Des <b>écarts</b> en kelvins, jamais des températures. Pression et température relevées <b>ensemble</b>.</li><li>Repères : surchauffe <b>5 à 10 K</b>, sous-refroidissement <b>4 à 8 K</b>.</li></ul>",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
       },
       {
        "type": "encadre",
        "genre": "cle",
        "t": "Trois instruments, trois informations",
-       "html": "<b>Manomètre</b> (BP/HP) → écart avec la table de saturation.<br><b>Thermomètre de contact</b> → surchauffe et sous-refroidissement.<br><b>Multimètre</b> → cohérence électrique du compresseur.<br>Un seul indice ne conclut rien ; c'est leur <b>convergence</b> qui oriente.",
-       "titre": "Méthode indirecte — mesurer et interpréter"
+       "html": "<b>Manomètre</b> (BP/HP) → la pression, donc la température de saturation par la table.<br><b>Thermomètre de contact</b> → la température réelle du tube, donc l'écart.<br><b>Multimètre</b> → la cohérence électrique du compresseur.<br>Un seul indice ne conclut rien ; c'est leur <b>convergence</b> qui oriente.",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Zéro kelvin de surchauffe n'est pas « une surchauffe faible »",
+       "html": "<p>Une surchauffe qui tombe à zéro veut dire qu'il reste du <b>liquide</b> dans le tube d'aspiration. Ce n'est pas un réglage un peu bas : c'est du liquide en route vers le compresseur.</p><p>Et la mesure ne le crie pas : elle affiche simplement un petit chiffre. C'est au technicien de savoir que ce petit chiffre-là est une alerte, pas une valeur.</p>",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
       },
       {
        "type": "encadre",
        "genre": "piege",
        "t": "Relatif ou absolu ?",
-       "html": "Toujours le même piège : ne pas confondre pression <b>relative</b> (lue au manomètre) et pression <b>absolue</b> (souvent utilisée dans les tables). Écart : environ 1 bar. Et un fluide n'a jamais la table d'un autre.",
-       "titre": "Méthode indirecte — mesurer et interpréter"
+       "html": "Toujours le même piège : ne pas confondre pression <b>relative</b> (lue au manomètre) et pression <b>absolue</b> (souvent utilisée dans les tables). Écart : environ 1 bar. Et un fluide n'a jamais la table d'un autre : on vérifie sur la plaque et dans le registre.",
+       "titre": "Méthode indirecte — mesurer surchauffe et sous-refroidissement"
       }
      ],
      "questions": [

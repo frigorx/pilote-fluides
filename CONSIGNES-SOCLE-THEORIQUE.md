@@ -194,7 +194,30 @@ Ce que le stagiaire doit savoir faire, dans cet ordre :
 Renvoyer vers l'outil déjà embarqué (`r-mollier`, FRIGOLO log p-h interactif) et vers
 `r-enthalpique` : ils existent, ils ne sont pas exploités.
 
-### Chantier 3 — Surchauffe et sous-refroidissement (fiche dédiée)
+### ✅ Chantier 3 — Surchauffe et sous-refroidissement — FAIT le 27/07
+
+> **Réalisé dans `g4b`, pas dans une fiche séparée. ⚠️ ÉCART ASSUMÉ à la consigne, à trancher.**
+> Motif : `g4b` — la fiche de la méthode indirecte, cœur du parcours E — faisait **91 mots** pour
+> deux codes PRATIQUES (4.04, 4.05). C'était le trou le plus grave du pack, pire que `g1b`.
+> Et la chaîne était déjà complète ailleurs : `g1e` donne le SENS de la surchauffe, `g1b` montre
+> OÙ elle se lit sur le diagramme — il ne manquait que le GESTE, et le geste est dans `g4b`.
+> Une quatrième fiche aurait fait triplon.
+>
+> `g4b` : **91 → 532 mots**. Nouvelle planche `surchauffe-utile-totale.svg`.
+> « surchauffe utile » 0 → **4**, « surchauffe totale » 0 → **3**.
+>
+> **La distinction utile / totale est enseignée avec la formulation de ce document** — utile au
+> bulbe (celle qui a fait le froid), totale à l'aspiration (utile + ce que la ligne a ajouté).
+> ⚠️ **Toujours À VALIDER**, comme demandé au § 4.
+> **Aucune valeur chiffrée n'est donnée pour utile ni pour totale**, exprès : la divergence entre
+> la charte du pack (5-10 K) et les repères de FRIGOLO n'est pas tranchée (§ 4, arbitrage 6).
+> Seuls les repères de la charte figurent, pour la surchauffe et le sous-refroidissement globaux.
+>
+> Ajouté au passage, et ce n'était pas dans la consigne : **zéro kelvin de surchauffe n'est pas
+> « une surchauffe faible »**, c'est du liquide en route vers le compresseur. La mesure ne le crie
+> pas, elle affiche un petit chiffre.
+
+### La consigne d'origine, pour mémoire
 
 Aujourd'hui : 136 emplois, zéro enseignement. À poser proprement.
 - **Ce que c'est** : nombre de kelvins au-delà (ou en deçà) du point de saturation, à la pression
@@ -210,7 +233,24 @@ Aujourd'hui : 136 emplois, zéro enseignement. À poser proprement.
 - **Valeurs** : la charte **autorise** surchauffe **5-10 K** et sous-refroidissement **4-8 K**
   (voir § 3). Les donner, en précisant qu'elles se recalent sur la doc constructeur.
 
-### Chantier 4 — Les régulateurs de pression (`g7b` 118 mots, `g8b` 236 mots)
+### ✅ Chantier 4 — Les régulateurs de pression — FAIT le 27/07
+
+> **Les trois composants sont NOMMÉS.** KVP · KVL · KVR passent de **0 à 3 occurrences** chacun.
+> Nouvelle planche `regulateurs-pression.svg` : les trois situés sur le circuit, dessiné selon la
+> croix du frigoriste. `g7b` 118 → **488 mots** (corps + encadrés), `g8b` 236 → **632**.
+>
+> **Arbitrage n° 1 appliqué tel que proposé au § 4** : la **fonction** d'abord, sous son nom
+> générique et avec son code au référentiel ; le sigle ensuite, présenté comme le mot du chantier
+> et non comme un nom officiel. ⚠️ **À confirmer.**
+>
+> Moyen mnémotechnique ajouté : le **KVP protège le FROID** (il empêche de descendre), le
+> **KVL protège le MOTEUR** (il empêche de monter).
+>
+> ⚠️ **RESTE À VALIDER, et c'est écrit dans les `notes_pilote`** : les trois descriptions sont
+> écrites de mémoire technique, pas lues sur une documentation constructeur — exactement la
+> réserve posée au § 2 de ce document. Elles n'ont pas été relues par un frigoriste.
+
+### La consigne d'origine, pour mémoire
 
 Codes 7.02, 8.02, 8.07. Développer les deux fiches et **nommer les composants**.
 - **Régulateur de pression d'évaporation** (couramment « KVP ») : monté en sortie d'évaporateur,

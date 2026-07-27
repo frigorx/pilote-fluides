@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 575" role="img"
+     aria-label="Les trois régulateurs de pression et leur place sur le circuit, dessiné selon la croix du frigoriste : détendeur à gauche, compresseur à droite, condenseur en haut, évaporateur en bas. Le régulateur de pression de condensation se place sur la ligne liquide, en sortie de condenseur : il maintient une pression de condensation suffisante quand il fait froid dehors. Le régulateur de pression d'évaporation se place en sortie d'évaporateur : il empêche la pression d'évaporation de descendre sous la valeur réglée. Le régulateur de pression de carter se place sur la ligne d'aspiration juste avant le compresseur : il limite la pression d'aspiration, notamment au redémarrage après un arrêt long, pour ne pas surcharger le moteur.">
+  <title>Les trois régulateurs de pression : lequel, où, et pourquoi</title>
+  <style>
+    .t  { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .st { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lb { font:700 13px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lg { font:400 13px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .xs { font:400 11.5px Calibri,Segoe UI,sans-serif; fill:#7c8a99; }
+    .p  { fill:none; stroke:#1b3a63; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+    .hp { fill:none; stroke:#c9451a; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+    .bp { fill:none; stroke:#2a6fae; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+  </style>
+
+  <rect width="900" height="575" fill="#ffffff"/>
+  <text class="t" x="30" y="30">Les trois régulateurs de pression : lequel, où, et pourquoi</text>
+  <text class="xs" x="30" y="50">Circuit dessiné selon la croix du frigoriste — détendeur à gauche, compresseur à droite, condenseur en haut, évaporateur en bas.</text>
+
+  <!-- circuit : HP en haut/droite, BP en bas/gauche -->
+  <path class="hp" d="M700,266 V150 H530"/>
+  <path class="hp" d="M370,150 H190 V264"/>
+  <path class="bp" d="M190,316 V430 H370"/>
+  <path class="bp" d="M530,430 H700 V314"/>
+
+  <!-- condenseur -->
+  <g transform="translate(450,150)">
+    <rect x="-80" y="-27" width="160" height="54" rx="5" fill="#fff" stroke="#1b3a63" stroke-width="2.4"/>
+    <path class="p" d="M-80,-12 L60,-12 A10 10 0 0 1 60,8 L-60,8 A10 10 0 0 0 -60,26 L80,26" style="stroke-width:1.6"/>
+    <text class="st" x="0" y="-38" text-anchor="middle">Condenseur</text>
+  </g>
+  <!-- evaporateur -->
+  <g transform="translate(450,430)">
+    <rect x="-80" y="-27" width="160" height="54" rx="5" fill="#fff" stroke="#1b3a63" stroke-width="2.4"/>
+    <path class="p" d="M-80,-12 L60,-12 A10 10 0 0 1 60,8 L-60,8 A10 10 0 0 0 -60,26 L80,26" style="stroke-width:1.6"/>
+    <text class="st" x="0" y="48" text-anchor="middle">Évaporateur</text>
+  </g>
+  <!-- compresseur -->
+  <g transform="translate(700,290)">
+    <circle cx="0" cy="0" r="24" fill="#fff" stroke="#1b3a63" stroke-width="2.4"/>
+    <path class="p" d="M-9,-8 L9,0 L-9,8 Z" fill="#e8eef4"/>
+    <text class="st" x="42" y="5">Compresseur</text>
+  </g>
+  <!-- detendeur -->
+  <g transform="translate(190,290)">
+    <path class="p" d="M-14,-16 L14,16 M14,-16 L-14,16" stroke-width="2.8"/>
+    <text class="st" x="-30" y="5" text-anchor="end">Détendeur</text>
+  </g>
+
+  <text class="xs" x="716" y="212" style="fill:#c9451a;font-weight:700">HAUTE PRESSION</text>
+  <text class="xs" x="178" y="386" text-anchor="end" style="fill:#2a6fae;font-weight:700">BASSE PRESSION</text>
+
+  <!-- KVR : pression de condensation, sur la ligne liquide -->
+  <g transform="translate(300,150)">
+    <circle cx="0" cy="0" r="15" fill="#fdf1ed" stroke="#c9451a" stroke-width="2.6"/>
+    <text style="font:700 12px Calibri;fill:#c9451a" x="0" y="4" text-anchor="middle">1</text>
+    <path class="p" d="M0,-15 v-24" stroke="#c9451a"/>
+    <text class="lb" x="0" y="-46" text-anchor="middle" style="fill:#c9451a">pression de CONDENSATION</text>
+  </g>
+  <!-- KVP : pression d'evaporation, sortie evaporateur -->
+  <g transform="translate(590,430)">
+    <circle cx="0" cy="0" r="15" fill="#eaf2f8" stroke="#2a6fae" stroke-width="2.6"/>
+    <text style="font:700 12px Calibri;fill:#2a6fae" x="0" y="4" text-anchor="middle">2</text>
+    <path class="p" d="M0,15 v46" stroke="#2a6fae"/>
+    <text class="lb" x="0" y="78" text-anchor="middle" style="fill:#2a6fae">pression d'ÉVAPORATION</text>
+  </g>
+  <!-- KVL : pression de carter, juste avant le compresseur -->
+  <g transform="translate(700,378)">
+    <circle cx="0" cy="0" r="15" fill="#eaf2f8" stroke="#2a6fae" stroke-width="2.6"/>
+    <text style="font:700 12px Calibri;fill:#2a6fae" x="0" y="4" text-anchor="middle">3</text>
+    <path class="p" d="M15,0 h26" stroke="#2a6fae"/>
+    <text class="lb" x="46" y="5" style="fill:#2a6fae">pression de CARTER</text>
+  </g>
+
+  <!-- legende -->
+  <g transform="translate(30,528)">
+    <text class="lg" x="0" y="0"><tspan style="font-weight:700;fill:#c9451a">1</tspan> Sur la ligne liquide, « KVR » — il EMPÊCHE la pression de condensation de trop <tspan style="font-weight:700">descendre</tspan> quand il fait froid dehors.</text>
+    <text class="lg" x="0" y="21"><tspan style="font-weight:700;fill:#2a6fae">2</tspan> En sortie d'évaporateur, « KVP » — il empêche la pression d'évaporation de <tspan style="font-weight:700">descendre</tspan> sous la valeur réglée. Il protège le FROID.</text>
+    <text class="lg" x="0" y="42"><tspan style="font-weight:700;fill:#2a6fae">3</tspan> Avant le compresseur, « KVL » — il <tspan style="font-weight:700">limite</tspan> la pression d'aspiration, surtout au redémarrage. Il protège le MOTEUR.</text>
+  </g>
+</svg>

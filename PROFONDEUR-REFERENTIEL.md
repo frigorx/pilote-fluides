@@ -24,6 +24,7 @@ Présents dans plus de 40 % des cartes : ils valident sans discriminer.
 - `securite` — 46 % des cartes (utilisé par 11.01)
 - `direct` — 44 % des cartes (utilisé par 4.06, 12.11)
 - `raccord` — 42 % des cartes (utilisé par 4.01, 12.01)
+- `arret` — 42 % des cartes (utilisé par 6.06)
 
 ---
 
