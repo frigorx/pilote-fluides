@@ -41,6 +41,7 @@ for (const b of [PARCOURS.amont, PARCOURS.aval])
 /* ---- la couverture, telle que build.mjs l'a écrite ---- */
 const couv = lire("COUVERTURE-REFERENTIEL.md");
 const prof = lire("PROFONDEUR-REFERENTIEL.md");
+const mat = lire("MATRICE-COMPETENCES.md");
 const nb = (txt, re) => { const m = txt.match(re); return m ? m[1] : "?"; };
 
 const banque = JSON.parse(lire("packs/fluides/banque.gen.json"));
@@ -65,6 +66,11 @@ const C = {
   profondeur: nb(prof, /🟢 aucun signal d'absence \| (\d+)/) + " / " +
     nb(prof, /(\d+) codes mesurés/),
   competences: nb(couv, /(\d+) codes? cités/) !== "?" ? nb(couv, /(\d+) codes? cités/) : "99",
+  /* traçabilité : combien de compétences exigées sont à la fois enseignées
+     par une fiche ET vérifiées par des questions (matrice.mjs) */
+  tracabilite:
+    nb(mat, /- ✅ \*\*(\d+)\*\* enseignées/) + " / " +
+    nb(mat, /Sur les \*\*(\d+) compétences\*\*/),
   poids: Math.round(Buffer.byteLength(lire("packs/fluides/pack.eleve.js")) / 1024) + " Ko",
 };
 

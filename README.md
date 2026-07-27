@@ -19,8 +19,8 @@ tournant dans le moteur générique **inerWeb Pilote**.
 | | |
 |---|---|
 | **4 parcours** | A1, A2, D, E — un seul pack, une carte menu par catégorie, périmètres réglementaires respectés |
-| **52 cartes** | 1 accueil · 5 menus · 19 fiches · 5 exercices « frigoriste-détective » · 21 séries et examens · 1 bilan |
-| **180 questions** | banque étiquetée par groupe (G1 → G13) ET par niveau, avec indice et remédiation complète |
+| **Les cartes** | 1 accueil · des menus par module · les fiches de cours · 5 exercices « frigoriste-détective » · les séries et examens · 1 bilan. **Le compte exact est relevé à chaque fabrication** : voir [`REPRISE.md`](REPRISE.md) § 2 ou les compteurs du [portail](portail.html) — on ne recopie plus un chiffre à la main ici, c'est ainsi qu'on se met à mentir. |
+| **La banque** | questions étiquetées par groupe (G1 → G13) ET par niveau, avec indice et remédiation complète, chacune rattachée à un **code de compétence** de l'arrêté |
 | **3 paliers** | Échauffement (niveau 1, seuil 60 %) · Examen blanc (mixte, 70 %) · Défi technicien (niveau 2, 80 %) |
 | **Auto-formation** | espace « Réviser par thème » : 13 séries corrigées, chaque erreur renvoie vers sa fiche, bilan des fiches à revoir, score précédent mémorisé (localStorage, rien ne sort du navigateur) |
 | **Remédiation** | réponse fausse → bouton « Revoir la fiche » vers la fiche concernée |
@@ -91,15 +91,19 @@ d'interdiction). Ces valeurs sont à revalider sur pièce avant tout usage en fo
 ## Fabrication
 
 ```bash
-node build/convert.mjs   # Mission F-GAZ → packs/fluides/banque.gen.json
+node build/convert.mjs    # Mission F-GAZ → packs/fluides/banque.gen.json
 node build/build.mjs      # cartes.js + banque → pack.pilote.js ET pack.eleve.js
+                          # (enchaîne la profondeur et la matrice de traçabilité)
+node build/parcours.mjs   # parcours.js + fiches → projection.gen.js (le support de salle)
 node build/relecture.mjs  # → relecture.html (document de bon à tirer)
+node build/chiffres.mjs   # → chiffres.gen.js : les compteurs des pages, RELEVÉS
 ```
 
 | Fichier | Rôle |
 |---|---|
 | `packs/fluides/cartes.js` | **source éditoriale** — c'est ici qu'on écrit |
 | `packs/fluides/banque.gen.json` | banque générée — ne pas éditer à la main |
+| `MATRICE-COMPETENCES.md` + `matrice.html` | **la matrice de traçabilité** : pour chaque compétence de l'arrêté, la fiche qui l'enseigne et les questions qui la vérifient. Générée, jamais saisie |
 | `packs/fluides/pack.eleve.js` | build élève, **purgé** de la couche pilote |
 | `packs/fluides/pack.pilote.js` | build formateur, **avec** les notes |
 | `moteur/` | moteur générique, repris tel quel de [`frigorx/r408`](https://github.com/frigorx/r408) |
@@ -114,11 +118,15 @@ En l'état, `formateur.html` et `pack.pilote.js` **sont publiés**, pour que les
 voir la couche pilote sans installation. Les notes formateur ne sont pas des corrigés d'examen —
 ce sont des conseils d'animation — mais elles deviennent publiques.
 
-Pour les retirer de la publication : supprimer `formateur.html` et `packs/fluides/pack.pilote.js`
-du dépôt, et les régénérer en local par `node build/build.mjs`. Le mode « Pilotage » resterait
-alors accessible depuis `index.html` (mot de passe `prof`), mais **n'afficherait rien**, faute de
-notes dans le build élève — ce qui est le comportement voulu par la règle « pas de secret dans le
-navigateur élève ».
+Depuis le 25/07, `formateur.html` et `projection.html` **exigent le code d'accès** (niveau 1) : le
+mot de passe `prof`, qui était en clair dans `moteur.js`, n'existe plus. Seule l'empreinte du code
+est versionnée, jamais le code lui-même.
+
+Pour les retirer complètement de la publication : supprimer `formateur.html`, `projection.html` et
+`packs/fluides/pack.pilote.js` du dépôt, et les régénérer en local par `node build/build.mjs`. Le
+mode « Pilotage » resterait alors accessible depuis `index.html` mais **n'afficherait rien**, faute
+de notes dans le build élève — ce qui est le comportement voulu par la règle « pas de secret dans
+le navigateur élève ».
 
 ---
 

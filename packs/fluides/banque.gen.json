@@ -390,7 +390,7 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "hors_ref": true
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
  },
  {
   "id": "q-g1-33",
@@ -408,7 +408,7 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "hors_ref": true
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
  },
  {
   "id": "q-g1-34",
@@ -444,7 +444,7 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "hors_ref": true
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
  },
  {
   "id": "q-g1-41",
@@ -462,7 +462,7 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "hors_ref": true
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
  },
  {
   "id": "q-g1-45",
@@ -498,7 +498,7 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "hors_ref": true
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
  },
  {
   "id": "q-g1-v6_031",
@@ -519,7 +519,7 @@
    "texte": "Règle de nomenclature : centaines = C−1, dizaines = H+1, unités = F. Ex: R134a → C=1+1=2, H=3−1=2, F=4."
   },
   "remediation_vers": "g1c",
-  "hors_ref": true
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
  },
  {
   "id": "q-g1-v6_132",
@@ -540,7 +540,7 @@
    "texte": "Le R410A est un mélange quasi-azéotrope de R32 (50%) + R125 (50%). Ses hautes pressions le distinguent."
   },
   "remediation_vers": "g1c",
-  "hors_ref": true
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
  },
  {
   "id": "q-g1-v6_137",
@@ -561,7 +561,7 @@
    "texte": "Le R12 (dichlorodifluorométhane) est un CFC interdit depuis 1995. Il détruit la couche d'ozone (ODP élevé)."
   },
   "remediation_vers": "g1c",
-  "hors_ref": true
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
  },
  {
   "id": "q-g2-v6_001",
@@ -3117,7 +3117,7 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g10",
-  "hors_ref": true
+  "hors_ref": "cintrage : geste métier ; le groupe 10 ne couvre que le brasage (10.01) et les supports (10.02)"
  },
  {
   "id": "q-g10-84",
@@ -3135,7 +3135,7 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g10",
-  "hors_ref": true
+  "hors_ref": "dudgeonnage : raccord mécanique, hors du groupe 10 (brasage, supports)"
  },
  {
   "id": "q-g10-v6_157",
@@ -3156,7 +3156,7 @@
    "texte": "Avant tout raccordement, il faut purger l'air du flexible pour ne pas introduire d'incondensables dans le circuit."
   },
   "remediation_vers": "g10",
-  "hors_ref": true
+  "hors_ref": "raccordement sur vanne Schrader : geste métier non listé à l'annexe II.B"
  },
  {
   "id": "q-g10-69",
@@ -3603,7 +3603,7 @@
    "texte": "L'ammoniac est classé B (toxicité élevée) et 2L (légèrement inflammable). Il nécessite des précautions strictes."
   },
   "remediation_vers": "g13",
-  "hors_ref": true
+  "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack"
  },
  {
   "id": "q-g13-v6_094",
@@ -3624,7 +3624,7 @@
    "texte": "L'ammoniac est le fluide de référence du froid industriel (entrepôts, chambres froides, agroalimentaire) grâce à ses excellentes propriétés thermodynamiques."
   },
   "remediation_vers": "g13",
-  "hors_ref": true
+  "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack"
  },
  {
   "id": "q-g13-v6_182",
@@ -3645,7 +3645,7 @@
    "texte": "L'ammoniac a une odeur extrêmement reconnaissable et détectable à très faible concentration (5 ppm). C'est un avantage pour la sécurité."
   },
   "remediation_vers": "g13",
-  "hors_ref": true
+  "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack"
  },
  {
   "id": "q-g13-283",

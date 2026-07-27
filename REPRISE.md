@@ -43,6 +43,7 @@ Doctrine [[feedback_protection_code]] : licence + antériorité git, jamais de c
 | [`formateur.html`](https://frigorx.github.io/pilote-fluides/formateur.html) | mode pilotage verrouillé, notes d'animation visibles | formateur |
 | [`partage.html`](https://frigorx.github.io/pilote-fluides/partage.html) | affiche A4 / écran avec QR code | à projeter en salle |
 | [`relecture.html`](https://frigorx.github.io/pilote-fluides/relecture.html) | tout le contenu à plat, cases ✅/✏ | **le bon à tirer** |
+| [`matrice.html`](https://frigorx.github.io/pilote-fluides/matrice.html) | **la matrice de traçabilité** : les 136 compétences de l'arrêté une par une — la fiche qui l'enseigne, les questions qui la vérifient, le texte officiel. Filtrable par catégorie et par état. Version Markdown : `MATRICE-COMPETENCES.md` | direction, organisme évaluateur |
 | [`documents.html`](https://frigorx.github.io/pilote-fluides/documents.html) | **le dossier du projet** : 6 documents libres (état, mesures, licence) + **38 documents chiffrés** derrière le code — dossier de direction (projet + budget, en téléchargement), architecture, ingénierie, système qualité, 21 chapitres de cours | tous publics / formateur |
 
 Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « pilote-fluides ».
@@ -68,6 +69,11 @@ narratifs**) · 4 illustrations · **3 outils embarqués**
 > sous règles strictes + vérification adversariale + intégration), **94/94 tenus** au build
 > suivant. La mesure tourne à chaque build : ça ne peut plus se redégrader en silence.
 > L'instrument : `packs/fluides/profondeur-attendus.json` (v0.3, à faire relire).
+>
+> **Traçabilité (27/07)** : `MATRICE-COMPETENCES.md` + `matrice.html` répondent à la question
+> qu'un organisme évaluateur doit savoir traiter — *où est-ce enseigné, où est-ce vérifié ?*
+> **94/94** compétences exigées sont enseignées **et** interrogées ; aucune fiche orpheline,
+> aucune question sans fiche de repli. Générée à chaque build, jamais saisie.
 
 | | |
 |---|---|
@@ -318,6 +324,7 @@ ratées → score précédent affiché (localStorage élève, **rien ne remonte*
 node build/convert.mjs    # Mission F-GAZ + questions-pack.json → banque.gen.json (202 questions)
 node build/build.mjs      # cartes.js + banque → pack.pilote.js ET pack.eleve.js
 node build/parcours.mjs   # parcours.js + fiches → projection.gen.js (le support de salle)
+node build/matrice.mjs    # → MATRICE-COMPETENCES.md + matrice.html (lancé aussi par build.mjs)
 node build/relecture.mjs  # → relecture.html (document de bon à tirer)
 node build/chiffres.mjs   # → chiffres.gen.js : les compteurs des pages, RELEVÉS et non saisis
 node build/coffre.mjs "<code n1>"                 # → docs/coffre/ : documents chiffrés
@@ -372,6 +379,7 @@ court n'ouvre pas les examens, et déverrouiller le niveau 1 laisse les examens 
 | `packs/fluides/profondeur-attendus.json` | **l'instrument de profondeur** — chaque code décomposé en notions sentinelles (motifs regex) tirées du libellé officiel. Ne s'ajuste que si la fiche enseigne la notion sous un autre mot, jamais pour verdir un chiffre |
 | `build/profondeur.mjs` | mesure que chaque code cité est **tenu** — lancé par `build.mjs`, avertit sans bloquer (`--strict` pour bloquer). Corpus = contenu visible de l'élève, hors notes formateur |
 | `PROFONDEUR-REFERENTIEL.md` | **généré à chaque build** — codes cités non tenus, notions absentes, motifs aveugles |
+| `build/matrice.mjs` → `MATRICE-COMPETENCES.md` + `matrice.html` | **la matrice de traçabilité**, quatrième mesure : COUVERTURE dit qu'un code est *cité*, PROFONDEUR qu'il est *tenu*, la MATRICE qu'il est *enseigné ET vérifié* — seule la relecture métier dira qu'il est *bien* enseigné. Rien n'y disparaît : codes hors périmètre (13.xx, 14.xx, B et C) et questions hors référentiel y figurent avec leur statut et leur motif |
 | `build/convert.mjs` | sélection + niveaux + **codes de compétence** + remédiation, depuis Mission F-GAZ |
 | `packs/fluides/banque.gen.json` | banque générée — **ne jamais éditer à la main** |
 | `packs/fluides/pack.eleve.js` | build élève, **purgé** de la couche pilote |
@@ -508,25 +516,39 @@ cours portant un code théorique sous 300 mots visibles) et l'écrit dans
 `PROFONDEUR-REFERENTIEL.md`. Il reste **2 fiches signalées**, à traiter ensuite : `g7` (250 mots,
 code 7.01) et `g9` (276 mots, code 9.01).
 
-⚠️ **Décision en attente** : le **jour 1 passe de 6 h 20 à 7 h 10**. Trois leviers de
-compensation sont chiffrés en commentaire dans `parcours.js` ; aucun n'a été appliqué d'office.
+⚠️ **Décision en attente, reformulée le 27/07** : la note précédente renvoyait à « trois leviers
+de compensation chiffrés en commentaire dans `parcours.js` » — **ces commentaires n'y sont plus**,
+la refonte sur les modules M0→M8 les a absorbés. État réel, relevé au build : le cadre des
+**35 h est tenu module par module**, et les cinq journées font **6 h 50 · 6 h 50 · 7 h 05 ·
+7 h 10 · 7 h 00**. Ce qui reste à trancher n'est donc plus « comment compenser », mais :
+**des journées de sept heures sont-elles tenables pour le public réel ?** Si non, le levier
+disponible est le basculement de séquences de `salle` vers `avant`/`pendant` (autoformation),
+qui sort du volume — pas la suppression de contenu.
 
 ### ⏭️ DEMANDÉ POUR LA PROCHAINE SESSION (F. Henninot, soir du 26/07)
 
-**1. Un fichier « compétences × contenu × questions » — pour le dossier.**
-Un document qui, pour **chaque compétence du référentiel**, met en regard : son code et son
-libellé officiel · la ou les **fiches de formation** qui l'enseignent · les **questions** qui
-l'évaluent. C'est la matrice de traçabilité qu'un organisme évaluateur doit pouvoir montrer :
-« voilà ce que j'enseigne, voilà où, voilà comment je le vérifie ».
-- **Tout existe déjà comme données** — ne pas repartir de zéro : `referentiel-2025.json`
-  (136 codes), les `criteres` de chaque carte dans `cartes.js`, et le champ `code` de chaque
-  question dans `banque.gen.json`. `build/referentiel.mjs` sait déjà indexer et résoudre.
-- Donc : **un script de build de plus** (sur le modèle de `COUVERTURE-REFERENTIEL.md`), pas une
-  saisie manuelle — sinon le document est faux au premier changement de contenu.
-- Prévoir le cas des **codes hors périmètre** (13.xx CO₂, 14.xx NH₃) et des **17 questions hors
-  référentiel**, qui doivent apparaître comme tels et non disparaître du tableau.
-- Format : à trancher avec F. Henninot (HTML pour lire, et probablement docx pour le dossier —
-  cf. règle de sortie triple de l'usine de contenu).
+**1. ✅ FAIT (27/07) — le fichier « compétences × contenu × questions ».**
+`build/matrice.mjs` produit **`MATRICE-COMPETENCES.md`** (versionné, donc diffable : une
+compétence qui perd sa question se voit dans le commit suivant) et **`matrice.html`** (filtrable
+par catégorie, par état, par mot). Lancé par `build.mjs` : il ne peut pas être oublié.
+Première mesure : **94/94** compétences exigées sont **enseignées ET vérifiées** — 0 enseignée
+sans question, 0 interrogée sans fiche.
+- Un script, pas une saisie : les données existaient déjà (`criteres` des cartes, `code` des
+  questions, `referentiel-2025.json`). Rien n'est recopié.
+- **Rien n'y disparaît** : les 5 codes hors périmètre traités en information (1.09 · 13.01 ·
+  13.04 · 13.14 · 14.01) et les 17 questions hors référentiel y figurent avec leur statut.
+  Au passage, `convert.mjs` porte désormais le **motif** de chaque mise à part dans la banque
+  (il ne vivait qu'en commentaire) : une question écartée sans raison écrite est une question
+  qu'on ne sait plus défendre six mois plus tard.
+- Branchements : porte du portail, carte « libre » de `documents.html` (elle ouvre la page
+  filtrable, pas 107 Ko de Markdown dans le lecteur), et paragraphe du dossier de direction avec
+  le compteur `tracabilite` relevé par `chiffres.mjs`.
+- ⏭️ **Reste à trancher : le docx.** Le dépôt est **zéro dépendance** (aucun `package.json`,
+  aucun `node_modules`) et c'est ce qui le rend reconstructible partout. Générer un docx natif
+  exigerait la bibliothèque `docx` ([[feedback_docx_natif]]). Deux voies : soit `matrice.html`
+  s'imprime en PDF depuis le navigateur (feuille `@media print` déjà écrite) et cela suffit au
+  dossier, soit on produit le docx **hors de ce dépôt**, depuis l'usine de contenu où la
+  bibliothèque est déjà là. **Ne pas installer npm ici sans arbitrage.**
 
 **2. Une relecture de TOUTE la couverture du référentiel.**
 Reprendre code par code ce que le pack prétend couvrir et vérifier que le contenu le tient

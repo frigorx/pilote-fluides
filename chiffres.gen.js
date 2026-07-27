@@ -18,7 +18,8 @@ window.PILOTE_CHIFFRES = {
  "couverture": "100 %",
  "profondeur": "94 / 94",
  "competences": "99",
- "poids": "673 Ko"
+ "tracabilite": "94 / 94",
+ "poids": "674 Ko"
 };
 document.addEventListener('DOMContentLoaded', function () {
   var n = 0;

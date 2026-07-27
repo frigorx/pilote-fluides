@@ -440,6 +440,14 @@ function main() {
   execFileSync(process.execPath, [resolve(RACINE, "build/profondeur.mjs")], {
     stdio: "inherit",
   });
+
+  /* --- matrice de traçabilité : pour chaque compétence, la fiche qui
+     l'enseigne et les questions qui la vérifient. Lancée ici pour la même
+     raison que la profondeur — un document de traçabilité qu'il faut
+     penser à régénérer est un document qui ment un jour ou l'autre. --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/matrice.mjs")], {
+    stdio: "inherit",
+  });
 }
 
 main();

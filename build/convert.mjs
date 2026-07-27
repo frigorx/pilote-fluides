@@ -189,17 +189,23 @@ const CODES = {
   "v6_185": "2.02", // Avoir une connaissance élémentaire du concept de « potentiel de réchauff…  ← G2
 };
 
+/* Le MOTIF est la valeur, et non un simple `true` : c'est lui qui part dans
+   la banque, puis dans la matrice de traçabilité (MATRICE-COMPETENCES.md).
+   Une question mise à part sans raison écrite est une question qu'on ne sait
+   plus défendre six mois après — les questions-pack.json portaient déjà leur
+   motif, les questions Mission F-GAZ le gardaient en commentaire. */
+const M_NOMENCLATURE =
+  "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B";
+const M_AMMONIAC =
+  "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack";
+
 const HORS_REFERENTIEL = {
-  // nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l annexe II.B
-  "31": true, "33": true, "36": true, "41": true, "51": true, "v6_031": true, "v6_132": true, "v6_137": true,
-  // cintrage : geste métier ; le groupe 10 ne couvre que le brasage (10.01) et les supports (10.02)
-  "87": true,
-  // dudgeonnage : raccord mécanique, hors du groupe 10 (brasage, supports)
-  "84": true,
-  // raccordement sur vanne Schrader : geste métier non listé à l annexe II.B
-  "v6_157": true,
-  // relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack
-  "v6_090": true, "v6_094": true, "v6_182": true,
+  "31": M_NOMENCLATURE, "33": M_NOMENCLATURE, "36": M_NOMENCLATURE, "41": M_NOMENCLATURE,
+  "51": M_NOMENCLATURE, "v6_031": M_NOMENCLATURE, "v6_132": M_NOMENCLATURE, "v6_137": M_NOMENCLATURE,
+  "87": "cintrage : geste métier ; le groupe 10 ne couvre que le brasage (10.01) et les supports (10.02)",
+  "84": "dudgeonnage : raccord mécanique, hors du groupe 10 (brasage, supports)",
+  "v6_157": "raccordement sur vanne Schrader : geste métier non listé à l'annexe II.B",
+  "v6_090": M_AMMONIAC, "v6_094": M_AMMONIAC, "v6_182": M_AMMONIAC,
 };
 
 /* ---------------------------------------------------------------------
@@ -429,7 +435,7 @@ function main() {
         remed: fix.explication ? undefined : structurer(q.remediation) || undefined,
         remediation_vers: REMEDIATION_FINE[id] || REMEDIATION[dc],
         code: CODES[id],
-        hors_ref: HORS_REFERENTIEL[id] ? true : undefined,
+        hors_ref: HORS_REFERENTIEL[id] || undefined,
       });
     }
   }
