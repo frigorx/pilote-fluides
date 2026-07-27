@@ -81,6 +81,10 @@
   .avert{margin-top:16px;font-size:20px;font-weight:600;color:var(--attente)}
 
   /* encadrés */
+  /* Rejouer une planche animée en salle : discret, sous le schéma. */
+  .rejouer{margin:14px auto 0;display:block;padding:8px 18px;font:600 18px/1.2 inherit;
+    color:var(--bleu);background:#fff;border:2px solid #d7e0e8;border-radius:999px;cursor:pointer}
+  .rejouer:hover{border-color:var(--bleu)}
   .enc{border-left:7px solid var(--bleu);background:#f3f7fb;border-radius:12px;padding:22px 28px}
   .enc.cle{border-color:var(--ok);background:var(--ok-bg)}
   .enc.piege{border-color:var(--orange);background:var(--orange-clair)}
@@ -234,8 +238,16 @@ function demarrerProjection(){
         h += "<div style='margin-top:22px'><a href='"+esc(s.video)+"' target='_blank' rel='noopener' style='font-size:22px'>🎬 Ouvrir la vidéo de la séquence</a></div>";
       return h;
     }
-    if(sl.type==="schema")
-      return "<h2 style='font-size:26px'>"+esc(sl.titre)+"</h2><img src='"+esc((P.base_img||"")+sl.src.replace(/^packs\/fluides\/res\//,""))+"' alt='"+esc(sl.alt)+"'>";
+    if(sl.type==="schema"){
+      var u = (P.base_img||"")+sl.src.replace(/^packs\/fluides\/res\//,"");
+      /* Une planche animée projetée doit repartir de ZÉRO quand on l'affiche :
+         en salle, on montre une chronologie, pas un instantané pris au hasard
+         dans la boucle. Le paramètre force le navigateur à relire le fichier.
+         (F. Henninot, 27/07 : « elles ne sont pas à 0 ».) */
+      if(estAnimee(u)) u += (u.indexOf("?")<0?"?":"&")+"rejeu="+Date.now();
+      return "<h2 style='font-size:26px'>"+esc(sl.titre)+"</h2><img src='"+esc(u)+"' alt='"+esc(sl.alt)+"'>"+
+             (estAnimee(u) ? "<button type='button' class='rejouer' onclick='rejouerSlide(this)'>↻ Rejouer l&#39;animation</button>" : "");
+    }
     if(sl.type==="encadre")
       return "<div class='enc "+esc(sl.genre)+"'><div class='t'>"+esc(sl.t)+"</div>"+sl.html+"</div>";
     /* Le plateau ne se projette pas : on annonce le passage à la machine, et
@@ -339,6 +351,21 @@ function demarrerProjection(){
   function arreterChrono(){ if(S.chrono){ clearInterval(S.chrono); S.chrono=null; } }
 
   function pad(n){ return (n<10?"0":"")+n; }
+
+  /* Les planches animées, relevées au build (pack.pilote.js → svg_animes). */
+  function estAnimee(u){
+    var L = (window.PILOTE_PACK && PILOTE_PACK.pack && PILOTE_PACK.pack.svg_animes) || [];
+    var nom = String(u).split("?")[0].split("/").pop();
+    return L.indexOf(nom) >= 0;
+  }
+  /* Le bouton de la diapositive : on recharge la source, SMIL repart à zéro. */
+  window.rejouerSlide = function(b){
+    var im = b.previousElementSibling;
+    while(im && im.tagName !== "IMG") im = im.previousElementSibling;
+    if(!im) return;
+    var base = (im.getAttribute("src")||"").split("?")[0];
+    im.setAttribute("src", base + "?rejeu=" + Date.now());
+  };
   function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){
     return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
 

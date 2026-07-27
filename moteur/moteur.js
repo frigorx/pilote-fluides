@@ -534,7 +534,44 @@
     commun();
   }
   function nav() { onAll("[data-go]", function (el) { el.addEventListener("click", function () { aller(el.getAttribute("data-go")); }); }); }
+
+  /* ====================================================================
+     EXTENSION 6 — REJOUER UNE PLANCHE ANIMÉE
+     Un SVG inséré en <img> démarre son animation au chargement de l'image,
+     pas quand le lecteur arrive dessus : sur une fiche ouverte après coup,
+     ou revue plus tard, on tombe au milieu du récit — et une animation qui
+     raconte une chronologie (la nappe qui monte, le technicien qui tombe)
+     ne veut alors plus rien dire. Signalé par F. Henninot le 27/07.
+     SMIL ne se pilote pas depuis l'extérieur d'un <img> : le seul moyen
+     fiable de repartir de zéro est de recharger la source. C'est ce que
+     fait le bouton, avec un paramètre qui change à chaque appel.
+     La liste des planches animées vient du build (PACK.pack.svg_animes) —
+     inutile de proposer « rejouer » sous un dessin fixe.
+     ==================================================================== */
+  function animations() {
+    var animes = (PACK.pack && PACK.pack.svg_animes) || [];
+    if (!animes.length) return;
+    onAll(".corps img", function (im) {
+      if (im.getAttribute("data-rejouable")) return;         // déjà équipée
+      var src = im.getAttribute("src") || "";
+      var nom = src.split("?")[0].split("/").pop();
+      if (animes.indexOf(nom) < 0) return;
+      im.setAttribute("data-rejouable", "1");
+
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "rejouer";
+      b.textContent = "↻ Revoir l'animation depuis le début";
+      b.addEventListener("click", function () {
+        var base = src.split("?")[0];
+        im.setAttribute("src", base + "?rejeu=" + Date.now());
+        b.textContent = "↻ Revoir l'animation depuis le début";
+      });
+      if (im.parentNode) im.parentNode.insertBefore(b, im.nextSibling);
+    });
+  }
   function commun() {
+    animations();
     // Extension pack fluides : indice de question et texte officiel de
     // l'arrêté — même mécanique, le bouton révèle le bloc qui suit son parent.
     onAll("[data-aide],[data-deplie]", function (el) {

@@ -37,13 +37,17 @@
       <path class="acc" d="M26,44 v14 m-5,-5 l5,5 5,-5"/>
     </g>
 
-    <!-- NAPPE qui monte -->
+    <!-- NAPPE qui monte.
+         Valeurs de base = ÉTAT FINAL (nappe haute) et non état initial : si le
+         navigateur n'exécute pas l'animation — lecteur arrivé après le premier
+         passage, impression, capture d'écran — la planche doit rester JUSTE.
+         Une nappe dessinée au ras du sol ferait croire à un local sûr. -->
     <g>
-      <rect x="42" y="216" width="476" height="6" fill="#7fa9c9" opacity="0.85">
+      <rect x="42" y="120" width="476" height="102" fill="#7fa9c9" opacity="0.85">
         <animate attributeName="y" values="216;216;120;120;216" dur="11s" repeatCount="indefinite"/>
         <animate attributeName="height" values="6;6;102;102;6" dur="11s" repeatCount="indefinite"/>
       </rect>
-      <line x1="42" y1="216" x2="518" y2="216" stroke="#3f7fae" stroke-width="2.5">
+      <line x1="42" y1="120" x2="518" y2="120" stroke="#3f7fae" stroke-width="2.5">
         <animate attributeName="y1" values="216;216;120;120;216" dur="11s" repeatCount="indefinite"/>
         <animate attributeName="y2" values="216;216;120;120;216" dur="11s" repeatCount="indefinite"/>
       </line>
@@ -52,7 +56,7 @@
     <!-- capteur BAS -->
     <g transform="translate(470,196)">
       <rect class="p" x="0" y="0" width="34" height="24" rx="3" fill="#fff"/>
-      <circle cx="10" cy="12" r="4" fill="#c9d4de">
+      <circle cx="10" cy="12" r="4" fill="#c9451a">
         <animate attributeName="fill" values="#c9d4de;#c9d4de;#c9451a;#c9451a;#c9d4de" dur="11s" repeatCount="indefinite"/>
       </circle>
       <text x="24" y="16" text-anchor="middle" style="font:700 10px Calibri;fill:#1b3a63">ppm</text>

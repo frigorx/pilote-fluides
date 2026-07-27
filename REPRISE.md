@@ -411,11 +411,12 @@ que « G6 · codes 6.01 → 6.08 » promettait huit compétences pour quatre ens
 
 ## 5. Pièges — lus dans le sang, à ne pas réapprendre
 
-**Moteur** — 5 extensions par rapport au r408 d'origine, toutes rétrocompatibles :
+**Moteur** — 6 extensions par rapport au r408 d'origine, toutes rétrocompatibles :
 `examen.niveau` (filtrage par difficulté) · bilan listant les fiches ratées · historique
 `localStorage` · auto-hauteur des iframes par `postMessage` · **portillon d'accès par code**
 (`acces.code_empreinte` sur une carte examen — les 8 `ex-*` le portent, les 13 séries `rev-*`
-restent libres ; déverrouillage mémorisé sur l'appareil).
+restent libres ; déverrouillage mémorisé sur l'appareil) · **bouton « revoir l'animation »**
+sous les planches animées (27/07, voir ci-dessous).
 
 - **Les organes se PRENNENT dans la bibliothèque de symboles, ils ne se dessinent pas**
   (`C:\git\usine-contenu\bibliotheque-symboles`, 348 symboles, famille `frigo_schema`).
@@ -426,6 +427,23 @@ restent libres ; déverrouillage mémorisé sur l'appareil).
   **Si le symbole n'existe pas, on le signale — on n'en détourne pas un autre** : il manque
   aujourd'hui le **régulateur de pression** (condensation, évaporation, carter) et la **sonde
   de contact**. Détourner `vanne_securite` aurait enseigné une forme fausse.
+- **Une planche animée ne se revoit qu'en la RECHARGEANT.** Un SVG inséré en `<img>` lance
+  son animation au chargement de l'image, pas quand le lecteur arrive dessus. Et **6 des
+  9 planches animées sont narratives** : `begin` décalés, **aucun `repeatCount`** — elles se
+  déroulent **une seule fois** puis se figent sur leur état final. Qui n'était pas devant
+  l'écran à cet instant ne voit jamais l'animation, seulement l'image de fin. Ce n'est pas un
+  défaut : c'est le prix du choix « au repos, le dessin est déjà l'image finale ».
+  D'où l'**extension 6 du moteur** (27/07, signalé par F. Henninot) : un bouton
+  « ↻ Revoir l'animation depuis le début » sous les planches animées, qui recharge la source —
+  SMIL ne se pilote pas depuis l'extérieur d'un `<img>`, c'est le seul moyen fiable. La liste
+  des planches animées est **relevée au build** (`PACK_META.svg_animes`), jamais tenue à la
+  main, et le bouton n'apparaît pas sous un dessin fixe. En **projection**, la diapositive
+  recharge en plus la planche à chaque affichage : en salle, on montre une chronologie, pas un
+  instantané pris au hasard dans la boucle.
+- **Valeurs de base d'un SVG animé = état FINAL, jamais état initial.** Si le navigateur
+  n'exécute pas l'animation (impression, capture, lecteur arrivé trop tard), la planche doit
+  rester **juste**. `co2-point-bas.svg` dessinait sa nappe au ras du sol et son capteur éteint :
+  figée, elle faisait croire à un local sûr. Corrigé le 27/07.
 - **Un schéma ne se met JAMAIS en `illus`** : la charte recadre l'illustration de tête
   (`object-fit: cover`, 340 px max) et le tronque. Les schémas passent par l'assistant
   `schema()` de `cartes.js`, qui les insère dans le corps.

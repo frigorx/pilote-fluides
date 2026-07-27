@@ -20,7 +20,18 @@ window.PILOTE_PACK = {
   ],
   "vue_stagiaire": false,
   "carte_initiale": "c00",
-  "base_img": "packs/fluides/res/"
+  "base_img": "packs/fluides/res/",
+  "svg_animes": [
+   "chaleur-sensible-latente.svg",
+   "co2-point-bas.svg",
+   "diagramme-logph.svg",
+   "intro-securite.svg",
+   "s1-double-accident.svg",
+   "secu-bouteille.svg",
+   "secu-consignation.svg",
+   "secu-flamme.svg",
+   "secu-projection.svg"
+  ]
  },
  "ressources": [
   {

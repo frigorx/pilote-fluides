@@ -13,7 +13,7 @@
 
    Usage : node build/build.mjs
    ===================================================================== */
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -128,6 +128,23 @@ function valider() {
    les codes réellement cités sont embarqués, résolus.
    --------------------------------------------------------------------- */
 const CATS = PACK_META.categories || [];
+
+/* ---------------------------------------------------------------------
+   Quelles planches sont ANIMÉES ? — signalé par F. Henninot le 27/07 :
+   « quand on démarre les animations, elles ne sont pas à zéro ».
+   Un SVG inséré en <img> lance son animation dès que l'image est chargée,
+   pas quand le lecteur arrive dessus : sur une fiche ouverte après coup,
+   on tombe au milieu du récit. Le moteur doit donc pouvoir la relancer —
+   il lui faut savoir lesquelles sont animées, d'où cette liste, relevée
+   dans les fichiers plutôt que tenue à la main.
+   --------------------------------------------------------------------- */
+function svgAnimes() {
+  const dossier = resolve(RACINE, "packs/fluides/res/svg");
+  return readdirSync(dossier)
+    .filter((f) => f.endsWith(".svg"))
+    .filter((f) => /<animate(Motion|Transform)?[\s>]/.test(readFileSync(resolve(dossier, f), "utf8")))
+    .sort();
+}
 
 function enrichir(cartes) {
   return cartes.map((c) => {
@@ -369,7 +386,7 @@ function main() {
   const cartes = enrichir(CARTES); // libellés officiels résolus depuis le référentiel
   const banque = enrichirBanque(BANQUE);
   const base = {
-    pack: PACK_META,
+    pack: { ...PACK_META, svg_animes: svgAnimes() },
     ressources: RESSOURCES,
     banque,
     competences: dictionnaireCompetences(cartes, BANQUE),
