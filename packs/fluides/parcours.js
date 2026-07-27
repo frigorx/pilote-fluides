@@ -164,7 +164,7 @@ export const PARCOURS = {
         { ...seq("g1c", 30, 4), module: "M1" },     // vidéo attendue : lire un code fluide (R-134a, R-410A)
         // ── M2 · 2 h sur 6 (la suite au jour 2)
         { ...seq("g1d", 30, 4), module: "M2" },     // les organes qui trahissent une fuite : la charnière
-        { ...seq("g4a", 25, 3), module: "M2" },
+        { ...seq("g4a", 20, 3), module: "M2" },
         { ...seq("p7", 20, 2), module: "M2" },      // préparation de chantier : l'analyse de risques ouvre
         // Rattachée à M4 (composants) et non à M2 : on y repère des ORGANES,
         // c'est la première marche du module le plus lourd de la semaine.
@@ -173,56 +173,74 @@ export const PARCOURS = {
     },
 
     /* =====================================================================
-       JOUR 2 — fin M2 (4 h) + M3 (3 h)  =  7 h
+       JOUR 2 — M2 salle (2 h 50) + M3 salle (3 h) + M4 début (1 h 10) = 7 h
+       Toute la théorie et toute la préparation de chantier du TP du jour 3
+       se donnent ICI : on ne descend pas au plateau pour découvrir un geste.
        ===================================================================== */
     {
       n: 2,
-      titre: "Contrôler l'étanchéité, puis récupérer sans émettre",
+      titre: "Tout ce qu'il faut savoir avant de toucher à la machine",
       intention:
-        "La journée la plus lourde au barème. On mesure sans ouvrir, on cherche la fuite, on " +
-        "consigne — puis on récupère le fluide sans en laisser partir un gramme.",
+        "La journée la plus lourde au barème, et la plus dense en salle — parce que le TP du " +
+        "lendemain enchaîne d'un trait l'azote, le vide, la charge, les mesures, la " +
+        "récupération et le CERFA. Rien de ce qui s'y fera ne doit être découvert là-bas.",
       sequences: [
         { ...rappel("s5", 20, 3), module: "M2" },   // sécurité du jour : consigner avant de toucher
         { ...seq("g3", 30, 4), module: "M2" },
         { ...seq("g4b", 35, 3), module: "M2" },     // vidéo attendue : méthode indirecte, relevé et interprétation
-        { ...seq("g4c", 35, 4), module: "M2" },     // vidéo attendue : détecteur électronique, balayage correct
-        { ...act("x4", 25), module: "M2" },
-        { ...seq("p1", 20, 3), module: "M2" },      // préparation de chantier : le manifold
-        { ...seq("p3", 25, 3), module: "M2" },      // préparation de chantier : pompe à vide et vacuomètre
-        { ...plateau("Épreuve d'étanchéité à l'azote · tirage au vide · recherche de fuite au détecteur", 95), module: "M2" },
-        // ── M3 · 3 h sur 5 (la suite au jour 3)
+        { ...seq("g4c", 30, 4), module: "M2" },     // vidéo attendue : détecteur électronique, balayage correct
+        { ...act("x4", 20), module: "M2" },
+        { ...seq("p1", 15, 3), module: "M2" },      // préparation de chantier : le manifold
+        { ...seq("p3", 20, 3), module: "M2" },      // préparation de chantier : pompe à vide et vacuomètre
+        // ── M3 · la récupération et la charge, en entier
+        { ...rappel("s2", 20, 2), module: "M3" },   // le froid brûle — on va manipuler du liquide
         { ...seq("g5a", 30, 4), module: "M3" },     // vidéo attendue : station de récupération, raccordement
+        { ...seq("g5b", 40, 5), module: "M3" },
         { ...seq("p5", 25, 3), module: "M3" },      // préparation de chantier : l'ordre des vannes
-        { ...plateau("Récupération du fluide sur machine réelle, station raccordée dans l'ordre", 65), module: "M3" },
+        { ...seq("p2", 20, 2), module: "M3" },      // préparation de chantier : la station de récupération
+        { ...seq("p6", 20, 3), module: "M3" },      // préparation de chantier : la balance et la pesée
+        { ...act("x3", 25), module: "M3" },
+        // ── M4 · les deux premiers composants
+        { ...seq("g6", 30, 4), module: "M4" },      // vidéo attendue : les 4 technologies de compresseur
+        { ...seq("g6b", 30, 4), module: "M4" },
       ],
     },
 
     /* =====================================================================
-       JOUR 3 — fin M3 (2 h) + M4 (5 h)  =  7 h
+       JOUR 3 — LE TP INTÉGRÉ (4 h) + M4 salle (3 h)  =  7 h
+       ---------------------------------------------------------------------
+       Déroulé validé par F. Henninot le 27/07, sur le plateau du LP :
+         « Installation sous azote, je mets les manos, je dégaze, je tire au
+           vide, je charge avec la bouteille de fluide via mon dispositif, je
+           fais mes mesures, je récupère le gaz, je remets de l'azote. Il y a
+           bien sûr la recherche de fuite, et je fais un CERFA complet avec la
+           traçabilité du fluide. Des gens théoriquement compétents : 4 h
+           suffisent, une après-midi. »
+       Deux temps de 2 h : sous azote, puis avec le fluide réel. Le TP tient
+       d'un seul tenant — le morceler lui ferait perdre ce qu'il enseigne :
+       l'enchaînement.
        ===================================================================== */
     {
       n: 3,
-      titre: "Peser, charger, puis entrer dans les quatre composants",
+      titre: "Le TP de bout en bout, puis les échangeurs",
       intention:
-        "La charge se joue au gramme près, et elle se trace. L'après-midi ouvre le module le " +
-        "plus exigeant : les quatre composants s'apprennent tous, puisqu'un seul sera tiré au " +
-        "sort le jour de l'épreuve — et que le candidat ne saura pas lequel.",
+        "Une après-midi, une machine, la chaîne complète : mise sous azote, contrôle " +
+        "d'étanchéité, tirage au vide, charge pesée, relevés, récupération, remise sous azote, " +
+        "et le CERFA rempli jusqu'au bout. C'est l'épreuve en conditions réelles, en plus long.",
       sequences: [
-        { ...rappel("s2", 20, 2), module: "M3" },   // sécurité du jour : le froid brûle — on va manipuler du liquide
-        { ...seq("g5b", 35, 5), module: "M3" },
-        { ...seq("p2", 20, 2), module: "M3" },      // préparation de chantier : la station de récupération
-        { ...seq("p6", 20, 3), module: "M3" },      // préparation de chantier : la balance et la pesée
-        { ...act("x3", 25), module: "M3" },
-        { ...plateau("Charge en phase liquide, pesée au gramme, report immédiat au registre", 60), module: "M3" },
-        // ── M4 · 5 h sur 6 (la suite au jour 4)
-        { ...seq("g6", 30, 4), module: "M4" },      // vidéo attendue : les 4 technologies de compresseur
-        { ...seq("g6b", 30, 4), module: "M4" },
+        // ── LE TP · 4 h d'un seul tenant
+        { ...plateau("TP 1/2 — sous azote : installation, pose du manifold, mise en pression, " +
+          "recherche de fuite au détecteur et à l'eau savonneuse, tirage au vide et tenue du vide", 120), module: "M2" },
+        { ...plateau("TP 2/2 — avec le fluide : charge en phase liquide à la balance, relevés et " +
+          "surchauffe, récupération complète, remise sous azote, CERFA et traçabilité du fluide", 120), module: "M3" },
+        // ── M4 · les échangeurs et le détendeur
         { ...seq("g7", 25, 4), module: "M4" },
         { ...seq("g7b", 30, 4), module: "M4" },
         { ...seq("g8", 25, 4), module: "M4" },      // vidéo attendue : évaporateur et dégivrage
         { ...seq("g8b", 30, 4), module: "M4" },
         { ...act("x2", 25), module: "M4" },
-        { ...plateau("Mise en route, relevé des pressions et températures, calcul de la surchauffe", 50), module: "M4" },
+        { ...seq("g9", 25, 4), module: "M4" },      // vidéo attendue : détendeur thermostatique, principe
+        { ...seq("g9b", 25, 4), module: "M4" },
       ],
     },
 
@@ -238,8 +256,8 @@ export const PARCOURS = {
         "quel fluide choisir demain, et pourquoi.",
       sequences: [
         { ...rappel("s3", 20, 3), module: "M4" },   // sécurité du jour : la flamme interdite — c'est le jour du brasage
-        { ...seq("g9", 25, 4), module: "M4" },      // vidéo attendue : détendeur thermostatique, principe
-        { ...seq("g9b", 25, 4), module: "M4" },
+        { ...plateau("Réglage du détendeur sur machine en marche : agir sur la surchauffe et " +
+          "vérifier l'effet, mise en route et arrêt dans l'ordre du constructeur", 50), module: "M4" },
         // ── M5 · 4 h
         { ...seq("g10", 30, 3), module: "M5" },     // vidéo attendue : brasage sous azote, geste complet
         { ...seq("p4", 20, 2), module: "M5" },      // préparation de chantier : bouteille d'azote et mano-détendeur

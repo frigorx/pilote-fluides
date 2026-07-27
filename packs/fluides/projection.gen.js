@@ -2156,7 +2156,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g4a",
      "titre": "Où fuit une installation ?",
-     "minutes": 25,
+     "minutes": 20,
      "video": null,
      "slides": [
       {
@@ -2519,8 +2519,8 @@ window.PILOTE_PROJECTION = {
   {
    "n": 2,
    "libelle": null,
-   "titre": "Contrôler l'étanchéité, puis récupérer sans émettre",
-   "intention": "La journée la plus lourde au barème. On mesure sans ouvrir, on cherche la fuite, on consigne — puis on récupère le fluide sans en laisser partir un gramme.",
+   "titre": "Tout ce qu'il faut savoir avant de toucher à la machine",
+   "intention": "La journée la plus lourde au barème, et la plus dense en salle — parce que le TP du lendemain enchaîne d'un trait l'azote, le vide, la charge, les mesures, la récupération et le CERFA. Rien de ce qui s'y fera ne doit être découvert là-bas.",
    "sequences": [
     {
      "type": "cours",
@@ -3066,7 +3066,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "g4c",
      "titre": "Méthode directe et consignation",
-     "minutes": 35,
+     "minutes": 30,
      "video": null,
      "slides": [
       {
@@ -3278,7 +3278,7 @@ window.PILOTE_PROJECTION = {
      "type": "exercice",
      "fiche": "x4",
      "titre": "Détective — le contrôle qui tourne mal",
-     "minutes": 25,
+     "minutes": 20,
      "slides": [
       {
        "type": "titre",
@@ -3336,7 +3336,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "p1",
      "titre": "Le manifold — lire, brancher, ne pas polluer",
-     "minutes": 20,
+     "minutes": 15,
      "video": null,
      "slides": [
       {
@@ -3492,7 +3492,7 @@ window.PILOTE_PROJECTION = {
      "type": "cours",
      "fiche": "p3",
      "titre": "Pompe à vide et vacuomètre — monter, tirer, lire",
-     "minutes": 25,
+     "minutes": 20,
      "video": null,
      "slides": [
       {
@@ -3642,20 +3642,125 @@ window.PILOTE_PROJECTION = {
      "notes": "Faire monter le montage sur un poste d'essai, jamais en première fois sur une installation cliente. Faire vérifier l'huile de la pompe avant de démarrer — un réflexe qu'on saute facilement. Faire dire tout haut « isoler, puis arrêter » avant de le faire réellement : c'est l'ordre qui compte, pas la vitesse. Ne donner aucune valeur de vide cible ni de durée : renvoyer systématiquement à la fiche constructeur du modèle utilisé en atelier."
     },
     {
-     "type": "plateau",
-     "fiche": null,
-     "titre": "Épreuve d'étanchéité à l'azote · tirage au vide · recherche de fuite au détecteur",
-     "minutes": 95,
+     "type": "cours",
+     "fiche": "s2",
+     "titre": "Le froid brûle — projections et gelures",
+     "minutes": 20,
      "video": null,
-     "questions": [],
-     "notes": "",
      "slides": [
       {
-       "type": "plateau",
-       "titre": "Épreuve d'étanchéité à l'azote · tirage au vide · recherche de fuite au détecteur",
-       "minutes": 95
+       "type": "titre",
+       "titre": "Le froid brûle — projections et gelures",
+       "dc": "Sécurité · codes 12.02",
+       "competences": [
+        {
+         "code": "12.02",
+         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, ventilation, EPI.",
+         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": true,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-projection.svg",
+       "alt": "Le liquide jaillit dans l'axe du raccord : on se place hors de cet axe, on vérifie au manomètre que la pression est nulle, et on porte gants et lunettes.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "point",
+       "html": "Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "point",
+       "html": "Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui. Un contact avec de l'ammoniac liquide ajoute une <b>brûlure chimique</b> à la brûlure froide : ce fluide n'appartient pas à la même famille que les fluides fluorés, et ne se comporte pas comme eux.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "point",
+       "html": "Le cas type : vous déconnectez un flexible de <b>manifold</b> (l'appareil à manomètres) en pensant le tronçon vide. La vanne n'a pas été vérifiée, le manomètre pas relu. Le liquide restant jaillit au desserrage — dans l'axe du raccord, comme sur le schéma.",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ol><li>Mettez vos <b>EPI</b> (équipements de protection individuelle) — ici, gants et lunettes — avant toute manipulation d'un circuit sous pression.</li><li><b>Vérifiez au manomètre</b> que la pression est nulle, et que la vanne est fermée, avant de débrancher un flexible ou de desserrer un raccord.</li><li><b>Desserrez progressivement</b>, jamais d'un coup, et restez hors de la trajectoire d'un éventuel jet.</li><li>En cas de projection sur la peau ou les yeux : rincez sans frotter, et consultez. La conduite à tenir précise figure sur la <b>FDS</b> (fiche de données de sécurité) du fluide utilisé.</li></ol>",
+       "titre": "Le froid brûle — projections et gelures"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Débrancher un flexible ou desserrer un raccord sous pression <b>sans vérifier au manomètre</b> qu'il est vide, ou le faire sans gants ni lunettes.</p><p>Conséquence : projection de liquide qui gèle la peau ou les yeux au contact. Risque de lésion oculaire grave.</p>",
+       "titre": "Le froid brûle — projections et gelures"
       }
-     ]
+     ],
+     "questions": [
+      {
+       "id": "pk-cl2-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
+       "choix": [
+        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+        "La température minimale d'inflammation du gaz",
+        "La pression maximale admissible dans la bouteille",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+       ],
+       "bonne": 0,
+       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
+       "remed": {
+        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
+        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
+       },
+       "remediation_vers": "cl2",
+       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "pk-cl4-1",
+       "dc": "Classification",
+       "code": "12.02",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+       "choix": [
+        "Au plafond, comme un détecteur de fumée",
+        "En partie basse, là où le CO₂ s'accumule",
+        "À l'extérieur du local uniquement",
+        "Peu importe, le gaz se répartit uniformément"
+       ],
+       "bonne": 1,
+       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+       "remed": {
+        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+       },
+       "remediation_vers": "cl4",
+       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Faites observer un flexible de manifold et ses raccords rapides, et faites lire un manomètre avant de mimer un débranchement. Faites manipuler des gants de protection au froid et des lunettes ; faites justifier l'ordre dans lequel on les enfile avant d'intervenir. Racontez un cas concret de projection lors d'un débranchement trop rapide, pour ancrer le réflexe manomètre-avant-tout. Rappelez que la conduite à tenir en cas de projection se lit sur la FDS du fluide utilisé sur le chantier."
     },
     {
      "type": "cours",
@@ -3876,320 +3981,9 @@ window.PILOTE_PROJECTION = {
     },
     {
      "type": "cours",
-     "fiche": "p5",
-     "titre": "L'ordre des vannes — la chorégraphie de l'intervention",
-     "minutes": 25,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention",
-       "dc": "Préparation pratique · codes 5.01 · 5.02",
-       "competences": [
-        {
-         "code": "5.01",
-         "lib": "Connecter et déconnecter avec un minimum d'émissions",
-         "officiel": "Connecter et déconnecter les jauges et lignes en produisant le minimum d'émissions",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        },
-        {
-         "code": "5.02",
-         "lib": "Vider et remplir un cylindre, en phase liquide et gazeuse",
-         "officiel": "Vider et remplir un cylindre de réfrigérant à l'état liquide et à l'état gazeux",
-         "epreuve": {
-          "A1": "P",
-          "A2": "P",
-          "D": "P"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/recuperation.svg",
-       "alt": "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance — chaque flexible débranché suit le même ordre : fermer, stabiliser, desserrer lentement.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "point",
-       "html": "Un manifold, ce sont des <b>vannes</b>. Les ouvrir et les fermer dans le bon ordre n'est pas un détail. Un mauvais ordre peut lâcher un nuage de fluide au visage, ou libérer un flexible sous pression.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "point",
-       "html": "À la <b>connexion</b>, l'ordre est simple : vannes fermées, on raccorde les flexibles, on chasse l'air resté à l'intérieur par une ouverture brève, puis on ouvre progressivement.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "point",
-       "html": "C'est à la <b>déconnexion</b> que l'ordre compte le plus. Il ne change jamais :",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "point",
-       "html": "La même logique s'applique pour <b>vider ou remplir un cylindre</b>, en phase liquide comme en phase gazeuse. Une bouteille de réfrigérant a une prise dédiée à chaque phase, ou s'utilise dans un sens précis pour tirer du liquide. On suit toujours le marquage de la bouteille, jamais un raccord forcé.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "point",
-       "html": "<ol><li><b>Fermer</b> la vanne, côté circuit puis côté appareil.</li><li><b>Laisser la pression se stabiliser.</b> Observer le manomètre. Tant que l'aiguille bouge encore, on attend.</li><li><b>Desserrer lentement</b> le raccord du flexible, à peine, par petites touches. On écoute. On continue. Jamais d'un coup.</li><li>S'il reste du fluide <b>emprisonné dans le flexible</b>, le récupérer par l'appareil déjà branché. Jamais le laisser partir à l'air libre.</li><li>Déconnecter seulement quand la pression est retombée et confirmée.</li></ol>",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "La chorégraphie qui ne change jamais",
-       "html": "<b>Fermer → laisser stabiliser → desserrer lentement.</b> Ce triptyque revient à chaque déconnexion, quel que soit l'appareil branché. C'est le geste central de tout ce module : une fois automatique, il protège dans toutes les situations.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "Desserrer un raccord <b>encore sous pression</b>, d'un coup. Purger le résidu d'un flexible <b>à l'air libre</b> pour aller plus vite. Chaque émission compte, même petite : l'objectif est toujours le <b>minimum d'émission</b>, jamais zéro effort.",
-       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
-      }
-     ],
-     "questions": [
-      {
-       "id": "q-g5-175",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
-       "choix": [
-        "Sur la ligne de refoulement",
-        "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
-        "Sur la ligne liquide",
-        "Sur le condenseur"
-       ],
-       "bonne": 1,
-       "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
-       "aide": "Le manomètre BP mesure la pression côté basse pression.",
-       "remed": {
-        "texte": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP)."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-176",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
-       "choix": [
-        "Sur la ligne d'aspiration",
-        "Sur la ligne de refoulement (entre compresseur et condenseur)",
-        "Sur l'évaporateur",
-        "Sur le détendeur"
-       ],
-       "bonne": 1,
-       "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
-       "aide": "Le manomètre HP mesure la pression côté haute pression.",
-       "remed": {
-        "texte": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP)."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.01",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      },
-      {
-       "id": "q-g5-v6_063",
-       "dc": "G5",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le taux de remplissage maximal d'une bouteille de récupération est de :",
-       "choix": [
-        "60%",
-        "70%",
-        "80%",
-        "100%"
-       ],
-       "bonne": 2,
-       "explication": "80% — Max 80% du volume pour laisser de l'espace à la dilatation thermique. Un remplissage excessif est dangereux (explosion).",
-       "aide": "Il faut toujours laisser un espace de sécurité pour la dilatation.",
-       "remed": {
-        "texte": "Max 80% du volume pour laisser de l'espace à la dilatation thermique. Un remplissage excessif est dangereux (explosion)."
-       },
-       "remediation_vers": "g5a",
-       "code": "5.02",
-       "categories": [
-        "A1",
-        "A2",
-        "D"
-       ]
-      }
-     ],
-     "notes": "La fiche centrale du module : y passer le temps qu'il faut. Faire manipuler un manifold et des flexibles réels (azote ou circuit vide) et faire répéter le triptyque fermer / stabiliser / desserrer jusqu'à ce que le geste soit lent par réflexe, pas par consigne. Observer AVANT d'expliquer : laisser un stagiaire desserrer à sa vitesse naturelle une première fois — la plupart vont trop vite, et c'est ce constat, pas un discours, qui doit amener la correction. Corriger immédiatement un geste brusque, ne jamais laisser aller au bout : la sécurité s'impose, elle ne se découvre pas par la sensation d'un jet résiduel."
-    },
-    {
-     "type": "plateau",
-     "fiche": null,
-     "titre": "Récupération du fluide sur machine réelle, station raccordée dans l'ordre",
-     "minutes": 65,
-     "video": null,
-     "questions": [],
-     "notes": "",
-     "slides": [
-      {
-       "type": "plateau",
-       "titre": "Récupération du fluide sur machine réelle, station raccordée dans l'ordre",
-       "minutes": 65
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "n": 3,
-   "libelle": null,
-   "titre": "Peser, charger, puis entrer dans les quatre composants",
-   "intention": "La charge se joue au gramme près, et elle se trace. L'après-midi ouvre le module le plus exigeant : les quatre composants s'apprennent tous, puisqu'un seul sera tiré au sort le jour de l'épreuve — et que le candidat ne saura pas lequel.",
-   "sequences": [
-    {
-     "type": "cours",
-     "fiche": "s2",
-     "titre": "Le froid brûle — projections et gelures",
-     "minutes": 20,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "Le froid brûle — projections et gelures",
-       "dc": "Sécurité · codes 12.02",
-       "competences": [
-        {
-         "code": "12.02",
-         "lib": "Connaître le matériel de sécurité obligatoire : détection de gaz, ventilation, EPI.",
-         "officiel": "Connaître les prescriptions en matière de sécurité pour les outils d'entretien et les équipements, tels que la détection de gaz, la détection des fuites, la ventilation, les équipements de protection individuelle, les pompes à vide, les unités de récupération ; les prescriptions relatives à l'élimination des gaz récupérés",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": true,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/secu-projection.svg",
-       "alt": "Le liquide jaillit dans l'axe du raccord : on se place hors de cet axe, on vérifie au manomètre que la pression est nulle, et on porte gants et lunettes.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "point",
-       "html": "Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "point",
-       "html": "Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui. Un contact avec de l'ammoniac liquide ajoute une <b>brûlure chimique</b> à la brûlure froide : ce fluide n'appartient pas à la même famille que les fluides fluorés, et ne se comporte pas comme eux.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "point",
-       "html": "Le cas type : vous déconnectez un flexible de <b>manifold</b> (l'appareil à manomètres) en pensant le tronçon vide. La vanne n'a pas été vérifiée, le manomètre pas relu. Le liquide restant jaillit au desserrage — dans l'axe du raccord, comme sur le schéma.",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ol><li>Mettez vos <b>EPI</b> (équipements de protection individuelle) — ici, gants et lunettes — avant toute manipulation d'un circuit sous pression.</li><li><b>Vérifiez au manomètre</b> que la pression est nulle, et que la vanne est fermée, avant de débrancher un flexible ou de desserrer un raccord.</li><li><b>Desserrez progressivement</b>, jamais d'un coup, et restez hors de la trajectoire d'un éventuel jet.</li><li>En cas de projection sur la peau ou les yeux : rincez sans frotter, et consultez. La conduite à tenir précise figure sur la <b>FDS</b> (fiche de données de sécurité) du fluide utilisé.</li></ol>",
-       "titre": "Le froid brûle — projections et gelures"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>Débrancher un flexible ou desserrer un raccord sous pression <b>sans vérifier au manomètre</b> qu'il est vide, ou le faire sans gants ni lunettes.</p><p>Conséquence : projection de liquide qui gèle la peau ou les yeux au contact. Risque de lésion oculaire grave.</p>",
-       "titre": "Le froid brûle — projections et gelures"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl2-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Que désigne la LIE d'un gaz inflammable ?",
-       "choix": [
-        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
-        "La température minimale d'inflammation du gaz",
-        "La pression maximale admissible dans la bouteille",
-        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
-       ],
-       "bonne": 0,
-       "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
-       "remed": {
-        "regle": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-        "pourquoi": "Un gaz inflammable ne brûle qu'à un certain dosage : il lui faut assez de combustible et assez d'air. Dans le domaine d'explosivité, une simple étincelle enflamme tout le volume d'un coup.",
-        "piege": "Ces valeurs sont propres à chaque fluide et se lisent sur sa fiche de données de sécurité. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale."
-       },
-       "remediation_vers": "cl2",
-       "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-cl4-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
-       "choix": [
-        "Au plafond, comme un détecteur de fumée",
-        "En partie basse, là où le CO₂ s'accumule",
-        "À l'extérieur du local uniquement",
-        "Peu importe, le gaz se répartit uniformément"
-       ],
-       "bonne": 1,
-       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
-       "remed": {
-        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
-        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
-       },
-       "remediation_vers": "cl4",
-       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Faites observer un flexible de manifold et ses raccords rapides, et faites lire un manomètre avant de mimer un débranchement. Faites manipuler des gants de protection au froid et des lunettes ; faites justifier l'ordre dans lequel on les enfile avant d'intervenir. Racontez un cas concret de projection lors d'un débranchement trop rapide, pour ancrer le réflexe manomètre-avant-tout. Rappelez que la conduite à tenir en cas de projection se lit sur la FDS du fluide utilisé sur le chantier."
-    },
-    {
-     "type": "cours",
      "fiche": "g5b",
      "titre": "Peser, charger, stocker, tracer",
-     "minutes": 35,
+     "minutes": 40,
      "video": null,
      "slides": [
       {
@@ -4446,6 +4240,172 @@ window.PILOTE_PROJECTION = {
       }
      ],
      "notes": "Le geste à faire répéter : peser AVANT. Beaucoup de stagiaires pèsent après et déduisent — c'est faux dès qu'il reste du fluide dans le cylindre. Sur un groupe A2, insister sur la précision : sur une charge de 800 g, 50 g d'écart changent le comportement de la machine. Faire remplir un registre à chaque manipulation d'atelier, même en exercice."
+    },
+    {
+     "type": "cours",
+     "fiche": "p5",
+     "titre": "L'ordre des vannes — la chorégraphie de l'intervention",
+     "minutes": 25,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention",
+       "dc": "Préparation pratique · codes 5.01 · 5.02",
+       "competences": [
+        {
+         "code": "5.01",
+         "lib": "Connecter et déconnecter avec un minimum d'émissions",
+         "officiel": "Connecter et déconnecter les jauges et lignes en produisant le minimum d'émissions",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "5.02",
+         "lib": "Vider et remplir un cylindre, en phase liquide et gazeuse",
+         "officiel": "Vider et remplir un cylindre de réfrigérant à l'état liquide et à l'état gazeux",
+         "epreuve": {
+          "A1": "P",
+          "A2": "P",
+          "D": "P"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/recuperation.svg",
+       "alt": "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance — chaque flexible débranché suit le même ordre : fermer, stabiliser, desserrer lentement.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "point",
+       "html": "Un manifold, ce sont des <b>vannes</b>. Les ouvrir et les fermer dans le bon ordre n'est pas un détail. Un mauvais ordre peut lâcher un nuage de fluide au visage, ou libérer un flexible sous pression.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "point",
+       "html": "À la <b>connexion</b>, l'ordre est simple : vannes fermées, on raccorde les flexibles, on chasse l'air resté à l'intérieur par une ouverture brève, puis on ouvre progressivement.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "point",
+       "html": "C'est à la <b>déconnexion</b> que l'ordre compte le plus. Il ne change jamais :",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "point",
+       "html": "La même logique s'applique pour <b>vider ou remplir un cylindre</b>, en phase liquide comme en phase gazeuse. Une bouteille de réfrigérant a une prise dédiée à chaque phase, ou s'utilise dans un sens précis pour tirer du liquide. On suit toujours le marquage de la bouteille, jamais un raccord forcé.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "point",
+       "html": "<ol><li><b>Fermer</b> la vanne, côté circuit puis côté appareil.</li><li><b>Laisser la pression se stabiliser.</b> Observer le manomètre. Tant que l'aiguille bouge encore, on attend.</li><li><b>Desserrer lentement</b> le raccord du flexible, à peine, par petites touches. On écoute. On continue. Jamais d'un coup.</li><li>S'il reste du fluide <b>emprisonné dans le flexible</b>, le récupérer par l'appareil déjà branché. Jamais le laisser partir à l'air libre.</li><li>Déconnecter seulement quand la pression est retombée et confirmée.</li></ol>",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "La chorégraphie qui ne change jamais",
+       "html": "<b>Fermer → laisser stabiliser → desserrer lentement.</b> Ce triptyque revient à chaque déconnexion, quel que soit l'appareil branché. C'est le geste central de tout ce module : une fois automatique, il protège dans toutes les situations.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "Desserrer un raccord <b>encore sous pression</b>, d'un coup. Purger le résidu d'un flexible <b>à l'air libre</b> pour aller plus vite. Chaque émission compte, même petite : l'objectif est toujours le <b>minimum d'émission</b>, jamais zéro effort.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      }
+     ],
+     "questions": [
+      {
+       "id": "q-g5-175",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
+       "choix": [
+        "Sur la ligne de refoulement",
+        "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
+        "Sur la ligne liquide",
+        "Sur le condenseur"
+       ],
+       "bonne": 1,
+       "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
+       "aide": "Le manomètre BP mesure la pression côté basse pression.",
+       "remed": {
+        "texte": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP)."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-176",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
+       "choix": [
+        "Sur la ligne d'aspiration",
+        "Sur la ligne de refoulement (entre compresseur et condenseur)",
+        "Sur l'évaporateur",
+        "Sur le détendeur"
+       ],
+       "bonne": 1,
+       "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
+       "aide": "Le manomètre HP mesure la pression côté haute pression.",
+       "remed": {
+        "texte": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP)."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.01",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      },
+      {
+       "id": "q-g5-v6_063",
+       "dc": "G5",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le taux de remplissage maximal d'une bouteille de récupération est de :",
+       "choix": [
+        "60%",
+        "70%",
+        "80%",
+        "100%"
+       ],
+       "bonne": 2,
+       "explication": "80% — Max 80% du volume pour laisser de l'espace à la dilatation thermique. Un remplissage excessif est dangereux (explosion).",
+       "aide": "Il faut toujours laisser un espace de sécurité pour la dilatation.",
+       "remed": {
+        "texte": "Max 80% du volume pour laisser de l'espace à la dilatation thermique. Un remplissage excessif est dangereux (explosion)."
+       },
+       "remediation_vers": "g5a",
+       "code": "5.02",
+       "categories": [
+        "A1",
+        "A2",
+        "D"
+       ]
+      }
+     ],
+     "notes": "La fiche centrale du module : y passer le temps qu'il faut. Faire manipuler un manifold et des flexibles réels (azote ou circuit vide) et faire répéter le triptyque fermer / stabiliser / desserrer jusqu'à ce que le geste soit lent par réflexe, pas par consigne. Observer AVANT d'expliquer : laisser un stagiaire desserrer à sa vitesse naturelle une première fois — la plupart vont trop vite, et c'est ce constat, pas un discours, qui doit amener la correction. Corriger immédiatement un geste brusque, ne jamais laisser aller au bout : la sécurité s'impose, elle ne se découvre pas par la sensation d'un jet résiduel."
     },
     {
      "type": "cours",
@@ -4783,22 +4743,6 @@ window.PILOTE_PROJECTION = {
      ],
      "questions": [],
      "notes": "Cœur de cible du parcours D. La proposition « quelques centaines de grammes » fait toujours débat — c'est voulu : elle ressemble au bon sens de chantier. Rappeler l'anecdote de la bouteille au soleil. En atelier, faire refaire la double pesée : bouteille pleine fermée, étiquetée, consignée au registre ; nouvelle bouteille pesée AVANT le premier gramme."
-    },
-    {
-     "type": "plateau",
-     "fiche": null,
-     "titre": "Charge en phase liquide, pesée au gramme, report immédiat au registre",
-     "minutes": 60,
-     "video": null,
-     "questions": [],
-     "notes": "",
-     "slides": [
-      {
-       "type": "plateau",
-       "titre": "Charge en phase liquide, pesée au gramme, report immédiat au registre",
-       "minutes": 60
-      }
-     ]
     },
     {
      "type": "cours",
@@ -5264,6 +5208,46 @@ window.PILOTE_PROJECTION = {
       }
      ],
      "notes": "Carte complémentaire de g6 : ici, le geste plutôt que la théorie. Faire manipuler une vraie fiche constructeur pour montrer que le réglage des soupapes (6.04) ne s'invente jamais — c'est le réflexe à ancrer, plus utile qu'un chiffre mémorisé. Sur un compresseur d'atelier CONSIGNÉ, faire dérouler la procédure complète : contrôle avant mise en marche, relevés en fonctionnement, arrêt propre. Le réglage des soupapes (6.04) n'est évalué en pratique qu'en catégorie A1 — les stagiaires visant seulement A2 peuvent s'en tenir aux principes. Le code 6.08 est nouveau et seulement théorique : un temps d'échange suffit (propreté des échangeurs, charge correcte, surchauffe bien réglée) plutôt qu'une démonstration. Relier à g7 pour la suite du parcours."
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "libelle": null,
+   "titre": "Le TP de bout en bout, puis les échangeurs",
+   "intention": "Une après-midi, une machine, la chaîne complète : mise sous azote, contrôle d'étanchéité, tirage au vide, charge pesée, relevés, récupération, remise sous azote, et le CERFA rempli jusqu'au bout. C'est l'épreuve en conditions réelles, en plus long.",
+   "sequences": [
+    {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "TP 1/2 — sous azote : installation, pose du manifold, mise en pression, recherche de fuite au détecteur et à l'eau savonneuse, tirage au vide et tenue du vide",
+     "minutes": 120,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "TP 1/2 — sous azote : installation, pose du manifold, mise en pression, recherche de fuite au détecteur et à l'eau savonneuse, tirage au vide et tenue du vide",
+       "minutes": 120
+      }
+     ]
+    },
+    {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "TP 2/2 — avec le fluide : charge en phase liquide à la balance, relevés et surchauffe, récupération complète, remise sous azote, CERFA et traçabilité du fluide",
+     "minutes": 120,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "TP 2/2 — avec le fluide : charge en phase liquide à la balance, relevés et surchauffe, récupération complète, remise sous azote, CERFA et traçabilité du fluide",
+       "minutes": 120
+      }
+     ]
     },
     {
      "type": "cours",
@@ -6298,170 +6282,6 @@ window.PILOTE_PROJECTION = {
      "notes": "Exercice charnière : il rebranche les composants (G6-G9) sur l'étanchéité (G4). Le laisser chercher en binôme cinq minutes avant de corriger. Erreur fréquente : s'arrêter à « le détendeur est bouché » — plausible pour la surchauffe, mais n'explique ni le sous-refroidissement nul ni les bulles au voyant. Faire verbaliser pourquoi une seule cause explique les trois indices. Enchaîner : « et maintenant, comment localises-tu la fuite ? » → retour en G4c."
     },
     {
-     "type": "plateau",
-     "fiche": null,
-     "titre": "Mise en route, relevé des pressions et températures, calcul de la surchauffe",
-     "minutes": 50,
-     "video": null,
-     "questions": [],
-     "notes": "",
-     "slides": [
-      {
-       "type": "plateau",
-       "titre": "Mise en route, relevé des pressions et températures, calcul de la surchauffe",
-       "minutes": 50
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "n": 4,
-   "libelle": null,
-   "titre": "Le détendeur, le brasage, et le choix d'un fluide",
-   "intention": "Le geste de tuyauterie occupe la journée : un joint brasé étanche, sous balayage d'azote, ne s'obtient pas du premier coup. La fin de journée prend de la hauteur — quel fluide choisir demain, et pourquoi.",
-   "sequences": [
-    {
-     "type": "cours",
-     "fiche": "s3",
-     "titre": "La flamme interdite — décomposition du fluide",
-     "minutes": 20,
-     "video": null,
-     "slides": [
-      {
-       "type": "titre",
-       "titre": "La flamme interdite — décomposition du fluide",
-       "dc": "Sécurité · codes 11.03",
-       "competences": [
-        {
-         "code": "11.03",
-         "lib": "Connaître les règles de sécurité des fluides inflammables, toxiques ou à pression plus élevée.",
-         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
-         "epreuve": {
-          "A1": "T",
-          "A2": "T"
-         },
-         "nouveau": false,
-         "tirage_au_sort": false
-        }
-       ]
-      },
-      {
-       "type": "schema",
-       "src": "packs/fluides/res/svg/secu-flamme.svg",
-       "alt": "À gauche le geste interdit : chauffer un tronçon non récupéré, les gaz toxiques remontent vers le visage penché. À droite le geste juste : récupérer, balayer à l'azote, ventiler.",
-       "titre": "La flamme interdite — décomposition du fluide"
-      },
-      {
-       "type": "point",
-       "html": "Un fluide frigorigène fluoré est stable à température normale. Il ne l'est plus face à une flamme. Chauffé au contact d'une flamme ou d'une surface très chaude, il ne brûle pas comme un carburant : il se <b>décompose</b>. Sa molécule se casse et forme d'autres substances, absentes du fluide d'origine — des gaz toxiques et corrosifs.",
-       "titre": "La flamme interdite — décomposition du fluide"
-      },
-      {
-       "type": "point",
-       "html": "Certains fluides ajoutent un second risque. Selon la norme NF EN 378, les fluides classés <b>A2L</b> (légèrement inflammables, comme le R-32 ou le R-1234yf) ou <b>A3</b> (très inflammables, comme le R-290 ou le R-600a) peuvent eux-mêmes s'enflammer au contact d'une flamme ou d'une étincelle. La classe du fluide utilisé se lit sur sa FDS (fiche de données de sécurité).",
-       "titre": "La flamme interdite — décomposition du fluide"
-      },
-      {
-       "type": "point",
-       "html": "Le cas type : un tronçon où il reste « une petite quantité, ça ne changera rien ». La flamme touche ce fluide résiduel, il se décompose, et les fumées se dégagent juste sous le visage penché sur le brasage.",
-       "titre": "La flamme interdite — décomposition du fluide"
-      },
-      {
-       "type": "encadre",
-       "genre": "cle",
-       "t": "Ce qu'il faut retenir",
-       "html": "<ol><li><b>Récupérez</b> entièrement le fluide du tronçon à chauffer avant toute opération de brasage : jamais de brasage sur un circuit encore chargé.</li><li>Ne recherchez <b>jamais une fuite avec une flamme</b> : utilisez un détecteur électronique.</li><li>Faites circuler de l'azote à l'intérieur du tube pendant le brasage, avec un mano-détendeur, pour en chasser l'air et les résidus : c'est le <b>balayage</b>.</li><li><b>Ventilez</b> la zone de travail, et ne restez pas penché directement au-dessus de la flamme.</li></ol>",
-       "titre": "La flamme interdite — décomposition du fluide"
-      },
-      {
-       "type": "encadre",
-       "genre": "piege",
-       "t": "Le geste interdit",
-       "html": "<p>Chauffer ou braser un tronçon de circuit sans avoir récupéré et vérifié l'absence de fluide, ou rechercher une fuite avec une flamme.</p><p>Conséquence : dégagement de gaz toxiques et corrosifs, inhalés à bout portant. Risque d'incendie en plus, si le fluide est inflammable (classe A2L ou A3).</p>",
-       "titre": "La flamme interdite — décomposition du fluide"
-      }
-     ],
-     "questions": [
-      {
-       "id": "pk-cl3-1",
-       "dc": "Classification",
-       "code": "11.03",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
-       "choix": [
-        "Près du plafond, car les gaz montent toujours",
-        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
-        "Il se répartit uniformément et sans danger dans tout le volume",
-        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
-       ],
-       "bonne": 1,
-       "aide": "Comparez sa masse à celle de l'air.",
-       "remed": {
-        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
-        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
-       },
-       "remediation_vers": "cl3",
-       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-       "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g11-54",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Le R290 (propane) est classé :",
-       "choix": [
-        "A1",
-        "A2L",
-        "A2",
-        "A3"
-       ],
-       "bonne": 3,
-       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
-       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
-       "remediation_vers": "g11",
-       "code": "11.03",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "q-g11-v6_033",
-       "dc": "G11",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Un fluide classé A2L est :",
-       "choix": [
-        "Non inflammable, non toxique",
-        "Légèrement inflammable, faible toxicité",
-        "Très inflammable, faible toxicité",
-        "Légèrement inflammable, toxicité élevée"
-       ],
-       "bonne": 1,
-       "explication": "Légèrement inflammable, faible toxicité — A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf.",
-       "aide": "A = toxicité, le chiffre = inflammabilité. L = lower (plus faible).",
-       "remed": {
-        "texte": "A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf."
-       },
-       "remediation_vers": "g11",
-       "code": "11.03",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      }
-     ],
-     "notes": "Montrez, sans l'allumer, un chalumeau et un poste de brasage avec son mano-détendeur d'azote ; faites nommer le balayage et sa fonction. Racontez le cas du brasage sur un tronçon mal purgé, pour ancrer le lien entre flamme et décomposition. Rappelez l'interdiction absolue de rechercher une fuite à la flamme (méthode ancienne, aujourd'hui interdite). Reliez à la classe NF EN 378 du fluide utilisé en atelier, lisible sur sa FDS, pour rappeler que certains fluides s'enflamment eux-mêmes en plus de se décomposer."
-    },
-    {
      "type": "cours",
      "fiche": "g9",
      "titre": "Le détendeur et les organes annexes",
@@ -6898,6 +6718,170 @@ window.PILOTE_PROJECTION = {
       }
      ],
      "notes": "Faire manipuler un pressostat démonté (ou les simulateurs KP1/KP5) pour que les stagiaires distinguent au toucher le limiteur, qui coupe, de la soupape de régulation, qui module en continu : c'est la confusion la plus fréquente à l'oral. Sur le séparateur d'huile, montrer un appareil réel en fonctionnement si possible — le retour d'huile par flotteur reste abstrait sur le seul schéma. Relier le rapport écrit (9.09) à la finalité du métier : ce n'est pas de la paperasse, c'est ce qui évite la fuite non détectée. Ce module referme le groupe G9 : le relier à G6 (mêmes sécurités électriques côté compresseur) et à G4 (étanchéité)."
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "libelle": null,
+   "titre": "Le détendeur, le brasage, et le choix d'un fluide",
+   "intention": "Le geste de tuyauterie occupe la journée : un joint brasé étanche, sous balayage d'azote, ne s'obtient pas du premier coup. La fin de journée prend de la hauteur — quel fluide choisir demain, et pourquoi.",
+   "sequences": [
+    {
+     "type": "cours",
+     "fiche": "s3",
+     "titre": "La flamme interdite — décomposition du fluide",
+     "minutes": 20,
+     "video": null,
+     "slides": [
+      {
+       "type": "titre",
+       "titre": "La flamme interdite — décomposition du fluide",
+       "dc": "Sécurité · codes 11.03",
+       "competences": [
+        {
+         "code": "11.03",
+         "lib": "Connaître les règles de sécurité des fluides inflammables, toxiques ou à pression plus élevée.",
+         "officiel": "Connaître les réglementations et les normes de sécurité applicables pour l'utilisation, le stockage et le transport des réfrigérants inflammables ou toxiques ou des réfrigérants nécessitant une pression de fonctionnement plus élevée. Comprendre les conditions spécifiques liées au site dans lesquelles il est permis d'utiliser des équipements ne satisfaisant pas aux exigences énoncées à l'annexe IV du règlement (UE) 2024/573 en raison d'impératifs de sécurité",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        }
+       ]
+      },
+      {
+       "type": "schema",
+       "src": "packs/fluides/res/svg/secu-flamme.svg",
+       "alt": "À gauche le geste interdit : chauffer un tronçon non récupéré, les gaz toxiques remontent vers le visage penché. À droite le geste juste : récupérer, balayer à l'azote, ventiler.",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "point",
+       "html": "Un fluide frigorigène fluoré est stable à température normale. Il ne l'est plus face à une flamme. Chauffé au contact d'une flamme ou d'une surface très chaude, il ne brûle pas comme un carburant : il se <b>décompose</b>. Sa molécule se casse et forme d'autres substances, absentes du fluide d'origine — des gaz toxiques et corrosifs.",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "point",
+       "html": "Certains fluides ajoutent un second risque. Selon la norme NF EN 378, les fluides classés <b>A2L</b> (légèrement inflammables, comme le R-32 ou le R-1234yf) ou <b>A3</b> (très inflammables, comme le R-290 ou le R-600a) peuvent eux-mêmes s'enflammer au contact d'une flamme ou d'une étincelle. La classe du fluide utilisé se lit sur sa FDS (fiche de données de sécurité).",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "point",
+       "html": "Le cas type : un tronçon où il reste « une petite quantité, ça ne changera rien ». La flamme touche ce fluide résiduel, il se décompose, et les fumées se dégagent juste sous le visage penché sur le brasage.",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "encadre",
+       "genre": "cle",
+       "t": "Ce qu'il faut retenir",
+       "html": "<ol><li><b>Récupérez</b> entièrement le fluide du tronçon à chauffer avant toute opération de brasage : jamais de brasage sur un circuit encore chargé.</li><li>Ne recherchez <b>jamais une fuite avec une flamme</b> : utilisez un détecteur électronique.</li><li>Faites circuler de l'azote à l'intérieur du tube pendant le brasage, avec un mano-détendeur, pour en chasser l'air et les résidus : c'est le <b>balayage</b>.</li><li><b>Ventilez</b> la zone de travail, et ne restez pas penché directement au-dessus de la flamme.</li></ol>",
+       "titre": "La flamme interdite — décomposition du fluide"
+      },
+      {
+       "type": "encadre",
+       "genre": "piege",
+       "t": "Le geste interdit",
+       "html": "<p>Chauffer ou braser un tronçon de circuit sans avoir récupéré et vérifié l'absence de fluide, ou rechercher une fuite avec une flamme.</p><p>Conséquence : dégagement de gaz toxiques et corrosifs, inhalés à bout portant. Risque d'incendie en plus, si le fluide est inflammable (classe A2L ou A3).</p>",
+       "titre": "La flamme interdite — décomposition du fluide"
+      }
+     ],
+     "questions": [
+      {
+       "id": "pk-cl3-1",
+       "dc": "Classification",
+       "code": "11.03",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
+       "choix": [
+        "Près du plafond, car les gaz montent toujours",
+        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+        "Il se répartit uniformément et sans danger dans tout le volume",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+       ],
+       "bonne": 1,
+       "aide": "Comparez sa masse à celle de l'air.",
+       "remed": {
+        "regle": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+        "pourquoi": "Une zone peut être parfaitement respirable à hauteur de visage et déjà dangereuse au niveau du sol ou en bas de quelques marches. Descendre, c'est alors entrer dans la nappe de gaz. Une ouverture en hauteur ne suffit pas à la chasser.",
+        "piege": "Ne généralisez pas : « plus lourd que l'air » vaut pour le CO₂ et la plupart des fluides fluorés, mais PAS pour l'ammoniac (R-717), qui est plus léger que l'air et monte. Le comportement d'un fluide se lit sur sa fiche de données de sécurité."
+       },
+       "remediation_vers": "cl3",
+       "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
+       "origine": "pack",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g11-54",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Le R290 (propane) est classé :",
+       "choix": [
+        "A1",
+        "A2L",
+        "A2",
+        "A3"
+       ],
+       "bonne": 3,
+       "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
+       "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g11-v6_033",
+       "dc": "G11",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Un fluide classé A2L est :",
+       "choix": [
+        "Non inflammable, non toxique",
+        "Légèrement inflammable, faible toxicité",
+        "Très inflammable, faible toxicité",
+        "Légèrement inflammable, toxicité élevée"
+       ],
+       "bonne": 1,
+       "explication": "Légèrement inflammable, faible toxicité — A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf.",
+       "aide": "A = toxicité, le chiffre = inflammabilité. L = lower (plus faible).",
+       "remed": {
+        "texte": "A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf."
+       },
+       "remediation_vers": "g11",
+       "code": "11.03",
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      }
+     ],
+     "notes": "Montrez, sans l'allumer, un chalumeau et un poste de brasage avec son mano-détendeur d'azote ; faites nommer le balayage et sa fonction. Racontez le cas du brasage sur un tronçon mal purgé, pour ancrer le lien entre flamme et décomposition. Rappelez l'interdiction absolue de rechercher une fuite à la flamme (méthode ancienne, aujourd'hui interdite). Reliez à la classe NF EN 378 du fluide utilisé en atelier, lisible sur sa FDS, pour rappeler que certains fluides s'enflamment eux-mêmes en plus de se décomposer."
+    },
+    {
+     "type": "plateau",
+     "fiche": null,
+     "titre": "Réglage du détendeur sur machine en marche : agir sur la surchauffe et vérifier l'effet, mise en route et arrêt dans l'ordre du constructeur",
+     "minutes": 50,
+     "video": null,
+     "questions": [],
+     "notes": "",
+     "slides": [
+      {
+       "type": "plateau",
+       "titre": "Réglage du détendeur sur machine en marche : agir sur la surchauffe et vérifier l'effet, mise en route et arrêt dans l'ordre du constructeur",
+       "minutes": 50
+      }
+     ]
     },
     {
      "type": "cours",
