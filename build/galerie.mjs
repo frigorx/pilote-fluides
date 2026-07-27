@@ -140,7 +140,16 @@ let h = `<!doctype html>
   .sous button { font:600 13.5px Calibri,sans-serif; padding:5px 13px; color:var(--bleu);
                  background:#f3f7fb; border:1.5px solid #2f5689; border-radius:999px; cursor:pointer; }
   .sous button:hover { background:#e7eff7; }
+  .sous button.lien { color:#5a6b7d; border-color:var(--bord); background:#fff; font-weight:400; }
+  .sous button.lien:hover { background:#f3f7fb; }
+  .sous a.dl { font-size:13px; color:#5a6b7d; text-decoration:none; border-bottom:1px dotted #8aa0b4; }
   .sous .util { font-size:13px; color:#5a6b7d; }
+  .ou { border-left:4px solid var(--bleu); background:#f3f7fb; border-radius:6px;
+        padding:10px 14px; margin:14px 0; font-size:14px; }
+  .ou code { background:#fff; border:1px solid var(--bord); border-radius:4px; padding:1px 6px;
+             font-family:Consolas,monospace; font-size:13px; }
+  .ou button { font:600 13px Calibri,sans-serif; padding:4px 12px; margin-left:6px; color:var(--bleu);
+               background:#fff; border:1.5px solid #2f5689; border-radius:999px; cursor:pointer; }
   .sous .util b { color:var(--bleu); }
   .vide { color:#c0392b; font-weight:600; font-size:13px; }
   @media print { .barre, .sous button { display:none } .planche { break-inside:avoid } }
@@ -152,6 +161,19 @@ Page relevée à chaque fabrication du pack : une planche ajoutée apparaît ici
 <p class="meta"><b>Une animation narrative ne se joue qu'une fois, au chargement.</b> Si vous arrivez
 après la fin, vous voyez l'image finale — c'est voulu : au repos, le dessin doit déjà être juste.
 Le bouton <b>↻ Rejouer</b> la relance depuis le début.</p>
+
+<div class="ou">
+<b>Où sont ces planches, et comment les partager.</b><br>
+Dans le dépôt : <code>packs/fluides/res/svg/</code> — un fichier <code>.svg</code> par planche,
+fait à la main, 3 à 10 Ko pièce.<br>
+En ligne, <b>chacune a sa propre adresse</b> et s'ouvre seule dans un navigateur, sur n'importe
+quel appareil : le bouton <b>🔗 Lien</b> sous chaque planche copie cette adresse, prête à coller
+dans un message. <b>⬇ Fichier</b> ouvre le SVG seul — c'est aussi la meilleure façon de voir une
+animation en grand, et l'enregistrer se fait d'un clic droit.<br>
+Pour partager <b>toute la galerie</b> d'un coup :
+<code id="url-galerie">…</code><button id="copier-galerie">🔗 Copier</button>
+<span id="dit-galerie" style="margin-left:8px;color:#1e6b40;font-weight:700"></span>
+</div>
 
 <div class="barre">
   <button class="f on" data-f="*">toutes</button>
@@ -186,6 +208,8 @@ for (const p of PLANCHES) {
   h += `<img src="packs/fluides/res/svg/${esc(p.fichier)}" alt="${esc(p.titre)}" loading="lazy">`;
   h += `<div class="sous">`;
   if (p.anime) h += `<button class="rejeu">↻ Rejouer</button>`;
+  h += `<button class="lien" data-f="${esc(p.fichier)}">🔗 Lien</button>`;
+  h += `<a class="dl" href="packs/fluides/res/svg/${esc(p.fichier)}" target="_blank" rel="noopener">⬇ Fichier</a>`;
   if (p.fiches.length) {
     h += `<span class="util">Sur ${p.fiches.length > 1 ? "les fiches" : "la fiche"} ` +
       p.fiches.map((f) => `<b>${esc(f.id)}</b> ${esc(f.titre)}`).join(" · ") + `</span>`;
@@ -226,6 +250,38 @@ frigoriste et invente des organes qui n'existent pas.</p>
   [].slice.call(document.querySelectorAll("button.rejeu")).forEach(function (b) {
     b.addEventListener("click", function () { relancer(b.closest(".planche").querySelector("img")); });
   });
+
+  /* Copier une adresse. navigator.clipboard n'existe qu'en HTTPS (ou sur
+     localhost) : ouverte depuis une clé USB en file://, la page doit rester
+     utile — on retombe alors sur une sélection du texte, que l'utilisateur
+     copie lui-même. Une fonction qui échoue en silence serait pire que rien. */
+  function copier(txt, dire) {
+    function ok() { dire("copié ✓"); setTimeout(function () { dire(""); }, 2200); }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(txt).then(ok, function () { dire(txt); });
+    } else {
+      var z = document.createElement("textarea");
+      z.value = txt; z.style.cssText = "position:fixed;opacity:0";
+      document.body.appendChild(z); z.select();
+      try { document.execCommand("copy"); ok(); } catch (e) { dire(txt); }
+      z.remove();
+    }
+  }
+  [].slice.call(document.querySelectorAll("button.lien")).forEach(function (b) {
+    b.addEventListener("click", function () {
+      var base = location.href.replace(/galerie\\.html.*$/, "");
+      var u = base + "packs/fluides/res/svg/" + b.dataset.f;
+      var t = b.textContent;
+      copier(u, function (m) { b.textContent = m || t; });
+    });
+  });
+  var champ = document.getElementById("url-galerie");
+  if (champ) {
+    champ.textContent = location.href.split("?")[0].split("#")[0];
+    document.getElementById("copier-galerie").addEventListener("click", function () {
+      copier(champ.textContent, function (m) { document.getElementById("dit-galerie").textContent = m; });
+    });
+  }
   document.getElementById("tout").addEventListener("click", function () {
     blocs.forEach(function (b) {
       if (b.classList.contains("masque")) return;
