@@ -53,8 +53,13 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ## 2. État au 27/07/2026
 
-**81 cartes** · **266 questions** · **33 planches SVG** (dont 15 animées, et **2 dessins animés
-narratifs**) · 4 illustrations · **3 outils embarqués**
+**81 cartes** · **266 questions** · **41 planches SVG** (dont **33 animées** : 11 récits,
+22 boucles — 311 animations, voir `galerie.html`) · 4 illustrations · **3 outils embarqués**
+> ⚠️ **Les 14 planches du 27/07 soir** (8 nouvelles : tirage au vide, pesée, manifold, ordre des
+> vannes, pression absolue/relative, boucle du détendeur, givre/dégivrage, charge limite ;
+> 6 animations d'existantes) ont été produites par agents + vérification adversariale, contrôle
+> build 0 défaut — mais **le déroulé visuel n'a pas été vu par un œil humain** : à valider dans
+> `galerie.html` avant diffusion.
 **✅ 44 fiches de cours sur 44 portent un visuel** — plus une seule fiche « mur de texte ».
 
 > **Couverture du référentiel officiel : A1 100 % · A2 100 % · D 100 % · E 100 %.**
