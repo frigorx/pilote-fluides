@@ -516,6 +516,44 @@
   function img(src) { return "<img class='illus' alt='' src='" + (PACK.pack.base_img || "") + src + "'>"; }
 
   /* ====================================================================
+     REVOIR UNE PLANCHE ANIMÉE
+     --------------------------------------------------------------------
+     Un SVG inséré en <img> lance son animation au CHARGEMENT DE L'IMAGE,
+     pas quand le lecteur arrive dessus. Et les planches narratives ne se
+     déroulent qu'une seule fois : `begin` décalés, aucun `repeatCount`.
+     Qui fait défiler la fiche jusqu'au schéma arrive donc après la fin et
+     ne voit que l'image finale — deux personnes au sol, sans la descente.
+
+     LE SEUL MOYEN FIABLE de relancer l'horloge SMIL d'un <img> est de
+     RECHARGER SA SOURCE. On ne touche ni au SVG, ni à son CSS, ni au DOM
+     du dessin : la tentative du 27/07 qui injectait le SVG en ligne après
+     avoir retiré une règle CSS a vidé les planches, et a été annulée.
+
+     La liste des planches animées est relevée au build
+     (`PACK_META.svg_animes`) : le bouton n'apparaît jamais sous un dessin
+     fixe, et personne n'a de liste à tenir à la main.
+     ==================================================================== */
+  var nRejeu = 0;
+  function planchesAnimees() {
+    var animes = (PACK.pack && PACK.pack.svg_animes) || [];
+    if (!animes.length) return;
+    onAll("img[src*='res/svg/']", function (im) {
+      if (im.getAttribute("data-rejeu")) return;
+      var base = im.getAttribute("src").split("?")[0];
+      if (animes.indexOf(base.split("/").pop()) < 0) return; // dessin fixe
+      im.setAttribute("data-rejeu", "1");
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "rejeu";
+      b.textContent = "↻ Revoir l'animation depuis le début";
+      b.addEventListener("click", function () {
+        im.setAttribute("src", base + "?r=" + ++nRejeu);
+      });
+      im.parentNode.insertBefore(b, im.nextSibling);
+    });
+  }
+
+  /* ====================================================================
      INTERACTIONS
      ==================================================================== */
   function brancher(c, m) {
@@ -535,6 +573,7 @@
   }
   function nav() { onAll("[data-go]", function (el) { el.addEventListener("click", function () { aller(el.getAttribute("data-go")); }); }); }
   function commun() {
+    planchesAnimees(); // le bouton « revoir » sous les planches animées
     // Extension pack fluides : indice de question et texte officiel de
     // l'arrêté — même mécanique, le bouton révèle le bloc qui suit son parent.
     onAll("[data-aide],[data-deplie]", function (el) {
