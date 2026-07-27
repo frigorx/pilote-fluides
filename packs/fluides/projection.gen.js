@@ -1044,7 +1044,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "piege",
        "t": "Le piège des manomètres",
-       "html": "<b>Pression absolue = pression relative + environ 1 bar.</b> Un manomètre de service lit en relatif ; les tables de saturation, elles, sont souvent en absolu. Se tromper d'un bar, c'est se tromper de plusieurs kelvins sur la température de saturation — et diagnostiquer une fuite qui n'existe pas.",
+       "html": "<img src=\"packs/fluides/res/svg/pression-absolue-relative.svg\" alt=\"Animation : deux échelles verticales côte à côte, la relative du manomètre et l'absolue des tables, décalées de 1 bar — un curseur monte le long des deux en même temps, et le manomètre à zéro est déjà à 1 bar absolu.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><b>Pression absolue = pression relative + environ 1 bar.</b> Un manomètre de service lit en relatif ; les tables de saturation, elles, sont souvent en absolu. Se tromper d'un bar, c'est se tromper de plusieurs kelvins sur la température de saturation — et diagnostiquer une fuite qui n'existe pas.",
        "titre": "Unités, pression, thermodynamique utile"
       },
       {
@@ -3527,8 +3527,8 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "schema",
-       "src": "packs/fluides/res/photos/pompe-a-vide.png",
-       "alt": "Une pompe à vide d atelier.",
+       "src": "packs/fluides/res/svg/tirage-au-vide.svg",
+       "alt": "Animation : trois courbes de tirage au vide se tracent — la bonne descend et tient son palier ; l'humidité fait stagner la descente ; la fuite fait remonter le vide dès que la pompe est isolée.",
        "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
       },
       {
@@ -4281,8 +4281,8 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "schema",
-       "src": "packs/fluides/res/svg/recuperation.svg",
-       "alt": "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance — chaque flexible débranché suit le même ordre : fermer, stabiliser, desserrer lentement.",
+       "src": "packs/fluides/res/svg/ordre-vannes.svg",
+       "alt": "Animation : les étapes de la déconnexion s'allument une à une sur le montage — fermer la vanne, laisser la pression se stabiliser, desserrer lentement, purger le flexible.",
        "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
       },
       {
@@ -6341,8 +6341,8 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "schema",
-       "src": "packs/fluides/res/svg/detendeurs-ligne.svg",
-       "alt": "Les quatre types de détendeurs et la ligne liquide avec ses accessoires dans l ordre.",
+       "src": "packs/fluides/res/svg/detendeur-regulation.svg",
+       "alt": "Animation en boucle : la charge thermique augmente, la surchauffe monte, le bulbe se réchauffe et pousse la membrane, le détendeur ouvre, l'évaporateur reçoit plus de fluide, la surchauffe redescend — la boucle qui se corrige toute seule.",
        "titre": "Le détendeur et les organes annexes"
       },
       {

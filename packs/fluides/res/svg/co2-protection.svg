@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" role="img"
-     aria-label="Le dispositif de protection d'un local au CO2. Protection collective : capteur fixe en partie basse, alarme sonore et visuelle à l'intérieur, alarme à l'extérieur au-dessus de la porte pour prévenir avant d'ouvrir, ventilation asservie, signalisation à l'entrée et issue de secours dégagée. Protection individuelle : gants et lunettes. Un masque à cartouche ne protège ni du CO2 ni du manque d'oxygène.">
-  <title>Se protéger du CO₂ : le collectif d'abord, l'individuel ensuite</title>
+     aria-label="Le dispositif de protection d'un local au CO2, et la chaîne de détection animée. La concentration monte depuis le sol ; le capteur fixe placé en partie basse la voit et son afficheur se remplit, sans aucune valeur chiffrée ; la préalarme se déclenche en orange ; l'alarme d'évacuation passe au rouge et clignote ; enfin l'alarme extérieure, au-dessus de la porte, s'allume : c'est elle qui prévient avant d'ouvrir. À droite, les EPI — et le masque à cartouche, qui ne protège ni du CO2 ni du manque d'oxygène.">
+  <title>Préalarme, alarme, et celle qui prévient AVANT d'ouvrir la porte</title>
   <style>
     .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
     .st  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
@@ -8,6 +8,38 @@
     .bad { font:700 14px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
     .p   { fill:none; stroke:#1b3a63; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
     .acc { fill:none; stroke:#c9451a; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+
+    /* Le signal qui remonte du capteur vers la sirène : les tirets défilent. */
+    .flux   { animation: flux 1.1s linear 3s infinite; }
+    @keyframes flux { to { stroke-dashoffset: -18; } }
+    /* L'alarme d'évacuation ne s'allume pas : elle CLIGNOTE, en permanence. */
+    .clign  { animation: clign 1s linear 8.6s infinite; }
+    @keyframes clign { 0%,50% { opacity:1; } 50.01%,100% { opacity:0.15; } }
+    /* L'alarme extérieure : dernier maillon, point capital de la fiche. */
+    .dehors { animation: dehors 1.6s ease-in-out 11.6s infinite; }
+    @keyframes dehors { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+
+    /* FILET D'IMPRESSION — conditionné à `print`, JAMAIS à
+       prefers-reduced-motion, qui supprimerait la démonstration à l'écran sur
+       toute machine aux effets d'animation Windows désactivés.
+
+       ⚠ `animate { display:none }` NE NEUTRALISE PAS le SMIL (vérifié sous
+       Chromium le 27/07 : l'animation continue de tourner). Une planche qui
+       s'en remet à cette règle s'imprime dans son état de DÉPART — local sain,
+       alarmes éteintes : le contresens exact de ce qu'elle enseigne.
+       Seule une déclaration !important passe devant le SMIL. On épingle donc
+       l'état final propriété par propriété. Les classes ci-dessous n'existent
+       que pour cela : à l'écran elles ne déclarent rien. */
+    @media print {
+      .i-nappe   { y: 176px !important; height: 32px !important; }
+      .i-surface { y: 175px !important; }
+      .i-rouge   { fill: #c9451a !important; }
+      .i-orange  { fill: #ff6b35 !important; }
+      .i-blanc   { stroke: #ffffff !important; }
+      .i-vu      { opacity: 1 !important; }
+      .i-cache   { opacity: 0 !important; }
+      .flux, .clign, .dehors { animation: none !important; }
+    }
   </style>
 
   <rect width="880" height="360" fill="#ffffff"/>
@@ -23,21 +55,39 @@
     <line class="p" x1="110" y1="208" x2="510" y2="208"/>
     <line class="p" x1="120" y1="54" x2="500" y2="54"/>
 
-    <!-- nappe -->
-    <rect x="122" y="176" width="376" height="32" fill="#7fa9c9" opacity="0.7"/>
-    <line x1="122" y1="176" x2="498" y2="176" stroke="#3f7fae" stroke-width="2"/>
+    <!-- LA CONCENTRATION QUI MONTE. Base = état FINAL (nappe haute) : sans
+         animation, une nappe au ras du sol ferait croire à un local sûr. -->
+    <rect class="i-nappe" x="122" y="176" width="376" height="32" fill="#7fa9c9" opacity="0.7">
+      <animate attributeName="y"      values="204;204;176;176" keyTimes="0;0.043;0.357;1" dur="14s" fill="freeze"/>
+      <animate attributeName="height" values="4;4;32;32"       keyTimes="0;0.043;0.357;1" dur="14s" fill="freeze"/>
+    </rect>
+    <!-- La surface est un rect et non un trait : `y` est une propriété CSS de
+         géométrie sur un rect, ce qui permet de l'épingler à l'impression. -->
+    <rect class="i-surface" x="122" y="175" width="376" height="2" fill="#3f7fae">
+      <animate attributeName="y" values="203;203;175;175" keyTimes="0;0.043;0.357;1" dur="14s" fill="freeze"/>
+    </rect>
 
-    <!-- porte + alarme extérieure -->
+    <!-- porte + ALARME EXTÉRIEURE : le dernier maillon, et le plus important -->
     <rect x="96" y="140" width="24" height="68" fill="#e8eef4" stroke="#1b3a63" stroke-width="2"/>
-    <g transform="translate(84,104)">
-      <circle class="acc" cx="12" cy="12" r="11" fill="#fff"/>
-      <path class="acc" d="M12,5 v8 M12,17 v1"/>
-      <path class="acc" d="M-2,4 a16,16 0 0 1 0,16 M26,4 a16,16 0 0 0 0,16"/>
+    <g class="dehors" transform="translate(84,104)">
+      <circle class="acc i-rouge" cx="12" cy="12" r="11" style="fill:#c9451a">
+        <animate attributeName="fill" values="#ffffff;#ffffff;#c9451a;#c9451a" keyTimes="0;0.786;0.829;1" dur="14s" fill="freeze"/>
+      </circle>
+      <path class="acc i-blanc" d="M12,5 v8 M12,17 v1" style="stroke:#ffffff">
+        <animate attributeName="stroke" values="#c9451a;#c9451a;#ffffff;#ffffff" keyTimes="0;0.786;0.829;1" dur="14s" fill="freeze"/>
+      </path>
+      <path class="acc i-vu" d="M-2,4 a16,16 0 0 1 0,16 M26,4 a16,16 0 0 0 0,16" opacity="1">
+        <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.786;0.829;1" dur="14s" fill="freeze"/>
+      </path>
     </g>
     <text class="bad" x="52" y="90" text-anchor="middle" style="font-size:12px">alarme</text>
     <text class="bad" x="52" y="104" text-anchor="middle" style="font-size:12px">DEHORS</text>
-    <text class="lg"  x="40" y="176" style="font-size:12px">on sait</text>
-    <text class="lg"  x="40" y="192" style="font-size:12px">avant d'ouvrir</text>
+    <text class="lg i-rouge" x="40" y="176" style="font-size:12px;fill:#c9451a">
+      <animate attributeName="fill" values="#4a5b6e;#4a5b6e;#c9451a;#c9451a" keyTimes="0;0.786;0.829;1" dur="14s" fill="freeze"/>
+      on sait</text>
+    <text class="lg i-rouge" x="40" y="192" style="font-size:12px;fill:#c9451a">
+      <animate attributeName="fill" values="#4a5b6e;#4a5b6e;#c9451a;#c9451a" keyTimes="0;0.786;0.829;1" dur="14s" fill="freeze"/>
+      avant d'ouvrir</text>
 
     <!-- signalisation sur la porte -->
     <g transform="translate(100,58)">
@@ -45,19 +95,49 @@
       <text x="12" y="19" text-anchor="middle" style="font:700 10px Calibri;fill:#111">!</text>
     </g>
 
-    <!-- capteur bas -->
+    <!-- capteur EN BAS + son afficheur : trois barres qui se remplissent,
+         SANS graduation ni nombre. Aucun seuil en ppm sur une planche — ils se
+         lisent sur l'appareil, sa documentation et la FDS. -->
+    <g transform="translate(430,154)">
+      <rect class="p" x="0" y="0" width="34" height="24" rx="3"/>
+      <rect class="i-orange" x="6" y="13" width="6" height="6" stroke="#8aa0b4" stroke-width="1" fill="#ff6b35">
+        <animate attributeName="fill" values="#e8eef4;#e8eef4;#ff6b35;#ff6b35" keyTimes="0;0.200;0.229;1" dur="14s" fill="freeze"/>
+      </rect>
+      <rect class="i-orange" x="15" y="8" width="6" height="11" stroke="#8aa0b4" stroke-width="1" fill="#ff6b35">
+        <animate attributeName="fill" values="#e8eef4;#e8eef4;#ff6b35;#ff6b35" keyTimes="0;0.386;0.421;1" dur="14s" fill="freeze"/>
+      </rect>
+      <rect class="i-rouge" x="24" y="3" width="6" height="16" stroke="#8aa0b4" stroke-width="1" fill="#c9451a">
+        <animate attributeName="fill" values="#e8eef4;#e8eef4;#c9451a;#c9451a" keyTimes="0;0.586;0.621;1" dur="14s" fill="freeze"/>
+      </rect>
+    </g>
     <g transform="translate(430,178)">
       <rect class="p" x="0" y="0" width="34" height="24" rx="3" fill="#fff"/>
-      <circle cx="10" cy="12" r="4" fill="#c9451a"/>
+      <circle class="i-rouge" cx="10" cy="12" r="4" fill="#c9451a">
+        <animate attributeName="fill" values="#c9d4de;#c9d4de;#c9451a;#c9451a" keyTimes="0;0.200;0.229;1" dur="14s" fill="freeze"/>
+      </circle>
       <text x="24" y="16" text-anchor="middle" style="font:700 10px Calibri;fill:#1b3a63">ppm</text>
     </g>
     <text class="st" x="447" y="222" text-anchor="middle" style="font-size:11.5px">capteur EN BAS</text>
 
-    <!-- alarme intérieure -->
-    <g transform="translate(300,66)">
-      <circle class="acc" cx="12" cy="12" r="11" fill="#fff"/>
-      <path class="acc" d="M12,5 v8 M12,17 v1"/>
+    <!-- ALARME INTÉRIEURE : un seul appareil, DEUX niveaux — blanc au repos,
+         orange (préalarme, qui avertit), rouge clignotant (évacuation). -->
+    <g class="clign" transform="translate(300,66)">
+      <circle class="acc i-rouge" cx="12" cy="12" r="11" style="fill:#c9451a">
+        <animate attributeName="fill" values="#ffffff;#ffffff;#ff6b35;#ff6b35;#c9451a;#c9451a" keyTimes="0;0.386;0.421;0.586;0.621;1" dur="14s" fill="freeze"/>
+      </circle>
+      <path class="acc i-blanc" d="M12,5 v8 M12,17 v1" style="stroke:#ffffff">
+        <animate attributeName="stroke" values="#c9451a;#c9451a;#ffffff;#ffffff" keyTimes="0;0.386;0.421;1" dur="14s" fill="freeze"/>
+      </path>
+      <path class="acc i-vu" d="M-2,4 a16,16 0 0 1 0,16 M26,4 a16,16 0 0 0 0,16" opacity="1">
+        <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.586;0.621;1" dur="14s" fill="freeze"/>
+      </path>
     </g>
+    <text class="st i-cache" x="288" y="83" text-anchor="end" opacity="0" style="font-size:13px;fill:#ff6b35">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.386;0.421;0.571;0.593;1" dur="14s" fill="freeze"/>
+      préalarme</text>
+    <text class="st i-vu" x="288" y="83" text-anchor="end" opacity="1" style="font-size:13px;fill:#c9451a">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.600;0.636;1" dur="14s" fill="freeze"/>
+      alarme d'évacuation</text>
     <text class="lg" x="312" y="104" text-anchor="middle" style="font-size:12px">alarme intérieure</text>
 
     <!-- ventilation -->
@@ -70,8 +150,9 @@
     </g>
     <text class="lg" x="472" y="112" text-anchor="middle" style="font-size:12px">ventilation</text>
 
-    <!-- lien capteur -> alarmes -->
-    <path class="acc" d="M447,178 v-16 h-135 v42" stroke-dasharray="5 4"/>
+    <!-- lien capteur -> alarmes : il part de l'afficheur et remonte vers la
+         sirène intérieure (il plongeait auparavant dans la nappe). -->
+    <path class="acc flux" d="M447,154 v-16 h-135 v-18" stroke-dasharray="5 4"/>
   </g>
 
   <!-- ===== EPI ===== -->

@@ -1009,7 +1009,7 @@ export const CARTES = [
     corps:
       photo("manifold-branche.jpg", "Un manifold raccordé sur une installation, flexibles bleu et rouge en place.",
             "Le manifold en situation : à gauche le manomètre BP (bleu), à droite le HP (rouge), et le flexible central qui part vers la bouteille ou la pompe.") +
-      schema("recuperation.svg", "Le principe de branchement : installation à l arrêt, isolée, flexibles raccordés à l appareil, minimum d émissions à chaque connexion.") +
+      schema("manifold-lecture.svg", "Animation : le manifold face à vous — BP à gauche en bleu, HP à droite en rouge, le flexible central. Les manomètres lisent en permanence, robinets fermés ; c'est l'ouverture d'un robinet qui met le flexible central en communication.") +
       "<p>Le <b>manifold</b> (ensemble manométrique) réunit deux manomètres — <b>BP en bleu</b>, <b>HP en rouge</b> — " +
       "et deux vannes, une par côté, qui commandent le passage vers le <b>flexible central jaune</b> : celui qui " +
       "part vers la pompe à vide, la bouteille de récupération, ou une bouteille d'azote équipée de son " +
@@ -1142,6 +1142,7 @@ export const CARTES = [
     dc: "Préparation pratique · codes 3.03 · 3.04",
     minuteur_s: 330,
     corps:
+      schema("tirage-au-vide.svg", "Animation : trois courbes de tirage au vide se tracent — la bonne descend et tient son palier ; l'humidité fait stagner la descente ; la fuite fait remonter le vide dès que la pompe est isolée.") +
       photo("pompe-a-vide.png", "Une pompe à vide d atelier.",
             "La pompe à vide : elle aspire l air et l humidité du circuit. Vérifier son niveau d huile avant chaque usage.") +
       photo("vacuometre.png", "Un vacuomètre électronique.",
@@ -1276,7 +1277,7 @@ export const CARTES = [
     dc: "Préparation pratique · codes 5.01 · 5.02",
     minuteur_s: 420,
     corps:
-      schema("recuperation.svg", "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance — chaque flexible débranché suit le même ordre : fermer, stabiliser, desserrer lentement.") +
+      schema("ordre-vannes.svg", "Animation : les étapes de la déconnexion s'allument une à une sur le montage — fermer la vanne, laisser la pression se stabiliser, desserrer lentement, purger le flexible.") +
       "<p>Un manifold, ce sont des <b>vannes</b>. Les ouvrir et les fermer dans le bon ordre n'est pas un détail. Un mauvais ordre peut lâcher un nuage de fluide au visage, ou libérer un flexible sous pression.</p>" +
       "<p>À la <b>connexion</b>, l'ordre est simple : vannes fermées, on raccorde les flexibles, on chasse l'air resté à l'intérieur par une ouverture brève, puis on ouvre progressivement.</p>" +
       "<p>C'est à la <b>déconnexion</b> que l'ordre compte le plus. Il ne change jamais :</p>" +
@@ -1343,6 +1344,7 @@ export const CARTES = [
     corps:
       photo("balance.jpg", "Une balance électronique de charge avec une bouteille de fluide posée dessus.",
             "La balance de charge : la bouteille est posée dessus pendant toute l opération. On lit la variation de masse, pas la masse totale.") +
+      schema("pesee-charge.svg", "Animation en trois temps : on note la masse avant, le fluide passe vers l'installation et l'afficheur baisse, on relit après — la différence entre les deux pesées est la charge réellement introduite, et elle se note sur le registre.") +
       "<p>La quantité de fluide qui entre ou sort d'un circuit se lit sur une <b>balance</b>, jamais sur un manomètre. Le manomètre dit comment la machine se comporte. La balance dit <b>combien</b> il y a de fluide.</p>" +
       "<p>Avant toute pesée, on choisit une balance <b>adaptée</b> à la quantité attendue. On la pose à plat, stable, vérifiée. Une balance douteuse ne sert à rien : son résultat n'est pas fiable.</p>" +
       "<ol>" +
@@ -1540,6 +1542,7 @@ export const CARTES = [
         type: "piege",
         t: "Le piège des manomètres",
         html:
+          schema("pression-absolue-relative.svg", "Animation : deux échelles verticales côte à côte, la relative du manomètre et l'absolue des tables, décalées de 1 bar — un curseur monte le long des deux en même temps, et le manomètre à zéro est déjà à 1 bar absolu.") +
           "<b>Pression absolue = pression relative + environ 1 bar.</b> Un manomètre de service lit en " +
           "relatif ; les tables de saturation, elles, sont souvent en absolu. Se tromper d'un bar, " +
           "c'est se tromper de plusieurs kelvins sur la température de saturation — et diagnostiquer une " +
@@ -3156,6 +3159,7 @@ export const CARTES = [
       "<p>Les <b>interrupteurs de sécurité et de contrôle</b> — les pressostats — protègent la " +
       "machine, pas le produit. Ils coupent l'alimentation électrique du compresseur si la pression " +
       "sort de la plage prévue. Deux organes, deux fonctions, deux réglages : on ne les confond pas.</p>" +
+      schema("givre-degivrage.svg", "Animation en cycle : l'air traverse la batterie propre, le givre s'épaissit sur les ailettes et étouffe l'échange, puis le dégivrage le fait fondre — l'eau part au bac et à l'écoulement, et l'air repart normalement.") +
       "<p>Le dégivrage évite que le givre n'isole la batterie. Il peut se faire à l'air, par " +
       "résistance électrique ou par gaz chauds. Quand il se fait <b>à l'air chaud</b>, le conduit " +
       "qui transporte cet air s'inspecte à chaque visite : étanchéité, isolation, écoulement des " +
@@ -3306,6 +3310,7 @@ export const CARTES = [
     dc: "G9 · codes 9.01 · 9.02 · 9.03 · 9.08",
     minuteur_s: 300,
     corps:
+      schema("detendeur-regulation.svg", "Animation en boucle : la charge thermique augmente, la surchauffe monte, le bulbe se réchauffe et pousse la membrane, le détendeur ouvre, l'évaporateur reçoit plus de fluide, la surchauffe redescend — la boucle qui se corrige toute seule.") +
       schema("detendeurs-ligne.svg", "Les quatre types de détendeurs et la ligne liquide avec ses accessoires dans l ordre.") +
       "<p>Le détendeur fait chuter la pression et <b>dose le débit de liquide</b> envoyé à " +
       "l'évaporateur. Le <b>détendeur thermostatique</b> régule sur la <b>surchauffe</b> : son bulbe, " +
@@ -3650,6 +3655,7 @@ export const CARTES = [
       "machine au R-290 tient ses performances. Une charge approximative dégrade le rendement " +
       "<b>et</b> la sécurité en même temps.</p>" +
       "<p>Un hydrocarbure récupéré qu'on ne peut pas réutiliser ne part <b>jamais</b> à l'atmosphère, et jamais à l'égout : il part en <b>élimination</b>. C'est une filière agréée qui détruit le fluide dans des conditions contrôlées, comme pour tout déchet dangereux. La bouteille envoyée en <b>destruction</b> est accompagnée d'un bordereau qui trace le mouvement, du technicien jusqu'au centre de traitement. On garde ce bordereau : c'est la preuve que le fluide a bien été éliminé, pas relâché.</p>" +
+      schema("charge-limite-local.svg", "Animation : trois locaux de volumes croissants, la même fuite dans chacun — dans le petit local la concentration entre dans le domaine explosif, dans le grand elle reste diluée sous le seuil. La charge admissible se calcule selon la NF EN 378, en fonction du volume du local et du fluide.") +
       "<p>Calculer la <b>charge maximale</b> admissible d'un fluide inflammable, ce n'est pas la deviner. Ce calcul dépend du <b>volume de la pièce</b> desservie et de la <b>limite pratique</b> du fluide, c'est-à-dire la quantité maximale tolérée dans l'air ambiant sans risque. Plus la pièce est petite, moins on a le droit de charge : un même compresseur au R-290 n'a pas la même charge autorisée dans un grand local et dans une pièce exiguë. La méthode et les valeurs à utiliser se trouvent dans la norme <b>NF EN 378</b> et dans la documentation du constructeur — on les <b>lit</b>, on ne les invente jamais, et le résultat du calcul se fait <b>valider</b> avant toute mise en service.</p>" +
       "<p>Sur un équipement à fluide inflammable, l'<b>efficacité énergétique</b> se travaille avec les mêmes gestes que sur toutes les machines. La différence, c'est que la charge exacte compte double : ces circuits sont conçus avec une charge volontairement petite, alors le moindre écart — un peu trop, un peu pas assez — dérègle vite l'échange et fait chuter la performance, bien avant que ça n'arrive sur une machine à grosse charge.</p>",
     blocs: [

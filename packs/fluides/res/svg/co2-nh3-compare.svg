@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 350" role="img"
-     aria-label="Comparaison du CO2 et de l'ammoniac. Le CO2, R-744, est classé A1, sans odeur, plus lourd que l'air : il s'accumule en partie basse du local, et relève de la catégorie B. L'ammoniac, R-717, est classé B2L, toxique et faiblement inflammable, d'odeur piquante, plus léger que l'air : il monte vers le plafond, et relève de la catégorie C. Une attestation A1 ou A2 ne donne aucun droit d'intervention sur ces deux fluides.">
+     aria-label="Comparaison animée du CO2 et de l'ammoniac, les deux locaux côte à côte. Le CO2, R-744, est classé A1, sans odeur, plus lourd que l'air : il s'accumule en partie basse du local, et relève de la catégorie B. L'ammoniac, R-717, est classé B2L, toxique et faiblement inflammable, d'odeur piquante, plus léger que l'air : il monte vers le plafond, et relève de la catégorie C. L'animation joue les deux comportements en même temps et en boucle : à gauche la nappe de CO2 part du sol et remplit le local par le bas pendant qu'à droite la nappe d'ammoniac part du plafond et remplit le local par le haut ; les deux flèches dérivent en sens inverse. Une attestation A1 ou A2 ne donne aucun droit d'intervention sur ces deux fluides.">
   <title>CO₂ et ammoniac : deux fluides, deux comportements inverses</title>
   <style>
     .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
@@ -8,6 +8,24 @@
     .bad { font:700 14px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
     .p   { fill:none; stroke:#1b3a63; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
     .acc { fill:none; stroke:#c9451a; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+    /* Animation CYCLIQUE : le phénomène est permanent, il n'a ni début ni fin.
+       TOUT est sur le MÊME cycle de 12 s — les deux nappes ET les deux
+       flèches — ce qui est tout l'intérêt de la planche : on voit les deux
+       comportements INVERSES au même instant, côte à côte.
+       Les flèches tournaient d'abord sur un cycle propre de 3 s : quatre
+       clignotements par cycle de nappe, et un effacement en plein palier
+       « local plein », au moment précis où la classe regarde le sens de
+       remplissage. Elles sont désormais visibles 8 s sur 12, palier compris.
+       Les valeurs de base des nappes sont l'ÉTAT FINAL (nappe pleine, en bas
+       à gauche et en haut à droite) : si l'animation ne se joue pas — capture,
+       impression, lecteur arrivé plus tard — la planche reste juste.
+       À l'impression, on neutralise les éléments d'animation eux-mêmes : un
+       élément d'animation en display:none ne s'exécute pas, et le dessin reste
+       figé sur ses valeurs de base, chaque nappe du bon côté.
+       Cette neutralisation N'EST PAS conditionnée à `prefers-reduced-motion` :
+       sur une machine aux effets d'animation Windows désactivés, cette
+       condition supprimait la démonstration à l'écran. */
+    @media print { animate, animateTransform { display: none; } }
   </style>
 
   <rect width="880" height="350" fill="#ffffff"/>
@@ -25,10 +43,29 @@
       <path class="p" d="M10,14 v120 h180 v-120"/>
       <line class="p" x1="0" y1="134" x2="200" y2="134"/>
       <line class="p" x1="10" y1="14" x2="190" y2="14"/>
-      <!-- gaz en bas -->
-      <rect x="12" y="98" width="176" height="36" fill="#7fa9c9" opacity="0.8"/>
-      <line x1="12" y1="98" x2="188" y2="98" stroke="#3f7fae" stroke-width="2"/>
-      <path class="acc" d="M100,44 v40 m-6,-6 l6,6 6,-6"/>
+      <!-- gaz en bas : la nappe part du SOL et monte -->
+      <rect x="12" y="98" width="176" height="36" fill="#7fa9c9" opacity="0.8">
+        <animate attributeName="y" values="132;132;98;98;132"
+                 keyTimes="0;0.14;0.56;0.86;1" dur="12s" repeatCount="indefinite"/>
+        <animate attributeName="height" values="2;2;36;36;2"
+                 keyTimes="0;0.14;0.56;0.86;1" dur="12s" repeatCount="indefinite"/>
+      </rect>
+      <line x1="12" y1="98" x2="188" y2="98" stroke="#3f7fae" stroke-width="2">
+        <animate attributeName="y1" values="132;132;98;98;132"
+                 keyTimes="0;0.14;0.56;0.86;1" dur="12s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="132;132;98;98;132"
+                 keyTimes="0;0.14;0.56;0.86;1" dur="12s" repeatCount="indefinite"/>
+      </line>
+      <!-- la flèche dérive VERS LE BAS, sur le MÊME cycle de 12 s que la nappe :
+           elle descend pendant que la nappe monte, puis reste immobile et bien
+           visible pendant tout le palier « local plein ». -->
+      <path class="acc" d="M100,44 v40 m-6,-6 l6,6 6,-6">
+        <animateTransform attributeName="transform" type="translate"
+                          values="0,-10;0,-10;0,14;0,14;0,-10"
+                          keyTimes="0;0.14;0.56;0.86;1" dur="12s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0"
+                 keyTimes="0;0.14;0.80;0.86;1" dur="12s" repeatCount="indefinite"/>
+      </path>
       <text x="100" y="122" text-anchor="middle" style="font:700 13px Calibri;fill:#123a5c">il descend</text>
     </g>
 
@@ -51,10 +88,26 @@
       <path class="p" d="M10,14 v120 h180 v-120"/>
       <line class="p" x1="0" y1="134" x2="200" y2="134"/>
       <line class="p" x1="10" y1="14" x2="190" y2="14"/>
-      <!-- gaz en haut -->
-      <rect x="12" y="16" width="176" height="36" fill="#c3a8d1" opacity="0.8"/>
-      <line x1="12" y1="52" x2="188" y2="52" stroke="#8b63a3" stroke-width="2"/>
-      <path class="acc" d="M100,110 v-40 m-6,6 l6,-6 6,6"/>
+      <!-- gaz en haut : la nappe part du PLAFOND et descend -->
+      <rect x="12" y="16" width="176" height="36" fill="#c3a8d1" opacity="0.8">
+        <animate attributeName="height" values="2;2;36;36;2"
+                 keyTimes="0;0.14;0.56;0.86;1" dur="12s" repeatCount="indefinite"/>
+      </rect>
+      <line x1="12" y1="52" x2="188" y2="52" stroke="#8b63a3" stroke-width="2">
+        <animate attributeName="y1" values="18;18;52;52;18"
+                 keyTimes="0;0.14;0.56;0.86;1" dur="12s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="18;18;52;52;18"
+                 keyTimes="0;0.14;0.56;0.86;1" dur="12s" repeatCount="indefinite"/>
+      </line>
+      <!-- la flèche dérive VERS LE HAUT, sur le MÊME cycle de 12 s que la nappe,
+           en miroir exact de celle du CO₂ : c'est la comparaison qui est le sujet. -->
+      <path class="acc" d="M100,110 v-40 m-6,6 l6,-6 6,6">
+        <animateTransform attributeName="transform" type="translate"
+                          values="0,10;0,10;0,-14;0,-14;0,10"
+                          keyTimes="0;0.14;0.56;0.86;1" dur="12s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0"
+                 keyTimes="0;0.14;0.80;0.86;1" dur="12s" repeatCount="indefinite"/>
+      </path>
       <text x="100" y="40" text-anchor="middle" style="font:700 13px Calibri;fill:#4a2d5c">il monte</text>
     </g>
 

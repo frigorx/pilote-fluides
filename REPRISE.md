@@ -43,6 +43,7 @@ Doctrine [[feedback_protection_code]] : licence + antériorité git, jamais de c
 | [`formateur.html`](https://frigorx.github.io/pilote-fluides/formateur.html) | mode pilotage verrouillé, notes d'animation visibles | formateur |
 | [`partage.html`](https://frigorx.github.io/pilote-fluides/partage.html) | affiche A4 / écran avec QR code | à projeter en salle |
 | [`relecture.html`](https://frigorx.github.io/pilote-fluides/relecture.html) | tout le contenu à plat, cases ✅/✏ | **le bon à tirer** |
+| [`galerie.html`](https://frigorx.github.io/pilote-fluides/galerie.html) | **toutes les planches sur une page**, chacune rejouable d'un clic (récits / boucles / dessins fixes), avec les fiches qui l'utilisent et le signalement des planches non utilisées. Relevée du dossier à chaque build | formateur, auteur |
 | [`matrice.html`](https://frigorx.github.io/pilote-fluides/matrice.html) | **la matrice de traçabilité** : les 136 compétences de l'arrêté une par une — la fiche qui l'enseigne, les questions qui la vérifient, le texte officiel. Filtrable par catégorie et par état. Version Markdown : `MATRICE-COMPETENCES.md` | direction, organisme évaluateur |
 | [`documents.html`](https://frigorx.github.io/pilote-fluides/documents.html) | **le dossier du projet** : 6 documents libres (état, mesures, licence) + **38 documents chiffrés** derrière le code — dossier de direction (projet + budget, en téléchargement), architecture, ingénierie, système qualité, 21 chapitres de cours | tous publics / formateur |
 
@@ -332,6 +333,8 @@ node build/convert.mjs    # Mission F-GAZ + questions-pack.json → banque.gen.j
 node build/build.mjs      # cartes.js + banque → pack.pilote.js ET pack.eleve.js
 node build/parcours.mjs   # parcours.js + fiches → projection.gen.js (le support de salle)
 node build/matrice.mjs    # → MATRICE-COMPETENCES.md + matrice.html (lancé aussi par build.mjs)
+node build/galerie.mjs    # → galerie.html : toutes les planches, rejouables (idem)
+node build/planches.mjs   # contrôle des planches animées (--strict pour bloquer)
 node build/relecture.mjs  # → relecture.html (document de bon à tirer)
 node build/chiffres.mjs   # → chiffres.gen.js : les compteurs des pages, RELEVÉS et non saisis
 node build/coffre.mjs "<code n1>"                 # → docs/coffre/ : documents chiffrés

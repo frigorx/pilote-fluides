@@ -448,6 +448,12 @@ function main() {
   execFileSync(process.execPath, [resolve(RACINE, "build/matrice.mjs")], {
     stdio: "inherit",
   });
+
+  /* --- la galerie : toutes les planches sur une page, rejouables. Relevée
+     du dossier, donc une planche ajoutée y apparaît sans qu'on y pense. --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/galerie.mjs")], {
+    stdio: "inherit",
+  });
 }
 
 main();
