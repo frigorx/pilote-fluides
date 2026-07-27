@@ -1,5 +1,8 @@
 # REPRISE — pack habilitation fluides frigorigènes
 
+> ⚡ **REPRISE RAPIDE : lire `PROMPT-REPRISE.md`, pas ce fichier.** Ce document-ci est la mémoire
+> longue du projet (794 lignes) ; `PROMPT-REPRISE.md` est le point d’entrée d’une nouvelle session.
+
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 > Dernière mise à jour : **26 juillet 2026**.
