@@ -81,10 +81,6 @@
   .avert{margin-top:16px;font-size:20px;font-weight:600;color:var(--attente)}
 
   /* encadrés */
-  /* Rejouer une planche animée en salle : discret, sous le schéma. */
-  .rejouer{margin:14px auto 0;display:block;padding:8px 18px;font:600 18px/1.2 inherit;
-    color:var(--bleu);background:#fff;border:2px solid #d7e0e8;border-radius:999px;cursor:pointer}
-  .rejouer:hover{border-color:var(--bleu)}
   .enc{border-left:7px solid var(--bleu);background:#f3f7fb;border-radius:12px;padding:22px 28px}
   .enc.cle{border-color:var(--ok);background:var(--ok-bg)}
   .enc.piege{border-color:var(--orange);background:var(--orange-clair)}
@@ -210,15 +206,6 @@ function demarrerProjection(){
       ? vueQuestion(s.questions[S.i - s.slides.length])
       : vueSlide(s.slides[S.i], s);
 
-    /* En salle, projeter une planche animée, c'est DEMANDER le mouvement :
-       on ne fait pas cliquer le formateur. Si l'appareil supprime les
-       animations (réglage Windows « Effets d'animation »), la diapositive
-       bascule d'elle-même sur la version qui les joue. */
-    if(!estQuestion && mouvementReduit()){
-      var bt = document.querySelector("#in .rejouer");
-      if(bt) bt.click();
-    }
-
     majNotes(s, estQuestion);
   }
 
@@ -247,17 +234,8 @@ function demarrerProjection(){
         h += "<div style='margin-top:22px'><a href='"+esc(s.video)+"' target='_blank' rel='noopener' style='font-size:22px'>🎬 Ouvrir la vidéo de la séquence</a></div>";
       return h;
     }
-    if(sl.type==="schema"){
-      var u = (P.base_img||"")+sl.src.replace(/^packs\/fluides\/res\//,"");
-      /* Une planche animée projetée doit repartir de ZÉRO quand on l'affiche :
-         en salle, on montre une chronologie, pas un instantané pris au hasard
-         dans la boucle. Le paramètre force le navigateur à relire le fichier.
-         (F. Henninot, 27/07 : « elles ne sont pas à 0 ».) */
-      if(estAnimee(u)) u += (u.indexOf("?")<0?"?":"&")+"rejeu="+Date.now();
-      return "<h2 style='font-size:26px'>"+esc(sl.titre)+"</h2><img src='"+esc(u)+"' alt='"+esc(sl.alt)+"'>"+
-             (estAnimee(u) ? "<button type='button' class='rejouer' onclick='rejouerSlide(this)'>" +
-               (mouvementReduit() ? "▶ Lancer l&#39;animation" : "↻ Rejouer l&#39;animation") + "</button>" : "");
-    }
+    if(sl.type==="schema")
+      return "<h2 style='font-size:26px'>"+esc(sl.titre)+"</h2><img src='"+esc((P.base_img||"")+sl.src.replace(/^packs\/fluides\/res\//,""))+"' alt='"+esc(sl.alt)+"'>";
     if(sl.type==="encadre")
       return "<div class='enc "+esc(sl.genre)+"'><div class='t'>"+esc(sl.t)+"</div>"+sl.html+"</div>";
     /* Le plateau ne se projette pas : on annonce le passage à la machine, et
@@ -361,39 +339,6 @@ function demarrerProjection(){
   function arreterChrono(){ if(S.chrono){ clearInterval(S.chrono); S.chrono=null; } }
 
   function pad(n){ return (n<10?"0":"")+n; }
-
-  /* Les planches animées, relevées au build (pack.pilote.js → svg_animes). */
-  function estAnimee(u){
-    var L = (window.PILOTE_PACK && PILOTE_PACK.pack && PILOTE_PACK.pack.svg_animes) || [];
-    var nom = String(u).split("?")[0].split("/").pop();
-    return L.indexOf(nom) >= 0;
-  }
-  /* L'appareil supprime-t-il les animations ? Sur les PC du lycée, le réglage
-     Windows « Effets d'animation » est souvent désactivé : nos planches se
-     mettent alors à l'image FINALE et la salle ne voit jamais le déroulé. */
-  function mouvementReduit(){
-    try { return matchMedia("(prefers-reduced-motion: reduce)").matches; } catch(e){ return false; }
-  }
-  /* Projeter, c'est demander le mouvement. On retire donc du SVG la règle qui
-     le supprime — puis on l'insère en ligne, ce qui permet en plus de le
-     relancer sans recharger. */
-  window.rejouerSlide = function(b){
-    var el = b.previousElementSibling;
-    while(el && el.tagName !== "IMG" && el.tagName !== "svg") el = el.previousElementSibling;
-    if(!el) return;
-    if(el.tagName === "svg"){ try { el.setCurrentTime(0); return; } catch(e){} }
-    var src = (el.getAttribute("src")||"").split("?")[0];
-    fetch(src).then(function(r){ return r.text(); }).then(function(t){
-      var h = document.createElement("div");
-      h.innerHTML = t.replace(/@media[^{]*prefers-reduced-motion[^{]*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/g, "");
-      var svg = h.querySelector("svg");
-      if(!svg){ el.setAttribute("src", src + "?rejeu=" + Date.now()); return; }
-      svg.setAttribute("style","max-width:100%;max-height:64vh;height:auto;display:block;margin:0 auto");
-      el.parentNode.replaceChild(svg, el);
-      try { svg.setCurrentTime(0); } catch(e){}
-      b.textContent = "↻ Rejouer l'animation";
-    }).catch(function(){ el.setAttribute("src", src + "?rejeu=" + Date.now()); });
-  };
   function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){
     return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
 
