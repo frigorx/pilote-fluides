@@ -21,10 +21,9 @@
   <text class="t" x="30" y="32">Fluide inflammable : ce que le volume du local commande</text>
   <text class="lg" x="30" y="54">Même installation au <tspan style="font-weight:700;fill:#1b3a63">R-290 (classe A3)</tspan>, même fuite. Seul le volume du local change — et c'est lui qui commande la charge autorisée.</text>
 
-  <!-- LES TROIS LOCAUX : murs et plafonds, le sol est la ligne commune.
-       Le sol est à y=238 (et non 250) : il faut 18 px francs entre la
-       dernière étiquette de jauge et le titre de la bande de concentration,
-       sinon les deux blocs se lisent comme un seul paragraphe. -->
+  <!-- LES TROIS LOCAUX. Sol commun à y=238 (et non 250) : sans ces 12 px, le
+       titre de la bande collait aux étiquettes de jauge et les deux blocs se
+       lisaient comme un seul paragraphe. -->
   <path class="p" d="M42,238 v-82 h140 v82"/>
   <path class="p" d="M244,238 v-114 h200 v114"/>
   <path class="p" d="M504,238 v-148 h340 v148"/>
@@ -121,9 +120,8 @@
   <text class="lg" x="638" y="352">très inflammable — et jamais</text>
   <text class="lg" x="638" y="370">A2L comme le R-32.</text>
   <line x1="636" y1="384" x2="842" y2="384" stroke="#c9d4de" stroke-width="1.5"/>
-  <!-- « Le volume commande tout » a été retiré : la légende du bas dit, comme la
-       fiche G12, que la charge dépend du volume ET du fluide. La formule reprise
-       ici est celle du bloc clé de la fiche, et elle reste vraie hors contexte. -->
+  <!-- « Le volume commande tout » retiré : la charge dépend du volume ET du
+       fluide (légende du bas, fiche G12). Formule du bloc clé de la fiche. -->
   <text class="bad" x="638" y="404">Petite pièce = charge plus faible.</text>
 
   <text class="lg" x="42" y="442">La charge maximale admissible <tspan style="font-weight:700;fill:#c9451a">se CALCULE</tspan> selon la <tspan style="font-weight:700;fill:#1b3a63">NF EN 378</tspan>, en fonction du volume du local et du fluide —</text>
