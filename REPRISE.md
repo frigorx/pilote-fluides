@@ -499,8 +499,21 @@ Or A2 annonce 28 h de formation (il resterait **20 minutes**) et **D est déjà 
 *« Le système est magnifique, je ne dis pas que c'est nul — je dis que c'est trop. Vraiment un
 projet d'autoformation, et à la fin un bourrage de crâne. Les gens savent faire. »*
 Modèle : **amont en autoformation → test de niveau → points clés en salle → atelier → bachotage →
-épreuve**, sur **4,5 jours + 0,5 jour d'évaluation**, journées de 8 h, **matin théorie,
-après-midi pratique**, manipulation **à l'azote**.
+épreuve**, **matin théorie, après-midi pratique**, manipulation **à l'azote**.
+
+**Calendrier tranché — option B, et elle tient dans le budget** : formation **mardi → vendredi
+midi**, **week-end d'autoformation**, **lundi matin révision**, **lundi après-midi l'épreuve**.
+Soit **4,5 jours exactement** (32 h 15), et *« 4,5 jours, sinon le plan de financement et le budget
+prévisionnel ne sont pas valables »*. Journée réduite à **7 h comptées** (8 h 30 – 17 h 00,
+6 h 30 effectives). Le week-end est le créneau que le nouveau modèle a créé : le stagiaire part en
+sachant ce qu'il doit réviser, parce qu'il vient de passer l'examen blanc du vendredi matin.
+**Plan de séance minuté demi-journée par demi-journée : `PLAN-SEQUENCE-4J5.md` § 5.**
+Répartition mesurée : **10 h 05 en salle · 12 h 55 en amont** — ça tombe juste, sans rien supprimer.
+
+**Outils : on fait la pédagogie d'abord** (décision 27/07). Le suivi des résultats attend ; en
+attendant les stagiaires envoient leurs résultats, traités **sur un PC fermé**. RGPD très allégé :
+**stagiaires majeurs, pas d'élèves mineurs**. Piste pour le futur logiciel d'évaluation :
+**tablettes dédiées sur réseau fermé**, jamais les téléphones des stagiaires.
 
 **La grille dictée par F. Henninot ne laisse que 8 h de théorie en salle** (J2 matin + J3 matin ;
 10 h avec la variante du J3). Contre 27 h 40 aujourd'hui : **≈ 20 h à basculer en amont, soit 70 %**.

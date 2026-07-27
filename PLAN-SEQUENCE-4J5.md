@@ -74,7 +74,7 @@ soit 6 h. Le réel est **4 h 15**. **1 h 45 sont rendues** au dernier jour.
 
 **Le CERFA a bien sa place dans l'épreuve pratique** : la traçabilité et le registre relèvent du
 groupe 5 du référentiel, donc remplir la fiche fait partie du geste évalué. L'intuition de
-F. Henninot est juste — ce qui rend l'absence de contenu CERFA dans le pack (§ 6) d'autant plus
+F. Henninot est juste — ce qui rend l'absence de contenu CERFA dans le pack (§ 9) d'autant plus
 gênante.
 
 ⚠️ **À faire confirmer par l'organisme certificateur** avant d'en faire un argument commercial :
@@ -116,7 +116,7 @@ Et une règle de rythme qui commande la structure :
 | Créneau | Durée | Contenu |
 |---|---:|---|
 | 8 h 30 – 9 h 30 | **1 h** | **Accueil et présentation.** Distribution des cahiers, des liens et des QR codes, explication du dispositif, tour de table. *« Incompressible : ça permet de juger le niveau, d'analyser les personnalités et de jauger la classe. »* |
-| 9 h 30 – 10 h 30 | **1 h** | **Test de niveau** — *« ni plus ni moins qu'un test d'habilitation fluide complet »*, sur un logiciel à créer (§ 6). |
+| 9 h 30 – 10 h 30 | **1 h** | **Test de niveau** — *« ni plus ni moins qu'un test d'habilitation fluide complet »*, sur un logiciel à créer (§ 9). |
 | 10 h 30 – 10 h 45 | 15 min | *récréation* |
 | 10 h 45 – 12 h 00 | **1 h 15** | **Sécurité** |
 | 12 h 00 – 13 h 30 | 1 h 30 | *déjeuner* |
@@ -126,47 +126,49 @@ Le bloc sécurité du pack pèse **1 h 55** (5 fiches) et la classification **2 
 Le créneau du J1 en offre 1 h 15 : **la sécurité déborde**, et le reste doit tomber dans
 l'après-midi du J3, comme prévu par la grille.
 
-### ⚠️ Les 48 heures ne tombent pas
+### ⚠️ 4,5 JOURS, C'EST UNE CONTRAINTE DE FINANCEMENT
 
-Au décompte réel — 4 jours de formation à 7 h + une épreuve de 4 h 15 :
+> *« Attention, 48 h c'est trop long, il faut qu'on reste à 4,5 jours. Sinon le plan de financement
+> et le budget prévisionnel ne sont pas valables. »* — F. Henninot, 27/07
+
+**Les 4,5 jours ne sont donc pas un confort : c'est le périmètre du budget.** Toute proposition qui
+dépasse est irrecevable, quel que soit son intérêt pédagogique. Les « 48 heures » évoquées plus tôt
+étaient un lapsus : le compte réel est **32 h 15**.
 
 | | Total |
 |---|---:|
-| 4 jours de formation × 7 h | **28 h** |
-| Épreuve (A1) | **4 h 15** |
-| **Total en centre** | **32 h 15** |
+| 3 jours pleins × 7 h | 21 h 00 |
+| 2 demi-journées × 3 h 30 | 7 h 00 |
+| Épreuve (A1) | 4 h 15 |
+| **Total en centre** | **32 h 15** — soit **4,5 jours** |
 
-**32 h 15, pas 48.** Trois lectures possibles, aucune tranchée ici :
-- la formation dure en réalité **plus de jours** ;
-- les 48 h comptent aussi les **heures d'autoformation amont** attendues du stagiaire — ce qui
-  serait cohérent avec le modèle, et devrait alors être **écrit dans la convocation** ;
-- ou c'est un lapsus de dictée.
+### Le calendrier retenu — OPTION B
 
-### Les deux calendriers en présence
+**Décidé par F. Henninot le 27/07** : formation du **mardi au vendredi 12 h 00**, **week-end de
+révision**, puis **lundi matin révision** et **lundi après-midi l'épreuve**.
 
-**Option A** (première formulation) : formation du **lundi au jeudi**, épreuve le **vendredi**.
+| Jour | Demi-journées | Compte |
+|---|---|---:|
+| **Mardi** | matin + après-midi | 1 j |
+| **Mercredi** | matin + après-midi | 1 j |
+| **Jeudi** | matin + après-midi | 1 j |
+| **Vendredi** | matin seul | ½ j |
+| *samedi · dimanche* | *autoformation, hors centre* | — |
+| **Lundi matin** | révision | ½ j |
+| **Lundi après-midi** | **épreuve** | ½ j |
+| | | **4,5 jours** |
 
-**Option B** (proposée par F. Henninot le 27/07) : formation du **mardi au vendredi 12 h 00**,
-**week-end de révision**, puis **lundi matin révision** et **lundi après-midi l'épreuve**.
+**L'option B tient exactement dans l'enveloppe budgétaire** — c'est vérifié, et c'est ce qui la
+rend recevable. L'option A (lundi → jeudi, épreuve le vendredi) fait aussi 4,5 jours : à budget
+égal, ce qui les départage est ailleurs.
 
-| | **Option A** | **Option B** |
-|---|---|---|
-| Formation | lun–jeu, 4 j | mar–jeu 3 j + ven matin |
-| Volume de formation | **28 h** | **24 h 30** |
-| Révision finale | dans le J4 | **lundi matin, 3 h 15** |
-| Épreuve | vendredi, 4 h 15 | lundi après-midi, 4 h 15 |
-| Autoformation | soirées | soirées **+ le week-end entier** |
-| Calendrier mobilisé | 5 jours | 8 jours |
+**Pourquoi B** : dans ce modèle **l'autoformation EST la condition de réussite**, et B est la seule
+qui lui donne un vrai créneau — un week-end complet, juste avant l'épreuve, avec un stagiaire qui
+sait exactement où il pèche parce qu'il vient de passer l'examen blanc du vendredi matin. Et le
+bachotage du lundi matin **colle** à l'épreuve de l'après-midi au lieu d'en être séparé d'une nuit.
 
-**Recommandation : l'option B.** Pas pour le confort — parce que dans ce modèle
-**l'autoformation EST la condition de réussite**, et l'option B est la seule qui lui donne un vrai
-créneau : un week-end complet, juste avant l'épreuve, avec un stagiaire qui sait déjà où il pèche
-grâce au test de niveau du premier jour. Et le bachotage du lundi matin **colle** à l'épreuve de
-l'après-midi au lieu d'en être séparé d'une nuit.
-
-**Son coût, à ne pas masquer** : elle mobilise deux semaines calendaires. Stagiaires hébergés,
-venus de loin, salle immobilisée — cela peut suffire à la disqualifier. C'est une décision
-d'exploitation, pas de pédagogie.
+**Son coût, à ne pas masquer** : elle mobilise deux semaines calendaires. Stagiaires hébergés ou
+venus de loin, salle immobilisée — c'est une contrainte d'exploitation, pas de budget horaire.
 
 ---
 
@@ -204,7 +206,126 @@ sans risquer le fluide**. À écrire dans les consignes d'atelier.
 
 ---
 
-## 5. Le chiffre qui commande tout
+## 5. Le plan de séance minuté — option B
+
+**Proposition, à valider.** Elle applique le critère de tri du § 8 aux fiches qui existent, et
+respecte la grille dictée le 27/07. Chaque demi-journée offre **3 h 15 effectives** (3 h 30
+comptées, une récréation déduite).
+
+### Mardi matin — accueil, positionnement, sécurité immédiate
+
+| Créneau | Durée | Contenu | Fiches |
+|---|---:|---|---|
+| 8 h 30 | 1 h 00 | **Accueil et présentation.** Cahiers, liens, QR codes, tour de table, jauge du groupe. *Incompressible.* | — |
+| 9 h 30 | 1 h 00 | **Test de niveau** — épreuve blanche complète | `ex-a1` / `ex-a2` |
+| 10 h 30 | 15 min | *récréation* | |
+| 10 h 45 | 1 h 15 | **Les trois dangers immédiats** : l'air qui manque · ce qui éclate · le froid qui brûle | `s1` `s4` `s2` |
+
+### Mardi après-midi — bourrage de crâne, sur les résultats du matin
+
+| Créneau | Durée | Contenu | Matière |
+|---|---:|---|---|
+| 13 h 30 | 3 h 15 | **Bachotage ciblé** sur les faiblesses révélées par le test du matin. Le formateur choisit les séries selon le groupe. | 13 séries `rev-g*` |
+
+### Mercredi matin — CE QUI A CHANGÉ (le cœur de la requalification)
+
+| Créneau | Durée | Contenu | Fiches |
+|---|---:|---|---|
+| 8 h 30 | 30 min | Ce que la loi impose : règlement (UE) 2024/573, arrêté du 21/11/2025, attestations, registre | `g0` |
+| 9 h 00 | 40 min | Impact environnemental, PRP, phase-down — pourquoi le régime a changé | `g2` |
+| 9 h 40 | 35 min | Familles et codes des fluides : les HFO, ce qui arrive dans le parc | `g1c` |
+| 10 h 30 | 15 min | *récréation* | |
+| 10 h 45 | 35 min | Substitution et efficacité : ce qui disparaît, ce qui le remplace | `g11` |
+| 11 h 20 | 40 min | **Questions du groupe** — c'est là qu'on récolte les fausses certitudes | — |
+
+### Mercredi après-midi — atelier : les mains, à l'azote
+
+| Créneau | Durée | Contenu | Fiches |
+|---|---:|---|---|
+| 13 h 30 | 30 min | Sécurité atelier, EPI, préparation de chantier | `p7` |
+| 14 h 00 | 1 h 00 | Le matériel : manifold, station, pompe à vide, azote | `p1` `p2` `p3` `p4` |
+| 15 h 00 | 30 min | L'ordre des vannes, la pesée | `p5` `p6` |
+| 15 h 30 | 15 min | *récréation* | |
+| 15 h 45 | 1 h 15 | **Manipulation sur machine — à l'azote** + technologie des composants revue sur le matériel réel | `g6`→`g9b` en support |
+
+### Jeudi matin — les points durs du référentiel
+
+| Créneau | Durée | Contenu | Fiches |
+|---|---:|---|---|
+| 8 h 30 | 1 h 30 | **Contrôles d'étanchéité** : points de fuite, méthode indirecte, méthode directe | `g4a` `g4b` `g4c` |
+| 10 h 00 | 30 min | Récupération sans émettre | `g5a` |
+| 10 h 30 | 15 min | *récréation* | |
+| 10 h 45 | 40 min | Peser, stocker, **tracer — le CERFA** ⚠️ *contenu à créer, § 9* | `g5b` + CERFA |
+| 11 h 25 | 20 min | Mise en situation | `x4` |
+
+### Jeudi après-midi — la sécurité des fluides, puis atelier
+
+| Créneau | Durée | Contenu | Fiches |
+|---|---:|---|---|
+| 13 h 30 | 55 min | Lire une classe NF EN 378 · la LIE et l'ATEX | `cl1` `cl2` |
+| 14 h 25 | 1 h 05 | Le CO₂ : deux dangers mortels · s'en protéger | `cl3` `cl4` |
+| 15 h 30 | 15 min | *récréation* | |
+| 15 h 45 | 45 min | Hydrocarbures : le R-290 est **A3**, jamais A2L | `g12` |
+| 16 h 30 | 30 min | Brasage interdit · consignation — retour à l'atelier | `s3` `s5` |
+
+### Vendredi matin — l'examen blanc en conditions réelles
+
+| Créneau | Durée | Contenu |
+|---|---:|---|
+| 8 h 30 | 1 h 15 | **Épreuve théorique blanche**, minutée comme la vraie |
+| 9 h 45 | 15 min | *récréation* |
+| 10 h 00 | 2 h 00 | **Correction commentée**, et remise à chacun de ses points faibles pour le week-end |
+
+> C'est le pivot du dispositif : le stagiaire part en week-end **en sachant exactement ce qu'il
+> doit réviser**, avec le logiciel et sa carte « Ma progression » à jour.
+
+### Samedi et dimanche — autoformation
+
+Hors centre, hors budget. **C'est le temps que le nouveau modèle a créé**, et la raison d'être de
+l'option B.
+
+### Lundi matin — bachotage final
+
+| Créneau | Durée | Contenu |
+|---|---:|---|
+| 8 h 30 | 2 h 00 | **Bachotage sur les points faibles du groupe**, relevés au vendredi |
+| 10 h 30 | 15 min | *récréation* |
+| 10 h 45 | 1 h 15 | Les pièges d'énoncé · les questions imposées (CO₂ / NH₃, efficacité énergétique) |
+
+### Lundi après-midi — l'épreuve
+
+| Créneau | Durée | |
+|---|---:|---|
+| 13 h 30 | 1 h 15 | **Épreuve théorique** |
+| 14 h 45 | 3 h 00 | **Épreuve pratique** (CERFA compris) |
+| **17 h 45** | | fin |
+
+---
+
+## 6. La répartition salle / amont, chiffrée
+
+Mesurée sur les durées actuelles du parcours :
+
+| Bloc | Durée | Où |
+|---|---:|---|
+| Sécurité personne (`s1`→`s5`) | 1 h 50 | **salle** |
+| Classification et fluides (`cl1`→`cl4`) | 2 h 05 | **salle** |
+| Ce qui a changé (`g0` `g2` `g1c` `g11`) | 2 h 20 | **salle** |
+| Points durs du référentiel (`g4a`→`g5b`, `g12`) | 3 h 50 | **salle** |
+| **Total salle** | **10 h 05** | |
+| Socle théorique (`g1a` `g1e` `g1b` `g1d` `g2a` `g13`) | 3 h 20 | **amont** |
+| Les composants (`g3` `g6`→`g10`) | 5 h 55 | **amont**, revus sur machine |
+| Préparation pratique (`p1`→`p7`) | 3 h 00 | **amont**, rejoués à l'atelier |
+| Mode opératoire hydrocarbures (`g12b`) | 40 min | **amont** |
+| **Total amont** | **12 h 55** | |
+
+**Le pack fournit 10 h de salle pour ≈ 10 h de créneaux de contenu** (hors accueil, test, examen
+blanc, bachotage et épreuve). **Ça tombe juste.** Les 13 h restantes deviennent le travail amont
+et de week-end — c'est le chiffre annoncé, et il est atteint sans rien supprimer.
+
+---
+
+## 7. Le chiffre qui commande tout
 
 | | |
 |---|---:|
@@ -221,7 +342,7 @@ bourrer le crâne.
 
 ---
 
-## 6. Le virage : ce sont des frigoristes
+## 8. Le virage : ce sont des frigoristes
 
 C'est le point de départ, et il change tout. Le public d'une requalification **n'est pas un public
 de formation initiale**. Ce sont des professionnels qui savent faire. Ce qu'ils viennent chercher,
@@ -274,7 +395,7 @@ l'histoire de l'ozone et du climat, la description des organes.
 
 ---
 
-## 7. Ce que la grille demande au pack — et ce qui manque
+## 9. Ce que la grille demande au pack — et ce qui manque
 
 **Ce qui existe déjà et sert le nouveau modèle** — l'essentiel est là :
 
@@ -332,30 +453,40 @@ l'histoire de l'ozone et du climat, la description des organes.
 
 ---
 
-## 8. Arbitrages
+## 10. Arbitrages
 
 **Tranché** (F. Henninot, 27/07) : 4 jours de formation puis l'épreuve · **journée réduite à 7 h**
 (8 h 30 – 17 h 00) · début 8 h 30 tous les jours · quart d'heure toutes les deux heures ·
 1 h 30 de déjeuner · **J1 minuté** (1 h accueil, 1 h test de niveau, 1 h 15 sécurité, bachotage) ·
 **matin théorie, après-midi pratique** · accueil avec test de niveau · **manipulation à l'azote** ·
-modèle autoformation amont + points clés en salle + bachotage · on ne jette rien de l'existant.
+modèle autoformation amont + points clés en salle + bachotage · on ne jette rien de l'existant ·
+**calendrier option B** (mardi → vendredi midi, week-end, lundi révision puis épreuve) ·
+**4,5 jours = contrainte de financement, non négociable** · durées d'épreuve = celles de l'arrêté.
+
+**Tranché aussi, sur les outils** (27/07) : *« aujourd'hui on fait la pédagogie, on ne fait pas
+forcément les outils de traitement »*. Le suivi des résultats attendra — en attendant, **les
+stagiaires envoient leurs résultats et F. Henninot les traite sur un PC fermé**. Le RGPD s'en
+trouve très allégé : **ce sont des stagiaires majeurs, pas des élèves mineurs**. *(Le RGPD
+continue de s'appliquer à des adultes, mais sans les obligations propres aux mineurs ; un
+traitement local, sur des résultats transmis volontairement, est proportionné.)*
+**Piste donnée pour le futur logiciel d'évaluation** : **des tablettes dédiées sur un réseau
+fermé**, jamais les téléphones des stagiaires.
 
 **En attente :**
 
-1. **Les 48 heures.** 32 h 15 au décompte réel (§ 3). Plus de jours ? Ou l'amont compté dedans ?
-2. **Le calendrier : option A ou option B ?** (§ 3). L'option B donne le week-end à
-   l'autoformation mais mobilise deux semaines. C'est une décision d'exploitation.
-3. **La variante du J3** : sécurité fluides sur tout l'après-midi, ou 2 h théorie / 2 h pratique ?
+1. **La variante du jeudi** : sécurité fluides sur tout l'après-midi, ou 2 h théorie / 2 h pratique ?
    Elle fait passer la théorie salle de 8 h à 10 h.
-4. **J2 et J3 s'inversent-ils ?** Tu l'as proposé. Cela déplace la sécurité fluides avant la
+2. **Mercredi et jeudi s'inversent-ils ?** Tu l'as proposé. Cela déplace la sécurité fluides avant la
    première manipulation, ce qui est plus sûr — mais éloigne le CERFA du bachotage.
-5. **Le CERFA** : on le crée dans ce pack, ou on branche le projet `inerweb-fluide` ?
-6. **Le test de niveau** : sur le logiciel (les 8 examens existent, `ex-ech` ferait un
-   positionnement crédible et alimenterait « Ma progression ») ou sur papier ?
+3. **Le CERFA** : on le crée dans ce pack, ou on branche le projet `inerweb-fluide` ?
+   ⚠️ C'est le seul point qui **bloque le plan de séance** : le créneau du jeudi matin existe, le
+   contenu non.
+4. **Le plan minuté du § 5** : à relire créneau par créneau. C'est une proposition, pas une
+   décision.
 
 ---
 
-## 9. Ce qui ne change pas
+## 11. Ce qui ne change pas
 
 - Le contenu reste **intégralement** dans le pack. Rien n'est supprimé.
 - Les chantiers 3 et 4 du socle théorique se font comme prévu, à la même densité — budgétés en
