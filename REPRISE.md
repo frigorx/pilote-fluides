@@ -504,9 +504,22 @@ après-midi pratique**, manipulation **à l'azote**.
 
 **La grille dictée par F. Henninot ne laisse que 8 h de théorie en salle** (J2 matin + J3 matin ;
 10 h avec la variante du J3). Contre 27 h 40 aujourd'hui : **≈ 20 h à basculer en amont, soit 70 %**.
-Deux trous que la grille met au jour : **le CERFA n'existe pas dans le pack** (4 mentions, zéro
-fiche) alors que le J2 après-midi le prévoit ; et **12 h de bachotage pour 258 questions**, quand
-la banque entière tient en ≈ 8 h 30.
+
+**Durée de l'épreuve — question tranchée sur le texte (27/07)** : les durées sont fixées par
+l'arrêté, annexe II, et ne font PAS partie des choix d'organisme (qui portent sur le barème, le
+seuil et le nombre de questions). **A1 : 1 h 15 de théorie + 3 h de pratique = 4 h 15.** Donc
+« 1 h + 2 h » est impossible — mais la grille prévoyait 6 h : **1 h 45 sont rendues**.
+Le CERFA est bien évalué à la pratique (traçabilité, groupe 5). À faire confirmer par
+l'organisme certificateur.
+
+**Trois trous que la grille met au jour :**
+- ⚠️ **le CERFA n'existe pas dans le pack** (4 mentions, zéro fiche) alors que le J2 après-midi le
+  prévoit — et qu'il est évalué à l'épreuve pratique ;
+- ⚠️ **le logiciel de test de niveau agrégé n'existe pas**, et il casserait la promesse « rien ne
+  sort du navigateur » : agréger les résultats d'un groupe, c'est traiter des données d'élèves
+  (RGPD, priorité 2). Voie intermédiaire proposée : le stagiaire **montre** son résultat, rien ne
+  transite ;
+- **12 h de bachotage pour 258 questions**, quand la banque entière tient en ≈ 8 h 30.
 
 ⚠️ **On ne jette rien**, et les chantiers du socle théorique ne sont PAS perdus : un projet
 d'autoformation a besoin d'un **livre dense**. `g1e` (1 008 mots) et `g1b` (1 233 mots) sont trop

@@ -1,11 +1,11 @@
-# Plan de séquence — habilitation fluides, 4,5 jours + 0,5 jour d'évaluation
+# Plan de séquence — habilitation fluides, 4 jours de formation + l'épreuve
 
 > **Écrit le 27/07/2026**, après un constat de F. Henninot : *« On est à la ramasse. Le système est
 > magnifique, je ne dis pas que c'est nul — je dis que c'est trop. On a peut-être été trop dans la
 > formation initiale. Il faut voir autrement : vraiment un projet d'autoformation, et à la fin un
 > bourrage de crâne. C'est une requalif, les gens savent faire. »*
 >
-> Puis, le même jour, la **grille jour par jour** dictée par F. Henninot (§ 3) — annoncée par lui
+> Puis, le même jour, la **grille jour par jour** dictée par F. Henninot (§ 4) — annoncée par lui
 > comme *« un jet en l'air »*, donc à retravailler, mais elle fixe déjà la structure.
 >
 > Ce document pose le **cadre horaire réel**, la **grille**, et ce qu'ils imposent au pack.
@@ -47,58 +47,130 @@ Autrement dit : ce n'est pas le plan qui déborde. C'est qu'il n'y a de plan que
 
 ---
 
-## 2. Le cadre horaire
+## 2. La durée de l'épreuve — réponse au texte, avant tout le reste
 
-Règles posées par F. Henninot : **4,5 jours de formation + 0,5 jour d'évaluation** (« c'est la
-norme de cette formation »), **journées de 8 heures**, **début à 8 h 30 tous les jours** (« ça
-évite les retardataires »), **un quart d'heure de récréation toutes les deux heures**, **1 h 30 de
-pause déjeuner**. Les temps de pause sont comptés dans les 8 heures.
+Question posée par F. Henninot le 27/07 : *« Est-ce qu'il est possible de faire qu'une heure de
+théorie et 2 h de pratique ? On répond d'abord à cette question. »*
+
+**Non pour A1 — mais l'épreuve est plus courte que ce qui était prévu.**
+
+Les durées sont **fixées par l'arrêté du 21 novembre 2025**, annexe II, et transcrites verbatim
+dans `packs/fluides/referentiel-2025.json` (`durees_epreuves`). Elles ne font pas partie des choix
+laissés à l'organisme : le référentiel énumère ce qui l'est — **le barème, le seuil de réussite et
+le nombre de questions disponibles** (`arbitrages.renvois`). Les durées n'y sont pas.
+
+| | Théorie | Pratique | Total |
+|---|---:|---:|---:|
+| Tronc commun A1 · A2 · B · C | 1 h 00 | 2 h 00 | 3 h 00 |
+| + spécifique **A1** | 15 min | 1 h 00 | |
+| **Total A1** | **1 h 15** | **3 h 00** | **4 h 15** |
+| + spécifique **A2** | 15 min | 40 min | |
+| **Total A2** | **1 h 15** | **2 h 40** | **3 h 55** |
+| **D** | 30 min | 1 h 00 | **1 h 30** |
+| **E** | 30 min | 1 h 00 | **1 h 30** |
+
+**Ce que ça change au planning** : la grille du 27/07 prévoyait « 4 h de pratique, 2 h de théorie »,
+soit 6 h. Le réel est **4 h 15**. **1 h 45 sont rendues** au dernier jour.
+
+**Le CERFA a bien sa place dans l'épreuve pratique** : la traçabilité et le registre relèvent du
+groupe 5 du référentiel, donc remplir la fiche fait partie du geste évalué. L'intuition de
+F. Henninot est juste — ce qui rend l'absence de contenu CERFA dans le pack (§ 6) d'autant plus
+gênante.
+
+⚠️ **À faire confirmer par l'organisme certificateur** avant d'en faire un argument commercial :
+ce document lit le texte, il ne remplace pas l'avis du certificateur.
+
+---
+
+## 3. Le cadre horaire
+
+Règles posées par F. Henninot : **4 jours de formation puis l'épreuve**, **début à 8 h 30 tous
+les jours** (« ça évite les retardataires »), **un quart d'heure de récréation toutes les deux
+heures**, **1 h 30 de pause déjeuner**, et — décision du 27/07 — **la journée est réduite** à
+7 h comptées au lieu de 8. Les temps de pause sont comptés dans la durée de formation.
 
 Et une règle de rythme qui commande la structure :
 
 > *« On ne peut pas mettre des élèves 8 h devant un écran à travailler. »*
 > **Le matin la théorie, l'après-midi la pratique.**
 
-### Une journée de 8 heures
+### La journée, réduite (décision du 27/07)
+
+> *« Je pense malheureusement qu'on n'a pas le choix de réduire la durée de la journée. »*
 
 | Créneau | Durée | |
 |---|---:|---|
 | 8 h 30 – 10 h 30 | 2 h 00 | travail |
 | 10 h 30 – 10 h 45 | 15 min | *récréation* |
-| 10 h 45 – 12 h 30 | 1 h 45 | travail |
-| 12 h 30 – 14 h 00 | 1 h 30 | *déjeuner, hors des 8 h* |
-| 14 h 00 – 16 h 00 | 2 h 00 | travail |
-| 16 h 00 – 16 h 15 | 15 min | *récréation* |
-| 16 h 15 – 18 h 00 | 1 h 45 | travail |
-| **8 h comptées** | **7 h 30 effectives** | amplitude 8 h 30 → 18 h 00 |
+| 10 h 45 – 12 h 00 | 1 h 15 | travail |
+| 12 h 00 – 13 h 30 | 1 h 30 | *déjeuner* |
+| 13 h 30 – 15 h 30 | 2 h 00 | travail |
+| 15 h 30 – 15 h 45 | 15 min | *récréation* |
+| 15 h 45 – 17 h 00 | 1 h 15 | travail |
+| **7 h comptées** | **6 h 30 effectives** | amplitude 8 h 30 → 17 h 00 |
 
-**Demi-journée** : 4 h comptées, **3 h 45 effectives**.
+**Demi-journée matin** : 3 h 30 comptées, **3 h 15 effectives**.
 
-⚠️ **Hypothèse à confirmer** : matin 4 h / après-midi 4 h, déjeuner de 12 h 30 à 14 h 00. Tu as dit
-« après 12 h 00 » pour l'après-midi — si le déjeuner est 12 h 00 → 13 h 30, la journée finit à
-17 h 30 et le découpage devient 3 h 30 le matin / 4 h 30 l'après-midi. Un mot suffit à recaler.
+### Le jour 1, minuté par F. Henninot
+
+| Créneau | Durée | Contenu |
+|---|---:|---|
+| 8 h 30 – 9 h 30 | **1 h** | **Accueil et présentation.** Distribution des cahiers, des liens et des QR codes, explication du dispositif, tour de table. *« Incompressible : ça permet de juger le niveau, d'analyser les personnalités et de jauger la classe. »* |
+| 9 h 30 – 10 h 30 | **1 h** | **Test de niveau** — *« ni plus ni moins qu'un test d'habilitation fluide complet »*, sur un logiciel à créer (§ 6). |
+| 10 h 30 – 10 h 45 | 15 min | *récréation* |
+| 10 h 45 – 12 h 00 | **1 h 15** | **Sécurité** |
+| 12 h 00 – 13 h 30 | 1 h 30 | *déjeuner* |
+| 13 h 30 – 17 h 00 | **3 h 15** | **Début du bourrage de crâne** |
+
+Le bloc sécurité du pack pèse **1 h 55** (5 fiches) et la classification **2 h 00** (4 fiches).
+Le créneau du J1 en offre 1 h 15 : **la sécurité déborde**, et le reste doit tomber dans
+l'après-midi du J3, comme prévu par la grille.
 
 ### ⚠️ Les 48 heures ne tombent pas
 
-Ta grille compte **cinq demi-journées de formation + une journée et demie d'évaluation**, soit :
+Au décompte réel — 4 jours de formation à 7 h + une épreuve de 4 h 15 :
 
-| | Matin | Après-midi | Total |
-|---|---:|---:|---:|
-| Jours 1 à 4 | 4 × 4 h | 4 × 4 h | **32 h** |
-| Jour 5 (demi + 2 h) | 4 h | 2 h | **6 h** |
-| | | **Total** | **38 h** |
+| | Total |
+|---|---:|
+| 4 jours de formation × 7 h | **28 h** |
+| Épreuve (A1) | **4 h 15** |
+| **Total en centre** | **32 h 15** |
 
-**38 heures, pas 48.** Trois lectures possibles, et je ne veux pas trancher à ta place :
-- la formation fait en réalité **6 jours** (6 × 8 = 48 h) ;
+**32 h 15, pas 48.** Trois lectures possibles, aucune tranchée ici :
+- la formation dure en réalité **plus de jours** ;
 - les 48 h comptent aussi les **heures d'autoformation amont** attendues du stagiaire — ce qui
-  serait cohérent avec le nouveau modèle, et devrait alors être **écrit dans la convocation** ;
-- ou c'est un lapsus de dictée, et le compte réel est 38 h.
+  serait cohérent avec le modèle, et devrait alors être **écrit dans la convocation** ;
+- ou c'est un lapsus de dictée.
 
-Tout le reste du document est calculé sur **38 h**.
+### Les deux calendriers en présence
+
+**Option A** (première formulation) : formation du **lundi au jeudi**, épreuve le **vendredi**.
+
+**Option B** (proposée par F. Henninot le 27/07) : formation du **mardi au vendredi 12 h 00**,
+**week-end de révision**, puis **lundi matin révision** et **lundi après-midi l'épreuve**.
+
+| | **Option A** | **Option B** |
+|---|---|---|
+| Formation | lun–jeu, 4 j | mar–jeu 3 j + ven matin |
+| Volume de formation | **28 h** | **24 h 30** |
+| Révision finale | dans le J4 | **lundi matin, 3 h 15** |
+| Épreuve | vendredi, 4 h 15 | lundi après-midi, 4 h 15 |
+| Autoformation | soirées | soirées **+ le week-end entier** |
+| Calendrier mobilisé | 5 jours | 8 jours |
+
+**Recommandation : l'option B.** Pas pour le confort — parce que dans ce modèle
+**l'autoformation EST la condition de réussite**, et l'option B est la seule qui lui donne un vrai
+créneau : un week-end complet, juste avant l'épreuve, avec un stagiaire qui sait déjà où il pèche
+grâce au test de niveau du premier jour. Et le bachotage du lundi matin **colle** à l'épreuve de
+l'après-midi au lieu d'en être séparé d'une nuit.
+
+**Son coût, à ne pas masquer** : elle mobilise deux semaines calendaires. Stagiaires hébergés,
+venus de loin, salle immobilisée — cela peut suffire à la disqualifier. C'est une décision
+d'exploitation, pas de pédagogie.
 
 ---
 
-## 3. La grille, jour par jour
+## 4. La grille, jour par jour
 
 Reprise de ta dictée, avec ses variantes. **Ce n'est pas encore un plan de séance** : c'est la
 structure, à minuter ensuite séquence par séquence.
@@ -132,7 +204,7 @@ sans risquer le fluide**. À écrire dans les consignes d'atelier.
 
 ---
 
-## 4. Le chiffre qui commande tout
+## 5. Le chiffre qui commande tout
 
 | | |
 |---|---:|
@@ -149,7 +221,7 @@ bourrer le crâne.
 
 ---
 
-## 5. Le virage : ce sont des frigoristes
+## 6. Le virage : ce sont des frigoristes
 
 C'est le point de départ, et il change tout. Le public d'une requalification **n'est pas un public
 de formation initiale**. Ce sont des professionnels qui savent faire. Ce qu'ils viennent chercher,
@@ -202,7 +274,7 @@ l'histoire de l'ozone et du climat, la description des organes.
 
 ---
 
-## 6. Ce que la grille demande au pack — et ce qui manque
+## 7. Ce que la grille demande au pack — et ce qui manque
 
 **Ce qui existe déjà et sert le nouveau modèle** — l'essentiel est là :
 
@@ -222,21 +294,34 @@ l'histoire de l'ozone et du climat, la description des organes.
 1. ⚠️ **LE CERFA N'EXISTE PAS DANS LE PACK.** Ton J2 après-midi prévoit « révision du CERFA », et
    le pack ne contient que **4 mentions** du mot — aucune fiche, aucun exercice, aucune question.
    C'est le domaine de l'autre projet (`inerweb-fluide`, le logiciel CERFA/BSD). **À créer, ou à
-   emprunter au projet voisin.** C'est le trou le plus net que ta grille met au jour.
+   emprunter au projet voisin.** C'est le trou le plus net que ta grille met au jour — et il est
+   aggravé par le § 2 : **le CERFA est évalué à l'épreuve pratique** (traçabilité et registre,
+   groupe 5 du référentiel).
+2. ⚠️ **LE LOGICIEL DE TEST DE NIVEAU N'EXISTE PAS, et il touche au RGPD.** Demandé le 27/07 :
+   un test d'habilitation complet au J1, avec **retours agrégés** — pourcentages de réussite et
+   d'échec — *« pour cerner et orienter la formation sur les points forts et les points faibles »*.
+   La matière existe (8 examens, 258 questions, carte « Ma progression »), mais **l'agrégation
+   n'existe pas** : « Ma progression » est individuelle et **locale**.
+   Agréger les résultats d'un groupe, c'est **traiter des données d'élèves**, et cela casse la
+   promesse « tout reste dans le navigateur, rien ne remonte » — précieuse aujourd'hui, et déjà
+   listée en priorité 2 de `REPRISE.md`.
+   **Voie intermédiaire à envisager** : le stagiaire **montre** son écran de résultat ou remet un
+   export, et rien ne transite automatiquement. Le formateur a l'information de groupe sans que
+   l'organisme devienne responsable d'un traitement. À arbitrer avant de coder quoi que ce soit.
 2. **12 h de bachotage pour 258 questions.** À deux minutes par question corrigée et commentée,
    la banque entière tient en ≈ 8 h 30. Il en manque, ou il faut d'autres formats : mises en
    situation, oral, épreuves blanches chronométrées, correction collective de copies.
-3. **Un parcours AMONT balisé.** Aujourd'hui l'élève reçoit 43 fiches en vrac. Il lui faut une
+4. **Un parcours AMONT balisé.** Aujourd'hui l'élève reçoit 43 fiches en vrac. Il lui faut une
    progression jalonnée : *« avant le jour 1, faites ceci ; vous devez savoir répondre à cela »*.
-4. **Le typage des blocs dans `parcours.js`** : `amont` · `positionnement` · `theorie` · `atelier` ·
+5. **Le typage des blocs dans `parcours.js`** : `amont` · `positionnement` · `theorie` · `atelier` ·
    `bachotage` · `epreuve`. Aujourd'hui il n'y a que `cours`, `exercice`, `bilan`.
-5. **L'enveloppe, déclarée et CONTRÔLÉE au build**, avec les récréations et le déjeuner dans le
+6. **L'enveloppe, déclarée et CONTRÔLÉE au build**, avec les récréations et le déjeuner dans le
    calcul. Le build doit refuser, ou au moins écrire, un dépassement. Même principe que
    `COUVERTURE-REFERENTIEL.md` : ce qui n'est pas mesuré dérive en silence.
-6. **Un parcours par catégorie.** D et E ne suivent pas le même plan qu'A1.
-7. **Le marquage des points clés.** Pour chaque fiche : ce qui doit absolument être dit en salle,
+7. **Un parcours par catégorie.** D et E ne suivent pas le même plan qu'A1.
+8. **Le marquage des points clés.** Pour chaque fiche : ce qui doit absolument être dit en salle,
    distinct du contenu complet. Un champ à ajouter, à côté de `notes_pilote`.
-8. **Un ton pour professionnels.** Le contenu explique chaque mot technique à sa première
+9. **Un ton pour professionnels.** Le contenu explique chaque mot technique à sa première
    apparition — juste pour un public FLE/DYS en initiale, condescendant devant des frigoristes.
    Il faut une **couche de dialogue entre pros** : ce qui a changé, pourquoi, et ce que ça change
    sur le chantier de lundi. C'est la « autre partie, plus dense » demandée.
@@ -247,18 +332,19 @@ l'histoire de l'ozone et du climat, la description des organes.
 
 ---
 
-## 7. Arbitrages
+## 8. Arbitrages
 
-**Tranché** (F. Henninot, 27/07) : 4,5 jours de formation + 0,5 jour d'évaluation · journées de
-8 h · début 8 h 30 tous les jours · quart d'heure toutes les deux heures · 1 h 30 de déjeuner ·
+**Tranché** (F. Henninot, 27/07) : 4 jours de formation puis l'épreuve · **journée réduite à 7 h**
+(8 h 30 – 17 h 00) · début 8 h 30 tous les jours · quart d'heure toutes les deux heures ·
+1 h 30 de déjeuner · **J1 minuté** (1 h accueil, 1 h test de niveau, 1 h 15 sécurité, bachotage) ·
 **matin théorie, après-midi pratique** · accueil avec test de niveau · **manipulation à l'azote** ·
 modèle autoformation amont + points clés en salle + bachotage · on ne jette rien de l'existant.
 
 **En attente :**
 
-1. **Les 48 heures.** 38 h au décompte de la grille (§ 2). Six jours ? Ou l'amont compté dedans ?
-2. **Le découpage de la journée.** 4 h / 4 h avec déjeuner 12 h 30 – 14 h 00 (fin 18 h 00), ou
-   3 h 30 / 4 h 30 avec déjeuner 12 h 00 – 13 h 30 (fin 17 h 30) ?
+1. **Les 48 heures.** 32 h 15 au décompte réel (§ 3). Plus de jours ? Ou l'amont compté dedans ?
+2. **Le calendrier : option A ou option B ?** (§ 3). L'option B donne le week-end à
+   l'autoformation mais mobilise deux semaines. C'est une décision d'exploitation.
 3. **La variante du J3** : sécurité fluides sur tout l'après-midi, ou 2 h théorie / 2 h pratique ?
    Elle fait passer la théorie salle de 8 h à 10 h.
 4. **J2 et J3 s'inversent-ils ?** Tu l'as proposé. Cela déplace la sécurité fluides avant la
@@ -269,7 +355,7 @@ modèle autoformation amont + points clés en salle + bachotage · on ne jette r
 
 ---
 
-## 8. Ce qui ne change pas
+## 9. Ce qui ne change pas
 
 - Le contenu reste **intégralement** dans le pack. Rien n'est supprimé.
 - Les chantiers 3 et 4 du socle théorique se font comme prévu, à la même densité — budgétés en
