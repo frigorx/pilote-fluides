@@ -210,6 +210,15 @@ function demarrerProjection(){
       ? vueQuestion(s.questions[S.i - s.slides.length])
       : vueSlide(s.slides[S.i], s);
 
+    /* En salle, projeter une planche animée, c'est DEMANDER le mouvement :
+       on ne fait pas cliquer le formateur. Si l'appareil supprime les
+       animations (réglage Windows « Effets d'animation »), la diapositive
+       bascule d'elle-même sur la version qui les joue. */
+    if(!estQuestion && mouvementReduit()){
+      var bt = document.querySelector("#in .rejouer");
+      if(bt) bt.click();
+    }
+
     majNotes(s, estQuestion);
   }
 
@@ -246,7 +255,8 @@ function demarrerProjection(){
          (F. Henninot, 27/07 : « elles ne sont pas à 0 ».) */
       if(estAnimee(u)) u += (u.indexOf("?")<0?"?":"&")+"rejeu="+Date.now();
       return "<h2 style='font-size:26px'>"+esc(sl.titre)+"</h2><img src='"+esc(u)+"' alt='"+esc(sl.alt)+"'>"+
-             (estAnimee(u) ? "<button type='button' class='rejouer' onclick='rejouerSlide(this)'>↻ Rejouer l&#39;animation</button>" : "");
+             (estAnimee(u) ? "<button type='button' class='rejouer' onclick='rejouerSlide(this)'>" +
+               (mouvementReduit() ? "▶ Lancer l&#39;animation" : "↻ Rejouer l&#39;animation") + "</button>" : "");
     }
     if(sl.type==="encadre")
       return "<div class='enc "+esc(sl.genre)+"'><div class='t'>"+esc(sl.t)+"</div>"+sl.html+"</div>";
@@ -358,13 +368,31 @@ function demarrerProjection(){
     var nom = String(u).split("?")[0].split("/").pop();
     return L.indexOf(nom) >= 0;
   }
-  /* Le bouton de la diapositive : on recharge la source, SMIL repart à zéro. */
+  /* L'appareil supprime-t-il les animations ? Sur les PC du lycée, le réglage
+     Windows « Effets d'animation » est souvent désactivé : nos planches se
+     mettent alors à l'image FINALE et la salle ne voit jamais le déroulé. */
+  function mouvementReduit(){
+    try { return matchMedia("(prefers-reduced-motion: reduce)").matches; } catch(e){ return false; }
+  }
+  /* Projeter, c'est demander le mouvement. On retire donc du SVG la règle qui
+     le supprime — puis on l'insère en ligne, ce qui permet en plus de le
+     relancer sans recharger. */
   window.rejouerSlide = function(b){
-    var im = b.previousElementSibling;
-    while(im && im.tagName !== "IMG") im = im.previousElementSibling;
-    if(!im) return;
-    var base = (im.getAttribute("src")||"").split("?")[0];
-    im.setAttribute("src", base + "?rejeu=" + Date.now());
+    var el = b.previousElementSibling;
+    while(el && el.tagName !== "IMG" && el.tagName !== "svg") el = el.previousElementSibling;
+    if(!el) return;
+    if(el.tagName === "svg"){ try { el.setCurrentTime(0); return; } catch(e){} }
+    var src = (el.getAttribute("src")||"").split("?")[0];
+    fetch(src).then(function(r){ return r.text(); }).then(function(t){
+      var h = document.createElement("div");
+      h.innerHTML = t.replace(/@media[^{]*prefers-reduced-motion[^{]*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/g, "");
+      var svg = h.querySelector("svg");
+      if(!svg){ el.setAttribute("src", src + "?rejeu=" + Date.now()); return; }
+      svg.setAttribute("style","max-width:100%;max-height:64vh;height:auto;display:block;margin:0 auto");
+      el.parentNode.replaceChild(svg, el);
+      try { svg.setCurrentTime(0); } catch(e){}
+      b.textContent = "↻ Rejouer l'animation";
+    }).catch(function(){ el.setAttribute("src", src + "?rejeu=" + Date.now()); });
   };
   function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){
     return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }

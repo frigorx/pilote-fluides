@@ -548,24 +548,69 @@
      La liste des planches animées vient du build (PACK.pack.svg_animes) —
      inutile de proposer « rejouer » sous un dessin fixe.
      ==================================================================== */
+  /* L'appareil demande-t-il qu'on lui épargne le mouvement ? Sur Windows,
+     c'est le réglage « Effets d'animation » (Accessibilité → Effets visuels).
+     Désactivé, il met TOUTES nos planches à l'image finale : on voit les deux
+     victimes au sol et jamais la descente. C'est ce qu'a constaté F. Henninot
+     le 27/07 — « je vois 2 mecs en bas, je ne vois pas la descente ». */
+  function mouvementReduit() {
+    try { return window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
+    catch (e) { return false; }
+  }
+
+  /* Retire du SVG la règle qui supprime le mouvement. Cliquer sur le bouton
+     est une demande EXPLICITE : le mouvement n'est plus imposé, il est voulu.
+     C'est la seule différence entre l'affichage automatique et le rejeu. */
+  function sansReductionDeMouvement(txt) {
+    return txt.replace(
+      /@media[^{]*prefers-reduced-motion[^{]*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/g, ""
+    );
+  }
+
   function animations() {
     var animes = (PACK.pack && PACK.pack.svg_animes) || [];
     if (!animes.length) return;
+    var reduit = mouvementReduit();
+
     onAll(".corps img", function (im) {
       if (im.getAttribute("data-rejouable")) return;         // déjà équipée
-      var src = im.getAttribute("src") || "";
-      var nom = src.split("?")[0].split("/").pop();
+      var src = (im.getAttribute("src") || "").split("?")[0];
+      var nom = src.split("/").pop();
       if (animes.indexOf(nom) < 0) return;
       im.setAttribute("data-rejouable", "1");
 
       var b = document.createElement("button");
       b.type = "button";
       b.className = "rejouer";
-      b.textContent = "↻ Revoir l'animation depuis le début";
+      /* Si l'appareil supprime les animations, celle-ci ne s'est JAMAIS jouée :
+         on ne propose pas de la « revoir », on propose de la lancer — et on dit
+         pourquoi, sinon le lecteur croit à une planche cassée. */
+      b.textContent = reduit ? "▶ Lancer l'animation" : "↻ Revoir l'animation depuis le début";
+      if (reduit) b.title = "Votre appareil est réglé pour supprimer les animations "
+        + "(Windows : Accessibilité → Effets visuels → Effets d'animation). "
+        + "Ce bouton la joue quand même.";
+
+      var courant = im;   // l'élément affiché : l'image, puis le SVG inline
       b.addEventListener("click", function () {
-        var base = src.split("?")[0];
-        im.setAttribute("src", base + "?rejeu=" + Date.now());
-        b.textContent = "↻ Revoir l'animation depuis le début";
+        // déjà passé en SVG inline : il suffit de remettre l'horloge à zéro
+        if (courant.tagName && courant.tagName.toLowerCase() === "svg") {
+          try { courant.setCurrentTime(0); return; } catch (e) { /* on retombe sur le rechargement */ }
+        }
+        fetch(src).then(function (r) { return r.text(); }).then(function (txt) {
+          var hote = document.createElement("div");
+          hote.innerHTML = sansReductionDeMouvement(txt);
+          var svg = hote.querySelector("svg");
+          if (!svg) { courant.setAttribute("src", src + "?rejeu=" + Date.now()); return; }
+          svg.setAttribute("style", "width:100%;height:auto;display:block;" +
+            "border:1px solid #d7e0e8;border-radius:8px;margin:0 0 18px");
+          courant.parentNode.replaceChild(svg, courant);
+          courant = svg;
+          try { svg.setCurrentTime(0); } catch (e) {}
+          b.textContent = "↻ Revoir l'animation depuis le début";
+          b.removeAttribute("title");
+        }).catch(function () {
+          courant.setAttribute("src", src + "?rejeu=" + Date.now());
+        });
       });
       if (im.parentNode) im.parentNode.insertBefore(b, im.nextSibling);
     });

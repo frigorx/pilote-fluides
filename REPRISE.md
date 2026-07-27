@@ -427,6 +427,22 @@ sous les planches animées (27/07, voir ci-dessous).
   **Si le symbole n'existe pas, on le signale — on n'en détourne pas un autre** : il manque
   aujourd'hui le **régulateur de pression** (condensation, évaporation, carter) et la **sonde
   de contact**. Détourner `vanne_securite` aurait enseigné une forme fausse.
+- 🔴 **LE PIÈGE QUI A COÛTÉ DEUX SESSIONS : le réglage Windows « Effets d'animation ».**
+  Désactivé (`HKCU\Control Panel\Desktop\WindowMetrics\MinAnimate = 0`, cas de la machine de
+  F. Henninot), le navigateur annonce `prefers-reduced-motion: reduce`. Nos planches le
+  respectaient à la lettre : `.mobile { display:none }` **masque les personnages qui bougent**
+  et `.final { opacity:1 }` **affiche l'image finale d'emblée**. Résultat exact rapporté le
+  27/07 : *« je vois 2 mecs en bas, je ne vois pas la descente »*, et *« il n'y a plus aucune
+  animation »* sur les gelures. **Rien n'était cassé** — la règle d'accessibilité privait
+  simplement l'auteur de ses propres animations, sur toutes les planches à la fois.
+  Correction : cliquer sur le bouton (ou projeter une diapositive) est une demande
+  **explicite** de mouvement. Le moteur charge alors le SVG **en ligne** après avoir retiré la
+  règle `@media (prefers-reduced-motion)`, et relance l'horloge à zéro — ce qu'un `<img>` ne
+  permet pas. Le libellé s'adapte : **« ▶ Lancer l'animation »** quand l'appareil les supprime
+  (elle ne s'est jamais jouée), « ↻ Revoir » sinon. En **projection**, c'est automatique : on
+  ne fait pas cliquer un formateur devant sa classe.
+  ⚠️ **À vérifier sur les PC du lycée** : si l'image système désactive les effets d'animation,
+  tous les postes stagiaires sont dans ce cas.
 - **Une planche animée ne se revoit qu'en la RECHARGEANT.** Un SVG inséré en `<img>` lance
   son animation au chargement de l'image, pas quand le lecteur arrive dessus. Et **6 des
   9 planches animées sont narratives** : `begin` décalés, **aucun `repeatCount`** — elles se
