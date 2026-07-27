@@ -49,6 +49,9 @@
      RENDU
      ==================================================================== */
   function render() {
+    // Une lecture à voix haute en cours ne doit jamais continuer sur la
+    // carte suivante : on l'arrête avant même de savoir ce qu'on affiche.
+    if (window.PiloteLecture) window.PiloteLecture.arreter();
     var m = MODES[S.modeId];
     var c = idxCartes[S.carteId];
     if (!c) { app.innerHTML = "<p style='padding:24px'>Carte introuvable.</p>"; return; }
@@ -65,6 +68,10 @@
     html += "<div class='corps'>";
     if (c.dc) html += "<span class='dc'>" + esc(c.dc) + "</span>";
     html += "<h1>" + esc(c.titre) + "</h1>";
+    // Le bouton d'écoute : seulement si la carte a du texte à lire, et si
+    // le navigateur sait parler (feature-detect dans lecture.js).
+    if (c.corps && window.PiloteLecture && window.PiloteLecture.disponible())
+      html += window.PiloteLecture.html();
     html += zoneCompetences(c); // l'objectif d'examen, annoncé avant le contenu
     if (c.corps) html += c.corps;
     (c.blocs || []).forEach(function (b) {
@@ -79,6 +86,7 @@
 
     app.innerHTML = html;
     brancher(c, m);
+    if (window.PiloteLecture) window.PiloteLecture.brancher(app, c);
     lancerChrono(c);
     if (S.historique[S.historique.length - 1] !== c.id) S.historique.push(c.id);
   }

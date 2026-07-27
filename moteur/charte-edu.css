@@ -222,3 +222,12 @@ button.rejeu:hover{background:#e7eff7}
 button.rejeu.son{margin-top:-6px;color:#5a6b7d;border-color:var(--bord)}
 button.rejeu.son[aria-pressed="true"]{color:var(--bleu);border-color:#2f5689}
 @media print{ button.rejeu{display:none} }
+
+/* Le bouton d'écoute d'une fiche : discret, posé juste sous le titre.
+   Il change d'état visuellement quand la lecture est en cours, pour
+   qu'on sache d'un coup d'œil qu'un second clic l'arrêtera. */
+button.ecouter{display:inline-block;margin:0 0 16px;padding:6px 14px;font:600 13.5px/1.3 inherit;
+  color:var(--bleu);background:#f3f7fb;border:1.5px solid var(--bleu-clair);border-radius:999px;cursor:pointer}
+button.ecouter:hover{background:#e7eff7}
+button.ecouter.actif{background:var(--bleu);color:#fff;border-color:var(--bleu)}
+@media print{ button.ecouter{display:none} }
