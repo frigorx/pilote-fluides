@@ -131,7 +131,10 @@ export const PARCOURS = {
       "utilement en amont — il sera repris en salle, jamais supposé acquis.",
     sequences: [
       avant("s1", 25), avant("s2", 20), avant("s3", 20), avant("s4", 25), avant("s5", 25),
-      avant("cl1", 30), avant("cl2", 25), avant("cl3", 35), avant("cl4", 30),
+      // cl4 (se protéger du CO₂ : détection, ppm, EPC/EPI) N'EST PLUS ICI —
+      // elle se lit au jour 4, après g13, quand le CO₂ est traité en salle.
+      // Arbitrage F. Henninot du 27/07 : trop de détection trop tôt.
+      avant("cl1", 30), avant("cl2", 25), avant("cl3", 35),
       avant("g1s", 30), avant("g1e", 30), avant("g2a", 35),
     ],
   },
@@ -265,6 +268,13 @@ export const PARCOURS = {
         // ── M6 · 2 h
         { ...seq("g11", 35, 4), module: "M6" },
         { ...seq("g13", 25, 4), module: "M6" },
+        // La protection contre le CO₂ (détection, ppm, EPC/EPI) se lit ICI, le
+        // soir du jour où le CO₂ a été traité en salle — et non dans le bloc
+        // d'accueil, où elle répondait à une question non encore posée
+        // (F. Henninot, 27/07). En régime « pendant » : hors des 35 h, sur le
+        // lien que le stagiaire garde. Le formateur en reprend les seuils
+        // réels sur le matériel du plateau — cf. notes_pilote de cl4.
+        { ...pendant("cl4", 30), module: "M6" },
         { ...plateau("Travail dirigé : choisir un fluide de substitution et le justifier par écrit", 60), module: "M6" },
       ],
     },

@@ -755,14 +755,15 @@ export const CARTES = [
       "cette case n'est pas une référence commerciale : c'est un <b>avertissement</b>. Elle " +
       "commande vos EPI, votre matériel électrique, la ventilation, la détection et la " +
       "quantité de fluide admise dans le local.</p>" +
-      "<p>Quatre fiches : lire une classe, comprendre une atmosphère explosive, puis les deux " +
-      "dangers mortels du CO₂ et la façon de s'en protéger.</p>",
-    menu_titre: "Les quatre fiches",
+      "<p>Trois fiches : lire une classe, comprendre une atmosphère explosive, puis les deux " +
+      "dangers mortels du CO₂. <b>Comment on s'en protège</b> — détection, lecture en ppm, " +
+      "équipements — se voit plus loin dans la formation, le jour où l'on traite le CO₂ en " +
+      "salle : ici, cela répondrait à une question que vous ne vous posez pas encore.</p>",
+    menu_titre: "Les trois fiches",
     liens: [
       { vers: "cl1", icone: "1", titre: "Lire une classe — deux lettres, deux dangers", desc: "La matrice complète NF EN 378, et ce que chaque case vous impose." },
       { vers: "cl2", icone: "2", titre: "Explosif avant d'être perceptible — la LIE", desc: "Ce que mesure un explosimètre, et pourquoi le nez ne protège de rien." },
       { vers: "cl3", icone: "3", titre: "CO₂ : deux dangers mortels", desc: "La pression, sans commune mesure. Et l'air qu'il vous prend, en point bas." },
-      { vers: "cl4", icone: "4", titre: "Se protéger du CO₂ — détection, EPC et EPI", desc: "Détection fixe, lecture en ppm, et ce qu'un masque ne fait pas." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Choisir son parcours." },
     ],
     notes_pilote:
@@ -880,7 +881,7 @@ export const CARTES = [
     dc: "Classification · code 11.03",
     minuteur_s: 600,
     corps:
-      schema("co2-point-bas.svg", "Animation : le CO₂ remplit le local par le bas. Le capteur placé en partie basse se déclenche, celui du plafond ne voit rien. Respirable à hauteur de visage, mortel en bas de l'escalier.") +
+      schema("co2-point-bas.svg", "Animation : le CO₂ remplit le local par le bas ; un technicien descend l'escalier et entre dans la nappe. Respirable à hauteur de visage, mortel en bas de l'escalier.") +
       "<p><b>Ce qui arrive.</b> Le CO₂ — le R-744 — est classé <b>A1</b> : toxicité faible, non inflammable, PRP de 1. C'est la case la plus rassurante de toute la matrice. Et c'est exactement ce qui le rend dangereux : <b>sa classe n'annonce aucun des deux risques qui tuent réellement sur ces installations</b> — la <b>pression</b>, et l'<b>anoxie</b>. Qui retient « CO₂ = A1 = tranquille » a retenu quelque chose de faux.</p>" +
       "<p>Ce fluide entre aujourd'hui dans le parc : froid commercial, supermarchés, chambres froides. Vous en rencontrerez. Ce n'est plus un sujet de culture générale.</p>" +
       "<p><b>Premier danger : la pression.</b> Une installation au CO₂ travaille à des pressions <b>bien plus élevées</b> que celles des fluides que vous connaissez — sans commune mesure. Cela change tout le matériel : manifold, flexibles, vannes, tout doit être <b>dédié au CO₂</b>. Brancher un manifold ordinaire sur une installation au CO₂, c'est le faire éclater dans les mains. Les valeurs exactes dépendent du point de fonctionnement et se lisent dans la <b>documentation constructeur</b> ; ce qu'il faut retenir sans aucun chiffre, c'est qu'<b>aucun réflexe acquis sur un R-134a ou un R-410A ne se transpose ici</b>.</p>" +
@@ -913,7 +914,12 @@ export const CARTES = [
     criteres: [
       { code: "11.03", libelle: "Connaître les règles de sécurité applicables aux fluides toxiques, inflammables ou nécessitant une pression de fonctionnement plus élevée.", etat: "a_evaluer" },
     ],
-    liens: [suite("cl4", "Se protéger du CO₂ — détection, EPC et EPI"), { vers: "m-clas", libelle: "↺ Module classification", sec: true }, SOMMAIRE],
+    /* Le lien « suite » ne mène plus à cl4 (protection, ppm, EPC/EPI) : cette
+       fiche-là a été déplacée au jour où le CO₂ se traite en salle, avec g13.
+       Arbitrage F. Henninot du 27/07 — « elle n'a pas sa place maintenant,
+       c'est plus tard quand on va parler des ppm ». Ici, le bloc d'accueil
+       s'arrête sur le danger ; la protection vient quand la question se pose. */
+    liens: [{ vers: "m-clas", libelle: "↺ Module classification", sec: true }, SOMMAIRE],
     notes_pilote: "Fiche la plus importante du module : le CO₂ entre dans le parc et il tue de deux façons que sa classe A1 n'annonce pas. Prendre le temps, quitte à raccourcir ailleurs. Faire le lien explicite avec « L'air qui manque » (s1) : même famille de danger, mais un mécanisme de PLUS, et surtout des SIGNES que l'azote ne donne pas. Poser la question au groupe : « l'azote et le CO₂, même danger ? » — la réponse (déplacement seul contre déplacement + action propre) est le cœur de la fiche. NE JAMAIS enseigner que le CO₂ endort sans prévenir : c'est faux, et cela supprimerait le seul signal d'auto-sauvetage du stagiaire. Faire répéter la règle de sortie à voix haute : essoufflement ou mal de tête soudain = je sors. Matérialiser le point bas : montrer le sol du local, faire dire où va le gaz, faire remarquer qu'une fenêtre en hauteur ne le chasse pas. Rappeler l'exception ammoniac chaque fois que « plus lourd que l'air » est prononcé. Le double accident se raconte, il ne se résume pas. Sur la pression : montrer un manifold ordinaire et dire franchement ce qui arrive si on le branche sur du CO₂. Aucune valeur chiffrée en salle : faire ouvrir la FDS du R-744 et la documentation constructeur.",
   },
   {
@@ -955,7 +961,10 @@ export const CARTES = [
       { code: "12.02", libelle: "Connaître le matériel de sécurité obligatoire : détection de gaz, détection des fuites, ventilation, équipements de protection individuelle.", etat: "a_evaluer" },
       { code: "13.14", libelle: "Vérifier la sécurité du site : signalisation, issues de secours, capteurs et alarmes gaz.", etat: "a_evaluer" },
     ],
-    liens: [{ vers: "m-clas", libelle: "↺ Module classification", sec: true }, { vers: "c00", libelle: "Choisir mon parcours ▸" }, SOMMAIRE],
+    /* Cette fiche n'appartient plus au bloc d'accueil : elle se lit au jour où
+       le CO₂ est traité en salle, à la suite de g13. Le retour se fait donc
+       vers g13, et non vers le module classification. */
+    liens: [{ vers: "g13", libelle: "↺ Revenir au CO₂ et à l'ammoniac", sec: true }, SOMMAIRE],
     notes_pilote: "⚠ VALEURS À FIGER PAR LE FORMATEUR avant la première session : les seuils de préalarme et d'évacuation des détecteurs CO₂ du plateau, la périodicité de vérification et de remplacement des cellules, et le type de détecteur utilisé. La fiche enseigne délibérément la NOTION de ppm et la LECTURE de l'appareil, sans aucun seuil chiffré : une fois écrits, ces nombres engagent l'organisme (cf. REPRISE, « les valeurs terrain »). Les donner à l'oral, sur le matériel réel. Montrer un détecteur fixe et un détecteur portatif côte à côte, faire dire la différence (permanence contre ponctualité). Faire chercher au groupe où placer le capteur dans le local — la réponse « en bas » doit venir d'eux, elle découle de la fiche précédente. Faire manipuler l'affichage en ppm et faire lire la valeur d'ambiance. Le point sur le masque à cartouche est le plus important de la fiche et le plus contre-intuitif : beaucoup d'adultes croient qu'un masque protège de tout. Le poser en question ouverte AVANT de répondre. Insister sur l'ordre EPC puis EPI : c'est un principe général de prévention, pas une préférence. Si le plateau dispose d'une installation au CO₂, y faire le tour de la signalisation, des issues et des capteurs en conditions réelles.",
   },
   /* ==================================================================
@@ -3869,7 +3878,12 @@ export const CARTES = [
       { code: "1.09", libelle: "Connaître les pressions élevées du CO₂, son diagramme log p/h, ses tables de saturation et le risque de glace carbonique." },
       { code: "13.14", libelle: "Vérifier avant d'intervenir que la signalisation, les issues de secours, les capteurs et les alarmes du site sont bien en état." },
     ],
-    liens: [suite("cfin", "Bilan"), SOMMAIRE],
+    /* C'est ICI que la protection contre le CO₂ trouve sa place : le stagiaire
+       vient de voir la pression, l'accumulation en point bas et le réflexe
+       d'arrivée sur site (signalisation, issues, capteurs). La question « et
+       concrètement, comment je me protège ? » se pose maintenant — pas dans le
+       bloc d'accueil, où elle arrivait avant que le sujet existe. */
+    liens: [suite("cl4", "Se protéger du CO₂ — détection, ppm, EPC et EPI"), { vers: "cfin", libelle: "Bilan", sec: true }, SOMMAIRE],
     notes_pilote:
       "Module volontairement court et NON évaluant : l'objectif est la reconnaissance du danger, pas " +
       "la compétence d'intervention. Faire circuler un masque à gaz réel (sans manipulation " +

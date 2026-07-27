@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" role="img"
-     aria-label="Animation : dans un local en contrebas, le CO2 étant plus lourd que l'air, il s'écoule vers le bas et la nappe monte depuis le sol. Le capteur placé en partie basse se déclenche ; le capteur placé au plafond, lui, ne voit rien tant que le local n'est pas presque plein. Une zone peut être respirable à hauteur de visage et déjà mortelle en bas de l'escalier.">
-  <title>Le CO₂ s'accumule en point bas — pourquoi le capteur se place en bas</title>
+     aria-label="Animation : dans un local en contrebas, le CO2 étant plus lourd que l'air, il s'écoule vers le bas et la nappe monte depuis le sol. Un technicien descend l'escalier et entre dans la nappe. Une zone peut être respirable à hauteur de visage et déjà mortelle en bas de l'escalier.">
+  <title>Le CO₂ s'accumule en point bas — on descend dedans sans le voir</title>
   <style>
     .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
     .st  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
@@ -62,23 +62,11 @@
       </line>
     </g>
 
-    <!-- capteur BAS -->
-    <g transform="translate(470,196)">
-      <rect class="p" x="0" y="0" width="34" height="24" rx="3" fill="#fff"/>
-      <circle cx="10" cy="12" r="4" fill="#c9451a">
-        <animate attributeName="fill" values="#c9d4de;#c9d4de;#c9451a;#c9451a;#c9d4de" dur="11s" repeatCount="indefinite"/>
-      </circle>
-      <text x="24" y="16" text-anchor="middle" style="font:700 10px Calibri;fill:#1b3a63">ppm</text>
-    </g>
-    <text class="st" x="487" y="240" text-anchor="middle" style="font-size:12px">capteur BAS</text>
-
-    <!-- capteur PLAFOND (inutile) -->
-    <g transform="translate(240,32)">
-      <rect class="p" x="0" y="0" width="34" height="24" rx="3" fill="#fff"/>
-      <circle cx="10" cy="12" r="4" fill="#c9d4de"/>
-      <text x="24" y="16" text-anchor="middle" style="font:700 10px Calibri;fill:#1b3a63">ppm</text>
-    </g>
-    <text class="bad" x="257" y="72" text-anchor="middle" style="font-size:12px">✗ ne voit rien</text>
+    <!-- AUCUN CAPTEUR SUR CETTE PLANCHE (retiré le 27/07, F. Henninot) : la
+         détection, les ppm et le placement du capteur relèvent de la fiche de
+         protection, plus loin dans le parcours. Ici on démontre UNE chose — le
+         gaz coule vers le bas, et on descend dedans. Une planche qui répond à
+         une question que l'élève ne s'est pas encore posée disperse. -->
 
     <!-- personne qui descend -->
     <g transform="translate(150,150)">
@@ -103,11 +91,11 @@
     <text class="lg" x="40" y="146">bas de l'escalier.</text>
 
     <circle cx="26" cy="172" r="4" fill="#c9451a"/>
-    <text class="lg" x="40" y="176">Un capteur au plafond</text>
-    <text class="lg" x="40" y="194">ne sert à rien.</text>
+    <text class="lg" x="40" y="176">On ne le voit pas :</text>
+    <text class="lg" x="40" y="194">on descend dedans.</text>
 
     <line x1="18" y1="212" x2="214" y2="212" stroke="#e8b9a8" stroke-width="1.5"/>
-    <text class="st" x="18" y="234" style="fill:#c9451a">Le capteur se place EN BAS.</text>
+    <text class="st" x="18" y="234" style="fill:#c9451a">Le danger est EN BAS.</text>
   </g>
 
   <text class="lg" x="30" y="336">Cette règle vaut pour le CO₂ et la plupart des fluides fluorés — <tspan style="font-weight:700;fill:#c9451a">mais pas pour l'ammoniac</tspan>, plus léger que l'air, qui lui monte.</text>

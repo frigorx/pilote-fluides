@@ -45,7 +45,6 @@ Le pack s'ouvre dans un navigateur, sans installation. Deux blocs valent d'être
 - Lire une classe — deux lettres, deux dangers — *30 min*
 - Explosif avant d'être perceptible — la LIE — *25 min*
 - CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend — *35 min*
-- Se protéger du CO₂ — détection, EPC et EPI — *30 min*
 - Chaleur sensible et chaleur latente — *30 min*
 - Surchauffe et sous-refroidissement — *30 min*
 - Quarante ans d'histoire : de l'ozone au climat — *35 min*
@@ -124,7 +123,7 @@ Chaque soir, la série du thème travaillé. Entre deux périodes, « Ma progres
 | M4 | salle | 25 min | Le détendeur et les organes annexes |
 | M4 | salle | 25 min | Régler et contrôler les organes annexes |
 
-### Jour 4 — Le détendeur, le brasage, et le choix d'un fluide  ·  7 h 10
+### Jour 4 — Le détendeur, le brasage, et le choix d'un fluide  ·  7 h 40
 
 *Le geste de tuyauterie occupe la journée : un joint brasé étanche, sous balayage d'azote, ne s'obtient pas du premier coup. La fin de journée prend de la hauteur — quel fluide choisir demain, et pourquoi.*
 
@@ -137,6 +136,7 @@ Chaque soir, la série du thème travaillé. Entre deux périodes, « Ma progres
 | M5 | plateau | 190 min | **Brasage sous balayage d'azote : réaliser un joint étanche, le contrôler** |
 | M6 | salle | 35 min | Substitution et efficacité énergétique |
 | M6 | salle | 25 min | CO₂ et NH₃ — reconnaître, ne pas intervenir |
+| M6 | autoformation | 30 min | Se protéger du CO₂ — détection, EPC et EPI |
 | M6 | plateau | 60 min | **Travail dirigé : choisir un fluide de substitution et le justifier par écrit** |
 
 ### Jour 5 — Les hydrocarbures, puis l'épreuve  ·  7 h 00

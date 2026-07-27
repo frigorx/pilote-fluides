@@ -131,6 +131,14 @@ function bilanPlanning() {
   for (const j of PARCOURS.jours) {
     let mj = 0;
     for (const s of j.sequences) {
+      // Une séquence d'AUTOFORMATION rattachée à une journée (régime « avant »
+      // ou « pendant ») ne consomme pas de temps de formation : le stagiaire la
+      // lit sur son lien, le soir ou entre deux séances. Elle est rattachée au
+      // module pour qu'on sache À QUEL MOMENT elle se lit — le premier cas est
+      // cl4, la protection contre le CO₂, posée au jour où le CO₂ est traité en
+      // salle (27/07). Sans cette exception, elle gonflait M6 de 30 min et
+      // faisait passer le total à 35 h 30 : le contrôle du cadre l'a vu.
+      if (s.regime === "avant" || s.regime === "pendant") { horsVolume += s.minutes; continue; }
       const m = s.module || "?";
       const e = (parModule[m] = parModule[m] || { salle: 0, plateau: 0 });
       if (s.regime === "plateau") { e.plateau += s.minutes; compte += s.minutes; mj += s.minutes; }

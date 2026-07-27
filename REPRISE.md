@@ -141,11 +141,17 @@ matrice était absente ; *explosimétrie* 0 ; *anoxie* 0 (l'asphyxie était trai
 l'anoxie au CO₂) ; *LIE* citée 6 fois et **jamais expliquée** ; *ATEX* citée une fois.
 Deux urgences le rendaient nécessaire : le **CO₂** entre dans le parc (inodore, plus lourd que
 l'air, risque d'anoxie) et les **hydrocarbures** s'y généralisent (atmosphère explosive).
-4 fiches, en **second bloc d'accueil, après la sécurité et avant le choix de la catégorie** —
-le stagiaire voit les familles de fluides *avant* de savoir quel parcours il suit :
+4 fiches, dont **3 en second bloc d'accueil**, après la sécurité et avant le choix de la
+catégorie — le stagiaire voit les familles de fluides *avant* de savoir quel parcours il suit :
 `cl1` lire une classe (les deux axes, les huit cases, **et ce que la classe commande** : EPI,
 matériel électrique, ventilation, détection, charge maximale, occupation du local) ·
-`cl2` la LIE et l'explosimétrie · `cl3` et `cl4` le **CO₂**. Bloc de **2 h**.
+`cl2` la LIE et l'explosimétrie · `cl3` le **CO₂** et ses deux dangers mortels.
+⚠️ **`cl4` (se protéger du CO₂ : détection, ppm, EPC/EPI) a QUITTÉ le bloc d'accueil le 27/07**
+(F. Henninot : *« elle n'a pas sa place maintenant, c'est plus tard quand on va parler des
+ppm »*). Elle se lit désormais **au jour 4, à la suite de `g13`**, quand le CO₂ est traité en
+salle — en régime `pendant`, donc hors des 35 h. La planche de `cl3` a perdu ses capteurs dans
+le même geste : elle démontre **une** chose, le gaz coule vers le bas et on descend dedans.
+Le bloc d'accueil passe ainsi de 2 h à **1 h 30**.
 - **Séparé du bloc sécurité, pas fondu dedans** : `cl3` se définit *par différence* avec `s1`
   (l'azote déplace l'oxygène, le CO₂ déplace **et** agit par lui-même), ce qui suppose `s1` déjà
   vue ; et un bloc d'accueil unique de 4 h noierait les deux messages.

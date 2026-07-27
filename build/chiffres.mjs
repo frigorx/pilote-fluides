@@ -34,7 +34,15 @@ const PROJ = JSON.parse(tp.slice(tp.indexOf("{"), tp.lastIndexOf(";")));
 const cadre = CADRE[PARCOURS.cadre];
 let salle = 0, plateau = 0, hors = 0;
 for (const j of PARCOURS.jours)
-  for (const s of j.sequences) (s.regime === "plateau" ? (plateau += s.minutes) : (salle += s.minutes));
+  for (const s of j.sequences) {
+    // Même règle que build/parcours.mjs : une séquence d'autoformation
+    // rattachée à une journée (« avant », « pendant ») ne consomme pas de temps
+    // de formation. Les deux calculs doivent rester alignés — sinon le dossier
+    // et le planning annoncent deux volumes différents, et c'est le genre
+    // d'écart qui décrédibilise tout le reste.
+    if (s.regime === "avant" || s.regime === "pendant") { hors += s.minutes; continue; }
+    s.regime === "plateau" ? (plateau += s.minutes) : (salle += s.minutes);
+  }
 for (const b of [PARCOURS.amont, PARCOURS.aval])
   for (const s of (b || { sequences: [] }).sequences) hors += s.minutes;
 
