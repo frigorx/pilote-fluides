@@ -1,104 +1,133 @@
 # Catalogue sonore — pack habilitation fluides
 
-Onze sons courts, qui **habillent** les planches animées. Fournis par F. Henninot
-le 27 juillet 2026 (« Pack sonore Pilote Fluides v1 »), avec leur note d'intention.
+Onze sons habillent les planches animées. **Sept sont calculés par le navigateur**, quatre
+seulement sont des fichiers. Pack fourni par F. Henninot les 27 et 28 juillet 2026
+(« Pilote Fluides » v1 puis v2), avec sa note d'intention.
 
 ---
 
-## ⚠️ Ce que ces sons NE sont pas
+## Sept sons ne sont plus des fichiers : ce sont du code
 
-**Origine déclarée par F. Henninot : générés par ChatGPT.** C'est cohérent avec la règle du
-dépôt — *génératif interdit sur les schémas techniques, autorisé sur l'ambiance* — mais cela
-emporte une limite qu'il faut écrire une fois pour toutes :
+Constat de F. Henninot le 28/07 : *« ce ne sont que des bruits électroniques, ils n'auraient
+pas pu être créés en code ? »* — si. Un clic, un bip, une alarme, un souffle, un cœur qui
+ralentit sont des formes d'onde élémentaires, que la Web Audio API fabrique à la volée.
 
-> **Un son généré ne représente pas fidèlement un phénomène réel.**
-> Une fuite de fluide ne fait pas *ce* bruit-là. Un compresseur non plus.
+| Son | Recette | Coût |
+|---|---|---:|
+| `vanne` | impulsion de bruit filtré + note brève — un clic mécanique | **0 Ko** |
+| `validation` | deux notes qui montent (880 → 1320 Hz) | **0 Ko** |
+| `erreur` | les deux mêmes qui descendent, en triangle — jamais brutal | **0 Ko** |
+| `transition` | souffle court dont le filtre s'ouvre | **0 Ko** |
+| `alarme` | deux tons alternés, quatre fois — la sirène des locaux techniques | **0 Ko** |
+| `fuite` | bruit large filtré, qui s'ouvre puis retombe | **0 Ko** |
+| `coeur` | sept battements dont l'intervalle s'allonge, puis la note tenue | **0 Ko** |
 
-Conséquence pédagogique, non négociable : ces sons **habillent une animation**, ils
-n'enseignent **jamais** un diagnostic à l'oreille. Aucune question, aucune fiche, aucune
-consigne ne doit demander de reconnaître une anomalie à son bruit sur la base de ces fichiers.
-Sur le plateau, l'oreille se forme sur le matériel réel — et sous la conduite du formateur.
+**Ce que cela règle** : 1 396 Ko en moins ; plus aucune question d'origine sur ces sept-là
+(c'est notre code, sous notre licence) ; et leur hauteur, leur durée et leur intensité se
+règlent dans `moteur/sons.js` sans repasser par un fichier.
 
-Le `coeur_ralentit_bip_continu.wav` est une **convention dramatique** (la note d'intention
-d'origine le dit elle-même), pas une représentation médicale.
+## Quatre restent des fichiers, et c'est assumé
 
-**Droits** : sorties d'un modèle génératif, utilisées ici comme habillage. Si l'un de ces
-fichiers se révélait reprendre une œuvre protégée, il serait retiré — même règle que pour les
-photos d'atelier dont l'origine reste à confirmer.
-
----
-
-## Les fichiers
-
-| Fichier | Durée | Poids | Usage prévu |
+| Fichier | Durée | Poids | Pourquoi pas de synthèse |
 |---|---:|---:|---|
-| `validation.wav` | 0,3 s | 28 Ko | réussite, étape correcte |
-| `erreur.wav` | 0,4 s | 37 Ko | erreur pédagogique |
-| `vanne_clic.wav` | 0,4 s | 39 Ko | action sur une vanne |
-| `transition.wav` | 0,5 s | 43 Ko | changement d'étape |
-| `chute_choc.wav` | 1,4 s | 121 Ko | chute et impact |
-| `alarme_danger.wav` | 2,5 s | 215 Ko | danger, alerte |
-| `fuite_souffle.wav` | 3,0 s | 258 Ko | fuite, détente, gaz |
-| `pas_escalier.wav` | 4,2 s | 362 Ko | technicien qui descend |
-| `compresseur_ambiance.wav` | 5,0 s | 431 Ko | ambiance machine |
-| `coeur_ralentit_bip_continu.wav` | 9,0 s | 775 Ko | battements ralentis puis signal continu |
-| `musique_fond_legere.wav` | 12,0 s | 1 034 Ko | fond instrumental discret |
+| `pas_escalier.wav` | 4,2 s | 362 Ko | des pas calculés sonnent « boîte à rythme » |
+| `chute_choc.wav` | 1,4 s | 121 Ko | un impact crédible demande un enregistrement |
+| `compresseur_ambiance.wav` | 5,0 s | 431 Ko | timbre complexe, riche en harmoniques |
+| `musique_fond_legere.wav` | 12,0 s | 1 034 Ko | une musique ne se synthétise pas en trois oscillateurs |
 
-**Format** : WAV PCM, mono, 44,1 kHz, 16 bits. **Total 3,3 Mo.**
+**Total 1 947 Ko** (contre 3 342 Ko avant la synthèse), **WAV PCM mono 44,1 kHz 16 bits**.
 
----
+**Origine déclarée par F. Henninot : générés par ChatGPT.** Cohérent avec la règle du dépôt —
+*génératif interdit sur les schémas techniques, autorisé sur l'ambiance*. Si l'un de ces
+fichiers se révélait reprendre une œuvre protégée, il serait retiré, comme pour les photos
+d'atelier dont l'origine reste à confirmer.
 
-## Poids : pourquoi cela ne pèse pas sur le pack
-
-Le pack élève tient à 674 Ko et doit s'ouvrir en 4G. Ces 3,3 Mo **n'y entrent pas** :
-
-- aucun son n'est chargé à l'ouverture d'une page (`preload="none"`) ;
-- un son n'est téléchargé **que** si le lecteur a activé le son **et** joue la planche
-  concernée ;
-- le son est **coupé par défaut**, et le choix est mémorisé sur l'appareil.
-
-⏭️ **Allègement à faire** : convertir en OGG ou MP3 diviserait le poids par dix environ
-(3,3 Mo → ~330 Ko). `ffmpeg` n'est pas installé sur la machine — c'est la seule raison pour
-laquelle ce n'est pas déjà fait. Commande à passer le jour où il le sera :
+⏭️ Conversion OGG (÷10 sur ces quatre-là) le jour où `ffmpeg` sera installé :
 
 ```bash
 for f in packs/fluides/res/audio/*.wav; do ffmpeg -i "$f" -c:a libvorbis -q:a 3 -ac 1 "${f%.wav}.ogg"; done
 ```
 
-Il faudra alors servir l'OGG en priorité et garder le WAV en repli — `moteur/sons.js` sait
-déjà essayer plusieurs extensions.
+---
+
+## ⚠️ Ce que ces sons NE sont pas
+
+> **Ni un son généré, ni un son calculé ne représente fidèlement un phénomène réel.**
+> Une fuite de fluide ne fait pas *ce* bruit-là. Un compresseur non plus.
+
+Conséquence pédagogique, non négociable : ces sons **habillent une animation**, ils
+n'enseignent **jamais** un diagnostic à l'oreille. Aucune question, aucune fiche, aucune
+consigne ne doit demander de reconnaître une anomalie à son bruit sur cette base. Sur le
+plateau, l'oreille se forme sur le matériel réel, sous la conduite du formateur.
+
+Le son `coeur` est une **convention dramatique** — la note d'intention d'origine le dit
+elle-même —, pas une représentation médicale.
 
 ---
 
-## Règles de mise en œuvre (reprises de la note d'intention, et tenues)
+## Poids : pourquoi rien de tout cela ne pèse sur le pack
 
-1. **Jamais de son fort au chargement.** Le navigateur le bloquerait de toute façon, mais
-   surtout : on ne surprend pas quelqu'un qui ouvre une fiche en salle ou en public.
-2. **Un contrôle Son / Silence**, mémorisé (`pilote_son`), respecté partout.
+Le pack élève tient à 674 Ko et doit s'ouvrir en 4G. Ces 1 947 Ko **n'y entrent pas** :
+
+- les sept sons calculés ne se téléchargent **jamais** : ils n'existent pas en fichier ;
+- les quatre fichiers ne sont chargés **que** si le lecteur a activé le son **et** atteint une
+  planche qui les demande ;
+- le son est **coupé par défaut**, et le choix est mémorisé sur l'appareil.
+
+Vérifié : **zéro requête audio** à l'ouverture d'une page.
+
+---
+
+## L'horloge : pourquoi pas `setTimeout`
+
+`setTimeout` dérive (mesuré : 2 à 15 ms sur 5 s) et surtout le navigateur le **bride à un
+réveil par seconde** dès que l'onglet passe en arrière-plan — en salle, changer d'onglet
+suffisait à disloquer la bande-son.
+
+Tout est donc programmé sur `AudioContext.currentTime`, l'horloge du fil audio, qui place un
+événement **à l'échantillon près** (0,02 ms) quoi que fasse la page. Les quatre fichiers sont
+décodés en mémoire et joués par cette même horloge : une seule référence de temps pour tout.
+
+**Ce que cela ne résout pas** : l'animation SVG est insérée en `<img>`, son horloge SMIL n'est
+ni lisible ni pilotable. On lance donc deux horloges côte à côte au même instant. Sur nos
+durées (moins de 20 s) l'écart reste inaudible, mais ce n'est **pas** une synchronisation
+asservie. La faire vraiment supposerait de piloter l'image depuis le son
+(`svg.setCurrentTime`), donc d'injecter le SVG dans la page — ce qui exige d'abord le filet
+« valeurs de base = état final » (§ 6 du REPRISE). Autre chantier.
+
+---
+
+## L'API — celle du pack V2, pour que tout s'y branche
+
+```js
+PiloteAudio.play("vanne");
+PiloteAudio.play("fuite", { volume: 0.5 });
+PiloteAudio.setVolume(0.6);
+PiloteAudio.toggleMute();
+PiloteAudio.playTimeline([{ t: 0, son: "pas" }, { t: 3200, son: "chute" }]);
+```
+
+Les séquences par planche vivent dans **`packs/fluides/sons.js`**, avec les instants relevés
+dans les SVG eux-mêmes. `node build/sons.mjs` compare les deux à chaque build et refuse en
+silence de laisser passer un son programmé après la fin de son animation, un nom absent du
+catalogue, ou un fichier manquant.
+
+---
+
+## Règles tenues, reprises de la note d'intention
+
+1. **Jamais de son au chargement.** On ne surprend pas quelqu'un qui ouvre une fiche en salle.
+2. **Un contrôle Son / Silence**, mémorisé (`pilote_son`), respecté partout. À l'activation,
+   un bip de validation confirme — on entend immédiatement ce qu'on vient d'allumer.
 3. La musique de fond reste **très basse** sous les explications — et n'est pas utilisée
    aujourd'hui : elle attend les voix off.
 4. Les scènes de sécurité peuvent porter une **dramaturgie plus forte**, sans gore ni effet
    comique.
 5. Sur les planches techniques, les bruitages sont **rares et synchronisés** avec l'action.
-6. **Voix off** : à prévoir plus tard. `SCRIPTS_VOIX_OFF.txt` (fourni avec le pack) en donne
-   la base. ⚠️ Même règle que pour les capsules vidéo : **aucune voix enregistrée avant la
-   relecture métier** — une voix est figée, et une erreur enregistrée s'enseigne longtemps.
+6. **Voix off** : à prévoir plus tard, scripts fournis avec le pack. ⚠️ Même règle que pour les
+   capsules vidéo : **aucune voix enregistrée avant la relecture métier**. Une voix est figée,
+   et une erreur enregistrée s'enseigne longtemps.
 
 ---
 
-## Comment la synchronisation fonctionne
-
-Les planches sont insérées en `<img>` : le navigateur ne donne **aucun accès** à leur horloge
-interne SMIL. Impossible, donc, d'écouter l'animation pour placer un son sur un événement.
-
-La table `packs/fluides/sons.js` porte donc, pour chaque planche, **les instants relevés dans
-le SVG lui-même** (attributs `begin` des `<animate>`), et `moteur/sons.js` programme les sons
-sur ces instants au moment où l'animation (re)démarre.
-
-⚠️ **Conséquence à connaître** : si l'on modifie les temps d'une planche, il faut reprendre sa
-ligne dans `sons.js`. Le contrôle `node build/sons.mjs` compare les deux et signale tout son
-programmé après la fin de son animation.
-
----
-
-*F. Henninot · inerWeb Édu — pack sonore fourni le 27/07/2026.*
+*F. Henninot · inerWeb Édu — pack sonore fourni le 27/07/2026, passé en synthèse le 28/07.*
