@@ -112,8 +112,33 @@ F. Henninot, sans hésitation la deuxième fois qu'on lui a posé la question : 
   côte à côte). Corrigé, revérifié : **zéro chevauchement sur les 16 textes**, zéro débordement
   de cadre.
 
-**81 cartes** · **266 questions** · **41 planches SVG** (dont **33 animées** : 11 récits,
-22 boucles — 311 animations, voir `galerie.html`) · 4 illustrations · **3 outils embarqués**
+- ✅ **Le cache navigateur cessait de piéger F. Henninot — corrigé à la racine, pas au cas par
+  cas.** Troisième fois de la session qu'il se retrouvait bloqué sur une version périmée (les
+  MP3, la tuile galerie, puis « je n'ai que la page d'accueil » — son navigateur servait un
+  `index.html` d'avant l'ajout de la redirection vers la frise). `build/lib-version.mjs`
+  calcule un hash (sha256 tronqué) du moteur + du contenu ; `build/version.mjs` suffixe
+  `?v=<hash>` sur chaque script/feuille de style des pages écrites à la main (`index.html`,
+  `formateur.html`, `projection.html`, `portail.html`, `dossier.html`) — idempotent, un second
+  passage sans changement ne produit aucun diff. Tant qu'une seule ligne de moteur ou de
+  contenu change, l'URL change, et **aucun réglage de cache ne peut plus s'y opposer** — plus
+  besoin de Ctrl+F5.
+- ✅ **`build.mjs` reconstruisait en réalité la MOITIÉ du pack.** Le reste — `parcours.mjs`
+  (planning, projection), `relecture.mjs` (bon à tirer), `chiffres.mjs` (les compteurs
+  affichés aux visiteurs) — s'enchaînait à la main, séance après séance. Conséquence trouvée
+  en auditant le projet le 28/07 : `chiffres.gen.js` annonçait encore **41 planches** sur
+  `portail.html`/`dossier.html` alors qu'il y en avait **42** — un chaînon oublié une fois, et
+  les chiffres montrés à un visiteur mentaient sans que rien ne le signale. Les trois scripts
+  rejoignent `build.mjs` : **une seule commande reconstruit désormais tout**, dans le bon
+  ordre de dépendance. Chacun reste par ailleurs appelable seul.
+- ✅ **Audit du projet entier, sur demande explicite de F. Henninot** (« est-ce que tu as
+  vraiment réfléchi à un projet global ? »). Les **79 liens locaux** (`href=`/`src=`) de
+  toutes les pages HTML vérifiés un par un contre le disque : zéro cassé. Les **9 références**
+  du tableau `LIBRES` de `documents.html` (lues en JS, pas en attribut HTML, donc invisibles à
+  un contrôle de liens classique) : zéro cassé. Le coffre chiffré : 38 documents, cohérent
+  avec les compteurs.
+
+**81 cartes** · **266 questions** · **42 planches SVG** (dont **34 animées** : 12 récits,
+22 boucles — 320 animations, voir `galerie.html`) · 4 illustrations · **3 outils embarqués**
 > ⚠️ **Les 14 planches du 27/07 soir** (8 nouvelles : tirage au vide, pesée, manifold, ordre des
 > vannes, pression absolue/relative, boucle du détendeur, givre/dégivrage, charge limite ;
 > 6 animations d'existantes) ont été produites par agents + vérification adversariale, contrôle
@@ -394,16 +419,22 @@ ratées → score précédent affiché (localStorage élève, **rien ne remonte*
 
 ```bash
 node build/convert.mjs    # Mission F-GAZ + questions-pack.json → banque.gen.json (202 questions)
-node build/build.mjs      # cartes.js + banque → pack.pilote.js ET pack.eleve.js
-node build/parcours.mjs   # parcours.js + fiches → projection.gen.js (le support de salle)
-node build/matrice.mjs    # → MATRICE-COMPETENCES.md + matrice.html (lancé aussi par build.mjs)
-node build/galerie.mjs    # → galerie.html : toutes les planches, rejouables (idem)
-node build/planches.mjs   # contrôle des planches animées (--strict pour bloquer)
-node build/relecture.mjs  # → relecture.html (document de bon à tirer)
-node build/chiffres.mjs   # → chiffres.gen.js : les compteurs des pages, RELEVÉS et non saisis
+node build/build.mjs      # LA commande unique — reconstruit TOUT, voir ci-dessous
+node build/planches.mjs   # contrôle des planches animées (--strict pour bloquer) — pas un générateur
 node build/coffre.mjs "<code n1>"                 # → docs/coffre/ : documents chiffrés
 node build/code-acces.mjs "<code n1>" "<phrase n2>"  # installe les DEUX niveaux, partout
 ```
+
+> ⚠️ **`node build/build.mjs` reconstruit désormais tout, dans l'ordre.** Jusqu'au 28/07, un
+> rebuild complet demandait d'enchaîner build.mjs, puis parcours.mjs, puis relecture.mjs, puis
+> chiffres.mjs — à la main, à chaque session. Un chaînon oublié une fois a suffi pour que
+> `chiffres.gen.js` affiche un nombre de planches faux sur `portail.html`/`dossier.html`, sans
+> qu'aucun contrôle ne le voie. Il enchaîne maintenant, dans cet ordre de dépendance :
+> validation + `pack.pilote.js`/`pack.eleve.js` → `profondeur.mjs` → `matrice.mjs` →
+> `galerie.mjs` → `sons.mjs` → **`parcours.mjs`** (planning, projection) → **`relecture.mjs`**
+> (bon à tirer) → **`chiffres.mjs`** (les compteurs) → `version.mjs` (casse-cache, voir plus
+> bas). Chaque script reste appelable seul pour un besoin ponctuel — mais **le rebuild complet,
+> c'est une commande, plus quatre.**
 
 > ⚠️ **Le code d'accès se passe en argument** — il n'est écrit nulle part dans le dépôt.
 > `coffre.mjs` est à relancer après toute modification d'un document du dépôt privé, sinon la
@@ -454,6 +485,7 @@ court n'ouvre pas les examens, et déverrouiller le niveau 1 laisse les examens 
 | `build/profondeur.mjs` | mesure que chaque code cité est **tenu** — lancé par `build.mjs`, avertit sans bloquer (`--strict` pour bloquer). Corpus = contenu visible de l'élève, hors notes formateur |
 | `PROFONDEUR-REFERENTIEL.md` | **généré à chaque build** — codes cités non tenus, notions absentes, motifs aveugles |
 | `build/matrice.mjs` → `MATRICE-COMPETENCES.md` + `matrice.html` | **la matrice de traçabilité**, quatrième mesure : COUVERTURE dit qu'un code est *cité*, PROFONDEUR qu'il est *tenu*, la MATRICE qu'il est *enseigné ET vérifié* — seule la relecture métier dira qu'il est *bien* enseigné. Rien n'y disparaît : codes hors périmètre (13.xx, 14.xx, B et C) et questions hors référentiel y figurent avec leur statut et leur motif |
+| `build/lib-version.mjs` + `build/version.mjs` | **casse-cache (28/07)** : hash du moteur + du contenu, suffixé `?v=<hash>` sur les scripts/CSS des pages écrites à la main. Change dès qu'une ligne de moteur ou de contenu change ⇒ le navigateur ne peut plus servir une version périmée. Idempotent |
 | `build/convert.mjs` | sélection + niveaux + **codes de compétence** + remédiation, depuis Mission F-GAZ |
 | `packs/fluides/banque.gen.json` | banque générée — **ne jamais éditer à la main** |
 | `packs/fluides/pack.eleve.js` | build élève, **purgé** de la couche pilote |

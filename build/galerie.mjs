@@ -27,6 +27,9 @@ import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { CARTES } from "../packs/fluides/cartes.js";
+import { calculerVersion } from "./lib-version.mjs";
+
+const VERSION = calculerVersion();
 
 const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DOSSIER = resolve(RACINE, "packs/fluides/res/svg");
@@ -232,8 +235,8 @@ h += `
 <p class="meta" style="margin-top:30px">Les planches sont des SVG faits à la main, dans la charte
 inerWeb Édu. Aucune n'est produite par un modèle d'image : un rendu génératif inverse la croix du
 frigoriste et invente des organes qui n'existent pas.</p>
-<script src="packs/fluides/sons.js"></script>
-<script src="moteur/sons.js"></script>
+<script src="packs/fluides/sons.js?v=${VERSION}"></script>
+<script src="moteur/sons.js?v=${VERSION}"></script>
 <script>
 (function () {
   var n = 0, f = "*";

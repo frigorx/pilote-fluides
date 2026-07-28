@@ -470,6 +470,38 @@ function main() {
   execFileSync(process.execPath, [resolve(RACINE, "build/sons.mjs")], {
     stdio: "inherit",
   });
+
+  /* --- 28/07 : CE QUI MANQUAIT POUR QUE `build.mjs` SOIT VRAIMENT « le »
+     build. Jusqu'ici, reconstruire le pack en entier voulait dire enchaîner
+     QUATRE commandes à la main (build.mjs, puis parcours.mjs, puis
+     relecture.mjs, puis chiffres.mjs) — et cette session l'a fait ainsi,
+     manuellement, à chaque fois. Un chaînon oublié une seule fois, et les
+     compteurs affichés à un visiteur (portail.html, dossier.html) se
+     figent sur un état révolu sans que rien ne le signale : trouvé le
+     28/07, `chiffres.gen.js` annonçait encore 41 planches alors qu'il y en
+     avait 42. Les trois étapes rejoignent donc `build.mjs` : une seule
+     commande reconstruit désormais TOUT, dans le bon ordre de dépendance
+     (parcours lit cartes.js · relecture et chiffres lisent les packs et
+     les rapports déjà écrits ci-dessus). Chaque script reste par ailleurs
+     appelable seul, sans rien changer à sa propre logique. */
+  execFileSync(process.execPath, [resolve(RACINE, "build/parcours.mjs")], {
+    stdio: "inherit",
+  });
+  execFileSync(process.execPath, [resolve(RACINE, "build/relecture.mjs")], {
+    stdio: "inherit",
+  });
+  execFileSync(process.execPath, [resolve(RACINE, "build/chiffres.mjs")], {
+    stdio: "inherit",
+  });
+
+  /* --- casse-cache : en dernier, pour que le hash reflète l'état final
+     de tout ce qui vient d'être écrit ci-dessus. Voir lib-version.mjs :
+     un stagiaire qui ouvre un onglet vieux de trois jours ne doit jamais
+     rater une correction, et F. Henninot ne doit plus jamais se demander
+     pourquoi « ce que tu m'as poussé » ne s'affiche pas. --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/version.mjs")], {
+    stdio: "inherit",
+  });
 }
 
 main();
