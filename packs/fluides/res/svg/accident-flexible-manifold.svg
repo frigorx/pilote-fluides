@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Accident : déconnexion d'un flexible de manifold sous pression</title>
+  <desc id="desc">Animation pédagogique montrant un flexible débranché alors qu'il contient encore du liquide frigorigène. Le liquide jaillit dans l'axe du raccord.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071426"/>
+      <stop offset="1" stop-color="#12345a"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#f8fbff"/>
+      <stop offset=".45" stop-color="#aebdca"/>
+      <stop offset="1" stop-color="#5d7182"/>
+    </linearGradient>
+    <linearGradient id="hose" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#173d68"/>
+      <stop offset=".55" stop-color="#3378bd"/>
+      <stop offset="1" stop-color="#163e69"/>
+    </linearGradient>
+    <linearGradient id="jet" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#efffff" stop-opacity=".98"/>
+      <stop offset=".32" stop-color="#67e9ff" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#42a9ee" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-100%" width="220%" height="300%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#020914" flood-opacity=".45"/>
+    </filter>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0L8 4.5 0 9z" fill="#ff6b35"/></marker>
+    <style>
+      .ui{font-family:Arial,Helvetica,sans-serif}.label{font-size:18px;font-weight:700;letter-spacing:.07em}.small{font-size:14px;font-weight:700;letter-spacing:.08em}.caption{font-size:23px;font-weight:700}.intro{animation:intro 14s linear infinite}.warning{animation:warning 14s linear infinite}.spray{animation:spray 14s linear infinite}.frost{animation:frost 14s linear infinite}.dash{stroke-dasharray:12 11;animation:dash 1.2s linear infinite}.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 1s ease-in-out infinite alternate}.couplingSpin{transform-box:fill-box;transform-origin:center;animation:couplingSpin 14s ease-in-out infinite}.fadeLater{animation:fadeLater 14s linear infinite}.replay{cursor:pointer}.replay:hover rect{fill:#ff7e4d}@keyframes intro{0%,15%{opacity:1}16%,100%{opacity:0}}@keyframes warning{0%,12%{opacity:0}13%,48%{opacity:1}49%,100%{opacity:0}}@keyframes spray{0%,46%{opacity:0;transform:scaleX(.12)}47%,91%{opacity:1;transform:scaleX(1)}92%,100%{opacity:0}}@keyframes couplingSpin{0%,34%{transform:rotate(0)}37%,47%{transform:rotate(-24deg) translate(-11px,0)}48%,100%{transform:rotate(-24deg) translate(-18px,0)}}@keyframes frost{0%,54%{opacity:0;transform:scale(.6)}58%,91%{opacity:1;transform:scale(1)}92%,100%{opacity:0}}@keyframes dash{to{stroke-dashoffset:-46}}@keyframes pulse{to{transform:scale(1.08)}}@keyframes fadeLater{0%,53%{opacity:0}54%,92%{opacity:1}93%,100%{opacity:0}}@media print{.intro,.warning,.spray,.frost,.dash,.pulse,.couplingSpin,.fadeLater{animation:none}}
+    </style>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="1050" cy="70" r="250" fill="none" stroke="#7ab6eb" stroke-opacity=".12"/>
+  <circle cx="1050" cy="70" r="185" fill="none" stroke="#ff6b35" stroke-opacity=".16" stroke-dasharray="7 13"/>
+  <path d="M0 605H1200" stroke="#e7f0f6" stroke-opacity=".14"/>
+
+  <g class="ui" fill="#fff">
+    <text x="72" y="75" class="label" fill="#ff7b43">CAS TYPE — ACCIDENT AU MANIFOLD</text>
+    <text x="72" y="114" font-size="35" font-weight="700">Un flexible n'est jamais présumé vide.</text>
+    <text x="72" y="147" font-size="18" fill="#c5d3df">Relire les manomètres et vérifier les vannes avant tout desserrage.</text>
+  </g>
+
+  <!-- machine and service port -->
+  <g filter="url(#shadow)">
+    <rect x="895" y="250" width="220" height="255" rx="22" fill="#e9f0f5"/>
+    <rect x="920" y="275" width="170" height="34" rx="8" fill="#b8c7d2"/>
+    <rect x="932" y="332" width="145" height="130" rx="10" fill="#d6e2e9" stroke="#91a7b8" stroke-width="3"/>
+    <text x="1005" y="390" text-anchor="middle" class="ui" font-size="18" font-weight="700" fill="#36526a">INSTALLATION</text>
+    <text x="1005" y="416" text-anchor="middle" class="ui" font-size="14" fill="#5e7384">circuit frigorifique</text>
+    <g transform="translate(855 352)">
+      <rect x="0" y="0" width="66" height="48" rx="9" fill="url(#metal)" stroke="#506675" stroke-width="3"/>
+      <rect x="-22" y="10" width="30" height="28" rx="6" fill="#c7d4dd" stroke="#506675" stroke-width="3"/>
+      <circle cx="33" cy="24" r="7" fill="#244d72"/>
+      <path d="M14 5V-18M52 5V-18" stroke="#ff6b35" stroke-width="7" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- hose -->
+  <path d="M293 441 C403 502 565 483 702 420 C754 396 789 378 855 376" fill="none" stroke="#09233e" stroke-width="42" stroke-linecap="round"/>
+  <path d="M293 441 C403 502 565 483 702 420 C754 396 789 378 855 376" fill="none" stroke="url(#hose)" stroke-width="31" stroke-linecap="round"/>
+  <path d="M300 432 C412 490 560 472 699 410" fill="none" stroke="#8cc9f4" stroke-opacity=".45" stroke-width="3"/>
+
+  <!-- manifold -->
+  <g filter="url(#shadow)" transform="translate(165 210)">
+    <rect x="0" y="74" width="175" height="113" rx="16" fill="#133a62" stroke="#86afd0" stroke-width="3"/>
+    <rect x="15" y="99" width="145" height="51" rx="10" fill="#0c2540"/>
+    <circle cx="48" cy="60" r="47" fill="#f9fcff" stroke="#7f96a8" stroke-width="7"/>
+    <circle cx="127" cy="60" r="47" fill="#f9fcff" stroke="#7f96a8" stroke-width="7"/>
+    <circle cx="48" cy="60" r="35" fill="#e7f0f4"/>
+    <circle cx="127" cy="60" r="35" fill="#e7f0f4"/>
+    <path d="M48 60l18 -15M127 60l23 7" stroke="#e7512d" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="48" cy="60" r="4" fill="#102c45"/><circle cx="127" cy="60" r="4" fill="#102c45"/>
+    <text x="87" y="120" text-anchor="middle" class="ui" font-size="13" font-weight="700" fill="#d7e7f4">MANIFOLD</text>
+    <circle cx="47" cy="177" r="19" fill="#d9432b" stroke="#f8a091" stroke-width="4"/>
+    <circle cx="128" cy="177" r="19" fill="#397fd0" stroke="#9dc8f5" stroke-width="4"/>
+    <path d="M128 194v36" stroke="#9baebd" stroke-width="14" stroke-linecap="round"/>
+  </g>
+
+  <!-- coupling: the nut visibly turns and moves as it is loosened -->
+  <g class="couplingSpin" filter="url(#shadow)">
+    <rect x="796" y="353" width="70" height="46" rx="9" fill="url(#metal)" stroke="#4c6270" stroke-width="3"/>
+    <path d="M780 354v44M789 350v52M801 350v52" stroke="#536b7b" stroke-width="4"/>
+    <path d="M786 350l-14 10M786 366l-14 10M786 382l-14 10" stroke="#506675" stroke-width="4"/>
+  </g>
+
+  <!-- face deliberately placed in the axis of the accidental projection -->
+  <g filter="url(#shadow)">
+    <path d="M503 478c21-88 91-94 125 0" fill="#243f59"/>
+    <path d="M518 333c4-66 101-70 112-4v58c-11 51-96 51-112 0z" fill="#f1bd98" stroke="#d99472" stroke-width="3"/>
+    <path d="M515 337c3-62 98-75 118-11l-16 18c-26-14-67-11-96 8z" fill="#2b3440"/>
+    <path d="M506 357h126" stroke="#293b49" stroke-width="8" stroke-linecap="round"/>
+    <rect x="520" y="347" width="43" height="31" rx="8" fill="#bdf7ff" fill-opacity=".58" stroke="#1c4e66" stroke-width="6"/>
+    <rect x="575" y="347" width="43" height="31" rx="8" fill="#bdf7ff" fill-opacity=".58" stroke="#1c4e66" stroke-width="6"/>
+    <path d="M563 362h12" stroke="#1c4e66" stroke-width="6"/>
+    <text x="569" y="525" text-anchor="middle" class="ui" font-size="15" font-weight="700" fill="#d9edf9">LUNETTES DE PROTECTION</text>
+  </g>
+
+  <!-- checked / forgotten layer -->
+  <g class="intro ui">
+    <rect x="72" y="208" width="390" height="105" rx="16" fill="#113252" stroke="#6e9bc2" stroke-width="2"/>
+    <text x="98" y="246" class="small" fill="#9fc4e3">AVANT DE DESSERRER</text>
+    <text x="98" y="279" class="caption">Je pense que le flexible est vide…</text>
+    <text x="98" y="302" font-size="15" fill="#bed0df">Mais aucune vérification n'a été faite.</text>
+  </g>
+  <g class="warning ui">
+    <path d="M493 305l42-72 42 72z" fill="#ffb536" stroke="#ffe0a1" stroke-width="3" class="pulse"/>
+    <text x="535" y="292" text-anchor="middle" font-size="32" font-weight="800" fill="#563400">!</text>
+    <path d="M316 245 C416 245 494 283 641 342" fill="none" stroke="#ff6b35" stroke-width="3" marker-end="url(#arrow)" class="dash"/>
+    <rect x="72" y="205" width="418" height="110" rx="16" fill="#2a2130" stroke="#ff6b35" stroke-width="2"/>
+    <text x="98" y="244" class="small" fill="#ffad88">ERREUR AVANT DESSERRAGE</text>
+    <text x="98" y="277" class="caption">Vanne non vérifiée · manomètre non relu</text>
+    <text x="98" y="302" font-size="15" fill="#ffe0d2">Un résidu de liquide peut encore être sous pression.</text>
+  </g>
+
+  <!-- projection -->
+  <g class="spray" filter="url(#glow)">
+    <path d="M812 375 C725 342 650 344 548 365 C640 368 718 381 815 390z" fill="url(#jet)"/>
+    <path d="M810 376 C711 326 638 337 553 360" fill="none" stroke="#9df5ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M810 388 C713 409 631 412 554 378" fill="none" stroke="#61d9ff" stroke-width="6" stroke-linecap="round"/>
+    <path d="M807 378 C707 363 635 370 550 370" fill="none" stroke="#f0ffff" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="665" cy="329" r="8" fill="#bdfaff"/><circle cx="610" cy="399" r="6" fill="#82e6ff"/><circle cx="563" cy="354" r="5" fill="#e4ffff"/>
+  </g>
+  <!-- the cold liquid freezes at its point of impact on the goggles -->
+  <g class="frost" filter="url(#glow)">
+    <path d="M514 342l10 12-13 4 16 7-13 8M552 339l-5 14 13 4-13 7 8 12M579 340l7 12-12 6 14 5-7 12M615 345l-8 13 12 4-12 9" fill="none" stroke="#e8ffff" stroke-width="4" stroke-linecap="round"/>
+    <path d="M513 381c23 14 84 14 112 0" fill="none" stroke="#b8f6ff" stroke-width="7" stroke-linecap="round"/>
+    <text x="570" y="413" text-anchor="middle" class="ui" font-size="14" font-weight="700" fill="#eaffff">GIVRE SUR LES LUNETTES</text>
+  </g>
+
+  <!-- final message -->
+  <g class="fadeLater ui">
+    <rect x="72" y="536" width="1056" height="112" rx="18" fill="#fff7ed"/>
+    <rect x="72" y="536" width="12" height="112" rx="6" fill="#e54d29"/>
+    <text x="112" y="578" class="small" fill="#bd3b1e">LE POINT À RETENIR</text>
+    <text x="112" y="617" class="caption" fill="#16334f">Le jet est arrêté par les lunettes, qui givrent : sans protection, les yeux sont directement exposés.</text>
+  </g>
+
+  <g class="replay ui" onclick="void(0)">
+    <rect x="1010" y="650" width="118" height="42" rx="21" fill="#e85a31"/>
+    <text x="1069" y="677" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">↻ REVOIR</text>
+  </g>
+</svg>

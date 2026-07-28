@@ -44,6 +44,7 @@ Doctrine [[feedback_protection_code]] : licence + antériorité git, jamais de c
 | [`partage.html`](https://frigorx.github.io/pilote-fluides/partage.html) | affiche A4 / écran avec QR code | à projeter en salle |
 | [`relecture.html`](https://frigorx.github.io/pilote-fluides/relecture.html) | tout le contenu à plat, cases ✅/✏ | **le bon à tirer** |
 | [`galerie.html`](https://frigorx.github.io/pilote-fluides/galerie.html) | **toutes les planches sur une page**, chacune rejouable d'un clic (récits / boucles / dessins fixes), avec les fiches qui l'utilisent et le signalement des planches non utilisées. **Partage** : chaque planche a son adresse directe (bouton 🔗) et s'ouvre seule (⬇). Relevée du dossier à chaque build | formateur, auteur, partage |
+| [`packs/fluides/res/frise-vivante/frise-vivante.html`](https://frigorx.github.io/pilote-fluides/packs/fluides/res/frise-vivante/frise-vivante.html) | **la frise vivante** : 10 scènes narrées (1928 CFC → 2024 F-Gas), voix de synthèse, images d'ambiance. **Premier écran vu par tout nouveau visiteur d'`index.html`** — le « pourquoi » avant la sécurité (F. Henninot, 28/07), voir § 2 | stagiaire, premier contact |
 | [`matrice.html`](https://frigorx.github.io/pilote-fluides/matrice.html) | **la matrice de traçabilité** : les 136 compétences de l'arrêté une par une — la fiche qui l'enseigne, les questions qui la vérifient, le texte officiel. Filtrable par catégorie et par état. Version Markdown : `MATRICE-COMPETENCES.md` | direction, organisme évaluateur |
 | [`documents.html`](https://frigorx.github.io/pilote-fluides/documents.html) | **le dossier du projet** : 6 documents libres (état, mesures, licence) + **38 documents chiffrés** derrière le code — dossier de direction (projet + budget, en téléchargement), architecture, ingénierie, système qualité, 21 chapitres de cours | tous publics / formateur |
 
@@ -51,7 +52,50 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
-## 2. État au 27/07/2026
+## 2. État au 28/07/2026
+
+**La frise vivante (28/07)** — F. Henninot a fait produire, hors de ce dépôt, une expérience
+narrée complète : 10 scènes (l'invention des CFC en 1928 → le règlement F-Gas 2024/573),
+chacune avec une image d'ambiance, une voix de synthèse (même mécanisme que `moteur/lecture.js`
+et `halParler` dans HAL — l'API du navigateur, pas un modèle téléchargé) et une frise cliquable
+à deux fils (ozone / climat). Déposée dans `packs/fluides/res/frise-vivante/`. Décision de
+F. Henninot, sans hésitation la deuxième fois qu'on lui a posé la question : **c'est le premier
+écran vu par tout nouveau visiteur**, avant même la sécurité — « le pourquoi on arrive là ».
+- **Deux défauts corrigés avant intégration, tous deux mesurés avant d'agir** :
+  1. **Poids** — 10 images à 5,03 Mo au total (1600×900, JPEG non optimisé). Recompressées en
+     place (1100 px de large, qualité 78) → **1,1 Mo**, aucune perte visible vérifiée à l'œil sur
+     plusieurs scènes. Un test à 1000 px/q75 donnait déjà un résultat propre ; 1100/78 garde une
+     marge pour les écrans à forte densité sans repasser au-dessus de 1,2 Mo.
+  2. **Thème sombre** — le bandeau du haut (topbar + hero) utilisait `--navy-950` en fond avec du
+     texte blanc, et le panneau des sources était full dark. Contraire à la charte (« jamais de
+     thème sombre »). Repris en clair : mêmes couleurs de marque (`--navy-700` = notre `#1b3a63`,
+     `--orange` = notre `#ff6b35` — le fichier d'origine reprenait déjà notre palette), fond
+     clair partout. **Gardés tels quels** : les petits accents colorés à texte blanc
+     (`.narration-meta`, `.play-button`, `.commencer-button`) — même logique que nos propres
+     badges `.dc` et tuiles `.primaire` ; la règle porte sur la lecture, pas sur un bouton ou un
+     bandeau d'accent.
+- **Câblage (`index.html`)** : un script en tête de `<head>`, avant tout le reste, redirige vers
+  la frise tant que `localStorage.pilote_frise_vue` n'est pas posé. `location.replace` (pas
+  `href`) pour ne pas laisser d'entrée d'historique. `formateur.html` et `projection.html` ne
+  passent jamais par `index.html` : la console formateur n'est pas concernée.
+- Le bouton **« Commencer la formation »**, ajouté en fin de frise, pose le repère puis renvoie
+  vers `index.html` — qui, cette fois, atterrit normalement sur l'accueil. Un nouveau lien
+  **« Revoir la frise vivante »** sur l'accueil (mécanisme `url:` des tuiles, comme la galerie)
+  permet d'y revenir ensuite sans repasser par la redirection automatique.
+- ⚠️ **Décision prise sans redemander, à connaître** : l'auto-redirection ne joue qu'**une seule
+  fois** (au premier repère absent), jamais à chaque visite — forcer les 10 scènes narrées à
+  chaque ouverture aurait été un obstacle pour qui revient réviser une fiche en cours de stage.
+  Si F. Henninot veut au contraire qu'elle s'impose à chaque session, c'est un simple retrait du
+  test `localStorage`.
+- **Vérifié dans le navigateur** : redirection sur premier passage · flag posé au clic ·
+  deuxième visite sans redirection · tuile « Revoir » ouvre la bonne page · aucune erreur
+  console sur la frise · image chargée à la bonne résolution (1100 px) après clic sur un nœud de
+  la frise. Poids du pack élève : 674 → **678 Ko** (4 Ko pour le nouveau lien — les 1,1 Mo de la
+  frise ne sont PAS dans ce fichier, chargés seulement si on ouvre la page).
+- ⚠️ **Découverte en cours de route, non traitée** : trois SVG apparus dans `res/svg/`
+  (`accident-flexible-manifold.svg`, `decomposition-flamme-ari-protection.svg`,
+  `decomposition-flamme-sans-protection.svg`), non utilisés par aucune fiche, fond `#071426`
+  (même origine que la frise). Signalés à F. Henninot, pas encore intégrés ni supprimés.
 
 **81 cartes** · **266 questions** · **41 planches SVG** (dont **33 animées** : 11 récits,
 22 boucles — 311 animations, voir `galerie.html`) · 4 illustrations · **3 outils embarqués**

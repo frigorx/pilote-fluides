@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">Décomposition d'un fluide frigorigène : protection par appareil respiratoire isolant</title>
+  <desc id="d">Une flamme chauffe un fluide frigorigène fluoré. Les gaz de décomposition sont visibles. Un intervenant portant un appareil respiratoire isolant et une protection faciale reste hors du nuage.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071426"/><stop offset="1" stop-color="#143a60"/></linearGradient>
+    <linearGradient id="pipe" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#eff6fb"/><stop offset=".5" stop-color="#9eb2c1"/><stop offset="1" stop-color="#526a7c"/></linearGradient>
+    <radialGradient id="flame"><stop stop-color="#fff4a6"/><stop offset=".48" stop-color="#ffad2b"/><stop offset="1" stop-color="#ed4c25"/></radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <style>.ui{font-family:Arial,Helvetica,sans-serif}.label{font-size:17px;font-weight:800;letter-spacing:.08em}.cap{font-size:26px;font-weight:800}.gas{transform-box:fill-box;transform-origin:center;animation:gas 12s ease-out infinite}.flame{transform-box:fill-box;transform-origin:center;animation:flame 1s ease-in-out infinite alternate}.molecule{animation:break 12s ease-in-out infinite}.safe{animation:safe 12s linear infinite}@keyframes gas{0%,27%{opacity:0;transform:scale(.2) translate(0,25px)}28%,80%{opacity:1;transform:scale(1) translate(-35px,-18px)}81%,100%{opacity:0}}@keyframes flame{to{transform:scale(1.13,.88)}}@keyframes break{0%,25%{opacity:1}26%,100%{opacity:0}}@keyframes safe{0%,36%{opacity:0}37%,84%{opacity:1}85%,100%{opacity:0}}@media print{.gas,.flame,.molecule,.safe{animation:none}}</style>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/><path d="M0 604H1200" stroke="#fff" stroke-opacity=".12"/>
+  <text x="72" y="75" class="ui label" fill="#64d0a0">DÉCOMPOSITION THERMIQUE — PROTECTION ADAPTÉE</text>
+  <text x="72" y="115" class="ui" font-size="33" font-weight="800" fill="#fff">Face à une atmosphère inconnue : éloignement et protection respiratoire isolante.</text>
+  <g><path d="M90 391H570" stroke="#263c4f" stroke-width="68" stroke-linecap="round"/><path d="M90 391H570" stroke="url(#pipe)" stroke-width="51" stroke-linecap="round"/><rect x="280" y="356" width="88" height="70" rx="12" fill="#607789" stroke="#d8e3e9" stroke-width="4"/><circle cx="324" cy="391" r="20" fill="#58bfe4" opacity=".8"/><g class="molecule" transform="translate(304 362)" stroke="#eaffff" stroke-width="3" fill="#4bcae8"><circle cx="0" cy="0" r="12"/><circle cx="29" cy="10" r="10"/><circle cx="12" cy="34" r="9"/><path d="M8 7l13 5M6 12l4 12M20 17l-4 9"/></g></g>
+  <g class="flame" filter="url(#glow)" transform="translate(410 470)"><path d="M0 40c-43-37 14-62-10-109 55 32 53 75 26 109 29-15 38-45 30-66 45 40 16 86-13 101z" fill="url(#flame)"/></g>
+  <g class="gas" filter="url(#glow)"><circle cx="500" cy="333" r="49" fill="#b7dc54" fill-opacity=".72"/><circle cx="545" cy="291" r="66" fill="#d6e75e" fill-opacity=".65"/><circle cx="612" cy="325" r="58" fill="#a6ca48" fill-opacity=".72"/><circle cx="571" cy="374" r="63" fill="#d8ee77" fill-opacity=".58"/><text x="562" y="342" text-anchor="middle" class="ui" font-size="17" font-weight="800" fill="#263313">GAZ TOXIQUES</text><text x="562" y="365" text-anchor="middle" class="ui" font-size="14" font-weight="700" fill="#263313">ET CORROSIFS</text></g>
+  <!-- intervenant protected with full-face ARI and cylinder -->
+  <g transform="translate(790 210)">
+    <path d="M57 349c15-119 126-126 153 0" fill="#2c536d"/>
+    <rect x="196" y="142" width="54" height="155" rx="26" fill="#7394a8" stroke="#d8e8ef" stroke-width="4"/><rect x="205" y="158" width="36" height="89" rx="18" fill="#b4dbe9"/><text x="223" y="271" text-anchor="middle" class="ui" font-size="12" font-weight="800" fill="#17334e">AIR</text>
+    <path d="M205 171c-24 14-33 38-38 72" fill="none" stroke="#b8dce8" stroke-width="12" stroke-linecap="round"/>
+    <path d="M102 86c-4-70 100-78 112-4v83c-17 54-93 54-112 0z" fill="#f0bd98" stroke="#d99875" stroke-width="3"/>
+    <path d="M95 88c3-67 101-78 126-13l-23 26c-32-18-67-13-99 5z" fill="#2f3b47"/>
+    <rect x="93" y="111" width="132" height="66" rx="18" fill="#bdf7ff" fill-opacity=".52" stroke="#d9fbff" stroke-width="7"/><path d="M107 145h103" stroke="#62bad5" stroke-width="5"/><path d="M159 179v28" stroke="#d6e8ee" stroke-width="12" stroke-linecap="round"/><circle cx="159" cy="209" r="18" fill="#314a5b" stroke="#d8eff7" stroke-width="5"/>
+    <text x="154" y="383" text-anchor="middle" class="ui" font-size="16" font-weight="800" fill="#e7f5fb">ARI + PROTECTION FACIALE</text><text x="154" y="406" text-anchor="middle" class="ui" font-size="14" fill="#bfe8d4">intervention réservée aux personnes formées</text>
+  </g>
+  <g class="safe ui"><rect x="72" y="600" width="1056" height="74" rx="17" fill="#ecfff6"/><rect x="72" y="600" width="12" height="74" rx="6" fill="#28a66f"/><text x="113" y="645" class="cap" fill="#173e31">Règle : supprimer la source chaude et évacuer. L’ARI protège l’intervenant formé, pas le chantier.</text></g>
+</svg>

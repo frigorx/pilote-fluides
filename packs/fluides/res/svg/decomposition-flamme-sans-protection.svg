@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">Décomposition thermique d'un fluide frigorigène : inhalation sans protection</title>
+  <desc id="d">Une flamme vacille sous un tuyau. Les molécules du fluide se transforment en fumées toxiques et corrosives, qui sont inhalées par un intervenant sans protection. Ses poumons s'assombrissent.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071426"/><stop offset="1" stop-color="#143a60"/></linearGradient>
+    <linearGradient id="pipe" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#eff6fb"/><stop offset=".5" stop-color="#9eb2c1"/><stop offset="1" stop-color="#526a7c"/></linearGradient>
+    <radialGradient id="flame"><stop stop-color="#fff7c8"/><stop offset=".38" stop-color="#ffd14b"/><stop offset=".72" stop-color="#ff8427"/><stop offset="1" stop-color="#dc3526"/></radialGradient>
+    <radialGradient id="lung"><stop stop-color="#c7ed77"/><stop offset=".6" stop-color="#8cb441"/><stop offset="1" stop-color="#3b542d"/></radialGradient>
+    <filter id="glow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <style>
+      .ui{font-family:Arial,Helvetica,sans-serif}.label{font-size:17px;font-weight:800;letter-spacing:.08em}.cap{font-size:25px;font-weight:800}
+      .flame{transform-box:fill-box;transform-origin:50% 100%;animation:flicker .55s ease-in-out infinite alternate}.heat{animation:heat .55s ease-in-out infinite alternate}.source{animation:source 11s linear infinite}.product{animation:product 11s linear infinite}.inhaled{animation:inhaled 11s linear infinite}.lungs{animation:lungs 11s linear infinite}.cough{animation:cough 11s linear infinite}.warning{animation:warning 11s linear infinite}
+      @keyframes flicker{0%{transform:skewX(-5deg) scale(.91,1.05)}100%{transform:skewX(6deg) scale(1.07,.94)}}
+      @keyframes heat{from{opacity:.25;transform:scaleX(.85)}to{opacity:.8;transform:scaleX(1.12)}}
+      @keyframes source{0%,21%{opacity:1;transform:scale(1)}25%,100%{opacity:0;transform:scale(.4)}}
+      @keyframes product{0%,22%{opacity:0;transform:scale(.35)}27%,51%{opacity:1;transform:scale(1)}52%,100%{opacity:0;transform:translate(245px,14px) scale(.55)}}
+      @keyframes inhaled{0%,48%{opacity:0;stroke-dashoffset:240}49%,72%{opacity:1;stroke-dashoffset:0}73%,100%{opacity:0}}
+      @keyframes lungs{0%,58%{opacity:0;transform:scale(.72)}59%,92%{opacity:1;transform:scale(1)}93%,100%{opacity:0}}
+      @keyframes cough{0%,61%{opacity:0;transform:translateX(0)}62%,78%{opacity:1;transform:translateX(7px)}79%,100%{opacity:0}}
+      @keyframes warning{0%,58%{opacity:0}59%,93%{opacity:1}94%,100%{opacity:0}}
+      @media print{.flame,.heat,.source,.product,.inhaled,.lungs,.cough,.warning{animation:none}}
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <path d="M0 604H1200" stroke="#fff" stroke-opacity=".12"/>
+  <text x="72" y="75" class="ui label" fill="#ff7c45">DÉCOMPOSITION THERMIQUE — SANS PROTECTION RESPIRATOIRE</text>
+  <text x="72" y="115" class="ui" font-size="33" font-weight="800" fill="#fff">La chaleur casse la molécule : de nouveaux gaz dangereux se forment.</text>
+
+  <!-- fluide chauffé : la flamme reste en place et vacille -->
+  <g>
+    <path d="M88 375H543" stroke="#263c4f" stroke-width="68" stroke-linecap="round"/><path d="M88 375H543" stroke="url(#pipe)" stroke-width="51" stroke-linecap="round"/>
+    <rect x="264" y="340" width="98" height="70" rx="12" fill="#607789" stroke="#d8e3e9" stroke-width="4"/><circle cx="314" cy="375" r="21" fill="#58bfe4" opacity=".8"/>
+    <g class="source" transform="translate(294 346)" stroke="#eaffff" stroke-width="3" fill="#4bcae8"><circle cx="0" cy="0" r="12"/><circle cx="29" cy="10" r="10"/><circle cx="12" cy="34" r="9"/><path d="M8 7l13 5M6 12l4 12M20 17l-4 9"/></g>
+    <path class="heat" d="M386 418c9 18-9 30 0 48m23-48c9 18-9 30 0 48m23-48c9 18-9 30 0 48" fill="none" stroke="#ffbc4a" stroke-width="4" stroke-linecap="round"/>
+    <g class="flame" filter="url(#glow)" transform="translate(391 506)"><path d="M0 25c-24-30 1-49-8-88 37 25 43 55 20 88 31-18 29-47 22-61 35 38 10 72-17 84z" fill="url(#flame)"/><path d="M2 21c-10-17 4-29 1-45 18 15 18 29 4 45z" fill="#fff4b0" opacity=".92"/></g>
+    <text x="368" y="558" class="ui" font-size="15" font-weight="700" fill="#ffc46d">flamme ou surface très chaude</text>
+  </g>
+
+  <!-- molécules devenues fumées -->
+  <g class="product" filter="url(#glow)">
+    <circle cx="472" cy="309" r="40" fill="#cbe96b" fill-opacity=".72"/><circle cx="516" cy="277" r="55" fill="#dce979" fill-opacity=".65"/><circle cx="573" cy="313" r="50" fill="#a6ca48" fill-opacity=".72"/><circle cx="540" cy="355" r="57" fill="#d8ee77" fill-opacity=".58"/>
+    <circle cx="480" cy="310" r="8" fill="#31451a"/><circle cx="529" cy="272" r="7" fill="#31451a"/><circle cx="573" cy="320" r="8" fill="#31451a"/><path d="M483 307l39-29m13 2l31 33" stroke="#405820" stroke-width="4"/>
+    <text x="528" y="327" text-anchor="middle" class="ui" font-size="17" font-weight="800" fill="#263313">GAZ TOXIQUES</text><text x="528" y="349" text-anchor="middle" class="ui" font-size="14" font-weight="700" fill="#263313">ET CORROSIFS</text>
+  </g>
+
+  <!-- intervenant : face, trajet d'inhalation et poumons -->
+  <g transform="translate(768 182)">
+    <path d="M65 360c7-107 119-119 154 0" fill="#294a64"/>
+    <path d="M101 77c-6-68 94-82 112-7v77c-13 56-93 58-112 0z" fill="#efba95" stroke="#d99875" stroke-width="3"/>
+    <path d="M98 83c1-66 96-83 121-15l-24 24c-27-17-61-14-97 4z" fill="#303946"/>
+    <path d="M129 119h19M177 119h18" stroke="#27313c" stroke-width="4" stroke-linecap="round"/>
+    <path d="M152 145c12 13 28 13 40 0" fill="none" stroke="#803b3d" stroke-width="5" stroke-linecap="round"/>
+    <path d="M200 135l17 5-17 6" fill="#d99875"/>
+    <text x="143" y="395" text-anchor="middle" class="ui" font-size="16" font-weight="800" fill="#f5fbff">SANS PROTECTION</text><text x="143" y="417" text-anchor="middle" class="ui" font-size="14" fill="#cbd9e4">respiratoire</text>
+    <!-- toux, directement à la bouche -->
+    <g class="cough" transform="translate(203 145)"><path d="M0 0c15-12 29-5 35 5M5 15c17-5 27 8 27 20" fill="none" stroke="#d8f070" stroke-width="5" stroke-linecap="round"/><text x="32" y="9" class="ui" font-size="18" font-weight="800" fill="#fff">toux</text></g>
+    <!-- poumons visibles dans le buste -->
+    <g class="lungs" transform="translate(143 265)">
+      <path d="M0-50v26" stroke="#dff2cf" stroke-width="9" stroke-linecap="round"/><path d="M0-25c-25-33-58-18-56 23 2 43 26 61 53 56V-2" fill="url(#lung)" stroke="#d9f3a7" stroke-width="3"/><path d="M0-25c25-33 58-18 56 23-2 43-26 61-53 56V-2" fill="url(#lung)" stroke="#d9f3a7" stroke-width="3"/>
+      <path d="M-43 0c13 11 18 26 19 44m66-44c-13 11-18 26-19 44" fill="none" stroke="#23321d" stroke-width="8" stroke-linecap="round" opacity=".92"/>
+      <path d="M-44 14l27 28m-5-45l27 47m39-30L17 42m5-45L-5 44" stroke="#1b2617" stroke-width="7" stroke-linecap="round"/>
+    </g>
+  </g>
+  <!-- le nuage est aspiré du nez vers les voies respiratoires -->
+  <path class="inhaled" d="M670 340C746 326 805 314 914 341c38 9 45 46 18 83" fill="none" stroke="#c9ed74" stroke-width="16" stroke-linecap="round" stroke-dasharray="7 18" filter="url(#glow)"/>
+  <path class="inhaled" d="M670 340C746 326 805 314 914 341c38 9 45 46 18 83" fill="none" stroke="#efffa9" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 18"/>
+
+  <g class="warning ui"><rect x="72" y="600" width="1056" height="74" rx="17" fill="#fff0e8"/><rect x="72" y="600" width="12" height="74" rx="6" fill="#e94e27"/><text x="113" y="636" class="cap" fill="#17334e">Inhalation : lésions pulmonaires graves, parfois irréversibles.</text><text x="113" y="661" font-size="17" font-weight="700" fill="#9b3925">S'éloigner • ventiler • alerter • ne jamais respirer les fumées</text></g>
+</svg>

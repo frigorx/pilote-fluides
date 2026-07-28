@@ -2,6 +2,26 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <!-- La frise vivante : premier écran vu par un stagiaire qui n'a jamais
+       ouvert le pack — le « pourquoi » avant même la sécurité (demande
+       F. Henninot, 28/07). Le repère `pilote_frise_vue` n'est posé que
+       lorsqu'on clique « Commencer la formation » sur cette page ; tant
+       qu'il est absent, TOUTE ouverture de index.html y renvoie d'abord.
+       Volontairement au tout début du <head>, avant tout autre script ou
+       feuille de style : on ne doit jamais laisser apparaître l'accueil
+       une fraction de seconde avant de rediriger.
+       `location.replace` (pas `href`) : pas d'entrée dans l'historique,
+       pour que le bouton Précédent depuis la frise ne revienne pas sur un
+       index.html à moitié chargé. formateur.html et projection.html ne
+       passent jamais par ce fichier — la console formateur n'est pas
+       concernée. -->
+  <script>
+    try {
+      if (!localStorage.getItem('pilote_frise_vue')) {
+        location.replace('packs/fluides/res/frise-vivante/frise-vivante.html');
+      }
+    } catch (e) { /* localStorage indisponible : on continue normalement */ }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>inerWeb Pilote — Habilitation fluides frigorigènes (démonstrateur)</title>
   <meta name="description" content="Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote.">

@@ -8101,6 +8101,12 @@ window.PILOTE_PACK = {
      "desc": "Les schémas animés du pack sur une seule page, chacun rejouable d un clic : ce qui se passe dans le local, dans le circuit, sur la balance."
     },
     {
+     "url": "packs/fluides/res/frise-vivante/frise-vivante.html",
+     "icone": "🕰",
+     "titre": "Revoir la frise vivante",
+     "desc": "L histoire des fluides, de l invention des CFC au règlement F-Gas 2024 : pourquoi cette formation existe. Racontée, avec voix et images."
+    },
+    {
      "vers": "cfin",
      "icone": "?",
      "titre": "À propos de ce démonstrateur",
