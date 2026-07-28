@@ -2,25 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <!-- La frise vivante : premier écran vu par un stagiaire qui n'a jamais
-       ouvert le pack — le « pourquoi » avant même la sécurité (demande
-       F. Henninot, 28/07). Le repère `pilote_frise_vue` n'est posé que
-       lorsqu'on clique « Commencer la formation » sur cette page ; tant
-       qu'il est absent, TOUTE ouverture de index.html y renvoie d'abord.
-       Volontairement au tout début du <head>, avant tout autre script ou
-       feuille de style : on ne doit jamais laisser apparaître l'accueil
-       une fraction de seconde avant de rediriger.
-       `location.replace` (pas `href`) : pas d'entrée dans l'historique,
-       pour que le bouton Précédent depuis la frise ne revienne pas sur un
-       index.html à moitié chargé. formateur.html et projection.html ne
-       passent jamais par ce fichier — la console formateur n'est pas
-       concernée. -->
+  <!-- La frise vivante : premier écran vu en entrant dans l'application —
+       le « pourquoi » avant même la sécurité (demande F. Henninot, 28/07).
+       Repère `pilote_frise_vue` en sessionStorage (pas localStorage depuis
+       le 28/07 soir, même jour) : la frise redevient la porte d'entrée à
+       CHAQUE nouvelle session de navigateur (nouvel onglet, redémarrage),
+       ce qui est le comportement voulu — F. Henninot, en la revoyant une
+       deuxième fois plus tard le même jour, ne la retrouvait plus du tout.
+       sessionStorage évite pour autant la boucle : une fois "Commencer la
+       formation" cliqué, revenir sur index.html DANS LE MÊME onglet ne
+       redemande pas la frise. Volontairement au tout début du <head>,
+       avant tout autre script ou feuille de style : on ne doit jamais
+       laisser apparaître l'accueil une fraction de seconde avant de
+       rediriger. `location.replace` (pas `href`) : pas d'entrée dans
+       l'historique, pour que le bouton Précédent depuis la frise ne
+       revienne pas sur un index.html à moitié chargé. formateur.html et
+       projection.html ne passent jamais par ce fichier — la console
+       formateur n'est pas concernée. -->
   <script>
     try {
-      if (!localStorage.getItem('pilote_frise_vue')) {
+      if (!sessionStorage.getItem('pilote_frise_vue')) {
         location.replace('packs/fluides/res/frise-vivante/frise-vivante.html');
       }
-    } catch (e) { /* localStorage indisponible : on continue normalement */ }
+    } catch (e) { /* sessionStorage indisponible : on continue normalement */ }
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>inerWeb Pilote — Habilitation fluides frigorigènes (démonstrateur)</title>

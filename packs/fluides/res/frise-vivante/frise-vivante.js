@@ -449,7 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (commencerButton) {
         commencerButton.addEventListener('click', () => {
             stopSpeech();
-            try { localStorage.setItem('pilote_frise_vue', '1'); } catch (e) {}
+            try { sessionStorage.setItem('pilote_frise_vue', '1'); } catch (e) {}
             window.location.href = '../../../../index.html';
         });
     }
