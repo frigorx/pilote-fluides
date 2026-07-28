@@ -72,6 +72,20 @@ function lire(fichier) {
     const d = parseFloat((m[0].match(/dur="([\d.]+)s"/) || [])[1] || 0);
     if (b + d > fin) fin = b + d;
   }
+  /* Planches sans SMIL, animées en CSS pure (@keyframes) : même logique,
+     lue sur la durée de base + le plus grand animation-delay rencontré.
+     Sans ce repli, une planche comme prp-echelle.svg affichait "? s". */
+  if (fin === 0) {
+    const baseDur = parseFloat((svg.match(/animation\s*:\s*[\w-]+\s+([\d.]+)s/) || [])[1] || 0);
+    if (baseDur > 0) {
+      let maxDelay = 0;
+      for (const m of svg.matchAll(/animation-delay\s*:\s*([\d.]+)s/g)) {
+        const d = parseFloat(m[1]);
+        if (d > maxDelay) maxDelay = d;
+      }
+      fin = maxDelay + baseDur;
+    }
+  }
   return {
     fichier,
     titre: titre.replace(/\s+/g, " ").trim(),
@@ -210,7 +224,7 @@ for (const p of PLANCHES) {
   h += `<div class="f">${esc(p.fichier)} · ${p.ko} Ko</div>`;
   h += `<div class="tags">`;
   if (p.anime && !p.cyclique)
-    h += `<span class="tag anim">récit — ${p.duree || "?"} s, une seule fois</span>`;
+    h += `<span class="tag anim">récit${p.duree ? ` — ${p.duree} s` : ""}, une seule fois</span>`;
   else if (p.cyclique) h += `<span class="tag cyc">boucle continue</span>`;
   else h += `<span class="tag fixe">dessin fixe</span>`;
   if (p.smil) h += `<span class="tag cyc">${p.smil} animations SMIL</span>`;
