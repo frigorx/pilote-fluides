@@ -92,10 +92,25 @@ F. Henninot, sans hésitation la deuxième fois qu'on lui a posé la question : 
   console sur la frise · image chargée à la bonne résolution (1100 px) après clic sur un nœud de
   la frise. Poids du pack élève : 674 → **678 Ko** (4 Ko pour le nouveau lien — les 1,1 Mo de la
   frise ne sont PAS dans ce fichier, chargés seulement si on ouvre la page).
-- ⚠️ **Découverte en cours de route, non traitée** : trois SVG apparus dans `res/svg/`
-  (`accident-flexible-manifold.svg`, `decomposition-flamme-ari-protection.svg`,
-  `decomposition-flamme-sans-protection.svg`), non utilisés par aucune fiche, fond `#071426`
-  (même origine que la frise). Signalés à F. Henninot, pas encore intégrés ni supprimés.
+- ✅ **Les trois SVG découverts, tranchés le jour même.** Lus intégralement : deux
+  (`decomposition-flamme-sans-protection.svg` / `-ari-protection.svg`) apportaient une nuance
+  absente de `s3` — la réponse respiratoire face à des fumées de décomposition déjà présentes
+  (ARI, pas un masque à cartouche), que la fiche ne couvrait pas (elle n'enseignait que la
+  procédure de brasage). Le troisième (`accident-flexible-manifold.svg`) faisait doublon avec
+  `secu-projection.svg`, sans angle nouveau.
+  **Retenu** : une planche neuve, `secu-decomposition-ari.svg`, refaite dans notre charte (trait
+  plat, fond clair, palette `#1b3a63`/`#c9451a`, sur le modèle exact de `secu-flamme.svg`) —
+  jamais un simple recolorage des fichiers sombres/dégradés d'origine, qui restaient dans un
+  langage graphique différent du nôtre. Ajoutée à `s3`, avec le paragraphe qui manquait (l'ARI
+  protège l'intervenant formé, jamais le chantier). Deux points de code additionnels dans le
+  bloc « à retenir ». **Écarté** : les trois fichiers d'origine, retirés du dépôt (`git rm`,
+  récupérables dans l'historique).
+  ⚠️ **Un premier jet de la planche neuve portait deux chevauchements de texte** (un libellé
+  collé au bandeau final à gauche, un autre collé à l'étape 3 à droite) — trouvés en mesurant les
+  positions réelles à l'écran (`getBoundingClientRect`, pas `getBBox` : celui-ci ignore les
+  transformations des groupes parents et donne de faux chevauchements entre deux colonnes
+  côte à côte). Corrigé, revérifié : **zéro chevauchement sur les 16 textes**, zéro débordement
+  de cadre.
 
 **81 cartes** · **266 questions** · **41 planches SVG** (dont **33 animées** : 11 récits,
 22 boucles — 311 animations, voir `galerie.html`) · 4 illustrations · **3 outils embarqués**
