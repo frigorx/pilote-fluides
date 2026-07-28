@@ -44,8 +44,24 @@
   "use strict";
 
   var CLE = "pilote_son";
+  var CLE_VOLUME = "pilote_son_volume";
   var T = window.PILOTE_SONS || {};
   var DOSSIER = T.dossier || "packs/fluides/res/audio/";
+
+  /* Retour de F. Henninot, 28/07 : « c'est pas toujours bien placé, c'est
+     pas toujours intelligent, mais c'est pas grave. On devrait avoir un
+     petit curseur volume, des fois c'est difficilement audible. »
+     Le réglage compense un mixage jamais parfait entre sept sons calculés
+     et quatre fichiers d'origines différentes — plus simple qu'un
+     re-mixage fin de chaque recette, et l'utilisateur sait mieux que
+     nous ce qui est audible sur SON matériel. Mémorisé comme le son
+     coupé/actif, sur l'appareil, jamais envoyé nulle part. */
+  function volumeMemorise() {
+    try {
+      var v = localStorage.getItem(CLE_VOLUME);
+      return v === null ? 0.7 : Math.max(0, Math.min(1, Number(v)));
+    } catch (e) { return 0.7; }
+  }
 
   /* Le catalogue : soit une recette (calculé), soit un fichier. Les noms
      courts sont ceux du pack V2 — ils servent d'interface publique. */
@@ -63,7 +79,7 @@
     musique:     { fichier: "musique_fond_legere.wav" },
   };
 
-  var ctx = null, maitre = null, volumeGlobal = 0.7, coupe = null;
+  var ctx = null, maitre = null, volumeGlobal = volumeMemorise(), coupe = null;
   var buffers = {}, enCours = [], sources = [];
 
   /* --------------------------------------------------------------------
@@ -273,6 +289,8 @@
   function setVolume(x) {
     volumeGlobal = Math.max(0, Math.min(1, Number(x)));
     if (maitre) maitre.gain.value = volumeGlobal;
+    try { localStorage.setItem(CLE_VOLUME, String(volumeGlobal)); } catch (e) {}
+    majCurseurs();
   }
   function setMuted(x) {
     coupe = !!x;
@@ -321,6 +339,11 @@
                       : "Activer l'habillage sonore (rien n'est joué sans votre accord)";
     }
   }
+  function majCurseurs() {
+    var pct = Math.round(volumeGlobal * 100);
+    var l = document.querySelectorAll("[data-son-volume]");
+    for (var i = 0; i < l.length; i++) if (l[i].value != pct) l[i].value = pct;
+  }
   function brancher(racine) {
     var l = (racine || document).querySelectorAll("[data-son-bouton]:not([data-son-branche])");
     for (var i = 0; i < l.length; i++) {
@@ -333,11 +356,26 @@
         });
       })(l[i]);
     }
+    var v = (racine || document).querySelectorAll("[data-son-volume]:not([data-son-branche])");
+    for (var j = 0; j < v.length; j++) {
+      (function (curseur) {
+        curseur.setAttribute("data-son-branche", "1");
+        curseur.value = Math.round(volumeGlobal * 100);
+        // "change" seul attend qu'on relâche : on veut l'effet PENDANT le
+        // glisser, pour entendre le réglage se faire.
+        curseur.addEventListener("input", function () { setVolume(curseur.value / 100); });
+      })(v[j]);
+    }
     majBoutons();
+    majCurseurs();
   }
   function html(classe) {
-    return '<button type="button" data-son-bouton class="' + (classe || "") +
-      '" aria-pressed="false">🔇 Son coupé</button>';
+    return '<span class="son-reglage">' +
+      '<button type="button" data-son-bouton class="' + (classe || "") +
+      '" aria-pressed="false">🔇 Son coupé</button>' +
+      '<input type="range" data-son-volume min="0" max="100" value="' + Math.round(volumeGlobal * 100) +
+      '" aria-label="Volume de l\'habillage sonore" title="Volume">' +
+      '</span>';
   }
 
   /* API du pack V2 de F. Henninot */

@@ -566,17 +566,16 @@
       });
       im.parentNode.insertBefore(b, im.nextSibling);
 
-      /* Bouton son, une seule fois par page et seulement si cette planche a
-         une bande-son : inutile de proposer le son là où il n'y en a pas. */
+      /* Bouton + curseur de volume, une seule fois par page et seulement si
+         cette planche a une bande-son : inutile de proposer le son là où il
+         n'y en a pas. `PiloteSons.html()` construit les deux ensemble — un
+         seul endroit qui sait ce qu'un contrôle de son doit contenir, la
+         galerie et les fiches en profitent toutes les deux sans dupliquer
+         le balisage. */
       if (window.PiloteSons && window.PiloteSons.disponible() &&
           (window.PILOTE_SONS.planches[nom] || []).length &&
           !document.querySelector("[data-son-bouton]")) {
-        var s = document.createElement("button");
-        s.type = "button";
-        s.className = "rejeu son";
-        s.setAttribute("data-son-bouton", "");
-        s.textContent = "🔇 Son coupé";
-        b.parentNode.insertBefore(s, b.nextSibling);
+        b.insertAdjacentHTML("afterend", window.PiloteSons.html("rejeu son"));
         window.PiloteSons.brancher();
       }
     });

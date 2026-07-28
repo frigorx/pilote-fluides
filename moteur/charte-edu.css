@@ -223,6 +223,14 @@ button.rejeu.son{margin-top:-6px;color:#5a6b7d;border-color:var(--bord)}
 button.rejeu.son[aria-pressed="true"]{color:var(--bleu);border-color:#2f5689}
 @media print{ button.rejeu{display:none} }
 
+/* Le curseur de volume, à côté du bouton son. Demande de F. Henninot,
+   28/07 : « des fois c'est difficilement audible » — le mixage entre sept
+   sons calculés et quatre fichiers d'origines différentes ne peut pas être
+   parfait partout, le réglage laisse chacun compenser sur son matériel. */
+.son-reglage{display:inline-flex;align-items:center;gap:8px;vertical-align:middle}
+input[data-son-volume]{width:88px;accent-color:var(--bleu);cursor:pointer}
+@media print{ .son-reglage{display:none} }
+
 /* Le bouton d'écoute d'une fiche : discret, posé juste sous le titre.
    Il change d'état visuellement quand la lecture est en cours, pour
    qu'on sache d'un coup d'œil qu'un second clic l'arrêtera. */
