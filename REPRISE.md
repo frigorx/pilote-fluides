@@ -2,7 +2,7 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **26 juillet 2026**.
+> Dernière mise à jour : **29 juillet 2026**.
 
 ---
 
@@ -43,7 +43,7 @@ Doctrine [[feedback_protection_code]] : licence + antériorité git, jamais de c
 | [`formateur.html`](https://frigorx.github.io/pilote-fluides/formateur.html) | mode pilotage verrouillé, notes d'animation visibles | formateur |
 | [`partage.html`](https://frigorx.github.io/pilote-fluides/partage.html) | affiche A4 / écran avec QR code | à projeter en salle |
 | [`relecture.html`](https://frigorx.github.io/pilote-fluides/relecture.html) | tout le contenu à plat, cases ✅/✏ | **le bon à tirer** |
-| [`galerie.html`](https://frigorx.github.io/pilote-fluides/galerie.html) | **toutes les planches sur une page**, chacune rejouable d'un clic (récits / boucles / dessins fixes), avec les fiches qui l'utilisent et le signalement des planches non utilisées. **Partage** : chaque planche a son adresse directe (bouton 🔗) et s'ouvre seule (⬇). Relevée du dossier à chaque build | formateur, auteur, partage |
+| [`galerie.html`](https://frigorx.github.io/pilote-fluides/galerie.html) | **toutes les planches sur une page**, chacune rejouable d'un clic (récits / boucles / dessins fixes), avec les fiches qui l'utilisent et le signalement des planches non utilisées. **Partage** : chaque planche a son adresse directe (bouton 🔗) et s'ouvre seule (⬇). Recense aussi les **expériences interactives complètes** (frise vivante, cours de nomenclature — voir § 2, 29/07). Relevée du dossier à chaque build | formateur, auteur, partage |
 | [`packs/fluides/res/frise-vivante/frise-vivante.html`](https://frigorx.github.io/pilote-fluides/packs/fluides/res/frise-vivante/frise-vivante.html) | **la frise vivante** : 10 scènes narrées (1928 CFC → 2024 F-Gas), voix de synthèse, images d'ambiance. **Premier écran vu par tout nouveau visiteur d'`index.html`** — le « pourquoi » avant la sécurité (F. Henninot, 28/07), voir § 2 | stagiaire, premier contact |
 | [`matrice.html`](https://frigorx.github.io/pilote-fluides/matrice.html) | **la matrice de traçabilité** : les 136 compétences de l'arrêté une par une — la fiche qui l'enseigne, les questions qui la vérifient, le texte officiel. Filtrable par catégorie et par état. Version Markdown : `MATRICE-COMPETENCES.md` | direction, organisme évaluateur |
 | [`documents.html`](https://frigorx.github.io/pilote-fluides/documents.html) | **le dossier du projet** : 6 documents libres (état, mesures, licence) + **38 documents chiffrés** derrière le code — dossier de direction (projet + budget, en téléchargement), architecture, ingénierie, système qualité, 21 chapitres de cours | tous publics / formateur |
@@ -52,7 +52,52 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
-## 2. État au 28/07/2026
+## 2. État au 29/07/2026
+
+**Le cours interactif de nomenclature (29/07)** — F. Henninot a fait produire, hors de ce dépôt,
+un module autonome : « Décrypter le code d'un fluide », 18 étapes narrées (voix de synthèse) qui
+construisent pas à pas la logique de décodage R-xyz déjà enseignée sur `g1c` (l'astuce du +90),
+avec un atelier manipulable où le stagiaire assemble lui-même la molécule R-22 (glisser-déposer,
+repli clic-clic) puis un mini-jeu de 12 questions (seuil 9/12). Déposé dans
+`packs/fluides/res/nomenclature-interactive/` (108 Ko, 4 fichiers, aucune image ni son en fichier).
+- **Mêmes deux défauts que la frise vivante, non corrigés à la source** (le fichier reprenait
+  la même base — « charte graphique alignée sur la Frise Vivante » selon sa propre notice — donc
+  les deux pièges déjà réglés le 28/07 sur l'autre module y étaient revenus intacts) :
+  1. **Thème sombre** — topbar, hero et le panneau de l'atelier (`.lab-tray`) en fond
+     `--navy-950`/`#10233c` avec texte blanc. Repris en clair, même palette de marque
+     (`--navy-700` = `#1b3a63`, `--orange` = `#ff6b35`), fond `--cream`. Gardés tels quels les
+     petits accents colorés à texte blanc (badge du code R-022, pastilles d'atomes, pilules de
+     légende des mélanges) — même exception que d'habitude : la règle porte sur la lecture, pas
+     sur un badge. Voir [[feedback_animations_svg]].
+  2. **`prefers-reduced-motion: reduce`** conditionnait à la fois les animations CSS de
+     construction moléculaire (`molecule-animations.css` — le cœur pédagogique : atomes et
+     liaisons qui apparaissent successivement) ET le son des interactions (`chime()` dans
+     `nomenclature.js`). Sur une machine aux effets d'animation Windows désactivés, les deux
+     auraient disparu en silence — exactement le piège du § 5 déjà payé deux sessions sur la
+     frise vivante. Corrigé à l'identique : la media query devient `@media print` pour les
+     animations (le mécanisme ne change pas, seule la condition change) ; le son repasse sous
+     le seul contrôle de son propre bouton (`soundEnabled`), pas d'un réglage Windows qui
+     n'exprime rien sur une préférence sonore.
+- **Intégration au pack, pas seulement un fichier posé à côté** :
+  - relié depuis la fiche `g1c` (« Les familles de fluides et leurs codes ») par un lien en pied
+    de paragraphe, nouvel onglet — nouvel helper `lienOutil()` dans `cartes.js`, à côté de
+    `outil()` (iframe) et `schema()` : les liens de pied de fiche (`liens`, boutons `data-go`)
+    ne savent pas ouvrir une page hors pack, contrairement aux tuiles d'accueil (`url:`) ;
+  - **`galerie.html` recense maintenant aussi les expériences complètes**, pas seulement les
+    planches SVG — nouvelle section « Cours interactifs complets », relevée comme le reste
+    (aucune liste tenue à la main) : `build/galerie.mjs` scanne les dossiers de
+    `packs/fluides/res/` hors `svg/`, `outils/`, `photos/`, et lit `<title>` /
+    `<meta name="description">` de la page trouvée. La frise vivante y apparaît donc elle aussi,
+    pour la première fois ;
+  - `README.md` (ligne « Outils embarqués ») distingue désormais les 3 outils embarqués en
+    iframe (réglette, carte d'identité, diagramme enthalpique) des expériences complètes en page
+    à part (frise vivante, nomenclature) — deux familles différentes, pas un compteur unique.
+- **Vérifié dans le navigateur** (serveur local, `python -m http.server`) : `galerie.html`
+  affiche les deux expériences avec leurs boutons Ouvrir/Lien · le cours s'ouvre en thème clair,
+  sans erreur console · l'atelier de construction répond au clic (boule H posée sur la prise du
+  haut, tuile grisée ensuite) · le lien depuis `g1c` pointe le bon fichier et ouvre un nouvel
+  onglet · `node build/build.mjs` passe sans anomalie, couverture et matrice inchangées (100 %,
+  94/94 — cette fiche ne touche à aucun critère).
 
 **La frise vivante (28/07)** — F. Henninot a fait produire, hors de ce dépôt, une expérience
 narrée complète : 10 scènes (l'invention des CFC en 1928 → le règlement F-Gas 2024/573),
@@ -139,6 +184,7 @@ F. Henninot, sans hésitation la deuxième fois qu'on lui a posé la question : 
 
 **81 cartes** · **266 questions** · **42 planches SVG** (dont **34 animées** : 12 récits,
 22 boucles — 320 animations, voir `galerie.html`) · 4 illustrations · **3 outils embarqués**
+· **2 expériences interactives complètes** (frise vivante, décryptage de nomenclature)
 > ⚠️ **Les 14 planches du 27/07 soir** (8 nouvelles : tirage au vide, pesée, manifold, ordre des
 > vannes, pression absolue/relative, boucle du détendeur, givre/dégivrage, charge limite ;
 > 6 animations d'existantes) ont été produites par agents + vérification adversariale, contrôle

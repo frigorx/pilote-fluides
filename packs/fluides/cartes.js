@@ -155,6 +155,21 @@ const suite = (vers, quoi) => ({ vers, libelle: "Suite ▸ " + quoi });
 const outil = (fichier, titre, h) =>
   '<iframe src="packs/fluides/res/outils/' + fichier + '" title="' + titre + '" ' +
   'style="width:100%;height:' + h + 'px;border:0;background:#fff;border-radius:6px" loading="lazy"></iframe>';
+
+/* Lien vers une EXPÉRIENCE COMPLÈTE (page autonome à part, pas un widget à
+   iframer : narration, son, mise en scène — comme la frise vivante). Même
+   principe que les tuiles `url:` du moteur, mais utilisable DANS le corps
+   d'une fiche de cours, dont les liens de pied de page ne savent ouvrir
+   qu'une carte (`data-go`, jamais `data-url`). Nouvel onglet, pour ne pas
+   perdre la progression du stagiaire dans le pack. */
+const lienOutil = (url, titre, desc) =>
+  '<p style="margin:16px 0"><a href="' + url + '" target="_blank" rel="noopener" ' +
+  'style="display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;' +
+  'font-weight:700;text-decoration:none;border-radius:999px">' + titre + ' ▸</a>' +
+  (desc
+    ? '<br><span style="font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px">' + desc + '</span>'
+    : '') +
+  '</p>';
 const schema = (fichier, alt) =>
   '<img src="packs/fluides/res/svg/' + fichier + '" alt="' + alt + '" ' +
   'style="width:100%;height:auto;display:block;margin:0 0 18px;' +
@@ -1949,6 +1964,11 @@ export const CARTES = [
       "<p>Et le numéro n'est pas un matricule : il <b>décrit la molécule</b>. Centaines + 1 = " +
       "carbone, dizaines − 1 = hydrogène, unités = fluor — les liaisons restantes sont du chlore. " +
       "Les mélanges et les fluides inorganiques ont leurs séries : 4xx, 5xx, 6xx, 7xx.</p>" +
+      lienOutil(
+        "packs/fluides/res/nomenclature-interactive/index.html",
+        "🧬 Lancer le cours interactif : décrypter un code de fluide",
+        "18 étapes racontées, une voix qui explique, et un atelier où vous assemblez vous-même la molécule R-22 (glisser-déposer) — environ 10 minutes."
+      ) +
       "<p>Un fluide de substitution ne se charge pas forcément « comme l'ancien ». On distingue deux cas. Le <b>drop-in</b> : le nouveau fluide est compatible avec l'huile et les composants déjà en place, la machine ne change pas, on vidange, on tire au vide, on recharge. Le <b>retrofit</b> : le nouveau fluide n'est pas compatible tel quel, il impose d'adapter la machine — huile, joints, détendeur — selon la <b>documentation constructeur</b>, avant toute recharge.</p><p>Cette distinction n'est pas un détail administratif : un fluide de substitution ne se comporte pas forcément comme l'ancien sur chaque composant du circuit. Le <b>détendeur</b> a été calé pour une courbe de pression donnée ; avec un autre fluide, il peut ne plus détendre au bon point. Les <b>joints</b> ont été choisis pour une huile donnée ; une huile incompatible les fait gonfler ou durcir. C'est pour cela que seule la documentation constructeur dit si un couple machine/fluide est un simple drop-in ou impose un retrofit — jamais l'habitude ou le « ça a l'air pareil ».</p>",
     blocs: [
       {
@@ -1994,7 +2014,10 @@ export const CARTES = [
       "R-744 — le groupe trouve la logique lui-même, elle se retient dix fois mieux. L'astuce du " +
       "+90 fait mouche à tous les coups. Point d'attention : le R-22 est le meilleur exemple " +
       "pédagogique (le chlore « caché » dans les liaisons restantes explique son interdiction). " +
-      "Relier à la carte d'identité interactive : chaque stagiaire décode un fluide puis vérifie.",
+      "Le cours interactif embarqué (29/07) reprend cette même astuce en atelier manipulable : " +
+      "s'en servir en autoformation avant la séance, ou le projeter en salle pour lancer la " +
+      "découverte collective. Reste une piste ouverte : relier aussi la carte d'identité " +
+      "interactive (outil « fiche-fluide »), pour qu'un stagiaire décode un fluide puis vérifie.",
   },
   {
     id: "g1d",

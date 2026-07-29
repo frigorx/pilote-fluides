@@ -34,6 +34,17 @@
   .sous button.lien:hover { background:#f3f7fb; }
   .sous a.dl { font-size:13px; color:#5a6b7d; text-decoration:none; border-bottom:1px dotted #8aa0b4; }
   .sous .util { font-size:13px; color:#5a6b7d; }
+  .experiences { margin:18px 0 30px; }
+  .experience { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
+                gap:14px; border:1.5px solid var(--bord); border-radius:12px; padding:14px 18px;
+                margin:12px 0; background:#f9fbfd; break-inside:avoid; }
+  .experience strong { color:var(--bleu); font-size:16px; }
+  .experience p { margin:4px 0 0; font-size:13.5px; color:var(--texte); max-width:640px; }
+  .experience .sous { margin:0; }
+  .sous a.ouvrir { font:600 13.5px Calibri,sans-serif; padding:6px 16px; color:#fff;
+                   background:var(--bleu); border:1.5px solid var(--bleu); border-radius:999px;
+                   cursor:pointer; text-decoration:none; display:inline-block; }
+  .sous a.ouvrir:hover { background:#15304f; }
   .ou { border-left:4px solid var(--bleu); background:#f3f7fb; border-radius:6px;
         padding:10px 14px; margin:14px 0; font-size:14px; }
   .ou code { background:#fff; border:1px solid var(--bord); border-radius:4px; padding:1px 6px;
@@ -42,7 +53,7 @@
                background:#fff; border:1.5px solid #2f5689; border-radius:999px; cursor:pointer; }
   .sous .util b { color:var(--bleu); }
   .vide { color:#c0392b; font-weight:600; font-size:13px; }
-  @media print { .barre, .sous button { display:none } .planche { break-inside:avoid } }
+  @media print { .barre, .sous button, .sous a.ouvrir { display:none } .planche { break-inside:avoid } }
 </style></head><body>
 <h1>Toutes les planches du pack</h1>
 <p class="meta">42 planches, dont <b>34 animées</b> (12 récits qui se
@@ -51,7 +62,22 @@ Page relevée à chaque fabrication du pack : une planche ajoutée apparaît ici
 <p class="meta"><b>Une animation narrative ne se joue qu'une fois, au chargement.</b> Si vous arrivez
 après la fin, vous voyez l'image finale — c'est voulu : au repos, le dessin doit déjà être juste.
 Le bouton <b>↻ Rejouer</b> la relance depuis le début.</p>
-
+<div class="experiences">
+<h1 style="margin-top:10px">Cours interactifs complets</h1>
+<p class="meta">Pas des planches, des pages entières — voix, mise en scène, parfois un mini-jeu.
+À ouvrir en plein écran, dans un nouvel onglet.</p><div class="experience">
+  <div><strong>Décrypter le code d’un fluide</strong><p>Cours interactif : comprendre la désignation des fluides frigorigènes.</p></div>
+  <div class="sous">
+    <a class="ouvrir" href="packs/fluides/res/nomenclature-interactive/index.html" target="_blank" rel="noopener">Ouvrir ▸</a>
+    <button class="lien" data-url="packs/fluides/res/nomenclature-interactive/index.html">🔗 Lien</button>
+  </div>
+</div><div class="experience">
+  <div><strong>La Frise Vivante des Fluides</strong><p>Frise interactive et racontée de l’histoire des fluides frigorigènes.</p></div>
+  <div class="sous">
+    <a class="ouvrir" href="packs/fluides/res/frise-vivante/frise-vivante.html" target="_blank" rel="noopener">Ouvrir ▸</a>
+    <button class="lien" data-url="packs/fluides/res/frise-vivante/frise-vivante.html">🔗 Lien</button>
+  </div>
+</div></div>
 <div class="ou">
 <b>Où sont ces planches, et comment les partager.</b><br>
 Dans le dépôt : <code>packs/fluides/res/svg/</code> — un fichier <code>.svg</code> par planche,
@@ -88,8 +114,8 @@ l'oreille : une fuite réelle ne fait pas ce bruit-là.</span>
 <p class="meta" style="margin-top:30px">Les planches sont des SVG faits à la main, dans la charte
 inerWeb Édu. Aucune n'est produite par un modèle d'image : un rendu génératif inverse la croix du
 frigoriste et invente des organes qui n'existent pas.</p>
-<script src="packs/fluides/sons.js?v=37564417c0"></script>
-<script src="moteur/sons.js?v=37564417c0"></script>
+<script src="packs/fluides/sons.js?v=e81c2b06ae"></script>
+<script src="moteur/sons.js?v=e81c2b06ae"></script>
 <script>
 (function () {
   var n = 0, f = "*";
@@ -141,7 +167,7 @@ frigoriste et invente des organes qui n'existent pas.</p>
   [].slice.call(document.querySelectorAll("button.lien")).forEach(function (b) {
     b.addEventListener("click", function () {
       var base = location.href.replace(/galerie\.html.*$/, "");
-      var u = base + "packs/fluides/res/svg/" + b.dataset.f;
+      var u = b.dataset.url ? (base + b.dataset.url) : (base + "packs/fluides/res/svg/" + b.dataset.f);
       var t = b.textContent;
       copier(u, function (m) { b.textContent = m || t; });
     });

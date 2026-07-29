@@ -1985,7 +1985,7 @@ window.PILOTE_PROJECTION = {
        ]
       }
      ],
-     "notes": "Faire décoder AU TABLEAU deux ou trois codes avant de donner la règle : R-32, R-290, R-744 — le groupe trouve la logique lui-même, elle se retient dix fois mieux. L'astuce du +90 fait mouche à tous les coups. Point d'attention : le R-22 est le meilleur exemple pédagogique (le chlore « caché » dans les liaisons restantes explique son interdiction). Relier à la carte d'identité interactive : chaque stagiaire décode un fluide puis vérifie."
+     "notes": "Faire décoder AU TABLEAU deux ou trois codes avant de donner la règle : R-32, R-290, R-744 — le groupe trouve la logique lui-même, elle se retient dix fois mieux. L'astuce du +90 fait mouche à tous les coups. Point d'attention : le R-22 est le meilleur exemple pédagogique (le chlore « caché » dans les liaisons restantes explique son interdiction). Le cours interactif embarqué (29/07) reprend cette même astuce en atelier manipulable : s'en servir en autoformation avant la séance, ou le projeter en salle pour lancer la découverte collective. Reste une piste ouverte : relier aussi la carte d'identité interactive (outil « fiche-fluide »), pour qu'un stagiaire décode un fluide puis vérifie."
     },
     {
      "type": "cours",

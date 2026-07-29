@@ -27,6 +27,7 @@ tournant dans le moteur générique **inerWeb Pilote**.
 | **Mode pilotage** | la couche de notes formateur, invisible côté élève |
 | **Critères 0-4** | codes du référentiel positionnables en mode notation |
 | **Outils embarqués** | réglette P ↔ T, carte d'identité du fluide (données FRIGOLO), Diagramme Enthalpique+ v3.2 dans l'exercice de diagnostic |
+| **Expériences interactives complètes** | pages autonomes avec voix et mise en scène, listées sur [`galerie.html`](galerie.html) : la frise vivante (histoire des fluides, 1928→2024) et le cours « Décrypter le code d'un fluide » (nomenclature R-xyz, atelier de construction moléculaire), relié depuis la fiche `g1c` |
 | **Atelier numérique** | 10 ressources reliées aux fiches : simulateurs KP1/KP5, module compresseur, leçon scroll, échangeurs, TP manomètres, TP pesée, CERFA/FI/BSD, symboles |
 
 Devise du moteur : **2 min avant / rien pendant / 30 s après**.

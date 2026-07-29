@@ -104,6 +104,36 @@ const PLANCHES = readdirSync(DOSSIER)
   .sort()
   .map(lire);
 
+/* ---------------------------------------------------------------------
+   1bis. LES EXPÉRIENCES COMPLÈTES — des pages autonomes (frise vivante,
+   cours interactifs…), pas des planches SVG : voix, mise en scène,
+   parfois un mini-jeu. Même philosophie que les planches : RELEVÉES dans
+   `res/`, jamais saisies à la main. Tout dossier de `res/` qui porte un
+   `.html` à sa racine — hors les trois dossiers d'ASSETS purs — en est
+   une ; le titre et la description viennent de la page elle-même
+   (<title>, <meta name="description">), pas d'une liste tenue à part.
+   --------------------------------------------------------------------- */
+const RES = resolve(RACINE, "packs/fluides/res");
+const DOSSIERS_ASSETS = new Set(["svg", "outils", "photos"]);
+
+function lireExperience(dossier) {
+  const fichiers = readdirSync(resolve(RES, dossier)).filter((f) => f.endsWith(".html"));
+  if (!fichiers.length) return null;
+  const fichier = fichiers.includes("index.html") ? "index.html" : fichiers.sort()[0];
+  const html = readFileSync(resolve(RES, dossier, fichier), "utf8");
+  const titre = ((html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || dossier)
+    .replace(/\s*\|.*$/, "")
+    .trim();
+  const desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || "";
+  return { titre, desc, url: "packs/fluides/res/" + dossier + "/" + fichier };
+}
+
+const EXPERIENCES = readdirSync(RES, { withFileTypes: true })
+  .filter((d) => d.isDirectory() && !DOSSIERS_ASSETS.has(d.name))
+  .map((d) => lireExperience(d.name))
+  .filter(Boolean)
+  .sort((a, b) => a.titre.localeCompare(b.titre));
+
 /* Les animées d'abord — c'est ce qu'on vient voir —, puis les fixes ;
    à l'intérieur, les orphelines en dernier. */
 PLANCHES.sort((a, b) =>
@@ -161,6 +191,17 @@ let h = `<!doctype html>
   .sous button.lien:hover { background:#f3f7fb; }
   .sous a.dl { font-size:13px; color:#5a6b7d; text-decoration:none; border-bottom:1px dotted #8aa0b4; }
   .sous .util { font-size:13px; color:#5a6b7d; }
+  .experiences { margin:18px 0 30px; }
+  .experience { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
+                gap:14px; border:1.5px solid var(--bord); border-radius:12px; padding:14px 18px;
+                margin:12px 0; background:#f9fbfd; break-inside:avoid; }
+  .experience strong { color:var(--bleu); font-size:16px; }
+  .experience p { margin:4px 0 0; font-size:13.5px; color:var(--texte); max-width:640px; }
+  .experience .sous { margin:0; }
+  .sous a.ouvrir { font:600 13.5px Calibri,sans-serif; padding:6px 16px; color:#fff;
+                   background:var(--bleu); border:1.5px solid var(--bleu); border-radius:999px;
+                   cursor:pointer; text-decoration:none; display:inline-block; }
+  .sous a.ouvrir:hover { background:#15304f; }
   .ou { border-left:4px solid var(--bleu); background:#f3f7fb; border-radius:6px;
         padding:10px 14px; margin:14px 0; font-size:14px; }
   .ou code { background:#fff; border:1px solid var(--bord); border-radius:4px; padding:1px 6px;
@@ -169,7 +210,7 @@ let h = `<!doctype html>
                background:#fff; border:1.5px solid #2f5689; border-radius:999px; cursor:pointer; }
   .sous .util b { color:var(--bleu); }
   .vide { color:#c0392b; font-weight:600; font-size:13px; }
-  @media print { .barre, .sous button { display:none } .planche { break-inside:avoid } }
+  @media print { .barre, .sous button, .sous a.ouvrir { display:none } .planche { break-inside:avoid } }
 </style></head><body>
 <h1>Toutes les planches du pack</h1>
 <p class="meta">${N.total} planches, dont <b>${N.animees} animées</b> (${N.narratives} récits qui se
@@ -178,7 +219,26 @@ Page relevée à chaque fabrication du pack : une planche ajoutée apparaît ici
 <p class="meta"><b>Une animation narrative ne se joue qu'une fois, au chargement.</b> Si vous arrivez
 après la fin, vous voyez l'image finale — c'est voulu : au repos, le dessin doit déjà être juste.
 Le bouton <b>↻ Rejouer</b> la relance depuis le début.</p>
+`;
 
+if (EXPERIENCES.length) {
+  h += `<div class="experiences">
+<h1 style="margin-top:10px">Cours interactifs complets</h1>
+<p class="meta">Pas des planches, des pages entières — voix, mise en scène, parfois un mini-jeu.
+À ouvrir en plein écran, dans un nouvel onglet.</p>`;
+  for (const e of EXPERIENCES) {
+    h += `<div class="experience">
+  <div><strong>${esc(e.titre)}</strong>${e.desc ? `<p>${esc(e.desc)}</p>` : ""}</div>
+  <div class="sous">
+    <a class="ouvrir" href="${esc(e.url)}" target="_blank" rel="noopener">Ouvrir ▸</a>
+    <button class="lien" data-url="${esc(e.url)}">🔗 Lien</button>
+  </div>
+</div>`;
+  }
+  h += `</div>`;
+}
+
+h += `
 <div class="ou">
 <b>Où sont ces planches, et comment les partager.</b><br>
 Dans le dépôt : <code>packs/fluides/res/svg/</code> — un fichier <code>.svg</code> par planche,
@@ -302,7 +362,7 @@ frigoriste et invente des organes qui n'existent pas.</p>
   [].slice.call(document.querySelectorAll("button.lien")).forEach(function (b) {
     b.addEventListener("click", function () {
       var base = location.href.replace(/galerie\\.html.*$/, "");
-      var u = base + "packs/fluides/res/svg/" + b.dataset.f;
+      var u = b.dataset.url ? (base + b.dataset.url) : (base + "packs/fluides/res/svg/" + b.dataset.f);
       var t = b.textContent;
       copier(u, function (m) { b.textContent = m || t; });
     });
@@ -341,5 +401,6 @@ frigoriste et invente des organes qui n'existent pas.</p>
 writeFileSync(resolve(RACINE, "galerie.html"), h, "utf8");
 console.log("  galerie : " + N.total + " planches · " + N.animees + " animées (" +
   N.narratives + " récits, " + N.cycliques + " boucles) · " + N.animations + " animations" +
-  (N.orphelines ? " · ⚠ " + N.orphelines + " non utilisée(s)" : ""));
+  (N.orphelines ? " · ⚠ " + N.orphelines + " non utilisée(s)" : "") +
+  " · " + EXPERIENCES.length + " expérience(s) interactive(s) complète(s)");
 console.log("  → galerie.html");
