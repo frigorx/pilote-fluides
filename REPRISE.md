@@ -98,6 +98,19 @@ repli clic-clic) puis un mini-jeu de 12 questions (seuil 9/12). Déposé dans
   haut, tuile grisée ensuite) · le lien depuis `g1c` pointe le bon fichier et ouvre un nouvel
   onglet · `node build/build.mjs` passe sans anomalie, couverture et matrice inchangées (100 %,
   94/94 — cette fiche ne touche à aucun critère).
+- ⚠️ **Complément le jour même : « Mission Bouteilles »**, 3ᵉ expérience (déposée dans
+  `packs/fluides/res/mission-bouteilles/`, reliée depuis `p6` « La balance et la pesée »).
+  Même famille de fichier — même défaut de thème sombre, corrigé de la même façon (fond
+  `--navy` réaffecté à la couleur claire plutôt qu'ajout d'une nouvelle variable, seuls le
+  `.stepper` et le halo `.o1` restaient à reprendre en plus du corps commun). **Différence
+  notable : aucun piège `prefers-reduced-motion` cette fois** — vérifié par recherche avant
+  toute correction, pas supposé. `galerie.html` recense désormais **3** expériences (scan
+  automatique, rien à saisir). `README.md` et le compteur de tête de ce document mis à jour.
+  Aussi ajouté au passage : **téléchargement direct des fichiers sources de chaque expérience**
+  depuis `galerie.html` (pas d'archive .zip, aucune dépendance ajoutée) et une mention de
+  licence — demande de F. Henninot pour constituer une bibliothèque de modules réutilisable
+  dans d'autres projets pédagogiques. Décidé le même jour : le projet reste dans ce dépôt tant
+  que le volume est faible (pas de dépôt séparé prématuré), licence inchangée (CC BY-NC-SA 4.0).
 
 **La frise vivante (28/07)** — F. Henninot a fait produire, hors de ce dépôt, une expérience
 narrée complète : 10 scènes (l'invention des CFC en 1928 → le règlement F-Gas 2024/573),
@@ -184,7 +197,8 @@ F. Henninot, sans hésitation la deuxième fois qu'on lui a posé la question : 
 
 **81 cartes** · **266 questions** · **42 planches SVG** (dont **34 animées** : 12 récits,
 22 boucles — 320 animations, voir `galerie.html`) · 4 illustrations · **3 outils embarqués**
-· **2 expériences interactives complètes** (frise vivante, décryptage de nomenclature)
+· **3 expériences interactives complètes** (frise vivante, décryptage de nomenclature,
+Mission Bouteilles)
 > ⚠️ **Les 14 planches du 27/07 soir** (8 nouvelles : tirage au vide, pesée, manifold, ordre des
 > vannes, pression absolue/relative, boucle du détendeur, givre/dégivrage, charge limite ;
 > 6 animations d'existantes) ont été produites par agents + vérification adversariale, contrôle

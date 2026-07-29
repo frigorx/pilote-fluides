@@ -41,6 +41,8 @@
   .experience strong { color:var(--bleu); font-size:16px; }
   .experience p { margin:4px 0 0; font-size:13.5px; color:var(--texte); max-width:640px; }
   .experience .sous { margin:0; }
+  .experience-fichiers { flex-basis:100%; margin-top:2px; font-size:13px; }
+  .experience-fichiers a.dl { margin-right:12px; }
   .sous a.ouvrir { font:600 13.5px Calibri,sans-serif; padding:6px 16px; color:#fff;
                    background:var(--bleu); border:1.5px solid var(--bleu); border-radius:999px;
                    cursor:pointer; text-decoration:none; display:inline-block; }
@@ -65,17 +67,40 @@ Le bouton <b>↻ Rejouer</b> la relance depuis le début.</p>
 <div class="experiences">
 <h1 style="margin-top:10px">Cours interactifs complets</h1>
 <p class="meta">Pas des planches, des pages entières — voix, mise en scène, parfois un mini-jeu.
-À ouvrir en plein écran, dans un nouvel onglet.</p><div class="experience">
-  <div><strong>Décrypter le code d’un fluide</strong><p>Cours interactif : comprendre la désignation des fluides frigorigènes.</p></div>
+À ouvrir en plein écran, dans un nouvel onglet, ou à récupérer pour un autre projet.</p>
+<p class="meta">Licence : contenu pédagogique CC BY-NC-SA 4.0, pas d'usage commercial sans accord
+— voir <a href="LICENCE.md">LICENCE.md</a>.</p><div class="experience">
+  <div class="experience-info"><strong>Décrypter le code d’un fluide</strong><p>Cours interactif : comprendre la désignation des fluides frigorigènes.</p></div>
   <div class="sous">
     <a class="ouvrir" href="packs/fluides/res/nomenclature-interactive/index.html" target="_blank" rel="noopener">Ouvrir ▸</a>
     <button class="lien" data-url="packs/fluides/res/nomenclature-interactive/index.html">🔗 Lien</button>
   </div>
+  <div class="experience-fichiers">
+    <span class="util">Récupérer le code :</span>
+    <a class="dl" href="packs/fluides/res/nomenclature-interactive/index.html" download title="Télécharger index.html">⬇ index.html</a> <a class="dl" href="packs/fluides/res/nomenclature-interactive/molecule-animations.css" download title="Télécharger molecule-animations.css">⬇ molecule-animations.css</a> <a class="dl" href="packs/fluides/res/nomenclature-interactive/nomenclature.css" download title="Télécharger nomenclature.css">⬇ nomenclature.css</a> <a class="dl" href="packs/fluides/res/nomenclature-interactive/nomenclature.js" download title="Télécharger nomenclature.js">⬇ nomenclature.js</a>
+    
+  </div>
 </div><div class="experience">
-  <div><strong>La Frise Vivante des Fluides</strong><p>Frise interactive et racontée de l’histoire des fluides frigorigènes.</p></div>
+  <div class="experience-info"><strong>La Frise Vivante des Fluides</strong><p>Frise interactive et racontée de l’histoire des fluides frigorigènes.</p></div>
   <div class="sous">
     <a class="ouvrir" href="packs/fluides/res/frise-vivante/frise-vivante.html" target="_blank" rel="noopener">Ouvrir ▸</a>
     <button class="lien" data-url="packs/fluides/res/frise-vivante/frise-vivante.html">🔗 Lien</button>
+  </div>
+  <div class="experience-fichiers">
+    <span class="util">Récupérer le code :</span>
+    <a class="dl" href="packs/fluides/res/frise-vivante/frise-vivante.css" download title="Télécharger frise-vivante.css">⬇ frise-vivante.css</a> <a class="dl" href="packs/fluides/res/frise-vivante/frise-vivante.html" download title="Télécharger frise-vivante.html">⬇ frise-vivante.html</a> <a class="dl" href="packs/fluides/res/frise-vivante/frise-vivante.js" download title="Télécharger frise-vivante.js">⬇ frise-vivante.js</a>
+    <span class="util"> + dossier img/ (images — cloner le dépôt pour les récupérer)</span>
+  </div>
+</div><div class="experience">
+  <div class="experience-info"><strong>Mission Bouteilles</strong><p>Auto-formation interactive sur les bouteilles de transfert et de récupération des fluides frigorigènes.</p></div>
+  <div class="sous">
+    <a class="ouvrir" href="packs/fluides/res/mission-bouteilles/index.html" target="_blank" rel="noopener">Ouvrir ▸</a>
+    <button class="lien" data-url="packs/fluides/res/mission-bouteilles/index.html">🔗 Lien</button>
+  </div>
+  <div class="experience-fichiers">
+    <span class="util">Récupérer le code :</span>
+    <a class="dl" href="packs/fluides/res/mission-bouteilles/app.js" download title="Télécharger app.js">⬇ app.js</a> <a class="dl" href="packs/fluides/res/mission-bouteilles/index.html" download title="Télécharger index.html">⬇ index.html</a> <a class="dl" href="packs/fluides/res/mission-bouteilles/styles.css" download title="Télécharger styles.css">⬇ styles.css</a>
+    
   </div>
 </div></div>
 <div class="ou">
@@ -114,8 +139,8 @@ l'oreille : une fuite réelle ne fait pas ce bruit-là.</span>
 <p class="meta" style="margin-top:30px">Les planches sont des SVG faits à la main, dans la charte
 inerWeb Édu. Aucune n'est produite par un modèle d'image : un rendu génératif inverse la croix du
 frigoriste et invente des organes qui n'existent pas.</p>
-<script src="packs/fluides/sons.js?v=e81c2b06ae"></script>
-<script src="moteur/sons.js?v=e81c2b06ae"></script>
+<script src="packs/fluides/sons.js?v=f5f6176516"></script>
+<script src="moteur/sons.js?v=f5f6176516"></script>
 <script>
 (function () {
   var n = 0, f = "*";

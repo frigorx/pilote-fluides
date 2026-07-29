@@ -1393,7 +1393,12 @@ export const CARTES = [
       "<li>Calculer l'écart entre les deux pesées. C'est la quantité réelle, pas une estimation.</li>" +
       "<li>Reporter aussitôt le résultat au registre : date, quantité, intervenant.</li>" +
       "</ol>" +
-      "<p>Cas particulier : un fluide <b>zéotrope</b>, composé de plusieurs corps, se charge toujours en <b>phase liquide</b>. Le sortir en phase gazeuse changerait sa composition en cours de route.</p>",
+      "<p>Cas particulier : un fluide <b>zéotrope</b>, composé de plusieurs corps, se charge toujours en <b>phase liquide</b>. Le sortir en phase gazeuse changerait sa composition en cours de route.</p>" +
+      lienOutil(
+        "packs/fluides/res/mission-bouteilles/index.html",
+        "🧪 Lancer Mission Bouteilles : identifier, peser, ne jamais surremplir",
+        "8 étapes racontées : calcul de pesée, phase liquide/vapeur, simulation de surremplissage et risque d'éclatement, bouteilles A2L/A3 — environ 10 minutes."
+      ),
     blocs: [
       {
         type: "cle",

@@ -24,7 +24,7 @@
    est une galerie qui ment au bout de trois planches.
    ===================================================================== */
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
-import { dirname, resolve } from "node:path";
+import { basename, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { CARTES } from "../packs/fluides/cartes.js";
 import { calculerVersion } from "./lib-version.mjs";
@@ -117,15 +117,30 @@ const RES = resolve(RACINE, "packs/fluides/res");
 const DOSSIERS_ASSETS = new Set(["svg", "outils", "photos"]);
 
 function lireExperience(dossier) {
-  const fichiers = readdirSync(resolve(RES, dossier)).filter((f) => f.endsWith(".html"));
-  if (!fichiers.length) return null;
-  const fichier = fichiers.includes("index.html") ? "index.html" : fichiers.sort()[0];
+  const entrees = readdirSync(resolve(RES, dossier), { withFileTypes: true });
+  const racine = entrees.filter((e) => e.isFile()).map((e) => e.name).sort();
+  const sousDossiers = entrees.filter((e) => e.isDirectory()).map((e) => e.name).sort();
+  const htmlFiles = racine.filter((f) => f.endsWith(".html"));
+  if (!htmlFiles.length) return null;
+  const fichier = htmlFiles.includes("index.html") ? "index.html" : htmlFiles[0];
   const html = readFileSync(resolve(RES, dossier, fichier), "utf8");
   const titre = ((html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || dossier)
     .replace(/\s*\|.*$/, "")
     .trim();
   const desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || "";
-  return { titre, desc, url: "packs/fluides/res/" + dossier + "/" + fichier };
+  return {
+    titre,
+    desc,
+    url: "packs/fluides/res/" + dossier + "/" + fichier,
+    // Pour « récupérer le code » : chaque fichier à la racine du dossier
+    // pris individuellement, en téléchargement direct — pas d'archive .zip
+    // (aucune dépendance de compression dans ce projet, RELEVÉ ne veut pas
+    // dire ALOURDI). Les sous-dossiers (ex. `img/` d'une frise) ne sont pas
+    // énumérés fichier par fichier : juste signalés, pour que la liste
+    // reste lisible.
+    fichiers: racine.map((f) => "packs/fluides/res/" + dossier + "/" + f),
+    sousDossiers,
+  };
 }
 
 const EXPERIENCES = readdirSync(RES, { withFileTypes: true })
@@ -198,6 +213,8 @@ let h = `<!doctype html>
   .experience strong { color:var(--bleu); font-size:16px; }
   .experience p { margin:4px 0 0; font-size:13.5px; color:var(--texte); max-width:640px; }
   .experience .sous { margin:0; }
+  .experience-fichiers { flex-basis:100%; margin-top:2px; font-size:13px; }
+  .experience-fichiers a.dl { margin-right:12px; }
   .sous a.ouvrir { font:600 13.5px Calibri,sans-serif; padding:6px 16px; color:#fff;
                    background:var(--bleu); border:1.5px solid var(--bleu); border-radius:999px;
                    cursor:pointer; text-decoration:none; display:inline-block; }
@@ -225,13 +242,20 @@ if (EXPERIENCES.length) {
   h += `<div class="experiences">
 <h1 style="margin-top:10px">Cours interactifs complets</h1>
 <p class="meta">Pas des planches, des pages entières — voix, mise en scène, parfois un mini-jeu.
-À ouvrir en plein écran, dans un nouvel onglet.</p>`;
+À ouvrir en plein écran, dans un nouvel onglet, ou à récupérer pour un autre projet.</p>
+<p class="meta">Licence : contenu pédagogique CC BY-NC-SA 4.0, pas d'usage commercial sans accord
+— voir <a href="LICENCE.md">LICENCE.md</a>.</p>`;
   for (const e of EXPERIENCES) {
     h += `<div class="experience">
-  <div><strong>${esc(e.titre)}</strong>${e.desc ? `<p>${esc(e.desc)}</p>` : ""}</div>
+  <div class="experience-info"><strong>${esc(e.titre)}</strong>${e.desc ? `<p>${esc(e.desc)}</p>` : ""}</div>
   <div class="sous">
     <a class="ouvrir" href="${esc(e.url)}" target="_blank" rel="noopener">Ouvrir ▸</a>
     <button class="lien" data-url="${esc(e.url)}">🔗 Lien</button>
+  </div>
+  <div class="experience-fichiers">
+    <span class="util">Récupérer le code :</span>
+    ${e.fichiers.map((f) => `<a class="dl" href="${esc(f)}" download title="Télécharger ${esc(basename(f))}">⬇ ${esc(basename(f))}</a>`).join(" ")}
+    ${e.sousDossiers.length ? `<span class="util"> + dossier ${e.sousDossiers.map(esc).join(", ")}/ (images — cloner le dépôt pour les récupérer)</span>` : ""}
   </div>
 </div>`;
   }
