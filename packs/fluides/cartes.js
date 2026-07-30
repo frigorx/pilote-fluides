@@ -847,7 +847,12 @@ export const CARTES = [
       "</ul>" +
       "<p>Se tromper de classe, ce n'est donc pas se tromper d'étiquette : c'est se tromper de <b>tout le dispositif de sécurité</b> — installer du matériel électrique inadapté, sous-dimensionner une ventilation, choisir un détecteur qui ne verra rien, ou charger un local au-delà de ce qu'il admet.</p>" +
       "<p><b>Le piège à ne jamais commettre.</b> Le <b>R-290 est de classe A3</b>, pas A2L. C'est du propane : un hydrocarbure, très inflammable. La confusion avec les A2L est fréquente, y compris dans des documents mal rédigés, et elle conduit à appliquer des précautions insuffisantes. Un repère simple et fiable : si le fluide est un <b>hydrocarbure</b> (propane, isobutane, propylène), il est <b>A3</b>. Les A2L sont des HFC comme le R-32, ou des HFO comme le R-1234yf.</p>" +
-      "<p><b>Où lire la classe.</b> Jamais de mémoire, et jamais par déduction à partir du nom commercial : la classe de sécurité figure sur la <b>fiche de données de sécurité (FDS)</b> du fluide, que le fournisseur doit vous remettre. Les valeurs qui en découlent — charges limites selon le local, seuils de détection — se lisent dans la <b>NF EN 378</b> et dans la documentation du constructeur. Savoir aller les chercher est une compétence en soi ; les réciter de tête est une source d'accident.</p>",
+      "<p><b>Où lire la classe.</b> Jamais de mémoire, et jamais par déduction à partir du nom commercial : la classe de sécurité figure sur la <b>fiche de données de sécurité (FDS)</b> du fluide, que le fournisseur doit vous remettre. Les valeurs qui en découlent — charges limites selon le local, seuils de détection — se lisent dans la <b>NF EN 378</b> et dans la documentation du constructeur. Savoir aller les chercher est une compétence en soi ; les réciter de tête est une source d'accident.</p>" +
+      lienOutil(
+        "packs/fluides/res/cours-classes-securite/index.html",
+        "🧯 Lancer le cours interactif : classes de sécurité",
+        "Le triangle du feu, le domaine d'explosivité, la matrice A/B × 1/2L/2/3 à explorer case par case, un cas réel d'accident (l'effet Diesel au pump-down) et un mini-jeu de 10 situations — environ 15 minutes."
+      ),
     blocs: [
       { type: "cle", t: "Ce qu'il faut retenir", html: "<ul><li>La <b>lettre</b> dit la toxicité : A faible, B plus élevée. « A » ne veut pas dire inoffensif.</li><li>Le <b>chiffre</b> dit l'inflammabilité : 1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable.</li><li>Huit cases au total : A1 · A2L · A2 · A3 · B1 · B2L · B2 · B3.</li><li>La classe <b>commande</b> les EPI, le matériel électrique, la ventilation, la détection, la charge maximale et l'occupation du local.</li><li><b>R-290 = A3</b>, jamais A2L. Tout hydrocarbure est A3.</li><li>La classe se lit sur la <b>FDS</b> ; les valeurs associées, dans la NF EN 378.</li></ul>" },
       { type: "piege", t: "Le geste interdit", html: "<p>Intervenir sur une installation, ou choisir un matériel, <b>sans avoir vérifié la classe du fluide sur sa FDS</b> — en la supposant d'après le nom du fluide ou d'après l'installation précédente.</p><p>Conséquence : un fluide A3 traité comme un A2L, c'est un local ventilé trop faiblement, un matériel électrique qui peut produire une étincelle, un détecteur inadapté et une charge excessive. L'atmosphère devient explosive sans que rien ne l'ait signalé.</p>" },
@@ -1626,6 +1631,11 @@ export const CARTES = [
     dc: "G1 · code 1.02",
     minuteur_s: 360,
     corps:
+      lienOutil(
+        "packs/fluides/res/chaleur-interactive/index.html",
+        "🧊 Lancer la découverte : du glaçon au circuit frigorifique",
+        "12 étapes racontées : glaçon et casserole, quantité d'énergie, courbes de chauffe et de refroidissement, chaleurs sensible et latente, liquéfaction, réfrigérateur, circuit frigorifique, surchauffe/sous-refroidissement et défi final — environ 15 minutes."
+      ) +
       schema("chaleur-sensible-latente.svg", "La courbe de chauffe d'un fluide : la température monte, puis s'arrête pendant tout le changement d'état, puis repart. Le palier commence au point de bulle et finit au point de rosée.") +
       "<p>Chauffez de l'eau dans une casserole. Le thermomètre monte, régulièrement. " +
       "Cette chaleur-là, l'appareil la « sent » : on l'appelle la <b>chaleur sensible</b>. " +
@@ -1729,6 +1739,11 @@ export const CARTES = [
     dc: "G1 · code 1.03",
     minuteur_s: 300,
     corps:
+      lienOutil(
+        "packs/fluides/res/pression-temperature-interactive/index.html",
+        "🫧 Lancer la découverte : faire bouillir sans feu",
+        "12 étapes racontées : cloche à vide, relation pression–température, températures de saturation, évaporateur et condenseur, lecture manomètre–table, point de bulle, point de rosée, glissement des zéotropes et défi final — environ 15 minutes."
+      ) +
       schema("diagramme-logph.svg", "Le diagramme log p-h : la cloche sépare le liquide, le mélange et la vapeur surchauffée ; le cycle s'y trace en quatre transformations qui forment un rectangle.") +
       "<p>Le <b>diagramme log p-h</b> raconte en image ce que la fiche précédente a raconté en mots. " +
       "Deux axes seulement. En <b>ordonnée</b>, la <b>pression</b>. En <b>abscisse</b>, l'<b>enthalpie</b> : " +
@@ -2858,7 +2873,12 @@ export const CARTES = [
       "<p>On distingue plusieurs <b>types</b> de compresseur, selon la façon dont la vapeur est comprimée. Le compresseur à <b>piston</b> comprime par un mouvement de va-et-vient, comme une pompe à vélo. Le compresseur <b>scroll</b> (deux spirales imbriquées, une fixe et une mobile qui tourne à l'intérieur) comprime en continu, sans à-coups : c'est la technologie la plus répandue en climatisation. Le compresseur à <b>vis</b> comprime la vapeur entre deux rotors qui s'engrènent ; on le trouve sur les grosses puissances.</p>" +
       "<p>Il existe aussi trois <b>architectures</b>, selon la manière dont le moteur électrique entraîne le compresseur. En <b>hermétique</b>, le moteur et le compresseur sont enfermés ensemble dans une coque soudée : aucun arbre ne sort à l'extérieur, donc aucune fuite possible à cet endroit, mais la coque ne s'ouvre pas et le compresseur n'est pas réparable. En <b>semi-hermétique</b>, la coque est boulonnée : on peut l'ouvrir pour intervenir à l'intérieur, en refaisant les joints au remontage. En <b>ouvert</b>, le moteur est séparé du compresseur et l'entraîne par un arbre qui traverse la coque de part en part ; cet arbre passe par une <b>garniture</b> (un joint tournant), qui est un point de fuite classique à surveiller sur ce type de machine.</p>" +
       "<p>Pour vérifier que le retour d'huile fonctionne bien, on contrôle le <b>niveau d'huile</b> au <b>voyant d'huile</b> : un petit hublot placé sur le carter du compresseur. On regarde ce voyant <b>machine en marche stabilisée</b> (après quelques minutes de fonctionnement, pas juste au démarrage) : le niveau doit rester visible dans la zone du voyant, sans descendre en dessous. La zone exacte à respecter est donnée par la <b>documentation constructeur</b>, à faire valider avant de conclure sur un manque ou un excès d'huile.</p>" +
-      "<p>Après toute intervention sur un compresseur, on rédige un <b>rapport</b>. Il rassemble trois choses : ce qu'on a <b>observé</b> (bruits anormaux, niveau d'huile au voyant, valeurs relevées comme les pressions ou la température de refoulement), ce qu'on a <b>fait</b> (pièce changée, réglage effectué, essai réalisé), et tout <b>problème restant</b> qui pourrait, plus tard, entraîner une panne ou une fuite. Ce rapport est <b>daté et signé</b> : c'est ce qui permet au prochain intervenant de savoir où en est la machine, sans tout redécouvrir.</p>",
+      "<p>Après toute intervention sur un compresseur, on rédige un <b>rapport</b>. Il rassemble trois choses : ce qu'on a <b>observé</b> (bruits anormaux, niveau d'huile au voyant, valeurs relevées comme les pressions ou la température de refoulement), ce qu'on a <b>fait</b> (pièce changée, réglage effectué, essai réalisé), et tout <b>problème restant</b> qui pourrait, plus tard, entraîner une panne ou une fuite. Ce rapport est <b>daté et signé</b> : c'est ce qui permet au prochain intervenant de savoir où en est la machine, sans tout redécouvrir.</p>" +
+      lienOutil(
+        "packs/fluides/res/circuit-organe-par-organe/index.html",
+        "🔧 Lancer le module : le circuit, organe par organe",
+        "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
+      ),
     blocs: [
       {
         type: "cle",
@@ -2992,7 +3012,12 @@ export const CARTES = [
       "Une batterie encrassée, un ventilateur à l'arrêt, et la haute pression monte : la machine " +
       "consomme plus, et le pressostat HP finit par couper.</p>" +
       "<p>Les <b>incondensables</b> (air entré lors d'une intervention mal faite) se purgent " +
-      "<b>à l'arrêt</b>, installation froide, avec récupération — jamais fluide en mouvement.</p>",
+      "<b>à l'arrêt</b>, installation froide, avec récupération — jamais fluide en mouvement.</p>" +
+      lienOutil(
+        "packs/fluides/res/circuit-organe-par-organe/index.html",
+        "🔧 Lancer le module : le circuit, organe par organe",
+        "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
+      ),
     blocs: [
       {
         type: "cle",
@@ -3124,7 +3149,12 @@ export const CARTES = [
       "<p>Points de vigilance propres : corrosion, condensats, et le <b>bac</b> — une fuite peut s'y " +
       "dissimuler sous l'eau de dégivrage.</p>" +
       "<p>La conduite d'<b>aspiration</b> relie l'évaporateur au compresseur. Elle transporte le fluide en vapeur, mais cette vapeur emporte toujours un peu d'<b>huile</b>, celle qui lubrifie le compresseur. Pour que l'huile revienne avec le gaz, on pose cette conduite en légère <b>pente</b>, inclinée vers le compresseur. Ainsi, l'huile glisse avec le fluide au lieu de stagner dans un creux du tube.</p>" +
-      "<p>Parfois, le tracé oblige la conduite d'aspiration à remonter. Par exemple, le compresseur est placé plus haut que l'évaporateur. Dans ce cas, la pente seule ne suffit plus : au ralenti, le gaz n'a pas toujours assez de vitesse pour porter l'huile vers le haut. On pose alors un <b>siphon</b> en pied de cette colonne montante. C'est un petit coude en U qui retient un peu d'huile le temps qu'elle s'accumule. Puis il la relance d'un coup vers le haut, dès que le gaz reprend de la vitesse.</p>",
+      "<p>Parfois, le tracé oblige la conduite d'aspiration à remonter. Par exemple, le compresseur est placé plus haut que l'évaporateur. Dans ce cas, la pente seule ne suffit plus : au ralenti, le gaz n'a pas toujours assez de vitesse pour porter l'huile vers le haut. On pose alors un <b>siphon</b> en pied de cette colonne montante. C'est un petit coude en U qui retient un peu d'huile le temps qu'elle s'accumule. Puis il la relance d'un coup vers le haut, dès que le gaz reprend de la vitesse.</p>" +
+      lienOutil(
+        "packs/fluides/res/circuit-organe-par-organe/index.html",
+        "🔧 Lancer le module : le circuit, organe par organe",
+        "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
+      ),
     blocs: [
       {
         type: "cle",
@@ -3370,7 +3400,12 @@ export const CARTES = [
       "on le trouve sur les petits appareils.</p>" +
       "<p>Autour du détendeur, la ligne liquide porte le <b>filtre déshydrateur</b> (tamis moléculaire, " +
       "monté <b>dans le sens de la flèche</b>) et le <b>voyant</b>, qui renseigne sur deux choses : " +
-      "la présence de bulles et, par sa pastille, l'humidité du circuit.</p>",
+      "la présence de bulles et, par sa pastille, l'humidité du circuit.</p>" +
+      lienOutil(
+        "packs/fluides/res/circuit-organe-par-organe/index.html",
+        "🔧 Lancer le module : le circuit, organe par organe",
+        "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
+      ),
     blocs: [
       {
         type: "cle",

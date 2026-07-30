@@ -14,17 +14,6 @@
 | 🟠 partiellement tenu | 0 | au moins une notion manquante |
 | 🟢 aucun signal d'absence | 94 | toutes les notions détectées |
 
-## 📏 Maigreur — des codes théoriques tenus par trop peu de texte
-
-Les motifs sont présents, mais la fiche fait moins de 300 mots visibles :
-le sujet est cité, il n'est pas traité. Ce contrôle existe parce que `g1b` a « tenu »
-le code 1.03 avec 105 mots pour 45 minutes de cours (constaté le 27/07).
-
-| Fiche | Mots | Codes théoriques déclarés |
-|---|---:|---|
-| `g7` — Le condenseur | 250 | 7.01 |
-| `g9` — Le détendeur et les organes annexes | 276 | 9.01 |
-
 ## ⚠️ Motifs aveugles — l'instrument ne mesure rien avec eux
 
 Présents dans plus de 40 % des cartes : ils valident sans discriminer.
@@ -34,6 +23,7 @@ Présents dans plus de 40 % des cartes : ils valident sans discriminer.
 - `install` — 58 % des cartes (utilisé par 7.03, 8.03)
 - `arret` — 44 % des cartes (utilisé par 6.06)
 - `securite` — 44 % des cartes (utilisé par 11.01)
+- `condens` — 42 % des cartes (utilisé par 1.04)
 - `raccord` — 42 % des cartes (utilisé par 4.01, 12.01)
 - `direct` — 42 % des cartes (utilisé par 4.06, 12.11)
 
