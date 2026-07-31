@@ -48,6 +48,24 @@ Doctrine [[feedback_protection_code]] : licence + antériorité git, jamais de c
 | [`matrice.html`](https://frigorx.github.io/pilote-fluides/matrice.html) | **la matrice de traçabilité** : les 136 compétences de l'arrêté une par une — la fiche qui l'enseigne, les questions qui la vérifient, le texte officiel. Filtrable par catégorie et par état. Version Markdown : `MATRICE-COMPETENCES.md` | direction, organisme évaluateur |
 | [`documents.html`](https://frigorx.github.io/pilote-fluides/documents.html) | **le dossier du projet** : 6 documents libres (état, mesures, licence) + **38 documents chiffrés** derrière le code — dossier de direction (projet + budget, en téléchargement), architecture, ingénierie, système qualité, 21 chapitres de cours | tous publics / formateur |
 
+**Charte graphique inerWeb** — ⚠️ **la doctrine ne vit plus dans ce dépôt**. Source depuis le
+31/07/2026 : **`C:\git\usine-contenu\00-charte\CHARTE-GRAPHIQUE-INERWEB.md`**, à côté de la charte
+pédagogique. C'est **la charte par défaut de tous les projets**, et **son § 8 est le bloc à coller
+en consigne** quand une page, une expérience ou un document est produit ailleurs.
+
+Restent ici : `charte.html` (la charte **montrée** — palette, composants, démonstration
+écran / imprimé couleur / photocopié gris), `CHARTE-GRAPHIQUE.md` (l'**application au pack** :
+les écarts mesurés fichier par fichier, § 10) et les feuilles qui s'exécutent —
+`moteur/charte-edu.css` (écran), `moteur/impression.css` (papier, à inclure en `media="print"`),
+`moteur/lisibilite.js` (bouton « Aa »).
+
+Trois volets à ne pas confondre : **écran** · **page web imprimée** · **documents Word et PDF**.
+Les deux derniers gardent la couleur — ce n'est pas une charte noir et blanc — mais rien n'y
+repose sur la couleur seule : mesuré, vert et rouge sont indiscernables une fois photocopiés.
+Tout ça existe parce que les trois expériences arrivées de l'extérieur (frise, nomenclature,
+Mission Bouteilles) portaient les mêmes deux défauts (thème sombre · `prefers-reduced-motion`
+coupant le contenu), corrigés trois fois à la main.
+
 Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « pilote-fluides ».
 
 ---

@@ -324,7 +324,7 @@ function ecrirePlanningHtml(b) {
     ".reg{font-size:12.5px;padding:2px 7px;border-radius:10px;border:1px solid var(--ligne);color:var(--mut);background:#fff}" +
     ".reg.plateau{border-color:#b9cbdb;background:#eef3f7;color:var(--bleu);font-weight:700}" +
     ".note{background:#fff;border-left:4px solid var(--org);padding:12px 16px;margin:16px 0;font-size:15px}" +
-    "</style></head><body>");
+    "</style><link rel='stylesheet' href='moteur/impression.css' media='print'></head><body>");
   H.push('<header><div class="wrap"><h1>Planning de formation — catégorie ' + PARCOURS.cadre + "</h1>");
   H.push("<p>Habilitation à la manipulation des fluides frigorigènes · arrêté du 21 novembre 2025</p></div></header>");
   H.push('<div class="wrap">');

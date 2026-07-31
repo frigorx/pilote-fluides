@@ -228,7 +228,7 @@ let h = `<!doctype html>
   .sous .util b { color:var(--bleu); }
   .vide { color:#c0392b; font-weight:600; font-size:13px; }
   @media print { .barre, .sous button, .sous a.ouvrir { display:none } .planche { break-inside:avoid } }
-</style></head><body>
+</style><link rel='stylesheet' href='moteur/impression.css' media='print'></head><body>
 <h1>Toutes les planches du pack</h1>
 <p class="meta">${N.total} planches, dont <b>${N.animees} animées</b> (${N.narratives} récits qui se
 déroulent une fois, ${N.cycliques} en boucle) et ${N.fixes} fixes — ${N.animations} animations au total.

@@ -40,7 +40,7 @@ let h = `<!doctype html>
   .manque .tire { color:#c0392b; font-weight:700; }
   ol.choix { margin:6px 0; padding-left: 24px; }
   @media print { .carte { border-color:#aaa; } body { font-size: 12.5px; } }
-</style></head><body>
+</style><link rel='stylesheet' href='moteur/impression.css' media='print'></head><body>
 <h1>Relecture « bon à tirer » — pack habilitation fluides</h1>
 <p class="meta">Généré le 25/07/2026 depuis le pack publié (${P.cartes.length} cartes, ${P.banque.length} questions).
 Pour chaque élément : ✅ = validé · ✏ = à corriger (noter la correction en marge).

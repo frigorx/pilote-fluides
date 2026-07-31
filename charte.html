@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Charte graphique inerWeb</title>
+<meta name="description" content="La charte graphique du pack fluides, montrée : palette, typographie, composants, règles absolues, volet impression et écarts constatés.">
+<style>
+:root{
+  --navy-700:#1b3a63; --orange:#ff6b35; --orange-deep:#c9451a;
+  --blue:#3d7fca; --blue-soft:#84b7ec;
+  --cream:#f7f1e7; --paper:#fffdf8;
+  --ink:#10233c; --muted:#637285; --line:rgba(27,58,99,.16);
+  --ok:#1e7e54; --ok-bg:#e3f5ec; --ko:#c0392b; --ko-bg:#fbe7e4;
+  --attente:#b06a00; --attente-bg:#fff4e0;
+  --ombre:0 22px 60px rgba(27,58,99,.12);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+  font:17px/1.6 Calibri,"Segoe UI",system-ui,Arial,sans-serif}
+h1,h2,h3{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--navy-700);letter-spacing:-.015em}
+.wrap{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+
+header{padding:54px 0 34px;border-bottom:1px solid var(--line)}
+.eyebrow{margin:0 0 14px;color:var(--orange);font-size:12px;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase}
+header h1{margin:0;font-size:clamp(34px,5vw,58px);line-height:1.02}
+header p{max-width:64ch;margin:18px 0 0;color:var(--muted);font-size:18px}
+
+section{padding:40px 0;border-bottom:1px solid var(--line)}
+section > h2{margin:0 0 6px;font-size:27px}
+section > h2 + p{margin:0 0 24px;color:var(--muted);max-width:70ch}
+h3{font-size:16px;letter-spacing:.04em;text-transform:uppercase;margin:26px 0 12px}
+
+/* palette */
+.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:14px}
+.sw{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 2px 10px rgba(27,58,99,.06)}
+.sw .chip{height:74px;display:block}
+.sw .lb{padding:11px 13px}
+.sw b{display:block;font-size:14px;color:var(--navy-700)}
+.sw code{display:block;margin-top:3px;font:13px Consolas,monospace;color:var(--muted)}
+.sw small{display:block;margin-top:5px;font-size:12.5px;color:var(--muted);line-height:1.4}
+
+/* sens */
+.sens{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.se{border-radius:14px;padding:14px 17px;border-left:5px solid;background:var(--paper)}
+.se b{display:block;font-size:15px}
+.se span{font:13px Consolas,monospace;color:var(--muted)}
+.se.ok{border-color:var(--ok);background:var(--ok-bg);color:var(--ok)}
+.se.ko{border-color:var(--ko);background:var(--ko-bg);color:var(--ko)}
+.se.at{border-color:var(--attente);background:var(--attente-bg);color:var(--attente)}
+
+/* typo */
+.typo{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 30px}
+.typo .ex{margin:0 0 6px}
+.tt-demo{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;font-weight:700;
+  color:var(--navy-700);font-size:34px;letter-spacing:-.015em}
+.co-demo{max-width:66ch;margin:8px 0 0}
+.mo-demo{font-family:Consolas,monospace;font-size:15px;color:var(--muted);margin-top:14px}
+.meta{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:14px;color:var(--muted)}
+
+/* composants */
+.comps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.bloc{border-left:4px solid var(--navy-700);background:#f3f7fb;border-radius:8px;padding:12px 16px}
+.bloc .t{font-weight:700;color:var(--navy-700);margin-bottom:4px}
+.bloc.cle{border-color:var(--ok);background:var(--ok-bg)}
+.bloc.cle .t{color:var(--ok)}
+.bloc.piege{border-color:var(--orange);background:#ffe2d6}
+.bloc.piege .t{color:var(--orange-deep)}
+.pilote{border:2px solid var(--orange);background:#fff8f4;border-radius:10px;padding:12px 16px}
+.pilote .t{font-weight:700;color:var(--orange-deep);font-size:13px;letter-spacing:.4px;margin-bottom:4px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.b1{font:inherit;font-weight:700;border:0;border-radius:12px;padding:13px 20px;color:#fff;
+  background:var(--navy-700);box-shadow:var(--ombre);cursor:pointer}
+.b2{font:inherit;font-weight:700;border:2px solid var(--line);border-radius:12px;
+  padding:11px 18px;color:var(--navy-700);background:#fff;cursor:pointer}
+.b3{font:600 13.5px/1.3 inherit;color:var(--navy-700);background:#f3f7fb;
+  border:1.5px solid var(--blue);border-radius:999px;padding:6px 14px;cursor:pointer}
+.badge{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--orange);
+  padding:3px 11px;border-radius:999px}
+.badge.nv{background:#0b1f38}
+
+/* règles */
+.regles{display:grid;gap:14px}
+.r{background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--orange);
+  border-radius:16px;padding:18px 22px}
+.r b{display:block;color:var(--navy-700);font-family:"Trebuchet MS",Calibri,sans-serif;
+  font-size:18px;margin-bottom:6px}
+.r p{margin:0 0 8px}
+.r p:last-child{margin-bottom:0}
+.r code{font:14px Consolas,monospace;background:#f3f7fb;padding:2px 6px;border-radius:5px;
+  color:var(--orange-deep)}
+
+/* comparaison climats */
+.clim{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.cl{border-radius:20px;border:1px solid var(--line);overflow:hidden;box-shadow:var(--ombre)}
+.cl .dem{padding:26px 24px 30px}
+.cl.froid .dem{background:#eef2f6}
+.cl.chaud .dem{background:#f7f1e7}
+.cl .fiche{background:#fff;border:1px solid #d6dee7;border-radius:14px;padding:16px 18px;
+  box-shadow:0 2px 10px rgba(27,58,99,.10)}
+.cl.chaud .fiche{background:#fffdf8;border-color:var(--line);box-shadow:0 2px 10px rgba(120,90,60,.10)}
+.cl .fiche h4{margin:8px 0 6px;font-family:"Trebuchet MS",Calibri,sans-serif;
+  color:var(--navy-700);font-size:19px}
+.cl .fiche p{margin:0;font-size:14.5px;color:var(--muted)}
+.cl .leg{padding:14px 20px;background:var(--paper);border-top:1px solid var(--line);font-size:14px}
+.cl .leg b{color:var(--navy-700)}
+.cl .leg code{font:13px Consolas,monospace;color:var(--muted)}
+
+/* écarts */
+table{width:100%;border-collapse:collapse;background:var(--paper);border-radius:14px;overflow:hidden}
+th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--line);font-size:15px;vertical-align:top}
+th{background:#f3f7fb;color:var(--navy-700);font-family:"Trebuchet MS",Calibri,sans-serif;font-size:14px}
+tr:last-child td{border-bottom:0}
+td code{font:13.5px Consolas,monospace;color:var(--orange-deep)}
+
+.note{margin-top:22px;border-left:5px solid var(--blue);background:#eaf3fc;
+  border-radius:12px;padding:16px 20px}
+.note b{color:var(--navy-700)}
+
+footer{padding:34px 0 60px;color:var(--muted);font-size:14px}
+@media(max-width:640px){ header{padding:34px 0 24px} section{padding:30px 0} }
+/* Les règles d'impression ne sont PAS ici : elles vivent dans la feuille
+   commune moteur/impression.css, chargée ci-dessous en media="print".
+   Elle doit venir APRÈS ce bloc pour l'emporter à spécificité égale. */
+</style>
+<link rel="stylesheet" href="moteur/impression.css?v=560025ac4a" media="print">
+</head>
+<body>
+
+<header class="wrap">
+  <p class="eyebrow">charte par défaut · tous projets</p>
+  <h1>La charte graphique<br>inerWeb, montrée</h1>
+  <p>Toutes les valeurs de cette page sont extraites des fichiers réellement en production et
+  mesurées le 31 juillet 2026 — ce n'est pas une proposition, c'est l'état des lieux.</p>
+  <p>Elle a <b>trois volets</b> : l'écran (sections 1 à 4), l'impression d'une page web
+  (section 5) et les documents Word et PDF (section 6). Les deux derniers gardent la couleur —
+  <b>ce n'est pas une charte noir et blanc</b> — mais aucune information n'y repose sur la
+  couleur seule.</p>
+  <div class="note" style="margin-top:22px">
+    <b>La doctrine écrite vit dans l'usine de contenu :</b>
+    <code>usine-contenu\00-charte\CHARTE-GRAPHIQUE-INERWEB.md</code>, à côté de la charte
+    pédagogique. Son <b>§ 8</b> est le bloc à coller en consigne quand une page, une expérience
+    ou un document est produit ailleurs. Cette page-ci en est la démonstration visuelle ;
+    en cas de divergence, c'est le document qui fait foi.
+  </div>
+</header>
+
+<section class="wrap">
+  <h2>1. Le noyau de palette</h2>
+  <p>Cinq des huit expériences interactives le partagent déjà à l'identique. C'est la référence.</p>
+  <div class="pal">
+    <div class="sw"><span class="chip" style="background:#1b3a63"></span><span class="lb">
+      <b>Identité</b><code>--navy-700 · #1b3a63</code><small>Titres, libellés forts, bordures d'accent</small></span></div>
+    <div class="sw"><span class="chip" style="background:#ff6b35"></span><span class="lb">
+      <b>Accent</b><code>--orange · #ff6b35</code><small>Ce qui appelle l'action ou signale le piège</small></span></div>
+    <div class="sw"><span class="chip" style="background:#c9451a"></span><span class="lb">
+      <b>Accent appuyé</b><code>--orange-deep · #c9451a</code><small>Texte orange sur fond clair</small></span></div>
+    <div class="sw"><span class="chip" style="background:#3d7fca"></span><span class="lb">
+      <b>Bleu vif</b><code>--blue · #3d7fca</code><small>Éléments interactifs, états actifs</small></span></div>
+    <div class="sw"><span class="chip" style="background:#84b7ec"></span><span class="lb">
+      <b>Bleu doux</b><code>--blue-soft · #84b7ec</code><small>Remplissages secondaires</small></span></div>
+    <div class="sw"><span class="chip" style="background:#f7f1e7;border-bottom:1px solid rgba(27,58,99,.16)"></span><span class="lb">
+      <b>Fond de page</b><code>--cream · #f7f1e7</code><small>C'est lui qui donne la chaleur</small></span></div>
+    <div class="sw"><span class="chip" style="background:#fffdf8;border-bottom:1px solid rgba(27,58,99,.16)"></span><span class="lb">
+      <b>Fond de carte</b><code>--paper · #fffdf8</code><small>Blanc cassé chaud, jamais #ffffff pur</small></span></div>
+    <div class="sw"><span class="chip" style="background:#10233c"></span><span class="lb">
+      <b>Texte</b><code>--ink · #10233c</code><small>Corps de texte</small></span></div>
+    <div class="sw"><span class="chip" style="background:#637285"></span><span class="lb">
+      <b>Texte secondaire</b><code>--muted · #637285</code><small>Légendes, mentions</small></span></div>
+  </div>
+
+  <h3>Les couleurs de sens</h3>
+  <div class="sens">
+    <div class="se ok"><b>Acquis, correct</b><span>#1e7e54 sur #e3f5ec</span></div>
+    <div class="se ko"><b>Échec, danger</b><span>#c0392b sur #fbe7e4</span></div>
+    <div class="se at"><b>Fragile, en attente</b><span>#b06a00 sur #fff4e0</span></div>
+  </div>
+  <div class="note"><b>Règle non négociable :</b> un état se distingue par la couleur
+  <b>et par un mot</b>. Jamais par la couleur seule.</div>
+</section>
+
+<section class="wrap">
+  <h2>2. Typographie</h2>
+  <p>Deux polices, pas trois. Jamais de serif, jamais de police chargée depuis un CDN.</p>
+  <div class="typo">
+    <p class="ex tt-demo">Ce qui éclate — la pression</p>
+    <p class="co-demo">Trebuchet MS aux titres, Calibri au corps, 17 px et interligne 1,6.
+    Le texte doit rester lisible projeté en salle, imprimé en noir et blanc, et agrandi à 160 %
+    par un stagiaire qui a du mal à lire. Taille minimale sur un document élève : 14 pt.</p>
+    <p class="mo-demo">Consolas pour le code, les chronomètres et les saisies de codes d'accès.</p>
+    <p class="meta">Tracking négatif <b>−.015em au maximum</b> sur les grands titres — les −.05em
+    hérités des fichiers d'origine étaient pensés pour une serif et resserrent trop une Trebuchet.
+    Une seule police embarquée : <b>Lexend variable</b> (39 Ko, licence OFL), et uniquement pour
+    la bascule DYS du bouton « Aa ».</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>3. Composants de référence</h2>
+  <p>À reproduire plutôt qu'à réinventer. Tous viennent de <code>moteur/charte-edu.css</code>.</p>
+  <div class="comps">
+    <div class="bloc"><div class="t">Encadré neutre</div>
+      Le contexte, la mise en situation, ce qu'il faut savoir avant.</div>
+    <div class="bloc cle"><div class="t">🔑 La clé</div>
+      Ce qu'il faut retenir si on ne retient qu'une chose.</div>
+    <div class="bloc piege"><div class="t">⚠ Le piège</div>
+      L'erreur que tout le monde fait — le R-290 est en A3, jamais en A2L.</div>
+    <div class="pilote"><div class="t">NOTE FORMATEUR</div>
+      Visible en vue orateur seulement. Ne se projette jamais.</div>
+  </div>
+  <div class="btns">
+    <button class="b1">Action principale</button>
+    <button class="b2">Action secondaire</button>
+    <button class="b3">↻ Revoir l'animation</button>
+    <span class="badge">SÉCURITÉ</span>
+    <span class="badge nv">accent sombre admis</span>
+  </div>
+  <div class="note">Les valeurs sombres (<code>#12345a</code>, <code>#0b1f38</code>,
+  <code>#071426</code>) restent autorisées <b>en accents ponctuels</b> — la pilule ci-dessus.
+  Jamais en bandeau, hero, panneau ou zone de lecture. La règle porte sur ce qu'on lit, pas sur
+  un badge de 40 pixels.</div>
+</section>
+
+<section class="wrap">
+  <h2>4. Les quatre règles absolues</h2>
+  <p>Ce sont celles qui ont déjà coûté des corrections — trois fois la même, sur trois
+  expériences produites hors du dépôt.</p>
+  <div class="regles">
+    <div class="r"><b>R1 · Aucun thème sombre en zone de lecture</b>
+      <p>Fond clair, texte sombre, partout. Pas de <code>prefers-color-scheme: dark</code>,
+      pas de bascule de thème. Seule exception : un petit accent coloré à texte blanc.</p></div>
+    <div class="r"><b>R2 · <code>prefers-reduced-motion</code> ne conditionne jamais du contenu</b>
+      <p>Si une animation porte une information — la nappe de gaz qui monte, les atomes qui
+      s'assemblent, la frise qui se trace — elle ne doit jamais être coupée par cette media
+      query : sur une machine Windows aux effets désactivés, celle du formateur, la démonstration
+      disparaîtrait <b>sans un mot</b>.</p>
+      <p>Le seul filet autorisé est <code>@media print</code>. Le son ne dépend que de son propre
+      bouton.</p>
+      <p><b>Corollaire de conception :</b> le dessin au repos doit déjà être l'image finale ;
+      l'animation ne fait que raconter comment on y arrive.</p></div>
+    <div class="r"><b>R3 · Le bouton « Aa » sur toute page</b>
+      <p>Une ligne avant <code>&lt;/body&gt;</code> :
+      <code>&lt;script src="…/moteur/lisibilite.js"&gt;&lt;/script&gt;</code> — taille de 70 à
+      160 %, bascule police DYS, réglages partagés entre toutes les pages. Il est en bas à droite
+      de cette page aussi.</p></div>
+    <div class="r"><b>R4 · Rien de génératif, aucune dépendance externe</b>
+      <p>Les visuels techniques sont des SVG faits main. Une image de modèle génératif sort un
+      rendu plausible et faux — croix du frigoriste inversée, manifold à trois manomètres — et
+      flou en projection. Aucun CDN, aucun script tiers : le pack doit s'ouvrir en 4G et
+      fonctionner hors ligne en salle.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>5. Le volet impression — papier et PDF</h2>
+  <p>Ce qui est chaleureux à l'écran devient coûteux et sale sur papier. Le fond crème s'imprime
+  en aplat gris, les encadrés vident les cartouches, et sur une laser noir et blanc un encadré
+  « clé » et un encadré « piège » sortent <b>strictement identiques</b>. La version papier n'est
+  pas une dégradation : c'est une traduction.</p>
+
+  <div class="note" style="border-color:var(--orange);background:#ffe2d6;margin:0 0 22px">
+    <b>Règle directrice : le trait porte le sens, pas la surface.</b> Un filet de 3 px coûte une
+    goutte d'encre ; un aplat de page en coûte une cartouche.<br><br>
+    <b>Ce n'est pas une charte noir et blanc.</b> La couleur reste — titres, filets, badges —
+    parce qu'elle coûte quelques gouttes et qu'un document imprimé en couleur doit être agréable.
+    Ce sont les <b>surfaces</b> qui partent, pas la couleur.
+  </div>
+
+  <div class="clim">
+    <div class="cl">
+      <div class="dem" style="background:#f7f1e7">
+        <div class="bloc cle" style="margin-bottom:12px"><div class="t">🔑 La clé</div>
+          Un fluide plus lourd que l'air s'accumule au point bas.</div>
+        <div class="bloc piege"><div class="t">⚠ Le piège</div>
+          Le R-290 est en A3, jamais en A2L.</div>
+        <p style="margin:14px 0 0"><span class="badge">SÉCURITÉ</span></p>
+      </div>
+      <div class="leg"><b>1 · À l'écran</b><br>aplats de couleur, fond crème, ombres</div>
+    </div>
+    <div class="cl">
+      <div class="dem papier" style="background:#fff">
+        <div style="border-left:5px double #1e7e54;background:#fff;border-radius:8px;
+          padding:12px 16px;margin-bottom:12px">
+          <div style="font-weight:700;color:#1e7e54;margin-bottom:4px">🔑 La clé</div>
+          <span style="color:#000">Un fluide plus lourd que l'air s'accumule au point bas.</span></div>
+        <div style="border-left:4px dashed #c9451a;background:#fff;border-radius:8px;padding:12px 16px">
+          <div style="font-weight:700;color:#c9451a;margin-bottom:4px">⚠ Le piège</div>
+          <span style="color:#000">Le R-290 est en A3, jamais en A2L.</span></div>
+        <p style="margin:14px 0 0"><span style="display:inline-block;font-size:12px;
+          font-weight:700;color:#c9451a;background:#fff;border:1px solid #c9451a;
+          padding:3px 11px;border-radius:999px">SÉCURITÉ</span></p>
+      </div>
+      <div class="leg"><b>2 · Imprimé en couleur</b><br>fond blanc, la couleur reste dans le
+        filet et le titre</div>
+    </div>
+    <div class="cl">
+      <div class="dem papier" style="background:#fff;filter:grayscale(1)">
+        <div style="border-left:5px double #1e7e54;background:#fff;border-radius:8px;
+          padding:12px 16px;margin-bottom:12px">
+          <div style="font-weight:700;color:#1e7e54;margin-bottom:4px">🔑 La clé</div>
+          <span style="color:#000">Un fluide plus lourd que l'air s'accumule au point bas.</span></div>
+        <div style="border-left:4px dashed #c9451a;background:#fff;border-radius:8px;padding:12px 16px">
+          <div style="font-weight:700;color:#c9451a;margin-bottom:4px">⚠ Le piège</div>
+          <span style="color:#000">Le R-290 est en A3, jamais en A2L.</span></div>
+        <p style="margin:14px 0 0"><span style="display:inline-block;font-size:12px;
+          font-weight:700;color:#c9451a;background:#fff;border:1px solid #c9451a;
+          padding:3px 11px;border-radius:999px">SÉCURITÉ</span></p>
+      </div>
+      <div class="leg"><b>3 · Photocopié en gris</b><br><i>(vraiment converti, pas simulé)</i> —
+        le <b>trait double</b> et le <b>trait tireté</b> distinguent encore</div>
+    </div>
+  </div>
+
+  <h3>Pourquoi la couleur ne peut pas travailler seule</h3>
+  <p>Converti en niveaux de gris — ce que fait une photocopieuse — voici où tombent les couleurs
+  de la charte. La colonne « gris » est la mesure, pas une impression.</p>
+  <table>
+    <tr><th>Couleur</th><th>Hex</th><th>Gris</th><th>Contraste sur blanc</th></tr>
+    <tr><td>Bleu marine — identité</td><td><code>#1b3a63</code></td><td>21 %</td><td>11,5:1</td></tr>
+    <tr><td><b>Vert — acquis</b></td><td><code>#1e7e54</code></td><td><b>36 %</b></td><td>5,0:1</td></tr>
+    <tr><td><b>Rouge — échec</b></td><td><code>#c0392b</code></td><td><b>38 %</b></td><td>5,4:1</td></tr>
+    <tr><td>Orange de texte</td><td><code>#c9451a</code></td><td>41 %</td><td>4,8:1</td></tr>
+    <tr><td><b>Ambre — fragile</b></td><td><code>#b06a00</code></td><td><b>45 %</b></td><td>4,3:1</td></tr>
+    <tr><td>Orange d'écran</td><td><code>#ff6b35</code></td><td>57 %</td>
+      <td><b style="color:#c0392b">2,8:1 — trop faible pour du texte</b></td></tr>
+  </table>
+  <div class="note" style="border-color:var(--ko);background:var(--ko-bg)">
+    <b>Le vert et le rouge sont à un point de gris l'un de l'autre.</b> Sur une photocopieuse,
+    un encadré « la clé » et un encadré « le piège » sortent <b>strictement identiques</b>. Les
+    trois couleurs de sens tiennent dans neuf points de gris. C'est un fait mesuré, pas une
+    précaution : <b>il faut un deuxième canal qui survive au noir et blanc.</b>
+  </div>
+
+  <h3>Les trois canaux</h3>
+  <table>
+    <tr><th>Repère</th><th>Canal 1 — couleur</th><th>Canal 2 — trait</th><th>Canal 3 — mot</th></tr>
+    <tr><td>Encadré neutre</td><td>bleu <code>#1b3a63</code></td><td>plein, 2 px</td>
+      <td>le titre de l'encadré</td></tr>
+    <tr><td>La clé</td><td>vert <code>#1e7e54</code></td><td><b>double</b>, 5 px</td><td>🔑 La clé</td></tr>
+    <tr><td>Le piège</td><td>orange <code>#c9451a</code></td><td><b>tireté</b>, 4 px</td><td>⚠ Le piège</td></tr>
+    <tr><td>Note formateur</td><td>orange <code>#c9451a</code></td><td><b>pointillé</b></td>
+      <td>NOTE FORMATEUR</td></tr>
+    <tr><td>Acquis · fragile · à revoir</td><td>vert · ambre · rouge</td>
+      <td><b>double · pointillé · tireté</b></td><td>le mot d'état</td></tr>
+  </table>
+  <div class="note" style="border-color:var(--ok);background:var(--ok-bg)">
+    <b>Le test :</b> si on retire toute la couleur, l'information doit rester entière.
+    C'est exactement ce que montre la troisième colonne plus haut.
+  </div>
+
+  <h3>Ce que la feuille commune applique</h3>
+  <table>
+    <tr><th>Élément</th><th>À l'écran</th><th>À l'impression</th></tr>
+    <tr><td>Fond de page</td><td><code>#f7f1e7</code> crème</td><td><b>blanc pur</b></td></tr>
+    <tr><td>Cartes, encadrés, badges</td><td>aplats colorés</td>
+      <td>fond <b>blanc</b>, le <b>contour coloré</b> prend le relais</td></tr>
+    <tr><td>Ombres, dégradés, images de fond</td><td>présents</td><td><b>supprimés</b></td></tr>
+    <tr><td>Corps de texte</td><td><code>#10233c</code></td>
+      <td><b>noir pur</b> — choix d'encre : sur un jet d'encre, un bleu très foncé mobilise les
+      4 cartouches, le noir une seule</td></tr>
+    <tr><td>En-tête de tableau</td><td>aplat <code>#f3f7fb</code></td>
+      <td>pas d'aplat : graisse + couleur + trait plus épais dessous</td></tr>
+    <tr><td>Lignes alternées</td><td>zébrure</td>
+      <td><b>supprimée</b> — c'est la moitié du tableau à l'encre</td></tr>
+    <tr><td>Titres</td><td><code>#1b3a63</code></td>
+      <td><code>#1b3a63</code> conservé — un titre par page ne coûte rien</td></tr>
+    <tr><td>Boutons, barres, widget « Aa »</td><td>visibles</td>
+      <td><b>masqués</b> — rien de cliquable sur du papier</td></tr>
+    <tr><td>Éléments animés</td><td>animés</td>
+      <td><b>retirés</b> : le dessin au repos est déjà l'image finale</td></tr>
+    <tr><td>Liens externes</td><td>soulignés</td><td>l'<b>adresse est imprimée</b></td></tr>
+    <tr><td>Marges, coupures</td><td>—</td>
+      <td><code>@page</code> 15 mm ; ni encadré ni tableau coupé par un saut de page</td></tr>
+  </table>
+
+  <div class="note"><b>Le piège de l'export PDF.</b> Par défaut, les navigateurs n'impriment pas
+  les fonds colorés — mais l'utilisateur peut cocher « Graphiques d'arrière-plan », et
+  « Enregistrer au format PDF » le fait souvent. Le PDF garde alors tous les aplats et les
+  ressort chez la personne qui l'imprimera, qui n'a rien demandé. On ne compte donc jamais sur le
+  défaut : <b>on neutralise explicitement</b>. Et on n'écrit <b>jamais</b>
+  <code>print-color-adjust: exact</code> dans ce projet — c'est l'instruction inverse.</div>
+
+  <div class="note" style="border-color:var(--ok);background:var(--ok-bg)">
+    <b>Cette page applique sa propre règle.</b> Fais <b>Ctrl + P</b> pour voir : fond blanc,
+    aplats partis, boutons masqués, filets conservés. Une ligne suffit à l'obtenir sur
+    n'importe quelle page —
+    <code>&lt;link rel="stylesheet" href="…/moteur/impression.css" media="print"&gt;</code>
+  </div>
+
+  <div class="note" style="border-color:var(--muted)">
+    <b>Ce qui ne change pas, même sur papier.</b> La taille du texte — un document élève reste à
+    <b>14 pt minimum</b> ; économiser l'encre ne se fait jamais sur le dos de la lisibilité.
+    Et la règle « couleur + mot », qui vient de l'écran mais devient <i>vitale</i> en noir et
+    blanc : c'est le mot, seul, qui distingue encore les états.
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>6. Les documents Word et PDF</h2>
+  <p>La feuille <code>impression.css</code> traite l'impression d'une <b>page web</b>. Un document
+  produit par l'usine de contenu — fiche, TP, procédure, sujet — est un autre objet : il naît
+  déjà pour le papier. Même principe, <b>couleur oui, surface non</b>.</p>
+  <table>
+    <tr><th>Élément</th><th>Règle</th></tr>
+    <tr><td>Fond de page</td><td>blanc. Jamais de fond de page, jamais de filigrane coloré.</td></tr>
+    <tr><td>Titre 1</td><td>bleu marine <code>#1b3a63</code>, Trebuchet MS, gras, filet fin de la
+      même couleur dessous.</td></tr>
+    <tr><td>Titre 2</td><td>bleu marine <code>#1b3a63</code>, gras, sans filet.</td></tr>
+    <tr><td>Titre 3</td><td>noir, gras. <b>La couleur ne descend pas plus bas</b> — sinon elle ne
+      signale plus rien.</td></tr>
+    <tr><td>Corps</td><td>noir, Calibri, <b>14 pt minimum pour un document élève</b> (11-12 pt
+      admis pour un document de travail interne, et c'est un choix explicite).</td></tr>
+    <tr><td>Encadrés</td><td>filet gauche <b>coloré + style de trait</b>, fond blanc.
+      Jamais d'aplat.</td></tr>
+    <tr><td>Tableaux</td><td>filets gris <code>#999</code>, en-tête gras et bleu marine.
+      <b>Aucune zébrure.</b></td></tr>
+    <tr><td>Mise en évidence</td><td>le <b>gras</b> d'abord. Un mot en orange au milieu d'un
+      paragraphe ne survit pas au noir et blanc.</td></tr>
+    <tr><td>Pictogrammes normalisés</td><td>SGH, ATEX, ISO 7010 : c'est du <b>contenu</b>,
+      reproduit fidèlement, en couleur, jamais redessiné en gris.</td></tr>
+    <tr><td>Photos</td><td>jamais en fond de page. Une photo pleine page en couleur est le poste
+      d'encre le plus cher d'un document.</td></tr>
+  </table>
+
+  <h3>Valeurs pour la bibliothèque <code>docx</code></h3>
+  <p>Les unités sont la source d'erreur habituelle : couleurs <b>sans le <code>#</code></b>,
+  tailles en <b>demi-points</b>, bordures en <b>huitièmes de point</b>.</p>
+  <table>
+    <tr><th>Usage</th><th>Valeur <code>docx</code></th><th>Correspond à</th></tr>
+    <tr><td>Bleu marine</td><td><code>color: "1B3A63"</code></td><td><code>#1b3a63</code></td></tr>
+    <tr><td>Vert acquis</td><td><code>color: "1E7E54"</code></td><td><code>#1e7e54</code></td></tr>
+    <tr><td>Rouge échec</td><td><code>color: "C0392B"</code></td><td><code>#c0392b</code></td></tr>
+    <tr><td>Ambre fragile</td><td><code>color: "B06A00"</code></td><td><code>#b06a00</code></td></tr>
+    <tr><td>Orange de texte</td><td><code>color: "C9451A"</code></td>
+      <td><code>#c9451a</code> — <b>jamais <code>FF6B35</code></b></td></tr>
+    <tr><td>Corps élève</td><td><code>size: 28</code></td><td>14 pt</td></tr>
+    <tr><td>Corps document de travail</td><td><code>size: 24</code></td><td>12 pt</td></tr>
+    <tr><td>Titre 1</td><td><code>size: 32, bold: true</code></td><td>16 pt</td></tr>
+    <tr><td>Filet « la clé »</td><td><code>BorderStyle.DOUBLE, size: 12</code></td><td>double ≈ 1,5 pt</td></tr>
+    <tr><td>Filet « le piège »</td><td><code>BorderStyle.DASHED, size: 12</code></td><td>tireté ≈ 1,5 pt</td></tr>
+    <tr><td>Filet neutre</td><td><code>BorderStyle.SINGLE, size: 8</code></td><td>plein ≈ 1 pt</td></tr>
+    <tr><td>Filet de tableau</td><td><code>BorderStyle.SINGLE, size: 4, color: "999999"</code></td>
+      <td>plein ≈ 0,5 pt</td></tr>
+  </table>
+  <div class="note" style="border-color:var(--ko);background:var(--ko-bg)">
+    <b><code>shading</code> est à proscrire par défaut.</b> C'est l'équivalent Word de l'aplat
+    CSS : invisible dans le coût à l'écran, très cher à l'impression. Si un fond est vraiment
+    nécessaire, <code>#f3f7fb</code> au maximum, et jamais sur plus de deux lignes.
+  </div>
+
+  <h3>Le test avant d'envoyer un document</h3>
+  <div class="comps">
+    <div class="bloc cle"><div class="t">1 · Le regarder en gris</div>
+      Aperçu en niveaux de gris. Si deux encadrés deviennent indiscernables, ou si une
+      information a disparu, le document n'est pas fini.</div>
+    <div class="bloc piege"><div class="t">2 · Compter les surfaces pleines</div>
+      Un aplat plus grand qu'un badge doit se justifier. Un en-tête de tableau, une bannière de
+      première page : ça se discute. Un fond de page, non.</div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>7. Deux climats coexistent</h2>
+  <p>L'identité est déjà commune — même bleu, même orange, même typographie. Seul le support
+  diffère. C'est très probablement l'origine du ressenti « le projet est froid ».</p>
+  <div class="clim">
+    <div class="cl froid">
+      <div class="dem">
+        <div class="fiche"><span class="badge">SÉCURITÉ</span>
+          <h4>L'air qui manque</h4>
+          <p>Un fluide plus lourd que l'air s'accumule au point bas et chasse l'oxygène.</p></div>
+      </div>
+      <div class="leg"><b>Le moteur</b> — application élève, portail, projection<br>
+        <code>--fond : #eef2f6</code> gris bleuté</div>
+    </div>
+    <div class="cl chaud">
+      <div class="dem">
+        <div class="fiche"><span class="badge">SÉCURITÉ</span>
+          <h4>L'air qui manque</h4>
+          <p>Un fluide plus lourd que l'air s'accumule au point bas et chasse l'oxygène.</p></div>
+      </div>
+      <div class="leg"><b>Les expériences</b> — 5 sur 8<br>
+        <code>--cream : #f7f1e7</code> crème</div>
+    </div>
+  </div>
+  <div class="note"><b>La chaleur existe déjà, mais seulement dans les expériences.</b>
+  L'application principale — celle que le stagiaire ouvre en premier — est restée sur le gris
+  bleuté d'origine. L'aligner sur le crème est un changement d'une ligne
+  (<code>--fond</code>), plus l'ombre en tonalité chaude et éventuellement
+  <code>--carte</code> en <code>#fffdf8</code>. C'est une décision à prendre : elle repeint tout
+  le projet d'un coup, gabarits générés compris.</div>
+</section>
+
+<section class="wrap">
+  <h2>8. Écarts constatés</h2>
+  <p>Mesurés fichier par fichier. Aucun n'est bloquant ; tous sont à connaître.</p>
+  <table>
+    <tr><th>Où</th><th>Écart</th></tr>
+    <tr><td><b>cours-classes-securite</b></td>
+      <td>Palette entièrement propre : <code>--blue:#193b56</code>, <code>--orange:#d87832</code>,
+      <code>--paper:#f5f1e8</code>, plus des variables <code>--ice</code> / <code>--steel</code>
+      inconnues ailleurs, et un fond texturé.</td></tr>
+    <tr><td><b>froid-clim-academie</b></td>
+      <td><code>--blue:#1069a8</code>, <code>--paper:#f6f8f9</code> — la seule expérience
+      <b>froide</b>.</td></tr>
+    <tr><td><b>pression-temperature-interactive</b></td>
+      <td><b>Aucune variable CSS</b> : couleurs en dur, <code>#eef3f7</code> (celle du moteur).</td></tr>
+    <tr><td>Verts</td><td>Trois valeurs en circulation : <code>#4fb887</code>,
+      <code>#25866d</code>, <code>#1e7e54</code>.</td></tr>
+    <tr><td>Rouges</td><td>Trois valeurs : <code>#d94747</code>, <code>#b83c3c</code>,
+      <code>#c0392b</code>.</td></tr>
+    <tr><td>✅ Conforme</td><td>Le bouton « Aa » est présent sur les <b>8</b> expériences ;
+      <code>--navy-700</code> et <code>--orange</code> sont identiques au moteur partout où ils
+      sont déclarés ; les valeurs sombres encore utilisées le sont en accents, jamais en fond de
+      lecture.</td></tr>
+  </table>
+</section>
+
+<footer class="wrap">
+  Charte graphique v1.0 · 31 juillet 2026 · F. Henninot — groupe Équatio Formation &amp; Métiers.<br>
+  Valeurs extraites de <code>moteur/charte-edu.css</code>, <code>moteur/lisibilite.js</code> et
+  des 8 expériences de <code>packs/fluides/res/</code>.
+</footer>
+
+<script src="moteur/lisibilite.js?v=560025ac4a"></script>
+</body>
+</html>

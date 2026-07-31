@@ -33,13 +33,23 @@ const FICHIERS_VERSIONNES = [
   "config.js",
   "chiffres.gen.js",
   "moteur/charte-edu.css",
+  "moteur/impression.css",
+  "moteur/lisibilite.js",
   "moteur/moteur.js",
   "moteur/sons.js",
   "moteur/lecture.js",
   "moteur/portillon.js",
 ];
 
-const PAGES = ["index.html", "formateur.html", "projection.html", "portail.html", "dossier.html"];
+// Les pages générées (galerie, matrice, planning, relecture) sont incluses :
+// version.mjs passe APRÈS leurs générateurs dans build.mjs. Sans elles, une
+// correction de charte-edu.css ou d'impression.css resterait invisible sur
+// ces pages tant que le navigateur garde l'ancienne feuille en cache.
+const PAGES = [
+  "index.html", "formateur.html", "projection.html", "portail.html", "dossier.html",
+  "charte.html", "galerie.html", "matrice.html", "planning.html", "relecture.html",
+  "pratique.html", "partage.html",
+];
 
 function echapper(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");

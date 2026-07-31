@@ -359,7 +359,7 @@ function ecrireHtml() {
     .code { border-color:#bbb; }
     body { font-size: 12px; max-width: none; }
   }
-</style></head><body>
+</style><link rel='stylesheet' href='moteur/impression.css' media='print'></head><body>
 <h1>Matrice compétences × contenu × questions</h1>
 <p class="meta">Pack habilitation fluides frigorigènes — catégories ${esc(CATS.join(" · "))} ·
 arrêté du 21 novembre 2025, annexe II.B (${NB.codes} compétences).
