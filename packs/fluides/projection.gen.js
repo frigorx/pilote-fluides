@@ -4982,6 +4982,13 @@ window.PILOTE_PROJECTION = {
        "titre": "Le compresseur"
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=compresseurs",
+       "lancer": "📘 Tome 3 : la technologie de l'organe, en détail",
+       "desc": "les quatre technologies de compression — piston, scroll, vis et rotatif — chacune en vue isolée, avec son symbole normalisé et son fonctionnement interne animé.",
+       "titre": "Le compresseur"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/compresseurs.svg",
        "alt": "Coupe animée d un compresseur à piston et les quatre technologies : piston, scroll, vis, rotatif.",
@@ -5519,6 +5526,13 @@ window.PILOTE_PROJECTION = {
        "titre": "Le condenseur"
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=condenseurs",
+       "lancer": "📘 Tome 3 : la technologie de l'organe, en détail",
+       "desc": "le condenseur à air et le condenseur à eau, leur place sur la croix du frigoriste, et ce qui entre et sort de chacun.",
+       "titre": "Le condenseur"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/echangeur-air.svg",
        "alt": "Le condenseur à air : l air ambiant traverse la batterie poussé par le ventilateur et ressort réchauffé.",
@@ -6008,6 +6022,13 @@ window.PILOTE_PROJECTION = {
        "url": "packs/fluides/res/circuit-organe-par-organe/index.html",
        "lancer": "🔧 Lancer le module : le circuit, organe par organe",
        "desc": "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.",
+       "titre": "L'évaporateur"
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=evaporateurs",
+       "lancer": "📘 Tome 3 : la technologie de l'organe, en détail",
+       "desc": "l'évaporateur à air et à eau, l'état du fluide à l'entrée et à la sortie, et le montage habituel.",
        "titre": "L'évaporateur"
       },
       {
@@ -6580,6 +6601,13 @@ window.PILOTE_PROJECTION = {
        "titre": "Le détendeur et les organes annexes"
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique",
+       "lancer": "📘 Tome 3 : la technologie de l'organe, en détail",
+       "desc": "le détendeur à égalisation interne et externe, le détendeur électronique et le tube capillaire, chacun en vue isolée avec son symbole.",
+       "titre": "Le détendeur et les organes annexes"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/detendeur-regulation.svg",
        "alt": "Animation en boucle : la charge thermique augmente, la surchauffe monte, le bulbe se réchauffe et pousse la membrane, le détendeur ouvre, l'évaporateur reçoit plus de fluide, la surchauffe redescend — la boucle qui se corrige toute seule.",
@@ -6796,6 +6824,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": true
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite",
+       "lancer": "📘 Tome 3 : la technologie de l'organe, en détail",
+       "desc": "Les organes annexes un par un : réservoir, filtre déshydrateur, voyant, électrovanne, clapet et vannes de service, bouteille anti-coup de liquide, séparateur d'huile, régulateurs de pression et soupape — chacun en vue isolée, avec son symbole normalisé.",
+       "titre": "Régler et contrôler les organes annexes"
       },
       {
        "type": "schema",

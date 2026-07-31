@@ -2888,6 +2888,11 @@ export const CARTES = [
         "packs/fluides/res/circuit-organe-par-organe/index.html",
         "🔧 Lancer le module : le circuit, organe par organe",
         "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
+      ) +
+      lienOutil(
+        "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=compresseurs",
+        "📘 Tome 3 : la technologie de l'organe, en détail",
+        "les quatre technologies de compression — piston, scroll, vis et rotatif — chacune en vue isolée, avec son symbole normalisé et son fonctionnement interne animé."
       ),
     blocs: [
       {
@@ -3027,6 +3032,11 @@ export const CARTES = [
         "packs/fluides/res/circuit-organe-par-organe/index.html",
         "🔧 Lancer le module : le circuit, organe par organe",
         "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
+      ) +
+      lienOutil(
+        "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=condenseurs",
+        "📘 Tome 3 : la technologie de l'organe, en détail",
+        "le condenseur à air et le condenseur à eau, leur place sur la croix du frigoriste, et ce qui entre et sort de chacun."
       ),
     blocs: [
       {
@@ -3164,6 +3174,11 @@ export const CARTES = [
         "packs/fluides/res/circuit-organe-par-organe/index.html",
         "🔧 Lancer le module : le circuit, organe par organe",
         "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
+      ) +
+      lienOutil(
+        "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=evaporateurs",
+        "📘 Tome 3 : la technologie de l'organe, en détail",
+        "l'évaporateur à air et à eau, l'état du fluide à l'entrée et à la sortie, et le montage habituel."
       ),
     blocs: [
       {
@@ -3415,6 +3430,11 @@ export const CARTES = [
         "packs/fluides/res/circuit-organe-par-organe/index.html",
         "🔧 Lancer le module : le circuit, organe par organe",
         "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
+      ) +
+      lienOutil(
+        "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique",
+        "📘 Tome 3 : la technologie de l'organe, en détail",
+        "le détendeur à égalisation interne et externe, le détendeur électronique et le tube capillaire, chacun en vue isolée avec son symbole."
       ),
     blocs: [
       {
@@ -3498,7 +3518,12 @@ export const CARTES = [
       "organe. Un thermostat qui dérive, un limiteur qui ne coupe plus, un séparateur qui laisse " +
       "passer l'huile : non signalés, ces défauts finissent par endommager le système. À terme, " +
       "faute de mesure, cela provoque une fuite ou une émission de réfrigérant. Le rapport écrit " +
-      "permet d'agir <b>avant</b> ce stade.</p>",
+      "permet d'agir <b>avant</b> ce stade.</p>" +
+      lienOutil(
+        "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite",
+        "📘 Tome 3 : la technologie de l'organe, en détail",
+        "Les organes annexes un par un : réservoir, filtre déshydrateur, voyant, électrovanne, clapet et vannes de service, bouteille anti-coup de liquide, séparateur d'huile, régulateurs de pression et soupape — chacun en vue isolée, avec son symbole normalisé."
+      ),
     blocs: [
       {
         type: "cle",
