@@ -1565,6 +1565,11 @@ export const CARTES = [
     dc: "G1 · codes 1.01 · 1.02 · 1.04",
     minuteur_s: 300,
     corps:
+      lienOutil(
+        "packs/fluides/res/chaleur-circuit-interactif/index.html",
+        "🌡️ Lancer le cours interactif : premières notions de thermodynamique",
+        "Le tome 2 du circuit : température, énergie et puissance, chaleur sensible et latente avec calculateurs, saturation, surchauffe et sous-refroidissement, bilans énergétiques — 12 écrans narrés et un quiz de 12 questions (seuil 9/12), environ 20 minutes."
+      ) +
       schema("croix-frigoriste.svg", "La croix du frigoriste : détendeur à gauche, compresseur à droite, condenseur en haut, évaporateur en bas.") +
       "<p>Tout le métier tient sur un couple : <b>pression et température vont ensemble</b>. " +
       "Chauffer un fluide enfermé fait monter sa pression ; abaisser sa pression le fait bouillir plus froid. " +

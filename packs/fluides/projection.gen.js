@@ -1008,6 +1008,13 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/chaleur-circuit-interactif/index.html",
+       "lancer": "🌡️ Lancer le cours interactif : premières notions de thermodynamique",
+       "desc": "Le tome 2 du circuit : température, énergie et puissance, chaleur sensible et latente avec calculateurs, saturation, surchauffe et sous-refroidissement, bilans énergétiques — 12 écrans narrés et un quiz de 12 questions (seuil 9/12), environ 20 minutes.",
+       "titre": "Unités, pression, thermodynamique utile"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/croix-frigoriste.svg",
        "alt": "La croix du frigoriste : détendeur à gauche, compresseur à droite, condenseur en haut, évaporateur en bas.",
