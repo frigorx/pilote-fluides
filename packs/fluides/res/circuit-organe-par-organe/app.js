@@ -792,8 +792,12 @@ const dossiers = [
     id: "pressostats",
     title: "Les pressostats HP et BP",
     short: "Pressostats",
-    image: "images-organes/pressostats.webp",
-    alt: "Deux pressostats frigorifiques mécaniques isolés",
+    /* Pas de photo : celle d'origine (deux boîtiers identiques, un gris, un
+       bleu) ne montrait ni échelle de tarage, ni molette, ni différentiel —
+       la seule différence lisible était la couleur, ce qui fabriquait un
+       faux critère (« le bleu = BP »). Les symboles PA/PB suffisent ici. */
+    image: null,
+    alt: "",
     symbols: [["sym-pressostat-hp", "HP"], ["sym-pressostat-bp", "BP"]],
     intro: "Les deux symboles distinguent la surveillance haute pression et basse pression.",
     narration: "Dossier pressostats. Le symbole PA repère le pressostat haute pression et le symbole PB le pressostat basse pression. Ces organes surveillent la pression du circuit et peuvent agir sur la commande électrique lorsque leur seuil est atteint.",
@@ -835,6 +839,19 @@ let followIndex = 0;
 let quizIndex = 0;
 let quizScore = 0;
 let quizLocked = false;
+
+/* Mélange l'ordre d'AFFICHAGE des propositions (Fisher-Yates). Sans lui, les
+   bonnes réponses étaient en positions fixes (7 sur 10 en première place) :
+   cliquer toujours la première case validait le défi sans rien lire. Le
+   data-quiz-answer garde l'indice d'ORIGINE — la correction ne change pas. */
+function ordreMelange(n) {
+  const ordre = Array.from({ length: n }, (_, i) => i);
+  for (let i = ordre.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [ordre[i], ordre[j]] = [ordre[j], ordre[i]];
+  }
+  return ordre;
+}
 let currentDossier = 0;
 
 function renderQuiz() {
@@ -859,7 +876,7 @@ function renderQuiz() {
         <p class="quiz-kicker">${question.organ.toUpperCase()} · QUESTION ${quizIndex + 1} / ${quizQuestions.length}</p>
         <h3>${question.question}</h3>
         <div class="quiz-options">
-          ${question.answers.map((answer, index) => `<button class="quiz-option" type="button" data-quiz-answer="${index}">${answer}</button>`).join("")}
+          ${ordreMelange(question.answers.length).map(index => `<button class="quiz-option" type="button" data-quiz-answer="${index}">${question.answers[index]}</button>`).join("")}
         </div>
         <p class="quiz-feedback" id="quiz-feedback" role="status">Choisissez une réponse.</p>
       </section>
@@ -899,9 +916,9 @@ function renderDossier() {
   const dossier = dossiers[currentDossier];
   $("#dossier-view").innerHTML = `
     <div class="dossier-cover">
-      <figure class="real-view">
+      ${dossier.image ? `<figure class="real-view">
         <img src="${dossier.image}" alt="${dossier.alt}">
-      </figure>
+      </figure>` : ""}
       <section class="schematic-view">
         <div class="schematic-symbols">
           ${dossier.symbols.map(([symbol, label]) => `
@@ -1169,9 +1186,10 @@ function wireQuiz() {
       const answerIndex = Number(button.dataset.quizAnswer);
       const correct = answerIndex === question.correct;
       if (correct) quizScore += 1;
-      $$("[data-quiz-answer]").forEach((option, index) => {
+      $$("[data-quiz-answer]").forEach((option) => {
         option.disabled = true;
-        if (index === question.correct) option.classList.add("good");
+        // l'indice d'ORIGINE, jamais la position DOM : les propositions sont mélangées
+        if (Number(option.dataset.quizAnswer) === question.correct) option.classList.add("good");
         if (option === button && !correct) option.classList.add("bad");
       });
       const feedback = $("#quiz-feedback");
