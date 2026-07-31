@@ -35,6 +35,7 @@ const FICHIERS_VERSIONNES = [
   "moteur/charte-edu.css",
   "moteur/impression.css",
   "moteur/lisibilite.js",
+  "moteur/illustration.js",
   "moteur/moteur.js",
   "moteur/sons.js",
   "moteur/lecture.js",

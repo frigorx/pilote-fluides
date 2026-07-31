@@ -44,6 +44,98 @@ PACK.cartes.forEach((c) => (idx[c.id] = c));
    en isolant d'abord le schéma de tête (une image projetée mérite
    l'écran entier, pas un coin de diapositive).
    --------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------
+   UN PARAGRAPHE TROP LONG N'EST PAS UNE DIAPOSITIVE.
+   Le découpage « un <p> = un écran » marche pour la fiche, où l'on peut
+   relire ; il ne marche pas en projection, où l'on lit une fois, de loin.
+   Constaté au contrôle du 31/07 : trois écrans débordaient encore une
+   fois tout le reste réglé, dont un de 532 mots — une énumération d'organes
+   fondue dans un seul paragraphe. À ce volume, aucune taille de police ne
+   sauve l'écran.
+
+   On coupe donc sur une FIN DE PHRASE, et seulement au niveau racine du
+   HTML : couper à l'intérieur d'un <b> produirait deux fragments invalides.
+   Le texte n'est jamais récrit ni raccourci — il occupe simplement le
+   nombre d'écrans qu'il demande.
+   --------------------------------------------------------------------- */
+const SIGNES_MAX = 460;
+
+function couperSurPhrases(html, max = SIGNES_MAX) {
+  if (html.replace(/<[^>]+>/g, "").length <= max) return [html];
+
+  const morceaux = [];
+  let prof = 0, i = 0, debut = 0, vus = 0;
+  while (i < html.length) {
+    if (html[i] === "<") {
+      const fin = html.indexOf(">", i);
+      if (fin === -1) break;
+      const bal = html.slice(i, fin + 1);
+      if (/^<\//.test(bal)) prof--;
+      else if (!/\/>$/.test(bal) && !/^<(br|img|hr|input)\b/i.test(bal)) prof++;
+      i = fin + 1;
+      continue;
+    }
+    vus++;
+    // une coupure ne vaut que hors balise, après un point, et si le morceau
+    // en cours a déjà de la matière — sinon on fabrique des écrans d'une ligne
+    if (prof === 0 && /[.!?]/.test(html[i]) && /^[\s]|^$/.test(html[i + 1] || "") && vus >= max * 0.55) {
+      const bout = html.slice(debut, i + 1).trim();
+      if (bout) morceaux.push(bout);
+      debut = i + 1;
+      vus = 0;
+    }
+    i++;
+  }
+  const reste = html.slice(debut).trim();
+  if (reste) {
+    // un reliquat trop court se recolle au morceau précédent : mieux vaut un
+    // écran un peu plein qu'un écran avec une phrase orpheline
+    if (morceaux.length && reste.replace(/<[^>]+>/g, "").length < max * 0.3)
+      morceaux[morceaux.length - 1] += " " + reste;
+    else morceaux.push(reste);
+  }
+  return morceaux.length ? morceaux : [html];
+}
+
+/* Une liste longue se coupe elle aussi — mais par ÉLÉMENTS, jamais au
+   milieu d'un. Sur un <ol>, les morceaux suivants reprennent la
+   numérotation avec `start` : le stagiaire doit lire « 5. » après « 4. »,
+   pas revoir « 1. » à chaque écran. C'était le vrai coupable des écrans
+   qui débordaient : la fiche g1d empile ses organes dans UNE liste de
+   532 mots, poussée jusqu'ici en une seule diapositive. */
+function couperListe(html, max = SIGNES_MAX) {
+  const m = html.match(/^<(ul|ol)([^>]*)>([\s\S]*)<\/\1>$/);
+  if (!m) return [html];
+  const [, bal, attrs, dedans] = m;
+  if (dedans.replace(/<[^>]+>/g, "").length <= max) return [html];
+
+  const items = dedans.match(/<li>[\s\S]*?<\/li>/g) || [];
+  if (items.length < 2) return [html];
+
+  const paquets = [];
+  let cour = [], n = 0;
+  for (const it of items) {
+    const taille = it.replace(/<[^>]+>/g, "").length;
+    if (cour.length && n + taille > max) { paquets.push(cour); cour = []; n = 0; }
+    cour.push(it); n += taille;
+  }
+  if (cour.length) {
+    // un dernier paquet d'un seul élément se recolle : un écran pour une puce
+    // isolée n'apprend rien et casse le rythme
+    if (cour.length === 1 && paquets.length) paquets[paquets.length - 1].push(cour[0]);
+    else paquets.push(cour);
+  }
+
+  let depart = 1;
+  return paquets.map((p) => {
+    const ouvrante = bal === "ol" && depart > 1
+      ? `<ol${attrs} start="${depart}">`
+      : `<${bal}${attrs}>`;
+    depart += p.length;
+    return ouvrante + p.join("") + `</${bal}>`;
+  });
+}
+
 function decouper(carte) {
   const slides = [];
   const corps = carte.corps || "";
@@ -88,11 +180,14 @@ function decouper(carte) {
   const sansImg = corps.replace(/<img[^>]*>/g, "");
   for (const p of sansImg.match(/<p>[\s\S]*?<\/p>/g) || []) {
     const html = p.replace(/^<p>/, "").replace(/<\/p>$/, "").trim();
-    if (html) slides.push({ type: "point", html, titre: carte.titre });
+    if (!html) continue;
+    for (const bout of couperSurPhrases(html))
+      slides.push({ type: "point", html: bout, titre: carte.titre });
   }
   // certaines fiches listent (les organes, les étapes) : la liste vaut un point
-  for (const l of sansImg.match(/<[ou]l>[\s\S]*?<\/[ou]l>/g) || [])
-    slides.push({ type: "point", html: l, titre: carte.titre });
+  for (const l of sansImg.match(/<[ou]l[^>]*>[\s\S]*?<\/[ou]l>/g) || [])
+    for (const bout of couperListe(l))
+      slides.push({ type: "point", html: bout, titre: carte.titre });
 
   // 4. les encadrés — la clé et le piège sont les temps forts de l'oral
   for (const b of carte.blocs || []) {

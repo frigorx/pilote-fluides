@@ -79,7 +79,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Face à l'<b>azote</b> et aux <b>fluides fluorés</b>, le corps ne donne <b>aucune alerte</b>. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez donc pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.",
+       "html": "Face à l'<b>azote</b> et aux <b>fluides fluorés</b>, le corps ne donne <b>aucune alerte</b>. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez donc pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
+       "type": "point",
+       "html": "L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.",
        "titre": "L'air qui manque — l'asphyxie"
       },
       {
@@ -241,7 +246,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.",
+       "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.",
        "titre": "Ce qui éclate — la pression"
       },
       {
@@ -256,7 +266,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<b>Comment ça arrive vraiment.</b> Sur un chantier, une bouteille de fluide oubliée dans un véhicule en plein été, vitres fermées, en est un exemple courant : l'habitacle chauffe fortement, la bouteille avec. Autre situation : un flexible de manifold ancien, jamais contrôlé, qui cède au moment où l'on ouvre une vanne. Autre situation encore : un tronçon de tuyauterie en toiture, isolé par deux vannes fermées pendant une réparation, laissé en plein soleil sans protection ni vérification avant de reprendre le travail dessus.",
+       "html": "<b>Comment ça arrive vraiment.</b> Sur un chantier, une bouteille de fluide oubliée dans un véhicule en plein été, vitres fermées, en est un exemple courant : l'habitacle chauffe fortement, la bouteille avec. Autre situation : un flexible de manifold ancien, jamais contrôlé, qui cède au moment où l'on ouvre une vanne.",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "Autre situation encore : un tronçon de tuyauterie en toiture, isolé par deux vannes fermées pendant une réparation, laissé en plein soleil sans protection ni vérification avant de reprendre le travail dessus.",
        "titre": "Ce qui éclate — la pression"
       },
       {
@@ -276,7 +291,17 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<ol><li>Ne jamais exposer une bouteille de fluide à la chaleur ou au soleil direct : la stocker et la transporter à l'abri, à la verticale, arrimée.</li><li>Respecter le taux de remplissage indiqué par le fabricant : ne jamais remplir une bouteille à ras.</li><li>Connaître le rôle des <b>organes de sécurité</b> du circuit. Une <b>soupape de sécurité</b> s'ouvre automatiquement pour laisser échapper un peu de fluide avant que la pression n'atteigne un niveau dangereux ; son seuil de déclenchement est fixé par le fabricant et indiqué sur l'organe ou dans sa documentation. Vérifier la présence et le bon état de ces organes, sans jamais les démonter ni les bloquer.</li><li>Pour toute mise en pression du circuit — recherche de fuite, épreuve de pression — utiliser <b>uniquement de l'azote</b>, jamais de l'oxygène ni de l'air comprimé, et toujours au travers d'un <b>mano-détendeur</b> (un appareil qui réduit et règle la pression très élevée de la bouteille) réglé selon la documentation constructeur. Sans détendeur, la pression de la bouteille d'azote suffit à elle seule à faire éclater un circuit frigorifique.</li><li>Avant de desserrer quoi que ce soit sur un circuit à l'arrêt, mesurer sa pression au manomètre — même si l'installation semble arrêtée depuis longtemps.</li></ol>",
+       "html": "<ol><li>Ne jamais exposer une bouteille de fluide à la chaleur ou au soleil direct : la stocker et la transporter à l'abri, à la verticale, arrimée.</li><li>Respecter le taux de remplissage indiqué par le fabricant : ne jamais remplir une bouteille à ras.</li></ol>",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<ol start=\"3\"><li>Connaître le rôle des <b>organes de sécurité</b> du circuit. Une <b>soupape de sécurité</b> s'ouvre automatiquement pour laisser échapper un peu de fluide avant que la pression n'atteigne un niveau dangereux ; son seuil de déclenchement est fixé par le fabricant et indiqué sur l'organe ou dans sa documentation. Vérifier la présence et le bon état de ces organes, sans jamais les démonter ni les bloquer.</li></ol>",
+       "titre": "Ce qui éclate — la pression"
+      },
+      {
+       "type": "point",
+       "html": "<ol start=\"4\"><li>Pour toute mise en pression du circuit — recherche de fuite, épreuve de pression — utiliser <b>uniquement de l'azote</b>, jamais de l'oxygène ni de l'air comprimé, et toujours au travers d'un <b>mano-détendeur</b> (un appareil qui réduit et règle la pression très élevée de la bouteille) réglé selon la documentation constructeur. Sans détendeur, la pression de la bouteille d'azote suffit à elle seule à faire éclater un circuit frigorifique.</li><li>Avant de desserrer quoi que ce soit sur un circuit à l'arrêt, mesurer sa pression au manomètre — même si l'installation semble arrêtée depuis longtemps.</li></ol>",
        "titre": "Ce qui éclate — la pression"
       },
       {
@@ -1032,7 +1057,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Une autre grandeur sert tous les jours au frigoriste : la <b>masse volumique</b> (on dit aussi <b>densité</b>). C'est la masse contenue dans un volume donné, en <b>kg/m³</b>. Pour un même fluide, la vapeur et le liquide n'ont pas du tout la même masse volumique : un litre de liquide pèse beaucoup plus lourd qu'un litre de vapeur. C'est pour ça qu'on charge un circuit en <b>phase liquide</b> plutôt qu'en vapeur : on fait entrer beaucoup plus de matière pour le même volume de bouteille, et le dimensionnement des tuyauteries en tient compte.",
+       "html": "Une autre grandeur sert tous les jours au frigoriste : la <b>masse volumique</b> (on dit aussi <b>densité</b>). C'est la masse contenue dans un volume donné, en <b>kg/m³</b>. Pour un même fluide, la vapeur et le liquide n'ont pas du tout la même masse volumique : un litre de liquide pèse beaucoup plus lourd qu'un litre de vapeur.",
+       "titre": "Unités, pression, thermodynamique utile"
+      },
+      {
+       "type": "point",
+       "html": "C'est pour ça qu'on charge un circuit en <b>phase liquide</b> plutôt qu'en vapeur : on fait entrer beaucoup plus de matière pour le même volume de bouteille, et le dimensionnement des tuyauteries en tient compte.",
        "titre": "Unités, pression, thermodynamique utile"
       },
       {
@@ -1272,7 +1302,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Deux mots du référentiel se posent ici, une fois pour toutes. La chaleur que l'évaporateur prend au local, rapportée à un kilo de fluide, s'appelle l'<b>effet de réfrigération</b> : c'est le froid produit, et c'est ce que l'on cherche à rendre le plus grand possible. Le compresseur, lui, ajoute au fluide sa propre chaleur en le comprimant : c'est la <b>chaleur de compression</b>. Le condenseur devra donc évacuer les deux — la chaleur prise au local <b>et</b> celle ajoutée par le compresseur. C'est pour cette raison qu'un condenseur évacue toujours plus de chaleur qu'un évaporateur n'en absorbe.",
+       "html": "Deux mots du référentiel se posent ici, une fois pour toutes. La chaleur que l'évaporateur prend au local, rapportée à un kilo de fluide, s'appelle l'<b>effet de réfrigération</b> : c'est le froid produit, et c'est ce que l'on cherche à rendre le plus grand possible.",
+       "titre": "Chaleur sensible et chaleur latente"
+      },
+      {
+       "type": "point",
+       "html": "Le compresseur, lui, ajoute au fluide sa propre chaleur en le comprimant : c'est la <b>chaleur de compression</b>. Le condenseur devra donc évacuer les deux — la chaleur prise au local <b>et</b> celle ajoutée par le compresseur. C'est pour cette raison qu'un condenseur évacue toujours plus de chaleur qu'un évaporateur n'en absorbe.",
        "titre": "Chaleur sensible et chaleur latente"
       },
       {
@@ -1454,7 +1489,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Le <b>cycle frigorifique</b> simple à compression se trace alors en <b>quatre transformations</b>, qui dessinent un rectangle. Le trait <b>montant de droite</b> : la <b>compression</b>. Le trait <b>horizontal du haut</b> : la <b>condensation</b>, à haute pression. Le trait <b>descendant de gauche</b> : la <b>détente</b>. Le trait <b>horizontal du bas</b> : l'<b>évaporation</b>, à basse pression. Compresseur à droite, condenseur en haut, détendeur à gauche, évaporateur en bas : <b>c'est la croix du frigoriste</b>. Le diagramme n'invente rien, il met le circuit à plat.",
+       "html": "Le <b>cycle frigorifique</b> simple à compression se trace alors en <b>quatre transformations</b>, qui dessinent un rectangle. Le trait <b>montant de droite</b> : la <b>compression</b>. Le trait <b>horizontal du haut</b> : la <b>condensation</b>, à haute pression. Le trait <b>descendant de gauche</b> : la <b>détente</b>.",
+       "titre": "Lire un log p-h et une table de saturation"
+      },
+      {
+       "type": "point",
+       "html": "Le trait <b>horizontal du bas</b> : l'<b>évaporation</b>, à basse pression. Compresseur à droite, condenseur en haut, détendeur à gauche, évaporateur en bas : <b>c'est la croix du frigoriste</b>. Le diagramme n'invente rien, il met le circuit à plat.",
        "titre": "Lire un log p-h et une table de saturation"
       },
       {
@@ -1867,7 +1907,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Derrière chaque code se cache une <b>molécule</b>, et trois atomes y décident de tout : le <b>chlore</b> détruit l'ozone — c'est lui qui a condamné les CFC puis les HCFC ; le <b>fluor</b> rend la molécule stable, donc durable dans l'atmosphère, donc à fort effet de serre ; l'<b>hydrogène</b> raccourcit la durée de vie. Les <b>HFC</b> ont éliminé le chlore (ozone sauvé), gardé le fluor (climat pénalisé). Les <b>HFO</b> ajoutent une double liaison fragile : la molécule casse en quelques jours, PRP ≈ 1. Les <b>naturels</b> — propane, isobutane, ammoniac, CO₂ — existent sans chimie de synthèse, chacun avec son revers : inflammabilité, toxicité ou pression.",
+       "html": "Derrière chaque code se cache une <b>molécule</b>, et trois atomes y décident de tout : le <b>chlore</b> détruit l'ozone — c'est lui qui a condamné les CFC puis les HCFC ; le <b>fluor</b> rend la molécule stable, donc durable dans l'atmosphère, donc à fort effet de serre ; l'<b>hydrogène</b> raccourcit la durée de vie.",
+       "titre": "Les familles de fluides et leurs codes"
+      },
+      {
+       "type": "point",
+       "html": "Les <b>HFC</b> ont éliminé le chlore (ozone sauvé), gardé le fluor (climat pénalisé). Les <b>HFO</b> ajoutent une double liaison fragile : la molécule casse en quelques jours, PRP ≈ 1. Les <b>naturels</b> — propane, isobutane, ammoniac, CO₂ — existent sans chimie de synthèse, chacun avec son revers : inflammabilité, toxicité ou pression.",
        "titre": "Les familles de fluides et leurs codes"
       },
       {
@@ -1882,7 +1927,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Cette distinction n'est pas un détail administratif : un fluide de substitution ne se comporte pas forcément comme l'ancien sur chaque composant du circuit. Le <b>détendeur</b> a été calé pour une courbe de pression donnée ; avec un autre fluide, il peut ne plus détendre au bon point. Les <b>joints</b> ont été choisis pour une huile donnée ; une huile incompatible les fait gonfler ou durcir. C'est pour cela que seule la documentation constructeur dit si un couple machine/fluide est un simple drop-in ou impose un retrofit — jamais l'habitude ou le « ça a l'air pareil ».",
+       "html": "Cette distinction n'est pas un détail administratif : un fluide de substitution ne se comporte pas forcément comme l'ancien sur chaque composant du circuit. Le <b>détendeur</b> a été calé pour une courbe de pression donnée ; avec un autre fluide, il peut ne plus détendre au bon point.",
+       "titre": "Les familles de fluides et leurs codes"
+      },
+      {
+       "type": "point",
+       "html": "Les <b>joints</b> ont été choisis pour une huile donnée ; une huile incompatible les fait gonfler ou durcir. C'est pour cela que seule la documentation constructeur dit si un couple machine/fluide est un simple drop-in ou impose un retrofit — jamais l'habitude ou le « ça a l'air pareil ».",
        "titre": "Les familles de fluides et leurs codes"
       },
       {
@@ -2065,7 +2115,42 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<ul><li><b>a) Les valves.</b> Le <b>robinet à boule</b> et le <b>robinet à soupape</b> isolent une portion de circuit ; leur presse-étoupe (la bague qui serre la tige de manœuvre) est un point de fuite classique. Le <b>robinet à diaphragme</b> n'a pas cette tige : une membrane souple assure l'étanchéité, donc moins d'usure. La <b>vanne électromagnétique</b>, dite <b>solénoïde</b>, s'ouvre et se ferme électriquement ; elle isole la réserve de fluide en cas d'arrêt. La <b>vanne 4 voies</b> inverse le sens du cycle (froid ↔ chaud) : beaucoup de raccords brasés et une pièce mobile interne, donc plusieurs points à surveiller.</li><li><b>b) Les contrôles de température et de pression.</b> Le <b>thermostat</b> pilote le compresseur selon la température. Le <b>pressostat de régulation</b> fait pareil selon la pression : il coupe et relance en fonctionnement normal — à ne pas confondre avec le <b>pressostat de sécurité</b>, qui protège contre une pression anormale (détail ci-dessous). Un pressostat de régulation qui coupe trop tôt peut signaler un manque de charge, donc une fuite.</li><li><b>c) Le voyant liquide et la pastille d'humidité.</b> Le <b>voyant liquide</b> est un hublot sur la ligne liquide. En <b>régime stable</b> (l'installation tourne depuis un moment), il doit rester net, sans bulle. Des <b>bulles qui persistent</b> montrent un manque de charge — souvent une fuite. La <b>pastille d'humidité</b>, intégrée au voyant, change de couleur selon l'eau présente dans le circuit ; la grille de lecture est propre à chaque fabricant, selon la fiche constructeur.</li><li><b>d) Les contrôles du dégivrage.</b> Ils déclenchent et arrêtent le dégivrage de l'évaporateur. Un givre anormal — pas symétrique, ou qui ne part jamais complètement — n'est pas toujours un problème de dégivrage : ça peut être un manque de fluide qui prive une partie de la batterie.</li><li><b>e) Les protecteurs du système.</b> Protection thermique du compresseur, <b>soupape de sécurité</b>, pressostat de sécurité (vu plus haut) : ils empêchent qu'une anomalie ne tourne à la casse. Une soupape de sécurité qui s'ouvre relâche elle-même du fluide dans l'atmosphère : une fuite volontaire, réglée pour l'urgence, à contrôler selon la fiche constructeur.</li><li><b>f) Les instruments de mesure.</b> Un <b>thermomètre</b> à pince ou à contact mesure la température réelle d'un tube. Comparé à la table de saturation (revoir G1 · code 1.03), l'écart donne la surchauffe ou le sous-refroidissement : c'est la méthode indirecte, sans ouvrir le circuit.</li><li><b>g) Les systèmes de contrôle de l'huile.</b> Un <b>voyant d'huile</b> sur le compresseur montre le niveau et l'aspect de l'huile. Un niveau qui baisse sans explication doit alerter : l'huile se mélange au fluide et s'échappe avec lui par une fuite — même logique que la trace d'huile sous un raccord (déjà vue en G4).</li><li><b>h) Les réservoirs.</b> La <b>bouteille de liquide</b> stocke le fluide condensé avant le détendeur. Plusieurs raccords (entrée, sortie, vanne de service) : autant de points à contrôler. L'isoler avant une intervention limite la quantité de fluide qui pourrait fuir.</li><li><b>i) Les séparateurs de liquide et d'huile.</b> Le <b>séparateur de liquide</b>, sur l'aspiration, retient le liquide résiduel pour éviter un <b>coup de liquide</b> au compresseur (il aspire du liquide au lieu de vapeur : casse immédiate, le liquide ne se comprime pas). Le <b>séparateur d'huile</b>, sur le refoulement, retient l'huile entraînée par le gaz chaud et la renvoie au compresseur.</li></ul>",
+       "html": "<ul><li><b>a) Les valves.</b> Le <b>robinet à boule</b> et le <b>robinet à soupape</b> isolent une portion de circuit ; leur presse-étoupe (la bague qui serre la tige de manœuvre) est un point de fuite classique. Le <b>robinet à diaphragme</b> n'a pas cette tige : une membrane souple assure l'étanchéité, donc moins d'usure. La <b>vanne électromagnétique</b>, dite <b>solénoïde</b>, s'ouvre et se ferme électriquement ; elle isole la réserve de fluide en cas d'arrêt. La <b>vanne 4 voies</b> inverse le sens du cycle (froid ↔ chaud) : beaucoup de raccords brasés et une pièce mobile interne, donc plusieurs points à surveiller.</li></ul>",
+       "titre": "Les organes qui trahissent une fuite"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li><b>b) Les contrôles de température et de pression.</b> Le <b>thermostat</b> pilote le compresseur selon la température. Le <b>pressostat de régulation</b> fait pareil selon la pression : il coupe et relance en fonctionnement normal — à ne pas confondre avec le <b>pressostat de sécurité</b>, qui protège contre une pression anormale (détail ci-dessous). Un pressostat de régulation qui coupe trop tôt peut signaler un manque de charge, donc une fuite.</li></ul>",
+       "titre": "Les organes qui trahissent une fuite"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li><b>c) Le voyant liquide et la pastille d'humidité.</b> Le <b>voyant liquide</b> est un hublot sur la ligne liquide. En <b>régime stable</b> (l'installation tourne depuis un moment), il doit rester net, sans bulle. Des <b>bulles qui persistent</b> montrent un manque de charge — souvent une fuite. La <b>pastille d'humidité</b>, intégrée au voyant, change de couleur selon l'eau présente dans le circuit ; la grille de lecture est propre à chaque fabricant, selon la fiche constructeur.</li></ul>",
+       "titre": "Les organes qui trahissent une fuite"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li><b>d) Les contrôles du dégivrage.</b> Ils déclenchent et arrêtent le dégivrage de l'évaporateur. Un givre anormal — pas symétrique, ou qui ne part jamais complètement — n'est pas toujours un problème de dégivrage : ça peut être un manque de fluide qui prive une partie de la batterie.</li></ul>",
+       "titre": "Les organes qui trahissent une fuite"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li><b>e) Les protecteurs du système.</b> Protection thermique du compresseur, <b>soupape de sécurité</b>, pressostat de sécurité (vu plus haut) : ils empêchent qu'une anomalie ne tourne à la casse. Une soupape de sécurité qui s'ouvre relâche elle-même du fluide dans l'atmosphère : une fuite volontaire, réglée pour l'urgence, à contrôler selon la fiche constructeur.</li></ul>",
+       "titre": "Les organes qui trahissent une fuite"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li><b>f) Les instruments de mesure.</b> Un <b>thermomètre</b> à pince ou à contact mesure la température réelle d'un tube. Comparé à la table de saturation (revoir G1 · code 1.03), l'écart donne la surchauffe ou le sous-refroidissement : c'est la méthode indirecte, sans ouvrir le circuit.</li></ul>",
+       "titre": "Les organes qui trahissent une fuite"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li><b>g) Les systèmes de contrôle de l'huile.</b> Un <b>voyant d'huile</b> sur le compresseur montre le niveau et l'aspect de l'huile. Un niveau qui baisse sans explication doit alerter : l'huile se mélange au fluide et s'échappe avec lui par une fuite — même logique que la trace d'huile sous un raccord (déjà vue en G4).</li></ul>",
+       "titre": "Les organes qui trahissent une fuite"
+      },
+      {
+       "type": "point",
+       "html": "<ul><li><b>h) Les réservoirs.</b> La <b>bouteille de liquide</b> stocke le fluide condensé avant le détendeur. Plusieurs raccords (entrée, sortie, vanne de service) : autant de points à contrôler. L'isoler avant une intervention limite la quantité de fluide qui pourrait fuir.</li><li><b>i) Les séparateurs de liquide et d'huile.</b> Le <b>séparateur de liquide</b>, sur l'aspiration, retient le liquide résiduel pour éviter un <b>coup de liquide</b> au compresseur (il aspire du liquide au lieu de vapeur : casse immédiate, le liquide ne se comprime pas). Le <b>séparateur d'huile</b>, sur le refoulement, retient l'huile entraînée par le gaz chaud et la renvoie au compresseur.</li></ul>",
        "titre": "Les organes qui trahissent une fuite"
       },
       {
@@ -2598,7 +2683,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<b>Comment ça arrive vraiment.</b> Un technicien pressé ouvre une armoire électrique pour un dépannage rapide. Le disjoncteur qui semble commander cette armoire est coupé, alors il touche directement un bornier — la barrette où arrivent les fils. Mais personne n'a vérifié que ce disjoncteur coupait bien cette armoire précise : un autre circuit, resté sous tension, y arrive aussi. Autre situation fréquente : un condensateur de moteur touché juste après la coupure du courant, alors qu'il est encore chargé. Autre situation encore : un outil métallique approché trop près de bornes sous tension dans une armoire électrique, sans contact direct, qui déclenche un arc électrique.",
+       "html": "<b>Comment ça arrive vraiment.</b> Un technicien pressé ouvre une armoire électrique pour un dépannage rapide. Le disjoncteur qui semble commander cette armoire est coupé, alors il touche directement un bornier — la barrette où arrivent les fils. Mais personne n'a vérifié que ce disjoncteur coupait bien cette armoire précise : un autre circuit, resté sous tension, y arrive aussi.",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "Autre situation fréquente : un condensateur de moteur touché juste après la coupure du courant, alors qu'il est encore chargé. Autre situation encore : un outil métallique approché trop près de bornes sous tension dans une armoire électrique, sans contact direct, qui déclenche un arc électrique.",
        "titre": "Consigner avant de toucher — le risque électrique"
       },
       {
@@ -2613,7 +2703,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<ol><li><b>Séparer</b> : couper l'alimentation électrique de façon visible et certaine.</li><li><b>Condamner</b> : verrouiller l'organe de coupure en position ouverte, pour qu'il ne puisse pas être refermé par quelqu'un d'autre pendant l'intervention.</li><li><b>Identifier</b> : vérifier que l'on se trouve bien sur le circuit ou l'équipement que l'on vient de séparer, et pas sur un autre.</li><li><b>Vérifier l'absence de tension</b> avec un <b>VAT</b> — un vérificateur d'absence de tension — dont le modèle et les réglages sont adaptés à l'installation, conformément à sa documentation constructeur.</li><li><b>Mettre à la terre et en court-circuit</b> quand cette étape s'impose, notamment lorsqu'une tension pourrait réapparaître par une autre source.</li></ol>",
+       "html": "<ol><li><b>Séparer</b> : couper l'alimentation électrique de façon visible et certaine.</li><li><b>Condamner</b> : verrouiller l'organe de coupure en position ouverte, pour qu'il ne puisse pas être refermé par quelqu'un d'autre pendant l'intervention.</li><li><b>Identifier</b> : vérifier que l'on se trouve bien sur le circuit ou l'équipement que l'on vient de séparer, et pas sur un autre.</li></ol>",
+       "titre": "Consigner avant de toucher — le risque électrique"
+      },
+      {
+       "type": "point",
+       "html": "<ol start=\"4\"><li><b>Vérifier l'absence de tension</b> avec un <b>VAT</b> — un vérificateur d'absence de tension — dont le modèle et les réglages sont adaptés à l'installation, conformément à sa documentation constructeur.</li><li><b>Mettre à la terre et en court-circuit</b> quand cette étape s'impose, notamment lorsqu'une tension pourrait réapparaître par une autre source.</li></ol>",
        "titre": "Consigner avant de toucher — le risque électrique"
       },
       {
@@ -3423,7 +3518,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<ol><li>Consigner électriquement l'installation avant tout branchement.</li><li>Vérifier que les deux vannes du manifold sont fermées.</li><li>Visser le flexible bleu sur le raccord à obus côté basse pression — côté évaporateur, en bas de la croix du frigoriste.</li><li>Visser le flexible rouge sur le raccord à obus côté haute pression — côté condenseur et compresseur, en haut à droite.</li><li>Purger l'air de chaque flexible par un bref coup d'ouverture-fermeture — jamais un rejet prolongé.</li><li>Ouvrir les vannes une par une, jamais les deux ensemble, en surveillant les aiguilles.</li><li>Lire : pression BP, pression HP, température à la pince.</li><li>Refermer les deux vannes du manifold avant toute déconnexion.</li><li>Débrancher en purgeant chaque flexible — minimum d'émission, jamais de rejet volontaire.</li></ol>",
+       "html": "<ol><li>Consigner électriquement l'installation avant tout branchement.</li><li>Vérifier que les deux vannes du manifold sont fermées.</li><li>Visser le flexible bleu sur le raccord à obus côté basse pression — côté évaporateur, en bas de la croix du frigoriste.</li><li>Visser le flexible rouge sur le raccord à obus côté haute pression — côté condenseur et compresseur, en haut à droite.</li><li>Purger l'air de chaque flexible par un bref coup d'ouverture-fermeture — jamais un rejet prolongé.</li></ol>",
+       "titre": "Le manifold — lire, brancher, ne pas polluer"
+      },
+      {
+       "type": "point",
+       "html": "<ol start=\"6\"><li>Ouvrir les vannes une par une, jamais les deux ensemble, en surveillant les aiguilles.</li><li>Lire : pression BP, pression HP, température à la pince.</li><li>Refermer les deux vannes du manifold avant toute déconnexion.</li><li>Débrancher en purgeant chaque flexible — minimum d'émission, jamais de rejet volontaire.</li></ol>",
        "titre": "Le manifold — lire, brancher, ne pas polluer"
       },
       {
@@ -3578,7 +3678,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<ol><li>Consigner électriquement l'installation avant tout montage.</li><li>Vérifier le niveau d'huile de la pompe avant de la mettre en service.</li><li>Fermer les deux vannes du manifold.</li><li>Visser le vacuomètre sur le raccord prévu, du côté du circuit — jamais collé directement à la pompe : une lecture prise trop près de la pompe ne reflète pas le vide réel du circuit.</li><li>Brancher la pompe sur le flexible central du manifold.</li><li>Ouvrir les deux vannes du manifold pour tirer sur l'ensemble du circuit.</li><li>Mettre la pompe en marche.</li><li>Observer l'aiguille du vacuomètre descendre.</li><li>Une fois le vide stabilisé — valeur cible selon la fiche constructeur — fermer d'abord la vanne côté circuit, puis seulement ensuite arrêter la pompe.</li><li>Surveiller si le vide remonte, selon la pratique habituelle : une remontée signale une fuite ou de l'humidité résiduelle.</li></ol>",
+       "html": "<ol><li>Consigner électriquement l'installation avant tout montage.</li><li>Vérifier le niveau d'huile de la pompe avant de la mettre en service.</li><li>Fermer les deux vannes du manifold.</li><li>Visser le vacuomètre sur le raccord prévu, du côté du circuit — jamais collé directement à la pompe : une lecture prise trop près de la pompe ne reflète pas le vide réel du circuit.</li><li>Brancher la pompe sur le flexible central du manifold.</li></ol>",
+       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
+      },
+      {
+       "type": "point",
+       "html": "<ol start=\"6\"><li>Ouvrir les deux vannes du manifold pour tirer sur l'ensemble du circuit.</li><li>Mettre la pompe en marche.</li><li>Observer l'aiguille du vacuomètre descendre.</li><li>Une fois le vide stabilisé — valeur cible selon la fiche constructeur — fermer d'abord la vanne côté circuit, puis seulement ensuite arrêter la pompe.</li><li>Surveiller si le vide remonte, selon la pratique habituelle : une remontée signale une fuite ou de l'humidité résiduelle.</li></ol>",
        "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
       },
       {
@@ -4106,7 +4211,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "L'<b>huile</b> suit le fluide, et elle en dépend. Les anciens fluides chlorés travaillaient avec de l'huile <b>minérale</b> ; les HFC et les HFO demandent une huile de synthèse, le plus souvent <b>polyolester (POE)</b>. Les deux ne se mélangent pas : sur un changement de fluide, l'huile se change aussi — c'est ce qui distingue un <b>retrofit</b> d'un simple drop-in. La POE <b>absorbe l'humidité de l'air</b> très vite : bidon refermé aussitôt, circuit jamais laissé ouvert. Le type exact d'huile se lit sur la <b>plaque ou la doc constructeur</b>, jamais au jugé.",
+       "html": "L'<b>huile</b> suit le fluide, et elle en dépend. Les anciens fluides chlorés travaillaient avec de l'huile <b>minérale</b> ; les HFC et les HFO demandent une huile de synthèse, le plus souvent <b>polyolester (POE)</b>. Les deux ne se mélangent pas : sur un changement de fluide, l'huile se change aussi — c'est ce qui distingue un <b>retrofit</b> d'un simple drop-in.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "point",
+       "html": "La POE <b>absorbe l'humidité de l'air</b> très vite : bidon refermé aussitôt, circuit jamais laissé ouvert. Le type exact d'huile se lit sur la <b>plaque ou la doc constructeur</b>, jamais au jugé.",
        "titre": "Peser, charger, stocker, tracer"
       },
       {
@@ -4121,12 +4231,22 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Avant de charger, on regarde aussi dans quelle <b>condition</b> se trouve le fluide, en plus de savoir s'il est liquide ou gazeux. À une pression donnée, le fluide peut être <b>saturé</b> : le liquide et la vapeur sont présents ensemble, à la température de changement d'état. Il peut être <b>sous-refroidi</b> : c'est un liquide plus froid que sa température de saturation, donc sans aucune vapeur mélangée. Il peut être <b>surchauffé</b> : c'est une vapeur plus chaude que sa température de saturation, donc sans aucune goutte de liquide. Cette condition guide la méthode de remplissage : on ne prélève pas de la même façon un liquide sous-refroidi, pris en bas de la bouteille, et une vapeur surchauffée, prise en haut.",
+       "html": "Avant de charger, on regarde aussi dans quelle <b>condition</b> se trouve le fluide, en plus de savoir s'il est liquide ou gazeux. À une pression donnée, le fluide peut être <b>saturé</b> : le liquide et la vapeur sont présents ensemble, à la température de changement d'état.",
        "titre": "Peser, charger, stocker, tracer"
       },
       {
        "type": "point",
-       "html": "Un fluide récupéré n'est pas forcément perdu : il a trois devenirs possibles. La <b>réutilisation</b> (ou réemploi) : le fluide récupéré est rechargé tel quel, sans retraitement, dans la machine d'où il vient, chez le même détenteur (celui qui possède ou utilise l'installation). Le <b>recyclage</b> : le fluide subit un nettoyage de base, comme une filtration et un séchage. La <b>régénération</b> : un retraitement complet, réalisé en filière spécialisée, qui redonne au fluide les caractéristiques du fluide neuf. Un fluide régénéré <b>s'achète</b> : on ne le régénère jamais soi-même à l'atelier.",
+       "html": "Il peut être <b>sous-refroidi</b> : c'est un liquide plus froid que sa température de saturation, donc sans aucune vapeur mélangée. Il peut être <b>surchauffé</b> : c'est une vapeur plus chaude que sa température de saturation, donc sans aucune goutte de liquide. Cette condition guide la méthode de remplissage : on ne prélève pas de la même façon un liquide sous-refroidi, pris en bas de la bouteille, et une vapeur surchauffée, prise en haut.",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "point",
+       "html": "Un fluide récupéré n'est pas forcément perdu : il a trois devenirs possibles. La <b>réutilisation</b> (ou réemploi) : le fluide récupéré est rechargé tel quel, sans retraitement, dans la machine d'où il vient, chez le même détenteur (celui qui possède ou utilise l'installation).",
+       "titre": "Peser, charger, stocker, tracer"
+      },
+      {
+       "type": "point",
+       "html": "Le <b>recyclage</b> : le fluide subit un nettoyage de base, comme une filtration et un séchage. La <b>régénération</b> : un retraitement complet, réalisé en filière spécialisée, qui redonne au fluide les caractéristiques du fluide neuf. Un fluide régénéré <b>s'achète</b> : on ne le régénère jamais soi-même à l'atelier.",
        "titre": "Peser, charger, stocker, tracer"
       },
       {
@@ -4486,7 +4606,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<ol><li>Consigner électriquement l'installation à traiter.</li><li>Vérifier l'étiquette du cylindre de récupération : le fluide indiqué doit être exactement celui de l'installation.</li><li>Poser le cylindre sur la balance et noter la masse de départ, avant tout branchement.</li><li>Vannes du groupe fermées, brancher le flexible d'entrée sur le circuit et le flexible de sortie sur le cylindre.</li><li>Mettre le groupe sous tension et le régler selon la fiche du fabricant.</li><li>Ouvrir les vannes dans l'ordre indiqué par le fabricant ; surveiller la pression et la masse affichée.</li><li>En fin de transfert, purger les flexibles avant de débrancher — minimum d'émission.</li><li>Repeser le cylindre, noter la masse récupérée, consigner au registre.</li></ol>",
+       "html": "<ol><li>Consigner électriquement l'installation à traiter.</li><li>Vérifier l'étiquette du cylindre de récupération : le fluide indiqué doit être exactement celui de l'installation.</li><li>Poser le cylindre sur la balance et noter la masse de départ, avant tout branchement.</li><li>Vannes du groupe fermées, brancher le flexible d'entrée sur le circuit et le flexible de sortie sur le cylindre.</li><li>Mettre le groupe sous tension et le régler selon la fiche du fabricant.</li></ol>",
+       "titre": "La station de récupération — ce que c'est, comment on la branche"
+      },
+      {
+       "type": "point",
+       "html": "<ol start=\"6\"><li>Ouvrir les vannes dans l'ordre indiqué par le fabricant ; surveiller la pression et la masse affichée.</li><li>En fin de transfert, purger les flexibles avant de débrancher — minimum d'émission.</li><li>Repeser le cylindre, noter la masse récupérée, consigner au registre.</li></ol>",
        "titre": "La station de récupération — ce que c'est, comment on la branche"
       },
       {
@@ -4625,7 +4750,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<ol><li>Poser la bouteille sur la balance <b>avant</b> toute opération. Relever le poids. Le noter — pas de mémoire.</li><li>Avant d'ouvrir la moindre vanne, déterminer l'<b>état du fluide</b> attendu : liquide ou gazeux, selon l'opération et la documentation constructeur. Ce choix fixe le sens du remplissage.</li><li>Réaliser l'opération — récupération ou charge — en surveillant la balance pendant que ça se fait, pas seulement à la fin.</li><li>Fermer les vannes, laisser la pression se stabiliser, déconnecter proprement.</li><li>Peser à nouveau, <b>après</b>. Relever ce second poids.</li><li>Calculer l'écart entre les deux pesées. C'est la quantité réelle, pas une estimation.</li><li>Reporter aussitôt le résultat au registre : date, quantité, intervenant.</li></ol>",
+       "html": "<ol><li>Poser la bouteille sur la balance <b>avant</b> toute opération. Relever le poids. Le noter — pas de mémoire.</li><li>Avant d'ouvrir la moindre vanne, déterminer l'<b>état du fluide</b> attendu : liquide ou gazeux, selon l'opération et la documentation constructeur. Ce choix fixe le sens du remplissage.</li><li>Réaliser l'opération — récupération ou charge — en surveillant la balance pendant que ça se fait, pas seulement à la fin.</li></ol>",
+       "titre": "La balance et la pesée — avant, après, ce qu'on note"
+      },
+      {
+       "type": "point",
+       "html": "<ol start=\"4\"><li>Fermer les vannes, laisser la pression se stabiliser, déconnecter proprement.</li><li>Peser à nouveau, <b>après</b>. Relever ce second poids.</li><li>Calculer l'écart entre les deux pesées. C'est la quantité réelle, pas une estimation.</li><li>Reporter aussitôt le résultat au registre : date, quantité, intervenant.</li></ol>",
        "titre": "La balance et la pesée — avant, après, ce qu'on note"
       },
       {
@@ -4879,12 +5009,22 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Il existe aussi trois <b>architectures</b>, selon la manière dont le moteur électrique entraîne le compresseur. En <b>hermétique</b>, le moteur et le compresseur sont enfermés ensemble dans une coque soudée : aucun arbre ne sort à l'extérieur, donc aucune fuite possible à cet endroit, mais la coque ne s'ouvre pas et le compresseur n'est pas réparable. En <b>semi-hermétique</b>, la coque est boulonnée : on peut l'ouvrir pour intervenir à l'intérieur, en refaisant les joints au remontage. En <b>ouvert</b>, le moteur est séparé du compresseur et l'entraîne par un arbre qui traverse la coque de part en part ; cet arbre passe par une <b>garniture</b> (un joint tournant), qui est un point de fuite classique à surveiller sur ce type de machine.",
+       "html": "Il existe aussi trois <b>architectures</b>, selon la manière dont le moteur électrique entraîne le compresseur. En <b>hermétique</b>, le moteur et le compresseur sont enfermés ensemble dans une coque soudée : aucun arbre ne sort à l'extérieur, donc aucune fuite possible à cet endroit, mais la coque ne s'ouvre pas et le compresseur n'est pas réparable.",
        "titre": "Le compresseur"
       },
       {
        "type": "point",
-       "html": "Pour vérifier que le retour d'huile fonctionne bien, on contrôle le <b>niveau d'huile</b> au <b>voyant d'huile</b> : un petit hublot placé sur le carter du compresseur. On regarde ce voyant <b>machine en marche stabilisée</b> (après quelques minutes de fonctionnement, pas juste au démarrage) : le niveau doit rester visible dans la zone du voyant, sans descendre en dessous. La zone exacte à respecter est donnée par la <b>documentation constructeur</b>, à faire valider avant de conclure sur un manque ou un excès d'huile.",
+       "html": "En <b>semi-hermétique</b>, la coque est boulonnée : on peut l'ouvrir pour intervenir à l'intérieur, en refaisant les joints au remontage. En <b>ouvert</b>, le moteur est séparé du compresseur et l'entraîne par un arbre qui traverse la coque de part en part ; cet arbre passe par une <b>garniture</b> (un joint tournant), qui est un point de fuite classique à surveiller sur ce type de machine.",
+       "titre": "Le compresseur"
+      },
+      {
+       "type": "point",
+       "html": "Pour vérifier que le retour d'huile fonctionne bien, on contrôle le <b>niveau d'huile</b> au <b>voyant d'huile</b> : un petit hublot placé sur le carter du compresseur. On regarde ce voyant <b>machine en marche stabilisée</b> (après quelques minutes de fonctionnement, pas juste au démarrage) : le niveau doit rester visible dans la zone du voyant, sans descendre en dessous.",
+       "titre": "Le compresseur"
+      },
+      {
+       "type": "point",
+       "html": "La zone exacte à respecter est donnée par la <b>documentation constructeur</b>, à faire valider avant de conclure sur un manque ou un excès d'huile.",
        "titre": "Le compresseur"
       },
       {
@@ -5111,17 +5251,32 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Le compresseur ne se pose jamais directement sur son châssis ou sur le sol. On le fixe sur des <b>plots antivibratiles</b> (des « silent-blocs ») : des cales en caoutchouc qui absorbent les vibrations pendant qu'il tourne. Sans eux, la vibration se transmet à toute la tuyauterie qui y est raccordée. Une tuyauterie qui vibre en permanence, ou montée en contrainte (tordue pour rejoindre un piquage), finit tôt ou tard par se fissurer : c'est une cause classique de fuite, qu'on évite dès l'installation.",
+       "html": "Le compresseur ne se pose jamais directement sur son châssis ou sur le sol. On le fixe sur des <b>plots antivibratiles</b> (des « silent-blocs ») : des cales en caoutchouc qui absorbent les vibrations pendant qu'il tourne. Sans eux, la vibration se transmet à toute la tuyauterie qui y est raccordée.",
        "titre": "Compresseur — installer, régler, vérifier"
       },
       {
        "type": "point",
-       "html": "Le compresseur porte aussi des <b>vannes de service</b>, une côté aspiration et une côté refoulement. Elles ont plusieurs positions : <b>ouverte en arrière</b> pour le fonctionnement normal, une <b>position intermédiaire</b> qui permet de brancher un manomètre sans isoler le compresseur, et <b>fermée</b> pour le couper complètement du reste du circuit, par exemple avant une intervention. On manœuvre chaque vanne selon la documentation constructeur : le nombre de tours et le sens de manœuvre ne sont pas les mêmes d'un modèle à l'autre.",
+       "html": "Une tuyauterie qui vibre en permanence, ou montée en contrainte (tordue pour rejoindre un piquage), finit tôt ou tard par se fissurer : c'est une cause classique de fuite, qu'on évite dès l'installation.",
        "titre": "Compresseur — installer, régler, vérifier"
       },
       {
        "type": "point",
-       "html": "Au démarrage, on ne se contente pas de regarder le compresseur tourner : on <b>mesure</b>. On relève l'<b>intensité</b> absorbée par le moteur (le courant électrique qu'il consomme) et on la compare à la valeur inscrite sur la <b>plaque signalétique</b> du compresseur — jamais à un chiffre appris par cœur ou approximatif. Une intensité trop haute annonce un défaut (moteur qui force, réglage à revoir). On vérifie en même temps que les pressions se stabilisent dans les plages attendues, toujours selon la documentation constructeur.",
+       "html": "Le compresseur porte aussi des <b>vannes de service</b>, une côté aspiration et une côté refoulement. Elles ont plusieurs positions : <b>ouverte en arrière</b> pour le fonctionnement normal, une <b>position intermédiaire</b> qui permet de brancher un manomètre sans isoler le compresseur, et <b>fermée</b> pour le couper complètement du reste du circuit, par exemple avant une intervention.",
+       "titre": "Compresseur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "On manœuvre chaque vanne selon la documentation constructeur : le nombre de tours et le sens de manœuvre ne sont pas les mêmes d'un modèle à l'autre.",
+       "titre": "Compresseur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "Au démarrage, on ne se contente pas de regarder le compresseur tourner : on <b>mesure</b>. On relève l'<b>intensité</b> absorbée par le moteur (le courant électrique qu'il consomme) et on la compare à la valeur inscrite sur la <b>plaque signalétique</b> du compresseur — jamais à un chiffre appris par cœur ou approximatif.",
+       "titre": "Compresseur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "Une intensité trop haute annonce un défaut (moteur qui force, réglage à revoir). On vérifie en même temps que les pressions se stabilisent dans les plages attendues, toujours selon la documentation constructeur.",
        "titre": "Compresseur — installer, régler, vérifier"
       },
       {
@@ -5883,7 +6038,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Parfois, le tracé oblige la conduite d'aspiration à remonter. Par exemple, le compresseur est placé plus haut que l'évaporateur. Dans ce cas, la pente seule ne suffit plus : au ralenti, le gaz n'a pas toujours assez de vitesse pour porter l'huile vers le haut. On pose alors un <b>siphon</b> en pied de cette colonne montante. C'est un petit coude en U qui retient un peu d'huile le temps qu'elle s'accumule. Puis il la relance d'un coup vers le haut, dès que le gaz reprend de la vitesse.",
+       "html": "Parfois, le tracé oblige la conduite d'aspiration à remonter. Par exemple, le compresseur est placé plus haut que l'évaporateur. Dans ce cas, la pente seule ne suffit plus : au ralenti, le gaz n'a pas toujours assez de vitesse pour porter l'huile vers le haut.",
+       "titre": "L'évaporateur"
+      },
+      {
+       "type": "point",
+       "html": "On pose alors un <b>siphon</b> en pied de cette colonne montante. C'est un petit coude en U qui retient un peu d'huile le temps qu'elle s'accumule. Puis il la relance d'un coup vers le haut, dès que le gaz reprend de la vitesse.",
        "titre": "L'évaporateur"
       },
       {
@@ -6121,12 +6281,22 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Cet organe se monte <b>en sortie d'évaporateur</b>, sur le départ de la ligne d'aspiration. Sur le terrain, on l'appelle couramment un <b>KVP</b> — c'est une référence commerciale, pas le nom de la fonction. Son intérêt se comprend mieux sur un cas concret : plusieurs chambres à des températures différentes, un seul compresseur. Sans lui, toutes les chambres descendraient à la pression de la plus froide. Avec lui, chaque évaporateur garde la pression — donc la température — que son produit demande.",
+       "html": "Cet organe se monte <b>en sortie d'évaporateur</b>, sur le départ de la ligne d'aspiration. Sur le terrain, on l'appelle couramment un <b>KVP</b> — c'est une référence commerciale, pas le nom de la fonction. Son intérêt se comprend mieux sur un cas concret : plusieurs chambres à des températures différentes, un seul compresseur.",
        "titre": "Évaporateur — installer, régler, vérifier"
       },
       {
        "type": "point",
-       "html": "Un troisième régulateur existe, et il ne faut pas le confondre avec celui-ci : le <b>régulateur de pression de carter</b>, couramment appelé <b>KVL</b>. Il se monte sur la ligne d'aspiration, juste <b>avant le compresseur</b>. Il ne protège ni le produit ni l'évaporateur : il protège le <b>moteur du compresseur</b>, en limitant la pression d'aspiration. Le cas typique est le <b>redémarrage après un arrêt long</b> : la pression est alors remontée dans tout le circuit, et sans lui le compresseur devrait avaler d'un coup beaucoup trop de vapeur. Trois régulateurs, trois endroits, trois raisons — et aucun des trois ne coupe quoi que ce soit.",
+       "html": "Sans lui, toutes les chambres descendraient à la pression de la plus froide. Avec lui, chaque évaporateur garde la pression — donc la température — que son produit demande.",
+       "titre": "Évaporateur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "Un troisième régulateur existe, et il ne faut pas le confondre avec celui-ci : le <b>régulateur de pression de carter</b>, couramment appelé <b>KVL</b>. Il se monte sur la ligne d'aspiration, juste <b>avant le compresseur</b>. Il ne protège ni le produit ni l'évaporateur : il protège le <b>moteur du compresseur</b>, en limitant la pression d'aspiration.",
+       "titre": "Évaporateur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "Le cas typique est le <b>redémarrage après un arrêt long</b> : la pression est alors remontée dans tout le circuit, et sans lui le compresseur devrait avaler d'un coup beaucoup trop de vapeur. Trois régulateurs, trois endroits, trois raisons — et aucun des trois ne coupe quoi que ce soit.",
        "titre": "Évaporateur — installer, régler, vérifier"
       },
       {
@@ -6645,12 +6815,22 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "La <b>soupape de régulation de pression</b> ne coupe rien : elle <b>module en continu</b> pour maintenir une pression stable à un point du circuit. Le <b>limiteur de pression</b> est différent : c'est une sécurité. Mécanique, il est réglé par un ressort. Électronique, il utilise un capteur relié à un module. Dans les deux cas, il <b>coupe le circuit</b> — le plus souvent le compresseur — dès qu'un seuil de pression est franchi, en haute comme en basse pression. Une régulation qui module, une sécurité qui coupe : deux logiques, deux réglages.",
+       "html": "La <b>soupape de régulation de pression</b> ne coupe rien : elle <b>module en continu</b> pour maintenir une pression stable à un point du circuit. Le <b>limiteur de pression</b> est différent : c'est une sécurité. Mécanique, il est réglé par un ressort. Électronique, il utilise un capteur relié à un module.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {
        "type": "point",
-       "html": "Le <b>séparateur d'huile</b> se place juste après le compresseur (à droite), avant le condenseur (en haut). C'est là que passe en premier la vapeur chaude chargée d'huile. Il retient cette huile puis la renvoie au carter du compresseur, automatiquement, dès que le niveau monte. <b>Vérifier son fonctionnement</b>, c'est contrôler que ce retour se fait bien : une huile qui s'accumule plus loin dans le circuit réduit l'échange de chaleur, et finit par manquer au compresseur.",
+       "html": "Dans les deux cas, il <b>coupe le circuit</b> — le plus souvent le compresseur — dès qu'un seuil de pression est franchi, en haute comme en basse pression. Une régulation qui module, une sécurité qui coupe : deux logiques, deux réglages.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "Le <b>séparateur d'huile</b> se place juste après le compresseur (à droite), avant le condenseur (en haut). C'est là que passe en premier la vapeur chaude chargée d'huile. Il retient cette huile puis la renvoie au carter du compresseur, automatiquement, dès que le niveau monte.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "<b>Vérifier son fonctionnement</b>, c'est contrôler que ce retour se fait bien : une huile qui s'accumule plus loin dans le circuit réduit l'échange de chaleur, et finit par manquer au compresseur.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {
@@ -7160,7 +7340,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<ol><li>Vérifier que le raccord est <b>propre</b>, sans trace d'huile ni de graisse : l'azote sous pression au contact d'huile est un risque.</li><li>Monter le mano-détendeur sur le robinet de la bouteille. Vérifier que la <b>vis de réglage est desserrée</b> — aucune pression envoyée en sortie.</li><li>Ouvrir <b>lentement</b> le robinet de la bouteille. Lire la pression bouteille sur le premier cadran.</li><li>Raccorder le flexible de sortie au manifold, puis au circuit à éprouver.</li><li>Visser <b>progressivement</b> la vis de réglage. La pression de sortie monte, à lire sur le second cadran, jusqu'à la valeur donnée par la documentation du constructeur ou la norme applicable.</li><li>Une fois la pression atteinte, fermer le robinet de la bouteille. Observer : le cadran de sortie ne doit plus bouger.</li></ol>",
+       "html": "<ol><li>Vérifier que le raccord est <b>propre</b>, sans trace d'huile ni de graisse : l'azote sous pression au contact d'huile est un risque.</li><li>Monter le mano-détendeur sur le robinet de la bouteille. Vérifier que la <b>vis de réglage est desserrée</b> — aucune pression envoyée en sortie.</li><li>Ouvrir <b>lentement</b> le robinet de la bouteille. Lire la pression bouteille sur le premier cadran.</li><li>Raccorder le flexible de sortie au manifold, puis au circuit à éprouver.</li></ol>",
+       "titre": "La bouteille d'azote et son mano-détendeur"
+      },
+      {
+       "type": "point",
+       "html": "<ol start=\"5\"><li>Visser <b>progressivement</b> la vis de réglage. La pression de sortie monte, à lire sur le second cadran, jusqu'à la valeur donnée par la documentation du constructeur ou la norme applicable.</li><li>Une fois la pression atteinte, fermer le robinet de la bouteille. Observer : le cadran de sortie ne doit plus bouger.</li></ol>",
        "titre": "La bouteille d'azote et son mano-détendeur"
       },
       {
@@ -7382,12 +7567,22 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Chaque fluide de substitution a ses <b>avantages</b> et ses <b>inconvénients</b>, selon l'application et le <b>climat</b>. Le <b>CO₂</b> est performant en froid commercial, mais son efficacité baisse quand l'air extérieur est très chaud. Les <b>hydrocarbures</b> sont efficaces, mais leur inflammabilité limite la charge autorisée. L'<b>ammoniac</b> est réservé aux installations industrielles, à cause de sa toxicité. Il n'y a pas de meilleur fluide dans l'absolu : le choix se fait selon l'application, le climat du site, et la documentation constructeur, à faire valider avant tout choix.",
+       "html": "Chaque fluide de substitution a ses <b>avantages</b> et ses <b>inconvénients</b>, selon l'application et le <b>climat</b>. Le <b>CO₂</b> est performant en froid commercial, mais son efficacité baisse quand l'air extérieur est très chaud. Les <b>hydrocarbures</b> sont efficaces, mais leur inflammabilité limite la charge autorisée.",
        "titre": "Substitution et efficacité énergétique"
       },
       {
        "type": "point",
-       "html": "Une machine aux <b>hydrocarbures</b> n'est pas construite comme les autres. Tous les composants électriques en contact possible avec le gaz — relais, thermostats, ventilateurs — sont <b>antidéflagrants</b> ou <b>non étincelants</b> : ils sont conçus pour ne jamais produire d'étincelle qui pourrait enflammer le gaz. La charge de fluide est aussi limitée dès la conception. Enfin, l'implantation prévoit une <b>ventilation</b> adaptée : le propane est plus lourd que l'air, il s'accumule donc en bas, près du sol, en cas de fuite.",
+       "html": "L'<b>ammoniac</b> est réservé aux installations industrielles, à cause de sa toxicité. Il n'y a pas de meilleur fluide dans l'absolu : le choix se fait selon l'application, le climat du site, et la documentation constructeur, à faire valider avant tout choix.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "Une machine aux <b>hydrocarbures</b> n'est pas construite comme les autres. Tous les composants électriques en contact possible avec le gaz — relais, thermostats, ventilateurs — sont <b>antidéflagrants</b> ou <b>non étincelants</b> : ils sont conçus pour ne jamais produire d'étincelle qui pourrait enflammer le gaz.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "La charge de fluide est aussi limitée dès la conception. Enfin, l'implantation prévoit une <b>ventilation</b> adaptée : le propane est plus lourd que l'air, il s'accumule donc en bas, près du sol, en cas de fuite.",
        "titre": "Substitution et efficacité énergétique"
       },
       {
@@ -7595,7 +7790,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<b>CO₂ (R-744)</b> — classé <b>A1</b> : toxicité <b>faible</b>, non inflammable, <b>PRP = 1</b>. Cette classe n'annonce aucun de ses vrais dangers : la <b>pression</b>, très élevée, l'<b>atmosphère irrespirable</b> en local fermé (il est plus lourd que l'air, s'accumule en point bas, et agit sur la respiration — voir « CO₂ : deux dangers mortels »), et le risque de <b>neige carbonique</b> à la détente (brûlure par le froid, obstruction). En transcritique, le condenseur laisse la place à un <b>refroidisseur de gaz</b>. Les cylindres, à double vanne, ne se raccordent pas au matériel courant.",
+       "html": "<b>CO₂ (R-744)</b> — classé <b>A1</b> : toxicité <b>faible</b>, non inflammable, <b>PRP = 1</b>. Cette classe n'annonce aucun de ses vrais dangers : la <b>pression</b>, très élevée, l'<b>atmosphère irrespirable</b> en local fermé (il est plus lourd que l'air, s'accumule en point bas, et agit sur la respiration — voir « CO₂ : deux dangers mortels »), et le risque de <b>neige carbonique</b> à la détente (brûlure par le froid, obstruction).",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
+       "type": "point",
+       "html": "En transcritique, le condenseur laisse la place à un <b>refroidisseur de gaz</b>. Les cylindres, à double vanne, ne se raccordent pas au matériel courant.",
        "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
       },
       {
@@ -7809,22 +8009,42 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<b>Ce qui arrive.</b> Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz — une étincelle ne déclenche rien. Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. <b>Entre les deux</b>, le mélange s'enflamme, et il le fait d'un coup, dans tout le volume.",
+       "html": "<b>Ce qui arrive.</b> Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz — une étincelle ne déclenche rien.",
        "titre": "Explosif avant d'être perceptible — la LIE"
       },
       {
        "type": "point",
-       "html": "Ces deux bornes portent un nom. La <b>LIE</b> — limite inférieure d'explosivité — est la concentration en dessous de laquelle le mélange ne s'enflamme pas. La <b>LSE</b> — limite supérieure d'explosivité — est celle au-dessus de laquelle il ne s'enflamme plus non plus. L'intervalle entre les deux s'appelle le <b>domaine d'explosivité</b>. Chaque gaz a le sien : les valeurs sont propres au fluide et figurent sur sa <b>fiche de données de sécurité</b>. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale.",
+       "html": "Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. <b>Entre les deux</b>, le mélange s'enflamme, et il le fait d'un coup, dans tout le volume.",
        "titre": "Explosif avant d'être perceptible — la LIE"
       },
       {
        "type": "point",
-       "html": "<b>Ce qui rend ce danger particulier</b>, c'est qu'il n'y a pas de signal. Une atmosphère peut atteindre son domaine d'explosivité sans odeur, sans bruit, sans rien de visible. Le gaz domestique que l'on sent dans une cuisine contient un <b>odorisant ajouté volontairement</b> pour être détecté par le nez. Le <b>R-290 utilisé en froid est un propane de haute pureté : cet odorisant n'y est pas</b>. Le nez ne vous avertira pas. Et le seuil de perception d'une odeur, quand elle existe, n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger.",
+       "html": "Ces deux bornes portent un nom. La <b>LIE</b> — limite inférieure d'explosivité — est la concentration en dessous de laquelle le mélange ne s'enflamme pas. La <b>LSE</b> — limite supérieure d'explosivité — est celle au-dessus de laquelle il ne s'enflamme plus non plus.",
        "titre": "Explosif avant d'être perceptible — la LIE"
       },
       {
        "type": "point",
-       "html": "<b>L'appareil qui répond à cette question</b> s'appelle un <b>explosimètre</b>. Il ne mesure pas une quantité de gaz dans l'absolu : il affiche <b>un pourcentage de la LIE</b> du gaz recherché. Une valeur de 10 % LIE signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable. C'est une mesure de <b>marge restante</b>, et c'est ce qui la rend utilisable : l'alarme se déclenche bien avant que le mélange ne devienne explosif. Le seuil de réglage se fixe selon la procédure de l'entreprise et la documentation de l'appareil.",
+       "html": "L'intervalle entre les deux s'appelle le <b>domaine d'explosivité</b>. Chaque gaz a le sien : les valeurs sont propres au fluide et figurent sur sa <b>fiche de données de sécurité</b>. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce qui rend ce danger particulier</b>, c'est qu'il n'y a pas de signal. Une atmosphère peut atteindre son domaine d'explosivité sans odeur, sans bruit, sans rien de visible. Le gaz domestique que l'on sent dans une cuisine contient un <b>odorisant ajouté volontairement</b> pour être détecté par le nez.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "Le <b>R-290 utilisé en froid est un propane de haute pureté : cet odorisant n'y est pas</b>. Le nez ne vous avertira pas. Et le seuil de perception d'une odeur, quand elle existe, n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "<b>L'appareil qui répond à cette question</b> s'appelle un <b>explosimètre</b>. Il ne mesure pas une quantité de gaz dans l'absolu : il affiche <b>un pourcentage de la LIE</b> du gaz recherché. Une valeur de 10 % LIE signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "C'est une mesure de <b>marge restante</b>, et c'est ce qui la rend utilisable : l'alarme se déclenche bien avant que le mélange ne devienne explosif. Le seuil de réglage se fixe selon la procédure de l'entreprise et la documentation de l'appareil.",
        "titre": "Explosif avant d'être perceptible — la LIE"
       },
       {
@@ -7839,7 +8059,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<b>ATEX</b> — le mot vient de « <b>AT</b>mosphère <b>EX</b>plosive ». Lorsqu'un local peut contenir une atmosphère explosive, il fait l'objet d'un <b>zonage</b> : on délimite les zones où ce risque existe, et on n'y admet que du matériel conçu pour ne pas enflammer l'atmosphère — ni par une <b>étincelle</b>, ni par une <b>surface trop chaude</b>, car une surface chaude suffit à allumer un mélange sans la moindre flamme. Cela vaut aussi pour ce que le technicien apporte avec lui — outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir <b>reconnaître</b> qu'il entre dans une telle zone et respecter ce qui y est affiché.",
+       "html": "<b>ATEX</b> — le mot vient de « <b>AT</b>mosphère <b>EX</b>plosive ». Lorsqu'un local peut contenir une atmosphère explosive, il fait l'objet d'un <b>zonage</b> : on délimite les zones où ce risque existe, et on n'y admet que du matériel conçu pour ne pas enflammer l'atmosphère — ni par une <b>étincelle</b>, ni par une <b>surface trop chaude</b>, car une surface chaude suffit à allumer un mélange sans la moindre flamme.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "Cela vaut aussi pour ce que le technicien apporte avec lui — outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir <b>reconnaître</b> qu'il entre dans une telle zone et respecter ce qui y est affiché.",
        "titre": "Explosif avant d'être perceptible — la LIE"
       },
       {
@@ -8079,7 +8304,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Calculer la <b>charge maximale</b> admissible d'un fluide inflammable, ce n'est pas la deviner. Ce calcul dépend du <b>volume de la pièce</b> desservie et de la <b>limite pratique</b> du fluide, c'est-à-dire la quantité maximale tolérée dans l'air ambiant sans risque. Plus la pièce est petite, moins on a le droit de charge : un même compresseur au R-290 n'a pas la même charge autorisée dans un grand local et dans une pièce exiguë. La méthode et les valeurs à utiliser se trouvent dans la norme <b>NF EN 378</b> et dans la documentation du constructeur — on les <b>lit</b>, on ne les invente jamais, et le résultat du calcul se fait <b>valider</b> avant toute mise en service.",
+       "html": "Calculer la <b>charge maximale</b> admissible d'un fluide inflammable, ce n'est pas la deviner. Ce calcul dépend du <b>volume de la pièce</b> desservie et de la <b>limite pratique</b> du fluide, c'est-à-dire la quantité maximale tolérée dans l'air ambiant sans risque. Plus la pièce est petite, moins on a le droit de charge : un même compresseur au R-290 n'a pas la même charge autorisée dans un grand local et dans une pièce exiguë.",
+       "titre": "Hydrocarbures — le spécifique A1 et A2"
+      },
+      {
+       "type": "point",
+       "html": "La méthode et les valeurs à utiliser se trouvent dans la norme <b>NF EN 378</b> et dans la documentation du constructeur — on les <b>lit</b>, on ne les invente jamais, et le résultat du calcul se fait <b>valider</b> avant toute mise en service.",
        "titre": "Hydrocarbures — le spécifique A1 et A2"
       },
       {
@@ -8328,7 +8558,17 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<ol><li><b>Ouvrir, remplacer, refermer.</b> On dépose le composant en panne et on brase le nouveau. Toujours sous <b>balayage d'azote</b> : un débit léger et continu qui évite la calamine à l'intérieur du tube. Mano-détendeur sur la bouteille — jamais d'azote en direct.</li><li><b>Épreuve de pression.</b> Le circuit refermé, on le met sous pression d'<b>azote sec</b>, toujours au travers du mano-détendeur, pour contrôler la brasure neuve. Pression d'épreuve : selon la documentation constructeur et la norme applicable, jamais à l'estime.</li><li><b>Tirage au vide.</b> On relâche l'azote, puis on tire au vide : la pompe extrait l'air et l'<b>humidité</b> restants. Un vide qui remonte signale un problème. Valeur cible et durée : selon la documentation constructeur.</li><li><b>Charge.</b> On charge le circuit avec le volume de réfrigérant hydrocarbure (R-290, R-600a) indiqué sur la <b>plaque signalétique</b>, par pesée — jamais une quantité estimée. Raccord dédié aux hydrocarbures : jamais celui d'un circuit HFC, ni l'inverse.</li><li><b>Contrôle direct.</b> On confirme l'étanchéité avec un <b>détecteur adapté aux hydrocarbures</b> — un détecteur pour HFC classique ne convient pas.</li><li><b>Rapport.</b> On rédige le rapport d'intervention : composant changé, résultats de l'épreuve et du contrôle, quantité chargée. Sans rapport, l'intervention n'a pas de valeur.</li></ol>",
+       "html": "<ol><li><b>Ouvrir, remplacer, refermer.</b> On dépose le composant en panne et on brase le nouveau. Toujours sous <b>balayage d'azote</b> : un débit léger et continu qui évite la calamine à l'intérieur du tube. Mano-détendeur sur la bouteille — jamais d'azote en direct.</li></ol>",
+       "titre": "Intervenir sur un circuit hydrocarbure"
+      },
+      {
+       "type": "point",
+       "html": "<ol start=\"2\"><li><b>Épreuve de pression.</b> Le circuit refermé, on le met sous pression d'<b>azote sec</b>, toujours au travers du mano-détendeur, pour contrôler la brasure neuve. Pression d'épreuve : selon la documentation constructeur et la norme applicable, jamais à l'estime.</li><li><b>Tirage au vide.</b> On relâche l'azote, puis on tire au vide : la pompe extrait l'air et l'<b>humidité</b> restants. Un vide qui remonte signale un problème. Valeur cible et durée : selon la documentation constructeur.</li></ol>",
+       "titre": "Intervenir sur un circuit hydrocarbure"
+      },
+      {
+       "type": "point",
+       "html": "<ol start=\"4\"><li><b>Charge.</b> On charge le circuit avec le volume de réfrigérant hydrocarbure (R-290, R-600a) indiqué sur la <b>plaque signalétique</b>, par pesée — jamais une quantité estimée. Raccord dédié aux hydrocarbures : jamais celui d'un circuit HFC, ni l'inverse.</li><li><b>Contrôle direct.</b> On confirme l'étanchéité avec un <b>détecteur adapté aux hydrocarbures</b> — un détecteur pour HFC classique ne convient pas.</li><li><b>Rapport.</b> On rédige le rapport d'intervention : composant changé, résultats de l'épreuve et du contrôle, quantité chargée. Sans rapport, l'intervention n'a pas de valeur.</li></ol>",
        "titre": "Intervenir sur un circuit hydrocarbure"
       },
       {

@@ -39,11 +39,23 @@ const FICHIERS_SOURCES = [
   "packs/fluides/cartes.js",
   "packs/fluides/parcours.js",
   "packs/fluides/sons.js",
+  /* Le support de projection LUI-MÊME, pas seulement ses sources. Angle mort
+     trouvé le 31/07 : `projection.gen.js` est fabriqué par build/parcours.mjs
+     à partir de cartes.js et parcours.js. Quand c'est le GÉNÉRATEUR qui
+     change — un nouveau découpage des écrans, par exemple — la sortie change
+     sans qu'aucune source de cette liste ait bougé. Le hash restait donc
+     identique, l'URL aussi, et un formateur qui avait déjà ouvert la
+     projection continuait de projeter l'ancienne. Exactement le défaut que ce
+     fichier existe pour empêcher. */
+  "packs/fluides/projection.gen.js",
   "moteur/moteur.js",
   "moteur/sons.js",
   "moteur/lecture.js",
   "moteur/portillon.js",
+  "moteur/lisibilite.js",
+  "moteur/illustration.js",
   "moteur/charte-edu.css",
+  "moteur/impression.css",
 ];
 
 export function calculerVersion() {
