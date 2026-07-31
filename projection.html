@@ -145,7 +145,7 @@
 <!-- CODE D'ACCÈS EXIGÉ (25/07) : le support de salle est une page formateur.
      Le pack de projection ne se charge qu'après validation du code — rideau
      assumé, pas un coffre (voir l'en-tête de `moteur/portillon.js`). -->
-<script src="moteur/portillon.js?v=869f7a941c"></script>
+<script src="moteur/portillon.js?v=560025ac4a"></script>
 <script>
 function demarrerProjection(){
   "use strict";
@@ -234,6 +234,18 @@ function demarrerProjection(){
         h += "<div style='margin-top:22px'><a href='"+esc(s.video)+"' target='_blank' rel='noopener' style='font-size:22px'>🎬 Ouvrir la vidéo de la séquence</a></div>";
       return h;
     }
+    /* L'expérience interactive reliée à la fiche : une diapositive de
+       lancement — on projette l'expérience elle-même (nouvel onglet), le
+       texte de la fiche reste pour les diapositives suivantes. */
+    if(sl.type==="experience")
+      return "<h2 style='font-size:26px'>"+esc(sl.titre)+"</h2>"+
+             "<div class='enc' style='text-align:center;padding:40px 30px'>"+
+             "<a href='"+esc(sl.url)+"' target='_blank' rel='noopener' "+
+             "style='display:inline-block;padding:18px 42px;background:#1b3a63;color:#fff;"+
+             "font-size:30px;font-weight:700;text-decoration:none;border-radius:999px'>"+
+             esc(sl.lancer)+" ▸</a>"+
+             (sl.desc ? "<p style='font-size:21px;color:var(--mut);margin:26px 0 0'>"+esc(sl.desc)+"</p>" : "")+
+             "</div>";
     if(sl.type==="schema")
       return "<h2 style='font-size:26px'>"+esc(sl.titre)+"</h2><img src='"+esc((P.base_img||"")+sl.src.replace(/^packs\/fluides\/res\//,""))+"' alt='"+esc(sl.alt)+"'>";
     if(sl.type==="encadre")
@@ -344,7 +356,9 @@ function demarrerProjection(){
 
   renderSommaire();
 }
-Portillon.exiger("Support de projection", ["packs/fluides/projection.gen.js?v=869f7a941c"], demarrerProjection);
+Portillon.exiger("Support de projection", ["packs/fluides/projection.gen.js?v=560025ac4a"], demarrerProjection);
 </script>
+<!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
+<script src="moteur/lisibilite.js"></script>
 </body>
 </html>

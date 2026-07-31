@@ -18,7 +18,7 @@
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:"Segoe UI",Aptos,Calibri,system-ui,sans-serif}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Calibri,"Segoe UI",Aptos,system-ui,sans-serif}
 button,a,input{font:inherit}
 button{cursor:pointer}
 button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid rgba(255,107,53,.45);outline-offset:3px}
@@ -49,7 +49,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid rgba(
   display:grid;place-items:center;width:42px;height:42px;border-radius:50%;
   border:1px solid rgba(27,58,99,.3);
   background:linear-gradient(145deg,rgba(61,127,202,.18),rgba(255,107,53,.14));
-  font:italic 25px Georgia,serif;
+  font:italic 25px "Trebuchet MS",Calibri,sans-serif;
 }
 .brand span:last-child{display:grid}
 .brand strong{font-size:14px;letter-spacing:.04em}
@@ -65,7 +65,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid rgba(
   align-items:center;padding:54px 0 80px;
 }
 .eyebrow{margin:0 0 16px;color:var(--orange);font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
-.hero h1,.lesson-top h2,.final-message h2,.refs h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.045em}
+.hero h1,.lesson-top h2,.final-message h2,.refs h2{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;font-weight:500;letter-spacing:-.015em}
 .hero h1{max-width:800px;margin:0;font-size:clamp(50px,6.5vw,86px);line-height:.96}
 .hero h1 span,.final-message h2 span{color:var(--orange);font-style:italic}
 .hero-copy>p:not(.eyebrow){max-width:650px;margin:27px 0 0;color:var(--muted);font-size:18px;line-height:1.65}
@@ -164,7 +164,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid rgba(
 .speech-warning{margin:16px 0 0;color:var(--orange-dark);font-weight:700}
 
 .question-box{display:grid;place-items:center;min-height:310px;text-align:center}
-.question-box h3{max-width:720px;margin:0 0 22px;font:500 clamp(26px,4vw,40px)/1.08 Georgia,serif}
+.question-box h3{max-width:720px;margin:0 0 22px;font:500 clamp(26px,4vw,40px)/1.08 "Trebuchet MS",Calibri,sans-serif}
 .answer-grid{width:min(720px,100%);display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .answer-card,.quiz-option{
   border:1px solid var(--line);border-radius:16px;background:#fff;color:var(--ink);padding:16px;
@@ -193,7 +193,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid rgba(
 input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 .state-card{display:grid;align-content:center;text-align:center}
 .state-badge{display:inline-flex;justify-self:center;border-radius:999px;background:#e8f1f8;color:var(--blue);padding:6px 11px;font-size:12px;font-weight:800;text-transform:uppercase}
-.state-card h3{margin:14px 0 8px;font:500 31px Georgia,serif}
+.state-card h3{margin:14px 0 8px;font:500 31px "Trebuchet MS",Calibri,sans-serif}
 .state-card p{margin:0;color:var(--muted);line-height:1.5}
 .thermo-readout{margin:18px auto 0;width:115px;padding:12px;border-radius:15px;background:#f3f6f8}
 .thermo-readout b{display:block;color:var(--orange-dark);font-size:27px}
@@ -205,7 +205,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 .concept-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;overflow:hidden}
 .concept-card::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:var(--card,var(--blue))}
 .concept-card span{display:inline-flex;border-radius:999px;padding:5px 9px;background:#eef4fb;color:var(--card,var(--blue));font-size:11px;font-weight:800}
-.concept-card h3{margin:14px 0 8px;font:500 30px Georgia,serif}
+.concept-card h3{margin:14px 0 8px;font:500 30px "Trebuchet MS",Calibri,sans-serif}
 .concept-card p{color:var(--muted);line-height:1.55}
 .concept-card strong{color:var(--card,var(--blue))}
 .energy-row{display:flex;align-items:center;gap:10px;margin-top:18px}
@@ -218,7 +218,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
   min-height:245px;display:grid;align-content:start;
 }
 .boundary b{color:var(--orange-dark);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-.boundary h3{margin:10px 0;font:500 27px Georgia,serif}
+.boundary h3{margin:10px 0;font:500 27px "Trebuchet MS",Calibri,sans-serif}
 .boundary p{margin:0;color:var(--muted);line-height:1.5}
 .particle-box{height:86px;margin-top:16px;border-radius:14px;background:#edf5fa;position:relative;overflow:hidden}
 .particle-box i{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--blue)}
@@ -238,13 +238,13 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 .coil{width:150px;height:70px;margin:0 auto 18px;border:6px solid var(--blue);border-left-color:transparent;border-right-color:transparent;border-radius:50%;position:relative}
 .coil::after{content:"";position:absolute;inset:11px -7px;border:6px solid var(--blue);border-left-color:transparent;border-right-color:transparent;border-radius:50%}
 .machine-card.cond .coil,.machine-card.cond .coil::after{border-top-color:var(--orange);border-bottom-color:var(--orange)}
-.machine-card h3{margin:0 0 8px;font:500 29px Georgia,serif}
+.machine-card h3{margin:0 0 8px;font:500 29px "Trebuchet MS",Calibri,sans-serif}
 .machine-card p{margin:0;color:var(--muted);line-height:1.5}
 .heat-arrow{display:grid;place-items:center;text-align:center;color:var(--orange-dark);font-weight:800}
 .heat-arrow b{font-size:42px}.heat-arrow.reverse b{transform:rotate(180deg)}
 
 .pressure-lab{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
-.pressure-card h3{margin:0 0 8px;font:500 28px Georgia,serif}
+.pressure-card h3{margin:0 0 8px;font:500 28px "Trebuchet MS",Calibri,sans-serif}
 .pressure-card p{color:var(--muted);line-height:1.5}
 .mini-chart{position:relative;height:210px;border-left:3px solid var(--navy-700);border-bottom:3px solid var(--navy-700);margin:12px 14px 4px 35px}
 .mini-chart::before{content:"température";position:absolute;right:calc(100% + 8px);top:0;color:var(--muted);font-size:11px;writing-mode:vertical-rl;transform:rotate(180deg)}
@@ -265,8 +265,8 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .quiz-feedback{min-height:54px;margin:0;color:#40526a;font-weight:700;line-height:1.5}
 .quiz-result{text-align:center;padding:30px}
-.quiz-result b{display:block;font:500 78px Georgia,serif;color:var(--blue)}
-.quiz-result h3{margin:0;font:500 35px Georgia,serif}
+.quiz-result b{display:block;font:500 78px "Trebuchet MS",Calibri,sans-serif;color:var(--blue)}
+.quiz-result h3{margin:0;font:500 35px "Trebuchet MS",Calibri,sans-serif}
 .quiz-result p{max-width:640px;margin:14px auto 22px;color:var(--muted);line-height:1.55}
 .quiz-result .result-rule{display:inline-flex;margin:0 auto 20px;border-radius:999px;background:#eef5fa;padding:8px 13px;color:var(--navy-700);font-size:12px;font-weight:800}
 .interactive-zone.quiz-zone{min-height:330px;background:linear-gradient(145deg,#f8f6ef,#eef5fa)}
@@ -297,7 +297,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 .technical-graph label{display:flex;justify-content:space-between;gap:12px;margin-top:5px;color:var(--muted);font-weight:700}
 .technical-graph label b{color:var(--orange-dark)}
 .graph-explanation{display:grid;align-content:center;gap:13px}
-.graph-explanation h3{margin:0;font:500 30px Georgia,serif}.graph-explanation>p{margin:0;color:var(--muted);line-height:1.55}
+.graph-explanation h3{margin:0;font:500 30px "Trebuchet MS",Calibri,sans-serif}.graph-explanation>p{margin:0;color:var(--muted);line-height:1.55}
 .graph-type{justify-self:start;display:inline-flex;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:900;letter-spacing:.08em}
 .graph-type.sensible{background:#e6f1f9;color:var(--blue)}.graph-type.latent{background:#fff0e8;color:var(--orange-dark)}
 .graph-reading{display:grid;gap:7px}
@@ -314,7 +314,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 .formula-card{position:relative;border:1px solid var(--line);border-radius:20px;background:#fff;padding:22px;overflow:hidden}
 .formula-card::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:var(--formula-color,var(--blue))}
 .formula-card>span{display:inline-flex;border-radius:999px;background:#eef5fa;color:var(--formula-color,var(--blue));padding:5px 9px;font-size:11px;font-weight:900;letter-spacing:.08em}
-.formula-card h3{margin:16px 0 12px;font:500 clamp(27px,4vw,39px) Georgia,serif;color:var(--formula-color,var(--blue))}
+.formula-card h3{margin:16px 0 12px;font:500 clamp(27px,4vw,39px) "Trebuchet MS",Calibri,sans-serif;color:var(--formula-color,var(--blue))}
 .formula-card sub{font-size:.5em}.formula-card ul{padding-left:20px;color:var(--muted);line-height:1.65}.formula-card p{color:var(--muted);line-height:1.5}
 .latent-formula{--formula-color:var(--orange-dark)}
 .mass-lab{display:grid;grid-template-columns:.75fr 1.25fr;gap:18px;margin-top:16px;border:1px solid var(--line);border-radius:18px;background:#fff;padding:18px}
@@ -363,7 +363,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 .room-label{position:absolute;right:18px;top:72px;color:var(--muted);font-size:10px;font-weight:900;letter-spacing:.16em}
 .fridge-energy-flow{position:absolute;left:226px;right:16px;bottom:27px;color:var(--orange-dark);font-size:11px;font-weight:800;text-align:center}
 .fridge-explanation{display:grid;align-content:center;gap:13px;border:1px solid var(--line);border-radius:20px;background:#fff;padding:22px}
-.fridge-explanation h3{margin:0;font:500 30px Georgia,serif}.fridge-explanation>p{color:var(--muted);line-height:1.55}
+.fridge-explanation h3{margin:0;font:500 30px "Trebuchet MS",Calibri,sans-serif}.fridge-explanation>p{color:var(--muted);line-height:1.55}
 .fridge-truth{border-left:5px solid var(--orange);background:#fff5ef;border-radius:0 13px 13px 0;padding:14px}
 .fridge-truth b{display:block;color:var(--orange-dark);margin-bottom:6px}.fridge-truth span{color:#68402c;line-height:1.5}
 
@@ -375,7 +375,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 }
 .discovery-card:hover,.discovery-card.active{transform:translateY(-3px);border-color:var(--orange);box-shadow:0 12px 28px rgba(16,35,60,.1)}
 .discovery-card small{color:var(--orange-dark);font-size:11px;font-weight:800;letter-spacing:.12em}
-.discovery-card strong{font:500 23px Georgia,serif}
+.discovery-card strong{font:500 23px "Trebuchet MS",Calibri,sans-serif}
 .discovery-card>span:last-child{color:var(--muted);font-size:14px}
 .scene-art{position:relative;display:block;border-radius:15px;background:#edf4f8;overflow:hidden}
 .ice-art::before{
@@ -503,7 +503,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 .journey-flame{position:absolute;bottom:72px;width:68px;height:46px;border-radius:75% 25% 70% 30%;transform:rotate(45deg);background:linear-gradient(135deg,#ffd166,var(--orange))}
 .journey-panel,.cooling-panel{display:grid;align-content:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px}
 .journey-panel .state-badge,.cooling-panel .state-badge{justify-self:start}
-.journey-panel h3,.cooling-panel h3{margin:0;font:500 31px Georgia,serif}
+.journey-panel h3,.cooling-panel h3{margin:0;font:500 31px "Trebuchet MS",Calibri,sans-serif}
 .journey-panel>p,.cooling-panel>p{margin:0;color:var(--muted);line-height:1.5}
 .journey-panel label,.cooling-panel label{font-weight:700}.journey-panel label b,.cooling-panel label b{color:var(--orange-dark)}
 .journey-live-graph{border:2px solid rgba(27,58,99,.14);border-radius:18px;background:#fff;padding:14px 14px 10px;box-shadow:0 12px 28px rgba(16,35,60,.08)}
@@ -535,7 +535,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 .journey-live-graph p strong{color:var(--orange-dark)}
 .journey-phase-copy{display:grid;grid-template-columns:auto 1fr;align-items:start;gap:12px}
 .journey-phase-copy .state-badge{margin-top:2px}
-.journey-phase-copy h3{margin:0;font:500 25px Georgia,serif}
+.journey-phase-copy h3{margin:0;font:500 25px "Trebuchet MS",Calibri,sans-serif}
 .journey-phase-copy p{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.45}
 .observation-pair{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .observation-pair span{padding:10px;border-radius:12px;background:#f1f5f7;color:var(--muted);font-size:13px}
@@ -554,7 +554,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
   border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,#edf6fb,#fff);padding:20px;
 }
 .local-card{display:grid;align-content:center;gap:9px;min-height:275px;border:1px solid var(--line);border-radius:18px;background:#fff;padding:18px;text-align:center}
-.local-card small{color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.1em}.local-card h3{margin:0;font:500 27px Georgia,serif}
+.local-card small{color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.1em}.local-card h3{margin:0;font:500 27px "Trebuchet MS",Calibri,sans-serif}
 .local-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
 .local-temperature{position:relative;height:110px;width:25px;justify-self:center;border-radius:999px;background:#e1e7eb;overflow:visible}
 .local-temperature::after{content:"";position:absolute;left:-6px;bottom:-5px;width:37px;height:37px;border-radius:50%;background:var(--orange)}
@@ -587,7 +587,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 .evaporator-temperature b{display:block;color:var(--orange-dark);font-size:14px}
 .evaporator-vessel.nearly-vapor .evaporator-bubbles{opacity:.35}
 .evaporation-control{display:grid;align-content:center;gap:11px;border:1px solid var(--line);border-radius:20px;background:#fff;padding:22px}
-.evaporation-control h3{margin:0;font:500 30px Georgia,serif}.evaporation-control>p{margin:0;color:var(--muted);line-height:1.5}
+.evaporation-control h3{margin:0;font:500 30px "Trebuchet MS",Calibri,sans-serif}.evaporation-control>p{margin:0;color:var(--muted);line-height:1.5}
 .evaporation-control label{font-weight:800}.evaporation-control label b{color:var(--orange-dark)}
 .evaporation-graph{border:1px solid var(--line);border-radius:15px;background:#fbfcfd;padding:8px}
 .evaporation-graph svg{display:block;width:100%;height:auto}
@@ -628,12 +628,12 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
   min-height:250px;display:grid;align-content:center;gap:9px;border:1px solid var(--line);border-radius:18px;background:#fff;padding:18px;text-align:center;
 }
 .environment-card small,.exchange-card small{color:var(--orange-dark);font-size:11px;font-weight:800;letter-spacing:.12em}
-.environment-card strong{font:500 25px Georgia,serif}.environment-card span,.exchange-card p{color:var(--muted);line-height:1.5}
+.environment-card strong{font:500 25px "Trebuchet MS",Calibri,sans-serif}.environment-card span,.exchange-card p{color:var(--muted);line-height:1.5}
 .circuit-transfer{display:grid;place-items:center;align-content:center;color:var(--orange-dark)}
 .energy-token{border-radius:999px;background:var(--orange);color:#fff;padding:7px 9px;font-size:10px;font-weight:900}
 .circuit-transfer b{font-size:38px}
 .exchange-card{border-color:var(--orange);box-shadow:0 0 0 4px rgba(255,107,53,.12)}
-.exchange-card h3{margin:0;font:500 29px Georgia,serif}
+.exchange-card h3{margin:0;font:500 29px "Trebuchet MS",Calibri,sans-serif}
 .exchange-card p{margin:0}.exchange-card .coil{width:115px;height:54px}
 .cycle-link{display:grid;place-items:center;align-content:center;color:var(--navy-700);text-align:center}
 .cycle-link b{font-size:12px}.cycle-link span{font-size:10px;color:var(--muted)}
@@ -647,7 +647,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
 .foundation-card::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:var(--blue)}
 .foundation-card.subcool-card::before{background:var(--orange)}
 .foundation-card>small{color:var(--orange-dark);font-weight:800;letter-spacing:.1em}
-.foundation-card h3{margin:7px 0 16px;font:500 26px Georgia,serif}
+.foundation-card h3{margin:7px 0 16px;font:500 26px "Trebuchet MS",Calibri,sans-serif}
 .foundation-line{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:16px;color:var(--muted);font-size:13px}
 .foundation-line span{border-radius:999px;background:#edf3f7;padding:7px 10px}.foundation-line b{color:var(--orange)}
 .foundation-path{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:6px;margin:18px 0;padding:11px;border-radius:15px;background:#f2f6f8;text-align:center}
@@ -671,7 +671,7 @@ input[type="range"]{width:100%;accent-color:var(--orange);margin:12px 0}
   background:#fff;border:1px solid var(--line);box-shadow:0 14px 30px rgba(16,35,60,.08);
 }
 .next-brick small{color:var(--orange-dark);font-weight:800;letter-spacing:.12em}
-.next-brick strong{font:500 24px Georgia,serif}.next-brick span{color:var(--muted);line-height:1.5}
+.next-brick strong{font:500 24px "Trebuchet MS",Calibri,sans-serif}.next-brick span{color:var(--muted);line-height:1.5}
 .next-brick-link{text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s}
 .next-brick-link>b{color:var(--blue);font-size:13px}.next-brick-link:hover{transform:translateY(-2px);border-color:rgba(61,127,202,.45)}
 .refs{background:#fff;border-radius:24px;padding:28px 32px;margin-bottom:30px;box-shadow:0 20px 50px rgba(0,0,0,.12)}
@@ -716,10 +716,12 @@ footer button{border:0;background:transparent;color:var(--blue);font-weight:800}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .orb,.heat-rings i{animation:none}
   .start:hover,.nav:hover,.answer-card:hover,.quiz-option:hover{transform:none}
-  /* Les états pédagogiques restent visibles et manipulables ; seuls les
-     mouvements d’ambiance non essentiels sont neutralisés. */
+  /* Seuls le défilement doux et les effets de survol sont neutralisés.
+     JAMAIS les animations visibles (.orb, .heat-rings…) : sur une machine
+     aux effets d'animation Windows désactivés (MinAnimate=0), ce média est
+     actif EN PERMANENCE et les ferait disparaître pour tout le monde —
+     piège déjà payé sur la frise vivante et la nomenclature. */
 }
 @media print{
   .ambient,.topbar-actions,.voice-controls,.lesson-footer,.start{display:none}

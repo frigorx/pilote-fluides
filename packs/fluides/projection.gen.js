@@ -1231,6 +1231,13 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/chaleur-interactive/index.html",
+       "lancer": "🧊 Lancer la découverte : du glaçon au circuit frigorifique",
+       "desc": "12 étapes racontées : glaçon et casserole, quantité d'énergie, courbes de chauffe et de refroidissement, chaleurs sensible et latente, liquéfaction, réfrigérateur, circuit frigorifique, surchauffe/sous-refroidissement et défi final — environ 15 minutes.",
+       "titre": "Chaleur sensible et chaleur latente"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/chaleur-sensible-latente.svg",
        "alt": "La courbe de chauffe d'un fluide : la température monte, puis s'arrête pendant tout le changement d'état, puis repart. Le palier commence au point de bulle et finit au point de rosée.",
@@ -1404,6 +1411,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/pression-temperature-interactive/index.html",
+       "lancer": "🫧 Lancer la découverte : faire bouillir sans feu",
+       "desc": "12 étapes racontées : cloche à vide, relation pression–température, températures de saturation, évaporateur et condenseur, lecture manomètre–table, point de bulle, point de rosée, glissement des zéotropes et défi final — environ 15 minutes.",
+       "titre": "Lire un log p-h et une table de saturation"
       },
       {
        "type": "schema",
@@ -1631,6 +1645,13 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/froid-clim-academie/index.html",
+       "lancer": "🎛️ Lancer le simulateur : surchauffe et sous-refroidissement",
+       "desc": "Le cycle animé, puis quatre curseurs à manipuler (évaporation, condensation, surchauffe, sous-refroidissement) : les pressions réagissent et le risque s'affiche — avec un atelier panne et un quiz flash — environ 10 minutes.",
+       "titre": "Surchauffe et sous-refroidissement"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/surchauffe-utile-totale.svg",
        "alt": "Le fluide bout dans l'évaporateur ; après la disparition de la dernière goutte, la vapeur s'échauffe : c'est la surchauffe utile dans l'échangeur, puis la surchauffe totale jusqu'au compresseur.",
@@ -1823,6 +1844,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/nomenclature-interactive/index.html",
+       "lancer": "🧬 Lancer le cours interactif : décrypter un code de fluide",
+       "desc": "18 étapes racontées, une voix qui explique, et un atelier où vous assemblez vous-même la molécule R-22 (glisser-déposer) — environ 10 minutes.",
+       "titre": "Les familles de fluides et leurs codes"
       },
       {
        "type": "schema",
@@ -4561,6 +4589,13 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/mission-bouteilles/index.html",
+       "lancer": "🧪 Lancer Mission Bouteilles : identifier, peser, ne jamais surremplir",
+       "desc": "8 étapes racontées : calcul de pesée, phase liquide/vapeur, simulation de surremplissage et risque d'éclatement, bouteilles A2L/A3 — environ 10 minutes.",
+       "titre": "La balance et la pesée — avant, après, ce qu'on note"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/photos/balance.jpg",
        "alt": "Une balance électronique de charge avec une bouteille de fluide posée dessus.",
@@ -4801,6 +4836,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": true
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/circuit-organe-par-organe/index.html",
+       "lancer": "🔧 Lancer le module : le circuit, organe par organe",
+       "desc": "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.",
+       "titre": "Le compresseur"
       },
       {
        "type": "schema",
@@ -5308,6 +5350,13 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/circuit-organe-par-organe/index.html",
+       "lancer": "🔧 Lancer le module : le circuit, organe par organe",
+       "desc": "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.",
+       "titre": "Le condenseur"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/echangeur-air.svg",
        "alt": "Le condenseur à air : l air ambiant traverse la batterie poussé par le ventilateur et ressort réchauffé.",
@@ -5791,6 +5840,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": true
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/circuit-organe-par-organe/index.html",
+       "lancer": "🔧 Lancer le module : le circuit, organe par organe",
+       "desc": "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.",
+       "titre": "L'évaporateur"
       },
       {
        "type": "schema",
@@ -6338,6 +6394,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": true
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/circuit-organe-par-organe/index.html",
+       "lancer": "🔧 Lancer le module : le circuit, organe par organe",
+       "desc": "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.",
+       "titre": "Le détendeur et les organes annexes"
       },
       {
        "type": "schema",

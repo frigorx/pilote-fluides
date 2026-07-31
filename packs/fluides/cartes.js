@@ -163,7 +163,7 @@ const outil = (fichier, titre, h) =>
    qu'une carte (`data-go`, jamais `data-url`). Nouvel onglet, pour ne pas
    perdre la progression du stagiaire dans le pack. */
 const lienOutil = (url, titre, desc) =>
-  '<p style="margin:16px 0"><a href="' + url + '" target="_blank" rel="noopener" ' +
+  '<p class="lien-experience" style="margin:16px 0"><a href="' + url + '" target="_blank" rel="noopener" ' +
   'style="display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;' +
   'font-weight:700;text-decoration:none;border-radius:999px">' + titre + ' ▸</a>' +
   (desc
@@ -1857,6 +1857,11 @@ export const CARTES = [
     dc: "G1 · codes 1.02 · 5.05",
     minuteur_s: 360,
     corps:
+      lienOutil(
+        "packs/fluides/res/froid-clim-academie/index.html",
+        "🎛️ Lancer le simulateur : surchauffe et sous-refroidissement",
+        "Le cycle animé, puis quatre curseurs à manipuler (évaporation, condensation, surchauffe, sous-refroidissement) : les pressions réagissent et le risque s'affiche — avec un atelier panne et un quiz flash — environ 10 minutes."
+      ) +
       schema("surchauffe-utile-totale.svg", "Le fluide bout dans l'évaporateur ; après la disparition de la dernière goutte, la vapeur s'échauffe : c'est la surchauffe utile dans l'échangeur, puis la surchauffe totale jusqu'au compresseur.") +
       "<p>Voici les deux mots que vous entendrez le plus souvent sur un chantier. Et la première " +
       "chose à comprendre est la plus importante : <b>ce sont des différences, jamais des " +

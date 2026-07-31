@@ -29,25 +29,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>inerWeb Pilote — Habilitation fluides frigorigènes (démonstrateur)</title>
   <meta name="description" content="Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote.">
-  <link rel="stylesheet" href="moteur/charte-edu.css?v=869f7a941c">
+  <link rel="stylesheet" href="moteur/charte-edu.css?v=560025ac4a">
 </head>
 <body>
   <div id="app"></div>
   <!-- Côté ÉLÈVE : BUILD ÉLÈVE, sans la couche pilote.
        Régénéré par `node build/build.mjs` après chaque modification du pack. -->
-  <script src="packs/fluides/pack.eleve.js?v=869f7a941c"></script>
+  <script src="packs/fluides/pack.eleve.js?v=560025ac4a"></script>
   <!-- Config optionnelle (scoring serveur, phase 2) -->
-  <script src="config.js?v=869f7a941c"></script>
+  <script src="config.js?v=560025ac4a"></script>
   <!-- Habillage sonore des planches animées : la table du pack, puis le
        mécanisme. Coupé par défaut, aucun son chargé tant qu'on ne le joue
        pas. Les deux fichiers sont facultatifs : sans eux, le moteur
        fonctionne à l'identique, en silence. -->
-  <script src="packs/fluides/sons.js?v=869f7a941c"></script>
-  <script src="moteur/sons.js?v=869f7a941c"></script>
+  <script src="packs/fluides/sons.js?v=560025ac4a"></script>
+  <script src="moteur/sons.js?v=560025ac4a"></script>
   <!-- Lecture à voix haute d'une fiche, à la demande : aide FLE/DYS.
        Facultatif, ne casse rien si absent. -->
-  <script src="moteur/lecture.js?v=869f7a941c"></script>
+  <script src="moteur/lecture.js?v=560025ac4a"></script>
   <!-- Moteur générique -->
-  <script src="moteur/moteur.js?v=869f7a941c"></script>
+  <script src="moteur/moteur.js?v=560025ac4a"></script>
+<!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
+<script src="moteur/lisibilite.js"></script>
 </body>
 </html>

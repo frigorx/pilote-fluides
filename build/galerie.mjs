@@ -420,6 +420,7 @@ frigoriste et invente des organes qui n'existent pas.</p>
   filtrer();
 })();
 </script>
+<script src="moteur/lisibilite.js?v=${VERSION}"></script>
 </body></html>`;
 
 writeFileSync(resolve(RACINE, "galerie.html"), h, "utf8");

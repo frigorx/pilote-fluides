@@ -29,6 +29,7 @@
    questions sans code figurent avec leur statut, jamais par omission :
    un tableau de traçabilité qui masque ses trous ne trace rien.
    ===================================================================== */
+import { calculerVersion } from "./lib-version.mjs";
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -527,6 +528,7 @@ ici pour être décidées, non pour disparaître.</p>`;
   filtrer();
 })();
 </script>
+<script src="moteur/lisibilite.js?v=${calculerVersion()}"></script>
 </body></html>`;
 
   writeFileSync(resolve(RACINE, "matrice.html"), h, "utf8");

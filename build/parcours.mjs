@@ -63,6 +63,19 @@ function decouper(carte) {
     })),
   });
 
+  // 1bis. les EXPÉRIENCES INTERACTIVES reliées à la fiche (helper lienOutil
+  // de cartes.js, classe .lien-experience) — le support de cours de
+  // F. Henninot : une diapositive de lancement, tout de suite après le titre,
+  // pour animer la séquence avec l'expérience plutôt qu'avec du texte.
+  // Sans cette extraction, ces <p class="…"> ne matchaient aucun motif de
+  // découpage : les expériences étaient silencieusement absentes du déroulé.
+  for (const p of corps.match(/<p class="lien-experience"[\s\S]*?<\/p>/g) || []) {
+    const url = (p.match(/href="([^"]+)"/) || [])[1] || "";
+    const lancer = (p.match(/>([^<]+) ▸<\/a>/) || [])[1] || "Expérience interactive";
+    const desc = (p.match(/<span[^>]*>([\s\S]*?)<\/span>/) || [])[1] || "";
+    if (url) slides.push({ type: "experience", url, lancer, desc, titre: carte.titre });
+  }
+
   // 2. le schéma, plein écran
   const img = corps.match(/<img[^>]*>/);
   if (img) {
@@ -373,6 +386,7 @@ function ecrirePlanningHtml(b) {
   H.push('<p class="chapo" style="margin-top:30px">Le détail de chaque séquence de salle — diapositives, ' +
     "questions posées, notes d'animation — se projette depuis le support de salle. Les compétences " +
     "visées et leur libellé officiel figurent sur chaque fiche du stagiaire.</p>");
+  H.push('<script src="moteur/lisibilite.js"><' + "/script>");
   H.push("</div></body></html>");
   writeFileSync(resolve(RACINE, "planning.html"), H.join("\n"), "utf8");
 }

@@ -52,7 +52,45 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
-## 2. État au 29/07/2026
+## 2. État au 31/07/2026
+
+**Relecture typographique + lisibilité DYS (31/07)** — demande de F. Henninot : « harmonisation
+des polices, police variable pour les élèves DYS et les formateurs pour zoomer facilement, tout
+dans le même style sauf les vidéos, et mes animations de support de cours au bon endroit ».
+- **Bouton « Aa » partout** (`moteur/lisibilite.js`, autonome) : taille du texte 70 → 160 %
+  (propriété CSS `zoom`, aucune conversion) + bascule « Police adaptée (DYS) » vers **Lexend**,
+  police VARIABLE embarquée (`moteur/polices/Lexend-variable.woff2`, 39 Ko, licence OFL dans le
+  même dossier — jamais téléchargée tant qu'on ne l'active pas). Réglages en localStorage
+  (`pilote_lisibilite`), partagés entre toutes les pages. Branché sur les 7 pages écrites à la
+  main, les 4 gabarits de build (galerie, matrice, planning, relecture) et les 8 expériences.
+- **Harmonisation des polices** : les expériences écrivaient leurs titres en Georgia serif
+  (héritage de leur fichier d'origine), une en OpenDyslexic/Arial — tout est repris sur la
+  charte : **Trebuchet MS aux titres, Calibri au corps**, tracking négatif adouci (-.05em →
+  -.015em, pensé pour une serif). Le vrai piège `prefers-reduced-motion` restant
+  (chaleur-interactive : il coupait `.orb` et `.heat-rings`) est corrigé — les autres
+  occurrences n'étaient que des commentaires documentant la règle.
+- **`froid-clim-academie` intégrée** — déposée par F. Henninot sur le Bureau (30/07) : cycle
+  frigorifique animé sur canvas (Croix du Frigoriste respectée), simulateur
+  surchauffe/sous-refroidissement à 4 curseurs, atelier panne, quiz. Copiée dans
+  `packs/fluides/res/froid-clim-academie/`, accents réparés (le fichier d'origine n'en avait
+  aucun), charte appliquée, bouton « Aa » ajouté, reliée à **`g1e`** (surchauffe et
+  sous-refroidissement) par `lienOutil`, recensée automatiquement par la galerie.
+- **Les expériences entrent enfin dans le DÉROULÉ DE COURS** : `lienOutil()` porte désormais
+  `class="lien-experience"`, et `build/parcours.mjs` extrait ces liens en diapositives
+  **`experience`** (gros bouton de lancement, nouvel onglet), placées juste après la diapositive
+  de titre de la fiche. Sans cette extraction, les `<p class="…">` ne matchaient aucun motif du
+  découpage : les expériences étaient **silencieusement absentes de la projection**. Résultat :
+  9 diapositives de lancement sur 6 expériences (le circuit sert 4 fiches d'organes), 435
+  diapositives au total. `cl1` (classes de sécurité) est en régime `avant` : son expérience ne
+  se projette pas, c'est le comportement voulu. La frise vivante reste hors projection (elle est
+  la porte d'entrée de l'application élève).
+- **Vérifié dans le navigateur** (serveur local) : bouton Aa sur frise, galerie, académie,
+  chaleur — zoom 120 % appliqué et mémorisé de page en page, Lexend réellement chargée en mode
+  DYS, Trebuchet/Calibri par défaut, zéro erreur console, zéro résidu sans accent.
+- ⚠️ **Incident évité de justesse, leçon** : une réécriture Python de `cartes.js` a tronqué le
+  fichier (crash d'encodage APRÈS l'ouverture en écriture) — restauré de git en 30 s parce que
+  le fichier était committé. Ne jamais réécrire un fichier entier quand un remplacement ciblé
+  (outil Edit) suffit.
 
 **Le cours interactif de nomenclature (29/07)** — F. Henninot a fait produire, hors de ce dépôt,
 un module autonome : « Décrypter le code d'un fluide », 18 étapes narrées (voix de synthèse) qui
@@ -195,10 +233,11 @@ F. Henninot, sans hésitation la deuxième fois qu'on lui a posé la question : 
   un contrôle de liens classique) : zéro cassé. Le coffre chiffré : 38 documents, cohérent
   avec les compteurs.
 
-**81 cartes** · **266 questions** · **42 planches SVG** (dont **34 animées** : 12 récits,
-22 boucles — 320 animations, voir `galerie.html`) · 4 illustrations · **3 outils embarqués**
-· **3 expériences interactives complètes** (frise vivante, décryptage de nomenclature,
-Mission Bouteilles)
+**81 cartes** · **266 questions** · **43 planches SVG** (voir `galerie.html`)
+· 4 illustrations · **3 outils embarqués**
+· **8 expériences interactives complètes** (frise vivante, décryptage de nomenclature,
+Mission Bouteilles, classes de sécurité, du glaçon au circuit, pression/température,
+le circuit organe par organe, Académie froid-clim — les 5 dernières ajoutées les 29-31/07)
 > ⚠️ **Les 14 planches du 27/07 soir** (8 nouvelles : tirage au vide, pesée, manifold, ordre des
 > vannes, pression absolue/relative, boucle du détendeur, givre/dégivrage, charge limite ;
 > 6 animations d'existantes) ont été produites par agents + vérification adversariale, contrôle

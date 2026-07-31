@@ -31,7 +31,7 @@ body{
     radial-gradient(circle at 94% 2%,rgba(61,127,202,.12),transparent 28rem),
     radial-gradient(circle at 4% 32%,rgba(255,107,53,.08),transparent 24rem),
     var(--cream);
-  font-family:Arial,"Segoe UI",sans-serif;
+  font-family:Calibri,"Segoe UI",Arial,sans-serif;
   font-size:17px;
   line-height:1.65;
 }
@@ -364,7 +364,7 @@ h1 span{color:var(--blue)}
   gap:30px;
   margin-bottom:19px;
 }
-.lesson-heading h2{margin:0;font-size:clamp(29px,3.3vw,45px);letter-spacing:-.045em;line-height:1.08}
+.lesson-heading h2{margin:0;font-size:clamp(29px,3.3vw,45px);letter-spacing:-.015em;line-height:1.08}
 .lesson-intro{max-width:820px;margin:9px 0 0;color:var(--muted);font-size:16px}
 .speech-panel{flex:0 0 auto;display:grid;justify-items:end;gap:9px}
 .speech-buttons{display:flex;gap:7px}
@@ -659,7 +659,7 @@ h1 span{color:var(--blue)}
   border-radius:50%;
   color:#fff;
   background:var(--navy-700);
-  font-family:Georgia,serif;
+  font-family:"Trebuchet MS",Calibri,sans-serif;
   font-size:24px;
   font-style:italic;
   font-weight:900;
@@ -1733,7 +1733,7 @@ h1 span{color:var(--blue)}
   align-items:end;
   margin-bottom:22px;
 }
-.library-heading h2{margin:0;font-size:clamp(34px,5vw,58px);letter-spacing:-.05em;line-height:1.05}
+.library-heading h2{margin:0;font-size:clamp(34px,5vw,58px);letter-spacing:-.015em;line-height:1.05}
 .library-heading p:not(.eyebrow){max-width:780px;margin:15px 0 0;color:var(--muted);font-size:18px}
 .library-rule{
   display:grid;
@@ -1876,7 +1876,7 @@ h1 span{color:var(--blue)}
   font-weight:900;
   letter-spacing:.1em;
 }
-.dossier-title-row h3{margin:0;font-size:clamp(30px,4vw,48px);letter-spacing:-.045em;line-height:1.05}
+.dossier-title-row h3{margin:0;font-size:clamp(30px,4vw,48px);letter-spacing:-.015em;line-height:1.05}
 .dossier-title-row p{max-width:720px;margin:10px 0 0;color:var(--muted);font-size:17px}
 .dossier-listen{
   min-height:45px;
@@ -1947,7 +1947,7 @@ h1 span{color:var(--blue)}
   box-shadow:var(--shadow);
   text-align:center;
 }
-.takeaway h2{margin:0 0 28px;font-size:clamp(30px,5vw,54px);letter-spacing:-.045em}
+.takeaway h2{margin:0 0 28px;font-size:clamp(30px,5vw,54px);letter-spacing:-.015em}
 .takeaway-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
 .takeaway-grid div{padding:20px 12px;border:1px solid var(--line);border-radius:17px;background:var(--cream)}
 .takeaway-number{display:grid;width:35px;height:35px;place-items:center;margin:0 auto 12px;border-radius:11px;color:#fff;background:var(--blue);font-weight:900}
