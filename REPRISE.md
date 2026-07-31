@@ -2,7 +2,7 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **29 juillet 2026**.
+> Dernière mise à jour : **31 juillet 2026**.
 
 ---
 
@@ -71,6 +71,60 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 ---
 
 ## 2. État au 31/07/2026
+
+**Refonte du support de projection + bibliothèque d'images (31/07, soir)** — trois défauts
+constatés en salle par F. Henninot : « les polices ne sont pas égales », « fond gris, c'est
+triste », « il faut un dessin sur chaque diapositive ».
+- **Une échelle typographique UNIQUE, en `cqh`** (1 unité = 1 % de la hauteur de l'image
+  projetée) : plus une seule taille en pixels dans la scène, là où il y en avait 37 pour
+  17 valeurs différentes — un titre de séquence à 40 px, un titre de schéma à 26 px, pour le
+  même niveau. Le rendu devient identique sur un vidéoprojecteur 1024×768 et sur un 1080p :
+  c'est la taille **vue du fond de la salle** qui est fixée. **Lexend** devient la police de
+  projection (elle n'était jusqu'ici accessible que derrière le bouton « Aa »), et un curseur
+  de **densité** dans le pied mémorise le réglage (`pilote_projection_densite`).
+- **Fond crème `#f7f1e7`** — l'écart était déjà relevé au § 10.1 de `CHARTE-GRAPHIQUE.md`
+  (« deux climats coexistent »), tranché par F. Henninot : on garde le crème. Filigrane de
+  flocons à 5 % (`res/svg/motif-flocon.svg`), contenu posé sur une feuille claire à filet et
+  ombre bleutée — un fond plat n'a aucun relief projeté. Le sommaire ouvre chaque journée sur
+  son ambiance.
+- **`moteur/illustration.js`** — quelle image va sur quel écran. Trois gisements, trois usages :
+  l'**illustration de thème** (`res/bibliotheque/illu-<fiche>.webp`, une par fiche, elle
+  accompagne toute la séquence) ; l'**icône de rôle** (`icones/role-*.png`, elle dit la nature
+  de l'écran) ; le **symbole normalisé** (`res/symboles/`, 37 fichiers repris de la
+  bibliothèque de l'usine et recolorés) posé quand le texte nomme un organe — le stagiaire
+  apprend ainsi le symbole qu'il devra reconnaître à l'épreuve. Sept fiches partagent deux
+  images (les quatre « Détective », les trois bilans) : voir la table `ALIAS`.
+- **La bibliothèque d'images** — fabriquée par F. Henninot à partir du cahier de commande
+  `BIBLIOTHEQUE-IMAGES-HABFLU.md` : 43 illustrations 1024×1024, 7 ambiances 1792×1024,
+  4 planches d'icônes découpées en 48 fichiers 512×512, et un `MANIFESTE.md` qui documente
+  palette, prompts et arbitrages. Contrôle pixel par pixel avant intégration : dimensions
+  exactes, **zéro couleur hors palette**, aucune image vide. `_verifier-icones.html` sert à
+  vérifier d'un coup d'œil que chaque icône porte le bon nom — **à faire à chaque relivraison**,
+  les planches sont découpées dans l'ordre de lecture annoncé et un décalage se propage en bloc.
+- **Deux défauts de fond corrigés** : (1) **un paragraphe trop long n'est pas une diapositive** —
+  une liste de 532 mots (fiche `g1d`) partait sur un seul écran ; `build/parcours.mjs` coupe
+  désormais sur une fin de phrase, et les listes par éléments **avec reprise de numérotation**
+  (`<ol start>`). Le texte n'est ni récrit ni raccourci : il occupe le nombre d'écrans qu'il
+  demande (581 → 634). (2) **le hash de cache ignorait `projection.gen.js`** : quand c'est le
+  *générateur* qui change, la sortie change sans qu'aucune source du calcul ait bougé — l'URL
+  restait identique et un formateur ayant déjà ouvert la projection continuait de projeter
+  l'ancienne. Exactement l'incident du 28/07. Liste de `lib-version.mjs` complétée.
+- **Contrôle** : les 634 écrans parcourus un par un — aucun débordement, aucune image en erreur,
+  569 écrans illustrés, 231 portant un symbole normalisé.
+
+**Tome 3 — technologie des organes (31/07, soir)** — module d'autoformation repris de la
+livraison `habilitation-fluide-rush-complet-v2.zip`. 16 dossiers, 96 écrans, 16 mini-questions,
+3 révisions reliées aux séances 17-19 ; 22 symboles copiés **sans redessin** de la bibliothèque
+de l'usine ; `SOURCES-ASSETS.md` donne le prompt exact de chaque vue générée. Il complète le
+Tome 1 (le circuit organe par organe) et le Tome 2 (thermodynamique). Relié par `lienOutil` à
+**g6, g7, g8, g9 et g9b** — le module accepte `?dossier=<id>`, chaque fiche ouvre donc droit sur
+son organe. `g9b` (organes annexes) n'avait aucun module jusqu'ici.
+> ⚠️ **Les archives `habilitation-fluide-rush-complet-vN.zip` sont des FOURCHES du dépôt, pas
+> des mises à jour.** Mesuré sur les v1 et v2 : 81 des 101 fichiers « modifiés » étaient des
+> versions **antérieures**, et 45 fichiers du dépôt manquaient — dont **tout `build/`**,
+> `lisibilite.js` et les polices. **Ne jamais écraser** : comparer par empreinte contre
+> l'historique git, n'extraire que les modules absents. Défaut systématique : les vues arrivent
+> en PNG de 1,1 à 1,8 Mo — conversion WebP à 1024 px, **98 % de gain** (11,2 Mo → 231 Ko).
 
 **Relecture typographique + lisibilité DYS (31/07)** — demande de F. Henninot : « harmonisation
 des polices, police variable pour les élèves DYS et les formateurs pour zoomer facilement, tout
@@ -739,6 +793,26 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 ---
 
 ## 6. Ce qui reste à faire
+
+### 🔴 EN ATTENTE DE F. HENNINOT — trois choses que personne d'autre ne peut faire
+
+1. **Vérifier que chaque icône porte le bon nom** — ouvrir
+   `packs/fluides/res/bibliotheque/_verifier-icones.html`. Les 4 planches ont été découpées
+   dans l'ordre de lecture annoncé au cahier de commande ; si une planche a été composée dans
+   un autre ordre, les noms se décalent **en bloc** et un cadenas s'affiche à la place d'un
+   extincteur. Vingt secondes, et c'est le seul travers que le contrôle automatique ne voit pas.
+2. **`amb-plateau.webp`** — la photo du plateau technique, prise sur place. Volontairement non
+   générée : c'est le lieu que les stagiaires auront sous les yeux cinq jours.
+3. **Trancher sur la répétition des illustrations.** Mesuré : une même illustration reste à
+   l'écran **12,9 diapositives en moyenne**, jusqu'à **20 d'affilée** sur `g1b`, `g5b`, `g6b`,
+   `g7b` et `g11` ; 26 fiches sur 48 dépassent 12 écrans. Piste testée et validée
+   techniquement, sans produire un seul fichier : **35 des 44 schémas SVG sont animés** et
+   peuvent être **figés à un instant choisi** (`pauseAnimations()` + `setCurrentTime()`,
+   vérifié sur `charge-limite-local.svg` — l'image obtenue diffère réellement). En les faisant
+   alterner avec l'illustration de thème, la répétition tomberait de 12,9 à ~3 écrans par
+   image, et l'image **avancerait avec le propos**. Reste à choisir les instants : une planche
+   de contrôle (35 schémas × 4 instants) est à produire, F. Henninot valide à l'œil.
+   ⚠️ Rien ne se conclut sur une animation depuis un navigateur piloté — cette étape lui revient.
 
 ### ✅ LE SOCLE THÉORIQUE — chantier mené le 27/07
 
