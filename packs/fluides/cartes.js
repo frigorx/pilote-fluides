@@ -258,7 +258,7 @@ export const CARTES = [
         url: "packs/fluides/res/frise-vivante/frise-vivante.html",
         icone: "🕰",
         titre: "Revoir la frise vivante",
-        desc: "L histoire des fluides, de l invention des CFC au règlement F-Gas 2024 : pourquoi cette formation existe. Racontée, avec voix et images.",
+        desc: "Le cours interactif qui ouvre la formation : l histoire des fluides, de l invention des CFC au règlement F-Gas 2024 — pourquoi cette formation existe. Racontée, avec voix et images.",
       },
       {
         vers: "cfin",
@@ -1401,7 +1401,7 @@ export const CARTES = [
       "<p>Cas particulier : un fluide <b>zéotrope</b>, composé de plusieurs corps, se charge toujours en <b>phase liquide</b>. Le sortir en phase gazeuse changerait sa composition en cours de route.</p>" +
       lienOutil(
         "packs/fluides/res/mission-bouteilles/index.html",
-        "🧪 Lancer Mission Bouteilles : identifier, peser, ne jamais surremplir",
+        "🧪 Lancer le cours interactif : Mission Bouteilles — identifier, peser, ne jamais surremplir",
         "8 étapes racontées : calcul de pesée, phase liquide/vapeur, simulation de surremplissage et risque d'éclatement, bouteilles A2L/A3 — environ 10 minutes."
       ),
     blocs: [
@@ -1638,7 +1638,7 @@ export const CARTES = [
     corps:
       lienOutil(
         "packs/fluides/res/chaleur-interactive/index.html",
-        "🧊 Lancer la découverte : du glaçon au circuit frigorifique",
+        "🧊 Lancer le cours interactif : du glaçon au circuit frigorifique",
         "12 étapes racontées : glaçon et casserole, quantité d'énergie, courbes de chauffe et de refroidissement, chaleurs sensible et latente, liquéfaction, réfrigérateur, circuit frigorifique, surchauffe/sous-refroidissement et défi final — environ 15 minutes."
       ) +
       schema("chaleur-sensible-latente.svg", "La courbe de chauffe d'un fluide : la température monte, puis s'arrête pendant tout le changement d'état, puis repart. Le palier commence au point de bulle et finit au point de rosée.") +
@@ -1746,7 +1746,7 @@ export const CARTES = [
     corps:
       lienOutil(
         "packs/fluides/res/pression-temperature-interactive/index.html",
-        "🫧 Lancer la découverte : faire bouillir sans feu",
+        "🫧 Lancer le cours interactif : faire bouillir sans feu",
         "12 étapes racontées : cloche à vide, relation pression–température, températures de saturation, évaporateur et condenseur, lecture manomètre–table, point de bulle, point de rosée, glissement des zéotropes et défi final — environ 15 minutes."
       ) +
       schema("diagramme-logph.svg", "Le diagramme log p-h : la cloche sépare le liquide, le mélange et la vapeur surchauffée ; le cycle s'y trace en quatre transformations qui forment un rectangle.") +
@@ -1864,7 +1864,7 @@ export const CARTES = [
     corps:
       lienOutil(
         "packs/fluides/res/froid-clim-academie/index.html",
-        "🎛️ Lancer le simulateur : surchauffe et sous-refroidissement",
+        "🎛️ Lancer le cours interactif : surchauffe et sous-refroidissement",
         "Le cycle animé, puis quatre curseurs à manipuler (évaporation, condensation, surchauffe, sous-refroidissement) : les pressions réagissent et le risque s'affiche — avec un atelier panne et un quiz flash — environ 10 minutes."
       ) +
       schema("surchauffe-utile-totale.svg", "Le fluide bout dans l'évaporateur ; après la disparition de la dernière goutte, la vapeur s'échauffe : c'est la surchauffe utile dans l'échangeur, puis la surchauffe totale jusqu'au compresseur.") +
@@ -2886,12 +2886,12 @@ export const CARTES = [
       "<p>Après toute intervention sur un compresseur, on rédige un <b>rapport</b>. Il rassemble trois choses : ce qu'on a <b>observé</b> (bruits anormaux, niveau d'huile au voyant, valeurs relevées comme les pressions ou la température de refoulement), ce qu'on a <b>fait</b> (pièce changée, réglage effectué, essai réalisé), et tout <b>problème restant</b> qui pourrait, plus tard, entraîner une panne ou une fuite. Ce rapport est <b>daté et signé</b> : c'est ce qui permet au prochain intervenant de savoir où en est la machine, sans tout redécouvrir.</p>" +
       lienOutil(
         "packs/fluides/res/circuit-organe-par-organe/index.html",
-        "🔧 Lancer le module : le circuit, organe par organe",
+        "🔧 Lancer le cours interactif : le circuit, organe par organe",
         "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
       ) +
       lienOutil(
         "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=compresseurs",
-        "📘 Tome 3 : la technologie de l'organe, en détail",
+        "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
         "les quatre technologies de compression — piston, scroll, vis et rotatif — chacune en vue isolée, avec son symbole normalisé et son fonctionnement interne animé."
       ),
     blocs: [
@@ -3030,12 +3030,12 @@ export const CARTES = [
       "<b>à l'arrêt</b>, installation froide, avec récupération — jamais fluide en mouvement.</p>" +
       lienOutil(
         "packs/fluides/res/circuit-organe-par-organe/index.html",
-        "🔧 Lancer le module : le circuit, organe par organe",
+        "🔧 Lancer le cours interactif : le circuit, organe par organe",
         "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
       ) +
       lienOutil(
         "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=condenseurs",
-        "📘 Tome 3 : la technologie de l'organe, en détail",
+        "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
         "le condenseur à air et le condenseur à eau, leur place sur la croix du frigoriste, et ce qui entre et sort de chacun."
       ),
     blocs: [
@@ -3172,12 +3172,12 @@ export const CARTES = [
       "<p>Parfois, le tracé oblige la conduite d'aspiration à remonter. Par exemple, le compresseur est placé plus haut que l'évaporateur. Dans ce cas, la pente seule ne suffit plus : au ralenti, le gaz n'a pas toujours assez de vitesse pour porter l'huile vers le haut. On pose alors un <b>siphon</b> en pied de cette colonne montante. C'est un petit coude en U qui retient un peu d'huile le temps qu'elle s'accumule. Puis il la relance d'un coup vers le haut, dès que le gaz reprend de la vitesse.</p>" +
       lienOutil(
         "packs/fluides/res/circuit-organe-par-organe/index.html",
-        "🔧 Lancer le module : le circuit, organe par organe",
+        "🔧 Lancer le cours interactif : le circuit, organe par organe",
         "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
       ) +
       lienOutil(
         "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=evaporateurs",
-        "📘 Tome 3 : la technologie de l'organe, en détail",
+        "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
         "l'évaporateur à air et à eau, l'état du fluide à l'entrée et à la sortie, et le montage habituel."
       ),
     blocs: [
@@ -3272,7 +3272,12 @@ export const CARTES = [
       "<p>Toute visite se termine par un <b>rapport écrit</b> sur l'état de l'évaporateur : " +
       "anomalies observées, risque pour le système, ce qui pourrait à terme provoquer une fuite. " +
       "Une batterie propre, un bon débit d'air et une surchauffe de <b>5 à 10 K</b> préservent " +
-      "aussi l'<b>efficacité énergétique</b> de l'équipement.</p>",
+      "aussi l'<b>efficacité énergétique</b> de l'équipement.</p>" +
+      lienOutil(
+        "packs/fluides/res/evaporateur-interactif/index.html?dossier=observer",
+        "❄ Lancer le cours interactif : évaporateur — installer, régler, vérifier",
+        "Givre visible, débit d'air, minuterie de dégivrage qualitative, distinction entre régulateur et pressostat, inspection guidée, rapport d'état et contrôle final."
+      ),
     blocs: [
       {
         type: "piege",
@@ -3428,12 +3433,12 @@ export const CARTES = [
       "la présence de bulles et, par sa pastille, l'humidité du circuit.</p>" +
       lienOutil(
         "packs/fluides/res/circuit-organe-par-organe/index.html",
-        "🔧 Lancer le module : le circuit, organe par organe",
+        "🔧 Lancer le cours interactif : le circuit, organe par organe",
         "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions."
       ) +
       lienOutil(
         "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique",
-        "📘 Tome 3 : la technologie de l'organe, en détail",
+        "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
         "le détendeur à égalisation interne et externe, le détendeur électronique et le tube capillaire, chacun en vue isolée avec son symbole."
       ),
     blocs: [
@@ -3521,7 +3526,7 @@ export const CARTES = [
       "permet d'agir <b>avant</b> ce stade.</p>" +
       lienOutil(
         "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite",
-        "📘 Tome 3 : la technologie de l'organe, en détail",
+        "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
         "Les organes annexes un par un : réservoir, filtre déshydrateur, voyant, électrovanne, clapet et vannes de service, bouteille anti-coup de liquide, séparateur d'huile, régulateurs de pression et soupape — chacun en vue isolée, avec son symbole normalisé."
       ),
     blocs: [

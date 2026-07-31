@@ -1270,7 +1270,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "experience",
        "url": "packs/fluides/res/chaleur-interactive/index.html",
-       "lancer": "🧊 Lancer la découverte : du glaçon au circuit frigorifique",
+       "lancer": "🧊 Lancer le cours interactif : du glaçon au circuit frigorifique",
        "desc": "12 étapes racontées : glaçon et casserole, quantité d'énergie, courbes de chauffe et de refroidissement, chaleurs sensible et latente, liquéfaction, réfrigérateur, circuit frigorifique, surchauffe/sous-refroidissement et défi final — environ 15 minutes.",
        "titre": "Chaleur sensible et chaleur latente"
       },
@@ -1457,7 +1457,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "experience",
        "url": "packs/fluides/res/pression-temperature-interactive/index.html",
-       "lancer": "🫧 Lancer la découverte : faire bouillir sans feu",
+       "lancer": "🫧 Lancer le cours interactif : faire bouillir sans feu",
        "desc": "12 étapes racontées : cloche à vide, relation pression–température, températures de saturation, évaporateur et condenseur, lecture manomètre–table, point de bulle, point de rosée, glissement des zéotropes et défi final — environ 15 minutes.",
        "titre": "Lire un log p-h et une table de saturation"
       },
@@ -1694,7 +1694,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "experience",
        "url": "packs/fluides/res/froid-clim-academie/index.html",
-       "lancer": "🎛️ Lancer le simulateur : surchauffe et sous-refroidissement",
+       "lancer": "🎛️ Lancer le cours interactif : surchauffe et sous-refroidissement",
        "desc": "Le cycle animé, puis quatre curseurs à manipuler (évaporation, condensation, surchauffe, sous-refroidissement) : les pressions réagissent et le risque s'affiche — avec un atelier panne et un quiz flash — environ 10 minutes.",
        "titre": "Surchauffe et sous-refroidissement"
       },
@@ -4723,7 +4723,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "experience",
        "url": "packs/fluides/res/mission-bouteilles/index.html",
-       "lancer": "🧪 Lancer Mission Bouteilles : identifier, peser, ne jamais surremplir",
+       "lancer": "🧪 Lancer le cours interactif : Mission Bouteilles — identifier, peser, ne jamais surremplir",
        "desc": "8 étapes racontées : calcul de pesée, phase liquide/vapeur, simulation de surremplissage et risque d'éclatement, bouteilles A2L/A3 — environ 10 minutes.",
        "titre": "La balance et la pesée — avant, après, ce qu'on note"
       },
@@ -4977,14 +4977,14 @@ window.PILOTE_PROJECTION = {
       {
        "type": "experience",
        "url": "packs/fluides/res/circuit-organe-par-organe/index.html",
-       "lancer": "🔧 Lancer le module : le circuit, organe par organe",
+       "lancer": "🔧 Lancer le cours interactif : le circuit, organe par organe",
        "desc": "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.",
        "titre": "Le compresseur"
       },
       {
        "type": "experience",
        "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=compresseurs",
-       "lancer": "📘 Tome 3 : la technologie de l'organe, en détail",
+       "lancer": "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
        "desc": "les quatre technologies de compression — piston, scroll, vis et rotatif — chacune en vue isolée, avec son symbole normalisé et son fonctionnement interne animé.",
        "titre": "Le compresseur"
       },
@@ -5521,14 +5521,14 @@ window.PILOTE_PROJECTION = {
       {
        "type": "experience",
        "url": "packs/fluides/res/circuit-organe-par-organe/index.html",
-       "lancer": "🔧 Lancer le module : le circuit, organe par organe",
+       "lancer": "🔧 Lancer le cours interactif : le circuit, organe par organe",
        "desc": "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.",
        "titre": "Le condenseur"
       },
       {
        "type": "experience",
        "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=condenseurs",
-       "lancer": "📘 Tome 3 : la technologie de l'organe, en détail",
+       "lancer": "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
        "desc": "le condenseur à air et le condenseur à eau, leur place sur la croix du frigoriste, et ce qui entre et sort de chacun.",
        "titre": "Le condenseur"
       },
@@ -6020,14 +6020,14 @@ window.PILOTE_PROJECTION = {
       {
        "type": "experience",
        "url": "packs/fluides/res/circuit-organe-par-organe/index.html",
-       "lancer": "🔧 Lancer le module : le circuit, organe par organe",
+       "lancer": "🔧 Lancer le cours interactif : le circuit, organe par organe",
        "desc": "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.",
        "titre": "L'évaporateur"
       },
       {
        "type": "experience",
        "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=evaporateurs",
-       "lancer": "📘 Tome 3 : la technologie de l'organe, en détail",
+       "lancer": "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
        "desc": "l'évaporateur à air et à eau, l'état du fluide à l'entrée et à la sortie, et le montage habituel.",
        "titre": "L'évaporateur"
       },
@@ -6283,6 +6283,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": true
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/evaporateur-interactif/index.html?dossier=observer",
+       "lancer": "❄ Lancer le cours interactif : évaporateur — installer, régler, vérifier",
+       "desc": "Givre visible, débit d'air, minuterie de dégivrage qualitative, distinction entre régulateur et pressostat, inspection guidée, rapport d'état et contrôle final.",
+       "titre": "Évaporateur — installer, régler, vérifier"
       },
       {
        "type": "schema",
@@ -6596,14 +6603,14 @@ window.PILOTE_PROJECTION = {
       {
        "type": "experience",
        "url": "packs/fluides/res/circuit-organe-par-organe/index.html",
-       "lancer": "🔧 Lancer le module : le circuit, organe par organe",
+       "lancer": "🔧 Lancer le cours interactif : le circuit, organe par organe",
        "desc": "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.",
        "titre": "Le détendeur et les organes annexes"
       },
       {
        "type": "experience",
        "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique",
-       "lancer": "📘 Tome 3 : la technologie de l'organe, en détail",
+       "lancer": "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
        "desc": "le détendeur à égalisation interne et externe, le détendeur électronique et le tube capillaire, chacun en vue isolée avec son symbole.",
        "titre": "Le détendeur et les organes annexes"
       },
@@ -6828,7 +6835,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "experience",
        "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite",
-       "lancer": "📘 Tome 3 : la technologie de l'organe, en détail",
+       "lancer": "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
        "desc": "Les organes annexes un par un : réservoir, filtre déshydrateur, voyant, électrovanne, clapet et vannes de service, bouteille anti-coup de liquide, séparateur d'huile, régulateurs de pression et soupape — chacun en vue isolée, avec son symbole normalisé.",
        "titre": "Régler et contrôler les organes annexes"
       },

@@ -72,6 +72,17 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ## 2. État au 31/07/2026
 
+### Module interactif « Évaporateur » — lot 1 livré
+
+- Nouveau module autonome : `packs/fluides/res/evaporateur-interactif/`.
+- 26 écrans sans défilement, répartis dans 5 dossiers : Observer, Dégivrer, Régler, Vérifier, Contrôle.
+- Couverture explicite des codes A1 `8.02`, `8.03`, `8.04`, `8.06`, `8.07`, `8.10`, `8.11` dans `couverture.json` ; les écrans de contexte sont séparés dans `hors_referentiel`.
+- Accès profond stable par `?dossier=…&ecran=…` et par `?extrait=id1,id2`, lien copiable, voix française facultative, impression papier complète et fonctionnement hors ligne.
+- Entrée ajoutée à la carte `g8b`. Le build du 31/07 détecte 12 expériences interactives, produit 490 écrans de projection et conserve la couverture A1 à 94/94.
+- Vérifications effectuées à 1024×768, 1366×768, 390×844 et 360×640 : aucun débordement ni défilement ; routage, simulations et contrôle 5 questions testés.
+- Garde-fous : aucun temps réel prescrit ; aucun réglage chiffré sans notice constructeur ; la terminologie KVP/KVL des paragraphes 3 et 4 de `g8b` reste à faire valider par un frigoriste et n'est pas déclarée remplacée.
+- Provenance et limites : `SOURCES.md` et `LIRE-MOI.txt`. Symboles repris sans modification de la bibliothèque exacte ; photo locale optimisée en WebP.
+
 **Refonte du support de projection + bibliothèque d'images (31/07, soir)** — trois défauts
 constatés en salle par F. Henninot : « les polices ne sont pas égales », « fond gris, c'est
 triste », « il faut un dessin sur chaque diapositive ».
@@ -670,6 +681,37 @@ demande plus de questions que son pool · **une note formateur se retrouve dans 
 un code cité n'existe pas au référentiel · une question n'a **ni** code **ni** classement hors
 référentiel · le bandeau `dc` d'une fiche **annonce un code qu'elle ne déclare pas** (c'est ainsi
 que « G6 · codes 6.01 → 6.08 » promettait huit compétences pour quatre enseignées).
+
+---
+
+## 3 bis. Le vocabulaire — cinq mots, et ils ne se marchent pas dessus
+
+Tranché par F. Henninot le 31/07/2026. Avant cela, **sept formulations différentes** désignaient
+la même chose dans les seuls libellés de lancement : « lancer le module », « lancer la
+découverte », « lancer le simulateur », « Mission Bouteilles »… D'où l'impression, juste, que
+le travail était éparpillé.
+
+| Ce que c'est | Le mot | Exemples |
+|---|---|---|
+| Un schéma animé, une image | **planche** | `croix-frigoriste.svg`, `charge-limite-local.svg` |
+| Un contenu à écrans où l'élève AGIT | **cours interactif** | le Tome 3, la frise vivante, la nomenclature |
+| La série des grands cours du circuit | **Tome N** | Tome 1, Tome 2, Tome 3 |
+| Un ou deux écrans qu'on envoie en réponse à une question | **extrait** | `?extrait=cop-calcul` |
+| Le découpage horaire du référentiel | **module M0 à M8** | inchangé — c'est l'officiel |
+
+**Trois mots sont interdits pour désigner un cours interactif**, parce qu'ils sont déjà pris :
+- **« module »** → c'est le découpage M0-M8 de la formation. Un auditeur lira ça.
+- **« atelier »** → c'est le plateau technique, un lieu réel où l'on manipule du fluide.
+- **« capsule »** → réservé aux capsules **vidéo** (`CAPSULES-SECURITE.md`).
+
+Et **« vidéo » ne désigne jamais un cours interactif** : pour l'élève, le mot dit « assieds-toi
+et regarde » alors que tout repose sur l'inverse ; pour Qualiopi, annoncer une vidéo et livrer
+une page web est un écart gratuit — d'autant que de vraies capsules vidéo existent par ailleurs.
+
+> ⚠️ **En interne, le code dit toujours `experience`** (`parcours.js`, `type: "experience"`,
+> classe `.lien-experience`, `build/parcours.mjs`). C'est volontaire : renommer coûterait une
+> journée pour un gain nul, personne ne le voit. **Ce qui est figé, c'est le mot AFFICHÉ** —
+> libellés, titres, galerie, portail, et tout ce qu'on présente à un auditeur.
 
 ---
 
