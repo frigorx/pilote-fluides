@@ -83,6 +83,21 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 - Garde-fous : aucun temps réel prescrit ; aucun réglage chiffré sans notice constructeur ; la terminologie KVP/KVL des paragraphes 3 et 4 de `g8b` reste à faire valider par un frigoriste et n'est pas déclarée remplacée.
 - Provenance et limites : `SOURCES.md` et `LIRE-MOI.txt`. Symboles repris sans modification de la bibliothèque exacte ; photo locale optimisée en WebP.
 
+### Module interactif « Mission 290 » — lot 2 entièrement refondu
+
+- Nouveau module autonome : `packs/fluides/res/hydrocarbures-a1-a2/`.
+- 28 écrans sans défilement, répartis dans 6 dossiers : Comprendre, Voir le risque, Analyser la zone, Équiper le poste, Conduite à tenir, Contrôle.
+- Cas continu : autoriser ou suspendre la remise en service d’une armoire R-290 de 153 g. Le cours sur les classes n’est pas dupliqué : A3 tient en un rappel, puis devient une suite de décisions de chantier.
+- Couverture explicite des codes `12.01`, `12.02`, `12.03`, `12.04`, `12.05`, `12.06`, `12.13`, `12.14` dans `couverture.json`.
+- Interactions : histoire courte du propane, raisons du retour du R-290, triangle d’inflammation, concentration qualitative, points bas, calcul IEC documenté et borné, inspection de six dangers, corrections observables, GO/STOP et tri de dix outils.
+- L’outillage réglementaire hydrocarbures est nommé ; la compatibilité doit être prouvée par le marquage et la documentation. Le rejet de pompe à vide vers l’extérieur est distingué du fluide frigorigène, qui doit être récupéré.
+- Accès profond stable par `?dossier=…&ecran=…` et `?extrait=id1,id2`, voix facultative, impression complète et fonctionnement hors ligne.
+- Entrée ajoutée à la carte `g12`. La fiche `g12b` n’est pas remplacée : elle reste la brique dédiée au geste d’intervention.
+- Refonte visuelle du 1er août 2026 après retour formateur : titres, consignes, réponses et états agrandis ; boutons rééquilibrés ; illustration d’ambiance locale au sommaire ; pictogramme métier sur chacun des 28 écrans ; dossiers et outillage illustrés ; progression numérotée et version téléphone simplifiée. Les ressources viennent de la bibliothèque inerWeb validée, sans nouvelle image générée.
+- Seconde reprise pédagogique après captures formateur : le risque n’est plus présenté comme un « triangle » abstrait centré sur le seul R-290. Un écran pose la famille A3 avec R-290, R-600, R-600a, R-1270 et « … », puis quatre scènes montrent fuite → mélange avec l’air → ignition, proportion gaz-air, descente vers les points bas, double risque inflammation/asphyxie et conduite STOP → ÉLOIGNER → ALERTER → consigne du site. A3 n’est pas utilisé comme indicateur de densité ; plaque et FDS restent le réflexe central.
+- Vérifications effectuées à 1024×768, 1280×720, 1366×768, 390×844 et 360×640 : 28/28 écrans sans débordement ni défilement ; calcul 7,3 m², correction après erreur, séquence récupération/azote, tri de dix outils et contrôle final 5/5 testés.
+- Les pictogrammes normalisés SGH02/ATEX ne figurent pas encore dans la bibliothèque validée : le module emploie un avertissement textuel et ne les redessine pas.
+
 **Refonte du support de projection + bibliothèque d'images (31/07, soir)** — trois défauts
 constatés en salle par F. Henninot : « les polices ne sont pas égales », « fond gris, c'est
 triste », « il faut un dessin sur chaque diapositive ».

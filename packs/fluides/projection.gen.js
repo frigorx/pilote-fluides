@@ -7567,6 +7567,13 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/bilan-thermique-performance-interactif/index.html",
+       "lancer": "📐 Lancer le cours interactif : Tome 4 — bilan thermique et performance",
+       "desc": "Du besoin thermique à la consommation électrique : parois, produits, air, puis COP, EER, SCOP, SEER et la lecture de la vraie étiquette européenne. Le bilan thermique lui-même dépasse le programme A1 — mais sans lui, « améliorer l efficacité énergétique » reste une formule.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/classes-securite.svg",
        "alt": "Matrice complète des classes NF EN 378 : huit cases, toxicité en lignes, inflammabilité en colonnes.",
@@ -8302,6 +8309,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/hydrocarbures-a1-a2/index.html?dossier=comprendre",
+       "lancer": "🔥 Lancer Mission 290 — autoriser ou suspendre",
+       "desc": "Pourquoi le R-290, risques d’inflammation, inspection d’une zone, calcul documenté, outillage hydrocarbures et conduite à tenir.",
+       "titre": "Hydrocarbures — le spécifique A1 et A2"
       },
       {
        "type": "schema",

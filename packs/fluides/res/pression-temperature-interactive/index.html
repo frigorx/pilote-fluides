@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Découverte interactive et racontée de la relation pression-température, de l’ébullition sous vide au glissement des fluides zéotropes.">
   <title>La pression choisit la température | Habilitation Fluide</title>
-  <link rel="stylesheet" href="../chaleur-interactive/styles.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="../../../../moteur/impression.css" media="print">
+  <link rel="stylesheet" href="../chaleur-interactive/styles.css?v=20260731-sujet3">
+  <link rel="stylesheet" href="styles.css?v=20260731-sujet3">
 </head>
 <body>
 <main class="experience pressure-experience" id="experience">
@@ -30,11 +29,12 @@
 
   <section class="hero pressure-hero" aria-labelledby="page-title">
     <div class="hero-copy">
-      <p class="eyebrow">CHAPITRE 2 · PRESSION, SATURATION ET GLISSEMENT</p>
+      <p class="eyebrow">SUJET 3 · PRESSION, SATURATION ET GLISSEMENT</p>
       <h1 id="page-title">Faire bouillir de l’eau sans feu.<br><span>Et si la pression choisissait la température&nbsp;?</span></h1>
-      <p>Une cloche, une pompe à vide et un verre d’eau tiède suffisent pour faire apparaître des bulles. Nous allons partir de cette surprise pour comprendre le détendeur, le condenseur, les tables de saturation et le cas particulier des fluides zéotropes.</p>
+      <p>Dans le chapitre précédent, la chaleur latente dessinait un palier. Ici, vous allez découvrir ce qui règle sa hauteur&nbsp;: la pression. Une cloche à vide nous conduira jusqu’à l’évaporateur, au condenseur, aux tables de saturation et aux fluides zéotropes.</p>
+      <a class="chapter-back" href="../chaleur-circuit-interactif/index.html">← Revoir le tome 2 · transferts de chaleur</a>
       <button class="start" id="start" type="button">Entrer sous la cloche <span aria-hidden="true">▶</span></button>
-      <small class="duration">12 étapes racontées · environ 15 minutes · expériences, graphiques et défi final</small>
+      <small class="duration">13 étapes racontées · environ 18 minutes · manipulations, grandes courbes et défi final</small>
       <div class="learning-goals" aria-label="À la fin de cette découverte">
         <span><b>1</b> Relier pression et température de saturation</span>
         <span><b>2</b> Expliquer les deux côtés du circuit</span>
@@ -61,6 +61,13 @@
           <h2 id="title"></h2>
         </div>
         <div class="voice-controls">
+          <button class="exit-course" id="exit-course" type="button" aria-label="Quitter le mode plein écran">Quitter</button>
+          <label class="voice-choice-control">
+            <span>Voix</span>
+            <select id="voice-choice" aria-label="Choisir la voix française">
+              <option value="">Voix française automatique</option>
+            </select>
+          </label>
           <div class="speed" aria-label="Vitesse de lecture">
             <button id="slower" type="button" aria-label="Ralentir la voix">−</button>
             <span id="speed-value">0,95×</span>
@@ -91,9 +98,9 @@
     </div>
     <div class="next-brick">
       <small>BRIQUE SUIVANTE</small>
-      <strong>Transformer une pression lue en température de saturation</strong>
-      <span>La réglette puis la table permettront de mesurer réellement surchauffe et sous-refroidissement avant d’entrer sur le diagramme log p-h.</span>
-      <a class="next-tool" href="../outils/reglette.html">Ouvrir la réglette pression–température →</a>
+      <strong>Mesurer la surchauffe et le sous-refroidissement</strong>
+      <span>La pression donne la température de saturation. La sonde donne la température réelle. Le sujet 4 réunit ces deux mesures pour calculer les écarts en kelvins.</span>
+      <a class="next-tool" href="../surchauffe-sous-refroidissement-interactif/index.html">Continuer vers le sujet 4 →</a>
     </div>
   </section>
 
@@ -101,7 +108,7 @@
     <p class="eyebrow">REPÈRES SCIENTIFIQUES ET MÉTIER</p>
     <h2>Le modèle utilisé dans cette expérience</h2>
     <ul>
-      <li>Les valeurs de saturation de l’eau sont arrondies à partir des tables de référence IAPWS/NIST. Elles servent à comprendre la forme de la relation, pas à étalonner un appareil.</li>
+      <li>Les valeurs de saturation de l’eau sont arrondies à partir de la formulation de référence IAPWS. Elles servent à comprendre la forme de la relation, pas à étalonner un appareil.</li>
       <li>Un liquide bout quand sa pression de vapeur atteint la pression qui s’exerce sur lui. Réduire cette pression abaisse donc sa température d’ébullition.</li>
       <li>Sans chauffage extérieur, une vaporisation reste consommatrice d’énergie : l’eau fournit elle-même une partie de la chaleur latente et se refroidit.</li>
       <li>Pour un fluide pur, à une pression donnée, évaporation et condensation se produisent à la même température de saturation.</li>
@@ -112,7 +119,7 @@
     </ul>
     <p class="source-links">
       Sources :
-      <a href="https://www.nist.gov/srd/nistir-5078" target="_blank" rel="noreferrer">NIST · propriétés de l’eau</a>,
+      <a href="https://iapws.org/documents/release/Supp-sat" target="_blank" rel="noreferrer">IAPWS · saturation de l’eau</a>,
       <a href="https://www.chemours.com/en/-/media/files/freon/temperature-glide-freon-mp-hp-407c-refrigerant-blends.pdf" target="_blank" rel="noreferrer">Chemours · temperature glide</a>,
       <a href="https://www.danfoss.com/en/service-and-support/downloads/dcs/ref-tools/" target="_blank" rel="noreferrer">Danfoss · Ref Tools</a>.
     </p>
@@ -124,8 +131,6 @@
   </footer>
 </main>
 <script src="../outils/fluides-data.js"></script>
-<script src="app.js"></script>
-<!-- Lisibilité : bouton « Aa » commun au pack (taille + police DYS) -->
-<script src="../../../../moteur/lisibilite.js"></script>
+<script src="app.js?v=20260731-sujet3"></script>
 </body>
 </html>
