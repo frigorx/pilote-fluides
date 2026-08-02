@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="594mm" viewBox="0 0 420 594"
+     role="img" aria-label="Affiche murale — les cinq risques du métier de frigoriste : l'air qui manque, le froid brûle, la flamme interdite, ce qui éclate, le courant. Pour chacun, le geste interdit et le geste qui protège.">
+<!--
+  AFFICHE D'ATELIER — LES CINQ RISQUES · format A2 (420 × 594 mm)
+  ══════════════════════════════════════════════════════════════════════
+  Elle se colle au mur du plateau. Elle n'est pas là pour être belle : elle
+  est là pour être lue de loin, tous les jours, jusqu'à ce que les gestes
+  soient acquis.
+
+  CE QUI COMMANDE LE DESSIN
+  · Lisible à 3 mètres — règle d'atelier : hauteur de lettre ≥ distance/200.
+    À 3 m, il faut 15 mm. Les noms de risque font 15 mm, les consignes 7 mm.
+  · VECTORIEL, donc net à n'importe quel format d'impression — de l'A3 posé
+    sur l'établi au A0 du mur du fond. Un PNG aurait figé la définition.
+  · La couleur ne porte JAMAIS seule : chaque consigne est marquée par sa
+    couleur ET par son mot — INTERDIT / LE GESTE. Photocopiée en noir et
+    blanc, l'affiche dit encore la même chose.
+  · Palette de la charte inerWeb, sans écart : crème, marine, orange, vert.
+
+  LE CONTENU N'EST PAS INVENTÉ : chaque interdit et chaque geste est repris
+  des blocs « le geste interdit » et « ce qu'il faut retenir » des fiches
+  s1 à s5 du pack. Si une fiche change, cette affiche doit être reprise.
+  ══════════════════════════════════════════════════════════════════════ -->
+<defs>
+  <style>
+    .t{font-family:'Trebuchet MS',Calibri,Arial,sans-serif}
+    .c{font-family:Calibri,'Segoe UI',Arial,sans-serif}
+    .risque{font-size:15px;font-weight:700;fill:#1b3a63;letter-spacing:-.2px}
+    .num{font-size:34px;font-weight:700;fill:#1b3a63;opacity:.13}
+    .et{font-size:6.4px;font-weight:700;letter-spacing:1.5px}
+    .ln{font-size:7.4px;fill:#10233c}
+    .pic{fill:none;stroke:#1b3a63;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+    .pic-al{fill:none;stroke:#ff6b35;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+  <!-- Le filet qui sépare deux risques : discret, mais il structure l'œil. -->
+  <g id="filet"><path d="M28 0 H392" stroke="#1b3a63" stroke-width=".5" opacity=".18"/></g>
+</defs>
+
+<rect width="420" height="594" fill="#f7f1e7"/>
+
+<!-- ── BANDEAU ─────────────────────────────────────────────────────── -->
+<rect x="0" y="0" width="420" height="74" fill="#1b3a63"/>
+<rect x="0" y="74" width="420" height="2.4" fill="#ff6b35"/>
+<text class="t" x="28" y="29" font-size="8" font-weight="700" fill="#ff6b35" letter-spacing="4.4">ATELIER FRIGORISTE</text>
+<text class="t" x="28" y="63" font-size="27" font-weight="700" fill="#fffdf8" letter-spacing="-.4">LES CINQ RISQUES</text>
+<text class="c" x="392" y="63" font-size="7.6" fill="#fffdf8" opacity=".72" text-anchor="end">ce qui tue, et le geste qui l'empêche</text>
+
+<!-- ══ 1 · L'AIR QUI MANQUE ═════════════════════════════════════════ -->
+<g transform="translate(0,76)">
+  <text class="t num" x="392" y="34" text-anchor="end">01</text>
+  <g transform="translate(34,10)">
+    <!-- le local se remplit par le bas, l'homme est au sol -->
+    <path class="pic" d="M4 4v40h44V4"/><path class="pic" d="M0 4h52"/>
+    <path d="M6 30q7-4 13 0t13 0 13 0v14H6z" fill="#ffd9c8"/>
+    <path class="pic-al" d="M6 30q7-4 13 0t13 0 13 0" stroke-width="1.9"/>
+    <circle cx="18" cy="38" r="3.4" fill="#1b3a63"/>
+    <path class="pic" d="M23 39h11" stroke-width="5"/>
+  </g>
+  <text class="t risque" x="104" y="24">L'AIR QUI MANQUE</text>
+  <text class="t et" x="104" y="38" fill="#c9451a">INTERDIT</text>
+  <text class="c ln" x="146" y="38">entrer seul dans un local fermé sans ventiler ni contrôler l'air</text>
+  <text class="t et" x="104" y="51" fill="#1e7e54">LE GESTE</text>
+  <text class="c ln" x="146" y="51">ventiler · contrôler l'oxygène · jamais seul</text>
+  <text class="c" x="104" y="63" font-size="6" fill="#637285">L'azote et les fluides fluorés ne donnent aucune alerte. On perd connaissance sans gêne ressentie avant.</text>
+  <use href="#filet" y="76"/>
+</g>
+
+<!-- ══ 2 · LE FROID BRÛLE ═══════════════════════════════════════════ -->
+<g transform="translate(0,178)">
+  <text class="t num" x="392" y="34" text-anchor="end">02</text>
+  <g transform="translate(34,10)">
+    <!-- un jet s'échappe d'un raccord, le givre se forme -->
+    <path class="pic" d="M2 20h20v10H2z"/><path class="pic" d="M22 25h6"/>
+    <path class="pic-al" d="M30 25l16-9M30 25l16 9M30 25h18"/>
+    <path class="pic" d="M12 30v14" stroke-width="2"/>
+    <g stroke="#84b7ec" stroke-width="1.8" stroke-linecap="round">
+      <path d="M40 8v10M36 10l8 6M44 10l-8 6"/>
+      <path d="M42 40v8M39 42l6 4M45 42l-6 4"/>
+    </g>
+  </g>
+  <text class="t risque" x="104" y="24">LE FROID BRÛLE</text>
+  <text class="t et" x="104" y="38" fill="#c9451a">INTERDIT</text>
+  <text class="c ln" x="146" y="38">desserrer un raccord sous pression, sans gants ni lunettes</text>
+  <text class="t et" x="104" y="51" fill="#1e7e54">LE GESTE</text>
+  <text class="c ln" x="146" y="51">vérifier au manomètre que c'est vide · gants · lunettes</text>
+  <text class="c" x="104" y="63" font-size="6" fill="#637285">Le fluide qui se détend gèle la peau et l'œil en un instant. La brûlure par le froid ne prévient pas.</text>
+  <use href="#filet" y="76"/>
+</g>
+
+<!-- ══ 3 · LA FLAMME INTERDITE ══════════════════════════════════════ -->
+<g transform="translate(0,280)">
+  <text class="t num" x="392" y="34" text-anchor="end">03</text>
+  <g transform="translate(34,10)">
+    <!-- la flamme, et la volute qui monte : c'est la décomposition -->
+    <path d="M20 44c-6-4-9-9-9-15 0-7 6-11 8-17 1 5 3 7 5 7 3 0 4-8 4-15 8 9 13 15 13 25 0 8-6 15-13 15z" fill="#ffd9c8"/>
+    <path class="pic" d="M20 44c-6-4-9-9-9-15 0-7 6-11 8-17 1 5 3 7 5 7 3 0 4-8 4-15 8 9 13 15 13 25 0 8-6 15-13 15z" stroke-width="2"/>
+    <path class="pic-al" d="M44 30q6-5 3-11t3-11" stroke-width="2.2"/>
+    <path class="pic-al" d="M50 34q7-6 3-13t4-12" stroke-width="1.8" opacity=".6"/>
+  </g>
+  <text class="t risque" x="104" y="24">LA FLAMME INTERDITE</text>
+  <text class="t et" x="104" y="38" fill="#c9451a">INTERDIT</text>
+  <text class="c ln" x="146" y="38">braser un circuit encore chargé · chercher une fuite à la flamme</text>
+  <text class="t et" x="104" y="51" fill="#1e7e54">LE GESTE</text>
+  <text class="c ln" x="146" y="51">récupérer tout le fluide du tronçon avant de chauffer</text>
+  <text class="c" x="104" y="63" font-size="6" fill="#637285">Chauffé, le fluide se décompose et libère des gaz corrosifs et toxiques. On ne les voit pas venir.</text>
+  <use href="#filet" y="76"/>
+</g>
+
+<!-- ══ 4 · CE QUI ÉCLATE ════════════════════════════════════════════ -->
+<g transform="translate(0,382)">
+  <text class="t num" x="392" y="34" text-anchor="end">04</text>
+  <g transform="translate(34,10)">
+    <!-- la bouteille, et la contrainte qui rayonne -->
+    <path class="pic" d="M14 18c0-6 3-9 11-9s11 3 11 9v25c0 3-2 5-5 5H19c-3 0-5-2-5-5z" fill="#eaf1f9"/>
+    <path class="pic" d="M21 9V2h8v7"/>
+    <g class="pic-al" stroke-width="2"><path d="M6 22h-5M6 34h-5M44 22h5M44 34h5"/></g>
+    <path class="pic-al" d="M25 55v5" stroke-width="2"/>
+  </g>
+  <text class="t risque" x="104" y="24">CE QUI ÉCLATE</text>
+  <text class="t et" x="104" y="38" fill="#c9451a">INTERDIT</text>
+  <text class="c ln" x="146" y="38">chauffer une bouteille — ni flamme, ni eau chaude, ni radiateur</text>
+  <text class="t et" x="104" y="51" fill="#1e7e54">LE GESTE</text>
+  <text class="c ln" x="146" y="51">bouteille debout, sanglée, à l'ombre · jamais surremplie</text>
+  <text class="c" x="104" y="63" font-size="6" fill="#637285">Un circuit reste sous pression à l'arrêt, et la pression monte avec la chaleur. Toujours.</text>
+  <use href="#filet" y="76"/>
+</g>
+
+<!-- ══ 5 · LE COURANT ═══════════════════════════════════════════════ -->
+<g transform="translate(0,484)">
+  <text class="t num" x="392" y="34" text-anchor="end">05</text>
+  <g transform="translate(34,10)">
+    <!-- le sectionneur ouvert, et le cadenas posé dessus -->
+    <path class="pic" d="M8 6h34v40H8z"/>
+    <path class="pic" d="M18 16v-6M32 16v-6M18 42v-6M32 42v-6"/>
+    <path class="pic" d="M18 16l14 20" stroke-width="2.2"/>
+    <g transform="translate(30,26)">
+      <path class="pic-al" d="M-6 4h18v14H-6z" fill="#fff1e9" stroke-width="2.2"/>
+      <path class="pic-al" d="M-2 4V0a5 5 0 0 1 10 0v4" stroke-width="2.2"/>
+    </g>
+  </g>
+  <text class="t risque" x="104" y="24">LE COURANT</text>
+  <text class="t et" x="104" y="38" fill="#c9451a">INTERDIT</text>
+  <text class="c ln" x="146" y="38">travailler sans consigner, même pour « juste vérifier »</text>
+  <text class="t et" x="104" y="51" fill="#1e7e54">LE GESTE</text>
+  <text class="c ln" x="146" y="51">les cinq étapes de la consignation, à chaque fois</text>
+  <text class="c" x="104" y="63" font-size="6" fill="#637285">Électrisation : le courant traverse le corps. Électrocution : une électrisation qui tue.</text>
+</g>
+
+<!-- ── PIED ────────────────────────────────────────────────────────── -->
+<rect x="0" y="566" width="420" height="28" fill="#1b3a63"/>
+<text class="t" x="28" y="583" font-size="8.6" font-weight="700" fill="#fffdf8">EN CAS DE DOUTE, ON N'OUVRE PAS.</text>
+<text class="c" x="392" y="583" font-size="6.6" fill="#fffdf8" opacity=".66" text-anchor="end">inerWeb · habilitation fluides frigorigènes</text>
+</svg>
