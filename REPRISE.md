@@ -761,6 +761,28 @@ que « G6 · codes 6.01 → 6.08 » promettait huit compétences pour quatre ens
 
 ---
 
+## 2 ter. Où voir ce qui est fait — le registre
+
+**[`REGISTRE-COURS-INTERACTIFS.md`](REGISTRE-COURS-INTERACTIFS.md)** — généré par
+`build/registre.mjs`, relancé à chaque `build.mjs`. **Ne jamais le modifier à la main.**
+
+Il croise trois sources : le disque, les appels depuis les fiches, la couverture déclarée.
+Et il signale ce qu'aucune liste tenue à la main ne voit :
+- un cours **orphelin** — présent, mais qu'aucune fiche n'appelle : du travail que personne
+  ne peut atteindre ;
+- un **lien mort** — une fiche qui appelle un cours absent du disque ;
+- un cours **sans couverture déclarée** : il enseigne, mais rien ne le prouve ;
+- un **code inconnu du référentiel** : une faute de frappe qui ferait croire à une couverture
+  qui n'existe pas.
+
+> ⚠️ **À consulter AVANT d'annoncer ce qu'il reste à faire.** Le 31/07, deux cours ont été
+> recommandés à la production alors qu'ils étaient déjà sur le disque : l'inventaire partait
+> de `cartes.js`, donc de ce qui est *branché*, et un cours posé mais pas encore relié y était
+> invisible. F. Henninot dépose au fil de l'eau pendant qu'on travaille — l'état du dépôt
+> n'est jamais celui qu'on a mesuré dix minutes plus tôt.
+
+---
+
 ## 3 bis. Le vocabulaire — cinq mots, et ils ne se marchent pas dessus
 
 Tranché par F. Henninot le 31/07/2026. Avant cela, **sept formulations différentes** désignaient

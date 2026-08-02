@@ -471,6 +471,15 @@ function main() {
     stdio: "inherit",
   });
 
+  /* --- le registre des cours interactifs. Même principe que la galerie :
+     relevé du disque, jamais saisi. Il signale ce qu'aucune liste tenue à
+     la main ne voit — un cours présent mais que personne n'appelle, une
+     fiche qui appelle un cours absent, un cours qui n'a jamais déclaré ce
+     qu'il enseigne. --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/registre.mjs")], {
+    stdio: "inherit",
+  });
+
   /* --- 28/07 : CE QUI MANQUAIT POUR QUE `build.mjs` SOIT VRAIMENT « le »
      build. Jusqu'ici, reconstruire le pack en entier voulait dire enchaîner
      QUATRE commandes à la main (build.mjs, puis parcours.mjs, puis
