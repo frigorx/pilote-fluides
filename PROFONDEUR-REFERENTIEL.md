@@ -23,6 +23,7 @@ Présents dans plus de 40 % des cartes : ils valident sans discriminer.
 - `install` — 58 % des cartes (utilisé par 7.03, 8.03)
 - `arret` — 44 % des cartes (utilisé par 6.06)
 - `securite` — 44 % des cartes (utilisé par 11.01)
+- `remplac` — 44 % des cartes (utilisé par 12.07)
 - `condens` — 42 % des cartes (utilisé par 1.04)
 - `raccord` — 42 % des cartes (utilisé par 4.01, 12.01)
 - `direct` — 42 % des cartes (utilisé par 4.06, 12.11)

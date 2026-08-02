@@ -109,12 +109,12 @@ const PLANCHES = readdirSync(DOSSIER)
    cours interactifs…), pas des planches SVG : voix, mise en scène,
    parfois un mini-jeu. Même philosophie que les planches : RELEVÉES dans
    `res/`, jamais saisies à la main. Tout dossier de `res/` qui porte un
-   `.html` à sa racine — hors les trois dossiers d'ASSETS purs — en est
+   `.html` à sa racine — hors les dossiers d'ASSETS et de contrôle — en est
    une ; le titre et la description viennent de la page elle-même
    (<title>, <meta name="description">), pas d'une liste tenue à part.
    --------------------------------------------------------------------- */
 const RES = resolve(RACINE, "packs/fluides/res");
-const DOSSIERS_ASSETS = new Set(["svg", "outils", "photos"]);
+const DOSSIERS_ASSETS = new Set(["svg", "outils", "photos", "bibliotheque"]);
 
 function lireExperience(dossier) {
   const entrees = readdirSync(resolve(RES, dossier), { withFileTypes: true });
@@ -255,7 +255,7 @@ if (EXPERIENCES.length) {
   <div class="experience-fichiers">
     <span class="util">Récupérer le code :</span>
     ${e.fichiers.map((f) => `<a class="dl" href="${esc(f)}" download title="Télécharger ${esc(basename(f))}">⬇ ${esc(basename(f))}</a>`).join(" ")}
-    ${e.sousDossiers.length ? `<span class="util"> + dossier ${e.sousDossiers.map(esc).join(", ")}/ (images — cloner le dépôt pour les récupérer)</span>` : ""}
+${e.sousDossiers.length ? `    <span class="util"> + dossier ${e.sousDossiers.map(esc).join(", ")}/ (images — cloner le dépôt pour les récupérer)</span>` : ""}
   </div>
 </div>`;
   }

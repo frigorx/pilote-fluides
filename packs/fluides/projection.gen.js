@@ -2323,6 +2323,13 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/etancheite-interactive/index.html?dossier=orienter",
+       "lancer": "🔎 Lancer le cours interactif : l’étanchéité — de l’indice à la preuve",
+       "desc": "Un parcours très visuel commun à g4a, g4b et g4c : registre, points sensibles, méthodes indirecte et directe, détecteur et traçabilité.",
+       "titre": "Où fuit une installation ?"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/points-de-fuite.svg",
        "alt": "Six familles de points de fuite repérées sur un circuit type.",
@@ -2345,7 +2352,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Ce contrôle visuel et manuel n'est pas une habitude d'atelier. Il est <b>cadré par un texte européen</b> : le règlement (CE) n° 1516/2007. C'est ce règlement qui définit les méthodes de contrôle d'étanchéité déjà vues ici. La méthode <b>indirecte</b> (lecture des pressions et des températures) et la méthode <b>directe</b> (détecteur, bulles de savon) sont toutes les deux cadrées par ce texte. Contrôler « au sens » de ce règlement, c'est appliquer ces méthodes, pas improviser à sa façon.",
+       "html": "<b>Actualité au 1er août 2026.</b> Le référentiel 2024/2215 cite encore le règlement (CE) n° 1516/2007 pour les compétences 4.03 à 4.07. Ce texte a été <b>abrogé le 23 juillet 2026</b> par le règlement 2026/1444, sans remplacement. Les distinctions directe et indirecte restent évaluées par le référentiel ; sur le terrain, la procédure actuelle du site, la notice et les consignes validées priment.",
        "titre": "Où fuit une installation ?"
       },
       {
@@ -3080,6 +3087,13 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/etancheite-interactive/index.html?dossier=soupconner",
+       "lancer": "📊 Ouvrir directement la méthode indirecte",
+       "desc": "Illustrations, instruments à associer et enquête guidée : les mesures soupçonnent une fuite sans prétendre la localiser.",
+       "titre": "Méthode indirecte — mesurer et interpréter"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/lecture-table.svg",
        "alt": "La lecture croisée : manomètre + 1 bar, table de saturation du fluide, sonde de contact.",
@@ -3254,6 +3268,13 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/etancheite-interactive/index.html?dossier=localiser",
+       "lancer": "🧪 Ouvrir directement la méthode directe",
+       "desc": "Détecteur illustré, choix de méthode, balayage ciblé, confirmation et passage final au registre.",
+       "titre": "Méthode directe et consignation"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/balayage-detecteur.svg",
        "alt": "La sonde du détecteur longe le raccord lentement ; une alerte se confirme par un second passage.",
@@ -3266,7 +3287,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "En <b>A1</b> et <b>A2</b>, le code <b>4.06</b> s'ajoute : ce sont les méthodes directes qui supposent au contraire d'<b>intervenir dans le circuit</b>. On met alors le circuit en pression à l'<b>azote</b> pour faire apparaître la fuite à l'eau savonneuse, ou l'on introduit un <b>gaz traceur</b> ou un <b>traceur fluorescent</b>. Toutes ces méthodes sont celles du règlement <b>(CE) n° 1516/2007</b> : le choix dépend de l'installation, jamais de l'habitude.",
+       "html": "Le code <b>4.06</b> distingue les méthodes directes qui supposent d'<b>intervenir dans le circuit</b>. Le code <b>4.07</b> vise celles qui n'exigent pas cette intervention. Le référentiel 2024/2215 rattache encore ces mots au règlement 1516/2007, mais ce texte a été <b>abrogé le 23 juillet 2026</b> sans remplacement. La méthode réellement autorisée dépend donc de la procédure actuelle, de l'installation et du périmètre de certification.",
        "titre": "Méthode directe et consignation"
       },
       {
@@ -3276,7 +3297,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Un contrôle non consigné n'a <b>aucune valeur réglementaire</b>. On note : date, méthode, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
+       "html": "Le code <b>4.09</b> exige de consigner le contrôle. On note : date, méthode, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
        "titre": "Méthode directe et consignation"
       },
       {
@@ -5751,6 +5772,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": true
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/condenseur-interactif/index.html?dossier=observer",
+       "lancer": "🌬 Lancer le cours interactif : condenseur — installer, régler, vérifier",
+       "desc": "Batterie que l’on encrasse, ventilation que l’on coupe, pression de condensation qualitative, installation, régulateur, inspection, rapport et cinq contrôles.",
+       "titre": "Condenseur — installer, régler, vérifier"
       },
       {
        "type": "schema",
@@ -8590,6 +8618,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/intervention-hydrocarbures-interactive/index.html?dossier=preparer",
+       "lancer": "🧭 Lancer le cours interactif : intervenir sur un circuit hydrocarbure",
+       "desc": "Suite de Mission 290 : 27 écrans, six embranchements avec conséquence visible, ouverture, épreuve, vide, charge, contrôle direct, rapport et cinq décisions finales.",
+       "titre": "Intervenir sur un circuit hydrocarbure"
       },
       {
        "type": "schema",

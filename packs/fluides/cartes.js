@@ -2435,7 +2435,16 @@ export const CARTES = [
       "<p>Vient ensuite le <b>contrôle visuel et manuel</b>, sans électronique : traces d'huile " +
       "(le fluide entraîne l'huile en fuyant), corrosion, givre anormal, serrage des raccords " +
       "accessibles, état des fixations.</p>" +
-      "<p>Ce contrôle visuel et manuel n'est pas une habitude d'atelier. Il est <b>cadré par un texte européen</b> : le règlement (CE) n° 1516/2007. C'est ce règlement qui définit les méthodes de contrôle d'étanchéité déjà vues ici. La méthode <b>indirecte</b> (lecture des pressions et des températures) et la méthode <b>directe</b> (détecteur, bulles de savon) sont toutes les deux cadrées par ce texte. Contrôler « au sens » de ce règlement, c'est appliquer ces méthodes, pas improviser à sa façon.</p>",
+      "<p><b>Actualité au 1er août 2026.</b> Le référentiel 2024/2215 cite encore le règlement (CE) " +
+      "n° 1516/2007 pour les compétences 4.03 à 4.07. Ce texte a été <b>abrogé le 23 juillet 2026</b> " +
+      "par le règlement 2026/1444, sans remplacement. Les distinctions directe et indirecte restent " +
+      "évaluées par le référentiel ; sur le terrain, la procédure actuelle du site, la notice et les " +
+      "consignes validées priment.</p>" +
+      lienOutil(
+        "packs/fluides/res/etancheite-interactive/index.html?dossier=orienter",
+        "🔎 Lancer le cours interactif : l’étanchéité — de l’indice à la preuve",
+        "Un parcours très visuel commun à g4a, g4b et g4c : registre, points sensibles, méthodes indirecte et directe, détecteur et traçabilité."
+      ),
     blocs: [
       {
         type: "cle",
@@ -2496,7 +2505,12 @@ export const CARTES = [
       "<p>Une pression plus basse que la valeur théorique attendue, une <b>surchauffe</b> qui grimpe " +
       "au-delà des 5 à 10 K habituels, un <b>sous-refroidissement</b> qui s'effondre sous les 4 à 8 K : " +
       "autant d'indices convergents d'un manque de charge. Le multimètre complète le tableau " +
-      "(intensité absorbée, cohérence électrique).</p>",
+      "(intensité absorbée, cohérence électrique).</p>" +
+      lienOutil(
+        "packs/fluides/res/etancheite-interactive/index.html?dossier=soupconner",
+        "📊 Ouvrir directement la méthode indirecte",
+        "Illustrations, instruments à associer et enquête guidée : les mesures soupçonnent une fuite sans prétendre la localiser."
+      ),
     blocs: [
       {
         type: "cle",
@@ -2559,18 +2573,23 @@ export const CARTES = [
       "<p>La méthode directe <b>localise physiquement</b> la fuite. Pour la catégorie E, elle se " +
       "pratique <b>sans accéder au circuit</b> : c'est le code <b>4.07</b>. Le code 4.06, qui suppose " +
       "d'intervenir dans le circuit, n'est pas dans le champ de la catégorie E.</p>" +
-      "<p>En <b>A1</b> et <b>A2</b>, le code <b>4.06</b> s'ajoute : ce sont les méthodes directes qui " +
-      "supposent au contraire d'<b>intervenir dans le circuit</b>. On met alors le circuit en pression " +
-      "à l'<b>azote</b> pour faire apparaître la fuite à l'eau savonneuse, ou l'on introduit un " +
-      "<b>gaz traceur</b> ou un <b>traceur fluorescent</b>. Toutes ces méthodes sont celles du " +
-      "règlement <b>(CE) n° 1516/2007</b> : le choix dépend de l'installation, jamais de l'habitude.</p>" +
+      "<p>Le code <b>4.06</b> distingue les méthodes directes qui supposent d'<b>intervenir dans le " +
+      "circuit</b>. Le code <b>4.07</b> vise celles qui n'exigent pas cette intervention. Le référentiel " +
+      "2024/2215 rattache encore ces mots au règlement 1516/2007, mais ce texte a été <b>abrogé le " +
+      "23 juillet 2026</b> sans remplacement. La méthode réellement autorisée dépend donc de la " +
+      "procédure actuelle, de l'installation et du périmètre de certification.</p>" +
       "<p>Le <b>détecteur électronique</b> réagit à la présence de molécules de fluide dans l'air : " +
       "on balaie la sonde <b>lentement</b>, le long des points repérés à l'étape visuelle. " +
       "L'<b>eau savonneuse</b> localise par les bulles ; le <b>traceur UV</b> révèle les fuites " +
       "intermittentes ou d'accès difficile. Sensibilité et étalonnage : selon doc constructeur, " +
       "à faire valider.</p>" +
-      "<p>Un contrôle non consigné n'a <b>aucune valeur réglementaire</b>. On note : date, méthode, " +
-      "points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.</p>",
+      "<p>Le code <b>4.09</b> exige de consigner le contrôle. On note : date, méthode, points " +
+      "contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.</p>" +
+      lienOutil(
+        "packs/fluides/res/etancheite-interactive/index.html?dossier=localiser",
+        "🧪 Ouvrir directement la méthode directe",
+        "Détecteur illustré, choix de méthode, balayage ciblé, confirmation et passage final au registre."
+      ),
     blocs: [
       {
         type: "cle",
@@ -3114,7 +3133,12 @@ export const CARTES = [
       "<p>Il ne faut le confondre avec aucun des deux autres régulateurs du circuit. Celui-ci agit " +
       "sur la <b>haute</b> pression, en sortie de condenseur. Les deux autres — pression " +
       "d'évaporation et pression de carter — agissent du côté <b>basse</b> pression, et se voient " +
-      "à la fiche de l'évaporateur.</p>",
+      "à la fiche de l'évaporateur.</p>" +
+      lienOutil(
+        "packs/fluides/res/condenseur-interactif/index.html?dossier=observer",
+        "🌬 Lancer le cours interactif : condenseur — installer, régler, vérifier",
+        "Batterie que l’on encrasse, ventilation que l’on coupe, pression de condensation qualitative, installation, régulateur, inspection, rapport et cinq contrôles."
+      ),
     blocs: [
       { type: "cle", t: "Bien installer l'unité extérieure",
         html: "L'unité extérieure se fixe <b>solidement et de niveau</b>, avec de l'espace autour pour que l'air circule. Le matériel de réglage et de sécurité — pressostats, vannes — doit être en place et accessible. Avant la mise en service, on contrôle l'étanchéité du circuit sous <b>azote</b> (un gaz neutre) — jamais à l'oxygène, jamais à l'air comprimé. Tous les raccords sont vérifiés : zéro fuite dès le démarrage." },
@@ -3857,7 +3881,12 @@ export const CARTES = [
       "<li><b>Charge.</b> On charge le circuit avec le volume de réfrigérant hydrocarbure (R-290, R-600a) indiqué sur la <b>plaque signalétique</b>, par pesée — jamais une quantité estimée. Raccord dédié aux hydrocarbures : jamais celui d'un circuit HFC, ni l'inverse.</li>" +
       "<li><b>Contrôle direct.</b> On confirme l'étanchéité avec un <b>détecteur adapté aux hydrocarbures</b> — un détecteur pour HFC classique ne convient pas.</li>" +
       "<li><b>Rapport.</b> On rédige le rapport d'intervention : composant changé, résultats de l'épreuve et du contrôle, quantité chargée. Sans rapport, l'intervention n'a pas de valeur.</li>" +
-      "</ol>",
+      "</ol>" +
+      lienOutil(
+        "packs/fluides/res/intervention-hydrocarbures-interactive/index.html?dossier=preparer",
+        "🧭 Lancer le cours interactif : intervenir sur un circuit hydrocarbure",
+        "Suite de Mission 290 : 27 écrans, six embranchements avec conséquence visible, ouverture, épreuve, vide, charge, contrôle direct, rapport et cinq décisions finales."
+      ),
     blocs: [
       {
         type: "piege",

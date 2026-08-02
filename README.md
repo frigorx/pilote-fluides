@@ -27,7 +27,7 @@ tournant dans le moteur générique **inerWeb Pilote**.
 | **Mode pilotage** | la couche de notes formateur, invisible côté élève |
 | **Critères 0-4** | codes du référentiel positionnables en mode notation |
 | **Outils embarqués** | réglette P ↔ T, carte d'identité du fluide (données FRIGOLO), Diagramme Enthalpique+ v3.2 dans l'exercice de diagnostic |
-| **Expériences interactives complètes** | pages autonomes avec voix et mise en scène, listées sur [`galerie.html`](galerie.html), fichiers sources téléchargeables : la frise vivante (histoire des fluides, 1928→2024) · « Décrypter le code d'un fluide » (nomenclature R-xyz, atelier de construction moléculaire), relié depuis `g1c` · « Mission Bouteilles » (pesée, remplissage, A2L/A3), relié depuis `p6` |
+| **Cours interactifs complets** | pages autonomes avec voix et mise en scène, **recensées automatiquement** sur [`galerie.html`](galerie.html), fichiers sources téléchargeables. Parmi eux : la frise vivante · la nomenclature · Mission Bouteilles · l’évaporateur · Mission 290 · le bilan thermique · **le condenseur** (`g7b`) · **l’intervention sur circuit hydrocarbure** (`g12b`) · **l’étanchéité** (`g4a + g4b + g4c`). |
 | **Atelier numérique** | 10 ressources reliées aux fiches : simulateurs KP1/KP5, module compresseur, leçon scroll, échangeurs, TP manomètres, TP pesée, CERFA/FI/BSD, symboles |
 
 Devise du moteur : **2 min avant / rien pendant / 30 s après**.

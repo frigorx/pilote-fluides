@@ -2,7 +2,7 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **31 juillet 2026**.
+> Dernière mise à jour : **1er août 2026**.
 
 ---
 
@@ -70,7 +70,69 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
-## 2. État au 31/07/2026
+## 2. État au 1er août 2026
+
+### Cours interactif commun `g4a + g4b + g4c` — « L’étanchéité »
+
+- Nouveau cours autonome : `packs/fluides/res/etancheite-interactive/`,
+  **27 écrans sans défilement**, 6 dossiers et 5 contrôles. Il réunit les
+  9 compétences `4.01` à `4.09` dans une seule enquête : registre → points
+  sensibles → méthode indirecte → méthode directe → confirmation → trace.
+- Parti pris visuel renforcé : triptyque illustré dès l’accueil, illustrations
+  ou pictogrammes sur 17 écrans, 3 schémas techniques validés et activités
+  manipulables sur les autres. Les quatre formats 1024×768, 1366×768, 390×844
+  et 360×640 passent sans débordement ni contenu coupé.
+- Accès par `?dossier=`, `?dossier=…&ecran=…` et `?extrait=id1,id2`, lien exact
+  copiable, navigation clavier, voix française facultative après action humaine,
+  quatre vitesses et livret d’impression de 27 écrans. Fonctionnement complet
+  sans réseau, stockage ni synthèse vocale.
+- Liens ajoutés aux trois fiches `g4a`, `g4b` et `g4c`. Une erreur reste
+  bloquante mais explique la correction ; la bonne décision déverrouille la
+  suite. Couverture déclarée et contrôlée dans `couverture.json` : 24 écrans
+  rattachés aux 9 codes, 3 écrans de contexte explicitement hors référentiel.
+- Point réglementaire vérifié le 1er août 2026 : le référentiel 2024/2215 cite
+  encore le règlement 1516/2007 pour `4.03` à `4.07`, mais le règlement
+  2026/1444 l’a abrogé à compter du 23 juillet 2026, sans remplacement. Le cours
+  enseigne la distinction attendue à l’évaluation et renvoie la pratique à la
+  procédure actuelle du site, à la notice et aux consignes validées.
+- Sources, limites et passation : `SOURCES.md` et `LIRE-MOI.txt`. Les visuels
+  sont des ressources locales déjà validées ; aucune illustration générée par
+  IA n’a été ajoutée dans ce lot, l’outil de génération intégré n’étant pas
+  disponible dans la session.
+- Build complet après intégration : A1/A2/D/E à 100 %, matrice `94/94`,
+  **16 cours interactifs complets** recensés et projection à **497 écrans**.
+
+### Cours interactifs `g7b` et `g12b` — lots 3 et 4 livrés le 1er août 2026
+
+- **Condenseur — installer, régler, vérifier** :
+  `packs/fluides/res/condenseur-interactif/`, 24 écrans sans défilement dans
+  5 dossiers. Le curseur d’encrassement et l’arrêt du ventilateur rendent
+  visible la chaîne batterie grise → débit d’air réduit → chaleur moins bien
+  rejetée → pression de condensation qui tend à monter. L’écran précise qu’une
+  HP haute n’est jamais un diagnostic unique. Couverture déclarée écran par
+  écran : `7.02`, `7.03`, `7.05`, `7.07`, `7.09`, `7.10`. Le nom commercial
+  KVR et le développement encore marqué « À FAIRE VALIDER » dans `g7b` ne sont
+  pas déclarés remplacés ; aucune valeur de réglage n’est inventée.
+- **Intervenir sur un circuit hydrocarbure** :
+  `packs/fluides/res/intervention-hydrocarbures-interactive/`, 27 écrans dans
+  6 dossiers. Suite directe de Mission 290 au point sûr « zone autorisée,
+  fluide récupéré, circuit rempli d’azote, installation consignée ». Six
+  embranchements montrent la conséquence d’un mauvais choix puis ramènent au
+  dernier point sûr. Le bouton Suivant reste bloqué jusqu’à la décision.
+  Couverture : `12.07`, `12.08`, `12.09`, `12.10`, `12.11`, `12.12`. Aucune
+  pression, durée, valeur de vide, débit, couple ou charge générique.
+- Les deux cours acceptent `?dossier=`, `?dossier=…&ecran=…` et
+  `?extrait=id1,id2`, proposent un lien copiable, une voix française facultative
+  après action humaine, quatre vitesses, une impression papier complète et le
+  fonctionnement sans voix, stockage ni réseau. Liens ajoutés aux fiches
+  `g7b` et `g12b`; leurs lancements entrent automatiquement dans la projection.
+- Build complet : A1/A2/D/E et profondeur inchangés à 100 %, matrice
+  `94/94`, projection à 494 écrans. La galerie relève **15 vrais cours
+  interactifs** après exclusion de `bibliotheque/_verifier-icones.html`, qui
+  était compté à tort comme un cours. Le cahier de commande annonce 15 cours
+  **avant** ces deux lots : cette divergence prouve que son décompte ne repose
+  pas sur la seule copie `C:\git\pilote-fluides`. Ne pas corriger ce delta en
+  copiant silencieusement depuis la copie Bureau.
 
 ### Module interactif « Évaporateur » — lot 1 livré
 
