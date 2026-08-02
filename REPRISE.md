@@ -72,6 +72,74 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ## 2. État au 1er août 2026
 
+### ⏱ POINT D'ÉTAPE — au sortir de la journée du 31 juillet
+
+La journée a fait passer le pack d'un support de texte illustré à un dispositif de **cours
+interactifs adossés au référentiel**. Cinq chiffres :
+
+| | au matin | au soir |
+|---|---|---|
+| Cours interactifs en place | 10 | **16** |
+| Codes du référentiel couverts par un cours | 32 | **71** |
+| Codes expliqués par du texte SEUL | 67 | **28** |
+| Diapositives de projection | 445 | **497** (+ 266 questions) |
+| Images de la bibliothèque | 0 | **43 illustrations · 48 icônes · 7 ambiances** |
+
+Refonte complète de la projection (échelle unique en `cqh`, fond crème, une image sur chaque
+écran) · bibliothèque d'images contrôlée pixel par pixel · Tomes 3 et 4 · évaporateur ·
+hydrocarbures · condenseur · intervention hydrocarbures · étanchéité · vocabulaire unifié ·
+registre généré.
+
+> ⚠️ **RIEN N'A ÉTÉ POUSSÉ SUR GITHUB.** Dix commits en local, `main` en avance de 10 sur
+> `origin`. La diffusion reste gelée : aucun push sans feu vert de F. Henninot, au cas par cas.
+
+#### En attente de F. HENNINOT — personne d'autre ne peut le faire
+
+1. **Vérifier le nom des 48 icônes** → `packs/fluides/res/bibliotheque/_verifier-icones.html`.
+   Les planches ont été découpées dans l'ordre de lecture annoncé ; si l'une a été composée
+   autrement, les noms se décalent **en bloc**. Vingt secondes, et c'est le seul travers que le
+   contrôle automatique ne voit pas.
+2. **Choisir les instants des schémas figés** → `packs/fluides/res/svg/_verifier-instants.html`,
+   **à servir en HTTP** (par le hub : `/formation/packs/fluides/res/svg/_verifier-instants.html`).
+   35 planches × 4 instants. Cela réglerait la répétition des illustrations, mesurée à
+   **12,9 écrans par image**, jusqu'à 20 d'affilée sur `g1b`, `g5b`, `g6b`, `g7b`, `g11`.
+3. **`amb-plateau.webp`** — la photo du plateau technique, prise sur place.
+4. **Installer les voix naturelles de Windows** (Paramètres › Accessibilité › Narrateur ›
+   Ajouter des voix naturelles). Le poste n'a que Hortense, Julie et Paul — les anciennes voix.
+   Aucun code ne corrigera l'accent.
+5. **Valider le partage `appui` / `hors_referentiel`** du Tome 4 : c'est une déclaration qui
+   peut finir devant un auditeur.
+
+#### Prochains travaux, par rendement décroissant
+
+1. **Écrire la couverture des 10 cours qui n'en ont pas** (le registre les liste). Aucune
+   production nouvelle, une heure, et le registre passe au vert.
+2. **`moteur/voix.js`** — **7 cours sur 13 ne classent pas les voix** et prennent la première
+   venue : d'où la voix qui change d'un écran à l'autre. Attendre la liste (`getVoices()` est
+   asynchrone et vide au premier appel), classer par qualité, mémoriser, partager.
+3. **Le gabarit commun** dont le fichier de voix fait partie. Trois heures, et les vingt cours
+   suivants coûtent trois fois moins à intégrer.
+4. **Les cours restants**, par poids : `g3` (5) · `g5b` (5) · `g13` (5) · `g5a` (4) · `g6b` (4).
+   Commande détaillée dans `C:\Users\henni\OneDrive\Bureau\COURS-INTERACTIFS-A-FABRIQUER.md`.
+5. **L'adressage `?extrait=`** — envoyer deux écrans en réponse à une question d'élève. Suppose
+   des identifiants d'écrans **stables et en toutes lettres** ; le Tome 4 ne les a pas.
+6. **Le Bac Pro MFER.** Le référentiel existe déjà :
+   `C:\git\HAL-v3\donnees\referentiels\peda\BAC_MFER.json` (activités A1-A5, tâches, savoirs
+   S1-S8, matrices officielles). Il suffirait que `couverture.json` devienne multi-référentiel
+   pour qu'un cours serve les fluides ET le Bac, sans duplication. **Commencer par la mesure** :
+   croiser les 16 cours avec le référentiel Bac donne le taux de réemploi réel, et ce chiffre
+   décide du reste.
+
+#### Deux questions d'architecture ouvertes
+
+- **Où vivent les cours ?** Aujourd'hui dans `pilote-fluides`. Le jour où ils servent le Bac, le
+  CAP et le BTS, ils ne peuvent plus appartenir au pack fluides — sinon on les duplique et on
+  corrige la même faute quatre fois. Le Tome 4 pose déjà la question.
+- **`C:\git\inerweb-formation` n'a AUCUN commit.** Le logiciel qui porte les sessions, les
+  candidats et le registre scellé n'a aucun historique. Chantier à part, mais réel.
+
+---
+
 ### Cours interactif commun `g4a + g4b + g4c` — « L’étanchéité »
 
 - Nouveau cours autonome : `packs/fluides/res/etancheite-interactive/`,
