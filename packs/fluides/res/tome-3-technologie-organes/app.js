@@ -3,7 +3,12 @@
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
-const SCREEN_NAMES = ["Reconnaître", "Fonction professionnelle", "Entrée et sortie", "Fonctionnement interne", "Situer et monter", "Mémoriser"];
+/* « Où ça fuit » est un écran à part entière, et pas une ligne ajoutée sous le
+   montage : les codes 6.01, 7.01, 8.01, 9.01 et 1.05 du référentiel exigent le
+   principe de fonctionnement ET les risques de fuite associés. Un écran nommé,
+   adressable par `?ecran=6`, est ce qui rend cette exigence vérifiable. */
+const SCREEN_NAMES = ["Reconnaître", "Fonction professionnelle", "Entrée et sortie", "Fonctionnement interne", "Situer et monter", "Où ça fuit", "Mémoriser"];
+const NB_ECRANS = SCREEN_NAMES.length;
 const FLOW = {
   red: { color: "#e33d32", label: "Vapeur HP très chaude", detail: "Haute pression · vapeur" },
   orange: { color: "#f28a16", label: "Liquide HP chaud à tiède", detail: "Haute pression · liquide" },
@@ -38,6 +43,7 @@ const dossiers = [
     mechanismSteps: ["Le fluide frigorigène en vapeur BP est admis.", "Un volume est fermé puis réduit par un piston, des spirales, des vis ou un rotor.", "La vapeur comprimée est refoulée en HP.", "La répétition du mouvement crée le débit massique."],
     location: { x: 81, y: 50, text: "À droite · entre aspiration BP et refoulement HP" },
     mounting: ["Respecter la position, les couples et les raccordements du constructeur.", "Limiter la transmission des vibrations et laisser les tuyauteries sans contrainte.", "Garantir le retour d’huile et empêcher tout retour de liquide.", "Vérifier les protections électriques et la ventilation du moteur."],
+    leaks: {"title":"Où ça fuit sur un compresseur","points":["Les <b>raccords d’aspiration et de refoulement</b> : brasures et raccords mécaniques, les deux points les plus courants.","Les <b>vannes de service</b> et leurs bouchons, ainsi que le presse-étoupe de leur tige.","Les <b>traversées électriques</b> (bornes) sur un compresseur hermétique, et le <b>joint de carter</b> sur un semi-hermétique.","Le <b>presse-étoupe d’arbre</b> sur un compresseur ouvert : un joint tournant est un point de fuite par nature.","Ce qui aggrave tout le reste : une tuyauterie montée <b>en contrainte</b> ou qui vibre finit par fissurer — d’où les plots antivibratiles et les lyres."]},
     trap: "Un compresseur ne doit pas aspirer du liquide : le coup de liquide peut provoquer une casse mécanique.",
     memory: "Aspiration vapeur BP → compression → refoulement vapeur HP → circulation.",
     question: { prompt: "Quelle description est complète ?", answers: ["Il transforme directement le liquide HP en vapeur BP.", "Il aspire une vapeur BP, la comprime, la refoule en vapeur HP et crée le débit massique.", "Il stocke le liquide avant le détendeur."], correct: 1, why: "Le compresseur agit sur une vapeur et met le fluide frigorigène en circulation." }
@@ -60,6 +66,7 @@ const dossiers = [
     mechanismSteps: ["Désurchauffe : la vapeur HP perd de la chaleur sensible.", "Liquéfaction : le mélange vapeur-liquide rejette de la chaleur latente.", "Sous-refroidissement : le liquide HP perd encore de la chaleur sensible.", "L’air ou l’eau ressort à une température plus élevée."],
     location: { x: 50, y: 10, text: "En haut · entre refoulement et ligne liquide" },
     mounting: ["Garantir le débit d’air ou d’eau prévu par le constructeur.", "Maintenir propres la batterie, les ailettes ou les plaques.", "Prévoir purge, vidange et protection contre le gel sur le circuit d’eau.", "Respecter le sens et le montage hydraulique indiqués par le fabricant."],
+    leaks: {"title":"Où ça fuit sur un condenseur","points":["Les <b>raccords et brasures</b> d’entrée et de sortie, côté vapeur chaude comme côté liquide.","La <b>batterie</b> elle-même : ailettes et tubes exposés aux chocs, et à la corrosion en atmosphère agressive (bord de mer, cuisine, toiture polluée).","Les <b>vibrations du ventilateur</b> transmises aux tubes et aux fixations.","Les <b>prises de pression</b>, purges et bouchons ajoutés sur l’appareil.","Sur un échangeur à plaques : les <b>joints et brasures</b> — une fuite interne y mélange les deux circuits sans rien laisser voir à l’extérieur."]},
     trap: "Une HP élevée invite d’abord à contrôler les échanges : propreté, ventilateurs, pompe et débit du milieu de refroidissement.",
     memory: "Vapeur HP chaude → rejet de chaleur → liquide HP.",
     question: { prompt: "Que devient le milieu extérieur au condenseur ?", answers: ["Il reçoit de la chaleur et ressort plus chaud.", "Il cède toujours de la chaleur et ressort plus froid.", "Il se mélange au fluide frigorigène."], correct: 0, why: "Le condenseur rejette vers l’air ou l’eau la chaleur transportée par le fluide frigorigène." }
@@ -82,6 +89,7 @@ const dossiers = [
     mechanismSteps: ["Le mélange BP absorbe de la chaleur.", "Le liquide s’évapore à température presque stable.", "Après la dernière goutte, la vapeur absorbe de la chaleur sensible.", "L’air ou l’eau ressort à une température plus basse."],
     location: { x: 50, y: 90, text: "En bas · entre détente et aspiration" },
     mounting: ["Garantir le débit d’air ou d’eau prévu.", "Prévoir l’évacuation des condensats et le dégivrage lorsqu’ils sont nécessaires.", "Répartir correctement le fluide entre les circuits de la batterie.", "Protéger un échangeur à eau contre le gel selon la conception."],
+    leaks: {"title":"Où ça fuit sur un évaporateur","points":["Les <b>raccords et brasures</b> d’entrée et de sortie, et le raccord du bulbe s’il est posé là.","La <b>batterie</b>, très exposée : chocs de manutention en chambre froide, ailettes pliées, tubes percés.","Le <b>dégivrage mal fait</b> : on ne casse jamais la glace à l’outil, un tube percé sous le givre ne se voit pas tout de suite.","La <b>corrosion</b> par les condensats qui stagnent quand l’écoulement est bouché ou mal pentu.","Les <b>résistances de dégivrage</b> mal placées et les vibrations du ventilateur."]},
     trap: "Du givre n’indique pas à lui seul une panne. Il faut observer sa répartition, le débit d’air et le fonctionnement du dégivrage.",
     memory: "Mélange BP très froid → absorption de chaleur → vapeur BP.",
     question: { prompt: "Où commence la zone de surchauffe ?", answers: ["Après la disparition de la dernière goutte de liquide.", "Dès l’entrée du mélange BP.", "Après la dernière bulle de vapeur au condenseur."], correct: 0, why: "La surchauffe appartient à la zone où le fluide est entièrement à l’état vapeur." }
@@ -101,6 +109,7 @@ const dossiers = [
     mechanismSteps: ["La surchauffe augmente et le bulbe se réchauffe.", "La pression du bulbe augmente sur la membrane.", "Le pointeau s’ouvre davantage et le débit augmente.", "L’évaporateur est mieux alimenté et la surchauffe redescend."],
     location: { x: 10, y: 50, text: "À gauche · juste avant l’évaporateur" },
     mounting: ["Respecter la flèche de circulation et le sens du distributeur.", "Fixer le bulbe avec un contact thermique ferme, à la position prescrite.", "Isoler le bulbe lorsque le constructeur le demande.", "Raccorder correctement l’égalisation externe et vérifier l’étanchéité."],
+    leaks: {"title":"Où ça fuit sur un détendeur thermostatique","points":["Les <b>raccords</b> d’entrée et de sortie : brasures, ou raccords à visser dont l’étanchéité dépend de la portée et du couple.","Le <b>capillaire du bulbe</b> : pincé, plié ou frotté, il se rompt — et l’élément thermostatique se vide.","La <b>prise d’égalisation externe</b> et son raccordement sur la ligne d’aspiration.","La <b>tige de réglage</b> et son bouchon : un bouchon laissé desserré après réglage est une fuite lente.","Le corps du détendeur si l’appareil travaille en <b>contrainte mécanique</b> ou sous vibration."]},
     trap: "Le détendeur thermostatique régule la surchauffe, pas directement la température du local.",
     memory: "Bulbe + membrane + ressort + pointeau = dosage mécanique de la surchauffe.",
     question: { prompt: "Pourquoi employer une égalisation externe ?", answers: ["Pour alimenter électriquement le détendeur.", "Pour transmettre sous la membrane la pression réelle en sortie d’évaporateur.", "Pour remplacer le bulbe thermostatique."], correct: 1, why: "La prise externe compense notamment les pertes de charge entre l’entrée et la sortie de l’évaporateur." }
@@ -120,6 +129,7 @@ const dossiers = [
     mechanismSteps: ["Les capteurs transmettent leurs mesures.", "Le régulateur calcule l’écart par rapport à la consigne.", "L’actionneur déplace le pointeau par pas ou en continu selon la technologie.", "La nouvelle ouverture modifie le débit massique."],
     location: { x: 10, y: 50, text: "À gauche · en amont de l’évaporateur" },
     mounting: ["Respecter le sens de circulation et la position autorisée.", "Installer une filtration adaptée en amont.", "Placer et câbler correctement les capteurs associés.", "Effectuer l’initialisation et le paramétrage prévus par le fabricant."],
+    leaks: {"title":"Où ça fuit sur un détendeur électronique","points":["Les <b>raccords</b> fluidiques d’entrée et de sortie, comme sur tout organe de ligne.","Le <b>passage de l’actionneur</b> vers le corps de vanne : c’est là que la partie électrique rejoint le circuit sous pression.","Les <b>capteurs</b> associés et leurs prises de pression, quand la régulation en comporte.","Les <b>vibrations</b> et la contrainte sur un appareil tenu seulement par sa tuyauterie.","Un défaut électrique ne fait pas fuir, mais il peut laisser la vanne dans une position qui met le circuit en <b>surpression</b> : les deux se surveillent ensemble."]},
     trap: "Une vanne électronique mécaniquement correcte peut mal réguler si le capteur, le câblage ou le paramètre est faux.",
     memory: "Capteur → régulateur → actionneur → pointeau → débit.",
     question: { prompt: "Quel élément décide de l’ouverture ?", answers: ["Le voyant liquide.", "Le régulateur, à partir des mesures reçues.", "Le ressort du pressostat HP."], correct: 1, why: "Le régulateur traite les mesures et envoie une commande à l’actionneur du détendeur." }
@@ -139,6 +149,7 @@ const dossiers = [
     mechanismSteps: ["Le liquide HP entre dans un passage très étroit.", "Les frottements et la longueur créent une perte de charge.", "La pression chute progressivement.", "Un mélange liquide-vapeur BP alimente l’évaporateur."],
     location: { x: 10, y: 50, text: "À gauche · entre ligne liquide et évaporateur" },
     mounting: ["Ne pas modifier la longueur ni le diamètre prévus.", "Éviter écrasement, pincement et coude trop serré.", "Maintenir une filtration propre en amont.", "Reproduire le cheminement et les contacts thermiques définis par le constructeur."],
+    leaks: {"title":"Où ça fuit sur un tube capillaire","points":["Les <b>brasures</b> à ses deux extrémités : la section est fine, la reprise de brasure y est délicate.","Les <b>points de fixation et de frottement</b> : un capillaire qui vibre contre une tôle finit par s’user et percer.","Le <b>pincement</b> du tube, à la pose ou lors d’une intervention voisine.","La liaison capillaire–ligne d’aspiration (échangeur), quand elle existe.","Un capillaire <b>bouché</b> ne fuit pas, mais il fait monter la pression en amont : ne pas confondre le symptôme et la cause."]},
     trap: "Chercher une vis de réglage est une erreur : le tube capillaire est une détente fixe.",
     memory: "Petit diamètre + longueur calculée = perte de charge fixe.",
     question: { prompt: "Qu’est-ce qui règle le débit du capillaire ?", answers: ["Un moteur pas à pas.", "Son diamètre, sa longueur et les conditions de pression.", "Un bulbe fixé sur l’aspiration."], correct: 1, why: "Le capillaire ne comporte aucun organe mobile de régulation." }
@@ -158,6 +169,7 @@ const dossiers = [
     mechanismSteps: ["Le fluide condensé entre dans le récipient.", "Le niveau liquide varie avec la charge et le fonctionnement.", "La phase vapeur occupe l’espace supérieur.", "La sortie prélève la phase liquide selon la conception du réservoir."],
     location: { x: 37, y: 10, text: "Après le condenseur · avant la ligne liquide" },
     mounting: ["Respecter la position prévue et fixer le récipient sans contrainte.", "Identifier avec certitude l’entrée, la sortie liquide et les raccords de service.", "Préserver les organes de sécurité associés.", "Ne jamais inventer un taux de remplissage : appliquer les règles et la documentation en vigueur."],
+    leaks: {"title":"Où ça fuit sur un réservoir de liquide","points":["Les <b>raccords</b> d’entrée et de sortie et leurs brasures.","Les <b>accessoires vissés</b> : vanne de service, bouchon de purge, voyant de niveau, raccord de soupape.","La <b>soupape de sécurité</b> : après une ouverture, elle peut ne pas se refermer parfaitement.","La <b>corrosion externe</b> de la virole, surtout en extérieur ou sur un appareil ancien.","Un réservoir contient une <b>réserve de liquide</b> : une fuite y est plus lourde de conséquences qu’ailleurs sur la ligne."]},
     trap: "Un réservoir liquide et une bouteille anti-coup de liquide se ressemblent parfois, mais ils ne sont ni au même endroit ni au même état de fluide.",
     memory: "Côté HP : recevoir le liquide et alimenter la ligne liquide.",
     question: { prompt: "Sur quelle partie du circuit se trouve habituellement le réservoir liquide ?", answers: ["Sur la ligne liquide HP, après le condenseur.", "Sur l’aspiration BP, juste avant le compresseur.", "Dans le circuit d’eau de l’évaporateur."], correct: 0, why: "Le réservoir liquide appartient au côté haute pression et alimente la ligne liquide." }
@@ -177,6 +189,7 @@ const dossiers = [
     mechanismSteps: ["Le fluide traverse le corps du filtre.", "Les particules solides sont retenues.", "Le dessiccant fixe l’humidité.", "Le fluide poursuit son trajet vers les organes sensibles."],
     location: { x: 28, y: 23, text: "Ligne liquide · en amont du voyant et du détendeur" },
     mounting: ["Respecter la flèche et la position du fabricant.", "Garder les bouchons jusqu’au dernier moment pour limiter l’exposition à l’air.", "Limiter l’échauffement du corps lors du brasage selon la notice.", "Remplacer le filtre après une ouverture ou une pollution lorsque la procédure l’exige."],
+    leaks: {"title":"Où ça fuit sur un filtre déshydrateur","points":["Les <b>brasures</b> d’entrée et de sortie, refaites à chaque remplacement — donc à contrôler à chaque fois.","Sur les modèles démontables, le <b>joint de couvercle</b> et les boulons de serrage.","Les <b>prises de pression</b> quand l’appareil en porte une de chaque côté.","La <b>surchauffe au brasage</b>, qui abîme le média interne et fragilise la liaison : filtre protégé, chiffon humide, azote circulant.","Un filtre <b>encrassé</b> ne fuit pas : il fait chuter la pression et givre en sortie. Autre symptôme, autre cause."]},
     trap: "Le filtre peut être froid ou présenter une chute de température lorsqu’il est très obstrué, mais le diagnostic doit être confirmé par des mesures.",
     memory: "Filtrer les particules + retenir l’humidité.",
     question: { prompt: "Pourquoi respecter la flèche d’un filtre unidirectionnel ?", answers: ["Parce que son média et sa construction imposent un sens de circulation.", "Uniquement pour rendre l’étiquette lisible.", "Pour transformer le liquide en vapeur."], correct: 0, why: "Le sens fait partie de la conception du composant et doit être vérifié sur le corps réel." }
@@ -196,6 +209,7 @@ const dossiers = [
     mechanismSteps: ["Le fluide traverse le corps transparent.", "La fenêtre rend visibles d’éventuelles bulles.", "La pastille réagit à l’humidité selon sa technologie.", "Le technicien confronte l’observation aux autres mesures."],
     location: { x: 23, y: 33, text: "Ligne liquide · souvent après le filtre" },
     mounting: ["Installer la fenêtre dans une position lisible.", "Respecter un éventuel sens de circulation.", "Protéger le voyant contre les contraintes de tuyauterie et les chocs.", "Lire la pastille uniquement avec la légende du fabricant."],
+    leaks: {"title":"Où ça fuit sur un voyant liquide","points":["Le <b>hublot</b> et son joint : c’est le point faible propre à cet organe.","Les <b>raccords</b> à visser ou les brasures selon le modèle.","La <b>surchauffe au brasage</b>, qui détruit le joint du hublot et la pastille d’humidité.","Les <b>chocs</b> : un voyant est en saillie sur la ligne, il se prend tout ce qui passe.","Le voyant sert à voir l’état du fluide et l’humidité : un voyant opaque ne dit plus rien, il se remplace."]},
     trap: "Des bulles ne prouvent pas automatiquement un manque de charge : perte de charge, variation de charge ou conditions transitoires sont aussi à examiner.",
     memory: "Observer le liquide et, selon le modèle, l’indicateur d’humidité.",
     question: { prompt: "Que faut-il conclure devant des bulles ?", answers: ["Le manque de charge est certain.", "C’est un indice à confronter aux pressions, températures et conditions de fonctionnement.", "Le compresseur est forcément hors service."], correct: 1, why: "Une observation isolée ne suffit pas pour poser un diagnostic fiable." }
@@ -215,6 +229,7 @@ const dossiers = [
     mechanismSteps: ["La commande alimente la bobine.", "Le champ magnétique attire le noyau mobile.", "L’orifice pilote ou principal s’ouvre selon la conception.", "À la coupure, le ressort ramène une vanne normalement fermée."],
     location: { x: 18, y: 42, text: "Souvent sur la ligne liquide · avant la détente" },
     mounting: ["Respecter la flèche de circulation et la position de la bobine.", "Vérifier tension, fréquence et puissance de la bobine.", "Ne jamais alimenter une bobine déposée de son noyau lorsque le fabricant l’interdit.", "Protéger le corps et retirer la bobine pendant le brasage si la procédure le demande."],
+    leaks: {"title":"Où ça fuit sur une électrovanne","points":["Les <b>raccords</b> fluidiques et leurs brasures.","Le <b>tube de l’équipage mobile</b> sous la bobine : c’est la partie sous pression que traverse la commande.","Le <b>joint de siège</b> : usé, il laisse passer le fluide vanne fermée — fuite interne, invisible de l’extérieur, qui se voit aux pressions.","La <b>surchauffe au brasage</b> : bobine déposée et corps protégé, sinon le siège est cuit.","La bobine elle-même ne contient pas de fluide : un défaut électrique n’est pas une fuite."]},
     trap: "Une bobine alimentée ne prouve pas que l’orifice est ouvert : noyau bloqué, pression différentielle ou défaut mécanique restent possibles.",
     memory: "Commande électrique → noyau mobile → passage autorisé ou fermé.",
     question: { prompt: "Une électrovanne normalement fermée est comment sans alimentation ?", answers: ["Ouverte.", "Fermée.", "Toujours à moitié ouverte."], correct: 1, why: "Le mot normalement décrit la position de repos, sans énergie électrique." }
@@ -234,6 +249,7 @@ const dossiers = [
     mechanismSteps: ["La pression amont pousse l’obturateur du clapet.", "Le passage s’ouvre dans le sens autorisé.", "Une inversion de pression ramène l’obturateur sur son siège.", "La vanne de service, elle, est positionnée volontairement par le technicien."],
     location: { x: 58, y: 18, text: "Emplacement variable · selon la fonction recherchée" },
     mounting: ["Respecter la flèche du clapet anti-retour.", "Identifier les positions de tige d’une vanne de service avant de manœuvrer.", "Ne jamais forcer la tige en butée.", "Remettre les bouchons avec le joint et le couple prévus, puis contrôler l’étanchéité."],
+    leaks: {"title":"Où ça fuit sur un clapet ou une vanne de service","points":["Le <b>presse-étoupe</b> de la tige : il assure l’étanchéité autour d’une pièce qui tourne et se déplace.","Les <b>bouchons</b> des prises de pression : en fonctionnement, ils se remettent et se serrent — ce sont eux qui étanchent, pas le clapet interne.","Les <b>raccords</b> et brasures du passage principal.","Le <b>siège</b> d’un clapet anti-retour usé : il laisse passer à contresens, fuite interne qu’on lit sur les pressions.","Rappel de sécurité : la prise permanente d’une vanne de service reste reliée au compresseur dans <b>toutes</b> les positions — son bouchon ne se défait jamais sur une installation chargée."]},
     trap: "Une prise de service n’est pas forcément isolée dans toutes les positions de tige. Vérifier le schéma de la vanne utilisée.",
     memory: "Clapet : un seul sens. Vanne de service : isoler et accéder selon sa position.",
     question: { prompt: "Quel organe empêche automatiquement un retour de fluide ?", answers: ["Le clapet anti-retour.", "Le voyant liquide.", "Le réservoir liquide."], correct: 0, why: "Le clapet se ferme lorsque la différence de pression tend à inverser l’écoulement." }
@@ -253,6 +269,7 @@ const dossiers = [
     mechanismSteps: ["Le mélange entre dans le volume de la bouteille.", "La vitesse diminue et les gouttelettes tombent au fond.", "La vapeur est prélevée par le tube interne.", "L’huile et une petite quantité de liquide reviennent de façon contrôlée selon la conception."],
     location: { x: 73, y: 82, text: "Aspiration BP · juste avant le compresseur" },
     mounting: ["Monter le récipient dans la position prévue, généralement verticale selon le modèle.", "Identifier entrée, sortie et éventuel orifice de retour.", "Dimensionner et sélectionner l’organe selon l’application, pas selon son apparence.", "Rechercher et corriger la cause d’un retour de liquide répété."],
+    leaks: {"title":"Où ça fuit sur une bouteille anti-coup de liquide","points":["Les <b>raccords</b> d’entrée et de sortie et leurs brasures.","La <b>corrosion externe</b> de la virole, en particulier sur un appareil froid qui condense en permanence à sa surface.","Les <b>fixations</b> : une bouteille lourde tenue par sa seule tuyauterie met les raccords en contrainte.","L’<b>orifice de retour d’huile</b> et les prises éventuelles.","L’isolation thermique cache la surface : une fuite peut s’y développer sans trace visible."]},
     trap: "Ne pas confondre cette bouteille BP avec le réservoir liquide HP : leur ressemblance extérieure ne dit pas leur fonction.",
     memory: "Sur l’aspiration : retenir le liquide, laisser repartir la vapeur.",
     question: { prompt: "Quel fluide doit ressortir vers le compresseur ?", answers: ["Principalement de la vapeur BP.", "Uniquement du liquide HP.", "De l’eau du circuit secondaire."], correct: 0, why: "La bouteille protège le compresseur en empêchant l’arrivée brutale de liquide." }
@@ -272,6 +289,7 @@ const dossiers = [
     mechanismSteps: ["Le gaz chargé d’huile entre à grande vitesse.", "Une déviation, un effet centrifuge ou un média coalescent sépare les gouttelettes.", "L’huile collectée descend dans le réservoir inférieur.", "Le gaz poursuit vers le condenseur et l’huile retourne au compresseur."],
     location: { x: 80, y: 28, text: "Refoulement HP · entre compresseur et condenseur" },
     mounting: ["Monter verticalement lorsque le modèle l’impose.", "Respecter entrée, sortie gaz et retour d’huile.", "Vérifier le fonctionnement du flotteur ou du dispositif de retour.", "Contrôler l’étanchéité et éviter les contraintes de tuyauterie."],
+    leaks: {"title":"Où ça fuit sur un séparateur d’huile","points":["Les <b>raccords</b> d’entrée et de sortie, côté vapeur chaude — donc soumis à des cycles de température.","La <b>ligne de retour d’huile</b> vers le carter, son raccord et son éventuel filtre.","Les <b>flotteurs et bouchons</b> de visite sur les modèles démontables.","La <b>corrosion</b> et les vibrations, l’appareil étant situé juste au refoulement du compresseur.","Une trace d’huile n’est pas seulement salissante : <b>l’huile marque l’endroit où le fluide s’échappe</b>. C’est un indice de fuite, pas un désordre esthétique."]},
     trap: "Un séparateur mal raccordé peut priver le compresseur d’huile ou envoyer du liquide vers un emplacement non prévu.",
     memory: "Gaz HP avec huile → séparation → gaz vers condenseur + huile vers compresseur.",
     question: { prompt: "Quelle connexion distingue le séparateur d’huile d’un simple récipient en ligne ?", answers: ["Le retour d’huile vers le compresseur.", "Une arrivée d’eau potable.", "Un bulbe thermostatique."], correct: 0, why: "Le séparateur possède un trajet spécifique pour rendre l’huile au système de lubrification." }
@@ -291,6 +309,7 @@ const dossiers = [
     mechanismSteps: ["La pression agit sur un soufflet ou une membrane.", "Le déplacement s’oppose à un ressort réglé.", "Au seuil, le mécanisme bascule le contact.", "La commande arrête, autorise ou signale selon le câblage."],
     location: { x: 82, y: 50, text: "Prises HP et BP · selon la pression surveillée" },
     mounting: ["Raccorder le bon pressostat au bon niveau de pression.", "Protéger la prise de pression contre vibration et pulsations selon la notice.", "Câbler le contact correspondant à la fonction attendue.", "Valider seuil, différentiel et type de réarmement sans inventer de valeur."],
+    leaks: {"title":"Où ça fuit sur un pressostat","points":["La <b>prise de pression</b> et son raccord : c’est le seul endroit où l’appareil touche le circuit.","Le <b>capillaire</b> de liaison quand le pressostat est déporté : pincement, frottement, rupture.","Le <b>soufflet interne</b> percé par fatigue : le fluide s’échappe alors par le corps de l’appareil.","Les bornes et le boîtier appartiennent au circuit de commande : un défaut électrique n’est <b>pas</b> une fuite.","Un pressostat déclenché à répétition signale souvent autre chose : chercher la cause avant de réarmer."]},
     trap: "Shunter un pressostat de sécurité supprime une protection essentielle et ne constitue jamais une réparation.",
     memory: "Mesurer une pression et changer l’état d’un contact électrique.",
     question: { prompt: "Le fluide frigorigène traverse-t-il un pressostat ?", answers: ["Oui, comme dans un filtre.", "Non. La pression agit sur une partie sensible raccordée à la ligne.", "Seulement quand le compresseur est arrêté."], correct: 1, why: "Le pressostat reçoit une information de pression ; il n’est pas un organe traversé par le débit principal." }
@@ -313,6 +332,7 @@ const dossiers = [
     mechanismSteps: ["La partie sensible reçoit une température ou une pression.", "Sa caractéristique électrique varie.", "Le signal est transmis au régulateur.", "Le régulateur l’interprète avant de commander un autre organe."],
     location: { x: 58, y: 52, text: "Emplacement choisi selon la mesure nécessaire" },
     mounting: ["Assurer un bon contact thermique et isoler la sonde lorsque nécessaire.", "Choisir une plage de pression compatible avec le circuit.", "Éviter les contraintes sur câble, connecteur et raccord.", "Vérifier la correspondance du signal, du câblage et du paramétrage."],
+    leaks: {"title":"Où ça fuit sur une sonde ou un capteur de pression","points":["Le <b>raccord de pression</b> d’un capteur : unique point en contact avec le fluide.","Le <b>doigt de gant</b> d’une sonde de température monté sur le circuit, et son joint.","Une sonde de <b>contact</b> ne touche pas le fluide : elle ne peut pas fuir, mais un collier mal serré fausse la mesure.","Le <b>câblage</b> ne fuit pas ; une mesure fausse peut en revanche masquer une fuite en cours.","Point de méthode : la méthode indirecte de contrôle d’étanchéité repose sur ces mesures — une sonde mal posée, et le contrôle ne vaut rien."]},
     trap: "Une valeur affichée plausible peut être fausse si la sonde est mal fixée, mal isolée, mal étalonnée ou affectée au mauvais canal.",
     memory: "Mesurer correctement avant de réguler correctement.",
     question: { prompt: "Quelle différence fondamentale sépare un capteur d’un actionneur ?", answers: ["Le capteur fournit une information ; l’actionneur modifie le procédé.", "Le capteur ouvre toujours un passage de fluide.", "Il n’existe aucune différence."], correct: 0, why: "La chaîne de régulation distingue mesure, décision et action." }
@@ -332,6 +352,7 @@ const dossiers = [
     mechanismSteps: ["La pression agit sur une membrane ou un clapet.", "Le ressort établit l’équilibre correspondant à la fonction.", "Le régulateur module son ouverture pendant le fonctionnement normal.", "La soupape de sécurité reste fermée et ne s’ouvre qu’au seuil prévu."],
     location: { x: 52, y: 50, text: "Emplacement variable · défini par la fonction" },
     mounting: ["Identifier précisément la fonction et le sens du régulateur.", "Raccorder correctement toute prise pilote ou égalisation.", "Ne jamais modifier le tarage d’un organe de sécurité hors procédure autorisée.", "Diriger le rejet de sécurité vers la destination prévue par la conception et les règles applicables."],
+    leaks: {"title":"Où ça fuit sur un régulateur ou une soupape","points":["Les <b>raccords</b> d’entrée et de sortie et la ligne pilote quand elle existe.","La <b>tige de réglage</b> et son bouchon d’origine, à remettre après tout réglage.","La <b>soupape de sécurité</b> après une ouverture : elle peut rester non étanche, et son rejet doit aller là où c’est prévu.","Le <b>siège</b> d’un régulateur usé : fuite interne, lisible aux pressions et non à l’extérieur.","Une soupape ne se bouchonne jamais et ne se règle pas au jugé : c’est un organe de sécurité, réglé et plombé selon la documentation."]},
     trap: "Utiliser une soupape comme régulateur normal ou isoler une protection sans dispositif prévu détruit la logique de sécurité.",
     memory: "Régulateur : moduler. Sécurité : protéger en dernier recours.",
     question: { prompt: "Quel énoncé distingue correctement les deux fonctions ?", answers: ["Le régulateur module en service ; la soupape protège exceptionnellement au seuil prévu.", "La soupape règle normalement la température du local.", "Le régulateur remplace toujours tous les pressostats."], correct: 0, why: "La régulation agit pendant le service normal ; la soupape constitue une protection mécanique de dernier recours." }
@@ -413,7 +434,7 @@ function openDossier(id, screen = 0) {
   if (!dossier) return;
   stopSpeech();
   currentDossier = dossier;
-  currentScreen = Math.max(0, Math.min(5, screen));
+  currentScreen = Math.max(0, Math.min(NB_ECRANS - 1, screen));
   currentAnswer = null;
   questionAnswered = false;
   $("#home-view").hidden = true;
@@ -451,12 +472,12 @@ function renderRail() {
 function renderScreen() {
   if (!currentDossier) return;
   renderRail();
-  $("#screen-kicker").textContent = `DOSSIER ${String(dossiers.indexOf(currentDossier) + 1).padStart(2, "0")} · ÉCRAN ${currentScreen + 1} SUR 6`;
+  $("#screen-kicker").textContent = `DOSSIER ${String(dossiers.indexOf(currentDossier) + 1).padStart(2, "0")} · ÉCRAN ${currentScreen + 1} SUR ${NB_ECRANS}`;
   $("#screen-title").textContent = SCREEN_NAMES[currentScreen];
-  $("#screen-count").textContent = `${currentScreen + 1} / 6`;
+  $("#screen-count").textContent = `${currentScreen + 1} / ${NB_ECRANS}`;
   $("#screen-state").innerHTML = revisionMode ? `<span class="revision-chip">${revisionSets[revisionMode].label} · ${revisionIndex + 1}/${revisionSets[revisionMode].ids.length}</span>` : currentDossier.short;
 
-  const renderers = [renderRecognition, renderFunction, renderConnections, renderMechanism, renderLocation, renderQuestion];
+  const renderers = [renderRecognition, renderFunction, renderConnections, renderMechanism, renderLocation, renderLeaks, renderQuestion];
   $("#screen-content").innerHTML = renderers[currentScreen](currentDossier);
   wireScreen();
   updateNavigation();
@@ -465,7 +486,7 @@ function renderScreen() {
 
 function goToScreen(index) {
   stopSpeech();
-  currentScreen = Math.max(0, Math.min(5, index));
+  currentScreen = Math.max(0, Math.min(NB_ECRANS - 1, index));
   currentAnswer = null;
   questionAnswered = false;
   renderScreen();
@@ -586,6 +607,32 @@ function renderLocation(dossier) {
     </div>`;
 }
 
+function renderLeaks(dossier) {
+  const bloc = dossier.leaks;
+  if (!bloc) {
+    return `<div class="leak-layout"><section class="leak-card"><p class="eyebrow">OÙ ÇA FUIT</p><h3>À compléter</h3><p>Les points de fuite de cet organe n’ont pas encore été écrits.</p></section></div>`;
+  }
+  return `
+    <div class="leak-layout">
+      <section class="leak-card">
+        <p class="eyebrow">OÙ ÇA FUIT, CE QU’ON CONTRÔLE</p>
+        <h3>${bloc.title}</h3>
+        <ul class="leak-list">${bloc.points.map(point => `<li>${point}</li>`).join("")}</ul>
+      </section>
+      <section class="leak-method">
+        <p class="eyebrow">LA MÉTHODE, ELLE, NE CHANGE PAS</p>
+        <ol>
+          <li><b>Le registre d’abord</b> : ce qui a déjà fui sur cette machine se refuit souvent au même endroit.</li>
+          <li><b>Les yeux et la main</b> : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe.</li>
+          <li><b>La méthode indirecte</b> : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit.</li>
+          <li><b>La méthode directe</b> : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil.</li>
+          <li><b>La trace écrite</b> : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller.</li>
+        </ol>
+        <p class="leak-warning"><b>⚠ Avant de toucher :</b> installation consignée électriquement, et mise en pression à l’<b>azote</b> uniquement — jamais d’oxygène, jamais d’air comprimé.</p>
+      </section>
+    </div>`;
+}
+
 function renderQuestion(dossier) {
   const chosen = currentAnswer;
   const question = dossier.question;
@@ -639,7 +686,7 @@ function updateNavigation() {
     return;
   }
   previous.textContent = currentScreen === 0 ? "← Tous les dossiers" : "← Retour";
-  next.textContent = currentScreen === 5 ? "Dossier suivant →" : "Continuer →";
+  next.textContent = currentScreen === NB_ECRANS - 1 ? "Dossier suivant →" : "Continuer →";
   next.disabled = false;
 }
 
@@ -781,7 +828,7 @@ function initializeRoute() {
   }
   const dossier = dossierById(params.get("dossier"));
   if (dossier) {
-    const screen = Math.max(0, Math.min(5, Number(params.get("ecran") || 1) - 1));
+    const screen = Math.max(0, Math.min(NB_ECRANS - 1, Number(params.get("ecran") || 1) - 1));
     openDossier(dossier.id, screen);
   }
 }

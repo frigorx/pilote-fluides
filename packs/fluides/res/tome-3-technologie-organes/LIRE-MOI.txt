@@ -8,7 +8,10 @@ Reconnaître, situer et comprendre chaque composant du circuit frigorifique.
 CONTENU
 -------
 - 16 dossiers technologiques.
-- 6 écrans fixes par dossier, soit 96 écrans pédagogiques.
+- 7 ecrans fixes par dossier, soit 112 ecrans pedagogiques.
+  L'ecran 6 « Ou ca fuit » a ete ajoute le 03/08/2026 : les codes 6.01, 7.01,
+  8.01, 9.01 et 1.05 exigent le principe de fonctionnement ET les risques de
+  fuite associes. Il est adressable par ?ecran=6.
 - 16 mini-questions de mémorisation.
 - 3 révisions guidées reliées aux séances 17, 18 et 19.
 - 18 vues réalistes isolées.

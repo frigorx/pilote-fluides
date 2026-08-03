@@ -140,6 +140,43 @@ registre généré · chaîne de l’intervention p1 + p3 + p5.
 
 ---
 
+### Tome 3 : un écran « Où ça fuit » par organe — 3 août 2026
+
+Suite directe du point précédent, et le meilleur rendement du pack : **cinq codes
+(`1.05`, `6.01`, `7.01`, `8.01`, `9.01`) étaient bloqués en *appui* faute d'un
+paragraphe.** Leur libellé officiel exige le principe de fonctionnement **et** les
+risques de fuite associés ; le mot « fuite » n'apparaissait nulle part dans le module.
+
+- **Un septième écran, pas une ligne en plus sous le montage** : `Où ça fuit` s'intercale
+  entre « Situer et monter » et « Mémoriser », pour **chacun des 16 organes**. 96 écrans
+  deviennent **112**, et l'écran est adressable (`?ecran=6`) — c'est ce qui rend
+  l'exigence vérifiable par un auditeur, une ligne noyée dans une carte ne l'aurait pas été.
+- **Deux colonnes** : à gauche les points de fuite **propres à l'organe** (le presse-étoupe
+  d'arbre du compresseur ouvert, les joints d'un échangeur à plaques dont la fuite interne
+  ne se voit pas, le capillaire du bulbe, le hublot du voyant…) ; à droite la **méthode**,
+  identique partout — registre, yeux et main, méthode indirecte, méthode directe, trace
+  écrite — plus le rappel : consignation et **azote seul**, jamais d'oxygène ni d'air
+  comprimé.
+- **Écrit à partir de ce que le pack affirme déjà** (`g6` pour les points de fuite du
+  compresseur, `g4a` pour la méthode), **aucune valeur chiffrée**. ⚠️ **À faire relire par
+  F. Henninot** : c'est du contenu métier, seize fois.
+- **Le nombre d'écrans n'est plus en dur** : `NB_ECRANS = SCREEN_NAMES.length` remplace les
+  six `6` et `5` disséminés dans le code (kicker, compteur, bornes de navigation, lecture de
+  `?ecran=`). Ajouter un écran ne demandera plus de les retrouver un par un.
+- ⚠️ **Défaut trouvé en mesurant, pas en regardant** : à **360×640**, le nouvel écran
+  débordait de **567 px**, coupés en silence par l'`overflow: hidden` du module — alors que
+  ses six autres écrans tiennent (mesuré côte à côte : 0 px de débordement pour « Situer et
+  monter » au même format). Le module a une échelle typographique réduite pour les petits
+  écrans (jusqu'à 7-8 px) que mon CSS ignorait. Corrigé, **plus un filet** : sous 900 px la
+  carte peut défiler. Mieux vaut un défilement visible qu'un paragraphe perdu.
+- **Vérifié** : 1366×768, 1024×768 et 360×640, sur l'organe au texte le plus long
+  (clapet et vannes de service) — zéro débordement, zéro contenu coupé, deux colonnes sur
+  grand écran, une seule sur téléphone. Registre : **aucune anomalie**, Tome 3 à 112 écrans
+  et 6 codes déclarés.
+- `circuit-organe-par-organe` **garde volontairement ces codes en appui** : un code n'a pas
+  besoin d'être tenu deux fois, et dupliquer ce contenu obligerait à corriger la même faute
+  à deux endroits.
+
 ### Les dix cours sans couverture déclarée — soldé le 2 août 2026 (soir)
 
 Le registre signalait dix cours qui **enseignent sans que rien ne le prouve** : frise
