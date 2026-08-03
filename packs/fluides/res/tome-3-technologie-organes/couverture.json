@@ -1,0 +1,44 @@
+{
+  "cours": "tome-3-technologie-organes",
+  "titre": "Tome 3 — la technologie des organes",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "appelé_depuis": ["g6", "g7", "g8", "g9", "g9b"],
+  "ecrans": 96,
+
+  "_lire_avant_de_compter": [
+    "Couverture déclarée le 2 août 2026, après coup, et PRUDENTE pour la même raison que",
+    "`circuit-organe-par-organe` : les codes 6.01, 7.01, 8.01 et 9.01 exigent le principe",
+    "de fonctionnement ET les risques de fuite associés. Le mot « fuite » n'apparaît nulle",
+    "part dans ce module — compté, pas supposé. Ces codes restent donc en appui.",
+    "Ce module est arrivé de l'extérieur (livraison `habilitation-fluide-rush-complet-v2`) :",
+    "ses 22 symboles viennent de la bibliothèque de l'usine, sans redessin."
+  ],
+
+  "codes": {
+    "1.04": "fonction des principales composantes et transformations du fluide, organe par organe, chacun avec son symbole normalisé : compresseurs, condenseurs à air et à eau, évaporateurs à air et à eau, détendeurs"
+  },
+
+  "appui": {
+    "1.05": "fonctionnement élémentaire des organes annexes — réservoir liquide, filtre déshydrateur, voyant, électrovanne, clapet et vannes de service, bouteille anti-coup de liquide, séparateur d'huile, pressostats, sondes, régulateurs de pression. Manque le volet « rôle dans la prévention et la détection des fuites » qu'exige le libellé",
+    "6.01": "les quatre technologies de compression, sans le volet « risques de fuite »",
+    "7.01": "condenseurs à air et à eau, sans le volet « risques de fuite »",
+    "8.01": "évaporateurs à air et à eau, sans le volet « risques de fuite »",
+    "9.01": "détendeur thermostatique, détendeur électronique et tube capillaire, sans le volet « risques de fuite »"
+  },
+
+  "hors_referentiel": [
+    "cycle",
+    "liquid",
+    "protection",
+    "control"
+  ],
+
+  "a_faire": [
+    "Les identifiants de dossier sont stables (compresseurs, condenseurs, evaporateurs,",
+    "detendeur-thermostatique, detendeur-electronique, tube-capillaire, reservoir-liquide,",
+    "filtre-deshydrateur, voyant-liquide, electrovanne, clapet-vannes, bouteille-anti-coup,",
+    "separateur-huile, pressostats, sondes-capteurs, regulateurs-securite) : la déclaration",
+    "pourra passer au dossier près dès qu'un paragraphe « points de fuite » sera ajouté à",
+    "chaque organe — cinq codes gagnés pour peu de rédaction."
+  ]
+}

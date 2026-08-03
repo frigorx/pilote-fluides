@@ -1071,7 +1071,17 @@ export const CARTES = [
       "<b>1 bar</b>. La pince de température et le multimètre servent à la <b>méthode indirecte</b> de contrôle " +
       "d'étanchéité : on compare les valeurs mesurées — surchauffe (plage normale <b>5 à 10 K</b>), " +
       "sous-refroidissement (plage normale <b>4 à 8 K</b>), intensité absorbée — à celles attendues sur la fiche " +
-      "constructeur. Un écart qui se creuse alerte, sans avoir ouvert le circuit.</p>",
+      "constructeur. Un écart qui se creuse alerte, sans avoir ouvert le circuit.</p>" +
+      lienOutil(
+        "packs/fluides/res/chaine-intervention-interactive/index.html?dossier=manifold",
+        "🧭 Lancer le cours interactif : la chaîne de l’intervention",
+        "Manifold, raccordement, tirage au vide et ordre des vannes dans un seul fil visuel — 25 écrans."
+      ) +
+      lienOutil(
+        "packs/fluides/res/vanne-service-interactive/index.html?ecran=geste",
+        "🔩 Lancer le cours interactif : la vanne de service, où brancher le flexible",
+        "L’autre bout du flexible : la vanne de service en coupe animée. La voie de service P, la prise permanente P1 du pressostat, et la position à donner à la vanne pour lire au manomètre sans isoler le compresseur."
+      ),
     blocs: [
       {
         type: "cle",
@@ -1206,7 +1216,12 @@ export const CARTES = [
       "<li>Surveiller si le vide remonte, selon la pratique habituelle : une remontée signale une fuite ou de l'humidité résiduelle.</li>" +
       "</ol>" +
       "<p>L'ordre du neuvième geste protège le circuit : si la pompe s'arrête avant que la vanne soit fermée, " +
-      "l'huile de la pompe peut être aspirée en sens inverse vers le circuit qu'on vient de mettre sous vide.</p>",
+      "l'huile de la pompe peut être aspirée en sens inverse vers le circuit qu'on vient de mettre sous vide.</p>" +
+      lienOutil(
+        "packs/fluides/res/chaine-intervention-interactive/index.html?dossier=vide",
+        "🧭 Lancer le cours interactif : la chaîne de l’intervention",
+        "Pompe, vacuomètre, courbes de vide et ordre d’isolement — dans la continuité du manifold."
+      ),
     blocs: [
       {
         type: "cle",
@@ -1330,7 +1345,17 @@ export const CARTES = [
       "<li>S'il reste du fluide <b>emprisonné dans le flexible</b>, le récupérer par l'appareil déjà branché. Jamais le laisser partir à l'air libre.</li>" +
       "<li>Déconnecter seulement quand la pression est retombée et confirmée.</li>" +
       "</ol>" +
-      "<p>La même logique s'applique pour <b>vider ou remplir un cylindre</b>, en phase liquide comme en phase gazeuse. Une bouteille de réfrigérant a une prise dédiée à chaque phase, ou s'utilise dans un sens précis pour tirer du liquide. On suit toujours le marquage de la bouteille, jamais un raccord forcé.</p>",
+      "<p>La même logique s'applique pour <b>vider ou remplir un cylindre</b>, en phase liquide comme en phase gazeuse. Une bouteille de réfrigérant a une prise dédiée à chaque phase, ou s'utilise dans un sens précis pour tirer du liquide. On suit toujours le marquage de la bouteille, jamais un raccord forcé.</p>" +
+      lienOutil(
+        "packs/fluides/res/chaine-intervention-interactive/index.html?dossier=deconnecter",
+        "🧭 Lancer le cours interactif : la chaîne de l’intervention",
+        "Fermer, stabiliser, récupérer le résidu et desserrer lentement — la chorégraphie complète."
+      ) +
+      lienOutil(
+        "packs/fluides/res/vanne-service-interactive/index.html?ecran=positions",
+        "🔩 Lancer le cours interactif : la vanne de service, ce que chaque position ferme",
+        "Fermée sur l’arrière, intermédiaire, fermée sur l’avant : la coupe animée montre quel passage s’ouvre et quel volume reste isolé — un volume isolé n’est ni vide ni sans pression."
+      ),
     blocs: [
       {
         type: "cle",
@@ -2987,7 +3012,12 @@ export const CARTES = [
       "bien installé, bien réglé et bien entretenu consomme moins et dure plus longtemps.</p>" +
       "<p>Le compresseur ne se pose jamais directement sur son châssis ou sur le sol. On le fixe sur des <b>plots antivibratiles</b> (des « silent-blocs ») : des cales en caoutchouc qui absorbent les vibrations pendant qu'il tourne. Sans eux, la vibration se transmet à toute la tuyauterie qui y est raccordée. Une tuyauterie qui vibre en permanence, ou montée en contrainte (tordue pour rejoindre un piquage), finit tôt ou tard par se fissurer : c'est une cause classique de fuite, qu'on évite dès l'installation.</p>" +
       "<p>Le compresseur porte aussi des <b>vannes de service</b>, une côté aspiration et une côté refoulement. Elles ont plusieurs positions : <b>ouverte en arrière</b> pour le fonctionnement normal, une <b>position intermédiaire</b> qui permet de brancher un manomètre sans isoler le compresseur, et <b>fermée</b> pour le couper complètement du reste du circuit, par exemple avant une intervention. On manœuvre chaque vanne selon la documentation constructeur : le nombre de tours et le sens de manœuvre ne sont pas les mêmes d'un modèle à l'autre.</p>" +
-      "<p>Au démarrage, on ne se contente pas de regarder le compresseur tourner : on <b>mesure</b>. On relève l'<b>intensité</b> absorbée par le moteur (le courant électrique qu'il consomme) et on la compare à la valeur inscrite sur la <b>plaque signalétique</b> du compresseur — jamais à un chiffre appris par cœur ou approximatif. Une intensité trop haute annonce un défaut (moteur qui force, réglage à revoir). On vérifie en même temps que les pressions se stabilisent dans les plages attendues, toujours selon la documentation constructeur.</p>",
+      "<p>Au démarrage, on ne se contente pas de regarder le compresseur tourner : on <b>mesure</b>. On relève l'<b>intensité</b> absorbée par le moteur (le courant électrique qu'il consomme) et on la compare à la valeur inscrite sur la <b>plaque signalétique</b> du compresseur — jamais à un chiffre appris par cœur ou approximatif. Une intensité trop haute annonce un défaut (moteur qui force, réglage à revoir). On vérifie en même temps que les pressions se stabilisent dans les plages attendues, toujours selon la documentation constructeur.</p>" +
+      lienOutil(
+        "packs/fluides/res/vanne-service-interactive/index.html?ecran=positions",
+        "🔩 Lancer le cours interactif : la vanne de service en coupe animée",
+        "Les trois positions décrites ci-dessus, vues de l’intérieur : le carré, la tige et le pointeau se déplacent ensemble, le presse-étoupe reste fixe. Plus la voie de service P, la prise permanente P1 du pressostat, et deux mini-jeux corrigés."
+      ),
     blocs: [
       { type: "cle", t: "Le test qui doit précéder la mise en service",
         html: "Avant de mettre un compresseur neuf sous tension, on vérifie que le circuit ne fuit " +
@@ -3552,6 +3582,11 @@ export const CARTES = [
         "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite",
         "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
         "Les organes annexes un par un : réservoir, filtre déshydrateur, voyant, électrovanne, clapet et vannes de service, bouteille anti-coup de liquide, séparateur d'huile, régulateurs de pression et soupape — chacun en vue isolée, avec son symbole normalisé."
+      ) +
+      lienOutil(
+        "packs/fluides/res/vanne-service-interactive/index.html?ecran=geste",
+        "🔩 Lancer le cours interactif : la vanne de service et la prise du pressostat",
+        "Pourquoi le pressostat se raccorde sur P1 et non sur la voie de service : cette prise reste reliée au compresseur dans toutes les positions de la vanne — donc sous pression, bouchon jamais défait sur une installation chargée."
       ),
     blocs: [
       {

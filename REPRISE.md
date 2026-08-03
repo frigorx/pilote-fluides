@@ -2,7 +2,7 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **1er août 2026**.
+> Dernière mise à jour : **2 août 2026**.
 
 ---
 
@@ -70,7 +70,7 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
-## 2. État au 1er août 2026
+## 2. État au 2 août 2026
 
 ### ⏱ POINT D'ÉTAPE — au sortir de la journée du 31 juillet
 
@@ -79,16 +79,16 @@ interactifs adossés au référentiel**. Cinq chiffres :
 
 | | au matin | au soir |
 |---|---|---|
-| Cours interactifs en place | 10 | **16** |
-| Codes du référentiel couverts par un cours | 32 | **71** |
-| Codes expliqués par du texte SEUL | 67 | **28** |
-| Diapositives de projection | 445 | **497** (+ 266 questions) |
+| Cours interactifs en place | 10 | **17** |
+| Codes du référentiel couverts par un cours | 32 | **75** |
+| Codes expliqués par du texte SEUL | 67 | **24** |
+| Diapositives de projection | 445 | **500** (+ 266 questions) |
 | Images de la bibliothèque | 0 | **43 illustrations · 48 icônes · 7 ambiances** |
 
 Refonte complète de la projection (échelle unique en `cqh`, fond crème, une image sur chaque
 écran) · bibliothèque d'images contrôlée pixel par pixel · Tomes 3 et 4 · évaporateur ·
 hydrocarbures · condenseur · intervention hydrocarbures · étanchéité · vocabulaire unifié ·
-registre généré.
+registre généré · chaîne de l’intervention p1 + p3 + p5.
 
 > ⚠️ **RIEN N'A ÉTÉ POUSSÉ SUR GITHUB.** Dix commits en local, `main` en avance de 10 sur
 > `origin`. La diffusion reste gelée : aucun push sans feu vert de F. Henninot, au cas par cas.
@@ -140,10 +140,141 @@ registre généré.
 
 ---
 
+### Les dix cours sans couverture déclarée — soldé le 2 août 2026 (soir)
+
+Le registre signalait dix cours qui **enseignent sans que rien ne le prouve** : frise
+vivante, nomenclature, Mission Bouteilles, classes de sécurité, les deux cours de chaleur,
+pression/température, Académie froid-clim, le circuit organe par organe et le Tome 3.
+Chacun a désormais son `couverture.json`. **Le registre ne signale plus aucune anomalie.**
+
+Trois principes tenus, parce qu'une couverture déclarée trop large est pire que pas de
+couverture du tout — elle se retourne contre l'organisme le jour de l'audit :
+
+1. **On déclare ce que le cours ENSEIGNE, pas ce que porte sa fiche d'accroche.** Mission
+   Bouteilles couvre ainsi `5.02` que sa fiche `p6` ne porte pas ; à l'inverse `11.03`
+   (stockage et transport) n'est pas déclaré par le cours des classes de sécurité, qui
+   n'en parle pas.
+2. **Le libellé officiel se lit en entier.** `6.01`, `7.01`, `8.01` et `9.01` exigent le
+   principe de fonctionnement **et** les risques de fuite associés : le mot « fuite »
+   apparaît deux fois dans `circuit-organe-par-organe` et **zéro fois** dans le Tome 3 —
+   compté, pas supposé. Les quatre codes y restent donc en **appui**. Chaque fichier dit
+   ce qui manquerait pour passer en couverture réelle : c'est la liste de travail la plus
+   rentable du pack (quatre paragraphes = cinq codes).
+3. **Le contexte est nommé comme tel.** L'invention des CFC, la règle du +90, l'atelier
+   panne : utiles, exigés par aucun code, donc en `hors_referentiel`.
+
+Le compteur du registre ne bouge pas (79 codes couverts) : il compte les codes des fiches
+qui appellent un cours, pas les codes déclarés. C'est voulu — ces déclarations servent à
+répondre à « où enseignez-vous ceci ? », pas à gonfler un chiffre.
+
+⚠️ **À faire relire par F. Henninot** : le partage `codes` / `appui` / `hors_referentiel`
+de ces dix fichiers est un jugement pédagogique, et c'est une déclaration qui peut finir
+devant un auditeur — même nature que le partage du Tome 4, déjà en attente.
+
+### Cours interactif « La vanne de service » — intégré le 2 août 2026 (soir)
+
+Module produit par F. Henninot **hors du dépôt**
+(`Bureau\inerweb full ia\vanne-rotalock-pedagogique`), intégré ici sous
+`packs/fluides/res/vanne-service-interactive/` : la vanne de service à deux prises en
+**coupe animée**, 4 écrans, 9 questions corrigées, **108 Ko et aucune ressource externe**
+(la coupe est un SVG construit par `valve-diagram.js` — ni image, ni son, ni police).
+
+- **Ce qu'il apporte au pack, et que rien ne montrait** : le paragraphe de `g6b` décrivait
+  déjà les trois positions de la vanne de service en trois lignes de texte. Ici on les voit :
+  le carré, la tige et le pointeau se déplacent comme **un seul ensemble de longueur
+  constante**, le presse-étoupe reste fixe, et chaque position ouvre ou ferme des passages
+  différents — *fermée sur l'arrière* (T↔C, P isolée, **P1 toujours reliée à C**),
+  *intermédiaire* (tout communique : c'est la position de lecture), *fermée sur l'avant*
+  (T isolée de C). Le bleu plein marque ce qui communique avec le compresseur, le gris
+  hachuré ce que le pointeau isole — **un volume isolé n'est ni vide ni sans pression**.
+- **Couverture déclarée et mesurée** (`couverture.json`) : `4.01`, `4.05`, `5.01`.
+  `6.01` et `6.06` sont mis en **appui** — le cours les éclaire sans les enseigner, et un
+  appui ne compte jamais comme une preuve. L'écran BP/HP est déclaré **hors référentiel**
+  (contexte de compréhension). Rien n'a été gonflé : le registre le recalcule à chaque build.
+- **Branché sur quatre fiches**, chacune sur l'écran qui la concerne : `p1` (où brancher le
+  flexible → `?ecran=geste`), `p5` (ce que chaque position ferme → `?ecran=positions`),
+  `g6b` (les trois positions du paragraphe, vues de l'intérieur) et `g9b` (pourquoi le
+  pressostat se raccorde sur P1). Les quatre lancements entrent **automatiquement** dans la
+  projection (4 diapositives d'expérience relevées par `parcours.mjs`).
+- **Mise à la charte du pack** : le module arrivait déjà en palette inerWeb (crème `#f7f1e7`,
+  `#1b3a63`/`#ff6b35`, Trebuchet/Calibri) — **aucun thème sombre, aucun piège
+  `prefers-reduced-motion`**, vérifié par recherche avant toute correction, pas supposé.
+  Trois choses ont bougé : sa barre A−/A+ **locale** cède la place au bouton « Aa » du moteur
+  (mémorisé, partagé, bascule DYS) ; adressage `?ecran=` + bouton « Copier le lien » ;
+  `<title>` et `<meta description>` au format attendu par la galerie.
+- ⚠️ **Piège mesuré sur le zoom, à connaître pour les prochains modules** : le cours est bâti
+  en grille `100dvh` avec `overflow: hidden`. Passé 100 %, il fallait donc rendre la page
+  défilante — mais deux réflexes échouent. (1) `overflow: auto` sur `<body>` en fait un
+  **conteneur de défilement** : le sélecteur d'étapes en `position: sticky` colle alors à un
+  bloc qui ne défile pas, donc il ne colle pas du tout. (2) Même en flux, une rangée de
+  grille dimensionnée `auto` ne laisse **aucun débattement** au sticky. Corrigé en passant
+  `.app-shell` en `display: block` et `<body>` en `overflow: visible` sous
+  `html.lisibilite-agrandie`. Trouvé en mesurant `getBoundingClientRect()` à 160 %, pas en
+  regardant le code.
+- **Vérifié dans le navigateur** (serveur local) : les 4 écrans à **1280×720, 1024×768 et
+  375×812** — zéro débordement horizontal ou vertical, rien de coupé dans la colonne de
+  texte ni dans le visuel ; à **160 %** la page défile, la barre des étapes reste collée en
+  haut et la navigation du bas reste atteignable ; ouverture directe `?ecran=geste` correcte ;
+  les deux mini-jeux répondent (repérage cliquable sur la coupe **et** décisions terrain),
+  bonne réponse verrouillée et expliquée, mauvaise réponse corrigée ; le lien de la fiche
+  `p1` ouvre bien le bon écran dans un nouvel onglet ; **zéro erreur console**.
+  ⚠️ Ce qui n'a **pas** été vu par un œil humain : le **déroulé de l'animation** de la clé et
+  des trois positions — un navigateur piloté ne conclut pas sur une animation.
+- **Non repris** : le parcours élève en 10 planches fixes du dossier d'origine (double emploi
+  avec les 4 écrans) et le dossier `vanne-rotalock-pedagogique\vanne-rotalock-pedagogique\`
+  du Bureau — une **copie antérieure de 3 h** extraite dans son propre dossier, laissée en
+  place, à ne pas confondre avec la bonne version.
+- **Livret imprimable ajouté dans la foulée** (bouton « 🖨 Livret », ou simplement Ctrl+P) :
+  les quatre écrans d'un coup en A4 portrait — le tableau des trois positions, les trois
+  coupes, les deux sens BP/HP, la coupe de sécurité avec ses quatre repères, et les neuf
+  questions **avec leur corrigé**. Environ 4 pages. Charte papier tenue : la couleur est
+  gardée (titres, filets, cadres), les surfaces pleines et les ombres sautent, et chaque
+  état porte aussi un **style de trait** et un **mot** — vert et rouge sont indiscernables
+  une fois photocopiés.
+  ⚠️ **Deuxième piège mesuré, à réutiliser** : le livret n'est **pas** construit au
+  chargement, et il est vidé après impression. Les `<style>` d'un SVG inline sont **globaux
+  au document** : six coupes de plus, et la règle `.vv-isolated{fill:url(#…-hatch)}` de la
+  dernière l'emporte pour toutes — motif défini dans un bloc masqué, donc **hachure du
+  volume isolé perdue à l'écran**. Construire au moment d'imprimer supprime le problème.
+  Vérifié en appliquant la vraie feuille d'impression sur une largeur de page A4 utile :
+  six figures dans le cadre, aucun débordement, motif de hachure bien rendu.
+
+### Cours interactif commun `p1 + p3 + p5` — « La chaîne de l’intervention »
+
+- Nouveau cours autonome : `packs/fluides/res/chaine-intervention-interactive/`,
+  **25 écrans**, 6 dossiers et 5 contrôles. Il relie manifold, raccordement,
+  tirage au vide, isolement et ordre des vannes dans un seul parcours avant TP.
+- Les trois fiches déclarent 6 occurrences de codes, mais `5.01` est présent
+  dans `p1` et `p5`. La couverture réelle est donc de **5 codes distincts** :
+  `3.03`, `3.04`, `4.05`, `5.01` et `5.02`. Aucun sixième code n’a été inventé.
+- Parti pris très visuel : triptyque illustré à l’accueil, trois schémas
+  techniques validés, pictogrammes d’appareils, vannes manipulables, lignes
+  colorées, cylindres liquide/gaz et séquences d’ordre. Tout fonctionne hors
+  ligne avec les ressources locales déjà validées.
+- Navigation corrigée : Précédent/Suivant est désormais en haut de la carte.
+  À 100 %, le cours tient sans défilement. Dès que la taille dépasse 100 %, la
+  page défile verticalement et la navigation reste collée sous l’en-tête ; le
+  texte et le bas des images sont donc accessibles. Cette correction partagée
+  bénéficie aussi à `condenseur-interactif`, `intervention-hydrocarbures-interactive`
+  et `etancheite-interactive`. Sur mobile agrandi, le bouton redondant Quitter
+  est masqué ; Sommaire reste disponible et évite tout débordement horizontal.
+- Contrôle navigateur : les 25 écrans passent à 1024×768, 1280×720, 1366×768,
+  390×844 et 360×640 à 100 %, sans défilement, débordement ni image cassée.
+  À 160 %, le nouveau cours et L’étanchéité ont été vérifiés sur ordinateur et
+  mobile : défilement complet, aucune largeur perdue et Suivant toujours visible.
+  Les 5 contrôles restent bloquants jusqu’à la bonne décision ; un mauvais ordre
+  affiche sa conséquence avant de permettre un nouvel essai.
+- Liens directs ajoutés aux fiches `p1`, `p3` et `p5`, avec adressage par
+  `?dossier=`, `?dossier=…&ecran=…` et `?extrait=`. Couverture, sources, limites,
+  livret d’impression et passation sont dans le dossier du cours.
+- Build complet : A1/A2/D/E à 100 %, matrice `94/94`, **17 cours interactifs**,
+  **75 codes couverts par un cours**, 24 codes en texte seul et **500 diapositives**.
+
 ### Cours interactif commun `g4a + g4b + g4c` — « L’étanchéité »
 
 - Nouveau cours autonome : `packs/fluides/res/etancheite-interactive/`,
-  **27 écrans sans défilement**, 6 dossiers et 5 contrôles. Il réunit les
+  **27 écrans sans défilement à 100 %** — avec défilement accessible lorsque la
+  police est agrandie —, 6 dossiers et 5 contrôles. Il réunit les
   9 compétences `4.01` à `4.09` dans une seule enquête : registre → points
   sensibles → méthode indirecte → méthode directe → confirmation → trace.
 - Parti pris visuel renforcé : triptyque illustré dès l’accueil, illustrations
@@ -461,11 +592,12 @@ F. Henninot, sans hésitation la deuxième fois qu'on lui a posé la question : 
   un contrôle de liens classique) : zéro cassé. Le coffre chiffré : 38 documents, cohérent
   avec les compteurs.
 
-**81 cartes** · **266 questions** · **43 planches SVG** (voir `galerie.html`)
+**81 cartes** · **266 questions** · **44 planches SVG** (voir `galerie.html`)
 · 4 illustrations · **3 outils embarqués**
-· **8 expériences interactives complètes** (frise vivante, décryptage de nomenclature,
-Mission Bouteilles, classes de sécurité, du glaçon au circuit, pression/température,
-le circuit organe par organe, Académie froid-clim — les 5 dernières ajoutées les 29-31/07)
+· **18 cours et expériences interactifs complets** — le compteur exact est **relevé**, jamais
+saisi : `REGISTRE-COURS-INTERACTIFS.md` (généré à chaque build) donne la liste, qui les appelle,
+les codes déclarés et le poids. Cette ligne-ci a menti pendant trois jours (elle annonçait 8
+alors qu'il y en avait 17) : en cas de doute, c'est le registre qui fait foi.
 > ⚠️ **Les 14 planches du 27/07 soir** (8 nouvelles : tirage au vide, pesée, manifold, ordre des
 > vannes, pression absolue/relative, boucle du détendeur, givre/dégivrage, charge limite ;
 > 6 animations d'existantes) ont été produites par agents + vérification adversariale, contrôle

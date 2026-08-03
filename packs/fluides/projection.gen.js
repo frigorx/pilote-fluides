@@ -3522,6 +3522,20 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/chaine-intervention-interactive/index.html?dossier=manifold",
+       "lancer": "🧭 Lancer le cours interactif : la chaîne de l’intervention",
+       "desc": "Manifold, raccordement, tirage au vide et ordre des vannes dans un seul fil visuel — 25 écrans.",
+       "titre": "Le manifold — lire, brancher, ne pas polluer"
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/vanne-service-interactive/index.html?ecran=geste",
+       "lancer": "🔩 Lancer le cours interactif : la vanne de service, où brancher le flexible",
+       "desc": "L’autre bout du flexible : la vanne de service en coupe animée. La voie de service P, la prise permanente P1 du pressostat, et la position à donner à la vanne pour lire au manomètre sans isoler le compresseur.",
+       "titre": "Le manifold — lire, brancher, ne pas polluer"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/photos/manifold-branche.jpg",
        "alt": "Un manifold raccordé sur une installation, flexibles bleu et rouge en place.",
@@ -3680,6 +3694,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/chaine-intervention-interactive/index.html?dossier=vide",
+       "lancer": "🧭 Lancer le cours interactif : la chaîne de l’intervention",
+       "desc": "Pompe, vacuomètre, courbes de vide et ordre d’isolement — dans la continuité du manifold.",
+       "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
       },
       {
        "type": "schema",
@@ -4454,6 +4475,20 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/chaine-intervention-interactive/index.html?dossier=deconnecter",
+       "lancer": "🧭 Lancer le cours interactif : la chaîne de l’intervention",
+       "desc": "Fermer, stabiliser, récupérer le résidu et desserrer lentement — la chorégraphie complète.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/vanne-service-interactive/index.html?ecran=positions",
+       "lancer": "🔩 Lancer le cours interactif : la vanne de service, ce que chaque position ferme",
+       "desc": "Fermée sur l’arrière, intermédiaire, fermée sur l’avant : la coupe animée montre quel passage s’ouvre et quel volume reste isolé — un volume isolé n’est ni vide ni sans pression.",
+       "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
       },
       {
        "type": "schema",
@@ -5245,6 +5280,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": true
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/vanne-service-interactive/index.html?ecran=positions",
+       "lancer": "🔩 Lancer le cours interactif : la vanne de service en coupe animée",
+       "desc": "Les trois positions décrites ci-dessus, vues de l’intérieur : le carré, la tige et le pointeau se déplacent ensemble, le presse-étoupe reste fixe. Plus la voie de service P, la prise permanente P1 du pressostat, et deux mini-jeux corrigés.",
+       "titre": "Compresseur — installer, régler, vérifier"
       },
       {
        "type": "schema",
@@ -6865,6 +6907,13 @@ window.PILOTE_PROJECTION = {
        "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite",
        "lancer": "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
        "desc": "Les organes annexes un par un : réservoir, filtre déshydrateur, voyant, électrovanne, clapet et vannes de service, bouteille anti-coup de liquide, séparateur d'huile, régulateurs de pression et soupape — chacun en vue isolée, avec son symbole normalisé.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/vanne-service-interactive/index.html?ecran=geste",
+       "lancer": "🔩 Lancer le cours interactif : la vanne de service et la prise du pressostat",
+       "desc": "Pourquoi le pressostat se raccorde sur P1 et non sur la voie de service : cette prise reste reliée au compresseur dans toutes les positions de la vanne — donc sous pression, bouchon jamais défait sur une installation chargée.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {

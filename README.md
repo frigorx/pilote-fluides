@@ -27,7 +27,7 @@ tournant dans le moteur générique **inerWeb Pilote**.
 | **Mode pilotage** | la couche de notes formateur, invisible côté élève |
 | **Critères 0-4** | codes du référentiel positionnables en mode notation |
 | **Outils embarqués** | réglette P ↔ T, carte d'identité du fluide (données FRIGOLO), Diagramme Enthalpique+ v3.2 dans l'exercice de diagnostic |
-| **Cours interactifs complets** | pages autonomes avec voix et mise en scène, **recensées automatiquement** sur [`galerie.html`](galerie.html), fichiers sources téléchargeables. Parmi eux : la frise vivante · la nomenclature · Mission Bouteilles · l’évaporateur · Mission 290 · le bilan thermique · **le condenseur** (`g7b`) · **l’intervention sur circuit hydrocarbure** (`g12b`) · **l’étanchéité** (`g4a + g4b + g4c`). |
+| **Cours interactifs complets** | pages autonomes avec voix et mise en scène, **recensées automatiquement** sur [`galerie.html`](galerie.html), fichiers sources téléchargeables. Parmi eux : la frise vivante · la nomenclature · Mission Bouteilles · l’évaporateur · Mission 290 · le bilan thermique · **le condenseur** (`g7b`) · **l’intervention sur circuit hydrocarbure** (`g12b`) · **l’étanchéité** (`g4a + g4b + g4c`) · **la chaîne de l’intervention** (`p1 + p3 + p5`) · **la vanne de service** en coupe animée (`p1 + p5 + g6b + g9b`). Le compte exact et les codes déclarés par chacun sont **relevés** dans [`REGISTRE-COURS-INTERACTIFS.md`](REGISTRE-COURS-INTERACTIFS.md). |
 | **Atelier numérique** | 10 ressources reliées aux fiches : simulateurs KP1/KP5, module compresseur, leçon scroll, échangeurs, TP manomètres, TP pesée, CERFA/FI/BSD, symboles |
 
 Devise du moteur : **2 min avant / rien pendant / 30 s après**.
