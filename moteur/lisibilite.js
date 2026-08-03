@@ -42,6 +42,10 @@
 
   function appliquer() {
     document.documentElement.style.zoom = etat.taille === 100 ? "" : etat.taille + "%";
+    // Les cours projetés tiennent normalement dans 100dvh. Au-delà de 100 %,
+    // la lisibilité prime : les feuilles concernées peuvent rendre leur zone
+    // centrale déplaçable et garder la navigation accessible en permanence.
+    document.documentElement.classList.toggle("lisibilite-agrandie", etat.taille > 100);
     document.documentElement.classList.toggle("police-dys", etat.dys);
     var aff = document.getElementById("lisib-taille");
     if (aff) aff.textContent = etat.taille + " %";
