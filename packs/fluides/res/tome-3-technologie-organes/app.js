@@ -89,7 +89,7 @@ const dossiers = [
     mechanismSteps: ["Le mélange BP absorbe de la chaleur.", "Le liquide s’évapore à température presque stable.", "Après la dernière goutte, la vapeur absorbe de la chaleur sensible.", "L’air ou l’eau ressort à une température plus basse."],
     location: { x: 50, y: 90, text: "En bas · entre détente et aspiration" },
     mounting: ["Garantir le débit d’air ou d’eau prévu.", "Prévoir l’évacuation des condensats et le dégivrage lorsqu’ils sont nécessaires.", "Répartir correctement le fluide entre les circuits de la batterie.", "Protéger un échangeur à eau contre le gel selon la conception."],
-    leaks: {"title":"Où ça fuit sur un évaporateur","points":["Les <b>raccords et brasures</b> d’entrée et de sortie, et le raccord du bulbe s’il est posé là.","La <b>batterie</b>, très exposée : chocs de manutention en chambre froide, ailettes pliées, tubes percés.","Le <b>dégivrage mal fait</b> : on ne casse jamais la glace à l’outil, un tube percé sous le givre ne se voit pas tout de suite.","La <b>corrosion</b> par les condensats qui stagnent quand l’écoulement est bouché ou mal pentu.","Les <b>résistances de dégivrage</b> mal placées et les vibrations du ventilateur."]},
+    leaks: {"title":"Sur l’évaporateur, deux ennemis : le dégivrage brutal et l’eau qui stagne","points":["<b>On ne casse JAMAIS la glace à l’outil.</b> Un tube percé sous le givre ne se voit pas tout de suite : la machine perd son fluide en silence, et on le découvre bien plus tard.","Le <b>dégivrage</b> doit finir son travail : un givre qui revient toujours au même endroit se questionne (résistance morte, sonde déplacée, écoulement bouché) — avant d’accuser la charge.","Les <b>condensats qui stagnent</b> rongent la batterie et le bac : écoulement pentu, siphon et bac propre se contrôlent à chaque visite.","La <b>batterie</b> est fragile : chocs de manutention en chambre froide, ailettes pliées, nettoyage au jet trop près.","Les <b>raccords et brasures</b> restent des points à contrôler — comme sur tout organe, le registre d’abord."]},
     trap: "Du givre n’indique pas à lui seul une panne. Il faut observer sa répartition, le débit d’air et le fonctionnement du dégivrage.",
     memory: "Mélange BP très froid → absorption de chaleur → vapeur BP.",
     question: { prompt: "Où commence la zone de surchauffe ?", answers: ["Après la disparition de la dernière goutte de liquide.", "Dès l’entrée du mélange BP.", "Après la dernière bulle de vapeur au condenseur."], correct: 0, why: "La surchauffe appartient à la zone où le fluide est entièrement à l’état vapeur." }
@@ -546,6 +546,43 @@ function renderConnections(dossier) {
     </div>`;
 }
 
+/* =====================================================================
+   L'ÉVAPORATEUR — schéma animé plutôt que rectangle
+   ---------------------------------------------------------------------
+   L'animation précédente était un rectangle arrondi avec deux étiquettes
+   qui se chevauchaient : elle ne montrait NI le serpentin, NI le sens de
+   l'air, NI le changement d'état. Refaite le 3 août 2026 à la demande de
+   F. Henninot, avec quatre choses qu'un dessin fixe ne dit pas :
+     · l'air circule à CONTRE-COURANT du fluide — l'air le plus chaud
+       rencontre la vapeur la plus chaude ;
+     · la température du fluide fait un PALIER pendant l'évaporation, puis
+       remonte : c'est la surchauffe, et elle commence après la dernière
+       goutte ;
+     · l'écart le plus serré entre les deux courbes porte un nom, le
+       PINCEMENT — montré, pas défini ;
+     · cette température d'évaporation se LIT AU MANOMÈTRE, par la relation
+       pression-température (retour sur un acquis, pédagogie en spirale).
+   Aucune valeur chiffrée : ni température, ni pression, ni écart. Ce sont
+   des grandeurs de machine, elles viennent de la notice et du relevé.
+   ===================================================================== */
+/* Écran « Fonctionnement interne » — retour de F. Henninot (03-04/08) sur les
+   animations abstraites : « je vois des petites billes dans des hachures, j'ai
+   compris parce que je sais de quoi je parle, mais quelqu'un qui ne connaît
+   pas ne comprend pas ce que c'est ». Deux réponses :
+   1. quand une PLANCHE VALIDÉE du pack montre déjà l'organe pour de vrai
+      (res/svg/), c'est ELLE qui s'affiche — jamais un dessin refait ;
+   2. pour les autres, l'animation reste mais elle est IDENTIFIÉE : le symbole
+      normalisé de l'organe et son nom au-dessus, l'entrée et la sortie
+      nommées en dessous. On sait ce qu'on regarde. */
+const PLANCHES_MECANISME = {
+  compresseurs: ["compresseurs.svg", "La compression vue de l’intérieur — et les quatre technologies, chacune avec son symbole."],
+  condenseurs: ["echangeur-air.svg", "La batterie ailetée : le fluide dans le serpentin, l’air qui la traverse et repart réchauffé."],
+  evaporateurs: ["givre-degivrage.svg", "L’évaporateur vu de face : l’air du local traverse la batterie, le bac reçoit les condensats — et le givre se surveille."],
+  "detendeur-thermostatique": ["detendeur-regulation.svg", "Bulbe, membrane, pointeau : comment le détendeur se corrige tout seul."],
+  "regulateurs-securite": ["regulateurs-pression.svg", "Trois régulateurs, trois endroits du circuit, trois raisons."],
+  "sondes-capteurs": ["mesure-surchauffe.svg", "À quoi servent ces capteurs : mesurer la surchauffe, en deux points."]
+};
+
 function machineMarkup(type, dossier) {
   const inColor = FLOW[dossier.inlet || "variable"].color;
   const outColor = FLOW[dossier.outlet || "variable"].color;
@@ -577,13 +614,28 @@ function machineMarkup(type, dossier) {
 }
 
 function renderMechanism(dossier) {
+  const planche = PLANCHES_MECANISME[dossier.id];
+  const symbole = (dossier.symbols || []).find(([id]) => id);
+  const identite = `
+    <div class="mecanisme-identite">
+      ${symbole ? `<img src="${symbolPath(symbole[0])}" alt="Symbole normalisé : ${symbole[1]}">` : ""}
+      <b>${dossier.title}</b>
+      <span>${(dossier.connectionNotes || []).slice(0, 2).join(" · ")}</span>
+    </div>`;
+  const scene = planche
+    ? `<figure class="mecanisme-planche">
+         <img src="../svg/${planche[0]}" alt="${dossier.mechanismTitle}">
+         <figcaption>${planche[1]}</figcaption>
+       </figure>`
+    : `<div class="mechanism-stage" role="img" aria-label="Animation interne de principe : ${dossier.mechanismTitle}">${machineMarkup(dossier.animation, dossier)}</div>
+       ${identite}`;
   return `
-    <div class="mechanism-layout">
-      <div class="mechanism-stage" role="img" aria-label="Animation interne de principe : ${dossier.mechanismTitle}">${machineMarkup(dossier.animation, dossier)}</div>
+    <div class="mechanism-layout${planche ? " avec-planche" : ""}">
+      <div class="mecanisme-scene">${scene}</div>
       <section class="mechanism-copy">
         <h3>${dossier.mechanismTitle}</h3>
         <ol>${dossier.mechanismSteps.map(step => `<li>${step}</li>`).join("")}</ol>
-        <p>L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur.</p>
+        <p>${planche ? "Cette planche vient du cours : c’est la même image que le stagiaire retrouvera en fiche." : "L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur."}</p>
       </section>
     </div>`;
 }
@@ -595,7 +647,7 @@ function renderLocation(dossier) {
         <div class="cross-map">
           <i class="cross-line top" style="--line-color:#f28a16"></i><i class="cross-line right" style="--line-color:#e33d32"></i><i class="cross-line bottom" style="--line-color:#52b9e9"></i><i class="cross-line left" style="--line-color:#1769aa"></i>
           <span class="cross-node top">CONDENSEUR<br>EN HAUT</span><span class="cross-node right">COMPRESSEUR<br>À DROITE</span><span class="cross-node bottom">ÉVAPORATEUR<br>EN BAS</span><span class="cross-node left">DÉTENDEUR<br>À GAUCHE</span>
-          <span class="cross-marker" style="left:${dossier.location.x}%;top:${dossier.location.y}%;transform:translate(-50%,-50%)">${dossier.title}</span>
+          <span class="cross-marker" style="left:${Math.min(Math.max(dossier.location.x, 14), 86)}%;top:${Math.min(Math.max(dossier.location.y, 12), 82)}%;transform:translate(-50%,-50%)">${dossier.title}</span>
         </div>
       </section>
       <section class="mount-card">

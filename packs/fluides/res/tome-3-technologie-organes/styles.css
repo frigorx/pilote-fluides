@@ -258,6 +258,46 @@ h1,h2,h3,h4{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--navy
   .screen-heading{min-height:36px}.screen-heading h2{font-size:17px}.screen-content{padding:3px 0}.screen-nav{min-height:32px}
 }
 
+
+
+/* =====================================================================
+   FONCTIONNEMENT INTERNE — planches réelles et identité de l'organe
+   ---------------------------------------------------------------------
+   Retour F. Henninot (03-04/08) : une animation abstraite sans nom ni
+   légende ne dit pas ce qu'on regarde. Six organes affichent désormais la
+   PLANCHE VALIDÉE du pack (res/svg/) ; les autres gardent leur animation
+   mais avec le symbole normalisé, le nom et l'entrée/sortie écrits.
+   ===================================================================== */
+.mecanisme-scene { display: flex; flex-direction: column; min-height: 0; min-width: 0; gap: 8px; }
+
+.mecanisme-planche { display: flex; flex-direction: column; margin: 0; min-height: 0; flex: 1; }
+.mecanisme-planche img { flex: 1; min-height: 0; width: 100%; object-fit: contain; }
+.mecanisme-planche figcaption {
+  flex: 0 0 auto; padding: 7px 10px; border-left: 4px solid var(--navy, #1b3a63);
+  background: #eef4f8; border-radius: 0 8px 8px 0;
+  font-size: 13px; font-weight: 700; color: #1b3a63; line-height: 1.3;
+}
+
+.mechanism-layout.avec-planche { grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr); }
+
+.mecanisme-identite {
+  flex: 0 0 auto; display: flex; align-items: center; gap: 10px;
+  padding: 6px 10px; border: 1px solid var(--line, rgba(27,58,99,.16));
+  border-left: 4px solid var(--navy, #1b3a63); border-radius: 0 8px 8px 0; background: #fffdf8;
+}
+.mecanisme-identite img { width: 40px; height: 36px; flex: 0 0 auto; }
+.mecanisme-identite b { font-size: 14px; color: #1b3a63; white-space: nowrap; }
+.mecanisme-identite span { font-size: 11px; color: #637285; line-height: 1.25; }
+
+@media (max-width: 900px) {
+  .mechanism-layout.avec-planche { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1.3fr) minmax(0, .7fr); }
+  .mecanisme-planche figcaption { font-size: 10px; padding: 4px 7px; }
+  .mecanisme-identite { gap: 6px; padding: 4px 7px; }
+  .mecanisme-identite b { font-size: 10px; }
+  .mecanisme-identite span { font-size: 8px; }
+  .mecanisme-identite img { width: 28px; height: 26px; }
+}
+
 /* =====================================================================
    ÉCRAN « OÙ ÇA FUIT » — les risques de fuite propres à chaque organe
    ---------------------------------------------------------------------
