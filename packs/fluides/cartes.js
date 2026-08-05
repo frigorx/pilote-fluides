@@ -233,6 +233,15 @@ export const CARTES = [
         titre: "Catégorie E",
         desc: "Contrôle d'étanchéité seul, sans accéder au circuit. Épreuve 1 h 30.",
       },
+      /* Le positionnement d'entrée (module M0, indicateur Qualiopi 8) se
+         place AVANT les révisions : c'est le premier geste demandé au
+         stagiaire, chez lui ou à l'accueil de la formation. */
+      {
+        vers: "ex-pos",
+        icone: "🧭",
+        titre: "Positionnement d'entrée",
+        desc: "Avant la formation : situez-vous. Ce test ne compte pas, il sert à adapter la semaine. 22 questions, tous thèmes.",
+      },
       {
         vers: "m-rev",
         icone: "📚",
@@ -476,6 +485,7 @@ export const CARTES = [
       "nouvelle tentative : bats-le.</p>",
     menu_titre: "Choisir un thème",
     liens: [
+      { vers: "ex-pos", icone: "🧭", titre: "Positionnement d'entrée — avant la formation", desc: "Situez-vous : 22 questions, tous thèmes, toujours les mêmes. Ce test ne compte pas, il sert à adapter la semaine." },
       { vers: "rev-g1", icone: "1", titre: "Les bases : pression, température, cycle", desc: "unités, relation P-T, les quatre organes, le log p-h — 10 questions." },
       { vers: "rev-g2", icone: "2", titre: "Environnement et F-Gas", desc: "PRP, tonnes équivalent CO₂, règlement (UE) 2024/573 — 7 questions." },
       { vers: "rev-g3", icone: "3", titre: "Contrôles avant mise en service", desc: "épreuve azote, tirage au vide — 5 questions." },
@@ -4101,6 +4111,75 @@ export const CARTES = [
   /* ==================================================================
      EXAMENS BLANCS — entraînement, pas l'épreuve officielle
      ================================================================== */
+  /* POSITIONNEMENT D'ENTRÉE (module M0 · indicateur Qualiopi 8) : les MÊMES
+     22 questions pour tous, prises dans la banque existante (niveau 1),
+     ordonnées par thème. Composition FIXE par `examen.ids` (extension
+     moteur) : un tirage aléatoire ne garantirait ni la répartition par
+     thème, ni la comparabilité entre stagiaires et entre sessions.
+     PAS de portillon d'accès : le stagiaire doit pouvoir se situer AVANT
+     d'arriver, comme sur les séries de révision — se positionner n'est pas
+     passer une épreuve. Le résultat par thème se reporte sur la grille
+     papier d'accueil (habilitation-fluide/formation-presentielle/
+     grille-positionnement.html). */
+  {
+    id: "ex-pos",
+    type: "examen",
+    titre: "Positionnement d'entrée — avant la formation",
+    dc: "Positionnement · module M0 · ne compte pas",
+    corps:
+      "<p class=\"lead\">Avant la formation : situez-vous. Ce test ne compte pas, " +
+      "il sert à adapter la semaine.</p>" +
+      "<p>22 questions, toujours les mêmes, dans cet ordre : <b>réglementation</b>, " +
+      "<b>thermodynamique de base</b>, <b>sécurité</b>, <b>étanchéité</b>, " +
+      "<b>récupération et charge</b>, <b>composants du circuit</b>, " +
+      "<b>hydrocarbures</b>. Répondez sans aide et sans document : une erreur ici " +
+      "n'est pas une faute, elle indique par où commencer. Le bilan de fin vous " +
+      "donne les fiches à lire en premier.</p>",
+    examen: {
+      seuil: 50,
+      ids: [
+        // Réglementation (3)
+        "pk-g0-1",       // 1.00 — l'attestation d'aptitude obligatoire
+        "q-g2-v6_001",   // 2.02 — le CO₂, référence du PRP (GWP = 1)
+        "q-g2-v6_011",   // 2.02 — le règlement (UE) 2024/573
+        // Thermodynamique de base (4)
+        "q-g1-151",      // 1.04 — les quatre organes (croix du frigoriste)
+        "q-g1-62",       // 1.01 — pression absolue
+        "pk-g1s-1",      // 1.02 — le palier de changement d'état
+        "pk-g1e-1",      // 1.02 — « la surchauffe est de 7 »
+        // Sécurité (3)
+        "pk-s5-1",       // consignation électrique — la vérification finale
+        "pk-cl1-1",      // 1.08 — lire une classe de sécurité (A2L)
+        "pk-cl3-1",      // 11.03 — où s'accumule le CO₂ en cas de fuite
+        // Étanchéité (3)
+        "pk-q-4.01",     // 4.01 — où sont les points de fuite
+        "q-g4-v6_074",   // 4.04 — la méthode indirecte
+        "q-g4-v6_072",   // 4.07 — l'eau savonneuse, méthode directe
+        // Récupération et charge (3)
+        "q-g5-v6_082",   // 5.08 — la récupération est obligatoire
+        "q-g5-v6_063",   // 5.02 — taux de remplissage d'une bouteille
+        "q-g5-v6_156",   // 5.08 — ne jamais mélanger deux fluides
+        // Composants du circuit (4)
+        "q-g6-152",      // 6.01 — rôle du compresseur
+        "q-g7-159",      // 7.01 — rôle du condenseur
+        "q-g8-v6_039",   // 8.01 — rôle de l'évaporateur
+        "q-g9-v6_049",   // 9.01 — ce que régule le détendeur thermostatique
+        // Hydrocarbures (2)
+        "pk-q-12.01",    // 12.01 — reconnaître une bouteille de R-290
+        "q-g12-v6_091",  // 12.03 — pourquoi la charge de R-290 est limitée
+      ],
+    },
+    notes_pilote:
+      "Le positionnement d'entrée du module M0 — et la trace de l'indicateur Qualiopi 8. " +
+      "À faire passer à l'accueil, ou à envoyer avec le lien AVANT l'entrée en formation. " +
+      "Composition fixe : tous les stagiaires reçoivent les mêmes 22 questions dans le même " +
+      "ordre, les résultats sont donc comparables entre stagiaires et d'une session à l'autre. " +
+      "Reporter le résultat par thème sur la grille papier d'accueil (grille-positionnement, " +
+      "dépôt habilitation-fluide) et s'en servir pour doser la semaine : un groupe à l'aise en " +
+      "réglementation mais faible en thermodynamique ne se mène pas pareil. Ne JAMAIS le " +
+      "présenter comme une évaluation — le dire avec les mots de la carte : ce test ne compte " +
+      "pas, il sert à adapter la semaine.",
+  },
   {
     id: "rev-g1",
     type: "examen",

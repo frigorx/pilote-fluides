@@ -39,7 +39,7 @@
 | `mission-bouteilles` | p6 | — | 5.02 · 5.05 · 5.06 | 47 Ko |
 | `nomenclature-interactive` | g1c | — | 1.06 | 97 Ko |
 | `pression-temperature-interactive` | g1b | — | 1.02 · 1.03 | 146 Ko |
-| `tome-3-technologie-organes` | g6, g7, g8, g9, g9b | 112 | 1.04 · 1.05 · 6.01 · 7.01 · 8.01 · 9.01 | 1061 Ko |
+| `tome-3-technologie-organes` | g6, g7, g8, g9, g9b | 112 | 1.04 · 1.05 · 6.01 · 7.01 · 8.01 · 9.01 | 1070 Ko |
 | `vanne-service-interactive` | p1, p5, g6b, g9b | 4 | 4.01 · 4.05 · 5.01 | 177 Ko |
 
 Un cours en *appui* n'ajoute aucune couverture : il donne les notions que d'autres

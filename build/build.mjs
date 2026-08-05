@@ -100,6 +100,20 @@ function valider() {
   // filtrage par niveau que le moteur, sinon la validation ment
   const groupes = new Set(BANQUE.map((q) => q.dc));
   for (const c of CARTES.filter((x) => x.examen)) {
+    // Extension pack fluides : composition FIXE par identifiants
+    // (`examen.ids`, le positionnement d'entrée). Chaque id doit exister
+    // dans la banque et n'apparaître qu'une fois — un id disparu lors d'un
+    // prochain convert.mjs se verrait ici, pas en silence chez l'élève.
+    if (c.examen.ids) {
+      const connus = new Set(BANQUE.map((q) => q.id));
+      const absents = c.examen.ids.filter((id) => !connus.has(id));
+      if (absents.length)
+        err.push(c.id + " : question(s) absente(s) de la banque : " + absents.join(", "));
+      if (new Set(c.examen.ids).size !== c.examen.ids.length)
+        err.push(c.id + " : identifiant(s) de question en double");
+      if (!c.examen.ids.length) err.push(c.id + " : composition vide");
+      continue;
+    }
     const inconnus = (c.examen.dc || []).filter((d) => !groupes.has(d));
     if (inconnus.length) err.push(c.id + " : groupe(s) absent(s) de la banque : " + inconnus.join(", "));
     const pool = BANQUE.filter(

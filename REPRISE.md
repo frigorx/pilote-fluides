@@ -140,6 +140,40 @@ registre généré · chaîne de l’intervention p1 + p3 + p5.
 
 ---
 
+### Positionnement d'entrée « ex-pos » — 5 août 2026
+
+Le § 2.1 du cahier des charges du dépôt privé (« le manque le plus visible ») : le test
+d'auto-évaluation initiale du module M0, trace de l'indicateur Qualiopi 8.
+
+- **Nouvelle carte examen `ex-pos`** (« Positionnement d'entrée — avant la formation ») :
+  les MÊMES 22 questions pour tous, **puisées dans la banque existante** (niveau 1, zéro
+  question nouvelle), ordonnées par thème — réglementation (3) · thermodynamique de base (4) ·
+  sécurité (3) · étanchéité (3) · récupération et charge (3) · composants (4) ·
+  hydrocarbures (2). Seuil indicatif 50 %, bilan de fin inchangé (compétences nommées,
+  fiches à lire, score précédent).
+- **Deux extensions moteur rétrocompatibles** (recensées § 5) : composition FIXE par
+  `examen.ids` — un tirage aléatoire ne garantirait ni la répartition par thème, ni la
+  comparabilité entre stagiaires et entre sessions — et `corps` de présentation sur une
+  carte examen (« Avant la formation : situez-vous. Ce test ne compte pas, il sert à
+  adapter la semaine. »), affiché tant que la première question n'est pas répondue.
+  Validation de build étendue : id inconnu de la banque, doublon ou composition vide
+  bloquent la construction.
+- **PAS de portillon** : se positionner n'est pas passer une épreuve — la carte est libre
+  comme les 13 séries `rev-*`, le stagiaire doit pouvoir se situer AVANT d'arriver.
+  Deux tuiles : accueil `c00` (juste avant « Réviser par thème ») et tête de `m-rev`.
+- **Grille papier de recueil** (identité ⟦à compléter⟧, parcours et acquis antérieurs,
+  attentes, résultat par thème — plages de questions 1-3 / 4-7 / 8-10 / 11-13 / 14-16 /
+  17-20 / 21-22 —, décision d'adaptation, signatures) :
+  `C:\git\habilitation-fluide\formation-presentielle\grille-positionnement.html`, charte
+  papier (couleur gardée, rien ne repose sur la couleur seule). Le plan de séance M0
+  l'attendait (« support en production ») ; le PDF du cahier des charges reste à tirer.
+- **Build complet : couverture et matrice INCHANGÉES** — A1 94/94, A2 93/93, D 21/21,
+  E 17/17 (100 %), traçabilité 94/94, profondeur 94 🟢, registre sans anomalie. Seul
+  compteur bougé : examens 21 → 22 (82 cartes). Vérifié en HTTP local (port 8377) :
+  pack élève servi avec la carte, 22 ids tous résolus dans la banque, notes pilote
+  purgées, les deux tuiles présentes. ⚠️ Le déroulé à l'écran (corps puis questions,
+  bilan) reste à voir d'un œil humain. RIEN n'est commité.
+
 ### Tome 3 : un écran « Où ça fuit » par organe — 3 août 2026
 
 Suite directe du point précédent, et le meilleur rendement du pack : **cinq codes
@@ -1074,11 +1108,14 @@ une page web est un écart gratuit — d'autant que de vraies capsules vidéo ex
 
 ## 5. Pièges — lus dans le sang, à ne pas réapprendre
 
-**Moteur** — 5 extensions par rapport au r408 d'origine, toutes rétrocompatibles :
+**Moteur** — 7 extensions par rapport au r408 d'origine, toutes rétrocompatibles :
 `examen.niveau` (filtrage par difficulté) · bilan listant les fiches ratées · historique
 `localStorage` · auto-hauteur des iframes par `postMessage` · **portillon d'accès par code**
-(`acces.code_empreinte` sur une carte examen — les 8 `ex-*` le portent, les 13 séries `rev-*`
-restent libres ; déverrouillage mémorisé sur l'appareil).
+(`acces.code_empreinte` sur une carte examen — les 8 `ex-*` d'entraînement le portent ;
+les 13 séries `rev-*` et le positionnement `ex-pos` restent libres ; déverrouillage mémorisé
+sur l'appareil) · `examen.ids` (**composition fixe** : mêmes questions, même ordre — le
+positionnement d'entrée, 05/08) · `corps` de présentation sur une carte examen (affiché
+tant que la première question n'est pas répondue).
 *(Une 6ᵉ extension — un bouton « revoir l'animation » — a été tentée puis **retirée** le 27/07 :
 elle vidait les planches. Le moteur est revenu à son état d'avant, et la cause réelle du
 problème d'animation était ailleurs, dans les SVG eux-mêmes — voir ci-dessous.)*

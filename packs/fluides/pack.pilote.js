@@ -8085,6 +8085,12 @@ window.PILOTE_PACK = {
      "desc": "Contrôle d'étanchéité seul, sans accéder au circuit. Épreuve 1 h 30."
     },
     {
+     "vers": "ex-pos",
+     "icone": "🧭",
+     "titre": "Positionnement d'entrée",
+     "desc": "Avant la formation : situez-vous. Ce test ne compte pas, il sert à adapter la semaine. 22 questions, tous thèmes."
+    },
+    {
      "vers": "m-rev",
      "icone": "📚",
      "titre": "Réviser par thème",
@@ -8730,6 +8736,12 @@ window.PILOTE_PACK = {
    "corps": "<p class=\"lead\">Cet espace est fait pour être utilisé <b>seul</b> : avant la formation pour arriver préparé, pendant les périodes de stage pour entretenir, avant l'épreuve pour cibler.</p><p>Chaque série corrige <b>immédiatement</b>, chaque erreur renvoie vers la fiche à relire, et le bilan de fin liste tes points faibles. Ton <b>score précédent</b> s'affiche à chaque nouvelle tentative : bats-le.</p>",
    "menu_titre": "Choisir un thème",
    "liens": [
+    {
+     "vers": "ex-pos",
+     "icone": "🧭",
+     "titre": "Positionnement d'entrée — avant la formation",
+     "desc": "Situez-vous : 22 questions, tous thèmes, toujours les mêmes. Ce test ne compte pas, il sert à adapter la semaine."
+    },
     {
      "vers": "rev-g1",
      "icone": "1",
@@ -13747,6 +13759,41 @@ window.PILOTE_PACK = {
     }
    ],
    "notes_pilote": "Module volontairement court et NON évaluant : l'objectif est la reconnaissance du danger, pas la compétence d'intervention. Faire circuler un masque à gaz réel (sans manipulation dangereuse) pour que la différence avec les EPI habituels se voie. Rappeler que l'odeur d'ammoniac est perceptible bien avant le seuil dangereux : message rassurant qui évite la panique tout en imposant l'alerte. Faire deviner pourquoi le NH₃ exige une catégorie séparée alors que le R-290, également dangereux, reste dans le champ A1/A2."
+  },
+  {
+   "id": "ex-pos",
+   "type": "examen",
+   "titre": "Positionnement d'entrée — avant la formation",
+   "dc": "Positionnement · module M0 · ne compte pas",
+   "corps": "<p class=\"lead\">Avant la formation : situez-vous. Ce test ne compte pas, il sert à adapter la semaine.</p><p>22 questions, toujours les mêmes, dans cet ordre : <b>réglementation</b>, <b>thermodynamique de base</b>, <b>sécurité</b>, <b>étanchéité</b>, <b>récupération et charge</b>, <b>composants du circuit</b>, <b>hydrocarbures</b>. Répondez sans aide et sans document : une erreur ici n'est pas une faute, elle indique par où commencer. Le bilan de fin vous donne les fiches à lire en premier.</p>",
+   "examen": {
+    "seuil": 50,
+    "ids": [
+     "pk-g0-1",
+     "q-g2-v6_001",
+     "q-g2-v6_011",
+     "q-g1-151",
+     "q-g1-62",
+     "pk-g1s-1",
+     "pk-g1e-1",
+     "pk-s5-1",
+     "pk-cl1-1",
+     "pk-cl3-1",
+     "pk-q-4.01",
+     "q-g4-v6_074",
+     "q-g4-v6_072",
+     "q-g5-v6_082",
+     "q-g5-v6_063",
+     "q-g5-v6_156",
+     "q-g6-152",
+     "q-g7-159",
+     "q-g8-v6_039",
+     "q-g9-v6_049",
+     "pk-q-12.01",
+     "q-g12-v6_091"
+    ]
+   },
+   "notes_pilote": "Le positionnement d'entrée du module M0 — et la trace de l'indicateur Qualiopi 8. À faire passer à l'accueil, ou à envoyer avec le lien AVANT l'entrée en formation. Composition fixe : tous les stagiaires reçoivent les mêmes 22 questions dans le même ordre, les résultats sont donc comparables entre stagiaires et d'une session à l'autre. Reporter le résultat par thème sur la grille papier d'accueil (grille-positionnement, dépôt habilitation-fluide) et s'en servir pour doser la semaine : un groupe à l'aise en réglementation mais faible en thermodynamique ne se mène pas pareil. Ne JAMAIS le présenter comme une évaluation — le dire avec les mots de la carte : ce test ne compte pas, il sert à adapter la semaine."
   },
   {
    "id": "rev-g1",

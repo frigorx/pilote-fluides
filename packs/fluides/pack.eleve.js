@@ -8085,6 +8085,12 @@ window.PILOTE_PACK = {
      "desc": "Contrôle d'étanchéité seul, sans accéder au circuit. Épreuve 1 h 30."
     },
     {
+     "vers": "ex-pos",
+     "icone": "🧭",
+     "titre": "Positionnement d'entrée",
+     "desc": "Avant la formation : situez-vous. Ce test ne compte pas, il sert à adapter la semaine. 22 questions, tous thèmes."
+    },
+    {
      "vers": "m-rev",
      "icone": "📚",
      "titre": "Réviser par thème",
@@ -8725,6 +8731,12 @@ window.PILOTE_PACK = {
    "corps": "<p class=\"lead\">Cet espace est fait pour être utilisé <b>seul</b> : avant la formation pour arriver préparé, pendant les périodes de stage pour entretenir, avant l'épreuve pour cibler.</p><p>Chaque série corrige <b>immédiatement</b>, chaque erreur renvoie vers la fiche à relire, et le bilan de fin liste tes points faibles. Ton <b>score précédent</b> s'affiche à chaque nouvelle tentative : bats-le.</p>",
    "menu_titre": "Choisir un thème",
    "liens": [
+    {
+     "vers": "ex-pos",
+     "icone": "🧭",
+     "titre": "Positionnement d'entrée — avant la formation",
+     "desc": "Situez-vous : 22 questions, tous thèmes, toujours les mêmes. Ce test ne compte pas, il sert à adapter la semaine."
+    },
     {
      "vers": "rev-g1",
      "icone": "1",
@@ -13688,6 +13700,40 @@ window.PILOTE_PACK = {
      "sec": true
     }
    ]
+  },
+  {
+   "id": "ex-pos",
+   "type": "examen",
+   "titre": "Positionnement d'entrée — avant la formation",
+   "dc": "Positionnement · module M0 · ne compte pas",
+   "corps": "<p class=\"lead\">Avant la formation : situez-vous. Ce test ne compte pas, il sert à adapter la semaine.</p><p>22 questions, toujours les mêmes, dans cet ordre : <b>réglementation</b>, <b>thermodynamique de base</b>, <b>sécurité</b>, <b>étanchéité</b>, <b>récupération et charge</b>, <b>composants du circuit</b>, <b>hydrocarbures</b>. Répondez sans aide et sans document : une erreur ici n'est pas une faute, elle indique par où commencer. Le bilan de fin vous donne les fiches à lire en premier.</p>",
+   "examen": {
+    "seuil": 50,
+    "ids": [
+     "pk-g0-1",
+     "q-g2-v6_001",
+     "q-g2-v6_011",
+     "q-g1-151",
+     "q-g1-62",
+     "pk-g1s-1",
+     "pk-g1e-1",
+     "pk-s5-1",
+     "pk-cl1-1",
+     "pk-cl3-1",
+     "pk-q-4.01",
+     "q-g4-v6_074",
+     "q-g4-v6_072",
+     "q-g5-v6_082",
+     "q-g5-v6_063",
+     "q-g5-v6_156",
+     "q-g6-152",
+     "q-g7-159",
+     "q-g8-v6_039",
+     "q-g9-v6_049",
+     "pk-q-12.01",
+     "q-g12-v6_091"
+    ]
+   }
   },
   {
    "id": "rev-g1",

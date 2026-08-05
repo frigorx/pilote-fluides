@@ -272,6 +272,12 @@
     html += "<span class='dc'>" + esc(c.dc || "Examen blanc") + "</span>";
     html += "<h1>" + esc(c.titre) + "</h1>";
 
+    // Extension pack fluides : une carte examen peut porter un `corps` de
+    // présentation — le positionnement d'entrée s'annonce avant d'interroger
+    // (« ce test ne compte pas »). Visible tant que la première question
+    // n'est pas répondue, puis il s'efface devant les questions.
+    if (c.corps && !ex.fini && ex.i === 0 && !ex.rep[0]) html += c.corps;
+
     if (!ex.fini) {
       var q = ex.items[ex.i];
       var rep = ex.rep[ex.i];
@@ -290,6 +296,18 @@
   }
 
   function initExamen(c) {
+    // Extension pack fluides : composition FIXE par identifiants. Le
+    // positionnement d'entrée pose à tous les stagiaires les MÊMES questions,
+    // dans l'ordre écrit (les thèmes se suivent) — un tirage aléatoire ne
+    // garantirait ni la répartition par thème, ni la comparabilité des
+    // résultats. `examen.ids` absent → tirage d'origine, rien ne change.
+    if (c.examen.ids) {
+      var parId = {};
+      BANQUE.forEach(function (q) { parId[q.id] = q; });
+      var choisies = c.examen.ids.map(function (id) { return parId[id]; }).filter(Boolean);
+      S.examen = { carteId: c.id, items: choisies, i: 0, rep: [], fini: false, score: null };
+      return;
+    }
     // Extension pack fluides : filtrage optionnel par niveau de difficulté.
     // `examen.niveau` absent → comportement d'origine ; question sans
     // `niveau` → éligible à tous les tirages. (Écart documenté avec r408.)
