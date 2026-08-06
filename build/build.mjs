@@ -494,6 +494,13 @@ function main() {
     stdio: "inherit",
   });
 
+  /* --- audit global de conformité : autonomie, charte, impression,
+     lisibilité, médias et traçabilité des droits. Il informe sans bloquer :
+     une dette documentaire doit rester visible même quand le pack tourne. --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/audit-conformite.mjs")], {
+    stdio: "inherit",
+  });
+
   /* --- 28/07 : CE QUI MANQUAIT POUR QUE `build.mjs` SOIT VRAIMENT « le »
      build. Jusqu'ici, reconstruire le pack en entier voulait dire enchaîner
      QUATRE commandes à la main (build.mjs, puis parcours.mjs, puis
