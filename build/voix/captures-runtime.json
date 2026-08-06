@@ -1,0 +1,450 @@
+[
+  {
+    "texte": "Compresseurs. Reconnaître. Famille de compresseurs · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Piston Scroll Vis Rotatif Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=compresseurs&ecran=1"
+  },
+  {
+    "texte": "Compresseurs. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Créer le débit massique et élever la pression Le compresseur aspire le fluide frigorigène à l’état de vapeur BP, réduit le volume occupé par cette vapeur, la refoule en vapeur HP et met le fluide en circulation dans le circuit. 🔑 La clé Même fonction frigorifique pour les quatre technologies. Le fluide doit arriver à l’état vapeur. L’huile assure la lubrification et doit revenir au compresseur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=compresseurs&ecran=2"
+  },
+  {
+    "texte": "Compresseurs. Entrée et sortie. ENTRÉE · Vapeur BP froide Basse pression · vapeur → SORTIE · Vapeur HP très chaude Haute pression · vapeur Selon la technologie : retour d’huile, prise de pression, injection ou régulation de capacité peuvent compléter les deux raccords principaux. Connexions à identifier Aspiration : conduite BP de plus grand diamètre dans de nombreux montages. Refoulement : conduite HP chaude vers le condenseur. Les raccords et le sens réel se vérifient sur le constructeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=compresseurs&ecran=3"
+  },
+  {
+    "texte": "Compresseurs. Fonctionnement interne. La compression vue de l’intérieur — et les quatre technologies, chacune avec son symbole. Le volume diminue, la pression augmente Le fluide frigorigène en vapeur BP est admis. Un volume est fermé puis réduit par un piston, des spirales, des vis ou un rotor. La vapeur comprimée est refoulée en HP. La répétition du mouvement crée le débit massique. Cette planche vient du cours : c’est la même image que le stagiaire retrouvera en fiche.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=compresseurs&ecran=4"
+  },
+  {
+    "texte": "Compresseurs. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Compresseurs EMPLACEMENT HABITUEL À droite · entre aspiration BP et refoulement HP Respecter la position, les couples et les raccordements du constructeur. Limiter la transmission des vibrations et laisser les tuyauteries sans contrainte. Garantir le retour d’huile et empêcher tout retour de liquide. Vérifier les protections électriques et la ventilation du moteur. ⚠ Le piège : Un compresseur ne doit pas aspirer du liquide : le coup de liquide peut provoquer une casse mécanique.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=compresseurs&ecran=5"
+  },
+  {
+    "texte": "Compresseurs. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un compresseur Les raccords d’aspiration et de refoulement : brasures et raccords mécaniques, les deux points les plus courants. Les vannes de service et leurs bouchons, ainsi que le presse-étoupe de leur tige. Les traversées électriques (bornes) sur un compresseur hermétique, et le joint de carter sur un semi-hermétique. Le presse-étoupe d’arbre sur un compresseur ouvert : un joint tournant est un point de fuite par nature. Ce qui aggrave tout le reste : une tuyauterie montée en contrainte ou qui vibre finit par fissurer — d’où les plots antivibratiles et les lyres. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=compresseurs&ecran=6"
+  },
+  {
+    "texte": "Compresseurs. Mémoriser. À DIRE SANS REGARDER Compresseurs Aspiration vapeur BP → compression → refoulement vapeur HP → circulation. MINI-QUESTION DE MÉMORISATION Quelle description est complète ? Il transforme directement le liquide HP en vapeur BP. Il aspire une vapeur BP, la comprime, la refoule en vapeur HP et crée le débit massique. Il stocke le liquide avant le détendeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=compresseurs&ecran=7"
+  },
+  {
+    "texte": "Condenseurs à air et à eau. Reconnaître. Condenseur à air · vue isolée de reconnaissance Échangeur à plaques pour circuit à eau · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Échangeur à air Échangeur à plaques Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=condenseurs&ecran=1"
+  },
+  {
+    "texte": "Condenseurs à air et à eau. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Rejeter la chaleur et liquéfier le fluide Le condenseur reçoit une vapeur HP chaude. Il rejette de la chaleur vers l’air ou vers un circuit d’eau distinct. Le fluide se désurchauffe, se liquéfie, puis peut être sous-refroidi avant de sortir en liquide HP. 🔑 La clé Le fluide frigorigène et l’eau ne se mélangent pas. La liquéfaction rejette de la chaleur latente. Après la dernière bulle commence le sous-refroidissement.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=condenseurs&ecran=2"
+  },
+  {
+    "texte": "Condenseurs à air et à eau. Entrée et sortie. ENTRÉE · Vapeur HP très chaude Haute pression · vapeur → SORTIE · Liquide HP chaud à tiède Haute pression · liquide À air, le ventilateur impose le débit d’air. À eau, la pompe et les organes hydrauliques appartiennent au circuit secondaire. Connexions à identifier Entrée frigorifique : vapeur HP chaude venant du compresseur. Sortie frigorifique : liquide HP vers la ligne liquide. À eau : deux raccords supplémentaires forment un second circuit séparé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=condenseurs&ecran=3"
+  },
+  {
+    "texte": "Condenseurs à air et à eau. Fonctionnement interne. La batterie ailetée : le fluide dans le serpentin, l’air qui la traverse et repart réchauffé. Trois zones thermiques successives Désurchauffe : la vapeur HP perd de la chaleur sensible. Liquéfaction : le mélange vapeur-liquide rejette de la chaleur latente. Sous-refroidissement : le liquide HP perd encore de la chaleur sensible. L’air ou l’eau ressort à une température plus élevée. Cette planche vient du cours : c’est la même image que le stagiaire retrouvera en fiche.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=condenseurs&ecran=4"
+  },
+  {
+    "texte": "Condenseurs à air et à eau. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Condenseurs à air et à eau EMPLACEMENT HABITUEL En haut · entre refoulement et ligne liquide Garantir le débit d’air ou d’eau prévu par le constructeur. Maintenir propres la batterie, les ailettes ou les plaques. Prévoir purge, vidange et protection contre le gel sur le circuit d’eau. Respecter le sens et le montage hydraulique indiqués par le fabricant. ⚠ Le piège : Une HP élevée invite d’abord à contrôler les échanges : propreté, ventilateurs, pompe et débit du milieu de refroidissement.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=condenseurs&ecran=5"
+  },
+  {
+    "texte": "Condenseurs à air et à eau. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un condenseur Les raccords et brasures d’entrée et de sortie, côté vapeur chaude comme côté liquide. La batterie elle-même : ailettes et tubes exposés aux chocs, et à la corrosion en atmosphère agressive (bord de mer, cuisine, toiture polluée). Les vibrations du ventilateur transmises aux tubes et aux fixations. Les prises de pression, purges et bouchons ajoutés sur l’appareil. Sur un échangeur à plaques : les joints et brasures — une fuite interne y mélange les deux circuits sans rien laisser voir à l’extérieur. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=condenseurs&ecran=6"
+  },
+  {
+    "texte": "Condenseurs à air et à eau. Mémoriser. À DIRE SANS REGARDER Condenseurs à air et à eau Vapeur HP chaude → rejet de chaleur → liquide HP. MINI-QUESTION DE MÉMORISATION Que devient le milieu extérieur au condenseur ? Il reçoit de la chaleur et ressort plus chaud. Il cède toujours de la chaleur et ressort plus froid. Il se mélange au fluide frigorigène.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=condenseurs&ecran=7"
+  },
+  {
+    "texte": "Évaporateurs à air et à eau. Reconnaître. Évaporateur à air · vue isolée de reconnaissance Échangeur à plaques pour eau ou eau glycolée · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Échangeur à air Échangeur à plaques Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=evaporateurs&ecran=1"
+  },
+  {
+    "texte": "Évaporateurs à air et à eau. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Absorber la chaleur et vaporiser le fluide L’évaporateur reçoit un mélange liquide-vapeur BP. Le fluide absorbe de la chaleur provenant de l’air, de l’eau ou de l’eau glycolée. Le liquide s’évapore puis la vapeur peut se surchauffer avant la sortie. 🔑 La clé L’évaporation absorbe de la chaleur latente. Après la dernière goutte commence la surchauffe. La vapeur en sortie protège le compresseur du retour de liquide.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=evaporateurs&ecran=2"
+  },
+  {
+    "texte": "Évaporateurs à air et à eau. Entrée et sortie. ENTRÉE · Mélange BP très froid Basse pression · liquide + vapeur → SORTIE · Vapeur BP froide Basse pression · vapeur Un distributeur peut partager le débit entre plusieurs circuits frigorifiques de la batterie. Connexions à identifier Entrée : mélange liquide-vapeur BP venant de l’organe de détente. Sortie : vapeur BP vers la ligne d’aspiration. À eau : deux autres raccords forment le circuit secondaire sans mélange.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=evaporateurs&ecran=3"
+  },
+  {
+    "texte": "Évaporateurs à air et à eau. Fonctionnement interne. L’évaporateur vu de face : l’air du local traverse la batterie, le bac reçoit les condensats — et le givre se surveille. Évaporation puis surchauffe Le mélange BP absorbe de la chaleur. Le liquide s’évapore à température presque stable. Après la dernière goutte, la vapeur absorbe de la chaleur sensible. L’air ou l’eau ressort à une température plus basse. Cette planche vient du cours : c’est la même image que le stagiaire retrouvera en fiche.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=evaporateurs&ecran=4"
+  },
+  {
+    "texte": "Évaporateurs à air et à eau. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Évaporateurs à air et à eau EMPLACEMENT HABITUEL En bas · entre détente et aspiration Garantir le débit d’air ou d’eau prévu. Prévoir l’évacuation des condensats et le dégivrage lorsqu’ils sont nécessaires. Répartir correctement le fluide entre les circuits de la batterie. Protéger un échangeur à eau contre le gel selon la conception. ⚠ Le piège : Du givre n’indique pas à lui seul une panne. Il faut observer sa répartition, le débit d’air et le fonctionnement du dégivrage.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=evaporateurs&ecran=5"
+  },
+  {
+    "texte": "Évaporateurs à air et à eau. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Sur l’évaporateur, deux ennemis : le dégivrage brutal et l’eau qui stagne On ne casse JAMAIS la glace à l’outil. Un tube percé sous le givre ne se voit pas tout de suite : la machine perd son fluide en silence, et on le découvre bien plus tard. Le dégivrage doit finir son travail : un givre qui revient toujours au même endroit se questionne (résistance morte, sonde déplacée, écoulement bouché) — avant d’accuser la charge. Les condensats qui stagnent rongent la batterie et le bac : écoulement pentu, siphon et bac propre se contrôlent à chaque visite. La batterie est fragile : chocs de manutention en chambre froide, ailettes pliées, nettoyage au jet trop près. Les raccords et brasures restent des points à contrôler — comme sur tout organe, le registre d’abord. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=evaporateurs&ecran=6"
+  },
+  {
+    "texte": "Évaporateurs à air et à eau. Mémoriser. À DIRE SANS REGARDER Évaporateurs à air et à eau Mélange BP très froid → absorption de chaleur → vapeur BP. MINI-QUESTION DE MÉMORISATION Où commence la zone de surchauffe ? Après la disparition de la dernière goutte de liquide. Dès l’entrée du mélange BP. Après la dernière bulle de vapeur au condenseur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=evaporateurs&ecran=7"
+  },
+  {
+    "texte": "Détendeur thermostatique. Reconnaître. Détendeur thermostatique · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Égalisation interne Égalisation externe Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique&ecran=1"
+  },
+  {
+    "texte": "Détendeur thermostatique. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Détendre, doser et réguler la surchauffe Le détendeur thermostatique fait chuter la pression du liquide HP, dose le débit massique admis dans l’évaporateur et module son ouverture afin de maintenir une surchauffe adaptée en sortie d’évaporateur. 🔑 La clé Le bulbe mesure indirectement la température de sortie. La membrane compare des forces de pression et de ressort. L’égalisation externe tient compte de la pression réelle en sortie d’évaporateur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique&ecran=2"
+  },
+  {
+    "texte": "Détendeur thermostatique. Entrée et sortie. ENTRÉE · Liquide HP chaud à tiède Haute pression · liquide → SORTIE · Mélange BP très froid Basse pression · liquide + vapeur Avec égalisation interne, la pression sous membrane est prélevée dans le corps du détendeur. Avec égalisation externe, elle vient d’une conduite dédiée. Connexions à identifier Entrée : liquide HP provenant de la ligne liquide. Sortie : mélange liquide-vapeur BP vers l’évaporateur. Bulbe : fixé sur la ligne d’aspiration. Égalisation externe : prise de pression raccordée en sortie d’évaporateur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique&ecran=3"
+  },
+  {
+    "texte": "Détendeur thermostatique. Fonctionnement interne. Bulbe, membrane, pointeau : comment le détendeur se corrige tout seul. Une boucle mécanique de surchauffe La surchauffe augmente et le bulbe se réchauffe. La pression du bulbe augmente sur la membrane. Le pointeau s’ouvre davantage et le débit augmente. L’évaporateur est mieux alimenté et la surchauffe redescend. Cette planche vient du cours : c’est la même image que le stagiaire retrouvera en fiche.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique&ecran=4"
+  },
+  {
+    "texte": "Détendeur thermostatique. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Détendeur thermostatique EMPLACEMENT HABITUEL À gauche · juste avant l’évaporateur Respecter la flèche de circulation et le sens du distributeur. Fixer le bulbe avec un contact thermique ferme, à la position prescrite. Isoler le bulbe lorsque le constructeur le demande. Raccorder correctement l’égalisation externe et vérifier l’étanchéité. ⚠ Le piège : Le détendeur thermostatique régule la surchauffe, pas directement la température du local.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique&ecran=5"
+  },
+  {
+    "texte": "Détendeur thermostatique. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un détendeur thermostatique Les raccords d’entrée et de sortie : brasures, ou raccords à visser dont l’étanchéité dépend de la portée et du couple. Le capillaire du bulbe : pincé, plié ou frotté, il se rompt — et l’élément thermostatique se vide. La prise d’égalisation externe et son raccordement sur la ligne d’aspiration. La tige de réglage et son bouchon : un bouchon laissé desserré après réglage est une fuite lente. Le corps du détendeur si l’appareil travaille en contrainte mécanique ou sous vibration. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique&ecran=6"
+  },
+  {
+    "texte": "Détendeur thermostatique. Mémoriser. À DIRE SANS REGARDER Détendeur thermostatique Bulbe + membrane + ressort + pointeau = dosage mécanique de la surchauffe. MINI-QUESTION DE MÉMORISATION Pourquoi employer une égalisation externe ? Pour alimenter électriquement le détendeur. Pour transmettre sous la membrane la pression réelle en sortie d’évaporateur. Pour remplacer le bulbe thermostatique.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique&ecran=7"
+  },
+  {
+    "texte": "Détendeur électronique. Reconnaître. Détendeur électronique · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Détendeur électronique Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-electronique&ecran=1"
+  },
+  {
+    "texte": "Détendeur électronique. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Détendre et moduler le débit par commande électronique Le détendeur électronique fait chuter la pression et dose le débit admis dans l’évaporateur. Un régulateur calcule la commande à partir de mesures, puis l’actionneur déplace précisément le pointeau. 🔑 La clé La vanne seule ne peut pas réguler. La chaîne comprend capteurs, régulateur, actionneur et corps de vanne. La commande peut suivre finement les variations de charge.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-electronique&ecran=2"
+  },
+  {
+    "texte": "Détendeur électronique. Entrée et sortie. ENTRÉE · Liquide HP chaud à tiède Haute pression · liquide → SORTIE · Mélange BP très froid Basse pression · liquide + vapeur Le schéma électrique et le paramétrage font partie du fonctionnement : une mesure erronée entraîne une mauvaise commande. Connexions à identifier Entrée : liquide HP. Sortie : mélange liquide-vapeur BP. Connexions électriques : alimentation et commande de l’actionneur. Capteurs associés : température et souvent pression selon la régulation.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-electronique&ecran=3"
+  },
+  {
+    "texte": "Détendeur électronique. Fonctionnement interne. Détendeur électronique Entrée : liquide HP. · Sortie : mélange liquide-vapeur BP. Mesurer, calculer, positionner Les capteurs transmettent leurs mesures. Le régulateur calcule l’écart par rapport à la consigne. L’actionneur déplace le pointeau par pas ou en continu selon la technologie. La nouvelle ouverture modifie le débit massique. L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-electronique&ecran=4"
+  },
+  {
+    "texte": "Détendeur électronique. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Détendeur électronique EMPLACEMENT HABITUEL À gauche · en amont de l’évaporateur Respecter le sens de circulation et la position autorisée. Installer une filtration adaptée en amont. Placer et câbler correctement les capteurs associés. Effectuer l’initialisation et le paramétrage prévus par le fabricant. ⚠ Le piège : Une vanne électronique mécaniquement correcte peut mal réguler si le capteur, le câblage ou le paramètre est faux.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-electronique&ecran=5"
+  },
+  {
+    "texte": "Détendeur électronique. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un détendeur électronique Les raccords fluidiques d’entrée et de sortie, comme sur tout organe de ligne. Le passage de l’actionneur vers le corps de vanne : c’est là que la partie électrique rejoint le circuit sous pression. Les capteurs associés et leurs prises de pression, quand la régulation en comporte. Les vibrations et la contrainte sur un appareil tenu seulement par sa tuyauterie. Un défaut électrique ne fait pas fuir, mais il peut laisser la vanne dans une position qui met le circuit en surpression : les deux se surveillent ensemble. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-electronique&ecran=6"
+  },
+  {
+    "texte": "Détendeur électronique. Mémoriser. À DIRE SANS REGARDER Détendeur électronique Capteur → régulateur → actionneur → pointeau → débit. MINI-QUESTION DE MÉMORISATION Quel élément décide de l’ouverture ? Le voyant liquide. Le régulateur, à partir des mesures reçues. Le ressort du pressostat HP.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-electronique&ecran=7"
+  },
+  {
+    "texte": "Tube capillaire. Reconnaître. Tube capillaire · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Tube capillaire Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=tube-capillaire&ecran=1"
+  },
+  {
+    "texte": "Tube capillaire. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Créer une perte de charge fixe Le tube capillaire est un tube de très faible diamètre et de longueur déterminée. Sa résistance à l’écoulement provoque la chute de pression entre la ligne liquide et l’évaporateur, sans commande mobile. 🔑 La clé Aucun bulbe, moteur ou réglage en fonctionnement. Diamètre et longueur sont calculés pour l’appareil. La charge et les conditions de fonctionnement influencent fortement l’alimentation.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=tube-capillaire&ecran=2"
+  },
+  {
+    "texte": "Tube capillaire. Entrée et sortie. ENTRÉE · Liquide HP chaud à tiède Haute pression · liquide → SORTIE · Mélange BP très froid Basse pression · liquide + vapeur Le capillaire de détente ne doit pas être confondu avec le capillaire de commande reliant un bulbe à un détendeur thermostatique. Connexions à identifier Entrée : liquide HP filtré. Sortie : mélange BP vers l’évaporateur. Le tube lui-même constitue le passage calibré.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=tube-capillaire&ecran=3"
+  },
+  {
+    "texte": "Tube capillaire. Fonctionnement interne. Tube capillaire Entrée : liquide HP filtré. · Sortie : mélange BP vers l’évaporateur. Une restriction longue et immobile Le liquide HP entre dans un passage très étroit. Les frottements et la longueur créent une perte de charge. La pression chute progressivement. Un mélange liquide-vapeur BP alimente l’évaporateur. L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=tube-capillaire&ecran=4"
+  },
+  {
+    "texte": "Tube capillaire. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Tube capillaire EMPLACEMENT HABITUEL À gauche · entre ligne liquide et évaporateur Ne pas modifier la longueur ni le diamètre prévus. Éviter écrasement, pincement et coude trop serré. Maintenir une filtration propre en amont. Reproduire le cheminement et les contacts thermiques définis par le constructeur. ⚠ Le piège : Chercher une vis de réglage est une erreur : le tube capillaire est une détente fixe.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=tube-capillaire&ecran=5"
+  },
+  {
+    "texte": "Tube capillaire. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un tube capillaire Les brasures à ses deux extrémités : la section est fine, la reprise de brasure y est délicate. Les points de fixation et de frottement : un capillaire qui vibre contre une tôle finit par s’user et percer. Le pincement du tube, à la pose ou lors d’une intervention voisine. La liaison capillaire–ligne d’aspiration (échangeur), quand elle existe. Un capillaire bouché ne fuit pas, mais il fait monter la pression en amont : ne pas confondre le symptôme et la cause. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=tube-capillaire&ecran=6"
+  },
+  {
+    "texte": "Tube capillaire. Mémoriser. À DIRE SANS REGARDER Tube capillaire Petit diamètre + longueur calculée = perte de charge fixe. MINI-QUESTION DE MÉMORISATION Qu’est-ce qui règle le débit du capillaire ? Un moteur pas à pas. Son diamètre, sa longueur et les conditions de pression. Un bulbe fixé sur l’aspiration.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=tube-capillaire&ecran=7"
+  },
+  {
+    "texte": "Réservoir liquide. Reconnaître. Réservoir liquide vertical · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Bouteille liquide Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=reservoir-liquide&ecran=1"
+  },
+  {
+    "texte": "Réservoir liquide. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Constituer une réserve de liquide HP Le réservoir liquide reçoit le fluide condensé, absorbe les variations de quantité présentes dans le circuit et alimente la ligne liquide avec du fluide à l’état liquide lorsque son montage le permet. 🔑 La clé Il se place du côté haute pression. La sortie liquide peut utiliser un tube plongeur interne. Il ne remplace ni le condenseur ni le séparateur d’huile.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=reservoir-liquide&ecran=2"
+  },
+  {
+    "texte": "Réservoir liquide. Entrée et sortie. ENTRÉE · Liquide HP chaud à tiède Haute pression · liquide → SORTIE · Liquide HP chaud à tiède Haute pression · liquide Le nombre de raccords, le sens et la position dépendent du modèle. La documentation constructeur reste la référence. Connexions à identifier Entrée : liquide HP venant du condenseur. Sortie : liquide HP vers les accessoires de ligne. Des raccords de service ou de sécurité peuvent compléter l’équipement.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=reservoir-liquide&ecran=3"
+  },
+  {
+    "texte": "Réservoir liquide. Fonctionnement interne. Réservoir liquide Entrée : liquide HP venant du condenseur. · Sortie : liquide HP vers les accessoires de ligne. Séparer l’espace vapeur et la réserve liquide Le fluide condensé entre dans le récipient. Le niveau liquide varie avec la charge et le fonctionnement. La phase vapeur occupe l’espace supérieur. La sortie prélève la phase liquide selon la conception du réservoir. L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=reservoir-liquide&ecran=4"
+  },
+  {
+    "texte": "Réservoir liquide. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Réservoir liquide EMPLACEMENT HABITUEL Après le condenseur · avant la ligne liquide Respecter la position prévue et fixer le récipient sans contrainte. Identifier avec certitude l’entrée, la sortie liquide et les raccords de service. Préserver les organes de sécurité associés. Ne jamais inventer un taux de remplissage : appliquer les règles et la documentation en vigueur. ⚠ Le piège : Un réservoir liquide et une bouteille anti-coup de liquide se ressemblent parfois, mais ils ne sont ni au même endroit ni au même état de fluide.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=reservoir-liquide&ecran=5"
+  },
+  {
+    "texte": "Réservoir liquide. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un réservoir de liquide Les raccords d’entrée et de sortie et leurs brasures. Les accessoires vissés : vanne de service, bouchon de purge, voyant de niveau, raccord de soupape. La soupape de sécurité : après une ouverture, elle peut ne pas se refermer parfaitement. La corrosion externe de la virole, surtout en extérieur ou sur un appareil ancien. Un réservoir contient une réserve de liquide : une fuite y est plus lourde de conséquences qu’ailleurs sur la ligne. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=reservoir-liquide&ecran=6"
+  },
+  {
+    "texte": "Réservoir liquide. Mémoriser. À DIRE SANS REGARDER Réservoir liquide Côté HP : recevoir le liquide et alimenter la ligne liquide. MINI-QUESTION DE MÉMORISATION Sur quelle partie du circuit se trouve habituellement le réservoir liquide ? Sur la ligne liquide HP, après le condenseur. Sur l’aspiration BP, juste avant le compresseur. Dans le circuit d’eau de l’évaporateur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=reservoir-liquide&ecran=7"
+  },
+  {
+    "texte": "Filtre déshydrateur. Reconnaître. Filtre déshydrateur · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Filtre déshydrateur Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=filtre-deshydrateur&ecran=1"
+  },
+  {
+    "texte": "Filtre déshydrateur. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Protéger le circuit contre particules et humidité Le filtre déshydrateur retient des particules et fixe l’humidité grâce à son média interne. Il protège notamment l’organe de détente contre l’obstruction et limite les réactions indésirables liées à l’eau. 🔑 La clé Installé habituellement sur la ligne liquide. Un modèle unidirectionnel impose le respect de la flèche. Un élément saturé ou pollué doit être remplacé selon la procédure.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=filtre-deshydrateur&ecran=2"
+  },
+  {
+    "texte": "Filtre déshydrateur. Entrée et sortie. ENTRÉE · Liquide HP chaud à tiède Haute pression · liquide → SORTIE · Liquide HP chaud à tiède Haute pression · liquide Certains filtres sont conçus pour d’autres lignes ou pour un fonctionnement réversible. Ne pas transposer sans vérifier leur référence. Connexions à identifier Entrée : liquide HP contenant éventuellement particules ou traces d’humidité. Sortie : liquide HP filtré vers le voyant et la détente. Le média interne n’est pas un simple tamis métallique.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=filtre-deshydrateur&ecran=3"
+  },
+  {
+    "texte": "Filtre déshydrateur. Fonctionnement interne. Filtre déshydrateur Entrée : liquide HP contenant éventuellement particules ou traces d’humidité. · Sortie : liquide HP filtré vers le voyant et la détente. Le média retient deux familles de polluants Le fluide traverse le corps du filtre. Les particules solides sont retenues. Le dessiccant fixe l’humidité. Le fluide poursuit son trajet vers les organes sensibles. L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=filtre-deshydrateur&ecran=4"
+  },
+  {
+    "texte": "Filtre déshydrateur. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Filtre déshydrateur EMPLACEMENT HABITUEL Ligne liquide · en amont du voyant et du détendeur Respecter la flèche et la position du fabricant. Garder les bouchons jusqu’au dernier moment pour limiter l’exposition à l’air. Limiter l’échauffement du corps lors du brasage selon la notice. Remplacer le filtre après une ouverture ou une pollution lorsque la procédure l’exige. ⚠ Le piège : Le filtre peut être froid ou présenter une chute de température lorsqu’il est très obstrué, mais le diagnostic doit être confirmé par des mesures.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=filtre-deshydrateur&ecran=5"
+  },
+  {
+    "texte": "Filtre déshydrateur. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un filtre déshydrateur Les brasures d’entrée et de sortie, refaites à chaque remplacement — donc à contrôler à chaque fois. Sur les modèles démontables, le joint de couvercle et les boulons de serrage. Les prises de pression quand l’appareil en porte une de chaque côté. La surchauffe au brasage, qui abîme le média interne et fragilise la liaison : filtre protégé, chiffon humide, azote circulant. Un filtre encrassé ne fuit pas : il fait chuter la pression et givre en sortie. Autre symptôme, autre cause. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=filtre-deshydrateur&ecran=6"
+  },
+  {
+    "texte": "Filtre déshydrateur. Mémoriser. À DIRE SANS REGARDER Filtre déshydrateur Filtrer les particules + retenir l’humidité. MINI-QUESTION DE MÉMORISATION Pourquoi respecter la flèche d’un filtre unidirectionnel ? Parce que son média et sa construction imposent un sens de circulation. Uniquement pour rendre l’étiquette lisible. Pour transformer le liquide en vapeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=filtre-deshydrateur&ecran=7"
+  },
+  {
+    "texte": "Voyant liquide. Reconnaître. Voyant liquide · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Voyant liquide Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=voyant-liquide&ecran=1"
+  },
+  {
+    "texte": "Voyant liquide. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Donner une observation locale de la ligne liquide Le voyant permet d’observer l’aspect du fluide dans la ligne et, lorsqu’il possède une pastille indicatrice, l’état d’humidité correspondant aux repères du fabricant. 🔑 La clé Les bulles sont un indice, pas un diagnostic unique. La couleur de la pastille se lit avec la légende du fabricant. Le voyant est habituellement placé après le filtre déshydrateur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=voyant-liquide&ecran=2"
+  },
+  {
+    "texte": "Voyant liquide. Entrée et sortie. ENTRÉE · Liquide HP chaud à tiède Haute pression · liquide → SORTIE · Liquide HP chaud à tiède Haute pression · liquide Un voyant sans pastille ne donne pas d’indication d’humidité. Toujours identifier le modèle réel. Connexions à identifier Le liquide HP traverse une fenêtre d’observation. L’entrée et la sortie restent sur la même ligne. Le voyant ne dose pas le débit et ne crée pas la détente.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=voyant-liquide&ecran=3"
+  },
+  {
+    "texte": "Voyant liquide. Fonctionnement interne. Voyant liquide Le liquide HP traverse une fenêtre d’observation. · L’entrée et la sortie restent sur la même ligne. Une fenêtre, deux observations possibles Le fluide traverse le corps transparent. La fenêtre rend visibles d’éventuelles bulles. La pastille réagit à l’humidité selon sa technologie. Le technicien confronte l’observation aux autres mesures. L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=voyant-liquide&ecran=4"
+  },
+  {
+    "texte": "Voyant liquide. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Voyant liquide EMPLACEMENT HABITUEL Ligne liquide · souvent après le filtre Installer la fenêtre dans une position lisible. Respecter un éventuel sens de circulation. Protéger le voyant contre les contraintes de tuyauterie et les chocs. Lire la pastille uniquement avec la légende du fabricant. ⚠ Le piège : Des bulles ne prouvent pas automatiquement un manque de charge : perte de charge, variation de charge ou conditions transitoires sont aussi à examiner.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=voyant-liquide&ecran=5"
+  },
+  {
+    "texte": "Voyant liquide. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un voyant liquide Le hublot et son joint : c’est le point faible propre à cet organe. Les raccords à visser ou les brasures selon le modèle. La surchauffe au brasage, qui détruit le joint du hublot et la pastille d’humidité. Les chocs : un voyant est en saillie sur la ligne, il se prend tout ce qui passe. Le voyant sert à voir l’état du fluide et l’humidité : un voyant opaque ne dit plus rien, il se remplace. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=voyant-liquide&ecran=6"
+  },
+  {
+    "texte": "Voyant liquide. Mémoriser. À DIRE SANS REGARDER Voyant liquide Observer le liquide et, selon le modèle, l’indicateur d’humidité. MINI-QUESTION DE MÉMORISATION Que faut-il conclure devant des bulles ? Le manque de charge est certain. C’est un indice à confronter aux pressions, températures et conditions de fonctionnement. Le compresseur est forcément hors service.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=voyant-liquide&ecran=7"
+  },
+  {
+    "texte": "Électrovanne. Reconnaître. Électrovanne frigorifique · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Électrovanne Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=electrovanne&ecran=1"
+  },
+  {
+    "texte": "Électrovanne. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Commander électriquement le passage du fluide L’électrovanne autorise ou interrompt le passage du fluide en réponse à une commande électrique. Une version normalement fermée se ferme sans alimentation ; son usage fréquent sur la ligne liquide permet notamment des séquences de pump-down. 🔑 La clé Normalement ouverte ou fermée décrit l’état sans alimentation. La bobine crée un champ magnétique. L’électrovanne n’est pas un détendeur de régulation.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=electrovanne&ecran=2"
+  },
+  {
+    "texte": "Électrovanne. Entrée et sortie. ENTRÉE · Liquide HP chaud à tiède Haute pression · liquide → SORTIE · Liquide HP chaud à tiède Haute pression · liquide L’emplacement habituel est la ligne liquide, mais d’autres applications existent. Vérifier le fluide, la pression différentielle et le sens autorisé. Connexions à identifier Deux raccords fluidiques en ligne. Une bobine et son raccordement électrique. Certains modèles utilisent la pression du fluide pour assister l’ouverture.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=electrovanne&ecran=3"
+  },
+  {
+    "texte": "Électrovanne. Fonctionnement interne. Électrovanne Deux raccords fluidiques en ligne. · Une bobine et son raccordement électrique. Le champ magnétique déplace un noyau La commande alimente la bobine. Le champ magnétique attire le noyau mobile. L’orifice pilote ou principal s’ouvre selon la conception. À la coupure, le ressort ramène une vanne normalement fermée. L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=electrovanne&ecran=4"
+  },
+  {
+    "texte": "Électrovanne. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Électrovanne EMPLACEMENT HABITUEL Souvent sur la ligne liquide · avant la détente Respecter la flèche de circulation et la position de la bobine. Vérifier tension, fréquence et puissance de la bobine. Ne jamais alimenter une bobine déposée de son noyau lorsque le fabricant l’interdit. Protéger le corps et retirer la bobine pendant le brasage si la procédure le demande. ⚠ Le piège : Une bobine alimentée ne prouve pas que l’orifice est ouvert : noyau bloqué, pression différentielle ou défaut mécanique restent possibles.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=electrovanne&ecran=5"
+  },
+  {
+    "texte": "Électrovanne. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur une électrovanne Les raccords fluidiques et leurs brasures. Le tube de l’équipage mobile sous la bobine : c’est la partie sous pression que traverse la commande. Le joint de siège : usé, il laisse passer le fluide vanne fermée — fuite interne, invisible de l’extérieur, qui se voit aux pressions. La surchauffe au brasage : bobine déposée et corps protégé, sinon le siège est cuit. La bobine elle-même ne contient pas de fluide : un défaut électrique n’est pas une fuite. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=electrovanne&ecran=6"
+  },
+  {
+    "texte": "Électrovanne. Mémoriser. À DIRE SANS REGARDER Électrovanne Commande électrique → noyau mobile → passage autorisé ou fermé. MINI-QUESTION DE MÉMORISATION Une électrovanne normalement fermée est comment sans alimentation ? Ouverte. Fermée. Toujours à moitié ouverte.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=electrovanne&ecran=7"
+  },
+  {
+    "texte": "Clapet anti-retour et vannes de service. Reconnaître. Clapet et vannes de service · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Clapet anti-retour Vanne d’isolement Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=clapet-vannes&ecran=1"
+  },
+  {
+    "texte": "Clapet anti-retour et vannes de service. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Contrôler le sens et permettre une intervention Le clapet anti-retour autorise le passage dans un seul sens. Une vanne de service permet, selon sa conception, d’isoler une partie du circuit et d’accéder à une prise de service pour mesurer, récupérer ou charger. 🔑 La clé Le clapet agit automatiquement par différence de pression. Les positions d’une vanne de service dépendent de sa construction. Les bouchons participent souvent à l’étanchéité finale.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=clapet-vannes&ecran=2"
+  },
+  {
+    "texte": "Clapet anti-retour et vannes de service. Entrée et sortie. ENTRÉE · État selon l’emplacement Repérer la ligne avant d’interpréter → SORTIE · État selon l’emplacement Repérer la ligne avant d’interpréter La bibliothèque fournit le symbole d’une vanne d’isolement. Le symbole spécifique d’une vanne de service n’est pas inventé : la lecture du plan constructeur reste nécessaire. Connexions à identifier Clapet : une entrée, une sortie et un sens imposé. Vanne de service : passage principal, tige et parfois prise latérale. L’état du fluide dépend de la ligne où le composant est installé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=clapet-vannes&ecran=3"
+  },
+  {
+    "texte": "Clapet anti-retour et vannes de service. Fonctionnement interne. Clapet anti-retour et vannes de service Clapet : une entrée, une sortie et un sens imposé. · Vanne de service : passage principal, tige et parfois prise latérale. Ouverture dans un sens, fermeture dans l’autre La pression amont pousse l’obturateur du clapet. Le passage s’ouvre dans le sens autorisé. Une inversion de pression ramène l’obturateur sur son siège. La vanne de service, elle, est positionnée volontairement par le technicien. L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=clapet-vannes&ecran=4"
+  },
+  {
+    "texte": "Clapet anti-retour et vannes de service. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Clapet anti-retour et vannes de service EMPLACEMENT HABITUEL Emplacement variable · selon la fonction recherchée Respecter la flèche du clapet anti-retour. Identifier les positions de tige d’une vanne de service avant de manœuvrer. Ne jamais forcer la tige en butée. Remettre les bouchons avec le joint et le couple prévus, puis contrôler l’étanchéité. ⚠ Le piège : Une prise de service n’est pas forcément isolée dans toutes les positions de tige. Vérifier le schéma de la vanne utilisée.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=clapet-vannes&ecran=5"
+  },
+  {
+    "texte": "Clapet anti-retour et vannes de service. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un clapet ou une vanne de service Le presse-étoupe de la tige : il assure l’étanchéité autour d’une pièce qui tourne et se déplace. Les bouchons des prises de pression : en fonctionnement, ils se remettent et se serrent — ce sont eux qui étanchent, pas le clapet interne. Les raccords et brasures du passage principal. Le siège d’un clapet anti-retour usé : il laisse passer à contresens, fuite interne qu’on lit sur les pressions. Rappel de sécurité : la prise permanente d’une vanne de service reste reliée au compresseur dans toutes les positions — son bouchon ne se défait jamais sur une installation chargée. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=clapet-vannes&ecran=6"
+  },
+  {
+    "texte": "Clapet anti-retour et vannes de service. Mémoriser. À DIRE SANS REGARDER Clapet anti-retour et vannes de service Clapet : un seul sens. Vanne de service : isoler et accéder selon sa position. MINI-QUESTION DE MÉMORISATION Quel organe empêche automatiquement un retour de fluide ? Le clapet anti-retour. Le voyant liquide. Le réservoir liquide.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=clapet-vannes&ecran=7"
+  },
+  {
+    "texte": "Bouteille anti-coup de liquide. Reconnaître. Bouteille d’aspiration · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. SYMBOLE À VALIDER Symbole spécifique à valider Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=bouteille-anti-coup&ecran=1"
+  },
+  {
+    "texte": "Bouteille anti-coup de liquide. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Retenir un excès de liquide avant le compresseur Placée sur l’aspiration, la bouteille anti-coup de liquide sépare et retient temporairement du liquide qui ne doit pas entrer brutalement dans le compresseur. Elle laisse repartir la vapeur et organise un retour contrôlé du liquide et de l’huile selon sa conception. 🔑 La clé Elle appartient au côté BP. La sortie doit favoriser la vapeur vers le compresseur. Elle ne remplace pas une correction de la cause du retour de liquide.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=bouteille-anti-coup&ecran=2"
+  },
+  {
+    "texte": "Bouteille anti-coup de liquide. Entrée et sortie. ENTRÉE · Vapeur BP froide Basse pression · vapeur → SORTIE · Vapeur BP froide Basse pression · vapeur Aucun symbole spécifique n’existe actuellement dans la bibliothèque inerWeb. Le module le signale au lieu d’utiliser le symbole du réservoir liquide, qui serait faux. Connexions à identifier Entrée BP : vapeur pouvant entraîner des gouttelettes de liquide. Sortie BP : vapeur vers le compresseur. Un orifice interne peut assurer un retour dosé d’huile et de liquide.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=bouteille-anti-coup&ecran=3"
+  },
+  {
+    "texte": "Bouteille anti-coup de liquide. Fonctionnement interne. Bouteille anti-coup de liquide Entrée BP : vapeur pouvant entraîner des gouttelettes de liquide. · Sortie BP : vapeur vers le compresseur. Séparer les gouttelettes de la vapeur Le mélange entre dans le volume de la bouteille. La vitesse diminue et les gouttelettes tombent au fond. La vapeur est prélevée par le tube interne. L’huile et une petite quantité de liquide reviennent de façon contrôlée selon la conception. L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=bouteille-anti-coup&ecran=4"
+  },
+  {
+    "texte": "Bouteille anti-coup de liquide. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Bouteille anti-coup de liquide EMPLACEMENT HABITUEL Aspiration BP · juste avant le compresseur Monter le récipient dans la position prévue, généralement verticale selon le modèle. Identifier entrée, sortie et éventuel orifice de retour. Dimensionner et sélectionner l’organe selon l’application, pas selon son apparence. Rechercher et corriger la cause d’un retour de liquide répété. ⚠ Le piège : Ne pas confondre cette bouteille BP avec le réservoir liquide HP : leur ressemblance extérieure ne dit pas leur fonction.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=bouteille-anti-coup&ecran=5"
+  },
+  {
+    "texte": "Bouteille anti-coup de liquide. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur une bouteille anti-coup de liquide Les raccords d’entrée et de sortie et leurs brasures. La corrosion externe de la virole, en particulier sur un appareil froid qui condense en permanence à sa surface. Les fixations : une bouteille lourde tenue par sa seule tuyauterie met les raccords en contrainte. L’orifice de retour d’huile et les prises éventuelles. L’isolation thermique cache la surface : une fuite peut s’y développer sans trace visible. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=bouteille-anti-coup&ecran=6"
+  },
+  {
+    "texte": "Bouteille anti-coup de liquide. Mémoriser. À DIRE SANS REGARDER Bouteille anti-coup de liquide Sur l’aspiration : retenir le liquide, laisser repartir la vapeur. MINI-QUESTION DE MÉMORISATION Quel fluide doit ressortir vers le compresseur ? Principalement de la vapeur BP. Uniquement du liquide HP. De l’eau du circuit secondaire.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=bouteille-anti-coup&ecran=7"
+  },
+  {
+    "texte": "Séparateur d’huile. Reconnaître. Séparateur d’huile · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Séparateur d’huile Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=separateur-huile&ecran=1"
+  },
+  {
+    "texte": "Séparateur d’huile. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Séparer l’huile de la vapeur de refoulement Le séparateur d’huile reçoit la vapeur HP chaude chargée de fines gouttelettes d’huile. Il sépare une grande partie de l’huile, laisse repartir la vapeur vers le condenseur et renvoie l’huile vers le compresseur par une conduite dédiée. 🔑 La clé Installé sur le refoulement, près du compresseur selon la conception. Il possède un troisième trajet : le retour d’huile. Il améliore la gestion d’huile mais ne dispense pas d’une tuyauterie favorisant le retour.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=separateur-huile&ecran=2"
+  },
+  {
+    "texte": "Séparateur d’huile. Entrée et sortie. ENTRÉE · Vapeur HP très chaude Haute pression · vapeur → SORTIE · Vapeur HP très chaude Haute pression · vapeur Le dispositif interne de retour peut utiliser un flotteur ou une autre commande. La conduite d’huile doit rester identifiable. Connexions à identifier Entrée : vapeur HP chaude contenant de l’huile entraînée. Sortie principale : vapeur HP vers le condenseur. Sortie d’huile : retour séparé vers le carter ou le système de gestion d’huile.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=separateur-huile&ecran=3"
+  },
+  {
+    "texte": "Séparateur d’huile. Fonctionnement interne. Séparateur d’huile Entrée : vapeur HP chaude contenant de l’huile entraînée. · Sortie principale : vapeur HP vers le condenseur. Ralentir, dévier et collecter les gouttelettes Le gaz chargé d’huile entre à grande vitesse. Une déviation, un effet centrifuge ou un média coalescent sépare les gouttelettes. L’huile collectée descend dans le réservoir inférieur. Le gaz poursuit vers le condenseur et l’huile retourne au compresseur. L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=separateur-huile&ecran=4"
+  },
+  {
+    "texte": "Séparateur d’huile. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Séparateur d’huile EMPLACEMENT HABITUEL Refoulement HP · entre compresseur et condenseur Monter verticalement lorsque le modèle l’impose. Respecter entrée, sortie gaz et retour d’huile. Vérifier le fonctionnement du flotteur ou du dispositif de retour. Contrôler l’étanchéité et éviter les contraintes de tuyauterie. ⚠ Le piège : Un séparateur mal raccordé peut priver le compresseur d’huile ou envoyer du liquide vers un emplacement non prévu.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=separateur-huile&ecran=5"
+  },
+  {
+    "texte": "Séparateur d’huile. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un séparateur d’huile Les raccords d’entrée et de sortie, côté vapeur chaude — donc soumis à des cycles de température. La ligne de retour d’huile vers le carter, son raccord et son éventuel filtre. Les flotteurs et bouchons de visite sur les modèles démontables. La corrosion et les vibrations, l’appareil étant situé juste au refoulement du compresseur. Une trace d’huile n’est pas seulement salissante : l’huile marque l’endroit où le fluide s’échappe. C’est un indice de fuite, pas un désordre esthétique. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=separateur-huile&ecran=6"
+  },
+  {
+    "texte": "Séparateur d’huile. Mémoriser. À DIRE SANS REGARDER Séparateur d’huile Gaz HP avec huile → séparation → gaz vers condenseur + huile vers compresseur. MINI-QUESTION DE MÉMORISATION Quelle connexion distingue le séparateur d’huile d’un simple récipient en ligne ? Le retour d’huile vers le compresseur. Une arrivée d’eau potable. Un bulbe thermostatique.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=separateur-huile&ecran=7"
+  },
+  {
+    "texte": "Pressostats HP et BP. Reconnaître. Pressostats HP et BP · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Pressostat HP Pressostat BP Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=pressostats&ecran=1"
+  },
+  {
+    "texte": "Pressostats HP et BP. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Surveiller une pression et commuter un contact Un pressostat transforme la pression reçue par un raccord de mesure en action électrique. Le pressostat HP peut protéger contre une pression excessive. Le pressostat BP peut participer à la protection, à la commande ou à une séquence de pump-down selon le montage. 🔑 La clé Le fluide ne traverse pas le pressostat. HP et BP ne sont pas interchangeables. Seuil, différentiel et réarmement dépendent de l’application et du modèle.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=pressostats&ecran=2"
+  },
+  {
+    "texte": "Pressostats HP et BP. Entrée et sortie. Pas de débit principal à travers l’organe Le raccord reçoit une pression ou la partie sensible reçoit une température. L’organe transmet ensuite une information électrique. Connexions à identifier Une prise de pression relie le pressostat à la ligne surveillée. Un mécanisme déplace un contact électrique. Les bornes appartiennent au circuit de commande, pas au circuit frigorifique. Un pressostat de sécurité peut exiger un réarmement manuel. Ne jamais modifier un réglage de sécurité sans procédure et valeur validées.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=pressostats&ecran=3"
+  },
+  {
+    "texte": "Pressostats HP et BP. Fonctionnement interne. Pressostats HP et BP Une prise de pression relie le pressostat à la ligne surveillée. · Un mécanisme déplace un contact électrique. Pression → membrane → contact La pression agit sur un soufflet ou une membrane. Le déplacement s’oppose à un ressort réglé. Au seuil, le mécanisme bascule le contact. La commande arrête, autorise ou signale selon le câblage. L’animation montre un principe. Les formes exactes, jeux et séquences restent propres au constructeur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=pressostats&ecran=4"
+  },
+  {
+    "texte": "Pressostats HP et BP. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Pressostats HP et BP EMPLACEMENT HABITUEL Prises HP et BP · selon la pression surveillée Raccorder le bon pressostat au bon niveau de pression. Protéger la prise de pression contre vibration et pulsations selon la notice. Câbler le contact correspondant à la fonction attendue. Valider seuil, différentiel et type de réarmement sans inventer de valeur. ⚠ Le piège : Shunter un pressostat de sécurité supprime une protection essentielle et ne constitue jamais une réparation.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=pressostats&ecran=5"
+  },
+  {
+    "texte": "Pressostats HP et BP. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un pressostat La prise de pression et son raccord : c’est le seul endroit où l’appareil touche le circuit. Le capillaire de liaison quand le pressostat est déporté : pincement, frottement, rupture. Le soufflet interne percé par fatigue : le fluide s’échappe alors par le corps de l’appareil. Les bornes et le boîtier appartiennent au circuit de commande : un défaut électrique n’est pas une fuite. Un pressostat déclenché à répétition signale souvent autre chose : chercher la cause avant de réarmer. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=pressostats&ecran=6"
+  },
+  {
+    "texte": "Pressostats HP et BP. Mémoriser. À DIRE SANS REGARDER Pressostats HP et BP Mesurer une pression et changer l’état d’un contact électrique. MINI-QUESTION DE MÉMORISATION Le fluide frigorigène traverse-t-il un pressostat ? Oui, comme dans un filtre. Non. La pression agit sur une partie sensible raccordée à la ligne. Seulement quand le compresseur est arrêté.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=pressostats&ecran=7"
+  },
+  {
+    "texte": "Sondes et capteurs de pression. Reconnaître. Sonde de température · vue isolée de reconnaissance Capteur de pression · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Sonde de température SYMBOLE À VALIDER Capteur de pression à valider Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=sondes-capteurs&ecran=1"
+  },
+  {
+    "texte": "Sondes et capteurs de pression. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Convertir une grandeur physique en signal La sonde de température réagit à la température du point mesuré. Le capteur de pression reçoit la pression par un raccord. Tous deux transmettent une information exploitable par un régulateur, un afficheur ou une supervision. 🔑 La clé Un capteur mesure ; un actionneur agit. La qualité du montage conditionne la qualité de la mesure. Le type de signal et la plage doivent être compatibles avec le régulateur.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=sondes-capteurs&ecran=2"
+  },
+  {
+    "texte": "Sondes et capteurs de pression. Entrée et sortie. Pas de débit principal à travers l’organe Le raccord reçoit une pression ou la partie sensible reçoit une température. L’organe transmet ensuite une information électrique. Connexions à identifier Sonde : contact de surface, doigt de gant ou insertion selon le modèle. Capteur de pression : un seul raccord de pression et un connecteur électrique. Le débit principal ne traverse pas ces capteurs. La bibliothèque contient la sonde de température. Aucun symbole frigorifique spécifique de transmetteur de pression n’est encore validé ; il n’est pas inventé dans ce cours.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=sondes-capteurs&ecran=3"
+  },
+  {
+    "texte": "Sondes et capteurs de pression. Fonctionnement interne. À quoi servent ces capteurs : mesurer la surchauffe, en deux points. Grandeur mesurée → signal → décision La partie sensible reçoit une température ou une pression. Sa caractéristique électrique varie. Le signal est transmis au régulateur. Le régulateur l’interprète avant de commander un autre organe. Cette planche vient du cours : c’est la même image que le stagiaire retrouvera en fiche.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=sondes-capteurs&ecran=4"
+  },
+  {
+    "texte": "Sondes et capteurs de pression. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Sondes et capteurs de pression EMPLACEMENT HABITUEL Emplacement choisi selon la mesure nécessaire Assurer un bon contact thermique et isoler la sonde lorsque nécessaire. Choisir une plage de pression compatible avec le circuit. Éviter les contraintes sur câble, connecteur et raccord. Vérifier la correspondance du signal, du câblage et du paramétrage. ⚠ Le piège : Une valeur affichée plausible peut être fausse si la sonde est mal fixée, mal isolée, mal étalonnée ou affectée au mauvais canal.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=sondes-capteurs&ecran=5"
+  },
+  {
+    "texte": "Sondes et capteurs de pression. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur une sonde ou un capteur de pression Le raccord de pression d’un capteur : unique point en contact avec le fluide. Le doigt de gant d’une sonde de température monté sur le circuit, et son joint. Une sonde de contact ne touche pas le fluide : elle ne peut pas fuir, mais un collier mal serré fausse la mesure. Le câblage ne fuit pas ; une mesure fausse peut en revanche masquer une fuite en cours. Point de méthode : la méthode indirecte de contrôle d’étanchéité repose sur ces mesures — une sonde mal posée, et le contrôle ne vaut rien. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=sondes-capteurs&ecran=6"
+  },
+  {
+    "texte": "Sondes et capteurs de pression. Mémoriser. À DIRE SANS REGARDER Sondes et capteurs de pression Mesurer correctement avant de réguler correctement. MINI-QUESTION DE MÉMORISATION Quelle différence fondamentale sépare un capteur d’un actionneur ? Le capteur fournit une information ; l’actionneur modifie le procédé. Le capteur ouvre toujours un passage de fluide. Il n’existe aucune différence.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=sondes-capteurs&ecran=7"
+  },
+  {
+    "texte": "Régulateurs de pression et organes de sécurité. Reconnaître. Régulateurs et soupape · vue isolée de reconnaissance Symboles de la bibliothèque inerWeb Le symbole porte la vérité schématique ; la vue réaliste aide seulement à reconnaître. Vanne de sécurité SYMBOLE À VALIDER Régulateurs spécifiques à valider Vues isolées : aide visuelle sans valeur de plan constructeur. Symboles : bibliothèque SVG inerWeb, copiés sans redessin.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite&ecran=1"
+  },
+  {
+    "texte": "Régulateurs de pression et organes de sécurité. Fonction professionnelle. FONCTION PROFESSIONNELLE COMPLÈTE Tenir une pression utile ou protéger une enveloppe Un régulateur de pression module un passage pour maintenir, limiter ou différencier une pression selon sa fonction et son emplacement. Un organe de sécurité, comme une soupape, s’ouvre exceptionnellement lorsque sa pression de tarage est atteinte afin de protéger une enveloppe. 🔑 La clé Régulation et sécurité ne sont pas la même fonction. Le sens, la prise de pression et la position varient selon le régulateur. Une soupape n’est ni une vanne de service ni un réglage d’exploitation.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite&ecran=2"
+  },
+  {
+    "texte": "Régulateurs de pression et organes de sécurité. Entrée et sortie. ENTRÉE · État selon l’emplacement Repérer la ligne avant d’interpréter → SORTIE · État selon l’emplacement Repérer la ligne avant d’interpréter La bibliothèque fournit le symbole de sécurité, mais pas chaque famille de régulateur frigorifique. Les symboles manquants restent signalés en attente de validation humaine. Connexions à identifier Régulateur : entrée, sortie et parfois ligne pilote ou prise de pression. Soupape : entrée reliée au volume protégé et sortie dirigée vers un rejet prévu. L’état du fluide dépend de la zone du circuit.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite&ecran=3"
+  },
+  {
+    "texte": "Régulateurs de pression et organes de sécurité. Fonctionnement interne. Trois régulateurs, trois endroits du circuit, trois raisons. Modulation normale ou ouverture de secours La pression agit sur une membrane ou un clapet. Le ressort établit l’équilibre correspondant à la fonction. Le régulateur module son ouverture pendant le fonctionnement normal. La soupape de sécurité reste fermée et ne s’ouvre qu’au seuil prévu. Cette planche vient du cours : c’est la même image que le stagiaire retrouvera en fiche.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite&ecran=4"
+  },
+  {
+    "texte": "Régulateurs de pression et organes de sécurité. Situer et monter. CONDENSEUR EN HAUT COMPRESSEUR À DROITE ÉVAPORATEUR EN BAS DÉTENDEUR À GAUCHE Régulateurs de pression et organes de sécurité EMPLACEMENT HABITUEL Emplacement variable · défini par la fonction Identifier précisément la fonction et le sens du régulateur. Raccorder correctement toute prise pilote ou égalisation. Ne jamais modifier le tarage d’un organe de sécurité hors procédure autorisée. Diriger le rejet de sécurité vers la destination prévue par la conception et les règles applicables. ⚠ Le piège : Utiliser une soupape comme régulateur normal ou isoler une protection sans dispositif prévu détruit la logique de sécurité.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite&ecran=5"
+  },
+  {
+    "texte": "Régulateurs de pression et organes de sécurité. Où ça fuit. OÙ ÇA FUIT, CE QU’ON CONTRÔLE Où ça fuit sur un régulateur ou une soupape Les raccords d’entrée et de sortie et la ligne pilote quand elle existe. La tige de réglage et son bouchon d’origine, à remettre après tout réglage. La soupape de sécurité après une ouverture : elle peut rester non étanche, et son rejet doit aller là où c’est prévu. Le siège d’un régulateur usé : fuite interne, lisible aux pressions et non à l’extérieur. Une soupape ne se bouchonne jamais et ne se règle pas au jugé : c’est un organe de sécurité, réglé et plombé selon la documentation. LA MÉTHODE, ELLE, NE CHANGE PAS Le registre d’abord : ce qui a déjà fui sur cette machine se refuit souvent au même endroit. Les yeux et la main : traces d’huile, corrosion, givre anormal, raccord desserré. L’huile marque l’endroit où le fluide s’échappe. La méthode indirecte : des mesures qui s’écartent de ce qu’on attend, sans ouvrir le circuit. La méthode directe : détecteur électronique, mousse ou traceur, selon la procédure du site et l’appareil. La trace écrite : ce qui a été trouvé, ce qui a été réparé, ce qui reste à surveiller. ⚠ Avant de toucher : installation consignée électriquement, et mise en pression à l’azote uniquement — jamais d’oxygène, jamais d’air comprimé.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite&ecran=6"
+  },
+  {
+    "texte": "Régulateurs de pression et organes de sécurité. Mémoriser. À DIRE SANS REGARDER Régulateurs de pression et organes de sécurité Régulateur : moduler. Sécurité : protéger en dernier recours. MINI-QUESTION DE MÉMORISATION Quel énoncé distingue correctement les deux fonctions ? Le régulateur module en service ; la soupape protège exceptionnellement au seuil prévu. La soupape règle normalement la température du local. Le régulateur remplace toujours tous les pressostats.",
+    "source": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite&ecran=7"
+  }
+]

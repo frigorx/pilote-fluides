@@ -2,7 +2,7 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **2 août 2026**.
+> Dernière mise à jour : **6 août 2026**.
 
 ---
 
@@ -70,7 +70,27 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
-## 2. État au 2 août 2026
+## 2. État au 6 août 2026
+
+### 🔊 POINT D'ÉTAPE — refonte des voix du 6 août
+
+Le chantier est réalisé dans le clone indépendant `C:\git\pilote-fluides-codex-travail`, branche
+`codex/mise-a-conformite-globale`. Le dépôt canonique `C:\git\pilote-fluides` n'a pas été modifié.
+
+- `moteur/voix.js` intercepte les appels historiques à `speechSynthesis.speak()` et lit le MP3
+  local correspondant au texte exact ;
+- 17 surfaces vocales chargent cette couche commune ;
+- le corpus compte 660 narrations, dont 112 captures des écrans réellement rendus du Tome 3
+  (5,18 h d'écoute, 106,8 Mio) ;
+- aucune voix ne part au chargement : le clic de l'utilisateur reste obligatoire ;
+- un changement de texte invalide automatiquement l'ancien fichier et active le repli navigateur ;
+- les fichiers de génération, les tests et la traçabilité sont décrits dans
+  `packs/fluides/res/voix/README.md` et `build/voix/` ;
+- le lot utilise Piper / `fr_FR-siwis-medium` hors ligne. Les MP3 doivent être écoutés et recevoir le
+  bon à tirer métier de F. Henninot avant publication et avant indexation RAG.
+
+Ne pas copier ce travail dans le dépôt canonique par morceaux : valider le lot dans le clone,
+puis intégrer un commit complet afin de garder ensemble lecteur, index, MP3 et traçabilité.
 
 ### ⏱ POINT D'ÉTAPE — au sortir de la journée du 31 juillet
 
