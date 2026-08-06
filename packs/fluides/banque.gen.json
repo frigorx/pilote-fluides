@@ -27,10 +27,10 @@
   "type": "qcm",
   "enonce": "Pourquoi ne doit-on JAMAIS laisser du liquide arriver au compresseur ?",
   "choix": [
-   "Le liquide est trop froid",
+   "Le liquide est trop froid pour les clapets",
    "Le liquide est incompressible et peut détruire le compresseur",
-   "Le liquide est trop visqueux",
-   "Le liquide consomme trop d'énergie"
+   "Le liquide est trop visqueux et freine les pistons",
+   "Le liquide consomme trop d'énergie à comprimer"
   ],
   "bonne": 1,
   "explication": "Le liquide est INCOMPRESSIBLE. Si du liquide arrive au compresseur, il peut provoquer un coup de liquide qui endommage ou détruit le compresseur (clapet cassé, bielle tordue, etc.).",
@@ -49,9 +49,9 @@
   "enonce": "La pression absolue est égale à :",
   "choix": [
    "Pression relative + pression atmosphérique",
-   "Pression relative - pression atmosphérique",
-   "Pression atmosphérique uniquement",
-   "Pression relative uniquement"
+   "Pression relative moins la pression atmosphérique",
+   "Pression atmosphérique seule, au niveau de la mer",
+   "Pression relative seule, lue au manomètre"
   ],
   "bonne": 0,
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -66,10 +66,10 @@
   "type": "qcm",
   "enonce": "Dans la zone diphasique (sous la cloche), le fluide est :",
   "choix": [
-   "Entièrement liquide",
-   "Entièrement gazeux",
+   "Entièrement liquide, sous-refroidi",
+   "Entièrement gazeux, surchauffé",
    "Un mélange liquide + vapeur",
-   "Supercritique"
+   "À l'état supercritique"
   ],
   "bonne": 2,
   "explication": "Un mélange liquide + vapeur — Sous la courbe de saturation, le fluide est en changement de phase : liquide + vapeur coexistent.",
@@ -192,10 +192,10 @@
   "type": "qcm",
   "enonce": "Dans quel état se trouve principalement le fluide frigorigène dans la ligne liquide ?",
   "choix": [
-   "À l'état gazeux",
+   "À l'état de vapeur",
    "À l'état liquide",
-   "À l'état solide",
-   "En mélange biphasique"
+   "À l'état de glace",
+   "En mélange diphasique"
   ],
   "bonne": 1,
   "explication": "Dans la ligne liquide (entre condenseur et détendeur), le fluide est à l'état LIQUIDE sous haute pression. C'est pour cela qu'on l'appelle 'ligne liquide'.",
@@ -234,10 +234,10 @@
   "type": "qcm",
   "enonce": "L'énergie nécessaire au fonctionnement du cycle frigorifique est apportée par :",
   "choix": [
-   "L'évaporateur",
-   "Le condenseur",
+   "La batterie évaporateur",
+   "Le condenseur à air",
    "Le compresseur",
-   "Le détendeur"
+   "Le détendeur thermostatique"
   ],
   "bonne": 2,
   "explication": "Le compresseur — Le compresseur est le seul organe qui reçoit de l'énergie (électrique) pour faire tourner le cycle.",
@@ -360,9 +360,9 @@
   "type": "qcm",
   "enonce": "La cloche de saturation sur le diagramme de Mollier sépare :",
   "choix": [
-   "Le vide et la pression",
+   "Le vide et la pression atmosphérique",
    "Les zones liquide, diphasique et vapeur",
-   "Les hautes et basses températures",
+   "Les hautes et les basses températures",
    "Les fluides naturels et synthétiques"
   ],
   "bonne": 1,
@@ -399,10 +399,10 @@
   "type": "qcm",
   "enonce": "Dans la nomenclature R134a, que signifie le 'a' ?",
   "choix": [
-   "Version améliorée",
-   "Isomère",
-   "Azéotrope",
-   "Azeotropic"
+   "Une amélioration",
+   "Un isomère",
+   "Un azéotrope",
+   "Un additif"
   ],
   "bonne": 1,
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -417,10 +417,10 @@
   "type": "qcm",
   "enonce": "Le R410A est un mélange :",
   "choix": [
-   "Azéotrope",
-   "Quasi-azéotrope",
-   "Zéotrope",
-   "Corps pur"
+   "Un zéotrope à fort glissement",
+   "Un quasi-azéotrope",
+   "Un azéotrope véritable",
+   "Un corps pur, sans mélange"
   ],
   "bonne": 1,
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -436,9 +436,9 @@
   "enonce": "Quelle est la composition du R410A ?",
   "choix": [
    "50% R32 / 50% R125",
-   "23% R32 / 25% R125 / 52% R134a",
+   "45% R32 / 55% R125",
    "75% R134a / 25% R32",
-   "100% R32"
+   "100% R32 pur"
   ],
   "bonne": 0,
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -471,10 +471,10 @@
   "type": "qcm",
   "enonce": "Le R717 est :",
   "choix": [
-   "Du propane",
+   "Du propane commercial",
    "De l'ammoniac",
-   "Du CO2",
-   "De l'eau"
+   "Du dioxyde de carbone",
+   "De l'eau distillée"
   ],
   "bonne": 1,
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -507,10 +507,10 @@
   "type": "qcm",
   "enonce": "Dans la nomenclature Rxyz, le chiffre des dizaines (y) correspond à :",
   "choix": [
-   "Nombre d'atomes de carbone − 1",
+   "Le nombre d'atomes de carbone moins 1",
    "Nombre d'atomes d'hydrogène + 1",
-   "Nombre d'atomes de fluor",
-   "Nombre d'atomes de chlore"
+   "Le nombre total d'atomes de fluor",
+   "Le nombre d'atomes de chlore"
   ],
   "bonne": 1,
   "explication": "H + 1 (atomes d'hydrogène + 1) — Règle de nomenclature : centaines = C−1, dizaines = H+1, unités = F. Ex: R134a → C=1+1=2, H=3−1=2, F=4.",
@@ -693,10 +693,10 @@
   "type": "qcm",
   "enonce": "Le système de quotas HFC dans l'UE fonctionne sur le principe de :",
   "choix": [
-   "Quotas attribués aux pays",
+   "Des quotas attribués à chaque pays membre",
    "Quotas attribués aux importateurs et producteurs",
-   "Quotas attribués aux installateurs",
-   "Taxe proportionnelle au GWP"
+   "Des quotas attribués aux installateurs frigoristes",
+   "Une taxe proportionnelle au GWP du fluide"
   ],
   "bonne": 1,
   "explication": "Quotas attribués aux importateurs et producteurs",
@@ -840,10 +840,10 @@
   "type": "qcm",
   "enonce": "Le Protocole de Montréal a principalement permis :",
   "choix": [
-   "D'augmenter la production de CFC",
+   "D'augmenter fortement la production mondiale de CFC",
    "De commencer la réparation de la couche d'ozone",
-   "De créer de nouveaux fluides",
-   "D'interdire le CO₂"
+   "De créer de nouveaux fluides frigorigènes de substitution",
+   "D'interdire le CO₂ comme fluide frigorigène"
   ],
   "bonne": 1,
   "explication": "De commencer la réparation de la couche d'ozone",
@@ -861,10 +861,10 @@
   "type": "qcm",
   "enonce": "Les HFO ont un faible GWP car :",
   "choix": [
-   "Ils ne contiennent pas de carbone",
+   "Ils ne contiennent pas le moindre atome de carbone",
    "Ils se décomposent rapidement dans l'atmosphère",
-   "Ils sont très lourds",
-   "Ils ne s'évaporent pas"
+   "Ils sont nettement plus lourds que l'air ambiant",
+   "Ils ne s'évaporent pas dans l'atmosphère"
   ],
   "bonne": 1,
   "explication": "Décomposition rapide — Les HFO ont une double liaison C=C qui les rend instables chimiquement. Ils se dégradent en quelques jours dans l'atmosphère.",
@@ -882,10 +882,10 @@
   "type": "qcm",
   "enonce": "L'ODP (Ozone Depletion Potential) est lié à la présence dans la molécule de :",
   "choix": [
-   "Fluor",
-   "Hydrogène",
+   "Du fluor et de l'hydrogène",
+   "De l'hydrogène et du carbone",
    "Chlore ou brome",
-   "Carbone"
+   "Du carbone et de l'oxygène"
   ],
   "bonne": 2,
   "explication": "Chlore ou brome — Le chlore (CFC, HCFC) et le brome (halons) détruisent catalytiquement l'ozone stratosphérique.",
@@ -906,7 +906,7 @@
    "Sa couleur",
    "Son prix",
    "Son GWP",
-   "Sa pression de service"
+   "Sa pression"
   ],
   "bonne": 2,
   "explication": "Son GWP — Plus un gaz reste longtemps dans l'atmosphère, plus son impact cumulé sur le réchauffement est important.",
@@ -984,10 +984,10 @@
   "type": "qcm",
   "enonce": "Si la pression remonte de plus de 100 µm pendant le test de maintien, cela indique :",
   "choix": [
-   "Le circuit est étanche",
+   "Le circuit est parfaitement étanche",
    "Une fuite ou de l'humidité résiduelle",
-   "Le vide est suffisant",
-   "La pompe est trop puissante"
+   "Le vide atteint est largement suffisant",
+   "La pompe à vide est trop puissante"
   ],
   "bonne": 1,
   "explication": "Fuite ou humidité résiduelle — Une remontée > 100 µm après fermeture de la vanne indique soit une fuite, soit de l'humidité qui s'évapore.",
@@ -1026,10 +1026,10 @@
   "type": "qcm",
   "enonce": "La pompe à vide ne doit jamais être utilisée pour :",
   "choix": [
-   "Évacuer l'air du circuit",
-   "Évacuer l'humidité",
+   "Évacuer l'air du circuit avant charge",
+   "Évacuer l'humidité résiduelle",
    "Récupérer du fluide frigorigène",
-   "Atteindre le vide requis"
+   "Atteindre le vide requis avant charge"
   ],
   "bonne": 2,
   "explication": "Récupérer du fluide — La pompe à vide n'est pas conçue pour pomper du fluide (ça l'endommage). La récupération se fait avec un groupe de récupération spécifique.",
@@ -1065,10 +1065,10 @@
   "type": "qcm",
   "enonce": "La méthode de détection indirecte consiste à :",
   "choix": [
-   "Utiliser un détecteur électronique",
+   "Utiliser un détecteur électronique de fuites récemment calibré",
    "Suivre les paramètres de fonctionnement (P, T°, surchauffe)",
-   "Mettre sous pression d'azote",
-   "Utiliser un traceur UV"
+   "Mettre le circuit sous pression d'azote puis attendre la chute",
+   "Utiliser un traceur UV et rechercher à la lampe adaptée au produit"
   ],
   "bonne": 1,
   "explication": "Suivre les paramètres de fonctionnement — La détection indirecte analyse les dérives des paramètres (baisse de HP, augmentation de surchauffe, etc.) qui signalent une perte de charge.",
@@ -1107,10 +1107,10 @@
   "type": "qcm",
   "enonce": "Le détecteur électronique de fuites détecte les fuites par :",
   "choix": [
-   "La couleur du gaz",
+   "La couleur que prend le gaz au moment où il s'échappe du circuit",
    "La différence de concentration de gaz dans l'air ambiant",
-   "Le bruit de la fuite",
-   "La variation de température"
+   "Le bruit très fin produit par la fuite dans les tuyauteries",
+   "La variation de température au point de fuite"
   ],
   "bonne": 1,
   "explication": "Différence de concentration — Le détecteur mesure la concentration de gaz fluoré dans l'air et alerte quand elle dépasse un seuil.",
@@ -1287,10 +1287,10 @@
   "type": "qcm",
   "enonce": "Après une intervention sur un circuit, quelle opération permet de vérifier l'étanchéité ?",
   "choix": [
-   "Remettre en service immédiatement",
+   "Remettre l'installation en service immédiatement et surveiller la pression",
    "Effectuer un test de pression avec un gaz inerte (azote) et rechercher les fuites",
-   "Ajouter du fluide frigorigène et observer",
-   "Attendre 24 heures sans rien faire"
+   "Ajouter du fluide frigorigène et observer la baisse de la pression",
+   "Attendre 24 heures sans rien faire et relever les manomètres"
   ],
   "bonne": 1,
   "explication": "Après intervention, on effectue un TEST D'ÉTANCHÉITÉ avec de l'azote sous pression (environ 30 bars pour circuits HP). On recherche les fuites avec un détecteur de fuite ou de l'eau savonneuse.",
@@ -1308,10 +1308,10 @@
   "type": "qcm",
   "enonce": "Une installation frigorifique doit faire l'objet d'un marquage indiquant :",
   "choix": [
-   "Uniquement le type de fluide",
-   "Type et quantité de fluide",
+   "Uniquement le type de fluide et le volume",
+   "Le type et la quantité de fluide",
    "Type, quantité et pictogrammes de danger",
-   "Aucune obligation"
+   "Aucune obligation de marquage"
   ],
   "bonne": 2,
   "explication": "Ici, on raisonne en tCO₂e (impact) plutôt qu’en kg. ⚠ se focaliser sur la masse de fluide seule.",
@@ -1353,10 +1353,10 @@
   "type": "qcm",
   "enonce": "Il est interdit de mélanger des fluides différents dans une même bouteille de récupération car :",
   "choix": [
-   "Ce serait trop lourd",
+   "Parce que la bouteille deviendrait trop lourde à manipuler",
    "Le mélange serait impossible à recycler/régénérer",
-   "Les bouteilles exploseraient",
-   "Ça n'a aucune importance"
+   "Parce que les bouteilles risqueraient d'exploser en pression",
+   "Parce que le mélange perd son pouvoir frigorifique"
   ],
   "bonne": 1,
   "explication": "Impossible à recycler/régénérer — Un mélange de fluides différents est un déchet ultime : il ne peut être que détruit, pas recyclé ni régénéré.",
@@ -1374,10 +1374,10 @@
   "type": "qcm",
   "enonce": "Pourquoi un mélange zéotrope doit-il être chargé en phase liquide ?",
   "choix": [
-   "Pour aller plus vite",
+   "Pour charger plus vite qu'en phase vapeur",
    "Pour éviter la démixtion (séparation des composants)",
-   "Pour protéger le compresseur",
-   "Pour réduire le bruit"
+   "Pour protéger le compresseur des coups de liquide",
+   "Pour réduire le bruit pendant le transfert"
   ],
   "bonne": 1,
   "explication": "Pour éviter la démixtion — En phase gazeuse, les composants d'un mélange zéotrope s'évaporent à des vitesses différentes, modifiant la composition.",
@@ -1395,10 +1395,10 @@
   "type": "qcm",
   "enonce": "La charge en fluide se mesure avec :",
   "choix": [
-   "Un manomètre",
+   "Un jeu de manomètres",
    "Une balance de précision",
-   "Un thermomètre",
-   "Un vacuomètre"
+   "Un thermomètre à sonde",
+   "Un vacuomètre à vide"
   ],
   "bonne": 1,
   "explication": "Une balance de précision — La charge se fait au poids : on pèse la bouteille avant et après pour connaître la quantité exacte introduite (±5g).",
@@ -1416,10 +1416,10 @@
   "type": "qcm",
   "enonce": "La récupération de fluide est obligatoire :",
   "choix": [
-   "Uniquement pour les grosses installations",
-   "Uniquement si le fluide est en bon état",
+   "Uniquement pour les grosses installations industrielles",
+   "Uniquement si le fluide récupéré est encore en bon état",
    "Dans tous les cas, même pour de petites quantités",
-   "Seulement si le client le demande"
+   "Seulement si le client en fait expressément la demande"
   ],
   "bonne": 2,
   "explication": "Dans tous les cas — La récupération est TOUJOURS obligatoire, quelle que soit la quantité. Le rejet à l'atmosphère est interdit.",
@@ -1437,10 +1437,10 @@
   "type": "qcm",
   "enonce": "La différence entre recyclage et régénération est :",
   "choix": [
-   "Aucune, c'est la même chose",
+   "Aucune différence : les deux mots désignent le même traitement en centre agréé",
    "Le recyclage est un nettoyage basique, la régénération remet aux spécifications d'origine",
-   "Le recyclage est fait en laboratoire",
-   "La régénération est moins poussée"
+   "Le recyclage se fait en laboratoire, la régénération directement sur le chantier",
+   "La régénération est un simple filtrage, le recyclage une remise à neuf complète"
   ],
   "bonne": 1,
   "explication": "Recyclage = nettoyage basique, Régénération = spécifications d'origine",
@@ -1458,10 +1458,10 @@
   "type": "qcm",
   "enonce": "Le fluide recyclé (non régénéré) peut être réutilisé :",
   "choix": [
-   "Sur n'importe quelle installation",
+   "Sur n'importe quelle installation, sans restriction de propriétaire",
    "Uniquement sur la même installation ou du même exploitant",
-   "Uniquement à l'export",
-   "Jamais"
+   "Uniquement à l'export, hors de l'Union européenne",
+   "Jamais : il part obligatoirement en destruction"
   ],
   "bonne": 1,
   "explication": "Même installation ou même exploitant — Le fluide simplement recyclé (filtré, séché) ne retrouve pas les spécifications d'origine et ne peut être vendu à un tiers.",
@@ -1536,10 +1536,10 @@
   "type": "qcm",
   "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
   "choix": [
-   "Sur la ligne de refoulement",
+   "Sur la ligne de refoulement, entre le compresseur et le condenseur",
    "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
-   "Sur la ligne liquide",
-   "Sur le condenseur"
+   "Sur la ligne liquide, juste en amont de l'entrée du détendeur",
+   "Sur le condenseur, au niveau du piquage de service"
   ],
   "bonne": 1,
   "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
@@ -1557,10 +1557,10 @@
   "type": "qcm",
   "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
   "choix": [
-   "Sur la ligne d'aspiration",
+   "Sur la ligne d'aspiration, entre évaporateur et compresseur",
    "Sur la ligne de refoulement (entre compresseur et condenseur)",
-   "Sur l'évaporateur",
-   "Sur le détendeur"
+   "Sur la ligne liquide, entre la sortie du condenseur et le détendeur",
+   "Sur le corps du détendeur, au raccord du bulbe"
   ],
   "bonne": 1,
   "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
@@ -1578,10 +1578,10 @@
   "type": "qcm",
   "enonce": "Avant d'ouvrir un circuit frigorifique pour une intervention, quelle opération est obligatoire ?",
   "choix": [
-   "Démarrer le compresseur",
+   "Démarrer le compresseur pour vider le circuit",
    "Récupérer le fluide frigorigène dans un récipient adapté",
-   "Ouvrir toutes les vannes",
-   "Ajouter de l'huile"
+   "Ouvrir toutes les vannes du circuit lentement",
+   "Ajouter de l'huile pour protéger le compresseur"
   ],
   "bonne": 1,
   "explication": "Avant toute ouverture du circuit, il est OBLIGATOIRE de RÉCUPÉRER le fluide frigorigène avec une station de récupération certifiée. C'est une obligation légale (F-Gas) et environnementale.",
@@ -1599,10 +1599,10 @@
   "type": "qcm",
   "enonce": "Pendant la charge, on surveille principalement :",
   "choix": [
-   "La couleur du fluide",
+   "La couleur du fluide dans le voyant liquide",
    "La surchauffe et le sous-refroidissement",
-   "Le bruit du compresseur uniquement",
-   "La vitesse du ventilateur"
+   "Le bruit du compresseur pendant la montée en charge",
+   "La vitesse du ventilateur de condenseur"
   ],
   "bonne": 1,
   "explication": "Surchauffe et sous-refroidissement — Ces deux paramètres indiquent si la quantité de fluide est correcte. Surchauffe trop haute = manque. SR trop bas = manque aussi.",
@@ -1620,10 +1620,10 @@
   "type": "qcm",
   "enonce": "La fiche d'intervention CERFA doit être remplie :",
   "choix": [
-   "Uniquement si le client le demande",
+   "Uniquement si le client en fait lui-même la demande",
    "À chaque intervention impliquant du fluide",
-   "Uniquement pour les grosses installations",
-   "Une fois par an"
+   "Uniquement pour les installations de forte charge",
+   "Une fois par an, au moment du contrôle d'étanchéité"
   ],
   "bonne": 1,
   "explication": "À chaque intervention impliquant du fluide — Chaque ajout, retrait, récupération, contrôle de fluide doit faire l'objet d'une fiche CERFA.",
@@ -1641,10 +1641,10 @@
   "type": "qcm",
   "enonce": "La fiche d'intervention doit mentionner obligatoirement :",
   "choix": [
-   "Uniquement le type de fluide",
+   "Uniquement le type de fluide présent et sa quantité totale",
    "Le fluide, les quantités, l'opérateur, les opérations effectuées",
-   "Uniquement la date",
-   "Le prix de l'intervention"
+   "La date de passage, le nom du technicien et la durée de l'intervention",
+   "Le prix de l'intervention et le détail des pièces changées"
   ],
   "bonne": 1,
   "explication": "Fluide, quantités, opérateur, opérations — La fiche doit être exhaustive : nature du fluide, quantités (ajout/récupération), identité de l'opérateur, nature des opérations.",
@@ -1662,10 +1662,10 @@
   "type": "qcm",
   "enonce": "Le BSD (Bordereau de Suivi des Déchets) accompagne :",
   "choix": [
-   "L'installation de nouveaux équipements",
+   "L'installation de nouveaux équipements chez un client",
    "Le transport de fluides usagés vers le centre de traitement",
-   "La formation des techniciens",
-   "L'achat de fluide neuf"
+   "La formation continue des techniciens titulaires de l'attestation",
+   "L'achat de fluide neuf auprès d'un distributeur agréé"
   ],
   "bonne": 1,
   "explication": "Le transport de fluides usagés — Le BSD trace le parcours des déchets (fluides récupérés) du producteur au centre de traitement.",
@@ -1701,10 +1701,10 @@
   "type": "qcm",
   "enonce": "Les équipements contenant des fluides en fin de vie relèvent de la filière :",
   "choix": [
-   "Déchets ménagers",
+   "Des déchets ménagers ordinaires collectés par la commune du site",
    "DEEE (Déchets d'Équipements Électriques et Électroniques)",
-   "Déchets dangereux uniquement",
-   "Recyclage ordinaire"
+   "Des déchets dangereux uniquement, sans passer par la filière DEEE",
+   "Du recyclage ordinaire des métaux et plastiques"
   ],
   "bonne": 1,
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -1737,10 +1737,10 @@
   "type": "qcm",
   "enonce": "Un frigoriste peut-il détruire lui-même le fluide récupéré ?",
   "choix": [
-   "Oui, en le brûlant",
-   "Oui, en le diluant",
+   "Oui, en le brûlant au chalumeau",
+   "Oui, en le diluant dans l'azote",
    "Non, uniquement centre agréé",
-   "Oui, en le dégazant"
+   "Oui, en le dégazant lentement"
   ],
   "bonne": 2,
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -1755,10 +1755,10 @@
   "type": "qcm",
   "enonce": "Le propriétaire d'un équipement frigorifique en fin de vie doit :",
   "choix": [
-   "Le jeter à la déchetterie municipale",
+   "Le déposer à la déchetterie municipale",
    "Le confier à un organisme agréé DEEE",
-   "Le laisser en place",
-   "Le brûler"
+   "Le laisser en place, simplement débranché",
+   "Le faire découper chez un ferrailleur"
   ],
   "bonne": 1,
   "explication": "Le confier à un organisme agréé DEEE — Les équipements frigorifiques contiennent des fluides réglementés et doivent suivre la filière DEEE spécialisée.",
@@ -1778,7 +1778,7 @@
   "choix": [
    "Phase gazeuse",
    "Phase liquide",
-   "Les deux sont possibles",
+   "Les deux au choix",
    "Ni l'un ni l'autre"
   ],
   "bonne": 1,
@@ -1797,10 +1797,10 @@
   "type": "qcm",
   "enonce": "La destruction des fluides frigorigènes s'effectue principalement par :",
   "choix": [
-   "Enfouissement",
+   "Enfouissement en décharge contrôlée",
    "Incinération haute température",
-   "Relâchement contrôlé",
-   "Dilution"
+   "Relâchement contrôlé en altitude",
+   "Dilution dans un solvant"
   ],
   "bonne": 1,
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -1815,10 +1815,10 @@
   "type": "qcm",
   "enonce": "Les compresseurs usagés doivent être :",
   "choix": [
-   "Jetés avec les métaux",
+   "Jetés avec les métaux de la benne ferraille",
    "Dégazés et vidangés avant recyclage",
-   "Détruits entiers",
-   "Revendus en l'état"
+   "Détruits entiers, fluide compris",
+   "Revendus en l'état à un autre client"
   ],
   "bonne": 1,
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -1835,8 +1835,8 @@
   "choix": [
    "Refroidir le fluide frigorigène",
    "Aspirer et comprimer le gaz basse pression",
-   "Détendre le liquide haute pression",
-   "Condenser les vapeurs"
+   "Détendre le liquide sous haute pression",
+   "Condenser les vapeurs surchauffées"
   ],
   "bonne": 1,
   "explication": "Le compresseur ASPIRE le gaz basse pression en provenance de l'évaporateur et le COMPRIME pour l'envoyer vers le condenseur à haute pression. C'est le moteur du cycle frigorifique.",
@@ -1854,10 +1854,10 @@
   "type": "qcm",
   "enonce": "Quel est le rôle principal de l'huile dans un compresseur frigorifique ?",
   "choix": [
-   "Refroidir le fluide frigorigène",
+   "Refroidir le fluide avant l'entrée au condenseur",
    "Lubrifier les pièces mobiles et assurer l'étanchéité",
-   "Augmenter la pression",
-   "Filtrer le fluide"
+   "Augmenter la pression de refoulement du compresseur",
+   "Filtrer les impuretés du circuit frigorifique"
   ],
   "bonne": 1,
   "explication": "L'huile LUBRIFIE les pièces mobiles du compresseur (pistons, roulements, paliers), REFROIDIT les parties chaudes, et assure l'ÉTANCHÉITÉ entre les zones HP et BP.",
@@ -1875,10 +1875,10 @@
   "type": "qcm",
   "enonce": "Pourquoi est-il important que l'huile revienne au compresseur dans un circuit frigorifique ?",
   "choix": [
-   "Pour faire joli",
+   "Pour que le fluide reste bien miscible et circule sans se séparer dans le circuit",
    "Car le compresseur a besoin d'huile en permanence pour sa lubrification",
-   "Pour augmenter la puissance",
-   "Pour diminuer la consommation"
+   "Pour maintenir l'échange thermique de l'évaporateur, que l'huile améliore nettement",
+   "Pour éviter que l'huile ne se dépose et ne bouche le filtre déshydrateur"
   ],
   "bonne": 1,
   "explication": "L'huile circule avec le fluide frigorigène dans tout le circuit. Elle doit REVENIR au compresseur pour maintenir un niveau correct dans le carter.",
@@ -1896,10 +1896,10 @@
   "type": "qcm",
   "enonce": "À quoi sert un réchauffeur de carter (chauffage de carter) sur un compresseur ?",
   "choix": [
-   "À augmenter la puissance",
+   "À réchauffer le gaz aspiré afin d'éviter tout coup de liquide au démarrage du compresseur",
    "À éviter la migration du fluide frigorigène dans l'huile à l'arrêt (dilution)",
-   "À chauffer le local",
-   "À fondre le givre"
+   "À maintenir l'huile assez fluide pour que la pompe à huile amorce correctement par grand froid",
+   "À chauffer le local technique pour éviter la condensation sur la machine"
   ],
   "bonne": 1,
   "explication": "Le RÉCHAUFFEUR DE CARTER maintient l'huile légèrement CHAUDE à l'arrêt pour éviter la MIGRATION du fluide frigorigène dans l'huile froide.",
@@ -1917,10 +1917,10 @@
   "type": "qcm",
   "enonce": "Quels sont les symptômes d'un manque d'huile dans le compresseur ?",
   "choix": [
-   "Compresseur silencieux et froid",
+   "Compresseur anormalement silencieux et carter froid au toucher malgré la marche continue",
    "Bruits anormaux (frottements), échauffement excessif, baisse de puissance, risque de grippage",
-   "Haute pression élevée",
-   "Évaporateur givré"
+   "Haute pression qui grimpe lentement et déclenchement répété du pressostat de sécurité",
+   "Givrage complet de l'évaporateur avec du liquide qui revient à l'aspiration du compresseur"
   ],
   "bonne": 1,
   "explication": "Symptômes de MANQUE D'HUILE : 1) BRUITS anormaux (frottements, cliquetis), 2) ÉCHAUFFEMENT excessif du carter et du refoulement, 3) Baisse de PUISSANCE frigorifique, 4) Température de refoulement…",
@@ -1938,10 +1938,10 @@
   "type": "qcm",
   "enonce": "Vous constatez que la température de refoulement du compresseur est très élevée (>120°C). Quelles sont les causes possibles ?",
   "choix": [
-   "Excès de fluide frigorigène",
+   "Excès de charge et condenseur surdimensionné pour la machine",
    "Manque de fluide, surchauffe excessive, ou mauvais retour d'huile",
-   "Condenseur trop grand",
-   "Évaporateur surdimensionné"
+   "Évaporateur trop grand et détendeur trop ouvert en permanence",
+   "Ventilation du condenseur trop forte et sous-refroidissement fort"
   ],
   "bonne": 1,
   "explication": "Une TEMPÉRATURE DE REFOULEMENT élevée peut être causée par : manque de charge (surchauffe excessive), mauvais refroidissement du compresseur, rapport de pression trop élevé (T°K trop haute ou T°O…",
@@ -1960,9 +1960,9 @@
   "enonce": "À quoi sert un voyant d'huile sur un compresseur ?",
   "choix": [
    "À vérifier le niveau d'huile dans le carter",
-   "À vérifier la température de l'huile",
-   "À vérifier la pression de l'huile",
-   "À vidanger l'huile"
+   "À vérifier la température de l'huile du carter",
+   "À vérifier la pression d'huile du compresseur",
+   "À vidanger l'huile usagée en fin d'intervention"
   ],
   "bonne": 0,
   "explication": "Le VOYANT D'HUILE (sur les compresseurs équipés) permet de vérifier visuellement le NIVEAU D'HUILE dans le carter du compresseur.",
@@ -1980,10 +1980,10 @@
   "type": "qcm",
   "enonce": "À quoi sert un séparateur d'huile sur une installation frigorifique ?",
   "choix": [
-   "À filtrer le fluide frigorigène",
+   "À retenir les impuretés métalliques que le compresseur envoie dans le circuit",
    "À séparer l'huile du fluide au refoulement et la renvoyer directement au compresseur",
-   "À augmenter la pression",
-   "À détendre le fluide"
+   "À stocker une réserve d'huile pour les périodes de fort appel de puissance",
+   "À séparer l'huile du fluide à l'aspiration avant l'entrée dans le compresseur"
   ],
   "bonne": 1,
   "explication": "Le SÉPARATEUR D'HUILE se monte au refoulement du compresseur. Il sépare l'huile entraînée par le gaz chaud et la renvoie DIRECTEMENT au compresseur par gravité.",
@@ -2001,10 +2001,10 @@
   "type": "qcm",
   "enonce": "Comment peut-on vérifier le niveau d'huile dans le carter d'un compresseur équipé d'un voyant ?",
   "choix": [
-   "En écoutant le bruit du compresseur",
-   "En regardant le voyant d'huile (hublot transparent) et en vérifiant que le niveau est entre mini et maxi",
-   "En mesurant la pression",
-   "En sentant l'odeur"
+   "En comparant au thermomètre la température du carter et celle de la ligne d'aspiration",
+   "En lisant le voyant d'huile : le niveau doit se tenir entre les repères mini et maxi",
+   "En ouvrant le bouchon de remplissage pendant la marche pour voir si l'huile vient affleurer",
+   "En pesant la bouteille d'huile de complément avant et après chaque mise en service annuelle"
   ],
   "bonne": 1,
   "explication": "Le VOYANT D'HUILE est un hublot transparent sur le carter qui permet de vérifier visuellement le NIVEAU d'huile. Le niveau doit être entre les repères mini et maxi.",
@@ -2022,10 +2022,10 @@
   "type": "qcm",
   "enonce": "Le séparateur d'huile est placé :",
   "choix": [
-   "À l'aspiration du compresseur",
+   "À l'aspiration, juste avant le compresseur",
    "Au refoulement du compresseur",
-   "En amont du détendeur",
-   "En sortie d'évaporateur"
+   "Juste en amont du détendeur thermostatique",
+   "En sortie d'évaporateur, avant l'accumulateur"
   ],
   "bonne": 1,
   "explication": "Au refoulement du compresseur — Le séparateur d'huile intercepte l'huile entraînée par le gaz chaud au refoulement et la renvoie au carter.",
@@ -2043,10 +2043,10 @@
   "type": "qcm",
   "enonce": "La vanne de service permet :",
   "choix": [
-   "De réguler la température",
+   "De régler la température d'évaporation depuis le tableau électrique",
    "De raccorder les manomètres et équipements de maintenance",
-   "D'inverser le cycle",
-   "De purger l'huile"
+   "D'inverser le cycle pour passer en mode pompe à chaleur",
+   "De purger l'huile usagée du carter en fin d'intervention"
   ],
   "bonne": 1,
   "explication": "Raccorder les manomètres et équipements — Les vannes de service (Schrader ou à tige) sont les points d'accès au circuit pour la mesure et l'intervention.",
@@ -2064,10 +2064,10 @@
   "type": "qcm",
   "enonce": "Lors d'une mise en service, vous constatez que le compresseur fait beaucoup de bruit (claquements). Quelle peut être la cause ?",
   "choix": [
-   "Le compresseur fonctionne normalement",
+   "Le compresseur est neuf, ce bruit disparaît au rodage",
    "Coup de liquide (du liquide arrive au compresseur)",
-   "Manque de fluide frigorigène",
-   "Condenseur encrassé"
+   "Manque de fluide, le compresseur tourne à vide",
+   "Condenseur encrassé, la haute pression est trop élevée"
   ],
   "bonne": 1,
   "explication": "Des CLAQUEMENTS dans le compresseur indiquent souvent un COUP DE LIQUIDE : du fluide liquide arrive au compresseur au lieu de gaz. Causes : détendeur mal réglé, excès de charge, ou évaporateur givré.",
@@ -2085,10 +2085,10 @@
   "type": "qcm",
   "enonce": "Quelle est l'utilité principale d'un accumulateur de liquide sur la ligne d'aspiration ?",
   "choix": [
-   "Augmenter la puissance frigorifique",
+   "Augmenter la puissance frigorifique de l'évaporateur",
    "Protéger le compresseur contre les retours de liquide",
-   "Diminuer la pression",
-   "Filtrer le fluide frigorigène"
+   "Servir de réserve de liquide entre le condenseur et le détendeur",
+   "Filtrer l'humidité résiduelle du fluide frigorigène"
   ],
   "bonne": 1,
   "explication": "L'ACCUMULATEUR DE LIQUIDE piège le liquide qui pourrait arriver au compresseur et ne laisse passer que le gaz.",
@@ -2106,10 +2106,10 @@
   "type": "qcm",
   "enonce": "Vous devez diagnostiquer une installation qui ne produit plus de froid. Le compresseur tourne, mais la BP et la HP sont identiques et basses. Quelle est la panne probable ?",
   "choix": [
-   "Manque de fluide frigorigène",
+   "Manque de fluide frigorigène important, presque tout le circuit est vide",
    "Clapets du compresseur cassés (compresseur ne comprime plus)",
-   "Condenseur bouché",
-   "Évaporateur givré"
+   "Condenseur bouché côté air, la haute pression ne peut plus s'établir",
+   "Évaporateur entièrement givré, l'air ne passe plus dans la batterie"
   ],
   "bonne": 1,
   "explication": "BP = HP en fonctionnement indique que le compresseur NE COMPRIME PLUS. Cause : clapets d'aspiration ou de refoulement cassés ou bloqués ouverts. Le gaz passe d'un côté à l'autre sans être comprimé.",
@@ -2127,10 +2127,10 @@
   "type": "qcm",
   "enonce": "Pourquoi le retour d'huile est-il plus difficile en froid négatif qu'en froid positif ?",
   "choix": [
-   "Car il fait plus froid",
+   "Car le compresseur tourne plus lentement en froid négatif et aspire moins d'huile",
    "Car l'huile devient plus visqueuse (épaisse) à basse température et circule moins bien",
-   "Car il y a plus de fluide",
-   "Car le compresseur est plus puissant"
+   "Car l'huile finit par geler dans l'évaporateur et forme des bouchons dans les tubes de retour",
+   "Car il faut davantage de fluide en froid négatif, ce qui dilue l'huile du carter"
   ],
   "bonne": 1,
   "explication": "En FROID NÉGATIF (température d'évaporation < -10°C), l'huile devient plus VISQUEUSE (épaisse comme du miel froid).",
@@ -2148,10 +2148,10 @@
   "type": "qcm",
   "enonce": "Lors d'une mise en service, vous constatez que le niveau d'huile baisse rapidement. Quelle est la cause probable ?",
   "choix": [
-   "Le compresseur consomme trop d'huile",
+   "Le compresseur consomme son huile en la brûlant, il faut en rajouter à chaque visite",
    "L'huile est entraînée dans le circuit et ne revient pas assez vite (mauvais retour d'huile)",
-   "Le fluide est en excès",
-   "Le condenseur fuit"
+   "Le fluide est en excès et pousse l'huile hors du carter vers la bouteille liquide",
+   "Le séparateur d'huile a été monté à l'envers et renvoie l'huile vers le condenseur au lieu du carter"
   ],
   "bonne": 1,
   "explication": "Si le niveau d'huile BAISSE rapidement après démarrage, c'est que l'huile est entraînée dans le circuit mais NE REVIENT PAS assez vite.",
@@ -2169,10 +2169,10 @@
   "type": "qcm",
   "enonce": "Pourquoi un compresseur qui démarre fréquemment (cycles courts) peut-il avoir des problèmes d'huile ?",
   "choix": [
-   "Car il consomme plus d'électricité",
+   "Car les démarrages répétés font chauffer le moteur et brûlent l'huile du carter",
    "Car à chaque démarrage, l'huile est entraînée hors du carter avant que le retour soit établi",
-   "Car le fluide s'évapore",
-   "Car le condenseur surchauffe"
+   "Car le pressostat de sécurité coupe avant que la pression d'huile soit établie",
+   "Car l'huile n'a pas le temps de refroidir et perd sa viscosité à chaque cycle"
   ],
   "bonne": 1,
   "explication": "À chaque DÉMARRAGE, l'huile est brutalement ENTRAÎNÉE hors du carter par le gaz. Le retour d'huile met du temps à s'établir.",
@@ -2190,10 +2190,10 @@
   "type": "qcm",
   "enonce": "Qu'est-ce qu'un 'coup d'huile' (oil slugging) et comment le reconnaître ?",
   "choix": [
-   "C'est quand on ajoute trop d'huile",
-   "C'est l'arrivée brutale d'une grande quantité d'huile liquide au compresseur, causant des claquements",
-   "C'est quand l'huile est trop chaude",
-   "C'est quand l'huile change de couleur"
+   "C'est l'ajout d'un excès d'huile au carter, qui fait déborder le voyant et mousser au démarrage",
+   "C'est l'arrivée brutale d'huile liquide au compresseur : on l'entend claquer à la compression",
+   "C'est la surchauffe de l'huile en fin de compression, qui la noircit et la fluidifie",
+   "C'est le retour d'huile trop lent depuis l'évaporateur, qui vide peu à peu le carter"
   ],
   "bonne": 1,
   "explication": "Le COUP D'HUILE (oil slugging) se produit quand une grande quantité d'huile LIQUIDE arrive brutalement au compresseur (généralement accumulée dans l'évaporateur puis libérée d'un coup).",
@@ -2211,10 +2211,10 @@
   "type": "qcm",
   "enonce": "Comment reconnaître une huile contaminée ou usagée qu'il faut remplacer ?",
   "choix": [
-   "Elle sent bon",
+   "Elle mousse dans le voyant dès que le compresseur démarre à froid",
    "Elle est foncée (brunâtre ou noire), opaque, ou sent le brûlé",
-   "Elle est transparente",
-   "Elle est froide"
+   "Elle est parfaitement claire et sent encore l'huile neuve en flacon",
+   "Elle laisse un dépôt blanchâtre au fond du carter après la vidange"
   ],
   "bonne": 1,
   "explication": "Signes d'huile CONTAMINÉE ou USAGÉE : 1) Couleur FONCÉE (brune à noire) au lieu de claire/ambrée, 2) OPAQUE au lieu de transparente, 3) Odeur de BRÛLÉ ou acide, 4) Présence de particules ou boues.",
@@ -2232,10 +2232,10 @@
   "type": "qcm",
   "enonce": "Pourquoi ne faut-il jamais mélanger différents types d'huiles (POE + minérale par exemple) ?",
   "choix": [
-   "Car c'est interdit par la loi",
-   "Car les huiles incompatibles ne se mélangent pas bien et peuvent créer des boues, perdre leurs propriétés lubrifiantes",
-   "Car ça coûte cher",
-   "Car ça change la couleur"
+   "Car la POE est prévue pour les HCFC et la minérale pour les HFC : le mélange inverse leurs rôles",
+   "Car des huiles incompatibles se séparent, forment des boues et perdent leur pouvoir lubrifiant",
+   "Car le mélange épaissit sous l'effet de la compression et fait monter la pression de refoulement",
+   "Car la POE absorbe l'humidité et la relâche dans le circuit au premier démarrage"
   ],
   "bonne": 1,
   "explication": "Ne JAMAIS mélanger des huiles INCOMPATIBLES (ex: POE + minérale). Conséquences : 1) Formation de BOUES et dépôts, 2) Perte de miscibilité avec le fluide, 3) Mauvaise lubrification, 4) Bouchage du…",
@@ -2253,10 +2253,10 @@
   "type": "qcm",
   "enonce": "Quelle est la conséquence d'un excès d'huile dans un compresseur ?",
   "choix": [
-   "Aucune conséquence",
-   "Risque de projection d'huile hors du carter, mauvaise lubrification des paliers, et encrassement du circuit",
-   "La puissance augmente",
-   "Le compresseur refroidit mieux"
+   "Le compresseur est simplement mieux lubrifié : un excès d'huile reste sans effet sur le fonctionnement",
+   "L'huile est entraînée dans le circuit : encrassement des échangeurs et coups d'huile au compresseur",
+   "La pression d'aspiration monte et le détendeur se referme peu à peu pour compenser",
+   "Le carter se refroidit mieux, ce qui augmente la puissance frigorifique de l'ensemble de la machine"
   ],
   "bonne": 1,
   "explication": "Un EXCÈS d'huile cause : 1) PROJECTION d'huile hors du carter au démarrage (éclaboussures), 2) Huile entraînée en excès dans le circuit → encrassement évaporateur, 3) Niveau trop haut = mauvaise…",
@@ -2274,10 +2274,10 @@
   "type": "qcm",
   "enonce": "Vous constatez de la mousse dans le voyant d'huile au démarrage. Quelle est la cause probable ?",
   "choix": [
-   "C'est normal",
+   "Le réchauffeur de carter est resté sous tension à l'arrêt et a fait bouillir l'huile",
    "Migration de fluide frigorigène dans l'huile pendant l'arrêt, qui s'évapore brutalement au démarrage",
-   "L'huile est trop chaude",
-   "Le compresseur est neuf"
+   "L'huile est encore trop chaude en fin de cycle : elle mousse tant qu'elle n'a pas refroidi",
+   "Le filtre déshydrateur est saturé et relâche de l'humidité qui fait mousser l'huile"
   ],
   "bonne": 1,
   "explication": "Le MOUSSAGE de l'huile au démarrage indique que du fluide frigorigène s'est dissous dans l'huile pendant l'arrêt (MIGRATION).",
@@ -2295,10 +2295,10 @@
   "type": "qcm",
   "enonce": "Un pressostat différentiel de pression d'huile protège contre :",
   "choix": [
-   "La surpression de fluide",
+   "Une surpression anormale du circuit haute pression",
    "Le manque de lubrification du compresseur",
-   "L'excès de surchauffe",
-   "Le givrage de l'évaporateur"
+   "Une surchauffe excessive du gaz à l'aspiration",
+   "Le givrage complet de la batterie évaporateur"
   ],
   "bonne": 1,
   "explication": "Le manque de lubrification — Il compare la pression d'huile à la pression BP. Si la différence est insuffisante, il coupe le compresseur pour éviter l'usure.",
@@ -2316,10 +2316,10 @@
   "type": "qcm",
   "enonce": "La migration de fluide dans l'huile à l'arrêt se produit car :",
   "choix": [
-   "L'huile est plus dense que le fluide",
+   "L'huile est plus dense que le fluide liquide",
    "Le fluide se dissout dans l'huile froide",
-   "Le compresseur est en dépression",
-   "La vanne de service est ouverte"
+   "Le compresseur reste en légère dépression à l'arrêt",
+   "La vanne de service est restée ouverte"
   ],
   "bonne": 1,
   "explication": "Le fluide se dissout dans l'huile froide — À l'arrêt, quand le carter refroidit, le fluide migre et se dissout dans l'huile. Au redémarrage, il peut mousser violemment.",
@@ -2337,10 +2337,10 @@
   "type": "qcm",
   "enonce": "Quel est le rôle principal du condenseur ?",
   "choix": [
-   "Absorber la chaleur du milieu à refroidir",
+   "Absorber la chaleur du local ou du produit que l'on refroidit",
    "Évacuer la chaleur du fluide frigorigène vers l'extérieur",
-   "Comprimer le gaz frigorigène",
-   "Détendre le liquide frigorigène"
+   "Comprimer le gaz frigorigène en provenance de l'évaporateur",
+   "Détendre le liquide frigorigène avant l'évaporateur"
   ],
   "bonne": 1,
   "explication": "Le CONDENSEUR évacue la chaleur du fluide frigorigène vers l'extérieur (air ou eau). Le gaz chaud se refroidit et se condense en liquide. C'est l'organe qui 'rejette' la chaleur.",
@@ -2358,10 +2358,10 @@
   "type": "qcm",
   "enonce": "Que se passe-t-il si le condenseur est encrassé (sale, poussière) ?",
   "choix": [
-   "Le froid est plus puissant",
+   "Le froid produit devient plus puissant grâce à cette isolation",
    "La haute pression augmente et l'installation consomme plus",
-   "La basse pression diminue",
-   "Rien de particulier"
+   "La basse pression diminue et l'évaporateur finit par givrer",
+   "Rien de particulier tant que la machine tourne"
   ],
   "bonne": 1,
   "explication": "Un condenseur ENCRASSÉ ne peut plus évacuer correctement la chaleur. La température et la pression du condenseur (HP) augmentent, ce qui force le compresseur à travailler plus fort, augmente la…",
@@ -2379,10 +2379,10 @@
   "type": "qcm",
   "enonce": "Quel est le rôle des ventilateurs sur un condenseur à air ?",
   "choix": [
-   "Refroidir le compresseur",
+   "Refroidir le corps du compresseur ainsi que son moteur électrique",
    "Forcer l'air à travers le condenseur pour évacuer la chaleur",
-   "Aspirer le fluide frigorigène",
-   "Détendre le gaz"
+   "Aspirer le fluide frigorigène jusque dans la bouteille liquide",
+   "Détendre le gaz avant son entrée dans l'évaporateur"
   ],
   "bonne": 1,
   "explication": "Les ventilateurs FORCENT l'air à travers les ailettes du condenseur pour améliorer l'évacuation de la chaleur.",
@@ -2401,9 +2401,9 @@
   "enonce": "Comment calculer le sous-refroidissement du liquide en sortie de condenseur ?",
   "choix": [
    "Température de condensation - Température du liquide sortie condenseur",
-   "Température ambiante - Température du liquide",
-   "Température HP - Température BP",
-   "Température d'évaporation - Température du liquide"
+   "Température ambiante moins température du liquide en sortie",
+   "Température haute pression moins température basse pression",
+   "Température d'évaporation moins température du liquide"
   ],
   "bonne": 0,
   "explication": "Le SOUS-REFROIDISSEMENT = Température de condensation (T°K) - Température du liquide sortie condenseur. On convertit la pression HP en température avec le tableau fluide.",
@@ -2421,10 +2421,10 @@
   "type": "qcm",
   "enonce": "Quelle est l'utilité du sous-refroidissement du liquide en sortie de condenseur ?",
   "choix": [
-   "Augmenter la température du liquide",
+   "Augmenter la température du liquide juste avant l'entrée du détendeur",
    "S'assurer que le liquide est bien liquide (pas de bulles) et améliorer l'efficacité",
-   "Diminuer la pression",
-   "Protéger le compresseur"
+   "Diminuer la pression du liquide dans la ligne qui mène au détendeur",
+   "Protéger le compresseur contre les retours de liquide à l'aspiration"
   ],
   "bonne": 1,
   "explication": "Le SOUS-REFROIDISSEMENT consiste à refroidir le liquide en dessous de sa température de condensation. Cela garantit qu'il reste liquide dans toute la ligne liquide (pas de flash-gas), améliore…",
@@ -2442,10 +2442,10 @@
   "type": "qcm",
   "enonce": "Un pressostat haute pression (HP) déclenche et arrête le compresseur. Quelle peut être la cause ?",
   "choix": [
-   "Manque de fluide frigorigène",
+   "Manque de fluide frigorigène dans tout le circuit haute pression",
    "Condenseur encrassé, ventilateurs arrêtés, ou excès de charge",
-   "Évaporateur givré",
-   "Manque d'huile"
+   "Évaporateur entièrement givré côté air de la chambre",
+   "Manque d'huile visible au carter du compresseur"
   ],
   "bonne": 1,
   "explication": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le…",
@@ -2463,10 +2463,10 @@
   "type": "qcm",
   "enonce": "Le pressostat HP est un organe de :",
   "choix": [
-   "Régulation uniquement",
+   "Régulation continue de la pression de condensation",
    "Sécurité (protection contre la surpression)",
-   "Mesure de débit",
-   "Commande du ventilateur"
+   "Mesure du débit de fluide dans la ligne liquide",
+   "Commande de la vitesse des ventilateurs du condenseur"
   ],
   "bonne": 1,
   "explication": "Sécurité — Le pressostat HP est avant tout un organe de sécurité qui coupe le compresseur si la pression HP dépasse le seuil dangereux.",
@@ -2523,10 +2523,10 @@
   "type": "qcm",
   "enonce": "Sur une installation frigorifique, comment calculer approximativement la surchauffe à l'aspiration du compresseur ?",
   "choix": [
-   "Température de refoulement - Température d'aspiration",
+   "Température de refoulement moins température d'aspiration du compresseur",
    "Température gaz aspiration - Température d'évaporation (T°O correspondant à la BP)",
-   "Température condensation - Température évaporation",
-   "Température ambiante - Température d'évaporation"
+   "Température de condensation moins température d'évaporation",
+   "Température ambiante moins température d'évaporation"
   ],
   "bonne": 1,
   "explication": "La SURCHAUFFE = Température du gaz en aspiration - Température d'évaporation (T°O). On mesure la température du gaz avec une sonde, et on convertit la pression BP en température avec le tableau…",
@@ -2544,10 +2544,10 @@
   "type": "qcm",
   "enonce": "Une installation affiche une surchauffe très élevée (20°C) et une puissance frigorifique insuffisante. Quelle est la cause la plus probable ?",
   "choix": [
-   "Excès de fluide frigorigène",
+   "Excès de fluide frigorigène qui vient noyer l'évaporateur",
    "Manque de fluide frigorigène ou détendeur sous-alimenté",
-   "Compresseur trop puissant",
-   "Condenseur surdimensionné"
+   "Compresseur nettement trop puissant pour cet évaporateur",
+   "Condenseur surdimensionné pour la puissance demandée"
   ],
   "bonne": 1,
   "explication": "Une SURCHAUFFE EXCESSIVE (>15°C) indique un manque d'alimentation de l'évaporateur. Causes : manque de charge, détendeur mal réglé (bulbe mal positionné ou défectueux), filtre bouché, ou vanne…",
@@ -2565,10 +2565,10 @@
   "type": "qcm",
   "enonce": "Une installation présente une surchauffe nulle ou négative (ligne d'aspiration givrée). Quelle action corrective prioritaire ?",
   "choix": [
-   "Ajouter du fluide frigorigène",
+   "Ajouter du fluide frigorigène pour faire remonter la surchauffe à sa valeur normale",
    "Diminuer l'ouverture du détendeur ou retirer du fluide (risque de coup de liquide)",
-   "Nettoyer le condenseur",
-   "Changer le compresseur"
+   "Nettoyer le condenseur et vérifier les ventilateurs de la machine",
+   "Changer le compresseur, dont les clapets laissent passer du liquide"
   ],
   "bonne": 1,
   "explication": "Une SURCHAUFFE NULLE OU NÉGATIVE indique un retour de liquide au compresseur. Actions : diminuer l'ouverture du détendeur thermostatique, vérifier le bulbe, ou retirer du fluide si excès de charge.",
@@ -2586,10 +2586,10 @@
   "type": "qcm",
   "enonce": "Vous constatez que l'évaporateur givre complètement en fonctionnement. Quelle peut être la cause ?",
   "choix": [
-   "Excès de fluide frigorigène",
+   "Excès de fluide frigorigène dans le circuit basse pression",
    "Manque de débit d'air, filtre à air encrassé, ou ventilateurs arrêtés",
-   "Compresseur trop puissant",
-   "Condenseur encrassé"
+   "Compresseur trop puissant par rapport au volume de la chambre à refroidir",
+   "Condenseur encrassé qui fait monter la haute pression"
   ],
   "bonne": 1,
   "explication": "Un ÉVAPORATEUR GIVRÉ indique que l'air ne circule pas suffisamment ou que la température d'évaporation est trop basse.",
@@ -2628,10 +2628,10 @@
   "type": "qcm",
   "enonce": "Sur une installation en fonctionnement, vous constatez que la ligne d'aspiration est chaude. Qu'est-ce que cela peut indiquer ?",
   "choix": [
-   "L'installation fonctionne correctement",
+   "L'installation fonctionne correctement : c'est le signe d'une surchauffe bien réglée",
    "Manque de fluide frigorigène ou problème de détendeur (surchauffe trop importante)",
-   "Excès de fluide frigorigène",
-   "Compresseur défectueux"
+   "Excès de fluide frigorigène : le condenseur renvoie du liquide chaud à l'aspiration",
+   "Compresseur défectueux dont les clapets réchauffent le gaz aspiré"
   ],
   "bonne": 1,
   "explication": "Une ligne d'aspiration CHAUDE indique une SURCHAUFFE excessive. Cela peut être dû à un manque de fluide frigorigène, un détendeur mal réglé ou bouché, ou un évaporateur encrassé.",
@@ -2649,10 +2649,10 @@
   "type": "qcm",
   "enonce": "Vous observez du givre sur la ligne d'aspiration jusqu'au compresseur. Que peut indiquer ce symptôme ?",
   "choix": [
-   "L'installation fonctionne parfaitement",
+   "L'installation fonctionne parfaitement ainsi",
    "Retour de liquide au compresseur (surchauffe insuffisante)",
-   "Manque de fluide frigorigène",
-   "Condenseur encrassé"
+   "Manque de fluide frigorigène dans tout le circuit",
+   "Condenseur encrassé du côté de l'air extérieur"
   ],
   "bonne": 1,
   "explication": "Du GIVRE sur la ligne d'aspiration indique que du liquide arrive au compresseur (surchauffe trop faible ou nulle).",
@@ -2670,10 +2670,10 @@
   "type": "qcm",
   "enonce": "Un pressostat basse pression (BP) déclenche et arrête le compresseur. Quelle peut être la cause ?",
   "choix": [
-   "Excès de fluide frigorigène",
+   "Excès de fluide frigorigène accumulé dans la bouteille",
    "Manque de fluide, évaporateur givré, ou filtre bouché",
-   "Condenseur encrassé",
-   "Compresseur trop puissant"
+   "Condenseur encrassé qui ferait chuter la basse pression",
+   "Compresseur trop puissant pour l'installation en place"
   ],
   "bonne": 1,
   "explication": "Un déclenchement PRESSOSTAT BP indique une pression d'évaporation trop basse. Causes : manque de charge frigorigène, évaporateur givré ou encrassé, filtre déshydrateur bouché, détendeur mal réglé ou…",
@@ -2709,10 +2709,10 @@
   "type": "qcm",
   "enonce": "Le détendeur thermostatique (TEV) régule :",
   "choix": [
-   "La pression de condensation",
+   "La pression de condensation de l'installation",
    "La surchauffe à la sortie de l'évaporateur",
-   "Le sous-refroidissement",
-   "La pression d'huile"
+   "Le sous-refroidissement en sortie de condenseur",
+   "La pression d'huile dans le compresseur"
   ],
   "bonne": 1,
   "explication": "La surchauffe — Le TEV régule la surchauffe en ajustant le débit de fluide entrant dans l'évaporateur via un bulbe capillaire.",
@@ -2730,10 +2730,10 @@
   "type": "qcm",
   "enonce": "L'avantage principal du détendeur électronique (EEV) par rapport au TEV est :",
   "choix": [
-   "Son coût plus bas",
+   "Son coût d'achat nettement plus faible",
    "Sa régulation plus précise et rapide",
-   "Sa résistance à l'humidité",
-   "Son absence de pièces mobiles"
+   "Sa bonne résistance à l'humidité du circuit",
+   "Son absence complète de pièces mobiles"
   ],
   "bonne": 1,
   "explication": "Régulation plus précise et rapide — L'EEV est piloté par un régulateur électronique avec des capteurs. Sa réponse est plus fine et rapide que le TEV mécanique.",
@@ -2751,10 +2751,10 @@
   "type": "qcm",
   "enonce": "Le capillaire est un type de détendeur utilisé dans :",
   "choix": [
-   "Les centrales industrielles",
+   "Les centrales frigorifiques industrielles à forte puissance",
    "Les réfrigérateurs domestiques et petits climatiseurs",
-   "Les tours de refroidissement",
-   "Les installations transcritiques"
+   "Les tours de refroidissement des grands bâtiments",
+   "Les installations transcritiques fonctionnant au CO₂"
   ],
   "bonne": 1,
   "explication": "Réfrigérateurs domestiques — Le tube capillaire est le détendeur le plus simple : un tube fin de longueur calibrée. Il est utilisé dans les petits équipements.",
@@ -2772,10 +2772,10 @@
   "type": "qcm",
   "enonce": "Que peut indiquer un bruit de bullage dans le détendeur thermostatique en fonctionnement ?",
   "choix": [
-   "Fonctionnement normal",
+   "C'est le bruit normal du fluide qui se détend dans l'orifice",
    "Flash-gas dans la ligne liquide (manque de sous-refroidissement)",
-   "Excès de fluide frigorigène",
-   "Compresseur défectueux"
+   "Excès de fluide frigorigène : le liquide arrive jusqu'au détendeur en surplus",
+   "Compresseur usé dont les clapets laissent passer le gaz"
   ],
   "bonne": 1,
   "explication": "Un BULLAGE dans le détendeur indique du FLASH-GAS : le fluide n'est pas totalement liquide à l'entrée du détendeur.",
@@ -2794,9 +2794,9 @@
   "enonce": "Comment diagnostiquer un détendeur thermostatique défectueux (bulbe percé) ?",
   "choix": [
    "La surchauffe devient instable ou très élevée, le détendeur ne régule plus",
-   "La haute pression augmente",
-   "Le compresseur fait du bruit",
-   "L'évaporateur givre complètement"
+   "La haute pression monte fortement et le pressostat HP finit par couper",
+   "Le compresseur claque en continu, signe d'un retour de liquide",
+   "L'évaporateur givre entièrement et le dégivrage ne suffit plus"
   ],
   "bonne": 0,
   "explication": "Si le BULBE est PERCÉ, il perd sa charge et ne peut plus piloter le détendeur. Symptômes : surchauffe excessive et instable, le détendeur reste fermé ou presque, l'évaporateur manque de fluide.",
@@ -2814,10 +2814,10 @@
   "type": "qcm",
   "enonce": "Le déshydrateur contient un matériau appelé :",
   "choix": [
-   "Charbon actif",
-   "Tamis moléculaire",
-   "Silicone",
-   "Résine échangeuse d'ions"
+   "Du charbon actif",
+   "Un tamis moléculaire",
+   "De la silicone",
+   "Une résine échangeuse"
   ],
   "bonne": 1,
   "explication": "Tamis moléculaire — Le tamis moléculaire absorbe l'humidité et les acides. Il doit être changé à chaque ouverture du circuit.",
@@ -2857,9 +2857,9 @@
   "enonce": "Le pressostat BP peut servir à :",
   "choix": [
    "Réguler la température par cycling du compresseur",
-   "Protéger le condenseur",
-   "Augmenter la charge en fluide",
-   "Mesurer le COP"
+   "Protéger le condenseur contre les fortes surpressions",
+   "Augmenter la charge en fluide de l'installation frigorifique",
+   "Mesurer le COP de la machine en fonctionnement réel"
   ],
   "bonne": 0,
   "explication": "Réguler la température par cycling — Le pressostat BP peut couper le compresseur quand la pression BP descend trop (= température atteinte), puis le redémarrer quand elle remonte.",
@@ -2877,10 +2877,10 @@
   "type": "qcm",
   "enonce": "La vanne électromagnétique (solénoïde) sert principalement à :",
   "choix": [
-   "Réguler la surchauffe",
+   "Réguler la surchauffe à la sortie de l'évaporateur",
    "Couper/ouvrir un circuit de fluide sur commande électrique",
-   "Mesurer la pression",
-   "Purger le circuit"
+   "Mesurer la pression sur le circuit basse pression",
+   "Purger l'air et l'humidité restés dans le circuit"
   ],
   "bonne": 1,
   "explication": "Couper/ouvrir un circuit — La vanne solénoïde est une vanne tout-ou-rien commandée électriquement. Ex: pump-down, dégivrage.",
@@ -2898,10 +2898,10 @@
   "type": "qcm",
   "enonce": "Vous devez installer un filtre déshydrateur sur la ligne liquide. Dans quel sens doit-il être monté ?",
   "choix": [
-   "Peu importe le sens",
+   "Peu importe le sens de montage : le filtre agit dans les deux directions",
    "Dans le sens de circulation du fluide (indiqué par une flèche)",
-   "Toujours vertical",
-   "Toujours horizontal"
+   "Toujours à la verticale, cartouche vers le bas pour piéger l'humidité",
+   "Toujours à l'horizontale, pour éviter le tassement du tamis"
   ],
   "bonne": 1,
   "explication": "Le filtre déshydrateur doit TOUJOURS être monté dans le SENS DE CIRCULATION du fluide, indiqué par une flèche sur le corps du filtre.",
@@ -2919,10 +2919,10 @@
   "type": "qcm",
   "enonce": "Vous remarquez des bulles dans le voyant liquide en fonctionnement stable. Qu'est-ce que cela signifie généralement ?",
   "choix": [
-   "Le circuit fonctionne correctement",
+   "Le circuit fonctionne correctement, ces bulles sont normales",
    "Manque de fluide frigorigène ou sous-refroidissement insuffisant",
-   "Excès de fluide frigorigène",
-   "Problème d'huile"
+   "Excès de fluide frigorigène : le condenseur déborde et renvoie du gaz",
+   "Problème d'huile : elle mousse et se voit dans le voyant"
   ],
   "bonne": 1,
   "explication": "Des BULLES dans le voyant liquide indiquent que le fluide n'est pas totalement liquide (flash-gas). Causes : manque de charge, sous-refroidissement insuffisant, perte de charge excessive dans la…",
@@ -2940,10 +2940,10 @@
   "type": "qcm",
   "enonce": "Quel accessoire permet de retenir l'humidité dans un circuit frigorifique ?",
   "choix": [
-   "Le voyant liquide",
+   "Le voyant de ligne liquide",
    "Le filtre déshydrateur",
-   "Le pressostat",
-   "Le ventilateur"
+   "Le pressostat différentiel",
+   "L'accumulateur d'aspiration"
   ],
   "bonne": 1,
   "explication": "Le FILTRE DÉSHYDRATEUR contient des tamis moléculaires qui absorbent l'humidité présente dans le circuit. Il protège le détendeur et le compresseur du givrage et de la corrosion.",
@@ -2961,10 +2961,10 @@
   "type": "qcm",
   "enonce": "À quoi sert un voyant liquide dans un circuit frigorifique ?",
   "choix": [
-   "À mesurer la température",
+   "À mesurer la température du liquide juste avant l'entrée du détendeur",
    "À observer l'état du fluide (bulles, couleur) et détecter d'éventuels problèmes",
-   "À régler la pression",
-   "À arrêter le compresseur"
+   "À régler la pression de la ligne liquide à la sortie du condenseur",
+   "À couper le compresseur si le débit de liquide devient insuffisant"
   ],
   "bonne": 1,
   "explication": "Le VOYANT LIQUIDE permet de visualiser l'état du fluide frigorigène dans la ligne liquide : présence de bulles (manque de charge), changement de couleur de l'indicateur d'humidité, aspect du fluide.",
@@ -2982,10 +2982,10 @@
   "type": "qcm",
   "enonce": "La vanne 4 voies permet :",
   "choix": [
-   "De réguler le débit",
+   "De réguler le débit de fluide au détendeur",
    "D'inverser le sens du cycle (mode chaud/froid)",
-   "De purger l'huile",
-   "De shunter le compresseur"
+   "De purger l'huile du carter du compresseur",
+   "De contourner le compresseur pendant l'arrêt"
   ],
   "bonne": 1,
   "explication": "D'inverser le sens du cycle — La vanne 4 voies permute les rôles de l'échangeur intérieur et extérieur : l'évaporateur devient condenseur et inversement (mode PAC).",
@@ -3005,8 +3005,8 @@
   "choix": [
    "Tous les ans systématiquement",
    "À chaque ouverture du circuit",
-   "Uniquement si le voyant indique de l'humidité",
-   "Jamais"
+   "Si le voyant indique de l'humidité",
+   "Jamais, il est permanent"
   ],
   "bonne": 1,
   "explication": "À chaque ouverture du circuit — Chaque fois que le circuit est ouvert, de l'humidité entre. Le déshydrateur doit être changé pour l'absorber.",
@@ -3024,10 +3024,10 @@
   "type": "qcm",
   "enonce": "Le voyant liquide est placé :",
   "choix": [
-   "En sortie de compresseur",
+   "En sortie de compresseur, sur la ligne de refoulement",
    "En sortie de condenseur, avant le détendeur",
-   "En sortie d'évaporateur",
-   "Sur le circuit d'huile"
+   "En sortie d'évaporateur, sur la ligne d'aspiration",
+   "Sur le circuit d'huile, près du séparateur"
   ],
   "bonne": 1,
   "explication": "En sortie de condenseur, avant le détendeur — Il est placé sur la ligne liquide pour vérifier que le fluide arrive bien sous forme liquide au détendeur.",
@@ -3045,10 +3045,10 @@
   "type": "qcm",
   "enonce": "Sur une installation avec détendeur électronique, quel paramètre principal pilote l'ouverture de la vanne ?",
   "choix": [
-   "La pression du condenseur",
+   "La pression de condensation, mesurée en permanence au refoulement du compresseur",
    "La surchauffe mesurée par des sondes de température et de pression",
-   "La température ambiante",
-   "Le niveau d'huile du compresseur"
+   "La température ambiante du local, lue par une sonde d'ambiance déportée",
+   "Le niveau d'huile du compresseur, suivi par un contrôleur"
   ],
   "bonne": 1,
   "explication": "Le DÉTENDEUR ÉLECTRONIQUE régule l'ouverture de la vanne en fonction de la SURCHAUFFE calculée par un calculateur à partir de sondes de température et de pression.",
@@ -3066,10 +3066,10 @@
   "type": "qcm",
   "enonce": "Pourquoi brase-t-on toujours sous flux d'azote ?",
   "choix": [
-   "Pour refroidir plus vite",
+   "Pour refroidir le tube plus vite après le brasage",
    "Pour éviter l'oxydation intérieure du cuivre (calamine)",
-   "Pour tester l'étanchéité",
-   "Pour sécher le circuit"
+   "Pour tester l'étanchéité du joint pendant le brasage",
+   "Pour sécher l'intérieur du circuit avant la mise en charge"
   ],
   "bonne": 1,
   "explication": "Éviter l'oxydation intérieure — Sans azote, l'oxygène de l'air réagit avec le cuivre chauffé et forme de la calamine noire qui bouchera les filtres et endommagera le compresseur.",
@@ -3144,10 +3144,10 @@
   "type": "qcm",
   "enonce": "Lors du raccordement d'un flexible sur une vanne Schrader, il faut d'abord :",
   "choix": [
-   "Serrer à fond",
+   "Serrer le raccord à fond",
    "Purger l'air du flexible",
    "Ouvrir la vanne en grand",
-   "Faire un tirage au vide du flexible"
+   "Tirer au vide le flexible"
   ],
   "bonne": 1,
   "explication": "Purger l'air du flexible — Avant tout raccordement, il faut purger l'air du flexible pour ne pas introduire d'incondensables dans le circuit.",
@@ -3165,10 +3165,10 @@
   "type": "qcm",
   "enonce": "Lors d'un brasage, pourquoi faut-il balayer à l'azote ?",
   "choix": [
-   "Pour refroidir le tube",
+   "Pour refroidir le tube plus vite",
    "Pour éviter l'oxydation interne",
-   "Pour tester l'étanchéité",
-   "Pour nettoyer le circuit"
+   "Pour tester l'étanchéité du joint",
+   "Pour nettoyer l'intérieur du circuit"
   ],
   "bonne": 1,
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -3265,9 +3265,9 @@
   "enonce": "Un remplacement 'drop-in' signifie :",
   "choix": [
    "Changer le fluide sans modifier l'installation",
-   "Changer le fluide et l'huile",
-   "Modifier le détendeur et l'huile",
-   "Remplacer tout le circuit"
+   "Changer le fluide et l'huile du circuit",
+   "Modifier le détendeur et changer l'huile",
+   "Remplacer entièrement le circuit frigorifique"
   ],
   "bonne": 0,
   "explication": "Changer le fluide sans modifier l'installation",
@@ -3285,10 +3285,10 @@
   "type": "qcm",
   "enonce": "La norme EN 378 définit entre autres :",
   "choix": [
-   "Les prix des fluides",
+   "Les prix maximaux pratiqués pour les fluides frigorigènes",
    "Les charges maximales de fluide selon le local et la classe de sécurité",
-   "Les horaires d'intervention",
-   "Les salaires des techniciens"
+   "Les horaires autorisés pour intervenir sur une installation",
+   "Les salaires minimaux applicables aux techniciens frigoristes qualifiés"
   ],
   "bonne": 1,
   "explication": "Les charges maximales selon local et classe de sécurité",
@@ -3306,10 +3306,10 @@
   "type": "qcm",
   "enonce": "Comment optimiser le COP (Coefficient de Performance) d'une installation frigorifique ?",
   "choix": [
-   "Augmenter la haute pression au maximum",
+   "Augmenter la haute pression jusqu'au maximum admissible par la machine",
    "Diminuer l'écart entre T°K (condensation) et T°O (évaporation)",
-   "Augmenter la surchauffe au maximum",
-   "Diminuer le débit d'air sur le condenseur"
+   "Augmenter la surchauffe jusqu'au maximum admissible à l'aspiration",
+   "Diminuer le débit d'air soufflé sur la batterie du condenseur"
   ],
   "bonne": 1,
   "explication": "Le COP (efficacité énergétique) est meilleur quand l'écart T°K - T°O est FAIBLE. Pour optimiser : baisser la T°K (condenseur propre, bon refroidissement) et augmenter la T°O si possible (évaporateur…",
@@ -3369,10 +3369,10 @@
   "type": "qcm",
   "enonce": "La norme EN 378 classe les locaux en :",
   "choix": [
-   "2 catégories",
+   "2 catégories, selon la charge admise",
    "3 catégories (a, b, c) selon l'occupation",
-   "5 catégories",
-   "10 catégories"
+   "5 catégories, selon la classe du fluide",
+   "10 catégories, selon le type de bâtiment occupé"
   ],
   "bonne": 1,
   "explication": "3 catégories — Catégorie a = accès public général. b = accès restreint. c = personnel autorisé uniquement. La charge maximale dépend de la catégorie.",
@@ -3390,10 +3390,10 @@
   "type": "qcm",
   "enonce": "La charge maximale en R290 (propane) dans un local accessible au public est très limitée car :",
   "choix": [
-   "Son GWP est élevé",
+   "Son pouvoir de réchauffement est élevé",
    "Il est très inflammable (classe A3)",
-   "Il est toxique",
-   "Il corrode le cuivre"
+   "Il est fortement toxique par inhalation",
+   "Il corrode le cuivre des tubes du circuit"
   ],
   "bonne": 1,
   "explication": "Très inflammable (A3) — Le R290 est un hydrocarbure hautement inflammable. La norme EN 378 limite strictement les charges dans les locaux occupés.",
@@ -3411,10 +3411,10 @@
   "type": "qcm",
   "enonce": "Le R600a (isobutane) est utilisé principalement dans :",
   "choix": [
-   "Les centrales industrielles",
+   "Les grandes centrales frigorifiques industrielles",
    "Les réfrigérateurs et congélateurs domestiques",
-   "Les climatiseurs split",
-   "Les pompes à chaleur air-eau"
+   "Les climatiseurs split installés en résidentiel",
+   "Les pompes à chaleur air-eau domestiques"
   ],
   "bonne": 1,
   "explication": "Réfrigérateurs domestiques — Le R600a est le fluide standard des réfrigérateurs modernes. Charges très faibles (50-150g) pour limiter le risque d'inflammation.",
@@ -3432,10 +3432,10 @@
   "type": "qcm",
   "enonce": "Les fluides A2L comme le R32 nécessitent :",
   "choix": [
-   "Aucune précaution particulière",
+   "Aucune précaution particulière lors de l'intervention",
    "Un outillage adapté et une formation spécifique",
-   "Un local ATEX systématique",
-   "Un détecteur d'ammoniac"
+   "Un local ATEX systématique pour toute intervention",
+   "Un détecteur d'ammoniac dans le local"
   ],
   "bonne": 1,
   "explication": "Outillage adapté et formation spécifique — Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante.",
@@ -3453,10 +3453,10 @@
   "type": "qcm",
   "enonce": "Pour les fluides A2L, les outils d'intervention doivent être :",
   "choix": [
-   "Standards",
+   "Les mêmes outils standards que pour un fluide A1",
    "Adaptés (pas de source d'ignition, ventilation)",
-   "Uniquement manuels (pas d'électricité)",
-   "En matériaux composites"
+   "Uniquement manuels, sans aucune partie électrique",
+   "Réalisés en matériaux composites non conducteurs"
   ],
   "bonne": 1,
   "explication": "Adaptés — Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention.",
@@ -3474,10 +3474,10 @@
   "type": "qcm",
   "enonce": "Vous devez braser sur un circuit au R-32 (A2L). Quelles précautions prenez-vous avant d'allumer le chalumeau ?",
   "choix": [
-   "Aucune, le R-32 est peu inflammable",
+   "Aucune précaution particulière, le R-32 étant classé seulement faiblement inflammable",
    "Récupérer le fluide, inerter à l'azote, ventiler, supprimer toute source d'ignition",
-   "Ouvrir une fenêtre et braser rapidement",
-   "Braser directement, le circuit est fermé"
+   "Ouvrir une fenêtre et braser rapidement pour limiter l'exposition",
+   "Braser directement : le circuit est fermé et sous pression"
   ],
   "bonne": 1,
   "explication": "Un fluide A2L reste inflammable : on récupère, on inerte à l'azote et on supprime toute source d'ignition avant la flamme.",
@@ -3492,10 +3492,10 @@
   "type": "qcm",
   "enonce": "Pourquoi ne doit-on jamais approcher une flamme d'un circuit contenant un fluide A2L ou A3 non inerté ?",
   "choix": [
-   "Parce qu'il est interdit de fumer sur un chantier",
+   "Parce qu'il est formellement interdit de fumer sur un chantier de ce type",
    "Parce que le fluide peut s'enflammer et se décomposer en gaz toxiques",
-   "Parce que la fumée salit l'installation",
-   "Parce que l'odeur est désagréable"
+   "Parce que la fumée salit l'installation et les échangeurs",
+   "Parce que l'odeur dégagée est désagréable pour l'occupant"
   ],
   "bonne": 1,
   "explication": "Double risque : inflammation du fluide, et décomposition thermique produisant des gaz toxiques (dont acide fluorhydrique).",
@@ -3510,10 +3510,10 @@
   "type": "qcm",
   "enonce": "Quelle est la différence entre un fluide A2L (R-32) et un fluide A3 (R-290) ?",
   "choix": [
-   "Aucune, les deux classes sont équivalentes",
+   "Aucune différence : les deux classes se manipulent exactement de la même manière",
    "A3 est hautement inflammable (propagation rapide) ; A2L l'est faiblement (propagation lente)",
-   "A2L est toxique, A3 ne l'est pas",
-   "A3 produit plus de froid"
+   "A2L est un fluide toxique alors que A3 ne présente aucune toxicité",
+   "A3 produit plus de froid, d'où la limitation de charge imposée"
   ],
   "bonne": 1,
   "explication": "Le R-290 est A3 : très inflammable. Le R-32 est A2L : faiblement inflammable, vitesse de flamme ≤ 10 cm/s. Piège classique.",
@@ -3549,10 +3549,10 @@
   "type": "qcm",
   "enonce": "En fonctionnement transcritique, le condenseur est remplacé par :",
   "choix": [
-   "Un évaporateur",
+   "Un second évaporateur en haute pression",
    "Un refroidisseur de gaz (gas cooler)",
-   "Un économiseur",
-   "Un absorbeur"
+   "Un économiseur placé sur le circuit HP",
+   "Un absorbeur thermique de type classique"
   ],
   "bonne": 1,
   "explication": "Un refroidisseur de gaz — En transcritique, le CO₂ ne se condense pas (T° > 31°C). On refroidit simplement le gaz HP dans un échangeur appelé gas cooler.",
@@ -3612,10 +3612,10 @@
   "type": "qcm",
   "enonce": "L'ammoniac est principalement utilisé dans :",
   "choix": [
-   "La climatisation résidentielle",
+   "La climatisation résidentielle et le petit tertiaire",
    "Le froid industriel (entrepôts, agroalimentaire)",
-   "Les véhicules",
-   "Les réfrigérateurs domestiques"
+   "Les véhicules frigorifiques de transport",
+   "Les réfrigérateurs domestiques modernes"
   ],
   "bonne": 1,
   "explication": "Le froid industriel — L'ammoniac est le fluide de référence du froid industriel (entrepôts, chambres froides, agroalimentaire) grâce à ses excellentes propriétés thermodynamiques.",
@@ -3633,10 +3633,10 @@
   "type": "qcm",
   "enonce": "L'ammoniac peut être détecté facilement par :",
   "choix": [
-   "Sa couleur bleue",
+   "Sa couleur bleue, très reconnaissable à l'œil",
    "Son odeur très caractéristique (piquante)",
-   "Son goût sucré",
-   "Sa luminescence"
+   "Son goût sucré, tout à fait caractéristique",
+   "Sa luminescence dans l'obscurité"
   ],
   "bonne": 1,
   "explication": "Son odeur piquante — L'ammoniac a une odeur extrêmement reconnaissable et détectable à très faible concentration (5 ppm). C'est un avantage pour la sécurité.",
@@ -3654,10 +3654,10 @@
   "type": "qcm",
   "enonce": "Pourquoi installe-t-on des détecteurs de CO₂ dans les locaux abritant une installation au R-744 ?",
   "choix": [
-   "Pour mesurer la performance de l'installation",
-   "Parce que le CO₂ est inodore et incolore : sans appareil, une fuite est indétectable et le risque est l'asphyxie",
+   "Pour mesurer en continu les performances de l'installation",
+   "Parce que le CO₂ est inodore et incolore : une fuite est indétectable sans appareil",
    "Parce que la réglementation impose un détecteur pour tous les fluides",
-   "Pour compter les ouvertures de porte"
+   "Pour compter les ouvertures de porte de la chambre froide"
   ],
   "bonne": 1,
   "explication": "Le CO₂ ne se voit pas et ne se sent pas : en cas de fuite dans un local fermé, il remplace l'air sans prévenir. Seul un détecteur alerte avant l'asphyxie.",
@@ -3672,10 +3672,10 @@
   "type": "qcm",
   "enonce": "En mode sous-critique, le CO₂ fonctionne :",
   "choix": [
-   "Toujours au-dessus de 31°C",
+   "Toujours au-dessus de 31 °C, son point critique",
    "Comme un fluide classique avec condensation",
-   "Sans compresseur",
-   "Sans détendeur"
+   "Sans compresseur, par simple détente du gaz",
+   "Sans détendeur, avec un capillaire seul"
   ],
   "bonne": 1,
   "explication": "Comme un fluide classique — Quand la température extérieure est < 25°C environ, le CO₂ peut condenser normalement (mode sous-critique = cycle classique).",
@@ -3693,10 +3693,10 @@
   "type": "qcm",
   "enonce": "Pourquoi les portes des locaux techniques CO₂ doivent-elles s'ouvrir vers l'extérieur ?",
   "choix": [
-   "Pour gagner de la place dans le local",
-   "Pour faciliter l'évacuation d'urgence : une porte qui s'ouvre vers l'intérieur peut se bloquer en cas de surpression ou de panique",
-   "Pour des raisons esthétiques",
-   "Pour empêcher les intrusions"
+   "Parce que la ventilation mécanique du local impose une porte plaquée par le flux d'air entrant",
+   "Parce qu'une porte ouvrant vers l'intérieur se coince en cas de surpression ou de bousculade",
+   "Parce que le CO₂ est plus lourd que l'air et doit s'évacuer par le bas de l'ouverture",
+   "Pour que la détection de CO₂ puisse commander l'ouverture automatique de la porte"
   ],
   "bonne": 1,
   "explication": "En cas de fuite massive, on doit pouvoir sortir en poussant la porte, même en panique et même si la pression du local a monté. Le sens d'ouverture est un choix de sécurité.",
@@ -3713,9 +3713,9 @@
   "enonce": "Un évaporateur est installé avec son pressostat et son régulateur de pression. Une fois l'installation terminée, qu'est-ce qui doit être sans aucune fuite ni émission ?",
   "choix": [
    "L'évaporateur et tout le matériel de contrôle et de sécurité posé avec lui",
-   "Seulement le tube de l'évaporateur",
-   "Seulement les raccords visibles depuis l'extérieur",
-   "Seulement les organes électriques"
+   "Seulement le tube de l'évaporateur, pas les accessoires posés",
+   "Seulement les raccords visibles depuis l'extérieur du meuble",
+   "Seulement les organes électriques de commande et de sécurité"
   ],
   "bonne": 0,
   "aide": "Relis la première phrase de la fiche : elle ne parle pas seulement du tube.",
@@ -3736,10 +3736,10 @@
   "type": "qcm",
   "enonce": "Un interrupteur de sécurité et de contrôle détecte une pression qui sort de la plage prévue. Que fait-il ?",
   "choix": [
-   "Il déclenche le dégivrage",
-   "Il augmente la vitesse du ventilateur",
+   "Il déclenche immédiatement un cycle de dégivrage complet",
+   "Il augmente la vitesse des ventilateurs de la batterie",
    "Il coupe l'alimentation électrique du compresseur",
-   "Il ouvre le régulateur de pression d'évaporation"
+   "Il ouvre en grand le régulateur de pression d'évaporation"
   ],
   "bonne": 2,
   "aide": "C'est un interrupteur électrique. Il agit sur l'alimentation, pas sur la pression elle-même.",
@@ -3760,10 +3760,10 @@
   "type": "qcm",
   "enonce": "Un évaporateur dégivre à l'air chaud. Lors de la visite, que dois-tu inspecter sur le conduit qui transporte cet air ?",
   "choix": [
-   "Le niveau d'huile du compresseur",
+   "Le niveau d'huile du compresseur de la centrale",
    "L'étanchéité, l'isolation et l'écoulement des condensats",
-   "La pression d'aspiration uniquement",
-   "Le débit d'air du ventilateur uniquement"
+   "La pression d'aspiration relevée pendant tout le dégivrage",
+   "Le débit d'air du ventilateur de l'évaporateur"
   ],
   "bonne": 1,
   "aide": "La fiche liste trois points précis à vérifier sur ce conduit.",
@@ -3784,9 +3784,9 @@
   "type": "qcm",
   "enonce": "La batterie d'un évaporateur est sale et le débit d'air a baissé. Quel est l'effet sur la consommation d'énergie du compresseur ?",
   "choix": [
-   "Aucun effet, seule la surchauffe compte",
-   "Le dégivrage devient inutile",
-   "La pression d'évaporation augmente automatiquement",
+   "Aucun effet mesurable : seule la surchauffe compte réellement",
+   "Le dégivrage devient inutile puisque la batterie est sale",
+   "La pression d'évaporation augmente automatiquement d'elle-même",
    "Le compresseur tourne plus longtemps pour le même résultat"
   ],
   "bonne": 3,
@@ -3808,9 +3808,9 @@
   "type": "qcm",
   "enonce": "Comment un thermostat mécanique détecte-t-il la température ?",
   "choix": [
-   "Avec une sonde reliée à un régulateur numérique",
-   "Avec un capteur de pression relié à un module",
-   "Avec une résistance électrique chauffante",
+   "Avec une sonde de température reliée à un régulateur numérique déporté",
+   "Avec un capteur de pression relié à un module électronique de commande",
+   "Avec une résistance électrique chauffante placée dans l'ambiance",
    "Avec un bulbe relié par un tube fin à des contacts électriques"
   ],
   "bonne": 3,
@@ -3832,10 +3832,10 @@
   "type": "qcm",
   "enonce": "Vérifier le fonctionnement d'un séparateur d'huile, c'est contrôler quoi ?",
   "choix": [
-   "Que l'huile reste bloquée dans le séparateur en permanence",
+   "Que l'huile reste bien bloquée dans le séparateur pendant toute la marche du groupe",
    "Que l'huile retenue retourne bien, automatiquement, au carter du compresseur",
-   "Que le condenseur reçoit un mélange d'huile et de fluide",
-   "Que la pression d'aspiration reste constante"
+   "Que le condenseur reçoit bien un mélange homogène d'huile et de fluide",
+   "Que la pression d'aspiration reste parfaitement constante en marche"
   ],
   "bonne": 1,
   "aide": "Le séparateur ne doit pas garder l'huile pour lui. Il doit la rendre.",
@@ -3857,12 +3857,12 @@
   "enonce": "Pendant une visite, tu remarques qu'un limiteur de pression ne coupe plus correctement. Tu ne le notes pas dans ton rapport. Quel est le risque, si ce défaut reste sans suite ?",
   "choix": [
    "Le défaut peut endommager le système et provoquer à terme une fuite ou une émission",
-   "Aucun, le limiteur se corrige tout seul avec le temps",
-   "Le compresseur s'arrête immédiatement par sécurité",
-   "Le séparateur d'huile compense automatiquement le défaut"
+   "Aucun risque particulier : le limiteur se réarme de lui-même au cycle suivant",
+   "Le compresseur s'arrête aussitôt par sécurité, le défaut se voit tout seul",
+   "Le séparateur d'huile compense le défaut tant que le niveau reste correct"
   ],
   "bonne": 0,
-  "aide": "Relis la fin de la fiche : que se passe-t-il quand un défaut n'est pas signalé ?",
+  "aide": "Relis la fin de la fiche : que se passe-t-il quand'un défaut n'est pas signalé ?",
   "remed": {
    "regle": "Un défaut non signalé (thermostat qui dérive, limiteur qui ne coupe plus, séparateur qui laisse passer l'huile) finit par endommager le système. À terme, faute de mesure, cela provoque une fuite ou une émission de réfrigérant.",
    "pourquoi": "Le rapport écrit permet d'agir avant que le défaut ne s'aggrave. C'est un outil de prévention, pas une simple formalité.",
@@ -3880,10 +3880,10 @@
   "type": "qcm",
   "enonce": "Un séparateur d'huile laisse l'huile encrasser les échangeurs. Quel est l'effet sur le compresseur ?",
   "choix": [
-   "Il s'arrête automatiquement",
-   "Il consomme moins d'énergie",
+   "Il s'arrête automatiquement en sécurité",
+   "Il consomme nettement moins d'énergie",
    "Il travaille plus pour le même résultat",
-   "Il n'est pas concerné, seul l'évaporateur est affecté"
+   "Il n'est pas concerné, seul l'évaporateur l'est"
   ],
   "bonne": 2,
   "aide": "Un échangeur encrassé fait le même travail, mais moins bien.",
@@ -3902,10 +3902,10 @@
   "code": "12.07",
   "niveau": 1,
   "type": "qcm",
-  "enonce": "Vous devez rebraser un composant sur un circuit au R-290. Quelle affirmation est vraie ?",
+  "enonce": "Vous devez rebraser un composant sur un circuit au R-290. Quelle affirmation'est vraie ?",
   "choix": [
    "Le R-290 est classé A2L, comme le R-32 : une flamme brève est possible sans risque particulier.",
-   "Le R-290 est classé A3, très inflammable : aucune flamme tant que l'inertage à l'azote n'est pas confirmé.",
+   "Le R-290 est classé A3, très inflammable : aucune flamme sans inertage confirmé",
    "Le R-290 est classé A2, inflammable, mais moins que les hydrocarbures purs.",
    "Le R-290 est classé A1, non inflammable : le risque vient seulement de la pression."
   ],
@@ -4001,8 +4001,8 @@
   "enonce": "Le CO₂ (R-744) est classé A1. Quels dangers cette classe n'annonce-t-elle pas ?",
   "choix": [
    "La pression, très élevée, et l'atmosphère irrespirable qu'une fuite crée en local fermé.",
-   "Aucun : la classe A1 signifie qu'il est sans danger.",
-   "L'inflammabilité, car il peut s'enflammer comme un hydrocarbure.",
+   "Aucun danger : la classe A1 veut dire qu'il est parfaitement inoffensif",
+   "L'inflammabilité, puisqu'il peut s'enflammer comme un hydrocarbure",
    "Uniquement le risque de gel des tuyauteries en fonctionnement normal."
   ],
   "bonne": 0,
@@ -4024,16 +4024,16 @@
   "type": "qcm",
   "enonce": "Vous sentez une odeur piquante caractéristique dans un local qui abrite une installation à l'ammoniac. Que faites-vous ?",
   "choix": [
-   "Vous entrez identifier l'origine de la fuite : votre odorat vous alertera si le seuil devient dangereux.",
-   "Vous coupez vous-même l'installation avant de sortir, pour limiter la fuite.",
-   "Vous attendez que l'odeur se dissipe avant d'agir.",
+   "Vous entrez identifier la fuite, votre odorat vous alertera à temps",
+   "Vous coupez vous-même l'installation avant de sortir du local",
+   "Vous attendez que l'odeur se dissipe avant d'aller voir",
    "Vous alertez et vous évacuez, sans intervenir seul."
   ],
   "bonne": 3,
   "aide": "Le texte donne la conduite à tenir en cas de fuite d'ammoniac, juste avant la fin de la fiche.",
   "remed": {
    "regle": "En cas de fuite d'ammoniac : alerter, évacuer, ne jamais intervenir seul.",
-   "pourquoi": "L'ammoniac est toxique (le B de B2L). Un titulaire A1/A2 n'a ni la catégorie C, ni l'équipement pour intervenir sur cette installation.",
+   "pourquoi": "L'ammoniac'est toxique (le B de B2L). Un titulaire A1/A2 n'a ni la catégorie C, ni l'équipement pour intervenir sur cette installation.",
    "piege": "Se fier à son odorat pour rester sur place, ou vouloir agir seul par réflexe technique. La seule conduite correcte est d'alerter et d'évacuer."
   },
   "remediation_vers": "g13",
@@ -4073,8 +4073,8 @@
   "enonce": "Vous détenez une attestation A1. Sur le site, une fuite se déclare sur l'installation à l'ammoniac. Un collègue vous demande de venir l'aider. Que répondez-vous ?",
   "choix": [
    "D'accord : une attestation A1 permet d'intervenir sur tous les fluides en cas d'urgence.",
-   "D'accord, à condition de porter un masque de protection.",
-   "Non : l'ammoniac relève de la catégorie C, mon attestation A1/A2 ne donne aucun droit d'intervention dessus.",
+   "D'accord, à condition de porter un masque de protection adapté.",
+   "Non : l'ammoniac relève de la catégorie C, mon attestation A1/A2 n'y donne aucun droit",
    "J'y vais quand même : l'urgence prime sur la catégorie d'attestation."
   ],
   "bonne": 2,
@@ -4121,9 +4121,9 @@
   "enonce": "Un climatiseur trop vieux part au rebut, dans la filière DEEE. Que devient le fluide frigorigène qu'il contient encore ?",
   "choix": [
    "Il doit être récupéré à part, avant que la carcasse parte en DEEE",
-   "Il part avec la carcasse, la filière DEEE s'en occupe aussi",
-   "Il est automatiquement détruit par le centre de tri DEEE",
-   "Il n'y a aucune obligation, la quantité restante est négligeable"
+   "Il part avec la carcasse, la filière DEEE s'occupe aussi du fluide",
+   "Il est automatiquement détruit par le centre de tri DEEE qui le reçoit",
+   "Il n'y a aucune obligation particulière, la quantité restante est faible"
   ],
   "bonne": 0,
   "aide": "La filière DEEE s'occupe d'un objet, la carcasse. Le fluide est une matière. Suivent-ils le même chemin ?",
@@ -4145,9 +4145,9 @@
   "enonce": "Les codes R-32 et R-290 se ressemblent. Pourtant leurs classes de sécurité NF EN 378 sont très différentes. Que faut-il comprendre ?",
   "choix": [
    "Le code du fluide donne déjà sa classe de sécurité, inutile de vérifier autre chose",
-   "Deux codes proches veulent toujours dire deux dangers proches",
+   "Deux codes proches signalent toujours deux dangers de même niveau",
    "La classe NF EN 378 remplace le code : on peut oublier le code une fois la classe connue",
-   "Le code décrit la molécule ; la classe NF EN 378 décrit le risque de manipulation : il faut connaître les deux"
+   "Le code décrit la molécule, la classe NF EN 378 le risque : il faut lire les deux"
   ],
   "bonne": 3,
   "aide": "La fiche parle de deux lectures différentes pour un même fluide. Laquelle donne le risque de manipulation ?",
@@ -4168,10 +4168,10 @@
   "type": "qcm",
   "enonce": "Le propane, l'isobutane, l'ammoniac et le CO₂ sont des fluides naturels. En quoi se distinguent-ils des HFC et des HFO, d'après la fiche ?",
   "choix": [
-   "Ils ont tous un fort effet de serre, comme les HFC",
+   "Ils ont tous un fort effet de serre, comme les HFC classiques",
    "Ils existent sans chimie de synthèse, contrairement aux HFC et HFO",
-   "Ils contiennent tous du fluor, comme les HFO",
-   "Ils ont été condamnés par le protocole de Montréal, comme les CFC"
+   "Ils contiennent tous du fluor, comme les HFO récents",
+   "Ils ont été condamnés par le protocole de Montréal, au même titre que les CFC"
   ],
   "bonne": 1,
   "aide": "Relis la phrase sur les fluides « naturels ». De quoi n'ont-ils pas besoin, contrairement aux HFC et HFO ?",
@@ -4216,10 +4216,10 @@
   "type": "qcm",
   "enonce": "Vous réglez le régulateur de pression de sortie du condenseur. Comment procédez-vous, d'après la fiche ?",
   "choix": [
-   "Vous suivez la fiche constructeur",
-   "Vous réglez à l'estime, selon votre expérience",
-   "Vous copiez le réglage de la dernière installation, quel que soit le modèle",
-   "Vous laissez le réglage d'usine sans jamais le vérifier"
+   "Vous suivez la fiche du constructeur",
+   "Vous réglez à l'estime, selon l'expérience",
+   "Vous copiez le réglage de la dernière installation",
+   "Vous laissez le réglage d'usine sans le vérifier"
   ],
   "bonne": 0,
   "aide": "La fiche insiste sur un document précis à suivre pour ce réglage : jamais au jugé.",
@@ -4240,10 +4240,10 @@
   "type": "qcm",
   "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
   "choix": [
-   "De l'oxygène",
+   "De l'oxygène pur",
    "De l'azote sec",
    "De l'air comprimé",
-   "Du fluide frigorigène du circuit"
+   "Du fluide du circuit"
   ],
   "bonne": 1,
   "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
@@ -4264,10 +4264,10 @@
   "type": "qcm",
   "enonce": "Pourquoi une bouteille d'azote se raccorde-t-elle toujours au travers d'un mano-détendeur ?",
   "choix": [
-   "Pour connaître la quantité restante",
-   "Pour filtrer l'humidité du gaz",
-   "Parce que la pression de la bouteille dépasse largement ce que le circuit peut supporter",
-   "Pour réchauffer le gaz avant l'entrée"
+   "Pour connaître à tout moment la quantité d'azote restant dans la bouteille",
+   "Pour filtrer l'humidité que pourrait contenir le gaz de la bouteille d'azote",
+   "Parce que la pression de la bouteille dépasse ce que le circuit supporte",
+   "Pour réchauffer le gaz avant son entrée dans le circuit"
   ],
   "bonne": 2,
   "aide": "Comparez la pression dans la bouteille et celle que supporte l'installation.",
@@ -4289,9 +4289,9 @@
   "enonce": "À quel moment réalise-t-on l'analyse de risques d'une intervention ?",
   "choix": [
    "Avant d'engager le moindre geste technique",
-   "Après avoir ouvert le circuit",
-   "À la fin, au moment de rédiger le rapport",
-   "Seulement si le client le demande"
+   "Juste après avoir ouvert le circuit frigorifique",
+   "À la fin, au moment de rédiger le rapport écrit",
+   "Seulement si le client en fait lui-même la demande"
   ],
   "bonne": 0,
   "aide": "Une analyse de risques sert à éviter l'accident, pas à le raconter.",
@@ -4312,10 +4312,10 @@
   "type": "qcm",
   "enonce": "Avant d'intervenir sur une installation au R-290, que vérifie-t-on dans la zone de travail ?",
   "choix": [
-   "Que l'éclairage est suffisant",
+   "Que l'éclairage du local est suffisant pour travailler dans de bonnes conditions",
    "Que la zone est balisée et ventilée, l'issue dégagée et les sources d'inflammation supprimées",
-   "Que la température ambiante est stable",
-   "Que le sol est parfaitement sec"
+   "Que la température ambiante restera stable pendant toute l'intervention",
+   "Que le sol est parfaitement sec et dégagé de tout obstacle"
   ],
   "bonne": 1,
   "aide": "Le R-290 est un hydrocarbure de classe A3 : pensez à ce qui pourrait l'enflammer.",
@@ -4336,10 +4336,10 @@
   "type": "qcm",
   "enonce": "Un joint brasé était parfait à la pose, mais il finit par se fissurer des mois plus tard. La tuyauterie est posée sur un support trop serré, avec un point dur. Quelle est la cause la plus probable ?",
   "choix": [
-   "Le tube n'a pas été ébavuré après la coupe",
+   "Le tube n'a pas été ébavuré après la coupe, ce qui fragilise le joint",
    "Le support transmet les vibrations du compresseur au joint, qui rompt par fatigue",
-   "Le balayage à l'azote n'a pas été fait pendant le brasage",
-   "L'alliage d'apport utilisé n'était pas du cuivre-phosphore"
+   "Le balayage à l'azote n'a pas été fait pendant l'opération de brasage",
+   "L'alliage d'apport utilisé n'était pas un cuivre-phosphore adapté à ce tube de cuivre"
   ],
   "bonne": 1,
   "aide": "Pense à ce qui se passe sur un tube mal soutenu quand le compresseur vibre en permanence, jour après jour.",
@@ -4358,19 +4358,19 @@
   "code": "11.04",
   "niveau": 2,
   "type": "qcm",
-  "enonce": "Un fluide de substitution est très performant en froid commercial, mais son efficacité baisse nettement quand l'air extérieur est très chaud. Quel est ce fluide ?",
+  "enonce": "Un fluide de substitution'est très performant en froid commercial, mais son efficacité baisse nettement quand l'air extérieur est très chaud. Quel est ce fluide ?",
   "choix": [
    "Le CO2 (R-744)",
    "L'ammoniac (NH3)",
-   "Un hydrocarbure comme le R-290",
-   "Le R-1234yf"
+   "Le propane (R-290)",
+   "Le HFO R-1234yf"
   ],
   "bonne": 0,
   "aide": "Relis ce que dit la fiche sur les limites de chaque fluide de substitution selon le climat du site.",
   "remed": {
    "regle": "Le CO2 est performant en froid commercial, mais son efficacité baisse quand le climat extérieur est très chaud. Aucun fluide de substitution n'est le meilleur dans l'absolu : le choix dépend de l'application et du climat du site.",
    "pourquoi": "Installer un fluide sans regarder le climat du site expose à une installation qui fonctionne mal une partie de l'année. Le choix doit toujours être validé avec la documentation constructeur.",
-   "piege": "Croire qu'un fluide performant sur un site l'est partout : les hydrocarbures sont efficaces mais limités par l'inflammabilité, l'ammoniac est réservé à l'industriel à cause de sa toxicité, chaque fluide a ses propres limites."
+   "piege": "Croire qu'un fluide performant sur un site l'est partout : les hydrocarbures sont efficaces mais limités par l'inflammabilité, l'ammoniac'est réservé à l'industriel à cause de sa toxicité, chaque fluide a ses propres limites."
   },
   "remediation_vers": "g11",
   "explication": "Le CO2 est performant en froid commercial, mais son efficacité baisse quand le climat extérieur est très chaud. Aucun fluide de substitution n'est le meilleur dans l'absolu : le choix dépend de l'application et du climat du site.",
@@ -4408,10 +4408,10 @@
   "type": "qcm",
   "enonce": "Une bouteille de R-290 (propane) a un raccord et un filetage à gauche, différents d'une bouteille de HFC. Que faites-vous si votre raccord habituel ne se visse pas dessus ?",
   "choix": [
-   "Vous utilisez un adaptateur pour forcer le raccordement",
+   "Vous utilisez un adaptateur pour forcer le raccordement sur la bouteille",
    "Vous respectez le raccord spécifique prévu pour les hydrocarbures, sans adaptateur",
-   "Vous serrez plus fort avec un outil",
-   "Vous changez de sens de filetage sur votre propre raccord"
+   "Vous serrez plus fort à la clé pour engager quand même le filetage",
+   "Vous inversez le sens de filetage sur votre propre raccord habituel"
   ],
   "bonne": 1,
   "aide": "La fiche dit que ce raccord différent est une sécurité, pas un obstacle à contourner.",
@@ -4456,10 +4456,10 @@
   "type": "qcm",
   "enonce": "Vous venez de terminer une intervention sur un circuit hydrocarbure : remplacement du composant, épreuve, vide, charge et contrôle direct. Que devez-vous obligatoirement faire ensuite ?",
   "choix": [
-   "Rédiger un rapport avec le composant changé, les résultats de l'épreuve et du contrôle, et la quantité chargée",
-   "Rien, l'intervention se termine avec le contrôle direct",
-   "Noter juste la date de passage",
-   "Informer oralement le client, sans écrit"
+   "Rédiger un rapport : composant changé, résultats de l'épreuve et du contrôle, quantité chargée",
+   "Rien de plus : l'intervention se termine avec le contrôle direct d'étanchéité de tout le circuit",
+   "Noter simplement la date de passage sur le carnet de l'installation",
+   "Informer oralement le client, sans trace écrite de l'intervention"
   ],
   "bonne": 0,
   "aide": "La fiche le dit clairement : sans cette dernière étape écrite, l'intervention n'a pas de valeur.",
@@ -4478,7 +4478,7 @@
   "code": "12.13",
   "niveau": 2,
   "type": "qcm",
-  "enonce": "Vous arrivez pour intervenir sur un équipement au R-290 et constatez que les capteurs de gaz du local ne sont pas en service. Que faites-vous ?",
+  "enonce": "Vous arrivez pour intervenir sur un équipement au R-290 et constatez que les capteurs de gaz du local ne sont pas'en service. Que faites-vous ?",
   "choix": [
    "Vous réparez vous-même les capteurs avant de commencer",
    "Vous ne commencez pas et vous signalez le problème",
@@ -4488,12 +4488,12 @@
   "bonne": 1,
   "aide": "La fiche donne une règle claire pour ce cas : que fait-on si une mesure de sécurité du site manque ?",
   "remed": {
-   "regle": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
+   "regle": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes'en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
    "pourquoi": "Sur un fluide très inflammable comme le R-290, un capteur de gaz hors service prive le technicien de la seule alerte en cas de fuite pendant l'intervention.",
    "piege": "Penser que sa propre vigilance remplace un dispositif de détection défaillant."
   },
   "remediation_vers": "g12",
-  "explication": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
+  "explication": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes'en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
   "origine": "pack"
  },
  {
@@ -4504,10 +4504,10 @@
   "type": "qcm",
   "enonce": "Sur une machine au R-290, un léger écart de charge fait chuter les performances plus vite que sur une machine à grosse charge de HFC. Pourquoi ?",
   "choix": [
-   "Parce que le R-290 n'a pas de sous-refroidissement",
-   "Parce que le R-290 chauffe plus que les autres fluides",
-   "Parce que le R-290 est incompressible",
-   "Parce que ces circuits sont conçus avec une charge volontairement petite, donc le moindre écart déséquilibre vite l'échange"
+   "Parce que le R-290 n'offre pas de zone de sous-refroidissement exploitable sur ces circuits",
+   "Parce que le R-290 monte bien plus haut en température de refoulement que les HFC équivalents",
+   "Parce que le propane se comprime moins bien que les HFC : le rendement volumétrique chute vite",
+   "Parce que la charge y est volontairement réduite : le moindre écart pèse lourd en proportion"
   ],
   "bonne": 3,
   "aide": "La fiche compare une charge petite à une charge importante : lequel tolère le moins l'écart ?",
@@ -4531,7 +4531,7 @@
    "Attendre la validation du client avant toute trace écrite",
    "Refaire une deuxième fois l'épreuve d'étanchéité pour confirmer",
    "Ranger le matériel, aucune autre formalité n'est nécessaire",
-   "Consigner les données dans le registre de l'équipement et rédiger un rapport sur les essais et contrôles effectués"
+   "Consigner au registre et rédiger le rapport des essais"
   ],
   "bonne": 3,
   "aide": "Pense au tout dernier geste professionnel décrit dans la fiche, juste après les contrôles.",
@@ -4553,19 +4553,19 @@
   "enonce": "Sur une installation frigorifique, où se situent le plus souvent les points de fuite potentiels ?",
   "choix": [
    "Aux points d'assemblage (raccords, brasures) et aux pièces qui vibrent, comme le compresseur",
-   "Uniquement sur le pressostat de sécurité",
-   "Uniquement dans l'isolant qui recouvre les tuyauteries",
+   "Uniquement sur le pressostat de sécurité haute pression et sur ses raccords",
+   "Uniquement dans l'isolant qui recouvre les tuyauteries froides",
    "Sur un tube plein, loin de tout raccord ou de toute pièce en mouvement"
   ],
   "bonne": 0,
   "aide": "Une fuite ne sort pas d'un tube plein : pense à ce qui assemble deux pièces, ou à ce qui bouge.",
   "remed": {
-   "regle": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
+   "regle": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces'en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
    "pourquoi": "Un tube plein et correctement fixé ne peut pas fuir ; c'est la jonction entre deux pièces, ou la fatigue due au mouvement, qui crée un passage pour le fluide.",
    "piege": "Chercher au hasard sur toute la tuyauterie au lieu de cibler d'abord les raccords, les brasures et les points qui vibrent."
   },
   "remediation_vers": "g4a",
-  "explication": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
+  "explication": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces'en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
   "origine": "pack"
  },
  {
@@ -4576,8 +4576,8 @@
   "type": "qcm",
   "enonce": "Avant un contrôle d'étanchéité, vous consultez le registre de l'équipement. Il indique qu'un raccord flare de la ligne liquide a déjà été réparé pour fuite trois mois plus tôt. Que faites-vous de cette information ?",
   "choix": [
-   "Vous notez que c'est réparé et vous passez directement au reste de l'installation",
-   "Vous démontez le raccord pour le remplacer par précaution",
+   "Vous notez que c'est déjà réparé, puis vous passez directement au reste de l'installation contrôlée",
+   "Vous démontez systématiquement le raccord pour le remplacer par précaution avant le contrôle",
    "Vous l'ignorez, puisque la réparation est déjà faite",
    "Vous recontrôlez ce raccord en priorité, car un point réparé reste une partie à surveiller"
   ],
@@ -4601,9 +4601,9 @@
   "enonce": "Un contrôle d'étanchéité vient de se terminer, sans fuite détectée. Que devez-vous faire ensuite ?",
   "choix": [
    "Consigner dans le registre la date, la méthode utilisée, les points contrôlés et le résultat",
-   "Attendre le prochain contrôle pour tout noter en une seule fois",
-   "Informer seulement le client à l'oral",
-   "Rien, puisqu'il n'y a pas de fuite à signaler"
+   "Attendre le prochain contrôle pour tout noter en une seule fois dans le registre de l'équipement",
+   "Informer seulement le client à l'oral, en fin d'intervention",
+   "Rien, puisqu'il n'y a aucune fuite à signaler cette fois-ci"
   ],
   "bonne": 0,
   "aide": "Un contrôle qui n'est écrit nulle part n'a, réglementairement, jamais eu lieu.",
@@ -4649,9 +4649,9 @@
   "enonce": "Un compresseur est posé directement sur son châssis, sans plot antivibratile. Quel risque apparaît à moyen terme ?",
   "choix": [
    "La tuyauterie vibre en permanence et finit par se fissurer, ce qui provoque une fuite",
-   "Aucun risque particulier, c'est juste plus bruyant",
-   "Le compresseur consomme automatiquement moins d'énergie",
-   "Le niveau d'huile au voyant augmente"
+   "Le compresseur perd son huile par vibration et le voyant se vide peu à peu",
+   "La consommation électrique grimpe fortement, les vibrations freinant le moteur du compresseur",
+   "Le bruit augmente, mais l'installation n'en souffre pas mécaniquement"
   ],
   "bonne": 0,
   "aide": "Pense à ce qui protège normalement la tuyauterie des vibrations du compresseur.",
@@ -4696,10 +4696,10 @@
   "type": "qcm",
   "enonce": "Une soupape d'aspiration mal réglée sur un compresseur : quelle conséquence directe ?",
   "choix": [
-   "Une baisse automatique de la consommation électrique",
-   "Un excès d'huile visible au voyant",
+   "Une baisse automatique de la consommation électrique du moteur",
+   "Un excès d'huile bien visible au voyant du carter moteur",
    "Une perte de puissance, ou un compresseur qui s'abîme",
-   "Aucune conséquence tant que la machine démarre"
+   "Aucune conséquence tant que la machine démarre normalement"
   ],
   "bonne": 2,
   "aide": "Relis ce que fait la soupape d'aspiration à chaque cycle du compresseur.",
@@ -4720,10 +4720,10 @@
   "type": "qcm",
   "enonce": "Pourquoi bien installer, bien régler et bien entretenir un compresseur améliore l'efficacité énergétique ?",
   "choix": [
-   "Parce que cela dispense de tester l'étanchéité à l'azote",
+   "Parce que cela dispense de contrôler l'étanchéité du circuit à l'azote",
    "Parce que cela augmente automatiquement la puissance frigorifique de la machine",
-   "Parce qu'un compresseur bien installé, bien réglé et bien entretenu consomme moins et dure plus longtemps",
-   "Parce que cela change la classe de sécurité du fluide frigorigène"
+   "Parce qu'un compresseur bien réglé consomme moins et dure plus longtemps",
+   "Parce que cela abaisse la classe de sécurité du fluide frigorigène utilisé"
   ],
   "bonne": 2,
   "aide": "Pense à ce que devient la consommation électrique d'une machine bien entretenue.",
@@ -4744,8 +4744,8 @@
   "type": "qcm",
   "enonce": "En inspectant les conduites de refoulement et de liquide d'un condenseur, quels signes doivent alerter ?",
   "choix": [
-   "La tension d'alimentation du ventilateur",
-   "La température de l'air ambiant du local",
+   "La tension d'alimentation relevée aux bornes du ventilateur",
+   "La température de l'air ambiant relevée dans le local technique",
    "Des traces d'huile, de la corrosion, ou un isolant abîmé",
    "Le niveau d'huile dans le carter du compresseur"
   ],
@@ -4768,10 +4768,10 @@
   "type": "qcm",
   "enonce": "Dans quelles conditions doit-on purger les gaz non condensables (incondensables) d'un condenseur ?",
   "choix": [
-   "Juste après le démarrage du compresseur",
-   "Installation en fonctionnement, fluide en mouvement",
+   "Juste après le démarrage du compresseur, la machine étant chaude",
+   "Installation en fonctionnement, fluide en pleine circulation",
    "Installation à l'arrêt, froide, avec récupération du fluide",
-   "Uniquement pendant la mise sous vide de l'installation"
+   "Uniquement pendant la mise sous vide de l'installation neuve"
   ],
   "bonne": 2,
   "aide": "Pense à l'état de l'installation qui rend la purge sûre pour le technicien et pour l'environnement.",
@@ -4792,10 +4792,10 @@
   "type": "qcm",
   "enonce": "Que doit contenir le rapport écrit rédigé après une visite d'un condenseur ?",
   "choix": [
-   "Le nom du fabricant du compresseur",
-   "Le prix de l'intervention pour le client",
+   "Le nom du fabricant du compresseur et son numéro de série complet",
+   "Le prix de l'intervention et le détail de tout ce qui est facturé au client",
    "Ailettes encrassées, ventilateur bruyant, trace d'huile, pression anormale",
-   "Uniquement la date de la dernière charge de fluide"
+   "Uniquement la date de la dernière charge de fluide effectuée"
   ],
   "bonne": 2,
   "aide": "Pense aux signes visuels et sonores relevés pendant la visite du condenseur.",
@@ -4817,9 +4817,9 @@
   "enonce": "Comment un condenseur bien entretenu permet-il de faire des économies d'énergie ?",
   "choix": [
    "Des ailettes propres et un ventilateur en bon état font travailler le compresseur moins fort",
-   "En augmentant volontairement la pression de condensation",
-   "En réduisant le sous-refroidissement à zéro",
-   "En arrêtant le ventilateur pendant la nuit"
+   "En augmentant volontairement la pression de condensation de toute l'installation",
+   "En réduisant le sous-refroidissement à zéro à la sortie de la batterie",
+   "En arrêtant le ventilateur pendant la nuit pour économiser du courant"
   ],
   "bonne": 0,
   "aide": "Pense à ce qui empêche l'air de bien circuler à travers la batterie du condenseur.",
@@ -4840,9 +4840,9 @@
   "type": "qcm",
   "enonce": "Vous installez un régulateur de pression d'évaporation sur une nouvelle installation. Comment déterminez-vous sa valeur de réglage ?",
   "choix": [
-   "En copiant le réglage du pressostat BP",
-   "Il n'y a rien à régler, il fonctionne seul",
-   "En fixant une valeur basse par sécurité",
+   "En copiant le réglage du pressostat basse pression",
+   "Il n'y a rien à régler, l'organe fonctionne seul",
+   "En fixant une valeur basse par simple sécurité",
    "En suivant la fiche constructeur de l'organe"
   ],
   "bonne": 3,
@@ -4865,9 +4865,9 @@
   "enonce": "La conduite d'aspiration relie l'évaporateur au compresseur. Pourquoi la pose-t-on en légère pente vers le compresseur ?",
   "choix": [
    "Pour que l'huile transportée par la vapeur revienne vers le compresseur au lieu de stagner",
-   "Pour réduire la surchauffe",
-   "Pour empêcher le givre de se former",
-   "Pour diminuer la vitesse du gaz"
+   "Pour réduire la surchauffe du gaz aspiré avant son arrivée au compresseur",
+   "Pour empêcher le givre de se former sur toute la longueur de la ligne",
+   "Pour diminuer la vitesse du gaz et limiter le bruit dans la conduite"
   ],
   "bonne": 0,
   "aide": "Repense à ce qui circule avec le gaz dans la conduite d'aspiration, et à ce qui se passerait s'il restait bloqué dans un point bas.",
@@ -4888,10 +4888,10 @@
   "type": "qcm",
   "enonce": "Plusieurs évaporateurs sont raccordés à un même compresseur. Pourquoi règle-t-on la soupape de régulation de pression d'évaporation sur chacun d'eux ?",
   "choix": [
-   "Pour remplacer le pressostat de chaque évaporateur",
-   "Pour couper l'alimentation électrique du compresseur en cas de défaut",
-   "Pour équilibrer la pression entre les évaporateurs, ou protéger un produit sensible au froid",
-   "Pour mesurer la surchauffe à l'aspiration"
+   "Pour remplacer le pressostat basse pression monté sur chaque évaporateur",
+   "Pour couper l'alimentation électrique du compresseur dès qu'un défaut survient",
+   "Pour équilibrer les pressions, ou protéger un produit sensible au froid",
+   "Pour mesurer la surchauffe à l'aspiration de chaque évaporateur"
   ],
   "bonne": 2,
   "aide": "Cette soupape ne coupe pas le compresseur : que fait-elle alors ?",
@@ -4912,10 +4912,10 @@
   "type": "qcm",
   "enonce": "Après une visite de l'évaporateur, que doit contenir le rapport d'état pour être utile ?",
   "choix": [
-   "La liste des outils utilisés pendant la visite",
-   "Seulement la date et la durée de l'intervention",
-   "La description des anomalies observées : corrosion, fixation desserrée, bac sale, conduit de dégivrage abîmé",
-   "Uniquement la valeur de la surchauffe mesurée"
+   "La liste des outils employés et le temps passé, pour justifier la facturation de la visite",
+   "La date, l'heure d'arrivée et la signature du client au bas du bon d'intervention signé",
+   "La description des anomalies vues : corrosion, fixation, bac encrassé, écoulement",
+   "Les seules valeurs relevées : surchauffe, pression d'aspiration et température de soufflage"
   ],
   "bonne": 2,
   "aide": "Un bon rapport dit ce qui pourrait mal tourner plus tard, pas seulement ce qui va bien.",
@@ -4937,9 +4937,9 @@
   "enonce": "Une vanne doit toujours être montée dans le sens de la flèche gravée sur son corps, comme un filtre déshydrateur. Que risque-t-on si on la monte à l'envers ?",
   "choix": [
    "Une erreur de montage irréversible, qu'on ne peut corriger qu'en découpant l'installation",
-   "Une simple baisse de rendement, sans conséquence sur le montage",
-   "Un dérèglement du bulbe du détendeur thermostatique",
-   "Rien, on peut la remonter plus tard sans problème"
+   "Une simple baisse de rendement, que l'on rattrape en réglant le détendeur un peu plus ouvert",
+   "Un dérèglement du bulbe du détendeur thermostatique, à recalibrer après coup",
+   "Rien : il suffit de la déposer et de la remonter dans le bon sens"
   ],
   "bonne": 0,
   "aide": "Pense à ce que dit la fiche sur les erreurs de montage des vannes et du filtre déshydrateur.",
@@ -4963,7 +4963,7 @@
    "Le détendeur électronique ne sert que sur les petits appareils, comme le capillaire",
    "Le détendeur électronique coupe le circuit quand un seuil de pression est franchi",
    "Le détendeur électronique régule la pression de condensation, le mécanique régule la surchauffe",
-   "Le détendeur électronique utilise une sonde et un régulateur, ce qui le rend plus précis et plus rapide que le bulbe du détendeur mécanique"
+   "Le détendeur électronique pilote la vanne par sonde et régulateur, plus vite et plus finement"
   ],
   "bonne": 3,
   "aide": "Cherche dans la fiche ce qui remplace le bulbe sur un détendeur électronique.",
@@ -4984,10 +4984,10 @@
   "type": "qcm",
   "enonce": "Que fait la soupape de régulation de pression sur une installation frigorifique ?",
   "choix": [
-   "Elle coupe le circuit dès qu'un seuil de pression est franchi",
+   "Elle coupe complètement le circuit dès qu'un seuil de pression donné est franchi",
    "Elle module en continu pour maintenir une pression stable à un point du circuit",
-   "Elle règle la surchauffe en sortie d'évaporateur",
-   "Elle commande le compresseur selon une température mesurée par une sonde"
+   "Elle règle la surchauffe mesurée en sortie d'évaporateur",
+   "Elle commande le démarrage du compresseur selon une température mesurée par sonde"
   ],
   "bonne": 1,
   "aide": "Compare avec le rôle du limiteur de pression, qui lui coupe le circuit à un seuil : la soupape de régulation agit autrement.",
@@ -5008,80 +5008,80 @@
   "type": "qcm",
   "enonce": "Comment est réglé un limiteur de pression mécanique ?",
   "choix": [
-   "Par un ressort",
-   "Par une sonde reliée à un régulateur numérique",
-   "Par un bulbe relié à des contacts électriques par un tube fin",
-   "Par un capteur relié à un module électronique"
+   "Par un ressort taré",
+   "Par une sonde numérique",
+   "Par un bulbe capillaire",
+   "Par un module électronique"
   ],
   "bonne": 0,
   "aide": "Pense à la pièce mécanique qui tare le limiteur, différente du capteur du limiteur électronique.",
   "remed": {
-   "regle": "Le limiteur de pression mécanique est réglé par un ressort (tarage mécanique). Le limiteur de pression électronique utilise un capteur relié à un module. Dans les deux cas, il coupe le circuit dès qu'un seuil de pression est franchi, en haute comme en basse pression.",
+   "regle": "Le limiteur de pression mécanique est réglé par un ressort (tarage mécanique). Le limiteur de pression électronique utilise un capteur relié à un module. Dans les deux cas, il coupe le circuit dès qu'un seuil de pression'est franchi, en haute comme en basse pression.",
    "pourquoi": "Le type de technologie détermine comment on accède au réglage et comment on le vérifie, mais le rôle reste le même : une sécurité qui coupe avant l'incident.",
    "piege": "Ne jamais retoucher un limiteur de sécurité « pour voir » : son seuil se règle selon la fiche constructeur, jamais à l'estime. Ne pas le confondre avec le bulbe et le tube fin, qui appartiennent au thermostat mécanique."
   },
   "remediation_vers": "g9b",
-  "explication": "Le limiteur de pression mécanique est réglé par un ressort (tarage mécanique). Le limiteur de pression électronique utilise un capteur relié à un module. Dans les deux cas, il coupe le circuit dès qu'un seuil de pression est franchi, en haute comme en basse pression.",
+  "explication": "Le limiteur de pression mécanique est réglé par un ressort (tarage mécanique). Le limiteur de pression électronique utilise un capteur relié à un module. Dans les deux cas, il coupe le circuit dès qu'un seuil de pression'est franchi, en haute comme en basse pression.",
   "origine": "pack"
  },
  {
   "id": "pk-s5-1",
   "dc": "Sécurité",
   "code": null,
-  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l'annexe II.B",
   "niveau": 1,
   "type": "qcm",
   "enonce": "Quelle est la dernière étape avant de poser les mains sur un circuit électrique consigné ?",
   "choix": [
-   "Prévenir le client",
-   "Vérifier l absence de tension avec un VAT",
-   "Poser une pancarte",
-   "Ouvrir le coffret"
+   "Prévenir le client de la coupure prévue",
+   "Vérifier l'absence de tension avec un VAT",
+   "Poser une pancarte de consignation visible",
+   "Ouvrir le coffret électrique concerné"
   ],
   "bonne": 1,
   "aide": "Consigner ne suffit pas : il faut le prouver, appareil en main.",
   "remed": {
-   "regle": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
+   "regle": "On vérifie TOUJOURS l'absence de tension au VAT avant de toucher.",
    "pourquoi": "Un disjoncteur peut être mal repéré, une alimentation de secours peut subsister : seule la mesure prouve que le circuit est hors tension.",
-   "piege": "« Je l ai coupé moi-même » ne protège de rien. Un circuit se vérifie, il ne se suppose pas."
+   "piege": "« Je l'ai coupé moi-même » ne protège de rien. Un circuit se vérifie, il ne se suppose pas."
   },
   "remediation_vers": "s5",
-  "explication": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
+  "explication": "On vérifie TOUJOURS l'absence de tension au VAT avant de toucher.",
   "origine": "pack"
  },
  {
   "id": "pk-s5-2",
   "dc": "Sécurité",
   "code": null,
-  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l'annexe II.B",
   "niveau": 2,
   "type": "qcm",
-  "enonce": "Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s en être servi ?",
+  "enonce": "Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s'en être servi ?",
   "choix": [
-   "Pour économiser la pile",
-   "Parce qu un VAT en panne indiquerait « pas de tension » sur un circuit pourtant sous tension",
-   "Pour l étalonner",
-   "C est une simple habitude"
+   "Parce que le VAT doit être étalonné chaque année en atelier par un organisme agréé",
+   "Parce qu'un VAT en panne indiquerait « pas de tension » sur un circuit pourtant sous tension",
+   "Parce que la mesure n'est fiable qu'après un temps de chauffe de quelques secondes",
+   "Parce que la consignation n'est valable que vérifiée par deux personnes différentes"
   ],
   "bonne": 1,
-  "aide": "Demandez-vous ce qui se passe si l appareil lui-même est défaillant.",
+  "aide": "Demandez-vous ce qui se passe si l'appareil lui-même est défaillant.",
   "remed": {
-   "regle": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
-   "pourquoi": "Un appareil défaillant affiche l absence de tension quoi qu il arrive. Le tester après prouve qu il fonctionnait encore au moment de la mesure.",
-   "piege": "Un VAT qui n indique rien peut vouloir dire deux choses : pas de tension, ou appareil mort. Seul le double contrôle tranche."
+   "regle": "Le VAT se teste sur une source connue avant l'usage, et de nouveau après.",
+   "pourquoi": "Un appareil défaillant affiche l'absence de tension quoi qu'il arrive. Le tester après prouve qu'il fonctionnait encore au moment de la mesure.",
+   "piege": "Un VAT qui n'indique rien peut vouloir dire deux choses : pas de tension, ou appareil mort. Seul le double contrôle tranche."
   },
   "remediation_vers": "s5",
-  "explication": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
+  "explication": "Le VAT se teste sur une source connue avant l'usage, et de nouveau après.",
   "origine": "pack"
  },
  {
   "id": "pk-s5-3",
   "dc": "Sécurité",
   "code": null,
-  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l'annexe II.B",
   "niveau": 2,
   "type": "qcm",
-  "enonce": "Une machine vient d être mise hors tension. Que peut-il rester de dangereux dans le coffret ?",
+  "enonce": "Une machine vient d'être mise hors tension. Que peut-il rester de dangereux dans le coffret ?",
   "choix": [
    "Plus rien, la coupure suffit",
    "Des condensateurs encore chargés",
@@ -5089,11 +5089,11 @@
    "Uniquement du fluide"
   ],
   "bonne": 1,
-  "aide": "Certains composants stockent l énergie électrique et ne se vident pas instantanément.",
+  "aide": "Certains composants stockent l'énergie électrique et ne se vident pas instantanément.",
   "remed": {
    "regle": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
-   "pourquoi": "Il accumule de l énergie pour le démarrage du moteur. Coupée, cette énergie reste stockée et peut provoquer un choc.",
-   "piege": "Couper puis ouvrir aussitôt le coffret est un réflexe fréquent — et c est exactement le moment où le condensateur est encore chargé."
+   "pourquoi": "Il accumule de l'énergie pour le démarrage du moteur. Coupée, cette énergie reste stockée et peut provoquer un choc.",
+   "piege": "Couper puis ouvrir aussitôt le coffret est un réflexe fréquent — et c'est exactement le moment où le condensateur est encore chargé."
   },
   "remediation_vers": "s5",
   "explication": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
@@ -5109,7 +5109,7 @@
   "choix": [
    "La lettre dit le PRP, le chiffre dit la pression de service",
    "La lettre dit la toxicité, le chiffre dit l'inflammabilité",
-   "La lettre dit la famille chimique, le chiffre dit l'année de mise sur le marché",
+   "La lettre dit la famille chimique, le chiffre dit l'année d'homologation",
    "La lettre dit l'inflammabilité, le chiffre dit la toxicité"
   ],
   "bonne": 1,
@@ -5133,14 +5133,14 @@
   "choix": [
    "A2L, comme le R-32",
    "A3 : très inflammable",
-   "A1, car il n'est pas toxique",
+   "A1, il n'est pas toxique",
    "B2L, comme l'ammoniac"
   ],
   "bonne": 1,
   "aide": "Demandez-vous à quelle famille chimique appartient le propane.",
   "remed": {
    "regle": "Le R-290 est classé A3 : toxicité faible, mais très inflammable.",
-   "pourquoi": "Le propane est un hydrocarbure. Tous les hydrocarbures utilisés en froid — R-290, R-600a (isobutane), R-1270 (propylène) — sont A3. Les A2L sont des HFC à faible PRP comme le R-32, ou des HFO comme le R-1234yf.",
+   "pourquoi": "Le propane est un hydrocarbure. Tous les hydrocarbures utilisés'en froid — R-290, R-600a (isobutane), R-1270 (propylène) — sont A3. Les A2L sont des HFC à faible PRP comme le R-32, ou des HFO comme le R-1234yf.",
    "piege": "La confusion R-290 = A2L est l'erreur la plus fréquente, et elle se trouve même dans des documents mal rédigés. Elle conduit à appliquer des précautions insuffisantes : ventilation sous-dimensionnée, matériel électrique inadapté, charge excessive."
   },
   "remediation_vers": "cl1",
@@ -5155,10 +5155,10 @@
   "type": "qcm",
   "enonce": "À quoi sert concrètement de connaître la classe de sécurité d'un fluide avant d'intervenir ?",
   "choix": [
-   "Uniquement à remplir la fiche d'intervention",
-   "Elle commande les EPI, le matériel électrique admis, la ventilation, la détection et la charge maximale du local",
-   "Elle sert seulement à calculer le PRP de l'installation",
-   "Elle indique le prix du fluide au kilogramme"
+   "Uniquement à remplir la fiche d'intervention et le registre de l'équipement",
+   "Elle commande les EPI, le matériel admis, la ventilation et la charge maximale du local",
+   "Elle sert seulement au calcul du PRP de l'installation et de sa charge totale en tCO₂e",
+   "Elle indique le prix du fluide au kilogramme livré"
   ],
   "bonne": 1,
   "aide": "La classe n'est pas une étiquette : elle décide de tout ce qui vous protège.",
@@ -5180,9 +5180,9 @@
   "enonce": "Que désigne la LIE d'un gaz inflammable ?",
   "choix": [
    "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
-   "La température minimale d'inflammation du gaz",
-   "La pression maximale admissible dans la bouteille",
-   "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+   "La température minimale d'inflammation de ce gaz au contact de l'air du local technique",
+   "La pression maximale admissible dans la bouteille de stockage",
+   "La quantité de gaz au-delà de laquelle il faut déclarer l'installation en préfecture"
   ],
   "bonne": 0,
   "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
@@ -5203,17 +5203,17 @@
   "type": "qcm",
   "enonce": "Peut-on se fier à son odorat pour détecter une fuite de R-290 dans un local technique ?",
   "choix": [
-   "Oui, le propane a une odeur caractéristique très reconnaissable",
+   "Oui, le propane possède une odeur caractéristique, très reconnaissable en local fermé",
    "Non : le R-290 du froid est un propane de haute pureté, sans l'odorisant ajouté au gaz domestique",
-   "Oui, à condition de rester moins de cinq minutes dans le local",
-   "Oui, si l'on connaît bien l'odeur du gaz de ville"
+   "Oui, à condition de ne pas rester plus de cinq minutes dans le local technique",
+   "Oui, si l'on connaît bien l'odeur du gaz de ville domestique"
   ],
   "bonne": 1,
   "aide": "L'odeur du gaz domestique n'est pas celle du gaz lui-même.",
   "remed": {
    "regle": "Le R-290 utilisé en froid ne contient pas d'odorisant : seule une mesure à l'explosimètre renseigne sur l'état de l'atmosphère.",
    "pourquoi": "L'odeur du gaz domestique vient d'un produit ajouté volontairement pour permettre la détection par le nez. Le propane de qualité frigorifique est de haute pureté et ne le contient pas.",
-   "piege": "Même quand une odeur existe, son seuil de perception n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger. L'atmosphère peut être explosive avant d'être perceptible."
+   "piege": "Même quand une odeur existe, son seuil de perception n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on'est loin ou près du danger. L'atmosphère peut être explosive avant d'être perceptible."
   },
   "remediation_vers": "cl2",
   "explication": "Le R-290 utilisé en froid ne contient pas d'odorisant : seule une mesure à l'explosimètre renseigne sur l'état de l'atmosphère.",
@@ -5227,8 +5227,8 @@
   "type": "qcm",
   "enonce": "Un explosimètre affiche « 20 % LIE ». Comment lisez-vous cette valeur ?",
   "choix": [
-   "20 % du volume du local est occupé par le gaz",
-   "L'atmosphère contient un cinquième de la concentration à partir de laquelle elle deviendrait inflammable",
+   "Que 20 % du volume total du local technique est désormais occupé par le gaz recherché",
+   "L'atmosphère est à un cinquième de la concentration qui la rendrait inflammable",
    "Le mélange est explosif dès 20 %, il faut évacuer immédiatement sans autre mesure",
    "L'appareil signale qu'il lui reste 20 % de charge de batterie"
   ],
@@ -5251,10 +5251,10 @@
   "type": "qcm",
   "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
   "choix": [
-   "Près du plafond, car les gaz montent toujours",
+   "Près du plafond, car les gaz montent toujours vers le haut",
    "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
-   "Il se répartit uniformément et sans danger dans tout le volume",
-   "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+   "Il se répartit uniformément, et sans danger particulier, dans tout le volume du local technique",
+   "Il s'échappe seul par les interstices, sans jamais s'accumuler nulle part"
   ],
   "bonne": 1,
   "aide": "Comparez sa masse à celle de l'air.",
@@ -5275,10 +5275,10 @@
   "type": "qcm",
   "enonce": "En quoi le danger du CO₂ en local fermé diffère-t-il de celui de l'azote ?",
   "choix": [
-   "Il n'y a aucune différence : les deux prennent la place de l'oxygène",
-   "Le CO₂ déplace l'oxygène ET agit par lui-même sur l'organisme, alors que l'azote est inerte",
-   "Le CO₂ est inflammable, contrairement à l'azote",
-   "L'azote est plus dangereux car il est toxique"
+   "Il n'y a aucune différence réelle : les deux prennent la place de l'oxygène",
+   "Le CO₂ déplace l'oxygène ET agit sur l'organisme ; l'azote est inerte",
+   "Le CO₂ est un gaz inflammable, à la différence de l'azote qui reste neutre",
+   "L'azote est bien plus dangereux car il est directement toxique pour l'organisme"
   ],
   "bonne": 1,
   "aide": "L'un des deux gaz ne fait que prendre la place ; l'autre fait quelque chose de plus.",
@@ -5299,9 +5299,9 @@
   "type": "qcm",
   "enonce": "Vous trouvez un collègue inconscient au fond d'une fosse abritant une installation au CO₂. Que faites-vous ?",
   "choix": [
-   "Je descends immédiatement le chercher, chaque seconde compte",
+   "Je descends immédiatement le chercher, chaque seconde compte vraiment",
    "Je donne l'alerte, je ventile et je fais intervenir les secours, sans descendre",
-   "Je descends en retenant ma respiration",
+   "Je descends en retenant ma respiration, juste le temps de le remonter",
    "J'attends seul quelques minutes que le gaz se dissipe de lui-même"
   ],
   "bonne": 1,
@@ -5347,10 +5347,10 @@
   "type": "qcm",
   "enonce": "Un masque à cartouche protège-t-il dans un local chargé en CO₂ ?",
   "choix": [
-   "Oui, c'est justement son rôle",
+   "Oui, c'est précisément le rôle d'une cartouche filtrante bien adaptée",
    "Non : une cartouche ne retient pas le CO₂ et ne fournit pas d'oxygène",
-   "Oui, à condition de ne pas rester plus de quelques minutes",
-   "Oui, s'il s'agit d'une cartouche neuve"
+   "Oui, à condition de ne pas rester plus de quelques minutes dans le local",
+   "Oui, s'il s'agit d'une cartouche neuve, adaptée au gaz effectivement présent"
   ],
   "bonne": 1,
   "aide": "Demandez-vous ce qu'une cartouche sait faire, et ce qu'elle ne sait pas fabriquer.",
@@ -5369,12 +5369,12 @@
   "code": "13.14",
   "niveau": 2,
   "type": "qcm",
-  "enonce": "Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous en conclure ?",
+  "enonce": "Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous'en conclure ?",
   "choix": [
-   "Que le détecteur fonctionne et mesure correctement",
+   "Que le détecteur fonctionne bien et qu'il mesure correctement l'atmosphère de tout le local technique",
    "Rien de plus qu'une mise sous tension : une cellule usée reste allumée sans plus rien mesurer",
-   "Qu'une fuite est en cours",
-   "Que le local a été ventilé récemment"
+   "Qu'une fuite de CO₂ est en cours dans le local et qu'il faut évacuer les lieux sans délai",
+   "Que le local a été ventilé récemment par la ventilation mécanique"
   ],
   "bonne": 1,
   "aide": "Un voyant dit qu'un appareil est alimenté, pas qu'il voit quelque chose.",
@@ -5395,10 +5395,10 @@
   "type": "qcm",
   "enonce": "Un fluide est en train de bouillir. Vous continuez à lui apporter de la chaleur. Que devient sa température ?",
   "choix": [
-   "Elle continue de monter, mais plus lentement",
+   "Elle continue de monter, mais nettement plus lentement qu'avant",
    "Elle ne bouge pas tant qu'il reste du liquide à vaporiser",
-   "Elle redescend",
-   "Elle monte par à-coups, à chaque bulle"
+   "Elle redescend légèrement pendant l'ébullition",
+   "Elle monte par à-coups, à chaque train de bulles qui remonte"
   ],
   "bonne": 1,
   "aide": "Cette chaleur-là ne se voit pas au thermomètre. C'est pour cela qu'on la dit « latente », c'est-à-dire cachée.",
@@ -5429,7 +5429,7 @@
   "remed": {
    "regle": "Le palier de changement d'état commence au point de bulle — la première bulle de vapeur — et finit au point de rosée — la dernière goutte de liquide.",
    "pourquoi": "Ces deux points sont les frontières entre les trois états du fluide : liquide, mélange saturé, vapeur. Ce sont eux qui donnent leur sens aux mots surchauffe et sous-refroidissement.",
-   "piege": "Le point critique est autre chose : c'est le sommet de la cloche du diagramme, au-delà duquel le fluide ne se sépare plus en liquide et en vapeur."
+   "piege": "Le point critique est autre chose : c'est le sommet de la cloche du diagramme, au-delà duquel le fluide ne se sépare plus'en liquide et en vapeur."
   },
   "remediation_vers": "g1s",
   "explication": "Le palier de changement d'état commence au point de bulle — la première bulle de vapeur — et finit au point de rosée — la dernière goutte de liquide.",
@@ -5444,9 +5444,9 @@
   "enonce": "Pourquoi une machine frigorifique travaille-t-elle avec un fluide qui change d'état, plutôt qu'avec de l'air ?",
   "choix": [
    "Parce que le changement d'état permet d'échanger beaucoup de chaleur sans que la température varie",
-   "Parce que l'air ne peut pas circuler dans des tubes de cuivre",
-   "Parce que la réglementation impose un fluide frigorigène",
-   "Parce que l'air reviendrait plus cher à comprimer"
+   "Parce que l'air ne circulerait pas correctement dans des tubes de cuivre aussi fins",
+   "Parce que la réglementation impose l'emploi d'un fluide frigorigène homologué",
+   "Parce que comprimer de l'air reviendrait bien plus cher en consommation électrique"
   ],
   "bonne": 0,
   "aide": "Repensez au palier : que se passe-t-il en quantité d'énergie échangée, pendant que la température ne bouge pas ?",
@@ -5467,10 +5467,10 @@
   "type": "qcm",
   "enonce": "Sur un mélange zéotrope (série R-4xx), qu'est-ce qui distingue le palier de celui d'un corps pur ?",
   "choix": [
-   "Il n'y a pas de palier du tout",
+   "Il n'y a pas de palier du tout, la température monte en continu",
    "La température monte lentement pendant le changement d'état : c'est le glissement",
-   "Le palier dure deux fois plus longtemps",
-   "Le palier se fait à pression constante, contrairement au corps pur"
+   "Le palier dure deux fois plus longtemps que sur un corps pur",
+   "Le palier se fait à pression rigoureusement constante, à la différence d'un corps pur"
   ],
   "bonne": 1,
   "aide": "Les composants du mélange ne se vaporisent pas tous à la même température.",
@@ -5494,14 +5494,14 @@
    "À gauche de la cloche",
    "Sous la cloche",
    "À droite de la cloche",
-   "Au-dessus du point critique"
+   "Au-dessus de la cloche"
   ],
   "bonne": 1,
   "aide": "La cloche est une frontière. Ce qu'elle enferme, c'est le palier.",
   "remed": {
    "regle": "La courbe en cloche partage le diagramme en trois : liquide à gauche, mélange liquide + vapeur sous la cloche, vapeur surchauffée à droite.",
    "pourquoi": "Le flanc gauche de la cloche est la courbe de bulle, le flanc droit la courbe de rosée. La cloche du diagramme et le palier de la courbe de chauffe sont la même chose, vue autrement.",
-   "piege": "Le sommet de la cloche est le point critique : au-dessus, le fluide ne se sépare plus en liquide et en vapeur, il n'y a donc plus de palier."
+   "piege": "Le sommet de la cloche est le point critique : au-dessus, le fluide ne se sépare plus'en liquide et en vapeur, il n'y a donc plus de palier."
   },
   "remediation_vers": "g1b",
   "explication": "La courbe en cloche partage le diagramme en trois : liquide à gauche, mélange liquide + vapeur sous la cloche, vapeur surchauffée à droite.",
@@ -5540,9 +5540,9 @@
   "enonce": "Pourquoi la pression est-elle portée sur une échelle logarithmique dans ce diagramme ?",
   "choix": [
    "Pour que la basse pression et la haute pression soient lisibles sur la même feuille",
-   "Parce que la pression se mesure en logarithmes",
-   "Pour que le cycle forme un rectangle",
-   "Parce que l'enthalpie est elle aussi logarithmique"
+   "Parce que la pression se mesure naturellement en logarithmes, comme le bruit en décibels",
+   "Pour que le cycle forme un rectangle bien régulier sur le tracé",
+   "Parce que l'enthalpie est elle aussi portée en échelle logarithmique"
   ],
   "bonne": 0,
   "aide": "Imaginez les deux pressions du circuit reportées sur une règle graduée ordinaire : laquelle des deux deviendrait illisible ?",
@@ -5563,10 +5563,10 @@
   "type": "qcm",
   "enonce": "Un technicien annonce « la surchauffe est de 7 ». De quoi parle-t-il exactement ?",
   "choix": [
-   "De la température relevée sur le tube d'aspiration",
-   "De l'écart, en kelvins, entre la température mesurée et la température de changement d'état à la pression lue",
-   "De la pression lue au manomètre basse pression",
-   "Du nombre de degrés au-dessus de zéro"
+   "De la température relevée au contact du tube d'aspiration, soit les 7 °C lus sur son thermomètre",
+   "D'un écart de 7 K entre la température lue à l'aspiration et celle de vaporisation du fluide",
+   "De la pression d'aspiration lue au manomètre basse pression, exprimée en bars relatifs",
+   "De 7 degrés au-dessus de zéro mesurés dans l'ambiance de la chambre froide en marche"
   ],
   "bonne": 1,
   "aide": "Le mot important n'est pas « 7 » : c'est ce que 7 mesure. Une valeur unique, ou un écart entre deux valeurs ?",
@@ -5587,10 +5587,10 @@
   "type": "qcm",
   "enonce": "De quoi a-t-on besoin, au minimum, pour déterminer une surchauffe sur une installation en marche ?",
   "choix": [
-   "D'un thermomètre de contact seul",
+   "D'un thermomètre de contact seul, posé sur la ligne d'aspiration",
    "D'un manomètre, d'un thermomètre de contact, et de la table de saturation du fluide présent",
-   "D'un manomètre seul",
-   "D'un détecteur électronique de fuite"
+   "D'un manomètre seul : la pression suffit à déduire la surchauffe",
+   "D'un thermomètre infrarouge, d'un détecteur électronique de fuite et de la documentation machine"
   ],
   "bonne": 1,
   "aide": "Une différence se calcule entre deux valeurs. D'où vient la seconde ?",
@@ -5611,10 +5611,10 @@
   "type": "qcm",
   "enonce": "Quelle est la différence entre la surchauffe utile et la surchauffe totale ?",
   "choix": [
-   "L'utile se mesure à l'arrêt, la totale en fonctionnement",
-   "L'utile est celle gagnée dans l'évaporateur ; la totale y ajoute ce que la ligne d'aspiration apporte jusqu'au compresseur",
-   "L'utile concerne le condenseur, la totale l'évaporateur",
-   "C'est la même valeur, exprimée dans deux unités différentes"
+   "L'utile se mesure au bulbe du détendeur, la totale au clapet de refoulement du compresseur",
+   "L'utile se gagne dans l'évaporateur ; la totale y ajoute la ligne d'aspiration",
+   "L'utile concerne la basse pression, la totale additionne surchauffe et sous-refroidissement",
+   "C'est la même grandeur : l'une s'exprime en kelvins, l'autre en degrés Celsius relatifs"
   ],
   "bonne": 1,
   "aide": "L'une des deux est dite « utile » parce qu'elle a servi à quelque chose de précis. À quoi ?",
@@ -5636,9 +5636,9 @@
   "enonce": "À quoi sert le sous-refroidissement en sortie de condenseur ?",
   "choix": [
    "À garantir qu'il arrive du liquide pur, sans bulles de vapeur, au détendeur",
-   "À protéger le compresseur contre le coup de liquide",
-   "À accélérer le dégivrage de l'évaporateur",
-   "À limiter la pression de condensation par temps chaud"
+   "À protéger le compresseur contre les coups de liquide à l'aspiration",
+   "À accélérer le dégivrage naturel de la batterie évaporateur",
+   "À limiter la pression de condensation par forte chaleur extérieure"
   ],
   "bonne": 0,
   "aide": "Le sous-refroidissement se prend en sortie de condenseur. Quel organe se trouve juste après ?",
@@ -5660,15 +5660,15 @@
   "enonce": "Avant de charger une installation, pourquoi commence-t-on par déterminer l'état du fluide — sous-refroidi, saturé ou surchauffé ?",
   "choix": [
    "Parce que cet état commande la méthode et la quantité de remplissage",
-   "Parce que le registre exige de le noter",
-   "Parce que cela permet de connaître le PRP du fluide",
-   "Parce que cela dispense de peser la bouteille"
+   "Parce que le registre de l'équipement exige de le noter",
+   "Parce que cela permet de connaître le PRP du fluide chargé",
+   "Parce que cela dispense de peser la bouteille de charge"
   ],
   "bonne": 0,
   "aide": "Le référentiel place ce diagnostic AVANT le geste de charge. Que déciderait-on ensuite, s'il était faux ?",
   "remed": {
    "regle": "On détermine d'abord l'état et les conditions du fluide, puis on en déduit la méthode de remplissage — en phase liquide ou en phase vapeur — et le volume adapté.",
-   "pourquoi": "Charger en phase vapeur un mélange zéotrope modifie la composition de ce qui reste dans la bouteille ; charger sans savoir où en est l'installation conduit à sur-charger ou sous-charger.",
+   "pourquoi": "Charger en phase vapeur un mélange zéotrope modifie la composition de ce qui reste dans la bouteille ; charger sans savoir où en'est l'installation conduit à sur-charger ou sous-charger.",
    "piege": "Croire que la pesée suffit. La balance dit combien on a mis, elle ne dit pas s'il fallait le mettre en liquide ou en vapeur, ni si la charge était déjà correcte."
   },
   "remediation_vers": "g1e",
@@ -5683,10 +5683,10 @@
   "type": "qcm",
   "enonce": "En plein hiver, la haute pression d'une installation chute et la machine ne fait plus assez de froid, alors qu'aucun organe n'est en panne. Quel organe est prévu pour éviter cela ?",
   "choix": [
-   "Le pressostat haute pression de sécurité",
+   "Le pressostat haute pression de sécurité du groupe",
    "Le régulateur de pression de sortie du condenseur",
-   "Le régulateur de pression d'évaporation",
-   "Le filtre déshydrateur"
+   "Le régulateur de pression d'évaporation des postes",
+   "Le filtre déshydrateur monté sur la ligne de liquide"
   ],
   "bonne": 1,
   "aide": "Quand il fait froid dehors, le condenseur évacue la chaleur trop facilement. Qu'est-ce qui en souffre, en aval ?",
@@ -5707,20 +5707,20 @@
   "type": "qcm",
   "enonce": "Quelle est la différence entre le pressostat haute pression et le régulateur de pression de condensation ?",
   "choix": [
-   "Le pressostat coupe l'alimentation du compresseur ; le régulateur ne coupe rien, il maintient une pression",
-   "Le pressostat maintient une pression ; le régulateur coupe le compresseur",
-   "Ce sont deux noms du même organe",
-   "Le pressostat se règle, le régulateur se remplace"
+   "Le pressostat coupe le compresseur ; le régulateur maintient une pression sans couper",
+   "Le pressostat maintient une pression ; le régulateur coupe l'alimentation du compresseur",
+   "Ce sont deux noms différents du même organe de sécurité",
+   "Le pressostat se règle, le régulateur se remplace à chaque visite"
   ],
   "bonne": 0,
-  "aide": "L'un est un interrupteur électrique, l'autre est une vanne.",
+  "aide": "L'un'est un interrupteur électrique, l'autre est une vanne.",
   "remed": {
-   "regle": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression est une vanne : il maintient une pression et ne coupe rien.",
+   "regle": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression'est une vanne : il maintient une pression et ne coupe rien.",
    "pourquoi": "Les deux surveillent la pression, mais l'un protège la machine en l'arrêtant, l'autre fait fonctionner l'installation correctement sans jamais l'arrêter.",
    "piege": "Croire qu'un régulateur peut remplacer une sécurité. Une installation a besoin des deux, avec deux réglages distincts pris sur la fiche constructeur."
   },
   "remediation_vers": "g7b",
-  "explication": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression est une vanne : il maintient une pression et ne coupe rien.",
+  "explication": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression'est une vanne : il maintient une pression et ne coupe rien.",
   "origine": "pack"
  },
  {
@@ -5731,10 +5731,10 @@
   "type": "qcm",
   "enonce": "Plusieurs chambres froides à des températures différentes fonctionnent sur un même compresseur. Quel organe permet à chaque évaporateur de garder la pression dont son produit a besoin ?",
   "choix": [
-   "Le pressostat basse pression",
+   "Le pressostat basse pression monté sur le groupe",
    "Le régulateur de pression d'évaporation, monté en sortie d'évaporateur",
-   "Le régulateur de pression de carter",
-   "Le détendeur thermostatique"
+   "Le régulateur de pression de carter, monté juste en amont du compresseur",
+   "Le détendeur thermostatique de chaque évaporateur"
   ],
   "bonne": 1,
   "aide": "Sans cet organe, toutes les chambres descendraient à la pression de la plus froide d'entre elles.",
@@ -5755,10 +5755,10 @@
   "type": "qcm",
   "enonce": "Vous réglez la soupape de régulation de la pression d'évaporation. Sur quelle pression agit-elle, et à quel endroit du circuit ?",
   "choix": [
-   "Sur la pression d'aspiration, juste avant le compresseur",
+   "Sur la pression d'aspiration, juste à l'entrée du compresseur",
    "Sur la pression dans l'évaporateur, en sortie d'évaporateur",
-   "Sur la pression de condensation, en sortie de condenseur",
-   "Sur la pression du carter d'huile du compresseur"
+   "Sur la pression de condensation, mesurée en sortie de condenseur",
+   "Sur la pression du carter d'huile, mesurée au bas du compresseur"
   ],
   "bonne": 1,
   "aide": "Son nom le dit : pression d'évaporation. Où se produit l'évaporation ?",

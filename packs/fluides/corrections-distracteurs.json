@@ -1,0 +1,2082 @@
+{
+  "commentaire": "Distracteurs réécrits — chantier du 06/08/2026. Généré par le Hub (inerweb-formation/outils/appliquer-lot.mjs) à partir des lots relus ; ne pas éditer à la main : modifier le lot d'origine puis relancer. Lu par build/convert.mjs, appliqué APRÈS la table CORRECTIONS. La bonne réponse garde toujours sa position d'origine.",
+  "questions": {
+    "q-g13-302": {
+      "lot": 1,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Parce que la ventilation mécanique du local impose une porte plaquée par le flux d'air entrant",
+        "Parce qu'une porte ouvrant vers l'intérieur se coince en cas de surpression ou de bousculade",
+        "Parce que le CO₂ est plus lourd que l'air et doit s'évacuer par le bas de l'ouverture",
+        "Pour que la détection de CO₂ puisse commander l'ouverture automatique de la porte"
+      ],
+      "motif": "Trois distracteurs de fantaisie (esthétique, place, intrusion) contre une bonne réponse qui explique. Les distracteurs deviennent trois raisonnements plausibles mais faux ; la bonne réponse est resserrée à l'essentiel."
+    },
+    "q-g6-249": {
+      "lot": 1,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Car la POE est prévue pour les HCFC et la minérale pour les HFC : le mélange inverse leurs rôles",
+        "Car des huiles incompatibles se séparent, forment des boues et perdent leur pouvoir lubrifiant",
+        "Car le mélange épaissit sous l'effet de la compression et fait monter la pression de refoulement",
+        "Car la POE absorbe l'humidité et la relâche dans le circuit au premier démarrage"
+      ],
+      "motif": "« Car ça coûte cher » et « Car ça change la couleur » ne sont pas des erreurs d'élève. Remplacés par les trois confusions réelles : hygroscopie, pressostat HP, inversion POE/minérale."
+    },
+    "q-g6-251": {
+      "lot": 1,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Le compresseur est simplement mieux lubrifié : un excès d'huile reste sans effet sur le fonctionnement",
+        "L'huile est entraînée dans le circuit : encrassement des échangeurs et coups d'huile au compresseur",
+        "La pression d'aspiration monte et le détendeur se referme peu à peu pour compenser",
+        "Le carter se refroidit mieux, ce qui augmente la puissance frigorifique de l'ensemble de la machine"
+      ],
+      "motif": "⟦à valider⟧ La bonne réponse actuelle mêle des symptômes de MANQUE (mauvaise lubrification des paliers) à ceux de l'EXCÈS. Proposition recentrée sur l'entraînement et les coups d'huile — à confirmer."
+    },
+    "q-g6-252": {
+      "lot": 1,
+      "bonne": 1,
+      "choix": [
+        "Le réchauffeur de carter est resté sous tension à l'arrêt et a fait bouillir l'huile",
+        "Migration de fluide frigorigène dans l'huile pendant l'arrêt, qui s'évapore brutalement au démarrage",
+        "L'huile est encore trop chaude en fin de cycle : elle mousse tant qu'elle n'a pas refroidi",
+        "Le filtre déshydrateur est saturé et relâche de l'humidité qui fait mousser l'huile"
+      ],
+      "motif": "Bonne réponse conservée telle quelle (juste et pas bavarde) ; seuls les distracteurs sont réécrits en causes plausibles de moussage."
+    },
+    "q-g6-235": {
+      "lot": 1,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "En comparant au thermomètre la température du carter et celle de la ligne d'aspiration",
+        "En lisant le voyant d'huile : le niveau doit se tenir entre les repères mini et maxi",
+        "En ouvrant le bouchon de remplissage pendant la marche pour voir si l'huile vient affleurer",
+        "En pesant la bouteille d'huile de complément avant et après chaque mise en service annuelle"
+      ],
+      "motif": "Bonne réponse resserrée (la parenthèse « hublot transparent » explique au lieu de répondre) et distracteurs allongés : ici la bonne réponse devient la plus COURTE, pour casser l'automatisme. Un des distracteurs est un geste dangereux réellement vu en atelier (ouvrir le bouchon moteur tournant) : le corriger a une valeur de sécurité."
+    },
+    "pk-q-12.14": {
+      "lot": 1,
+      "bonne": 3,
+      "bonneReecrite": true,
+      "choix": [
+        "Parce que le R-290 n'offre pas de zone de sous-refroidissement exploitable sur ces circuits",
+        "Parce que le R-290 monte bien plus haut en température de refoulement que les HFC équivalents",
+        "Parce que le propane se comprime moins bien que les HFC : le rendement volumétrique chute vite",
+        "Parce que la charge y est volontairement réduite : le moindre écart pèse lourd en proportion"
+      ],
+      "motif": "Distracteurs déjà corrects sur le fond mais trop courts ; la bonne réponse est resserrée et les trois autres alignées sur des idées fausses courantes à propos du propane."
+    },
+    "pk-s5-2": {
+      "lot": 1,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Parce que le VAT doit être étalonné chaque année en atelier par un organisme agréé",
+        "Parce qu'un VAT en panne indiquerait « pas de tension » sur un circuit pourtant sous tension",
+        "Parce que la mesure n'est fiable qu'après un temps de chauffe de quelques secondes",
+        "Parce que la consignation n'est valable que vérifiée par deux personnes différentes"
+      ],
+      "enonce": "Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s'en être servi ?",
+      "motif": "Distracteurs réécrits ET apostrophes rétablies : cette question (comme pk-s5-1 et pk-s5-3) a été saisie sans apostrophes — « qu un VAT », « C est ». La bonne réponse ne change QUE par ses apostrophes (aucun mot déplacé) ; corriger aussi l'aide et la remédiation, non visibles ici."
+    },
+    "q-g6-246": {
+      "lot": 1,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "C'est l'ajout d'un excès d'huile au carter, qui fait déborder le voyant et mousser au démarrage",
+        "C'est l'arrivée brutale d'huile liquide au compresseur : on l'entend claquer à la compression",
+        "C'est la surchauffe de l'huile en fin de compression, qui la noircit et la fluidifie",
+        "C'est le retour d'huile trop lent depuis l'évaporateur, qui vide peu à peu le carter"
+      ],
+      "motif": "Les trois « C'est quand… » se ressemblaient et étaient tous courts. Le distracteur 3 devient un phénomène RÉEL mais différent (retour d'huile lent) : il discrimine vraiment."
+    },
+    "pk-g1e-3": {
+      "lot": 1,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "L'utile se mesure au bulbe du détendeur, la totale au clapet de refoulement du compresseur",
+        "L'utile se gagne dans l'évaporateur ; la totale y ajoute la ligne d'aspiration",
+        "L'utile concerne la basse pression, la totale additionne surchauffe et sous-refroidissement",
+        "C'est la même grandeur : l'une s'exprime en kelvins, l'autre en degrés Celsius relatifs"
+      ],
+      "motif": "Bonne réponse resserrée — elle expliquait au lieu de répondre, et devient ici la plus COURTE — distracteurs portés à la même longueur, dont la confusion classique surchauffe / sous-refroidissement."
+    },
+    "q-g6-240": {
+      "lot": 1,
+      "bonne": 1,
+      "choix": [
+        "Compresseur anormalement silencieux et carter froid au toucher malgré la marche continue",
+        "Bruits anormaux (frottements), échauffement excessif, baisse de puissance, risque de grippage",
+        "Haute pression qui grimpe lentement et déclenchement répété du pressostat de sécurité",
+        "Givrage complet de l'évaporateur avec du liquide qui revient à l'aspiration du compresseur"
+      ],
+      "motif": "Bonne réponse conservée ; distracteurs alignés en longueur et transformés en tableaux cliniques cohérents (mais faux) plutôt qu'en mots isolés."
+    },
+    "pk-q-8.10": {
+      "lot": 1,
+      "bonne": 2,
+      "bonneReecrite": true,
+      "choix": [
+        "La liste des outils employés et le temps passé, pour justifier la facturation de la visite",
+        "La date, l'heure d'arrivée et la signature du client au bas du bon d'intervention signé",
+        "La description des anomalies vues : corrosion, fixation, bac encrassé, écoulement",
+        "Les seules valeurs relevées : surchauffe, pression d'aspiration et température de soufflage"
+      ],
+      "motif": "Bonne réponse resserrée — elle devient ici la plus COURTE — et les trois distracteurs deviennent des rapports réellement rédigés ainsi sur le terrain (facturation, signature, relevés seuls)."
+    },
+    "pk-g1e-1": {
+      "lot": 1,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "De la température relevée au contact du tube d'aspiration, soit les 7 °C lus sur son thermomètre",
+        "D'un écart de 7 K entre la température lue à l'aspiration et celle de vaporisation du fluide",
+        "De la pression d'aspiration lue au manomètre basse pression, exprimée en bars relatifs",
+        "De 7 degrés au-dessus de zéro mesurés dans l'ambiance de la chambre froide en marche"
+      ],
+      "motif": "Bonne réponse ramenée à une phrase de technicien (l'écart de 7 K) au lieu d'une définition de cours ; distracteurs portés à la même longueur."
+    },
+    "q-g6-245": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Car les démarrages répétés font chauffer le moteur et brûlent l'huile du carter",
+        "Car à chaque démarrage, l'huile est entraînée hors du carter avant que le retour soit établi",
+        "Car le pressostat de sécurité coupe avant que la pression d'huile soit établie",
+        "Car l'huile n'a pas le temps de refroidir et perd sa viscosité à chaque cycle"
+      ],
+      "motif": "Trois distracteurs hors sujet remplacés par trois causes plausibles de manque d'huile en cycles courts."
+    },
+    "q-g6-243": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Le compresseur consomme son huile en la brûlant, il faut en rajouter à chaque visite",
+        "L'huile est entraînée dans le circuit et ne revient pas assez vite (mauvais retour d'huile)",
+        "Le fluide est en excès et pousse l'huile hors du carter vers la bouteille liquide",
+        "Le séparateur d'huile a été monté à l'envers et renvoie l'huile vers le condenseur au lieu du carter"
+      ],
+      "motif": "Le distracteur le plus long devient une erreur de montage réelle (séparateur inversé) : ici la bonne réponse n'est plus la plus longue."
+    },
+    "q-g6-247": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "À réchauffer le gaz aspiré afin d'éviter tout coup de liquide au démarrage du compresseur",
+        "À éviter la migration du fluide frigorigène dans l'huile à l'arrêt (dilution)",
+        "À maintenir l'huile assez fluide pour que la pompe à huile amorce correctement par grand froid",
+        "À chauffer le local technique pour éviter la condensation sur la machine"
+      ],
+      "motif": "« À chauffer le local » et « À fondre le givre » remplacés par deux fonctions plausibles mais fausses du réchauffeur (anti-coup de liquide, amorçage de pompe)."
+    },
+    "q-g6-234": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "À retenir les impuretés métalliques que le compresseur envoie dans le circuit",
+        "À séparer l'huile du fluide au refoulement et la renvoyer directement au compresseur",
+        "À stocker une réserve d'huile pour les périodes de fort appel de puissance",
+        "À séparer l'huile du fluide à l'aspiration avant l'entrée dans le compresseur"
+      ],
+      "motif": "Le dernier distracteur devient la confusion classique aspiration / refoulement : il discrimine vraiment celui qui a compris où se monte le séparateur."
+    },
+    "q-g6-241": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Car le compresseur tourne plus lentement en froid négatif et aspire moins d'huile",
+        "Car l'huile devient plus visqueuse (épaisse) à basse température et circule moins bien",
+        "Car l'huile finit par geler dans l'évaporateur et forme des bouchons dans les tubes de retour",
+        "Car il faut davantage de fluide en froid négatif, ce qui dilue l'huile du carter"
+      ],
+      "motif": "« Car il fait plus froid » ne mesure rien. Les trois distracteurs deviennent des explications construites, dont une plus longue que la bonne réponse."
+    },
+    "q-g6-233": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Pour que le fluide reste bien miscible et circule sans se séparer dans le circuit",
+        "Car le compresseur a besoin d'huile en permanence pour sa lubrification",
+        "Pour maintenir l'échange thermique de l'évaporateur, que l'huile améliore nettement",
+        "Pour éviter que l'huile ne se dépose et ne bouche le filtre déshydrateur"
+      ],
+      "motif": "« Pour faire joli » disparaît. Les trois distracteurs deviennent des rôles plausibles mais faux prêtés à l'huile (miscibilité, échange thermique, filtration)."
+    },
+    "q-g6-248": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Elle mousse dans le voyant dès que le compresseur démarre à froid",
+        "Elle est foncée (brunâtre ou noire), opaque, ou sent le brûlé",
+        "Elle est parfaitement claire et sent encore l'huile neuve en flacon",
+        "Elle laisse un dépôt blanchâtre au fond du carter après la vidange"
+      ],
+      "motif": "« Elle sent bon », « Elle est froide » : rien à mesurer. Les distracteurs deviennent des observations réelles mais qui ne signent pas une huile usagée. La bonne réponse devient la plus courte."
+    },
+    "q-g6-186": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Excès de charge et condenseur surdimensionné pour la machine",
+        "Manque de fluide, surchauffe excessive, ou mauvais retour d'huile",
+        "Évaporateur trop grand et détendeur trop ouvert en permanence",
+        "Ventilation du condenseur trop forte et sous-refroidissement fort"
+      ],
+      "motif": "Les trois distracteurs deviennent des tableaux cohérents mais qui n'expliquent pas un refoulement à plus de 120 °C."
+    },
+    "q-g6-v6_150": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "De régler la température d'évaporation depuis le tableau électrique",
+        "De raccorder les manomètres et équipements de maintenance",
+        "D'inverser le cycle pour passer en mode pompe à chaleur",
+        "De purger l'huile usagée du carter en fin d'intervention"
+      ],
+      "motif": "Distracteurs allongés et rendus plausibles ; le premier passe devant la bonne réponse."
+    },
+    "q-g6-190": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Manque de fluide frigorigène important, presque tout le circuit est vide",
+        "Clapets du compresseur cassés (compresseur ne comprime plus)",
+        "Condenseur bouché côté air, la haute pression ne peut plus s'établir",
+        "Évaporateur entièrement givré, l'air ne passe plus dans la batterie"
+      ],
+      "motif": "Les trois pannes concurrentes sont écrites avec leur symptôme, pour qu'il faille vraiment raisonner sur « BP = HP et basses »."
+    },
+    "pk-q-6.02": {
+      "lot": 2,
+      "bonne": 0,
+      "choix": [
+        "La tuyauterie vibre en permanence et finit par se fissurer, ce qui provoque une fuite",
+        "Le compresseur perd son huile par vibration et le voyant se vide peu à peu",
+        "La consommation électrique grimpe fortement, les vibrations freinant le moteur du compresseur",
+        "Le bruit augmente, mais l'installation n'en souffre pas mécaniquement"
+      ],
+      "motif": "Le distracteur « consommation » est développé jusqu'à dépasser la bonne réponse ; le « aucun risque » devient une perte d'huile plausible."
+    },
+    "pk-q-6.08": {
+      "lot": 2,
+      "bonne": 2,
+      "bonneReecrite": true,
+      "choix": [
+        "Parce que cela dispense de contrôler l'étanchéité du circuit à l'azote",
+        "Parce que cela augmente automatiquement la puissance frigorifique de la machine",
+        "Parce qu'un compresseur bien réglé consomme moins et dure plus longtemps",
+        "Parce que cela abaisse la classe de sécurité du fluide frigorigène utilisé"
+      ],
+      "motif": "La bonne réponse recopiait l'énoncé mot pour mot (105 caractères) : resserrée, elle devient la troisième par la longueur."
+    },
+    "q-g6-231": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Refroidir le fluide avant l'entrée au condenseur",
+        "Lubrifier les pièces mobiles et assurer l'étanchéité",
+        "Augmenter la pression de refoulement du compresseur",
+        "Filtrer les impuretés du circuit frigorifique"
+      ],
+      "motif": "Distracteurs resserrés autour de la longueur de la bonne réponse ; les quatre rôles proposés sont tous des fonctions réelles de composants du circuit."
+    },
+    "q-g6-177": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Augmenter la puissance frigorifique de l'évaporateur",
+        "Protéger le compresseur contre les retours de liquide",
+        "Servir de réserve de liquide entre le condenseur et le détendeur",
+        "Filtrer l'humidité résiduelle du fluide frigorigène"
+      ],
+      "motif": "Le distracteur le plus long devient la confusion accumulateur / bouteille liquide — la plus fréquente sur ce composant — et passe devant la bonne réponse."
+    },
+    "q-g6-v6_152": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Une surpression anormale du circuit haute pression",
+        "Le manque de lubrification du compresseur",
+        "Une surchauffe excessive du gaz à l'aspiration",
+        "Le givrage complet de la batterie évaporateur"
+      ],
+      "motif": "Les trois protections concurrentes sont écrites en entier : la bonne réponse devient la plus courte."
+    },
+    "q-g6-173": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Le compresseur est neuf, ce bruit disparaît au rodage",
+        "Coup de liquide (du liquide arrive au compresseur)",
+        "Manque de fluide, le compresseur tourne à vide",
+        "Condenseur encrassé, la haute pression est trop élevée"
+      ],
+      "motif": "Le distracteur « fonctionne normalement » devient l'excuse réellement entendue (« c'est le rodage ») ; le condenseur encrassé remplace un doublon."
+    },
+    "q-g6-152": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "Refroidir le fluide frigorigène",
+        "Aspirer et comprimer le gaz basse pression",
+        "Détendre le liquide sous haute pression",
+        "Condenser les vapeurs surchauffées"
+      ],
+      "motif": "Question de base : les quatre propositions décrivent les quatre organes de la croix du frigoriste, à longueurs égales."
+    },
+    "q-g6-174": {
+      "lot": 2,
+      "bonne": 0,
+      "choix": [
+        "À vérifier le niveau d'huile dans le carter",
+        "À vérifier la température de l'huile du carter",
+        "À vérifier la pression d'huile du compresseur",
+        "À vidanger l'huile usagée en fin d'intervention"
+      ],
+      "motif": "Les trois autres contrôles d'huile (température, pression, vidange) sont écrits en entier : la bonne réponse devient la plus courte."
+    },
+    "q-g6-v6_153": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "L'huile est plus dense que le fluide liquide",
+        "Le fluide se dissout dans l'huile froide",
+        "Le compresseur reste en légère dépression à l'arrêt",
+        "La vanne de service est restée ouverte"
+      ],
+      "motif": "Distracteurs allongés au même format ; deux passent devant la bonne réponse."
+    },
+    "pk-q-6.04": {
+      "lot": 2,
+      "bonne": 2,
+      "choix": [
+        "Une baisse automatique de la consommation électrique du moteur",
+        "Un excès d'huile bien visible au voyant du carter moteur",
+        "Une perte de puissance, ou un compresseur qui s'abîme",
+        "Aucune conséquence tant que la machine démarre normalement"
+      ],
+      "motif": "Les quatre propositions sont portées à la même longueur ; la bonne devient la plus courte."
+    },
+    "q-g6-v6_054": {
+      "lot": 2,
+      "bonne": 1,
+      "choix": [
+        "À l'aspiration, juste avant le compresseur",
+        "Au refoulement du compresseur",
+        "Juste en amont du détendeur thermostatique",
+        "En sortie d'évaporateur, avant l'accumulateur"
+      ],
+      "motif": "Question de placement : les quatre emplacements sont écrits avec le même niveau de précision, la bonne réponse devient la plus courte."
+    },
+    "q-g9-162": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "À mesurer la température du liquide juste avant l'entrée du détendeur",
+        "À observer l'état du fluide (bulles, couleur) et détecter d'éventuels problèmes",
+        "À régler la pression de la ligne liquide à la sortie du condenseur",
+        "À couper le compresseur si le débit de liquide devient insuffisant"
+      ],
+      "motif": "Trois distracteurs de deux mots remplacés par trois fonctions plausibles prêtées au voyant liquide."
+    },
+    "pk-q-9.03": {
+      "lot": 3,
+      "bonne": 3,
+      "bonneReecrite": true,
+      "choix": [
+        "Le détendeur électronique ne sert que sur les petits appareils, comme le capillaire",
+        "Le détendeur électronique coupe le circuit quand un seuil de pression est franchi",
+        "Le détendeur électronique régule la pression de condensation, le mécanique régule la surchauffe",
+        "Le détendeur électronique pilote la vanne par sonde et régulateur, plus vite et plus finement"
+      ],
+      "motif": "La bonne réponse faisait 139 caractères contre 95 au plus long distracteur : resserrée sans rien perdre (sonde + régulateur, plus précis et plus rapide), elle passe deuxième."
+    },
+    "q-g9-172": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "Peu importe le sens de montage : le filtre agit dans les deux directions",
+        "Dans le sens de circulation du fluide (indiqué par une flèche)",
+        "Toujours à la verticale, cartouche vers le bas pour piéger l'humidité",
+        "Toujours à l'horizontale, pour éviter le tassement du tamis"
+      ],
+      "motif": "« Peu importe le sens » est conservé mais argumenté, et les deux positions de montage deviennent des affirmations plausibles : la bonne réponse passe troisième."
+    },
+    "q-g9-188": {
+      "lot": 3,
+      "bonne": 0,
+      "choix": [
+        "La surchauffe devient instable ou très élevée, le détendeur ne régule plus",
+        "La haute pression monte fortement et le pressostat HP finit par couper",
+        "Le compresseur claque en continu, signe d'un retour de liquide",
+        "L'évaporateur givre entièrement et le dégivrage ne suffit plus"
+      ],
+      "motif": "Les trois symptômes concurrents sont écrits en entier, avec leur conséquence : il faut vraiment savoir ce que fait un bulbe percé."
+    },
+    "q-g9-187": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "C'est le bruit normal du fluide qui se détend dans l'orifice",
+        "Flash-gas dans la ligne liquide (manque de sous-refroidissement)",
+        "Excès de fluide frigorigène : le liquide arrive jusqu'au détendeur en surplus",
+        "Compresseur usé dont les clapets laissent passer le gaz"
+      ],
+      "motif": "Le distracteur « excès de fluide » devient le plus long : c'est le raisonnement inverse du bon (manque de sous-refroidissement), donc celui qui discrimine."
+    },
+    "q-g9-v6_155": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "Réguler la surchauffe à la sortie de l'évaporateur",
+        "Couper/ouvrir un circuit de fluide sur commande électrique",
+        "Mesurer la pression sur le circuit basse pression",
+        "Purger l'air et l'humidité restés dans le circuit"
+      ],
+      "motif": "Distracteurs portés au même format ; les trois fonctions proposées existent toutes sur une installation, mais aucune n'est celle de la solénoïde."
+    },
+    "q-g9-189": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "La pression de condensation, mesurée en permanence au refoulement du compresseur",
+        "La surchauffe mesurée par des sondes de température et de pression",
+        "La température ambiante du local, lue par une sonde d'ambiance déportée",
+        "Le niveau d'huile du compresseur, suivi par un contrôleur"
+      ],
+      "motif": "Les grandeurs concurrentes sont écrites avec leur point de mesure : la bonne réponse passe troisième."
+    },
+    "q-g9-168": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "Le circuit fonctionne correctement, ces bulles sont normales",
+        "Manque de fluide frigorigène ou sous-refroidissement insuffisant",
+        "Excès de fluide frigorigène : le condenseur déborde et renvoie du gaz",
+        "Problème d'huile : elle mousse et se voit dans le voyant"
+      ],
+      "motif": "« Excès de fluide » devient le distracteur le plus long : c'est l'erreur de diagnostic classique face à des bulles au voyant."
+    },
+    "pk-g9b-3": {
+      "lot": 3,
+      "bonne": 0,
+      "choix": [
+        "Le défaut peut endommager le système et provoquer à terme une fuite ou une émission",
+        "Aucun risque particulier : le limiteur se réarme de lui-même au cycle suivant",
+        "Le compresseur s'arrête aussitôt par sécurité, le défaut se voit tout seul",
+        "Le séparateur d'huile compense le défaut tant que le niveau reste correct"
+      ],
+      "motif": "Les trois échappatoires (« ça se corrige seul », « la sécurité fera le travail », « un autre organe compense ») sont écrites en entier : ce sont exactement celles qu'on entend."
+    },
+    "pk-q-9.02": {
+      "lot": 3,
+      "bonne": 0,
+      "choix": [
+        "Une erreur de montage irréversible, qu'on ne peut corriger qu'en découpant l'installation",
+        "Une simple baisse de rendement, que l'on rattrape en réglant le détendeur un peu plus ouvert",
+        "Un dérèglement du bulbe du détendeur thermostatique, à recalibrer après coup",
+        "Rien : il suffit de la déposer et de la remonter dans le bon sens"
+      ],
+      "motif": "Le distracteur « simple baisse de rendement » est développé jusqu'à dépasser la bonne réponse ; le dernier propose de déposer la vanne, ce qui est justement impossible sur un montage brasé."
+    },
+    "q-g9-v6_149": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "Les centrales frigorifiques industrielles à forte puissance",
+        "Les réfrigérateurs domestiques et petits climatiseurs",
+        "Les tours de refroidissement des grands bâtiments",
+        "Les installations transcritiques fonctionnant au CO₂"
+      ],
+      "motif": "Les quatre familles d'installation sont écrites au même niveau de précision ; la bonne réponse passe deuxième."
+    },
+    "q-g9-v6_053": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "De réguler le débit de fluide au détendeur",
+        "D'inverser le sens du cycle (mode chaud/froid)",
+        "De purger l'huile du carter du compresseur",
+        "De contourner le compresseur pendant l'arrêt"
+      ],
+      "motif": "Distracteurs allongés au format de la bonne réponse ; le contournement du compresseur remplace un distracteur de trois mots."
+    },
+    "q-g9-v6_052": {
+      "lot": 3,
+      "bonne": 0,
+      "choix": [
+        "Réguler la température par cycling du compresseur",
+        "Protéger le condenseur contre les fortes surpressions",
+        "Augmenter la charge en fluide de l'installation frigorifique",
+        "Mesurer le COP de la machine en fonctionnement réel"
+      ],
+      "motif": "Les trois autres rôles sont écrits en entier : la bonne réponse devient la plus courte."
+    },
+    "q-g9-v6_154": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "En sortie de compresseur, sur la ligne de refoulement",
+        "En sortie de condenseur, avant le détendeur",
+        "En sortie d'évaporateur, sur la ligne d'aspiration",
+        "Sur le circuit d'huile, près du séparateur"
+      ],
+      "motif": "Les quatre emplacements sont écrits avec leur ligne : la bonne réponse passe troisième."
+    },
+    "pk-g9b-2": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "Que l'huile reste bien bloquée dans le séparateur pendant toute la marche du groupe",
+        "Que l'huile retenue retourne bien, automatiquement, au carter du compresseur",
+        "Que le condenseur reçoit bien un mélange homogène d'huile et de fluide",
+        "Que la pression d'aspiration reste parfaitement constante en marche"
+      ],
+      "motif": "Le premier distracteur (l'huile reste bloquée) devient le plus long : c'est la représentation fausse la plus courante du séparateur, qu'on croit être un piège définitif."
+    },
+    "q-g9-v6_049": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "La pression de condensation de l'installation",
+        "La surchauffe à la sortie de l'évaporateur",
+        "Le sous-refroidissement en sortie de condenseur",
+        "La pression d'huile dans le compresseur"
+      ],
+      "motif": "Les quatre grandeurs régulables sont mises au même format ; le sous-refroidissement (la confusion la plus fréquente avec la surchauffe) passe devant."
+    },
+    "pk-g9b-1": {
+      "lot": 3,
+      "bonne": 3,
+      "choix": [
+        "Avec une sonde de température reliée à un régulateur numérique déporté",
+        "Avec un capteur de pression relié à un module électronique de commande",
+        "Avec une résistance électrique chauffante placée dans l'ambiance",
+        "Avec un bulbe relié par un tube fin à des contacts électriques"
+      ],
+      "motif": "Les trois technologies concurrentes sont décrites complètement : la bonne réponse devient la plus courte, et il faut connaître le bulbe pour trancher."
+    },
+    "q-g9-v6_055": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "Son coût d'achat nettement plus faible",
+        "Sa régulation plus précise et rapide",
+        "Sa bonne résistance à l'humidité du circuit",
+        "Son absence complète de pièces mobiles"
+      ],
+      "motif": "Les quatre avantages proposés sont ramenés à la même longueur ; la bonne réponse devient la plus courte."
+    },
+    "pk-q-9.05": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "Elle coupe complètement le circuit dès qu'un seuil de pression donné est franchi",
+        "Elle module en continu pour maintenir une pression stable à un point du circuit",
+        "Elle règle la surchauffe mesurée en sortie d'évaporateur",
+        "Elle commande le démarrage du compresseur selon une température mesurée par sonde"
+      ],
+      "motif": "Les fonctions voisines (couper à un seuil, régler la surchauffe, commander sur température) sont écrites en entier : c'est la confusion soupape de régulation / pressostat qui est visée."
+    },
+    "q-g9-161": {
+      "lot": 3,
+      "bonne": 1,
+      "choix": [
+        "Le voyant de ligne liquide",
+        "Le filtre déshydrateur",
+        "Le pressostat différentiel",
+        "L'accumulateur d'aspiration"
+      ],
+      "motif": "Quatre accessoires de la ligne liquide au même format : la bonne réponse devient la plus courte."
+    },
+    "q-g5-v6_083": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Aucune différence : les deux mots désignent le même traitement en centre agréé",
+        "Le recyclage est un nettoyage basique, la régénération remet aux spécifications d'origine",
+        "Le recyclage se fait en laboratoire, la régénération directement sur le chantier",
+        "La régénération est un simple filtrage, le recyclage une remise à neuf complète"
+      ],
+      "motif": "Les trois distracteurs deviennent des inversions plausibles du couple recyclage / régénération, dont l'inversion complète des deux définitions."
+    },
+    "q-g5-176": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Sur la ligne d'aspiration, entre évaporateur et compresseur",
+        "Sur la ligne de refoulement (entre compresseur et condenseur)",
+        "Sur la ligne liquide, entre la sortie du condenseur et le détendeur",
+        "Sur le corps du détendeur, au raccord du bulbe"
+      ],
+      "motif": "Les quatre points de branchement sont écrits avec leur position dans le circuit ; la ligne liquide passe devant la bonne réponse."
+    },
+    "q-g5-v6_079": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Uniquement le type de fluide présent et sa quantité totale",
+        "Le fluide, les quantités, l'opérateur, les opérations effectuées",
+        "La date de passage, le nom du technicien et la durée de l'intervention",
+        "Le prix de l'intervention et le détail des pièces changées"
+      ],
+      "motif": "Les « uniquement » de deux mots deviennent des contenus de fiche plausibles — ce que beaucoup de fiches contiennent réellement, et qui ne suffit pas."
+    },
+    "q-g5-175": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Sur la ligne de refoulement, entre le compresseur et le condenseur",
+        "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
+        "Sur la ligne liquide, juste en amont de l'entrée du détendeur",
+        "Sur le condenseur, au niveau du piquage de service"
+      ],
+      "motif": "Symétrique de la question sur la haute pression : mêmes formats, la bonne réponse passe troisième."
+    },
+    "q-g5-179": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Démarrer le compresseur pour vider le circuit",
+        "Récupérer le fluide frigorigène dans un récipient adapté",
+        "Ouvrir toutes les vannes du circuit lentement",
+        "Ajouter de l'huile pour protéger le compresseur"
+      ],
+      "motif": "Les trois distracteurs deviennent des gestes réellement faits avant d'ouvrir un circuit — mais aucun ne remplace la récupération."
+    },
+    "q-g5-133": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Des déchets ménagers ordinaires collectés par la commune du site",
+        "DEEE (Déchets d'Équipements Électriques et Électroniques)",
+        "Des déchets dangereux uniquement, sans passer par la filière DEEE",
+        "Du recyclage ordinaire des métaux et plastiques"
+      ],
+      "motif": "Les filières voisines sont nommées en entier : déchets ménagers, déchets dangereux hors DEEE, recyclage métaux. La bonne réponse passe troisième."
+    },
+    "q-g5-v6_060": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Pour charger plus vite qu'en phase vapeur",
+        "Pour éviter la démixtion (séparation des composants)",
+        "Pour protéger le compresseur des coups de liquide",
+        "Pour réduire le bruit pendant le transfert"
+      ],
+      "motif": "« Pour aller plus vite » et « Pour réduire le bruit » deviennent des raisons plausibles mais fausses, dont le coup de liquide (le vrai motif d'une charge vapeur ailleurs)."
+    },
+    "q-g5-v6_176": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Sur n'importe quelle installation, sans restriction de propriétaire",
+        "Uniquement sur la même installation ou du même exploitant",
+        "Uniquement à l'export, hors de l'Union européenne",
+        "Jamais : il part obligatoirement en destruction"
+      ],
+      "motif": "« Jamais » en un mot devient une règle argumentée (destruction obligatoire) ; « n'importe quelle installation » passe devant la bonne réponse."
+    },
+    "q-g5-v6_156": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Parce que la bouteille deviendrait trop lourde à manipuler",
+        "Le mélange serait impossible à recycler/régénérer",
+        "Parce que les bouteilles risqueraient d'exploser en pression",
+        "Parce que le mélange perd son pouvoir frigorifique"
+      ],
+      "motif": "Les trois raisons fausses (poids, explosion, perte de pouvoir frigorifique) sont écrites au même format : la bonne réponse passe troisième."
+    },
+    "q-g5-v6_081": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "L'installation de nouveaux équipements chez un client",
+        "Le transport de fluides usagés vers le centre de traitement",
+        "La formation continue des techniciens titulaires de l'attestation",
+        "L'achat de fluide neuf auprès d'un distributeur agréé"
+      ],
+      "motif": "Les trois autres documents administratifs du métier sont écrits en entier ; la formation passe devant la bonne réponse."
+    },
+    "pk-g1e-5": {
+      "lot": 4,
+      "bonne": 0,
+      "choix": [
+        "Parce que cet état commande la méthode et la quantité de remplissage",
+        "Parce que le registre de l'équipement exige de le noter",
+        "Parce que cela permet de connaître le PRP du fluide chargé",
+        "Parce que cela dispense de peser la bouteille de charge"
+      ],
+      "motif": "Distracteurs allongés au même format ; les trois raisons proposées sont plausibles mais aucune ne commande la méthode de remplissage."
+    },
+    "q-g5-146": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Jetés avec les métaux de la benne ferraille",
+        "Dégazés et vidangés avant recyclage",
+        "Détruits entiers, fluide compris",
+        "Revendus en l'état à un autre client"
+      ],
+      "motif": "Les quatre sorts possibles d'un compresseur usagé au même format ; la benne ferraille passe devant."
+    },
+    "q-g5-v6_064": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Un jeu de manomètres",
+        "Une balance de précision",
+        "Un thermomètre à sonde",
+        "Un vacuomètre à vide"
+      ],
+      "motif": "Quatre instruments du frigoriste, tous écrits de la même façon : il faut savoir que la charge se fait au poids."
+    },
+    "q-g5-130": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Enfouissement en décharge contrôlée",
+        "Incinération haute température",
+        "Relâchement contrôlé en altitude",
+        "Dilution dans un solvant"
+      ],
+      "motif": "Les trois fausses voies d'élimination sont écrites en entier ; la bonne réponse passe troisième."
+    },
+    "q-g5-147": {
+      "lot": 4,
+      "bonne": 2,
+      "choix": [
+        "Oui, en le brûlant au chalumeau",
+        "Oui, en le diluant dans l'azote",
+        "Non, uniquement centre agréé",
+        "Oui, en le dégazant lentement"
+      ],
+      "motif": "Les trois « Oui, en… » sont portés à la même longueur que le « Non » : impossible de trancher sur la forme."
+    },
+    "q-g5-v6_082": {
+      "lot": 4,
+      "bonne": 2,
+      "choix": [
+        "Uniquement pour les grosses installations industrielles",
+        "Uniquement si le fluide récupéré est encore en bon état",
+        "Dans tous les cas, même pour de petites quantités",
+        "Seulement si le client en fait expressément la demande"
+      ],
+      "motif": "Les trois dérogations imaginaires (taille, état du fluide, demande du client) sont écrites en entier : la bonne réponse devient la plus courte."
+    },
+    "q-g5-v6_161": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "La couleur du fluide dans le voyant liquide",
+        "La surchauffe et le sous-refroidissement",
+        "Le bruit du compresseur pendant la montée en charge",
+        "La vitesse du ventilateur de condenseur"
+      ],
+      "motif": "« Le bruit du compresseur uniquement » perd son absolu et devient une observation plausible ; la bonne réponse passe troisième."
+    },
+    "q-g5-v6_170": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Uniquement si le client en fait lui-même la demande",
+        "À chaque intervention impliquant du fluide",
+        "Uniquement pour les installations de forte charge",
+        "Une fois par an, au moment du contrôle d'étanchéité"
+      ],
+      "motif": "Les trois fausses périodicités sont écrites en entier : la bonne réponse devient la plus courte."
+    },
+    "q-g5-v6_177": {
+      "lot": 4,
+      "bonne": 1,
+      "choix": [
+        "Le déposer à la déchetterie municipale",
+        "Le confier à un organisme agréé DEEE",
+        "Le laisser en place, simplement débranché",
+        "Le faire découper chez un ferrailleur"
+      ],
+      "motif": "« Le brûler » (9 caractères) disparaît au profit d'un sort réellement observé : la découpe chez un ferrailleur, fluide encore dedans."
+    },
+    "pk-g1e-2": {
+      "lot": 5,
+      "bonne": 1,
+      "choix": [
+        "D'un thermomètre de contact seul, posé sur la ligne d'aspiration",
+        "D'un manomètre, d'un thermomètre de contact, et de la table de saturation du fluide présent",
+        "D'un manomètre seul : la pression suffit à déduire la surchauffe",
+        "D'un thermomètre infrarouge, d'un détecteur électronique de fuite et de la documentation machine"
+      ],
+      "motif": "Le dernier distracteur devient une panoplie plausible mais inutile pour une surchauffe (infrarouge, détecteur de fuite) et passe devant la bonne réponse."
+    },
+    "pk-g1s-3": {
+      "lot": 5,
+      "bonne": 0,
+      "choix": [
+        "Parce que le changement d'état permet d'échanger beaucoup de chaleur sans que la température varie",
+        "Parce que l'air ne circulerait pas correctement dans des tubes de cuivre aussi fins",
+        "Parce que la réglementation impose l'emploi d'un fluide frigorigène homologué",
+        "Parce que comprimer de l'air reviendrait bien plus cher en consommation électrique"
+      ],
+      "motif": "Distracteurs portés au format de la bonne réponse ; les trois raisons proposées sont celles qu'on entend vraiment pour justifier un fluide frigorigène."
+    },
+    "pk-g1b-3": {
+      "lot": 5,
+      "bonne": 0,
+      "choix": [
+        "Pour que la basse pression et la haute pression soient lisibles sur la même feuille",
+        "Parce que la pression se mesure naturellement en logarithmes, comme le bruit en décibels",
+        "Pour que le cycle forme un rectangle bien régulier sur le tracé",
+        "Parce que l'enthalpie est elle aussi portée en échelle logarithmique"
+      ],
+      "motif": "Le contresens « la pression se mesure en logarithmes » est développé avec une analogie plausible (les décibels) et passe devant la bonne réponse."
+    },
+    "q-g1-160": {
+      "lot": 5,
+      "bonne": 1,
+      "choix": [
+        "Le liquide est trop froid pour les clapets",
+        "Le liquide est incompressible et peut détruire le compresseur",
+        "Le liquide est trop visqueux et freine les pistons",
+        "Le liquide consomme trop d'énergie à comprimer"
+      ],
+      "motif": "Les trois propriétés fausses prêtées au liquide sont écrites avec leur conséquence supposée."
+    },
+    "pk-g1c-1": {
+      "lot": 5,
+      "bonne": 3,
+      "bonneReecrite": true,
+      "choix": [
+        "Le code du fluide donne déjà sa classe de sécurité, inutile de vérifier autre chose",
+        "Deux codes proches signalent toujours deux dangers de même niveau",
+        "La classe NF EN 378 remplace le code : on peut oublier le code une fois la classe connue",
+        "Le code décrit la molécule, la classe NF EN 378 le risque : il faut lire les deux"
+      ],
+      "motif": "La bonne réponse faisait 110 caractères : resserrée à l'essentiel (le code décrit la molécule, la classe décrit le risque), elle passe troisième."
+    },
+    "pk-g1e-4": {
+      "lot": 5,
+      "bonne": 0,
+      "choix": [
+        "À garantir qu'il arrive du liquide pur, sans bulles de vapeur, au détendeur",
+        "À protéger le compresseur contre les coups de liquide à l'aspiration",
+        "À accélérer le dégivrage naturel de la batterie évaporateur",
+        "À limiter la pression de condensation par forte chaleur extérieure"
+      ],
+      "motif": "Les trois autres rôles proposés sont des fonctions réelles du circuit — dont la protection contre le coup de liquide, qui est celle de l'accumulateur, pas du sous-refroidissement."
+    },
+    "pk-g1s-4": {
+      "lot": 5,
+      "bonne": 1,
+      "choix": [
+        "Il n'y a pas de palier du tout, la température monte en continu",
+        "La température monte lentement pendant le changement d'état : c'est le glissement",
+        "Le palier dure deux fois plus longtemps que sur un corps pur",
+        "Le palier se fait à pression rigoureusement constante, à la différence d'un corps pur"
+      ],
+      "motif": "Le distracteur « pression constante » est complété et passe devant : c'est la confusion la plus fine sur le glissement (ce qui varie, c'est la température, pas la pression)."
+    },
+    "pk-g1s-1": {
+      "lot": 5,
+      "bonne": 1,
+      "choix": [
+        "Elle continue de monter, mais nettement plus lentement qu'avant",
+        "Elle ne bouge pas tant qu'il reste du liquide à vaporiser",
+        "Elle redescend légèrement pendant l'ébullition",
+        "Elle monte par à-coups, à chaque train de bulles qui remonte"
+      ],
+      "motif": "« Elle redescend » (14 caractères) devient une affirmation complète ; deux distracteurs passent devant la bonne réponse."
+    },
+    "q-g1-v6_042": {
+      "lot": 5,
+      "bonne": 2,
+      "choix": [
+        "Entièrement liquide, sous-refroidi",
+        "Entièrement gazeux, surchauffé",
+        "Un mélange liquide + vapeur",
+        "À l'état supercritique"
+      ],
+      "motif": "Les quatre états sont nommés avec leur qualificatif exact (sous-refroidi, surchauffé, supercritique) : la bonne réponse passe troisième."
+    },
+    "q-g1-34": {
+      "lot": 5,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Un zéotrope à fort glissement",
+        "Un quasi-azéotrope",
+        "Un azéotrope véritable",
+        "Un corps pur, sans mélange"
+      ],
+      "motif": "Les quatre natures de fluide sont écrites au même format, avec le glissement comme critère : la bonne réponse devient la plus courte."
+    },
+    "q-g1-v6_143": {
+      "lot": 5,
+      "bonne": 1,
+      "choix": [
+        "Le vide et la pression atmosphérique",
+        "Les zones liquide, diphasique et vapeur",
+        "Les hautes et les basses températures",
+        "Les fluides naturels et synthétiques"
+      ],
+      "motif": "Les quatre séparations proposées sont ramenées à la même longueur ; l'écart restant (2 caractères) ne se voit pas."
+    },
+    "q-g1-45": {
+      "lot": 5,
+      "bonne": 1,
+      "choix": [
+        "Du propane commercial",
+        "De l'ammoniac",
+        "Du dioxyde de carbone",
+        "De l'eau distillée"
+      ],
+      "motif": "Les quatre corps sont nommés en toutes lettres, sans jamais donner leur code (ce serait offrir la réponse dans une question de nomenclature). La bonne réponse devient la plus courte."
+    },
+    "q-g1-v6_141": {
+      "lot": 5,
+      "bonne": 2,
+      "choix": [
+        "La batterie évaporateur",
+        "Le condenseur à air",
+        "Le compresseur",
+        "Le détendeur thermostatique"
+      ],
+      "motif": "Les quatre organes de la croix du frigoriste, désignés avec leur qualificatif usuel : la bonne réponse n'est plus la plus longue."
+    },
+    "q-g1-v6_031": {
+      "lot": 5,
+      "bonne": 1,
+      "choix": [
+        "Le nombre d'atomes de carbone moins 1",
+        "Nombre d'atomes d'hydrogène + 1",
+        "Le nombre total d'atomes de fluor",
+        "Le nombre d'atomes de chlore"
+      ],
+      "motif": "Les quatre règles de nomenclature sont écrites de la même façon ; la bonne réponse passe troisième."
+    },
+    "pk-g0-2": {
+      "lot": 5,
+      "bonne": 0,
+      "choix": [
+        "Il doit être récupéré à part, avant que la carcasse parte en DEEE",
+        "Il part avec la carcasse, la filière DEEE s'occupe aussi du fluide",
+        "Il est automatiquement détruit par le centre de tri DEEE qui le reçoit",
+        "Il n'y a aucune obligation particulière, la quantité restante est faible"
+      ],
+      "motif": "Les trois raccourcis (« la filière s'en occupe », « le centre détruit tout », « la quantité est négligeable ») sont développés : la bonne réponse devient la plus courte."
+    },
+    "pk-g1c-2": {
+      "lot": 5,
+      "bonne": 1,
+      "choix": [
+        "Ils ont tous un fort effet de serre, comme les HFC classiques",
+        "Ils existent sans chimie de synthèse, contrairement aux HFC et HFO",
+        "Ils contiennent tous du fluor, comme les HFO récents",
+        "Ils ont été condamnés par le protocole de Montréal, au même titre que les CFC"
+      ],
+      "motif": "Le distracteur « protocole de Montréal » est développé et passe devant : c'est la confusion de calendrier la plus fréquente entre CFC et fluides naturels."
+    },
+    "q-g1-62": {
+      "lot": 5,
+      "bonne": 0,
+      "choix": [
+        "Pression relative + pression atmosphérique",
+        "Pression relative moins la pression atmosphérique",
+        "Pression atmosphérique seule, au niveau de la mer",
+        "Pression relative seule, lue au manomètre"
+      ],
+      "motif": "Les deux formules concurrentes étaient à égalité parfaite de longueur (42 et 42) : les propositions sont différenciées et la bonne réponse passe troisième."
+    },
+    "pk-q-8.05": {
+      "lot": 6,
+      "bonne": 0,
+      "choix": [
+        "Pour que l'huile transportée par la vapeur revienne vers le compresseur au lieu de stagner",
+        "Pour réduire la surchauffe du gaz aspiré avant son arrivée au compresseur",
+        "Pour empêcher le givre de se former sur toute la longueur de la ligne",
+        "Pour diminuer la vitesse du gaz et limiter le bruit dans la conduite"
+      ],
+      "motif": "Trois distracteurs de trois mots deviennent trois raisons plausibles de poser une pente sur une conduite."
+    },
+    "q-g8-184": {
+      "lot": 6,
+      "bonne": 1,
+      "choix": [
+        "Ajouter du fluide frigorigène pour faire remonter la surchauffe à sa valeur normale",
+        "Diminuer l'ouverture du détendeur ou retirer du fluide (risque de coup de liquide)",
+        "Nettoyer le condenseur et vérifier les ventilateurs de la machine",
+        "Changer le compresseur, dont les clapets laissent passer du liquide"
+      ],
+      "motif": "« Ajouter du fluide » — l'erreur exactement inverse de la bonne action — est développée jusqu'à passer devant la bonne réponse."
+    },
+    "q-g8-166": {
+      "lot": 6,
+      "bonne": 1,
+      "choix": [
+        "L'installation fonctionne correctement : c'est le signe d'une surchauffe bien réglée",
+        "Manque de fluide frigorigène ou problème de détendeur (surchauffe trop importante)",
+        "Excès de fluide frigorigène : le condenseur renvoie du liquide chaud à l'aspiration",
+        "Compresseur défectueux dont les clapets réchauffent le gaz aspiré"
+      ],
+      "motif": "Le « tout va bien » et l'« excès de fluide » sont argumentés jusqu'à dépasser la bonne réponse : il faut savoir qu'une ligne chaude signe une surchauffe excessive."
+    },
+    "q-g8-178": {
+      "lot": 6,
+      "bonne": 1,
+      "choix": [
+        "Excès de fluide frigorigène dans le circuit basse pression",
+        "Manque de débit d'air, filtre à air encrassé, ou ventilateurs arrêtés",
+        "Compresseur trop puissant par rapport au volume de la chambre à refroidir",
+        "Condenseur encrassé qui fait monter la haute pression"
+      ],
+      "motif": "Le compresseur surdimensionné devient le distracteur le plus long : c'est une cause réelle de température d'évaporation basse, mais pas celle d'un givrage par manque de débit d'air."
+    },
+    "pk-g8b-5": {
+      "lot": 6,
+      "bonne": 1,
+      "choix": [
+        "Le pressostat basse pression monté sur le groupe",
+        "Le régulateur de pression d'évaporation, monté en sortie d'évaporateur",
+        "Le régulateur de pression de carter, monté juste en amont du compresseur",
+        "Le détendeur thermostatique de chaque évaporateur"
+      ],
+      "motif": "Le régulateur de pression de carter — l'organe voisin, monté à l'aspiration du compresseur — est écrit en entier et passe devant : c'est LA confusion de ce point du référentiel."
+    },
+    "q-g8-181": {
+      "lot": 6,
+      "bonne": 1,
+      "choix": [
+        "Température de refoulement moins température d'aspiration du compresseur",
+        "Température gaz aspiration - Température d'évaporation (T°O correspondant à la BP)",
+        "Température de condensation moins température d'évaporation",
+        "Température ambiante moins température d'évaporation"
+      ],
+      "motif": "Les quatre formules sont écrites en toutes lettres, au même format : il faut connaître les deux températures qui entrent dans le calcul."
+    },
+    "q-g8-183": {
+      "lot": 6,
+      "bonne": 1,
+      "choix": [
+        "Excès de fluide frigorigène qui vient noyer l'évaporateur",
+        "Manque de fluide frigorigène ou détendeur sous-alimenté",
+        "Compresseur nettement trop puissant pour cet évaporateur",
+        "Condenseur surdimensionné pour la puissance demandée"
+      ],
+      "motif": "L'excès de fluide (diagnostic inverse) devient le plus long ; les quatre pistes sont écrites avec leur mécanisme."
+    },
+    "q-g8-171": {
+      "lot": 6,
+      "bonne": 1,
+      "choix": [
+        "Excès de fluide frigorigène accumulé dans la bouteille",
+        "Manque de fluide, évaporateur givré, ou filtre bouché",
+        "Condenseur encrassé qui ferait chuter la basse pression",
+        "Compresseur trop puissant pour l'installation en place"
+      ],
+      "motif": "Les quatre causes sont portées à la même longueur : la bonne réponse devient la plus courte."
+    },
+    "pk-g8b-1": {
+      "lot": 6,
+      "bonne": 0,
+      "choix": [
+        "L'évaporateur et tout le matériel de contrôle et de sécurité posé avec lui",
+        "Seulement le tube de l'évaporateur, pas les accessoires posés",
+        "Seulement les raccords visibles depuis l'extérieur du meuble",
+        "Seulement les organes électriques de commande et de sécurité"
+      ],
+      "motif": "Les trois « Seulement… » sont complétés : chacun désigne une partie réellement contrôlée, mais aucune ne couvre l'ensemble exigé."
+    },
+    "pk-q-8.07": {
+      "lot": 6,
+      "bonne": 2,
+      "bonneReecrite": true,
+      "choix": [
+        "Pour remplacer le pressostat basse pression monté sur chaque évaporateur",
+        "Pour couper l'alimentation électrique du compresseur dès qu'un défaut survient",
+        "Pour équilibrer les pressions, ou protéger un produit sensible au froid",
+        "Pour mesurer la surchauffe à l'aspiration de chaque évaporateur"
+      ],
+      "motif": "La bonne réponse faisait 92 caractères : resserrée, elle passe troisième, derrière deux fonctions plausibles mais fausses de la soupape."
+    },
+    "q-g8-167": {
+      "lot": 6,
+      "bonne": 1,
+      "choix": [
+        "L'installation fonctionne parfaitement ainsi",
+        "Retour de liquide au compresseur (surchauffe insuffisante)",
+        "Manque de fluide frigorigène dans tout le circuit",
+        "Condenseur encrassé du côté de l'air extérieur"
+      ],
+      "motif": "Symétrique de la question sur la ligne chaude : mêmes pistes, formulations parallèles."
+    },
+    "pk-g8b-3": {
+      "lot": 6,
+      "bonne": 1,
+      "choix": [
+        "Le niveau d'huile du compresseur de la centrale",
+        "L'étanchéité, l'isolation et l'écoulement des condensats",
+        "La pression d'aspiration relevée pendant tout le dégivrage",
+        "Le débit d'air du ventilateur de l'évaporateur"
+      ],
+      "motif": "Les « uniquement » perdent leur absolu et deviennent des contrôles plausibles ; la pression d'aspiration passe devant la bonne réponse."
+    },
+    "pk-g8b-4": {
+      "lot": 6,
+      "bonne": 3,
+      "choix": [
+        "Aucun effet mesurable : seule la surchauffe compte réellement",
+        "Le dégivrage devient inutile puisque la batterie est sale",
+        "La pression d'évaporation augmente automatiquement d'elle-même",
+        "Le compresseur tourne plus longtemps pour le même résultat"
+      ],
+      "motif": "Les trois effets faux sont écrits en entier ; la bonne réponse passe troisième."
+    },
+    "pk-g8b-6": {
+      "lot": 6,
+      "bonne": 1,
+      "choix": [
+        "Sur la pression d'aspiration, juste à l'entrée du compresseur",
+        "Sur la pression dans l'évaporateur, en sortie d'évaporateur",
+        "Sur la pression de condensation, mesurée en sortie de condenseur",
+        "Sur la pression du carter d'huile, mesurée au bas du compresseur"
+      ],
+      "motif": "Les quatre couples pression / emplacement sont écrits au même format : la bonne réponse devient la plus courte."
+    },
+    "pk-q-8.02": {
+      "lot": 6,
+      "bonne": 3,
+      "choix": [
+        "En copiant le réglage du pressostat basse pression",
+        "Il n'y a rien à régler, l'organe fonctionne seul",
+        "En fixant une valeur basse par simple sécurité",
+        "En suivant la fiche constructeur de l'organe"
+      ],
+      "motif": "Les trois mauvaises méthodes de réglage sont écrites en entier : la bonne réponse (la fiche constructeur) devient la plus courte."
+    },
+    "pk-g8b-2": {
+      "lot": 6,
+      "bonne": 2,
+      "choix": [
+        "Il déclenche immédiatement un cycle de dégivrage complet",
+        "Il augmente la vitesse des ventilateurs de la batterie",
+        "Il coupe l'alimentation électrique du compresseur",
+        "Il ouvre en grand le régulateur de pression d'évaporation"
+      ],
+      "motif": "Les trois autres actions possibles d'un automatisme sont développées : la bonne réponse devient la plus courte."
+    },
+    "q-g7-169": {
+      "lot": 7,
+      "bonne": 1,
+      "choix": [
+        "Augmenter la température du liquide juste avant l'entrée du détendeur",
+        "S'assurer que le liquide est bien liquide (pas de bulles) et améliorer l'efficacité",
+        "Diminuer la pression du liquide dans la ligne qui mène au détendeur",
+        "Protéger le compresseur contre les retours de liquide à l'aspiration"
+      ],
+      "motif": "Trois distracteurs de deux mots deviennent trois effets plausibles prêtés au sous-refroidissement."
+    },
+    "pk-q-7.10": {
+      "lot": 7,
+      "bonne": 0,
+      "choix": [
+        "Des ailettes propres et un ventilateur en bon état font travailler le compresseur moins fort",
+        "En augmentant volontairement la pression de condensation de toute l'installation",
+        "En réduisant le sous-refroidissement à zéro à la sortie de la batterie",
+        "En arrêtant le ventilateur pendant la nuit pour économiser du courant"
+      ],
+      "motif": "Les trois fausses économies sont écrites en entier — dont l'arrêt du ventilateur la nuit, que l'on entend vraiment sur les chantiers."
+    },
+    "q-g7-170": {
+      "lot": 7,
+      "bonne": 1,
+      "choix": [
+        "Manque de fluide frigorigène dans tout le circuit haute pression",
+        "Condenseur encrassé, ventilateurs arrêtés, ou excès de charge",
+        "Évaporateur entièrement givré côté air de la chambre",
+        "Manque d'huile visible au carter du compresseur"
+      ],
+      "motif": "Le manque de fluide (cause d'un déclenchement BP, pas HP) est développé et passe devant la bonne réponse : c'est l'inversion à corriger."
+    },
+    "pk-g7b-4": {
+      "lot": 7,
+      "bonne": 0,
+      "bonneReecrite": true,
+      "choix": [
+        "Le pressostat coupe le compresseur ; le régulateur maintient une pression sans couper",
+        "Le pressostat maintient une pression ; le régulateur coupe l'alimentation du compresseur",
+        "Ce sont deux noms différents du même organe de sécurité",
+        "Le pressostat se règle, le régulateur se remplace à chaque visite"
+      ],
+      "motif": "La bonne réponse faisait 106 caractères : resserrée, elle passe deuxième derrière l'inversion exacte des deux rôles — le seul distracteur qui compte ici."
+    },
+    "q-g7-164": {
+      "lot": 7,
+      "bonne": 1,
+      "choix": [
+        "Le froid produit devient plus puissant grâce à cette isolation",
+        "La haute pression augmente et l'installation consomme plus",
+        "La basse pression diminue et l'évaporateur finit par givrer",
+        "Rien de particulier tant que la machine tourne"
+      ],
+      "motif": "« Rien de particulier » reste court volontairement ; ce sont les deux fausses conséquences physiques qui passent devant la bonne réponse."
+    },
+    "q-g7-163": {
+      "lot": 7,
+      "bonne": 1,
+      "choix": [
+        "Refroidir le corps du compresseur ainsi que son moteur électrique",
+        "Forcer l'air à travers le condenseur pour évacuer la chaleur",
+        "Aspirer le fluide frigorigène jusque dans la bouteille liquide",
+        "Détendre le gaz avant son entrée dans l'évaporateur"
+      ],
+      "motif": "Les rôles prêtés aux autres organes sont écrits en entier ; la bonne réponse passe troisième."
+    },
+    "pk-q-7.09": {
+      "lot": 7,
+      "bonne": 2,
+      "choix": [
+        "Le nom du fabricant du compresseur et son numéro de série complet",
+        "Le prix de l'intervention et le détail de tout ce qui est facturé au client",
+        "Ailettes encrassées, ventilateur bruyant, trace d'huile, pression anormale",
+        "Uniquement la date de la dernière charge de fluide effectuée"
+      ],
+      "motif": "Les contenus de rapport inutiles (fabricant, prix) sont développés jusqu'à dépasser la bonne réponse : ce sont ceux qu'on trouve réellement dans les rapports vides."
+    },
+    "q-g7-182": {
+      "lot": 7,
+      "bonne": 0,
+      "choix": [
+        "Température de condensation - Température du liquide sortie condenseur",
+        "Température ambiante moins température du liquide en sortie",
+        "Température haute pression moins température basse pression",
+        "Température d'évaporation moins température du liquide"
+      ],
+      "motif": "Les quatre formules sont écrites en toutes lettres, au même format que la question sur la surchauffe (G8)."
+    },
+    "q-g7-v6_057": {
+      "lot": 7,
+      "bonne": 1,
+      "choix": [
+        "Régulation continue de la pression de condensation",
+        "Sécurité (protection contre la surpression)",
+        "Mesure du débit de fluide dans la ligne liquide",
+        "Commande de la vitesse des ventilateurs du condenseur"
+      ],
+      "motif": "Les quatre natures d'organe sont écrites au même format : la bonne réponse devient la plus courte."
+    },
+    "q-g7-159": {
+      "lot": 7,
+      "bonne": 1,
+      "choix": [
+        "Absorber la chaleur du local ou du produit que l'on refroidit",
+        "Évacuer la chaleur du fluide frigorigène vers l'extérieur",
+        "Comprimer le gaz frigorigène en provenance de l'évaporateur",
+        "Détendre le liquide frigorigène avant l'évaporateur"
+      ],
+      "motif": "Les rôles des trois autres organes de la croix du frigoriste sont écrits en entier : la bonne réponse passe troisième."
+    },
+    "pk-q-7.05": {
+      "lot": 7,
+      "bonne": 2,
+      "choix": [
+        "La tension d'alimentation relevée aux bornes du ventilateur",
+        "La température de l'air ambiant relevée dans le local technique",
+        "Des traces d'huile, de la corrosion, ou un isolant abîmé",
+        "Le niveau d'huile dans le carter du compresseur"
+      ],
+      "motif": "Les trois contrôles hors sujet sont écrits avec leur point de mesure : la bonne réponse passe troisième."
+    },
+    "pk-g7b-3": {
+      "lot": 7,
+      "bonne": 1,
+      "choix": [
+        "Le pressostat haute pression de sécurité du groupe",
+        "Le régulateur de pression de sortie du condenseur",
+        "Le régulateur de pression d'évaporation des postes",
+        "Le filtre déshydrateur monté sur la ligne de liquide"
+      ],
+      "motif": "Les quatre organes candidats sont écrits avec leur emplacement : la bonne réponse devient la plus courte, et c'est la confusion régulateur de condensation / régulateur d'évaporation qui est visée."
+    },
+    "pk-q-7.06": {
+      "lot": 7,
+      "bonne": 2,
+      "choix": [
+        "Juste après le démarrage du compresseur, la machine étant chaude",
+        "Installation en fonctionnement, fluide en pleine circulation",
+        "Installation à l'arrêt, froide, avec récupération du fluide",
+        "Uniquement pendant la mise sous vide de l'installation neuve"
+      ],
+      "motif": "Les trois moments faux sont écrits avec l'état de la machine : la bonne réponse devient la plus courte."
+    },
+    "q-g2-v6_110": {
+      "lot": 8,
+      "bonne": 1,
+      "choix": [
+        "D'augmenter fortement la production mondiale de CFC",
+        "De commencer la réparation de la couche d'ozone",
+        "De créer de nouveaux fluides frigorigènes de substitution",
+        "D'interdire le CO₂ comme fluide frigorigène"
+      ],
+      "motif": "Les trois effets faux prêtés au protocole de Montréal sont écrits en entier ; la bonne réponse passe troisième."
+    },
+    "q-g2-v6_017": {
+      "lot": 8,
+      "bonne": 1,
+      "choix": [
+        "Des quotas attribués à chaque pays membre",
+        "Quotas attribués aux importateurs et producteurs",
+        "Des quotas attribués aux installateurs frigoristes",
+        "Une taxe proportionnelle au GWP du fluide"
+      ],
+      "motif": "Les quatre mécanismes possibles sont écrits au même format ; les installateurs (la confusion courante) passent devant la bonne réponse."
+    },
+    "q-g2-v6_111": {
+      "lot": 8,
+      "bonne": 1,
+      "choix": [
+        "Ils ne contiennent pas le moindre atome de carbone",
+        "Ils se décomposent rapidement dans l'atmosphère",
+        "Ils sont nettement plus lourds que l'air ambiant",
+        "Ils ne s'évaporent pas dans l'atmosphère"
+      ],
+      "motif": "Les trois explications fausses du faible GWP des HFO sont développées ; la bonne réponse passe troisième."
+    },
+    "q-g2-v6_114": {
+      "lot": 8,
+      "bonne": 2,
+      "choix": [
+        "Du fluor et de l'hydrogène",
+        "De l'hydrogène et du carbone",
+        "Chlore ou brome",
+        "Du carbone et de l'oxygène"
+      ],
+      "motif": "Les atomes cités isolément (5 à 9 caractères) sont regroupés par paires, au même format : la bonne réponse devient la plus courte."
+    },
+    "pk-p7-2": {
+      "lot": 9,
+      "bonne": 1,
+      "choix": [
+        "Que l'éclairage du local est suffisant pour travailler dans de bonnes conditions",
+        "Que la zone est balisée et ventilée, l'issue dégagée et les sources d'inflammation supprimées",
+        "Que la température ambiante restera stable pendant toute l'intervention",
+        "Que le sol est parfaitement sec et dégagé de tout obstacle"
+      ],
+      "motif": "Trois vérifications réelles mais insuffisantes (éclairage, température, sol sec) sont écrites en entier."
+    },
+    "pk-q-12.12": {
+      "lot": 9,
+      "bonne": 0,
+      "bonneReecrite": true,
+      "choix": [
+        "Rédiger un rapport : composant changé, résultats de l'épreuve et du contrôle, quantité chargée",
+        "Rien de plus : l'intervention se termine avec le contrôle direct d'étanchéité de tout le circuit",
+        "Noter simplement la date de passage sur le carnet de l'installation",
+        "Informer oralement le client, sans trace écrite de l'intervention"
+      ],
+      "motif": "La bonne réponse faisait 110 caractères : resserrée en liste, elle passe deuxième derrière le « rien de plus », qui est l'erreur visée."
+    },
+    "q-g12-289": {
+      "lot": 9,
+      "bonne": 1,
+      "choix": [
+        "Aucune différence : les deux classes se manipulent exactement de la même manière",
+        "A3 est hautement inflammable (propagation rapide) ; A2L l'est faiblement (propagation lente)",
+        "A2L est un fluide toxique alors que A3 ne présente aucune toxicité",
+        "A3 produit plus de froid, d'où la limitation de charge imposée"
+      ],
+      "motif": "« Aucune différence » est développé — c'est l'erreur de fond à corriger. Les deux autres distracteurs prêtent au A3 une toxicité et une puissance qu'il n'a pas."
+    },
+    "q-g12-291": {
+      "lot": 9,
+      "bonne": 1,
+      "choix": [
+        "Aucune précaution particulière, le R-32 étant classé seulement faiblement inflammable",
+        "Récupérer le fluide, inerter à l'azote, ventiler, supprimer toute source d'ignition",
+        "Ouvrir une fenêtre et braser rapidement pour limiter l'exposition",
+        "Braser directement : le circuit est fermé et sous pression"
+      ],
+      "motif": "« Aucune précaution, le R-32 est peu inflammable » devient la proposition la plus longue : c'est exactement le raisonnement dangereux que la question doit débusquer."
+    },
+    "pk-q-12.01": {
+      "lot": 9,
+      "bonne": 1,
+      "choix": [
+        "Vous utilisez un adaptateur pour forcer le raccordement sur la bouteille",
+        "Vous respectez le raccord spécifique prévu pour les hydrocarbures, sans adaptateur",
+        "Vous serrez plus fort à la clé pour engager quand même le filetage",
+        "Vous inversez le sens de filetage sur votre propre raccord habituel"
+      ],
+      "motif": "Les trois façons de passer outre le raccord spécifique (adaptateur, forcer, inverser le filetage) sont écrites en entier."
+    },
+    "q-g12-286": {
+      "lot": 9,
+      "bonne": 1,
+      "choix": [
+        "Parce qu'il est formellement interdit de fumer sur un chantier de ce type",
+        "Parce que le fluide peut s'enflammer et se décomposer en gaz toxiques",
+        "Parce que la fumée salit l'installation et les échangeurs",
+        "Parce que l'odeur dégagée est désagréable pour l'occupant"
+      ],
+      "motif": "L'interdiction de fumer — vraie règle de chantier, mais hors sujet ici — devient le distracteur le plus long."
+    },
+    "q-g12-v6_181": {
+      "lot": 9,
+      "bonne": 1,
+      "choix": [
+        "Les grandes centrales frigorifiques industrielles",
+        "Les réfrigérateurs et congélateurs domestiques",
+        "Les climatiseurs split installés en résidentiel",
+        "Les pompes à chaleur air-eau domestiques"
+      ],
+      "motif": "Les quatre familles d'équipement sont écrites au même format ; la bonne réponse passe troisième."
+    },
+    "q-g12-v6_093": {
+      "lot": 9,
+      "bonne": 1,
+      "choix": [
+        "Aucune précaution particulière lors de l'intervention",
+        "Un outillage adapté et une formation spécifique",
+        "Un local ATEX systématique pour toute intervention",
+        "Un détecteur d'ammoniac dans le local"
+      ],
+      "motif": "« Aucune précaution » et « local ATEX systématique » encadrent la bonne réponse : les deux excès opposés, tous deux faux."
+    },
+    "q-g12-v6_091": {
+      "lot": 9,
+      "bonne": 1,
+      "choix": [
+        "Son pouvoir de réchauffement est élevé",
+        "Il est très inflammable (classe A3)",
+        "Il est fortement toxique par inhalation",
+        "Il corrode le cuivre des tubes du circuit"
+      ],
+      "motif": "Les trois fausses raisons (GWP, toxicité, corrosion) sont écrites au même format : la bonne réponse devient la plus courte."
+    },
+    "pk-g12b-1": {
+      "lot": 9,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Le R-290 est classé A2L, comme le R-32 : une flamme brève est possible sans risque particulier.",
+        "Le R-290 est classé A3, très inflammable : aucune flamme sans inertage confirmé",
+        "Le R-290 est classé A2, inflammable, mais moins que les hydrocarbures purs.",
+        "Le R-290 est classé A1, non inflammable : le risque vient seulement de la pression."
+      ],
+      "motif": "La bonne réponse faisait 106 caractères contre 95 au plus long distracteur : resserrée, elle passe troisième. Les trois classes fausses proposées (A2L, A2, A1) restent celles qu'on attribue par erreur au propane."
+    },
+    "q-g12-v6_184": {
+      "lot": 9,
+      "bonne": 1,
+      "choix": [
+        "Les mêmes outils standards que pour un fluide A1",
+        "Adaptés (pas de source d'ignition, ventilation)",
+        "Uniquement manuels, sans aucune partie électrique",
+        "Réalisés en matériaux composites non conducteurs"
+      ],
+      "motif": "« Standards » (9 caractères) devient une affirmation complète ; la bonne réponse n'est plus la plus longue."
+    },
+    "pk-p7-1": {
+      "lot": 9,
+      "bonne": 0,
+      "choix": [
+        "Avant d'engager le moindre geste technique",
+        "Juste après avoir ouvert le circuit frigorifique",
+        "À la fin, au moment de rédiger le rapport écrit",
+        "Seulement si le client en fait lui-même la demande"
+      ],
+      "motif": "Les trois moments faux sont écrits au même format : la bonne réponse devient la plus courte."
+    },
+    "q-g13-283": {
+      "lot": 10,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Pour mesurer en continu les performances de l'installation",
+        "Parce que le CO₂ est inodore et incolore : une fuite est indétectable sans appareil",
+        "Parce que la réglementation impose un détecteur pour tous les fluides",
+        "Pour compter les ouvertures de porte de la chambre froide"
+      ],
+      "motif": "La bonne réponse faisait 112 caractères : resserrée à ce qui répond (inodore, incolore, indétectable sans appareil), l'asphyxie restant dans la remédiation."
+    },
+    "q-g13-v6_182": {
+      "lot": 10,
+      "bonne": 1,
+      "choix": [
+        "Sa couleur bleue, très reconnaissable à l'œil",
+        "Son odeur très caractéristique (piquante)",
+        "Son goût sucré, tout à fait caractéristique",
+        "Sa luminescence dans l'obscurité"
+      ],
+      "motif": "Les trois faux moyens de détection sont écrits en entier ; la bonne réponse passe troisième."
+    },
+    "q-g13-v6_089": {
+      "lot": 10,
+      "bonne": 1,
+      "choix": [
+        "Un second évaporateur en haute pression",
+        "Un refroidisseur de gaz (gas cooler)",
+        "Un économiseur placé sur le circuit HP",
+        "Un absorbeur thermique de type classique"
+      ],
+      "motif": "Les quatre organes proposés sont écrits au même format : la bonne réponse devient la plus courte."
+    },
+    "pk-g13-4": {
+      "lot": 10,
+      "bonne": 2,
+      "bonneReecrite": true,
+      "choix": [
+        "D'accord : une attestation A1 permet d'intervenir sur tous les fluides en cas d'urgence.",
+        "D'accord, à condition de porter un masque de protection adapté.",
+        "Non : l'ammoniac relève de la catégorie C, mon attestation A1/A2 n'y donne aucun droit",
+        "J'y vais quand même : l'urgence prime sur la catégorie d'attestation."
+      ],
+      "motif": "La bonne réponse faisait 108 caractères : resserrée, elle passe deuxième derrière « une A1 permet tout en cas d'urgence » — l'erreur exacte que la question vise."
+    },
+    "pk-g13-1": {
+      "lot": 10,
+      "bonne": 0,
+      "choix": [
+        "La pression, très élevée, et l'atmosphère irrespirable qu'une fuite crée en local fermé.",
+        "Aucun danger : la classe A1 veut dire qu'il est parfaitement inoffensif",
+        "L'inflammabilité, puisqu'il peut s'enflammer comme un hydrocarbure",
+        "Uniquement le risque de gel des tuyauteries en fonctionnement normal."
+      ],
+      "motif": "« La classe A1 veut dire sans danger » est développé : c'est le contresens que la question doit débusquer."
+    },
+    "q-g13-v6_094": {
+      "lot": 10,
+      "bonne": 1,
+      "choix": [
+        "La climatisation résidentielle et le petit tertiaire",
+        "Le froid industriel (entrepôts, agroalimentaire)",
+        "Les véhicules frigorifiques de transport",
+        "Les réfrigérateurs domestiques modernes"
+      ],
+      "motif": "Les quatre domaines d'emploi sont écrits au même format ; la climatisation passe devant la bonne réponse."
+    },
+    "q-g13-v6_180": {
+      "lot": 10,
+      "bonne": 1,
+      "choix": [
+        "Toujours au-dessus de 31 °C, son point critique",
+        "Comme un fluide classique avec condensation",
+        "Sans compresseur, par simple détente du gaz",
+        "Sans détendeur, avec un capillaire seul"
+      ],
+      "motif": "Les trois affirmations fausses sur le mode sous-critique sont complétées ; la bonne réponse passe troisième."
+    },
+    "q-g4-180": {
+      "lot": 11,
+      "bonne": 1,
+      "choix": [
+        "Remettre l'installation en service immédiatement et surveiller la pression",
+        "Effectuer un test de pression avec un gaz inerte (azote) et rechercher les fuites",
+        "Ajouter du fluide frigorigène et observer la baisse de la pression",
+        "Attendre 24 heures sans rien faire et relever les manomètres"
+      ],
+      "motif": "Les trois mauvaises méthodes sont écrites avec leur geste complet ; « remettre en service » passe juste derrière la bonne réponse."
+    },
+    "q-g4-v6_163": {
+      "lot": 11,
+      "bonne": 1,
+      "choix": [
+        "La couleur que prend le gaz au moment où il s'échappe du circuit",
+        "La différence de concentration de gaz dans l'air ambiant",
+        "Le bruit très fin produit par la fuite dans les tuyauteries",
+        "La variation de température au point de fuite"
+      ],
+      "motif": "Les trois principes de détection faux sont écrits en entier ; la bonne réponse passe troisième."
+    },
+    "pk-q-4.09": {
+      "lot": 11,
+      "bonne": 0,
+      "choix": [
+        "Consigner dans le registre la date, la méthode utilisée, les points contrôlés et le résultat",
+        "Attendre le prochain contrôle pour tout noter en une seule fois dans le registre de l'équipement",
+        "Informer seulement le client à l'oral, en fin d'intervention",
+        "Rien, puisqu'il n'y a aucune fuite à signaler cette fois-ci"
+      ],
+      "motif": "« Attendre le prochain contrôle pour tout noter » devient la proposition la plus longue : c'est le raccourci qui vide le registre de sa valeur."
+    },
+    "q-g4-v6_074": {
+      "lot": 11,
+      "bonne": 1,
+      "choix": [
+        "Utiliser un détecteur électronique de fuites récemment calibré",
+        "Suivre les paramètres de fonctionnement (P, T°, surchauffe)",
+        "Mettre le circuit sous pression d'azote puis attendre la chute",
+        "Utiliser un traceur UV et rechercher à la lampe adaptée au produit"
+      ],
+      "motif": "Les trois méthodes DIRECTES (détecteur, azote, traceur UV) sont écrites en entier : la bonne réponse, seule méthode indirecte, devient la plus courte."
+    },
+    "pk-q-4.01": {
+      "lot": 11,
+      "bonne": 0,
+      "choix": [
+        "Aux points d'assemblage (raccords, brasures) et aux pièces qui vibrent, comme le compresseur",
+        "Uniquement sur le pressostat de sécurité haute pression et sur ses raccords",
+        "Uniquement dans l'isolant qui recouvre les tuyauteries froides",
+        "Sur un tube plein, loin de tout raccord ou de toute pièce en mouvement"
+      ],
+      "motif": "Les « uniquement » sont complétés ; le dernier distracteur désigne exactement l'endroit où les fuites n'apparaissent pas (tube plein, loin des assemblages)."
+    },
+    "q-g4-110": {
+      "lot": 11,
+      "bonne": 2,
+      "choix": [
+        "Uniquement le type de fluide et le volume",
+        "Le type et la quantité de fluide",
+        "Type, quantité et pictogrammes de danger",
+        "Aucune obligation de marquage"
+      ],
+      "motif": "Les mentions partielles du marquage sont écrites au même format ; la bonne réponse n'est plus la plus longue."
+    },
+    "pk-q-4.02": {
+      "lot": 11,
+      "bonne": 3,
+      "choix": [
+        "Vous notez que c'est déjà réparé, puis vous passez directement au reste de l'installation contrôlée",
+        "Vous démontez systématiquement le raccord pour le remplacer par précaution avant le contrôle",
+        "Vous l'ignorez, puisque la réparation est déjà faite",
+        "Vous recontrôlez ce raccord en priorité, car un point réparé reste une partie à surveiller"
+      ],
+      "motif": "Les deux mauvaises attitudes (passer au reste, remplacer par précaution) sont développées jusqu'à dépasser la bonne réponse."
+    },
+    "pk-cl1-3": {
+      "lot": 12,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Uniquement à remplir la fiche d'intervention et le registre de l'équipement",
+        "Elle commande les EPI, le matériel admis, la ventilation et la charge maximale du local",
+        "Elle sert seulement au calcul du PRP de l'installation et de sa charge totale en tCO₂e",
+        "Elle indique le prix du fluide au kilogramme livré"
+      ],
+      "motif": "La bonne réponse faisait 112 caractères : resserrée, elle reste la plus longue mais de peu, le distracteur « PRP et charge en tCO₂e » venant juste derrière."
+    },
+    "pk-cl4-3": {
+      "lot": 12,
+      "bonne": 1,
+      "choix": [
+        "Que le détecteur fonctionne bien et qu'il mesure correctement l'atmosphère de tout le local technique",
+        "Rien de plus qu'une mise sous tension : une cellule usée reste allumée sans plus rien mesurer",
+        "Qu'une fuite de CO₂ est en cours dans le local et qu'il faut évacuer les lieux sans délai",
+        "Que le local a été ventilé récemment par la ventilation mécanique"
+      ],
+      "motif": "« Le détecteur fonctionne » et « une fuite est en cours » sont développés jusqu'à encadrer la bonne réponse : ce sont les deux conclusions hâtives devant un voyant allumé."
+    },
+    "pk-cl2-2": {
+      "lot": 12,
+      "bonne": 1,
+      "choix": [
+        "Oui, le propane possède une odeur caractéristique, très reconnaissable en local fermé",
+        "Non : le R-290 du froid est un propane de haute pureté, sans l'odorisant ajouté au gaz domestique",
+        "Oui, à condition de ne pas rester plus de cinq minutes dans le local technique",
+        "Oui, si l'on connaît bien l'odeur du gaz de ville domestique"
+      ],
+      "motif": "Les trois « Oui » sont argumentés au même niveau : il faut savoir que le R-290 du froid n'est pas odorisé, pas simplement repérer la réponse développée."
+    },
+    "pk-cl3-1": {
+      "lot": 12,
+      "bonne": 1,
+      "choix": [
+        "Près du plafond, car les gaz montent toujours vers le haut",
+        "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
+        "Il se répartit uniformément, et sans danger particulier, dans tout le volume du local technique",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler nulle part"
+      ],
+      "motif": "La répartition uniforme « sans danger » est développée jusqu'à dépasser la bonne réponse : c'est la représentation fausse la plus répandue sur les gaz lourds."
+    },
+    "pk-cl2-3": {
+      "lot": 12,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Que 20 % du volume total du local technique est désormais occupé par le gaz recherché",
+        "L'atmosphère est à un cinquième de la concentration qui la rendrait inflammable",
+        "Le mélange est explosif dès 20 %, il faut évacuer immédiatement sans autre mesure",
+        "L'appareil signale qu'il lui reste 20 % de charge de batterie"
+      ],
+      "motif": "La bonne réponse faisait 104 caractères : resserrée, elle passe troisième. Le contresens « 20 % du volume » est développé, c'est la lecture fausse à corriger."
+    },
+    "pk-cl3-2": {
+      "lot": 12,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Il n'y a aucune différence réelle : les deux prennent la place de l'oxygène",
+        "Le CO₂ déplace l'oxygène ET agit sur l'organisme ; l'azote est inerte",
+        "Le CO₂ est un gaz inflammable, à la différence de l'azote qui reste neutre",
+        "L'azote est bien plus dangereux car il est directement toxique pour l'organisme"
+      ],
+      "motif": "Bonne réponse resserrée : elle devient la plus courte, derrière les trois erreurs (aucune différence, CO₂ inflammable, azote toxique)."
+    },
+    "pk-cl3-3": {
+      "lot": 12,
+      "bonne": 1,
+      "choix": [
+        "Je descends immédiatement le chercher, chaque seconde compte vraiment",
+        "Je donne l'alerte, je ventile et je fais intervenir les secours, sans descendre",
+        "Je descends en retenant ma respiration, juste le temps de le remonter",
+        "J'attends seul quelques minutes que le gaz se dissipe de lui-même"
+      ],
+      "motif": "Les trois mauvais réflexes sont écrits en entier — descendre, descendre en apnée, attendre seul : ce sont exactement ceux qui tuent le sauveteur."
+    },
+    "pk-cl4-2": {
+      "lot": 12,
+      "bonne": 1,
+      "choix": [
+        "Oui, c'est précisément le rôle d'une cartouche filtrante bien adaptée",
+        "Non : une cartouche ne retient pas le CO₂ et ne fournit pas d'oxygène",
+        "Oui, à condition de ne pas rester plus de quelques minutes dans le local",
+        "Oui, s'il s'agit d'une cartouche neuve, adaptée au gaz effectivement présent"
+      ],
+      "motif": "Les trois « Oui » sont argumentés et dépassent la bonne réponse, qui devient la plus courte : un masque à cartouche ne fabrique pas d'oxygène, quelle que soit la cartouche."
+    },
+    "pk-cl2-1": {
+      "lot": 12,
+      "bonne": 0,
+      "choix": [
+        "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
+        "La température minimale d'inflammation de ce gaz au contact de l'air du local technique",
+        "La pression maximale admissible dans la bouteille de stockage",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation en préfecture"
+      ],
+      "motif": "Les trois définitions concurrentes (température d'inflammation, pression de bouteille, seuil de déclaration) sont écrites en entier : la bonne réponse passe troisième."
+    },
+    "q-g3-v6_059": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "Le circuit est parfaitement étanche",
+        "Une fuite ou de l'humidité résiduelle",
+        "Le vide atteint est largement suffisant",
+        "La pompe à vide est trop puissante"
+      ],
+      "motif": "Les quatre conclusions possibles du test de maintien sont ramenées au même format."
+    },
+    "q-g3-v6_159": {
+      "lot": 13,
+      "bonne": 2,
+      "choix": [
+        "Évacuer l'air du circuit avant charge",
+        "Évacuer l'humidité résiduelle",
+        "Récupérer du fluide frigorigène",
+        "Atteindre le vide requis avant charge"
+      ],
+      "motif": "Les trois usages légitimes de la pompe à vide sont complétés : la bonne réponse (le seul usage interdit) passe troisième."
+    },
+    "q-g10-v6_061": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "Pour refroidir le tube plus vite après le brasage",
+        "Pour éviter l'oxydation intérieure du cuivre (calamine)",
+        "Pour tester l'étanchéité du joint pendant le brasage",
+        "Pour sécher l'intérieur du circuit avant la mise en charge"
+      ],
+      "motif": "Les trois fausses raisons du balayage azote sont développées ; le séchage passe devant la bonne réponse."
+    },
+    "q-g10-69": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "Pour refroidir le tube plus vite",
+        "Pour éviter l'oxydation interne",
+        "Pour tester l'étanchéité du joint",
+        "Pour nettoyer l'intérieur du circuit"
+      ],
+      "motif": "Même question sous une autre forme : les quatre raisons sont mises à égalité, la bonne réponse devient la plus courte."
+    },
+    "q-g11-v6_035": {
+      "lot": 13,
+      "bonne": 0,
+      "choix": [
+        "Changer le fluide sans modifier l'installation",
+        "Changer le fluide et l'huile du circuit",
+        "Modifier le détendeur et changer l'huile",
+        "Remplacer entièrement le circuit frigorifique"
+      ],
+      "motif": "Les quatre niveaux d'intervention sont écrits au même format."
+    },
+    "q-g11-v6_092": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "Les prix maximaux pratiqués pour les fluides frigorigènes",
+        "Les charges maximales de fluide selon le local et la classe de sécurité",
+        "Les horaires autorisés pour intervenir sur une installation",
+        "Les salaires minimaux applicables aux techniciens frigoristes qualifiés"
+      ],
+      "motif": "Les trois objets fantaisistes prêtés à la norme (prix, horaires, salaires) sont écrits en entier ; les salaires passent devant la bonne réponse."
+    },
+    "q-g11-185": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "Augmenter la haute pression jusqu'au maximum admissible par la machine",
+        "Diminuer l'écart entre T°K (condensation) et T°O (évaporation)",
+        "Augmenter la surchauffe jusqu'au maximum admissible à l'aspiration",
+        "Diminuer le débit d'air soufflé sur la batterie du condenseur"
+      ],
+      "motif": "Les trois fausses pistes d'optimisation sont développées ; la bonne réponse passe troisième."
+    },
+    "q-g11-v6_183": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "2 catégories, selon la charge admise",
+        "3 catégories (a, b, c) selon l'occupation",
+        "5 catégories, selon la classe du fluide",
+        "10 catégories, selon le type de bâtiment occupé"
+      ],
+      "motif": "Les nombres de catégories sont accompagnés de leur critère : plus de réponse en deux mots."
+    },
+    "pk-p4-2": {
+      "lot": 13,
+      "bonne": 2,
+      "bonneReecrite": true,
+      "choix": [
+        "Pour connaître à tout moment la quantité d'azote restant dans la bouteille",
+        "Pour filtrer l'humidité que pourrait contenir le gaz de la bouteille d'azote",
+        "Parce que la pression de la bouteille dépasse ce que le circuit supporte",
+        "Pour réchauffer le gaz avant son entrée dans le circuit"
+      ],
+      "motif": "Bonne réponse resserrée ; les deux autres raisons plausibles (jauge de contenu, filtration) sont développées et passent devant."
+    },
+    "pk-q-10.02": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "Le tube n'a pas été ébavuré après la coupe, ce qui fragilise le joint",
+        "Le support transmet les vibrations du compresseur au joint, qui rompt par fatigue",
+        "Le balayage à l'azote n'a pas été fait pendant l'opération de brasage",
+        "L'alliage d'apport utilisé n'était pas un cuivre-phosphore adapté à ce tube de cuivre"
+      ],
+      "motif": "Les trois autres causes classiques de rupture de brasure (ébavurage, azote, alliage) sont écrites en entier ; l'alliage passe devant la bonne réponse."
+    },
+    "pk-q-3.05": {
+      "lot": 13,
+      "bonne": 3,
+      "bonneReecrite": true,
+      "choix": [
+        "Attendre la validation du client avant toute trace écrite",
+        "Refaire une deuxième fois l'épreuve d'étanchéité pour confirmer",
+        "Ranger le matériel, aucune autre formalité n'est nécessaire",
+        "Consigner au registre et rédiger le rapport des essais"
+      ],
+      "motif": "La bonne réponse faisait 114 caractères contre 63 au plus long distracteur : resserrée à l'essentiel, elle devient la plus courte."
+    },
+    "pk-s5-1": {
+      "lot": 13,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Prévenir le client de la coupure prévue",
+        "Vérifier l'absence de tension avec un VAT",
+        "Poser une pancarte de consignation visible",
+        "Ouvrir le coffret électrique concerné"
+      ],
+      "motif": "Apostrophes rétablies (question saisie sans apostrophes) et distracteurs portés à la même longueur : les quatre étapes de la consignation deviennent comparables."
+    },
+    "q-g1-157": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "À l'état de vapeur",
+        "À l'état liquide",
+        "À l'état de glace",
+        "En mélange diphasique"
+      ],
+      "motif": "Les quatre états sont écrits au même format ; « biphasique » devient « diphasique », le terme employé sur le diagramme."
+    },
+    "q-g1-33": {
+      "lot": 13,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Une amélioration",
+        "Un isomère",
+        "Un azéotrope",
+        "Un additif"
+      ],
+      "motif": "« Azeotropic » (mot anglais sans signification ici) est remplacé par un additif ; les quatre propositions sont ramenées à une forme homogène."
+    },
+    "q-g1-36": {
+      "lot": 13,
+      "bonne": 0,
+      "choix": [
+        "50% R32 / 50% R125",
+        "45% R32 / 55% R125",
+        "75% R134a / 25% R32",
+        "100% R32 pur"
+      ],
+      "motif": "Les quatre compositions sont écrites au même format ; celle du R-407C (trois composants) est remplacée par un binaire plausible pour ne pas trahir la réponse par sa longueur."
+    },
+    "q-g2-v6_115": {
+      "lot": 13,
+      "bonne": 2,
+      "choix": [
+        "Sa couleur",
+        "Son prix",
+        "Son GWP",
+        "Sa pression"
+      ],
+      "motif": "Les quatre grandeurs sont ramenées à une forme courte homogène."
+    },
+    "q-g5-v6_158": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "Phase gazeuse",
+        "Phase liquide",
+        "Les deux au choix",
+        "Ni l'un ni l'autre"
+      ],
+      "motif": "Les deux échappatoires sont raccourcies à la longueur des deux vraies réponses."
+    },
+    "q-g9-v6_050": {
+      "lot": 13,
+      "bonne": 1,
+      "bonneReecrite": true,
+      "choix": [
+        "Du charbon actif",
+        "Un tamis moléculaire",
+        "De la silicone",
+        "Une résine échangeuse"
+      ],
+      "motif": "Les quatre matériaux sont introduits par un article : format homogène."
+    },
+    "q-g9-v6_151": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "Tous les ans systématiquement",
+        "À chaque ouverture du circuit",
+        "Si le voyant indique de l'humidité",
+        "Jamais, il est permanent"
+      ],
+      "motif": "« Jamais » (6 caractères) devient une affirmation complète ; le « uniquement si » perd son absolu."
+    },
+    "q-g10-v6_157": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "Serrer le raccord à fond",
+        "Purger l'air du flexible",
+        "Ouvrir la vanne en grand",
+        "Tirer au vide le flexible"
+      ],
+      "motif": "Les quatre gestes sont ramenés à la même longueur."
+    },
+    "pk-g9b-4": {
+      "lot": 13,
+      "bonne": 2,
+      "choix": [
+        "Il s'arrête automatiquement en sécurité",
+        "Il consomme nettement moins d'énergie",
+        "Il travaille plus pour le même résultat",
+        "Il n'est pas concerné, seul l'évaporateur l'est"
+      ],
+      "motif": "Les quatre effets sont écrits au même format."
+    },
+    "pk-g13-2": {
+      "lot": 13,
+      "bonne": 3,
+      "choix": [
+        "Vous entrez identifier la fuite, votre odorat vous alertera à temps",
+        "Vous coupez vous-même l'installation avant de sortir du local",
+        "Vous attendez que l'odeur se dissipe avant d'aller voir",
+        "Vous alertez et vous évacuez, sans intervenir seul."
+      ],
+      "motif": "Le distracteur « j'entre, mon odorat m'alertera » faisait 104 caractères contre 51 à la bonne réponse : resserré, il reste la proposition la plus développée mais sans se détacher."
+    },
+    "pk-g7b-2": {
+      "lot": 13,
+      "bonne": 0,
+      "bonneReecrite": true,
+      "choix": [
+        "Vous suivez la fiche du constructeur",
+        "Vous réglez à l'estime, selon l'expérience",
+        "Vous copiez le réglage de la dernière installation",
+        "Vous laissez le réglage d'usine sans le vérifier"
+      ],
+      "motif": "Les trois mauvaises pratiques sont resserrées : elles ne doivent pas paraître plus « travaillées » que la bonne réponse."
+    },
+    "pk-p4-1": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "De l'oxygène pur",
+        "De l'azote sec",
+        "De l'air comprimé",
+        "Du fluide du circuit"
+      ],
+      "motif": "Les quatre gaz sont écrits au même format ; le fluide frigorigène (proposition la plus longue) est resserré."
+    },
+    "pk-q-11.04": {
+      "lot": 13,
+      "bonne": 0,
+      "choix": [
+        "Le CO2 (R-744)",
+        "L'ammoniac (NH3)",
+        "Le propane (R-290)",
+        "Le HFO R-1234yf"
+      ],
+      "motif": "Les quatre fluides sont désignés par leur nom et leur code, au même format."
+    },
+    "pk-q-9.06": {
+      "lot": 13,
+      "bonne": 0,
+      "bonneReecrite": true,
+      "choix": [
+        "Par un ressort taré",
+        "Par une sonde numérique",
+        "Par un bulbe capillaire",
+        "Par un module électronique"
+      ],
+      "motif": "Les trois technologies électroniques sont resserrées au format de la bonne réponse : « par un ressort » ne doit pas se repérer à sa brièveté."
+    },
+    "pk-cl1-1": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "La lettre dit le PRP, le chiffre dit la pression de service",
+        "La lettre dit la toxicité, le chiffre dit l'inflammabilité",
+        "La lettre dit la famille chimique, le chiffre dit l'année d'homologation",
+        "La lettre dit l'inflammabilité, le chiffre dit la toxicité"
+      ],
+      "motif": "Le distracteur le plus long est resserré ; l'inversion lettre/chiffre (le seul vrai piège) garde exactement la même longueur que la bonne réponse."
+    },
+    "pk-cl1-2": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "A2L, comme le R-32",
+        "A3 : très inflammable",
+        "A1, il n'est pas toxique",
+        "B2L, comme l'ammoniac"
+      ],
+      "motif": "Les quatre classes sont écrites au même format : c'est la connaissance de la classe A3 du propane qui tranche, rien d'autre."
+    },
+    "pk-g1b-1": {
+      "lot": 13,
+      "bonne": 1,
+      "choix": [
+        "À gauche de la cloche",
+        "Sous la cloche",
+        "À droite de la cloche",
+        "Au-dessus de la cloche"
+      ],
+      "motif": "Les quatre zones du diagramme sont désignées par rapport à la cloche, au même format."
+    }
+  }
+}

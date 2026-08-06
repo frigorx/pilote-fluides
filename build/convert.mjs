@@ -12,7 +12,7 @@
    Sortie : packs/fluides/banque.gen.json
    Usage  : node build/convert.mjs [chemin/vers/FGAZ-COMPLETE-V6.html]
    ===================================================================== */
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -463,8 +463,63 @@ function main() {
     });
   }
 
-  /* --- contrôles --- */
+  /* -------------------------------------------------------------------
+     CORRECTIONS DE DISTRACTEURS  (chantier du 06/08/2026)
+     -------------------------------------------------------------------
+     Mesuré sur la banque : la bonne réponse était la proposition la PLUS
+     LONGUE dans 195 questions sur 266. Un élève qui coche la plus longue
+     sans rien lire décrochait 14/20. Les distracteurs étaient trop courts
+     et trop faibles (« Pour des raisons esthétiques ») : on les réécrit en
+     erreurs réelles d'élève, de longueur comparable.
+
+     Ces réécritures vivent dans un FICHIER DE DONNÉES, pas dans le code :
+     packs/fluides/corrections-distracteurs.json, indexé par l'id FINAL de
+     la banque (q-g6-249, pk-s5-2), les deux origines confondues. Elles
+     s'appliquent en dernier, après CORRECTIONS.
+
+     ⚠ Une correction ne DÉPLACE JAMAIS la bonne réponse : son index vient
+     de la source Mission F-GAZ (bonne: q.reponse), pas d'ici. Réordonner
+     désignerait un distracteur comme bonne réponse sans erreur visible —
+     d'où les refus ci-dessous, et le contrôle côté Hub (mesure-banque).
+     ------------------------------------------------------------------- */
   const erreurs = [];
+  const cheminDistracteurs = resolve(RACINE, "packs/fluides/corrections-distracteurs.json");
+  let distracteurs = 0;
+  if (existsSync(cheminDistracteurs)) {
+    const fichier = JSON.parse(readFileSync(cheminDistracteurs, "utf8"));
+    const parId = new Map(banque.map((q) => [q.id, q]));
+    for (const [id, c] of Object.entries(fichier.questions || {})) {
+      const q = parId.get(id);
+      if (!q) {
+        erreurs.push("correction de distracteurs : question " + id + " absente de la banque");
+        continue;
+      }
+      if (!Array.isArray(c.choix) || c.choix.length !== q.choix.length) {
+        erreurs.push(id + " : " + (c.choix || []).length + " propositions corrigées contre " + q.choix.length);
+        continue;
+      }
+      if (c.bonne !== q.bonne) {
+        erreurs.push(id + " : index de bonne réponse déclaré " + c.bonne + ", la banque dit " + q.bonne);
+        continue;
+      }
+      if (String(q.choix[q.bonne]).trim() !== String(c.choix[c.bonne]).trim() && !c.bonneReecrite) {
+        erreurs.push(id + " : la bonne réponse change sans « bonneReecrite » — décalage d'index probable");
+        continue;
+      }
+      if (new Set(c.choix.map((x) => String(x).trim().toLowerCase())).size !== c.choix.length) {
+        erreurs.push(id + " : deux propositions identiques");
+        continue;
+      }
+      q.choix = c.choix;
+      if (c.enonce) q.enonce = c.enonce;
+      if (c.explication) q.explication = c.explication;
+      if (c.aide) q.aide = c.aide;
+      if (c.remed) q.remed = c.remed;
+      distracteurs++;
+    }
+  }
+
+  /* --- contrôles --- */
   const vus = new Set();
   for (const q of banque) {
     if (vus.has(q.id)) erreurs.push("identifiant de question en double : " + q.id);
@@ -494,6 +549,7 @@ function main() {
   console.log("✓ " + banque.length + " questions écrites → packs/fluides/banque.gen.json");
   console.log("  répartition : " + JSON.stringify(parGroupe));
   console.log("  corrections éditoriales appliquées : " + corrigees);
+  console.log("  distracteurs réécrits (corrections-distracteurs.json) : " + distracteurs);
 }
 
 main();

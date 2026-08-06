@@ -127,9 +127,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Que désigne la LIE d'un gaz inflammable ?",
        "choix": [
         "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
-        "La température minimale d'inflammation du gaz",
-        "La pression maximale admissible dans la bouteille",
-        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+        "La température minimale d'inflammation de ce gaz au contact de l'air du local technique",
+        "La pression maximale admissible dans la bouteille de stockage",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation en préfecture"
        ],
        "bonne": 0,
        "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
@@ -181,10 +181,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Les fluides A2L comme le R32 nécessitent :",
        "choix": [
-        "Aucune précaution particulière",
+        "Aucune précaution particulière lors de l'intervention",
         "Un outillage adapté et une formation spécifique",
-        "Un local ATEX systématique",
-        "Un détecteur d'ammoniac"
+        "Un local ATEX systématique pour toute intervention",
+        "Un détecteur d'ammoniac dans le local"
        ],
        "bonne": 1,
        "explication": "Outillage adapté et formation spécifique — Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante.",
@@ -328,10 +328,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
        "choix": [
-        "Près du plafond, car les gaz montent toujours",
+        "Près du plafond, car les gaz montent toujours vers le haut",
         "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
-        "Il se répartit uniformément et sans danger dans tout le volume",
-        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+        "Il se répartit uniformément, et sans danger particulier, dans tout le volume du local technique",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler nulle part"
        ],
        "bonne": 1,
        "aide": "Comparez sa masse à celle de l'air.",
@@ -356,10 +356,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
        "choix": [
-        "De l'oxygène",
+        "De l'oxygène pur",
         "De l'azote sec",
         "De l'air comprimé",
-        "Du fluide frigorigène du circuit"
+        "Du fluide du circuit"
        ],
        "bonne": 1,
        "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
@@ -581,9 +581,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Un climatiseur trop vieux part au rebut, dans la filière DEEE. Que devient le fluide frigorigène qu'il contient encore ?",
        "choix": [
         "Il doit être récupéré à part, avant que la carcasse parte en DEEE",
-        "Il part avec la carcasse, la filière DEEE s'en occupe aussi",
-        "Il est automatiquement détruit par le centre de tri DEEE",
-        "Il n'y a aucune obligation, la quantité restante est négligeable"
+        "Il part avec la carcasse, la filière DEEE s'occupe aussi du fluide",
+        "Il est automatiquement détruit par le centre de tri DEEE qui le reçoit",
+        "Il n'y a aucune obligation particulière, la quantité restante est faible"
        ],
        "bonne": 0,
        "aide": "La filière DEEE s'occupe d'un objet, la carcasse. Le fluide est une matière. Suivent-ils le même chemin ?",
@@ -1101,10 +1101,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Un technicien annonce « la surchauffe est de 7 ». De quoi parle-t-il exactement ?",
        "choix": [
-        "De la température relevée sur le tube d'aspiration",
-        "De l'écart, en kelvins, entre la température mesurée et la température de changement d'état à la pression lue",
-        "De la pression lue au manomètre basse pression",
-        "Du nombre de degrés au-dessus de zéro"
+        "De la température relevée au contact du tube d'aspiration, soit les 7 °C lus sur son thermomètre",
+        "D'un écart de 7 K entre la température lue à l'aspiration et celle de vaporisation du fluide",
+        "De la pression d'aspiration lue au manomètre basse pression, exprimée en bars relatifs",
+        "De 7 degrés au-dessus de zéro mesurés dans l'ambiance de la chambre froide en marche"
        ],
        "bonne": 1,
        "aide": "Le mot important n'est pas « 7 » : c'est ce que 7 mesure. Une valeur unique, ou un écart entre deux valeurs ?",
@@ -1130,10 +1130,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "De quoi a-t-on besoin, au minimum, pour déterminer une surchauffe sur une installation en marche ?",
        "choix": [
-        "D'un thermomètre de contact seul",
+        "D'un thermomètre de contact seul, posé sur la ligne d'aspiration",
         "D'un manomètre, d'un thermomètre de contact, et de la table de saturation du fluide présent",
-        "D'un manomètre seul",
-        "D'un détecteur électronique de fuite"
+        "D'un manomètre seul : la pression suffit à déduire la surchauffe",
+        "D'un thermomètre infrarouge, d'un détecteur électronique de fuite et de la documentation machine"
        ],
        "bonne": 1,
        "aide": "Une différence se calcule entre deux valeurs. D'où vient la seconde ?",
@@ -1160,9 +1160,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "À quoi sert le sous-refroidissement en sortie de condenseur ?",
        "choix": [
         "À garantir qu'il arrive du liquide pur, sans bulles de vapeur, au détendeur",
-        "À protéger le compresseur contre le coup de liquide",
-        "À accélérer le dégivrage de l'évaporateur",
-        "À limiter la pression de condensation par temps chaud"
+        "À protéger le compresseur contre les coups de liquide à l'aspiration",
+        "À accélérer le dégivrage naturel de la batterie évaporateur",
+        "À limiter la pression de condensation par forte chaleur extérieure"
        ],
        "bonne": 0,
        "aide": "Le sous-refroidissement se prend en sortie de condenseur. Quel organe se trouve juste après ?",
@@ -1188,10 +1188,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Un fluide est en train de bouillir. Vous continuez à lui apporter de la chaleur. Que devient sa température ?",
        "choix": [
-        "Elle continue de monter, mais plus lentement",
+        "Elle continue de monter, mais nettement plus lentement qu'avant",
         "Elle ne bouge pas tant qu'il reste du liquide à vaporiser",
-        "Elle redescend",
-        "Elle monte par à-coups, à chaque bulle"
+        "Elle redescend légèrement pendant l'ébullition",
+        "Elle monte par à-coups, à chaque train de bulles qui remonte"
        ],
        "bonne": 1,
        "aide": "Cette chaleur-là ne se voit pas au thermomètre. C'est pour cela qu'on la dit « latente », c'est-à-dire cachée.",
@@ -1227,7 +1227,7 @@ window.PILOTE_PROJECTION = {
        "remed": {
         "regle": "Le palier de changement d'état commence au point de bulle — la première bulle de vapeur — et finit au point de rosée — la dernière goutte de liquide.",
         "pourquoi": "Ces deux points sont les frontières entre les trois états du fluide : liquide, mélange saturé, vapeur. Ce sont eux qui donnent leur sens aux mots surchauffe et sous-refroidissement.",
-        "piege": "Le point critique est autre chose : c'est le sommet de la cloche du diagramme, au-delà duquel le fluide ne se sépare plus en liquide et en vapeur."
+        "piege": "Le point critique est autre chose : c'est le sommet de la cloche du diagramme, au-delà duquel le fluide ne se sépare plus'en liquide et en vapeur."
        },
        "remediation_vers": "g1s",
        "explication": "Le palier de changement d'état commence au point de bulle — la première bulle de vapeur — et finit au point de rosée — la dernière goutte de liquide.",
@@ -1346,10 +1346,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Un technicien annonce « la surchauffe est de 7 ». De quoi parle-t-il exactement ?",
        "choix": [
-        "De la température relevée sur le tube d'aspiration",
-        "De l'écart, en kelvins, entre la température mesurée et la température de changement d'état à la pression lue",
-        "De la pression lue au manomètre basse pression",
-        "Du nombre de degrés au-dessus de zéro"
+        "De la température relevée au contact du tube d'aspiration, soit les 7 °C lus sur son thermomètre",
+        "D'un écart de 7 K entre la température lue à l'aspiration et celle de vaporisation du fluide",
+        "De la pression d'aspiration lue au manomètre basse pression, exprimée en bars relatifs",
+        "De 7 degrés au-dessus de zéro mesurés dans l'ambiance de la chambre froide en marche"
        ],
        "bonne": 1,
        "aide": "Le mot important n'est pas « 7 » : c'est ce que 7 mesure. Une valeur unique, ou un écart entre deux valeurs ?",
@@ -1375,10 +1375,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "De quoi a-t-on besoin, au minimum, pour déterminer une surchauffe sur une installation en marche ?",
        "choix": [
-        "D'un thermomètre de contact seul",
+        "D'un thermomètre de contact seul, posé sur la ligne d'aspiration",
         "D'un manomètre, d'un thermomètre de contact, et de la table de saturation du fluide présent",
-        "D'un manomètre seul",
-        "D'un détecteur électronique de fuite"
+        "D'un manomètre seul : la pression suffit à déduire la surchauffe",
+        "D'un thermomètre infrarouge, d'un détecteur électronique de fuite et de la documentation machine"
        ],
        "bonne": 1,
        "aide": "Une différence se calcule entre deux valeurs. D'où vient la seconde ?",
@@ -1405,9 +1405,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "À quoi sert le sous-refroidissement en sortie de condenseur ?",
        "choix": [
         "À garantir qu'il arrive du liquide pur, sans bulles de vapeur, au détendeur",
-        "À protéger le compresseur contre le coup de liquide",
-        "À accélérer le dégivrage de l'évaporateur",
-        "À limiter la pression de condensation par temps chaud"
+        "À protéger le compresseur contre les coups de liquide à l'aspiration",
+        "À accélérer le dégivrage naturel de la batterie évaporateur",
+        "À limiter la pression de condensation par forte chaleur extérieure"
        ],
        "bonne": 0,
        "aide": "Le sous-refroidissement se prend en sortie de condenseur. Quel organe se trouve juste après ?",
@@ -1551,14 +1551,14 @@ window.PILOTE_PROJECTION = {
         "À gauche de la cloche",
         "Sous la cloche",
         "À droite de la cloche",
-        "Au-dessus du point critique"
+        "Au-dessus de la cloche"
        ],
        "bonne": 1,
        "aide": "La cloche est une frontière. Ce qu'elle enferme, c'est le palier.",
        "remed": {
         "regle": "La courbe en cloche partage le diagramme en trois : liquide à gauche, mélange liquide + vapeur sous la cloche, vapeur surchauffée à droite.",
         "pourquoi": "Le flanc gauche de la cloche est la courbe de bulle, le flanc droit la courbe de rosée. La cloche du diagramme et le palier de la courbe de chauffe sont la même chose, vue autrement.",
-        "piege": "Le sommet de la cloche est le point critique : au-dessus, le fluide ne se sépare plus en liquide et en vapeur, il n'y a donc plus de palier."
+        "piege": "Le sommet de la cloche est le point critique : au-dessus, le fluide ne se sépare plus'en liquide et en vapeur, il n'y a donc plus de palier."
        },
        "remediation_vers": "g1b",
        "explication": "La courbe en cloche partage le diagramme en trois : liquide à gauche, mélange liquide + vapeur sous la cloche, vapeur surchauffée à droite.",
@@ -1602,10 +1602,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Dans la zone diphasique (sous la cloche), le fluide est :",
        "choix": [
-        "Entièrement liquide",
-        "Entièrement gazeux",
+        "Entièrement liquide, sous-refroidi",
+        "Entièrement gazeux, surchauffé",
         "Un mélange liquide + vapeur",
-        "Supercritique"
+        "À l'état supercritique"
        ],
        "bonne": 2,
        "explication": "Un mélange liquide + vapeur — Sous la courbe de saturation, le fluide est en changement de phase : liquide + vapeur coexistent.",
@@ -1770,10 +1770,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Un technicien annonce « la surchauffe est de 7 ». De quoi parle-t-il exactement ?",
        "choix": [
-        "De la température relevée sur le tube d'aspiration",
-        "De l'écart, en kelvins, entre la température mesurée et la température de changement d'état à la pression lue",
-        "De la pression lue au manomètre basse pression",
-        "Du nombre de degrés au-dessus de zéro"
+        "De la température relevée au contact du tube d'aspiration, soit les 7 °C lus sur son thermomètre",
+        "D'un écart de 7 K entre la température lue à l'aspiration et celle de vaporisation du fluide",
+        "De la pression d'aspiration lue au manomètre basse pression, exprimée en bars relatifs",
+        "De 7 degrés au-dessus de zéro mesurés dans l'ambiance de la chambre froide en marche"
        ],
        "bonne": 1,
        "aide": "Le mot important n'est pas « 7 » : c'est ce que 7 mesure. Une valeur unique, ou un écart entre deux valeurs ?",
@@ -1799,10 +1799,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "De quoi a-t-on besoin, au minimum, pour déterminer une surchauffe sur une installation en marche ?",
        "choix": [
-        "D'un thermomètre de contact seul",
+        "D'un thermomètre de contact seul, posé sur la ligne d'aspiration",
         "D'un manomètre, d'un thermomètre de contact, et de la table de saturation du fluide présent",
-        "D'un manomètre seul",
-        "D'un détecteur électronique de fuite"
+        "D'un manomètre seul : la pression suffit à déduire la surchauffe",
+        "D'un thermomètre infrarouge, d'un détecteur électronique de fuite et de la documentation machine"
        ],
        "bonne": 1,
        "aide": "Une différence se calcule entre deux valeurs. D'où vient la seconde ?",
@@ -1829,9 +1829,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "À quoi sert le sous-refroidissement en sortie de condenseur ?",
        "choix": [
         "À garantir qu'il arrive du liquide pur, sans bulles de vapeur, au détendeur",
-        "À protéger le compresseur contre le coup de liquide",
-        "À accélérer le dégivrage de l'évaporateur",
-        "À limiter la pression de condensation par temps chaud"
+        "À protéger le compresseur contre les coups de liquide à l'aspiration",
+        "À accélérer le dégivrage naturel de la batterie évaporateur",
+        "À limiter la pression de condensation par forte chaleur extérieure"
        ],
        "bonne": 0,
        "aide": "Le sous-refroidissement se prend en sortie de condenseur. Quel organe se trouve juste après ?",
@@ -1966,10 +1966,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Le propane, l'isobutane, l'ammoniac et le CO₂ sont des fluides naturels. En quoi se distinguent-ils des HFC et des HFO, d'après la fiche ?",
        "choix": [
-        "Ils ont tous un fort effet de serre, comme les HFC",
+        "Ils ont tous un fort effet de serre, comme les HFC classiques",
         "Ils existent sans chimie de synthèse, contrairement aux HFC et HFO",
-        "Ils contiennent tous du fluor, comme les HFO",
-        "Ils ont été condamnés par le protocole de Montréal, comme les CFC"
+        "Ils contiennent tous du fluor, comme les HFO récents",
+        "Ils ont été condamnés par le protocole de Montréal, au même titre que les CFC"
        ],
        "bonne": 1,
        "aide": "Relis la phrase sur les fluides « naturels ». De quoi n'ont-ils pas besoin, contrairement aux HFC et HFO ?",
@@ -1995,10 +1995,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Le R717 est :",
        "choix": [
-        "Du propane",
+        "Du propane commercial",
         "De l'ammoniac",
-        "Du CO2",
-        "De l'eau"
+        "Du dioxyde de carbone",
+        "De l'eau distillée"
        ],
        "bonne": 1,
        "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -2019,10 +2019,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Le R600a (isobutane) est utilisé principalement dans :",
        "choix": [
-        "Les centrales industrielles",
+        "Les grandes centrales frigorifiques industrielles",
         "Les réfrigérateurs et congélateurs domestiques",
-        "Les climatiseurs split",
-        "Les pompes à chaleur air-eau"
+        "Les climatiseurs split installés en résidentiel",
+        "Les pompes à chaleur air-eau domestiques"
        ],
        "bonne": 1,
        "explication": "Réfrigérateurs domestiques — Le R600a est le fluide standard des réfrigérateurs modernes. Charges très faibles (50-150g) pour limiter le risque d'inflammation.",
@@ -2048,9 +2048,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Les codes R-32 et R-290 se ressemblent. Pourtant leurs classes de sécurité NF EN 378 sont très différentes. Que faut-il comprendre ?",
        "choix": [
         "Le code du fluide donne déjà sa classe de sécurité, inutile de vérifier autre chose",
-        "Deux codes proches veulent toujours dire deux dangers proches",
+        "Deux codes proches signalent toujours deux dangers de même niveau",
         "La classe NF EN 378 remplace le code : on peut oublier le code une fois la classe connue",
-        "Le code décrit la molécule ; la classe NF EN 378 décrit le risque de manipulation : il faut connaître les deux"
+        "Le code décrit la molécule, la classe NF EN 378 le risque : il faut lire les deux"
        ],
        "bonne": 3,
        "aide": "La fiche parle de deux lectures différentes pour un même fluide. Laquelle donne le risque de manipulation ?",
@@ -2176,10 +2176,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "À quoi sert un voyant liquide dans un circuit frigorifique ?",
        "choix": [
-        "À mesurer la température",
+        "À mesurer la température du liquide juste avant l'entrée du détendeur",
         "À observer l'état du fluide (bulles, couleur) et détecter d'éventuels problèmes",
-        "À régler la pression",
-        "À arrêter le compresseur"
+        "À régler la pression de la ligne liquide à la sortie du condenseur",
+        "À couper le compresseur si le débit de liquide devient insuffisant"
        ],
        "bonne": 1,
        "explication": "Le VOYANT LIQUIDE permet de visualiser l'état du fluide frigorigène dans la ligne liquide : présence de bulles (manque de charge), changement de couleur de l'indicateur d'humidité, aspect du fluide.",
@@ -2202,9 +2202,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Le pressostat BP peut servir à :",
        "choix": [
         "Réguler la température par cycling du compresseur",
-        "Protéger le condenseur",
-        "Augmenter la charge en fluide",
-        "Mesurer le COP"
+        "Protéger le condenseur contre les fortes surpressions",
+        "Augmenter la charge en fluide de l'installation frigorifique",
+        "Mesurer le COP de la machine en fonctionnement réel"
        ],
        "bonne": 0,
        "explication": "Réguler la température par cycling — Le pressostat BP peut couper le compresseur quand la pression BP descend trop (= température atteinte), puis le redémarrer quand elle remonte.",
@@ -2226,10 +2226,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "La vanne 4 voies permet :",
        "choix": [
-        "De réguler le débit",
+        "De réguler le débit de fluide au détendeur",
         "D'inverser le sens du cycle (mode chaud/froid)",
-        "De purger l'huile",
-        "De shunter le compresseur"
+        "De purger l'huile du carter du compresseur",
+        "De contourner le compresseur pendant l'arrêt"
        ],
        "bonne": 1,
        "explication": "D'inverser le sens du cycle — La vanne 4 voies permute les rôles de l'échangeur intérieur et extérieur : l'évaporateur devient condenseur et inversement (mode PAC).",
@@ -2251,10 +2251,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Le voyant liquide est placé :",
        "choix": [
-        "En sortie de compresseur",
+        "En sortie de compresseur, sur la ligne de refoulement",
         "En sortie de condenseur, avant le détendeur",
-        "En sortie d'évaporateur",
-        "Sur le circuit d'huile"
+        "En sortie d'évaporateur, sur la ligne d'aspiration",
+        "Sur le circuit d'huile, près du séparateur"
        ],
        "bonne": 1,
        "explication": "En sortie de condenseur, avant le détendeur — Il est placé sur la ligne liquide pour vérifier que le fluide arrive bien sous forme liquide au détendeur.",
@@ -2380,19 +2380,19 @@ window.PILOTE_PROJECTION = {
        "enonce": "Sur une installation frigorifique, où se situent le plus souvent les points de fuite potentiels ?",
        "choix": [
         "Aux points d'assemblage (raccords, brasures) et aux pièces qui vibrent, comme le compresseur",
-        "Uniquement sur le pressostat de sécurité",
-        "Uniquement dans l'isolant qui recouvre les tuyauteries",
+        "Uniquement sur le pressostat de sécurité haute pression et sur ses raccords",
+        "Uniquement dans l'isolant qui recouvre les tuyauteries froides",
         "Sur un tube plein, loin de tout raccord ou de toute pièce en mouvement"
        ],
        "bonne": 0,
        "aide": "Une fuite ne sort pas d'un tube plein : pense à ce qui assemble deux pièces, ou à ce qui bouge.",
        "remed": {
-        "regle": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
+        "regle": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces'en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
         "pourquoi": "Un tube plein et correctement fixé ne peut pas fuir ; c'est la jonction entre deux pièces, ou la fatigue due au mouvement, qui crée un passage pour le fluide.",
         "piege": "Chercher au hasard sur toute la tuyauterie au lieu de cibler d'abord les raccords, les brasures et les points qui vibrent."
        },
        "remediation_vers": "g4a",
-       "explication": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
+       "explication": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces'en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
        "origine": "pack",
        "categories": [
         "A1",
@@ -2436,10 +2436,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Une installation frigorifique doit faire l'objet d'un marquage indiquant :",
        "choix": [
-        "Uniquement le type de fluide",
-        "Type et quantité de fluide",
+        "Uniquement le type de fluide et le volume",
+        "Le type et la quantité de fluide",
         "Type, quantité et pictogrammes de danger",
-        "Aucune obligation"
+        "Aucune obligation de marquage"
        ],
        "bonne": 2,
        "explication": "Ici, on raisonne en tCO₂e (impact) plutôt qu’en kg. ⚠ se focaliser sur la masse de fluide seule.",
@@ -2575,9 +2575,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "À quel moment réalise-t-on l'analyse de risques d'une intervention ?",
        "choix": [
         "Avant d'engager le moindre geste technique",
-        "Après avoir ouvert le circuit",
-        "À la fin, au moment de rédiger le rapport",
-        "Seulement si le client le demande"
+        "Juste après avoir ouvert le circuit frigorifique",
+        "À la fin, au moment de rédiger le rapport écrit",
+        "Seulement si le client en fait lui-même la demande"
        ],
        "bonne": 0,
        "aide": "Une analyse de risques sert à éviter l'accident, pas à le raconter.",
@@ -2602,10 +2602,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Avant d'intervenir sur une installation au R-290, que vérifie-t-on dans la zone de travail ?",
        "choix": [
-        "Que l'éclairage est suffisant",
+        "Que l'éclairage du local est suffisant pour travailler dans de bonnes conditions",
         "Que la zone est balisée et ventilée, l'issue dégagée et les sources d'inflammation supprimées",
-        "Que la température ambiante est stable",
-        "Que le sol est parfaitement sec"
+        "Que la température ambiante restera stable pendant toute l'intervention",
+        "Que le sol est parfaitement sec et dégagé de tout obstacle"
        ],
        "bonne": 1,
        "aide": "Le R-290 est un hydrocarbure de classe A3 : pensez à ce qui pourrait l'enflammer.",
@@ -2738,60 +2738,60 @@ window.PILOTE_PROJECTION = {
        "id": "pk-s5-1",
        "dc": "Sécurité",
        "code": null,
-       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l'annexe II.B",
        "niveau": 1,
        "type": "qcm",
        "enonce": "Quelle est la dernière étape avant de poser les mains sur un circuit électrique consigné ?",
        "choix": [
-        "Prévenir le client",
-        "Vérifier l absence de tension avec un VAT",
-        "Poser une pancarte",
-        "Ouvrir le coffret"
+        "Prévenir le client de la coupure prévue",
+        "Vérifier l'absence de tension avec un VAT",
+        "Poser une pancarte de consignation visible",
+        "Ouvrir le coffret électrique concerné"
        ],
        "bonne": 1,
        "aide": "Consigner ne suffit pas : il faut le prouver, appareil en main.",
        "remed": {
-        "regle": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
+        "regle": "On vérifie TOUJOURS l'absence de tension au VAT avant de toucher.",
         "pourquoi": "Un disjoncteur peut être mal repéré, une alimentation de secours peut subsister : seule la mesure prouve que le circuit est hors tension.",
-        "piege": "« Je l ai coupé moi-même » ne protège de rien. Un circuit se vérifie, il ne se suppose pas."
+        "piege": "« Je l'ai coupé moi-même » ne protège de rien. Un circuit se vérifie, il ne se suppose pas."
        },
        "remediation_vers": "s5",
-       "explication": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
+       "explication": "On vérifie TOUJOURS l'absence de tension au VAT avant de toucher.",
        "origine": "pack"
       },
       {
        "id": "pk-s5-2",
        "dc": "Sécurité",
        "code": null,
-       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l'annexe II.B",
        "niveau": 2,
        "type": "qcm",
-       "enonce": "Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s en être servi ?",
+       "enonce": "Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s'en être servi ?",
        "choix": [
-        "Pour économiser la pile",
-        "Parce qu un VAT en panne indiquerait « pas de tension » sur un circuit pourtant sous tension",
-        "Pour l étalonner",
-        "C est une simple habitude"
+        "Parce que le VAT doit être étalonné chaque année en atelier par un organisme agréé",
+        "Parce qu'un VAT en panne indiquerait « pas de tension » sur un circuit pourtant sous tension",
+        "Parce que la mesure n'est fiable qu'après un temps de chauffe de quelques secondes",
+        "Parce que la consignation n'est valable que vérifiée par deux personnes différentes"
        ],
        "bonne": 1,
-       "aide": "Demandez-vous ce qui se passe si l appareil lui-même est défaillant.",
+       "aide": "Demandez-vous ce qui se passe si l'appareil lui-même est défaillant.",
        "remed": {
-        "regle": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
-        "pourquoi": "Un appareil défaillant affiche l absence de tension quoi qu il arrive. Le tester après prouve qu il fonctionnait encore au moment de la mesure.",
-        "piege": "Un VAT qui n indique rien peut vouloir dire deux choses : pas de tension, ou appareil mort. Seul le double contrôle tranche."
+        "regle": "Le VAT se teste sur une source connue avant l'usage, et de nouveau après.",
+        "pourquoi": "Un appareil défaillant affiche l'absence de tension quoi qu'il arrive. Le tester après prouve qu'il fonctionnait encore au moment de la mesure.",
+        "piege": "Un VAT qui n'indique rien peut vouloir dire deux choses : pas de tension, ou appareil mort. Seul le double contrôle tranche."
        },
        "remediation_vers": "s5",
-       "explication": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
+       "explication": "Le VAT se teste sur une source connue avant l'usage, et de nouveau après.",
        "origine": "pack"
       },
       {
        "id": "pk-s5-3",
        "dc": "Sécurité",
        "code": null,
-       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+       "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l'annexe II.B",
        "niveau": 2,
        "type": "qcm",
-       "enonce": "Une machine vient d être mise hors tension. Que peut-il rester de dangereux dans le coffret ?",
+       "enonce": "Une machine vient d'être mise hors tension. Que peut-il rester de dangereux dans le coffret ?",
        "choix": [
         "Plus rien, la coupure suffit",
         "Des condensateurs encore chargés",
@@ -2799,11 +2799,11 @@ window.PILOTE_PROJECTION = {
         "Uniquement du fluide"
        ],
        "bonne": 1,
-       "aide": "Certains composants stockent l énergie électrique et ne se vident pas instantanément.",
+       "aide": "Certains composants stockent l'énergie électrique et ne se vident pas instantanément.",
        "remed": {
         "regle": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
-        "pourquoi": "Il accumule de l énergie pour le démarrage du moteur. Coupée, cette énergie reste stockée et peut provoquer un choc.",
-        "piege": "Couper puis ouvrir aussitôt le coffret est un réflexe fréquent — et c est exactement le moment où le condensateur est encore chargé."
+        "pourquoi": "Il accumule de l'énergie pour le démarrage du moteur. Coupée, cette énergie reste stockée et peut provoquer un choc.",
+        "piege": "Couper puis ouvrir aussitôt le coffret est un réflexe fréquent — et c'est exactement le moment où le condensateur est encore chargé."
        },
        "remediation_vers": "s5",
        "explication": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
@@ -2944,10 +2944,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
        "choix": [
-        "De l'oxygène",
+        "De l'oxygène pur",
         "De l'azote sec",
         "De l'air comprimé",
-        "Du fluide frigorigène du circuit"
+        "Du fluide du circuit"
        ],
        "bonne": 1,
        "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
@@ -2972,10 +2972,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Pourquoi une bouteille d'azote se raccorde-t-elle toujours au travers d'un mano-détendeur ?",
        "choix": [
-        "Pour connaître la quantité restante",
-        "Pour filtrer l'humidité du gaz",
-        "Parce que la pression de la bouteille dépasse largement ce que le circuit peut supporter",
-        "Pour réchauffer le gaz avant l'entrée"
+        "Pour connaître à tout moment la quantité d'azote restant dans la bouteille",
+        "Pour filtrer l'humidité que pourrait contenir le gaz de la bouteille d'azote",
+        "Parce que la pression de la bouteille dépasse ce que le circuit supporte",
+        "Pour réchauffer le gaz avant son entrée dans le circuit"
        ],
        "bonne": 2,
        "aide": "Comparez la pression dans la bouteille et celle que supporte l'installation.",
@@ -3003,7 +3003,7 @@ window.PILOTE_PROJECTION = {
         "Attendre la validation du client avant toute trace écrite",
         "Refaire une deuxième fois l'épreuve d'étanchéité pour confirmer",
         "Ranger le matériel, aucune autre formalité n'est nécessaire",
-        "Consigner les données dans le registre de l'équipement et rédiger un rapport sur les essais et contrôles effectués"
+        "Consigner au registre et rédiger le rapport des essais"
        ],
        "bonne": 3,
        "aide": "Pense au tout dernier geste professionnel décrit dans la fiche, juste après les contrôles.",
@@ -3132,10 +3132,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "La méthode de détection indirecte consiste à :",
        "choix": [
-        "Utiliser un détecteur électronique",
+        "Utiliser un détecteur électronique de fuites récemment calibré",
         "Suivre les paramètres de fonctionnement (P, T°, surchauffe)",
-        "Mettre sous pression d'azote",
-        "Utiliser un traceur UV"
+        "Mettre le circuit sous pression d'azote puis attendre la chute",
+        "Utiliser un traceur UV et rechercher à la lampe adaptée au produit"
        ],
        "bonne": 1,
        "explication": "Suivre les paramètres de fonctionnement — La détection indirecte analyse les dérives des paramètres (baisse de HP, augmentation de surchauffe, etc.) qui signalent une perte de charge.",
@@ -3158,10 +3158,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Un pressostat haute pression (HP) déclenche et arrête le compresseur. Quelle peut être la cause ?",
        "choix": [
-        "Manque de fluide frigorigène",
+        "Manque de fluide frigorigène dans tout le circuit haute pression",
         "Condenseur encrassé, ventilateurs arrêtés, ou excès de charge",
-        "Évaporateur givré",
-        "Manque d'huile"
+        "Évaporateur entièrement givré côté air de la chambre",
+        "Manque d'huile visible au carter du compresseur"
        ],
        "bonne": 1,
        "explication": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le…",
@@ -3184,10 +3184,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Un pressostat basse pression (BP) déclenche et arrête le compresseur. Quelle peut être la cause ?",
        "choix": [
-        "Excès de fluide frigorigène",
+        "Excès de fluide frigorigène accumulé dans la bouteille",
         "Manque de fluide, évaporateur givré, ou filtre bouché",
-        "Condenseur encrassé",
-        "Compresseur trop puissant"
+        "Condenseur encrassé qui ferait chuter la basse pression",
+        "Compresseur trop puissant pour l'installation en place"
        ],
        "bonne": 1,
        "explication": "Un déclenchement PRESSOSTAT BP indique une pression d'évaporation trop basse. Causes : manque de charge frigorigène, évaporateur givré ou encrassé, filtre déshydrateur bouché, détendeur mal réglé ou…",
@@ -3325,9 +3325,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Un contrôle d'étanchéité vient de se terminer, sans fuite détectée. Que devez-vous faire ensuite ?",
        "choix": [
         "Consigner dans le registre la date, la méthode utilisée, les points contrôlés et le résultat",
-        "Attendre le prochain contrôle pour tout noter en une seule fois",
-        "Informer seulement le client à l'oral",
-        "Rien, puisqu'il n'y a pas de fuite à signaler"
+        "Attendre le prochain contrôle pour tout noter en une seule fois dans le registre de l'équipement",
+        "Informer seulement le client à l'oral, en fin d'intervention",
+        "Rien, puisqu'il n'y a aucune fuite à signaler cette fois-ci"
        ],
        "bonne": 0,
        "aide": "Un contrôle qui n'est écrit nulle part n'a, réglementairement, jamais eu lieu.",
@@ -3352,10 +3352,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Après une intervention sur un circuit, quelle opération permet de vérifier l'étanchéité ?",
        "choix": [
-        "Remettre en service immédiatement",
+        "Remettre l'installation en service immédiatement et surveiller la pression",
         "Effectuer un test de pression avec un gaz inerte (azote) et rechercher les fuites",
-        "Ajouter du fluide frigorigène et observer",
-        "Attendre 24 heures sans rien faire"
+        "Ajouter du fluide frigorigène et observer la baisse de la pression",
+        "Attendre 24 heures sans rien faire et relever les manomètres"
        ],
        "bonne": 1,
        "explication": "Après intervention, on effectue un TEST D'ÉTANCHÉITÉ avec de l'azote sous pression (environ 30 bars pour circuits HP). On recherche les fuites avec un détecteur de fuite ou de l'eau savonneuse.",
@@ -3584,10 +3584,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
        "choix": [
-        "Sur la ligne de refoulement",
+        "Sur la ligne de refoulement, entre le compresseur et le condenseur",
         "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
-        "Sur la ligne liquide",
-        "Sur le condenseur"
+        "Sur la ligne liquide, juste en amont de l'entrée du détendeur",
+        "Sur le condenseur, au niveau du piquage de service"
        ],
        "bonne": 1,
        "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
@@ -3610,10 +3610,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
        "choix": [
-        "Sur la ligne d'aspiration",
+        "Sur la ligne d'aspiration, entre évaporateur et compresseur",
         "Sur la ligne de refoulement (entre compresseur et condenseur)",
-        "Sur l'évaporateur",
-        "Sur le détendeur"
+        "Sur la ligne liquide, entre la sortie du condenseur et le détendeur",
+        "Sur le corps du détendeur, au raccord du bulbe"
        ],
        "bonne": 1,
        "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
@@ -3636,10 +3636,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Un pressostat haute pression (HP) déclenche et arrête le compresseur. Quelle peut être la cause ?",
        "choix": [
-        "Manque de fluide frigorigène",
+        "Manque de fluide frigorigène dans tout le circuit haute pression",
         "Condenseur encrassé, ventilateurs arrêtés, ou excès de charge",
-        "Évaporateur givré",
-        "Manque d'huile"
+        "Évaporateur entièrement givré côté air de la chambre",
+        "Manque d'huile visible au carter du compresseur"
        ],
        "bonne": 1,
        "explication": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le…",
@@ -3776,10 +3776,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "La pompe à vide ne doit jamais être utilisée pour :",
        "choix": [
-        "Évacuer l'air du circuit",
-        "Évacuer l'humidité",
+        "Évacuer l'air du circuit avant charge",
+        "Évacuer l'humidité résiduelle",
         "Récupérer du fluide frigorigène",
-        "Atteindre le vide requis"
+        "Atteindre le vide requis avant charge"
        ],
        "bonne": 2,
        "explication": "Récupérer du fluide — La pompe à vide n'est pas conçue pour pomper du fluide (ça l'endommage). La récupération se fait avec un groupe de récupération spécifique.",
@@ -3802,10 +3802,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Si la pression remonte de plus de 100 µm pendant le test de maintien, cela indique :",
        "choix": [
-        "Le circuit est étanche",
+        "Le circuit est parfaitement étanche",
         "Une fuite ou de l'humidité résiduelle",
-        "Le vide est suffisant",
-        "La pompe est trop puissante"
+        "Le vide atteint est largement suffisant",
+        "La pompe à vide est trop puissante"
        ],
        "bonne": 1,
        "explication": "Fuite ou humidité résiduelle — Une remontée > 100 µm après fermeture de la vanne indique soit une fuite, soit de l'humidité qui s'évapore.",
@@ -3894,9 +3894,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Que désigne la LIE d'un gaz inflammable ?",
        "choix": [
         "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
-        "La température minimale d'inflammation du gaz",
-        "La pression maximale admissible dans la bouteille",
-        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+        "La température minimale d'inflammation de ce gaz au contact de l'air du local technique",
+        "La pression maximale admissible dans la bouteille de stockage",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation en préfecture"
        ],
        "bonne": 0,
        "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
@@ -4113,10 +4113,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
        "choix": [
-        "Sur la ligne de refoulement",
+        "Sur la ligne de refoulement, entre le compresseur et le condenseur",
         "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
-        "Sur la ligne liquide",
-        "Sur le condenseur"
+        "Sur la ligne liquide, juste en amont de l'entrée du détendeur",
+        "Sur le condenseur, au niveau du piquage de service"
        ],
        "bonne": 1,
        "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
@@ -4139,10 +4139,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
        "choix": [
-        "Sur la ligne d'aspiration",
+        "Sur la ligne d'aspiration, entre évaporateur et compresseur",
         "Sur la ligne de refoulement (entre compresseur et condenseur)",
-        "Sur l'évaporateur",
-        "Sur le détendeur"
+        "Sur la ligne liquide, entre la sortie du condenseur et le détendeur",
+        "Sur le corps du détendeur, au raccord du bulbe"
        ],
        "bonne": 1,
        "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
@@ -4373,10 +4373,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Les équipements contenant des fluides en fin de vie relèvent de la filière :",
        "choix": [
-        "Déchets ménagers",
+        "Des déchets ménagers ordinaires collectés par la commune du site",
         "DEEE (Déchets d'Équipements Électriques et Électroniques)",
-        "Déchets dangereux uniquement",
-        "Recyclage ordinaire"
+        "Des déchets dangereux uniquement, sans passer par la filière DEEE",
+        "Du recyclage ordinaire des métaux et plastiques"
        ],
        "bonne": 1,
        "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -4419,10 +4419,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Un frigoriste peut-il détruire lui-même le fluide récupéré ?",
        "choix": [
-        "Oui, en le brûlant",
-        "Oui, en le diluant",
+        "Oui, en le brûlant au chalumeau",
+        "Oui, en le diluant dans l'azote",
         "Non, uniquement centre agréé",
-        "Oui, en le dégazant"
+        "Oui, en le dégazant lentement"
        ],
        "bonne": 2,
        "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -4544,10 +4544,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Vous devez vérifier la pression d'un circuit en fonctionnement. Où branchez-vous le manomètre basse pression ?",
        "choix": [
-        "Sur la ligne de refoulement",
+        "Sur la ligne de refoulement, entre le compresseur et le condenseur",
         "Sur la ligne d'aspiration (entre évaporateur et compresseur)",
-        "Sur la ligne liquide",
-        "Sur le condenseur"
+        "Sur la ligne liquide, juste en amont de l'entrée du détendeur",
+        "Sur le condenseur, au niveau du piquage de service"
        ],
        "bonne": 1,
        "explication": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP).",
@@ -4570,10 +4570,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Vous devez vérifier la pression haute d'un circuit. Où branchez-vous le manomètre haute pression ?",
        "choix": [
-        "Sur la ligne d'aspiration",
+        "Sur la ligne d'aspiration, entre évaporateur et compresseur",
         "Sur la ligne de refoulement (entre compresseur et condenseur)",
-        "Sur l'évaporateur",
-        "Sur le détendeur"
+        "Sur la ligne liquide, entre la sortie du condenseur et le détendeur",
+        "Sur le corps du détendeur, au raccord du bulbe"
        ],
        "bonne": 1,
        "explication": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP).",
@@ -4716,10 +4716,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Avant d'ouvrir un circuit frigorifique pour une intervention, quelle opération est obligatoire ?",
        "choix": [
-        "Démarrer le compresseur",
+        "Démarrer le compresseur pour vider le circuit",
         "Récupérer le fluide frigorigène dans un récipient adapté",
-        "Ouvrir toutes les vannes",
-        "Ajouter de l'huile"
+        "Ouvrir toutes les vannes du circuit lentement",
+        "Ajouter de l'huile pour protéger le compresseur"
        ],
        "bonne": 1,
        "explication": "Avant toute ouverture du circuit, il est OBLIGATOIRE de RÉCUPÉRER le fluide frigorigène avec une station de récupération certifiée. C'est une obligation légale (F-Gas) et environnementale.",
@@ -4837,10 +4837,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "La charge en fluide se mesure avec :",
        "choix": [
-        "Un manomètre",
+        "Un jeu de manomètres",
         "Une balance de précision",
-        "Un thermomètre",
-        "Un vacuomètre"
+        "Un thermomètre à sonde",
+        "Un vacuomètre à vide"
        ],
        "bonne": 1,
        "explication": "Une balance de précision — La charge se fait au poids : on pèse la bouteille avant et après pour connaître la quantité exacte introduite (±5g).",
@@ -4863,10 +4863,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Pendant la charge, on surveille principalement :",
        "choix": [
-        "La couleur du fluide",
+        "La couleur du fluide dans le voyant liquide",
         "La surchauffe et le sous-refroidissement",
-        "Le bruit du compresseur uniquement",
-        "La vitesse du ventilateur"
+        "Le bruit du compresseur pendant la montée en charge",
+        "La vitesse du ventilateur de condenseur"
        ],
        "bonne": 1,
        "explication": "Surchauffe et sous-refroidissement — Ces deux paramètres indiquent si la quantité de fluide est correcte. Surchauffe trop haute = manque. SR trop bas = manque aussi.",
@@ -4891,15 +4891,15 @@ window.PILOTE_PROJECTION = {
        "enonce": "Avant de charger une installation, pourquoi commence-t-on par déterminer l'état du fluide — sous-refroidi, saturé ou surchauffé ?",
        "choix": [
         "Parce que cet état commande la méthode et la quantité de remplissage",
-        "Parce que le registre exige de le noter",
-        "Parce que cela permet de connaître le PRP du fluide",
-        "Parce que cela dispense de peser la bouteille"
+        "Parce que le registre de l'équipement exige de le noter",
+        "Parce que cela permet de connaître le PRP du fluide chargé",
+        "Parce que cela dispense de peser la bouteille de charge"
        ],
        "bonne": 0,
        "aide": "Le référentiel place ce diagnostic AVANT le geste de charge. Que déciderait-on ensuite, s'il était faux ?",
        "remed": {
         "regle": "On détermine d'abord l'état et les conditions du fluide, puis on en déduit la méthode de remplissage — en phase liquide ou en phase vapeur — et le volume adapté.",
-        "pourquoi": "Charger en phase vapeur un mélange zéotrope modifie la composition de ce qui reste dans la bouteille ; charger sans savoir où en est l'installation conduit à sur-charger ou sous-charger.",
+        "pourquoi": "Charger en phase vapeur un mélange zéotrope modifie la composition de ce qui reste dans la bouteille ; charger sans savoir où en'est l'installation conduit à sur-charger ou sous-charger.",
         "piege": "Croire que la pesée suffit. La balance dit combien on a mis, elle ne dit pas s'il fallait le mettre en liquide ou en vapeur, ni si la charge était déjà correcte."
        },
        "remediation_vers": "g1e",
@@ -5155,8 +5155,8 @@ window.PILOTE_PROJECTION = {
        "choix": [
         "Refroidir le fluide frigorigène",
         "Aspirer et comprimer le gaz basse pression",
-        "Détendre le liquide haute pression",
-        "Condenser les vapeurs"
+        "Détendre le liquide sous haute pression",
+        "Condenser les vapeurs surchauffées"
        ],
        "bonne": 1,
        "explication": "Le compresseur ASPIRE le gaz basse pression en provenance de l'évaporateur et le COMPRIME pour l'envoyer vers le condenseur à haute pression. C'est le moteur du cycle frigorifique.",
@@ -5179,9 +5179,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "À quoi sert un voyant d'huile sur un compresseur ?",
        "choix": [
         "À vérifier le niveau d'huile dans le carter",
-        "À vérifier la température de l'huile",
-        "À vérifier la pression de l'huile",
-        "À vidanger l'huile"
+        "À vérifier la température de l'huile du carter",
+        "À vérifier la pression d'huile du compresseur",
+        "À vidanger l'huile usagée en fin d'intervention"
        ],
        "bonne": 0,
        "explication": "Le VOYANT D'HUILE (sur les compresseurs équipés) permet de vérifier visuellement le NIVEAU D'HUILE dans le carter du compresseur.",
@@ -5203,10 +5203,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Quel est le rôle principal de l'huile dans un compresseur frigorifique ?",
        "choix": [
-        "Refroidir le fluide frigorigène",
+        "Refroidir le fluide avant l'entrée au condenseur",
         "Lubrifier les pièces mobiles et assurer l'étanchéité",
-        "Augmenter la pression",
-        "Filtrer le fluide"
+        "Augmenter la pression de refoulement du compresseur",
+        "Filtrer les impuretés du circuit frigorifique"
        ],
        "bonne": 1,
        "explication": "L'huile LUBRIFIE les pièces mobiles du compresseur (pistons, roulements, paliers), REFROIDIT les parties chaudes, et assure l'ÉTANCHÉITÉ entre les zones HP et BP.",
@@ -5380,10 +5380,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Pourquoi bien installer, bien régler et bien entretenir un compresseur améliore l'efficacité énergétique ?",
        "choix": [
-        "Parce que cela dispense de tester l'étanchéité à l'azote",
+        "Parce que cela dispense de contrôler l'étanchéité du circuit à l'azote",
         "Parce que cela augmente automatiquement la puissance frigorifique de la machine",
-        "Parce qu'un compresseur bien installé, bien réglé et bien entretenu consomme moins et dure plus longtemps",
-        "Parce que cela change la classe de sécurité du fluide frigorigène"
+        "Parce qu'un compresseur bien réglé consomme moins et dure plus longtemps",
+        "Parce que cela abaisse la classe de sécurité du fluide frigorigène utilisé"
        ],
        "bonne": 2,
        "aide": "Pense à ce que devient la consommation électrique d'une machine bien entretenue.",
@@ -5407,10 +5407,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "La vanne de service permet :",
        "choix": [
-        "De réguler la température",
+        "De régler la température d'évaporation depuis le tableau électrique",
         "De raccorder les manomètres et équipements de maintenance",
-        "D'inverser le cycle",
-        "De purger l'huile"
+        "D'inverser le cycle pour passer en mode pompe à chaleur",
+        "De purger l'huile usagée du carter en fin d'intervention"
        ],
        "bonne": 1,
        "explication": "Raccorder les manomètres et équipements — Les vannes de service (Schrader ou à tige) sont les points d'accès au circuit pour la mesure et l'intervention.",
@@ -5434,9 +5434,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Un compresseur est posé directement sur son châssis, sans plot antivibratile. Quel risque apparaît à moyen terme ?",
        "choix": [
         "La tuyauterie vibre en permanence et finit par se fissurer, ce qui provoque une fuite",
-        "Aucun risque particulier, c'est juste plus bruyant",
-        "Le compresseur consomme automatiquement moins d'énergie",
-        "Le niveau d'huile au voyant augmente"
+        "Le compresseur perd son huile par vibration et le voyant se vide peu à peu",
+        "La consommation électrique grimpe fortement, les vibrations freinant le moteur du compresseur",
+        "Le bruit augmente, mais l'installation n'en souffre pas mécaniquement"
        ],
        "bonne": 0,
        "aide": "Pense à ce qui protège normalement la tuyauterie des vibrations du compresseur.",
@@ -5461,10 +5461,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Une soupape d'aspiration mal réglée sur un compresseur : quelle conséquence directe ?",
        "choix": [
-        "Une baisse automatique de la consommation électrique",
-        "Un excès d'huile visible au voyant",
+        "Une baisse automatique de la consommation électrique du moteur",
+        "Un excès d'huile bien visible au voyant du carter moteur",
         "Une perte de puissance, ou un compresseur qui s'abîme",
-        "Aucune conséquence tant que la machine démarre"
+        "Aucune conséquence tant que la machine démarre normalement"
        ],
        "bonne": 2,
        "aide": "Relis ce que fait la soupape d'aspiration à chaque cycle du compresseur.",
@@ -5639,10 +5639,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Quel est le rôle principal du condenseur ?",
        "choix": [
-        "Absorber la chaleur du milieu à refroidir",
+        "Absorber la chaleur du local ou du produit que l'on refroidit",
         "Évacuer la chaleur du fluide frigorigène vers l'extérieur",
-        "Comprimer le gaz frigorigène",
-        "Détendre le liquide frigorigène"
+        "Comprimer le gaz frigorigène en provenance de l'évaporateur",
+        "Détendre le liquide frigorigène avant l'évaporateur"
        ],
        "bonne": 1,
        "explication": "Le CONDENSEUR évacue la chaleur du fluide frigorigène vers l'extérieur (air ou eau). Le gaz chaud se refroidit et se condense en liquide. C'est l'organe qui 'rejette' la chaleur.",
@@ -5664,10 +5664,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Quel est le rôle des ventilateurs sur un condenseur à air ?",
        "choix": [
-        "Refroidir le compresseur",
+        "Refroidir le corps du compresseur ainsi que son moteur électrique",
         "Forcer l'air à travers le condenseur pour évacuer la chaleur",
-        "Aspirer le fluide frigorigène",
-        "Détendre le gaz"
+        "Aspirer le fluide frigorigène jusque dans la bouteille liquide",
+        "Détendre le gaz avant son entrée dans l'évaporateur"
        ],
        "bonne": 1,
        "explication": "Les ventilateurs FORCENT l'air à travers les ailettes du condenseur pour améliorer l'évacuation de la chaleur.",
@@ -5689,10 +5689,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Quelle est l'utilité du sous-refroidissement du liquide en sortie de condenseur ?",
        "choix": [
-        "Augmenter la température du liquide",
+        "Augmenter la température du liquide juste avant l'entrée du détendeur",
         "S'assurer que le liquide est bien liquide (pas de bulles) et améliorer l'efficacité",
-        "Diminuer la pression",
-        "Protéger le compresseur"
+        "Diminuer la pression du liquide dans la ligne qui mène au détendeur",
+        "Protéger le compresseur contre les retours de liquide à l'aspiration"
        ],
        "bonne": 1,
        "explication": "Le SOUS-REFROIDISSEMENT consiste à refroidir le liquide en dessous de sa température de condensation. Cela garantit qu'il reste liquide dans toute la ligne liquide (pas de flash-gas), améliore…",
@@ -5714,10 +5714,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Le pressostat HP est un organe de :",
        "choix": [
-        "Régulation uniquement",
+        "Régulation continue de la pression de condensation",
         "Sécurité (protection contre la surpression)",
-        "Mesure de débit",
-        "Commande du ventilateur"
+        "Mesure du débit de fluide dans la ligne liquide",
+        "Commande de la vitesse des ventilateurs du condenseur"
        ],
        "bonne": 1,
        "explication": "Sécurité — Le pressostat HP est avant tout un organe de sécurité qui coupe le compresseur si la pression HP dépasse le seuil dangereux.",
@@ -5950,20 +5950,20 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Quelle est la différence entre le pressostat haute pression et le régulateur de pression de condensation ?",
        "choix": [
-        "Le pressostat coupe l'alimentation du compresseur ; le régulateur ne coupe rien, il maintient une pression",
-        "Le pressostat maintient une pression ; le régulateur coupe le compresseur",
-        "Ce sont deux noms du même organe",
-        "Le pressostat se règle, le régulateur se remplace"
+        "Le pressostat coupe le compresseur ; le régulateur maintient une pression sans couper",
+        "Le pressostat maintient une pression ; le régulateur coupe l'alimentation du compresseur",
+        "Ce sont deux noms différents du même organe de sécurité",
+        "Le pressostat se règle, le régulateur se remplace à chaque visite"
        ],
        "bonne": 0,
-       "aide": "L'un est un interrupteur électrique, l'autre est une vanne.",
+       "aide": "L'un'est un interrupteur électrique, l'autre est une vanne.",
        "remed": {
-        "regle": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression est une vanne : il maintient une pression et ne coupe rien.",
+        "regle": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression'est une vanne : il maintient une pression et ne coupe rien.",
         "pourquoi": "Les deux surveillent la pression, mais l'un protège la machine en l'arrêtant, l'autre fait fonctionner l'installation correctement sans jamais l'arrêter.",
         "piege": "Croire qu'un régulateur peut remplacer une sécurité. Une installation a besoin des deux, avec deux réglages distincts pris sur la fiche constructeur."
        },
        "remediation_vers": "g7b",
-       "explication": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression est une vanne : il maintient une pression et ne coupe rien.",
+       "explication": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression'est une vanne : il maintient une pression et ne coupe rien.",
        "origine": "pack",
        "categories": [
         "A1",
@@ -5978,10 +5978,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Que doit contenir le rapport écrit rédigé après une visite d'un condenseur ?",
        "choix": [
-        "Le nom du fabricant du compresseur",
-        "Le prix de l'intervention pour le client",
+        "Le nom du fabricant du compresseur et son numéro de série complet",
+        "Le prix de l'intervention et le détail de tout ce qui est facturé au client",
         "Ailettes encrassées, ventilateur bruyant, trace d'huile, pression anormale",
-        "Uniquement la date de la dernière charge de fluide"
+        "Uniquement la date de la dernière charge de fluide effectuée"
        ],
        "bonne": 2,
        "aide": "Pense aux signes visuels et sonores relevés pendant la visite du condenseur.",
@@ -6007,9 +6007,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Comment un condenseur bien entretenu permet-il de faire des économies d'énergie ?",
        "choix": [
         "Des ailettes propres et un ventilateur en bon état font travailler le compresseur moins fort",
-        "En augmentant volontairement la pression de condensation",
-        "En réduisant le sous-refroidissement à zéro",
-        "En arrêtant le ventilateur pendant la nuit"
+        "En augmentant volontairement la pression de condensation de toute l'installation",
+        "En réduisant le sous-refroidissement à zéro à la sortie de la batterie",
+        "En arrêtant le ventilateur pendant la nuit pour économiser du courant"
        ],
        "bonne": 0,
        "aide": "Pense à ce qui empêche l'air de bien circuler à travers la batterie du condenseur.",
@@ -6169,9 +6169,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "La conduite d'aspiration relie l'évaporateur au compresseur. Pourquoi la pose-t-on en légère pente vers le compresseur ?",
        "choix": [
         "Pour que l'huile transportée par la vapeur revienne vers le compresseur au lieu de stagner",
-        "Pour réduire la surchauffe",
-        "Pour empêcher le givre de se former",
-        "Pour diminuer la vitesse du gaz"
+        "Pour réduire la surchauffe du gaz aspiré avant son arrivée au compresseur",
+        "Pour empêcher le givre de se former sur toute la longueur de la ligne",
+        "Pour diminuer la vitesse du gaz et limiter le bruit dans la conduite"
        ],
        "bonne": 0,
        "aide": "Repense à ce qui circule avec le gaz dans la conduite d'aspiration, et à ce qui se passerait s'il restait bloqué dans un point bas.",
@@ -6195,10 +6195,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Sur une installation frigorifique, comment calculer approximativement la surchauffe à l'aspiration du compresseur ?",
        "choix": [
-        "Température de refoulement - Température d'aspiration",
+        "Température de refoulement moins température d'aspiration du compresseur",
         "Température gaz aspiration - Température d'évaporation (T°O correspondant à la BP)",
-        "Température condensation - Température évaporation",
-        "Température ambiante - Température d'évaporation"
+        "Température de condensation moins température d'évaporation",
+        "Température ambiante moins température d'évaporation"
        ],
        "bonne": 1,
        "explication": "La SURCHAUFFE = Température du gaz en aspiration - Température d'évaporation (T°O). On mesure la température du gaz avec une sonde, et on convertit la pression BP en température avec le tableau…",
@@ -6444,9 +6444,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Un évaporateur est installé avec son pressostat et son régulateur de pression. Une fois l'installation terminée, qu'est-ce qui doit être sans aucune fuite ni émission ?",
        "choix": [
         "L'évaporateur et tout le matériel de contrôle et de sécurité posé avec lui",
-        "Seulement le tube de l'évaporateur",
-        "Seulement les raccords visibles depuis l'extérieur",
-        "Seulement les organes électriques"
+        "Seulement le tube de l'évaporateur, pas les accessoires posés",
+        "Seulement les raccords visibles depuis l'extérieur du meuble",
+        "Seulement les organes électriques de commande et de sécurité"
        ],
        "bonne": 0,
        "aide": "Relis la première phrase de la fiche : elle ne parle pas seulement du tube.",
@@ -6471,10 +6471,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Un interrupteur de sécurité et de contrôle détecte une pression qui sort de la plage prévue. Que fait-il ?",
        "choix": [
-        "Il déclenche le dégivrage",
-        "Il augmente la vitesse du ventilateur",
+        "Il déclenche immédiatement un cycle de dégivrage complet",
+        "Il augmente la vitesse des ventilateurs de la batterie",
         "Il coupe l'alimentation électrique du compresseur",
-        "Il ouvre le régulateur de pression d'évaporation"
+        "Il ouvre en grand le régulateur de pression d'évaporation"
        ],
        "bonne": 2,
        "aide": "C'est un interrupteur électrique. Il agit sur l'alimentation, pas sur la pression elle-même.",
@@ -6499,10 +6499,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Un évaporateur dégivre à l'air chaud. Lors de la visite, que dois-tu inspecter sur le conduit qui transporte cet air ?",
        "choix": [
-        "Le niveau d'huile du compresseur",
+        "Le niveau d'huile du compresseur de la centrale",
         "L'étanchéité, l'isolation et l'écoulement des condensats",
-        "La pression d'aspiration uniquement",
-        "Le débit d'air du ventilateur uniquement"
+        "La pression d'aspiration relevée pendant tout le dégivrage",
+        "Le débit d'air du ventilateur de l'évaporateur"
        ],
        "bonne": 1,
        "aide": "La fiche liste trois points précis à vérifier sur ce conduit.",
@@ -6527,9 +6527,9 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Vous installez un régulateur de pression d'évaporation sur une nouvelle installation. Comment déterminez-vous sa valeur de réglage ?",
        "choix": [
-        "En copiant le réglage du pressostat BP",
-        "Il n'y a rien à régler, il fonctionne seul",
-        "En fixant une valeur basse par sécurité",
+        "En copiant le réglage du pressostat basse pression",
+        "Il n'y a rien à régler, l'organe fonctionne seul",
+        "En fixant une valeur basse par simple sécurité",
         "En suivant la fiche constructeur de l'organe"
        ],
        "bonne": 3,
@@ -6725,9 +6725,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Une vanne doit toujours être montée dans le sens de la flèche gravée sur son corps, comme un filtre déshydrateur. Que risque-t-on si on la monte à l'envers ?",
        "choix": [
         "Une erreur de montage irréversible, qu'on ne peut corriger qu'en découpant l'installation",
-        "Une simple baisse de rendement, sans conséquence sur le montage",
-        "Un dérèglement du bulbe du détendeur thermostatique",
-        "Rien, on peut la remonter plus tard sans problème"
+        "Une simple baisse de rendement, que l'on rattrape en réglant le détendeur un peu plus ouvert",
+        "Un dérèglement du bulbe du détendeur thermostatique, à recalibrer après coup",
+        "Rien : il suffit de la déposer et de la remonter dans le bon sens"
        ],
        "bonne": 0,
        "aide": "Pense à ce que dit la fiche sur les erreurs de montage des vannes et du filtre déshydrateur.",
@@ -6751,10 +6751,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Quel accessoire permet de retenir l'humidité dans un circuit frigorifique ?",
        "choix": [
-        "Le voyant liquide",
+        "Le voyant de ligne liquide",
         "Le filtre déshydrateur",
-        "Le pressostat",
-        "Le ventilateur"
+        "Le pressostat différentiel",
+        "L'accumulateur d'aspiration"
        ],
        "bonne": 1,
        "explication": "Le FILTRE DÉSHYDRATEUR contient des tamis moléculaires qui absorbent l'humidité présente dans le circuit. Il protège le détendeur et le compresseur du givrage et de la corrosion.",
@@ -6776,10 +6776,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Vous devez installer un filtre déshydrateur sur la ligne liquide. Dans quel sens doit-il être monté ?",
        "choix": [
-        "Peu importe le sens",
+        "Peu importe le sens de montage : le filtre agit dans les deux directions",
         "Dans le sens de circulation du fluide (indiqué par une flèche)",
-        "Toujours vertical",
-        "Toujours horizontal"
+        "Toujours à la verticale, cartouche vers le bas pour piéger l'humidité",
+        "Toujours à l'horizontale, pour éviter le tassement du tamis"
        ],
        "bonne": 1,
        "explication": "Le filtre déshydrateur doit TOUJOURS être monté dans le SENS DE CIRCULATION du fluide, indiqué par une flèche sur le corps du filtre.",
@@ -6801,10 +6801,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Le détendeur thermostatique (TEV) régule :",
        "choix": [
-        "La pression de condensation",
+        "La pression de condensation de l'installation",
         "La surchauffe à la sortie de l'évaporateur",
-        "Le sous-refroidissement",
-        "La pression d'huile"
+        "Le sous-refroidissement en sortie de condenseur",
+        "La pression d'huile dans le compresseur"
        ],
        "bonne": 1,
        "explication": "La surchauffe — Le TEV régule la surchauffe en ajustant le débit de fluide entrant dans l'évaporateur via un bulbe capillaire.",
@@ -6981,9 +6981,9 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Comment un thermostat mécanique détecte-t-il la température ?",
        "choix": [
-        "Avec une sonde reliée à un régulateur numérique",
-        "Avec un capteur de pression relié à un module",
-        "Avec une résistance électrique chauffante",
+        "Avec une sonde de température reliée à un régulateur numérique déporté",
+        "Avec un capteur de pression relié à un module électronique de commande",
+        "Avec une résistance électrique chauffante placée dans l'ambiance",
         "Avec un bulbe relié par un tube fin à des contacts électriques"
        ],
        "bonne": 3,
@@ -7009,10 +7009,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Vérifier le fonctionnement d'un séparateur d'huile, c'est contrôler quoi ?",
        "choix": [
-        "Que l'huile reste bloquée dans le séparateur en permanence",
+        "Que l'huile reste bien bloquée dans le séparateur pendant toute la marche du groupe",
         "Que l'huile retenue retourne bien, automatiquement, au carter du compresseur",
-        "Que le condenseur reçoit un mélange d'huile et de fluide",
-        "Que la pression d'aspiration reste constante"
+        "Que le condenseur reçoit bien un mélange homogène d'huile et de fluide",
+        "Que la pression d'aspiration reste parfaitement constante en marche"
        ],
        "bonne": 1,
        "aide": "Le séparateur ne doit pas garder l'huile pour lui. Il doit la rendre.",
@@ -7037,10 +7037,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Que fait la soupape de régulation de pression sur une installation frigorifique ?",
        "choix": [
-        "Elle coupe le circuit dès qu'un seuil de pression est franchi",
+        "Elle coupe complètement le circuit dès qu'un seuil de pression donné est franchi",
         "Elle module en continu pour maintenir une pression stable à un point du circuit",
-        "Elle règle la surchauffe en sortie d'évaporateur",
-        "Elle commande le compresseur selon une température mesurée par une sonde"
+        "Elle règle la surchauffe mesurée en sortie d'évaporateur",
+        "Elle commande le démarrage du compresseur selon une température mesurée par sonde"
        ],
        "bonne": 1,
        "aide": "Compare avec le rôle du limiteur de pression, qui lui coupe le circuit à un seuil : la soupape de régulation agit autrement.",
@@ -7066,12 +7066,12 @@ window.PILOTE_PROJECTION = {
        "enonce": "Pendant une visite, tu remarques qu'un limiteur de pression ne coupe plus correctement. Tu ne le notes pas dans ton rapport. Quel est le risque, si ce défaut reste sans suite ?",
        "choix": [
         "Le défaut peut endommager le système et provoquer à terme une fuite ou une émission",
-        "Aucun, le limiteur se corrige tout seul avec le temps",
-        "Le compresseur s'arrête immédiatement par sécurité",
-        "Le séparateur d'huile compense automatiquement le défaut"
+        "Aucun risque particulier : le limiteur se réarme de lui-même au cycle suivant",
+        "Le compresseur s'arrête aussitôt par sécurité, le défaut se voit tout seul",
+        "Le séparateur d'huile compense le défaut tant que le niveau reste correct"
        ],
        "bonne": 0,
-       "aide": "Relis la fin de la fiche : que se passe-t-il quand un défaut n'est pas signalé ?",
+       "aide": "Relis la fin de la fiche : que se passe-t-il quand'un défaut n'est pas signalé ?",
        "remed": {
         "regle": "Un défaut non signalé (thermostat qui dérive, limiteur qui ne coupe plus, séparateur qui laisse passer l'huile) finit par endommager le système. À terme, faute de mesure, cela provoque une fuite ou une émission de réfrigérant.",
         "pourquoi": "Le rapport écrit permet d'agir avant que le défaut ne s'aggrave. C'est un outil de prévention, pas une simple formalité.",
@@ -7171,10 +7171,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
        "choix": [
-        "Près du plafond, car les gaz montent toujours",
+        "Près du plafond, car les gaz montent toujours vers le haut",
         "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
-        "Il se répartit uniformément et sans danger dans tout le volume",
-        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+        "Il se répartit uniformément, et sans danger particulier, dans tout le volume du local technique",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler nulle part"
        ],
        "bonne": 1,
        "aide": "Comparez sa masse à celle de l'air.",
@@ -7337,10 +7337,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Lors d'un brasage, pourquoi faut-il balayer à l'azote ?",
        "choix": [
-        "Pour refroidir le tube",
+        "Pour refroidir le tube plus vite",
         "Pour éviter l'oxydation interne",
-        "Pour tester l'étanchéité",
-        "Pour nettoyer le circuit"
+        "Pour tester l'étanchéité du joint",
+        "Pour nettoyer l'intérieur du circuit"
        ],
        "bonne": 1,
        "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
@@ -7359,10 +7359,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Pourquoi brase-t-on toujours sous flux d'azote ?",
        "choix": [
-        "Pour refroidir plus vite",
+        "Pour refroidir le tube plus vite après le brasage",
         "Pour éviter l'oxydation intérieure du cuivre (calamine)",
-        "Pour tester l'étanchéité",
-        "Pour sécher le circuit"
+        "Pour tester l'étanchéité du joint pendant le brasage",
+        "Pour sécher l'intérieur du circuit avant la mise en charge"
        ],
        "bonne": 1,
        "explication": "Éviter l'oxydation intérieure — Sans azote, l'oxygène de l'air réagit avec le cuivre chauffé et forme de la calamine noire qui bouchera les filtres et endommagera le compresseur.",
@@ -7491,10 +7491,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Avec quel gaz met-on un circuit frigorifique en pression pour contrôler sa résistance ?",
        "choix": [
-        "De l'oxygène",
+        "De l'oxygène pur",
         "De l'azote sec",
         "De l'air comprimé",
-        "Du fluide frigorigène du circuit"
+        "Du fluide du circuit"
        ],
        "bonne": 1,
        "aide": "Cherchez le gaz qui n'apporte ni humidité, ni risque de combustion.",
@@ -7519,10 +7519,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Pourquoi une bouteille d'azote se raccorde-t-elle toujours au travers d'un mano-détendeur ?",
        "choix": [
-        "Pour connaître la quantité restante",
-        "Pour filtrer l'humidité du gaz",
-        "Parce que la pression de la bouteille dépasse largement ce que le circuit peut supporter",
-        "Pour réchauffer le gaz avant l'entrée"
+        "Pour connaître à tout moment la quantité d'azote restant dans la bouteille",
+        "Pour filtrer l'humidité que pourrait contenir le gaz de la bouteille d'azote",
+        "Parce que la pression de la bouteille dépasse ce que le circuit supporte",
+        "Pour réchauffer le gaz avant son entrée dans le circuit"
        ],
        "bonne": 2,
        "aide": "Comparez la pression dans la bouteille et celle que supporte l'installation.",
@@ -7744,7 +7744,7 @@ window.PILOTE_PROJECTION = {
        "choix": [
         "La lettre dit le PRP, le chiffre dit la pression de service",
         "La lettre dit la toxicité, le chiffre dit l'inflammabilité",
-        "La lettre dit la famille chimique, le chiffre dit l'année de mise sur le marché",
+        "La lettre dit la famille chimique, le chiffre dit l'année d'homologation",
         "La lettre dit l'inflammabilité, le chiffre dit la toxicité"
        ],
        "bonne": 1,
@@ -7772,10 +7772,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?",
        "choix": [
-        "Près du plafond, car les gaz montent toujours",
+        "Près du plafond, car les gaz montent toujours vers le haut",
         "Dans les points bas : fosse, cave, sous-sol, bas de local, car il est plus lourd que l'air",
-        "Il se répartit uniformément et sans danger dans tout le volume",
-        "Il s'échappe seul par les interstices, sans jamais s'accumuler"
+        "Il se répartit uniformément, et sans danger particulier, dans tout le volume du local technique",
+        "Il s'échappe seul par les interstices, sans jamais s'accumuler nulle part"
        ],
        "bonne": 1,
        "aide": "Comparez sa masse à celle de l'air.",
@@ -7828,10 +7828,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Comment optimiser le COP (Coefficient de Performance) d'une installation frigorifique ?",
        "choix": [
-        "Augmenter la haute pression au maximum",
+        "Augmenter la haute pression jusqu'au maximum admissible par la machine",
         "Diminuer l'écart entre T°K (condensation) et T°O (évaporation)",
-        "Augmenter la surchauffe au maximum",
-        "Diminuer le débit d'air sur le condenseur"
+        "Augmenter la surchauffe jusqu'au maximum admissible à l'aspiration",
+        "Diminuer le débit d'air soufflé sur la batterie du condenseur"
        ],
        "bonne": 1,
        "explication": "Le COP (efficacité énergétique) est meilleur quand l'écart T°K - T°O est FAIBLE. Pour optimiser : baisser la T°K (condenseur propre, bon refroidissement) et augmenter la T°O si possible (évaporateur…",
@@ -7983,8 +7983,8 @@ window.PILOTE_PROJECTION = {
        "enonce": "Le CO₂ (R-744) est classé A1. Quels dangers cette classe n'annonce-t-elle pas ?",
        "choix": [
         "La pression, très élevée, et l'atmosphère irrespirable qu'une fuite crée en local fermé.",
-        "Aucun : la classe A1 signifie qu'il est sans danger.",
-        "L'inflammabilité, car il peut s'enflammer comme un hydrocarbure.",
+        "Aucun danger : la classe A1 veut dire qu'il est parfaitement inoffensif",
+        "L'inflammabilité, puisqu'il peut s'enflammer comme un hydrocarbure",
         "Uniquement le risque de gel des tuyauteries en fonctionnement normal."
        ],
        "bonne": 0,
@@ -8029,10 +8029,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Pourquoi installe-t-on des détecteurs de CO₂ dans les locaux abritant une installation au R-744 ?",
        "choix": [
-        "Pour mesurer la performance de l'installation",
-        "Parce que le CO₂ est inodore et incolore : sans appareil, une fuite est indétectable et le risque est l'asphyxie",
+        "Pour mesurer en continu les performances de l'installation",
+        "Parce que le CO₂ est inodore et incolore : une fuite est indétectable sans appareil",
         "Parce que la réglementation impose un détecteur pour tous les fluides",
-        "Pour compter les ouvertures de porte"
+        "Pour compter les ouvertures de porte de la chambre froide"
        ],
        "bonne": 1,
        "explication": "Le CO₂ ne se voit pas et ne se sent pas : en cas de fuite dans un local fermé, il remplace l'air sans prévenir. Seul un détecteur alerte avant l'asphyxie.",
@@ -8046,12 +8046,12 @@ window.PILOTE_PROJECTION = {
        "code": "13.14",
        "niveau": 2,
        "type": "qcm",
-       "enonce": "Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous en conclure ?",
+       "enonce": "Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous'en conclure ?",
        "choix": [
-        "Que le détecteur fonctionne et mesure correctement",
+        "Que le détecteur fonctionne bien et qu'il mesure correctement l'atmosphère de tout le local technique",
         "Rien de plus qu'une mise sous tension : une cellule usée reste allumée sans plus rien mesurer",
-        "Qu'une fuite est en cours",
-        "Que le local a été ventilé récemment"
+        "Qu'une fuite de CO₂ est en cours dans le local et qu'il faut évacuer les lieux sans délai",
+        "Que le local a été ventilé récemment par la ventilation mécanique"
        ],
        "bonne": 1,
        "aide": "Un voyant dit qu'un appareil est alimenté, pas qu'il voit quelque chose.",
@@ -8218,9 +8218,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Que désigne la LIE d'un gaz inflammable ?",
        "choix": [
         "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
-        "La température minimale d'inflammation du gaz",
-        "La pression maximale admissible dans la bouteille",
-        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+        "La température minimale d'inflammation de ce gaz au contact de l'air du local technique",
+        "La pression maximale admissible dans la bouteille de stockage",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation en préfecture"
        ],
        "bonne": 0,
        "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
@@ -8274,9 +8274,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "À quel moment réalise-t-on l'analyse de risques d'une intervention ?",
        "choix": [
         "Avant d'engager le moindre geste technique",
-        "Après avoir ouvert le circuit",
-        "À la fin, au moment de rédiger le rapport",
-        "Seulement si le client le demande"
+        "Juste après avoir ouvert le circuit frigorifique",
+        "À la fin, au moment de rédiger le rapport écrit",
+        "Seulement si le client en fait lui-même la demande"
        ],
        "bonne": 0,
        "aide": "Une analyse de risques sert à éviter l'accident, pas à le raconter.",
@@ -8482,9 +8482,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "Que désigne la LIE d'un gaz inflammable ?",
        "choix": [
         "La concentration en dessous de laquelle le mélange avec l'air ne s'enflamme pas",
-        "La température minimale d'inflammation du gaz",
-        "La pression maximale admissible dans la bouteille",
-        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation"
+        "La température minimale d'inflammation de ce gaz au contact de l'air du local technique",
+        "La pression maximale admissible dans la bouteille de stockage",
+        "La quantité de gaz au-delà de laquelle il faut déclarer l'installation en préfecture"
        ],
        "bonne": 0,
        "aide": "Il s'agit d'un dosage dans l'air, pas d'une température ni d'une pression.",
@@ -8538,9 +8538,9 @@ window.PILOTE_PROJECTION = {
        "enonce": "À quel moment réalise-t-on l'analyse de risques d'une intervention ?",
        "choix": [
         "Avant d'engager le moindre geste technique",
-        "Après avoir ouvert le circuit",
-        "À la fin, au moment de rédiger le rapport",
-        "Seulement si le client le demande"
+        "Juste après avoir ouvert le circuit frigorifique",
+        "À la fin, au moment de rédiger le rapport écrit",
+        "Seulement si le client en fait lui-même la demande"
        ],
        "bonne": 0,
        "aide": "Une analyse de risques sert à éviter l'accident, pas à le raconter.",
@@ -8565,10 +8565,10 @@ window.PILOTE_PROJECTION = {
        "type": "qcm",
        "enonce": "Une bouteille de R-290 (propane) a un raccord et un filetage à gauche, différents d'une bouteille de HFC. Que faites-vous si votre raccord habituel ne se visse pas dessus ?",
        "choix": [
-        "Vous utilisez un adaptateur pour forcer le raccordement",
+        "Vous utilisez un adaptateur pour forcer le raccordement sur la bouteille",
         "Vous respectez le raccord spécifique prévu pour les hydrocarbures, sans adaptateur",
-        "Vous serrez plus fort avec un outil",
-        "Vous changez de sens de filetage sur votre propre raccord"
+        "Vous serrez plus fort à la clé pour engager quand même le filetage",
+        "Vous inversez le sens de filetage sur votre propre raccord habituel"
        ],
        "bonne": 1,
        "aide": "La fiche dit que ce raccord différent est une sécurité, pas un obstacle à contourner.",
@@ -8733,10 +8733,10 @@ window.PILOTE_PROJECTION = {
        "code": "12.07",
        "niveau": 1,
        "type": "qcm",
-       "enonce": "Vous devez rebraser un composant sur un circuit au R-290. Quelle affirmation est vraie ?",
+       "enonce": "Vous devez rebraser un composant sur un circuit au R-290. Quelle affirmation'est vraie ?",
        "choix": [
         "Le R-290 est classé A2L, comme le R-32 : une flamme brève est possible sans risque particulier.",
-        "Le R-290 est classé A3, très inflammable : aucune flamme tant que l'inertage à l'azote n'est pas confirmé.",
+        "Le R-290 est classé A3, très inflammable : aucune flamme sans inertage confirmé",
         "Le R-290 est classé A2, inflammable, mais moins que les hydrocarbures purs.",
         "Le R-290 est classé A1, non inflammable : le risque vient seulement de la pression."
        ],

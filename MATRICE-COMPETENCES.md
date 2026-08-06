@@ -1123,7 +1123,7 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
 - **Enseigné** — `g11` Substitution et efficacité énergétique *(+ question intégrée)*
   <br>Dit à l'élève : « Comparer les fluides de substitution selon l'application »
 - **Interrogé** — 1 question(s) :
-  - `pk-q-11.04` *(niveau 2, rangée en G11)* — Un fluide de substitution est très performant en froid commercial, mais son efficacité baisse nettement quand l'air ext…
+  - `pk-q-11.04` *(niveau 2, rangée en G11)* — Un fluide de substitution'est très performant en froid commercial, mais son efficacité baisse nettement quand l'air ext…
 
 #### 11.05 ★ nouveau 2025 — ✅ enseigné et vérifié
 
@@ -1255,7 +1255,7 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
 - **Enseigné** — `g12b` Intervenir sur un circuit hydrocarbure *(+ question intégrée)*
   <br>Dit à l'élève : « Ouvrir le circuit pour remplacer un composant, puis le refermer »
 - **Interrogé** — 1 question(s) :
-  - `pk-g12b-1` *(niveau 1, rangée en G12)* — Vous devez rebraser un composant sur un circuit au R-290. Quelle affirmation est vraie ?
+  - `pk-g12b-1` *(niveau 1, rangée en G12)* — Vous devez rebraser un composant sur un circuit au R-290. Quelle affirmation'est vraie ?
 
 #### 12.08 ★ nouveau 2025 — ✅ enseigné et vérifié
 
@@ -1311,7 +1311,7 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
 - **Enseigné** — `g12` Hydrocarbures — le spécifique A1 et A2 *(+ question intégrée)*
   <br>Dit à l'élève : « Vérifier la signalisation, les issues, la détection et les alarmes du site »
 - **Interrogé** — 1 question(s) :
-  - `pk-q-12.13` *(niveau 2, rangée en G12)* — Vous arrivez pour intervenir sur un équipement au R-290 et constatez que les capteurs de gaz du local ne sont pas en se…
+  - `pk-q-12.13` *(niveau 2, rangée en G12)* — Vous arrivez pour intervenir sur un équipement au R-290 et constatez que les capteurs de gaz du local ne sont pas'en se…
 
 #### 12.14 ★ nouveau 2025 — ✅ enseigné et vérifié
 
@@ -1452,7 +1452,7 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
 - **Interrogé** — 3 question(s) :
   - `q-g13-283` *(niveau 1, rangée en G13)* — Pourquoi installe-t-on des détecteurs de CO₂ dans les locaux abritant une installation au R-744 ?
   - `q-g13-302` *(niveau 2, rangée en G13)* — Pourquoi les portes des locaux techniques CO₂ doivent-elles s'ouvrir vers l'extérieur ?
-  - `pk-cl4-3` *(niveau 2, rangée en Classification)* — Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous en…
+  - `pk-cl4-3` *(niveau 2, rangée en Classification)* — Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous'en…
 
 #### 13.15 ★ nouveau 2025 — · hors périmètre du pack
 
@@ -1673,11 +1673,11 @@ restent dans la banque — le savoir est utile au métier — mais **elles ne so
 - `q-g13-v6_094` — L'ammoniac est principalement utilisé dans :
 - `q-g13-v6_182` — L'ammoniac peut être détecté facilement par :
 
-**sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B** — 3 question(s)
+**sécurité électrique : indispensable au métier, non listée comme compétence à l'annexe II.B** — 3 question(s)
 
 - `pk-s5-1` — Quelle est la dernière étape avant de poser les mains sur un circuit électrique consigné ?
-- `pk-s5-2` — Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s en être servi ?
-- `pk-s5-3` — Une machine vient d être mise hors tension. Que peut-il rester de dangereux dans le coffret ?
+- `pk-s5-2` — Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s'en être servi ?
+- `pk-s5-3` — Une machine vient d'être mise hors tension. Que peut-il rester de dangereux dans le coffret ?
 
 ---
 

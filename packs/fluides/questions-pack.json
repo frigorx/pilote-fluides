@@ -145,7 +145,7 @@
    "Le séparateur d'huile compense automatiquement le défaut"
   ],
   "bonne": 0,
-  "aide": "Relis la fin de la fiche : que se passe-t-il quand un défaut n'est pas signalé ?",
+  "aide": "Relis la fin de la fiche : que se passe-t-il quand'un défaut n'est pas signalé ?",
   "remed": {
    "regle": "Un défaut non signalé (thermostat qui dérive, limiteur qui ne coupe plus, séparateur qui laisse passer l'huile) finit par endommager le système. À terme, faute de mesure, cela provoque une fuite ou une émission de réfrigérant.",
    "pourquoi": "Le rapport écrit permet d'agir avant que le défaut ne s'aggrave. C'est un outil de prévention, pas une simple formalité.",
@@ -181,7 +181,7 @@
   "code": "12.07",
   "niveau": 1,
   "type": "qcm",
-  "enonce": "Vous devez rebraser un composant sur un circuit au R-290. Quelle affirmation est vraie ?",
+  "enonce": "Vous devez rebraser un composant sur un circuit au R-290. Quelle affirmation'est vraie ?",
   "choix": [
    "Le R-290 est classé A2L, comme le R-32 : une flamme brève est possible sans risque particulier.",
    "Le R-290 est classé A3, très inflammable : aucune flamme tant que l'inertage à l'azote n'est pas confirmé.",
@@ -274,7 +274,7 @@
    "La pression, très élevée, et l'atmosphère irrespirable qu'une fuite crée en local fermé.",
    "Aucun : la classe A1 signifie qu'il est sans danger.",
    "L'inflammabilité, car il peut s'enflammer comme un hydrocarbure.",
-   "Uniquement le risque de gel des tuyauteries en fonctionnement normal."
+   "Uniquement le risque de gel des tuyauteries'en fonctionnement normal."
   ],
   "bonne": 0,
   "aide": "A1 renseigne sur deux critères précis. Lesquels ? Et qu'est-ce que cela ne dit pas ?",
@@ -302,7 +302,7 @@
   "aide": "Le texte donne la conduite à tenir en cas de fuite d'ammoniac, juste avant la fin de la fiche.",
   "remed": {
    "regle": "En cas de fuite d'ammoniac : alerter, évacuer, ne jamais intervenir seul.",
-   "pourquoi": "L'ammoniac est toxique (le B de B2L). Un titulaire A1/A2 n'a ni la catégorie C, ni l'équipement pour intervenir sur cette installation.",
+   "pourquoi": "L'ammoniac'est toxique (le B de B2L). Un titulaire A1/A2 n'a ni la catégorie C, ni l'équipement pour intervenir sur cette installation.",
    "piege": "Se fier à son odorat pour rester sur place, ou vouloir agir seul par réflexe technique. La seule conduite correcte est d'alerter et d'évacuer."
   },
   "remediation_vers": "g13"
@@ -337,7 +337,7 @@
   "type": "qcm",
   "enonce": "Vous détenez une attestation A1. Sur le site, une fuite se déclare sur l'installation à l'ammoniac. Un collègue vous demande de venir l'aider. Que répondez-vous ?",
   "choix": [
-   "D'accord : une attestation A1 permet d'intervenir sur tous les fluides en cas d'urgence.",
+   "D'accord : une attestation A1 permet d'intervenir sur tous les fluides'en cas d'urgence.",
    "D'accord, à condition de porter un masque de protection.",
    "Non : l'ammoniac relève de la catégorie C, mon attestation A1/A2 ne donne aucun droit d'intervention dessus.",
    "J'y vais quand même : l'urgence prime sur la catégorie d'attestation."
@@ -599,7 +599,7 @@
   "code": "11.04",
   "niveau": 2,
   "type": "qcm",
-  "enonce": "Un fluide de substitution est très performant en froid commercial, mais son efficacité baisse nettement quand l'air extérieur est très chaud. Quel est ce fluide ?",
+  "enonce": "Un fluide de substitution'est très performant en froid commercial, mais son efficacité baisse nettement quand l'air extérieur est très chaud. Quel est ce fluide ?",
   "choix": [
    "Le CO2 (R-744)",
    "L'ammoniac (NH3)",
@@ -611,7 +611,7 @@
   "remed": {
    "regle": "Le CO2 est performant en froid commercial, mais son efficacité baisse quand le climat extérieur est très chaud. Aucun fluide de substitution n'est le meilleur dans l'absolu : le choix dépend de l'application et du climat du site.",
    "pourquoi": "Installer un fluide sans regarder le climat du site expose à une installation qui fonctionne mal une partie de l'année. Le choix doit toujours être validé avec la documentation constructeur.",
-   "piege": "Croire qu'un fluide performant sur un site l'est partout : les hydrocarbures sont efficaces mais limités par l'inflammabilité, l'ammoniac est réservé à l'industriel à cause de sa toxicité, chaque fluide a ses propres limites."
+   "piege": "Croire qu'un fluide performant sur un site l'est partout : les hydrocarbures sont efficaces mais limités par l'inflammabilité, l'ammoniac'est réservé à l'industriel à cause de sa toxicité, chaque fluide a ses propres limites."
   },
   "remediation_vers": "g11"
  },
@@ -709,7 +709,7 @@
   "code": "12.13",
   "niveau": 2,
   "type": "qcm",
-  "enonce": "Vous arrivez pour intervenir sur un équipement au R-290 et constatez que les capteurs de gaz du local ne sont pas en service. Que faites-vous ?",
+  "enonce": "Vous arrivez pour intervenir sur un équipement au R-290 et constatez que les capteurs de gaz du local ne sont pas'en service. Que faites-vous ?",
   "choix": [
    "Vous réparez vous-même les capteurs avant de commencer",
    "Vous ne commencez pas et vous signalez le problème",
@@ -719,7 +719,7 @@
   "bonne": 1,
   "aide": "La fiche donne une règle claire pour ce cas : que fait-on si une mesure de sécurité du site manque ?",
   "remed": {
-   "regle": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
+   "regle": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes'en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
    "pourquoi": "Sur un fluide très inflammable comme le R-290, un capteur de gaz hors service prive le technicien de la seule alerte en cas de fuite pendant l'intervention.",
    "piege": "Penser que sa propre vigilance remplace un dispositif de détection défaillant."
   },
@@ -785,7 +785,7 @@
   "bonne": 0,
   "aide": "Une fuite ne sort pas d'un tube plein : pense à ce qui assemble deux pièces, ou à ce qui bouge.",
   "remed": {
-   "regle": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
+   "regle": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces'en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
    "pourquoi": "Un tube plein et correctement fixé ne peut pas fuir ; c'est la jonction entre deux pièces, ou la fatigue due au mouvement, qui crée un passage pour le fluide.",
    "piege": "Chercher au hasard sur toute la tuyauterie au lieu de cibler d'abord les raccords, les brasures et les points qui vibrent."
   },
@@ -801,7 +801,7 @@
   "choix": [
    "Vous notez que c'est réparé et vous passez directement au reste de l'installation",
    "Vous démontez le raccord pour le remplacer par précaution",
-   "Vous l'ignorez, puisque la réparation est déjà faite",
+   "Vous l'ignorez, puisque la réparation'est déjà faite",
    "Vous recontrôlez ce raccord en priorité, car un point réparé reste une partie à surveiller"
   ],
   "bonne": 3,
@@ -1152,7 +1152,7 @@
   "enonce": "Quelle est la différence entre un détendeur thermostatique (mécanique) et un détendeur électronique ?",
   "choix": [
    "Le détendeur électronique ne sert que sur les petits appareils, comme le capillaire",
-   "Le détendeur électronique coupe le circuit quand un seuil de pression est franchi",
+   "Le détendeur électronique coupe le circuit quand'un seuil de pression'est franchi",
    "Le détendeur électronique régule la pression de condensation, le mécanique régule la surchauffe",
    "Le détendeur électronique utilise une sonde et un régulateur, ce qui le rend plus précis et plus rapide que le bulbe du détendeur mécanique"
   ],
@@ -1173,7 +1173,7 @@
   "type": "qcm",
   "enonce": "Que fait la soupape de régulation de pression sur une installation frigorifique ?",
   "choix": [
-   "Elle coupe le circuit dès qu'un seuil de pression est franchi",
+   "Elle coupe le circuit dès qu'un seuil de pression'est franchi",
    "Elle module en continu pour maintenir une pression stable à un point du circuit",
    "Elle règle la surchauffe en sortie d'évaporateur",
    "Elle commande le compresseur selon une température mesurée par une sonde"
@@ -1203,7 +1203,7 @@
   "bonne": 0,
   "aide": "Pense à la pièce mécanique qui tare le limiteur, différente du capteur du limiteur électronique.",
   "remed": {
-   "regle": "Le limiteur de pression mécanique est réglé par un ressort (tarage mécanique). Le limiteur de pression électronique utilise un capteur relié à un module. Dans les deux cas, il coupe le circuit dès qu'un seuil de pression est franchi, en haute comme en basse pression.",
+   "regle": "Le limiteur de pression mécanique est réglé par un ressort (tarage mécanique). Le limiteur de pression électronique utilise un capteur relié à un module. Dans les deux cas, il coupe le circuit dès qu'un seuil de pression'est franchi, en haute comme en basse pression.",
    "pourquoi": "Le type de technologie détermine comment on accède au réglage et comment on le vérifie, mais le rôle reste le même : une sécurité qui coupe avant l'incident.",
    "piege": "Ne jamais retoucher un limiteur de sécurité « pour voir » : son seuil se règle selon la fiche constructeur, jamais à l'estime. Ne pas le confondre avec le bulbe et le tube fin, qui appartiennent au thermostat mécanique."
   },
@@ -1213,22 +1213,22 @@
   "id": "pk-s5-1",
   "dc": "Sécurité",
   "code": null,
-  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l'annexe II.B",
   "niveau": 1,
   "type": "qcm",
   "enonce": "Quelle est la dernière étape avant de poser les mains sur un circuit électrique consigné ?",
   "choix": [
    "Prévenir le client",
-   "Vérifier l absence de tension avec un VAT",
+   "Vérifier l'absence de tension avec un VAT",
    "Poser une pancarte",
    "Ouvrir le coffret"
   ],
   "bonne": 1,
   "aide": "Consigner ne suffit pas : il faut le prouver, appareil en main.",
   "remed": {
-   "regle": "On vérifie TOUJOURS l absence de tension au VAT avant de toucher.",
+   "regle": "On vérifie TOUJOURS l'absence de tension au VAT avant de toucher.",
    "pourquoi": "Un disjoncteur peut être mal repéré, une alimentation de secours peut subsister : seule la mesure prouve que le circuit est hors tension.",
-   "piege": "« Je l ai coupé moi-même » ne protège de rien. Un circuit se vérifie, il ne se suppose pas."
+   "piege": "« Je l'ai coupé moi-même » ne protège de rien. Un circuit se vérifie, il ne se suppose pas."
   },
   "remediation_vers": "s5"
  },
@@ -1236,22 +1236,22 @@
   "id": "pk-s5-2",
   "dc": "Sécurité",
   "code": null,
-  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l'annexe II.B",
   "niveau": 2,
   "type": "qcm",
-  "enonce": "Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s en être servi ?",
+  "enonce": "Pourquoi contrôle-t-on le VAT sur une source connue avant ET après s'en être servi ?",
   "choix": [
    "Pour économiser la pile",
-   "Parce qu un VAT en panne indiquerait « pas de tension » sur un circuit pourtant sous tension",
-   "Pour l étalonner",
-   "C est une simple habitude"
+   "Parce qu'un VAT en panne indiquerait « pas de tension » sur un circuit pourtant sous tension",
+   "Pour l'étalonner",
+   "C'est une simple habitude"
   ],
   "bonne": 1,
-  "aide": "Demandez-vous ce qui se passe si l appareil lui-même est défaillant.",
+  "aide": "Demandez-vous ce qui se passe si l'appareil lui-même est défaillant.",
   "remed": {
-   "regle": "Le VAT se teste sur une source connue avant l usage, et de nouveau après.",
-   "pourquoi": "Un appareil défaillant affiche l absence de tension quoi qu il arrive. Le tester après prouve qu il fonctionnait encore au moment de la mesure.",
-   "piege": "Un VAT qui n indique rien peut vouloir dire deux choses : pas de tension, ou appareil mort. Seul le double contrôle tranche."
+   "regle": "Le VAT se teste sur une source connue avant l'usage, et de nouveau après.",
+   "pourquoi": "Un appareil défaillant affiche l'absence de tension quoi qu'il arrive. Le tester après prouve qu'il fonctionnait encore au moment de la mesure.",
+   "piege": "Un VAT qui n'indique rien peut vouloir dire deux choses : pas de tension, ou appareil mort. Seul le double contrôle tranche."
   },
   "remediation_vers": "s5"
  },
@@ -1259,10 +1259,10 @@
   "id": "pk-s5-3",
   "dc": "Sécurité",
   "code": null,
-  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l annexe II.B",
+  "hors_ref": "sécurité électrique : indispensable au métier, non listée comme compétence à l'annexe II.B",
   "niveau": 2,
   "type": "qcm",
-  "enonce": "Une machine vient d être mise hors tension. Que peut-il rester de dangereux dans le coffret ?",
+  "enonce": "Une machine vient d'être mise hors tension. Que peut-il rester de dangereux dans le coffret ?",
   "choix": [
    "Plus rien, la coupure suffit",
    "Des condensateurs encore chargés",
@@ -1270,11 +1270,11 @@
    "Uniquement du fluide"
   ],
   "bonne": 1,
-  "aide": "Certains composants stockent l énergie électrique et ne se vident pas instantanément.",
+  "aide": "Certains composants stockent l'énergie électrique et ne se vident pas instantanément.",
   "remed": {
    "regle": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
-   "pourquoi": "Il accumule de l énergie pour le démarrage du moteur. Coupée, cette énergie reste stockée et peut provoquer un choc.",
-   "piege": "Couper puis ouvrir aussitôt le coffret est un réflexe fréquent — et c est exactement le moment où le condensateur est encore chargé."
+   "pourquoi": "Il accumule de l'énergie pour le démarrage du moteur. Coupée, cette énergie reste stockée et peut provoquer un choc.",
+   "piege": "Couper puis ouvrir aussitôt le coffret est un réflexe fréquent — et c'est exactement le moment où le condensateur est encore chargé."
   },
   "remediation_vers": "s5"
  },
@@ -1317,7 +1317,7 @@
   "aide": "Demandez-vous à quelle famille chimique appartient le propane.",
   "remed": {
    "regle": "Le R-290 est classé A3 : toxicité faible, mais très inflammable.",
-   "pourquoi": "Le propane est un hydrocarbure. Tous les hydrocarbures utilisés en froid — R-290, R-600a (isobutane), R-1270 (propylène) — sont A3. Les A2L sont des HFC à faible PRP comme le R-32, ou des HFO comme le R-1234yf.",
+   "pourquoi": "Le propane est un hydrocarbure. Tous les hydrocarbures utilisés'en froid — R-290, R-600a (isobutane), R-1270 (propylène) — sont A3. Les A2L sont des HFC à faible PRP comme le R-32, ou des HFO comme le R-1234yf.",
    "piege": "La confusion R-290 = A2L est l'erreur la plus fréquente, et elle se trouve même dans des documents mal rédigés. Elle conduit à appliquer des précautions insuffisantes : ventilation sous-dimensionnée, matériel électrique inadapté, charge excessive."
   },
   "remediation_vers": "cl1"
@@ -1384,7 +1384,7 @@
   "remed": {
    "regle": "Le R-290 utilisé en froid ne contient pas d'odorisant : seule une mesure à l'explosimètre renseigne sur l'état de l'atmosphère.",
    "pourquoi": "L'odeur du gaz domestique vient d'un produit ajouté volontairement pour permettre la détection par le nez. Le propane de qualité frigorifique est de haute pureté et ne le contient pas.",
-   "piege": "Même quand une odeur existe, son seuil de perception n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger. L'atmosphère peut être explosive avant d'être perceptible."
+   "piege": "Même quand une odeur existe, son seuil de perception n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on'est loin ou près du danger. L'atmosphère peut être explosive avant d'être perceptible."
   },
   "remediation_vers": "cl2"
  },
@@ -1464,7 +1464,7 @@
   "choix": [
    "Je descends immédiatement le chercher, chaque seconde compte",
    "Je donne l'alerte, je ventile et je fais intervenir les secours, sans descendre",
-   "Je descends en retenant ma respiration",
+   "Je descends'en retenant ma respiration",
    "J'attends seul quelques minutes que le gaz se dissipe de lui-même"
   ],
   "bonne": 1,
@@ -1526,7 +1526,7 @@
   "code": "13.14",
   "niveau": 2,
   "type": "qcm",
-  "enonce": "Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous en conclure ?",
+  "enonce": "Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous'en conclure ?",
   "choix": [
    "Que le détecteur fonctionne et mesure correctement",
    "Rien de plus qu'une mise sous tension : une cellule usée reste allumée sans plus rien mesurer",
@@ -1582,7 +1582,7 @@
   "remed": {
    "regle": "Le palier de changement d'état commence au point de bulle — la première bulle de vapeur — et finit au point de rosée — la dernière goutte de liquide.",
    "pourquoi": "Ces deux points sont les frontières entre les trois états du fluide : liquide, mélange saturé, vapeur. Ce sont eux qui donnent leur sens aux mots surchauffe et sous-refroidissement.",
-   "piege": "Le point critique est autre chose : c'est le sommet de la cloche du diagramme, au-delà duquel le fluide ne se sépare plus en liquide et en vapeur."
+   "piege": "Le point critique est autre chose : c'est le sommet de la cloche du diagramme, au-delà duquel le fluide ne se sépare plus'en liquide et en vapeur."
   },
   "remediation_vers": "g1s"
  },
@@ -1648,7 +1648,7 @@
   "remed": {
    "regle": "La courbe en cloche partage le diagramme en trois : liquide à gauche, mélange liquide + vapeur sous la cloche, vapeur surchauffée à droite.",
    "pourquoi": "Le flanc gauche de la cloche est la courbe de bulle, le flanc droit la courbe de rosée. La cloche du diagramme et le palier de la courbe de chauffe sont la même chose, vue autrement.",
-   "piege": "Le sommet de la cloche est le point critique : au-dessus, le fluide ne se sépare plus en liquide et en vapeur, il n'y a donc plus de palier."
+   "piege": "Le sommet de la cloche est le point critique : au-dessus, le fluide ne se sépare plus'en liquide et en vapeur, il n'y a donc plus de palier."
   },
   "remediation_vers": "g1b"
  },
@@ -1801,7 +1801,7 @@
   "aide": "Le référentiel place ce diagnostic AVANT le geste de charge. Que déciderait-on ensuite, s'il était faux ?",
   "remed": {
    "regle": "On détermine d'abord l'état et les conditions du fluide, puis on en déduit la méthode de remplissage — en phase liquide ou en phase vapeur — et le volume adapté.",
-   "pourquoi": "Charger en phase vapeur un mélange zéotrope modifie la composition de ce qui reste dans la bouteille ; charger sans savoir où en est l'installation conduit à sur-charger ou sous-charger.",
+   "pourquoi": "Charger en phase vapeur un mélange zéotrope modifie la composition de ce qui reste dans la bouteille ; charger sans savoir où en'est l'installation conduit à sur-charger ou sous-charger.",
    "piege": "Croire que la pesée suffit. La balance dit combien on a mis, elle ne dit pas s'il fallait le mettre en liquide ou en vapeur, ni si la charge était déjà correcte."
   },
   "remediation_vers": "g1e"
@@ -1842,9 +1842,9 @@
    "Le pressostat se règle, le régulateur se remplace"
   ],
   "bonne": 0,
-  "aide": "L'un est un interrupteur électrique, l'autre est une vanne.",
+  "aide": "L'un'est un interrupteur électrique, l'autre est une vanne.",
   "remed": {
-   "regle": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression est une vanne : il maintient une pression et ne coupe rien.",
+   "regle": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression'est une vanne : il maintient une pression et ne coupe rien.",
    "pourquoi": "Les deux surveillent la pression, mais l'un protège la machine en l'arrêtant, l'autre fait fonctionner l'installation correctement sans jamais l'arrêter.",
    "piege": "Croire qu'un régulateur peut remplacer une sécurité. Une installation a besoin des deux, avec deux réglages distincts pris sur la fiche constructeur."
   },
