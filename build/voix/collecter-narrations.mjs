@@ -204,6 +204,25 @@ function collectScript(code, source) {
       if (name === "narration" && Array.isArray(value)) {
         value.filter(item => typeof item === "string").forEach(item => ajouter(item, source, "fragment"));
       }
+      if (["why", "explain", "feedback", "message", "q", "question", "prompt", "x"].includes(name) && typeof value === "string") {
+        ajouter(value, source, "feedback");
+      }
+      if (["messages", "choices", "options"].includes(name) && Array.isArray(value)) {
+        value.filter(item => typeof item === "string").forEach(item => ajouter(item, source, "choix"));
+      }
+    }
+
+    if (!source.includes("moteur/prof-vocal.js") && node.type === "AssignmentExpression" && node.left?.type === "MemberExpression" && !node.left.computed
+      && node.left.property?.name === "textContent") {
+      const collectAlternatives = candidate => {
+        const value = staticValue(candidate, env);
+        if (typeof value === "string") { ajouter(value, source, "interface"); return; }
+        if (candidate?.type === "ConditionalExpression") {
+          collectAlternatives(candidate.consequent);
+          collectAlternatives(candidate.alternate);
+        }
+      };
+      collectAlternatives(node.right);
     }
 
     if (node.type !== "ObjectExpression") return;
@@ -269,6 +288,11 @@ for (const file of walkFiles(path.join(root, "packs/fluides/res"))) {
     }
   }
 }
+
+collectScript(
+  fs.readFileSync(path.join(root, "moteur/prof-vocal.js"), "utf8"),
+  "moteur/prof-vocal.js"
+);
 
 ajouter(
   "Tome 3. Technologie des organes frigorifiques. Choisissez une famille puis un dossier.",

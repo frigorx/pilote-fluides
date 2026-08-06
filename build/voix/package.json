@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "collecter": "node collecter-narrations.mjs",
-    "tester": "node test-voix.mjs"
+    "tester": "node test-voix.mjs && node test-prof-vocal.mjs"
   },
   "devDependencies": {
     "acorn": "^8.15.0",

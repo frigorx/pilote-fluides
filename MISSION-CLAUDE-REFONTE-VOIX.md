@@ -6,13 +6,40 @@ Cette mission a été exécutée dans le clone par Codex. Ne pas recommencer la 
 le moteur par une autre solution sans défaut constaté lors de l'écoute. L'état livré est :
 
 - couche partagée `moteur/voix.js` branchée sur les 17 surfaces vocales ;
-- corpus de 660 narrations et index lié au texte exact ;
+- corpus de 1 423 éléments vocaux et index lié au texte exact ;
 - lot MP3 local Piper / `fr_FR-siwis-medium`, avec repli navigateur ;
+- contrôleur `moteur/prof-vocal.js` sur les 16 tutoriels : enchaînement automatique, arrêts sur
+  activité ou question, lecture des corrections et dialogue « compris / réécouter » ;
 - tests, sources et procédure dans `build/voix/` et `packs/fluides/res/voix/README.md`.
 
 Le lot est un brouillon d'écoute dans le clone. Il ne devient narration officielle, ne part sur
 GitHub et n'entre dans le RAG qu'après le bon à tirer explicite de Franck Henninot. Les consignes
 ci-dessous restent le contrat d'audit et de maintenance à transmettre à Claude.
+
+### Consigne de maintenance du mode professeur
+
+Ne pas remplacer le mode professeur par une minuterie fixe. L'écran suivant ne part qu'après
+l'événement de fin de la narration active. Une nouvelle prise de parole annule le départ en
+attente, ce qui protège les narrations découpées en plusieurs fragments.
+
+Conserver les règles suivantes :
+
+1. le clic initial vaut autorisation uniquement pour la séance en cours ;
+2. un écran sans interaction avance automatiquement ;
+3. un bouton, un champ, une question ou un bouton `Suivant` désactivé constitue un point d'arrêt ;
+4. aucune réponse n'est sélectionnée automatiquement ;
+5. toute correction parlée reste affichée dans la carte du contrôleur ;
+6. « Non, réécouter » relit l'écran ou la correction, sans diminuer le score ni punir ;
+7. aucune reconnaissance vocale ni demande de microphone : la validation reste un bouton
+   accessible au clavier et au toucher ;
+8. la frise et la nomenclature conservent leur enchaînement local historique ;
+9. tout nouveau texte de dialogue doit entrer dans `build/voix/corpus.json`, recevoir son MP3 et
+   passer `verifier-audios.py` ;
+10. tester au minimum une diapositive automatique, une activité, une mauvaise réponse, une bonne
+    réponse, « réécouter », « continuer », « quitter » et l'onglet caché.
+
+État technique contrôlé le 6 août 2026 : 16 tutoriels chargés, 1 423 MP3 décodés, aucune erreur
+console, aucune voix au chargement et aucun débordement aux quatre formats de référence.
 
 ## Consigne prête à transmettre
 

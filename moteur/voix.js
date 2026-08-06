@@ -68,6 +68,43 @@
     }, 0);
   }
 
+  function emitVoiceEvent(name, utterance, mode, extra) {
+    if (!document || typeof document.dispatchEvent !== "function" || typeof window.CustomEvent !== "function") return;
+    var text = utterance && utterance.text ? normalizeText(utterance.text) : "";
+    try {
+      document.dispatchEvent(new window.CustomEvent("pilotevoix:" + name, {
+        detail: Object.assign({
+          texte: text,
+          cle: text ? textKey(text) : null,
+          mode: mode || lastMode,
+          interne: !!(utterance && utterance.__piloteProfVocal)
+        }, extra || {})
+      }));
+    } catch (_) { /* les anciens navigateurs gardent la lecture sans orchestration */ }
+  }
+
+  function observeNative(utterance) {
+    if (!utterance || utterance.__piloteVoixObservee) return;
+    utterance.__piloteVoixObservee = true;
+    if (typeof utterance.addEventListener === "function") {
+      utterance.addEventListener("start", function () { emitVoiceEvent("debut", utterance, "natif"); });
+      utterance.addEventListener("end", function () { emitVoiceEvent("fin", utterance, "natif"); });
+      utterance.addEventListener("error", function (event) {
+        emitVoiceEvent("erreur", utterance, "natif", { erreur: event && event.error });
+      });
+      return;
+    }
+    ["onstart", "onend", "onerror"].forEach(function (name) {
+      var previous = utterance[name];
+      utterance[name] = function (event) {
+        emitVoiceEvent(name === "onstart" ? "debut" : name === "onend" ? "fin" : "erreur", utterance, "natif", {
+          erreur: event && event.error
+        });
+        if (typeof previous === "function") previous.call(utterance, event);
+      };
+    });
+  }
+
   function clearAudio(reason) {
     if (!active) return;
     var current = active;
@@ -79,6 +116,7 @@
     current.audio.removeAttribute("src");
     try { current.audio.load(); } catch (_) { /* nettoyage facultatif */ }
     lastMode = "inactif";
+    if (reason) emitVoiceEvent("annulation", current.utterance, "audio-local", { raison: reason });
     if (reason) callHandler(current.utterance, "onerror", { type: "error", error: reason });
   }
 
@@ -86,6 +124,7 @@
     clearAudio();
     lastMode = "natif";
     lastKey = textKey(utterance.text);
+    observeNative(utterance);
     nativeSpeak(utterance);
   }
 
@@ -107,12 +146,14 @@
       if (!active || active.run !== localRun) return;
       if (started) return;
       started = true;
+      emitVoiceEvent("debut", utterance, "audio-local");
       callHandler(utterance, "onstart", { type: "start" });
     };
     audio.onended = function () {
       if (!active || active.run !== localRun) return;
       active = null;
       lastMode = "inactif";
+      emitVoiceEvent("fin", utterance, "audio-local");
       callHandler(utterance, "onend", { type: "end" });
     };
     audio.onerror = function () {
@@ -189,7 +230,7 @@
   patch("resume", resume);
 
   window.PiloteVoix = {
-    version: "1.0.0",
+    version: "1.1.0",
     audioDisponible: patched,
     nombreNarrations: Object.keys(entries).length,
     normaliser: normalizeText,
