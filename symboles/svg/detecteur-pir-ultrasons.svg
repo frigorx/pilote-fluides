@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="34" viewBox="-12.00 -16.00 74.00 34.00">
+  <path d="M 48.50 0.50 A 2.00 10.00 0 0 0 46.50 -9.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 46.50 10.50 A 2.00 10.00 0 0 0 48.50 0.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 50.50 0.50 A 2.00 11.00 0 0 0 48.50 -10.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 48.50 12.50 A 2.00 12.00 0 0 0 50.50 0.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 52.50 0.50 A 2.00 12.00 0 0 0 50.50 -11.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 50.50 14.50 A 2.00 14.00 0 0 0 52.50 0.50" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="20,-10 0,0 20,10" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="25" y1="-5" x2="40" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="25" y1="0" x2="40" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="25" y1="5" x2="40" y2="10" stroke="#000" stroke-width="1"/>
+  <circle cx="1" cy="0" r="1.5" fill="#000"/>
+</svg>

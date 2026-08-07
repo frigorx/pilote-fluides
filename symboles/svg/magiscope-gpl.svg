@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="34" viewBox="-27.00 -17.00 54.00 34.00">
+  <line x1="14" y1="-5" x2="16" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-13" y1="-5" x2="-11" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-16" y1="-5" x2="-14" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="11" y1="-5" x2="13" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-17" y1="-5" x2="-15" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="10" y1="-5" x2="12" y2="5" stroke="#000" stroke-width="0.5"/>
+  <rect x="10" y="-5" width="7" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-17" y="-5" width="7" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="0" x2="11" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-17" y1="0" x2="-16" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="12" y1="-5" x2="14" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-15" y1="-5" x2="-13" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="13" y1="-5" x2="15" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-14" y1="-5" x2="-12" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="15" y1="-5" x2="17" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-13" y1="-5" x2="-11" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-12" y1="-5" x2="-11" y2="0" stroke="#000" stroke-width="0.5"/>
+  <line x1="16" y1="-5" x2="17" y2="0" stroke="#000" stroke-width="0.5"/>
+  <path d="M 9.00 -4.00 A 9.00 5.00 0 0 0 -9.00 -4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -9.00 4.00 A 9.00 5.00 0 0 0 9.00 4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="0.00" rx="8.00" ry="5.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="0.00" cy="0.00" rx="7.00" ry="4.00" fill="#c00" stroke="#000" stroke-width="0.5"/>
+  <line x1="-7" y1="0" x2="7" y2="0" stroke="#000" stroke-width="0.5"/>
+  <circle cx="17" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-17" cy="0" r="1.5" fill="#000"/>
+</svg>

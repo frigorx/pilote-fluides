@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="24" viewBox="-27.00 -12.00 54.00 24.00">
+  <path d="M -7.50 -0.00 A 2.50 2.50 0 0 0 -2.50 0.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -10.00 -2.50 A 2.50 2.50 0 0 0 -11.92 -1.61" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -14.07 -0.04 A 2.50 2.50 0 0 0 -12.45 -1.07" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 11.92 -1.61 A 2.50 2.50 0 0 0 10.00 -2.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 12.58 -0.89 A 2.50 2.50 0 0 0 14.50 0.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 10.00 -2.50 A 2.50 2.50 0 0 0 7.50 -0.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -7.50 0.00 A 2.50 2.50 0 0 0 -10.00 -2.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 2.50 -0.00 A 2.50 2.50 0 0 0 7.50 0.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 2.50 0.00 A 2.50 2.50 0 0 0 -2.50 -0.00" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="15" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-15" cy="0" r="1.5" fill="#000"/>
+</svg>

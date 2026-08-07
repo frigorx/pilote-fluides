@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="374" viewBox="-7.00 -7.00 94.00 374.00">
+  <rect x="0" y="0" width="80" height="360" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="20" y="90" width="40" height="200" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <path d="M 70.00 59.83 A 30.00 10.00 0 0 0 10.00 60.17" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M 10.00 290.00 A 30.00 10.00 0 0 0 70.00 290.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="20" y="151" width="40" height="78" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="20.00" cy="340.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="60.00" cy="340.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="20.00" cy="20.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="60.00" cy="20.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="10" y1="60" x2="10" y2="290" stroke="#000" stroke-width="0.5"/>
+  <line x1="70" y1="60" x2="70" y2="290" stroke="#000" stroke-width="0.5"/>
+  <path d="M 10.00 290.00 A 30.00 20.00 0 0 0 70.00 290.00" fill="none" stroke="#000" stroke-width="0.5"/>
+</svg>

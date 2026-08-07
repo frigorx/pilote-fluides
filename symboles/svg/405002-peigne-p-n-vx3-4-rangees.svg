@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="924" viewBox="-17.00 -67.00 64.00 924.00">
+  <rect x="-4.88" y="-40" width="5" height="890" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="30.13,240 0.13,270 0.13,240 20.13,220 30.13,230" fill="#00c" stroke="#000" stroke-width="0.5"/>
+  <polygon points="30.25,800 0.25,830 0.25,800 20.25,780 30.25,790" fill="#00c" stroke="#000" stroke-width="0.5"/>
+  <polygon points="30.38,520 0.38,550 0.38,520 20.38,500 30.38,510" fill="#00c" stroke="#000" stroke-width="0.5"/>
+  <polygon points="30.25,800 40.25,810 40.25,840 0.25,840 0.25,830" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <polygon points="30.13,240 40.13,250 40.13,280 0.13,280 0.13,270" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <polygon points="30.38,520 40.38,530 40.38,560 0.38,560 0.38,550" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <polygon points="30.13,-40 0.13,-10 0.13,-40 20.13,-60 30.13,-50" fill="#00c" stroke="#000" stroke-width="0.5"/>
+  <polygon points="30.13,-40 40.13,-30 40.13,0 0.13,0 0.13,-10" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <circle cx="10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="25" cy="225" r="1.5" fill="#000"/>
+  <circle cx="36" cy="806" r="1.5" fill="#000"/>
+  <circle cx="10" cy="840" r="1.5" fill="#000"/>
+  <circle cx="36" cy="-34" r="1.5" fill="#000"/>
+  <circle cx="30" cy="280" r="1.5" fill="#000"/>
+  <circle cx="10" cy="280" r="1.5" fill="#000"/>
+  <circle cx="36" cy="246" r="1.5" fill="#000"/>
+  <circle cx="25" cy="-55" r="1.5" fill="#000"/>
+  <circle cx="36" cy="526" r="1.5" fill="#000"/>
+  <circle cx="30" cy="0" r="1.5" fill="#000"/>
+  <circle cx="30" cy="560" r="1.5" fill="#000"/>
+  <circle cx="25" cy="505" r="1.5" fill="#000"/>
+  <circle cx="10" cy="560" r="1.5" fill="#000"/>
+  <circle cx="30" cy="840" r="1.5" fill="#000"/>
+  <circle cx="25" cy="785" r="1.5" fill="#000"/>
+</svg>

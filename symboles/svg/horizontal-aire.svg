@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="54" viewBox="-31.00 -15.00 94.00 54.00">
+  <line x1="-0.89" y1="1.7" x2="1.43" y2="-0.16" stroke="#000" stroke-width="0.5"/>
+  <polyline points="-10.18,0.77 -12.51,0.77 -20.25,6.35 -16.38,6.35" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="23.88" y1="0.77" x2="26.21" y2="-1.09" stroke="#000" stroke-width="0.5"/>
+  <rect x="-18.7" y="9.13" width="46.46" height="18.58" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-18.7" y1="8.2" x2="3.75" y2="-9.45" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="-9.45" x2="49.44" y2="-9.45" stroke="#000" stroke-width="1"/>
+  <line x1="50.21" y1="-9.45" x2="27.76" y2="9.13" stroke="#000" stroke-width="1"/>
+  <polygon points="37.05,3.56 29.3,11 29.3,23.07 30.85,23.07 37.82,17.5 37.82,3.56" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="50.21" y1="-9.45" x2="50.21" y2="9.13" stroke="#000" stroke-width="1"/>
+  <line x1="50.21" y1="9.13" x2="27.76" y2="27.72" stroke="#000" stroke-width="1"/>
+  <polyline points="38.17,4.19 30.85,10.8 30.85,22.13 30.85,23.07" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="47.89,-5.73 40.14,1.7 40.14,13.78 41.69,13.78 48.66,8.2 48.66,-5.73" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="36.71,6.14 36.71,16.78 30.85,21.21" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="49,-5.1 41.69,1.51 41.69,12.84 41.69,13.78" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="36.27" y1="17" x2="37.82" y2="17" stroke="#000" stroke-width="1"/>
+  <polyline points="47.55,-3.15 47.55,7.49 41.69,11.92" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -8.55 3.62 A 6.20 2.33 0 1 0 -0.33 1.84" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <line x1="47.11" y1="7.72" x2="48.66" y2="7.72" stroke="#000" stroke-width="1"/>
+  <line x1="-7.86" y1="2.63" x2="-4" y2="-0.16" stroke="#000" stroke-width="0.5"/>
+  <line x1="-4" y1="-0.16" x2="1.43" y2="-0.16" stroke="#000" stroke-width="0.5"/>
+  <polyline points="0.66,-7.59 -1.67,-7.59 -9.41,-2 -5.54,-2" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-20.25,6.35 -20.25,24.93 -18.7,24.93" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-2.84" cy="4.03" rx="1.16" ry="0.47" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-8.64" y1="-2.22" x2="-8.64" y2="0.06" stroke="#000" stroke-width="1"/>
+  <rect x="2.2" y="13.78" width="7" height="10.22" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="8.01" cy="16.11" rx="0.39" ry="0.47" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="3.38" cy="16.11" rx="0.39" ry="0.47" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="3.38" cy="22.61" rx="0.39" ry="0.47" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="8.01" cy="22.61" rx="0.39" ry="0.47" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="3" y1="9.13" x2="25.43" y2="-9.45" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <polygon points="27,-8.52 37.82,-0.16 35.5,1.7 24.66,-7.59" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <path d="M 16.23 2.69 A 6.20 2.33 0 1 0 24.45 0.91" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <line x1="16.92" y1="1.7" x2="20.79" y2="-1.09" stroke="#000" stroke-width="0.5"/>
+  <line x1="20.79" y1="-1.09" x2="26.21" y2="-1.09" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="21.95" cy="3.09" rx="1.16" ry="0.47" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-5.54,-2 -4.76,-0.16 22.34,-6.66 20.79,-9.45 -4,-2.95" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <ellipse cx="-16.23" cy="24.47" rx="1.55" ry="1.69" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-16.2" y1="25.32" x2="-15.25" y2="24.64" stroke="#000" stroke-width="1"/>
+  <line x1="-16.68" y1="25.32" x2="-14.73" y2="24.48" stroke="#000" stroke-width="1"/>
+  <polyline points="3,19 6,16 6,18 9,15" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="49" cy="4" r="1.5" fill="#000"/>
+  <circle cx="37" cy="14" r="1.5" fill="#000"/>
+  <circle cx="-7" cy="-5" r="1.5" fill="#000"/>
+  <circle cx="-18" cy="3" r="1.5" fill="#000"/>
+  <circle cx="6" cy="24" r="1.5" fill="#000"/>
+  <circle cx="-16" cy="29" r="1.5" fill="#000"/>
+</svg>

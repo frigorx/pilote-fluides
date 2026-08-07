@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="-16.00 -23.00 34.00 34.00">
+  <rect x="-10" y="-17.89" width="22.1" height="9.44" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0.2" y1="-8.44" x2="0.2" y2="-0.35" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="0" r="1.5" fill="#000"/>
+  <text x="-6" y="-11.00" font-family="sans-serif" font-size="5" fill="#333">PA</text>
+</svg>

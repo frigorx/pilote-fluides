@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="194" viewBox="-43.00 -97.00 84.00 194.00">
+  <rect x="-36" y="-90" width="72" height="180" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="16.2" y="0" width="9" height="4.5" fill="#c00" stroke="#000" stroke-width="0.5"/>
+  <rect x="13.5" y="20.7" width="9" height="15.3" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="-21.6" y="20.7" width="9" height="15.3" fill="#000" stroke="#000" stroke-width="1"/>
+  <ellipse cx="18.00" cy="73.80" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="16.2" y1="72" x2="19.8" y2="75.6" stroke="#000" stroke-width="1"/>
+  <line x1="19.8" y1="72" x2="16.2" y2="75.6" stroke="#000" stroke-width="1"/>
+  <line x1="18" y1="72" x2="18" y2="75.6" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-17.10" cy="72.90" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="16.2" y1="73.8" x2="19.8" y2="73.8" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="18.00" cy="-72.00" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="16.2" y1="-73.8" x2="19.8" y2="-70.2" stroke="#000" stroke-width="1"/>
+  <line x1="-18.9" y1="71.1" x2="-15.3" y2="74.7" stroke="#000" stroke-width="1"/>
+  <line x1="-15.3" y1="71.1" x2="-18.9" y2="74.7" stroke="#000" stroke-width="1"/>
+  <line x1="19.8" y1="-73.8" x2="16.2" y2="-70.2" stroke="#000" stroke-width="1"/>
+  <line x1="-17.1" y1="71.1" x2="-17.1" y2="74.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="18" y1="-73.8" x2="18" y2="-70.2" stroke="#000" stroke-width="0.5"/>
+  <line x1="-18.9" y1="72.9" x2="-15.3" y2="72.9" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-18.00" cy="-72.00" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="45" x2="0" y2="90" stroke="#000" stroke-width="0.5"/>
+  <line x1="16.2" y1="-72" x2="19.8" y2="-72" stroke="#000" stroke-width="0.5"/>
+  <line x1="-19.8" y1="-73.8" x2="-16.2" y2="-70.2" stroke="#000" stroke-width="1"/>
+  <rect x="-36" y="-45" width="72" height="90" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-16.2" y1="-73.8" x2="-19.8" y2="-70.2" stroke="#000" stroke-width="1"/>
+  <line x1="-18" y1="-73.8" x2="-18" y2="-70.2" stroke="#000" stroke-width="0.5"/>
+  <line x1="-19.8" y1="-72" x2="-16.2" y2="-72" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="-90" x2="0" y2="-45" stroke="#000" stroke-width="0.5"/>
+  <rect x="-36" y="-45" width="72" height="27" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-28.8" y="9" width="59.4" height="10.8" fill="#000" stroke="#000" stroke-width="1"/>
+  <line x1="-13.5" y1="-29.7" x2="-13.5" y2="-25.2" stroke="#000" stroke-width="1"/>
+  <rect x="-13.5" y="0" width="9" height="4.5" fill="#c00" stroke="#000" stroke-width="0.5"/>
+  <text x="-15.3" y="-31.50" font-family="sans-serif" font-size="4" fill="#333">1</text>
+  <text x="-35.1" y="-27.00" font-family="sans-serif" font-size="4" fill="#333">MCB</text>
+  <text x="-35.1" y="-37.80" font-family="sans-serif" font-size="4" fill="#333">SIEMENS</text>
+  <text x="-35.1" y="-19.80" font-family="sans-serif" font-size="4" fill="#333">C20</text>
+  <text x="-35.1" y="-33.30" font-family="sans-serif" font-size="4" fill="#333">5SY62</text>
+  <text x="-15.3" y="-19.80" font-family="sans-serif" font-size="4" fill="#333">0</text>
+</svg>

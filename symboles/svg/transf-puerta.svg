@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="34" viewBox="-27.00 -13.00 54.00 34.00">
+  <ellipse cx="2.00" cy="5.00" rx="3.00" ry="3.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-9" y="-9" width="3" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-12.27" y1="1" x2="-10.71" y2="1" stroke="#000" stroke-width="1"/>
+  <line x1="10.73" y1="-1" x2="12.29" y2="-1" stroke="#000" stroke-width="1"/>
+  <line x1="-12.27" y1="3" x2="-10.71" y2="3" stroke="#000" stroke-width="1"/>
+  <line x1="10.73" y1="1" x2="12.29" y2="1" stroke="#000" stroke-width="1"/>
+  <rect x="10" y="-3" width="3" height="15" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-10" y="-6" width="20" height="20" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="-3" width="3" height="15" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-7.50" cy="-7.50" rx="0.50" ry="0.50" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="6" y="14" width="3" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="7.50" cy="15.50" rx="0.50" ry="0.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-2.00" cy="5.00" rx="3.00" ry="3.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-12.27" y1="-1" x2="-10.71" y2="-1" stroke="#000" stroke-width="1"/>
+  <circle cx="-14" cy="0" r="1.5" fill="#000"/>
+  <circle cx="14" cy="0" r="1.5" fill="#000"/>
+</svg>

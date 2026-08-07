@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="59" height="224" viewBox="-7.00 -12.00 59.00 224.00">
+  <rect x="0" y="0" width="40" height="200" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="31.25" y="118.19" width="2" height="13" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="32.25" cy="129.19" rx="0.50" ry="0.50" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="0" y="50" width="40" height="100" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polyline points="4,120 4,144 6,144" fill="none" stroke="#808" stroke-width="1"/>
+  <polyline points="6,144 8,144" fill="none" stroke="#808" stroke-width="1"/>
+  <line x1="27" y1="144" x2="39" y2="144" stroke="#808" stroke-width="1"/>
+  <rect x="0" y="80" width="40" height="30" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="6.2" y="134" width="5" height="5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="6.2" y="126" width="5" height="5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="10.00" cy="11.25" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="9.25" x2="12" y2="13.25" stroke="#000" stroke-width="1"/>
+  <line x1="12" y1="9.25" x2="8" y2="13.25" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="9.25" x2="10" y2="13.25" stroke="#000" stroke-width="0.5"/>
+  <line x1="8" y1="11.25" x2="12" y2="11.25" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="30.00" cy="11.25" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="28" y1="9.25" x2="32" y2="13.25" stroke="#000" stroke-width="1"/>
+  <line x1="32" y1="9.25" x2="28" y2="13.25" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="9.25" x2="30" y2="13.25" stroke="#000" stroke-width="0.5"/>
+  <line x1="28" y1="11.25" x2="32" y2="11.25" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="32.00" cy="188.80" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="20.00" cy="188.80" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="186.8" x2="34" y2="190.8" stroke="#000" stroke-width="1"/>
+  <line x1="18" y1="186.8" x2="22" y2="190.8" stroke="#000" stroke-width="1"/>
+  <line x1="34" y1="186.8" x2="30" y2="190.8" stroke="#000" stroke-width="1"/>
+  <line x1="32" y1="186.8" x2="32" y2="190.8" stroke="#000" stroke-width="0.5"/>
+  <line x1="30" y1="188.8" x2="34" y2="188.8" stroke="#000" stroke-width="0.5"/>
+  <line x1="22" y1="186.8" x2="18" y2="190.8" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="186.8" x2="20" y2="190.8" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="8.00" cy="188.80" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="18" y1="188.8" x2="22" y2="188.8" stroke="#000" stroke-width="0.5"/>
+  <line x1="6" y1="186.8" x2="10" y2="190.8" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="186.8" x2="6" y2="190.8" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="186.8" x2="8" y2="190.8" stroke="#000" stroke-width="0.5"/>
+  <line x1="6" y1="188.8" x2="10" y2="188.8" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="20.00" cy="175.00" rx="7.00" ry="7.00" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="20" cy="200" r="1.5" fill="#000"/>
+  <circle cx="32" cy="200" r="1.5" fill="#000"/>
+  <circle cx="8" cy="200" r="1.5" fill="#000"/>
+  <circle cx="30" cy="0" r="1.5" fill="#000"/>
+  <text x="5" y="125.00" font-family="sans-serif" font-size="5" fill="#333"><tspan x="5" dy="0.00">Uc 180V ⎓</tspan><tspan x="5" dy="5.75">C2  Itotal 20kA</tspan><tspan x="5" dy="5.75">D1  Itotal 5kA</tspan></text>
+  <text x="24" y="6.00" font-family="sans-serif" font-size="4" fill="#333">2</text>
+  <text x="13" y="6.00" font-family="sans-serif" font-size="4" fill="#333">1</text>
+  <text x="11" y="24.25" font-family="sans-serif" font-size="6" fill="#333">OUT</text>
+  <text x="30.08" y="179.80" font-family="sans-serif" font-size="6" fill="#333">2</text>
+  <text x="5" y="179.80" font-family="sans-serif" font-size="6" fill="#333">1</text>
+  <text x="14" y="178.00" font-family="sans-serif" font-size="9" fill="#333">⏚</text>
+  <text x="20" y="61.00" font-family="sans-serif" font-size="8" fill="#333">🗲</text>
+  <text x="7" y="78.00" font-family="sans-serif" font-size="8" fill="#333">🗲</text>
+  <text x="14" y="68.00" font-family="sans-serif" font-size="8" fill="#333">☁</text>
+</svg>

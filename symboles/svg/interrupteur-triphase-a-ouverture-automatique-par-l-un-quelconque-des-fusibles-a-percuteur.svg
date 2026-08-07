@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="-97.00 -112.00 124.00 124.00">
+  <line x1="-40" y1="-100" x2="-40" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-100" x2="-80" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-100" x2="0" y2="-40" stroke="#000" stroke-width="1"/>
+  <rect x="-45" y="-85" width="10" height="30" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-85" y="-85" width="10" height="30" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-5" y="-85" width="10" height="30" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-20" x2="-80" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-20" x2="-90" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-40" x2="-40" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="-40" y1="-20" x2="-40" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-40" x2="0" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-20" x2="0" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-85" y1="-30" x2="20" y2="-30" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="20" y1="-30" x2="20" y2="-70" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="20" y1="-70" x2="5" y2="-70" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-75" y1="-70" x2="-60" y2="-70" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-35" y1="-70" x2="-20" y2="-70" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-20" y1="-70" x2="-20" y2="-45" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-60" y1="-70" x2="-60" y2="-45" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-60" y1="-45" x2="20" y2="-45" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <circle cx="0" cy="0" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-100" r="1.5" fill="#000"/>
+  <circle cx="-40" cy="-100" r="1.5" fill="#000"/>
+  <circle cx="-40" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-80" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-80" cy="-100" r="1.5" fill="#000"/>
+</svg>

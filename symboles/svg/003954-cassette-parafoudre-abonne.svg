@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="74" viewBox="-47.00 -34.00 94.00 74.00">
+  <polyline points="-12,30.5 33,30.5" fill="none" stroke="#c00" stroke-width="1"/>
+  <rect x="-40" y="-30" width="80" height="65" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-40" y1="-30" x2="40" y2="-30" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="10.00" cy="-21.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-21" y="-26" width="17" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-4.00" cy="-21.00" rx="5.00" ry="5.00" fill="#fff" stroke="#000" stroke-width="1"/>
+  <path d="M 35.00 -16.00 A 10.00 10.00 0 0 0 25.00 -26.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-26" x2="25" y2="-26" stroke="#000" stroke-width="1"/>
+  <polyline points="10,-16 25,-16 25,-13 22,-13 31,-6 38,-13 35,-13 35,-15" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-4.00" cy="-21.00" rx="3.50" ry="3.50" fill="#0a0" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="10.00" cy="-21.00" rx="3.50" ry="3.50" fill="#c00" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-29.93" cy="-21.00" rx="8.07" ry="5.00" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <rect x="-36" y="-9" width="14" height="12" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-37,5.5 -37,30.5 -32,30.5" fill="none" stroke="#c00" stroke-width="1"/>
+  <rect x="17" y="8" width="2" height="7" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="18" y1="6" x2="18" y2="17" stroke="#000" stroke-width="0.5"/>
+  <rect x="15" y="4" width="8" height="15" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="29.25" y="5.2" width="2" height="12" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="30.25" cy="15.20" rx="0.50" ry="0.50" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <text x="-19" y="-19.00" font-family="sans-serif" font-size="4" fill="#333">OK</text>
+  <text x="-34.7" y="-18.50" font-family="sans-serif" font-size="5" fill="#333">NF</text>
+  <text x="-32.9" y="-12.00" font-family="sans-serif" font-size="5" fill="#333">UF2</text>
+  <text x="-34" y="0.00" font-family="sans-serif" font-size="6" fill="#333">T2</text>
+  <text x="-36" y="11.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="-36" dy="0.00">Uc : 275V~</tspan><tspan x="-36" dy="4.60">In/Imax : 10/12kA</tspan><tspan x="-36" dy="4.60">Up : 1,2kV</tspan></text>
+  <text x="19.85" y="9.37" font-family="sans-serif" font-size="5" fill="#333"><tspan x="19.85" dy="0.00">S</tspan><tspan x="19.85" dy="5.75">P</tspan><tspan x="19.85" dy="5.75">D</tspan></text>
+</svg>

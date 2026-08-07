@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="84" viewBox="-25.00 -45.00 44.00 84.00">
+  <line x1="0" y1="-33" x2="0" y2="32" stroke="#000" stroke-width="1"/>
+  <line x1="-14" y1="-20" x2="14" y2="-20" stroke="#000" stroke-width="1"/>
+  <text x="3" y="-27.17" font-family="sans-serif" font-size="5" fill="#555">F</text>
+  <text x="-15" y="-27.17" font-family="sans-serif" font-size="5" fill="#555">O</text>
+</svg>

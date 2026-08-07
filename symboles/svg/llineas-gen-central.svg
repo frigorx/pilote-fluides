@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="34" viewBox="-42.00 -18.00 84.00 34.00">
+  <line x1="-26.11" y1="1" x2="-8.89" y2="1" stroke="#000" stroke-width="1"/>
+  <ellipse cx="26.20" cy="0.00" rx="0.70" ry="1.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="26.20" cy="-7.00" rx="0.70" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-6" y1="1" x2="26" y2="1" stroke="#000" stroke-width="1"/>
+  <path d="M -27.00 -9.00 A 1.00 2.00 0 0 0 -27.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -27.00 -1.00 A 1.00 1.00 0 0 0 -27.00 1.00" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-1.43,-9 -1.43,-11 -6.28,-11 -6.28,5 -8.7,5 -8.7,-13 1,-13 1,-10" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="8" y="1" width="1" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-27" y1="-9" x2="-9" y2="-9" stroke="#000" stroke-width="1"/>
+  <line x1="-6" y1="-9" x2="26" y2="-9" stroke="#000" stroke-width="1"/>
+  <line x1="-27" y1="-5" x2="-9" y2="-5" stroke="#000" stroke-width="1"/>
+  <line x1="-6" y1="-5" x2="26" y2="-5" stroke="#000" stroke-width="1"/>
+  <line x1="-27" y1="-1" x2="-9" y2="-1" stroke="#000" stroke-width="1"/>
+  <line x1="-6" y1="-1" x2="26" y2="-1" stroke="#000" stroke-width="1"/>
+  <circle cx="9" cy="5" r="1.5" fill="#000"/>
+  <circle cx="-29" cy="-7" r="1.5" fill="#000"/>
+  <circle cx="28" cy="-7" r="1.5" fill="#000"/>
+  <circle cx="28" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-7" cy="6" r="1.5" fill="#000"/>
+  <circle cx="-29" cy="0" r="1.5" fill="#000"/>
+</svg>

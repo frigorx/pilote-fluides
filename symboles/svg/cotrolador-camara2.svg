@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="54" viewBox="-57.00 -34.00 84.00 54.00">
+  <line x1="-19.63" y1="3.3" x2="-19.63" y2="9.1" stroke="#000" stroke-width="1"/>
+  <line x1="4" y1="3.3" x2="4" y2="9.1" stroke="#000" stroke-width="1"/>
+  <line x1="-29.75" y1="3.3" x2="-29.75" y2="9.1" stroke="#000" stroke-width="1"/>
+  <line x1="13.45" y1="3.3" x2="13.45" y2="9.1" stroke="#000" stroke-width="1"/>
+  <polygon points="-18,-16.13 -9.32,-16.13 -12.79,-6.13 -21.47,-6.13" fill="none" stroke="#c00" stroke-width="1"/>
+  <rect x="-38.84" y="-21.14" width="38.2" height="20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-19.74" y1="-11.13" x2="-11.05" y2="-11.13" stroke="#c00" stroke-width="1"/>
+  <polygon points="-31.89,-16.13 -23.21,-16.13 -26.68,-6.13 -35.36,-6.13" fill="none" stroke="#c00" stroke-width="1"/>
+  <line x1="-33.63" y1="-11.13" x2="-24.95" y2="-11.13" stroke="#c00" stroke-width="1"/>
+  <polyline points="4.57,-17.37 13.25,-17.37 13.25,-20.7 8.05,-24 2.84,-20.7 2.84,-17.37" fill="none" stroke="#c00" stroke-width="1"/>
+  <polygon points="2.84,-14 13.25,-14 13.25,-10.7 8.05,-7.36 2.84,-10.7" fill="none" stroke="#00c" stroke-width="1"/>
+  <rect x="-44.43" y="-26.14" width="62.51" height="28.35" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-44.43,-26.14 -37.49,-29.48 21.55,-29.48 18.08,-26.14" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="21.55,-29.48 21.55,-1.12 18.08,2.21" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-4.98" cy="-15.29" rx="0.87" ry="0.83" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -4.97 -11.13 A 2.60 2.50 0 0 0 -4.98 -6.13" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-43.25" y1="3.3" x2="-43.25" y2="9.1" stroke="#000" stroke-width="1"/>
+  <circle cx="-43" cy="9" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="9" r="1.5" fill="#000"/>
+  <circle cx="4" cy="9" r="1.5" fill="#000"/>
+  <circle cx="-20" cy="9" r="1.5" fill="#000"/>
+  <circle cx="13" cy="9" r="1.5" fill="#000"/>
+  <text x="-35.83" y="7.65" font-family="sans-serif" font-size="4" fill="#333">na</text>
+  <text x="-25" y="7.65" font-family="sans-serif" font-size="4" fill="#333">nc</text>
+  <text x="10.75" y="-1.05" font-family="sans-serif" font-size="4" fill="#333">s2</text>
+  <text x="1.3" y="-1.05" font-family="sans-serif" font-size="4" fill="#333">s1</text>
+  <text x="-48.65" y="7.65" font-family="sans-serif" font-size="4" fill="#333">c</text>
+</svg>

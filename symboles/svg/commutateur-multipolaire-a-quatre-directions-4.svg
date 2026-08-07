@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="55" viewBox="-73.00 -34.00 84.00 55.00">
+  <line x1="-29.25" y1="0.8" x2="-39.25" y2="-19.2" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-29.25" y1="0.8" x2="-19.25" y2="-19.2" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-29.25" y1="0.8" x2="0.75" y2="-19.2" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-29.25" y1="0.8" x2="-59.25" y2="-19.2" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-29.00" cy="0.00" rx="15.00" ry="15.00" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-16,-4 -13,-4 -14,1" fill="#000" stroke="#000" stroke-width="1"/>
+  <path d="M -20.67 -17.08 A 19.00 19.00 0 0 0 -44.93 -10.35" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-42,-12 -44,-14 -45,-10" fill="#000" stroke="#000" stroke-width="1"/>
+  <text x="-61.25" y="-23.20" font-family="sans-serif" font-size="6" fill="#333">1</text>
+  <text x="-41.25" y="-23.20" font-family="sans-serif" font-size="6" fill="#333">2</text>
+  <text x="-21.25" y="-23.20" font-family="sans-serif" font-size="6" fill="#333">3</text>
+  <text x="-2.25" y="-23.20" font-family="sans-serif" font-size="6" fill="#333">4</text>
+</svg>

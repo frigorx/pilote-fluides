@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="84" viewBox="-15.00 -7.00 94.00 84.00">
+  <rect x="0" y="0" width="70" height="65" fill="#00c" stroke="#000" stroke-width="0.5"/>
+  <line x1="0.5" y1="50" x2="69.5" y2="50" stroke="#000" stroke-width="1"/>
+  <line x1="45" y1="0.5" x2="45" y2="9.5" stroke="#000" stroke-width="1"/>
+  <line x1="45" y1="40.5" x2="45" y2="49.5" stroke="#000" stroke-width="1"/>
+  <ellipse cx="45.00" cy="25.00" rx="15.00" ry="15.00" fill="#fff" stroke="#000" stroke-width="1"/>
+  <circle cx="10" cy="65" r="1.5" fill="#000"/>
+  <text x="39" y="60.00" font-family="sans-serif" font-size="4" fill="#333">Imax=90 A</text>
+  <text x="63" y="54.00" font-family="sans-serif" font-size="5" fill="#333">CE</text>
+</svg>

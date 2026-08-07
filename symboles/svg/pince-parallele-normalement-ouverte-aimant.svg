@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="44" viewBox="-30.00 -12.00 64.00 44.00">
+  <polyline points="13,-3 18,-3 21,-5 24,-3 26,-3 28,-3 28,0 26,0 24,0 21,2 18,0 13,0" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="10" y1="13" x2="10" y2="16" stroke="#000" stroke-width="1"/>
+  <polyline points="13,10 18,10 21,8 24,10 26,10 28,10 28,13 26,13 24,13 21,15 18,13 13,13" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-17" y="-3" width="7" height="16" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-20" y1="13" x2="-20" y2="16" stroke="#000" stroke-width="1"/>
+  <polygon points="-22,13 -18,13 -20,9" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polygon points="8,13 10,9 12,13" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polyline points="-14.52,1.06 -14.52,9.06 -14.52,1.06 -13.52,1.06 -13.52,9.06 -12.52,9.06 -12.52,7.06 -13.52,6.06 -13.52,4.06 -12.52,3.06 -12.52,1.06 -14.52,1.06 -14.52,9.06 -13.52,9.06" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-23" y="-3" width="36" height="16" fill="none" stroke="#000" stroke-width="0.5"/>
+  <circle cx="10" cy="20" r="1.5" fill="#000"/>
+  <circle cx="-20" cy="20" r="1.5" fill="#000"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="184" viewBox="-16.00 -173.00 144.00 184.00">
+  <rect x="0" y="-85" width="120" height="85" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 70.02 -160.00 A 3.24 4.88 0 0 0 70.02 -150.25" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M 76.50 -160.00 A 3.24 4.88 0 0 0 76.50 -150.25" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M 70.02 -140.50 A 3.24 4.88 0 0 0 70.02 -150.25" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="-15" x2="120" y2="-15" stroke="#000" stroke-width="1"/>
+  <path d="M 76.50 -140.50 A 3.24 4.88 0 0 0 76.50 -150.25" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="36" y="-116.13" width="48.6" height="6.5" fill="#000" stroke="#000" stroke-width="1"/>
+  <ellipse cx="76.50" cy="-112.88" rx="0.81" ry="0.81" fill="#fff" stroke="#fff" stroke-width="1"/>
+  <ellipse cx="44.10" cy="-112.88" rx="0.81" ry="0.80" fill="#fff" stroke="#fff" stroke-width="1"/>
+  <path d="M 58.68 -124.25 A 4.86 4.88 0 0 0 63.54 -119.38" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 76.50 -119.38 A 4.86 4.88 0 0 0 81.36 -124.25" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="74.88" y1="-119.38" x2="65.16" y2="-119.38" stroke="#000" stroke-width="1"/>
+  <line x1="58.68" y1="-125.88" x2="58.68" y2="-134" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-45" x2="120" y2="-45" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-65" x2="120" y2="-65" stroke="#000" stroke-width="1"/>
+  <line x1="81.36" y1="-125.88" x2="81.36" y2="-134" stroke="#000" stroke-width="1"/>
+  <line x1="79.74" y1="-134" x2="60.3" y2="-134" stroke="#000" stroke-width="1"/>
+  <polygon points="58.68,-130.75 37.62,-135.63 36,-132.38 58.68,-129.13" fill="#000" stroke="#000" stroke-width="1"/>
+  <path d="M 63.54 -160.00 A 3.24 4.88 0 0 0 63.54 -150.25" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M 63.54 -140.50 A 3.24 4.88 0 0 0 63.54 -150.25" fill="none" stroke="#000" stroke-width="0.5"/>
+  <circle cx="60" cy="-160" r="1.5" fill="#000"/>
+  <circle cx="80" cy="-160" r="1.5" fill="#000"/>
+  <circle cx="70" cy="-110" r="1.5" fill="#000"/>
+  <text x="29" y="-36.00" font-family="sans-serif" font-size="7" fill="#555">32</text>
+  <text x="58" y="-18.00" font-family="sans-serif" font-size="5" fill="#333">kA C</text>
+  <text x="66" y="-30.00" font-family="sans-serif" font-size="7" fill="#333">A</text>
+  <text x="58" y="-2.00" font-family="sans-serif" font-size="5" fill="#333">mm²</text>
+  <text x="28" y="-7.50" font-family="sans-serif" font-size="5" fill="#555">3 G 6.0</text>
+  <text x="30" y="-22.50" font-family="sans-serif" font-size="5" fill="#555">4.5</text>
+  <text x="-2" y="-73.50" font-family="sans-serif" font-size="7" fill="#555">Plaques de cuisson</text>
+</svg>

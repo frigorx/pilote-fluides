@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="64" viewBox="-40.00 -31.00 54.00 64.00">
+  <line x1="-9" y1="-18" x2="2" y2="-24" stroke="#000" stroke-width="1"/>
+  <path d="M -9.24 -17.65 A 5.00 5.00 0 0 0 -10.00 -15.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 10.00 -20.00 A 5.00 5.00 0 0 0 2.50 -24.33" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="2" y1="25" x2="-9" y2="19" stroke="#000" stroke-width="1"/>
+  <path d="M -10.00 16.00 A 5.00 5.00 0 0 0 -9.33 18.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 2.50 25.33 A 5.00 5.00 0 0 0 10.00 21.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-15" x2="-10" y2="15" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-20" x2="10" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="20" x2="-30" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="10" x2="-30" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="0" x2="-30" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="-10" x2="-30" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="-20" x2="-30" y2="-20" stroke="#000" stroke-width="1"/>
+  <ellipse cx="5.00" cy="20.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="5.00" cy="-20.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="5.00" cy="0.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-7" y1="15" x2="-20" y2="15" stroke="#000" stroke-width="1"/>
+  <line x1="-7" y1="5" x2="-20" y2="5" stroke="#000" stroke-width="1"/>
+  <line x1="-7" y1="-5" x2="-20" y2="-5" stroke="#000" stroke-width="1"/>
+  <line x1="-7" y1="-15" x2="-20" y2="-15" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-5.00" cy="-15.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="5.00" cy="10.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="5.00" cy="-10.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-5.00" cy="5.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-5.00" cy="15.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-5.00" cy="-5.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-21" cy="-15" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="-10" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-21" cy="15" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="10" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="20" r="1.5" fill="#000"/>
+  <circle cx="-21" cy="5" r="1.5" fill="#000"/>
+  <circle cx="-21" cy="-5" r="1.5" fill="#000"/>
+  <text x="-18" y="13.00" font-family="sans-serif" font-size="5" fill="#333">6</text>
+  <text x="-28" y="18.00" font-family="sans-serif" font-size="5" fill="#333">1</text>
+  <text x="-28" y="8.00" font-family="sans-serif" font-size="5" fill="#333">2</text>
+  <text x="-28" y="-2.00" font-family="sans-serif" font-size="5" fill="#333">3</text>
+  <text x="-28" y="-12.00" font-family="sans-serif" font-size="5" fill="#333">4</text>
+  <text x="-28" y="-22.00" font-family="sans-serif" font-size="5" fill="#333">5</text>
+  <text x="-18" y="3.00" font-family="sans-serif" font-size="5" fill="#333">7</text>
+  <text x="-18" y="-7.00" font-family="sans-serif" font-size="5" fill="#333">8</text>
+  <text x="-18" y="-17.00" font-family="sans-serif" font-size="5" fill="#333">9</text>
+</svg>

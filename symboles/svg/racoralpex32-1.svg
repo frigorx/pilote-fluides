@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="68" viewBox="-49.00 -33.11 84.00 67.84">
+  <path d="M -16.69 22.09 A 5.83 10.64 0 0 0 -22.52 11.45" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-16.69" y="-9.83" width="6.63" height="18.62" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-38.7" y="-21.8" width="22" height="43.89" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-22.95" y1="-12.49" x2="-37.6" y2="-12.49" stroke="#000" stroke-width="1"/>
+  <path d="M -21.87 -12.49 A 5.18 9.31 0 0 0 -16.69 -21.80" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-37.5" y1="11.45" x2="-23.06" y2="11.45" stroke="#000" stroke-width="1"/>
+  <path d="M -21.22 11.45 A 4.53 11.97 0 0 0 -21.22 -12.49" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-7.63" y="-12.49" width="28.65" height="23.94" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="21" y="-8.5" width="3.72" height="16" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-10.11" y="-16.22" width="2.43" height="30.77" fill="#000" stroke="#000" stroke-width="1"/>
+  <circle cx="-39" cy="-1" r="1.5" fill="#000"/>
+  <circle cx="25" cy="-1" r="1.5" fill="#000"/>
+</svg>

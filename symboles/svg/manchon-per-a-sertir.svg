@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="24" viewBox="-38.00 -12.00 74.00 24.00">
+  <rect x="13" y="-5" width="9" height="10" fill="#888" stroke="#888" stroke-width="1"/>
+  <rect x="-25" y="-5" width="9" height="10" fill="#888" stroke="#888" stroke-width="1"/>
+  <line x1="-5" y1="-5" x2="-5" y2="5" stroke="#000" stroke-width="1"/>
+  <line x1="2" y1="-5" x2="2" y2="5" stroke="#000" stroke-width="1"/>
+  <path d="M 4.00 -6.00 A 1.00 1.00 0 0 0 3.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -6.00 -5.00 A 1.00 1.00 0 0 0 -7.00 -6.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 3.00 5.00 A 1.00 1.00 0 0 0 4.00 6.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -7.00 6.00 A 1.00 1.00 0 0 0 -6.00 5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="5" y1="-6" x2="12" y2="-6" stroke="#000" stroke-width="1"/>
+  <line x1="-15" y1="-6" x2="-8" y2="-6" stroke="#000" stroke-width="1"/>
+  <line x1="-16" y1="-6" x2="-16" y2="6" stroke="#000" stroke-width="1"/>
+  <line x1="-2" y1="-6" x2="-2" y2="6" stroke="#000" stroke-width="1"/>
+  <line x1="13" y1="-6" x2="13" y2="6" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="6" x2="-15" y2="6" stroke="#000" stroke-width="1"/>
+  <line x1="12" y1="6" x2="5" y2="6" stroke="#000" stroke-width="1"/>
+  <line x1="-6" y1="-4" x2="-6" y2="4" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="-4" x2="3" y2="4" stroke="#000" stroke-width="1"/>
+  <path d="M -8.00 4.00 A 1.00 1.00 0 0 0 -9.00 3.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-1" y1="-6" x2="-1" y2="6" stroke="#000" stroke-width="1"/>
+  <path d="M 6.00 3.00 A 1.00 1.00 0 0 0 5.00 4.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M 5.00 -4.00 A 1.00 1.00 0 0 0 6.00 -3.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -9.00 -3.00 A 1.00 1.00 0 0 0 -8.00 -4.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="6" y1="3" x2="13" y2="3" stroke="#000" stroke-width="0.5"/>
+  <line x1="-16" y1="3" x2="-9" y2="3" stroke="#000" stroke-width="0.5"/>
+  <line x1="5" y1="4" x2="5" y2="6" stroke="#000" stroke-width="0.5"/>
+  <line x1="-8" y1="4" x2="-8" y2="6" stroke="#000" stroke-width="0.5"/>
+  <line x1="-8" y1="-4" x2="-8" y2="-6" stroke="#000" stroke-width="0.5"/>
+  <line x1="5" y1="-4" x2="5" y2="-6" stroke="#000" stroke-width="0.5"/>
+  <line x1="6" y1="-3" x2="13" y2="-3" stroke="#000" stroke-width="0.5"/>
+  <line x1="-16" y1="-3" x2="-9" y2="-3" stroke="#000" stroke-width="0.5"/>
+  <path d="M 6.00 -1.50 A 1.00 1.00 0 0 0 5.00 -0.50" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -9.00 1.50 A 1.00 1.00 0 0 0 -8.00 0.50" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -8.00 -0.50 A 1.00 1.00 0 0 0 -9.00 -1.50" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M 5.00 0.50 A 1.00 1.00 0 0 0 6.00 1.50" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-16" y1="-1.5" x2="-9" y2="-1.5" stroke="#000" stroke-width="0.5"/>
+  <line x1="6" y1="-1.5" x2="13" y2="-1.5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-8" y1="-0.5" x2="-8" y2="0.5" stroke="#000" stroke-width="0.5"/>
+  <line x1="5" y1="-0.5" x2="5" y2="0.5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-16" y1="1.5" x2="-9" y2="1.5" stroke="#000" stroke-width="0.5"/>
+  <line x1="6" y1="1.5" x2="13" y2="1.5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-5" y1="-4" x2="-3" y2="-4" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-4" x2="2" y2="-4" stroke="#000" stroke-width="1"/>
+  <line x1="-5" y1="4" x2="-3" y2="4" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="4" x2="2" y2="4" stroke="#000" stroke-width="1"/>
+  <circle cx="22" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-25" cy="0" r="1.5" fill="#000"/>
+</svg>

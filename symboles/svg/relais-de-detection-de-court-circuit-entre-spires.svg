@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="74" viewBox="-67.00 -67.00 74.00 74.00">
+  <rect x="-60" y="-60" width="60" height="60" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -35.00 -10.00 A 5.00 5.00 0 0 0 -45.00 -10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -25.00 -10.00 A 5.00 5.00 0 0 0 -35.00 -10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -15.00 -10.00 A 5.00 5.00 0 0 0 -25.00 -10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="-41" y="-35.00" font-family="sans-serif" font-size="9" fill="#333">N &lt;</text>
+</svg>

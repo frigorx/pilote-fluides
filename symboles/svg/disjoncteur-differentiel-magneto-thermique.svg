@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="58" height="84" viewBox="-17.00 -52.00 58.00 84.00">
+  <path d="M -0.00 15.50 A 2.50 2.50 0 0 0 0.00 10.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-40" x2="0" y2="-30" stroke="#000" stroke-width="1"/>
+  <line x1="2" y1="-32" x2="-2" y2="-28" stroke="#000" stroke-width="1"/>
+  <line x1="-2" y1="-32" x2="2" y2="-28" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="-4.00" rx="5.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-7,-29 0,-10 0,0 5,0 5,6 0,6 0,10" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="20" x2="0" y2="16" stroke="#000" stroke-width="1"/>
+  <polyline points="-4,-20 -10,-20 -10,-4 -5,-4" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <circle cx="0" cy="20" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-40" r="1.5" fill="#000"/>
+  <text x="24" y="-2.00" font-family="sans-serif" font-size="5" fill="#555">___mA</text>
+</svg>

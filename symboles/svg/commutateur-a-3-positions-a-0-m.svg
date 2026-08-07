@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="64" viewBox="-34.00 -32.00 94.00 64.00">
+  <line x1="47" y1="0" x2="23" y2="0" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <polyline points="45,-10 50,10 50,20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="50" y1="-20" x2="50" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="-15" y1="5" x2="-10" y2="-5" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <line x1="-20" y1="-5" x2="-15" y2="5" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <line x1="18.93" y1="0" x2="-26" y2="0" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <polyline points="-24,-5 -27,-5 -27,5 -30,5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polyline points="-5,-10 0,10 0,20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-20" x2="0" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="-15" y1="5" x2="-15" y2="-6" stroke="#000" stroke-width="0.5"/>
+  <line x1="20" y1="0" x2="22" y2="13" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <line x1="23" y1="0" x2="22" y2="12" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <circle cx="0" cy="-21" r="1.5" fill="#000"/>
+  <circle cx="0" cy="21" r="1.5" fill="#000"/>
+  <circle cx="50" cy="21" r="1.5" fill="#000"/>
+  <circle cx="50" cy="-21" r="1.5" fill="#000"/>
+  <text x="-24" y="-7.00" font-family="sans-serif" font-size="4" fill="#333">Auto</text>
+  <text x="-13" y="-7.00" font-family="sans-serif" font-size="4" fill="#333">man</text>
+  <text x="-16" y="-7.00" font-family="sans-serif" font-size="4" fill="#333">0</text>
+</svg>

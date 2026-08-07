@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="34" viewBox="-22.00 -19.00 44.00 34.00">
+  <line x1="-6.77" y1="2.35" x2="-5.32" y2="2.35" stroke="#000" stroke-width="1"/>
+  <line x1="4.68" y1="2.43" x2="6.12" y2="2.43" stroke="#000" stroke-width="1"/>
+  <line x1="3.45" y1="-7.65" x2="4.32" y2="-9" stroke="#000" stroke-width="1"/>
+  <path d="M 5.94 5.43 A 0.54 1.50 0 0 0 5.94 2.43" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="4.68" y="-5.67" width="1.8" height="11.14" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -5.46 5.35 A 0.54 1.50 0 0 0 -5.46 2.35" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="4.68" y1="-2.63" x2="6.12" y2="-2.63" stroke="#000" stroke-width="1"/>
+  <rect x="-6.77" y="-5.76" width="1.8" height="11.14" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 5.94 -2.67 A 0.54 1.50 0 0 0 5.94 -5.67" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="6.7" y="-4.62" width="3.62" height="9.15" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 5.96 2.46 A 0.50 2.56 0 0 0 5.96 -2.65" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="7.13" y="-3" width="2.83" height="5.52" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-6.77" y1="-2.72" x2="-5.32" y2="-2.72" stroke="#000" stroke-width="1"/>
+  <line x1="7.84" y1="2.55" x2="8.9" y2="-3" stroke="#000" stroke-width="0.5"/>
+  <path d="M -5.46 -2.76 A 0.54 1.50 0 0 0 -5.46 -5.76" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-1.46" y1="-0.68" x2="1.07" y2="-0.68" stroke="#000" stroke-width="1"/>
+  <rect x="-10.39" y="-4.71" width="3.62" height="9.15" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="8.55" y1="2.55" x2="10" y2="-3" stroke="#000" stroke-width="0.5"/>
+  <line x1="7.13" y1="2.55" x2="8.19" y2="-3" stroke="#000" stroke-width="0.5"/>
+  <path d="M -5.50 2.38 A 0.50 2.56 0 0 0 -5.50 -2.73" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-10" y="-3.06" width="2.83" height="5.52" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="1.71" y1="-3.22" x2="0.18" y2="-2.14" stroke="#000" stroke-width="0.5"/>
+  <line x1="-3.07" y1="-3.22" x2="-1.73" y2="-2.14" stroke="#000" stroke-width="0.5"/>
+  <line x1="-9.26" y1="2.46" x2="-8.19" y2="-3.06" stroke="#000" stroke-width="0.5"/>
+  <line x1="-8.55" y1="2.46" x2="-7.13" y2="-3.06" stroke="#000" stroke-width="0.5"/>
+  <line x1="-10" y1="2.46" x2="-8.9" y2="-3.06" stroke="#000" stroke-width="0.5"/>
+  <polygon points="-4.81,-2.85 -1.33,-10.33 4.32,-7.06 2.14,-3.31 4.75,-3.31 4.75,3.24 -4.81,3.24" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0.41" y1="-11.23" x2="4.32" y2="-9" stroke="#000" stroke-width="1"/>
+  <line x1="-0.46" y1="-9.89" x2="0.41" y2="-11.23" stroke="#000" stroke-width="1"/>
+  <circle cx="-10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="10" cy="0" r="1.5" fill="#000"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="44" viewBox="-47.00 -36.00 94.00 44.00">
+  <line x1="-40" y1="0" x2="40" y2="0" stroke="#000" stroke-width="1"/>
+  <polyline points="0,0 0,-20 20,-20" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" fill="#000" stroke="#000" stroke-width="1"/>
+  <text x="-15" y="-25.00" font-family="sans-serif" font-size="6" fill="#333">n</text>
+</svg>

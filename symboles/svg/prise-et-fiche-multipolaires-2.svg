@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="124" viewBox="-42.00 -112.00 94.00 124.00">
+  <rect x="0" y="-25" width="20" height="10" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="-105" width="20" height="10" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="-65" width="20" height="10" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="-5" width="20" height="10" fill="#000" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-100" x2="40" y2="-100" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-60" x2="40" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-20" x2="40" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="0" x2="40" y2="0" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="-85" width="20" height="10" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="-45" width="20" height="10" fill="#000" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-20" x2="-30" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-40" x2="40" y2="-40" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 -28.00 A 8.00 8.00 0 0 0 -0.00 -12.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="0" x2="-30" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-80" x2="40" y2="-80" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-60" x2="-30" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-100" x2="-30" y2="-100" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 -8.00 A 8.00 8.00 0 0 0 -0.00 8.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-40" x2="-30" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-80" x2="-30" y2="-80" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 -68.00 A 8.00 8.00 0 0 0 -0.00 -52.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 -108.00 A 8.00 8.00 0 0 0 -0.00 -92.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 -48.00 A 8.00 8.00 0 0 0 -0.00 -32.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 -88.00 A 8.00 8.00 0 0 0 -0.00 -72.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-68" x2="-20" y2="-52" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-48" x2="-20" y2="-32" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-28" x2="-20" y2="-12" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-8" x2="-20" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-100" x2="-20" y2="-92" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-88" x2="-20" y2="-72" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-94" x2="10" y2="-92" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-88" x2="10" y2="-72" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-68" x2="10" y2="-52" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-48" x2="10" y2="-32" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-28" x2="10" y2="-12" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-8" x2="10" y2="0" stroke="#000" stroke-width="1"/>
+  <circle cx="-30" cy="0" r="1.5" fill="#000"/>
+  <circle cx="40" cy="0" r="1.5" fill="#000"/>
+  <circle cx="40" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="40" cy="-40" r="1.5" fill="#000"/>
+  <circle cx="40" cy="-80" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="-40" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="-80" r="1.5" fill="#000"/>
+  <circle cx="40" cy="-60" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="-60" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="-100" r="1.5" fill="#000"/>
+  <circle cx="40" cy="-100" r="1.5" fill="#000"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="54" viewBox="-52.00 -22.00 124.00 54.00">
+  <line x1="30" y1="-5" x2="60" y2="-5" stroke="#00c" stroke-width="1"/>
+  <line x1="60" y1="5" x2="30" y2="5" stroke="#dd0" stroke-width="1"/>
+  <line x1="60" y1="15" x2="30" y2="15" stroke="#888" stroke-width="1"/>
+  <polygon points="-10,0 -10,10 30,25 30,-15" fill="#fff" stroke="#000" stroke-width="1"/>
+  <line x1="-40" y1="5" x2="-10" y2="5" stroke="#000" stroke-width="1"/>
+  <circle cx="60" cy="-5" r="1.5" fill="#000"/>
+  <circle cx="60" cy="5" r="1.5" fill="#000"/>
+  <circle cx="60" cy="15" r="1.5" fill="#000"/>
+  <circle cx="-40" cy="5" r="1.5" fill="#000"/>
+  <text x="15" y="7.00" font-family="sans-serif" font-size="5" fill="#333">LAN</text>
+  <text x="3" y="14.00" font-family="sans-serif" font-size="5" fill="#333">Modem</text>
+  <text x="7" y="0.00" font-family="sans-serif" font-size="5" fill="#333">Phone</text>
+</svg>

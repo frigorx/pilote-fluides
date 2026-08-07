@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="114" viewBox="-79.00 -59.00 124.00 114.00">
+  <rect x="-40" y="-40" width="80" height="80" fill="#fff" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-45" x2="-20" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-45" x2="-10" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-45" x2="10" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-45" x2="20" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="40" x2="-20" y2="45" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="40" x2="-10" y2="45" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="40" x2="0" y2="45" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="40" x2="10" y2="45" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="40" x2="20" y2="45" stroke="#000" stroke-width="1"/>
+  <circle cx="10" cy="-45" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="45" r="1.5" fill="#000"/>
+  <circle cx="20" cy="-45" r="1.5" fill="#000"/>
+  <circle cx="-20" cy="45" r="1.5" fill="#000"/>
+  <circle cx="-20" cy="-45" r="1.5" fill="#000"/>
+  <circle cx="10" cy="45" r="1.5" fill="#000"/>
+  <circle cx="0" cy="45" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="-45" r="1.5" fill="#000"/>
+  <circle cx="20" cy="45" r="1.5" fill="#000"/>
+  <text x="-17.25" y="-5.25" font-family="sans-serif" font-size="7" fill="#333">DATA+</text>
+  <text x="-4" y="-5.25" font-family="sans-serif" font-size="7" fill="#333">DATA-</text>
+  <text x="15.5" y="-17.75" font-family="sans-serif" font-size="7" fill="#333">+Ub</text>
+  <text x="25.75" y="-21.50" font-family="sans-serif" font-size="7" fill="#333">-Ub</text>
+  <text x="-25" y="35.00" font-family="sans-serif" font-size="7" fill="#333">1</text>
+  <text x="-15" y="35.00" font-family="sans-serif" font-size="7" fill="#333">2</text>
+  <text x="-5" y="35.00" font-family="sans-serif" font-size="7" fill="#333">3</text>
+  <text x="5" y="35.00" font-family="sans-serif" font-size="7" fill="#333">4</text>
+  <text x="15" y="35.00" font-family="sans-serif" font-size="7" fill="#333">5</text>
+  <text x="-30" y="10.00" font-family="sans-serif" font-size="9" fill="#333">RS485/I2C</text>
+  <text x="-65" y="-35.00" font-family="sans-serif" font-size="9" fill="#555">A</text>
+</svg>

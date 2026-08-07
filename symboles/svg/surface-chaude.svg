@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="-17.00 -17.00 34.00 34.00">
+  <line x1="-4" y1="7" x2="4" y2="7" stroke="#000" stroke-width="1"/>
+  <path d="M 2.00 -1.75 A 1.00 1.75 0 0 0 2.00 1.75" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M 2.00 5.25 A 1.00 1.75 0 0 0 2.00 1.75" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M 0.00 -1.75 A 1.00 1.75 0 0 0 -0.00 1.75" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -2.00 -1.75 A 1.00 1.75 0 0 0 -2.00 1.75" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polygon points="0,-10 -10,10 10,10" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.00 5.25 A 1.00 1.75 0 0 0 0.00 1.75" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -2.00 5.25 A 1.00 1.75 0 0 0 -2.00 1.75" fill="none" stroke="#000" stroke-width="0.5"/>
+</svg>

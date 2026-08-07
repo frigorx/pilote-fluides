@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="134" height="34" viewBox="-17.00 -25.00 134.00 34.00">
+  <line x1="-2" y1="-2" x2="2" y2="2" stroke="#000" stroke-width="0.5"/>
+  <rect x="-10" y="-10" width="120" height="15" fill="none" stroke="#000" stroke-width="0"/>
+  <text x="-2" y="-8.00" font-family="sans-serif" font-size="6" fill="#555">DBU  0,75mm²</text>
+</svg>

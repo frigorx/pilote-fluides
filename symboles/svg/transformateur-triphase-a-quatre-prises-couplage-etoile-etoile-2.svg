@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="134" height="204" viewBox="-124.00 -196.00 134.00 204.00">
+  <path d="M -0.00 -110.00 A 5.00 5.00 0 0 0 0.00 -120.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.00 -30.00 A 5.00 5.00 0 0 0 0.00 -40.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -50.00 -110.00 A 5.00 5.00 0 0 0 -50.00 -120.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.00 -100.00 A 5.00 5.00 0 0 0 0.00 -110.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -50.00 -100.00 A 5.00 5.00 0 0 0 -50.00 -110.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -50.00 -30.00 A 5.00 5.00 0 0 0 -50.00 -40.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -50.00 -120.00 A 5.00 5.00 0 0 0 -50.00 -130.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.00 -20.00 A 5.00 5.00 0 0 0 0.00 -30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.00 -120.00 A 5.00 5.00 0 0 0 0.00 -130.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -50.00 -130.00 A 5.00 5.00 0 0 0 -50.00 -140.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -50.00 -20.00 A 5.00 5.00 0 0 0 -50.00 -30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.00 -130.00 A 5.00 5.00 0 0 0 0.00 -140.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.00 -140.00 A 5.00 5.00 0 0 0 0.00 -150.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.00 -40.00 A 5.00 5.00 0 0 0 0.00 -50.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -50.00 -140.00 A 5.00 5.00 0 0 0 -50.00 -150.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -50.00 -40.00 A 5.00 5.00 0 0 0 -50.00 -50.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.00 -50.00 A 5.00 5.00 0 0 0 0.00 -60.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -50.00 -50.00 A 5.00 5.00 0 0 0 -50.00 -60.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.00 -60.00 A 5.00 5.00 0 0 0 0.00 -70.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -50.00 -60.00 A 5.00 5.00 0 0 0 -50.00 -70.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -100.00 -30.00 A 5.00 5.00 0 0 0 -100.00 -40.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -100.00 -20.00 A 5.00 5.00 0 0 0 -100.00 -30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -100.00 -40.00 A 5.00 5.00 0 0 0 -100.00 -50.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -100.00 -50.00 A 5.00 5.00 0 0 0 -100.00 -60.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -100.00 -60.00 A 5.00 5.00 0 0 0 -100.00 -70.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -100.00 -110.00 A 5.00 5.00 0 0 0 -100.00 -120.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -100.00 -100.00 A 5.00 5.00 0 0 0 -100.00 -110.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -100.00 -120.00 A 5.00 5.00 0 0 0 -100.00 -130.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -100.00 -130.00 A 5.00 5.00 0 0 0 -100.00 -140.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -100.00 -140.00 A 5.00 5.00 0 0 0 -100.00 -150.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-20" x2="0" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-20" x2="-50" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-20" x2="-100" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-70" x2="-100" y2="-80" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-80" x2="0" y2="-80" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-70" x2="-50" y2="-80" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-80" x2="0" y2="-70" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-100" x2="-100" y2="-90" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-90" x2="0" y2="-90" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-90" x2="0" y2="-100" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-100" x2="-50" y2="-90" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-120" x2="-110" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-120" x2="-60" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-130" x2="-70" y2="-130" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-130" x2="-120" y2="-130" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-130" x2="-20" y2="-130" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-120" x2="-10" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-140" x2="-10" y2="-140" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-150" x2="-10" y2="-150" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-140" x2="-60" y2="-140" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-150" x2="-60" y2="-150" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-140" x2="-110" y2="-140" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-150" x2="-110" y2="-150" stroke="#000" stroke-width="1"/>
+  <line x1="-120" y1="-130" x2="-120" y2="-150" stroke="#000" stroke-width="1"/>
+  <line x1="-70" y1="-130" x2="-70" y2="-150" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-130" x2="-20" y2="-150" stroke="#000" stroke-width="1"/>
+  <text x="-92" y="-180.00" font-family="sans-serif" font-size="9" fill="#333">Form 2 / Forme 2</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="134" height="204" viewBox="-9.00 -193.00 134.00 204.00">
+  <rect x="0" y="-85" width="120" height="85" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-15" x2="120" y2="-15" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-45" x2="120" y2="-45" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-65" x2="120" y2="-65" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-170" x2="120" y2="-170" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <rect x="30" y="-160" width="60" height="70" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-180" x2="60" y2="-160" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="-144" x2="89" y2="-144" stroke="#000" stroke-width="1"/>
+  <ellipse cx="60.00" cy="-120.00" rx="16.00" ry="16.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="60.00" cy="-120.00" rx="13.50" ry="13.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="80.00" cy="-153.00" rx="2.50" ry="2.50" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="33" y="-157" width="13" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="60" cy="-180" r="1.5" fill="#000"/>
+  <text x="28" y="-35.50" font-family="sans-serif" font-size="7" fill="#555">20</text>
+  <text x="42" y="-18.00" font-family="sans-serif" font-size="5" fill="#333">4.5 kA C</text>
+  <text x="66" y="-30.00" font-family="sans-serif" font-size="7" fill="#333">A</text>
+  <text x="2" y="-69.00" font-family="sans-serif" font-size="7" fill="#333">Lave-Linge</text>
+  <text x="36" y="-2.00" font-family="sans-serif" font-size="5" fill="#333">3 G 2.5 mm²</text>
+</svg>

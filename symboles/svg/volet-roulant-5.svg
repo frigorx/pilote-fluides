@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="54" viewBox="-15.00 -11.00 84.00 54.00">
+  <ellipse cx="10.00" cy="16.00" rx="15.00" ry="15.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 56.95 4.83 A 6.05 5.50 0 0 0 56.95 4.83" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 32.75 -0.68 A 6.05 5.50 0 0 0 32.75 10.32" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="32.75" y1="-0.68" x2="56.95" y2="4.83" stroke="#000" stroke-width="1"/>
+  <line x1="63" y1="10.33" x2="63" y2="32.33" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="4" x2="0" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="63" y1="32.33" x2="38.8" y2="23.53" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="0" x2="20" y2="4" stroke="#000" stroke-width="1"/>
+  <line x1="38.8" y1="11.95" x2="38.8" y2="23.55" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="27" x2="0" y2="32" stroke="#000" stroke-width="1"/>
+  <line x1="32.75" y1="10.33" x2="56.95" y2="15.83" stroke="#000" stroke-width="1"/>
+  <path d="M 56.95 13.08 A 3.02 2.75 0 0 0 56.95 13.08" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="0" r="1.5" fill="#000"/>
+  <circle cx="0" cy="31" r="1.5" fill="#000"/>
+  <circle cx="20" cy="0" r="1.5" fill="#000"/>
+  <circle cx="46" cy="0" r="1.5" fill="#000"/>
+  <text x="-1" y="23.00" font-family="sans-serif" font-size="9" fill="#333">1 ~</text>
+  <text x="6" y="13.00" font-family="sans-serif" font-size="8" fill="#333">M</text>
+</svg>

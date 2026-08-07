@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="194" viewBox="-53.00 -97.00 104.00 194.00">
+  <rect x="-45" y="-90" width="90" height="180" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="0.00" cy="-25.20" rx="4.50" ry="4.50" fill="#000" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-18.00" cy="-2.70" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="18.00" cy="-2.70" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="-2.70" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-1.8" y1="-4.5" x2="1.8" y2="-0.9" stroke="#000" stroke-width="1"/>
+  <line x1="1.8" y1="-4.5" x2="-1.8" y2="-0.9" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-4.5" x2="0" y2="-0.9" stroke="#000" stroke-width="0.5"/>
+  <line x1="-1.8" y1="-2.7" x2="1.8" y2="-2.7" stroke="#000" stroke-width="0.5"/>
+  <rect x="-45" y="-45" width="90" height="90" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="0.45" y1="73.8" x2="0.45" y2="76.5" stroke="#000" stroke-width="1"/>
+  <line x1="-2.7" y1="76.5" x2="3.6" y2="76.5" stroke="#000" stroke-width="1"/>
+  <line x1="-1.8" y1="78.3" x2="2.7" y2="78.3" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="80.1" x2="0.9" y2="80.1" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="-3.60" rx="36.00" ry="36.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="13.05" cy="-70.65" rx="6.75" ry="6.75" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="9" y="-72.00" font-family="sans-serif" font-size="5" fill="#333"><tspan x="9" dy="0.00">16A</tspan><tspan x="9" dy="5.75">250V~</tspan></text>
+</svg>

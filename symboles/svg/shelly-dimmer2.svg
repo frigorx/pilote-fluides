@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="169" height="114" viewBox="-57.00 -59.00 168.60 114.00">
+  <polygon points="-50,45 -50,-30 -30,-49 30,-49 50,-30 50,45" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="18" x2="-47" y2="18" stroke="#000" stroke-width="1"/>
+  <rect x="-47.68" y="29" width="95.58" height="13.63" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="41.07" cy="35.84" rx="5.31" ry="5.30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="27.42" cy="35.84" rx="5.31" ry="5.30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-40.85" cy="35.84" rx="5.31" ry="5.30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-27.20" cy="35.84" rx="5.31" ry="5.30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="0.11" cy="35.84" rx="5.31" ry="5.30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="13.76" cy="35.84" rx="5.31" ry="5.30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="-44" y1="32.64" x2="-37.52" y2="38.83" stroke="#000" stroke-width="1"/>
+  <line x1="37.91" y1="32.64" x2="44.4" y2="38.83" stroke="#000" stroke-width="1"/>
+  <line x1="24.25" y1="32.64" x2="30.75" y2="38.83" stroke="#000" stroke-width="1"/>
+  <line x1="-3.06" y1="32.64" x2="3.44" y2="38.83" stroke="#000" stroke-width="1"/>
+  <line x1="-30.36" y1="32.64" x2="-23.87" y2="38.83" stroke="#000" stroke-width="1"/>
+  <line x1="10.6" y1="32.64" x2="17.09" y2="38.83" stroke="#000" stroke-width="1"/>
+  <line x1="-34" y1="29" x2="-34" y2="42.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="-20.37" y1="29" x2="-20.37" y2="42.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="-6.72" y1="29" x2="-6.72" y2="42.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="6.94" y1="29" x2="6.94" y2="42.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="34.25" y1="29" x2="34.25" y2="42.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="20.59" y1="29" x2="20.59" y2="42.65" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-13.54" cy="35.84" rx="5.31" ry="5.30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="-16.71" y1="32.64" x2="-10.22" y2="38.83" stroke="#000" stroke-width="1"/>
+  <circle cx="14" cy="45" r="1.5" fill="#000"/>
+  <circle cx="-41" cy="45" r="1.5" fill="#000"/>
+  <circle cx="0" cy="45" r="1.5" fill="#000"/>
+  <circle cx="-14" cy="45" r="1.5" fill="#000"/>
+  <circle cx="-27" cy="45" r="1.5" fill="#000"/>
+  <circle cx="27" cy="45" r="1.5" fill="#000"/>
+  <circle cx="41" cy="45" r="1.5" fill="#000"/>
+  <text x="21" y="-11.00" font-family="sans-serif" font-size="4" fill="#333">www.shelly.cloud</text>
+  <text x="36" y="-5.00" font-family="sans-serif" font-size="4" fill="#333">Switch inputs up to 230 VAC</text>
+  <text x="40" y="2.00" font-family="sans-serif" font-size="4" fill="#333">0.1-1.1A. ~110-240V, 50/60 Hz</text>
+  <text x="15" y="21.00" font-family="sans-serif" font-size="5" fill="#333">L</text>
+  <text x="-12" y="21.00" font-family="sans-serif" font-size="5" fill="#333">L</text>
+  <text x="34" y="21.00" font-family="sans-serif" font-size="5" fill="#333">SW1</text>
+  <text x="-39" y="21.00" font-family="sans-serif" font-size="5" fill="#333">O</text>
+  <text x="48" y="21.00" font-family="sans-serif" font-size="5" fill="#333">SW2</text>
+  <text x="2" y="21.00" font-family="sans-serif" font-size="5" fill="#333">L</text>
+  <text x="-25" y="21.00" font-family="sans-serif" font-size="5" fill="#333">N</text>
+  <text x="25" y="9.00" font-family="sans-serif" font-size="4" fill="#333">(c) Shelly Dimmer 2</text>
+  <text x="50" y="-35.00" font-family="sans-serif" font-size="9" fill="#555">IP:</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="94" viewBox="-22.00 -47.00 44.00 94.00">
+  <rect x="4.75" y="-31" width="4" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="4.75" y="8" width="4" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -4.00 30.50 A 4.50 2.50 0 0 0 5.00 30.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="5" y1="30.12" x2="5" y2="-32.11" stroke="#000" stroke-width="1"/>
+  <rect x="4.75" y="-12" width="4" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="4.75" y="25" width="4" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 5.00 -31.50 A 4.50 2.50 0 0 0 -4.00 -31.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-4" y1="30.15" x2="-4" y2="-31.14" stroke="#000" stroke-width="1"/>
+  <rect x="-9" y="-2" width="5" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-10" r="1.5" fill="#000"/>
+  <circle cx="0" cy="34" r="1.5" fill="#000"/>
+  <circle cx="10" cy="30" r="1.5" fill="#000"/>
+  <circle cx="10" cy="10" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-34" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-30" r="1.5" fill="#000"/>
+</svg>

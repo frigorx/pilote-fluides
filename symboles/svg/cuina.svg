@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="-14.00 -28.00 54.00 54.00">
+  <ellipse cx="5.00" cy="-5.00" rx="1.00" ry="1.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="17.50" cy="-18.00" rx="2.50" ry="1.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="15.00" cy="-5.00" rx="1.00" ry="1.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-10" y="-10" width="30" height="31" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-10,-11 1,-21 31,-21 31,10 20,20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-10" x2="31" y2="-20" stroke="#000" stroke-width="1"/>
+  <ellipse cx="4.50" cy="-18.00" rx="2.50" ry="1.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-7" y="2" width="24" height="14" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-2,4 -3,5 11,5 12,4" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-5.00" cy="-5.00" rx="1.00" ry="1.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="1.00" cy="-14.00" rx="3.00" ry="1.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="13.00" cy="-14.50" rx="4.00" ry="1.50" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="2,-19.63 -7,-12 19,-12 28,-19.63" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-3" cy="-19" r="1.5" fill="#000"/>
+  <circle cx="30" cy="-18" r="1.5" fill="#000"/>
+</svg>

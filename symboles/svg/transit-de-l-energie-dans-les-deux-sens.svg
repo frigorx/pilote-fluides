@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewBox="-11.00 -7.00 24.00 14.00">
+  <line x1="-6" y1="0" x2="6" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="0" x2="7" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-6" y1="-2" x2="-6" y2="2" stroke="#000" stroke-width="1"/>
+</svg>

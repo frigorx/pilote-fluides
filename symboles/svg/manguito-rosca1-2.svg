@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="34" viewBox="-22.00 -16.00 54.00 34.00">
+  <path d="M 10.96 10.77 A 0.96 2.50 0 0 0 10.96 5.77" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 10.96 5.77 A 0.96 5.56 0 0 0 10.96 -5.35" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="16.93" y1="5.12" x2="15.5" y2="-4.7" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <path d="M -0.56 10.77 A 0.96 2.50 0 0 0 -0.56 5.77" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-7.07" y1="5.12" x2="-8.5" y2="-4.7" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="9" y1="5.77" x2="11.44" y2="5.77" stroke="#000" stroke-width="1"/>
+  <line x1="18.84" y1="5.12" x2="17.41" y2="-4.7" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <path d="M 8.95 9.32 A 4.28 1.50 0 0 0 0.40 9.32" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-5.16" y1="5.12" x2="-6.59" y2="-4.7" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <rect x="13.6" y="-5" width="6" height="10.62" fill="none" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-2.48" y1="5.77" x2="-0.08" y2="5.77" stroke="#000" stroke-width="1"/>
+  <line x1="15" y1="5.12" x2="13.6" y2="-4.7" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <path d="M -0.56 5.77 A 0.96 5.56 0 0 0 -0.56 -5.35" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-11.2" y="-5" width="7.62" height="10.62" fill="none" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <rect x="-2.48" y="-10.35" width="2.88" height="21.13" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-2.48" y1="-5.35" x2="-0.08" y2="-5.35" stroke="#000" stroke-width="1"/>
+  <rect x="12" y="-7" width="7.77" height="14.55" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.56 -5.35 A 0.96 2.50 0 0 0 -0.56 -10.35" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="5.12" x2="-10.4" y2="-4.7" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <rect x="-11.2" y="-7" width="8.57" height="14.55" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 0.40 -9.15 A 4.28 1.50 0 0 0 8.95 -9.15" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="9" y="-10.35" width="2.88" height="21.13" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="9" y1="-5.35" x2="11.44" y2="-5.35" stroke="#000" stroke-width="1"/>
+  <path d="M 10.96 -5.35 A 0.96 2.50 0 0 0 10.96 -10.35" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="20" cy="0" r="1.5" fill="#000"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="604" height="304" viewBox="-19.00 -39.00 604.00 304.00">
+  <line x1="527" y1="-31" x2="527" y2="256" stroke="#000" stroke-width="1"/>
+  <line x1="45" y1="-31" x2="45" y2="256" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="240" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="223" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="206" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="189" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="172" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="155" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="138" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="121" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="104" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="87" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="70" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="53" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="36" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="19" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="2" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="-15" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-13" y="-32" width="592" height="17" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="-6" y="-21.50" font-family="sans-serif" font-size="8" fill="#333">FOLIO</text>
+  <text x="61" y="-21.50" font-family="sans-serif" font-size="8" fill="#333">APPELLATION</text>
+  <text x="533" y="-21.50" font-family="sans-serif" font-size="8" fill="#333">VERSION</text>
+</svg>

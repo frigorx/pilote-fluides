@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="254" height="224" viewBox="-7.00 -12.00 254.00 224.00">
+  <rect x="0" y="0" width="240" height="200" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="0" y="39" width="240" height="127" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="11" y="179" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <line x1="26.05" y1="183.42" x2="29.45" y2="186.65" stroke="#000" stroke-width="1"/>
+  <line x1="29.45" y1="183.42" x2="26.05" y2="186.65" stroke="#000" stroke-width="1"/>
+  <line x1="27.75" y1="183.42" x2="27.75" y2="186.65" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="17.25" cy="185.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="15.55" y1="183.42" x2="18.95" y2="186.65" stroke="#000" stroke-width="1"/>
+  <line x1="18.95" y1="183.42" x2="15.55" y2="186.65" stroke="#000" stroke-width="1"/>
+  <line x1="17.25" y1="183.42" x2="17.25" y2="186.65" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="27.75" cy="185.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="117" y="7" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <rect x="177" y="7" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <rect x="147" y="7" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <line x1="132.05" y1="11.42" x2="135.45" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="162.05" y1="11.42" x2="165.45" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="192.05" y1="11.42" x2="195.45" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="135.45" y1="11.42" x2="132.05" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="165.45" y1="11.42" x2="162.05" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="195.45" y1="11.42" x2="192.05" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="133.75" y1="11.42" x2="133.75" y2="14.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="193.75" y1="11.42" x2="193.75" y2="14.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="163.75" y1="11.42" x2="163.75" y2="14.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="192.05" y1="13" x2="195.45" y2="13" stroke="#000" stroke-width="0.5"/>
+  <line x1="132.05" y1="13" x2="135.45" y2="13" stroke="#000" stroke-width="0.5"/>
+  <line x1="162.05" y1="13" x2="165.45" y2="13" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="183.25" cy="13.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="153.25" cy="13.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="123.25" cy="13.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="151.55" y1="11.42" x2="154.95" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="121.55" y1="11.42" x2="124.95" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="181.55" y1="11.42" x2="184.95" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="184.95" y1="11.42" x2="181.55" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="124.95" y1="11.42" x2="121.55" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="154.95" y1="11.42" x2="151.55" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="153.25" y1="11.42" x2="153.25" y2="14.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="183.25" y1="11.42" x2="183.25" y2="14.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="123.25" y1="11.42" x2="123.25" y2="14.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="181.55" y1="13" x2="184.95" y2="13" stroke="#000" stroke-width="0.5"/>
+  <line x1="121.55" y1="13" x2="124.95" y2="13" stroke="#000" stroke-width="0.5"/>
+  <line x1="151.55" y1="13" x2="154.95" y2="13" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="193.75" cy="13.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="163.75" cy="13.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="133.75" cy="13.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="207" y="7" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <line x1="222.05" y1="11.42" x2="225.45" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="225.45" y1="11.42" x2="222.05" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="223.75" y1="11.42" x2="223.75" y2="14.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="222.05" y1="13" x2="225.45" y2="13" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="213.25" cy="13.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="211.55" y1="11.42" x2="214.95" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="214.95" y1="11.42" x2="211.55" y2="14.65" stroke="#000" stroke-width="1"/>
+  <line x1="213.25" y1="11.42" x2="213.25" y2="14.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="211.55" y1="13" x2="214.95" y2="13" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="223.75" cy="13.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="213.05" y="21.81" width="4.95" height="5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="213.05" y="26.84" width="4.95" height="5" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <rect x="213.05" y="31.88" width="4.95" height="5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="8.5" y="6" width="43" height="26" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="17" y="22" width="6" height="4" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="37" y="22" width="6" height="4" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="27" y="14" width="6" height="4" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="15" y1="20" x2="45" y2="20" stroke="#000" stroke-width="0.5"/>
+  <line x1="30" y1="18" x2="30" y2="20" stroke="#000" stroke-width="0.5"/>
+  <line x1="20" y1="22" x2="20" y2="20" stroke="#000" stroke-width="0.5"/>
+  <line x1="40" y1="20" x2="40" y2="22" stroke="#000" stroke-width="0.5"/>
+  <polygon points="222,55 222,51 232,51 232,55 230,55 230,53 224,53 224,55" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="176" y="125" width="16" height="5" rx="1" ry="1" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="225" y="55" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="226" y="58" width="2" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="202" y="120" width="16" height="10" rx="1" ry="1" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="13" y="70" width="115" height="62" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="47.65" y1="155" x2="231.12" y2="155" stroke="#c00" stroke-width="1"/>
+  <ellipse cx="177.20" cy="86.00" rx="15.00" ry="15.00" fill="#fff" stroke="#fff" stroke-width="1"/>
+  <ellipse cx="177.20" cy="86.00" rx="13.00" ry="13.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="177.20" cy="86.00" rx="11.00" ry="11.00" fill="#888" stroke="#000" stroke-width="1"/>
+  <rect x="150" y="125" width="16" height="5" rx="1" ry="1" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="177.05" y="135.81" width="4.95" height="5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="177.05" y="140.84" width="4.95" height="5" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <rect x="177.05" y="145.88" width="4.95" height="5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="226.25" y="134.19" width="2" height="12" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="227.25" cy="144.19" rx="0.50" ry="0.50" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <polyline points="4.5,130.1 4.5,155.1 15.5,155.1" fill="none" stroke="#c00" stroke-width="1"/>
+  <rect x="20" y="80" width="101" height="42" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="204" y="123" width="12" height="4" rx="1" ry="1" fill="#888" stroke="#000" stroke-width="1"/>
+  <polygon points="205,140 205,136 215,136 215,140 213,140 213,138 207,138 207,140" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="208" y="140" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="209" y="143" width="2" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <line x1="18" y1="91" x2="123" y2="91" stroke="#000" stroke-width="1"/>
+  <circle cx="220" cy="0" r="1.5" fill="#000"/>
+  <circle cx="28" cy="200" r="1.5" fill="#000"/>
+  <circle cx="218" cy="200" r="1.5" fill="#000"/>
+  <circle cx="30" cy="0" r="1.5" fill="#000"/>
+  <circle cx="188" cy="200" r="1.5" fill="#000"/>
+  <circle cx="160" cy="0" r="1.5" fill="#000"/>
+  <circle cx="158" cy="200" r="1.5" fill="#000"/>
+  <circle cx="99" cy="200" r="1.5" fill="#000"/>
+  <circle cx="129" cy="200" r="1.5" fill="#000"/>
+  <circle cx="17" cy="200" r="1.5" fill="#000"/>
+  <circle cx="128" cy="0" r="1.5" fill="#000"/>
+  <circle cx="190" cy="0" r="1.5" fill="#000"/>
+  <text x="208.63" y="190.00" font-family="sans-serif" font-size="6" fill="#333">Total</text>
+  <text x="96" y="190.00" font-family="sans-serif" font-size="6" fill="#333">1</text>
+  <text x="155.31" y="190.00" font-family="sans-serif" font-size="6" fill="#333">3</text>
+  <text x="124.66" y="190.00" font-family="sans-serif" font-size="6" fill="#333">2</text>
+  <text x="186" y="190.00" font-family="sans-serif" font-size="6" fill="#333">4</text>
+  <text x="14.66" y="176.00" font-family="sans-serif" font-size="6" fill="#333">N  L</text>
+  <text x="156" y="30.00" font-family="sans-serif" font-size="6" fill="#333">6</text>
+  <text x="220" y="27.00" font-family="sans-serif" font-size="6" fill="#333"><tspan x="220" dy="0.00">T</tspan><tspan x="220" dy="6.90">C</tspan></text>
+  <text x="186" y="30.00" font-family="sans-serif" font-size="6" fill="#333">7</text>
+  <text x="125" y="30.00" font-family="sans-serif" font-size="6" fill="#333">5</text>
+  <text x="220" y="32.00" font-family="sans-serif" font-size="6" fill="#333">⌁</text>
+  <text x="153" y="140.00" font-family="sans-serif" font-size="6" fill="#333">on</text>
+  <text x="184" y="141.00" font-family="sans-serif" font-size="6" fill="#333"><tspan x="184" dy="0.00">T</tspan><tspan x="184" dy="6.90">C</tspan></text>
+  <text x="184" y="146.00" font-family="sans-serif" font-size="6" fill="#333">⌁</text>
+  <text x="46" y="88.00" font-family="sans-serif" font-size="5" fill="#333">ECOCOMPTEUR</text>
+</svg>

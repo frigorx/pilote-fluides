@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="54" viewBox="-22.00 -32.00 44.00 54.00">
+  <path d="M -2.75 4.75 A 8.75 8.88 0 0 0 -2.75 -13.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -2.80 -22.00 A 1.10 1.00 0 0 0 -3.90 -23.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -2.80 4.00 A 1.10 1.00 0 0 0 -3.90 3.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -3.90 -12.00 A 1.10 1.00 0 0 0 -2.80 -13.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -3.90 14.00 A 1.10 1.00 0 0 0 -2.80 13.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-2.72" y1="-21.1" x2="-2.72" y2="-12.89" stroke="#000" stroke-width="1"/>
+  <path d="M -2.50 13.02 A 16.50 17.16 0 0 0 -2.50 -21.29" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-4.2,-23 -9.2,-23 -9.2,-12 -4.2,-12" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-2.72" y1="4.9" x2="-2.72" y2="13.11" stroke="#000" stroke-width="1"/>
+  <polyline points="-4.2,3 -9.2,3 -9.2,14 -4.2,14" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-10" cy="10" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="-20" r="1.5" fill="#000"/>
+</svg>

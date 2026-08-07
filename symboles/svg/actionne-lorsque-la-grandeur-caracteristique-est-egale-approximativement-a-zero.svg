@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-8.00 -9.00 24.00 24.00">
+  <path d="M 0.00 2.00 A 2.00 1.50 0 0 0 -4.00 2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 2.00 A 2.00 1.50 0 0 0 4.00 2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 -2.00 A 2.00 1.50 0 0 0 -4.00 -2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 -2.00 A 2.00 1.50 0 0 0 4.00 -2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="6" y="3.00" font-family="sans-serif" font-size="6" fill="#333">0</text>
+</svg>

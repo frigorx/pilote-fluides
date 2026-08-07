@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="64" viewBox="-32.00 -32.00 44.00 64.00">
+  <ellipse cx="-19.00" cy="-10.01" rx="2.23" ry="2.23" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polyline points="-5,-10 0,10 0,20" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-20,-8 -25,0 -20,7" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-19.00" cy="8.99" rx="2.23" ry="2.23" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="-20" x2="0" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="-25" y1="0" x2="-3" y2="0" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <circle cx="0" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="0" cy="20" r="1.5" fill="#000"/>
+</svg>

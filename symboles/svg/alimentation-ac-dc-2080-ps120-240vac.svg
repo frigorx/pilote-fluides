@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="84" viewBox="-52.00 -42.00 104.00 84.00">
+  <rect x="-45" y="-30" width="90" height="60" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="30.00" cy="-30.00" rx="2.50" ry="2.50" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="-30.00" rx="2.50" ry="2.50" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-30.00" cy="30.00" rx="2.50" ry="2.50" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="30.00" cy="30.00" rx="2.50" ry="2.50" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-10.00" cy="30.00" rx="2.50" ry="2.50" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="10.00" cy="30.00" rx="2.50" ry="2.50" fill="#fff" stroke="#000" stroke-width="1"/>
+  <rect x="-30" y="-15" width="60" height="30" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="30" y1="-15" x2="-30" y2="15" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-30.00" cy="-30.00" rx="2.50" ry="2.50" fill="#fff" stroke="#000" stroke-width="1"/>
+  <circle cx="30" cy="-30" r="1.5" fill="#000"/>
+  <circle cx="30" cy="30" r="1.5" fill="#000"/>
+  <circle cx="10" cy="30" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="30" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="30" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="-30" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-30" r="1.5" fill="#000"/>
+  <text x="-28" y="-7.00" font-family="sans-serif" font-size="5" fill="#333">AC ~</text>
+  <text x="9" y="25.00" font-family="sans-serif" font-size="6" fill="#333">-</text>
+  <text x="29" y="25.00" font-family="sans-serif" font-size="6" fill="#333">-</text>
+  <text x="-32" y="-18.00" font-family="sans-serif" font-size="6" fill="#333">L</text>
+  <text x="5" y="13.00" font-family="sans-serif" font-size="5" fill="#333">24 VDC</text>
+  <text x="-12" y="25.00" font-family="sans-serif" font-size="6" fill="#333">+</text>
+  <text x="-3" y="-19.00" font-family="sans-serif" font-size="6" fill="#333">N</text>
+  <text x="25" y="-18.00" font-family="sans-serif" font-size="6" fill="#333">PE</text>
+  <text x="-32" y="25.00" font-family="sans-serif" font-size="6" fill="#333">+</text>
+</svg>

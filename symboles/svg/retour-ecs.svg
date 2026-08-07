@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="44" viewBox="-10.00 -23.00 54.00 44.00">
+  <line x1="0" y1="-9.75" x2="11.07" y2="-9.75" stroke="#000" stroke-width="1"/>
+  <line x1="11.5" y1="-9.75" x2="19" y2="-1.72" stroke="#000" stroke-width="1"/>
+  <line x1="14.5" y1="2.29" x2="25" y2="-5.74" stroke="#000" stroke-width="1"/>
+  <path d="M 14.44 2.19 A 9.00 6.69 0 0 0 24.86 -5.56" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="28" y1="-3.06" x2="38.5" y2="1" stroke="#000" stroke-width="0.5"/>
+  <line x1="19" y1="5" x2="23.5" y2="13" stroke="#000" stroke-width="0.5"/>
+  <line x1="25" y1="2.29" x2="32.5" y2="9" stroke="#000" stroke-width="0.5"/>
+  <line x1="26.5" y1="-0.38" x2="32.5" y2="3.63" stroke="#000" stroke-width="0.5"/>
+  <line x1="22" y1="3.63" x2="26.5" y2="9" stroke="#000" stroke-width="0.5"/>
+  <line x1="-1" y1="1" x2="11" y2="1" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="11" y1="0.59" x2="11" y2="-8.62" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="1" y1="-2" x2="6" y2="-2" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-2" x2="4" y2="-3" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-2" x2="4" y2="-1" stroke="#000" stroke-width="1"/>
+  <circle cx="-1" cy="-10" r="1.5" fill="#000"/>
+  <circle cx="-1" cy="1" r="1.5" fill="#000"/>
+  <text x="-1" y="7.00" font-family="sans-serif" font-size="4" fill="#333">Ret.</text>
+</svg>

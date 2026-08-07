@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="54" viewBox="-41.00 -12.00 64.00 54.00">
+  <ellipse cx="-7.84" cy="10.05" rx="1.85" ry="4.38" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-12.79" cy="14.10" rx="4.32" ry="1.69" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-30.2" y="29.63" width="4.45" height="1.64" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-23.53,2.29 -23.53,5 -21.86,5" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="-23.53" y="6.43" width="31.68" height="2.3" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-23.53,6.66 -23.53,9.4 -21.86,9.4" fill="#000" stroke="#000" stroke-width="1"/>
+  <polygon points="-23.53,11 -23.53,13.77 -21.86,13.77" fill="#000" stroke="#000" stroke-width="1"/>
+  <polygon points="-23.53,24.16 -23.53,26.89 -21.86,26.89" fill="#000" stroke="#000" stroke-width="1"/>
+  <polygon points="-23.53,15.41 -23.53,18.14 -21.86,18.14" fill="#000" stroke="#000" stroke-width="1"/>
+  <polygon points="-23.53,19.79 -23.53,22.52 -21.86,22.52" fill="#000" stroke="#000" stroke-width="1"/>
+  <polygon points="-23.53,28.53 -23.53,31.27 -21.86,31.27" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="-23.53" y="23.92" width="31.68" height="2.3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-23.53" y="19.65" width="31.68" height="2.3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-25.75" y="-4.27" width="36.12" height="38.27" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-23.53" y="28.52" width="31.68" height="2.3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-23.53" y="15.37" width="31.68" height="2.3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-23.53" y="2.15" width="31.68" height="2.3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-23.53" y="11" width="31.68" height="2.3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-23.53" y="-2.12" width="31.68" height="2.3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-30.2" y="-1.54" width="4.45" height="1.64" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-23.53,-2.08 -23.53,0.65 -21.86,0.65" fill="#000" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-7.23" cy="14.80" rx="12.35" ry="11.80" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-7.84" cy="18.82" rx="1.85" ry="4.38" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-2.91" cy="14.10" rx="4.32" ry="1.69" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="10.68" y="9.41" width="1.24" height="1.35" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="11" cy="10" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="30" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="0" r="1.5" fill="#000"/>
+</svg>

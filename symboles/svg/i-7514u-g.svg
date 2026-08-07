@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="174" height="304" viewBox="-6.00 -39.00 174.00 304.00">
+  <rect x="25" y="226" width="112" height="26" fill="#e80" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="0" width="162" height="226" rx="22" ry="65" fill="#888" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="140" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="157" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="134" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="110" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="98" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="134" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="104" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="92" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="128" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="152" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="122" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="152" y="157" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="152" y="80" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="116" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="146" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="110" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="92" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="98" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="152" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="104" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="128" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="25,25 29,32 133,32 137,25 137,4 135,2 27,2 25,4" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="140" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="146" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="116" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="122" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="86" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="25,222 27,224 135,224 137,222 137,199 130,194 30,194 25,199" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="25" y1="232" x2="137" y2="232" stroke="#000" stroke-width="1"/>
+  <polygon points="29,34 133,34 158,80 158,160 130,192 30,192 4,160 4,80" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="34,40 128,40 152,80 152,160 128,185 32,185 10,160 10,80" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="80" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="86" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="55.00" cy="100.00" rx="5.00" ry="5.00" fill="#c00" stroke="#c00" stroke-width="1"/>
+  <rect x="4" y="0" width="154" height="226" rx="22" ry="65" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="25" y="-26" width="70" height="26" fill="#e80" stroke="#000" stroke-width="1"/>
+  <line x1="25" y1="-5" x2="95" y2="-5" stroke="#000" stroke-width="1"/>
+  <path d="M 142.00 95.00 A 15.00 15.00 0 0 0 142.00 125.00" fill="none" stroke="#888" stroke-width="1"/>
+  <ellipse cx="20.00" cy="110.00" rx="13.00" ry="13.00" fill="#888" stroke="#000" stroke-width="1"/>
+  <line x1="142" y1="125" x2="152" y2="125" stroke="#888" stroke-width="1"/>
+  <ellipse cx="142.00" cy="110.00" rx="13.00" ry="13.00" fill="#888" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="125" x2="20" y2="125" stroke="#888" stroke-width="1"/>
+  <ellipse cx="142.00" cy="110.00" rx="10.00" ry="10.00" fill="#888" stroke="#000" stroke-width="1"/>
+  <line x1="142" y1="95" x2="152" y2="95" stroke="#888" stroke-width="1"/>
+  <ellipse cx="20.00" cy="110.00" rx="10.00" ry="10.00" fill="#888" stroke="#000" stroke-width="1"/>
+  <path d="M 20.00 125.00 A 15.00 15.00 0 0 0 20.00 95.00" fill="none" stroke="#888" stroke-width="1"/>
+  <line x1="10" y1="95" x2="20" y2="95" stroke="#888" stroke-width="1"/>
+  <ellipse cx="77.86" cy="59.76" rx="20.00" ry="10.00" fill="none" stroke="#fff" stroke-width="1"/>
+  <ellipse cx="88.86" cy="51.76" rx="2.50" ry="2.50" fill="#fff" stroke="#fff" stroke-width="1"/>
+  <ellipse cx="46.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="44" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="54" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="56.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="116.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="106.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="94" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="84" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="64" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="66.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="74" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="96.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="104" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="76.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="124" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="126.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="86.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="114" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="53.8,238.8 57.8,234.8 58.3,235.3 54.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="73.8,238.8 77.8,234.8 78.3,235.3 74.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="93.8,238.8 97.8,234.8 98.3,235.3 94.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="83.8,238.8 87.8,234.8 88.3,235.3 84.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="123.8,238.8 127.8,234.8 128.3,235.3 124.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="63.8,238.8 67.8,234.8 68.3,235.3 64.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="113.8,238.8 117.8,234.8 118.3,235.3 114.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="103.8,238.8 107.8,234.8 108.3,235.3 104.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="43.8,238.8 47.8,234.8 48.3,235.3 44.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="36.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="33.8,238.8 37.8,234.8 38.3,235.3 34.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="34" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="46.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="44" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="54" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="56.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="84" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="64" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="66.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="74" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="76.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="86.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="53.8,-11.2 57.8,-15.2 58.3,-14.7 54.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="73.8,-11.2 77.8,-15.2 78.3,-14.7 74.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="83.8,-11.2 87.8,-15.2 88.3,-14.7 84.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="63.8,-11.2 67.8,-15.2 68.3,-14.7 64.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="43.8,-11.2 47.8,-15.2 48.3,-14.7 44.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="36.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="33.8,-11.2 37.8,-15.2 38.3,-14.7 34.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="34" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="41.00" cy="169.00" rx="2.50" ry="2.50" fill="#c00" stroke="#c00" stroke-width="1"/>
+  <ellipse cx="67.17" cy="169.00" rx="2.50" ry="2.50" fill="#c00" stroke="#c00" stroke-width="1"/>
+  <ellipse cx="93.34" cy="169.00" rx="2.50" ry="2.50" fill="#c00" stroke="#c00" stroke-width="1"/>
+  <ellipse cx="119.50" cy="169.00" rx="2.50" ry="2.50" fill="#c00" stroke="#c00" stroke-width="1"/>
+  <circle cx="76" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="46" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="66" cy="252" r="1.5" fill="#000"/>
+  <circle cx="36" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="56" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="126" cy="252" r="1.5" fill="#000"/>
+  <circle cx="116" cy="252" r="1.5" fill="#000"/>
+  <circle cx="56" cy="252" r="1.5" fill="#000"/>
+  <circle cx="66" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="36" cy="252" r="1.5" fill="#000"/>
+  <circle cx="86" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="96" cy="252" r="1.5" fill="#000"/>
+  <circle cx="86" cy="252" r="1.5" fill="#000"/>
+  <circle cx="76" cy="252" r="1.5" fill="#000"/>
+  <circle cx="106" cy="252" r="1.5" fill="#000"/>
+  <circle cx="46" cy="252" r="1.5" fill="#000"/>
+  <text x="37" y="114.00" font-family="sans-serif" font-size="5" fill="#333">4CH Isolated RS-485 Hub</text>
+  <text x="128.3" y="222.00" font-family="sans-serif" font-size="4" fill="#333">ISO.GND</text>
+  <text x="37" y="207.00" font-family="sans-serif" font-size="4" fill="#333">CH1</text>
+  <text x="48.1" y="222.00" font-family="sans-serif" font-size="4" fill="#333">D1-</text>
+  <text x="118.2" y="222.00" font-family="sans-serif" font-size="4" fill="#333">N.C.</text>
+  <text x="38" y="222.00" font-family="sans-serif" font-size="4" fill="#333">D1+        1</text>
+  <text x="53.86" y="61.76" font-family="sans-serif" font-size="9" fill="#333">ICP</text>
+  <text x="85.66" y="75.76" font-family="sans-serif" font-size="9" fill="#333">CON</text>
+  <text x="35" y="184.00" font-family="sans-serif" font-size="4" fill="#333">2500V VDC Isolation on CH1~CH4</text>
+  <text x="61" y="89.00" font-family="sans-serif" font-size="9" fill="#333">i-7514U</text>
+  <text x="65" y="104.00" font-family="sans-serif" font-size="5" fill="#333">PWR/TxD(CH0)</text>
+  <text x="68.3" y="222.00" font-family="sans-serif" font-size="4" fill="#333">D2-</text>
+  <text x="58.2" y="222.00" font-family="sans-serif" font-size="4" fill="#333">D2+</text>
+  <text x="88.5" y="222.00" font-family="sans-serif" font-size="4" fill="#333">D3-</text>
+  <text x="78.4" y="222.00" font-family="sans-serif" font-size="4" fill="#333">D3+</text>
+  <text x="108" y="222.00" font-family="sans-serif" font-size="4" fill="#333">D4-</text>
+  <text x="97.9" y="222.00" font-family="sans-serif" font-size="4" fill="#333">D4+</text>
+  <text x="56.41" y="207.00" font-family="sans-serif" font-size="4" fill="#333">CH2</text>
+  <text x="76" y="207.00" font-family="sans-serif" font-size="4" fill="#333">CH3</text>
+  <text x="95" y="207.00" font-family="sans-serif" font-size="4" fill="#333">CH4</text>
+  <text x="38" y="31.00" font-family="sans-serif" font-size="4" fill="#333">16  (B)GND</text>
+  <text x="48" y="21.00" font-family="sans-serif" font-size="4" fill="#333">(R)+Vs</text>
+  <text x="135" y="205.00" font-family="sans-serif" font-size="4" fill="#333">10</text>
+  <text x="59" y="15.00" font-family="sans-serif" font-size="4" fill="#333">D0+</text>
+  <text x="69" y="15.00" font-family="sans-serif" font-size="4" fill="#333">D0-</text>
+  <text x="77.1" y="15.00" font-family="sans-serif" font-size="4" fill="#333">D0+</text>
+  <text x="87.1" y="31.00" font-family="sans-serif" font-size="4" fill="#333">11      D0-</text>
+  <text x="65" y="25.00" font-family="sans-serif" font-size="4" fill="#333">CH0</text>
+  <text x="100" y="10.00" font-family="sans-serif" font-size="4" fill="#333">DSW</text>
+  <text x="120" y="10.00" font-family="sans-serif" font-size="4" fill="#333">RSW</text>
+  <text x="95" y="13.00" font-family="sans-serif" font-size="4" fill="#555">1=Off</text>
+  <text x="95" y="21.00" font-family="sans-serif" font-size="4" fill="#555">2=Off</text>
+  <text x="120" y="15.00" font-family="sans-serif" font-size="4" fill="#555">0</text>
+  <text x="22" y="122.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="22" dy="0.00">DSW</tspan><tspan x="22" dy="4.60">Data Format Setting</tspan><tspan x="22" dy="4.60">9-bit      1 = On 2 = On</tspan><tspan x="22" dy="4.60">10-bit    1 = On 2 = Off</tspan><tspan x="22" dy="4.60">11-bit    1 = Off 2 = On</tspan><tspan x="22" dy="4.60">12-bit    1 = Off 2 = Off</tspan></text>
+  <text x="85" y="122.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="85" dy="0.00">RSW</tspan><tspan x="85" dy="4.60">Band Rate Setting</tspan><tspan x="85" dy="4.60">0 = Self tuner (Default)</tspan><tspan x="85" dy="4.60">1 = 1.2K    5 = 19.2K</tspan><tspan x="85" dy="4.60">2 = 2.4K    6 = 38.4K</tspan><tspan x="85" dy="4.60">3 = 4.8K    7 = 57.6K</tspan><tspan x="85" dy="4.60">4 = 9.6K    8 = 115.2K</tspan></text>
+  <text x="30" y="179.00" font-family="sans-serif" font-size="4" fill="#333">CH1_RxD</text>
+  <text x="56.17" y="177.00" font-family="sans-serif" font-size="4" fill="#333">CH2_RxD</text>
+  <text x="82.34" y="177.00" font-family="sans-serif" font-size="4" fill="#333">CH3_RxD</text>
+  <text x="108.52" y="177.00" font-family="sans-serif" font-size="4" fill="#333">CH4_RxD</text>
+</svg>

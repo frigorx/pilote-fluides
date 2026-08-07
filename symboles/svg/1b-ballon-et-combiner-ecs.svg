@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="74" viewBox="-56.00 -39.00 104.00 74.00">
+  <ellipse cx="0.00" cy="-11.00" rx="11.00" ry="15.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="29" y1="-5.7" x2="6" y2="-5.7" stroke="#000" stroke-width="1"/>
+  <line x1="29" y1="-21.7" x2="6" y2="-21.7" stroke="#000" stroke-width="1"/>
+  <polygon points="24,26.3 27,23.3 27,29.3" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-29,26 -26,23 -26,29" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="26.00" cy="26.30" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-27.00" cy="26.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-16" y="-27.7" width="32" height="59" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="23,6.3 43,6.3 33,11.3 43,16.3 33,21.3 43,26.3 23,26.3" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-23,6 -43,6 -33,11 -43,16 -33,21 -43,26 -23,26" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-23,6 -3,6 -13,11 -3,16 -13,21 -3,26 -23,26" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="23,6.3 3,6.3 13,11.3 3,16.3 13,21.3 3,26.3 23,26.3" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="-43" y="-18.70" font-family="sans-serif" font-size="9" fill="#333">1B</text>
+  <text x="-36" y="17.00" font-family="sans-serif" font-size="4" fill="#333">solaire</text>
+  <text x="18" y="18.30" font-family="sans-serif" font-size="4" fill="#333">chauff.</text>
+  <text x="25" y="-11.70" font-family="sans-serif" font-size="4" fill="#333">ECS</text>
+  <text x="-13" y="-31.00" font-family="sans-serif" font-size="4" fill="#333">ballon</text>
+</svg>

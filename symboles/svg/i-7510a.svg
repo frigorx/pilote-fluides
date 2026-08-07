@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="174" height="304" viewBox="-6.00 -39.00 174.00 304.00">
+  <rect x="25" y="226" width="112" height="26" fill="#e80" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="0" width="162" height="226" rx="22" ry="65" fill="#fff" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="140" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="157" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="134" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="110" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="98" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="134" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="104" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="92" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="128" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="152" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="122" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="152" y="157" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="152" y="80" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="116" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="146" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="110" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="92" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="98" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="152" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="104" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="128" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="25,25 29,32 133,32 137,25 137,4 135,2 27,2 25,4" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="140" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="146" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="116" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="122" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="86" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="25,222 27,224 135,224 137,222 137,199 130,194 30,194 25,199" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="25" y1="232" x2="137" y2="232" stroke="#000" stroke-width="1"/>
+  <polygon points="29,34 133,34 158,80 158,160 130,192 30,192 4,160 4,80" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="34,40 128,40 152,80 152,160 128,185 32,185 10,160 10,80" fill="#888" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="80" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="86" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="45" y="154" width="5" height="5" fill="#000" stroke="#000" stroke-width="1"/>
+  <ellipse cx="85.00" cy="67.00" rx="20.00" ry="10.00" fill="none" stroke="#fff" stroke-width="1"/>
+  <ellipse cx="96.00" cy="59.00" rx="2.50" ry="2.50" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="45" y="139" width="5" height="5" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="4" y="0" width="154" height="226" rx="22" ry="65" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="25" y="-26" width="112" height="26" fill="#e80" stroke="#000" stroke-width="1"/>
+  <line x1="25" y1="-5" x2="137" y2="-5" stroke="#000" stroke-width="1"/>
+  <ellipse cx="46.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="44" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="54" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="56.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="116.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="106.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="94" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="84" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="64" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="66.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="74" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="96.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="104" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="76.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="124" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="126.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="86.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="114" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="53.8,-11.2 57.8,-15.2 58.3,-14.7 54.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="73.8,-11.2 77.8,-15.2 78.3,-14.7 74.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="93.8,-11.2 97.8,-15.2 98.3,-14.7 94.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="83.8,-11.2 87.8,-15.2 88.3,-14.7 84.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="123.8,-11.2 127.8,-15.2 128.3,-14.7 124.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="63.8,-11.2 67.8,-15.2 68.3,-14.7 64.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="113.8,-11.2 117.8,-15.2 118.3,-14.7 114.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="103.8,-11.2 107.8,-15.2 108.3,-14.7 104.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="43.8,-11.2 47.8,-15.2 48.3,-14.7 44.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="36.00" cy="-13.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="33.8,-11.2 37.8,-15.2 38.3,-14.7 34.3,-10.7" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="34" y="-20" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="46.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="44" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="54" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="56.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="116.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="106.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="94" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="84" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="64" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="66.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="74" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="96.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="104" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="76.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="124" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="126.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="86.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="114" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="53.8,238.8 57.8,234.8 58.3,235.3 54.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="73.8,238.8 77.8,234.8 78.3,235.3 74.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="93.8,238.8 97.8,234.8 98.3,235.3 94.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="83.8,238.8 87.8,234.8 88.3,235.3 84.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="123.8,238.8 127.8,234.8 128.3,235.3 124.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="63.8,238.8 67.8,234.8 68.3,235.3 64.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="113.8,238.8 117.8,234.8 118.3,235.3 114.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="103.8,238.8 107.8,234.8 108.3,235.3 104.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="43.8,238.8 47.8,234.8 48.3,235.3 44.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="36.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="33.8,238.8 37.8,234.8 38.3,235.3 34.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="34" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <path d="M 142.00 95.00 A 15.00 15.00 0 0 0 142.00 125.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="20.00" cy="110.00" rx="13.00" ry="13.00" fill="#fff" stroke="#000" stroke-width="1"/>
+  <line x1="142" y1="125" x2="152" y2="125" stroke="#000" stroke-width="1"/>
+  <ellipse cx="142.00" cy="110.00" rx="13.00" ry="13.00" fill="#fff" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="125" x2="20" y2="125" stroke="#000" stroke-width="1"/>
+  <ellipse cx="142.00" cy="110.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="142" y1="95" x2="152" y2="95" stroke="#000" stroke-width="1"/>
+  <ellipse cx="20.00" cy="110.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 20.00 125.00 A 15.00 15.00 0 0 0 20.00 95.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="95" x2="20" y2="95" stroke="#000" stroke-width="1"/>
+  <ellipse cx="60.00" cy="100.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="76" cy="252" r="1.5" fill="#000"/>
+  <circle cx="126" cy="252" r="1.5" fill="#000"/>
+  <circle cx="66" cy="252" r="1.5" fill="#000"/>
+  <circle cx="76" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="36" cy="252" r="1.5" fill="#000"/>
+  <circle cx="106" cy="252" r="1.5" fill="#000"/>
+  <circle cx="86" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="116" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="86" cy="252" r="1.5" fill="#000"/>
+  <circle cx="36" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="106" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="66" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="46" cy="252" r="1.5" fill="#000"/>
+  <circle cx="116" cy="252" r="1.5" fill="#000"/>
+  <circle cx="96" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="56" cy="252" r="1.5" fill="#000"/>
+  <circle cx="46" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="126" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="56" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="96" cy="252" r="1.5" fill="#000"/>
+  <text x="55" y="158.00" font-family="sans-serif" font-size="4" fill="#333">Variable Data Format</text>
+  <text x="61" y="69.00" font-family="sans-serif" font-size="9" fill="#333">ICP</text>
+  <text x="55" y="143.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="55" dy="0.00">Variable Baud Rate</tspan><tspan x="55" dy="4.60">300,...9600,...115K</tspan></text>
+  <text x="128.3" y="222.00" font-family="sans-serif" font-size="4" fill="#333">(B)GND 10</text>
+  <text x="40" y="205.00" font-family="sans-serif" font-size="4" fill="#333">(RS-485)</text>
+  <text x="48.1" y="222.00" font-family="sans-serif" font-size="4" fill="#333">DATA-</text>
+  <text x="118.2" y="222.00" font-family="sans-serif" font-size="4" fill="#333">(R)+Vs</text>
+  <text x="38" y="222.00" font-family="sans-serif" font-size="4" fill="#333">DATA+   1</text>
+  <text x="40" y="29.00" font-family="sans-serif" font-size="4" fill="#333">(RS-485)</text>
+  <text x="48" y="21.00" font-family="sans-serif" font-size="4" fill="#333">DATA-</text>
+  <text x="37.9" y="31.00" font-family="sans-serif" font-size="4" fill="#333">20  DATA+</text>
+  <text x="69.83" y="207.00" font-family="sans-serif" font-size="4" fill="#333">(RS-422)</text>
+  <text x="77.55" y="221.54" font-family="sans-serif" font-size="4" fill="#333">TX-</text>
+  <text x="97.95" y="221.54" font-family="sans-serif" font-size="4" fill="#333">RX-</text>
+  <text x="68.15" y="221.54" font-family="sans-serif" font-size="4" fill="#333">TX+</text>
+  <text x="87.95" y="221.54" font-family="sans-serif" font-size="4" fill="#333">RX+</text>
+  <text x="77" y="17.00" font-family="sans-serif" font-size="4" fill="#333">TX-</text>
+  <text x="97.4" y="17.00" font-family="sans-serif" font-size="4" fill="#333">RX-</text>
+  <text x="67.6" y="17.00" font-family="sans-serif" font-size="4" fill="#333">TX+</text>
+  <text x="87.4" y="17.00" font-family="sans-serif" font-size="4" fill="#333">RX+</text>
+  <text x="68.83" y="25.00" font-family="sans-serif" font-size="4" fill="#333">(RS-422)</text>
+  <text x="92.79" y="83.00" font-family="sans-serif" font-size="9" fill="#333">CON</text>
+  <text x="40" y="123.00" font-family="sans-serif" font-size="6" fill="#333">RS-485/422 Repeater</text>
+  <text x="34.74" y="180.05" font-family="sans-serif" font-size="5" fill="#333">3000V Isolation</text>
+  <text x="129.74" y="90.05" font-family="sans-serif" font-size="5" fill="#333">Hmf</text>
+  <text x="14.74" y="90.05" font-family="sans-serif" font-size="5" fill="#333">CE</text>
+  <text x="128" y="31.00" font-family="sans-serif" font-size="4" fill="#333">11</text>
+</svg>

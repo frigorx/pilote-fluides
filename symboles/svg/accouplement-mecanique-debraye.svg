@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="24" viewBox="-27.00 -17.00 54.00 24.00">
+  <line x1="-20" y1="0" x2="0" y2="0" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="0" y1="0" x2="0" y2="-7" stroke="#000" stroke-width="1"/>
+  <line x1="7" y1="0" x2="7" y2="-7" stroke="#000" stroke-width="1"/>
+  <line x1="7" y1="0" x2="20" y2="0" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <polyline points="-3,-7 -3,-10 10,-10 10,-7" fill="none" stroke="#000" stroke-width="1"/>
+</svg>

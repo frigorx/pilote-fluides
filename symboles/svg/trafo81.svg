@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="122" height="104" viewBox="-5.00 -31.00 121.80 104.00">
+  <ellipse cx="59.00" cy="47.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="0" width="64" height="42" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="24" y="-26" width="8" height="26" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="40" y="-26" width="8" height="26" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="32" y="42" width="8" height="26" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="11" y="42" width="42" height="14" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="32" y="-26" width="8" height="26" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="59.00" cy="-5.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="5.00" cy="47.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="11" y="-14" width="42" height="14" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="24" y="42" width="8" height="26" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="16" y="-26" width="8" height="26" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="5.00" cy="-5.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="-10" width="10" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="54" y="-10" width="10" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="54" y="42" width="10" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="42" width="10" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="20.00" cy="-10.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="28.00" cy="-10.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="36.00" cy="-10.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="44.00" cy="-10.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="28.00" cy="50.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="36.00" cy="50.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="2" y="34.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="2" dy="0.00">POJ: T 0,5A       ta: 40 C/B</tspan><tspan x="2" dy="4.60">PRI:                  0   230                 V</tspan></text>
+  <text x="2" y="7.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="2" dy="0.00">SEC:          0 - 30        0 - 12</tspan><tspan x="2" dy="4.60">P=85VA     I: 2A         I: 2A</tspan></text>
+</svg>

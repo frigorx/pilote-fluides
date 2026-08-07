@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="194" viewBox="-16.00 -183.00 144.00 194.00">
+  <rect x="0" y="-85" width="120" height="85" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-15" x2="120" y2="-15" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-45" x2="120" y2="-45" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-65" x2="120" y2="-65" stroke="#000" stroke-width="1"/>
+  <rect x="30" y="-160" width="60" height="70" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="-144" x2="89" y2="-144" stroke="#000" stroke-width="1"/>
+  <ellipse cx="80.00" cy="-153.00" rx="2.50" ry="2.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="45" y1="-110" x2="75" y2="-110" stroke="#000" stroke-width="1"/>
+  <line x1="45" y1="-113" x2="60" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-120" x2="75" y2="-113" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-120" x2="60" y2="-122" stroke="#000" stroke-width="1"/>
+  <path d="M 60.00 -122.50 A 1.50 1.50 0 1 0 58.52 -124.26" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 75.00 -110.00 A 1.50 1.50 0 0 0 75.51 -112.91" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 44.49 -112.91 A 1.50 1.50 0 0 0 45.00 -110.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="50" y1="-170" x2="50" y2="-160" stroke="#000" stroke-width="1"/>
+  <line x1="70" y1="-170" x2="70" y2="-160" stroke="#000" stroke-width="1"/>
+  <circle cx="50" cy="-170" r="1.5" fill="#000"/>
+  <circle cx="70" cy="-170" r="1.5" fill="#000"/>
+  <text x="29" y="-36.00" font-family="sans-serif" font-size="7" fill="#555">20</text>
+  <text x="-2" y="-55.00" font-family="sans-serif" font-size="7" fill="#555">Local</text>
+  <text x="58" y="-18.00" font-family="sans-serif" font-size="5" fill="#333">kA C</text>
+  <text x="66" y="-30.00" font-family="sans-serif" font-size="7" fill="#333">A</text>
+  <text x="58" y="-2.00" font-family="sans-serif" font-size="5" fill="#333">mm²</text>
+  <text x="30" y="-22.50" font-family="sans-serif" font-size="5" fill="#555">4.5</text>
+  <text x="28" y="-7.50" font-family="sans-serif" font-size="5" fill="#555">3 G 2.5</text>
+  <text x="-2" y="-73.50" font-family="sans-serif" font-size="7" fill="#555">Sèche-Linge</text>
+</svg>

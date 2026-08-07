@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="64" viewBox="-42.00 -52.00 84.00 64.00">
+  <ellipse cx="0.00" cy="0.00" rx="2.00" ry="2.00" fill="#000" stroke="#000" stroke-width="1"/>
+  <polyline points="-10,-40 -10,-15 0,0 10,-15 10,-40" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-31.5" y1="0" x2="31.5" y2="0" stroke="#000" stroke-width="1"/>
+  <circle cx="-31.5" cy="0" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="31.5" cy="0" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="30" cy="0" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-40" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="-40" r="1.5" fill="#000"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="94" viewBox="-47.00 -87.00 54.00 94.00">
+  <rect x="-40" y="-40" width="40" height="40" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-80" x2="-20" y2="-40" stroke="#000" stroke-width="1"/>
+  <path d="M -20.00 -20.00 A 5.00 2.50 0 0 0 -30.00 -20.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -20.00 -20.00 A 5.00 2.50 0 0 0 -10.00 -20.00" fill="none" stroke="#000" stroke-width="1"/>
+</svg>

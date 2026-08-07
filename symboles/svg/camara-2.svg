@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="84" viewBox="-48.00 -51.00 104.00 84.00">
+  <line x1="-21.29" y1="-29.48" x2="-21.29" y2="26.64" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-14.20" cy="-24.24" rx="3.61" ry="3.00" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="42.24" y1="-29.48" x2="42.24" y2="26.64" stroke="#000" stroke-width="0.5"/>
+  <rect x="-40.64" y="-35.39" width="89.49" height="62" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="12.73" y="-16" width="24.83" height="42.41" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="28.54" y="8.82" width="4.51" height="2.23" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-40.64" y1="-29.48" x2="48.85" y2="-29.48" stroke="#000" stroke-width="0.5"/>
+  <rect x="-32.25" y="-28.73" width="25.28" height="9" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <ellipse cx="-26.84" cy="-24.24" rx="3.61" ry="3.00" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="8.05" y1="-29.48" x2="8.05" y2="26.64" stroke="#000" stroke-width="0.5"/>
+  <rect x="24" y="8.82" width="4.51" height="2.23" fill="none" stroke="#000" stroke-width="0.5"/>
+  <circle cx="-30" cy="-40" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="-40" r="1.5" fill="#000"/>
+</svg>
