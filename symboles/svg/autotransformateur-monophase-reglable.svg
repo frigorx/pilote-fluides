@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="54" viewBox="-22.00 -32.00 44.00 54.00">
+  <polygon points="2,-9 5,-6 8,-12" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <path d="M 5.00 -5.00 A 2.50 2.50 0 0 0 10.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 -5.00 A 2.50 2.50 0 0 0 5.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -5.00 -5.00 A 2.50 2.50 0 0 0 0.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -10.00 -5.00 A 2.50 2.50 0 0 0 -5.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-20" x2="-10" y2="-6" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-20" x2="10" y2="-5" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="10" x2="10" y2="-5" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="10" x2="0" y2="-5" stroke="#000" stroke-width="1"/>
+  <line x1="4" y1="-8" x2="-5" y2="4" stroke="#000" stroke-width="1"/>
+  <circle cx="-10" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="10" cy="10" r="1.5" fill="#000"/>
+  <circle cx="0" cy="10" r="1.5" fill="#000"/>
+</svg>

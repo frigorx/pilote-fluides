@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="-39.00 -37.00 44.00 44.00">
+  <path d="M -26.79 -29.83 A 5.00 5.00 0 1 0 -26.46 -22.46" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -26.59 -15.66 A 5.00 5.00 0 1 0 -26.46 -8.46" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -26.59 -22.66 A 5.00 5.00 0 1 0 -26.46 -15.46" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="0" x2="-30" y2="0" stroke="#000" stroke-width="1"/>
+  <path d="M -26.59 -8.66 A 5.00 5.00 0 1 0 -30.00 0.00" fill="none" stroke="#000" stroke-width="1"/>
+</svg>

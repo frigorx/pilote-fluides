@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="94" viewBox="-29.00 -42.00 54.00 94.00">
+  <path d="M -15.00 20.00 A 5.00 5.00 0 0 0 -15.00 30.00" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-10" y1="3" x2="-10" y2="40" stroke="#000" stroke-width="1"/>
+  <line x1="-12" y1="-10" x2="7" y2="-10" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <polyline points="-10,3 -10,0 -15,-20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="4" x2="10" y2="40" stroke="#000" stroke-width="1"/>
+  <polyline points="10,3 10,0 5,-20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-30" x2="-10" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-22" x2="-12" y2="-18" stroke="#000" stroke-width="1"/>
+  <line x1="-12" y1="-22" x2="-8" y2="-18" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-30" x2="10" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="12" y1="-22" x2="8" y2="-18" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="-22" x2="12" y2="-18" stroke="#000" stroke-width="1"/>
+  <path d="M 15.00 30.00 A 5.00 5.00 0 0 0 15.00 20.00" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-15" y1="20" x2="15" y2="20" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-15" y1="30" x2="15" y2="30" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-25" y1="-10" x2="-25" y2="25" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-25" y1="25" x2="-20" y2="25" stroke="#000" stroke-width="1"/>
+  <line x1="-25" y1="-10" x2="-15" y2="-10" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <circle cx="10" cy="-30" r="1.5" fill="#000"/>
+  <circle cx="10" cy="40" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="-30" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="40" r="1.5" fill="#000"/>
+</svg>

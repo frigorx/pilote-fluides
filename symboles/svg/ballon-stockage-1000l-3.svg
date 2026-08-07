@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="144" viewBox="-53.00 -80.00 94.00 144.00">
+  <rect x="-40.6" y="25.42" width="2.8" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-33.51" y1="26.93" x2="16" y2="26.93" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="33.6" y1="-62.8" x2="33.6" y2="40" stroke="#000" stroke-width="1"/>
+  <line x1="-20.46" y1="17.84" x2="15.58" y2="17.84" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <path d="M 17.15 26.93 A 2.45 2.27 0 0 0 17.15 22.39" fill="none" stroke="#c00" stroke-width="1"/>
+  <path d="M -21.35 17.84 A 2.45 2.27 0 0 0 -21.35 22.38" fill="none" stroke="#c00" stroke-width="1"/>
+  <line x1="-20.46" y1="22.39" x2="15.58" y2="22.39" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <path d="M -29.40 39.21 A 31.50 9.16 0 0 0 33.60 39.21" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="1.05,48.62 1.05,50.14 3.15,50.14 3.15,48.62" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 33.60 -63.31 A 31.50 9.16 0 0 0 -29.40 -63.31" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="2.10" cy="-48.07" rx="1.05" ry="1.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="2.10" cy="-68.40" rx="1.45" ry="1.40" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="31,43 31,50.65 23.1,50.65 23.1,45.56" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-26.78,43 -26.78,50.65 -18.9,50.65 -18.9,45.56" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="2.10" cy="-12.45" rx="1.05" ry="1.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-29.4" y1="-63.06" x2="-29.4" y2="39.71" stroke="#000" stroke-width="1"/>
+  <rect x="-37.8" y="8.76" width="2.8" height="22.72" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-40.6" y="12.54" width="2.8" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-35" y="11" width="5.6" height="18.17" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-33.52" y1="13.3" x2="15.32" y2="13.3" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <path d="M 16.80 17.84 A 2.80 2.27 0 0 0 16.80 13.30" fill="none" stroke="#c00" stroke-width="1"/>
+  <circle cx="2" cy="-68" r="1.5" fill="#000"/>
+  <circle cx="2" cy="50" r="1.5" fill="#000"/>
+  <circle cx="2" cy="-48" r="1.5" fill="#000"/>
+  <circle cx="2" cy="-12" r="1.5" fill="#000"/>
+  <circle cx="-41" cy="14" r="1.5" fill="#000"/>
+  <circle cx="-41" cy="27" r="1.5" fill="#000"/>
+</svg>

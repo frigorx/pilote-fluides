@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="92" height="94" viewBox="-46.00 -42.00 91.60 94.00">
+  <line x1="10" y1="4" x2="10" y2="40" stroke="#000" stroke-width="1"/>
+  <polyline points="-30,3 -30,0 -35,-20" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polyline points="-20,5 -20,0 -25,-20" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-10" y1="4" x2="-10" y2="40" stroke="#000" stroke-width="1"/>
+  <line x1="-22" y1="-10" x2="8" y2="-10" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <polyline points="-10,3 -10,0 -15,-20" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="10,3 10,0 5,-20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-30" x2="-10" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-22" x2="-12" y2="-18" stroke="#000" stroke-width="1"/>
+  <line x1="-12" y1="-22" x2="-8" y2="-18" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-30" x2="10" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="12" y1="-22" x2="8" y2="-18" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="-22" x2="12" y2="-18" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="35" x2="-30" y2="35" stroke="#000" stroke-width="0.5"/>
+  <line x1="-30" y1="35" x2="-30" y2="20" stroke="#000" stroke-width="0.5"/>
+  <rect x="-32" y="10" width="4" height="10" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-30" y1="10" x2="-30" y2="3" stroke="#000" stroke-width="0.5"/>
+  <polyline points="-30,-20 -30,-25 -20,-25 -20,-20" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-20" y1="5" x2="10" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-40" y1="-10" x2="-35" y2="-10" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2,1,2"/>
+  <polyline points="-38,-13 -40,-13 -40,-7 -38,-7" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-20" y="20" width="40" height="10" rx="5" ry="5" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="10" cy="-30" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="-30" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="40" r="1.5" fill="#000"/>
+  <circle cx="10" cy="40" r="1.5" fill="#000"/>
+  <text x="22" y="20.00" font-family="sans-serif" font-size="9" fill="#333">40A</text>
+  <text x="22" y="34.00" font-family="sans-serif" font-size="9" fill="#333">30mA</text>
+</svg>

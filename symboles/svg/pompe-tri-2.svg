@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="314" viewBox="-16.00 -303.00 144.00 314.00">
+  <polygon points="70,-110 72,-110 74,-108 68,-108" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="48,-110 50,-110 52,-108 46,-108" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <path d="M 84.00 -110.00 A 2.00 2.00 0 0 0 86.00 -112.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-244" x2="60" y2="-240" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="-85" width="120" height="85" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-15" x2="120" y2="-15" stroke="#000" stroke-width="1"/>
+  <polyline points="60,-257 60,-260 55,-280" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="65" y1="-218" x2="55" y2="-208" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-240" x2="60" y2="-176" stroke="#000" stroke-width="1"/>
+  <path d="M 60.00 -244.50 A 4.00 2.50 0 0 0 60.00 -249.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-45" x2="120" y2="-45" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-252" x2="60" y2="-250" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-253" x2="64" y2="-253" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-65" x2="120" y2="-65" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-170" x2="120" y2="-170" stroke="#0a0" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="64" y1="-257" x2="64" y2="-253" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-257" x2="64" y2="-257" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-175.31" x2="60" y2="-144.69" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-290" x2="60" y2="-280" stroke="#000" stroke-width="1"/>
+  <line x1="62" y1="-282" x2="58" y2="-278" stroke="#000" stroke-width="1"/>
+  <rect x="40" y="-140" width="40" height="30" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="58" y1="-282" x2="62" y2="-278" stroke="#000" stroke-width="1"/>
+  <rect x="68" y="-143" width="2" height="1.5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="42" y1="-138" x2="78" y2="-138" stroke="#000" stroke-width="1"/>
+  <line x1="57" y1="-270" x2="50" y2="-270" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <line x1="50" y1="-270" x2="50" y2="-247" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <line x1="42.49" y1="-130" x2="77.51" y2="-130" stroke="#000" stroke-width="1"/>
+  <line x1="50" y1="-247" x2="64" y2="-247" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <line x1="42" y1="-126" x2="78" y2="-126" stroke="#000" stroke-width="1"/>
+  <line x1="42" y1="-122" x2="78" y2="-122" stroke="#000" stroke-width="1"/>
+  <line x1="50" y1="-255" x2="64" y2="-255" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <line x1="42" y1="-118" x2="78" y2="-118" stroke="#000" stroke-width="1"/>
+  <line x1="42" y1="-114" x2="78" y2="-114" stroke="#000" stroke-width="1"/>
+  <line x1="42.49" y1="-134" x2="77.51" y2="-134" stroke="#000" stroke-width="1"/>
+  <line x1="86" y1="-138" x2="86" y2="-112" stroke="#000" stroke-width="1"/>
+  <line x1="84" y1="-140" x2="80" y2="-140" stroke="#000" stroke-width="1"/>
+  <line x1="84" y1="-110" x2="80" y2="-110" stroke="#000" stroke-width="1"/>
+  <rect x="52" y="-144" width="16" height="4" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 86.00 -138.00 A 2.00 2.00 0 0 0 84.00 -140.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 24.00 -115.00 A 5.00 5.00 0 0 0 29.00 -110.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="29" y1="-110" x2="44" y2="-110" stroke="#000" stroke-width="1"/>
+  <path d="M 29.00 -140.00 A 5.00 5.00 0 0 0 24.00 -135.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="24" y1="-128.42" x2="24" y2="-134.58" stroke="#000" stroke-width="1"/>
+  <line x1="24" y1="-122.88" x2="24" y2="-115.12" stroke="#000" stroke-width="1"/>
+  <line x1="34" y1="-144" x2="38" y2="-144" stroke="#000" stroke-width="1"/>
+  <line x1="19" y1="-128" x2="19" y2="-124" stroke="#000" stroke-width="1"/>
+  <path d="M 40.00 -160.00 A 3.00 8.00 0 0 0 37.00 -152.00" fill="none" stroke="#00c" stroke-width="0.5"/>
+  <path d="M 40.00 -163.00 A 4.00 11.00 0 0 0 36.00 -152.00" fill="none" stroke="#00c" stroke-width="0.5"/>
+  <path d="M 36.00 -152.00 A 4.00 11.00 0 0 0 32.00 -163.00" fill="none" stroke="#00c" stroke-width="0.5"/>
+  <path d="M 35.00 -152.00 A 3.00 8.00 0 0 0 32.00 -160.00" fill="none" stroke="#00c" stroke-width="0.5"/>
+  <line x1="19" y1="-123" x2="24" y2="-123" stroke="#000" stroke-width="1"/>
+  <line x1="19" y1="-128" x2="24" y2="-128" stroke="#000" stroke-width="1"/>
+  <line x1="24" y1="-128" x2="24" y2="-123" stroke="#000" stroke-width="1"/>
+  <line x1="29" y1="-140" x2="40" y2="-140" stroke="#000" stroke-width="1"/>
+  <line x1="34" y1="-140" x2="34" y2="-144" stroke="#000" stroke-width="1"/>
+  <line x1="38" y1="-144" x2="38" y2="-140" stroke="#000" stroke-width="1"/>
+  <line x1="35" y1="-152" x2="35" y2="-144" stroke="#00c" stroke-width="0.5"/>
+  <line x1="36" y1="-152" x2="36" y2="-144" stroke="#00c" stroke-width="0.5"/>
+  <line x1="37" y1="-152" x2="37" y2="-144" stroke="#00c" stroke-width="0.5"/>
+  <line x1="55" y1="-202" x2="65" y2="-212" stroke="#000" stroke-width="1"/>
+  <line x1="55" y1="-196" x2="65" y2="-206" stroke="#000" stroke-width="1"/>
+  <ellipse cx="60.00" cy="-170.00" rx="2.00" ry="2.00" fill="#000" stroke="#000" stroke-width="1"/>
+  <circle cx="60" cy="-290" r="1.5" fill="#000"/>
+  <text x="29" y="-37.00" font-family="sans-serif" font-size="7" fill="#555">10</text>
+  <text x="-2" y="-56.00" font-family="sans-serif" font-size="7" fill="#555">Local</text>
+  <text x="58" y="-18.00" font-family="sans-serif" font-size="5" fill="#333">kA C</text>
+  <text x="66" y="-32.00" font-family="sans-serif" font-size="7" fill="#333">A</text>
+  <text x="58" y="-2.00" font-family="sans-serif" font-size="5" fill="#333">mm²</text>
+  <text x="-2" y="-75.00" font-family="sans-serif" font-size="7" fill="#555">Pompe</text>
+  <text x="30" y="-23.50" font-family="sans-serif" font-size="5" fill="#555">4.5</text>
+  <text x="28" y="-8.50" font-family="sans-serif" font-size="5" fill="#555">4 G 1.5</text>
+</svg>

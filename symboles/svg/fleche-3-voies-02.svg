@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="24" viewBox="-15.00 -16.00 35.00 24.00">
+  <polygon points="-7,0 -7,-3 -4,0 -7,3" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-3" y1="0" x2="12" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="5" y1="-11" x2="5" y2="-7" stroke="#000" stroke-width="1"/>
+  <path d="M -4.00 0.00 A 9.00 6.00 0 0 0 5.00 -6.00" fill="none" stroke="#000" stroke-width="1"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="84" viewBox="-28.00 -53.00 74.00 84.00">
+  <rect x="-20" y="-42.54" width="18.75" height="36.9" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-15.00" cy="-38.85" rx="1.25" ry="1.23" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -1.25 -42.54 A 9.38 3.69 0 0 0 -20.00 -42.54" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="5" y="-8.1" width="32.5" height="2.46" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="37.5,-4.41 -20,-4.41 -20,1.74 -7.5,6.66 -7.5,11.58 -15,16.5 -15,21.42 25,21.42 25,16.5 22.5,11.58 20,9.12 20,6.66 27.5,4.2 35,1.74 37.5,-0.72 37.5,-3.18" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="5" y1="19" x2="11.25" y2="19" stroke="#000" stroke-width="1"/>
+  <rect x="-12.5" y="17.73" width="10" height="4.92" fill="none" stroke="#c00" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <ellipse cx="2.50" cy="-5.64" rx="1.25" ry="1.23" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-15" cy="-43" r="1.5" fill="#000"/>
+  <circle cx="-8" cy="21" r="1.5" fill="#000"/>
+</svg>

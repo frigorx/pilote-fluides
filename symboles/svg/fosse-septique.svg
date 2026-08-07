@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="54" viewBox="-36.00 -20.00 74.00 54.00">
+  <path d="M -13.00 -2.50 A 6.00 5.50 0 0 0 -19.00 -8.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 19.00 -8.00 A 6.00 5.50 0 0 0 13.00 -2.50" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-4" y="-8" width="8" height="8" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="12" y="-2" width="5" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-20" y="0" width="40" height="20" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -19.50 0.00 A 3.50 10.00 0 0 0 -19.50 20.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 19.00 -5.00 A 3.00 2.50 0 0 0 16.00 -2.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 19.50 20.00 A 3.50 10.00 0 0 0 19.50 0.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="19" y="-9" width="3" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-17" y="-2" width="5" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -16.00 -2.50 A 3.00 2.50 0 0 0 -19.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-23" y="-9" width="3" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-3,0 0,3 3,0" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-6" y="-10" width="12" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-30" y="-10" width="62" height="35" fill="none" stroke="#000" stroke-width="0.5"/>
+  <circle cx="-23" cy="-7" r="1.5" fill="#000"/>
+  <circle cx="22" cy="-7" r="1.5" fill="#000"/>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="194" viewBox="-50.00 -97.00 94.00 194.00">
+  <rect x="0" y="-90" width="36" height="180" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-36" y="-90" width="36" height="180" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="0" y="-47.65" width="36" height="95.29" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-36" y="-47.65" width="36" height="95.29" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="5.14" y="-13.76" width="25.71" height="36" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <rect x="0" y="-15.88" width="4.11" height="31.76" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="31.89" y="-15.88" width="4.11" height="31.76" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="6.17" y="24.35" width="10.29" height="5.29" fill="#0a0" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-18.00" cy="74.94" rx="8.23" ry="8.23" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="-22.11" y1="70.94" x2="-13.89" y2="79.41" stroke="#000" stroke-width="2"/>
+  <line x1="-22.11" y1="79.41" x2="-13.89" y2="70.94" stroke="#000" stroke-width="2"/>
+  <line x1="-18" y1="72" x2="-18" y2="78.35" stroke="#000" stroke-width="1"/>
+  <line x1="-21.09" y1="75.18" x2="-14.91" y2="75.18" stroke="#000" stroke-width="1"/>
+  <ellipse cx="18.00" cy="74.94" rx="8.23" ry="8.23" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="13.89" y1="70.94" x2="22.11" y2="79.41" stroke="#000" stroke-width="2"/>
+  <line x1="13.89" y1="79.41" x2="22.11" y2="70.94" stroke="#000" stroke-width="2"/>
+  <line x1="18" y1="72" x2="18" y2="78.35" stroke="#000" stroke-width="1"/>
+  <line x1="14.91" y1="75.18" x2="21.09" y2="75.18" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-18.00" cy="-75.42" rx="8.23" ry="8.23" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="-22.11" y1="-79.41" x2="-13.89" y2="-70.94" stroke="#000" stroke-width="2"/>
+  <line x1="-22.11" y1="-70.94" x2="-13.89" y2="-79.41" stroke="#000" stroke-width="2"/>
+  <line x1="-18" y1="-78.35" x2="-18" y2="-72" stroke="#000" stroke-width="1"/>
+  <line x1="-21.09" y1="-75.18" x2="-14.91" y2="-75.18" stroke="#000" stroke-width="1"/>
+  <ellipse cx="18.00" cy="-75.42" rx="8.23" ry="8.23" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="13.89" y1="-79.41" x2="22.11" y2="-70.94" stroke="#000" stroke-width="2"/>
+  <line x1="13.89" y1="-70.94" x2="22.11" y2="-79.41" stroke="#000" stroke-width="2"/>
+  <line x1="18" y1="-78.35" x2="18" y2="-72" stroke="#000" stroke-width="1"/>
+  <line x1="14.91" y1="-75.18" x2="21.09" y2="-75.18" stroke="#000" stroke-width="1"/>
+  <rect x="-36" y="-43.41" width="72" height="6.35" fill="#c00" stroke="none" stroke-width="1"/>
+  <line x1="-36" y1="42.35" x2="36" y2="42.35" stroke="#888" stroke-width="1"/>
+  <rect x="-30.86" y="-13.76" width="25.71" height="36" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <rect x="-36" y="-15.88" width="4.11" height="31.76" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="-4.11" y="-15.88" width="4.11" height="31.76" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="-29.83" y="24.35" width="10.29" height="5.29" fill="#0a0" stroke="#000" stroke-width="0.5"/>
+  <rect x="-33.94" y="10.59" width="67.89" height="11.65" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <text x="-11.83" y="34.53" font-family="sans-serif" font-size="6" fill="#555">-F1</text>
+  <text x="14.4" y="2.12" font-family="sans-serif" font-size="9" fill="#333">0</text>
+  <text x="-32.91" y="-38.12" font-family="sans-serif" font-size="4" fill="#333">ABB</text>
+  <text x="-38.06" y="-35.29" font-family="sans-serif" font-size="5" fill="#555">S201</text>
+  <text x="-38.06" y="-27.82" font-family="sans-serif" font-size="4" fill="#555">B16NA</text>
+  <text x="-21.6" y="2.12" font-family="sans-serif" font-size="9" fill="#333">0</text>
+  <text x="15.43" y="-55.06" font-family="sans-serif" font-size="6" fill="#333">N</text>
+  <text x="15.43" y="62.47" font-family="sans-serif" font-size="6" fill="#333">N</text>
+</svg>

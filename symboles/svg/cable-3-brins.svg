@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="34" viewBox="-67.00 -17.00 124.00 34.00">
+  <line x1="-10" y1="0" x2="50" y2="0" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="-5" r="1.5" fill="#000"/>
+  <circle cx="20" cy="-5" r="1.5" fill="#000"/>
+  <circle cx="40" cy="-5" r="1.5" fill="#000"/>
+  <circle cx="0" cy="5" r="1.5" fill="#000"/>
+  <circle cx="20" cy="5" r="1.5" fill="#000"/>
+  <circle cx="40" cy="5" r="1.5" fill="#000"/>
+  <text x="-56" y="1.00" font-family="sans-serif" font-size="5" fill="#555">ÖLFLEX 100</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="34" viewBox="-22.00 -22.00 44.00 34.00">
+  <line x1="-11.3" y1="0" x2="-6.35" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="7.3" y1="0" x2="11.9" y2="0" stroke="#000" stroke-width="1"/>
+  <polygon points="-6,-5 -6,5 7,-5 7,5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0.5" y1="0" x2="0.5" y2="-8" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.50" cy="-12.00" rx="4.50" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="12" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-12" cy="0" r="1.5" fill="#000"/>
+  <text x="-2" y="-10.00" font-family="sans-serif" font-size="4" fill="#333">M</text>
+</svg>

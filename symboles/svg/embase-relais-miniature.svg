@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="85" viewBox="-17.00 -43.00 34.00 85.00">
+  <rect x="-11" y="-38" width="22" height="76" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-10" y="-13" width="20" height="27" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="20" x2="-6" y2="20" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-2.70" cy="-33.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="7.00" cy="20.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="2.70" cy="-33.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="8.00" cy="33.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="8.00" cy="-22.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="8.00" cy="-33.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-8.00" cy="-33.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="2.70" cy="33.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="2.70" cy="-22.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="2" y="-9" width="6" height="3" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-8.00" cy="-22.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-8.00" cy="33.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-7.00" cy="20.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-2.70" cy="33.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-2.70" cy="-22.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-9" y="7" width="12" height="5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-8" y1="-23" x2="-8" y2="-21" stroke="#000" stroke-width="1"/>
+  <line x1="-7" y1="19" x2="-7" y2="21" stroke="#000" stroke-width="1"/>
+  <line x1="1" y1="-13" x2="1" y2="-2" stroke="#000" stroke-width="0.5"/>
+  <line x1="-8" y1="32" x2="-8" y2="34" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="33" x2="-7" y2="33" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="-22" x2="-7" y2="-22" stroke="#000" stroke-width="1"/>
+  <line x1="1" y1="-2" x2="10" y2="-2" stroke="#000" stroke-width="0.5"/>
+  <line x1="7" y1="19" x2="7" y2="21" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="-23" x2="8" y2="-21" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="-13" x2="-9" y2="-1" stroke="#000" stroke-width="0.5"/>
+  <line x1="8" y1="32" x2="8" y2="34" stroke="#000" stroke-width="1"/>
+  <line x1="7" y1="-22" x2="9" y2="-22" stroke="#000" stroke-width="1"/>
+  <line x1="7" y1="33" x2="9" y2="33" stroke="#000" stroke-width="1"/>
+  <line x1="-1" y1="-13" x2="-1" y2="-1" stroke="#000" stroke-width="0.5"/>
+  <line x1="6" y1="20" x2="8" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="-2.7" y1="-23" x2="-2.7" y2="-21" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="-1" x2="-1" y2="-1" stroke="#000" stroke-width="0.5"/>
+  <line x1="-2.7" y1="32" x2="-2.7" y2="34" stroke="#000" stroke-width="1"/>
+  <line x1="-3.7" y1="-22" x2="-1.7" y2="-22" stroke="#000" stroke-width="1"/>
+  <path d="M -9.00 -1.00 A 4.00 2.00 0 0 0 -1.00 -1.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-3.7" y1="33" x2="-1.7" y2="33" stroke="#000" stroke-width="1"/>
+  <line x1="2.7" y1="32" x2="2.7" y2="34" stroke="#000" stroke-width="1"/>
+  <line x1="2.7" y1="-23" x2="2.7" y2="-21" stroke="#000" stroke-width="1"/>
+  <rect x="-6" y="-12" width="2" height="2" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="1.7" y1="33" x2="3.7" y2="33" stroke="#000" stroke-width="1"/>
+  <line x1="1.7" y1="-22" x2="3.7" y2="-22" stroke="#000" stroke-width="1"/>
+  <line x1="-11" y1="-22" x2="10" y2="-22" stroke="#000" stroke-width="0.5"/>
+  <line x1="-8" y1="-34" x2="-8" y2="-32" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="-33" x2="-7" y2="-33" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="-34" x2="8" y2="-32" stroke="#000" stroke-width="1"/>
+  <line x1="7" y1="-33" x2="9" y2="-33" stroke="#000" stroke-width="1"/>
+  <line x1="-2.7" y1="-34" x2="-2.7" y2="-32" stroke="#000" stroke-width="1"/>
+  <line x1="-3.7" y1="-33" x2="-1.7" y2="-33" stroke="#000" stroke-width="1"/>
+  <line x1="-11" y1="-27" x2="11" y2="-27" stroke="#000" stroke-width="1"/>
+  <line x1="2.7" y1="-34" x2="2.7" y2="-32" stroke="#000" stroke-width="1"/>
+  <line x1="1.7" y1="-33" x2="3.7" y2="-33" stroke="#000" stroke-width="1"/>
+  <line x1="-11" y1="27" x2="11" y2="27" stroke="#000" stroke-width="1"/>
+  <line x1="-11" y1="-15" x2="10" y2="-15" stroke="#000" stroke-width="1"/>
+  <line x1="-9.2" y1="16" x2="9.22" y2="16" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="16" x2="-10" y2="26" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="16" x2="10" y2="26" stroke="#000" stroke-width="1"/>
+  <text x="-9" y="26.00" font-family="sans-serif" font-size="5" fill="#333">A2</text>
+  <text x="5" y="26.00" font-family="sans-serif" font-size="5" fill="#333">A1</text>
+  <text x="7" y="37.00" font-family="sans-serif" font-size="5" fill="#333">11</text>
+  <text x="2" y="37.00" font-family="sans-serif" font-size="5" fill="#333">21</text>
+  <text x="-3.5" y="37.00" font-family="sans-serif" font-size="5" fill="#333">31</text>
+  <text x="-9" y="37.00" font-family="sans-serif" font-size="5" fill="#333">41</text>
+  <text x="7" y="-25.00" font-family="sans-serif" font-size="5" fill="#333">12</text>
+  <text x="2" y="-25.00" font-family="sans-serif" font-size="5" fill="#333">22</text>
+  <text x="-3.5" y="-25.00" font-family="sans-serif" font-size="5" fill="#333">32</text>
+  <text x="-9" y="-25.00" font-family="sans-serif" font-size="5" fill="#333">42</text>
+  <text x="7" y="-36.00" font-family="sans-serif" font-size="5" fill="#333">14</text>
+  <text x="2" y="-36.00" font-family="sans-serif" font-size="5" fill="#333">24</text>
+  <text x="-3.5" y="-36.00" font-family="sans-serif" font-size="5" fill="#333">34</text>
+  <text x="-9" y="-36.00" font-family="sans-serif" font-size="5" fill="#333">44</text>
+</svg>

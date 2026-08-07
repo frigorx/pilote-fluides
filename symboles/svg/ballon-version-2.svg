@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="134" height="254" viewBox="-65.00 -118.00 134.00 254.00">
+  <line x1="-57" y1="105" x2="-51" y2="105" stroke="#000" stroke-width="1"/>
+  <line x1="-55" y1="28" x2="-49" y2="28" stroke="#000" stroke-width="1"/>
+  <line x1="-56" y1="-53" x2="-50" y2="-53" stroke="#000" stroke-width="1"/>
+  <line x1="-55" y1="-13" x2="-49" y2="-13" stroke="#000" stroke-width="1"/>
+  <line x1="-56" y1="7" x2="-50" y2="7" stroke="#000" stroke-width="1"/>
+  <line x1="-55" y1="86" x2="-49" y2="86" stroke="#000" stroke-width="1"/>
+  <rect x="-58" y="-94" width="120" height="201" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-56" y1="-74" x2="-50" y2="-74" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="120.00" rx="1.50" ry="1.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="-110.00" rx="1.50" ry="1.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="50.00" cy="91.00" rx="1.50" ry="1.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="51.00" cy="-80.00" rx="1.50" ry="1.50" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-46,20 30,30 -31,50 30,70 -46,80" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-46,-60 29,-50 -30,-30 30,-11 -47,0 -46,0" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 62.00 -94.50 A 60.00 18.00 0 0 0 -58.00 -94.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-50.00" cy="-80.00" rx="3.75" ry="3.75" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-50.13" cy="-0.25" rx="3.75" ry="3.75" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-50.00" cy="20.00" rx="3.75" ry="3.75" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-50.00" cy="-60.00" rx="3.75" ry="3.75" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-50.00" cy="-20.00" rx="3.75" ry="3.75" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-50.00" cy="80.00" rx="3.75" ry="3.75" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="56.88,115.75 56.88,130.75 41.88,130.75 41.88,120.75" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-53.13,115.75 -53.13,130.75 -38.13,130.75 -38.13,120.75" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -58.13 107.25 A 60.00 18.00 0 0 0 61.87 107.25" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-50.00" cy="100.00" rx="3.75" ry="3.75" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-50" cy="100" r="1.5" fill="#000"/>
+  <circle cx="-50" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-50" cy="80" r="1.5" fill="#000"/>
+  <circle cx="-50" cy="20" r="1.5" fill="#000"/>
+  <circle cx="-50" cy="-80" r="1.5" fill="#000"/>
+  <circle cx="-50" cy="-60" r="1.5" fill="#000"/>
+  <circle cx="-50" cy="-20" r="1.5" fill="#000"/>
+</svg>

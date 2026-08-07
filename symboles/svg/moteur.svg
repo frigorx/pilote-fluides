@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="64" viewBox="-26.00 -34.00 44.00 64.00">
+  <ellipse cx="0.00" cy="0.00" rx="10.50" ry="10.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="0.00" rx="13.00" ry="13.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-13" x2="0" y2="-20" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="-21" r="1.5" fill="#000"/>
+  <text x="-8.25" y="7.00" font-family="sans-serif" font-size="11" fill="#333">M</text>
+</svg>

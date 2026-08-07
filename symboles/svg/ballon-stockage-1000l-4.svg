@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="114" viewBox="-33.00 -57.00 74.00 114.00">
+  <path d="M -14.11 8.13 A 2.00 1.69 0 0 0 -14.11 11.51" fill="none" stroke="#c00" stroke-width="1"/>
+  <line x1="-15" y1="-5.38" x2="16.83" y2="-5.38" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="20.13" y1="-18.33" x2="26.09" y2="-18.33" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <path d="M -14.68 -5.38 A 2.00 1.69 0 0 0 -14.68 -2.00" fill="none" stroke="#c00" stroke-width="1"/>
+  <rect x="26.54" y="10.38" width="2.31" height="2.25" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-13.89" y1="8.13" x2="16.84" y2="8.13" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-13.36" y1="-12.13" x2="16.31" y2="-12.13" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="26" y1="-39.44" x2="26" y2="37" stroke="#000" stroke-width="1"/>
+  <path d="M 17.59 -5.38 A 2.00 1.69 0 0 0 17.59 -8.76" fill="none" stroke="#c00" stroke-width="1"/>
+  <line x1="-13.36" y1="1.38" x2="16.31" y2="1.38" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <path d="M -14.11 -12.13 A 2.00 1.69 0 0 0 -14.11 -8.75" fill="none" stroke="#c00" stroke-width="1"/>
+  <line x1="-13.36" y1="-8.76" x2="16.31" y2="-8.76" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <path d="M 17.59 8.13 A 2.00 1.69 0 0 0 17.59 4.75" fill="none" stroke="#c00" stroke-width="1"/>
+  <line x1="-13.15" y1="11.51" x2="25.88" y2="11.51" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <path d="M -14.11 1.38 A 2.00 1.69 0 0 0 -14.11 4.76" fill="none" stroke="#c00" stroke-width="1"/>
+  <line x1="-13.36" y1="4.75" x2="16.31" y2="4.75" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <path d="M -25.90 36.40 A 25.93 6.81 0 0 0 25.97 36.40" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-0.83,43.4 -0.83,44.53 0.9,44.53 0.9,43.4" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 25.97 -39.82 A 25.93 6.81 0 0 0 -25.90 -39.82" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.04" cy="-28.48" rx="0.86" ry="0.76" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.03" cy="-43.60" rx="1.19" ry="1.04" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="23.8,39.23 23.8,44.91 17.32,44.91 17.32,41.13" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-23.74,39.23 -23.74,44.91 -17.26,44.91 -17.26,41.13" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-1.14" cy="-7.07" rx="0.86" ry="0.76" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-25.9" y1="-39.64" x2="-25.9" y2="36.77" stroke="#000" stroke-width="1"/>
+  <rect x="26.54" y="-19.45" width="2.31" height="2.25" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-14.48" y1="-2" x2="16.28" y2="-2" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <path d="M 17.30 1.38 A 2.31 1.69 0 0 0 17.30 -2.00" fill="none" stroke="#c00" stroke-width="1"/>
+  <line x1="16.06" y1="-22" x2="19.41" y2="-22" stroke="#000" stroke-width="1"/>
+  <polygon points="19.6,-23.18 19.6,-20.58 22.95,-21.69" fill="#000" stroke="#000" stroke-width="1"/>
+  <polygon points="16.17,14.43 18.87,12.86 18.87,16" fill="#000" stroke="#000" stroke-width="1"/>
+  <line x1="18.87" y1="14.43" x2="22.24" y2="14.43" stroke="#000" stroke-width="1"/>
+  <line x1="16.17" y1="-12.13" x2="20.2" y2="-18.33" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <circle cx="0" cy="-44" r="1.5" fill="#000"/>
+  <circle cx="0" cy="45" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-28" r="1.5" fill="#000"/>
+  <circle cx="-1" cy="-7" r="1.5" fill="#000"/>
+  <circle cx="28" cy="-18" r="1.5" fill="#000"/>
+  <circle cx="29" cy="12" r="1.5" fill="#000"/>
+  <text x="12.71" y="18.83" font-family="sans-serif" font-size="5" fill="#333">de placa</text>
+  <text x="14.44" y="-24.52" font-family="sans-serif" font-size="5" fill="#333">a placa</text>
+</svg>

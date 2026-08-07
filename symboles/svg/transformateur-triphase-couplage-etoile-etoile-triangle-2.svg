@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114" height="194" viewBox="-88.00 -174.00 114.00 194.00">
+  <ellipse cx="-9.00" cy="-50.00" rx="30.00" ry="30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="-20" x2="-9" y2="10" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-30.00" cy="-90.00" rx="30.00" ry="30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-150" x2="-30" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="-19" y1="0" x2="1" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="-19" y1="5" x2="1" y2="-5" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-50.00" cy="-50.00" rx="30.00" ry="30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-20" x2="-50" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="-40" y1="-130" x2="-20" y2="-140" stroke="#000" stroke-width="1"/>
+  <line x1="-40" y1="-135" x2="-20" y2="-145" stroke="#000" stroke-width="1"/>
+  <line x1="-60" y1="0" x2="-40" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="-60" y1="5" x2="-40" y2="-5" stroke="#000" stroke-width="1"/>
+  <line x1="-40" y1="-125" x2="-20" y2="-135" stroke="#000" stroke-width="1"/>
+  <line x1="-60" y1="-5" x2="-40" y2="-15" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-5" x2="0" y2="-15" stroke="#000" stroke-width="1"/>
+  <polygon points="-10,-35 10,-35 0,-55" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-55" y1="-30" x2="-55" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-55" y1="-40" x2="-45" y2="-45" stroke="#000" stroke-width="1"/>
+  <line x1="-55" y1="-40" x2="-65" y2="-45" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-80" x2="-30" y2="-90" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-90" x2="-20" y2="-95" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-90" x2="-40" y2="-95" stroke="#000" stroke-width="1"/>
+  <circle cx="-50" cy="10" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="-150" r="1.5" fill="#000"/>
+  <circle cx="-9" cy="10" r="1.5" fill="#000"/>
+  <text x="-74" y="-160.00" font-family="sans-serif" font-size="9" fill="#333">Form 1 / Forme 1</text>
+</svg>

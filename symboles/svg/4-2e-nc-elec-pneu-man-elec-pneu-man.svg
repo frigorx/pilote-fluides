@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="54" viewBox="-52.00 -33.00 94.00 54.00">
+  <polygon points="8.82,0.86 7,1.77 9.91,4.47 9.22,0.65" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="27" y1="-12" x2="27" y2="-16" stroke="#000" stroke-width="1"/>
+  <line x1="-37" y1="-12" x2="-37" y2="-16" stroke="#000" stroke-width="1"/>
+  <polygon points="35,-10 33,-10 31,-8 29,-10 25,-10 25,-5 35,-5" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-35,-10 -39,-10 -41,-8 -43,-10 -45,-10 -45,-5 -35,-5" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-45,-3 -35,-3 -35,3 -45,3 -45,-3 -45,3 -43,3 -37,-3" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="25" y1="2" x2="25" y2="-10" stroke="#000" stroke-width="1"/>
+  <polyline points="25,-3 35,-3 35,3 25,3 25,-3 25,3 27,3 32.86,-2.75" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-35" y1="2" x2="-35" y2="-10" stroke="#000" stroke-width="1"/>
+  <polyline points="15,-3 25,-3 25,3 15,3 15,-3 25,-3 21,0 24.8,2.79" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-10,4.46 -11.58,0 -8.41,0" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <polyline points="-25,3 -35,3 -35,-3 -25,-3 -25,3 -35,3 -31,0 -35,-3" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="7.64,-12.57 9.88,-11.51 9.91,-14.45" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="9" y1="-12.35" x2="0" y2="5" stroke="#000" stroke-width="1"/>
+  <polygon points="-20,-14.5 -21.71,-10.61 -18.21,-10.64 -20,-14.54" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="8.56" y1="1.95" x2="0" y2="-15" stroke="#000" stroke-width="1"/>
+  <rect x="-25" y="-15" width="20" height="20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="4" x2="-20" y2="-11" stroke="#000" stroke-width="1"/>
+  <rect x="-5" y="-15" width="20" height="20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-14" x2="-10" y2="0" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="10" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="10" cy="10" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-20" r="1.5" fill="#000"/>
+  <text x="12" y="-14.00" font-family="sans-serif" font-size="4" fill="#555">10</text>
+  <text x="-7" y="-19.00" font-family="sans-serif" font-size="4" fill="#555">2</text>
+  <text x="-7" y="6.00" font-family="sans-serif" font-size="4" fill="#555">1</text>
+  <text x="3" y="6.00" font-family="sans-serif" font-size="4" fill="#555">3</text>
+  <text x="-34.89" y="-15.00" font-family="sans-serif" font-size="4" fill="#555">12</text>
+  <text x="3" y="-19.00" font-family="sans-serif" font-size="4" fill="#555">4</text>
+</svg>

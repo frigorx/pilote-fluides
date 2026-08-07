@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="121" height="54" viewBox="-17.00 -32.00 121.00 54.00">
+  <polygon points="-4,-16 -1,-13 2,-19" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="20.00" cy="-5.00" rx="15.00" ry="15.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -1.61 -15.61 A 15.00 15.00 0 0 0 -1.61 5.61" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="65" y1="-6" x2="80" y2="-6" stroke="#000" stroke-width="1"/>
+  <ellipse cx="50.00" cy="-5.00" rx="15.00" ry="15.00" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="35,-23 38,-20 41,-26" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="15" x2="40" y2="-25" stroke="#000" stroke-width="1"/>
+  <polygon points="16,-13 24,-13 20,-20" fill="#000" stroke="#000" stroke-width="1"/>
+  <polygon points="46,3 54,3 50,10" fill="#000" stroke="#000" stroke-width="1"/>
+  <polygon points="74,6 77,3 80,9" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <polygon points="74,-16 77,-13 80,-19" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <path d="M 76.39 -15.61 A 15.00 15.00 0 0 0 76.39 5.61" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-4" x2="5" y2="-4" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-6" x2="5" y2="-6" stroke="#000" stroke-width="1"/>
+  <line x1="65" y1="-4" x2="80" y2="-4" stroke="#000" stroke-width="1"/>
+</svg>

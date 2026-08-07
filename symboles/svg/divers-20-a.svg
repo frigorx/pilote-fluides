@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="174" viewBox="-16.00 -169.00 144.00 174.00">
+  <rect x="0" y="-85" width="120" height="85" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-15" x2="120" y2="-15" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-45" x2="120" y2="-45" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-65" x2="120" y2="-65" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-150" x2="30" y2="-110" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="-110" x2="90" y2="-110" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-150" x2="90" y2="-110" stroke="#000" stroke-width="1"/>
+  <circle cx="70" cy="-160" r="1.5" fill="#000"/>
+  <circle cx="60" cy="-110" r="1.5" fill="#000"/>
+  <circle cx="50" cy="-160" r="1.5" fill="#000"/>
+  <text x="34" y="-35.50" font-family="sans-serif" font-size="7" fill="#555">20</text>
+  <text x="58" y="-18.00" font-family="sans-serif" font-size="5" fill="#333">kA C</text>
+  <text x="66" y="-31.00" font-family="sans-serif" font-size="7" fill="#333">A</text>
+  <text x="70" y="-4.00" font-family="sans-serif" font-size="5" fill="#333">mm²</text>
+  <text x="-2" y="-73.50" font-family="sans-serif" font-size="7" fill="#555">Désignation</text>
+</svg>

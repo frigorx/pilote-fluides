@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="264" viewBox="-56.00 -122.00 104.00 264.00">
+  <rect x="-40" y="-110" width="80" height="240" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="30.00" cy="90.00" rx="2.50" ry="2.50" fill="#0a0" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-30.00" cy="-100.00" rx="2.50" ry="2.50" fill="#ccc" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-20.00" cy="-100.00" rx="2.50" ry="2.50" fill="#ccc" stroke="#000" stroke-width="1"/>
+  <line x1="-32" y1="-99" x2="-28" y2="-101" stroke="#000" stroke-width="1"/>
+  <rect x="5" y="-54" width="21" height="11" fill="#000" stroke="#000" stroke-width="1"/>
+  <line x1="40" y1="110" x2="-40" y2="110" stroke="#000" stroke-width="0.5"/>
+  <line x1="-22" y1="-99" x2="-18" y2="-101" stroke="#000" stroke-width="1"/>
+  <ellipse cx="26.00" cy="119.00" rx="2.50" ry="2.50" fill="#ccc" stroke="#000" stroke-width="1"/>
+  <ellipse cx="33.00" cy="119.00" rx="2.50" ry="2.50" fill="#ccc" stroke="#000" stroke-width="1"/>
+  <line x1="40" y1="-90" x2="-40" y2="-90" stroke="#000" stroke-width="0.5"/>
+  <polyline points="38,100 -38,100 -38,65" fill="none" stroke="#c00" stroke-width="1"/>
+  <line x1="24" y1="120" x2="28" y2="118" stroke="#000" stroke-width="1"/>
+  <line x1="31" y1="120" x2="35" y2="118" stroke="#000" stroke-width="1"/>
+  <circle cx="-30" cy="-110" r="1.5" fill="#000"/>
+  <circle cx="-20" cy="-110" r="1.5" fill="#000"/>
+  <circle cx="30" cy="130" r="1.5" fill="#000"/>
+  <text x="-32" y="-80.00" font-family="sans-serif" font-size="6" fill="#333">PRI</text>
+  <text x="-37" y="80.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="-37" dy="0.00">PRI: 220-240V~  200-130mA</tspan><tspan x="-37" dy="4.60">50-60Hz</tspan><tspan x="-37" dy="4.60">SCS: 27 Vdc 600mA</tspan></text>
+  <text x="-32" y="-91.00" font-family="sans-serif" font-size="4" fill="#333">N     L</text>
+  <text x="22" y="108.00" font-family="sans-serif" font-size="6" fill="#333">SCS</text>
+  <text x="-3" y="-58.00" font-family="sans-serif" font-size="6" fill="#333">MyHOME</text>
+  <text x="5" y="-45.00" font-family="sans-serif" font-size="6" fill="#333">S C S</text>
+</svg>

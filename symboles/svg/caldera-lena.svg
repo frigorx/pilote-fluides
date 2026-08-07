@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="74" viewBox="-28.00 -39.00 54.00 74.00">
+  <rect x="11" y="-8" width="1" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-18" y="19" width="1" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-16" y="-25" width="31" height="50" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="16" y="19" width="1" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="16" y="-21" width="1" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-19" y="25" width="37" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-11" y="-18" width="22" height="14" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="11" y="-15" width="1" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-8.00" cy="-10.00" rx="1.00" ry="1.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-7" y="-11" width="4" height="1" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-17" y="-27" width="33" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-5,8 5,8 9,18 -9,18" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-2" y="7" width="4" height="1" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="7" y1="17" x2="14" y2="12" stroke="#000" stroke-width="1"/>
+  <line x1="12" y1="14" x2="14" y2="13" stroke="#000" stroke-width="1"/>
+  <rect x="-10" y="6" width="21" height="14" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="11" y="-32" width="2" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="13,-29 15,-29 17,-31" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="17" y1="-31" x2="13" y2="13" stroke="#000" stroke-width="0.5"/>
+  <rect x="-18" y="-21" width="1" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-9,-21 -7,-24 -7,-21 -4,-24" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-19" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-19" cy="20" r="1.5" fill="#000"/>
+  <circle cx="-9" cy="-28" r="1.5" fill="#000"/>
+  <circle cx="17" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="17" cy="20" r="1.5" fill="#000"/>
+</svg>

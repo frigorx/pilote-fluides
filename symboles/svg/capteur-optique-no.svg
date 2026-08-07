@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="74" viewBox="-26.00 -31.00 54.00 74.00">
+  <line x1="-9" y1="-6" x2="-4" y2="-10" stroke="#000" stroke-width="1"/>
+  <polyline points="-3,1 0,8 0,13" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-2" x2="0" y2="1" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-10" x2="7" y2="-13" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="-9" x2="5" y2="-12" stroke="#000" stroke-width="1"/>
+  <polygon points="12,-3 12,-9 5,-6" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-1" y1="-6" x2="5" y2="-6" stroke="#000" stroke-width="1"/>
+  <line x1="12" y1="-6" x2="18" y2="-6" stroke="#000" stroke-width="1"/>
+  <line x1="5" y1="-9" x2="5" y2="-3" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="30" x2="0" y2="16" stroke="#000" stroke-width="1"/>
+  <line x1="15" y1="30" x2="15" y2="16" stroke="#000" stroke-width="1"/>
+  <line x1="-15" y1="30" x2="-15" y2="16" stroke="#000" stroke-width="1"/>
+  <rect x="-20" y="-15" width="40" height="31" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-18" y1="-6" x2="-3" y2="-6" stroke="#000" stroke-width="1"/>
+  <line x1="-11" y1="-6" x2="-11" y2="-3" stroke="#000" stroke-width="1"/>
+  <line x1="-13" y1="-6" x2="-18" y2="-10" stroke="#000" stroke-width="1"/>
+  <polygon points="5,-18 9,-23 13,-18" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-14,-23 -6,-23 -10,-18" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-15" cy="30" r="1.5" fill="#000"/>
+  <circle cx="15" cy="30" r="1.5" fill="#000"/>
+  <circle cx="0" cy="30" r="1.5" fill="#000"/>
+  <text x="-13" y="23.00" font-family="sans-serif" font-size="5" fill="#333">BN</text>
+  <text x="2" y="23.00" font-family="sans-serif" font-size="5" fill="#333">BK</text>
+  <text x="17" y="23.00" font-family="sans-serif" font-size="5" fill="#333">BU</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="64" viewBox="-39.00 -29.00 84.00 64.00">
+  <ellipse cx="-19.34" cy="-6.97" rx="2.40" ry="2.60" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="24.51" y1="-12.24" x2="24.51" y2="31" stroke="#000" stroke-width="0.5"/>
+  <rect x="-35.31" y="-16.79" width="74.77" height="47.78" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-10.38" y="-5.41" width="27.42" height="34.13" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="12.05" y="10.52" width="5" height="2.28" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-35.31" y1="-12.24" x2="39.46" y2="-12.24" stroke="#000" stroke-width="0.5"/>
+  <line x1="-15.37" y1="-12.24" x2="-15.37" y2="31" stroke="#000" stroke-width="0.5"/>
+  <rect x="7.06" y="10.52" width="5" height="2.28" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-31.34" y="-10.87" width="16.8" height="7.8" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <ellipse cx="-27.74" cy="-6.97" rx="2.40" ry="2.60" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <circle cx="-30" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-20" cy="-20" r="1.5" fill="#000"/>
+</svg>

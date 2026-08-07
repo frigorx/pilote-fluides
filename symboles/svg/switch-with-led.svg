@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="74" viewBox="-49.00 -35.00 84.00 74.00">
+  <ellipse cx="20.00" cy="5.00" rx="7.00" ry="7.00" fill="#c00" stroke="#000" stroke-width="1"/>
+  <polyline points="-15,-5 0,15 0,25" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-8,5 -27,5 -29,10 -31,5 -41,5" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="0" y1="-15" x2="0" y2="-5" stroke="#000" stroke-width="1"/>
+  <polyline points="-20,-20 -20,-3 -12,-3" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-15" x2="20" y2="-2" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="12" x2="20" y2="25" stroke="#000" stroke-width="1"/>
+  <path d="M -22.50 -20.00 A 2.50 2.50 0 0 0 -17.50 -20.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="15" y1="0" x2="25" y2="10" stroke="#000" stroke-width="1"/>
+  <path d="M 22.50 30.00 A 2.50 2.50 0 0 0 17.50 30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="15" y1="10" x2="25" y2="0" stroke="#000" stroke-width="1"/>
+  <path d="M 17.50 -20.00 A 2.50 2.50 0 0 0 22.50 -20.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 2.50 30.00 A 2.50 2.50 0 0 0 -2.50 30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -2.50 -20.00 A 2.50 2.50 0 0 0 2.50 -20.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-41" y1="0" x2="-41" y2="10" stroke="#000" stroke-width="1"/>
+  <path d="M -41.00 0.00 A 4.00 5.00 0 0 0 -41.00 10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-33" y1="30" x2="-33" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="-20" x2="30" y2="30" stroke="#000" stroke-width="1"/>
+  <line x1="-33" y1="-20" x2="-23" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="-17" y1="-20" x2="-3" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="-20" x2="17" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="23" y1="-20" x2="30" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="23" y1="30" x2="30" y2="30" stroke="#000" stroke-width="1"/>
+  <line x1="17" y1="30" x2="3" y2="30" stroke="#000" stroke-width="1"/>
+  <line x1="-33" y1="30" x2="-3" y2="30" stroke="#000" stroke-width="1"/>
+  <circle cx="-20" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="0" cy="30" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="20" cy="30" r="1.5" fill="#000"/>
+  <circle cx="20" cy="-20" r="1.5" fill="#000"/>
+  <text x="18" y="-16.00" font-family="sans-serif" font-size="7" fill="#555">+</text>
+  <text x="-15" y="-16.00" font-family="sans-serif" font-size="6" fill="#555">3</text>
+  <text x="4" y="21.00" font-family="sans-serif" font-size="6" fill="#555">X2</text>
+  <text x="-14" y="21.00" font-family="sans-serif" font-size="6" fill="#555">1</text>
+  <text x="5" y="-16.00" font-family="sans-serif" font-size="6" fill="#555">X1</text>
+  <text x="-35" y="-16.00" font-family="sans-serif" font-size="6" fill="#555">2</text>
+</svg>

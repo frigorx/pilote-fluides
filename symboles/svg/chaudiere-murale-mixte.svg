@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="64" viewBox="-29.00 -52.00 54.00 64.00">
+  <rect x="-19" y="-36.39" width="33.75" height="33.86" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-7.84" y1="-36.39" x2="-2.78" y2="-43.54" stroke="#000" stroke-width="1"/>
+  <line x1="-0.75" y1="-43.54" x2="3.3" y2="-36.39" stroke="#000" stroke-width="1"/>
+  <rect x="-4.05" y="-10" width="5.06" height="2.86" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-16" cy="-1" r="1.5" fill="#000"/>
+  <circle cx="-9" cy="-1" r="1.5" fill="#000"/>
+  <circle cx="5" cy="-1" r="1.5" fill="#000"/>
+  <circle cx="12" cy="-1" r="1.5" fill="#000"/>
+  <text x="3" y="-11.00" font-family="sans-serif" font-size="4" fill="#333">ACS</text>
+  <text x="-15" y="-11.00" font-family="sans-serif" font-size="4" fill="#333">Cal</text>
+</svg>

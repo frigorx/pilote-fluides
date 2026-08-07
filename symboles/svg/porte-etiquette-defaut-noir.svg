@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="-35.00 -56.00 64.00 64.00">
+  <rect x="-20" y="-48" width="40" height="24" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="-22" y1="-50" x2="22" y2="-50" stroke="#000" stroke-width="1"/>
+  <line x1="-22" y1="-50" x2="-22" y2="2" stroke="#000" stroke-width="1"/>
+  <line x1="22" y1="-50" x2="22" y2="2" stroke="#000" stroke-width="1"/>
+  <text x="-20" y="-30.00" font-family="sans-serif" font-size="8" fill="#333">DEFAUT</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="44" viewBox="-37.00 -22.00 74.00 44.00">
+  <line x1="24" y1="-5" x2="26" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-23" y1="-5" x2="-21" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-26" y1="-5" x2="-24" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="21" y1="-5" x2="23" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-27" y1="-5" x2="-25" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="20" y1="-5" x2="22" y2="5" stroke="#000" stroke-width="0.5"/>
+  <rect x="20" y="-5" width="7" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-27" y="-5" width="7" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="0" x2="21" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-27" y1="0" x2="-26" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="22" y1="-5" x2="24" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-25" y1="-5" x2="-23" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="23" y1="-5" x2="25" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-24" y1="-5" x2="-22" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="25" y1="-5" x2="27" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-22" y1="-5" x2="-20" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-21" y1="-5" x2="-20" y2="0" stroke="#000" stroke-width="0.5"/>
+  <line x1="26" y1="-5" x2="27" y2="0" stroke="#000" stroke-width="0.5"/>
+  <rect x="-20" y="-4" width="2" height="8" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="18" y="-4" width="2" height="8" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="0.00" rx="8.00" ry="8.00" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="0.00" cy="0.00" rx="18.00" ry="14.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-4.00" cy="0.00" rx="2.00" ry="2.00" fill="#c00" stroke="#c00" stroke-width="0.5"/>
+  <ellipse cx="4.00" cy="0.00" rx="2.00" ry="2.00" fill="#c00" stroke="#c00" stroke-width="0.5"/>
+  <rect x="-4" y="-2" width="8" height="4" fill="#c00" stroke="#c00" stroke-width="0.5"/>
+  <ellipse cx="0.00" cy="0.00" rx="0.50" ry="0.50" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-27" cy="0" r="1.5" fill="#000"/>
+  <circle cx="27" cy="0" r="1.5" fill="#000"/>
+</svg>

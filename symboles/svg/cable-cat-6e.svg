@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="154" height="44" viewBox="-83.00 -32.00 154.00 44.00">
+  <line x1="-70" y1="-4" x2="-66" y2="0" stroke="#00c" stroke-width="1" stroke-dasharray="1,2"/>
+  <ellipse cx="-5.00" cy="-6.00" rx="7.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-45.00" cy="-6.00" rx="7.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-25.00" cy="-6.00" rx="7.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-4" x2="-6" y2="0" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-30" y1="-4" x2="-26" y2="0" stroke="#e80" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-50" y1="-4" x2="-46" y2="0" stroke="#0a0" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-40" y1="-4" x2="-36" y2="0" stroke="#0a0" stroke-width="1"/>
+  <line x1="-10" y1="-9.22" x2="-10" y2="-4.78" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-30" y1="-9.22" x2="-30" y2="-4.78" stroke="#e80" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-0.05" y1="-4.05" x2="3.95" y2="-0.05" stroke="#000" stroke-width="1"/>
+  <line x1="-60" y1="-4" x2="-56" y2="0" stroke="#00c" stroke-width="1"/>
+  <line x1="-70" y1="-9.22" x2="-70" y2="-4.78" stroke="#00c" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-20" y1="-4" x2="-16" y2="0" stroke="#e80" stroke-width="1"/>
+  <line x1="-50" y1="-9.22" x2="-50" y2="-4.78" stroke="#0a0" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-60" y1="-9.22" x2="-60" y2="-4.78" stroke="#00c" stroke-width="1"/>
+  <line x1="-65.7" y1="0" x2="20" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-40" y1="-9.22" x2="-40" y2="-4.78" stroke="#0a0" stroke-width="1"/>
+  <line x1="20" y1="-4" x2="20" y2="4" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="4" x2="62" y2="4" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-4" x2="58" y2="-4" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-9" x2="-20" y2="-4" stroke="#e80" stroke-width="1"/>
+  <line x1="0" y1="-10" x2="0" y2="-4" stroke="#000" stroke-width="1"/>
+  <line x1="58" y1="-4" x2="62" y2="4" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <line x1="-70" y1="-10" x2="-60" y2="-15" stroke="#00c" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-60" y1="-10" x2="-70" y2="-15" stroke="#00c" stroke-width="1"/>
+  <line x1="-50" y1="-10" x2="-40" y2="-15" stroke="#0a0" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-40" y1="-10" x2="-50" y2="-15" stroke="#0a0" stroke-width="1"/>
+  <line x1="-30" y1="-10" x2="-20" y2="-15" stroke="#e80" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-20" y1="-10" x2="-30" y2="-15" stroke="#e80" stroke-width="1"/>
+  <line x1="-10" y1="-10" x2="0" y2="-15" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="0" y1="-10" x2="-10" y2="-15" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-65.00" cy="-6.00" rx="7.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-58" y1="-6" x2="-52" y2="-6" stroke="#000" stroke-width="1"/>
+  <line x1="-38" y1="-6" x2="-32" y2="-6" stroke="#000" stroke-width="1"/>
+  <line x1="-18" y1="-6" x2="-12" y2="-6" stroke="#000" stroke-width="1"/>
+  <circle cx="-70" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-40" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-50" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-60" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-20" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="-20" r="1.5" fill="#000"/>
+  <text x="-60" y="-12.50" font-family="sans-serif" font-size="4" fill="#555">B</text>
+  <text x="-20" y="-12.50" font-family="sans-serif" font-size="4" fill="#555">O</text>
+  <text x="-40" y="-12.50" font-family="sans-serif" font-size="4" fill="#555">V</text>
+  <text x="0" y="-12.50" font-family="sans-serif" font-size="4" fill="#555">M</text>
+</svg>

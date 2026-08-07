@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="44" viewBox="-32.00 -22.00 64.00 44.00">
+  <line x1="-3.92" y1="6.59" x2="3.63" y2="6.59" stroke="#000" stroke-width="1"/>
+  <line x1="-7.32" y1="7.45" x2="-9.2" y2="-7" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <path d="M -4.67 6.59 A 1.43 3.21 0 0 0 -4.67 13.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-13" y1="7.45" x2="-14.84" y2="-7" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-10.46" y1="7.45" x2="-12.34" y2="-7" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <path d="M 8.50 11.53 A 2.38 2.47 0 0 0 3.75 11.53" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="11.3" y="-9.71" width="6.78" height="19.72" fill="none" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <rect x="-17.35" y="-7.39" width="10" height="15.55" fill="none" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="18.09" y1="-11.22" x2="9.09" y2="-11.22" stroke="#000" stroke-width="1"/>
+  <line x1="-15.47" y1="7.45" x2="-17.35" y2="-7" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="18.09" y1="11.53" x2="18.09" y2="-11.22" stroke="#000" stroke-width="1"/>
+  <line x1="8.88" y1="11.53" x2="17.31" y2="11.53" stroke="#000" stroke-width="1"/>
+  <line x1="9.07" y1="-7.3" x2="9.07" y2="7.54" stroke="#000" stroke-width="0.5"/>
+  <rect x="-6" y="-14.18" width="9.75" height="27.18" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-4.77" y1="-5.77" x2="3.46" y2="-5.77" stroke="#000" stroke-width="1"/>
+  <path d="M -4.67 -14.18 A 1.43 4.21 0 0 0 -4.67 -5.77" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -4.70 -5.77 A 1.45 6.18 0 0 0 -4.70 6.59" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-17.35" y="-9.69" width="11.28" height="20.17" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 3.75 -10.71 A 2.38 2.47 0 0 0 8.50 -10.71" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-20" cy="0" r="1.5" fill="#000"/>
+  <circle cx="20" cy="0" r="1.5" fill="#000"/>
+</svg>

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="224" height="294" viewBox="-129.00 -147.00 224.00 294.00">
+  <rect x="-80" y="-140" width="80" height="180" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-24" y1="-90" x2="-10" y2="-90" stroke="#000" stroke-width="1"/>
+  <line x1="-38" y1="-100" x2="-15" y2="-100" stroke="#000" stroke-width="1"/>
+  <line x1="-90" y1="130" x2="-80" y2="130" stroke="#000" stroke-width="1"/>
+  <line x1="-5" y1="-100" x2="12" y2="-100" stroke="#000" stroke-width="1"/>
+  <circle cx="12" cy="-100" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-42" x2="-30" y2="-88" stroke="#000" stroke-width="1"/>
+  <line x1="-38" y1="-50" x2="-15" y2="-50" stroke="#000" stroke-width="1"/>
+  <line x1="-85.35" y1="-89.9" x2="-82.55" y2="-89.9" stroke="#000" stroke-width="1"/>
+  <line x1="-15" y1="-100" x2="-15" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="-85.35" y1="-39.9" x2="-82.55" y2="-39.9" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-90" x2="-10" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="-5" y1="-50" x2="12" y2="-50" stroke="#000" stroke-width="1"/>
+  <circle cx="12" cy="-50" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-24" y1="-40" x2="-10" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-5" y1="-30" x2="12" y2="-30" stroke="#000" stroke-width="1"/>
+  <circle cx="12" cy="-30" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-44" y1="-51" x2="-44" y2="-97" stroke="#000" stroke-width="1"/>
+  <line x1="-85.5" y1="-109.9" x2="-82.7" y2="-109.9" stroke="#000" stroke-width="1"/>
+  <line x1="-85.5" y1="-59.9" x2="-82.7" y2="-59.9" stroke="#000" stroke-width="1"/>
+  <line x1="-5" y1="-80" x2="12" y2="-80" stroke="#000" stroke-width="1"/>
+  <circle cx="12" cy="-80" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-58" y1="-63" x2="-58" y2="-110" stroke="#000" stroke-width="1"/>
+  <line x1="-53" y1="-60" x2="-20" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-84.1" y1="-61" x2="-84.1" y2="-58.75" stroke="#000" stroke-width="1"/>
+  <line x1="-84.1" y1="-111" x2="-84.1" y2="-108.75" stroke="#000" stroke-width="1"/>
+  <line x1="-5" y1="-90" x2="12" y2="-90" stroke="#000" stroke-width="1"/>
+  <circle cx="12" cy="-90" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-5" y1="-40" x2="12" y2="-40" stroke="#000" stroke-width="1"/>
+  <circle cx="12" cy="-40" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-85.35" y1="20.1" x2="-82.55" y2="20.1" stroke="#000" stroke-width="1"/>
+  <line x1="-92" y1="-80" x2="-30" y2="-80" stroke="#000" stroke-width="1"/>
+  <circle cx="-92" cy="-80" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-85.5" y1="0.1" x2="-82.7" y2="0.1" stroke="#000" stroke-width="1"/>
+  <line x1="-92" y1="-30" x2="-30" y2="-30" stroke="#000" stroke-width="1"/>
+  <circle cx="-92" cy="-30" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-92" x2="-30" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="-32" y1="-93" x2="-24" y2="-90" stroke="#000" stroke-width="1"/>
+  <line x1="-32" y1="-43" x2="-24" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-24" y1="40.87" x2="-24" y2="55.14" stroke="#000" stroke-width="1"/>
+  <line x1="-44" y1="-102" x2="-44" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="-84.1" y1="-1" x2="-84.1" y2="1.25" stroke="#000" stroke-width="1"/>
+  <line x1="-58" y1="-113" x2="-58" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="-54" y1="40.87" x2="-54" y2="55.14" stroke="#000" stroke-width="1"/>
+  <line x1="-92" y1="30" x2="-30" y2="30" stroke="#000" stroke-width="1"/>
+  <circle cx="-92" cy="30" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-92" y1="-120" x2="-30" y2="-120" stroke="#000" stroke-width="1"/>
+  <circle cx="-92" cy="-120" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-92" y1="-70" x2="-30" y2="-70" stroke="#000" stroke-width="1"/>
+  <circle cx="-92" cy="-70" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="18" x2="-30" y2="-38" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="30" x2="-30" y2="24" stroke="#000" stroke-width="1"/>
+  <line x1="-60" y1="-114" x2="-53" y2="-110" stroke="#000" stroke-width="1"/>
+  <line x1="-60" y1="-64" x2="-53" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-44" y1="30" x2="-44" y2="13" stroke="#000" stroke-width="1"/>
+  <line x1="-32" y1="17" x2="-24" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="-46" y1="-96" x2="-38" y2="-100" stroke="#000" stroke-width="1"/>
+  <line x1="-46" y1="-46" x2="-38" y2="-50" stroke="#000" stroke-width="1"/>
+  <line x1="-44" y1="8" x2="-44" y2="-47" stroke="#000" stroke-width="1"/>
+  <line x1="-58" y1="-3" x2="-58" y2="-59" stroke="#000" stroke-width="1"/>
+  <line x1="-92" y1="-10" x2="-30" y2="-10" stroke="#000" stroke-width="1"/>
+  <circle cx="-92" cy="-10" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-58" y1="30" x2="-58" y2="2" stroke="#000" stroke-width="1"/>
+  <line x1="-60" y1="-4" x2="-53" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-53" y1="0" x2="12" y2="0" stroke="#000" stroke-width="1"/>
+  <circle cx="12" cy="0" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-24" y1="20" x2="12" y2="20" stroke="#000" stroke-width="1"/>
+  <circle cx="12" cy="20" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-46" y1="14" x2="-38" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="-53" y1="-110" x2="-20" y2="-110" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-110" x2="-20" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-38" y1="10" x2="12" y2="10" stroke="#000" stroke-width="1"/>
+  <circle cx="12" cy="10" r="2.5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="70" y1="80" x2="70" y2="100" stroke="#000" stroke-width="2"/>
+  <path d="M 70.00 50.00 A 20.00 15.00 0 0 0 50.00 65.00" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 90.00 65.00 A 20.00 15.00 0 0 0 70.00 50.00" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 70.00 60.00 A 15.00 10.00 0 0 0 55.00 70.00" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 85.00 70.00 A 15.00 10.00 0 0 0 70.00 60.00" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 70.00 70.00 A 10.00 5.00 0 0 0 60.00 75.00" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 80.00 75.00 A 10.00 5.00 0 0 0 70.00 70.00" fill="none" stroke="#000" stroke-width="2"/>
+  <line x1="70" y1="100" x2="0" y2="100" stroke="#000" stroke-width="1"/>
+  <rect x="-80" y="60" width="80" height="80" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-90" y1="70" x2="-80" y2="70" stroke="#000" stroke-width="1"/>
+  <line x1="-90" y1="80" x2="-80" y2="80" stroke="#000" stroke-width="1"/>
+  <line x1="-90" y1="90" x2="-80" y2="90" stroke="#000" stroke-width="1"/>
+  <line x1="-90" y1="100" x2="-80" y2="100" stroke="#000" stroke-width="1"/>
+  <line x1="-90" y1="110" x2="-80" y2="110" stroke="#000" stroke-width="1"/>
+  <line x1="-90" y1="120" x2="-80" y2="120" stroke="#000" stroke-width="1"/>
+  <circle cx="-90" cy="90" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-50" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="70" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="-70" r="1.5" fill="#000"/>
+  <circle cx="10" cy="10" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="80" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="110" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="130" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-40" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-90" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="100" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-30" r="1.5" fill="#000"/>
+  <circle cx="70" cy="80" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-80" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="-120" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="120" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="30" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-100" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="-30" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="-10" r="1.5" fill="#000"/>
+  <circle cx="-90" cy="-80" r="1.5" fill="#000"/>
+  <circle cx="10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="10" cy="20" r="1.5" fill="#000"/>
+  <text x="-42" y="114.00" font-family="sans-serif" font-size="7" fill="#333">interface</text>
+  <text x="-44" y="94.00" font-family="sans-serif" font-size="7" fill="#333">electronic</text>
+  <text x="-120" y="2.00" font-family="sans-serif" font-size="4" fill="#333">DC String 2</text>
+  <text x="-120" y="-58.00" font-family="sans-serif" font-size="4" fill="#333">DC String 1</text>
+  <text x="-120" y="-108.00" font-family="sans-serif" font-size="4" fill="#333">DC Battery</text>
+  <text x="-60" y="-128.00" font-family="sans-serif" font-size="7" fill="#333">Inverter</text>
+  <text x="50" y="31.00" font-family="sans-serif" font-size="10" fill="#555">WiFi</text>
+  <text x="20" y="8.00" font-family="sans-serif" font-size="7" fill="#555">Load</text>
+  <text x="20" y="-42.00" font-family="sans-serif" font-size="7" fill="#555">Generator</text>
+  <text x="20" y="-92.00" font-family="sans-serif" font-size="7" fill="#555">Grid</text>
+  <text x="-80" y="67.00" font-family="sans-serif" font-size="7" fill="#555">I/O 1</text>
+  <text x="-80" y="77.00" font-family="sans-serif" font-size="7" fill="#555">I/O 2</text>
+  <text x="-80" y="87.00" font-family="sans-serif" font-size="7" fill="#555">I/O 3</text>
+  <text x="-80.1" y="97.00" font-family="sans-serif" font-size="7" fill="#555">I/O 4</text>
+  <text x="-80.1" y="107.00" font-family="sans-serif" font-size="7" fill="#555">I/O 5</text>
+  <text x="-80.2" y="117.00" font-family="sans-serif" font-size="7" fill="#555">I/O 6</text>
+  <text x="-80.2" y="127.00" font-family="sans-serif" font-size="7" fill="#555">I/O 7</text>
+</svg>

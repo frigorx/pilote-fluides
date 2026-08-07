@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="194" viewBox="-5.00 -13.00 24.00 194.00">
+  <rect x="0" y="0" width="13" height="168" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="0" y="7" width="13" height="153" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="0" y="76" width="13" height="13" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="6.50" cy="82.00" rx="2.00" ry="2.00" fill="#0cc" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="6.50" cy="94.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="4.3,95.8 8.3,91.8 8.8,92.3 4.8,96.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="6.50" cy="71.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="4.3,72.8 8.3,68.8 8.8,69.3 4.8,73.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="6.50" cy="152.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="4.3,153.8 8.3,149.8 8.8,150.3 4.8,154.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="6.50" cy="15.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="4.3,16.8 8.3,12.8 8.8,13.3 4.8,17.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="6.50" cy="119.00" rx="2.00" ry="2.00" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <circle cx="7" cy="102" r="1.5" fill="#000"/>
+  <circle cx="7" cy="0" r="1.5" fill="#000"/>
+  <circle cx="7" cy="63" r="1.5" fill="#000"/>
+  <circle cx="7" cy="168" r="1.5" fill="#000"/>
+</svg>

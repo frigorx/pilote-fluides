@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="54" viewBox="-87.00 -39.00 94.00 54.00">
+  <path d="M -10.00 -5.00 A 5.00 5.00 0 0 0 -20.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -40.00 -5.00 A 5.00 5.00 0 0 0 -50.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 -5.00 A 5.00 5.00 0 0 0 -10.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -30.00 -5.00 A 5.00 5.00 0 0 0 -40.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-5" x2="-50" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-5" x2="-20" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-5" x2="-30" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-5" x2="0" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-30" x2="0" y2="-30" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-35" x2="-80" y2="-25" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-35" x2="0" y2="-25" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-20" x2="-60" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-20" x2="-30" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-20" x2="0" y2="-20" stroke="#000" stroke-width="1"/>
+  <path d="M -70.00 -5.00 A 5.00 5.00 0 0 0 -80.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -60.00 -5.00 A 5.00 5.00 0 0 0 -70.00 -5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-5" x2="-80" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="-60" y1="-5" x2="-60" y2="10" stroke="#000" stroke-width="1"/>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="-20.00 -33.31 44.00 44.89">
+  <path d="M -0.88 3.24 A 17.12 17.27 0 0 0 16.24 -14.03" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -4.29 6.58 A 1.39 3.00 0 0 0 -5.68 3.58" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-4.28" y="-2.78" width="3.09" height="6" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-9.54" y="-5.77" width="5.26" height="12.34" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-5.78" y1="-3.15" x2="-9.28" y2="-3.15" stroke="#000" stroke-width="1"/>
+  <path d="M -5.52 -3.15 A 1.24 2.62 0 0 0 -4.28 -5.77" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-9.26" y1="3.58" x2="-5.81" y2="3.58" stroke="#000" stroke-width="1"/>
+  <path d="M -5.37 3.58 A 1.08 3.37 0 0 0 -5.37 -3.15" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -1.09 -2.62 A 11.96 11.19 0 0 0 10.88 -13.81" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="8.4" y1="-14.77" x2="14.18" y2="-12.82" stroke="#000" stroke-width="0.5"/>
+  <line x1="13.35" y1="-15.25" x2="18.3" y2="-13.31" stroke="#000" stroke-width="0.5"/>
+  <line x1="13.35" y1="-15.25" x2="14.18" y2="-12.82" stroke="#000" stroke-width="0.5"/>
+  <line x1="-0.26" y1="-2.6" x2="8.4" y2="-0.17" stroke="#000" stroke-width="0.5"/>
+  <line x1="7.16" y1="-5.52" x2="13.76" y2="-5" stroke="#000" stroke-width="0.5"/>
+  <line x1="10.05" y1="-9.9" x2="16.24" y2="-12.82" stroke="#000" stroke-width="0.5"/>
+  <line x1="-1.09" y1="0.32" x2="2.63" y2="2.75" stroke="#000" stroke-width="0.5"/>
+  <line x1="1.8" y1="-3.09" x2="-0.68" y2="3.24" stroke="#000" stroke-width="0.5"/>
+  <line x1="8" y1="-7" x2="7.16" y2="0.81" stroke="#000" stroke-width="0.5"/>
+  <line x1="10.46" y1="-11.85" x2="12.11" y2="-2.6" stroke="#000" stroke-width="0.5"/>
+  <line x1="12.94" y1="-13.31" x2="15" y2="-8.44" stroke="#000" stroke-width="0.5"/>
+  <line x1="11.7" y1="-13.79" x2="14.18" y2="-6" stroke="#000" stroke-width="0.5"/>
+  <line x1="9.64" y1="-8.44" x2="10.05" y2="-1.14" stroke="#000" stroke-width="0.5"/>
+  <line x1="5.51" y1="-4.55" x2="4.69" y2="1.78" stroke="#000" stroke-width="0.5"/>
+  <line x1="3.86" y1="-3.57" x2="2.21" y2="2.75" stroke="#000" stroke-width="0.5"/>
+  <line x1="8.81" y1="-7.95" x2="15.41" y2="-8.93" stroke="#000" stroke-width="0.5"/>
+  <line x1="4.69" y1="-4.06" x2="11.7" y2="-2.6" stroke="#000" stroke-width="0.5"/>
+  <circle cx="-10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="13" cy="-15" r="1.5" fill="#000"/>
+</svg>

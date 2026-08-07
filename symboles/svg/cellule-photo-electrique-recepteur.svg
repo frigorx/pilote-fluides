@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="64" viewBox="-19.00 -32.00 54.00 64.00">
+  <rect x="-15" y="-10" width="30" height="20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="13" y1="-1" x2="8" y2="2" stroke="#000" stroke-width="1"/>
+  <line x1="13" y1="-4" x2="8" y2="-1" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="-4" x2="18" y2="-4" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="-5" x2="3" y2="-8" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-19" x2="0" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="4" x2="18" y2="4" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="8" x2="3" y2="5" stroke="#000" stroke-width="1"/>
+  <polygon points="-2,-5 8,-5 3,5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="10" x2="0" y2="19" stroke="#000" stroke-width="1"/>
+  <line x1="-2" y1="5" x2="8" y2="5" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="20" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-20" r="1.5" fill="#000"/>
+  <text x="-10" y="-15.67" font-family="sans-serif" font-size="4" fill="#333">BN</text>
+  <text x="-8" y="18.33" font-family="sans-serif" font-size="4" fill="#333">BU</text>
+</svg>

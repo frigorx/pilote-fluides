@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="74" viewBox="-29.00 -28.00 54.00 74.00">
+  <ellipse cx="-10.04" cy="30.48" rx="2.96" ry="6.47" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -10.00 30.48 A 1.50 1.76 0 0 0 -13.00 30.48" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="10" x2="20" y2="10" stroke="#000" stroke-width="1"/>
+  <path d="M -10.00 30.48 A 1.50 1.76 0 0 0 -7.00 30.48" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="5" x2="20" y2="5" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="10" x2="0" y2="30" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="5" x2="0" y2="-15" stroke="#000" stroke-width="1"/>
+  <polyline points="20,-12 -12,20 -24,20" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="30" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-15" r="1.5" fill="#000"/>
+</svg>

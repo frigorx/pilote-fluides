@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="64" viewBox="-27.00 -56.00 54.00 64.00">
+  <rect x="-20" y="-48" width="40" height="24" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="-22" y1="-50" x2="22" y2="-50" stroke="#000" stroke-width="1"/>
+  <line x1="-22" y1="-50" x2="-22" y2="2" stroke="#000" stroke-width="1"/>
+  <line x1="22" y1="-50" x2="22" y2="2" stroke="#000" stroke-width="1"/>
+  <text x="-15" y="-35.00" font-family="sans-serif" font-size="4" fill="#333">AUTO-0-MAIN</text>
+</svg>

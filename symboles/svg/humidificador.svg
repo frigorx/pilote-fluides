@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="54" viewBox="-20.00 -33.00 44.00 54.00">
+  <rect x="-14" y="11" width="27" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-4" y="-17" width="7" height="7" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="10" y="6" width="3" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -3.00 -17.50 A 4.00 3.50 0 0 0 -7.00 -21.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 2.00 -17.50 A 9.00 7.50 0 0 0 -7.00 -25.00" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-8,-25 -15,-24 -15,-22 -8,-21" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 10.00 -7.00 A 10.00 3.00 0 0 0 -10.00 -7.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-7" x2="10" y2="11" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-7" x2="-10" y2="10" stroke="#000" stroke-width="1"/>
+  <circle cx="13" cy="7" r="1.5" fill="#000"/>
+</svg>

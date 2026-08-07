@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="64" viewBox="-27.00 -56.00 54.00 64.00">
+  <rect x="-20" y="-48" width="40" height="24" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-22" y1="-50" x2="22" y2="-50" stroke="#000" stroke-width="1"/>
+  <line x1="-22" y1="-50" x2="-22" y2="2" stroke="#000" stroke-width="1"/>
+  <line x1="22" y1="-50" x2="22" y2="2" stroke="#000" stroke-width="1"/>
+  <text x="-24" y="-38.00" font-family="sans-serif" font-size="7" fill="#555">OFF</text>
+  <text x="2" y="-38.00" font-family="sans-serif" font-size="7" fill="#555">ON</text>
+</svg>

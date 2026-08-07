@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="-27.00 -47.00 54.00 54.00">
+  <ellipse cx="0.00" cy="-20.00" rx="20.00" ry="20.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-5" x2="0" y2="-35" stroke="#000" stroke-width="1"/>
+  <path d="M 12.37 -30.37 A 17.50 17.50 0 0 0 -12.37 -30.37" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-13,-30 -11,-33 -10,-31" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="11,-33 13,-30 10,-31" fill="none" stroke="#000" stroke-width="1"/>
+</svg>

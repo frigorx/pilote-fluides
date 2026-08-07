@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="134" height="94" viewBox="-9.00 -9.00 134.00 94.00">
+  <rect x="0" y="0" width="120" height="75" rx="3" ry="3" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="101.50" cy="53.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="101.50" cy="16.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="101.50" cy="53.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="99.5" y1="14" x2="103.5" y2="18" stroke="#000" stroke-width="1"/>
+  <line x1="99.5" y1="51" x2="103.5" y2="55" stroke="#000" stroke-width="1"/>
+  <line x1="103.5" y1="51" x2="99.5" y2="55" stroke="#000" stroke-width="1"/>
+  <line x1="103.5" y1="14" x2="99.5" y2="18" stroke="#000" stroke-width="1"/>
+  <line x1="101.5" y1="14" x2="101.5" y2="18" stroke="#000" stroke-width="0.5"/>
+  <line x1="99.5" y1="16" x2="103.5" y2="16" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="21.00" cy="53.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="19" y1="51" x2="23" y2="55" stroke="#000" stroke-width="1"/>
+  <line x1="23" y1="51" x2="19" y2="55" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="51" x2="21" y2="55" stroke="#000" stroke-width="0.5"/>
+  <line x1="19" y1="53" x2="23" y2="53" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="21.00" cy="16.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="19" y1="14" x2="23" y2="18" stroke="#000" stroke-width="1"/>
+  <line x1="23" y1="14" x2="19" y2="18" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="14" x2="21" y2="18" stroke="#000" stroke-width="0.5"/>
+  <line x1="19" y1="16" x2="23" y2="16" stroke="#000" stroke-width="0.5"/>
+  <rect x="109" y="21" width="8" height="30" fill="#00c" stroke="#000" stroke-width="1"/>
+  <ellipse cx="21.00" cy="53.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="60.00" cy="38.00" rx="30.00" ry="30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="21" cy="75" r="1.5" fill="#000"/>
+  <circle cx="101" cy="1" r="1.5" fill="#000"/>
+  <circle cx="21" cy="1" r="1.5" fill="#000"/>
+  <circle cx="101" cy="75" r="1.5" fill="#000"/>
+  <text x="48" y="58.00" font-family="sans-serif" font-size="4" fill="#333">10 - 180s</text>
+  <text x="37" y="47.00" font-family="sans-serif" font-size="4" fill="#333">Repos / Off delay</text>
+  <text x="48" y="38.00" font-family="sans-serif" font-size="4" fill="#333">LADR4</text>
+  <text x="85" y="65.00" font-family="sans-serif" font-size="4" fill="#333">66NC</text>
+  <text x="84" y="12.00" font-family="sans-serif" font-size="4" fill="#333">65NC</text>
+  <text x="3" y="65.00" font-family="sans-serif" font-size="4" fill="#333">58NO</text>
+  <text x="38" y="28.00" font-family="sans-serif" font-size="4" fill="#333">Schneider Electric</text>
+  <text x="0" y="36.00" font-family="sans-serif" font-size="5" fill="#555">Kxxx</text>
+  <text x="3" y="12.00" font-family="sans-serif" font-size="4" fill="#333">57NO</text>
+</svg>

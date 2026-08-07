@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="184" viewBox="-65.00 -87.00 124.00 184.00">
+  <rect x="-53.5" y="-80" width="107" height="160" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-17.5" y="-80" width="35" height="160" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="0.00" cy="-63.00" rx="10.00" ry="10.00" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="-53.5" y="-80" width="35" height="160" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <line x1="-3.2" y1="-65.9" x2="2.8" y2="-59.9" stroke="#000" stroke-width="1"/>
+  <rect x="-17.5" y="-45" width="35" height="90" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="18.5" y="-80" width="35" height="160" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="36.00" cy="-63.00" rx="10.00" ry="10.00" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="-3.2" y1="-59.9" x2="2.8" y2="-65.9" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-36.00" cy="-63.00" rx="10.00" ry="10.00" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="-13" y="-13" width="26" height="34" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="-71" x2="0" y2="-55" stroke="#000" stroke-width="2"/>
+  <line x1="32.8" y1="-65.9" x2="38.8" y2="-59.9" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-63" x2="8" y2="-63" stroke="#000" stroke-width="2"/>
+  <line x1="-39.2" y1="-65.9" x2="-33.2" y2="-59.9" stroke="#000" stroke-width="1"/>
+  <rect x="18.5" y="-45" width="35" height="90" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-53.5" y="-45" width="35" height="90" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <line x1="32.8" y1="-59.9" x2="38.8" y2="-65.9" stroke="#000" stroke-width="1"/>
+  <line x1="-39.2" y1="-59.9" x2="-33.2" y2="-65.9" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="63.00" rx="10.00" ry="10.00" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="-3.2" y1="60.1" x2="2.8" y2="66.1" stroke="#000" stroke-width="1"/>
+  <rect x="-49" y="-13" width="26" height="34" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="-3.2" y1="66.1" x2="2.8" y2="60.1" stroke="#000" stroke-width="1"/>
+  <rect x="23" y="-13" width="26" height="34" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="-36" y1="-71" x2="-36" y2="-55" stroke="#000" stroke-width="2"/>
+  <line x1="0" y1="55" x2="0" y2="71" stroke="#000" stroke-width="2"/>
+  <line x1="36" y1="-71" x2="36" y2="-55" stroke="#000" stroke-width="2"/>
+  <line x1="-8" y1="63" x2="8" y2="63" stroke="#000" stroke-width="2"/>
+  <line x1="-44" y1="-63" x2="-28" y2="-63" stroke="#000" stroke-width="2"/>
+  <rect x="-17.5" y="-15" width="3" height="30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="-17.5" y="-8" width="3" height="16" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <line x1="28" y1="-63" x2="44" y2="-63" stroke="#000" stroke-width="2"/>
+  <rect x="14.5" y="-15" width="3" height="30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="14.5" y="-8" width="3" height="16" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <polygon points="-17.5,18 10.5,28 -17.5,38" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polygon points="-7.5,23 -7.5,33 7.5,28" fill="#0a0" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-36.00" cy="63.00" rx="10.00" ry="10.00" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="36.00" cy="63.00" rx="10.00" ry="10.00" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="32.8" y1="60.1" x2="38.8" y2="66.1" stroke="#000" stroke-width="1"/>
+  <line x1="-39.2" y1="60.1" x2="-33.2" y2="66.1" stroke="#000" stroke-width="1"/>
+  <line x1="32.8" y1="66.1" x2="38.8" y2="60.1" stroke="#000" stroke-width="1"/>
+  <line x1="-39.2" y1="66.1" x2="-33.2" y2="60.1" stroke="#000" stroke-width="1"/>
+  <line x1="36" y1="55" x2="36" y2="71" stroke="#000" stroke-width="2"/>
+  <line x1="-36" y1="55" x2="-36" y2="71" stroke="#000" stroke-width="2"/>
+  <line x1="-44" y1="63" x2="-28" y2="63" stroke="#000" stroke-width="2"/>
+  <line x1="28" y1="63" x2="44" y2="63" stroke="#000" stroke-width="2"/>
+  <rect x="18.5" y="-15" width="3" height="30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="-53.5" y="-15" width="3" height="30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="-53.5" y="-8" width="3" height="16" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="18.5" y="-8" width="3" height="16" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-21.5" y="-15" width="3" height="30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="50.5" y="-15" width="3" height="30" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="-21.5" y="-8" width="3" height="16" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="50.5" y="-8" width="3" height="16" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <polygon points="18.5,18 46.5,28 18.5,38" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polygon points="-53.5,18 -25.5,28 -53.5,38" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polygon points="28.5,23 28.5,33 43.5,28" fill="#0a0" stroke="#000" stroke-width="0.5"/>
+  <polygon points="-43.5,23 -43.5,33 -28.5,28" fill="#0a0" stroke="#000" stroke-width="0.5"/>
+  <rect x="-52" y="7" width="104" height="14" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <rect x="26" y="80" width="20" height="10" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="-46" y="80" width="20" height="10" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="31" y="83" width="10" height="4" rx="2" ry="2" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-41" y="83" width="10" height="4" rx="2" ry="2" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <text x="-4" y="2.00" font-family="sans-serif" font-size="9" fill="#333">0</text>
+  <text x="-40" y="2.00" font-family="sans-serif" font-size="9" fill="#333">0</text>
+  <text x="32" y="2.00" font-family="sans-serif" font-size="9" fill="#333">0</text>
+  <text x="-57" y="-24.00" font-family="sans-serif" font-size="4" fill="#555">B16</text>
+  <text x="-57" y="-31.00" font-family="sans-serif" font-size="4" fill="#555">FAZ 3P</text>
+</svg>

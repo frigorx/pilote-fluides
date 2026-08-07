@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="44" viewBox="-54.00 -20.00 94.00 44.00">
+  <line x1="-2.5" y1="-10" x2="-12.5" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-10" x2="-30" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-14" y1="-10" x2="-24" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="-10" x2="11" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="3.5" y1="-10" x2="-6.5" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="15" y1="-10" x2="5" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="26.5" y1="-10" x2="16.5" y2="0" stroke="#000" stroke-width="1"/>
+  <polygon points="-30,-10 30,-10 20,0 -40,0" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="9" y1="-10" x2="-1" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-8.5" y1="-10" x2="-18.5" y2="0" stroke="#000" stroke-width="1"/>
+  <polygon points="-30,-12 34,-12 20,2 -44,2" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-26" y1="-10" x2="-36" y2="0" stroke="#000" stroke-width="1"/>
+  <polyline points="-40,2 -40,10 20,10 20,2" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="20,10 32,-2 32,-10" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="25.50" cy="1.00" rx="1.50" ry="3.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-13.50" cy="6.50" rx="2.50" ry="3.50" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-45" cy="2" r="1.5" fill="#000"/>
+  <circle cx="30" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-13" cy="10" r="1.5" fill="#000"/>
+</svg>

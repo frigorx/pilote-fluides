@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="254" height="224" viewBox="-7.00 -12.00 254.00 224.00">
+  <rect x="0" y="0" width="240" height="200" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="0" y="39" width="240" height="127" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="13" y="70" width="115" height="62" fill="#00c" stroke="#000" stroke-width="0.5"/>
+  <line x1="47.65" y1="155" x2="231.12" y2="155" stroke="#c00" stroke-width="1"/>
+  <ellipse cx="163.00" cy="101.00" rx="30.00" ry="30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="163.2,81 143.2,101 163.2,121 183.2,101" fill="#000" stroke="#000" stroke-width="1"/>
+  <line x1="143" y1="81" x2="183" y2="121" stroke="#000" stroke-width="1"/>
+  <line x1="183" y1="81" x2="143" y2="121" stroke="#000" stroke-width="1"/>
+  <ellipse cx="163.20" cy="101.00" rx="15.00" ry="15.00" fill="#fff" stroke="#fff" stroke-width="1"/>
+  <ellipse cx="163.20" cy="101.00" rx="13.00" ry="13.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="163.20" cy="101.00" rx="11.00" ry="11.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="178" y="145" width="16" height="5" rx="2" ry="2" fill="#c00" stroke="#000" stroke-width="1"/>
+  <rect x="204" y="145" width="16" height="5" rx="2" ry="2" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <ellipse cx="229.00" cy="56.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="221" y="63" width="16" height="5" rx="2" ry="2" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <rect x="205.05" y="124.81" width="4.95" height="5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="205.05" y="129.84" width="4.95" height="5" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <rect x="205.05" y="134.88" width="4.95" height="5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="226.25" y="134.19" width="2" height="12" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="227.25" cy="144.19" rx="0.50" ry="0.50" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="214.00" cy="99.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 220.30 102.00 A 5.00 5.00 0 0 0 215.30 97.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="87" y="177" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <rect x="117" y="177" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <rect x="11" y="177" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <line x1="102.05" y1="181.42" x2="105.45" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="26.05" y1="181.42" x2="29.45" y2="184.65" stroke="#000" stroke-width="1"/>
+  <rect x="177" y="177" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <rect x="147" y="177" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <line x1="29.45" y1="181.42" x2="26.05" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="105.45" y1="181.42" x2="102.05" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="132.05" y1="181.42" x2="135.45" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="103.75" y1="181.42" x2="103.75" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="27.75" y1="181.42" x2="27.75" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="17.25" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="162.05" y1="181.42" x2="165.45" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="102.05" y1="183" x2="105.45" y2="183" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="93.25" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="192.05" y1="181.42" x2="195.45" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="15.55" y1="181.42" x2="18.95" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="18.95" y1="181.42" x2="15.55" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="135.45" y1="181.42" x2="132.05" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="91.55" y1="181.42" x2="94.95" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="94.95" y1="181.42" x2="91.55" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="17.25" y1="181.42" x2="17.25" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="165.45" y1="181.42" x2="162.05" y2="184.65" stroke="#000" stroke-width="1"/>
+  <ellipse cx="27.75" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="195.45" y1="181.42" x2="192.05" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="93.25" y1="181.42" x2="93.25" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="133.75" y1="181.42" x2="133.75" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="91.55" y1="183" x2="94.95" y2="183" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="103.75" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="193.75" y1="181.42" x2="193.75" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="163.75" y1="181.42" x2="163.75" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="192.05" y1="183" x2="195.45" y2="183" stroke="#000" stroke-width="0.5"/>
+  <line x1="132.05" y1="183" x2="135.45" y2="183" stroke="#000" stroke-width="0.5"/>
+  <line x1="162.05" y1="183" x2="165.45" y2="183" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="183.25" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="153.25" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="123.25" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="151.55" y1="181.42" x2="154.95" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="121.55" y1="181.42" x2="124.95" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="181.55" y1="181.42" x2="184.95" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="184.95" y1="181.42" x2="181.55" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="124.95" y1="181.42" x2="121.55" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="154.95" y1="181.42" x2="151.55" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="153.25" y1="181.42" x2="153.25" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="183.25" y1="181.42" x2="183.25" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="123.25" y1="181.42" x2="123.25" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="181.55" y1="183" x2="184.95" y2="183" stroke="#000" stroke-width="0.5"/>
+  <line x1="121.55" y1="183" x2="124.95" y2="183" stroke="#000" stroke-width="0.5"/>
+  <line x1="151.55" y1="183" x2="154.95" y2="183" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="193.75" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="163.75" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="133.75" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="207" y="177" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <line x1="222.05" y1="181.42" x2="225.45" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="225.45" y1="181.42" x2="222.05" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="223.75" y1="181.42" x2="223.75" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="222.05" y1="183" x2="225.45" y2="183" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="213.25" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="211.55" y1="181.42" x2="214.95" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="214.95" y1="181.42" x2="211.55" y2="184.65" stroke="#000" stroke-width="1"/>
+  <line x1="213.25" y1="181.42" x2="213.25" y2="184.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="211.55" y1="183" x2="214.95" y2="183" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="223.75" cy="183.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="117" y="22" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <rect x="177" y="22" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <rect x="147" y="22" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <line x1="132.05" y1="26.42" x2="135.45" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="162.05" y1="26.42" x2="165.45" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="192.05" y1="26.42" x2="195.45" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="135.45" y1="26.42" x2="132.05" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="165.45" y1="26.42" x2="162.05" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="195.45" y1="26.42" x2="192.05" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="133.75" y1="26.42" x2="133.75" y2="29.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="193.75" y1="26.42" x2="193.75" y2="29.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="163.75" y1="26.42" x2="163.75" y2="29.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="192.05" y1="28" x2="195.45" y2="28" stroke="#000" stroke-width="0.5"/>
+  <line x1="132.05" y1="28" x2="135.45" y2="28" stroke="#000" stroke-width="0.5"/>
+  <line x1="162.05" y1="28" x2="165.45" y2="28" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="183.25" cy="28.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="153.25" cy="28.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="123.25" cy="28.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="151.55" y1="26.42" x2="154.95" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="121.55" y1="26.42" x2="124.95" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="181.55" y1="26.42" x2="184.95" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="184.95" y1="26.42" x2="181.55" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="124.95" y1="26.42" x2="121.55" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="154.95" y1="26.42" x2="151.55" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="153.25" y1="26.42" x2="153.25" y2="29.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="183.25" y1="26.42" x2="183.25" y2="29.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="123.25" y1="26.42" x2="123.25" y2="29.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="181.55" y1="28" x2="184.95" y2="28" stroke="#000" stroke-width="0.5"/>
+  <line x1="121.55" y1="28" x2="124.95" y2="28" stroke="#000" stroke-width="0.5"/>
+  <line x1="151.55" y1="28" x2="154.95" y2="28" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="193.75" cy="28.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="163.75" cy="28.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="133.75" cy="28.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="207" y="22" width="23" height="12" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <line x1="222.05" y1="26.42" x2="225.45" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="225.45" y1="26.42" x2="222.05" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="223.75" y1="26.42" x2="223.75" y2="29.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="222.05" y1="28" x2="225.45" y2="28" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="213.25" cy="28.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="211.55" y1="26.42" x2="214.95" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="214.95" y1="26.42" x2="211.55" y2="29.65" stroke="#000" stroke-width="1"/>
+  <line x1="213.25" y1="26.42" x2="213.25" y2="29.65" stroke="#000" stroke-width="0.5"/>
+  <line x1="211.55" y1="28" x2="214.95" y2="28" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="223.75" cy="28.04" rx="4.25" ry="4.04" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="184.05" y="4.81" width="4.95" height="5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="184.05" y="9.84" width="4.95" height="5" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <rect x="184.05" y="14.88" width="4.95" height="5" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="8.5" y="2" width="43" height="26" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="17" y="18" width="6" height="4" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="37" y="18" width="6" height="4" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="27" y="10" width="6" height="4" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="15" y1="16" x2="45" y2="16" stroke="#000" stroke-width="0.5"/>
+  <line x1="30" y1="14" x2="30" y2="16" stroke="#000" stroke-width="0.5"/>
+  <line x1="20" y1="18" x2="20" y2="16" stroke="#000" stroke-width="0.5"/>
+  <line x1="40" y1="16" x2="40" y2="18" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="71.00" cy="15.00" rx="1.00" ry="1.00" fill="#000" stroke="#000" stroke-width="1"/>
+  <line x1="75" y1="23" x2="75" y2="9" stroke="#000" stroke-width="1"/>
+  <ellipse cx="75.00" cy="23.00" rx="1.00" ry="1.00" fill="#000" stroke="#000" stroke-width="1"/>
+  <path d="M 71.00 16.00 A 4.00 4.00 0 0 0 75.00 20.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 76.00 18.00 A 3.00 3.00 0 0 0 79.00 15.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="78" y="12" width="2" height="2" fill="#000" stroke="#000" stroke-width="1"/>
+  <polyline points="4.5,130.1 4.5,155.1 15.5,155.1" fill="none" stroke="#c00" stroke-width="1"/>
+  <rect x="228" y="47" width="2" height="7" fill="#000" stroke="#fff" stroke-width="1"/>
+  <circle cx="190" cy="0" r="1.5" fill="#000"/>
+  <circle cx="75" cy="0" r="1.5" fill="#000"/>
+  <circle cx="158" cy="200" r="1.5" fill="#000"/>
+  <circle cx="128" cy="0" r="1.5" fill="#000"/>
+  <circle cx="188" cy="200" r="1.5" fill="#000"/>
+  <circle cx="28" cy="200" r="1.5" fill="#000"/>
+  <circle cx="160" cy="0" r="1.5" fill="#000"/>
+  <circle cx="17" cy="200" r="1.5" fill="#000"/>
+  <circle cx="220" cy="0" r="1.5" fill="#000"/>
+  <circle cx="99" cy="200" r="1.5" fill="#000"/>
+  <circle cx="129" cy="200" r="1.5" fill="#000"/>
+  <circle cx="218" cy="200" r="1.5" fill="#000"/>
+  <circle cx="30" cy="0" r="1.5" fill="#000"/>
+  <text x="154.3" y="105.00" font-family="sans-serif" font-size="9" fill="#333">OK</text>
+  <text x="212" y="130.00" font-family="sans-serif" font-size="6" fill="#333"><tspan x="212" dy="0.00">T</tspan><tspan x="212" dy="6.90">C</tspan></text>
+  <text x="212" y="135.00" font-family="sans-serif" font-size="6" fill="#333">⌁</text>
+  <text x="207" y="99.20" font-family="sans-serif" font-size="6" fill="#333">◀</text>
+  <text x="211.63" y="174.00" font-family="sans-serif" font-size="6" fill="#333">C5</text>
+  <text x="93" y="174.00" font-family="sans-serif" font-size="6" fill="#333">C1</text>
+  <text x="36" y="181.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="36" dy="0.00">100/240V~</tspan><tspan x="36" dy="4.60">50/60Hz</tspan></text>
+  <text x="152.31" y="174.00" font-family="sans-serif" font-size="6" fill="#333">C3</text>
+  <text x="121.66" y="174.00" font-family="sans-serif" font-size="6" fill="#333">C2</text>
+  <text x="183" y="174.00" font-family="sans-serif" font-size="6" fill="#333">C4</text>
+  <text x="14.66" y="174.00" font-family="sans-serif" font-size="6" fill="#333">N  L</text>
+  <text x="150" y="15.00" font-family="sans-serif" font-size="6" fill="#333">CI2⎍</text>
+  <text x="191" y="10.00" font-family="sans-serif" font-size="6" fill="#333"><tspan x="191" dy="0.00">T</tspan><tspan x="191" dy="6.90">C</tspan></text>
+  <text x="211" y="15.00" font-family="sans-serif" font-size="6" fill="#333">SCS</text>
+  <text x="119" y="15.00" font-family="sans-serif" font-size="6" fill="#333">CI1⎍</text>
+  <text x="191" y="15.00" font-family="sans-serif" font-size="6" fill="#333">⌁</text>
+</svg>

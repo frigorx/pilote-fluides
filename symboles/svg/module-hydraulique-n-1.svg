@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="104" viewBox="-35.00 -52.00 74.00 104.00">
+  <polygon points="0,-8 -6,3 6,3" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="-1.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="10,-1 14,1 16,-3 20,-1" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-31" y="-40" width="60" height="80" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-22" y="-14" width="4" height="54" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-22" y="-39" width="4" height="11" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-2" y="-39" width="4" height="11" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="21,-13 21,-9 29,-9 29,-11 23,-11 23,-14 21,-14" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="22,-30 26,-33 26,-27" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="22,-30 22,-30 19,-26 25,-26" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="7" y="-22" width="9" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-2" y="9" width="4" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-2" y="-14" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="-21.00" rx="7.00" ry="7.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="9" y1="30" x2="9" y2="32" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="20" x2="10" y2="22" stroke="#000" stroke-width="1"/>
+  <polygon points="8,21 12,19 12,21 8,19" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="7,29 11,31 11,29 7,31" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="4" y="29" width="2" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="5" y="19" width="2" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="22.00" cy="-20.00" rx="6.00" ry="6.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="-19" x2="24" y2="-23" stroke="#000" stroke-width="1"/>
+  <line x1="-19" y1="-19" x2="-23" y2="-25" stroke="#000" stroke-width="1"/>
+  <line x1="26" y1="-30" x2="29" y2="-30" stroke="#000" stroke-width="1"/>
+  <polyline points="22,-30 22,-32 20,-33 23,-34 20,-35 23,-36 22,-37 22,-38" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-2" y="36" width="4" height="4" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-2" y="17" width="3" height="11" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-4" y="14" width="8" height="22" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-20.00" cy="-21.00" rx="7.00" ry="7.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="1" y1="-19" x2="-3" y2="-25" stroke="#000" stroke-width="1"/>
+  <circle cx="-20" cy="-40" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-40" r="1.5" fill="#000"/>
+  <circle cx="-20" cy="40" r="1.5" fill="#000"/>
+  <circle cx="0" cy="40" r="1.5" fill="#000"/>
+  <circle cx="30" cy="-30" r="1.5" fill="#000"/>
+  <circle cx="30" cy="-10" r="1.5" fill="#000"/>
+  <circle cx="10" cy="20" r="1.5" fill="#000"/>
+  <circle cx="10" cy="30" r="1.5" fill="#000"/>
+  <text x="-22" y="-15.00" font-family="sans-serif" font-size="5" fill="#333">°c</text>
+  <text x="-2" y="-15.00" font-family="sans-serif" font-size="5" fill="#333">°c</text>
+  <text x="17" y="-17.00" font-family="sans-serif" font-size="5" fill="#333">bar</text>
+</svg>

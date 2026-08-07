@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="104" viewBox="-27.00 -64.00 64.00 104.00">
+  <path d="M 4.50 17.00 A 4.50 4.50 0 0 0 4.50 17.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-5.88" y1="-54.79" x2="-5.88" y2="-51.56" stroke="#c00" stroke-width="1"/>
+  <path d="M 19.00 -44.00 A 19.00 3.25 0 0 0 -19.00 -44.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-1" y="-52" width="2" height="5" fill="#c00" stroke="#000" stroke-width="1"/>
+  <rect x="19" y="24" width="5" height="2" fill="#00c" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="18.00" rx="0.84" ry="0.76" fill="#c00" stroke="#000" stroke-width="1"/>
+  <line x1="22" y1="21" x2="25" y2="21" stroke="#00c" stroke-width="1"/>
+  <line x1="-19" y1="-43" x2="-19" y2="29" stroke="#000" stroke-width="1"/>
+  <line x1="19" y1="-43" x2="-19" y2="-43" stroke="#000" stroke-width="0.5"/>
+  <line x1="19" y1="-43" x2="19" y2="29" stroke="#000" stroke-width="1"/>
+  <line x1="19" y1="29" x2="-19" y2="29" stroke="#000" stroke-width="0.5"/>
+  <rect x="-20" y="30" width="40" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="24" cy="25" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-52" r="1.5" fill="#000"/>
+</svg>

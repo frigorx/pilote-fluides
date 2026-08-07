@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="174" height="304" viewBox="-6.00 -39.00 174.00 304.00">
+  <rect x="32" y="226" width="48" height="26" fill="#888" stroke="#000" stroke-width="1"/>
+  <rect x="105" y="226" width="32" height="26" fill="#e80" stroke="#000" stroke-width="1"/>
+  <rect x="57" y="-26" width="48" height="26" fill="#888" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="0" width="162" height="226" rx="22" ry="65" fill="#888" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="140" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="157" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="134" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="110" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="98" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="134" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="104" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="92" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="128" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="152" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="122" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="152" y="157" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="152" y="80" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="116" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="146" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="110" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="92" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="98" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="152" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="104" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="128" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="25,25 29,32 133,32 137,25 137,4 135,2 27,2 25,4" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="140" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="146" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="116" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="122" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="158" y="86" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="25,222 27,224 135,224 137,222 137,199 130,194 30,194 25,199" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="105" y1="232" x2="137" y2="232" stroke="#000" stroke-width="1"/>
+  <polygon points="29,34 133,34 158,80 158,160 130,192 30,192 4,160 4,80" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="34,40 128,40 152,80 152,160 128,185 32,185 10,160 10,80" fill="#888" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="80" width="10" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="86" width="4" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="60.00" cy="100.00" rx="5.00" ry="5.00" fill="#c00" stroke="#c00" stroke-width="1"/>
+  <rect x="4" y="0" width="154" height="226" rx="22" ry="65" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="87.86" cy="65.76" rx="20.00" ry="10.00" fill="none" stroke="#fff" stroke-width="1"/>
+  <ellipse cx="98.86" cy="57.76" rx="2.50" ry="2.50" fill="#000" stroke="#000" stroke-width="1"/>
+  <path d="M 142.00 95.00 A 15.00 15.00 0 0 0 142.00 125.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="20.00" cy="110.00" rx="13.00" ry="13.00" fill="#888" stroke="#000" stroke-width="1"/>
+  <line x1="142" y1="125" x2="152" y2="125" stroke="#000" stroke-width="1"/>
+  <ellipse cx="142.00" cy="110.00" rx="13.00" ry="13.00" fill="#888" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="125" x2="20" y2="125" stroke="#000" stroke-width="1"/>
+  <ellipse cx="142.00" cy="110.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="142" y1="95" x2="152" y2="95" stroke="#000" stroke-width="1"/>
+  <ellipse cx="20.00" cy="110.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 20.00 125.00 A 15.00 15.00 0 0 0 20.00 95.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="95" x2="20" y2="95" stroke="#000" stroke-width="1"/>
+  <ellipse cx="116.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="124" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="126.00" cy="237.00" rx="3.00" ry="3.00" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="114" y="243" width="4" height="2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="123.8,238.8 127.8,234.8 128.3,235.3 124.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polygon points="113.8,238.8 117.8,234.8 118.3,235.3 114.3,239.3" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <circle cx="56" cy="252" r="1.5" fill="#000"/>
+  <circle cx="126" cy="252" r="1.5" fill="#000"/>
+  <circle cx="116" cy="252" r="1.5" fill="#000"/>
+  <circle cx="82" cy="-26" r="1.5" fill="#000"/>
+  <text x="71" y="12.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="71" dy="0.00">(RS-232)</tspan><tspan x="71" dy="4.60">IN</tspan></text>
+  <text x="44" y="214.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="44" dy="0.00">OUT</tspan><tspan x="44" dy="4.60">(RS-232)</tspan></text>
+  <text x="117.5" y="222.00" font-family="sans-serif" font-size="4" fill="#333">(R)+Vs</text>
+  <text x="127.9" y="222.00" font-family="sans-serif" font-size="4" fill="#333">(B)GND 10</text>
+  <text x="15" y="90.00" font-family="sans-serif" font-size="10" fill="#333">CE</text>
+  <text x="95.66" y="81.76" font-family="sans-serif" font-size="9" fill="#333">CON</text>
+  <text x="63.86" y="67.76" font-family="sans-serif" font-size="9" fill="#333">ICP</text>
+  <text x="44" y="123.00" font-family="sans-serif" font-size="5" fill="#333"><tspan x="44" dy="0.00">RS-232 to RS-232</tspan><tspan x="44" dy="5.75">Converter</tspan></text>
+  <text x="48" y="179.00" font-family="sans-serif" font-size="4" fill="#333">3000V Three-way Isolation</text>
+  <text x="35" y="200.00" font-family="sans-serif" font-size="4" fill="#333">1</text>
+  <text x="70" y="105.00" font-family="sans-serif" font-size="9" fill="#333">i-7551</text>
+</svg>

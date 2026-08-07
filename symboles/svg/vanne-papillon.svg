@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="44" viewBox="-20.00 -27.00 54.00 44.00">
+  <rect x="-6.34" y="-9.55" width="0.95" height="18.51" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-3.73" y="-17.2" width="29.59" height="1.77" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="6.55" y="-9.55" width="0.95" height="18.51" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-3" y="-9.92" width="6.9" height="18.82" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-1.24" y="-14.63" width="3.45" height="4.71" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="9.84" y1="-15.63" x2="24.64" y2="-11.49" stroke="#000" stroke-width="1"/>
+  <rect x="-1.24" y="-19.33" width="3.45" height="1.57" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-4.69" y1="-6.78" x2="5.66" y2="-6.78" stroke="#000" stroke-width="1"/>
+  <line x1="-4.69" y1="-0.51" x2="5.66" y2="-0.51" stroke="#000" stroke-width="1"/>
+  <line x1="-4.69" y1="5.77" x2="5.66" y2="5.77" stroke="#000" stroke-width="1"/>
+  <circle cx="10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-8" cy="0" r="1.5" fill="#000"/>
+</svg>

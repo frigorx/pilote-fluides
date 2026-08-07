@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="69" height="54" viewBox="-14.00 -22.00 69.00 54.00">
+  <polygon points="13.39,-7.62 9.13,-5.12 11.32,-3.07 13.49,-7.62" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="15" x2="0" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="16" x2="10" y2="-4" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-10" x2="0" y2="-5" stroke="#000" stroke-width="1"/>
+  <path d="M 21.52 -4.03 A 17.50 17.50 0 0 0 20.82 16.03" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="2.94,-4.58 -2.52,-4.63 0.08,1.19 2.88,-4.47" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="7" x2="22" y2="7" stroke="#000" stroke-width="1"/>
+  <polygon points="24.27,18.94 19.65,16.89 21.79,15.16 24.27,18.63" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <polygon points="24.93,-8 20.58,-5.07 22.93,-3.32" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="10" y1="3" x2="22" y2="3" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="5.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-2.94,14.58 2.53,14.64 -0.07,8.82 -2.88,14.47" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="-10" r="1.5" fill="#000"/>
+  <circle cx="0" cy="20" r="1.5" fill="#000"/>
+</svg>

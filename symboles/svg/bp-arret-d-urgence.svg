@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="84" viewBox="-50.00 -30.00 104.00 84.00">
+  <ellipse cx="40.00" cy="32.00" rx="3.50" ry="3.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="0.00" rx="22.50" ry="22.50" fill="#dd0" stroke="none" stroke-width="2"/>
+  <line x1="42" y1="30" x2="38" y2="34" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="0.00" rx="15.00" ry="15.00" fill="#c00" stroke="#000" stroke-width="2"/>
+  <line x1="38" y1="30" x2="42" y2="34" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-20.00" cy="32.00" rx="3.50" ry="3.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-18" y1="30" x2="-22" y2="34" stroke="#000" stroke-width="1"/>
+  <line x1="40" y1="29" x2="40" y2="35" stroke="#000" stroke-width="0.5"/>
+  <line x1="-22" y1="30" x2="-18" y2="34" stroke="#000" stroke-width="1"/>
+  <line x1="37" y1="32" x2="43" y2="32" stroke="#000" stroke-width="0.5"/>
+  <line x1="-20" y1="29" x2="-20" y2="35" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="23.00" cy="32.00" rx="3.50" ry="3.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-23" y1="32" x2="-17" y2="32" stroke="#000" stroke-width="0.5"/>
+  <line x1="25" y1="30" x2="21" y2="34" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-37.00" cy="32.00" rx="3.50" ry="3.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="30" x2="25" y2="34" stroke="#000" stroke-width="1"/>
+  <line x1="-35" y1="30" x2="-39" y2="34" stroke="#000" stroke-width="1"/>
+  <line x1="23" y1="29" x2="23" y2="35" stroke="#000" stroke-width="0.5"/>
+  <line x1="-39" y1="30" x2="-35" y2="34" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="32" x2="26" y2="32" stroke="#000" stroke-width="0.5"/>
+  <line x1="-37" y1="29" x2="-37" y2="35" stroke="#000" stroke-width="0.5"/>
+  <line x1="-40" y1="32" x2="-34" y2="32" stroke="#000" stroke-width="0.5"/>
+  <path d="M 9.00 0.00 A 9.00 9.00 0 1 0 -0.00 9.00" fill="none" stroke="#fff" stroke-width="1"/>
+  <polygon points="0,8 0,10 2,9" fill="#fff" stroke="none" stroke-width="0.5"/>
+  <circle cx="-37" cy="41" r="1.5" fill="#000"/>
+  <circle cx="23" cy="41" r="1.5" fill="#000"/>
+  <circle cx="40" cy="41" r="1.5" fill="#000"/>
+  <circle cx="-20" cy="41" r="1.5" fill="#000"/>
+  <text x="28" y="34.00" font-family="sans-serif" font-size="4" fill="#333">NO</text>
+  <text x="-32" y="34.00" font-family="sans-serif" font-size="4" fill="#333">NF</text>
+</svg>

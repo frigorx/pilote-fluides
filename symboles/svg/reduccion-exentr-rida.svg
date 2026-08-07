@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="44" viewBox="-29.00 -21.00 64.00 44.00">
+  <rect x="-21.2" y="-17.45" width="2.5" height="34.7" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 18.72 -0.43 A 1.54 1.63 0 0 0 20.26 -2.06" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 20.26 10.99 A 1.54 1.63 0 0 0 18.72 9.36" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -18.13 -10.43 A 2.25 2.46 0 0 0 -15.88 -7.96" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="20.22" y="-6.41" width="2.41" height="20.66" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -15.88 9.00 A 2.25 2.74 0 0 0 -18.13 11.74" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="11.35" y1="-0.48" x2="18.61" y2="-0.48" stroke="#000" stroke-width="1"/>
+  <line x1="-15.77" y1="-8" x2="-8.83" y2="-8" stroke="#000" stroke-width="1"/>
+  <line x1="-14.79" y1="9" x2="17.79" y2="9" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="-8" x2="12" y2="0" stroke="#000" stroke-width="1"/>
+  <circle cx="-20" cy="0" r="1.5" fill="#000"/>
+  <circle cx="25" cy="4" r="1.5" fill="#000"/>
+</svg>

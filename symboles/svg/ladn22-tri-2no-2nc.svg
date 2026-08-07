@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="134" height="94" viewBox="-7.00 -9.00 134.00 94.00">
+  <rect x="0" y="0" width="120" height="75" rx="3" ry="3" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="96.50" cy="52.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="96.50" cy="15.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="96.50" cy="52.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="72.00" cy="52.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="94.5" y1="13" x2="98.5" y2="17" stroke="#000" stroke-width="1"/>
+  <line x1="94.5" y1="50" x2="98.5" y2="54" stroke="#000" stroke-width="1"/>
+  <line x1="98.5" y1="50" x2="94.5" y2="54" stroke="#000" stroke-width="1"/>
+  <line x1="98.5" y1="13" x2="94.5" y2="17" stroke="#000" stroke-width="1"/>
+  <line x1="96.5" y1="13" x2="96.5" y2="17" stroke="#000" stroke-width="0.5"/>
+  <line x1="94.5" y1="15" x2="98.5" y2="15" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="24.00" cy="52.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="22" y1="50" x2="26" y2="54" stroke="#000" stroke-width="1"/>
+  <line x1="26" y1="50" x2="22" y2="54" stroke="#000" stroke-width="1"/>
+  <line x1="24" y1="50" x2="24" y2="54" stroke="#000" stroke-width="0.5"/>
+  <line x1="22" y1="52" x2="26" y2="52" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="72.00" cy="52.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="70" y1="50" x2="74" y2="54" stroke="#000" stroke-width="1"/>
+  <line x1="74" y1="50" x2="70" y2="54" stroke="#000" stroke-width="1"/>
+  <line x1="72" y1="50" x2="72" y2="54" stroke="#000" stroke-width="0.5"/>
+  <line x1="70" y1="52" x2="74" y2="52" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="48.00" cy="52.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="46" y1="50" x2="50" y2="54" stroke="#000" stroke-width="1"/>
+  <line x1="50" y1="50" x2="46" y2="54" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="50" x2="48" y2="54" stroke="#000" stroke-width="0.5"/>
+  <line x1="46" y1="52" x2="50" y2="52" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="72.00" cy="15.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="70" y1="13" x2="74" y2="17" stroke="#000" stroke-width="1"/>
+  <line x1="74" y1="13" x2="70" y2="17" stroke="#000" stroke-width="1"/>
+  <line x1="72" y1="13" x2="72" y2="17" stroke="#000" stroke-width="0.5"/>
+  <line x1="70" y1="15" x2="74" y2="15" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="48.00" cy="15.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="46" y1="13" x2="50" y2="17" stroke="#000" stroke-width="1"/>
+  <line x1="50" y1="13" x2="46" y2="17" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="13" x2="48" y2="17" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="24.00" cy="15.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="46" y1="15" x2="50" y2="15" stroke="#000" stroke-width="0.5"/>
+  <line x1="22" y1="13" x2="26" y2="17" stroke="#000" stroke-width="1"/>
+  <line x1="26" y1="13" x2="22" y2="17" stroke="#000" stroke-width="1"/>
+  <line x1="24" y1="13" x2="24" y2="17" stroke="#000" stroke-width="0.5"/>
+  <line x1="22" y1="15" x2="26" y2="15" stroke="#000" stroke-width="0.5"/>
+  <rect x="101" y="32" width="14" height="10" fill="#00c" stroke="#000" stroke-width="2"/>
+  <ellipse cx="24.00" cy="52.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="96" cy="75" r="1.5" fill="#000"/>
+  <circle cx="96" cy="0" r="1.5" fill="#000"/>
+  <circle cx="72" cy="75" r="1.5" fill="#000"/>
+  <circle cx="48" cy="0" r="1.5" fill="#000"/>
+  <circle cx="24" cy="75" r="1.5" fill="#000"/>
+  <circle cx="24" cy="0" r="1.5" fill="#000"/>
+  <circle cx="72" cy="0" r="1.5" fill="#000"/>
+  <circle cx="48" cy="75" r="1.5" fill="#000"/>
+  <text x="5" y="41.00" font-family="sans-serif" font-size="4" fill="#333">LADN22</text>
+  <text x="80" y="64.00" font-family="sans-serif" font-size="4" fill="#333">84NO</text>
+  <text x="79" y="11.00" font-family="sans-serif" font-size="4" fill="#333">83NO</text>
+  <text x="32" y="64.00" font-family="sans-serif" font-size="4" fill="#333">62NC</text>
+  <text x="56" y="64.00" font-family="sans-serif" font-size="4" fill="#333">72NC</text>
+  <text x="6" y="64.00" font-family="sans-serif" font-size="4" fill="#333">54NO</text>
+  <text x="5" y="35.00" font-family="sans-serif" font-size="5" fill="#333">Télémécanique</text>
+  <text x="55" y="33.00" font-family="sans-serif" font-size="7" fill="#555">KMxx</text>
+  <text x="31" y="11.00" font-family="sans-serif" font-size="4" fill="#333">61NC</text>
+  <text x="55" y="11.00" font-family="sans-serif" font-size="4" fill="#333">71NC</text>
+  <text x="6" y="11.00" font-family="sans-serif" font-size="4" fill="#333">53NO</text>
+</svg>

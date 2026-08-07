@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114" height="214" viewBox="-7.00 -4.00 114.00 214.00">
+  <rect x="0" y="0" width="100" height="200" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="0" y="50" width="100" height="100" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="47.00" cy="90.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polyline points="4,121 4,146 9,146" fill="none" stroke="#c00" stroke-width="1"/>
+  <line x1="26" y1="146" x2="99" y2="146" stroke="#c00" stroke-width="1"/>
+  <rect x="92" y="122" width="2" height="12" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="93.00" cy="132.00" rx="0.50" ry="0.50" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="21.00" cy="74.00" rx="5.00" ry="5.00" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <path d="M 12.00 128.00 A 2.00 2.00 0 0 0 10.34 128.88" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 13.68 128.91 A 2.00 2.00 0 0 0 12.00 128.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 12.10 126.50 A 3.50 3.50 0 0 0 9.20 128.04" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 15.00 128.04 A 3.50 3.50 0 0 0 12.10 126.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 12.00 125.00 A 5.00 5.00 0 0 0 7.81 127.28" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 16.19 127.28 A 5.00 5.00 0 0 0 12.00 125.00" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="20" cy="200" r="1.5" fill="#000"/>
+  <circle cx="80" cy="200" r="1.5" fill="#000"/>
+  <text x="16" y="95.00" font-family="sans-serif" font-size="9" fill="#333">⚙</text>
+  <text x="17" y="194.00" font-family="sans-serif" font-size="5" fill="#333">N</text>
+  <text x="78" y="194.00" font-family="sans-serif" font-size="5" fill="#333">L</text>
+</svg>

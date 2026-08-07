@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="71" height="174" viewBox="-30.00 -82.00 71.00 174.00">
+  <rect x="-20" y="-70" width="45" height="154" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-7.00" cy="-15.00" rx="2.00" ry="2.00" fill="#000" stroke="#000" stroke-width="1"/>
+  <ellipse cx="11.00" cy="60.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-7.00" cy="21.00" rx="2.00" ry="2.00" fill="#000" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-7.00" cy="3.00" rx="2.00" ry="2.00" fill="#000" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-7.00" cy="21.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-7.00" cy="3.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-10" y1="21" x2="-5" y2="21" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-13.50" cy="-31.00" rx="2.00" ry="2.00" fill="#dd0" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="3" x2="-5" y2="3" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-13.50" cy="-41.00" rx="2.00" ry="2.00" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-16.50" cy="60.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-5.50" cy="60.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="22.00" cy="60.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="60.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-5.5" y1="58" x2="-5.5" y2="62" stroke="#000" stroke-width="1"/>
+  <path d="M -2.03 3.52 A 5.00 5.00 0 1 0 -9.72 7.19" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -2.03 21.52 A 5.00 5.00 0 1 0 -9.72 25.19" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="5.50" cy="60.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-20" y="-75" width="45" height="12" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-11.00" cy="60.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-16.5" y1="58" x2="-16.5" y2="62" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="58" x2="0" y2="62" stroke="#000" stroke-width="1"/>
+  <ellipse cx="16.50" cy="60.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="5.5" y1="58" x2="5.5" y2="62" stroke="#000" stroke-width="1"/>
+  <line x1="16.5" y1="58" x2="16.5" y2="62" stroke="#000" stroke-width="1"/>
+  <line x1="11" y1="58" x2="11" y2="62" stroke="#000" stroke-width="1"/>
+  <line x1="22" y1="58" x2="22" y2="62" stroke="#000" stroke-width="1"/>
+  <line x1="-11" y1="58" x2="-11" y2="62" stroke="#000" stroke-width="1"/>
+  <rect x="5" y="-55" width="18" height="8" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="15.5" y1="-68" x2="20.5" y2="-68" stroke="#000" stroke-width="1"/>
+  <line x1="-15.5" y1="72" x2="-10.5" y2="72" stroke="#000" stroke-width="1"/>
+  <line x1="0.5" y1="-68" x2="5.5" y2="-68" stroke="#000" stroke-width="1"/>
+  <ellipse cx="18.00" cy="-68.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="19.00" cy="72.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="3.00" cy="-68.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="16.5" y1="72" x2="21.5" y2="72" stroke="#000" stroke-width="1"/>
+  <line x1="0.5" y1="72" x2="5.5" y2="72" stroke="#000" stroke-width="1"/>
+  <line x1="19" y1="70" x2="19" y2="74" stroke="#000" stroke-width="1"/>
+  <line x1="18" y1="-70" x2="18" y2="-66" stroke="#000" stroke-width="1"/>
+  <ellipse cx="3.00" cy="72.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="-70" x2="3" y2="-66" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="70" x2="3" y2="74" stroke="#000" stroke-width="1"/>
+  <line x1="-13" y1="70" x2="-13" y2="74" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-13.00" cy="72.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-13.00" cy="-68.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-15.5" y1="-68" x2="-10.5" y2="-68" stroke="#000" stroke-width="1"/>
+  <line x1="-13" y1="-70" x2="-13" y2="-66" stroke="#000" stroke-width="1"/>
+  <rect x="-20" y="67" width="45" height="12" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-20" y="51" width="45" height="16" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-7.00" cy="-15.00" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="3" y1="-59" x2="23" y2="-59" stroke="#0a0" stroke-width="2"/>
+  <line x1="-10" y1="-15" x2="-5" y2="-15" stroke="#000" stroke-width="1"/>
+  <path d="M -2.03 -14.48 A 5.00 5.00 0 1 0 -9.72 -10.81" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="-10" y="-55.00" font-family="sans-serif" font-size="4" fill="#333">Electric</text>
+  <text x="-4" y="-72.00" font-family="sans-serif" font-size="4" fill="#333">3L2</text>
+  <text x="-13" y="9.00" font-family="sans-serif" font-size="4" fill="#333">A</text>
+  <text x="-13" y="27.00" font-family="sans-serif" font-size="4" fill="#333">A</text>
+  <text x="-15" y="4.00" font-family="sans-serif" font-size="4" fill="#333">B</text>
+  <text x="-15" y="22.00" font-family="sans-serif" font-size="4" fill="#333">B</text>
+  <text x="-12" y="16.00" font-family="sans-serif" font-size="4" fill="#333">C</text>
+  <text x="-12" y="-2.00" font-family="sans-serif" font-size="4" fill="#333">C</text>
+  <text x="-5" y="16.00" font-family="sans-serif" font-size="4" fill="#333">D</text>
+  <text x="-5" y="-2.00" font-family="sans-serif" font-size="4" fill="#333">D</text>
+  <text x="-1" y="22.00" font-family="sans-serif" font-size="4" fill="#333">E</text>
+  <text x="-1" y="4.00" font-family="sans-serif" font-size="4" fill="#333">E</text>
+  <text x="11" y="-72.00" font-family="sans-serif" font-size="4" fill="#333">5L3</text>
+  <text x="-5" y="78.00" font-family="sans-serif" font-size="4" fill="#333">4T2</text>
+  <text x="-19" y="78.00" font-family="sans-serif" font-size="4" fill="#333">2T1</text>
+  <text x="11" y="78.00" font-family="sans-serif" font-size="4" fill="#333">6T3</text>
+  <text x="-19" y="-72.00" font-family="sans-serif" font-size="4" fill="#333">1L1</text>
+  <text x="-18" y="-58.00" font-family="sans-serif" font-size="4" fill="#333">Schneider</text>
+  <text x="-10" y="-40.00" font-family="sans-serif" font-size="4" fill="#333">Power ON</text>
+  <text x="-18" y="-35.00" font-family="sans-serif" font-size="4" fill="#333">Altistar 01</text>
+  <text x="-10" y="-30.00" font-family="sans-serif" font-size="4" fill="#333">Full Voltage</text>
+  <text x="3" y="-8.00" font-family="sans-serif" font-size="4" fill="#333">Start Time</text>
+  <text x="3" y="10.00" font-family="sans-serif" font-size="4" fill="#333">Initial Voltage</text>
+  <text x="3" y="28.00" font-family="sans-serif" font-size="4" fill="#333">Stop Time</text>
+  <text x="-13" y="-9.00" font-family="sans-serif" font-size="4" fill="#333">A</text>
+  <text x="-15" y="-14.00" font-family="sans-serif" font-size="4" fill="#333">B</text>
+  <text x="-12" y="-20.00" font-family="sans-serif" font-size="4" fill="#333">C</text>
+  <text x="-5" y="-20.00" font-family="sans-serif" font-size="4" fill="#333">D</text>
+  <text x="-1" y="-14.00" font-family="sans-serif" font-size="4" fill="#333">E</text>
+</svg>

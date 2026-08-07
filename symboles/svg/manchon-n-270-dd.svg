@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="34" viewBox="-22.00 -17.00 44.00 34.00">
+  <path d="M -8.00 -8.00 A 1.00 1.00 0 0 0 -10.00 -8.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -10.00 8.00 A 1.00 1.00 0 0 0 -8.00 8.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 10.00 -8.00 A 1.00 1.00 0 0 0 8.00 -8.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 8.00 8.00 A 1.00 1.00 0 0 0 10.00 8.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-7" x2="-10" y2="7" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-7" x2="-8" y2="7" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-7" x2="10" y2="7" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="-7" x2="8" y2="7" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-7" x2="7" y2="-7" stroke="#000" stroke-width="1"/>
+  <line x1="-7" y1="7" x2="7" y2="7" stroke="#000" stroke-width="1"/>
+  <line x1="-4" y1="0" x2="4" y2="0" stroke="#000" stroke-width="1"/>
+  <circle cx="10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="0" r="1.5" fill="#000"/>
+</svg>
