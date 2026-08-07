@@ -358,8 +358,56 @@ def lister(source):
     return sorted(trouves)
 
 
-def categorie_de(chemin_relatif):
-    return chemin_relatif.split(os.sep)[0] if os.sep in chemin_relatif else "divers"
+# Les dossiers de la collection amont sont nommes en anglais. On les traduit
+# ici, une fois, plutot que dans chaque page : l'index est ce que lisent les
+# pages, les recherches et l'indexation documentaire. Il doit parler francais.
+FAMILLES = {
+    "10_electric": "Électrotechnique",
+    "20_logic": "Logique",
+    "30_hydraulic": "Hydraulique",
+    "50_pneumatic": "Pneumatique",
+    "60_energy": "Énergie et fluides",
+}
+
+SOUS_FAMILLES = {
+    "10_electric/10_allpole": "Multifilaire (tous pôles)",
+    "10_electric/11_singlepole": "Unifilaire",
+    "10_electric/90_american_standards": "Normes américaines",
+    "10_electric/91_en_60617": "Symboles EN 60617",
+    "10_electric/98_graphics": "Appareils vus de face (plans d'implantation)",
+    "10_electric/99_miscellaneous_unsorted": "Divers non classés",
+    "20_logic/2010_logic_gates": "Portes logiques",
+    "20_logic/2020_flow_chart": "Logigrammes",
+    "30_hydraulic/21_tanks": "Réservoirs",
+    "30_hydraulic/31_control_valves": "Distributeurs et vannes de commande",
+    "30_hydraulic/45_valves": "Vannes",
+    "30_hydraulic/51_cylinders": "Vérins",
+    "30_hydraulic/61_pumps": "Pompes",
+    "30_hydraulic/71_exchangers": "Échangeurs",
+    "30_hydraulic/81_filters": "Filtres",
+    "50_pneumatic/5010_compressed_air": "Air comprimé",
+    "50_pneumatic/5020_velves": "Distributeurs et vannes",
+    "50_pneumatic/5030_actuators": "Actionneurs",
+    "50_pneumatic/5040_sensors": "Capteurs",
+    "60_energy/11_water": "Eau et plomberie",
+    "60_energy/21_refrigeration": "Froid et climatisation",
+    "60_energy/31_solar_thermal": "Solaire thermique",
+}
+
+
+def classer(chemin_relatif):
+    """(identifiant amont, famille francaise, sous-famille francaise).
+
+    L'identifiant amont est conserve dans l'index : c'est lui qui permet de
+    retrouver l'element dans la collection d'origine quand un dessin pose
+    question.
+    """
+    parts = chemin_relatif.replace(os.sep, "/").split("/")
+    cle1 = parts[0] if len(parts) > 1 else "divers"
+    cle2 = "/".join(parts[:2]) if len(parts) > 2 else None
+    return (cle1,
+            FAMILLES.get(cle1, cle1),
+            SOUS_FAMILLES.get(cle2) if cle2 else None)
 
 
 def prefixe_commun(a, b):
@@ -476,12 +524,14 @@ def main():
     for slug, e in attribues:
         with open(os.path.join(dossier_svg, slug + ".svg"), "w", encoding="utf-8") as f:
             f.write(e["svg"])
+        cle, famille, sous_famille = classer(e["source"])
         index.append({
             "id": slug,
             "nom": e["nom"],
             "nom_en": e["nom_en"],
-            "categorie": categorie_de(e["source"].replace("/", os.sep)),
-            "dossier": os.path.dirname(e["source"]),
+            "famille": famille,
+            "sous_famille": sous_famille,
+            "famille_id": cle,
             "source": e["source"],
             "fichier": f"svg/{slug}.svg",
             "viewBox": e["infos"]["viewBox"],
@@ -489,24 +539,30 @@ def main():
         })
 
     index.sort(key=lambda s: s["id"])
-    par_categorie = {}
+    par_famille = {}
     for s in index:
-        par_categorie[s["categorie"]] = par_categorie.get(s["categorie"], 0) + 1
+        par_famille[s["famille"]] = par_famille.get(s["famille"], 0) + 1
+    par_famille = dict(sorted(par_famille.items(), key=lambda kv: -kv[1]))
 
     with open(os.path.join(args.sortie, "index.json"), "w", encoding="utf-8") as f:
         json.dump({
             "meta": {
                 "version": "3.0",
-                "titre": "inerWeb — bibliotheque de symboles QElectroTech",
+                "titre": "inerWeb — bibliothèque de symboles QElectroTech",
                 "source": "https://github.com/qelectrotech/qelectrotech-elements",
                 "licence": "CC BY 3.0",
                 "attribution": (
-                    "Symboles issus de la collection d'elements QElectroTech "
-                    "(https://qelectrotech.org/), publiee sous Creative Commons "
+                    "Symboles issus de la collection d'éléments QElectroTech "
+                    "(https://qelectrotech.org/), publiée sous Creative Commons "
                     "Attribution 3.0, convertis en SVG par F. Henninot."
                 ),
+                "restriction": (
+                    "La licence amont interdit l'usage de ces fichiers comme "
+                    "données d'entraînement pour un modèle d'apprentissage "
+                    "automatique."
+                ),
                 "nombre": len(index),
-                "par_categorie": par_categorie,
+                "par_famille": par_famille,
                 "catalogues_constructeurs": bool(args.tout),
             },
             "symboles": index,
@@ -515,7 +571,8 @@ def main():
     print(f"elements lus   : {len(elements)}")
     print(f"SVG ecrits     : {len(index)}")
     print(f"noms uniques   : {sum(1 for lot in homonymes.values() if len(lot) == 1)}")
-    print(f"par categorie  : {par_categorie}")
+    for fam, n in par_famille.items():
+        print(f"  {n:5d}  {fam}")
     for motif, n in sorted(rejets.items(), key=lambda kv: -kv[1]):
         print(f"  ecarte ({motif}) : {n}")
 

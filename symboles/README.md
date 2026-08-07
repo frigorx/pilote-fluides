@@ -28,18 +28,35 @@ utilisent le même compresseur pointent le même fichier.
 | | |
 |---|---|
 | `svg/` | 4 704 fichiers `.svg` autonomes, 8 Mo au total, 2 Ko en médiane |
-| `index.json` | le catalogue : identifiant, nom fr/en, catégorie, chemin source, `viewBox`, nombre de bornes |
+| `index.json` | le catalogue : identifiant, nom fr/en, famille, sous-famille, chemin source, `viewBox`, nombre de bornes |
 | `outils/qet-vers-svg.py` | l'outil qui fabrique les deux ci-dessus |
 
-Répartition par famille :
+Répartition par famille et sous-famille — **tout est nommé en français** dans
+l'index, même si les dossiers de la collection amont, eux, sont en anglais :
 
-| Famille | Symboles |
-|---|---|
-| `10_electric` — électrotechnique (CEI 60617, unifilaire, multifilaire) | 2 890 |
-| `60_energy` — énergie, eau, **froid et climatisation**, solaire thermique | 1 302 |
-| `50_pneumatic` — pneumatique | 343 |
-| `30_hydraulic` — hydraulique | 94 |
-| `20_logic` — logique et logigrammes | 75 |
+| Famille | Sous-famille | Symboles |
+|---|---|--:|
+| **Électrotechnique** | Multifilaire (tous pôles) | 940 |
+| | Symboles EN 60617 | 908 |
+| | Appareils vus de face (plans d'implantation) | 719 |
+| | Unifilaire | 308 |
+| | Divers non classés | 11 |
+| | Normes américaines | 4 |
+| **Énergie et fluides** | Eau et plomberie | 817 |
+| | **Froid et climatisation** | 324 |
+| | Solaire thermique | 161 |
+| **Pneumatique** | Distributeurs et vannes | 172 |
+| | Air comprimé | 102 |
+| | Actionneurs | 59 |
+| | Capteurs | 10 |
+| **Hydraulique** | Distributeurs et vannes de commande | 60 |
+| | Vannes · Pompes · Vérins · Réservoirs · Échangeurs · Filtres | 34 |
+| **Logique** | Portes logiques | 43 |
+| | Logigrammes | 32 |
+
+Chaque symbole garde aussi `famille_id` (`10_electric`, `60_energy`…) et son
+chemin `source` dans la collection amont : c'est ce qui permet de retrouver
+l'élément d'origine quand un dessin pose question.
 
 **Ce qui a été écarté, volontairement :** les 4 039 éléments des catalogues
 d'articles constructeurs (`*_manufacturers_articles` — références Siemens, WEG,
@@ -94,7 +111,7 @@ Pour chercher un symbole, `index.json` se filtre côté navigateur :
 
 ```js
 const { symboles } = await (await fetch("symboles/index.json")).json();
-const froid = symboles.filter((s) => s.categorie === "60_energy");
+const froid = symboles.filter((s) => s.sous_famille === "Froid et climatisation");
 ```
 
 ---
