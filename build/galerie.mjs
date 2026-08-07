@@ -44,6 +44,14 @@ try {
   /* pas de bibliothèque dans ce dépôt : on n'en parle pas */
 }
 
+/* Même principe pour les schémas de cours : relevés, jamais recopiés. */
+let SCHEMAS = null;
+try {
+  SCHEMAS = JSON.parse(readFileSync(resolve(RACINE, "schemas/index.json"), "utf8"));
+} catch {
+  /* pas de schémas dans ce dépôt */
+}
+
 const esc = (s) =>
   String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -304,6 +312,24 @@ Commons Attribution 3.0</a>, convertis en SVG par F. Henninot. Les rediffuser ob
 cette attribution — et la licence amont interdit par ailleurs de s'en servir comme données
 d'entraînement pour un modèle. Conditions complètes :
 <a href="symboles/LICENCE.md">symboles/LICENCE.md</a>.</span>
+</div>
+`;
+}
+
+if (SCHEMAS?.schemas?.length) {
+  const projets = [...new Set(SCHEMAS.schemas.map((s) => s.projet))];
+  h += `
+<div class="ou">
+<b>Les schémas de cours.</b><br>
+<b>${SCHEMAS.schemas.length} folios</b> dessinés sous QElectroTech pour les TP et les TD —
+${esc(projets.join(" · "))}. Le circuit fluidique, le pump-down, l'armoire CAP IFCA, le
+raccordement du régulateur. Ils sont dans <code>schemas/svg/</code>, une adresse par folio,
+et leurs fichiers source <code>.qet</code> sont à côté dans <code>schemas/qet/</code> :
+un collègue peut les rouvrir et les modifier, pas seulement les regarder.<br>
+<span class="meta">Le tracé des conducteurs est <b>recalculé</b> par l'outil de conversion —
+QElectroTech ne le stocke pas dans le fichier. Le résultat tient, mais une liaison peut
+passer ailleurs que dans le logiciel : à vérifier avant d'imprimer un sujet d'évaluation.
+Détail et régénération : <a href="schemas/README.md">schemas/README.md</a>.</span>
 </div>
 `;
 }
