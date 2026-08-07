@@ -1,0 +1,1267 @@
+<project title="chema fluidique ccf" version="0.90">
+    <properties>
+        <property name="saveddate" show="1">07/12/2021</property>
+        <property name="savedfilename" show="1">chema fluidique ccf</property>
+        <property name="savedtime" show="1">19:05</property>
+        <property name="savedfilepath" show="1">C:/Users/henni/Desktop/ccf/chema fluidique ccf.qet</property>
+        <property name="saveddate-eu" show="1">07-12-2021</property>
+        <property name="saveddate-us" show="1">2021-12-07</property>
+    </properties>
+    <newdiagrams>
+        <border rows="8" displayrows="true" colsize="60" cols="17" rowsize="80" displaycols="true"/>
+        <inset filename="" indexrev="" displayAt="bottom" title="" author="" date="null" plant="" version="" locmach="" auto_page_num="" folio="%id/%total"/>
+        <conductors condsize="1" tension_protocol="" conductor_color="" cable="" type="multi" displaytext="1" dash-size="1" vertirotatetext="270" color2="#000000" horizrotatetext="0" formula="" bus="" conductor_section="" function="" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight"/>
+        <report label="%f-%l%c"/>
+        <xrefs>
+            <xref type="commutator" showpowerctc="true" snapto="label" switchprefix="" powerprefix="" master_label="%f-%l%c" displayhas="cross" offset="0" xrefpos="" slave_label="(%f-%l%c)" delayprefix=""/>
+            <xref type="protection" showpowerctc="true" snapto="label" switchprefix="" powerprefix="" master_label="%f-%l%c" displayhas="cross" offset="0" xrefpos="" slave_label="(%f-%l%c)" delayprefix=""/>
+            <xref type="coil" showpowerctc="true" snapto="label" switchprefix="" powerprefix="" master_label="%f-%l%c" displayhas="cross" offset="0" xrefpos="" slave_label="(%f-%l%c)" delayprefix=""/>
+        </xrefs>
+        <conductors_autonums current_autonum="" freeze_new_conductors="false"/>
+        <folio_autonums/>
+        <element_autonums freeze_new_elements="false" current_autonum=""/>
+    </newdiagrams>
+    <diagram indexrev="" order="1" auto_page_num="" locmach="" author="" freezeNewConductor="false" displaycols="true" rows="8" rowsize="80" filename="" folio="%id/%total" cols="17" title="" height="660" freezeNewElement="false" date="null" version="0.90-DEV+a765fe24bc957a06d79751d3" displayAt="bottom" colsize="60" plant="" displayrows="true">
+        <defaultconductor condsize="1" tension_protocol="" conductor_color="" cable="" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" bus="" conductor_section="" function="" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight"/>
+        <elements>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/compresseursetventilateurs/compresseur-general.elmt" z="10" freezeLabel="false" prefix="" uuid="{c22c1c2d-6754-4e21-8e4f-9434d3febfc6}" x="560" y="290" orientation="0">
+                <terminals>
+                    <terminal x="-6" y="-10" orientation="3" id="0"/>
+                    <terminal x="-12" y="0" orientation="3" id="1"/>
+                    <terminal x="12" y="0" orientation="1" id="2"/>
+                    <terminal x="-6" y="10" orientation="3" id="3"/>
+                    <terminal x="6" y="11" orientation="3" id="4"/>
+                    <terminal x="6" y="11" orientation="3" id="5"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{5648c5a8-4818-4663-8790-7d1720b6ad86}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" x="-7" Halignment="AlignLeft" y="3.05" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/echangeurs/echangeuraair.elmt" z="10" freezeLabel="false" prefix="" uuid="{d4e671db-1080-4063-bdee-6d3f662e87d4}" x="630" y="290" orientation="1">
+                <terminals>
+                    <terminal x="-15" y="20" orientation="3" id="6"/>
+                    <terminal x="15" y="20" orientation="1" id="7"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{94983e57-ea9a-4fc3-8abe-dcb1addaebbc}" text_width="-1" frame="false" font="Sans Serif,5,-1,5,0,0,0,0,0,0,normal" x="19" Halignment="AlignLeft" y="-10.1667" rotation="270">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/echangeurs/echangeuraair.elmt" z="10" freezeLabel="false" prefix="" uuid="{a5351958-44b3-4e90-b4ff-2bfda7935834}" x="580" y="530" orientation="3">
+                <terminals>
+                    <terminal x="-15" y="20" orientation="3" id="8"/>
+                    <terminal x="15" y="20" orientation="1" id="9"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{68455774-a80e-435b-91b2-f0e7b61f0b13}" text_width="-1" frame="false" font="Sans Serif,5,-1,5,0,0,0,0,0,0,normal" x="19" Halignment="AlignLeft" y="-10.1667" rotation="90">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/desy.elmt" z="10" freezeLabel="false" prefix="" uuid="{ed133d90-2157-47e4-8177-1a5934a6dc7f}" x="460" y="320" orientation="2">
+                <terminals>
+                    <terminal x="-15.5" y="0.494709" orientation="3" id="10"/>
+                    <terminal x="5.75" y="0.494709" orientation="1" id="11"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{6b01486f-1415-4cb2-952b-51db8568109e}" text_width="-1" frame="false" font="Sans Serif,5,-1,5,50,0,0,0,0,0" x="-16" Halignment="AlignLeft" y="11.5" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/controles/presostato-mini.elmt" z="10" freezeLabel="false" prefix="" uuid="{378725f2-0b87-42f4-b839-507c9636e946}" x="530" y="360" orientation="0">
+                <terminals>
+                    <terminal x="3" y="-17" orientation="1" id="12"/>
+                    <terminal x="0" y="-4" orientation="2" id="13"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="label" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts/>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/controles/presostato-mini.elmt" z="10" freezeLabel="false" prefix="" uuid="{98b5a71d-047e-43a5-899b-b432d73ea9db}" x="530" y="260" orientation="0">
+                <terminals>
+                    <terminal x="3" y="-17" orientation="1" id="14"/>
+                    <terminal x="0" y="-4" orientation="2" id="15"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts/>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/robinetsdisolement/vanneisolementetservicedroite.elmt" z="10" freezeLabel="false" prefix="" uuid="{d2309648-e969-4d5c-8960-e11d70354655}" x="500" y="290" orientation="0">
+                <terminals>
+                    <terminal x="-7" y="0" orientation="3" id="16"/>
+                    <terminal x="7" y="0" orientation="1" id="17"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{2426573c-c941-4a94-97e5-8b612e01e6bb}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" x="-7" Halignment="AlignLeft" y="-11.95" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/robinetsdisolement/vanneisolementetservicedroite.elmt" z="10" freezeLabel="false" prefix="" uuid="{8591240b-1e8c-4cc3-8a61-930996b782ee}" x="500" y="320" orientation="2">
+                <terminals>
+                    <terminal x="-7" y="0" orientation="3" id="18"/>
+                    <terminal x="7" y="0" orientation="1" id="19"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{2426573c-c941-4a94-97e5-8b612e01e6bb}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" x="-10" Halignment="AlignLeft" y="-10" rotation="180">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/voyanliqide.elmt" z="10" freezeLabel="false" prefix="" uuid="{cf6a095f-ac8e-4db0-8ae7-ecdcfcb39f41}" x="400" y="320" orientation="0">
+                <terminals>
+                    <terminal x="-3.7" y="-0.0538826" orientation="3" id="20"/>
+                    <terminal x="23.3" y="-0.0538826" orientation="1" id="21"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{8d847e59-39da-4831-a000-af871700dab6}" text_width="-1" frame="false" font="Sans Serif,4,-1,5,25,0,0,0,0,0" x="7" Halignment="AlignLeft" y="-14" rotation="90">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/intercambiadores/recipiente-horiz.elmt" z="10" freezeLabel="false" prefix="" uuid="{9879c263-8117-4b3f-8ad0-56ff2d5f8160}" x="590" y="350" orientation="0">
+                <terminals>
+                    <terminal x="-20" y="-16" orientation="0" id="22"/>
+                    <terminal x="20" y="-16" orientation="0" id="23"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{471e33f0-064f-40cf-81df-33c7209fddad}" text_width="-1" frame="false" font="Sans Serif,4,-1,5,0,0,0,0,0,0,normal" x="-10" Halignment="AlignLeft" y="-4.5" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/vem.elmt" z="10" freezeLabel="false" prefix="" uuid="{79ac2ea4-a2bd-4247-8d11-7f0c1ccc58e2}" x="600" y="450" orientation="1">
+                <terminals>
+                    <terminal x="0" y="-16" orientation="0" id="24"/>
+                    <terminal x="-7" y="0" orientation="3" id="25"/>
+                    <terminal x="7" y="0" orientation="1" id="26"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{548aa7a3-549c-49d2-a4e9-1cf9c1eb3a26}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,50,0,0,0,0,0" x="-7" Halignment="AlignLeft" y="-11.95" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/detendeur.elmt" z="10" freezeLabel="false" prefix="" uuid="{ddbc7da4-1fc9-41ed-9779-330c467393b9}" x="600" y="490" orientation="1">
+                <terminals>
+                    <terminal x="0" y="-18" orientation="0" id="27"/>
+                    <terminal x="-7" y="0" orientation="3" id="28"/>
+                    <terminal x="7" y="0" orientation="1" id="29"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{ac8f5ad9-2e80-488a-8e3b-4d6ecf4e1910}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,50,0,0,0,0,0" x="-7" Halignment="AlignLeft" y="-11.95" rotation="90">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+        </elements>
+        <conductors>
+            <conductor y="0" condsize="1" terminal1="23" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="7" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="0" condsize="1" terminal1="18" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="22" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="0" condsize="1" terminal1="13" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="18" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <segment length="9" orientation="vertical"/>
+                <segment length="-20" orientation="horizontal"/>
+                <segment length="-49" orientation="vertical"/>
+                <segment length="10" orientation="horizontal"/>
+                <segment length="-9" orientation="horizontal"/>
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="0" condsize="1" terminal1="6" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="2" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="0" condsize="1" terminal1="17" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="1" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="0" condsize="1" terminal1="15" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="17" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <segment length="9" orientation="vertical"/>
+                <segment length="-20" orientation="horizontal"/>
+                <segment length="21" orientation="vertical"/>
+                <segment length="10" orientation="horizontal"/>
+                <segment length="-9" orientation="horizontal"/>
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="0" condsize="1" element1="{79ac2ea4-a2bd-4247-8d11-7f0c1ccc58e2}" terminal1="{b277400b-d8ee-4495-8734-8e5047181ab1}" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="{fa2e7e50-2c9d-45dd-8109-b09f6e6f158b}" num="_" bicolor="false" element2="{cf6a095f-ac8e-4db0-8ae7-ecdcfcb39f41}" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <segment length="-9" orientation="vertical"/>
+                <segment length="-40" orientation="vertical"/>
+                <segment length="-230" orientation="horizontal"/>
+                <segment length="-70.0539" orientation="vertical"/>
+                <segment length="9.96667" orientation="horizontal"/>
+                <segment length="12.3333" orientation="horizontal"/>
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="0" condsize="1" element1="{ed133d90-2157-47e4-8177-1a5934a6dc7f}" terminal1="{765ddeb2-bb52-4e09-aaef-041ba4d74b69}" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="{3d52312b-5002-49f7-bdf2-0d5bc0ceaf3e}" num="_" bicolor="false" element2="{cf6a095f-ac8e-4db0-8ae7-ecdcfcb39f41}" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="0" condsize="1" element1="{ddbc7da4-1fc9-41ed-9779-330c467393b9}" terminal1="{dbf532c1-4477-4068-b155-721f0dc63172}" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="9" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor userx="530" y="0" condsize="1" terminal1="16" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="8" num="_" bicolor="false" horizontal-alignment="AlignBottom" usery="440" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <segment length="-9" orientation="horizontal"/>
+                <segment length="-120" orientation="horizontal"/>
+                <segment length="110" orientation="vertical"/>
+                <segment length="220" orientation="horizontal"/>
+                <segment length="100" orientation="vertical"/>
+                <segment length="-30" orientation="horizontal"/>
+                <segment length="80" orientation="vertical"/>
+                <segment length="50" orientation="horizontal"/>
+                <segment length="-22" orientation="vertical"/>
+                <segment length="-9" orientation="vertical"/>
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="0" condsize="1" terminal1="19" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="{ddef0d8d-74c8-4aed-bd5f-d65417527e0a}" num="_" bicolor="false" element2="{ed133d90-2157-47e4-8177-1a5934a6dc7f}" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="0" condsize="1" element1="{ddbc7da4-1fc9-41ed-9779-330c467393b9}" terminal1="{bc6ba69e-8c83-4dfe-92b6-feac045bc686}" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="8" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="0" condsize="1" element1="{ddbc7da4-1fc9-41ed-9779-330c467393b9}" terminal1="{b277400b-d8ee-4495-8734-8e5047181ab1}" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="0" bus="" conductor_section="" function="" terminal2="{dbf532c1-4477-4068-b155-721f0dc63172}" num="_" bicolor="false" element2="{79ac2ea4-a2bd-4247-8d11-7f0c1ccc58e2}" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+        </conductors>
+        <shapes>
+            <shape type="Line" x1="460" z="0" x2="460" y1="280" closed="0" y2="280" is_movable="1">
+                <pen color="#000000" style="SolidLine" widthF="1"/>
+                <brush color="#000000" style="NoBrush"/>
+            </shape>
+            <shape type="Line" x1="460" z="0" x2="460" y1="290" closed="0" y2="290" is_movable="1">
+                <pen color="#000000" style="SolidLine" widthF="1"/>
+                <brush color="#000000" style="NoBrush"/>
+            </shape>
+        </shapes>
+    </diagram>
+    <diagram indexrev="" order="2" auto_page_num="" locmach="" author="" freezeNewConductor="false" displaycols="true" rows="8" rowsize="80" filename="" folio="%id/%total" cols="17" title="" height="660" freezeNewElement="false" date="null" version="0.90-DEV+a765fe24bc957a06d79751d3" displayAt="bottom" colsize="60" plant="" displayrows="true">
+        <defaultconductor condsize="1" tension_protocol="" conductor_color="" cable="" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" bus="" conductor_section="" function="" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight"/>
+        <elements>
+            <element type="embed://import/desy.elmt" z="10" freezeLabel="false" prefix="" uuid="{82ab1a22-1b66-4634-b57b-47baeb49ae46}" x="530" y="270" orientation="2">
+                <terminals>
+                    <terminal x="-15.5" y="0.494709" orientation="3" id="0"/>
+                    <terminal x="5.75" y="0.494709" orientation="1" id="1"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{6b01486f-1415-4cb2-952b-51db8568109e}" text_width="-1" frame="false" font="Sans Serif,5,-1,5,50,0,0,0,0,0" x="-16" Halignment="AlignLeft" y="11.5" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/desy.elmt" z="10" freezeLabel="false" prefix="" uuid="{e6c16643-0be2-439e-9927-2be48be8329a}" x="280" y="270" orientation="2">
+                <terminals>
+                    <terminal x="-15.5" y="0.494709" orientation="3" id="2"/>
+                    <terminal x="5.75" y="0.494709" orientation="1" id="3"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{6b01486f-1415-4cb2-952b-51db8568109e}" text_width="-1" frame="false" font="Sans Serif,5,-1,5,50,0,0,0,0,0" x="-16" Halignment="AlignLeft" y="11.5" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/detendeur.elmt" z="10" freezeLabel="false" prefix="" uuid="{0e145e26-e4a1-4a4b-b540-6c60d2aea020}" x="270" y="390" orientation="1">
+                <terminals>
+                    <terminal x="0" y="-18" orientation="0" id="4"/>
+                    <terminal x="-7" y="0" orientation="3" id="5"/>
+                    <terminal x="7" y="0" orientation="1" id="6"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{ac8f5ad9-2e80-488a-8e3b-4d6ecf4e1910}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,50,0,0,0,0,0" x="-7" Halignment="AlignLeft" y="-11.95" rotation="90">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/echangeurs/echangeuraair.elmt" z="10" freezeLabel="false" prefix="" uuid="{9e196f81-f083-4f17-8921-c176dbb2477e}" x="700" y="240" orientation="1">
+                <terminals>
+                    <terminal x="-15" y="20" orientation="3" id="7"/>
+                    <terminal x="15" y="20" orientation="1" id="8"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{94983e57-ea9a-4fc3-8abe-dcb1addaebbc}" text_width="-1" frame="false" font="Sans Serif,5,-1,5,0,0,0,0,0,0,normal" x="19" Halignment="AlignLeft" y="-10.1667" rotation="270">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/echangeurs/echangeuraair.elmt" z="10" freezeLabel="false" prefix="" uuid="{6370a2db-9fcf-4c63-8e0c-9ace3ea0708e}" x="650" y="480" orientation="3">
+                <terminals>
+                    <terminal x="-15" y="20" orientation="3" id="9"/>
+                    <terminal x="15" y="20" orientation="1" id="10"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{68455774-a80e-435b-91b2-f0e7b61f0b13}" text_width="-1" frame="false" font="Sans Serif,5,-1,5,0,0,0,0,0,0,normal" x="19" Halignment="AlignLeft" y="-10.1667" rotation="90">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/voyanliqide.elmt" z="10" freezeLabel="false" prefix="" uuid="{32996f96-877e-47c7-8a05-bb9d9172df3b}" x="470" y="270" orientation="0">
+                <terminals>
+                    <terminal x="-3.7" y="-0.0538826" orientation="3" id="11"/>
+                    <terminal x="23.3" y="-0.0538826" orientation="1" id="12"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{8d847e59-39da-4831-a000-af871700dab6}" text_width="-1" frame="false" font="Sans Serif,4,-1,5,25,0,0,0,0,0" x="7" Halignment="AlignLeft" y="-14" rotation="90">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/intercambiadores/recipiente-horiz.elmt" z="10" freezeLabel="false" prefix="" uuid="{f81db83d-b974-4860-8a2f-a97504ff269a}" x="660" y="300" orientation="0">
+                <terminals>
+                    <terminal x="-20" y="-16" orientation="0" id="13"/>
+                    <terminal x="20" y="-16" orientation="0" id="14"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{471e33f0-064f-40cf-81df-33c7209fddad}" text_width="-1" frame="false" font="Sans Serif,4,-1,5,0,0,0,0,0,0,normal" x="-10" Halignment="AlignLeft" y="-4.5" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/robinetsdisolement/vanneisolementetservicedroite.elmt" z="10" freezeLabel="false" prefix="" uuid="{e858115a-605c-4393-a926-8e5c15972041}" x="570" y="240" orientation="0">
+                <terminals>
+                    <terminal x="-7" y="0" orientation="3" id="15"/>
+                    <terminal x="7" y="0" orientation="1" id="16"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{2426573c-c941-4a94-97e5-8b612e01e6bb}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" x="-7" Halignment="AlignLeft" y="-11.95" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/compresseursetventilateurs/compresseur-general.elmt" z="10" freezeLabel="false" prefix="" uuid="{8b1d4682-e54e-4d18-9260-62fb0d5f2836}" x="630" y="240" orientation="0">
+                <terminals>
+                    <terminal x="-6" y="-10" orientation="3" id="17"/>
+                    <terminal x="-12" y="0" orientation="3" id="18"/>
+                    <terminal x="12" y="0" orientation="1" id="19"/>
+                    <terminal x="-6" y="10" orientation="3" id="20"/>
+                    <terminal x="6" y="11" orientation="3" id="21"/>
+                    <terminal x="6" y="11" orientation="3" id="22"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{5648c5a8-4818-4663-8790-7d1720b6ad86}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" x="-7" Halignment="AlignLeft" y="3.05" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/controles/presostato-mini.elmt" z="10" freezeLabel="false" prefix="" uuid="{e8502d8d-984c-4cc5-927f-1bb3bb5ef915}" x="600" y="310" orientation="0">
+                <terminals>
+                    <terminal x="3" y="-17" orientation="1" id="23"/>
+                    <terminal x="0" y="-4" orientation="2" id="24"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts/>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/vem.elmt" z="10" freezeLabel="false" prefix="" uuid="{5717203e-3f22-4602-a259-f5d61d5b14fa}" x="670" y="400" orientation="1">
+                <terminals>
+                    <terminal x="0" y="-16" orientation="0" id="25"/>
+                    <terminal x="-7" y="0" orientation="3" id="26"/>
+                    <terminal x="7" y="0" orientation="1" id="27"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{548aa7a3-549c-49d2-a4e9-1cf9c1eb3a26}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,50,0,0,0,0,0" x="-7" Halignment="AlignLeft" y="-11.95" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/vem.elmt" z="10" freezeLabel="false" prefix="" uuid="{12c2477f-0d41-4eb9-bc9d-f1d82c0a2a39}" x="280" y="330" orientation="1">
+                <terminals>
+                    <terminal x="0" y="-16" orientation="0" id="28"/>
+                    <terminal x="-7" y="0" orientation="3" id="29"/>
+                    <terminal x="7" y="0" orientation="1" id="30"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{548aa7a3-549c-49d2-a4e9-1cf9c1eb3a26}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,50,0,0,0,0,0" x="-7" Halignment="AlignLeft" y="-11.95" rotation="0">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/controles/presostato-mini.elmt" z="10" freezeLabel="false" prefix="" uuid="{450a7949-696c-4f13-9c5f-f2df78a162c9}" x="600" y="210" orientation="0">
+                <terminals>
+                    <terminal x="3" y="-17" orientation="1" id="31"/>
+                    <terminal x="0" y="-4" orientation="2" id="32"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts/>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/detendeur.elmt" z="10" freezeLabel="false" prefix="" uuid="{bc246dbe-26ea-4803-abbe-9a83e21fa304}" x="670" y="440" orientation="1">
+                <terminals>
+                    <terminal x="0" y="-18" orientation="0" id="33"/>
+                    <terminal x="-7" y="0" orientation="3" id="34"/>
+                    <terminal x="7" y="0" orientation="1" id="35"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{ac8f5ad9-2e80-488a-8e3b-4d6ecf4e1910}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,50,0,0,0,0,0" x="-7" Halignment="AlignLeft" y="-11.95" rotation="90">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/60_energy/21_refrigeration/Frio/sinopticosfrio/robinetsdisolement/vanneisolementetservicedroite.elmt" z="10" freezeLabel="false" prefix="" uuid="{3e53e02d-6060-4083-9bd4-674a0a9847d1}" x="570" y="270" orientation="2">
+                <terminals>
+                    <terminal x="-7" y="0" orientation="3" id="36"/>
+                    <terminal x="7" y="0" orientation="1" id="37"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="true" Valignment="AlignTop" text_from="ElementInfo" uuid="{2426573c-c941-4a94-97e5-8b612e01e6bb}" text_width="-1" frame="false" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" x="-10" Halignment="AlignLeft" y="-10" rotation="180">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+            <element type="embed://import/voyanliqide.elmt" z="10" freezeLabel="false" prefix="" uuid="{4636bdd6-5a44-4bb4-90e2-83f30b35b41b}" x="280" y="220" orientation="0">
+                <terminals>
+                    <terminal x="-3.7" y="-0.0538826" orientation="3" id="38"/>
+                    <terminal x="23.3" y="-0.0538826" orientation="1" id="39"/>
+                </terminals>
+                <inputs/>
+                <elementInformations>
+                    <elementInformation name="location" show="1"></elementInformation>
+                    <elementInformation name="label" show="1"></elementInformation>
+                    <elementInformation name="formula" show="1"></elementInformation>
+                    <elementInformation name="comment" show="1"></elementInformation>
+                </elementInformations>
+                <dynamic_texts>
+                    <dynamic_elmt_text keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{8d847e59-39da-4831-a000-af871700dab6}" text_width="-1" frame="false" font="Sans Serif,4,-1,5,25,0,0,0,0,0" x="7" Halignment="AlignLeft" y="-14" rotation="90">
+                        <text></text>
+                        <info_name>label</info_name>
+                    </dynamic_elmt_text>
+                </dynamic_texts>
+                <texts_groups/>
+            </element>
+        </elements>
+        <conductors>
+            <conductor y="-50" condsize="1" terminal1="37" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="{ddef0d8d-74c8-4aed-bd5f-d65417527e0a}" num="_" bicolor="false" element2="{82ab1a22-1b66-4634-b57b-47baeb49ae46}" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="-50" condsize="1" element1="{bc246dbe-26ea-4803-abbe-9a83e21fa304}" terminal1="{bc6ba69e-8c83-4dfe-92b6-feac045bc686}" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="9" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="-50" condsize="1" element1="{82ab1a22-1b66-4634-b57b-47baeb49ae46}" terminal1="{765ddeb2-bb52-4e09-aaef-041ba4d74b69}" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="{3d52312b-5002-49f7-bdf2-0d5bc0ceaf3e}" num="_" bicolor="false" element2="{32996f96-877e-47c7-8a05-bb9d9172df3b}" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="-50" condsize="1" element1="{bc246dbe-26ea-4803-abbe-9a83e21fa304}" terminal1="{b277400b-d8ee-4495-8734-8e5047181ab1}" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="{dbf532c1-4477-4068-b155-721f0dc63172}" num="_" bicolor="false" element2="{5717203e-3f22-4602-a259-f5d61d5b14fa}" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="-50" condsize="1" element1="{bc246dbe-26ea-4803-abbe-9a83e21fa304}" terminal1="{dbf532c1-4477-4068-b155-721f0dc63172}" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="10" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor userx="530" y="-50" condsize="1" terminal1="15" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="9" num="_" bicolor="false" horizontal-alignment="AlignBottom" usery="440" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <segment length="-9" orientation="horizontal"/>
+                <segment length="-120" orientation="horizontal"/>
+                <segment length="110" orientation="vertical"/>
+                <segment length="220" orientation="horizontal"/>
+                <segment length="100" orientation="vertical"/>
+                <segment length="-30" orientation="horizontal"/>
+                <segment length="80" orientation="vertical"/>
+                <segment length="50" orientation="horizontal"/>
+                <segment length="-22" orientation="vertical"/>
+                <segment length="-9" orientation="vertical"/>
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="-50" condsize="1" terminal1="14" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="8" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="-50" condsize="1" terminal1="24" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="36" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <segment length="9" orientation="vertical"/>
+                <segment length="-20" orientation="horizontal"/>
+                <segment length="-49" orientation="vertical"/>
+                <segment length="10" orientation="horizontal"/>
+                <segment length="-9" orientation="horizontal"/>
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="-50" condsize="1" terminal1="7" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="19" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="-50" condsize="1" terminal1="16" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="18" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="-50" condsize="1" terminal1="32" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="16" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <segment length="9" orientation="vertical"/>
+                <segment length="-20" orientation="horizontal"/>
+                <segment length="21" orientation="vertical"/>
+                <segment length="10" orientation="horizontal"/>
+                <segment length="-9" orientation="horizontal"/>
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="-50" condsize="1" element1="{5717203e-3f22-4602-a259-f5d61d5b14fa}" terminal1="{b277400b-d8ee-4495-8734-8e5047181ab1}" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="{fa2e7e50-2c9d-45dd-8109-b09f6e6f158b}" num="_" bicolor="false" element2="{32996f96-877e-47c7-8a05-bb9d9172df3b}" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <segment length="-9" orientation="vertical"/>
+                <segment length="-40" orientation="vertical"/>
+                <segment length="-230" orientation="horizontal"/>
+                <segment length="-70.0539" orientation="vertical"/>
+                <segment length="9.96667" orientation="horizontal"/>
+                <segment length="12.3333" orientation="horizontal"/>
+                <sequentialNumbers/>
+            </conductor>
+            <conductor y="-50" condsize="1" terminal1="36" tension_protocol="" conductor_color="" cable="" freezeLabel="false" type="multi" displaytext="1" vertirotatetext="270" dash-size="1" color2="#000000" horizrotatetext="0" formula="" x="70" bus="" conductor_section="" function="" terminal2="13" num="_" bicolor="false" horizontal-alignment="AlignBottom" text_color="#000000" numsize="7" onetextperfolio="0" vertical-alignment="AlignRight">
+                <sequentialNumbers/>
+            </conductor>
+        </conductors>
+        <shapes>
+            <shape type="Line" x1="530" z="0" x2="530" y1="240" closed="0" y2="240" is_movable="1">
+                <pen color="#000000" style="SolidLine" widthF="1"/>
+                <brush color="#000000" style="NoBrush"/>
+            </shape>
+            <shape type="Line" x1="530" z="0" x2="530" y1="230" closed="0" y2="230" is_movable="1">
+                <pen color="#000000" style="SolidLine" widthF="1"/>
+                <brush color="#000000" style="NoBrush"/>
+            </shape>
+        </shapes>
+    </diagram>
+    <collection>
+        <category name="import">
+            <names>
+                <name lang="nl">Elementen geïmporteerd</name>
+                <name lang="pl">Elementy importowane</name>
+                <name lang="hr">Uvezeni elementi</name>
+                <name lang="ro">Elemente importate</name>
+                <name lang="de">Importierte elemente</name>
+                <name lang="da">Importerede elementer</name>
+                <name lang="ru">Импортированные элементы</name>
+                <name lang="ca">Elements importats</name>
+                <name lang="fr">Éléments importés</name>
+                <name lang="pt">elementos importados</name>
+                <name lang="it">Elementi importati</name>
+                <name lang="en">Imported elements</name>
+                <name lang="el">Εισηγμένα στοιχεία</name>
+                <name lang="sl">Uvoženi elementi</name>
+                <name lang="es">Elementos importados</name>
+                <name lang="cs">Zavedené prvky</name>
+                <name lang="tr">İthal öğeler</name>
+            </names>
+            <category name="60_energy">
+                <names>
+                    <name lang="nl">Energie</name>
+                    <name lang="pl">Energia</name>
+                    <name lang="ja">エネルギー</name>
+                    <name lang="ar">طاقة</name>
+                    <name lang="de">Energietechnik</name>
+                    <name lang="da">Energi teknik</name>
+                    <name lang="ru">Сантехника</name>
+                    <name lang="fr">Energie</name>
+                    <name lang="it">Energia</name>
+                    <name lang="en">Energy</name>
+                    <name lang="el">Ενέργεια</name>
+                    <name lang="es">Energía</name>
+                    <name lang="cs">Energie</name>
+                </names>
+                <category name="21_refrigeration">
+                    <names>
+                        <name lang="nl">Koelers</name>
+                        <name lang="pl">Instalacje chłodnicze</name>
+                        <name lang="ja">冷凍機</name>
+                        <name lang="ar">تبريد</name>
+                        <name lang="de">Kältetechnik</name>
+                        <name lang="da">Køle teknik</name>
+                        <name lang="fr">Froid</name>
+                        <name lang="it">Refrigerazione</name>
+                        <name lang="en">Refrigeration</name>
+                        <name lang="el">Ψύξη</name>
+                        <name lang="es">Refrigeración</name>
+                        <name lang="cs">Chlazení</name>
+                    </names>
+                    <category name="Frio">
+                        <names>
+                            <name lang="de">Kühlung</name>
+                            <name lang="ca">Refrigeració</name>
+                            <name lang="fr">Refrigeration</name>
+                            <name lang="en">Refrigeration</name>
+                            <name lang="es">Refrigeración</name>
+                        </names>
+                        <category name="sinopticosfrio">
+                            <names>
+                                <name lang="de">Kühlsysteme</name>
+                                <name lang="ca">Esquemes frigorifics</name>
+                                <name lang="fr">Schémas froid</name>
+                                <name lang="en">Refrigerators schemes</name>
+                                <name lang="es">Esquemas frigoríficos</name>
+                            </names>
+                            <category name="compresseursetventilateurs">
+                                <names>
+                                    <name lang="nl">Compressoren, ventilatoren</name>
+                                    <name lang="pl">Kompresory i wentylatory</name>
+                                    <name lang="ar">ضاغطات , مراوح</name>
+                                    <name lang="de">Lüfter und Verdichter</name>
+                                    <name lang="fr">Compresseurs, ventilateurs</name>
+                                    <name lang="it">Compressori, ventilatori</name>
+                                    <name lang="en">Compressors, fans</name>
+                                    <name lang="el">Συμπιεστές, Ανεμιστήρες</name>
+                                    <name lang="es">Compresores, ventiladores</name>
+                                    <name lang="cs">Kompresory a ventilátory</name>
+                                </names>
+                                <element name="compresseur-general.elmt">
+                                    <definition type="element" height="40" link_type="simple" hotspot_y="20" width="50" hotspot_x="24" version="0.5">
+                                        <uuid uuid="{2f3d38e1-da85-4783-81b8-67ce73178c51}"/>
+                                        <names>
+                                            <name lang="cs">Kompresor (obecný symbol)</name>
+                                            <name lang="it">Compressore (segno generale)</name>
+                                            <name lang="pl">Kompresor, symbol ogólny</name>
+                                            <name lang="en">Compressor (general)</name>
+                                            <name lang="nl">Compressor algemeen</name>
+                                            <name lang="ar">ضاغط (رمز عام)</name>
+                                            <name lang="fr">Compresseur (général)</name>
+                                            <name lang="el">Συμπιεστής, γενικό σύμβολο</name>
+                                        </names>
+                                        <informations>Author: The QElectroTech team
+License: see http://qelectrotech.org/wiki/doc/elements_license</informations>
+                                        <description>
+                                            <input size="9" text="_" rotate="true" x="-7" y="14.55" tagg="label"/>
+                                            <circle antialias="true" style="line-style:normal;line-weight:normal;filling:white;color:black" x="-15" y="-15" diameter="30"/>
+                                            <line x1="-15" length1="1.5" x2="-16" end2="none" y1="0" antialias="false" length2="1.5" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="15" length1="1.5" x2="16" end2="none" y1="0" antialias="false" length2="1.5" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="-7" length1="1.5" x2="13" end2="none" y1="-13" antialias="true" length2="1.5" y2="-7" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="-7" length1="1.5" x2="13" end2="none" y1="13" antialias="true" length2="1.5" y2="7" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <terminal x="-16" y="0" orientation="w"/>
+                                            <terminal x="16" y="0" orientation="e"/>
+                                            <terminal x="-10" y="10" orientation="w"/>
+                                            <terminal x="2" y="11" orientation="w"/>
+                                            <terminal x="2" y="11" orientation="w"/>
+                                            <terminal x="-10" y="-10" orientation="w"/>
+                                        </description>
+                                    </definition>
+                                </element>
+                                <element name="compresor.elmt">
+                                    <definition height="40" type="element" link_type="simple" hotspot_y="19" width="30" hotspot_x="14" version="0.5">
+                                        <uuid uuid="{15694E5D-04C4-4973-B620-94129EE5EAC8}"/>
+                                        <names>
+                                            <name lang="es">Compresor</name>
+                                        </names>
+                                        <informations/>
+                                        <description>
+                                            <ellipse height="18.3354" antialias="true" width="18.6469" style="line-style:normal;line-weight:normal;filling:none;color:black" x="-9" y="-9.09572"/>
+                                            <line x1="-3.28713" length1="1.5" x2="-8" y1="-8.33175" end2="none" antialias="false" length2="1.5" y2="4.07197" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="3.934" length1="1.5" x2="8.64687" y1="-8.33175" end2="none" antialias="false" length2="1.5" y2="3.07197" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="0" length1="1.5" x2="0" y1="9.87578" end2="none" antialias="false" length2="1.5" y2="13.5963" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="0" length1="1.5" x2="0" y1="-10" end2="none" antialias="false" length2="1.5" y2="-14" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <input size="5" text="_" rotate="true" x="-20" y="20" tagg="label"/>
+                                            <terminal x="0" y="-14" orientation="n"/>
+                                            <terminal x="0" y="14" orientation="s"/>
+                                        </description>
+                                    </definition>
+                                </element>
+                            </category>
+                            <category name="echangeurs">
+                                <names>
+                                    <name lang="nl">Wisselaar</name>
+                                    <name lang="pl">Wymienniki</name>
+                                    <name lang="ar">مُبادلات</name>
+                                    <name lang="de">Wärmetauscher</name>
+                                    <name lang="fr">Echangeurs</name>
+                                    <name lang="it">Scambiatori</name>
+                                    <name lang="en">Exchanger</name>
+                                    <name lang="el">Εναλλάκτες</name>
+                                    <name lang="es">Intercambiadores</name>
+                                    <name lang="cs">Výměníky</name>
+                                </names>
+                                <element name="echangeuraair.elmt">
+                                    <definition height="60" type="element" hotspot_y="25" width="60" version="0.3" hotspot_x="25">
+                                        <uuid uuid="{A6F6D22B-7399-4579-8F39-28EEE8435A22}"/>
+                                        <names>
+                                            <name lang="ar">مُبادل هوائي</name>
+                                            <name lang="el">Εναλλάκτης θερμότητας</name>
+                                            <name lang="en">Air heat exchanger</name>
+                                            <name lang="it">Scambiatore ad aria</name>
+                                            <name lang="fr">Echangeur à air</name>
+                                            <name lang="pl">Wymiennik powietrza</name>
+                                            <name lang="cs">Výměník horkého vzduchu</name>
+                                            <name lang="nl">Lucht warmte wisselaar</name>
+                                        </names>
+                                        <informations>Author: The QElectroTech team
+License: see http://qelectrotech.org/wiki/doc/elements_license</informations>
+                                        <description>
+                                            <input size="5" text="_" x="19" y="-1.66667" tagg="label"/>
+                                            <rect height="48" antialias="false" width="36" x="-18" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-20"/>
+                                            <line x1="-14" length1="1.5" x2="-14" end2="none" y1="16" antialias="false" length2="1.5" y2="24" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="7" length1="1.5" x2="7" end2="none" y1="16" antialias="false" length2="1.5" y2="24" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="14" length1="1.5" x2="14" end2="none" y1="16" antialias="false" length2="1.5" y2="24" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="-7" length1="1.5" x2="-7" end2="none" y1="16" antialias="false" length2="1.5" y2="24" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="0" length1="1.5" x2="0" end2="none" y1="16" antialias="false" length2="1.5" y2="24" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="-19" length1="1.5" x2="19" end2="none" y1="20" antialias="false" length2="1.5" y2="20" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <circle antialias="true" x="-15" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-17" diameter="30"/>
+                                            <line x1="7" length1="1.5" x2="13" end2="none" y1="-15" antialias="true" length2="1.5" y2="5" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <arc height="2" start="90" antialias="true" angle="-90" width="2" x="-2" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-2"/>
+                                            <line x1="-7" length1="1.5" x2="-13" end2="none" y1="-15" antialias="true" length2="1.5" y2="5" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <arc height="12" start="-90" antialias="true" angle="-90" width="12" x="0" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-7"/>
+                                            <arc height="12" start="-180" antialias="true" angle="-90" width="12" x="-7" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-2"/>
+                                            <arc height="12" start="0" antialias="true" angle="-90" width="12" x="-12" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-7"/>
+                                            <arc height="2" start="-90" antialias="true" angle="-90" width="2" x="-7" style="line-style:normal;line-weight:normal;filling:none;color:black" y="3"/>
+                                            <arc height="12" start="90" antialias="true" angle="-90" width="12" x="-5" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-2"/>
+                                            <arc height="2" start="-180" antialias="true" angle="-90" width="2" x="0" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-2"/>
+                                            <arc height="2" start="0" antialias="true" angle="-90" width="2" x="5" style="line-style:normal;line-weight:normal;filling:none;color:black" y="3"/>
+                                            <ellipse height="9" antialias="true" width="5" x="-2.5" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-11.5"/>
+                                            <terminal x="-19" y="20" orientation="w"/>
+                                            <terminal x="19" y="20" orientation="e"/>
+                                        </description>
+                                    </definition>
+                                </element>
+                            </category>
+                            <category name="robinetsactionneurs">
+                                <names>
+                                    <name lang="nl">Klepbediening</name>
+                                    <name lang="pl">Zawory sterujące</name>
+                                    <name lang="ar">صمّامات مشغلات</name>
+                                    <name lang="de">Handventile</name>
+                                    <name lang="fr">Robinets actionneurs</name>
+                                    <name lang="it">Comando valvole</name>
+                                    <name lang="en">Valves actuators</name>
+                                    <name lang="el">Βαλβίδες ελέγχου</name>
+                                    <name lang="cs">Ovládací ventily</name>
+                                </names>
+                                <element name="detendeurthermointerne.elmt">
+                                    <definition type="element" height="30" link_type="simple" hotspot_y="22" width="40" hotspot_x="19" version="0.5">
+                                        <uuid uuid="{ca4fcdb5-644b-4655-8fe1-248e19a039fc}"/>
+                                        <names>
+                                            <name lang="cs">Vnitřní termostatický ventil</name>
+                                            <name lang="pl">Zawór termostatyczny wewnętrzny</name>
+                                            <name lang="it">Sonda termostatica interna</name>
+                                            <name lang="en">TXV internal</name>
+                                            <name lang="nl">Expansieventiel intern</name>
+                                            <name lang="ar">مُخفّض ضغط بمعدّل حراري داخلي</name>
+                                            <name lang="fr">Détendeur thermostatique interne</name>
+                                        </names>
+                                        <informations>Author: The QElectroTech team
+License: see http://qelectrotech.org/wiki/doc/elements_license</informations>
+                                        <description>
+                                            <text size="5" text="TC" x="-5" y="-9.66667"/>
+                                            <input size="9" text="_" rotate="true" x="-7" y="-0.45" tagg="label"/>
+                                            <circle antialias="true" style="line-style:normal;line-weight:normal;filling:none;color:black" x="-5.83095" y="-17.831" diameter="11.6619"/>
+                                            <polygon y5="-5" x10="0" x6="10" y6="5" style="line-style:normal;line-weight:normal;filling:white;color:black" x9="0" x2="0" x1="2" y2="3" antialias="false" y7="-5" y9="0" y1="1" x8="-2" y8="1" y3="1" x7="10" x4="-10" x3="-2" x5="-10" y10="0" y4="5"/>
+                                            <line x1="0" length1="1.5" x2="0" end2="none" y1="0" antialias="false" length2="1.5" y2="-6" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="10" length1="1.5" x2="11" end2="none" y1="0" antialias="false" length2="1.5" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="-10" length1="1.5" x2="-11" end2="none" y1="0" antialias="false" length2="1.5" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <terminal x="-11" y="0" orientation="w"/>
+                                            <terminal x="11" y="0" orientation="e"/>
+                                        </description>
+                                    </definition>
+                                </element>
+                            </category>
+                            <category name="robinetsdisolement">
+                                <names>
+                                    <name lang="nl">Isolatiekleppen</name>
+                                    <name lang="pl">Zawory odcinające</name>
+                                    <name lang="ar">صمّامات عزل</name>
+                                    <name lang="de">Absperrventile</name>
+                                    <name lang="fr">Robinets d'isolement</name>
+                                    <name lang="it">Valvole di intercettazione</name>
+                                    <name lang="en">Isolation valves</name>
+                                    <name lang="el">Βαλβίδες απομόνωσης</name>
+                                    <name lang="es">Valvulas de aislamiento</name>
+                                    <name lang="cs">Izolační ventily</name>
+                                </names>
+                                <element name="vanneisolementetservicedroite.elmt">
+                                    <definition type="element" height="20" link_type="simple" hotspot_y="11" width="40" hotspot_x="19" version="0.5">
+                                        <uuid uuid="{af29d066-7c37-465d-b6f6-73898b5f0b9d}"/>
+                                        <names>
+                                            <name lang="cs">Izolační ventil, pravá služba</name>
+                                            <name lang="pl">Zawór odcinający wersja prawa</name>
+                                            <name lang="it">Valvole di intercettazione e servizio (DX)</name>
+                                            <name lang="en">Isolation valve and right service</name>
+                                            <name lang="nl">Isolatie afsluiter serviceaansluiting rechts</name>
+                                            <name lang="ar">صمّام عزل و خدمة اليمين</name>
+                                            <name lang="fr">Vanne d'isolement et service droite</name>
+                                        </names>
+                                        <informations>Author: The QElectroTech team
+License: see http://qelectrotech.org/wiki/doc/elements_license</informations>
+                                        <description>
+                                            <input size="9" text="_" rotate="true" x="-7" y="-0.45" tagg="label"/>
+                                            <line x1="10" length1="1.5" x2="10" end2="none" y1="-7" antialias="false" length2="1.5" y2="-5" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <polygon x1="8" x2="8" y1="-6" antialias="false" x3="12" y2="-7" closed="false" y4="-6" style="line-style:normal;line-weight:normal;filling:none;color:black" x4="12" y3="-7"/>
+                                            <line x1="10" length1="1.5" x2="11" end2="none" y1="0" antialias="false" length2="1.5" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="-10" length1="1.5" x2="-11" end2="none" y1="0" antialias="false" length2="1.5" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <polygon x1="-10" y5="-4" x2="10" y1="-5" x5="-10" antialias="true" x3="10" y2="5" y4="5" style="line-style:normal;line-weight:normal;filling:white;color:black" x4="-10" y3="-5"/>
+                                            <circle antialias="true" style="line-style:normal;line-weight:normal;filling:black;color:black" x="-1.5" y="-1.5" diameter="3"/>
+                                            <terminal x="11" y="0" orientation="e"/>
+                                            <terminal x="-11" y="0" orientation="w"/>
+                                        </description>
+                                    </definition>
+                                </element>
+                            </category>
+                            <category name="controles">
+                                <names>
+                                    <name lang="ca">Controls</name>
+                                    <name lang="fr">Organes de surveillance</name>
+                                    <name lang="en">Monitoring elements</name>
+                                    <name lang="es">Controles</name>
+                                </names>
+                                <element name="presostato-mini.elmt">
+                                    <definition height="30" type="element" hotspot_y="23" link_type="simple" width="20" version="0.4" hotspot_x="8" ic="true">
+                                        <uuid uuid="{E61CE60D-AEA4-406D-9A15-4361526ED8F4}"/>
+                                        <names>
+                                            <name lang="es">Presostato mini</name>
+                                            <name lang="ca">Presostat mini</name>
+                                        </names>
+                                        <informations/>
+                                        <description>
+                                            <rect height="11" antialias="false" width="12" x="-6" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-19"/>
+                                            <text size="5" text="P" x="-3" y="-11"/>
+                                            <line x1="0" length1="1.5" x2="0" end2="none" y1="-8" antialias="false" length2="1.5" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <terminal x="0" y="0" orientation="s"/>
+                                            <terminal x="7" y="-17" orientation="e"/>
+                                        </description>
+                                    </definition>
+                                </element>
+                            </category>
+                            <category name="recipientsetreservoirs">
+                                <names>
+                                    <name lang="nl">Tanks</name>
+                                    <name lang="pl">Zbiorniki</name>
+                                    <name lang="ar">خزّانات</name>
+                                    <name lang="de">Tank und Behälter</name>
+                                    <name lang="fr">Baches, reservoirs</name>
+                                    <name lang="it">Serbatoi</name>
+                                    <name lang="en">Tanks</name>
+                                    <name lang="el">Δεξαμενές</name>
+                                    <name lang="es">Depositos</name>
+                                    <name lang="cs">Vodní nádrže</name>
+                                </names>
+                                <element name="bouteillepetite.elmt">
+                                    <definition type="element" height="30" link_type="simple" hotspot_y="14" width="30" hotspot_x="14" version="0.5">
+                                        <uuid uuid="{6bbb4b6e-c7e8-47a9-bad1-cb89d81f2212}"/>
+                                        <names>
+                                            <name lang="cs">Malá láhev</name>
+                                            <name lang="it">Bottiglia piccola</name>
+                                            <name lang="pl">Mała butla</name>
+                                            <name lang="en">Litle bottle</name>
+                                            <name lang="nl">Kleine tank</name>
+                                            <name lang="ar">قارورة صغيرة</name>
+                                            <name lang="fr">Bouteille petite</name>
+                                            <name lang="el">Μικρή φιάλη</name>
+                                        </names>
+                                        <informations>Rotation possible</informations>
+                                        <description>
+                                            <input size="9" text="_" rotate="true" x="-22" y="-19.45" tagg="label"/>
+                                            <line x1="-7" length1="1.5" x2="7" end2="none" y1="7" antialias="false" length2="1.5" y2="7" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="-7" length1="1.5" x2="7" end2="none" y1="-7" antialias="false" length2="1.5" y2="-7" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <arc height="14" start="90" antialias="true" angle="-180" width="5" style="line-style:normal;line-weight:normal;filling:none;color:black" x="5" y="-7"/>
+                                            <arc height="14" start="-90" antialias="true" angle="-180" width="5" style="line-style:normal;line-weight:normal;filling:none;color:black" x="-10" y="-7"/>
+                                            <terminal x="-4" y="7" orientation="s"/>
+                                            <terminal x="4" y="-7" orientation="n"/>
+                                            <terminal x="4" y="7" orientation="s"/>
+                                            <terminal x="10" y="0" orientation="e"/>
+                                            <terminal x="9" y="-4" orientation="e"/>
+                                            <terminal x="9" y="4" orientation="e"/>
+                                            <terminal x="-10" y="0" orientation="w"/>
+                                            <terminal x="-4" y="-7" orientation="n"/>
+                                        </description>
+                                    </definition>
+                                </element>
+                            </category>
+                            <category name="intercambiadores">
+                                <names>
+                                    <name lang="ca">Intercambiadors</name>
+                                    <name lang="fr">Echangeurs</name>
+                                    <name lang="en">Exchangers</name>
+                                    <name lang="es">Intercambiadores</name>
+                                </names>
+                                <element name="recipiente-horiz.elmt">
+                                    <definition height="30" type="element" hotspot_y="25" link_type="simple" width="70" version="0.4" hotspot_x="36" ic="true">
+                                        <uuid uuid="{3AC9B1FA-1596-4F8B-87D8-E8EB27E50016}"/>
+                                        <names>
+                                            <name lang="es">Recipiente horiz.</name>
+                                        </names>
+                                        <informations/>
+                                        <description>
+                                            <line x1="-26" length1="1.5" x2="25" end2="none" y1="2" antialias="false" length2="1.5" y2="2" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <arc height="18" start="-90" antialias="true" angle="-180" width="9" x="-31" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-16"/>
+                                            <arc height="18" start="90" antialias="true" angle="-180" width="9" x="20" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-16"/>
+                                            <line x1="-27" length1="1.5" x2="24" end2="none" y1="-16" antialias="false" length2="1.5" y2="-16" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="-20" length1="1.5" x2="-20" end2="none" y1="-20" antialias="false" length2="1.5" y2="-1" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="20" length1="1.5" x2="20" end2="none" y1="-20" antialias="false" length2="1.5" y2="-16" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <input size="4" text="L_" x="-10" rotate="true" y="3" tagg="label"/>
+                                            <terminal x="-20" y="-20" orientation="n"/>
+                                            <terminal x="20" y="-20" orientation="n"/>
+                                        </description>
+                                    </definition>
+                                </element>
+                            </category>
+                            <category name="accesorios">
+                                <names>
+                                    <name lang="ca">Accesoris resta</name>
+                                    <name lang="fr">Accessoires</name>
+                                    <name lang="en">Accessories</name>
+                                    <name lang="es">Accesorios resto</name>
+                                </names>
+                                <element name="visor-liquido.elmt">
+                                    <definition height="20" type="element" hotspot_y="10" link_type="simple" width="50" version="0.4" hotspot_x="15" ic="true">
+                                        <uuid uuid="{7D36289A-B221-450C-8FB2-3EB8259051CB}"/>
+                                        <names>
+                                            <name lang="es">Visor de líquido</name>
+                                        </names>
+                                        <informations>Rafael Ferrando.
+Mantenimiento de Instalaciones Térmicas</informations>
+                                        <description>
+                                            <line x1="21.7269" length1="1.5" x2="27.65" end2="none" y1="-0.0538826" antialias="false" length2="1.5" y2="-0.0538826" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <rect height="11.7924" antialias="false" width="22.75" x="-0.7" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-5.79239"/>
+                                            <ellipse height="11.7924" antialias="true" width="12.25" x="4.55" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-5.79239"/>
+                                            <line x1="-7.7" length1="1.5" x2="-0.7" end2="none" y1="-0.0538826" antialias="false" length2="1.5" y2="-0.0538826" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <text size="5" text="V" x="8" y="3"/>
+                                            <input size="4" text="_" x="6" rotate="true" y="-7.5" tagg="label"/>
+                                            <terminal x="27.3" y="-0.0538826" orientation="e"/>
+                                            <terminal x="-7.7" y="-0.0538826" orientation="w"/>
+                                        </description>
+                                    </definition>
+                                </element>
+                            </category>
+                            <category name="filtres">
+                                <names>
+                                    <name lang="nl">Filters</name>
+                                    <name lang="pl">Filtry</name>
+                                    <name lang="ar">مُرشحات</name>
+                                    <name lang="de">Filter</name>
+                                    <name lang="fr">Filtres</name>
+                                    <name lang="it">Filtri</name>
+                                    <name lang="en">Filters</name>
+                                    <name lang="el">Φίλτρα</name>
+                                    <name lang="es">Filtros</name>
+                                    <name lang="cs">Filtr</name>
+                                </names>
+                                <element name="filtro-deshidratador.elmt">
+                                    <definition height="20" type="element" link_type="simple" hotspot_y="10" width="40" hotspot_x="25" version="0.5">
+                                        <uuid uuid="{060AC81F-2B25-469A-B51A-96A8AA80FAB3}"/>
+                                        <names>
+                                            <name lang="es">Silenciador</name>
+                                        </names>
+                                        <informations/>
+                                        <description>
+                                            <line x1="-5" length1="1.5" x2="-5" y1="-4.22727" end2="none" antialias="false" length2="1.5" y2="1.22727" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="6" length1="1.5" x2="9.75" y1="0.494709" end2="none" antialias="false" length2="1.5" y2="0.494709" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <line x1="2" length1="1.5" x2="2" y1="-0.454545" end2="none" antialias="false" length2="1.5" y2="4.45455" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <rect height="10.0106" antialias="false" width="21.75" style="line-style:normal;line-weight:normal;filling:none;color:black" x="-15.75" y="-5.01058"/>
+                                            <line x1="-19.5" length1="1.5" x2="-15.75" y1="0.494709" end2="none" antialias="false" length2="1.5" y2="0.494709" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <input size="5" text="_" rotate="true" x="-16" y="20" tagg="label"/>
+                                            <line x1="-12" length1="1.5" x2="-12" y1="-0.414828" end2="none" antialias="false" length2="1.5" y2="4.41483" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                                            <terminal x="9.75" y="0.494709" orientation="e"/>
+                                            <terminal x="-19.5" y="0.494709" orientation="w"/>
+                                        </description>
+                                    </definition>
+                                </element>
+                            </category>
+                        </category>
+                    </category>
+                </category>
+            </category>
+            <element name="voyanliqide.elmt">
+                <definition type="element" height="20" hotspot_y="10" link_type="simple" width="50" hotspot_x="15" version="0.90">
+                    <uuid uuid="{918a6bdb-ffbd-4720-9784-74dd9d2bf3a0}"/>
+                    <names>
+                        <name lang="es">Visor de líquido</name>
+                    </names>
+                    <elementInformations/>
+                    <informations>Rafael Ferrando.
+Mantenimiento de Instalaciones Térmicas</informations>
+                    <description>
+                        <line x1="21.7269" x2="27.65" length1="1.5" y1="-0.0538826" end2="none" antialias="false" length2="1.5" y2="-0.0538826" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <rect height="11.7924" ry="0" antialias="false" width="22.75" x="-0.7" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-5.79239" rx="0"/>
+                        <ellipse height="11.7924" antialias="true" width="12.25" x="4.55" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-5.79239"/>
+                        <line x1="-7.7" x2="-0.7" length1="1.5" y1="-0.0538826" end2="none" antialias="false" length2="1.5" y2="-0.0538826" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <dynamic_text z="6" keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{95abe141-ad73-4918-8a42-e34c9acde60f}" text_width="-1" font="Sans Serif,4,-1,5,25,0,0,0,0,0" frame="false" x="7" Halignment="AlignLeft" y="-14" rotation="0">
+                            <text/>
+                            <info_name>label</info_name>
+                        </dynamic_text>
+                        <circle antialias="false" x="9" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-2" diameter="4"/>
+                        <ellipse height="0" antialias="false" width="2" x="9" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-1"/>
+                        <ellipse height="4" antialias="false" width="2" x="10" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-2"/>
+                        <ellipse height="2" antialias="false" width="0" x="11" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-1"/>
+                        <ellipse height="2" antialias="false" width="0" x="11" style="line-style:normal;line-weight:normal;filling:none;color:black" y="0"/>
+                        <ellipse height="0" antialias="false" width="2" x="11" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-1"/>
+                        <terminal type="Generic" uuid="{3d52312b-5002-49f7-bdf2-0d5bc0ceaf3e}" name="" x="27.3" y="-0.0538826" orientation="e"/>
+                        <terminal type="Generic" uuid="{fa2e7e50-2c9d-45dd-8109-b09f6e6f158b}" name="" x="-7.7" y="-0.0538826" orientation="w"/>
+                    </description>
+                </definition>
+            </element>
+            <element name="desy.elmt">
+                <definition type="element" height="20" hotspot_y="10" link_type="simple" width="40" hotspot_x="25" version="0.90">
+                    <uuid uuid="{581f9ad5-ec3e-4602-ac2a-5c87660cb366}"/>
+                    <names>
+                        <name lang="es">Silenciador</name>
+                    </names>
+                    <elementInformations/>
+                    <informations/>
+                    <description>
+                        <line x1="6" x2="9.75" length1="1.5" y1="0.494709" end2="none" antialias="false" length2="1.5" y2="0.494709" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <line x1="2" x2="2" length1="1.5" y1="-4" end2="none" antialias="false" length2="1.5" y2="4.45455" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <rect height="10.0106" ry="0" antialias="false" width="21.75" x="-15.75" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-5.01058" rx="0"/>
+                        <line x1="-19.5" x2="-15.75" length1="1.5" y1="0.494709" end2="none" antialias="false" length2="1.5" y2="0.494709" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <dynamic_text z="6" keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{4a031da4-f837-41be-bd47-ca7bdd50680c}" text_width="-1" font="Sans Serif,5,-1,5,50,0,0,0,0,0" frame="false" x="-16" Halignment="AlignLeft" y="11.5" rotation="0">
+                            <text/>
+                            <info_name>label</info_name>
+                        </dynamic_text>
+                        <line x1="-12" x2="-12" length1="1.5" y1="-4.41483" end2="none" antialias="false" length2="1.5" y2="4" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <line x1="-11" x2="1" length1="1.5" y1="-4" end2="none" antialias="false" length2="1.5" y2="4" style="line-style:dotted;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <line x1="-12" x2="1" length1="1.5" y1="4" end2="none" antialias="false" length2="1.5" y2="-4" style="line-style:dotted;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <terminal type="Generic" uuid="{ddef0d8d-74c8-4aed-bd5f-d65417527e0a}" name="" x="-19.5" y="0.494709" orientation="w"/>
+                        <terminal type="Generic" uuid="{765ddeb2-bb52-4e09-aaef-041ba4d74b69}" name="" x="9.75" y="0.494709" orientation="e"/>
+                    </description>
+                </definition>
+            </element>
+            <element name="vem.elmt">
+                <definition type="element" height="40" hotspot_y="29" link_type="simple" width="40" hotspot_x="19" version="0.90">
+                    <uuid uuid="{ed59987b-3051-450f-aa6e-86115642930a}"/>
+                    <names>
+                        <name lang="nl">Expansieventiel intern</name>
+                        <name lang="pl">Zawór termostatyczny wewnętrzny</name>
+                        <name lang="ar">مُخفّض ضغط بمعدّل حراري داخلي</name>
+                        <name lang="fr">Détendeur thermostatique interne</name>
+                        <name lang="it">Sonda termostatica interna</name>
+                        <name lang="en">TXV internal</name>
+                        <name lang="cs">Vnitřní termostatický ventil</name>
+                    </names>
+                    <elementInformations/>
+                    <informations>Author: The QElectroTech team
+License: see http://qelectrotech.org/wiki/doc/elements_license</informations>
+                    <description>
+                        <dynamic_text z="2" keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{a442512e-6ebc-4211-b614-1c02d87e95f1}" text_width="-1" font="Sans Serif,9,-1,5,50,0,0,0,0,0" frame="false" x="-7" Halignment="AlignLeft" y="-11.95" rotation="0">
+                            <text/>
+                            <info_name>label</info_name>
+                        </dynamic_text>
+                        <line x1="0" x2="0" length1="1.5" y1="0" end2="none" antialias="false" length2="1.5" y2="-6" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <line x1="10" x2="11" length1="1.5" y1="0" end2="none" antialias="false" length2="1.5" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <line x1="-10" x2="-11" length1="1.5" y1="0" end2="none" antialias="false" length2="1.5" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <rect height="16" ry="0" antialias="false" width="8" x="-4" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-22" rx="0"/>
+                        <line x1="-4" x2="4" length1="1.5" y1="-18" end2="none" antialias="false" length2="1.5" y2="-10" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <line x1="-6" x2="-6" length1="1.5" y1="-4" end2="none" antialias="false" length2="1.5" y2="4" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <line x1="6" x2="6" length1="1.5" y1="-4" end2="none" antialias="false" length2="1.5" y2="4" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <line x1="-6" x2="6" length1="1.5" y1="4" end2="none" antialias="false" length2="1.5" y2="-4" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <line x1="-6" x2="6" length1="1.5" y1="-4" end2="none" antialias="false" length2="1.5" y2="4" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <terminal type="Generic" uuid="{dbf532c1-4477-4068-b155-721f0dc63172}" name="" x="11" y="0" orientation="e"/>
+                        <terminal type="Generic" uuid="{b277400b-d8ee-4495-8734-8e5047181ab1}" name="" x="-11" y="0" orientation="w"/>
+                        <terminal type="Inner" uuid="{006fce42-0ab4-4a77-bbd9-77fa9df11f49}" name="" x="0" y="-20" orientation="n"/>
+                    </description>
+                </definition>
+            </element>
+            <element name="detendeur.elmt">
+                <definition type="element" height="40" hotspot_y="29" link_type="simple" width="40" hotspot_x="19" version="0.90">
+                    <uuid uuid="{277e3260-eafc-48bf-b030-cfd801874adb}"/>
+                    <names>
+                        <name lang="nl">Expansieventiel intern</name>
+                        <name lang="pl">Zawór termostatyczny wewnętrzny</name>
+                        <name lang="ar">مُخفّض ضغط بمعدّل حراري داخلي</name>
+                        <name lang="fr">Détendeur thermostatique interne</name>
+                        <name lang="it">Sonda termostatica interna</name>
+                        <name lang="en">TXV internal</name>
+                        <name lang="cs">Vnitřní termostatický ventil</name>
+                    </names>
+                    <elementInformations/>
+                    <informations>Author: The QElectroTech team
+License: see http://qelectrotech.org/wiki/doc/elements_license</informations>
+                    <description>
+                        <text text="TC" color="#000000" font="Sans Serif,5,-1,5,50,0,0,0,0,0" x="-5" y="-9.66667" rotation="0"/>
+                        <dynamic_text z="2" keep_visual_rotation="false" Valignment="AlignTop" text_from="ElementInfo" uuid="{a442512e-6ebc-4211-b614-1c02d87e95f1}" text_width="-1" font="Sans Serif,9,-1,5,50,0,0,0,0,0" frame="false" x="-7" Halignment="AlignLeft" y="-11.95" rotation="0">
+                            <text/>
+                            <info_name>label</info_name>
+                        </dynamic_text>
+                        <circle antialias="true" x="-5.83095" style="line-style:normal;line-weight:normal;filling:none;color:black" y="-17.831" diameter="11.6619"/>
+                        <polygon y5="-5" x10="0" x6="10" y6="5" style="line-style:normal;line-weight:normal;filling:white;color:black" x9="0" x2="0" x1="2" y2="3" antialias="false" y7="-5" y9="0" y1="1" x8="-2" y8="1" y3="1" x7="10" x3="-2" x4="-10" x5="-10" y10="0" y4="5"/>
+                        <line x1="0" x2="0" length1="1.5" y1="0" end2="none" antialias="false" length2="1.5" y2="-6" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <line x1="10" x2="11" length1="1.5" y1="0" end2="none" antialias="false" length2="1.5" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <line x1="-10" x2="-11" length1="1.5" y1="0" end2="none" antialias="false" length2="1.5" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none"/>
+                        <terminal type="Generic" uuid="{bc6ba69e-8c83-4dfe-92b6-feac045bc686}" name="" x="0" y="-22" orientation="n"/>
+                        <terminal type="Generic" uuid="{dbf532c1-4477-4068-b155-721f0dc63172}" name="" x="11" y="0" orientation="e"/>
+                        <terminal type="Generic" uuid="{b277400b-d8ee-4495-8734-8e5047181ab1}" name="" x="-11" y="0" orientation="w"/>
+                    </description>
+                </definition>
+            </element>
+        </category>
+    </collection>
+</project>
