@@ -1280,7 +1280,7 @@
  },
  {
   "id": "pk-cl1-1",
-  "dc": "Classification",
+  "dc": "G1",
   "code": "1.08",
   "niveau": 1,
   "type": "qcm",
@@ -1302,7 +1302,7 @@
  },
  {
   "id": "pk-cl1-2",
-  "dc": "Classification",
+  "dc": "G1",
   "code": "1.08",
   "niveau": 2,
   "type": "qcm",
@@ -1324,7 +1324,7 @@
  },
  {
   "id": "pk-cl1-3",
-  "dc": "Classification",
+  "dc": "G1",
   "code": "1.08",
   "niveau": 2,
   "type": "qcm",
@@ -1346,7 +1346,7 @@
  },
  {
   "id": "pk-cl2-1",
-  "dc": "Classification",
+  "dc": "G12",
   "code": "12.02",
   "niveau": 1,
   "type": "qcm",
@@ -1368,7 +1368,7 @@
  },
  {
   "id": "pk-cl2-2",
-  "dc": "Classification",
+  "dc": "G12",
   "code": "12.02",
   "niveau": 2,
   "type": "qcm",
@@ -1390,7 +1390,7 @@
  },
  {
   "id": "pk-cl2-3",
-  "dc": "Classification",
+  "dc": "G12",
   "code": "12.02",
   "niveau": 2,
   "type": "qcm",
@@ -1412,7 +1412,7 @@
  },
  {
   "id": "pk-cl3-1",
-  "dc": "Classification",
+  "dc": "G11",
   "code": "11.03",
   "niveau": 1,
   "type": "qcm",
@@ -1434,7 +1434,7 @@
  },
  {
   "id": "pk-cl3-2",
-  "dc": "Classification",
+  "dc": "G11",
   "code": "11.03",
   "niveau": 2,
   "type": "qcm",
@@ -1456,7 +1456,7 @@
  },
  {
   "id": "pk-cl3-3",
-  "dc": "Classification",
+  "dc": "G11",
   "code": "11.03",
   "niveau": 2,
   "type": "qcm",
@@ -1478,8 +1478,8 @@
  },
  {
   "id": "pk-cl4-1",
-  "dc": "Classification",
-  "code": "12.02",
+  "dc": "G13",
+  "code": "13.14",
   "niveau": 1,
   "type": "qcm",
   "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
@@ -1500,8 +1500,8 @@
  },
  {
   "id": "pk-cl4-2",
-  "dc": "Classification",
-  "code": "12.02",
+  "dc": "G13",
+  "code": "13.04",
   "niveau": 2,
   "type": "qcm",
   "enonce": "Un masque à cartouche protège-t-il dans un local chargé en CO₂ ?",
@@ -1522,7 +1522,7 @@
  },
  {
   "id": "pk-cl4-3",
-  "dc": "Classification",
+  "dc": "G13",
   "code": "13.14",
   "niveau": 2,
   "type": "qcm",
