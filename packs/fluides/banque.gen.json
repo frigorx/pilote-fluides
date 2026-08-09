@@ -18,7 +18,10 @@
    "texte": "Les 4 organes sont : le COMPRESSEUR (élève la pression), le CONDENSEUR (refroidit et liquéfie), le DÉTENDEUR (abaisse la pression), et l'ÉVAPORATEUR (absorbe la chaleur). Ces 4 éléments forment la 'croix du frigoriste'."
   },
   "remediation_vers": "g1a",
-  "code": "1.04"
+  "code": "1.04",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-160",
@@ -39,7 +42,10 @@
    "texte": "Le liquide est INCOMPRESSIBLE. Si du liquide arrive au compresseur, il peut provoquer un coup de liquide qui endommage ou détruit le compresseur (clapet cassé, bielle tordue, etc.). Le compresseur doit TOUJOURS aspirer du gaz."
   },
   "remediation_vers": "g1a",
-  "code": "1.02"
+  "code": "1.02",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-62",
@@ -57,7 +63,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1a",
-  "code": "1.01"
+  "code": "1.01",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_042",
@@ -78,7 +87,10 @@
    "texte": "Sous la courbe de saturation, le fluide est en changement de phase : liquide + vapeur coexistent."
   },
   "remediation_vers": "g1a",
-  "code": "1.03"
+  "code": "1.03",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_041",
@@ -99,7 +111,10 @@
    "texte": "Le diagramme de Mollier a l'enthalpie (h, en kJ/kg) en abscisse et la pression (log P) en ordonnée."
   },
   "remediation_vers": "g1a",
-  "code": "1.03"
+  "code": "1.03",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_048",
@@ -120,7 +135,10 @@
    "texte": "Une surchauffe de 5 à 8 K garantit que seul du gaz sec entre dans le compresseur, sans trop réduire la puissance frigorifique."
   },
   "remediation_vers": "g1a",
-  "code": "1.02"
+  "code": "1.02",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_145",
@@ -141,7 +159,10 @@
    "texte": "Un sous-refroidissement de 4 à 7 K assure que le liquide n'arrive pas au détendeur avec des bulles de gaz."
   },
   "remediation_vers": "g1a",
-  "code": "1.02"
+  "code": "1.02",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-153",
@@ -162,7 +183,10 @@
    "texte": "L'ÉVAPORATEUR est l'organe où le fluide frigorigène s'évapore en absorbant la chaleur du milieu à refroidir (chambre froide, air ambiant, etc.). C'est là que le froid est produit."
   },
   "remediation_vers": "g1a",
-  "code": "1.04"
+  "code": "1.04",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-154",
@@ -183,7 +207,10 @@
    "texte": "Le DÉTENDEUR (ou vanne de détente) abaisse la pression du liquide haute pression pour le transformer en mélange liquide-vapeur basse pression avant l'évaporateur. Cette détente abaisse aussi la température."
   },
   "remediation_vers": "g1a",
-  "code": "1.04"
+  "code": "1.04",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-157",
@@ -204,7 +231,10 @@
    "texte": "Dans la ligne liquide (entre condenseur et détendeur), le fluide est à l'état LIQUIDE sous haute pression. C'est pour cela qu'on l'appelle 'ligne liquide'."
   },
   "remediation_vers": "g1a",
-  "code": "1.02"
+  "code": "1.02",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-158",
@@ -225,7 +255,10 @@
    "texte": "Dans la ligne d'aspiration (entre évaporateur et compresseur), le fluide est à l'état GAZEUX (vapeur) basse pression. Le compresseur aspire du gaz, jamais du liquide !"
   },
   "remediation_vers": "g1a",
-  "code": "1.02"
+  "code": "1.02",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_141",
@@ -246,7 +279,10 @@
    "texte": "Le compresseur est le seul organe qui reçoit de l'énergie (électrique) pour faire tourner le cycle."
   },
   "remediation_vers": "g1a",
-  "code": "1.04"
+  "code": "1.04",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_142",
@@ -267,7 +303,10 @@
    "texte": "C'est à l'évaporateur que le fluide absorbe la chaleur du milieu à refroidir = production du froid."
   },
   "remediation_vers": "g1a",
-  "code": "1.04"
+  "code": "1.04",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_146",
@@ -288,7 +327,10 @@
    "texte": "Le condenseur rejette la chaleur absorbée par l'évaporateur + la chaleur de compression vers l'extérieur."
   },
   "remediation_vers": "g1a",
-  "code": "1.04"
+  "code": "1.04",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_040",
@@ -309,7 +351,10 @@
    "texte": "La détente se fait à enthalpie constante (pas d'échange de chaleur, pas de travail). Sur le diagramme : ligne verticale."
   },
   "remediation_vers": "g1a",
-  "code": "1.04"
+  "code": "1.04",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_045",
@@ -330,7 +375,10 @@
    "texte": "En théorie, la compression est isentropique (entropie constante = adiabatique et réversible). En pratique, elle est polytropique."
   },
   "remediation_vers": "g1a",
-  "code": "1.04"
+  "code": "1.04",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_046",
@@ -351,7 +399,10 @@
    "texte": "La condensation et l'évaporation se font à pression constante (lignes horizontales sur le diagramme)."
   },
   "remediation_vers": "g1a",
-  "code": "1.03"
+  "code": "1.03",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_143",
@@ -372,7 +423,10 @@
    "texte": "À gauche de la cloche = liquide sous-refroidi. Sous la cloche = mélange liq+vap. À droite = vapeur surchauffée."
   },
   "remediation_vers": "g1a",
-  "code": "1.03"
+  "code": "1.03",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-31",
@@ -390,7 +444,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-33",
@@ -408,7 +465,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-34",
@@ -426,7 +486,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "code": "1.02"
+  "code": "1.02",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-36",
@@ -444,7 +507,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-41",
@@ -462,7 +528,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-45",
@@ -480,7 +549,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "code": "1.07"
+  "code": "1.07",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-51",
@@ -498,7 +570,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g1c",
-  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_031",
@@ -519,7 +594,10 @@
    "texte": "Règle de nomenclature : centaines = C−1, dizaines = H+1, unités = F. Ex: R134a → C=1+1=2, H=3−1=2, F=4."
   },
   "remediation_vers": "g1c",
-  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_132",
@@ -540,7 +618,10 @@
    "texte": "Le R410A est un mélange quasi-azéotrope de R32 (50%) + R125 (50%). Ses hautes pressions le distinguent."
   },
   "remediation_vers": "g1c",
-  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g1-v6_137",
@@ -561,7 +642,10 @@
    "texte": "Le R12 (dichlorodifluorométhane) est un CFC interdit depuis 1995. Il détruit la couche d'ozone (ODP élevé)."
   },
   "remediation_vers": "g1c",
-  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+  "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "q-g2-v6_001",
@@ -582,7 +666,10 @@
    "texte": "Le GWP (Global Warming Potential) compare tout gaz au CO₂ sur 100 ans. CO₂ = 1 par définition."
   },
   "remediation_vers": "g2",
-  "code": "2.02"
+  "code": "2.02",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-5",
@@ -600,7 +687,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g2a",
-  "code": "2.01"
+  "code": "2.01",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_003",
@@ -621,7 +711,10 @@
    "texte": "Kigali (2016) étend le Protocole de Montréal aux HFC pour lutter contre le réchauffement climatique."
   },
   "remediation_vers": "g2a",
-  "code": "2.01"
+  "code": "2.01",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_004",
@@ -642,7 +735,10 @@
    "texte": "Les HFC ne contiennent pas de chlore, donc ODP = 0. Mais leur GWP est élevé."
   },
   "remediation_vers": "g2a",
-  "code": "2.02"
+  "code": "2.02",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_113",
@@ -663,7 +759,10 @@
    "texte": "Calcul : 15 × 675 / 1000 = 10,125 tCO₂e → contrôle annuel."
   },
   "remediation_vers": "g2",
-  "code": "2.02"
+  "code": "2.02",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_011",
@@ -684,7 +783,10 @@
    "texte": "Le nouveau règlement UE 2024/573 (en vigueur mars 2024) remplace le 517/2014 avec des objectifs plus stricts."
   },
   "remediation_vers": "g2",
-  "code": "2.02"
+  "code": "2.02",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_017",
@@ -705,7 +807,10 @@
    "texte": "Les quotas sont des droits de mise sur le marché en tCO₂e, attribués aux importateurs et fabricants de HFC."
   },
   "remediation_vers": "g2",
-  "code": "2.02"
+  "code": "2.02",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_002",
@@ -726,7 +831,10 @@
    "texte": "La couche d'ozone (O₃) dans la stratosphère absorbe les UV-B nocifs pour la santé humaine."
   },
   "remediation_vers": "g2a",
-  "code": "2.01"
+  "code": "2.01",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_005",
@@ -747,7 +855,10 @@
    "texte": "Signé en 2015 par 196 pays, il fixe l'objectif de +1,5°C maximum vs ère préindustrielle."
   },
   "remediation_vers": "g2a",
-  "code": "2.01"
+  "code": "2.01",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_008",
@@ -768,7 +879,10 @@
    "texte": "Kyoto vise 6 GES : CO₂, CH₄, N₂O, HFC, PFC, SF₆. Les HFC y sont inclus."
   },
   "remediation_vers": "g2a",
-  "code": "2.01"
+  "code": "2.01",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_010",
@@ -789,7 +903,10 @@
    "texte": "Le trou d'ozone se forme chaque printemps austral au-dessus du pôle Sud, là où les conditions de froid stratosphérique favorisent la destruction de l'O₃."
   },
   "remediation_vers": "g2a",
-  "code": "2.01"
+  "code": "2.01",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_106",
@@ -810,7 +927,10 @@
    "texte": "L'effet de serre naturel est principalement dû à la vapeur d'eau, au CO₂ et au méthane. Les HFC sont des GES industriels."
   },
   "remediation_vers": "g2a",
-  "code": "2.01"
+  "code": "2.01",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_107",
@@ -831,7 +951,10 @@
    "texte": "Sans effet de serre, la Terre serait à -18°C au lieu de +15°C. L'effet de serre naturel réchauffe de +33°C."
   },
   "remediation_vers": "g2a",
-  "code": "2.01"
+  "code": "2.01",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_110",
@@ -852,7 +975,10 @@
    "texte": "Grâce à l'élimination des CFC et HCFC, la couche d'ozone montre des signes de reconstitution progressive."
   },
   "remediation_vers": "g2a",
-  "code": "2.01"
+  "code": "2.01",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_111",
@@ -873,7 +999,10 @@
    "texte": "Les HFO ont une double liaison C=C qui les rend instables chimiquement. Ils se dégradent en quelques jours dans l'atmosphère."
   },
   "remediation_vers": "g2a",
-  "code": "2.02"
+  "code": "2.02",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_114",
@@ -894,7 +1023,10 @@
    "texte": "Le chlore (CFC, HCFC) et le brome (halons) détruisent catalytiquement l'ozone stratosphérique."
   },
   "remediation_vers": "g2a",
-  "code": "2.01"
+  "code": "2.01",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_115",
@@ -915,7 +1047,10 @@
    "texte": "Plus un gaz reste longtemps dans l'atmosphère, plus son impact cumulé sur le réchauffement est important."
   },
   "remediation_vers": "g2a",
-  "code": "2.02"
+  "code": "2.02",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-v6_037",
@@ -936,7 +1071,10 @@
    "texte": "Le R22 a été totalement interdit dans l'UE depuis le 1er janvier 2015, même en recyclé/régénéré."
   },
   "remediation_vers": "g2a",
-  "code": "2.01"
+  "code": "2.01",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g2-42",
@@ -954,7 +1092,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g2",
-  "code": "2.02"
+  "code": "2.02",
+  "chapitre": "02",
+  "chapitre_titre": "Incidence environnementale & réglementations",
+  "chapitre_fichier": "CONTENU-02-G2-environnement.md"
  },
  {
   "id": "q-g3-v6_058",
@@ -975,7 +1116,10 @@
    "texte": "Le tirage au vide évacue l'air (incondensable qui augmente la HP) et l'humidité (qui forme des acides avec l'huile POE)."
   },
   "remediation_vers": "g3",
-  "code": "3.04"
+  "code": "3.04",
+  "chapitre": "03",
+  "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+  "chapitre_fichier": "CONTENU-03-G3-controles-mes.md"
  },
  {
   "id": "q-g3-v6_059",
@@ -996,7 +1140,10 @@
    "texte": "Une remontée > 100 µm après fermeture de la vanne indique soit une fuite, soit de l'humidité qui s'évapore."
   },
   "remediation_vers": "g3",
-  "code": "3.04"
+  "code": "3.04",
+  "chapitre": "03",
+  "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+  "chapitre_fichier": "CONTENU-03-G3-controles-mes.md"
  },
  {
   "id": "q-g3-v6_062",
@@ -1017,7 +1164,10 @@
    "texte": "L'épreuve de résistance se fait toujours à l'azote sec. Jamais d'oxygène (risque explosion avec huile) ni d'air comprimé (humidité)."
   },
   "remediation_vers": "g3",
-  "code": "3.01"
+  "code": "3.01",
+  "chapitre": "03",
+  "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+  "chapitre_fichier": "CONTENU-03-G3-controles-mes.md"
  },
  {
   "id": "q-g3-v6_159",
@@ -1038,7 +1188,10 @@
    "texte": "La pompe à vide n'est pas conçue pour pomper du fluide (ça l'endommage). La récupération se fait avec un groupe de récupération spécifique."
   },
   "remediation_vers": "g3",
-  "code": "3.03"
+  "code": "3.03",
+  "chapitre": "03",
+  "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+  "chapitre_fichier": "CONTENU-03-G3-controles-mes.md"
  },
  {
   "id": "q-g3-66",
@@ -1056,7 +1209,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g3",
-  "code": "1.02"
+  "code": "1.02",
+  "chapitre": "03",
+  "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+  "chapitre_fichier": "CONTENU-03-G3-controles-mes.md"
  },
  {
   "id": "q-g4-v6_074",
@@ -1077,7 +1233,10 @@
    "texte": "La détection indirecte analyse les dérives des paramètres (baisse de HP, augmentation de surchauffe, etc.) qui signalent une perte de charge."
   },
   "remediation_vers": "g4b",
-  "code": "4.04"
+  "code": "4.04",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g4-v6_072",
@@ -1098,7 +1257,10 @@
    "texte": "L'eau savonneuse permet de localiser précisément les fuites par la formation de bulles. C'est un complément au détecteur électronique."
   },
   "remediation_vers": "g4b",
-  "code": "4.07"
+  "code": "4.07",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g4-v6_163",
@@ -1119,7 +1281,10 @@
    "texte": "Le détecteur mesure la concentration de gaz fluoré dans l'air et alerte quand elle dépasse un seuil."
   },
   "remediation_vers": "g4b",
-  "code": "4.08"
+  "code": "4.08",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g4-v6_069",
@@ -1140,7 +1305,10 @@
    "texte": "La calibration annuelle est obligatoire pour garantir la fiabilité de la mesure."
   },
   "remediation_vers": "g4b",
-  "code": "4.08"
+  "code": "4.08",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g4-v6_168",
@@ -1161,7 +1329,10 @@
    "texte": "Avant chaque campagne de détection, il faut vérifier le bon fonctionnement du détecteur avec un gaz de référence calibré."
   },
   "remediation_vers": "g4b",
-  "code": "4.08"
+  "code": "4.08",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g4-104",
@@ -1185,7 +1356,10 @@
    "piege": "raisonner en 'kg' au lieu de tCO₂e, ou inverser les seuils (5/50/500)."
   },
   "remediation_vers": "g4b",
-  "code": "4.03"
+  "code": "4.03",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g4-114",
@@ -1209,7 +1383,10 @@
    "piege": "raisonner en 'kg' au lieu de tCO₂e, ou inverser les seuils (5/50/500)."
   },
   "remediation_vers": "g4b",
-  "code": "4.03"
+  "code": "4.03",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g4-68",
@@ -1233,7 +1410,10 @@
    "piege": "croire que le détecteur est exigé pour toutes les installations, même petites."
   },
   "remediation_vers": "g4b",
-  "code": "4.06"
+  "code": "4.06",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g4-v6_174",
@@ -1254,7 +1434,10 @@
    "texte": "Le détenteur/exploitant de l'installation est responsable de la tenue du registre."
   },
   "remediation_vers": "g4b",
-  "code": "1.00"
+  "code": "1.00",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g4-107",
@@ -1278,7 +1461,10 @@
    "piege": "oublier une information clé (quantités) ou ne pas conserver les documents assez longtemps."
   },
   "remediation_vers": "g4b",
-  "code": "1.00"
+  "code": "1.00",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g4-180",
@@ -1299,7 +1485,10 @@
    "texte": "Après intervention, on effectue un TEST D'ÉTANCHÉITÉ avec de l'azote sous pression (environ 30 bars pour circuits HP). On recherche les fuites avec un détecteur de fuite ou de l'eau savonneuse. Si le circuit tient la pression pendant plusieurs heures, il est étanche."
   },
   "remediation_vers": "g4b",
-  "code": "4.06"
+  "code": "4.06",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g4-110",
@@ -1323,7 +1512,10 @@
    "piege": "se focaliser sur la masse de fluide seule."
   },
   "remediation_vers": "g4b",
-  "code": "4.03"
+  "code": "4.03",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "q-g5-v6_063",
@@ -1344,7 +1536,10 @@
    "texte": "Max 80% du volume pour laisser de l'espace à la dilatation thermique. Un remplissage excessif est dangereux (explosion)."
   },
   "remediation_vers": "g5a",
-  "code": "5.02"
+  "code": "5.02",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_156",
@@ -1365,7 +1560,10 @@
    "texte": "Un mélange de fluides différents est un déchet ultime : il ne peut être que détruit, pas recyclé ni régénéré."
   },
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_060",
@@ -1386,7 +1584,10 @@
    "texte": "En phase gazeuse, les composants d'un mélange zéotrope s'évaporent à des vitesses différentes, modifiant la composition."
   },
   "remediation_vers": "g5a",
-  "code": "5.05"
+  "code": "5.05",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_064",
@@ -1407,7 +1608,10 @@
    "texte": "La charge se fait au poids : on pèse la bouteille avant et après pour connaître la quantité exacte introduite (±5g)."
   },
   "remediation_vers": "g5a",
-  "code": "5.06"
+  "code": "5.06",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_082",
@@ -1428,7 +1632,10 @@
    "texte": "La récupération est TOUJOURS obligatoire, quelle que soit la quantité. Le rejet à l'atmosphère est interdit."
   },
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_083",
@@ -1449,7 +1656,10 @@
    "texte": "Le recyclage (filtrage, déshydratation) permet la réutilisation sur la même installation. La régénération (labo agréé) produit un fluide 'comme neuf'."
   },
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_176",
@@ -1470,7 +1680,10 @@
    "texte": "Le fluide simplement recyclé (filtré, séché) ne retrouve pas les spécifications d'origine et ne peut être vendu à un tiers."
   },
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-135",
@@ -1488,7 +1701,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g5a",
-  "code": "5.04"
+  "code": "5.04",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_175",
@@ -1509,7 +1725,10 @@
    "texte": "Le dégazage volontaire est une infraction : 1 500 € d'amende (contravention 5e classe). Aucune exception."
   },
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-141",
@@ -1527,7 +1746,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g5a",
-  "code": "5.03"
+  "code": "5.03",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-175",
@@ -1548,7 +1770,10 @@
    "texte": "Le manomètre BASSE PRESSION se branche sur la ligne d'ASPIRATION (entre évaporateur et compresseur) ou sur le piquage BP du compresseur. Il mesure la pression d'évaporation (BP)."
   },
   "remediation_vers": "g5a",
-  "code": "5.01"
+  "code": "5.01",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-176",
@@ -1569,7 +1794,10 @@
    "texte": "Le manomètre HAUTE PRESSION se branche sur la ligne de REFOULEMENT (entre compresseur et condenseur) ou sur le piquage HP du compresseur. Il mesure la pression de condensation (HP)."
   },
   "remediation_vers": "g5a",
-  "code": "5.01"
+  "code": "5.01",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-179",
@@ -1590,7 +1818,10 @@
    "texte": "Avant toute ouverture du circuit, il est OBLIGATOIRE de RÉCUPÉRER le fluide frigorigène avec une station de récupération certifiée. C'est une obligation légale (F-Gas) et environnementale. Ne jamais purger le fluide dans l'atmosphère !"
   },
   "remediation_vers": "g5a",
-  "code": "5.03"
+  "code": "5.03",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_161",
@@ -1611,7 +1842,10 @@
    "texte": "Ces deux paramètres indiquent si la quantité de fluide est correcte. Surchauffe trop haute = manque. SR trop bas = manque aussi."
   },
   "remediation_vers": "g5a",
-  "code": "5.05"
+  "code": "5.05",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_170",
@@ -1632,7 +1866,10 @@
    "texte": "Chaque ajout, retrait, récupération, contrôle de fluide doit faire l'objet d'une fiche CERFA."
   },
   "remediation_vers": "g5a",
-  "code": "5.07"
+  "code": "5.07",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_079",
@@ -1653,7 +1890,10 @@
    "texte": "La fiche doit être exhaustive : nature du fluide, quantités (ajout/récupération), identité de l'opérateur, nature des opérations."
   },
   "remediation_vers": "g5a",
-  "code": "5.07"
+  "code": "5.07",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_081",
@@ -1674,7 +1914,10 @@
    "texte": "Le BSD trace le parcours des déchets (fluides récupérés) du producteur au centre de traitement."
   },
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-128",
@@ -1692,7 +1935,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-133",
@@ -1710,7 +1956,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-143",
@@ -1728,7 +1977,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-147",
@@ -1746,7 +1998,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_177",
@@ -1767,7 +2022,10 @@
    "texte": "Les équipements frigorifiques contiennent des fluides réglementés et doivent suivre la filière DEEE spécialisée."
   },
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-v6_158",
@@ -1788,7 +2046,10 @@
    "texte": "La charge côté HP (sortie condenseur) se fait toujours en phase liquide. Côté BP, le fluide doit entrer en gaz pour ne pas endommager le compresseur."
   },
   "remediation_vers": "g5a",
-  "code": "5.05"
+  "code": "5.05",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-130",
@@ -1806,7 +2067,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g5-146",
@@ -1824,7 +2088,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g5a",
-  "code": "5.08"
+  "code": "5.08",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "q-g6-152",
@@ -1845,7 +2112,10 @@
    "texte": "Le compresseur ASPIRE le gaz basse pression en provenance de l'évaporateur et le COMPRIME pour l'envoyer vers le condenseur à haute pression. C'est le moteur du cycle frigorifique."
   },
   "remediation_vers": "g6",
-  "code": "6.01"
+  "code": "6.01",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-231",
@@ -1866,7 +2136,10 @@
    "texte": "L'huile LUBRIFIE les pièces mobiles du compresseur (pistons, roulements, paliers), REFROIDIT les parties chaudes, et assure l'ÉTANCHÉITÉ entre les zones HP et BP. Sans huile ou avec un niveau insuffisant, le compresseur grippe et se détruit rapidement."
   },
   "remediation_vers": "g6",
-  "code": "6.01"
+  "code": "6.01",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-233",
@@ -1887,7 +2160,10 @@
    "texte": "L'huile circule avec le fluide frigorigène dans tout le circuit. Elle doit REVENIR au compresseur pour maintenir un niveau correct dans le carter. Si l'huile reste piégée dans l'évaporateur ou les tuyauteries (mauvais retour d'huile), le niveau baisse dans le compresseur → grippage et destruction."
   },
   "remediation_vers": "g6",
-  "code": "6.01"
+  "code": "6.01",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-247",
@@ -1908,7 +2184,10 @@
    "texte": "Le RÉCHAUFFEUR DE CARTER maintient l'huile légèrement CHAUDE à l'arrêt pour éviter la MIGRATION du fluide frigorigène dans l'huile froide. Si le fluide se dissout dans l'huile (dilution), au démarrage il s'évapore brutalement (moussage) et l'huile peut être violemment projetée hors du carter. Le réchauffeur garde l'huile plus chaude que le reste du circuit pour éviter ce phénomène. Il doit être alimenté en permanence (même à l'arrêt)."
   },
   "remediation_vers": "g6",
-  "code": "6.01"
+  "code": "6.01",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-240",
@@ -1929,7 +2208,10 @@
    "texte": "Symptômes de MANQUE D'HUILE : 1) BRUITS anormaux (frottements, cliquetis), 2) ÉCHAUFFEMENT excessif du carter et du refoulement, 3) Baisse de PUISSANCE frigorifique, 4) Température de refoulement très élevée, 5) Niveau d'huile bas au voyant. ARRÊTER immédiatement le compresseur pour diagnostiquer la cause du mauvais retour d'huile avant qu'il ne grippe."
   },
   "remediation_vers": "g6",
-  "code": "6.07"
+  "code": "6.07",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-186",
@@ -1950,7 +2232,10 @@
    "texte": "Une TEMPÉRATURE DE REFOULEMENT élevée peut être causée par : manque de charge (surchauffe excessive), mauvais refroidissement du compresseur, rapport de pression trop élevé (T°K trop haute ou T°O trop basse), ou manque d'huile. Risque de carbonisation de l'huile et de destruction du compresseur."
   },
   "remediation_vers": "g6",
-  "code": "6.06"
+  "code": "6.06",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-174",
@@ -1971,7 +2256,10 @@
    "texte": "Le VOYANT D'HUILE (sur les compresseurs équipés) permet de vérifier visuellement le NIVEAU D'HUILE dans le carter du compresseur. Un niveau correct garantit la lubrification et le refroidissement du compresseur."
   },
   "remediation_vers": "g6",
-  "code": "6.05"
+  "code": "6.05",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-234",
@@ -1992,7 +2280,10 @@
    "texte": "Le SÉPARATEUR D'HUILE se monte au refoulement du compresseur. Il sépare l'huile entraînée par le gaz chaud et la renvoie DIRECTEMENT au compresseur par gravité. Cela réduit la quantité d'huile circulant dans le circuit et améliore le retour d'huile, surtout sur les installations avec évaporateurs multiples, longues lignes, ou basses températures."
   },
   "remediation_vers": "g6",
-  "code": "6.05"
+  "code": "6.05",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-235",
@@ -2013,7 +2304,10 @@
    "texte": "Le VOYANT D'HUILE est un hublot transparent sur le carter qui permet de vérifier visuellement le NIVEAU d'huile. Le niveau doit être entre les repères mini et maxi. Contrôler le niveau compresseur à l'ARRÊT (ou en fonctionnement stable si indiqué par le fabricant). Un niveau trop bas nécessite un appoint d'huile après diagnostic de la cause."
   },
   "remediation_vers": "g6",
-  "code": "6.05"
+  "code": "6.05",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-v6_054",
@@ -2034,7 +2328,10 @@
    "texte": "Le séparateur d'huile intercepte l'huile entraînée par le gaz chaud au refoulement et la renvoie au carter."
   },
   "remediation_vers": "g6",
-  "code": "6.05"
+  "code": "6.05",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-v6_150",
@@ -2055,7 +2352,10 @@
    "texte": "Les vannes de service (Schrader ou à tige) sont les points d'accès au circuit pour la mesure et l'intervention."
   },
   "remediation_vers": "g6",
-  "code": "6.06"
+  "code": "6.06",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-173",
@@ -2076,7 +2376,10 @@
    "texte": "Des CLAQUEMENTS dans le compresseur indiquent souvent un COUP DE LIQUIDE : du fluide liquide arrive au compresseur au lieu de gaz. Causes : détendeur mal réglé, excès de charge, ou évaporateur givré. Arrêter immédiatement l'installation pour éviter la destruction du compresseur !"
   },
   "remediation_vers": "g6",
-  "code": "6.06"
+  "code": "6.06",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-177",
@@ -2097,7 +2400,10 @@
    "texte": "L'ACCUMULATEUR DE LIQUIDE piège le liquide qui pourrait arriver au compresseur et ne laisse passer que le gaz. Il protège le compresseur contre les coups de liquide, surtout lors des démarrages ou des variations de charge."
   },
   "remediation_vers": "g6",
-  "code": "6.01"
+  "code": "6.01",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-190",
@@ -2118,7 +2424,10 @@
    "texte": "BP = HP en fonctionnement indique que le compresseur NE COMPRIME PLUS. Cause : clapets d'aspiration ou de refoulement cassés ou bloqués ouverts. Le gaz passe d'un côté à l'autre sans être comprimé. Solution : remplacer le compresseur."
   },
   "remediation_vers": "g6",
-  "code": "6.06"
+  "code": "6.06",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-241",
@@ -2139,7 +2448,10 @@
    "texte": "En FROID NÉGATIF (température d'évaporation < -10°C), l'huile devient plus VISQUEUSE (épaisse comme du miel froid). Elle circule moins bien, adhère aux parois, et est plus difficile à entraîner par le gaz. Solutions : vitesses de gaz plus élevées, tuyauteries bien dimensionnées, séparateur d'huile, huile adaptée aux basses températures."
   },
   "remediation_vers": "g6",
-  "code": "6.05"
+  "code": "6.05",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-243",
@@ -2160,7 +2472,10 @@
    "texte": "Si le niveau d'huile BAISSE rapidement après démarrage, c'est que l'huile est entraînée dans le circuit mais NE REVIENT PAS assez vite. Causes : vitesses de gaz insuffisantes, tuyauteries mal dimensionnées, contre-pentes, évaporateurs qui piègent l'huile. ARRÊTER et corriger les défauts d'installation avant grippage du compresseur. Ne PAS juste ajouter de l'huile sans corriger la cause !"
   },
   "remediation_vers": "g6",
-  "code": "6.05"
+  "code": "6.05",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-245",
@@ -2181,7 +2496,10 @@
    "texte": "À chaque DÉMARRAGE, l'huile est brutalement ENTRAÎNÉE hors du carter par le gaz. Le retour d'huile met du temps à s'établir. Si le compresseur s'arrête trop vite (cycles courts), l'huile n'a pas le temps de revenir et le niveau baisse progressivement. Causes des cycles courts : détendeur mal réglé, charge incorrecte, pressostat mal réglé. Corriger pour augmenter la durée des cycles (min 5-10 minutes)."
   },
   "remediation_vers": "g6",
-  "code": "6.05"
+  "code": "6.05",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-246",
@@ -2202,7 +2520,10 @@
    "texte": "Le COUP D'HUILE (oil slugging) se produit quand une grande quantité d'huile LIQUIDE arrive brutalement au compresseur (généralement accumulée dans l'évaporateur puis libérée d'un coup). Symptômes : CLAQUEMENTS violents, vibrations, risque de casse. Causes : dégivrage électrique trop rapide, redémarrage après un long arrêt, mauvais retour d'huile chronique. Prévention : siphon inversé sur l'aspiration, réchauffeur de carter."
   },
   "remediation_vers": "g6",
-  "code": "6.05"
+  "code": "6.05",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-248",
@@ -2223,7 +2544,10 @@
    "texte": "Signes d'huile CONTAMINÉE ou USAGÉE : 1) Couleur FONCÉE (brune à noire) au lieu de claire/ambrée, 2) OPAQUE au lieu de transparente, 3) Odeur de BRÛLÉ ou acide, 4) Présence de particules ou boues. Causes : surchauffe, humidité, contamination, acidité. Une huile dégradée ne lubrifie plus correctement → VIDANGER et remplacer + rechercher la cause (surchauffe, humidité, fuites)."
   },
   "remediation_vers": "g6",
-  "code": "6.07"
+  "code": "6.07",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-249",
@@ -2244,7 +2568,10 @@
    "texte": "Ne JAMAIS mélanger des huiles INCOMPATIBLES (ex: POE + minérale). Conséquences : 1) Formation de BOUES et dépôts, 2) Perte de miscibilité avec le fluide, 3) Mauvaise lubrification, 4) Bouchage du filtre et du détendeur, 5) Grippage du compresseur. Lors d'un retrofit fluide/huile, il faut VIDANGER complètement l'ancienne huile et rincer si nécessaire."
   },
   "remediation_vers": "g6",
-  "code": "6.01"
+  "code": "6.01",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-251",
@@ -2265,7 +2592,10 @@
    "texte": "Un EXCÈS d'huile cause : 1) PROJECTION d'huile hors du carter au démarrage (éclaboussures), 2) Huile entraînée en excès dans le circuit → encrassement évaporateur, 3) Niveau trop haut = mauvaise lubrification des paliers supérieurs (huile n'atteint pas), 4) Risque de coup d'huile. Respecter le niveau recommandé (généralement mi-voyant ou selon fabricant)."
   },
   "remediation_vers": "g6",
-  "code": "6.07"
+  "code": "6.07",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-252",
@@ -2286,7 +2616,10 @@
    "texte": "Le MOUSSAGE de l'huile au démarrage indique que du fluide frigorigène s'est dissous dans l'huile pendant l'arrêt (MIGRATION). Au démarrage, la pression baisse et le fluide s'évapore brutalement, créant de la mousse. Solutions : 1) Installer ou vérifier le RÉCHAUFFEUR DE CARTER (doit fonctionner à l'arrêt), 2) Rallonger le temps de démarrage (rampe progressive), 3) Vérifier l'isolation thermique du compresseur."
   },
   "remediation_vers": "g6",
-  "code": "6.01"
+  "code": "6.01",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-v6_152",
@@ -2307,7 +2640,10 @@
    "texte": "Il compare la pression d'huile à la pression BP. Si la différence est insuffisante, il coupe le compresseur pour éviter l'usure."
   },
   "remediation_vers": "g6",
-  "code": "6.01"
+  "code": "6.01",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g6-v6_153",
@@ -2328,7 +2664,10 @@
    "texte": "À l'arrêt, quand le carter refroidit, le fluide migre et se dissout dans l'huile. Au redémarrage, il peut mousser violemment."
   },
   "remediation_vers": "g6",
-  "code": "6.01"
+  "code": "6.01",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "q-g7-159",
@@ -2349,7 +2688,10 @@
    "texte": "Le CONDENSEUR évacue la chaleur du fluide frigorigène vers l'extérieur (air ou eau). Le gaz chaud se refroidit et se condense en liquide. C'est l'organe qui 'rejette' la chaleur."
   },
   "remediation_vers": "g7",
-  "code": "7.01"
+  "code": "7.01",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "q-g7-164",
@@ -2370,7 +2712,10 @@
    "texte": "Un condenseur ENCRASSÉ ne peut plus évacuer correctement la chaleur. La température et la pression du condenseur (HP) augmentent, ce qui force le compresseur à travailler plus fort, augmente la consommation électrique et peut mener à une surchauffe ou un déclenchement sécurité."
   },
   "remediation_vers": "g7",
-  "code": "7.08"
+  "code": "7.08",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "q-g7-163",
@@ -2391,7 +2736,10 @@
    "texte": "Les ventilateurs FORCENT l'air à travers les ailettes du condenseur pour améliorer l'évacuation de la chaleur. Plus le débit d'air est important, plus le condenseur est efficace (dans certaines limites)."
   },
   "remediation_vers": "g7",
-  "code": "7.01"
+  "code": "7.01",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "q-g7-182",
@@ -2412,7 +2760,10 @@
    "texte": "Le SOUS-REFROIDISSEMENT = Température de condensation (T°K) - Température du liquide sortie condenseur. On convertit la pression HP en température avec le tableau fluide. Un sous-refroidissement de 3 à 8°C est normal."
   },
   "remediation_vers": "g7",
-  "code": "7.07"
+  "code": "7.07",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "q-g7-169",
@@ -2433,7 +2784,10 @@
    "texte": "Le SOUS-REFROIDISSEMENT consiste à refroidir le liquide en dessous de sa température de condensation. Cela garantit qu'il reste liquide dans toute la ligne liquide (pas de flash-gas), améliore l'efficacité du détendeur et augmente la puissance frigorifique."
   },
   "remediation_vers": "g7",
-  "code": "7.01"
+  "code": "7.01",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "q-g7-170",
@@ -2454,7 +2808,10 @@
    "texte": "Un déclenchement PRESSOSTAT HP indique une pression de condensation trop élevée. Causes : condenseur sale ou encrassé, ventilateurs en panne, excès de charge frigorigène, air incondensable dans le circuit, ou température ambiante trop élevée."
   },
   "remediation_vers": "g7",
-  "code": "4.05"
+  "code": "4.05",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "q-g7-v6_057",
@@ -2475,7 +2832,10 @@
    "texte": "Le pressostat HP est avant tout un organe de sécurité qui coupe le compresseur si la pression HP dépasse le seuil dangereux."
   },
   "remediation_vers": "g7",
-  "code": "7.04"
+  "code": "7.04",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "q-g7-71",
@@ -2493,7 +2853,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g7",
-  "code": "7.07"
+  "code": "7.07",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "q-g8-v6_039",
@@ -2514,7 +2877,10 @@
    "texte": "C'est dans l'évaporateur que le fluide absorbe la chaleur, passant de liquide BP à gaz BP = production du froid."
   },
   "remediation_vers": "g8",
-  "code": "8.01"
+  "code": "8.01",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "q-g8-181",
@@ -2535,7 +2901,10 @@
    "texte": "La SURCHAUFFE = Température du gaz en aspiration - Température d'évaporation (T°O). On mesure la température du gaz avec une sonde, et on convertit la pression BP en température avec le tableau fluide. Une surchauffe de 5 à 10°C est normale."
   },
   "remediation_vers": "g8",
-  "code": "8.08"
+  "code": "8.08",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "q-g8-183",
@@ -2556,7 +2925,10 @@
    "texte": "Une SURCHAUFFE EXCESSIVE (>15°C) indique un manque d'alimentation de l'évaporateur. Causes : manque de charge, détendeur mal réglé (bulbe mal positionné ou défectueux), filtre bouché, ou vanne partiellement fermée. L'évaporateur manque de fluide et la puissance diminue."
   },
   "remediation_vers": "g8",
-  "code": "8.08"
+  "code": "8.08",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "q-g8-184",
@@ -2577,7 +2949,10 @@
    "texte": "Une SURCHAUFFE NULLE OU NÉGATIVE indique un retour de liquide au compresseur. Actions : diminuer l'ouverture du détendeur thermostatique, vérifier le bulbe, ou retirer du fluide si excès de charge. Risque de destruction du compresseur par coup de liquide !"
   },
   "remediation_vers": "g8",
-  "code": "8.08"
+  "code": "8.08",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "q-g8-178",
@@ -2598,7 +2973,10 @@
    "texte": "Un ÉVAPORATEUR GIVRÉ indique que l'air ne circule pas suffisamment ou que la température d'évaporation est trop basse. Causes : filtre à air encrassé, ventilateurs arrêtés ou lents, débit d'air insuffisant, détendeur mal réglé, ou température de consigne trop basse."
   },
   "remediation_vers": "g8",
-  "code": "8.09"
+  "code": "8.09",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "q-g8-v6_043",
@@ -2619,7 +2997,10 @@
    "texte": "Si la surchauffe est trop faible, du liquide peut arriver au compresseur, provoquant des coups de liquide destructeurs."
   },
   "remediation_vers": "g8",
-  "code": "8.01"
+  "code": "8.01",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "q-g8-166",
@@ -2640,7 +3021,10 @@
    "texte": "Une ligne d'aspiration CHAUDE indique une SURCHAUFFE excessive. Cela peut être dû à un manque de fluide frigorigène, un détendeur mal réglé ou bouché, ou un évaporateur encrassé. Le compresseur aspire du gaz trop chaud, ce qui diminue l'efficacité."
   },
   "remediation_vers": "g8",
-  "code": "8.08"
+  "code": "8.08",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "q-g8-167",
@@ -2661,7 +3045,10 @@
    "texte": "Du GIVRE sur la ligne d'aspiration indique que du liquide arrive au compresseur (surchauffe trop faible ou nulle). Causes possibles : excès de charge, détendeur qui laisse passer trop de fluide, évaporateur surdimensionné. Risque de coup de liquide !"
   },
   "remediation_vers": "g8",
-  "code": "8.08"
+  "code": "8.08",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "q-g8-171",
@@ -2682,7 +3069,10 @@
    "texte": "Un déclenchement PRESSOSTAT BP indique une pression d'évaporation trop basse. Causes : manque de charge frigorigène, évaporateur givré ou encrassé, filtre déshydrateur bouché, détendeur mal réglé ou bouché, ou débit d'air insuffisant sur l'évaporateur."
   },
   "remediation_vers": "g8",
-  "code": "4.05"
+  "code": "4.05",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "q-g8-70",
@@ -2700,7 +3090,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g8",
-  "code": "8.08"
+  "code": "8.08",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "q-g9-v6_049",
@@ -2721,7 +3114,10 @@
    "texte": "Le TEV régule la surchauffe en ajustant le débit de fluide entrant dans l'évaporateur via un bulbe capillaire."
   },
   "remediation_vers": "g9",
-  "code": "9.01"
+  "code": "9.01",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-v6_055",
@@ -2742,7 +3138,10 @@
    "texte": "L'EEV est piloté par un régulateur électronique avec des capteurs. Sa réponse est plus fine et rapide que le TEV mécanique."
   },
   "remediation_vers": "g9",
-  "code": "9.01"
+  "code": "9.01",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-v6_149",
@@ -2763,7 +3162,10 @@
    "texte": "Le tube capillaire est le détendeur le plus simple : un tube fin de longueur calibrée. Il est utilisé dans les petits équipements."
   },
   "remediation_vers": "g9",
-  "code": "9.01"
+  "code": "9.01",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-187",
@@ -2784,7 +3186,10 @@
    "texte": "Un BULLAGE dans le détendeur indique du FLASH-GAS : le fluide n'est pas totalement liquide à l'entrée du détendeur. Causes : manque de charge, sous-refroidissement insuffisant, perte de charge excessive dans la ligne liquide, ou filtre partiellement bouché. Le détendeur ne peut pas réguler correctement."
   },
   "remediation_vers": "g9",
-  "code": "9.01"
+  "code": "9.01",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-188",
@@ -2805,7 +3210,10 @@
    "texte": "Si le BULBE est PERCÉ, il perd sa charge et ne peut plus piloter le détendeur. Symptômes : surchauffe excessive et instable, le détendeur reste fermé ou presque, l'évaporateur manque de fluide. Solution : remplacer le détendeur ou le bulbe (si possible)."
   },
   "remediation_vers": "g9",
-  "code": "9.01"
+  "code": "9.01",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-v6_050",
@@ -2826,7 +3234,10 @@
    "texte": "Le tamis moléculaire absorbe l'humidité et les acides. Il doit être changé à chaque ouverture du circuit."
   },
   "remediation_vers": "g9",
-  "code": "9.08"
+  "code": "9.08",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-v6_051",
@@ -2847,7 +3258,10 @@
    "texte": "Vert = sec (OK), Jaune/marron = humide (problème). L'indicateur colorimétrique change selon le taux d'humidité."
   },
   "remediation_vers": "g9",
-  "code": "9.08"
+  "code": "9.08",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-v6_052",
@@ -2868,7 +3282,10 @@
    "texte": "Le pressostat BP peut couper le compresseur quand la pression BP descend trop (= température atteinte), puis le redémarrer quand elle remonte."
   },
   "remediation_vers": "g9",
-  "code": "1.05"
+  "code": "1.05",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-v6_155",
@@ -2889,7 +3306,10 @@
    "texte": "La vanne solénoïde est une vanne tout-ou-rien commandée électriquement. Ex: pump-down, dégivrage."
   },
   "remediation_vers": "g9",
-  "code": "1.05"
+  "code": "1.05",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-172",
@@ -2910,7 +3330,10 @@
    "texte": "Le filtre déshydrateur doit TOUJOURS être monté dans le SENS DE CIRCULATION du fluide, indiqué par une flèche sur le corps du filtre. Un montage à l'envers peut bloquer le circuit ou endommager le filtre."
   },
   "remediation_vers": "g9",
-  "code": "9.08"
+  "code": "9.08",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-168",
@@ -2931,7 +3354,10 @@
    "texte": "Des BULLES dans le voyant liquide indiquent que le fluide n'est pas totalement liquide (flash-gas). Causes : manque de charge, sous-refroidissement insuffisant, perte de charge excessive dans la ligne liquide, ou détendeur trop proche du condenseur. Risque de mauvais fonctionnement du détendeur."
   },
   "remediation_vers": "g9",
-  "code": "1.05"
+  "code": "1.05",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-161",
@@ -2952,7 +3378,10 @@
    "texte": "Le FILTRE DÉSHYDRATEUR contient des tamis moléculaires qui absorbent l'humidité présente dans le circuit. Il protège le détendeur et le compresseur du givrage et de la corrosion."
   },
   "remediation_vers": "g9",
-  "code": "9.08"
+  "code": "9.08",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-162",
@@ -2973,7 +3402,10 @@
    "texte": "Le VOYANT LIQUIDE permet de visualiser l'état du fluide frigorigène dans la ligne liquide : présence de bulles (manque de charge), changement de couleur de l'indicateur d'humidité, aspect du fluide. C'est un outil de diagnostic visuel."
   },
   "remediation_vers": "g9",
-  "code": "1.05"
+  "code": "1.05",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-v6_053",
@@ -2994,7 +3426,10 @@
    "texte": "La vanne 4 voies permute les rôles de l'échangeur intérieur et extérieur : l'évaporateur devient condenseur et inversement (mode PAC)."
   },
   "remediation_vers": "g9",
-  "code": "1.05"
+  "code": "1.05",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-v6_151",
@@ -3015,7 +3450,10 @@
    "texte": "Chaque fois que le circuit est ouvert, de l'humidité entre. Le déshydrateur doit être changé pour l'absorber."
   },
   "remediation_vers": "g9",
-  "code": "9.08"
+  "code": "9.08",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-v6_154",
@@ -3036,7 +3474,10 @@
    "texte": "Il est placé sur la ligne liquide pour vérifier que le fluide arrive bien sous forme liquide au détendeur."
   },
   "remediation_vers": "g9",
-  "code": "1.05"
+  "code": "1.05",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g9-189",
@@ -3057,7 +3498,10 @@
    "texte": "Le DÉTENDEUR ÉLECTRONIQUE régule l'ouverture de la vanne en fonction de la SURCHAUFFE calculée par un calculateur à partir de sondes de température et de pression. Il est plus précis qu'un détendeur thermostatique et permet d'optimiser l'efficacité de l'installation."
   },
   "remediation_vers": "g9",
-  "code": "9.01"
+  "code": "9.01",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "q-g10-v6_061",
@@ -3078,7 +3522,10 @@
    "texte": "Sans azote, l'oxygène de l'air réagit avec le cuivre chauffé et forme de la calamine noire qui bouchera les filtres et endommagera le compresseur."
   },
   "remediation_vers": "g10",
-  "code": "10.01"
+  "code": "10.01",
+  "chapitre": "10",
+  "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+  "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md"
  },
  {
   "id": "q-g10-v6_065",
@@ -3099,7 +3546,10 @@
    "texte": "Pour les joints Cu-Cu, on utilise un alliage cuivre-phosphore (type BCuP). Pour Cu-acier, on utilise un alliage argent."
   },
   "remediation_vers": "g10",
-  "code": "10.01"
+  "code": "10.01",
+  "chapitre": "10",
+  "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+  "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md"
  },
  {
   "id": "q-g10-87",
@@ -3117,7 +3567,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g10",
-  "hors_ref": "cintrage : geste métier ; le groupe 10 ne couvre que le brasage (10.01) et les supports (10.02)"
+  "hors_ref": "cintrage : geste métier ; le groupe 10 ne couvre que le brasage (10.01) et les supports (10.02)",
+  "chapitre": "10",
+  "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+  "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md"
  },
  {
   "id": "q-g10-84",
@@ -3135,7 +3588,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g10",
-  "hors_ref": "dudgeonnage : raccord mécanique, hors du groupe 10 (brasage, supports)"
+  "hors_ref": "dudgeonnage : raccord mécanique, hors du groupe 10 (brasage, supports)",
+  "chapitre": "10",
+  "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+  "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md"
  },
  {
   "id": "q-g10-v6_157",
@@ -3156,7 +3612,10 @@
    "texte": "Avant tout raccordement, il faut purger l'air du flexible pour ne pas introduire d'incondensables dans le circuit."
   },
   "remediation_vers": "g10",
-  "hors_ref": "raccordement sur vanne Schrader : geste métier non listé à l'annexe II.B"
+  "hors_ref": "raccordement sur vanne Schrader : geste métier non listé à l'annexe II.B",
+  "chapitre": "10",
+  "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+  "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md"
  },
  {
   "id": "q-g10-69",
@@ -3174,7 +3633,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g10",
-  "code": "10.01"
+  "code": "10.01",
+  "chapitre": "10",
+  "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+  "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md"
  },
  {
   "id": "q-g11-v6_033",
@@ -3195,7 +3657,10 @@
    "texte": "A = faible toxicité, 2L = légèrement inflammable (vitesse de flamme < 10 cm/s). Ex: R32, R1234yf."
   },
   "remediation_vers": "g11",
-  "code": "11.03"
+  "code": "11.03",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "q-g11-v6_140",
@@ -3216,7 +3681,10 @@
    "texte": "Le 'L' de A2L signifie 'Lower flammability' : vitesse de flamme < 10 cm/s. C'est le seuil de la sous-classe 2L."
   },
   "remediation_vers": "g11",
-  "code": "11.03"
+  "code": "11.03",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "q-g11-54",
@@ -3234,7 +3702,10 @@
   "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
   "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
   "remediation_vers": "g11",
-  "code": "11.03"
+  "code": "11.03",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "q-g11-v6_030",
@@ -3255,7 +3726,10 @@
    "texte": "Les HFO comme le R1234yf (GWP 4) ou R1234ze (GWP 7) ont un GWP quasi nul car ils se dégradent rapidement dans l'atmosphère."
   },
   "remediation_vers": "g11",
-  "code": "11.01"
+  "code": "11.01",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "q-g11-v6_035",
@@ -3276,7 +3750,10 @@
    "texte": "Un drop-in est un remplacement direct, sans modification de composant. En pratique, c'est rare et souvent il faut au moins changer l'huile."
   },
   "remediation_vers": "g11",
-  "code": "11.01"
+  "code": "11.01",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "q-g11-v6_092",
@@ -3297,7 +3774,10 @@
    "texte": "EN 378 est LA norme de référence pour la sécurité des installations frigorifiques en Europe."
   },
   "remediation_vers": "g11",
-  "code": "11.03"
+  "code": "11.03",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "q-g11-185",
@@ -3318,7 +3798,10 @@
    "texte": "Le COP (efficacité énergétique) est meilleur quand l'écart T°K - T°O est FAIBLE. Pour optimiser : baisser la T°K (condenseur propre, bon refroidissement) et augmenter la T°O si possible (évaporateur surdimensionné, bon dégivrage). Moins le compresseur force, mieux c'est !"
   },
   "remediation_vers": "g11",
-  "code": "11.02"
+  "code": "11.02",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "q-g11-v6_047",
@@ -3339,7 +3822,10 @@
    "texte": "Le COP est le rapport entre la puissance frigorifique produite et la puissance électrique consommée. Un COP de 3 = 3 kW de froid pour 1 kW d'électricité."
   },
   "remediation_vers": "g11",
-  "code": "1.02"
+  "code": "1.02",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "q-g11-v6_147",
@@ -3360,7 +3846,10 @@
    "texte": "Le condenseur rejette la somme de la chaleur absorbée à l'évaporateur + l'énergie apportée par le compresseur."
   },
   "remediation_vers": "g11",
-  "code": "1.02"
+  "code": "1.02",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "q-g11-v6_183",
@@ -3381,7 +3870,10 @@
    "texte": "Catégorie a = accès public général. b = accès restreint. c = personnel autorisé uniquement. La charge maximale dépend de la catégorie."
   },
   "remediation_vers": "g11",
-  "code": "11.03"
+  "code": "11.03",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "q-g12-v6_091",
@@ -3402,7 +3894,10 @@
    "texte": "Le R290 est un hydrocarbure hautement inflammable. La norme EN 378 limite strictement les charges dans les locaux occupés."
   },
   "remediation_vers": "g12",
-  "code": "12.03"
+  "code": "12.03",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "q-g12-v6_181",
@@ -3423,7 +3918,10 @@
    "texte": "Le R600a est le fluide standard des réfrigérateurs modernes. Charges très faibles (50-150g) pour limiter le risque d'inflammation."
   },
   "remediation_vers": "g12",
-  "code": "1.07"
+  "code": "1.07",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "q-g12-v6_093",
@@ -3444,7 +3942,10 @@
    "texte": "Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante."
   },
   "remediation_vers": "g12",
-  "code": "12.02"
+  "code": "12.02",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "q-g12-v6_184",
@@ -3465,7 +3966,10 @@
    "texte": "Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention."
   },
   "remediation_vers": "g12",
-  "code": "12.02"
+  "code": "12.02",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "q-g12-291",
@@ -3483,7 +3987,10 @@
   "explication": "Un fluide A2L reste inflammable : on récupère, on inerte à l'azote et on supprime toute source d'ignition avant la flamme.",
   "aide": "Brasage A2L = précautions strictes.",
   "remediation_vers": "g12",
-  "code": "12.06"
+  "code": "12.06",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "q-g12-286",
@@ -3501,7 +4008,10 @@
   "explication": "Double risque : inflammation du fluide, et décomposition thermique produisant des gaz toxiques (dont acide fluorhydrique).",
   "aide": "Fluides inflammables = double danger.",
   "remediation_vers": "g12",
-  "code": "12.04"
+  "code": "12.04",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "q-g12-289",
@@ -3519,7 +4029,10 @@
   "explication": "Le R-290 est A3 : très inflammable. Le R-32 est A2L : faiblement inflammable, vitesse de flamme ≤ 10 cm/s. Piège classique.",
   "aide": "Classification distingue niveaux inflammabilité.",
   "remediation_vers": "g12",
-  "code": "1.08"
+  "code": "1.08",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "q-g13-v6_088",
@@ -3540,7 +4053,10 @@
    "texte": "Au-dessus de 31°C et 73,8 bar, le CO₂ est supercritique (ni liquide ni gaz). C'est ce qui rend le CO₂ transcritique si particulier."
   },
   "remediation_vers": "g13",
-  "code": "1.09"
+  "code": "1.09",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "q-g13-v6_089",
@@ -3561,7 +4077,10 @@
    "texte": "En transcritique, le CO₂ ne se condense pas (T° > 31°C). On refroidit simplement le gaz HP dans un échangeur appelé gas cooler."
   },
   "remediation_vers": "g13",
-  "code": "1.09"
+  "code": "1.09",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "q-g13-v6_185",
@@ -3582,7 +4101,10 @@
    "texte": "Le CO₂ a le GWP de référence (1). Même en cas de fuite totale, l'impact climatique est négligeable par rapport aux HFC."
   },
   "remediation_vers": "g13",
-  "code": "2.02"
+  "code": "2.02",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "q-g13-v6_090",
@@ -3603,7 +4125,10 @@
    "texte": "L'ammoniac est classé B (toxicité élevée) et 2L (légèrement inflammable). Il nécessite des précautions strictes."
   },
   "remediation_vers": "g13",
-  "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack"
+  "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "q-g13-v6_094",
@@ -3624,7 +4149,10 @@
    "texte": "L'ammoniac est le fluide de référence du froid industriel (entrepôts, chambres froides, agroalimentaire) grâce à ses excellentes propriétés thermodynamiques."
   },
   "remediation_vers": "g13",
-  "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack"
+  "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "q-g13-v6_182",
@@ -3645,7 +4173,10 @@
    "texte": "L'ammoniac a une odeur extrêmement reconnaissable et détectable à très faible concentration (5 ppm). C'est un avantage pour la sécurité."
   },
   "remediation_vers": "g13",
-  "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack"
+  "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "q-g13-283",
@@ -3663,7 +4194,10 @@
   "explication": "Le CO₂ ne se voit pas et ne se sent pas : en cas de fuite dans un local fermé, il remplace l'air sans prévenir. Seul un détecteur alerte avant l'asphyxie.",
   "aide": "CO2 invisible et inodore.",
   "remediation_vers": "g13",
-  "code": "13.14"
+  "code": "13.14",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "q-g13-v6_180",
@@ -3684,7 +4218,10 @@
    "texte": "Quand la température extérieure est < 25°C environ, le CO₂ peut condenser normalement (mode sous-critique = cycle classique)."
   },
   "remediation_vers": "g13",
-  "code": "1.09"
+  "code": "1.09",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "q-g13-302",
@@ -3702,7 +4239,10 @@
   "explication": "En cas de fuite massive, on doit pouvoir sortir en poussant la porte, même en panique et même si la pression du local a monté. Le sens d'ouverture est un choix de sécurité.",
   "aide": "Conception locaux CO2 intègre éléments sécurité.",
   "remediation_vers": "g13",
-  "code": "13.14"
+  "code": "13.14",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "pk-g8b-1",
@@ -3726,7 +4266,10 @@
   },
   "remediation_vers": "g8b",
   "explication": "Un évaporateur installé doit fonctionner sans aucune fuite ni émission. Cela vaut pour le tube, mais aussi pour tout le matériel de contrôle et de sécurité posé avec lui.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "pk-g8b-2",
@@ -3750,7 +4293,10 @@
   },
   "remediation_vers": "g8b",
   "explication": "Les interrupteurs de sécurité et de contrôle, ou pressostats, protègent la machine. Ils coupent l'alimentation électrique du compresseur si la pression sort de la plage prévue.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "pk-g8b-3",
@@ -3774,7 +4320,10 @@
   },
   "remediation_vers": "g8b",
   "explication": "Le conduit de dégivrage à l'air chaud s'inspecte à chaque visite. On vérifie l'étanchéité, l'isolation et l'écoulement des condensats.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "pk-g8b-4",
@@ -3798,7 +4347,10 @@
   },
   "remediation_vers": "g8b",
   "explication": "Une batterie sale ou un mauvais débit d'air font tourner le compresseur plus longtemps pour le même résultat. C'est ce qui coûte le plus cher en énergie.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "pk-g9b-1",
@@ -3822,7 +4374,10 @@
   },
   "remediation_vers": "g9b",
   "explication": "Le thermostat mécanique utilise un bulbe relié par un tube fin à des contacts électriques.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "pk-g9b-2",
@@ -3846,7 +4401,10 @@
   },
   "remediation_vers": "g9b",
   "explication": "Le séparateur d'huile retient l'huile, puis la renvoie automatiquement au carter du compresseur dès que le niveau monte. Vérifier son fonctionnement, c'est contrôler que ce retour se fait bien.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "pk-g9b-3",
@@ -3870,7 +4428,10 @@
   },
   "remediation_vers": "g9b",
   "explication": "Un défaut non signalé (thermostat qui dérive, limiteur qui ne coupe plus, séparateur qui laisse passer l'huile) finit par endommager le système. À terme, faute de mesure, cela provoque une fuite ou une émission de réfrigérant.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "pk-g9b-4",
@@ -3894,7 +4455,10 @@
   },
   "remediation_vers": "g9b",
   "explication": "Un séparateur d'huile qui laisse l'huile encrasser les échangeurs fait travailler le compresseur plus, pour le même résultat.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "pk-g12b-1",
@@ -3918,7 +4482,10 @@
   },
   "remediation_vers": "g12b",
   "explication": "Le R-290 (et le R-600a) sont classés A3 : très inflammables. Aucune flamme n'est autorisée tant que l'inertage à l'azote n'est pas confirmé.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-g12b-2",
@@ -3942,7 +4509,10 @@
   },
   "remediation_vers": "g12b",
   "explication": "Si le vide remonte après l'arrêt de la pompe, il y a un problème sur le circuit : une fuite ou de l'humidité restante. On ne charge pas dans ces conditions.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-g12b-3",
@@ -3966,7 +4536,10 @@
   },
   "remediation_vers": "g12b",
   "explication": "La charge de réfrigérant hydrocarbure se fait par pesée, avec le volume indiqué sur la plaque signalétique.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-g12b-4",
@@ -3990,7 +4563,10 @@
   },
   "remediation_vers": "g12b",
   "explication": "Le contrôle d'étanchéité direct sur un circuit hydrocarbure se fait avec un détecteur adapté aux hydrocarbures.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-g13-1",
@@ -4014,7 +4590,10 @@
   },
   "remediation_vers": "g13",
   "explication": "Le CO₂ est A1 : toxicité faible, non inflammable. Ses deux dangers réels sont ailleurs — la pression, très élevée, et l'atmosphère irrespirable en local fermé.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "pk-g13-2",
@@ -4038,7 +4617,10 @@
   },
   "remediation_vers": "g13",
   "explication": "En cas de fuite d'ammoniac : alerter, évacuer, ne jamais intervenir seul.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "pk-g13-3",
@@ -4062,7 +4644,10 @@
   },
   "remediation_vers": "g13",
   "explication": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "pk-g13-4",
@@ -4086,7 +4671,10 @@
   },
   "remediation_vers": "g13",
   "explication": "Une attestation A1 ou A2 ne donne aucun droit d'intervention sur une installation à l'ammoniac (catégorie C) ou au CO₂ (catégorie B).",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "pk-g0-1",
@@ -4110,7 +4698,10 @@
   },
   "remediation_vers": "g0",
   "explication": "L'attestation d'aptitude est un document personnel. Elle autorise une personne à intervenir sur les fluides frigorigènes.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g0-2",
@@ -4134,7 +4725,10 @@
   },
   "remediation_vers": "g0",
   "explication": "La filière DEEE traite la carcasse de l'équipement en fin de vie. Le fluide frigorigène doit être récupéré à part, avant, par un professionnel habilité.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1c-1",
@@ -4158,7 +4752,10 @@
   },
   "remediation_vers": "g1c",
   "explication": "Le code du fluide (R-xyz) décrit la molécule. La classe NF EN 378 (A1, A2L, A3…) décrit le risque de manipulation. Il faut toujours lire les deux.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1c-2",
@@ -4182,7 +4779,10 @@
   },
   "remediation_vers": "g1c",
   "explication": "Les fluides naturels (propane, isobutane, ammoniac, CO₂) existent sans chimie de synthèse. Les HFC et les HFO sont des molécules fabriquées.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g7b-1",
@@ -4206,7 +4806,10 @@
   },
   "remediation_vers": "g7b",
   "explication": "Le contrôle d'étanchéité avant mise en service se fait sous azote, un gaz neutre.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "pk-g7b-2",
@@ -4230,7 +4833,10 @@
   },
   "remediation_vers": "g7b",
   "explication": "Le régulateur de pression de sortie du condenseur se règle selon la fiche constructeur, jamais à l'estime.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "pk-p4-1",
@@ -4254,7 +4860,10 @@
   },
   "remediation_vers": "p4",
   "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "03",
+  "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+  "chapitre_fichier": "CONTENU-03-G3-controles-mes.md"
  },
  {
   "id": "pk-p4-2",
@@ -4278,7 +4887,10 @@
   },
   "remediation_vers": "p4",
   "explication": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "03",
+  "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+  "chapitre_fichier": "CONTENU-03-G3-controles-mes.md"
  },
  {
   "id": "pk-p7-1",
@@ -4302,7 +4914,10 @@
   },
   "remediation_vers": "p7",
   "explication": "L'analyse de risques se fait AVANT le premier geste, sur place.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-p7-2",
@@ -4326,7 +4941,10 @@
   },
   "remediation_vers": "p7",
   "explication": "Zone balisée, ventilation en service, issue dégagée, aucune source d'inflammation, EPI et matériel adaptés, consignation électrique faite.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-q-10.02",
@@ -4350,7 +4968,10 @@
   },
   "remediation_vers": "g10",
   "explication": "Les supports de tuyauterie doivent être bien positionnés, sans point dur ni serrage excessif sur le tube.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "10",
+  "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+  "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md"
  },
  {
   "id": "pk-q-11.04",
@@ -4374,7 +4995,10 @@
   },
   "remediation_vers": "g11",
   "explication": "Le CO2 est performant en froid commercial, mais son efficacité baisse quand le climat extérieur est très chaud. Aucun fluide de substitution n'est le meilleur dans l'absolu : le choix dépend de l'application et du climat du site.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "pk-q-11.05",
@@ -4398,7 +5022,10 @@
   },
   "remediation_vers": "g11",
   "explication": "Le propane est plus lourd que l'air. En cas de fuite, il s'accumule en bas, près du sol. La ventilation du local est conçue en tenant compte de cela, dès la conception de la machine.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "pk-q-12.01",
@@ -4422,7 +5049,10 @@
   },
   "remediation_vers": "g12",
   "explication": "Les bouteilles d'hydrocarbure ont un raccord spécifique et un filetage à gauche : on utilise le matériel prévu pour ce raccord, jamais un adaptateur.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-q-12.08",
@@ -4446,7 +5076,10 @@
   },
   "remediation_vers": "g12b",
   "explication": "La pression d'épreuve à appliquer se trouve dans la documentation constructeur et la norme applicable, jamais à l'estime.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-q-12.12",
@@ -4470,7 +5103,10 @@
   },
   "remediation_vers": "g12b",
   "explication": "Le rapport d'intervention doit contenir le composant changé, les résultats de l'épreuve et du contrôle, et la quantité chargée.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-q-12.13",
@@ -4494,7 +5130,10 @@
   },
   "remediation_vers": "g12",
   "explication": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes'en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-q-12.14",
@@ -4518,7 +5157,10 @@
   },
   "remediation_vers": "g12",
   "explication": "Sur un fluide inflammable, la charge exacte compte double car ces circuits sont conçus avec une charge volontairement petite.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-q-3.05",
@@ -4542,7 +5184,10 @@
   },
   "remediation_vers": "g3",
   "explication": "Après tout contrôle ou essai (épreuve de résistance, épreuve d'étanchéité, tirage au vide), on consigne les résultats dans le registre de l'équipement et on rédige un rapport sur les essais et contrôles effectués.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "03",
+  "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+  "chapitre_fichier": "CONTENU-03-G3-controles-mes.md"
  },
  {
   "id": "pk-q-4.01",
@@ -4566,7 +5211,10 @@
   },
   "remediation_vers": "g4a",
   "explication": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces'en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "pk-q-4.02",
@@ -4590,7 +5238,10 @@
   },
   "remediation_vers": "x4",
   "explication": "Le registre de l'équipement doit être consulté avant tout contrôle pour relever les problèmes récurrents et les parties nécessitant une attention particulière ; un point déjà réparé est à recontrôler en priorité.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "pk-q-4.09",
@@ -4614,7 +5265,10 @@
   },
   "remediation_vers": "g4c",
   "explication": "Toutes les données du contrôle doivent être consignées dans le registre de l'équipement : date, méthode utilisée, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "04",
+  "chapitre_titre": "Contrôles d'étanchéité",
+  "chapitre_fichier": "CONTENU-04-G4-etancheite.md"
  },
  {
   "id": "pk-q-5.09",
@@ -4638,7 +5292,10 @@
   },
   "remediation_vers": "g5b",
   "explication": "Pour les hydrocarbures, le fluide ET l'huile sont inflammables : ils se stockent et se transportent dans des récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, selon la réglementation applicable et la fiche de données de sécurité.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "pk-q-6.02",
@@ -4662,7 +5319,10 @@
   },
   "remediation_vers": "g6b",
   "explication": "Un compresseur se fixe toujours sur des plots antivibratiles (silent-blocs), jamais directement sur son châssis ou le sol.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "pk-q-6.03",
@@ -4686,7 +5346,10 @@
   },
   "remediation_vers": "g6",
   "explication": "Les interrupteurs de sécurité et de contrôle (pressostats HP et BP, protection thermique) se règlent toujours selon la fiche constructeur, jamais à l'estime.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "pk-q-6.04",
@@ -4710,7 +5373,10 @@
   },
   "remediation_vers": "g6b",
   "explication": "La soupape d'aspiration, qui laisse entrer la vapeur basse pression à chaque cycle, se règle toujours selon la fiche constructeur, jamais au jugé.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "pk-q-6.08",
@@ -4734,7 +5400,10 @@
   },
   "remediation_vers": "g6b",
   "explication": "Une bonne installation, un bon réglage et un bon entretien du compresseur sont aussi des gestes d'efficacité énergétique : la machine consomme moins et dure plus longtemps.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "06",
+  "chapitre_titre": "Composant : compresseurs",
+  "chapitre_fichier": "CONTENU-06-G6-compresseurs.md"
  },
  {
   "id": "pk-q-7.05",
@@ -4758,7 +5427,10 @@
   },
   "remediation_vers": "g7b",
   "explication": "On inspecte visuellement la conduite de refoulement (gaz chaud, entre compresseur et condenseur) et la conduite de liquide (juste après le condenseur), après consignation électrique. On cherche des traces d'huile, de la corrosion, un isolant abîmé.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "pk-q-7.06",
@@ -4782,7 +5454,10 @@
   },
   "remediation_vers": "g7",
   "explication": "Les incondensables se purgent à l'arrêt, installation froide, avec récupération du fluide — jamais fluide en mouvement.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "pk-q-7.09",
@@ -4806,7 +5481,10 @@
   },
   "remediation_vers": "g7b",
   "explication": "Chaque visite se termine par un rapport écrit notant les ailettes encrassées, le ventilateur bruyant, les traces d'huile, une pression anormale.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "pk-q-7.10",
@@ -4830,7 +5508,10 @@
   },
   "remediation_vers": "g7b",
   "explication": "Des ailettes propres et un ventilateur en bon état limitent la haute pression et donc la consommation électrique.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "pk-q-8.02",
@@ -4854,7 +5535,10 @@
   },
   "remediation_vers": "g8b",
   "explication": "Le réglage d'un régulateur de pression d'évaporation (mise au point comme réglage) suit toujours la fiche constructeur, jamais une valeur estimée.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "pk-q-8.05",
@@ -4878,7 +5562,10 @@
   },
   "remediation_vers": "g8",
   "explication": "La conduite d'aspiration se pose en légère pente vers le compresseur, avec un siphon en pied de toute colonne montante.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "pk-q-8.07",
@@ -4902,7 +5589,10 @@
   },
   "remediation_vers": "g8b",
   "explication": "On règle la soupape de régulation de pression d'évaporation selon la fiche constructeur, pour maintenir une pression minimale adaptée au produit ou pour équilibrer plusieurs évaporateurs sur un même compresseur.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "pk-q-8.10",
@@ -4926,7 +5616,10 @@
   },
   "remediation_vers": "g8b",
   "explication": "Toute visite de l'évaporateur se termine par un rapport écrit qui décrit précisément les anomalies observées : corrosion, fixation desserrée, bac de condensats sale, conduit de dégivrage abîmé.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "pk-q-9.02",
@@ -4950,7 +5643,10 @@
   },
   "remediation_vers": "g9",
   "explication": "Une vanne, comme un filtre déshydrateur, se monte toujours dans le sens de circulation du fluide, indiqué par la flèche gravée sur son corps.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "pk-q-9.03",
@@ -4974,7 +5670,10 @@
   },
   "remediation_vers": "g9",
   "explication": "Le détendeur thermostatique mécanique régule la surchauffe grâce à un bulbe fixé sur la ligne d'aspiration. Le détendeur électronique fait la même régulation, mais avec une sonde et un régulateur : plus précis, plus rapide.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "pk-q-9.05",
@@ -4998,7 +5697,10 @@
   },
   "remediation_vers": "g9b",
   "explication": "La soupape de régulation de pression module en continu pour maintenir une pression stable à un point du circuit. Elle ne coupe jamais le circuit.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "pk-q-9.06",
@@ -5022,7 +5724,10 @@
   },
   "remediation_vers": "g9b",
   "explication": "Le limiteur de pression mécanique est réglé par un ressort (tarage mécanique). Le limiteur de pression électronique utilise un capteur relié à un module. Dans les deux cas, il coupe le circuit dès qu'un seuil de pression'est franchi, en haute comme en basse pression.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
  },
  {
   "id": "pk-s5-1",
@@ -5121,7 +5826,10 @@
   },
   "remediation_vers": "cl1",
   "explication": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-cl1-2",
@@ -5145,7 +5853,10 @@
   },
   "remediation_vers": "cl1",
   "explication": "Le R-290 est classé A3 : toxicité faible, mais très inflammable.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-cl1-3",
@@ -5169,7 +5880,10 @@
   },
   "remediation_vers": "cl1",
   "explication": "La classe de sécurité détermine l'ensemble du dispositif : EPI, matériel électrique et suppression des sources d'étincelle, ventilation, type de détecteur et seuil d'alarme, charge maximale admise et conditions d'occupation du local.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-cl2-1",
@@ -5193,7 +5907,10 @@
   },
   "remediation_vers": "cl2",
   "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-cl2-2",
@@ -5217,7 +5934,10 @@
   },
   "remediation_vers": "cl2",
   "explication": "Le R-290 utilisé en froid ne contient pas d'odorisant : seule une mesure à l'explosimètre renseigne sur l'état de l'atmosphère.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-cl2-3",
@@ -5241,7 +5961,10 @@
   },
   "remediation_vers": "cl2",
   "explication": "Un explosimètre affiche un pourcentage de la LIE du gaz recherché : c'est une marge restante avant que l'atmosphère ne devienne inflammable.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "12",
+  "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+  "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md"
  },
  {
   "id": "pk-cl3-1",
@@ -5265,7 +5988,10 @@
   },
   "remediation_vers": "cl3",
   "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "pk-cl3-2",
@@ -5289,7 +6015,10 @@
   },
   "remediation_vers": "cl3",
   "explication": "L'azote agit uniquement par déplacement de l'oxygène. Le CO₂ agit par déplacement ET par action propre sur l'organisme : il intervient dans la régulation de la respiration.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "pk-cl3-3",
@@ -5313,7 +6042,10 @@
   },
   "remediation_vers": "cl3",
   "explication": "Devant une personne au sol dans un espace clos ou en contrebas : alerter, ventiler, faire intervenir les secours — sans descendre à son tour.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "11",
+  "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+  "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md"
  },
  {
   "id": "pk-cl4-1",
@@ -5337,7 +6069,10 @@
   },
   "remediation_vers": "cl4",
   "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "pk-cl4-2",
@@ -5361,7 +6096,10 @@
   },
   "remediation_vers": "cl4",
   "explication": "Un masque à cartouche filtre certains polluants dans un air qui reste respirable. Il ne fabrique pas d'oxygène et ne retient pas le CO₂.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "pk-cl4-3",
@@ -5385,7 +6123,10 @@
   },
   "remediation_vers": "cl4",
   "explication": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "13",
+  "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+  "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md"
  },
  {
   "id": "pk-g1s-1",
@@ -5409,7 +6150,10 @@
   },
   "remediation_vers": "g1s",
   "explication": "Pendant un changement d'état, la chaleur apportée est de la chaleur latente : elle transforme le liquide en vapeur sans faire monter la température. C'est le palier.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1s-2",
@@ -5433,7 +6177,10 @@
   },
   "remediation_vers": "g1s",
   "explication": "Le palier de changement d'état commence au point de bulle — la première bulle de vapeur — et finit au point de rosée — la dernière goutte de liquide.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1s-3",
@@ -5457,7 +6204,10 @@
   },
   "remediation_vers": "g1s",
   "explication": "Sur son palier de changement d'état, un fluide absorbe ou restitue une grande quantité de chaleur — la chaleur latente — sans que sa température varie.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1s-4",
@@ -5481,7 +6231,10 @@
   },
   "remediation_vers": "g1s",
   "explication": "Dans un mélange zéotrope, la température n'est pas constante pendant le changement d'état : elle glisse. Le point de bulle et le point de rosée ne sont donc pas à la même température.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1b-1",
@@ -5505,7 +6258,10 @@
   },
   "remediation_vers": "g1b",
   "explication": "La courbe en cloche partage le diagramme en trois : liquide à gauche, mélange liquide + vapeur sous la cloche, vapeur surchauffée à droite.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1b-2",
@@ -5529,7 +6285,10 @@
   },
   "remediation_vers": "g1b",
   "explication": "Le sous-refroidissement se lit sur le trait du haut (haute pression), à gauche de la courbe de bulle. La surchauffe se lit sur le trait du bas (basse pression), à droite de la courbe de rosée.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1b-3",
@@ -5553,7 +6312,10 @@
   },
   "remediation_vers": "g1b",
   "explication": "Sur une échelle logarithmique, ce qui est constant n'est pas l'écart entre deux graduations mais le rapport : la même distance sépare 1 de 10, puis 10 de 100. Les petites pressions sont donc aussi étalées que les grandes.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1e-1",
@@ -5577,7 +6339,10 @@
   },
   "remediation_vers": "g1e",
   "explication": "La surchauffe et le sous-refroidissement sont des différences, jamais des températures. On les exprime en kelvins parce que ce sont des écarts.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1e-2",
@@ -5601,7 +6366,10 @@
   },
   "remediation_vers": "g1e",
   "explication": "Le manomètre donne la pression ; la table de saturation traduit cette pression en température de changement d'état ; le thermomètre de contact donne la température réelle du tube. La différence est la surchauffe.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1e-3",
@@ -5625,7 +6393,10 @@
   },
   "remediation_vers": "g1e",
   "explication": "La surchauffe utile est celle que la vapeur gagne à l'intérieur de l'évaporateur : elle a servi à refroidir le local. La surchauffe totale y ajoute ce que la ligne d'aspiration apporte entre la sortie de l'évaporateur et le compresseur.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1e-4",
@@ -5649,7 +6420,10 @@
   },
   "remediation_vers": "g1e",
   "explication": "Le sous-refroidissement garantit que le fluide arrive au détendeur entièrement liquide. Repère usuel : 4 à 8 K, à recaler sur la documentation du constructeur.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "01",
+  "chapitre_titre": "Législation & thermodynamique élémentaire",
+  "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md"
  },
  {
   "id": "pk-g1e-5",
@@ -5673,7 +6447,10 @@
   },
   "remediation_vers": "g1e",
   "explication": "On détermine d'abord l'état et les conditions du fluide, puis on en déduit la méthode de remplissage — en phase liquide ou en phase vapeur — et le volume adapté.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "05",
+  "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+  "chapitre_fichier": "CONTENU-05-G5-recuperation.md"
  },
  {
   "id": "pk-g7b-3",
@@ -5697,7 +6474,10 @@
   },
   "remediation_vers": "g7b",
   "explication": "Le régulateur de pression de sortie du condenseur — couramment appelé « KVR » — maintient la pression de condensation au-dessus d'une valeur réglée, même quand la température extérieure est basse. Il se règle selon la fiche constructeur.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "pk-g7b-4",
@@ -5721,7 +6501,10 @@
   },
   "remediation_vers": "g7b",
   "explication": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression'est une vanne : il maintient une pression et ne coupe rien.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "07",
+  "chapitre_titre": "Composant : condenseurs à air et à eau",
+  "chapitre_fichier": "CONTENU-07-G7-condenseurs.md"
  },
  {
   "id": "pk-g8b-5",
@@ -5745,7 +6528,10 @@
   },
   "remediation_vers": "g8b",
   "explication": "Le régulateur de pression d'évaporation — couramment appelé « KVP » — se monte en sortie d'évaporateur et empêche la pression d'y descendre sous la valeur réglée.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  },
  {
   "id": "pk-g8b-6",
@@ -5769,6 +6555,9 @@
   },
   "remediation_vers": "g8b",
   "explication": "La soupape de régulation de la pression d'évaporation se monte en sortie d'évaporateur et maintient une pression minimale dans celui-ci. Son réglage se prend sur la fiche constructeur.",
-  "origine": "pack"
+  "origine": "pack",
+  "chapitre": "08",
+  "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+  "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md"
  }
 ]

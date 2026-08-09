@@ -310,6 +310,30 @@ const REMEDIATION_FINE = {
 };
 
 /* ---------------------------------------------------------------------
+   1 ter bis. CHAPITRES — chaque groupe a UN chapitre de cours, aligné sur
+   la banque d'examen (qui porte déjà chapitre / chapitre_titre /
+   chapitre_fichier). L'entraînement converge vers cette structure — c'est
+   la banque d'examen qui est le modèle, jamais l'inverse. Les questions
+   hors_ref (Sécurité) n'ont pas de chapitre : hors nomenclature.
+   --------------------------------------------------------------------- */
+const CHAPITRES = {
+  G1:  { chapitre: "01", titre: "Législation & thermodynamique élémentaire", fichier: "CONTENU-01-G1-legislation-thermo.md" },
+  G2:  { chapitre: "02", titre: "Incidence environnementale & réglementations", fichier: "CONTENU-02-G2-environnement.md" },
+  G3:  { chapitre: "03", titre: "Contrôles avant mise en service, après réparation ou en fonctionnement", fichier: "CONTENU-03-G3-controles-mes.md" },
+  G4:  { chapitre: "04", titre: "Contrôles d'étanchéité", fichier: "CONTENU-04-G4-etancheite.md" },
+  G5:  { chapitre: "05", titre: "Gestion écologique du système et récupération du fluide", fichier: "CONTENU-05-G5-recuperation.md" },
+  G6:  { chapitre: "06", titre: "Composant : compresseurs", fichier: "CONTENU-06-G6-compresseurs.md" },
+  G7:  { chapitre: "07", titre: "Composant : condenseurs à air et à eau", fichier: "CONTENU-07-G7-condenseurs.md" },
+  G8:  { chapitre: "08", titre: "Composant : évaporateurs à air et à liquide", fichier: "CONTENU-08-G8-evaporateurs.md" },
+  G9:  { chapitre: "09", titre: "Composant : détendeurs et autres organes", fichier: "CONTENU-09-G9-detendeurs.md" },
+  G10: { chapitre: "10", titre: "Tuyauterie : monter un réseau étanche (soudage / brasage)", fichier: "CONTENU-10-G10-tuyauterie-brasage.md" },
+  G11: { chapitre: "11", titre: "Technologies de substitution et efficacité énergétique", fichier: "CONTENU-11-G11-substitution-efficacite.md" },
+  G12: { chapitre: "12", titre: "Spécifique A1/A2 : hydrocarbures (fluides inflammables)", fichier: "CONTENU-12-G12-hydrocarbures.md" },
+  G13: { chapitre: "13", titre: "CO₂ / R-744 : information et sensibilisation aux risques", fichier: "CONTENU-13-G13-co2-information-risques.md" },
+  G14: { chapitre: "14", titre: "NH3 / R-717 : information et sensibilisation aux risques", fichier: "CONTENU-14-G14-nh3-information-risques.md" },
+};
+
+/* ---------------------------------------------------------------------
    1 quater. LA FEUILLE D'AIDE ET LA REMÉDIATION COMPLÈTE
    ---------------------------------------------------------------------
    Mission F-GAZ porte, pour chaque question, un indice (`aide`) et une
@@ -436,6 +460,9 @@ function main() {
         remediation_vers: REMEDIATION_FINE[id] || REMEDIATION[dc],
         code: CODES[id],
         hors_ref: HORS_REFERENTIEL[id] || undefined,
+        chapitre: CHAPITRES[dc]?.chapitre,
+        chapitre_titre: CHAPITRES[dc]?.titre,
+        chapitre_fichier: CHAPITRES[dc]?.fichier,
       });
     }
   }
@@ -460,6 +487,9 @@ function main() {
       // on la dérive de la règle pour satisfaire le contrôle ci-dessous.
       explication: q.explication || (q.remed && q.remed.regle) || "",
       origine: "pack",
+      chapitre: CHAPITRES[q.dc]?.chapitre,
+      chapitre_titre: CHAPITRES[q.dc]?.titre,
+      chapitre_fichier: CHAPITRES[q.dc]?.fichier,
     });
   }
 
