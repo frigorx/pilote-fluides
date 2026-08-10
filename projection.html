@@ -154,6 +154,13 @@ button{font:inherit;cursor:pointer}
 /* La feuille : le contenu posé sur une carte claire. En projection, un
    fond plat n'a aucun relief ; un filet plus une ombre bleutée, si. */
 .diapo{position:relative;z-index:2;flex:1;min-height:0;display:flex;padding:3cqh 3.4cqw}
+/* La marque inerWeb entre DANS la diapositive (charte R8) : elle est
+   projetée avec elle et se retrouve sur toute capture d'écran. Rangée
+   dans la gouttière du bas, à l'échelle de l'image projetée (cqh),
+   jamais par-dessus la barre de pilotage du formateur. */
+.diapo #marque-inerweb.marque-hebergee{left:.6cqw;bottom:.15cqh;gap:.6cqw;opacity:.42;
+  font-size:1.5cqh;line-height:1}
+.diapo #marque-inerweb.marque-hebergee svg{width:11cqh;height:2.3cqh}
 .feuille{flex:1;display:grid;grid-template-columns:minmax(0,1fr);gap:3cqw;
   background:var(--paper);border:1px solid var(--line);border-radius:1.8cqh;
   box-shadow:0 2.2cqh 6cqh rgba(27,58,99,.13);padding:4cqh 4cqw;
@@ -310,7 +317,7 @@ h2.dia{font-family:var(--police-titre);font-size:var(--t-h2);line-height:1.18;co
   .visuel{display:none}
 }
 </style>
-  <link rel="stylesheet" href="moteur/impression.css?v=67eb15bc1e" media="print">
+  <link rel="stylesheet" href="moteur/impression.css?v=c2cbf7493c" media="print">
 </head>
 <body>
 <div id="som" class="som"></div>
@@ -325,7 +332,7 @@ h2.dia{font-family:var(--police-titre);font-size:var(--t-h2);line-height:1.18;co
     <button data-act="sortir">Sommaire (Échap)</button>
   </div>
   <div class="prog"><i id="prog"></i></div>
-  <div class="diapo"><div class="feuille" id="feuille"></div></div>
+  <div class="diapo" data-marque-hote><div class="feuille" id="feuille"></div></div>
   <div class="notes" id="notes"></div>
   <div class="pied">
     <button data-act="prec">◂ Précédent</button>
@@ -345,12 +352,12 @@ h2.dia{font-family:var(--police-titre);font-size:var(--t-h2);line-height:1.18;co
 
 <!-- Quelle image sur quel écran : la règle est isolée dans son fichier,
      elle servira aussi aux autres faces du pack. -->
-<script src="moteur/illustration.js?v=67eb15bc1e"></script>
+<script src="moteur/illustration.js?v=c2cbf7493c"></script>
 
 <!-- CODE D'ACCÈS EXIGÉ (25/07) : le support de salle est une page formateur.
      Le pack de projection ne se charge qu'après validation du code — rideau
      assumé, pas un coffre (voir l'en-tête de `moteur/portillon.js`). -->
-<script src="moteur/portillon.js?v=67eb15bc1e"></script>
+<script src="moteur/portillon.js?v=c2cbf7493c"></script>
 <script>
 function demarrerProjection(){
   "use strict";
@@ -737,9 +744,10 @@ function demarrerProjection(){
 
   renderSommaire();
 }
-Portillon.exiger("Support de projection", ["packs/fluides/projection.gen.js?v=67eb15bc1e"], demarrerProjection);
+Portillon.exiger("Support de projection", ["packs/fluides/projection.gen.js?v=c2cbf7493c"], demarrerProjection);
 </script>
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
-<script src="moteur/lisibilite.js?v=67eb15bc1e"></script>
+<script src="moteur/lisibilite.js?v=c2cbf7493c"></script>
+<script src="moteur/marque.js?v=c2cbf7493c"></script>
 </body>
 </html>

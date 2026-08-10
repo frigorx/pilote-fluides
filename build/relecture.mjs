@@ -185,7 +185,7 @@ for (const [gid, g] of Object.entries(parGroupe)) {
   h += `</ul></div>`;
 }
 
-h += `<p class="meta" style="margin-top:30px">Fin du document. Une fois annoté, renvoyez-le tel quel : chaque ✏ sera reporté dans le pack, fiche par fiche.</p><script src="moteur/lisibilite.js"></scr` + `ipt></body></html>`;
+h += `<p class="meta" style="margin-top:30px">Fin du document. Une fois annoté, renvoyez-le tel quel : chaque ✏ sera reporté dans le pack, fiche par fiche.</p><script src="moteur/lisibilite.js"></scr` + `ipt><script src="moteur/marque.js"></scr` + `ipt></body></html>`;
 
 const SORTIE = new URL("../relecture.html", import.meta.url);
 writeFileSync(SORTIE, h, "utf8");

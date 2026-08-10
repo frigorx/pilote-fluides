@@ -171,3 +171,18 @@ th {
   border-bottom: 2px solid #1b3a63 !important;
 }
 tr:nth-child(even), tr:nth-child(odd) { background: #fff !important; }
+
+/* ---- La marque inerWeb : elle S'IMPRIME, contrairement au reste de
+   l'interface (règle R8 de la charte) ----
+   C'est la trace de propriété intellectuelle du document ; une page
+   sortie de l'imprimante doit la porter comme l'écran. Posée en fixe,
+   elle se répète en pied de CHAQUE page imprimée — c'est voulu.
+   Ne jamais l'ajouter à la liste des éléments masqués ci-dessus. */
+#marque-inerweb {
+  display: flex !important;
+  position: fixed !important;
+  left: 0;
+  bottom: 0;
+  opacity: .8;
+  color: #444 !important;
+}

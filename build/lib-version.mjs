@@ -53,6 +53,7 @@ const FICHIERS_SOURCES = [
   "moteur/lecture.js",
   "moteur/portillon.js",
   "moteur/lisibilite.js",
+  "moteur/marque.js",
   "moteur/illustration.js",
   "moteur/charte-edu.css",
   "moteur/impression.css",
