@@ -93,12 +93,21 @@ d'interdiction). Ces valeurs sont à revalider sur pièce avant tout usage en fo
 
 ```bash
 node build/convert.mjs    # Mission F-GAZ → packs/fluides/banque.gen.json
+node build/capsules.mjs   # contrôle les capsules narrées (res/capsules/donnees/*.js)
+node build/relier-capsules.mjs  # accroche chaque capsule à sa fiche dans cartes.js
 node build/build.mjs      # cartes.js + banque → pack.pilote.js ET pack.eleve.js
                           # (enchaîne la profondeur et la matrice de traçabilité)
 node build/parcours.mjs   # parcours.js + fiches → projection.gen.js (le support de salle)
 node build/relecture.mjs  # → relecture.html (document de bon à tirer)
 node build/chiffres.mjs   # → chiffres.gen.js : les compteurs des pages, RELEVÉS
 ```
+
+Les **capsules narrées** (`packs/fluides/res/capsules/`) sont un moteur unique piloté par
+données : une capsule = un fichier dans `donnees/`, ouvert par `index.html?c=<id>`. Le contrat
+d'écriture, les douze motifs d'animation et les règles tenues sont dans
+[`res/capsules/LIRE-MOI.md`](packs/fluides/res/capsules/LIRE-MOI.md) ; la planche d'essai des
+motifs est `res/capsules/_motifs.html`. La voix est celle de la machine — **aucun fichier son
+n'est produit**, donc corriger un contenu ne demande aucun réenregistrement.
 
 | Fichier | Rôle |
 |---|---|

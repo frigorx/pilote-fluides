@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f1e7">
+  <meta name="description" content="Entraîneur inerWeb pour comprendre, poser, utiliser et déposer un manifold 2 voies sur deux vannes de service Rotolock.">
+  <title>Pose et dépose du manifold 2 voies | Pilote Fluides</title>
+  <link rel="stylesheet" href="styles.css?v=20260813-13">
+  <link rel="stylesheet" href="../../../../moteur/impression.css?v=20260810-1" media="print">
+</head>
+<body>
+  <a class="skip-link" href="#app-main">Aller au contenu</a>
+
+  <header class="appbar">
+    <a class="brand" href="../../../../portail.html" aria-label="Revenir au portail Pilote Fluides">
+      <span class="brand-mark" aria-hidden="true">iW</span>
+      <span class="brand-copy"><strong>inerWeb Édu</strong><small>Pilote Fluides · Geste professionnel</small></span>
+    </a>
+    <div class="app-actions">
+      <span class="draft-badge">BROUILLON MÉTIER</span>
+      <span class="mode-badge" id="mode-badge">Accueil</span>
+      <button type="button" class="small-button" id="home-button" hidden>Accueil</button>
+      <button type="button" class="small-button exit-button" id="exit-button" hidden>Quitter</button>
+    </div>
+  </header>
+
+  <main id="app-main" tabindex="-1">
+    <section class="home" id="home" aria-labelledby="home-title">
+      <div class="home-copy">
+        <p class="eyebrow">MANIFOLD 2 VOIES · VANNES ROTALOCK</p>
+        <h1 id="home-title">Poser, lire et déposer<br><span>dans le bon ordre</span></h1>
+        <p class="home-intro">Comprendre la circulation, agir sur les vraies pièces du dessin, recommencer sans risque et vérifier que le geste est acquis.</p>
+        <div class="mode-grid" aria-label="Choisir un parcours">
+          <button type="button" class="mode-card featured" data-start="course">
+            <span class="mode-number">1</span><strong>Parcours complet</strong>
+            <small>Comprendre → manipuler → s’évaluer.</small>
+          </button>
+          <button type="button" class="mode-card" data-start="guided">
+            <span class="mode-number">2</span><strong>Manipulation guidée</strong>
+            <small>Un geste à la fois sur le poste virtuel.</small>
+          </button>
+          <button type="button" class="mode-card dashed" data-start="assessment">
+            <span class="mode-number">3</span><strong>Évaluation</strong>
+            <small>QCM, ordre des phases et parcours autonome.</small>
+          </button>
+          <button type="button" class="mode-card guide-card" data-start="workshop">
+            <span class="mode-number">4</span><strong>Guide atelier</strong>
+            <small>Guidance projetable et version imprimable.</small>
+          </button>
+        </div>
+        <p class="scope-note"><strong>Configuration étudiée :</strong> manifold à deux robinets et trois flexibles équipés chacun d’une mini-vanne quart de tour — bleu BP, rouge HP, jaune service. « Deux voies » désigne les deux robinets du manifold.</p>
+      </div>
+
+      <div class="home-visual" aria-label="Aperçu du manifold 2 voies et des vannes Rotolock">
+        <svg viewBox="0 0 720 470" role="img" aria-labelledby="home-svg-title home-svg-desc">
+          <title id="home-svg-title">Manifold 2 voies raccordé à deux vannes Rotolock</title>
+          <desc id="home-svg-desc">Manomètre BP bleu, manomètre HP rouge, deux robinets, trois flexibles munis de mini-vannes quart de tour et deux vannes de service avec prises P et P1.</desc>
+          <g transform="translate(180 38)">
+            <rect class="preview-body" x="0" y="88" width="360" height="116" rx="25"/>
+            <circle class="preview-gauge bp" cx="100" cy="86" r="76"/>
+            <circle class="preview-gauge hp" cx="260" cy="86" r="76"/>
+            <text x="100" y="96" class="preview-label">BP</text>
+            <text x="260" y="96" class="preview-label">HP</text>
+            <g class="preview-knobs"><circle cx="92" cy="202" r="25"/><circle cx="268" cy="202" r="25"/></g>
+            <text x="92" y="244" class="preview-small">ROBINET BP</text>
+            <text x="268" y="244" class="preview-small">ROBINET HP</text>
+          </g>
+          <path class="preview-hose blue" d="M272 270 C252 350 142 338 115 414"/>
+          <path class="preview-hose red" d="M448 270 C472 350 578 338 605 414"/>
+          <path class="preview-hose yellow" d="M360 270 C360 350 360 360 360 430"/>
+          <g class="preview-mini" transform="translate(125 390) rotate(-42)"><rect x="-23" y="-10" width="46" height="20" rx="5"/><path d="M-31 0H31"/></g>
+          <g class="preview-mini" transform="translate(595 390) rotate(42)"><rect x="-23" y="-10" width="46" height="20" rx="5"/><path d="M-31 0H31"/></g>
+          <g class="preview-mini" transform="translate(360 404) rotate(90)"><rect x="-23" y="-10" width="46" height="20" rx="5"/><path d="M-31 0H31"/></g>
+          <g transform="translate(34 380)"><rect class="preview-valve" width="164" height="64" rx="16"/><text x="82" y="30">ROTALOCK BP</text><text class="preview-port" x="82" y="51">P ✓ · P1 ⚠</text></g>
+          <g transform="translate(522 380)"><rect class="preview-valve" width="164" height="64" rx="16"/><text x="82" y="30">ROTALOCK HP</text><text class="preview-port" x="82" y="51">P ✓ · P1 ⚠</text></g>
+          <g transform="translate(296 414)"><rect class="preview-pump" width="128" height="46" rx="10"/><text x="64" y="29">SERVICE</text></g>
+        </svg>
+        <div class="legend-line"><span class="line blue"></span> BP <span class="line red"></span> HP <span class="line yellow"></span> Service</div>
+      </div>
+    </section>
+
+    <section class="course-shell" id="course-shell" hidden aria-live="polite">
+      <nav class="phase-strip" id="phase-strip" aria-label="Progression"></nav>
+      <div class="course-grid">
+        <aside class="lesson-panel" id="lesson-panel"></aside>
+        <section class="visual-panel" id="visual-panel" aria-label="Zone interactive">
+          <div class="visual-toolbar">
+            <strong id="visual-title">Poste virtuel</strong>
+            <span id="visual-status">Prêt</span>
+            <button type="button" class="small-button" id="cutaway-button" hidden>Voir la coupe Rotolock</button>
+          </div>
+          <div class="visual-root" id="visual-root"></div>
+          <p class="scene-feedback" id="scene-feedback" role="status"></p>
+        </section>
+      </div>
+      <footer class="bottom-nav" id="bottom-nav">
+        <button type="button" class="nav-button secondary" id="previous-button">← Retour</button>
+        <div class="progress-copy"><span id="progress-label"></span><div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div></div>
+        <button type="button" class="nav-button primary" id="next-button">Continuer →</button>
+      </footer>
+    </section>
+
+    <section class="workshop-print" id="workshop-print" hidden aria-labelledby="print-title">
+      <h1 id="print-title">Guidance atelier — pose et dépose du manifold 2 voies</h1>
+      <p class="print-warning"><strong>Brouillon à valider sur le poste réel.</strong> La notice du matériel, la procédure du plateau et les consignes du formateur restent prioritaires.</p>
+      <div id="print-steps"></div>
+    </section>
+  </main>
+
+  <dialog id="cutaway-dialog" aria-labelledby="cutaway-title">
+    <div class="dialog-head">
+      <div><p class="eyebrow">VANNE ROTALOCK RÉUTILISÉE</p><h2 id="cutaway-title">Suivre le pointeau et les passages</h2></div>
+      <button type="button" class="small-button" id="close-dialog">Fermer</button>
+    </div>
+    <div class="position-tabs" role="group" aria-label="Position de la vanne Rotolock">
+      <button type="button" data-dialog-position="back">Siège arrière</button>
+      <button type="button" data-dialog-position="mid">Intermédiaire</button>
+      <button type="button" data-dialog-position="front">Siège avant</button>
+    </div>
+    <div id="cutaway-root" class="cutaway-root"></div>
+    <p id="cutaway-explanation" class="cutaway-explanation"></p>
+  </dialog>
+
+  <script src="visuals.js?v=20260813-13"></script>
+  <script src="app.js?v=20260813-8"></script>
+  <script src="../../../../moteur/lisibilite.js?v=20260810-1"></script>
+  <script src="../../../../moteur/marque.js?v=20260810-1"></script>
+</body>
+</html>

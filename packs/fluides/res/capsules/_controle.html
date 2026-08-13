@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contrôle des capsules | Capsules</title>
+  <link rel="stylesheet" href="capsule.css?v=20260813-1">
+  <style>
+    .planche{max-width:1100px;margin:24px auto;padding:0 20px 60px}
+    .bilan{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);box-shadow:var(--ombre);padding:18px 20px;margin:0 0 22px}
+    .bilan h2{font-size:20px;margin-bottom:8px}
+    .compteurs{display:flex;gap:26px;flex-wrap:wrap;margin:10px 0 0}
+    .compteurs div{font-size:14px;color:var(--mut)}
+    .compteurs b{display:block;font-size:26px;color:var(--bleu)}
+    table{border-collapse:collapse;width:100%;margin-top:14px;font-size:14px}
+    th,td{border:1px solid var(--ligne);padding:6px 9px;text-align:left;vertical-align:top}
+    th{background:#f2f7fc;color:var(--bleu)}
+    tr.ko td{background:var(--ko-bg)}
+    tr.ok td em{color:var(--ok);font-style:normal;font-weight:700}
+    .apercu{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);padding:14px;margin:0 0 18px}
+    .apercu h3{font-size:16px;margin-bottom:8px}
+    .apercu .grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+    .apercu figure{margin:0}
+    .apercu figcaption{font-size:12.5px;color:var(--mut);margin-top:4px}
+  </style>
+</head>
+<body>
+  <header class="barre">
+    <span class="logo">iner<b>Web</b> Édu</span>
+    <span class="pack-titre">Capsules · contrôle de toutes les animations</span>
+  </header>
+  <main class="planche">
+    <div class="bilan" id="bilan"><h2>Mesure en cours…</h2>
+      <p>Cette page rend <b>chaque animation de chaque capsule</b> et mesure si un texte sort du
+         cadre ou en recouvre un autre. Lancer <code>node build/capsules.mjs</code> avant, pour
+         rafraîchir la liste des capsules.</p></div>
+    <div id="apercus"></div>
+  </main>
+
+  <script src="animations.js?v=20260813-1"></script>
+  <script src="donnees/_liste.js?v=20260813-1"></script>
+  <script>
+  const capsules = [];
+  window.CAPSULE = { declarer: (c) => capsules.push(c) };
+
+  /* Les fichiers de données sont des scripts classiques : on les enchaîne. */
+  function charger(ids, fini) {
+    let i = 0;
+    (function suivant() {
+      if (i >= ids.length) return fini();
+      const s = document.createElement("script");
+      s.src = "donnees/" + ids[i++] + ".js?v=" + Date.now();
+      s.onload = suivant;
+      s.onerror = () => { console.warn("capsule illisible :", s.src); suivant(); };
+      document.head.appendChild(s);
+    })();
+  }
+
+  function mesurer(svg) {
+    const hors = [], coll = [];
+    const boites = [...svg.querySelectorAll("text")].map((t) => ({ t: t.textContent, b: t.getBBox() }));
+    boites.forEach(({ t, b }) => {
+      if (b.x < 1 || b.x + b.width > 799 || b.y < 0 || b.y + b.height > 459) hors.push(t.slice(0, 30));
+    });
+    for (let i = 0; i < boites.length; i++) for (let j = i + 1; j < boites.length; j++) {
+      const a = boites[i].b, c = boites[j].b;
+      if (Math.min(a.x + a.width, c.x + c.width) - Math.max(a.x, c.x) > 6 &&
+          Math.min(a.y + a.height, c.y + c.height) - Math.max(a.y, c.y) > 6)
+        coll.push(boites[i].t.slice(0, 18) + " × " + boites[j].t.slice(0, 18));
+    }
+    return { hors, coll };
+  }
+
+  charger(window.CAPSULES_LISTE || [], () => {
+    const bac = document.createElement("div");
+    bac.style.cssText = "position:absolute;left:-9999px;top:0;width:800px";
+    document.body.appendChild(bac);
+
+    let nEcrans = 0, nAnim = 0, nDire = 0, nControles = 0;
+    const defauts = [];
+    const apercus = document.getElementById("apercus");
+
+    for (const c of capsules) {
+      const bloc = document.createElement("section");
+      bloc.className = "apercu";
+      const grille = [];
+      (c.ecrans || []).forEach((e, i) => {
+        nEcrans++;
+        if (e.dire) nDire++;
+        if (e.controle) nControles++;
+        const v = e.visuel;
+        if (!v || !v.motif) return;
+        nAnim++;
+        bac.innerHTML = ANIM.rendre(v);
+        const svg = bac.querySelector("svg");
+        const { hors, coll } = mesurer(svg);
+        if (hors.length || coll.length)
+          defauts.push({ capsule: c.id, ecran: i + 1, titre: e.titre, motif: v.motif, hors, coll });
+        grille.push(`<figure>${ANIM.rendre(v)}<figcaption>${i + 1}. ${e.titre} — <code>${v.motif}</code></figcaption></figure>`);
+      });
+      bloc.innerHTML = `<h3>${c.id} — ${c.titre} <small style="color:#5a6b7d;font-weight:400">(${(c.ecrans || []).length} écrans)</small></h3>
+        <div class="grille">${grille.join("")}</div>`;
+      apercus.appendChild(bloc);
+    }
+    bac.remove();
+
+    const lignes = defauts.map((d) =>
+      `<tr class="ko"><td>${d.capsule}</td><td>${d.ecran}. ${d.titre}</td><td>${d.motif}</td>
+       <td>${d.hors.map((h) => "hors cadre : " + h).concat(d.coll.map((c) => "chevauche : " + c)).join("<br>")}</td></tr>`).join("");
+
+    document.getElementById("bilan").innerHTML =
+      `<h2>${defauts.length ? "⚠ " + defauts.length + " animation(s) à revoir" : "✅ toutes les animations sont propres"}</h2>
+       <div class="compteurs">
+         <div><b>${capsules.length}</b>capsules</div>
+         <div><b>${nEcrans}</b>écrans</div>
+         <div><b>${nAnim}</b>animations mesurées</div>
+         <div><b>${nDire}/${nEcrans}</b>écrans avec voix rédigée</div>
+         <div><b>${nControles}</b>contrôles de compréhension</div>
+       </div>
+       ${defauts.length ? `<table><tr><th>capsule</th><th>écran</th><th>motif</th><th>défaut</th></tr>${lignes}</table>`
+                        : "<p>Aucun texte ne sort du cadre, aucun libellé n'en recouvre un autre.</p>"}`;
+  });
+  </script>
+</body>
+</html>

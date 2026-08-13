@@ -180,9 +180,9 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
   <br>Dit à l'élève : « Situer combustibilité, propagation de flamme et limites de charge »
 - **Interrogé** — 4 question(s) :
   - `q-g12-289` *(niveau 2, rangée en G12)* — Quelle est la différence entre un fluide A2L (R-32) et un fluide A3 (R-290) ?
-  - `pk-cl1-1` *(niveau 1, rangée en Classification)* — Dans une classe de sécurité comme A2L, que disent respectivement la lettre et le chiffre ?
-  - `pk-cl1-2` *(niveau 2, rangée en Classification)* — Quelle est la classe de sécurité du R-290 (propane) ?
-  - `pk-cl1-3` *(niveau 2, rangée en Classification)* — À quoi sert concrètement de connaître la classe de sécurité d'un fluide avant d'intervenir ?
+  - `pk-cl1-1` *(niveau 1, rangée en G1)* — Dans une classe de sécurité comme A2L, que disent respectivement la lettre et le chiffre ?
+  - `pk-cl1-2` *(niveau 2, rangée en G1)* — Quelle est la classe de sécurité du R-290 (propane) ?
+  - `pk-cl1-3` *(niveau 2, rangée en G1)* — À quoi sert concrètement de connaître la classe de sécurité d'un fluide avant d'intervenir ?
 
 #### 1.09 ★ nouveau 2025 — 🔵 traité en information — non exigé dans les catégories du pack
 
@@ -1112,9 +1112,9 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
   - `q-g11-54` *(niveau 1, rangée en G11)* — Le R290 (propane) est classé :
   - `q-g11-v6_092` *(niveau 1, rangée en G11)* — La norme EN 378 définit entre autres :
   - `q-g11-v6_183` *(niveau 2, rangée en G11)* — La norme EN 378 classe les locaux en :
-  - `pk-cl3-1` *(niveau 1, rangée en Classification)* — Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?
-  - `pk-cl3-2` *(niveau 2, rangée en Classification)* — En quoi le danger du CO₂ en local fermé diffère-t-il de celui de l'azote ?
-  - `pk-cl3-3` *(niveau 2, rangée en Classification)* — Vous trouvez un collègue inconscient au fond d'une fosse abritant une installation au CO₂. Que faites-vous ?
+  - `pk-cl3-1` *(niveau 1, rangée en G11)* — Une fuite de CO₂ (R-744) s'est produite dans un local technique. Où le gaz s'accumule-t-il ?
+  - `pk-cl3-2` *(niveau 2, rangée en G11)* — En quoi le danger du CO₂ en local fermé diffère-t-il de celui de l'azote ?
+  - `pk-cl3-3` *(niveau 2, rangée en G11)* — Vous trouvez un collègue inconscient au fond d'une fosse abritant une installation au CO₂. Que faites-vous ?
 
 #### 11.04 — ✅ enseigné et vérifié
 
@@ -1155,7 +1155,7 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
 | Code | Épreuve | Enseigné par | Interrogé par | État |
 |---|---|---|---:|---|
 | **12.01** ★ | A1 théo. · A2 théo. | `g12` | 1 | ✅ |
-| **12.02** ★ | A1 théo. · A2 théo. | `s1` `s2` `cl2` `cl4` `g12` | 7 | ✅ |
+| **12.02** ★ | A1 théo. · A2 théo. | `s1` `s2` `cl2` `cl4` `g12` | 5 | ✅ |
 | **12.03** ★ | A1 prat. · A2 prat. | `g12` | 1 | ✅ |
 | **12.04** ★ | A1 prat. · A2 prat. | `cl2` `p7` `g12` `x5` | 2 | ✅ |
 | **12.05** ★ | A1 prat. · A2 prat. | `p7` `x5` | 1 | ✅ |
@@ -1192,14 +1192,12 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
   <br>Dit à l'élève : « Connaître le matériel de sécurité obligatoire : détection de gaz, détection des fuites, ventilation, équipements de protection individuelle. »
 - **Enseigné** — `g12` Hydrocarbures — le spécifique A1 et A2 *(+ question intégrée)*
   <br>Dit à l'élève : « Appliquer les règles de sécurité outils, EPI et détection gaz »
-- **Interrogé** — 7 question(s) :
+- **Interrogé** — 5 question(s) :
   - `q-g12-v6_093` *(niveau 1, rangée en G12)* — Les fluides A2L comme le R32 nécessitent :
   - `q-g12-v6_184` *(niveau 1, rangée en G12)* — Pour les fluides A2L, les outils d'intervention doivent être :
-  - `pk-cl2-1` *(niveau 1, rangée en Classification)* — Que désigne la LIE d'un gaz inflammable ?
-  - `pk-cl2-2` *(niveau 2, rangée en Classification)* — Peut-on se fier à son odorat pour détecter une fuite de R-290 dans un local technique ?
-  - `pk-cl2-3` *(niveau 2, rangée en Classification)* — Un explosimètre affiche « 20 % LIE ». Comment lisez-vous cette valeur ?
-  - `pk-cl4-1` *(niveau 1, rangée en Classification)* — Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?
-  - `pk-cl4-2` *(niveau 2, rangée en Classification)* — Un masque à cartouche protège-t-il dans un local chargé en CO₂ ?
+  - `pk-cl2-1` *(niveau 1, rangée en G12)* — Que désigne la LIE d'un gaz inflammable ?
+  - `pk-cl2-2` *(niveau 2, rangée en G12)* — Peut-on se fier à son odorat pour détecter une fuite de R-290 dans un local technique ?
+  - `pk-cl2-3` *(niveau 2, rangée en G12)* — Un explosimètre affiche « 20 % LIE ». Comment lisez-vous cette valeur ?
 
 #### 12.03 ★ nouveau 2025 — ✅ enseigné et vérifié
 
@@ -1331,7 +1329,7 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
 | **13.01** ★ | — *(B)* | `g13` | 1 | 🔵 |
 | **13.02** ★ | — *(B)* | — | — | · |
 | **13.03** ★ | — *(B)* | — | — | · |
-| **13.04** ★ | — *(B)* | `g13` | 1 | 🔵 |
+| **13.04** ★ | — *(B)* | `g13` | 2 | 🔵 |
 | **13.05** ★ | — *(B)* | — | — | · |
 | **13.06** ★ | — *(B)* | — | — | · |
 | **13.07** ★ | — *(B)* | — | — | · |
@@ -1341,7 +1339,7 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
 | **13.11** ★ | — *(B)* | — | — | · |
 | **13.12** ★ | — *(B)* | — | — | · |
 | **13.13** ★ | — *(B)* | — | — | · |
-| **13.14** ★ | — *(B)* | `cl4` `g13` | 3 | 🔵 |
+| **13.14** ★ | — *(B)* | `cl4` `g13` | 4 | 🔵 |
 | **13.15** ★ | — *(B)* | — | — | · |
 | **13.16** ★ | — *(B)* | — | — | · |
 | **13.17** ★ | — *(B)* | — | — | · |
@@ -1375,8 +1373,9 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
 
 - **Enseigné** — `g13` CO₂ et NH₃ — reconnaître, ne pas intervenir *(+ question intégrée)*
   <br>Dit à l'élève : « Identifier les cylindres et matériels dédiés, et ne pas intervenir »
-- **Interrogé** — 1 question(s) :
+- **Interrogé** — 2 question(s) :
   - `pk-g13-3` *(niveau 1, rangée en G13)* — Sur une installation au CO₂, pourquoi ne peut-on pas utiliser le matériel de raccordement courant ?
+  - `pk-cl4-2` *(niveau 2, rangée en G13)* — Un masque à cartouche protège-t-il dans un local chargé en CO₂ ?
 
 #### 13.05 ★ nouveau 2025 — · hors périmètre du pack
 
@@ -1449,10 +1448,11 @@ Côté questions : **266** au total, dont **249** rattachées à une compétence
   <br>Dit à l'élève : « Vérifier la sécurité du site : signalisation, issues de secours, capteurs et alarmes gaz. »
 - **Enseigné** — `g13` CO₂ et NH₃ — reconnaître, ne pas intervenir *(+ question intégrée)*
   <br>Dit à l'élève : « Vérifier avant d'intervenir que la signalisation, les issues de secours, les capteurs et les alarmes du site sont bien en état. »
-- **Interrogé** — 3 question(s) :
+- **Interrogé** — 4 question(s) :
   - `q-g13-283` *(niveau 1, rangée en G13)* — Pourquoi installe-t-on des détecteurs de CO₂ dans les locaux abritant une installation au R-744 ?
   - `q-g13-302` *(niveau 2, rangée en G13)* — Pourquoi les portes des locaux techniques CO₂ doivent-elles s'ouvrir vers l'extérieur ?
-  - `pk-cl4-3` *(niveau 2, rangée en Classification)* — Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous'en…
+  - `pk-cl4-1` *(niveau 1, rangée en G13)* — Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?
+  - `pk-cl4-3` *(niveau 2, rangée en G13)* — Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous'en…
 
 #### 13.15 ★ nouveau 2025 — · hors périmètre du pack
 

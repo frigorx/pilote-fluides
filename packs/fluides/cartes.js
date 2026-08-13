@@ -567,6 +567,11 @@ export const CARTES = [
     dc: "Sécurité · codes 12.02 · 12.13",
     minuteur_s: 420,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=s1",
+        "🎧 Écouter la capsule : L'air qui manque — l'asphyxie",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 6 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("s1-double-accident.svg", "Animation : la nappe de gaz monte dans le local fermé, le technicien descend et tombe, puis le collègue descend le secourir et devient la seconde victime. Deux victimes au lieu d'une.") +
       "<p>Respirer, c'est faire entrer de l'oxygène dans le corps. Un local fermé peut se remplir d'un autre gaz : de l'azote utilisé pour mettre un circuit en pression, ou du fluide frigorigène qui a fui. Ce gaz prend la place de l'oxygène dans l'air. C'est une <b>asphyxie par manque d'oxygène</b> : vous ne respirez plus assez d'oxygène, non pas parce qu'un produit vous empoisonne, mais parce qu'il a chassé l'air respirable.</p>" +
       "<p>Face à l'<b>azote</b> et aux <b>fluides fluorés</b>, le corps ne donne <b>aucune alerte</b>. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez donc pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.</p>" +
@@ -604,6 +609,11 @@ export const CARTES = [
     dc: "Sécurité · codes 12.02",
     minuteur_s: 300,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=s2",
+        "🎧 Écouter la capsule : Le froid brûle — projections et gelures",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 5 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("secu-projection.svg", "Le liquide jaillit dans l'axe du raccord : on se place hors de cet axe, on vérifie au manomètre que la pression est nulle, et on porte gants et lunettes.") +
       "<p>Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.</p>" +
       "<p>Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui. Un contact avec de l'ammoniac liquide ajoute une <b>brûlure chimique</b> à la brûlure froide : ce fluide n'appartient pas à la même famille que les fluides fluorés, et ne se comporte pas comme eux.</p>" +
@@ -638,6 +648,11 @@ export const CARTES = [
     dc: "Sécurité · codes 11.03",
     minuteur_s: 360,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=s3",
+        "🎧 Écouter la capsule : La flamme interdite — décomposition du fluide",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 6 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("secu-flamme.svg", "À gauche le geste interdit : chauffer un tronçon non récupéré, les gaz toxiques remontent vers le visage penché. À droite le geste juste : récupérer, balayer à l'azote, ventiler.") +
       "<p>Un fluide frigorigène fluoré est stable à température normale. Il ne l'est plus face à une flamme. Chauffé au contact d'une flamme ou d'une surface très chaude, il ne brûle pas comme un carburant : il se <b>décompose</b>. Sa molécule se casse et forme d'autres substances, absentes du fluide d'origine — des gaz toxiques et corrosifs.</p>" +
       "<p>Certains fluides ajoutent un second risque. Selon la norme NF EN 378, les fluides classés <b>A2L</b> (légèrement inflammables, comme le R-32 ou le R-1234yf) ou <b>A3</b> (très inflammables, comme le R-290 ou le R-600a) peuvent eux-mêmes s'enflammer au contact d'une flamme ou d'une étincelle. La classe du fluide utilisé se lit sur sa FDS (fiche de données de sécurité).</p>" +
@@ -674,6 +689,11 @@ export const CARTES = [
     dc: "Sécurité · codes 11.03 · 3.01",
     minuteur_s: 420,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=s4",
+        "🎧 Écouter la capsule : Ce qui éclate — la pression",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("secu-bouteille.svg", "À gauche, bouteille remplie à ras : le liquide n'a pas de place pour se dilater, la pression grimpe très vite. À droite, volume libre respecté. En bas, les gestes interdits.") +
       "<p><b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.</p>" +
       "<p>Ce qui peut céder :</p>" +
@@ -725,6 +745,11 @@ export const CARTES = [
     dc: "Sécurité",
     minuteur_s: 480,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=s5",
+        "🎧 Écouter la capsule : Consigner avant de toucher — le risque électrique",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("secu-consignation.svg", "Les cinq étapes dans l'ordre : séparer, condamner, identifier, vérifier l'absence de tension au VAT, mettre à la terre. Le VAT se teste avant et après sur une source connue.") +
       "<p><b>Ce qui arrive.</b> Ce risque ne figure dans aucun code du référentiel d'examen fluides. Il n'en est pas moins réel : le risque électrique tue des professionnels chaque année, sur les installations de froid et de climatisation comme sur toute autre installation électrique.</p>" +
       "<p>Le passage du courant électrique dans le corps humain porte un nom : l'<b>électrisation</b>. Ses effets vont de la simple secousse à des blessures graves — brûlures internes, troubles du cœur. Quand une électrisation entraîne la mort, on parle d'<b>électrocution</b>. C'est le même phénomène ; seule la gravité change.</p>" +
@@ -894,6 +919,11 @@ export const CARTES = [
     dc: "Classification · codes 12.02 · 12.04",
     minuteur_s: 420,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=cl2",
+        "🎧 Écouter la capsule : Explosif avant d'être perceptible — la LIE",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("lie-domaine.svg", "L'axe des concentrations : trop pauvre, puis le domaine d'explosivité entre LIE et LSE, puis trop riche. L'explosimètre affiche un pourcentage de la LIE, c'est-à-dire la marge restante.") +
       "<p><b>Ce qui arrive.</b> Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz — une étincelle ne déclenche rien. Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. <b>Entre les deux</b>, le mélange s'enflamme, et il le fait d'un coup, dans tout le volume.</p>" +
       "<p>Ces deux bornes portent un nom. La <b>LIE</b> — limite inférieure d'explosivité — est la concentration en dessous de laquelle le mélange ne s'enflamme pas. La <b>LSE</b> — limite supérieure d'explosivité — est celle au-dessus de laquelle il ne s'enflamme plus non plus. L'intervalle entre les deux s'appelle le <b>domaine d'explosivité</b>. Chaque gaz a le sien : les valeurs sont propres au fluide et figurent sur sa <b>fiche de données de sécurité</b>. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale.</p>" +
@@ -933,6 +963,11 @@ export const CARTES = [
     dc: "Classification · code 11.03",
     minuteur_s: 600,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=cl3",
+        "🎧 Écouter la capsule : CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("co2-point-bas.svg", "Animation : le CO₂ remplit le local par le bas ; un technicien descend l'escalier et entre dans la nappe. Respirable à hauteur de visage, mortel en bas de l'escalier.") +
       "<p><b>Ce qui arrive.</b> Le CO₂ — le R-744 — est classé <b>A1</b> : toxicité faible, non inflammable, PRP de 1. C'est la case la plus rassurante de toute la matrice. Et c'est exactement ce qui le rend dangereux : <b>sa classe n'annonce aucun des deux risques qui tuent réellement sur ces installations</b> — la <b>pression</b>, et l'<b>anoxie</b>. Qui retient « CO₂ = A1 = tranquille » a retenu quelque chose de faux.</p>" +
       "<p>Ce fluide entre aujourd'hui dans le parc : froid commercial, supermarchés, chambres froides. Vous en rencontrerez. Ce n'est plus un sujet de culture générale.</p>" +
@@ -981,6 +1016,11 @@ export const CARTES = [
     dc: "Classification · codes 12.02 · 13.14",
     minuteur_s: 600,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=cl4",
+        "🎧 Écouter la capsule : Se protéger du CO₂ — détection, EPC et EPI",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 8 écrans, 8 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("co2-protection.svg", "Le local équipé : capteur fixe en partie basse relié aux alarmes intérieure et extérieure, ventilation, signalisation à la porte. À droite, les EPI — et le masque à cartouche, qui ne protège pas du CO₂.") +
       "<p><b>Ce qui protège, dans l'ordre.</b> La règle générale de la prévention est la même partout : on protège <b>d'abord le collectif</b>, ensuite l'individu. Un équipement de <b>protection collective</b> (EPC) protège tout le monde dans le local, en permanence, sans que personne ait à y penser. Un équipement de <b>protection individuelle</b> (EPI) ne protège que celui qui le porte, et seulement s'il le porte correctement. L'EPI ne remplace jamais l'EPC : il vient <b>après</b>, pour ce que l'EPC ne couvre pas.</p>" +
       "<p><b>La détection : ce n'est pas une option.</b> Dans un local abritant une installation au CO₂, la <b>détection de gaz est exigée</b> dès que la norme l'impose — selon la charge et le type de local — et c'est l'EPC principal. Sa présence et son état se vérifient à l'arrivée : si elle manque là où elle devrait être, c'est un signalement à faire, pas un détail. Le détecteur est <b>fixe, à poste</b> : il mesure en permanence, y compris la nuit et quand personne n'est là, et c'est précisément ce qui manque à un appareil portatif resté dans le camion. On le place <b>en partie basse</b>, là où le CO₂ s'accumule : un capteur au plafond ne verra rien.</p>" +
@@ -1091,6 +1131,16 @@ export const CARTES = [
         "packs/fluides/res/vanne-service-interactive/index.html?ecran=geste",
         "🔩 Lancer le cours interactif : la vanne de service, où brancher le flexible",
         "L’autre bout du flexible : la vanne de service en coupe animée. La voie de service P, la prise permanente P1 du pressostat, et la position à donner à la vanne pour lire au manomètre sans isoler le compresseur."
+      ) +
+      lienOutil(
+        "packs/fluides/res/pose-manifold-2-voies-interactive/index.html",
+        "🧰 S’entraîner : poser et déposer un manifold 2 voies",
+        "Le geste complet sur deux vannes de service Rotolock : reconnaître BP, HP et voie centrale, distinguer les prises P et P1, choisir lunettes et gants, poser, lire, déposer. Guidé puis autonome."
+      ) +
+      lienOutil(
+        "packs/fluides/res/pose-manifold-interactive/index.html",
+        "🧰 S’entraîner : poser et déposer un manifold 4 voies",
+        "La même chose avec la voie de vide en plus : contrôle du poste, siège arrière, raccordement BP-HP-vide, tirage au vide des flexibles, position intermédiaire pour lire, puis dépose en traitant le fluide résiduel."
       ),
     blocs: [
       {
@@ -1156,7 +1206,12 @@ export const CARTES = [
       "<li>Repeser le cylindre, noter la masse récupérée, consigner au registre.</li>" +
       "</ol>" +
       "<p>Le cylindre respecte le <b>taux de remplissage maximal</b> indiqué sur son étiquette : jamais rempli " +
-      "à ras. Le liquide se dilate avec la température — un cylindre trop plein est un danger.</p>",
+      "à ras. Le liquide se dilate avec la température — un cylindre trop plein est un danger.</p>" +
+      lienOutil(
+        "packs/fluides/res/recuperation-fluide-interactive/index.html",
+        "🧰 Lancer le TP interactif : récupérer le fluide, geste par geste",
+        "La procédure ci-dessus, à faire soi-même sur un poste complet — manifold 4 voies, station Minimax-E, bouteille de transfert sur balance, pompe à vide et vacuomètre. Huit phases, guidé puis autonome : poser le manifold, purger l'air, récupérer en liquide puis en vapeur, auto-purger la station, peser, tirer au vide."
+      ),
     blocs: [
       {
         type: "cle",
@@ -1281,6 +1336,11 @@ export const CARTES = [
     dc: "Préparation pratique · codes 3.01 · 3.02",
     minuteur_s: 300,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=p4",
+        "🎧 Écouter la capsule : La bouteille d'azote et son mano-détendeur",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("epreuve-azote.svg", "Le mano-détendeur monté sur la bouteille d azote sec, raccordé au manifold puis au circuit à éprouver, vanne par vanne — jamais d oxygène ni d air comprimé.") +
       "<p>Une bouteille d'azote ne se branche jamais directement sur un circuit. Entre les deux, il y a toujours un <b>mano-détendeur</b>. Il lit la pression de la bouteille. Il règle la pression envoyée dans le circuit. Sans lui, toute la pression de la bouteille part d'un coup — largement de quoi faire éclater un circuit.</p>" +
       "<p>Le mano-détendeur porte <b>deux cadrans</b>. Le premier indique ce qu'il reste dans la bouteille. Le second indique la pression réglée en sortie, celle qui part vers le circuit. On lit toujours les deux.</p>" +
@@ -1490,6 +1550,11 @@ export const CARTES = [
     dc: "Préparation pratique · codes 12.04 · 12.05",
     minuteur_s: 360,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=p7",
+        "🎧 Écouter la capsule : Préparation de chantier — risques, EPI, zone de travail",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 7 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("prepa-chantier.svg", "Quatre temps avant de toucher : reconnaître le lieu et le fluide, identifier les risques du jour et les supprimer, se protéger avec les EPI qui en découlent, préparer la zone et le matériel.") +
       "<p>Avant de sortir le moindre outil, deux choses se préparent : l'<b>analyse de risques</b> et la <b>zone de travail</b>. Ce n'est pas une formalité à cocher après coup. C'est la première étape du chantier, avant le premier geste technique.</p>" +
       "<p><b>L'analyse de risques</b> se fait dans cet ordre :</p>" +
@@ -1562,6 +1627,11 @@ export const CARTES = [
     dc: "G1 · code 1.00",
     minuteur_s: 360,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=g0",
+        "🎧 Écouter la capsule : Ce que la loi vous impose",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 8 écrans, 7 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("aptitude-capacite.svg", "L'attestation d'aptitude concerne la personne et prouve qu'elle sait faire ; l'attestation de capacité concerne l'entreprise et prouve qu'elle a le personnel, l'outillage et les procédures. Il faut les deux.") +
       "<p>Les fluides frigorigènes peuvent réchauffer le climat s'ils s'échappent dans l'air. Deux niveaux de loi encadrent votre métier : le niveau européen et le niveau français.</p>" +
       "<p>Au niveau européen, le texte de base est le <b>règlement (UE) 2024/573</b>. C'est un <b>règlement</b>, jamais une « directive » : il s'applique directement dans tous les pays de l'Union, sans loi française pour le recopier. Il a remplacé l'ancien règlement 517/2014.</p>" +
@@ -2091,6 +2161,11 @@ export const CARTES = [
     dc: "G1 · code 1.05",
     minuteur_s: 420,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=g1d",
+        "🎧 Écouter la capsule : Les organes qui trahissent une fuite",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("points-de-fuite.svg", "Sur le circuit, les organes qui alertent ou protègent avant, pendant et après une fuite.") +
       "<p>Une fuite ne se voit pas toujours de face. Mais plusieurs organes du circuit la " +
       "<b>trahissent</b> : ils changent d'aspect, se mettent en sécurité, ou limitent les " +
@@ -2207,6 +2282,11 @@ export const CARTES = [
     dc: "G2 · code 2.01",
     minuteur_s: 420,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=g2a",
+        "🎧 Écouter la capsule : Quarante ans d'histoire : de l'ozone au climat",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("frise-histoire.svg", "Frise : CFC années 1930, trou d'ozone 1985, Montréal 1987, Kyoto 1997, Paris 2015, Kigali 2016, F-Gas III 2024.") +
       "<p>Dans les années 1930, les <b>CFC</b> sont des fluides « miracle » : stables, ni toxiques, " +
       "ni inflammables. Cinquante ans plus tard, la facture arrive : en <b>1985</b>, on découvre le " +
@@ -2272,6 +2352,11 @@ export const CARTES = [
     dc: "G2 · codes 2.01 · 2.02",
     minuteur_s: 300,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=g2",
+        "🎧 Écouter la capsule : Impact environnemental et F-Gas",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 6 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("prp-echelle.svg", "Comparaison du PRP : CO2 = 1, R-32 = 675, R-410A = 2088, R-404A = 3922.") +
       "<p>Deux accords internationaux, deux problèmes différents. Le <b>protocole de Montréal</b> (1987) " +
       "visait la <b>couche d'ozone</b> : il a fait disparaître les CFC puis les HCFC. La " +
@@ -2336,6 +2421,11 @@ export const CARTES = [
     dc: "G2 · mise en situation",
     minuteur_s: 420,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=x1",
+        "🎧 Écouter la capsule : Exercice — deux installations, deux impacts",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 5 minutes. Version imprimable et mode projection compris."
+      ) +
       "<p>Tu interviens sur deux machines dans le même bâtiment.</p>" +
       "<ul>" +
       "<li><b>Machine A</b> — chambre froide, <b>12 kg</b> de <b>R-404A</b> (PRP = 3922).</li>" +
@@ -2386,6 +2476,11 @@ export const CARTES = [
     dc: "G3 · codes 3.01 → 3.05",
     minuteur_s: 360,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=g3",
+        "🎧 Écouter la capsule : Contrôles avant mise en service",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("epreuve-azote.svg", "Montage de l épreuve de pression : bouteille d azote, manifold, circuit — oxygène et air comprimé barrés.") +
       "<p>Deux épreuves, deux buts, souvent enchaînées. L'<b>épreuve de résistance</b> vérifie que " +
       "l'assemblage tient mécaniquement. L'<b>épreuve d'étanchéité</b> vérifie qu'il ne laisse rien " +
@@ -2683,6 +2778,11 @@ export const CARTES = [
     dc: "G4 · mise en situation · parcours E",
     minuteur_s: 420,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=x4",
+        "🎧 Écouter la capsule : Détective — le contrôle qui tourne mal",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris."
+      ) +
       "<p>Contrôle périodique d'étanchéité chez un client. Le <b>registre</b> t'apprend qu'une fuite " +
       "a été réparée il y a trois mois sur un raccord flare de la ligne liquide.</p>" +
       "<ul>" +
@@ -2732,6 +2832,11 @@ export const CARTES = [
     dc: "G5 · codes 5.01 → 5.04",
     minuteur_s: 360,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=g5a",
+        "🎧 Écouter la capsule : Récupérer sans émettre",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("recuperation.svg", "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.") +
       "<p>Chaque connexion et chaque déconnexion est un <b>point de fuite</b> : le geste est lent, " +
       "contrôlé, flexibles purgés. Avant de récupérer, on <b>arrête et on isole</b> le système.</p>" +
@@ -2800,6 +2905,11 @@ export const CARTES = [
     dc: "G5 · codes 5.05 → 5.09",
     minuteur_s: 330,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=g5b",
+        "🎧 Écouter la capsule : Peser, charger, stocker, tracer",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 8 écrans, 9 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("recuperation.svg", "Rappel du montage : la bouteille se pèse avant, ne se remplit jamais à ras, ne mélange jamais deux fluides.") +
       "<p>Pour charger, on détermine d'abord l'<b>état du fluide</b> et la <b>quantité prévue</b> " +
       "(plaque signalétique, doc constructeur). La charge se contrôle à la <b>balance</b>, jamais " +
@@ -2877,6 +2987,11 @@ export const CARTES = [
     dc: "G5 · mise en situation · parcours D",
     minuteur_s: 420,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=x3",
+        "🎧 Écouter la capsule : Détective — la bouteille de récupération",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris."
+      ) +
       "<p>Récupération sur une chambre froide avant remplacement d'un composant. Tu as pesé la " +
       "bouteille <b>avant</b> de commencer — bon réflexe. La récupération avance, et la balance " +
       "approche du <b>niveau maximal admissible</b> de la bouteille… mais il reste visiblement du " +
@@ -3426,6 +3541,11 @@ export const CARTES = [
     dc: "G8 · G9 · mise en situation",
     minuteur_s: 480,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=x2",
+        "🎧 Écouter la capsule : Exercice — la machine ne fait plus de froid",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris."
+      ) +
       "<p>Chambre froide positive. Le compresseur tourne, mais la température de la chambre ne descend plus. " +
       "Tu relèves :</p>" +
       "<ul>" +
@@ -3504,6 +3624,16 @@ export const CARTES = [
         "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique",
         "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
         "le détendeur à égalisation interne et externe, le détendeur électronique et le tube capillaire, chacun en vue isolée avec son symbole."
+      ) +
+      lienOutil(
+        "packs/fluides/res/detendeur-interactif/index.html",
+        "🎯 Lancer le cours interactif : le détendeur thermostatique en détail",
+        "14 écrans : la croix du frigoriste, le train thermostatique pièce par pièce, le calcul de la surchauffe, le jeu des trois forces sur la membrane, la pose du bulbe, l'égalisation interne et externe, le choix de la buse — et le réglage, qui ne vient qu'après le diagnostic."
+      ) +
+      lienOutil(
+        "packs/fluides/res/electrovanne-interactive/index.html",
+        "⚡ Lancer le cours interactif : l'électrovanne de ligne liquide",
+        "14 écrans : pourquoi on coupe le liquide avant d'arrêter le compresseur, la commande tout ou rien, la coupe animée hors tension puis alimentée, l'action directe et la commande assistée, NF et NO, la dépose de la bobine en sécurité et le diagnostic."
       ),
     blocs: [
       {
@@ -3664,6 +3794,11 @@ export const CARTES = [
     dc: "G10 · codes 10.01 · 10.02",
     minuteur_s: 300,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=g10",
+        "🎧 Écouter la capsule : Tuyauterie et brasage sous azote",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("balayage-azote.svg", "Brasage sous balayage d azote : l azote traverse le tube pendant la chauffe et ressort librement.") +
       "<p>Braser un circuit frigorifique, ce n'est pas braser une tuyauterie d'eau. À la flamme, " +
       "l'intérieur du cuivre s'oxyde et forme une <b>calamine</b> noire qui se détache plus tard, " +
@@ -3985,6 +4120,11 @@ export const CARTES = [
     dc: "G12 · mise en situation · A1 et A2",
     minuteur_s: 480,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=x5",
+        "🎧 Écouter la capsule : Détective — intervention sur monobloc R-290",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris."
+      ) +
       "<p>Une vitrine réfrigérée au <b>R-290</b> à remplacer de compresseur, dans l'arrière-boutique " +
       "d'une boulangerie : local <b>petit</b>, <b>sans ventilation</b>, un four à quelques mètres.</p>" +
       "<p>Ton collègue propose de « faire vite » : récupérer, ouvrir, braser le nouveau compresseur, " +
@@ -4032,6 +4172,11 @@ export const CARTES = [
     dc: "G13 · G14 · information et sensibilisation",
     minuteur_s: 300,
     corps:
+      lienOutil(
+        "packs/fluides/res/capsules/index.html?c=g13",
+        "🎧 Écouter la capsule : CO₂ et NH₃ — reconnaître, ne pas intervenir",
+        "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 5 minutes. Version imprimable et mode projection compris."
+      ) +
       schema("co2-nh3-compare.svg", "Deux comportements inverses : le CO₂, A1 et sans odeur, est plus lourd que l'air et descend (catégorie B) ; l'ammoniac, B2L et piquant, est plus léger que l'air et monte (catégorie C).") +
       "<p>Ce module <b>informe</b>, il ne qualifie pas. Une attestation A1 ou A2 ne donne <b>aucun " +
       "droit d'intervention</b> sur une installation au CO₂ (catégorie B) ou à l'ammoniac " +

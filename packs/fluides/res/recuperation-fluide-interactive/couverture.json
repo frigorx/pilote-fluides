@@ -1,0 +1,17 @@
+{
+  "cours": "recuperation-fluide-interactive",
+  "titre": "Récupérer le fluide — manifold, station et bouteille, geste par geste",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 8,
+  "codes": {
+    "5.01": ["connect", "pre-vacuum", "purge", "weigh"],
+    "5.02": ["liquid", "vapor"],
+    "5.03": ["prepare", "liquid", "vapor", "purge", "weigh"],
+    "5.05": ["liquid", "vapor"],
+    "5.06": ["weigh"]
+  },
+  "appui": {
+    "3.03": ["pre-vacuum", "final-vacuum"],
+    "3.04": ["final-vacuum"]
+  }
+}

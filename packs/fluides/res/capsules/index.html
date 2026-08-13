@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Capsule narrée : le chapitre expliqué à voix haute, écran par écran, avec ses animations.">
+  <title>Capsule narrée | Pilote Fluides</title>
+  <link rel="stylesheet" href="capsule.css?v=20260813-1">
+</head>
+<body>
+  <a class="saut" href="#ecran-titre">Aller au contenu de l'écran</a>
+
+  <header class="barre">
+    <span class="logo">iner<b>Web</b> Édu</span>
+    <span class="pack-titre" id="pack-titre">Habilitation fluides · capsule narrée</span>
+    <span class="spacer"></span>
+    <button class="bouton-plat" id="btn-projection" type="button" aria-pressed="false" title="Agrandir pour la projection en salle">🖥 Projection</button>
+    <button class="bouton-plat" id="btn-imprimer" type="button" title="Imprimer la capsule à plat">🖨 Imprimer</button>
+    <a class="bouton-plat" id="btn-retour" href="../../../../index.html" title="Revenir au pack">↺ Le pack</a>
+  </header>
+
+  <main id="app">
+
+    <!-- ===== Accueil ===== -->
+    <section class="accueil" id="accueil" aria-labelledby="accueil-titre">
+      <div class="accueil-texte">
+        <p class="surtitre" id="accueil-surtitre">HABILITATION FLUIDES</p>
+        <h1 id="accueil-titre">Capsule narrée</h1>
+        <p class="accueil-intro" id="accueil-intro"></p>
+        <div class="accueil-actions">
+          <button class="bouton-plein" id="btn-commencer" type="button">Commencer <span aria-hidden="true">→</span></button>
+          <button class="bouton-creux" id="btn-suivi" type="button">▶ Tout écouter d'affilée</button>
+        </div>
+        <p class="accueil-compte" id="accueil-compte"></p>
+        <ul class="accueil-codes" id="accueil-codes" aria-label="Points du référentiel travaillés"></ul>
+      </div>
+      <figure class="accueil-visuel" id="accueil-visuel"></figure>
+    </section>
+
+    <!-- ===== Parcours ===== -->
+    <section class="parcours" id="parcours" hidden aria-label="Capsule écran par écran">
+      <nav class="rail" aria-label="Progression">
+        <div class="rail-tete"><span id="rail-etiquette">ÉCRAN</span><strong id="rail-compte">1 / 1</strong></div>
+        <ol class="rail-points" id="rail-points"></ol>
+        <div class="rail-jauge" aria-hidden="true"><span id="rail-barre"></span></div>
+        <p class="rail-note" id="rail-note">Début de la capsule</p>
+      </nav>
+
+      <article class="ecran" aria-labelledby="ecran-titre">
+        <header class="ecran-tete">
+          <div>
+            <p class="surtitre" id="ecran-surtitre"></p>
+            <h2 id="ecran-titre" tabindex="-1"></h2>
+          </div>
+          <div class="outils" aria-label="Outils de l'écran">
+            <div class="vitesse" aria-label="Vitesse de la voix">
+              <button id="btn-lent" type="button" aria-label="Ralentir la voix">−</button>
+              <span id="vitesse-valeur">0,95×</span>
+              <button id="btn-vite" type="button" aria-label="Accélérer la voix">+</button>
+            </div>
+            <button class="bouton-outil voix" id="btn-ecouter" type="button"><span aria-hidden="true">▶</span> <span class="etiquette">Écouter</span></button>
+            <button class="bouton-outil" id="btn-stop" type="button" disabled><span aria-hidden="true">■</span> <span class="etiquette">Arrêter</span></button>
+            <button class="bouton-outil" id="btn-rejouer" type="button" title="Rejouer l'animation"><span aria-hidden="true">↻</span> <span class="etiquette">Rejouer</span></button>
+          </div>
+        </header>
+
+        <div class="ecran-corps">
+          <figure class="visuel" id="visuel"></figure>
+          <div class="propos">
+            <div id="ecran-texte"></div>
+            <aside class="retenir" id="ecran-retenir" hidden></aside>
+            <section class="controle" id="controle" hidden aria-label="Contrôle de compréhension"></section>
+          </div>
+        </div>
+
+        <footer class="ecran-pied">
+          <button class="bouton-nav creux" id="btn-precedent" type="button">← Précédent</button>
+          <span class="reference" id="ecran-reference"></span>
+          <button class="bouton-nav" id="btn-suivant" type="button">Suivant →</button>
+        </footer>
+        <p class="message" id="message" role="status" aria-live="polite"></p>
+      </article>
+    </section>
+
+    <!-- ===== Fin ===== -->
+    <section class="fin" id="fin" hidden aria-labelledby="fin-titre">
+      <h2 id="fin-titre">Capsule terminée</h2>
+      <div class="fin-bilan" id="fin-bilan"></div>
+      <div class="fin-actions">
+        <button class="bouton-plein" id="btn-recommencer" type="button">↻ Revoir la capsule</button>
+        <a class="bouton-creux" id="btn-fiche" href="../../../../index.html">📄 Revenir à la fiche</a>
+      </div>
+    </section>
+
+    <!-- ===== Version imprimable ===== -->
+    <section class="livret" id="livret" aria-label="Capsule à plat, pour l'impression"></section>
+
+  </main>
+
+  <script src="animations.js?v=20260813-1"></script>
+  <script src="capsule.js?v=20260813-1"></script>
+  <script src="../../../../moteur/lisibilite.js?v=20260813-1"></script>
+  <script src="../../../../moteur/marque.js?v=20260813-1"></script>
+</body>
+</html>

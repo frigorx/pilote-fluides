@@ -73,6 +73,56 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ## 2. État au 2 août 2026
 
+### 🎧 13 août 2026 (soir) — CHAQUE chapitre a sa capsule narrée (24 nouvelles)
+
+Demande de F. Henninot : *« chaque chapitre, chaque document de l'autoformation, une
+animation et un vocal — soit on l'a déjà fait, on le récupère, soit il faut le créer »*.
+
+**Avant** : 25 fiches de cours sur 49 avaient une expérience interactive, **24 n'avaient
+que du texte** — dont les 5 fiches de sécurité et les 5 exercices « détective ».
+**Après** : `node build/capsules.mjs` → **aucune fiche de cours sans capsule ni expérience**.
+
+**Ce qui a été construit** — `packs/fluides/res/capsules/`, un **moteur unique piloté par
+données**, jamais 24 applications séparées :
+
+| | |
+|---|---|
+| `index.html?c=<id>` | la coquille, la même pour toutes ; `&e=3` ouvre un écran, `&mode=projection` agrandit pour la salle |
+| `capsule.js` | voix, rail de progression, contrôle à correction expliquée, livret imprimable |
+| `animations.js` | **12 motifs vectoriels** paramétrés : etages · duo · sequence · jauge · frise · alerte · flux · zone · balance · checklist · barres · cycle |
+| `donnees/<id>.js` | **le contenu d'un chapitre** — c'est le seul fichier à écrire pour une capsule de plus |
+| `LIRE-MOI.md` | **le contrat d'écriture** : champs, motifs, règles, contrôle |
+| `_motifs.html` · `_controle.html` | la planche d'essai des motifs · la **mesure** de toutes les animations |
+
+**La voix est celle de la machine** (`speechSynthesis`), aucun fichier son n'est produit.
+⚠️ **C'est ce qui lève la règle n° 1 de `CAPSULES-SECURITE.md`** (« aucune capsule avant la
+relecture métier ») : corriger une erreur = corriger une ligne de texte, jamais réenregistrer.
+
+**Mesuré, pas estimé** : 24 capsules · **151 écrans** · 123 animations · **151/151 écrans
+ont leur texte de voix rédigé pour l'oreille** (et non le texte d'écran relu par la machine)
+· 44 contrôles de compréhension · 0 texte hors cadre, 0 libellé qui en recouvre un autre.
+
+**Ce que le contrôle a trouvé, et qu'un coup d'œil n'aurait pas vu** : 11 animations
+défectueuses, toutes dues aux MOTIFS qui supposaient des textes courts — pied de page
+sortant par le bas, précision de liste passant sur son titre, jalon de frise sortant sur
+le côté. Les motifs s'adaptent désormais à la longueur du texte (`maxLignes`, `pied()`,
+`dansLeCadre()`) au lieu de l'imposer aux rédacteurs.
+
+**Propagation, par le seul accrochage `lienOutil` dans `cartes.js`** (posé par
+`node build/relier-capsules.mjs`, idempotent) : application élève ✓ · **support de
+projection : 504 → 530 diapositives, dont 30 → 56 diapositives de lancement** ✓ ·
+galerie ✓ · registre ✓. `relecture.html` n'en porte pas : elle retire tout le HTML par
+construction, c'est un bon à tirer du texte seul. cl3, cl4 et x1 n'ont pas de diapositive
+projetée : leurs séquences sont en autoformation « avant » / « pendant », ou hors déroulé.
+
+**Aussi** : les deux modules `pose-manifold-interactive` et `pose-manifold-2-voies-interactive`
+existaient dans `res/` **sans être reliés à aucune fiche** — rattachés à `p1`, avec leur
+`couverture.json` (déduite de leur README, note dans le fichier). Restent 2 anomalies de
+registre ANTÉRIEURES : `detendeur-interactif` et `electrovanne-interactive` sans couverture.
+
+**Pour ajouter une capsule** : écrire `donnees/<id>.js` (suivre `LIRE-MOI.md`), puis
+`node build/capsules.mjs && node build/relier-capsules.mjs && node build/build.mjs && node build/parcours.mjs`.
+
 ### ⏱ 13 août 2026 — le parcours élève consomme les ressources (commit `c9f1151`)
 
 Les **266 questions d'entraînement** portent désormais leur **illustration** (posée une à
@@ -84,10 +134,11 @@ fausse le déroulé complet — l'indice, la remédiation, les ressources en vig
 par `build/convert.mjs`. Les mini-questions écrites à la main dans `cartes.js` sont hors
 banque : pas d'illustration, c'est normal.
 
-⚠️ **Ne PAS pousser ce dépôt** tant que F. Henninot n'a pas tranché les **droits des
-80 images `bib-…`** (extraites de documents tiers par la moisson de l'usine) : le dépôt
-est public, publier est irréversible. Les poses restent contrôlables dans
-`CONTROLE-POSES.html` côté Hub.
+✅ **Droits des 80 images `bib-…` : tranché par F. Henninot le 13/08 au soir** — ces images
+sont **les siennes**, il les a créées ; la garde de push posée le matin est **levée**, et il
+n'y a plus à reposer la question à chaque intégration d'illustration. Les poses restent
+contrôlables dans `CONTROLE-POSES.html` côté Hub. (La diffusion du dépôt reste par ailleurs
+soumise à sa doctrine habituelle : rien n'est poussé sans son feu vert au cas par cas.)
 
 ### ⏱ POINT D'ÉTAPE — au sortir de la journée du 31 juillet
 

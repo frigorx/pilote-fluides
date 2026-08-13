@@ -1,0 +1,15 @@
+{
+  "cours": "pose-manifold-interactive",
+  "titre": "Poser et déposer le manifold 4 voies — la voie de vide en plus",
+  "reference": "arrêté du 21 novembre 2025 · règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 6,
+  "codes": {
+    "4.05": ["measure"],
+    "5.01": ["prepare", "service", "connect"],
+    "5.02": ["remove"],
+    "3.03": ["vacuum"],
+    "3.04": ["vacuum"]
+  },
+  "hors_referentiel": [],
+  "_note": "Codes déduits du contenu du module (voir son README, section Parcours) et de la fiche p1 qui l'appelle. À la différence du modèle 2 voies, celui-ci tire réellement au vide le manifold et ses flexibles (écran vacuum) et traite le fluide résiduel à la dépose (écran remove) : d'où 3.03, 3.04 et 5.02 en codes pleins et non en appui."
+}

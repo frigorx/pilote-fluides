@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24.0 -34.0 58.0 48.0" width="58" height="48">
+<title>Détendeur thermostatique</title>
+<desc>Détendeur thermostatique placé sur la ligne liquide avant l'évaporateur.</desc>
+<!-- Détendeur thermostatique — converti de valv-exp-term.elmt par outils\elmt-vers-svg.py -->
+<rect x="-24.0" y="-34.0" width="58.0" height="48.0" fill="#ffffff"/>
+<line x1="-8.31" y1="0" x2="-3.35" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="11" y1="0" x2="18.2" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="-3,-5 -3,5 10,-5 10,5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="3.48" y1="-0.3" x2="3.48" y2="-6.72" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="-3,-9.95 10,-9.95 3.5,-7" stroke="black" stroke-width="1" fill="none"/>
+<line x1="3.78" y1="-16" x2="3.78" y2="-10" stroke="black" stroke-width="0.4" fill="none"/>
+<ellipse cx="6.00" cy="-17.00" rx="2.00" ry="3.00" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="7.12" y1="-20" x2="16.79" y2="-20" stroke="black" stroke-width="0.4" fill="none"/>
+</svg>

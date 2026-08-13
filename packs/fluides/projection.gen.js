@@ -67,6 +67,13 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=s1",
+       "lancer": "🎧 Écouter la capsule : L'air qui manque — l'asphyxie",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 6 minutes. Version imprimable et mode projection compris.",
+       "titre": "L'air qui manque — l'asphyxie"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/s1-double-accident.svg",
        "alt": "Animation : la nappe de gaz monte dans le local fermé, le technicien descend et tombe, puis le collègue descend le secourir et devient la seconde victime. Deux victimes au lieu d'une.",
@@ -120,7 +127,7 @@ window.PILOTE_PROJECTION = {
      "questions": [
       {
        "id": "pk-cl2-1",
-       "dc": "Classification",
+       "dc": "G12",
        "code": "12.02",
        "niveau": 1,
        "type": "qcm",
@@ -141,34 +148,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "cl2",
        "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
        "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-cl4-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
-       "choix": [
-        "Au plafond, comme un détecteur de fumée",
-        "En partie basse, là où le CO₂ s'accumule",
-        "À l'extérieur du local uniquement",
-        "Peu importe, le gaz se répartit uniformément"
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-02-23DE01BD.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Hydrocarbures a1 a2",
+         "chemin": "hydrocarbures-a1-a2/index.html"
+        }
        ],
-       "bonne": 1,
-       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
-       "remed": {
-        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
-        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
-       },
-       "remediation_vers": "cl4",
-       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-       "origine": "pack",
        "categories": [
         "A1",
         "A2"
@@ -194,6 +185,55 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g12",
        "code": "12.02",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-02-B88D83FC.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Cours classes securite",
+         "chemin": "cours-classes-securite/index.html"
+        }
+       ],
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g12-v6_184",
+       "dc": "G12",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Pour les fluides A2L, les outils d'intervention doivent être :",
+       "choix": [
+        "Les mêmes outils standards que pour un fluide A1",
+        "Adaptés (pas de source d'ignition, ventilation)",
+        "Uniquement manuels, sans aucune partie électrique",
+        "Réalisés en matériaux composites non conducteurs"
+       ],
+       "bonne": 1,
+       "explication": "Adaptés — Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention.",
+       "aide": "'Légèrement inflammable' impose des précautions, même si le risque est modéré.",
+       "remed": {
+        "texte": "Les fluides A2L nécessitent des outils sans source d'ignition, une ventilation adéquate et des détecteurs de gaz sur le lieu d'intervention."
+       },
+       "remediation_vers": "g12",
+       "code": "12.02",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-02-9D0D9800.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Intervention hydrocarbures interactive",
+         "chemin": "intervention-hydrocarbures-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -237,6 +277,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=s4",
+       "lancer": "🎧 Écouter la capsule : Ce qui éclate — la pression",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris.",
+       "titre": "Ce qui éclate — la pression"
       },
       {
        "type": "schema",
@@ -322,7 +369,7 @@ window.PILOTE_PROJECTION = {
      "questions": [
       {
        "id": "pk-cl3-1",
-       "dc": "Classification",
+       "dc": "G11",
        "code": "11.03",
        "niveau": 1,
        "type": "qcm",
@@ -343,6 +390,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "cl3",
        "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
        "origine": "pack",
+       "chapitre": "11",
+       "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+       "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+       "illustration": "illustrations/sup-cours-11-03-B88D83FC.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Cours classes securite",
+         "chemin": "cours-classes-securite/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -371,6 +430,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "p4",
        "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
        "origine": "pack",
+       "chapitre": "03",
+       "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+       "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+       "illustration": "illustrations/sup-cours-3-01-70D0D9E9.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Epreuve azote",
+         "chemin": "illustrations/epreuve-azote.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -393,6 +464,18 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g11",
        "code": "11.03",
+       "chapitre": "11",
+       "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+       "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+       "illustration": "illustrations/sup-cours-11-03-DAF5A7C7.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Cours classes securite",
+         "chemin": "cours-classes-securite/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -427,6 +510,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=g0",
+       "lancer": "🎧 Écouter la capsule : Ce que la loi vous impose",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 8 écrans, 7 minutes. Version imprimable et mode projection compris.",
+       "titre": "Ce que la loi vous impose"
       },
       {
        "type": "schema",
@@ -508,6 +598,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g0",
        "explication": "L'attestation d'aptitude est un document personnel. Elle autorise une personne à intervenir sur les fluides frigorigènes.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-00-0A8DFFB1.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Aptitude capacite",
+         "chemin": "illustrations/aptitude-capacite.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -538,6 +640,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g4b",
        "code": "1.00",
+       "chapitre": "04",
+       "chapitre_titre": "Contrôles d'étanchéité",
+       "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+       "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Controle etancheite registre",
+         "chemin": "illustrations/controle-etancheite_registre.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -565,6 +679,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g4b",
        "code": "1.00",
+       "chapitre": "04",
+       "chapitre_titre": "Contrôles d'étanchéité",
+       "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+       "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Controle etancheite registre",
+         "chemin": "illustrations/controle-etancheite_registre.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -595,6 +721,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g0",
        "explication": "La filière DEEE traite la carcasse de l'équipement en fin de vie. Le fluide frigorigène doit être récupéré à part, avant, par un professionnel habilité.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/bib-ep1-2ifca-bbrmodie-correction-8e9eb74f.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La recuperation la trace",
+         "chemin": "illustrations/la-recuperation_la-trace.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -644,6 +782,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=g2",
+       "lancer": "🎧 Écouter la capsule : Impact environnemental et F-Gas",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 6 minutes. Version imprimable et mode projection compris.",
+       "titre": "Impact environnemental et F-Gas"
       },
       {
        "type": "schema",
@@ -702,6 +847,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g13",
        "code": "2.02",
+       "chapitre": "13",
+       "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+       "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+       "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Teqco2 calcul",
+         "chemin": "illustrations/teqco2-calcul.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -726,6 +883,18 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g2",
        "code": "2.02",
+       "chapitre": "02",
+       "chapitre_titre": "Incidence environnementale & réglementations",
+       "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+       "illustration": "illustrations/sup-cours-2-02-E32EF21D.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "outil",
+         "libelle": "Fiche fluide",
+         "chemin": "outils/fiche-fluide.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -750,6 +919,18 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g2a",
        "code": "2.01",
+       "chapitre": "02",
+       "chapitre_titre": "Incidence environnementale & réglementations",
+       "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+       "illustration": "illustrations/sup-cours-2-01-7041C98E.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Hfc ozone climat",
+         "chemin": "illustrations/hfc-ozone-climat.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -777,6 +958,23 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g2",
        "code": "2.02",
+       "chapitre": "02",
+       "chapitre_titre": "Incidence environnementale & réglementations",
+       "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+       "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Prp regle serre",
+         "chemin": "illustrations/prp-regle-serre.svg"
+        },
+        {
+         "type": "outil",
+         "libelle": "Fiche fluide",
+         "chemin": "outils/fiche-fluide.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -804,6 +1002,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g2a",
        "code": "2.01",
+       "chapitre": "02",
+       "chapitre_titre": "Incidence environnementale & réglementations",
+       "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+       "illustration": "illustrations/sup-cours-2-01-E32EF21D.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Hfc ozone climat",
+         "chemin": "illustrations/hfc-ozone-climat.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -840,6 +1050,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=g2a",
+       "lancer": "🎧 Écouter la capsule : Quarante ans d'histoire : de l'ozone au climat",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris.",
+       "titre": "Quarante ans d'histoire : de l'ozone au climat"
       },
       {
        "type": "schema",
@@ -890,6 +1107,18 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g2a",
        "code": "2.01",
+       "chapitre": "02",
+       "chapitre_titre": "Incidence environnementale & réglementations",
+       "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+       "illustration": "illustrations/sup-cours-2-01-7041C98E.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Hfc ozone climat",
+         "chemin": "illustrations/hfc-ozone-climat.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -917,6 +1146,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g2a",
        "code": "2.01",
+       "chapitre": "02",
+       "chapitre_titre": "Incidence environnementale & réglementations",
+       "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+       "illustration": "illustrations/sup-cours-2-01-E32EF21D.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Hfc ozone climat",
+         "chemin": "illustrations/hfc-ozone-climat.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -944,6 +1185,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g2a",
        "code": "2.01",
+       "chapitre": "02",
+       "chapitre_titre": "Incidence environnementale & réglementations",
+       "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+       "illustration": "illustrations/sup-cours-2-01-304B1178.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Hfc ozone climat",
+         "chemin": "illustrations/hfc-ozone-climat.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -971,6 +1224,11 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g2a",
        "code": "2.01",
+       "chapitre": "02",
+       "chapitre_titre": "Incidence environnementale & réglementations",
+       "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+       "illustration": "illustrations/sup-cours-2-01-7041C98E.png",
+       "pose_niveau": "cours",
        "categories": [
         "A1",
         "A2",
@@ -1116,6 +1374,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1e",
        "explication": "La surchauffe et le sous-refroidissement sont des différences, jamais des températures. On les exprime en kelvins parce que ce sont des écarts.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-02-F6773E86.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La chaleur surchauffe sousrefroidissement",
+         "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1145,6 +1415,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1e",
        "explication": "Le manomètre donne la pression ; la table de saturation traduit cette pression en température de changement d'état ; le thermomètre de contact donne la température réelle du tube. La différence est la surchauffe.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-02-819DA516.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La chaleur surchauffe sousrefroidissement",
+         "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1174,6 +1456,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1e",
        "explication": "Le sous-refroidissement garantit que le fluide arrive au détendeur entièrement liquide. Repère usuel : 4 à 8 K, à recaler sur la documentation du constructeur.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Chaleur interactive",
+         "chemin": "chaleur-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1203,6 +1497,23 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1s",
        "explication": "Pendant un changement d'état, la chaleur apportée est de la chaleur latente : elle transforme le liquide en vapeur sans faire monter la température. C'est le palier.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-02-819DA516.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Palier chaleur latente",
+         "chemin": "illustrations/palier-chaleur-latente.svg"
+        },
+        {
+         "type": "page",
+         "libelle": "Chaleur interactive",
+         "chemin": "chaleur-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1232,6 +1543,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1s",
        "explication": "Le palier de changement d'état commence au point de bulle — la première bulle de vapeur — et finit au point de rosée — la dernière goutte de liquide.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Le circuit evaporateur",
+         "chemin": "illustrations/le-circuit_evaporateur.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1361,6 +1684,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1e",
        "explication": "La surchauffe et le sous-refroidissement sont des différences, jamais des températures. On les exprime en kelvins parce que ce sont des écarts.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-02-F6773E86.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La chaleur surchauffe sousrefroidissement",
+         "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1390,6 +1725,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1e",
        "explication": "Le manomètre donne la pression ; la table de saturation traduit cette pression en température de changement d'état ; le thermomètre de contact donne la température réelle du tube. La différence est la surchauffe.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-02-819DA516.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La chaleur surchauffe sousrefroidissement",
+         "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1419,6 +1766,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1e",
        "explication": "Le sous-refroidissement garantit que le fluide arrive au détendeur entièrement liquide. Repère usuel : 4 à 8 K, à recaler sur la documentation du constructeur.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Chaleur interactive",
+         "chemin": "chaleur-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1563,6 +1922,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1b",
        "explication": "La courbe en cloche partage le diagramme en trois : liquide à gauche, mélange liquide + vapeur sous la cloche, vapeur surchauffée à droite.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-03-7CE9B528.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Diagramme logph",
+         "chemin": "illustrations/diagramme-logph.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1589,6 +1960,23 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g1a",
        "code": "1.03",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-03-304B1178.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Diagramme logph",
+         "chemin": "illustrations/diagramme-logph.svg"
+        },
+        {
+         "type": "page",
+         "libelle": "Pression temperature interactive",
+         "chemin": "pression-temperature-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1615,6 +2003,23 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g1a",
        "code": "1.03",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-03-7CE9B528.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Bulle rosee",
+         "chemin": "illustrations/bulle-rosee.svg"
+        },
+        {
+         "type": "page",
+         "libelle": "Pression temperature interactive",
+         "chemin": "pression-temperature-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1644,6 +2049,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1b",
        "explication": "Le sous-refroidissement se lit sur le trait du haut (haute pression), à gauche de la courbe de bulle. La surchauffe se lit sur le trait du bas (basse pression), à droite de la courbe de rosée.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-03-304B1178.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Chaleur interactive",
+         "chemin": "chaleur-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1785,6 +2202,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1e",
        "explication": "La surchauffe et le sous-refroidissement sont des différences, jamais des températures. On les exprime en kelvins parce que ce sont des écarts.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-02-F6773E86.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La chaleur surchauffe sousrefroidissement",
+         "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1814,6 +2243,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1e",
        "explication": "Le manomètre donne la pression ; la table de saturation traduit cette pression en température de changement d'état ; le thermomètre de contact donne la température réelle du tube. La différence est la surchauffe.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-02-819DA516.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La chaleur surchauffe sousrefroidissement",
+         "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1843,6 +2284,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1e",
        "explication": "Le sous-refroidissement garantit que le fluide arrive au détendeur entièrement liquide. Repère usuel : 4 à 8 K, à recaler sur la documentation du constructeur.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Chaleur interactive",
+         "chemin": "chaleur-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -1981,6 +2434,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1c",
        "explication": "Les fluides naturels (propane, isobutane, ammoniac, CO₂) existent sans chimie de synthèse. Les HFC et les HFO sont des molécules fabriquées.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-07-304B1178.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Nomenclature interactive",
+         "chemin": "nomenclature-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -2005,6 +2470,18 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g1c",
        "code": "1.07",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-07-304B1178.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Nomenclature interactive",
+         "chemin": "nomenclature-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -2032,6 +2509,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g12",
        "code": "1.07",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-1-07-304B1178.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Hydrocarbures a1 a2",
+         "chemin": "hydrocarbures-a1-a2/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -2062,6 +2551,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1c",
        "explication": "Le code du fluide (R-xyz) décrit la molécule. La classe NF EN 378 (A1, A2L, A3…) décrit le risque de manipulation. Il faut toujours lire les deux.",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-06-304B1178.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Nomenclature interactive",
+         "chemin": "nomenclature-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -2096,6 +2597,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=g1d",
+       "lancer": "🎧 Écouter la capsule : Les organes qui trahissent une fuite",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris.",
+       "titre": "Les organes qui trahissent une fuite"
       },
       {
        "type": "schema",
@@ -2189,6 +2697,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g9",
        "code": "1.05",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/sup-voyant-liquide-en-laiton-photo-E59D07B7.webp",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Detendeurs ligne",
+         "chemin": "illustrations/detendeurs-ligne.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -2214,6 +2734,17 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g9",
        "code": "1.05",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/ine-contenu-bibliotheque-symboles-svg-capteurs-froid-pressostat-sans-reperes-svg.svg",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Regulateurs pression",
+         "chemin": "illustrations/regulateurs-pression.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -2239,6 +2770,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g9",
        "code": "1.05",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/bib-robinet-wc-a-potence-da0efce7.jpg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Vanne service interactive",
+         "chemin": "vanne-service-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -2264,6 +2807,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g9",
        "code": "1.05",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/sup-voyant-liquide-en-laiton-photo-E59D07B7.webp",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Detendeurs ligne",
+         "chemin": "illustrations/detendeurs-ligne.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -2394,6 +2949,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g4a",
        "explication": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces'en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
        "origine": "pack",
+       "chapitre": "04",
+       "chapitre_titre": "Contrôles d'étanchéité",
+       "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+       "illustration": "illustrations/sup-cours-4-01-FF76C512.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Points de fuite",
+         "chemin": "illustrations/points-de-fuite.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -2423,6 +2990,23 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g4b",
        "code": "4.03",
+       "chapitre": "04",
+       "chapitre_titre": "Contrôles d'étanchéité",
+       "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+       "illustration": "illustrations/sup-cours-4-03-FF76C512.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Controle etancheite registre",
+         "chemin": "illustrations/controle-etancheite_registre.svg"
+        },
+        {
+         "type": "page",
+         "libelle": "Etancheite interactive",
+         "chemin": "etancheite-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -2452,6 +3036,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g4b",
        "code": "4.03",
+       "chapitre": "04",
+       "chapitre_titre": "Contrôles d'étanchéité",
+       "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+       "illustration": "illustrations/sup-cours-4-03-FF76C512.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Etancheite interactive",
+         "chemin": "etancheite-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -2496,6 +3092,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=p7",
+       "lancer": "🎧 Écouter la capsule : Préparation de chantier — risques, EPI, zone de travail",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 7 minutes. Version imprimable et mode projection compris.",
+       "titre": "Préparation de chantier — risques, EPI, zone de travail"
       },
       {
        "type": "schema",
@@ -2589,6 +3192,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "p7",
        "explication": "L'analyse de risques se fait AVANT le premier geste, sur place.",
        "origine": "pack",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-04-FC9D2706.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Intervention hydrocarbures interactive",
+         "chemin": "intervention-hydrocarbures-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -2617,6 +3232,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "p7",
        "explication": "Zone balisée, ventilation en service, issue dégagée, aucune source d'inflammation, EPI et matériel adaptés, consignation électrique faite.",
        "origine": "pack",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-05-FF76C512.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Intervention hydrocarbures interactive",
+         "chemin": "intervention-hydrocarbures-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -2661,6 +3288,13 @@ window.PILOTE_PROJECTION = {
        "titre": "Consigner avant de toucher — le risque électrique",
        "dc": "Sécurité",
        "competences": []
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=s5",
+       "lancer": "🎧 Écouter la capsule : Consigner avant de toucher — le risque électrique",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris.",
+       "titre": "Consigner avant de toucher — le risque électrique"
       },
       {
        "type": "schema",
@@ -2757,7 +3391,9 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "s5",
        "explication": "On vérifie TOUJOURS l'absence de tension au VAT avant de toucher.",
-       "origine": "pack"
+       "origine": "pack",
+       "illustration": "illustrations/sup-contexte-sécurité-A03D0FCC.webp",
+       "pose_niveau": "contexte"
       },
       {
        "id": "pk-s5-2",
@@ -2782,7 +3418,9 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "s5",
        "explication": "Le VAT se teste sur une source connue avant l'usage, et de nouveau après.",
-       "origine": "pack"
+       "origine": "pack",
+       "illustration": "illustrations/sup-contexte-sécurité-A03D0FCC.webp",
+       "pose_niveau": "contexte"
       },
       {
        "id": "pk-s5-3",
@@ -2807,7 +3445,9 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "s5",
        "explication": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
-       "origine": "pack"
+       "origine": "pack",
+       "illustration": "illustrations/sup-contexte-sécurité-A03D0FCC.webp",
+       "pose_niveau": "contexte"
       }
      ],
      "notes": "Conseil d'animation : faire manipuler un VAT hors tension et mimer le double contrôle sur une source connue, avant et après usage. Faire répéter les cinq étapes à voix haute par le groupe, dans l'ordre, jusqu'à ce qu'elles s'enchaînent sans hésitation. Montrer une photo ou une pièce réelle de condensateur pour que le mot ne reste pas abstrait. Rappeler explicitement que ce risque est absent du référentiel d'examen fluides — le dire aide à comprendre pourquoi le pack ne l'avait jamais traité, et pourquoi cette fiche existe quand même."
@@ -2881,6 +3521,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=g3",
+       "lancer": "🎧 Écouter la capsule : Contrôles avant mise en service",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris.",
+       "titre": "Contrôles avant mise en service"
       },
       {
        "type": "schema",
@@ -2959,6 +3606,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "p4",
        "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
        "origine": "pack",
+       "chapitre": "03",
+       "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+       "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+       "illustration": "illustrations/sup-cours-3-01-70D0D9E9.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Epreuve azote",
+         "chemin": "illustrations/epreuve-azote.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -2987,6 +3646,23 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "p4",
        "explication": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
        "origine": "pack",
+       "chapitre": "03",
+       "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+       "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+       "illustration": "illustrations/sup-poste-de-travail-avec-bouteille-d-azote-BA7A4A4D.webp",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Tirage au vide mano vs vacuometre",
+         "chemin": "illustrations/tirage-au-vide_mano-vs-vacuometre.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "inerweb habilitation contenus illustrations epreuve azote svg.svg",
+         "chemin": "illustrations/epreuve-azote.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -3015,6 +3691,17 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g3",
        "explication": "Après tout contrôle ou essai (épreuve de résistance, épreuve d'étanchéité, tirage au vide), on consigne les résultats dans le registre de l'équipement et on rédige un rapport sur les essais et contrôles effectués.",
        "origine": "pack",
+       "chapitre": "03",
+       "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+       "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+       "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Tirage au vide",
+         "chemin": "illustrations/tirage-au-vide.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -3040,6 +3727,22 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g3",
        "code": "3.04",
+       "chapitre": "03",
+       "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+       "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+       "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Tirage au vide",
+         "chemin": "illustrations/tirage-au-vide.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "Tirage au vide deux degats eau",
+         "chemin": "illustrations/tirage-au-vide_deux-degats-eau.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -3145,6 +3848,23 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g4b",
        "code": "4.04",
+       "chapitre": "04",
+       "chapitre_titre": "Contrôles d'étanchéité",
+       "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+       "illustration": "illustrations/sup-cours-4-04-FF76C512.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Controle etancheite ou lire",
+         "chemin": "illustrations/controle-etancheite_ou-lire.svg"
+        },
+        {
+         "type": "page",
+         "libelle": "Etancheite interactive",
+         "chemin": "etancheite-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -3171,6 +3891,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g7",
        "code": "4.05",
+       "chapitre": "07",
+       "chapitre_titre": "Composant : condenseurs à air et à eau",
+       "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+       "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Condenseur interactif",
+         "chemin": "condenseur-interactif/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -3197,6 +3929,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g8",
        "code": "4.05",
+       "chapitre": "08",
+       "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+       "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+       "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Evaporateur interactif",
+         "chemin": "evaporateur-interactif/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -3339,6 +4083,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g4c",
        "explication": "Toutes les données du contrôle doivent être consignées dans le registre de l'équipement : date, méthode utilisée, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
        "origine": "pack",
+       "chapitre": "04",
+       "chapitre_titre": "Contrôles d'étanchéité",
+       "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+       "illustration": "illustrations/sup-cours-4-09-0382EBB2.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Controle etancheite registre",
+         "chemin": "illustrations/controle-etancheite_registre.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -3365,6 +4121,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g4b",
        "code": "4.06",
+       "chapitre": "04",
+       "chapitre_titre": "Contrôles d'étanchéité",
+       "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+       "illustration": "illustrations/sup-cours-4-06-FF76C512.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Controle etancheite recontrole",
+         "chemin": "illustrations/controle-etancheite_recontrole.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -3390,6 +4158,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g4b",
        "code": "4.08",
+       "chapitre": "04",
+       "chapitre_titre": "Contrôles d'étanchéité",
+       "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+       "illustration": "illustrations/bib-001-l-outillage-du-frigoriste-unlocked-b-4e4e1981.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Etancheite interactive",
+         "chemin": "etancheite-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -3416,6 +4196,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g4b",
        "code": "4.07",
+       "chapitre": "04",
+       "chapitre_titre": "Contrôles d'étanchéité",
+       "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+       "illustration": "illustrations/sup-cours-4-07-A6CE7C28.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Etancheite interactive",
+         "chemin": "etancheite-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -3461,6 +4253,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=x4",
+       "lancer": "🎧 Écouter la capsule : Détective — le contrôle qui tourne mal",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.",
+       "titre": "Détective — le contrôle qui tourne mal"
       },
       {
        "type": "point",
@@ -3536,6 +4335,20 @@ window.PILOTE_PROJECTION = {
        "titre": "Le manifold — lire, brancher, ne pas polluer"
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/pose-manifold-2-voies-interactive/index.html",
+       "lancer": "🧰 S’entraîner : poser et déposer un manifold 2 voies",
+       "desc": "Le geste complet sur deux vannes de service Rotolock : reconnaître BP, HP et voie centrale, distinguer les prises P et P1, choisir lunettes et gants, poser, lire, déposer. Guidé puis autonome.",
+       "titre": "Le manifold — lire, brancher, ne pas polluer"
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/pose-manifold-interactive/index.html",
+       "lancer": "🧰 S’entraîner : poser et déposer un manifold 4 voies",
+       "desc": "La même chose avec la voie de vide en plus : contrôle du poste, siège arrière, raccordement BP-HP-vide, tirage au vide des flexibles, position intermédiaire pour lire, puis dépose en traitant le fluide résiduel.",
+       "titre": "Le manifold — lire, brancher, ne pas polluer"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/photos/manifold-branche.jpg",
        "alt": "Un manifold raccordé sur une installation, flexibles bleu et rouge en place.",
@@ -3597,6 +4410,22 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g5a",
        "code": "5.01",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/photo-manometres-hp-bp.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Circuit complet manifold",
+         "chemin": "illustrations/circuit-complet-manifold.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "Manifold lecture",
+         "chemin": "illustrations/manifold-lecture.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -3623,6 +4452,22 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g5a",
        "code": "5.01",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/photo-manometres-hp-bp.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Circuit complet manifold",
+         "chemin": "illustrations/circuit-complet-manifold.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "Manifold lecture",
+         "chemin": "illustrations/manifold-lecture.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -3649,6 +4494,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g7",
        "code": "4.05",
+       "chapitre": "07",
+       "chapitre_titre": "Composant : condenseurs à air et à eau",
+       "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+       "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Condenseur interactif",
+         "chemin": "condenseur-interactif/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -3764,6 +4621,22 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g3",
        "code": "3.04",
+       "chapitre": "03",
+       "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+       "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+       "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Tirage au vide",
+         "chemin": "illustrations/tirage-au-vide.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "Tirage au vide deux degats eau",
+         "chemin": "illustrations/tirage-au-vide_deux-degats-eau.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -3789,6 +4662,17 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g3",
        "code": "3.03",
+       "chapitre": "03",
+       "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+       "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+       "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Tirage au vide compresseur pas pompe",
+         "chemin": "illustrations/tirage-au-vide_compresseur-pas-pompe.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -3815,6 +4699,17 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g3",
        "code": "3.04",
+       "chapitre": "03",
+       "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+       "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+       "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Tirage au vide courbes remontee",
+         "chemin": "illustrations/tirage-au-vide_courbes-remontee.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -3847,6 +4742,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=s2",
+       "lancer": "🎧 Écouter la capsule : Le froid brûle — projections et gelures",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 5 minutes. Version imprimable et mode projection compris.",
+       "titre": "Le froid brûle — projections et gelures"
       },
       {
        "type": "schema",
@@ -3887,7 +4789,7 @@ window.PILOTE_PROJECTION = {
      "questions": [
       {
        "id": "pk-cl2-1",
-       "dc": "Classification",
+       "dc": "G12",
        "code": "12.02",
        "niveau": 1,
        "type": "qcm",
@@ -3908,34 +4810,55 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "cl2",
        "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
        "origine": "pack",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-02-23DE01BD.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Hydrocarbures a1 a2",
+         "chemin": "hydrocarbures-a1-a2/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
        ]
       },
       {
-       "id": "pk-cl4-1",
-       "dc": "Classification",
-       "code": "12.02",
+       "id": "q-g12-v6_093",
+       "dc": "G12",
        "niveau": 1,
        "type": "qcm",
-       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+       "enonce": "Les fluides A2L comme le R32 nécessitent :",
        "choix": [
-        "Au plafond, comme un détecteur de fumée",
-        "En partie basse, là où le CO₂ s'accumule",
-        "À l'extérieur du local uniquement",
-        "Peu importe, le gaz se répartit uniformément"
+        "Aucune précaution particulière lors de l'intervention",
+        "Un outillage adapté et une formation spécifique",
+        "Un local ATEX systématique pour toute intervention",
+        "Un détecteur d'ammoniac dans le local"
        ],
        "bonne": 1,
-       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+       "explication": "Outillage adapté et formation spécifique — Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante.",
+       "aide": "'Légèrement inflammable' ne veut pas dire 'sans risque'.",
        "remed": {
-        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
-        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+        "texte": "Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante."
        },
-       "remediation_vers": "cl4",
-       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-       "origine": "pack",
+       "remediation_vers": "g12",
+       "code": "12.02",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-02-B88D83FC.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Cours classes securite",
+         "chemin": "cours-classes-securite/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -4005,6 +4928,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=g5a",
+       "lancer": "🎧 Écouter la capsule : Récupérer sans émettre",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris.",
+       "titre": "Récupérer sans émettre"
       },
       {
        "type": "schema",
@@ -4077,6 +5007,18 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g5a",
        "code": "5.04",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-cours-5-04-23DE01BD.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La recuperation deux papiers",
+         "chemin": "illustrations/la-recuperation_deux-papiers.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4100,6 +5042,23 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g5a",
        "code": "5.03",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-cours-5-03-23DE01BD.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Mission bouteilles",
+         "chemin": "mission-bouteilles/index.html"
+        },
+        {
+         "type": "image",
+         "libelle": "inerweb habilitation contenus illustrations recuperation svg.svg",
+         "chemin": "illustrations/recuperation.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4126,6 +5085,22 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g5a",
        "code": "5.01",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/photo-manometres-hp-bp.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Circuit complet manifold",
+         "chemin": "illustrations/circuit-complet-manifold.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "Manifold lecture",
+         "chemin": "illustrations/manifold-lecture.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4152,6 +5127,22 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g5a",
        "code": "5.01",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/photo-manometres-hp-bp.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Circuit complet manifold",
+         "chemin": "illustrations/circuit-complet-manifold.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "Manifold lecture",
+         "chemin": "illustrations/manifold-lecture.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4234,6 +5225,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=g5b",
+       "lancer": "🎧 Écouter la capsule : Peser, charger, stocker, tracer",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 8 écrans, 9 minutes. Version imprimable et mode projection compris.",
+       "titre": "Peser, charger, stocker, tracer"
       },
       {
        "type": "schema",
@@ -4337,6 +5335,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g5b",
        "explication": "Pour les hydrocarbures, le fluide ET l'huile sont inflammables : ils se stockent et se transportent dans des récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, selon la réglementation applicable et la fiche de données de sécurité.",
        "origine": "pack",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-cours-5-09-D7A129ED.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Secu bouteille",
+         "chemin": "illustrations/secu-bouteille.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4360,6 +5370,17 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g5a",
        "code": "5.08",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/bouteille-recuperation-verte.jpg",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Recuperation",
+         "chemin": "illustrations/recuperation.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4383,6 +5404,18 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g5a",
        "code": "5.08",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La recuperation la trace",
+         "chemin": "illustrations/la-recuperation_la-trace.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4406,6 +5439,23 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g5a",
        "code": "5.08",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-bouteille-de-fluide-derriere-une-barrier-302EC180.webp",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Plaque bouteille",
+         "chemin": "illustrations/plaque-bouteille.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "Secu bouteille",
+         "chemin": "illustrations/secu-bouteille.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4429,6 +5479,18 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g5a",
        "code": "5.08",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La recuperation la trace",
+         "chemin": "illustrations/la-recuperation_la-trace.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4557,6 +5619,22 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g5a",
        "code": "5.01",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/photo-manometres-hp-bp.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Circuit complet manifold",
+         "chemin": "illustrations/circuit-complet-manifold.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "Manifold lecture",
+         "chemin": "illustrations/manifold-lecture.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4583,6 +5661,22 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g5a",
        "code": "5.01",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/photo-manometres-hp-bp.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Circuit complet manifold",
+         "chemin": "illustrations/circuit-complet-manifold.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "Manifold lecture",
+         "chemin": "illustrations/manifold-lecture.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4609,6 +5703,28 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g5a",
        "code": "5.02",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-bouteille-de-recuperation-fleche-de-tran-3BBF9BDE.webp",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Secu bouteille",
+         "chemin": "illustrations/secu-bouteille.svg"
+        },
+        {
+         "type": "page",
+         "libelle": "Mission bouteilles",
+         "chemin": "mission-bouteilles/index.html"
+        },
+        {
+         "type": "image",
+         "libelle": "inerweb habilitation contenus illustrations bouteille deux robinets svg.svg",
+         "chemin": "illustrations/bouteille-deux-robinets.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4643,6 +5759,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/recuperation-fluide-interactive/index.html",
+       "lancer": "🧰 Lancer le TP interactif : récupérer le fluide, geste par geste",
+       "desc": "La procédure ci-dessus, à faire soi-même sur un poste complet — manifold 4 voies, station Minimax-E, bouteille de transfert sur balance, pompe à vide et vacuomètre. Huit phases, guidé puis autonome : poser le manifold, purger l'air, récupérer en liquide puis en vapeur, auto-purger la station, peser, tirer au vide.",
+       "titre": "La station de récupération — ce que c'est, comment on la branche"
       },
       {
        "type": "schema",
@@ -4703,6 +5826,23 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g5a",
        "code": "5.03",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-cours-5-03-23DE01BD.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Mission bouteilles",
+         "chemin": "mission-bouteilles/index.html"
+        },
+        {
+         "type": "image",
+         "libelle": "inerweb habilitation contenus illustrations recuperation svg.svg",
+         "chemin": "illustrations/recuperation.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4729,6 +5869,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g5a",
        "code": "5.03",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-cours-5-03-23DE01BD.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Recuperation",
+         "chemin": "illustrations/recuperation.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4850,6 +6002,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g5a",
        "code": "5.06",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-cours-5-06-D7A129ED.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Pesee charge",
+         "chemin": "illustrations/pesee-charge.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4876,6 +6040,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g5a",
        "code": "5.05",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-cours-5-05-304B1178.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Pesee charge",
+         "chemin": "illustrations/pesee-charge.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4905,6 +6081,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g1e",
        "explication": "On détermine d'abord l'état et les conditions du fluide, puis on en déduit la méthode de remplissage — en phase liquide ou en phase vapeur — et le volume adapté.",
        "origine": "pack",
+       "chapitre": "05",
+       "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+       "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+       "illustration": "illustrations/sup-cours-5-05-23DE01BD.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La recuperation liquide vapeur",
+         "chemin": "illustrations/la-recuperation_liquide-vapeur.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -4950,6 +6138,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=x3",
+       "lancer": "🎧 Écouter la capsule : Détective — la bouteille de récupération",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.",
+       "titre": "Détective — la bouteille de récupération"
       },
       {
        "type": "point",
@@ -5141,6 +6336,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g6",
        "explication": "Les interrupteurs de sécurité et de contrôle (pressostats HP et BP, protection thermique) se règlent toujours selon la fiche constructeur, jamais à l'estime.",
        "origine": "pack",
+       "chapitre": "06",
+       "chapitre_titre": "Composant : compresseurs",
+       "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+       "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Compresseurs",
+         "chemin": "illustrations/compresseurs.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5166,6 +6373,22 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g6",
        "code": "6.01",
+       "chapitre": "06",
+       "chapitre_titre": "Composant : compresseurs",
+       "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+       "illustration": "illustrations/photo-compresseur-hermetique.png",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Compresseurs",
+         "chemin": "illustrations/compresseurs.svg"
+        },
+        {
+         "type": "page",
+         "libelle": "Circuit organe par organe",
+         "chemin": "circuit-organe-par-organe/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5191,6 +6414,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g6",
        "code": "6.05",
+       "chapitre": "06",
+       "chapitre_titre": "Composant : compresseurs",
+       "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+       "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Compresseurs",
+         "chemin": "illustrations/compresseurs.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5216,6 +6451,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g6",
        "code": "6.01",
+       "chapitre": "06",
+       "chapitre_titre": "Composant : compresseurs",
+       "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+       "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Compresseurs",
+         "chemin": "illustrations/compresseurs.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5395,6 +6642,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g6b",
        "explication": "Une bonne installation, un bon réglage et un bon entretien du compresseur sont aussi des gestes d'efficacité énergétique : la machine consomme moins et dure plus longtemps.",
        "origine": "pack",
+       "chapitre": "06",
+       "chapitre_titre": "Composant : compresseurs",
+       "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+       "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Bilan thermique performance interactif",
+         "chemin": "bilan-thermique-performance-interactif/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5420,6 +6679,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g6",
        "code": "6.06",
+       "chapitre": "06",
+       "chapitre_titre": "Composant : compresseurs",
+       "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+       "illustration": "illustrations/bib-robinet-wc-a-potence-da0efce7.jpg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Compresseurs",
+         "chemin": "illustrations/compresseurs.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5448,6 +6719,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g6b",
        "explication": "Un compresseur se fixe toujours sur des plots antivibratiles (silent-blocs), jamais directement sur son châssis ou le sol.",
        "origine": "pack",
+       "chapitre": "06",
+       "chapitre_titre": "Composant : compresseurs",
+       "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+       "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Compresseurs",
+         "chemin": "illustrations/compresseurs.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5476,6 +6759,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g6b",
        "explication": "La soupape d'aspiration, qui laisse entrer la vapeur basse pression à chaque cycle, se règle toujours selon la fiche constructeur, jamais au jugé.",
        "origine": "pack",
+       "chapitre": "06",
+       "chapitre_titre": "Composant : compresseurs",
+       "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+       "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Compresseurs",
+         "chemin": "illustrations/compresseurs.svg"
+        }
+       ],
        "categories": [
         "A1"
        ]
@@ -5652,6 +6947,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g7",
        "code": "7.01",
+       "chapitre": "07",
+       "chapitre_titre": "Composant : condenseurs à air et à eau",
+       "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+       "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Condenseur interactif",
+         "chemin": "condenseur-interactif/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5677,6 +6984,23 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g7",
        "code": "7.01",
+       "chapitre": "07",
+       "chapitre_titre": "Composant : condenseurs à air et à eau",
+       "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+       "illustration": "illustrations/bib-technologie-des-condenseurs-ef0dfbd5.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Condenseur interactif",
+         "chemin": "condenseur-interactif/index.html"
+        },
+        {
+         "type": "image",
+         "libelle": "inerweb habilitation contenus illustrations echangeur air svg.svg",
+         "chemin": "illustrations/echangeur-air.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5702,6 +7026,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g7",
        "code": "7.01",
+       "chapitre": "07",
+       "chapitre_titre": "Composant : condenseurs à air et à eau",
+       "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+       "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La surchauffe sous refroidissement",
+         "chemin": "illustrations/la-surchauffe_sous-refroidissement.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5727,6 +7063,17 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g7",
        "code": "7.04",
+       "chapitre": "07",
+       "chapitre_titre": "Composant : condenseurs à air et à eau",
+       "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+       "illustration": "illustrations/photo-pressostat-danfoss-kp2.jpeg",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Regulateurs pression",
+         "chemin": "illustrations/regulateurs-pression.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5937,6 +7284,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g7b",
        "explication": "Le contrôle d'étanchéité avant mise en service se fait sous azote, un gaz neutre.",
        "origine": "pack",
+       "chapitre": "07",
+       "chapitre_titre": "Composant : condenseurs à air et à eau",
+       "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+       "illustration": "illustrations/bib-lycee-professionnel-prive-38209cca.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Epreuve azote",
+         "chemin": "illustrations/epreuve-azote.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5965,6 +7324,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g7b",
        "explication": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression'est une vanne : il maintient une pression et ne coupe rien.",
        "origine": "pack",
+       "chapitre": "07",
+       "chapitre_titre": "Composant : condenseurs à air et à eau",
+       "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+       "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Regulateurs pression",
+         "chemin": "illustrations/regulateurs-pression.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -5993,6 +7364,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g7b",
        "explication": "Chaque visite se termine par un rapport écrit notant les ailettes encrassées, le ventilateur bruyant, les traces d'huile, une pression anormale.",
        "origine": "pack",
+       "chapitre": "07",
+       "chapitre_titre": "Composant : condenseurs à air et à eau",
+       "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+       "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Condenseur interactif",
+         "chemin": "condenseur-interactif/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6021,6 +7404,23 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g7b",
        "explication": "Des ailettes propres et un ventilateur en bon état limitent la haute pression et donc la consommation électrique.",
        "origine": "pack",
+       "chapitre": "07",
+       "chapitre_titre": "Composant : condenseurs à air et à eau",
+       "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+       "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Condenseur interactif",
+         "chemin": "condenseur-interactif/index.html"
+        },
+        {
+         "type": "page",
+         "libelle": "Bilan thermique performance interactif",
+         "chemin": "bilan-thermique-performance-interactif/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6183,6 +7583,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g8",
        "explication": "La conduite d'aspiration se pose en légère pente vers le compresseur, avec un siphon en pied de toute colonne montante.",
        "origine": "pack",
+       "chapitre": "08",
+       "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+       "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+       "illustration": "illustrations/bib-tp-02-les-composants-frigorifiques-79eb4616.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Le circuit evaporateur",
+         "chemin": "illustrations/le-circuit_evaporateur.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6208,6 +7620,23 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g8",
        "code": "8.08",
+       "chapitre": "08",
+       "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+       "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+       "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "La surchauffe calcul",
+         "chemin": "illustrations/la-surchauffe_calcul.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "Mesure surchauffe",
+         "chemin": "illustrations/mesure-surchauffe.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6230,6 +7659,18 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g8",
        "code": "8.08",
+       "chapitre": "08",
+       "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+       "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+       "illustration": "illustrations/sup-cours-8-08-5E5BFD27.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Mesure surchauffe",
+         "chemin": "illustrations/mesure-surchauffe.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6255,6 +7696,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g8",
        "code": "8.01",
+       "chapitre": "08",
+       "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+       "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+       "illustration": "illustrations/sup-cours-8-01-B321BDBC.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Evaporateur interactif",
+         "chemin": "evaporateur-interactif/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6458,6 +7911,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g8b",
        "explication": "Un évaporateur installé doit fonctionner sans aucune fuite ni émission. Cela vaut pour le tube, mais aussi pour tout le matériel de contrôle et de sécurité posé avec lui.",
        "origine": "pack",
+       "chapitre": "08",
+       "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+       "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+       "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Evaporateur interactif",
+         "chemin": "evaporateur-interactif/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6486,6 +7951,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g8b",
        "explication": "Les interrupteurs de sécurité et de contrôle, ou pressostats, protègent la machine. Ils coupent l'alimentation électrique du compresseur si la pression sort de la plage prévue.",
        "origine": "pack",
+       "chapitre": "08",
+       "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+       "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+       "illustration": "illustrations/sup-cours-8-04-B321BDBC.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Regulateurs pression",
+         "chemin": "illustrations/regulateurs-pression.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6514,6 +7991,23 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g8b",
        "explication": "Le conduit de dégivrage à l'air chaud s'inspecte à chaque visite. On vérifie l'étanchéité, l'isolation et l'écoulement des condensats.",
        "origine": "pack",
+       "chapitre": "08",
+       "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+       "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+       "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Evaporateur interactif",
+         "chemin": "evaporateur-interactif/index.html"
+        },
+        {
+         "type": "image",
+         "libelle": "inerweb habilitation contenus illustrations givre degivrage svg.svg",
+         "chemin": "illustrations/givre-degivrage.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6542,6 +8036,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g8b",
        "explication": "Le réglage d'un régulateur de pression d'évaporation (mise au point comme réglage) suit toujours la fiche constructeur, jamais une valeur estimée.",
        "origine": "pack",
+       "chapitre": "08",
+       "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+       "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+       "illustration": "illustrations/bib-dscn6650-e8f63388.jpg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Regulateurs pression",
+         "chemin": "illustrations/regulateurs-pression.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6585,6 +8091,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": true
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=x2",
+       "lancer": "🎧 Écouter la capsule : Exercice — la machine ne fait plus de froid",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.",
+       "titre": "Exercice — la machine ne fait plus de froid"
       },
       {
        "type": "point",
@@ -6685,6 +8198,20 @@ window.PILOTE_PROJECTION = {
        "titre": "Le détendeur et les organes annexes"
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/detendeur-interactif/index.html",
+       "lancer": "🎯 Lancer le cours interactif : le détendeur thermostatique en détail",
+       "desc": "14 écrans : la croix du frigoriste, le train thermostatique pièce par pièce, le calcul de la surchauffe, le jeu des trois forces sur la membrane, la pose du bulbe, l'égalisation interne et externe, le choix de la buse — et le réglage, qui ne vient qu'après le diagnostic.",
+       "titre": "Le détendeur et les organes annexes"
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/electrovanne-interactive/index.html",
+       "lancer": "⚡ Lancer le cours interactif : l'électrovanne de ligne liquide",
+       "desc": "14 écrans : pourquoi on coupe le liquide avant d'arrêter le compresseur, la commande tout ou rien, la coupe animée hors tension puis alimentée, l'action directe et la commande assistée, NF et NO, la dépose de la bobine en sécurité et le diagnostic.",
+       "titre": "Le détendeur et les organes annexes"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/detendeur-regulation.svg",
        "alt": "Animation en boucle : la charge thermique augmente, la surchauffe monte, le bulbe se réchauffe et pousse la membrane, le détendeur ouvre, l'évaporateur reçoit plus de fluide, la surchauffe redescend — la boucle qui se corrige toute seule.",
@@ -6739,6 +8266,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g9",
        "explication": "Une vanne, comme un filtre déshydrateur, se monte toujours dans le sens de circulation du fluide, indiqué par la flèche gravée sur son corps.",
        "origine": "pack",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/bib-froid-commercial-et-chambres-froides-ab36b003.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Vanne service interactive",
+         "chemin": "vanne-service-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6764,6 +8303,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g9",
        "code": "9.08",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/sup-cours-9-08-21D269D2.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Detendeurs ligne",
+         "chemin": "illustrations/detendeurs-ligne.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6789,6 +8340,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g9",
        "code": "9.08",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/bib-froid-commercial-et-chambres-froides-ab36b003.jpeg",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Detendeurs ligne",
+         "chemin": "illustrations/detendeurs-ligne.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6814,6 +8377,22 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g9",
        "code": "9.01",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/enu-bibliotheque-symboles-svg-frigo-schema-detendeur-thermo-ext-sans-reperes-svg.svg",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Detendeur interactif",
+         "chemin": "detendeur-interactif/index.html"
+        },
+        {
+         "type": "image",
+         "libelle": "Detendeur regulation",
+         "chemin": "illustrations/detendeur-regulation.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -6996,6 +8575,17 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g9b",
        "explication": "Le thermostat mécanique utilise un bulbe relié par un tube fin à des contacts électriques.",
        "origine": "pack",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/contenu-bibliotheque-symboles-svg-capteurs-froid-thermostat-nf-sans-reperes-svg.svg",
+       "ressources": [
+        {
+         "type": "symbole",
+         "libelle": "Thermostat froid",
+         "chemin": "illustrations/thermostat_froid.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7024,6 +8614,17 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g9b",
        "explication": "Le séparateur d'huile retient l'huile, puis la renvoie automatiquement au carter du compresseur dès que le niveau monte. Vérifier son fonctionnement, c'est contrôler que ce retour se fait bien.",
        "origine": "pack",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/photo-separateur-huile-alco.jpeg",
+       "ressources": [
+        {
+         "type": "symbole",
+         "libelle": "Separateur huile",
+         "chemin": "illustrations/separateur_huile.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7052,6 +8653,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g9b",
        "explication": "La soupape de régulation de pression module en continu pour maintenir une pression stable à un point du circuit. Elle ne coupe jamais le circuit.",
        "origine": "pack",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/sup-contexte-g9-21D269D2.webp",
+       "pose_niveau": "contexte",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Regulateurs pression",
+         "chemin": "illustrations/regulateurs-pression.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7080,6 +8693,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g9b",
        "explication": "Un défaut non signalé (thermostat qui dérive, limiteur qui ne coupe plus, séparateur qui laisse passer l'huile) finit par endommager le système. À terme, faute de mesure, cela provoque une fuite ou une émission de réfrigérant.",
        "origine": "pack",
+       "chapitre": "09",
+       "chapitre_titre": "Composant : détendeurs et autres organes",
+       "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+       "illustration": "illustrations/ine-contenu-bibliotheque-symboles-svg-capteurs-froid-pressostat-sans-reperes-svg.svg",
+       "pose_niveau": "thematique",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Regulateurs pression",
+         "chemin": "illustrations/regulateurs-pression.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7120,6 +8745,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=s3",
+       "lancer": "🎧 Écouter la capsule : La flamme interdite — décomposition du fluide",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 6 minutes. Version imprimable et mode projection compris.",
+       "titre": "La flamme interdite — décomposition du fluide"
       },
       {
        "type": "schema",
@@ -7165,7 +8797,7 @@ window.PILOTE_PROJECTION = {
      "questions": [
       {
        "id": "pk-cl3-1",
-       "dc": "Classification",
+       "dc": "G11",
        "code": "11.03",
        "niveau": 1,
        "type": "qcm",
@@ -7186,6 +8818,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "cl3",
        "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
        "origine": "pack",
+       "chapitre": "11",
+       "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+       "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+       "illustration": "illustrations/sup-cours-11-03-B88D83FC.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Cours classes securite",
+         "chemin": "cours-classes-securite/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7208,6 +8852,18 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g11",
        "code": "11.03",
+       "chapitre": "11",
+       "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+       "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+       "illustration": "illustrations/sup-cours-11-03-DAF5A7C7.png",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Cours classes securite",
+         "chemin": "cours-classes-securite/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7233,6 +8889,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g11",
        "code": "11.03",
+       "chapitre": "11",
+       "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+       "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+       "illustration": "illustrations/sup-cours-11-03-B88D83FC.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Cours classes securite",
+         "chemin": "cours-classes-securite/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7294,6 +8962,13 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=g10",
+       "lancer": "🎧 Écouter la capsule : Tuyauterie et brasage sous azote",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.",
+       "titre": "Tuyauterie et brasage sous azote"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/balayage-azote.svg",
        "alt": "Brasage sous balayage d azote : l azote traverse le tube pendant la chauffe et ressort librement.",
@@ -7347,6 +9022,18 @@ window.PILOTE_PROJECTION = {
        "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
        "remediation_vers": "g10",
        "code": "10.01",
+       "chapitre": "10",
+       "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+       "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
+       "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Balayage azote",
+         "chemin": "illustrations/balayage-azote.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7372,6 +9059,18 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g10",
        "code": "10.01",
+       "chapitre": "10",
+       "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+       "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
+       "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Balayage azote",
+         "chemin": "illustrations/balayage-azote.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7397,6 +9096,11 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g10",
        "code": "10.01",
+       "chapitre": "10",
+       "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+       "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
+       "illustration": "illustrations/bib-cordons-de-soudure-avec-metal-dapport-li-2edd0521.png",
+       "pose_niveau": "exact",
        "categories": [
         "A1",
         "A2"
@@ -7440,6 +9144,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=p4",
+       "lancer": "🎧 Écouter la capsule : La bouteille d'azote et son mano-détendeur",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.",
+       "titre": "La bouteille d'azote et son mano-détendeur"
       },
       {
        "type": "schema",
@@ -7506,6 +9217,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "p4",
        "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
        "origine": "pack",
+       "chapitre": "03",
+       "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+       "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+       "illustration": "illustrations/sup-cours-3-01-70D0D9E9.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Epreuve azote",
+         "chemin": "illustrations/epreuve-azote.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7534,6 +9257,23 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "p4",
        "explication": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
        "origine": "pack",
+       "chapitre": "03",
+       "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+       "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+       "illustration": "illustrations/sup-poste-de-travail-avec-bouteille-d-azote-BA7A4A4D.webp",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Tirage au vide mano vs vacuometre",
+         "chemin": "illustrations/tirage-au-vide_mano-vs-vacuometre.svg"
+        },
+        {
+         "type": "image",
+         "libelle": "inerweb habilitation contenus illustrations epreuve azote svg.svg",
+         "chemin": "illustrations/epreuve-azote.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7736,7 +9476,7 @@ window.PILOTE_PROJECTION = {
      "questions": [
       {
        "id": "pk-cl1-1",
-       "dc": "Classification",
+       "dc": "G1",
        "code": "1.08",
        "niveau": 1,
        "type": "qcm",
@@ -7757,6 +9497,23 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "cl1",
        "explication": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
        "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-08-47A3A800.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Classes de securite classe methode",
+         "chemin": "illustrations/classes-de-securite_classe-methode.svg"
+        },
+        {
+         "type": "page",
+         "libelle": "Cours classes securite",
+         "chemin": "cours-classes-securite/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -7766,7 +9523,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "id": "pk-cl3-1",
-       "dc": "Classification",
+       "dc": "G11",
        "code": "11.03",
        "niveau": 1,
        "type": "qcm",
@@ -7787,6 +9544,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "cl3",
        "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
        "origine": "pack",
+       "chapitre": "11",
+       "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+       "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+       "illustration": "illustrations/sup-cours-11-03-B88D83FC.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Cours classes securite",
+         "chemin": "cours-classes-securite/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7815,6 +9584,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g11",
        "explication": "Le propane est plus lourd que l'air. En cas de fuite, il s'accumule en bas, près du sol. La ventilation du local est conçue en tenant compte de cela, dès la conception de la machine.",
        "origine": "pack",
+       "chapitre": "11",
+       "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+       "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+       "illustration": "illustrations/sup-cours-11-05-47A3A800.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Intervention hydrocarbures interactive",
+         "chemin": "intervention-hydrocarbures-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2",
@@ -7841,6 +9622,23 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g11",
        "code": "11.02",
+       "chapitre": "11",
+       "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+       "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+       "illustration": "illustrations/sup-cours-11-02-47A3A800.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Bilan thermique performance interactif",
+         "chemin": "bilan-thermique-performance-interactif/index.html"
+        },
+        {
+         "type": "image",
+         "libelle": "Bilan energie",
+         "chemin": "illustrations/bilan-energie.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -7902,6 +9700,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=g13",
+       "lancer": "🎧 Écouter la capsule : CO₂ et NH₃ — reconnaître, ne pas intervenir",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 5 minutes. Version imprimable et mode projection compris.",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
       },
       {
        "type": "schema",
@@ -7975,6 +9780,42 @@ window.PILOTE_PROJECTION = {
      ],
      "questions": [
       {
+       "id": "pk-cl4-1",
+       "dc": "G13",
+       "code": "13.14",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
+       "choix": [
+        "Au plafond, comme un détecteur de fumée",
+        "En partie basse, là où le CO₂ s'accumule",
+        "À l'extérieur du local uniquement",
+        "Peu importe, le gaz se répartit uniformément"
+       ],
+       "bonne": 1,
+       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
+       "remed": {
+        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
+        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
+       },
+       "remediation_vers": "cl4",
+       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
+       "origine": "pack",
+       "chapitre": "13",
+       "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+       "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+       "illustration": "illustrations/sup-cours-13-14-0382EBB2.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Co2 point bas",
+         "chemin": "illustrations/co2-point-bas.svg"
+        }
+       ]
+      },
+      {
        "id": "pk-g13-1",
        "dc": "G13",
        "code": "13.01",
@@ -7996,7 +9837,19 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g13",
        "explication": "Le CO₂ est A1 : toxicité faible, non inflammable. Ses deux dangers réels sont ailleurs — la pression, très élevée, et l'atmosphère irrespirable en local fermé.",
-       "origine": "pack"
+       "origine": "pack",
+       "chapitre": "13",
+       "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+       "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+       "illustration": "illustrations/sup-cours-13-01-47A3A800.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Classes de securite co2 risques",
+         "chemin": "illustrations/classes-de-securite_co2-risques.svg"
+        }
+       ]
       },
       {
        "id": "pk-g13-3",
@@ -8020,7 +9873,19 @@ window.PILOTE_PROJECTION = {
        },
        "remediation_vers": "g13",
        "explication": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
-       "origine": "pack"
+       "origine": "pack",
+       "chapitre": "13",
+       "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+       "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+       "illustration": "illustrations/sup-cours-13-04-47A3A800.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Classes de securite co2 risques",
+         "chemin": "illustrations/classes-de-securite_co2-risques.svg"
+        }
+       ]
       },
       {
        "id": "q-g13-283",
@@ -8038,31 +9903,19 @@ window.PILOTE_PROJECTION = {
        "explication": "Le CO₂ ne se voit pas et ne se sent pas : en cas de fuite dans un local fermé, il remplace l'air sans prévenir. Seul un détecteur alerte avant l'asphyxie.",
        "aide": "CO2 invisible et inodore.",
        "remediation_vers": "g13",
-       "code": "13.14"
-      },
-      {
-       "id": "pk-cl4-3",
-       "dc": "Classification",
        "code": "13.14",
-       "niveau": 2,
-       "type": "qcm",
-       "enonce": "Vous arrivez sur un site équipé d'une installation au CO₂. Le voyant du détecteur de gaz est allumé. Que pouvez-vous'en conclure ?",
-       "choix": [
-        "Que le détecteur fonctionne bien et qu'il mesure correctement l'atmosphère de tout le local technique",
-        "Rien de plus qu'une mise sous tension : une cellule usée reste allumée sans plus rien mesurer",
-        "Qu'une fuite de CO₂ est en cours dans le local et qu'il faut évacuer les lieux sans délai",
-        "Que le local a été ventilé récemment par la ventilation mécanique"
-       ],
-       "bonne": 1,
-       "aide": "Un voyant dit qu'un appareil est alimenté, pas qu'il voit quelque chose.",
-       "remed": {
-        "regle": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
-        "pourquoi": "C'est le même raisonnement que le double contrôle du VAT : un appareil de sécurité défaillant affiche l'absence de danger quoi qu'il arrive. À l'arrivée sur site, on contrôle donc que les capteurs et les alarmes sont en état de marche, et pas seulement présents au mur.",
-        "piege": "Le contrôle d'arrivée porte aussi sur la signalisation à l'entrée et sur les issues de secours : une palette posée devant une porte de chambre froide n'est pas un défaut de rangement, c'est une issue en moins."
-       },
-       "remediation_vers": "cl4",
-       "explication": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
-       "origine": "pack"
+       "chapitre": "13",
+       "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+       "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+       "illustration": "illustrations/sup-cours-13-14-0382EBB2.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Co2 protection",
+         "chemin": "illustrations/co2-protection.svg"
+        }
+       ]
       }
      ],
      "notes": "Module volontairement court et NON évaluant : l'objectif est la reconnaissance du danger, pas la compétence d'intervention. Faire circuler un masque à gaz réel (sans manipulation dangereuse) pour que la différence avec les EPI habituels se voie. Rappeler que l'odeur d'ammoniac est perceptible bien avant le seuil dangereux : message rassurant qui évite la panique tout en imposant l'alerte. Faire deviner pourquoi le NH₃ exige une catégorie séparée alors que le R-290, également dangereux, reste dans le champ A1/A2."
@@ -8126,6 +9979,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=cl2",
+       "lancer": "🎧 Écouter la capsule : Explosif avant d'être perceptible — la LIE",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
       },
       {
        "type": "schema",
@@ -8211,7 +10071,7 @@ window.PILOTE_PROJECTION = {
      "questions": [
       {
        "id": "pk-cl2-1",
-       "dc": "Classification",
+       "dc": "G12",
        "code": "12.02",
        "niveau": 1,
        "type": "qcm",
@@ -8232,34 +10092,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "cl2",
        "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
        "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-cl4-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
-       "choix": [
-        "Au plafond, comme un détecteur de fumée",
-        "En partie basse, là où le CO₂ s'accumule",
-        "À l'extérieur du local uniquement",
-        "Peu importe, le gaz se répartit uniformément"
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-02-23DE01BD.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Hydrocarbures a1 a2",
+         "chemin": "hydrocarbures-a1-a2/index.html"
+        }
        ],
-       "bonne": 1,
-       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
-       "remed": {
-        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
-        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
-       },
-       "remediation_vers": "cl4",
-       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-       "origine": "pack",
        "categories": [
         "A1",
         "A2"
@@ -8288,6 +10132,55 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "p7",
        "explication": "L'analyse de risques se fait AVANT le premier geste, sur place.",
        "origine": "pack",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-04-FC9D2706.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Intervention hydrocarbures interactive",
+         "chemin": "intervention-hydrocarbures-interactive/index.html"
+        }
+       ],
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g12-v6_093",
+       "dc": "G12",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "Les fluides A2L comme le R32 nécessitent :",
+       "choix": [
+        "Aucune précaution particulière lors de l'intervention",
+        "Un outillage adapté et une formation spécifique",
+        "Un local ATEX systématique pour toute intervention",
+        "Un détecteur d'ammoniac dans le local"
+       ],
+       "bonne": 1,
+       "explication": "Outillage adapté et formation spécifique — Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante.",
+       "aide": "'Légèrement inflammable' ne veut pas dire 'sans risque'.",
+       "remed": {
+        "texte": "Les A2L sont légèrement inflammables : il faut des outils antidéflagrants, une formation adaptée et une ventilation suffisante."
+       },
+       "remediation_vers": "g12",
+       "code": "12.02",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-02-B88D83FC.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Cours classes securite",
+         "chemin": "cours-classes-securite/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -8475,7 +10368,7 @@ window.PILOTE_PROJECTION = {
      "questions": [
       {
        "id": "pk-cl2-1",
-       "dc": "Classification",
+       "dc": "G12",
        "code": "12.02",
        "niveau": 1,
        "type": "qcm",
@@ -8496,34 +10389,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "cl2",
        "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
        "origine": "pack",
-       "categories": [
-        "A1",
-        "A2"
-       ]
-      },
-      {
-       "id": "pk-cl4-1",
-       "dc": "Classification",
-       "code": "12.02",
-       "niveau": 1,
-       "type": "qcm",
-       "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
-       "choix": [
-        "Au plafond, comme un détecteur de fumée",
-        "En partie basse, là où le CO₂ s'accumule",
-        "À l'extérieur du local uniquement",
-        "Peu importe, le gaz se répartit uniformément"
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-02-23DE01BD.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Hydrocarbures a1 a2",
+         "chemin": "hydrocarbures-a1-a2/index.html"
+        }
        ],
-       "bonne": 1,
-       "aide": "Souvenez-vous du comportement du CO₂ dans un local.",
-       "remed": {
-        "regle": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-        "pourquoi": "Un capteur au plafond ne verra rien tant que le local ne sera pas rempli — c'est-à-dire bien après que la zone de travail est devenue mortelle. La détection fixe est l'équipement de protection collective principal de ces locaux : elle mesure en permanence, y compris la nuit et quand personne n'est présent.",
-        "piege": "Un détecteur portatif resté dans le camion ne protège de rien. Le fixe et le portatif ne répondent pas à la même question : la permanence contre la mesure ponctuelle."
-       },
-       "remediation_vers": "cl4",
-       "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
-       "origine": "pack",
        "categories": [
         "A1",
         "A2"
@@ -8552,6 +10429,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "p7",
        "explication": "L'analyse de risques se fait AVANT le premier geste, sur place.",
        "origine": "pack",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-04-FC9D2706.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Intervention hydrocarbures interactive",
+         "chemin": "intervention-hydrocarbures-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -8580,6 +10469,55 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g12",
        "explication": "Les bouteilles d'hydrocarbure ont un raccord spécifique et un filetage à gauche : on utilise le matériel prévu pour ce raccord, jamais un adaptateur.",
        "origine": "pack",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/bib-fiche-synthese-activites-3-bouteille-sec-ca000acf.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Hydrocarbures a1 a2",
+         "chemin": "hydrocarbures-a1-a2/index.html"
+        }
+       ],
+       "categories": [
+        "A1",
+        "A2"
+       ]
+      },
+      {
+       "id": "q-g12-v6_091",
+       "dc": "G12",
+       "niveau": 1,
+       "type": "qcm",
+       "enonce": "La charge maximale en R290 (propane) dans un local accessible au public est très limitée car :",
+       "choix": [
+        "Son pouvoir de réchauffement est élevé",
+        "Il est très inflammable (classe A3)",
+        "Il est fortement toxique par inhalation",
+        "Il corrode le cuivre des tubes du circuit"
+       ],
+       "bonne": 1,
+       "explication": "Très inflammable (A3) — Le R290 est un hydrocarbure hautement inflammable. La norme EN 378 limite strictement les charges dans les locaux occupés.",
+       "aide": "Propane = gaz domestique = très inflammable.",
+       "remed": {
+        "texte": "Le R290 est un hydrocarbure hautement inflammable. La norme EN 378 limite strictement les charges dans les locaux occupés."
+       },
+       "remediation_vers": "g12",
+       "code": "12.03",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-03-B88D83FC.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Charge limite local",
+         "chemin": "illustrations/charge-limite-local.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -8750,6 +10688,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g12b",
        "explication": "Le R-290 (et le R-600a) sont classés A3 : très inflammables. Aucune flamme n'est autorisée tant que l'inertage à l'azote n'est pas confirmé.",
        "origine": "pack",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-07-2A9E51B1.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Intervention hydrocarbures interactive",
+         "chemin": "intervention-hydrocarbures-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -8778,6 +10728,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g12b",
        "explication": "La charge de réfrigérant hydrocarbure se fait par pesée, avec le volume indiqué sur la plaque signalétique.",
        "origine": "pack",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-10-2A9E51B1.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Pesee charge",
+         "chemin": "illustrations/pesee-charge.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -8806,6 +10768,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g12b",
        "explication": "Le contrôle d'étanchéité direct sur un circuit hydrocarbure se fait avec un détecteur adapté aux hydrocarbures.",
        "origine": "pack",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/sup-cours-12-11-2A9E51B1.webp",
+       "pose_niveau": "cours",
+       "ressources": [
+        {
+         "type": "page",
+         "libelle": "Intervention hydrocarbures interactive",
+         "chemin": "intervention-hydrocarbures-interactive/index.html"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -8834,6 +10808,18 @@ window.PILOTE_PROJECTION = {
        "remediation_vers": "g12b",
        "explication": "La pression d'épreuve à appliquer se trouve dans la documentation constructeur et la norme applicable, jamais à l'estime.",
        "origine": "pack",
+       "chapitre": "12",
+       "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+       "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+       "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
+       "pose_niveau": "exact",
+       "ressources": [
+        {
+         "type": "image",
+         "libelle": "Epreuve azote",
+         "chemin": "illustrations/epreuve-azote.svg"
+        }
+       ],
        "categories": [
         "A1",
         "A2"
@@ -8887,6 +10873,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": false
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/capsules/index.html?c=x5",
+       "lancer": "🎧 Écouter la capsule : Détective — intervention sur monobloc R-290",
+       "desc": "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.",
+       "titre": "Détective — intervention sur monobloc R-290"
       },
       {
        "type": "point",

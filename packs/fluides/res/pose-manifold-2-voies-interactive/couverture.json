@@ -1,0 +1,17 @@
+{
+  "cours": "pose-manifold-2-voies-interactive",
+  "titre": "Pose et dépose du manifold 2 voies sur vannes de service Rotolock",
+  "reference": "arrêté du 21 novembre 2025 · règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 8,
+  "codes": {
+    "4.05": ["read", "rotalock"],
+    "5.01": ["prepare", "connect", "rotalock", "remove"],
+    "12.02": ["understand", "prepare"]
+  },
+  "appui": {
+    "3.03": ["vacuum"],
+    "3.04": ["vacuum"]
+  },
+  "hors_referentiel": ["assess"],
+  "_note": "Codes déduits du contenu du module (voir son README, section Objectifs) et de la fiche p1 qui l'appelle : reconnaître BP, HP et voie de service, distinguer les prises P et P1, raccorder et déposer sans émission, choisir les protections contre la projection et le froid. Le tirage au vide n'y est qu'un appui : il est enseigné par p3."
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Les 12 motifs d'animation | Capsules</title>
+  <link rel="stylesheet" href="capsule.css?v=20260813-1">
+  <style>
+    .planche{max-width:1100px;margin:24px auto;padding:0 20px 60px}
+    .motif{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);box-shadow:var(--ombre);padding:16px 18px;margin:0 0 26px}
+    .motif h2{font-size:20px;margin-bottom:4px}
+    .motif p.quoi{color:var(--mut);margin:0 0 12px;font-size:14.5px}
+    .motif code{background:#f2f7fc;padding:2px 6px;border-radius:4px;font-size:13px}
+  </style>
+</head>
+<body>
+  <header class="barre">
+    <span class="logo">iner<b>Web</b> Édu</span>
+    <span class="pack-titre">Capsules · planche d'essai des motifs</span>
+  </header>
+  <main class="planche" id="planche">
+    <p>Chaque motif est rendu ci-dessous avec des données d'exemple. Cette page sert à
+       <b>voir</b> ce que produit un motif avant de l'employer, et à <b>contrôler</b> qu'aucun
+       texte ne sort du cadre — le contrôle se lance depuis la console (voir <code>LIRE-MOI.md</code>).</p>
+  </main>
+
+  <script src="animations.js?v=20260813-1"></script>
+  <script>
+  const EXEMPLES = [
+    ["etages", "des niveaux empilés, du général au terrain", {
+      titre: "Deux niveaux de loi", etages: [
+        { niveau: "EUROPE", texte: "Le texte de base", marque: "s'applique directement" },
+        { niveau: "FRANCE", texte: "L'application sur le terrain", marque: "signé par un ministre" },
+        { niveau: "VOUS", texte: "Ce que vous faites chaque jour", marque: "sur le chantier" }]}],
+    ["duo", "deux notions qu'on confond, côte à côte", {
+      titre: "Deux papiers à ne pas confondre", lien: "≠", pied: "Il faut les deux.", cartes: [
+        { titre: "APTITUDE", picto: "👤", pour: "Pour la personne", texte: "Elle prouve que vous savez faire, et elle vous suit." },
+        { titre: "CAPACITÉ", picto: "🏢", pour: "Pour l'entreprise", texte: "Elle prouve le personnel, l'outillage et les procédures." }]}],
+    ["sequence", "des étapes numérotées, dans l'ordre", {
+      titre: "L'ordre des gestes", pied: "Un ordre inversé, et le fluide part dans l'air.", etapes: [
+        { titre: "Fermer", texte: "les vannes du manifold" },
+        { titre: "Stabiliser", texte: "attendre l'équilibre" },
+        { titre: "Isoler", texte: "avant d'arrêter la pompe" },
+        { titre: "Ne jamais desserrer sous pression", texte: "le geste qui blesse", danger: true }]}],
+    ["jauge", "une échelle avec des seuils nommés", {
+      titre: "Une échelle avec ses seuils", niveau: 0.72, bas: "zéro", hautLibelle: "maximum", seuils: [
+        { part: 0.3, titre: "Premier seuil", texte: "ce qu'on observe à ce niveau" },
+        { part: 0.62, titre: "Seuil d'alerte", texte: "au-delà, on ne reste pas" },
+        { part: 0.88, titre: "Seuil haut", texte: "évacuation immédiate" }]}],
+    ["frise", "une ligne du temps", {
+      titre: "Quarante ans en cinq dates", pied: "Chaque étape a resserré les règles.", jalons: [
+        { date: "1928", texte: "Les premiers fluides de synthèse" },
+        { date: "1974", texte: "L'alerte sur la couche d'ozone" },
+        { date: "1987", texte: "Le protocole de Montréal", fort: true },
+        { date: "1997", texte: "Le climat entre dans le débat" },
+        { date: "2024", texte: "Le règlement actuel", fort: true }]}],
+    ["alerte", "ce qui arrive · ce qu'on ressent · ce qu'on fait", {
+      titre: "Un danger, en trois temps", pied: "On ne compte jamais sur ses sens pour se protéger.", vignettes: [
+        { picto: "⚠", etiquette: "ce qui arrive", titre: "Le fluide s'échappe", texte: "en quelques secondes, sans bruit" },
+        { picto: "😵", etiquette: "ce qu'on ressent", titre: "Les premiers signes", texte: "et ils arrivent parfois trop tard" },
+        { picto: "✅", etiquette: "ce qu'on fait", titre: "Sortir, ventiler, alerter", texte: "dans cet ordre, sans revenir" }]}],
+    ["flux", "le chemin d'une matière", {
+      titre: "Le chemin du fluide récupéré", pied: "Chaque étape se trace.", boites: [
+        { picto: "🧊", titre: "L'installation", texte: "le fluide est dedans" },
+        { picto: "🛢", titre: "La bouteille", texte: "récupération, jamais l'air libre", teinte: "ok" },
+        { picto: "🚚", titre: "Le repreneur", texte: "avec son bordereau" },
+        { picto: "♻", titre: "Régénération", texte: "ou destruction" }]}],
+    ["zone", "une coupe de local, la nappe au point bas", {
+      titre: "Un gaz plus lourd que l'air", hauteurNappe: 82, nappeLibelle: "il s'accumule au point bas",
+      capteur: "détection en partie basse", personnage: "vous, debout", solLibelle: "sol du local", points: [
+        { titre: "Il ne monte pas", texte: "il remplit d'abord le bas du local" },
+        { titre: "On ne le voit pas", texte: "aucune odeur, aucune couleur" },
+        { titre: "La fosse est le piège", texte: "cave, fosse, caniveau" }]}],
+    ["balance", "une pesée avant / après", {
+      titre: "Ce que dit la balance", pied: "L'écart, c'est ce qu'on écrit sur la fiche.",
+      avant: { etiquette: "bouteille avant", valeur: "— kg" },
+      apres: { etiquette: "bouteille après", valeur: "— kg" },
+      ecart: { etiquette: "la quantité transférée", valeur: "la différence" }}],
+    ["checklist", "des points qui se cochent, ou se refusent", {
+      titre: "Avant de commencer", pied: "Un seul refus, et on ne commence pas.", items: [
+        { titre: "Zone dégagée et balisée", texte: "fait" },
+        { titre: "EPI adaptés au fluide", texte: "fait" },
+        { titre: "Issue de secours condamnée", texte: "point bloquant", refus: true },
+        { titre: "Consignation électrique", texte: "fait" }]}],
+    ["barres", "comparer des grandeurs", {
+      titre: "Comparer, sans citer de valeur inventée", legende: "Valeurs d'illustration — les vraies viennent du texte en vigueur.",
+      valeurs: [
+        { titre: "Le premier", valeur: 1, affiche: "1", teinte: "ok" },
+        { titre: "Le deuxième", valeur: 6, affiche: "×6" },
+        { titre: "Le troisième", valeur: 14, affiche: "×14", teinte: "danger" }]}],
+    ["cycle", "la croix du frigoriste", {
+      titre: "Où se place l'organe étudié", surligne: ["compresseur"], points: [
+        { titre: "Basse pression", texte: "du côté froid, à l'aspiration" },
+        { titre: "Haute pression", texte: "du côté chaud, au refoulement" },
+        { titre: "Le point qui tourne", texte: "c'est le fluide qui fait le tour" }]}],
+  ];
+
+  const planche = document.getElementById("planche");
+  for (const [motif, quoi, spec] of EXEMPLES) {
+    const bloc = document.createElement("section");
+    bloc.className = "motif";
+    bloc.dataset.motif = motif;
+    bloc.innerHTML = `<h2><code>${motif}</code></h2><p class="quoi">${quoi}</p>` +
+      ANIM.rendre({ motif, ...spec });
+    planche.appendChild(bloc);
+  }
+  </script>
+</body>
+</html>

@@ -7,9 +7,9 @@
 
 | Mesure | Résultat |
 |---|---:|
-| Cours interactifs recensés | **18** |
+| Cours interactifs recensés | **24** |
 | Cours avec anomalie critique automatisable | **0** |
-| Cours avec dette documentaire ou de reprise | **9** |
+| Cours avec dette documentaire ou de reprise | **12** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **9** |
 | SVG pédagogiques contrôlés | **44** |
 | SVG sans titre / sans description textuelle | **1 / 39** |
@@ -19,12 +19,15 @@
 | Cours | HTML | Hors ligne | Typo | Impression | Lisibilité | Médias | Registre droits | État |
 |---|---|---|---|---|---|---:|---|---|
 | `bilan-thermique-performance-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `capsules` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟠 ancien fond #EEF2F6 (1) |
 | `chaine-intervention-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `chaleur-circuit-interactif` | ✓ | ✓ | ✓ | ✗ | commune | 4 | ✗ | 🟠 impression, SOURCES-IMAGES.md, ancien fond #EEF2F6 (4) |
 | `chaleur-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `circuit-organe-par-organe` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `condenseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `cours-classes-securite` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `detendeur-interactif` | ✓ | ✓ | ✓ | ✓ | absente | 4 | ✓ | 🟠 réglage de lisibilité |
+| `electrovanne-interactive` | ✓ | ✓ | ✓ | ✓ | absente | 5 | ✓ | 🟠 réglage de lisibilité |
 | `etancheite-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `evaporateur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 4 | ✗ | 🟠 SOURCES-IMAGES.md, ancien terme « module interactif » (2) |
 | `frise-vivante` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
@@ -33,7 +36,10 @@
 | `intervention-hydrocarbures-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `mission-bouteilles` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `nomenclature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `pose-manifold-2-voies-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `pose-manifold-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pression-temperature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `recuperation-fluide-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
 | `tome-3-technologie-organes` | ✓ | ✓ | ✓ | ✓ | locale | 44 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `vanne-service-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
 

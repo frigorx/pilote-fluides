@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f1e7">
+  <meta name="description" content="Atelier interactif inerWeb : contrôler, poser, tirer au vide, mettre en lecture et déposer un manifold 4 voies sur deux vannes de service.">
+  <title>Poser et déposer le manifold 4 voies | Pilote Fluides</title>
+  <link rel="stylesheet" href="styles.css?v=20260812-2">
+  <link rel="stylesheet" href="../../../../moteur/impression.css?v=20260810-1" media="print">
+</head>
+<body>
+  <a class="skip-link" href="#guidance-title">Aller à la consigne</a>
+
+  <header class="appbar">
+    <a class="brand" href="../../../../portail.html" aria-label="Revenir au portail Pilote Fluides">
+      <span class="brand-mark" aria-hidden="true">iW</span>
+      <span><strong>inerWeb Édu</strong><small>Pilote Fluides · Atelier manifold</small></span>
+    </a>
+    <div class="appbar-actions">
+      <span class="draft-badge">BROUILLON MÉTIER</span>
+      <span class="mode-badge" id="mode-badge">Accueil</span>
+      <button type="button" class="small-button" id="help-button" hidden>Aidez-moi</button>
+      <button type="button" class="small-button" id="reset-button" hidden>Recommencer</button>
+      <button type="button" class="small-button exit-button" id="exit-button" hidden>Quitter</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="home" id="home" aria-labelledby="home-title">
+      <div class="home-copy">
+        <p class="eyebrow">HABILITATION FLUIDES · GESTE PROFESSIONNEL</p>
+        <h1 id="home-title">Poser et déposer<br><span>le manifold 4 voies</span></h1>
+        <p class="home-intro">Vous agissez sur le vrai dessin : bouchons, presse-étoupes, carrés de manœuvre, mini-vannes, flexibles, pompe et aiguilles.</p>
+        <div class="mode-grid" aria-label="Choisir un mode d'entraînement">
+          <button type="button" class="mode-card guided" data-start-mode="guided">
+            <span>1</span><strong>Apprendre pas à pas</strong><small>Regardez → Faites → Vérifiez → Pourquoi.</small>
+          </button>
+          <button type="button" class="mode-card autonomous" data-start-mode="autonomous">
+            <span>2</span><strong>S’entraîner seul</strong><small>L’objectif reste visible. « Aidez-moi » révèle le prochain geste.</small>
+          </button>
+        </div>
+        <p class="scope-note"><strong>Dans ce TP :</strong> le siège avant est expliqué dans le zoom, mais la pose et la dépose utilisent le siège arrière et la position intermédiaire de lecture.</p>
+      </div>
+
+      <div class="home-visual" aria-label="Aperçu de l'atelier">
+        <svg viewBox="0 0 620 410" role="img" aria-labelledby="home-svg-title home-svg-desc">
+          <title id="home-svg-title">Manifold 4 voies entre deux vannes de service</title>
+          <desc id="home-svg-desc">Deux manomètres, quatre robinets, trois flexibles à mini-vannes, deux vannes de service et une pompe à vide.</desc>
+          <g transform="translate(150 35)">
+            <rect class="preview-body" x="0" y="80" width="320" height="105" rx="22"/>
+            <circle class="preview-gauge bp" cx="88" cy="78" r="65"/><circle class="preview-gauge hp" cx="232" cy="78" r="65"/>
+            <text x="88" y="87" class="preview-label">BP</text><text x="232" y="87" class="preview-label">HP</text>
+            <g class="preview-knobs"><circle cx="55" cy="175" r="21"/><circle cx="125" cy="175" r="21"/><circle cx="195" cy="175" r="21"/><circle cx="265" cy="175" r="21"/></g>
+          </g>
+          <path class="preview-hose blue" d="M205 220 C190 300 95 280 75 350"/><path class="preview-hose red" d="M415 220 C430 300 525 280 545 350"/><path class="preview-hose black" d="M275 220 C275 320 300 320 300 365"/>
+          <g transform="translate(28 310)"><rect class="preview-valve" width="100" height="58" rx="15"/><text x="50" y="35">VANNE BP</text></g>
+          <g transform="translate(492 310)"><rect class="preview-valve" width="100" height="58" rx="15"/><text x="50" y="35">VANNE HP</text></g>
+          <g transform="translate(250 350)"><rect class="preview-pump" width="100" height="48" rx="9"/><text x="50" y="30">POMPE</text></g>
+        </svg>
+        <div class="legend-line"><span class="line blue"></span> BP <span class="line red"></span> HP <span class="line black"></span> Vide</div>
+      </div>
+    </section>
+
+    <section class="trainer" id="trainer" hidden aria-label="Atelier interactif de pose et dépose du manifold">
+      <nav class="phase-strip" id="phase-strip" aria-label="Phases du TP"></nav>
+
+      <div class="trainer-grid">
+        <aside class="guidance" aria-live="polite">
+          <div class="phase-count"><span id="phase-name">Préparer</span><strong id="phase-progress">1 / 1</strong></div>
+          <p class="action-kicker" id="action-kicker">Prochain geste</p>
+          <h1 id="guidance-title">Contrôler le poste</h1>
+
+          <div class="guidance-steps" id="guidance-steps">
+            <div><b>1 · Regardez</b><p id="guide-look"></p></div>
+            <div><b>2 · Faites</b><p id="guide-do"></p></div>
+            <div><b>3 · Vérifiez</b><p id="guide-check"></p></div>
+            <div class="why"><b>Pourquoi ?</b><p id="guide-why"></p></div>
+          </div>
+
+          <div class="autonomous-prompt" id="autonomous-prompt" hidden>
+            <strong>À vous de retrouver le prochain geste.</strong>
+            <p>Agissez directement sur l’objet. Si vous hésitez, cliquez sur « Aidez-moi ».</p>
+          </div>
+
+          <p class="feedback waiting" id="feedback" role="status">Le bon élément clignote doucement en mode guidé.</p>
+          <button type="button" class="primary-button" id="continue-button" hidden>Continuer</button>
+        </aside>
+
+        <section class="workbench" aria-label="Poste de travail virtuel">
+          <div class="scene-toolbar">
+            <strong>Agissez sur les objets</strong>
+            <span id="needle-status">Aiguilles : à contrôler</span>
+            <button type="button" class="zoom-button" id="valve-zoom-button">Voir la vanne en coupe</button>
+          </div>
+
+          <div class="scene-wrap">
+            <svg id="work-scene" viewBox="0 0 1200 660" role="img" aria-labelledby="scene-title scene-desc">
+              <title id="scene-title">Poste de pose et dépose d'un manifold 4 voies</title>
+              <desc id="scene-desc">Le manifold quatre voies est au centre. La vanne de service basse pression est à gauche, la vanne haute pression à droite et la pompe à vide en bas. Tous les bouchons, presse-étoupes, carrés, raccords, mini-vannes, robinets et interrupteurs utiles sont cliquables.</desc>
+              <defs>
+                <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#1b3a63" flood-opacity=".14"/></filter>
+                <pattern id="metal" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#dfe7ea"/><path d="M0 12L12 0" stroke="#c4d0d6" stroke-width="2"/></pattern>
+              </defs>
+
+              <g id="equipment-manifold" transform="translate(390 25)" filter="url(#shadow)">
+                <rect class="machine-shadow" x="4" y="86" width="412" height="184" rx="28"/>
+                <rect class="manifold-body" x="0" y="78" width="412" height="184" rx="28"/>
+                <rect class="manifold-face" x="18" y="101" width="376" height="108" rx="18"/>
+                <text class="machine-title" x="206" y="239">MANIFOLD 4 VOIES</text>
+
+                <g transform="translate(105 88)" class="gauge bp-gauge">
+                  <circle class="gauge-case" r="76"/><circle class="gauge-face bp" r="65"/>
+                  <g class="gauge-ticks"><path d="M-45 34l9-7 M-58 10l11-2 M-54-21l11 5 M-34-50l7 11 M0-62v13 M34-50l-7 11 M54-21l-11 5 M58 10l-11-2 M45 34l-9-7"/></g>
+                  <text y="29" class="gauge-word">BP</text><text y="48" class="gauge-state" id="bp-gauge-state">À CONTRÔLER</text>
+                  <line id="needle-bp" class="needle" x1="0" y1="14" x2="-31" y2="-43"/><circle class="needle-hub" r="8"/>
+                  <g class="direct-control zero-screw" data-control="zero-bp" role="button" tabindex="0" aria-label="Vis de zéro du manomètre BP"><circle cy="58" r="12"/><path d="M-6 58h12"/></g>
+                </g>
+                <g transform="translate(307 88)" class="gauge hp-gauge">
+                  <circle class="gauge-case" r="76"/><circle class="gauge-face hp" r="65"/>
+                  <g class="gauge-ticks"><path d="M-45 34l9-7 M-58 10l11-2 M-54-21l11 5 M-34-50l7 11 M0-62v13 M34-50l-7 11 M54-21l-11 5 M58 10l-11-2 M45 34l-9-7"/></g>
+                  <text y="29" class="gauge-word">HP</text><text y="48" class="gauge-state" id="hp-gauge-state">À CONTRÔLER</text>
+                  <line id="needle-hp" class="needle" x1="0" y1="14" x2="-27" y2="-46"/><circle class="needle-hub" r="8"/>
+                  <g class="direct-control zero-screw" data-control="zero-hp" role="button" tabindex="0" aria-label="Vis de zéro du manomètre HP"><circle cy="58" r="12"/><path d="M-6 58h12"/></g>
+                </g>
+
+                <g class="manifold-knobs">
+                  <g class="direct-control" data-control="manifold-bp" transform="translate(72 254)" role="button" tabindex="0" aria-label="Vanne BP du manifold"><circle class="knob blue" r="27"/><line id="handle-manifold-bp" class="knob-line" y1="-18" y2="18"/><text y="48">BP</text></g>
+                  <g class="direct-control" data-control="manifold-vac" transform="translate(160 254)" role="button" tabindex="0" aria-label="Vanne vide du manifold"><circle class="knob black" r="27"/><line id="handle-manifold-vac" class="knob-line" y1="-18" y2="18"/><text y="48">VIDE</text></g>
+                  <g class="direct-control" data-control="manifold-service" transform="translate(252 254)" role="button" tabindex="0" aria-label="Vanne service du manifold"><circle class="knob yellow" r="27"/><line id="handle-manifold-service" class="knob-line" y1="-18" y2="18"/><text y="48">SERVICE</text></g>
+                  <g class="direct-control" data-control="manifold-hp" transform="translate(340 254)" role="button" tabindex="0" aria-label="Vanne HP du manifold"><circle class="knob red" r="27"/><line id="handle-manifold-hp" class="knob-line" y1="-18" y2="18"/><text y="48">HP</text></g>
+                </g>
+
+                <g class="ports">
+                  <g transform="translate(72 314)"><circle class="port bp" r="14"/><text y="34">BP</text></g>
+                  <g transform="translate(160 314)"><circle class="port vac" r="14"/><text y="34">VIDE</text></g>
+                  <g transform="translate(252 314)"><circle class="port service" r="14"/><text y="34">SERVICE</text></g>
+                  <g transform="translate(340 314)"><circle class="port hp" r="14"/><text y="34">HP</text></g>
+                </g>
+              </g>
+
+              <path id="hose-blue" class="hose blue" d="M462 339 C430 430 285 398 247 478"/>
+              <path id="hose-red" class="hose red" d="M730 339 C775 430 916 398 953 478"/>
+              <path id="hose-black" class="hose black" d="M550 339 C550 430 586 452 586 532"/>
+
+              <g class="service-unit bp-unit" transform="translate(45 410)" id="equipment-bp">
+                <text class="unit-title" x="155" y="-18">VANNE DE SERVICE · BP</text>
+                <rect class="unit-panel" width="310" height="205" rx="24"/>
+                <path class="pipe bp" d="M0 116 H92 M220 116 H310"/>
+                <path class="valve-body" d="M82 76h146l24 40-24 40H82l-24-40z"/>
+                <rect class="gland" id="shape-bp-gland" x="198" y="86" width="31" height="60" rx="8"/>
+                <line class="stem" x1="220" y1="116" x2="267" y2="116"/>
+                <g class="direct-control cap-control" data-control="bp-stem-cap" role="button" tabindex="0" aria-label="Bouchon gris qui recouvre le carré de manœuvre de la vanne BP">
+                  <rect class="cap-hit" x="238" y="72" width="96" height="92" rx="15"/>
+                  <path id="shape-bp-stem-cap" class="cap" d="M250 84h53l20 32-20 32h-53z"/>
+                  <text class="cap-name" x="284" y="121">BOUCHON</text>
+                  <text class="cap-caption" x="284" y="178">BOUCHON DU CARRÉ</text>
+                </g>
+                <g class="direct-control" data-control="bp-gland" role="button" tabindex="0" aria-label="Presse-étoupe de la vanne BP"><rect class="hit-box" x="187" y="74" width="54" height="84" rx="10"/><text x="213" y="164">PRESSE-ÉTOUPE</text></g>
+                <g class="direct-control stem-control concealed" data-control="bp-stem" role="button" tabindex="-1" aria-hidden="true" aria-label="Carré orange de manœuvre de la vanne BP, accessible après retrait du bouchon"><rect class="stem-square" x="258" y="96" width="38" height="40" rx="5"/><rect class="hit-box" x="248" y="88" width="58" height="56" rx="9"/><path class="square-cross" d="M266 104l22 24m0-24l-22 24"/></g>
+                <path class="service-neck" d="M128 78V36h54v42"/>
+                <g class="direct-control port-cap-control" data-control="bp-port-cap" role="button" tabindex="0" aria-label="Bouchon de la prise de pression BP"><path id="shape-bp-port-cap" class="port-cap" d="M118 38h74l-8-30h-58z"/><text x="155" y="194">PRISE P</text><rect class="port-cap-hit" x="108" y="0" width="94" height="205" rx="15"/></g>
+                <g class="direct-control service-port" data-control="connect-blue" role="button" tabindex="0" aria-label="Prise de pression BP pour raccorder le flexible bleu"><circle cx="155" cy="35" r="24"/><text x="155" y="42">P</text></g>
+                <g class="direct-control mini-control" data-control="mini-blue" transform="translate(202 66)" role="button" tabindex="0" aria-label="Mini-vanne du flexible bleu"><circle r="22"/><line id="handle-mini-blue" class="mini-line" x1="-14" x2="14"/><text y="42">MINI</text></g>
+                <text class="position-label" id="bp-position-label" x="104" y="137">SIÈGE ARRIÈRE</text>
+              </g>
+
+              <g class="service-unit hp-unit" transform="translate(845 410)" id="equipment-hp">
+                <text class="unit-title" x="155" y="-18">VANNE DE SERVICE · HP</text>
+                <rect class="unit-panel" width="310" height="205" rx="24"/>
+                <path class="pipe hp" d="M0 116 H92 M220 116 H310"/>
+                <path class="valve-body" d="M82 76h146l24 40-24 40H82l-24-40z"/>
+                <rect class="gland" id="shape-hp-gland" x="81" y="86" width="31" height="60" rx="8"/>
+                <line class="stem" x1="43" y1="116" x2="91" y2="116"/>
+                <g class="direct-control cap-control" data-control="hp-stem-cap" role="button" tabindex="0" aria-label="Bouchon gris qui recouvre le carré de manœuvre de la vanne HP">
+                  <rect class="cap-hit" x="-22" y="72" width="94" height="92" rx="15"/>
+                  <path id="shape-hp-stem-cap" class="cap" d="M7 84h53v64H7l-20-32z"/>
+                  <text class="cap-name" x="27" y="121">BOUCHON</text>
+                  <text class="cap-caption" x="27" y="178">BOUCHON DU CARRÉ</text>
+                </g>
+                <g class="direct-control" data-control="hp-gland" role="button" tabindex="0" aria-label="Presse-étoupe de la vanne HP"><rect class="hit-box" x="69" y="74" width="54" height="84" rx="10"/><text x="96" y="164">PRESSE-ÉTOUPE</text></g>
+                <g class="direct-control stem-control concealed" data-control="hp-stem" role="button" tabindex="-1" aria-hidden="true" aria-label="Carré orange de manœuvre de la vanne HP, accessible après retrait du bouchon"><rect class="stem-square" x="14" y="96" width="38" height="40" rx="5"/><rect class="hit-box" x="4" y="88" width="58" height="56" rx="9"/><path class="square-cross" d="M22 104l22 24m0-24l-22 24"/></g>
+                <path class="service-neck" d="M128 78V36h54v42"/>
+                <g class="direct-control port-cap-control" data-control="hp-port-cap" role="button" tabindex="0" aria-label="Bouchon de la prise de pression HP"><path id="shape-hp-port-cap" class="port-cap" d="M118 38h74l-8-30h-58z"/><text x="155" y="194">PRISE P</text><rect class="port-cap-hit" x="108" y="0" width="94" height="205" rx="15"/></g>
+                <g class="direct-control service-port" data-control="connect-red" role="button" tabindex="0" aria-label="Prise de pression HP pour raccorder le flexible rouge"><circle cx="155" cy="35" r="24"/><text x="155" y="42">P</text></g>
+                <g class="direct-control mini-control" data-control="mini-red" transform="translate(108 66)" role="button" tabindex="0" aria-label="Mini-vanne du flexible rouge"><circle r="22"/><line id="handle-mini-red" class="mini-line" x1="-14" x2="14"/><text y="42">MINI</text></g>
+                <text class="position-label" id="hp-position-label" x="205" y="137">SIÈGE ARRIÈRE</text>
+              </g>
+
+              <g class="pump-unit" id="equipment-pump" transform="translate(425 475)">
+                <text class="unit-title" x="175" y="-14">POMPE À VIDE</text>
+                <rect class="pump-body" x="0" y="0" width="350" height="150" rx="20"/>
+                <path class="pump-grille" d="M30 30h145v82H30z M48 30v82m25-82v82m25-82v82m25-82v82m25-82v82"/>
+                <rect class="pump-motor" x="185" y="43" width="92" height="70" rx="14"/>
+                <g class="direct-control pump-port" data-control="connect-black" role="button" tabindex="0" aria-label="Raccord de la pompe à vide"><circle cx="161" cy="5" r="22"/><text x="161" y="12">P</text></g>
+                <g class="direct-control" data-control="pump-isolation" transform="translate(299 43)" role="button" tabindex="0" aria-label="Vanne d'isolement de la pompe"><circle class="pump-knob" r="23"/><line id="handle-pump-isolation" class="knob-line" y1="-15" y2="15"/><text y="48">ISOLEMENT</text></g>
+                <g class="direct-control power-control" data-control="pump-power" role="button" tabindex="0" aria-label="Interrupteur de la pompe à vide"><rect id="shape-pump-power" x="286" y="88" width="48" height="38" rx="7"/><text x="310" y="145">MARCHE</text></g>
+                <g class="direct-control mini-control" data-control="mini-black" transform="translate(130 35)" role="button" tabindex="0" aria-label="Mini-vanne du flexible noir"><circle r="22"/><line id="handle-mini-black" class="mini-line" x1="-14" x2="14"/><text y="42">MINI</text></g>
+                <text class="pump-status" id="pump-status" x="230" y="27">ARRÊT</text>
+              </g>
+
+              <g class="direct-control check-card" data-control="check-post" transform="translate(18 24)" role="button" tabindex="0" aria-label="Contrôler le poste et les EPI"><rect width="250" height="72" rx="15"/><text x="125" y="29">CONTRÔLE DU POSTE</text><text x="125" y="54">EPI · matériel · zone</text></g>
+              <g class="direct-control check-card" data-control="inspect-blue" transform="translate(18 115)" role="button" tabindex="0" aria-label="Inspecter le flexible bleu"><rect width="250" height="55" rx="14"/><path class="swatch blue" d="M18 35h55"/><text x="150" y="34">INSPECTER BLEU</text></g>
+              <g class="direct-control check-card" data-control="inspect-red" transform="translate(18 180)" role="button" tabindex="0" aria-label="Inspecter le flexible rouge"><rect width="250" height="55" rx="14"/><path class="swatch red" d="M18 35h55"/><text x="150" y="34">INSPECTER ROUGE</text></g>
+              <g class="direct-control check-card" data-control="inspect-black" transform="translate(18 245)" role="button" tabindex="0" aria-label="Inspecter le flexible de vide"><rect width="250" height="55" rx="14"/><path class="swatch black" d="M18 35h55"/><text x="150" y="34">INSPECTER VIDE</text></g>
+
+              <g class="direct-control residual-card" data-control="residual-treatment" transform="translate(930 300)" role="button" tabindex="0" aria-label="Traiter le fluide résiduel selon la procédure du poste"><rect width="245" height="84" rx="15"/><text x="122" y="27">FLUIDE PIÉGÉ</text><text x="122" y="50">traitement du poste</text><text x="122" y="70">AUCUN REJET</text></g>
+              <g class="direct-control leak-card" data-control="leak-check" transform="translate(18 315)" role="button" tabindex="0" aria-label="Contrôler l'étanchéité des raccords"><rect width="250" height="70" rx="15"/><text x="125" y="29">ÉTANCHÉITÉ</text><text x="125" y="53">raccords · bouchons</text></g>
+              <g class="direct-control reading-card" data-control="read-pressures" transform="translate(930 205)" role="button" tabindex="0" aria-label="Lire et relever les pressions"><rect width="245" height="72" rx="15"/><text x="122" y="29">RELEVER HP / BP</text><text x="122" y="53">valeurs du scénario</text></g>
+            </svg>
+          </div>
+          <p class="scene-feedback" id="scene-feedback">Sélectionnez le mode guidé pour commencer.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="summary" id="summary" hidden aria-labelledby="summary-title">
+      <p class="eyebrow">PARCOURS TERMINÉ</p>
+      <h1 id="summary-title">Le manifold est déposé, le poste est remis en état.</h1>
+      <div class="summary-grid">
+        <div><strong>Avant</strong><span>Zéro · joints · robinets fermés</span></div>
+        <div><strong>Pendant</strong><span>Vide des lignes · siège intermédiaire · lecture</span></div>
+        <div><strong>Après</strong><span>Siège arrière · fluide résiduel traité · bouchons · étanchéité</span></div>
+      </div>
+      <p class="summary-warning"><strong>Ce module entraîne l’ordre et la gestuelle.</strong> La fiche constructeur, la procédure du plateau et la supervision du formateur restent prioritaires.</p>
+      <button type="button" class="primary-button" id="restart-button">Refaire le TP</button>
+    </section>
+  </main>
+
+  <dialog id="valve-dialog" aria-labelledby="valve-dialog-title">
+    <div class="dialog-head">
+      <div><p class="eyebrow">ZOOM · VANNE DE SERVICE</p><h2 id="valve-dialog-title">Les trois positions</h2></div>
+      <button type="button" class="small-button" id="close-dialog">Fermer</button>
+    </div>
+    <div class="position-tabs" role="group" aria-label="Choisir une position de la vanne">
+      <button type="button" data-dialog-position="back" aria-pressed="true">Siège arrière</button>
+      <button type="button" data-dialog-position="mid" aria-pressed="false">Intermédiaire</button>
+      <button type="button" data-dialog-position="front" aria-pressed="false">Siège avant</button>
+    </div>
+    <div id="valve-diagram" class="valve-diagram"></div>
+    <p id="valve-explanation" class="valve-explanation"></p>
+  </dialog>
+
+  <script src="../vanne-service-interactive/valve-diagram.js?v=20260802-6"></script>
+  <script src="app.js?v=20260812-2"></script>
+  <script src="../../../../moteur/lisibilite.js?v=20260810-1"></script>
+  <script src="../../../../moteur/marque.js?v=20260810-1"></script>
+</body>
+</html>

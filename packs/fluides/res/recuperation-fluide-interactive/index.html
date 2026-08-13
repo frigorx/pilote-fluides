@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TP interactif inerWeb : raccorder un manifold 4 voies, récupérer le fluide avec une station Minimax-E, peser, auto-purger puis tirer l'installation au vide.">
+  <title>TP récupération du fluide | Pilote Fluides</title>
+  <link rel="stylesheet" href="styles.css?v=20260812-10">
+  <link rel="stylesheet" href="../../../../moteur/impression.css?v=20260810-1" media="print">
+</head>
+<body>
+  <a class="skip-link" href="#mission-title">Aller à la consigne</a>
+  <header class="appbar">
+    <a class="brand" href="../../../../portail.html" aria-label="Revenir au portail Pilote Fluides">
+      <span class="brand-mark" aria-hidden="true">iW</span>
+      <span><strong>inerWeb Édu</strong><small>Pilote Fluides · TP récupération</small></span>
+    </a>
+    <div class="appbar-actions">
+      <span class="draft-badge">BROUILLON MÉTIER</span>
+      <span class="mode-badge" id="mode-badge">Accueil</span>
+      <button class="small-button" id="voice-button" type="button" hidden aria-pressed="false">▶ Écouter</button>
+      <button class="small-button" id="reset-button" type="button" hidden>Recommencer</button>
+      <button class="small-button exit-button" id="exit-button" type="button" hidden>Quitter</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="home" id="home" aria-labelledby="home-title">
+      <div class="home-copy">
+        <p class="eyebrow">HABILITATION FLUIDES · MISSION PRATIQUE</p>
+        <h1 id="home-title">Récupérer le fluide<br><span>sans perdre le fil</span></h1>
+        <p class="home-intro">Branchez un manifold <strong>4 voies</strong>, pilotez la station Minimax-E, surveillez les aiguilles et la balance, réalisez l'auto-purge, puis tirez l'installation au vide.</p>
+        <div class="mode-grid" aria-label="Choisir un mode d'entraînement">
+          <button class="mode-card guided" type="button" data-start-mode="guided">
+            <span>1</span><strong>Mode guidé</strong><small>Le jeu indique où regarder, quoi faire et ce que vous devez vérifier.</small>
+          </button>
+          <button class="mode-card autonomous" type="button" data-start-mode="autonomous">
+            <span>2</span><strong>Mode autonome</strong><small>Vous voyez l'objectif de la phase. À vous de retrouver chaque geste dans l'ordre.</small>
+          </button>
+        </div>
+        <p class="home-note"><strong>Entraînement au geste :</strong> aucune valeur universelle de vide, de durée ou de remplissage n'est imposée. Les limites viennent des notices, du fluide et du plateau réel.</p>
+      </div>
+
+      <figure class="home-visual" aria-labelledby="home-visual-caption">
+        <svg viewBox="0 0 1200 620" role="img" aria-labelledby="home-svg-title home-svg-desc">
+          <title id="home-svg-title">Poste complet de récupération</title>
+          <desc id="home-svg-desc">Installation frigorifique, manifold quatre voies, pompe à vide, station de récupération, bouteille de transfert et balance.</desc>
+          <use href="#scene-background"></use>
+        </svg>
+        <figcaption id="home-visual-caption">Un poste unique · 8 phases · guidé puis autonome.</figcaption>
+      </figure>
+    </section>
+
+    <section class="game" id="game" hidden aria-label="Simulateur de récupération du fluide">
+      <aside class="mission-panel" aria-labelledby="mission-title">
+        <div class="progress-row">
+          <span id="phase-label">Préparer</span>
+          <strong id="step-counter">1 / 1</strong>
+        </div>
+        <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+        <p class="eyebrow" id="mission-kicker">PHASE 1</p>
+        <p class="action-label">À FAIRE MAINTENANT</p>
+        <h1 id="mission-title" tabindex="-1">Préparer le poste</h1>
+        <p class="mission-instruction" id="mission-instruction"></p>
+        <section class="guided-sheet" id="guided-sheet" aria-labelledby="guided-sheet-title" hidden>
+          <h2 id="guided-sheet-title">Guidage pas à pas</h2>
+          <ol>
+            <li><strong>1 · Regardez</strong><span class="guide-long" id="guide-look"></span><span class="guide-short" id="guide-look-short"></span></li>
+            <li><strong>2 · Faites</strong><span class="guide-long" id="guide-do"></span><span class="guide-short" id="guide-do-short"></span></li>
+            <li><strong>3 · Vérifiez</strong><span class="guide-long" id="guide-check"></span><span class="guide-short" id="guide-check-short"></span></li>
+          </ol>
+        </section>
+        <div class="mission-actions" id="mission-actions">
+          <button class="help-action" id="hint-button" type="button" aria-expanded="false" aria-controls="hint-box">? Aidez-moi · voir la solution</button>
+          <button class="check-action" id="check-action" type="button" hidden></button>
+        </div>
+        <div class="hint-box" id="hint-box" role="status" aria-live="polite" hidden></div>
+        <div class="feedback neutral" id="feedback" role="status" aria-live="polite">Choisissez un mode pour commencer.</div>
+        <div class="phase-map" id="phase-map" aria-label="Progression des phases"></div>
+        <dl class="score-strip">
+          <div><dt>Gestes validés</dt><dd id="valid-count">0</dd></div>
+          <div><dt>Erreurs repérées</dt><dd id="error-count">0</dd></div>
+          <div><dt>Aides</dt><dd id="hint-count">0</dd></div>
+        </dl>
+        <p class="source-note" id="source-note"></p>
+      </aside>
+
+      <section class="workbench" aria-label="Poste de travail interactif">
+        <div class="scene-wrap" id="scene-wrap">
+          <svg id="scene" viewBox="0 0 1200 620" role="img" aria-labelledby="scene-title scene-desc">
+            <title id="scene-title">Schéma interactif du poste de récupération</title>
+            <desc id="scene-desc">Le groupe de condensation présente trois vannes de service : refoulement, départ liquide et aspiration. L'élève raccorde cinq flexibles, agit sur leurs mini-vannes et clique directement les commandes dessinées sur le manifold, la station, la pompe et la bouteille. La sortie station rejoint le raccord vapeur de la bouteille.</desc>
+            <defs>
+              <g id="hit-help"><text class="svg-hit-help" x="0" y="-30" text-anchor="middle">ICI</text></g>
+              <linearGradient id="cylinderFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".32" stop-color="#dcecf7"/><stop offset=".57" stop-color="#f7fbfd"/><stop offset=".59" stop-color="#84b7ec"/><stop offset="1" stop-color="#3d7fca"/></linearGradient>
+              <linearGradient id="machineFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8fbfd"/><stop offset="1" stop-color="#d7e2e9"/></linearGradient>
+              <linearGradient id="metalFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffdf8"/><stop offset=".5" stop-color="#dfe8ee"/><stop offset="1" stop-color="#fffdf8"/></linearGradient>
+              <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#1b3a63" flood-opacity=".13"/></filter>
+              <symbol id="scene-background" viewBox="0 0 1200 620">
+                <rect x="12" y="12" width="1176" height="596" rx="28" fill="#fffdf8" stroke="#1b3a63" stroke-opacity=".16" stroke-width="3"/>
+                <g id="equipment-installation" transform="translate(40 62)">
+                  <rect class="equipment-frame" x="0" y="0" width="300" height="305" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="150" y="26" text-anchor="middle" class="svg-title">GROUPE DE CONDENSATION</text>
+                  <image href="assets/symboles/groupe-condensation-complet.svg" x="8" y="35" width="284" height="159" preserveAspectRatio="xMidYMid meet"/>
+
+                  <g class="service-marker" transform="translate(109 77)"><circle r="13"/><text y="5">A</text></g>
+                  <g class="service-marker" transform="translate(256 74)"><circle r="13"/><text y="5">B</text></g>
+                  <g class="service-marker" transform="translate(256 143)"><circle r="13"/><text y="5">C</text></g>
+
+                  <g class="service-legend" transform="translate(12 202)">
+                    <text x="0" y="0"><tspan class="legend-letter">A</tspan><tspan dx="5">REFOULEMENT</tspan></text>
+                    <text x="145" y="0"><tspan class="legend-letter">B</tspan><tspan dx="5">DÉPART LIQUIDE</tspan></text>
+                    <text x="0" y="23"><tspan class="legend-letter">C</tspan><tspan dx="5">ASPIRATION</tspan></text>
+                  </g>
+
+                  <path d="M275 165 V258 H167" class="installation-line"/>
+                  <image href="assets/symboles/detendeur-thermostatique.svg" x="119" y="239" width="50" height="42" preserveAspectRatio="xMidYMid meet"/>
+                  <image href="assets/symboles/evaporateur-cubique.svg" x="169" y="232" width="113" height="61" preserveAspectRatio="xMidYMid meet"/>
+                  <path d="M282 263 H289 V188" class="installation-line"/>
+                  <text x="72" y="285" text-anchor="middle" class="svg-small">CIRCUIT SIMPLIFIÉ</text>
+                </g>
+
+                <g id="equipment-manifold" transform="translate(382 42)" filter="url(#softShadow)">
+                  <path class="equipment-frame" d="M38 16 Q38 2 54 2 H286 Q302 2 302 16 V244 Q302 260 286 260 H54 Q38 260 38 244z" fill="url(#metalFill)" stroke="#1b3a63" stroke-width="4"/>
+                  <path d="M80 15 Q80 -8 105 -8 H235 Q260 -8 260 15" fill="none" stroke="#10233c" stroke-width="12" stroke-linecap="round"/>
+                  <text x="170" y="27" text-anchor="middle" class="svg-title">MANIFOLD 4 VOIES</text>
+                  <g transform="translate(102 91)" class="gauge gauge-bp"><circle r="59" fill="#d8e2e9" stroke="#10233c" stroke-width="4"/><circle r="51" fill="#fff" stroke="#3d7fca" stroke-width="7"/><g class="gauge-ticks"><path d="M-37 28l7-5 M-47 6l9-1 M-43-18l9 4 M-27-39l6 8 M0-50v10 M27-39l-6 8 M43-18l-9 4 M47 6l-9-1 M37 28l-7-5"/></g><path d="M-35 22 A43 43 0 0 1 35 22" fill="none" stroke="#637285" stroke-width="2"/><line class="needle" id="needle-bp" x1="0" y1="12" x2="-17" y2="-34" stroke="#10233c" stroke-width="5" stroke-linecap="round"/><circle r="7" fill="#10233c"/><text y="35" text-anchor="middle" class="svg-small">BP</text></g>
+                  <g transform="translate(238 91)" class="gauge gauge-hp"><circle r="59" fill="#d8e2e9" stroke="#10233c" stroke-width="4"/><circle r="51" fill="#fff" stroke="#c0392b" stroke-width="7"/><g class="gauge-ticks"><path d="M-37 28l7-5 M-47 6l9-1 M-43-18l9 4 M-27-39l6 8 M0-50v10 M27-39l-6 8 M43-18l-9 4 M47 6l-9-1 M37 28l-7-5"/></g><path d="M-35 22 A43 43 0 0 1 35 22" fill="none" stroke="#637285" stroke-width="2"/><line class="needle" id="needle-hp" x1="0" y1="12" x2="17" y2="-34" stroke="#10233c" stroke-width="5" stroke-linecap="round"/><circle r="7" fill="#10233c"/><text y="35" text-anchor="middle" class="svg-small">HP</text></g>
+                  <path d="M57 151 Q57 138 70 138 H270 Q283 138 283 151 V218 H57z" fill="#d5dee4" stroke="#10233c" stroke-width="4"/>
+                  <g id="svg-manifold-bp" transform="translate(80 177)"><circle r="21" class="knob blue"/><line y1="-15" y2="15" class="knob-line"/></g>
+                  <g id="svg-manifold-vac" transform="translate(140 177)"><circle r="21" class="knob black"/><line y1="-15" y2="15" class="knob-line"/></g>
+                  <g id="svg-manifold-service" transform="translate(200 177)"><circle r="21" class="knob yellow"/><line y1="-15" y2="15" class="knob-line"/></g>
+                  <g id="svg-manifold-hp" transform="translate(260 177)"><circle r="21" class="knob red"/><line y1="-15" y2="15" class="knob-line"/></g>
+                  <text x="80" y="212" text-anchor="middle" class="svg-small">BP</text><text x="140" y="212" text-anchor="middle" class="svg-small">VIDE</text><text x="200" y="212" text-anchor="middle" class="svg-small">SERVICE</text><text x="260" y="212" text-anchor="middle" class="svg-small">HP</text>
+                  <g fill="#aab7c1" stroke="#10233c" stroke-width="3"><rect x="70" y="218" width="20" height="23" rx="4"/><rect x="130" y="218" width="20" height="23" rx="4"/><rect x="190" y="218" width="20" height="23" rx="4"/><rect x="250" y="218" width="20" height="23" rx="4"/></g>
+                  <circle cx="80" cy="248" r="9" class="socket"/><circle cx="140" cy="248" r="9" class="socket"/><circle cx="200" cy="248" r="9" class="socket"/><circle cx="260" cy="248" r="9" class="socket"/>
+                </g>
+
+                <g id="equipment-station" transform="translate(745 34)" filter="url(#softShadow)">
+                  <path class="equipment-frame" d="M28 43 Q28 15 58 15 H211 Q241 15 241 43 L259 93 V271 Q259 291 239 291 H22 Q2 291 2 271 V93z" fill="#6c7780" stroke="#10233c" stroke-width="4"/>
+                  <path d="M62 47 Q62 3 105 3 H169 Q212 3 212 47" fill="none" stroke="#10233c" stroke-width="15" stroke-linecap="round"/>
+                  <path d="M37 51 H222 L243 101 V251 H17 V101z" fill="url(#machineFill)" stroke="#10233c" stroke-width="4"/>
+                  <text x="130" y="40" text-anchor="middle" class="svg-title">MINIMAX-E</text>
+                  <g transform="translate(84 91)"><circle r="37" fill="#d8e2e9" stroke="#10233c" stroke-width="4"/><circle r="31" fill="#fff" stroke="#3d7fca" stroke-width="4"/><path d="M-22 15A27 27 0 0 1 22 15M-21-10l7 4M0-26v7M21-10l-7 4" fill="none" stroke="#637285" stroke-width="2"/><line x1="0" y1="7" x2="-10" y2="-18" stroke="#10233c" stroke-width="4"/><circle r="5" fill="#10233c"/><text y="23" text-anchor="middle" class="svg-micro">IN</text></g>
+                  <g transform="translate(176 91)"><circle r="37" fill="#d8e2e9" stroke="#10233c" stroke-width="4"/><circle r="31" fill="#fff" stroke="#c0392b" stroke-width="4"/><path d="M-22 15A27 27 0 0 1 22 15M-21-10l7 4M0-26v7M21-10l-7 4" fill="none" stroke="#637285" stroke-width="2"/><line x1="0" y1="7" x2="10" y2="-18" stroke="#10233c" stroke-width="4"/><circle r="5" fill="#10233c"/><text y="23" text-anchor="middle" class="svg-micro">OUT</text></g>
+                  <text x="130" y="129" text-anchor="middle" class="svg-small">RÉCUP.</text>
+                  <g transform="translate(130 157)"><circle r="22" class="knob black"/><line id="svg-station-mode" y1="-16" y2="15" class="knob-line"/></g>
+                  <text x="130" y="194" text-anchor="middle" class="svg-small">PURGE</text>
+                  <text x="41" y="145" class="svg-micro">OPEN</text><text x="78" y="159" class="svg-micro">LIQUIDE</text><text x="39" y="197" class="svg-micro">FERMÉE</text>
+                  <g transform="translate(66 176)"><circle r="23" class="knob blue"/><line id="svg-station-in" y1="-17" y2="16" class="knob-line"/></g><text x="66" y="211" text-anchor="middle" class="svg-small">IN</text>
+                  <text x="196" y="145" class="svg-micro">OPEN</text><text x="188" y="197" class="svg-micro">FERMÉE</text>
+                  <g transform="translate(196 176)"><circle r="23" class="knob red"/><line id="svg-station-out" y1="-17" y2="16" class="knob-line"/></g><text x="196" y="211" text-anchor="middle" class="svg-small">OUT</text>
+                  <path d="M31 221 H229 V258 H31z" fill="#e9eef2" stroke="#10233c" stroke-width="3"/>
+                  <rect x="47" y="226" width="25" height="27" rx="4" fill="#10233c"/><text x="59" y="271" text-anchor="middle" class="svg-small">POWER</text>
+                  <circle cx="130" cy="239" r="15" fill="#ff6b35" stroke="#10233c" stroke-width="4"/><text x="130" y="271" text-anchor="middle" class="svg-small">START</text>
+                  <circle cx="205" cy="239" r="8" fill="#1e7e54" stroke="#10233c" stroke-width="3"/><text x="205" y="271" text-anchor="middle" class="svg-small">MARCHE</text>
+                  <g transform="translate(17 250)"><rect x="-8" y="-9" width="29" height="18" rx="5" fill="#aab7c1" stroke="#10233c" stroke-width="3"/><circle cx="-10" r="10" class="socket"/></g>
+                  <g transform="translate(243 250)"><rect x="-21" y="-9" width="29" height="18" rx="5" fill="#aab7c1" stroke="#10233c" stroke-width="3"/><circle cx="10" r="10" class="socket"/></g>
+                </g>
+
+                <g id="equipment-pump" transform="translate(375 388)" filter="url(#softShadow)">
+                  <path class="equipment-frame" d="M20 78 Q20 61 37 61 H230 Q247 61 247 78 V165 H20z" fill="url(#machineFill)" stroke="#10233c" stroke-width="4"/>
+                  <path d="M54 62 V27 Q54 15 67 15 H175 Q188 15 188 27 V62" fill="none" stroke="#10233c" stroke-width="13" stroke-linejoin="round"/>
+                  <path d="M35 83 H108 V151 H35z" fill="#61717e" stroke="#10233c" stroke-width="4"/>
+                  <circle cx="71" cy="118" r="25" fill="#fffdf8" stroke="#10233c" stroke-width="4"/><circle cx="71" cy="118" r="13" fill="#f3c24f" stroke="#10233c" stroke-width="3"/><path d="M56 118h30" stroke="#637285" stroke-width="3"/>
+                  <path d="M109 79 H205 Q225 79 225 99 V145 H109z" fill="#c6d2da" stroke="#10233c" stroke-width="4"/>
+                  <g stroke="#637285" stroke-width="5"><path d="M124 88v50M140 88v50M156 88v50M172 88v50M188 88v50"/></g>
+                  <rect x="205" y="94" width="29" height="43" rx="8" fill="#10233c"/>
+                  <path d="M32 70 V48 H61" fill="none" stroke="#aab7c1" stroke-width="10"/><circle cx="33" cy="46" r="10" class="socket"/>
+                  <g transform="translate(221 61)"><circle r="17" class="knob black"/><line id="svg-pump-iso" y1="-12" y2="12" class="knob-line"/></g>
+                  <text x="220" y="34" text-anchor="middle" class="svg-small">ISOLEMENT</text>
+                  <rect x="43" y="165" width="48" height="13" rx="5" fill="#10233c"/><rect x="181" y="165" width="48" height="13" rx="5" fill="#10233c"/>
+                  <text x="134" y="202" text-anchor="middle" class="svg-title">POMPE À VIDE</text>
+                </g>
+
+                <g id="equipment-bottle" transform="translate(910 363)" filter="url(#softShadow)">
+                  <path class="equipment-frame" d="M58 160 V72 Q58 35 96 35 H164 Q202 35 202 72 V160z" fill="url(#cylinderFill)" stroke="#1b3a63" stroke-width="4"/>
+                  <path d="M96 35 V10 H164 V35" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+                  <path d="M77 69 Q77 48 101 48" fill="none" stroke="#fff" stroke-opacity=".82" stroke-width="8" stroke-linecap="round"/>
+                  <g transform="translate(108 10)"><circle r="16" class="knob blue"/><line id="svg-bottle-vapor" y1="-11" y2="11" class="knob-line"/></g>
+                  <g transform="translate(152 10)"><circle r="16" class="knob red"/><line id="svg-bottle-liquid" y1="-11" y2="11" class="knob-line"/></g>
+                  <text x="108" y="-17" text-anchor="middle" class="svg-tiny">VAPEUR</text><text x="152" y="-17" text-anchor="middle" class="svg-tiny">LIQUIDE</text>
+                  <rect x="67" y="98" width="126" height="40" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="130" y="115" text-anchor="middle" class="svg-tiny">BOUTEILLE</text><text x="130" y="130" text-anchor="middle" class="svg-tiny">DE TRANSFERT</text>
+                  <rect x="20" y="165" width="220" height="24" rx="8" fill="#1b3a63"/>
+                  <rect x="0" y="193" width="260" height="49" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="130" y="211" text-anchor="middle" class="svg-small">BALANCE · SCÉNARIO</text><text id="svg-balance" x="130" y="235" text-anchor="middle" class="svg-value">12,00 kg</text>
+                </g>
+
+                <g id="equipment-vacuum" transform="translate(654 402)" filter="url(#softShadow)"><path class="equipment-frame" d="M27 14 Q27 2 39 2 H175 Q187 2 187 14 V151 H27z" fill="#4b5864" stroke="#10233c" stroke-width="4"/><path d="M52 2 Q52-18 72-18H143Q163-18 163 2" fill="none" stroke="#10233c" stroke-width="10"/><text x="107" y="31" text-anchor="middle" fill="#fff" class="svg-title light">VACUOMÈTRE</text><rect x="43" y="43" width="128" height="60" rx="8" fill="#102b38" stroke="#a6c5d7" stroke-width="3"/><text id="svg-vacuum" x="107" y="80" text-anchor="middle" fill="#d8ff7c" class="svg-value">—</text><text x="107" y="98" text-anchor="middle" fill="#fff" class="svg-micro">MESURE DU VIDE</text><circle cx="61" cy="124" r="9" fill="#f6bd34"/><circle cx="107" cy="124" r="9" fill="#3d7fca"/><circle cx="153" cy="124" r="9" fill="#c0392b"/><rect x="93" y="151" width="28" height="19" rx="5" fill="#aab7c1" stroke="#10233c" stroke-width="3"/><circle cx="107" cy="173" r="9" class="socket"/></g>
+              </symbol>
+            </defs>
+
+            <use href="#scene-background" x="0" y="0" width="1200" height="620"></use>
+            <g class="hoses" aria-hidden="true">
+              <path id="hose-path-blue" class="hose blue-hose" d="M470 302 C420 320 365 270 296 205"/>
+              <path id="hose-path-red" class="hose red-hose" d="M644 302 C560 314 430 238 296 136"/>
+              <path id="hose-path-black" class="hose black-hose" d="M522 290 C500 350 455 400 408 434"/>
+              <path id="hose-path-yellow" class="hose yellow-hose" d="M585 302 C650 340 730 350 773 293"/>
+              <path id="hose-path-orange" class="hose orange-hose" d="M985 293 C1060 314 1052 345 1018 373"/>
+              <circle id="flow-blue" class="flow-dot" r="7"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#hose-path-blue"/></animateMotion></circle>
+              <circle id="flow-red" class="flow-dot" r="7"><animateMotion dur="1.6s" repeatCount="indefinite"><mpath href="#hose-path-red"/></animateMotion></circle>
+              <circle id="flow-yellow" class="flow-dot" r="7"><animateMotion dur="1.2s" repeatCount="indefinite"><mpath href="#hose-path-yellow"/></animateMotion></circle>
+              <circle id="flow-orange" class="flow-dot" r="7"><animateMotion dur="1.1s" repeatCount="indefinite"><mpath href="#hose-path-orange"/></animateMotion></circle>
+            </g>
+
+            <g class="direct-controls" aria-label="Commandes à actionner directement sur les appareils">
+              <g class="svg-control-hit machine-target service-control" data-machine-target data-port="install-discharge" data-control="service-discharge" transform="translate(149 139)" role="button" tabindex="0" aria-label="A · vanne de service refoulement">
+                <circle class="hit-area" r="29"/><circle class="service-face hp" r="18"/><text class="service-letter" y="5">A</text><line id="svg-service-discharge" class="service-handle" x1="-12" x2="12"/><use href="#hit-help"/>
+              </g>
+              <g class="svg-control-hit machine-target service-control" data-machine-target data-port="install-hp" data-control="service-hp" transform="translate(296 136)" role="button" tabindex="0" aria-label="B · vanne de service départ liquide">
+                <circle class="hit-area" r="29"/><circle class="service-face hp" r="18"/><text class="service-letter" y="5">B</text><line id="svg-service-hp" class="service-handle" x1="-12" x2="12"/><use href="#hit-help"/>
+              </g>
+              <g class="svg-control-hit machine-target service-control" data-machine-target data-port="install-bp" data-control="service-bp" transform="translate(296 205)" role="button" tabindex="0" aria-label="C · vanne de service aspiration">
+                <circle class="hit-area" r="29"/><circle class="service-face bp" r="18"/><text class="service-letter" y="5">C</text><line id="svg-service-bp" class="service-handle" x1="-12" x2="12"/><use href="#hit-help"/>
+              </g>
+
+              <g class="svg-control-hit" data-control="manifold-bp" transform="translate(462 219)" role="button" tabindex="0" aria-label="Vanne BP du manifold"><circle class="hit-area" r="29"/><use href="#hit-help"/></g>
+              <g class="svg-control-hit" data-control="manifold-vac" transform="translate(522 219)" role="button" tabindex="0" aria-label="Vanne vide du manifold"><circle class="hit-area" r="29"/><use href="#hit-help"/></g>
+              <g class="svg-control-hit" data-control="manifold-service" transform="translate(582 219)" role="button" tabindex="0" aria-label="Vanne service du manifold"><circle class="hit-area" r="29"/><use href="#hit-help"/></g>
+              <g class="svg-control-hit" data-control="manifold-hp" transform="translate(642 219)" role="button" tabindex="0" aria-label="Vanne HP du manifold"><circle class="hit-area" r="29"/><use href="#hit-help"/></g>
+
+              <g class="svg-control-hit" data-control="station-in" transform="translate(811 210)" role="button" tabindex="0" aria-label="Sélecteur bleu entrée de la station"><circle class="hit-area" r="32"/><use href="#hit-help"/></g>
+              <g class="svg-control-hit" data-control="station-mode" transform="translate(875 191)" role="button" tabindex="0" aria-label="Sélecteur noir récupération purge"><circle class="hit-area" r="31"/><use href="#hit-help"/></g>
+              <g class="svg-control-hit" data-control="station-out" transform="translate(941 210)" role="button" tabindex="0" aria-label="Sélecteur rouge sortie de la station"><circle class="hit-area" r="32"/><use href="#hit-help"/></g>
+              <g class="svg-control-hit" data-control="station-power" transform="translate(804 273)" role="button" tabindex="0" aria-label="Interrupteur Power de la station"><rect class="hit-area" x="-24" y="-23" width="48" height="46" rx="8"/><use href="#hit-help"/></g>
+              <g class="svg-control-hit" data-control="station-run" transform="translate(875 273)" role="button" tabindex="0" aria-label="Bouton Start Stop de la station"><circle class="hit-area" r="28"/><use href="#hit-help"/></g>
+
+              <g class="svg-port-hit" data-port="pump" transform="translate(408 434)" role="button" tabindex="0" aria-label="Raccord de la pompe à vide"><circle class="port-face" r="15"/><text y="5">+</text><use href="#hit-help"/></g>
+              <g class="svg-control-hit" data-control="pump-iso" transform="translate(596 449)" role="button" tabindex="0" aria-label="Vanne d'isolement de la pompe"><circle class="hit-area" r="27"/><use href="#hit-help"/></g>
+              <g class="svg-control-hit" data-control="pump-power" transform="translate(580 505)" role="button" tabindex="0" aria-label="Interrupteur de la pompe à vide"><rect class="hit-area" x="-31" y="-25" width="62" height="50" rx="8"/><use href="#hit-help"/></g>
+
+              <g class="svg-port-hit" data-port="station-in" transform="translate(752 284)" role="button" tabindex="0" aria-label="Raccord entrée station"><circle class="port-face" r="15"/><text y="5">+</text><use href="#hit-help"/></g>
+              <g class="svg-control-hit machine-target" data-machine-target data-port="bottle-vapor" data-control="bottle-vapor" transform="translate(1018 373)" role="button" tabindex="0" aria-label="Robinet vapeur et raccord vapeur de la bouteille"><circle class="hit-area" r="27"/><use href="#hit-help"/></g>
+              <g class="svg-control-hit machine-target" data-machine-target data-port="bottle-liquid" data-control="bottle-liquid" transform="translate(1062 373)" role="button" tabindex="0" aria-label="Robinet liquide et raccord liquide de la bouteille"><circle class="hit-area" r="27"/><use href="#hit-help"/></g>
+
+              <g class="svg-control-hit mini-valve" data-control="mini-blue" data-mini-for="blue" transform="translate(330 229)" role="button" tabindex="0" aria-label="Mini-vanne du flexible bleu, côté installation"><circle class="mini-body" r="15"/><line id="svg-mini-blue" class="mini-handle" x1="-12" x2="12"/><text y="31">MINI</text><use href="#hit-help"/></g>
+              <g class="svg-control-hit mini-valve" data-control="mini-red" data-mini-for="red" transform="translate(330 165)" role="button" tabindex="0" aria-label="Mini-vanne du flexible rouge, côté installation"><circle class="mini-body" r="15"/><line id="svg-mini-red" class="mini-handle" x1="-12" x2="12"/><text y="31">MINI</text><use href="#hit-help"/></g>
+              <g class="svg-control-hit mini-valve" data-control="mini-black" data-mini-for="black" transform="translate(434 409)" role="button" tabindex="0" aria-label="Mini-vanne du flexible noir, côté pompe"><circle class="mini-body" r="15"/><line id="svg-mini-black" class="mini-handle" x1="-12" x2="12"/><text y="31">MINI</text><use href="#hit-help"/></g>
+              <g class="svg-control-hit mini-valve" data-control="mini-yellow" data-mini-for="yellow" transform="translate(735 319)" role="button" tabindex="0" aria-label="Mini-vanne du flexible jaune, côté station"><circle class="mini-body" r="15"/><line id="svg-mini-yellow" class="mini-handle" x1="-12" x2="12"/><text y="31">MINI</text><use href="#hit-help"/></g>
+              <g class="svg-control-hit mini-valve" data-control="mini-orange" data-mini-for="orange" transform="translate(1015 337)" role="button" tabindex="0" aria-label="Mini-vanne du flexible de sortie, côté bouteille"><circle class="mini-body" r="15"/><line id="svg-mini-orange" class="mini-handle" x1="-12" x2="12"/><text y="31">MINI</text><use href="#hit-help"/></g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="control-dock" id="control-dock">
+          <nav class="equipment-tabs" aria-label="Afficher l'état d'un équipement">
+            <button type="button" class="equipment-tab active" data-equipment-tab="hoses" aria-pressed="true"><span>1</span>Flexibles</button>
+            <button type="button" class="equipment-tab" data-equipment-tab="manifold" aria-pressed="false"><span>2</span>Manifold 4 voies</button>
+            <button type="button" class="equipment-tab" data-equipment-tab="station" aria-pressed="false"><span>3</span>Station Minimax-E</button>
+            <button type="button" class="equipment-tab" data-equipment-tab="utility" aria-pressed="false"><span>4</span>Bouteille & vide</button>
+          </nav>
+
+          <section class="control-panel hose-rack active" data-equipment-panel="hoses" aria-labelledby="hose-title">
+            <h2 id="hose-title">Flexibles</h2>
+            <div class="hose-buttons">
+              <button type="button" class="hose-button blue" data-hose="blue"><span class="hose-swatch"></span><span class="hose-copy">Bleu · BP<small data-mini-status="mini-blue">Mini-vanne fermée</small></span></button>
+              <button type="button" class="hose-button red" data-hose="red"><span class="hose-swatch"></span><span class="hose-copy">Rouge · HP<small data-mini-status="mini-red">Mini-vanne fermée</small></span></button>
+              <button type="button" class="hose-button black" data-hose="black"><span class="hose-swatch"></span><span class="hose-copy">Noir · vide<small data-mini-status="mini-black">Mini-vanne fermée</small></span></button>
+              <button type="button" class="hose-button yellow" data-hose="yellow"><span class="hose-swatch"></span><span class="hose-copy">Jaune · station<small data-mini-status="mini-yellow">Mini-vanne fermée</small></span></button>
+              <button type="button" class="hose-button orange" data-hose="orange"><span class="hose-swatch"></span><span class="hose-copy">Sortie · bouteille<small data-mini-status="mini-orange">Mini-vanne fermée</small></span></button>
+            </div>
+          </section>
+
+          <section class="control-panel controls manifold-controls" data-equipment-panel="manifold" aria-labelledby="manifold-title" hidden>
+            <h2 id="manifold-title">Témoin · cliquez sur le manifold dessiné</h2>
+            <div class="control-grid four">
+              <button type="button" data-control="manifold-bp"><i class="control-knob blue"></i><span>BP</span><strong>FERMÉE</strong></button>
+              <button type="button" data-control="manifold-vac"><i class="control-knob black"></i><span>VIDE</span><strong>FERMÉE</strong></button>
+              <button type="button" data-control="manifold-service"><i class="control-knob yellow"></i><span>SERVICE</span><strong>FERMÉE</strong></button>
+              <button type="button" data-control="manifold-hp"><i class="control-knob red"></i><span>HP</span><strong>FERMÉE</strong></button>
+            </div>
+          </section>
+
+          <section class="control-panel controls station-controls" data-equipment-panel="station" aria-labelledby="station-title" hidden>
+            <h2 id="station-title">Témoin · cliquez sur la Minimax-E dessinée</h2>
+            <div class="control-grid station-grid">
+              <button type="button" data-control="station-in"><i class="control-knob blue"></i><span>ENTRÉE</span><strong>FERMÉE</strong></button>
+              <button type="button" data-control="station-mode"><i class="control-knob black"></i><span>MODE</span><strong>RÉCUP.</strong></button>
+              <button type="button" data-control="station-out"><i class="control-knob red"></i><span>SORTIE</span><strong>FERMÉE</strong></button>
+              <button type="button" data-control="station-power"><i class="switch-icon"></i><span>POWER</span><strong>ARRÊT</strong></button>
+              <button type="button" data-control="station-run"><i class="start-icon"></i><span>START</span><strong>STOP</strong></button>
+            </div>
+          </section>
+
+          <section class="control-panel controls utility-controls" data-equipment-panel="utility" aria-labelledby="utility-title" hidden>
+            <h2 id="utility-title">Témoin · cliquez sur l'appareil dessiné</h2>
+            <div class="control-grid utility-grid">
+              <button type="button" data-control="bottle-vapor"><i class="control-knob blue"></i><span>VAPEUR</span><strong>FERMÉE</strong></button>
+              <button type="button" data-control="bottle-liquid"><i class="control-knob red"></i><span>LIQUIDE</span><strong>FERMÉE</strong></button>
+              <button type="button" data-control="pump-iso"><i class="control-knob black"></i><span>ISOLEMENT</span><strong>FERMÉE</strong></button>
+              <button type="button" data-control="pump-power"><i class="pump-icon"></i><span>POMPE</span><strong>ARRÊT</strong></button>
+            </div>
+          </section>
+        </div>
+      </section>
+    </section>
+
+    <section class="summary" id="summary" hidden aria-labelledby="summary-title">
+      <p class="eyebrow">BILAN D'ENTRAÎNEMENT</p>
+      <h1 id="summary-title">La chaîne est terminée</h1>
+      <p id="summary-message"></p>
+      <div class="summary-grid">
+        <div><strong id="summary-valid">0</strong><span>gestes validés</span></div>
+        <div><strong id="summary-errors">0</strong><span>erreurs repérées</span></div>
+        <div><strong id="summary-hints">0</strong><span>aides utilisées</span></div>
+        <div><strong>2,30 kg</strong><span>masse récupérée dans le scénario</span></div>
+      </div>
+      <div class="final-sequence" aria-label="Résumé de la séquence"><span>Raccorder</span><b>→</b><span>Mettre au vide</span><b>→</b><span>Récupérer</span><b>→</b><span>Auto-purger</span><b>→</b><span>Peser</span><b>→</b><span>Tirer au vide</span></div>
+      <p class="summary-warning"><strong>Ce résultat n'est pas l'examen officiel.</strong> Le passage au fluide réel exige la validation du formateur, les EPI et les notices du plateau.</p>
+      <div class="summary-actions"><button class="primary-button" id="retry-button" type="button">Refaire ce mode</button><button class="secondary-button" id="other-mode-button" type="button">Essayer l'autre mode</button><button class="secondary-button" id="summary-home-button" type="button">Revenir à l'accueil</button></div>
+    </section>
+  </main>
+
+  <script src="app.js?v=20260812-10"></script>
+  <script src="../../../../moteur/lisibilite.js?v=20260810-1"></script>
+  <script src="../../../../moteur/marque.js?v=20260810-1"></script>
+</body>
+</html>

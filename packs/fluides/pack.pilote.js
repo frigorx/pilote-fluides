@@ -176,6 +176,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.04",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-04-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Croix frigoriste",
+     "chemin": "illustrations/croix-frigoriste.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -202,6 +219,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.02",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -225,6 +254,23 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g1a",
    "code": "1.01",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-01-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Pression absolue relative",
+     "chemin": "illustrations/pression-absolue-relative.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Pression temperature interactive",
+     "chemin": "pression-temperature-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -252,6 +298,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.03",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-03-7CE9B528.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Bulle rosee",
+     "chemin": "illustrations/bulle-rosee.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Pression temperature interactive",
+     "chemin": "pression-temperature-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -278,6 +341,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.03",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-03-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Diagramme logph",
+     "chemin": "illustrations/diagramme-logph.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Pression temperature interactive",
+     "chemin": "pression-temperature-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -304,6 +384,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.02",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-02-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La chaleur surchauffe sousrefroidissement",
+     "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -330,6 +422,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.02",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur interactive",
+     "chemin": "chaleur-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -356,6 +460,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.04",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-04-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -382,6 +498,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.04",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-04-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -408,6 +536,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.02",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-02-F6773E86.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur circuit interactif",
+     "chemin": "chaleur-circuit-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -434,6 +574,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.02",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-02-819DA516.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur circuit interactif",
+     "chemin": "chaleur-circuit-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -460,6 +612,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.04",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-04-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -486,6 +650,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.04",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-04-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -512,6 +688,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.04",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-04-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur circuit interactif",
+     "chemin": "chaleur-circuit-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -538,6 +726,17 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.04",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/enu-bibliotheque-symboles-svg-frigo-schema-detendeur-thermo-ext-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Le circuit detendeur",
+     "chemin": "illustrations/le-circuit_detendeur.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -564,6 +763,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.04",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur circuit interactif",
+     "chemin": "chaleur-circuit-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -590,6 +801,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.03",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-03-7CE9B528.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Diagramme logph",
+     "chemin": "illustrations/diagramme-logph.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -616,6 +839,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g1a",
    "code": "1.03",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-03-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Diagramme logph",
+     "chemin": "illustrations/diagramme-logph.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Saturation deux sens",
+     "chemin": "illustrations/saturation-deux-sens.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -638,7 +878,19 @@ window.PILOTE_PACK = {
    "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g1c",
-   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
   },
   {
    "id": "q-g1-33",
@@ -656,7 +908,24 @@ window.PILOTE_PACK = {
    "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g1c",
-   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "Nomenclature",
+     "chemin": "illustrations/nomenclature.svg"
+    }
+   ]
   },
   {
    "id": "q-g1-34",
@@ -675,6 +944,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g1c",
    "code": "1.02",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -697,7 +978,19 @@ window.PILOTE_PACK = {
    "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g1c",
-   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
   },
   {
    "id": "q-g1-41",
@@ -715,7 +1008,19 @@ window.PILOTE_PACK = {
    "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g1c",
-   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
   },
   {
    "id": "q-g1-45",
@@ -734,6 +1039,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g1c",
    "code": "1.07",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-07-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -757,7 +1074,19 @@ window.PILOTE_PACK = {
    "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g1c",
-   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
   },
   {
    "id": "q-g1-v6_031",
@@ -778,7 +1107,24 @@ window.PILOTE_PACK = {
     "texte": "Règle de nomenclature : centaines = C−1, dizaines = H+1, unités = F. Ex: R134a → C=1+1=2, H=3−1=2, F=4."
    },
    "remediation_vers": "g1c",
-   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "Nomenclature",
+     "chemin": "illustrations/nomenclature.svg"
+    }
+   ]
   },
   {
    "id": "q-g1-v6_132",
@@ -799,7 +1145,19 @@ window.PILOTE_PACK = {
     "texte": "Le R410A est un mélange quasi-azéotrope de R32 (50%) + R125 (50%). Ses hautes pressions le distinguent."
    },
    "remediation_vers": "g1c",
-   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
   },
   {
    "id": "q-g1-v6_137",
@@ -820,7 +1178,19 @@ window.PILOTE_PACK = {
     "texte": "Le R12 (dichlorodifluorométhane) est un CFC interdit depuis 1995. Il détruit la couche d'ozone (ODP élevé)."
    },
    "remediation_vers": "g1c",
-   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B"
+   "hors_ref": "nomenclature des fluides : savoir-outil indispensable, mais non listé comme compétence à l'annexe II.B",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
   },
   {
    "id": "q-g2-v6_001",
@@ -842,6 +1212,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2",
    "code": "2.02",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Prp regle serre",
+     "chemin": "illustrations/prp-regle-serre.svg"
+    },
+    {
+     "type": "outil",
+     "libelle": "Fiche fluide",
+     "chemin": "outils/fiche-fluide.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -866,6 +1253,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g2a",
    "code": "2.01",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-01-7041C98E.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -893,6 +1292,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.01",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-01-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -920,6 +1331,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.02",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-02-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -947,6 +1370,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2",
    "code": "2.02",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Prp regle serre",
+     "chemin": "illustrations/prp-regle-serre.svg"
+    },
+    {
+     "type": "outil",
+     "libelle": "Fiche fluide",
+     "chemin": "outils/fiche-fluide.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -974,6 +1414,11 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2",
    "code": "2.02",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-02-E32EF21D.png",
+   "pose_niveau": "cours",
    "categories": [
     "A1",
     "A2",
@@ -1001,6 +1446,11 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2",
    "code": "2.02",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+   "pose_niveau": "cours",
    "categories": [
     "A1",
     "A2",
@@ -1028,6 +1478,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.01",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-01-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1055,6 +1517,11 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.01",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-01-7041C98E.png",
+   "pose_niveau": "cours",
    "categories": [
     "A1",
     "A2",
@@ -1082,6 +1549,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.01",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-01-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Prp regle serre",
+     "chemin": "illustrations/prp-regle-serre.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1109,6 +1588,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.01",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-01-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1136,6 +1627,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.01",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-01-7041C98E.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Prp regle serre",
+     "chemin": "illustrations/prp-regle-serre.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1163,6 +1666,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.01",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-01-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Prp regle serre",
+     "chemin": "illustrations/prp-regle-serre.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1190,6 +1705,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.01",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-01-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1217,6 +1744,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.02",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-02-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Autorises hfo naturels",
+     "chemin": "illustrations/autorises-hfo-naturels.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1244,6 +1783,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.01",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-01-7041C98E.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1271,6 +1822,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.02",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "outil",
+     "libelle": "Fiche fluide",
+     "chemin": "outils/fiche-fluide.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1298,6 +1861,11 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g2a",
    "code": "2.01",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-01-304B1178.png",
+   "pose_niveau": "cours",
    "categories": [
     "A1",
     "A2",
@@ -1322,6 +1890,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g2",
    "code": "2.02",
+   "chapitre": "02",
+   "chapitre_titre": "Incidence environnementale & réglementations",
+   "chapitre_fichier": "CONTENU-02-G2-environnement.md",
+   "illustration": "illustrations/sup-cours-2-02-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "outil",
+     "libelle": "Fiche fluide",
+     "chemin": "outils/fiche-fluide.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1349,6 +1929,22 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g3",
    "code": "3.04",
+   "chapitre": "03",
+   "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+   "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide",
+     "chemin": "illustrations/tirage-au-vide.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Tirage au vide deux degats eau",
+     "chemin": "illustrations/tirage-au-vide_deux-degats-eau.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -1374,6 +1970,17 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g3",
    "code": "3.04",
+   "chapitre": "03",
+   "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+   "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide courbes remontee",
+     "chemin": "illustrations/tirage-au-vide_courbes-remontee.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -1399,6 +2006,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g3",
    "code": "3.01",
+   "chapitre": "03",
+   "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+   "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+   "illustration": "illustrations/sup-cours-3-01-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Epreuve azote",
+     "chemin": "illustrations/epreuve-azote.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -1424,6 +2043,17 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g3",
    "code": "3.03",
+   "chapitre": "03",
+   "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+   "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide compresseur pas pompe",
+     "chemin": "illustrations/tirage-au-vide_compresseur-pas-pompe.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1447,6 +2077,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g3",
    "code": "1.02",
+   "chapitre": "03",
+   "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+   "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+   "illustration": "illustrations/sup-cours-1-02-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Courbe saturation eau",
+     "chemin": "illustrations/courbe-saturation-eau.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1473,6 +2115,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "4.04",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/sup-cours-4-04-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite ou lire",
+     "chemin": "illustrations/controle-etancheite_ou-lire.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1499,6 +2158,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "4.07",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/sup-cours-4-07-A6CE7C28.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1525,6 +2196,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "4.08",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/bib-001-l-outillage-du-frigoriste-unlocked-b-4e4e1981.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations balayage detecteur svg.svg",
+     "chemin": "illustrations/balayage-detecteur.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1551,6 +2239,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "4.08",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/bib-001-l-outillage-du-frigoriste-unlocked-b-4e4e1981.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1577,6 +2277,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "4.08",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/bib-001-l-outillage-du-frigoriste-unlocked-b-4e4e1981.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1606,6 +2318,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "4.03",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/sup-cours-4-03-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite registre",
+     "chemin": "illustrations/controle-etancheite_registre.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1635,6 +2364,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "4.03",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/sup-cours-4-03-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Points de fuite",
+     "chemin": "illustrations/points-de-fuite.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1664,6 +2410,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "4.06",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/sup-cours-4-06-A6CE7C28.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Balayage detecteur",
+     "chemin": "illustrations/balayage-detecteur.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -1689,6 +2447,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "1.00",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite registre",
+     "chemin": "illustrations/controle-etancheite_registre.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1719,6 +2489,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "1.00",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite registre",
+     "chemin": "illustrations/controle-etancheite_registre.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1746,6 +2528,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "4.06",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/sup-cours-4-06-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite recontrole",
+     "chemin": "illustrations/controle-etancheite_recontrole.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -1774,6 +2568,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g4b",
    "code": "4.03",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/sup-cours-4-03-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1800,6 +2606,28 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.02",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-bouteille-de-recuperation-fleche-de-tran-3BBF9BDE.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Secu bouteille",
+     "chemin": "illustrations/secu-bouteille.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Mission bouteilles",
+     "chemin": "mission-bouteilles/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations bouteille deux robinets svg.svg",
+     "chemin": "illustrations/bouteille-deux-robinets.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1826,6 +2654,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-bouteille-de-recuperation-fleche-de-tran-3BBF9BDE.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Mission bouteilles",
+     "chemin": "mission-bouteilles/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "habilitation contenus illustrations la recuperation une bouteille un fluide svg.svg",
+     "chemin": "illustrations/la-recuperation_une-bouteille-un-fluide.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1852,6 +2697,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.05",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-05-819DA516.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation liquide vapeur",
+     "chemin": "illustrations/la-recuperation_liquide-vapeur.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1878,6 +2735,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.06",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-06-D7A129ED.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Pesee charge",
+     "chemin": "illustrations/pesee-charge.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1904,6 +2773,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation trois mots",
+     "chemin": "illustrations/la-recuperation_trois-mots.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations recuperation svg.svg",
+     "chemin": "illustrations/recuperation.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1930,6 +2816,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation trois mots",
+     "chemin": "illustrations/la-recuperation_trois-mots.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1956,6 +2854,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation trois mots",
+     "chemin": "illustrations/la-recuperation_trois-mots.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "La recuperation retour machine",
+     "chemin": "illustrations/la-recuperation_retour-machine.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -1979,6 +2894,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g5a",
    "code": "5.04",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-04-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation deux papiers",
+     "chemin": "illustrations/la-recuperation_deux-papiers.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2005,6 +2932,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Recuperation",
+     "chemin": "illustrations/recuperation.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2028,6 +2967,23 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g5a",
    "code": "5.03",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-03-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Mission bouteilles",
+     "chemin": "mission-bouteilles/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations recuperation svg.svg",
+     "chemin": "illustrations/recuperation.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2054,6 +3010,22 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.01",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/photo-manometres-hp-bp.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Circuit complet manifold",
+     "chemin": "illustrations/circuit-complet-manifold.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Manifold lecture",
+     "chemin": "illustrations/manifold-lecture.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2080,6 +3052,22 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.01",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/photo-manometres-hp-bp.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Circuit complet manifold",
+     "chemin": "illustrations/circuit-complet-manifold.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Manifold lecture",
+     "chemin": "illustrations/manifold-lecture.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2106,6 +3094,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.03",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-03-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Recuperation",
+     "chemin": "illustrations/recuperation.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2132,6 +3132,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.05",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-05-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Pesee charge",
+     "chemin": "illustrations/pesee-charge.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2158,6 +3170,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.07",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation deux papiers",
+     "chemin": "illustrations/la-recuperation_deux-papiers.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2184,6 +3208,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.07",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation deux papiers",
+     "chemin": "illustrations/la-recuperation_deux-papiers.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2210,6 +3246,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation deux papiers",
+     "chemin": "illustrations/la-recuperation_deux-papiers.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2233,6 +3281,17 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/bouteille-recuperation-verte.jpg",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Recuperation",
+     "chemin": "illustrations/recuperation.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2256,6 +3315,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation la trace",
+     "chemin": "illustrations/la-recuperation_la-trace.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2279,6 +3350,23 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-bouteille-de-fluide-derriere-une-barrier-302EC180.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Plaque bouteille",
+     "chemin": "illustrations/plaque-bouteille.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Secu bouteille",
+     "chemin": "illustrations/secu-bouteille.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2302,6 +3390,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation la trace",
+     "chemin": "illustrations/la-recuperation_la-trace.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2328,6 +3428,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation la trace",
+     "chemin": "illustrations/la-recuperation_la-trace.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2354,6 +3466,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g5a",
    "code": "5.05",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-05-D7A129ED.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation liquide vapeur",
+     "chemin": "illustrations/la-recuperation_liquide-vapeur.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2377,6 +3501,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation la trace",
+     "chemin": "illustrations/la-recuperation_la-trace.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -2400,6 +3536,10 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g5a",
    "code": "5.08",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/photo-compresseur-hermetique.png",
    "categories": [
     "A1",
     "A2",
@@ -2426,6 +3566,22 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.01",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/photo-compresseur-hermetique.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2451,6 +3607,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.01",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2476,6 +3644,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.01",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2501,6 +3681,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.01",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2526,6 +3718,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.07",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2551,6 +3755,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.06",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2576,6 +3792,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.05",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2601,6 +3829,22 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.05",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/photo-separateur-huile-alco.jpeg",
+   "ressources": [
+    {
+     "type": "symbole",
+     "libelle": "Separateur huile",
+     "chemin": "illustrations/separateur_huile.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2626,6 +3870,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.05",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2651,6 +3907,17 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.05",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/photo-separateur-huile-alco.jpeg",
+   "ressources": [
+    {
+     "type": "symbole",
+     "libelle": "Separateur huile",
+     "chemin": "illustrations/separateur_huile.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2676,6 +3943,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.06",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-robinet-wc-a-potence-da0efce7.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2701,6 +3980,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.06",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2726,6 +4017,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.01",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/sup-cours-6-01-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2751,6 +4054,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.06",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2776,6 +4091,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.05",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/sup-cours-6-05-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2801,6 +4128,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.05",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/sup-cours-6-05-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2826,6 +4165,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.05",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2851,6 +4202,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.05",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/sup-cours-6-05-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2876,6 +4239,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.07",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/sup-cours-6-07-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2901,6 +4276,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.01",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/sup-cours-6-01-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2926,6 +4313,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.07",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2951,6 +4350,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.01",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/sup-cours-6-01-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -2976,6 +4387,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.01",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3001,6 +4424,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g6",
    "code": "6.01",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/sup-cours-6-01-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3026,6 +4461,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g7",
    "code": "7.01",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3051,6 +4498,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g7",
    "code": "7.08",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations echangeur air svg.svg",
+     "chemin": "illustrations/echangeur-air.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3076,6 +4540,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g7",
    "code": "7.01",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-technologie-des-condenseurs-ef0dfbd5.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations echangeur air svg.svg",
+     "chemin": "illustrations/echangeur-air.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3101,6 +4582,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g7",
    "code": "7.07",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe sous refroidissement",
+     "chemin": "illustrations/la-surchauffe_sous-refroidissement.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3126,6 +4619,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g7",
    "code": "7.01",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe sous refroidissement",
+     "chemin": "illustrations/la-surchauffe_sous-refroidissement.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3151,6 +4656,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g7",
    "code": "4.05",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -3177,6 +4694,17 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g7",
    "code": "7.04",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/photo-pressostat-danfoss-kp2.jpeg",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3199,6 +4727,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g7",
    "code": "7.07",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/sup-cours-7-07-1032BF54.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe sous refroidissement",
+     "chemin": "illustrations/la-surchauffe_sous-refroidissement.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3224,6 +4764,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g8",
    "code": "8.01",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/sup-cours-8-01-B321BDBC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3249,6 +4801,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g8",
    "code": "8.08",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe calcul",
+     "chemin": "illustrations/la-surchauffe_calcul.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Mesure surchauffe",
+     "chemin": "illustrations/mesure-surchauffe.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3274,6 +4843,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g8",
    "code": "8.08",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/sup-cours-8-08-B321BDBC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe cible",
+     "chemin": "illustrations/la-surchauffe_cible.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3299,6 +4880,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g8",
    "code": "8.08",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/sup-cours-8-08-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe cible",
+     "chemin": "illustrations/la-surchauffe_cible.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3324,6 +4917,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g8",
    "code": "8.09",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Givre degivrage",
+     "chemin": "illustrations/givre-degivrage.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3349,6 +4959,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g8",
    "code": "8.01",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe cible",
+     "chemin": "illustrations/la-surchauffe_cible.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3374,6 +4996,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g8",
    "code": "8.08",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/sup-cours-8-08-B321BDBC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe cible",
+     "chemin": "illustrations/la-surchauffe_cible.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3399,6 +5033,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g8",
    "code": "8.08",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Givre degivrage",
+     "chemin": "illustrations/givre-degivrage.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3424,6 +5070,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g8",
    "code": "4.05",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -3447,6 +5105,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g8",
    "code": "8.08",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/sup-cours-8-08-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Mesure surchauffe",
+     "chemin": "illustrations/mesure-surchauffe.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3472,6 +5142,22 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "9.01",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/enu-bibliotheque-symboles-svg-frigo-schema-detendeur-thermo-ext-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "Detendeur regulation",
+     "chemin": "illustrations/detendeur-regulation.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3497,6 +5183,17 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "9.01",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/u-bibliotheque-symboles-svg-frigo-schema-detendeur-electronique-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3522,6 +5219,17 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "9.01",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-symboles-tube-capillaire-svg.svg",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3547,6 +5255,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "9.01",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/bib-soudage-oa-rempli-pdf-232c7654.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3572,6 +5292,17 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "9.01",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/enu-bibliotheque-symboles-svg-frigo-schema-detendeur-thermo-ext-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3597,6 +5328,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "9.08",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/bib-froid-commercial-et-chambres-froides-ab36b003.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3622,6 +5365,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "9.08",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/sup-voyant-liquide-en-laiton-photo-E59D07B7.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3647,6 +5402,17 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "1.05",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/ine-contenu-bibliotheque-symboles-svg-capteurs-froid-pressostat-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3672,6 +5438,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "1.05",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/bib-robinet-wc-a-potence-da0efce7.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Electrovanne interactive",
+     "chemin": "electrovanne-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3697,6 +5475,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "9.08",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/bib-froid-commercial-et-chambres-froides-ab36b003.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3722,6 +5512,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "1.05",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/sup-voyant-liquide-en-laiton-photo-E59D07B7.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3747,6 +5549,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "9.08",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/sup-cours-9-08-21D269D2.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3772,6 +5586,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "1.05",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/sup-voyant-liquide-en-laiton-photo-E59D07B7.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3797,6 +5623,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "1.05",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/bib-robinet-wc-a-potence-da0efce7.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Vanne service interactive",
+     "chemin": "vanne-service-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3822,6 +5660,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "9.08",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/bib-froid-commercial-et-chambres-froides-ab36b003.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3847,6 +5697,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "1.05",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/sup-voyant-liquide-en-laiton-photo-E59D07B7.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3872,6 +5734,17 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g9",
    "code": "9.01",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/u-bibliotheque-symboles-svg-frigo-schema-detendeur-electronique-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3897,6 +5770,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g10",
    "code": "10.01",
+   "chapitre": "10",
+   "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+   "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
+   "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Balayage azote",
+     "chemin": "illustrations/balayage-azote.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -3922,6 +5807,11 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g10",
    "code": "10.01",
+   "chapitre": "10",
+   "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+   "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
+   "illustration": "illustrations/bib-cordons-de-soudure-avec-metal-dapport-li-2edd0521.png",
+   "pose_niveau": "exact",
    "categories": [
     "A1",
     "A2"
@@ -3943,7 +5833,18 @@ window.PILOTE_PACK = {
    "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g10",
-   "hors_ref": "cintrage : geste métier ; le groupe 10 ne couvre que le brasage (10.01) et les supports (10.02)"
+   "hors_ref": "cintrage : geste métier ; le groupe 10 ne couvre que le brasage (10.01) et les supports (10.02)",
+   "chapitre": "10",
+   "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+   "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
+   "illustration": "illustrations/photo-cintreuse-etabli.png",
+   "ressources": [
+    {
+     "type": "lien",
+     "libelle": "TP initiation au cintrage (pas à pas photo)",
+     "url": "https://frigorx.github.io/tp-cintrage/"
+    }
+   ]
   },
   {
    "id": "q-g10-84",
@@ -3961,7 +5862,12 @@ window.PILOTE_PACK = {
    "explication": "Retenez la notion-clé demandée et la formulation exacte. ⚠ se faire piéger par une proposition trop absolue ('toujours', 'jamais').",
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g10",
-   "hors_ref": "dudgeonnage : raccord mécanique, hors du groupe 10 (brasage, supports)"
+   "hors_ref": "dudgeonnage : raccord mécanique, hors du groupe 10 (brasage, supports)",
+   "chapitre": "10",
+   "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+   "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-symboles-tube-capillaire-svg.svg",
+   "pose_niveau": "thematique"
   },
   {
    "id": "q-g10-v6_157",
@@ -3982,7 +5888,12 @@ window.PILOTE_PACK = {
     "texte": "Avant tout raccordement, il faut purger l'air du flexible pour ne pas introduire d'incondensables dans le circuit."
    },
    "remediation_vers": "g10",
-   "hors_ref": "raccordement sur vanne Schrader : geste métier non listé à l'annexe II.B"
+   "hors_ref": "raccordement sur vanne Schrader : geste métier non listé à l'annexe II.B",
+   "chapitre": "10",
+   "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+   "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
+   "illustration": "illustrations/bib-mitigeur-d-evier-avec-robinet-supplement-57bb16ca.jpg",
+   "pose_niveau": "exact"
   },
   {
    "id": "q-g10-69",
@@ -4001,6 +5912,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g10",
    "code": "10.01",
+   "chapitre": "10",
+   "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+   "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
+   "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Balayage azote",
+     "chemin": "illustrations/balayage-azote.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4026,6 +5949,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g11",
    "code": "11.03",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-03-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4051,6 +5986,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g11",
    "code": "11.03",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-03-70D0D9E9.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4073,6 +6020,18 @@ window.PILOTE_PACK = {
    "aide": "Indice : relisez le mot-clé central de la question et éliminez les propositions trop générales ou absolues.",
    "remediation_vers": "g11",
    "code": "11.03",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-03-DAF5A7C7.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4098,6 +6057,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g11",
    "code": "11.01",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-01-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Autorises hfo naturels",
+     "chemin": "illustrations/autorises-hfo-naturels.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -4125,6 +6096,11 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g11",
    "code": "11.01",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-01-47A3A800.webp",
+   "pose_niveau": "cours",
    "categories": [
     "A1",
     "A2",
@@ -4152,6 +6128,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g11",
    "code": "11.03",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-03-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4177,6 +6165,23 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g11",
    "code": "11.02",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-02-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Bilan thermique performance interactif",
+     "chemin": "bilan-thermique-performance-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "Bilan energie",
+     "chemin": "illustrations/bilan-energie.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4202,6 +6207,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g11",
    "code": "1.02",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-1-02-F6773E86.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Bilan energie",
+     "chemin": "illustrations/bilan-energie.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -4228,6 +6245,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g11",
    "code": "1.02",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Bilan energie",
+     "chemin": "illustrations/bilan-energie.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -4254,6 +6283,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g11",
    "code": "11.03",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-03-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4279,6 +6320,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g12",
    "code": "12.03",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-03-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Charge limite local",
+     "chemin": "illustrations/charge-limite-local.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4304,6 +6357,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g12",
    "code": "1.07",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-1-07-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Hydrocarbures a1 a2",
+     "chemin": "hydrocarbures-a1-a2/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -4331,6 +6396,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g12",
    "code": "12.02",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-02-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4356,6 +6433,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g12",
    "code": "12.02",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-02-9D0D9800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4378,6 +6467,18 @@ window.PILOTE_PACK = {
    "aide": "Brasage A2L = précautions strictes.",
    "remediation_vers": "g12",
    "code": "12.06",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/bib-es-02-gestion-des-risques-en-atelier-cor-35ecc279.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4400,6 +6501,18 @@ window.PILOTE_PACK = {
    "aide": "Fluides inflammables = double danger.",
    "remediation_vers": "g12",
    "code": "12.04",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-04-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite vitesse flamme",
+     "chemin": "illustrations/classes-de-securite_vitesse-flamme.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4422,6 +6535,23 @@ window.PILOTE_PACK = {
    "aide": "Classification distingue niveaux inflammabilité.",
    "remediation_vers": "g12",
    "code": "1.08",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-1-08-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite chiffre feu",
+     "chemin": "illustrations/classes-de-securite_chiffre-feu.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -4448,7 +6578,19 @@ window.PILOTE_PACK = {
     "texte": "Au-dessus de 31°C et 73,8 bar, le CO₂ est supercritique (ni liquide ni gaz). C'est ce qui rend le CO₂ transcritique si particulier."
    },
    "remediation_vers": "g13",
-   "code": "1.09"
+   "code": "1.09",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-cours-1-09-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite co2 risques",
+     "chemin": "illustrations/classes-de-securite_co2-risques.svg"
+    }
+   ]
   },
   {
    "id": "q-g13-v6_089",
@@ -4469,7 +6611,12 @@ window.PILOTE_PACK = {
     "texte": "En transcritique, le CO₂ ne se condense pas (T° > 31°C). On refroidit simplement le gaz HP dans un échangeur appelé gas cooler."
    },
    "remediation_vers": "g13",
-   "code": "1.09"
+   "code": "1.09",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact"
   },
   {
    "id": "q-g13-v6_185",
@@ -4491,6 +6638,18 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g13",
    "code": "2.02",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Teqco2 calcul",
+     "chemin": "illustrations/teqco2-calcul.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -4517,7 +6676,19 @@ window.PILOTE_PACK = {
     "texte": "L'ammoniac est classé B (toxicité élevée) et 2L (légèrement inflammable). Il nécessite des précautions strictes."
    },
    "remediation_vers": "g13",
-   "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack"
+   "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-contexte-g13-302EC180.webp",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 nh3 compare",
+     "chemin": "illustrations/co2-nh3-compare.svg"
+    }
+   ]
   },
   {
    "id": "q-g13-v6_094",
@@ -4538,7 +6709,19 @@ window.PILOTE_PACK = {
     "texte": "L'ammoniac est le fluide de référence du froid industriel (entrepôts, chambres froides, agroalimentaire) grâce à ses excellentes propriétés thermodynamiques."
    },
    "remediation_vers": "g13",
-   "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack"
+   "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-contexte-g13-302EC180.webp",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 nh3 compare",
+     "chemin": "illustrations/co2-nh3-compare.svg"
+    }
+   ]
   },
   {
    "id": "q-g13-v6_182",
@@ -4559,7 +6742,19 @@ window.PILOTE_PACK = {
     "texte": "L'ammoniac a une odeur extrêmement reconnaissable et détectable à très faible concentration (5 ppm). C'est un avantage pour la sécurité."
    },
    "remediation_vers": "g13",
-   "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack"
+   "hors_ref": "relève du groupe 14 (ammoniac), hors des catégories A1/A2/D/E de ce pack",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-contexte-g13-302EC180.webp",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 nh3 compare",
+     "chemin": "illustrations/co2-nh3-compare.svg"
+    }
+   ]
   },
   {
    "id": "q-g13-283",
@@ -4577,7 +6772,19 @@ window.PILOTE_PACK = {
    "explication": "Le CO₂ ne se voit pas et ne se sent pas : en cas de fuite dans un local fermé, il remplace l'air sans prévenir. Seul un détecteur alerte avant l'asphyxie.",
    "aide": "CO2 invisible et inodore.",
    "remediation_vers": "g13",
-   "code": "13.14"
+   "code": "13.14",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-cours-13-14-0382EBB2.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 protection",
+     "chemin": "illustrations/co2-protection.svg"
+    }
+   ]
   },
   {
    "id": "q-g13-v6_180",
@@ -4598,7 +6805,12 @@ window.PILOTE_PACK = {
     "texte": "Quand la température extérieure est < 25°C environ, le CO₂ peut condenser normalement (mode sous-critique = cycle classique)."
    },
    "remediation_vers": "g13",
-   "code": "1.09"
+   "code": "1.09",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-cours-1-09-47A3A800.webp",
+   "pose_niveau": "cours"
   },
   {
    "id": "q-g13-302",
@@ -4616,7 +6828,19 @@ window.PILOTE_PACK = {
    "explication": "En cas de fuite massive, on doit pouvoir sortir en poussant la porte, même en panique et même si la pression du local a monté. Le sens d'ouverture est un choix de sécurité.",
    "aide": "Conception locaux CO2 intègre éléments sécurité.",
    "remediation_vers": "g13",
-   "code": "13.14"
+   "code": "13.14",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-cours-13-14-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 protection",
+     "chemin": "illustrations/co2-protection.svg"
+    }
+   ]
   },
   {
    "id": "pk-g8b-1",
@@ -4641,6 +6865,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g8b",
    "explication": "Un évaporateur installé doit fonctionner sans aucune fuite ni émission. Cela vaut pour le tube, mais aussi pour tout le matériel de contrôle et de sécurité posé avec lui.",
    "origine": "pack",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4669,6 +6905,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g8b",
    "explication": "Les interrupteurs de sécurité et de contrôle, ou pressostats, protègent la machine. Ils coupent l'alimentation électrique du compresseur si la pression sort de la plage prévue.",
    "origine": "pack",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/sup-cours-8-04-B321BDBC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4697,6 +6945,23 @@ window.PILOTE_PACK = {
    "remediation_vers": "g8b",
    "explication": "Le conduit de dégivrage à l'air chaud s'inspecte à chaque visite. On vérifie l'étanchéité, l'isolation et l'écoulement des condensats.",
    "origine": "pack",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations givre degivrage svg.svg",
+     "chemin": "illustrations/givre-degivrage.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4725,6 +6990,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g8b",
    "explication": "Une batterie sale ou un mauvais débit d'air font tourner le compresseur plus longtemps pour le même résultat. C'est ce qui coûte le plus cher en énergie.",
    "origine": "pack",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-tp-02-les-composants-frigorifiques-79eb4616.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4753,6 +7030,17 @@ window.PILOTE_PACK = {
    "remediation_vers": "g9b",
    "explication": "Le thermostat mécanique utilise un bulbe relié par un tube fin à des contacts électriques.",
    "origine": "pack",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/contenu-bibliotheque-symboles-svg-capteurs-froid-thermostat-nf-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "symbole",
+     "libelle": "Thermostat froid",
+     "chemin": "illustrations/thermostat_froid.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4781,6 +7069,17 @@ window.PILOTE_PACK = {
    "remediation_vers": "g9b",
    "explication": "Le séparateur d'huile retient l'huile, puis la renvoie automatiquement au carter du compresseur dès que le niveau monte. Vérifier son fonctionnement, c'est contrôler que ce retour se fait bien.",
    "origine": "pack",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/photo-separateur-huile-alco.jpeg",
+   "ressources": [
+    {
+     "type": "symbole",
+     "libelle": "Separateur huile",
+     "chemin": "illustrations/separateur_huile.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4809,6 +7108,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g9b",
    "explication": "Un défaut non signalé (thermostat qui dérive, limiteur qui ne coupe plus, séparateur qui laisse passer l'huile) finit par endommager le système. À terme, faute de mesure, cela provoque une fuite ou une émission de réfrigérant.",
    "origine": "pack",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/ine-contenu-bibliotheque-symboles-svg-capteurs-froid-pressostat-sans-reperes-svg.svg",
+   "pose_niveau": "thematique",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4837,6 +7148,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g9b",
    "explication": "Un séparateur d'huile qui laisse l'huile encrasser les échangeurs fait travailler le compresseur plus, pour le même résultat.",
    "origine": "pack",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/bib-tp-02-les-composants-frigorifiques-corre-4e578eea.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4865,6 +7188,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g12b",
    "explication": "Le R-290 (et le R-600a) sont classés A3 : très inflammables. Aucune flamme n'est autorisée tant que l'inertage à l'azote n'est pas confirmé.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-07-2A9E51B1.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4893,6 +7228,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g12b",
    "explication": "Si le vide remonte après l'arrêt de la pompe, il y a un problème sur le circuit : une fuite ou de l'humidité restante. On ne charge pas dans ces conditions.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/bib-001-l-outillage-du-frigoriste-unlocked-b-ebc9a739.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide courbes remontee",
+     "chemin": "illustrations/tirage-au-vide_courbes-remontee.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4921,6 +7268,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g12b",
    "explication": "La charge de réfrigérant hydrocarbure se fait par pesée, avec le volume indiqué sur la plaque signalétique.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-10-2A9E51B1.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Pesee charge",
+     "chemin": "illustrations/pesee-charge.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4949,6 +7308,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g12b",
    "explication": "Le contrôle d'étanchéité direct sur un circuit hydrocarbure se fait avec un détecteur adapté aux hydrocarbures.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-11-2A9E51B1.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -4976,7 +7347,19 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g13",
    "explication": "Le CO₂ est A1 : toxicité faible, non inflammable. Ses deux dangers réels sont ailleurs — la pression, très élevée, et l'atmosphère irrespirable en local fermé.",
-   "origine": "pack"
+   "origine": "pack",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-cours-13-01-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite co2 risques",
+     "chemin": "illustrations/classes-de-securite_co2-risques.svg"
+    }
+   ]
   },
   {
    "id": "pk-g13-2",
@@ -5000,7 +7383,19 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g13",
    "explication": "En cas de fuite d'ammoniac : alerter, évacuer, ne jamais intervenir seul.",
-   "origine": "pack"
+   "origine": "pack",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-cours-14-01-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 nh3 compare",
+     "chemin": "illustrations/co2-nh3-compare.svg"
+    }
+   ]
   },
   {
    "id": "pk-g13-3",
@@ -5024,7 +7419,19 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g13",
    "explication": "Les cylindres de CO₂ sont à double vanne : ils ne se raccordent pas au matériel courant.",
-   "origine": "pack"
+   "origine": "pack",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-cours-13-04-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite co2 risques",
+     "chemin": "illustrations/classes-de-securite_co2-risques.svg"
+    }
+   ]
   },
   {
    "id": "pk-g13-4",
@@ -5048,7 +7455,19 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "g13",
    "explication": "Une attestation A1 ou A2 ne donne aucun droit d'intervention sur une installation à l'ammoniac (catégorie C) ou au CO₂ (catégorie B).",
-   "origine": "pack"
+   "origine": "pack",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-cours-14-01-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 nh3 compare",
+     "chemin": "illustrations/co2-nh3-compare.svg"
+    }
+   ]
   },
   {
    "id": "pk-g0-1",
@@ -5073,6 +7492,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g0",
    "explication": "L'attestation d'aptitude est un document personnel. Elle autorise une personne à intervenir sur les fluides frigorigènes.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-00-0A8DFFB1.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Aptitude capacite",
+     "chemin": "illustrations/aptitude-capacite.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -5103,6 +7534,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g0",
    "explication": "La filière DEEE traite la carcasse de l'équipement en fin de vie. Le fluide frigorigène doit être récupéré à part, avant, par un professionnel habilité.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/bib-ep1-2ifca-bbrmodie-correction-8e9eb74f.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation la trace",
+     "chemin": "illustrations/la-recuperation_la-trace.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -5133,6 +7576,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1c",
    "explication": "Le code du fluide (R-xyz) décrit la molécule. La classe NF EN 378 (A1, A2L, A3…) décrit le risque de manipulation. Il faut toujours lire les deux.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-06-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -5163,6 +7618,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1c",
    "explication": "Les fluides naturels (propane, isobutane, ammoniac, CO₂) existent sans chimie de synthèse. Les HFC et les HFO sont des molécules fabriquées.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-07-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -5193,6 +7660,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g7b",
    "explication": "Le contrôle d'étanchéité avant mise en service se fait sous azote, un gaz neutre.",
    "origine": "pack",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-lycee-professionnel-prive-38209cca.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Epreuve azote",
+     "chemin": "illustrations/epreuve-azote.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5221,6 +7700,23 @@ window.PILOTE_PACK = {
    "remediation_vers": "g7b",
    "explication": "Le régulateur de pression de sortie du condenseur se règle selon la fiche constructeur, jamais à l'estime.",
    "origine": "pack",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-de-fsx-35028-9625ce14.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5249,6 +7745,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "p4",
    "explication": "La mise en pression se fait à l'azote sec, et à rien d'autre.",
    "origine": "pack",
+   "chapitre": "03",
+   "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+   "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+   "illustration": "illustrations/sup-cours-3-01-70D0D9E9.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Epreuve azote",
+     "chemin": "illustrations/epreuve-azote.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5277,6 +7785,23 @@ window.PILOTE_PACK = {
    "remediation_vers": "p4",
    "explication": "Jamais d'azote sans mano-détendeur entre la bouteille et le circuit.",
    "origine": "pack",
+   "chapitre": "03",
+   "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+   "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+   "illustration": "illustrations/sup-poste-de-travail-avec-bouteille-d-azote-BA7A4A4D.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide mano vs vacuometre",
+     "chemin": "illustrations/tirage-au-vide_mano-vs-vacuometre.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations epreuve azote svg.svg",
+     "chemin": "illustrations/epreuve-azote.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5305,6 +7830,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "p7",
    "explication": "L'analyse de risques se fait AVANT le premier geste, sur place.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-04-FC9D2706.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5333,6 +7870,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "p7",
    "explication": "Zone balisée, ventilation en service, issue dégagée, aucune source d'inflammation, EPI et matériel adaptés, consignation électrique faite.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-05-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5361,6 +7910,11 @@ window.PILOTE_PACK = {
    "remediation_vers": "g10",
    "explication": "Les supports de tuyauterie doivent être bien positionnés, sans point dur ni serrage excessif sur le tube.",
    "origine": "pack",
+   "chapitre": "10",
+   "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
+   "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
+   "illustration": "illustrations/bib-t-p-les-outils-de-cintrage-cuivre-2010-2-6405af15.png",
+   "pose_niveau": "exact",
    "categories": [
     "A1",
     "A2"
@@ -5389,6 +7943,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g11",
    "explication": "Le CO2 est performant en froid commercial, mais son efficacité baisse quand le climat extérieur est très chaud. Aucun fluide de substitution n'est le meilleur dans l'absolu : le choix dépend de l'application et du climat du site.",
    "origine": "pack",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-04-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Bilan thermique performance interactif",
+     "chemin": "bilan-thermique-performance-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5417,6 +7983,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g11",
    "explication": "Le propane est plus lourd que l'air. En cas de fuite, il s'accumule en bas, près du sol. La ventilation du local est conçue en tenant compte de cela, dès la conception de la machine.",
    "origine": "pack",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-05-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -5446,6 +8024,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g12",
    "explication": "Les bouteilles d'hydrocarbure ont un raccord spécifique et un filetage à gauche : on utilise le matériel prévu pour ce raccord, jamais un adaptateur.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/bib-fiche-synthese-activites-3-bouteille-sec-ca000acf.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Hydrocarbures a1 a2",
+     "chemin": "hydrocarbures-a1-a2/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5474,6 +8064,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g12b",
    "explication": "La pression d'épreuve à appliquer se trouve dans la documentation constructeur et la norme applicable, jamais à l'estime.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Epreuve azote",
+     "chemin": "illustrations/epreuve-azote.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5502,6 +8104,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g12b",
    "explication": "Le rapport d'intervention doit contenir le composant changé, les résultats de l'épreuve et du contrôle, et la quantité chargée.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-12-2A9E51B1.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5530,6 +8144,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g12",
    "explication": "Avant d'intervenir, on vérifie que le site est en règle : signalisation, issues de secours, capteurs de gaz et alarmes'en service, ventilation opérante. Si une mesure manque, on ne commence pas et on le signale.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-13-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5558,6 +8184,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g12",
    "explication": "Sur un fluide inflammable, la charge exacte compte double car ces circuits sont conçus avec une charge volontairement petite.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-14-FC9D2706.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Charge limite local",
+     "chemin": "illustrations/charge-limite-local.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5586,6 +8224,17 @@ window.PILOTE_PACK = {
    "remediation_vers": "g3",
    "explication": "Après tout contrôle ou essai (épreuve de résistance, épreuve d'étanchéité, tirage au vide), on consigne les résultats dans le registre de l'équipement et on rédige un rapport sur les essais et contrôles effectués.",
    "origine": "pack",
+   "chapitre": "03",
+   "chapitre_titre": "Contrôles avant mise en service, après réparation ou en fonctionnement",
+   "chapitre_fichier": "CONTENU-03-G3-controles-mes.md",
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide",
+     "chemin": "illustrations/tirage-au-vide.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5614,6 +8263,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g4a",
    "explication": "Les fuites apparaissent aux points d'assemblage (raccords mécaniques, brasures poreuses ou mal pénétrées, presse-étoupes de vannes, joints) et sur les pièces'en mouvement ou en vibration, comme le compresseur ou une tuyauterie mal fixée.",
    "origine": "pack",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/sup-cours-4-01-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Points de fuite",
+     "chemin": "illustrations/points-de-fuite.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -5643,6 +8304,23 @@ window.PILOTE_PACK = {
    "remediation_vers": "x4",
    "explication": "Le registre de l'équipement doit être consulté avant tout contrôle pour relever les problèmes récurrents et les parties nécessitant une attention particulière ; un point déjà réparé est à recontrôler en priorité.",
    "origine": "pack",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/bib-td-pose-manifold-tirage-au-vide-maximili-fafa6f68.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite recontrole",
+     "chemin": "illustrations/controle-etancheite_recontrole.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations controle etancheite registre svg.svg",
+     "chemin": "illustrations/controle-etancheite_registre.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -5672,6 +8350,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g4c",
    "explication": "Toutes les données du contrôle doivent être consignées dans le registre de l'équipement : date, méthode utilisée, points contrôlés, résultat, et en cas de fuite la localisation précise et la suite donnée.",
    "origine": "pack",
+   "chapitre": "04",
+   "chapitre_titre": "Contrôles d'étanchéité",
+   "chapitre_fichier": "CONTENU-04-G4-etancheite.md",
+   "illustration": "illustrations/sup-cours-4-09-0382EBB2.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite registre",
+     "chemin": "illustrations/controle-etancheite_registre.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -5701,6 +8391,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g5b",
    "explication": "Pour les hydrocarbures, le fluide ET l'huile sont inflammables : ils se stockent et se transportent dans des récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, selon la réglementation applicable et la fiche de données de sécurité.",
    "origine": "pack",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-09-D7A129ED.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Secu bouteille",
+     "chemin": "illustrations/secu-bouteille.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -5730,6 +8432,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g6b",
    "explication": "Un compresseur se fixe toujours sur des plots antivibratiles (silent-blocs), jamais directement sur son châssis ou le sol.",
    "origine": "pack",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5758,6 +8472,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g6",
    "explication": "Les interrupteurs de sécurité et de contrôle (pressostats HP et BP, protection thermique) se règlent toujours selon la fiche constructeur, jamais à l'estime.",
    "origine": "pack",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5786,6 +8512,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g6b",
    "explication": "La soupape d'aspiration, qui laisse entrer la vapeur basse pression à chaque cycle, se règle toujours selon la fiche constructeur, jamais au jugé.",
    "origine": "pack",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ],
    "categories": [
     "A1"
    ]
@@ -5813,6 +8551,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g6b",
    "explication": "Une bonne installation, un bon réglage et un bon entretien du compresseur sont aussi des gestes d'efficacité énergétique : la machine consomme moins et dure plus longtemps.",
    "origine": "pack",
+   "chapitre": "06",
+   "chapitre_titre": "Composant : compresseurs",
+   "chapitre_fichier": "CONTENU-06-G6-compresseurs.md",
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Bilan thermique performance interactif",
+     "chemin": "bilan-thermique-performance-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5841,6 +8591,23 @@ window.PILOTE_PACK = {
    "remediation_vers": "g7b",
    "explication": "On inspecte visuellement la conduite de refoulement (gaz chaud, entre compresseur et condenseur) et la conduite de liquide (juste après le condenseur), après consignation électrique. On cherche des traces d'huile, de la corrosion, un isolant abîmé.",
    "origine": "pack",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations echangeur air svg.svg",
+     "chemin": "illustrations/echangeur-air.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5869,6 +8636,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g7",
    "explication": "Les incondensables se purgent à l'arrêt, installation froide, avec récupération du fluide — jamais fluide en mouvement.",
    "origine": "pack",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5897,6 +8676,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g7b",
    "explication": "Chaque visite se termine par un rapport écrit notant les ailettes encrassées, le ventilateur bruyant, les traces d'huile, une pression anormale.",
    "origine": "pack",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5925,6 +8716,23 @@ window.PILOTE_PACK = {
    "remediation_vers": "g7b",
    "explication": "Des ailettes propres et un ventilateur en bon état limitent la haute pression et donc la consommation électrique.",
    "origine": "pack",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    },
+    {
+     "type": "page",
+     "libelle": "Bilan thermique performance interactif",
+     "chemin": "bilan-thermique-performance-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5953,6 +8761,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g8b",
    "explication": "Le réglage d'un régulateur de pression d'évaporation (mise au point comme réglage) suit toujours la fiche constructeur, jamais une valeur estimée.",
    "origine": "pack",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-dscn6650-e8f63388.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -5981,6 +8801,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g8",
    "explication": "La conduite d'aspiration se pose en légère pente vers le compresseur, avec un siphon en pied de toute colonne montante.",
    "origine": "pack",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-tp-02-les-composants-frigorifiques-79eb4616.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Le circuit evaporateur",
+     "chemin": "illustrations/le-circuit_evaporateur.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6009,6 +8841,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g8b",
    "explication": "On règle la soupape de régulation de pression d'évaporation selon la fiche constructeur, pour maintenir une pression minimale adaptée au produit ou pour équilibrer plusieurs évaporateurs sur un même compresseur.",
    "origine": "pack",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-tp-02-les-composants-frigorifiques-686265a9.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6037,6 +8881,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g8b",
    "explication": "Toute visite de l'évaporateur se termine par un rapport écrit qui décrit précisément les anomalies observées : corrosion, fixation desserrée, bac de condensats sale, conduit de dégivrage abîmé.",
    "origine": "pack",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6065,6 +8921,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g9",
    "explication": "Une vanne, comme un filtre déshydrateur, se monte toujours dans le sens de circulation du fluide, indiqué par la flèche gravée sur son corps.",
    "origine": "pack",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/bib-froid-commercial-et-chambres-froides-ab36b003.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Vanne service interactive",
+     "chemin": "vanne-service-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6093,6 +8961,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g9",
    "explication": "Le détendeur thermostatique mécanique régule la surchauffe grâce à un bulbe fixé sur la ligne d'aspiration. Le détendeur électronique fait la même régulation, mais avec une sonde et un régulateur : plus précis, plus rapide.",
    "origine": "pack",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/bib-soudage-oa-rempli-pdf-232c7654.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6121,6 +9001,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g9b",
    "explication": "La soupape de régulation de pression module en continu pour maintenir une pression stable à un point du circuit. Elle ne coupe jamais le circuit.",
    "origine": "pack",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/sup-contexte-g9-21D269D2.webp",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6149,6 +9041,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g9b",
    "explication": "Le limiteur de pression mécanique est réglé par un ressort (tarage mécanique). Le limiteur de pression électronique utilise un capteur relié à un module. Dans les deux cas, il coupe le circuit dès qu'un seuil de pression'est franchi, en haute comme en basse pression.",
    "origine": "pack",
+   "chapitre": "09",
+   "chapitre_titre": "Composant : détendeurs et autres organes",
+   "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
+   "illustration": "illustrations/sup-contexte-g9-21D269D2.webp",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6177,7 +9081,9 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "s5",
    "explication": "On vérifie TOUJOURS l'absence de tension au VAT avant de toucher.",
-   "origine": "pack"
+   "origine": "pack",
+   "illustration": "illustrations/sup-contexte-sécurité-A03D0FCC.webp",
+   "pose_niveau": "contexte"
   },
   {
    "id": "pk-s5-2",
@@ -6202,7 +9108,9 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "s5",
    "explication": "Le VAT se teste sur une source connue avant l'usage, et de nouveau après.",
-   "origine": "pack"
+   "origine": "pack",
+   "illustration": "illustrations/sup-contexte-sécurité-A03D0FCC.webp",
+   "pose_niveau": "contexte"
   },
   {
    "id": "pk-s5-3",
@@ -6227,11 +9135,13 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "s5",
    "explication": "Un condensateur reste chargé après la coupure : on respecte le délai et la méthode de décharge du constructeur.",
-   "origine": "pack"
+   "origine": "pack",
+   "illustration": "illustrations/sup-contexte-sécurité-A03D0FCC.webp",
+   "pose_niveau": "contexte"
   },
   {
    "id": "pk-cl1-1",
-   "dc": "Classification",
+   "dc": "G1",
    "code": "1.08",
    "niveau": 1,
    "type": "qcm",
@@ -6252,6 +9162,23 @@ window.PILOTE_PACK = {
    "remediation_vers": "cl1",
    "explication": "La lettre donne la toxicité (A faible, B plus élevée), le chiffre donne l'inflammabilité (1 aucune propagation, 2L faible, 2 inflammable, 3 très inflammable).",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-08-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite classe methode",
+     "chemin": "illustrations/classes-de-securite_classe-methode.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6261,7 +9188,7 @@ window.PILOTE_PACK = {
   },
   {
    "id": "pk-cl1-2",
-   "dc": "Classification",
+   "dc": "G1",
    "code": "1.08",
    "niveau": 2,
    "type": "qcm",
@@ -6282,6 +9209,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "cl1",
    "explication": "Le R-290 est classé A3 : toxicité faible, mais très inflammable.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-08-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6291,7 +9230,7 @@ window.PILOTE_PACK = {
   },
   {
    "id": "pk-cl1-3",
-   "dc": "Classification",
+   "dc": "G1",
    "code": "1.08",
    "niveau": 2,
    "type": "qcm",
@@ -6312,6 +9251,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "cl1",
    "explication": "La classe de sécurité détermine l'ensemble du dispositif : EPI, matériel électrique et suppression des sources d'étincelle, ventilation, type de détecteur et seuil d'alarme, charge maximale admise et conditions d'occupation du local.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-08-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6321,7 +9272,7 @@ window.PILOTE_PACK = {
   },
   {
    "id": "pk-cl2-1",
-   "dc": "Classification",
+   "dc": "G12",
    "code": "12.02",
    "niveau": 1,
    "type": "qcm",
@@ -6342,6 +9293,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "cl2",
    "explication": "La LIE (limite inférieure d'explosivité) est la concentration en dessous de laquelle le mélange gaz-air est trop pauvre pour s'enflammer. La LSE (limite supérieure) est celle au-dessus de laquelle il est trop riche, faute d'oxygène. Entre les deux se trouve le domaine d'explosivité.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-02-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Hydrocarbures a1 a2",
+     "chemin": "hydrocarbures-a1-a2/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6349,7 +9312,7 @@ window.PILOTE_PACK = {
   },
   {
    "id": "pk-cl2-2",
-   "dc": "Classification",
+   "dc": "G12",
    "code": "12.02",
    "niveau": 2,
    "type": "qcm",
@@ -6370,6 +9333,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "cl2",
    "explication": "Le R-290 utilisé en froid ne contient pas d'odorisant : seule une mesure à l'explosimètre renseigne sur l'état de l'atmosphère.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-02-0382EBB2.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Hydrocarbures a1 a2",
+     "chemin": "hydrocarbures-a1-a2/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6377,7 +9352,7 @@ window.PILOTE_PACK = {
   },
   {
    "id": "pk-cl2-3",
-   "dc": "Classification",
+   "dc": "G12",
    "code": "12.02",
    "niveau": 2,
    "type": "qcm",
@@ -6398,6 +9373,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "cl2",
    "explication": "Un explosimètre affiche un pourcentage de la LIE du gaz recherché : c'est une marge restante avant que l'atmosphère ne devienne inflammable.",
    "origine": "pack",
+   "chapitre": "12",
+   "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
+   "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
+   "illustration": "illustrations/sup-cours-12-02-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Hydrocarbures a1 a2",
+     "chemin": "hydrocarbures-a1-a2/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6405,7 +9392,7 @@ window.PILOTE_PACK = {
   },
   {
    "id": "pk-cl3-1",
-   "dc": "Classification",
+   "dc": "G11",
    "code": "11.03",
    "niveau": 1,
    "type": "qcm",
@@ -6426,6 +9413,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "cl3",
    "explication": "Le CO₂ est plus lourd que l'air : il s'écoule vers le bas et s'accumule dans les points bas.",
    "origine": "pack",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-03-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6433,7 +9432,7 @@ window.PILOTE_PACK = {
   },
   {
    "id": "pk-cl3-2",
-   "dc": "Classification",
+   "dc": "G11",
    "code": "11.03",
    "niveau": 2,
    "type": "qcm",
@@ -6454,6 +9453,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "cl3",
    "explication": "L'azote agit uniquement par déplacement de l'oxygène. Le CO₂ agit par déplacement ET par action propre sur l'organisme : il intervient dans la régulation de la respiration.",
    "origine": "pack",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6461,7 +9472,7 @@ window.PILOTE_PACK = {
   },
   {
    "id": "pk-cl3-3",
-   "dc": "Classification",
+   "dc": "G11",
    "code": "11.03",
    "niveau": 2,
    "type": "qcm",
@@ -6482,6 +9493,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "cl3",
    "explication": "Devant une personne au sol dans un espace clos ou en contrebas : alerter, ventiler, faire intervenir les secours — sans descendre à son tour.",
    "origine": "pack",
+   "chapitre": "11",
+   "chapitre_titre": "Technologies de substitution et efficacité énergétique",
+   "chapitre_fichier": "CONTENU-11-G11-substitution-efficacite.md",
+   "illustration": "illustrations/sup-cours-11-03-70D0D9E9.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6489,8 +9512,8 @@ window.PILOTE_PACK = {
   },
   {
    "id": "pk-cl4-1",
-   "dc": "Classification",
-   "code": "12.02",
+   "dc": "G13",
+   "code": "13.14",
    "niveau": 1,
    "type": "qcm",
    "enonce": "Dans un local abritant une installation au CO₂, où place-t-on le détecteur de gaz fixe ?",
@@ -6510,15 +9533,23 @@ window.PILOTE_PACK = {
    "remediation_vers": "cl4",
    "explication": "Le capteur se place en partie basse, parce que le CO₂ est plus lourd que l'air et s'accumule au sol.",
    "origine": "pack",
-   "categories": [
-    "A1",
-    "A2"
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-cours-13-14-0382EBB2.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 point bas",
+     "chemin": "illustrations/co2-point-bas.svg"
+    }
    ]
   },
   {
    "id": "pk-cl4-2",
-   "dc": "Classification",
-   "code": "12.02",
+   "dc": "G13",
+   "code": "13.04",
    "niveau": 2,
    "type": "qcm",
    "enonce": "Un masque à cartouche protège-t-il dans un local chargé en CO₂ ?",
@@ -6538,14 +9569,22 @@ window.PILOTE_PACK = {
    "remediation_vers": "cl4",
    "explication": "Un masque à cartouche filtre certains polluants dans un air qui reste respirable. Il ne fabrique pas d'oxygène et ne retient pas le CO₂.",
    "origine": "pack",
-   "categories": [
-    "A1",
-    "A2"
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/bib-c3-1-53ffef9b.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 protection",
+     "chemin": "illustrations/co2-protection.svg"
+    }
    ]
   },
   {
    "id": "pk-cl4-3",
-   "dc": "Classification",
+   "dc": "G13",
    "code": "13.14",
    "niveau": 2,
    "type": "qcm",
@@ -6565,7 +9604,19 @@ window.PILOTE_PACK = {
    },
    "remediation_vers": "cl4",
    "explication": "Un capteur de gaz se vérifie et se remplace périodiquement, selon la documentation du fabricant : sa cellule vieillit et finit par ne plus rien mesurer tout en restant allumée.",
-   "origine": "pack"
+   "origine": "pack",
+   "chapitre": "13",
+   "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
+   "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
+   "illustration": "illustrations/sup-cours-13-14-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 protection",
+     "chemin": "illustrations/co2-protection.svg"
+    }
+   ]
   },
   {
    "id": "pk-g1s-1",
@@ -6590,6 +9641,23 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1s",
    "explication": "Pendant un changement d'état, la chaleur apportée est de la chaleur latente : elle transforme le liquide en vapeur sans faire monter la température. C'est le palier.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-02-819DA516.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Palier chaleur latente",
+     "chemin": "illustrations/palier-chaleur-latente.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Chaleur interactive",
+     "chemin": "chaleur-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6619,6 +9687,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1s",
    "explication": "Le palier de changement d'état commence au point de bulle — la première bulle de vapeur — et finit au point de rosée — la dernière goutte de liquide.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Le circuit evaporateur",
+     "chemin": "illustrations/le-circuit_evaporateur.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6648,6 +9728,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1s",
    "explication": "Sur son palier de changement d'état, un fluide absorbe ou restitue une grande quantité de chaleur — la chaleur latente — sans que sa température varie.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur interactive",
+     "chemin": "chaleur-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6677,6 +9769,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1s",
    "explication": "Dans un mélange zéotrope, la température n'est pas constante pendant le changement d'état : elle glisse. Le point de bulle et le point de rosée ne sont donc pas à la même température.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-02-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Palier chaleur latente",
+     "chemin": "illustrations/palier-chaleur-latente.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6706,6 +9810,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1b",
    "explication": "La courbe en cloche partage le diagramme en trois : liquide à gauche, mélange liquide + vapeur sous la cloche, vapeur surchauffée à droite.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-03-7CE9B528.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Diagramme logph",
+     "chemin": "illustrations/diagramme-logph.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6735,6 +9851,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1b",
    "explication": "Le sous-refroidissement se lit sur le trait du haut (haute pression), à gauche de la courbe de bulle. La surchauffe se lit sur le trait du bas (basse pression), à droite de la courbe de rosée.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-03-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur interactive",
+     "chemin": "chaleur-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6764,6 +9892,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1b",
    "explication": "Sur une échelle logarithmique, ce qui est constant n'est pas l'écart entre deux graduations mais le rapport : la même distance sépare 1 de 10, puis 10 de 100. Les petites pressions sont donc aussi étalées que les grandes.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-03-7CE9B528.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Diagramme logph",
+     "chemin": "illustrations/diagramme-logph.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6793,6 +9933,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1e",
    "explication": "La surchauffe et le sous-refroidissement sont des différences, jamais des températures. On les exprime en kelvins parce que ce sont des écarts.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-02-F6773E86.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La chaleur surchauffe sousrefroidissement",
+     "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6822,6 +9974,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1e",
    "explication": "Le manomètre donne la pression ; la table de saturation traduit cette pression en température de changement d'état ; le thermomètre de contact donne la température réelle du tube. La différence est la surchauffe.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-02-819DA516.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La chaleur surchauffe sousrefroidissement",
+     "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6851,6 +10015,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1e",
    "explication": "La surchauffe utile est celle que la vapeur gagne à l'intérieur de l'évaporateur : elle a servi à refroidir le local. La surchauffe totale y ajoute ce que la ligne d'aspiration apporte entre la sortie de l'évaporateur et le compresseur.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/sup-cours-1-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Surchauffe utile totale",
+     "chemin": "illustrations/surchauffe-utile-totale.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6880,6 +10056,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1e",
    "explication": "Le sous-refroidissement garantit que le fluide arrive au détendeur entièrement liquide. Repère usuel : 4 à 8 K, à recaler sur la documentation du constructeur.",
    "origine": "pack",
+   "chapitre": "01",
+   "chapitre_titre": "Législation & thermodynamique élémentaire",
+   "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur interactive",
+     "chemin": "chaleur-interactive/index.html"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6909,6 +10097,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g1e",
    "explication": "On détermine d'abord l'état et les conditions du fluide, puis on en déduit la méthode de remplissage — en phase liquide ou en phase vapeur — et le volume adapté.",
    "origine": "pack",
+   "chapitre": "05",
+   "chapitre_titre": "Gestion écologique du système et récupération du fluide",
+   "chapitre_fichier": "CONTENU-05-G5-recuperation.md",
+   "illustration": "illustrations/sup-cours-5-05-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation liquide vapeur",
+     "chemin": "illustrations/la-recuperation_liquide-vapeur.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2",
@@ -6938,6 +10138,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g7b",
    "explication": "Le régulateur de pression de sortie du condenseur — couramment appelé « KVR » — maintient la pression de condensation au-dessus d'une valeur réglée, même quand la température extérieure est basse. Il se règle selon la fiche constructeur.",
    "origine": "pack",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/sup-cours-7-02-1032BF54.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6966,6 +10178,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g7b",
    "explication": "Un pressostat est un organe de sécurité électrique : il coupe. Un régulateur de pression'est une vanne : il maintient une pression et ne coupe rien.",
    "origine": "pack",
+   "chapitre": "07",
+   "chapitre_titre": "Composant : condenseurs à air et à eau",
+   "chapitre_fichier": "CONTENU-07-G7-condenseurs.md",
+   "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -6994,6 +10218,18 @@ window.PILOTE_PACK = {
    "remediation_vers": "g8b",
    "explication": "Le régulateur de pression d'évaporation — couramment appelé « KVP » — se monte en sortie d'évaporateur et empêche la pression d'y descendre sous la valeur réglée.",
    "origine": "pack",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/bib-tp-02-les-composants-frigorifiques-79eb4616.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -7022,6 +10258,23 @@ window.PILOTE_PACK = {
    "remediation_vers": "g8b",
    "explication": "La soupape de régulation de la pression d'évaporation se monte en sortie d'évaporateur et maintient une pression minimale dans celui-ci. Son réglage se prend sur la fiche constructeur.",
    "origine": "pack",
+   "chapitre": "08",
+   "chapitre_titre": "Composant : évaporateurs à air et à liquide",
+   "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
+   "illustration": "illustrations/sup-cours-8-07-B321BDBC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Le circuit evaporateur",
+     "chemin": "illustrations/le-circuit_evaporateur.svg"
+    }
+   ],
    "categories": [
     "A1",
     "A2"
@@ -8914,7 +12167,7 @@ window.PILOTE_PACK = {
    "titre": "L'air qui manque — l'asphyxie",
    "dc": "Sécurité · codes 12.02 · 12.13",
    "minuteur_s": 420,
-   "corps": "<img src=\"packs/fluides/res/svg/s1-double-accident.svg\" alt=\"Animation : la nappe de gaz monte dans le local fermé, le technicien descend et tombe, puis le collègue descend le secourir et devient la seconde victime. Deux victimes au lieu d'une.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Respirer, c'est faire entrer de l'oxygène dans le corps. Un local fermé peut se remplir d'un autre gaz : de l'azote utilisé pour mettre un circuit en pression, ou du fluide frigorigène qui a fui. Ce gaz prend la place de l'oxygène dans l'air. C'est une <b>asphyxie par manque d'oxygène</b> : vous ne respirez plus assez d'oxygène, non pas parce qu'un produit vous empoisonne, mais parce qu'il a chassé l'air respirable.</p><p>Face à l'<b>azote</b> et aux <b>fluides fluorés</b>, le corps ne donne <b>aucune alerte</b>. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez donc pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.</p><p><b>Une exception importante : le CO₂ (R-744).</b> Lui vous <b>prévient</b> — essoufflement, mal de tête, vertiges — parce qu'il agit sur la commande de la respiration. C'est une chance, mais tardive : ces signes n'arrivent qu'une fois dans le gaz. Et pour la même raison, un détecteur d'oxygène seul ne suffit pas à le surveiller. Ce fluide a sa fiche : « CO₂ : deux dangers mortels ».</p><p><b>Ce danger n'a pas de code dans le référentiel d'examen.</b> Vous ne serez pas interrogé dessus à l'épreuve. Il peut pourtant vous tuer. C'est pour cela qu'il est dans ce module.</p><p>C'est le scénario du schéma ci-dessus, et c'est le plus fréquent de ce type d'accident : un local resté fermé, quelqu'un qui entre sans rien sentir, puis un collègue qui se précipite pour le secourir sans se protéger ni ventiler — il respire le même air appauvri et s'effondre à son tour. <b>Deux victimes au lieu d'une.</b></p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=s1\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : L'air qui manque — l'asphyxie ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/s1-double-accident.svg\" alt=\"Animation : la nappe de gaz monte dans le local fermé, le technicien descend et tombe, puis le collègue descend le secourir et devient la seconde victime. Deux victimes au lieu d'une.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Respirer, c'est faire entrer de l'oxygène dans le corps. Un local fermé peut se remplir d'un autre gaz : de l'azote utilisé pour mettre un circuit en pression, ou du fluide frigorigène qui a fui. Ce gaz prend la place de l'oxygène dans l'air. C'est une <b>asphyxie par manque d'oxygène</b> : vous ne respirez plus assez d'oxygène, non pas parce qu'un produit vous empoisonne, mais parce qu'il a chassé l'air respirable.</p><p>Face à l'<b>azote</b> et aux <b>fluides fluorés</b>, le corps ne donne <b>aucune alerte</b>. Normalement, l'envie de respirer plus fort vient d'un excès de gaz carbonique dans le sang, pas d'un manque d'oxygène. Dans un local pauvre en oxygène, vous ne suffoquez donc pas peu à peu : vous pouvez perdre connaissance <b>en quelques instants, sans gêne ressentie avant</b>. L'azote est incolore et inodore. La plupart des fluides fluorés le sont aussi ; l'ammoniac, lui, a une odeur forte. Mais tous les fluides ne se comportent pas pareil : se fier à l'odeur reste dangereux.</p><p><b>Une exception importante : le CO₂ (R-744).</b> Lui vous <b>prévient</b> — essoufflement, mal de tête, vertiges — parce qu'il agit sur la commande de la respiration. C'est une chance, mais tardive : ces signes n'arrivent qu'une fois dans le gaz. Et pour la même raison, un détecteur d'oxygène seul ne suffit pas à le surveiller. Ce fluide a sa fiche : « CO₂ : deux dangers mortels ».</p><p><b>Ce danger n'a pas de code dans le référentiel d'examen.</b> Vous ne serez pas interrogé dessus à l'épreuve. Il peut pourtant vous tuer. C'est pour cela qu'il est dans ce module.</p><p>C'est le scénario du schéma ci-dessus, et c'est le plus fréquent de ce type d'accident : un local resté fermé, quelqu'un qui entre sans rien sentir, puis un collègue qui se précipite pour le secourir sans se protéger ni ventiler — il respire le même air appauvri et s'effondre à son tour. <b>Deux victimes au lieu d'une.</b></p>",
    "blocs": [
     {
      "type": "cle",
@@ -8998,7 +12251,7 @@ window.PILOTE_PACK = {
    "titre": "Le froid brûle — projections et gelures",
    "dc": "Sécurité · codes 12.02",
    "minuteur_s": 300,
-   "corps": "<img src=\"packs/fluides/res/svg/secu-projection.svg\" alt=\"Le liquide jaillit dans l'axe du raccord : on se place hors de cet axe, on vérifie au manomètre que la pression est nulle, et on porte gants et lunettes.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.</p><p>Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui. Un contact avec de l'ammoniac liquide ajoute une <b>brûlure chimique</b> à la brûlure froide : ce fluide n'appartient pas à la même famille que les fluides fluorés, et ne se comporte pas comme eux.</p><p>Le cas type : vous déconnectez un flexible de <b>manifold</b> (l'appareil à manomètres) en pensant le tronçon vide. La vanne n'a pas été vérifiée, le manomètre pas relu. Le liquide restant jaillit au desserrage — dans l'axe du raccord, comme sur le schéma.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=s2\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Le froid brûle — projections et gelures ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 5 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/secu-projection.svg\" alt=\"Le liquide jaillit dans l'axe du raccord : on se place hors de cet axe, on vérifie au manomètre que la pression est nulle, et on porte gants et lunettes.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément. C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.</p><p>Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui. Un contact avec de l'ammoniac liquide ajoute une <b>brûlure chimique</b> à la brûlure froide : ce fluide n'appartient pas à la même famille que les fluides fluorés, et ne se comporte pas comme eux.</p><p>Le cas type : vous déconnectez un flexible de <b>manifold</b> (l'appareil à manomètres) en pensant le tronçon vide. La vanne n'a pas été vérifiée, le manomètre pas relu. Le liquide restant jaillit au desserrage — dans l'axe du raccord, comme sur le schéma.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -9068,7 +12321,7 @@ window.PILOTE_PACK = {
    "titre": "La flamme interdite — décomposition du fluide",
    "dc": "Sécurité · codes 11.03",
    "minuteur_s": 360,
-   "corps": "<img src=\"packs/fluides/res/svg/secu-flamme.svg\" alt=\"À gauche le geste interdit : chauffer un tronçon non récupéré, les gaz toxiques remontent vers le visage penché. À droite le geste juste : récupérer, balayer à l'azote, ventiler.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Un fluide frigorigène fluoré est stable à température normale. Il ne l'est plus face à une flamme. Chauffé au contact d'une flamme ou d'une surface très chaude, il ne brûle pas comme un carburant : il se <b>décompose</b>. Sa molécule se casse et forme d'autres substances, absentes du fluide d'origine — des gaz toxiques et corrosifs.</p><p>Certains fluides ajoutent un second risque. Selon la norme NF EN 378, les fluides classés <b>A2L</b> (légèrement inflammables, comme le R-32 ou le R-1234yf) ou <b>A3</b> (très inflammables, comme le R-290 ou le R-600a) peuvent eux-mêmes s'enflammer au contact d'une flamme ou d'une étincelle. La classe du fluide utilisé se lit sur sa FDS (fiche de données de sécurité).</p><p>Le cas type : un tronçon où il reste « une petite quantité, ça ne changera rien ». La flamme touche ce fluide résiduel, il se décompose, et les fumées se dégagent juste sous le visage penché sur le brasage.</p><img src=\"packs/fluides/res/svg/secu-decomposition-ari.svg\" alt=\"Animation : sans protection, on reste dans les fumées et on tousse. La bonne réponse : s'éloigner, alerter, et ne laisser approcher qu'une personne formée portant un appareil respiratoire isolant (ARI) complet.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Et si des fumées de décomposition sont déjà présentes</b> — une fuite qui a rencontré une source chaude avant votre arrivée, par exemple ? La réponse n'est plus la procédure de brasage, c'est l'éloignement. Un masque à cartouche ou un simple masque filtrant ne protège <b>ni</b> des gaz de décomposition <b>ni</b> d'un manque d'oxygène : seul un <b>appareil respiratoire isolant</b> (ARI), avec sa propre réserve d'air, le permet — et son usage est réservé à des personnes formées. Retenez la règle : l'ARI protège l'intervenant formé, il ne remplace jamais l'éloignement de la source ni l'évacuation de la zone.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=s3\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : La flamme interdite — décomposition du fluide ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/secu-flamme.svg\" alt=\"À gauche le geste interdit : chauffer un tronçon non récupéré, les gaz toxiques remontent vers le visage penché. À droite le geste juste : récupérer, balayer à l'azote, ventiler.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Un fluide frigorigène fluoré est stable à température normale. Il ne l'est plus face à une flamme. Chauffé au contact d'une flamme ou d'une surface très chaude, il ne brûle pas comme un carburant : il se <b>décompose</b>. Sa molécule se casse et forme d'autres substances, absentes du fluide d'origine — des gaz toxiques et corrosifs.</p><p>Certains fluides ajoutent un second risque. Selon la norme NF EN 378, les fluides classés <b>A2L</b> (légèrement inflammables, comme le R-32 ou le R-1234yf) ou <b>A3</b> (très inflammables, comme le R-290 ou le R-600a) peuvent eux-mêmes s'enflammer au contact d'une flamme ou d'une étincelle. La classe du fluide utilisé se lit sur sa FDS (fiche de données de sécurité).</p><p>Le cas type : un tronçon où il reste « une petite quantité, ça ne changera rien ». La flamme touche ce fluide résiduel, il se décompose, et les fumées se dégagent juste sous le visage penché sur le brasage.</p><img src=\"packs/fluides/res/svg/secu-decomposition-ari.svg\" alt=\"Animation : sans protection, on reste dans les fumées et on tousse. La bonne réponse : s'éloigner, alerter, et ne laisser approcher qu'une personne formée portant un appareil respiratoire isolant (ARI) complet.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Et si des fumées de décomposition sont déjà présentes</b> — une fuite qui a rencontré une source chaude avant votre arrivée, par exemple ? La réponse n'est plus la procédure de brasage, c'est l'éloignement. Un masque à cartouche ou un simple masque filtrant ne protège <b>ni</b> des gaz de décomposition <b>ni</b> d'un manque d'oxygène : seul un <b>appareil respiratoire isolant</b> (ARI), avec sa propre réserve d'air, le permet — et son usage est réservé à des personnes formées. Retenez la règle : l'ARI protège l'intervenant formé, il ne remplace jamais l'éloignement de la source ni l'évacuation de la zone.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -9138,7 +12391,7 @@ window.PILOTE_PACK = {
    "titre": "Ce qui éclate — la pression",
    "dc": "Sécurité · codes 11.03 · 3.01",
    "minuteur_s": 420,
-   "corps": "<img src=\"packs/fluides/res/svg/secu-bouteille.svg\" alt=\"À gauche, bouteille remplie à ras : le liquide n'a pas de place pour se dilater, la pression grimpe très vite. À droite, volume libre respecté. En bas, les gestes interdits.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.</p><p>Ce qui peut céder :</p><ul><li>une <b>bouteille de fluide</b> qui a chauffé au soleil ou près d'une source de chaleur ;</li><li>un <b>flexible</b> fatigué par le temps, l'usure ou de mauvais pliages ;</li><li>un <b>raccord</b> mal serré ou abîmé ;</li><li>un tronçon de circuit fermé des deux côtés par des vannes, sans aucune protection, alors qu'il reste rempli de fluide.</li></ul><p>Le schéma du haut explique pourquoi une bouteille ne se remplit <b>jamais</b> à ras : un liquide qui chauffe se dilate, et s'il n'a pas de volume libre au-dessus de lui, la pression grimpe très vite. Le taux de remplissage à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur ; les propriétés du fluide, dans sa fiche de données de sécurité (FDS).</p><p><b>Comment ça arrive vraiment.</b> Sur un chantier, une bouteille de fluide oubliée dans un véhicule en plein été, vitres fermées, en est un exemple courant : l'habitacle chauffe fortement, la bouteille avec. Autre situation : un flexible de manifold ancien, jamais contrôlé, qui cède au moment où l'on ouvre une vanne. Autre situation encore : un tronçon de tuyauterie en toiture, isolé par deux vannes fermées pendant une réparation, laissé en plein soleil sans protection ni vérification avant de reprendre le travail dessus.</p><p>Un compresseur à l'arrêt n'est pas forcément une machine sans danger. Un circuit peut rester sous pression longtemps après l'arrêt d'une installation, sans qu'aucune fuite ne se produise. Rien à l'extérieur ne signale cette pression : ni bruit, ni mouvement, ni tiédeur. Un technicien qui desserre un raccord en se disant « de toute façon, c'est arrêté depuis longtemps » peut se retrouver face à une projection de fluide et de pièces.</p><p><b>Ce qui protège.</b> Dans l'ordre où on l'applique :</p><ol><li>Ne jamais exposer une bouteille de fluide à la chaleur ou au soleil direct : la stocker et la transporter à l'abri, à la verticale, arrimée.</li><li>Respecter le taux de remplissage indiqué par le fabricant : ne jamais remplir une bouteille à ras.</li><li>Connaître le rôle des <b>organes de sécurité</b> du circuit. Une <b>soupape de sécurité</b> s'ouvre automatiquement pour laisser échapper un peu de fluide avant que la pression n'atteigne un niveau dangereux ; son seuil de déclenchement est fixé par le fabricant et indiqué sur l'organe ou dans sa documentation. Vérifier la présence et le bon état de ces organes, sans jamais les démonter ni les bloquer.</li><li>Pour toute mise en pression du circuit — recherche de fuite, épreuve de pression — utiliser <b>uniquement de l'azote</b>, jamais de l'oxygène ni de l'air comprimé, et toujours au travers d'un <b>mano-détendeur</b> (un appareil qui réduit et règle la pression très élevée de la bouteille) réglé selon la documentation constructeur. Sans détendeur, la pression de la bouteille d'azote suffit à elle seule à faire éclater un circuit frigorifique.</li><li>Avant de desserrer quoi que ce soit sur un circuit à l'arrêt, mesurer sa pression au manomètre — même si l'installation semble arrêtée depuis longtemps.</li></ol>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=s4\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Ce qui éclate — la pression ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/secu-bouteille.svg\" alt=\"À gauche, bouteille remplie à ras : le liquide n'a pas de place pour se dilater, la pression grimpe très vite. À droite, volume libre respecté. En bas, les gestes interdits.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt. Elle existe même quand il fait chaud dehors, alors que rien ne fonctionne. Une règle simple : plus la température monte, plus la pression à l'intérieur du circuit monte aussi. Une paroi — bouteille, flexible, raccord, tuyauterie — résiste à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Ce n'est pas une réaction chimique, c'est une question de force. La pression pousse de l'intérieur ; la paroi résiste de l'extérieur. Quand la pression gagne, la paroi perd.</p><p>Ce qui peut céder :</p><ul><li>une <b>bouteille de fluide</b> qui a chauffé au soleil ou près d'une source de chaleur ;</li><li>un <b>flexible</b> fatigué par le temps, l'usure ou de mauvais pliages ;</li><li>un <b>raccord</b> mal serré ou abîmé ;</li><li>un tronçon de circuit fermé des deux côtés par des vannes, sans aucune protection, alors qu'il reste rempli de fluide.</li></ul><p>Le schéma du haut explique pourquoi une bouteille ne se remplit <b>jamais</b> à ras : un liquide qui chauffe se dilate, et s'il n'a pas de volume libre au-dessus de lui, la pression grimpe très vite. Le taux de remplissage à respecter figure sur la plaque de la bouteille ou dans la documentation du fournisseur ; les propriétés du fluide, dans sa fiche de données de sécurité (FDS).</p><p><b>Comment ça arrive vraiment.</b> Sur un chantier, une bouteille de fluide oubliée dans un véhicule en plein été, vitres fermées, en est un exemple courant : l'habitacle chauffe fortement, la bouteille avec. Autre situation : un flexible de manifold ancien, jamais contrôlé, qui cède au moment où l'on ouvre une vanne. Autre situation encore : un tronçon de tuyauterie en toiture, isolé par deux vannes fermées pendant une réparation, laissé en plein soleil sans protection ni vérification avant de reprendre le travail dessus.</p><p>Un compresseur à l'arrêt n'est pas forcément une machine sans danger. Un circuit peut rester sous pression longtemps après l'arrêt d'une installation, sans qu'aucune fuite ne se produise. Rien à l'extérieur ne signale cette pression : ni bruit, ni mouvement, ni tiédeur. Un technicien qui desserre un raccord en se disant « de toute façon, c'est arrêté depuis longtemps » peut se retrouver face à une projection de fluide et de pièces.</p><p><b>Ce qui protège.</b> Dans l'ordre où on l'applique :</p><ol><li>Ne jamais exposer une bouteille de fluide à la chaleur ou au soleil direct : la stocker et la transporter à l'abri, à la verticale, arrimée.</li><li>Respecter le taux de remplissage indiqué par le fabricant : ne jamais remplir une bouteille à ras.</li><li>Connaître le rôle des <b>organes de sécurité</b> du circuit. Une <b>soupape de sécurité</b> s'ouvre automatiquement pour laisser échapper un peu de fluide avant que la pression n'atteigne un niveau dangereux ; son seuil de déclenchement est fixé par le fabricant et indiqué sur l'organe ou dans sa documentation. Vérifier la présence et le bon état de ces organes, sans jamais les démonter ni les bloquer.</li><li>Pour toute mise en pression du circuit — recherche de fuite, épreuve de pression — utiliser <b>uniquement de l'azote</b>, jamais de l'oxygène ni de l'air comprimé, et toujours au travers d'un <b>mano-détendeur</b> (un appareil qui réduit et règle la pression très élevée de la bouteille) réglé selon la documentation constructeur. Sans détendeur, la pression de la bouteille d'azote suffit à elle seule à faire éclater un circuit frigorifique.</li><li>Avant de desserrer quoi que ce soit sur un circuit à l'arrêt, mesurer sa pression au manomètre — même si l'installation semble arrêtée depuis longtemps.</li></ol>",
    "blocs": [
     {
      "type": "cle",
@@ -9222,7 +12475,7 @@ window.PILOTE_PACK = {
    "titre": "Consigner avant de toucher — le risque électrique",
    "dc": "Sécurité",
    "minuteur_s": 480,
-   "corps": "<img src=\"packs/fluides/res/svg/secu-consignation.svg\" alt=\"Les cinq étapes dans l'ordre : séparer, condamner, identifier, vérifier l'absence de tension au VAT, mettre à la terre. Le VAT se teste avant et après sur une source connue.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Ce qui arrive.</b> Ce risque ne figure dans aucun code du référentiel d'examen fluides. Il n'en est pas moins réel : le risque électrique tue des professionnels chaque année, sur les installations de froid et de climatisation comme sur toute autre installation électrique.</p><p>Le passage du courant électrique dans le corps humain porte un nom : l'<b>électrisation</b>. Ses effets vont de la simple secousse à des blessures graves — brûlures internes, troubles du cœur. Quand une électrisation entraîne la mort, on parle d'<b>électrocution</b>. C'est le même phénomène ; seule la gravité change.</p><p>Un autre danger ne demande aucun contact : l'<b>arc électrique</b>. C'est une décharge qui jaillit dans l'air entre deux points sous tension, ou entre un point sous tension et une masse, sans qu'il soit nécessaire de toucher quoi que ce soit. Un arc électrique brûle par la chaleur et la lumière qu'il dégage, et peut projeter des matières en fusion. On peut donc se blesser gravement sans avoir touché aucun fil.</p><p>Un dernier piège : couper l'alimentation ne vide pas forcément tous les composants de leur énergie. Un <b>condensateur</b> est un composant qui stocke de l'énergie électrique ; on en trouve par exemple dans les circuits de démarrage de certains moteurs. Il peut rester chargé après la coupure du courant. Il reste alors dangereux tant qu'il n'a pas été déchargé selon la méthode indiquée par la documentation constructeur de l'équipement.</p><p><b>Comment ça arrive vraiment.</b> Un technicien pressé ouvre une armoire électrique pour un dépannage rapide. Le disjoncteur qui semble commander cette armoire est coupé, alors il touche directement un bornier — la barrette où arrivent les fils. Mais personne n'a vérifié que ce disjoncteur coupait bien cette armoire précise : un autre circuit, resté sous tension, y arrive aussi. Autre situation fréquente : un condensateur de moteur touché juste après la coupure du courant, alors qu'il est encore chargé. Autre situation encore : un outil métallique approché trop près de bornes sous tension dans une armoire électrique, sans contact direct, qui déclenche un arc électrique.</p><p><b>Ce qui protège.</b> Avant de toucher un circuit ou un équipement électrique, la <b>consignation électrique</b> se déroule dans un ordre précis, en cinq étapes :</p><ol><li><b>Séparer</b> : couper l'alimentation électrique de façon visible et certaine.</li><li><b>Condamner</b> : verrouiller l'organe de coupure en position ouverte, pour qu'il ne puisse pas être refermé par quelqu'un d'autre pendant l'intervention.</li><li><b>Identifier</b> : vérifier que l'on se trouve bien sur le circuit ou l'équipement que l'on vient de séparer, et pas sur un autre.</li><li><b>Vérifier l'absence de tension</b> avec un <b>VAT</b> — un vérificateur d'absence de tension — dont le modèle et les réglages sont adaptés à l'installation, conformément à sa documentation constructeur.</li><li><b>Mettre à la terre et en court-circuit</b> quand cette étape s'impose, notamment lorsqu'une tension pourrait réapparaître par une autre source.</li></ol><p>Le VAT lui-même doit être digne de confiance. On le contrôle sur une source que l'on sait sous tension <b>avant</b> de l'utiliser sur le circuit à vérifier, puis on refait le même contrôle sur cette source connue <b>après</b>. Si l'appareil fonctionnait au premier essai mais plus au second, tout ce qu'il a mesuré entre les deux doit être considéré comme non fiable.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=s5\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Consigner avant de toucher — le risque électrique ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/secu-consignation.svg\" alt=\"Les cinq étapes dans l'ordre : séparer, condamner, identifier, vérifier l'absence de tension au VAT, mettre à la terre. Le VAT se teste avant et après sur une source connue.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Ce qui arrive.</b> Ce risque ne figure dans aucun code du référentiel d'examen fluides. Il n'en est pas moins réel : le risque électrique tue des professionnels chaque année, sur les installations de froid et de climatisation comme sur toute autre installation électrique.</p><p>Le passage du courant électrique dans le corps humain porte un nom : l'<b>électrisation</b>. Ses effets vont de la simple secousse à des blessures graves — brûlures internes, troubles du cœur. Quand une électrisation entraîne la mort, on parle d'<b>électrocution</b>. C'est le même phénomène ; seule la gravité change.</p><p>Un autre danger ne demande aucun contact : l'<b>arc électrique</b>. C'est une décharge qui jaillit dans l'air entre deux points sous tension, ou entre un point sous tension et une masse, sans qu'il soit nécessaire de toucher quoi que ce soit. Un arc électrique brûle par la chaleur et la lumière qu'il dégage, et peut projeter des matières en fusion. On peut donc se blesser gravement sans avoir touché aucun fil.</p><p>Un dernier piège : couper l'alimentation ne vide pas forcément tous les composants de leur énergie. Un <b>condensateur</b> est un composant qui stocke de l'énergie électrique ; on en trouve par exemple dans les circuits de démarrage de certains moteurs. Il peut rester chargé après la coupure du courant. Il reste alors dangereux tant qu'il n'a pas été déchargé selon la méthode indiquée par la documentation constructeur de l'équipement.</p><p><b>Comment ça arrive vraiment.</b> Un technicien pressé ouvre une armoire électrique pour un dépannage rapide. Le disjoncteur qui semble commander cette armoire est coupé, alors il touche directement un bornier — la barrette où arrivent les fils. Mais personne n'a vérifié que ce disjoncteur coupait bien cette armoire précise : un autre circuit, resté sous tension, y arrive aussi. Autre situation fréquente : un condensateur de moteur touché juste après la coupure du courant, alors qu'il est encore chargé. Autre situation encore : un outil métallique approché trop près de bornes sous tension dans une armoire électrique, sans contact direct, qui déclenche un arc électrique.</p><p><b>Ce qui protège.</b> Avant de toucher un circuit ou un équipement électrique, la <b>consignation électrique</b> se déroule dans un ordre précis, en cinq étapes :</p><ol><li><b>Séparer</b> : couper l'alimentation électrique de façon visible et certaine.</li><li><b>Condamner</b> : verrouiller l'organe de coupure en position ouverte, pour qu'il ne puisse pas être refermé par quelqu'un d'autre pendant l'intervention.</li><li><b>Identifier</b> : vérifier que l'on se trouve bien sur le circuit ou l'équipement que l'on vient de séparer, et pas sur un autre.</li><li><b>Vérifier l'absence de tension</b> avec un <b>VAT</b> — un vérificateur d'absence de tension — dont le modèle et les réglages sont adaptés à l'installation, conformément à sa documentation constructeur.</li><li><b>Mettre à la terre et en court-circuit</b> quand cette étape s'impose, notamment lorsqu'une tension pourrait réapparaître par une autre source.</li></ol><p>Le VAT lui-même doit être digne de confiance. On le contrôle sur une source que l'on sait sous tension <b>avant</b> de l'utiliser sur le circuit à vérifier, puis on refait le même contrôle sur cette source connue <b>après</b>. Si l'appareil fonctionnait au premier essai mais plus au second, tout ce qu'il a mesuré entre les deux doit être considéré comme non fiable.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -9391,7 +12644,7 @@ window.PILOTE_PACK = {
    "titre": "Explosif avant d'être perceptible — la LIE",
    "dc": "Classification · codes 12.02 · 12.04",
    "minuteur_s": 420,
-   "corps": "<img src=\"packs/fluides/res/svg/lie-domaine.svg\" alt=\"L'axe des concentrations : trop pauvre, puis le domaine d'explosivité entre LIE et LSE, puis trop riche. L'explosimètre affiche un pourcentage de la LIE, c'est-à-dire la marge restante.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Ce qui arrive.</b> Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz — une étincelle ne déclenche rien. Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. <b>Entre les deux</b>, le mélange s'enflamme, et il le fait d'un coup, dans tout le volume.</p><p>Ces deux bornes portent un nom. La <b>LIE</b> — limite inférieure d'explosivité — est la concentration en dessous de laquelle le mélange ne s'enflamme pas. La <b>LSE</b> — limite supérieure d'explosivité — est celle au-dessus de laquelle il ne s'enflamme plus non plus. L'intervalle entre les deux s'appelle le <b>domaine d'explosivité</b>. Chaque gaz a le sien : les valeurs sont propres au fluide et figurent sur sa <b>fiche de données de sécurité</b>. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale.</p><p><b>Ce qui rend ce danger particulier</b>, c'est qu'il n'y a pas de signal. Une atmosphère peut atteindre son domaine d'explosivité sans odeur, sans bruit, sans rien de visible. Le gaz domestique que l'on sent dans une cuisine contient un <b>odorisant ajouté volontairement</b> pour être détecté par le nez. Le <b>R-290 utilisé en froid est un propane de haute pureté : cet odorisant n'y est pas</b>. Le nez ne vous avertira pas. Et le seuil de perception d'une odeur, quand elle existe, n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger.</p><p><b>L'appareil qui répond à cette question</b> s'appelle un <b>explosimètre</b>. Il ne mesure pas une quantité de gaz dans l'absolu : il affiche <b>un pourcentage de la LIE</b> du gaz recherché. Une valeur de 10 % LIE signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable. C'est une mesure de <b>marge restante</b>, et c'est ce qui la rend utilisable : l'alarme se déclenche bien avant que le mélange ne devienne explosif. Le seuil de réglage se fixe selon la procédure de l'entreprise et la documentation de l'appareil.</p><p>Un explosimètre se règle pour un gaz donné : un appareil réglé pour un gaz et utilisé pour un autre affiche un chiffre faux. Et il ne remplace ni un détecteur de fuite de fluide frigorigène, ni un détecteur d'oxygène : ce sont trois appareils différents, qui répondent à trois questions différentes.</p><p><b>Comment ça arrive vraiment.</b> Une petite fuite sur une unité au R-290, dans un local technique fermé et peu ventilé. Rien ne se voit, rien ne se sent. Le gaz, plus lourd que l'air, s'accumule lentement près du sol. Un technicien entre, actionne l'interrupteur d'éclairage, branche une lampe baladeuse, ou pose un outil électroportatif sur le sol. L'étincelle du contact suffit. Il n'y avait aucun signe avant-coureur, et l'inflammation ne laisse pas le temps de reculer.</p><p><b>ATEX</b> — le mot vient de « <b>AT</b>mosphère <b>EX</b>plosive ». Lorsqu'un local peut contenir une atmosphère explosive, il fait l'objet d'un <b>zonage</b> : on délimite les zones où ce risque existe, et on n'y admet que du matériel conçu pour ne pas enflammer l'atmosphère — ni par une <b>étincelle</b>, ni par une <b>surface trop chaude</b>, car une surface chaude suffit à allumer un mélange sans la moindre flamme. Cela vaut aussi pour ce que le technicien apporte avec lui — outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir <b>reconnaître</b> qu'il entre dans une telle zone et respecter ce qui y est affiché.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=cl2\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Explosif avant d'être perceptible — la LIE ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/lie-domaine.svg\" alt=\"L'axe des concentrations : trop pauvre, puis le domaine d'explosivité entre LIE et LSE, puis trop riche. L'explosimètre affiche un pourcentage de la LIE, c'est-à-dire la marge restante.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Ce qui arrive.</b> Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz — une étincelle ne déclenche rien. Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. <b>Entre les deux</b>, le mélange s'enflamme, et il le fait d'un coup, dans tout le volume.</p><p>Ces deux bornes portent un nom. La <b>LIE</b> — limite inférieure d'explosivité — est la concentration en dessous de laquelle le mélange ne s'enflamme pas. La <b>LSE</b> — limite supérieure d'explosivité — est celle au-dessus de laquelle il ne s'enflamme plus non plus. L'intervalle entre les deux s'appelle le <b>domaine d'explosivité</b>. Chaque gaz a le sien : les valeurs sont propres au fluide et figurent sur sa <b>fiche de données de sécurité</b>. Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale.</p><p><b>Ce qui rend ce danger particulier</b>, c'est qu'il n'y a pas de signal. Une atmosphère peut atteindre son domaine d'explosivité sans odeur, sans bruit, sans rien de visible. Le gaz domestique que l'on sent dans une cuisine contient un <b>odorisant ajouté volontairement</b> pour être détecté par le nez. Le <b>R-290 utilisé en froid est un propane de haute pureté : cet odorisant n'y est pas</b>. Le nez ne vous avertira pas. Et le seuil de perception d'une odeur, quand elle existe, n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger.</p><p><b>L'appareil qui répond à cette question</b> s'appelle un <b>explosimètre</b>. Il ne mesure pas une quantité de gaz dans l'absolu : il affiche <b>un pourcentage de la LIE</b> du gaz recherché. Une valeur de 10 % LIE signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable. C'est une mesure de <b>marge restante</b>, et c'est ce qui la rend utilisable : l'alarme se déclenche bien avant que le mélange ne devienne explosif. Le seuil de réglage se fixe selon la procédure de l'entreprise et la documentation de l'appareil.</p><p>Un explosimètre se règle pour un gaz donné : un appareil réglé pour un gaz et utilisé pour un autre affiche un chiffre faux. Et il ne remplace ni un détecteur de fuite de fluide frigorigène, ni un détecteur d'oxygène : ce sont trois appareils différents, qui répondent à trois questions différentes.</p><p><b>Comment ça arrive vraiment.</b> Une petite fuite sur une unité au R-290, dans un local technique fermé et peu ventilé. Rien ne se voit, rien ne se sent. Le gaz, plus lourd que l'air, s'accumule lentement près du sol. Un technicien entre, actionne l'interrupteur d'éclairage, branche une lampe baladeuse, ou pose un outil électroportatif sur le sol. L'étincelle du contact suffit. Il n'y avait aucun signe avant-coureur, et l'inflammation ne laisse pas le temps de reculer.</p><p><b>ATEX</b> — le mot vient de « <b>AT</b>mosphère <b>EX</b>plosive ». Lorsqu'un local peut contenir une atmosphère explosive, il fait l'objet d'un <b>zonage</b> : on délimite les zones où ce risque existe, et on n'y admet que du matériel conçu pour ne pas enflammer l'atmosphère — ni par une <b>étincelle</b>, ni par une <b>surface trop chaude</b>, car une surface chaude suffit à allumer un mélange sans la moindre flamme. Cela vaut aussi pour ce que le technicien apporte avec lui — outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir <b>reconnaître</b> qu'il entre dans une telle zone et respecter ce qui y est affiché.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -9475,7 +12728,7 @@ window.PILOTE_PACK = {
    "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend",
    "dc": "Classification · code 11.03",
    "minuteur_s": 600,
-   "corps": "<img src=\"packs/fluides/res/svg/co2-point-bas.svg\" alt=\"Animation : le CO₂ remplit le local par le bas ; un technicien descend l'escalier et entre dans la nappe. Respirable à hauteur de visage, mortel en bas de l'escalier.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Ce qui arrive.</b> Le CO₂ — le R-744 — est classé <b>A1</b> : toxicité faible, non inflammable, PRP de 1. C'est la case la plus rassurante de toute la matrice. Et c'est exactement ce qui le rend dangereux : <b>sa classe n'annonce aucun des deux risques qui tuent réellement sur ces installations</b> — la <b>pression</b>, et l'<b>anoxie</b>. Qui retient « CO₂ = A1 = tranquille » a retenu quelque chose de faux.</p><p>Ce fluide entre aujourd'hui dans le parc : froid commercial, supermarchés, chambres froides. Vous en rencontrerez. Ce n'est plus un sujet de culture générale.</p><p><b>Premier danger : la pression.</b> Une installation au CO₂ travaille à des pressions <b>bien plus élevées</b> que celles des fluides que vous connaissez — sans commune mesure. Cela change tout le matériel : manifold, flexibles, vannes, tout doit être <b>dédié au CO₂</b>. Brancher un manifold ordinaire sur une installation au CO₂, c'est le faire éclater dans les mains. Les valeurs exactes dépendent du point de fonctionnement et se lisent dans la <b>documentation constructeur</b> ; ce qu'il faut retenir sans aucun chiffre, c'est qu'<b>aucun réflexe acquis sur un R-134a ou un R-410A ne se transpose ici</b>.</p><p>Cette pression garde son danger <b>machine à l'arrêt</b>. Une installation au CO₂ arrêtée continue de monter en pression si elle se réchauffe : c'est pour cela qu'elle possède des dispositifs de sécurité qui lui sont propres. Une installation au CO₂ laissée sans surveillance après une coupure n'est pas une installation au repos.</p><p>À la détente à l'air libre, le CO₂ peut passer directement à l'état solide : c'est la <b>glace carbonique</b> (ou neige carbonique). Double conséquence — une <b>brûlure par le froid</b> au contact de la peau, et un <b>bouchon solide</b> qui obstrue une vanne ou une tuyauterie. Et ce bouchon finit par fondre : le gaz qu'il libère alimente alors le second danger.</p><p><b>Second danger : l'air qu'il vous prend.</b> Le mot <b>anoxie</b> désigne le manque d'oxygène dans l'organisme. Vous avez rencontré ce danger dans la fiche « L'air qui manque » : un gaz prend la place de l'air respirable. Le CO₂ fait cela — <b>mais il ne fait pas que cela</b>, et c'est toute la différence.</p><p><b>Deux mécanismes, pas un seul.</b> L'azote agit uniquement par <b>déplacement</b> : il est inerte, il prend la place de l'oxygène sans réagir avec l'organisme. Le CO₂, lui, agit <b>en plus par lui-même</b> : il n'est pas inerte, il intervient dans la régulation de la respiration et devient nocif à des concentrations où l'oxygène restant serait encore suffisant. Autrement dit, le CO₂ peut vous mettre en danger <b>avant</b> d'avoir chassé assez d'oxygène pour qu'un contrôle du seul taux d'oxygène s'en alarme. C'est pourquoi, sur une installation au CO₂, <b>un détecteur d'oxygène seul ne suffit pas</b> : il faut une mesure du CO₂ lui-même.</p><p>N'en concluez pas que les fluides fluorés sont inoffensifs : à forte concentration, ils agissent eux aussi sur l'organisme — effet sur le rythme du cœur, effet endormant. Leur fiche de données de sécurité le mentionne. « A » n'a jamais voulu dire inoffensif.</p><p><b>Ce que vous ressentirez — et pourquoi c'est déjà tard.</b> Contrairement à l'azote, qui ne prévient pas du tout, le CO₂ <b>donne des signes</b> : souffle court puis <b>essoufflement violent</b>, <b>maux de tête</b>, <b>vertiges</b>, bourdonnements, sueurs. La raison est celle vue en fiche « L'air qui manque » : c'est l'excès de gaz carbonique dans le sang qui commande l'envie de respirer. Ces signes sont votre <b>seule chance</b> — mais ils arrivent alors que vous êtes <b>déjà dans la nappe</b>, et à forte concentration la perte de connaissance suit en quelques instants. D'où une règle simple : <b>essoufflement brutal ou mal de tête soudain dans un local technique, vous ressortez immédiatement</b>. On ne cherche pas à comprendre sur place, on ne finit pas le geste en cours.</p><p><b>Pourquoi on entre sans le savoir.</b> Le CO₂ est <b>incolore</b>, <b>inodore</b>, et <b>plus lourd que l'air</b>. Il ne monte pas : il s'écoule et <b>s'accumule dans les points bas</b> — fosse, cave, sous-sol, local en contrebas, bas d'une chambre froide. Une zone peut être parfaitement respirable à hauteur de visage et déjà mortelle au niveau du sol, ou en bas de quelques marches. Descendre, c'est entrer dans la nappe.</p><p><b>Attention à ne pas généraliser cette règle.</b> « Plus lourd que l'air » vaut pour le CO₂ et pour la plupart des fluides fluorés — mais <b>pas pour l'ammoniac</b> (R-717), plus léger que l'air, qui se comporte à l'inverse : il monte. Le comportement d'un fluide se lit sur sa FDS, il ne se suppose jamais par analogie avec le fluide précédent.</p><p><b>Comment ça arrive vraiment.</b> Une installation au CO₂ en local technique enterré, une fuite lente pendant la nuit, porte fermée. Le gaz remplit le volume par le bas. Au matin, un technicien descend relever un paramètre. Rien ne se voit, rien ne se sent. À mi-escalier, il a mal à la tête et le souffle court — il met cela sur le compte de la fatigue et continue, parce qu'il n'en a que pour deux minutes. Il ne remonte pas. Puis vient le second accident, celui qui tue le plus souvent dans cette famille d'accidents : un collègue le voit au sol et descend le chercher, sans protection. La nappe est toujours là. <b>Deux victimes au lieu d'une.</b></p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=cl3\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/co2-point-bas.svg\" alt=\"Animation : le CO₂ remplit le local par le bas ; un technicien descend l'escalier et entre dans la nappe. Respirable à hauteur de visage, mortel en bas de l'escalier.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Ce qui arrive.</b> Le CO₂ — le R-744 — est classé <b>A1</b> : toxicité faible, non inflammable, PRP de 1. C'est la case la plus rassurante de toute la matrice. Et c'est exactement ce qui le rend dangereux : <b>sa classe n'annonce aucun des deux risques qui tuent réellement sur ces installations</b> — la <b>pression</b>, et l'<b>anoxie</b>. Qui retient « CO₂ = A1 = tranquille » a retenu quelque chose de faux.</p><p>Ce fluide entre aujourd'hui dans le parc : froid commercial, supermarchés, chambres froides. Vous en rencontrerez. Ce n'est plus un sujet de culture générale.</p><p><b>Premier danger : la pression.</b> Une installation au CO₂ travaille à des pressions <b>bien plus élevées</b> que celles des fluides que vous connaissez — sans commune mesure. Cela change tout le matériel : manifold, flexibles, vannes, tout doit être <b>dédié au CO₂</b>. Brancher un manifold ordinaire sur une installation au CO₂, c'est le faire éclater dans les mains. Les valeurs exactes dépendent du point de fonctionnement et se lisent dans la <b>documentation constructeur</b> ; ce qu'il faut retenir sans aucun chiffre, c'est qu'<b>aucun réflexe acquis sur un R-134a ou un R-410A ne se transpose ici</b>.</p><p>Cette pression garde son danger <b>machine à l'arrêt</b>. Une installation au CO₂ arrêtée continue de monter en pression si elle se réchauffe : c'est pour cela qu'elle possède des dispositifs de sécurité qui lui sont propres. Une installation au CO₂ laissée sans surveillance après une coupure n'est pas une installation au repos.</p><p>À la détente à l'air libre, le CO₂ peut passer directement à l'état solide : c'est la <b>glace carbonique</b> (ou neige carbonique). Double conséquence — une <b>brûlure par le froid</b> au contact de la peau, et un <b>bouchon solide</b> qui obstrue une vanne ou une tuyauterie. Et ce bouchon finit par fondre : le gaz qu'il libère alimente alors le second danger.</p><p><b>Second danger : l'air qu'il vous prend.</b> Le mot <b>anoxie</b> désigne le manque d'oxygène dans l'organisme. Vous avez rencontré ce danger dans la fiche « L'air qui manque » : un gaz prend la place de l'air respirable. Le CO₂ fait cela — <b>mais il ne fait pas que cela</b>, et c'est toute la différence.</p><p><b>Deux mécanismes, pas un seul.</b> L'azote agit uniquement par <b>déplacement</b> : il est inerte, il prend la place de l'oxygène sans réagir avec l'organisme. Le CO₂, lui, agit <b>en plus par lui-même</b> : il n'est pas inerte, il intervient dans la régulation de la respiration et devient nocif à des concentrations où l'oxygène restant serait encore suffisant. Autrement dit, le CO₂ peut vous mettre en danger <b>avant</b> d'avoir chassé assez d'oxygène pour qu'un contrôle du seul taux d'oxygène s'en alarme. C'est pourquoi, sur une installation au CO₂, <b>un détecteur d'oxygène seul ne suffit pas</b> : il faut une mesure du CO₂ lui-même.</p><p>N'en concluez pas que les fluides fluorés sont inoffensifs : à forte concentration, ils agissent eux aussi sur l'organisme — effet sur le rythme du cœur, effet endormant. Leur fiche de données de sécurité le mentionne. « A » n'a jamais voulu dire inoffensif.</p><p><b>Ce que vous ressentirez — et pourquoi c'est déjà tard.</b> Contrairement à l'azote, qui ne prévient pas du tout, le CO₂ <b>donne des signes</b> : souffle court puis <b>essoufflement violent</b>, <b>maux de tête</b>, <b>vertiges</b>, bourdonnements, sueurs. La raison est celle vue en fiche « L'air qui manque » : c'est l'excès de gaz carbonique dans le sang qui commande l'envie de respirer. Ces signes sont votre <b>seule chance</b> — mais ils arrivent alors que vous êtes <b>déjà dans la nappe</b>, et à forte concentration la perte de connaissance suit en quelques instants. D'où une règle simple : <b>essoufflement brutal ou mal de tête soudain dans un local technique, vous ressortez immédiatement</b>. On ne cherche pas à comprendre sur place, on ne finit pas le geste en cours.</p><p><b>Pourquoi on entre sans le savoir.</b> Le CO₂ est <b>incolore</b>, <b>inodore</b>, et <b>plus lourd que l'air</b>. Il ne monte pas : il s'écoule et <b>s'accumule dans les points bas</b> — fosse, cave, sous-sol, local en contrebas, bas d'une chambre froide. Une zone peut être parfaitement respirable à hauteur de visage et déjà mortelle au niveau du sol, ou en bas de quelques marches. Descendre, c'est entrer dans la nappe.</p><p><b>Attention à ne pas généraliser cette règle.</b> « Plus lourd que l'air » vaut pour le CO₂ et pour la plupart des fluides fluorés — mais <b>pas pour l'ammoniac</b> (R-717), plus léger que l'air, qui se comporte à l'inverse : il monte. Le comportement d'un fluide se lit sur sa FDS, il ne se suppose jamais par analogie avec le fluide précédent.</p><p><b>Comment ça arrive vraiment.</b> Une installation au CO₂ en local technique enterré, une fuite lente pendant la nuit, porte fermée. Le gaz remplit le volume par le bas. Au matin, un technicien descend relever un paramètre. Rien ne se voit, rien ne se sent. À mi-escalier, il a mal à la tête et le souffle court — il met cela sur le compte de la fatigue et continue, parce qu'il n'en a que pour deux minutes. Il ne remonte pas. Puis vient le second accident, celui qui tue le plus souvent dans cette famille d'accidents : un collègue le voit au sol et descend le chercher, sans protection. La nappe est toujours là. <b>Deux victimes au lieu d'une.</b></p>",
    "blocs": [
     {
      "type": "cle",
@@ -9541,7 +12794,7 @@ window.PILOTE_PACK = {
    "titre": "Se protéger du CO₂ — détection, EPC et EPI",
    "dc": "Classification · codes 12.02 · 13.14",
    "minuteur_s": 600,
-   "corps": "<img src=\"packs/fluides/res/svg/co2-protection.svg\" alt=\"Le local équipé : capteur fixe en partie basse relié aux alarmes intérieure et extérieure, ventilation, signalisation à la porte. À droite, les EPI — et le masque à cartouche, qui ne protège pas du CO₂.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Ce qui protège, dans l'ordre.</b> La règle générale de la prévention est la même partout : on protège <b>d'abord le collectif</b>, ensuite l'individu. Un équipement de <b>protection collective</b> (EPC) protège tout le monde dans le local, en permanence, sans que personne ait à y penser. Un équipement de <b>protection individuelle</b> (EPI) ne protège que celui qui le porte, et seulement s'il le porte correctement. L'EPI ne remplace jamais l'EPC : il vient <b>après</b>, pour ce que l'EPC ne couvre pas.</p><p><b>La détection : ce n'est pas une option.</b> Dans un local abritant une installation au CO₂, la <b>détection de gaz est exigée</b> dès que la norme l'impose — selon la charge et le type de local — et c'est l'EPC principal. Sa présence et son état se vérifient à l'arrivée : si elle manque là où elle devrait être, c'est un signalement à faire, pas un détail. Le détecteur est <b>fixe, à poste</b> : il mesure en permanence, y compris la nuit et quand personne n'est là, et c'est précisément ce qui manque à un appareil portatif resté dans le camion. On le place <b>en partie basse</b>, là où le CO₂ s'accumule : un capteur au plafond ne verra rien.</p><p>Il est associé à des <b>alarmes</b> sonores et visuelles, à l'intérieur <b>et à l'extérieur</b> du local. Celle de l'extérieur a une fonction précise : vous prévenir <b>avant d'ouvrir la porte</b>, et empêcher un sauveteur d'entrer sans savoir. Le déclenchement peut aussi commander la <b>ventilation</b> et l'arrêt de l'installation. Un dispositif complet comporte en général deux niveaux : une <b>préalarme</b>, qui avertit, et une <b>alarme d'évacuation</b>, qui ordonne de sortir.</p><p><b>Le ppm : savoir lire ce que l'appareil affiche.</b> Un détecteur de CO₂ n'affiche ni des grammes ni des bars, mais des <b>ppm</b> — « parties par million ». Un ppm, c'est <b>une part de gaz pour un million de parts d'air</b> : autrement dit, un centimètre cube de CO₂ dans un mètre cube d'air. C'est une unité faite pour de <b>petites proportions</b>, celles qu'un pourcentage exprimerait mal.</p><p>Pour situer l'échelle : l'air extérieur que vous respirez contient <b>naturellement</b> du CO₂, de l'ordre de quelques centaines de ppm. Un affichage qui n'est pas à zéro ne signifie donc pas « il y a une fuite ». Ce qui compte, c'est l'<b>écart</b> avec l'ambiance normale et le <b>franchissement des seuils réglés</b> sur l'appareil. Ces seuils de préalarme et d'évacuation sont fixés par la <b>réglementation du travail</b> et par la norme applicable au site ; ils figurent dans la documentation de l'appareil et sont rappelés sur la <b>FDS</b> du fluide. <b>Ne les apprenez pas par cœur d'un site à l'autre</b> : vérifiez-les sur l'installation où vous êtes. Votre formateur vous donnera ceux qui s'appliquent aux machines de l'atelier.</p><p><b>Un détecteur ne vaut que s'il fonctionne.</b> Un capteur de gaz se <b>vérifie</b> et se <b>remplace</b> périodiquement, selon la documentation du fabricant : une cellule vieillit et finit par ne plus rien mesurer tout en restant allumée. À l'arrivée sur site, on contrôle donc que les capteurs et les alarmes sont <b>en état de marche</b>, et pas seulement présents au mur — exactement comme on contrôle un VAT avant de s'en servir.</p><p><b>Le reste du dispositif collectif.</b> La <b>signalisation</b> à l'entrée du local doit être visible et à jour : elle prévient celui qui entre de ce qui l'attend. Les <b>issues de secours</b> doivent rester dégagées — une palette posée devant une porte de chambre froide n'est pas un défaut de rangement, c'est une issue en moins. La <b>ventilation</b> doit être adaptée au fait que le gaz est en bas. Ces trois points se contrôlent en arrivant, avant de commencer.</p><p><b>Les EPI, et surtout leurs limites.</b> Contre le froid du CO₂ et la glace carbonique : <b>gants</b> adaptés au froid et <b>lunettes ou écran facial</b>, mis <b>avant</b> l'intervention et non une fois le geste commencé. Contre la pression : rester hors de la trajectoire d'un jet, et ne jamais desserrer un raccord sans avoir vérifié la pression au manomètre.</p><p>Et un point que l'on ne peut pas se permettre d'ignorer : <b>un masque à cartouche ne protège pas contre le CO₂, ni contre le manque d'oxygène</b>. Une cartouche filtre certains polluants dans un air qui reste respirable ; elle ne fabrique pas d'oxygène et ne retient pas le CO₂. En atmosphère appauvrie ou chargée en CO₂, seul un appareil <b>isolant</b>, qui apporte son propre air, protège — un matériel dont l'usage relève d'équipes formées et entraînées pour cela, pas d'une improvisation de dépannage. <b>Pour vous, la protection n'est pas de porter un masque : c'est de ne pas entrer.</b></p><p><b>Devant une personne au sol.</b> On alerte, on ventile, on fait intervenir les secours — <b>on ne descend pas</b>. Retenir sa respiration ne protège de rien : on ne tient que quelques dizaines de secondes, et le réflexe respiratoire finit toujours par l'emporter, au fond de la fosse.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=cl4\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Se protéger du CO₂ — détection, EPC et EPI ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 8 écrans, 8 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/co2-protection.svg\" alt=\"Le local équipé : capteur fixe en partie basse relié aux alarmes intérieure et extérieure, ventilation, signalisation à la porte. À droite, les EPI — et le masque à cartouche, qui ne protège pas du CO₂.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p><b>Ce qui protège, dans l'ordre.</b> La règle générale de la prévention est la même partout : on protège <b>d'abord le collectif</b>, ensuite l'individu. Un équipement de <b>protection collective</b> (EPC) protège tout le monde dans le local, en permanence, sans que personne ait à y penser. Un équipement de <b>protection individuelle</b> (EPI) ne protège que celui qui le porte, et seulement s'il le porte correctement. L'EPI ne remplace jamais l'EPC : il vient <b>après</b>, pour ce que l'EPC ne couvre pas.</p><p><b>La détection : ce n'est pas une option.</b> Dans un local abritant une installation au CO₂, la <b>détection de gaz est exigée</b> dès que la norme l'impose — selon la charge et le type de local — et c'est l'EPC principal. Sa présence et son état se vérifient à l'arrivée : si elle manque là où elle devrait être, c'est un signalement à faire, pas un détail. Le détecteur est <b>fixe, à poste</b> : il mesure en permanence, y compris la nuit et quand personne n'est là, et c'est précisément ce qui manque à un appareil portatif resté dans le camion. On le place <b>en partie basse</b>, là où le CO₂ s'accumule : un capteur au plafond ne verra rien.</p><p>Il est associé à des <b>alarmes</b> sonores et visuelles, à l'intérieur <b>et à l'extérieur</b> du local. Celle de l'extérieur a une fonction précise : vous prévenir <b>avant d'ouvrir la porte</b>, et empêcher un sauveteur d'entrer sans savoir. Le déclenchement peut aussi commander la <b>ventilation</b> et l'arrêt de l'installation. Un dispositif complet comporte en général deux niveaux : une <b>préalarme</b>, qui avertit, et une <b>alarme d'évacuation</b>, qui ordonne de sortir.</p><p><b>Le ppm : savoir lire ce que l'appareil affiche.</b> Un détecteur de CO₂ n'affiche ni des grammes ni des bars, mais des <b>ppm</b> — « parties par million ». Un ppm, c'est <b>une part de gaz pour un million de parts d'air</b> : autrement dit, un centimètre cube de CO₂ dans un mètre cube d'air. C'est une unité faite pour de <b>petites proportions</b>, celles qu'un pourcentage exprimerait mal.</p><p>Pour situer l'échelle : l'air extérieur que vous respirez contient <b>naturellement</b> du CO₂, de l'ordre de quelques centaines de ppm. Un affichage qui n'est pas à zéro ne signifie donc pas « il y a une fuite ». Ce qui compte, c'est l'<b>écart</b> avec l'ambiance normale et le <b>franchissement des seuils réglés</b> sur l'appareil. Ces seuils de préalarme et d'évacuation sont fixés par la <b>réglementation du travail</b> et par la norme applicable au site ; ils figurent dans la documentation de l'appareil et sont rappelés sur la <b>FDS</b> du fluide. <b>Ne les apprenez pas par cœur d'un site à l'autre</b> : vérifiez-les sur l'installation où vous êtes. Votre formateur vous donnera ceux qui s'appliquent aux machines de l'atelier.</p><p><b>Un détecteur ne vaut que s'il fonctionne.</b> Un capteur de gaz se <b>vérifie</b> et se <b>remplace</b> périodiquement, selon la documentation du fabricant : une cellule vieillit et finit par ne plus rien mesurer tout en restant allumée. À l'arrivée sur site, on contrôle donc que les capteurs et les alarmes sont <b>en état de marche</b>, et pas seulement présents au mur — exactement comme on contrôle un VAT avant de s'en servir.</p><p><b>Le reste du dispositif collectif.</b> La <b>signalisation</b> à l'entrée du local doit être visible et à jour : elle prévient celui qui entre de ce qui l'attend. Les <b>issues de secours</b> doivent rester dégagées — une palette posée devant une porte de chambre froide n'est pas un défaut de rangement, c'est une issue en moins. La <b>ventilation</b> doit être adaptée au fait que le gaz est en bas. Ces trois points se contrôlent en arrivant, avant de commencer.</p><p><b>Les EPI, et surtout leurs limites.</b> Contre le froid du CO₂ et la glace carbonique : <b>gants</b> adaptés au froid et <b>lunettes ou écran facial</b>, mis <b>avant</b> l'intervention et non une fois le geste commencé. Contre la pression : rester hors de la trajectoire d'un jet, et ne jamais desserrer un raccord sans avoir vérifié la pression au manomètre.</p><p>Et un point que l'on ne peut pas se permettre d'ignorer : <b>un masque à cartouche ne protège pas contre le CO₂, ni contre le manque d'oxygène</b>. Une cartouche filtre certains polluants dans un air qui reste respirable ; elle ne fabrique pas d'oxygène et ne retient pas le CO₂. En atmosphère appauvrie ou chargée en CO₂, seul un appareil <b>isolant</b>, qui apporte son propre air, protège — un matériel dont l'usage relève d'équipes formées et entraînées pour cela, pas d'une improvisation de dépannage. <b>Pour vous, la protection n'est pas de porter un masque : c'est de ne pas entrer.</b></p><p><b>Devant une personne au sol.</b> On alerte, on ventile, on fait intervenir les secours — <b>on ne descend pas</b>. Retenir sa respiration ne protège de rien : on ne tient que quelques dizaines de secondes, et le réflexe respiratoire finit toujours par l'emporter, au fond de la fosse.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -9681,7 +12934,7 @@ window.PILOTE_PACK = {
    "titre": "Le manifold — lire, brancher, ne pas polluer",
    "dc": "Préparation pratique · codes 5.01 · 4.05",
    "minuteur_s": 330,
-   "corps": "<figure style=\"margin:0 0 18px\"><img src=\"packs/fluides/res/photos/manifold-branche.jpg\" alt=\"Un manifold raccordé sur une installation, flexibles bleu et rouge en place.\" style=\"width:100%;height:auto;display:block;border:1px solid #d7e0e8;border-radius:8px\"><figcaption style=\"font-size:13px;color:#5a6b7d;margin-top:6px;font-style:italic\">Le manifold en situation : à gauche le manomètre BP (bleu), à droite le HP (rouge), et le flexible central qui part vers la bouteille ou la pompe.</figcaption></figure><img src=\"packs/fluides/res/svg/manifold-lecture.svg\" alt=\"Animation : le manifold face à vous — BP à gauche en bleu, HP à droite en rouge, le flexible central. Les manomètres lisent en permanence, robinets fermés ; c'est l'ouverture d'un robinet qui met le flexible central en communication.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Le <b>manifold</b> (ensemble manométrique) réunit deux manomètres — <b>BP en bleu</b>, <b>HP en rouge</b> — et deux vannes, une par côté, qui commandent le passage vers le <b>flexible central jaune</b> : celui qui part vers la pompe à vide, la bouteille de récupération, ou une bouteille d'azote équipée de son <b>mano-détendeur</b>.</p><ol><li>Consigner électriquement l'installation avant tout branchement.</li><li>Vérifier que les deux vannes du manifold sont fermées.</li><li>Visser le flexible bleu sur le raccord à obus côté basse pression — côté évaporateur, en bas de la croix du frigoriste.</li><li>Visser le flexible rouge sur le raccord à obus côté haute pression — côté condenseur et compresseur, en haut à droite.</li><li>Purger l'air de chaque flexible par un bref coup d'ouverture-fermeture — jamais un rejet prolongé.</li><li>Ouvrir les vannes une par une, jamais les deux ensemble, en surveillant les aiguilles.</li><li>Lire : pression BP, pression HP, température à la pince.</li><li>Refermer les deux vannes du manifold avant toute déconnexion.</li><li>Débrancher en purgeant chaque flexible — minimum d'émission, jamais de rejet volontaire.</li></ol><p>Le manomètre affiche une <b>pression relative</b> : pour obtenir la pression absolue, on ajoute environ <b>1 bar</b>. La pince de température et le multimètre servent à la <b>méthode indirecte</b> de contrôle d'étanchéité : on compare les valeurs mesurées — surchauffe (plage normale <b>5 à 10 K</b>), sous-refroidissement (plage normale <b>4 à 8 K</b>), intensité absorbée — à celles attendues sur la fiche constructeur. Un écart qui se creuse alerte, sans avoir ouvert le circuit.</p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/chaine-intervention-interactive/index.html?dossier=manifold\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🧭 Lancer le cours interactif : la chaîne de l’intervention ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Manifold, raccordement, tirage au vide et ordre des vannes dans un seul fil visuel — 25 écrans.</span></p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/vanne-service-interactive/index.html?ecran=geste\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🔩 Lancer le cours interactif : la vanne de service, où brancher le flexible ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">L’autre bout du flexible : la vanne de service en coupe animée. La voie de service P, la prise permanente P1 du pressostat, et la position à donner à la vanne pour lire au manomètre sans isoler le compresseur.</span></p>",
+   "corps": "<figure style=\"margin:0 0 18px\"><img src=\"packs/fluides/res/photos/manifold-branche.jpg\" alt=\"Un manifold raccordé sur une installation, flexibles bleu et rouge en place.\" style=\"width:100%;height:auto;display:block;border:1px solid #d7e0e8;border-radius:8px\"><figcaption style=\"font-size:13px;color:#5a6b7d;margin-top:6px;font-style:italic\">Le manifold en situation : à gauche le manomètre BP (bleu), à droite le HP (rouge), et le flexible central qui part vers la bouteille ou la pompe.</figcaption></figure><img src=\"packs/fluides/res/svg/manifold-lecture.svg\" alt=\"Animation : le manifold face à vous — BP à gauche en bleu, HP à droite en rouge, le flexible central. Les manomètres lisent en permanence, robinets fermés ; c'est l'ouverture d'un robinet qui met le flexible central en communication.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Le <b>manifold</b> (ensemble manométrique) réunit deux manomètres — <b>BP en bleu</b>, <b>HP en rouge</b> — et deux vannes, une par côté, qui commandent le passage vers le <b>flexible central jaune</b> : celui qui part vers la pompe à vide, la bouteille de récupération, ou une bouteille d'azote équipée de son <b>mano-détendeur</b>.</p><ol><li>Consigner électriquement l'installation avant tout branchement.</li><li>Vérifier que les deux vannes du manifold sont fermées.</li><li>Visser le flexible bleu sur le raccord à obus côté basse pression — côté évaporateur, en bas de la croix du frigoriste.</li><li>Visser le flexible rouge sur le raccord à obus côté haute pression — côté condenseur et compresseur, en haut à droite.</li><li>Purger l'air de chaque flexible par un bref coup d'ouverture-fermeture — jamais un rejet prolongé.</li><li>Ouvrir les vannes une par une, jamais les deux ensemble, en surveillant les aiguilles.</li><li>Lire : pression BP, pression HP, température à la pince.</li><li>Refermer les deux vannes du manifold avant toute déconnexion.</li><li>Débrancher en purgeant chaque flexible — minimum d'émission, jamais de rejet volontaire.</li></ol><p>Le manomètre affiche une <b>pression relative</b> : pour obtenir la pression absolue, on ajoute environ <b>1 bar</b>. La pince de température et le multimètre servent à la <b>méthode indirecte</b> de contrôle d'étanchéité : on compare les valeurs mesurées — surchauffe (plage normale <b>5 à 10 K</b>), sous-refroidissement (plage normale <b>4 à 8 K</b>), intensité absorbée — à celles attendues sur la fiche constructeur. Un écart qui se creuse alerte, sans avoir ouvert le circuit.</p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/chaine-intervention-interactive/index.html?dossier=manifold\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🧭 Lancer le cours interactif : la chaîne de l’intervention ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Manifold, raccordement, tirage au vide et ordre des vannes dans un seul fil visuel — 25 écrans.</span></p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/vanne-service-interactive/index.html?ecran=geste\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🔩 Lancer le cours interactif : la vanne de service, où brancher le flexible ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">L’autre bout du flexible : la vanne de service en coupe animée. La voie de service P, la prise permanente P1 du pressostat, et la position à donner à la vanne pour lire au manomètre sans isoler le compresseur.</span></p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/pose-manifold-2-voies-interactive/index.html\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🧰 S’entraîner : poser et déposer un manifold 2 voies ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le geste complet sur deux vannes de service Rotolock : reconnaître BP, HP et voie centrale, distinguer les prises P et P1, choisir lunettes et gants, poser, lire, déposer. Guidé puis autonome.</span></p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/pose-manifold-interactive/index.html\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🧰 S’entraîner : poser et déposer un manifold 4 voies ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">La même chose avec la voie de vide en plus : contrôle du poste, siège arrière, raccordement BP-HP-vide, tirage au vide des flexibles, position intermédiaire pour lire, puis dépose en traitant le fluide résiduel.</span></p>",
    "blocs": [
     {
      "type": "cle",
@@ -9769,7 +13022,7 @@ window.PILOTE_PACK = {
    "titre": "La station de récupération — ce que c'est, comment on la branche",
    "dc": "Préparation pratique · codes 5.03",
    "minuteur_s": 300,
-   "corps": "<img src=\"packs/fluides/res/svg/recuperation.svg\" alt=\"Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>La <b>station de récupération</b> est un appareil autonome : elle aspire le fluide de l'installation et le transfère vers un <b>cylindre dédié</b>, posé sur une balance. Avant tout branchement, l'installation est <b>à l'arrêt et isolée</b>.</p><ol><li>Consigner électriquement l'installation à traiter.</li><li>Vérifier l'étiquette du cylindre de récupération : le fluide indiqué doit être exactement celui de l'installation.</li><li>Poser le cylindre sur la balance et noter la masse de départ, avant tout branchement.</li><li>Vannes du groupe fermées, brancher le flexible d'entrée sur le circuit et le flexible de sortie sur le cylindre.</li><li>Mettre le groupe sous tension et le régler selon la fiche du fabricant.</li><li>Ouvrir les vannes dans l'ordre indiqué par le fabricant ; surveiller la pression et la masse affichée.</li><li>En fin de transfert, purger les flexibles avant de débrancher — minimum d'émission.</li><li>Repeser le cylindre, noter la masse récupérée, consigner au registre.</li></ol><p>Le cylindre respecte le <b>taux de remplissage maximal</b> indiqué sur son étiquette : jamais rempli à ras. Le liquide se dilate avec la température — un cylindre trop plein est un danger.</p>",
+   "corps": "<img src=\"packs/fluides/res/svg/recuperation.svg\" alt=\"Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>La <b>station de récupération</b> est un appareil autonome : elle aspire le fluide de l'installation et le transfère vers un <b>cylindre dédié</b>, posé sur une balance. Avant tout branchement, l'installation est <b>à l'arrêt et isolée</b>.</p><ol><li>Consigner électriquement l'installation à traiter.</li><li>Vérifier l'étiquette du cylindre de récupération : le fluide indiqué doit être exactement celui de l'installation.</li><li>Poser le cylindre sur la balance et noter la masse de départ, avant tout branchement.</li><li>Vannes du groupe fermées, brancher le flexible d'entrée sur le circuit et le flexible de sortie sur le cylindre.</li><li>Mettre le groupe sous tension et le régler selon la fiche du fabricant.</li><li>Ouvrir les vannes dans l'ordre indiqué par le fabricant ; surveiller la pression et la masse affichée.</li><li>En fin de transfert, purger les flexibles avant de débrancher — minimum d'émission.</li><li>Repeser le cylindre, noter la masse récupérée, consigner au registre.</li></ol><p>Le cylindre respecte le <b>taux de remplissage maximal</b> indiqué sur son étiquette : jamais rempli à ras. Le liquide se dilate avec la température — un cylindre trop plein est un danger.</p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/recuperation-fluide-interactive/index.html\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🧰 Lancer le TP interactif : récupérer le fluide, geste par geste ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">La procédure ci-dessus, à faire soi-même sur un poste complet — manifold 4 voies, station Minimax-E, bouteille de transfert sur balance, pompe à vide et vacuomètre. Huit phases, guidé puis autonome : poser le manifold, purger l'air, récupérer en liquide puis en vapeur, auto-purger la station, peser, tirer au vide.</span></p>",
    "blocs": [
     {
      "type": "cle",
@@ -9927,7 +13180,7 @@ window.PILOTE_PACK = {
    "titre": "La bouteille d'azote et son mano-détendeur",
    "dc": "Préparation pratique · codes 3.01 · 3.02",
    "minuteur_s": 300,
-   "corps": "<img src=\"packs/fluides/res/svg/epreuve-azote.svg\" alt=\"Le mano-détendeur monté sur la bouteille d azote sec, raccordé au manifold puis au circuit à éprouver, vanne par vanne — jamais d oxygène ni d air comprimé.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Une bouteille d'azote ne se branche jamais directement sur un circuit. Entre les deux, il y a toujours un <b>mano-détendeur</b>. Il lit la pression de la bouteille. Il règle la pression envoyée dans le circuit. Sans lui, toute la pression de la bouteille part d'un coup — largement de quoi faire éclater un circuit.</p><p>Le mano-détendeur porte <b>deux cadrans</b>. Le premier indique ce qu'il reste dans la bouteille. Le second indique la pression réglée en sortie, celle qui part vers le circuit. On lit toujours les deux.</p><ol><li>Vérifier que le raccord est <b>propre</b>, sans trace d'huile ni de graisse : l'azote sous pression au contact d'huile est un risque.</li><li>Monter le mano-détendeur sur le robinet de la bouteille. Vérifier que la <b>vis de réglage est desserrée</b> — aucune pression envoyée en sortie.</li><li>Ouvrir <b>lentement</b> le robinet de la bouteille. Lire la pression bouteille sur le premier cadran.</li><li>Raccorder le flexible de sortie au manifold, puis au circuit à éprouver.</li><li>Visser <b>progressivement</b> la vis de réglage. La pression de sortie monte, à lire sur le second cadran, jusqu'à la valeur donnée par la documentation du constructeur ou la norme applicable.</li><li>Une fois la pression atteinte, fermer le robinet de la bouteille. Observer : le cadran de sortie ne doit plus bouger.</li></ol>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=p4\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : La bouteille d'azote et son mano-détendeur ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/epreuve-azote.svg\" alt=\"Le mano-détendeur monté sur la bouteille d azote sec, raccordé au manifold puis au circuit à éprouver, vanne par vanne — jamais d oxygène ni d air comprimé.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Une bouteille d'azote ne se branche jamais directement sur un circuit. Entre les deux, il y a toujours un <b>mano-détendeur</b>. Il lit la pression de la bouteille. Il règle la pression envoyée dans le circuit. Sans lui, toute la pression de la bouteille part d'un coup — largement de quoi faire éclater un circuit.</p><p>Le mano-détendeur porte <b>deux cadrans</b>. Le premier indique ce qu'il reste dans la bouteille. Le second indique la pression réglée en sortie, celle qui part vers le circuit. On lit toujours les deux.</p><ol><li>Vérifier que le raccord est <b>propre</b>, sans trace d'huile ni de graisse : l'azote sous pression au contact d'huile est un risque.</li><li>Monter le mano-détendeur sur le robinet de la bouteille. Vérifier que la <b>vis de réglage est desserrée</b> — aucune pression envoyée en sortie.</li><li>Ouvrir <b>lentement</b> le robinet de la bouteille. Lire la pression bouteille sur le premier cadran.</li><li>Raccorder le flexible de sortie au manifold, puis au circuit à éprouver.</li><li>Visser <b>progressivement</b> la vis de réglage. La pression de sortie monte, à lire sur le second cadran, jusqu'à la valeur donnée par la documentation du constructeur ou la norme applicable.</li><li>Une fois la pression atteinte, fermer le robinet de la bouteille. Observer : le cadran de sortie ne doit plus bouger.</li></ol>",
    "blocs": [
     {
      "type": "piege",
@@ -10185,7 +13438,7 @@ window.PILOTE_PACK = {
    "titre": "Préparation de chantier — risques, EPI, zone de travail",
    "dc": "Préparation pratique · codes 12.04 · 12.05",
    "minuteur_s": 360,
-   "corps": "<img src=\"packs/fluides/res/svg/prepa-chantier.svg\" alt=\"Quatre temps avant de toucher : reconnaître le lieu et le fluide, identifier les risques du jour et les supprimer, se protéger avec les EPI qui en découlent, préparer la zone et le matériel.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Avant de sortir le moindre outil, deux choses se préparent : l'<b>analyse de risques</b> et la <b>zone de travail</b>. Ce n'est pas une formalité à cocher après coup. C'est la première étape du chantier, avant le premier geste technique.</p><p><b>L'analyse de risques</b> se fait dans cet ordre :</p><ol><li>Identifier le fluide en jeu, à partir de la plaque signalétique ou de la documentation : inflammable, sous pression, en espace confiné.</li><li>Repérer les dangers de la <b>zone elle-même</b> : ventilation, sources de chaleur ou d'étincelle à proximité, accès, présence de tiers.</li><li>Éliminer ce qui peut l'être — couper une source de chaleur, dégager un passage.</li><li>Signaler ce qui ne peut pas être éliminé. Si un point bloque vraiment, le chantier n'engage pas tant qu'il n'est pas corrigé.</li></ol><p>Vient ensuite la <b>préparation de la zone</b> :</p><ol><li>Baliser et signaler la zone de travail.</li><li>Dégager une <b>issue</b> utilisable à tout moment de l'intervention.</li><li>Sélectionner les <b>équipements de protection</b> adaptés au fluide et au geste prévu : protection des yeux, gants adaptés au produit et au froid, détecteur de gaz porté si le fluide l'exige.</li><li>Vérifier le matériel avant de l'emporter sur zone. Un flexible douteux ou un détecteur non vérifié <b>ne sort pas</b> de l'atelier.</li><li>Consigner électriquement l'installation avant toute ouverture de circuit.</li></ol><p>Sur une machine aux <b>hydrocarbures</b> (par exemple au R-290), le choix de l'outillage se fait <b>avant</b> d'ouvrir la zone, pas une fois dessus. Ces fluides sont inflammables : un outil ordinaire, prévu pour un gaz qui ne l'est pas, peut suffire à déclencher un accident. Une simple étincelle au mauvais endroit, au mauvais moment, enflamme le gaz qui s'est accumulé.</p><p>Certains outils se vérifient en particulier. La <b>station de récupération</b> doit être <b>compatible hydrocarbures</b> : conçue pour aspirer et stocker un gaz inflammable sans créer d'étincelle interne. Une station ordinaire, prévue pour un fluide non inflammable, n'a pas cette protection. Le <b>détecteur de fuite</b> doit lui aussi être adapté au gaz recherché : un détecteur réglé pour un autre fluide peut ne rien signaler alors que du gaz inflammable s'échappe.</p><p>Dans la zone balisée, tout le <b>matériel électrique</b> utilisé doit être <b>antidéflagrant</b> (on dit aussi « <b>ATEX</b> », pour les zones à risque d'explosion) : lampe, outillage électroportatif, appareils de mesure. Un matériel électrique ordinaire peut produire une étincelle interne invisible, suffisante pour enflammer un gaz inflammable présent dans l'air. La <b>ventilation</b> reste en marche pendant toute l'intervention, pour empêcher le gaz de s'accumuler.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=p7\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Préparation de chantier — risques, EPI, zone de travail ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 7 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/prepa-chantier.svg\" alt=\"Quatre temps avant de toucher : reconnaître le lieu et le fluide, identifier les risques du jour et les supprimer, se protéger avec les EPI qui en découlent, préparer la zone et le matériel.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Avant de sortir le moindre outil, deux choses se préparent : l'<b>analyse de risques</b> et la <b>zone de travail</b>. Ce n'est pas une formalité à cocher après coup. C'est la première étape du chantier, avant le premier geste technique.</p><p><b>L'analyse de risques</b> se fait dans cet ordre :</p><ol><li>Identifier le fluide en jeu, à partir de la plaque signalétique ou de la documentation : inflammable, sous pression, en espace confiné.</li><li>Repérer les dangers de la <b>zone elle-même</b> : ventilation, sources de chaleur ou d'étincelle à proximité, accès, présence de tiers.</li><li>Éliminer ce qui peut l'être — couper une source de chaleur, dégager un passage.</li><li>Signaler ce qui ne peut pas être éliminé. Si un point bloque vraiment, le chantier n'engage pas tant qu'il n'est pas corrigé.</li></ol><p>Vient ensuite la <b>préparation de la zone</b> :</p><ol><li>Baliser et signaler la zone de travail.</li><li>Dégager une <b>issue</b> utilisable à tout moment de l'intervention.</li><li>Sélectionner les <b>équipements de protection</b> adaptés au fluide et au geste prévu : protection des yeux, gants adaptés au produit et au froid, détecteur de gaz porté si le fluide l'exige.</li><li>Vérifier le matériel avant de l'emporter sur zone. Un flexible douteux ou un détecteur non vérifié <b>ne sort pas</b> de l'atelier.</li><li>Consigner électriquement l'installation avant toute ouverture de circuit.</li></ol><p>Sur une machine aux <b>hydrocarbures</b> (par exemple au R-290), le choix de l'outillage se fait <b>avant</b> d'ouvrir la zone, pas une fois dessus. Ces fluides sont inflammables : un outil ordinaire, prévu pour un gaz qui ne l'est pas, peut suffire à déclencher un accident. Une simple étincelle au mauvais endroit, au mauvais moment, enflamme le gaz qui s'est accumulé.</p><p>Certains outils se vérifient en particulier. La <b>station de récupération</b> doit être <b>compatible hydrocarbures</b> : conçue pour aspirer et stocker un gaz inflammable sans créer d'étincelle interne. Une station ordinaire, prévue pour un fluide non inflammable, n'a pas cette protection. Le <b>détecteur de fuite</b> doit lui aussi être adapté au gaz recherché : un détecteur réglé pour un autre fluide peut ne rien signaler alors que du gaz inflammable s'échappe.</p><p>Dans la zone balisée, tout le <b>matériel électrique</b> utilisé doit être <b>antidéflagrant</b> (on dit aussi « <b>ATEX</b> », pour les zones à risque d'explosion) : lampe, outillage électroportatif, appareils de mesure. Un matériel électrique ordinaire peut produire une étincelle interne invisible, suffisante pour enflammer un gaz inflammable présent dans l'air. La <b>ventilation</b> reste en marche pendant toute l'intervention, pour empêcher le gaz de s'accumuler.</p>",
    "blocs": [
     {
      "type": "piege",
@@ -10270,7 +13523,7 @@ window.PILOTE_PACK = {
    "titre": "Ce que la loi vous impose",
    "dc": "G1 · code 1.00",
    "minuteur_s": 360,
-   "corps": "<img src=\"packs/fluides/res/svg/aptitude-capacite.svg\" alt=\"L'attestation d'aptitude concerne la personne et prouve qu'elle sait faire ; l'attestation de capacité concerne l'entreprise et prouve qu'elle a le personnel, l'outillage et les procédures. Il faut les deux.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Les fluides frigorigènes peuvent réchauffer le climat s'ils s'échappent dans l'air. Deux niveaux de loi encadrent votre métier : le niveau européen et le niveau français.</p><p>Au niveau européen, le texte de base est le <b>règlement (UE) 2024/573</b>. C'est un <b>règlement</b>, jamais une « directive » : il s'applique directement dans tous les pays de l'Union, sans loi française pour le recopier. Il a remplacé l'ancien règlement 517/2014.</p><p>Au niveau français, l'<b>arrêté du 21 novembre 2025</b> — un texte signé par un ministre — précise comment appliquer ce règlement sur le terrain.</p><p>Pour intervenir sur les fluides, il vous faut une <b>attestation d'aptitude</b> personnelle. Votre entreprise, elle, doit avoir une <b>attestation de capacité</b>. Ce sont deux papiers obligatoires, et ce n'est pas le même.</p><p>Chaque équipement a un <b>registre</b> : un carnet qui garde la trace de chaque intervention (charge, contrôle, fuite, réparation). C'est l'<b>exploitant</b> (le propriétaire ou l'utilisateur de la machine) qui doit le tenir à jour, sur papier ou sur ordinateur.</p><p>Quand l'équipement est trop vieux ou cassé, il part dans la filière <b>DEEE</b> (déchets d'équipements électriques et électroniques). Cette filière s'occupe de la carcasse de la machine, pas du fluide : vous devez le récupérer avant, à part.</p><p>Enfin, l'<b>écoconception</b> : dès la fabrication, les constructeurs doivent concevoir des appareils qui durent plus longtemps et qui polluent moins.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=g0\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Ce que la loi vous impose ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 8 écrans, 7 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/aptitude-capacite.svg\" alt=\"L'attestation d'aptitude concerne la personne et prouve qu'elle sait faire ; l'attestation de capacité concerne l'entreprise et prouve qu'elle a le personnel, l'outillage et les procédures. Il faut les deux.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Les fluides frigorigènes peuvent réchauffer le climat s'ils s'échappent dans l'air. Deux niveaux de loi encadrent votre métier : le niveau européen et le niveau français.</p><p>Au niveau européen, le texte de base est le <b>règlement (UE) 2024/573</b>. C'est un <b>règlement</b>, jamais une « directive » : il s'applique directement dans tous les pays de l'Union, sans loi française pour le recopier. Il a remplacé l'ancien règlement 517/2014.</p><p>Au niveau français, l'<b>arrêté du 21 novembre 2025</b> — un texte signé par un ministre — précise comment appliquer ce règlement sur le terrain.</p><p>Pour intervenir sur les fluides, il vous faut une <b>attestation d'aptitude</b> personnelle. Votre entreprise, elle, doit avoir une <b>attestation de capacité</b>. Ce sont deux papiers obligatoires, et ce n'est pas le même.</p><p>Chaque équipement a un <b>registre</b> : un carnet qui garde la trace de chaque intervention (charge, contrôle, fuite, réparation). C'est l'<b>exploitant</b> (le propriétaire ou l'utilisateur de la machine) qui doit le tenir à jour, sur papier ou sur ordinateur.</p><p>Quand l'équipement est trop vieux ou cassé, il part dans la filière <b>DEEE</b> (déchets d'équipements électriques et électroniques). Cette filière s'occupe de la carcasse de la machine, pas du fluide : vous devez le récupérer avant, à part.</p><p>Enfin, l'<b>écoconception</b> : dès la fabrication, les constructeurs doivent concevoir des appareils qui durent plus longtemps et qui polluent moins.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -10784,7 +14037,7 @@ window.PILOTE_PACK = {
    "titre": "Les organes qui trahissent une fuite",
    "dc": "G1 · code 1.05",
    "minuteur_s": 420,
-   "corps": "<img src=\"packs/fluides/res/svg/points-de-fuite.svg\" alt=\"Sur le circuit, les organes qui alertent ou protègent avant, pendant et après une fuite.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Une fuite ne se voit pas toujours de face. Mais plusieurs organes du circuit la <b>trahissent</b> : ils changent d'aspect, se mettent en sécurité, ou limitent les dégâts. Les repérer, c'est déjà commencer le diagnostic.</p><ul><li><b>a) Les valves.</b> Le <b>robinet à boule</b> et le <b>robinet à soupape</b> isolent une portion de circuit ; leur presse-étoupe (la bague qui serre la tige de manœuvre) est un point de fuite classique. Le <b>robinet à diaphragme</b> n'a pas cette tige : une membrane souple assure l'étanchéité, donc moins d'usure. La <b>vanne électromagnétique</b>, dite <b>solénoïde</b>, s'ouvre et se ferme électriquement ; elle isole la réserve de fluide en cas d'arrêt. La <b>vanne 4 voies</b> inverse le sens du cycle (froid ↔ chaud) : beaucoup de raccords brasés et une pièce mobile interne, donc plusieurs points à surveiller.</li><li><b>b) Les contrôles de température et de pression.</b> Le <b>thermostat</b> pilote le compresseur selon la température. Le <b>pressostat de régulation</b> fait pareil selon la pression : il coupe et relance en fonctionnement normal — à ne pas confondre avec le <b>pressostat de sécurité</b>, qui protège contre une pression anormale (détail ci-dessous). Un pressostat de régulation qui coupe trop tôt peut signaler un manque de charge, donc une fuite.</li><li><b>c) Le voyant liquide et la pastille d'humidité.</b> Le <b>voyant liquide</b> est un hublot sur la ligne liquide. En <b>régime stable</b> (l'installation tourne depuis un moment), il doit rester net, sans bulle. Des <b>bulles qui persistent</b> montrent un manque de charge — souvent une fuite. La <b>pastille d'humidité</b>, intégrée au voyant, change de couleur selon l'eau présente dans le circuit ; la grille de lecture est propre à chaque fabricant, selon la fiche constructeur.</li><li><b>d) Les contrôles du dégivrage.</b> Ils déclenchent et arrêtent le dégivrage de l'évaporateur. Un givre anormal — pas symétrique, ou qui ne part jamais complètement — n'est pas toujours un problème de dégivrage : ça peut être un manque de fluide qui prive une partie de la batterie.</li><li><b>e) Les protecteurs du système.</b> Protection thermique du compresseur, <b>soupape de sécurité</b>, pressostat de sécurité (vu plus haut) : ils empêchent qu'une anomalie ne tourne à la casse. Une soupape de sécurité qui s'ouvre relâche elle-même du fluide dans l'atmosphère : une fuite volontaire, réglée pour l'urgence, à contrôler selon la fiche constructeur.</li><li><b>f) Les instruments de mesure.</b> Un <b>thermomètre</b> à pince ou à contact mesure la température réelle d'un tube. Comparé à la table de saturation (revoir G1 · code 1.03), l'écart donne la surchauffe ou le sous-refroidissement : c'est la méthode indirecte, sans ouvrir le circuit.</li><li><b>g) Les systèmes de contrôle de l'huile.</b> Un <b>voyant d'huile</b> sur le compresseur montre le niveau et l'aspect de l'huile. Un niveau qui baisse sans explication doit alerter : l'huile se mélange au fluide et s'échappe avec lui par une fuite — même logique que la trace d'huile sous un raccord (déjà vue en G4).</li><li><b>h) Les réservoirs.</b> La <b>bouteille de liquide</b> stocke le fluide condensé avant le détendeur. Plusieurs raccords (entrée, sortie, vanne de service) : autant de points à contrôler. L'isoler avant une intervention limite la quantité de fluide qui pourrait fuir.</li><li><b>i) Les séparateurs de liquide et d'huile.</b> Le <b>séparateur de liquide</b>, sur l'aspiration, retient le liquide résiduel pour éviter un <b>coup de liquide</b> au compresseur (il aspire du liquide au lieu de vapeur : casse immédiate, le liquide ne se comprime pas). Le <b>séparateur d'huile</b>, sur le refoulement, retient l'huile entraînée par le gaz chaud et la renvoie au compresseur.</li></ul><p>Sur les fluides très inflammables ou toxiques (hydrocarbures, ammoniac) et sur le CO₂, qui travaille à haute pression, ces mêmes organes existent mais avec des exigences renforcées propres à chaque fluide.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=g1d\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Les organes qui trahissent une fuite ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/points-de-fuite.svg\" alt=\"Sur le circuit, les organes qui alertent ou protègent avant, pendant et après une fuite.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Une fuite ne se voit pas toujours de face. Mais plusieurs organes du circuit la <b>trahissent</b> : ils changent d'aspect, se mettent en sécurité, ou limitent les dégâts. Les repérer, c'est déjà commencer le diagnostic.</p><ul><li><b>a) Les valves.</b> Le <b>robinet à boule</b> et le <b>robinet à soupape</b> isolent une portion de circuit ; leur presse-étoupe (la bague qui serre la tige de manœuvre) est un point de fuite classique. Le <b>robinet à diaphragme</b> n'a pas cette tige : une membrane souple assure l'étanchéité, donc moins d'usure. La <b>vanne électromagnétique</b>, dite <b>solénoïde</b>, s'ouvre et se ferme électriquement ; elle isole la réserve de fluide en cas d'arrêt. La <b>vanne 4 voies</b> inverse le sens du cycle (froid ↔ chaud) : beaucoup de raccords brasés et une pièce mobile interne, donc plusieurs points à surveiller.</li><li><b>b) Les contrôles de température et de pression.</b> Le <b>thermostat</b> pilote le compresseur selon la température. Le <b>pressostat de régulation</b> fait pareil selon la pression : il coupe et relance en fonctionnement normal — à ne pas confondre avec le <b>pressostat de sécurité</b>, qui protège contre une pression anormale (détail ci-dessous). Un pressostat de régulation qui coupe trop tôt peut signaler un manque de charge, donc une fuite.</li><li><b>c) Le voyant liquide et la pastille d'humidité.</b> Le <b>voyant liquide</b> est un hublot sur la ligne liquide. En <b>régime stable</b> (l'installation tourne depuis un moment), il doit rester net, sans bulle. Des <b>bulles qui persistent</b> montrent un manque de charge — souvent une fuite. La <b>pastille d'humidité</b>, intégrée au voyant, change de couleur selon l'eau présente dans le circuit ; la grille de lecture est propre à chaque fabricant, selon la fiche constructeur.</li><li><b>d) Les contrôles du dégivrage.</b> Ils déclenchent et arrêtent le dégivrage de l'évaporateur. Un givre anormal — pas symétrique, ou qui ne part jamais complètement — n'est pas toujours un problème de dégivrage : ça peut être un manque de fluide qui prive une partie de la batterie.</li><li><b>e) Les protecteurs du système.</b> Protection thermique du compresseur, <b>soupape de sécurité</b>, pressostat de sécurité (vu plus haut) : ils empêchent qu'une anomalie ne tourne à la casse. Une soupape de sécurité qui s'ouvre relâche elle-même du fluide dans l'atmosphère : une fuite volontaire, réglée pour l'urgence, à contrôler selon la fiche constructeur.</li><li><b>f) Les instruments de mesure.</b> Un <b>thermomètre</b> à pince ou à contact mesure la température réelle d'un tube. Comparé à la table de saturation (revoir G1 · code 1.03), l'écart donne la surchauffe ou le sous-refroidissement : c'est la méthode indirecte, sans ouvrir le circuit.</li><li><b>g) Les systèmes de contrôle de l'huile.</b> Un <b>voyant d'huile</b> sur le compresseur montre le niveau et l'aspect de l'huile. Un niveau qui baisse sans explication doit alerter : l'huile se mélange au fluide et s'échappe avec lui par une fuite — même logique que la trace d'huile sous un raccord (déjà vue en G4).</li><li><b>h) Les réservoirs.</b> La <b>bouteille de liquide</b> stocke le fluide condensé avant le détendeur. Plusieurs raccords (entrée, sortie, vanne de service) : autant de points à contrôler. L'isoler avant une intervention limite la quantité de fluide qui pourrait fuir.</li><li><b>i) Les séparateurs de liquide et d'huile.</b> Le <b>séparateur de liquide</b>, sur l'aspiration, retient le liquide résiduel pour éviter un <b>coup de liquide</b> au compresseur (il aspire du liquide au lieu de vapeur : casse immédiate, le liquide ne se comprime pas). Le <b>séparateur d'huile</b>, sur le refoulement, retient l'huile entraînée par le gaz chaud et la renvoie au compresseur.</li></ul><p>Sur les fluides très inflammables ou toxiques (hydrocarbures, ammoniac) et sur le CO₂, qui travaille à haute pression, ces mêmes organes existent mais avec des exigences renforcées propres à chaque fluide.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -10849,7 +14102,7 @@ window.PILOTE_PACK = {
    "titre": "Quarante ans d'histoire : de l'ozone au climat",
    "dc": "G2 · code 2.01",
    "minuteur_s": 420,
-   "corps": "<img src=\"packs/fluides/res/svg/frise-histoire.svg\" alt=\"Frise : CFC années 1930, trou d'ozone 1985, Montréal 1987, Kyoto 1997, Paris 2015, Kigali 2016, F-Gas III 2024.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Dans les années 1930, les <b>CFC</b> sont des fluides « miracle » : stables, ni toxiques, ni inflammables. Cinquante ans plus tard, la facture arrive : en <b>1985</b>, on découvre le <b>trou dans la couche d'ozone</b> au-dessus de l'Antarctique — le chlore des CFC casse l'ozone qui filtre les <b>UV-B</b>. En <b>1987</b>, le <b>protocole de Montréal</b> organise leur sortie, puis celle des HCFC : la couche se répare, c'est le plus grand succès environnemental mondial.</p><p>Mais les remplaçants, les <b>HFC</b>, inoffensifs pour l'ozone, sont de puissants gaz à effet de serre. Le combat change de terrain : <b>Kyoto</b> (1997) les inscrit parmi les six gaz visés, l'<b>accord de Paris</b> (2015) fixe le cap des +1,5 °C, et l'<b>amendement de Kigali</b> (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations — celles de ton métier.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=g2a\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Quarante ans d'histoire : de l'ozone au climat ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/frise-histoire.svg\" alt=\"Frise : CFC années 1930, trou d'ozone 1985, Montréal 1987, Kyoto 1997, Paris 2015, Kigali 2016, F-Gas III 2024.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Dans les années 1930, les <b>CFC</b> sont des fluides « miracle » : stables, ni toxiques, ni inflammables. Cinquante ans plus tard, la facture arrive : en <b>1985</b>, on découvre le <b>trou dans la couche d'ozone</b> au-dessus de l'Antarctique — le chlore des CFC casse l'ozone qui filtre les <b>UV-B</b>. En <b>1987</b>, le <b>protocole de Montréal</b> organise leur sortie, puis celle des HCFC : la couche se répare, c'est le plus grand succès environnemental mondial.</p><p>Mais les remplaçants, les <b>HFC</b>, inoffensifs pour l'ozone, sont de puissants gaz à effet de serre. Le combat change de terrain : <b>Kyoto</b> (1997) les inscrit parmi les six gaz visés, l'<b>accord de Paris</b> (2015) fixe le cap des +1,5 °C, et l'<b>amendement de Kigali</b> (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations — celles de ton métier.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -10918,7 +14171,7 @@ window.PILOTE_PACK = {
    "titre": "Impact environnemental et F-Gas",
    "dc": "G2 · codes 2.01 · 2.02",
    "minuteur_s": 300,
-   "corps": "<img src=\"packs/fluides/res/svg/prp-echelle.svg\" alt=\"Comparaison du PRP : CO2 = 1, R-32 = 675, R-410A = 2088, R-404A = 3922.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Deux accords internationaux, deux problèmes différents. Le <b>protocole de Montréal</b> (1987) visait la <b>couche d'ozone</b> : il a fait disparaître les CFC puis les HCFC. La <b>convention climat</b> (Kyoto, Paris) vise le <b>réchauffement</b> : c'est elle qui s'attaque aux HFC, dont l'action sur l'ozone est nulle mais l'effet de serre considérable.</p><p>Le <b>PRP</b> (potentiel de réchauffement planétaire, ou GWP) mesure cet effet, <b>par kilogramme</b>, en prenant le <b>CO₂ comme étalon : PRP = 1</b>. L'impact réel d'une installation, lui, dépend aussi de la charge : c'est la <b>tonne équivalent CO₂</b>.</p><p>Le règlement <b>(UE) 2024/573</b> — dit F-Gas III — organise la réduction progressive des quantités de HFC mises sur le marché (<i>phase-down</i>), attribue des quotas aux producteurs et importateurs, et interdit certains usages.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=g2\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Impact environnemental et F-Gas ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/prp-echelle.svg\" alt=\"Comparaison du PRP : CO2 = 1, R-32 = 675, R-410A = 2088, R-404A = 3922.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Deux accords internationaux, deux problèmes différents. Le <b>protocole de Montréal</b> (1987) visait la <b>couche d'ozone</b> : il a fait disparaître les CFC puis les HCFC. La <b>convention climat</b> (Kyoto, Paris) vise le <b>réchauffement</b> : c'est elle qui s'attaque aux HFC, dont l'action sur l'ozone est nulle mais l'effet de serre considérable.</p><p>Le <b>PRP</b> (potentiel de réchauffement planétaire, ou GWP) mesure cet effet, <b>par kilogramme</b>, en prenant le <b>CO₂ comme étalon : PRP = 1</b>. L'impact réel d'une installation, lui, dépend aussi de la charge : c'est la <b>tonne équivalent CO₂</b>.</p><p>Le règlement <b>(UE) 2024/573</b> — dit F-Gas III — organise la réduction progressive des quantités de HFC mises sur le marché (<i>phase-down</i>), attribue des quotas aux producteurs et importateurs, et interdit certains usages.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -11007,7 +14260,7 @@ window.PILOTE_PACK = {
    "titre": "Exercice — deux installations, deux impacts",
    "dc": "G2 · mise en situation",
    "minuteur_s": 420,
-   "corps": "<p>Tu interviens sur deux machines dans le même bâtiment.</p><ul><li><b>Machine A</b> — chambre froide, <b>12 kg</b> de <b>R-404A</b> (PRP = 3922).</li><li><b>Machine B</b> — climatisation, <b>12 kg</b> de <b>R-32</b> (PRP = 675).</li></ul><p>Même charge, même bâtiment, même exploitant. Calcule la charge en tonnes équivalent CO₂ de chacune avant de répondre.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x1\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Exercice — deux installations, deux impacts ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 5 minutes. Version imprimable et mode projection compris.</span></p><p>Tu interviens sur deux machines dans le même bâtiment.</p><ul><li><b>Machine A</b> — chambre froide, <b>12 kg</b> de <b>R-404A</b> (PRP = 3922).</li><li><b>Machine B</b> — climatisation, <b>12 kg</b> de <b>R-32</b> (PRP = 675).</li></ul><p>Même charge, même bâtiment, même exploitant. Calcule la charge en tonnes équivalent CO₂ de chacune avant de répondre.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -11071,7 +14324,7 @@ window.PILOTE_PACK = {
    "titre": "Contrôles avant mise en service",
    "dc": "G3 · codes 3.01 → 3.05",
    "minuteur_s": 360,
-   "corps": "<img src=\"packs/fluides/res/svg/epreuve-azote.svg\" alt=\"Montage de l épreuve de pression : bouteille d azote, manifold, circuit — oxygène et air comprimé barrés.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Deux épreuves, deux buts, souvent enchaînées. L'<b>épreuve de résistance</b> vérifie que l'assemblage tient mécaniquement. L'<b>épreuve d'étanchéité</b> vérifie qu'il ne laisse rien passer. Les pressions d'épreuve se prennent <b>sur la documentation constructeur</b> et la norme applicable — jamais à l'estime.</p><p>Vient ensuite le <b>tirage au vide</b>. Il ne sert pas à « faire propre » : il extrait l'<b>air</b> (incondensable, qui fait monter la haute pression) et l'<b>humidité</b> (qui gèle au détendeur et attaque l'huile). Sous vide, l'eau bout à température ambiante — c'est exactement ce qu'on cherche.</p><p>Enfin, on <b>consigne</b> : registre et rapport d'essais font partie du geste professionnel.</p><p>Comment conclut-on l'épreuve d'étanchéité ? On relève la pression d'azote au <b>manomètre</b> (l'appareil qui mesure la pression) au début de l'essai, puis on attend la durée prévue — selon la documentation constructeur, à faire valider. Si la pression reste <b>stable</b> (ou « stabilisée ») pendant toute cette durée, le circuit est déclaré étanche. À l'inverse, une <b>chute de pression</b> signale une fuite quelque part dans le circuit, même si elle est minime.</p><p>Un piège classique : la température de l'atelier fait elle aussi varier la pression, sans qu'il y ait de fuite. Dans un circuit fermé, la pression de l'azote <b>augmente</b> un peu quand l'air ambiant se réchauffe, et <b>diminue</b> un peu quand il refroidit. On regarde donc la tendance sur toute la durée de l'épreuve, pas un seul chiffre isolé, et on corrige qualitativement une petite variation liée à la température avant de conclure trop vite à une fuite.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=g3\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Contrôles avant mise en service ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/epreuve-azote.svg\" alt=\"Montage de l épreuve de pression : bouteille d azote, manifold, circuit — oxygène et air comprimé barrés.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Deux épreuves, deux buts, souvent enchaînées. L'<b>épreuve de résistance</b> vérifie que l'assemblage tient mécaniquement. L'<b>épreuve d'étanchéité</b> vérifie qu'il ne laisse rien passer. Les pressions d'épreuve se prennent <b>sur la documentation constructeur</b> et la norme applicable — jamais à l'estime.</p><p>Vient ensuite le <b>tirage au vide</b>. Il ne sert pas à « faire propre » : il extrait l'<b>air</b> (incondensable, qui fait monter la haute pression) et l'<b>humidité</b> (qui gèle au détendeur et attaque l'huile). Sous vide, l'eau bout à température ambiante — c'est exactement ce qu'on cherche.</p><p>Enfin, on <b>consigne</b> : registre et rapport d'essais font partie du geste professionnel.</p><p>Comment conclut-on l'épreuve d'étanchéité ? On relève la pression d'azote au <b>manomètre</b> (l'appareil qui mesure la pression) au début de l'essai, puis on attend la durée prévue — selon la documentation constructeur, à faire valider. Si la pression reste <b>stable</b> (ou « stabilisée ») pendant toute cette durée, le circuit est déclaré étanche. À l'inverse, une <b>chute de pression</b> signale une fuite quelque part dans le circuit, même si elle est minime.</p><p>Un piège classique : la température de l'atelier fait elle aussi varier la pression, sans qu'il y ait de fuite. Dans un circuit fermé, la pression de l'azote <b>augmente</b> un peu quand l'air ambiant se réchauffe, et <b>diminue</b> un peu quand il refroidit. On regarde donc la tendance sur toute la durée de l'épreuve, pas un seul chiffre isolé, et on corrige qualitativement une petite variation liée à la température avant de conclure trop vite à une fuite.</p>",
    "blocs": [
     {
      "type": "piege",
@@ -11500,7 +14753,7 @@ window.PILOTE_PACK = {
    "titre": "Détective — le contrôle qui tourne mal",
    "dc": "G4 · mise en situation · parcours E",
    "minuteur_s": 420,
-   "corps": "<p>Contrôle périodique d'étanchéité chez un client. Le <b>registre</b> t'apprend qu'une fuite a été réparée il y a trois mois sur un raccord flare de la ligne liquide.</p><ul><li>Le contrôle visuel ne montre <b>rien</b> sur le raccord réparé.</li><li>Ton détecteur électronique <b>sonne</b> en passant près du condenseur — ventilateur en marche.</li><li>Sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier.</li></ul>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x4\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Détective — le contrôle qui tourne mal ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Contrôle périodique d'étanchéité chez un client. Le <b>registre</b> t'apprend qu'une fuite a été réparée il y a trois mois sur un raccord flare de la ligne liquide.</p><ul><li>Le contrôle visuel ne montre <b>rien</b> sur le raccord réparé.</li><li>Ton détecteur électronique <b>sonne</b> en passant près du condenseur — ventilateur en marche.</li><li>Sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier.</li></ul>",
    "blocs": [
     {
      "type": "piege",
@@ -11582,7 +14835,7 @@ window.PILOTE_PACK = {
    "titre": "Récupérer sans émettre",
    "dc": "G5 · codes 5.01 → 5.04",
    "minuteur_s": 360,
-   "corps": "<img src=\"packs/fluides/res/svg/recuperation.svg\" alt=\"Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Chaque connexion et chaque déconnexion est un <b>point de fuite</b> : le geste est lent, contrôlé, flexibles purgés. Avant de récupérer, on <b>arrête et on isole</b> le système.</p><p>Le <b>groupe de récupération</b> transfère le fluide vers un cylindre prévu pour, en phase gazeuse ou liquide selon la situation. Le cylindre respecte un <b>taux de remplissage maximal</b> — jamais rempli à ras : le liquide se dilate avec la température, et un cylindre plein est un danger. On <b>pèse avant</b>, sinon on ne saura jamais combien on a réellement récupéré.</p><p>L'<b>huile</b> du compresseur est contaminée par nature : elle se récupère à part, comme un déchet dangereux. Elle ne se dégaze pas, elle ne se mélange pas au fluide.</p><p>Une fois le fluide récupéré, il reste un dernier geste : <b>vidanger l'huile</b> du compresseur. Cette huile garde du <b>fluide dissous</b> dedans. Ce fluide dissous continue à <b>dégazer</b> : il relâche lentement des vapeurs, même une fois l'huile sortie de la machine. On vide l'huile dans un <b>récipient fermé et étiqueté</b>, jamais dans un bidon ouvert. Sinon, ces vapeurs s'échappent : c'est une émission de plus, exactement comme une fuite.</p><p>On <b>note la quantité</b> d'huile vidangée, comme on pèse le fluide récupéré : sans cette trace, personne ne peut vérifier que rien n'a été perdu en route. L'huile contaminée part ensuite en <b>déchet dangereux</b>, avec son <b>bordereau</b> — le document qui suit le déchet jusqu'à son traitement final.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=g5a\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Récupérer sans émettre ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/recuperation.svg\" alt=\"Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Chaque connexion et chaque déconnexion est un <b>point de fuite</b> : le geste est lent, contrôlé, flexibles purgés. Avant de récupérer, on <b>arrête et on isole</b> le système.</p><p>Le <b>groupe de récupération</b> transfère le fluide vers un cylindre prévu pour, en phase gazeuse ou liquide selon la situation. Le cylindre respecte un <b>taux de remplissage maximal</b> — jamais rempli à ras : le liquide se dilate avec la température, et un cylindre plein est un danger. On <b>pèse avant</b>, sinon on ne saura jamais combien on a réellement récupéré.</p><p>L'<b>huile</b> du compresseur est contaminée par nature : elle se récupère à part, comme un déchet dangereux. Elle ne se dégaze pas, elle ne se mélange pas au fluide.</p><p>Une fois le fluide récupéré, il reste un dernier geste : <b>vidanger l'huile</b> du compresseur. Cette huile garde du <b>fluide dissous</b> dedans. Ce fluide dissous continue à <b>dégazer</b> : il relâche lentement des vapeurs, même une fois l'huile sortie de la machine. On vide l'huile dans un <b>récipient fermé et étiqueté</b>, jamais dans un bidon ouvert. Sinon, ces vapeurs s'échappent : c'est une émission de plus, exactement comme une fuite.</p><p>On <b>note la quantité</b> d'huile vidangée, comme on pèse le fluide récupéré : sans cette trace, personne ne peut vérifier que rien n'a été perdu en route. L'huile contaminée part ensuite en <b>déchet dangereux</b>, avec son <b>bordereau</b> — le document qui suit le déchet jusqu'à son traitement final.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -11702,7 +14955,7 @@ window.PILOTE_PACK = {
    "titre": "Peser, charger, stocker, tracer",
    "dc": "G5 · codes 5.05 → 5.09",
    "minuteur_s": 330,
-   "corps": "<img src=\"packs/fluides/res/svg/recuperation.svg\" alt=\"Rappel du montage : la bouteille se pèse avant, ne se remplit jamais à ras, ne mélange jamais deux fluides.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Pour charger, on détermine d'abord l'<b>état du fluide</b> et la <b>quantité prévue</b> (plaque signalétique, doc constructeur). La charge se contrôle à la <b>balance</b>, jamais « au manomètre » : le manomètre dit comment la machine se comporte, la balance dit combien on a mis.</p><p>Cas particulier des <b>mélanges zéotropes</b> : ils se chargent en <b>phase liquide</b>, faute de quoi les composants se séparent et la composition du circuit dérive.</p><p>L'<b>huile</b> suit le fluide, et elle en dépend. Les anciens fluides chlorés travaillaient avec de l'huile <b>minérale</b> ; les HFC et les HFO demandent une huile de synthèse, le plus souvent <b>polyolester (POE)</b>. Les deux ne se mélangent pas : sur un changement de fluide, l'huile se change aussi — c'est ce qui distingue un <b>retrofit</b> d'un simple drop-in. La POE <b>absorbe l'humidité de l'air</b> très vite : bidon refermé aussitôt, circuit jamais laissé ouvert. Le type exact d'huile se lit sur la <b>plaque ou la doc constructeur</b>, jamais au jugé.</p><p>Une huile retirée d'un circuit est <b>contaminée</b> : elle contient du fluide dissous. Elle ne se jette pas, elle part en <b>déchet dangereux</b> vers une filière agréée, avec son bordereau. Pour les <b>hydrocarbures</b>, fluide et huile sont en plus <b>inflammables</b> : récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, transport selon la réglementation applicable et la fiche de données de sécurité.</p><p>Le <b>registre</b> est la preuve légale de toute opération sur le fluide : quantité ajoutée, quantité récupérée, date, intervenant. Le rejet volontaire à l'atmosphère est strictement interdit et sanctionné.</p><p>Avant de charger, on regarde aussi dans quelle <b>condition</b> se trouve le fluide, en plus de savoir s'il est liquide ou gazeux. À une pression donnée, le fluide peut être <b>saturé</b> : le liquide et la vapeur sont présents ensemble, à la température de changement d'état. Il peut être <b>sous-refroidi</b> : c'est un liquide plus froid que sa température de saturation, donc sans aucune vapeur mélangée. Il peut être <b>surchauffé</b> : c'est une vapeur plus chaude que sa température de saturation, donc sans aucune goutte de liquide. Cette condition guide la méthode de remplissage : on ne prélève pas de la même façon un liquide sous-refroidi, pris en bas de la bouteille, et une vapeur surchauffée, prise en haut.</p><p>Un fluide récupéré n'est pas forcément perdu : il a trois devenirs possibles. La <b>réutilisation</b> (ou réemploi) : le fluide récupéré est rechargé tel quel, sans retraitement, dans la machine d'où il vient, chez le même détenteur (celui qui possède ou utilise l'installation). Le <b>recyclage</b> : le fluide subit un nettoyage de base, comme une filtration et un séchage. La <b>régénération</b> : un retraitement complet, réalisé en filière spécialisée, qui redonne au fluide les caractéristiques du fluide neuf. Un fluide régénéré <b>s'achète</b> : on ne le régénère jamais soi-même à l'atelier.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=g5b\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Peser, charger, stocker, tracer ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 8 écrans, 9 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/recuperation.svg\" alt=\"Rappel du montage : la bouteille se pèse avant, ne se remplit jamais à ras, ne mélange jamais deux fluides.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Pour charger, on détermine d'abord l'<b>état du fluide</b> et la <b>quantité prévue</b> (plaque signalétique, doc constructeur). La charge se contrôle à la <b>balance</b>, jamais « au manomètre » : le manomètre dit comment la machine se comporte, la balance dit combien on a mis.</p><p>Cas particulier des <b>mélanges zéotropes</b> : ils se chargent en <b>phase liquide</b>, faute de quoi les composants se séparent et la composition du circuit dérive.</p><p>L'<b>huile</b> suit le fluide, et elle en dépend. Les anciens fluides chlorés travaillaient avec de l'huile <b>minérale</b> ; les HFC et les HFO demandent une huile de synthèse, le plus souvent <b>polyolester (POE)</b>. Les deux ne se mélangent pas : sur un changement de fluide, l'huile se change aussi — c'est ce qui distingue un <b>retrofit</b> d'un simple drop-in. La POE <b>absorbe l'humidité de l'air</b> très vite : bidon refermé aussitôt, circuit jamais laissé ouvert. Le type exact d'huile se lit sur la <b>plaque ou la doc constructeur</b>, jamais au jugé.</p><p>Une huile retirée d'un circuit est <b>contaminée</b> : elle contient du fluide dissous. Elle ne se jette pas, elle part en <b>déchet dangereux</b> vers une filière agréée, avec son bordereau. Pour les <b>hydrocarbures</b>, fluide et huile sont en plus <b>inflammables</b> : récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, transport selon la réglementation applicable et la fiche de données de sécurité.</p><p>Le <b>registre</b> est la preuve légale de toute opération sur le fluide : quantité ajoutée, quantité récupérée, date, intervenant. Le rejet volontaire à l'atmosphère est strictement interdit et sanctionné.</p><p>Avant de charger, on regarde aussi dans quelle <b>condition</b> se trouve le fluide, en plus de savoir s'il est liquide ou gazeux. À une pression donnée, le fluide peut être <b>saturé</b> : le liquide et la vapeur sont présents ensemble, à la température de changement d'état. Il peut être <b>sous-refroidi</b> : c'est un liquide plus froid que sa température de saturation, donc sans aucune vapeur mélangée. Il peut être <b>surchauffé</b> : c'est une vapeur plus chaude que sa température de saturation, donc sans aucune goutte de liquide. Cette condition guide la méthode de remplissage : on ne prélève pas de la même façon un liquide sous-refroidi, pris en bas de la bouteille, et une vapeur surchauffée, prise en haut.</p><p>Un fluide récupéré n'est pas forcément perdu : il a trois devenirs possibles. La <b>réutilisation</b> (ou réemploi) : le fluide récupéré est rechargé tel quel, sans retraitement, dans la machine d'où il vient, chez le même détenteur (celui qui possède ou utilise l'installation). Le <b>recyclage</b> : le fluide subit un nettoyage de base, comme une filtration et un séchage. La <b>régénération</b> : un retraitement complet, réalisé en filière spécialisée, qui redonne au fluide les caractéristiques du fluide neuf. Un fluide régénéré <b>s'achète</b> : on ne le régénère jamais soi-même à l'atelier.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -11838,7 +15091,7 @@ window.PILOTE_PACK = {
    "titre": "Détective — la bouteille de récupération",
    "dc": "G5 · mise en situation · parcours D",
    "minuteur_s": 420,
-   "corps": "<p>Récupération sur une chambre froide avant remplacement d'un composant. Tu as pesé la bouteille <b>avant</b> de commencer — bon réflexe. La récupération avance, et la balance approche du <b>niveau maximal admissible</b> de la bouteille… mais il reste visiblement du fluide dans le circuit.</p><p>Sur l'étagère du fourgon : une bouteille de récupération <b>vide</b>, et une bouteille <b>entamée</b> qui contient déjà un autre fluide.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x3\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Détective — la bouteille de récupération ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Récupération sur une chambre froide avant remplacement d'un composant. Tu as pesé la bouteille <b>avant</b> de commencer — bon réflexe. La récupération avance, et la balance approche du <b>niveau maximal admissible</b> de la bouteille… mais il reste visiblement du fluide dans le circuit.</p><p>Sur l'étagère du fourgon : une bouteille de récupération <b>vide</b>, et une bouteille <b>entamée</b> qui contient déjà un autre fluide.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -12689,7 +15942,7 @@ window.PILOTE_PACK = {
    "titre": "Exercice — la machine ne fait plus de froid",
    "dc": "G8 · G9 · mise en situation",
    "minuteur_s": 480,
-   "corps": "<p>Chambre froide positive. Le compresseur tourne, mais la température de la chambre ne descend plus. Tu relèves :</p><ul><li>basse pression <b>anormalement basse</b> ;</li><li>surchauffe à l'aspiration <b>très élevée</b>, de l'ordre de 20 K ;</li><li>sous-refroidissement <b>quasi nul</b>, <b>bulles</b> visibles au voyant liquide ;</li><li>aucune trace d'huile visible au premier examen.</li></ul><p>Rappels : surchauffe attendue 5 à 10 K, sous-refroidissement attendu 4 à 8 K.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x2\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Exercice — la machine ne fait plus de froid ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Chambre froide positive. Le compresseur tourne, mais la température de la chambre ne descend plus. Tu relèves :</p><ul><li>basse pression <b>anormalement basse</b> ;</li><li>surchauffe à l'aspiration <b>très élevée</b>, de l'ordre de 20 K ;</li><li>sous-refroidissement <b>quasi nul</b>, <b>bulles</b> visibles au voyant liquide ;</li><li>aucune trace d'huile visible au premier examen.</li></ul><p>Rappels : surchauffe attendue 5 à 10 K, sous-refroidissement attendu 4 à 8 K.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -12777,7 +16030,7 @@ window.PILOTE_PACK = {
    "titre": "Le détendeur et les organes annexes",
    "dc": "G9 · codes 9.01 · 9.02 · 9.03 · 9.08",
    "minuteur_s": 300,
-   "corps": "<img src=\"packs/fluides/res/svg/detendeur-regulation.svg\" alt=\"Animation en boucle : la charge thermique augmente, la surchauffe monte, le bulbe se réchauffe et pousse la membrane, le détendeur ouvre, l'évaporateur reçoit plus de fluide, la surchauffe redescend — la boucle qui se corrige toute seule.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><img src=\"packs/fluides/res/svg/detendeurs-ligne.svg\" alt=\"Les quatre types de détendeurs et la ligne liquide avec ses accessoires dans l ordre.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Le détendeur fait chuter la pression et <b>dose le débit de liquide</b> envoyé à l'évaporateur. Le <b>détendeur thermostatique</b> régule sur la <b>surchauffe</b> : son bulbe, fixé sur la ligne d'aspiration, sent la température du gaz et ouvre ou ferme en conséquence. Le <b>détendeur électronique</b> fait la même chose avec une sonde et un régulateur : plus précis, plus rapide. Le <b>capillaire</b>, lui, est un tube calibré fixe, sans réglage — on le trouve sur les petits appareils.</p><p>Autour du détendeur, la ligne liquide porte le <b>filtre déshydrateur</b> (tamis moléculaire, monté <b>dans le sens de la flèche</b>) et le <b>voyant</b>, qui renseigne sur deux choses : la présence de bulles et, par sa pastille, l'humidité du circuit.</p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/circuit-organe-par-organe/index.html\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🔧 Lancer le cours interactif : le circuit, organe par organe ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.</span></p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">le détendeur à égalisation interne et externe, le détendeur électronique et le tube capillaire, chacun en vue isolée avec son symbole.</span></p>",
+   "corps": "<img src=\"packs/fluides/res/svg/detendeur-regulation.svg\" alt=\"Animation en boucle : la charge thermique augmente, la surchauffe monte, le bulbe se réchauffe et pousse la membrane, le détendeur ouvre, l'évaporateur reçoit plus de fluide, la surchauffe redescend — la boucle qui se corrige toute seule.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><img src=\"packs/fluides/res/svg/detendeurs-ligne.svg\" alt=\"Les quatre types de détendeurs et la ligne liquide avec ses accessoires dans l ordre.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Le détendeur fait chuter la pression et <b>dose le débit de liquide</b> envoyé à l'évaporateur. Le <b>détendeur thermostatique</b> régule sur la <b>surchauffe</b> : son bulbe, fixé sur la ligne d'aspiration, sent la température du gaz et ouvre ou ferme en conséquence. Le <b>détendeur électronique</b> fait la même chose avec une sonde et un régulateur : plus précis, plus rapide. Le <b>capillaire</b>, lui, est un tube calibré fixe, sans réglage — on le trouve sur les petits appareils.</p><p>Autour du détendeur, la ligne liquide porte le <b>filtre déshydrateur</b> (tamis moléculaire, monté <b>dans le sens de la flèche</b>) et le <b>voyant</b>, qui renseigne sur deux choses : la présence de bulles et, par sa pastille, l'humidité du circuit.</p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/circuit-organe-par-organe/index.html\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🔧 Lancer le cours interactif : le circuit, organe par organe ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.</span></p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-thermostatique\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">le détendeur à égalisation interne et externe, le détendeur électronique et le tube capillaire, chacun en vue isolée avec son symbole.</span></p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/detendeur-interactif/index.html\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎯 Lancer le cours interactif : le détendeur thermostatique en détail ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">14 écrans : la croix du frigoriste, le train thermostatique pièce par pièce, le calcul de la surchauffe, le jeu des trois forces sur la membrane, la pose du bulbe, l'égalisation interne et externe, le choix de la buse — et le réglage, qui ne vient qu'après le diagnostic.</span></p><p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/electrovanne-interactive/index.html\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">⚡ Lancer le cours interactif : l'électrovanne de ligne liquide ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">14 écrans : pourquoi on coupe le liquide avant d'arrêter le compresseur, la commande tout ou rien, la coupe animée hors tension puis alimentée, l'action directe et la commande assistée, NF et NO, la dépose de la bobine en sécurité et le diagnostic.</span></p>",
    "blocs": [
     {
      "type": "cle",
@@ -13019,7 +16272,7 @@ window.PILOTE_PACK = {
    "titre": "Tuyauterie et brasage sous azote",
    "dc": "G10 · codes 10.01 · 10.02",
    "minuteur_s": 300,
-   "corps": "<img src=\"packs/fluides/res/svg/balayage-azote.svg\" alt=\"Brasage sous balayage d azote : l azote traverse le tube pendant la chauffe et ressort librement.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Braser un circuit frigorifique, ce n'est pas braser une tuyauterie d'eau. À la flamme, l'intérieur du cuivre s'oxyde et forme une <b>calamine</b> noire qui se détache plus tard, circule, et bouche le déshydrateur ou abîme le compresseur — des mois après, loin de la cause.</p><p>D'où le <b>balayage à l'azote</b> pendant toute la chauffe : un débit léger et continu chasse l'oxygène du tube. Pour le cuivre sur cuivre, l'alliage d'apport est généralement du type <b>cuivre-phosphore</b>.</p><p>On ne brase <b>jamais</b> un circuit contenant du fluide : récupération, puis inertage à l'azote. <b>EPI systématiques</b> au poste : lunettes, gants. Les tubes se cintrent <b>à froid, à la cintreuse</b>, se coupent au coupe-tube et s'<b>ébavurent</b> — une bavure part avec le fluide et finit dans le compresseur.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=g10\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Tuyauterie et brasage sous azote ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/balayage-azote.svg\" alt=\"Brasage sous balayage d azote : l azote traverse le tube pendant la chauffe et ressort librement.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Braser un circuit frigorifique, ce n'est pas braser une tuyauterie d'eau. À la flamme, l'intérieur du cuivre s'oxyde et forme une <b>calamine</b> noire qui se détache plus tard, circule, et bouche le déshydrateur ou abîme le compresseur — des mois après, loin de la cause.</p><p>D'où le <b>balayage à l'azote</b> pendant toute la chauffe : un débit léger et continu chasse l'oxygène du tube. Pour le cuivre sur cuivre, l'alliage d'apport est généralement du type <b>cuivre-phosphore</b>.</p><p>On ne brase <b>jamais</b> un circuit contenant du fluide : récupération, puis inertage à l'azote. <b>EPI systématiques</b> au poste : lunettes, gants. Les tubes se cintrent <b>à froid, à la cintreuse</b>, se coupent au coupe-tube et s'<b>ébavurent</b> — une bavure part avec le fluide et finit dans le compresseur.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -13538,7 +16791,7 @@ window.PILOTE_PACK = {
    "titre": "Détective — intervention sur monobloc R-290",
    "dc": "G12 · mise en situation · A1 et A2",
    "minuteur_s": 480,
-   "corps": "<p>Une vitrine réfrigérée au <b>R-290</b> à remplacer de compresseur, dans l'arrière-boutique d'une boulangerie : local <b>petit</b>, <b>sans ventilation</b>, un four à quelques mètres.</p><p>Ton collègue propose de « faire vite » : récupérer, ouvrir, braser le nouveau compresseur, recharger — comme sur un circuit HFC classique, « vu la petite charge ».</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x5\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Détective — intervention sur monobloc R-290 ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Une vitrine réfrigérée au <b>R-290</b> à remplacer de compresseur, dans l'arrière-boutique d'une boulangerie : local <b>petit</b>, <b>sans ventilation</b>, un four à quelques mètres.</p><p>Ton collègue propose de « faire vite » : récupérer, ouvrir, braser le nouveau compresseur, recharger — comme sur un circuit HFC classique, « vu la petite charge ».</p>",
    "blocs": [
     {
      "type": "piege",
@@ -13631,7 +16884,7 @@ window.PILOTE_PACK = {
    "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir",
    "dc": "G13 · G14 · information et sensibilisation",
    "minuteur_s": 300,
-   "corps": "<img src=\"packs/fluides/res/svg/co2-nh3-compare.svg\" alt=\"Deux comportements inverses : le CO₂, A1 et sans odeur, est plus lourd que l'air et descend (catégorie B) ; l'ammoniac, B2L et piquant, est plus léger que l'air et monte (catégorie C).\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Ce module <b>informe</b>, il ne qualifie pas. Une attestation A1 ou A2 ne donne <b>aucun droit d'intervention</b> sur une installation au CO₂ (catégorie B) ou à l'ammoniac (catégorie C). Ce qu'on attend ici : <b>reconnaître</b> et <b>ne pas toucher</b>.</p><p><b>CO₂ (R-744)</b> — classé <b>A1</b> : toxicité <b>faible</b>, non inflammable, <b>PRP = 1</b>. Cette classe n'annonce aucun de ses vrais dangers : la <b>pression</b>, très élevée, l'<b>atmosphère irrespirable</b> en local fermé (il est plus lourd que l'air, s'accumule en point bas, et agit sur la respiration — voir « CO₂ : deux dangers mortels »), et le risque de <b>neige carbonique</b> à la détente (brûlure par le froid, obstruction). En transcritique, le condenseur laisse la place à un <b>refroidisseur de gaz</b>. Les cylindres, à double vanne, ne se raccordent pas au matériel courant.</p><p><b>Ammoniac (R-717)</b> — classé <b>B2L</b> : <b>toxique</b> et faiblement inflammable. Fluide du froid industriel (agroalimentaire, entrepôts), jamais du résidentiel. Son odeur piquante se perçoit très tôt — mais elle <b>ne remplace aucune mesure</b>, et elle s'émousse à forte concentration : on ne se fie jamais à son nez pour décider. En cas de fuite : <b>alerter, évacuer, ne jamais intervenir seul</b>.</p><p>Sur le terrain, le CO₂ ne se manipule pas avec le matériel courant : ses pressions de travail sont bien plus élevées que celles des fluides classiques. Manifold, flexibles, vannes — tout doit être <b>dédié au CO₂</b>. Les valeurs exactes dépendent du point de fonctionnement et se lisent toujours dans la <b>documentation constructeur</b>, à faire valider.</p><p>Le diagramme <b>log p/h</b> (pression selon l'enthalpie) et les <b>tables de saturation</b> du CO₂ se lisent comme ceux de tout autre fluide — mêmes repères de bulle et de rosée — mais dans un domaine de pression qui lui est propre. C'est ce domaine particulier qui explique un comportement que les autres fluides n'ont pas : la formation de glace carbonique.</p><p>Avant de commencer une intervention sur un site au CO₂ ou à l'ammoniac, on prend un instant pour vérifier ce qui est déjà en place. La <b>signalisation</b> à l'entrée du local doit être visible et à jour. Les <b>issues de secours</b> doivent rester dégagées, jamais encombrées, pour permettre une évacuation rapide en cas de fuite. On contrôle aussi que les <b>capteurs</b> de gaz et les <b>alarmes</b> qui leur sont associées sont en état de marche, pas seulement présents dans le local.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=g13\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : CO₂ et NH₃ — reconnaître, ne pas intervenir ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 5 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/co2-nh3-compare.svg\" alt=\"Deux comportements inverses : le CO₂, A1 et sans odeur, est plus lourd que l'air et descend (catégorie B) ; l'ammoniac, B2L et piquant, est plus léger que l'air et monte (catégorie C).\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Ce module <b>informe</b>, il ne qualifie pas. Une attestation A1 ou A2 ne donne <b>aucun droit d'intervention</b> sur une installation au CO₂ (catégorie B) ou à l'ammoniac (catégorie C). Ce qu'on attend ici : <b>reconnaître</b> et <b>ne pas toucher</b>.</p><p><b>CO₂ (R-744)</b> — classé <b>A1</b> : toxicité <b>faible</b>, non inflammable, <b>PRP = 1</b>. Cette classe n'annonce aucun de ses vrais dangers : la <b>pression</b>, très élevée, l'<b>atmosphère irrespirable</b> en local fermé (il est plus lourd que l'air, s'accumule en point bas, et agit sur la respiration — voir « CO₂ : deux dangers mortels »), et le risque de <b>neige carbonique</b> à la détente (brûlure par le froid, obstruction). En transcritique, le condenseur laisse la place à un <b>refroidisseur de gaz</b>. Les cylindres, à double vanne, ne se raccordent pas au matériel courant.</p><p><b>Ammoniac (R-717)</b> — classé <b>B2L</b> : <b>toxique</b> et faiblement inflammable. Fluide du froid industriel (agroalimentaire, entrepôts), jamais du résidentiel. Son odeur piquante se perçoit très tôt — mais elle <b>ne remplace aucune mesure</b>, et elle s'émousse à forte concentration : on ne se fie jamais à son nez pour décider. En cas de fuite : <b>alerter, évacuer, ne jamais intervenir seul</b>.</p><p>Sur le terrain, le CO₂ ne se manipule pas avec le matériel courant : ses pressions de travail sont bien plus élevées que celles des fluides classiques. Manifold, flexibles, vannes — tout doit être <b>dédié au CO₂</b>. Les valeurs exactes dépendent du point de fonctionnement et se lisent toujours dans la <b>documentation constructeur</b>, à faire valider.</p><p>Le diagramme <b>log p/h</b> (pression selon l'enthalpie) et les <b>tables de saturation</b> du CO₂ se lisent comme ceux de tout autre fluide — mêmes repères de bulle et de rosée — mais dans un domaine de pression qui lui est propre. C'est ce domaine particulier qui explique un comportement que les autres fluides n'ont pas : la formation de glace carbonique.</p><p>Avant de commencer une intervention sur un site au CO₂ ou à l'ammoniac, on prend un instant pour vérifier ce qui est déjà en place. La <b>signalisation</b> à l'entrée du local doit être visible et à jour. Les <b>issues de secours</b> doivent rester dégagées, jamais encombrées, pour permettre une évacuation rapide en cas de fuite. On contrôle aussi que les <b>capteurs</b> de gaz et les <b>alarmes</b> qui leur sont associées sont en état de marche, pas seulement présents dans le local.</p>",
    "blocs": [
     {
      "type": "piege",
