@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="34" viewBox="-22.00 -16.00 44.00 34.00">
+  <line x1="10.29" y1="0.25" x2="7.92" y2="0.25" stroke="#000" stroke-width="1"/>
+  <polygon points="8.08,0.32 -3.48,-6.65 -3.48,7.3" fill="#000" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.45" cy="-0.01" rx="8.30" ry="8.29" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-7.74" y1="-0.29" x2="-9.44" y2="-0.29" stroke="#000" stroke-width="1"/>
+  <circle cx="-10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="10" cy="0" r="1.5" fill="#000"/>
+</svg>

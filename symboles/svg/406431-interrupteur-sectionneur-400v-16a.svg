@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="224" viewBox="-7.00 -12.00 54.00 224.00">
+  <rect x="0" y="0" width="40" height="200" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="7" y="83" width="25" height="9" fill="#0a0" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="50" width="40" height="100" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="7" y="91" width="25" height="18" fill="#888" stroke="#000" stroke-width="1"/>
+  <line x1="40" y1="0" x2="40" y2="200" stroke="#000" stroke-width="0.5"/>
+  <rect x="0" y="110" width="40" height="6" fill="#888" stroke="#000" stroke-width="1"/>
+  <line x1="7" y1="114" x2="33" y2="114" stroke="#000" stroke-width="1"/>
+  <line x1="7" y1="112" x2="33" y2="112" stroke="#000" stroke-width="1"/>
+  <polyline points="5,120 5,145 10,145" fill="none" stroke="#c00" stroke-width="1"/>
+  <polyline points="30,145 35,145" fill="none" stroke="#c00" stroke-width="1"/>
+  <rect x="33" y="121" width="2" height="12" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="34.00" cy="131.00" rx="0.50" ry="0.50" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <line x1="31" y1="121.5" x2="31" y2="119" stroke="#000" stroke-width="0.5"/>
+  <line x1="27" y1="119" x2="27" y2="121.5" stroke="#000" stroke-width="0.5"/>
+  <line x1="30.55" y1="121.5" x2="31.45" y2="121.5" stroke="#000" stroke-width="0.5"/>
+  <line x1="26.5" y1="121.5" x2="27.5" y2="121.5" stroke="#000" stroke-width="0.5"/>
+  <polyline points="25,121 27,125 27,133" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polyline points="29,121 31,125 31,133" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="26" x2="40" y2="26" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="27.00" cy="122.00" rx="0.50" ry="0.50" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="31.00" cy="122.00" rx="0.50" ry="0.50" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="26.1" y1="123.4" x2="30.1" y2="123.4" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <rect x="0" y="50" width="40" height="30" fill="#0cc" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="30.00" cy="187.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="28" y1="185" x2="32" y2="189" stroke="#000" stroke-width="1"/>
+  <line x1="32" y1="185" x2="28" y2="189" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="185" x2="30" y2="189" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="10.00" cy="187.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="28" y1="187" x2="32" y2="187" stroke="#000" stroke-width="0.5"/>
+  <line x1="8" y1="185" x2="12" y2="189" stroke="#000" stroke-width="1"/>
+  <line x1="12" y1="185" x2="8" y2="189" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="187" x2="12" y2="187" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="30.00" cy="16.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="28" y1="14" x2="32" y2="18" stroke="#000" stroke-width="1"/>
+  <line x1="32" y1="14" x2="28" y2="18" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="14" x2="30" y2="18" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="10.00" cy="16.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="28" y1="16" x2="32" y2="16" stroke="#000" stroke-width="0.5"/>
+  <line x1="8" y1="14" x2="12" y2="18" stroke="#000" stroke-width="1"/>
+  <line x1="12" y1="14" x2="8" y2="18" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="16" x2="12" y2="16" stroke="#000" stroke-width="0.5"/>
+  <circle cx="10" cy="200" r="1.5" fill="#000"/>
+  <circle cx="30" cy="0" r="1.5" fill="#000"/>
+  <circle cx="10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="30" cy="200" r="1.5" fill="#000"/>
+  <text x="7" y="125.00" font-family="sans-serif" font-size="5" fill="#333">DX³-IS</text>
+  <text x="5.9" y="134.00" font-family="sans-serif" font-size="7" fill="#333">16AX</text>
+  <text x="13" y="89.00" font-family="sans-serif" font-size="4" fill="#333">O.OFF</text>
+  <text x="7" y="139.00" font-family="sans-serif" font-size="5" fill="#333">AC22A</text>
+  <text x="28" y="139.00" font-family="sans-serif" font-size="5" fill="#333">400V~</text>
+</svg>

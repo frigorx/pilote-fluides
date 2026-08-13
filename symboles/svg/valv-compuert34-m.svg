@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="-32.00 -46.00 64.00 64.00">
+  <line x1="18" y1="-5" x2="20" y2="6" stroke="#000" stroke-width="0.5"/>
+  <line x1="-18" y1="-5" x2="-16" y2="6" stroke="#000" stroke-width="0.5"/>
+  <line x1="20" y1="-5" x2="22" y2="6" stroke="#000" stroke-width="0.5"/>
+  <line x1="6.63" y1="-6.93" x2="6.63" y2="-14.77" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-5" x2="-18" y2="6" stroke="#000" stroke-width="0.5"/>
+  <path d="M 6.84 -18.09 A 7.21 6.21 0 0 0 -7.57 -18.09" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-23" y="-5" width="7" height="11" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 11.45 5.58 A 2.05 2.29 0 0 0 11.45 10.15" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-22" y1="-5" x2="-20" y2="6" stroke="#000" stroke-width="0.5"/>
+  <path d="M -12.19 10.15 A 2.05 2.29 0 0 0 -12.19 5.58" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="9.4" y="-9.44" width="5.25" height="19.59" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="6.83" y="-7.26" width="2.56" height="14.59" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="11.1" y1="-4.87" x2="14.07" y2="-4.87" stroke="#000" stroke-width="1"/>
+  <line x1="11.1" y1="5.58" x2="14.07" y2="5.58" stroke="#000" stroke-width="1"/>
+  <path d="M 11.45 -4.87 A 2.05 5.22 0 0 0 11.45 5.58" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 11.45 -9.44 A 2.05 2.29 0 0 0 11.45 -4.87" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-15.39" y="-9.44" width="5.25" height="19.59" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -7.57 6.56 A 7.21 6.21 0 0 0 6.84 6.57" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-4.09" y="-33.4" width="6.95" height="3.11" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-12.59" y="-41.75" width="24.31" height="1.87" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-1.61" y="-39.89" width="2" height="6.49" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-10.13" y="-6.72" width="2.56" height="14" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-2.1" y1="-33.4" x2="-2.1" y2="-30.91" stroke="#000" stroke-width="1"/>
+  <line x1="1.37" y1="-33.4" x2="1.37" y2="-30.91" stroke="#000" stroke-width="1"/>
+  <line x1="-14.74" y1="-4.87" x2="-11.76" y2="-4.87" stroke="#000" stroke-width="1"/>
+  <line x1="-14.73" y1="5.58" x2="-11.77" y2="5.58" stroke="#000" stroke-width="1"/>
+  <path d="M -12.19 5.58 A 2.05 5.22 0 0 0 -12.19 -4.87" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -12.19 -4.87 A 2.05 2.29 0 0 0 -12.19 -9.44" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-4" y="-30" width="7" height="6" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-7.45" y1="-6.93" x2="-7.45" y2="-14.77" stroke="#000" stroke-width="1"/>
+  <rect x="-10.07" y="-17.69" width="18.63" height="2.1" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="15" y="-5" width="7" height="11" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="16" y1="-5" x2="18" y2="6" stroke="#000" stroke-width="0.5"/>
+  <circle cx="-23" cy="0" r="1.5" fill="#000"/>
+  <circle cx="22" cy="0" r="1.5" fill="#000"/>
+</svg>

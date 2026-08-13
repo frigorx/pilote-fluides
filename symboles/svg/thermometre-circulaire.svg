@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="44" viewBox="-17.00 -19.00 34.00 44.00">
+  <line x1="-1.13" y1="8.77" x2="2.9" y2="8.36" stroke="#000" stroke-width="0.5"/>
+  <line x1="-1.13" y1="8.16" x2="2.9" y2="7.75" stroke="#000" stroke-width="0.5"/>
+  <line x1="-2.6" y1="6.72" x2="-2.6" y2="4.71" stroke="#000" stroke-width="1"/>
+  <ellipse cx="2.05" cy="-2.40" rx="8.05" ry="7.50" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-0.9" y="6.94" width="4.34" height="3.25" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-2.6" y1="6.94" x2="5.9" y2="6.94" stroke="#000" stroke-width="1"/>
+  <line x1="5.9" y1="6.77" x2="5.9" y2="5.08" stroke="#000" stroke-width="1"/>
+  <ellipse cx="2.10" cy="-2.39" rx="8.95" ry="8.12" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="1.87" y1="-2.6" x2="-3.27" y2="-6.45" stroke="#000" stroke-width="1"/>
+  <line x1="-3.27" y1="-6.66" x2="1.87" y2="-2.8" stroke="#000" stroke-width="1"/>
+  <ellipse cx="2.32" cy="-2.19" rx="0.67" ry="0.61" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-1.13" y1="9.58" x2="2.9" y2="9.25" stroke="#000" stroke-width="0.5"/>
+  <circle cx="1" cy="11" r="1.5" fill="#000"/>
+  <text x="-9.2" y="0.66" font-family="sans-serif" font-size="5" fill="#555">10</text>
+  <text x="-5.29" y="-2.19" font-family="sans-serif" font-size="5" fill="#333">20</text>
+  <text x="-1.93" y="-6.45" font-family="sans-serif" font-size="5" fill="#333">30</text>
+  <text x="3.89" y="-6.86" font-family="sans-serif" font-size="5" fill="#333">40</text>
+  <text x="6.85" y="-2.30" font-family="sans-serif" font-size="5" fill="#333">50</text>
+  <text x="5" y="2.93" font-family="sans-serif" font-size="5" fill="#333">60</text>
+</svg>

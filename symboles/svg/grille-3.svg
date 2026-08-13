@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="54" viewBox="-22.00 -30.00 44.00 54.00">
+  <polyline points="10.44,-19 13.25,-17.15 13.25,-14.31 -4.56,-1.07 -4.56,-2" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="10.44,-12.42 13.25,-10.53 13.25,-7.69 -4.56,5.54 -4.56,4.6" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="13.25" y1="-10.53" x2="-4.56" y2="1.76" stroke="#000" stroke-width="0.5"/>
+  <polyline points="10.44,-4.86 13.25,-3 13.25,-0.13 -4.56,13.11 -4.56,12.16" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="13.25" y1="-3" x2="-4.56" y2="9.33" stroke="#000" stroke-width="0.5"/>
+  <line x1="-9.25" y1="-8.64" x2="-4.56" y2="-8.64" stroke="#000" stroke-width="1"/>
+  <line x1="-9.25" y1="15" x2="-4.56" y2="15" stroke="#000" stroke-width="1"/>
+  <polygon points="14.19,-21.88 -4.56,-8.64 -4.56,15 14.19,0.82" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="9.5" y1="-21.88" x2="14.19" y2="-21.88" stroke="#000" stroke-width="1"/>
+  <polyline points="9.5,-21.88 -9.25,-8.64 -9.25,15" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="13.25" y1="-17.15" x2="-4.56" y2="-4.86" stroke="#000" stroke-width="0.5"/>
+  <circle cx="-9" cy="0" r="1.5" fill="#000"/>
+</svg>

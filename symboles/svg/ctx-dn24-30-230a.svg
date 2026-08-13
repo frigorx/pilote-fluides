@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="87" height="194" viewBox="-44.00 -97.00 87.40 194.00">
+  <rect x="-36" y="-90" width="72" height="180" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <path d="M -30.60 72.45 A 3.15 6.75 0 0 0 -30.60 85.95" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="27.05" cy="79.20" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="9.05" cy="79.20" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="9.05" cy="-79.20" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="27.05" cy="-79.20" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="7.25" y1="-81" x2="10.85" y2="-77.4" stroke="#000" stroke-width="1"/>
+  <line x1="7.25" y1="77.4" x2="10.85" y2="81" stroke="#000" stroke-width="1"/>
+  <line x1="25.25" y1="77.4" x2="28.85" y2="81" stroke="#000" stroke-width="1"/>
+  <line x1="25.25" y1="-81" x2="28.85" y2="-77.4" stroke="#000" stroke-width="1"/>
+  <path d="M 31.50 85.95 A 2.25 6.75 0 0 0 31.50 72.45" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="10.8" y1="-81" x2="7.2" y2="-77.4" stroke="#000" stroke-width="1"/>
+  <rect x="-36" y="-45" width="72" height="90" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="28.8" y1="-81" x2="25.2" y2="-77.4" stroke="#000" stroke-width="1"/>
+  <line x1="10.8" y1="77.4" x2="7.2" y2="81" stroke="#000" stroke-width="1"/>
+  <line x1="28.8" y1="77.4" x2="25.2" y2="81" stroke="#000" stroke-width="1"/>
+  <line x1="9.05" y1="77.4" x2="9.05" y2="81" stroke="#000" stroke-width="0.5"/>
+  <line x1="27.05" y1="77.4" x2="27.05" y2="81" stroke="#000" stroke-width="0.5"/>
+  <line x1="-36" y1="-15.3" x2="36" y2="-15.3" stroke="#000" stroke-width="0.5"/>
+  <line x1="9.05" y1="-81" x2="9.05" y2="-77.4" stroke="#000" stroke-width="0.5"/>
+  <line x1="27.05" y1="-81" x2="27.05" y2="-77.4" stroke="#000" stroke-width="0.5"/>
+  <line x1="7.25" y1="-79.2" x2="10.85" y2="-79.2" stroke="#000" stroke-width="0.5"/>
+  <line x1="7.25" y1="79.2" x2="10.85" y2="79.2" stroke="#000" stroke-width="0.5"/>
+  <line x1="25.25" y1="-79.2" x2="28.85" y2="-79.2" stroke="#000" stroke-width="0.5"/>
+  <line x1="25.25" y1="79.2" x2="28.85" y2="79.2" stroke="#000" stroke-width="0.5"/>
+  <line x1="-30.6" y1="72.45" x2="31.5" y2="72.45" stroke="#000" stroke-width="0.5"/>
+  <line x1="-30.6" y1="85.95" x2="31.5" y2="85.95" stroke="#000" stroke-width="0.5"/>
+  <line x1="-22.5" y1="-36" x2="31.5" y2="-36" stroke="#c00" stroke-width="1"/>
+  <path d="M -26.10 -22.95 A 0.45 0.45 0 0 0 -27.00 -22.95" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -26.10 -22.95 A 0.45 0.45 0 0 0 -25.20 -22.95" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-36" y1="14.4" x2="36" y2="14.4" stroke="#000" stroke-width="0.5"/>
+  <polygon points="31.5,-44.1 29.7,-44.1 27,-38.7 28.8,-38.7 29.7,-40.5 31.5,-40.5 32.4,-42.3 27,-42.3 26.1,-40.5 29.7,-40.5" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-27.00" cy="-79.20" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-8.95" cy="-79.20" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-27.00" cy="79.20" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-9.00" cy="79.20" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-25.2" y1="-81" x2="-28.8" y2="-77.4" stroke="#000" stroke-width="1"/>
+  <line x1="-28.8" y1="-81" x2="-25.2" y2="-77.4" stroke="#000" stroke-width="1"/>
+  <line x1="-10.75" y1="-81" x2="-7.15" y2="-77.4" stroke="#000" stroke-width="1"/>
+  <line x1="-7.2" y1="-81" x2="-10.8" y2="-77.4" stroke="#000" stroke-width="1"/>
+  <line x1="-8.95" y1="-81" x2="-8.95" y2="-77.4" stroke="#000" stroke-width="0.5"/>
+  <line x1="-10.75" y1="-79.2" x2="-7.15" y2="-79.2" stroke="#000" stroke-width="0.5"/>
+  <line x1="-27" y1="-81" x2="-27" y2="-77.4" stroke="#000" stroke-width="0.5"/>
+  <line x1="-28.8" y1="-79.2" x2="-25.2" y2="-79.2" stroke="#000" stroke-width="0.5"/>
+  <line x1="-28.8" y1="77.4" x2="-25.2" y2="81" stroke="#000" stroke-width="1"/>
+  <line x1="-25.2" y1="77.4" x2="-28.8" y2="81" stroke="#000" stroke-width="1"/>
+  <line x1="-27" y1="77.4" x2="-27" y2="81" stroke="#000" stroke-width="0.5"/>
+  <line x1="-28.8" y1="79.2" x2="-25.2" y2="79.2" stroke="#000" stroke-width="0.5"/>
+  <line x1="-10.8" y1="77.4" x2="-7.2" y2="81" stroke="#000" stroke-width="1"/>
+  <line x1="-7.2" y1="77.4" x2="-10.8" y2="81" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="77.4" x2="-9" y2="81" stroke="#000" stroke-width="0.5"/>
+  <line x1="-10.8" y1="79.2" x2="-7.2" y2="79.2" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-28.80" cy="-38.70" rx="5.40" ry="5.40" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-36" y1="67.5" x2="36" y2="67.5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-36" y1="-67.5" x2="36" y2="-67.5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-22.5" y1="-18" x2="-19.8" y2="-18" stroke="#000" stroke-width="0.5"/>
+  <line x1="-22.5" y1="-17.1" x2="-19.8" y2="-17.1" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <rect x="-13.5" y="-11.7" width="26.1" height="23.4" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-13.5" y="-3.6" width="26.1" height="6.3" fill="#000" stroke="#000" stroke-width="1"/>
+  <path d="M -30.60 -85.95 A 3.15 6.75 0 0 0 -30.60 -72.45" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M 31.50 -72.45 A 2.25 6.75 0 0 0 31.50 -85.95" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-30.6" y1="-85.95" x2="31.5" y2="-85.95" stroke="#000" stroke-width="0.5"/>
+  <line x1="-30.6" y1="-72.45" x2="31.5" y2="-72.45" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="0.00" cy="-58.50" rx="2.25" ry="2.25" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="57.60" rx="2.25" ry="2.25" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="-35.1" y="-26.10" font-family="sans-serif" font-size="4" fill="#333">24A</text>
+  <text x="-32.4" y="-22.50" font-family="sans-serif" font-size="5" fill="#333">230 V</text>
+  <text x="-36" y="20.75" font-family="sans-serif" font-size="4" fill="#555">Nom</text>
+  <text x="20.7" y="-31.50" font-family="sans-serif" font-size="5" fill="#333">CTX DN</text>
+  <text x="23.4" y="-17.10" font-family="sans-serif" font-size="5" fill="#333">666165</text>
+  <text x="-33.3" y="-36.90" font-family="sans-serif" font-size="4" fill="#333">GE</text>
+  <text x="-34.2" y="-17.10" font-family="sans-serif" font-size="5" fill="#333">UC 240</text>
+</svg>

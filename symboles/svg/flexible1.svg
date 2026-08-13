@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="64" viewBox="-23.00 -32.00 34.00 64.00">
+  <path d="M -12.19 2.18 A 5.13 2.85 0 0 0 -1.93 2.19" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -9.49 -7.15 A 5.13 2.85 0 0 0 0.77 -7.15" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -10.84 -0.41 A 5.13 2.85 0 0 0 -0.58 -0.40" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -12.73 7.37 A 5.13 2.85 0 0 0 -2.47 7.37" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -12.73 5.29 A 5.13 2.85 0 0 0 -2.47 5.30" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -10.00 -3.50 A 5.13 2.85 0 0 0 0.26 -3.50" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -12.73 15.65 A 5.13 2.85 0 0 0 -2.47 15.65" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-2.47" y1="10.73" x2="-2.47" y2="15.9" stroke="#000" stroke-width="1"/>
+  <path d="M -9.22 -9.71 A 5.13 2.85 0 0 0 1.04 -9.71" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -12.73 10.99 A 5.13 2.85 0 0 0 -2.47 10.99" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -12.73 9.96 A 5.13 2.85 0 0 0 -2.47 9.96" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="1" y1="-14.63" x2="1" y2="-9.46" stroke="#000" stroke-width="1"/>
+  <line x1="-12.73" y1="10.73" x2="-12.73" y2="15.9" stroke="#000" stroke-width="1"/>
+  <path d="M -9.22 -14.37 A 5.13 2.85 0 0 0 1.04 -14.37" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-12.73,9.69 -12.19,7.62 -13,6.07 -11.65,4.52 -12.46,1.93 -10.84,0.89 -11.38,-1.69 -9.76,-2.21 -10,-5.32 -8.68,-5.32" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-9.22" y1="-14.63" x2="-9.22" y2="-9.46" stroke="#000" stroke-width="1"/>
+  <polyline points="-2.47,9.69 -1.93,8.14 -2.74,6.07 -1.66,4.52 -2.2,3 -1.12,2.45 -1.93,0.89 -0.58,0.38 -0.85,-1.69 0.77,-2.73 0.5,-3.76 0.5,-3.25" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-4.09" cy="-14.89" rx="5.13" ry="2.85" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-8.95,-5.83 -9.49,-6.87 -8.95,-7.39 -9.22,-9.46 -9.22,-8.94" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="0.5,-3.76 1,-4.8 0.5,-5.83 1.31,-6.87 1,-8.94" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-2" cy="-19" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="19" r="1.5" fill="#000"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="34" viewBox="-41.00 -22.00 84.00 34.00">
+  <path d="M -10.00 -3.50 A 7.00 7.50 0 0 0 4.00 -3.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -8.00 -4.50 A 4.00 7.50 0 0 0 -16.00 -4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -16.00 -3.50 A 7.00 7.50 0 0 0 -2.00 -3.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -22.00 -4.50 A 5.00 5.50 0 0 0 -27.00 -10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="28" y1="-10" x2="31" y2="-10" stroke="#000" stroke-width="1"/>
+  <path d="M -22.00 -3.50 A 7.00 7.50 0 0 0 -8.00 -3.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -4.00 -3.50 A 7.00 7.50 0 0 0 10.00 -3.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 8.00 -4.50 A 7.00 7.50 0 0 0 22.00 -4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -2.00 -4.50 A 4.00 7.50 0 0 0 -10.00 -4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 2.00 -3.50 A 7.00 7.50 0 0 0 16.00 -3.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 16.00 -4.50 A 4.00 7.50 0 0 0 8.00 -4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 10.00 -4.50 A 4.00 7.50 0 0 0 2.00 -4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 4.00 -4.50 A 4.00 7.50 0 0 0 -4.00 -4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 27.00 -10.00 A 5.00 5.50 0 0 0 22.00 -4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-10" x2="-27" y2="-10" stroke="#000" stroke-width="1"/>
+  <circle cx="-30" cy="-10" r="1.5" fill="#000"/>
+  <circle cx="31" cy="-10" r="1.5" fill="#000"/>
+</svg>

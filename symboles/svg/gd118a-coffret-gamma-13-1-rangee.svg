@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="734" height="514" viewBox="-8.00 -4.00 734.00 514.00">
+  <rect x="0" y="0" width="718.2" height="505.8" rx="55.8" ry="9" fill="#fff" stroke="#000" stroke-width="1"/>
+  <line x1="72" y1="0" x2="72" y2="505.8" stroke="#888" stroke-width="0.5" stroke-dasharray="1,2"/>
+  <line x1="648" y1="0" x2="648" y2="505.8" stroke="#888" stroke-width="0.5" stroke-dasharray="1,2"/>
+  <rect x="694.8" y="405.9" width="5.4" height="10.8" rx="2.7" ry="2.7" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="19.8" y="405.9" width="5.4" height="10.8" rx="2.7" ry="2.7" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="694.8" y="72" width="5.4" height="10.8" rx="2.7" ry="2.7" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="22.50" cy="32.40" rx="9.90" ry="9.90" fill="#fff" stroke="#000" stroke-width="1"/>
+  <rect x="19.8" y="72" width="5.4" height="10.8" rx="2.7" ry="2.7" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="9.9" y="420.3" width="3.6" height="8.1" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <rect x="9.9" y="86.4" width="3.6" height="8.1" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <rect x="684.9" y="420.3" width="3.6" height="8.1" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="22.50" cy="454.50" rx="9.90" ry="9.90" fill="#fff" stroke="#000" stroke-width="1"/>
+  <rect x="31.5" y="420.3" width="3.6" height="8.1" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <rect x="706.5" y="420.3" width="3.6" height="8.1" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <rect x="31.5" y="86.4" width="3.6" height="8.1" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="22.50" cy="59.40" rx="9.90" ry="9.90" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="697.50" cy="32.40" rx="9.90" ry="9.90" fill="#fff" stroke="#000" stroke-width="1"/>
+  <rect x="694.8" y="431.1" width="5.4" height="10.8" rx="2.7" ry="2.7" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="19.8" y="97.2" width="5.4" height="10.8" rx="2.7" ry="2.7" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="19.8" y="431.1" width="5.4" height="10.8" rx="2.7" ry="2.7" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="697.50" cy="454.50" rx="9.90" ry="9.90" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="697.50" cy="423.90" rx="9.90" ry="9.90" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="22.50" cy="423.90" rx="9.90" ry="9.90" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="22.50" cy="90.00" rx="9.90" ry="9.90" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="22.50" cy="90.00" rx="7.20" ry="7.20" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="697.50" cy="423.90" rx="7.20" ry="7.20" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="697.50" cy="481.50" rx="9.90" ry="9.90" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="22.50" cy="423.90" rx="7.20" ry="7.20" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="22.50" cy="481.50" rx="9.90" ry="9.90" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="697.50" cy="59.40" rx="9.90" ry="9.90" fill="#fff" stroke="#000" stroke-width="1"/>
+  <rect x="684.9" y="86.4" width="3.6" height="8.1" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <rect x="706.5" y="86.4" width="3.6" height="8.1" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <rect x="694.8" y="97.2" width="5.4" height="10.8" rx="2.7" ry="2.7" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="697.50" cy="90.00" rx="9.90" ry="9.90" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="697.50" cy="90.00" rx="7.20" ry="7.20" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <polygon points="17.1,51.3 17.1,51.3 30.6,64.8 27.9,67.5 14.4,54" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="692.1,51.3 692.1,51.3 705.6,64.8 702.9,67.5 689.4,54" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="692.1,446.4 692.1,446.4 705.6,459.9 702.9,462.6 689.4,449.1" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="17.1,446.4 17.1,446.4 30.6,459.9 27.9,462.6 14.4,449.1" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="648" y="27" width="18" height="90" fill="#fff" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2,1,2"/>
+  <rect x="54" y="27" width="18" height="90" fill="#fff" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2,1,2"/>
+  <rect x="648" y="396" width="18" height="90" fill="#fff" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2,1,2"/>
+  <rect x="54" y="396" width="18" height="90" fill="#fff" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2,1,2"/>
+  <rect x="9" y="468" width="702" height="27" fill="none" stroke="#888" stroke-width="0.5" stroke-dasharray="4,2,1,2"/>
+  <rect x="9" y="18" width="702" height="27" fill="none" stroke="#888" stroke-width="0.5" stroke-dasharray="4,2,1,2"/>
+  <line x1="718.2" y1="153" x2="0" y2="153" stroke="#888" stroke-width="0.5" stroke-dasharray="4,2,1,2"/>
+  <line x1="718.2" y1="333.06" x2="0" y2="333.06" stroke="#888" stroke-width="0.5" stroke-dasharray="4,2,1,2"/>
+  <rect x="34.2" y="216" width="1.8" height="73.8" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <rect x="36" y="217.8" width="648" height="70.2" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="679.5" y="225" width="4.5" height="54" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <rect x="36" y="225" width="4.5" height="54" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <rect x="684" y="216" width="1.8" height="73.8" fill="#dd0" stroke="#000" stroke-width="0.5"/>
+  <rect x="593.1" y="239.4" width="7.2" height="25.2" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="207.90" cy="252.00" rx="9.00" ry="9.00" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="141.3" y="239.4" width="7.2" height="25.2" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="551.7" y="239.4" width="32.4" height="25.2" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="369.90" cy="252.00" rx="9.00" ry="9.00" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="558.9" y="244.8" width="25.2" height="14.4" rx="3.6" ry="3.6" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="564.30" cy="252.00" rx="1.80" ry="1.80" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="225.9" y="243" width="45" height="18" rx="9" ry="9" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="288.90" cy="252.00" rx="9.00" ry="9.00" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="306.9" y="243" width="45" height="18" rx="9" ry="9" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="157.5" y="239.4" width="32.4" height="25.2" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="157.5" y="244.8" width="25.2" height="14.4" rx="3.6" ry="3.6" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="177.30" cy="252.00" rx="1.80" ry="1.80" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="531.90" cy="252.00" rx="9.00" ry="9.00" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="387.9" y="243" width="45" height="18" rx="9" ry="9" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="450.90" cy="252.00" rx="9.00" ry="9.00" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="468.9" y="243" width="45" height="18" rx="9" ry="9" fill="#fff" stroke="#000" stroke-width="0.5"/>
+</svg>

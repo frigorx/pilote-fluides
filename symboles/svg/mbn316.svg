@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="174" viewBox="-65.00 -87.00 124.00 174.00">
+  <rect x="-54" y="-83" width="36" height="166" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-44" y="-75" width="16" height="150" rx="8" ry="8" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-18" y="-83" width="36" height="166" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-8" y="-75" width="16" height="150" rx="8" ry="8" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="18" y="-83" width="36" height="166" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-18" y="-60" width="36" height="120" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="28" y="-75" width="16" height="150" rx="8" ry="8" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-18" y="-44" width="36" height="88" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="0.00" cy="67.00" rx="6.50" ry="6.50" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="18" y="-60" width="36" height="120" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <line x1="-2.9" y1="64.1" x2="3.1" y2="70.1" stroke="#000" stroke-width="1"/>
+  <line x1="-2.9" y1="70.1" x2="3.1" y2="64.1" stroke="#000" stroke-width="1"/>
+  <rect x="-54" y="-60" width="36" height="120" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-54" y="-44" width="36" height="88" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <line x1="0.1" y1="64.1" x2="0.1" y2="70.1" stroke="#000" stroke-width="0.5"/>
+  <line x1="-2.9" y1="67.1" x2="3.1" y2="67.1" stroke="#000" stroke-width="0.5"/>
+  <rect x="18" y="-44" width="36" height="88" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-54" y="-40" width="36" height="27" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="18" y="-40" width="36" height="27" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-54" y="13" width="36" height="4" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="18" y="13" width="36" height="4" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-54" y="17" width="108" height="27" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-47" y="-13" width="22" height="35" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="25" y="-13" width="22" height="35" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="-54" y="-66" width="4" height="22" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="50" y="-66" width="4" height="22" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="36.00" cy="-66.80" rx="6.50" ry="6.50" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-36.00" cy="-66.80" rx="6.50" ry="6.50" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="33.1" y1="-69.7" x2="39.1" y2="-63.7" stroke="#000" stroke-width="1"/>
+  <line x1="33.1" y1="-63.7" x2="39.1" y2="-69.7" stroke="#000" stroke-width="1"/>
+  <line x1="-38.9" y1="-69.7" x2="-32.9" y2="-63.7" stroke="#000" stroke-width="1"/>
+  <line x1="36.1" y1="-69.7" x2="36.1" y2="-63.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="33.1" y1="-66.7" x2="39.1" y2="-66.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="-38.9" y1="-63.7" x2="-32.9" y2="-69.7" stroke="#000" stroke-width="1"/>
+  <ellipse cx="36.00" cy="67.00" rx="6.50" ry="6.50" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="-35.9" y1="-69.7" x2="-35.9" y2="-63.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="-38.9" y1="-66.7" x2="-32.9" y2="-66.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="33.1" y1="64.1" x2="39.1" y2="70.1" stroke="#000" stroke-width="1"/>
+  <line x1="33.1" y1="70.1" x2="39.1" y2="64.1" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-36.00" cy="67.00" rx="6.50" ry="6.50" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="36.1" y1="64.1" x2="36.1" y2="70.1" stroke="#000" stroke-width="0.5"/>
+  <line x1="-38.9" y1="64.1" x2="-32.9" y2="70.1" stroke="#000" stroke-width="1"/>
+  <line x1="-38.9" y1="70.1" x2="-32.9" y2="64.1" stroke="#000" stroke-width="1"/>
+  <line x1="33.1" y1="67.1" x2="39.1" y2="67.1" stroke="#000" stroke-width="0.5"/>
+  <line x1="-35.9" y1="64.1" x2="-35.9" y2="70.1" stroke="#000" stroke-width="0.5"/>
+  <line x1="-38.9" y1="67.1" x2="-32.9" y2="67.1" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="0.00" cy="-66.80" rx="6.50" ry="6.50" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="-2.9" y1="-69.7" x2="3.1" y2="-63.7" stroke="#000" stroke-width="1"/>
+  <line x1="-2.9" y1="-63.7" x2="3.1" y2="-69.7" stroke="#000" stroke-width="1"/>
+  <line x1="0.1" y1="-69.7" x2="0.1" y2="-63.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="-2.9" y1="-66.7" x2="3.1" y2="-66.7" stroke="#000" stroke-width="0.5"/>
+  <rect x="-18" y="-40" width="36" height="27" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-11" y="-13" width="22" height="35" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <rect x="-54" y="-38" width="84" height="4" fill="none" stroke="#000" stroke-width="0"/>
+  <rect x="-53" y="7" width="106" height="15" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <text x="30" y="-34.00" font-family="sans-serif" font-size="5" fill="#333">:hager</text>
+  <text x="-57" y="-23.00" font-family="sans-serif" font-size="4" fill="#555">B16</text>
+  <text x="-57" y="-31.00" font-family="sans-serif" font-size="4" fill="#555">MBN316</text>
+  <text x="32" y="0.00" font-family="sans-serif" font-size="9" fill="#333">0</text>
+  <text x="-40" y="0.00" font-family="sans-serif" font-size="9" fill="#333">0</text>
+  <text x="-4" y="0.00" font-family="sans-serif" font-size="9" fill="#333">0</text>
+</svg>

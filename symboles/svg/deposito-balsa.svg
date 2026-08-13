@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="74" viewBox="-50.00 -33.00 84.00 74.00">
+  <path d="M -31.00 -16.00 A 30.00 7.00 0 0 0 29.00 -16.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-31" y1="-17.58" x2="-31" y2="25.55" stroke="#000" stroke-width="1"/>
+  <path d="M 29.00 -18.00 A 30.00 7.00 0 0 0 -31.00 -18.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -31.00 26.00 A 30.00 7.00 0 0 0 29.00 26.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 26.00 -18.00 A 27.00 6.00 0 0 0 26.00 -18.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="29" y1="-17.58" x2="29" y2="25.55" stroke="#000" stroke-width="1"/>
+  <rect x="-34" y="18" width="3" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-1.00" cy="5.00" rx="30.00" ry="6.00" fill="none" stroke="#c00" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <rect x="-38" y="16" width="4" height="8" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-40" cy="20" r="1.5" fill="#000"/>
+</svg>

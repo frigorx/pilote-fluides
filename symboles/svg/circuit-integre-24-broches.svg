@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="244" viewBox="-42.00 -132.00 84.00 244.00">
+  <line x1="-30" y1="80" x2="-21" y2="80" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="80" x2="30" y2="80" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="100" x2="-21" y2="100" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="100" x2="30" y2="100" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="40" x2="30" y2="40" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="40" x2="-21" y2="40" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-80" x2="-21" y2="-80" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="60" x2="30" y2="60" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="60" x2="-21" y2="60" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="0" x2="-21" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="20" x2="-21" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="-40" x2="30" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="-20" x2="30" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-20" x2="-21" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="0" x2="30" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-40" x2="-21" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="20" x2="30" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-60" x2="-21" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-100" x2="-21" y2="-100" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-120" x2="-21" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="-120" x2="30" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="-100" x2="30" y2="-100" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="-80" x2="30" y2="-80" stroke="#000" stroke-width="1"/>
+  <line x1="21" y1="-60" x2="30" y2="-60" stroke="#000" stroke-width="1"/>
+  <path d="M -2.50 -124.50 A 2.50 2.50 0 0 0 2.50 -124.50" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-20" y="-125" width="40" height="230" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="31" cy="-120" r="1.5" fill="#000"/>
+  <circle cx="31" cy="-100" r="1.5" fill="#000"/>
+  <circle cx="31" cy="-80" r="1.5" fill="#000"/>
+  <circle cx="31" cy="-60" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="-120" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="-60" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="-100" r="1.5" fill="#000"/>
+  <circle cx="31" cy="-40" r="1.5" fill="#000"/>
+  <circle cx="31" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="31" cy="0" r="1.5" fill="#000"/>
+  <circle cx="31" cy="20" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="-40" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="20" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="-80" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="60" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="40" r="1.5" fill="#000"/>
+  <circle cx="31" cy="40" r="1.5" fill="#000"/>
+  <circle cx="31" cy="60" r="1.5" fill="#000"/>
+  <circle cx="31" cy="80" r="1.5" fill="#000"/>
+  <circle cx="31" cy="100" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="100" r="1.5" fill="#000"/>
+  <circle cx="-31" cy="80" r="1.5" fill="#000"/>
+</svg>

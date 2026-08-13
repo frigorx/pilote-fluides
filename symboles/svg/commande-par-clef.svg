@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="34" viewBox="-31.00 -17.00 44.00 34.00">
+  <polyline points="-22,-1 -24,10 -14,10 -16,-1" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-19.00" cy="-5.00" rx="5.00" ry="5.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-15" y1="0" x2="6" y2="0" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+</svg>

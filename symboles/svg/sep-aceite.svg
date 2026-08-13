@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="64" viewBox="-24.00 -33.00 54.00 64.00">
+  <rect x="-5" y="-14" width="1" height="1" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="4" y="-14" width="1" height="1" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="13" y="-14" width="1" height="1" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -8.00 -18.00 A 6.50 5.00 0 0 0 -14.50 -23.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-10" y="-10" width="20" height="31" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -10.00 21.50 A 10.00 3.50 0 0 0 10.00 21.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-18" x2="-8" y2="-14" stroke="#000" stroke-width="1"/>
+  <path d="M 8.50 -23.00 A 6.50 5.00 0 0 0 2.00 -18.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="2" y1="-18" x2="2" y2="-14" stroke="#000" stroke-width="1"/>
+  <line x1="-7" y1="26" x2="8" y2="26" stroke="#000" stroke-width="1"/>
+  <polyline points="5,-14 5,-5 7,-4 8,-4" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <polyline points="-5,-14 -5,-6 -7,-4" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <rect x="-15" y="-13" width="31" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-15" y1="-11.52" x2="16" y2="-11.52" stroke="#000" stroke-width="0.5"/>
+  <rect x="-14" y="-14" width="1" height="1" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 10.50 -17.00 A 2.50 2.00 0 0 0 8.00 -15.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="-15" x2="8" y2="-14" stroke="#000" stroke-width="1"/>
+  <polyline points="11,-17 18,-17 19,-16 19,20 22,20" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <circle cx="-15" cy="-23" r="1.5" fill="#000"/>
+  <circle cx="9" cy="-23" r="1.5" fill="#000"/>
+  <circle cx="21" cy="20" r="1.5" fill="#000"/>
+</svg>

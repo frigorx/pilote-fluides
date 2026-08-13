@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="64" viewBox="-51.00 -32.00 94.00 64.00">
+  <polyline points="25,-10 30,10 30,20" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="5,-10 10,10 10,20" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-15,-10 -10,10 -10,20" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-35,-10 -30,10 -30,20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-20" x2="-30" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-20" x2="-10" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-20" x2="10" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="-20" x2="30" y2="-10" stroke="#000" stroke-width="1"/>
+  <path d="M 10.00 -14.50 A 2.50 2.50 0 0 0 10.00 -9.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 30.00 -14.50 A 2.50 2.50 0 0 0 30.00 -9.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -10.00 -14.50 A 2.50 2.50 0 0 0 -10.00 -9.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -30.00 -14.50 A 2.50 2.50 0 0 0 -30.00 -9.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="27" y1="0" x2="-47" y2="0" stroke="#000" stroke-width="1"/>
+  <circle cx="-30" cy="20" r="1.5" fill="#000"/>
+  <circle cx="30" cy="20" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="20" r="1.5" fill="#000"/>
+  <circle cx="10" cy="20" r="1.5" fill="#000"/>
+  <circle cx="30" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="-20" r="1.5" fill="#000"/>
+  <text x="34" y="18.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="34" dy="0.00">8</tspan><tspan x="34" dy="4.60">T4</tspan></text>
+  <text x="14" y="18.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="14" dy="0.00">6</tspan><tspan x="14" dy="4.60">T3</tspan></text>
+  <text x="-6" y="18.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="-6" dy="0.00">4</tspan><tspan x="-6" dy="4.60">T2</tspan></text>
+  <text x="-26" y="18.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="-26" dy="0.00">2</tspan><tspan x="-26" dy="4.60">T1</tspan></text>
+  <text x="-26" y="-20.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="-26" dy="0.00">1</tspan><tspan x="-26" dy="4.60">L1</tspan></text>
+  <text x="-5" y="-20.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="-5" dy="0.00">3</tspan><tspan x="-5" dy="4.60">L2</tspan></text>
+  <text x="14" y="-20.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="14" dy="0.00">5</tspan><tspan x="14" dy="4.60">L3</tspan></text>
+  <text x="34" y="-20.00" font-family="sans-serif" font-size="4" fill="#333"><tspan x="34" dy="0.00">7</tspan><tspan x="34" dy="4.60">L4</tspan></text>
+</svg>

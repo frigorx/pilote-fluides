@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114" height="64" viewBox="-48.00 -33.00 114.00 64.00">
+  <polyline points="49.29,-13.64 52.57,-13.64 52.57,-11.22 49.76,-11.22" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="49.29,11.83 52.57,11.83 52.57,9.45 49.76,9.45" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="39.6" y="16.91" width="1.87" height="3.61" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-32.52" y="-22.77" width="4.21" height="3.61" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-33.45" y="-19.16" width="77.14" height="36.07" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 44.15 16.91 A 6.54 18.04 0 0 0 44.15 -19.16" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -33.45 -19.16 A 6.54 18.04 0 0 0 -33.45 16.91" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-31,-19 -20,-10 -15,10 -10,-10 -5,10 0,-10 5,10 10,-10 15,10 20,-10 25,10 30,-10 35,10 40,16" fill="none" stroke="#c00" stroke-width="1" stroke-dasharray="4,2,1,2"/>
+  <circle cx="-31" cy="-23" r="1.5" fill="#000"/>
+  <circle cx="41" cy="21" r="1.5" fill="#000"/>
+  <circle cx="53" cy="-12" r="1.5" fill="#000"/>
+  <circle cx="53" cy="10" r="1.5" fill="#000"/>
+</svg>

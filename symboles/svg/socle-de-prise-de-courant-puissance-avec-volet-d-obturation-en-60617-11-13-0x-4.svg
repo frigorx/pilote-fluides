@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="114" viewBox="-40.00 -77.00 74.00 114.00">
+  <line x1="-17" y1="-60" x2="-13" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-15" y1="-66" x2="-15" y2="-60" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="-55.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-5,-55 0,-35 0,-25" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M 10.00 19.50 A 10.00 10.00 0 0 0 -10.00 19.50" fill="none" stroke="#000" stroke-width="2"/>
+  <line x1="0" y1="9.22" x2="0" y2="-28.22" stroke="#000" stroke-width="2"/>
+  <line x1="0" y1="-65" x2="0" y2="-57" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="9" x2="10" y2="9" stroke="#000" stroke-width="2"/>
+  <line x1="2" y1="-57" x2="-2" y2="-57" stroke="#000" stroke-width="1"/>
+  <polyline points="-3.31,-44.49 -20,-44.49 -20,20.5 -3.31,20.5" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="0" y1="16.5" x2="0" y2="20.5" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="20.25" x2="0" y2="21.75" stroke="#000" stroke-width="0.5"/>
+  <polygon points="-25,-22 -25,-18 -21,-20" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-36" y="-70" width="66" height="100" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <polyline points="-10,5 10,-9.8 10,-14.71" fill="none" stroke="#000" stroke-width="2"/>
+  <circle cx="10" cy="-15" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-66" r="1.5" fill="#000"/>
+  <circle cx="-15" cy="-66" r="1.5" fill="#000"/>
+  <text x="-8" y="-62.00" font-family="sans-serif" font-size="4" fill="#333">N</text>
+  <text x="7" y="-62.00" font-family="sans-serif" font-size="4" fill="#333">L</text>
+  <text x="17" y="-11.00" font-family="sans-serif" font-size="4" fill="#333">PE</text>
+</svg>

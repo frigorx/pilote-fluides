@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="94" viewBox="-67.00 -89.00 74.00 94.00">
+  <ellipse cx="-30.00" cy="-30.00" rx="30.00" ry="30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -25.00 -20.00 A 5.00 2.50 0 0 0 -35.00 -20.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -25.00 -20.00 A 5.00 2.50 0 0 0 -15.00 -20.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-80" x2="-30" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="-80" x2="-50" y2="-53" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-80" x2="-10" y2="-53" stroke="#000" stroke-width="1"/>
+  <circle cx="-50" cy="-80" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="-80" r="1.5" fill="#000"/>
+  <circle cx="-30" cy="-80" r="1.5" fill="#000"/>
+  <text x="-34" y="-32.00" font-family="sans-serif" font-size="9" fill="#333">M</text>
+  <text x="-45" y="-15.00" font-family="sans-serif" font-size="9" fill="#333">3</text>
+</svg>

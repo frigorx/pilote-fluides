@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="204" viewBox="-10.00 -102.00 54.00 204.00">
+  <rect x="0" y="-90" width="36" height="180" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="22.5" y="75.84" width="9" height="9" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <rect x="1.8" y="8.51" width="32.4" height="5.39" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="-45.34" width="36" height="89.76" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="-15.72" x2="36" y2="-15.72" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="-15.72" x2="18" y2="-15.72" stroke="#000" stroke-width="0.5"/>
+  <rect x="7.2" y="-15.72" width="22.5" height="22.44" fill="#c00" stroke="#000" stroke-width="1"/>
+  <line x1="7.2" y1="10.31" x2="29.7" y2="10.31" stroke="#fff" stroke-width="1"/>
+  <line x1="7.2" y1="12.1" x2="29.7" y2="12.1" stroke="#fff" stroke-width="1"/>
+  <rect x="7.2" y="-8.54" width="22.5" height="16.16" fill="#000" stroke="#000" stroke-width="1"/>
+  <path d="M 9.90 -19.76 A 0.45 0.45 0 0 0 9.00 -19.76" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M 9.90 -19.76 A 0.45 0.45 0 0 0 10.80 -19.76" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="13.9" x2="36" y2="13.9" stroke="#000" stroke-width="0.5"/>
+  <line x1="32.4" y1="18.39" x2="31.5" y2="19.29" stroke="#000" stroke-width="0.5"/>
+  <line x1="31.5" y1="18.39" x2="32.4" y2="19.29" stroke="#000" stroke-width="0.5"/>
+  <line x1="31.95" y1="18.84" x2="31.95" y2="17.49" stroke="#000" stroke-width="0.5"/>
+  <line x1="30.6" y1="19.29" x2="32.4" y2="22.88" stroke="#000" stroke-width="0.5"/>
+  <line x1="32.4" y1="22.88" x2="32.4" y2="25.57" stroke="#000" stroke-width="0.5"/>
+  <line x1="32.4" y1="25.57" x2="33.3" y2="25.57" stroke="#000" stroke-width="0.5"/>
+  <line x1="33.3" y1="25.57" x2="33.3" y2="26.47" stroke="#000" stroke-width="0.5"/>
+  <line x1="33.3" y1="26.47" x2="32.4" y2="26.47" stroke="#000" stroke-width="0.5"/>
+  <line x1="32.4" y1="26.47" x2="32.4" y2="27.36" stroke="#000" stroke-width="0.5"/>
+  <path d="M 32.40 29.16 A 0.90 0.90 0 0 0 32.40 27.36" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="32.4" y1="29.16" x2="32.4" y2="30.06" stroke="#000" stroke-width="0.5"/>
+  <line x1="27.9" y1="18.39" x2="28.8" y2="19.29" stroke="#000" stroke-width="0.5"/>
+  <line x1="28.8" y1="18.39" x2="27.9" y2="19.29" stroke="#000" stroke-width="0.5"/>
+  <line x1="28.35" y1="17.49" x2="28.35" y2="18.84" stroke="#000" stroke-width="0.5"/>
+  <line x1="27" y1="19.29" x2="28.8" y2="22.88" stroke="#000" stroke-width="0.5"/>
+  <line x1="28.8" y1="22.88" x2="28.8" y2="30.06" stroke="#000" stroke-width="0.5"/>
+  <line x1="27" y1="21.08" x2="32.4" y2="21.08" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <rect x="4.5" y="75.84" width="9" height="9" fill="#00c" stroke="#000" stroke-width="0.5"/>
+  <polyline points="3.6,18.39 3.6,40.83 8.1,40.83" fill="none" stroke="#c00" stroke-width="1"/>
+  <line x1="23.4" y1="40.83" x2="27.9" y2="40.83" stroke="#c00" stroke-width="1"/>
+  <circle cx="28" cy="-90" r="1.5" fill="#000"/>
+  <circle cx="9" cy="90" r="1.5" fill="#000"/>
+  <circle cx="27" cy="90" r="1.5" fill="#000"/>
+  <circle cx="8" cy="-90" r="1.5" fill="#000"/>
+  <text x="6.3" y="71.35" font-family="sans-serif" font-size="8" fill="#333">N</text>
+  <text x="8.1" y="35.44" font-family="sans-serif" font-size="4" fill="#333">406772</text>
+  <text x="10" y="-9.00" font-family="sans-serif" font-size="5" fill="#333">0-OFF</text>
+  <text x="7.2" y="29.16" font-family="sans-serif" font-size="8" fill="#333">C10</text>
+  <text x="3.6" y="-19.31" font-family="sans-serif" font-size="5" fill="#333">230 V</text>
+  <text x="0" y="36.00" font-family="sans-serif" font-size="5" fill="#555">Legrand</text>
+  <text x="8.1" y="21.08" font-family="sans-serif" font-size="4" fill="#333">DNX3</text>
+</svg>

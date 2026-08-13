@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="44" viewBox="-41.00 -22.00 94.00 44.00">
+  <line x1="17" y1="7.81" x2="22.67" y2="7.81" stroke="#000" stroke-width="1"/>
+  <rect x="11.23" y="-10.54" width="5.36" height="22.38" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 21.96 17.01 A 2.12 4.60 0 0 0 21.96 7.81" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-28.53" y="-9.54" width="3.88" height="18.38" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-24.64" y="-15.06" width="32.74" height="29.41" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="24.53" y="-12.06" width="16.19" height="24.85" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="28.3" y="-8.71" width="11.43" height="18.16" fill="none" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="30.2" y1="9.44" x2="32.11" y2="-7.81" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="33.06" y1="9.44" x2="35.92" y2="-8.71" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="35.92" y1="9.44" x2="39.73" y2="-8.71" stroke="#c00" stroke-width="1" stroke-dasharray="4,2"/>
+  <rect x="17" y="-16.72" width="7.09" height="33.72" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="17" y1="-7.52" x2="22.67" y2="-7.52" stroke="#000" stroke-width="1"/>
+  <path d="M 21.96 -7.52 A 2.12 4.60 0 0 0 21.96 -16.72" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="8" y="-18" width="3" height="36" fill="#000" stroke="#000" stroke-width="1"/>
+  <path d="M 22.67 7.81 A 1.42 7.67 0 0 0 22.67 -7.52" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-29" cy="0" r="1.5" fill="#000"/>
+  <circle cx="40" cy="0" r="1.5" fill="#000"/>
+</svg>

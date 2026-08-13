@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="-22.00 -23.00 44.00 44.00">
+  <polygon points="0,0 -10,-6 -10,6" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="0,0 -6,10 6,10" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="-16" x2="-11" y2="-18" stroke="#000" stroke-width="0.5"/>
+  <line x1="9" y1="-16" x2="12" y2="-18" stroke="#000" stroke-width="0.5"/>
+  <path d="M -8.86 -15.74 A 9.00 1.50 0 0 0 8.86 -15.74" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="11" y1="-14" x2="15" y2="-14" stroke="#000" stroke-width="1"/>
+  <line x1="-15" y1="-14" x2="-11" y2="-14" stroke="#000" stroke-width="1"/>
+  <line x1="-13" y1="-16" x2="-13" y2="-12" stroke="#000" stroke-width="1"/>
+  <polyline points="0,0 0,-4 -3,-6 3,-8 -3,-9 3,-11 -3,-12 3,-14 0,-15 0,-17" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="0" cy="10" r="1.5" fill="#000"/>
+</svg>

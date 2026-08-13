@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="64" viewBox="-49.00 -32.00 124.00 64.00">
+  <rect x="-20" y="-20" width="40" height="40" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="50" y1="10" x2="70" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="10" x2="60" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="-10" x2="60" y2="-20" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="10" x2="53" y2="-11" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="0" x2="57" y2="0" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="-40" y1="-10" x2="-9" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="-40" y1="10" x2="-9" y2="10" stroke="#000" stroke-width="1"/>
+  <polygon points="-14,-5 -4,-5 -9,5" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-14" y1="5" x2="-4" y2="5" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="-10" x2="-9" y2="-5" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="5" x2="-9" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-4" x2="10" y2="-4" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="2" x2="10" y2="2" stroke="#000" stroke-width="1"/>
+  <polygon points="10,-2 10,-6 15,-4" fill="#000" stroke="#000" stroke-width="1"/>
+  <polygon points="10,4 10,0 15,2" fill="#000" stroke="#000" stroke-width="1"/>
+  <circle cx="60" cy="20" r="1.5" fill="#000"/>
+  <circle cx="-40" cy="-10" r="1.5" fill="#000"/>
+  <circle cx="-40" cy="10" r="1.5" fill="#000"/>
+  <circle cx="60" cy="-20" r="1.5" fill="#000"/>
+</svg>

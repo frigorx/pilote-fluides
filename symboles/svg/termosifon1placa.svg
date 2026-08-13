@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="134" viewBox="-38.00 -82.00 94.00 134.00">
+  <rect x="-20" y="-42.93" width="51.6" height="84.75" fill="#c00" stroke="#000" stroke-width="1"/>
+  <rect x="32" y="-32" width="3" height="76" fill="none" stroke="#000" stroke-width="0.5"/>
+  <path d="M -29.50 -71.00 A 4.50 12.00 0 0 0 -29.50 -47.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -23.00 -46.50 A 3.00 5.50 0 0 0 -20.00 -41.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="34" y1="-70.95" x2="34" y2="-47.05" stroke="#000" stroke-width="0.5"/>
+  <rect x="41" y="-54" width="5" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 32.00 39.00 A 3.00 5.50 0 0 0 32.00 28.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="31" y="-36" width="6" height="4" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="8.8" y1="34.9" x2="8.8" y2="-37.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="25" y1="-47" x2="25" y2="-43" stroke="#000" stroke-width="1"/>
+  <path d="M 32.00 41.00 A 5.00 7.50 0 0 0 32.00 26.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="17.8" y1="34.9" x2="17.8" y2="-37.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="-9.2" y1="34.9" x2="-9.2" y2="-37.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="25.6" y1="34.9" x2="25.6" y2="-37.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="-0.2" y1="34.9" x2="-0.2" y2="-37.7" stroke="#000" stroke-width="0.5"/>
+  <rect x="-17.6" y="-40" width="46.8" height="78.9" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="4" y1="34.9" x2="4" y2="-37.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="-5" y1="34.9" x2="-5" y2="-37.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="13" y1="34.9" x2="13" y2="-37.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="22" y1="34.9" x2="22" y2="-37.7" stroke="#000" stroke-width="0.5"/>
+  <line x1="-14" y1="34.9" x2="-14" y2="-37.7" stroke="#000" stroke-width="0.5"/>
+  <path d="M 37.50 -47.00 A 4.50 12.00 0 0 0 37.50 -71.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-28.12" y1="-71" x2="37.13" y2="-71" stroke="#000" stroke-width="1"/>
+  <line x1="-29.1" y1="-47" x2="37.1" y2="-47" stroke="#000" stroke-width="1"/>
+  <line x1="-27" y1="-71" x2="-27" y2="-48" stroke="#000" stroke-width="0.5"/>
+  <rect x="41" y="-67" width="5" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -25.00 -46.50 A 5.00 7.50 0 0 0 -20.00 -39.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="27" y1="-47" x2="27" y2="-43" stroke="#000" stroke-width="1"/>
+  <rect x="24" y="-75.87" width="3.6" height="4.87" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="24.6" y="-77.09" width="1.8" height="1.22" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-26" y="-36" width="6" height="4" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-23" y="-32" width="3" height="76" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-28" y="44" width="67" height="2" fill="none" stroke="#000" stroke-width="0.5"/>
+  <circle cx="47" cy="-66" r="1.5" fill="#000"/>
+  <circle cx="47" cy="-53" r="1.5" fill="#000"/>
+  <text x="-18" y="-57.00" font-family="sans-serif" font-size="4" fill="#333">Compacto 2,5m2</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="44" viewBox="-32.00 -12.00 64.00 44.00">
+  <line x1="1.29" y1="4.07" x2="3.18" y2="4.07" stroke="#000" stroke-width="0.5"/>
+  <line x1="-5.62" y1="3.22" x2="-3.73" y2="3.22" stroke="#000" stroke-width="0.5"/>
+  <line x1="1.29" y1="3.22" x2="3.18" y2="3.22" stroke="#000" stroke-width="0.5"/>
+  <line x1="-5.62" y1="4.07" x2="-3.73" y2="4.07" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-7.19" cy="3.43" rx="1.57" ry="1.06" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -3.75 4.49 A 1.25 1.06 0 0 0 -3.74 2.37" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-6.88" y1="2.37" x2="-3.73" y2="2.37" stroke="#000" stroke-width="1"/>
+  <line x1="-6.88" y1="4.5" x2="-3.73" y2="4.5" stroke="#000" stroke-width="1"/>
+  <line x1="-5.62" y1="2.8" x2="-3.73" y2="2.8" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-0.61" cy="14.70" rx="2.50" ry="1.70" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-19.1" y1="0.68" x2="17.88" y2="0.68" stroke="#000" stroke-width="1"/>
+  <rect x="-1.85" y="2.37" width="1.89" height="7.64" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="4.75" cy="3.43" rx="1.57" ry="1.06" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 1.92 2.37 A 1.25 1.06 0 0 0 1.92 4.49" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="1.92" y1="2.37" x2="5.07" y2="2.37" stroke="#000" stroke-width="1"/>
+  <line x1="1.92" y1="4.5" x2="5.07" y2="4.5" stroke="#000" stroke-width="1"/>
+  <line x1="1.29" y1="2.8" x2="3.18" y2="2.8" stroke="#000" stroke-width="0.5"/>
+  <line x1="-19.45" y1="0.68" x2="-25.11" y2="13.84" stroke="#000" stroke-width="1"/>
+  <line x1="18.27" y1="0.68" x2="24.55" y2="13.84" stroke="#000" stroke-width="1"/>
+  <path d="M -25.11 14.05 A 24.83 10.40 0 0 0 24.55 14.05" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-0.28" cy="15.11" rx="21.06" ry="7.64" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="8" cy="0" r="1.5" fill="#000"/>
+</svg>

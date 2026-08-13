@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="234" height="254" viewBox="-177.00 -247.00 234.00 254.00">
+  <line x1="0" y1="-60" x2="0" y2="-180" stroke="#000" stroke-width="1"/>
+  <path d="M -120.00 -60.00 A 60.00 60.00 0 0 0 0.00 -60.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 0.00 -180.00 A 60.00 60.00 0 0 0 -120.00 -180.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-120" y1="-180" x2="-120" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-60" y1="-240" x2="-60" y2="-220" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-4" x2="-80" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-40" y1="-4" x2="-40" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-40" x2="-40" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-220" x2="-40" y2="-220" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-80" x2="-170" y2="-80" stroke="#000" stroke-width="1"/>
+  <line x1="-120" y1="-100" x2="-90" y2="-100" stroke="#000" stroke-width="1"/>
+  <line x1="-90" y1="-100" x2="-90" y2="-140" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-80" x2="-30" y2="-140" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-140" x2="50" y2="-140" stroke="#000" stroke-width="1"/>
+  <rect x="-150" y="-90" width="10" height="20" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="20" y="-150" width="10" height="20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-60" y1="-100" x2="-60" y2="-130" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-90" x2="-40" y2="-90" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-100" x2="-40" y2="-100" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-110" x2="-40" y2="-110" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-120" x2="-40" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-130" x2="-40" y2="-130" stroke="#000" stroke-width="1"/>
+  <polygon points="-62,-129 -58,-129 -60,-134" fill="#000" stroke="#000" stroke-width="1"/>
+</svg>

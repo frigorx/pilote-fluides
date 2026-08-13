@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="54" viewBox="-52.00 -33.00 84.00 54.00">
+  <polygon points="8.82,0.86 7,1.77 9.91,4.47 9.22,0.65" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-42.18" cy="-7.46" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-42.13" cy="-7.38" rx="0.50" ry="0.50" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-25,1 -36,1 -41,-5" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-10,4.46 -11.58,0 -8.41,0" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <polyline points="-25,-1 -35,-1 -40,-7" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="7.64,-12.57 9.88,-11.51 9.91,-14.45" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="9" y1="-12.35" x2="0" y2="5" stroke="#000" stroke-width="1"/>
+  <polygon points="-20,-14.5 -21.71,-10.61 -18.21,-10.64 -20,-14.54" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <line x1="8.56" y1="1.95" x2="0" y2="-15" stroke="#000" stroke-width="1"/>
+  <rect x="-25" y="-15" width="20" height="20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="4" x2="-20" y2="-11" stroke="#000" stroke-width="1"/>
+  <rect x="-5" y="-15" width="20" height="20" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="15.11,-2.7 17,3 18,-3 20,3 21,-3 23,3 24.17,-2.58" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-10" y1="-14" x2="-10" y2="0" stroke="#000" stroke-width="1"/>
+  <circle cx="10" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-20" r="1.5" fill="#000"/>
+  <circle cx="0" cy="10" r="1.5" fill="#000"/>
+  <circle cx="10" cy="10" r="1.5" fill="#000"/>
+  <text x="3" y="6.00" font-family="sans-serif" font-size="4" fill="#555">3</text>
+  <text x="3" y="-19.00" font-family="sans-serif" font-size="4" fill="#555">4</text>
+  <text x="12" y="-14.00" font-family="sans-serif" font-size="4" fill="#555">10</text>
+  <text x="-7" y="6.00" font-family="sans-serif" font-size="4" fill="#555">1</text>
+  <text x="-7" y="-19.00" font-family="sans-serif" font-size="4" fill="#555">2</text>
+  <text x="-34.89" y="-15.00" font-family="sans-serif" font-size="4" fill="#555">12</text>
+</svg>

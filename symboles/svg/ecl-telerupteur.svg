@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="134" height="204" viewBox="-9.00 -193.00 134.00 204.00">
+  <rect x="0" y="-85" width="120" height="85" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-15" x2="120" y2="-15" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-45" x2="120" y2="-45" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-65" x2="120" y2="-65" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="-123" x2="48" y2="-100" stroke="#000" stroke-width="1"/>
+  <line x1="72" y1="-123" x2="72" y2="-100" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="-100" x2="56" y2="-97" stroke="#000" stroke-width="1"/>
+  <line x1="72" y1="-100" x2="63" y2="-97" stroke="#000" stroke-width="1"/>
+  <path d="M 72.86 -124.68 A 20.00 20.00 0 1 0 47.14 -124.68" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="-124" x2="72" y2="-124" stroke="#000" stroke-width="1"/>
+  <line x1="50" y1="-176" x2="50" y2="-158" stroke="#000" stroke-width="1"/>
+  <path d="M 56.00 -97.00 A 4.00 2.00 0 0 0 64.00 -97.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="56" y1="-97" x2="63" y2="-97" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="-100" x2="72" y2="-100" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="-100" x2="72" y2="-104" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="-104" x2="72" y2="-108" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="-108" x2="72" y2="-112" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="-112" x2="72" y2="-116" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="-116" x2="72" y2="-120" stroke="#000" stroke-width="1"/>
+  <line x1="48" y1="-120" x2="59" y2="-122" stroke="#000" stroke-width="1"/>
+  <line x1="70" y1="-180" x2="70" y2="-158" stroke="#000" stroke-width="1"/>
+  <circle cx="50" cy="-180" r="1.5" fill="#000"/>
+  <circle cx="60" cy="-95" r="1.5" fill="#000"/>
+  <circle cx="70" cy="-180" r="1.5" fill="#000"/>
+  <text x="29" y="-36.00" font-family="sans-serif" font-size="7" fill="#555">16</text>
+  <text x="58" y="-18.00" font-family="sans-serif" font-size="5" fill="#333">kA C</text>
+  <text x="66" y="-32.00" font-family="sans-serif" font-size="7" fill="#333">A</text>
+  <text x="2" y="-69.00" font-family="sans-serif" font-size="7" fill="#333">Télérupteur</text>
+  <text x="58" y="-2.00" font-family="sans-serif" font-size="5" fill="#333">mm²</text>
+  <text x="28" y="-7.50" font-family="sans-serif" font-size="5" fill="#555">4 G 1.5</text>
+</svg>

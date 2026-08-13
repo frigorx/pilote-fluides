@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="-14.00 -23.00 34.00 34.00">
+  <rect x="-6" y="-17.28" width="12" height="8.43" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-8.84" x2="0" y2="-0.41" stroke="#000" stroke-width="1"/>
+  <line x1="15" y1="-6" x2="15" y2="-1.81" stroke="#000" stroke-width="1"/>
+  <polyline points="6,-14.46 15,-14.46 15,-6" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <circle cx="0" cy="-1" r="1.5" fill="#000"/>
+  <text x="-4" y="-11.00" font-family="sans-serif" font-size="5" fill="#333">T</text>
+</svg>

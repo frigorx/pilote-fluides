@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="104" viewBox="-7.00 -4.00 38.33 104.00">
+  <rect x="0" y="0" width="22" height="96" fill="#fff" stroke="#000" stroke-width="1"/>
+  <ellipse cx="15.00" cy="47.00" rx="3.00" ry="3.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="18.58" cy="67.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="13.50" cy="14.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="8.54" cy="14.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="18.58" cy="83.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="18.58" cy="14.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="18.58" cy="27.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="7.00" cy="47.00" rx="3.00" ry="3.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="11.00" cy="55.00" rx="3.00" ry="3.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="13.50" cy="83.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="13.50" cy="27.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="13.50" cy="67.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="8" width="22" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="8.54" cy="83.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="8.54" cy="67.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="8.54" cy="27.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="0" y="78" width="22" height="10" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="3.58" cy="27.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="3.58" cy="67.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="3.58" cy="14.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="3.58" cy="83.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="1" y="30" width="20" height="34" fill="none" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="7.00" cy="40.00" rx="3.00" ry="3.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="9" y1="57" x2="12" y2="54" stroke="#000" stroke-width="1"/>
+  <line x1="12" y1="54" x2="11" y2="54" stroke="#000" stroke-width="1"/>
+  <line x1="12" y1="54" x2="12" y2="55" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="28" x2="4" y2="26" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="28" x2="9" y2="26" stroke="#000" stroke-width="1"/>
+  <line x1="13" y1="28" x2="14" y2="26" stroke="#000" stroke-width="1"/>
+  <line x1="18" y1="28" x2="19" y2="26" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="84" x2="4" y2="82" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="84" x2="9" y2="82" stroke="#000" stroke-width="1"/>
+  <line x1="13" y1="84" x2="14" y2="82" stroke="#000" stroke-width="1"/>
+  <line x1="18" y1="84" x2="19" y2="82" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="15" x2="4" y2="13" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="15" x2="9" y2="13" stroke="#000" stroke-width="1"/>
+  <line x1="13" y1="15" x2="14" y2="13" stroke="#000" stroke-width="1"/>
+  <line x1="18" y1="15" x2="19" y2="13" stroke="#000" stroke-width="1"/>
+  <line x1="3" y1="68" x2="4" y2="66" stroke="#000" stroke-width="1"/>
+  <line x1="8" y1="68" x2="9" y2="66" stroke="#000" stroke-width="1"/>
+  <line x1="13" y1="68" x2="14" y2="66" stroke="#000" stroke-width="1"/>
+  <line x1="18" y1="68" x2="19" y2="66" stroke="#000" stroke-width="1"/>
+  <text x="3" y="36.00" font-family="sans-serif" font-size="5" fill="#333">SICK</text>
+  <text x="3" y="63.00" font-family="sans-serif" font-size="4" fill="#333">UE 45-3S1</text>
+  <text x="11.33" y="40.30" font-family="sans-serif" font-size="5" fill="#333">SUPPLY</text>
+  <text x="1.7" y="46.20" font-family="sans-serif" font-size="5" fill="#333"><tspan x="1.7" dy="0.00">K1</tspan><tspan x="1.7" dy="5.75">K2</tspan></text>
+  <text x="18.89" y="46.50" font-family="sans-serif" font-size="5" fill="#333"><tspan x="18.89" dy="0.00">K3</tspan><tspan x="18.89" dy="5.75">K4</tspan></text>
+</svg>

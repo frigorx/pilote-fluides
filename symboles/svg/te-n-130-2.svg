@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="34" viewBox="-27.00 -20.00 54.00 34.00">
+  <line x1="6" y1="7" x2="16" y2="7" stroke="#000" stroke-width="1"/>
+  <path d="M -16.00 -8.00 A 1.00 1.00 0 0 0 -18.00 -8.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -18.00 8.00 A 1.00 1.00 0 0 0 -16.00 8.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 18.00 -8.00 A 1.00 1.00 0 0 0 16.00 -8.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 16.00 8.00 A 1.00 1.00 0 0 0 18.00 8.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-18" y1="-7" x2="-18" y2="7" stroke="#000" stroke-width="1"/>
+  <line x1="-16" y1="-7" x2="-16" y2="7" stroke="#000" stroke-width="1"/>
+  <line x1="18" y1="-7" x2="18" y2="7" stroke="#000" stroke-width="1"/>
+  <line x1="16" y1="-7" x2="16" y2="7" stroke="#000" stroke-width="1"/>
+  <line x1="-16" y1="-7" x2="-6" y2="-7" stroke="#000" stroke-width="1"/>
+  <line x1="6" y1="-7" x2="15" y2="-7" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="0.00" rx="9.00" ry="9.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="0.00" rx="7.00" ry="7.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-15" y1="7" x2="-6" y2="7" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="-11" r="1.5" fill="#000"/>
+  <circle cx="18" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-18" cy="0" r="1.5" fill="#000"/>
+</svg>

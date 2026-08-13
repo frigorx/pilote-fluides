@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="174" height="84" viewBox="-125.00 -77.00 174.00 84.00">
+  <line x1="0" y1="-40" x2="0" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-40" x2="-20" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-40" y1="-40" x2="-40" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-60" y1="-40" x2="-60" y2="-60" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-60" x2="-80" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-60" x2="-100" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-35" x2="-60" y2="-35" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-35" x2="-100" y2="-10" stroke="#000" stroke-width="1"/>
+  <polyline points="-120,0 -120,-20 0,-20" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-60" x2="20" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="40" y1="-60" x2="40" y2="-40" stroke="#000" stroke-width="1"/>
+  <text x="-102" y="-65.00" font-family="sans-serif" font-size="6" fill="#333">1</text>
+  <text x="-82" y="-65.00" font-family="sans-serif" font-size="6" fill="#333">2</text>
+  <text x="-62" y="-65.00" font-family="sans-serif" font-size="6" fill="#333">3</text>
+  <text x="-42" y="-65.00" font-family="sans-serif" font-size="6" fill="#333">4</text>
+  <text x="-22" y="-65.00" font-family="sans-serif" font-size="6" fill="#333">5</text>
+  <text x="-2" y="-65.00" font-family="sans-serif" font-size="6" fill="#333">6</text>
+  <text x="18" y="-65.00" font-family="sans-serif" font-size="6" fill="#333">7</text>
+  <text x="38" y="-65.00" font-family="sans-serif" font-size="6" fill="#333">8</text>
+</svg>

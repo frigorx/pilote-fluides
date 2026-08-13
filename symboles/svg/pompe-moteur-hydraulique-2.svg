@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="93" height="74" viewBox="-9.00 -42.00 93.00 74.00">
+  <ellipse cx="30.00" cy="-5.00" rx="15.00" ry="15.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="45" y1="17" x2="45" y2="14" stroke="#000" stroke-width="1"/>
+  <polyline points="10,21 10,15 50,-25" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="45" y1="19" x2="45" y2="20" stroke="#000" stroke-width="1"/>
+  <polygon points="26,-6 34,-6 30,-13" fill="#000" stroke="#000" stroke-width="1"/>
+  <line x1="38" y1="20" x2="52" y2="20" stroke="#000" stroke-width="1"/>
+  <polygon points="26,-19 34,-19 30,-13" fill="#000" stroke="#000" stroke-width="1"/>
+  <line x1="38" y1="15" x2="38" y2="20" stroke="#000" stroke-width="1"/>
+  <polygon points="26,9 34,9 30,2" fill="#000" stroke="#000" stroke-width="1"/>
+  <line x1="52" y1="15" x2="52" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="-5" y1="13" x2="-5" y2="25" stroke="#000" stroke-width="1"/>
+  <polygon points="26,-4 34,-4 30,2" fill="#000" stroke="#000" stroke-width="1"/>
+  <line x1="-5" y1="21" x2="10" y2="21" stroke="#000" stroke-width="1"/>
+  <line x1="-5" y1="17" x2="10" y2="17" stroke="#000" stroke-width="1"/>
+  <line x1="42" y1="7" x2="41" y2="6" stroke="#000" stroke-width="1"/>
+  <polyline points="45,12 45,10 44,9" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="45,-23 48,-20 51,-26" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <polygon points="54,6 57,3 60,9" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <polygon points="54,-16 57,-13 60,-19" fill="#000" stroke="#000" stroke-width="0.5"/>
+  <path d="M 56.39 -15.61 A 15.00 15.00 0 0 0 56.39 5.61" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="10" x2="30" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="45" y1="-4" x2="60" y2="-4" stroke="#000" stroke-width="1"/>
+  <line x1="45" y1="-6" x2="60" y2="-6" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="-30" x2="30" y2="-20" stroke="#000" stroke-width="1"/>
+  <circle cx="30" cy="-30" r="1.5" fill="#000"/>
+  <circle cx="30" cy="20" r="1.5" fill="#000"/>
+</svg>

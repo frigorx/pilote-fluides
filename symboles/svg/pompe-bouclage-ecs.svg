@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="34" viewBox="-22.00 -24.00 44.00 34.00">
+  <path d="M 7.00 -1.50 A 6.50 2.50 0 0 0 -6.00 -1.50" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="8.83" y1="2.14" x2="10.72" y2="2.14" stroke="#000" stroke-width="1"/>
+  <line x1="-10.7" y1="2.14" x2="-8.81" y2="2.14" stroke="#000" stroke-width="1"/>
+  <polyline points="-5,-3 -3.77,-18.14 4.42,-18.14 5.68,-3.24" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="6.94" y="-1.59" width="1.89" height="3.72" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="8.83" y="-3.45" width="2.52" height="7.45" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="8.83" y1="-1.59" x2="10.72" y2="-1.59" stroke="#000" stroke-width="1"/>
+  <line x1="-4.61" y1="-4.45" x2="5.29" y2="-4.45" stroke="#000" stroke-width="1"/>
+  <line x1="-2.51" y1="-16.28" x2="-3.14" y2="-4.17" stroke="#000" stroke-width="0.5"/>
+  <line x1="3.16" y1="-16.28" x2="4.42" y2="-4.17" stroke="#000" stroke-width="0.5"/>
+  <line x1="1.9" y1="-16.28" x2="2.53" y2="-4.17" stroke="#000" stroke-width="0.5"/>
+  <rect x="-8.18" y="-1.59" width="1.89" height="3.72" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-10.7" y="-3.45" width="2.52" height="7.45" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-0.62" y1="-16.28" x2="-1.25" y2="-4.17" stroke="#000" stroke-width="0.5"/>
+  <line x1="-10.7" y1="-1.59" x2="-8.81" y2="-1.59" stroke="#000" stroke-width="1"/>
+  <rect x="4.42" y="-16.28" width="1.89" height="2.79" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -6.00 3.00 A 6.50 2.00 0 0 0 7.00 3.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-4" y1="-16" x2="5" y2="-16" stroke="#000" stroke-width="0.5"/>
+  <circle cx="-10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="7" cy="-15" r="1.5" fill="#000"/>
+</svg>

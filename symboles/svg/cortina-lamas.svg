@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="139" height="74" viewBox="-69.00 -38.00 139.00 74.00">
+  <line x1="-34" y1="-1" x2="-34" y2="29" stroke="#000" stroke-width="1"/>
+  <path d="M 34.50 -32.00 A 33.50 30.50 0 0 0 34.50 29.00" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <path d="M -33.50 29.00 A 33.50 30.50 0 0 0 -33.50 -32.00" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <rect x="-45" y="-3" width="11" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="35" y="-3" width="11" height="3" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="34" y1="-1" x2="34" y2="29" stroke="#000" stroke-width="1"/>
+</svg>

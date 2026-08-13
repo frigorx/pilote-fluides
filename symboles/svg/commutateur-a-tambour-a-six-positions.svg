@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="154" height="134" viewBox="-127.00 -105.00 154.00 134.00">
+  <rect x="-100" y="-80" width="100" height="80" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-80,-15 -80,-35 -20,-35" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-70" y1="-65" x2="-70" y2="-50" stroke="#000" stroke-width="1"/>
+  <line x1="-70" y1="-45" x2="-70" y2="-30" stroke="#000" stroke-width="1"/>
+  <line x1="-20" y1="-100" x2="-20" y2="-80" stroke="#000" stroke-width="1"/>
+  <line x1="-80" y1="-100" x2="-80" y2="-80" stroke="#000" stroke-width="1"/>
+  <line x1="-50" y1="0" x2="-50" y2="20" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-40" x2="20" y2="-40" stroke="#000" stroke-width="1"/>
+  <line x1="-100" y1="-40" x2="-120" y2="-40" stroke="#000" stroke-width="1"/>
+  <text x="-65" y="-55.00" font-family="sans-serif" font-size="6" fill="#333">6</text>
+  <text x="-75" y="-85.00" font-family="sans-serif" font-size="9" fill="#333">B</text>
+  <text x="-15" y="-85.00" font-family="sans-serif" font-size="9" fill="#333">D</text>
+  <text x="-110" y="-45.00" font-family="sans-serif" font-size="9" fill="#333">A</text>
+  <text x="5" y="-45.00" font-family="sans-serif" font-size="9" fill="#333">C</text>
+  <text x="-45" y="15.00" font-family="sans-serif" font-size="9" fill="#333">E</text>
+</svg>

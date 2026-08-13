@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="54" viewBox="-38.00 -39.00 74.00 54.00">
+  <line x1="2" y1="-16" x2="2" y2="-7.25" stroke="#000" stroke-width="1"/>
+  <line x1="4.42" y1="-4.75" x2="8.45" y2="-4.75" stroke="#000" stroke-width="1"/>
+  <rect x="-14.5" y="-9.75" width="2.2" height="18.75" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="-27.7" y="-7.25" width="13.2" height="13.75" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-29.9" y="-4.75" width="2.2" height="8.75" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="9.7" y="-9.75" width="2.2" height="18.75" fill="#000" stroke="#000" stroke-width="1"/>
+  <rect x="-7" y="-33.83" width="11" height="9.83" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="1" y1="-32.42" x2="1" y2="-26.11" stroke="#000" stroke-width="1"/>
+  <line x1="-4" y1="-32.42" x2="-4" y2="-26.11" stroke="#000" stroke-width="1"/>
+  <polygon points="-8,-24 -22,-16 18,-16 4,-24" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="11.9" y="-7.25" width="13.2" height="13.75" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="25.1" y="-4.75" width="2.2" height="8.75" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-12.3" y1="4" x2="9.7" y2="4" stroke="#000" stroke-width="1"/>
+  <line x1="-11" y1="-4.75" x2="-6.95" y2="-4.75" stroke="#000" stroke-width="1"/>
+  <line x1="-4.6" y1="-16" x2="-4.6" y2="-7.25" stroke="#000" stroke-width="1"/>
+  <line x1="-4.6" y1="-7.25" x2="-6.8" y2="-4.75" stroke="#000" stroke-width="1"/>
+  <line x1="2" y1="-7.25" x2="4.2" y2="-4.75" stroke="#000" stroke-width="1"/>
+  <circle cx="-29" cy="0" r="1.5" fill="#000"/>
+  <circle cx="26" cy="0" r="1.5" fill="#000"/>
+</svg>

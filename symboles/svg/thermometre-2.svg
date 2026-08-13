@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="54" viewBox="-21.00 -42.00 44.00 54.00">
+  <line x1="-6.54" y1="-8.26" x2="-6.54" y2="-11.36" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.60" cy="-22.35" rx="12.24" ry="11.61" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-5.52" y="-7.92" width="10.88" height="7.84" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-3.82" y="-6" width="7.82" height="6" fill="none" stroke="#c00" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-6.54" y1="-7.92" x2="6.38" y2="-7.92" stroke="#000" stroke-width="1"/>
+  <line x1="6.38" y1="-8.19" x2="6.38" y2="-10.8" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.60" cy="-22.34" rx="13.60" ry="12.54" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0.26" y1="-22.66" x2="-7.56" y2="-28.62" stroke="#000" stroke-width="1"/>
+  <line x1="-7.56" y1="-28.93" x2="0.26" y2="-23" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.92" cy="-22.06" rx="1.00" ry="0.94" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="0" r="1.5" fill="#000"/>
+  <text x="-8.75" y="-17.79" font-family="sans-serif" font-size="4" fill="#555">10</text>
+  <text x="-10.45" y="-22.12" font-family="sans-serif" font-size="4" fill="#333">20</text>
+  <text x="-5.35" y="-28.54" font-family="sans-serif" font-size="4" fill="#333">30</text>
+  <text x="3.15" y="-29.35" font-family="sans-serif" font-size="4" fill="#333">40</text>
+  <text x="8.25" y="-22.12" font-family="sans-serif" font-size="4" fill="#333">50</text>
+  <text x="5.7" y="-14.89" font-family="sans-serif" font-size="4" fill="#333">60</text>
+  <text x="-1.95" y="-16.49" font-family="sans-serif" font-size="4" fill="#333">ºC</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="116" height="74" viewBox="-60.00 -37.00 115.80 74.00">
+  <line x1="33" y1="31" x2="40" y2="31" stroke="#000" stroke-width="1"/>
+  <polyline points="2,21 2,31 33,31" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="42" y1="-27" x2="37" y2="-27" stroke="#000" stroke-width="1"/>
+  <polyline points="2,-14 2,-27 37,-27" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-7" y1="1" x2="-7" y2="5" stroke="#000" stroke-width="1"/>
+  <line x1="-1" y1="3" x2="-7" y2="3" stroke="#000" stroke-width="1"/>
+  <rect x="-2" y="6" width="3" height="6" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-2" y="-4" width="3" height="4" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-5,0 4,0 -5,6 4,6" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="12,-13.2 41,-13.2 41,-6.2 45,-3.2 38,-1.2 44,1.8 38,3.8 43,6.8 38,9.8 41,12.8 41,21.8 12,21.8 13,21.8" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-18" y="-16.2" width="32" height="12" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="24,21.8 27,18.8 27,24.8" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-30,13.8 -27,10.8 -27,16.8" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="26.00" cy="21.80" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="-28.00" cy="13.80" rx="4.00" ry="4.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-18" y="11.8" width="32" height="12" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-12,-6.2 -45,-6.2 -35,-1.2 -45,3.8 -35,8.8 -45,13.8 -12,13.8" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="12,-6.2 32,-6.2 22,-1.2 32,3.8 22,8.8 32,13.8 12,13.8" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="-43" y="-22.00" font-family="sans-serif" font-size="9" fill="#333">E</text>
+  <text x="25" y="-22.00" font-family="sans-serif" font-size="4" fill="#333">stock</text>
+  <text x="-37" y="5.80" font-family="sans-serif" font-size="4" fill="#333">solaire</text>
+  <text x="37" y="12.80" font-family="sans-serif" font-size="4" fill="#333">chauff.</text>
+  <text x="11" y="5.80" font-family="sans-serif" font-size="4" fill="#333">ECS</text>
+  <text x="-22" y="-20.00" font-family="sans-serif" font-size="4" fill="#333">bouteille</text>
+</svg>

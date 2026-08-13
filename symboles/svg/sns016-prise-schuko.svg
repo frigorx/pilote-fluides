@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="164" viewBox="-53.00 -82.00 104.00 164.00">
+  <rect x="-45" y="-75" width="90" height="150" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <rect x="-2" y="-35.9" width="4" height="5.5" rx="1" ry="1" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-19.00" cy="0.00" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="19.00" cy="0.00" rx="4.50" ry="4.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="0.00" rx="4.50" ry="4.50" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <line x1="-1.8" y1="-1.8" x2="1.8" y2="1.8" stroke="#000" stroke-width="1"/>
+  <line x1="1.8" y1="-1.8" x2="-1.8" y2="1.8" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-1.8" x2="0" y2="1.8" stroke="#000" stroke-width="0.5"/>
+  <line x1="-1.8" y1="0" x2="1.8" y2="0" stroke="#000" stroke-width="0.5"/>
+  <rect x="-45" y="-45" width="90" height="90" fill="none" stroke="#000" stroke-width="0.5"/>
+  <rect x="-2" y="30.6" width="4" height="5.5" rx="1" ry="1" fill="#ccc" stroke="#000" stroke-width="0.5"/>
+  <polyline points="-35.5,-4 -32.5,-4 -32.5,-14.5" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="-35.5,4 -32.5,4 -32.5,14.5" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="35.5,-4 32.5,-4 32.5,-14.5" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="35.5,4 32.5,4 32.5,14.5" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="0.00" rx="36.00" ry="36.00" fill="none" stroke="#000" stroke-width="1"/>
+</svg>

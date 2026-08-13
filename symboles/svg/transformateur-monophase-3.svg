@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="55" height="74" viewBox="-21.00 -37.00 55.00 74.00">
+  <ellipse cx="5.00" cy="5.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="5.00" cy="-5.00" rx="10.00" ry="10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-25" x2="0" y2="-14" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="14" x2="0" y2="25" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="-25" x2="10" y2="-14" stroke="#000" stroke-width="1"/>
+  <line x1="10" y1="14" x2="10" y2="25" stroke="#000" stroke-width="1"/>
+  <line x1="-9" y1="0" x2="-4" y2="0" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="10" cy="26" r="1.5" fill="#000"/>
+  <circle cx="0" cy="26" r="1.5" fill="#000"/>
+  <circle cx="10" cy="-26" r="1.5" fill="#000"/>
+  <circle cx="-9" cy="0" r="1.5" fill="#000"/>
+  <text x="20" y="13.50" font-family="sans-serif" font-size="5" fill="#555">___V</text>
+  <text x="20" y="-13.50" font-family="sans-serif" font-size="5" fill="#555">___V</text>
+</svg>

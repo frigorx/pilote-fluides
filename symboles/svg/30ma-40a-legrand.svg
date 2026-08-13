@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="114" viewBox="-13.00 -11.00 44.00 114.00">
+  <rect x="-8" y="0.2" width="35.2" height="91.3" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="5.20" cy="8.88" rx="2.20" ry="2.29" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="4.32" y1="8" x2="6.08" y2="9.78" stroke="#000" stroke-width="1"/>
+  <line x1="6.08" y1="8" x2="4.32" y2="9.78" stroke="#000" stroke-width="1"/>
+  <line x1="5.2" y1="8" x2="5.2" y2="9.78" stroke="#000" stroke-width="0.5"/>
+  <ellipse cx="-3.60" cy="8.88" rx="2.20" ry="2.29" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="4.32" y1="8.87" x2="6.08" y2="8.87" stroke="#000" stroke-width="0.5"/>
+  <line x1="-4.48" y1="8" x2="-2.72" y2="9.78" stroke="#000" stroke-width="1"/>
+  <rect x="-8" y="23" width="35.2" height="45.65" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-2.72" y1="8" x2="-4.48" y2="9.78" stroke="#000" stroke-width="1"/>
+  <line x1="-3.6" y1="8" x2="-3.6" y2="9.78" stroke="#000" stroke-width="0.5"/>
+  <line x1="-4.48" y1="8.87" x2="-2.72" y2="8.87" stroke="#000" stroke-width="0.5"/>
+  <rect x="-4.92" y="38.09" width="11" height="11.41" fill="#c00" stroke="#000" stroke-width="1"/>
+  <rect x="-4.92" y="41.74" width="11" height="8.22" fill="#888" stroke="#000" stroke-width="1"/>
+  <path d="M -4.04 36.49 A 0.22 0.23 0 0 0 -4.48 36.49" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="-8" y1="82.37" x2="27.2" y2="82.37" stroke="#000" stroke-width="0.5"/>
+  <rect x="-5.8" y="50.41" width="13.2" height="2.74" fill="#888" stroke="#000" stroke-width="1"/>
+  <line x1="-4.92" y1="52.24" x2="6.08" y2="52.24" stroke="#000" stroke-width="1"/>
+  <line x1="-4.92" y1="51.33" x2="6.08" y2="51.33" stroke="#000" stroke-width="1"/>
+  <line x1="9.6" y1="0.2" x2="9.6" y2="23" stroke="#000" stroke-width="0.5"/>
+  <rect x="16.2" y="64.11" width="11" height="4.57" fill="#888" stroke="#000" stroke-width="0.5"/>
+  <polyline points="-5.8,55 -5.8,66.39 -3.6,66.39" fill="none" stroke="#c00" stroke-width="1"/>
+  <polyline points="5.2,66.39 14,66.39" fill="none" stroke="#c00" stroke-width="1"/>
+  <rect x="-8" y="23" width="35.2" height="13.7" fill="#0cc" stroke="#000" stroke-width="0.5"/>
+  <line x1="18.4" y1="7.05" x2="18.4" y2="13.89" stroke="#000" stroke-width="1"/>
+  <circle cx="5" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-4" cy="0" r="1.5" fill="#000"/>
+  <circle cx="5" cy="91" r="1.5" fill="#000"/>
+  <circle cx="-4" cy="91" r="1.5" fill="#000"/>
+  <text x="-2.72" y="66.85" font-family="sans-serif" font-size="5" fill="#333">Legrand</text>
+  <text x="-4.48" y="16.18" font-family="sans-serif" font-size="4" fill="#333">N</text>
+  <text x="-3.6" y="62.28" font-family="sans-serif" font-size="4" fill="#333">C16A</text>
+  <text x="-3.6" y="58.17" font-family="sans-serif" font-size="4" fill="#333">DX3</text>
+  <text x="-2.72" y="40.83" font-family="sans-serif" font-size="4" fill="#333">0-OFF</text>
+  <text x="10" y="50.00" font-family="sans-serif" font-size="4" fill="#555">Type A</text>
+  <text x="15" y="45.00" font-family="sans-serif" font-size="4" fill="#333">30 mA</text>
+  <text x="20.6" y="67.31" font-family="sans-serif" font-size="4" fill="#333">T</text>
+</svg>

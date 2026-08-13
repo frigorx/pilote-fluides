@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="184" viewBox="-16.00 -173.00 144.00 184.00">
+  <rect x="0" y="-85" width="120" height="85" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-15" x2="120" y2="-15" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-45" x2="120" y2="-45" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-65" x2="120" y2="-65" stroke="#000" stroke-width="1"/>
+  <line x1="30" y1="-125" x2="90" y2="-125" stroke="#000" stroke-width="1"/>
+  <path d="M 60.00 -125.00 A 15.00 5.00 0 0 0 30.00 -125.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 60.00 -125.00 A 5.00 15.00 0 0 0 60.00 -155.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 60.00 -125.00 A 15.00 5.00 0 0 0 90.00 -125.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 60.00 -125.00 A 5.00 15.00 0 0 0 60.00 -95.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 88.19 -135.26 A 30.00 30.00 0 0 0 70.26 -153.19" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 70.26 -96.81 A 30.00 30.00 0 0 0 88.19 -114.74" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 31.81 -113.74 A 30.00 30.00 0 0 0 49.74 -95.81" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 49.74 -153.19 A 30.00 30.00 0 0 0 31.81 -135.26" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 74.10 -130.13 A 15.00 15.00 0 0 0 67.50 -137.99" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 65.13 -110.90 A 15.00 15.00 0 0 0 72.99 -117.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 45.90 -119.87 A 15.00 15.00 0 0 0 52.50 -112.01" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 54.87 -140.10 A 15.00 15.00 0 0 0 47.01 -133.50" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 80.73 -130.82 A 22.50 22.50 0 0 0 68.51 -145.39" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 67.70 -103.86 A 22.50 22.50 0 0 0 81.14 -117.30" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 38.86 -117.30 A 22.50 22.50 0 0 0 52.30 -103.86" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 53.30 -146.14 A 22.50 22.50 0 0 0 39.86 -132.70" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="50" y1="-160" x2="50" y2="-155" stroke="#000" stroke-width="1"/>
+  <line x1="50" y1="-153" x2="50" y2="-160" stroke="#000" stroke-width="1"/>
+  <line x1="70" y1="-154" x2="70" y2="-160" stroke="#000" stroke-width="1"/>
+  <circle cx="70" cy="-160" r="1.5" fill="#000"/>
+  <circle cx="50" cy="-160" r="1.5" fill="#000"/>
+  <circle cx="100" cy="-100" r="1.5" fill="#000"/>
+  <text x="29" y="-36.00" font-family="sans-serif" font-size="7" fill="#555">2</text>
+  <text x="-2" y="-55.00" font-family="sans-serif" font-size="7" fill="#555">Combles</text>
+  <text x="58" y="-18.00" font-family="sans-serif" font-size="5" fill="#333">kA C</text>
+  <text x="66" y="-30.00" font-family="sans-serif" font-size="7" fill="#333">A</text>
+  <text x="58" y="-2.00" font-family="sans-serif" font-size="5" fill="#333">mm²</text>
+  <text x="28" y="-7.50" font-family="sans-serif" font-size="5" fill="#555">4 G 1.5</text>
+  <text x="30" y="-22.50" font-family="sans-serif" font-size="5" fill="#555">4.5</text>
+  <text x="-2" y="-73.50" font-family="sans-serif" font-size="7" fill="#555">VMC</text>
+</svg>

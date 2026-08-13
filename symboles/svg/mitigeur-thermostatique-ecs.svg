@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="44" viewBox="-28.00 -19.00 54.00 44.00">
+  <ellipse cx="0.00" cy="0.00" rx="13.00" ry="13.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 5.20 -6.35 A 7.00 8.00 0 0 0 -5.28 -6.25" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-8" x2="0" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="5" y1="-6" x2="6" y2="-7" stroke="#000" stroke-width="1"/>
+  <line x1="-5" y1="-6" x2="-6" y2="-7" stroke="#000" stroke-width="1"/>
+  <rect x="13" y="-1" width="2" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-1" y="13" width="2" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-15" y="-1" width="2" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="0,1 -6,10 6,10" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polygon points="10,-5 10,6 1,0" fill="none" stroke="#000" stroke-width="0.5"/>
+  <polygon points="-10,-6 -10,6 -1,0" fill="none" stroke="#000" stroke-width="0.5"/>
+  <circle cx="14" cy="0" r="1.5" fill="#000"/>
+  <circle cx="0" cy="14" r="1.5" fill="#000"/>
+  <circle cx="-14" cy="0" r="1.5" fill="#000"/>
+  <text x="-4" y="-2.00" font-family="sans-serif" font-size="4" fill="#333">°C</text>
+  <text x="12" y="-10.00" font-family="sans-serif" font-size="4" fill="#333">EF</text>
+  <text x="-17" y="-10.00" font-family="sans-serif" font-size="4" fill="#333">EC</text>
+</svg>

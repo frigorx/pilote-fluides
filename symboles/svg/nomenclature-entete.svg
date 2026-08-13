@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="984" height="254" viewBox="-7.00 -36.00 984.00 254.00">
+  <line x1="190" y1="-20" x2="190" y2="210" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-20" x2="0" y2="210" stroke="#000" stroke-width="1"/>
+  <line x1="970" y1="-20" x2="970" y2="210" stroke="#000" stroke-width="1"/>
+  <line x1="890" y1="-20" x2="890" y2="210" stroke="#000" stroke-width="1"/>
+  <line x1="740" y1="-20" x2="740" y2="210" stroke="#000" stroke-width="1"/>
+  <line x1="110" y1="-20" x2="110" y2="210" stroke="#000" stroke-width="1"/>
+  <line x1="590" y1="-20" x2="590" y2="210" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="210" x2="970" y2="210" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="190" x2="970" y2="190" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="170" x2="970" y2="170" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="150" x2="970" y2="150" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="130" x2="970" y2="130" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="110" x2="970" y2="110" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="90" x2="970" y2="90" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="70" x2="970" y2="70" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="50" x2="970" y2="50" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="30" x2="970" y2="30" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="10" x2="970" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="0" y1="-20" x2="970" y2="-20" stroke="#000" stroke-width="1"/>
+  <text x="200" y="-6.00" font-family="sans-serif" font-size="10" fill="#555">NOM</text>
+  <text x="900" y="-6.00" font-family="sans-serif" font-size="10" fill="#555">NOMBRE</text>
+  <text x="750" y="-6.00" font-family="sans-serif" font-size="10" fill="#555">FABRICANT</text>
+  <text x="600" y="-7.00" font-family="sans-serif" font-size="10" fill="#555">TYPE</text>
+  <text x="120" y="-6.00" font-family="sans-serif" font-size="10" fill="#555">FOLIOS</text>
+  <text x="10" y="-6.50" font-family="sans-serif" font-size="10" fill="#555">DÉSIGNATION</text>
+</svg>

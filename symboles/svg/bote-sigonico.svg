@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="44" viewBox="-22.00 -27.00 54.00 44.00">
+  <ellipse cx="1.50" cy="-11.00" rx="3.50" ry="3.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="10" y="-13" width="9" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="10" y="-3" width="3" height="6" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-9" y="-18" width="22" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-6" y="-16" width="16" height="23" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-9" y="-3" width="3" height="6" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="1.50" cy="0.00" rx="3.50" ry="3.00" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-9" y="-13" width="3" height="5" fill="none" stroke="#000" stroke-width="1"/>
+  <polyline points="11,-10 17,-10 14,-11 14,-9 17,-10" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="14" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="0" r="1.5" fill="#000"/>
+  <circle cx="-10" cy="-10" r="1.5" fill="#000"/>
+  <circle cx="1" cy="4" r="1.5" fill="#000"/>
+  <circle cx="20" cy="-10" r="1.5" fill="#000"/>
+  <circle cx="1" cy="-14" r="1.5" fill="#000"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="89" height="24" viewBox="-52.00 -13.00 89.00 23.50">
+  <line x1="-2.05" y1="-2.05" x2="1.95" y2="1.95" stroke="#000" stroke-width="1"/>
+  <line x1="18" y1="-2" x2="22" y2="2" stroke="#000" stroke-width="1"/>
+  <line x1="-29.94" y1="0" x2="30" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="-22" y1="-2" x2="-18" y2="2" stroke="#000" stroke-width="1"/>
+  <text x="-50" y="8.50" font-family="sans-serif" font-size="7" fill="#555">3G</text>
+  <text x="-22" y="-6.00" font-family="sans-serif" font-size="4" fill="#555">1</text>
+  <text x="-2" y="-6.00" font-family="sans-serif" font-size="4" fill="#555">2</text>
+  <text x="18" y="-6.00" font-family="sans-serif" font-size="4" fill="#555">PE</text>
+</svg>

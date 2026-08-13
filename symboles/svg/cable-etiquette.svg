@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="49" height="84" viewBox="-12.00 -41.00 49.00 84.00">
+  <line x1="0" y1="-30" x2="0" y2="30" stroke="#000" stroke-width="1"/>
+  <circle cx="0" cy="30" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-30" r="1.5" fill="#000"/>
+  <text x="10" y="37.00" font-family="sans-serif" font-size="6" fill="#555">?m</text>
+  <text x="-1" y="37.00" font-family="sans-serif" font-size="6" fill="#555">Cable type</text>
+</svg>

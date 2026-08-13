@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="102" height="144" viewBox="-88.00 -86.00 102.40 144.00">
+  <path d="M -30.00 -30.00 A 5.00 5.00 0 0 0 -30.00 -20.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -30.00 10.00 A 5.00 5.00 0 0 0 -30.00 20.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -30.00 -20.00 A 5.00 5.00 0 0 0 -30.00 -10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -30.00 20.00 A 5.00 5.00 0 0 0 -30.00 30.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-40" y1="-30" x2="-40" y2="30" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="10" x2="-10" y2="10" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="30" x2="-10" y2="30" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-10" x2="-10" y2="-10" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="-30" x2="-10" y2="-30" stroke="#000" stroke-width="1"/>
+  <line x1="-30" y1="50" x2="-30" y2="-50" stroke="#000" stroke-width="1"/>
+  <line x1="-35" y1="-35" x2="-25" y2="-45" stroke="#000" stroke-width="1"/>
+  <text x="-74" y="-70.00" font-family="sans-serif" font-size="9" fill="#333">Form 2 / Forme 2</text>
+  <text x="-20" y="-40.00" font-family="sans-serif" font-size="9" fill="#333">9</text>
+</svg>

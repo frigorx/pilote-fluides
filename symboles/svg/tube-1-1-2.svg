@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="54" viewBox="-51.00 -38.00 104.00 54.00">
+  <rect x="-37.7" y="-29.93" width="78" height="36.93" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="27.8" y1="7" x2="27.8" y2="-29.59" stroke="#000" stroke-width="0.5"/>
+  <line x1="31.25" y1="7" x2="28.95" y2="-29.59" stroke="#000" stroke-width="0.5"/>
+  <line x1="-26.2" y1="7" x2="-26.2" y2="-29.59" stroke="#000" stroke-width="0.5"/>
+  <line x1="33.55" y1="7" x2="31.25" y2="-29.59" stroke="#000" stroke-width="0.5"/>
+  <line x1="-34.1" y1="7" x2="-36.4" y2="-29.59" stroke="#000" stroke-width="0.5"/>
+  <line x1="-31.8" y1="7" x2="-34.1" y2="-29.59" stroke="#000" stroke-width="0.5"/>
+  <line x1="35.85" y1="7" x2="33.55" y2="-29.59" stroke="#000" stroke-width="0.5"/>
+  <line x1="38.15" y1="7" x2="35.85" y2="-29.59" stroke="#000" stroke-width="0.5"/>
+  <line x1="-29.5" y1="7" x2="-31.8" y2="-29.59" stroke="#000" stroke-width="0.5"/>
+  <line x1="-27.2" y1="4.85" x2="-29.5" y2="-29.59" stroke="#000" stroke-width="0.5"/>
+  <circle cx="-39" cy="-10" r="1.5" fill="#000"/>
+  <circle cx="41" cy="-10" r="1.5" fill="#000"/>
+</svg>

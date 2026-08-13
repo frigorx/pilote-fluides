@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="44" viewBox="-32.00 -23.00 64.00 44.00">
+  <line x1="6" y1="6" x2="4" y2="4" stroke="#000" stroke-width="0.5"/>
+  <line x1="-9" y1="0" x2="-6" y2="0" stroke="#000" stroke-width="0.5"/>
+  <line x1="-6" y1="5" x2="-4" y2="3" stroke="#000" stroke-width="0.5"/>
+  <line x1="15" y1="2" x2="18" y2="2" stroke="#000" stroke-width="1"/>
+  <line x1="-18" y1="2" x2="-15" y2="2" stroke="#000" stroke-width="1"/>
+  <rect x="15" y="-4" width="4" height="8" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="15" y1="-2" x2="18" y2="-2" stroke="#000" stroke-width="1"/>
+  <rect x="-14" y="-2" width="3" height="4" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-18" y="-4" width="4" height="8" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-18" y1="-2" x2="-15" y2="-2" stroke="#000" stroke-width="1"/>
+  <line x1="-4" y1="12" x2="5" y2="12" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="-0.50" rx="6.00" ry="5.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="-0.50" rx="9.00" ry="8.50" fill="none" stroke="#000" stroke-width="1"/>
+  <ellipse cx="0.00" cy="0.00" rx="2.00" ry="2.00" fill="none" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="-8.73" x2="0" y2="-6.29" stroke="#000" stroke-width="0.5"/>
+  <line x1="0" y1="5" x2="0" y2="8" stroke="#000" stroke-width="0.5"/>
+  <line x1="6" y1="0" x2="9" y2="0" stroke="#000" stroke-width="0.5"/>
+  <line x1="4" y1="-5" x2="6" y2="-7" stroke="#000" stroke-width="0.5"/>
+  <line x1="-5" y1="-4" x2="-7" y2="-6" stroke="#000" stroke-width="0.5"/>
+  <line x1="-4" y1="-8" x2="-3" y2="-6" stroke="#000" stroke-width="0.5"/>
+  <line x1="2" y1="4" x2="3" y2="7" stroke="#000" stroke-width="0.5"/>
+  <line x1="2" y1="-6" x2="3" y2="-8" stroke="#000" stroke-width="0.5"/>
+  <line x1="5" y1="-3" x2="8" y2="-5" stroke="#000" stroke-width="0.5"/>
+  <line x1="6" y1="-1" x2="8" y2="-1" stroke="#000" stroke-width="0.5"/>
+  <line x1="5" y1="2" x2="8" y2="3" stroke="#000" stroke-width="0.5"/>
+  <line x1="-9" y1="-3" x2="-6" y2="-2" stroke="#000" stroke-width="0.5"/>
+  <line x1="-8" y1="3" x2="-6" y2="2" stroke="#000" stroke-width="0.5"/>
+  <line x1="-4" y1="7" x2="-3" y2="5" stroke="#000" stroke-width="0.5"/>
+  <line x1="-2" y1="1" x2="2" y2="-1" stroke="#000" stroke-width="0.5"/>
+  <line x1="12.73" y1="2" x2="14.29" y2="2" stroke="#000" stroke-width="1"/>
+  <path d="M 11.00 -2.00 A 11.00 9.00 0 0 0 -11.00 -2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -11.00 -1.00 A 9.50 11.00 0 0 0 -1.50 10.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M -0.50 10.00 A 13.50 8.00 0 0 0 13.00 2.00" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="11.8" y1="-2" x2="14.22" y2="-2" stroke="#000" stroke-width="1"/>
+  <rect x="-1" y="-9" width="2" height="2" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-20" cy="0" r="1.5" fill="#000"/>
+  <circle cx="20" cy="0" r="1.5" fill="#000"/>
+  <circle cx="0" cy="-10" r="1.5" fill="#000"/>
+</svg>

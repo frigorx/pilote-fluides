@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="24" viewBox="-17.00 -14.00 34.00 24.00">
+  <line x1="-0.6" y1="-7.73" x2="-0.6" y2="-4.47" stroke="#000" stroke-width="0.5"/>
+  <line x1="0.6" y1="-7.73" x2="0.6" y2="-4.47" stroke="#000" stroke-width="0.5"/>
+  <line x1="4.88" y1="0.94" x2="6.6" y2="0.94" stroke="#000" stroke-width="1"/>
+  <line x1="1.79" y1="-7.73" x2="1.79" y2="-4.47" stroke="#000" stroke-width="0.5"/>
+  <rect x="2.4" y="-1.12" width="1.8" height="2.1" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-2.4" y="-2.57" width="4.8" height="5.21" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="4.45" y="-3.41" width="2.15" height="5.8" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="4.88" y1="-2" x2="6.6" y2="-2" stroke="#000" stroke-width="1"/>
+  <rect x="-5.2" y="-1.1" width="2.4" height="2.6" fill="none" stroke="#000" stroke-width="1"/>
+  <rect x="-1.2" y="-3.83" width="2.4" height="1.26" fill="none" stroke="#000" stroke-width="1"/>
+  <polygon points="-3,-3.83 3,-3.83 3,-7.93 1.8,-9.69 -1.8,-9.69 -3,-7.93" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-1.8" y1="-7.73" x2="-1.8" y2="-4.47" stroke="#000" stroke-width="0.5"/>
+  <circle cx="-6" cy="0" r="1.5" fill="#000"/>
+  <circle cx="6" cy="0" r="1.5" fill="#000"/>
+</svg>

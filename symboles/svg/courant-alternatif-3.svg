@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="98" height="24" viewBox="-32.00 -9.00 98.00 24.00">
+  <path d="M -2.04 -2.07 A 3.50 2.50 0 0 0 -7.50 -0.00" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 2.94 2.02 A 3.50 2.50 0 0 0 8.50 0.09" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="-2" y1="-2" x2="3" y2="2" stroke="#000" stroke-width="1"/>
+  <text x="10" y="3.00" font-family="sans-serif" font-size="6" fill="#333">400/230 V 50 Hz</text>
+  <text x="-21" y="3.00" font-family="sans-serif" font-size="6" fill="#333">3/N</text>
+</svg>

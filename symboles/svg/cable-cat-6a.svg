@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114" height="24" viewBox="-46.00 -12.00 114.00 24.00">
+  <polygon points="20,4 20,-4 58,-4 62,4" fill="#dd0" stroke="#dd0" stroke-width="1"/>
+  <line x1="-13" y1="0" x2="-18" y2="4" stroke="#00c" stroke-width="1"/>
+  <line x1="13" y1="0" x2="8" y2="4" stroke="#0a0" stroke-width="1"/>
+  <line x1="3" y1="5" x2="9" y2="0" stroke="#0a0" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-23" y1="5" x2="-17" y2="0" stroke="#00c" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-22" y1="3" x2="-18" y2="4" stroke="#00c" stroke-width="1"/>
+  <line x1="4" y1="3" x2="8" y2="4" stroke="#0a0" stroke-width="1"/>
+  <line x1="-8" y1="5" x2="3" y2="5" stroke="#0a0" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-34" y1="5" x2="-23" y2="5" stroke="#00c" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="4" y1="3" x2="-8" y2="3" stroke="#0a0" stroke-width="1"/>
+  <line x1="8" y1="-5" x2="13" y2="0" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-18" y1="-5" x2="-13" y2="0" stroke="#e80" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-22" y1="3" x2="-34" y2="3" stroke="#00c" stroke-width="1"/>
+  <line x1="-23" y1="-3" x2="-18" y2="-5" stroke="#e80" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-22" y1="-5" x2="-17.05" y2="-0.05" stroke="#e80" stroke-width="1"/>
+  <line x1="3" y1="-3" x2="8" y2="-5" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-34" y1="-3" x2="-23" y2="-3" stroke="#e80" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="-22" y1="-5" x2="-34" y2="-5" stroke="#e80" stroke-width="1"/>
+  <line x1="4" y1="-5" x2="8.95" y2="-0.05" stroke="#000" stroke-width="1"/>
+  <line x1="-36" y1="0" x2="20" y2="0" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-4" x2="20" y2="4" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="4" x2="62" y2="4" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="-4" x2="58" y2="-4" stroke="#000" stroke-width="1"/>
+  <line x1="-8" y1="-3" x2="3" y2="-3" stroke="#000" stroke-width="1" stroke-dasharray="1,2"/>
+  <line x1="58" y1="-4" x2="62" y2="4" stroke="#000" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <line x1="4" y1="-5" x2="-8" y2="-5" stroke="#000" stroke-width="1"/>
+  <circle cx="-36" cy="0" r="1.5" fill="#000"/>
+</svg>

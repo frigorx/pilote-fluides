@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="84" viewBox="-52.00 -74.00 64.00 84.00">
+  <line x1="-40" y1="-50" x2="-40" y2="0" stroke="#000" stroke-width="1"/>
+  <polyline points="-40,-50 -20,-70 0,-50 0,0" fill="none" stroke="#000" stroke-width="1"/>
+  <circle cx="-40" cy="0" r="1.5" fill="#000"/>
+  <circle cx="0" cy="0" r="1.5" fill="#000"/>
+</svg>
