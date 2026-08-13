@@ -3634,6 +3634,16 @@ export const CARTES = [
         "packs/fluides/res/electrovanne-interactive/index.html",
         "⚡ Lancer le cours interactif : l'électrovanne de ligne liquide",
         "14 écrans : pourquoi on coupe le liquide avant d'arrêter le compresseur, la commande tout ou rien, la coupe animée hors tension puis alimentée, l'action directe et la commande assistée, NF et NO, la dépose de la bobine en sécurité et le diagnostic."
+      ) +
+      lienOutil(
+        "packs/fluides/res/filtre-deshydrateur-pedagogique/index.html",
+        "🧱 Lancer le cours interactif : le filtre déshydrateur",
+        "15 écrans : reconnaître le vrai composant, vissé ou brasé, deux fonctions et deux barrières, noyau solide ou billes libres, l'eau fixée au dessiccant, le média qui sature, le porte-cartouche, la double flèche des modèles biflow et le burn-out qui rend l'huile acide."
+      ) +
+      lienOutil(
+        "packs/fluides/res/voyant-liquide-pedagogique/index.html",
+        "👁 Lancer le cours interactif : le voyant liquide",
+        "18 écrans : les deux voyants, la fenêtre qui montre un état local, les bulles après le filtre, la pastille d'humidité et sa légende, observer puis mesurer, et les quatre causes de bulles — sous-refroidissement, chute de pression, filtre colmaté, quantité insuffisante."
       ),
     blocs: [
       {
@@ -3727,6 +3737,11 @@ export const CARTES = [
         "packs/fluides/res/vanne-service-interactive/index.html?ecran=geste",
         "🔩 Lancer le cours interactif : la vanne de service et la prise du pressostat",
         "Pourquoi le pressostat se raccorde sur P1 et non sur la voie de service : cette prise reste reliée au compresseur dans toutes les positions de la vanne — donc sous pression, bouchon jamais défait sur une installation chargée."
+      ) +
+      lienOutil(
+        "packs/fluides/res/bouteille-liquide-pedagogique/index.html",
+        "🫙 Lancer le cours interactif : la bouteille liquide",
+        "14 écrans : reconnaître le réservoir, sa place après le condenseur, le tube plongeur, entrée et départ liquide, la vanne de départ qui n'est pas un détendeur, rassembler la charge côté condenseur, verticale ou horizontale, et la protection DESP."
       ),
     blocs: [
       {

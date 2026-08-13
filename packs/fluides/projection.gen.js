@@ -8212,6 +8212,20 @@ window.PILOTE_PROJECTION = {
        "titre": "Le détendeur et les organes annexes"
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/filtre-deshydrateur-pedagogique/index.html",
+       "lancer": "🧱 Lancer le cours interactif : le filtre déshydrateur",
+       "desc": "15 écrans : reconnaître le vrai composant, vissé ou brasé, deux fonctions et deux barrières, noyau solide ou billes libres, l'eau fixée au dessiccant, le média qui sature, le porte-cartouche, la double flèche des modèles biflow et le burn-out qui rend l'huile acide.",
+       "titre": "Le détendeur et les organes annexes"
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/voyant-liquide-pedagogique/index.html",
+       "lancer": "👁 Lancer le cours interactif : le voyant liquide",
+       "desc": "18 écrans : les deux voyants, la fenêtre qui montre un état local, les bulles après le filtre, la pastille d'humidité et sa légende, observer puis mesurer, et les quatre causes de bulles — sous-refroidissement, chute de pression, filtre colmaté, quantité insuffisante.",
+       "titre": "Le détendeur et les organes annexes"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/detendeur-regulation.svg",
        "alt": "Animation en boucle : la charge thermique augmente, la surchauffe monte, le bulbe se réchauffe et pousse la membrane, le détendeur ouvre, l'évaporateur reçoit plus de fluide, la surchauffe redescend — la boucle qui se corrige toute seule.",
@@ -8493,6 +8507,13 @@ window.PILOTE_PROJECTION = {
        "url": "packs/fluides/res/vanne-service-interactive/index.html?ecran=geste",
        "lancer": "🔩 Lancer le cours interactif : la vanne de service et la prise du pressostat",
        "desc": "Pourquoi le pressostat se raccorde sur P1 et non sur la voie de service : cette prise reste reliée au compresseur dans toutes les positions de la vanne — donc sous pression, bouchon jamais défait sur une installation chargée.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/bouteille-liquide-pedagogique/index.html",
+       "lancer": "🫙 Lancer le cours interactif : la bouteille liquide",
+       "desc": "14 écrans : reconnaître le réservoir, sa place après le condenseur, le tube plongeur, entrée et départ liquide, la vanne de départ qui n'est pas un détendeur, rassembler la charge côté condenseur, verticale ou horizontale, et la protection DESP.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {

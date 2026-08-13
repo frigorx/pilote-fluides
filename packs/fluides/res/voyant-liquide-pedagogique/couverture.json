@@ -1,0 +1,14 @@
+{
+  "cours": "voyant-liquide-pedagogique",
+  "titre": "Comprendre le voyant liquide",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 18,
+  "codes": {
+    "1.05": ["ecran-1", "ecran-3", "ecran-4", "ecran-5", "ecran-6", "ecran-7", "ecran-8", "ecran-9", "ecran-10", "ecran-14", "ecran-15", "ecran-16", "ecran-17", "ecran-18"]
+  },
+  "appui": {
+    "7.05": ["ecran-2"],
+    "9.09": ["ecran-11"],
+    "12.07": ["ecran-12", "ecran-13"]
+  }
+}

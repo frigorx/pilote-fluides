@@ -1,0 +1,13 @@
+{
+  "cours": "bouteille-liquide-pedagogique",
+  "titre": "Comprendre la bouteille liquide",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 14,
+  "codes": {
+    "1.05": ["ecran-1", "ecran-3", "ecran-4", "ecran-5", "ecran-6", "ecran-7", "ecran-8", "ecran-10", "ecran-11", "ecran-12", "ecran-13", "ecran-14"]
+  },
+  "appui": {
+    "7.05": ["ecran-2"],
+    "12.07": ["ecran-9"]
+  }
+}

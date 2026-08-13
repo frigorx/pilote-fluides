@@ -7,9 +7,9 @@
 
 | Mesure | Résultat |
 |---|---:|
-| Cours interactifs recensés | **24** |
-| Cours avec anomalie critique automatisable | **0** |
-| Cours avec dette documentaire ou de reprise | **12** |
+| Cours interactifs recensés | **27** |
+| Cours avec anomalie critique automatisable | **1** |
+| Cours avec dette documentaire ou de reprise | **15** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **9** |
 | SVG pédagogiques contrôlés | **44** |
 | SVG sans titre / sans description textuelle | **1 / 39** |
@@ -19,6 +19,7 @@
 | Cours | HTML | Hors ligne | Typo | Impression | Lisibilité | Médias | Registre droits | État |
 |---|---|---|---|---|---|---:|---|---|
 | `bilan-thermique-performance-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `bouteille-liquide-pedagogique` | ✓ | ✓ | ✓ | ✓ | absente | 11 | ✓ | 🟠 réglage de lisibilité |
 | `capsules` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟠 ancien fond #EEF2F6 (1) |
 | `chaine-intervention-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `chaleur-circuit-interactif` | ✓ | ✓ | ✓ | ✗ | commune | 4 | ✗ | 🟠 impression, SOURCES-IMAGES.md, ancien fond #EEF2F6 (4) |
@@ -30,6 +31,7 @@
 | `electrovanne-interactive` | ✓ | ✓ | ✓ | ✓ | absente | 5 | ✓ | 🟠 réglage de lisibilité |
 | `etancheite-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `evaporateur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 4 | ✗ | 🟠 SOURCES-IMAGES.md, ancien terme « module interactif » (2) |
+| `filtre-deshydrateur-pedagogique` | ✓ | ✗ | ✓ | ✓ | absente | 17 | ✓ | 🔴 44 dépendance(s) distante(s) |
 | `frise-vivante` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `froid-clim-academie` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `hydrocarbures-a1-a2` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✗ | 🟠 SOURCES-IMAGES.md, ancien terme « module interactif » (1) |
@@ -42,6 +44,7 @@
 | `recuperation-fluide-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
 | `tome-3-technologie-organes` | ✓ | ✓ | ✓ | ✓ | locale | 44 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `vanne-service-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `voyant-liquide-pedagogique` | ✓ | ✓ | ✓ | ✓ | absente | 10 | ✓ | 🟠 réglage de lisibilité |
 
 ## Titres et descriptions des SVG
 
