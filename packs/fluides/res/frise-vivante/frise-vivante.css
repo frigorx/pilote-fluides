@@ -613,7 +613,7 @@ footer {
   height: 236px;
 }
 
-/* Illustration de la scène : 1 ou 2 images, fondu enchaîné géré en JS via
+/* Illustration de la scène : une image, fondu d'apparition géré en JS via
    la classe .is-visible. Tant qu'aucune image n'est fournie (404), le bloc
    se masque tout seul (voir onerror dans le JS) au lieu d'afficher une icône
    d'image cassée. */

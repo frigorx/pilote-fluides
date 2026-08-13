@@ -198,26 +198,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const experience = document.getElementById('experience');
     const speechWarning = document.getElementById('speech-warning');
     const visualA = document.getElementById('scene-visual-a');
-    const visualB = document.getElementById('scene-visual-b');
 
     if (!synth && speechWarning) {
         speechWarning.hidden = false;
     }
 
     let visualToken = 0;
-    let visualInterval = null;
 
     function updateSceneVisual(step) {
         visualToken += 1;
         const token = visualToken;
-        if (visualInterval) {
-            clearInterval(visualInterval);
-            visualInterval = null;
-        }
-        if (!visualA || !visualB) return;
+        if (!visualA) return;
 
         visualA.classList.remove('is-visible');
-        visualB.classList.remove('is-visible');
 
         visualA.onload = () => {
             if (token !== visualToken) return;
@@ -227,25 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (token !== visualToken) return;
             visualA.classList.remove('is-visible');
         };
-        visualB.onload = () => {
-            if (token !== visualToken) return;
-        };
-        visualB.onerror = () => {
-            if (token !== visualToken) return;
-        };
 
         visualA.src = `img/scene-${step.number}-a.jpg`;
-        visualB.src = `img/scene-${step.number}-b.jpg`;
-
-        let showingA = true;
-        visualInterval = setInterval(() => {
-            if (token !== visualToken) return;
-            const bReady = visualB.complete && visualB.naturalWidth > 0;
-            if (!bReady) return;
-            showingA = !showingA;
-            visualA.classList.toggle('is-visible', showingA);
-            visualB.classList.toggle('is-visible', !showingA);
-        }, 7000);
     }
 
     function buildTimeline() {
