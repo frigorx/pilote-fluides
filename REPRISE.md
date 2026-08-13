@@ -2,8 +2,22 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **13 août 2026** (parcours de remédiation ; état détaillé du 2 août
-> toujours valable pour le reste).
+> Dernière mise à jour : **13 août 2026 au soir** (fusion des trois versions + trois organes ;
+> état détaillé du 2 août toujours valable pour le reste).
+
+> **13/08 au soir — deux chantiers clos le même soir :**
+> 1. **Les trois versions divergentes sont RÉUNIES et poussées** (`8145f86`, `06dd52d`) :
+>    symboles QElectroTech d'origin + les 1 423 narrations MP3 et le mode professeur vocal
+>    de la branche codex. Les capsules chargent désormais `moteur/voix-index.js` + `voix.js` :
+>    MP3 quand le texte est à l'index, synthèse sinon — leurs 151 écrans restent en synthèse
+>    tant que F. Henninot n'a pas écouté et validé les textes (aucun MP3 généré pour elles,
+>    c'est voulu).
+> 2. **Trois organes de la ligne liquide entrent dans le pack** (`ff60f12`) : bouteille
+>    liquide, filtre déshydrateur, voyant — copiés du Bureau, `couverture.json` chacun
+>    (1.05 principal, appuis 7.05/9.09/12.07), reliés à g9 (filtre, voyant) et g9b
+>    (bouteille). La vanne Rotalock y était déjà (`vanne-service-interactive`) ; sa v5
+>    mini-jeux complète vit dans la bibliothèque `atelier-animations` avec les trois autres.
+>    Registre : 27 cours, toujours les 2 anomalies connues (détendeur, électrovanne).
 
 ---
 
