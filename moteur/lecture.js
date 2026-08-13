@@ -1,30 +1,21 @@
 /* =====================================================================
    lecture.js — « Écouter cette fiche » : lecture à voix haute du contenu
    ---------------------------------------------------------------------
-   POURQUOI CETTE APPROCHE, ET PAS DES FICHIERS ENREGISTRÉS
-   Les capsules de sécurité (CAPSULES-SECURITE.md) dramatisent quelques
-   scènes fixes et se figent une fois enregistrées — c'est voulu, elles
-   racontent un scénario écrit une fois pour toutes. Ici il faut lire
-   N'IMPORTE QUELLE fiche, TOUJOURS À JOUR : les 81 cartes changent à
-   chaque session, et la relecture métier n'est pas terminée (REPRISE
-   § 6, priorité 1). Enregistrer aujourd'hui figerait une voix sur du
-   contenu qui n'a pas fini d'être validé.
-
-   La lecture EN DIRECT, via l'API du navigateur — déjà éprouvée dans
-   HAL (fonction halParler) — n'a pas ce défaut : elle lit le texte
-   affiché à l'instant T, donc jamais périmée, et coûte 0 Ko : aucun
-   fichier à committer, aucune régénération à chaque correction.
+   ARCHITECTURE DEPUIS LE 6 AOÛT 2026
+   Ce module continue d'appeler l'API standard SpeechSynthesis. La couche
+   commune `voix.js` intercepte cet appel : si le texte visible possède
+   un MP3 local à jour, elle le lit ; sinon la voix du navigateur prend
+   le relais. La clé inclut le texte normalisé, donc une correction de
+   contenu ne peut jamais déclencher un ancien enregistrement.
 
    CE QUE ÇA SERT — une aide à la lecture pour le public FLE / DYS visé
    par le pack ([[feedback_accessibilite_cap]]), en complément de la
    future police adaptable (REPRISE § 6, non codée). Un bouton, jamais
    un déclenchement automatique — même règle que le son des planches.
 
-   CE QUE ÇA NE GARANTIT PAS — la voix dépend de l'appareil du lecteur.
-   Assumé : c'est un outil d'aide, pas la narration officielle du pack.
-   Sur la machine de F. Henninot, la meilleure voix disponible est la
-   même que celle triée par HAL (Denise/Henri si Edge, sinon la
-   meilleure voix française du système).
+   CE QUE ÇA NE GARANTIT PAS — tant que le lot n'a pas reçu son bon à
+   tirer métier, la synthèse locale reste une aide à la lecture et non
+   une narration officielle. Le repli dépend de l'appareil du lecteur.
    ===================================================================== */
 (function () {
   "use strict";

@@ -71,7 +71,35 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
-## 2. État au 2 août 2026
+## 2. État au 6 août 2026
+
+### 🔊 POINT D'ÉTAPE — refonte des voix du 6 août
+
+Le chantier est réalisé dans le clone indépendant `C:\git\pilote-fluides-codex-travail`, branche
+`codex/mise-a-conformite-globale`. Le dépôt canonique `C:\git\pilote-fluides` n'a pas été modifié.
+
+- `moteur/voix.js` intercepte les appels historiques à `speechSynthesis.speak()` et lit le MP3
+  local correspondant au texte exact ;
+- 17 surfaces vocales chargent cette couche commune ;
+- le corpus compte 1 423 éléments vocaux, dont 112 captures des écrans réellement rendus du
+  Tome 3 (5,90 h d'écoute, 121,5 Mio) ; 763 éléments couvrent désormais questions, choix,
+  corrections et dialogues pédagogiques ;
+- `moteur/prof-vocal.js` pilote les 16 tutoriels : passage automatique des écrans explicatifs,
+  arrêt sur activité ou question, lecture de la correction, puis validation « compris / réécouter /
+  rester ici » ;
+- la réponse de l'apprenant reste un clic visible : aucun microphone, aucune reconnaissance
+  vocale, aucune donnée personnelle et aucune dépendance réseau ;
+- aucune voix ne part au chargement : le clic de l'utilisateur reste obligatoire ;
+- un changement de texte invalide automatiquement l'ancien fichier et active le repli navigateur ;
+- les fichiers de génération, les tests et la traçabilité sont décrits dans
+  `packs/fluides/res/voix/README.md` et `build/voix/` ;
+- tests navigateur effectués sur les 16 tutoriels et aux formats `1024 × 768`, `1366 × 768`,
+  `390 × 844` et `360 × 640`, sans débordement ni erreur console ;
+- le lot utilise Piper / `fr_FR-siwis-medium` hors ligne. Les MP3 doivent être écoutés et recevoir le
+  bon à tirer métier de F. Henninot avant publication et avant indexation RAG.
+
+Ne pas copier ce travail dans le dépôt canonique par morceaux : valider le lot dans le clone,
+puis intégrer un commit complet afin de garder ensemble lecteur, index, MP3 et traçabilité.
 
 ### 🎧 13 août 2026 (soir) — CHAQUE chapitre a sa capsule narrée (24 nouvelles)
 

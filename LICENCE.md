@@ -19,11 +19,15 @@ En clair :
 - **vous ne pouvez pas** en faire un usage commercial — vendre une formation construite sur ce
   contenu exige un accord écrit préalable de l'auteur.
 
-## 2. Le moteur et les scripts de construction — MIT
+## 2. Le moteur et les scripts de construction
 
 Le moteur générique (`moteur/`, issu de `frigorx/r408`) et les scripts de construction
 (`build/`) sont sous **licence MIT** : réutilisation libre, y compris commerciale, à condition
 de conserver la mention de copyright.
+
+Exception explicite : `build/voix/generer-audios-piper.py`, qui utilise Piper, porte
+`SPDX-License-Identifier: GPL-3.0-or-later`. Cette exception concerne l'outil de fabrication,
+pas le lecteur web ni les autres scripts du dépôt.
 
 ## 3. Le référentiel officiel — hors licence
 
@@ -32,7 +36,16 @@ de conserver la mention de copyright.
 personne : ce fichier est librement réutilisable, et aucune des licences ci-dessus ne
 prétend le couvrir.
 
-## 4. Antériorité
+## 4. Les narrations vocales
+
+Les MP3 de `packs/fluides/res/voix/audio/` sont la mise en voix du contenu pédagogique : la
+licence CC BY-NC-SA 4.0 de la section 1 continue donc de s'appliquer à ce contenu. Ils sont
+fabriqués avec le modèle Piper `fr_FR-siwis-medium`, entraîné sur le corpus SIWIS sous licence
+CC BY 4.0. L'attribution et les sources sont conservées dans
+`packs/fluides/res/voix/README.md`. Le modèle et le logiciel Piper ne sont pas embarqués dans
+le site publié.
+
+## 5. Antériorité
 
 L'historique git public de ce dépôt (`github.com/frigorx/pilote-fluides`) établit
 l'antériorité de chaque contenu, commit par commit, horodatés et signés par la plateforme.

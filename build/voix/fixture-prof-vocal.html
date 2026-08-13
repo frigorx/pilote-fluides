@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contrôle du mode professeur vocal</title>
+  <style>
+    body{margin:0;background:#f7f1e7;color:#10233c;font:18px/1.55 Calibri,"Segoe UI",system-ui,Arial,sans-serif}
+    main{width:min(760px,calc(100% - 32px));margin:32px auto;padding:24px;border:1px solid rgba(27,58,99,.16);border-radius:20px;background:#fffdf8}
+    h1{color:#1b3a63;font-family:"Trebuchet MS",Calibri,Arial,sans-serif}
+    button{min-height:42px;margin:6px;border:2px solid #1b3a63;border-radius:999px;background:#fffdf8;color:#1b3a63;padding:8px 14px;font-weight:700}
+    #next{background:#1b3a63;color:#fff}.feedback{min-height:30px;margin-top:12px;font-weight:700}
+  </style>
+</head>
+<body>
+  <main>
+    <p id="step-count">Étape 1 sur 2</p>
+    <h1 id="title">Premier écran</h1>
+    <p id="text">Ce fichier vérifie uniquement le contrôleur partagé.</p>
+    <div id="zone"></div>
+    <button id="listen" type="button">Écouter</button>
+    <button id="next" type="button">Continuer</button>
+  </main>
+  <script src="../../moteur/voix-index.js"></script>
+  <script src="../../moteur/voix.js"></script>
+  <script src="../../moteur/prof-vocal.js"></script>
+  <script>
+    (() => {
+      const steps = [
+        { title: "Premier écran", voice: "Le condenseur rejette de la chaleur." },
+        { title: "Question de contrôle", voice: "La pompe retire de l'air." }
+      ];
+      let current = 0;
+      const render = () => {
+        document.querySelector("#step-count").textContent = `Étape ${current + 1} sur 2`;
+        document.querySelector("#title").textContent = steps[current].title;
+        document.querySelector("#zone").innerHTML = current === 0 ? "" : '<div class="question"><strong>Le condenseur rejette-t-il de la chaleur ?</strong><div class="choices"><button type="button" data-answer="good">Oui</button><button type="button" data-answer="bad">Non</button></div><div class="feedback"></div></div>';
+        document.querySelectorAll("[data-answer]").forEach(button => button.addEventListener("click", () => {
+          const good = button.dataset.answer === "good";
+          const feedback = document.querySelector(".feedback");
+          feedback.className = `feedback ${good ? "ok" : "no"}`;
+          feedback.textContent = good ? "✓ Exact. Le condenseur rejette de la chaleur." : "✗ Pas encore. Le condenseur rejette de la chaleur.";
+        }));
+      };
+      document.querySelector("#listen").addEventListener("click", () => {
+        speechSynthesis.cancel();
+        speechSynthesis.speak(new SpeechSynthesisUtterance(steps[current].voice));
+      });
+      document.querySelector("#next").addEventListener("click", () => {
+        if (current < steps.length - 1) { current += 1; render(); }
+      });
+      render();
+    })();
+  </script>
+</body>
+</html>

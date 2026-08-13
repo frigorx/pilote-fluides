@@ -27,6 +27,8 @@ packs/fluides/res/docs/
 .DS_Store
 Thumbs.db
 node_modules/
+__pycache__/
+*.pyc
 
 # ============================================================
 #  LE COFFRE DOCUMENTAIRE (docs/coffre/) EST PUBLIÉ, CHIFFRÉ
