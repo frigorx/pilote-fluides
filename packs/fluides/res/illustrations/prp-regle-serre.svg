@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 464" role="img"
+     aria-label="La chaîne réglementaire : plus le PRP est fort, plus la règle serre. Trois étages de la même vis : le règlement F-Gas européen fait baisser les quotas de HFC mis sur le marché, année après année ; il programme l'interdiction de certains fluides à fort PRP dans de nombreux équipements neufs ; et l'amendement de Kigali applique la même logique à l'échelle mondiale. La conclusion de la frise : il n'existe pas de fluide parfait, il existe des professionnels bien formés.">
+  <title>Plus le PRP est fort, plus la règle serre</title>
+  <style>
+    .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .st  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lg  { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .sm  { font:400 12px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .bad { font:700 13px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+    .p   { fill:none; stroke:#1b3a63; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+    .acc { fill:none; stroke:#c9451a; stroke-width:2.8; stroke-linecap:round; stroke-linejoin:round; }
+    .dash{ fill:none; stroke:#8fa3b8; stroke-width:1.6; stroke-dasharray:5 5; }
+  </style>
+
+  <rect width="880" height="464" fill="#ffffff"/>
+  <text class="t" x="30" y="32">La même vis, serrée à trois étages</text>
+
+  <!-- ============ L'AXE PRP ============ -->
+  <rect x="60" y="70" width="150" height="310" rx="10" fill="#fdeee8" stroke="#c9451a" stroke-width="2.2"/>
+  <text class="st" x="135" y="100" text-anchor="middle" fill="#a8410f">le PRP</text>
+  <!-- barre qui monte -->
+  <rect x="110" y="150" width="50" height="190" fill="#ffffff" stroke="#c9451a" stroke-width="2"/>
+  <rect x="110" y="220" width="50" height="120" fill="#c9451a">
+    <animate attributeName="y" values="300;220;300" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="height" values="40;120;40" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <text class="sm" x="135" y="366" text-anchor="middle">plus il est fort…</text>
+
+  <!-- flèche vers la vis -->
+  <path class="acc" d="M215,225 h60 m-12,-8 12,8 -12,8"/>
+
+  <!-- ============ LES TROIS ÉTAGES ============ -->
+  <g>
+    <rect x="290" y="72" width="530" height="94" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.2"/>
+    <text class="st" x="315" y="102">1 · Les QUOTAS baissent — F-Gas (UE)</text>
+    <text class="lg" x="315" y="126">La quantité de HFC qu'on a le droit de mettre sur le marché</text>
+    <text class="lg" x="315" y="146">diminue année après année. Acheter du fluide devient plus dur.</text>
+    <!-- escalier qui descend -->
+    <path class="acc" d="M700,96 h24 v14 h24 v14 h24 v14 h24"/>
+  </g>
+  <g>
+    <rect x="290" y="178" width="530" height="94" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.2"/>
+    <text class="st" x="315" y="208">2 · Des INTERDICTIONS dans le neuf — F-Gas (UE)</text>
+    <text class="lg" x="315" y="232">Certains fluides à fort PRP sont interdits dans de nombreux</text>
+    <text class="lg" x="315" y="252">équipements neufs. Le choix du fluide n'est plus libre.</text>
+    <g transform="translate(760,224)">
+      <circle r="26" fill="none" stroke="#c9451a" stroke-width="4"/>
+      <path d="M-17,-17 L17,17" stroke="#c9451a" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g>
+    <rect x="290" y="284" width="530" height="94" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.2"/>
+    <text class="st" x="315" y="314">3 · Le MONDE suit — amendement de Kigali</text>
+    <text class="lg" x="315" y="338">Les HFC entrent au protocole de Montréal : un calendrier</text>
+    <text class="lg" x="315" y="358">mondial de réduction est enclenché. Pas d'échappatoire.</text>
+    <circle cx="762" cy="330" r="24" fill="none" stroke="#1b3a63" stroke-width="2.4"/>
+    <path class="p" d="M738,330 h48 M762,306 c-12,14 -12,34 0,48 c12,-14 12,-34 0,-48" stroke-width="1.8"/>
+  </g>
+
+  <!-- morale -->
+  <path class="dash" d="M60,404 h760"/>
+  <text class="st" x="440" y="432" text-anchor="middle">Il n'existe pas de fluide parfait. Il existe des professionnels bien formés.</text>
+  <text class="lg" x="440" y="454" text-anchor="middle">C'est la dernière phrase de la frise — et c'est vous.</text>
+</svg>

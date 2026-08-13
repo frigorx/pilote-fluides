@@ -549,6 +549,46 @@ function main() {
     }
   }
 
+  /* -------------------------------------------------------------------
+     ILLUSTRATIONS ET RESSOURCES DE REMÉDIATION  (chantier du 13/08/2026)
+     -------------------------------------------------------------------
+     Posées question par question dans l'atelier de relecture du Hub
+     (inerweb-habilitation, inc. 33 : « 100 % partout, je contrôle
+     après »), elles arrivent par un FICHIER DE DONNÉES :
+     packs/fluides/illustrations-questions.json, écrit par
+     appliquer-illustrations.mjs côté Hub. Chemins relatifs à
+     packs/fluides/res/ (le base_img du pack). Le moteur affiche
+     l'illustration avec la question, et les ressources typées dans la
+     remédiation (réponse fausse → aide → remédiation → chapitre).
+     ------------------------------------------------------------------- */
+  const cheminIllustrations = resolve(RACINE, "packs/fluides/illustrations-questions.json");
+  let illustrees = 0;
+  if (existsSync(cheminIllustrations)) {
+    const fichier = JSON.parse(readFileSync(cheminIllustrations, "utf8"));
+    const parId = new Map(banque.map((q) => [q.id, q]));
+    const res = resolve(RACINE, "packs/fluides/res");
+    for (const [id, i] of Object.entries(fichier.questions || {})) {
+      const q = parId.get(id);
+      if (!q) {
+        erreurs.push("illustrations : question " + id + " absente de la banque");
+        continue;
+      }
+      if (i.illustration) {
+        if (!existsSync(resolve(res, i.illustration)))
+          erreurs.push(id + " : fichier d'illustration absent : " + i.illustration);
+        q.illustration = i.illustration;
+        if (i.pose_niveau) q.pose_niveau = i.pose_niveau;
+        illustrees++;
+      }
+      if (Array.isArray(i.ressources) && i.ressources.length) {
+        for (const r of i.ressources)
+          if (r.chemin && !existsSync(resolve(res, r.chemin)))
+            erreurs.push(id + " : ressource absente : " + r.chemin);
+        q.ressources = i.ressources;
+      }
+    }
+  }
+
   /* --- contrôles --- */
   const vus = new Set();
   for (const q of banque) {
@@ -580,6 +620,7 @@ function main() {
   console.log("  répartition : " + JSON.stringify(parGroupe));
   console.log("  corrections éditoriales appliquées : " + corrigees);
   console.log("  distracteurs réécrits (corrections-distracteurs.json) : " + distracteurs);
+  console.log("  questions illustrées (illustrations-questions.json) : " + illustrees);
 }
 
 main();

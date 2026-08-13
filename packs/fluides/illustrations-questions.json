@@ -1,0 +1,3009 @@
+{
+ "commentaire": "Illustrations et ressources des questions d'entraînement — chantier du 13/08/2026. Généré par le Hub (inerweb-habilitation/outils/appliquer-illustrations.mjs) à partir des poses de l'atelier ; ne pas éditer à la main : corriger dans l'atelier, regénérer le lot, relancer. Lu par build/convert.mjs. Les chemins sont relatifs à packs/fluides/res/.",
+ "questions": {
+  "q-g1-151": {
+   "illustration": "illustrations/sup-cours-1-04-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Croix frigoriste",
+     "chemin": "illustrations/croix-frigoriste.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ]
+  },
+  "q-g1-160": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ]
+  },
+  "q-g1-62": {
+   "illustration": "illustrations/sup-cours-1-01-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Pression absolue relative",
+     "chemin": "illustrations/pression-absolue-relative.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Pression temperature interactive",
+     "chemin": "pression-temperature-interactive/index.html"
+    }
+   ]
+  },
+  "q-g1-v6_042": {
+   "illustration": "illustrations/sup-cours-1-03-7CE9B528.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Bulle rosee",
+     "chemin": "illustrations/bulle-rosee.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Pression temperature interactive",
+     "chemin": "pression-temperature-interactive/index.html"
+    }
+   ]
+  },
+  "q-g1-v6_041": {
+   "illustration": "illustrations/sup-cours-1-03-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Diagramme logph",
+     "chemin": "illustrations/diagramme-logph.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Pression temperature interactive",
+     "chemin": "pression-temperature-interactive/index.html"
+    }
+   ]
+  },
+  "q-g1-v6_048": {
+   "illustration": "illustrations/sup-cours-1-02-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La chaleur surchauffe sousrefroidissement",
+     "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+    }
+   ]
+  },
+  "q-g1-v6_145": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur interactive",
+     "chemin": "chaleur-interactive/index.html"
+    }
+   ]
+  },
+  "q-g1-153": {
+   "illustration": "illustrations/sup-cours-1-04-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ]
+  },
+  "q-g1-154": {
+   "illustration": "illustrations/sup-cours-1-04-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ]
+  },
+  "q-g1-157": {
+   "illustration": "illustrations/sup-cours-1-02-F6773E86.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur circuit interactif",
+     "chemin": "chaleur-circuit-interactif/index.html"
+    }
+   ]
+  },
+  "q-g1-158": {
+   "illustration": "illustrations/sup-cours-1-02-819DA516.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur circuit interactif",
+     "chemin": "chaleur-circuit-interactif/index.html"
+    }
+   ]
+  },
+  "q-g1-v6_141": {
+   "illustration": "illustrations/sup-cours-1-04-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ]
+  },
+  "q-g1-v6_142": {
+   "illustration": "illustrations/sup-cours-1-04-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ]
+  },
+  "q-g1-v6_146": {
+   "illustration": "illustrations/sup-cours-1-04-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur circuit interactif",
+     "chemin": "chaleur-circuit-interactif/index.html"
+    }
+   ]
+  },
+  "q-g1-v6_040": {
+   "illustration": "illustrations/enu-bibliotheque-symboles-svg-frigo-schema-detendeur-thermo-ext-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Le circuit detendeur",
+     "chemin": "illustrations/le-circuit_detendeur.svg"
+    }
+   ]
+  },
+  "q-g1-v6_045": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur circuit interactif",
+     "chemin": "chaleur-circuit-interactif/index.html"
+    }
+   ]
+  },
+  "q-g1-v6_046": {
+   "illustration": "illustrations/sup-cours-1-03-7CE9B528.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Diagramme logph",
+     "chemin": "illustrations/diagramme-logph.svg"
+    }
+   ]
+  },
+  "q-g1-v6_143": {
+   "illustration": "illustrations/sup-cours-1-03-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Diagramme logph",
+     "chemin": "illustrations/diagramme-logph.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Saturation deux sens",
+     "chemin": "illustrations/saturation-deux-sens.svg"
+    }
+   ]
+  },
+  "q-g1-31": {
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
+  },
+  "q-g1-33": {
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "Nomenclature",
+     "chemin": "illustrations/nomenclature.svg"
+    }
+   ]
+  },
+  "q-g1-34": {
+   "illustration": "illustrations/sup-cours-1-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
+  },
+  "q-g1-36": {
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
+  },
+  "q-g1-41": {
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
+  },
+  "q-g1-45": {
+   "illustration": "illustrations/sup-cours-1-07-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
+  },
+  "q-g1-51": {
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
+  },
+  "q-g1-v6_031": {
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "Nomenclature",
+     "chemin": "illustrations/nomenclature.svg"
+    }
+   ]
+  },
+  "q-g1-v6_132": {
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
+  },
+  "q-g1-v6_137": {
+   "illustration": "illustrations/sup-contexte-g1-F6773E86.png",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
+  },
+  "pk-g0-1": {
+   "illustration": "illustrations/sup-cours-1-00-0A8DFFB1.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Aptitude capacite",
+     "chemin": "illustrations/aptitude-capacite.svg"
+    }
+   ]
+  },
+  "pk-g1c-1": {
+   "illustration": "illustrations/sup-cours-1-06-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
+  },
+  "pk-g1c-2": {
+   "illustration": "illustrations/sup-cours-1-07-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Nomenclature interactive",
+     "chemin": "nomenclature-interactive/index.html"
+    }
+   ]
+  },
+  "pk-g1s-1": {
+   "illustration": "illustrations/sup-cours-1-02-819DA516.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Palier chaleur latente",
+     "chemin": "illustrations/palier-chaleur-latente.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Chaleur interactive",
+     "chemin": "chaleur-interactive/index.html"
+    }
+   ]
+  },
+  "pk-g1s-2": {
+   "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Le circuit evaporateur",
+     "chemin": "illustrations/le-circuit_evaporateur.svg"
+    }
+   ]
+  },
+  "pk-g1s-3": {
+   "illustration": "illustrations/sup-cours-1-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur interactive",
+     "chemin": "chaleur-interactive/index.html"
+    }
+   ]
+  },
+  "pk-g1s-4": {
+   "illustration": "illustrations/sup-cours-1-02-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Palier chaleur latente",
+     "chemin": "illustrations/palier-chaleur-latente.svg"
+    }
+   ]
+  },
+  "pk-g1b-1": {
+   "illustration": "illustrations/sup-cours-1-03-7CE9B528.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Diagramme logph",
+     "chemin": "illustrations/diagramme-logph.svg"
+    }
+   ]
+  },
+  "pk-g1b-2": {
+   "illustration": "illustrations/sup-cours-1-03-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur interactive",
+     "chemin": "chaleur-interactive/index.html"
+    }
+   ]
+  },
+  "pk-g1b-3": {
+   "illustration": "illustrations/sup-cours-1-03-7CE9B528.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Diagramme logph",
+     "chemin": "illustrations/diagramme-logph.svg"
+    }
+   ]
+  },
+  "pk-g1e-1": {
+   "illustration": "illustrations/sup-cours-1-02-F6773E86.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La chaleur surchauffe sousrefroidissement",
+     "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+    }
+   ]
+  },
+  "pk-g1e-2": {
+   "illustration": "illustrations/sup-cours-1-02-819DA516.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La chaleur surchauffe sousrefroidissement",
+     "chemin": "illustrations/la-chaleur_surchauffe-sousrefroidissement.svg"
+    }
+   ]
+  },
+  "pk-g1e-3": {
+   "illustration": "illustrations/sup-cours-1-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Surchauffe utile totale",
+     "chemin": "illustrations/surchauffe-utile-totale.svg"
+    }
+   ]
+  },
+  "pk-g1e-4": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Chaleur interactive",
+     "chemin": "chaleur-interactive/index.html"
+    }
+   ]
+  },
+  "q-g10-v6_061": {
+   "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Balayage azote",
+     "chemin": "illustrations/balayage-azote.svg"
+    }
+   ]
+  },
+  "q-g10-87": {
+   "illustration": "illustrations/photo-cintreuse-etabli.png",
+   "ressources": [
+    {
+     "type": "lien",
+     "libelle": "TP initiation au cintrage (pas à pas photo)",
+     "url": "https://frigorx.github.io/tp-cintrage/"
+    }
+   ]
+  },
+  "q-g10-69": {
+   "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Balayage azote",
+     "chemin": "illustrations/balayage-azote.svg"
+    }
+   ]
+  },
+  "q-g11-v6_033": {
+   "illustration": "illustrations/sup-cours-11-03-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "q-g11-v6_140": {
+   "illustration": "illustrations/sup-cours-11-03-70D0D9E9.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "q-g11-54": {
+   "illustration": "illustrations/sup-cours-11-03-DAF5A7C7.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "q-g11-v6_030": {
+   "illustration": "illustrations/sup-cours-11-01-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Autorises hfo naturels",
+     "chemin": "illustrations/autorises-hfo-naturels.svg"
+    }
+   ]
+  },
+  "q-g11-v6_092": {
+   "illustration": "illustrations/sup-cours-11-03-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "q-g11-185": {
+   "illustration": "illustrations/sup-cours-11-02-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Bilan thermique performance interactif",
+     "chemin": "bilan-thermique-performance-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "Bilan energie",
+     "chemin": "illustrations/bilan-energie.svg"
+    }
+   ]
+  },
+  "q-g11-v6_047": {
+   "illustration": "illustrations/sup-cours-1-02-F6773E86.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Bilan energie",
+     "chemin": "illustrations/bilan-energie.svg"
+    }
+   ]
+  },
+  "q-g11-v6_147": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Bilan energie",
+     "chemin": "illustrations/bilan-energie.svg"
+    }
+   ]
+  },
+  "q-g11-v6_183": {
+   "illustration": "illustrations/sup-cours-11-03-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "pk-q-11.04": {
+   "illustration": "illustrations/sup-cours-11-04-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Bilan thermique performance interactif",
+     "chemin": "bilan-thermique-performance-interactif/index.html"
+    }
+   ]
+  },
+  "pk-q-11.05": {
+   "illustration": "illustrations/sup-cours-11-05-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ]
+  },
+  "pk-cl3-1": {
+   "illustration": "illustrations/sup-cours-11-03-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "pk-cl3-2": {
+   "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "pk-cl3-3": {
+   "illustration": "illustrations/sup-cours-11-03-70D0D9E9.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "q-g12-v6_091": {
+   "illustration": "illustrations/sup-cours-12-03-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Charge limite local",
+     "chemin": "illustrations/charge-limite-local.svg"
+    }
+   ]
+  },
+  "q-g12-v6_181": {
+   "illustration": "illustrations/sup-cours-1-07-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Hydrocarbures a1 a2",
+     "chemin": "hydrocarbures-a1-a2/index.html"
+    }
+   ]
+  },
+  "q-g12-v6_093": {
+   "illustration": "illustrations/sup-cours-12-02-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "q-g12-v6_184": {
+   "illustration": "illustrations/sup-cours-12-02-9D0D9800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ]
+  },
+  "q-g12-291": {
+   "illustration": "illustrations/bib-es-02-gestion-des-risques-en-atelier-cor-35ecc279.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ]
+  },
+  "q-g12-286": {
+   "illustration": "illustrations/sup-cours-12-04-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite vitesse flamme",
+     "chemin": "illustrations/classes-de-securite_vitesse-flamme.svg"
+    }
+   ]
+  },
+  "q-g12-289": {
+   "illustration": "illustrations/sup-cours-1-08-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite chiffre feu",
+     "chemin": "illustrations/classes-de-securite_chiffre-feu.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "pk-g12b-1": {
+   "illustration": "illustrations/sup-cours-12-07-2A9E51B1.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ]
+  },
+  "pk-g12b-2": {
+   "illustration": "illustrations/bib-001-l-outillage-du-frigoriste-unlocked-b-ebc9a739.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide courbes remontee",
+     "chemin": "illustrations/tirage-au-vide_courbes-remontee.svg"
+    }
+   ]
+  },
+  "pk-g12b-3": {
+   "illustration": "illustrations/sup-cours-12-10-2A9E51B1.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Pesee charge",
+     "chemin": "illustrations/pesee-charge.svg"
+    }
+   ]
+  },
+  "pk-g12b-4": {
+   "illustration": "illustrations/sup-cours-12-11-2A9E51B1.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ]
+  },
+  "pk-p7-1": {
+   "illustration": "illustrations/sup-cours-12-04-FC9D2706.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ]
+  },
+  "pk-p7-2": {
+   "illustration": "illustrations/sup-cours-12-05-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ]
+  },
+  "pk-q-12.01": {
+   "illustration": "illustrations/bib-fiche-synthese-activites-3-bouteille-sec-ca000acf.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Hydrocarbures a1 a2",
+     "chemin": "hydrocarbures-a1-a2/index.html"
+    }
+   ]
+  },
+  "pk-q-12.08": {
+   "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Epreuve azote",
+     "chemin": "illustrations/epreuve-azote.svg"
+    }
+   ]
+  },
+  "pk-q-12.12": {
+   "illustration": "illustrations/sup-cours-12-12-2A9E51B1.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ]
+  },
+  "pk-q-12.13": {
+   "illustration": "illustrations/sup-cours-12-13-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Intervention hydrocarbures interactive",
+     "chemin": "intervention-hydrocarbures-interactive/index.html"
+    }
+   ]
+  },
+  "pk-q-12.14": {
+   "illustration": "illustrations/sup-cours-12-14-FC9D2706.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Charge limite local",
+     "chemin": "illustrations/charge-limite-local.svg"
+    }
+   ]
+  },
+  "pk-cl2-1": {
+   "illustration": "illustrations/sup-cours-12-02-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Hydrocarbures a1 a2",
+     "chemin": "hydrocarbures-a1-a2/index.html"
+    }
+   ]
+  },
+  "pk-cl2-2": {
+   "illustration": "illustrations/sup-cours-12-02-0382EBB2.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Hydrocarbures a1 a2",
+     "chemin": "hydrocarbures-a1-a2/index.html"
+    }
+   ]
+  },
+  "pk-cl2-3": {
+   "illustration": "illustrations/sup-cours-12-02-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Hydrocarbures a1 a2",
+     "chemin": "hydrocarbures-a1-a2/index.html"
+    }
+   ]
+  },
+  "q-g13-v6_088": {
+   "illustration": "illustrations/sup-cours-1-09-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite co2 risques",
+     "chemin": "illustrations/classes-de-securite_co2-risques.svg"
+    }
+   ]
+  },
+  "q-g13-v6_185": {
+   "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Teqco2 calcul",
+     "chemin": "illustrations/teqco2-calcul.svg"
+    }
+   ]
+  },
+  "q-g13-v6_090": {
+   "illustration": "illustrations/sup-contexte-g13-302EC180.webp",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 nh3 compare",
+     "chemin": "illustrations/co2-nh3-compare.svg"
+    }
+   ]
+  },
+  "q-g13-v6_094": {
+   "illustration": "illustrations/sup-contexte-g13-302EC180.webp",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 nh3 compare",
+     "chemin": "illustrations/co2-nh3-compare.svg"
+    }
+   ]
+  },
+  "q-g13-v6_182": {
+   "illustration": "illustrations/sup-contexte-g13-302EC180.webp",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 nh3 compare",
+     "chemin": "illustrations/co2-nh3-compare.svg"
+    }
+   ]
+  },
+  "q-g13-283": {
+   "illustration": "illustrations/sup-cours-13-14-0382EBB2.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 protection",
+     "chemin": "illustrations/co2-protection.svg"
+    }
+   ]
+  },
+  "q-g13-302": {
+   "illustration": "illustrations/sup-cours-13-14-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 protection",
+     "chemin": "illustrations/co2-protection.svg"
+    }
+   ]
+  },
+  "pk-g13-1": {
+   "illustration": "illustrations/sup-cours-13-01-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite co2 risques",
+     "chemin": "illustrations/classes-de-securite_co2-risques.svg"
+    }
+   ]
+  },
+  "pk-g13-2": {
+   "illustration": "illustrations/sup-cours-14-01-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 nh3 compare",
+     "chemin": "illustrations/co2-nh3-compare.svg"
+    }
+   ]
+  },
+  "pk-g13-3": {
+   "illustration": "illustrations/sup-cours-13-04-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite co2 risques",
+     "chemin": "illustrations/classes-de-securite_co2-risques.svg"
+    }
+   ]
+  },
+  "pk-g13-4": {
+   "illustration": "illustrations/sup-cours-14-01-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 nh3 compare",
+     "chemin": "illustrations/co2-nh3-compare.svg"
+    }
+   ]
+  },
+  "pk-cl4-1": {
+   "illustration": "illustrations/sup-cours-13-14-0382EBB2.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 point bas",
+     "chemin": "illustrations/co2-point-bas.svg"
+    }
+   ]
+  },
+  "pk-cl4-2": {
+   "illustration": "illustrations/bib-c3-1-53ffef9b.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 protection",
+     "chemin": "illustrations/co2-protection.svg"
+    }
+   ]
+  },
+  "pk-cl4-3": {
+   "illustration": "illustrations/sup-cours-13-14-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Co2 protection",
+     "chemin": "illustrations/co2-protection.svg"
+    }
+   ]
+  },
+  "pk-cl1-1": {
+   "illustration": "illustrations/sup-cours-1-08-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Classes de securite classe methode",
+     "chemin": "illustrations/classes-de-securite_classe-methode.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "pk-cl1-2": {
+   "illustration": "illustrations/sup-cours-1-08-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "pk-cl1-3": {
+   "illustration": "illustrations/sup-cours-1-08-47A3A800.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Cours classes securite",
+     "chemin": "cours-classes-securite/index.html"
+    }
+   ]
+  },
+  "pk-g0-2": {
+   "illustration": "illustrations/bib-ep1-2ifca-bbrmodie-correction-8e9eb74f.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation la trace",
+     "chemin": "illustrations/la-recuperation_la-trace.svg"
+    }
+   ]
+  },
+  "q-g2-v6_001": {
+   "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Prp regle serre",
+     "chemin": "illustrations/prp-regle-serre.svg"
+    },
+    {
+     "type": "outil",
+     "libelle": "Fiche fluide",
+     "chemin": "outils/fiche-fluide.html"
+    }
+   ]
+  },
+  "q-g2-5": {
+   "illustration": "illustrations/sup-cours-2-01-7041C98E.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ]
+  },
+  "q-g2-v6_003": {
+   "illustration": "illustrations/sup-cours-2-01-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ]
+  },
+  "q-g2-v6_004": {
+   "illustration": "illustrations/sup-cours-2-02-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ]
+  },
+  "q-g2-v6_113": {
+   "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Prp regle serre",
+     "chemin": "illustrations/prp-regle-serre.svg"
+    },
+    {
+     "type": "outil",
+     "libelle": "Fiche fluide",
+     "chemin": "outils/fiche-fluide.html"
+    }
+   ]
+  },
+  "q-g2-v6_002": {
+   "illustration": "illustrations/sup-cours-2-01-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ]
+  },
+  "q-g2-v6_008": {
+   "illustration": "illustrations/sup-cours-2-01-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Prp regle serre",
+     "chemin": "illustrations/prp-regle-serre.svg"
+    }
+   ]
+  },
+  "q-g2-v6_010": {
+   "illustration": "illustrations/sup-cours-2-01-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ]
+  },
+  "q-g2-v6_106": {
+   "illustration": "illustrations/sup-cours-2-01-7041C98E.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Prp regle serre",
+     "chemin": "illustrations/prp-regle-serre.svg"
+    }
+   ]
+  },
+  "q-g2-v6_107": {
+   "illustration": "illustrations/sup-cours-2-01-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Prp regle serre",
+     "chemin": "illustrations/prp-regle-serre.svg"
+    }
+   ]
+  },
+  "q-g2-v6_110": {
+   "illustration": "illustrations/sup-cours-2-01-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ]
+  },
+  "q-g2-v6_111": {
+   "illustration": "illustrations/sup-cours-2-02-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Autorises hfo naturels",
+     "chemin": "illustrations/autorises-hfo-naturels.svg"
+    }
+   ]
+  },
+  "q-g2-v6_114": {
+   "illustration": "illustrations/sup-cours-2-01-7041C98E.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Hfc ozone climat",
+     "chemin": "illustrations/hfc-ozone-climat.svg"
+    }
+   ]
+  },
+  "q-g2-v6_115": {
+   "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "outil",
+     "libelle": "Fiche fluide",
+     "chemin": "outils/fiche-fluide.html"
+    }
+   ]
+  },
+  "q-g2-42": {
+   "illustration": "illustrations/sup-cours-2-02-E32EF21D.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "outil",
+     "libelle": "Fiche fluide",
+     "chemin": "outils/fiche-fluide.html"
+    }
+   ]
+  },
+  "q-g3-v6_058": {
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide",
+     "chemin": "illustrations/tirage-au-vide.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Tirage au vide deux degats eau",
+     "chemin": "illustrations/tirage-au-vide_deux-degats-eau.svg"
+    }
+   ]
+  },
+  "q-g3-v6_059": {
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide courbes remontee",
+     "chemin": "illustrations/tirage-au-vide_courbes-remontee.svg"
+    }
+   ]
+  },
+  "q-g3-v6_062": {
+   "illustration": "illustrations/sup-cours-3-01-B88D83FC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Epreuve azote",
+     "chemin": "illustrations/epreuve-azote.svg"
+    }
+   ]
+  },
+  "q-g3-v6_159": {
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide compresseur pas pompe",
+     "chemin": "illustrations/tirage-au-vide_compresseur-pas-pompe.svg"
+    }
+   ]
+  },
+  "q-g3-66": {
+   "illustration": "illustrations/sup-cours-1-02-4253A670.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Courbe saturation eau",
+     "chemin": "illustrations/courbe-saturation-eau.svg"
+    }
+   ]
+  },
+  "pk-p4-1": {
+   "illustration": "illustrations/sup-cours-3-01-70D0D9E9.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Epreuve azote",
+     "chemin": "illustrations/epreuve-azote.svg"
+    }
+   ]
+  },
+  "pk-p4-2": {
+   "illustration": "illustrations/sup-poste-de-travail-avec-bouteille-d-azote-BA7A4A4D.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide mano vs vacuometre",
+     "chemin": "illustrations/tirage-au-vide_mano-vs-vacuometre.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations epreuve azote svg.svg",
+     "chemin": "illustrations/epreuve-azote.svg"
+    }
+   ]
+  },
+  "pk-q-3.05": {
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-photos-pompe-a-vide-png.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Tirage au vide",
+     "chemin": "illustrations/tirage-au-vide.svg"
+    }
+   ]
+  },
+  "q-g4-v6_074": {
+   "illustration": "illustrations/sup-cours-4-04-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite ou lire",
+     "chemin": "illustrations/controle-etancheite_ou-lire.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ]
+  },
+  "q-g4-v6_072": {
+   "illustration": "illustrations/sup-cours-4-07-A6CE7C28.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ]
+  },
+  "q-g4-v6_163": {
+   "illustration": "illustrations/bib-001-l-outillage-du-frigoriste-unlocked-b-4e4e1981.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations balayage detecteur svg.svg",
+     "chemin": "illustrations/balayage-detecteur.svg"
+    }
+   ]
+  },
+  "q-g4-v6_069": {
+   "illustration": "illustrations/bib-001-l-outillage-du-frigoriste-unlocked-b-4e4e1981.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ]
+  },
+  "q-g4-v6_168": {
+   "illustration": "illustrations/bib-001-l-outillage-du-frigoriste-unlocked-b-4e4e1981.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ]
+  },
+  "q-g4-104": {
+   "illustration": "illustrations/sup-cours-4-03-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite registre",
+     "chemin": "illustrations/controle-etancheite_registre.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ]
+  },
+  "q-g4-114": {
+   "illustration": "illustrations/sup-cours-4-03-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Points de fuite",
+     "chemin": "illustrations/points-de-fuite.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ]
+  },
+  "q-g4-68": {
+   "illustration": "illustrations/sup-cours-4-06-A6CE7C28.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Balayage detecteur",
+     "chemin": "illustrations/balayage-detecteur.svg"
+    }
+   ]
+  },
+  "q-g4-v6_174": {
+   "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite registre",
+     "chemin": "illustrations/controle-etancheite_registre.svg"
+    }
+   ]
+  },
+  "q-g4-107": {
+   "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite registre",
+     "chemin": "illustrations/controle-etancheite_registre.svg"
+    }
+   ]
+  },
+  "q-g4-180": {
+   "illustration": "illustrations/sup-cours-4-06-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite recontrole",
+     "chemin": "illustrations/controle-etancheite_recontrole.svg"
+    }
+   ]
+  },
+  "q-g4-110": {
+   "illustration": "illustrations/sup-cours-4-03-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Etancheite interactive",
+     "chemin": "etancheite-interactive/index.html"
+    }
+   ]
+  },
+  "pk-q-4.01": {
+   "illustration": "illustrations/sup-cours-4-01-FF76C512.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Points de fuite",
+     "chemin": "illustrations/points-de-fuite.svg"
+    }
+   ]
+  },
+  "pk-q-4.02": {
+   "illustration": "illustrations/bib-td-pose-manifold-tirage-au-vide-maximili-fafa6f68.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite recontrole",
+     "chemin": "illustrations/controle-etancheite_recontrole.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations controle etancheite registre svg.svg",
+     "chemin": "illustrations/controle-etancheite_registre.svg"
+    }
+   ]
+  },
+  "pk-q-4.09": {
+   "illustration": "illustrations/sup-cours-4-09-0382EBB2.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Controle etancheite registre",
+     "chemin": "illustrations/controle-etancheite_registre.svg"
+    }
+   ]
+  },
+  "q-g5-v6_063": {
+   "illustration": "illustrations/sup-bouteille-de-recuperation-fleche-de-tran-3BBF9BDE.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Secu bouteille",
+     "chemin": "illustrations/secu-bouteille.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Mission bouteilles",
+     "chemin": "mission-bouteilles/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations bouteille deux robinets svg.svg",
+     "chemin": "illustrations/bouteille-deux-robinets.svg"
+    }
+   ]
+  },
+  "q-g5-v6_156": {
+   "illustration": "illustrations/sup-bouteille-de-recuperation-fleche-de-tran-3BBF9BDE.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Mission bouteilles",
+     "chemin": "mission-bouteilles/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "habilitation contenus illustrations la recuperation une bouteille un fluide svg.svg",
+     "chemin": "illustrations/la-recuperation_une-bouteille-un-fluide.svg"
+    }
+   ]
+  },
+  "q-g5-v6_060": {
+   "illustration": "illustrations/sup-cours-5-05-819DA516.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation liquide vapeur",
+     "chemin": "illustrations/la-recuperation_liquide-vapeur.svg"
+    }
+   ]
+  },
+  "q-g5-v6_064": {
+   "illustration": "illustrations/sup-cours-5-06-D7A129ED.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Pesee charge",
+     "chemin": "illustrations/pesee-charge.svg"
+    }
+   ]
+  },
+  "q-g5-v6_082": {
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation trois mots",
+     "chemin": "illustrations/la-recuperation_trois-mots.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations recuperation svg.svg",
+     "chemin": "illustrations/recuperation.svg"
+    }
+   ]
+  },
+  "q-g5-v6_083": {
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation trois mots",
+     "chemin": "illustrations/la-recuperation_trois-mots.svg"
+    }
+   ]
+  },
+  "q-g5-v6_176": {
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation trois mots",
+     "chemin": "illustrations/la-recuperation_trois-mots.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "La recuperation retour machine",
+     "chemin": "illustrations/la-recuperation_retour-machine.svg"
+    }
+   ]
+  },
+  "q-g5-135": {
+   "illustration": "illustrations/sup-cours-5-04-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation deux papiers",
+     "chemin": "illustrations/la-recuperation_deux-papiers.svg"
+    }
+   ]
+  },
+  "q-g5-v6_175": {
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Recuperation",
+     "chemin": "illustrations/recuperation.svg"
+    }
+   ]
+  },
+  "q-g5-141": {
+   "illustration": "illustrations/sup-cours-5-03-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Mission bouteilles",
+     "chemin": "mission-bouteilles/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations recuperation svg.svg",
+     "chemin": "illustrations/recuperation.svg"
+    }
+   ]
+  },
+  "q-g5-175": {
+   "illustration": "illustrations/photo-manometres-hp-bp.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Circuit complet manifold",
+     "chemin": "illustrations/circuit-complet-manifold.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Manifold lecture",
+     "chemin": "illustrations/manifold-lecture.svg"
+    }
+   ]
+  },
+  "q-g5-176": {
+   "illustration": "illustrations/photo-manometres-hp-bp.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Circuit complet manifold",
+     "chemin": "illustrations/circuit-complet-manifold.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Manifold lecture",
+     "chemin": "illustrations/manifold-lecture.svg"
+    }
+   ]
+  },
+  "q-g5-179": {
+   "illustration": "illustrations/sup-cours-5-03-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Recuperation",
+     "chemin": "illustrations/recuperation.svg"
+    }
+   ]
+  },
+  "q-g5-v6_161": {
+   "illustration": "illustrations/sup-cours-5-05-304B1178.png",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Pesee charge",
+     "chemin": "illustrations/pesee-charge.svg"
+    }
+   ]
+  },
+  "q-g5-v6_170": {
+   "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation deux papiers",
+     "chemin": "illustrations/la-recuperation_deux-papiers.svg"
+    }
+   ]
+  },
+  "q-g5-v6_079": {
+   "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation deux papiers",
+     "chemin": "illustrations/la-recuperation_deux-papiers.svg"
+    }
+   ]
+  },
+  "q-g5-v6_081": {
+   "illustration": "illustrations/bib-moteur-de-registre-af-belimo-79ab7b5f.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation deux papiers",
+     "chemin": "illustrations/la-recuperation_deux-papiers.svg"
+    }
+   ]
+  },
+  "q-g5-128": {
+   "illustration": "illustrations/bouteille-recuperation-verte.jpg",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Recuperation",
+     "chemin": "illustrations/recuperation.svg"
+    }
+   ]
+  },
+  "q-g5-133": {
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation la trace",
+     "chemin": "illustrations/la-recuperation_la-trace.svg"
+    }
+   ]
+  },
+  "q-g5-143": {
+   "illustration": "illustrations/sup-bouteille-de-fluide-derriere-une-barrier-302EC180.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Plaque bouteille",
+     "chemin": "illustrations/plaque-bouteille.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Secu bouteille",
+     "chemin": "illustrations/secu-bouteille.svg"
+    }
+   ]
+  },
+  "q-g5-147": {
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation la trace",
+     "chemin": "illustrations/la-recuperation_la-trace.svg"
+    }
+   ]
+  },
+  "q-g5-v6_177": {
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation la trace",
+     "chemin": "illustrations/la-recuperation_la-trace.svg"
+    }
+   ]
+  },
+  "q-g5-v6_158": {
+   "illustration": "illustrations/sup-cours-5-05-D7A129ED.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation liquide vapeur",
+     "chemin": "illustrations/la-recuperation_liquide-vapeur.svg"
+    }
+   ]
+  },
+  "q-g5-130": {
+   "illustration": "illustrations/sup-cours-5-08-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation la trace",
+     "chemin": "illustrations/la-recuperation_la-trace.svg"
+    }
+   ]
+  },
+  "pk-q-5.09": {
+   "illustration": "illustrations/sup-cours-5-09-D7A129ED.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Secu bouteille",
+     "chemin": "illustrations/secu-bouteille.svg"
+    }
+   ]
+  },
+  "pk-g1e-5": {
+   "illustration": "illustrations/sup-cours-5-05-23DE01BD.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La recuperation liquide vapeur",
+     "chemin": "illustrations/la-recuperation_liquide-vapeur.svg"
+    }
+   ]
+  },
+  "q-g6-152": {
+   "illustration": "illustrations/photo-compresseur-hermetique.png",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Circuit organe par organe",
+     "chemin": "circuit-organe-par-organe/index.html"
+    }
+   ]
+  },
+  "q-g6-231": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-233": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-247": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-240": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-186": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-174": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-234": {
+   "illustration": "illustrations/photo-separateur-huile-alco.jpeg",
+   "ressources": [
+    {
+     "type": "symbole",
+     "libelle": "Separateur huile",
+     "chemin": "illustrations/separateur_huile.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-235": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-v6_054": {
+   "illustration": "illustrations/photo-separateur-huile-alco.jpeg",
+   "ressources": [
+    {
+     "type": "symbole",
+     "libelle": "Separateur huile",
+     "chemin": "illustrations/separateur_huile.svg"
+    }
+   ]
+  },
+  "q-g6-v6_150": {
+   "illustration": "illustrations/bib-robinet-wc-a-potence-da0efce7.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-173": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-177": {
+   "illustration": "illustrations/sup-cours-6-01-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-190": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-241": {
+   "illustration": "illustrations/sup-cours-6-05-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-243": {
+   "illustration": "illustrations/sup-cours-6-05-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-245": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-246": {
+   "illustration": "illustrations/sup-cours-6-05-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-248": {
+   "illustration": "illustrations/sup-cours-6-07-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-249": {
+   "illustration": "illustrations/sup-cours-6-01-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-251": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-252": {
+   "illustration": "illustrations/sup-cours-6-01-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-v6_152": {
+   "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "q-g6-v6_153": {
+   "illustration": "illustrations/sup-cours-6-01-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "pk-q-6.02": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "pk-q-6.03": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "pk-q-6.04": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "pk-q-6.08": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Bilan thermique performance interactif",
+     "chemin": "bilan-thermique-performance-interactif/index.html"
+    }
+   ]
+  },
+  "q-g7-159": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    }
+   ]
+  },
+  "q-g7-164": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations echangeur air svg.svg",
+     "chemin": "illustrations/echangeur-air.svg"
+    }
+   ]
+  },
+  "q-g7-163": {
+   "illustration": "illustrations/bib-technologie-des-condenseurs-ef0dfbd5.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations echangeur air svg.svg",
+     "chemin": "illustrations/echangeur-air.svg"
+    }
+   ]
+  },
+  "q-g7-182": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe sous refroidissement",
+     "chemin": "illustrations/la-surchauffe_sous-refroidissement.svg"
+    }
+   ]
+  },
+  "q-g7-169": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe sous refroidissement",
+     "chemin": "illustrations/la-surchauffe_sous-refroidissement.svg"
+    }
+   ]
+  },
+  "q-g7-170": {
+   "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    }
+   ]
+  },
+  "q-g7-v6_057": {
+   "illustration": "illustrations/photo-pressostat-danfoss-kp2.jpeg",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ]
+  },
+  "q-g7-71": {
+   "illustration": "illustrations/sup-cours-7-07-1032BF54.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe sous refroidissement",
+     "chemin": "illustrations/la-surchauffe_sous-refroidissement.svg"
+    }
+   ]
+  },
+  "pk-g7b-1": {
+   "illustration": "illustrations/bib-lycee-professionnel-prive-38209cca.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Epreuve azote",
+     "chemin": "illustrations/epreuve-azote.svg"
+    }
+   ]
+  },
+  "pk-g7b-2": {
+   "illustration": "illustrations/bib-de-fsx-35028-9625ce14.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    }
+   ]
+  },
+  "pk-q-7.05": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations echangeur air svg.svg",
+     "chemin": "illustrations/echangeur-air.svg"
+    }
+   ]
+  },
+  "pk-q-7.06": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    }
+   ]
+  },
+  "pk-q-7.09": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    }
+   ]
+  },
+  "pk-q-7.10": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Condenseur interactif",
+     "chemin": "condenseur-interactif/index.html"
+    },
+    {
+     "type": "page",
+     "libelle": "Bilan thermique performance interactif",
+     "chemin": "bilan-thermique-performance-interactif/index.html"
+    }
+   ]
+  },
+  "pk-g7b-3": {
+   "illustration": "illustrations/sup-cours-7-02-1032BF54.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ]
+  },
+  "pk-g7b-4": {
+   "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ]
+  },
+  "q-g8-v6_039": {
+   "illustration": "illustrations/sup-cours-8-01-B321BDBC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ]
+  },
+  "q-g8-181": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe calcul",
+     "chemin": "illustrations/la-surchauffe_calcul.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Mesure surchauffe",
+     "chemin": "illustrations/mesure-surchauffe.svg"
+    }
+   ]
+  },
+  "q-g8-183": {
+   "illustration": "illustrations/sup-cours-8-08-B321BDBC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe cible",
+     "chemin": "illustrations/la-surchauffe_cible.svg"
+    }
+   ]
+  },
+  "q-g8-184": {
+   "illustration": "illustrations/sup-cours-8-08-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe cible",
+     "chemin": "illustrations/la-surchauffe_cible.svg"
+    }
+   ]
+  },
+  "q-g8-178": {
+   "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Givre degivrage",
+     "chemin": "illustrations/givre-degivrage.svg"
+    },
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ]
+  },
+  "q-g8-v6_043": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe cible",
+     "chemin": "illustrations/la-surchauffe_cible.svg"
+    }
+   ]
+  },
+  "q-g8-166": {
+   "illustration": "illustrations/sup-cours-8-08-B321BDBC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "La surchauffe cible",
+     "chemin": "illustrations/la-surchauffe_cible.svg"
+    }
+   ]
+  },
+  "q-g8-167": {
+   "illustration": "illustrations/bib-pose-et-d-pose-docoune-paire-de-manom-tr-315a0433.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Givre degivrage",
+     "chemin": "illustrations/givre-degivrage.svg"
+    }
+   ]
+  },
+  "q-g8-171": {
+   "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ]
+  },
+  "q-g8-70": {
+   "illustration": "illustrations/sup-cours-8-08-5E5BFD27.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Mesure surchauffe",
+     "chemin": "illustrations/mesure-surchauffe.svg"
+    }
+   ]
+  },
+  "pk-g8b-1": {
+   "illustration": "illustrations/bib-s6-act-6-pressostats-1e645f81.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ]
+  },
+  "pk-g8b-2": {
+   "illustration": "illustrations/sup-cours-8-04-B321BDBC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ]
+  },
+  "pk-g8b-3": {
+   "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "inerweb habilitation contenus illustrations givre degivrage svg.svg",
+     "chemin": "illustrations/givre-degivrage.svg"
+    }
+   ]
+  },
+  "pk-g8b-4": {
+   "illustration": "illustrations/bib-tp-02-les-composants-frigorifiques-79eb4616.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ]
+  },
+  "pk-q-8.02": {
+   "illustration": "illustrations/bib-dscn6650-e8f63388.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ]
+  },
+  "pk-q-8.05": {
+   "illustration": "illustrations/bib-tp-02-les-composants-frigorifiques-79eb4616.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Le circuit evaporateur",
+     "chemin": "illustrations/le-circuit_evaporateur.svg"
+    }
+   ]
+  },
+  "pk-q-8.07": {
+   "illustration": "illustrations/bib-tp-02-les-composants-frigorifiques-686265a9.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ]
+  },
+  "pk-q-8.10": {
+   "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Evaporateur interactif",
+     "chemin": "evaporateur-interactif/index.html"
+    }
+   ]
+  },
+  "pk-g8b-5": {
+   "illustration": "illustrations/bib-tp-02-les-composants-frigorifiques-79eb4616.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ]
+  },
+  "pk-g8b-6": {
+   "illustration": "illustrations/sup-cours-8-07-B321BDBC.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    },
+    {
+     "type": "image",
+     "libelle": "Le circuit evaporateur",
+     "chemin": "illustrations/le-circuit_evaporateur.svg"
+    }
+   ]
+  },
+  "q-g9-v6_049": {
+   "illustration": "illustrations/enu-bibliotheque-symboles-svg-frigo-schema-detendeur-thermo-ext-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    },
+    {
+     "type": "image",
+     "libelle": "Detendeur regulation",
+     "chemin": "illustrations/detendeur-regulation.svg"
+    }
+   ]
+  },
+  "q-g9-v6_055": {
+   "illustration": "illustrations/u-bibliotheque-symboles-svg-frigo-schema-detendeur-electronique-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ]
+  },
+  "q-g9-v6_149": {
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-symboles-tube-capillaire-svg.svg",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ]
+  },
+  "q-g9-187": {
+   "illustration": "illustrations/bib-soudage-oa-rempli-pdf-232c7654.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ]
+  },
+  "q-g9-188": {
+   "illustration": "illustrations/enu-bibliotheque-symboles-svg-frigo-schema-detendeur-thermo-ext-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ]
+  },
+  "q-g9-v6_050": {
+   "illustration": "illustrations/bib-froid-commercial-et-chambres-froides-ab36b003.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ]
+  },
+  "q-g9-v6_051": {
+   "illustration": "illustrations/sup-voyant-liquide-en-laiton-photo-E59D07B7.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ]
+  },
+  "q-g9-v6_052": {
+   "illustration": "illustrations/ine-contenu-bibliotheque-symboles-svg-capteurs-froid-pressostat-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ]
+  },
+  "q-g9-v6_155": {
+   "illustration": "illustrations/bib-robinet-wc-a-potence-da0efce7.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Electrovanne interactive",
+     "chemin": "electrovanne-interactive/index.html"
+    }
+   ]
+  },
+  "q-g9-172": {
+   "illustration": "illustrations/bib-froid-commercial-et-chambres-froides-ab36b003.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ]
+  },
+  "q-g9-168": {
+   "illustration": "illustrations/sup-voyant-liquide-en-laiton-photo-E59D07B7.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ]
+  },
+  "q-g9-161": {
+   "illustration": "illustrations/sup-cours-9-08-21D269D2.webp",
+   "pose_niveau": "cours",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ]
+  },
+  "q-g9-162": {
+   "illustration": "illustrations/sup-voyant-liquide-en-laiton-photo-E59D07B7.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ]
+  },
+  "q-g9-v6_053": {
+   "illustration": "illustrations/bib-robinet-wc-a-potence-da0efce7.jpg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Vanne service interactive",
+     "chemin": "vanne-service-interactive/index.html"
+    }
+   ]
+  },
+  "q-g9-v6_151": {
+   "illustration": "illustrations/bib-froid-commercial-et-chambres-froides-ab36b003.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ]
+  },
+  "q-g9-v6_154": {
+   "illustration": "illustrations/sup-voyant-liquide-en-laiton-photo-E59D07B7.webp",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Detendeurs ligne",
+     "chemin": "illustrations/detendeurs-ligne.svg"
+    }
+   ]
+  },
+  "q-g9-189": {
+   "illustration": "illustrations/u-bibliotheque-symboles-svg-frigo-schema-detendeur-electronique-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ]
+  },
+  "pk-g9b-1": {
+   "illustration": "illustrations/contenu-bibliotheque-symboles-svg-capteurs-froid-thermostat-nf-sans-reperes-svg.svg",
+   "ressources": [
+    {
+     "type": "symbole",
+     "libelle": "Thermostat froid",
+     "chemin": "illustrations/thermostat_froid.svg"
+    }
+   ]
+  },
+  "pk-g9b-2": {
+   "illustration": "illustrations/photo-separateur-huile-alco.jpeg",
+   "ressources": [
+    {
+     "type": "symbole",
+     "libelle": "Separateur huile",
+     "chemin": "illustrations/separateur_huile.svg"
+    }
+   ]
+  },
+  "pk-g9b-3": {
+   "illustration": "illustrations/ine-contenu-bibliotheque-symboles-svg-capteurs-froid-pressostat-sans-reperes-svg.svg",
+   "pose_niveau": "thematique",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ]
+  },
+  "pk-g9b-4": {
+   "illustration": "illustrations/bib-tp-02-les-composants-frigorifiques-corre-4e578eea.png",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Compresseurs",
+     "chemin": "illustrations/compresseurs.svg"
+    }
+   ]
+  },
+  "pk-q-9.02": {
+   "illustration": "illustrations/bib-froid-commercial-et-chambres-froides-ab36b003.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Vanne service interactive",
+     "chemin": "vanne-service-interactive/index.html"
+    }
+   ]
+  },
+  "pk-q-9.03": {
+   "illustration": "illustrations/bib-soudage-oa-rempli-pdf-232c7654.jpeg",
+   "pose_niveau": "exact",
+   "ressources": [
+    {
+     "type": "page",
+     "libelle": "Detendeur interactif",
+     "chemin": "detendeur-interactif/index.html"
+    }
+   ]
+  },
+  "pk-q-9.05": {
+   "illustration": "illustrations/sup-contexte-g9-21D269D2.webp",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ]
+  },
+  "pk-q-9.06": {
+   "illustration": "illustrations/sup-contexte-g9-21D269D2.webp",
+   "pose_niveau": "contexte",
+   "ressources": [
+    {
+     "type": "image",
+     "libelle": "Regulateurs pression",
+     "chemin": "illustrations/regulateurs-pression.svg"
+    }
+   ]
+  },
+  "q-g10-v6_065": {
+   "illustration": "illustrations/bib-cordons-de-soudure-avec-metal-dapport-li-2edd0521.png",
+   "pose_niveau": "exact"
+  },
+  "q-g5-146": {
+   "illustration": "illustrations/photo-compresseur-hermetique.png"
+  },
+  "q-g2-v6_011": {
+   "illustration": "illustrations/sup-cours-2-02-E32EF21D.png",
+   "pose_niveau": "cours"
+  },
+  "q-g2-v6_017": {
+   "illustration": "illustrations/sup-cours-2-02-304B1178.png",
+   "pose_niveau": "cours"
+  },
+  "q-g2-v6_005": {
+   "illustration": "illustrations/sup-cours-2-01-7041C98E.png",
+   "pose_niveau": "cours"
+  },
+  "q-g2-v6_037": {
+   "illustration": "illustrations/sup-cours-2-01-304B1178.png",
+   "pose_niveau": "cours"
+  },
+  "q-g10-84": {
+   "illustration": "illustrations/pilote-fluides-packs-fluides-res-symboles-tube-capillaire-svg.svg",
+   "pose_niveau": "thematique"
+  },
+  "q-g10-v6_157": {
+   "illustration": "illustrations/bib-mitigeur-d-evier-avec-robinet-supplement-57bb16ca.jpg",
+   "pose_niveau": "exact"
+  },
+  "q-g11-v6_035": {
+   "illustration": "illustrations/sup-cours-11-01-47A3A800.webp",
+   "pose_niveau": "cours"
+  },
+  "q-g13-v6_089": {
+   "illustration": "illustrations/bib-image-205-eceebfe3.jpg",
+   "pose_niveau": "exact"
+  },
+  "q-g13-v6_180": {
+   "illustration": "illustrations/sup-cours-1-09-47A3A800.webp",
+   "pose_niveau": "cours"
+  },
+  "pk-q-10.02": {
+   "illustration": "illustrations/bib-t-p-les-outils-de-cintrage-cuivre-2010-2-6405af15.png",
+   "pose_niveau": "exact"
+  },
+  "pk-s5-1": {
+   "illustration": "illustrations/sup-contexte-sécurité-A03D0FCC.webp",
+   "pose_niveau": "contexte"
+  },
+  "pk-s5-2": {
+   "illustration": "illustrations/sup-contexte-sécurité-A03D0FCC.webp",
+   "pose_niveau": "contexte"
+  },
+  "pk-s5-3": {
+   "illustration": "illustrations/sup-contexte-sécurité-A03D0FCC.webp",
+   "pose_niveau": "contexte"
+  }
+ }
+}

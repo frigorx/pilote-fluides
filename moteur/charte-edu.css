@@ -239,3 +239,14 @@ button.ecouter{display:inline-block;margin:0 0 16px;padding:6px 14px;font:600 13
 button.ecouter:hover{background:#e7eff7}
 button.ecouter.actif{background:var(--bleu);color:#fff;border-color:var(--bleu)}
 @media print{ button.ecouter{display:none} }
+
+/* Parcours de remédiation (chantier 13/08) : illustration de question et ressources typées */
+.q-illu{margin:0 0 12px;text-align:center}
+.q-illu .illus{max-width:100%;max-height:260px;border:1px solid var(--ligne);border-radius:10px;background:#fff}
+.ress-liens{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.ress-liens .ress{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;font-size:13.5px;
+  font-weight:600;color:var(--bleu);background:#fff;border:1.5px solid var(--bleu-clair);
+  border-radius:999px;text-decoration:none}
+.ress-liens .ress:hover{background:#e7eff7}
+.ress-liens .ress.vignette{flex-direction:column;padding:8px;border-radius:10px;max-width:150px;text-align:center}
+.ress-liens .ress.vignette img{max-width:130px;max-height:90px;object-fit:contain;background:#fff}

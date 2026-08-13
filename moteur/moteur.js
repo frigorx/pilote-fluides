@@ -429,7 +429,12 @@
     return h + "</div>";
   }
   function zoneQuestion(q, rep, m, ns) {
-    var h = "<div class='question'><div class='enonce'>❓ " + esc(q.enonce) + "</div><div class='choix'>";
+    var h = "<div class='question'><div class='enonce'>❓ " + esc(q.enonce) + "</div>";
+    // Extension pack fluides (chantier 13/08) : l'illustration posée dans l'atelier
+    // du Hub. Décorative pour l'œil (alt vide), jamais porteuse de la réponse
+    // (contrôle en amont : un SVG à <text> est refusé à la pose).
+    if (q.illustration) h += "<figure class='q-illu'>" + img(q.illustration) + "</figure>";
+    h += "<div class='choix'>";
     q.choix.forEach(function (txt, i) {
       var cls = "";
       if (rep && m.feedback) { if (i === q.bonne) cls = "bon"; else if (i === rep.choix) cls = "mauvais"; }
@@ -447,6 +452,12 @@
         var ok = rep.choix === q.bonne;
         h += "<div class='retour " + (ok ? "ok" : "ko") + "'>" + (ok ? "✅ Bonne réponse." : "❌ Réponse incorrecte.") +
              (q.remed ? "" : " " + esc(q.explication || "")) + "</div>";
+        // Extension pack fluides (chantier 13/08) : le parcours de remédiation —
+        // réponse fausse → l'aide, puis la remédiation, puis le chapitre.
+        // L'aide reprend ici sa place même si l'indice n'a pas été ouvert avant.
+        if (!ok && m.remediation && q.aide) {
+          h += "<div class='bloc'><div class='t'>💡 L'indice</div><p style='margin:0'>" + esc(q.aide) + "</p></div>";
+        }
         // Extension pack fluides : la remédiation complète — apprendre et
         // comprendre, pas seulement corriger.
         if (q.remed) {
@@ -457,6 +468,25 @@
               if (q.remed[p[0]]) h += "<p style='margin:4px 0 0'><b>" + p[1] + " :</b> " + esc(q.remed[p[0]]) + "</p>";
             });
           h += "</div>";
+        }
+        // Extension pack fluides (chantier 13/08) : les ressources typées posées
+        // dans l'atelier du Hub — planches, pages interactives, outils, liens.
+        if (!ok && m.remediation && q.ressources && q.ressources.length) {
+          h += "<div class='bloc'><div class='t'>🧰 Pour comprendre en images</div><div class='ress-liens'>";
+          q.ressources.forEach(function (r) {
+            var ico = { image: "🖼️", page: "📄", outil: "🧰", symbole: "🔣", animation: "🎬", lien: "🔗" }[r.type] || "📄";
+            var lib = esc(r.libelle || r.type);
+            if (r.url) {
+              h += "<a class='ress' href='" + esc(r.url) + "' target='_blank' rel='noopener'>" + ico + " " + lib + "</a>";
+            } else if (r.type === "image" || r.type === "symbole") {
+              var src = (PACK.pack.base_img || "") + r.chemin;
+              h += "<a class='ress vignette' href='" + esc(src) + "' target='_blank' rel='noopener'>" +
+                   "<img alt='' src='" + esc(src) + "'><span>" + lib + "</span></a>";
+            } else {
+              h += "<a class='ress' href='" + esc((PACK.pack.base_img || "") + r.chemin) + "' target='_blank' rel='noopener'>" + ico + " " + lib + "</a>";
+            }
+          });
+          h += "</div></div>";
         }
         if (!ok && m.remediation && q.remediation_vers) h += "<div class='liens'><button class='sec' data-go='" + q.remediation_vers + "'>↩ Revoir la fiche</button></div>";
       } else {

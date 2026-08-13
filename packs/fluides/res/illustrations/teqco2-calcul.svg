@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 464" role="img"
+     aria-label="Le calcul en tonnes équivalent CO2, sur l'exemple de la planche PRP : fuir un kilogramme de R-404A, dont le PRP vaut trois mille neuf cent vingt-deux, revient à relâcher environ trois virgule neuf tonnes équivalent CO2. C'est la charge multipliée par le PRP qui fait la conversion, et c'est ce chiffre que la réglementation regarde pour classer la sévérité d'une installation et commander les obligations de contrôle d'étanchéité.">
+  <title>1 kg de fuite → 3,9 tonnes équivalent CO₂ : la conversion que la règle regarde</title>
+  <style>
+    .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .st  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .lg  { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .sm  { font:400 12px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+    .bad { font:700 13px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+    .big { font:700 26px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+    .p   { fill:none; stroke:#1b3a63; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+    .acc { fill:none; stroke:#c9451a; stroke-width:2.8; stroke-linecap:round; stroke-linejoin:round; }
+    .dash{ fill:none; stroke:#8fa3b8; stroke-width:1.6; stroke-dasharray:5 5; }
+  </style>
+
+  <rect width="880" height="464" fill="#ffffff"/>
+  <text class="t" x="30" y="32">Un kilogramme qui fuit ne pèse pas un kilogramme pour le climat</text>
+
+  <!-- ============ LA BOUTEILLE QUI FUIT ============ -->
+  <g transform="translate(150,0)">
+    <path class="p" d="M-40,340 v-140 a40,34 0 0 1 80,0 v140 z" fill="#eef3f9"/>
+    <rect x="-14" y="152" width="28" height="18" rx="4" fill="#ffffff" stroke="#1b3a63" stroke-width="2.4"/>
+    <text class="st" x="0" y="272" text-anchor="middle">R-404A</text>
+    <text class="sm" x="0" y="292" text-anchor="middle">PRP 3922</text>
+    <!-- la fuite -->
+    <g fill="#c9451a">
+      <circle r="4"><animateMotion dur="1.6s" repeatCount="indefinite" path="M34,180 q30,-24 62,-30"/><animate attributeName="opacity" values="1;0" dur="1.6s" repeatCount="indefinite"/></circle>
+      <circle r="3"><animateMotion dur="1.9s" begin="0.5s" repeatCount="indefinite" path="M34,186 q34,-16 66,-18"/><animate attributeName="opacity" values="1;0" dur="1.9s" begin="0.5s" repeatCount="indefinite"/></circle>
+    </g>
+    <text class="bad" x="66" y="146">1 kg s'échappe…</text>
+  </g>
+
+  <!-- ============ LA CONVERSION ============ -->
+  <rect x="330" y="150" width="240" height="130" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.4"/>
+  <text class="st" x="450" y="182" text-anchor="middle">la conversion</text>
+  <text class="big" x="450" y="222" text-anchor="middle">1 kg × 3922</text>
+  <text class="sm" x="450" y="252" text-anchor="middle">la charge fuie × le PRP du fluide</text>
+  <path class="acc" d="M578,215 h56 m-12,-8 12,8 -12,8"/>
+
+  <!-- ============ LE NUAGE RÉSULTAT ============ -->
+  <g transform="translate(740,210)">
+    <path d="M-70,26 a30,30 0 0 1 6,-58 a38,38 0 0 1 72,-14 a30,30 0 0 1 44,26 a24,24 0 0 1 -8,46 z"
+          fill="#fdeee8" stroke="#c9451a" stroke-width="2.6"/>
+    <text class="big" x="-8" y="0" text-anchor="middle" fill="#a8410f">≈ 3,9 t</text>
+    <text class="st" x="-8" y="22" text-anchor="middle" fill="#a8410f">équivalent CO₂</text>
+  </g>
+
+  <!-- ============ CE QUE LA RÈGLE EN FAIT ============ -->
+  <rect x="90" y="330" width="700" height="66" rx="10" fill="#ffffff" stroke="#dbe4ec" stroke-width="2"/>
+  <text class="st" x="440" y="358" text-anchor="middle">C'est CE chiffre que la réglementation regarde :</text>
+  <text class="lg" x="440" y="382" text-anchor="middle">il classe la sévérité de l'installation et commande les contrôles d'étanchéité — voir la capsule dédiée.</text>
+
+  <path class="dash" d="M60,414 h760"/>
+  <text class="sm" x="440" y="440" text-anchor="middle">Valeur de l'exemple : la planche « Un kilogramme n'égale pas un kilogramme » (PRP indicatifs — en intervention, la fiche du fluide fait foi).</text>
+</svg>
