@@ -2,7 +2,8 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **2 août 2026**.
+> Dernière mise à jour : **13 août 2026** (parcours de remédiation ; état détaillé du 2 août
+> toujours valable pour le reste).
 
 ---
 
@@ -71,6 +72,22 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 ---
 
 ## 2. État au 2 août 2026
+
+### ⏱ 13 août 2026 — le parcours élève consomme les ressources (commit `c9f1151`)
+
+Les **266 questions d'entraînement** portent désormais leur **illustration** (posée une à
+une dans l'atelier du Hub inerweb-habilitation, inc. 33-35 de son CHANGELOG) et leurs
+**ressources typées**. Le moteur les montre : illustration sous l'énoncé, et sur réponse
+fausse le déroulé complet — l'indice, la remédiation, les ressources en vignettes
+(planches, pages interactives, outils, liens), puis « Revoir la fiche ». Données :
+`packs/fluides/illustrations-questions.json` + `res/illustrations/` (186 fichiers), lus
+par `build/convert.mjs`. Les mini-questions écrites à la main dans `cartes.js` sont hors
+banque : pas d'illustration, c'est normal.
+
+⚠️ **Ne PAS pousser ce dépôt** tant que F. Henninot n'a pas tranché les **droits des
+80 images `bib-…`** (extraites de documents tiers par la moisson de l'usine) : le dépôt
+est public, publier est irréversible. Les poses restent contrôlables dans
+`CONTROLE-POSES.html` côté Hub.
 
 ### ⏱ POINT D'ÉTAPE — au sortir de la journée du 31 juillet
 
