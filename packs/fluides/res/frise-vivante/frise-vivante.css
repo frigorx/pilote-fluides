@@ -626,6 +626,12 @@ footer {
   box-shadow: 0 14px 30px rgba(3, 10, 22, 0.35);
 }
 
+/* Le lecteur vit DANS .story-shell, dont le z-index 1 crée un contexte
+   d'empilement : sans ce relèvement, .final-message (z-index 1 aussi,
+   plus tard dans le document) peignait PAR-DESSUS le lecteur fixe et
+   avalait ses clics — constaté par F. Henninot le 14/08. */
+.story-shell { z-index: 2; }
+
 /* Ancré en bas de l'écran, toujours visible : F. Henninot (28/07) a
    trouvé les commandes de navigation trop discrètes, cachées en bas
    d'une page qu'il fallait faire défiler pour les atteindre. Fixe,
