@@ -250,3 +250,20 @@ button.ecouter.actif{background:var(--bleu);color:#fff;border-color:var(--bleu)}
 .ress-liens .ress:hover{background:#e7eff7}
 .ress-liens .ress.vignette{flex-direction:column;padding:8px;border-radius:10px;max-width:150px;text-align:center}
 .ress-liens .ress.vignette img{max-width:130px;max-height:90px;object-fit:contain;background:#fff}
+
+/* ---- Barre de choix « interactif ou texte » (Franck, 14/08) ----
+   En tête de toute fiche qui porte un cours interactif : le choix se fait
+   d'un coup d'œil, sans chercher le bouton au fil du texte. Couleur jamais
+   seule : le bouton plein = interactif, le bouton à icône 📄 = texte. */
+.choix-cours{display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+  margin:0 0 18px;padding:12px 14px;background:#f2f6fa;
+  border:1.5px solid var(--ligne);border-radius:var(--r)}
+.choix-cours .c-quoi{font-weight:700;color:var(--bleu)}
+.choix-cours .c-int{display:inline-block;padding:9px 20px;background:var(--bleu);
+  color:#fff;font-weight:700;text-decoration:none;border-radius:999px}
+.choix-cours .c-int:hover{background:var(--bleu-clair)}
+.choix-cours .c-txt{padding:9px 20px;background:#fff;color:var(--bleu);
+  font:inherit;font-weight:600;border:1.5px solid var(--bleu-clair);
+  border-radius:999px;cursor:pointer}
+.choix-cours .c-txt:hover{background:#e7eff7}
+@media print{.choix-cours{display:none}}

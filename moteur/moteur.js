@@ -73,6 +73,12 @@
     if (c.corps && window.PiloteLecture && window.PiloteLecture.disponible())
       html += window.PiloteLecture.html();
     html += zoneCompetences(c); // l'objectif d'examen, annoncé avant le contenu
+    // Franck (14/08) : l'interactif d'abord. Quand la fiche porte un ou des
+    // cours interactifs (blocs .lien-experience dans le corps), une barre de
+    // choix les remonte en tête : on choisit « en interactif » ou « en texte »
+    // sans chercher le bouton au fil du texte. Les blocs d'origine restent en
+    // place — au fil de la lecture, le lien garde son contexte.
+    if (c.corps) html += barreChoix(c.corps);
     if (c.corps) html += c.corps;
     (c.blocs || []).forEach(function (b) {
       html += "<div class='bloc " + (b.type || "") + "'><div class='t'>" + esc(b.t || "") + "</div>" + (b.html || "") + "</div>";
@@ -501,6 +507,22 @@
      l'examen allait lui demander. `libelle` est la reformulation
      accessible, `officiel` le texte de l'arrêté (injecté au build depuis
      referentiel-2025.json, donc jamais recopié à la main). */
+  function barreChoix(corps) {
+    // Les cours interactifs du corps : chaque bloc lienOutil est un
+    // <p class="lien-experience"> dont le <a> se termine par « ▸ ».
+    var liens = [], re = /<p class="lien-experience"[^>]*><a href="([^"]+)"[^>]*>([\s\S]*?) ▸<\/a>/g, m;
+    while ((m = re.exec(corps))) liens.push({ url: m[1], titre: m[2] });
+    if (!liens.length) return "";
+    var h = "<div class='choix-cours'><span class='c-quoi'>Ce chapitre, au choix :</span>";
+    liens.forEach(function (l) {
+      // Dans la barre, le verbe est déjà porté par le bouton : on garde le sujet.
+      var t = l.titre.replace(/Lancer le cours interactif\s*:\s*/i, "");
+      h += "<a class='c-int' href='" + l.url + "' target='_blank' rel='noopener'>" + t + " ▸</a>";
+    });
+    h += "<button type='button' class='c-txt'>📄 Le même cours, en texte ↓</button></div>";
+    return h;
+  }
+
   function zoneCompetences(c) {
     var crs = c.criteres || [];
     if (!crs.length) return "";
@@ -634,6 +656,14 @@
      ==================================================================== */
   function brancher(c, m) {
     nav();
+    // « En texte » : on file au premier paragraphe du cours qui suit la barre,
+    // en sautant les blocs de lien interactif — le texte commence là.
+    onAll(".c-txt", function (el) {
+      el.addEventListener("click", function () {
+        var p = document.querySelector(".corps > p:not(.lien-experience):not(.choix-cours), .corps > h2");
+        if (p) p.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
     onAll("[data-rep]", function (el) { el.addEventListener("click", function () { repondre(c, +el.getAttribute("data-rep")); }); });
     onAll("[data-crit]", function (el) { el.addEventListener("click", function () { S.criteres[el.getAttribute("data-crit")] = el.getAttribute("data-etat"); render(); }); });
     commun();
