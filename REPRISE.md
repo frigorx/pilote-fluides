@@ -1319,10 +1319,11 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 
 ## 6. Ce qui reste à faire
 
-> **Manipulations virtuelles (14/08)** : état mesuré et briques restantes dans
-> `PLAN-MANIPULATIONS-VIRTUELLES.md` — 13 codes pratiques A1 sans cours interactif,
-> groupés en 4 briques : compresseur (A), pupitre de réglage (B), KVL prêt sur le
-> Bureau (C), écrans d'inspection à ajouter à l'évaporateur et au condenseur (D).
+> **Manipulations virtuelles (14/08) — PLAN SOLDÉ le jour même** : les 4 briques faites
+> (KVL intégré · écrans d'inspection · compresseur-interactif + Module Compresseur FRIGOLO
+> ré-exploité · pupitre de réglage). Mesure finale : **55/55 codes pratiques A1 portés par
+> un cours interactif, 32 cours au registre, 0 anomalie.** Détail et dates :
+> `PLAN-MANIPULATIONS-VIRTUELLES.md`. Reste le vrai juge : la relecture métier.
 
 > **Point du 13/08 tard le soir (carte blanche)** : registre à **0 anomalie** — 28 cours,
 > détendeur et électrovanne déclarent enfin leur couverture ; module « Surchauffe et
