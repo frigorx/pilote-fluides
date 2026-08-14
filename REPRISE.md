@@ -1319,6 +1319,11 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 
 ## 6. Ce qui reste à faire
 
+> **Manipulations virtuelles (14/08)** : état mesuré et briques restantes dans
+> `PLAN-MANIPULATIONS-VIRTUELLES.md` — 13 codes pratiques A1 sans cours interactif,
+> groupés en 4 briques : compresseur (A), pupitre de réglage (B), KVL prêt sur le
+> Bureau (C), écrans d'inspection à ajouter à l'évaporateur et au condenseur (D).
+
 > **Point du 13/08 tard le soir (carte blanche)** : registre à **0 anomalie** — 28 cours,
 > détendeur et électrovanne déclarent enfin leur couverture ; module « Surchauffe et
 > sous-refroidissement pas à pas » (13 étapes, ex-rush du 31/07) relié à la fiche g1e en
