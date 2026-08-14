@@ -1319,6 +1319,16 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 
 ## 6. Ce qui reste à faire
 
+> **Point du 13/08 tard le soir (carte blanche)** : registre à **0 anomalie** — 28 cours,
+> détendeur et électrovanne déclarent enfin leur couverture ; module « Surchauffe et
+> sous-refroidissement pas à pas » (13 étapes, ex-rush du 31/07) relié à la fiche g1e en
+> second lien ; détendeur passé à sa version enrichie du 07/08 (app.js 1064 lignes) ;
+> frise vivante : une image par scène, le fondu mort retiré (10 → 5 requêtes en erreur).
+> Tout est EN LIGNE (vérifié). Restent au Bureau, NON intégrés parce que leurs fiches
+> l'interdisent (`_ETAT.md`/`REPRISE.md` : « brouillon, bon à tirer requis ») : KVL carter,
+> coupe-tube (diamètres 70/60/65 vs 40/50/55 à trancher), dudgeonnière, mini-dudgeonnière
+> (12 planches), TP RA20 (scolaire). À valider par F. Henninot puis intégrer.
+
 ### 🔴 EN ATTENTE DE F. HENNINOT — trois choses que personne d'autre ne peut faire
 
 1. **Vérifier que chaque icône porte le bon nom** — ouvrir
