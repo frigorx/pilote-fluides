@@ -20,6 +20,11 @@ commune du détendeur :
 - prise de pression interne visible dans la coupe ;
 - égalisation externe expliquée séparément à l’écran 9 par un vrai tube dédié pris après le bulbe.
 
+L’écran 6 est la vue de référence pour l’explication mécanique. Il juxtapose la coupe simplifiée,
+le bilan `F bulbe ↔ F évaporation + F ressort` et la chaîne
+`bulbe → membrane → tige → clapet → passage`. Ses trois boutons ne doivent pas être multipliés :
+équilibre, bulbe plus chaud, ressort plus comprimé.
+
 Les prototypes rejetés et le rendu CAO restent dans archives/. La CAO ne doit pas entrer dans
 une livraison tant que ses droits de reproduction, conversion et diffusion ne sont pas établis.
 

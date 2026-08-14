@@ -149,15 +149,15 @@
     {
       short: "Équilibrer",
       kicker: "Écran 6 · Forces",
-      title: "Le bulbe ouvre, deux forces referment",
-      intro: "La membrane transforme l’équilibre des pressions en mouvement du clapet.",
-      detail: `<div class="fact"><strong>Ouvre :</strong> la pression du bulbe agit au-dessus de la membrane.</div>
-        <div class="fact"><strong>Referment :</strong> la pression interne d’évaporation et le ressort agissent en sens inverse.</div>
-        <div class="key-box"><strong>Résultat :</strong> le clapet prend la position qui alimente correctement l’évaporateur.</div>`,
-      takeaway: "Bulbe vers l’ouverture ↔ pression interne + ressort vers la fermeture.",
-      visualTitle: "Voir les deux sens d’action",
-      visualHint: "Fais baisser ou monter la surchauffe.",
-      caption: "Représentation qualitative des forces appliquées à la membrane.",
+      title: "Trois forces déplacent un seul axe",
+      intro: "La membrane compare les forces. La tige transmet son mouvement au clapet.",
+      detail: `<div class="fact"><strong>Vers l’ouverture :</strong> la pression du bulbe crée une force vers le bas.</div>
+        <div class="fact"><strong>Vers la fermeture :</strong> la pression d’évaporation et le ressort poussent en sens inverse.</div>
+        <div class="key-box"><strong>Vis de réglage :</strong> elle comprime plus ou moins le ressort et modifie sa force.</div>`,
+      takeaway: "Bulbe → membrane → tige → clapet : la force dominante fixe le passage.",
+      visualTitle: "Suivre les forces et la chaîne cinématique",
+      visualHint: "Compare trois états simples.",
+      caption: "Sur la même membrane, les pressions deviennent des forces opposées.",
       render: renderForces
     },
     {
@@ -411,6 +411,116 @@
     </div>`;
   }
 
+  function forceChainSvg(state = "balanced") {
+    const data = {
+      balanced: {
+        motion: 0,
+        relation: "F bulbe = F évap. + F ressort",
+        result: "ÉQUILIBRE · position stable",
+        opening: "PASSAGE STABLE",
+        alt: "Les forces sont équilibrées. La membrane, la tige et le clapet restent en position stable."
+      },
+      bulb: {
+        motion: 16,
+        relation: "F bulbe > F évap. + F ressort",
+        result: "LE BULBE DOMINE · ouverture",
+        opening: "PASSAGE AUGMENTE",
+        alt: "Le bulbe plus chaud crée la force dominante vers le bas. La membrane et la tige descendent. Le clapet s’éloigne du siège et ouvre davantage."
+      },
+      spring: {
+        motion: -10,
+        relation: "F bulbe < F évap. + F ressort",
+        result: "LE RESSORT DOMINE · fermeture",
+        opening: "PASSAGE DIMINUE",
+        alt: "La vis comprime davantage le ressort. La force de fermeture domine vers le haut. La membrane, la tige et le clapet remontent vers le siège."
+      }
+    }[state];
+    const membraneY = 150 + data.motion;
+    const clapetY = 356 + data.motion;
+    const springY = membraneY + 28;
+    const bulbClass = state === "bulb" ? "is-dominant" : "";
+    const springClass = state === "spring" ? "is-dominant" : "";
+
+    return `<div class="diagram force-chain force-state-${state}" role="img" aria-label="${data.alt}">
+      <svg viewBox="0 0 960 520" aria-hidden="true">
+        <defs>
+          <linearGradient id="fcBrass" x1="0" x2="1"><stop offset="0" stop-color="#d59a3f"/><stop offset=".5" stop-color="#f2cb78"/><stop offset="1" stop-color="#c47c22"/></linearGradient>
+          <marker id="fcArrowOrange" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#c9451a"/></marker>
+          <marker id="fcArrowBlue" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#3d7fca"/></marker>
+          <marker id="fcArrowNavy" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#1b3a63"/></marker>
+        </defs>
+
+        <g class="fc-mechanism">
+          <text class="fc-panel-title" x="300" y="28" text-anchor="middle">DANS LE DÉTENDEUR</text>
+          <rect class="fc-bulb" x="26" y="58" width="154" height="48" rx="24"/>
+          <text class="fc-label" x="103" y="88" text-anchor="middle">BULBE</text>
+          <path class="fc-capillary" d="M180 82 C232 82 239 42 305 55 C355 64 337 73 305 82"/>
+
+          <path class="fc-head" d="M158 176 Q168 101 305 82 Q442 101 452 176Z"/>
+          <path class="fc-membrane" d="M183 ${membraneY} Q305 ${membraneY + 14} 427 ${membraneY}"/>
+          <rect class="fc-hub" x="284" y="${membraneY - 8}" width="42" height="20" rx="7"/>
+          <path class="fc-bulb-action ${bulbClass}" d="M305 98 V${membraneY - 15}" marker-end="url(#fcArrowOrange)"/>
+
+          <path class="fc-body" d="M118 211 L168 176 H407 L457 215 V270 H548 V350 H457 V392 L407 430 H168 L118 390Z"/>
+          <path class="fc-inlet" d="M255 430 V492 H351 V430"/>
+          <path class="fc-outlet" d="M548 286 H588 V338 H548"/>
+          <path class="fc-channel" d="M303 492 V389 Q303 350 340 350 H570"/>
+          <path class="fc-liquid-hp" d="M303 484 V392"/>
+          <path class="fc-mixture-bp" d="M340 350 H565"/>
+
+          <path class="fc-rod" d="M305 ${membraneY + 10} V${clapetY - 5}"/>
+          <path class="fc-seat" d="M272 350 H291 M319 350 H338"/>
+          <path class="fc-clapet" d="M286 ${clapetY + 13} H324 L305 ${clapetY - 6}Z"/>
+          <path class="fc-spring ${springClass}" d="M365 ${springY} l-20 11 40 12-40 12 40 12-40 12 40 12-20 11"/>
+          <rect class="fc-adjust-screw ${springClass}" x="339" y="283" width="52" height="25" rx="5"/>
+          <path class="fc-adjust-thread" d="M346 289 H384 M346 296 H384 M346 303 H384"/>
+          <path class="fc-evap-channel" d="M506 325 H455 V195 H420 V${membraneY + 20}" marker-end="url(#fcArrowBlue)"/>
+
+          <g class="fc-callout"><path d="M431 145 H516"/><text x="524" y="150">MEMBRANE</text></g>
+          <g class="fc-callout"><path d="M386 230 H482"/><text x="490" y="235">RESSORT</text></g>
+          <g class="fc-callout"><path d="M391 296 H482"/><text x="490" y="301">VIS DE RÉGLAGE</text></g>
+          <g class="fc-callout"><path d="M286 362 H194"/><text x="187" y="367" text-anchor="end">TIGE + CLAPET</text></g>
+          <text class="fc-pressure-note" x="459" y="339" text-anchor="middle">pression d’évaporation</text>
+          <text class="fc-opening-note" x="397" y="386">${data.opening}</text>
+        </g>
+
+        <g class="fc-balance">
+          <rect class="fc-balance-frame" x="610" y="35" width="330" height="382" rx="18"/>
+          <text class="fc-panel-title" x="775" y="68" text-anchor="middle">FORCES SUR LA MEMBRANE</text>
+
+          <text class="fc-force-name fc-orange-text" x="775" y="101" text-anchor="middle">F BULBE · OUVRE</text>
+          <path class="fc-force fc-force-bulb ${bulbClass}" d="M775 112 V205" marker-end="url(#fcArrowOrange)"/>
+          <path class="fc-balance-membrane" d="M650 224 Q775 240 900 224"/>
+          <text class="fc-membrane-word" x="775" y="218" text-anchor="middle">MEMBRANE</text>
+
+          <path class="fc-force fc-force-evap" d="M691 313 V245" marker-end="url(#fcArrowBlue)"/>
+          <path class="fc-force fc-force-spring ${springClass}" d="M859 313 V245" marker-end="url(#fcArrowNavy)"/>
+          <text class="fc-force-name" x="691" y="338" text-anchor="middle">F ÉVAP.</text>
+          <text class="fc-force-sub" x="691" y="357" text-anchor="middle">pression sous la membrane</text>
+          <text class="fc-force-name" x="859" y="338" text-anchor="middle">F RESSORT</text>
+          <text class="fc-force-sub" x="859" y="357" text-anchor="middle">réglée par la vis</text>
+
+          <rect class="fc-relation-box" x="637" y="371" width="276" height="32" rx="10"/>
+          <text class="fc-relation" x="775" y="393" text-anchor="middle">${data.relation}</text>
+          <text class="fc-result" x="775" y="433" text-anchor="middle">${data.result}</text>
+        </g>
+
+        <g class="fc-chain">
+          <text class="fc-panel-title" x="480" y="445" text-anchor="middle">CHAÎNE CINÉMATIQUE</text>
+          <g transform="translate(48 458)"><rect width="140" height="42" rx="11"/><text x="70" y="27" text-anchor="middle">BULBE</text></g>
+          <path d="M190 479 H222" marker-end="url(#fcArrowNavy)"/>
+          <g transform="translate(228 458)"><rect width="140" height="42" rx="11"/><text x="70" y="27" text-anchor="middle">MEMBRANE</text></g>
+          <path d="M370 479 H402" marker-end="url(#fcArrowNavy)"/>
+          <g transform="translate(408 458)"><rect width="140" height="42" rx="11"/><text x="70" y="27" text-anchor="middle">TIGE</text></g>
+          <path d="M550 479 H582" marker-end="url(#fcArrowNavy)"/>
+          <g transform="translate(588 458)"><rect width="140" height="42" rx="11"/><text x="70" y="27" text-anchor="middle">CLAPET</text></g>
+          <path d="M730 479 H762" marker-end="url(#fcArrowNavy)"/>
+          <g transform="translate(768 458)"><rect width="144" height="42" rx="11"/><text x="72" y="27" text-anchor="middle">PASSAGE</text></g>
+        </g>
+      </svg>
+    </div>`;
+  }
+
   function bulbSvg(position = "correct") {
     const data = {
       correct: { x: 330, y: 128, rotate: -18, path: "M416 100 C500 78 548 74 624 78", title: "CONTACT FERME · POSITION CONFORME", status: "Le bulbe suit la température du tube." },
@@ -542,16 +652,16 @@
 
   function renderForces() {
     const states = {
-      low: { opening: 30, text: "Effort du bulbe plus faible : la fermeture domine momentanément." },
-      balanced: { opening: 52, text: "Les actions s’équilibrent autour de l’ouverture nécessaire." },
-      high: { opening: 80, text: "Effort du bulbe plus fort : le clapet s’ouvre davantage." }
+      balanced: { text: "<strong>Équilibre :</strong> F bulbe = F évaporation + F ressort. Le clapet garde sa position." },
+      bulb: { text: "<strong>Bulbe plus chaud :</strong> la membrane et la tige descendent ; le clapet s’éloigne du siège et le passage augmente." },
+      spring: { text: "<strong>Ressort plus comprimé :</strong> la force de fermeture augmente ; le clapet remonte vers le siège et le passage diminue." }
     };
-    setControls(`<button type="button" class="choice-button" data-force="low">Surchauffe baisse</button><button type="button" class="choice-button" data-force="balanced">Équilibre</button><button type="button" class="choice-button" data-force="high">Surchauffe monte</button>`);
+    setControls(`<button type="button" class="choice-button" data-force="balanced">1 · Équilibre</button><button type="button" class="choice-button" data-force="bulb">2 · Bulbe plus chaud</button><button type="button" class="choice-button" data-force="spring">3 · Ressort plus comprimé</button>`);
     const activate = (key) => {
       const item = states[key];
       markActive("[data-force]", ui.controls.querySelector(`[data-force="${key}"]`));
-      ui.root.innerHTML = `${valveSvg({ opening: item.opening, labels: false, forces: true, forceState: key })}<div class="readout" id="visual-readout">${item.text}</div>`;
-      announce(item.text);
+      ui.root.innerHTML = `${forceChainSvg(key)}<div class="readout" id="visual-readout">${item.text}</div>`;
+      announce(item.text.replace(/<[^>]+>/g, ""));
     };
     ui.controls.querySelectorAll("[data-force]").forEach((button) => button.addEventListener("click", () => activate(button.dataset.force)));
     activate("balanced");

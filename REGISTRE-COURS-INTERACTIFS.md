@@ -9,11 +9,11 @@
 
 | | |
 |---|---|
-| Cours interactifs en place | **27** |
+| Cours interactifs en place | **28** |
 | Fiches qui en appellent au moins un | **50** |
 | Codes du référentiel couverts par un cours | **99** |
 | Codes encore expliqués par du texte seul | **0** |
-| Poids total des cours | **9.3 Mo** |
+| Poids total des cours | **9.4 Mo** |
 
 ## Anomalies
 
@@ -32,7 +32,7 @@
 | `circuit-organe-par-organe` | g6, g7, g8, g9 | — | 1.04 | 838 Ko |
 | `condenseur-interactif` | g7b | 24 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 | 72 Ko |
 | `cours-classes-securite` | cl1 | — | 1.08 | 152 Ko |
-| `detendeur-interactif` | g9 | 14 | 1.04 · 9.10 | 159 Ko |
+| `detendeur-interactif` | g9 | 14 | 1.04 · 9.10 | 171 Ko |
 | `electrovanne-interactive` | g9 | 14 | 1.05 | 177 Ko |
 | `etancheite-interactive` | g4a, g4b, g4c | 27 | 4.01 · 4.02 · 4.03 · 4.04 · 4.05 · 4.06 · 4.07 · 4.08 · 4.09 | 64 Ko |
 | `evaporateur-interactif` | g8b | 26 | 8.02 · 8.03 · 8.04 · 8.06 · 8.07 · 8.10 · 8.11 | 161 Ko |
@@ -47,6 +47,7 @@
 | `pose-manifold-interactive` | p1 | 6 | 4.05 · 5.01 · 5.02 · 3.03 · 3.04 | 86 Ko |
 | `pression-temperature-interactive` | g1b | — | 1.02 · 1.03 | 147 Ko |
 | `recuperation-fluide-interactive` | p2 | 8 | 5.01 · 5.02 · 5.03 · 5.05 · 5.06 | 178 Ko |
+| `surchauffe-sous-refroidissement-interactif` | g1e | 13 | 5.05 · 4.05 · 1.03 · 1.06 | 87 Ko |
 | `tome-3-technologie-organes` | g6, g7, g8, g9, g9b | 112 | 1.04 · 1.05 · 6.01 · 7.01 · 8.01 · 9.01 | 1070 Ko |
 | `vanne-service-interactive` | p1, p5, g6b, g9b | 4 | 4.01 · 4.05 · 5.01 | 178 Ko |
 | `voyant-liquide-pedagogique` | g9 | 18 | 1.05 | 160 Ko |

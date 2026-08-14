@@ -13,7 +13,7 @@ le clapet ouvre ou referme le passage.
 | 3 | Quelle pièce fait quoi ? | Sélectionner cinq éléments | Bulbe → membrane → tige → clapet |
 | 4 | Où chute la pression ? | Comparer trois ouvertures | L’orifice crée la chute ; le clapet dose le passage |
 | 5 | Comment calculer la surchauffe ? | Déplacer deux curseurs | Température du tube moins température de saturation |
-| 6 | Quelles actions s’opposent ? | Tester trois états | Bulbe ouvre ; pression d’évaporation et ressort referment |
+| 6 | Comment le clapet se déplace-t-il ? | Comparer équilibre, bulbe plus chaud et ressort plus comprimé | Les trois forces déplacent la même chaîne : membrane, tige et clapet |
 | 7 | Que se passe-t-il si la sortie chauffe ? | Tester chaud, froid et rejouer | La variation parcourt toute la chaîne jusqu’au débit |
 | 8 | Où poser le bulbe ? | Tester trois positions | Contact ferme sur le tube ; capillaire continu jusqu’à la tête |
 | 9 | T 2 ou TE 2 ? | Basculer les deux prises | La prise externe est un tube dédié après le bulbe |

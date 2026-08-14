@@ -1972,6 +1972,11 @@ export const CARTES = [
         "🎛️ Lancer le cours interactif : surchauffe et sous-refroidissement",
         "Le cycle animé, puis quatre curseurs à manipuler (évaporation, condensation, surchauffe, sous-refroidissement) : les pressions réagissent et le risque s'affiche — avec un atelier panne et un quiz flash — environ 10 minutes."
       ) +
+      lienOutil(
+        "packs/fluides/res/surchauffe-sous-refroidissement-interactif/index.html",
+        "🌡️ S'entraîner au calcul : surchauffe et sous-refroidissement pas à pas",
+        "13 étapes : vocabulaire, instruments, point de rosée et point de bulle, calcul BP puis HP, surchauffe utile et totale, cas du zéotrope R-407C, protocole du double relevé et défi final de 10 questions (seuil 8/10) — environ 15 minutes."
+      ) +
       schema("surchauffe-utile-totale.svg", "Le fluide bout dans l'évaporateur ; après la disparition de la dernière goutte, la vapeur s'échauffe : c'est la surchauffe utile dans l'échangeur, puis la surchauffe totale jusqu'au compresseur.") +
       "<p>Voici les deux mots que vous entendrez le plus souvent sur un chantier. Et la première " +
       "chose à comprendre est la plus importante : <b>ce sont des différences, jamais des " +

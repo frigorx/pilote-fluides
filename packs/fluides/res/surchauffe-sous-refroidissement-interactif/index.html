@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Cours interactif professionnel : mesurer et calculer la surchauffe et le sous-refroidissement d’un circuit frigorifique.">
+  <title>Surchauffe et sous-refroidissement | Habilitation Fluide</title>
+  <link rel="stylesheet" href="styles.css?v=20260731-sujet4">
+</head>
+<body>
+<main class="experience" id="experience">
+  <header class="topbar">
+    <a class="brand" href="#module">
+      <span class="brand-mark" aria-hidden="true">HF</span>
+      <span><strong>Habilitation Fluide</strong><small>Surchauffe & sous-refroidissement</small></span>
+    </a>
+    <div class="topbar-actions">
+      <button class="pill" id="voice-toggle" type="button" aria-pressed="true">🔊 Voix active</button>
+      <button class="pill" id="refs-toggle" type="button" aria-expanded="false">Repères métier</button>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="page-title">
+    <div class="hero-copy">
+      <p class="eyebrow">SUJET 4 · MESURER L’ÉTAT DU FLUIDE FRIGORIGÈNE</p>
+      <h1 id="page-title">Deux températures.<br><span>Une différence qui parle.</span></h1>
+      <p>Vous savez maintenant traduire une pression en température de saturation. Il reste à comparer cette référence à la température réelle du tube pour calculer la surchauffe ou le sous-refroidissement.</p>
+      <a class="chapter-back" href="../pression-temperature-interactive/index.html">← Revoir pression et température de saturation</a>
+      <button class="start" id="start" type="button">Commencer les mesures <span aria-hidden="true">▶</span></button>
+      <small class="duration">13 étapes · environ 18 minutes · calculs, gestes de mesure et défi final</small>
+      <div class="learning-goals" aria-label="Objectifs du sujet">
+        <span><b>1</b> Choisir la bonne référence</span>
+        <span><b>2</b> Calculer dans le bon ordre</span>
+        <span><b>3</b> Distinguer utile et totale</span>
+      </div>
+    </div>
+
+    <div class="hero-equations" aria-label="Les deux relations essentielles">
+      <article>
+        <small>VAPEUR · CÔTÉ BASSE PRESSION</small>
+        <strong>Surchauffe</strong>
+        <p>T° réelle du tube <b>−</b> T° de saturation</p>
+        <span>Référence zéotrope : rosée</span>
+      </article>
+      <article>
+        <small>LIQUIDE · CÔTÉ HAUTE PRESSION</small>
+        <strong>Sous-refroidissement</strong>
+        <p>T° de saturation <b>−</b> T° réelle du tube</p>
+        <span>Référence zéotrope : bulle</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="module-shell" id="module" aria-label="Cours interactif sur la surchauffe et le sous-refroidissement">
+    <nav class="stepper" id="stepper" aria-label="Progression du cours"></nav>
+
+    <article class="lesson-card" aria-live="polite">
+      <div class="lesson-top">
+        <div>
+          <p class="eyebrow" id="kicker"></p>
+          <h2 id="title"></h2>
+        </div>
+        <div class="voice-controls">
+          <button class="exit-course" id="exit-course" type="button" aria-label="Quitter le mode cours">Quitter</button>
+          <label class="voice-choice-control">
+            <span>Voix</span>
+            <select id="voice-choice" aria-label="Choisir la voix française">
+              <option value="">Voix française automatique</option>
+            </select>
+          </label>
+          <div class="speed" aria-label="Vitesse de lecture">
+            <button id="slower" type="button" aria-label="Ralentir la voix">−</button>
+            <span id="speed-value">0,95×</span>
+            <button id="faster" type="button" aria-label="Accélérer la voix">+</button>
+          </div>
+          <button class="listen" id="listen" type="button"><span aria-hidden="true">▶</span><b> Écouter</b></button>
+        </div>
+      </div>
+
+      <p class="lesson-text" id="lesson-text"></p>
+      <section class="interactive-zone" id="zone"></section>
+
+      <div class="lesson-footer">
+        <button class="nav subtle" id="prev" type="button">← Retour</button>
+        <span id="status"></span>
+        <button class="nav" id="next" type="button">Continuer →</button>
+      </div>
+      <p class="speech-warning" id="speech-warning" role="status" hidden>La synthèse vocale n’est pas disponible. Tout le contenu reste lisible à l’écran.</p>
+    </article>
+  </section>
+
+  <section class="final-message">
+    <p class="eyebrow">À RETENIR</p>
+    <h2>Une température seule ne suffit jamais.<br><span>Pression, table, sonde, soustraction.</span></h2>
+    <div class="pillars" aria-label="Méthode résumée">
+      <span>Manomètre</span><i>→</i><span>Table du fluide</span><i>→</i><span>Sonde</span><i>→</i><strong>Écart en K</strong>
+    </div>
+    <div class="next-brick">
+      <small>BRIQUE SUIVANTE</small>
+      <strong>Décrypter le code d’un fluide frigorigène</strong>
+      <span>Après les états et les mesures, le parcours abordera les familles de fluides et la logique des désignations R‑xyz.</span>
+      <a class="next-tool" href="../nomenclature-interactive/index.html">Continuer vers la nomenclature →</a>
+    </div>
+  </section>
+
+  <aside class="refs" id="refs" hidden>
+    <p class="eyebrow">REPÈRES MÉTIER</p>
+    <h2>Le cadre utilisé dans ce cours</h2>
+    <ul>
+      <li>La surchauffe et le sous-refroidissement sont des différences de température exprimées en kelvins.</li>
+      <li>Repères pédagogiques du pack : surchauffe 5 à 10 K ; sous-refroidissement 4 à 8 K. La documentation constructeur reste prioritaire.</li>
+      <li>La mesure demande le fluide identifié, une pression, la table correspondante et une température de tube relevée au bon endroit.</li>
+      <li>Avec un mélange zéotrope : rosée pour la surchauffe, bulle pour le sous-refroidissement.</li>
+      <li>Ce sujet apprend à mesurer et à déterminer l’état du fluide frigorigène. Il ne constitue pas une procédure complète de dépannage.</li>
+      <li>Les exemples R‑134a utilisent les valeurs pédagogiques de la réglette FRIGOLO intégrée au pack.</li>
+    </ul>
+  </aside>
+
+  <footer>
+    <span>Habilitation Fluide · Auto-formation interactive</span>
+    <button id="restart" type="button">Recommencer</button>
+  </footer>
+</main>
+<script src="app.js?v=20260731-sujet4"></script>
+<script src="marque.js?v=20260810-1"></script>
+</body>
+</html>

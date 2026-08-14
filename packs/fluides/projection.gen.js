@@ -2116,6 +2116,13 @@ window.PILOTE_PROJECTION = {
        "titre": "Surchauffe et sous-refroidissement"
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/surchauffe-sous-refroidissement-interactif/index.html",
+       "lancer": "🌡️ S'entraîner au calcul : surchauffe et sous-refroidissement pas à pas",
+       "desc": "13 étapes : vocabulaire, instruments, point de rosée et point de bulle, calcul BP puis HP, surchauffe utile et totale, cas du zéotrope R-407C, protocole du double relevé et défi final de 10 questions (seuil 8/10) — environ 15 minutes.",
+       "titre": "Surchauffe et sous-refroidissement"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/surchauffe-utile-totale.svg",
        "alt": "Le fluide bout dans l'évaporateur ; après la disparition de la dernière goutte, la vapeur s'échauffe : c'est la surchauffe utile dans l'échangeur, puis la surchauffe totale jusqu'au compresseur.",

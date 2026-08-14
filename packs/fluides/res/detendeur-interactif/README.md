@@ -20,7 +20,7 @@ Double-cliquer sur index.html. Aucun serveur, CDN, compte ou accès internet n�
 3. découvrir bulbe, membrane, tige, clapet, orifice et ressort ;
 4. observer l’ouverture, la chute de pression et la conservation du débit massique ;
 5. calculer la surchauffe ;
-6. opposer la pression du bulbe à la pression d’évaporation et au ressort ;
+6. lire les trois forces et suivre la chaîne bulbe → membrane → tige → clapet ;
 7. tester la réponse à une sortie plus chaude ou plus froide ;
 8. poser correctement le bulbe et suivre son capillaire ;
 9. comparer prise interne T 2 et prise externe TE 2 ;

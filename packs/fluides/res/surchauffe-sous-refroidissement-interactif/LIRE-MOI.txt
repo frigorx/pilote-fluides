@@ -1,0 +1,21 @@
+HABILITATION FLUIDE · SUJET 4
+SURCHAUFFE ET SOUS-REFROIDISSEMENT
+
+Point d’entrée :
+  index.html
+
+Contenu :
+  - 13 étapes interactives sans défilement en mode cours ;
+  - surchauffe, sous-refroidissement, surchauffe utile et totale ;
+  - méthode manomètre → table du fluide → sonde → soustraction ;
+  - calculs interactifs avec les valeurs pédagogiques du R-134a ;
+  - choix rosée/bulle pour le R-407C zéotrope ;
+  - détermination de l’état : sous-refroidi, saturé ou surchauffé ;
+  - défi de 10 questions, validation à partir de 8/10 ;
+  - narration française facultative, choix manuel de la voix et vitesse réglable.
+
+Repères pédagogiques employés dans le pack :
+  surchauffe 5 à 10 K ; sous-refroidissement 4 à 8 K.
+  La documentation constructeur reste prioritaire.
+
+Le module fonctionne hors ligne, sans voix, sans stockage et sans réseau.

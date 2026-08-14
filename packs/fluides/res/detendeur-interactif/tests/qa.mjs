@@ -81,8 +81,11 @@ for (const viewport of viewports) {
   if ((await page.locator("#superheat-output").textContent())?.trim() !== "5 K") failures.push(`${viewport.name}: calcul de surchauffe incorrect`);
 
   await page.locator('[data-step="5"]').click();
-  await page.locator('[data-force="high"]').click();
-  if (!((await page.locator("#visual-readout").textContent()) || "").includes("s’ouvre davantage")) failures.push(`${viewport.name}: équilibre des forces absent`);
+  if ((await page.locator(".force-chain").count()) !== 1) failures.push(`${viewport.name}: chaîne cinématique absente`);
+  await page.locator('[data-force="bulb"]').click();
+  if (!((await page.locator("#visual-readout").textContent()) || "").includes("passage augmente")) failures.push(`${viewport.name}: action d’ouverture du bulbe absente`);
+  await page.locator('[data-force="spring"]').click();
+  if (!((await page.locator("#visual-readout").textContent()) || "").includes("passage diminue")) failures.push(`${viewport.name}: action de fermeture du ressort absente`);
 
   await page.locator('[data-step="6"]').click();
   if ((await page.locator(".approved-valve").count()) !== 1) failures.push(`${viewport.name}: boucle vectorielle absente`);

@@ -547,6 +547,72 @@ h2 { margin-bottom: 3px; font-size: 1.16em; }
 }
 .diagnosis-steps li { margin: 7px 0; }
 
+/* Écran 6 : mécanisme, forces opposées et chaîne cinématique */
+.force-chain svg { padding: 2px 4px 54px; }
+.fc-panel-title, .fc-label, .fc-callout text, .fc-pressure-note, .fc-opening-note,
+.fc-force-name, .fc-force-sub, .fc-membrane-word, .fc-relation, .fc-result, .fc-chain text {
+  fill: var(--navy);
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  font-weight: 900;
+}
+.fc-panel-title { font-size: 16px; letter-spacing: .04em; }
+.fc-label { font-size: 15px; }
+.fc-bulb { fill: #f0c878; stroke: var(--navy); stroke-width: 5; }
+.fc-capillary { fill: none; stroke: #a7682e; stroke-width: 6; stroke-linecap: round; }
+.fc-head { fill: #d7e1e8; stroke: var(--navy); stroke-width: 6; }
+.fc-membrane { fill: none; stroke: var(--orange-deep); stroke-width: 8; }
+.fc-hub { fill: #758b9c; stroke: var(--navy); stroke-width: 3; }
+.fc-body, .fc-inlet, .fc-outlet { fill: url(#fcBrass); stroke: var(--navy); stroke-width: 6; stroke-linejoin: round; }
+.fc-channel { fill: none; stroke: #fff7dc; stroke-width: 42; stroke-linecap: round; stroke-linejoin: round; }
+.fc-liquid-hp { fill: none; stroke: #f5c95f; stroke-width: 22; stroke-linecap: round; }
+.fc-mixture-bp { fill: none; stroke: #cfe7ef; stroke-width: 24; stroke-linecap: round; stroke-dasharray: 8 5; }
+.fc-rod { fill: none; stroke: #526a7c; stroke-width: 11; stroke-linecap: round; }
+.fc-seat { fill: none; stroke: var(--ink); stroke-width: 8; stroke-linecap: round; }
+.fc-clapet { fill: #eef3f6; stroke: var(--navy); stroke-width: 4; }
+.fc-spring { fill: none; stroke: var(--navy); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.fc-adjust-screw { fill: var(--paper); stroke: var(--navy); stroke-width: 4; }
+.fc-adjust-thread { fill: none; stroke: var(--navy); stroke-width: 2; }
+.fc-evap-channel { fill: none; stroke: var(--blue); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 10 7; }
+.fc-bulb-action { fill: none; stroke: var(--orange-deep); stroke-width: 6; stroke-linecap: round; }
+.fc-callout path { fill: none; stroke: var(--navy); stroke-width: 2; stroke-dasharray: 5 4; }
+.fc-callout text { font-size: 13px; }
+.fc-pressure-note { fill: var(--blue); font-size: 11px; }
+.fc-opening-note { font-size: 11px; }
+
+.fc-balance-frame { fill: var(--paper); stroke: var(--navy); stroke-width: 3; }
+.fc-force { fill: none; stroke-linecap: round; }
+.fc-force-bulb { stroke: var(--orange-deep); stroke-width: 7; }
+.fc-force-evap { stroke: var(--blue); stroke-width: 7; stroke-dasharray: 12 7; }
+.fc-force-spring { stroke: var(--navy); stroke-width: 7; }
+.fc-force.is-dominant, .fc-spring.is-dominant, .fc-bulb-action.is-dominant {
+  stroke-width: 11;
+  filter: drop-shadow(0 0 3px rgba(255, 107, 53, .32));
+}
+.fc-balance-membrane { fill: none; stroke: var(--orange-deep); stroke-width: 7; }
+.fc-force-name { font-size: 14px; }
+.fc-force-sub { fill: var(--muted); font-size: 10px; }
+.fc-orange-text { fill: var(--orange-deep); }
+.fc-membrane-word { font-size: 11px; }
+.fc-relation-box { fill: #f3f7fb; stroke: var(--navy); stroke-width: 2; }
+.fc-relation { font-size: 14px; }
+.fc-result { font-size: 13px; }
+.force-state-bulb .fc-result { fill: var(--orange-deep); }
+.force-state-spring .fc-result { fill: var(--navy); }
+
+.fc-chain rect { fill: var(--paper); stroke: var(--navy); stroke-width: 3; }
+.fc-chain path { fill: none; stroke: var(--navy); stroke-width: 4; stroke-linecap: round; }
+.fc-chain text { font-size: 14px; }
+.force-state-bulb .fc-membrane,
+.force-state-bulb .fc-hub,
+.force-state-bulb .fc-rod,
+.force-state-bulb .fc-clapet { animation: fc-move-down .65s ease-out; }
+.force-state-spring .fc-membrane,
+.force-state-spring .fc-hub,
+.force-state-spring .fc-rod,
+.force-state-spring .fc-clapet { animation: fc-move-up .65s ease-out; }
+@keyframes fc-move-down { from { transform: translateY(-16px); } }
+@keyframes fc-move-up { from { transform: translateY(10px); } }
+
 /* Détendeur : une géométrie unique pour tout le parcours */
 .approved-valve svg { padding: 2px 4px 38px; }
 .av-body-shell, .av-inlet-neck, .av-outlet-neck {
@@ -735,6 +801,10 @@ path.av-body-mark { fill: none; stroke: var(--navy); stroke-width: 3; stroke-lin
   .installation-card h3 { margin-bottom: 2px; font-size: .78em; }
   .installation-card ul { padding-left: 13px; font-size: 1em; }
   .approved-valve svg, .equalization-diagram svg { padding: 0 1px 28px; }
+  .force-chain svg { padding: 0 1px 30px; }
+  .fc-callout, .fc-pressure-note, .fc-opening-note { display: none; }
+  .fc-panel-title, .fc-label, .fc-force-name, .fc-relation, .fc-result, .fc-chain text { font-size: 12px; }
+  .fc-force-sub, .fc-membrane-word { font-size: 9px; }
   .av-callouts text, .av-flow-labels text, .av-component-name text,
   .av-gas-card text, .av-opening-badge text, .av-force-layer text,
   .av-regulation-badge text, .eq-valve text, .eq-evaporator text,
