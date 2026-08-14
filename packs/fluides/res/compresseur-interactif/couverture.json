@@ -1,0 +1,16 @@
+{
+  "cours": "compresseur-interactif",
+  "titre": "Compresseur — installer, régler, vérifier",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 13,
+  "codes": {
+    "6.02": ["assise-vibrations", "materiel-securite", "quiz-gestes"],
+    "6.03": ["securite-ou-controle", "regler-interrupteurs", "quiz-gestes"],
+    "6.04": ["soupapes-aspiration"],
+    "6.05": ["niveau-huile", "circuit-retour-huile", "quiz-huile"],
+    "9.07": ["separateur-huile", "quiz-huile"]
+  },
+  "appui": {
+    "1.05": ["familles-machines", "carter-et-huile"]
+  }
+}

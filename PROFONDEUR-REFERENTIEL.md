@@ -20,10 +20,10 @@ Présents dans plus de 40 % des cartes : ils valident sans discriminer.
 À remplacer par un vocabulaire plus spécifique dans l'instrument.
 
 - `mesure` — 60 % des cartes (utilisé par 6.06, 7.07, 8.08)
-- `install` — 58 % des cartes (utilisé par 7.03, 8.03)
+- `install` — 60 % des cartes (utilisé par 7.03, 8.03)
+- `direct` — 46 % des cartes (utilisé par 4.06, 12.11)
 - `arret` — 46 % des cartes (utilisé par 6.06)
 - `raccord` — 44 % des cartes (utilisé par 4.01, 12.01)
-- `direct` — 44 % des cartes (utilisé par 4.06, 12.11)
 - `securite` — 44 % des cartes (utilisé par 11.01)
 - `remplac` — 44 % des cartes (utilisé par 12.07)
 - `condens` — 42 % des cartes (utilisé par 1.04)

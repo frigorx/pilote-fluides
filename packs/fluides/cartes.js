@@ -3045,6 +3045,16 @@ export const CARTES = [
     dc: "G6 · codes 6.01 · 6.03 · 6.05 · 6.07",
     minuteur_s: 300,
     corps:
+      lienOutil(
+        "packs/fluides/res/module-compresseur/index.html",
+        "🔧 Lancer le cours interactif : le compresseur, du piston au volume balayé",
+        "Le Module Compresseur du portail FRIGOLO, ré-exploité pour la formation : types de compresseurs, fonctionnement du piston, volume balayé, rendement volumétrique et échauffement de compression — curseurs à manipuler et feuille de résultats imprimable."
+      ) +
+      lienOutil(
+        "packs/fluides/res/compresseur-interactif/index.html",
+        "🛠️ S'entraîner aux gestes : installer, régler, vérifier le compresseur",
+        "13 écrans dans le moteur des modules condenseur et évaporateur : la plaque signalétique, l'assise et les sécurités, régler en prouvant à l'instrument, la vanne d'aspiration, l'huile et son retour, le séparateur — deux contrôles corrigés."
+      ) +
       schema("compresseurs.svg", "Coupe animée d un compresseur à piston et les quatre technologies : piston, scroll, vis, rotatif.") +
       "<p>Le compresseur est le <b>seul organe actif</b> du cycle : il aspire la vapeur basse pression " +
       "et la refoule en haute pression. Tout le reste est passif.</p>" +
@@ -3122,6 +3132,11 @@ export const CARTES = [
     dc: "G6 · codes 6.02 · 6.04 · 6.06 · 6.08",
     minuteur_s: 330,
     corps:
+      lienOutil(
+        "packs/fluides/res/compresseur-interactif/index.html",
+        "🛠️ Lancer le cours interactif : installer, régler, vérifier le compresseur",
+        "13 écrans : trois enveloppes de machines, la plaque signalétique, poser sans transmettre, le matériel de sécurité qui fait partie de l'installation, sécurité contre contrôle, la vanne d'aspiration et ses trois positions, l'huile du carter au séparateur — deux contrôles corrigés."
+      ) +
       schema("compresseurs.svg", "Compresseur en coupe : soupape d'aspiration, cylindre, sortie vers le refoulement.") +
       "<p>Ce cours prolonge la fiche sur le compresseur. Il explique le geste : comment on " +
       "l'<b>installe</b>, comment on <b>règle</b> ses soupapes, comment on le <b>démarre</b>, " +
@@ -3708,6 +3723,11 @@ export const CARTES = [
         "packs/fluides/res/regulateur-kvl-pedagogique/index.html",
         "🧊 Lancer le cours interactif : le régulateur de pression de carter",
         "14 écrans : reconnaître le KVL, le placer juste avant le compresseur, comprendre la surcharge au redémarrage, la bande proportionnelle, mesurer avant de toucher au réglage, monter, contrôler — et un défi final de 7 questions (seuil 6/7), environ 15 minutes."
+      ) +
+      lienOutil(
+        "packs/fluides/res/pupitre-reglage-interactif/index.html",
+        "🎚️ S'entraîner au pupitre : consigne, différentiel, preuve",
+        "Deux pupitres manipulables (thermostat de chambre froide, pressostat basse pression) : réglez la consigne et le différentiel, lisez les points d'action en direct, serrez trop le différentiel et voyez l'alerte de courts-cycles — puis un contrôle corrigé. Valeurs d'exercice : la notice fait foi."
       ) +
       schema("detendeurs-ligne.svg", "La ligne liquide et ses accessoires, dans l ordre : réserve de liquide, filtre déshydrateur, voyant, électrovanne, détendeur.") +
       "<p>Autour du détendeur, d'autres organes se <b>règlent</b> et se <b>contrôlent</b>. Ils ne " +

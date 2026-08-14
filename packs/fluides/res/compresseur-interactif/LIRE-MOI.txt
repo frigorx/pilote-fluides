@@ -1,0 +1,22 @@
+COMPRESSEUR — INSTALLER, RÉGLER, VÉRIFIER
+=========================================
+
+Le module des GESTES autour du compresseur — construit le 14/08/2026 (brique A du
+plan des manipulations virtuelles, carte blanche de F. Henninot), dans le même moteur
+que les modules condenseur et évaporateur (navigation, voix, extraits, référence des
+codes affichée écran par écran).
+
+- 13 écrans courts, sans défilement, dans 5 dossiers : Observer, Installer,
+  Régler, Vérifier, Contrôler.
+- Codes pratiques couverts : 6.02 (installer, matériel de contrôle et de sécurité
+  compris), 6.03 (interrupteurs de sécurité et de contrôle), 6.04 (soupapes
+  d'aspiration — les trois positions de la vanne de service), 6.05 (circuit de
+  retour de l'huile), 9.07 (séparateur d'huile). Appui : 1.05.
+- Le détail écran par écran est dans couverture.json.
+- La THÉORIE (types, piston, volume balayé, rendement volumétrique, échauffement)
+  vit dans le module voisin `module-compresseur` (ré-exploité du portail FRIGOLO) —
+  reliés aux fiches g6 (Le compresseur) et g6b (Compresseur — installer, régler,
+  vérifier) : les deux modules se complètent, ils ne se recouvrent pas.
+- Aucune valeur chiffrée inventée : notice et plaque signalétique font foi partout.
+
+Ouvrir : index.html (hors ligne, aucune dépendance distante).

@@ -9,11 +9,11 @@
 
 | | |
 |---|---|
-| Cours interactifs en place | **29** |
+| Cours interactifs en place | **32** |
 | Fiches qui en appellent au moins un | **50** |
 | Codes du référentiel couverts par un cours | **99** |
 | Codes encore expliqués par du texte seul | **0** |
-| Poids total des cours | **9.7 Mo** |
+| Poids total des cours | **10.1 Mo** |
 
 ## Anomalies
 
@@ -30,6 +30,7 @@
 | `chaleur-circuit-interactif` | g1a | — | 1.01 · 1.02 · 1.04 | 121 Ko |
 | `chaleur-interactive` | g1s | — | 1.02 | 157 Ko |
 | `circuit-organe-par-organe` | g6, g7, g8, g9 | — | 1.04 | 841 Ko |
+| `compresseur-interactif` | g6, g6b | 13 | 6.02 · 6.03 · 6.04 · 6.05 · 9.07 | 64 Ko |
 | `condenseur-interactif` | g7b | 25 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 · 7.06 · 7.08 | 76 Ko |
 | `cours-classes-securite` | cl1 | — | 1.08 | 155 Ko |
 | `detendeur-interactif` | g9 | 14 | 1.04 · 9.10 · 9.03 | 174 Ko |
@@ -42,10 +43,12 @@
 | `hydrocarbures-a1-a2` | g12 | 28 | 12.01 · 12.02 · 12.03 · 12.04 · 12.05 · 12.06 · 12.13 · 12.14 | 207 Ko |
 | `intervention-hydrocarbures-interactive` | g12b | 27 | 12.07 · 12.08 · 12.09 · 12.10 · 12.11 · 12.12 | 57 Ko |
 | `mission-bouteilles` | p6 | — | 5.02 · 5.05 · 5.06 | 51 Ko |
+| `module-compresseur` | g6 | 6 | 1.05 · 1.02 | 314 Ko |
 | `nomenclature-interactive` | g1c | — | 1.06 | 101 Ko |
 | `pose-manifold-2-voies-interactive` | p1 | 8 | 4.05 · 5.01 · 12.02 | 317 Ko |
 | `pose-manifold-interactive` | p1 | 6 | 4.05 · 5.01 · 5.02 · 3.03 · 3.04 | 89 Ko |
 | `pression-temperature-interactive` | g1b | — | 1.02 · 1.03 | 150 Ko |
+| `pupitre-reglage-interactif` | g9b | 9 | 9.04 · 9.06 · 7.04 | 60 Ko |
 | `recuperation-fluide-interactive` | p2 | 8 | 5.01 · 5.02 · 5.03 · 5.05 · 5.06 | 181 Ko |
 | `regulateur-kvl-pedagogique` | g9b | 14 | 1.05 · 9.05 | 178 Ko |
 | `surchauffe-sous-refroidissement-interactif` | g1e | 13 | 5.05 · 4.05 · 1.03 · 1.06 | 91 Ko |

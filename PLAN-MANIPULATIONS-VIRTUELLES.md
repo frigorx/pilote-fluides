@@ -10,17 +10,17 @@
 |---|---|---|
 | Couverture du référentiel (fiches) | **A1 94/94 · A2 93/93 · D 21/21 · E 17/17 = 100 %** | `COUVERTURE-REFERENTIEL.md` |
 | Profondeur (le code est TENU, pas cité) | 0 rouge · 0 orange · 94 sans signal d'absence | `PROFONDEUR-REFERENTIEL.md` |
-| Cours interactifs | 29, registre à **0 anomalie** | `REGISTRE-COURS-INTERACTIFS.md` |
+| Cours interactifs | 32, registre à **0 anomalie** | `REGISTRE-COURS-INTERACTIFS.md` |
 | Banque d'entraînement | 99 compétences évaluées par ≥ 1 question | `COUVERTURE-REFERENTIEL.md` |
-| Codes **pratiques** A1 | **55**, dont **47 portés** par ≥ 1 cours interactif (au 14/08 après C et D) | croisement `referentiel-2025.json` × `couverture.json` |
-| **Le trou** | ~~13~~ → **8 codes pratiques sans aucun cours interactif** (C et D faites le 14/08) : 6.02-6.05, 7.04, 9.04, 9.06, 9.07 | idem — liste au § 2 |
+| Codes **pratiques** A1 | **55/55 portés** par ≥ 1 cours interactif (les 4 briques faites le 14/08) | croisement `referentiel-2025.json` × `couverture.json` |
+| **Le trou** | ~~13~~ → ~~8~~ → **0 — les 55 codes pratiques A1 ont TOUS un cours interactif** (les 4 briques faites le 14/08) | idem — liste au § 2 |
 
-Autrement dit : **le « expliqué » est complet et prouvé** ; le « faire », préparé virtuellement
-pour 47 codes sur 55, attend ses deux dernières briques (A et B).
+Autrement dit : **le « expliqué » est complet et prouvé, et chacun des 55 codes pratiques
+d'A1 a désormais son cours interactif.** Reste la relecture métier — le vrai juge.
 
 ## 2. Les codes nus, groupés en briques (l'état de chaque brique est daté)
 
-### Brique A — « Le compresseur : installer, régler, vérifier » (la plus grosse — l'organe SANS module)
+### Brique A — « Le compresseur : installer, régler, vérifier » — ✅ FAITE le 14/08 (carte blanche)
 Le seul organe majeur sans module dédié, alors que l'évaporateur et le condenseur ont le leur.
 Même moule que ces deux-là (24-26 écrans, gestes simulés) :
 - **6.02** Installer correctement un compresseur (contrôle et sécurité compris)
@@ -29,7 +29,7 @@ Même moule que ces deux-là (24-26 écrans, gestes simulés) :
 - **6.05** Vérifier le circuit de retour de l'huile
 - **9.07** Vérifier le fonctionnement d'un séparateur d'huile *(même circuit d'huile)*
 
-### Brique B — « Le pupitre de réglage » (simulateur de consignes)
+### Brique B — « Le pupitre de réglage » — ✅ FAITE le 14/08 (carte blanche)
 Un seul simulateur pour la famille « je règle une consigne et un différentiel, je prouve
 le résultat » — pressostats, thermostats, limiteurs :
 - **9.04** Régler des thermostats mécaniques et électroniques
@@ -65,5 +65,13 @@ les codes d'inspection manquants sont des ÉCRANS À AJOUTER, pas des briques à
 2. ~~**D**~~ ✅ : condenseur 24 → 25 écrans (purge des incondensables 7.06 ; 7.08 déclaré sur
    « Nettoyer, puis prouver ») · évaporateur 26 → 27 écrans (position des conduites 8.05 ;
    8.09 déclaré sur « Inspecter la surface »).
-3. **A** (compresseur) — la vraie brique neuve, la plus utile : l'organe sans module.
-4. **B** (pupitre de réglage) — conception d'interaction la plus originale, en dernier.
+3. ~~**A**~~ ✅ `compresseur-interactif` (13 écrans, moteur des modules condenseur/évaporateur :
+   plaque, assise, sécurités qui font partie de l'installation, sécurité ≠ contrôle, vanne
+   d'aspiration à trois positions, huile du carter au séparateur, deux contrôles corrigés)
+   **+ le Module Compresseur de FRIGOLO ré-exploité** (types, piston, VOLUME BALAYÉ, rendement
+   volumétrique — retrouvé sur consigne de Franck, identique à la version canonique du Bureau,
+   importé tel quel avec marque et badge). Les deux reliés aux fiches g6 et g6b.
+4. ~~**B**~~ ✅ `pupitre-reglage-interactif` (9 écrans, 2 pupitres MANIPULABLES : thermostat de
+   chambre froide et pressostat BP — consigne + différentiel en curseurs, lecture des points
+   d'action en direct, alerte de courts-cycles ; valeurs d'exercice, la notice fait foi,
+   répété à chaque écran). Relié à la fiche g9b.

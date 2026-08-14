@@ -6234,6 +6234,20 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "experience",
+       "url": "packs/fluides/res/module-compresseur/index.html",
+       "lancer": "🔧 Lancer le cours interactif : le compresseur, du piston au volume balayé",
+       "desc": "Le Module Compresseur du portail FRIGOLO, ré-exploité pour la formation : types de compresseurs, fonctionnement du piston, volume balayé, rendement volumétrique et échauffement de compression — curseurs à manipuler et feuille de résultats imprimable.",
+       "titre": "Le compresseur"
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/compresseur-interactif/index.html",
+       "lancer": "🛠️ S'entraîner aux gestes : installer, régler, vérifier le compresseur",
+       "desc": "13 écrans dans le moteur des modules condenseur et évaporateur : la plaque signalétique, l'assise et les sécurités, régler en prouvant à l'instrument, la vanne d'aspiration, l'huile et son retour, le séparateur — deux contrôles corrigés.",
+       "titre": "Le compresseur"
+      },
+      {
+       "type": "experience",
        "url": "packs/fluides/res/circuit-organe-par-organe/index.html",
        "lancer": "🔧 Lancer le cours interactif : le circuit, organe par organe",
        "desc": "La croix du frigoriste, chaque organe en fiche animée (piston, scroll et vis compris), les serpentins du condenseur et de l'évaporateur, la régulation du détendeur, l'exercice « suivez le fluide », la bibliothèque des 10 organes et un défi final de 10 questions.",
@@ -6534,6 +6548,13 @@ window.PILOTE_PROJECTION = {
          "tirage_au_sort": true
         }
        ]
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/compresseur-interactif/index.html",
+       "lancer": "🛠️ Lancer le cours interactif : installer, régler, vérifier le compresseur",
+       "desc": "13 écrans : trois enveloppes de machines, la plaque signalétique, poser sans transmettre, le matériel de sécurité qui fait partie de l'installation, sécurité contre contrôle, la vanne d'aspiration et ses trois positions, l'huile du carter au séparateur — deux contrôles corrigés.",
+       "titre": "Compresseur — installer, régler, vérifier"
       },
       {
        "type": "experience",
@@ -8507,6 +8528,13 @@ window.PILOTE_PROJECTION = {
        "url": "packs/fluides/res/regulateur-kvl-pedagogique/index.html",
        "lancer": "🧊 Lancer le cours interactif : le régulateur de pression de carter",
        "desc": "14 écrans : reconnaître le KVL, le placer juste avant le compresseur, comprendre la surcharge au redémarrage, la bande proportionnelle, mesurer avant de toucher au réglage, monter, contrôler — et un défi final de 7 questions (seuil 6/7), environ 15 minutes.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "experience",
+       "url": "packs/fluides/res/pupitre-reglage-interactif/index.html",
+       "lancer": "🎚️ S'entraîner au pupitre : consigne, différentiel, preuve",
+       "desc": "Deux pupitres manipulables (thermostat de chambre froide, pressostat basse pression) : réglez la consigne et le différentiel, lisez les points d'action en direct, serrez trop le différentiel et voyez l'alerte de courts-cycles — puis un contrôle corrigé. Valeurs d'exercice : la notice fait foi.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {

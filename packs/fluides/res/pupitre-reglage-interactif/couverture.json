@@ -1,0 +1,11 @@
+{
+  "cours": "pupitre-reglage-interactif",
+  "titre": "Le pupitre de réglage — consigne, différentiel, preuve",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 9,
+  "codes": {
+    "9.04": ["simulateur-thermostat", "mecanique-electronique", "quiz-pupitre"],
+    "9.06": ["simulateur-limiteur", "limiteur-ou-securite", "quiz-pupitre"],
+    "7.04": ["cote-condenseur", "quiz-pupitre"]
+  }
+}

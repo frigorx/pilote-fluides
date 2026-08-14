@@ -1,0 +1,10 @@
+{
+  "cours": "module-compresseur",
+  "titre": "Module Compresseur Frigorifique",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 6,
+  "codes": {
+    "1.05": ["intro", "types", "fonctionnement", "volume", "rendement"],
+    "1.02": ["temperature"]
+  }
+}

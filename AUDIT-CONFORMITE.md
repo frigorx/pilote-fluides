@@ -7,9 +7,9 @@
 
 | Mesure | Résultat |
 |---|---:|
-| Cours interactifs recensés | **29** |
-| Cours avec anomalie critique automatisable | **1** |
-| Cours avec dette documentaire ou de reprise | **17** |
+| Cours interactifs recensés | **32** |
+| Cours avec anomalie critique automatisable | **2** |
+| Cours avec dette documentaire ou de reprise | **18** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **9** |
 | SVG pédagogiques contrôlés | **44** |
 | SVG sans titre / sans description textuelle | **1 / 39** |
@@ -25,6 +25,7 @@
 | `chaleur-circuit-interactif` | ✓ | ✓ | ✓ | ✗ | commune | 4 | ✗ | 🟠 impression, SOURCES-IMAGES.md, ancien fond #EEF2F6 (4) |
 | `chaleur-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `circuit-organe-par-organe` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `compresseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `condenseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `cours-classes-securite` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `detendeur-interactif` | ✓ | ✓ | ✓ | ✓ | absente | 4 | ✓ | 🟠 réglage de lisibilité |
@@ -37,10 +38,12 @@
 | `hydrocarbures-a1-a2` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✗ | 🟠 SOURCES-IMAGES.md, ancien terme « module interactif » (1) |
 | `intervention-hydrocarbures-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `mission-bouteilles` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `module-compresseur` | ✗ | ✓ | ✓ | ✓ | absente | — | — | 🔴 description |
 | `nomenclature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pose-manifold-2-voies-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pose-manifold-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pression-temperature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `pupitre-reglage-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `recuperation-fluide-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
 | `regulateur-kvl-pedagogique` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |
 | `surchauffe-sous-refroidissement-interactif` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |

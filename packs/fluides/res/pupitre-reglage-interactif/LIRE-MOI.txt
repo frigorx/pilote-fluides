@@ -1,0 +1,20 @@
+LE PUPITRE DE RÉGLAGE — CONSIGNE, DIFFÉRENTIEL, PREUVE
+======================================================
+
+Le simulateur des réglages de régulation — construit le 14/08/2026 (brique B, la
+dernière du plan des manipulations virtuelles, carte blanche de F. Henninot), dans le
+même moteur que les modules condenseur, évaporateur et compresseur.
+
+- 9 écrans dans 3 dossiers : Comprendre, Régler, Contrôler.
+- Deux PUPITRES MANIPULABLES (thermostat de chambre froide, pressostat basse
+  pression) : curseurs de consigne et de différentiel, lecture en direct des points
+  d'action et de retour, alerte de courts-cycles quand le différentiel se serre.
+  Les valeurs y sont explicitement DES VALEURS D'EXERCICE — chaque écran répète que
+  la notice et les conditions de l'installation font foi, et que le point d'action
+  réel se prouve à l'instrument.
+- Codes pratiques couverts : 9.04 (thermostats mécaniques et électroniques),
+  9.06 (limiteurs de pression mécaniques et électroniques), 7.04 (interrupteurs
+  de sécurité et de contrôle côté condenseur).
+- Le détail écran par écran est dans couverture.json. Relié à la fiche g9b.
+
+Ouvrir : index.html (hors ligne, aucune dépendance distante).
