@@ -4,10 +4,33 @@
   "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
   "ecrans": 15,
   "codes": {
-    "1.05": ["ecran-1", "ecran-2", "ecran-4", "ecran-5", "ecran-6", "ecran-7", "ecran-8", "ecran-9", "ecran-10", "ecran-12", "ecran-13", "ecran-14", "ecran-15"]
+    "1.05": [
+      "ecran-1",
+      "ecran-2",
+      "ecran-4",
+      "ecran-5",
+      "ecran-6",
+      "ecran-7",
+      "ecran-8",
+      "ecran-9",
+      "ecran-10",
+      "ecran-12",
+      "ecran-13",
+      "ecran-14",
+      "ecran-15"
+    ]
   },
   "appui": {
-    "7.05": ["ecran-3"],
-    "12.07": ["ecran-11"]
+    "7.05": [
+      "ecran-3"
+    ],
+    "12.07": [
+      "ecran-11"
+    ],
+    "9.08": [
+      "ecran-9",
+      "ecran-10",
+      "ecran-14"
+    ]
   }
 }

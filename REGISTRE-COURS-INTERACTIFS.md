@@ -32,8 +32,8 @@
 | `circuit-organe-par-organe` | g6, g7, g8, g9 | — | 1.04 | 841 Ko |
 | `condenseur-interactif` | g7b | 24 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 | 75 Ko |
 | `cours-classes-securite` | cl1 | — | 1.08 | 155 Ko |
-| `detendeur-interactif` | g9 | 14 | 1.04 · 9.10 | 174 Ko |
-| `electrovanne-interactive` | g9 | 14 | 1.05 | 180 Ko |
+| `detendeur-interactif` | g9 | 14 | 1.04 · 9.10 · 9.03 | 174 Ko |
+| `electrovanne-interactive` | g9 | 14 | 1.05 | 181 Ko |
 | `etancheite-interactive` | g4a, g4b, g4c | 27 | 4.01 · 4.02 · 4.03 · 4.04 · 4.05 · 4.06 · 4.07 · 4.08 · 4.09 | 67 Ko |
 | `evaporateur-interactif` | g8b | 26 | 8.02 · 8.03 · 8.04 · 8.06 · 8.07 · 8.10 · 8.11 | 164 Ko |
 | `filtre-deshydrateur-pedagogique` | g9 | 15 | 1.05 | 3011 Ko |
