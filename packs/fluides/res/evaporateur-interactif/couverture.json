@@ -2,7 +2,7 @@
   "module": "evaporateur-interactif",
   "titre": "Évaporateur — installer, régler, vérifier",
   "reference": "arrêté du 21 novembre 2025",
-  "ecrans": 26,
+  "ecrans": 27,
   "codes": {
     "8.02": [
       "regulateur-role",
@@ -51,6 +51,12 @@
       "inspection-surface",
       "interpretation-releve",
       "quiz-givre"
+    ],
+    "8.05": [
+      "conduites-position"
+    ],
+    "8.09": [
+      "inspection-surface"
     ]
   },
   "hors_referentiel": [

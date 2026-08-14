@@ -9,11 +9,11 @@
 
 | | |
 |---|---|
-| Cours interactifs en place | **28** |
+| Cours interactifs en place | **29** |
 | Fiches qui en appellent au moins un | **50** |
 | Codes du référentiel couverts par un cours | **99** |
 | Codes encore expliqués par du texte seul | **0** |
-| Poids total des cours | **9.5 Mo** |
+| Poids total des cours | **9.7 Mo** |
 
 ## Anomalies
 
@@ -30,12 +30,12 @@
 | `chaleur-circuit-interactif` | g1a | — | 1.01 · 1.02 · 1.04 | 121 Ko |
 | `chaleur-interactive` | g1s | — | 1.02 | 157 Ko |
 | `circuit-organe-par-organe` | g6, g7, g8, g9 | — | 1.04 | 841 Ko |
-| `condenseur-interactif` | g7b | 24 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 | 75 Ko |
+| `condenseur-interactif` | g7b | 25 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 · 7.06 · 7.08 | 76 Ko |
 | `cours-classes-securite` | cl1 | — | 1.08 | 155 Ko |
 | `detendeur-interactif` | g9 | 14 | 1.04 · 9.10 · 9.03 | 174 Ko |
 | `electrovanne-interactive` | g9 | 14 | 1.05 | 181 Ko |
 | `etancheite-interactive` | g4a, g4b, g4c | 27 | 4.01 · 4.02 · 4.03 · 4.04 · 4.05 · 4.06 · 4.07 · 4.08 · 4.09 | 67 Ko |
-| `evaporateur-interactif` | g8b | 26 | 8.02 · 8.03 · 8.04 · 8.06 · 8.07 · 8.10 · 8.11 | 164 Ko |
+| `evaporateur-interactif` | g8b | 27 | 8.02 · 8.03 · 8.04 · 8.06 · 8.07 · 8.10 · 8.11 · 8.05 · 8.09 | 165 Ko |
 | `filtre-deshydrateur-pedagogique` | g9 | 15 | 1.05 | 3011 Ko |
 | `frise-vivante` | c00 | 10 | 2.01 | 1177 Ko |
 | `froid-clim-academie` | g1e | — | 1.02 | 29 Ko |
@@ -47,6 +47,7 @@
 | `pose-manifold-interactive` | p1 | 6 | 4.05 · 5.01 · 5.02 · 3.03 · 3.04 | 89 Ko |
 | `pression-temperature-interactive` | g1b | — | 1.02 · 1.03 | 150 Ko |
 | `recuperation-fluide-interactive` | p2 | 8 | 5.01 · 5.02 · 5.03 · 5.05 · 5.06 | 181 Ko |
+| `regulateur-kvl-pedagogique` | g9b | 14 | 1.05 · 9.05 | 178 Ko |
 | `surchauffe-sous-refroidissement-interactif` | g1e | 13 | 5.05 · 4.05 · 1.03 · 1.06 | 91 Ko |
 | `tome-3-technologie-organes` | g6, g7, g8, g9, g9b | 112 | 1.04 · 1.05 · 6.01 · 7.01 · 8.01 · 9.01 | 1073 Ko |
 | `vanne-service-interactive` | p1, p5, g6b, g9b | 4 | 4.01 · 4.05 · 5.01 | 181 Ko |

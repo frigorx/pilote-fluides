@@ -2,7 +2,7 @@
   "cours": "condenseur-interactif",
   "titre": "Condenseur — installer, régler, vérifier",
   "reference": "arrêté du 21 novembre 2025",
-  "ecrans": 24,
+  "ecrans": 25,
   "codes": {
     "7.02": [
       "materiel-accessible",
@@ -44,6 +44,12 @@
       "nettoyer-remesurer",
       "quiz-diagnostic",
       "quiz-efficacite"
+    ],
+    "7.06": [
+      "purge-incondensables"
+    ],
+    "7.08": [
+      "nettoyer-remesurer"
     ]
   },
   "hors_referentiel": [

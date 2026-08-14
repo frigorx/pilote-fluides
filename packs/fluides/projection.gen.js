@@ -8504,6 +8504,13 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "experience",
+       "url": "packs/fluides/res/regulateur-kvl-pedagogique/index.html",
+       "lancer": "🧊 Lancer le cours interactif : le régulateur de pression de carter",
+       "desc": "14 écrans : reconnaître le KVL, le placer juste avant le compresseur, comprendre la surcharge au redémarrage, la bande proportionnelle, mesurer avant de toucher au réglage, monter, contrôler — et un défi final de 7 questions (seuil 6/7), environ 15 minutes.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "experience",
        "url": "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=regulateurs-securite",
        "lancer": "📘 Lancer le cours interactif : Tome 3 — la technologie de l'organe",
        "desc": "Les organes annexes un par un : réservoir, filtre déshydrateur, voyant, électrovanne, clapet et vannes de service, bouteille anti-coup de liquide, séparateur d'huile, régulateurs de pression et soupape — chacun en vue isolée, avec son symbole normalisé.",

@@ -20,7 +20,7 @@ prévues par la procédure avant de modifier la charge.
 LE PARCOURS
 -----------
 
-- 24 écrans courts, sans défilement, dans 5 dossiers : Observer, Installer,
+- 25 écrans courts, sans défilement, dans 5 dossiers : Observer, Installer,
   Régler, Vérifier et Tracer.
 - Interaction centrale : encrasser progressivement une batterie, arrêter le
   ventilateur et voir réagir une indication QUALITATIVE de pression.

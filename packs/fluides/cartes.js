@@ -3704,6 +3704,11 @@ export const CARTES = [
     dc: "G9 · codes 9.04 · 9.05 · 9.06 · 9.07 · 9.09 · 9.10",
     minuteur_s: 420,
     corps:
+      lienOutil(
+        "packs/fluides/res/regulateur-kvl-pedagogique/index.html",
+        "🧊 Lancer le cours interactif : le régulateur de pression de carter",
+        "14 écrans : reconnaître le KVL, le placer juste avant le compresseur, comprendre la surcharge au redémarrage, la bande proportionnelle, mesurer avant de toucher au réglage, monter, contrôler — et un défi final de 7 questions (seuil 6/7), environ 15 minutes."
+      ) +
       schema("detendeurs-ligne.svg", "La ligne liquide et ses accessoires, dans l ordre : réserve de liquide, filtre déshydrateur, voyant, électrovanne, détendeur.") +
       "<p>Autour du détendeur, d'autres organes se <b>règlent</b> et se <b>contrôlent</b>. Ils ne " +
       "dosent pas le fluide. Ils protègent l'installation et lui évitent de gaspiller de " +

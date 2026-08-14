@@ -12,8 +12,8 @@
 | Profondeur (le code est TENU, pas cité) | 0 rouge · 0 orange · 94 sans signal d'absence | `PROFONDEUR-REFERENTIEL.md` |
 | Cours interactifs | 28, registre à **0 anomalie** | `REGISTRE-COURS-INTERACTIFS.md` |
 | Banque d'entraînement | 99 compétences évaluées par ≥ 1 question | `COUVERTURE-REFERENTIEL.md` |
-| Codes **pratiques** A1 | **55**, dont **42 portés** par ≥ 1 cours interactif | croisement `referentiel-2025.json` × `couverture.json` |
-| **Le trou** | **13 codes pratiques sans aucun cours interactif** | idem — liste au § 2 |
+| Codes **pratiques** A1 | **55**, dont **47 portés** par ≥ 1 cours interactif (au 14/08 après C et D) | croisement `referentiel-2025.json` × `couverture.json` |
+| **Le trou** | ~~13~~ → **8 codes pratiques sans aucun cours interactif** (C et D faites le 14/08) : 6.02-6.05, 7.04, 9.04, 9.06, 9.07 | idem — liste au § 2 |
 
 Autrement dit : **le « expliqué » est complet et prouvé** ; le « faire », préparé virtuellement
 pour 42 codes sur 55, attend ses quatre dernières briques.
@@ -36,12 +36,12 @@ le résultat » — pressostats, thermostats, limiteurs :
 - **9.06** Régler des limiteurs de pression mécaniques et électroniques
 - **7.04** Régler les interrupteurs de sécurité et de contrôle *(côté condenseur, même geste que 6.03)*
 
-### Brique C — « KVL, pression de carter » — DÉJÀ CONSTRUITE, en attente du bon à tirer
+### Brique C — « KVL, pression de carter » — ✅ FAITE le 14/08 (bon à tirer « ok pour c et d »)
 Le module du Bureau (06/08, 14 étapes, quiz 6/7) couvre **9.05** (régler la soupape de
 régulation de la pression). Sa fiche exige le bon à tirer de F. Henninot avant intégration.
 Dès le feu vert : intégration + `couverture.json` déclarant 9.05 → un code de moins, en une heure.
 
-### Brique D — Étendre les modules existants (pas de module neuf)
+### Brique D — Étendre les modules existants — ✅ FAITE le 14/08
 L'évaporateur et le condenseur ont déjà leur module « installer, régler, vérifier » :
 les codes d'inspection manquants sont des ÉCRANS À AJOUTER, pas des briques à créer :
 - `condenseur-interactif` += **7.06** (purge des incondensables) · **7.08** (inspecter la surface)
@@ -60,8 +60,10 @@ les codes d'inspection manquants sont des ÉCRANS À AJOUTER, pas des briques à
 - Jamais de thème sombre ; texte jamais sur un tracé ; `tests/qa.mjs` quand le module simule.
 - Relié à sa fiche par `lienOutil` dans `cartes.js` (jamais dans les fichiers générés).
 
-## 4. Ordre proposé
-1. **C** (KVL) — une heure, dès le bon à tirer : le module existe.
-2. **D** (écrans d'inspection) — étend l'existant, pas de conception neuve.
+## 4. Ordre — C et D faites le 14/08, restent les deux briques neuves
+1. ~~**C** (KVL)~~ ✅ intégré : 29ᵉ cours du registre, couverture 1.05 + 9.05, appui 9.02, relié à g9b.
+2. ~~**D**~~ ✅ : condenseur 24 → 25 écrans (purge des incondensables 7.06 ; 7.08 déclaré sur
+   « Nettoyer, puis prouver ») · évaporateur 26 → 27 écrans (position des conduites 8.05 ;
+   8.09 déclaré sur « Inspecter la surface »).
 3. **A** (compresseur) — la vraie brique neuve, la plus utile : l'organe sans module.
 4. **B** (pupitre de réglage) — conception d'interaction la plus originale, en dernier.

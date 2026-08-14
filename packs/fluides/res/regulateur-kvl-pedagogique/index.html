@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F1E7">
+  <meta name="description" content="Parcours interactif pour comprendre le rôle, le fonctionnement, le choix et le réglage d’un régulateur de pression de carter de type KVL.">
+  <link rel="icon" href="data:,">
+  <title>Comprendre le régulateur de pression de carter · inerWeb Édu</title>
+  <link rel="stylesheet" href="styles.css?v=20260806-1">
+  <link rel="stylesheet" href="impression.css?v=20260806-1" media="print">
+</head>
+<body>
+  <a class="skip-link" href="#lesson-title">Aller à l’explication</a>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand" aria-label="inerWeb Édu">
+        <span class="brand-mark" aria-hidden="true">iW</span>
+        <span class="brand-copy"><strong>inerWeb Édu</strong><span>TECHNOLOGIE DES ORGANES</span></span>
+      </div>
+      <div class="module-name">
+        <strong>Le régulateur de pression de carter</strong>
+        <span>limiter · protéger · régler</span>
+      </div>
+      <div class="top-tools">
+        <div class="voice-tools" aria-label="Lecture vocale">
+          <button type="button" id="voice-button" class="tool-button" aria-label="Écouter l’écran">▶ <span>Écouter</span></button>
+          <label class="speed-control" for="voice-rate"><span class="sr-only">Vitesse de lecture</span>
+            <select id="voice-rate" aria-label="Vitesse de lecture">
+              <option value="0.8">0,80×</option>
+              <option value="0.95" selected>0,95×</option>
+              <option value="1.1">1,10×</option>
+              <option value="1.25">1,25×</option>
+            </select>
+          </label>
+        </div>
+        <div class="reading-tools" aria-label="Taille du texte">
+          <button type="button" data-font-action="decrease" aria-label="Réduire la taille du texte">A−</button>
+          <button type="button" data-font-action="reset" aria-label="Rétablir la taille du texte">100 %</button>
+          <button type="button" data-font-action="increase" aria-label="Augmenter la taille du texte">A+</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="course-grid">
+      <nav class="stepper" id="stepper" aria-label="Étapes du parcours"></nav>
+
+      <main class="lesson" id="main-content">
+        <section class="lesson-copy" aria-live="polite" aria-atomic="false">
+          <p class="kicker" id="lesson-kicker"></p>
+          <h1 id="lesson-title" tabindex="-1"></h1>
+          <p class="lesson-intro" id="lesson-intro"></p>
+          <div class="lesson-detail" id="lesson-detail"></div>
+          <p class="takeaway" id="lesson-takeaway"></p>
+        </section>
+
+        <section class="visual-card" aria-labelledby="visual-title">
+          <div class="visual-heading">
+            <div><h2 id="visual-title"></h2><p id="visual-hint"></p></div>
+            <button type="button" class="source-button" id="source-button" aria-haspopup="dialog">Sources</button>
+          </div>
+          <div class="visual-controls" id="visual-controls"></div>
+          <div class="visual-root" id="visual-root"></div>
+          <p class="visual-caption" id="visual-caption"></p>
+        </section>
+      </main>
+    </div>
+
+    <footer class="bottom-nav">
+      <button type="button" class="nav-button secondary" id="previous-button" disabled>← Retour</button>
+      <div class="progress-copy" aria-live="polite">
+        <span id="progress-label"></span>
+        <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+      </div>
+      <button type="button" class="nav-button primary" id="next-button">Continuer →</button>
+    </footer>
+  </div>
+
+  <dialog class="sources-dialog" id="sources-dialog" aria-labelledby="sources-title">
+    <form method="dialog">
+      <div class="dialog-heading">
+        <div><p class="kicker">Traçabilité</p><h2 id="sources-title">Sources et droits</h2></div>
+        <button type="submit" class="close-button" aria-label="Fermer">×</button>
+      </div>
+      <p>Les vues extérieures, la coupe fonctionnelle, le circuit et les animations sont des SVG manuels originaux inerWeb. Ils expliquent un principe et ne reproduisent pas une illustration constructeur.</p>
+      <ul>
+        <li><strong>Référence documentaire principale :</strong> régulateur de pression de carter Danfoss KVL 28, code <code>034L0046</code>, raccord ODF à braser 1&nbsp;1/8&nbsp;po.</li>
+        <li><strong>Fonction :</strong> le KVL se monte sur l’aspiration en amont du compresseur et limite la pression d’aspiration pour réduire le risque de surcharge au démarrage après un arrêt prolongé ou un dégivrage.</li>
+        <li><strong>Grandeur régulée :</strong> le degré d’ouverture dépend de la pression de sortie, côté compresseur. Le soufflet d’égalisation compense l’effet des variations de pression d’entrée.</li>
+        <li><strong>Pièces étudiées :</strong> capuchon, vis de réglage, ressort principal, corps, soufflet d’égalisation, joint, siège et dispositif d’amortissement.</li>
+        <li><strong>Valeurs propres à la gamme documentée :</strong> plage de régulation 0,2 à 6,0&nbsp;bar ; réglage d’usine annoncé à 2&nbsp;bar ; PS 18&nbsp;bar. Ces valeurs ne sont pas transposées à un autre modèle.</li>
+        <li><strong>Cas 034L0046 :</strong> KVL 28, hauteur totale 259&nbsp;mm, largeur B1 105&nbsp;mm, masse nette 1,0&nbsp;kg et bande P maximale 1,5&nbsp;bar selon la fiche 2026.</li>
+        <li><strong>Sélection :</strong> fluide, puissance d’évaporateur, températures de liquide et d’aspiration, pression d’aspiration maximale, type et diamètre de raccord sont vérifiés ensemble.</li>
+        <li><strong>Installation :</strong> sens du fluide, brasage, serrages et réglage suivent toujours la notice à jour du numéro de code réellement posé.</li>
+        <li><strong>Photos, dessins et CAO Danfoss :</strong> consultés comme références documentaires. Leurs droits de reproduction ne sont pas établis ; ils ne sont ni intégrés, ni convertis, ni décalqués.</li>
+        <li><strong>Données techniques :</strong> liens, dates, valeurs et périmètre dans <code>SOURCES-TECHNIQUES.md</code>.</li>
+        <li><strong>Médias :</strong> statut de chaque photo, dessin et modèle 3D dans <code>SOURCES-IMAGES.md</code>.</li>
+      </ul>
+      <p class="rights-rule"><strong>Règle :</strong> le régulateur module une pression ; il ne remplace ni une protection électrique, ni la sélection du compresseur, ni la notice du produit posé.</p>
+    </form>
+  </dialog>
+
+  <div class="sr-only" id="reading-status" aria-live="polite"></div>
+  <div class="sr-only" id="app-status" aria-live="polite"></div>
+
+  <script src="app.js?v=20260806-1"></script>
+  <script src="lisibilite.js?v=20260806-1"></script>
+<script src="marque.js?v=20260810-1"></script>
+<script src="referentiel.js"></script>
+</body>
+</html>

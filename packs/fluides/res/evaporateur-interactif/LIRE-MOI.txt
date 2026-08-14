@@ -7,7 +7,7 @@ Fiche d’origine : g8b.
 CE QUE LE MODULE FAIT
 ---------------------
 
-- 26 écrans courts, organisés en 5 dossiers : Observer, Dégivrer, Régler,
+- 27 écrans courts, organisés en 5 dossiers : Observer, Dégivrer, Régler,
   Vérifier et Contrôle.
 - Curseur de température d’air au contact de la batterie, représentation
   qualitative du givre et comparaison de trois états de débit d’air.

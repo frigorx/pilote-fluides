@@ -292,7 +292,7 @@ const screens = [
     title: "Inspecter la surface, les ventilateurs et le bac",
     text: "Une inspection visuelle cherche ce qui gêne l’échange ou prépare une fuite : givre installé, encrassement, corrosion, fixation, ventilateur, eau qui stagne.",
     prompt: "Touchez les trois repères de la vue.",
-    codes: ["8.11"],
+    codes: ["8.09", "8.11"],
     print: "Inspection visuelle : surface/batterie, ventilateurs et passage d’air, bac/évacuation. Rechercher givre durable, encrassement, corrosion, fixation et stagnation d’eau.",
     render: renderHotspots,
     wire: wireHotspots
@@ -309,6 +309,23 @@ const screens = [
     print: "Pour un défaut de dégivrage, inspecter conduit/isolation, bac/pente/évacuation, capteurs/commande et état des ventilateurs. Ne pas attribuer la cause à la seule glace visible.",
     render: renderInspectionFamilies,
     wire: wireInspectionFamilies
+  }),
+  screen({
+    id: "conduites-position",
+    dossier: "verifier",
+    niveau: "appliquer",
+    short: "Conduites",
+    title: "Les conduites de liquide et d’aspiration, à leur place",
+    text: "La position se vérifie, elle ne se suppose pas : une aspiration qui piège l’huile ou une ligne liquide réchauffée dégradent la machine sans panne franche. La référence reste la conception et la notice de l’installation.",
+    prompt: "Marquez les trois contrôles.",
+    codes: ["8.05"],
+    print: "Position des conduites : pente d’aspiration vers le compresseur (siphons seulement où la conception les prévoit), ligne liquide à l’écart des sources de chaleur jusqu’au détendeur, supports et fixations sans frottement ni vibration.",
+    render: () => renderChecklist([
+      ["pente", "Aspiration", "pente vers le compresseur, siphons prévus par la conception seulement"],
+      ["liquide", "Ligne liquide", "à l’écart des sources de chaleur, jusqu’au détendeur"],
+      ["tenue", "Tenue mécanique", "supports et fixations, ni frottement ni vibration"]
+    ], "conduites"),
+    wire: () => wireChecklist("conduites")
   }),
   screen({
     id: "interpretation-releve",
