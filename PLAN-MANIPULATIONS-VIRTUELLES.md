@@ -10,15 +10,15 @@
 |---|---|---|
 | Couverture du référentiel (fiches) | **A1 94/94 · A2 93/93 · D 21/21 · E 17/17 = 100 %** | `COUVERTURE-REFERENTIEL.md` |
 | Profondeur (le code est TENU, pas cité) | 0 rouge · 0 orange · 94 sans signal d'absence | `PROFONDEUR-REFERENTIEL.md` |
-| Cours interactifs | 28, registre à **0 anomalie** | `REGISTRE-COURS-INTERACTIFS.md` |
+| Cours interactifs | 29, registre à **0 anomalie** | `REGISTRE-COURS-INTERACTIFS.md` |
 | Banque d'entraînement | 99 compétences évaluées par ≥ 1 question | `COUVERTURE-REFERENTIEL.md` |
 | Codes **pratiques** A1 | **55**, dont **47 portés** par ≥ 1 cours interactif (au 14/08 après C et D) | croisement `referentiel-2025.json` × `couverture.json` |
 | **Le trou** | ~~13~~ → **8 codes pratiques sans aucun cours interactif** (C et D faites le 14/08) : 6.02-6.05, 7.04, 9.04, 9.06, 9.07 | idem — liste au § 2 |
 
 Autrement dit : **le « expliqué » est complet et prouvé** ; le « faire », préparé virtuellement
-pour 42 codes sur 55, attend ses quatre dernières briques.
+pour 47 codes sur 55, attend ses deux dernières briques (A et B).
 
-## 2. Les 13 codes nus, groupés en briques
+## 2. Les codes nus, groupés en briques (l'état de chaque brique est daté)
 
 ### Brique A — « Le compresseur : installer, régler, vérifier » (la plus grosse — l'organe SANS module)
 Le seul organe majeur sans module dédié, alors que l'évaporateur et le condenseur ont le leur.
