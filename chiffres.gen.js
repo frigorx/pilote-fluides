@@ -2,7 +2,7 @@
    Les pages portent des <span data-ch="clé"></span> que ce fichier remplit. */
 window.PILOTE_CHIFFRES = {
  "fiches": 44,
- "questions": 266,
+ "questions": 268,
  "diapositives": 539,
  "planches": 46,
  "exercices": 5,
@@ -19,7 +19,7 @@ window.PILOTE_CHIFFRES = {
  "profondeur": "94 / 94",
  "competences": "99",
  "tracabilite": "94 / 94",
- "poids": "845 Ko"
+ "poids": "849 Ko"
 };
 document.addEventListener('DOMContentLoaded', function () {
   var n = 0;

@@ -7,9 +7,9 @@
 
 | Mesure | Résultat |
 |---|---:|
-| Cours interactifs recensés | **36** |
-| Cours avec anomalie critique automatisable | **4** |
-| Cours avec dette documentaire ou de reprise | **22** |
+| Cours interactifs recensés | **37** |
+| Cours avec anomalie critique automatisable | **5** |
+| Cours avec dette documentaire ou de reprise | **23** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **9** |
 | SVG pédagogiques contrôlés | **46** |
 | SVG sans titre / sans description textuelle | **3 / 41** |
@@ -49,6 +49,7 @@
 | `pression-temperature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pupitre-reglage-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `recuperation-fluide-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
+| `regulateur-kvl-pedagogique` | ✗ | ✓ | ✓ | ✗ | absente | — | — | 🔴 description |
 | `regulateurs-kv-pedagogiques` | ✓ | ✓ | ✓ | ✓ | absente | 8 | ✓ | 🟠 réglage de lisibilité |
 | `surchauffe-sous-refroidissement-interactif` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |
 | `tome-3-technologie-organes` | ✓ | ✓ | ✓ | ✓ | locale | 44 | ✗ | 🟠 SOURCES-IMAGES.md |
