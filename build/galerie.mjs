@@ -145,6 +145,12 @@ function lireExperience(dossier) {
   if (!htmlFiles.length) return null;
   const fichier = htmlFiles.includes("index.html") ? "index.html" : htmlFiles[0];
   const html = readFileSync(resolve(RES, dossier, fichier), "utf8");
+  /* Une page qui se déclare `noindex` ne veut pas figurer ici : c'est le cas
+     des redirections laissées derrière une ressource renommée, pour que les
+     QR codes déjà imprimés continuent de tomber juste. Elle doit rester en
+     ligne, pas dans la bibliothèque — sinon la galerie affiche deux entrées
+     pour un seul cours. */
+  if (/<meta name="robots" content="[^"]*noindex/i.test(html)) return null;
   const titre = ((html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || dossier)
     .replace(/\s*\|.*$/, "")
     .trim();
