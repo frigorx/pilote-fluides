@@ -78,7 +78,10 @@ function lire(fichier) {
   const svg = readFileSync(resolve(DOSSIER, fichier), "utf8");
   const smil = (svg.match(/<animate(Motion|Transform)?[\s>]/g) || []).length;
   const css = (svg.match(/animation\s*:/g) || []).length;
-  const titre = (svg.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || "";
+  /* Le <title> peut porter des attributs (`<title id="titre">`, posé pour
+     aria-labelledby) : sans [^>]*, ces planches perdaient leur nom et
+     s'affichaient sous leur nom de fichier. */
+  const titre = (svg.match(/<title[^>]*>([\s\S]*?)<\/title>/) || [])[1] || "";
   const cyclique = /repeatCount\s*=\s*"indefinite"/.test(svg) || /infinite/.test(svg);
 
   /* Durée du récit : le plus tardif des begin + sa durée. Sert à dire au

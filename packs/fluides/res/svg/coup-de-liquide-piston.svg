@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-labelledby="titre description">
+  <title id="titre">Coup de liquide dans un compresseur à piston</title>
+  <desc id="description">Boucle de huit secondes. Une vapeur se comprime lorsque le piston monte. Puis du liquide remplit la chambre : son volume ne diminue pas, le piston se bloque brutalement et la bielle se tord et se casse.</desc>
+
+  <defs>
+    <filter id="ombre" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#1B3A63" flood-opacity="0.13"/>
+    </filter>
+    <pattern id="ondes" width="18" height="12" patternUnits="userSpaceOnUse">
+      <rect width="18" height="12" fill="#84B7EC"/>
+      <path d="M0 6 Q4 2 9 6 T18 6" fill="none" stroke="#1B3A63" stroke-width="1.5" opacity="0.5"/>
+    </pattern>
+    <style>
+      text { font-family: Calibri, "Segoe UI", Arial, sans-serif; }
+      .titre { font-family: "Trebuchet MS", Calibri, Arial, sans-serif; font-weight: 700; fill: #1B3A63; }
+      .texte { font-weight: 700; fill: #10233C; }
+      .secondaire { font-weight: 600; fill: #637285; }
+      .danger { font-family: "Trebuchet MS", Calibri, Arial, sans-serif; font-weight: 800; fill: #9C2D22; }
+      .machine { fill: #FFFDF8; stroke: #1B3A63; stroke-width: 5; }
+      .metal { fill: #DCE3EA; stroke: #1B3A63; stroke-width: 4; }
+      @media print {
+        #phase-gaz, #texte-gaz, #bielle-normale { display: none; }
+        #phase-liquide, #texte-liquide, #degats, #bielle-cassee { opacity: 1 !important; }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="450" fill="#F7F1E7"/>
+  <text x="30" y="39" class="titre" font-size="28">Pourquoi le liquide peut casser le compresseur ?</text>
+  <text x="30" y="67" class="secondaire" font-size="17">Le piston comprime une vapeur. Il ne peut pas comprimer un liquide.</text>
+
+  <g filter="url(#ombre)" aria-label="Compresseur à piston en coupe">
+    <rect x="145" y="82" width="335" height="301" rx="24" fill="#FFFDF8" stroke="#1B3A63" stroke-width="4"/>
+    <path d="M182 113 L182 326 Q182 344 200 344 L430 344 Q448 344 448 326 L448 113" class="machine"/>
+    <rect x="170" y="101" width="290" height="30" rx="9" class="metal"/>
+    <text x="315" y="96" text-anchor="middle" class="secondaire" font-size="14">CULASSE ET CLAPETS</text>
+
+    <g id="clapets">
+      <path d="M220 130 L276 130" stroke="#1B3A63" stroke-width="8" stroke-linecap="round"/>
+      <path id="clapet-droit" d="M354 130 L410 130" stroke="#1B3A63" stroke-width="8" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="rotate" values="0 382 130;0 382 130;0 382 130;28 382 130;28 382 130;0 382 130" keyTimes="0;0.70;0.72;0.75;0.96;1" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#1B3A63;#1B3A63;#C0392B;#C0392B;#C0392B;#1B3A63" keyTimes="0;0.70;0.72;0.75;0.96;1" dur="8s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <g id="phase-gaz" aria-label="Vapeur compressible">
+      <g fill="#3D7FCA" stroke="#1B3A63" stroke-width="1.5">
+        <circle cx="220" cy="168" r="7"><animate attributeName="cy" values="168;168;151;151;168;168" keyTimes="0;0.10;0.27;0.32;0.43;1" dur="8s" repeatCount="indefinite"/></circle>
+        <circle cx="274" cy="191" r="7"><animate attributeName="cy" values="191;191;160;160;191;191" keyTimes="0;0.10;0.27;0.32;0.43;1" dur="8s" repeatCount="indefinite"/></circle>
+        <circle cx="328" cy="160" r="7"><animate attributeName="cy" values="160;160;147;147;160;160" keyTimes="0;0.10;0.27;0.32;0.43;1" dur="8s" repeatCount="indefinite"/></circle>
+        <circle cx="387" cy="184" r="7"><animate attributeName="cy" values="184;184;157;157;184;184" keyTimes="0;0.10;0.27;0.32;0.43;1" dur="8s" repeatCount="indefinite"/></circle>
+        <circle cx="238" cy="224" r="7"><animate attributeName="cy" values="224;224;171;171;224;224" keyTimes="0;0.10;0.27;0.32;0.43;1" dur="8s" repeatCount="indefinite"/></circle>
+        <circle cx="302" cy="218" r="7"><animate attributeName="cy" values="218;218;168;168;218;218" keyTimes="0;0.10;0.27;0.32;0.43;1" dur="8s" repeatCount="indefinite"/></circle>
+        <circle cx="365" cy="230" r="7"><animate attributeName="cy" values="230;230;173;173;230;230" keyTimes="0;0.10;0.27;0.32;0.43;1" dur="8s" repeatCount="indefinite"/></circle>
+        <circle cx="416" cy="209" r="7"><animate attributeName="cy" values="209;209;164;164;209;209" keyTimes="0;0.10;0.27;0.32;0.43;1" dur="8s" repeatCount="indefinite"/></circle>
+      </g>
+      <animate attributeName="opacity" values="1;1;1;0;0;0" keyTimes="0;0.42;0.46;0.49;0.96;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <g id="phase-liquide" opacity="0" aria-label="Liquide incompressible">
+      <path d="M190 146 Q220 136 250 146 T310 146 T370 146 T440 146 L440 246 L190 246 Z" fill="url(#ondes)" stroke="#1B3A63" stroke-width="3"/>
+      <g fill="none" stroke="#C0392B" stroke-width="5" stroke-linecap="round">
+        <path d="M224 182 L224 226 M212 214 L224 228 L236 214"/>
+        <path d="M315 170 L315 226 M303 214 L315 228 L327 214"/>
+        <path d="M406 182 L406 226 M394 214 L406 228 L418 214"/>
+      </g>
+      <animate attributeName="opacity" values="0;0;0;1;1;1;0" keyTimes="0;0.44;0.48;0.51;0.93;0.96;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <g id="piston" aria-label="Piston mobile">
+      <rect x="194" y="246" width="242" height="43" rx="9" class="metal"/>
+      <circle cx="315" cy="272" r="9" fill="#FFFDF8" stroke="#1B3A63" stroke-width="4"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="0 0;0 0;0 -80;0 -80;0 0;0 0;0 -14;0 -14;0 -10;0 -18;0 -14;0 -14;0 0"
+        keyTimes="0;0.10;0.27;0.32;0.43;0.55;0.68;0.70;0.71;0.72;0.73;0.96;1"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <path id="bielle-normale" d="M315 272 Q332 324 353 367" fill="none" stroke="#1B3A63" stroke-width="14" stroke-linecap="round" aria-label="Bielle">
+      <animate attributeName="d"
+        values="M315 272 Q332 324 353 367;M315 272 Q332 324 353 367;M315 192 Q328 274 353 367;M315 192 Q328 274 353 367;M315 272 Q332 324 353 367;M315 272 Q332 324 353 367;M315 258 Q338 310 353 367;M315 258 Q338 310 353 367;M315 262 Q343 312 353 367;M315 254 Q330 309 353 367;M315 258 Q338 310 353 367;M315 258 Q338 310 353 367;M315 272 Q332 324 353 367"
+        keyTimes="0;0.10;0.27;0.32;0.43;0.55;0.68;0.70;0.71;0.72;0.73;0.96;1"
+        dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;1;1;0;0;0" keyTimes="0;0.70;0.72;0.74;0.96;1" dur="8s" repeatCount="indefinite"/>
+    </path>
+
+    <g id="bielle-cassee" opacity="0" aria-label="Bielle tordue et cassée">
+      <path d="M315 258 Q343 277 328 309" fill="none" stroke="#C0392B" stroke-width="14" stroke-linecap="round"/>
+      <path d="M342 326 Q347 347 353 367" fill="none" stroke="#C0392B" stroke-width="14" stroke-linecap="round"/>
+      <path d="M320 311 L336 315 L327 329 L345 331" fill="none" stroke="#9C2D22" stroke-width="5" stroke-linecap="round"/>
+      <animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.70;0.73;0.77;0.96;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <g aria-label="Vilebrequin">
+      <circle cx="353" cy="367" r="31" fill="#DCE3EA" stroke="#1B3A63" stroke-width="5"/>
+      <circle cx="353" cy="367" r="9" fill="#FFFDF8" stroke="#1B3A63" stroke-width="4"/>
+    </g>
+
+    <g id="impact" opacity="0" aria-label="Impact">
+      <path d="M315 225 L326 240 L347 231 L340 251 L360 262 L338 267 L340 289 L321 277 L308 295 L302 275 L280 280 L289 260 L271 247 L294 244 L297 224 Z" fill="#FFB347" stroke="#C0392B" stroke-width="5"/>
+      <text x="315" y="264" text-anchor="middle" class="danger" font-size="18">CHOC !</text>
+      <animate attributeName="opacity" values="0;0;1;1;0;1;1;0" keyTimes="0;0.68;0.70;0.71;0.715;0.72;0.95;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <g id="texte-gaz" aria-label="Explication de la compression de la vapeur">
+    <rect x="505" y="102" width="262" height="195" rx="22" fill="#FFFDF8" stroke="#1E7E54" stroke-width="6"/>
+    <rect x="515" y="112" width="242" height="175" rx="15" fill="none" stroke="#1E7E54" stroke-width="2"/>
+    <text x="535" y="147" class="titre" font-size="23">1 · VAPEUR</text>
+    <text x="535" y="180" class="texte" font-size="20">Le piston monte.</text>
+    <text x="535" y="212" class="texte" font-size="20">Le volume diminue.</text>
+    <text x="535" y="257" font-size="25" font-weight="800" fill="#1E7E54">✓ ELLE SE COMPRIME</text>
+    <animate attributeName="opacity" values="1;1;1;0;0;0" keyTimes="0;0.42;0.46;0.49;0.96;1" dur="8s" repeatCount="indefinite"/>
+  </g>
+
+  <g id="texte-liquide" opacity="0" aria-label="Explication du coup de liquide">
+    <rect x="505" y="102" width="262" height="195" rx="22" fill="#FFFDF8" stroke="#C0392B" stroke-width="6" stroke-dasharray="16 9"/>
+    <text x="535" y="147" class="titre" font-size="23">2 · LIQUIDE</text>
+    <text x="535" y="180" class="texte" font-size="20">Le volume reste plein.</text>
+    <text x="535" y="212" class="texte" font-size="20">Le piston se bloque.</text>
+    <text x="535" y="257" class="danger" font-size="23">✕ INCOMPRESSIBLE</text>
+    <animate attributeName="opacity" values="0;0;0;1;1;1;0" keyTimes="0;0.44;0.48;0.51;0.93;0.96;1" dur="8s" repeatCount="indefinite"/>
+  </g>
+
+  <g id="degats" opacity="0" aria-label="Dégâts mécaniques possibles">
+    <rect x="505" y="309" width="262" height="66" rx="15" fill="#FBE7E4" stroke="#C0392B" stroke-width="4" stroke-dasharray="12 7"/>
+    <text x="636" y="337" text-anchor="middle" class="danger" font-size="19">COUP DE LIQUIDE</text>
+    <text x="636" y="360" text-anchor="middle" class="texte" font-size="16">Bielle tordue · clapet cassé</text>
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.70;0.74;0.96;1" dur="8s" repeatCount="indefinite"/>
+  </g>
+
+  <g aria-label="Message essentiel permanent">
+    <rect x="30" y="397" width="740" height="40" rx="13" fill="#FBE7E4" stroke="#C0392B" stroke-width="4" stroke-dasharray="13 7"/>
+    <text x="400" y="424" text-anchor="middle" class="danger" font-size="20">LIQUIDE INCOMPRESSIBLE → RISQUE DE CASSE IMMÉDIATE</text>
+  </g>
+
+  <text x="773" y="446" text-anchor="end" class="secondaire" font-size="11">❄ inerWeb Édu · boucle 8 s</text>
+</svg>

@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 570" width="760" height="570"
+     role="img" aria-labelledby="titre desc">
+  <title id="titre">On ne comprime pas un liquide — le coup de liquide</title>
+  <desc id="desc">Deux cylindres identiques avec leurs clapets. À gauche, le piston comprime du
+  gaz : le clapet d'aspiration s'ouvre à la descente, le clapet de refoulement s'ouvre en fin de
+  compression, la course se fait jusqu'en haut. À droite, du liquide est entré par l'aspiration :
+  le liquide garde son volume, le piston bute à mi-course, le clapet de refoulement se brise et
+  la bielle plie. C'est le coup de liquide.</desc>
+
+  <style>
+    .fond    { fill: #fffdf8; }
+    .cadre   { fill: none; stroke: #d8cfc0; stroke-width: 2; }
+    .metal   { fill: #c8d2de; stroke: #1b3a63; stroke-width: 3; stroke-linejoin: round; }
+    .lumiere { fill: #fffdf8; stroke: #1b3a63; stroke-width: 2.5; }
+    .lame    { fill: #7d8ea6; stroke: #1b3a63; stroke-width: 2.5; }
+    .piston  { fill: #9fb0c6; stroke: #1b3a63; stroke-width: 3; }
+    .segment { stroke: #1b3a63; stroke-width: 2.5; }
+    .bielle  { fill: #9fb0c6; stroke: #1b3a63; stroke-width: 3; stroke-linejoin: round; }
+    .gaz     { fill: #3d7fca; }
+    .liquide { fill: #1b3a63; opacity: .85; }
+    .titre   { font: bold 26px "Segoe UI","Trebuchet MS",sans-serif; fill: #1b3a63; }
+    .etiq    { font: bold 22px "Segoe UI",sans-serif; }
+    .sous    { font: 16px "Segoe UI",sans-serif; fill: #637285; }
+    .rappel  { font: bold 14px "Segoe UI",sans-serif; fill: #c0392b; }
+    .verdict { font: bold 17px "Segoe UI",sans-serif; }
+    .pied    { font: bold 19px "Segoe UI",sans-serif; fill: #10233c; }
+    .ok      { fill: #1e7e54; } .ko { fill: #c0392b; }
+    .trait   { stroke: #c0392b; stroke-width: 2; }
+    .fleche  { stroke: #637285; stroke-width: 3; fill: none; marker-end: url(#pointe); }
+    /* pivot pris sur la lame elle-même : bord encastré à gauche pour l'aspiration
+       (elle bascule vers le bas, dans le cylindre), à droite pour le refoulement
+       (elle se soulève vers le haut, vers la sortie). Débattement volontairement court. */
+    .clapet  { transform-box: fill-box; }
+
+    /* ---------- GAUCHE : le gaz se comprime, la course va jusqu'au bout ---------- */
+    .g-mobile  { animation: courseGaz 4s ease-in-out infinite; }
+    .gaz-lache { animation: lache 4s ease-in-out infinite; }
+    .gaz-serre { animation: serre 4s ease-in-out infinite; opacity: 0; }
+    .g-asp     { animation: aspG 4s ease-in-out infinite; transform-origin: 0% 50%; }
+    .g-ref     { animation: refG 4s ease-in-out infinite; transform-origin: 100% 50%; }
+    @keyframes courseGaz { 0%,8%{transform:translateY(0)} 45%,52%{transform:translateY(-100px)} 90%,100%{transform:translateY(0)} }
+    @keyframes lache { 0%,8%{opacity:1} 45%,52%{opacity:0} 90%,100%{opacity:1} }
+    @keyframes serre { 0%,8%{opacity:0} 45%,52%{opacity:1} 90%,100%{opacity:0} }
+    @keyframes aspG  { 0%,52%{transform:rotate(0)} 58%,86%{transform:rotate(13deg)} 92%,100%{transform:rotate(0)} }
+    @keyframes refG  { 0%,32%{transform:rotate(0)} 37%,47%{transform:rotate(13deg)} 52%,100%{transform:rotate(0)} }
+
+    /* ---------- DROITE : le liquide garde son volume, tout casse ---------- */
+    .d-mobile { animation: courseLiq 4s ease-in-out infinite; }
+    .d-gaz    { animation: chasse 4s ease-in-out infinite; }
+    .d-asp    { animation: aspD 4s ease-in-out infinite; transform-origin: 0% 50%; }
+    .d-ref    { animation: refD 4s ease-in-out infinite; transform-origin: 100% 50%; }
+    .d-entree { animation: entree 4s ease-in-out infinite; opacity: 0; }
+    .casse    { animation: casse 4s ease-in-out infinite; opacity: 0; }
+    .intact   { animation: intact 4s ease-in-out infinite; }
+    @keyframes courseLiq {
+      0%,22%   { transform: translate(0,0) }
+      45%      { transform: translate(0,-62px) }
+      48%      { transform: translate(2.5px,-59px) }
+      51%      { transform: translate(-2.5px,-62px) }
+      54%      { transform: translate(2px,-60px) }
+      57%,100% { transform: translate(0,-62px) }
+    }
+    @keyframes chasse { 0%,22%{opacity:1} 45%,100%{opacity:.15} }
+    @keyframes aspD   { 0%{transform:rotate(13deg)} 20%{transform:rotate(13deg)} 26%,100%{transform:rotate(0)} }
+    @keyframes refD   { 0%,44%{transform:rotate(0)} 50%,54%{transform:rotate(8deg)} 57%,100%{transform:rotate(0)} }
+    @keyframes entree { 0%{opacity:0} 6%,18%{opacity:1} 26%,100%{opacity:0} }
+    @keyframes casse  { 0%,54%{opacity:0} 60%,92%{opacity:1} 100%{opacity:0} }
+    @keyframes intact { 0%,54%{opacity:1} 60%,92%{opacity:0} 100%{opacity:1} }
+
+    /* L'animation PORTE le savoir : jamais conditionnée à prefers-reduced-motion.
+       À l'impression on fige sur l'image qui parle : course faite à gauche, casse à droite. */
+    @media print {
+      * { animation: none !important; }
+      .g-mobile { transform: translateY(-100px) } .d-mobile { transform: translateY(-62px) }
+      .gaz-lache{ opacity:0 } .gaz-serre{ opacity:1 } .d-gaz{ opacity:.15 }
+      .casse    { opacity:1 } .intact   { opacity:0 }
+    }
+  </style>
+
+  <defs>
+    <marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#637285"/>
+    </marker>
+    <clipPath id="chemise-g"><rect x="135" y="138" width="120" height="212"/></clipPath>
+    <clipPath id="chemise-d"><rect x="505" y="138" width="120" height="212"/></clipPath>
+  </defs>
+
+  <rect class="fond" x="0" y="0" width="760" height="570" rx="16"/>
+  <text class="titre" x="380" y="36" text-anchor="middle">On ne comprime pas un liquide</text>
+
+  <!-- ==================== GAUCHE — LE GAZ ==================== -->
+  <rect class="cadre" x="20" y="56" width="350" height="414" rx="14"/>
+  <text class="etiq ok" x="195" y="88"  text-anchor="middle">GAZ</text>
+  <text class="sous"    x="195" y="110" text-anchor="middle">il se laisse écraser</text>
+
+  <g transform="translate(195,70)">
+    <!-- culasse percée de deux lumières : aspiration à gauche, refoulement à droite -->
+    <rect class="metal"   x="-74" y="34" width="148" height="34"/>
+    <rect class="lumiere" x="-48" y="34" width="30"  height="34"/>
+    <rect class="lumiere" x="18"  y="34" width="30"  height="34"/>
+    <rect class="lame g-asp clapet" x="-52" y="68" width="38" height="6" rx="3"/>
+    <rect class="lame g-ref clapet" x="14"  y="28" width="38" height="6" rx="3"/>
+    <rect class="metal" x="-74" y="68" width="14"  height="212"/>
+    <rect class="metal" x="60"  y="68" width="14"  height="212"/>
+
+    <g clip-path="url(#chemise-g)" transform="translate(-195,-70)"><g transform="translate(195,70)">
+      <g class="gaz-lache">
+        <circle class="gaz" cx="-38" cy="86"  r="5"/><circle class="gaz" cx="6"   cy="80"  r="5"/>
+        <circle class="gaz" cx="44"  cy="92"  r="5"/><circle class="gaz" cx="-14" cy="112" r="5"/>
+        <circle class="gaz" cx="30"  cy="124" r="5"/><circle class="gaz" cx="-44" cy="136" r="5"/>
+        <circle class="gaz" cx="12"  cy="148" r="5"/><circle class="gaz" cx="48"  cy="158" r="5"/>
+        <circle class="gaz" cx="-26" cy="166" r="5"/><circle class="gaz" cx="20"  cy="182" r="5"/>
+        <circle class="gaz" cx="-50" cy="190" r="5"/><circle class="gaz" cx="52"  cy="190" r="5"/>
+      </g>
+      <g class="gaz-serre">
+        <circle class="gaz" cx="-40" cy="78" r="5"/><circle class="gaz" cx="-24" cy="78" r="5"/>
+        <circle class="gaz" cx="-8"  cy="78" r="5"/><circle class="gaz" cx="8"   cy="78" r="5"/>
+        <circle class="gaz" cx="24"  cy="78" r="5"/><circle class="gaz" cx="40"  cy="78" r="5"/>
+        <circle class="gaz" cx="-40" cy="92" r="5"/><circle class="gaz" cx="-24" cy="92" r="5"/>
+        <circle class="gaz" cx="-8"  cy="92" r="5"/><circle class="gaz" cx="8"   cy="92" r="5"/>
+        <circle class="gaz" cx="24"  cy="92" r="5"/><circle class="gaz" cx="40"  cy="92" r="5"/>
+      </g>
+      <g class="g-mobile">
+        <rect class="piston" x="-60" y="200" width="120" height="30"/>
+        <line class="segment" x1="-60" y1="209" x2="60" y2="209"/>
+        <line class="segment" x1="-60" y1="219" x2="60" y2="219"/>
+        <rect class="bielle" x="-11" y="230" width="22" height="180"/>
+      </g>
+    </g></g>
+  </g>
+  <text class="verdict ok" x="195" y="502" text-anchor="middle">✓ le volume diminue — la course se fait</text>
+
+  <!-- ==================== DROITE — LE LIQUIDE ==================== -->
+  <rect class="cadre" x="390" y="56" width="350" height="414" rx="14"/>
+  <text class="etiq ko" x="565" y="88"  text-anchor="middle">LIQUIDE</text>
+  <text class="sous"    x="565" y="110" text-anchor="middle">il ne s'écrase pas</text>
+
+  <g transform="translate(565,70)">
+    <rect class="metal"   x="-74" y="34" width="148" height="34"/>
+    <rect class="lumiere" x="-48" y="34" width="30"  height="34"/>
+    <rect class="lumiere" x="18"  y="34" width="30"  height="34"/>
+    <rect class="lame d-asp clapet" x="-52" y="68" width="38" height="6" rx="3"/>
+
+    <!-- le clapet de refoulement : entier, puis brisé en deux morceaux -->
+    <g class="intact"><rect class="lame d-ref clapet" x="14" y="28" width="38" height="6" rx="3"/></g>
+    <g class="casse">
+      <rect class="lame" x="14" y="24" width="17" height="6" rx="3" transform="rotate(-16 22 27)"/>
+      <rect class="lame" x="36" y="30" width="16" height="6" rx="3" transform="rotate(21 44 33)"/>
+    </g>
+
+    <rect class="metal" x="-74" y="68" width="14"  height="212"/>
+    <rect class="metal" x="60"  y="68" width="14"  height="212"/>
+
+    <g clip-path="url(#chemise-d)" transform="translate(-565,-70)"><g transform="translate(565,70)">
+      <g class="d-gaz">
+        <circle class="gaz" cx="-38" cy="84"  r="5"/><circle class="gaz" cx="8"   cy="80"  r="5"/>
+        <circle class="gaz" cx="44"  cy="90"  r="5"/><circle class="gaz" cx="-12" cy="102" r="5"/>
+        <circle class="gaz" cx="28"  cy="112" r="5"/><circle class="gaz" cx="-44" cy="118" r="5"/>
+      </g>
+      <g class="d-mobile">
+        <rect class="liquide" x="-60" y="130" width="120" height="70"/>
+        <rect class="piston"  x="-60" y="200" width="120" height="30"/>
+        <line class="segment" x1="-60" y1="209" x2="60" y2="209"/>
+        <line class="segment" x1="-60" y1="219" x2="60" y2="219"/>
+        <g class="intact"><rect class="bielle" x="-11" y="230" width="22" height="180"/></g>
+        <g class="casse"><path class="bielle" d="M-11,230 L11,230 L30,292 L10,304 L11,410 L-11,410 L-10,298 L8,290 z"/></g>
+      </g>
+    </g></g>
+
+    <!-- le liquide qui entre par l'aspiration -->
+    <g class="d-entree">
+      <path class="fleche" d="M-132,51 L-84,51"/>
+      <circle class="liquide" cx="-140" cy="51" r="5"/><circle class="liquide" cx="-152" cy="45" r="4"/>
+    </g>
+
+    <!-- la casse : éclats de part et d'autre de la culasse, et rappels de ce qui a lâché -->
+    <g class="casse">
+      <path d="M-92,40 L-104,32 M-96,54 L-110,54 M-92,66 L-104,74" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+      <path d="M92,40 L104,32 M96,54 L110,54 M92,66 L104,74" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+      <path class="trait" d="M78,26 L118,20"/>
+      <text class="rappel" x="122" y="24">clapet cassé</text>
+      <path class="trait" d="M14,300 L74,300"/>
+      <text class="rappel" x="78" y="305">bielle pliée</text>
+    </g>
+  </g>
+  <text class="verdict ko" x="565" y="502" text-anchor="middle">✗ le piston bute — le clapet lâche</text>
+
+  <text class="pied" x="380" y="546" text-anchor="middle">C'est le coup de liquide.</text>
+</svg>
