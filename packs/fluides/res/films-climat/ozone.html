@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Couche d'ozone et ODP — film narré</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+html, body { margin: 0; padding: 0; background: #f2f6fa; }
+a { color: #1b3a63; }
+a:hover { color: #ff6b35; }
+</style>
+<script>window.OM_SCENES = '[{"name":"Bouclier","dur":6,"desc":"La couche d\u0027ozone intacte renvoie les rayons UV"},{"name":"Fuite","dur":7,"desc":"Un groupe frigorifique fuit : les molecules de CFC montent"},{"name":"Destruction","dur":9,"desc":"Le chlore casse l\u0027ozone, le trou s\u0027ouvre et les UV passent"},{"name":"ODP","dur":8,"desc":"Carte des ODP : R11, R12, R22, R134a"},{"name":"Montreal","dur":9,"desc":"Protocole de Montreal 1987 : le bouclier se reconstitue"},{"name":"Bilan","dur":6,"desc":"Message final : ODP regle, le PRP reste a traiter"}]';</script>
+<script>window.OM_PLAYBACK = '{"mode":"loop"}';</script>
+<script>window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "sousTitres": true,
+  "logo": true,
+  "motionEditor": false
+}/*EDITMODE-END*/;</script>
+<script>
+/* Bande son : la voix (fichier local) est l'horloge du film.
+   Asservissement par l'événement de pilotage du cadre (data-om-seek-to-time-frame) ;
+   le curseur ne règle que la vitesse du son, l'image suit — jamais de dérive. */
+(function () {
+  var SRC = "./voix-ozone.mp3";
+  var audio = new Audio(SRC);
+  audio.preload = "auto";
+  try { audio.preservesPitch = true; audio.webkitPreservesPitch = true; } catch (e) {}
+  var scene = null, dureeFilm = 0, raf = null;
+
+  function trouveScene() {
+    scene = document.querySelector("[data-om-exportable-video-with-duration-secs]");
+    if (scene) dureeFilm = parseFloat(scene.getAttribute("data-om-exportable-video-with-duration-secs")) || 0;
+    return !!scene && dureeFilm > 0;
+  }
+  function pousse(t, enLecture) {
+    scene.dispatchEvent(new CustomEvent("data-om-seek-to-time-frame",
+      { detail: { time: Math.max(0, Math.min(t, dureeFilm)), playing: enLecture } }));
+  }
+  function synchronise() {
+    if (audio.paused || audio.ended) return;
+    pousse((audio.currentTime / audio.duration) * dureeFilm, true);
+    raf = requestAnimationFrame(synchronise);
+  }
+
+  var barre = document.createElement("div");
+  barre.setAttribute("style",
+    "position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:99;" +
+    "display:flex;align-items:center;gap:14px;background:#FFFDF8;border:2px solid #1B3A63;" +
+    "border-radius:999px;padding:8px 18px;box-shadow:0 4px 14px rgba(27,58,99,.25);" +
+    "font:600 15px Calibri,'Segoe UI',sans-serif;color:#1B3A63");
+  barre.innerHTML =
+    '<button id="voix-bouton" style="font:inherit;font-weight:700;background:#1B3A63;color:#FFFDF8;' +
+    'border:2px solid #FF6B35;border-radius:999px;padding:6px 16px;cursor:pointer">▶ Écouter le film</button>' +
+    '<label style="display:flex;align-items:center;gap:8px">Débit' +
+    '<input id="voix-debit" type="range" min="0.9" max="1.3" step="0.05" value="1" style="width:130px;accent-color:#FF6B35">' +
+    '<span id="voix-valeur" style="min-width:44px;font-variant-numeric:tabular-nums">1,00×</span></label>';
+  document.addEventListener("DOMContentLoaded", function () { document.body.appendChild(barre); });
+
+  function metBouton(texte) { document.getElementById("voix-bouton").textContent = texte; }
+
+  document.addEventListener("click", function (e) {
+    if (!e.target || e.target.id !== "voix-bouton") return;
+    if (!scene && !trouveScene()) { metBouton("… le film se charge, re-cliquer"); return; }
+    if (audio.paused) {
+      if (audio.ended) audio.currentTime = 0;
+      audio.play().then(function () { metBouton("⏸ Pause"); synchronise(); });
+    } else {
+      audio.pause();
+      if (raf) cancelAnimationFrame(raf);
+      pousse((audio.currentTime / audio.duration) * dureeFilm, false);
+      metBouton("▶ Reprendre");
+    }
+  });
+  document.addEventListener("input", function (e) {
+    if (!e.target || e.target.id !== "voix-debit") return;
+    var v = parseFloat(e.target.value);
+    audio.playbackRate = v;
+    document.getElementById("voix-valeur").textContent = v.toFixed(2).replace(".", ",") + "×";
+  });
+  audio.addEventListener("ended", function () {
+    if (raf) cancelAnimationFrame(raf);
+    if (scene) pousse(dureeFilm, false);
+    metBouton("▶ Réécouter");
+  });
+})();
+</script>
+</helmet>
+<x-import component-from-global-scope="OzonePiece" from="./animations-v3.jsx ./tweaks-panel.jsx ./ozone.jsx" hint-size="100%,100%"></x-import>
+</x-dc>
+</body>
+</html>
