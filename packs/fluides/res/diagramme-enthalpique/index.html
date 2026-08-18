@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>inerWeb Édu — Diagramme enthalpique modulaire</title>
+  <meta name="description" content="Le diagramme enthalpique log p-h appris courbe par courbe : dix modules (axes, saturation, bulle et rosée, zones, isotitres, isobare, isotherme, isochore, isentrope, isenthalpe), trois parcours au choix dont un ciblé habilitation, quiz formatifs et lecture à voix haute. Chaque module s'ouvre aussi seul.">
+  <meta name="famille" content="Cours interactifs">
+  <meta name="etat" content="prototype">
+  <style>:root {
+  --cream: #f7f1e7;
+  --paper: #fffdf8;
+  --ink: #10233c;
+  --muted: #637285;
+  --navy: #1b3a63;
+  --blue: #3d7fca;
+  --orange: #ff6b35;
+  --orange-deep: #c9451a;
+  --yellow: #f4c542;
+  --violet: #7d4c9e;
+  --ok: #1e7e54;
+  --line: rgba(27, 58, 99, 0.18);
+  --shadow: 0 2px 10px rgba(27, 58, 99, 0.1);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--cream); }
+body { margin: 0; color: var(--ink); background: var(--cream); font: 17px/1.55 Calibri, "Segoe UI", system-ui, Arial, sans-serif; }
+button, a { font: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid rgba(255, 107, 53, 0.5); outline-offset: 3px; }
+
+.hub-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 10px max(18px, calc((100vw - 1180px) / 2));
+  background: rgba(255, 253, 248, 0.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand { display: flex; align-items: center; gap: 9px; color: var(--navy); font: 700 21px/1 "Trebuchet MS", Calibri, Arial, sans-serif; }
+.brand > span > span { color: var(--orange-deep); }
+.brand small { color: var(--muted); font-size: 12px; }
+.mark { display: grid; place-items: center; width: 39px; height: 39px; border-radius: 50%; color: #fff; background: var(--navy); border: 3px solid var(--orange); font-size: 14px; }
+.version { color: var(--muted); font-size: 13px; }
+
+main { width: min(1180px, calc(100% - 32px)); margin: 24px auto 42px; display: grid; gap: 20px; }
+.hero, .composer, .standalone, .usage-note { background: var(--paper); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); }
+.hero { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(270px, 0.6fr); gap: 30px; align-items: center; padding: clamp(24px, 5vw, 54px); }
+.eyebrow { margin: 0 0 5px; color: var(--orange-deep); text-transform: uppercase; letter-spacing: 0.09em; font-size: 13px; font-weight: 700; }
+h1, h2 { margin: 0; color: var(--navy); font-family: "Trebuchet MS", Calibri, Arial, sans-serif; line-height: 1.12; letter-spacing: -0.015em; }
+h1 { font-size: clamp(35px, 5vw, 60px); max-width: 800px; }
+h2 { font-size: clamp(24px, 3vw, 34px); }
+.hero p:not(.eyebrow) { max-width: 780px; margin: 18px 0 0; font-size: 19px; }
+.hero-rule { display: grid; gap: 10px; padding: 20px; border-left: 5px double var(--ok); border-radius: 12px; background: #e3f5ec; }
+.hero-rule strong { color: var(--navy); font-family: "Trebuchet MS", Calibri, Arial, sans-serif; font-size: 22px; }
+.hero-rule small { color: var(--muted); }
+
+.composer, .standalone, .usage-note { padding: clamp(20px, 3vw, 34px); }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 18px; margin-bottom: 18px; }
+.preset-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.module-choice { position: relative; display: grid; grid-template-columns: auto 1fr; gap: 11px; align-items: start; min-height: 126px; padding: 15px; border: 2px solid var(--line); border-radius: 14px; background: var(--paper); cursor: pointer; }
+.module-choice:hover { border-color: var(--blue); background: #f3f7fb; }
+.module-choice:has(input:checked) { border: 4px double var(--ok); background: #e3f5ec; padding: 13px; }
+.module-choice input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--ok); }
+.module-choice strong { display: block; color: var(--navy); font-family: "Trebuchet MS", Calibri, Arial, sans-serif; font-size: 19px; }
+.module-choice span { display: block; color: var(--muted); font-size: 14px; line-height: 1.35; margin-top: 5px; }
+.level { display: inline-block !important; color: var(--orange-deep) !important; text-transform: uppercase; letter-spacing: 0.06em; font-size: 10px !important; font-weight: 700; }
+
+.launch-row { display: grid; grid-template-columns: minmax(180px, 1fr) auto auto; gap: 10px; align-items: center; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 999px; padding: 9px 18px; border: 1px solid var(--line); font-weight: 700; text-decoration: none; cursor: pointer; }
+.button.secondary { background: var(--paper); color: var(--navy); }
+.button.primary { background: var(--navy); color: #fff; border-color: var(--navy); }
+.button.accent { background: var(--orange-deep); color: #fff; border-color: var(--orange-deep); }
+.button:hover { transform: translateY(-1px); }
+.button.disabled { opacity: 0.45; pointer-events: none; }
+#selectionSummary { color: var(--muted); }
+
+.standalone-list { display: grid; gap: 8px; }
+.standalone-item { display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.standalone-item:last-child { border-bottom: 0; }
+.standalone-number { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #f3f7fb; color: var(--navy); font-weight: 700; }
+.standalone-title { color: var(--navy); font-weight: 700; }
+.standalone-objective { color: var(--muted); font-size: 14px; }
+.standalone-item a { color: var(--orange-deep); font-weight: 700; }
+.usage-note { border-left: 7px dashed var(--orange-deep); }
+.usage-note p { margin-bottom: 0; }
+footer { padding: 20px; color: var(--muted); text-align: center; border-top: 1px solid var(--line); }
+
+@media (max-width: 760px) {
+  .hub-header { padding-inline: 12px; }
+  .version { display: none; }
+  main { width: min(100% - 18px, 680px); margin-top: 12px; }
+  .hero { grid-template-columns: 1fr; gap: 18px; padding: 23px; }
+  h1 { font-size: 34px; }
+  .hero p:not(.eyebrow) { font-size: 17px; }
+  .section-heading { align-items: start; flex-direction: column; }
+  .launch-row { grid-template-columns: 1fr; }
+  .button { width: 100%; }
+  .standalone-item { grid-template-columns: 36px minmax(0, 1fr); }
+  .standalone-item a { grid-column: 2; }
+}
+
+@media print {
+  @page { margin: 15mm; }
+  html, body { background: #fff; color: #000; }
+  .hub-header, .preset-actions, .launch-row, .standalone-item a { display: none !important; }
+  main { width: 100%; margin: 0; }
+  .hero, .composer, .standalone, .usage-note, .module-choice { background: #fff !important; box-shadow: none; border-radius: 0; break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+  <header class="hub-header">
+    <div class="brand"><span class="mark" aria-hidden="true">iW</span><span>iner<span>Web</span> <small>Édu</small></span></div>
+    <div class="version">V7 · brouillon pédagogique modulaire</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Habilitation fluides frigorigènes</p>
+        <h1>Découvrir et reconnaître les courbes du diagramme enthalpique</h1>
+        <p>Choisissez uniquement les notions utiles à votre programme. Chaque courbe possède aussi un fichier HTML autonome, récupérable et distribuable séparément.</p>
+      </div>
+      <div class="hero-rule">
+        <strong>La méthode</strong>
+        <span>Je découvre → je comprends → je vérifie.</span>
+        <small>Schéma qualitatif original : aucune valeur ne doit être relevée dessus.</small>
+      </div>
+    </section>
+
+    <section class="composer" aria-labelledby="composerTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Composer un parcours</p>
+          <h2 id="composerTitle">Sélectionnez les modules</h2>
+        </div>
+        <div class="preset-actions">
+          <button type="button" class="button secondary" id="corePreset">Parcours habilitation</button>
+          <button type="button" class="button secondary" id="allPreset">Tout sélectionner</button>
+        </div>
+      </div>
+      <div class="module-grid" id="moduleGrid"></div>
+      <div class="launch-row">
+        <div id="selectionSummary" aria-live="polite"></div>
+        <a class="button primary disabled" id="learnLink" aria-disabled="true">Lancer l’apprentissage →</a>
+        <a class="button accent disabled" id="revisionLink" aria-disabled="true">Révision express →</a>
+      </div>
+    </section>
+
+    <section class="standalone" aria-labelledby="standaloneTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Briques autonomes</p>
+          <h2 id="standaloneTitle">Récupérer une seule courbe</h2>
+        </div>
+      </div>
+      <div class="standalone-list" id="standaloneList"></div>
+    </section>
+
+    <section class="usage-note">
+      <h2>Utilisation</h2>
+      <p>Le contenu fonctionne entièrement hors ligne. La voix française locale est facultative, dépend des voix installées dans le navigateur ou dans Windows et ne démarre jamais seule. Les résultats restent uniquement dans la page ouverte et ne sont transmis nulle part.</p>
+    </section>
+  </main>
+
+  <footer>❄ inerWeb Édu — par F. Henninot · module de travail à valider avant publication</footer>
+
+  <script>
+    window.__INERWEB_MODULES__ = [{"id":"axes","order":1,"title":"Les axes p-h","short":"Axes p-h","level":"essentiel","symbol":"p ↕ · h ↔","goal":"Repérer immédiatement la pression et l’enthalpie massique.","discover":{"title":"Deux axes suffisent pour commencer","body":"Sur le diagramme log(p)-h, la pression absolue p se lit verticalement. L’enthalpie massique h se lit horizontalement. L’échelle de pression est logarithmique : elle permet de voir clairement les basses comme les hautes pressions.","remember":"Vertical : pression p en bar absolus. Horizontal : enthalpie h en kJ/kg."},"function":{"title":"À quoi servent les axes ?","body":"Chaque point du diagramme représente un état du fluide. Sa hauteur donne la pression. Sa position vers la droite donne l’enthalpie. Avant de regarder une courbe, vérifiez toujours ces deux directions.","terrain":"Lien métier : distinguer la basse pression de la haute pression et suivre l’énergie transportée par un kilogramme de fluide."},"quiz":[{"question":"Quelle grandeur se lit sur l’axe horizontal ?","choices":["La pression p","L’enthalpie massique h","Le titre vapeur x"],"answer":1,"feedback":"L’enthalpie massique h se lit horizontalement, en kJ/kg."},{"question":"Pourquoi la pression est-elle tracée sur une échelle logarithmique ?","choices":["Pour rendre les courbes décoratives","Pour lire une grande plage de pressions","Pour supprimer les unités"],"answer":1,"feedback":"L’échelle logarithmique rend lisibles sur la même feuille les petites et les grandes pressions."}]},{"id":"saturation","order":2,"title":"La courbe de saturation","short":"Saturation","level":"essentiel","symbol":"cloche","goal":"Utiliser la cloche comme premier repère du diagramme.","discover":{"title":"Cherchez d’abord la cloche","body":"La courbe de saturation forme une enveloppe centrale. Elle sépare les domaines liquide, liquide plus vapeur et vapeur. Son sommet est le point critique.","remember":"La cloche est le repère principal. Repérez-la avant toutes les autres familles."},"function":{"title":"Une frontière entre les états","body":"La cloche ne donne pas seulement une forme : elle indique où commence ou se termine le changement d’état liquide-vapeur. À l’intérieur, les deux phases coexistent.","terrain":"Lien métier : elle permet de savoir si le fluide est liquide, diphasique ou vapeur avant d’interpréter une mesure."},"quiz":[{"question":"Que délimite principalement la courbe de saturation ?","choices":["Les domaines de phase du fluide","La tension électrique","Le débit d’air"],"answer":0,"feedback":"La cloche sépare les domaines liquide, diphasique et vapeur."},{"question":"Comment s’appelle le sommet de la cloche ?","choices":["Le point zéro","Le point critique","Le point de vide"],"answer":1,"feedback":"Le sommet est le point critique. Au-dessus, la frontière liquide-vapeur disparaît."}]},{"id":"bulle-rosee","order":3,"title":"Bulle et rosée","short":"Bulle / rosée","level":"essentiel","symbol":"bulle ◁ cloche ▷ rosée","goal":"Distinguer les deux frontières de la cloche.","discover":{"title":"Deux côtés, deux noms","body":"La branche gauche est la courbe de bulle : en partant du liquide, la première bulle de vapeur apparaît. La branche droite est la courbe de rosée : en partant de la vapeur, la première goutte de liquide apparaît.","remember":"Bulle : côté liquide. Rosée : côté vapeur."},"function":{"title":"Le bon côté pour le bon calcul","body":"La température de rosée sert notamment de référence pour la surchauffe. La température de bulle sert notamment de référence pour le sous-refroidissement. Pour un mélange zéotropique, elles peuvent être différentes : c’est le glissement de température.","terrain":"Lien métier : choisir la bonne référence de saturation évite de fausser une surchauffe ou un sous-refroidissement."},"quiz":[{"question":"En partant d’un liquide que l’on chauffe, quelle frontière rencontre-t-on ?","choices":["La courbe de bulle","La courbe de rosée","Une isentrope"],"answer":0,"feedback":"La première bulle de vapeur apparaît sur la courbe de bulle."},{"question":"Quelle référence utilise-t-on généralement pour raisonner sur la surchauffe ?","choices":["La température de rosée","La température de bulle","Le point critique"],"answer":0,"feedback":"La surchauffe se raisonne côté vapeur, à partir de la température de rosée."}]},{"id":"zones","order":4,"title":"Les trois zones","short":"Zones du fluide","level":"essentiel","symbol":"liquide · mélange · vapeur","goal":"Identifier l’état du fluide à partir de la position d’un point.","discover":{"title":"Où se trouve le point ?","body":"À gauche de la cloche, le fluide est liquide sous-refroidi. Dans la cloche, liquide et vapeur coexistent. À droite, le fluide est vapeur surchauffée.","remember":"Gauche : liquide. Dedans : liquide + vapeur. Droite : vapeur."},"function":{"title":"La zone donne déjà une information","body":"Avant de lire une température ou une enthalpie, repérez la zone. La position du point indique immédiatement l’état physique probable du fluide.","terrain":"Lien métier : à l’aspiration d’un compresseur, on recherche une vapeur ; avant le détendeur, on recherche un liquide."},"quiz":[{"question":"Que trouve-t-on à l’intérieur de la cloche ?","choices":["Du liquide uniquement","Un mélange liquide-vapeur","De la vapeur uniquement"],"answer":1,"feedback":"Dans la cloche, les phases liquide et vapeur coexistent."},{"question":"Dans quelle zone doit se trouver le fluide aspiré par le compresseur ?","choices":["Dans la vapeur, à droite de la cloche","Dans le liquide, à gauche","Toujours au point critique"],"answer":0,"feedback":"Le compresseur doit aspirer de la vapeur ; un retour de liquide est dangereux pour lui."}]},{"id":"isotitres","order":5,"title":"Les isotitres","short":"Isotitres x","level":"essentiel","symbol":"x = constante","goal":"Reconnaître les lignes de titre vapeur dans la zone diphasique.","discover":{"title":"Quelle part est déjà vapeur ?","body":"Dans la cloche, le titre x est la fraction massique de vapeur. Une isotitre relie des points de même titre. Ces lignes restent à l’intérieur de la zone liquide-vapeur.","remember":"x = 0 : liquide saturé. x = 1 : vapeur saturée. Entre les deux : mélange."},"function":{"title":"Lire la qualité du mélange","body":"Une isotitre n’est ni une température ni une pression. Elle indique la proportion massique de vapeur présente dans le mélange.","terrain":"Lien métier : savoir les reconnaître évite de confondre une ligne de titre avec une frontière ou une autre famille de courbes."},"quiz":[{"question":"Que représente le titre x ?","choices":["La fraction massique de vapeur","La pression absolue","Le volume du local"],"answer":0,"feedback":"Le titre x indique la part massique du fluide présente sous forme de vapeur."},{"question":"Où se trouvent les isotitres ?","choices":["Uniquement dans la cloche","Uniquement à gauche","Sur l’axe des pressions"],"answer":0,"feedback":"Le titre n’a de sens que dans la zone où liquide et vapeur coexistent."}]},{"id":"isobare","order":6,"title":"L’isobare","short":"Isobare","level":"essentiel","symbol":"p = constante","goal":"Reconnaître une transformation à pression constante.","discover":{"title":"Même pression","body":"ISO signifie « même ». Une isobare relie tous les points ayant la même pression p. Comme la pression se lit verticalement, une isobare est horizontale.","remember":"ISObare : même pression. Sur le diagramme p-h : ligne horizontale."},"function":{"title":"Suivre une transformation horizontale","body":"Dans le modèle simple du cycle frigorifique, l’évaporation et la condensation sont représentées sur des portions d’isobares, respectivement en basse et en haute pression.","terrain":"Lien métier : relier les transformations dans les échangeurs aux niveaux BP et HP."},"quiz":[{"question":"Quelle grandeur reste constante sur une isobare ?","choices":["La pression p","L’enthalpie h","L’entropie s"],"answer":0,"feedback":"Le suffixe « bare » renvoie à la pression."},{"question":"Quelle allure a une isobare sur un diagramme p-h ?","choices":["Horizontale","Verticale","Circulaire"],"answer":0,"feedback":"Une hauteur constante correspond à une pression constante : la ligne est horizontale."}]},{"id":"isotherme","order":7,"title":"L’isotherme","short":"Isotherme","level":"essentiel","symbol":"T = constante","goal":"Reconnaître les états de même température.","discover":{"title":"Même température","body":"Une isotherme relie les points ayant la même température T. Sur un diagramme réel, plusieurs isothermes forment un réseau ; leur allure change selon la zone du fluide.","remember":"ISOtherme : même température. Pensez au thermomètre."},"function":{"title":"Ne pas apprendre seulement une couleur","body":"Une couleur peut changer d’un éditeur de diagramme à l’autre. Pour identifier la famille, cherchez la légende, la valeur de température et l’allure de la courbe.","terrain":"Lien métier : comparer une température réelle à la température de saturation pour déterminer surchauffe ou sous-refroidissement."},"quiz":[{"question":"Quelle grandeur reste constante sur une isotherme ?","choices":["Le volume massique","La température","La pression"],"answer":1,"feedback":"THERME renvoie à la température : T reste constante."},{"question":"Pour identifier une isotherme sur un autre diagramme, que faut-il privilégier ?","choices":["Uniquement sa couleur","La légende, la valeur T et son allure","La taille du fichier"],"answer":1,"feedback":"La couleur n’est pas une convention universelle. Le symbole T et la légende sont les repères fiables."}]},{"id":"isochore","order":8,"title":"L’isochore","short":"Isochore","level":"approfondissement","symbol":"v = constante","goal":"Reconnaître les états de même volume massique.","discover":{"title":"Même volume massique","body":"Une isochore relie les points où le volume massique v reste constant. Le volume massique est le volume occupé par un kilogramme de fluide, exprimé en m³/kg.","remember":"ISOchore : même volume massique v."},"function":{"title":"Une famille surtout visible côté vapeur","body":"Les isochores forment généralement un réseau de courbes dans la zone vapeur. Leur pente les distingue des isobares horizontales et des isenthalpes verticales.","terrain":"Lien métier : comprendre comment la masse volumique de la vapeur évolue avec l’état thermodynamique."},"quiz":[{"question":"Que conserve une isochore ?","choices":["Le volume massique v","Le titre x","La température T"],"answer":0,"feedback":"Une isochore relie les états de même volume massique."},{"question":"Quelle unité convient au volume massique ?","choices":["m³/kg","bar absolu","kJ/kg"],"answer":0,"feedback":"Le volume massique s’exprime en mètres cubes par kilogramme."}]},{"id":"isentrope","order":9,"title":"L’isentrope","short":"Isentrope","level":"approfondissement","symbol":"s = constante","goal":"Relier l’isentrope à la compression idéale de référence.","discover":{"title":"Même entropie","body":"Une isentrope relie les points où l’entropie s reste constante. L’entropie est une grandeur thermodynamique ; pour cette formation, retenez surtout son usage comme référence de compression idéale.","remember":"ISEntrope : même entropie s. Référence de compression idéale."},"function":{"title":"Une référence, pas une promesse","body":"Le compresseur réel n’est pas parfait. La compression isentropique sert de modèle de comparaison pour analyser l’écart entre le comportement idéal et le comportement réel.","terrain":"Lien métier : repérer la direction de la compression et comprendre pourquoi la température de refoulement augmente."},"quiz":[{"question":"À quelle transformation associe-t-on surtout l’isentrope dans ce parcours ?","choices":["À la compression idéale","Au tirage au vide","À la pesée du fluide"],"answer":0,"feedback":"L’isentrope sert de référence pour représenter la compression idéale."},{"question":"Le compresseur réel suit-il toujours une compression parfaitement isentropique ?","choices":["Oui, sans exception","Non, c’est un modèle de référence","Seulement à l’arrêt"],"answer":1,"feedback":"L’isentrope représente un idéal utilisé pour comparer le fonctionnement réel."}]},{"id":"isenthalpe","order":10,"title":"L’isenthalpe","short":"Isenthalpe","level":"essentiel","symbol":"h = constante","goal":"Relier une ligne verticale à la détente au détendeur.","discover":{"title":"Même enthalpie","body":"Une isenthalpe relie les points ayant la même enthalpie h. Puisque h se lit horizontalement, conserver la même valeur revient à se déplacer verticalement.","remember":"ISenthalpe : même h. Sur le diagramme p-h : ligne verticale."},"function":{"title":"La forte chute de pression du détendeur","body":"Dans le modèle frigorifique courant, la détente au détendeur est représentée comme isenthalpique : la pression chute fortement tandis que l’enthalpie reste constante.","terrain":"Lien métier : reconnaître immédiatement le trait descendant associé au détendeur."},"quiz":[{"question":"Quelle grandeur reste constante pendant une détente isenthalpique ?","choices":["La pression","L’enthalpie","Le volume du local"],"answer":1,"feedback":"Isenthalpique signifie : enthalpie h constante."},{"question":"Quelle allure a une isenthalpe sur le diagramme p-h ?","choices":["Une ligne verticale","Une ligne horizontale","Une boucle fermée"],"answer":0,"feedback":"Une abscisse h constante produit une ligne verticale."}]}];
+    window.__INERWEB_CORE_IDS__ = ["axes","saturation","bulle-rosee","zones","isotitres","isobare","isotherme","isenthalpe"];
+  </script>
+  <script>(() => {
+  "use strict";
+  const modules = Array.isArray(window.__INERWEB_MODULES__) ? window.__INERWEB_MODULES__ : [];
+  const coreIds = new Set(window.__INERWEB_CORE_IDS__ || []);
+  const grid = document.getElementById("moduleGrid");
+  const list = document.getElementById("standaloneList");
+  const summary = document.getElementById("selectionSummary");
+  const learnLink = document.getElementById("learnLink");
+  const revisionLink = document.getElementById("revisionLink");
+
+  function escapeHtml(value) {
+    return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+  }
+
+  grid.innerHTML = modules.map((module) => `
+    <label class="module-choice" for="module-${escapeHtml(module.id)}">
+      <input type="checkbox" id="module-${escapeHtml(module.id)}" value="${escapeHtml(module.id)}" ${coreIds.has(module.id) ? "checked" : ""}>
+      <span>
+        <span class="level">${module.level === "essentiel" ? "Essentiel habilitation" : "Approfondissement"}</span>
+        <strong>${escapeHtml(module.order)}. ${escapeHtml(module.short)}</strong>
+        <span>${escapeHtml(module.goal)}</span>
+      </span>
+    </label>`).join("");
+
+  list.innerHTML = modules.map((module) => `
+    <article class="standalone-item">
+      <span class="standalone-number">${module.order}</span>
+      <div><div class="standalone-title">${escapeHtml(module.title)}</div><div class="standalone-objective">${escapeHtml(module.goal)}</div></div>
+      <a href="modules-autonomes/${String(module.order).padStart(2, "0")}-${escapeHtml(module.id)}.html">Ouvrir ce module →</a>
+    </article>`).join("");
+
+  function checkedIds() {
+    return [...grid.querySelectorAll("input:checked")].map((input) => input.value);
+  }
+
+  function updateLinks() {
+    const ids = checkedIds();
+    summary.textContent = ids.length ? `${ids.length} module${ids.length > 1 ? "s" : ""} sélectionné${ids.length > 1 ? "s" : ""}.` : "Sélectionnez au moins un module.";
+    [learnLink, revisionLink].forEach((link) => {
+      link.classList.toggle("disabled", ids.length === 0);
+      link.setAttribute("aria-disabled", String(ids.length === 0));
+    });
+    if (ids.length) {
+      const query = encodeURIComponent(ids.join(",")).replaceAll("%2C", ",");
+      learnLink.href = `cours-complet.html?modules=${query}&mode=apprentissage`;
+      revisionLink.href = `cours-complet.html?modules=${query}&mode=revision`;
+    } else {
+      learnLink.removeAttribute("href");
+      revisionLink.removeAttribute("href");
+    }
+  }
+
+  grid.addEventListener("change", updateLinks);
+  document.getElementById("corePreset").addEventListener("click", () => {
+    grid.querySelectorAll("input").forEach((input) => { input.checked = coreIds.has(input.value); });
+    updateLinks();
+  });
+  document.getElementById("allPreset").addEventListener("click", () => {
+    grid.querySelectorAll("input").forEach((input) => { input.checked = true; });
+    updateLinks();
+  });
+  updateLinks();
+})();
+</script>
+</body>
+</html>

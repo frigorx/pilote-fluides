@@ -170,7 +170,10 @@ function lireExperience(dossier) {
   const aSynthese = /speechSynthesis|SpeechSynthesisUtterance/.test(codeJoint);
   if (aMp3) capacites.push("voix enregistrée");
   else if (aSynthese) capacites.push("voix de synthèse");
-  if (/\bQCM\b|bonneReponse|bonne_reponse|data-bonne|questions\s*[:=]\s*\[|choix\s*[:=]\s*\[/.test(codeJoint))
+  /* Les quiz s'écrivent de plusieurs façons selon la brique (français ou
+     anglais, tableau de choix ou marqueur de bonne réponse) : on les
+     reconnaît tous, sinon une ressource à 16 questions passe pour muette. */
+  if (/\bQCM\b|bonneReponse|bonne_reponse|data-bonne|questions\s*[:=]\s*\[|choix\s*[:=]\s*\[|quizIndex|quizArea|\bcorrect\b|answers\s*[:=]/.test(codeJoint))
     capacites.push("questions");
   if (/<animate|animation\s*:|@keyframes|requestAnimationFrame/.test(codeJoint)) capacites.push("animation");
   if (/@media\s+print/.test(codeJoint)) capacites.push("imprimable");

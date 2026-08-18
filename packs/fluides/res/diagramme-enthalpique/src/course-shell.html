@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <title>__DOCUMENT_TITLE__</title>
+  <style>__COURSE_CSS__</style>
+</head>
+<body>
+  <div class="course-app" id="courseApp">
+    <header class="topbar">
+      <div class="brand" aria-label="inerWeb Édu">
+        <span class="brand-mark" aria-hidden="true">iW</span>
+        <span class="brand-name">iner<span>Web</span> <small>Édu</small></span>
+      </div>
+      <div class="course-name" id="courseName">Diagramme enthalpique</div>
+      <div class="tools" aria-label="Réglages de lecture">
+        <button type="button" class="tool-button" id="readButton" aria-label="Écouter le texte affiché" aria-pressed="false">▶ Écouter</button>
+        <button type="button" class="tool-button" id="stopButton" aria-label="Arrêter la voix" disabled>■ Stop</button>
+        <label class="speed-label" for="speedSelect">Vitesse</label>
+        <select id="speedSelect" class="speed-select" aria-label="Vitesse de la voix">
+          <option value="0.85">0,85×</option>
+          <option value="0.95" selected>0,95×</option>
+          <option value="1.1">1,10×</option>
+          <option value="1.25">1,25×</option>
+        </select>
+        <button type="button" class="tool-button compact" id="readingButton" aria-label="Activer la lecture facilitée" aria-pressed="false">Aa</button>
+        <button type="button" class="tool-button compact" id="fullscreenButton" aria-label="Afficher en plein écran">⛶</button>
+      </div>
+    </header>
+
+    <section class="progress-row" aria-label="Progression du parcours">
+      <span class="progress-module" id="progressModule"></span>
+      <div class="progress-track" role="progressbar" aria-label="Progression" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-count" id="progressCount"></span>
+    </section>
+
+    <main class="lesson" id="lesson">
+      <section class="visual-panel" aria-labelledby="visualTitle">
+        <h2 class="sr-only" id="visualTitle">Diagramme pédagogique</h2>
+        <div class="diagram" id="diagram"></div>
+        <div class="visual-caption" id="visualCaption"></div>
+      </section>
+
+      <section class="lesson-panel" aria-labelledby="lessonTitle">
+        <div class="lesson-kicker" id="lessonKicker"></div>
+        <h1 id="lessonTitle"></h1>
+        <div class="lesson-content" id="lessonContent"></div>
+        <div class="quiz-area" id="quizArea" hidden></div>
+        <div class="feedback" id="feedback" aria-live="polite" hidden></div>
+      </section>
+    </main>
+
+    <footer class="navigation" aria-label="Navigation dans le parcours">
+      <button type="button" class="nav-button secondary" id="backButton">← Retour</button>
+      <div class="module-state" id="moduleState" aria-live="polite"></div>
+      <button type="button" class="nav-button primary" id="nextButton">Continuer →</button>
+    </footer>
+  </div>
+
+  <noscript>Ce module nécessite JavaScript pour afficher les étapes et les exercices. Le contenu ne dépend d’aucun réseau.</noscript>
+  <script>
+    window.__INERWEB_MODULES__ = __MODULE_DATA__;
+    window.__INERWEB_CONFIG__ = __COURSE_CONFIG__;
+  </script>
+  <script>__COURSE_JS__</script>
+</body>
+</html>

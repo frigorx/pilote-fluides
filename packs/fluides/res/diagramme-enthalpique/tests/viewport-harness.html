@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Harnais de contrôle des formats</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: #d9dde3; }
+    body { padding: 8px; }
+    iframe { box-sizing: content-box; display: block; border: 2px solid #1b3a63; background: #fff; }
+  </style>
+</head>
+<body>
+  <iframe id="frame" title="Page inerWeb testée"></iframe>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const frame = document.getElementById("frame");
+    frame.width = String(Math.max(320, Number(params.get("w")) || 1024));
+    frame.height = String(Math.max(480, Number(params.get("h")) || 768));
+    frame.src = params.get("page") || "../cours-habilitation.html";
+  </script>
+</body>
+</html>

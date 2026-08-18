@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <title>Diagramme enthalpique — La courbe de saturation</title>
+  <style>:root {
+  --cream: #f7f1e7;
+  --paper: #fffdf8;
+  --ink: #10233c;
+  --muted: #637285;
+  --navy: #1b3a63;
+  --blue: #3d7fca;
+  --blue-soft: #84b7ec;
+  --orange: #ff6b35;
+  --orange-deep: #c9451a;
+  --yellow: #f4c542;
+  --violet: #7d4c9e;
+  --ok: #1e7e54;
+  --ok-bg: #e3f5ec;
+  --ko: #c0392b;
+  --ko-bg: #fbe7e4;
+  --wait: #b06a00;
+  --wait-bg: #fff4e0;
+  --line: rgba(27, 58, 99, 0.18);
+  --shadow: 0 2px 10px rgba(27, 58, 99, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+html,
+body { margin: 0; min-width: 320px; height: 100%; }
+
+body {
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Calibri, "Segoe UI", system-ui, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.48;
+}
+
+button,
+select { font: inherit; }
+
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(255, 107, 53, 0.5);
+  outline-offset: 2px;
+}
+
+button:disabled { cursor: not-allowed; opacity: 0.48; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.course-app {
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: 56px 38px minmax(0, 1fr) 64px;
+  gap: 8px;
+  padding: 8px;
+}
+
+.topbar,
+.progress-row,
+.visual-panel,
+.lesson-panel,
+.navigation {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.topbar {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 14px;
+  padding: 6px 10px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  border: 3px solid var(--orange);
+  font: 700 15px/1 "Trebuchet MS", Calibri, Arial, sans-serif;
+}
+
+.brand-name {
+  color: var(--navy);
+  font: 700 19px/1 "Trebuchet MS", Calibri, Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.brand-name > span { color: var(--orange-deep); }
+.brand-name small { color: var(--muted); font-size: 11px; }
+
+.course-name {
+  min-width: 0;
+  flex: 1 1 auto;
+  color: var(--navy);
+  font-family: "Trebuchet MS", Calibri, Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(17px, 2vw, 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tools {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tool-button,
+.speed-select {
+  min-height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 6px 11px;
+  cursor: pointer;
+}
+
+.tool-button:hover:not(:disabled),
+.speed-select:hover { border-color: var(--blue); background: #f3f7fb; }
+
+.tool-button[aria-pressed="true"] {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+.tool-button.compact { width: 38px; padding-inline: 0; }
+.speed-label { font-size: 12px; color: var(--muted); }
+.speed-select { padding-inline: 8px; }
+
+.progress-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 250px) minmax(80px, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.progress-module {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.progress-track {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(27, 58, 99, 0.12);
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: var(--orange-deep);
+  transition: width 180ms ease;
+}
+
+.progress-count { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.lesson {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(330px, 0.82fr);
+  gap: 8px;
+}
+
+.visual-panel,
+.lesson-panel {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.visual-panel {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  padding: 8px 10px 6px;
+}
+
+.diagram { min-height: 0; display: grid; place-items: center; }
+.diagram svg { display: block; width: 100%; height: 100%; max-height: 100%; }
+
+.visual-caption {
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.visual-caption::before {
+  content: "";
+  width: 34px;
+  border-top: 4px solid var(--orange-deep);
+  border-radius: 4px;
+}
+
+.lesson-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: clamp(14px, 2.2vw, 28px);
+}
+
+.lesson-kicker {
+  color: var(--orange-deep);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lesson-panel h1 {
+  margin: 5px 0 10px;
+  color: var(--navy);
+  font-family: "Trebuchet MS", Calibri, Arial, sans-serif;
+  font-size: clamp(25px, 3.2vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.lesson-content { display: grid; gap: 10px; }
+.lesson-content p { margin: 0; }
+
+.goal,
+.remember,
+.terrain {
+  padding: 10px 12px;
+  border-left: 5px solid var(--navy);
+  border-radius: 8px;
+  background: #f3f7fb;
+  font-size: 0.96em;
+}
+
+.remember {
+  border-left-style: double;
+  border-left-color: var(--ok);
+  background: var(--ok-bg);
+}
+
+.terrain {
+  border-left-style: dashed;
+  border-left-color: var(--orange-deep);
+  background: var(--wait-bg);
+}
+
+.quiz-area { display: grid; gap: 9px; }
+.quiz-question { margin: 0; color: var(--navy); font-weight: 700; font-size: 1.06em; }
+.quiz-count { color: var(--muted); font-size: 13px; }
+.choices { display: grid; gap: 7px; }
+
+.choice {
+  width: 100%;
+  min-height: 42px;
+  border: 2px solid var(--line);
+  border-radius: 11px;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: left;
+  padding: 8px 11px;
+  cursor: pointer;
+}
+
+.choice:hover:not(:disabled) { border-color: var(--blue); background: #f3f7fb; }
+.choice.correct { border: 4px double var(--ok); background: var(--ok-bg); }
+.choice.incorrect { border: 3px dashed var(--ko); background: var(--ko-bg); }
+
+.feedback {
+  margin-top: 10px;
+  padding: 9px 11px;
+  border-radius: 8px;
+  border-left: 5px solid var(--wait);
+  background: var(--wait-bg);
+  font-size: 0.95em;
+}
+
+.feedback.correct { border-left: 7px double var(--ok); background: var(--ok-bg); }
+.feedback.incorrect { border-left: 5px dashed var(--ko); background: var(--ko-bg); }
+
+.navigation {
+  display: grid;
+  grid-template-columns: minmax(120px, 190px) minmax(0, 1fr) minmax(140px, 210px);
+  align-items: center;
+  gap: 10px;
+  border-radius: 14px;
+  padding: 8px 10px;
+}
+
+.nav-button {
+  min-height: 44px;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-button.secondary { border: 1px solid var(--line); background: var(--paper); color: var(--navy); }
+.nav-button.primary { border: 1px solid var(--navy); background: var(--navy); color: #fff; }
+.nav-button:hover:not(:disabled) { transform: translateY(-1px); }
+.module-state { min-width: 0; text-align: center; color: var(--muted); font-size: 13px; }
+
+.course-app.reading-easy {
+  letter-spacing: 0.035em;
+  word-spacing: 0.08em;
+  line-height: 1.62;
+}
+
+.course-app.reading-easy .lesson-panel h1 { letter-spacing: 0.01em; }
+
+/* Diagramme : les familles sont aussi distinguées par leur trait et leur nom. */
+.d-grid { stroke: rgba(27, 58, 99, 0.12); stroke-width: 1; }
+.d-axis { stroke: var(--navy); stroke-width: 3; fill: none; }
+.d-text { fill: var(--ink); font-family: Calibri, "Segoe UI", Arial, sans-serif; }
+.d-label { fill: var(--navy); font-size: 25px; font-weight: 700; }
+.d-small { fill: var(--muted); font-size: 20px; }
+.d-family { fill: none; opacity: 0.2; transition: opacity 180ms ease, stroke-width 180ms ease; vector-effect: non-scaling-stroke; }
+.d-family.active { opacity: 1; filter: drop-shadow(0 0 4px rgba(27, 58, 99, 0.18)); }
+.d-saturation { stroke: var(--navy); stroke-width: 3; }
+.d-bubble { stroke: var(--blue); stroke-width: 4; }
+.d-dew { stroke: var(--orange-deep); stroke-width: 4; stroke-dasharray: 11 7; }
+.d-isotitre { stroke: #7d4c9e; stroke-width: 3; stroke-dasharray: 3 7; }
+.d-isobare { stroke: var(--ko); stroke-width: 3; }
+.d-isotherme { stroke: var(--orange-deep); stroke-width: 3; stroke-dasharray: 13 6; }
+.d-isochore { stroke: var(--blue); stroke-width: 3; stroke-dasharray: 10 5 2 5; }
+.d-isentrope { stroke: var(--ok); stroke-width: 4; }
+.d-isenthalpe { stroke: #007777; stroke-width: 3; stroke-dasharray: 8 5; }
+.d-zone { opacity: 0.08; transition: opacity 180ms ease; }
+.d-zone.active { opacity: 0.42; }
+.d-active-label { fill: var(--ink); font-size: 26px; font-weight: 700; paint-order: stroke; stroke: var(--paper); stroke-width: 8px; stroke-linejoin: round; }
+.d-trace { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw-curve 750ms ease forwards; }
+
+@keyframes draw-curve { to { stroke-dashoffset: 0; } }
+
+@media (max-width: 900px) {
+  .course-app { grid-template-rows: 50px 36px minmax(0, 1fr) 58px; padding: 5px; gap: 5px; }
+  .topbar { gap: 8px; padding: 4px 7px; }
+  .brand-name { display: none; }
+  .brand-mark { width: 34px; height: 34px; }
+  .speed-label { display: none; }
+  .tool-button, .speed-select { min-height: 34px; padding: 5px 8px; font-size: 13px; }
+  .lesson { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1.08fr) minmax(0, 0.92fr); }
+  .visual-panel { border-radius: 13px; padding: 4px 6px 2px; }
+  .lesson-panel { border-radius: 13px; justify-content: center; padding: 10px 13px; }
+  .lesson-panel h1 { margin: 2px 0 6px; font-size: clamp(20px, 5vw, 27px); }
+  .lesson-content { gap: 6px; font-size: 14px; line-height: 1.3; }
+  .goal, .remember, .terrain { padding: 6px 8px; }
+  .visual-caption { min-height: 22px; font-size: 12px; }
+  .navigation { padding: 5px 7px; grid-template-columns: minmax(94px, 150px) minmax(0, 1fr) minmax(110px, 170px); }
+  .nav-button { min-height: 40px; padding: 6px 11px; font-size: 14px; }
+  .choice { min-height: 36px; padding: 5px 8px; font-size: 13px; }
+  .quiz-area { gap: 5px; }
+  .feedback { margin-top: 5px; padding: 5px 8px; font-size: 12.5px; }
+  .d-label { font-size: 28px; }
+  .d-small { font-size: 24px; }
+  .d-active-label { font-size: 30px; }
+}
+
+@media (max-width: 560px) {
+  .course-app { grid-template-rows: 46px 34px minmax(0, 1fr) 54px; padding: 4px; gap: 4px; }
+  .topbar { border-radius: 10px; }
+  .course-name { font-size: 15px; }
+  .brand-mark { width: 31px; height: 31px; border-width: 2px; font-size: 12px; }
+  .tool-button { font-size: 0; width: 33px; padding: 0; }
+  .tool-button::first-letter { font-size: 15px; }
+  #readButton::after { content: "▶"; font-size: 14px; }
+  #stopButton::after { content: "■"; font-size: 14px; }
+  #readingButton, #fullscreenButton { font-size: 12px; }
+  .speed-select { width: 57px; font-size: 11px; padding-inline: 3px; }
+  .progress-row { grid-template-columns: minmax(90px, 1fr) minmax(65px, 1fr) auto; gap: 6px; padding: 4px 7px; font-size: 11px; }
+  .lesson { grid-template-rows: minmax(0, 1.12fr) minmax(0, 0.88fr); }
+  .course-app[data-stage="quiz"] .lesson { grid-template-rows: minmax(0, 0.88fr) minmax(0, 1.12fr); }
+  .course-app[data-stage="final"] .lesson { grid-template-rows: minmax(0, 0.78fr) minmax(0, 1.22fr); }
+  .lesson-kicker { font-size: 10px; }
+  .lesson-panel { padding: 7px 10px; }
+  .lesson-panel h1 { font-size: 19px; }
+  .lesson-content { font-size: 12.5px; line-height: 1.22; }
+  .lesson-content .goal { display: none; }
+  .goal, .remember, .terrain { padding: 5px 7px; border-left-width: 4px; }
+  .visual-caption { font-size: 11px; min-height: 18px; }
+  .visual-caption::before { width: 22px; border-top-width: 3px; }
+  .navigation { grid-template-columns: 90px minmax(0, 1fr) 105px; gap: 4px; border-radius: 10px; }
+  .nav-button { min-height: 37px; font-size: 12px; padding-inline: 7px; }
+  .module-state { font-size: 10px; }
+  .quiz-question { font-size: 13px; line-height: 1.18; }
+  .quiz-count { font-size: 10px; }
+  .choice { min-height: 31px; font-size: 11.5px; line-height: 1.15; padding: 4px 6px; }
+  .feedback { font-size: 11.5px; line-height: 1.18; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  .d-family.active { opacity: 1; }
+}
+
+@media print {
+  @page { margin: 15mm; }
+  html, body { height: auto; overflow: visible; background: #fff; color: #000; font-size: 14pt; }
+  .course-app { height: auto; display: block; padding: 0; }
+  .topbar, .progress-row, .navigation, .tools { display: none !important; }
+  .lesson { display: block; }
+  .visual-panel, .lesson-panel { background: #fff; border: 1px solid #1b3a63; box-shadow: none; border-radius: 0; margin-bottom: 8mm; break-inside: avoid; overflow: visible; }
+  .visual-panel { min-height: 110mm; }
+  .lesson-panel { padding: 8mm; }
+  .lesson-content { color: #000; }
+  .goal, .remember, .terrain, .feedback { background: #fff !important; }
+  .remember { border-left: 5px double #1e7e54; }
+  .terrain { border-left: 4px dashed #c9451a; }
+  .choice { background: #fff !important; }
+}
+</style>
+</head>
+<body>
+  <div class="course-app" id="courseApp">
+    <header class="topbar">
+      <div class="brand" aria-label="inerWeb Édu">
+        <span class="brand-mark" aria-hidden="true">iW</span>
+        <span class="brand-name">iner<span>Web</span> <small>Édu</small></span>
+      </div>
+      <div class="course-name" id="courseName">Diagramme enthalpique</div>
+      <div class="tools" aria-label="Réglages de lecture">
+        <button type="button" class="tool-button" id="readButton" aria-label="Écouter le texte affiché" aria-pressed="false">▶ Écouter</button>
+        <button type="button" class="tool-button" id="stopButton" aria-label="Arrêter la voix" disabled>■ Stop</button>
+        <label class="speed-label" for="speedSelect">Vitesse</label>
+        <select id="speedSelect" class="speed-select" aria-label="Vitesse de la voix">
+          <option value="0.85">0,85×</option>
+          <option value="0.95" selected>0,95×</option>
+          <option value="1.1">1,10×</option>
+          <option value="1.25">1,25×</option>
+        </select>
+        <button type="button" class="tool-button compact" id="readingButton" aria-label="Activer la lecture facilitée" aria-pressed="false">Aa</button>
+        <button type="button" class="tool-button compact" id="fullscreenButton" aria-label="Afficher en plein écran">⛶</button>
+      </div>
+    </header>
+
+    <section class="progress-row" aria-label="Progression du parcours">
+      <span class="progress-module" id="progressModule"></span>
+      <div class="progress-track" role="progressbar" aria-label="Progression" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-count" id="progressCount"></span>
+    </section>
+
+    <main class="lesson" id="lesson">
+      <section class="visual-panel" aria-labelledby="visualTitle">
+        <h2 class="sr-only" id="visualTitle">Diagramme pédagogique</h2>
+        <div class="diagram" id="diagram"></div>
+        <div class="visual-caption" id="visualCaption"></div>
+      </section>
+
+      <section class="lesson-panel" aria-labelledby="lessonTitle">
+        <div class="lesson-kicker" id="lessonKicker"></div>
+        <h1 id="lessonTitle"></h1>
+        <div class="lesson-content" id="lessonContent"></div>
+        <div class="quiz-area" id="quizArea" hidden></div>
+        <div class="feedback" id="feedback" aria-live="polite" hidden></div>
+      </section>
+    </main>
+
+    <footer class="navigation" aria-label="Navigation dans le parcours">
+      <button type="button" class="nav-button secondary" id="backButton">← Retour</button>
+      <div class="module-state" id="moduleState" aria-live="polite"></div>
+      <button type="button" class="nav-button primary" id="nextButton">Continuer →</button>
+    </footer>
+  </div>
+
+  <noscript>Ce module nécessite JavaScript pour afficher les étapes et les exercices. Le contenu ne dépend d’aucun réseau.</noscript>
+  <script>
+    window.__INERWEB_MODULES__ = [{"id":"saturation","order":2,"title":"La courbe de saturation","short":"Saturation","level":"essentiel","symbol":"cloche","goal":"Utiliser la cloche comme premier repère du diagramme.","discover":{"title":"Cherchez d’abord la cloche","body":"La courbe de saturation forme une enveloppe centrale. Elle sépare les domaines liquide, liquide plus vapeur et vapeur. Son sommet est le point critique.","remember":"La cloche est le repère principal. Repérez-la avant toutes les autres familles."},"function":{"title":"Une frontière entre les états","body":"La cloche ne donne pas seulement une forme : elle indique où commence ou se termine le changement d’état liquide-vapeur. À l’intérieur, les deux phases coexistent.","terrain":"Lien métier : elle permet de savoir si le fluide est liquide, diphasique ou vapeur avant d’interpréter une mesure."},"quiz":[{"question":"Que délimite principalement la courbe de saturation ?","choices":["Les domaines de phase du fluide","La tension électrique","Le débit d’air"],"answer":0,"feedback":"La cloche sépare les domaines liquide, diphasique et vapeur."},{"question":"Comment s’appelle le sommet de la cloche ?","choices":["Le point zéro","Le point critique","Le point de vide"],"answer":1,"feedback":"Le sommet est le point critique. Au-dessus, la frontière liquide-vapeur disparaît."}]}];
+    window.__INERWEB_CONFIG__ = {"documentTitle":"Diagramme enthalpique — La courbe de saturation","fixedIds":["saturation"]};
+  </script>
+  <script>(() => {
+  "use strict";
+
+  const modules = Array.isArray(window.__INERWEB_MODULES__) ? window.__INERWEB_MODULES__ : [];
+  const config = window.__INERWEB_CONFIG__ || {};
+  const moduleById = new Map(modules.map((module) => [module.id, module]));
+  const params = new URLSearchParams(window.location.search);
+  const requestedIds = (config.fixedIds || params.get("modules")?.split(",") || config.defaultIds || [])
+    .map((id) => String(id).trim())
+    .filter((id) => moduleById.has(id));
+  const selectedModules = (requestedIds.length ? requestedIds : modules.map((module) => module.id))
+    .map((id) => moduleById.get(id));
+  const mode = config.fixedMode || (params.get("mode") === "revision" ? "revision" : "apprentissage");
+
+  const stages = [];
+  selectedModules.forEach((module) => {
+    if (mode !== "revision") {
+      stages.push({ type: "discover", module });
+      stages.push({ type: "function", module });
+    }
+    stages.push({ type: "quiz", module });
+  });
+  stages.push({ type: "final" });
+
+  const state = {
+    stageIndex: 0,
+    speechRun: 0,
+    speaking: false,
+    paused: false,
+    currentSpeechText: "",
+    voices: [],
+    results: new Map(selectedModules.map((module) => [module.id, {
+      quizIndex: 0,
+      answers: [],
+      complete: false,
+      showingResult: false
+    }]))
+  };
+
+  const dom = {
+    app: document.getElementById("courseApp"),
+    courseName: document.getElementById("courseName"),
+    progressModule: document.getElementById("progressModule"),
+    progressTrack: document.getElementById("progressTrack"),
+    progressFill: document.getElementById("progressFill"),
+    progressCount: document.getElementById("progressCount"),
+    diagram: document.getElementById("diagram"),
+    visualCaption: document.getElementById("visualCaption"),
+    lessonKicker: document.getElementById("lessonKicker"),
+    lessonTitle: document.getElementById("lessonTitle"),
+    lessonContent: document.getElementById("lessonContent"),
+    quizArea: document.getElementById("quizArea"),
+    feedback: document.getElementById("feedback"),
+    backButton: document.getElementById("backButton"),
+    nextButton: document.getElementById("nextButton"),
+    moduleState: document.getElementById("moduleState"),
+    readButton: document.getElementById("readButton"),
+    stopButton: document.getElementById("stopButton"),
+    speedSelect: document.getElementById("speedSelect"),
+    readingButton: document.getElementById("readingButton"),
+    fullscreenButton: document.getElementById("fullscreenButton")
+  };
+
+  const phaseNames = {
+    discover: "Je découvre",
+    function: "Je comprends",
+    quiz: "Je vérifie"
+  };
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;");
+  }
+
+  function resultFor(module) {
+    return state.results.get(module.id);
+  }
+
+  function scoreFor(module) {
+    return resultFor(module).answers.filter((answer) => answer?.correct).length;
+  }
+
+  function totalScore() {
+    return selectedModules.reduce((sum, module) => sum + scoreFor(module), 0);
+  }
+
+  function possibleScore() {
+    return selectedModules.reduce((sum, module) => sum + module.quiz.length, 0);
+  }
+
+  function captionFor(module) {
+    if (!module) return "Vue d’ensemble qualitative — aucune valeur ne doit être relevée sur ce schéma.";
+    const captions = {
+      axes: "Axes : pression p verticale · enthalpie h horizontale",
+      saturation: "Courbe de saturation : la cloche qui sépare les domaines de phase",
+      "bulle-rosee": "Trait plein : courbe de bulle · trait tireté : courbe de rosée",
+      zones: "Gauche : liquide · intérieur : liquide + vapeur · droite : vapeur",
+      isotitres: "Isotitres : lignes pointillées de même fraction massique de vapeur x",
+      isobare: "Isobare : ligne horizontale · p constante",
+      isotherme: "Isotherme : ligne tiretée · T constante",
+      isochore: "Isochore : trait mixte · v constant",
+      isentrope: "Isentrope : trait plein montant · s constante",
+      isenthalpe: "Isenthalpe : ligne verticale tiretée · h constante"
+    };
+    return captions[module.id] || module.symbol;
+  }
+
+  function activeClass(active, id, extra = "") {
+    const on = active === id || active === "overview";
+    return `${extra} ${on ? "active d-trace" : ""}`.trim();
+  }
+
+  function diagramSvg(active) {
+    const overview = active === "overview";
+    const labelMap = {
+      axes: [205, 514, "p vertical · h horizontal"],
+      saturation: [438, 105, "SATURATION"],
+      "bulle-rosee": [430, 178, "BULLE / ROSÉE"],
+      zones: [430, 492, "TROIS ZONES"],
+      isotitres: [465, 308, "ISOTITRES x"],
+      isobare: [720, 255, "ISOBARE · p"],
+      isotherme: [725, 390, "ISOTHERME · T"],
+      isochore: [770, 248, "ISOCHORE · v"],
+      isentrope: [520, 170, "ISENTROPE · s"],
+      isenthalpe: [560, 492, "ISENTHALPE · h"]
+    };
+    const [labelX, labelY, label] = labelMap[active] || [462, 100, "FAMILLES DE COURBES"];
+    const saturationActive = active === "saturation" || active === "bulle-rosee" || active === "zones" || active === "isotitres" || overview;
+    const bubbleActive = active === "bulle-rosee" || overview;
+    const zonesActive = active === "zones" || overview;
+
+    return `
+      <svg viewBox="0 0 940 560" role="img" aria-labelledby="diagramTitle diagramDesc" preserveAspectRatio="xMidYMid meet">
+        <title id="diagramTitle">Diagramme log pression-enthalpie pédagogique</title>
+        <desc id="diagramDesc">Schéma qualitatif original. La pression est verticale et l’enthalpie horizontale. Une cloche de saturation sépare le liquide, le mélange liquide-vapeur et la vapeur. La famille étudiée est mise en évidence avec une couleur, un style de trait et un nom.</desc>
+        <defs>
+          <marker id="arrowNavy" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0 0 L8 3 L0 6 Z" fill="#1b3a63"></path>
+          </marker>
+        </defs>
+        <rect x="4" y="4" width="932" height="552" rx="18" fill="#fffdf8" stroke="rgba(27,58,99,.18)"></rect>
+
+        <g aria-hidden="true">
+          <path class="d-grid" d="M105 125H860 M105 220H860 M105 315H860 M105 410H860"></path>
+          <path class="d-grid" d="M225 75V475 M370 75V475 M515 75V475 M660 75V475 M805 75V475"></path>
+        </g>
+
+        <path class="d-zone ${zonesActive ? "active" : ""}" fill="#84b7ec" d="M106 76H425 C350 118 265 250 225 474 H106Z"></path>
+        <path class="d-zone ${zonesActive ? "active" : ""}" fill="#ff6b35" d="M225 474 C265 250 350 118 425 92 C515 125 600 260 625 474Z"></path>
+        <path class="d-zone ${zonesActive ? "active" : ""}" fill="#7d4c9e" d="M425 92 C515 125 600 260 625 474 H860V76H425Z"></path>
+
+        <path class="d-axis" d="M105 475V66 M105 475H872" marker-end="url(#arrowNavy)"></path>
+        <path class="d-axis" d="M105 475V58" marker-end="url(#arrowNavy)"></path>
+        <text class="d-text d-label" x="695" y="520">enthalpie massique h (kJ/kg) →</text>
+        <text class="d-text d-label" x="35" y="305" transform="rotate(-90 35 305)">pression absolue p (bar abs) →</text>
+        <text class="d-text d-small" x="118" y="92">échelle logarithmique</text>
+
+        <g class="d-family ${saturationActive ? "active" : ""}">
+          <path class="d-saturation" d="M225 474 C265 250 350 118 425 92"></path>
+          <path class="d-saturation" d="M425 92 C515 125 600 260 625 474"></path>
+          <circle cx="425" cy="92" r="6" fill="#1b3a63"></circle>
+        </g>
+
+        <g class="d-family ${bubbleActive ? "active d-trace" : ""}">
+          <path class="d-bubble" pathLength="1" d="M225 474 C265 250 350 118 425 92"></path>
+          <path class="d-dew" pathLength="1" d="M425 92 C515 125 600 260 625 474"></path>
+        </g>
+
+        <g class="d-family ${activeClass(active, "isotitres")}">
+          <path class="d-isotitre" pathLength="1" d="M292 455 C328 334 365 221 399 130"></path>
+          <path class="d-isotitre" pathLength="1" d="M396 462 C422 340 448 224 458 126"></path>
+          <path class="d-isotitre" pathLength="1" d="M520 458 C530 344 532 237 515 153"></path>
+          <text class="d-text d-small" x="327" y="376">x 0,25</text>
+          <text class="d-text d-small" x="420" y="355">x 0,50</text>
+          <text class="d-text d-small" x="505" y="385">x 0,75</text>
+        </g>
+
+        <g class="d-family ${activeClass(active, "isobare")}">
+          <path class="d-isobare" pathLength="1" d="M150 260H810"></path>
+          <path class="d-isobare" pathLength="1" d="M165 390H830"></path>
+        </g>
+
+        <g class="d-family ${activeClass(active, "isotherme")}">
+          <path class="d-isotherme" pathLength="1" d="M260 168 C275 225 294 254 330 260 H615 C660 282 690 330 710 405"></path>
+          <path class="d-isotherme" pathLength="1" d="M210 300 C250 345 295 385 350 390 H655 C705 407 742 434 770 468"></path>
+        </g>
+
+        <g class="d-family ${activeClass(active, "isochore")}">
+          <path class="d-isochore" pathLength="1" d="M630 458 C642 388 670 307 716 236 C750 184 785 139 820 105"></path>
+          <path class="d-isochore" pathLength="1" d="M700 460 C716 390 748 319 790 260 C817 223 840 196 860 178"></path>
+        </g>
+
+        <g class="d-family ${activeClass(active, "isentrope")}">
+          <path class="d-isentrope" pathLength="1" d="M602 452 C632 372 675 280 731 192 C762 145 791 111 820 86"></path>
+          <path class="d-isentrope" pathLength="1" d="M660 458 C692 380 735 305 786 238 C813 203 840 172 862 151"></path>
+        </g>
+
+        <g class="d-family ${activeClass(active, "isenthalpe")}">
+          <path class="d-isenthalpe" pathLength="1" d="M555 110V466"></path>
+          <path class="d-isenthalpe" pathLength="1" d="M735 110V466"></path>
+        </g>
+
+        <text class="d-text d-small" x="425" y="76" text-anchor="middle">point critique</text>
+        <text class="d-text d-label" x="150" y="190">LIQUIDE</text>
+        <text class="d-text d-label" x="423" y="430" text-anchor="middle">LIQUIDE + VAPEUR</text>
+        <text class="d-text d-label" x="688" y="130">VAPEUR</text>
+        <text class="d-text d-small" x="688" y="158">surchauffée</text>
+        <text class="d-text d-active-label" x="${labelX}" y="${labelY}" text-anchor="middle">${escapeHtml(label)}</text>
+        ${overview ? `
+          <g class="d-text d-small">
+            <text x="725" y="245">p constante</text>
+            <text x="722" y="414">T constante</text>
+            <text x="805" y="205">v constant</text>
+            <text x="710" y="184">s constante</text>
+            <text x="565" y="445">h constante</text>
+          </g>` : ""}
+      </svg>`;
+  }
+
+  function buildNarration(title, body, extra = "") {
+    return [title, body, extra].filter(Boolean).join(". ").replace(/\s+/g, " ").trim();
+  }
+
+  function renderStage() {
+    stopSpeech();
+    const stage = stages[state.stageIndex];
+    dom.app.dataset.stage = stage.type;
+    const percent = Math.round(((state.stageIndex + 1) / stages.length) * 100);
+    dom.progressFill.style.width = `${percent}%`;
+    dom.progressTrack.setAttribute("aria-valuenow", String(percent));
+    dom.progressCount.textContent = `${state.stageIndex + 1} / ${stages.length}`;
+    dom.backButton.disabled = state.stageIndex === 0;
+    dom.quizArea.hidden = true;
+    dom.feedback.hidden = true;
+    dom.feedback.className = "feedback";
+
+    if (stage.type === "final") {
+      renderFinal();
+      return;
+    }
+
+    const module = stage.module;
+    const moduleIndex = selectedModules.findIndex((item) => item.id === module.id) + 1;
+    dom.courseName.textContent = config.documentTitle || "Diagramme enthalpique — parcours modulaire";
+    dom.progressModule.textContent = `${moduleIndex}. ${module.short}`;
+    dom.moduleState.textContent = `Module ${moduleIndex} sur ${selectedModules.length} · ${phaseNames[stage.type]}`;
+    dom.lessonKicker.textContent = `${phaseNames[stage.type]} · ${module.level === "essentiel" ? "Essentiel habilitation" : "Approfondissement"}`;
+    dom.diagram.innerHTML = diagramSvg(module.id);
+    dom.visualCaption.textContent = captionFor(module);
+
+    if (stage.type === "discover") {
+      dom.lessonTitle.textContent = module.discover.title;
+      dom.lessonContent.innerHTML = `
+        <div class="goal"><strong>Objectif :</strong> ${escapeHtml(module.goal)}</div>
+        <p>${escapeHtml(module.discover.body)}</p>
+        <div class="remember"><strong>À retenir :</strong> ${escapeHtml(module.discover.remember)}</div>`;
+      dom.nextButton.disabled = false;
+      dom.nextButton.textContent = "Comprendre →";
+      state.currentSpeechText = buildNarration(module.discover.title, module.discover.body, module.discover.remember);
+      return;
+    }
+
+    if (stage.type === "function") {
+      dom.lessonTitle.textContent = module.function.title;
+      dom.lessonContent.innerHTML = `
+        <p>${escapeHtml(module.function.body)}</p>
+        <div class="terrain"><strong>Sur le terrain :</strong> ${escapeHtml(module.function.terrain.replace(/^Lien métier\s*:\s*/i, ""))}</div>
+        <div class="remember"><strong>Repère :</strong> ${escapeHtml(module.symbol)}</div>`;
+      dom.nextButton.disabled = false;
+      dom.nextButton.textContent = "Je vérifie →";
+      state.currentSpeechText = buildNarration(module.function.title, module.function.body, module.function.terrain);
+      return;
+    }
+
+    renderQuiz(module);
+  }
+
+  function renderQuiz(module) {
+    const result = resultFor(module);
+    dom.lessonContent.innerHTML = "";
+    dom.quizArea.hidden = false;
+
+    if (result.showingResult || result.complete) {
+      result.complete = true;
+      const score = scoreFor(module);
+      const perfect = score === module.quiz.length;
+      dom.lessonTitle.textContent = perfect ? "Repère confirmé" : "Repère à consolider";
+      dom.quizArea.innerHTML = `
+        <div class="${perfect ? "remember" : "terrain"}">
+          <strong>${perfect ? "✓ Acquis" : "À revoir"} :</strong>
+          ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${module.quiz.length}.
+        </div>
+        <p>${escapeHtml(module.discover.remember)}</p>`;
+      dom.nextButton.disabled = false;
+      dom.nextButton.textContent = state.stageIndex === stages.length - 2 ? "Voir le bilan →" : "Module suivant →";
+      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${module.quiz.length}`, module.discover.remember);
+      return;
+    }
+
+    const question = module.quiz[result.quizIndex];
+    const existing = result.answers[result.quizIndex];
+    dom.lessonTitle.textContent = "À vous de repérer";
+    dom.quizArea.innerHTML = `
+      <div class="quiz-count">Question ${result.quizIndex + 1} sur ${module.quiz.length}</div>
+      <p class="quiz-question">${escapeHtml(question.question)}</p>
+      <div class="choices" role="group" aria-label="Choix de réponse">
+        ${question.choices.map((choice, index) => {
+          const classes = ["choice"];
+          if (existing && index === question.answer) classes.push("correct");
+          if (existing && index === existing.choice && !existing.correct) classes.push("incorrect");
+          return `<button type="button" class="${classes.join(" ")}" data-choice="${index}" ${existing ? "disabled" : ""}>${String.fromCharCode(65 + index)}. ${escapeHtml(choice)}</button>`;
+        }).join("")}
+      </div>`;
+
+    dom.quizArea.querySelectorAll("[data-choice]").forEach((button) => {
+      button.addEventListener("click", () => answerQuestion(module, Number(button.dataset.choice)));
+    });
+
+    state.currentSpeechText = buildNarration(
+      dom.lessonTitle.textContent,
+      question.question,
+      question.choices.map((choice, index) => `${String.fromCharCode(65 + index)}, ${choice}`).join(". ")
+    );
+
+    if (existing) {
+      showQuestionFeedback(question, existing.correct);
+      dom.nextButton.disabled = false;
+      dom.nextButton.textContent = result.quizIndex < module.quiz.length - 1 ? "Question suivante →" : "Voir le résultat →";
+    } else {
+      dom.nextButton.disabled = true;
+      dom.nextButton.textContent = "Choisissez une réponse";
+    }
+
+  }
+
+  function answerQuestion(module, choice) {
+    const result = resultFor(module);
+    if (result.answers[result.quizIndex]) return;
+    const question = module.quiz[result.quizIndex];
+    result.answers[result.quizIndex] = { choice, correct: choice === question.answer };
+    renderStage();
+  }
+
+  function showQuestionFeedback(question, correct) {
+    dom.feedback.hidden = false;
+    dom.feedback.className = `feedback ${correct ? "correct" : "incorrect"}`;
+    dom.feedback.innerHTML = `<strong>${correct ? "✓ Correct" : "✗ À revoir"}.</strong> ${escapeHtml(question.feedback)}`;
+    state.currentSpeechText = `${state.currentSpeechText}. ${correct ? "Correct" : "À revoir"}. ${question.feedback}`;
+  }
+
+  function renderFinal() {
+    const score = totalScore();
+    const possible = possibleScore();
+    const toReview = selectedModules.filter((module) => scoreFor(module) < module.quiz.length);
+    dom.courseName.textContent = config.documentTitle || "Diagramme enthalpique — parcours modulaire";
+    dom.progressModule.textContent = "Bilan de révision";
+    dom.moduleState.textContent = "Bilan · entraînement sans valeur d’examen";
+    dom.lessonKicker.textContent = "Je fais le point";
+    dom.lessonTitle.textContent = toReview.length ? "Vous savez quoi revoir" : "Tous les repères sont confirmés";
+    dom.diagram.innerHTML = diagramSvg("overview");
+    dom.visualCaption.textContent = captionFor(null);
+    dom.lessonContent.innerHTML = `
+      <div class="${toReview.length ? "terrain" : "remember"}">
+        <strong>Résultat :</strong> ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${possible}.
+      </div>
+      ${toReview.length
+        ? `<p><strong>Modules à reprendre :</strong> ${toReview.map((module) => escapeHtml(module.short)).join(" · ")}</p>`
+        : "<p>Vous avez reconnu les grandeurs et les familles sans vous appuyer uniquement sur leur couleur.</p>"}
+      <div class="remember"><strong>Règle commune :</strong> ISO signifie « même ». Cherchez ensuite la grandeur qui reste constante.</div>`;
+    dom.quizArea.hidden = true;
+    dom.feedback.hidden = true;
+    dom.nextButton.disabled = false;
+    dom.nextButton.textContent = "Recommencer ↻";
+    dom.backButton.disabled = false;
+    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${possible}`, toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
+  }
+
+  function goNext() {
+    const stage = stages[state.stageIndex];
+    if (stage.type === "final") {
+      resetCourse();
+      return;
+    }
+    if (stage.type === "quiz") {
+      const result = resultFor(stage.module);
+      if (result.complete) {
+        state.stageIndex += 1;
+        renderStage();
+        return;
+      }
+      const existing = result.answers[result.quizIndex];
+      if (!existing) return;
+      if (result.quizIndex < stage.module.quiz.length - 1) {
+        result.quizIndex += 1;
+      } else {
+        result.showingResult = true;
+      }
+      renderStage();
+      return;
+    }
+    state.stageIndex = Math.min(stages.length - 1, state.stageIndex + 1);
+    renderStage();
+  }
+
+  function goBack() {
+    if (state.stageIndex === 0) return;
+    state.stageIndex -= 1;
+    renderStage();
+  }
+
+  function resetCourse() {
+    state.results = new Map(selectedModules.map((module) => [module.id, {
+      quizIndex: 0,
+      answers: [],
+      complete: false,
+      showingResult: false
+    }]));
+    state.stageIndex = 0;
+    renderStage();
+  }
+
+  function loadVoices() {
+    if (!("speechSynthesis" in window)) return;
+    state.voices = window.speechSynthesis.getVoices();
+  }
+
+  function voiceScore(voice) {
+    const lang = String(voice.lang || "").replace("_", "-").toLowerCase();
+    const name = String(voice.name || "").toLowerCase();
+    let score = 0;
+    if (lang === "fr-fr") score += 100;
+    else if (lang.startsWith("fr-")) score += 70;
+    else if (lang.startsWith("fr")) score += 50;
+    if (voice.localService) score += 30;
+    if (/natural|naturel|neural/.test(name)) score += 20;
+    if (/google|microsoft/.test(name)) score += 5;
+    if (/denise|henri|julie|paul|hortense|audrey|thomas/.test(name)) score += 10;
+    return score;
+  }
+
+  function bestVoice() {
+    return [...state.voices]
+      .filter((voice) => voiceScore(voice) >= 50)
+      .sort((a, b) => voiceScore(b) - voiceScore(a))[0] || null;
+  }
+
+  function updateSpeechButtons() {
+    if (!("speechSynthesis" in window)) {
+      dom.readButton.disabled = true;
+      dom.stopButton.disabled = true;
+      dom.readButton.textContent = "Voix indisponible";
+      return;
+    }
+    dom.readButton.disabled = false;
+    dom.stopButton.disabled = !state.speaking && !state.paused;
+    dom.readButton.setAttribute("aria-pressed", String(state.speaking || state.paused));
+    dom.readButton.textContent = state.paused ? "▶ Reprendre" : state.speaking ? "Ⅱ Pause" : "▶ Écouter";
+  }
+
+  function stopSpeech() {
+    state.speechRun += 1;
+    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+    state.speaking = false;
+    state.paused = false;
+    updateSpeechButtons();
+  }
+
+  function speakCurrent() {
+    if (!("speechSynthesis" in window) || !state.currentSpeechText) return;
+    stopSpeech();
+    const run = state.speechRun;
+    const utterance = new SpeechSynthesisUtterance(state.currentSpeechText);
+    utterance.lang = "fr-FR";
+    utterance.rate = Number(dom.speedSelect.value || 0.95);
+    utterance.pitch = 1;
+    const voice = bestVoice();
+    if (voice) utterance.voice = voice;
+    utterance.onstart = () => {
+      if (run !== state.speechRun) return;
+      state.speaking = true;
+      state.paused = false;
+      updateSpeechButtons();
+    };
+    utterance.onend = () => {
+      if (run !== state.speechRun) return;
+      state.speaking = false;
+      state.paused = false;
+      updateSpeechButtons();
+    };
+    utterance.onerror = (event) => {
+      if (run !== state.speechRun || event.error === "canceled" || event.error === "interrupted") return;
+      state.speaking = false;
+      state.paused = false;
+      updateSpeechButtons();
+      dom.feedback.hidden = false;
+      dom.feedback.className = "feedback incorrect";
+      dom.feedback.textContent = "La voix n’est pas disponible. Tout le texte reste affiché à l’écran.";
+    };
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function toggleSpeech() {
+    if (!("speechSynthesis" in window)) return;
+    if (state.paused) {
+      window.speechSynthesis.resume();
+      state.paused = false;
+      state.speaking = true;
+      updateSpeechButtons();
+      return;
+    }
+    if (state.speaking) {
+      window.speechSynthesis.pause();
+      state.paused = true;
+      state.speaking = false;
+      updateSpeechButtons();
+      return;
+    }
+    speakCurrent();
+  }
+
+  function interactiveTarget(target) {
+    return Boolean(target.closest("button, select, input, textarea, a, [role='button']"));
+  }
+
+  dom.backButton.addEventListener("click", goBack);
+  dom.nextButton.addEventListener("click", goNext);
+  dom.readButton.addEventListener("click", toggleSpeech);
+  dom.stopButton.addEventListener("click", stopSpeech);
+  dom.speedSelect.addEventListener("change", () => {
+    if (state.speaking || state.paused) speakCurrent();
+  });
+  dom.readingButton.addEventListener("click", () => {
+    const active = dom.app.classList.toggle("reading-easy");
+    dom.readingButton.setAttribute("aria-pressed", String(active));
+    dom.readingButton.setAttribute("aria-label", active ? "Désactiver la lecture facilitée" : "Activer la lecture facilitée");
+  });
+  dom.fullscreenButton.addEventListener("click", () => {
+    if (document.fullscreenElement) document.exitFullscreen?.();
+    else document.documentElement.requestFullscreen?.();
+  });
+
+  document.addEventListener("fullscreenchange", () => {
+    dom.fullscreenButton.textContent = document.fullscreenElement ? "⤢" : "⛶";
+    dom.fullscreenButton.setAttribute("aria-label", document.fullscreenElement ? "Quitter le plein écran" : "Afficher en plein écran");
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopSpeech();
+  });
+  window.addEventListener("pagehide", stopSpeech);
+  window.addEventListener("beforeunload", stopSpeech);
+  document.addEventListener("keydown", (event) => {
+    if (interactiveTarget(event.target) || event.altKey || event.ctrlKey || event.metaKey) return;
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      if (!dom.nextButton.disabled) goNext();
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      goBack();
+    } else if (event.key === "Escape") {
+      stopSpeech();
+      if (document.fullscreenElement) document.exitFullscreen?.();
+    }
+  });
+
+  if ("speechSynthesis" in window) {
+    loadVoices();
+    window.speechSynthesis.addEventListener?.("voiceschanged", loadVoices);
+  }
+  updateSpeechButtons();
+  renderStage();
+})();
+</script>
+</body>
+</html>

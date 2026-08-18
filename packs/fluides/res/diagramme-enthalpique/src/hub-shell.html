@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>inerWeb Édu — Diagramme enthalpique modulaire</title>
+  <meta name="description" content="Le diagramme enthalpique log p-h appris courbe par courbe : dix modules (axes, saturation, bulle et rosée, zones, isotitres, isobare, isotherme, isochore, isentrope, isenthalpe), trois parcours au choix dont un ciblé habilitation, quiz formatifs et lecture à voix haute. Chaque module s'ouvre aussi seul.">
+  <meta name="famille" content="Cours interactifs">
+  <meta name="etat" content="prototype">
+  <style>__HUB_CSS__</style>
+</head>
+<body>
+  <header class="hub-header">
+    <div class="brand"><span class="mark" aria-hidden="true">iW</span><span>iner<span>Web</span> <small>Édu</small></span></div>
+    <div class="version">V7 · brouillon pédagogique modulaire</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Habilitation fluides frigorigènes</p>
+        <h1>Découvrir et reconnaître les courbes du diagramme enthalpique</h1>
+        <p>Choisissez uniquement les notions utiles à votre programme. Chaque courbe possède aussi un fichier HTML autonome, récupérable et distribuable séparément.</p>
+      </div>
+      <div class="hero-rule">
+        <strong>La méthode</strong>
+        <span>Je découvre → je comprends → je vérifie.</span>
+        <small>Schéma qualitatif original : aucune valeur ne doit être relevée dessus.</small>
+      </div>
+    </section>
+
+    <section class="composer" aria-labelledby="composerTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Composer un parcours</p>
+          <h2 id="composerTitle">Sélectionnez les modules</h2>
+        </div>
+        <div class="preset-actions">
+          <button type="button" class="button secondary" id="corePreset">Parcours habilitation</button>
+          <button type="button" class="button secondary" id="allPreset">Tout sélectionner</button>
+        </div>
+      </div>
+      <div class="module-grid" id="moduleGrid"></div>
+      <div class="launch-row">
+        <div id="selectionSummary" aria-live="polite"></div>
+        <a class="button primary disabled" id="learnLink" aria-disabled="true">Lancer l’apprentissage →</a>
+        <a class="button accent disabled" id="revisionLink" aria-disabled="true">Révision express →</a>
+      </div>
+    </section>
+
+    <section class="standalone" aria-labelledby="standaloneTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Briques autonomes</p>
+          <h2 id="standaloneTitle">Récupérer une seule courbe</h2>
+        </div>
+      </div>
+      <div class="standalone-list" id="standaloneList"></div>
+    </section>
+
+    <section class="usage-note">
+      <h2>Utilisation</h2>
+      <p>Le contenu fonctionne entièrement hors ligne. La voix française locale est facultative, dépend des voix installées dans le navigateur ou dans Windows et ne démarre jamais seule. Les résultats restent uniquement dans la page ouverte et ne sont transmis nulle part.</p>
+    </section>
+  </main>
+
+  <footer>❄ inerWeb Édu — par F. Henninot · module de travail à valider avant publication</footer>
+
+  <script>
+    window.__INERWEB_MODULES__ = __MODULE_DATA__;
+    window.__INERWEB_CORE_IDS__ = __CORE_IDS__;
+  </script>
+  <script>__HUB_JS__</script>
+</body>
+</html>
