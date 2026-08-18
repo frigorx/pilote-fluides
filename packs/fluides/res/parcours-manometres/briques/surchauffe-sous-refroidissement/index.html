@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr" data-brique="surchauffe-sous-refroidissement" data-marque-cartouche="Édu" data-marque-licence="cc-by-nc-nd" data-marque-prototype>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Brique autonome inerWeb Édu : les quatre écarts du circuit, point de mesure, formule et calcul, rosée et bulle sur zéotrope.">
+  <title>Surchauffe et sous-refroidissement | inerWeb Édu</title>
+  <link rel="stylesheet" href="../../shared/styles.css?v=20260818c">
+  <link rel="stylesheet" href="../../shared/impression.css?v=20260818c" media="print">
+</head>
+<body class="lesson-page">
+  <div class="lesson-app">
+    <header class="lesson-header">
+      <img class="logo" src="../../shared/logo-inerweb-edu.svg" alt="inerWeb Édu" width="216" height="50">
+      <span class="lesson-ident"><strong>Surchauffe et sous-refroidissement</strong><small>Choisir le point, choisir la formule, calculer</small></span>
+      <div class="header-actions">
+        <button class="voice-button" id="listen" type="button" aria-pressed="false"><span aria-hidden="true">▶</span><span class="voice-label">Écouter</span></button>
+        <button class="icon-button voice-stop" id="voice-stop" type="button" title="Arrêter la voix" aria-label="Arrêter la voix">■</button>
+        <label class="sr-only" for="voice-speed">Vitesse de la voix</label>
+        <select class="speed-select" id="voice-speed" title="Vitesse de la voix">
+          <option value="0.8">0,80×</option><option value="0.95" selected>0,95×</option><option value="1.1">1,10×</option><option value="1.25">1,25×</option>
+        </select>
+        <a class="exit-link" href="../../index.html">Quitter</a>
+      </div>
+    </header>
+    <nav class="progress-rail" id="progress" aria-label="Progression du module"></nav>
+    <main class="lesson-main">
+      <article class="lesson-card">
+        <header class="lesson-copy">
+          <div><p class="eyebrow" id="lesson-eyebrow"></p><h1 id="lesson-title" tabindex="-1"></h1></div>
+          <p class="lesson-text" id="lesson-text"></p>
+        </header>
+        <section class="scene" id="scene" aria-live="polite"></section>
+      </article>
+    </main>
+    <footer class="lesson-footer">
+      <button class="nav-button" id="previous" type="button">← Retour</button>
+      <span class="step-status" id="step-status"></span>
+      <button class="nav-button next" id="next" type="button">Continuer →</button>
+    </footer>
+  </div>
+  <div class="brand-host" data-marque-hote></div>
+  <script src="../../shared/thermo-core.js?v=20260818c"></script>
+  <script src="../../shared/gauge.js?v=20260818c"></script>
+  <script src="../../shared/circuit.js?v=20260818c"></script>
+  <script src="../../shared/calculator.js?v=20260818c"></script>
+  <script src="../../shared/module-engine.js?v=20260818c"></script>
+  <script src="../../module-2-surchauffe-sous-refroidissement/app.js?v=20260818c"></script>
+  <script src="../../shared/marque.js?v=20260818c" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+  <script src="../../shared/lisibilite.js?v=20260818c"></script>
+</body>
+</html>

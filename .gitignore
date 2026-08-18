@@ -39,3 +39,12 @@ __pycache__/
 #  du build. Ne jamais y ajouter les 85 questions officielles, les
 #  10 sujets ni le registre nominatif : le code étant remis aux
 #  stagiaires, il ne peut pas les protéger d'eux.
+
+# ============================================================
+#  SORTIES DE CONTRÔLE — RÉGÉNÉRABLES, DONC HORS DÉPÔT
+# ============================================================
+#  `node tests/qa.mjs` d'un cours dépose ses captures d'écran à côté de
+#  lui. Ce sont des preuves de contrôle, pas du contenu servi à l'élève :
+#  1,2 Mo pour le seul parcours manomètres, sur un dépôt public. Le
+#  résultat écrit reste dans le QA.md du cours ; l'image se refabrique.
+packs/fluides/res/*/tests/screenshots/
