@@ -362,9 +362,10 @@ let h = `<!doctype html>
   <p><b>Deux usages.</b> <b>Se servir</b> : chercher une ressource et la projeter telle quelle en cours.
   <b>Réemployer</b> : récupérer son code pour l'intégrer dans un autre programme — chaque fiche donne ses
   fichiers, sa famille et son état de maturité.</p>
-  <p class="licence-ligne">Rien n'est libre de droits : contenus sous <b>CC BY-NC-SA 4.0</b>, code sous licence
-  du dépôt — <a href="LICENCE.md">lire la licence</a>. Réemploi autorisé en citant l'auteur, sans usage
-  commercial, et repartagé aux mêmes conditions.</p>
+  <p class="licence-ligne">Rien n'est libre de droits : contenus sous <b>CC BY-NC-ND 4.0</b> — diffusion
+  autorisée en citant inerWeb, sans usage commercial et sans modification. Code et illustrations sous
+  licence du dépôt — <a href="LICENCE.md">lire la licence</a>. Usage en centre de formation ou demande
+  d'adaptation : <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a>.</p>
 </div>
 
 <div class="barre">
@@ -411,7 +412,7 @@ for (const r of RESSOURCES) {
       <div class="fichiers">
         ${r.fichiers.map((f) => `<a href="${esc(f)}" download>⬇ ${esc(f.split("/").pop())}</a>`).join("\n        ")}
         ${r.sousDossiers.length ? `<div class="util">+ sous-dossiers : ${r.sousDossiers.map(esc).join(", ")} — cloner le dépôt pour les récupérer</div>` : ""}
-        <div class="licence-ligne">© 2026 F. Henninot — inerWeb Édu · CC BY-NC-SA 4.0 : citer l'auteur, pas d'usage commercial, partage à l'identique.</div>
+        <div class="licence-ligne">© 2026 inerWeb — F. Henninot · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
       </div>
     </details>
   </div>
@@ -529,7 +530,7 @@ h += `</div>
 })();
 </script>
 <script src="moteur/lisibilite.js?v=${VERSION}"></script>
-<script src="moteur/marque.js?v=${VERSION}"></script>
+<script src="moteur/marque.js?v=${VERSION}" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
 </body></html>`;
 
 writeFileSync(resolve(RACINE, "galerie.html"), h, "utf8");

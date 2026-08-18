@@ -1,4 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-19.0 -10.0 40 20" overflow="visible"><polyline points="-10,5 -10,-5 10,5 10,-5" fill="none" stroke="#1b3a63" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-19.0 -10.0 40 20" overflow="visible">
+<metadata>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:cc="http://creativecommons.org/ns#"
+           xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <cc:Work rdf:about="">
+      <dc:title>Clapet anti retour</dc:title>
+      <dc:creator><cc:Agent><dc:title>Collection QElectroTech</dc:title></cc:Agent></dc:creator>
+      <dc:source>https://github.com/qelectrotech/qelectrotech-elements (element : clapetantiretour)</dc:source>
+      <dc:rights><cc:Agent><dc:title>Symbole issu de la collection QElectroTech, sous licence CC BY 3.0. Selection, mise a la charte inerWeb et reperes de bornes par F. Henninot.</dc:title></cc:Agent></dc:rights>
+      <cc:license rdf:resource="https://creativecommons.org/licenses/by/3.0/"/>
+    </cc:Work>
+  </rdf:RDF>
+</metadata><polyline points="-10,5 -10,-5 10,5 10,-5" fill="none" stroke="#1b3a63" stroke-width="1"/>
 <line x1="10" y1="0" x2="11" y2="0" stroke="#1b3a63" stroke-width="1"/>
 <line x1="-10" y1="0" x2="-11" y2="0" stroke="#1b3a63" stroke-width="1"/>
 <circle cx="-10.0" cy="-5.0" r="1.5" fill="black" stroke="#1b3a63" stroke-width="1"/>

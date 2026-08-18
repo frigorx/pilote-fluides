@@ -8525,9 +8525,9 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "experience",
-       "url": "packs/fluides/res/regulateur-kvl-pedagogique/index.html",
-       "lancer": "🧊 Lancer le cours interactif : le régulateur de pression de carter",
-       "desc": "14 écrans : reconnaître le KVL, le placer juste avant le compresseur, comprendre la surcharge au redémarrage, la bande proportionnelle, mesurer avant de toucher au réglage, monter, contrôler — et un défi final de 7 questions (seuil 6/7), environ 15 minutes.",
+       "url": "packs/fluides/res/regulateurs-kv-pedagogiques/index.html",
+       "lancer": "🧊 Lancer le cours interactif : la famille des régulateurs KV — KVP, KVL, KVR",
+       "desc": "8 écrans : à quoi sert chaque vanne (KVP tient l'évaporation, KVL protège le compresseur, KVR tient la HP), la reconnaître sur le terrain, la placer au bon endroit du circuit, comprendre le clapet qui traduit la pression en mouvement, régler au manomètre et jamais à l'aveugle, distinguer un symptôme d'un diagnostic — vue 3D du produit et questions d'entraînement, environ 15 minutes.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {

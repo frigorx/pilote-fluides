@@ -7,12 +7,12 @@
 
 | Mesure | Résultat |
 |---|---:|
-| Cours interactifs recensés | **32** |
-| Cours avec anomalie critique automatisable | **2** |
-| Cours avec dette documentaire ou de reprise | **18** |
+| Cours interactifs recensés | **36** |
+| Cours avec anomalie critique automatisable | **4** |
+| Cours avec dette documentaire ou de reprise | **22** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **9** |
-| SVG pédagogiques contrôlés | **44** |
-| SVG sans titre / sans description textuelle | **1 / 39** |
+| SVG pédagogiques contrôlés | **46** |
+| SVG sans titre / sans description textuelle | **3 / 41** |
 
 ## Contrôle des cours interactifs
 
@@ -29,9 +29,13 @@
 | `condenseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `cours-classes-securite` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `detendeur-interactif` | ✓ | ✓ | ✓ | ✓ | absente | 4 | ✓ | 🟠 réglage de lisibilité |
+| `diagramme-enthalpique` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |
 | `electrovanne-interactive` | ✓ | ✓ | ✓ | ✓ | absente | 5 | ✓ | 🟠 réglage de lisibilité |
 | `etancheite-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `evaporateur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 4 | ✗ | 🟠 SOURCES-IMAGES.md, ancien terme « module interactif » (2) |
+| `fil-conducteur-intervention` | ✓ | ✓ | ✓ | ✗ | absente | 1 | ✓ | 🟠 impression, réglage de lisibilité |
+| `film-effet-de-serre` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🔴 fonds forcés à l’impression |
+| `film-ozone` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🔴 fonds forcés à l’impression |
 | `filtre-deshydrateur-pedagogique` | ✓ | ✗ | ✓ | ✓ | absente | 17 | ✓ | 🔴 44 dépendance(s) distante(s) |
 | `frise-vivante` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `froid-clim-academie` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
@@ -45,7 +49,7 @@
 | `pression-temperature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pupitre-reglage-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `recuperation-fluide-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
-| `regulateur-kvl-pedagogique` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |
+| `regulateurs-kv-pedagogiques` | ✓ | ✓ | ✓ | ✓ | absente | 8 | ✓ | 🟠 réglage de lisibilité |
 | `surchauffe-sous-refroidissement-interactif` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |
 | `tome-3-technologie-organes` | ✓ | ✓ | ✓ | ✓ | locale | 44 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `vanne-service-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
@@ -53,8 +57,8 @@
 
 ## Titres et descriptions des SVG
 
-- Sans titre : `motif-flocon.svg`.
-- Sans description : `aptitude-capacite.svg`, `balayage-azote.svg`, `balayage-detecteur.svg`, `chaleur-sensible-latente.svg`, `charge-limite-local.svg`, `classes-securite.svg`, `co2-nh3-compare.svg`, `co2-point-bas.svg`, `co2-protection.svg`, `compresseurs.svg`, `detendeur-regulation.svg`, `detendeurs-ligne.svg`, `diagramme-logph.svg`, `echangeur-air.svg`, `epreuve-azote.svg`, `familles-fluides.svg`, `frise-histoire.svg`, `givre-degivrage.svg`, `intro-securite.svg`, `lecture-table.svg`, `lie-domaine.svg`, `manifold-lecture.svg`, `mesure-surchauffe.svg`, `motif-flocon.svg`, `nomenclature.svg`, `ordre-vannes.svg`, `pesee-charge.svg`, `prepa-chantier.svg`, `pression-absolue-relative.svg`, `prp-echelle.svg`, `recuperation.svg`, `s1-double-accident.svg`, `secu-bouteille.svg`, `secu-consignation.svg`, `secu-decomposition-ari.svg`, `secu-espace-clos.svg`, `secu-flamme.svg`, `secu-projection.svg`, `tirage-au-vide.svg`.
+- Sans titre : `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `motif-flocon.svg`.
+- Sans description : `aptitude-capacite.svg`, `balayage-azote.svg`, `balayage-detecteur.svg`, `chaleur-sensible-latente.svg`, `charge-limite-local.svg`, `classes-securite.svg`, `co2-nh3-compare.svg`, `co2-point-bas.svg`, `co2-protection.svg`, `compresseurs.svg`, `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `detendeur-regulation.svg`, `detendeurs-ligne.svg`, `diagramme-logph.svg`, `echangeur-air.svg`, `epreuve-azote.svg`, `familles-fluides.svg`, `frise-histoire.svg`, `givre-degivrage.svg`, `intro-securite.svg`, `lecture-table.svg`, `lie-domaine.svg`, `manifold-lecture.svg`, `mesure-surchauffe.svg`, `motif-flocon.svg`, `nomenclature.svg`, `ordre-vannes.svg`, `pesee-charge.svg`, `prepa-chantier.svg`, `pression-absolue-relative.svg`, `prp-echelle.svg`, `recuperation.svg`, `s1-double-accident.svg`, `secu-bouteille.svg`, `secu-consignation.svg`, `secu-decomposition-ari.svg`, `secu-espace-clos.svg`, `secu-flamme.svg`, `secu-projection.svg`, `tirage-au-vide.svg`.
 
 ## Ce que cet audit ne valide pas
 

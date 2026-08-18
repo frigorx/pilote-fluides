@@ -1,4 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-19.0 -22.0 40 30" overflow="visible"><circle cx="0.0" cy="-12.00005" r="5.83095" fill="none" stroke="#000" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-19.0 -22.0 40 30" overflow="visible">
+<metadata>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:cc="http://creativecommons.org/ns#"
+           xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <cc:Work rdf:about="">
+      <dc:title>Detendeur thermo int</dc:title>
+      <dc:creator><cc:Agent><dc:title>Collection QElectroTech</dc:title></cc:Agent></dc:creator>
+      <dc:source>https://github.com/qelectrotech/qelectrotech-elements (element : detendeurelectronique)</dc:source>
+      <dc:rights><cc:Agent><dc:title>Symbole issu de la collection QElectroTech, sous licence CC BY 3.0. Selection, mise a la charte inerWeb et reperes de bornes par F. Henninot.</dc:title></cc:Agent></dc:rights>
+      <cc:license rdf:resource="https://creativecommons.org/licenses/by/3.0/"/>
+    </cc:Work>
+  </rdf:RDF>
+</metadata><circle cx="0.0" cy="-12.00005" r="5.83095" fill="none" stroke="#000" stroke-width="1"/>
 <polygon points="2,1 0,3 -2,1 -10,5 -10,-5 10,5 10,-5 -2,1 0,0 0,0" fill="white" stroke="#000" stroke-width="1"/>
 <line x1="0" y1="0" x2="0" y2="-6" stroke="#000" stroke-width="1"/>
 <line x1="10" y1="0" x2="11" y2="0" stroke="#000" stroke-width="1"/>

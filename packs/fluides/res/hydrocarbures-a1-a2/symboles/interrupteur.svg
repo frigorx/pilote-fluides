@@ -1,4 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10.0 -30.0 20 60" overflow="visible"><ellipse cx="0.0" cy="10.0" rx="1.8" ry="1.8" fill="none" stroke="#000" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10.0 -30.0 20 60" overflow="visible">
+<metadata>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:cc="http://creativecommons.org/ns#"
+           xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <cc:Work rdf:about="">
+      <dc:title>Interrupteur</dc:title>
+      <dc:creator><cc:Agent><dc:title>Collection QElectroTech</dc:title></cc:Agent></dc:creator>
+      <dc:source>https://github.com/qelectrotech/qelectrotech-elements (element : 010_switch_1pos)</dc:source>
+      <dc:rights><cc:Agent><dc:title>Symbole issu de la collection QElectroTech, sous licence CC BY 3.0. Selection, mise a la charte inerWeb et reperes de bornes par F. Henninot.</dc:title></cc:Agent></dc:rights>
+      <cc:license rdf:resource="https://creativecommons.org/licenses/by/3.0/"/>
+    </cc:Work>
+  </rdf:RDF>
+</metadata><ellipse cx="0.0" cy="10.0" rx="1.8" ry="1.8" fill="none" stroke="#000" stroke-width="1"/>
 <line x1="0" y1="-20" x2="0" y2="-12.5" stroke="#000" stroke-width="1"/>
 <ellipse cx="0.0" cy="-10.0" rx="1.8" ry="1.8" fill="none" stroke="#000" stroke-width="1"/>
 <line x1="-5" y1="-10" x2="-0.7" y2="8" stroke="#000" stroke-width="1"/>

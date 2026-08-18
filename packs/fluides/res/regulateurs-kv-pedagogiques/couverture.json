@@ -1,0 +1,14 @@
+{
+  "cours": "regulateurs-kv-pedagogiques",
+  "titre": "La famille des régulateurs KV — KVP, KVL, KVR",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 8,
+  "codes": {
+    "1.05": ["ecran-1", "ecran-2", "ecran-4"],
+    "9.02": ["ecran-3", "ecran-6"],
+    "9.05": ["ecran-5", "ecran-7", "ecran-8"]
+  },
+  "appui": {
+    "9.09": ["ecran-7"]
+  }
+}

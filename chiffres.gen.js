@@ -4,7 +4,7 @@ window.PILOTE_CHIFFRES = {
  "fiches": 44,
  "questions": 266,
  "diapositives": 539,
- "planches": 44,
+ "planches": 46,
  "exercices": 5,
  "examens": 22,
  "documents": 38,

@@ -1,4 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-37.0 -23.0 88.0 48.0" width="88" height="48">
+<metadata>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:cc="http://creativecommons.org/ns#"
+           xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <cc:Work rdf:about="">
+      <dc:title>Evaporateur cubique</dc:title>
+      <dc:creator><cc:Agent><dc:title>Collection QElectroTech</dc:title></cc:Agent></dc:creator>
+      <dc:source>https://github.com/qelectrotech/qelectrotech-elements (element : evap-cubico-2)</dc:source>
+      <dc:rights><cc:Agent><dc:title>Symbole issu de la collection QElectroTech, sous licence CC BY 3.0. Selection, mise a la charte inerWeb et reperes de bornes par F. Henninot.</dc:title></cc:Agent></dc:rights>
+      <cc:license rdf:resource="https://creativecommons.org/licenses/by/3.0/"/>
+    </cc:Work>
+  </rdf:RDF>
+</metadata>
 <title>Évaporateur cubique à deux ventilateurs</title>
 <desc>Évaporateur frigorifique cubique vu de face, avec batterie et deux ventilateurs axiaux.</desc>
 <!-- Évaporateur cubique (2) — converti de evap-cubico-2.elmt par outils\elmt-vers-svg.py -->

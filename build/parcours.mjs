@@ -482,7 +482,7 @@ function ecrirePlanningHtml(b) {
     "questions posées, notes d'animation — se projette depuis le support de salle. Les compétences " +
     "visées et leur libellé officiel figurent sur chaque fiche du stagiaire.</p>");
   H.push('<script src="moteur/lisibilite.js"><' + "/script>");
-  H.push('<script src="moteur/marque.js"><' + "/script>");
+  H.push('<script src="moteur/marque.js" data-cartouche="Pilote" data-licence="cc-by-nc-nd"><' + "/script>");
   H.push("</div></body></html>");
   writeFileSync(resolve(RACINE, "planning.html"), H.join("\n"), "utf8");
 }

@@ -1,4 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="724" height="814" viewBox="38.00 48.00 724.00 814.00">
+<metadata>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:cc="http://creativecommons.org/ns#"
+           xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <cc:Work rdf:about="">
+      <dc:title>cap ifca folio5</dc:title>
+      <dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator>
+      <dc:rights><cc:Agent><dc:title>© 2026 inerWeb — F. Henninot — tous droits réservés sur l’illustration</dc:title></cc:Agent></dc:rights>
+      <dc:publisher><cc:Agent><dc:title>inerWeb</dc:title></cc:Agent></dc:publisher>
+      <dc:date>2026</dc:date>
+      <dc:identifier>inerweb.fh@gmail.com</dc:identifier>
+      <cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/>
+    </cc:Work>
+    <cc:License rdf:about="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+      <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+      <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+      <cc:prohibits rdf:resource="http://creativecommons.org/ns#CommercialUse"/>
+      <cc:prohibits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    </cc:License>
+  </rdf:RDF>
+</metadata>
 <rect x="38.00" y="48.00" width="724.00" height="814.00" fill="#fff"/>
 <rect x="50" y="60" width="700" height="790" fill="none" stroke="#000000" stroke-width="5.6"/>
 <g transform="translate(670,780)"><circle cx="0" cy="20" r="3.5" fill="none" stroke="#000" stroke-width="1"/><circle cx="0" cy="-20" r="3.5" fill="none" stroke="#000" stroke-width="1"/><line x1="2" y1="18" x2="-2" y2="22" stroke="#000" stroke-width="1"/><line x1="2" y1="-22" x2="-2" y2="-18" stroke="#000" stroke-width="1"/><rect x="-10" y="-40" width="20" height="80" fill="none" stroke="#000" stroke-width="2"/><line x1="-2" y1="-22" x2="2" y2="-18" stroke="#000" stroke-width="1"/><line x1="-2" y1="18" x2="2" y2="22" stroke="#000" stroke-width="1"/><rect x="-8" y="-12" width="16" height="24" fill="#00c" stroke="#000" stroke-width="0.5"/><line x1="0" y1="-23" x2="0" y2="-17" stroke="#000" stroke-width="0.5"/><line x1="0" y1="17" x2="0" y2="23" stroke="#000" stroke-width="0.5"/><line x1="-3" y1="-20" x2="3" y2="-20" stroke="#000" stroke-width="0.5"/><line x1="-3" y1="20" x2="3" y2="20" stroke="#000" stroke-width="0.5"/><line x1="-2" y1="-2" x2="2" y2="2" stroke="#000" stroke-width="0.5"/><circle cx="0" cy="-40" r="1.2" fill="#000"/><circle cx="0" cy="40" r="1.2" fill="#000"/></g>
