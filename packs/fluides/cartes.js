@@ -4575,7 +4575,7 @@ export const CARTES = [
     type: "examen",
     titre: "Examen blanc — catégorie E",
     dc: "Entraînement · périmètre E",
-    examen: { dc: ["G1", "G2", "G4", "G11"], n: 10, seuil: 70 },
+    examen: { series: true, dc: ["G1", "G2", "G4", "G11"], n: 10, seuil: 70 },
     notes_pilote:
       "Entraînement, pas l'épreuve. Le tirage est aléatoire dans le périmètre E ; l'épreuve officielle " +
       "obéit à des règles de composition bien plus strictes (voir le README du dépôt).",
@@ -4586,7 +4586,7 @@ export const CARTES = [
     type: "examen",
     titre: "Examen blanc — catégorie D",
     dc: "Entraînement · périmètre D",
-    examen: { dc: ["G1", "G2", "G5", "G11"], n: 10, seuil: 70 },
+    examen: { series: true, dc: ["G1", "G2", "G5", "G11"], n: 10, seuil: 70 },
     notes_pilote:
       "Périmètre D : récupération. Le groupe 3 n'est pas tiré ici — seul le code 3.03 (pompe à vide) " +
       "est dans le champ D, et il se travaille en atelier plutôt qu'au QCM.",
@@ -4597,7 +4597,7 @@ export const CARTES = [
     type: "examen",
     titre: "Examen blanc — catégorie A2",
     dc: "Entraînement · périmètre A2",
-    examen: {
+    examen: { series: true,
       dc: ["G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
       n: 15,
       seuil: 70,
@@ -4612,7 +4612,7 @@ export const CARTES = [
     type: "examen",
     titre: "Examen blanc — catégorie A1",
     dc: "Entraînement · périmètre A1",
-    examen: {
+    examen: { series: true,
       dc: ["G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
       n: 20,
       seuil: 70,

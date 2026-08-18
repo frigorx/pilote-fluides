@@ -17361,6 +17361,7 @@ window.PILOTE_PACK = {
    "titre": "Examen blanc — catégorie E",
    "dc": "Entraînement · périmètre E",
    "examen": {
+    "series": true,
     "dc": [
      "G1",
      "G2",
@@ -17381,6 +17382,7 @@ window.PILOTE_PACK = {
    "titre": "Examen blanc — catégorie D",
    "dc": "Entraînement · périmètre D",
    "examen": {
+    "series": true,
     "dc": [
      "G1",
      "G2",
@@ -17401,6 +17403,7 @@ window.PILOTE_PACK = {
    "titre": "Examen blanc — catégorie A2",
    "dc": "Entraînement · périmètre A2",
    "examen": {
+    "series": true,
     "dc": [
      "G1",
      "G2",
@@ -17429,6 +17432,7 @@ window.PILOTE_PACK = {
    "titre": "Examen blanc — catégorie A1",
    "dc": "Entraînement · périmètre A1",
    "examen": {
+    "series": true,
     "dc": [
      "G1",
      "G2",

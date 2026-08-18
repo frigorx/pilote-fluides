@@ -333,9 +333,116 @@
       // Repli : mieux vaut un entraînement large qu'un examen tronqué.
       if (cible.length >= Math.min(c.examen.n || 6, pool.length)) pool = cible;
     }
+    // Extension pack fluides : SÉPARATION BLANC / RÉEL. `examen.lot` vaut "A"
+    // (examen blanc) ou "B" (examen réel) ; absent, toute la banque reste
+    // servie — c'est le cas des révisions, qui sont de l'entraînement.
+    // La partition est calculée, jamais saisie : dans chaque couple
+    // (groupe, niveau), les questions triées par identifiant tombent
+    // alternativement en A et en B. Les deux lots ont donc les mêmes groupes
+    // et la même difficulté — un blanc prépare vraiment au réel — mais jamais
+    // les mêmes questions. Demande F. Henninot du 18/08/2026.
+    if (c.examen.lot || c.examen.series) {
+      // `examen.lot` fige la série. `examen.series` la fait ALTERNER d'un
+      // passage à l'autre : série A au premier essai, B au deuxième, A au
+      // troisième. Un stagiaire qui repasse l'examen blanc ne retombe donc
+      // jamais sur les mêmes questions deux fois de suite, alors que la
+      // difficulté et la couverture, elles, ne bougent pas.
+      var voulu = c.examen.lot || (passages(c.id) % 2 === 0 ? "A" : "B");
+      var filtre = pool.filter(function (q) { return lotDe(q) === voulu; });
+      // Repli : une série trop maigre vaut moins qu'un examen complet.
+      if (filtre.length >= (c.examen.n || 6)) pool = filtre;
+    }
+
     melange(pool);
     var n = Math.min(c.examen.n || 6, pool.length);
+
+    // Extension pack fluides : TIRAGE À BUDGET DE DIFFICULTÉ CONSTANT.
+    // Sans lui, deux candidats du même examen A1 pouvaient tomber l'un sur 3
+    // questions difficiles, l'autre sur 12 — mesuré sur 20 000 tirages. La
+    // composition varie toujours, la charge non.
+    //   budget = n1 × 1 + n2 × 2, donc n2 = n × (coefficient − 1).
+    // Le coefficient vient du curseur (voir difficulteReglee) : 1,35 par
+    // défaut, la difficulté moyenne de la banque elle-même.
+    if (!c.examen.niveau && c.examen.budget !== false) {
+      var coef = difficulteReglee();
+      var vise2 = Math.round(n * (coef - 1));
+      var faciles = pool.filter(function (q) { return q.niveau !== 2; });
+      var durs = pool.filter(function (q) { return q.niveau === 2; });
+      var pris2 = Math.min(vise2, durs.length);
+      var pris1 = Math.min(n - pris2, faciles.length);
+      // Repli : la banque n'a pas toujours de quoi honorer le budget sur un
+      // groupe étroit. Mieux vaut compléter que servir un examen tronqué.
+      if (pris1 + pris2 < n) pris2 = Math.min(n - pris1, durs.length);
+      var choix = durs.slice(0, pris2).concat(faciles.slice(0, pris1));
+      if (choix.length) { melange(choix); pool = choix; n = choix.length; }
+    }
+
     S.examen = { carteId: c.id, items: pool.slice(0, n), i: 0, rep: [], fini: false, score: null };
+  }
+
+  /* CURSEUR DE DIFFICULTÉ — cinq crans, du plus doux au cauchemar.
+     Le coefficient EST la part de questions difficiles : 1,35 donne 35 % de
+     niveau 2, 2,00 en donne 100 %. Réglable par `?difficulte=N` dans l'URL,
+     mémorisé ensuite — de quoi tester plusieurs équilibres en examen blanc
+     sans toucher au code. Décision F. Henninot : « amener les gens à la
+     réussite, pas à l'échec » — d'où un défaut à 2, pas plus haut. */
+  var CRANS = [
+    { nom: "Doux", coef: 1.15 },
+    { nom: "Standard", coef: 1.35 },
+    { nom: "Exigeant", coef: 1.55 },
+    { nom: "Sévère", coef: 1.75 },
+    { nom: "Cauchemar", coef: 2.0 },
+  ];
+
+  function difficulteReglee() {
+    var i = 1; // Standard
+    try {
+      var url = new URLSearchParams(location.search).get("difficulte");
+      if (url) {
+        var v = parseInt(url, 10);
+        if (v >= 1 && v <= CRANS.length) {
+          i = v - 1;
+          localStorage.setItem("pilote_difficulte", String(i));
+        }
+      } else {
+        var m = parseInt(localStorage.getItem("pilote_difficulte"), 10);
+        if (m >= 0 && m < CRANS.length) i = m;
+      }
+    } catch (e) {}
+    return CRANS[i].coef;
+  }
+
+  /* Combien de fois ce stagiaire a-t-il déjà lancé cet examen ? Sert à
+     alterner les séries. Incrémenté ici, à la composition du sujet. */
+  function passages(carteId) {
+    var cle = "pilote_passages_" + PACK.pack.id + "_" + carteId;
+    var n = 0;
+    try {
+      n = parseInt(localStorage.getItem(cle), 10) || 0;
+      localStorage.setItem(cle, String(n + 1));
+    } catch (e) {}
+    return n;
+  }
+
+  /* Partition en deux séries, stable et sans saisie. Le rang de la question
+     dans son couple (groupe, niveau), trié par identifiant, décide du lot.
+     Calculé une fois, mémorisé — la banque ne bouge pas en cours de session. */
+  var LOTS = null;
+  function lotDe(q) {
+    if (!LOTS) {
+      LOTS = {};
+      var seaux = {};
+      BANQUE.forEach(function (x) {
+        var k = (x.dc || "?") + "|" + (x.niveau || 0);
+        (seaux[k] = seaux[k] || []).push(x);
+      });
+      Object.keys(seaux).forEach(function (k) {
+        seaux[k]
+          .sort(function (a, b) { return a.id < b.id ? -1 : a.id > b.id ? 1 : 0; })
+          .forEach(function (x, i) { LOTS[x.id] = i % 2 === 0 ? "A" : "B"; });
+      });
+    }
+    return LOTS[q.id];
   }
 
   function renderResultat(c, ex, m) {
@@ -858,5 +965,11 @@
   function melange(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } }
   function nowSec() { return Math.floor(Date.now() / 1000); }
   function fmt(s) { var m = Math.floor(s / 60), r = s % 60; return m + ":" + (r < 10 ? "0" : "") + r; }
+  /* Le curseur se lit AU CHARGEMENT, pas seulement au tirage : le formateur
+     pose `?difficulte=N` sur la console, alors que l'examen se lance depuis
+     la page stagiaire, où le paramètre a disparu. Capté ici, il est mémorisé
+     et vaut pour tous les tirages suivants, sur toutes les pages. */
+  difficulteReglee();
+
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]; }); }
 })();
