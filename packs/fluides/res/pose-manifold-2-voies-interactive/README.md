@@ -21,10 +21,33 @@ Module autonome inerWeb Édu consacré à la pose, à la lecture et à la dépos
 
 ## Parcours disponibles
 
-1. `Parcours complet` : onze écrans d’explication illustrés, manipulation guidée, puis évaluation.
-2. `Manipulation guidée` : 78 gestes directs sur le poste virtuel, dont cinq décisions de sécurité avant le premier raccordement et une dépose complète sans rejet volontaire.
-3. `Évaluation` : QCM de 19 questions, mini-jeu d’ordre en 8 phases et parcours autonome.
-4. `Guide atelier` : guidance écran par écran et version imprimable à cases de contrôle.
+1. `Six fiches métier animées` : 128 gestes répartis entre pose, dépose avec EVM, mise sous pression à l’azote, tirage au vide, charge et récupération de fluide.
+2. `Parcours complet` : onze écrans d’explication illustrés, manipulation guidée, puis évaluation.
+3. `Manipulation guidée` : 78 gestes directs sur le poste virtuel, dont cinq décisions de sécurité avant le premier raccordement et une dépose complète sans rejet volontaire.
+4. `Évaluation` : QCM de 19 questions aux choix remélangés à chaque série, mini-jeu d’ordre remélangé à chaque partie et parcours autonome.
+5. `Guide atelier` : guidance écran par écran et version imprimable à cases de contrôle.
+
+## Six fiches métier animées
+
+Ouvrir `fiches-metier.html` ou utiliser l’entrée mise en avant dans `index.html`. Chaque fiche propose trois niveaux complémentaires :
+
+- `Découvrir` : la cible du geste est montrée et expliquée ;
+- `S’entraîner` : l’élève cherche seul et peut demander un repère ;
+- `Confirmer` : aucun repère n’est affiché et le premier essai juste est compté.
+
+Les six fiches utilisent un manifold 2 voies et des équipements SVG locaux. L’élève agit sur l’organe réellement concerné, au clic ou au clavier, puis lit le résultat avant de poursuivre. Une action concrète est demandée par écran.
+
+| Fiche | Objet | Gestes |
+|---|---|---:|
+| 01 | Pose des manomètres | 27 |
+| 02 | Dépose avec électrovanne | 23 |
+| 03 | Mise sous pression à l’azote | 16 |
+| 04 | Tirage au vide | 15 |
+| 05 | Charge de l’installation | 17 |
+| 06 | Récupération du fluide frigorigène | 30 |
+| **Total** |  | **128** |
+
+La comparaison détaillée avec les six fiches Word sources et les points métier non généralisés se trouve dans `COMPARAISON-FICHES-METIER-2-VOIES.md`.
 
 ## Vanne Rotolock réutilisée
 
@@ -44,8 +67,8 @@ La configuration pédagogique retenue comporte une mini-vanne quart de tour sert
 
 ## Fonctionnement
 
-Ouvrir `index.html` dans un navigateur récent. Aucun compte, réseau, CDN ou serveur n’est nécessaire.
+Ouvrir `index.html` dans un navigateur récent. Aucun compte, réseau, CDN ou serveur n’est nécessaire. La suite de fiches fonctionne aussi directement par `fiches-metier.html`.
 
 ## Statut
 
-Brouillon métier du 13 août 2026. Le module n’est pas intégré au portail, pas indexé dans le RAG et pas publié. La variante d’isolement liquide, le critère d’arrêt du pump-down et le moyen de recherche de fuite doivent recevoir un bon à tirer humain adapté au matériel réel du plateau avant diffusion.
+Brouillon métier du 13 août 2026. Le portail possède déjà une entrée vers `index.html` ; les six fiches sont accessibles depuis cet accueil, sans nouvelle carte. Cette extension n’a pas été indexée dans le RAG, poussée ni publiée pendant ce travail. La version manifold 4 voies n’a pas été modifiée. Les divergences de la fiche 02, la dépressurisation finale à l’azote, la charge liquide côté aspiration et les commandes exactes de la station de récupération doivent recevoir un bon à tirer humain adapté au matériel réel du plateau avant diffusion.

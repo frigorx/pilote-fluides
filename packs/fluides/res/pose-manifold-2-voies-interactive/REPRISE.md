@@ -1,6 +1,6 @@
 # Reprise — pose et dépose du manifold 2 voies
 
-État : brouillon métier du 13 août 2026. Non intégré, non indexé dans le RAG, non publié.
+État : brouillon métier du 13 août 2026. Accessible derrière l’entrée existante du module 2 voies ; extension non indexée dans le RAG, non poussée et non publiée pendant ce travail.
 
 ## Demande humaine couverte
 
@@ -10,6 +10,24 @@
 - former un élève débutant jusqu’à la manipulation numérique autonome ;
 - proposer théorie, mini-jeux, QCM, évaluation pratique et guidance atelier ;
 - conserver la charte inerWeb, le fonctionnement hors ligne et l’usage sur projection/téléphone.
+
+## Extension du 13 août 2026 — six fiches métier
+
+Une entrée `Six fiches métier animées` a été ajoutée à l’accueil sans remplacer le parcours historique. Elle ouvre `fiches-metier.html` et couvre les six documents Word du ZIP fourni :
+
+| Fiche | Gestes |
+|---|---:|
+| Pose des manomètres | 27 |
+| Dépose avec électrovanne | 23 |
+| Mise sous pression à l’azote | 16 |
+| Tirage au vide | 15 |
+| Charge de l’installation | 17 |
+| Récupération du fluide frigorigène | 30 |
+| **Total** | **128** |
+
+Chaque fiche possède trois niveaux : cible visible pour découvrir, aide à la demande pour s’entraîner et absence de repère avec score au premier essai pour confirmer. Une action concrète est demandée par écran sur une cible SVG réellement activable au clic, au toucher, avec `Entrée` ou avec `Espace`.
+
+La comparaison complète avec les sources et les quatre groupes de décisions métier ouvertes se trouve dans `COMPARAISON-FICHES-METIER-2-VOIES.md`. La version manifold 4 voies n’a pas été modifiée.
 
 ## Architecture
 
@@ -75,6 +93,23 @@ Le poste virtuel permet de choisir entre deux configurations expliquées : ferme
 
 ## Contrôles numériques réalisés le 13 août 2026
 
+Sur la suite de six fiches métier, 128 gestes :
+
+- les six fiches ont été rejouées jusqu’au bilan à `1280 × 720`, `1024 × 768`, `390 × 844` et `360 × 640`, soit 512 activations de gestes corrects ;
+- chaque écran a été contrôlé contre le débordement du document, le rognage de la consigne, le rognage du poste et la sortie de la cible hors du SVG ; aucun défaut n’a été relevé ;
+- une cible a été validée au clavier avec `Entrée` ;
+- en mode Confirmation, une mauvaise cible a été refusée, comptée et expliquée sans faire avancer l’action, puis la bonne cible a débloqué la suite ;
+- la console du navigateur est restée sans erreur ni avertissement sur les quatre formats.
+
+Sur le parcours historique après correction de ses évaluations :
+
+- les choix des 19 questions sont mélangés une fois par question et restent fixes pendant l’affichage de la correction ;
+- la longueur des bonnes réponses est répartie entre 7 plus courtes, 6 intermédiaires et 6 plus longues ;
+- deux séries complètes différentes ont atteint `19/19` ;
+- le jeu d’ordre refuse l’ordre correct comme mélange initial et deux parties différentes ont atteint `8/8` ;
+- les 78 gestes guidés ont été rejoués jusqu’au bilan final après ces corrections ;
+- aucune erreur JavaScript ni alerte console du module n’a été relevée.
+
 Sur la version actuelle à onze écrans, 78 gestes et 19 questions :
 
 - les 78 gestes guidés ont été rejoués jusqu’au bilan final, y compris les deux choix possibles d’isolement liquide ;
@@ -110,7 +145,9 @@ Historique des contrôles antérieurs :
 
 ## Avant bon à tirer
 
+- valider les quatre groupes de décisions consignés dans `COMPARAISON-FICHES-METIER-2-VOIES.md` ;
+- valider les six fiches métier 2 voies avant de commencer la déclinaison manifold 4 voies ;
 - rejouer les 78 gestes avec le manifold, les flexibles à mini-vannes et les Rotolock réels ;
 - valider les six points métier ouverts ci-dessus ;
 - contrôler un tirage papier réel de la guidance ;
-- ne pas intégrer à `cartes.js`, ne pas lancer le build global, ne pas pousser et ne pas indexer sans aval explicite.
+- ne pas créer de nouvelle entrée dans `cartes.js`, ne pas lancer le build global, ne pas pousser et ne pas indexer sans aval explicite.

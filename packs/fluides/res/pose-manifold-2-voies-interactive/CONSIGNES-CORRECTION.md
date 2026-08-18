@@ -6,7 +6,7 @@ Ces consignes sont autoportantes : elles s'appliquent sans lire la conversation 
 Ne rien appliquer tant que le développement en cours n'est pas terminé, puis appliquer
 dans l'ordre ci-dessous.
 
-## 1. QCM devinable — CORRECTION OBLIGATOIRE (module 2 voies)
+## 1. QCM devinable — CORRIGÉ LE 13/08/2026
 
 **Constat :** les 19 questions du tableau `QUIZ` ont toutes la bonne réponse en
 `good: 0`, et `renderQuiz()` affiche les choix dans l'ordre du tableau
@@ -31,7 +31,13 @@ réparti. Étoffer les distracteurs en phrases complètes plausibles ; ne pas
 raccourcir les bonnes réponses (elles portent le contenu). Les distracteurs
 restent faux sans ambiguïté — jamais de demi-vérité dangereuse.
 
-## 2. Jeu d'ordre figé (module 2 voies)
+**Application :** Fisher-Yates exécuté une fois par question et par série ;
+`data-choice` conserve l’index d’origine. Répartition obtenue pour la longueur
+de la bonne réponse : 7 plus courtes, 6 intermédiaires, 6 plus longues. Deux
+séries complètes ont produit des permutations différentes et les deux bilans
+ont affiché `19/19`.
+
+## 2. Jeu d'ordre figé — CORRIGÉ LE 13/08/2026
 
 **Constat :** `ORDER_SHUFFLED` est une constante codée en dur — le mélange est
 identique à chaque partie, l'élève peut mémoriser les positions.
@@ -39,6 +45,10 @@ identique à chaque partie, l'élève peut mémoriser les positions.
 **Correction :** supprimer la constante et mélanger `ORDER_ITEMS` (Fisher-Yates)
 au lancement de chaque partie (là où `orderChosen` est remis à zéro). Si le
 mélange obtenu est l'ordre correct, remélanger.
+
+**Application :** la banque est remélangée au lancement, l’ordre professionnel
+est explicitement refusé comme état initial et deux parties de contrôle ont
+produit deux banques différentes avant validation `8/8`.
 
 ## 3. Coquilles d'affichage du bilan QCM — DÉJÀ CORRIGÉ, à vérifier seulement
 
@@ -73,6 +83,11 @@ aligner le module non conforme sur l'autre.
 - refaire le jeu d'ordre deux fois : vérifier deux mélanges différents et la
   correction place par place ;
 - console navigateur vide (aucune erreur ni alerte) ;
-- les interdits de la fiche REPRISE restent en vigueur : pas d'intégration à
-  `cartes.js`, pas de build global, pas de push, pas d'indexation RAG sans aval
+- les interdits de la fiche REPRISE restent en vigueur : pas de nouvelle entrée
+  dans `cartes.js`, pas de build global, pas de push, pas d'indexation RAG sans aval
   explicite — le module reste BROUILLON MÉTIER jusqu'au bon à tirer humain.
+
+**Contrôle appliqué :** 78 gestes guidés rejoués jusqu’au bilan ; deux QCM
+complets et deux jeux d’ordre complets réussis ; aucune erreur JavaScript ni
+alerte console du module. La requête automatique de navigateur pour
+`/favicon.ico` a été supprimée par un favicon local vide.

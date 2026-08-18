@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="data:,">
+  <meta name="theme-color" content="#f7f1e7">
+  <meta name="description" content="Six fiches métier animées pour apprendre les gestes du manifold 2 voies.">
+  <title>Fiches métier · Manifold 2 voies | Pilote Fluides</title>
+  <link rel="stylesheet" href="fiches-metier.css?v=20260813-2">
+  <link rel="stylesheet" href="../../../../moteur/impression.css?v=20260810-1" media="print">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="appbar">
+    <a class="brand" href="index.html" aria-label="Revenir au module manifold 2 voies">
+      <span class="brand-mark" aria-hidden="true">iW</span>
+      <span><strong>inerWeb Édu</strong><small>Manifold 2 voies · Fiches métier</small></span>
+    </a>
+    <div class="app-actions">
+      <span class="draft-badge">BROUILLON MÉTIER</span>
+      <span class="mode-badge" id="mode-badge">Accueil</span>
+      <button type="button" class="small-button" id="home-button" hidden>Fiches</button>
+      <button type="button" class="small-button" id="exit-button" hidden>Quitter</button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="catalogue" id="catalogue" aria-labelledby="catalogue-title">
+      <div class="catalogue-head">
+        <p class="eyebrow">VERSION À VALIDER · MANIFOLD 2 VOIES</p>
+        <h1 id="catalogue-title">Une fiche métier,<br><span>un mini-jeu gestuel</span></h1>
+        <p>Découvrez le geste, entraînez-vous avec une aide, puis confirmez l’ordre sans indication.</p>
+      </div>
+      <div class="fiche-grid" id="fiche-grid" aria-label="Choisir une fiche métier"></div>
+      <p class="catalogue-note">Les valeurs, couples et critères dépendent du matériel réel. Les points non validés sont signalés dans chaque fiche.</p>
+    </section>
+
+    <section class="fiche-intro" id="fiche-intro" hidden aria-labelledby="fiche-title">
+      <div class="intro-card">
+        <button type="button" class="back-link" id="back-catalogue">← Toutes les fiches</button>
+        <p class="eyebrow" id="fiche-kicker"></p>
+        <h1 id="fiche-title"></h1>
+        <p class="fiche-purpose" id="fiche-purpose"></p>
+        <div class="source-note" id="source-note"></div>
+        <div class="mode-grid" aria-label="Choisir un niveau">
+          <button type="button" class="mode-card discovery" data-mode="discover">
+            <span>1</span><strong>Découvrir</strong><small>La cible et le pourquoi restent visibles.</small>
+          </button>
+          <button type="button" class="mode-card guided" data-mode="guided">
+            <span>2</span><strong>S’entraîner</strong><small>L’aide révèle le geste si nécessaire.</small>
+          </button>
+          <button type="button" class="mode-card confirm" data-mode="confirm">
+            <span>3</span><strong>Confirmer</strong><small>Aucun repère ; score au premier essai.</small>
+          </button>
+        </div>
+        <div class="open-points" id="open-points"></div>
+      </div>
+    </section>
+
+    <section class="trainer" id="trainer" hidden aria-live="polite">
+      <div class="trainer-progress" aria-label="Progression de la fiche">
+        <div><strong id="trainer-fiche"></strong><span id="trainer-count"></span></div>
+        <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+      </div>
+      <div class="trainer-grid">
+        <article class="instruction" aria-labelledby="action-title">
+          <p class="action-source" id="action-source"></p>
+          <h1 id="action-title" tabindex="-1"></h1>
+          <div class="action-block observe"><strong>Regardez</strong><p id="action-look"></p></div>
+          <div class="action-block act"><strong>Faites</strong><p id="action-do"></p></div>
+          <div class="action-block check"><strong>Vérifiez</strong><p id="action-check"></p></div>
+          <div class="why-block"><strong>Pourquoi ?</strong><p id="action-why"></p></div>
+          <button type="button" class="help-button" id="help-button">Aidez-moi</button>
+        </article>
+        <section class="stage" aria-label="Poste virtuel">
+          <div class="stage-head"><strong id="stage-title">Poste virtuel</strong><span id="stage-status">À vous</span></div>
+          <div class="visual-root" id="visual-root"></div>
+          <p class="feedback waiting" id="feedback" role="status">Agissez directement sur l’équipement.</p>
+        </section>
+      </div>
+      <footer class="bottom-nav">
+        <button type="button" class="nav-button secondary" id="previous-button">← Revoir</button>
+        <button type="button" class="nav-button primary" id="next-button" disabled>Continuer →</button>
+      </footer>
+    </section>
+
+    <section class="result" id="result" hidden aria-labelledby="result-title">
+      <div class="result-card">
+        <p class="eyebrow">BILAN DE LA FICHE</p>
+        <h1 id="result-title">Parcours terminé</h1>
+        <div class="score" id="score"></div>
+        <p id="result-copy"></p>
+        <div class="result-actions">
+          <button type="button" class="nav-button secondary" id="replay-button">Recommencer</button>
+          <button type="button" class="nav-button primary" id="return-button">Choisir une fiche</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="fiches-metier.js?v=20260813-2"></script>
+  <script src="../../../../moteur/lisibilite.js?v=20260810-1"></script>
+  <script src="../../../../moteur/marque.js?v=20260810-1"></script>
+</body>
+</html>

@@ -228,24 +228,24 @@
 
   const QUIZ = [
     { q: "Pourquoi met-on lunettes et gants de protection contre le froid avant de toucher un raccord ?", choices: ["Un jet peut être invisible, atteindre les yeux et provoquer une gelure", "Ils servent seulement à ne pas salir le matériel", "Ils remplacent la vérification de pression"], good: 0, why: "Un reste de liquide sous pression peut jaillir dans l’axe du raccord et refroidir brutalement la peau en s’évaporant." },
-    { q: "Quelle preuve permet d’accepter un manifold et ses flexibles pour le circuit étudié ?", choices: ["Le fluide est identifié et les limites fabricant sont lisibles, suffisantes et adaptées", "Les flexibles ont les bonnes couleurs", "L’aiguille du manomètre est au zéro"], good: 0, why: "Couleur et zéro ne prouvent pas la compatibilité. Il faut identifier le fluide et vérifier les spécifications du matériel." },
+    { q: "Quelle preuve permet d’accepter un manifold et ses flexibles pour le circuit étudié ?", choices: ["Le fluide est identifié et les limites fabricant sont lisibles, suffisantes et adaptées", "Les flexibles portent la couleur habituelle et leurs cadrans correspondent visuellement au fluide", "L’aiguille revient exactement au zéro lorsque le manifold est débranché"], good: 0, why: "Couleur et zéro ne prouvent pas la compatibilité. Il faut identifier le fluide et vérifier les spécifications du matériel." },
     { q: "Dans « manifold 2 voies », que désigne le nombre 2 ?", choices: ["Les deux robinets de commande", "Deux flexibles seulement", "Deux manomètres sans robinets"], good: 0, why: "Le manifold possède deux robinets, BP et HP, et utilise trois flexibles." },
-    { q: "Où se raccorde le flexible temporaire du manifold sur une Rotolock à deux prises ?", choices: ["Sur P, près du carré", "Sur P1, à l’opposé", "Sur le presse-étoupe"], good: 0, why: "P est la voie de service. P1 reste affectée au pressostat." },
+    { q: "Où se raccorde le flexible temporaire du manifold sur une Rotolock à deux prises ?", choices: ["Sur P, près du carré", "Sur P1 côté circuit, puisque cette prise resterait disponible pour une intervention temporaire", "Sur le presse-étoupe, après avoir retiré l’écrou qui assure l’étanchéité de la tige"], good: 0, why: "P est la voie de service. P1 reste affectée au pressostat." },
     { q: "Pourquoi ne faut-il pas défaire P1 sur une installation chargée ?", choices: ["P1 peut rester reliée à C et sous pression", "P1 ne possède jamais de joint", "P1 est toujours vide"], good: 0, why: "La position du pointeau ne supprime pas le danger permanent de P1." },
-    { q: "Quel ordre encadre toute manœuvre du carré d’une Rotolock dans ce module ?", choices: ["Desserrer légèrement le presse-étoupe, manœuvrer, puis resserrer", "Retirer le presse-étoupe puis forcer la tige", "Manœuvrer avec le presse-étoupe serré et ne rien contrôler"], good: 0, why: "Le presse-étoupe est libéré selon la fiche du poste puis resserré immédiatement après le positionnement de la tige." },
+    { q: "Quel ordre encadre toute manœuvre du carré d’une Rotolock dans ce module ?", choices: ["Desserrer légèrement le presse-étoupe, manœuvrer, puis resserrer", "Retirer complètement le presse-étoupe, tourner la tige jusqu’à forcer, puis remonter l’écrou", "Manœuvrer avec le presse-étoupe serré et ne rien contrôler"], good: 0, why: "Le presse-étoupe est libéré selon la fiche du poste puis resserré immédiatement après le positionnement de la tige." },
     { q: "Quelle position permet de raccorder et tirer les lignes au vide sans aspirer le circuit ?", choices: ["Siège arrière", "Position intermédiaire", "Siège avant"], good: 0, why: "Au siège arrière, T communique avec C mais P est isolée." },
-    { q: "Quelle position met T, C, P et P1 en communication ?", choices: ["Position intermédiaire", "Siège arrière", "Siège avant"], good: 0, why: "Le pointeau ne touche aucun siège en position intermédiaire." },
+    { q: "Quelle position met T, C, P et P1 en communication ?", choices: ["Position intermédiaire", "Siège arrière, lorsque la tige est dévissée jusqu’à sa butée sans forcer", "Siège avant, lorsque la tige isole le tube du reste de la vanne"], good: 0, why: "Le pointeau ne touche aucun siège en position intermédiaire." },
     { q: "Pendant une simple lecture BP / HP, comment sont les deux robinets du manifold ?", choices: ["Fermés", "Tous les deux ouverts", "BP ouvert et HP fermé"], good: 0, why: "Les manomètres lisent leurs lignes latérales avec les robinets fermés." },
     { q: "Que provoque l’ouverture du robinet BP du manifold ?", choices: ["La BP communique avec la voie centrale jaune", "La lecture BP devient possible", "P1 est isolée"], good: 0, why: "Le robinet relie le côté BP à la voie centrale ; il ne sert pas à lire." },
     { q: "À quoi sert la mini-vanne quart de tour placée au bout de chaque flexible ?", choices: ["À isoler le volume du flexible", "À manœuvrer la Rotolock", "À ouvrir le robinet du manifold"], good: 0, why: "Chaque mini-vanne ferme son flexible au plus près du raccord et contribue à une déconnexion avec un minimum d’émissions." },
-    { q: "Quel ordre protège la pompe avant son arrêt ?", choices: ["Fermer les robinets du manifold, isoler la pompe, puis arrêter", "Arrêter puis fermer au hasard", "Mettre les Rotolock en intermédiaire puis arrêter"], good: 0, why: "On enferme le vide et on isole la pompe avant de couper son moteur." },
-    { q: "Après retour des Rotolock au siège arrière, les flexibles sont-ils forcément sans pression ?", choices: ["Non, du fluide peut rester piégé", "Oui, toujours", "Seulement le jaune"], good: 0, why: "Isoler le circuit ne vide pas automatiquement les volumes enfermés." },
+    { q: "Quel ordre protège la pompe avant son arrêt ?", choices: ["Fermer les robinets du manifold, isoler la pompe, puis arrêter", "Arrêter immédiatement la pompe, puis refermer les robinets seulement après le retour des aiguilles au zéro", "Mettre d’abord les deux Rotolock en position intermédiaire, arrêter la pompe et fermer ensuite la voie jaune"], good: 0, why: "On enferme le vide et on isole la pompe avant de couper son moteur." },
+    { q: "Après retour des Rotolock au siège arrière, les flexibles sont-ils forcément sans pression ?", choices: ["Non, du fluide peut rester piégé", "Oui, car le siège arrière ramène automatiquement le contenu de chaque flexible dans le circuit", "Seul le flexible jaune peut encore contenir du fluide puisque les côtés BP et HP sont isolés"], good: 0, why: "Isoler le circuit ne vide pas automatiquement les volumes enfermés." },
     { q: "Pendant la récupération du fluide des flexibles, pourquoi la HP est-elle au siège arrière tandis que la BP reste encore en intermédiaire ?", choices: ["La HP n’alimente plus le rouge et la BP conserve le chemin vers l’aspiration", "Les deux manomètres doivent afficher la même couleur", "Cela ouvre automatiquement l’électrovanne"], good: 0, why: "Le fluide du flexible rouge rejoint le manifold puis la branche bleue encore reliée à l’aspiration." },
-    { q: "Comment choisit-on entre fermeture de l’électrovanne et fermeture de la vanne départ liquide ?", choices: ["D’après le schéma et la procédure du poste", "Toujours en fermant les deux sans vérifier", "Au hasard, puisque le résultat est identique"], good: 0, why: "L’organe utilisé pour couper l’alimentation liquide dépend de la configuration réelle et de sa procédure." },
-    { q: "Que montrent les points mobiles pendant le pump-down de dépose ?", choices: ["Le fluide rejoint l’aspiration, le compresseur, le condenseur puis la bouteille liquide", "Le fluide disparaît dans le manomètre", "Le fluide est rejeté par le flexible jaune"], good: 0, why: "Le compresseur transfère le fluide vers le côté de stockage de l’installation ; rien n’est purgé à l’air libre." },
-    { q: "Quand peut-on desserrer le raccord rouge ?", choices: ["Après isolement et traitement de la pression résiduelle", "Dès que la Rotolock HP est au siège arrière", "Pendant que l’aiguille indique encore une pression"], good: 0, why: "Aucune ligne sous pression ne se débranche." },
+    { q: "Comment choisit-on entre fermeture de l’électrovanne et fermeture de la vanne départ liquide ?", choices: ["D’après le schéma et la procédure du poste", "Fermer systématiquement les deux organes, même si le schéma n’en prévoit qu’un, afin d’obtenir une double sécurité", "Choisir l’organe le plus proche"], good: 0, why: "L’organe utilisé pour couper l’alimentation liquide dépend de la configuration réelle et de sa procédure." },
+    { q: "Que montrent les points mobiles pendant le pump-down de dépose ?", choices: ["Le fluide rejoint l’aspiration, le compresseur, le condenseur puis la bouteille liquide", "Le fluide traverse le manomètre, s’y condense entièrement puis reste stocké dans le flexible bleu jusqu’à la déconnexion", "Le fluide est évacué par le flexible jaune vers l’extérieur afin de faire revenir plus vite les aiguilles au zéro"], good: 0, why: "Le compresseur transfère le fluide vers le côté de stockage de l’installation ; rien n’est purgé à l’air libre." },
+    { q: "Quand peut-on desserrer le raccord rouge ?", choices: ["Après isolement et traitement de la pression résiduelle", "Dès que la Rotolock HP atteint le siège arrière, même si le flexible et le manomètre indiquent encore une pression", "Pendant que l’aiguille indique encore une pression"], good: 0, why: "Aucune ligne sous pression ne se débranche." },
     { q: "Quels points manipulés sont contrôlés pendant la recherche de fuite finale de cette activité ?", choices: ["Les deux bouchons P et les deux presse-étoupes", "Uniquement le flexible jaune rangé", "Seulement le cadran HP"], good: 0, why: "Les raccords ouverts et les étanchéités de tige manœuvrées sont vérifiés séparément." },
-    { q: "Quel geste termine réellement la dépose ?", choices: ["Presse-étoupes serrés, bouchons remis, alimentation liquide rétablie et recherche de fuite terminée", "Poser les flexibles au sol", "Laisser les carrés accessibles"], good: 0, why: "Le poste doit retrouver un état protégé, remis en service et contrôlé." }
+    { q: "Quel geste termine réellement la dépose ?", choices: ["Presse-étoupes serrés, bouchons remis, alimentation liquide rétablie et recherche de fuite terminée", "Poser les flexibles au sol, laisser les carrés accessibles pour la prochaine intervention et considérer le retour des aiguilles au zéro comme une preuve d’étanchéité", "Ranger immédiatement le manifold, conserver l’alimentation liquide isolée et reporter la recherche de fuite au prochain contrôle périodique de l’installation"], good: 0, why: "Le poste doit retrouver un état protégé, remis en service et contrôlé." }
   ];
   const QUIZ_PASS = Math.ceil(QUIZ.length * 0.8);
 
@@ -259,7 +259,23 @@
     { id: "residual", label: "Récupérer le fluide des flexibles par l’aspiration" },
     { id: "finish", label: "Isoler la BP, déconnecter, reboucher et rechercher les fuites" }
   ];
-  const ORDER_SHUFFLED = ["read", "prepare", "residual", "connect", "finish", "rear", "vacuum", "isolate"];
+  function shuffledIndexes(length) {
+    const indexes = Array.from({ length }, (_, index) => index);
+    for (let index = indexes.length - 1; index > 0; index -= 1) {
+      const other = Math.floor(Math.random() * (index + 1));
+      [indexes[index], indexes[other]] = [indexes[other], indexes[index]];
+    }
+    return indexes;
+  }
+
+  function shuffledOrderIds() {
+    const expected = ORDER_ITEMS.map((item) => item.id);
+    let shuffled;
+    do {
+      shuffled = shuffledIndexes(expected.length).map((index) => expected[index]);
+    } while (shuffled.every((id, index) => id === expected[index]));
+    return shuffled;
+  }
 
   const WRONG_FEEDBACK = {
     "wrong-jet-side": "Non : le côté est justement la position de retrait. Le jet prolonge l’axe du raccord.",
@@ -300,7 +316,9 @@
     quizScore: 0,
     quizAnswered: false,
     quizChoice: -1,
+    quizOrder: [],
     orderChosen: [],
+    orderBank: shuffledOrderIds(),
     orderDone: false,
     autonomousMistakes: new Set(),
     workshopIndex: 0,
@@ -667,8 +685,8 @@
     sceneFeedback.textContent = "Commencez par le QCM ou lancez directement la manipulation autonome.";
     visualRoot.innerHTML = `<div class="assessment-menu"><button class="assessment-card" data-assessment="quiz"><strong>QCM technique</strong><span>Vannes Rotolock, P/P1, robinets, vide et dépose.</span></button><button class="assessment-card" data-assessment="order"><strong>Jeu de l’ordre</strong><span>Reconstruire les huit grandes phases.</span></button><button class="assessment-card" data-assessment="autonomous"><strong>Parcours autonome</strong><span>${ACTIONS.length} gestes sur le poste virtuel.</span></button></div>`;
     $$('[data-assessment]', visualRoot).forEach((button) => button.addEventListener("click", () => {
-      if (button.dataset.assessment === "quiz") { state.quizIndex = 0; state.quizScore = 0; state.quizAnswered = false; state.quizChoice = -1; setScreen("quiz"); }
-      else if (button.dataset.assessment === "order") { state.orderChosen = []; state.orderDone = false; setScreen("order"); }
+      if (button.dataset.assessment === "quiz") { state.quizIndex = 0; state.quizScore = 0; state.quizAnswered = false; state.quizChoice = -1; state.quizOrder = shuffledIndexes(QUIZ[0].choices.length); setScreen("quiz"); }
+      else if (button.dataset.assessment === "order") { state.orderChosen = []; state.orderBank = shuffledOrderIds(); state.orderDone = false; setScreen("order"); }
       else startPractice("autonomous", true);
     }));
     setNavigation({ previous: true, next: false, progress: 0, label: "Évaluation formative" });
@@ -681,7 +699,7 @@
       const passed = state.quizScore >= QUIZ_PASS;
       lessonPanel.innerHTML = `<p class="lesson-kicker">BILAN QCM</p><h1 tabindex="-1">${passed ? "Repères théoriques solides" : "Quelques règles sont à reprendre"}</h1><p class="lesson-intro">Seuil interne du module : ${QUIZ_PASS} réponses justes sur ${QUIZ.length}. Ce n’est pas un examen officiel.</p>${blocksMarkup([["Résultat", `${state.quizScore}/${QUIZ.length}`], ["Suite", "Refaites le QCM ou testez l’ordre des phases et le parcours autonome."]])}`;
       visualRoot.innerHTML = `<div class="score-card"><div class="score-number">${state.quizScore}/${QUIZ.length}</div><p>${passed ? "Les décisions essentielles sont acquises dans ce QCM." : "Relisez les corrections puis recommencez."}</p><button type="button" class="nav-button primary" id="restart-quiz">Refaire le QCM</button></div>`;
-      $("#restart-quiz").addEventListener("click", () => { state.quizIndex = 0; state.quizScore = 0; state.quizAnswered = false; state.quizChoice = -1; renderQuiz(); });
+      $("#restart-quiz").addEventListener("click", () => { state.quizIndex = 0; state.quizScore = 0; state.quizAnswered = false; state.quizChoice = -1; state.quizOrder = shuffledIndexes(QUIZ[0].choices.length); renderQuiz(); });
       $("#visual-title").textContent = "Résultat théorique";
       $("#visual-status").textContent = `${state.quizScore}/${QUIZ.length}`;
       sceneFeedback.textContent = "Ajoutez une preuve pratique avec le parcours autonome.";
@@ -689,8 +707,9 @@
       return;
     }
     const item = QUIZ[state.quizIndex];
+    if (state.quizOrder.length !== item.choices.length) state.quizOrder = shuffledIndexes(item.choices.length);
     lessonPanel.innerHTML = `<p class="lesson-kicker">QCM · QUESTION ${state.quizIndex + 1} / ${QUIZ.length}</p><h1 tabindex="-1">${esc(item.q)}</h1><p class="lesson-intro">Choisissez une réponse. La correction apparaît immédiatement.</p>${state.quizAnswered ? blocksMarkup([[state.quizChoice === item.good ? "Correct" : "À revoir", item.why]]) : ""}<p class="tip-card ${state.quizAnswered ? state.quizChoice === item.good ? "correct" : "error" : ""}">${state.quizAnswered ? "Réponse verrouillée. Lisez la correction avant de continuer." : "Une seule réponse est attendue."}</p>`;
-    visualRoot.innerHTML = `<div class="quiz-options">${item.choices.map((choice, index) => `<button type="button" class="quiz-option${state.quizAnswered && index === item.good ? " good" : ""}${state.quizAnswered && index === state.quizChoice && index !== item.good ? " bad" : ""}" data-choice="${index}" ${state.quizAnswered ? "disabled" : ""}>${esc(choice)}</button>`).join("")}</div>`;
+    visualRoot.innerHTML = `<div class="quiz-options">${state.quizOrder.map((choiceIndex) => `<button type="button" class="quiz-option${state.quizAnswered && choiceIndex === item.good ? " good" : ""}${state.quizAnswered && choiceIndex === state.quizChoice && choiceIndex !== item.good ? " bad" : ""}" data-choice="${choiceIndex}" ${state.quizAnswered ? "disabled" : ""}>${esc(item.choices[choiceIndex])}</button>`).join("")}</div>`;
     $$('[data-choice]', visualRoot).forEach((button) => button.addEventListener("click", () => {
       if (state.quizAnswered) return;
       state.quizChoice = Number(button.dataset.choice);
@@ -711,7 +730,7 @@
     if (state.orderChosen.length === ORDER_ITEMS.length) state.orderDone = true;
     const correctCount = state.orderChosen.filter((id, index) => id === expectedIds[index]).length;
     lessonPanel.innerHTML = `<p class="lesson-kicker">MINI-JEU · ORDRE GLOBAL</p><h1 tabindex="-1">Reconstruire les huit phases</h1><p class="lesson-intro">Cliquez les cartes dans l’ordre professionnel, de l’analyse des risques au rangement.</p>${state.orderDone ? blocksMarkup([[correctCount === 8 ? "Ordre exact" : "À reprendre", `${correctCount}/8 phases sont à la bonne place.`], ["Règle", "La dépose comprend l’isolement, le traitement du fluide piégé et le contrôle final."]]) : ""}<p class="tip-card ${state.orderDone ? correctCount === 8 ? "correct" : "error" : ""}">${state.orderDone ? "La correction compare chaque place." : "Vous pouvez recommencer avant la correction finale."}</p>`;
-    visualRoot.innerHTML = `<div class="order-board"><div class="order-bank"><h3>Phases disponibles</h3><div class="order-items">${ORDER_SHUFFLED.map((id) => { const item = ORDER_ITEMS.find((entry) => entry.id === id); const used = state.orderChosen.includes(id); return `<button type="button" class="order-item" data-order-id="${id}" ${used ? "disabled" : ""}>${esc(item.label)}</button>`; }).join("")}</div></div><div class="order-result"><h3>Votre ordre</h3>${state.orderChosen.map((id, index) => { const item = ORDER_ITEMS.find((entry) => entry.id === id); const status = state.orderDone ? id === expectedIds[index] ? " good" : " bad" : ""; return `<div class="order-line${status}"><strong>${index + 1}</strong><span>${esc(item.label)}</span></div>`; }).join("")}</div></div>`;
+    visualRoot.innerHTML = `<div class="order-board"><div class="order-bank"><h3>Phases disponibles</h3><div class="order-items">${state.orderBank.map((id) => { const item = ORDER_ITEMS.find((entry) => entry.id === id); const used = state.orderChosen.includes(id); return `<button type="button" class="order-item" data-order-id="${id}" ${used ? "disabled" : ""}>${esc(item.label)}</button>`; }).join("")}</div></div><div class="order-result"><h3>Votre ordre</h3>${state.orderChosen.map((id, index) => { const item = ORDER_ITEMS.find((entry) => entry.id === id); const status = state.orderDone ? id === expectedIds[index] ? " good" : " bad" : ""; return `<div class="order-line${status}"><strong>${index + 1}</strong><span>${esc(item.label)}</span></div>`; }).join("")}</div></div>`;
     $$('[data-order-id]', visualRoot).forEach((button) => button.addEventListener("click", () => { if (!state.orderDone) { state.orderChosen.push(button.dataset.orderId); renderOrderGame(); } }));
     $("#visual-title").textContent = "Ordre de pose et de dépose";
     $("#visual-status").textContent = state.orderDone ? `${correctCount}/8` : `${state.orderChosen.length}/8`;
@@ -790,7 +809,7 @@
       else startPractice("guided", true);
     } else if (state.screen === "quiz") {
       if (state.quizIndex >= QUIZ.length) startAssessment();
-      else if (state.quizAnswered) { state.quizIndex += 1; state.quizAnswered = false; state.quizChoice = -1; render(); }
+      else if (state.quizAnswered) { state.quizIndex += 1; state.quizAnswered = false; state.quizChoice = -1; state.quizOrder = state.quizIndex < QUIZ.length ? shuffledIndexes(QUIZ[state.quizIndex].choices.length) : []; render(); }
     } else if (state.screen === "order") startAssessment();
     else if (state.screen === "workshop") {
       if (state.workshopIndex < ACTIONS.length - 1) { state.workshopIndex += 1; render(); }

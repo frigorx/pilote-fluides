@@ -1,5 +1,17 @@
 # Sources métier
 
+## Archive de fiches métier fournie le 13 août 2026
+
+- `C:\Users\henni\OneDrive\Bureau\25 26\Fiches méthodes + exercices CERFA.zip` — SHA-256 `07AD49E78CF116682DC8C35751253414189AE102663AFE2C0D849D18194020A2`.
+- `01 Fiche méthode pose des manos.docx` — pose du manifold, mise au vide des lignes et passage en lecture.
+- `02 Fiche méthode dépose des manifolds avec EVM.docx` — dépose par retour du fluide des lignes et remise en état.
+- `03 Fiche métode MSP.docx` — mise sous pression à l’azote et recherche de fuite.
+- `04 Fiche métode Tirage au vide.docx` — raccordement pompe/vacuomètre et ordre du tirage au vide.
+- `05 Fiche métode charge installation.docx` — charge par masse connue et traçabilité.
+- `06 Fiche méthode récupération de fluide frigorigène.docx` — raccordement station/bouteille, récupération et purge interne.
+
+Les originaux restent dans le ZIP fourni. Ils n’ont pas été modifiés ni copiés dans le livrable. La comparaison et les écarts de sécurité sont détaillés dans `COMPARAISON-FICHES-METIER-2-VOIES.md`.
+
 ## Production inerWeb explicitement fournie
 
 - `C:\Users\henni\Desktop\inerweb full ia\vanne-rotalock-pedagogique\animation-technique.html` — animation technique à réutiliser selon la demande du 13 août 2026.
@@ -27,6 +39,9 @@
 - `pilote-fluides/CAPSULES-SECURITE.md`, capsule « Le froid brûle » — mécanisme de la brûlure froide, axe du jet et protections des yeux et des mains.
 - `habilitation-fluide/formation-presentielle/plans-de-seance/M3-plan-de-seance.md` — risques du jour, lunettes et gants de protection au froid avant manipulation, pression résiduelle et conduite en cas d’incident.
 - `05_Ressources-Partagees/Pressostats-Manometres/InerWeb_Identification.html` — identification du fluide par informations techniques et relation pression-température dans les conditions prévues.
+- `habilitation-fluide/CONTENU-03-G3-controles-mes.md` — azote sec, interdiction de l’oxygène et de l’air, pression limitée par le composant admissible le plus faible.
+- `tirage-au-vide.svg` — position du vacuomètre près du circuit, isolement avant arrêt de la pompe et contrôle de tenue.
+- `circuit-complet-manifold.svg` et le module local `recuperation-fluide-interactive` — trajet manifold, station et bouteille ; réemploi du principe sans copier une procédure de sélecteur propre à une autre station.
 
 ## Cadre réglementaire vérifié le 13 août 2026
 
@@ -40,4 +55,6 @@ Ces textes imposent le résultat de réduction des émissions. Ils ne prescriven
 - aucune pression, durée, couple ou nombre de tours universel n’est affiché ;
 - le seuil QCM `16/19` est un repère interne à l’entraînement, pas un seuil d’examen ;
 - le choix de l’organe d’isolement liquide, le critère d’arrêt du pump-down et la méthode de recherche de fuite restent soumis à la procédure validée du plateau ;
+- le retrait de bobine avec tournevis et la neutralisation d’un pressostat BP ne sont pas généralisés ;
+- la dépressurisation finale de l’azote, la charge liquide côté aspiration et la séquence exacte d’auto-purge restent soumises au matériel du plateau ;
 - la notice constructeur et la procédure locale priment sur la simulation.
