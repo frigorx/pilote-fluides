@@ -34,7 +34,7 @@ elles ne sont exigées dans aucune des catégories du pack (CO₂, ammoniac, cod
 aux catégories B et C), mais le contenu les aborde — l'annexe II.C impose d'ailleurs au
 moins une question sur les spécificités du CO₂ et du NH₃ dans les sujets A1 et A2.
 
-Côté questions : **268** au total, dont **251** rattachées à une compétence et **17** hors référentiel (§ 3).
+Côté questions : **269** au total, dont **252** rattachées à une compétence et **17** hors référentiel (§ 3).
 **48 fiches** déclarent au moins une compétence.
 
 ## 2. La matrice, groupe par groupe
@@ -928,7 +928,7 @@ Côté questions : **268** au total, dont **251** rattachées à une compétence
 | **9.02** | A1 prat. · A2 prat. | `g9` | 1 | ✅ |
 | **9.03** | A1 prat. · A2 prat. | `g9` | 1 | ✅ |
 | **9.04** | A1 prat. · A2 prat. | `g9b` | 1 | ✅ |
-| **9.05** | A1 prat. · A2 prat. | `g9b` | 3 | ✅ |
+| **9.05** | A1 prat. · A2 prat. | `g9b` | 4 | ✅ |
 | **9.06** | A1 prat. · A2 prat. | `g9b` | 1 | ✅ |
 | **9.07** | A1 prat. · A2 prat. | `g9b` | 1 | ✅ |
 | **9.08** | A1 prat. · A2 prat. | `g9` | 5 | ✅ |
@@ -982,10 +982,11 @@ Côté questions : **268** au total, dont **251** rattachées à une compétence
 
 - **Enseigné** — `g9b` Régler et contrôler les organes annexes *(+ question intégrée)*
   <br>Dit à l'élève : « Régler une soupape de régulation de pression »
-- **Interrogé** — 3 question(s) :
+- **Interrogé** — 4 question(s) :
   - `pk-q-9.05` *(niveau 1, rangée en G9)* — Que fait la soupape de régulation de pression sur une installation frigorifique ?
-  - `pk-g9b-5` *(niveau 2, rangée en G9)* — Après un arrêt prolongé, le compresseur redémarre et son moteur déclenche en surintensité. Quel organe évite ce défaut,…
-  - `pk-g9b-6` *(niveau 2, rangée en G9)* — Sur une chambre à +2 °C, vous tournez la vis de réglage d'un KVP. Quelle pression bouge, et où la lisez-vous ?
+  - `pk-g9b-5` *(niveau 1, rangée en G9)* — Sur quelle pression le KVL agit-il ?
+  - `pk-g9b-6` *(niveau 1, rangée en G9)* — Sur quelle pression le KVP agit-il ?
+  - `pk-g9b-7` *(niveau 1, rangée en G9)* — Sur quelle pression le KVR agit-il ?
 
 #### 9.06 — ✅ enseigné et vérifié
 

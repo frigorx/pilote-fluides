@@ -2,7 +2,7 @@
    Les pages portent des <span data-ch="clé"></span> que ce fichier remplit. */
 window.PILOTE_CHIFFRES = {
  "fiches": 44,
- "questions": 268,
+ "questions": 269,
  "diapositives": 539,
  "planches": 46,
  "exercices": 5,

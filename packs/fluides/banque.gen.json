@@ -9036,24 +9036,24 @@
   "id": "pk-g9b-5",
   "dc": "G9",
   "code": "9.05",
-  "niveau": 2,
+  "niveau": 1,
   "type": "qcm",
-  "enonce": "Après un arrêt prolongé, le compresseur redémarre et son moteur déclenche en surintensité. Quel organe évite ce défaut, et où se monte-t-il ?",
+  "enonce": "Sur quelle pression le KVL agit-il ?",
   "choix": [
-   "Le KVR, monté en sortie de condenseur sur la ligne liquide",
-   "Le KVL, monté sur l'aspiration juste avant le compresseur",
-   "Le KVP, monté en sortie de chaque évaporateur du circuit",
-   "Le pressostat BP, monté sur la ligne d'aspiration du groupe"
+   "La pression d'évaporation, en sortie d'évaporateur",
+   "La pression d'aspiration, à l'entrée du compresseur",
+   "La pression de condensation, en sortie de condenseur",
+   "La pression de la ligne liquide, avant le détendeur"
   ],
   "bonne": 1,
-  "aide": "Après un arrêt long, la pression d'aspiration est haute : le compresseur avale trop de vapeur d'un coup. Quel organe bride cette aspiration ?",
+  "aide": "KVL : régulateur de pression de carter. Il est monté juste avant le compresseur.",
   "remed": {
-   "regle": "Le KVL — régulateur de pression de carter — se monte sur la ligne d'aspiration, juste avant le compresseur. Il limite la pression d'aspiration admise et protège ainsi le moteur au redémarrage.",
-   "pourquoi": "Après un arrêt long ou un dégivrage, la pression dans l'évaporateur est remontée. Sans bridage, le compresseur aspire une vapeur trop dense, absorbe une intensité excessive et fait déclencher sa protection thermique.",
-   "piege": "Le confondre avec le pressostat BP, qui est une sécurité : il COUPE à un seuil. Le KVL, lui, MODULE en continu. Et ne pas le confondre non plus avec le KVP, monté à l'autre bout, en sortie d'évaporateur."
+   "regle": "Le KVL agit sur la pression d'aspiration, à l'entrée du compresseur. Il la limite pour protéger le moteur.",
+   "pourquoi": "Une pression d'aspiration trop élevée fait absorber au compresseur une intensité excessive, surtout au redémarrage après un arrêt long ou un dégivrage.",
+   "piege": "Le confondre avec le KVP, qui agit à l'autre bout du circuit, en sortie d'évaporateur."
   },
   "remediation_vers": "g9b",
-  "explication": "Le KVL — régulateur de pression de carter — se monte sur la ligne d'aspiration, juste avant le compresseur. Il limite la pression d'aspiration admise et protège ainsi le moteur au redémarrage.",
+  "explication": "Le KVL agit sur la pression d'aspiration, à l'entrée du compresseur. Il la limite pour protéger le moteur.",
   "origine": "pack",
   "chapitre": "09",
   "chapitre_titre": "Composant : détendeurs et autres organes",
@@ -9063,24 +9063,51 @@
   "id": "pk-g9b-6",
   "dc": "G9",
   "code": "9.05",
-  "niveau": 2,
+  "niveau": 1,
   "type": "qcm",
-  "enonce": "Sur une chambre à +2 °C, vous tournez la vis de réglage d'un KVP. Quelle pression bouge, et où la lisez-vous ?",
+  "enonce": "Sur quelle pression le KVP agit-il ?",
   "choix": [
-   "La pression de condensation, lue au manomètre HP du groupe",
-   "La pression d'évaporation, lue au manomètre BP en sortie",
-   "La pression d'huile du carter, lue au manomètre de service",
-   "La surchauffe du fluide, lue à la sonde et au manomètre BP"
+   "La pression d'évaporation, en sortie d'évaporateur",
+   "La pression d'aspiration, à l'entrée du compresseur",
+   "La pression de condensation, en sortie de condenseur",
+   "La pression de la ligne liquide, avant le détendeur"
   ],
-  "bonne": 1,
-  "aide": "Son nom porte la réponse : KVP, régulateur de pression d'évaporation. Reste à savoir où se prend la mesure.",
+  "bonne": 0,
+  "aide": "KVP : régulateur de pression d'évaporation. Son nom porte la réponse.",
   "remed": {
-   "regle": "Le KVP maintient une pression d'évaporation minimale. Il se monte en sortie d'évaporateur, et son réglage se contrôle au manomètre BP raccordé à cette sortie — jamais à l'oreille ni au toucher.",
-   "pourquoi": "La pression d'évaporation fixe la température d'évaporation. La tenir au-dessus d'un seuil évite de trop refroidir le produit et permet à plusieurs chambres à températures différentes de partager un même compresseur.",
-   "piege": "Régler sans manomètre. La valeur de consigne se lit sur la fiche constructeur et se vérifie à la mesure : un symptôme ne suffit jamais pour tourner la vis."
+   "regle": "Le KVP agit sur la pression d'évaporation, en sortie d'évaporateur. Il la maintient au-dessus d'un minimum.",
+   "pourquoi": "La pression d'évaporation fixe la température d'évaporation : la tenir évite de trop refroidir le produit et permet à plusieurs chambres de partager un même compresseur.",
+   "piege": "Le confondre avec le KVL, qui agit à l'autre bout du circuit, à l'entrée du compresseur."
   },
   "remediation_vers": "g9b",
-  "explication": "Le KVP maintient une pression d'évaporation minimale. Il se monte en sortie d'évaporateur, et son réglage se contrôle au manomètre BP raccordé à cette sortie — jamais à l'oreille ni au toucher.",
+  "explication": "Le KVP agit sur la pression d'évaporation, en sortie d'évaporateur. Il la maintient au-dessus d'un minimum.",
+  "origine": "pack",
+  "chapitre": "09",
+  "chapitre_titre": "Composant : détendeurs et autres organes",
+  "chapitre_fichier": "CONTENU-09-G9-detendeurs.md"
+ },
+ {
+  "id": "pk-g9b-7",
+  "dc": "G9",
+  "code": "9.05",
+  "type": "qcm",
+  "remediation_vers": "g9b",
+  "niveau": 1,
+  "enonce": "Sur quelle pression le KVR agit-il ?",
+  "choix": [
+   "La pression d'évaporation, en sortie d'évaporateur",
+   "La pression d'aspiration, à l'entrée du compresseur",
+   "La pression de condensation, en sortie de condenseur",
+   "La pression de la ligne liquide, avant le détendeur"
+  ],
+  "bonne": 2,
+  "aide": "Le KVR se monte à la sortie du condenseur. Quelle pression y règne-t-il ?",
+  "remed": {
+   "regle": "Le KVR agit sur la pression de condensation, en sortie de condenseur. Il la maintient suffisamment haute.",
+   "pourquoi": "Par temps froid, la pression de condensation s'effondre : le détendeur n'est plus assez alimenté et la machine ne fait plus de froid. Le KVR tient la HP pour garder l'installation stable.",
+   "piege": "Croire qu'il protège l'installation d'une pression trop HAUTE — c'est le rôle du pressostat HP, une sécurité. Le KVR fait l'inverse : il empêche la HP de tomber trop bas."
+  },
+  "explication": "Le KVR agit sur la pression de condensation, en sortie de condenseur. Il la maintient suffisamment haute.",
   "origine": "pack",
   "chapitre": "09",
   "chapitre_titre": "Composant : détendeurs et autres organes",

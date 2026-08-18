@@ -8694,80 +8694,62 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
-       "id": "pk-q-9.05",
+       "id": "pk-g9b-5",
        "dc": "G9",
        "code": "9.05",
        "niveau": 1,
        "type": "qcm",
-       "enonce": "Que fait la soupape de régulation de pression sur une installation frigorifique ?",
+       "enonce": "Sur quelle pression le KVL agit-il ?",
        "choix": [
-        "Elle coupe complètement le circuit dès qu'un seuil de pression donné est franchi",
-        "Elle module en continu pour maintenir une pression stable à un point du circuit",
-        "Elle règle la surchauffe mesurée en sortie d'évaporateur",
-        "Elle commande le démarrage du compresseur selon une température mesurée par sonde"
+        "La pression d'évaporation, en sortie d'évaporateur",
+        "La pression d'aspiration, à l'entrée du compresseur",
+        "La pression de condensation, en sortie de condenseur",
+        "La pression de la ligne liquide, avant le détendeur"
        ],
        "bonne": 1,
-       "aide": "Compare avec le rôle du limiteur de pression, qui lui coupe le circuit à un seuil : la soupape de régulation agit autrement.",
+       "aide": "KVL : régulateur de pression de carter. Il est monté juste avant le compresseur.",
        "remed": {
-        "regle": "La soupape de régulation de pression module en continu pour maintenir une pression stable à un point du circuit. Elle ne coupe jamais le circuit.",
-        "pourquoi": "Une pression stable à un point clé du circuit garantit un fonctionnement régulier de l'installation, sans à-coups, et évite de solliciter le compresseur pour rien.",
-        "piege": "Confondre la soupape de régulation avec le limiteur de pression : le limiteur est une sécurité qui coupe à un seuil, la soupape de régulation module en continu. Ce sont deux logiques différentes, avec deux réglages différents."
+        "regle": "Le KVL agit sur la pression d'aspiration, à l'entrée du compresseur. Il la limite pour protéger le moteur.",
+        "pourquoi": "Une pression d'aspiration trop élevée fait absorber au compresseur une intensité excessive, surtout au redémarrage après un arrêt long ou un dégivrage.",
+        "piege": "Le confondre avec le KVP, qui agit à l'autre bout du circuit, en sortie d'évaporateur."
        },
        "remediation_vers": "g9b",
-       "explication": "La soupape de régulation de pression module en continu pour maintenir une pression stable à un point du circuit. Elle ne coupe jamais le circuit.",
+       "explication": "Le KVL agit sur la pression d'aspiration, à l'entrée du compresseur. Il la limite pour protéger le moteur.",
        "origine": "pack",
        "chapitre": "09",
        "chapitre_titre": "Composant : détendeurs et autres organes",
        "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
-       "illustration": "illustrations/sup-contexte-g9-21D269D2.webp",
-       "pose_niveau": "contexte",
-       "ressources": [
-        {
-         "type": "image",
-         "libelle": "Regulateurs pression",
-         "chemin": "illustrations/regulateurs-pression.svg"
-        }
-       ],
        "categories": [
         "A1",
         "A2"
        ]
       },
       {
-       "id": "pk-g9b-3",
+       "id": "pk-g9b-6",
        "dc": "G9",
-       "code": "9.09",
-       "niveau": 2,
+       "code": "9.05",
+       "niveau": 1,
        "type": "qcm",
-       "enonce": "Pendant une visite, tu remarques qu'un limiteur de pression ne coupe plus correctement. Tu ne le notes pas dans ton rapport. Quel est le risque, si ce défaut reste sans suite ?",
+       "enonce": "Sur quelle pression le KVP agit-il ?",
        "choix": [
-        "Le défaut peut endommager le système et provoquer à terme une fuite ou une émission",
-        "Aucun risque particulier : le limiteur se réarme de lui-même au cycle suivant",
-        "Le compresseur s'arrête aussitôt par sécurité, le défaut se voit tout seul",
-        "Le séparateur d'huile compense le défaut tant que le niveau reste correct"
+        "La pression d'évaporation, en sortie d'évaporateur",
+        "La pression d'aspiration, à l'entrée du compresseur",
+        "La pression de condensation, en sortie de condenseur",
+        "La pression de la ligne liquide, avant le détendeur"
        ],
        "bonne": 0,
-       "aide": "Relis la fin de la fiche : que se passe-t-il quand'un défaut n'est pas signalé ?",
+       "aide": "KVP : régulateur de pression d'évaporation. Son nom porte la réponse.",
        "remed": {
-        "regle": "Un défaut non signalé (thermostat qui dérive, limiteur qui ne coupe plus, séparateur qui laisse passer l'huile) finit par endommager le système. À terme, faute de mesure, cela provoque une fuite ou une émission de réfrigérant.",
-        "pourquoi": "Le rapport écrit permet d'agir avant que le défaut ne s'aggrave. C'est un outil de prévention, pas une simple formalité.",
-        "piege": "Penser qu'un défaut mineur peut attendre la prochaine visite sans conséquence."
+        "regle": "Le KVP agit sur la pression d'évaporation, en sortie d'évaporateur. Il la maintient au-dessus d'un minimum.",
+        "pourquoi": "La pression d'évaporation fixe la température d'évaporation : la tenir évite de trop refroidir le produit et permet à plusieurs chambres de partager un même compresseur.",
+        "piege": "Le confondre avec le KVL, qui agit à l'autre bout du circuit, à l'entrée du compresseur."
        },
        "remediation_vers": "g9b",
-       "explication": "Un défaut non signalé (thermostat qui dérive, limiteur qui ne coupe plus, séparateur qui laisse passer l'huile) finit par endommager le système. À terme, faute de mesure, cela provoque une fuite ou une émission de réfrigérant.",
+       "explication": "Le KVP agit sur la pression d'évaporation, en sortie d'évaporateur. Il la maintient au-dessus d'un minimum.",
        "origine": "pack",
        "chapitre": "09",
        "chapitre_titre": "Composant : détendeurs et autres organes",
        "chapitre_fichier": "CONTENU-09-G9-detendeurs.md",
-       "illustration": "illustrations/ine-contenu-bibliotheque-symboles-svg-capteurs-froid-pressostat-sans-reperes-svg.svg",
-       "pose_niveau": "thematique",
-       "ressources": [
-        {
-         "type": "image",
-         "libelle": "Regulateurs pression",
-         "chemin": "illustrations/regulateurs-pression.svg"
-        }
-       ],
        "categories": [
         "A1",
         "A2"
