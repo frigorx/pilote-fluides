@@ -132,7 +132,7 @@ const PLANCHES = readdirSync(DOSSIER)
    (<title>, <meta name="description">), pas d'une liste tenue à part.
    --------------------------------------------------------------------- */
 const RES = resolve(RACINE, "packs/fluides/res");
-const DOSSIERS_ASSETS = new Set(["svg", "outils", "photos", "bibliotheque"]);
+const DOSSIERS_ASSETS = new Set(["svg", "outils", "photos", "bibliotheque", "vignettes"]);
 
 function lireExperience(dossier) {
   const entrees = readdirSync(resolve(RES, dossier), { withFileTypes: true });
@@ -247,7 +247,7 @@ function familleDe(e) {
 /* La vignette d'une ressource, si build/vignettes.mjs l'a capturée. */
 function vignetteDe(url) {
   const dossier = url.split("/").slice(-2, -1)[0];
-  const chemin = "packs/fluides/res/_vignettes/" + dossier + ".png";
+  const chemin = "packs/fluides/res/vignettes/" + dossier + ".png";
   try {
     readFileSync(resolve(RACINE, chemin));
     return chemin;

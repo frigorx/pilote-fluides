@@ -19,7 +19,7 @@
    donc rien tant que rien n'a bougé.
 
    ENTRÉES  packs/fluides/res/<ressource>/index.html
-   SORTIE   packs/fluides/res/_vignettes/<ressource>.png
+   SORTIE   packs/fluides/res/vignettes/<ressource>.png
    USAGE    node build/vignettes.mjs           (toutes celles qui manquent)
             node build/vignettes.mjs --toutes  (tout refaire)
    ===================================================================== */
@@ -30,8 +30,8 @@ import { execFileSync } from "node:child_process";
 
 const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const RES = resolve(RACINE, "packs/fluides/res");
-const VIGNETTES = resolve(RES, "_vignettes");
-const DOSSIERS_ASSETS = new Set(["svg", "outils", "photos", "bibliotheque", "_vignettes",
+const VIGNETTES = resolve(RES, "vignettes");
+const DOSSIERS_ASSETS = new Set(["svg", "outils", "photos", "bibliotheque", "vignettes",
                                  "img", "audio", "voix", "illustrations", "symboles"]);
 const TOUT = process.argv.includes("--toutes");
 
