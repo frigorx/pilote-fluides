@@ -146,9 +146,17 @@ function lireExperience(dossier) {
     .replace(/\s*\|.*$/, "")
     .trim();
   const desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || "";
+  /* Famille, état et licence : DÉCLARÉS PAR LA PAGE elle-même, comme le titre
+     et la description — jamais dans une liste centrale à tenir à jour.
+     <meta name="famille" content="Films narrés"> · <meta name="etat" content="prototype">
+     Sans déclaration : famille « Cours interactifs », état « en service ». */
+  const famille = (html.match(/<meta name="famille" content="([^"]*)"/) || [])[1] || "";
+  const etat = (html.match(/<meta name="etat" content="([^"]*)"/) || [])[1] || "";
   return {
     titre,
     desc,
+    famille,
+    etat,
     url: "packs/fluides/res/" + dossier + "/" + fichier,
     // Pour « récupérer le code » : chaque fichier à la racine du dossier
     // pris individuellement, en téléchargement direct — pas d'archive .zip
@@ -186,307 +194,285 @@ const N = {
 };
 
 /* ---------------------------------------------------------------------
-   3. LA PAGE
+   3. LA PAGE — bibliothèque et démonstrateur
+   ---------------------------------------------------------------------
+   Refonte du 18/08 (demande F. Henninot) : la page listait tout à la
+   suite et devenait ingérable. Elle a maintenant DEUX usages assumés :
+     · SE SERVIR — projeter tout de suite en cours (chercher, ouvrir) ;
+     · RÉEMPLOYER — récupérer le code d'une ressource pour l'intégrer
+       ailleurs (fichiers, licence, état de maturité affichés).
+   D'où : une recherche instantanée, des familles, un état (en service /
+   prototype), la licence rappelée sur chaque fiche, et le chargement
+   différé des planches (44 SVG animés d'un coup mettaient la page à genoux).
+   RELEVÉ, JAMAIS SAISI reste la règle : famille et état sont déclarés par
+   la page de la ressource (<meta name="famille"> / <meta name="etat">),
+   jamais dans une liste centrale.
    --------------------------------------------------------------------- */
+
+/* Famille par défaut d'une expérience qui n'en déclare pas : déduite de son
+   nom de dossier, jamais inventée à la main ressource par ressource. */
+function familleDe(e) {
+  if (e.famille) return e.famille;
+  const u = e.url.toLowerCase();
+  if (u.includes("/film-")) return "Films narrés";
+  if (u.includes("frise") || u.includes("fil-conducteur")) return "Frises et parcours";
+  if (u.includes("capsule")) return "Capsules";
+  return "Cours interactifs";
+}
+const RESSOURCES = EXPERIENCES.map((e) => ({
+  ...e,
+  fam: familleDe(e),
+  prototype: /prototype|brouillon/i.test(e.etat || ""),
+}));
+const FAMILLES = [...new Set(RESSOURCES.map((r) => r.fam))].sort();
+
+const cherchable = (...bouts) =>
+  esc(bouts.filter(Boolean).join(" ").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""));
+
 let h = `<!doctype html>
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toutes les planches — habilitation fluides frigorigènes</title>
+<meta name="robots" content="noindex">
+<title>Bibliothèque d'animations et de supports — habilitation fluides frigorigènes</title>
 <style>
-  :root { --bleu:#1b3a63; --orange:#ff6b35; --texte:#33475b; --mut:#8494a4; --bord:#d7e0e8; }
-  body { font: 15px/1.55 Calibri,'Segoe UI',sans-serif; color:var(--texte); background:#fff;
-         max-width:1180px; margin:0 auto 70px; padding:0 18px; }
-  h1 { color:var(--bleu); font-size:28px; border-bottom:3px solid var(--orange); padding-bottom:8px; margin-top:26px; }
-  p.meta { color:var(--mut); font-size:13.5px; }
-  .barre { position:sticky; top:0; background:#fff; border-bottom:1.5px solid var(--bord);
-           padding:10px 0; margin-bottom:14px; z-index:5; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
-  .barre button { font:13px Calibri,sans-serif; padding:5px 12px; border:1.5px solid var(--bord);
-                  background:#fff; color:var(--texte); border-radius:999px; cursor:pointer; }
-  .barre button.on { background:var(--bleu); color:#fff; border-color:var(--bleu); }
-  .barre button.tout { background:var(--orange); color:#fff; border-color:var(--orange); font-weight:700; }
-  .barre .cpt { color:var(--mut); font-size:13px; margin-left:auto; }
-  .planche { border:1.5px solid var(--bord); border-radius:12px; padding:16px 18px; margin:16px 0; }
-  .planche.masque { display:none; }
-  .planche h2 { font-size:18px; color:var(--bleu); margin:0 0 2px; }
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --texte:#33475b; --mut:#8494a4; --bord:#d7e0e8;
+          --fond:#f7f1e7; --carte:#fffdf8; --vert:#1e7e54; --ambre:#8a5200; }
+  * { box-sizing:border-box; }
+  body { font:15px/1.55 Calibri,'Segoe UI',sans-serif; color:var(--texte); background:var(--fond);
+         max-width:1240px; margin:0 auto 70px; padding:0 18px; }
+  h1 { color:var(--bleu); font-size:27px; border-bottom:3px solid var(--orange); padding-bottom:8px; margin:26px 0 6px; }
+  h2.section { color:var(--bleu); font-size:20px; margin:34px 0 4px; border-left:6px solid var(--orange); padding-left:11px; }
+  p.meta { color:var(--mut); font-size:13.5px; margin:4px 0; }
+  .intro { background:var(--carte); border:1.5px solid var(--bord); border-radius:12px; padding:14px 18px; margin:14px 0 4px; }
+  .intro b { color:var(--bleu); }
+
+  /* La barre de recherche : le premier geste de la page. */
+  .barre { position:sticky; top:0; background:var(--fond); border-bottom:2px solid var(--bord);
+           padding:12px 0 10px; margin:14px 0 6px; z-index:9; }
+  .barre .ligne { display:flex; flex-wrap:wrap; gap:9px; align-items:center; }
+  #q { flex:1; min-width:240px; font:16px Calibri,'Segoe UI',sans-serif; padding:9px 14px;
+       border:2px solid var(--bleu); border-radius:999px; background:var(--carte); color:var(--texte); }
+  #q::placeholder { color:var(--mut); }
+  .chip { font:13px Calibri,sans-serif; padding:6px 13px; border:1.5px solid var(--bord); background:var(--carte);
+          color:var(--texte); border-radius:999px; cursor:pointer; }
+  .chip.on { background:var(--bleu); color:#fff; border-color:var(--bleu); font-weight:700; }
+  .cpt { color:var(--mut); font-size:13px; margin-left:auto; white-space:nowrap; }
+
+  /* Les cartes : une grille, plus une liste à dérouler. */
+  .grille { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:15px; margin:12px 0 6px; }
+  .carte { background:var(--carte); border:1.5px solid var(--bord); border-radius:13px; padding:15px 17px;
+           display:flex; flex-direction:column; gap:7px; }
+  .carte.masque, .planche.masque { display:none; }
+  .carte h3 { margin:0; font-size:16.5px; color:var(--bleu); line-height:1.3; }
+  .carte p { margin:0; font-size:13.5px; }
+  .etiquettes { display:flex; flex-wrap:wrap; gap:5px; }
+  .et { font-size:11.5px; font-weight:700; padding:2px 9px; border-radius:999px; border:1.5px solid; }
+  .et.fam { color:var(--bleu); border-color:var(--bleu); background:#eef4fb; }
+  .et.service { color:var(--vert); border-color:var(--vert); background:#eef8f3; }
+  .et.proto { color:var(--ambre); border-color:#c9a227; background:#fdf6e3; }
+  .et.anim { color:#c9451a; border-color:#e8905f; background:#fff1e9; }
+  .actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-top:6px; align-items:center; }
+  a.ouvrir { font:700 14px Calibri,sans-serif; background:var(--bleu); color:#fff; text-decoration:none;
+             border:2px solid var(--bleu); border-radius:999px; padding:6px 15px; }
+  a.ouvrir:hover { background:var(--orange); border-color:var(--orange); }
+  button.lien, summary.reemploi { font:13px Calibri,sans-serif; border:1.5px solid var(--bord); background:var(--carte);
+                                  color:var(--texte); border-radius:999px; padding:5px 13px; cursor:pointer; }
+  details.reemp { font-size:13px; }
+  details.reemp summary { list-style:none; }
+  details.reemp summary::-webkit-details-marker { display:none; }
+  .fichiers { margin-top:7px; padding-top:7px; border-top:1px dashed var(--bord); }
+  .fichiers a { display:inline-block; margin:0 10px 3px 0; font-size:12.5px; color:var(--bleu); }
+  .licence-ligne { font-size:12.5px; color:var(--mut); margin-top:4px; }
+
+  /* Les planches SVG gardent leur affichage, mais en chargement différé. */
+  .planche { background:var(--carte); border:1.5px solid var(--bord); border-radius:13px; padding:15px 17px; margin:14px 0; }
+  .planche h3 { margin:0 0 2px; font-size:17px; color:var(--bleu); }
   .planche .f { font-size:12.5px; color:var(--mut); font-family:Consolas,monospace; }
-  .tags { margin:8px 0 10px; }
-  .tag { display:inline-block; font-size:12px; font-weight:700; padding:2px 10px; border-radius:999px; margin-right:5px; }
-  .tag.anim { background:#fff1e9; color:#c9451a; }
-  .tag.cyc  { background:#eef4fb; color:var(--bleu); }
-  .tag.fixe { background:#f0f3f6; color:#5a6b7d; }
-  .tag.orph { background:#fbe7e4; color:#c0392b; }
-  .planche img { width:100%; height:auto; display:block; border:1px solid var(--bord); border-radius:8px; background:#fff; }
-  .sous { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:10px; }
-  .sous button { font:600 13.5px Calibri,sans-serif; padding:5px 13px; color:var(--bleu);
-                 background:#f3f7fb; border:1.5px solid #2f5689; border-radius:999px; cursor:pointer; }
-  .sous button:hover { background:#e7eff7; }
-  .sous button.lien { color:#5a6b7d; border-color:var(--bord); background:#fff; font-weight:400; }
-  .sous button.lien:hover { background:#f3f7fb; }
-  .sous a.dl { font-size:13px; color:#5a6b7d; text-decoration:none; border-bottom:1px dotted #8aa0b4; }
-  .sous .util { font-size:13px; color:#5a6b7d; }
-  .experiences { margin:18px 0 30px; }
-  .experience { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
-                gap:14px; border:1.5px solid var(--bord); border-radius:12px; padding:14px 18px;
-                margin:12px 0; background:#f9fbfd; break-inside:avoid; }
-  .experience strong { color:var(--bleu); font-size:16px; }
-  .experience p { margin:4px 0 0; font-size:13.5px; color:var(--texte); max-width:640px; }
-  .experience .sous { margin:0; }
-  .experience-fichiers { flex-basis:100%; margin-top:2px; font-size:13px; }
-  .experience-fichiers a.dl { margin-right:12px; }
-  .sous a.ouvrir { font:600 13.5px Calibri,sans-serif; padding:6px 16px; color:#fff;
-                   background:var(--bleu); border:1.5px solid var(--bleu); border-radius:999px;
-                   cursor:pointer; text-decoration:none; display:inline-block; }
-  .sous a.ouvrir:hover { background:#15304f; }
-  .ou { border-left:4px solid var(--bleu); background:#f3f7fb; border-radius:6px;
-        padding:10px 14px; margin:14px 0; font-size:14px; }
-  .ou code { background:#fff; border:1px solid var(--bord); border-radius:4px; padding:1px 6px;
-             font-family:Consolas,monospace; font-size:13px; }
-  .ou button { font:600 13px Calibri,sans-serif; padding:4px 12px; margin-left:6px; color:var(--bleu);
-               background:#fff; border:1.5px solid #2f5689; border-radius:999px; cursor:pointer; }
-  .sous .util b { color:var(--bleu); }
-  .vide { color:#c0392b; font-weight:600; font-size:13px; }
-  @media print { .barre, .sous button, .sous a.ouvrir { display:none } .planche { break-inside:avoid } }
-</style><link rel='stylesheet' href='moteur/impression.css' media='print'></head><body>
-<h1>Toutes les planches du pack</h1>
-<p class="meta">${N.total} planches, dont <b>${N.animees} animées</b> (${N.narratives} récits qui se
-déroulent une fois, ${N.cycliques} en boucle) et ${N.fixes} fixes — ${N.animations} animations au total.
-Page relevée à chaque fabrication du pack : une planche ajoutée apparaît ici sans que personne y pense.</p>
-<p class="meta"><b>Une animation narrative ne se joue qu'une fois, au chargement.</b> Si vous arrivez
-après la fin, vous voyez l'image finale — c'est voulu : au repos, le dessin doit déjà être juste.
-Le bouton <b>↻ Rejouer</b> la relance depuis le début.</p>
-`;
+  .planche img { display:block; width:100%; max-width:820px; margin:10px 0 6px; border:1px solid var(--bord);
+                 border-radius:8px; background:#fff; }
+  .util { font-size:13px; color:var(--mut); }
+  .util b { color:var(--bleu); }
+  .vide { color:#b3261e; font-weight:600; font-size:13px; }
+  .rien { display:none; background:var(--carte); border:2px dashed var(--orange); border-radius:12px;
+          padding:18px; text-align:center; color:var(--ambre); font-weight:700; }
+  footer { margin-top:40px; border-top:2px solid var(--bord); padding-top:14px; font-size:13px; color:var(--mut); }
+  footer a { color:var(--bleu); }
+  @media print { .barre, .actions, .rien { display:none } .carte, .planche { break-inside:avoid } }
+</style></head><body>
 
-if (EXPERIENCES.length) {
-  h += `<div class="experiences">
-<h1 style="margin-top:10px">Cours interactifs complets</h1>
-<p class="meta">Pas des planches, des pages entières — voix, mise en scène, parfois un mini-jeu.
-À ouvrir en plein écran, dans un nouvel onglet, ou à récupérer pour un autre projet.</p>
-<p class="meta">Licence : contenu pédagogique CC BY-NC-SA 4.0, pas d'usage commercial sans accord
-— voir <a href="LICENCE.md">LICENCE.md</a>.</p>`;
-  for (const e of EXPERIENCES) {
-    h += `<div class="experience">
-  <div class="experience-info"><strong>${esc(e.titre)}</strong>${e.desc ? `<p>${esc(e.desc)}</p>` : ""}</div>
-  <div class="sous">
-    <a class="ouvrir" href="${esc(e.url)}" target="_blank" rel="noopener">Ouvrir ▸</a>
-    <button class="lien" data-url="${esc(e.url)}">🔗 Lien</button>
-  </div>
-  <div class="experience-fichiers">
-    <span class="util">Récupérer le code :</span>
-    ${e.fichiers.map((f) => `<a class="dl" href="${esc(f)}" download title="Télécharger ${esc(basename(f))}">⬇ ${esc(basename(f))}</a>`).join(" ")}
-${e.sousDossiers.length ? `    <span class="util"> + dossier ${e.sousDossiers.map(esc).join(", ")}/ (images — cloner le dépôt pour les récupérer)</span>` : ""}
-  </div>
-</div>`;
-  }
-  h += `</div>`;
-}
+<h1>Bibliothèque d'animations et de supports</h1>
+<p class="meta">Habilitation fluides frigorigènes · © 2026 F. Henninot — inerWeb Édu</p>
 
-h += `
-<div class="ou">
-<b>Où sont ces planches, et comment les partager.</b><br>
-Dans le dépôt : <code>packs/fluides/res/svg/</code> — un fichier <code>.svg</code> par planche,
-fait à la main, 3 à 10 Ko pièce.<br>
-En ligne, <b>chacune a sa propre adresse</b> et s'ouvre seule dans un navigateur, sur n'importe
-quel appareil : le bouton <b>🔗 Lien</b> sous chaque planche copie cette adresse, prête à coller
-dans un message. <b>⬇ Fichier</b> ouvre le SVG seul — c'est aussi la meilleure façon de voir une
-animation en grand, et l'enregistrer se fait d'un clic droit.<br>
-Pour partager <b>toute la galerie</b> d'un coup :
-<code id="url-galerie">…</code><button id="copier-galerie">🔗 Copier</button>
-<span id="dit-galerie" style="margin-left:8px;color:#1e6b40;font-weight:700"></span>
-</div>
-`;
-
-if (SYMBOLES) {
-  h += `
-<div class="ou">
-<b>La bibliothèque de symboles.</b><br>
-À côté des planches, <b>${SYMBOLES.nombre.toLocaleString("fr-FR")} symboles normalisés</b> —
-électrotechnique, froid et climatisation, hydraulique, pneumatique, logique. Un fichier par
-symbole, une adresse par symbole :
-<code>symboles/svg/moteur-triphase.svg</code>. Le catalogue est dans
-<code>symboles/index.json</code>, filtrable côté navigateur.<br>
-<span class="meta"><b>Ces symboles ne sont pas de nous, et leur licence n'est pas celle du
-pack.</b> Ils viennent de la collection d'éléments
-<a href="https://qelectrotech.org/" target="_blank" rel="noopener">QElectroTech</a>, publiée sous
-<a href="https://creativecommons.org/licenses/by/3.0/deed.fr" target="_blank" rel="noopener">Creative
-Commons Attribution 3.0</a>, convertis en SVG par F. Henninot. Les rediffuser oblige à reprendre
-cette attribution — et la licence amont interdit par ailleurs de s'en servir comme données
-d'entraînement pour un modèle. Conditions complètes :
-<a href="symboles/LICENCE.md">symboles/LICENCE.md</a>.</span>
-</div>
-`;
-}
-
-if (SCHEMAS?.schemas?.length) {
-  const projets = [...new Set(SCHEMAS.schemas.map((s) => s.projet))];
-  h += `
-<div class="ou">
-<b>Les schémas de cours.</b><br>
-<b>${SCHEMAS.schemas.length} folios</b> dessinés sous QElectroTech pour les TP et les TD —
-${esc(projets.join(" · "))}. Le circuit fluidique, le pump-down, l'armoire CAP IFCA, le
-raccordement du régulateur. Ils sont dans <code>schemas/svg/</code>, une adresse par folio,
-et leurs fichiers source <code>.qet</code> sont à côté dans <code>schemas/qet/</code> :
-un collègue peut les rouvrir et les modifier, pas seulement les regarder.<br>
-<span class="meta">Le tracé des conducteurs est <b>recalculé</b> par l'outil de conversion —
-QElectroTech ne le stocke pas dans le fichier. Le résultat tient, mais une liaison peut
-passer ailleurs que dans le logiciel : à vérifier avant d'imprimer un sujet d'évaluation.
-Détail et régénération : <a href="schemas/README.md">schemas/README.md</a>.</span>
-</div>
-`;
-}
-
-h += `
-<div class="ou" id="zone-son" style="display:none">
-<b>Habillage sonore.</b> Certaines planches ont une bande-son calée sur leur animation — un pas
-dans l'escalier, un clic de vanne, une alerte. <b>Le son est coupé par défaut</b> et rien ne se
-charge tant qu'il ne sert pas : votre choix est mémorisé sur cet appareil.
-<span id="ici-son"></span><br>
-<span class="meta">Ces sons <b>habillent</b> l'animation. Ils n'enseignent aucun diagnostic à
-l'oreille : une fuite réelle ne fait pas ce bruit-là.</span>
+<div class="intro">
+  <p><b>Deux usages.</b> <b>Se servir</b> : chercher une ressource et la projeter telle quelle en cours.
+  <b>Réemployer</b> : récupérer son code pour l'intégrer dans un autre programme — chaque fiche donne ses
+  fichiers, sa famille et son état de maturité.</p>
+  <p class="licence-ligne">Rien n'est libre de droits : contenus sous <b>CC BY-NC-SA 4.0</b>, code sous licence
+  du dépôt — <a href="LICENCE.md">lire la licence</a>. Réemploi autorisé en citant l'auteur, sans usage
+  commercial, et repartagé aux mêmes conditions.</p>
 </div>
 
 <div class="barre">
-  <button class="f on" data-f="*">toutes</button>
-  <button class="f" data-f="anime">animées</button>
-  <button class="f" data-f="narratif">récits</button>
-  <button class="f" data-f="cyclique">boucles</button>
-  <button class="f" data-f="fixe">fixes</button>
-  <button class="f" data-f="orpheline">non utilisées</button>
-  <button class="tout" id="tout">↻ Rejouer toutes les animations visibles</button>
-  <span class="cpt" id="cpt"></span>
+  <div class="ligne">
+    <input id="q" type="search" placeholder="Chercher : manifold, ozone, azote, détendeur, brasage…" autocomplete="off">
+    <span class="cpt" id="cpt"></span>
+  </div>
+  <div class="ligne" style="margin-top:9px">
+    <button class="chip on" data-fam="*">Tout</button>
+    ${FAMILLES.map((f) => `<button class="chip" data-fam="${esc(f)}">${esc(f)}</button>`).join("\n    ")}
+    <button class="chip" data-fam="Planches">Planches SVG</button>
+    <button class="chip" id="chip-proto" data-etat="prototype">Prototypes seuls</button>
+  </div>
 </div>
+
+<div class="rien" id="rien">Aucune ressource ne correspond à cette recherche.</div>
+
+<h2 class="section" id="t-ressources">Ressources complètes — pages autonomes</h2>
+<p class="meta">${RESSOURCES.length} ressources · ouvrables et projetables telles quelles.</p>
+<div class="grille" id="ressources">
+`;
+
+for (const r of RESSOURCES) {
+  const cle = cherchable(r.titre, r.desc, r.fam, r.url);
+  h += `  <div class="carte" data-fam="${esc(r.fam)}" data-etat="${r.prototype ? "prototype" : "service"}" data-q="${cle}">
+    <h3>${esc(r.titre)}</h3>
+    <div class="etiquettes">
+      <span class="et fam">${esc(r.fam)}</span>
+      <span class="et ${r.prototype ? "proto" : "service"}">${r.prototype ? "prototype" : "en service"}</span>
+    </div>
+    ${r.desc ? `<p>${esc(r.desc)}</p>` : ""}
+    <div class="actions">
+      <a class="ouvrir" href="${esc(r.url)}" target="_blank" rel="noopener">Ouvrir ▸</a>
+      <button class="lien" data-url="${esc(r.url)}">🔗 Copier le lien</button>
+    </div>
+    <details class="reemp"><summary class="reemploi">⚙ Réemployer — fichiers et licence</summary>
+      <div class="fichiers">
+        ${r.fichiers.map((f) => `<a href="${esc(f)}" download>⬇ ${esc(f.split("/").pop())}</a>`).join("\n        ")}
+        ${r.sousDossiers.length ? `<div class="util">+ sous-dossiers : ${r.sousDossiers.map(esc).join(", ")} — cloner le dépôt pour les récupérer</div>` : ""}
+        <div class="licence-ligne">© 2026 F. Henninot — inerWeb Édu · CC BY-NC-SA 4.0 : citer l'auteur, pas d'usage commercial, partage à l'identique.</div>
+      </div>
+    </details>
+  </div>
+`;
+}
+
+h += `</div>
+
+<h2 class="section" id="t-planches">Planches SVG — ${N.total} dessins, ${N.animees} animés</h2>
+<p class="meta">${N.narratives} récits qui se déroulent une fois · ${N.cycliques} en boucle · ${N.fixes} fixes ·
+${N.animations} animations au total${N.orphelines ? ` · <span class="vide">${N.orphelines} non utilisée(s) par une fiche</span>` : ""}.
+Les images se chargent à mesure du défilement ; <b>↻ Rejouer</b> relance une animation depuis le début.</p>
+<div id="planches">
 `;
 
 for (const p of PLANCHES) {
-  const classes = [
-    p.anime ? "anime" : "fixe",
-    p.cyclique ? "cyclique" : p.anime ? "narratif" : "",
-    p.fiches.length ? "" : "orpheline",
-  ].filter(Boolean).join(" ");
-  h += `<div class="planche" data-c="${classes}">`;
-  h += `<h2>${esc(p.titre || p.fichier.replace(/\.svg$/, ""))}</h2>`;
-  h += `<div class="f">${esc(p.fichier)} · ${p.ko} Ko</div>`;
-  h += `<div class="tags">`;
-  if (p.anime && !p.cyclique)
-    h += `<span class="tag anim">récit${p.duree ? ` — ${p.duree} s` : ""}, une seule fois</span>`;
-  else if (p.cyclique) h += `<span class="tag cyc">boucle continue</span>`;
-  else h += `<span class="tag fixe">dessin fixe</span>`;
-  if (p.smil) h += `<span class="tag cyc">${p.smil} animations SMIL</span>`;
-  if (p.css) h += `<span class="tag cyc">${p.css} animations CSS</span>`;
-  if (!p.fiches.length) h += `<span class="tag orph">utilisée par aucune fiche</span>`;
-  h += `</div>`;
-  h += `<img src="packs/fluides/res/svg/${esc(p.fichier)}" alt="${esc(p.titre)}" loading="lazy">`;
-  h += `<div class="sous">`;
-  if (p.anime) h += `<button class="rejeu" data-svg="${esc(p.fichier)}">↻ Rejouer</button>`;
-  h += `<button class="lien" data-f="${esc(p.fichier)}">🔗 Lien</button>`;
-  h += `<a class="dl" href="packs/fluides/res/svg/${esc(p.fichier)}" target="_blank" rel="noopener">⬇ Fichier</a>`;
-  if (p.fiches.length) {
-    h += `<span class="util">Sur ${p.fiches.length > 1 ? "les fiches" : "la fiche"} ` +
-      p.fiches.map((f) => `<b>${esc(f.id)}</b> ${esc(f.titre)}`).join(" · ") + `</span>`;
-  } else {
-    h += `<span class="vide">Aucune fiche ne l'utilise — dessin en réserve, ou oubli d'intégration.</span>`;
-  }
-  h += `</div></div>`;
+  const cle = cherchable(p.titre, p.fichier, p.fiches.map((f) => f.titre).join(" "));
+  h += `  <div class="planche" data-fam="Planches" data-etat="service" data-q="${cle}">
+    <h3>${esc(p.titre || p.fichier)}</h3>
+    <div class="f">${esc(p.fichier)} · ${p.ko} ko</div>
+    <div class="etiquettes" style="margin-top:6px">
+      ${p.anime ? `<span class="et anim">${p.cyclique ? "en boucle" : "récit " + p.duree + " s"}</span>` : `<span class="et fam">fixe</span>`}
+      ${p.fiches.length ? "" : `<span class="et proto">non utilisée</span>`}
+    </div>
+    <img loading="lazy" src="packs/fluides/res/svg/${esc(p.fichier)}" alt="${esc(p.titre || p.fichier)}">
+    <div class="actions">
+      ${p.anime ? `<button class="lien rejeu">↻ Rejouer</button>` : ""}
+      <a class="ouvrir" href="packs/fluides/res/svg/${esc(p.fichier)}" target="_blank" rel="noopener">Ouvrir ▸</a>
+      <a class="lien" href="packs/fluides/res/svg/${esc(p.fichier)}" download style="text-decoration:none">⬇ Télécharger</a>
+    </div>
+    <div class="util">${p.fiches.length
+      ? "Utilisée par : " + p.fiches.map((f) => `<b>${esc(f.titre)}</b>`).join(" · ")
+      : `<span class="vide">Aucune fiche ne l'utilise</span>`}</div>
+  </div>
+`;
 }
 
-h += `
-<p class="meta" style="margin-top:30px">Les planches sont des SVG faits à la main, dans la charte
-inerWeb Édu. Aucune n'est produite par un modèle d'image : un rendu génératif inverse la croix du
-frigoriste et invente des organes qui n'existent pas.</p>
-<script src="packs/fluides/sons.js?v=${VERSION}"></script>
-<script src="moteur/sons.js?v=${VERSION}"></script>
+h += `</div>
+
+<footer>
+  <p><b>Comment cette page se tient à jour :</b> elle est <b>relevée</b>, jamais saisie à la main
+  (<code>node build/galerie.mjs</code>). Toute ressource déposée dans <code>packs/fluides/res/</code>
+  avec une page HTML y apparaît d'elle-même ; elle annonce sa famille et son état par
+  <code>&lt;meta name="famille"&gt;</code> et <code>&lt;meta name="etat"&gt;</code> dans sa propre page.</p>
+  <p>Les planches vivent dans <code>packs/fluides/res/svg/</code> — un fichier <code>.svg</code> par planche.
+  ${SYMBOLES ? `Bibliothèque de symboles : ${esc(String(SYMBOLES.total || SYMBOLES.compte || ""))} symboles.` : ""}</p>
+  <p>© 2026 Franck Henninot — inerWeb Édu · <a href="LICENCE.md">Licence et propriété intellectuelle</a></p>
+</footer>
+
 <script>
 (function () {
-  var n = 0, f = "*";
-  var blocs = [].slice.call(document.querySelectorAll(".planche"));
+  var q = document.getElementById("q");
   var cpt = document.getElementById("cpt");
-  function relancer(im) {
-    var base = im.getAttribute("src").split("?")[0];
-    im.setAttribute("src", base + "?r=" + ++n);
+  var rien = document.getElementById("rien");
+  var blocs = Array.prototype.slice.call(document.querySelectorAll("[data-q]"));
+  var famChoisie = "*", protoSeuls = false;
+
+  function sansAccent(s) {
+    return s.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
   }
   function filtrer() {
-    var v = 0;
+    var mots = sansAccent(q.value.trim()).split(/\\s+/).filter(Boolean);
+    var vus = 0;
     blocs.forEach(function (b) {
-      var ok = f === "*" || (" " + b.dataset.c + " ").indexOf(" " + f + " ") >= 0;
-      b.classList.toggle("masque", !ok);
-      if (ok) v++;
+      var texte = b.getAttribute("data-q");
+      var okMots = mots.every(function (m) { return texte.indexOf(m) >= 0; });
+      var okFam = famChoisie === "*" || b.getAttribute("data-fam") === famChoisie;
+      var okEtat = !protoSeuls || b.getAttribute("data-etat") === "prototype";
+      var montre = okMots && okFam && okEtat;
+      b.classList.toggle("masque", !montre);
+      if (montre) vus++;
     });
-    cpt.textContent = v + " planche(s) affichée(s)";
+    cpt.textContent = vus + " ressource" + (vus > 1 ? "s" : "") + " affichée" + (vus > 1 ? "s" : "");
+    rien.style.display = vus ? "none" : "block";
+    document.querySelectorAll("h2.section, h2.section + p.meta").forEach(function (t) {
+      var id = t.id || (t.previousElementSibling && t.previousElementSibling.id);
+      var zone = id === "t-planches" ? "planches" : "ressources";
+      var reste = document.querySelectorAll("#" + zone + " > :not(.masque)").length;
+      t.style.display = reste ? "" : "none";
+    });
   }
-  [].slice.call(document.querySelectorAll(".barre button.f")).forEach(function (b) {
-    b.addEventListener("click", function () {
-      [].slice.call(document.querySelectorAll(".barre button.f")).forEach(function (x) { x.classList.remove("on"); });
-      b.classList.add("on"); f = b.dataset.f; filtrer();
+  q.addEventListener("input", filtrer);
+
+  document.querySelectorAll(".chip[data-fam]").forEach(function (c) {
+    c.addEventListener("click", function () {
+      famChoisie = c.getAttribute("data-fam");
+      document.querySelectorAll(".chip[data-fam]").forEach(function (o) { o.classList.toggle("on", o === c); });
+      filtrer();
     });
   });
-  [].slice.call(document.querySelectorAll("button.rejeu")).forEach(function (b) {
-    b.addEventListener("click", function () {
-      relancer(b.closest(".planche").querySelector("img"));
-      // la bande-son repart du même instant que l'image
-      if (window.PiloteSons) window.PiloteSons.jouerPlanche(b.dataset.svg);
-    });
+  var chipProto = document.getElementById("chip-proto");
+  chipProto.addEventListener("click", function () {
+    protoSeuls = !protoSeuls;
+    chipProto.classList.toggle("on", protoSeuls);
+    filtrer();
   });
 
-  /* Copier une adresse. navigator.clipboard n'existe qu'en HTTPS (ou sur
-     localhost) : ouverte depuis une clé USB en file://, la page doit rester
-     utile — on retombe alors sur une sélection du texte, que l'utilisateur
-     copie lui-même. Une fonction qui échoue en silence serait pire que rien. */
-  function copier(txt, dire) {
-    function ok() { dire("copié ✓"); setTimeout(function () { dire(""); }, 2200); }
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(txt).then(ok, function () { dire(txt); });
-    } else {
-      var z = document.createElement("textarea");
-      z.value = txt; z.style.cssText = "position:fixed;opacity:0";
-      document.body.appendChild(z); z.select();
-      try { document.execCommand("copy"); ok(); } catch (e) { dire(txt); }
-      z.remove();
+  /* Rejouer une planche : recharger la source suffit à relancer SMIL et CSS. */
+  document.addEventListener("click", function (e) {
+    var b = e.target;
+    if (b.classList && b.classList.contains("rejeu")) {
+      var im = b.closest(".planche").querySelector("img");
+      var src = im.getAttribute("src");
+      im.setAttribute("src", "");
+      setTimeout(function () { im.setAttribute("src", src); }, 30);
     }
-  }
-  [].slice.call(document.querySelectorAll("button.lien")).forEach(function (b) {
-    b.addEventListener("click", function () {
-      var base = location.href.replace(/galerie\\.html.*$/, "");
-      var u = b.dataset.url ? (base + b.dataset.url) : (base + "packs/fluides/res/svg/" + b.dataset.f);
-      var t = b.textContent;
-      copier(u, function (m) { b.textContent = m || t; });
-    });
-  });
-  /* Le bloc du son n'apparaît que si l'habillage est réellement disponible :
-     une commande qui ne commande rien vaut moins que pas de commande. */
-  if (window.PiloteSons && window.PiloteSons.disponible()) {
-    document.getElementById("zone-son").style.display = "";
-    document.getElementById("ici-son").innerHTML = " " + window.PiloteSons.html("");
-    window.PiloteSons.brancher();
-    // marquer les planches qui ont une bande-son
-    [].slice.call(document.querySelectorAll("button.rejeu")).forEach(function (b) {
-      var seq = window.PILOTE_SONS.planches[b.dataset.svg];
-      if (seq && seq.length) b.textContent = "↻ Rejouer 🔊";
-    });
-  }
-  var champ = document.getElementById("url-galerie");
-  if (champ) {
-    champ.textContent = location.href.split("?")[0].split("#")[0];
-    document.getElementById("copier-galerie").addEventListener("click", function () {
-      copier(champ.textContent, function (m) { document.getElementById("dit-galerie").textContent = m; });
-    });
-  }
-  document.getElementById("tout").addEventListener("click", function () {
-    blocs.forEach(function (b) {
-      if (b.classList.contains("masque")) return;
-      var im = b.querySelector("img");
-      if (b.querySelector("button.rejeu") && im) relancer(im);
-    });
+    if (b.classList && b.classList.contains("lien") && b.hasAttribute("data-url")) {
+      var url = new URL(b.getAttribute("data-url"), location.href).href;
+      var dire = function (m) { var t = b.textContent; b.textContent = m; setTimeout(function () { b.textContent = t; }, 1400); };
+      if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { dire("✓ copié"); }, function () { dire(url); });
+      else dire(url);
+    }
   });
   filtrer();
 })();
 </script>
 <script src="moteur/lisibilite.js?v=${VERSION}"></script>
 <script src="moteur/marque.js?v=${VERSION}"></script>
-<script src="moteur/marque.js?v=${VERSION}"></script>
 </body></html>`;
 
 writeFileSync(resolve(RACINE, "galerie.html"), h, "utf8");
-console.log("  galerie : " + N.total + " planches · " + N.animees + " animées (" +
-  N.narratives + " récits, " + N.cycliques + " boucles) · " + N.animations + " animations" +
-  (N.orphelines ? " · ⚠ " + N.orphelines + " non utilisée(s)" : "") +
-  " · " + EXPERIENCES.length + " expérience(s) interactive(s) complète(s)");
+console.log("  galerie : " + RESSOURCES.length + " ressources (" +
+  RESSOURCES.filter((r) => r.prototype).length + " prototype(s)) · " +
+  N.total + " planches · " + N.animees + " animées · " + N.animations + " animations" +
+  (N.orphelines ? " · ⚠ " + N.orphelines + " non utilisée(s)" : ""));
 console.log("  → galerie.html");
