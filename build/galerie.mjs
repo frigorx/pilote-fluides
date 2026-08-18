@@ -152,11 +152,36 @@ function lireExperience(dossier) {
      Sans déclaration : famille « Cours interactifs », état « en service ». */
   const famille = (html.match(/<meta name="famille" content="([^"]*)"/) || [])[1] || "";
   const etat = (html.match(/<meta name="etat" content="([^"]*)"/) || [])[1] || "";
+
+  /* CE QUE LA RESSOURCE SAIT FAIRE — détecté dans ses propres fichiers,
+     jamais déclaré à la main (demande Franck 18/08 : « est-ce qu'il y a un
+     vocal ? des questions ? — qu'on puisse réexploiter sans tout ouvrir »).
+     Ce sont ces marqueurs qui font d'une liste de liens une bibliothèque. */
+  const tousFichiers = racine.join(" ");
+  const codeJoint = racine
+    .filter((f) => /\.(html|js|json)$/.test(f))
+    .map((f) => { try { return readFileSync(resolve(RES, dossier, f), "utf8"); } catch { return ""; } })
+    .join("\n");
+  const capacites = [];
+  const aMp3 = /\.mp3/i.test(tousFichiers) || /\.mp3/i.test(codeJoint) || sousDossiers.includes("audio");
+  const aSynthese = /speechSynthesis|SpeechSynthesisUtterance/.test(codeJoint);
+  if (aMp3) capacites.push("voix enregistrée");
+  else if (aSynthese) capacites.push("voix de synthèse");
+  if (/\bQCM\b|bonneReponse|bonne_reponse|data-bonne|questions\s*[:=]\s*\[|choix\s*[:=]\s*\[/.test(codeJoint))
+    capacites.push("questions");
+  if (/<animate|animation\s*:|@keyframes|requestAnimationFrame/.test(codeJoint)) capacites.push("animation");
+  if (/@media\s+print/.test(codeJoint)) capacites.push("imprimable");
+  /* Hors ligne : aucune ressource distante appelée par la page. */
+  const distant = /https?:\/\/(?!www\.w3\.org)/.test(codeJoint);
+  if (!distant) capacites.push("hors ligne");
+
   return {
     titre,
     desc,
     famille,
     etat,
+    capacites,
+    distant,
     url: "packs/fluides/res/" + dossier + "/" + fichier,
     // Pour « récupérer le code » : chaque fichier à la racine du dossier
     // pris individuellement, en téléchargement direct — pas d'archive .zip
@@ -219,10 +244,22 @@ function familleDe(e) {
   if (u.includes("capsule")) return "Capsules";
   return "Cours interactifs";
 }
+/* La vignette d'une ressource, si build/vignettes.mjs l'a capturée. */
+function vignetteDe(url) {
+  const dossier = url.split("/").slice(-2, -1)[0];
+  const chemin = "packs/fluides/res/_vignettes/" + dossier + ".png";
+  try {
+    readFileSync(resolve(RACINE, chemin));
+    return chemin;
+  } catch {
+    return null;
+  }
+}
 const RESSOURCES = EXPERIENCES.map((e) => ({
   ...e,
   fam: familleDe(e),
   prototype: /prototype|brouillon/i.test(e.etat || ""),
+  vignette: vignetteDe(e.url),
 }));
 const FAMILLES = [...new Set(RESSOURCES.map((r) => r.fam))].sort();
 
@@ -264,6 +301,18 @@ let h = `<!doctype html>
            display:flex; flex-direction:column; gap:7px; }
   .carte.masque, .planche.masque { display:none; }
   .carte h3 { margin:0; font-size:16.5px; color:var(--bleu); line-height:1.3; }
+  /* L'aperçu : on voit de quoi ça parle sans rien ouvrir. */
+  .apercu { display:block; margin:-4px -6px 4px; border-radius:10px; overflow:hidden;
+            border:1px solid var(--bord); background:#fff; }
+  .apercu img { display:block; width:100%; height:150px; object-fit:cover; object-position:top center; }
+  .vide-apercu { height:150px; display:flex; align-items:center; justify-content:center;
+                 color:var(--mut); font-size:13px; background:#f2f5f8; }
+  /* La fiche technique : voix, questions, animation — lue dans les fichiers. */
+  .capacites { display:flex; flex-wrap:wrap; gap:4px; }
+  .cap { font-size:11.5px; color:var(--texte); background:#eef2f6; border:1px solid var(--bord);
+         border-radius:6px; padding:1px 7px; }
+  .cap.muet { color:var(--mut); font-style:italic; }
+  .cap.reseau { color:var(--ambre); background:#fdf6e3; border-color:#c9a227; font-weight:700; }
   .carte p { margin:0; font-size:13.5px; }
   .etiquettes { display:flex; flex-wrap:wrap; gap:5px; }
   .et { font-size:11.5px; font-weight:700; padding:2px 9px; border-radius:999px; border:1.5px solid; }
@@ -333,14 +382,21 @@ let h = `<!doctype html>
 `;
 
 for (const r of RESSOURCES) {
-  const cle = cherchable(r.titre, r.desc, r.fam, r.url);
+  const cle = cherchable(r.titre, r.desc, r.fam, r.url, r.capacites.join(" "));
   h += `  <div class="carte" data-fam="${esc(r.fam)}" data-etat="${r.prototype ? "prototype" : "service"}" data-q="${cle}">
+    ${r.vignette
+      ? `<a href="${esc(r.url)}" target="_blank" rel="noopener" class="apercu"><img loading="lazy" src="${esc(r.vignette)}" alt="Aperçu — ${esc(r.titre)}"></a>`
+      : `<div class="apercu vide-apercu">aperçu à venir</div>`}
     <h3>${esc(r.titre)}</h3>
     <div class="etiquettes">
       <span class="et fam">${esc(r.fam)}</span>
       <span class="et ${r.prototype ? "proto" : "service"}">${r.prototype ? "prototype" : "en service"}</span>
     </div>
     ${r.desc ? `<p>${esc(r.desc)}</p>` : ""}
+    <div class="capacites">${r.capacites.length
+      ? r.capacites.map((c) => `<span class="cap">${esc(c)}</span>`).join("")
+      : `<span class="cap muet">page simple</span>`}${
+      r.distant ? `<span class="cap reseau">réseau requis</span>` : ""}</div>
     <div class="actions">
       <a class="ouvrir" href="${esc(r.url)}" target="_blank" rel="noopener">Ouvrir ▸</a>
       <button class="lien" data-url="${esc(r.url)}">🔗 Copier le lien</button>
