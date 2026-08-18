@@ -86,6 +86,32 @@ Référencé depuis le tableau de bord : `C:\git\tableau-de-bord` → carte « p
 
 ---
 
+## 2 bis. État au 18 août 2026 — marque, droits, famille KV, examens
+
+Chantier mené sur le dépôt canonique. Six commits poussés, de `a3dd2e6` à `f93b695`.
+
+**Marque.** Le logo figé de la charte (§ 3.4) remplace les 44 pastilles maison (`iW`, `F`,
+`HF`) : cartouche **Édu** sur 30 pages, **Fluide** sur 13, **Pilote** sur 12. L'orange du logo
+est partout `#e8914a` — `module-compresseur` utilisait encore l'orange du contenu. `marque.js`
+accepte `data-cartouche`, `data-licence`, `data-prototype`, et se synchronise sur ses 8 copies
+(les modules autonomes en embarquent chacun une, pour fonctionner hors ligne).
+
+**Droits.** Passage de CC BY-NC-**SA** à CC BY-NC-**ND** 4.0 — décision F. Henninot du 18/08 :
+NC réserve le marché des centres de formation, ND interdit qu'on reprenne les schémas sous un
+autre nom. `LICENCE.md` réécrit (sections illustrations, symboles QElectroTech, licence
+commerciale). 119 illustrations originales portent un bloc `<metadata>` RDF/Dublin Core ; 18
+symboles dérivés de QElectroTech portent le crédit CC BY 3.0 et l'identifiant de l'élément
+d'origine, trouvés par comparaison de signature structurelle sur les 116 symboles embarqués.
+
+**Famille KV.** Le module du seul KVL cède la place à la refonte du 08/08 couvrant KVP + KVL +
+KVR (8 écrans, vue 3D). Fiche `g9b` rebranchée, couverture `1.05 · 9.02 · 9.05 + appui 9.09`.
+L'ancienne adresse sert une **redirection** — des QR codes ont circulé. Trois questions ajoutées
+(`pk-g9b-5` KVL, `pk-g9b-6` KVP, `pk-g9b-7` KVR), niveau 1, même moule, banque à 269 questions.
+
+**Examens refondus.** Tirage à budget de difficulté constant (niveau 1 = 1 pt, niveau 2 = 2 pts),
+curseur à cinq crans réglable par `?difficulte=N`, et séries alternantes A/B sur les quatre
+examens blancs. Détail et mesures dans `usine-contenu/00-charte/MARQUE-ET-DROITS.md` § 8.
+
 ## 2. État au 6 août 2026
 
 ### 🔊 POINT D'ÉTAPE — refonte des voix du 6 août
@@ -1218,6 +1244,37 @@ une page web est un écart gratuit — d'autant que de vraies capsules vidéo ex
 ---
 
 ## 5. Pièges — lus dans le sang, à ne pas réapprendre
+
+**Pièges du 18/08 — marque, symboles, examens.**
+
+- **8 copies de `marque.js`.** Les modules autonomes en embarquent chacun une pour tourner hors
+  ligne. Modifier `moteur/marque.js` seul ne suffit pas : il faut recopier sur les 7 autres ET
+  bousculer leur `?v=` en dur dans les pages, sinon le navigateur sert l'ancienne depuis son
+  cache. Symptôme : le fichier servi est bon, la page se comporte comme avant.
+- **Le bas de l'écran est pris.** Sur les modules à barre de pilotage, le filigrane recouvrait
+  le bouton « Retour ». Le remonter le faisait tomber sur la colonne des étapes. Puisque ces
+  pages portent le logo en en-tête, la marque s'efface de l'écran et ne reparaît qu'à
+  l'impression — mode `marque-papier`.
+- **Les générateurs écrasent tout.** `galerie.mjs`, `matrice.mjs` et `parcours.mjs` fabriquent
+  `galerie.html`, `matrice.html` et `planning.html`. Corriger la sortie sans corriger le
+  générateur, c'est perdre le travail au prochain build. `matrice.mjs` posait d'ailleurs deux
+  fois la balise de marque.
+- **Renommer une ressource casse des liens invisibles.** Passer de `regulateur-kvl-pedagogique`
+  à `regulateurs-kv-pedagogiques` a cassé deux liens dans le support de projection M4 de
+  `habilitation-fluide`, plus le catalogue de `inerweb-habilitation`. Des QR codes ont circulé :
+  toute ressource renommée laisse désormais une **page de redirection** derrière elle, et les
+  pages `noindex` sont ignorées de la galerie comme du catalogue.
+- **Comparer des symboles par ensemble de coordonnées ne vaut rien.** Sur des dessins faits de
+  petits entiers ronds, tout ressemble à tout : la première mesure donnait `bouteille_liquide`
+  identique à une source électrique et `regulateur_pression_pc` à un symbole de flipper. Il faut
+  comparer la **suite ordonnée des primitives** (type + coordonnées), pas un sac de nombres.
+- **Un garde-fou d'accentuation se trompe vite.** N'y mettre que des mots dont la forme correcte
+  porte un accent : « aspiration » et « condensation » n'en portent pas, « se monte-t-il » est
+  une forme verbale et non un « monté » sans accent. Trois faux refus avant de le calibrer.
+- **Le curseur de difficulté se lit au CHARGEMENT**, pas au tirage : le formateur pose
+  `?difficulte=N` sur sa console, mais l'examen se lance depuis la page stagiaire, où le
+  paramètre a disparu. D'où l'appel à `difficulteReglee()` au démarrage du moteur.
+
 
 **Moteur** — 7 extensions par rapport au r408 d'origine, toutes rétrocompatibles :
 `examen.niveau` (filtrage par difficulté) · bilan listant les fiches ratées · historique
