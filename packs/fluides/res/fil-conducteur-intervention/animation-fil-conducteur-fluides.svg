@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="titre description">
+  <title id="titre">Manipuler un fluide : le fil conducteur</title>
+  <desc id="description">Six étapes reliées par un trait continu : comprendre les enjeux, être autorisé, préparer l'intervention, intervenir sans rejet, contrôler puis tracer. L'état final reste lisible sans animation.</desc>
+
+  <defs>
+    <filter id="ombre" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#1B3A63" flood-opacity="0.10"/>
+    </filter>
+    <marker id="fleche" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1B3A63"/>
+    </marker>
+    <style>
+      :root {
+        --bleu: #1B3A63;
+        --bleu-vif: #3D7FCA;
+        --orange: #FF6B35;
+        --orange-texte: #C9451A;
+        --creme: #F7F1E7;
+        --papier: #FFFDF8;
+        --texte: #10233C;
+        --secondaire: #637285;
+        --vert: #1E7E54;
+        --trait: #D7DFE8;
+      }
+
+      text { font-family: Calibri, "Segoe UI", Arial, sans-serif; fill: var(--texte); }
+      .titre { font-family: "Trebuchet MS", Calibri, Arial, sans-serif; font-size: 52px; font-weight: 700; fill: var(--bleu); }
+      .sous-titre { font-size: 24px; fill: var(--secondaire); }
+      .verbe { font-family: "Trebuchet MS", Calibri, Arial, sans-serif; font-size: 23px; font-weight: 700; fill: var(--bleu); letter-spacing: .5px; }
+      .detail { font-size: 19px; font-weight: 600; }
+      .mini { font-size: 16px; fill: var(--secondaire); }
+      .numero { font-family: "Trebuchet MS", Calibri, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #FFFDF8; text-anchor: middle; dominant-baseline: middle; }
+      .icone { fill: none; stroke: var(--bleu); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .accent { fill: none; stroke: var(--orange-texte); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .ok { fill: none; stroke: var(--vert); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .carte { fill: var(--papier); stroke: rgba(27,58,99,.16); stroke-width: 2; }
+      .etape { opacity: .32; }
+      .fil-base { fill: none; stroke: #BBC9D8; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+      .fil-actif { fill: none; stroke: var(--bleu); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1500; stroke-dashoffset: 1500; }
+      .note-finale { opacity: .20; }
+
+      @media print {
+        .etape, .note-finale { opacity: 1 !important; }
+        .fil-actif { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }
+        #curseur { display: none; }
+      }
+
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#F7F1E7"/>
+  <rect x="38" y="34" width="1524" height="832" rx="30" class="carte" filter="url(#ombre)"/>
+
+  <g aria-label="Titre de la planche">
+    <text x="800" y="105" class="titre" text-anchor="middle">Manipuler un fluide : le fil conducteur</text>
+    <text x="800" y="148" class="sous-titre" text-anchor="middle">Une intervention professionnelle protège les personnes, l'installation et l'environnement.</text>
+  </g>
+
+  <path id="fil" class="fil-base" d="M120 488 C180 420 215 420 270 488 S390 556 445 488 S565 420 620 488 S740 556 795 488 S915 420 970 488 S1090 556 1145 488 S1265 420 1320 488 S1435 556 1490 488" marker-end="url(#fleche)"/>
+  <path class="fil-actif" d="M120 488 C180 420 215 420 270 488 S390 556 445 488 S565 420 620 488 S740 556 795 488 S915 420 970 488 S1090 556 1145 488 S1265 420 1320 488 S1435 556 1490 488" marker-end="url(#fleche)">
+    <animate attributeName="stroke-dashoffset" from="1500" to="0" begin="0.5s" dur="30s" fill="freeze"/>
+  </path>
+
+  <g id="curseur" opacity="0" aria-hidden="true">
+    <circle r="12" fill="#FF6B35" stroke="#FFFDF8" stroke-width="5"/>
+    <set attributeName="opacity" to="1" begin="0.5s" fill="freeze"/>
+    <animateMotion dur="30s" begin="0.5s" fill="freeze" rotate="auto">
+      <mpath href="#fil"/>
+    </animateMotion>
+  </g>
+
+  <!-- 1. Comprendre -->
+  <g class="etape" aria-label="Étape 1 : comprendre les enjeux">
+    <animate attributeName="opacity" from=".32" to="1" begin="1s" dur=".8s" fill="freeze"/>
+    <rect x="85" y="205" width="220" height="220" rx="22" class="carte"/>
+    <circle cx="112" cy="225" r="24" fill="#1B3A63"/><text x="112" y="225" class="numero">1</text>
+    <circle cx="195" cy="288" r="48" class="icone"/>
+    <path d="M154 277 Q195 249 236 277 M161 309 Q195 329 229 309 M195 240 Q178 288 195 336 Q212 288 195 240" class="icone" stroke-width="3"/>
+    <path d="M236 327 Q260 300 279 315 Q277 343 246 350 Z" class="ok"/>
+    <text x="195" y="375" class="verbe" text-anchor="middle">COMPRENDRE</text>
+    <text x="195" y="402" class="mini" text-anchor="middle">Climat · santé · sécurité</text>
+  </g>
+
+  <!-- 2. Être autorisé -->
+  <g class="etape" aria-label="Étape 2 : distinguer aptitude de la personne et capacité de l'entreprise">
+    <animate attributeName="opacity" from=".32" to="1" begin="5.5s" dur=".8s" fill="freeze"/>
+    <rect x="335" y="545" width="220" height="220" rx="22" class="carte"/>
+    <circle cx="362" cy="565" r="24" fill="#1B3A63"/><text x="362" y="565" class="numero">2</text>
+    <circle cx="405" cy="625" r="22" class="icone"/>
+    <path d="M368 684 Q405 646 442 684 M383 672 L383 714 M427 672 L427 714" class="icone"/>
+    <rect x="450" y="603" width="74" height="95" rx="7" class="icone"/>
+    <path d="M463 625 H510 M463 645 H499 M463 665 H507" class="icone" stroke-width="3"/>
+    <path d="M474 686 l10 10 22-25" class="ok"/>
+    <text x="445" y="725" class="verbe" text-anchor="middle">ÊTRE AUTORISÉ</text>
+    <text x="445" y="751" class="mini" text-anchor="middle">Aptitude + capacité</text>
+  </g>
+
+  <!-- 3. Préparer -->
+  <g class="etape" aria-label="Étape 3 : identifier le fluide, la charge et les risques avant l'intervention">
+    <animate attributeName="opacity" from=".32" to="1" begin="10s" dur=".8s" fill="freeze"/>
+    <rect x="585" y="205" width="220" height="220" rx="22" class="carte"/>
+    <circle cx="612" cy="225" r="24" fill="#1B3A63"/><text x="612" y="225" class="numero">3</text>
+    <path d="M636 333 V262 Q636 244 654 244 H677 Q695 244 695 262 V333 Q695 353 675 353 H656 Q636 353 636 333 Z" class="icone"/>
+    <path d="M653 244 V230 H680 V244 M649 292 H682" class="icone" stroke-width="3"/>
+    <path d="M723 333 L757 272 L791 333 Z" class="accent"/>
+    <path d="M757 291 V313 M757 324 V325" class="accent"/>
+    <text x="695" y="375" class="verbe" text-anchor="middle">PRÉPARER</text>
+    <text x="695" y="402" class="mini" text-anchor="middle">Fluide · charge · risques · EPI</text>
+  </g>
+
+  <!-- 4. Intervenir -->
+  <g class="etape" aria-label="Étape 4 : récupérer le fluide, employer l'azote, tirer au vide puis charger">
+    <animate attributeName="opacity" from=".32" to="1" begin="15s" dur=".8s" fill="freeze"/>
+    <rect x="835" y="545" width="220" height="220" rx="22" class="carte"/>
+    <circle cx="862" cy="565" r="24" fill="#1B3A63"/><text x="862" y="565" class="numero">4</text>
+    <path d="M874 629 H915 V670 H874 Z M975 629 H1016 V670 H975 Z M915 649 H975" class="icone"/>
+    <path d="M945 610 V690 M932 622 L945 610 958 622 M932 678 L945 690 958 678" class="accent"/>
+    <path d="M888 618 C888 595 1002 595 1002 618" class="ok" stroke-dasharray="9 8"/>
+    <text x="945" y="715" class="verbe" text-anchor="middle">INTERVENIR</text>
+    <text x="945" y="741" class="mini" text-anchor="middle">Récupérer · azote · vide · charge</text>
+  </g>
+
+  <!-- 5. Contrôler -->
+  <g class="etape" aria-label="Étape 5 : contrôler l'étanchéité, les mesures et la remise en service">
+    <animate attributeName="opacity" from=".32" to="1" begin="21s" dur=".8s" fill="freeze"/>
+    <rect x="1085" y="205" width="220" height="220" rx="22" class="carte"/>
+    <circle cx="1112" cy="225" r="24" fill="#1B3A63"/><text x="1112" y="225" class="numero">5</text>
+    <circle cx="1164" cy="291" r="44" class="icone"/>
+    <path d="M1164 291 L1188 270 M1164 291 V259" class="accent"/>
+    <path d="M1197 334 Q1230 304 1263 334 Q1230 364 1197 334 Z" class="icone"/>
+    <circle cx="1230" cy="334" r="10" class="ok"/>
+    <text x="1195" y="375" class="verbe" text-anchor="middle">CONTRÔLER</text>
+    <text x="1195" y="402" class="mini" text-anchor="middle">Étanchéité · mesures · service</text>
+  </g>
+
+  <!-- 6. Tracer -->
+  <g class="etape" aria-label="Étape 6 : peser, renseigner les documents et orienter le fluide récupéré vers le traitement">
+    <animate attributeName="opacity" from=".32" to="1" begin="26s" dur=".8s" fill="freeze"/>
+    <rect x="1335" y="545" width="180" height="220" rx="22" class="carte"/>
+    <circle cx="1362" cy="565" r="24" fill="#1B3A63"/><text x="1362" y="565" class="numero">6</text>
+    <rect x="1372" y="604" width="82" height="105" rx="8" class="icone"/>
+    <path d="M1387 627 H1439 M1387 649 H1431 M1387 671 H1437" class="icone" stroke-width="3"/>
+    <path d="M1464 621 Q1500 648 1468 687 M1468 687 l3-18 M1468 687 l18-4" class="ok"/>
+    <text x="1425" y="726" class="verbe" text-anchor="middle">TRACER</text>
+    <text x="1425" y="751" class="mini" text-anchor="middle">Peser · prouver · traiter</text>
+  </g>
+
+  <g class="note-finale" aria-label="Règle finale : zéro rejet volontaire, sécurité, preuve">
+    <animate attributeName="opacity" from=".20" to="1" begin="30.5s" dur="1s" fill="freeze"/>
+    <rect x="275" y="798" width="1050" height="42" rx="21" fill="#FFFDF8" stroke="#1E7E54" stroke-width="3"/>
+    <text x="800" y="827" class="detail" text-anchor="middle" fill="#1E7E54">ZÉRO REJET VOLONTAIRE  ·  SÉCURITÉ  ·  PREUVE DE L'INTERVENTION</text>
+  </g>
+
+  <script type="application/ecmascript" id="pilote-vitesse"><![CDATA[
+  /* Reglage de vitesse. SMIL n'expose pas de playbackRate : on met la ligne
+     de temps en pause et on la pilote nous-memes, image par image, avec le
+     facteur passe dans l'URL (?vitesse=0.85). A vitesse 1, on ne touche a
+     rien et l'animation d'origine se joue telle quelle. */
+  (function () {
+    var svg = document.documentElement;
+    var v = parseFloat(new URLSearchParams(location.search).get("vitesse"));
+    if (!isFinite(v) || v <= 0 || v === 1) return;
+    var FIN = 32.5;            // derniere apparition a 30,5 s + 1 s de fondu
+    var origine = null;
+    svg.pauseAnimations();
+    function pas(t) {
+      if (origine === null) origine = t;
+      var instant = (t - origine) / 1000 * v;
+      svg.setCurrentTime(instant);
+      if (instant < FIN) requestAnimationFrame(pas);
+    }
+    requestAnimationFrame(pas);
+  })();
+  ]]></script>
+</svg>

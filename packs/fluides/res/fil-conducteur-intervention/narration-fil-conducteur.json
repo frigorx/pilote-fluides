@@ -1,0 +1,37 @@
+{
+  "titre": "Manipuler un fluide : le fil conducteur",
+  "dureeCibleSecondes": 32.2,
+  "voix": "fr_FR-siwis-medium",
+  "segments": [
+    {
+      "debut": 0.8,
+      "etape": "Comprendre",
+      "texte": "Comprendre : protéger le climat, la santé et la sécurité."
+    },
+    {
+      "debut": 5.3,
+      "etape": "Être autorisé",
+      "texte": "Être autorisé : aptitude pour la personne, capacité pour l'entreprise."
+    },
+    {
+      "debut": 9.8,
+      "etape": "Préparer",
+      "texte": "Préparer : identifier le fluide, la charge, les risques et les équipements de protection."
+    },
+    {
+      "debut": 14.8,
+      "etape": "Intervenir",
+      "texte": "Intervenir : récupérer, travailler à l'azote, tirer au vide, puis charger."
+    },
+    {
+      "debut": 20.8,
+      "etape": "Contrôler",
+      "texte": "Contrôler : étanchéité, mesures et remise en service."
+    },
+    {
+      "debut": 25.7,
+      "etape": "Tracer",
+      "texte": "Tracer : peser, renseigner les documents et traiter le fluide récupéré. Zéro rejet volontaire."
+    }
+  ]
+}
