@@ -139,12 +139,15 @@ const DOSSIERS_ASSETS = new Set(["svg", "outils", "photos", "bibliotheque", "vig
 
 /* Les médias vivent DANS le dossier du cours (assets/, images/, symboles/…), et la
    galerie n'en disait que le nom du sous-dossier, avec « cloner le dépôt pour les
-   récupérer ». Autant dire : irrécupérables. 1 619 fichiers étaient dans ce cas au
+   récupérer ». Autant dire : irrécupérables. 196 fichiers étaient dans ce cas au
    19/08/2026 — dont les 17 illustrations des pressostats, produites le jour même et
-   déjà introuvables. Ils sont désormais listés un par un, avec leur adresse.
-   PLAFOND : un cours porte parfois plus de mille fichiers (les 1 423 voix). Au-delà
-   de PLAFOND_MEDIAS on annonce le reste au lieu de gonfler la page — ne pas retirer
-   ce garde-fou sans mesurer ce que ça fait au poids de galerie.html. */
+   déjà introuvables. Ils sont désormais listés un par un, avec leur adresse : la
+   galerie passe de 353 à 549 liens de téléchargement.
+   ⚠️ Les 1 423 MP3 de `res/voix/` ne sont PAS concernés : ce dossier ne porte pas de
+   page à sa racine, ce n'est donc pas un cours et lireExperience l'écarte. Le
+   PLAFOND ci-dessous ne sert aujourd'hui à rien — il est là pour le jour où un cours
+   embarquera ses propres centaines de fichiers. Ne pas le retirer sans mesurer ce
+   que ça fait au poids de galerie.html. */
 const EXT_MEDIA = new Set([".png", ".jpg", ".jpeg", ".webp", ".svg", ".gif", ".mp3", ".mp4", ".pdf"]);
 const PLAFOND_MEDIAS = 60;
 
