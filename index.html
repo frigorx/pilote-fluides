@@ -10,7 +10,7 @@
 <title>inerWeb Édu — apprendre le froid, station par station</title>
 <meta name="description" content="Le plan de formation inerWeb Édu : tous les cours interactifs du froid sur une carte de métro — théorie, organes, gestes, fluides, examens blancs. Gratuit, sans compte.">
 <meta property="og:title" content="inerWeb Édu — apprendre le froid, station par station">
-<meta property="og:description" content="Le plan de formation du froid en carte de métro : 53 cours et outils gratuits, sans compte.">
+<meta property="og:description" content="Le plan de formation du froid en carte de métro : 60 cours et outils gratuits, sans compte.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://inerweb.fr/">
 <link rel="canonical" href="https://inerweb.fr/">
@@ -188,9 +188,13 @@
   .nouveautes ul { margin:0; padding-left:22px; }
   .nouveautes li { margin:7px 0; font-size:15px; }
   .nouveautes li .d { color:var(--mut); font-size:14.5px; }
-  .nouveautes .nv-neuf { display:inline-block; margin-right:6px; border:1px solid var(--orange);
-                         border-radius:999px; padding:1px 8px; font-size:12.5px; color:var(--orange);
-                         font-weight:bold; }
+  /* Étiquettes : la forme et le mot portent l'information, pas la seule
+     couleur — le journal reste lisible imprimé ou pour un daltonien. */
+  .nouveautes .nv-etiq { display:inline-block; margin-right:7px; border:1px solid var(--mut);
+                         border-radius:999px; padding:1px 9px; font-size:12.5px; color:var(--mut);
+                         font-weight:bold; white-space:nowrap; }
+  .nouveautes .nv-neuf { border:2px solid var(--orange); color:var(--orange); }
+  .nouveautes .nv-corr { border-style:dashed; }
   .vue-ligne .vl-corr { margin-top:6px; font-size:12.5px; color:#5a6b7d; background:#eef2f6;
                         border-radius:999px; display:inline-block; padding:2px 10px; }
   .vue-ligne .vl-go { margin-left:auto; align-self:center; color:var(--orange); font-weight:bold; }
@@ -298,8 +302,11 @@
 
     <div class="volet-bloc">
       <h3>📰 Actualités</h3>
-      <p><strong>19 août 2026 — le réseau ouvre.</strong> 53 cours et outils sur le plan, la formation habilitation complète dans l’application.<br>
-      🚧 <strong>Réseau en travaux</strong> : de nouvelles stations ouvrent régulièrement, et de nouvelles lignes — savoirs, gestes, électrotechnique, l’huile — viendront se greffer au plan.</p>
+      <p><strong>19 août 2026 — le réseau ouvre.</strong> 60 stations sur le plan, la formation habilitation complète dans l’application.<br>
+      🚧 <strong>Réseau en travaux</strong> : de nouvelles stations ouvrent régulièrement, et de nouvelles lignes — savoirs, gestes, électrotechnique, l’huile — viendront se greffer au plan.<br>
+      <!-- Le détail vit dans le journal, sur l'accueil : un seul endroit tenu à
+           jour, pas deux listes qui divergent au premier ajout. -->
+      <a href="#nouveautes" data-vers-journal><strong>📔 Tout ce qui a changé, par date ▸</strong></a></p>
     </div>
 
     <div class="volet-bloc ouvert">
@@ -404,21 +411,24 @@
        qu'on y aille d'un clic.
        =================================================================== -->
   <details class="nouveautes" id="nouveautes">
-    <summary>🆕 Nouveautés <span class="n">— dernière mise à jour : 19 août 2026</span></summary>
+    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 19 août 2026</span></summary>
     <div class="nv-corps">
 
       <h3>19 août 2026</h3>
       <ul>
-        <li><span class="nv-neuf">nouvelle station</span><a href="packs/fluides/res/regulateur-electronique-interactif/index.html">Le régulateur électronique</a>
+        <li><span class="nv-etiq nv-neuf">nouvelle station</span><a href="packs/fluides/res/regulateur-electronique-interactif/index.html">Le régulateur électronique</a>
           <span class="d">— ligne 🎛 CE QUI SE RÈGLE : la sonde résistive, consigne et différentiel, trois façades de programmation, le dégivrage en cinq temps, le câblage du bornier. 24 écrans.</span></li>
-        <li><span class="nv-neuf">nouvelle ligne</span><a href="#carte">⚡ ÉLECTROTECH</a>
+        <li><span class="nv-etiq nv-neuf">nouvelle ligne</span><a href="#carte">⚡ ÉLECTROTECH</a>
           <span class="d">— l’électricité entre au plan, avec « Sous tension » et le TD triphasé.</span></li>
-        <li><a href="https://frigorx.github.io/inerweb-fgaz/" target="_blank" rel="noopener">Mission F-GAZ ↗</a>
+        <li><span class="nv-etiq">ajout</span><a href="https://frigorx.github.io/inerweb-fgaz/" target="_blank" rel="noopener">Mission F-GAZ ↗</a>
           <span class="d">— rejoint la ceinture 🎯 S’ÉVALUER.</span></li>
-        <li><a href="#carte">Les vues de ligne</a>
-          <span class="d">— chaque cartouche ouvre le plan rapproché de sa ligne, avec les correspondances expliquées.</span></li>
-        <li>Le site <strong>s’installe sur téléphone</strong> et se consulte <strong>hors ligne</strong>.</li>
-        <li><strong>Ouverture du réseau</strong> <span class="d">— 60 stations sur le plan, la formation habilitation complète dans l’application.</span></li>
+        <li><span class="nv-etiq">amélioration</span><a href="#carte">Les vues de ligne</a>
+          <span class="d">— chaque cartouche ouvre le plan rapproché de sa ligne, correspondances expliquées.</span></li>
+        <li><span class="nv-etiq">amélioration</span>Le site <strong>s’installe sur téléphone</strong> et se consulte <strong>hors ligne</strong>.</li>
+        <li><span class="nv-etiq nv-corr">correction</span>Films narrés <span class="d">— quand le son est bloqué par le téléphone (iPhone surtout), la page le dit au lieu de rester muette.</span></li>
+        <li><span class="nv-etiq nv-corr">correction</span>Galerie <span class="d">— les filtres se manipulent au lecteur d’écran et au doigt.</span></li>
+        <li><span class="nv-etiq nv-corr">correction</span>Publication <span class="d">— les fichiers commençant par « . » ou « _ » n’étaient pas mis en ligne.</span></li>
+        <li><span class="nv-etiq">ouverture</span><strong>Le réseau ouvre</strong> <span class="d">— 60 stations sur le plan, la formation habilitation complète dans l’application.</span></li>
       </ul>
 
     </div>
@@ -1277,6 +1287,28 @@
   document.addEventListener("keydown", function (ev) {
     if (ev.key === "Escape" && !v.classList.contains("replie")) replier();
   });
+})();
+</script>
+
+<!-- Le journal s'ouvre pour de bon quand on suit un lien qui y mène : sinon on
+     atterrit sur un bloc replié, et on croit qu'il n'y a rien à voir. -->
+<script>
+(function () {
+  var journal = document.getElementById("nouveautes");
+  if (!journal) return;
+  function ouvrir() {
+    journal.open = true;
+    journal.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  document.querySelectorAll("[data-vers-journal]").forEach(function (lien) {
+    lien.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      var fermer = document.getElementById("volet-fermer");
+      if (fermer) fermer.click();      /* le volet couvrirait la lecture */
+      ouvrir();
+    });
+  });
+  if (location.hash === "#nouveautes") ouvrir();
 })();
 </script>
 
