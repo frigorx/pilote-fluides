@@ -51,6 +51,9 @@ const PAGES = [
   "index.html", "formateur.html", "projection.html", "portail.html", "dossier.html",
   "charte.html", "galerie.html", "matrice.html", "planning.html", "relecture.html",
   "pratique.html", "partage.html",
+  // 19/08/2026 — le site vitrine : l'accueil est devenu index.html, l'appli
+  // de formation a déménagé sur formation.html, et deux pages l'accompagnent.
+  "formation.html", "metier.html", "formateurs.html",
 ];
 
 function echapper(s) {

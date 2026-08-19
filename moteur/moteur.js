@@ -34,7 +34,15 @@
   var S = {
     modeId: forced || (new URLSearchParams(location.search).get("mode")) || "auto",
     verrouMode: !!forced,            // formateur.html verrouille le mode
-    carteId: PACK.pack.carte_initiale,
+    /* Lien profond ?carte=<id> — posé pour le plan du site (accueil.html,
+       19/08/2026) : chaque station de la ligne « S'évaluer » ouvre SA carte.
+       Les portillons d'accès ne bougent pas : ils se vérifient au rendu,
+       arriver par l'URL ne les contourne donc pas. Id inconnu → carte
+       initiale, comme avant. */
+    carteId: (function () {
+      var d = new URLSearchParams(location.search).get("carte");
+      return d && idxCartes[d] ? d : PACK.pack.carte_initiale;
+    })(),
     historique: [], criteres: {}, reponses: {},
     categorie: null,                 // catégorie d'aptitude visée (A1, A2, D, E)
     examen: null,                    // état d'un examen blanc en cours

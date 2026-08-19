@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <!-- La frise vivante : premier écran vu en entrant dans l'application —
+       le « pourquoi » avant même la sécurité (demande F. Henninot, 28/07).
+       Repère `pilote_frise_vue` en sessionStorage (pas localStorage depuis
+       le 28/07 soir, même jour) : la frise redevient la porte d'entrée à
+       CHAQUE nouvelle session de navigateur (nouvel onglet, redémarrage),
+       ce qui est le comportement voulu — F. Henninot, en la revoyant une
+       deuxième fois plus tard le même jour, ne la retrouvait plus du tout.
+       sessionStorage évite pour autant la boucle : une fois "Commencer la
+       formation" cliqué, revenir sur index.html DANS LE MÊME onglet ne
+       redemande pas la frise. Volontairement au tout début du <head>,
+       avant tout autre script ou feuille de style : on ne doit jamais
+       laisser apparaître l'accueil une fraction de seconde avant de
+       rediriger. `location.replace` (pas `href`) : pas d'entrée dans
+       l'historique, pour que le bouton Précédent depuis la frise ne
+       revienne pas sur un index.html à moitié chargé. formateur.html et
+       projection.html ne passent jamais par ce fichier — la console
+       formateur n'est pas concernée.
+       Exception (19/08) : un lien profond ?carte=… venu du plan du site
+       (accueil.html) va où il pointe — la frise ne le confisque pas. Le
+       repère de session n'est pas posé : la prochaine entrée par la porte
+       principale montrera la frise normalement. -->
+  <script>
+    try {
+      if (!sessionStorage.getItem('pilote_frise_vue')
+          && !new URLSearchParams(location.search).has('carte')) {
+        location.replace('packs/fluides/res/frise-vivante/frise-vivante.html');
+      }
+    } catch (e) { /* sessionStorage indisponible : on continue normalement */ }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>inerWeb Pilote — Habilitation fluides frigorigènes (démonstrateur)</title>
+  <meta name="description" content="Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote.">
+  <link rel="stylesheet" href="moteur/charte-edu.css?v=00b57f996b">
+  <link rel="stylesheet" href="moteur/impression.css?v=00b57f996b" media="print">
+</head>
+<body>
+  <div id="app"></div>
+  <!-- Côté ÉLÈVE : BUILD ÉLÈVE, sans la couche pilote.
+       Régénéré par `node build/build.mjs` après chaque modification du pack. -->
+  <script src="packs/fluides/pack.eleve.js?v=00b57f996b"></script>
+  <!-- Config optionnelle (scoring serveur, phase 2) -->
+  <script src="config.js?v=00b57f996b"></script>
+  <!-- Habillage sonore des planches animées : la table du pack, puis le
+       mécanisme. Coupé par défaut, aucun son chargé tant qu'on ne le joue
+       pas. Les deux fichiers sont facultatifs : sans eux, le moteur
+       fonctionne à l'identique, en silence. -->
+  <script src="packs/fluides/sons.js?v=00b57f996b"></script>
+  <script src="moteur/sons.js?v=00b57f996b"></script>
+  <!-- Lecture à voix haute d'une fiche, à la demande : aide FLE/DYS.
+       Facultatif, ne casse rien si absent. -->
+  <script src="moteur/voix-index.js?v=20260806-1"></script>
+  <script src="moteur/voix.js?v=20260806-1"></script>
+  <script src="moteur/lecture.js?v=00b57f996b"></script>
+  <!-- Moteur générique -->
+  <script src="moteur/moteur.js?v=00b57f996b"></script>
+<!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
+<script src="moteur/lisibilite.js?v=00b57f996b"></script>
+<script src="moteur/marque.js?v=00b57f996b" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>

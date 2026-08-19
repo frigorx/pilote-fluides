@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Espace formateurs — inerWeb Édu</title>
+<meta name="description" content="Projeter une ressource inerWeb en cours, réemployer le code, demander une adaptation. Licence CC BY-NC-ND 4.0.">
+<style>
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --orange-clair:#ffe2d6;
+          --txt:#1d2a38; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#ffffff; --ligne:#d6dee7;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange); }
+  .entete { background:var(--carte); border-bottom:1px solid var(--ligne); }
+  .entete .dedans { max-width:1080px; margin:0 auto; padding:12px 20px;
+                    display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+  .entete .marque { display:flex; align-items:center; text-decoration:none; }
+  .nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap;
+         font-family:var(--titre); font-size:16px; font-weight:bold; }
+  .nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px;
+           border-bottom:3px solid transparent; }
+  .nav a:hover { border-bottom-color:var(--ligne); color:var(--bleu); }
+  .nav a.ici { border-bottom-color:var(--orange); }
+  .page { max-width:920px; margin:0 auto; padding:0 20px 18px; }
+  h1 { margin:28px 4px 6px; font-family:var(--titre); font-size:30px; color:var(--bleu); }
+  .chapo { margin:0 4px 20px; color:var(--mut); max-width:38em; }
+  .chapo strong { color:var(--txt); }
+  .bloc { background:var(--carte); border:1px solid var(--ligne);
+          border-radius:var(--r); box-shadow:var(--ombre); }
+  .duo { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+  .usage { padding:22px 26px; }
+  .usage .emoji { font-size:30px; line-height:1; margin-bottom:6px; }
+  .usage h3 { margin:0 0 8px; font-family:var(--titre); font-size:19px; color:var(--bleu); }
+  .usage ul { margin:0; padding-left:20px; display:flex; flex-direction:column; gap:7px; font-size:15px; }
+  .bouton { display:inline-block; margin-top:14px; padding:9px 20px; background:var(--bleu);
+            color:#fff; font-weight:bold; font-size:15px; text-decoration:none;
+            border-radius:999px; white-space:nowrap; }
+  .bouton:hover { background:var(--bleu-clair); color:#fff; }
+  .bouton.creux { padding:8px 20px; background:var(--carte); color:var(--bleu);
+                  border:1.5px solid var(--bleu-clair); }
+  .bouton.creux:hover { background:#e7eff7; color:var(--bleu); }
+  .licence { margin-top:20px; border-left:4px solid var(--orange); background:var(--orange-clair);
+             border-radius:8px; padding:14px 18px; }
+  .licence .t { font-weight:bold; color:var(--bleu); margin-bottom:4px; }
+  .licence p { margin:0; font-size:15px; }
+  .surtitre { font-family:var(--titre); color:var(--bleu); font-weight:bold; font-size:14px;
+              letter-spacing:.6px; text-transform:uppercase; margin:30px 4px 12px; }
+  .charte { padding:22px 26px; }
+  .charte p { margin:0 0 10px; font-size:15.5px; }
+  .charte ul { margin:0; padding-left:20px; display:flex; flex-direction:column; gap:7px; font-size:15px; }
+  .contact { margin-top:30px; background:linear-gradient(180deg,#ffffff,#fff7f3);
+             border:1px solid var(--ligne); border-top:5px solid var(--orange); border-radius:var(--r);
+             padding:20px 24px; box-shadow:var(--ombre);
+             display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  .contact .emoji { font-size:38px; line-height:1; }
+  .contact .texte { flex:1; min-width:220px; }
+  .contact h3 { margin:0; font-family:var(--titre); font-size:19px; color:var(--bleu); }
+  .contact p { margin:3px 0 0; color:var(--mut); font-size:15px; }
+</style>
+</head>
+<body>
+
+<div class="entete">
+  <div class="dedans">
+    <a class="marque" href="index.html" aria-label="inerWeb Édu — accueil">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="galerie.html">Catalogue</a>
+      <a href="metier.html">Le métier</a>
+      <a class="ici" href="formateurs.html">Formateurs</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+
+  <h1>Espace formateurs</h1>
+  <p class="chapo">Deux usages : <strong>se servir</strong> — projeter une ressource telle quelle en cours — et <strong>réemployer</strong> — récupérer le code pour l’intégrer ailleurs.</p>
+
+  <div class="duo">
+    <div class="bloc usage">
+      <div class="emoji">📽️</div>
+      <h3>Projeter en cours</h3>
+      <ul>
+        <li>Chaque ressource s’ouvre <strong>telle quelle</strong>, sans compte ni installation.</li>
+        <li>Le badge <strong>hors ligne</strong> signale ce qui marche sans réseau.</li>
+        <li>Le badge <strong>imprimable</strong> signale un document élève intégré.</li>
+        <li>Voix de synthèse et débit réglable sur la plupart des cours.</li>
+      </ul>
+      <a class="bouton" href="galerie.html">Chercher une ressource ▸</a>
+    </div>
+    <div class="bloc usage">
+      <div class="emoji">⚙️</div>
+      <h3>Réemployer le code</h3>
+      <ul>
+        <li>Chaque fiche du catalogue liste <strong>ses fichiers</strong> (HTML, JS, CSS).</li>
+        <li>Les sous-dossiers (assets, images) se récupèrent en <strong>clonant le dépôt</strong>.</li>
+        <li>Tout est du web statique : un dossier, un navigateur, ça tourne.</li>
+      </ul>
+      <a class="bouton creux" href="https://github.com/frigorx/pilote-fluides" target="_blank" rel="noopener">Dépôt GitHub ▸</a>
+    </div>
+  </div>
+
+  <div class="licence">
+    <div class="t">Licence — rien n’est libre de droits</div>
+    <p>Contenus sous <strong>CC BY-NC-ND 4.0</strong> : diffusion autorisée en citant inerWeb, <strong>sans usage commercial</strong> et <strong>sans modification</strong>. Illustrations, schémas et animations : tous droits réservés. Usage en centre de formation ou demande d’adaptation : <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a>.</p>
+  </div>
+
+  <div class="surtitre">Pensé pour tous les élèves</div>
+  <div class="bloc charte">
+    <p>Les ressources suivent la charte <strong>inerWeb Édu</strong>, pensée pour les profils TDAH et DYS :</p>
+    <ul>
+      <li><strong>Fonds clairs</strong> uniquement — jamais de thème sombre.</li>
+      <li><strong>Phrases courtes</strong>, mots-clés en gras, une idée à la fois.</li>
+      <li><strong>Une carte à la fois</strong> à l’écran, hiérarchie visuelle limitée à trois niveaux.</li>
+      <li>Texte <strong>lisible et agrandissable</strong> (bouton « Aa »), lecture à voix haute sur la plupart des cours.</li>
+    </ul>
+  </div>
+
+  <div class="contact">
+    <div class="emoji">✉️</div>
+    <div class="texte">
+      <h3>Une idée, une coquille, un besoin d’adaptation ?</h3>
+      <p>Les retours de collègues font avancer les ressources. Écrivez, même trois lignes.</p>
+    </div>
+    <a class="bouton" href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a>
+  </div>
+
+</div>
+
+<!-- Le pied de page (logo + mention de droits) est posé par marque.js. -->
+<script src="moteur/marque.js?v=00b57f996b" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Le métier de frigoriste — inerWeb Édu</title>
+<meta name="description" content="C'est quoi, frigoriste ? Le métier, une journée type, et les formations du CAP au bureau d'études.">
+<style>
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35;
+          --txt:#1d2a38; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#ffffff; --ligne:#d6dee7;
+          --ok:#1e7e54; --ok-bg:#e3f5ec;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange); }
+  .entete { background:var(--carte); border-bottom:1px solid var(--ligne); }
+  .entete .dedans { max-width:1080px; margin:0 auto; padding:12px 20px;
+                    display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+  .entete .marque { display:flex; align-items:center; text-decoration:none; }
+  .nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap;
+         font-family:var(--titre); font-size:16px; font-weight:bold; }
+  .nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px;
+           border-bottom:3px solid transparent; }
+  .nav a:hover { border-bottom-color:var(--ligne); color:var(--bleu); }
+  .nav a.ici { border-bottom-color:var(--orange); }
+  .page { max-width:920px; margin:0 auto; padding:0 20px 18px; }
+  .bloc { background:var(--carte); border:1px solid var(--ligne);
+          border-radius:var(--r); box-shadow:var(--ombre); }
+  .pastille { display:inline-block; font-size:12px; font-weight:bold; color:#fff;
+              background:var(--orange); padding:3px 12px; border-radius:999px;
+              white-space:nowrap; letter-spacing:.4px; margin-bottom:10px; }
+  h1 { margin:0 0 8px; font-family:var(--titre); font-size:32px; line-height:1.2; color:var(--bleu); }
+  .chapo { margin:0; font-size:18px; color:var(--mut); max-width:36em; text-wrap:pretty; }
+  .chapo strong { color:var(--txt); }
+  .surtitre { font-family:var(--titre); color:var(--bleu); font-weight:bold; font-size:14px;
+              letter-spacing:.6px; text-transform:uppercase; margin:32px 4px 14px; }
+  .tuiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+  .tuile { padding:20px 22px; display:flex; flex-direction:column; gap:6px; }
+  .tuile .emoji { font-size:30px; line-height:1; }
+  .tuile h3 { margin:4px 0 0; font-family:var(--titre); font-size:18px; color:var(--bleu); }
+  .tuile p { margin:0; color:var(--mut); font-size:14.5px; }
+  .liste { padding:22px 26px; }
+  .liste ul { margin:0; padding-left:22px; display:flex; flex-direction:column; gap:8px; }
+  .savoir { margin-top:14px; border-left:4px solid var(--ok); background:var(--ok-bg);
+            border-radius:8px; padding:10px 14px; font-size:15px; }
+  .savoir strong:first-child { color:var(--ok); }
+  .parcours { padding:22px 26px; }
+  .parcours .etapes { display:flex; gap:10px; flex-wrap:wrap; align-items:stretch; }
+  .etape { flex:1; min-width:170px; border:1.5px solid var(--ligne); border-radius:10px;
+           padding:12px 14px; background:#f3f7fb; }
+  .etape.apres { border-color:#ffd9c7; background:#fff7f3; }
+  .etape .quand { font-weight:bold; color:var(--bleu-clair); font-size:13px; }
+  .etape.apres .quand { color:var(--orange); }
+  .etape .nom { font-family:var(--titre); font-weight:bold; color:var(--bleu); }
+  .etape p { margin:4px 0 0; font-size:13.5px; color:var(--mut); }
+  .fleche { align-self:center; color:var(--orange); font-weight:bold; font-size:20px; }
+  .parcours .reserve { margin:14px 0 0; font-size:14px; color:var(--mut); }
+  .duo { margin-top:32px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+         gap:16px; align-items:stretch; }
+  .duo .carte-duo { padding:22px 26px; display:flex; flex-direction:column; gap:10px; }
+  .temoin { display:flex; gap:14px; align-items:flex-start; }
+  .temoin .rond { width:74px; height:74px; flex:none; border-radius:50%;
+                  background:#e7eff7; border:1.5px solid var(--ligne);
+                  display:flex; align-items:center; justify-content:center; font-size:34px; }
+  .temoin p { margin:0; font-style:italic; color:var(--mut); }
+  .signature { margin:0; font-size:13.5px; color:var(--mut); }
+  .essai { background:linear-gradient(180deg,#ffffff,#fff7f3); border-top:5px solid var(--orange); }
+  .essai h3 { margin:0; font-family:var(--titre); font-size:19px; color:var(--bleu); }
+  .essai p { margin:0; color:var(--mut); font-size:15px; }
+  .essai p strong { color:var(--txt); }
+  .bouton { align-self:flex-start; display:inline-block; padding:10px 22px; background:var(--bleu);
+            color:#fff; font-weight:bold; text-decoration:none; border-radius:999px; white-space:nowrap; }
+  .bouton:hover { background:var(--bleu-clair); color:#fff; }
+</style>
+</head>
+<body>
+
+<div class="entete">
+  <div class="dedans">
+    <a class="marque" href="index.html" aria-label="inerWeb Édu — accueil">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="galerie.html">Catalogue</a>
+      <a class="ici" href="metier.html">Le métier</a>
+      <a href="formateurs.html">Formateurs</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="bloc" style="margin-top:26px;overflow:hidden">
+    <!-- L'emplacement photo (atelier ou chantier) attend une image qui colle
+         parfaitement au propos — règle : l'objet montré décide. En attendant,
+         pas d'image plutôt qu'une image approximative. -->
+    <div style="padding:24px 28px">
+      <div class="pastille">DÉCOUVRIR LE MÉTIER</div>
+      <h1>Frigoriste : celui qui fait tenir la chaîne du froid.</h1>
+      <p class="chapo">Sans lui, pas de supermarché, pas de vaccin conservé, pas de patinoire, pas de climatisation. Un métier <strong>technique, varié et recherché</strong>.</p>
+    </div>
+  </div>
+
+  <div class="surtitre">Ce qu’il fait, concrètement</div>
+  <div class="tuiles">
+    <div class="bloc tuile">
+      <div class="emoji">🛒</div>
+      <h3>Froid commercial</h3>
+      <p>Vitrines, chambres froides, meubles frigorifiques des magasins et des restaurants.</p>
+    </div>
+    <div class="bloc tuile">
+      <div class="emoji">🌡️</div>
+      <h3>Climatisation &amp; pompes à chaleur</h3>
+      <p>Confort des bâtiments, chauffage par PAC, rénovation énergétique.</p>
+    </div>
+    <div class="bloc tuile">
+      <div class="emoji">🏭</div>
+      <h3>Froid industriel</h3>
+      <p>Agroalimentaire, entrepôts logistiques, process industriels, patinoires.</p>
+    </div>
+  </div>
+
+  <div class="surtitre">Une journée type</div>
+  <div class="bloc liste">
+    <ul>
+      <li><strong>Diagnostiquer</strong> une panne : écouter, mesurer, comparer aux valeurs attendues.</li>
+      <li><strong>Intervenir</strong> sur le circuit : manifold, récupération du fluide, tirage au vide, charge.</li>
+      <li><strong>Régler</strong> : thermostats, pressostats, détendeurs — et prouver le réglage à l’instrument.</li>
+      <li><strong>Tracer</strong> : registre d’équipement, fiche d’intervention, pesée des fluides.</li>
+      <li><strong>Expliquer</strong> au client ce qui a été fait, et pourquoi.</li>
+    </ul>
+    <div class="savoir"><strong>Bon à savoir :</strong> la manipulation des fluides frigorigènes exige une <strong>attestation d’aptitude</strong> (catégories I à V). Elle se prépare — et inerWeb est là pour ça.</div>
+  </div>
+
+  <div class="surtitre">Se former</div>
+  <div class="bloc parcours">
+    <div class="etapes">
+      <div class="etape">
+        <div class="quand">DÉCOUVERTE</div>
+        <div class="nom">2nde TNE</div>
+        <p>Transition numérique et énergétique : on explore la filière.</p>
+      </div>
+      <div class="fleche">→</div>
+      <div class="etape">
+        <div class="quand">EN 2 ANS</div>
+        <div class="nom">CAP IFCA</div>
+        <p>Installateur froid et conditionnement d’air : le geste d’abord.</p>
+      </div>
+      <div class="fleche">→</div>
+      <div class="etape">
+        <div class="quand">EN 3 ANS</div>
+        <div class="nom">BAC PRO MFER</div>
+        <p>Métiers du froid et des énergies renouvelables : analyse et mise en service.</p>
+      </div>
+      <div class="fleche">→</div>
+      <div class="etape apres">
+        <div class="quand">ET APRÈS</div>
+        <div class="nom">TP BE CVC · BTS</div>
+        <p>Bureau d’études, chef d’équipe, technicien expert.</p>
+      </div>
+    </div>
+    <p class="reserve">Les intitulés exacts et les conditions d’admission sont à vérifier auprès de chaque établissement.</p>
+  </div>
+
+  <div class="duo">
+    <div class="bloc carte-duo">
+      <div class="surtitre" style="margin:0">Parole de pro</div>
+      <div class="temoin">
+        <div class="rond">🧑‍🔧</div>
+        <p>« Témoignage d’un ancien élève ou d’un professionnel — à recueillir. Deux ou trois phrases sur ce qui lui plaît dans le métier. »</p>
+      </div>
+      <p class="signature">— Prénom, fonction, entreprise <em>(à compléter)</em></p>
+    </div>
+    <div class="bloc carte-duo essai">
+      <h3>Envie d’essayer ?</h3>
+      <p>Le tronc du plan — <strong>la théorie, du glaçon au circuit</strong> — se fait en une heure, sans aucun prérequis.</p>
+      <a class="bouton" href="index.html#carte">Commencer le parcours ▸</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Le pied de page (logo + mention de droits) est posé par marque.js. -->
+<script src="moteur/marque.js?v=00b57f996b" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>
