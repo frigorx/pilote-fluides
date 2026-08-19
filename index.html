@@ -99,6 +99,35 @@
   .plan .note { fill:var(--mut); font-size:13px; font-style:italic; }
   .plan .sortie { fill:var(--mut); font-size:15px; font-weight:bold; }
 
+  /* ---- La vue détaillée d'une ligne (un cartouche cliqué) ---- */
+  .vue-ligne { max-width:640px; margin:8px auto 20px; padding:0 14px; }
+  .vue-ligne .vl-tete { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:6px 0 16px; }
+  .vue-ligne .vl-retour { font:inherit; font-size:14px; font-weight:bold; text-decoration:none;
+                          color:var(--bleu); border:1.5px solid var(--ligne); border-radius:999px;
+                          padding:5px 14px; white-space:nowrap; }
+  .vue-ligne .vl-retour:hover { border-color:var(--bleu-clair); }
+  .vue-ligne .vl-puce { color:#fff; font-family:var(--titre); font-weight:bold; font-size:15px;
+                        border-radius:999px; padding:6px 16px; white-space:nowrap; }
+  .vue-ligne .vl-sous { color:var(--mut); font-size:14px; }
+  .vue-ligne .vl-stations { border-left:8px solid var(--ligne); margin-left:15px;
+                            display:flex; flex-direction:column; gap:10px; padding:8px 0; }
+  .vue-ligne .vl-station { position:relative; display:flex; gap:12px; align-items:flex-start;
+                           margin-left:18px; padding:12px 14px; text-decoration:none;
+                           background:var(--carte); border:1px solid var(--ligne); border-radius:10px;
+                           transition:border-color .12s, transform .12s; }
+  .vue-ligne .vl-station:hover { border-color:var(--bleu-clair); transform:translateX(3px); }
+  .vue-ligne .vl-rond { position:absolute; left:-31px; top:16px; width:15px; height:15px;
+                        border-radius:50%; background:#fff; border:4.5px solid var(--ligne); }
+  .vue-ligne .vl-rond.vu::after { content:"✓"; position:absolute; inset:0; display:flex;
+                                  align-items:center; justify-content:center;
+                                  font-size:9px; font-weight:bold; color:#fff; }
+  .vue-ligne .vl-rond.corr { box-shadow:0 0 0 2.5px #98a6b3; }
+  .vue-ligne .vl-nom { font-family:var(--titre); font-weight:bold; color:var(--bleu); font-size:16px; }
+  .vue-ligne .vl-det { color:var(--mut); font-size:13.5px; margin-top:2px; }
+  .vue-ligne .vl-corr { margin-top:6px; font-size:12.5px; color:#5a6b7d; background:#eef2f6;
+                        border-radius:999px; display:inline-block; padding:2px 10px; }
+  .vue-ligne .vl-go { margin-left:auto; align-self:center; color:var(--orange); font-weight:bold; }
+
   /* ---- Le circuit cliquable ---- */
   .surtitre { font-family:var(--titre); color:var(--bleu); font-weight:bold; font-size:14px;
               letter-spacing:.6px; text-transform:uppercase; margin:34px 4px 6px; }
@@ -267,7 +296,7 @@
   <div class="bloc plan" id="carte">
     <div class="titre-bloc">
       <h2>Le plan de formation</h2>
-      <span>Suis le fluide. Chaque station est un cours qui s’ouvre en un clic.</span>
+      <span>Suis le fluide. Chaque station est un cours qui s’ouvre en un clic — et chaque <strong>cartouche de ligne</strong> ouvre le plan détaillé de la ligne.</span>
     </div>
     <div class="legende-plan">
       <span class="puce-l"><span class="rond"></span> à visiter</span>
@@ -484,7 +513,7 @@
          qui traverserait une troisième ligne rendrait le plan illisible
          (« la dernière fois à Paris je me suis perdu »). --- */
   var LIGNES = [
-    { nom: "🔧 LES ORGANES", sous: "CAP IFCA · BAC PRO MFER", couleur: "#1b3a63", x: 130,
+    { slug: "organes", nom: "🔧 LES ORGANES", sous: "CAP IFCA · BAC PRO MFER", couleur: "#1b3a63", x: 130,
       jalon: "🏁 Technologue du circuit",
       stations: [
         cours("tome-3-technologie-organes", "Tome 3 — les organes",  "reconnaître et situer"),
@@ -494,7 +523,7 @@
         cours("condenseur-interactif",      "Le condenseur",         "haute pression, ventilation"),
         cours("evaporateur-interactif",     "L’évaporateur",         "givre et dégivrage")
       ] },
-    { nom: "🎛 CE QUI SE RÈGLE", sous: "consigne, différentiel, preuve", couleur: "#0e7490", x: 360,
+    { slug: "reglages", nom: "🎛 CE QUI SE RÈGLE", sous: "consigne, différentiel, preuve", couleur: "#0e7490", x: 360,
       jalon: "🏁 Réglages maîtrisés", depart_y: 1,
       stations: [
         /* Même cours que sur Les organes : c'est LA correspondance — un
@@ -505,7 +534,7 @@
         { id: "pressostats", href: "https://frigorx.github.io/inerweb-pressostats/",
           nom: "Les pressostats", sous: "KP · BP · HP, réglage réel" }
       ] },
-    { nom: "💧 LA LIGNE LIQUIDE", sous: "de la bouteille au détendeur", couleur: "#1e7e54", x: 590,
+    { slug: "liquide", nom: "💧 LA LIGNE LIQUIDE", sous: "de la bouteille au détendeur", couleur: "#1e7e54", x: 590,
       jalon: "🏁 Ligne liquide maîtrisée",
       stations: [
         cours("bouteille-liquide-pedagogique",  "La bouteille liquide",   "réserve et niveau"),
@@ -515,7 +544,7 @@
            reste de la ligne liquide… se règle. */
         Object.assign(cours("electrovanne-interactive", "L’électrovanne", "correspondance ↔ Réglages"), { corr: true })
       ] },
-    { nom: "🧰 LES GESTES", sous: "l’atelier, le vrai geste pro", couleur: "#ff6b35", x: 820,
+    { slug: "gestes", nom: "🧰 LES GESTES", sous: "l’atelier, le vrai geste pro", couleur: "#ff6b35", x: 820,
       jalon: "🏁 Prêt à intervenir",
       stations: [
         cours("fil-conducteur-intervention",       "Le fil conducteur",     "l’intervention en 6 étapes"),
@@ -527,7 +556,7 @@
         cours("mission-bouteilles",                "Mission bouteilles",    "la bonne bouteille, le bon geste"),
         cours("chaine-intervention-interactive",   "La chaîne complète",    "tout enchaîner proprement")
       ] },
-    { nom: "🌍 FLUIDES & ENVIRONNEMENT", sous: "F-Gas, sécurité, climat", couleur: "#7a4fa0", x: 1050,
+    { slug: "fluides", nom: "🌍 FLUIDES & ENVIRONNEMENT", sous: "F-Gas, sécurité, climat", couleur: "#7a4fa0", x: 1050,
       jalon: "🏁 Fluides maîtrisés",
       stations: [
         cours("frise-vivante",                        "La Frise des Fluides",    "l’histoire racontée", "frise-vivante.html"),
@@ -545,7 +574,7 @@
          Les stations 🔒 existent et s'ouvrent, mais leur carte est gardée
          par un portillon : le code se donne en formation. --- */
   var CEINTURE = {
-    nom: "✅ S’ÉVALUER", sous: "QCM · examens blancs A1 · A2 · D · E",
+    slug: "evaluer", nom: "✅ S’ÉVALUER", sous: "QCM · examens blancs A1 · A2 · D · E",
     couleur: "#b06a00", jalon: "🏁 Prêt pour l’attestation",
     stations: [
       carte("ex-pos",   "Positionnement",        "où j’en suis, avant tout"),
@@ -563,7 +592,7 @@
          n'importe quelle branche et à n'importe quel moment. Ce ne sont
          pas des cours : on ne les « suit » pas, on s'en sert. --- */
   var OUTILS = {
-    nom: "🧰 LA BOÎTE À OUTILS", sous: "calculer, régler, vérifier sur le chantier",
+    slug: "outils", nom: "🧰 LA BOÎTE À OUTILS", sous: "calculer, régler, vérifier sur le chantier",
     couleur: "#2f5689",
     stations: [
       outil("manometres_v5",          "Manomètres",        "lire la pression, trouver la T°"),
@@ -739,9 +768,11 @@
       /* la ligne continue, plus fine, jusqu'à la ceinture */
       d.push('<path d="M ' + l.x + " " + fin + " V " + CEINTURE_Y + '" stroke="' + l.couleur +
              '" stroke-width="4" stroke-dasharray="2 8" stroke-linecap="round" fill="none" opacity="0.55"></path>');
+      /* Le cartouche est CLIQUABLE : il ouvre la vue détaillée de la ligne. */
       var w = Math.round(l.nom.length * 7.4 + 30);
-      d.push('<rect x="' + (l.x - w / 2) + '" y="' + (PUCE_Y - 17) + '" width="' + w + '" height="34" rx="17" fill="' + l.couleur + '"></rect>');
-      d.push('<text class="puce" x="' + l.x + '" y="' + (PUCE_Y + 5) + '" text-anchor="middle">' + esc(l.nom) + "</text>");
+      d.push('<a href="#ligne=' + l.slug + '"><g><title>Voir la ligne en détail</title>' +
+             '<rect x="' + (l.x - w / 2) + '" y="' + (PUCE_Y - 17) + '" width="' + w + '" height="34" rx="17" fill="' + l.couleur + '"></rect>' +
+             '<text class="puce" x="' + l.x + '" y="' + (PUCE_Y + 5) + '" text-anchor="middle">' + esc(l.nom) + "</text></g></a>");
       d.push('<text class="puce-s" x="' + l.x + '" y="' + (PUCE_Y + 35) + '" text-anchor="middle">' + esc(l.sous) + "</text>");
       l.stations.forEach(function (s, i) {
         d.push(station(s, l.x, y0 + i * PAS, l.couleur, "droite", t[s.id]));
@@ -766,8 +797,9 @@
     /* Cartouche empilé (nom puis sous-titre), rangé à gauche : posé à côté,
        le sous-titre venait recouvrir le libellé de la deuxième station. */
     var wc = Math.round(CEINTURE.nom.length * 7.4 + 30);
-    d.push('<rect x="70" y="' + (CEINTURE_Y - 84) + '" width="' + wc + '" height="30" rx="15" fill="' + CEINTURE.couleur + '"></rect>');
-    d.push('<text class="puce" x="' + (70 + wc / 2) + '" y="' + (CEINTURE_Y - 64) + '" text-anchor="middle">' + esc(CEINTURE.nom) + "</text>");
+    d.push('<a href="#ligne=' + CEINTURE.slug + '"><g><title>Voir la ligne en détail</title>' +
+           '<rect x="70" y="' + (CEINTURE_Y - 84) + '" width="' + wc + '" height="30" rx="15" fill="' + CEINTURE.couleur + '"></rect>' +
+           '<text class="puce" x="' + (70 + wc / 2) + '" y="' + (CEINTURE_Y - 64) + '" text-anchor="middle">' + esc(CEINTURE.nom) + "</text></g></a>");
     d.push('<text class="puce-s" x="' + (70 + wc / 2) + '" y="' + (CEINTURE_Y - 38) + '" text-anchor="middle">' + esc(CEINTURE.sous) + "</text>");
     var xs = [200, 320, 480, 590, 730, 840, 1000, 1110];
     CEINTURE.stations.forEach(function (s, i) {
@@ -780,8 +812,9 @@
        première station rejetée à x=320 pour ne pas passer dessous. */
     d.push(flux("M 70 " + OUTILS_Y + " H 1210", OUTILS.couleur, 8));
     var wo = Math.round(OUTILS.nom.length * 7.4 + 30);
-    d.push('<rect x="70" y="' + (OUTILS_Y - 84) + '" width="' + wo + '" height="30" rx="15" fill="' + OUTILS.couleur + '"></rect>');
-    d.push('<text class="puce" x="' + (70 + wo / 2) + '" y="' + (OUTILS_Y - 64) + '" text-anchor="middle">' + esc(OUTILS.nom) + "</text>");
+    d.push('<a href="#ligne=' + OUTILS.slug + '"><g><title>Voir la ligne en détail</title>' +
+           '<rect x="70" y="' + (OUTILS_Y - 84) + '" width="' + wo + '" height="30" rx="15" fill="' + OUTILS.couleur + '"></rect>' +
+           '<text class="puce" x="' + (70 + wo / 2) + '" y="' + (OUTILS_Y - 64) + '" text-anchor="middle">' + esc(OUTILS.nom) + "</text></g></a>");
     d.push('<text class="puce-s" x="' + (70 + wo / 2) + '" y="' + (OUTILS_Y - 38) + '" text-anchor="middle">' + esc(OUTILS.sous) + "</text>");
     var xo = [320, 460, 600, 740, 880, 1020, 1160];
     OUTILS.stations.forEach(function (s, i) {
@@ -830,19 +863,71 @@
     document.getElementById("trajet-total").textContent = total;
   }
 
+  /* ------------------------------------------------------------------
+     La vue détaillée d'une ligne : un cartouche cliqué remplace le plan
+     par LA ligne — une chose à la fois. Le hash (#ligne=…) porte l'état :
+     le bouton Précédent, Échap et le partage d'adresse marchent seuls.
+     ------------------------------------------------------------------ */
+  var VUES = {};
+  LIGNES.forEach(function (l) { VUES[l.slug] = l; });
+  VUES[CEINTURE.slug] = CEINTURE; VUES[OUTILS.slug] = OUTILS;
+
+  /* Ce que la correspondance signifie, dit en clair dans la vue. */
+  var CORR_TXT = {
+    "organes:detendeur-interactif":   "◎ Aussi sur la ligne 🎛 CE QUI SE RÈGLE — un organe qui se règle",
+    "reglages:detendeur-interactif":  "◎ Aussi sur la ligne 🔧 LES ORGANES — le même cours, l'autre regard",
+    "reglages:pupitre-reglage-interactif": "◎ Correspondance avec 💧 LA LIGNE LIQUIDE",
+    "liquide:electrovanne-interactive":    "◎ Correspondance avec 🎛 CE QUI SE RÈGLE — la fin de la ligne se règle"
+  };
+
+  function dessinerLigne(slug) {
+    var l = VUES[slug], t = litTrajet(), d = [];
+    if (!l) { dessiner(); return; }
+    d.push('<div class="vue-ligne">');
+    d.push('<div class="vl-tete"><a class="vl-retour" href="#carte">← Tout le plan</a>' +
+           '<span class="vl-puce" style="background:' + l.couleur + '">' + esc(l.nom) + "</span>" +
+           '<span class="vl-sous">' + esc(l.sous) + "</span></div>");
+    d.push('<div class="vl-stations" style="border-color:' + l.couleur + '">');
+    l.stations.forEach(function (s) {
+      var vu = t[s.id];
+      var cible = s.meme_onglet ? "" : ' target="_blank" rel="noopener"';
+      var nom = (s.verrou ? "🔒 " : "") + s.nom + (s.href.indexOf("http") === 0 && !s.verrou ? " ↗" : "");
+      d.push('<a class="vl-station" href="' + esc(s.href) + '"' + cible + ' data-station="' + esc(s.id) + '">' +
+             '<span class="vl-rond' + (vu ? " vu" : "") + (s.corr ? " corr" : "") + '" style="border-color:' + l.couleur + (vu ? ";background:" + l.couleur : "") + '"></span>' +
+             "<span><span class=\"vl-nom\">" + esc(nom) + "</span>" +
+             '<div class="vl-det">' + esc(s.sous) + (s.verrou ? " — s’ouvre avec la phrase d’accès donnée en formation" : "") + "</div>" +
+             (CORR_TXT[slug + ":" + s.id] ? '<div class="vl-corr">' + esc(CORR_TXT[slug + ":" + s.id]) + "</div>" : "") +
+             '</span><span class="vl-go">▸</span></a>');
+    });
+    d.push("</div>");
+    if (l.jalon) d.push('<p style="text-align:center;margin:16px 0 4px;color:var(--ok);font-family:var(--titre);font-weight:bold;font-size:14px">' + esc(l.jalon) + "</p>");
+    d.push("</div>");
+    document.getElementById("plan-svg").innerHTML = d.join("");
+  }
+
+  function rendre() {
+    var m = (location.hash || "").match(/^#ligne=([a-z-]+)$/);
+    if (m && VUES[m[1]]) dessinerLigne(m[1]); else dessiner();
+    compte();
+  }
+  window.addEventListener("hashchange", rendre);
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape" && /^#ligne=/.test(location.hash)) location.hash = "#carte";
+  });
+
   document.getElementById("plan-svg").addEventListener("click", function (ev) {
     var a = ev.target.closest ? ev.target.closest("a[data-station]") : null;
     if (!a) return;
     marque(a.getAttribute("data-station"));
-    dessiner(); compte();
+    rendre();
   });
   document.getElementById("trajet-effacer").addEventListener("click", function () {
     if (!confirm("Effacer le trajet mémorisé sur cet appareil ?")) return;
     try { localStorage.removeItem(CLE); } catch (e) {}
-    dessiner(); compte();
+    rendre();
   });
 
-  dessiner(); compte();
+  rendre();
 })();
 
 /* =====================================================================

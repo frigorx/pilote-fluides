@@ -361,6 +361,10 @@ let h = `<!doctype html>
   @media print { .barre, .actions, .rien { display:none } .carte, .planche { break-inside:avoid } }
 </style></head><body>
 
+<!-- La galerie est le « Catalogue » du site : sans ce lien, c'était un
+     cul-de-sac — aucun moyen de revenir au plan (constat du 19/08). -->
+<p style="margin:14px 0 -8px"><a href="index.html" style="color:var(--bleu);text-decoration:none;font-weight:bold">❄️ inerWeb Édu · ← revenir au plan</a></p>
+
 <h1>Bibliothèque d'animations et de supports</h1>
 <p class="meta">Habilitation fluides frigorigènes · © 2026 F. Henninot — inerWeb Édu</p>
 
