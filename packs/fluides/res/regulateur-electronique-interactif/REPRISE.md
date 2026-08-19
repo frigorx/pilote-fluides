@@ -40,19 +40,25 @@ enregistré → l'écran le dit) ; câblage complet validé et inversion phase/n
 refusée avec son explication ; plan de remplacement noté ; aucun débordement sur
 1280 px **ni** sur 375 px ; badge référentiel et ligne de marque affichés.
 
-## ⏳ Ce qui reste — mise en ligne, groupée avec les autres chantiers
+## ✅ En ligne depuis le 19/08/2026
 
-Franck a demandé de **ne pas publier à l'unité** : la mise à jour du site se fera
-en une fois. Trois choses à faire ce jour-là, toutes dans `C:\git\pilote-fluides\index.html` :
+Feu vert de F. Henninot le jour même. Poussé et **vérifié sur le site servi**, pas
+seulement sur le dépôt :
 
-1. **Le `<details>` de la ligne CE QUI SE RÈGLE** (vers la ligne 428) : ajouter
-   `<li><a href="packs/fluides/res/regulateur-electronique-interactif/index.html">Le régulateur électronique</a> <span class="d">— sonde, consigne, dégivrage, bornier</span></li>`
-   et passer le compte de « 4 stations » à « 5 stations ».
-2. **Le tableau JS des lignes** (vers la ligne 725, `slug: "reglages"`) : ajouter
-   `cours("regulateur-electronique-interactif", "Le régulateur électronique", "sonde, consigne, dégivrage, bornier")`.
-3. **Le bloc « Nouveautés »** demandé le 19/08 : un `<details>` replié par défaut,
-   listant les nouveaux modules et stations, **chaque ligne cliquable** vers sa page,
-   avec **l'archive des mises à jour précédentes** (par date, la plus récente en haut).
+- https://inerweb.fr/packs/fluides/res/regulateur-electronique-interactif/ répond, les
+  24 écrans se parcourent sans erreur, badge référentiel et ligne de marque affichés ;
+- la station est sur le plan, dans la liste du réseau et dans le JSON-LD — l'ajout se
+  fait dans le bloc `DONNEES-PLAN` d'`index.html`, puis `node build/plan-liste.mjs`
+  régénère la liste et le JSON-LD (**la liste ne s'édite jamais à la main**) ;
+- la ligne 🎛 CE QUI SE RÈGLE compte 5 stations, le régulateur entre le pupitre de
+  réglage et les pressostats.
+
+**Journal des mises à jour** (demandé le même jour) : bloc `#nouveautes` sur l'accueil,
+replié par défaut, entre le mot de l'auteur et le plan. Nouveautés **et** corrections,
+par date, étiquetées, la plus récente en haut, rien ne se supprime. Le volet
+« Actualités » ne duplique plus : il y renvoie par un lien qui ferme le volet et ouvre
+vraiment le bloc. Pour la prochaine fois : une section `<h3>date</h3>` en haut du corps,
+et la date du `<summary>` au même jour.
 
 ## ⚠️ Deux points à savoir
 
