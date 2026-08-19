@@ -2,9 +2,41 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **20 août 2026** (+ station régulateur électronique, 19/08) (la file des 8 remarques du 19 au soir est soldée ;
+> Dernière mise à jour : **20 août 2026** (+ stations pressostats et régulateur électronique, 19/08) (la file des 8 remarques du 19 au soir est soldée ;
 > l'état du 19/08 reste valable pour le reste).
 
+> **19/08 (soir) — TROIS STATIONS PRESSOSTATS, EN LIGNE ET VÉRIFIÉES SUR LE SITE SERVI.**
+> `packs/fluides/res/pressostat-bp-kp1`, `-hp-kp5` et `-combine-kp15`, repris du pack
+> `PACK-PRESSOSTATS-KP1-KP5-KP15-2026-08-19` du Bureau. La ligne 🎛 CE QUI SE RÈGLE passe à
+> **8 stations** : les trois modules (support de cours) plus « Pressostats en autonomie », qui
+> renvoie à `frigorx.github.io/inerweb-pressostats` — décision de F. Henninot, les deux
+> approches cohabitent, elles ne sont pas la même chose.
+>
+> Ce que la reprise a corrigé, en détail dans le `REPRISE-CHARTE-FOND-VOIX-2026-08-19.md`
+> déposé dans chacun des trois dossiers :
+> **charte** — la marque était une pastille « iW », c'est le logo gravé qui la porte, et la
+> barre du haut n'était plus masquée à l'impression (un document sans logo est un document
+> inachevé) ;
+> **voix** — elle ne lisait que le texte de la leçon. L'illustration n'était pas décrite, les
+> trois réponses du quiz n'étaient pas lues. Ajout d'une lecture suivie (« Écouter » arme,
+> « Stop » désarme) et de la lecture des symboles : « 1–4 » se prononçait « moins trois » ;
+> **illustrations** — refaites sur les valeurs du cours par un banc de rendu local, sans quota
+> Design. ⚠️ **Le piège à retenir** : les captures d'origine avaient été prises pendant une
+> démonstration animée, où le composant fait varier le différentiel jusqu'à `diff × 1,6`. Une
+> capture d'animation n'est pas une illustration ;
+> **fond** — ajout de `F = p × S`, du court-cycle comme raison d'être du différentiel, de ce
+> que veut dire bar Pe, et de la hiérarchie pressostat puis soupape sous la PS ;
+> **référentiel** — 6.03, 7.04 et 9.06 avec leurs appuis, dans l'écran de bilan et dans un
+> `couverture.json`. ⚠️ **Adossement proposé par lecture des libellés, pas encore validé.**
+>
+> **CE QUI RESTE SUR CES TROIS MODULES :**
+> a. les références Danfoss citées (`060-205191`, `060-117166`, `060-121266`, `060-126491`) et
+>    les « 1 tour de tige ≈ 0,7 / 2,3 bar » ne sont pas vérifiés sur notice ;
+> b. la vue de réglage du KP15 reste écartée : le composant `pressostat-dual` lit l'échelle
+>    RANGE du côté BP comme un CUT OUT, quand le module enseigne RANGE = CUT IN ;
+> c. si les modules doivent aussi servir en CAP IFCA ou Bac MFER, il faut leurs codes à eux ;
+> d. la voix n'a pas encore été écoutée par un humain.
+>
 > **20/08 (2e audit extérieur du site servi) — QUATRE LOTS FAITS, EN LIGNE ET VÉRIFIÉS.**
 > Un audit en lecture seule du site publié (commit `7f37d1d`) a listé six familles de
 > points. Tri fait, fait par fait : plusieurs constats étaient déjà tranchés, ou faux.
