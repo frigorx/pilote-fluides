@@ -29,6 +29,20 @@
 > **référentiel** — 6.03, 7.04 et 9.06 avec leurs appuis, dans l'écran de bilan et dans un
 > `couverture.json`. ⚠️ **Adossement proposé par lecture des libellés, pas encore validé.**
 >
+> **LA GALERIE REND SES MÉDIAS (même soir).** Elle listait le nom des sous-dossiers d'un
+> cours et concluait « cloner le dépôt pour les récupérer » : autant dire irrécupérables.
+> Les 17 illustrations des pressostats, faites le matin, étaient déjà introuvables le soir.
+> `build/galerie.mjs` relève désormais les médias des sous-dossiers et leur donne une adresse
+> de téléchargement : **196 fichiers**, la page passe de 353 à 549 liens, 196 Ko.
+> ⚠️ Les 1 423 MP3 de `res/voix/` ne sont PAS concernés — ce dossier ne porte pas de page à sa
+> racine, ce n'est donc pas un cours et `lireExperience` l'écarte. Un plafond de 60 médias par
+> cours dort dans le code pour le jour où un cours embarquera ses propres centaines de fichiers.
+>
+> Mesure faite au passage, parce que « c'est stocké à différents endroits » laissait croire à
+> du gaspillage : la duplication réelle dans `packs/fluides/res/` ne pèse que **3,3 Mo sur
+> 190,8, soit 2 %**, et l'essentiel est voulu (`referentiel.js` en 30 copies, `marque.js` en 7
+> — contrat « script autonome »). Le problème n'était pas la place, c'était la trouvabilité.
+>
 > **CE QUI RESTE SUR CES TROIS MODULES :**
 > a. les références Danfoss citées (`060-205191`, `060-117166`, `060-121266`, `060-126491`) et
 >    les « 1 tour de tige ≈ 0,7 / 2,3 bar » ne sont pas vérifiés sur notice ;
