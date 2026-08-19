@@ -8,7 +8,7 @@
 > **19/08 (session Régul'Froid) — NOUVELLE STATION EN LIGNE, et le journal des mises à jour.**
 > `packs/fluides/res/regulateur-electronique-interactif/` — **Le régulateur électronique**,
 > 24 écrans, 6 ateliers, sur la ligne 🎛 CE QUI SE RÈGLE (5 stations désormais). Elle reprend
-> le fond du simulateur **Régul'Froid** (dépôt privé `C:\gitegulfroid-simulateur`) qui restait
+> le fond du simulateur **Régul'Froid** (dépôt privé `C:/git/regulfroid-simulateur`) qui restait
 > **non publiable** : notice constructeur redistribuée et photos sans droits, jusque dans son
 > historique git. Décision de F. Henninot : **les marques restent citées** (usage descriptif,
 > trois constructeurs, aucune affiliation), **seuls les visuels sont refaits** — la station ne
