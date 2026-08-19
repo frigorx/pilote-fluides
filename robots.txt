@@ -1,0 +1,6 @@
+# inerWeb Édu — le site public est indexable ; les pages qui portent leur
+# propre noindex (galerie, redirections) le déclarent elles-mêmes.
+User-agent: *
+Allow: /
+
+Sitemap: https://inerweb.fr/sitemap.xml

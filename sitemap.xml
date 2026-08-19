@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Pages du site vitrine. La galerie n'y figure pas : elle est noindex
+     par décision (à réévaluer si le Catalogue doit être référencé). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://inerweb.fr/</loc></url>
+  <url><loc>https://inerweb.fr/metier.html</loc></url>
+  <url><loc>https://inerweb.fr/formateurs.html</loc></url>
+  <url><loc>https://inerweb.fr/formation.html</loc></url>
+</urlset>

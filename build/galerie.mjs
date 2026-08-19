@@ -283,6 +283,7 @@ let h = `<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Bibliothèque d'animations et de supports — habilitation fluides frigorigènes</title>
+<meta name="description" content="Le catalogue inerWeb Édu : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables.">
 <style>
   :root { --bleu:#1b3a63; --orange:#ff6b35; --texte:#33475b; --mut:#8494a4; --bord:#d7e0e8;
           --fond:#f7f1e7; --carte:#fffdf8; --vert:#1e7e54; --ambre:#8a5200; }
