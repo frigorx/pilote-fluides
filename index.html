@@ -387,7 +387,14 @@
        avant le plan. Texte dicté par lui, mis en forme ; règles tenues :
        projet personnel, aucune institution ni ancienne société nommée. -->
   <div class="bloc" style="margin-top:26px;padding:18px 22px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
-    <div style="width:56px;height:56px;flex:none;border-radius:50%;background:#e7eff7;border:1.5px solid var(--ligne);display:flex;align-items:center;justify-content:center;font-size:26px">🧑‍🏫</div>
+    <!-- Portrait dessiné de l'auteur (illustration, pas une photo), recadré sur
+         le visage : le décor d'origine portait la marque « inerWeb Fluide », qui
+         n'est pas celle de cette page. Servi en 112 px pour rester net sur les
+         écrans fins, affiché en 56. `alt` vide : le nom est juste à côté en
+         texte, un lecteur d'écran le lirait deux fois. Pas de chargement
+         différé — le bloc est dans le premier écran. -->
+    <img src="icones/auteur-112.webp" alt="" width="56" height="56"
+         style="flex:none;border-radius:50%;background:#e7eff7;border:1.5px solid var(--ligne)">
     <div style="flex:1;min-width:240px">
       <div class="surtitre" style="margin:0 0 6px">Le mot de l’auteur</div>
       <p style="margin:0 0 10px;color:var(--txt);font-size:15px;max-width:44em">Bonjour,</p>
