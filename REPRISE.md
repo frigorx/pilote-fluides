@@ -2,8 +2,57 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **19 août 2026 après-midi** (le dépôt devient LE SITE inerweb.fr ;
-> le matin, deux cours ajoutés ; état du 13 août au soir toujours valable pour le reste).
+> Dernière mise à jour : **20 août 2026** (la file des 8 remarques du 19 au soir est soldée ;
+> l'état du 19/08 reste valable pour le reste).
+
+> **20/08 — LA FILE DES 8 REMARQUES EST SOLDÉE.** Tout est poussé et vérifié sur le
+> site servi (https://inerweb.fr) :
+> 1. **PWA** : le site s'installe sur téléphone et se consulte hors-ligne (atelier,
+>    chaufferie). `manifest.webmanifest`, `sw.js` (réseau d'abord pour les pages,
+>    cache d'abord pour les médias, `.mp4` jamais intercepté, `hors-ligne.html` en
+>    secours), icônes PNG dans `icones/`. `build/version.mjs` réécrit la VERSION du
+>    service worker à chaque build — jamais à la main. Enregistrement depuis
+>    `index.html` et `formation.html` SEULEMENT : les satellites qui chargent des
+>    fichiers d'ici ne doivent jamais tenter d'enregistrer un SW chez eux.
+>    Hors-ligne testé dans Chrome, serveur coupé : cache servi, repli, réseau repris.
+> 2. **Vues de ligne : chaque station s'explique.** `build/registre.mjs` relève la
+>    `<meta description>` de chaque cours (comme la galerie) → `plan-descriptions.gen.js`
+>    (37 entrées), affiché sous la devise courte. RELEVÉ, JAMAIS SAISI. Le fichier
+>    généré est dans les deux listes de version.
+> 3. **Mission F-GAZ** : dépôt `inerweb-fgaz` anonymisé PUIS branché — plus de prompts
+>    NOM/PRÉNOM/CLASSE, plus d'envoi Google Apps Script, classement local retiré
+>    (l'export CSV, anonyme, a rejoint « Mes stats »), purge au chargement des
+>    identités des versions antérieures, `FGAZ-COMPLETE-V6.html` (double de travail)
+>    sorti du dépôt. Station sur la ceinture S'ÉVALUER entre « Réviser » et les examens.
+> 4. **Ligne ⚡ ÉLECTROTECH** (rouge #c0392b, entre boîte à outils et correspondances) :
+>    « Sous tension » (monté des correspondances, id `corr-cables` GARDÉ pour le trajet
+>    des visiteurs) + « TD Triphasé » — le TD (source Bureau/prpas inspe) neutralisé
+>    (10 traces ÉQUATIO/Raynaud → 0) et poussé dans le dépôt `sous-tension`
+>    (`td-triphase.html`). Trajet : 56 stations.
+> 5. **La marque vient du site principal** : les 3 satellites (qcm-travail-hauteur,
+>    sous-tension, Iner.web-tools-beta via son `ui_shell.js`) chargent
+>    `https://inerweb.fr/moteur/marque.js` — une source, zéro divergence. Signatures
+>    artisanales retirées (« TD x/3 » gardés). Au passage : l'EN-TÊTE des 13 pages
+>    outils affichait encore « Auteur: F. Henninot » (manqué le 19/08) → « inerweb.fr ».
+> 6. **Films narrés (ozone + effet de serre)** : un échec de `play()` s'explique au
+>    bouton (`.catch()` ajouté) ; à la première lecture sur iPhone/iPad, aide de 9 s
+>    « Pas de son ? Désactive le mode silencieux ». Le silencieux iOS coupe le son des
+>    navigateurs intégrés (WhatsApp, QR) sans AUCUN signal détectable : on explique.
+> 7. **Galerie** : `role="group"` nommé, `aria-pressed` tenu au clic, `aria-label` sur
+>    la recherche, `aria-live` sur le compteur ; cibles 42 px sous `(pointer:coarse)`.
+> 8. **Open Graph** : `icones/og-inerweb-1200x630.png` à la charte (aucun compteur
+>    dedans : rien ne périme) + `og:image` + `twitter:card` sur l'accueil.
+>
+> **Deux bugs de rendu du plan réparés au passage** :
+> - les positions de la ceinture étaient un tableau en dur : la 9e station (F-GAZ)
+>   sortait en `cx="undefined"`. Les positions sont désormais RÉPARTIES par calcul.
+> - `flux()` appelé sans couleur sur les cinq raccordements tronc→branches
+>   (`stroke="undefined"` depuis l'origine du plan) : ils étaient invisibles, ils se
+>   voient. Si le rendu déplaît, une ligne à retoucher (`l.couleur`, index.html § branches).
+>
+> ⚠️ **Dépôt `sous-tension` : 13 SVG portent des métadonnées RDF non commitées**
+> (chantier de marquage des droits, pas de cette session) — laissés en l'état, à
+> committer ou jeter par Franck.
 
 > **19/08 après-midi — LE DÉPÔT DEVIENT LA VITRINE inerweb.fr.** Feu vert de F. Henninot
 > (« envoyer la purée », carte blanche). Ce qui a changé :
