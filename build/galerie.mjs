@@ -366,7 +366,7 @@ let h = `<!doctype html>
 <p style="margin:14px 0 -8px"><a href="index.html" style="color:var(--bleu);text-decoration:none;font-weight:bold">❄️ inerWeb Édu · ← revenir au plan</a></p>
 
 <h1>Bibliothèque d'animations et de supports</h1>
-<p class="meta">Habilitation fluides frigorigènes · © 2026 F. Henninot — inerWeb Édu</p>
+<p class="meta">Habilitation fluides frigorigènes · © 2026 inerweb.fr — inerWeb Édu</p>
 
 <div class="intro">
   <p><b>Deux usages.</b> <b>Se servir</b> : chercher une ressource et la projeter telle quelle en cours.
@@ -422,7 +422,7 @@ for (const r of RESSOURCES) {
       <div class="fichiers">
         ${r.fichiers.map((f) => `<a href="${esc(f)}" download>⬇ ${esc(f.split("/").pop())}</a>`).join("\n        ")}
         ${r.sousDossiers.length ? `<div class="util">+ sous-dossiers : ${r.sousDossiers.map(esc).join(", ")} — cloner le dépôt pour les récupérer</div>` : ""}
-        <div class="licence-ligne">© 2026 inerWeb — F. Henninot · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
+        <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
       </div>
     </details>
   </div>
