@@ -649,6 +649,24 @@
     ]
   };
 
+  /* --- La ligne électrotechnique : le frigoriste travaille sous tension.
+         Annoncée par « Réseau en travaux », elle ouvre le 20/08 avec deux
+         stations du dépôt sous-tension (le parcours câbles, sorti des
+         correspondances où il vivait, et le TD triphasé neutralisé le
+         même jour) ; l'habilitation électrique viendra s'y greffer. --- */
+  var ELECTROTECH = {
+    slug: "electrotech", nom: "⚡ ÉLECTROTECH", sous: "câbles, triphasé, couplages",
+    couleur: "#c0392b", jalon: "🏁 À l’aise avec le triphasé",
+    stations: [
+      /* L'id historique « corr-cables » est GARDÉ : le trajet des visiteurs
+         qui l'ont déjà ouverte en correspondance reste marqué. */
+      { id: "corr-cables", href: "https://frigorx.github.io/sous-tension/",
+        nom: "Sous tension", sous: "lire et choisir les câbles" },
+      { id: "elec-triphase", href: "https://frigorx.github.io/sous-tension/td-triphase.html",
+        nom: "TD Triphasé", sous: "couplages étoile & triangle" }
+    ]
+  };
+
   /* --- Les CORRESPONDANCES : on ne prolonge pas le réseau, on montre où
          changer de réseau. Ce sont d'autres sites inerWeb, hors de ce
          dépôt — le froid ne s'arrête pas au froid : un frigoriste travaille
@@ -662,10 +680,9 @@
     couleur: "#5a6b7d",
     /* inerweb-elec est ÉCARTÉ (décision F. Henninot 19/08) : il s'appuie
        sur des documents de centres d'habilitation dont il ne détient pas
-       les droits. Ne pas le rebrancher sans que cette question soit réglée. */
+       les droits. Ne pas le rebrancher sans que cette question soit réglée.
+       (Le parcours câbles est monté en ligne ⚡ ÉLECTROTECH le 20/08.) */
     stations: [
-      corr("cables",  "https://frigorx.github.io/sous-tension/",
-           "⚡ Sous tension",       "lire et choisir les câbles"),
       corr("hauteur", "https://frigorx.github.io/qcm-travail-hauteur/",
            "🪜 Travail en hauteur", "R408 · échafaudages, EPI"),
       corr("fluide",  "https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/",
@@ -691,7 +708,7 @@
      ------------------------------------------------------------------ */
   var W = 1280, HUB_X = 940, TRONC_Y = 80;
   var PUCE_Y = 252, DEBUT_Y = 330, PAS = 72;
-  var CEINTURE_Y = 960, OUTILS_Y = 1170, CORR_Y = 1330, H = 1450;
+  var CEINTURE_Y = 960, OUTILS_Y = 1170, ELECTROTECH_Y = 1330, CORR_Y = 1490, H = 1610;
 
   function esc(v) {
     return String(v).replace(/[&<>"']/g, function (c) {
@@ -805,8 +822,10 @@
     LIGNES.forEach(function (l) {
       var y0 = DEBUT_Y + (l.depart_y || 0) * PAS;
       var fin = y0 + (l.stations.length - 1) * PAS;
+      /* Bug réparé le 20/08 : la couleur manquait (stroke="undefined") —
+         les cinq raccordements du tronc aux branches étaient invisibles. */
       d.push(flux("M " + HUB_X + " " + (TRONC_Y + 16) + " C " + HUB_X + " " + (TRONC_Y + 110) + " " +
-                  l.x + " " + (PUCE_Y - 100) + " " + l.x + " " + (PUCE_Y - 17)));
+                  l.x + " " + (PUCE_Y - 100) + " " + l.x + " " + (PUCE_Y - 17), l.couleur));
       d.push(flux("M " + l.x + " " + (PUCE_Y - 17) + " V " + fin, l.couleur));
       /* la ligne continue, plus fine, jusqu'à la ceinture */
       d.push('<path d="M ' + l.x + " " + fin + " V " + CEINTURE_Y + '" stroke="' + l.couleur +
@@ -844,9 +863,13 @@
            '<rect x="70" y="' + (CEINTURE_Y - 84) + '" width="' + wc + '" height="30" rx="15" fill="' + CEINTURE.couleur + '"></rect>' +
            '<text class="puce" x="' + (70 + wc / 2) + '" y="' + (CEINTURE_Y - 64) + '" text-anchor="middle">' + esc(CEINTURE.nom) + "</text></g></a>");
     d.push('<text class="puce-s" x="' + (70 + wc / 2) + '" y="' + (CEINTURE_Y - 38) + '" text-anchor="middle">' + esc(CEINTURE.sous) + "</text>");
-    var xs = [200, 320, 480, 590, 730, 840, 1000, 1110];
+    /* Positions RÉPARTIES, jamais saisies : le tableau en dur s'est
+       retrouvé plus court que la ligne le 20/08 (9e station ajoutée,
+       8 coordonnées) — des cx="undefined" silencieux sur le plan. */
+    var nS = CEINTURE.stations.length;
     CEINTURE.stations.forEach(function (s, i) {
-      d.push(station(s, xs[i], CEINTURE_Y, CEINTURE.couleur, i % 2 ? "haut" : "bas", t[s.id]));
+      var x = Math.round(200 + i * (910 / (nS - 1)));
+      d.push(station(s, x, CEINTURE_Y, CEINTURE.couleur, i % 2 ? "haut" : "bas", t[s.id]));
     });
     d.push(jalon(CEINTURE.jalon, 1100, CEINTURE_Y + 62));
 
@@ -864,6 +887,20 @@
       d.push(station(s, xo[i], OUTILS_Y, OUTILS.couleur, i % 2 ? "haut" : "bas", t[s.id]));
     });
 
+    /* La ligne électrotechnique : même dessin que la boîte à outils, un
+       jalon en plus — c'est un parcours, pas un présentoir. */
+    d.push(flux("M 70 " + ELECTROTECH_Y + " H 1210", ELECTROTECH.couleur, 8));
+    var we = Math.round(ELECTROTECH.nom.length * 7.4 + 30);
+    d.push('<a href="#ligne=' + ELECTROTECH.slug + '"><g><title>Voir la ligne en détail</title>' +
+           '<rect x="70" y="' + (ELECTROTECH_Y - 84) + '" width="' + we + '" height="30" rx="15" fill="' + ELECTROTECH.couleur + '"></rect>' +
+           '<text class="puce" x="' + (70 + we / 2) + '" y="' + (ELECTROTECH_Y - 64) + '" text-anchor="middle">' + esc(ELECTROTECH.nom) + "</text></g></a>");
+    d.push('<text class="puce-s" x="' + (70 + we / 2) + '" y="' + (ELECTROTECH_Y - 38) + '" text-anchor="middle">' + esc(ELECTROTECH.sous) + "</text>");
+    var xe = [420, 700];
+    ELECTROTECH.stations.forEach(function (s, i) {
+      d.push(station(s, xe[i], ELECTROTECH_Y, ELECTROTECH.couleur, "bas", t[s.id]));
+    });
+    d.push(jalon(ELECTROTECH.jalon, 1100, ELECTROTECH_Y + 62));
+
     /* La bande des correspondances : trait discontinu et sans épaisseur de
        ligne — ce n'est pas une ligne qu'on emprunte, c'est un quai de
        transfert. */
@@ -873,7 +910,7 @@
     d.push('<rect x="70" y="' + (CORR_Y - 84) + '" width="' + wr + '" height="30" rx="15" fill="' + CORRESPONDANCES.couleur + '"></rect>');
     d.push('<text class="puce" x="' + (70 + wr / 2) + '" y="' + (CORR_Y - 64) + '" text-anchor="middle">' + esc(CORRESPONDANCES.nom) + "</text>");
     d.push('<text class="puce-s" x="' + (70 + wr / 2) + '" y="' + (CORR_Y - 38) + '" text-anchor="middle">' + esc(CORRESPONDANCES.sous) + "</text>");
-    var xr = [420, 700, 990];
+    var xr = [480, 830];
     CORRESPONDANCES.stations.forEach(function (s, i) {
       d.push(correspondance(s, xr[i], CORR_Y, CORRESPONDANCES.couleur, t[s.id]));
     });
@@ -891,7 +928,7 @@
   /* Les CORRESPONDANCES sont volontairement HORS du compte : elles reçoivent
      la marque de visite (le disque se remplit), mais on ne « termine » pas
      une sortie de réseau — les compter diluerait le trajet de formation. */
-  TOUTES = TOUTES.concat(CEINTURE.stations).concat(OUTILS.stations);
+  TOUTES = TOUTES.concat(CEINTURE.stations).concat(OUTILS.stations).concat(ELECTROTECH.stations);
 
   function compte() {
     /* Par id UNIQUE : une station de correspondance figure sur deux lignes
@@ -914,6 +951,7 @@
   var VUES = {};
   LIGNES.forEach(function (l) { VUES[l.slug] = l; });
   VUES[CEINTURE.slug] = CEINTURE; VUES[OUTILS.slug] = OUTILS;
+  VUES[ELECTROTECH.slug] = ELECTROTECH;
 
   /* Ce que la correspondance signifie, dit en clair dans la vue. */
   var CORR_TXT = {
