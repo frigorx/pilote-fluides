@@ -137,10 +137,38 @@ const PLANCHES = readdirSync(DOSSIER)
 const RES = resolve(RACINE, "packs/fluides/res");
 const DOSSIERS_ASSETS = new Set(["svg", "outils", "photos", "bibliotheque", "vignettes"]);
 
+/* Les médias vivent DANS le dossier du cours (assets/, images/, symboles/…), et la
+   galerie n'en disait que le nom du sous-dossier, avec « cloner le dépôt pour les
+   récupérer ». Autant dire : irrécupérables. 1 619 fichiers étaient dans ce cas au
+   19/08/2026 — dont les 17 illustrations des pressostats, produites le jour même et
+   déjà introuvables. Ils sont désormais listés un par un, avec leur adresse.
+   PLAFOND : un cours porte parfois plus de mille fichiers (les 1 423 voix). Au-delà
+   de PLAFOND_MEDIAS on annonce le reste au lieu de gonfler la page — ne pas retirer
+   ce garde-fou sans mesurer ce que ça fait au poids de galerie.html. */
+const EXT_MEDIA = new Set([".png", ".jpg", ".jpeg", ".webp", ".svg", ".gif", ".mp3", ".mp4", ".pdf"]);
+const PLAFOND_MEDIAS = 60;
+
+function releverMedias(dossier) {
+  const trouves = [];
+  const parcourir = (sousChemin) => {
+    for (const e of readdirSync(resolve(RES, dossier, sousChemin), { withFileTypes: true })) {
+      const chemin = sousChemin ? sousChemin + "/" + e.name : e.name;
+      if (e.isDirectory()) parcourir(chemin);
+      else if (EXT_MEDIA.has(e.name.slice(e.name.lastIndexOf(".")).toLowerCase())) trouves.push(chemin);
+    }
+  };
+  for (const e of readdirSync(resolve(RES, dossier), { withFileTypes: true })) {
+    if (e.isDirectory()) parcourir(e.name);
+  }
+  trouves.sort();
+  return { medias: trouves.slice(0, PLAFOND_MEDIAS), mediasTotal: trouves.length };
+}
+
 function lireExperience(dossier) {
   const entrees = readdirSync(resolve(RES, dossier), { withFileTypes: true });
   const racine = entrees.filter((e) => e.isFile()).map((e) => e.name).sort();
   const sousDossiers = entrees.filter((e) => e.isDirectory()).map((e) => e.name).sort();
+  const { medias, mediasTotal } = releverMedias(dossier);
   const htmlFiles = racine.filter((f) => f.endsWith(".html"));
   if (!htmlFiles.length) return null;
   const fichier = htmlFiles.includes("index.html") ? "index.html" : htmlFiles[0];
@@ -202,6 +230,8 @@ function lireExperience(dossier) {
     // énumérés fichier par fichier : juste signalés, pour que la liste
     // reste lisible.
     fichiers: racine.map((f) => "packs/fluides/res/" + dossier + "/" + f),
+    medias: medias.map((f) => "packs/fluides/res/" + dossier + "/" + f),
+    mediasTotal,
     sousDossiers,
   };
 }
@@ -429,7 +459,11 @@ for (const r of RESSOURCES) {
     <details class="reemp"><summary class="reemploi">⚙ Réemployer — fichiers et licence</summary>
       <div class="fichiers">
         ${r.fichiers.map((f) => `<a href="${esc(f)}" download>⬇ ${esc(f.split("/").pop())}</a>`).join("\n        ")}
-        ${r.sousDossiers.length ? `<div class="util">+ sous-dossiers : ${r.sousDossiers.map(esc).join(", ")} — cloner le dépôt pour les récupérer</div>` : ""}
+        ${r.medias.length ? `<div class="util">Médias du cours — ${r.mediasTotal} fichier${r.mediasTotal > 1 ? "s" : ""}${
+          r.mediasTotal > r.medias.length ? `, les ${r.medias.length} premiers` : ""} :</div>
+        ${r.medias.map((f) => `<a href="${esc(f)}" download>⬇ ${esc(f.split("/").slice(4).join("/"))}</a>`).join("\n        ")}${
+          r.mediasTotal > r.medias.length ? `\n        <div class="util">et ${r.mediasTotal - r.medias.length} autres — cloner le dépôt pour la totalité</div>` : ""}` : ""}
+        ${r.sousDossiers.length && !r.medias.length ? `<div class="util">+ sous-dossiers : ${r.sousDossiers.map(esc).join(", ")} — cloner le dépôt pour les récupérer</div>` : ""}
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
       </div>
     </details>
