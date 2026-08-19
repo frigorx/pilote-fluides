@@ -1,0 +1,1347 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Module inerWeb Édu hors ligne : comprendre, câbler, régler et contrôler un pressostat combiné KP15 HP/BP.">
+  <title>Pressostat combiné KP15 HP/BP — inerWeb Édu</title>
+  <style>:root {
+  --navy: #1b3a63;
+  --ink: #10233c;
+  --orange: #ff6b35;
+  --orange-deep: #c9451a;
+  --blue: #3d7fca;
+  --blue-soft: #84b7ec;
+  --cream: #f7f1e7;
+  --paper: #fffdf8;
+  --muted: #637285;
+  --line: rgba(27, 58, 99, .16);
+  --ok: #1e7e54;
+  --ok-bg: #e3f5ec;
+  --danger: #c0392b;
+  --danger-bg: #fbe7e4;
+  --wait: #b06a00;
+  --wait-bg: #fff4e0;
+  --shadow: 0 10px 30px rgba(27, 58, 99, .12);
+}
+
+* { box-sizing: border-box; }
+
+html, body { width: 100%; height: 100%; margin: 0; }
+
+body {
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Calibri, "Segoe UI", system-ui, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+
+button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid rgba(255, 107, 53, .55);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.course-app {
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 48px 30px minmax(0, 1fr) 52px;
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 12px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 253, 248, .96);
+}
+
+.brand { display: flex; align-items: center; min-width: 0; }
+.brand-logo { display: block; height: 30px; width: auto; }
+.print-signature { display: none; }
+
+.course-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--navy);
+  font: 700 16px/1 "Trebuchet MS", Calibri, Arial, sans-serif;
+}
+
+.tools { display: flex; align-items: center; justify-content: flex-end; gap: 5px; }
+.tool-button, .speed-select {
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+}
+.tool-button { padding: 0 10px; }
+.tool-button.compact { width: 36px; padding: 0; }
+.tool-button[aria-pressed="true"] { border: 3px double var(--ok); background: var(--ok-bg); color: var(--ok); }
+.tool-button:disabled { cursor: not-allowed; opacity: .45; }
+.speed-select { padding: 0 4px; }
+
+.progress-row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 70px;
+  align-items: center;
+  gap: 10px;
+  padding: 3px 14px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+.progress-row > :last-child { text-align: right; }
+.progress-track {
+  height: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+}
+.progress-track span { display: block; width: 0; height: 100%; background: var(--orange); transition: width 180ms ease; }
+
+.lesson-grid {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(330px, .82fr);
+  gap: 10px;
+  padding: 0 10px 8px;
+}
+
+.visual-panel, .lesson-panel {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.visual-panel { display: grid; grid-template-rows: minmax(0, 1fr) auto; padding: 8px 10px 6px; }
+.visual-stage { min-height: 0; display: grid; place-items: center; overflow: hidden; }
+.visual-stage > svg { display: block; width: 100%; height: 100%; max-height: 100%; }
+.visual-caption { margin: 3px 4px 0; color: var(--muted); text-align: center; font-size: 11px; line-height: 1.2; }
+
+.visual-composite {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 6px;
+}
+.visual-tabs { display: flex; justify-content: center; gap: 6px; }
+.visual-tab {
+  min-height: 34px;
+  padding: 5px 14px;
+  border: 2px solid var(--navy);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 800;
+}
+.visual-tab[aria-selected="true"] {
+  border: 4px double var(--orange-deep);
+  background: var(--wait-bg);
+  color: var(--orange-deep);
+}
+.visual-mode-body { width: 100%; height: 100%; min-height: 0; display: grid; place-items: center; overflow: hidden; }
+.visual-mode-body > svg { display: block; width: 100%; height: 100%; max-height: 100%; }
+.visual-mode-body > div { width: 100%; height: 100%; min-height: 0; }
+.claude-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 4px;
+  overflow: hidden;
+}
+.claude-frame img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: block;
+  object-fit: contain;
+  border-radius: 13px;
+  background: #071b34;
+}
+.claude-frame figcaption { display: flex; align-items: baseline; justify-content: center; gap: 7px; color: var(--muted); font-size: 10px; line-height: 1.2; text-align: center; }
+.claude-frame figcaption strong { color: var(--navy); }
+
+.lesson-panel { display: flex; flex-direction: column; padding: clamp(14px, 2.1vw, 26px); }
+.lesson-kicker {
+  margin-bottom: 4px;
+  color: var(--orange-deep);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+h1 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font: 700 clamp(24px, 2.5vw, 38px)/1.08 "Trebuchet MS", Calibri, Arial, sans-serif;
+  letter-spacing: -.015em;
+}
+.lesson-lead { margin: 0 0 10px; color: var(--ink); font-size: clamp(15px, 1.25vw, 18px); line-height: 1.45; }
+.lesson-list { margin: 0; padding-left: 1.15em; color: var(--ink); font-size: clamp(14px, 1.05vw, 16px); line-height: 1.42; }
+.lesson-list li { margin-bottom: 6px; padding-left: 3px; }
+
+.callout {
+  margin-top: auto;
+  padding: 10px 12px;
+  border: 2px solid var(--navy);
+  border-left-width: 6px;
+  border-radius: 12px;
+  background: var(--paper);
+  font-size: 14px;
+  line-height: 1.35;
+}
+.callout strong { display: block; margin-bottom: 2px; color: var(--navy); }
+.callout[data-type="key"] { border-style: double; border-width: 4px 2px 4px 7px; border-color: var(--ok); background: var(--ok-bg); }
+.callout[data-type="key"] strong { color: var(--ok); }
+.callout[data-type="warning"] { border-style: dashed; border-width: 2px 2px 2px 6px; border-color: var(--orange-deep); background: var(--wait-bg); }
+.callout[data-type="warning"] strong { color: var(--orange-deep); }
+.callout[data-type="note"] { border-left-style: dotted; border-color: var(--blue); background: #f3f7fb; }
+
+.navigation {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr) 150px;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-top: 1px solid var(--line);
+  background: rgba(247, 241, 231, .98);
+}
+.nav-button { height: 40px; border-radius: 999px; font-size: 14px; font-weight: 800; }
+.nav-button.primary { border: 2px solid var(--navy); background: var(--navy); color: #fff; }
+.nav-button.secondary { border: 2px solid var(--navy); background: var(--paper); color: var(--navy); }
+.nav-button:disabled { cursor: not-allowed; opacity: .42; }
+.nav-state { overflow: hidden; color: var(--muted); text-align: center; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; font-weight: 700; }
+
+/* Visuels et activités */
+.visual-html { width: 100%; height: 100%; min-height: 0; display: grid; place-items: center; padding: 4px; }
+.compare-grid, .model-grid, .record-grid { width: min(96%, 760px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.mini-card {
+  min-width: 0;
+  padding: clamp(10px, 1.7vw, 18px);
+  border: 2px solid var(--navy);
+  border-radius: 16px;
+  background: var(--paper);
+}
+.mini-card h3 { margin: 0 0 7px; color: var(--navy); font: 700 clamp(16px, 1.6vw, 22px)/1.1 "Trebuchet MS", Calibri, Arial, sans-serif; }
+.mini-card p { margin: 4px 0; font-size: clamp(12px, 1.15vw, 15px); line-height: 1.35; }
+.mini-card.safety { border-style: double; border-width: 5px; border-color: var(--danger); }
+.mini-card.regulation { border-style: dashed; border-color: var(--blue); }
+.status-pill { display: inline-flex; align-items: center; gap: 5px; margin-bottom: 7px; padding: 4px 9px; border: 2px solid currentColor; border-radius: 999px; font-size: 11px; font-weight: 800; }
+.status-pill.danger { color: var(--danger); background: var(--danger-bg); border-style: dashed; }
+.status-pill.ok { color: var(--ok); background: var(--ok-bg); border-style: double; }
+.status-pill.info { color: var(--navy); background: #f3f7fb; }
+.formula { color: var(--navy); font: 800 clamp(18px, 2.5vw, 34px)/1.1 Consolas, monospace; }
+
+.lab { width: min(96%, 760px); min-height: 0; display: grid; gap: 10px; }
+.lab-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.lab-field { min-width: 0; padding: 8px; border: 1px solid var(--line); border-radius: 12px; background: #f3f7fb; }
+.lab-field label { display: block; margin-bottom: 4px; color: var(--navy); font-size: 11px; font-weight: 800; }
+.lab-field input { width: 100%; min-height: 36px; padding: 4px 8px; border: 2px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); font: 700 18px/1 Consolas, monospace; }
+.lab-result { min-height: 46px; padding: 9px 12px; border: 2px solid var(--navy); border-radius: 12px; background: var(--paper); color: var(--navy); text-align: center; font-size: 14px; font-weight: 800; }
+.lab-result.ok { border-style: double; border-width: 4px; border-color: var(--ok); background: var(--ok-bg); color: var(--ok); }
+.lab-result.danger { border-style: dashed; border-color: var(--danger); background: var(--danger-bg); color: var(--danger); }
+.lab-result.wait { border-style: dotted; border-color: var(--wait); background: var(--wait-bg); color: #7a4a00; }
+.pressure-slider { width: 100%; accent-color: var(--blue); }
+.button-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.activity-button { min-height: 38px; padding: 7px 13px; border: 2px solid var(--navy); border-radius: 999px; background: var(--paper); color: var(--navy); font-size: 13px; font-weight: 800; }
+.activity-button[aria-pressed="true"] { border-style: double; border-width: 4px; background: var(--ok-bg); color: var(--ok); border-color: var(--ok); }
+
+.quiz-area { display: grid; gap: 8px; margin-top: 4px; }
+.quiz-choice {
+  width: 100%;
+  min-height: 46px;
+  padding: 9px 12px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+}
+.quiz-choice.correct { border: 4px double var(--ok); background: var(--ok-bg); color: var(--ok); }
+.quiz-choice.incorrect { border: 2px dashed var(--danger); background: var(--danger-bg); color: var(--danger); }
+.quiz-choice:disabled { cursor: default; opacity: 1; }
+.feedback { margin-top: auto; padding: 10px 12px; border-radius: 12px; font-size: 14px; font-weight: 700; line-height: 1.35; }
+.feedback.correct { border: 4px double var(--ok); background: var(--ok-bg); color: var(--ok); }
+.feedback.incorrect { border: 2px dashed var(--danger); background: var(--danger-bg); color: var(--danger); }
+
+body.reading-mode .lesson-grid { grid-template-columns: minmax(0, .95fr) minmax(360px, 1.05fr); }
+body.reading-mode .lesson-panel { padding: 18px 24px; }
+body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mode .callout { font-size: 1.05em; line-height: 1.55; }
+
+/* Refonte V2 — visuels techniques et activités */
+.visual-stage > div { width: 100%; height: 100%; min-height: 0; }
+.technical-svg { display: block; width: 100%; height: 100%; min-height: 0; }
+.mechanism-lab, .deadband-lab, .envelope-lab { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 7px; }
+.mechanism-controls { display: grid; grid-template-columns: auto minmax(135px, .55fr) minmax(120px, 1fr) auto minmax(180px, 1fr); align-items: center; gap: 7px; }
+.mechanism-controls label { color: var(--navy); text-align: center; font-size: 11px; font-weight: 800; }
+.mechanism-controls output { display: block; color: var(--orange-deep); font: 800 17px/1.1 Consolas, monospace; }
+.mechanism-controls input, .deadband-controls input, .cycle-gauge input { width: 100%; accent-color: var(--blue); }
+.mechanism-controls .lab-result { min-height: 38px; padding: 6px 8px; font-size: 11px; }
+
+.symbol-workflow { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; align-content: center; padding: 28px 18px 52px; }
+.workflow-line { position: absolute; z-index: 0; top: 50%; left: 9%; right: 9%; height: 6px; background: var(--orange-deep); }
+.symbol-card { position: relative; z-index: 1; min-width: 0; margin: 0; padding: 18px 10px 12px; border: 3px solid var(--navy); border-radius: 18px; background: var(--paper); text-align: center; box-shadow: 0 7px 16px rgba(27,58,99,.13); }
+.symbol-card img { display: block; width: 86px; height: 86px; margin: auto; object-fit: contain; }
+.symbol-card h3 { margin: 8px 0 2px; color: var(--navy); font: 800 16px/1.1 "Trebuchet MS",sans-serif; }
+.symbol-card p { margin: 0; color: var(--muted); font-size: 12px; }
+.symbol-step { position: absolute; top: -15px; left: calc(50% - 15px); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: white; font-weight: 800; }
+.library-seal { position: absolute; right: 16px; bottom: 10px; left: 16px; padding: 8px; border: 3px double var(--ok); border-radius: 10px; background: var(--ok-bg); color: var(--ok); text-align: center; font-size: 11px; font-weight: 800; letter-spacing: .06em; }
+
+.snap-sequence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-content: center; padding: 18px; }
+.snap-card { position: relative; min-width: 0; padding: 20px 14px 12px; border: 3px solid var(--navy); border-radius: 18px; background: var(--paper); text-align: center; }
+.snap-card > span { position: absolute; top: -15px; left: calc(50% - 15px); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: white; font-weight: 800; }
+.snap-card h3 { min-height: 34px; margin: 4px 0; color: var(--navy); font-size: 15px; }
+.snap-card svg { width: 112px; height: 82px; }
+.snap-card p { margin: 0; color: var(--muted); font-size: 12px; }
+.snap-note { grid-column: 1/-1; display: flex; justify-content: center; gap: 12px; padding: 9px; border: 3px double var(--ok); border-radius: 12px; background: var(--ok-bg); color: var(--ok); }
+
+.deadband-controls { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px; align-items: center; }
+.deadband-lab .lab-result { min-height: 38px; padding: 6px; font-size: 12px; }
+
+.calculation-lab { display: grid; grid-template-rows: auto auto auto auto auto; gap: 7px; align-content: center; padding: 8px 14px; }
+.target-tabs, .formula-choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+.target-tab, .formula-choices button { min-height: 38px; padding: 5px 7px; border: 2px solid var(--navy); border-radius: 10px; background: var(--paper); color: var(--navy); font-size: 11px; font-weight: 800; }
+.target-tab.active, .formula-choices button.selected { border: 4px double var(--ok); background: var(--ok-bg); color: var(--ok); }
+.formula-choices button.wrong { border-style: dashed; border-color: var(--danger); background: var(--danger-bg); color: var(--danger); }
+.pressure-ruler { display: grid; grid-template-columns: 1fr 2fr 1fr; overflow: hidden; border: 3px solid var(--navy); border-radius: 14px; text-align: center; font-size: 12px; font-weight: 800; }
+.pressure-ruler > span { display: grid; place-items: center; min-height: 62px; padding: 5px; }
+.ruler-cutout { background: var(--danger-bg); color: var(--danger); }
+.ruler-zone { border-right: 3px dashed var(--wait); border-left: 3px dashed var(--wait); background: var(--wait-bg); color: #7a4a00; }
+.ruler-cutin { background: var(--ok-bg); color: var(--ok); }
+.calc-prompt { margin: 0; color: var(--navy); text-align: center; font-size: 12px; font-weight: 800; }
+.calc-fields { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)) auto; gap: 7px; align-items: stretch; }
+.calc-fields .lab-field { padding: 5px; }
+.calc-fields .lab-field.answer { border: 3px dashed var(--orange-deep); background: var(--wait-bg); }
+.primary-action { background: var(--navy); color: white; }
+.calculation-lab .lab-result { min-height: 38px; padding: 6px; font-size: 11px; }
+
+.contact-lab { display: grid; grid-template-columns: minmax(0, 1fr) 180px; grid-template-rows: minmax(0,1fr) auto; gap: 8px; padding: 6px; }
+.contact-main { min-height: 0; }
+.contact-symbol { display: grid; grid-template-rows: auto minmax(70px,1fr) auto; min-height: 0; padding: 10px; border: 3px double var(--navy); border-radius: 14px; background: #f3f7fb; text-align: center; }
+.contact-symbol span { color: var(--navy); font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.contact-symbol img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.contact-symbol p { margin: 3px 0 0; color: var(--muted); font-size: 10px; line-height: 1.2; }
+.contact-buttons { grid-column: 1/-1; display: flex; justify-content: center; gap: 8px; }
+
+.model-compare { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; align-content: center; padding: 10px; }
+.model-card { display: grid; grid-template-columns: 130px 1fr; min-width: 0; overflow: hidden; border: 3px solid var(--navy); border-radius: 16px; background: var(--paper); }
+.model-card.manual { border-style: dashed; border-color: var(--danger); }
+.model-face { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; align-content: start; padding: 14px 8px; background: #171b21; color: white; text-align: center; font-size: 11px; font-weight: 800; }
+.model-face i { display: block; height: 132px; border: 1px solid #637285; background: repeating-linear-gradient(to bottom,transparent 0 16px,#c7d0db 17px 19px); }
+.model-face.one { grid-template-columns: 1fr; }
+.model-face.one b { padding: 7px; border-radius: 6px; background: var(--danger); }
+.model-card > div:last-child { padding: 12px; }
+.model-card h3 { margin: 2px 0 7px; color: var(--navy); font-size: 15px; }
+.model-card dl { display: grid; grid-template-columns: 1fr 1fr; margin: 0; font-size: 11px; }
+.model-card dt,.model-card dd { margin: 0; padding: 4px; border-bottom: 1px solid var(--line); }
+.model-card dd { font-weight: 800; }
+.model-rule { grid-column: 1/-1; display: flex; justify-content: center; gap: 12px; padding: 8px; border: 3px double var(--ok); border-radius: 10px; background: var(--ok-bg); color: var(--ok); font-size: 12px; }
+
+.envelope-lab { padding: 8px; }
+.lab-row.two { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.envelope-lab .lab-result { min-height: 38px; padding: 6px; font-size: 11px; }
+
+.kp-console { position: relative; display: grid; grid-template-rows: auto minmax(0,1fr); gap: 6px; padding: 6px; }
+.kp-provenance { padding: 5px 8px; border: 3px double var(--ok); border-radius: 9px; background: var(--ok-bg); color: var(--ok); text-align: center; font-size: 10px; font-weight: 800; letter-spacing: .07em; }
+.kp-face-grid { min-height: 0; display: grid; grid-template-columns: minmax(170px,.8fr) minmax(200px,1fr) minmax(170px,.7fr); gap: 8px; }
+.kp-hardware,.kp-gauge { min-height: 0; display: grid; place-items: center; }
+.kp-hardware svg,.kp-gauge svg { width: 100%; height: 100%; min-height: 0; }
+.kp-gauge { grid-template-rows: minmax(0,1fr) auto; }
+.kp-equation { margin-top: -4px; padding: 6px 12px; border-radius: 999px; background: var(--wait-bg); color: #7a4a00; font: 800 16px/1 Consolas,monospace; }
+.kp-settings { display: grid; grid-template-rows: auto auto auto auto; gap: 7px; align-content: center; }
+.kp-setting,.kp-output { padding: 9px; border: 2px solid var(--navy); border-radius: 13px; background: var(--paper); text-align: center; }
+.kp-setting.diff { border-color: var(--orange-deep); }
+.kp-setting span,.kp-output span { display: block; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.kp-setting strong,.kp-output strong { display: block; color: var(--navy); font: 800 20px/1.2 Consolas,monospace; }
+.kp-setting.diff strong { color: var(--orange-deep); }
+.kp-setting > div { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 5px; }
+.kp-setting button { display: grid; place-items: center; width: 34px; height: 28px; border: 2px solid var(--navy); border-radius: 8px; background: var(--paper); color: var(--navy); font-weight: 900; }
+.kp-setting i { display: block; width: 34px; height: 34px; border: 4px solid #5d6064; border-radius: 50%; background: linear-gradient(90deg,transparent 44%,#26282b 45% 55%,transparent 56%),#42464b; }
+.kp-output { border: 4px double var(--ok); background: var(--ok-bg); }
+.kp-output strong { color: var(--ok); font-size: 24px; }
+.kp-output small { color: var(--ok); }
+.kp-status { padding: 7px; border-radius: 9px; text-align: center; font-size: 10px; font-weight: 800; }
+.kp-status.ok { border: 3px double var(--ok); background: var(--ok-bg); color: var(--ok); }
+.kp-status.danger { border: 2px dashed var(--danger); background: var(--danger-bg); color: var(--danger); }
+
+.nitrogen-bench { display: grid; grid-template-rows: minmax(0,1fr) auto; gap: 5px; }
+.bench-legend { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 4px; }
+.bench-legend span { padding: 5px; border: 1px solid var(--line); border-radius: 7px; background: #f3f7fb; color: var(--navy); text-align: center; font-size: 9px; font-weight: 800; }
+.nitrogen-cycle { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(190px,.9fr); gap: 10px; padding: 8px; }
+.cycle-gauge { min-height: 0; display: grid; grid-template-rows: minmax(0,1fr) auto auto; gap: 5px; }
+.cycle-gauge svg { width: 100%; height: 100%; min-height: 0; }
+.cycle-buttons { display: flex; justify-content: center; gap: 6px; }
+.cycle-readings { display: grid; grid-template-rows: auto repeat(3,1fr) auto; gap: 6px; align-content: center; }
+.contact-meter,.reading { padding: 8px; border: 2px solid var(--navy); border-radius: 11px; background: var(--paper); text-align: center; }
+.contact-meter span,.reading span { display: block; color: var(--muted); font-size: 9px; font-weight: 800; letter-spacing: .07em; }
+.contact-meter strong,.reading strong { color: var(--navy); font: 800 15px/1.2 Consolas,monospace; }
+.contact-meter.ok { border: 4px double var(--ok); background: var(--ok-bg); }
+.contact-meter.ok strong { color: var(--ok); }
+.contact-meter.danger { border: 2px dashed var(--danger); background: var(--danger-bg); }
+.contact-meter.danger strong { color: var(--danger); }
+.reading.diff { border: 4px double var(--orange-deep); background: var(--wait-bg); }
+
+.running-board { display: grid; grid-template-rows: 1fr auto auto; gap: 10px; align-content: center; padding: 14px; }
+.running-circuit { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 7px; align-items: center; }
+.component { min-width: 0; padding: 9px; border: 3px solid var(--navy); border-radius: 13px; background: var(--paper); text-align: center; }
+.component img,.symbol-shape { display: block; width: 58px; height: 48px; margin: auto; object-fit: contain; color: var(--orange-deep); font-size: 42px; line-height: 1; }
+.component strong,.component small { display: block; }
+.component strong { color: var(--navy); font-size: 12px; }
+.component small { color: var(--muted); font-size: 9px; }
+.pipe-arrow { color: var(--orange-deep); font-size: 24px; font-weight: 900; }
+.running-priorities { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; }
+.running-priorities article { display: flex; align-items: center; gap: 6px; padding: 7px; border: 2px solid var(--navy); border-radius: 9px; background: #f3f7fb; font-size: 10px; font-weight: 800; }
+.running-priorities article span { color: var(--orange-deep); font-weight: 900; }
+.running-priorities article p { margin: 0; }
+.running-priorities article.danger { border-style: dashed; border-color: var(--danger); background: var(--danger-bg); color: var(--danger); }
+.running-footer { padding: 7px; border: 2px dashed var(--orange-deep); border-radius: 8px; background: var(--wait-bg); color: #7a4a00; text-align: center; font-size: 10px; font-weight: 800; }
+
+.cycles-lab { display: grid; grid-template-rows: minmax(0,1fr) auto auto; gap: 8px; padding: 12px; }
+.cycles-lab table { width: 100%; table-layout: fixed; border-collapse: collapse; overflow: hidden; border: 2px solid var(--navy); border-radius: 10px; font-size: 11px; }
+.cycles-lab th,.cycles-lab td { padding: 6px; border: 1px solid var(--line); text-align: center; }
+.cycles-lab thead th { background: var(--navy); color: white; }
+.cycles-lab input { width: 100%; min-height: 34px; border: 2px solid var(--line); border-radius: 6px; text-align: center; font: 700 14px Consolas,monospace; }
+.cycles-lab output { font: 800 14px Consolas,monospace; color: var(--orange-deep); }
+.cycles-actions { display: grid; grid-template-columns: auto minmax(220px,1fr); gap: 8px; }
+.cycles-actions .tolerance { display: grid; grid-template-columns: 1fr 100px; align-items: center; gap: 7px; }
+.cycles-lab .lab-result { min-height: 38px; padding: 6px; font-size: 11px; }
+
+.record-timeline { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; align-content: center; padding: 14px; }
+.record-timeline article { position: relative; min-width: 0; padding: 28px 8px 10px; border: 3px solid var(--navy); border-radius: 13px; background: var(--paper); text-align: center; }
+.record-timeline article > span { position: absolute; top: -15px; left: calc(50% - 19px); display: grid; place-items: center; width: 38px; height: 30px; border-radius: 15px; background: var(--navy); color: white; font-weight: 800; }
+.record-timeline h3 { margin: 0 0 5px; color: var(--navy); font-size: 12px; }
+.record-timeline p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.25; }
+.record-signature { grid-column: 1/-1; padding: 10px; border: 3px double var(--ok); border-radius: 10px; background: var(--ok-bg); color: var(--ok); text-align: center; font-weight: 800; }
+
+.summary-board { display: grid; gap: 18px; align-content: center; padding: 22px; }
+.summary-mechanism,.summary-formula { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
+.summary-mechanism span { padding: 10px 14px; border: 3px solid var(--navy); border-radius: 11px; background: var(--paper); color: var(--navy); font-weight: 800; }
+.summary-mechanism b { color: var(--orange-deep); font-size: 24px; }
+.summary-formula { padding: 18px; border: 4px double var(--orange-deep); border-radius: 15px; background: var(--wait-bg); }
+.summary-formula span { color: var(--danger); font-weight: 800; }
+.summary-formula strong { color: var(--navy); font: 800 22px Consolas,monospace; }
+.summary-formula i { width: 40px; border-top: 3px dashed var(--wait); }
+.summary-proof { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+.summary-proof article { display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid var(--navy); border-radius: 10px; background: #f3f7fb; font-size: 12px; font-weight: 800; }
+.summary-proof b { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: white; }
+
+.quiz-visual,.final-board { display: grid; gap: 12px; place-content: center; text-align: center; padding: 20px; }
+.quiz-symbol { display: flex; justify-content: center; align-items: center; gap: 12px; }
+.quiz-symbol img { width: 100px; height: 100px; object-fit: contain; }
+.quiz-symbol span { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--navy); color: white; font-size: 22px; font-weight: 900; }
+.quiz-index small,.quiz-index strong,.quiz-index span { display: inline-block; margin: 0 4px; }
+.quiz-index strong { color: var(--orange-deep); font-size: 42px; }
+.quiz-topic,.quiz-score,.final-next { padding: 8px 16px; border-radius: 999px; background: var(--navy); color: white; font-weight: 800; }
+.quiz-reminder,.final-equation { padding: 13px; border: 4px double var(--orange-deep); border-radius: 12px; background: var(--wait-bg); color: var(--navy); font: 800 18px Consolas,monospace; }
+.quiz-reminder { display: flex; justify-content: center; gap: 12px; }
+.final-score strong { display: block; color: var(--orange-deep); font-size: 56px; }
+.final-chain { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; color: var(--navy); font-weight: 800; }
+.final-chain b { color: var(--orange-deep); }
+
+/* KP15 — moule visuel spécifique. */
+.claude-viewport { width: 100%; height: 100%; min-height: 0; overflow: hidden; border-radius: 13px; background: #071b34; }
+.claude-viewport img { width: 100%; height: 100%; min-height: 0; display: block; object-fit: contain; }
+.claude-frame[data-focus="mechanism"] .claude-viewport { aspect-ratio: 1.08 / 1; justify-self: center; max-width: 100%; }
+.claude-frame[data-focus="mechanism"] .claude-viewport img { width: 166%; max-width: none; object-fit: cover; object-position: left center; }
+.kp15-board { width: 100%; height: 100%; min-height: 0; display: grid; align-content: center; gap: 10px; padding: 8px; overflow: hidden; }
+.technical-svg { display: block; width: 100%; height: 100%; min-height: 0; max-height: 405px; }
+.kp15-strip,.terminal-roles,.flow-legend,.nitrogen-readings { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 6px; }
+.kp15-strip span,.terminal-roles span,.flow-legend span,.nitrogen-readings span { padding: 7px; border: 2px solid var(--line); border-radius: 9px; background: #f3f7fb; color: var(--navy); text-align: center; font-size: 10px; font-weight: 800; }
+.kp15-strip b { color: var(--orange-deep); font-size: 16px; }
+.flow-legend { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.flow-bp { border-color: #315e8f !important; }.flow-hp { border-color: #c45422 !important; }
+.dual-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.dual-controls label,.setting-panel label,.pressure-control { display: grid; grid-template-columns: 1fr auto; gap: 5px; padding: 7px 10px; border: 2px solid var(--line); border-radius: 10px; color: var(--navy); font-weight: 800; }
+.dual-controls input,.setting-panel input,.pressure-control input { grid-column: 1/-1; width: 100%; accent-color: var(--orange-deep); }
+.dual-controls output,.setting-panel output,.pressure-control output { font: 800 14px Consolas,monospace; color: var(--orange-deep); }
+.logic-buttons,.terminal-state-buttons,.verify-tabs { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 6px; }
+.logic-equation { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; }
+.logic-token { padding: 10px 13px; border: 3px solid; border-radius: 10px; font-weight: 900; }
+.logic-token.ok { border-color: var(--ok); background: var(--ok-bg); color: var(--ok); }.logic-token.danger { border-color: var(--danger); background: var(--danger-bg); color: var(--danger); }
+.truth-table,.verify-lab table { width: 100%; border-collapse: separate; border-spacing: 3px; text-align: center; font-size: 11px; }
+.truth-table th,.verify-lab th { padding: 7px; background: var(--navy); color: white; }.truth-table td,.verify-lab td { padding: 7px; background: #edf3f8; color: var(--navy); font-weight: 700; }
+.cycle-lab { width: 100%; max-width: 700px; justify-self: center; display: grid; gap: 14px; padding: 20px; border: 4px solid #315e8f; border-radius: 18px; background: #f5f9fd; }
+.cycle-lab.hp { border-color: #c45422; background: #fff8f4; }
+.cycle-heading { display: flex; justify-content: space-between; align-items: baseline; color: var(--navy); font-size: 17px; }.cycle-heading output { color: var(--orange-deep); font: 900 26px Consolas,monospace; }
+.cycle-lab > input { width: 100%; accent-color: var(--orange-deep); }.threshold-line { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: center; color: var(--navy); font-size: 11px; font-weight: 800; }.threshold-line b { padding: 7px; border: 3px double var(--orange-deep); border-radius: 8px; background: var(--wait-bg); text-align: center; }
+.cycle-actions { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; }.cycle-lab.bp .cycle-actions { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.calculator,.verify-lab { max-width: 760px; justify-self: center; }
+.formula-card { display: grid; grid-template-columns: auto 1fr 1fr; gap: 10px; align-items: center; padding: 12px; border: 4px double var(--navy); border-radius: 12px; background: #eef5fb; color: var(--navy); text-align: center; }
+.formula-card b { color: var(--orange-deep); }.lab-prompt { margin: 0; color: var(--navy); font-weight: 800; }.answer-row { display: grid; grid-template-columns: auto minmax(90px,1fr) auto auto; gap: 7px; align-items: center; }.answer-row input { min-height: 39px; border: 2px solid var(--line); border-radius: 8px; text-align: center; font: 800 17px Consolas,monospace; }
+.compare-formulas { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }.compare-formulas section { display: grid; gap: 9px; padding: 18px; border: 4px solid #315e8f; border-radius: 16px; background: #f5f9fd; color: var(--navy); text-align: center; }.compare-formulas section+section { border-color: #c45422; background: #fff8f4; }.compare-formulas strong { font: 900 20px Consolas,monospace; }.compare-formulas p { margin: 0; font-size: 16px; }.direction-arrow { padding: 8px; border-radius: 8px; background: #dce8f4; font-weight: 800; }.direction-arrow.down { background: #fee4d7; color: #a6451b; }.memory-rule { padding: 14px; border: 4px double var(--orange-deep); border-radius: 12px; background: var(--wait-bg); color: var(--navy); text-align: center; }
+.terminal-lab .technical-svg { max-height: 330px; }.terminal-roles { grid-template-columns: repeat(5,minmax(0,1fr)); }.terminal-roles .pe { border-color: var(--ok); color: var(--ok); }
+.nameplate { max-width: 760px; justify-self: center; }.nameplate-head { display: grid; grid-template-columns: auto 1fr auto 1fr; gap: 8px; padding: 13px; border-radius: 13px 13px 0 0; background: var(--navy); color: white; align-items: baseline; }.nameplate-head strong { color: #fff; font-size: 22px; }.nameplate-head span { color: #bed1e4; font-size: 10px; letter-spacing: .12em; }.nameplate-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }.nameplate-grid section { display: grid; gap: 7px; padding: 14px; border: 2px solid var(--line); border-radius: 11px; background: #f5f8fb; color: var(--navy); text-align: center; }.nameplate-grid p { margin: 0; font-size: 11px; }.side-badge { display: inline-block; justify-self: center; padding: 4px 9px; border-radius: 999px; background: var(--navy); color: white; font-size: 10px; font-weight: 900; }.side-badge.bp { background: #315e8f; }.side-badge.hp { background: #c45422; }.source-stamp { margin: 0; color: var(--muted); font-size: 9px; text-align: center; }
+.setting-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }.setting-panel { display: grid; gap: 10px; padding: 16px; border: 4px solid #315e8f; border-radius: 16px; background: #f5f9fd; }.setting-panel.hp { border-color: #c45422; background: #fff8f4; }.fixed-diff,.calculated-threshold { padding: 10px; border-radius: 9px; background: #e5edf5; color: var(--navy); text-align: center; }.setting-panel.hp .fixed-diff,.setting-panel.hp .calculated-threshold { background: #fee4d7; }.calculated-threshold strong { display: block; color: var(--orange-deep); font: 900 23px Consolas,monospace; }
+.nitrogen-top { display: grid; grid-template-columns: 100px 180px 1fr 120px; gap: 12px; align-items: center; }.bottle { display: grid; place-items: center; height: 150px; border: 5px solid #315e8f; border-radius: 40px 40px 14px 14px; background: #dce8f4; color: var(--navy); font-size: 28px; font-weight: 900; }.bottle small,.kp-mini small { display: block; font-size: 9px; }.regulator { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }.regulator div { display: grid; place-items: center; aspect-ratio: 1; border: 5px double var(--navy); border-radius: 50%; color: var(--navy); font-size: 9px; text-align: center; }.selector { display: grid; gap: 8px; }.kp-mini { display: grid; place-items: center; height: 110px; border: 5px solid var(--navy); border-radius: 14px; color: var(--navy); font-size: 24px; font-weight: 900; }.nitrogen-readings { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.guard-path { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 10px; align-items: center; }.guard-path section { padding: 18px 10px; border: 4px solid var(--navy); border-radius: 14px; background: #f3f7fb; color: var(--navy); text-align: center; }.guard-path p { margin: 7px 0 0; font-size: 11px; }.guard-path>span { color: var(--orange-deep); font-size: 28px; font-weight: 900; }.stop-panel { display: grid; grid-template-columns: auto repeat(3,1fr); gap: 7px; align-items: center; padding: 12px; border: 4px double var(--danger); border-radius: 12px; background: var(--danger-bg); color: var(--danger); }.stop-panel span { font-size: 10px; font-weight: 800; }
+.verify-tabs { grid-template-columns: 1fr 1fr; }.verify-lab input { width: 100%; min-height: 32px; border: 2px solid var(--line); border-radius: 6px; text-align: center; }.record-card { max-width: 760px; justify-self: center; }.record-title,.record-footer { padding: 12px; background: var(--navy); color: white; text-align: center; font-weight: 900; }.record-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }.record-grid section { display: grid; gap: 8px; padding: 15px; border: 2px solid var(--line); border-radius: 10px; background: #f5f8fb; color: var(--navy); }.record-grid span { font-size: 11px; }.record-footer { border-radius: 0 0 12px 12px; background: var(--wait-bg); color: var(--orange-deep); }
+.summary-map { grid-template-columns: 1fr 130px 1fr; grid-template-rows: 1fr 1fr; gap: 10px; }.summary-center { grid-column: 2; grid-row: 1/-1; align-self: center; display: grid; place-items: center; aspect-ratio: 1; border: 7px double var(--orange-deep); border-radius: 50%; background: var(--navy); color: white; font-size: 30px; font-weight: 900; }.summary-center small { font-size: 11px; }.summary-map section { display: grid; gap: 4px; padding: 12px; border: 3px solid var(--navy); border-radius: 12px; background: #f3f7fb; color: var(--navy); text-align: center; }.sum-bp{grid-column:1;grid-row:1}.sum-hp{grid-column:3;grid-row:1;border-color:#c45422!important}.sum-wire{grid-column:1;grid-row:2}.sum-proof{grid-column:3;grid-row:2}.summary-map section span{font-size:10px}.quiz-symbol { display:grid; place-items:center; width:150px; aspect-ratio:1; border:8px double var(--orange-deep); border-radius:50%; background:var(--navy); color:white; font-size:72px; font-weight:900; }.quiz-symbol small{display:block;font-size:14px}.final-chain span{padding:10px;border:3px solid var(--navy);border-radius:10px;background:#f3f7fb}
+
+@media (max-width: 900px) {
+  .lesson-grid { grid-template-columns: minmax(0, 1fr) minmax(310px, .9fr); }
+  .brand-logo { height: 26px; }
+  .tool-button span { display: none; }
+  .tool-button:not(.compact) { width: 36px; padding: 0; }
+}
+
+@media (max-width: 650px) {
+  .course-app { grid-template-rows: 40px 24px minmax(0, 1fr) 44px; }
+  .topbar { gap: 5px; padding: 3px 5px; }
+  .brand-logo { height: 22px; }
+  .course-name { display: none; }
+  .course-name { text-align: left; font-size: 12px; }
+  .tools { gap: 3px; }
+  .tool-button, .speed-select { height: 30px; border-radius: 8px; font-size: 10px; }
+  .tool-button.compact, .tool-button:not(.compact) { width: 31px; }
+  .speed-select { width: 46px; padding: 0; }
+  .progress-row { grid-template-columns: 70px minmax(0, 1fr) 48px; gap: 5px; padding: 1px 6px; font-size: 9px; }
+  .progress-track { height: 6px; }
+  .lesson-grid { grid-template-columns: 1fr; grid-template-rows: minmax(0, 44%) minmax(0, 56%); gap: 4px; padding: 0 4px 4px; }
+  .visual-panel, .lesson-panel { border-radius: 12px; box-shadow: 0 2px 10px rgba(27, 58, 99, .1); }
+  .visual-panel { padding: 3px 4px 2px; }
+  .visual-caption { margin-top: 1px; font-size: 8.5px; line-height: 1.1; }
+  .visual-composite { gap: 2px; }
+  .visual-tabs { gap: 3px; }
+  .visual-tab { min-height: 26px; padding: 2px 8px; border-width: 1px; font-size: 8px; }
+  .visual-tab[aria-selected="true"] { border-width: 3px; }
+  .claude-frame { gap: 1px; }
+  .claude-frame img { border-radius: 7px; }
+  .claude-frame figcaption { font-size: 6.5px; }
+  .claude-frame figcaption span { display: none; }
+  .lesson-panel { padding: 8px 10px; }
+  .lesson-kicker { margin-bottom: 2px; font-size: 8px; }
+  h1 { margin-bottom: 4px; font-size: clamp(17px, 5.1vw, 20px); line-height: 1.05; }
+  .lesson-lead { margin-bottom: 4px; font-size: 11px; line-height: 1.22; }
+  .lesson-list { padding-left: 1em; font-size: 10.5px; line-height: 1.18; }
+  .lesson-list li { margin-bottom: 2px; }
+  .callout { padding: 5px 7px; border-radius: 8px; font-size: 10px; line-height: 1.18; }
+  .callout strong { display: inline; margin-right: 3px; }
+  .navigation { grid-template-columns: 88px minmax(0, 1fr) 102px; gap: 4px; padding: 3px 4px; }
+  .nav-button { height: 36px; font-size: 11px; }
+  .nav-state { font-size: 9px; }
+  .compare-grid, .model-grid, .record-grid { width: 98%; gap: 5px; }
+  .mini-card { padding: 7px; border-radius: 10px; }
+  .mini-card.safety { border-width: 3px; }
+  .mini-card h3 { margin-bottom: 3px; font-size: 12px; }
+  .mini-card p { margin: 2px 0; font-size: 9.5px; line-height: 1.15; }
+  .status-pill { margin-bottom: 3px; padding: 2px 5px; font-size: 8px; }
+  .formula { font-size: 16px; }
+  .lab { width: 98%; gap: 4px; }
+  .lab-row { gap: 4px; }
+  .lab-field { padding: 4px; border-radius: 8px; }
+  .lab-field label { margin-bottom: 1px; font-size: 8px; }
+  .lab-field input { min-height: 28px; padding: 2px 4px; border-width: 1px; font-size: 13px; }
+  .lab-result { min-height: 30px; padding: 4px 6px; border-radius: 8px; font-size: 10px; }
+  .activity-button { min-height: 30px; padding: 3px 8px; font-size: 9px; }
+  .quiz-area { gap: 4px; margin-top: 1px; }
+  .quiz-choice { min-height: 34px; padding: 5px 7px; border-radius: 8px; font-size: 10.5px; }
+  .feedback { padding: 5px 7px; border-radius: 8px; font-size: 10px; line-height: 1.18; }
+  .mechanism-lab, .deadband-lab, .envelope-lab { gap: 2px; }
+  .mechanism-controls { grid-template-columns: 48px 64px minmax(60px,1fr) 48px; gap: 2px; }
+  .mechanism-controls label { font-size: 7px; }
+  .mechanism-controls output { font-size: 11px; }
+  .mechanism-controls .lab-result { grid-column: 1/-1; min-height: 23px; padding: 2px; font-size: 7px; }
+  .symbol-workflow { gap: 3px; padding: 17px 3px 30px; }
+  .workflow-line { height: 3px; }
+  .symbol-card { padding: 8px 2px 4px; border-width: 2px; border-radius: 7px; }
+  .symbol-card img { width: 38px; height: 38px; }
+  .symbol-card h3 { margin: 2px 0; font-size: 7px; }
+  .symbol-card p { font-size: 6px; }
+  .symbol-step { top: -9px; left: calc(50% - 9px); width: 18px; height: 18px; font-size: 8px; }
+  .library-seal { right: 3px; bottom: 2px; left: 3px; padding: 3px; font-size: 6px; }
+  .snap-sequence { gap: 3px; padding: 10px 3px 3px; }
+  .snap-card { padding: 9px 2px 3px; border-width: 2px; border-radius: 7px; }
+  .snap-card > span { top: -8px; left: calc(50% - 8px); width: 16px; height: 16px; font-size: 7px; }
+  .snap-card h3 { min-height: 16px; margin: 1px; font-size: 6px; }
+  .snap-card svg { width: 48px; height: 34px; }
+  .snap-card p { font-size: 6px; }
+  .snap-note { gap: 4px; padding: 3px; font-size: 7px; }
+  .deadband-controls { gap: 2px; }
+  .deadband-lab .lab-result { min-height: 22px; padding: 2px; font-size: 7px; }
+  .calculation-lab { gap: 2px; padding: 2px; }
+  .target-tabs,.formula-choices { gap: 2px; }
+  .target-tab,.formula-choices button { min-height: 24px; padding: 2px; border-width: 1px; border-radius: 5px; font-size: 6.5px; }
+  .pressure-ruler { border-width: 2px; border-radius: 6px; font-size: 7px; }
+  .pressure-ruler > span { min-height: 34px; padding: 2px; }
+  .calc-prompt { font-size: 7px; }
+  .calc-fields { gap: 2px; }
+  .calc-fields .lab-field { padding: 2px; }
+  .calc-fields .lab-field label { font-size: 6px; }
+  .calc-fields .lab-field input { min-height: 22px; font-size: 9px; }
+  .calculation-lab .lab-result { min-height: 22px; padding: 2px; font-size: 7px; }
+  .contact-lab { grid-template-columns: minmax(0,1fr) 72px; gap: 2px; padding: 1px; }
+  .contact-symbol { grid-template-rows: auto minmax(30px,1fr); padding: 3px; border-width: 2px; border-radius: 6px; }
+  .contact-symbol span,.contact-symbol p { font-size: 5.5px; }
+  .contact-symbol p { display: none; }
+  .contact-buttons { gap: 3px; }
+  .model-compare { gap: 3px; padding: 2px; }
+  .model-card { grid-template-columns: 53px 1fr; border-width: 2px; border-radius: 7px; }
+  .model-face { gap: 2px; padding: 5px 2px; font-size: 5px; }
+  .model-face i { height: 70px; background-size: auto 10px; }
+  .model-card > div:last-child { padding: 4px; }
+  .model-card h3 { margin: 1px; font-size: 7px; }
+  .model-card dl { font-size: 5.5px; }
+  .model-card dt,.model-card dd { padding: 1px; }
+  .model-rule { gap: 4px; padding: 3px; font-size: 6px; }
+  .envelope-lab { padding: 2px; }
+  .envelope-lab .lab-result { min-height: 22px; padding: 2px; font-size: 7px; }
+  .kp-console { gap: 2px; padding: 1px; }
+  .kp-provenance { padding: 2px; border-width: 2px; font-size: 5.5px; }
+  .kp-face-grid { grid-template-columns: .8fr 1fr .72fr; gap: 2px; }
+  .kp-equation { padding: 2px 5px; font-size: 8px; }
+  .kp-settings { gap: 2px; }
+  .kp-setting,.kp-output { padding: 2px; border-width: 1px; border-radius: 5px; }
+  .kp-setting span,.kp-output span { font-size: 5.5px; }
+  .kp-setting strong,.kp-output strong { font-size: 10px; }
+  .kp-setting > div { gap: 2px; margin-top: 1px; }
+  .kp-setting button { width: 22px; height: 18px; border-width: 1px; border-radius: 4px; font-size: 8px; }
+  .kp-setting i { width: 19px; height: 19px; border-width: 2px; }
+  .kp-output small { display: none; }
+  .kp-status { padding: 2px; font-size: 5.5px; }
+  .bench-legend { gap: 2px; }
+  .bench-legend span { padding: 2px; font-size: 5.5px; }
+  .nitrogen-cycle { grid-template-columns: 1.12fr .88fr; gap: 3px; padding: 2px; }
+  .cycle-gauge { gap: 2px; }
+  .cycle-buttons { gap: 2px; }
+  .cycle-readings { gap: 2px; }
+  .contact-meter,.reading { padding: 2px; border-width: 1px; border-radius: 5px; }
+  .contact-meter span,.reading span { font-size: 5.5px; }
+  .contact-meter strong,.reading strong { font-size: 8px; }
+  .running-board { gap: 3px; padding: 3px; }
+  .running-circuit { gap: 2px; }
+  .component { padding: 2px; border-width: 1px; border-radius: 5px; }
+  .component img,.symbol-shape { width: 25px; height: 21px; font-size: 20px; }
+  .component strong { font-size: 6px; }
+  .component small { font-size: 5px; }
+  .pipe-arrow { font-size: 10px; }
+  .running-priorities { gap: 2px; }
+  .running-priorities article { gap: 2px; padding: 2px; border-width: 1px; font-size: 5.5px; }
+  .running-footer { padding: 2px; font-size: 5.5px; }
+  .cycles-lab { gap: 3px; padding: 2px; }
+  .cycles-lab table { font-size: 6px; }
+  .cycles-lab th,.cycles-lab td { padding: 2px; }
+  .cycles-lab input { min-height: 21px; font-size: 8px; }
+  .cycles-lab output { font-size: 7px; }
+  .cycles-actions { grid-template-columns: auto 1fr; gap: 2px; }
+  .cycles-actions .tolerance { grid-template-columns: 1fr 52px; gap: 2px; }
+  .cycles-lab .lab-result { min-height: 22px; padding: 2px; font-size: 6px; }
+  .record-timeline { gap: 2px; padding: 9px 2px 2px; }
+  .record-timeline article { padding: 12px 2px 3px; border-width: 1px; border-radius: 5px; }
+  .record-timeline article > span { top: -7px; left: calc(50% - 10px); width: 20px; height: 14px; font-size: 6px; }
+  .record-timeline h3 { margin: 0; font-size: 5.5px; }
+  .record-timeline p { font-size: 5px; }
+  .record-signature { padding: 3px; font-size: 7px; }
+  .summary-board { gap: 5px; padding: 4px; }
+  .summary-mechanism,.summary-formula { gap: 3px; }
+  .summary-mechanism span { padding: 3px; border-width: 1px; font-size: 6px; }
+  .summary-mechanism b { font-size: 10px; }
+  .summary-formula { padding: 5px; border-width: 2px; }
+  .summary-formula span { font-size: 7px; }
+  .summary-formula strong { font-size: 10px; }
+  .summary-formula i { width: 12px; }
+  .summary-proof { gap: 2px; }
+  .summary-proof article { gap: 2px; padding: 2px; border-width: 1px; font-size: 6px; }
+  .summary-proof b { width: 15px; height: 15px; }
+  .quiz-visual,.final-board { gap: 4px; padding: 4px; }
+  .quiz-symbol img { width: 55px; height: 55px; }
+  .quiz-symbol span { width: 32px; height: 32px; font-size: 11px; }
+  .quiz-index strong { font-size: 22px; }
+  .quiz-topic,.quiz-score,.final-next { padding: 3px 8px; font-size: 7px; }
+  .quiz-reminder,.final-equation { padding: 4px; border-width: 2px; font-size: 9px; }
+  .final-score strong { font-size: 28px; }
+  .final-chain { gap: 3px; font-size: 7px; }
+  body.reading-mode .lesson-grid { grid-template-columns: 1fr; grid-template-rows: minmax(0, 36%) minmax(0, 64%); }
+  body.reading-mode .lesson-panel { padding: 8px 10px; }
+  body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mode .callout { font-size: 11px; line-height: 1.3; }
+}
+
+@media (max-width: 650px) {
+  .kp15-board { gap: 3px; padding: 2px; }
+  .technical-svg { max-height: 205px; }
+  .kp15-strip,.terminal-roles,.flow-legend,.nitrogen-readings { gap: 2px; }
+  .kp15-strip span,.terminal-roles span,.flow-legend span,.nitrogen-readings span { padding: 2px; border-width: 1px; border-radius: 4px; font-size: 5.5px; }
+  .kp15-strip b { font-size: 8px; }
+  .dual-controls { gap: 2px; }
+  .dual-controls label,.setting-panel label,.pressure-control { gap: 1px; padding: 2px 4px; border-width: 1px; border-radius: 4px; font-size: 6px; }
+  .dual-controls output,.setting-panel output,.pressure-control output { font-size: 7px; }
+  .mechanism-board .technical-svg { max-height: 160px; }
+  .logic-buttons,.terminal-state-buttons { grid-template-columns: repeat(2,1fr); gap: 2px; }
+  .logic-equation { gap: 2px; font-size: 6px; }.logic-token { padding: 3px 5px; border-width: 1px; border-radius: 4px; }
+  .truth-table,.verify-lab table { border-spacing: 1px; font-size: 5.5px; }.truth-table th,.truth-table td,.verify-lab th,.verify-lab td { padding: 2px; }
+  .cycle-lab { gap: 4px; padding: 5px; border-width: 2px; border-radius: 7px; }.cycle-heading { font-size: 7px; }.cycle-heading output { font-size: 11px; }.threshold-line { gap: 2px; font-size: 5.5px; }.threshold-line b { padding: 2px; border-width: 2px; }.cycle-actions { gap: 2px; }
+  .formula-card { gap: 3px; padding: 3px; border-width: 2px; border-radius: 5px; font-size: 6px; }.lab-prompt { font-size: 6px; }.answer-row { gap: 2px; font-size: 6px; }.answer-row input { min-height: 22px; font-size: 8px; }
+  .compare-formulas { gap: 3px; }.compare-formulas section { gap: 2px; padding: 5px; border-width: 2px; border-radius: 6px; }.compare-formulas strong { font-size: 8px; }.compare-formulas p { font-size: 7px; }.direction-arrow { padding: 2px; font-size: 5.5px; }.memory-rule { padding: 4px; border-width: 2px; font-size: 6px; }
+  .terminal-lab .technical-svg { max-height: 145px; }.terminal-roles { gap: 1px; }.terminal-roles span { font-size: 5px; }
+  .nameplate-head { gap: 3px; padding: 4px; }.nameplate-head strong { font-size: 10px; }.nameplate-head span { font-size: 5px; }.nameplate-grid { gap: 2px; }.nameplate-grid section { gap: 2px; padding: 4px; border-width: 1px; border-radius: 5px; font-size: 6px; }.nameplate-grid p,.source-stamp { font-size: 5px; }.side-badge { padding: 2px 4px; font-size: 5px; }
+  .setting-grid { gap: 3px; }.setting-panel { gap: 3px; padding: 4px; border-width: 2px; border-radius: 6px; }.fixed-diff,.calculated-threshold { padding: 3px; font-size: 6px; }.calculated-threshold strong { font-size: 10px; }
+  .nitrogen-top { grid-template-columns: 48px 76px 1fr 58px; gap: 3px; }.bottle { height: 74px; border-width: 2px; border-radius: 18px 18px 6px 6px; font-size: 12px; }.bottle small,.kp-mini small { font-size: 4px; }.regulator { gap: 2px; }.regulator div { border-width: 2px; font-size: 4px; }.selector { gap: 2px; }.kp-mini { height: 54px; border-width: 2px; border-radius: 5px; font-size: 10px; }
+  .guard-path { gap: 3px; }.guard-path section { padding: 5px 2px; border-width: 2px; border-radius: 5px; font-size: 5.5px; }.guard-path p { margin-top: 2px; font-size: 5px; }.guard-path>span { font-size: 11px; }.stop-panel { gap: 2px; padding: 3px; border-width: 2px; font-size: 5.5px; }.stop-panel span { font-size: 4.5px; }
+  .verify-lab input { min-height: 18px; font-size: 7px; }.record-title,.record-footer { padding: 4px; font-size: 6px; }.record-grid { gap: 2px; }.record-grid section { gap: 2px; padding: 4px; border-width: 1px; border-radius: 4px; font-size: 5.5px; }.record-grid span { font-size: 5px; }
+  .summary-map { grid-template-columns: 1fr 62px 1fr; gap: 3px; }.summary-center { border-width: 3px; font-size: 13px; }.summary-center small { font-size: 5px; }.summary-map section { gap: 1px; padding: 3px; border-width: 1px; border-radius: 5px; font-size: 6px; }.summary-map section span { font-size: 4.5px; }
+  .quiz-symbol { width: 75px; border-width: 4px; font-size: 34px; }.quiz-symbol small { font-size: 7px; }.final-chain span { padding: 3px; border-width: 1px; border-radius: 4px; }
+  .claude-frame[data-focus="mechanism"] .claude-viewport { aspect-ratio: 1.15 / 1; }
+}
+
+@media (max-width: 390px) {
+  .course-name { max-width: 92px; }
+  .speed-select { display: none; }
+}
+
+@media (max-width: 360px), (max-height: 640px) {
+  .lesson-grid { grid-template-rows: minmax(0, 42%) minmax(0, 58%); }
+  .lesson-panel { padding: 6px 8px; }
+  .visual-caption { display: none; }
+  .claude-frame figcaption { display: none; }
+  .lesson-list { font-size: 10px; }
+  .callout { font-size: 9.5px; }
+}
+
+@media (max-height: 700px) and (min-width: 651px) {
+  .course-app { grid-template-rows: 42px 26px minmax(0, 1fr) 46px; }
+  .lesson-panel { padding: 12px 18px; }
+  h1 { font-size: clamp(22px, 2.2vw, 31px); }
+  .lesson-lead { margin-bottom: 6px; font-size: 14px; }
+  .lesson-list { font-size: 13px; line-height: 1.3; }
+  .lesson-list li { margin-bottom: 3px; }
+  .callout { padding: 7px 10px; font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-track span { transition: none; }
+}
+
+@media print {
+  @page { margin: 15mm; }
+  html, body { width: auto; height: auto; overflow: visible; background: #fff; color: #000; }
+  .course-app { display: block; width: auto; height: auto; overflow: visible; }
+  .progress-row, .navigation, .tools, .activity-button, .visual-tabs, input, select { display: none !important; }
+  .topbar { display: flex; gap: 8mm; padding: 0 0 4mm; border-bottom: 1pt solid var(--navy); background: none; }
+  .brand-logo { height: 12mm; }
+  .print-signature { display: block; margin-top: 6mm; color: #637285; font: 9pt Calibri, sans-serif; }
+  .lesson-grid { display: block; padding: 0; }
+  .visual-panel, .lesson-panel { overflow: visible; margin-bottom: 8mm; border: 1.5pt solid var(--navy); border-radius: 0; background: #fff; box-shadow: none; break-inside: avoid; }
+  .visual-panel { height: 110mm; }
+  .lesson-panel { padding: 7mm; color: #000; }
+  h1 { color: var(--navy); font-size: 22pt; }
+  .lesson-lead, .lesson-list, .callout { color: #000; font-size: 14pt; }
+  .callout, .mini-card, .lab-result, .quiz-choice, .feedback { background: #fff !important; }
+  .visual-caption { color: #000; font-size: 10pt; }
+}
+</style>
+</head>
+<body>
+  <div class="course-app" id="courseApp">
+    <header class="topbar">
+      <div class="brand"><svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 233 50" role="img" aria-label="inerWeb Édu — HP · BP" focusable="false"><text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" font-weight="normal" x="94" y="32">Web</text><line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/><rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="74" height="24"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="192" y="27" text-anchor="middle">HP · BP</text></svg></div>
+      <div class="course-name">KP15 · HP/BP combiné</div>
+      <div class="tools" aria-label="Outils de lecture">
+        <button class="tool-button" id="speakButton" type="button" aria-label="Écouter le texte affiché" aria-pressed="false">▶ <span>Écouter</span></button>
+        <button class="tool-button" id="stopButton" type="button" aria-label="Arrêter la voix" disabled>■ <span>Stop</span></button>
+        <label class="sr-only" for="speedSelect">Vitesse de la voix</label>
+        <select class="speed-select" id="speedSelect" aria-label="Vitesse de la voix">
+          <option value="0.85">0,85×</option>
+          <option value="0.95" selected>0,95×</option>
+          <option value="1.10">1,10×</option>
+          <option value="1.25">1,25×</option>
+        </select>
+        <button class="tool-button compact" id="readingButton" type="button" aria-label="Activer la lecture facilitée" aria-pressed="false">Aa</button>
+        <button class="tool-button compact" id="fullscreenButton" type="button" aria-label="Afficher en plein écran">⛶</button>
+      </div>
+    </header>
+
+    <section class="progress-row" aria-label="Progression">
+      <span id="progressLabel">Découverte</span>
+      <div class="progress-track" id="progressTrack" role="progressbar" aria-label="Progression du module" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span id="progressFill"></span>
+      </div>
+      <span id="progressCount">1 / 1</span>
+    </section>
+
+    <main class="lesson-grid" id="lessonGrid">
+      <section class="visual-panel" aria-labelledby="visualTitle">
+        <h2 class="sr-only" id="visualTitle">Schéma pédagogique interactif</h2>
+        <div class="visual-stage" id="visualStage" role="img" aria-label="Schéma pédagogique"></div>
+        <p class="visual-caption" id="visualCaption"></p>
+      </section>
+
+      <section class="lesson-panel" aria-labelledby="lessonTitle">
+        <div class="lesson-kicker" id="lessonKicker"></div>
+        <h1 id="lessonTitle"></h1>
+        <p class="lesson-lead" id="lessonLead"></p>
+        <ul class="lesson-list" id="lessonList"></ul>
+        <div class="callout" id="lessonCallout" hidden></div>
+        <div class="quiz-area" id="quizArea" hidden></div>
+        <div class="feedback" id="feedback" aria-live="polite" hidden></div>
+      </section>
+    </main>
+
+    <footer class="navigation" aria-label="Navigation dans le module">
+      <button class="nav-button secondary" id="backButton" type="button">← Retour</button>
+      <div class="nav-state" id="navState" aria-live="polite"></div>
+      <button class="nav-button primary" id="nextButton" type="button">Continuer →</button>
+    </footer>
+    <p class="print-signature">© inerWeb 2026</p>
+  </div>
+
+  <noscript>Ce module nécessite JavaScript. Il fonctionne entièrement hors ligne et ne transmet aucune donnée.</noscript>
+  <script>window.__INERWEB_COURSE__ = {"product":"inerWeb Édu — Pressostat combiné KP15 HP/BP","version":"1.2.0-brouillon","status":"Brouillon pédagogique à valider","lessons":[{"id":"intro","short":"Mission","kicker":"Un boîtier · deux pressions","title":"Le KP15 surveille la BP et la HP dans une même chaîne d’arrêt","lead":"Deux soufflets reçoivent deux pressions différentes. Chaque côté peut retirer l’autorisation de marche du compresseur.","bullets":["Côté BP : pression d’aspiration trop basse.","Côté HP : pression de refoulement trop haute.","La marche exige BP correcte ET HP correcte."],"callout":{"type":"key","title":"Objectif","text":"Suivre pression → soufflet → ressort → bascule → contacts, puis régler et contrôler les deux côtés."},"visual":"product","media":{"src":"assets/illustrations-claude/01-ouverture.png","focus":"mechanism","title":"Ouverture visuelle du KP15","alt":"Illustration technique bleu nuit d’un pressostat combiné KP15 avec deux raccords, un côté aspiration BP et un côté refoulement HP.","note":"Vue Claude conservée pour l’entrée visuelle ; le câblage détaillé est repris plus loin avec le schéma Danfoss A/B/C/D et PE.","caption":"Illustration Claude intégrée : un boîtier, deux prises de pression et deux fonctions de sécurité."},"caption":"Vue fonctionnelle originale du combiné KP15 : deux voies mécaniques, une autorisation de marche."},{"id":"connections","short":"Raccorder","kicker":"Deux prises non interchangeables","title":"La BP vient de l’aspiration ; la HP vient du refoulement","lead":"Chaque soufflet doit recevoir la pression qu’il surveille. Le repérage LP/HP du boîtier et de la notice doit être vérifié avant l’essai.","bullets":["LP/BP : raccordé au côté basse pression, près de l’aspiration.","HP : raccordé au côté haute pression, près du refoulement.","Le capillaire transmet une pression ; il ne transporte aucun courant électrique."],"callout":{"type":"warning","title":"Deux domaines de pression","text":"Ne jamais appliquer une pression d’essai HP au raccord LP."},"visual":"dual-circuit","caption":"Schéma frigorifique inerWeb : les deux capillaires du KP15 rejoignent deux zones de pression distinctes."},{"id":"mechanism","short":"Mécanisme","kicker":"Deux comparaisons mécaniques","title":"Chaque pression déforme son soufflet face à l’effort de ses ressorts","lead":"Fais varier BP et HP. Les deux voies sont distinctes, mais elles convergent vers l’autorisation électrique commune.","bullets":["Sur chaque voie, la force vaut la pression multipliée par la surface utile du soufflet : F = p × S.","Le soufflet BP est large et son ressort souple ; le soufflet HP est petit et son ressort raide.","La bascule à action brusque change franchement l’état des contacts : sans elle, arc électrique et pastilles collées."],"callout":{"type":"key","title":"Causalité","text":"Pression → soufflet → bras et ressorts → bascule → contact."},"visual":"mechanism","media":{"src":"assets/illustrations-claude/02-cote-bp.png","focus":"mechanism","title":"Mécanisme du côté BP","alt":"Gros plan recadré sur les deux soufflets, les ressorts et le mécanisme commun d’un pressostat KP15.","note":"Le recadrage conserve l’explication mécanique de Claude. Le bornier n’est volontairement pas utilisé ici comme schéma de câblage.","caption":"Illustration Claude intégrée : les soufflets et ressorts transforment la pression en mouvement mécanique."},"caption":"Laboratoire original : les deux curseurs déplacent les soufflets et changent l’autorisation."},{"id":"logic","short":"Logique ET","kicker":"Une condition suffit pour arrêter","title":"Le contact de charge reste fermé seulement si BP et HP sont correctes","lead":"Teste les quatre combinaisons. La couleur aide, mais les mots CORRECTE, DÉFAUT, FERMÉ et OUVERT portent toujours le sens.","bullets":["BP correcte + HP correcte : charge autorisée.","Défaut BP ou défaut HP : charge arrêtée.","Double défaut : charge arrêtée et deux causes à traiter."],"callout":{"type":"warning","title":"En série, jamais en parallèle","text":"Les deux contacts d’autorisation sont montés en série dans la chaîne d’arrêt : un seul contact ouvert suffit à couper. En parallèle, chacun contournerait l’autre et il n’y aurait plus de sécurité."},"visual":"logic","caption":"Table de vérité interactive BP ET HP."},{"id":"bp-zone","short":"Cycle BP","kicker":"Coupure en bas · retour plus haut","title":"Dans la zone neutre BP, le dernier seuil franchi décide de l’état","lead":"Descends puis remonte la pression. Entre CUT OUT et CUT IN, le contact conserve l’état acquis au dernier seuil.","bullets":["À la baisse : coupure BP à CUT OUT.","À la hausse : retour automatique à CUT IN.","Zone neutre BP = intervalle entre les deux seuils."],"callout":{"type":"key","title":"Sens BP","text":"CUT IN est supérieur à CUT OUT."},"visual":"bp-cycle","caption":"Hystérésis BP : une même pression intermédiaire peut correspondre à deux états selon le trajet."},{"id":"bp-differential","short":"DIFF BP","kicker":"Premier calcul essentiel","title":"En BP : DIFF = CUT IN − CUT OUT","lead":"Choisis d’abord la grandeur recherchée et la relation, puis saisis toi-même le résultat.","bullets":["DIFF BP = CUT IN − CUT OUT.","CUT OUT BP = CUT IN − DIFF.","CUT IN BP = CUT OUT + DIFF.","Différentiel trop étroit : le compresseur démarre et s’arrête en boucle et s’use."],"callout":{"type":"warning","title":"Toujours positif","text":"La largeur de la zone neutre ne peut pas être négative."},"visual":"differential","caption":"Atelier de calcul BP : formule choisie avant calcul."},{"id":"hp-cycle","short":"Cycle HP","kicker":"Coupure en haut · retour plus bas","title":"En HP, le seuil haut coupe ; la baisse rend le réarmement possible","lead":"Sur la référence 060‑126491, la HP est à réarmement manuel maximum et le différentiel HP est fixe à 4 bar.","bullets":["À la hausse : coupure HP à CUT OUT.","À la baisse : seuil de réarmement = CUT OUT − 4 bar.","La baisse ne referme pas seule le contact : il faut RESET."],"callout":{"type":"key","title":"Sens HP","text":"CUT OUT est supérieur au seuil de retour ou de réarmement."},"visual":"hp-cycle","media":{"src":"assets/illustrations-claude/03-cote-hp.png","focus":"mechanism","title":"Mécanisme du côté HP","alt":"Gros plan recadré sur le soufflet et les ressorts haute pression d’un pressostat KP15.","note":"La vue Claude sert à lire la voie mécanique HP ; le schéma électrique de référence est présenté dans l’étape Bornier.","caption":"Illustration Claude intégrée : la montée HP agit sur le soufflet droit jusqu’à la coupure haute."},"caption":"Cycle HP manuel maximum : déclenchement, baisse, disponibilité du RESET puis réarmement."},{"id":"hp-differential","short":"DIFF HP","kicker":"Le calcul change de sens","title":"En HP : DIFF = CUT OUT − seuil de réarmement","lead":"Pour la référence étudiée, CUT OUT 24 bar et DIFF 4 bar donnent un réarmement possible à 20 bar ou moins.","bullets":["DIFF HP = CUT OUT − seuil de réarmement.","Seuil de réarmement = CUT OUT − DIFF.","24 − 4 = 20 bar dans l’exemple, pas une consigne universelle."],"callout":{"type":"warning","title":"Deux sens","text":"BP : le retour est plus haut que la coupure. HP : le réarmement devient possible plus bas que la coupure."},"visual":"dual-differential","caption":"Comparateur BP/HP : le grand seuil moins le petit donne toujours la largeur positive."},{"id":"terminals","short":"A B C D + PE","kicker":"Quatre conducteurs actifs plus la terre","title":"A alimente, C commande la charge, B signale la BP et D signale la HP","lead":"La variante KP15 étudiée possède les quatre bornes actives A, B, C, D et une borne de protection PE.","bullets":["A : arrivée ligne commune ; C : sortie vers la charge ou la commande KM1.","B : sortie de signalisation du défaut BP ; D : sortie de signalisation du défaut HP.","PE : conducteur de protection, distinct des quatre conducteurs actifs."],"callout":{"type":"warning","title":"Variante exacte","text":"Tous les KP15 n’ont pas la borne D. Le diagramme de la référence réellement posée fait foi."},"visual":"terminals","caption":"Schéma inerWeb corrigé d’après le diagramme Danfoss « LP and HP signal » : A/B/C/D + PE."},{"id":"reference","short":"Référence","kicker":"060‑126491","title":"La référence fixe les plages, le différentiel HP et les réarmements","lead":"Le nom KP15 désigne une famille. Les chiffres ci-dessous appartiennent à la référence suivie dans ce module.","bullets":["BP : −0,2 à 7,5 bar Pe ; DIFF réglable 0,7 à 4 bar ; retour automatique.","HP : 8 à 32 bar Pe ; DIFF fixe 4 bar ; réarmement manuel maximum.","bar Pe = pression lue au manomètre, zéro à l’air libre ; −0,2 bar Pe est une dépression.","Fonction de contact annoncée : SPDT + SPST(NO), avec borne D limitée à sa puissance documentée."],"callout":{"type":"note","title":"Ne pas généraliser","text":"Une autre référence KP15 peut avoir un autre raccordement ou un autre mode de réarmement."},"visual":"nameplate","caption":"Fiche d’identité pédagogique de la référence 060‑126491."},{"id":"settings","short":"Prérégler","kicker":"Lire les deux plaques","title":"Le côté BP règle CUT IN et DIFF ; le côté HP règle CUT OUT","lead":"Manipule les valeurs. Les graduations placent un préréglage ; seuls les basculements mesurés valident les seuils obtenus.","bullets":["BP : CUT OUT calculé = CUT IN − DIFF.","HP : seuil de RESET calculé = CUT OUT − 4 bar.","Après une retouche, revérifier les deux seuils du côté concerné."],"callout":{"type":"key","title":"Deux plaques, deux lectures","text":"Ne transpose pas la lecture RANGE/DIFF BP sur la plaque HP."},"visual":"kp15-face","caption":"Face interactive originale : réglages BP et HP liés aux seuils calculés."},{"id":"nitrogen","short":"Banc azote","kicker":"Installation arrêtée","title":"Contrôler un côté à la fois avec un banc et des limites adaptés","lead":"Le banc applique une pression connue au raccord choisi et suit électriquement les contacts sans démarrer le compresseur.","bullets":["Bouteille d’azote sec arrimée, mano-détendeur, manomètre précis et flexibles compatibles.","Sélectionner LP ou HP et respecter la pression d’essai admissible de ce côté.","Contrôler A–C puis le signal B ou D correspondant ; installation isolée électriquement."],"callout":{"type":"warning","title":"Gaz et énergie","text":"Jamais d’oxygène ni d’air comprimé. Aucun démarrage du compresseur sous azote."},"visual":"nitrogen","caption":"Banc azote à deux voies : une seule sortie active, limite LP/HP affichée et contrôle de continuité."},{"id":"running","short":"En service","kicker":"Contrôle encadré","title":"Une limite machine prime toujours sur l’obtention du clic","lead":"Avant l’essai, vérifier l’enveloppe du compresseur, les pressions admissibles et le moyen d’arrêt immédiat.","bullets":["Côté BP : ne pas forcer le compresseur sous sa limite basse admissible.","Côté HP : ne jamais fermer une vanne de refoulement pour provoquer une montée.","Trois crans dans cet ordre : le pressostat HP coupe, la soupape de sécurité s’ouvre ensuite, la pression maximale admissible PS reste au-dessus.","Si une limite est atteinte avant le seuil attendu, arrêter et corriger le diagnostic ou le réglage."],"callout":{"type":"warning","title":"Sécurité","text":"Consignation, procédure du site, habilitations et notice restent prioritaires."},"visual":"running","caption":"Contrôle en fonctionnement : pression, enveloppe compresseur, état électrique et moyen d’arrêt suivis ensemble."},{"id":"verify","short":"Trois cycles","kicker":"Mesurer et comparer","title":"Valider séparément le côté BP et le côté HP","lead":"Choisis le côté, saisis trois couples de seuils, puis calcule la répétabilité après tes relevés.","bullets":["BP : CUT IN hausse et CUT OUT baisse.","HP : CUT OUT hausse et seuil de RESET baisse, puis action volontaire sur RESET.","Comparer l’étendue mesurée à la tolérance documentée, jamais à une tolérance inventée."],"callout":{"type":"key","title":"Preuve","text":"La graduation prérègle ; trois cycles mesurés prouvent le comportement."},"visual":"verify","caption":"Tableau de relevés BP/HP : trois cycles, trois différentiels et une étendue."},{"id":"record","short":"Tracer","kicker":"Fin d’intervention","title":"Le compte rendu distingue les deux côtés et la référence exacte","lead":"Un autre technicien doit pouvoir reprendre le raisonnement sans confondre BP, HP, charge et signalisations.","bullets":["Marque, référence, plage, raccordement A/B/C/D + PE et modes de réarmement.","Seuils cibles, source des limites machine et méthode d’essai.","Trois cycles BP, trois cycles HP, action du RESET, anomalies et remise en état."],"callout":{"type":"note","title":"Statut","text":"Ce module reste un brouillon tant que le bon à tirer métier n’a pas été donné."},"visual":"record","caption":"Chaîne de preuve : identifier, calculer, prérégler, mesurer, comparer et tracer."},{"id":"summary","short":"Synthèse","kicker":"Le raisonnement complet","title":"Deux pressions, deux sens de cycle, quatre bornes actives et un PE","lead":"Tu peux maintenant expliquer le mécanisme, calculer les deux différentiels et lire le câblage de la variante étudiée.","bullets":["BP : CUT OUT en bas, CUT IN plus haut, DIFF = CUT IN − CUT OUT.","HP : CUT OUT en haut, retour plus bas, DIFF = CUT OUT − retour.","A = ligne, C = charge, B = signal BP, D = signal HP, PE = protection."],"callout":{"type":"key","title":"Règle finale","text":"Un RESET ne supprime jamais la cause d’un défaut."},"visual":"summary","caption":"Synthèse mécanique, numérique, électrique et méthodologique du KP15."}],"quiz":[{"id":"q-chain","question":"Quelle chaîne décrit le fonctionnement mécanique du KP15 ?","choices":["Pression → soufflet → ressorts et bascule → contacts","Contact → fluide → compresseur → pression","Ressort → température → huile → contact"],"answer":0,"explanation":"Chaque pression agit sur un soufflet ; le mécanisme compare les efforts puis bascule les contacts."},{"id":"q-logic","question":"La BP est correcte mais la HP est en défaut. Quel est le verdict ?","choices":["Charge autorisée","Charge arrêtée","Le défaut HP est annulé par la BP"],"answer":1,"explanation":"La fonction de charge exige BP correcte ET HP correcte."},{"id":"q-bp","question":"CUT IN BP vaut 1,4 bar et CUT OUT BP 0,2 bar. Quel est DIFF BP ?","choices":["1,2 bar","1,6 bar","0,2 bar"],"answer":0,"explanation":"DIFF BP = CUT IN − CUT OUT = 1,4 − 0,2 = 1,2 bar."},{"id":"q-hp","question":"CUT OUT HP vaut 24 bar et DIFF 4 bar. À quelle pression le RESET devient-il possible ?","choices":["28 bar","20 bar ou moins","4 bar"],"answer":1,"explanation":"Seuil de retour HP = CUT OUT − DIFF = 24 − 4 = 20 bar."},{"id":"q-reset","question":"La HP a baissé sous le seuil de retour sur le manuel maximum. Que manque-t-il ?","choices":["Un appui volontaire sur RESET","Une nouvelle montée HP","Un shunt de sécurité"],"answer":0,"explanation":"La baisse rend le réarmement possible ; elle ne referme pas seule la charge."},{"id":"q-wires","question":"Quel repérage correspond aux quatre conducteurs actifs de la variante étudiée ?","choices":["A, B, C, D","1, 2, 4, PE","L1, L2, L3, N"],"answer":0,"explanation":"A/B/C/D sont quatre bornes actives ; le PE est en plus et reste un conducteur de protection."},{"id":"q-terminals","question":"Quelle association est correcte ?","choices":["A ligne, C charge, B signal BP, D signal HP","A terre, B neutre, C HP, D BP","A charge, C terre, B et D inutilisées"],"answer":0,"explanation":"C’est le repérage du diagramme Danfoss avec signalisations LP et HP."},{"id":"q-nitrogen","question":"Comment contrôler le KP15 au banc azote ?","choices":["Un côté à la fois, installation isolée","Envoyer la pression HP dans les deux raccords","Démarrer le compresseur sous azote"],"answer":0,"explanation":"LP et HP ont des domaines différents ; le banc contrôle une voie à la fois sans démarrer la machine."}],"final":{"id":"final","short":"Bilan","kicker":"Compétence visée","title":"Tu sais lire, régler et éprouver les deux côtés du KP15","lead":"La méthode tient en sept verbes : repérer, documenter, calculer, prérégler, mesurer, réarmer et tracer.","bullets":["Expliquer les deux chaînes pression–soufflet–ressort–contact.","Calculer le différentiel BP et HP sans inverser les seuils.","Câbler et contrôler A/B/C/D plus PE selon la référence posée.","Référentiel travaillé : 6.03 régler les interrupteurs de sécurité et de contrôle · 7.04 régler les sécurités côté condenseur · 9.06 régler un limiteur de pression. En appui : 1.01 · 1.04 · 3.01 · 4.05 · 6.07."],"callout":{"type":"key","title":"À retenir","text":"BP correcte ET HP correcte = marche possible ; tout défaut impose d’en rechercher la cause."},"visual":"final","caption":"Bilan du parcours KP15 combiné HP/BP."}};</script>
+  <script>(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const fmt = (value, digits = 1) => Number(value).toLocaleString("fr-FR", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+  const label = (x, y, text, anchor = "middle", fill = "#163a63", size = 15, weight = 700) =>
+    `<text x="${x}" y="${y}" text-anchor="${anchor}" fill="${fill}" font-size="${size}" font-weight="${weight}" font-family="Arial, sans-serif">${text}</text>`;
+  const svgWrap = (title, desc, body, viewBox = "0 0 760 430") =>
+    `<svg class="technical-svg" viewBox="${viewBox}" role="img" aria-labelledby="svg-title svg-desc"><title id="svg-title">${title}</title><desc id="svg-desc">${desc}</desc>${body}</svg>`;
+
+  function productVisual() {
+    const springs = (x, hot = false) => `<path d="M${x} 85 l-18 18 36 24-36 24 36 24-36 24 18 18" fill="none" stroke="${hot ? "#c45422" : "#315e8f"}" stroke-width="7" stroke-linejoin="round"/>`;
+    return `<div class="kp15-board">${svgWrap("Pressostat combiné KP15", "Deux soufflets, deux raccords de pression et un bornier A B C D plus PE.",
+      `<rect x="132" y="38" width="496" height="314" rx="24" fill="#fffdf8" stroke="#173d68" stroke-width="7"/>
+       <rect x="132" y="38" width="496" height="58" rx="20" fill="#dce8f4"/>
+       ${label(222, 76, "VOIE BP · LP", "middle", "#173d68", 17)}${label(538, 76, "VOIE HP", "middle", "#a6451b", 17)}
+       ${springs(220)}${springs(540, true)}
+       <rect x="180" y="220" width="80" height="78" rx="12" fill="#e7eef6" stroke="#315e8f" stroke-width="5"/>
+       <rect x="500" y="220" width="80" height="78" rx="12" fill="#fee4d7" stroke="#c45422" stroke-width="5"/>
+       <path d="M220 298v76H70" fill="none" stroke="#315e8f" stroke-width="12"/><path d="M540 298v76h150" fill="none" stroke="#c45422" stroke-width="12"/>
+       <rect x="306" y="120" width="148" height="154" rx="14" fill="#eff3f7" stroke="#758aa2" stroke-width="5"/>
+       ${["A","B","C","D"].map((t,i)=>`<circle cx="${330+i*34}" cy="172" r="13" fill="#fff" stroke="#173d68" stroke-width="4"/>${label(330+i*34,148,t)}`).join("")}
+       <circle cx="380" cy="232" r="15" fill="#fff" stroke="#16855f" stroke-width="4"/><path d="M365 232h30m-23 8h16m-11 8h6" stroke="#16855f" stroke-width="3"/>${label(420,238,"PE","start","#16855f",16)}
+       ${label(70,406,"ASPIRATION · BP","start","#173d68",17)}${label(690,406,"REFOULEMENT · HP","end","#a6451b",17)}`)}
+      <div class="kp15-strip"><span><b>2</b> soufflets</span><span><b>2</b> réglages</span><span><b>4</b> conducteurs actifs</span><span><b>+ PE</b> protection</span></div></div>`;
+  }
+
+  function circuitVisual() {
+    return `<div class="kp15-board">${svgWrap("Raccordement frigorifique du KP15", "La prise LP rejoint l’aspiration et la prise HP rejoint le refoulement.",
+      `<defs><marker id="arrB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6z" fill="#315e8f"/></marker><marker id="arrH" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6z" fill="#c45422"/></marker></defs>
+       <rect x="52" y="235" width="210" height="82" rx="16" fill="#dce8f4" stroke="#315e8f" stroke-width="5"/>${label(157,282,"ÉVAPORATEUR")}
+       <circle cx="588" cy="278" r="48" fill="#fffdf8" stroke="#173d68" stroke-width="6"/><path d="M570 248l38 30-38 30z" fill="#315e8f"/>${label(588,350,"COMPRESSEUR")}
+       <rect x="500" y="65" width="190" height="72" rx="16" fill="#fee4d7" stroke="#c45422" stroke-width="5"/>${label(595,108,"CONDENSEUR","middle","#a6451b")}
+       <path d="M262 276H538" fill="none" stroke="#315e8f" stroke-width="14" marker-end="url(#arrB)"/><path d="M588 230V137H520" fill="none" stroke="#c45422" stroke-width="14" marker-end="url(#arrH)"/>
+       <rect x="292" y="42" width="162" height="120" rx="18" fill="#fffdf8" stroke="#173d68" stroke-width="6"/>${label(373,78,"KP15")}${label(332,110,"LP","middle","#173d68",16)}${label(414,110,"HP","middle","#a6451b",16)}
+       <path d="M332 124V276" fill="none" stroke="#315e8f" stroke-width="6" stroke-dasharray="9 6"/><path d="M414 124V102H500" fill="none" stroke="#c45422" stroke-width="6" stroke-dasharray="9 6"/>
+       ${label(375,404,"Deux prises de pression · ne pas les intervertir","middle","#173d68",17)}`)}
+      <div class="flow-legend"><span class="flow-bp">Trait bleu plein : aspiration BP</span><span class="flow-hp">Trait orange plein : refoulement HP</span><span>Pointillés : capillaires de mesure</span></div></div>`;
+  }
+
+  function mechanismVisual() {
+    return `<div class="kp15-board mechanism-board">
+      <div class="dual-controls"><label>Pression BP <output id="mechBpValue">1,4 bar</output><input id="mechBp" type="range" min="-0.2" max="3" step="0.1" value="1.4"></label><label>Pression HP <output id="mechHpValue">18,0 bar</output><input id="mechHp" type="range" min="12" max="28" step="0.5" value="18"></label></div>
+      ${svgWrap("Mécanisme double du KP15", "Deux soufflets opposent l’effort des pressions aux ressorts et commandent une bascule commune.",
+       `<rect x="70" y="28" width="620" height="340" rx="22" fill="#fffdf8" stroke="#173d68" stroke-width="6"/>
+        <path d="M205 62l-22 22 44 24-44 24 44 24-44 24 22 22" fill="none" stroke="#315e8f" stroke-width="7"/><path d="M555 62l-22 22 44 24-44 24 44 24-44 24 22 22" fill="none" stroke="#c45422" stroke-width="7"/>
+        <g id="mechBpBellows"><rect x="142" y="238" width="126" height="66" rx="12" fill="#dce8f4" stroke="#315e8f" stroke-width="5"/><path d="M150 250h110m-110 14h110m-110 14h110m-110 14h110" stroke="#8faac6" stroke-width="3"/></g>
+        <g id="mechHpBellows"><rect x="492" y="238" width="126" height="66" rx="12" fill="#fee4d7" stroke="#c45422" stroke-width="5"/><path d="M500 250h110m-110 14h110m-110 14h110m-110 14h110" stroke="#e8a37e" stroke-width="3"/></g>
+        <path id="mechLever" d="M265 225H495" stroke="#173d68" stroke-width="13" stroke-linecap="round"/>
+        <circle cx="380" cy="225" r="16" fill="#fff" stroke="#173d68" stroke-width="5"/><path id="mechBlade" d="M380 225l74 -30" stroke="#173d68" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="470" cy="188" r="10" fill="#173d68"/><circle cx="470" cy="258" r="10" fill="#758aa2"/>
+        ${label(205,338,"SOUFFLET BP","middle","#173d68",16)}${label(555,338,"SOUFFLET HP","middle","#a6451b",16)}${label(380,402,"PRESSION → SOUFFLET → RESSORT → BASCULE","middle","#173d68",17)}`)}
+      <div id="mechResult" class="lab-result ok">BP CORRECTE + HP CORRECTE · A–C FERMÉ</div></div>`;
+  }
+
+  function logicVisual() {
+    return `<div class="kp15-board"><div class="logic-buttons" role="group" aria-label="Choisir les états BP et HP"><button class="activity-button selected" data-logic="normal" type="button">BP OK · HP OK</button><button class="activity-button" data-logic="bp" type="button">DÉFAUT BP</button><button class="activity-button" data-logic="hp" type="button">DÉFAUT HP</button><button class="activity-button" data-logic="both" type="button">DOUBLE DÉFAUT</button></div>
+      <div class="logic-equation"><span id="logicBp" class="logic-token ok">BP CORRECTE</span><b>ET</b><span id="logicHp" class="logic-token ok">HP CORRECTE</span><b>=</b><span id="logicVerdict" class="logic-token ok">A–C FERMÉ</span></div>
+      <table class="truth-table"><thead><tr><th>BP</th><th>HP</th><th>Charge A–C</th><th>Verdict</th></tr></thead><tbody><tr><td>correcte</td><td>correcte</td><td>fermé</td><td>MARCHE POSSIBLE</td></tr><tr><td>défaut</td><td>correcte</td><td>ouvert</td><td>ARRÊT BP</td></tr><tr><td>correcte</td><td>défaut</td><td>ouvert</td><td>ARRÊT HP</td></tr><tr><td>défaut</td><td>défaut</td><td>ouvert</td><td>ARRÊT BP + HP</td></tr></tbody></table></div>`;
+  }
+
+  function cycleScale(id, side) {
+    const hp = side === "hp";
+    return `<div class="cycle-lab ${hp ? "hp" : "bp"}"><div class="cycle-heading"><b>${hp ? "CYCLE HP" : "CYCLE BP"}</b><output id="${id}Value">${hp ? "18,0" : "1,0"} bar</output></div><input id="${id}" type="range" min="${hp ? 16 : -0.2}" max="${hp ? 28 : 2.5}" step="0.1" value="${hp ? 18 : 1}"><div class="threshold-line"><span>${hp ? "RETOUR 20" : "CUT OUT 0,2"}</span><b>ZONE NEUTRE</b><span>${hp ? "CUT OUT 24" : "CUT IN 1,4"}</span></div><div class="cycle-actions"><button id="${id}Down" class="activity-button" type="button">PRESSION −</button><button id="${id}Up" class="activity-button" type="button">PRESSION +</button>${hp ? `<button id="${id}Reset" class="activity-button" type="button" disabled>RESET HP</button>` : ""}</div><div id="${id}Result" class="lab-result wait">Fais varier la pression dans les deux sens.</div></div>`;
+  }
+  const bpCycleVisual = () => cycleScale("bpCycle", "bp");
+  const hpCycleVisual = () => cycleScale("hpCycle", "hp");
+
+  function differentialVisual() {
+    return `<div class="kp15-board calculator"><div class="formula-card"><b>EXEMPLE BP</b><div>CUT IN <strong>1,4 bar</strong></div><div>CUT OUT <strong>0,2 bar</strong></div></div><p class="lab-prompt">1. Choisis la relation correcte.</p><div class="formula-choices"><button class="activity-button" data-bp-formula="correct" type="button">DIFF = CUT IN − CUT OUT</button><button class="activity-button" data-bp-formula="wrong" type="button">DIFF = CUT OUT − CUT IN</button><button class="activity-button" data-bp-formula="wrong" type="button">DIFF = CUT IN + CUT OUT</button></div><p class="lab-prompt">2. Saisis ton résultat.</p><div class="answer-row"><label for="bpDiffAnswer">DIFF BP</label><input id="bpDiffAnswer" type="number" step="0.1" inputmode="decimal"><span>bar</span><button id="bpDiffCheck" class="activity-button" type="button">VÉRIFIER</button></div><div id="bpDiffResult" class="lab-result wait">Choisis une formule avant de calculer.</div></div>`;
+  }
+
+  function dualDifferentialVisual() {
+    return `<div class="kp15-board"><div class="compare-formulas"><section><span class="side-badge bp">BP · retour plus haut</span><strong>DIFF = CUT IN − CUT OUT</strong><p>1,4 − 0,2 = <b>1,2 bar</b></p><div class="direction-arrow up">pression ↑ · retour</div></section><section><span class="side-badge hp">HP · retour plus bas</span><strong>DIFF = CUT OUT − retour</strong><p>24 − 20 = <b>4 bar</b></p><div class="direction-arrow down">pression ↓ · RESET possible</div></section></div><div class="memory-rule">RÈGLE DE CONTRÔLE : <b>le plus grand seuil − le plus petit seuil</b> donne une largeur positive.</div></div>`;
+  }
+
+  function terminalsVisual() {
+    return `<div class="kp15-board terminal-lab"><div class="terminal-state-buttons" role="group" aria-label="État des contacts"><button class="activity-button selected" data-terminal-state="normal" type="button">NORMAL</button><button class="activity-button" data-terminal-state="bp" type="button">DÉFAUT BP</button><button class="activity-button" data-terminal-state="hp" type="button">DÉFAUT HP</button><button class="activity-button" data-terminal-state="both" type="button">BP + HP</button></div>
+      ${svgWrap("Bornier A B C D plus terre", "A est la ligne, C la charge, B le signal BP, D le signal HP et PE le conducteur de protection.",
+      `<rect x="88" y="42" width="584" height="322" rx="24" fill="#fffdf8" stroke="#173d68" stroke-width="7"/>
+       <rect x="145" y="116" width="470" height="118" rx="14" fill="#e9eef4" stroke="#758aa2" stroke-width="5"/>
+       ${["A","B","C","D"].map((t,i)=>{const x=210+i*110;return `<circle cx="${x}" cy="178" r="25" fill="#fff" stroke="#173d68" stroke-width="6"/>${label(x,112,t,"middle","#173d68",25)}<circle id="term${t}" cx="${x}" cy="178" r="13" fill="#c4ced9"/>`;}).join("")}
+       <circle cx="380" cy="292" r="26" fill="#fff" stroke="#16855f" stroke-width="6"/><path d="M360 286h40m-31 10h22m-15 10h8" stroke="#16855f" stroke-width="4"/>${label(424,300,"PE","start","#16855f",24)}
+       <path id="wireA" d="M60 178H185" stroke="#173d68" stroke-width="9"/><path id="wireB" d="M235 178H285" stroke="#758aa2" stroke-width="9"/><path id="wireC" d="M455 178h50" stroke="#758aa2" stroke-width="9"/><path id="wireD" d="M565 178h135" stroke="#758aa2" stroke-width="9"/><path d="M380 318v76" stroke="#16855f" stroke-width="9"/>
+       ${label(56,160,"LIGNE","start","#173d68",15)}${label(700,160,"SIGNAL HP","end","#173d68",15)}${label(260,262,"SIGNAL BP","middle","#173d68",15)}${label(500,262,"CHARGE KM1","middle","#173d68",15)}
+       ${label(380,418,"4 CONDUCTEURS ACTIFS A/B/C/D + 1 PE","middle","#173d68",18)}`)}
+      <div class="terminal-roles"><span><b>A</b> arrivée ligne</span><span><b>C</b> charge</span><span><b>B</b> signal BP</span><span><b>D</b> signal HP</span><span class="pe"><b>PE</b> protection</span></div><div id="terminalResult" class="lab-result ok">NORMAL · A–C FERMÉ · B ET D NON ACTIFS</div></div>`;
+  }
+
+  function nameplateVisual() {
+    return `<div class="kp15-board nameplate"><div class="nameplate-head"><span>TYPE</span><strong>KP15</strong><span>CODE</span><strong>060‑126491</strong></div><div class="nameplate-grid"><section><span class="side-badge bp">CÔTÉ BP</span><b>−0,2 → 7,5 bar Pe</b><p>DIFF réglable 0,7 → 4 bar</p><strong>RESET AUTO</strong></section><section><span class="side-badge hp">CÔTÉ HP</span><b>8 → 32 bar Pe</b><p>DIFF fixe 4 bar</p><strong>RESET MANUEL MAX</strong></section><section><span class="side-badge">CONTACT</span><b>SPDT + SPST(NO)</b><p>A/B/C/D + PE</p><strong>VÉRIFIER LA NOTICE</strong></section></div><p class="source-stamp">Données de la page produit Danfoss de la référence 060‑126491 · relevées le 19 août 2026.</p></div>`;
+  }
+
+  function kp15FaceVisual() {
+    return `<div class="kp15-board"><div class="setting-grid"><section class="setting-panel bp"><span class="side-badge bp">PLAQUE BP</span><label>CUT IN <output id="setBpCiValue">1,4 bar</output><input id="setBpCi" type="range" min="-0.2" max="7.5" step="0.1" value="1.4"></label><label>DIFF <output id="setBpDiffValue">1,2 bar</output><input id="setBpDiff" type="range" min="0.7" max="4" step="0.1" value="1.2"></label><div class="calculated-threshold">CUT OUT calculé <strong id="setBpCo">0,2 bar</strong></div></section><section class="setting-panel hp"><span class="side-badge hp">PLAQUE HP</span><label>CUT OUT <output id="setHpCoValue">24,0 bar</output><input id="setHpCo" type="range" min="8" max="32" step="0.5" value="24"></label><div class="fixed-diff">DIFF HP <strong>FIXE · 4 bar</strong></div><div class="calculated-threshold">RESET possible dès <strong id="setHpReturn">20,0 bar</strong></div></section></div><div class="lab-result wait">PRÉRÉGLAGE SUR GRADUATIONS · À VALIDER PAR BASCULEMENTS MESURÉS</div></div>`;
+  }
+
+  function nitrogenVisual() {
+    return `<div class="kp15-board nitrogen-lab"><div class="nitrogen-top"><div class="bottle">N₂<small>AZOTE SEC</small></div><div class="regulator"><div>MANO<br>BOUTEILLE</div><div>MANO<br>ESSAI</div></div><div class="selector"><button id="nitrogenLp" class="activity-button selected" type="button">SORTIE LP</button><button id="nitrogenHp" class="activity-button" type="button">SORTIE HP</button></div><div class="kp-mini">KP15<small id="nitrogenPort">RACCORD LP</small></div></div><label class="pressure-control">Pression d’essai <output id="nitrogenValue">1,0 bar</output><input id="nitrogenPressure" type="range" min="-0.2" max="8" step="0.1" value="1"></label><div class="nitrogen-readings"><span id="nitrogenLoad">A–C : FERMÉ</span><span id="nitrogenSignal">B : NON ACTIF</span><span id="nitrogenLimit">LIMITE D’ESSAI LP : 20 bar</span></div><div id="nitrogenResult" class="lab-result ok">VOIE LP SÉLECTIONNÉE · COMPRESSEUR ISOLÉ</div></div>`;
+  }
+
+  function runningVisual() {
+    return `<div class="kp15-board running-guard"><div class="guard-path"><section><b>1 · DOCUMENTATION</b><p>enveloppe compresseur<br>pressions admissibles</p></section><span>→</span><section><b>2 · ESSAI</b><p>manomètres + contact<br>moyen d’arrêt prêt</p></section><span>→</span><section><b>3 · VERDICT</b><p>seuil mesuré avant<br>toute limite machine</p></section></div><div class="stop-panel"><b>ARRÊT IMMÉDIAT</b><span>limite atteinte avant le basculement</span><span>comportement instable ou incompris</span><span>HP provoquée par un geste dangereux</span></div></div>`;
+  }
+
+  function verifyVisual() {
+    const rows = [1,2,3].map(i => `<tr><th>${i}</th><td><input id="verifyA${i}" type="number" step="0.01" inputmode="decimal"></td><td><input id="verifyB${i}" type="number" step="0.01" inputmode="decimal"></td><td id="verifyDiff${i}">—</td></tr>`).join("");
+    return `<div class="kp15-board verify-lab"><div class="verify-tabs"><button id="verifyBp" class="activity-button selected" type="button">CÔTÉ BP</button><button id="verifyHp" class="activity-button" type="button">CÔTÉ HP</button></div><table><thead><tr><th>Cycle</th><th id="verifyAHead">CUT IN hausse</th><th id="verifyBHead">CUT OUT baisse</th><th>DIFF</th></tr></thead><tbody>${rows}</tbody></table><button id="verifyCalculate" class="activity-button primary" type="button">CALCULER APRÈS MESURE</button><div id="verifyResult" class="lab-result wait">Complète les six pressions du côté BP.</div></div>`;
+  }
+
+  function recordVisual() {
+    return `<div class="kp15-board record-card"><div class="record-title">FICHE DE CONTRÔLE KP15</div><div class="record-grid"><section><b>IDENTITÉ</b><span>□ marque et référence</span><span>□ A/B/C/D + PE vérifiés</span><span>□ réarmements relevés</span></section><section><b>SEUILS</b><span>□ source des valeurs</span><span>□ cible BP / cible HP</span><span>□ limites machine</span></section><section><b>MESURES</b><span>□ 3 cycles BP</span><span>□ 3 cycles HP + RESET</span><span>□ anomalies et remise en état</span></section></div><div class="record-footer">GRADUATION = PRÉRÉGLAGE · BASCULEMENTS MESURÉS = PREUVE</div></div>`;
+  }
+
+  function summaryVisual() {
+    return `<div class="kp15-board summary-map"><div class="summary-center">KP15<small>BP + HP</small></div><section class="sum-bp"><b>BP</b><span>CUT OUT bas</span><span>CUT IN plus haut</span><span>DIFF = IN − OUT</span></section><section class="sum-hp"><b>HP</b><span>CUT OUT haut</span><span>retour plus bas</span><span>DIFF = OUT − retour</span></section><section class="sum-wire"><b>A/B/C/D + PE</b><span>A ligne · C charge</span><span>B signal BP · D signal HP</span><span>PE protection</span></section><section class="sum-proof"><b>PREUVE</b><span>notice exacte</span><span>3 cycles mesurés</span><span>cause traitée avant RESET</span></section></div>`;
+  }
+
+  const quizVisual = (index, total, score) => `<div class="quiz-visual"><div class="quiz-symbol">?<small>KP15</small></div><div class="quiz-topic">QUESTION ${index + 1} / ${total} · score provisoire ${score}</div></div>`;
+  const finalVisual = (score, total) => `<div class="final-board"><div class="final-score"><strong>${score} / ${total}</strong><span>réponses correctes</span></div><div class="final-chain"><span>REPÉRER</span><b>→</b><span>CALCULER</span><b>→</b><span>PRÉRÉGLER</span><b>→</b><span>MESURER</span><b>→</b><span>TRACER</span></div></div>`;
+
+  function wireMechanism() {
+    const bp = $("mechBp"), hp = $("mechHp");
+    const update = () => {
+      const bpValue = Number(bp.value), hpValue = Number(hp.value);
+      const bpOk = bpValue > .2, hpOk = hpValue < 24, allowed = bpOk && hpOk;
+      $("mechBpValue").textContent = `${fmt(bpValue)} bar`; $("mechHpValue").textContent = `${fmt(hpValue)} bar`;
+      $("mechBpBellows").setAttribute("transform", `translate(0 ${clamp((1.4-bpValue)*10,-16,18)})`);
+      $("mechHpBellows").setAttribute("transform", `translate(0 ${clamp((18-hpValue)*2,-18,14)})`);
+      $("mechBlade").setAttribute("d", allowed ? "M380 225l74 -30" : "M380 225l74 30");
+      const result = $("mechResult"); result.className = `lab-result ${allowed ? "ok" : "danger"}`;
+      result.textContent = allowed ? "BP CORRECTE + HP CORRECTE · A–C FERMÉ" : `A–C OUVERT · ${!bpOk && !hpOk ? "DÉFAUT BP + HP" : !bpOk ? "DÉFAUT BP" : "DÉFAUT HP"}`;
+    };
+    bp.addEventListener("input", update); hp.addEventListener("input", update); update();
+  }
+
+  function wireLogic() {
+    document.querySelectorAll("[data-logic]").forEach(button => button.addEventListener("click", () => {
+      const state = button.dataset.logic, bpOk = state === "normal" || state === "hp", hpOk = state === "normal" || state === "bp", allowed = bpOk && hpOk;
+      document.querySelectorAll("[data-logic]").forEach(item => item.classList.toggle("selected", item === button));
+      const setToken = (id, ok, text) => { const el=$(id); el.className=`logic-token ${ok?"ok":"danger"}`; el.textContent=text; };
+      setToken("logicBp", bpOk, bpOk ? "BP CORRECTE" : "DÉFAUT BP"); setToken("logicHp", hpOk, hpOk ? "HP CORRECTE" : "DÉFAUT HP"); setToken("logicVerdict", allowed, allowed ? "A–C FERMÉ" : "A–C OUVERT");
+    }));
+  }
+
+  function wireBpCycle() {
+    const input=$("bpCycle"); let previous=Number(input.value), closed=true;
+    const update=(next)=>{ const value=clamp(Number(next),-.2,2.5); if(value<previous&&value<=.2)closed=false; if(value>previous&&value>=1.4)closed=true; if(value<.2)closed=false; if(value>1.4)closed=true; const direction=value>previous?"HAUSSE":value<previous?"BAISSE":"STABLE"; previous=value; input.value=value; $("bpCycleValue").textContent=`${fmt(value)} bar`; const r=$("bpCycleResult"); r.className=`lab-result ${closed?"ok":"danger"}`; r.textContent=`${direction} · A–C ${closed?"FERMÉ · BP CORRECTE":"OUVERT · DÉFAUT BP"}`; };
+    input.addEventListener("input",()=>update(input.value)); $("bpCycleDown").addEventListener("click",()=>update(Number(input.value)-.1)); $("bpCycleUp").addEventListener("click",()=>update(Number(input.value)+.1)); update(input.value);
+  }
+
+  function wireHpCycle() {
+    const input=$("hpCycle"), reset=$("hpCycleReset"); let latched=false;
+    const update=(next)=>{ const value=clamp(Number(next),16,28); input.value=value; if(value>=24)latched=true; const ready=latched&&value<=20; reset.disabled=!ready; $("hpCycleValue").textContent=`${fmt(value)} bar`; const r=$("hpCycleResult"); r.className=`lab-result ${!latched?"ok":ready?"wait":"danger"}`; r.textContent=!latched?"A–C FERMÉ · HP CORRECTE":ready?"A–C OUVERT · RESET DISPONIBLE":"A–C OUVERT · DÉFAUT HP VERROUILLÉ"; };
+    input.addEventListener("input",()=>update(input.value)); $("hpCycleDown").addEventListener("click",()=>update(Number(input.value)-.5)); $("hpCycleUp").addEventListener("click",()=>update(Number(input.value)+.5)); reset.addEventListener("click",()=>{latched=false;update(input.value);}); update(input.value);
+  }
+
+  function wireDifferential() {
+    let formulaOk=false; document.querySelectorAll("[data-bp-formula]").forEach(button=>button.addEventListener("click",()=>{formulaOk=button.dataset.bpFormula==="correct";document.querySelectorAll("[data-bp-formula]").forEach(item=>item.classList.toggle("selected",item===button));const r=$("bpDiffResult");r.className=`lab-result ${formulaOk?"ok":"danger"}`;r.textContent=formulaOk?"BONNE RELATION · effectue maintenant le calcul":"RELATION INCORRECTE · en BP, CUT IN est le seuil le plus haut";}));
+    $("bpDiffCheck").addEventListener("click",()=>{const value=Number($("bpDiffAnswer").value),good=formulaOk&&Math.abs(value-1.2)<.01,r=$("bpDiffResult");r.className=`lab-result ${good?"ok":"danger"}`;r.textContent=good?"1,4 − 0,2 = 1,2 bar · CALCUL CORRECT":!formulaOk?"Choisis d’abord la bonne relation.":"Reprends la soustraction : 1,4 − 0,2.";});
+  }
+
+  function wireTerminals() {
+    const roles={normal:{text:"NORMAL · A–C FERMÉ · B ET D NON ACTIFS",active:["A","C"],cls:"ok"},bp:{text:"DÉFAUT BP · A–B FERMÉ · CHARGE A–C OUVERTE",active:["A","B"],cls:"danger"},hp:{text:"DÉFAUT HP · A–D FERMÉ · CHARGE A–C OUVERTE",active:["A","D"],cls:"danger"},both:{text:"DOUBLE DÉFAUT · SIGNAUX BP ET HP · CHARGE OUVERTE",active:["A","B","D"],cls:"danger"}};
+    document.querySelectorAll("[data-terminal-state]").forEach(button=>button.addEventListener("click",()=>{const state=roles[button.dataset.terminalState];document.querySelectorAll("[data-terminal-state]").forEach(item=>item.classList.toggle("selected",item===button));["A","B","C","D"].forEach(t=>$("term"+t).setAttribute("fill",state.active.includes(t)?"#ff6b35":"#c4ced9"));$("wireB").setAttribute("stroke",state.active.includes("B")?"#ff6b35":"#758aa2");$("wireC").setAttribute("stroke",state.active.includes("C")?"#315e8f":"#758aa2");$("wireD").setAttribute("stroke",state.active.includes("D")?"#ff6b35":"#758aa2");const r=$("terminalResult");r.className=`lab-result ${state.cls}`;r.textContent=state.text;}));
+  }
+
+  function wireKp15Face() {
+    const update=()=>{const ci=Number($("setBpCi").value),diff=Number($("setBpDiff").value),hp=Number($("setHpCo").value);$("setBpCiValue").textContent=`${fmt(ci)} bar`;$("setBpDiffValue").textContent=`${fmt(diff)} bar`;$("setBpCo").textContent=`${fmt(ci-diff)} bar`;$("setHpCoValue").textContent=`${fmt(hp)} bar`;$("setHpReturn").textContent=`${fmt(hp-4)} bar`;};["setBpCi","setBpDiff","setHpCo"].forEach(id=>$(id).addEventListener("input",update));update();
+  }
+
+  function wireNitrogen() {
+    let side="lp"; const input=$("nitrogenPressure");
+    const setSide=(next)=>{side=next;const lp=side==="lp";$("nitrogenLp").classList.toggle("selected",lp);$("nitrogenHp").classList.toggle("selected",!lp);input.min=lp?-.2:8;input.max=lp?8:32;input.step=lp?.1:.5;input.value=lp?1:18;$("nitrogenPort").textContent=lp?"RACCORD LP":"RACCORD HP";update();};
+    const update=()=>{const p=Number(input.value),lp=side==="lp",fault=lp?p<=.2:p>=24;$("nitrogenValue").textContent=`${fmt(p)} bar`;$("nitrogenLoad").textContent=`A–C : ${fault?"OUVERT":"FERMÉ"}`;$("nitrogenSignal").textContent=`${lp?"B":"D"} : ${fault?"ACTIF":"NON ACTIF"}`;$("nitrogenLimit").textContent=lp?"LIMITE D’ESSAI LP : 20 bar":"LIMITE D’ESSAI HP : 35 bar";const r=$("nitrogenResult");r.className=`lab-result ${fault?"danger":"ok"}`;r.textContent=`VOIE ${lp?"LP":"HP"} · ${fault?"BASCULEMENT OBSERVÉ":"PRESSION EN COURS"} · COMPRESSEUR ISOLÉ`;};
+    $("nitrogenLp").addEventListener("click",()=>setSide("lp"));$("nitrogenHp").addEventListener("click",()=>setSide("hp"));input.addEventListener("input",update);setSide("lp");
+  }
+
+  function wireVerify() {
+    let side="bp"; const setSide=(next)=>{side=next;const bp=side==="bp";$("verifyBp").classList.toggle("selected",bp);$("verifyHp").classList.toggle("selected",!bp);$("verifyAHead").textContent=bp?"CUT IN hausse":"CUT OUT hausse";$("verifyBHead").textContent=bp?"CUT OUT baisse":"Seuil RESET baisse";for(let i=1;i<=3;i++){$("verifyA"+i).value="";$("verifyB"+i).value="";$("verifyDiff"+i).textContent="—";}$("verifyResult").className="lab-result wait";$("verifyResult").textContent=`Complète les six pressions du côté ${side.toUpperCase()}.`;};
+    $("verifyBp").addEventListener("click",()=>setSide("bp"));$("verifyHp").addEventListener("click",()=>setSide("hp"));$("verifyCalculate").addEventListener("click",()=>{const diffs=[];for(let i=1;i<=3;i++){const a=$("verifyA"+i).value,b=$("verifyB"+i).value;if(a===""||b===""){const r=$("verifyResult");r.className="lab-result danger";r.textContent="Complète les six pressions avant de calculer.";return;}const diff=Number(a)-Number(b);diffs.push(diff);$("verifyDiff"+i).textContent=`${fmt(diff,2)} bar`;}const spread=Math.max(...diffs)-Math.min(...diffs),r=$("verifyResult");r.className="lab-result wait";r.textContent=`3 DIFF CALCULÉS · ÉTENDUE ${fmt(spread,2)} bar · COMPARER À LA TOLÉRANCE DOCUMENTÉE`;});setSide("bp");
+  }
+
+  const renderers={product:productVisual,"dual-circuit":circuitVisual,mechanism:mechanismVisual,logic:logicVisual,"bp-cycle":bpCycleVisual,differential:differentialVisual,"hp-cycle":hpCycleVisual,"dual-differential":dualDifferentialVisual,terminals:terminalsVisual,nameplate:nameplateVisual,"kp15-face":kp15FaceVisual,nitrogen:nitrogenVisual,running:runningVisual,verify:verifyVisual,record:recordVisual,summary:summaryVisual};
+  const wirers={mechanism:wireMechanism,logic:wireLogic,"bp-cycle":wireBpCycle,differential:wireDifferential,"hp-cycle":wireHpCycle,terminals:wireTerminals,"kp15-face":wireKp15Face,nitrogen:wireNitrogen,verify:wireVerify};
+  window.PressostatVisuals={render(type){return renderers[type]?renderers[type]():"";},wire(type){wirers[type]?.();},quiz:quizVisual,final:finalVisual};
+})();
+</script>
+  <script>(() => {
+  "use strict";
+
+  const COURSE = window.__INERWEB_COURSE__;
+  const VISUALS = window.PressostatVisuals;
+  const $ = (id) => document.getElementById(id);
+  const ui = {
+    stage: $("visualStage"), caption: $("visualCaption"), kicker: $("lessonKicker"),
+    title: $("lessonTitle"), lead: $("lessonLead"), list: $("lessonList"),
+    callout: $("lessonCallout"), quiz: $("quizArea"), feedback: $("feedback"),
+    back: $("backButton"), next: $("nextButton"), navState: $("navState"),
+    progressLabel: $("progressLabel"), progressTrack: $("progressTrack"),
+    progressFill: $("progressFill"), progressCount: $("progressCount"),
+    speak: $("speakButton"), stop: $("stopButton"), speed: $("speedSelect"),
+    reading: $("readingButton"), fullscreen: $("fullscreenButton")
+  };
+  const total = COURSE.lessons.length + COURSE.quiz.length + 1;
+  const answers = Array(COURSE.quiz.length).fill(null);
+  let screen = 0;
+  let speechRun = 0;
+  let speaking = false;
+  /* Un élève qui ne lit pas ne doit pas avoir à retrouver le bouton à chaque écran :
+     « Écouter » arme la lecture suivie, « Stop » la désarme. */
+  let lectureSuivie = false;
+
+  const escapeHtml = (value) => String(value)
+    .replaceAll("&", "&amp;").replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+
+  function score() {
+    return answers.reduce((sum, answer, index) => sum + (answer === COURSE.quiz[index].answer ? 1 : 0), 0);
+  }
+
+  function kind() {
+    if (screen < COURSE.lessons.length) return "lesson";
+    if (screen < COURSE.lessons.length + COURSE.quiz.length) return "quiz";
+    return "final";
+  }
+
+  function stopSpeech() {
+    speechRun += 1;
+    speaking = false;
+    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+    ui.speak.setAttribute("aria-pressed", "false");
+    ui.speak.innerHTML = "▶ <span>Écouter</span>";
+    ui.stop.disabled = true;
+  }
+
+  function resetContent() {
+    stopSpeech();
+    ui.quiz.hidden = true;
+    ui.quiz.innerHTML = "";
+    ui.feedback.hidden = true;
+    ui.feedback.className = "feedback";
+    ui.feedback.textContent = "";
+    ui.callout.hidden = true;
+    ui.callout.removeAttribute("data-type");
+    ui.callout.innerHTML = "";
+  }
+
+  function fillText(item) {
+    ui.kicker.textContent = item.kicker || "";
+    ui.title.textContent = item.title;
+    ui.lead.textContent = item.lead;
+    ui.list.innerHTML = item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("");
+    ui.caption.textContent = item.caption || "";
+    if (item.callout) {
+      ui.callout.hidden = false;
+      ui.callout.dataset.type = item.callout.type || "note";
+      ui.callout.innerHTML = `<strong>${escapeHtml(item.callout.title)}</strong><span>${escapeHtml(item.callout.text)}</span>`;
+    }
+  }
+
+  function renderLessonVisual(item) {
+    if (!item.media) {
+      ui.stage.innerHTML = VISUALS.render(item.visual);
+      ui.stage.setAttribute("role", "img");
+      ui.stage.setAttribute("aria-label", item.caption);
+      ui.stage.removeAttribute("data-visual-mode");
+      ui.caption.textContent = item.caption || "";
+      VISUALS.wire(item.visual);
+      return;
+    }
+
+    const bodyId = `visualModeBody-${screen}`;
+    ui.stage.setAttribute("role", "group");
+    ui.stage.setAttribute("aria-label", `Deux lectures disponibles pour ${item.media.title}`);
+    ui.stage.innerHTML = `
+      <div class="visual-composite">
+        <div class="visual-tabs" role="tablist" aria-label="Choisir le type de visuel">
+          <button class="visual-tab" type="button" role="tab" data-mode="media" aria-controls="${bodyId}">Illustration Claude</button>
+          <button class="visual-tab" type="button" role="tab" data-mode="activity" aria-controls="${bodyId}">Schéma / activité</button>
+        </div>
+        <div class="visual-mode-body" id="${bodyId}" role="tabpanel"></div>
+      </div>`;
+
+    const body = document.getElementById(bodyId);
+    const tabs = Array.from(ui.stage.querySelectorAll(".visual-tab"));
+    const showMode = (mode) => {
+      const mediaMode = mode === "media";
+      ui.stage.dataset.visualMode = mode;
+      tabs.forEach((tab) => {
+        const selected = tab.dataset.mode === mode;
+        tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      if (mediaMode) {
+        const focus = item.media.focus ? ` data-focus="${escapeHtml(item.media.focus)}"` : "";
+        body.innerHTML = `<figure class="claude-frame"${focus}>
+          <div class="claude-viewport"><img src="${escapeHtml(item.media.src)}" alt="${escapeHtml(item.media.alt)}" draggable="false"></div>
+          <figcaption><strong>${escapeHtml(item.media.title)}</strong><span>${escapeHtml(item.media.note)}</span></figcaption>
+        </figure>`;
+        ui.caption.textContent = item.media.caption;
+      } else {
+        body.innerHTML = VISUALS.render(item.visual);
+        ui.caption.textContent = item.caption;
+        VISUALS.wire(item.visual);
+      }
+    };
+    tabs.forEach((tab) => tab.addEventListener("click", () => {
+      showMode(tab.dataset.mode);
+      /* On change d’onglet pour voir autre chose : la voix doit décrire cet autre chose. */
+      if (lectureSuivie) speak();
+    }));
+    showMode("media");
+  }
+
+  function renderLesson() {
+    const item = COURSE.lessons[screen];
+    fillText(item);
+    renderLessonVisual(item);
+    ui.next.disabled = false;
+    ui.next.textContent = screen === COURSE.lessons.length - 1 ? "Passer au quiz →" : "Continuer →";
+    ui.navState.textContent = `Cours · ${screen + 1} sur ${COURSE.lessons.length}`;
+  }
+
+  function markQuiz(questionIndex) {
+    const chosen = answers[questionIndex];
+    if (chosen === null) return;
+    const question = COURSE.quiz[questionIndex];
+    ui.quiz.querySelectorAll(".quiz-choice").forEach((button, index) => {
+      button.disabled = true;
+      button.classList.toggle("correct", index === question.answer);
+      button.classList.toggle("incorrect", index === chosen && chosen !== question.answer);
+    });
+    const correct = chosen === question.answer;
+    ui.feedback.hidden = false;
+    ui.feedback.className = `feedback ${correct ? "correct" : "incorrect"}`;
+    ui.feedback.textContent = `${correct ? "Bonne réponse. " : "À reprendre. "}${question.explanation}`;
+  }
+
+  function renderQuiz() {
+    const questionIndex = screen - COURSE.lessons.length;
+    const question = COURSE.quiz[questionIndex];
+    ui.kicker.textContent = `Quiz formatif · question ${questionIndex + 1}`;
+    ui.title.textContent = question.question;
+    ui.lead.textContent = "Choisis une réponse, puis lis l’explication avant de continuer.";
+    ui.list.innerHTML = "";
+    ui.caption.textContent = "Le score sert à repérer les notions à reprendre ; aucune donnée n’est transmise.";
+    ui.stage.innerHTML = VISUALS.quiz(questionIndex, COURSE.quiz.length, score(), question.id);
+    ui.stage.setAttribute("role", "img");
+    ui.stage.setAttribute("aria-label", `Question ${questionIndex + 1} sur le pressostat combiné KP15`);
+    ui.stage.removeAttribute("data-visual-mode");
+    ui.quiz.hidden = false;
+    ui.quiz.innerHTML = question.choices.map((choice, index) => `<button class="quiz-choice" type="button" data-choice="${index}">${escapeHtml(choice)}</button>`).join("");
+    ui.quiz.querySelectorAll(".quiz-choice").forEach((button) => button.addEventListener("click", () => {
+      if (answers[questionIndex] !== null) return;
+      answers[questionIndex] = Number(button.dataset.choice);
+      markQuiz(questionIndex);
+      ui.next.disabled = false;
+      ui.next.focus({ preventScroll: true });
+    }));
+    markQuiz(questionIndex);
+    ui.next.disabled = answers[questionIndex] === null;
+    ui.next.textContent = questionIndex === COURSE.quiz.length - 1 ? "Voir le bilan →" : "Question suivante →";
+    ui.navState.textContent = `Quiz · ${questionIndex + 1} sur ${COURSE.quiz.length}`;
+  }
+
+  function renderFinal() {
+    const item = COURSE.final;
+    fillText(item);
+    ui.stage.innerHTML = VISUALS.final(score(), COURSE.quiz.length);
+    ui.stage.setAttribute("role", "img");
+    ui.stage.setAttribute("aria-label", `Bilan : ${score()} bonnes réponses sur ${COURSE.quiz.length}`);
+    ui.stage.removeAttribute("data-visual-mode");
+    ui.next.disabled = true;
+    ui.next.textContent = "Parcours terminé";
+    ui.navState.textContent = `Bilan · ${score()} / ${COURSE.quiz.length}`;
+  }
+
+  function render() {
+    resetContent();
+    const currentKind = kind();
+    if (currentKind === "lesson") renderLesson();
+    else if (currentKind === "quiz") renderQuiz();
+    else renderFinal();
+    const percent = Math.round(((screen + 1) / total) * 100);
+    ui.progressFill.style.width = `${percent}%`;
+    ui.progressTrack.setAttribute("aria-valuenow", String(percent));
+    ui.progressCount.textContent = `${screen + 1} / ${total}`;
+    ui.progressLabel.textContent = currentKind === "lesson" ? COURSE.lessons[screen].short : currentKind === "quiz" ? "Quiz" : "Bilan";
+    ui.back.disabled = screen === 0;
+    if (lectureSuivie) speak();
+    document.title = `${ui.title.textContent} — KP15 HP/BP`;
+  }
+
+  function move(delta) {
+    if (delta > 0 && kind() === "quiz" && ui.next.disabled) return;
+    const next = Math.max(0, Math.min(total - 1, screen + delta));
+    if (next !== screen) { screen = next; render(); }
+  }
+
+  /* Les symboles se lisent mal à la synthèse vocale. Le public visé comprend des
+     élèves qui ne lisent pas : un « 1–4 » prononcé « moins trois », ou une formule
+     muette, leur retire purement et simplement l’information. */
+  function pourLaVoix(texte) {
+    return String(texte)
+      .replace(/(\d)\s*[–—-]\s*(\d)/g, "$1 $2")
+      .replace(/×/g, " fois ")
+      .replace(/−/g, " moins ")
+      .replace(/≈/g, " environ ")
+      .replace(/=/g, " égale ")
+      .replace(/·/g, ", ")
+      .replace(/→/g, " puis ")
+      .replace(/\.\s*\./g, ".")
+      .replace(/\s{2,}/g, " ");
+  }
+
+  function spokenText() {
+    const parts = [ui.kicker.textContent, ui.title.textContent, ui.lead.textContent,
+      ...Array.from(ui.list.querySelectorAll("li"), (li) => li.textContent)];
+    if (!ui.callout.hidden) {
+      const titre = ui.callout.querySelector("strong");
+      const corps = ui.callout.querySelector("span");
+      parts.push(titre ? `${titre.textContent} : ${corps ? corps.textContent : ""}` : ui.callout.textContent);
+    }
+    /* Ce que montre l’écran doit s’entendre, sinon l’illustration et le schéma
+       n’existent que pour qui voit ET lit. */
+    const image = ui.stage.querySelector(".claude-frame img[alt]");
+    if (image && image.alt) {
+      parts.push("Ce que montre l’illustration. " + image.alt);
+      const note = ui.stage.querySelector(".claude-frame figcaption span");
+      if (note) parts.push(note.textContent);
+    } else if (ui.caption.textContent) {
+      parts.push(ui.caption.textContent);
+    }
+    /* Les réponses du quiz sont numérotées à voix haute : sans cela, on entend la
+       question mais on ne peut pas choisir. */
+    if (!ui.quiz.hidden) {
+      Array.from(ui.quiz.querySelectorAll(".quiz-choice")).forEach((bouton, index) => {
+        parts.push(`Réponse ${index + 1}. ${bouton.textContent}`);
+      });
+    }
+    if (!ui.feedback.hidden) parts.push(ui.feedback.textContent);
+    return pourLaVoix(parts.filter(Boolean).join(". "));
+  }
+
+  function selectFrenchVoice() {
+    if (!("speechSynthesis" in window)) return null;
+    const voices = window.speechSynthesis.getVoices();
+    return voices.find((voice) => voice.localService && /^fr/i.test(voice.lang))
+      || voices.find((voice) => /^fr/i.test(voice.lang)) || null;
+  }
+
+  function speak() {
+    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+      ui.navState.textContent = "Voix indisponible sur ce navigateur";
+      return;
+    }
+    stopSpeech();
+    const run = speechRun;
+    const utterance = new SpeechSynthesisUtterance(spokenText());
+    utterance.lang = "fr-FR";
+    utterance.rate = Number(ui.speed.value);
+    utterance.pitch = 1;
+    const voice = selectFrenchVoice();
+    if (voice) utterance.voice = voice;
+    utterance.onstart = () => {
+      if (run !== speechRun) return;
+      speaking = true;
+      ui.speak.setAttribute("aria-pressed", "true");
+      ui.speak.innerHTML = "❚❚ <span>Pause</span>";
+      ui.stop.disabled = false;
+    };
+    const finish = () => {
+      if (run !== speechRun) return;
+      speaking = false;
+      ui.speak.setAttribute("aria-pressed", "false");
+      ui.speak.innerHTML = "▶ <span>Écouter</span>";
+      ui.stop.disabled = true;
+    };
+    utterance.onend = finish;
+    utterance.onerror = finish;
+    window.speechSynthesis.speak(utterance);
+  }
+
+  ui.back.addEventListener("click", () => move(-1));
+  ui.next.addEventListener("click", () => move(1));
+  ui.speak.addEventListener("click", () => {
+    if (speaking && window.speechSynthesis.speaking) {
+      window.speechSynthesis.pause(); speaking = false;
+      ui.speak.setAttribute("aria-pressed", "false");
+      ui.speak.innerHTML = "▶ <span>Reprendre</span>";
+    } else if (window.speechSynthesis?.paused) {
+      window.speechSynthesis.resume(); speaking = true;
+      ui.speak.setAttribute("aria-pressed", "true");
+      ui.speak.innerHTML = "❚❚ <span>Pause</span>";
+    } else { lectureSuivie = true; speak(); }
+  });
+  ui.stop.addEventListener("click", () => { lectureSuivie = false; stopSpeech(); });
+  ui.reading.addEventListener("click", () => {
+    const active = document.body.classList.toggle("reading-mode");
+    ui.reading.setAttribute("aria-pressed", String(active));
+  });
+  ui.fullscreen.addEventListener("click", async () => {
+    try {
+      if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
+      else await document.exitFullscreen();
+    } catch { ui.navState.textContent = "Plein écran refusé par le navigateur"; }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(event.target.tagName)) return;
+    if (event.key === "ArrowRight") move(1);
+    if (event.key === "ArrowLeft") move(-1);
+  });
+  document.addEventListener("visibilitychange", () => { if (document.hidden) { lectureSuivie = false; stopSpeech(); } });
+  window.addEventListener("beforeunload", stopSpeech);
+  render();
+})();
+</script>
+</body>
+</html>

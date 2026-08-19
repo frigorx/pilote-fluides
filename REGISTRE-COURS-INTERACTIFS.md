@@ -9,11 +9,11 @@
 
 | | |
 |---|---|
-| Cours interactifs en place | **40** |
+| Cours interactifs en place | **43** |
 | Fiches qui en appellent au moins un | **50** |
 | Codes du référentiel couverts par un cours | **99** |
 | Codes encore expliqués par du texte seul | **0** |
-| Poids total des cours | **14.6 Mo** |
+| Poids total des cours | **17.2 Mo** |
 
 ## Anomalies
 
@@ -26,6 +26,9 @@ Du travail fait que personne ne peut atteindre depuis le parcours.
 - `film-ozone` — 1053 Ko
 - `glissement-temperature` — 179 Ko
 - `parcours-manometres` — 245 Ko
+- `pressostat-bp-kp1` — 984 Ko
+- `pressostat-combine-kp15` — 667 Ko
+- `pressostat-hp-kp5` — 1013 Ko
 - `regulateur-electronique-interactif` — 164 Ko
 - `regulateur-kvl-pedagogique` — 2 Ko
 
@@ -74,6 +77,9 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `pose-manifold-2-voies-interactive` | p1 | 8 | 4.05 · 5.01 · 12.02 | 318 Ko |
 | `pose-manifold-interactive` | p1 | 6 | 4.05 · 5.01 · 5.02 · 3.03 · 3.04 | 90 Ko |
 | `pression-temperature-interactive` | g1b | — | 1.02 · 1.03 | 151 Ko |
+| `pressostat-bp-kp1` | **orphelin** | 26 | 6.03 · 9.06 | 984 Ko |
+| `pressostat-combine-kp15` | **orphelin** | 26 | 6.03 · 7.04 · 9.06 | 667 Ko |
+| `pressostat-hp-kp5` | **orphelin** | 26 | 6.03 · 7.04 · 9.06 | 1013 Ko |
 | `pupitre-reglage-interactif` | g9b | 9 | 9.04 · 9.06 · 7.04 | 70 Ko |
 | `recuperation-fluide-interactive` | p2 | 8 | 5.01 · 5.02 · 5.03 · 5.05 · 5.06 | 184 Ko |
 | `regulateur-electronique-interactif` | **orphelin** | 24 | 9.04 · 6.03 | 164 Ko |

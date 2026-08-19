@@ -1,0 +1,67 @@
+{
+  "family": "hp-bp-kp15",
+  "sourceArchive": "Animations pressostat KP1 KP5 KP15.zip",
+  "sourceSha256": "B57BE3BD1DCC7479A9B7F8F52B72881B7DC19F8EBB2DEE191F1A49792F7FA1E6",
+  "sourceComponent": "pressostat-dual.jsx",
+  "sourceComponentSha256": "3FE2E9F4B610CC18A1211C12C3CF2D5AECF10187848678123D840622801C5EA5",
+  "exportedOn": "2026-08-19",
+  "status": "Illustrations Claude fournies par Franck ; le câblage pédagogique est corrigé séparément selon Danfoss A/B/C/D + PE",
+  "integration": {
+    "used": [
+      "01-ouverture.png",
+      "02-cote-bp.png",
+      "03-cote-hp.png"
+    ],
+    "referenceOnly": [
+      "04-chaine.png",
+      "05-rearmement.png",
+      "06-reglage.png",
+      "07-synthese.png"
+    ],
+    "reason": "Le schéma de signalisation A-D de ces vues ne remplace pas le diagramme Danfoss A ligne, B signal BP, C charge, D signal HP. La vue 06-reglage est écartée en plus : elle présente l’échelle RANGE du côté BP comme un CUT OUT, alors que le module enseigne RANGE = CUT IN et CUT OUT = CUT IN − DIFF."
+  },
+  "frames": [
+    {
+      "id": "01-ouverture",
+      "time": 2,
+      "title": "Ouverture",
+      "file": "01-ouverture.png"
+    },
+    {
+      "id": "02-cote-bp",
+      "time": 8,
+      "title": "Côté BP",
+      "file": "02-cote-bp.png"
+    },
+    {
+      "id": "03-cote-hp",
+      "time": 18,
+      "title": "Côté HP",
+      "file": "03-cote-hp.png"
+    },
+    {
+      "id": "04-chaine",
+      "time": 29,
+      "title": "Chaîne de commande",
+      "file": "04-chaine.png"
+    },
+    {
+      "id": "05-rearmement",
+      "time": 39,
+      "title": "Réarmement HP",
+      "file": "05-rearmement.png"
+    },
+    {
+      "id": "06-reglage",
+      "time": 48,
+      "title": "Réglages",
+      "file": "06-reglage.png"
+    },
+    {
+      "id": "07-synthese",
+      "time": 59,
+      "title": "Synthèse",
+      "file": "07-synthese.png"
+    }
+  ]
+}

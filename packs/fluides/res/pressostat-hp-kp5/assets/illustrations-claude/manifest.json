@@ -1,0 +1,63 @@
+{
+  "family": "hp-kp5",
+  "sourceArchive": "Animations pressostat KP1 KP5 KP15.zip",
+  "sourceSha256": "B57BE3BD1DCC7479A9B7F8F52B72881B7DC19F8EBB2DEE191F1A49792F7FA1E6",
+  "sourceComponent": "pressostat-simple.jsx",
+  "sourceComponentSha256": "1A7FBB57A785E81933C9F48B0BD6F6B0F0BAEDEA1B41CC29B3AFC4D6185E9ACD",
+  "variant": "série simple unifiée avec correction de l’état initial d’hystérésis et de la transition de synthèse",
+  "previousVariant": "variantes/premiere-variante-20260819/",
+  "specificity": "Pressostat haute pression Danfoss KP5",
+  "exportedOn": "2026-08-19",
+  "status": "Nouvelle variante Claude fournie par Franck, intégrée comme médias locaux ; KP15 exclu",
+  "frames": [
+    {
+      "id": "01-ouverture",
+      "time": 2,
+      "title": "Ouverture",
+      "alt": "Carte de titre devant le pressostat et la conduite frigorifique.",
+      "file": "01-ouverture.png"
+    },
+    {
+      "id": "02-soufflet",
+      "time": 8,
+      "title": "Soufflet",
+      "alt": "Pression, soufflet, tige de transmission et ressort de plage.",
+      "file": "02-soufflet.png"
+    },
+    {
+      "id": "03-contacts",
+      "time": 16,
+      "title": "Contacts",
+      "alt": "Mécanisme à action brusque et bornier électrique du pressostat.",
+      "file": "03-contacts.png"
+    },
+    {
+      "id": "04-seuils",
+      "time": 25,
+      "title": "Seuils",
+      "alt": "Évolution de la pression entre le seuil de coupure et le seuil de retour.",
+      "file": "04-seuils.png"
+    },
+    {
+      "id": "05-reglage",
+      "time": 36,
+      "title": "Réglage",
+      "alt": "Vis de plage, vis de différentiel et relation de calcul.",
+      "file": "05-reglage.png"
+    },
+    {
+      "id": "06-cycle",
+      "time": 48,
+      "title": "Cycle",
+      "alt": "Graphique du cycle de pression et état du compresseur.",
+      "file": "06-cycle.png"
+    },
+    {
+      "id": "07-synthese",
+      "time": 58,
+      "title": "Synthèse",
+      "alt": "Carte récapitulative des éléments à retenir.",
+      "file": "07-synthese.png"
+    }
+  ]
+}

@@ -1,0 +1,1972 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Module inerWeb Édu hors ligne : comprendre et régler un pressostat basse pression de sécurité.">
+  <title>Pressostat BP de sécurité — inerWeb Édu</title>
+  <style>:root {
+  --navy: #1b3a63;
+  --ink: #10233c;
+  --orange: #ff6b35;
+  --orange-deep: #c9451a;
+  --blue: #3d7fca;
+  --blue-soft: #84b7ec;
+  --cream: #f7f1e7;
+  --paper: #fffdf8;
+  --muted: #637285;
+  --line: rgba(27, 58, 99, .16);
+  --ok: #1e7e54;
+  --ok-bg: #e3f5ec;
+  --danger: #c0392b;
+  --danger-bg: #fbe7e4;
+  --wait: #b06a00;
+  --wait-bg: #fff4e0;
+  --shadow: 0 10px 30px rgba(27, 58, 99, .12);
+}
+
+* { box-sizing: border-box; }
+
+html, body { width: 100%; height: 100%; margin: 0; }
+
+body {
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Calibri, "Segoe UI", system-ui, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+
+button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid rgba(255, 107, 53, .55);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.course-app {
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 48px 30px minmax(0, 1fr) 52px;
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 12px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 253, 248, .96);
+}
+
+.brand { display: flex; align-items: center; min-width: 0; }
+.brand-logo { display: block; height: 30px; width: auto; }
+.print-signature { display: none; }
+
+.course-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--navy);
+  font: 700 16px/1 "Trebuchet MS", Calibri, Arial, sans-serif;
+}
+
+.tools { display: flex; align-items: center; justify-content: flex-end; gap: 5px; }
+.tool-button, .speed-select {
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+}
+.tool-button { padding: 0 10px; }
+.tool-button.compact { width: 36px; padding: 0; }
+.tool-button[aria-pressed="true"] { border: 3px double var(--ok); background: var(--ok-bg); color: var(--ok); }
+.tool-button:disabled { cursor: not-allowed; opacity: .45; }
+.speed-select { padding: 0 4px; }
+
+.progress-row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 70px;
+  align-items: center;
+  gap: 10px;
+  padding: 3px 14px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+.progress-row > :last-child { text-align: right; }
+.progress-track {
+  height: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+}
+.progress-track span { display: block; width: 0; height: 100%; background: var(--orange); transition: width 180ms ease; }
+
+.lesson-grid {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(330px, .82fr);
+  gap: 10px;
+  padding: 0 10px 8px;
+}
+
+.visual-panel, .lesson-panel {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.visual-panel { display: grid; grid-template-rows: minmax(0, 1fr) auto; padding: 8px 10px 6px; }
+.visual-stage { min-height: 0; display: grid; place-items: center; overflow: hidden; }
+.visual-stage > svg { display: block; width: 100%; height: 100%; max-height: 100%; }
+.visual-caption { margin: 3px 4px 0; color: var(--muted); text-align: center; font-size: 11px; line-height: 1.2; }
+
+.visual-composite {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 6px;
+}
+.visual-tabs { display: flex; justify-content: center; gap: 6px; }
+.visual-tab {
+  min-height: 34px;
+  padding: 5px 14px;
+  border: 2px solid var(--navy);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 800;
+}
+.visual-tab[aria-selected="true"] {
+  border: 4px double var(--orange-deep);
+  background: var(--wait-bg);
+  color: var(--orange-deep);
+}
+.visual-mode-body { width: 100%; height: 100%; min-height: 0; display: grid; place-items: center; overflow: hidden; }
+.visual-mode-body > svg { display: block; width: 100%; height: 100%; max-height: 100%; }
+.visual-mode-body > div { width: 100%; height: 100%; min-height: 0; }
+.claude-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 4px;
+  overflow: hidden;
+}
+.claude-frame img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: block;
+  object-fit: contain;
+  border-radius: 13px;
+  background: #071b34;
+}
+.claude-frame figcaption { display: flex; align-items: baseline; justify-content: center; gap: 7px; color: var(--muted); font-size: 10px; line-height: 1.2; text-align: center; }
+.claude-frame figcaption strong { color: var(--navy); }
+
+.lesson-panel { display: flex; flex-direction: column; padding: clamp(14px, 2.1vw, 26px); }
+.lesson-kicker {
+  margin-bottom: 4px;
+  color: var(--orange-deep);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+h1 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font: 700 clamp(24px, 2.5vw, 38px)/1.08 "Trebuchet MS", Calibri, Arial, sans-serif;
+  letter-spacing: -.015em;
+}
+.lesson-lead { margin: 0 0 10px; color: var(--ink); font-size: clamp(15px, 1.25vw, 18px); line-height: 1.45; }
+.lesson-list { margin: 0; padding-left: 1.15em; color: var(--ink); font-size: clamp(14px, 1.05vw, 16px); line-height: 1.42; }
+.lesson-list li { margin-bottom: 6px; padding-left: 3px; }
+
+.callout {
+  margin-top: auto;
+  padding: 10px 12px;
+  border: 2px solid var(--navy);
+  border-left-width: 6px;
+  border-radius: 12px;
+  background: var(--paper);
+  font-size: 14px;
+  line-height: 1.35;
+}
+.callout strong { display: block; margin-bottom: 2px; color: var(--navy); }
+.callout[data-type="key"] { border-style: double; border-width: 4px 2px 4px 7px; border-color: var(--ok); background: var(--ok-bg); }
+.callout[data-type="key"] strong { color: var(--ok); }
+.callout[data-type="warning"] { border-style: dashed; border-width: 2px 2px 2px 6px; border-color: var(--orange-deep); background: var(--wait-bg); }
+.callout[data-type="warning"] strong { color: var(--orange-deep); }
+.callout[data-type="note"] { border-left-style: dotted; border-color: var(--blue); background: #f3f7fb; }
+
+.navigation {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr) 150px;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-top: 1px solid var(--line);
+  background: rgba(247, 241, 231, .98);
+}
+.nav-button { height: 40px; border-radius: 999px; font-size: 14px; font-weight: 800; }
+.nav-button.primary { border: 2px solid var(--navy); background: var(--navy); color: #fff; }
+.nav-button.secondary { border: 2px solid var(--navy); background: var(--paper); color: var(--navy); }
+.nav-button:disabled { cursor: not-allowed; opacity: .42; }
+.nav-state { overflow: hidden; color: var(--muted); text-align: center; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; font-weight: 700; }
+
+/* Visuels et activités */
+.visual-html { width: 100%; height: 100%; min-height: 0; display: grid; place-items: center; padding: 4px; }
+.compare-grid, .model-grid, .record-grid { width: min(96%, 760px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.mini-card {
+  min-width: 0;
+  padding: clamp(10px, 1.7vw, 18px);
+  border: 2px solid var(--navy);
+  border-radius: 16px;
+  background: var(--paper);
+}
+.mini-card h3 { margin: 0 0 7px; color: var(--navy); font: 700 clamp(16px, 1.6vw, 22px)/1.1 "Trebuchet MS", Calibri, Arial, sans-serif; }
+.mini-card p { margin: 4px 0; font-size: clamp(12px, 1.15vw, 15px); line-height: 1.35; }
+.mini-card.safety { border-style: double; border-width: 5px; border-color: var(--danger); }
+.mini-card.regulation { border-style: dashed; border-color: var(--blue); }
+.status-pill { display: inline-flex; align-items: center; gap: 5px; margin-bottom: 7px; padding: 4px 9px; border: 2px solid currentColor; border-radius: 999px; font-size: 11px; font-weight: 800; }
+.status-pill.danger { color: var(--danger); background: var(--danger-bg); border-style: dashed; }
+.status-pill.ok { color: var(--ok); background: var(--ok-bg); border-style: double; }
+.status-pill.info { color: var(--navy); background: #f3f7fb; }
+.formula { color: var(--navy); font: 800 clamp(18px, 2.5vw, 34px)/1.1 Consolas, monospace; }
+
+.lab { width: min(96%, 760px); min-height: 0; display: grid; gap: 10px; }
+.lab-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.lab-field { min-width: 0; padding: 8px; border: 1px solid var(--line); border-radius: 12px; background: #f3f7fb; }
+.lab-field label { display: block; margin-bottom: 4px; color: var(--navy); font-size: 11px; font-weight: 800; }
+.lab-field input { width: 100%; min-height: 36px; padding: 4px 8px; border: 2px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); font: 700 18px/1 Consolas, monospace; }
+.lab-result { min-height: 46px; padding: 9px 12px; border: 2px solid var(--navy); border-radius: 12px; background: var(--paper); color: var(--navy); text-align: center; font-size: 14px; font-weight: 800; }
+.lab-result.ok { border-style: double; border-width: 4px; border-color: var(--ok); background: var(--ok-bg); color: var(--ok); }
+.lab-result.danger { border-style: dashed; border-color: var(--danger); background: var(--danger-bg); color: var(--danger); }
+.lab-result.wait { border-style: dotted; border-color: var(--wait); background: var(--wait-bg); color: #7a4a00; }
+.pressure-slider { width: 100%; accent-color: var(--blue); }
+.button-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.activity-button { min-height: 38px; padding: 7px 13px; border: 2px solid var(--navy); border-radius: 999px; background: var(--paper); color: var(--navy); font-size: 13px; font-weight: 800; }
+.activity-button[aria-pressed="true"] { border-style: double; border-width: 4px; background: var(--ok-bg); color: var(--ok); border-color: var(--ok); }
+
+.quiz-area { display: grid; gap: 8px; margin-top: 4px; }
+.quiz-choice {
+  width: 100%;
+  min-height: 46px;
+  padding: 9px 12px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+}
+.quiz-choice.correct { border: 4px double var(--ok); background: var(--ok-bg); color: var(--ok); }
+.quiz-choice.incorrect { border: 2px dashed var(--danger); background: var(--danger-bg); color: var(--danger); }
+.quiz-choice:disabled { cursor: default; opacity: 1; }
+.feedback { margin-top: auto; padding: 10px 12px; border-radius: 12px; font-size: 14px; font-weight: 700; line-height: 1.35; }
+.feedback.correct { border: 4px double var(--ok); background: var(--ok-bg); color: var(--ok); }
+.feedback.incorrect { border: 2px dashed var(--danger); background: var(--danger-bg); color: var(--danger); }
+
+body.reading-mode .lesson-grid { grid-template-columns: minmax(0, .95fr) minmax(360px, 1.05fr); }
+body.reading-mode .lesson-panel { padding: 18px 24px; }
+body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mode .callout { font-size: 1.05em; line-height: 1.55; }
+
+/* Refonte V2 — visuels techniques et activités */
+.visual-stage > div { width: 100%; height: 100%; min-height: 0; }
+.technical-svg { display: block; width: 100%; height: 100%; min-height: 0; }
+.mechanism-lab, .deadband-lab, .envelope-lab { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 7px; }
+.mechanism-controls { display: grid; grid-template-columns: auto minmax(135px, .55fr) minmax(120px, 1fr) auto minmax(180px, 1fr); align-items: center; gap: 7px; }
+.mechanism-controls label { color: var(--navy); text-align: center; font-size: 11px; font-weight: 800; }
+.mechanism-controls output { display: block; color: var(--orange-deep); font: 800 17px/1.1 Consolas, monospace; }
+.mechanism-controls input, .deadband-controls input, .cycle-gauge input { width: 100%; accent-color: var(--blue); }
+.mechanism-controls .lab-result { min-height: 38px; padding: 6px 8px; font-size: 11px; }
+
+.symbol-workflow { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; align-content: center; padding: 28px 18px 52px; }
+.workflow-line { position: absolute; z-index: 0; top: 50%; left: 9%; right: 9%; height: 6px; background: var(--orange-deep); }
+.symbol-card { position: relative; z-index: 1; min-width: 0; margin: 0; padding: 18px 10px 12px; border: 3px solid var(--navy); border-radius: 18px; background: var(--paper); text-align: center; box-shadow: 0 7px 16px rgba(27,58,99,.13); }
+.symbol-card img { display: block; width: 86px; height: 86px; margin: auto; object-fit: contain; }
+.symbol-card h3 { margin: 8px 0 2px; color: var(--navy); font: 800 16px/1.1 "Trebuchet MS",sans-serif; }
+.symbol-card p { margin: 0; color: var(--muted); font-size: 12px; }
+.symbol-step { position: absolute; top: -15px; left: calc(50% - 15px); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: white; font-weight: 800; }
+.library-seal { position: absolute; right: 16px; bottom: 10px; left: 16px; padding: 8px; border: 3px double var(--ok); border-radius: 10px; background: var(--ok-bg); color: var(--ok); text-align: center; font-size: 11px; font-weight: 800; letter-spacing: .06em; }
+
+.snap-sequence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-content: center; padding: 18px; }
+.snap-card { position: relative; min-width: 0; padding: 20px 14px 12px; border: 3px solid var(--navy); border-radius: 18px; background: var(--paper); text-align: center; }
+.snap-card > span { position: absolute; top: -15px; left: calc(50% - 15px); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: white; font-weight: 800; }
+.snap-card h3 { min-height: 34px; margin: 4px 0; color: var(--navy); font-size: 15px; }
+.snap-card svg { width: 112px; height: 82px; }
+.snap-card p { margin: 0; color: var(--muted); font-size: 12px; }
+.snap-note { grid-column: 1/-1; display: flex; justify-content: center; gap: 12px; padding: 9px; border: 3px double var(--ok); border-radius: 12px; background: var(--ok-bg); color: var(--ok); }
+
+.deadband-controls { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px; align-items: center; }
+.deadband-lab .lab-result { min-height: 38px; padding: 6px; font-size: 12px; }
+
+.calculation-lab { display: grid; grid-template-rows: auto auto auto auto auto; gap: 7px; align-content: center; padding: 8px 14px; }
+.target-tabs, .formula-choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+.target-tab, .formula-choices button { min-height: 38px; padding: 5px 7px; border: 2px solid var(--navy); border-radius: 10px; background: var(--paper); color: var(--navy); font-size: 11px; font-weight: 800; }
+.target-tab.active, .formula-choices button.selected { border: 4px double var(--ok); background: var(--ok-bg); color: var(--ok); }
+.formula-choices button.wrong { border-style: dashed; border-color: var(--danger); background: var(--danger-bg); color: var(--danger); }
+.pressure-ruler { display: grid; grid-template-columns: 1fr 2fr 1fr; overflow: hidden; border: 3px solid var(--navy); border-radius: 14px; text-align: center; font-size: 12px; font-weight: 800; }
+.pressure-ruler > span { display: grid; place-items: center; min-height: 62px; padding: 5px; }
+.ruler-cutout { background: var(--danger-bg); color: var(--danger); }
+.ruler-zone { border-right: 3px dashed var(--wait); border-left: 3px dashed var(--wait); background: var(--wait-bg); color: #7a4a00; }
+.ruler-cutin { background: var(--ok-bg); color: var(--ok); }
+.calc-prompt { margin: 0; color: var(--navy); text-align: center; font-size: 12px; font-weight: 800; }
+.calc-fields { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)) auto; gap: 7px; align-items: stretch; }
+.calc-fields .lab-field { padding: 5px; }
+.calc-fields .lab-field.answer { border: 3px dashed var(--orange-deep); background: var(--wait-bg); }
+.primary-action { background: var(--navy); color: white; }
+.calculation-lab .lab-result { min-height: 38px; padding: 6px; font-size: 11px; }
+
+.contact-lab { display: grid; grid-template-columns: minmax(0, 1fr) 180px; grid-template-rows: minmax(0,1fr) auto; gap: 8px; padding: 6px; }
+.contact-main { min-height: 0; }
+.contact-symbol { display: grid; grid-template-rows: auto minmax(70px,1fr) auto; min-height: 0; padding: 10px; border: 3px double var(--navy); border-radius: 14px; background: #f3f7fb; text-align: center; }
+.contact-symbol span { color: var(--navy); font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.contact-symbol img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.contact-symbol p { margin: 3px 0 0; color: var(--muted); font-size: 10px; line-height: 1.2; }
+.contact-buttons { grid-column: 1/-1; display: flex; justify-content: center; gap: 8px; }
+
+.model-compare { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; align-content: center; padding: 10px; }
+.model-card { display: grid; grid-template-columns: 130px 1fr; min-width: 0; overflow: hidden; border: 3px solid var(--navy); border-radius: 16px; background: var(--paper); }
+.model-card.manual { border-style: dashed; border-color: var(--danger); }
+.model-face { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; align-content: start; padding: 14px 8px; background: #171b21; color: white; text-align: center; font-size: 11px; font-weight: 800; }
+.model-face i { display: block; height: 132px; border: 1px solid #637285; background: repeating-linear-gradient(to bottom,transparent 0 16px,#c7d0db 17px 19px); }
+.model-face.one { grid-template-columns: 1fr; }
+.model-face.one b { padding: 7px; border-radius: 6px; background: var(--danger); }
+.model-card > div:last-child { padding: 12px; }
+.model-card h3 { margin: 2px 0 7px; color: var(--navy); font-size: 15px; }
+.model-card dl { display: grid; grid-template-columns: 1fr 1fr; margin: 0; font-size: 11px; }
+.model-card dt,.model-card dd { margin: 0; padding: 4px; border-bottom: 1px solid var(--line); }
+.model-card dd { font-weight: 800; }
+.model-rule { grid-column: 1/-1; display: flex; justify-content: center; gap: 12px; padding: 8px; border: 3px double var(--ok); border-radius: 10px; background: var(--ok-bg); color: var(--ok); font-size: 12px; }
+
+.envelope-lab { padding: 8px; }
+.lab-row.two { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.envelope-lab .lab-result { min-height: 38px; padding: 6px; font-size: 11px; }
+
+.kp-console { position: relative; display: grid; grid-template-rows: auto minmax(0,1fr); gap: 6px; padding: 6px; }
+.kp-provenance { padding: 5px 8px; border: 3px double var(--ok); border-radius: 9px; background: var(--ok-bg); color: var(--ok); text-align: center; font-size: 10px; font-weight: 800; letter-spacing: .07em; }
+.kp-face-grid { min-height: 0; display: grid; grid-template-columns: minmax(170px,.8fr) minmax(200px,1fr) minmax(170px,.7fr); gap: 8px; }
+.kp-hardware,.kp-gauge { min-height: 0; display: grid; place-items: center; }
+.kp-hardware svg,.kp-gauge svg { width: 100%; height: 100%; min-height: 0; }
+.kp-gauge { grid-template-rows: minmax(0,1fr) auto; }
+.kp-equation { margin-top: -4px; padding: 6px 12px; border-radius: 999px; background: var(--wait-bg); color: #7a4a00; font: 800 16px/1 Consolas,monospace; }
+.kp-settings { display: grid; grid-template-rows: auto auto auto auto; gap: 7px; align-content: center; }
+.kp-setting,.kp-output { padding: 9px; border: 2px solid var(--navy); border-radius: 13px; background: var(--paper); text-align: center; }
+.kp-setting.diff { border-color: var(--orange-deep); }
+.kp-setting span,.kp-output span { display: block; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.kp-setting strong,.kp-output strong { display: block; color: var(--navy); font: 800 20px/1.2 Consolas,monospace; }
+.kp-setting.diff strong { color: var(--orange-deep); }
+.kp-setting > div { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 5px; }
+.kp-setting button { display: grid; place-items: center; width: 34px; height: 28px; border: 2px solid var(--navy); border-radius: 8px; background: var(--paper); color: var(--navy); font-weight: 900; }
+.kp-setting i { display: block; width: 34px; height: 34px; border: 4px solid #5d6064; border-radius: 50%; background: linear-gradient(90deg,transparent 44%,#26282b 45% 55%,transparent 56%),#42464b; }
+.kp-output { border: 4px double var(--ok); background: var(--ok-bg); }
+.kp-output strong { color: var(--ok); font-size: 24px; }
+.kp-output small { color: var(--ok); }
+.kp-status { padding: 7px; border-radius: 9px; text-align: center; font-size: 10px; font-weight: 800; }
+.kp-status.ok { border: 3px double var(--ok); background: var(--ok-bg); color: var(--ok); }
+.kp-status.danger { border: 2px dashed var(--danger); background: var(--danger-bg); color: var(--danger); }
+
+.nitrogen-bench { display: grid; grid-template-rows: minmax(0,1fr) auto; gap: 5px; }
+.bench-legend { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 4px; }
+.bench-legend span { padding: 5px; border: 1px solid var(--line); border-radius: 7px; background: #f3f7fb; color: var(--navy); text-align: center; font-size: 9px; font-weight: 800; }
+.nitrogen-cycle { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(190px,.9fr); gap: 10px; padding: 8px; }
+.cycle-gauge { min-height: 0; display: grid; grid-template-rows: minmax(0,1fr) auto auto; gap: 5px; }
+.cycle-gauge svg { width: 100%; height: 100%; min-height: 0; }
+.cycle-buttons { display: flex; justify-content: center; gap: 6px; }
+.cycle-readings { display: grid; grid-template-rows: auto repeat(3,1fr) auto; gap: 6px; align-content: center; }
+.contact-meter,.reading { padding: 8px; border: 2px solid var(--navy); border-radius: 11px; background: var(--paper); text-align: center; }
+.contact-meter span,.reading span { display: block; color: var(--muted); font-size: 9px; font-weight: 800; letter-spacing: .07em; }
+.contact-meter strong,.reading strong { color: var(--navy); font: 800 15px/1.2 Consolas,monospace; }
+.contact-meter.ok { border: 4px double var(--ok); background: var(--ok-bg); }
+.contact-meter.ok strong { color: var(--ok); }
+.contact-meter.danger { border: 2px dashed var(--danger); background: var(--danger-bg); }
+.contact-meter.danger strong { color: var(--danger); }
+.reading.diff { border: 4px double var(--orange-deep); background: var(--wait-bg); }
+
+.running-board { display: grid; grid-template-rows: 1fr auto auto; gap: 10px; align-content: center; padding: 14px; }
+.running-circuit { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 7px; align-items: center; }
+.component { min-width: 0; padding: 9px; border: 3px solid var(--navy); border-radius: 13px; background: var(--paper); text-align: center; }
+.component img,.symbol-shape { display: block; width: 58px; height: 48px; margin: auto; object-fit: contain; color: var(--orange-deep); font-size: 42px; line-height: 1; }
+.component strong,.component small { display: block; }
+.component strong { color: var(--navy); font-size: 12px; }
+.component small { color: var(--muted); font-size: 9px; }
+.pipe-arrow { color: var(--orange-deep); font-size: 24px; font-weight: 900; }
+.running-priorities { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; }
+.running-priorities article { display: flex; align-items: center; gap: 6px; padding: 7px; border: 2px solid var(--navy); border-radius: 9px; background: #f3f7fb; font-size: 10px; font-weight: 800; }
+.running-priorities article span { color: var(--orange-deep); font-weight: 900; }
+.running-priorities article p { margin: 0; }
+.running-priorities article.danger { border-style: dashed; border-color: var(--danger); background: var(--danger-bg); color: var(--danger); }
+.running-footer { padding: 7px; border: 2px dashed var(--orange-deep); border-radius: 8px; background: var(--wait-bg); color: #7a4a00; text-align: center; font-size: 10px; font-weight: 800; }
+
+.cycles-lab { display: grid; grid-template-rows: minmax(0,1fr) auto auto; gap: 8px; padding: 12px; }
+.cycles-lab table { width: 100%; table-layout: fixed; border-collapse: collapse; overflow: hidden; border: 2px solid var(--navy); border-radius: 10px; font-size: 11px; }
+.cycles-lab th,.cycles-lab td { padding: 6px; border: 1px solid var(--line); text-align: center; }
+.cycles-lab thead th { background: var(--navy); color: white; }
+.cycles-lab input { width: 100%; min-height: 34px; border: 2px solid var(--line); border-radius: 6px; text-align: center; font: 700 14px Consolas,monospace; }
+.cycles-lab output { font: 800 14px Consolas,monospace; color: var(--orange-deep); }
+.cycles-actions { display: grid; grid-template-columns: auto minmax(220px,1fr); gap: 8px; }
+.cycles-actions .tolerance { display: grid; grid-template-columns: 1fr 100px; align-items: center; gap: 7px; }
+.cycles-lab .lab-result { min-height: 38px; padding: 6px; font-size: 11px; }
+
+.record-timeline { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; align-content: center; padding: 14px; }
+.record-timeline article { position: relative; min-width: 0; padding: 28px 8px 10px; border: 3px solid var(--navy); border-radius: 13px; background: var(--paper); text-align: center; }
+.record-timeline article > span { position: absolute; top: -15px; left: calc(50% - 19px); display: grid; place-items: center; width: 38px; height: 30px; border-radius: 15px; background: var(--navy); color: white; font-weight: 800; }
+.record-timeline h3 { margin: 0 0 5px; color: var(--navy); font-size: 12px; }
+.record-timeline p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.25; }
+.record-signature { grid-column: 1/-1; padding: 10px; border: 3px double var(--ok); border-radius: 10px; background: var(--ok-bg); color: var(--ok); text-align: center; font-weight: 800; }
+
+.summary-board { display: grid; gap: 18px; align-content: center; padding: 22px; }
+.summary-mechanism,.summary-formula { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
+.summary-mechanism span { padding: 10px 14px; border: 3px solid var(--navy); border-radius: 11px; background: var(--paper); color: var(--navy); font-weight: 800; }
+.summary-mechanism b { color: var(--orange-deep); font-size: 24px; }
+.summary-formula { padding: 18px; border: 4px double var(--orange-deep); border-radius: 15px; background: var(--wait-bg); }
+.summary-formula span { color: var(--danger); font-weight: 800; }
+.summary-formula strong { color: var(--navy); font: 800 22px Consolas,monospace; }
+.summary-formula i { width: 40px; border-top: 3px dashed var(--wait); }
+.summary-proof { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+.summary-proof article { display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid var(--navy); border-radius: 10px; background: #f3f7fb; font-size: 12px; font-weight: 800; }
+.summary-proof b { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: white; }
+
+.quiz-visual,.final-board { display: grid; gap: 12px; place-content: center; text-align: center; padding: 20px; }
+.quiz-symbol { display: flex; justify-content: center; align-items: center; gap: 12px; }
+.quiz-symbol img { width: 100px; height: 100px; object-fit: contain; }
+.quiz-symbol span { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--navy); color: white; font-size: 22px; font-weight: 900; }
+.quiz-index small,.quiz-index strong,.quiz-index span { display: inline-block; margin: 0 4px; }
+.quiz-index strong { color: var(--orange-deep); font-size: 42px; }
+.quiz-topic,.quiz-score,.final-next { padding: 8px 16px; border-radius: 999px; background: var(--navy); color: white; font-weight: 800; }
+.quiz-reminder,.final-equation { padding: 13px; border: 4px double var(--orange-deep); border-radius: 12px; background: var(--wait-bg); color: var(--navy); font: 800 18px Consolas,monospace; }
+.quiz-reminder { display: flex; justify-content: center; gap: 12px; }
+.final-score strong { display: block; color: var(--orange-deep); font-size: 56px; }
+.final-chain { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; color: var(--navy); font-weight: 800; }
+.final-chain b { color: var(--orange-deep); }
+
+@media (max-width: 900px) {
+  .lesson-grid { grid-template-columns: minmax(0, 1fr) minmax(310px, .9fr); }
+  .brand-logo { height: 26px; }
+  .tool-button span { display: none; }
+  .tool-button:not(.compact) { width: 36px; padding: 0; }
+}
+
+@media (max-width: 650px) {
+  .course-app { grid-template-rows: 40px 24px minmax(0, 1fr) 44px; }
+  .topbar { gap: 5px; padding: 3px 5px; }
+  .brand-logo { height: 22px; }
+  .course-name { display: none; }
+  .course-name { text-align: left; font-size: 12px; }
+  .tools { gap: 3px; }
+  .tool-button, .speed-select { height: 30px; border-radius: 8px; font-size: 10px; }
+  .tool-button.compact, .tool-button:not(.compact) { width: 31px; }
+  .speed-select { width: 46px; padding: 0; }
+  .progress-row { grid-template-columns: 70px minmax(0, 1fr) 48px; gap: 5px; padding: 1px 6px; font-size: 9px; }
+  .progress-track { height: 6px; }
+  .lesson-grid { grid-template-columns: 1fr; grid-template-rows: minmax(0, 44%) minmax(0, 56%); gap: 4px; padding: 0 4px 4px; }
+  .visual-panel, .lesson-panel { border-radius: 12px; box-shadow: 0 2px 10px rgba(27, 58, 99, .1); }
+  .visual-panel { padding: 3px 4px 2px; }
+  .visual-caption { margin-top: 1px; font-size: 8.5px; line-height: 1.1; }
+  .visual-composite { gap: 2px; }
+  .visual-tabs { gap: 3px; }
+  .visual-tab { min-height: 26px; padding: 2px 8px; border-width: 1px; font-size: 8px; }
+  .visual-tab[aria-selected="true"] { border-width: 3px; }
+  .claude-frame { gap: 1px; }
+  .claude-frame img { border-radius: 7px; }
+  .claude-frame figcaption { font-size: 6.5px; }
+  .claude-frame figcaption span { display: none; }
+  .lesson-panel { padding: 8px 10px; }
+  .lesson-kicker { margin-bottom: 2px; font-size: 8px; }
+  h1 { margin-bottom: 4px; font-size: clamp(17px, 5.1vw, 20px); line-height: 1.05; }
+  .lesson-lead { margin-bottom: 4px; font-size: 11px; line-height: 1.22; }
+  .lesson-list { padding-left: 1em; font-size: 10.5px; line-height: 1.18; }
+  .lesson-list li { margin-bottom: 2px; }
+  .callout { padding: 5px 7px; border-radius: 8px; font-size: 10px; line-height: 1.18; }
+  .callout strong { display: inline; margin-right: 3px; }
+  .navigation { grid-template-columns: 88px minmax(0, 1fr) 102px; gap: 4px; padding: 3px 4px; }
+  .nav-button { height: 36px; font-size: 11px; }
+  .nav-state { font-size: 9px; }
+  .compare-grid, .model-grid, .record-grid { width: 98%; gap: 5px; }
+  .mini-card { padding: 7px; border-radius: 10px; }
+  .mini-card.safety { border-width: 3px; }
+  .mini-card h3 { margin-bottom: 3px; font-size: 12px; }
+  .mini-card p { margin: 2px 0; font-size: 9.5px; line-height: 1.15; }
+  .status-pill { margin-bottom: 3px; padding: 2px 5px; font-size: 8px; }
+  .formula { font-size: 16px; }
+  .lab { width: 98%; gap: 4px; }
+  .lab-row { gap: 4px; }
+  .lab-field { padding: 4px; border-radius: 8px; }
+  .lab-field label { margin-bottom: 1px; font-size: 8px; }
+  .lab-field input { min-height: 28px; padding: 2px 4px; border-width: 1px; font-size: 13px; }
+  .lab-result { min-height: 30px; padding: 4px 6px; border-radius: 8px; font-size: 10px; }
+  .activity-button { min-height: 30px; padding: 3px 8px; font-size: 9px; }
+  .quiz-area { gap: 4px; margin-top: 1px; }
+  .quiz-choice { min-height: 34px; padding: 5px 7px; border-radius: 8px; font-size: 10.5px; }
+  .feedback { padding: 5px 7px; border-radius: 8px; font-size: 10px; line-height: 1.18; }
+  .mechanism-lab, .deadband-lab, .envelope-lab { gap: 2px; }
+  .mechanism-controls { grid-template-columns: 48px 64px minmax(60px,1fr) 48px; gap: 2px; }
+  .mechanism-controls label { font-size: 7px; }
+  .mechanism-controls output { font-size: 11px; }
+  .mechanism-controls .lab-result { grid-column: 1/-1; min-height: 23px; padding: 2px; font-size: 7px; }
+  .symbol-workflow { gap: 3px; padding: 17px 3px 30px; }
+  .workflow-line { height: 3px; }
+  .symbol-card { padding: 8px 2px 4px; border-width: 2px; border-radius: 7px; }
+  .symbol-card img { width: 38px; height: 38px; }
+  .symbol-card h3 { margin: 2px 0; font-size: 7px; }
+  .symbol-card p { font-size: 6px; }
+  .symbol-step { top: -9px; left: calc(50% - 9px); width: 18px; height: 18px; font-size: 8px; }
+  .library-seal { right: 3px; bottom: 2px; left: 3px; padding: 3px; font-size: 6px; }
+  .snap-sequence { gap: 3px; padding: 10px 3px 3px; }
+  .snap-card { padding: 9px 2px 3px; border-width: 2px; border-radius: 7px; }
+  .snap-card > span { top: -8px; left: calc(50% - 8px); width: 16px; height: 16px; font-size: 7px; }
+  .snap-card h3 { min-height: 16px; margin: 1px; font-size: 6px; }
+  .snap-card svg { width: 48px; height: 34px; }
+  .snap-card p { font-size: 6px; }
+  .snap-note { gap: 4px; padding: 3px; font-size: 7px; }
+  .deadband-controls { gap: 2px; }
+  .deadband-lab .lab-result { min-height: 22px; padding: 2px; font-size: 7px; }
+  .calculation-lab { gap: 2px; padding: 2px; }
+  .target-tabs,.formula-choices { gap: 2px; }
+  .target-tab,.formula-choices button { min-height: 24px; padding: 2px; border-width: 1px; border-radius: 5px; font-size: 6.5px; }
+  .pressure-ruler { border-width: 2px; border-radius: 6px; font-size: 7px; }
+  .pressure-ruler > span { min-height: 34px; padding: 2px; }
+  .calc-prompt { font-size: 7px; }
+  .calc-fields { gap: 2px; }
+  .calc-fields .lab-field { padding: 2px; }
+  .calc-fields .lab-field label { font-size: 6px; }
+  .calc-fields .lab-field input { min-height: 22px; font-size: 9px; }
+  .calculation-lab .lab-result { min-height: 22px; padding: 2px; font-size: 7px; }
+  .contact-lab { grid-template-columns: minmax(0,1fr) 72px; gap: 2px; padding: 1px; }
+  .contact-symbol { grid-template-rows: auto minmax(30px,1fr); padding: 3px; border-width: 2px; border-radius: 6px; }
+  .contact-symbol span,.contact-symbol p { font-size: 5.5px; }
+  .contact-symbol p { display: none; }
+  .contact-buttons { gap: 3px; }
+  .model-compare { gap: 3px; padding: 2px; }
+  .model-card { grid-template-columns: 53px 1fr; border-width: 2px; border-radius: 7px; }
+  .model-face { gap: 2px; padding: 5px 2px; font-size: 5px; }
+  .model-face i { height: 70px; background-size: auto 10px; }
+  .model-card > div:last-child { padding: 4px; }
+  .model-card h3 { margin: 1px; font-size: 7px; }
+  .model-card dl { font-size: 5.5px; }
+  .model-card dt,.model-card dd { padding: 1px; }
+  .model-rule { gap: 4px; padding: 3px; font-size: 6px; }
+  .envelope-lab { padding: 2px; }
+  .envelope-lab .lab-result { min-height: 22px; padding: 2px; font-size: 7px; }
+  .kp-console { gap: 2px; padding: 1px; }
+  .kp-provenance { padding: 2px; border-width: 2px; font-size: 5.5px; }
+  .kp-face-grid { grid-template-columns: .8fr 1fr .72fr; gap: 2px; }
+  .kp-equation { padding: 2px 5px; font-size: 8px; }
+  .kp-settings { gap: 2px; }
+  .kp-setting,.kp-output { padding: 2px; border-width: 1px; border-radius: 5px; }
+  .kp-setting span,.kp-output span { font-size: 5.5px; }
+  .kp-setting strong,.kp-output strong { font-size: 10px; }
+  .kp-setting > div { gap: 2px; margin-top: 1px; }
+  .kp-setting button { width: 22px; height: 18px; border-width: 1px; border-radius: 4px; font-size: 8px; }
+  .kp-setting i { width: 19px; height: 19px; border-width: 2px; }
+  .kp-output small { display: none; }
+  .kp-status { padding: 2px; font-size: 5.5px; }
+  .bench-legend { gap: 2px; }
+  .bench-legend span { padding: 2px; font-size: 5.5px; }
+  .nitrogen-cycle { grid-template-columns: 1.12fr .88fr; gap: 3px; padding: 2px; }
+  .cycle-gauge { gap: 2px; }
+  .cycle-buttons { gap: 2px; }
+  .cycle-readings { gap: 2px; }
+  .contact-meter,.reading { padding: 2px; border-width: 1px; border-radius: 5px; }
+  .contact-meter span,.reading span { font-size: 5.5px; }
+  .contact-meter strong,.reading strong { font-size: 8px; }
+  .running-board { gap: 3px; padding: 3px; }
+  .running-circuit { gap: 2px; }
+  .component { padding: 2px; border-width: 1px; border-radius: 5px; }
+  .component img,.symbol-shape { width: 25px; height: 21px; font-size: 20px; }
+  .component strong { font-size: 6px; }
+  .component small { font-size: 5px; }
+  .pipe-arrow { font-size: 10px; }
+  .running-priorities { gap: 2px; }
+  .running-priorities article { gap: 2px; padding: 2px; border-width: 1px; font-size: 5.5px; }
+  .running-footer { padding: 2px; font-size: 5.5px; }
+  .cycles-lab { gap: 3px; padding: 2px; }
+  .cycles-lab table { font-size: 6px; }
+  .cycles-lab th,.cycles-lab td { padding: 2px; }
+  .cycles-lab input { min-height: 21px; font-size: 8px; }
+  .cycles-lab output { font-size: 7px; }
+  .cycles-actions { grid-template-columns: auto 1fr; gap: 2px; }
+  .cycles-actions .tolerance { grid-template-columns: 1fr 52px; gap: 2px; }
+  .cycles-lab .lab-result { min-height: 22px; padding: 2px; font-size: 6px; }
+  .record-timeline { gap: 2px; padding: 9px 2px 2px; }
+  .record-timeline article { padding: 12px 2px 3px; border-width: 1px; border-radius: 5px; }
+  .record-timeline article > span { top: -7px; left: calc(50% - 10px); width: 20px; height: 14px; font-size: 6px; }
+  .record-timeline h3 { margin: 0; font-size: 5.5px; }
+  .record-timeline p { font-size: 5px; }
+  .record-signature { padding: 3px; font-size: 7px; }
+  .summary-board { gap: 5px; padding: 4px; }
+  .summary-mechanism,.summary-formula { gap: 3px; }
+  .summary-mechanism span { padding: 3px; border-width: 1px; font-size: 6px; }
+  .summary-mechanism b { font-size: 10px; }
+  .summary-formula { padding: 5px; border-width: 2px; }
+  .summary-formula span { font-size: 7px; }
+  .summary-formula strong { font-size: 10px; }
+  .summary-formula i { width: 12px; }
+  .summary-proof { gap: 2px; }
+  .summary-proof article { gap: 2px; padding: 2px; border-width: 1px; font-size: 6px; }
+  .summary-proof b { width: 15px; height: 15px; }
+  .quiz-visual,.final-board { gap: 4px; padding: 4px; }
+  .quiz-symbol img { width: 55px; height: 55px; }
+  .quiz-symbol span { width: 32px; height: 32px; font-size: 11px; }
+  .quiz-index strong { font-size: 22px; }
+  .quiz-topic,.quiz-score,.final-next { padding: 3px 8px; font-size: 7px; }
+  .quiz-reminder,.final-equation { padding: 4px; border-width: 2px; font-size: 9px; }
+  .final-score strong { font-size: 28px; }
+  .final-chain { gap: 3px; font-size: 7px; }
+  body.reading-mode .lesson-grid { grid-template-columns: 1fr; grid-template-rows: minmax(0, 36%) minmax(0, 64%); }
+  body.reading-mode .lesson-panel { padding: 8px 10px; }
+  body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mode .callout { font-size: 11px; line-height: 1.3; }
+}
+
+@media (max-width: 390px) {
+  .course-name { max-width: 92px; }
+  .speed-select { display: none; }
+}
+
+@media (max-width: 360px), (max-height: 640px) {
+  .lesson-grid { grid-template-rows: minmax(0, 42%) minmax(0, 58%); }
+  .lesson-panel { padding: 6px 8px; }
+  .visual-caption { display: none; }
+  .claude-frame figcaption { display: none; }
+  .lesson-list { font-size: 10px; }
+  .callout { font-size: 9.5px; }
+}
+
+@media (max-height: 700px) and (min-width: 651px) {
+  .course-app { grid-template-rows: 42px 26px minmax(0, 1fr) 46px; }
+  .lesson-panel { padding: 12px 18px; }
+  h1 { font-size: clamp(22px, 2.2vw, 31px); }
+  .lesson-lead { margin-bottom: 6px; font-size: 14px; }
+  .lesson-list { font-size: 13px; line-height: 1.3; }
+  .lesson-list li { margin-bottom: 3px; }
+  .callout { padding: 7px 10px; font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-track span { transition: none; }
+}
+
+@media print {
+  @page { margin: 15mm; }
+  html, body { width: auto; height: auto; overflow: visible; background: #fff; color: #000; }
+  .course-app { display: block; width: auto; height: auto; overflow: visible; }
+  .progress-row, .navigation, .tools, .activity-button, .visual-tabs, input, select { display: none !important; }
+  .topbar { display: flex; gap: 8mm; padding: 0 0 4mm; border-bottom: 1pt solid var(--navy); background: none; }
+  .brand-logo { height: 12mm; }
+  .print-signature { display: block; margin-top: 6mm; color: #637285; font: 9pt Calibri, sans-serif; }
+  .lesson-grid { display: block; padding: 0; }
+  .visual-panel, .lesson-panel { overflow: visible; margin-bottom: 8mm; border: 1.5pt solid var(--navy); border-radius: 0; background: #fff; box-shadow: none; break-inside: avoid; }
+  .visual-panel { height: 110mm; }
+  .lesson-panel { padding: 7mm; color: #000; }
+  h1 { color: var(--navy); font-size: 22pt; }
+  .lesson-lead, .lesson-list, .callout { color: #000; font-size: 14pt; }
+  .callout, .mini-card, .lab-result, .quiz-choice, .feedback { background: #fff !important; }
+  .visual-caption { color: #000; font-size: 10pt; }
+}
+</style>
+</head>
+<body>
+  <div class="course-app" id="courseApp">
+    <header class="topbar">
+      <div class="brand"><svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 201 50" role="img" aria-label="inerWeb Édu — BP" focusable="false"><text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" font-weight="normal" x="94" y="32">Web</text><line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/><rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="42" height="24"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="176" y="27" text-anchor="middle">BP</text></svg></div>
+      <div class="course-name">Pressostat BP · sécurité</div>
+      <div class="tools" aria-label="Outils de lecture">
+        <button class="tool-button" id="speakButton" type="button" aria-label="Écouter le texte affiché" aria-pressed="false">▶ <span>Écouter</span></button>
+        <button class="tool-button" id="stopButton" type="button" aria-label="Arrêter la voix" disabled>■ <span>Stop</span></button>
+        <label class="sr-only" for="speedSelect">Vitesse de la voix</label>
+        <select class="speed-select" id="speedSelect" aria-label="Vitesse de la voix">
+          <option value="0.85">0,85×</option>
+          <option value="0.95" selected>0,95×</option>
+          <option value="1.10">1,10×</option>
+          <option value="1.25">1,25×</option>
+        </select>
+        <button class="tool-button compact" id="readingButton" type="button" aria-label="Activer la lecture facilitée" aria-pressed="false">Aa</button>
+        <button class="tool-button compact" id="fullscreenButton" type="button" aria-label="Afficher en plein écran">⛶</button>
+      </div>
+    </header>
+
+    <section class="progress-row" aria-label="Progression">
+      <span id="progressLabel">Découverte</span>
+      <div class="progress-track" id="progressTrack" role="progressbar" aria-label="Progression du module" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span id="progressFill"></span>
+      </div>
+      <span id="progressCount">1 / 1</span>
+    </section>
+
+    <main class="lesson-grid" id="lessonGrid">
+      <section class="visual-panel" aria-labelledby="visualTitle">
+        <h2 class="sr-only" id="visualTitle">Schéma pédagogique interactif</h2>
+        <div class="visual-stage" id="visualStage" role="img" aria-label="Schéma pédagogique"></div>
+        <p class="visual-caption" id="visualCaption"></p>
+      </section>
+
+      <section class="lesson-panel" aria-labelledby="lessonTitle">
+        <div class="lesson-kicker" id="lessonKicker"></div>
+        <h1 id="lessonTitle"></h1>
+        <p class="lesson-lead" id="lessonLead"></p>
+        <ul class="lesson-list" id="lessonList"></ul>
+        <div class="callout" id="lessonCallout" hidden></div>
+        <div class="quiz-area" id="quizArea" hidden></div>
+        <div class="feedback" id="feedback" aria-live="polite" hidden></div>
+      </section>
+    </main>
+
+    <footer class="navigation" aria-label="Navigation dans le module">
+      <button class="nav-button secondary" id="backButton" type="button">← Retour</button>
+      <div class="nav-state" id="navState" aria-live="polite"></div>
+      <button class="nav-button primary" id="nextButton" type="button">Continuer →</button>
+    </footer>
+    <p class="print-signature">© inerWeb 2026</p>
+  </div>
+
+  <noscript>Ce module nécessite JavaScript. Il fonctionne entièrement hors ligne et ne transmet aucune donnée.</noscript>
+  <script>window.__INERWEB_COURSE__ = {"product":"inerWeb Édu — Pressostat BP de sécurité","version":"2.4.0-brouillon","status":"Refonte pédagogique à valider","lessons":[{"id":"intro","short":"Mission","kicker":"Observer avant de régler","title":"Du raccord de pression jusqu’au contact électrique","lead":"Ce parcours montre ce qui bouge réellement dans un pressostat BP mécanique, puis comment régler ses deux seuils.","bullets":["Référence pédagogique principale : Danfoss KP1 mécanique.","Les grandes fonctions restent comparables chez d’autres fabricants.","La notice de l’appareil posé et les limites de la machine font toujours foi."],"callout":{"type":"key","title":"Mission","text":"Expliquer pression → soufflet → ressorts → bascule → contact, puis calculer le différentiel."},"visual":"product","media":{"src":"assets/illustrations-claude/01-ouverture.png","title":"Ouverture du parcours KP1","alt":"Illustration technique bleu nuit d’un pressostat BP KP1 avec raccord de pression, boîtier ouvert et repères de sécurité basse pression.","note":"Vue d’ensemble fournie par Claude : elle situe le KP1 avant l’exploration du schéma inerWeb.","caption":"Illustration Claude intégrée : ouverture du parcours KP1 basse pression."},"caption":"Vue pédagogique originale d’un pressostat mécanique de la famille KP ; aucune coupe constructeur n’est reproduite."},{"id":"role-library","short":"Repérer","kicker":"Sur le schéma et dans l’armoire","title":"Un même organe relie le circuit frigorifique et la commande","lead":"Le raccord reçoit la pression d’aspiration. Le mécanisme transforme ensuite cette pression en changement de contact.","bullets":["Sur le circuit : symbole PB raccordé au côté basse pression.","Dans la commande : un contact électrique autorise ou retire la marche.","Le pressostat réagit à la pression ; il ne diagnostique pas à lui seul la cause de sa baisse."],"callout":{"type":"note","title":"Bibliothèque inerWeb","text":"Les symboles affichés sont les originaux validés du fonds inerWeb, conservés à l’identique."},"visual":"library","caption":"Symboles validés : pressostat BP, pressostat à contact, inverseur et compresseur."},{"id":"mechanism","short":"Mécanisme","kicker":"Laboratoire animé","title":"La pression pousse le soufflet ; les ressorts s’y opposent","lead":"Fais varier la pression. Observe le soufflet, le bras principal et le contact évoluer dans une seule chaîne mécanique.","bullets":["La force exercée sur le soufflet vaut la pression multipliée par sa surface utile : F = p × S.","Le ressort principal règle l’équilibre de la plage ; le ressort différentiel fixe l’écart de retour.","Le mécanisme à action brusque ne bascule qu’au seuil atteint."],"callout":{"type":"key","title":"Pourquoi un soufflet","text":"Il est étanche par sa seule déformation : pas de piston, donc pas de joint qui frotte, qui grippe ou qui fuit. Sa grande surface donne en plus une force exploitable même à basse pression."},"visual":"mechanism","media":{"src":"assets/illustrations-claude/02-soufflet.png","title":"Pression, soufflet et ressort","alt":"Gros plan pédagogique sur le raccord basse pression, le soufflet métallique et le ressort qui s’oppose à sa déformation.","note":"La pression déforme le soufflet ; le schéma inerWeb permet ensuite de manipuler toute la chaîne mécanique.","caption":"Illustration Claude intégrée : la pression agit sur le soufflet face à l’effort du ressort."},"caption":"Coupe fonctionnelle originale : les positions sont pédagogiques, les fonctions et la causalité sont conservées."},{"id":"snap-action","short":"Bascule","kicker":"Action brusque","title":"La bascule rapide évite un contact hésitant","lead":"Près du seuil, le bras accumule un effort. Le mécanisme franchit ensuite son point d’équilibre et change d’état rapidement.","bullets":["Avant le seuil : le contact conserve son état.","Au seuil : la bascule rapide entraîne le contact inverseur.","Après le seuil : il faut atteindre l’autre seuil pour revenir.","Sans elle, le contact resterait entrouvert autour du seuil : arc électrique, échauffement et pastilles collées."],"callout":{"type":"warning","title":"Le piège","text":"Un pressostat n’est pas un capteur analogique : son contact fournit un état, pas une valeur continue."},"visual":"snap","caption":"Séquence en trois temps : charger l’effort, franchir le point de bascule, maintenir le nouvel état."},{"id":"neutral-zone","short":"Zone neutre","kicker":"Deux seuils et une mémoire","title":"Dans la zone neutre, le dernier seuil franchi décide de l’état","lead":"Descends puis remonte la pression. À valeur égale dans la zone neutre, le contact peut être ouvert ou fermé selon le trajet.","bullets":["En descendant : coupure à CUT OUT.","En remontant : réenclenchement à CUT IN, si le réarmement le permet.","Entre les deux : aucun nouveau basculement ; l’état précédent est mémorisé."],"callout":{"type":"key","title":"Définition","text":"La zone neutre est l’intervalle entre CUT OUT et CUT IN. Sa largeur en bar est le différentiel."},"visual":"deadband","media":{"src":"assets/illustrations-claude/04-seuils.png","title":"Les deux seuils BP","alt":"Mécanisme d’un KP1 : la pression d’aspiration vient d’atteindre CUT IN 1,4 bar, le contact 1–4 se referme et le compresseur redémarre ; une échelle verticale situe CUT IN au-dessus de CUT OUT 0,2 bar.","note":"Le cycle se lit dans les deux sens : coupure à CUT OUT en descendant, réenclenchement à CUT IN en remontant.","caption":"Illustration Claude intégrée : CUT OUT, CUT IN et zone neutre sur un exemple BP."},"caption":"Simulateur d’hystérésis : même pression, état différent selon le sens d’évolution."},{"id":"differential","short":"Différentiel","kicker":"Point clé du réglage","title":"DIFF = CUT IN − CUT OUT","lead":"Choisis la grandeur recherchée, sélectionne la bonne relation et réalise toi-même le calcul avant de vérifier.","bullets":["DIFF : largeur de la zone neutre.","CUT OUT = CUT IN − DIFF.","CUT IN = CUT OUT + DIFF.","Différentiel trop étroit : le compresseur démarre et s’arrête en boucle et s’use. Trop large : la pression descend loin avant le redémarrage."],"callout":{"type":"warning","title":"Ordre des termes","text":"En basse pression automatique, CUT IN est supérieur à CUT OUT : le différentiel doit rester positif."},"visual":"differential","caption":"Atelier de calcul : l’apprenant choisit d’abord la formule, puis saisit son résultat."},{"id":"contacts","short":"1–2–4","kicker":"Contact inverseur SPDT","title":"La borne 1 quitte 4 et rejoint 2 quand la pression baisse","lead":"Bascule entre les deux états et suis simultanément le contact de marche et le contact de signalisation.","bullets":["Pression suffisante : 1–4 fermé ; autorisation de marche.","Sous CUT OUT : 1–4 ouvert et 1–2 fermé.","Sur la notice KP : 1–4 s’ouvre à la baisse ; 1–2 s’ouvre à la hausse."],"callout":{"type":"warning","title":"NO / NF","text":"Toujours préciser l’état de référence et lire le diagramme du modèle ; le seul sigle NO ou NF ne suffit pas."},"visual":"contacts","media":{"src":"assets/illustrations-claude/03-contacts.png","title":"Bascule du contact 1–2–4","alt":"Vue rapprochée du mécanisme à action brusque et du contact inverseur 1–2–4 d’un pressostat BP.","note":"L’illustration montre le passage mécanique ; l’activité inerWeb permet de vérifier séparément les états 1–4 et 1–2.","caption":"Illustration Claude intégrée : le mouvement mécanique provoque une bascule franche du contact."},"caption":"Contact 1–2–4 animé et symbole d’inverseur issu de la bibliothèque inerWeb."},{"id":"models","short":"Référence","kicker":"Lire avant de tourner","title":"Automatique réglable et manuel minimum ne se règlent pas pareil","lead":"Le nom KP1 désigne une famille. La référence exacte fixe l’échelle, le différentiel et le mode de réarmement.","bullets":["Exemple automatique 060-205191 : plage −0,2 à 7,5 bar Pe ; DIFF 0,7 à 4 bar.","Exemple manuel minimum 060-111166 : plage CUT OUT −0,9 à 7 bar Pe ; DIFF fixe 0,7 bar.","Sur le manuel minimum, on règle directement CUT OUT puis on réarme quand la pression est revenue.","Ces plages sont en bar Pe, la pression lue au manomètre : zéro à l’air libre, et −0,2 bar Pe est une dépression."],"callout":{"type":"note","title":"Données Danfoss","text":"Exemples vérifiés dans la fiche de données et les pages produit ; la référence réellement posée reste prioritaire."},"visual":"models","caption":"Deux contrats de réglage dans une même famille : automatique et manuel minimum."},{"id":"choose-cutout","short":"Coupure","kicker":"Protéger avant d’essayer","title":"La valeur de coupure vient d’abord de l’enveloppe du compresseur","lead":"On détermine CUT OUT avant l’essai. Le test ne doit jamais faire travailler le compresseur sous sa limite admissible.","bullets":["Relever la limite basse dans la documentation du compresseur et de la machine.","Si elle est donnée en température d’évaporation, employer la relation P/T correcte du fluide.","Choisir une coupure protectrice, puis contrôler les autres contraintes du dossier."],"callout":{"type":"warning","title":"Arrêt immédiat","text":"Si la limite constructeur est atteinte avant la coupure, arrêter le test et corriger le réglage."},"visual":"envelope","caption":"Garde d’enveloppe : la consigne doit agir avant la limite basse autorisée."},{"id":"kp-face","short":"Prérégler","kicker":"Prototype GitHub réemployé","title":"Reporter CUT IN et DIFF sur la face du KP1","lead":"Manipule les deux réglages repris du prototype inerWeb‑Frigolo. Le CUT OUT affiché reste un résultat de calcul à vérifier par un basculement réel.","bullets":["Exemple : CUT IN 1,4 bar et DIFF 1,2 bar donnent CUT OUT 0,2 bar.","L’échelle CUT IN place le redémarrage ; l’échelle DIFF place l’écart.","Les graduations donnent un préréglage, jamais la preuve du seuil obtenu."],"callout":{"type":"key","title":"Filiation","text":"Face KP1, manomètre et logique de réglage adaptés du prototype GitHub canonique déjà relié à Pilote Fluides."},"visual":"kp-face","media":{"src":"assets/illustrations-claude/05-reglage.png","title":"Les deux échelles du KP1","alt":"Face d’un KP1 avec ses deux vis : l’échelle PLAGE réglée sur CUT IN 1,4 bar, l’échelle DIFF sur 1,2 bar, et la relation CUT OUT = CUT IN − DIFF = 0,2 bar.","note":"L’illustration reprend l’exemple du cours. Les valeurs cibles viennent toujours de la machine, et se valident au basculement réel.","caption":"Illustration Claude intégrée : les deux échelles du KP1 et le CUT OUT qui en découle."},"caption":"Portage hors ligne du meilleur écran du prototype GitHub, complété par la relation CUT OUT = CUT IN − DIFF."},{"id":"nitrogen-bench","short":"Banc azote","kicker":"Méthode 1 · Installation arrêtée","title":"Le mano-détendeur alimente le pressostat sans faire tourner le compresseur","lead":"Le banc permet de créer une pression contrôlée et d’observer électriquement le basculement du contact.","bullets":["Bouteille d’azote sec, robinet et mano-détendeur adapté à deux cadrans.","Pression réglée lue sur un manomètre précis raccordé au pressostat.","Continuité contrôlée sur 1–4 et 1–2 ; compresseur isolé électriquement."],"callout":{"type":"warning","title":"Gaz d’essai","text":"Uniquement de l’azote. Jamais d’oxygène ni d’air comprimé."},"visual":"nitrogen","caption":"Banc de réglage original : bouteille, mano-détendeur, flexible, mesure précise, KP1 et contrôleur de continuité."},{"id":"nitrogen-cycle","short":"Régler","kicker":"Mesurer dans les deux sens","title":"Monter jusqu’à CUT IN, puis descendre jusqu’à CUT OUT","lead":"Pilote le banc. Les graduations donnent un préréglage ; seules les pressions réellement relevées au basculement valident les seuils.","bullets":["Monter lentement et relever le passage sur 1–4 : CUT IN.","Descendre lentement et relever l’ouverture de 1–4 : CUT OUT.","Calculer DIFF mesuré, ajuster et refaire plusieurs cycles reproductibles."],"callout":{"type":"note","title":"Après une correction","text":"Revérifier les deux seuils : une retouche du différentiel peut imposer de reprendre le réglage principal."},"visual":"nitrogen-cycle","media":{"src":"assets/illustrations-claude/06-cycle.png","title":"Cycle CUT IN / CUT OUT","alt":"Courbe de pression basse montrant la montée jusqu’au réenclenchement, la descente jusqu’à la coupure et la zone neutre entre les deux.","note":"La courbe donne le sens du cycle ; le banc inerWeb sert à relever soi-même les deux pressions de basculement.","caption":"Illustration Claude intégrée : cycle BP entre CUT IN et CUT OUT."},"caption":"Banc simulé : la pression et le sens d’évolution déterminent le basculement relevé."},{"id":"running-method","short":"En service","kicker":"Méthode 2 · Contrôle en fonctionnement","title":"Faire baisser la BP de façon contrôlée, dans l’enveloppe autorisée","lead":"Sur une installation autorisée, la vanne de départ liquide peut provoquer la baisse de BP nécessaire au contrôle.","bullets":["Stabiliser l’installation et relever les conditions initiales.","Fermer progressivement selon la procédure du site et noter CUT OUT.","Rouvrir sans délai, relever CUT IN ou les conditions de réarmement, puis remettre l’installation en état."],"callout":{"type":"warning","title":"Ce n’est pas le cours pump-down","text":"Le geste sert uniquement à contrôler la sécurité BP ; la séquence de régulation sera étudiée séparément."},"visual":"running","caption":"Contrôle en fonctionnement : pression, limite compresseur et réaction du contact surveillées ensemble."},{"id":"verify","short":"Trois cycles","kicker":"Valeurs mesurées","title":"Calculer le différentiel de chaque cycle et vérifier la répétabilité","lead":"Saisis trois couples CUT OUT / CUT IN. Le tableau calcule seulement après ta demande et n’invente aucune tolérance.","bullets":["DIFF mesuré = CUT IN mesuré − CUT OUT mesuré.","Comparer les trois cycles réalisés dans des conditions comparables.","Appliquer ensuite la tolérance du constructeur ou du cahier des charges."],"callout":{"type":"key","title":"Conforme","text":"Les deux seuils sont dans la tolérance prévue et le comportement est reproductible."},"visual":"verify","caption":"Tableau de relevés : trois cycles, trois différentiels et une étendue de répétabilité."},{"id":"record","short":"Tracer","kicker":"Fin d’intervention","title":"Un autre technicien doit pouvoir refaire ton raisonnement","lead":"La fiche d’intervention relie la source des seuils, le préréglage et les valeurs réellement mesurées.","bullets":["Marque, référence, plage, réarmement, fluide et unité de pression.","Source de la limite compresseur, CUT OUT, CUT IN et DIFF cibles.","Trois cycles mesurés, méthode utilisée, contrôles et anomalies."],"callout":{"type":"note","title":"Statut","text":"Une graduation lue sur le boîtier reste un préréglage tant que les basculements n’ont pas été mesurés."},"visual":"record","caption":"Chaîne de preuve : documenter, régler, mesurer, comparer et tracer."},{"id":"summary","short":"Synthèse","kicker":"Le raisonnement complet","title":"Le réglage tient dans deux seuils, un écart et une preuve","lead":"Tu peux maintenant expliquer le mécanisme et justifier le réglage avant de passer au pressostat BP de régulation.","bullets":["CUT OUT protège à la baisse.","CUT IN autorise le retour à la hausse.","DIFF = CUT IN − CUT OUT = largeur de la zone neutre."],"callout":{"type":"key","title":"Module suivant","text":"Pump-down, régulation BP proprement dite et réduction de puissance, sans les confondre avec la sécurité."},"visual":"summary","media":{"src":"assets/illustrations-claude/07-synthese.png","title":"Synthèse visuelle KP1","alt":"Planche récapitulative du pressostat KP1 reliant la pression, le soufflet, les ressorts, les contacts et les deux seuils.","note":"La planche récapitule le mécanisme, les contacts et les deux échelles, puis rejoue le calcul : 1,4 − 1,2 = 0,2 bar.","caption":"Illustration Claude intégrée : synthèse du fonctionnement et du réglage du KP1."},"caption":"Synthèse mécanique et numérique du pressostat BP de sécurité."}],"quiz":[{"id":"q-chain","question":"Quelle chaîne décrit correctement le fonctionnement mécanique ?","choices":["Pression → soufflet → bras et ressorts → contact","Contact → fluide → ressort → température","Ressort → compresseur → manomètre → pression"],"answer":0,"explanation":"La pression déforme le soufflet ; le mécanisme compare les efforts puis bascule le contact."},{"id":"q-neutral","question":"Que se passe-t-il dans la zone neutre ?","choices":["Le contact commute sans arrêt","Le contact conserve l’état du dernier seuil franchi","Le pressostat ne reçoit plus de pression"],"answer":1,"explanation":"Aucun nouveau basculement n’a lieu entre CUT OUT et CUT IN."},{"id":"q-diff","question":"CUT IN vaut 1,4 bar et CUT OUT vaut 0,2 bar. Quel est DIFF ?","choices":["1,6 bar","1,2 bar","0,2 bar"],"answer":1,"explanation":"DIFF = CUT IN − CUT OUT = 1,4 − 0,2 = 1,2 bar."},{"id":"q-cutout","question":"CUT IN vaut 1,4 bar et DIFF vaut 1,2 bar. Quel est CUT OUT ?","choices":["0,2 bar","1,2 bar","2,6 bar"],"answer":0,"explanation":"CUT OUT = CUT IN − DIFF = 1,4 − 1,2 = 0,2 bar."},{"id":"q-cycling","question":"Pourquoi ne pas régler un différentiel très étroit ?","choices":["Le compresseur démarre et s’arrête en boucle et s’use","Le manomètre du banc perd sa précision au bout de trois cycles","La pression d’aspiration devient une pression absolue"],"answer":0,"explanation":"Un différentiel trop étroit fait court-cycler le compresseur : les démarrages rapprochés l’usent."},{"id":"q-contacts","question":"Sous CUT OUT, quel état correspond au KP1 étudié ?","choices":["1–4 fermé et 1–2 ouvert","1–4 ouvert et 1–2 fermé","1–4 et 1–2 ouverts"],"answer":1,"explanation":"Le contact 1–4 s’ouvre à la baisse et le commun 1 rejoint 2."},{"id":"q-model","question":"Pourquoi relever la référence exacte du pressostat ?","choices":["Pour connaître plage, différentiel et réarmement","Uniquement pour choisir sa couleur","Parce que toutes les références se règlent pareil"],"answer":0,"explanation":"Une version automatique réglable et une version manuelle minimum n’ont pas le même contrat de réglage."},{"id":"q-nitrogen","question":"Pendant un réglage au banc à l’azote, que fait le compresseur ?","choices":["Il tourne jusqu’à CUT OUT","Il reste isolé électriquement","Il comprime l’azote du banc"],"answer":1,"explanation":"Le basculement se mesure au manomètre et au contrôleur de continuité, sans démarrer le compresseur."},{"id":"q-envelope","question":"La limite basse du compresseur est atteinte avant la coupure. Que faire ?","choices":["Continuer jusqu’au clic","Arrêter le test et corriger le réglage","Changer seulement l’unité du manomètre"],"answer":1,"explanation":"La protection de la machine prime sur l’obtention du basculement attendu."}],"final":{"id":"final","short":"Bilan","kicker":"Compétence visée","title":"Tu relies maintenant mécanique, seuils et contrôle réel","lead":"La méthode tient en six verbes : identifier, justifier, calculer, prérégler, mesurer et tracer.","bullets":["Expliquer le rôle du soufflet, des ressorts et de la bascule rapide.","Distinguer zone neutre et différentiel, puis calculer les trois relations.","Contrôler CUT OUT et CUT IN dans les deux sens, sans sortir de l’enveloppe machine.","Référentiel travaillé : 6.03 régler les interrupteurs de sécurité et de contrôle · 9.06 régler un limiteur de pression. En appui : 1.01 · 1.04 · 3.01 · 4.05 · 6.07."],"callout":{"type":"key","title":"Suite","text":"Le prochain chapitre appliquera ce socle au pressostat BP de régulation."},"visual":"final","caption":"Bilan du parcours pressostat BP de sécurité."}};</script>
+  <script>(() => {
+  "use strict";
+
+  const ASSET = "assets/symboles/";
+  const $ = (id) => document.getElementById(id);
+  const fmt = (value, digits = 2) => Number(value).toFixed(digits).replace(".", ",");
+  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+  function svgWrap(title, desc, content, viewBox = "0 0 900 520") {
+    return `<svg class="technical-svg" viewBox="${viewBox}" role="img" aria-label="${title}" xmlns="http://www.w3.org/2000/svg">
+      <title>${title}</title><desc>${desc}</desc>
+      <defs>
+        <marker id="arrow-navy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1b3a63"/></marker>
+        <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#c9451a"/></marker>
+        <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1e7e54"/></marker>
+        <linearGradient id="steel" x1="0" x2="1"><stop offset="0" stop-color="#dfe8ef"/><stop offset=".5" stop-color="#fffdf8"/><stop offset="1" stop-color="#b8c8d5"/></linearGradient>
+        <linearGradient id="brass" x1="0" x2="1"><stop offset="0" stop-color="#d49b38"/><stop offset=".5" stop-color="#f3d589"/><stop offset="1" stop-color="#b67918"/></linearGradient>
+        <pattern id="blueprint" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#1b3a63" stroke-opacity=".055" stroke-width="1"/></pattern>
+      </defs>
+      ${content}
+    </svg>`;
+  }
+
+  function label(x, y, text, anchor = "middle", color = "#1b3a63", size = 16, weight = 700) {
+    return `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="Calibri,Segoe UI,Arial,sans-serif" font-size="${size}" font-weight="${weight}" fill="${color}">${text}</text>`;
+  }
+
+  function productVisual() {
+    return svgWrap(
+      "Pressostat mécanique basse pression",
+      "Vue extérieure ouverte montrant les réglages, le soufflet, les ressorts, le bras principal et les bornes 1 2 4",
+      `<rect width="900" height="520" rx="30" fill="#f7f1e7"/><rect width="900" height="520" rx="30" fill="url(#blueprint)"/>
+      <g transform="translate(115 42)">
+        <path d="M90 44h330a28 28 0 0 1 28 28v342a28 28 0 0 1-28 28H90a28 28 0 0 1-28-28V72A28 28 0 0 1 90 44z" fill="url(#steel)" stroke="#1b3a63" stroke-width="6"/>
+        <rect x="89" y="72" width="304" height="310" rx="14" fill="#fffdf8" stroke="#637285" stroke-width="2"/>
+        <rect x="112" y="94" width="102" height="214" rx="12" fill="#f3f7fb" stroke="#3d7fca" stroke-width="3"/>
+        <rect x="262" y="94" width="100" height="214" rx="12" fill="#fff4e0" stroke="#c9451a" stroke-width="3" stroke-dasharray="9 6"/>
+        ${label(163, 84, "CUT IN", "middle", "#1b3a63", 18)}${label(312, 84, "DIFF", "middle", "#c9451a", 18)}
+        <path d="M163 112v174M312 112v174" stroke="#1b3a63" stroke-width="5"/>
+        <path d="M135 132h56M135 166h56M135 200h56M135 234h56M135 268h56" stroke="#3d7fca" stroke-width="3"/>
+        <path d="M286 142h52M286 184h52M286 226h52M286 268h52" stroke="#c9451a" stroke-width="3"/>
+        <circle cx="163" cy="191" r="15" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><circle cx="312" cy="232" r="15" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+        <rect x="116" y="324" width="238" height="42" rx="8" fill="#1b3a63"/>
+        ${label(235, 351, "FAMILLE KP1 · CONTACT SPDT", "middle", "#fffdf8", 16)}
+        <path d="M206 442v48h92v-48" fill="url(#brass)" stroke="#1b3a63" stroke-width="5"/>
+        <path d="M220 490h64" stroke="#1b3a63" stroke-width="9"/><path d="M72 354C18 360 13 411 28 464" fill="none" stroke="#3d7fca" stroke-width="10" stroke-linecap="round"/>
+      </g>
+      <g transform="translate(620 56)">
+        <rect width="210" height="390" rx="24" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+        ${label(105, 36, "SOUS LE CAPOT", "middle", "#1b3a63", 19)}
+        <g transform="translate(30 62)">
+          <path d="M18 252h110l9-12 9 12 9-12 9 12" fill="none" stroke="#3d7fca" stroke-width="7"/>
+          <rect x="5" y="228" width="38" height="52" rx="8" fill="#84b7ec" stroke="#1b3a63" stroke-width="3"/>
+          <path d="M24 300v-58" stroke="#c9451a" stroke-width="4" marker-end="url(#arrow-orange)"/>
+          <path d="M122 252l-18-16 18-16 18-16 18-16" fill="none" stroke="#1b3a63" stroke-width="5"/>
+          <path d="M105 202L44 144" stroke="#1b3a63" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="75" cy="174" r="9" fill="#ff6b35" stroke="#1b3a63" stroke-width="3"/>
+          <path d="M70 44v96M126 48v86" stroke="#3d7fca" stroke-width="5"/>
+          <path d="M52 58h36M52 78h36M52 98h36M52 118h36M108 62h36M108 86h36M108 110h36" stroke="#1b3a63" stroke-width="3"/>
+          <circle cx="48" cy="144" r="7" fill="#1b3a63"/><circle cx="142" cy="156" r="7" fill="#1b3a63"/><circle cx="142" cy="206" r="7" fill="#1b3a63"/>
+          <path d="M48 144l86 18" stroke="#1e7e54" stroke-width="5"/>
+        </g>
+        ${label(105, 338, "soufflet · ressorts · bras", "middle", "#10233c", 15)}
+        ${label(105, 362, "bascule · contact 1–2–4", "middle", "#10233c", 15)}
+      </g>
+      <path d="M520 250h76" stroke="#c9451a" stroke-width="5" marker-end="url(#arrow-orange)"/>
+      ${label(558, 233, "ouvrir", "middle", "#c9451a", 15)}`
+    );
+  }
+
+  function libraryVisual() {
+    const cards = [
+      ["pressostat_bp.svg", "Circuit frigorifique", "PB · prise de pression"],
+      ["pressostat.svg", "Commande", "pression → contact"],
+      ["contact_inverseur_no_nf.svg", "Contact inverseur", "commun vers deux voies"],
+      ["compresseur_general.svg", "Action finale", "autorisation compresseur"]
+    ];
+    return `<div class="symbol-workflow">
+      <div class="workflow-line" aria-hidden="true"></div>
+      ${cards.map(([file, title, sub], index) => `<article class="symbol-card">
+        <span class="symbol-step">${index + 1}</span>
+        <img src="${ASSET}${file}" alt="${title}">
+        <h3>${title}</h3><p>${sub}</p>
+      </article>`).join("")}
+      <div class="library-seal">BIBLIOTHÈQUE SVG INERWEB · TRACÉS CONSERVÉS À L’IDENTIQUE</div>
+    </div>`;
+  }
+
+  function mechanismVisual() {
+    return `<div class="mechanism-lab" data-activity="mechanism">
+      ${svgWrap("Mécanisme animé du pressostat", "La pression déplace le soufflet, charge le bras contre les ressorts et commande un contact à action brusque", `
+        <rect width="900" height="520" rx="28" fill="#f7f1e7"/><rect width="900" height="520" rx="28" fill="url(#blueprint)"/>
+        <rect x="34" y="36" width="832" height="390" rx="24" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+        <g id="pressureChamber">
+          <path d="M74 368h220v45H74z" fill="#dfeaf7" stroke="#1b3a63" stroke-width="4"/>
+          <path d="M92 413v54h58" fill="none" stroke="#3d7fca" stroke-width="11" stroke-linecap="round"/>
+          <path d="M112 452v-58" stroke="#c9451a" stroke-width="5" marker-end="url(#arrow-orange)"/>
+          ${label(178, 396, "PRESSION BP", "middle", "#1b3a63", 17)}
+        </g>
+        <path id="mechanismBellows" d="M142 368L130 350L154 334L130 318L154 302L130 286L154 270H274L286 286L262 302L286 318L262 334L286 350L274 368Z" fill="#e6f0fa" stroke="#1b3a63" stroke-width="4"/>
+        <line id="mechanismRod" x1="208" y1="270" x2="208" y2="224" stroke="#1b3a63" stroke-width="9" stroke-linecap="round"/>
+        <g id="mechanismArm" transform="rotate(0 418 220)">
+          <path d="M204 224L650 182" stroke="#1b3a63" stroke-width="13" stroke-linecap="round"/>
+          <circle cx="418" cy="204" r="17" fill="#ff6b35" stroke="#1b3a63" stroke-width="4"/>
+        </g>
+        <g>
+          <path d="M405 76v112" stroke="#3d7fca" stroke-width="7"/>
+          <path d="M377 90h56M377 112h56M377 134h56M377 156h56M377 178h56" stroke="#1b3a63" stroke-width="4"/>
+          ${label(405, 60, "RESSORT PRINCIPAL", "middle", "#1b3a63", 16)}
+          <path d="M538 90v100" stroke="#c9451a" stroke-width="7"/>
+          <path d="M514 104h48M514 129h48M514 154h48M514 179h48" stroke="#1b3a63" stroke-width="4"/>
+          ${label(538, 60, "RESSORT DIFF", "middle", "#c9451a", 16)}
+        </g>
+        <g transform="translate(660 104)">
+          <rect width="168" height="242" rx="18" fill="#f3f7fb" stroke="#1b3a63" stroke-width="4"/>
+          ${label(84, 30, "BASCULE RAPIDE", "middle", "#1b3a63", 16)}
+          <circle cx="40" cy="121" r="10" fill="#1b3a63"/><circle cx="129" cy="77" r="10" fill="#1b3a63"/><circle cx="129" cy="169" r="10" fill="#1b3a63"/>
+          <path id="mechanismContactArm" d="M40 121L121 82" stroke="#1e7e54" stroke-width="9" stroke-linecap="round"/>
+          ${label(25, 128, "1", "middle", "#1b3a63", 25)}${label(148, 85, "4", "middle", "#1b3a63", 25)}${label(148, 177, "2", "middle", "#1b3a63", 25)}
+          <rect x="24" y="201" width="120" height="28" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+          <text id="mechanismContactLabel" x="84" y="220" text-anchor="middle" font-family="Calibri,Arial" font-size="13" font-weight="800" fill="#1e7e54">1–4 FERMÉ</text>
+        </g>
+        ${label(202, 255, "SOUFFLET", "middle", "#1b3a63", 15)}${label(440, 254, "BRAS PRINCIPAL", "middle", "#1b3a63", 15)}
+        <path d="M302 438h296" stroke="#637285" stroke-width="2" stroke-dasharray="7 7"/>
+        ${label(450, 465, "force de pression ↔ effort des ressorts", "middle", "#637285", 16)}
+      `)}
+      <div class="mechanism-controls">
+        <button class="activity-button direction" id="mechanismDown" type="button">↓ Baisser</button>
+        <label for="mechanismPressure">Pression appliquée <output id="mechanismPressureValue">1,80 bar</output></label>
+        <input id="mechanismPressure" type="range" min="-0.2" max="2.2" step="0.05" value="1.8">
+        <button class="activity-button direction" id="mechanismUp" type="button">↑ Monter</button>
+        <div class="lab-result ok" id="mechanismResult">1–4 FERMÉ · MARCHE AUTORISÉE</div>
+      </div>
+    </div>`;
+  }
+
+  function snapVisual() {
+    const phases = [
+      ["1", "AVANT LE SEUIL", "Le bras charge le mécanisme.", "M0 42L92 26", "#1b3a63"],
+      ["2", "AU POINT DE BASCULE", "L’équilibre devient instable.", "M0 42L92 42", "#c9451a"],
+      ["3", "APRÈS LE CLIC", "Le contact prend l’autre état.", "M0 42L92 70", "#1e7e54"]
+    ];
+    return `<div class="snap-sequence">${phases.map(([n, title, text, path, color]) => `<article class="snap-card">
+      <span>${n}</span><h3>${title}</h3>
+      <svg viewBox="0 0 130 92" aria-hidden="true"><circle cx="18" cy="42" r="8" fill="#1b3a63"/><circle cx="112" cy="24" r="8" fill="#1b3a63"/><circle cx="112" cy="70" r="8" fill="#1b3a63"/><path d="${path}" transform="translate(18 0)" stroke="${color}" stroke-width="9" stroke-linecap="round"/></svg>
+      <p>${text}</p></article>`).join("")}
+      <div class="snap-note"><strong>Action brusque</strong><span>Le contact ne reste pas entre deux positions.</span></div>
+    </div>`;
+  }
+
+  function deadbandVisual() {
+    return `<div class="deadband-lab" data-activity="deadband">
+      ${svgWrap("Zone neutre du pressostat", "Axe de pression avec CUT OUT, CUT IN, zone neutre et trajet montant ou descendant", `
+        <rect width="900" height="360" rx="26" fill="#f7f1e7"/><rect width="900" height="360" rx="26" fill="url(#blueprint)"/>
+        <rect x="76" y="84" width="748" height="184" rx="24" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+        <rect x="200" y="112" width="360" height="96" rx="12" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="5 7"/>
+        ${label(380, 148, "ZONE NEUTRE", "middle", "#7a4a00", 22)}${label(380, 178, "largeur = DIFF = 1,2 bar", "middle", "#7a4a00", 17)}
+        <line x1="100" y1="232" x2="790" y2="232" stroke="#1b3a63" stroke-width="6" marker-end="url(#arrow-navy)"/>
+        <line x1="200" y1="92" x2="200" y2="255" stroke="#c0392b" stroke-width="6" stroke-dasharray="10 7"/>
+        <line x1="560" y1="92" x2="560" y2="255" stroke="#1e7e54" stroke-width="7"/>
+        ${label(200, 72, "CUT OUT · 0,2 bar", "middle", "#c0392b", 18)}${label(560, 72, "CUT IN · 1,4 bar", "middle", "#1e7e54", 18)}
+        <path id="deadbandDirection" d="M650 292H510" stroke="#c9451a" stroke-width="6" marker-end="url(#arrow-orange)"/>
+        <text id="deadbandDirectionLabel" x="580" y="326" text-anchor="middle" font-family="Calibri,Arial" font-size="16" font-weight="800" fill="#c9451a">PRESSION EN BAISSE</text>
+        <circle id="deadbandMarker" cx="680" cy="232" r="19" fill="#ff6b35" stroke="#fffdf8" stroke-width="7"/>
+        ${label(100, 258, "−0,2", "middle", "#637285", 14)}${label(790, 258, "2,2 bar Pe", "middle", "#637285", 14)}
+      `, "0 0 900 360")}
+      <div class="deadband-controls">
+        <button id="deadbandDown" class="activity-button" type="button">↓ Descendre</button>
+        <input id="deadbandPressure" type="range" min="-0.2" max="2.2" step="0.05" value="1.8" aria-label="Pression dans la zone neutre">
+        <button id="deadbandUp" class="activity-button" type="button">↑ Remonter</button>
+      </div>
+      <div class="lab-result ok" id="deadbandResult">1,80 bar · 1–4 FERMÉ · marche autorisée</div>
+    </div>`;
+  }
+
+  function differentialVisual() {
+    return `<div class="calculation-lab" data-activity="differential">
+      <div class="target-tabs" role="group" aria-label="Grandeur à calculer">
+        <button type="button" class="target-tab active" data-target="diff" aria-pressed="true">Chercher DIFF</button>
+        <button type="button" class="target-tab" data-target="cutout" aria-pressed="false">Chercher CUT OUT</button>
+        <button type="button" class="target-tab" data-target="cutin" aria-pressed="false">Chercher CUT IN</button>
+      </div>
+      <div class="pressure-ruler" aria-label="CUT OUT à 0,2 bar, CUT IN à 1,4 bar, écart de 1,2 bar">
+        <span class="ruler-cutout">CUT OUT<br><strong>0,2 bar</strong></span>
+        <span class="ruler-zone">ZONE NEUTRE · DIFF</span>
+        <span class="ruler-cutin">CUT IN<br><strong>1,4 bar</strong></span>
+      </div>
+      <p class="calc-prompt">1. Choisis la relation utile.</p>
+      <div class="formula-choices" role="group" aria-label="Choisir une formule">
+        <button type="button" data-formula="diff">DIFF = CUT IN − CUT OUT</button>
+        <button type="button" data-formula="cutout">CUT OUT = CUT IN − DIFF</button>
+        <button type="button" data-formula="cutin">CUT IN = CUT OUT + DIFF</button>
+      </div>
+      <div class="calc-fields">
+        <div class="lab-field"><label id="calcKnownALabel" for="calcKnownA">CUT IN (bar)</label><input id="calcKnownA" type="text" value="1,4" readonly></div>
+        <div class="lab-field"><label id="calcKnownBLabel" for="calcKnownB">CUT OUT (bar)</label><input id="calcKnownB" type="text" value="0,2" readonly></div>
+        <div class="lab-field answer"><label id="calcAnswerLabel" for="calcAnswer">Ton DIFF (bar)</label><input id="calcAnswer" type="number" step="0.1" inputmode="decimal" placeholder="?" autocomplete="off"></div>
+        <button class="activity-button primary-action" id="calcCheck" type="button">Vérifier mon calcul</button>
+      </div>
+      <div class="lab-result wait" id="calcResult">Choisis une formule, calcule, puis vérifie.</div>
+    </div>`;
+  }
+
+  function contactsVisual() {
+    return `<div class="contact-lab" data-activity="contacts">
+      <div class="contact-main">
+        ${svgWrap("Contact inverseur 1 2 4", "Le commun 1 rejoint 4 en pression suffisante et 2 en pression basse", `
+          <rect width="680" height="420" rx="26" fill="#f7f1e7"/><rect x="42" y="38" width="596" height="338" rx="24" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+          <circle cx="224" cy="208" r="17" fill="#1b3a63"/><circle cx="472" cy="116" r="17" fill="#1b3a63"/><circle cx="472" cy="300" r="17" fill="#1b3a63"/>
+          <path id="contactArm" d="M224 208L458 121" stroke="#1e7e54" stroke-width="12" stroke-linecap="round"/>
+          ${label(188, 218, "1", "end", "#1b3a63", 34)}${label(506, 127, "4", "start", "#1b3a63", 34)}${label(506, 311, "2", "start", "#1b3a63", 34)}
+          <path d="M472 116h88M472 300h88M142 208h82" stroke="#1b3a63" stroke-width="5"/>
+          <rect id="contactRunBox" x="520" y="74" width="92" height="84" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="5"/>
+          ${label(566, 105, "MARCHE", "middle", "#1e7e54", 16)}<circle id="contactRunLamp" cx="566" cy="132" r="11" fill="#1e7e54"/>
+          <rect id="contactFaultBox" x="520" y="258" width="92" height="84" rx="14" fill="#fffdf8" stroke="#637285" stroke-width="3"/>
+          ${label(566, 289, "DÉFAUT", "middle", "#637285", 16)}<circle id="contactFaultLamp" cx="566" cy="316" r="11" fill="#fffdf8" stroke="#637285" stroke-width="3"/>
+          <text id="contactHeadline" x="340" y="72" text-anchor="middle" font-family="Trebuchet MS,Arial" font-size="22" font-weight="800" fill="#1e7e54">PRESSION SUFFISANTE · 1–4 FERMÉ</text>
+        `, "0 0 680 420")}
+      </div>
+      <aside class="contact-symbol"><span>SYMBOLE INERWEB</span><img src="${ASSET}contact_inverseur_no_nf.svg" alt="Symbole électrique d’un contact inverseur"><p>Le symbole ne donne son sens qu’avec l’état de référence et le repérage des bornes.</p></aside>
+      <div class="contact-buttons">
+        <button id="contactHigh" class="activity-button" type="button" aria-pressed="true">Pression suffisante · 1–4</button>
+        <button id="contactLow" class="activity-button" type="button" aria-pressed="false">Pression basse · 1–2</button>
+      </div>
+    </div>`;
+  }
+
+  function modelsVisual() {
+    return `<div class="model-compare">
+      <article class="model-card auto"><div class="model-face"><span>CUT IN</span><span>DIFF</span><i></i><i></i></div><div><span class="status-pill ok">AUTO · SPDT</span><h3>KP1 automatique réglable</h3><dl><dt>Échelle principale</dt><dd>CUT IN</dd><dt>Différentiel</dt><dd>0,7 à 4 bar</dd><dt>Relation</dt><dd>CUT OUT = CUT IN − DIFF</dd></dl></div></article>
+      <article class="model-card manual"><div class="model-face one"><span>CUT OUT</span><i></i><b>RESET</b></div><div><span class="status-pill danger">MANUEL MIN · SPDT</span><h3>KP1 à réarmement manuel</h3><dl><dt>Échelle principale</dt><dd>CUT OUT</dd><dt>Différentiel</dt><dd>fixe 0,7 bar</dd><dt>Retour</dt><dd>pression revenue + réarmement</dd></dl></div></article>
+      <div class="model-rule"><strong>Lire la référence complète</strong><span>La silhouette KP1 ne suffit pas à connaître son contrat de réglage.</span></div>
+    </div>`;
+  }
+
+  function envelopeVisual() {
+    return `<div class="envelope-lab" data-activity="envelope">
+      ${svgWrap("Marge avant la limite compresseur", "Axe de pression avec zone interdite, limite constructeur et coupure envisagée", `
+        <rect width="900" height="300" rx="26" fill="#f7f1e7"/>
+        <rect x="80" y="70" width="310" height="110" rx="16" fill="#fbe7e4" stroke="#c0392b" stroke-width="5" stroke-dasharray="11 7"/>
+        <rect x="390" y="70" width="430" height="110" rx="16" fill="#e3f5ec" stroke="#1e7e54" stroke-width="6"/>
+        ${label(235, 122, "HORS ENVELOPPE", "middle", "#c0392b", 22)}${label(605, 122, "ZONE AUTORISÉE", "middle", "#1e7e54", 22)}
+        <line x1="390" y1="42" x2="390" y2="210" stroke="#1b3a63" stroke-width="6"/>
+        ${label(390, 28, "LIMITE CONSTRUCTEUR", "middle", "#1b3a63", 16)}
+        <line id="targetLine" x1="520" y1="54" x2="520" y2="220" stroke="#c9451a" stroke-width="8"/>
+        <text id="targetLabel" x="520" y="248" text-anchor="middle" font-family="Calibri,Arial" font-size="16" font-weight="800" fill="#c9451a">CUT OUT ENVISAGÉ</text>
+        <path d="M390 264H520" stroke="#1b3a63" stroke-width="4" marker-start="url(#arrow-navy)" marker-end="url(#arrow-navy)"/>
+        <text id="marginLabel" x="455" y="292" text-anchor="middle" font-family="Calibri,Arial" font-size="15" font-weight="800" fill="#1b3a63">MARGE 0,40 bar</text>
+      `, "0 0 900 300")}
+      <div class="lab-row two">
+        <div class="lab-field"><label for="minimumInput">Limite basse constructeur (bar Pe)</label><input id="minimumInput" type="number" step="0.05" value="-0.2"></div>
+        <div class="lab-field"><label for="targetInput">CUT OUT envisagé (bar Pe)</label><input id="targetInput" type="number" step="0.05" value="0.2"></div>
+      </div>
+      <div class="lab-result ok" id="envelopeResult">COUPURE AVANT LA LIMITE · marge 0,40 bar</div>
+    </div>`;
+  }
+
+  function exampleVisual() {
+    return `<div class="worked-example">
+      <div class="example-ruler"><span class="point out"><b>CUT OUT</b><strong>0,2 bar</strong></span><i></i><span class="distance">DIFF = 1,2 bar</span><span class="point in"><b>CUT IN</b><strong>1,4 bar</strong></span></div>
+      <div class="example-steps"><article><span>1</span><p>DIFF = CUT IN − CUT OUT</p></article><article><span>2</span><p>DIFF = 1,4 − 0,2</p></article><article><span>3</span><p><strong>DIFF = 1,2 bar</strong></p></article></div>
+      <div class="example-warning">EXEMPLE DU FONDS LOCAL · À REVALIDER SUR LA MACHINE RÉELLE</div>
+    </div>`;
+  }
+
+  function kpFaceVisual() {
+    const mainTicks = Array.from({ length: 8 }, (_, value) => {
+      const y = 82 + value * 38;
+      return `<line x1="54" y1="${y}" x2="91" y2="${y}" stroke="#d8dee8" stroke-width="2"/>${label(43, y + 6, value, "end", "#fffdf8", 16)}`;
+    }).join("");
+    const diffTicks = Array.from({ length: 5 }, (_, value) => {
+      const y = 82 + value * 66.5;
+      return `<line x1="185" y1="${y}" x2="222" y2="${y}" stroke="#d8dee8" stroke-width="2"/>${label(174, y + 6, value, "end", "#fffdf8", 16)}`;
+    }).join("");
+    const gaugeTicks = Array.from({ length: 11 }, (_, value) => {
+      const angle = (-140 + value * 28) * Math.PI / 180;
+      const x1 = 165 + Math.cos(angle) * 97;
+      const y1 = 145 + Math.sin(angle) * 97;
+      const x2 = 165 + Math.cos(angle) * 114;
+      const y2 = 145 + Math.sin(angle) * 114;
+      const tx = 165 + Math.cos(angle) * 78;
+      const ty = 151 + Math.sin(angle) * 78;
+      return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#1b3a63" stroke-width="4"/>${value % 2 === 0 ? label(tx, ty, value, "middle", "#10233c", 12) : ""}`;
+    }).join("");
+    return `<div class="kp-console" data-activity="kp-face">
+      <div class="kp-provenance">SOCLE · PROTOTYPE GITHUB INERWEB‑FRIGOLO</div>
+      <div class="kp-face-grid">
+        <div class="kp-hardware">
+          <svg viewBox="0 0 270 390" role="img" aria-label="Face avant du pressostat KP1 avec échelles CUT IN et DIFF">
+            <rect x="4" y="4" width="262" height="382" rx="16" fill="#171b21" stroke="#687483" stroke-width="4"/>
+            ${label(72, 38, "CUT IN", "middle", "#fffdf8", 18)}${label(202, 38, "DIFF", "middle", "#fffdf8", 18)}
+            <rect x="25" y="58" width="92" height="300" rx="7" fill="#0d1014" stroke="#444d59" stroke-width="2"/>
+            <rect x="155" y="58" width="92" height="300" rx="7" fill="#0d1014" stroke="#444d59" stroke-width="2"/>
+            ${mainTicks}${diffTicks}
+            <line id="kpCutInMarker" x1="48" y1="135" x2="108" y2="135" stroke="#4b8de0" stroke-width="8"/>
+            <rect id="kpCutInHandle" x="74" y="123" width="36" height="24" rx="5" fill="#315d9c" stroke="#79a9e5" stroke-width="2"/>
+            <line id="kpCutOutGuide" x1="26" y1="348" x2="117" y2="348" stroke="#ef554f" stroke-width="3" stroke-dasharray="6 5"/>
+            <text id="kpCutOutGuideLabel" x="122" y="353" font-family="Calibri,Arial" font-size="12" font-weight="800" fill="#ef554f">CUT OUT</text>
+            <line id="kpDiffMarker" x1="178" y1="161" x2="238" y2="161" stroke="#ff6b35" stroke-width="8"/>
+            <rect id="kpDiffHandle" x="204" y="149" width="36" height="24" rx="5" fill="#c9451a" stroke="#ff9c79" stroke-width="2"/>
+            ${label(135, 378, "K P 1", "middle", "#fffdf8", 16)}
+          </svg>
+        </div>
+        <div class="kp-gauge">
+          <svg viewBox="0 0 330 310" role="img" aria-label="Manomètre de contrôle des pressions de basculement">
+            <circle cx="165" cy="145" r="134" fill="#aeb7c1" stroke="#687483" stroke-width="4"/>
+            <circle cx="165" cy="145" r="121" fill="#fffdf8" stroke="#d4d9df" stroke-width="7"/>
+            ${gaugeTicks}
+            <line id="kpCutOutGaugeMark" x1="69" y1="203" x2="54" y2="212" stroke="#c0392b" stroke-width="8"/>
+            <line id="kpCutInGaugeMark" x1="92" y1="78" x2="78" y2="66" stroke="#1e7e54" stroke-width="8"/>
+            <line id="kpNeedle" x1="165" y1="145" x2="96" y2="78" stroke="#c9451a" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="165" cy="145" r="11" fill="#1b3a63"/><circle cx="165" cy="145" r="5" fill="#fffdf8"/>
+            ${label(165, 185, "bar Pe", "middle", "#637285", 14)}
+            ${label(165, 286, "MANOMÈTRE DE CONTRÔLE", "middle", "#1b3a63", 15)}
+          </svg>
+          <div class="kp-equation" id="kpEquation">1,4 − 1,2 = 0,2 bar</div>
+        </div>
+        <div class="kp-settings">
+          <div class="kp-setting cutin"><span>CUT IN</span><strong id="kpCiValue">1,4 bar</strong><div><button id="kpCiMinus" type="button" aria-label="Diminuer CUT IN">−</button><i></i><button id="kpCiPlus" type="button" aria-label="Augmenter CUT IN">+</button></div></div>
+          <div class="kp-setting diff"><span>DIFF</span><strong id="kpDiffValue">1,2 bar</strong><div><button id="kpDiffMinus" type="button" aria-label="Diminuer DIFF">−</button><i></i><button id="kpDiffPlus" type="button" aria-label="Augmenter DIFF">+</button></div></div>
+          <div class="kp-output"><span>CUT OUT calculé</span><strong id="kpCoValue">0,2 bar</strong><small>CUT IN − DIFF</small></div>
+          <div class="kp-status ok" id="kpStatus">PRÉRÉGLAGE COHÉRENT · À MESURER</div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  function gauge(x, y, radius, title, needleAngle, accent = "#c9451a") {
+    const angle = (needleAngle - 90) * Math.PI / 180;
+    const nx = x + Math.cos(angle) * radius * .62;
+    const ny = y + Math.sin(angle) * radius * .62;
+    const ticks = Array.from({ length: 9 }, (_, index) => {
+      const a = (-140 + index * 35) * Math.PI / 180;
+      const x1 = x + Math.cos(a) * radius * .72;
+      const y1 = y + Math.sin(a) * radius * .72;
+      const x2 = x + Math.cos(a) * radius * .9;
+      const y2 = y + Math.sin(a) * radius * .9;
+      return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#1b3a63" stroke-width="3"/>`;
+    }).join("");
+    return `<g><circle cx="${x}" cy="${y}" r="${radius}" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>${ticks}<line x1="${x}" y1="${y}" x2="${nx}" y2="${ny}" stroke="${accent}" stroke-width="6" stroke-linecap="round"/><circle cx="${x}" cy="${y}" r="7" fill="#1b3a63"/>${label(x, y + radius + 24, title, "middle", "#1b3a63", 14)}</g>`;
+  }
+
+  function nitrogenBenchSvg(interactive = false) {
+    return svgWrap("Banc de réglage à l’azote", "Bouteille d’azote avec robinet et mano-détendeur à deux cadrans, flexible, manomètre précis, pressostat et contrôleur de continuité", `
+      <rect width="900" height="520" rx="30" fill="#f7f1e7"/><rect width="900" height="520" rx="30" fill="url(#blueprint)"/>
+      <g transform="translate(25 70)">
+        <path d="M45 92h74c20 0 36 16 36 36v268c0 24-20 44-44 44H53c-24 0-44-20-44-44V128c0-20 16-36 36-36z" fill="url(#steel)" stroke="#1b3a63" stroke-width="6"/>
+        <rect x="58" y="42" width="48" height="55" rx="8" fill="url(#brass)" stroke="#1b3a63" stroke-width="4"/>
+        <path d="M50 48h65M82 48V22M61 22h42" stroke="#1b3a63" stroke-width="5" stroke-linecap="round"/>
+        ${label(82, 252, "N₂", "middle", "#1b3a63", 36)}${label(82, 282, "AZOTE SEC", "middle", "#1b3a63", 16)}
+        <rect x="25" y="318" width="114" height="54" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+        ${label(82, 341, "BOUTEILLE", "middle", "#1b3a63", 13)}${label(82, 360, "ARRIMÉE", "middle", "#1b3a63", 13)}
+      </g>
+      <path d="M130 118h66" stroke="#1b3a63" stroke-width="8"/>
+      <g>
+        ${gauge(230, 94, 48, "PRESSION BOUTEILLE", 42)}
+        ${gauge(350, 94, 48, "PRESSION RÉGLÉE", interactive ? -50 : -25, "#3d7fca")}
+        <path d="M190 132h200v94H190z" fill="url(#brass)" stroke="#1b3a63" stroke-width="5"/>
+        <path d="M230 132v-20M350 132v-20" stroke="#1b3a63" stroke-width="5"/>
+        <circle cx="290" cy="226" r="42" fill="#1b3a63" stroke="#fffdf8" stroke-width="5"/>
+        <path d="M263 226h54M290 199v54" stroke="#fffdf8" stroke-width="5" stroke-linecap="round"/>
+        ${label(290, 293, "MANO-DÉTENDEUR AZOTE", "middle", "#1b3a63", 17)}
+        ${label(290, 316, "robinet · détente · réglage fin", "middle", "#637285", 14, 400)}
+      </g>
+      <path d="M390 178C450 178 442 250 496 250" fill="none" stroke="#3d7fca" stroke-width="12" stroke-linecap="round"/>
+      <path d="M390 178C450 178 442 250 496 250" fill="none" stroke="#fffdf8" stroke-width="3" stroke-dasharray="10 10"/>
+      <g>
+        ${gauge(515, 170, 62, "MANOMÈTRE PRÉCIS", interactive ? -35 : -5, "#c9451a")}
+        <path d="M515 232v34h72" stroke="#1b3a63" stroke-width="7"/>
+        <circle cx="515" cy="266" r="8" fill="#1b3a63"/>
+      </g>
+      <g transform="translate(590 74)">
+        <rect width="155" height="270" rx="22" fill="url(#steel)" stroke="#1b3a63" stroke-width="5"/>
+        <rect x="18" y="22" width="119" height="46" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+        ${label(77, 52, "KP1", "middle", "#1b3a63", 23)}
+        <rect x="24" y="88" width="47" height="118" rx="8" fill="#f3f7fb" stroke="#3d7fca" stroke-width="3"/>
+        <rect x="85" y="88" width="47" height="118" rx="8" fill="#fff4e0" stroke="#c9451a" stroke-width="3" stroke-dasharray="8 5"/>
+        <path d="M48 104v86M108 104v86" stroke="#1b3a63" stroke-width="4"/>
+        ${label(48, 224, "CUT IN", "middle", "#1b3a63", 12)}${label(108, 224, "DIFF", "middle", "#c9451a", 12)}
+        <path d="M56 270v38h44v-38" fill="url(#brass)" stroke="#1b3a63" stroke-width="4"/>
+      </g>
+      <path d="M587 266h18" stroke="#1b3a63" stroke-width="7"/>
+      <g transform="translate(770 126)">
+        <rect width="110" height="198" rx="18" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
+        <rect x="17" y="24" width="76" height="42" rx="7" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+        <text id="nitrogenMeterDisplay" x="55" y="53" text-anchor="middle" font-family="Consolas,monospace" font-size="20" font-weight="800" fill="#1e7e54">0,0 Ω</text>
+        <circle cx="55" cy="112" r="28" fill="#f3f7fb" stroke="#1b3a63" stroke-width="4"/>
+        <path d="M55 112l15-18" stroke="#c9451a" stroke-width="5"/>
+        <circle cx="31" cy="166" r="7" fill="#c0392b"/><circle cx="78" cy="166" r="7" fill="#1b3a63"/>
+        ${label(55, 190, "CONTINUITÉ", "middle", "#1b3a63", 13)}
+      </g>
+      <path d="M801 292C762 374 704 356 672 326" fill="none" stroke="#c0392b" stroke-width="4"/>
+      <path d="M848 292C820 397 708 382 702 326" fill="none" stroke="#1b3a63" stroke-width="4"/>
+      <g transform="translate(410 388)">
+        <rect width="330" height="82" rx="18" fill="#fffdf8" stroke="#c0392b" stroke-width="4" stroke-dasharray="10 7"/>
+        <image href="${ASSET}compresseur_general.svg" x="16" y="10" width="70" height="62"/>
+        <path d="M14 10l74 62M88 10L14 72" stroke="#c0392b" stroke-width="7"/>
+        ${label(103, 34, "COMPRESSEUR ISOLÉ", "start", "#c0392b", 17)}${label(103, 59, "aucun démarrage sous azote", "start", "#10233c", 14, 400)}
+      </g>
+      <rect x="25" y="475" width="280" height="28" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3" stroke-dasharray="8 5"/>
+      ${label(165, 495, "AZOTE UNIQUEMENT · JAMAIS O₂ NI AIR", "middle", "#c0392b", 14)}
+    `);
+  }
+
+  function nitrogenVisual() {
+    return `<div class="nitrogen-bench">${nitrogenBenchSvg(false)}<div class="bench-legend"><span>1 · Pression bouteille</span><span>2 · Pression réglée</span><span>3 · Mesure précise</span><span>4 · Continuité 1–4 / 1–2</span></div></div>`;
+  }
+
+  function nitrogenCycleVisual() {
+    return `<div class="nitrogen-cycle" data-activity="nitrogen-cycle">
+      <div class="cycle-gauge">
+        <svg viewBox="0 0 340 250" role="img" aria-label="Manomètre de réglage au banc">
+          <circle cx="170" cy="126" r="102" fill="#fffdf8" stroke="#1b3a63" stroke-width="7"/>
+          <path d="M94 182A94 94 0 0 1 246 182" fill="none" stroke="#3d7fca" stroke-width="10"/>
+          <line x1="170" y1="126" x2="228" y2="67" id="nitrogenNeedle" stroke="#c9451a" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="170" cy="126" r="12" fill="#1b3a63"/>
+          <text x="170" y="165" text-anchor="middle" font-family="Consolas,monospace" font-size="28" font-weight="800" fill="#1b3a63" id="nitrogenPressureValue">0,00 bar</text>
+          <text x="84" y="204" font-family="Calibri,Arial" font-size="14" font-weight="800" fill="#c0392b">CUT OUT 0,2</text>
+          <text x="207" y="204" font-family="Calibri,Arial" font-size="14" font-weight="800" fill="#1e7e54">CUT IN 1,4</text>
+        </svg>
+        <input id="nitrogenPressure" type="range" min="-0.2" max="2.2" step="0.05" value="0" aria-label="Pression du banc azote">
+        <div class="cycle-buttons"><button id="nitrogenDown" class="activity-button" type="button">↓ Purger lentement</button><button id="nitrogenUp" class="activity-button" type="button">↑ Monter lentement</button></div>
+      </div>
+      <div class="cycle-readings">
+        <div class="contact-meter" id="nitrogenContact"><span>CONTACT MESURÉ</span><strong>1–2 FERMÉ · ARRÊT</strong></div>
+        <div class="reading"><span>CUT IN relevé</span><strong id="nitrogenCutIn">—</strong></div>
+        <div class="reading"><span>CUT OUT relevé</span><strong id="nitrogenCutOut">—</strong></div>
+        <div class="reading diff"><span>DIFF mesuré</span><strong id="nitrogenDiff">—</strong></div>
+        <button id="nitrogenReset" class="activity-button" type="button">Effacer les relevés</button>
+      </div>
+    </div>`;
+  }
+
+  function runningVisual() {
+    return `<div class="running-board">
+      <div class="running-circuit">
+        <div class="component valve"><span class="symbol-shape">◇</span><strong>Vanne liquide</strong><small>fermer progressivement</small></div>
+        <span class="pipe-arrow">→</span>
+        <div class="component evaporator"><span class="symbol-shape">▤</span><strong>Évaporateur</strong><small>alimentation réduite</small></div>
+        <span class="pipe-arrow">→</span>
+        <div class="component pressure"><img src="${ASSET}pressostat_bp.svg" alt="Symbole pressostat BP"><strong>Pressostat BP</strong><small>surveille la baisse</small></div>
+        <span class="pipe-arrow">→</span>
+        <div class="component compressor"><img src="${ASSET}compresseur_general.svg" alt="Symbole compresseur"><strong>Compresseur</strong><small>reste dans son enveloppe</small></div>
+      </div>
+      <div class="running-priorities"><article><span>1</span><p>Lire la BP</p></article><article><span>2</span><p>Attendre CUT OUT</p></article><article class="danger"><span>STOP</span><p>si limite constructeur atteinte</p></article><article><span>3</span><p>Rouvrir et relever CUT IN</p></article></div>
+      <div class="running-footer">CONTRÔLE DE SÉCURITÉ · PAS UNE SÉQUENCE DE PUMP-DOWN À ENSEIGNER ICI</div>
+    </div>`;
+  }
+
+  function verifyVisual() {
+    return `<div class="cycles-lab" data-activity="verify">
+      <table>
+        <thead><tr><th>Cycle</th><th>CUT OUT mesuré</th><th>CUT IN mesuré</th><th>DIFF calculé</th></tr></thead>
+        <tbody>${[1, 2, 3].map((n) => `<tr><th>${n}</th><td><input id="cycleCo${n}" type="number" step="0.01" placeholder="bar"></td><td><input id="cycleCi${n}" type="number" step="0.01" placeholder="bar"></td><td><output id="cycleDiff${n}">—</output></td></tr>`).join("")}</tbody>
+      </table>
+      <div class="cycles-actions"><button id="calculateCycles" class="activity-button primary-action" type="button">Calculer les trois DIFF</button><div class="lab-field tolerance"><label for="repeatTolerance">Tolérance de répétabilité du dossier (bar)</label><input id="repeatTolerance" type="number" min="0" step="0.01" placeholder="facultatif"></div></div>
+      <div class="lab-result wait" id="cyclesResult">Renseigne les trois cycles, puis demande le calcul.</div>
+    </div>`;
+  }
+
+  function recordVisual() {
+    const steps = [
+      ["01", "SOURCE", "Notice machine · enveloppe compresseur"],
+      ["02", "CIBLES", "CUT OUT · CUT IN · DIFF calculé"],
+      ["03", "PRÉRÉGLAGE", "Référence · plage · réarmement"],
+      ["04", "MESURES", "Trois cycles dans les deux sens"],
+      ["05", "PREUVE", "Tolérance · étanchéité · remise en état"]
+    ];
+    return `<div class="record-timeline">${steps.map(([n, title, text]) => `<article><span>${n}</span><div><h3>${title}</h3><p>${text}</p></div></article>`).join("")}<div class="record-signature">La position d’une vis n’est pas une mesure.</div></div>`;
+  }
+
+  function summaryVisual() {
+    return `<div class="summary-board">
+      <div class="summary-mechanism"><span>PRESSION</span><b>→</b><span>SOUFFLET</span><b>→</b><span>RESSORTS</span><b>→</b><span>CONTACT</span></div>
+      <div class="summary-formula"><span>CUT OUT</span><i></i><strong>DIFF = CUT IN − CUT OUT</strong><i></i><span>CUT IN</span></div>
+      <div class="summary-proof"><article><b>1</b><span>Justifier les seuils</span></article><article><b>2</b><span>Mesurer dans les deux sens</span></article><article><b>3</b><span>Comparer et tracer</span></article></div>
+    </div>`;
+  }
+
+  function quizVisual(index, total, score, questionId) {
+    const topics = {
+      "q-chain": "MÉCANISME",
+      "q-neutral": "ZONE NEUTRE",
+      "q-diff": "DIFFÉRENTIEL",
+      "q-cutout": "RELATION",
+      "q-contacts": "CONTACT 1–2–4",
+      "q-model": "RÉFÉRENCE",
+      "q-nitrogen": "BANC AZOTE",
+      "q-envelope": "LIMITE MACHINE"
+    };
+    return `<div class="quiz-visual">
+      <div class="quiz-symbol"><img src="${ASSET}pressostat_bp.svg" alt="Symbole pressostat basse pression"><span>PB</span></div>
+      <div class="quiz-index"><small>QUESTION</small><strong>${index + 1}</strong><span>/ ${total}</span></div>
+      <div class="quiz-topic">${topics[questionId] || "PRESSOSTAT BP"}</div>
+      <div class="quiz-reminder"><span>CUT OUT</span><b>← DIFF →</b><span>CUT IN</span></div>
+      <div class="quiz-score">Score actuel · ${score} / ${total}</div>
+    </div>`;
+  }
+
+  function finalVisual(score, total) {
+    return `<div class="final-board">
+      <div class="final-score"><span>QUIZ FORMATIF</span><strong>${score} / ${total}</strong></div>
+      <div class="final-chain"><span>pression</span><b>→</b><span>soufflet</span><b>→</b><span>ressorts</span><b>→</b><span>contact</span></div>
+      <div class="final-equation">DIFF = CUT IN − CUT OUT</div>
+      <div class="final-next">PROCHAINE BRIQUE · PRESSOSTAT BP DE RÉGULATION</div>
+    </div>`;
+  }
+
+  const renderers = {
+    product: productVisual,
+    library: libraryVisual,
+    mechanism: mechanismVisual,
+    snap: snapVisual,
+    deadband: deadbandVisual,
+    differential: differentialVisual,
+    contacts: contactsVisual,
+    models: modelsVisual,
+    envelope: envelopeVisual,
+    example: exampleVisual,
+    "kp-face": kpFaceVisual,
+    nitrogen: nitrogenVisual,
+    "nitrogen-cycle": nitrogenCycleVisual,
+    running: runningVisual,
+    verify: verifyVisual,
+    record: recordVisual,
+    summary: summaryVisual
+  };
+
+  function wireMechanism() {
+    const input = $("mechanismPressure");
+    const value = $("mechanismPressureValue");
+    const result = $("mechanismResult");
+    const bellows = $("mechanismBellows");
+    const rod = $("mechanismRod");
+    const arm = $("mechanismArm");
+    const contact = $("mechanismContactArm");
+    const contactLabel = $("mechanismContactLabel");
+    let allowed = true;
+    let previous = Number(input.value);
+
+    const bellowsPath = (top) => {
+      const bottom = 368;
+      const leftA = 130;
+      const leftB = 154;
+      const rightA = 286;
+      const rightB = 262;
+      const step = (bottom - top) / 6;
+      const left = Array.from({ length: 7 }, (_, i) => `${i % 2 ? leftA : leftB} ${bottom - i * step}`).join("L");
+      const right = Array.from({ length: 7 }, (_, i) => `${i % 2 ? rightA : rightB} ${top + i * step}`).join("L");
+      return `M${leftB} ${bottom}L${left}H${rightA}L${right}Z`;
+    };
+
+    const update = (nextValue) => {
+      const pressure = clamp(Number(nextValue), -0.2, 2.2);
+      const direction = pressure > previous ? 1 : pressure < previous ? -1 : 0;
+      if (pressure <= 0.2) allowed = false;
+      if (pressure >= 1.4) allowed = true;
+      previous = pressure;
+      input.value = String(pressure);
+      value.textContent = `${fmt(pressure)} bar`;
+      const ratio = (pressure + 0.2) / 2.4;
+      const top = 305 - ratio * 54;
+      bellows.setAttribute("d", bellowsPath(top));
+      rod.setAttribute("y1", String(top));
+      rod.setAttribute("y2", String(224 - ratio * 5));
+      arm.setAttribute("transform", `rotate(${(ratio - .5) * -8} 418 220)`);
+      contact.setAttribute("d", allowed ? "M40 121L121 82" : "M40 121L121 164");
+      contact.setAttribute("stroke", allowed ? "#1e7e54" : "#c0392b");
+      contactLabel.textContent = allowed ? "1–4 FERMÉ" : "1–2 FERMÉ";
+      contactLabel.setAttribute("fill", allowed ? "#1e7e54" : "#c0392b");
+      result.className = `lab-result ${allowed ? "ok" : "danger"}`;
+      const motion = direction > 0 ? "PRESSION EN HAUSSE" : direction < 0 ? "PRESSION EN BAISSE" : "PRESSION STABLE";
+      result.textContent = `${motion} · ${allowed ? "1–4 FERMÉ · MARCHE AUTORISÉE" : "1–2 FERMÉ · ARRÊT"}`;
+    };
+    input.addEventListener("input", () => update(input.value));
+    $("mechanismDown").addEventListener("click", () => update(Number(input.value) - .1));
+    $("mechanismUp").addEventListener("click", () => update(Number(input.value) + .1));
+    update(input.value);
+  }
+
+  function wireDeadband() {
+    const input = $("deadbandPressure");
+    const marker = $("deadbandMarker");
+    const arrow = $("deadbandDirection");
+    const arrowLabel = $("deadbandDirectionLabel");
+    const result = $("deadbandResult");
+    let allowed = true;
+    let previous = Number(input.value);
+    const update = (nextValue) => {
+      const pressure = clamp(Number(nextValue), -0.2, 2.2);
+      const up = pressure > previous;
+      const down = pressure < previous;
+      if (pressure <= .2) allowed = false;
+      if (pressure >= 1.4) allowed = true;
+      previous = pressure;
+      input.value = String(pressure);
+      marker.setAttribute("cx", String(100 + ((pressure + .2) / 2.4) * 690));
+      if (up) {
+        arrow.setAttribute("d", "M510 292H650");
+        arrow.setAttribute("marker-end", "url(#arrow-orange)");
+        arrow.setAttribute("marker-start", "");
+        arrowLabel.textContent = "PRESSION EN HAUSSE";
+      } else if (down) {
+        arrow.setAttribute("d", "M650 292H510");
+        arrow.setAttribute("marker-end", "url(#arrow-orange)");
+        arrow.setAttribute("marker-start", "");
+        arrowLabel.textContent = "PRESSION EN BAISSE";
+      }
+      const inZone = pressure > .2 && pressure < 1.4;
+      result.className = `lab-result ${allowed ? "ok" : "danger"}`;
+      result.textContent = `${fmt(pressure)} bar · ${allowed ? "1–4 FERMÉ · MARCHE AUTORISÉE" : "1–2 FERMÉ · ARRÊT"}${inZone ? " · état mémorisé dans la zone neutre" : ""}`;
+    };
+    input.addEventListener("input", () => update(input.value));
+    $("deadbandDown").addEventListener("click", () => update(Number(input.value) - .1));
+    $("deadbandUp").addEventListener("click", () => update(Number(input.value) + .1));
+    update(input.value);
+  }
+
+  function wireDifferential() {
+    const configurations = {
+      diff: { a: ["CUT IN (bar)", "1,4"], b: ["CUT OUT (bar)", "0,2"], answer: "Ton DIFF (bar)", expected: 1.2, formula: "diff" },
+      cutout: { a: ["CUT IN (bar)", "1,4"], b: ["DIFF (bar)", "1,2"], answer: "Ton CUT OUT (bar)", expected: .2, formula: "cutout" },
+      cutin: { a: ["CUT OUT (bar)", "0,2"], b: ["DIFF (bar)", "1,2"], answer: "Ton CUT IN (bar)", expected: 1.4, formula: "cutin" }
+    };
+    let target = "diff";
+    let formula = "";
+    const result = $("calcResult");
+
+    const setTarget = (next) => {
+      target = next;
+      formula = "";
+      const config = configurations[target];
+      $("calcKnownALabel").textContent = config.a[0];
+      $("calcKnownA").value = config.a[1];
+      $("calcKnownBLabel").textContent = config.b[0];
+      $("calcKnownB").value = config.b[1];
+      $("calcAnswerLabel").textContent = config.answer;
+      $("calcAnswer").value = "";
+      document.querySelectorAll(".target-tab").forEach((button) => {
+        const active = button.dataset.target === target;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+      document.querySelectorAll(".formula-choices button").forEach((button) => {
+        button.classList.remove("selected", "wrong");
+        button.setAttribute("aria-pressed", "false");
+      });
+      result.className = "lab-result wait";
+      result.textContent = "Choisis une formule, calcule, puis vérifie.";
+    };
+
+    document.querySelectorAll(".target-tab").forEach((button) => button.addEventListener("click", () => setTarget(button.dataset.target)));
+    document.querySelectorAll(".formula-choices button").forEach((button) => button.addEventListener("click", () => {
+      formula = button.dataset.formula;
+      document.querySelectorAll(".formula-choices button").forEach((candidate) => {
+        const selected = candidate === button;
+        candidate.classList.toggle("selected", selected);
+        candidate.classList.remove("wrong");
+        candidate.setAttribute("aria-pressed", String(selected));
+      });
+      result.className = "lab-result wait";
+      result.textContent = "Formule choisie. Effectue maintenant le calcul.";
+    }));
+    $("calcCheck").addEventListener("click", () => {
+      const config = configurations[target];
+      const answer = Number($("calcAnswer").value);
+      if (!formula) {
+        result.className = "lab-result danger";
+        result.textContent = "Choisis d’abord la relation à utiliser.";
+        return;
+      }
+      if (formula !== config.formula) {
+        document.querySelector(`.formula-choices button[data-formula="${formula}"]`)?.classList.add("wrong");
+        result.className = "lab-result danger";
+        result.textContent = "Cette relation ne cherche pas la grandeur demandée. Reprends l’inconnue.";
+        return;
+      }
+      if (!Number.isFinite(answer)) {
+        result.className = "lab-result danger";
+        result.textContent = "Saisis ton résultat en bar.";
+        return;
+      }
+      const correct = Math.abs(answer - config.expected) <= .005;
+      result.className = `lab-result ${correct ? "ok" : "danger"}`;
+      result.textContent = correct ? `CORRECT · résultat ${fmt(config.expected, 1)} bar` : "Le choix de formule est bon, mais le calcul est à reprendre.";
+    });
+    setTarget(target);
+  }
+
+  function wireContacts() {
+    const setLow = (low) => {
+      $("contactArm").setAttribute("d", low ? "M224 208L458 295" : "M224 208L458 121");
+      $("contactArm").setAttribute("stroke", low ? "#c0392b" : "#1e7e54");
+      $("contactHeadline").textContent = low ? "PRESSION BASSE · 1–2 FERMÉ" : "PRESSION SUFFISANTE · 1–4 FERMÉ";
+      $("contactHeadline").setAttribute("fill", low ? "#c0392b" : "#1e7e54");
+      $("contactRunBox").setAttribute("fill", low ? "#fffdf8" : "#e3f5ec");
+      $("contactRunBox").setAttribute("stroke", low ? "#637285" : "#1e7e54");
+      $("contactRunLamp").setAttribute("fill", low ? "#fffdf8" : "#1e7e54");
+      $("contactRunLamp").setAttribute("stroke", low ? "#637285" : "#1e7e54");
+      $("contactFaultBox").setAttribute("fill", low ? "#fbe7e4" : "#fffdf8");
+      $("contactFaultBox").setAttribute("stroke", low ? "#c0392b" : "#637285");
+      $("contactFaultLamp").setAttribute("fill", low ? "#c0392b" : "#fffdf8");
+      $("contactFaultLamp").setAttribute("stroke", low ? "#c0392b" : "#637285");
+      $("contactHigh").setAttribute("aria-pressed", String(!low));
+      $("contactLow").setAttribute("aria-pressed", String(low));
+    };
+    $("contactHigh").addEventListener("click", () => setLow(false));
+    $("contactLow").addEventListener("click", () => setLow(true));
+  }
+
+  function wireEnvelope() {
+    const minimum = $("minimumInput");
+    const target = $("targetInput");
+    const update = () => {
+      const min = Number(minimum.value);
+      const cut = Number(target.value);
+      const gap = cut - min;
+      const good = Number.isFinite(gap) && gap > 0;
+      const x = clamp(390 + gap * 325, 330, 780);
+      $("targetLine").setAttribute("x1", String(x));
+      $("targetLine").setAttribute("x2", String(x));
+      $("targetLabel").setAttribute("x", String(x));
+      $("marginLabel").setAttribute("x", String((390 + x) / 2));
+      $("marginLabel").textContent = Number.isFinite(gap) ? `MARGE ${fmt(gap)} bar` : "MARGE —";
+      const result = $("envelopeResult");
+      result.className = `lab-result ${good ? "ok" : "danger"}`;
+      result.textContent = good ? `COUPURE AVANT LA LIMITE · marge ${fmt(gap)} bar` : gap === 0 ? "AUCUNE MARGE · réglage à justifier" : "COUPURE APRÈS LA LIMITE · DANGER COMPRESSEUR";
+    };
+    minimum.addEventListener("input", update);
+    target.addEventListener("input", update);
+    update();
+  }
+
+  function wireKpFace() {
+    let cutIn = 1.4;
+    let diff = 1.2;
+    const update = () => {
+      cutIn = clamp(Math.round(cutIn * 10) / 10, -.2, 7.5);
+      diff = clamp(Math.round(diff * 10) / 10, .7, 4);
+      const cutOut = Math.round((cutIn - diff) * 10) / 10;
+      $("kpCiValue").textContent = `${fmt(cutIn, 1)} bar`;
+      $("kpDiffValue").textContent = `${fmt(diff, 1)} bar`;
+      $("kpCoValue").textContent = `${fmt(cutOut, 1)} bar`;
+      $("kpEquation").textContent = `${fmt(cutIn, 1)} − ${fmt(diff, 1)} = ${fmt(cutOut, 1)} bar`;
+      const ciY = 82 + (clamp(cutIn, 0, 7) / 7) * 266;
+      const coY = 82 + (clamp(cutOut, 0, 7) / 7) * 266;
+      const dY = 82 + (diff / 4) * 266;
+      $("kpCutInMarker").setAttribute("y1", String(ciY));
+      $("kpCutInMarker").setAttribute("y2", String(ciY));
+      $("kpCutInHandle").setAttribute("y", String(ciY - 12));
+      $("kpCutOutGuide").setAttribute("y1", String(coY));
+      $("kpCutOutGuide").setAttribute("y2", String(coY));
+      $("kpCutOutGuideLabel").setAttribute("y", String(coY + 5));
+      $("kpDiffMarker").setAttribute("y1", String(dY));
+      $("kpDiffMarker").setAttribute("y2", String(dY));
+      $("kpDiffHandle").setAttribute("y", String(dY - 12));
+      const needleAngle = -140 + (clamp(cutIn, 0, 10) / 10) * 280;
+      const needleRad = needleAngle * Math.PI / 180;
+      $("kpNeedle").setAttribute("x2", String(165 + Math.cos(needleRad) * 92));
+      $("kpNeedle").setAttribute("y2", String(145 + Math.sin(needleRad) * 92));
+      const setMark = (id, pressure) => {
+        const angle = (-140 + (clamp(pressure, 0, 10) / 10) * 280) * Math.PI / 180;
+        const mark = $(id);
+        mark.setAttribute("x1", String(165 + Math.cos(angle) * 105));
+        mark.setAttribute("y1", String(145 + Math.sin(angle) * 105));
+        mark.setAttribute("x2", String(165 + Math.cos(angle) * 121));
+        mark.setAttribute("y2", String(145 + Math.sin(angle) * 121));
+      };
+      setMark("kpCutInGaugeMark", cutIn);
+      setMark("kpCutOutGaugeMark", cutOut);
+      const coherent = cutOut >= -.2;
+      $("kpStatus").className = `kp-status ${coherent ? "ok" : "danger"}`;
+      $("kpStatus").textContent = coherent ? "PRÉRÉGLAGE COHÉRENT · À MESURER" : "CUT OUT SOUS LA PLAGE · REPRENDRE";
+    };
+    $("kpCiMinus").addEventListener("click", () => { cutIn -= .1; update(); });
+    $("kpCiPlus").addEventListener("click", () => { cutIn += .1; update(); });
+    $("kpDiffMinus").addEventListener("click", () => { diff -= .1; update(); });
+    $("kpDiffPlus").addEventListener("click", () => { diff += .1; update(); });
+    update();
+  }
+
+  function wireNitrogenCycle() {
+    const input = $("nitrogenPressure");
+    let previous = Number(input.value);
+    let allowed = false;
+    let cutIn = null;
+    let cutOut = null;
+    const update = (nextValue) => {
+      const pressure = clamp(Number(nextValue), -.2, 2.2);
+      const up = pressure > previous;
+      const down = pressure < previous;
+      if (up && previous < 1.4 && pressure >= 1.4) {
+        allowed = true;
+        cutIn = pressure;
+      }
+      if (down && previous > .2 && pressure <= .2) {
+        allowed = false;
+        cutOut = pressure;
+      }
+      if (pressure >= 1.4) allowed = true;
+      if (pressure <= .2) allowed = false;
+      previous = pressure;
+      input.value = String(pressure);
+      $("nitrogenPressureValue").textContent = `${fmt(pressure)} bar`;
+      const angle = -140 + ((pressure + .2) / 2.4) * 280;
+      const rad = (angle - 90) * Math.PI / 180;
+      $("nitrogenNeedle").setAttribute("x2", String(170 + Math.cos(rad) * 78));
+      $("nitrogenNeedle").setAttribute("y2", String(126 + Math.sin(rad) * 78));
+      $("nitrogenContact").className = `contact-meter ${allowed ? "ok" : "danger"}`;
+      $("nitrogenContact").querySelector("strong").textContent = allowed ? "1–4 FERMÉ · MARCHE" : "1–2 FERMÉ · ARRÊT";
+      $("nitrogenCutIn").textContent = cutIn === null ? "—" : `${fmt(cutIn)} bar`;
+      $("nitrogenCutOut").textContent = cutOut === null ? "—" : `${fmt(cutOut)} bar`;
+      $("nitrogenDiff").textContent = cutIn === null || cutOut === null ? "—" : `${fmt(cutIn - cutOut)} bar`;
+    };
+    input.addEventListener("input", () => update(input.value));
+    $("nitrogenDown").addEventListener("click", () => update(Number(input.value) - .1));
+    $("nitrogenUp").addEventListener("click", () => update(Number(input.value) + .1));
+    $("nitrogenReset").addEventListener("click", () => {
+      cutIn = null;
+      cutOut = null;
+      previous = 0;
+      allowed = false;
+      update(0);
+    });
+    update(input.value);
+  }
+
+  function wireVerify() {
+    $("calculateCycles").addEventListener("click", () => {
+      const diffs = [];
+      for (let index = 1; index <= 3; index += 1) {
+        const coRaw = $(`cycleCo${index}`).value;
+        const ciRaw = $(`cycleCi${index}`).value;
+        if (coRaw === "" || ciRaw === "") {
+          $("cyclesResult").className = "lab-result danger";
+          $("cyclesResult").textContent = "Complète les six pressions avant de calculer.";
+          return;
+        }
+        const diff = Number(ciRaw) - Number(coRaw);
+        diffs.push(diff);
+        $(`cycleDiff${index}`).textContent = `${fmt(diff)} bar`;
+      }
+      const spread = Math.max(...diffs) - Math.min(...diffs);
+      const toleranceRaw = $("repeatTolerance").value;
+      const result = $("cyclesResult");
+      if (toleranceRaw === "") {
+        result.className = "lab-result wait";
+        result.textContent = `DIFF calculés · étendue ${fmt(spread)} bar · comparer à la tolérance du dossier`;
+        return;
+      }
+      const tolerance = Number(toleranceRaw);
+      const good = spread <= tolerance;
+      result.className = `lab-result ${good ? "ok" : "danger"}`;
+      result.textContent = good ? `RÉPÉTABILITÉ DANS LA TOLÉRANCE · étendue ${fmt(spread)} bar` : `RÉPÉTABILITÉ HORS TOLÉRANCE · étendue ${fmt(spread)} bar`;
+    });
+  }
+
+  const wirers = {
+    mechanism: wireMechanism,
+    deadband: wireDeadband,
+    differential: wireDifferential,
+    contacts: wireContacts,
+    envelope: wireEnvelope,
+    "kp-face": wireKpFace,
+    "nitrogen-cycle": wireNitrogenCycle,
+    verify: wireVerify
+  };
+
+  window.PressostatVisuals = {
+    render(type) {
+      return renderers[type] ? renderers[type]() : "";
+    },
+    wire(type) {
+      wirers[type]?.();
+    },
+    quiz: quizVisual,
+    final: finalVisual
+  };
+})();
+</script>
+  <script>(() => {
+  "use strict";
+
+  const COURSE = window.__INERWEB_COURSE__;
+  const VISUALS = window.PressostatVisuals;
+  const $ = (id) => document.getElementById(id);
+  const ui = {
+    stage: $("visualStage"), caption: $("visualCaption"), kicker: $("lessonKicker"),
+    title: $("lessonTitle"), lead: $("lessonLead"), list: $("lessonList"),
+    callout: $("lessonCallout"), quiz: $("quizArea"), feedback: $("feedback"),
+    back: $("backButton"), next: $("nextButton"), navState: $("navState"),
+    progressLabel: $("progressLabel"), progressTrack: $("progressTrack"),
+    progressFill: $("progressFill"), progressCount: $("progressCount"),
+    speak: $("speakButton"), stop: $("stopButton"), speed: $("speedSelect"),
+    reading: $("readingButton"), fullscreen: $("fullscreenButton")
+  };
+  const total = COURSE.lessons.length + COURSE.quiz.length + 1;
+  const answers = Array(COURSE.quiz.length).fill(null);
+  let screen = 0;
+  let speechRun = 0;
+  let speaking = false;
+  /* Un élève qui ne lit pas ne doit pas avoir à retrouver le bouton à chaque écran :
+     « Écouter » arme la lecture suivie, « Stop » la désarme. */
+  let lectureSuivie = false;
+
+  const escapeHtml = (value) => String(value)
+    .replaceAll("&", "&amp;").replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+
+  function score() {
+    return answers.reduce((sum, answer, index) => sum + (answer === COURSE.quiz[index].answer ? 1 : 0), 0);
+  }
+
+  function kind() {
+    if (screen < COURSE.lessons.length) return "lesson";
+    if (screen < COURSE.lessons.length + COURSE.quiz.length) return "quiz";
+    return "final";
+  }
+
+  function stopSpeech() {
+    speechRun += 1;
+    speaking = false;
+    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+    ui.speak.setAttribute("aria-pressed", "false");
+    ui.speak.innerHTML = "▶ <span>Écouter</span>";
+    ui.stop.disabled = true;
+  }
+
+  function resetContent() {
+    stopSpeech();
+    ui.quiz.hidden = true;
+    ui.quiz.innerHTML = "";
+    ui.feedback.hidden = true;
+    ui.feedback.className = "feedback";
+    ui.feedback.textContent = "";
+    ui.callout.hidden = true;
+    ui.callout.removeAttribute("data-type");
+    ui.callout.innerHTML = "";
+  }
+
+  function fillText(item) {
+    ui.kicker.textContent = item.kicker || "";
+    ui.title.textContent = item.title;
+    ui.lead.textContent = item.lead;
+    ui.list.innerHTML = item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("");
+    ui.caption.textContent = item.caption || "";
+    if (item.callout) {
+      ui.callout.hidden = false;
+      ui.callout.dataset.type = item.callout.type || "note";
+      ui.callout.innerHTML = `<strong>${escapeHtml(item.callout.title)}</strong><span>${escapeHtml(item.callout.text)}</span>`;
+    }
+  }
+
+  function renderLessonVisual(item) {
+    if (!item.media) {
+      ui.stage.innerHTML = VISUALS.render(item.visual);
+      ui.stage.setAttribute("role", "img");
+      ui.stage.setAttribute("aria-label", item.caption);
+      ui.stage.removeAttribute("data-visual-mode");
+      ui.caption.textContent = item.caption || "";
+      VISUALS.wire(item.visual);
+      return;
+    }
+
+    const bodyId = `visualModeBody-${screen}`;
+    ui.stage.setAttribute("role", "group");
+    ui.stage.setAttribute("aria-label", `Deux lectures disponibles pour ${item.media.title}`);
+    ui.stage.innerHTML = `
+      <div class="visual-composite">
+        <div class="visual-tabs" role="tablist" aria-label="Choisir le type de visuel">
+          <button class="visual-tab" type="button" role="tab" data-mode="media" aria-controls="${bodyId}">Illustration Claude</button>
+          <button class="visual-tab" type="button" role="tab" data-mode="activity" aria-controls="${bodyId}">Schéma / activité</button>
+        </div>
+        <div class="visual-mode-body" id="${bodyId}" role="tabpanel"></div>
+      </div>`;
+
+    const body = document.getElementById(bodyId);
+    const tabs = Array.from(ui.stage.querySelectorAll(".visual-tab"));
+    const showMode = (mode) => {
+      const mediaMode = mode === "media";
+      ui.stage.dataset.visualMode = mode;
+      tabs.forEach((tab) => {
+        const selected = tab.dataset.mode === mode;
+        tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      if (mediaMode) {
+        body.innerHTML = `<figure class="claude-frame">
+          <img src="${escapeHtml(item.media.src)}" alt="${escapeHtml(item.media.alt)}" draggable="false">
+          <figcaption><strong>${escapeHtml(item.media.title)}</strong><span>${escapeHtml(item.media.note)}</span></figcaption>
+        </figure>`;
+        ui.caption.textContent = item.media.caption;
+      } else {
+        body.innerHTML = VISUALS.render(item.visual);
+        ui.caption.textContent = item.caption;
+        VISUALS.wire(item.visual);
+      }
+    };
+    tabs.forEach((tab) => tab.addEventListener("click", () => {
+      showMode(tab.dataset.mode);
+      /* On change d’onglet pour voir autre chose : la voix doit décrire cet autre chose. */
+      if (lectureSuivie) speak();
+    }));
+    showMode("media");
+  }
+
+  function renderLesson() {
+    const item = COURSE.lessons[screen];
+    fillText(item);
+    renderLessonVisual(item);
+    ui.next.disabled = false;
+    ui.next.textContent = screen === COURSE.lessons.length - 1 ? "Passer au quiz →" : "Continuer →";
+    ui.navState.textContent = `Cours · ${screen + 1} sur ${COURSE.lessons.length}`;
+  }
+
+  function markQuiz(questionIndex) {
+    const chosen = answers[questionIndex];
+    if (chosen === null) return;
+    const question = COURSE.quiz[questionIndex];
+    ui.quiz.querySelectorAll(".quiz-choice").forEach((button, index) => {
+      button.disabled = true;
+      button.classList.toggle("correct", index === question.answer);
+      button.classList.toggle("incorrect", index === chosen && chosen !== question.answer);
+    });
+    const correct = chosen === question.answer;
+    ui.feedback.hidden = false;
+    ui.feedback.className = `feedback ${correct ? "correct" : "incorrect"}`;
+    ui.feedback.textContent = `${correct ? "Bonne réponse. " : "À reprendre. "}${question.explanation}`;
+  }
+
+  function renderQuiz() {
+    const questionIndex = screen - COURSE.lessons.length;
+    const question = COURSE.quiz[questionIndex];
+    ui.kicker.textContent = `Quiz formatif · question ${questionIndex + 1}`;
+    ui.title.textContent = question.question;
+    ui.lead.textContent = "Choisis une réponse, puis lis l’explication avant de continuer.";
+    ui.list.innerHTML = "";
+    ui.caption.textContent = "Le score sert à repérer les notions à reprendre ; aucune donnée n’est transmise.";
+    ui.stage.innerHTML = VISUALS.quiz(questionIndex, COURSE.quiz.length, score(), question.id);
+    ui.stage.setAttribute("role", "img");
+    ui.stage.setAttribute("aria-label", `Question ${questionIndex + 1} sur le pressostat BP`);
+    ui.stage.removeAttribute("data-visual-mode");
+    ui.quiz.hidden = false;
+    ui.quiz.innerHTML = question.choices.map((choice, index) => `<button class="quiz-choice" type="button" data-choice="${index}">${escapeHtml(choice)}</button>`).join("");
+    ui.quiz.querySelectorAll(".quiz-choice").forEach((button) => button.addEventListener("click", () => {
+      if (answers[questionIndex] !== null) return;
+      answers[questionIndex] = Number(button.dataset.choice);
+      markQuiz(questionIndex);
+      ui.next.disabled = false;
+      ui.next.focus({ preventScroll: true });
+    }));
+    markQuiz(questionIndex);
+    ui.next.disabled = answers[questionIndex] === null;
+    ui.next.textContent = questionIndex === COURSE.quiz.length - 1 ? "Voir le bilan →" : "Question suivante →";
+    ui.navState.textContent = `Quiz · ${questionIndex + 1} sur ${COURSE.quiz.length}`;
+  }
+
+  function renderFinal() {
+    const item = COURSE.final;
+    fillText(item);
+    ui.stage.innerHTML = VISUALS.final(score(), COURSE.quiz.length);
+    ui.stage.setAttribute("role", "img");
+    ui.stage.setAttribute("aria-label", `Bilan : ${score()} bonnes réponses sur ${COURSE.quiz.length}`);
+    ui.stage.removeAttribute("data-visual-mode");
+    ui.next.disabled = true;
+    ui.next.textContent = "Parcours terminé";
+    ui.navState.textContent = `Bilan · ${score()} / ${COURSE.quiz.length}`;
+  }
+
+  function render() {
+    resetContent();
+    const currentKind = kind();
+    if (currentKind === "lesson") renderLesson();
+    else if (currentKind === "quiz") renderQuiz();
+    else renderFinal();
+    const percent = Math.round(((screen + 1) / total) * 100);
+    ui.progressFill.style.width = `${percent}%`;
+    ui.progressTrack.setAttribute("aria-valuenow", String(percent));
+    ui.progressCount.textContent = `${screen + 1} / ${total}`;
+    ui.progressLabel.textContent = currentKind === "lesson" ? COURSE.lessons[screen].short : currentKind === "quiz" ? "Quiz" : "Bilan";
+    ui.back.disabled = screen === 0;
+    if (lectureSuivie) speak();
+    document.title = `${ui.title.textContent} — Pressostat BP`;
+  }
+
+  function move(delta) {
+    if (delta > 0 && kind() === "quiz" && ui.next.disabled) return;
+    const next = Math.max(0, Math.min(total - 1, screen + delta));
+    if (next !== screen) { screen = next; render(); }
+  }
+
+  /* Les symboles se lisent mal à la synthèse vocale. Le public visé comprend des
+     élèves qui ne lisent pas : un « 1–4 » prononcé « moins trois », ou une formule
+     muette, leur retire purement et simplement l’information. */
+  function pourLaVoix(texte) {
+    return String(texte)
+      .replace(/(\d)\s*[–—-]\s*(\d)/g, "$1 $2")
+      .replace(/×/g, " fois ")
+      .replace(/−/g, " moins ")
+      .replace(/≈/g, " environ ")
+      .replace(/=/g, " égale ")
+      .replace(/·/g, ", ")
+      .replace(/→/g, " puis ")
+      .replace(/\.\s*\./g, ".")
+      .replace(/\s{2,}/g, " ");
+  }
+
+  function spokenText() {
+    const parts = [ui.kicker.textContent, ui.title.textContent, ui.lead.textContent,
+      ...Array.from(ui.list.querySelectorAll("li"), (li) => li.textContent)];
+    if (!ui.callout.hidden) {
+      const titre = ui.callout.querySelector("strong");
+      const corps = ui.callout.querySelector("span");
+      parts.push(titre ? `${titre.textContent} : ${corps ? corps.textContent : ""}` : ui.callout.textContent);
+    }
+    /* Ce que montre l’écran doit s’entendre, sinon l’illustration et le schéma
+       n’existent que pour qui voit ET lit. */
+    const image = ui.stage.querySelector(".claude-frame img[alt]");
+    if (image && image.alt) {
+      parts.push("Ce que montre l’illustration. " + image.alt);
+      const note = ui.stage.querySelector(".claude-frame figcaption span");
+      if (note) parts.push(note.textContent);
+    } else if (ui.caption.textContent) {
+      parts.push(ui.caption.textContent);
+    }
+    /* Les réponses du quiz sont numérotées à voix haute : sans cela, on entend la
+       question mais on ne peut pas choisir. */
+    if (!ui.quiz.hidden) {
+      Array.from(ui.quiz.querySelectorAll(".quiz-choice")).forEach((bouton, index) => {
+        parts.push(`Réponse ${index + 1}. ${bouton.textContent}`);
+      });
+    }
+    if (!ui.feedback.hidden) parts.push(ui.feedback.textContent);
+    return pourLaVoix(parts.filter(Boolean).join(". "));
+  }
+
+  function selectFrenchVoice() {
+    if (!("speechSynthesis" in window)) return null;
+    const voices = window.speechSynthesis.getVoices();
+    return voices.find((voice) => voice.localService && /^fr/i.test(voice.lang))
+      || voices.find((voice) => /^fr/i.test(voice.lang)) || null;
+  }
+
+  function speak() {
+    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+      ui.navState.textContent = "Voix indisponible sur ce navigateur";
+      return;
+    }
+    stopSpeech();
+    const run = speechRun;
+    const utterance = new SpeechSynthesisUtterance(spokenText());
+    utterance.lang = "fr-FR";
+    utterance.rate = Number(ui.speed.value);
+    utterance.pitch = 1;
+    const voice = selectFrenchVoice();
+    if (voice) utterance.voice = voice;
+    utterance.onstart = () => {
+      if (run !== speechRun) return;
+      speaking = true;
+      ui.speak.setAttribute("aria-pressed", "true");
+      ui.speak.innerHTML = "❚❚ <span>Pause</span>";
+      ui.stop.disabled = false;
+    };
+    const finish = () => {
+      if (run !== speechRun) return;
+      speaking = false;
+      ui.speak.setAttribute("aria-pressed", "false");
+      ui.speak.innerHTML = "▶ <span>Écouter</span>";
+      ui.stop.disabled = true;
+    };
+    utterance.onend = finish;
+    utterance.onerror = finish;
+    window.speechSynthesis.speak(utterance);
+  }
+
+  ui.back.addEventListener("click", () => move(-1));
+  ui.next.addEventListener("click", () => move(1));
+  ui.speak.addEventListener("click", () => {
+    if (speaking && window.speechSynthesis.speaking) {
+      window.speechSynthesis.pause(); speaking = false;
+      ui.speak.setAttribute("aria-pressed", "false");
+      ui.speak.innerHTML = "▶ <span>Reprendre</span>";
+    } else if (window.speechSynthesis?.paused) {
+      window.speechSynthesis.resume(); speaking = true;
+      ui.speak.setAttribute("aria-pressed", "true");
+      ui.speak.innerHTML = "❚❚ <span>Pause</span>";
+    } else { lectureSuivie = true; speak(); }
+  });
+  ui.stop.addEventListener("click", () => { lectureSuivie = false; stopSpeech(); });
+  ui.reading.addEventListener("click", () => {
+    const active = document.body.classList.toggle("reading-mode");
+    ui.reading.setAttribute("aria-pressed", String(active));
+  });
+  ui.fullscreen.addEventListener("click", async () => {
+    try {
+      if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
+      else await document.exitFullscreen();
+    } catch { ui.navState.textContent = "Plein écran refusé par le navigateur"; }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(event.target.tagName)) return;
+    if (event.key === "ArrowRight") move(1);
+    if (event.key === "ArrowLeft") move(-1);
+  });
+  document.addEventListener("visibilitychange", () => { if (document.hidden) { lectureSuivie = false; stopSpeech(); } });
+  window.addEventListener("beforeunload", stopSpeech);
+  render();
+})();
+</script>
+</body>
+</html>

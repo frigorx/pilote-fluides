@@ -1,0 +1,53 @@
+{
+  "cours": "pressostat-bp-kp1",
+  "titre": "Le pressostat BP de sécurité — comprendre, régler, prouver",
+  "_adossement": "Adossement proposé par lecture des libellés du référentiel, à valider par F. Henninot. Le pressostat de sécurité est traité comme un limiteur de pression (9.06) et comme un interrupteur de sécurité et de contrôle (6.03, et 7.04 côté condenseur pour la HP).",
+  "reference": "arrêté du 21 novembre 2025, annexe II — attestation d’aptitude fluides frigorigènes",
+  "ecrans": 26,
+  "codes": {
+    "6.03": [
+      "differential",
+      "models",
+      "choose-cutout",
+      "kp-face",
+      "nitrogen-bench",
+      "nitrogen-cycle",
+      "running-method",
+      "verify",
+      "record",
+      "summary"
+    ],
+    "9.06": [
+      "intro",
+      "role-library",
+      "mechanism",
+      "snap-action",
+      "neutral-zone",
+      "differential",
+      "contacts",
+      "kp-face",
+      "nitrogen-cycle"
+    ]
+  },
+  "appui": {
+    "1.01": [
+      "models"
+    ],
+    "1.04": [
+      "intro",
+      "role-library",
+      "mechanism"
+    ],
+    "3.01": [
+      "nitrogen-bench",
+      "nitrogen-cycle"
+    ],
+    "4.05": [
+      "nitrogen-cycle",
+      "verify"
+    ],
+    "6.07": [
+      "record"
+    ]
+  }
+}

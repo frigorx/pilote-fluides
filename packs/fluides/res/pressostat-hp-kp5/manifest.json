@@ -1,0 +1,10 @@
+{
+  "product": "inerWeb Édu — Pressostat HP de sécurité",
+  "version": "1.4.0-brouillon",
+  "status": "Brouillon pédagogique à valider",
+  "generatedOn": "2026-08-19",
+  "offline": true,
+  "lessonSteps": 16,
+  "quizQuestions": 9,
+  "entrypoint": "index.html"
+}
