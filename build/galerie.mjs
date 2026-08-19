@@ -306,6 +306,13 @@ let h = `<!doctype html>
   .chip { font:13px Calibri,sans-serif; padding:6px 13px; border:1.5px solid var(--bord); background:var(--carte);
           color:var(--texte); border-radius:999px; cursor:pointer; }
   .chip.on { background:var(--bleu); color:#fff; border-color:var(--bleu); font-weight:700; }
+  /* Au doigt, la norme des 42 px (revue du 19/08) : les filtres et les
+     boutons d'action grossissent SEULEMENT sur écran tactile — le
+     bureau garde sa densité. */
+  @media (pointer:coarse) {
+    .chip, button.lien, summary.reemploi { min-height:42px; padding:10px 16px; }
+    a.ouvrir { min-height:42px; padding:9px 18px; display:inline-flex; align-items:center; }
+  }
   .cpt { color:var(--mut); font-size:13px; margin-left:auto; white-space:nowrap; }
 
   /* Les cartes : une grille, plus une liste à dérouler. */
@@ -381,14 +388,14 @@ let h = `<!doctype html>
 
 <div class="barre">
   <div class="ligne">
-    <input id="q" type="search" placeholder="Chercher : manifold, ozone, azote, détendeur, brasage…" autocomplete="off">
-    <span class="cpt" id="cpt"></span>
+    <input id="q" type="search" aria-label="Chercher une planche, un cours ou un support" placeholder="Chercher : manifold, ozone, azote, détendeur, brasage…" autocomplete="off">
+    <span class="cpt" id="cpt" aria-live="polite"></span>
   </div>
-  <div class="ligne" style="margin-top:9px">
-    <button class="chip on" data-fam="*">Tout</button>
-    ${FAMILLES.map((f) => `<button class="chip" data-fam="${esc(f)}">${esc(f)}</button>`).join("\n    ")}
-    <button class="chip" data-fam="Planches">Planches SVG</button>
-    <button class="chip" id="chip-proto" data-etat="prototype">Prototypes seuls</button>
+  <div class="ligne" style="margin-top:9px" role="group" aria-label="Filtrer par famille">
+    <button class="chip on" data-fam="*" aria-pressed="true">Tout</button>
+    ${FAMILLES.map((f) => `<button class="chip" data-fam="${esc(f)}" aria-pressed="false">${esc(f)}</button>`).join("\n    ")}
+    <button class="chip" data-fam="Planches" aria-pressed="false">Planches SVG</button>
+    <button class="chip" id="chip-proto" data-etat="prototype" aria-pressed="false">Prototypes seuls</button>
   </div>
 </div>
 
@@ -510,7 +517,10 @@ h += `</div>
   document.querySelectorAll(".chip[data-fam]").forEach(function (c) {
     c.addEventListener("click", function () {
       famChoisie = c.getAttribute("data-fam");
-      document.querySelectorAll(".chip[data-fam]").forEach(function (o) { o.classList.toggle("on", o === c); });
+      document.querySelectorAll(".chip[data-fam]").forEach(function (o) {
+        o.classList.toggle("on", o === c);
+        o.setAttribute("aria-pressed", o === c ? "true" : "false");
+      });
       filtrer();
     });
   });
@@ -518,6 +528,7 @@ h += `</div>
   chipProto.addEventListener("click", function () {
     protoSeuls = !protoSeuls;
     chipProto.classList.toggle("on", protoSeuls);
+    chipProto.setAttribute("aria-pressed", protoSeuls ? "true" : "false");
     filtrer();
   });
 
