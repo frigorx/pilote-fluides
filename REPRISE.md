@@ -5,10 +5,16 @@
 > Dernière mise à jour : **20 août 2026** (+ station régulateur électronique, 19/08) (la file des 8 remarques du 19 au soir est soldée ;
 > l'état du 19/08 reste valable pour le reste).
 
-> **20/08 (2e audit extérieur du site servi) — QUATRE LOTS FAITS, NON POUSSÉS.**
+> **20/08 (2e audit extérieur du site servi) — QUATRE LOTS FAITS, EN LIGNE ET VÉRIFIÉS.**
 > Un audit en lecture seule du site publié (commit `7f37d1d`) a listé six familles de
 > points. Tri fait, fait par fait : plusieurs constats étaient déjà tranchés, ou faux.
 > Ordre suivi : d'abord tout ce qui ne demandait AUCUNE décision de F. Henninot.
+> Poussé et contrôlé SUR LE SITE SERVI, pas seulement sur le déploiement : les deux
+> films ne lancent AUCUNE requête hors du site et ne chargent plus Babel, React vient
+> de `/moteur/vendor/` (empreintes des fichiers SERVIS re-calculées, elles collent),
+> le lien d'évitement pose le focus, le volet replié est `inert`, le bouton `Aa`
+> annonce son état et se ferme par Échap, et les liens jadis morts des tomes 2 et 3
+> ne rendent plus un seul 404.
 >
 > **`665fdcf` — quatre destinations 404 et deux feuilles d'impression fantômes.**
 > `chaleur-circuit-interactif` (tome 2) pointait vers `../` et deux fois vers
