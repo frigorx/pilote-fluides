@@ -24,8 +24,8 @@ Du travail fait que personne ne peut atteindre depuis le parcours.
 - `fil-conducteur-intervention` — 283 Ko
 - `film-effet-de-serre` — 1087 Ko
 - `film-ozone` — 943 Ko
-- `glissement-temperature` — 177 Ko
-- `parcours-manometres` — 242 Ko
+- `glissement-temperature` — 179 Ko
+- `parcours-manometres` — 245 Ko
 - `regulateur-kvl-pedagogique` — 2 Ko
 
 ### 🟡 Sans couverture déclarée
@@ -63,13 +63,13 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `filtre-deshydrateur-pedagogique` | g9 | 15 | 1.05 | 3005 Ko |
 | `frise-vivante` | c00 | 10 | 2.01 | 1178 Ko |
 | `froid-clim-academie` | g1e | — | 1.02 | 30 Ko |
-| `glissement-temperature` | **orphelin** | 13 | *appui : 4 codes* | 177 Ko |
+| `glissement-temperature` | **orphelin** | 13 | *appui : 4 codes* | 179 Ko |
 | `hydrocarbures-a1-a2` | g12 | 28 | 12.01 · 12.02 · 12.03 · 12.04 · 12.05 · 12.06 · 12.13 · 12.14 | 208 Ko |
 | `intervention-hydrocarbures-interactive` | g12b | 27 | 12.07 · 12.08 · 12.09 · 12.10 · 12.11 · 12.12 | 57 Ko |
 | `mission-bouteilles` | p6 | — | 5.02 · 5.05 · 5.06 | 52 Ko |
 | `module-compresseur` | g6 | 6 | 1.05 · 1.02 | 323 Ko |
 | `nomenclature-interactive` | g1c | — | 1.06 | 101 Ko |
-| `parcours-manometres` | **orphelin** | 27 | *appui : 4 codes* | 242 Ko |
+| `parcours-manometres` | **orphelin** | 27 | *appui : 4 codes* | 245 Ko |
 | `pose-manifold-2-voies-interactive` | p1 | 8 | 4.05 · 5.01 · 12.02 | 318 Ko |
 | `pose-manifold-interactive` | p1 | 6 | 4.05 · 5.01 · 5.02 · 3.03 · 3.04 | 89 Ko |
 | `pression-temperature-interactive` | g1b | — | 1.02 · 1.03 | 151 Ko |

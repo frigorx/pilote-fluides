@@ -32,6 +32,7 @@ const FICHIERS_VERSIONNES = [
   "packs/fluides/projection.gen.js",
   "config.js",
   "chiffres.gen.js",
+  "plan-descriptions.gen.js",
   "moteur/charte-edu.css",
   "moteur/impression.css",
   "moteur/lisibilite.js",

@@ -238,8 +238,34 @@ L.push("```");
 L.push("");
 
 writeFileSync(resolve(RACINE, "REGISTRE-COURS-INTERACTIFS.md"), L.join("\n"), "utf8");
+
+/* ---- 8. Les descriptions pour le plan du site ----
+   Réponse au retour « les capsules, je ne sais pas ce que c'est »
+   (F. Henninot, 19/08) : la vue de ligne du plan (index.html) explique
+   chaque station avec la <meta name="description"> de son cours —
+   relevée ici comme le fait la galerie, jamais saisie dans une liste à
+   part. Stations sans cours local (outils, correspondances, cartes
+   d'examen) : pas d'entrée, le plan garde leur devise courte. */
+const DESC = {};
+for (const nom of surDisque) {
+  const page = existsSync(join(RES, nom, "index.html"))
+    ? join(RES, nom, "index.html")
+    : join(RES, nom, "frise-vivante.html");
+  const m = readFileSync(page, "utf8").match(/<meta name="description" content="([^"]*)"/);
+  if (m && m[1]) DESC[nom] = m[1];
+}
+writeFileSync(
+  resolve(RACINE, "plan-descriptions.gen.js"),
+  '/* Fichier GÉNÉRÉ par build/registre.mjs — ne pas modifier à la main.\n' +
+  '   La description de chaque cours, relevée de sa <meta name="description">,\n' +
+  '   pour la vue de ligne du plan (index.html). */\n' +
+  "window.PLAN_DESC = " + JSON.stringify(DESC, null, 1) + ";\n",
+  "utf8"
+);
+
 console.log(
   `✓ REGISTRE-COURS-INTERACTIFS.md — ${cours.length} cours, ${couvertsParUnCours.size} codes couverts, ` +
   `${codesTexteSeul.length} en texte seul` +
   (anomalies ? ` · ⚠ ${anomalies} anomalie(s)` : " · aucune anomalie")
 );
+console.log(`✓ plan-descriptions.gen.js — ${Object.keys(DESC).length} description(s) relevée(s) pour le plan`);

@@ -48,6 +48,9 @@ const FICHIERS_SOURCES = [
      projection continuait de projeter l'ancienne. Exactement le défaut que ce
      fichier existe pour empêcher. */
   "packs/fluides/projection.gen.js",
+  /* Les descriptions du plan (relevées par registre.mjs) : une description
+     de cours corrigée doit atteindre le visiteur qui garde l'onglet ouvert. */
+  "plan-descriptions.gen.js",
   "moteur/moteur.js",
   "moteur/sons.js",
   "moteur/lecture.js",
