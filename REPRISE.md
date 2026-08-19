@@ -32,6 +32,33 @@
 >    obligatoire avant le 31/08/2026 sur le compte frigorx.
 > **Piège payé** : `build/version.mjs` tient une liste PAGES en dur — toute page HTML
 > nouvelle à la racine doit y être ajoutée, sinon elle garde des `?v=` périmés.
+> **Piège payé (soir)** : le `.gitignore` exclut `*.pdf` — la plaquette Fluide publiée
+> par le volet rendait 404 en ligne ; exception `!presentation-inerweb-fluide.pdf`.
+> Toujours vérifier LE SITE SERVI, jamais le seul dépôt.
+
+> **19/08 SOIRÉE — le site s'affine en ligne, au fil des retours.**
+> 1. **Vues de ligne** : chaque cartouche (5 branches + ceinture + boîte à outils)
+>    ouvre le plan rapproché de SA ligne (`#ligne=<slug>`, retour par Échap/Précédent,
+>    trajet visible). Correspondances expliquées en clair dans la vue.
+> 2. **Plan-carte mémoire** : ligne 🎛 CE QUI SE RÈGLE (détendeur en correspondance
+>    avec Les organes, KV + pupitre + pressostats), couloirs de correspondance entre
+>    colonnes ADJACENTES seulement, ligne 🛢 L'HUILE annoncée en pointillé.
+> 3. **Dépersonnalisation** (décision Franck : discrétion) : les signatures visibles
+>    passent à « inerweb.fr » PARTOUT (ici + qcm-travail-hauteur + sous-tension +
+>    Iner.web-tools-beta, tous poussés). Le nom RESTE : mot de l'auteur (remonté EN
+>    TÊTE de page sur son retour), mentions légales, mention longue de marque.js
+>    (fin de document + impression = la preuve de paternité), métadonnées.
+> 4. **Volet** : replié par défaut sur téléphone (≤700 px) ; bloc bêta-testeurs à
+>    trois portes — démo v8 (`…-cerfa-fi-bsd-4/v8/`, PAS la page vitrine), plaquette
+>    `presentation-inerweb-fluide.pdf` (contrôlée sans trace), candidature mailto.
+> 5. **Revue croisée GPT appliquée après vérification une à une** : poignée « Infos »
+>    descendue à 184 px sur mobile (collision mesurée avec la nav), cibles tactiles
+>    42 px, indice « fais glisser la carte », robots.txt + sitemap.xml (SANS la
+>    galerie : noindex à réévaluer par Franck) + Open Graph + description galerie,
+>    role=banner/main. Gemini : pistes PWA et défis-formateurs en file.
+> 6. Le mot de l'auteur : texte dicté par Franck, resserré et validé, EN LIGNE.
+> **Le déclencheur des correctifs** : Franck navigue et dicte ; chaque remarque se
+> vérifie sur https://inerweb.fr AVANT correction, et s'y revérifie APRÈS.
 
 > **19/08 — deux cours ajoutés sur un sujet déjà couvert, branche `cours-manometres-et-glissement` (non poussée) :**
 > `parcours-manometres` (27 étapes + 5 briques indépendantes) et `glissement-temperature`
