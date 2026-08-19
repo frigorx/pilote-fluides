@@ -24,6 +24,8 @@ packs/fluides/res/docs/
 
 # Divers
 *.pdf
+# … sauf la plaquette de présentation Fluide, publiée par le volet (19/08)
+!presentation-inerweb-fluide.pdf
 .DS_Store
 Thumbs.db
 node_modules/
