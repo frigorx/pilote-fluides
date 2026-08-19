@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Du mélange à la mesure : la chaîne du glissement de température</title>
+  <desc id="desc">Quatre cartes reliées. Dans un mélange zéotrope, le liquide et la vapeur ont des compositions différentes. Les températures de bulle et de rosée sont alors distinctes. Leur différence à la même pression est le glissement. Cette différence commande ensuite le choix de la rosée pour la surchauffe et de la bulle pour le sous-refroidissement.</desc>
+  <defs>
+    <style>
+      .card{fill:#fffdf8;stroke:#1b3a63;stroke-width:2}.key{fill:#e3f5ec;stroke:#1e7e54;stroke-width:5;stroke-dasharray:10 4}.step{font:900 13px Calibri,'Segoe UI',sans-serif;letter-spacing:1.5px;fill:#637285}.head{font:700 25px 'Trebuchet MS',Calibri,sans-serif;fill:#1b3a63}.body{font:700 16px Calibri,'Segoe UI',sans-serif;fill:#10233c}.small{font:700 13px Calibri,'Segoe UI',sans-serif;fill:#637285}.arrow{fill:none;stroke:#c9451a;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.a{fill:#dceeff;stroke:#3d7fca;stroke-width:3}.b{fill:#fff0e9;stroke:#c9451a;stroke-width:3;stroke-dasharray:5 3}.letter{font:900 13px Calibri,sans-serif;fill:#1b3a63;text-anchor:middle;dominant-baseline:middle}.label{font:900 14px Calibri,sans-serif;fill:#c9451a}.formula{font:900 22px Consolas,monospace;fill:#1b3a63}
+    </style>
+    <marker id="tip" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0L9 4L0 8Z" fill="#c9451a"/></marker>
+  </defs>
+  <rect width="960" height="420" rx="26" fill="#f7f1e7"/>
+
+  <rect class="card" x="24" y="55" width="206" height="300" rx="20"/>
+  <text class="step" x="44" y="86">1 · COMPOSITION</text>
+  <text class="head" x="44" y="119">Deux phases</text>
+  <text class="body" x="44" y="150">Vapeur plus riche en A</text>
+  <text class="body" x="44" y="174">Liquide plus riche en B</text>
+  <line x1="52" y1="230" x2="202" y2="230" stroke="#3d7fca" stroke-width="3" stroke-dasharray="5 4"/>
+  <text class="small" x="44" y="212">VAPEUR</text><text class="small" x="44" y="250">LIQUIDE</text>
+  <circle class="a" cx="106" cy="204" r="18"/><text class="letter" x="106" y="205">A</text><circle class="a" cx="152" cy="204" r="18"/><text class="letter" x="152" y="205">A</text><circle class="b" cx="188" cy="204" r="18"/><text class="letter" x="188" y="205">B</text>
+  <circle class="a" cx="94" cy="285" r="18"/><text class="letter" x="94" y="286">A</text><circle class="b" cx="140" cy="285" r="18"/><text class="letter" x="140" y="286">B</text><circle class="b" cx="186" cy="285" r="18"/><text class="letter" x="186" y="286">B</text>
+  <text class="label" x="44" y="330">ZÉOTROPE</text>
+
+  <path class="arrow" marker-end="url(#tip)" d="M233 205H255"/>
+  <rect class="card" x="266" y="55" width="206" height="300" rx="20"/>
+  <text class="step" x="286" y="86">2 · FRONTIÈRES</text>
+  <text class="head" x="286" y="119">Bulle ≠ rosée</text>
+  <path d="M300 290V155H445" fill="none" stroke="#1b3a63" stroke-width="2"/>
+  <path d="M313 270C338 242 366 202 392 175" fill="none" stroke="#3d7fca" stroke-width="5"/>
+  <path d="M392 175C415 195 430 230 442 270" fill="none" stroke="#c9451a" stroke-width="5" stroke-dasharray="9 5"/>
+  <text class="small" x="302" y="313">courbe de bulle</text>
+  <text class="small" x="356" y="338">courbe de rosée</text>
+
+  <path class="arrow" marker-end="url(#tip)" d="M475 205H497"/>
+  <rect class="key" x="508" y="55" width="206" height="300" rx="20"/>
+  <text class="step" x="528" y="86">3 · EFFET MESURÉ</text>
+  <text class="head" x="528" y="119">Glissement</text>
+  <path d="M538 270H684M548 260L673 170" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="548" cy="260" r="8" fill="#3d7fca" stroke="#fff" stroke-width="3"/><circle cx="673" cy="170" r="8" fill="#c9451a" stroke="#fff" stroke-width="3"/>
+  <text class="small" x="531" y="292">bulle</text><text class="small" x="647" y="153">rosée</text>
+  <text class="formula" x="526" y="330">Tᵣ − Tᵦ</text>
+
+  <path class="arrow" marker-end="url(#tip)" d="M717 205H739"/>
+  <rect class="card" x="750" y="55" width="186" height="300" rx="20"/>
+  <text class="step" x="770" y="86">4 · DÉCISION</text>
+  <text class="head" x="770" y="119">Bonne colonne</text>
+  <rect x="770" y="150" width="146" height="70" rx="13" fill="#eaf3fc" stroke="#3d7fca" stroke-width="4"/>
+  <text class="small" x="785" y="176">SURCHAUFFE</text><text class="body" x="785" y="202">→ rosée</text>
+  <rect x="770" y="236" width="146" height="70" rx="13" fill="#fff0e9" stroke="#c9451a" stroke-width="4" stroke-dasharray="8 4"/>
+  <text class="small" x="785" y="262">SOUS-REFROID.</text><text class="body" x="785" y="288">→ bulle</text>
+  <text class="small" x="770" y="333">Toujours à la pression</text><text class="small" x="770" y="350">du point mesuré.</text>
+
+  <text class="small" x="480" y="397" text-anchor="middle">À pression constante · dessin pédagogique original inerWeb · aucune valeur de fluide n’est inventée</text>
+</svg>

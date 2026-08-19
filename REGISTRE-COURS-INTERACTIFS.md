@@ -9,11 +9,11 @@
 
 | | |
 |---|---|
-| Cours interactifs en place | **38** |
+| Cours interactifs en place | **39** |
 | Fiches qui en appellent au moins un | **50** |
 | Codes du référentiel couverts par un cours | **99** |
 | Codes encore expliqués par du texte seul | **0** |
-| Poids total des cours | **14.3 Mo** |
+| Poids total des cours | **14.5 Mo** |
 
 ## Anomalies
 
@@ -24,6 +24,7 @@ Du travail fait que personne ne peut atteindre depuis le parcours.
 - `fil-conducteur-intervention` — 283 Ko
 - `film-effet-de-serre` — 1087 Ko
 - `film-ozone` — 943 Ko
+- `glissement-temperature` — 177 Ko
 - `parcours-manometres` — 242 Ko
 - `regulateur-kvl-pedagogique` — 2 Ko
 
@@ -62,6 +63,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `filtre-deshydrateur-pedagogique` | g9 | 15 | 1.05 | 3005 Ko |
 | `frise-vivante` | c00 | 10 | 2.01 | 1178 Ko |
 | `froid-clim-academie` | g1e | — | 1.02 | 30 Ko |
+| `glissement-temperature` | **orphelin** | 13 | *appui : 4 codes* | 177 Ko |
 | `hydrocarbures-a1-a2` | g12 | 28 | 12.01 · 12.02 · 12.03 · 12.04 · 12.05 · 12.06 · 12.13 · 12.14 | 208 Ko |
 | `intervention-hydrocarbures-interactive` | g12b | 27 | 12.07 · 12.08 · 12.09 · 12.10 · 12.11 · 12.12 | 57 Ko |
 | `mission-bouteilles` | p6 | — | 5.02 · 5.05 · 5.06 | 52 Ko |

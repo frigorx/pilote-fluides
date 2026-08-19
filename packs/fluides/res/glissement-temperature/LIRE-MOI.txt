@@ -1,0 +1,26 @@
+POURQUOI LA TEMPÉRATURE GLISSE ? — BROUILLON INERWEB FLUIDES V2
+
+Ouvrir : index.html
+
+Le module fonctionne hors ligne et contient :
+- 2 étages pédagogiques ;
+- 13 scènes illustrées sans dépendance externe ;
+- un départ par chaleur sensible et chaleur latente ;
+- un évaporateur montrant A, B puis A-B-C ;
+- une scène dédiée à la différence entre isobare et isothermes ;
+- une narration française lancée par un seul clic ;
+- une avance automatique après la fin réelle de la voix ;
+- 2 pauses quand l'élève doit agir ;
+- une transcription complète et une navigation manuelle de secours.
+
+La V1 est conservée dans le dossier voisin :
+fluides-glissement-pedagogique-v1-revision
+
+Réglages élève : bouton « Aa » en bas à droite — taille du texte et bascule
+vers une police adaptée (Lexend embarquée, licence OFL).
+
+ÉTAT : intégré le 19 août 2026, non branché sur une fiche.
+Doublon fonctionnel assumé avec `pression-temperature-interactive` et
+`surchauffe-sous-refroidissement-interactif` : voir couverture.json. Celui-ci
+est la porte d'entrée débutant — il construit le phénomène avant de le nommer.
+Non indexé dans le RAG. Arbitrage attendu avant branchement.
