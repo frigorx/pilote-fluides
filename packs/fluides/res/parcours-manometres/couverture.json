@@ -1,0 +1,34 @@
+{
+  "cours": "parcours-manometres",
+  "titre": "Parcours manomètres — lire l'instrument, comprendre le circuit",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 27,
+  "_lire_avant_de_compter": [
+    "Tout est déclaré en APPUI, volontairement. Les codes traités ici sont déjà",
+    "couverts par `pression-temperature-interactive` (1.02, 1.03) et par",
+    "`surchauffe-sous-refroidissement-interactif` (5.05, 4.05, 1.03, 1.06).",
+    "Ce parcours ne les revendique pas : il les travaille autrement, par le geste",
+    "de lecture d'un cadran analogique sans affichage numérique, avec tolérance",
+    "de lecture liée à la plus petite graduation visible.",
+    "Tant que Franck n'a pas arbitré entre ce parcours et les deux cours en place,",
+    "la preuve de couverture reste portée par ces derniers et n'est pas comptée deux fois."
+  ],
+  "codes": {},
+  "appui": {
+    "1.02": "saturation, rosée et bulle : distinguées seulement là où elles existent, c'est-à-dire sur un mélange zéotrope (R-407C) ; sur corps pur le parcours dit « saturation »",
+    "1.03": "lecture de tables et de cadrans : six fluides, tables P/T statiques contrôlées, échelle extérieure en pression relative et échelle intérieure en saturation, conversion relatif/absolu à 1,013 bar",
+    "1.06": "pression stabilisée supérieure à la saturation théorique : suspicion d'incondensables",
+    "5.05": "surchauffe évaporateur et totale, sous-refroidissement condenseur et total : choix du point de mesure, choix de la formule, puis calcul"
+  },
+  "hors_referentiel": [
+    "la Croix du Frigoriste et l'identification des quatre organes : c'est le support de repérage du parcours, pas un objet d'épreuve"
+  ],
+  "briques": {
+    "_note": "Mêmes étapes que le parcours entier, servies séparément. Ce ne sont pas des copies : chaque brique est une tranche du même app.js, donc une correction vaut pour les deux formes.",
+    "circuit-quatre-organes": "7 étapes · Croix du Frigoriste, rôle de chaque organe, côté BP et côté HP",
+    "lire-un-manometre": "6 étapes · aiguille, deux échelles, pression relative et absolue, série de six lectures",
+    "diagnostic-pression-temperature": "2 étapes · identifier un fluide, suspecter des incondensables",
+    "surchauffe-sous-refroidissement": "7 étapes · point de mesure, formule, calcul, rosée et bulle sur zéotrope",
+    "mission-releve-et-calculs": "4 étapes · deux cadrans, quatre écarts, évaluation notée sur 20"
+  }
+}

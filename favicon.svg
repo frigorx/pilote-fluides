@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Icône d'onglet du site : le flocon de la marque sur le bleu charte.
+       Référencée par les pages racine ; les navigateurs qui réclament
+       /favicon.ico d'office recevront un 404 inoffensif, celles-ci priment. -->
+  <rect width="64" height="64" rx="14" fill="#1b3a63"/>
+  <text x="32" y="44" font-size="34" text-anchor="middle">❄️</text>
+</svg>

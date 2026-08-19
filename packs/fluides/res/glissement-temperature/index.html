@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f1e7">
+  <title>Pourquoi la température glisse ? — inerWeb Fluides</title>
+  <meta name="description" content="Découverte racontée et illustrée des fluides zéotropes, azéotropes et du glissement de température, depuis la chaleur latente jusqu'au diagramme log p-h.">
+  <link rel="stylesheet" href="styles.css?v=20260818-17">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="topbar" aria-label="En-tête du module">
+    <div class="brand">
+      <img src="assets/logo-inerweb-edu.svg" alt="inerWeb Édu" width="216" height="50">
+      <span class="brand-context">Pilote Fluides</span>
+    </div>
+    <div class="topbar-meta">
+      <span class="pill">Brouillon pédagogique V2</span>
+      <span class="pill pill-accent">2 étages · 13 scènes</span>
+    </div>
+  </header>
+
+  <main id="main" class="experience">
+    <section id="landing" class="landing" aria-labelledby="landing-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Une histoire de thermomètre et d'évaporateur</p>
+        <h1 id="landing-title">Pourquoi la température <em>glisse-t-elle&nbsp;?</em></h1>
+        <p class="lead">On part de ce que vous connaissez&nbsp;: <strong>je chauffe, la température monte… puis le fluide se met à bouillir.</strong></p>
+        <div class="start-actions">
+          <button class="primary start" id="start-narrated" type="button"><span aria-hidden="true">▶</span> Lancer l'explication racontée</button>
+          <button class="secondary start" id="start-silent" type="button">Lire sans voix</button>
+        </div>
+        <p class="start-note">Un seul clic lance le récit. Les scènes explicatives avancent ensuite seules. Le récit s'arrête quand c'est à vous d'agir.</p>
+      </div>
+
+      <div class="hero-observation" aria-label="Deux courbes de température comparées">
+        <div class="mini-curve">
+          <svg viewBox="0 0 460 280" role="img" aria-labelledby="hero-curve-title hero-curve-desc">
+            <title id="hero-curve-title">Chaleur sensible et zone latente comparées</title>
+            <desc id="hero-curve-desc">Trois zones sont séparées. Avant et après le changement d'état, la chaleur est sensible. Dans la zone latente seulement, le fluide pur reste à température constante tandis que le zéotrope passe de la température de bulle à la température de rosée.</desc>
+            <rect class="hero-latent-band" x="165" y="32" width="150" height="205" rx="8"/>
+            <path class="axis" d="M48 28V238H440"/>
+            <path class="zone-separator" d="M165 32V238M315 32V238"/>
+            <text class="zone-name" x="70" y="20">sensible · liquide</text><text class="zone-name" x="192" y="20">LATENTE</text><text class="zone-name" x="333" y="20">sensible · vapeur</text>
+            <text x="8" y="34">T°</text><text x="335" y="268">chaleur reçue</text>
+            <path class="curve curve-pure" d="M62 218L165 150H315L420 72"/>
+            <path class="curve-mix-sensible" d="M62 230L165 194M315 110L420 52"/>
+            <path class="curve-mix-latent" d="M165 194L315 110"/>
+            <circle class="hero-point bubble-point" cx="165" cy="194" r="6"/><circle class="hero-point dew-point" cx="315" cy="110" r="6"/>
+            <text class="curve-label pure-label" x="190" y="142">pur · T constante</text>
+            <text class="curve-label mix-label" x="183" y="82">zéotrope · T glisse</text>
+            <text class="point-label" x="112" y="207">T bulle</text><text class="point-label" x="322" y="126">T rosée</text>
+            <text class="hero-legend" x="58" y="258">trait plein = pur</text><text class="hero-legend mix-label" x="176" y="258">tirets = zéotrope</text>
+          </svg>
+        </div>
+        <p><strong>La question du parcours</strong><br>Pourquoi, dans la zone latente, le pur garde-t-il la même température tandis que le zéotrope passe de bulle à rosée&nbsp;?</p>
+      </div>
+
+      <div class="two-floors" aria-label="Architecture du parcours">
+        <article><span class="floor-number">1</span><div><small>ÉTAGE 1 · JE VOIS</small><h2>Du palier au glissement</h2><p>Chaleur sensible, chaleur latente, puis mélange à deux ou trois composants.</p></div></article>
+        <article><span class="floor-number">2</span><div><small>ÉTAGE 2 · JE M'EN SERS</small><h2>Des mots au métier</h2><p>Bulle, rosée, isobare, isothermes, log p‑h et mesures.</p></div></article>
+      </div>
+    </section>
+
+    <section id="course" class="course" hidden aria-label="Cours interactif">
+      <nav class="stepper" id="stepper" aria-label="Scènes du cours"></nav>
+
+      <article class="lesson-card" aria-labelledby="lesson-title">
+        <header class="lesson-top">
+          <div class="lesson-heading">
+            <p class="eyebrow" id="lesson-kicker"></p>
+            <h2 id="lesson-title"></h2>
+          </div>
+          <div class="voice-panel" aria-label="Commandes du récit">
+            <span class="story-state" id="story-state" data-state="off">Mode raconté · arrêté</span>
+            <button class="control listen" id="listen" type="button" aria-label="Écouter et enchaîner" aria-pressed="false"><span aria-hidden="true">▶</span><b>Écouter et enchaîner</b></button>
+            <button class="control stop-voice" id="stop-voice" type="button" aria-label="Arrêter le récit"><span aria-hidden="true">■</span><b>Arrêter</b></button>
+            <label class="speed" for="voice-rate">Vitesse
+              <select id="voice-rate">
+                <option value="0.8">0,80×</option>
+                <option value="0.95" selected>0,95×</option>
+                <option value="1.1">1,10×</option>
+                <option value="1.25">1,25×</option>
+              </select>
+            </label>
+            <button class="control exit-course" id="exit-course" type="button">Quitter</button>
+          </div>
+        </header>
+
+        <p class="lesson-text" id="lesson-text"></p>
+        <details class="transcript" id="transcript-wrap">
+          <summary>Lire tout ce que dit la voix</summary>
+          <ol id="transcript"></ol>
+        </details>
+
+        <div class="interactive-zone" id="zone" aria-live="polite"></div>
+
+        <footer class="lesson-footer">
+          <button class="nav previous" id="previous" type="button">← Retour</button>
+          <div class="lesson-status"><span id="status" aria-live="polite"></span><i id="auto-progress" aria-hidden="true"></i></div>
+          <button class="nav next" id="next" type="button">Continuer →</button>
+        </footer>
+      </article>
+    </section>
+
+    <section id="summary" class="summary" hidden aria-labelledby="summary-title">
+      <button class="control summary-exit" id="summary-exit" type="button">× Quitter le bilan</button>
+      <p class="eyebrow">Bilan · racontez l'histoire en trois phrases</p>
+      <h2 id="summary-title">À la fin, les trois mots ne sont plus abstraits.</h2>
+      <div class="definition-grid">
+        <article class="definition zeo"><small>1 · ZÉOTROPE</small><strong>Le mélange évolue pendant le changement d'état.</strong><p>Le liquide et la vapeur n'ont pas exactement la même composition. À pression constante, la température glisse entre bulle et rosée.</p></article>
+        <article class="definition azeo"><small>2 · AZÉOTROPE</small><strong>Le mélange change d'état ensemble.</strong><p>À la condition azéotropique, liquide et vapeur ont la même composition. Il se comporte comme un fluide pur&nbsp;: pas de glissement.</p></article>
+        <article class="definition glide"><small>3 · GLISSEMENT</small><strong>C'est l'écart entre rosée et bulle.</strong><p>À la même pression&nbsp;: <b>ΔT<sub>glissement</sub> = T<sub>rosée</sub> − T<sub>bulle</sub></b>.</p></article>
+      </div>
+      <div class="summary-chain" aria-label="Histoire complète">
+        <span>composition différente</span><i>→</i><span>température qui glisse</span><i>→</i><span>bulle / rosée</span><i>→</i><span>bonne mesure</span>
+      </div>
+      <div class="summary-actions">
+        <button class="primary" id="restart" type="button">Rejouer l'histoire racontée</button>
+        <button class="secondary" id="review-logph" type="button">Revoir le diagramme log p‑h</button>
+      </div>
+      <p class="draft-warning">Brouillon non indexé&nbsp;: le contenu attend le bon à tirer humain.</p>
+    </section>
+  </main>
+
+  <footer class="page-footer">❄ inerWeb Édu — F. Henninot, enseignant en filière froid et climatisation · brouillon du 18 août 2026 · <span class="licence">CC BY-NC-ND 4.0</span></footer>
+  <script src="app.js?v=20260818-17"></script>
+  <script src="assets/lisibilite.js?v=20260819"></script>
+</body>
+</html>

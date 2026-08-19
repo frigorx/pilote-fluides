@@ -59,10 +59,17 @@ const surDisque = readdirSync(RES, { withFileTypes: true })
   .filter((n) => existsSync(join(RES, n, "index.html")) || existsSync(join(RES, n, "frise-vivante.html")))
   .sort();
 
+/* Le poids annoncé est celui de ce qui part chez l'élève. Un cours peut porter
+   son propre harnais de contrôle (`tests/`), dont les captures d'écran pèsent
+   plus lourd que le cours lui-même et ne sont ni publiées ni versionnées.
+   Les compter ferait lire 1,5 Mo là où le stagiaire en télécharge 260 Ko. */
+const HORS_LIVRAISON = new Set(["tests"]);
+
 function poids(dossier) {
   let n = 0;
   (function pese(d) {
     for (const e of readdirSync(d, { withFileTypes: true })) {
+      if (e.isDirectory() && HORS_LIVRAISON.has(e.name)) continue;
       const p = join(d, e.name);
       if (e.isDirectory()) pese(p);
       else n += statSync(p).size;

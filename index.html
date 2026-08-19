@@ -1,59 +1,827 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <!-- La frise vivante : premier écran vu en entrant dans l'application —
-       le « pourquoi » avant même la sécurité (demande F. Henninot, 28/07).
-       Repère `pilote_frise_vue` en sessionStorage (pas localStorage depuis
-       le 28/07 soir, même jour) : la frise redevient la porte d'entrée à
-       CHAQUE nouvelle session de navigateur (nouvel onglet, redémarrage),
-       ce qui est le comportement voulu — F. Henninot, en la revoyant une
-       deuxième fois plus tard le même jour, ne la retrouvait plus du tout.
-       sessionStorage évite pour autant la boucle : une fois "Commencer la
-       formation" cliqué, revenir sur index.html DANS LE MÊME onglet ne
-       redemande pas la frise. Volontairement au tout début du <head>,
-       avant tout autre script ou feuille de style : on ne doit jamais
-       laisser apparaître l'accueil une fraction de seconde avant de
-       rediriger. `location.replace` (pas `href`) : pas d'entrée dans
-       l'historique, pour que le bouton Précédent depuis la frise ne
-       revienne pas sur un index.html à moitié chargé. formateur.html et
-       projection.html ne passent jamais par ce fichier — la console
-       formateur n'est pas concernée. -->
-  <script>
-    try {
-      if (!sessionStorage.getItem('pilote_frise_vue')) {
-        location.replace('packs/fluides/res/frise-vivante/frise-vivante.html');
-      }
-    } catch (e) { /* sessionStorage indisponible : on continue normalement */ }
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>inerWeb Pilote — Habilitation fluides frigorigènes (démonstrateur)</title>
-  <meta name="description" content="Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote.">
-  <link rel="stylesheet" href="moteur/charte-edu.css?v=ba71c69b8d">
-  <link rel="stylesheet" href="moteur/impression.css?v=ba71c69b8d" media="print">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>inerWeb Édu — apprendre le froid, station par station</title>
+<meta name="description" content="Le plan de formation inerWeb Édu : tous les cours interactifs du froid sur une carte de métro — théorie, organes, gestes, fluides, examens blancs. Gratuit, sans compte.">
+<style>
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --violet:#7a4fa0;
+          --vert:#1e7e54; --ambre:#b06a00; --hp:#c0392b;
+          --txt:#1d2a38; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#ffffff; --ligne:#d6dee7;
+          --ok:#1e7e54; --ok-bg:#e3f5ec;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange); }
+
+  /* La barre du haut : logo à gauche, quatre entrées à droite. */
+  .entete { background:var(--carte); border-bottom:1px solid var(--ligne); }
+  .entete .dedans { max-width:1080px; margin:0 auto; padding:12px 20px;
+                    display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+  .entete .marque { display:flex; align-items:center; text-decoration:none; }
+  .nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap;
+         font-family:var(--titre); font-size:16px; font-weight:bold; }
+  .nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px;
+           border-bottom:3px solid transparent; }
+  .nav a:hover { border-bottom-color:var(--ligne); color:var(--bleu); }
+  .nav a.ici { border-bottom-color:var(--orange); }
+
+  /* Le pied de page est posé par moteur/marque.js (mode document). */
+  .page { max-width:1080px; margin:0 auto; padding:0 20px 18px; }
+
+  /* ---- Accroche ---- */
+  .accroche { margin:26px 0 0; display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+  .accroche .texte { flex:1; min-width:280px; }
+  .pastille { display:inline-block; font-size:12px; font-weight:bold; color:#fff;
+              background:var(--orange); padding:3px 12px; border-radius:999px;
+              white-space:nowrap; letter-spacing:.4px; margin-bottom:12px; }
+  h1 { margin:0 0 10px; font-family:var(--titre); font-weight:bold; font-size:38px;
+       line-height:1.15; color:var(--bleu); text-wrap:pretty; }
+  h1 em { font-style:normal; color:var(--orange); }
+  .chapo { margin:0 0 20px; font-size:18px; color:var(--mut); max-width:30em; text-wrap:pretty; }
+  .chapo strong { color:var(--txt); }
+  .boutons { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  .bouton { display:inline-block; padding:11px 24px; background:var(--bleu); color:#fff;
+            font-weight:bold; text-decoration:none; border-radius:999px; white-space:nowrap; }
+  .bouton:hover { background:var(--bleu-clair); color:#fff; }
+  .bouton.creux { padding:9px 22px; background:var(--carte); color:var(--bleu);
+                  border:2px solid var(--bleu-clair); }
+  .bouton.creux:hover { background:#e7eff7; color:var(--bleu); }
+  .flocon { font-size:96px; line-height:1; filter:drop-shadow(0 6px 12px rgba(27,58,99,.18));
+            animation:derive 5s ease-in-out infinite; }
+  @keyframes derive { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
+  @keyframes flux { to { stroke-dashoffset:-40; } }
+  @media (prefers-reduced-motion: reduce) {
+    .flocon, .flux { animation:none; }
+    .plan svg animate { display:none; }
+  }
+
+  /* ---- Blocs blancs ---- */
+  .bloc { background:var(--carte); border:1px solid var(--ligne);
+          border-radius:var(--r); box-shadow:var(--ombre); }
+  .bloc .titre-bloc { padding:18px 24px 0; display:flex; align-items:baseline;
+                      gap:14px; flex-wrap:wrap; }
+  .bloc .titre-bloc h2 { margin:0; font-family:var(--titre); font-size:22px; color:var(--bleu); }
+  .bloc .titre-bloc span { font-size:14px; color:var(--mut); }
+
+  /* ---- Le plan de formation ---- */
+  .plan { margin-top:30px; overflow:hidden; }
+  .plan .legende-plan { display:flex; gap:14px; flex-wrap:wrap; align-items:center;
+                        padding:8px 24px 0; font-size:13.5px; color:var(--mut); }
+  .plan .legende-plan .puce-l { display:inline-flex; align-items:center; gap:6px; }
+  .plan .legende-plan .rond { width:13px; height:13px; border-radius:50%;
+                              border:3.5px solid var(--bleu-clair); background:#fff; display:inline-block; }
+  .plan .legende-plan .rond.vu { background:var(--bleu-clair); }
+  .plan .legende-plan button { font:inherit; font-size:13px; cursor:pointer; color:var(--mut);
+                               background:none; border:1.5px solid var(--ligne); border-radius:999px;
+                               padding:3px 12px; margin-left:auto; }
+  .plan .legende-plan button:hover { border-color:var(--bleu-clair); color:var(--bleu); }
+  .plan .defilant { overflow-x:auto; padding:6px 10px 4px; }
+  .plan svg { width:100%; min-width:980px; display:block; }
+  .plan a { cursor:pointer; }
+  .plan a:hover g { opacity:.72; }
+  .plan text { font-family:Calibri,sans-serif; }
+  .plan .st   { fill:var(--bleu); font-size:15px; font-weight:bold; }
+  .plan .sst  { fill:var(--mut); font-size:12px; }
+  .plan .coche { fill:#fff; font-size:11px; font-weight:bold; }
+  .plan .dep   { fill:var(--bleu); font-family:var(--titre); font-size:17px; font-weight:bold; }
+  .plan .dep-s { fill:var(--mut); font-size:13px; }
+  .plan .aig   { fill:#fff; font-family:var(--titre); font-size:14px; font-weight:bold; }
+  .plan .puce   { fill:#fff; font-family:var(--titre); font-size:14.5px; font-weight:bold; }
+  .plan .puce-s { fill:var(--mut); font-size:12.5px; }
+  .plan .fin  { fill:var(--ok); font-family:var(--titre); font-size:13px; font-weight:bold; }
+  .plan .note { fill:var(--mut); font-size:13px; font-style:italic; }
+  .plan .sortie { fill:var(--mut); font-size:15px; font-weight:bold; }
+
+  /* ---- Le circuit cliquable ---- */
+  .surtitre { font-family:var(--titre); color:var(--bleu); font-weight:bold; font-size:14px;
+              letter-spacing:.6px; text-transform:uppercase; margin:34px 4px 6px; }
+  .amorce { margin:0 4px 16px; color:var(--mut); }
+  .amorce strong { color:var(--txt); }
+  .circuit { padding:22px 22px 12px; overflow-x:auto; }
+  .circuit svg { width:100%; max-width:760px; display:block; margin:0 auto; }
+  .circuit a { cursor:pointer; }
+  .circuit a:hover g { opacity:.8; }
+  .circuit text { font-family:Calibri,sans-serif; }
+  .circuit .org   { fill:var(--bleu); font-family:var(--titre); font-size:17px; font-weight:bold; }
+  .circuit .org-s { fill:var(--mut); font-size:12.5px; }
+  .circuit .cote  { font-family:var(--titre); font-size:14px; font-weight:bold; }
+  .circuit .cote.hp { fill:var(--hp); }
+  .circuit .cote.bp { fill:var(--bleu-clair); }
+  .circuit .filigrane { fill:var(--ligne); font-family:var(--titre); font-size:15px; font-weight:bold; }
+  .legende { margin:8px 0 10px; text-align:center; font-size:13px; color:var(--mut); }
+
+  /* ---- Le volet de communication ----
+     Ouvert à l'arrivée, refermé d'un clic. Il RECOUVRE la page, il ne la
+     pousse pas : pousser ferait re-calculer la largeur du plan à chaque
+     ouverture. Aucune mention d'établissement — voir le pied du volet. */
+  .volet { position:fixed; top:0; left:0; z-index:60; width:min(330px,86vw); height:100%;
+           background:var(--carte); border-right:1px solid var(--ligne);
+           box-shadow:4px 0 18px rgba(27,58,99,.14);
+           display:flex; flex-direction:column; }
+  .volet.pret { transition:transform .22s ease; }
+  .volet.replie { transform:translateX(-101%); }
+  .volet-tete { display:flex; align-items:flex-start; gap:10px; padding:14px 16px 10px;
+                border-bottom:1px solid var(--ligne); }
+  .volet-titre { font-family:var(--titre); font-weight:bold; color:var(--bleu); font-size:17px; }
+  .volet-sous { font-size:12.5px; color:var(--mut); }
+  .volet-fermer { margin-left:auto; flex:none; font:inherit; font-size:21px; line-height:1;
+                  cursor:pointer; background:none; border:1.5px solid var(--ligne);
+                  border-radius:50%; width:32px; height:32px; color:var(--mut); }
+  .volet-fermer:hover { border-color:var(--bleu-clair); color:var(--bleu); }
+  .volet-corps { overflow-y:auto; padding:12px 16px 18px;
+                 display:flex; flex-direction:column; gap:10px; }
+  .volet-bloc { border:1px solid var(--ligne); border-radius:10px; padding:11px 13px; background:#fbfdff; }
+  .volet-bloc h3 { margin:0 0 3px; font-family:var(--titre); font-size:14.5px; color:var(--bleu); }
+  .volet-bloc p { margin:0; font-size:13px; line-height:1.45; color:var(--mut); }
+  .volet-bloc.ouvert { background:#fff7f3; border-color:#ffd9c7; }
+  .volet-libre { display:inline-block; margin-top:6px; font-size:11px; font-weight:bold;
+                 color:var(--mut); background:#e7eff7; border-radius:999px; padding:2px 9px; }
+  .volet-pied { margin:4px 0 0; font-size:11.5px; line-height:1.5; color:var(--mut); }
+  .volet-poignee { position:fixed; top:96px; left:0; z-index:59; display:none;
+                   font:inherit; font-size:13px; font-weight:bold; cursor:pointer;
+                   background:var(--bleu); color:#fff; border:0; border-radius:0 10px 10px 0;
+                   padding:9px 13px; box-shadow:2px 2px 8px rgba(27,58,99,.2); }
+  .volet-poignee:hover { background:var(--bleu-clair); }
+  @media (prefers-reduced-motion: reduce) { .volet.pret { transition:none; } }
+
+  /* ---- Les trois portes ---- */
+  .tuiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+            gap:16px; margin-top:34px; }
+  .tuile { text-decoration:none; background:var(--carte); border:1px solid var(--ligne);
+           border-radius:var(--r); padding:20px 22px; box-shadow:var(--ombre);
+           display:flex; flex-direction:column; gap:6px;
+           transition:transform .12s, border-color .12s; }
+  .tuile:hover { transform:translateY(-3px); border-color:var(--bleu-clair); }
+  .tuile .emoji { font-size:32px; line-height:1; }
+  .tuile h3 { margin:4px 0 0; font-family:var(--titre); font-size:18px; color:var(--bleu); }
+  .tuile p { margin:0; color:var(--mut); font-size:14px; line-height:1.5; }
+  .tuile .suite { margin-top:auto; padding-top:8px; color:var(--orange);
+                  font-weight:bold; font-size:14px; }
+</style>
 </head>
 <body>
-  <div id="app"></div>
-  <!-- Côté ÉLÈVE : BUILD ÉLÈVE, sans la couche pilote.
-       Régénéré par `node build/build.mjs` après chaque modification du pack. -->
-  <script src="packs/fluides/pack.eleve.js?v=ba71c69b8d"></script>
-  <!-- Config optionnelle (scoring serveur, phase 2) -->
-  <script src="config.js?v=ba71c69b8d"></script>
-  <!-- Habillage sonore des planches animées : la table du pack, puis le
-       mécanisme. Coupé par défaut, aucun son chargé tant qu'on ne le joue
-       pas. Les deux fichiers sont facultatifs : sans eux, le moteur
-       fonctionne à l'identique, en silence. -->
-  <script src="packs/fluides/sons.js?v=ba71c69b8d"></script>
-  <script src="moteur/sons.js?v=ba71c69b8d"></script>
-  <!-- Lecture à voix haute d'une fiche, à la demande : aide FLE/DYS.
-       Facultatif, ne casse rien si absent. -->
-  <script src="moteur/voix-index.js?v=20260806-1"></script>
-  <script src="moteur/voix.js?v=20260806-1"></script>
-  <script src="moteur/lecture.js?v=ba71c69b8d"></script>
-  <!-- Moteur générique -->
-  <script src="moteur/moteur.js?v=ba71c69b8d"></script>
-<!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
-<script src="moteur/lisibilite.js?v=ba71c69b8d"></script>
-<script src="moteur/marque.js?v=ba71c69b8d" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+
+<!-- ===================================================================
+     VOLET DE COMMUNICATION
+     Repris du système dormant de manometres_v5.html (les quatre volets
+     existaient encore dans la page, mais plus aucun bouton ne les
+     ouvrait). Reconstruit ici SANS AUCUNE identité d'établissement :
+     ni nom, ni adresse, ni courriel officiel, ni logo — F. Henninot n'a
+     pas l'autorisation de parler au nom de qui que ce soit. Les quatre
+     espaces sont donc VIERGES et déclarés comme tels : ils montrent ce
+     que la page pourrait accueillir, rien de plus. Si l'offre n'est pas
+     saisie, ces emplacements accueilleront autre chose (partenaires,
+     entreprises) sans toucher à la mécanique.
+     =================================================================== -->
+<aside class="volet" id="volet" role="complementary" aria-label="Actualités et espaces de communication">
+  <div class="volet-tete">
+    <div>
+      <div class="volet-titre">Actualités &amp; espaces</div>
+      <div class="volet-sous">Ce que cette page peut accueillir</div>
+    </div>
+    <button type="button" class="volet-fermer" id="volet-fermer" aria-label="Fermer le panneau">×</button>
+  </div>
+  <div class="volet-corps">
+
+    <div class="volet-bloc">
+      <h3>📰 Actualités</h3>
+      <p>Les nouveautés du site : cours ajoutés, outils mis à jour, corrections. Rien à signaler pour le moment.</p>
+    </div>
+
+    <div class="volet-bloc ouvert">
+      <h3>🤝 Partenaires &amp; bêta-testeurs</h3>
+      <p><strong>inerWeb Fluide</strong> — le logiciel de traçabilité des fluides frigorigènes — cherche des centres de formation et des professionnels pour l’essayer avant sa sortie.<br>
+      <a href="mailto:inerweb.fh@gmail.com?subject=B%C3%AAta-test%20inerWeb%20Fluide">Se proposer comme bêta-testeur ▸</a></p>
+    </div>
+
+    <div class="volet-bloc">
+      <h3>🎓 Stages et PFMP</h3>
+      <p>Emplacement prévu pour un établissement qui cherche des terrains de stage : périodes, filières, contact.</p>
+      <span class="volet-libre">espace libre</span>
+    </div>
+
+    <div class="volet-bloc">
+      <h3>🔧 Recruter un apprenti</h3>
+      <p>Emplacement prévu pour présenter des jeunes formés au froid et à la climatisation à des entreprises qui recrutent.</p>
+      <span class="volet-libre">espace libre</span>
+    </div>
+
+    <div class="volet-bloc">
+      <h3>💛 Soutenir une formation</h3>
+      <p>Emplacement prévu pour un appel au soutien : taxe d’apprentissage, dons de matériel, équipement d’atelier.</p>
+      <span class="volet-libre">espace libre</span>
+    </div>
+
+    <p class="volet-pied">inerWeb est un projet personnel de <strong>F. Henninot, enseignant en filière froid et climatisation</strong>, mené sur son temps et à ses frais. Les trois espaces libres ci-dessus sont proposés sans contrepartie à un établissement de formation qui souhaiterait s’en servir ; ils ne représentent aujourd’hui aucune structure.</p>
+  </div>
+</aside>
+<button type="button" class="volet-poignee" id="volet-poignee" aria-label="Ouvrir le panneau d’actualités">Infos ▸</button>
+
+<div class="entete">
+  <div class="dedans">
+    <a class="marque" href="index.html" aria-label="inerWeb Édu — accueil">
+      <!-- Logo figé, charte § 3.4 : orange DU LOGO #e8914a, distinct de l'orange
+           du contenu. C'est aussi ce que marque.js reconnaît (aria-label
+           commençant par « inerWeb ») pour savoir que l'en-tête est marqué. -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+    </a>
+    <nav class="nav">
+      <a class="ici" href="index.html">Accueil</a>
+      <a href="galerie.html">Catalogue</a>
+      <a href="metier.html">Le métier</a>
+      <a href="formateurs.html">Formateurs</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="accroche">
+    <div class="texte">
+      <div class="pastille">APPRENDRE ET DÉCOUVRIR LE FROID</div>
+      <h1>Regarde le métier de frigoriste, <em>station par station</em>.</h1>
+      <p class="chapo">Un plan, un fluide qui circule, des cours à chaque arrêt. Tu montes où tu veux — <strong>gratuit, sans compte</strong>.</p>
+      <div class="boutons">
+        <a class="bouton" href="#carte">Voir le plan ▾</a>
+        <a class="bouton creux" href="galerie.html">Tout le catalogue</a>
+      </div>
+    </div>
+    <div class="flocon">❄️</div>
+  </div>
+
+  <div class="bloc plan" id="carte">
+    <div class="titre-bloc">
+      <h2>Le plan de formation</h2>
+      <span>Suis le fluide. Chaque station est un cours qui s’ouvre en un clic.</span>
+    </div>
+    <div class="legende-plan">
+      <span class="puce-l"><span class="rond"></span> à visiter</span>
+      <span class="puce-l"><span class="rond vu"></span> visitée</span>
+      <span class="puce-l">🔒 code formateur</span>
+      <span class="puce-l"><b id="trajet-n">0</b>&nbsp;/&nbsp;<span id="trajet-total">…</span> stations · ton trajet reste sur cet appareil</span>
+      <button type="button" id="trajet-effacer">⟳ effacer mon trajet</button>
+    </div>
+    <div class="defilant"><div id="plan-svg"></div></div>
+  </div>
+
+  <div class="surtitre">Entrer par le circuit</div>
+  <p class="amorce">Plutôt visuel ? Clique sur un <strong>organe</strong> pour ouvrir son cours.</p>
+  <div class="bloc circuit">
+    <!-- Schéma de principe, à la croix du frigoriste : détendeur à gauche,
+         condenseur en haut, compresseur à droite, évaporateur en bas.
+         Sens du fluide : compresseur → condenseur → détendeur → évaporateur.
+         Sur chaque colonne latérale, la moitié haute est HP (rouge) et la
+         moitié basse BP (bleue) : refoulement en haut à droite, aspiration
+         en bas à droite ; liquide HP en haut à gauche, détente en bas. -->
+    <!-- Les organes sont les SYMBOLES NORMALISÉS de la bibliothèque du
+         dépôt (packs/fluides/res/symboles/) recopiés en ligne : compresseur,
+         détendeur thermostatique à égalisation externe (bulbe TC tourné vers
+         l'aspiration), échangeur à air ventilé pour le condenseur et
+         l'évaporateur — c'est le même symbole dans la norme, seule la
+         fonction change, les libellés la portent. Détendeur et compresseur
+         sont tournés de 90° : sur les colonnes, le fluide circule à la
+         verticale. -->
+    <svg viewBox="0 0 780 430" role="img" aria-label="Schéma du circuit frigorifique aux symboles normalisés, organes cliquables">
+      <path d="M 120 64 L 660 64" stroke="#c0392b" stroke-width="5" fill="none"></path>
+      <path d="M 120 366 L 660 366" stroke="#2f5689" stroke-width="5" fill="none"></path>
+      <path d="M 120 64 L 120 215" stroke="#c0392b" stroke-width="5" fill="none"></path>
+      <path d="M 120 215 L 120 366" stroke="#2f5689" stroke-width="5" fill="none"></path>
+      <path d="M 660 64 L 660 215" stroke="#c0392b" stroke-width="5" fill="none"></path>
+      <path d="M 660 215 L 660 366" stroke="#2f5689" stroke-width="5" fill="none"></path>
+      <!-- Flèches dans le sens du cycle, sur les segments visibles -->
+      <polygon points="558,56 542,64 558,72" fill="#c0392b"></polygon>
+      <polygon points="238,56 222,64 238,72" fill="#c0392b"></polygon>
+      <polygon points="112,104 120,120 128,104" fill="#c0392b"></polygon>
+      <polygon points="112,312 120,328 128,312" fill="#2f5689"></polygon>
+      <polygon points="238,358 254,366 238,374" fill="#2f5689"></polygon>
+      <polygon points="558,358 574,366 558,374" fill="#2f5689"></polygon>
+      <polygon points="652,328 660,312 668,328" fill="#2f5689"></polygon>
+      <polygon points="652,120 660,104 668,120" fill="#c0392b"></polygon>
+      <text class="cote hp" x="390" y="22"  text-anchor="middle">HP — vapeur chaude puis liquide</text>
+      <text class="cote bp" x="390" y="412" text-anchor="middle">BP — le fluide s’évapore et revient</text>
+      <text class="filigrane" x="390" y="222" text-anchor="middle">LE CIRCUIT FRIGORIFIQUE</text>
+
+      <a href="packs/fluides/res/condenseur-interactif/index.html" target="_blank" rel="noopener"><g>
+        <title>Ouvrir : Condenseur — installer, régler, vérifier</title>
+        <rect x="308" y="26" width="164" height="130" rx="12" fill="#ffffff" stroke="#ff6b35" stroke-width="2"></rect>
+        <g transform="translate(390,74) scale(1.55)" stroke="#1b3a63" stroke-width="1.1" fill="none">
+          <rect x="-18" y="-20" width="36" height="48"></rect>
+          <line x1="-14" y1="16" x2="-14" y2="24"></line><line x1="-7" y1="16" x2="-7" y2="24"></line>
+          <line x1="0" y1="16" x2="0" y2="24"></line><line x1="7" y1="16" x2="7" y2="24"></line>
+          <line x1="14" y1="16" x2="14" y2="24"></line><line x1="-19" y1="20" x2="19" y2="20"></line>
+          <circle cx="0" cy="-2" r="15"></circle>
+          <line x1="7" y1="-15" x2="13" y2="5"></line><line x1="-7" y1="-15" x2="-13" y2="5"></line>
+          <path d="M 6 5 A 6 6 0 0 1 0 -1"></path><path d="M -7 4 A 6 6 0 0 1 -1 -2"></path>
+          <path d="M 0 -1 A 6 6 0 0 1 -6 5"></path><path d="M 1 -2 A 6 6 0 0 1 7 4"></path>
+          <ellipse cx="0" cy="-7" rx="2.5" ry="4.5"></ellipse>
+        </g>
+        <text class="org"   x="390" y="130" text-anchor="middle">Condenseur</text>
+        <text class="org-s" x="390" y="147" text-anchor="middle">rejette la chaleur ▸</text>
+      </g></a>
+
+      <a href="packs/fluides/res/evaporateur-interactif/index.html" target="_blank" rel="noopener"><g>
+        <title>Ouvrir : Évaporateur — installer, régler, vérifier</title>
+        <rect x="308" y="274" width="164" height="130" rx="12" fill="#ffffff" stroke="#2f5689" stroke-width="2"></rect>
+        <g transform="translate(390,322) scale(1.55)" stroke="#1b3a63" stroke-width="1.1" fill="none">
+          <rect x="-18" y="-20" width="36" height="48"></rect>
+          <line x1="-14" y1="16" x2="-14" y2="24"></line><line x1="-7" y1="16" x2="-7" y2="24"></line>
+          <line x1="0" y1="16" x2="0" y2="24"></line><line x1="7" y1="16" x2="7" y2="24"></line>
+          <line x1="14" y1="16" x2="14" y2="24"></line><line x1="-19" y1="20" x2="19" y2="20"></line>
+          <circle cx="0" cy="-2" r="15"></circle>
+          <line x1="7" y1="-15" x2="13" y2="5"></line><line x1="-7" y1="-15" x2="-13" y2="5"></line>
+          <path d="M 6 5 A 6 6 0 0 1 0 -1"></path><path d="M -7 4 A 6 6 0 0 1 -1 -2"></path>
+          <path d="M 0 -1 A 6 6 0 0 1 -6 5"></path><path d="M 1 -2 A 6 6 0 0 1 7 4"></path>
+          <ellipse cx="0" cy="-7" rx="2.5" ry="4.5"></ellipse>
+        </g>
+        <text class="org"   x="390" y="378" text-anchor="middle">Évaporateur</text>
+        <text class="org-s" x="390" y="395" text-anchor="middle">absorbe la chaleur ▸</text>
+      </g></a>
+
+      <a href="packs/fluides/res/detendeur-interactif/index.html" target="_blank" rel="noopener"><g>
+        <title>Ouvrir : Comprendre le détendeur thermostatique</title>
+        <rect x="48" y="142" width="144" height="146" rx="12" fill="#ffffff" stroke="#2f5689" stroke-width="2"></rect>
+        <g transform="translate(120,204) rotate(90) scale(2.1)" stroke="#1b3a63" stroke-width="1" fill="none">
+          <polygon points="2,1 0,3 -2,1 -10,5 -10,-5 10,5 10,-5 -2,1 0,0 0,0" fill="white"></polygon>
+          <line x1="0" y1="0" x2="0" y2="-6"></line>
+          <circle cx="0" cy="-12" r="5.8" fill="white"></circle>
+          <line x1="0" y1="-18" x2="0" y2="-20"></line>
+          <circle cx="0" cy="-20" r="1.5" fill="#1b3a63" stroke="none"></circle>
+        </g>
+        <text x="146" y="182" font-family="sans-serif" font-size="11" fill="#5a6b7d" text-anchor="middle">bulbe</text>
+        <text class="org"   x="120" y="256" text-anchor="middle">Détendeur</text>
+        <text class="org-s" x="120" y="273" text-anchor="middle">chute de pression ▸</text>
+      </g></a>
+
+      <a href="packs/fluides/res/compresseur-interactif/index.html" target="_blank" rel="noopener"><g>
+        <title>Ouvrir : Compresseur — installer, régler, vérifier</title>
+        <rect x="588" y="142" width="144" height="146" rx="12" fill="#ffffff" stroke="#ff6b35" stroke-width="2"></rect>
+        <g transform="translate(660,198) rotate(-90) scale(2.1)" stroke="#1b3a63" stroke-width="1" fill="none">
+          <circle cx="0" cy="0" r="15" fill="white"></circle>
+          <line x1="-7" y1="-13" x2="13" y2="-7"></line>
+          <line x1="-7" y1="13" x2="13" y2="7"></line>
+        </g>
+        <text class="org"   x="660" y="256" text-anchor="middle">Compresseur</text>
+        <text class="org-s" x="660" y="273" text-anchor="middle">aspire et refoule ▸</text>
+      </g></a>
+    </svg>
+    <p class="legende">Rouge = haute pression · Bleu = basse pression. Schéma simplifié de principe.</p>
+  </div>
+
+  <div class="tuiles">
+    <a class="tuile" href="formation.html">
+      <div class="emoji">📋</div>
+      <h3>La formation habilitation</h3>
+      <p>A1 · A2 · D · E — la semaine complète dans l’application : <span data-ch="fiches">44</span> fiches, <span data-ch="questions">269</span> questions.</p>
+      <div class="suite">Entrer dans l’application ▸</div>
+    </a>
+    <a class="tuile" href="galerie.html">
+      <div class="emoji">🧭</div>
+      <h3>Tout le catalogue</h3>
+      <!-- Le nombre de planches vient de chiffres.gen.js (build/chiffres.mjs) :
+           les compteurs ne se saisissent jamais à la main. -->
+      <p>38 ressources, filtrables par thème et par type. <span data-ch="planches">46</span> planches animées.</p>
+      <div class="suite">Explorer ▸</div>
+    </a>
+    <a class="tuile" href="metier.html">
+      <div class="emoji">🧑‍🔧</div>
+      <h3>Le métier</h3>
+      <p>C’est quoi, frigoriste ? Les formations, du CAP au bureau d’études.</p>
+      <div class="suite">Découvrir ▸</div>
+    </a>
+    <a class="tuile" href="formateurs.html">
+      <div class="emoji">🎓</div>
+      <h3>Formateurs</h3>
+      <p>Projeter en cours, réemployer le code, demander une adaptation.</p>
+      <div class="suite">Espace formateurs ▸</div>
+    </a>
+  </div>
+
+</div>
+
+<script>
+/* =====================================================================
+   LE PLAN DE FORMATION — généré depuis les données ci-dessous.
+   Pas de coordonnée saisie à la main station par station : ajouter un
+   cours = ajouter UNE ligne dans une liste. À terme, ce bloc de données
+   a vocation à être généré par le build depuis le registre des cours
+   (build/registre.mjs), comme la galerie.
+   Le trajet (stations visitées) vit en localStorage, sur cet appareil
+   seulement — pas de compte, rien ne sort du navigateur.
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  var RES = "packs/fluides/res/";
+  function cours(dossier, nom, sous, entree) {
+    return { id: dossier, href: RES + dossier + "/" + (entree || "index.html"),
+             nom: nom, sous: sous };
+  }
+  function carte(id, nom, sous, verrou) {
+    return { id: "carte-" + id, href: "formation.html?carte=" + id,
+             nom: nom, sous: sous, verrou: !!verrou, meme_onglet: true };
+  }
+  /* Les outils vivent dans un AUTRE dépôt (Iner.web-tools-beta), d'où les
+     adresses absolues. ⚠️ Trois d'entre eux portent encore l'identité d'un
+     établissement dans leur page : manomètres, réglette, identification.
+     À neutraliser AVANT la mise en ligne de ce plan. */
+  var OUTILLAGE = "https://frigorx.github.io/Iner.web-tools-beta/";
+  function outil(fichier, nom, sous) {
+    return { id: "outil-" + fichier, href: OUTILLAGE + fichier + ".html",
+             nom: nom, sous: sous };
+  }
+
+  /* --- Le tronc : la théorie, de la première notion au diagramme --- */
+  var TRONC = {
+    couleur: "#2f5689",
+    stations: [
+      cours("chaleur-interactive",                        "Du glaçon au circuit",        "cours raconté · 🔊"),
+      cours("chaleur-circuit-interactif",                 "Premières notions thermo",    "tome 2 · le circuit"),
+      cours("pression-temperature-interactive",           "Pression & température",      "cours raconté · quiz"),
+      cours("glissement-temperature",                     "Le glissement",               "pourquoi la T° glisse"),
+      cours("surchauffe-sous-refroidissement-interactif", "Surchauffe & sous-refroid.",  "les deux preuves"),
+      cours("froid-clim-academie",                        "Froid Clim Académie",         "révision ludique"),
+      cours("circuit-organe-par-organe",                  "Organe par organe",           "animations · quiz")
+    ],
+    queue: [
+      cours("diagramme-enthalpique",                      "Diagramme enthalpique",       "le cycle tracé"),
+      cours("bilan-thermique-performance-interactif",     "Bilan & performance",         "COP, EER, puissances")
+    ],
+    jalon: "🏁 Technologue du cycle"
+  };
+
+  /* --- Les quatre branches --- */
+  var LIGNES = [
+    { nom: "🔧 LES ORGANES", sous: "CAP IFCA · BAC PRO MFER", couleur: "#1b3a63", x: 140,
+      jalon: "🏁 Technologue du circuit",
+      stations: [
+        cours("tome-3-technologie-organes", "Tome 3 — les organes",  "reconnaître et situer"),
+        cours("detendeur-interactif",       "Le détendeur",          "surchauffe et réglage"),
+        cours("compresseur-interactif",     "Le compresseur",        "installer, régler, vérifier"),
+        cours("module-compresseur",         "Module compresseur",    "le bloc hermétique"),
+        cours("condenseur-interactif",      "Le condenseur",         "haute pression, ventilation"),
+        cours("evaporateur-interactif",     "L’évaporateur",         "givre et dégivrage")
+      ] },
+    { nom: "💧 LA LIGNE LIQUIDE", sous: "de la bouteille au détendeur", couleur: "#1e7e54", x: 400,
+      jalon: "🏁 Ligne liquide maîtrisée",
+      stations: [
+        cours("bouteille-liquide-pedagogique",  "La bouteille liquide",   "réserve et niveau"),
+        cours("filtre-deshydrateur-pedagogique","Le filtre déshydrateur", "l’humidité, l’ennemie"),
+        cours("voyant-liquide-pedagogique",     "Le voyant liquide",      "bulles et indicateur"),
+        cours("electrovanne-interactive",       "L’électrovanne",         "ouvrir, fermer, pump-down"),
+        cours("regulateurs-kv-pedagogiques",    "Les régulateurs KV",     "la famille au complet"),
+        cours("pupitre-reglage-interactif",     "Le pupitre de réglage",  "consigne, différentiel")
+      ] },
+    { nom: "🧰 LES GESTES", sous: "l’atelier, le vrai geste pro", couleur: "#ff6b35", x: 660,
+      jalon: "🏁 Prêt à intervenir",
+      stations: [
+        cours("fil-conducteur-intervention",       "Le fil conducteur",     "l’intervention en 6 étapes"),
+        cours("parcours-manometres",               "Parcours manomètres",   "lire, brancher, conclure"),
+        cours("vanne-service-interactive",         "La vanne de service",   "trois positions, deux prises"),
+        cours("pose-manifold-2-voies-interactive", "Le manifold 2 voies",   "poser, lire, déposer"),
+        cours("pose-manifold-interactive",         "Le manifold 4 voies",   "l’outil complet"),
+        cours("recuperation-fluide-interactive",   "TP récupération",       "station, pesée, tirage au vide"),
+        cours("mission-bouteilles",                "Mission bouteilles",    "la bonne bouteille, le bon geste"),
+        cours("chaine-intervention-interactive",   "La chaîne complète",    "tout enchaîner proprement")
+      ] },
+    { nom: "🌍 FLUIDES & ENVIRONNEMENT", sous: "F-Gas, sécurité, climat", couleur: "#7a4fa0", x: 920,
+      jalon: "🏁 Fluides maîtrisés",
+      stations: [
+        cours("frise-vivante",                        "La Frise des Fluides",    "l’histoire racontée", "frise-vivante.html"),
+        cours("nomenclature-interactive",             "Le code d’un fluide",     "R-134a, R-290… décryptés"),
+        cours("cours-classes-securite",               "Classes de sécurité",     "A1, A2L, A3… NF EN 378"),
+        cours("film-ozone",                           "Couche d’ozone & ODP",    "film narré"),
+        cours("film-effet-de-serre",                  "Effet de serre & PRP",    "film narré · 53 s"),
+        cours("etancheite-interactive",               "L’étanchéité",            "de l’indice à la preuve"),
+        cours("hydrocarbures-a1-a2",                  "Mission 290",             "hydrocarbures en sécurité"),
+        cours("intervention-hydrocarbures-interactive","Intervenir sur R-290",   "le chantier hydrocarbure")
+      ] }
+  ];
+
+  /* --- La ceinture : s'évaluer, du positionnement à l'examen blanc.
+         Les stations 🔒 existent et s'ouvrent, mais leur carte est gardée
+         par un portillon : le code se donne en formation. --- */
+  var CEINTURE = {
+    nom: "✅ S’ÉVALUER", sous: "QCM · examens blancs A1 · A2 · D · E",
+    couleur: "#b06a00", jalon: "🏁 Prêt pour l’attestation",
+    stations: [
+      carte("ex-pos",   "Positionnement",        "où j’en suis, avant tout"),
+      carte("rev-g1",   "Réviser — 14 séries",   "groupe par groupe"),
+      carte("ex-ech",   "Échauffement niv. 1",   "les fondamentaux", true),
+      carte("ex-defi",  "Défi technicien",       "diagnostics niv. 2", true),
+      carte("ex-e",     "Examen blanc E",        "étanchéité", true),
+      carte("ex-d",     "Examen blanc D",        "récupération", true),
+      carte("ex-a2",    "Examen blanc A2",       "petites charges", true),
+      carte("ex-a1",    "Examen blanc A1",       "toutes opérations", true)
+    ]
+  };
+
+  /* --- La ligne de service : des outils de calcul, utiles depuis
+         n'importe quelle branche et à n'importe quel moment. Ce ne sont
+         pas des cours : on ne les « suit » pas, on s'en sert. --- */
+  var OUTILS = {
+    nom: "🧰 LA BOÎTE À OUTILS", sous: "calculer, régler, vérifier sur le chantier",
+    couleur: "#2f5689",
+    stations: [
+      outil("manometres_v5",          "Manomètres",        "lire la pression, trouver la T°"),
+      outil("reglette_v5",            "Réglette P/T",      "la correspondance d’un coup d’œil"),
+      outil("identification_v5",      "Identifier un fluide", "retrouver lequel c’est"),
+      outil("charge_a2l_v5",          "Charge maxi A2L",   "R-32 : la limite par local"),
+      /* Le libellé passe par esc() au rendu : on écrit le caractère nu. */
+      outil("co2_fgas_v5",            "CO₂ & F-Gas",       "équivalent CO₂, périodicité"),
+      outil("aeraulique_v5",          "Aéraulique",        "débits, gaines, pertes de charge"),
+      outil("diagnostic_depannage_v5","Diagnostic",        "la panne, pas à pas")
+    ]
+  };
+
+  /* --- Les CORRESPONDANCES : on ne prolonge pas le réseau, on montre où
+         changer de réseau. Ce sont d'autres sites inerWeb, hors de ce
+         dépôt — le froid ne s'arrête pas au froid : un frigoriste travaille
+         sous tension et en hauteur, et ces habilitations-là s'obtiennent
+         ailleurs. Extensible : un site de plus = une ligne de plus. --- */
+  function corr(id, url, nom, sous) {
+    return { id: "corr-" + id, href: url, nom: nom, sous: sous };
+  }
+  var CORRESPONDANCES = {
+    nom: "🔄 CORRESPONDANCES", sous: "d’autres réseaux inerWeb",
+    couleur: "#5a6b7d",
+    /* inerweb-elec est ÉCARTÉ (décision F. Henninot 19/08) : il s'appuie
+       sur des documents de centres d'habilitation dont il ne détient pas
+       les droits. Ne pas le rebrancher sans que cette question soit réglée. */
+    stations: [
+      corr("cables",  "https://frigorx.github.io/sous-tension/",
+           "⚡ Sous tension",       "lire et choisir les câbles"),
+      corr("hauteur", "https://frigorx.github.io/qcm-travail-hauteur/",
+           "🪜 Travail en hauteur", "R408 · échafaudages, EPI"),
+      corr("fluide",  "https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/",
+           "🧊 inerWeb Fluide",     "le logiciel de traçabilité")
+    ]
+  };
+
+  /* ------------------------------------------------------------------
+     Trajet : visitée = cliquée une fois, sur cet appareil.
+     ------------------------------------------------------------------ */
+  var CLE = "edu_trajet_v1";
+  function litTrajet() {
+    try { return JSON.parse(localStorage.getItem(CLE) || "{}"); }
+    catch (e) { return {}; }
+  }
+  function marque(id) {
+    var t = litTrajet(); t[id] = 1;
+    try { localStorage.setItem(CLE, JSON.stringify(t)); } catch (e) {}
+  }
+
+  /* ------------------------------------------------------------------
+     Rendu du plan. Géométrie calculée, jamais saisie par station.
+     ------------------------------------------------------------------ */
+  var W = 1280, HUB_X = 940, TRONC_Y = 80;
+  var PUCE_Y = 252, DEBUT_Y = 330, PAS = 72;
+  var CEINTURE_Y = 960, OUTILS_Y = 1170, CORR_Y = 1330, H = 1450;
+
+  function esc(v) {
+    return String(v).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function gare(s, x, y, couleur, visite) {
+    var d = '<circle cx="' + x + '" cy="' + y + '" r="9" fill="' +
+            (visite ? couleur : "#ffffff") + '" stroke="' + couleur + '" stroke-width="4.5"></circle>';
+    if (visite) d += '<text class="coche" x="' + x + '" y="' + (y + 4) + '" text-anchor="middle">✓</text>';
+    return d;
+  }
+
+  function station(s, x, y, couleur, cote, visite) {
+    /* cote : "droite" (colonnes), "haut"/"bas" (lignes horizontales) */
+    var nom = (s.verrou ? "🔒 " : "") + s.nom;
+    var t = "";
+    if (cote === "droite") {
+      t = '<text class="st" x="' + (x + 22) + '" y="' + (y - 3) + '">' + esc(nom) + "</text>" +
+          '<text class="sst" x="' + (x + 22) + '" y="' + (y + 13) + '">' + esc(s.sous) + "</text>";
+    } else {
+      var yn = cote === "haut" ? y - 34 : y + 32;
+      var ys = cote === "haut" ? y - 18 : y + 48;
+      t = '<text class="st" x="' + x + '" y="' + yn + '" text-anchor="middle">' + esc(nom) + "</text>" +
+          '<text class="sst" x="' + x + '" y="' + ys + '" text-anchor="middle">' + esc(s.sous) + "</text>";
+    }
+    var cible = s.meme_onglet ? "" : ' target="_blank" rel="noopener"';
+    return '<a href="' + esc(s.href) + '"' + cible + ' data-station="' + esc(s.id) + '">' +
+           "<g><title>Ouvrir : " + esc(s.nom) + "</title>" +
+           gare(s, x, y, couleur, visite) + t + "</g></a>";
+  }
+
+  /* Marqueur de correspondance : le double anneau du plan de métro, plus
+     une flèche qui sort — on quitte ce réseau. Le disque intérieur se
+     remplit quand c'est déjà visité, comme une station. */
+  function correspondance(s, x, y, couleur, visite) {
+    var d = '<circle cx="' + x + '" cy="' + y + '" r="13" fill="#ffffff" stroke="' +
+            couleur + '" stroke-width="4"></circle>' +
+            '<circle cx="' + x + '" cy="' + y + '" r="5.5" fill="' +
+            (visite ? couleur : "#ffffff") + '" stroke="' + couleur + '" stroke-width="2"></circle>' +
+            '<text class="sortie" x="' + (x + 19) + '" y="' + (y - 11) + '">↗</text>' +
+            '<text class="st" x="' + x + '" y="' + (y + 38) + '" text-anchor="middle">' + esc(s.nom) + "</text>" +
+            '<text class="sst" x="' + x + '" y="' + (y + 54) + '" text-anchor="middle">' + esc(s.sous) + "</text>";
+    return '<a href="' + esc(s.href) + '" target="_blank" rel="noopener" data-station="' + esc(s.id) + '">' +
+           "<g><title>Ouvrir : " + esc(s.nom) + " (autre site inerWeb)</title>" + d + "</g></a>";
+  }
+
+  function flux(d, couleur, epaisseur) {
+    return '<path d="' + d + '" stroke="' + couleur + '" stroke-width="' + (epaisseur || 9) +
+           '" stroke-linecap="round" fill="none"></path>' +
+           '<path class="flux" d="' + d + '" stroke="#ffffff" stroke-width="3" fill="none" ' +
+           'opacity="0.5" stroke-dasharray="6 14"></path>';
+  }
+
+  function jalon(texte, x, y) {
+    var w = Math.round(texte.length * 6.6 + 26);
+    return '<rect x="' + (x - w / 2) + '" y="' + y + '" width="' + w + '" height="28" rx="14" ' +
+           'fill="#e3f5ec" stroke="#1e7e54" stroke-width="1.5"></rect>' +
+           '<text class="fin" x="' + x + '" y="' + (y + 19) + '" text-anchor="middle">' + esc(texte) + "</text>";
+  }
+
+  function dessiner() {
+    var t = litTrajet(), d = [];
+    d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du parcours de formation inerWeb — les lignes de cours et la ligne des examens">');
+
+    /* Tronc + queue théorie */
+    d.push(flux("M 60 " + TRONC_Y + " H " + (W - 110), TRONC.couleur, 10));
+    /* Départ */
+    d.push('<circle cx="60" cy="' + TRONC_Y + '" r="16" fill="#ffffff" stroke="' + TRONC.couleur + '" stroke-width="6"></circle>');
+    d.push('<circle cx="60" cy="' + TRONC_Y + '" r="16" fill="none" stroke="' + TRONC.couleur + '" stroke-width="2" opacity="0.6">' +
+           '<animate attributeName="r" values="16;30;16" dur="2.4s" repeatCount="indefinite"></animate>' +
+           '<animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"></animate></circle>');
+    d.push('<text class="dep" x="60" y="34" text-anchor="middle">DÉPART</text>');
+    d.push('<text class="dep-s" x="60" y="51" text-anchor="middle">aucun prérequis</text>');
+
+    TRONC.stations.forEach(function (s, i) {
+      var x = 165 + i * 110;
+      d.push(station(s, x, TRONC_Y, TRONC.couleur, i % 2 ? "haut" : "bas", t[s.id]));
+    });
+    /* L'aiguillage, d'où tombent les quatre branches */
+    d.push('<rect x="' + (HUB_X - 60) + '" y="' + (TRONC_Y - 16) + '" width="120" height="32" rx="16" fill="#1b3a63"></rect>');
+    d.push('<text class="aig" x="' + HUB_X + '" y="' + (TRONC_Y + 5) + '" text-anchor="middle">AIGUILLAGE</text>');
+    TRONC.queue.forEach(function (s, i) {
+      var x = 1055 + i * 115;
+      d.push(station(s, x, TRONC_Y, TRONC.couleur, i % 2 ? "bas" : "haut", t[s.id]));
+    });
+    d.push(jalon(TRONC.jalon, 1170, TRONC_Y + 58));
+
+    /* Les branches */
+    LIGNES.forEach(function (l) {
+      var fin = DEBUT_Y + (l.stations.length - 1) * PAS;
+      d.push(flux("M " + HUB_X + " " + (TRONC_Y + 16) + " C " + HUB_X + " " + (TRONC_Y + 110) + " " +
+                  l.x + " " + (PUCE_Y - 100) + " " + l.x + " " + (PUCE_Y - 17)));
+      d.push(flux("M " + l.x + " " + (PUCE_Y - 17) + " V " + fin, l.couleur));
+      /* la ligne continue, plus fine, jusqu'à la ceinture */
+      d.push('<path d="M ' + l.x + " " + fin + " V " + CEINTURE_Y + '" stroke="' + l.couleur +
+             '" stroke-width="4" stroke-dasharray="2 8" stroke-linecap="round" fill="none" opacity="0.55"></path>');
+      var w = Math.round(l.nom.length * 7.4 + 30);
+      d.push('<rect x="' + (l.x - w / 2) + '" y="' + (PUCE_Y - 17) + '" width="' + w + '" height="34" rx="17" fill="' + l.couleur + '"></rect>');
+      d.push('<text class="puce" x="' + l.x + '" y="' + (PUCE_Y + 5) + '" text-anchor="middle">' + esc(l.nom) + "</text>");
+      d.push('<text class="puce-s" x="' + l.x + '" y="' + (PUCE_Y + 35) + '" text-anchor="middle">' + esc(l.sous) + "</text>");
+      l.stations.forEach(function (s, i) {
+        d.push(station(s, l.x, DEBUT_Y + i * PAS, l.couleur, "droite", t[s.id]));
+      });
+      d.push(jalon(l.jalon, l.x + 4, fin + 26));
+      /* correspondance avec la ceinture */
+      d.push('<circle cx="' + l.x + '" cy="' + CEINTURE_Y + '" r="7" fill="#ffffff" stroke="' + l.couleur + '" stroke-width="4"></circle>');
+    });
+
+    /* La ceinture S'ÉVALUER */
+    d.push(flux("M 70 " + CEINTURE_Y + " H 1190", CEINTURE.couleur, 9));
+    d.push('<polygon points="1190,' + (CEINTURE_Y - 8) + " 1206," + CEINTURE_Y + " 1190," + (CEINTURE_Y + 8) + '" fill="' + CEINTURE.couleur + '"></polygon>');
+    /* Cartouche empilé (nom puis sous-titre), rangé à gauche : posé à côté,
+       le sous-titre venait recouvrir le libellé de la deuxième station. */
+    var wc = Math.round(CEINTURE.nom.length * 7.4 + 30);
+    d.push('<rect x="70" y="' + (CEINTURE_Y - 84) + '" width="' + wc + '" height="30" rx="15" fill="' + CEINTURE.couleur + '"></rect>');
+    d.push('<text class="puce" x="' + (70 + wc / 2) + '" y="' + (CEINTURE_Y - 64) + '" text-anchor="middle">' + esc(CEINTURE.nom) + "</text>");
+    d.push('<text class="puce-s" x="' + (70 + wc / 2) + '" y="' + (CEINTURE_Y - 38) + '" text-anchor="middle">' + esc(CEINTURE.sous) + "</text>");
+    var xs = [200, 320, 480, 590, 730, 840, 1000, 1110];
+    CEINTURE.stations.forEach(function (s, i) {
+      d.push(station(s, xs[i], CEINTURE_Y, CEINTURE.couleur, i % 2 ? "haut" : "bas", t[s.id]));
+    });
+    d.push(jalon(CEINTURE.jalon, 1100, CEINTURE_Y + 62));
+
+    /* La ligne de service, en bas : elle ne mène nulle part et c'est voulu —
+       aucun jalon, on s'y arrête au besoin. Cartouche empilé à gauche, et
+       première station rejetée à x=320 pour ne pas passer dessous. */
+    d.push(flux("M 70 " + OUTILS_Y + " H 1210", OUTILS.couleur, 8));
+    var wo = Math.round(OUTILS.nom.length * 7.4 + 30);
+    d.push('<rect x="70" y="' + (OUTILS_Y - 84) + '" width="' + wo + '" height="30" rx="15" fill="' + OUTILS.couleur + '"></rect>');
+    d.push('<text class="puce" x="' + (70 + wo / 2) + '" y="' + (OUTILS_Y - 64) + '" text-anchor="middle">' + esc(OUTILS.nom) + "</text>");
+    d.push('<text class="puce-s" x="' + (70 + wo / 2) + '" y="' + (OUTILS_Y - 38) + '" text-anchor="middle">' + esc(OUTILS.sous) + "</text>");
+    var xo = [320, 460, 600, 740, 880, 1020, 1160];
+    OUTILS.stations.forEach(function (s, i) {
+      d.push(station(s, xo[i], OUTILS_Y, OUTILS.couleur, i % 2 ? "haut" : "bas", t[s.id]));
+    });
+
+    /* La bande des correspondances : trait discontinu et sans épaisseur de
+       ligne — ce n'est pas une ligne qu'on emprunte, c'est un quai de
+       transfert. */
+    d.push('<path d="M 70 ' + CORR_Y + ' H 1210" stroke="' + CORRESPONDANCES.couleur +
+           '" stroke-width="3" stroke-dasharray="1 9" stroke-linecap="round" fill="none" opacity="0.7"></path>');
+    var wr = Math.round(CORRESPONDANCES.nom.length * 7.4 + 30);
+    d.push('<rect x="70" y="' + (CORR_Y - 84) + '" width="' + wr + '" height="30" rx="15" fill="' + CORRESPONDANCES.couleur + '"></rect>');
+    d.push('<text class="puce" x="' + (70 + wr / 2) + '" y="' + (CORR_Y - 64) + '" text-anchor="middle">' + esc(CORRESPONDANCES.nom) + "</text>");
+    d.push('<text class="puce-s" x="' + (70 + wr / 2) + '" y="' + (CORR_Y - 38) + '" text-anchor="middle">' + esc(CORRESPONDANCES.sous) + "</text>");
+    var xr = [420, 700, 990];
+    CORRESPONDANCES.stations.forEach(function (s, i) {
+      d.push(correspondance(s, xr[i], CORR_Y, CORRESPONDANCES.couleur, t[s.id]));
+    });
+
+    d.push('<text class="note" x="' + (W / 2) + '" y="' + (H - 14) + '" text-anchor="middle">Le plan grandira avec les prochains cours — le catalogue complet t’attend pour la suite.</text>');
+    d.push("</svg>");
+    document.getElementById("plan-svg").innerHTML = d.join("");
+  }
+
+  /* ------------------------------------------------------------------
+     Compteur, clics, effacement.
+     ------------------------------------------------------------------ */
+  var TOUTES = TRONC.stations.concat(TRONC.queue);
+  LIGNES.forEach(function (l) { TOUTES = TOUTES.concat(l.stations); });
+  /* Les CORRESPONDANCES sont volontairement HORS du compte : elles reçoivent
+     la marque de visite (le disque se remplit), mais on ne « termine » pas
+     une sortie de réseau — les compter diluerait le trajet de formation. */
+  TOUTES = TOUTES.concat(CEINTURE.stations).concat(OUTILS.stations);
+
+  function compte() {
+    var t = litTrajet(), n = 0;
+    TOUTES.forEach(function (s) { if (t[s.id]) n++; });
+    document.getElementById("trajet-n").textContent = n;
+    document.getElementById("trajet-total").textContent = TOUTES.length;
+  }
+
+  document.getElementById("plan-svg").addEventListener("click", function (ev) {
+    var a = ev.target.closest ? ev.target.closest("a[data-station]") : null;
+    if (!a) return;
+    marque(a.getAttribute("data-station"));
+    dessiner(); compte();
+  });
+  document.getElementById("trajet-effacer").addEventListener("click", function () {
+    if (!confirm("Effacer le trajet mémorisé sur cet appareil ?")) return;
+    try { localStorage.removeItem(CLE); } catch (e) {}
+    dessiner(); compte();
+  });
+
+  dessiner(); compte();
+})();
+
+/* =====================================================================
+   LE VOLET — ouvert à l'arrivée, refermé d'un clic.
+   sessionStorage et NON localStorage, comme la frise vivante d'index.html :
+   le volet se rouvre à CHAQUE nouvelle session de navigateur (c'est là qu'il
+   sert), mais une fois refermé il le reste tant que l'onglet vit — sinon il
+   reviendrait à chaque retour sur l'accueil, ce qui serait insupportable en
+   classe. La transition n'est armée qu'après la première image : sans ça, un
+   volet refermé se déplierait sous les yeux au chargement.
+   ===================================================================== */
+(function () {
+  "use strict";
+  var v = document.getElementById("volet"),
+      p = document.getElementById("volet-poignee"),
+      CLE = "edu_volet_replie";
+
+  function poser(replie) {
+    v.classList.toggle("replie", replie);
+    v.setAttribute("aria-hidden", replie ? "true" : "false");
+    p.style.display = replie ? "block" : "none";
+  }
+  function replier() {
+    poser(true);
+    try { sessionStorage.setItem(CLE, "oui"); } catch (e) {}
+  }
+
+  var replie = false;
+  try { replie = sessionStorage.getItem(CLE) === "oui"; } catch (e) {}
+  poser(replie);
+  requestAnimationFrame(function () { v.classList.add("pret"); });
+
+  document.getElementById("volet-fermer").addEventListener("click", replier);
+  p.addEventListener("click", function () {
+    poser(false);
+    try { sessionStorage.removeItem(CLE); } catch (e) {}
+  });
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape" && !v.classList.contains("replie")) replier();
+  });
+})();
+</script>
+
+<script src="chiffres.gen.js?v=00b57f996b"></script>
+<!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
+     écrit à la main : une page qui circule seule doit porter sa licence. -->
+<script src="moteur/marque.js?v=00b57f996b" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>

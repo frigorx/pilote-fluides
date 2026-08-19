@@ -1,0 +1,36 @@
+HABILITATION FLUIDE · PARCOURS MANOMÈTRES
+LIRE L'INSTRUMENT, COMPRENDRE LE CIRCUIT
+
+Point d'entrée :
+  index.html   (portail des deux modules)
+
+Contenu :
+  - module 1, 16 étapes : Croix du Frigoriste, fonction des quatre organes,
+    lecture de cadrans BP et HP sans affichage numérique, pression relative
+    et absolue, série de six lectures, identification de fluide, incondensables ;
+  - module 2, 11 étapes : choix du point de mesure et de la formule, calcul des
+    quatre écarts, mission complète à deux cadrans, évaluation notée sur 20 ;
+  - tables pression-température statiques contrôlées pour six fluides
+    (R-134a, R-32, R-410A, R-404A, R-407C, R-290), rosée et bulle séparées ;
+  - narration facultative, jamais déclenchée seule, texte toujours visible ;
+  - réglages de lisibilité et bascule vers une police adaptée (Lexend embarquée).
+
+DEUX FORMES, UN SEUL CONTENU
+  - le parcours entier : index.html, pour une révision ou une fin de chapitre ;
+  - cinq briques indépendantes, sous briques/, à glisser dans une autre séance :
+      briques/circuit-quatre-organes/          7 étapes
+      briques/lire-un-manometre/               6 étapes
+      briques/diagnostic-pression-temperature/ 2 étapes
+      briques/surchauffe-sous-refroidissement/ 7 étapes
+      briques/mission-releve-et-calculs/       4 étapes
+  Une brique est une tranche du même fichier d'étapes, pas une copie : corriger
+  une faute la corrige dans les deux formes. Ne jamais dupliquer une étape pour
+  fabriquer une brique, sinon les deux formes divergent au premier correctif.
+
+Autonome : aucune dépendance vers un autre cours du pack, aucun appel réseau,
+aucun CDN. Fonctionne par ouverture directe de index.html.
+
+ÉTAT : ajouté le 18 août 2026, non branché sur une fiche.
+Doublon fonctionnel assumé avec `pression-temperature-interactive` et
+`surchauffe-sous-refroidissement-interactif` : voir couverture.json.
+Arbitrage attendu avant branchement.

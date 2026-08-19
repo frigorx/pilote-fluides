@@ -1,0 +1,30 @@
+{
+  "cours": "glissement-temperature",
+  "titre": "Pourquoi la température glisse ?",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 13,
+
+  "_lire_avant_de_compter": [
+    "Tout est déclaré en APPUI, comme pour `parcours-manometres`. Les codes",
+    "travaillés ici sont déjà portés par `pression-temperature-interactive` (1.02,",
+    "1.03) et `surchauffe-sous-refroidissement-interactif` (5.05, 4.05, 1.03, 1.06).",
+    "Le doublon de cours est assumé et voulu : deux entrées sur la même notion",
+    "servent deux publics. Le double comptage des codes, lui, ne l'est pas — devant",
+    "un auditeur, un code compté deux fois affaiblit la preuve au lieu de l'appuyer.",
+    "Ce cours est une DÉCOUVERTE pour débutant : il construit le phénomène avant de",
+    "nommer le vocabulaire, là où les deux autres partent du vocabulaire acquis."
+  ],
+
+  "codes": {},
+
+  "appui": {
+    "1.02": "thermodynamique élémentaire par l'observation : chaleur sensible puis latente, palier du corps pur, zone latente inclinée du zéotrope, bulle et rosée, condensation en sens inverse",
+    "1.03": "lecture du diagramme log p-h : une isotherme complète suivie dans les zones liquide, diphasique et vapeur, et sa distinction d'avec l'isobare horizontale",
+    "1.06": "comportement spécifique des mélanges : zéotrope, azéotrope à sa condition azéotropique, et glissement chiffré sur R-407C, R-404A et R-410A",
+    "5.05": "à quelle saturation se réfèrent la surchauffe et le sous-refroidissement : rosée pour la vapeur seule, bulle pour le liquide seul"
+  },
+
+  "hors_referentiel": [
+    "la mise en situation d'ouverture (chauffer un liquide et regarder le thermomètre) : elle rend la notion visible, elle n'est pas un objet d'épreuve"
+  ]
+}
