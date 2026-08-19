@@ -395,6 +395,9 @@ function ecrirePlanningHtml(b) {
 
   H.push('<!doctype html><html lang="fr"><head><meta charset="utf-8">');
   H.push('<meta name="viewport" content="width=device-width,initial-scale=1">');
+  /* Hors des moteurs de recherche (décision F. Henninot, 20/08) : pièce de
+     dossier, envoyée par lien. Reste accessible par son adresse. */
+  H.push('<meta name="robots" content="noindex">');
   H.push("<title>Planning de formation — habilitation fluides frigorigènes</title>");
   H.push("<style>" +
     ":root{--bleu:#1b3a63;--org:#c9451a;--mut:#5a6b7d;--ligne:#d6dee7;--fond:#eef2f6}" +

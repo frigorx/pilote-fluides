@@ -314,6 +314,9 @@ function ecrireHtml() {
   let h = `<!doctype html>
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Hors des moteurs de recherche (décision F. Henninot, 20/08) : pièce
+     d'audit, envoyée par lien. Reste accessible par son adresse. -->
+<meta name="robots" content="noindex">
 <title>Matrice compétences × contenu × questions — habilitation fluides</title>
 <style>
   body { font: 15px/1.55 Calibri, 'Segoe UI', sans-serif; color:#33475b; max-width: 1040px; margin: 0 auto 60px; padding: 0 18px; background:#fff; }

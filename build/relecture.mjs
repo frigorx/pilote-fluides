@@ -12,6 +12,9 @@ const sansHtml = (s) => String(s || "").replace(/<[^>]+>/g, " ").replace(/\s+/g,
 
 let h = `<!doctype html>
 <html lang="fr"><head><meta charset="utf-8">
+<!-- Hors des moteurs de recherche (décision F. Henninot, 20/08) : outil de
+     travail interne. Reste accessible par son adresse. -->
+<meta name="robots" content="noindex">
 <title>Relecture — pack habilitation fluides (bon à tirer)</title>
 <style>
   body { font: 15px/1.5 Calibri, 'Segoe UI', sans-serif; color:#33475b; max-width: 900px; margin: 24px auto; padding: 0 18px; }
