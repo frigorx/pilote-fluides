@@ -64,12 +64,35 @@ a:hover { color: #ff6b35; }
 
   function metBouton(texte) { document.getElementById("voix-bouton").textContent = texte; }
 
+  /* iPhone/iPad : l'interrupteur silencieux coupe le son dans bien des
+     navigateurs intégrés (WhatsApp, lecteur de QR…) sans aucun signal
+     détectable par le code — on ne peut qu'EXPLIQUER. L'aide apparaît
+     à la première lecture, seulement sur ces appareils, puis s'efface. */
+  var aideFaite = false;
+  function aideSilencieux() {
+    if (aideFaite) return;
+    aideFaite = true;
+    var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+              (/Mac/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+    if (!ios) return;
+    var aide = document.createElement("div");
+    aide.setAttribute("style",
+      "position:fixed;left:50%;transform:translateX(-50%);bottom:64px;z-index:99;" +
+      "background:#FFFDF8;border:1.5px solid #1B3A63;border-radius:10px;padding:6px 14px;" +
+      "max-width:88vw;text-align:center;font:14px Calibri,'Segoe UI',sans-serif;" +
+      "color:#1B3A63;box-shadow:0 4px 14px rgba(27,58,99,.18)");
+    aide.textContent = "Pas de son ? Désactive le mode silencieux (interrupteur sur la tranche) et monte le volume.";
+    document.body.appendChild(aide);
+    setTimeout(function () { aide.remove(); }, 9000);
+  }
+
   document.addEventListener("click", function (e) {
     if (!e.target || e.target.id !== "voix-bouton") return;
     if (!scene && !trouveScene()) { metBouton("… le film se charge, re-cliquer"); return; }
     if (audio.paused) {
       if (audio.ended) audio.currentTime = 0;
-      audio.play().then(function () { metBouton("⏸ Pause"); synchronise(); });
+      audio.play().then(function () { metBouton("⏸ Pause"); synchronise(); aideSilencieux(); })
+        .catch(function () { metBouton("▶ Le son n'a pas démarré — réessayer"); });
     } else {
       audio.pause();
       if (raf) cancelAnimationFrame(raf);
