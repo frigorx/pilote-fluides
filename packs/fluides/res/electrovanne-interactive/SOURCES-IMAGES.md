@@ -11,8 +11,8 @@ Registre vérifié le 4 août 2026. Aucun média tiers n’est intégré au modu
 
 | Référence | Sujet | Titulaire présumé | Statut | Usage dans le travail |
 |---|---|---|---|---|
-| `C:\Users\henni\AppData\Local\Temp\codex-clipboard-04c20309-8d8e-4290-a893-ec626d19234f.png` | Corps d’électrovanne Danfoss sans bobine | Danfoss ; droit de la capture non fourni | Hors livrable | Reconnaissance des volumes généraux uniquement |
-| `C:\Users\henni\Downloads\EVR3 (10 mm).STEP` | Modèle CAO EVR 3 10 mm | Métadonnées SolidWorks ; titulaire d’usage non établi | Hors livrable | Contrôle de proportions ; ni conversion ni publication |
+| `~\AppData\Local\Temp\codex-clipboard-04c20309-8d8e-4290-a893-ec626d19234f.png` | Corps d’électrovanne Danfoss sans bobine | Danfoss ; droit de la capture non fourni | Hors livrable | Reconnaissance des volumes généraux uniquement |
+| `~\Downloads\EVR3 (10 mm).STEP` | Modèle CAO EVR 3 10 mm | Métadonnées SolidWorks ; titulaire d’usage non établi | Hors livrable | Contrôle de proportions ; ni conversion ni publication |
 | `OneDrive_1_04-08-2026.zip` → `vem a souder.STP` | Modèle CAO Danfoss `WEB032F1156` | Danfoss A/S dans les métadonnées | Hors livrable | Seconde référence de silhouette ; ni conversion ni publication |
 | `OneDrive_1_04-08-2026.zip` → `VOYANT 1 4 FLARS.STP` | Modèle CAO de voyant | Métadonnées de fichier Danfoss | Non utilisé | Aucun usage dans le module électrovanne |
 | `AX228786439982fr-000404.pdf` | Vues d’entretien, coupes et éclatés EVR 2–22 | © Danfoss | Consultation technique uniquement | Faits recoupés ; aucune image reprise |

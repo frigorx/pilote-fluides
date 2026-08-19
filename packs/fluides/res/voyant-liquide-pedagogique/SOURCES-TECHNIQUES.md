@@ -5,7 +5,7 @@ n’est reproduite.
 
 ## Danfoss — article « Food safety » fourni par l’utilisateur
 
-- Source primaire locale : `C:\Users\henni\Downloads\AC290356803278en-000203.pdf`.
+- Source primaire locale : `~\Downloads\AC290356803278en-000203.pdf`.
 - Identifiant du document : `AC290356803278en-000203`, Danfoss DCS (ACR), mars 2025.
 - Vérification : les quatre pages ont été rendues et contrôlées ; les éléments utiles figurent en
   page 3.
@@ -29,7 +29,7 @@ n’est reproduite.
 ## Danfoss — fiche SG / SGP fournie, avril 2026
 
 - Source primaire locale :
-  `C:\Users\henni\OneDrive\Bureau\26-27\inventair 15-09\AI556919029172en-000101.pdf`.
+  `~\OneDrive\Bureau\26-27\inventair 15-09\AI556919029172en-000101.pdf`.
 - Identifiant : `AI556919029172en-000101`, *Data sheet — Sight glass SG / SGP*, Danfoss
   Climate Solutions, avril 2026.
 - Vérification : les 17 pages ont été rendues et contrôlées ; pages utiles 2, 6 à 10 et 15.
@@ -52,7 +52,7 @@ n’est reproduite.
 
 ## Danfoss — guide d’installation SGP / SG fourni, juin 2020
 
-- Source primaire locale : `C:\Users\henni\Downloads\AN220886434888en-001001.pdf`.
+- Source primaire locale : `~\Downloads\AN220886434888en-001001.pdf`.
 - Identifiant : `AN220886434888en-001001`, *Installation guide — Sight glass*, Danfoss DSC,
   juin 2020.
 - Vérification : les 2 pages ont été rendues et contrôlées.
@@ -141,7 +141,7 @@ n’est reproduite.
 
 ## Modèles STEP fournis via SolidWorks — contrôle de pertinence
 
-- Archive locale : `C:\Users\henni\Downloads\OneDrive_1_04-08-2026.zip`.
+- Archive locale : `~\Downloads\OneDrive_1_04-08-2026.zip`.
 - `vem a souder.STP` : l’en-tête identifie `WEB032F1156` et Danfoss A/S. Le code produit officiel
   `032F1156` désigne une électrovanne EVR 3 à raccords à souder ; ce modèle n’appartient donc pas
   au sujet du voyant liquide.

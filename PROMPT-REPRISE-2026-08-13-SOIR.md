@@ -176,7 +176,7 @@ npx -y http-server C:\git\pilote-fluides -p 2031 -c-1
 #   la planche des motifs        http://localhost:2031/packs/fluides/res/capsules/_motifs.html
 
 # Réinventorier les livraisons du Bureau (outil de F. Henninot)
-node C:\git\usine-contenu\outils\auditer-versions-productions.mjs --racine "C:\Users\henni\Desktop\inerweb full ia" --extra C:\git\pilote-fluides --ecrire
+node C:\git\usine-contenu\outils\auditer-versions-productions.mjs --racine "~\Desktop\inerweb full ia" --extra C:\git\pilote-fluides --ecrire
 ```
 
 ---

@@ -5,18 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="Espace formateurs — inerWeb Édu">
-<meta property="og:description" content="Projeter une ressource inerWeb en cours, réemployer le code, demander une adaptation.">
+<meta property="og:description" content="Projeter une ressource inerWeb en cours, réemployer le moteur technique (MIT), demander une adaptation.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://inerweb.fr/formateurs.html">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="inerWeb Édu">
+<meta property="og:image" content="https://inerweb.fr/icones/og-inerweb-1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="inerWeb Édu — apprendre le froid, station par station, sur un plan de métro.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://inerweb.fr/formateurs.html">
 <title>Espace formateurs — inerWeb Édu</title>
-<meta name="description" content="Projeter une ressource inerWeb en cours, réemployer le code, demander une adaptation. Licence CC BY-NC-ND 4.0.">
+<meta name="description" content="Projeter une ressource inerWeb en cours, réemployer le moteur technique (MIT), demander une adaptation. Contenus CC BY-NC-ND 4.0.">
 <style>
+  /* Couleurs de la charte : texte --ink #10233c, carte --paper #fffdf8 —
+     jamais de blanc pur (aligné 20/08). */
   :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --orange-clair:#ffe2d6;
-          --txt:#1d2a38; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#ffffff; --ligne:#d6dee7;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
           --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
           --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
   * { box-sizing:border-box; }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  a:focus-visible, button:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
   body { margin:0; background:var(--fond); color:var(--txt);
          font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
   a { color:var(--bleu); }
@@ -69,6 +83,7 @@
 </style>
 </head>
 <body>
+<a class="evite" href="#contenu">Aller au contenu</a>
 
 <div class="entete" role="banner">
   <div class="dedans">
@@ -91,10 +106,10 @@
   </div>
 </div>
 
-<div class="page" role="main">
+<div class="page" role="main" id="contenu">
 
   <h1>Espace formateurs</h1>
-  <p class="chapo">Deux usages : <strong>se servir</strong> — projeter une ressource telle quelle en cours — et <strong>réemployer</strong> — récupérer le code pour l’intégrer ailleurs.</p>
+  <p class="chapo">Deux usages : <strong>se servir</strong> — projeter une ressource telle quelle en cours — et <strong>réemployer le moteur technique</strong> (sous licence MIT) dans vos propres pages. Les contenus de cours et les illustrations, eux, se projettent tels quels : ils ne se modifient pas (voir la licence ci-dessous).</p>
 
   <div class="duo">
     <div class="bloc usage">
@@ -110,11 +125,11 @@
     </div>
     <div class="bloc usage">
       <div class="emoji">⚙️</div>
-      <h3>Réemployer le code</h3>
+      <h3>Réemployer le moteur (MIT)</h3>
       <ul>
-        <li>Chaque fiche du catalogue liste <strong>ses fichiers</strong> (HTML, JS, CSS).</li>
-        <li>Les sous-dossiers (assets, images) se récupèrent en <strong>clonant le dépôt</strong>.</li>
-        <li>Tout est du web statique : un dossier, un navigateur, ça tourne.</li>
+        <li><strong>Le moteur et les scripts techniques</strong> sont sous licence MIT : réutilisables librement, copyright conservé.</li>
+        <li>Chaque fiche du catalogue liste <strong>ses fichiers</strong> (HTML, JS, CSS) ; les sous-dossiers se récupèrent en <strong>clonant le dépôt</strong>.</li>
+        <li>⚠️ <strong>Les contenus de cours (CC BY-NC-ND) et les illustrations (tous droits réservés) ne se modifient pas</strong> — pour une adaptation, écrivez-nous.</li>
       </ul>
       <a class="bouton creux" href="https://github.com/frigorx/pilote-fluides" target="_blank" rel="noopener">Dépôt GitHub ▸</a>
     </div>
@@ -147,7 +162,9 @@
 
 </div>
 
+<!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
+<script src="moteur/lisibilite.js?v=4d014f616d"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js. -->
-<script src="moteur/marque.js?v=2a318eb392" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=4d014f616d" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
         <property name="savedtime" show="1">17:23</property>
         <property name="savedfilename" show="1">HORLOGE ET EWPC</property>
         <property name="saveddate" show="1">18/12/2021</property>
-        <property name="savedfilepath" show="1">C:/Users/henni/OneDrive/Bureau/SCHEMA ELECT/HORLOGE ET EWPC.qet</property>
+        <property name="savedfilepath" show="1">~/OneDrive/Bureau/SCHEMA ELECT/HORLOGE ET EWPC.qet</property>
         <property name="saveddate-eu" show="1">18-12-2021</property>
         <property name="saveddate-us" show="1">2021-12-18</property>
     </properties>

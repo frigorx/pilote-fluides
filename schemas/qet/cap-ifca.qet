@@ -1,7 +1,7 @@
 <project title="" version="0.70" folioSheetQuantity="1">
     <properties>
         <property name="savedtime" show="1">16:41</property>
-        <property name="savedfilepath" show="1">C:/Users/henni/OneDrive/Bureau/CCF 2021/schemat jpe g pdf ccf 2021/CAP IFCA.qet</property>
+        <property name="savedfilepath" show="1">~/OneDrive/Bureau/CCF 2021/schemat jpe g pdf ccf 2021/CAP IFCA.qet</property>
         <property name="saveddate" show="1">13/03/2021</property>
         <property name="savedfilename" show="1">CAP IFCA</property>
     </properties>

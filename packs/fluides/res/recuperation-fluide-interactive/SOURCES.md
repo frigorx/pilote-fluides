@@ -4,7 +4,7 @@
 
 ### Manuel de la station utilisée
 
-- Fichier : `C:\Users\henni\Downloads\d000088-manuel-d-utilisation.pdf`
+- Fichier : `~\Downloads\d000088-manuel-d-utilisation.pdf`
 - Titre interne : `MINIMAX-E - Manuel d'utilisation`
 - Éditeur indiqué : Advanced Test Products Europe
 - Pages étudiées : sécurité et bouteille (1-3), récupération normale (4-5), vidange / auto-purge (4 et 6), schémas liquide-vapeur et bouteille sur balance (7-9).
@@ -13,14 +13,14 @@
 
 ### Déroulé AFPA
 
-- Fichier consulté : `C:\Users\henni\OneDrive\Bureau\profs cour Indexee\03_BAC-MFER\S1-Analyse\2 initier a la  recuperation.pdf`
-- Original local : `C:\Users\henni\OneDrive\Bureau\profs cour\afpa\fluides afpa marseille 2011\FORMATION FLUIDE\Ressources_formations_FLUIDES\Ressources\Pwp 2 semaines\2 initier a la  recuperation.ppt`
+- Fichier consulté : `~\OneDrive\Bureau\profs cour Indexee\03_BAC-MFER\S1-Analyse\2 initier a la  recuperation.pdf`
+- Original local : `~\OneDrive\Bureau\profs cour\afpa\fluides afpa marseille 2011\FORMATION FLUIDE\Ressources_formations_FLUIDES\Ressources\Pwp 2 semaines\2 initier a la  recuperation.ppt`
 - Usage dans le module : logique pédagogique manifold 4 voies, pesée initiale, tirage au vide des flexibles et de la station, raccordement de la bouteille, récupération, auto-purge, pesée finale et dépose.
 - Statut du visuel : référence interne uniquement. Les visuels AFPA ne sont pas reproduits.
 
 ### AFPA OSIA 10498 — ouverture d'un circuit
 
-- Fichier original consulté : `C:\Users\henni\OneDrive\Bureau\profs cour\afpa\fluides afpa marseille 2011\FORMATION FLUIDE\Ressources_formations_FLUIDES\Ressources\FC 10987\FC 10498 charger et récupérer le fluide de circuits frigorifiques\10498-2 ouverture B.ppt`.
+- Fichier original consulté : `~\OneDrive\Bureau\profs cour\afpa\fluides afpa marseille 2011\FORMATION FLUIDE\Ressources_formations_FLUIDES\Ressources\FC 10987\FC 10498 charger et récupérer le fluide de circuits frigorifiques\10498-2 ouverture B.ppt`.
 - Diapositives étudiées : transfert interne vers le condenseur ou le réservoir liquide (3), dépose et bouchonnage immédiat (4-5), récupération totale dans une bouteille externe sur balance (6), exercice et synthèse (8-10).
 - Usage dans le module : faire analyser l'emplacement du composant avant de choisir entre transfert interne et récupération totale ; rappeler l'interdiction de rejet et la protection immédiate des ouvertures contre l'humidité.
 - Choix de prudence : la valeur de pression affichée dans cet ancien support n'est pas reprise comme cible universelle. La procédure réelle reste celle du plateau, de l'installation et des notices applicables.
@@ -35,7 +35,7 @@
 
 ### Schéma des sélecteurs transmis par Franck
 
-- Fichier reçu : `C:\Users\henni\AppData\Local\Temp\codex-clipboard-4f15772b-037b-41f2-8bf2-0ec2e096e547.png`.
+- Fichier reçu : `~\AppData\Local\Temp\codex-clipboard-4f15772b-037b-41f2-8bf2-0ec2e096e547.png`.
 - Usage dans le module : confirmation visuelle des positions du sélecteur bleu IN, du sélecteur noir RÉCUPÉRATION / VIDANGE et du sélecteur rouge OUT.
 - Point de sécurité confirmé : ne jamais changer la position du sélecteur noir pendant que l'appareil fonctionne ; fermer l'entrée et arrêter la machine avant le passage en purge.
 - Statut du visuel : référence documentaire uniquement. L'image n'est pas intégrée ; le dessin du simulateur reste un SVG original.

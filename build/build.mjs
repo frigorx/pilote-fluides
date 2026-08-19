@@ -494,6 +494,19 @@ function main() {
     stdio: "inherit",
   });
 
+  /* --- le réseau en liste + JSON-LD (20/08) : la même donnée que le plan,
+     rendue en HTML statique — sans JS, au lecteur d'écran et pour les
+     robots, le plan doit exister aussi. --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/plan-liste.mjs")], {
+    stdio: "inherit",
+  });
+
+  /* --- le sitemap, depuis une liste contrôlée (20/08) : existence et
+     absence de noindex vérifiées pour chaque URL avant écriture. --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/sitemap.mjs")], {
+    stdio: "inherit",
+  });
+
   /* --- audit global de conformité : autonomie, charte, impression,
      lisibilité, médias et traçabilité des droits. Il informe sans bloquer :
      une dette documentaire doit rester visible même quand le pack tourne. --- */

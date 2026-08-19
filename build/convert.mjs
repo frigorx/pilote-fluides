@@ -15,11 +15,14 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { homedir } from "node:os";
 
 const ICI = dirname(fileURLToPath(import.meta.url));
 const RACINE = resolve(ICI, "..");
-const SOURCE_DEFAUT =
-  "C:/Users/henni/OneDrive/Bureau/inerWeb/F-GAZ/FGAZ-COMPLETE-V6.html";
+/* Par homedir(), jamais un nom de compte en dur : ce script est publié
+   avec le dépôt (durcissement du 20/08). */
+const SOURCE_DEFAUT = resolve(
+  homedir(), "OneDrive/Bureau/inerWeb/F-GAZ/FGAZ-COMPLETE-V6.html");
 
 /* ---------------------------------------------------------------------
    1. SÉLECTION — quelles questions, et sous quel groupe du référentiel

@@ -9,10 +9,10 @@ ni leurs illustrations, ni leur nomenclature commerciale, ni leurs valeurs propr
 
 | Document | Identification interne | Périmètre retenu |
 |---|---|---|
-| `C:\Users\henni\Downloads\AX228786439982fr-000404.pdf` | Danfoss, *Guide d’entretien — Électrovanne, types EVR 2–EVR 22 (version 2)*, `DKRCC.PI.BB0.2D.04`, 2018 | Démontage de la pièce supérieure, serrage croisé, couples propres aux tailles, joints et matériaux |
-| `C:\Users\henni\Downloads\AN238486497127fr-000404.pdf` | Danfoss, *Guide d’installation — Électrovanne, types EVR 2–EVR 22 (version 2)*, `DKRCC.PI.BB0.Y4.04`, 2018 | Types NF/NO, limites d’installation, orientation, protection au brasage, danger de la bobine déposée, fonctionnement manuel limité |
-| `C:\Users\henni\Downloads\EVR3 (10 mm).STEP` | STEP AP214, SolidWorks 2018, produit `EVR3 (10 mm)` | Reconnaissance de l’enveloppe et contrôle de proportions uniquement |
-| `C:\Users\henni\Downloads\OneDrive_1_04-08-2026.zip` → `vem a souder.STP` | STEP AP214, métadonnées Danfoss A/S, produit `WEB032F1156`, Autodesk Inventor 2012 | Seconde référence CAO EVR 3 à souder ; reconnaissance uniquement |
+| `~\Downloads\AX228786439982fr-000404.pdf` | Danfoss, *Guide d’entretien — Électrovanne, types EVR 2–EVR 22 (version 2)*, `DKRCC.PI.BB0.2D.04`, 2018 | Démontage de la pièce supérieure, serrage croisé, couples propres aux tailles, joints et matériaux |
+| `~\Downloads\AN238486497127fr-000404.pdf` | Danfoss, *Guide d’installation — Électrovanne, types EVR 2–EVR 22 (version 2)*, `DKRCC.PI.BB0.Y4.04`, 2018 | Types NF/NO, limites d’installation, orientation, protection au brasage, danger de la bobine déposée, fonctionnement manuel limité |
+| `~\Downloads\EVR3 (10 mm).STEP` | STEP AP214, SolidWorks 2018, produit `EVR3 (10 mm)` | Reconnaissance de l’enveloppe et contrôle de proportions uniquement |
+| `~\Downloads\OneDrive_1_04-08-2026.zip` → `vem a souder.STP` | STEP AP214, métadonnées Danfoss A/S, produit `WEB032F1156`, Autodesk Inventor 2012 | Seconde référence CAO EVR 3 à souder ; reconnaissance uniquement |
 | Capture `codex-clipboard-04c20309-8d8e-4290-a893-ec626d19234f.png` | Vue produit portant le marquage Danfoss | Différencier corps, tube d’induit, couvercle et raccords ; aucune intégration |
 
 Les étendues de coordonnées calculées dans les STEP ne sont pas présentées comme des dimensions

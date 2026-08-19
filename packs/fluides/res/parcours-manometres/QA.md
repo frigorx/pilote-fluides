@@ -19,7 +19,7 @@ Contrôles exécutés le 18 août 2026.
 Commande de reproduction dans l’environnement Codex :
 
 ```powershell
-$env:CODEX_NODE_MODULES='C:\Users\henni\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\node_modules'
+$env:CODEX_NODE_MODULES='~\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\node_modules'
 node tests\qa.mjs
 ```
 

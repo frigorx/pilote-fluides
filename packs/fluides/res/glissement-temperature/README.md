@@ -26,7 +26,7 @@ Le parcours contient **13 scènes illustrées** et seulement **2 pauses d'activi
 
 - V1 de révision conservée dans `..\fluides-glissement-pedagogique-v1-revision` ;
 - non intégré dans `C:\git\pilote-fluides` ;
-- non copié dans `C:\Users\henni\Desktop\inerweb full ia\pilote-fluides` ;
+- non copié dans `~\Desktop\inerweb full ia\pilote-fluides` ;
 - non publié ;
 - non indexé dans le RAG ;
 - en attente du bon à tirer humain de F. Henninot.

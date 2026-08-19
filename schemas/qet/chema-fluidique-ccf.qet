@@ -3,7 +3,7 @@
         <property name="saveddate" show="1">07/12/2021</property>
         <property name="savedfilename" show="1">chema fluidique ccf</property>
         <property name="savedtime" show="1">19:05</property>
-        <property name="savedfilepath" show="1">C:/Users/henni/Desktop/ccf/chema fluidique ccf.qet</property>
+        <property name="savedfilepath" show="1">~/Desktop/ccf/chema fluidique ccf.qet</property>
         <property name="saveddate-eu" show="1">07-12-2021</property>
         <property name="saveddate-us" show="1">2021-12-07</property>
     </properties>

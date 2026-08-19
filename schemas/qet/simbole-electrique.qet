@@ -4,7 +4,7 @@
         <property name="savedfilename" show="1">TESTE SCHEMA</property>
         <property name="saveddate-eu" show="1">03-10-2022</property>
         <property name="savedtime" show="1">11:40</property>
-        <property name="savedfilepath" show="1">C:/Users/henni/OneDrive/Bureau/COURS 22 23/TESTE SCHEMA.qet</property>
+        <property name="savedfilepath" show="1">~/OneDrive/Bureau/COURS 22 23/TESTE SCHEMA.qet</property>
         <property name="saveddate-us" show="1">2022-10-03</property>
     </properties>
     <newdiagrams>

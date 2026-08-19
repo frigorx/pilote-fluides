@@ -59,6 +59,9 @@ const PAGES = [
   // versionnée dedans, présente ici pour la règle « toute page HTML
   // nouvelle entre dans PAGES »).
   "hors-ligne.html",
+  // 20/08/2026 (durcissement) — la vraie page 404 et le brouillon des
+  // mentions légales (non lié tant que non validé).
+  "404.html", "mentions.html",
 ];
 
 function echapper(s) {

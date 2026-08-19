@@ -1,7 +1,7 @@
 <project title="CHEMA FLUIDIQUE FRIGO BLANC" version="0.90">
     <properties>
         <property name="saveddate-us" show="1">2025-02-22</property>
-        <property name="savedfilepath" show="1">C:/Users/henni/OneDrive/Bureau/CHEMA FLUIDIQUE FRIGO BLANC.qet</property>
+        <property name="savedfilepath" show="1">~/OneDrive/Bureau/CHEMA FLUIDIQUE FRIGO BLANC.qet</property>
         <property name="saveddate" show="1">22/02/2025</property>
         <property name="savedfilename" show="1">CHEMA FLUIDIQUE FRIGO BLANC</property>
         <property name="savedtime" show="1">15:14</property>

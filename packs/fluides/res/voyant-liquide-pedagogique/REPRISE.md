@@ -2,7 +2,7 @@
 
 ## Copie concernée
 
-`C:\Users\henni\Desktop\inerweb full ia\voyant-liquide-pedagogique`
+`~\Desktop\inerweb full ia\voyant-liquide-pedagogique`
 
 Ne pas reporter automatiquement les changements dans une autre copie de Pilote Fluides.
 

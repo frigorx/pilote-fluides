@@ -7,17 +7,31 @@
 <meta property="og:title" content="Le métier de frigoriste — inerWeb Édu">
 <meta property="og:description" content="C'est quoi, frigoriste ? Le métier, une journée type, et les formations du CAP au bureau d'études.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://inerweb.fr/metier.html">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="inerWeb Édu">
+<meta property="og:image" content="https://inerweb.fr/icones/og-inerweb-1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="inerWeb Édu — apprendre le froid, station par station, sur un plan de métro.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://inerweb.fr/metier.html">
 <title>Le métier de frigoriste — inerWeb Édu</title>
 <meta name="description" content="C'est quoi, frigoriste ? Le métier, une journée type, et les formations du CAP au bureau d'études.">
 <style>
+  /* Couleurs de la charte : texte --ink #10233c, carte --paper #fffdf8 —
+     jamais de blanc pur (aligné 20/08). */
   :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35;
-          --txt:#1d2a38; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#ffffff; --ligne:#d6dee7;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
           --ok:#1e7e54; --ok-bg:#e3f5ec;
           --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
           --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
   * { box-sizing:border-box; }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  a:focus-visible, button:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
   body { margin:0; background:var(--fond); color:var(--txt);
          font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
   a { color:var(--bleu); }
@@ -83,6 +97,7 @@
 </style>
 </head>
 <body>
+<a class="evite" href="#contenu">Aller au contenu</a>
 
 <div class="entete" role="banner">
   <div class="dedans">
@@ -105,7 +120,7 @@
   </div>
 </div>
 
-<div class="page" role="main">
+<div class="page" role="main" id="contenu">
 
   <div class="bloc" style="margin-top:26px;overflow:hidden">
     <!-- L'emplacement photo (atelier ou chantier) attend une image qui colle
@@ -197,7 +212,9 @@
 
 </div>
 
+<!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
+<script src="moteur/lisibilite.js?v=4d014f616d"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js. -->
-<script src="moteur/marque.js?v=2a318eb392" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=4d014f616d" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>

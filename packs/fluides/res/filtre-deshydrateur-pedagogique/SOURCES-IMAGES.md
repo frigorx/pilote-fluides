@@ -16,7 +16,7 @@ preuve locale. Les vues pédagogiques ne sont jamais présentées comme des plan
 | Licence | CC BY-SA 4.0 |
 | Usages permis | copie, diffusion et adaptation avec attribution et partage dans les mêmes conditions |
 | Modification locale | fichier image conservé sans retouche ; repère ajouté par surimpression HTML/CSS |
-| Preuve | `assets/preuves-droits/commons-condensing-unit.html` |
+| Preuve | `assets/preuves-droits/preuve-condensing-unit.md` (inerte ; la copie HTML d'origine reste dans l'historique git) |
 | Vérification | Codex, 4 août 2026 |
 | Crédit affiché | « Photo : AnyNameWillExpire · Wikimedia Commons · CC BY-SA 4.0 » |
 
@@ -29,7 +29,7 @@ preuve locale. Les vues pédagogiques ne sont jamais présentées comme des plan
 | Source | [Wikimedia Commons — Flare koppeling.png](https://commons.wikimedia.org/wiki/File:Flare_koppeling.png) |
 | Licence | CC BY-SA 3.0 et GFDL, au choix selon la page source |
 | Usage dans le module | original conservé comme fichier source ; il n’est pas affiché directement |
-| Preuve | `assets/preuves-droits/commons-raccord-flare.html` |
+| Preuve | `assets/preuves-droits/preuve-raccord-flare.md` (inerte ; la copie HTML d'origine reste dans l'historique git) |
 | Vérification | Codex, 4 août 2026 |
 
 ### `assets/images/raccord-flare-detail.webp`
@@ -53,7 +53,7 @@ preuve locale. Les vues pédagogiques ne sont jamais présentées comme des plan
 | Licence | CC BY-SA 3.0 |
 | Usages permis | copie, diffusion et adaptation avec attribution et partage dans les mêmes conditions |
 | Modification locale | original conservé comme preuve de provenance ; dérivé recadré et optimisé ci-dessous |
-| Preuve | `assets/preuves-droits/commons-tamis-moleculaire.html` |
+| Preuve | `assets/preuves-droits/preuve-tamis-moleculaire.md` (inerte ; la copie HTML d'origine reste dans l'historique git) |
 | Vérification | Codex, 4 août 2026 |
 | Crédit affiché | « Billes 4A : GOKLuLe · Wikimedia Commons · CC BY-SA 3.0 » |
 
@@ -154,12 +154,12 @@ Elle reste une ressource de vérité technique, sans représenter un produit par
 ### `assets/symboles/filtre_deshydrateur.svg`
 
 Symbole du filtre-déshydrateur copié sans redessin depuis la bibliothèque de symboles inerWeb
-validée : `C:\git\usine-contenu\bibliotheque-symboles\svg\frigo_schema\filtre_deshydrateur.svg`.
+validée (dépôt interne `usine-contenu`, `bibliotheque-symboles/svg/frigo_schema/filtre_deshydrateur.svg`).
 
 ### `assets/symboles/filtre_cartouche.svg`
 
 Symbole du filtre à cartouche remplaçable copié sans redessin depuis la bibliothèque de symboles
-inerWeb validée : `C:\git\usine-contenu\bibliotheque-symboles\svg\frigo_schema\filtre_cartouche.svg`.
+inerWeb validée (dépôt interne `usine-contenu`, `bibliotheque-symboles/svg/frigo_schema/filtre_cartouche.svg`).
 
 ## Références documentaires non intégrées
 

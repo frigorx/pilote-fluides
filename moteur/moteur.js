@@ -888,19 +888,38 @@
     a.download = "trace_" + PACK.pack.id + ".json"; document.body.appendChild(a); a.click(); a.remove();
   }
 
-  /* --- Scoring serveur (phase 2 : correction côté serveur, corrigé jamais livré) --- */
+  /* --- Scoring serveur (phase 2 : correction côté serveur, corrigé jamais livré).
+     Durci le 20/08 AVANT toute activation : la réponse du serveur est une
+     DONNÉE, jamais du HTML — valeurs strictement numériques, insérées par
+     textContent. HTTPS exigé, délai de 10 s, échec toujours expliqué. --- */
   function soumettreServeur(c) {
+    if (!/^https:\/\//.test(CONFIG.scoring_url)) return;
     var ex = S.examen;
     var payload = { pack: PACK.pack.id, exam: c.id, mode: S.modeId,
       reponses: ex.items.map(function (q, i) { return { qid: q.id, choix: ex.rep[i] ? ex.rep[i].choix : null }; }) };
-    fetch(CONFIG.scoring_url, { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(payload) })
+    var garde = ("AbortController" in window) ? new AbortController() : null;
+    var minuteur = garde ? setTimeout(function () { garde.abort(); }, 10000) : null;
+    function afficher(texte, fort) {
+      var el = document.getElementById("srv");
+      if (!el) return;
+      el.textContent = "";
+      if (fort) { var b = document.createElement("b"); b.style.color = "var(--bleu)"; b.textContent = texte; el.appendChild(b); }
+      else el.textContent = texte;
+    }
+    fetch(CONFIG.scoring_url, { method: "POST", headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify(payload), signal: garde ? garde.signal : undefined })
       .then(function (r) { return r.json(); })
       .then(function (res) {
-        var el = document.getElementById("srv");
-        if (el) el.innerHTML = "<b style='color:var(--bleu)'>Résultat officiel : " + res.score + " / " + res.sur + " (" + res.pct + "%)</b>";
-        ex.score = res;
+        if (minuteur) clearTimeout(minuteur);
+        var score = Number(res && res.score), sur = Number(res && res.sur), pct = Number(res && res.pct);
+        if (!isFinite(score) || !isFinite(sur) || !isFinite(pct)) throw new Error("réponse inattendue");
+        afficher("Résultat officiel : " + score + " / " + sur + " (" + pct + "%)", true);
+        ex.score = { score: score, sur: sur, pct: pct };
       })
-      .catch(function () { var el = document.getElementById("srv"); if (el) el.textContent = "Serveur de correction indisponible (score non officiel)."; });
+      .catch(function () {
+        if (minuteur) clearTimeout(minuteur);
+        afficher("Serveur de correction indisponible (score non officiel).", false);
+      });
   }
 
   /* --- Minuteur --- */

@@ -66,7 +66,7 @@ Principe visuel de la V3 :
 - `assets/svg/` : dessins techniques originaux ;
 - `assets/images/` : vues réalistes et rendus 3D pédagogiques ;
 - `assets/photos/` : médias réels sous licence vérifiée ;
-- `assets/preuves-droits/` : copies locales des pages de licence ;
+- `assets/preuves-droits/` : preuves de licence inertes (texte ; les copies HTML d'origine restent dans l'historique git) ;
 - `assets/symboles/` : copies locales des symboles validés inerWeb ;
 - `STORYBOARD.md` : intention détaillée des quinze écrans ;
 - `SOURCES-TECHNIQUES.md` : références métier ;

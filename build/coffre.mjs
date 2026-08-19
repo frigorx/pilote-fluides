@@ -37,6 +37,11 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync
 import { randomBytes, pbkdf2Sync, createCipheriv } from "node:crypto";
 import { dirname, resolve, basename } from "node:path";
 import { fileURLToPath } from "node:url";
+import { homedir } from "node:os";
+
+/* Les sources du poste : par homedir(), jamais un nom de compte en dur —
+   ce script est publié avec le dépôt (durcissement du 20/08). */
+const POSTE = homedir().replace(/\\/g, "/");
 
 const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const PRIVE = "C:/git/habilitation-fluide";
@@ -49,6 +54,15 @@ if (!code || code.length < 4) {
   console.error("  (le code n'est pas stocké dans le dépôt — il se donne à chaque build)");
   process.exit(1);
 }
+/* Les fichiers chiffrés sont PUBLICS et attaquables hors ligne, sans limite
+   d'essais : seule la longueur de la phrase protège (durcissement 20/08).
+   Avertissement non bloquant : les documents déjà chiffrés avec le code
+   actuel restent lisibles tant qu'on ne re-chiffre pas. */
+if (code.length < 12) {
+  console.warn("⚠ phrase d'accès courte (" + code.length + " caractères) : les fichiers");
+  console.warn("  du coffre étant téléchargeables, une phrase de 12 caractères ou plus");
+  console.warn("  (plusieurs mots) est fortement recommandée au prochain changement.");
+}
 
 /* --------------------------------------------------------------------
    LES DOCUMENTS DU COFFRE
@@ -58,8 +72,8 @@ if (!code || code.length < 4) {
 const DOCUMENTS = [
   // — Dossier de direction — (`binaire: true` → téléchargement après
   //   déchiffrement, au lieu d'un affichage : ce sont des fichiers Office)
-  { id: "projet-centre", cat: "Dossier de direction", titre: "Projet d'ouverture d'un centre d'habilitation", desc: "Le dossier présenté à la direction : contexte réglementaire, périmètre, organisation, investissement, modèle économique, risques, calendrier, décisions demandées.", src: "C:/Users/henni/Downloads/files/Projet_Centre_Habilitation_Fluide_LPP-JR.docx", binaire: true, fichier: "Projet_Centre_Habilitation_Fluide_LPP-JR.docx" },
-  { id: "budget-centre", cat: "Dossier de direction", titre: "Budget prévisionnel sur 5 ans", desc: "Le modèle paramétrable : hypothèses, lignes d'activité, économie d'une session, plan de financement, compte de résultat, seuil de rentabilité et sensibilité.", src: "C:/Users/henni/Downloads/files/Budget_previsionnel_Centre_Fluides_LPP-JR.xlsx", binaire: true, fichier: "Budget_previsionnel_Centre_Fluides_LPP-JR.xlsx" },
+  { id: "projet-centre", cat: "Dossier de direction", titre: "Projet d'ouverture d'un centre d'habilitation", desc: "Le dossier présenté à la direction : contexte réglementaire, périmètre, organisation, investissement, modèle économique, risques, calendrier, décisions demandées.", src: POSTE + "/Downloads/files/Projet_Centre_Habilitation_Fluide_LPP-JR.docx", binaire: true, fichier: "Projet_Centre_Habilitation_Fluide_LPP-JR.docx" },
+  { id: "budget-centre", cat: "Dossier de direction", titre: "Budget prévisionnel sur 5 ans", desc: "Le modèle paramétrable : hypothèses, lignes d'activité, économie d'une session, plan de financement, compte de résultat, seuil de rentabilité et sensibilité.", src: POSTE + "/Downloads/files/Budget_previsionnel_Centre_Fluides_LPP-JR.xlsx", binaire: true, fichier: "Budget_previsionnel_Centre_Fluides_LPP-JR.xlsx" },
 
   // — Architecture et ingénierie —
   { id: "architecture", cat: "Architecture et ingénierie", titre: "Architecture du dispositif", desc: "Le plan d'ensemble : les trois temps, la frontière public/privé, qui porte quoi.", src: PRIVE + "/ARCHITECTURE-DISPOSITIF.md" },

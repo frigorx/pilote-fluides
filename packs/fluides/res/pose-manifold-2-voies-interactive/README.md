@@ -53,7 +53,7 @@ La comparaison détaillée avec les six fiches Word sources et les points métie
 
 Le module réutilise la production fournie dans :
 
-`C:\Users\henni\Desktop\inerweb full ia\vanne-rotalock-pedagogique\animation-technique.html`
+`~\Desktop\inerweb full ia\vanne-rotalock-pedagogique\animation-technique.html`
 
 La vue de reconnaissance reprend le rendu local `../vanne-service-interactive/vanne-3d.webp`. Les coupes sont reconstruites dans `visuals.js` à partir des schémas manuels antérieurs pour rendre explicite la correction métier suivante : **P est placée après le siège arrière ; le pointeau au siège arrière bloque donc la voie P**. P1 reste côté circuit et peut rester sous pression.
 

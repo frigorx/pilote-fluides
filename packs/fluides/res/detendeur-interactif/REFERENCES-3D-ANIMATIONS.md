@@ -15,7 +15,7 @@ recensée ci-dessous n’a été copiée ni intégrée dans le module.
 
 ## Archive GrabCAD fournie
 
-- Archive : `C:\Users\henni\Downloads\valvula-de-expansao-dwg-1.snapshot.1.zip`
+- Archive : `~\Downloads\valvula-de-expansao-dwg-1.snapshot.1.zip`
 - Page d’origine : <https://grabcad.com/library/valvula-de-expansao-dwg-1>
 - Auteur / déposant affiché : Adriano Aquino
 - Mise en ligne affichée : 17 novembre 2020

@@ -5,6 +5,36 @@
 > Dernière mise à jour : **20 août 2026** (la file des 8 remarques du 19 au soir est soldée ;
 > l'état du 19/08 reste valable pour le reste).
 
+> **20/08 (2e passe) — DURCISSEMENT PUBLIÉ, bon à tirer de F. Henninot donné le jour même.**
+> La mission « reprise ciblée et durcissement » : SW durci (purge préfixée `inerweb-`, images revalidées, garde 8 Mo),
+> scoring serveur assaini (textContent, https, timeout), SECURITY.md + security.txt,
+> 404.html, mentions.html (BROUILLON non lié, champs ⟦à valider⟧), accessibilité des
+> pages publiques (skip-link, focus orange, Aa, volet au clavier, charte #10233c/#fffdf8),
+> **le réseau en liste HTML statique** (build/plan-liste.mjs, généré de LA donnée du
+> plan, sentinelles dans index.html) + JSON-LD, sitemap généré (build/sitemap.mjs,
+> formation.html volontairement sortie — à trancher), « réemployer le code » reformulé,
+> « Conforme à l'arrêté » → « Construit sur le référentiel de » (portail), preuves
+> Commons rendues inertes (les HTML restent dans l'historique git), plus AUCUN
+> `C:\Users\<compte>` dans le dépôt (37 occurrences → `~` ou homedir()).
+> Le rapport complet du chantier : `~\OneDrive\Bureau\CLAUDE-ESPACE-TRAVAIL\chantier-inerweb-site\`.
+>
+> **QUATRE DÉCISIONS DE F. HENNINOT, le 20/08, appliquées :**
+> 1. Le durcissement est publié tel quel.
+> 2. **Sept pages sortent des moteurs de recherche** (`noindex`) : portail, planning,
+>    matrice, relecture, projection, pratique, charte. ⚠️ Trois d'entre elles sont
+>    GÉNÉRÉES — le `noindex` vit dans `build/parcours.mjs` (planning),
+>    `build/matrice.mjs`, `build/relecture.mjs`, jamais dans le HTML : l'écrire à la
+>    main serait effacé au build suivant.
+> 3. Le catalogue (`galerie.html`) **reste caché** tant que la relecture métier des
+>    cours n'est pas faite.
+> 4. **Règle d'identité posée par F. Henninot** : *une page cachée peut garder les
+>    noms ; une page visible ne le peut pas.* D'où la signature « F. Henninot — groupe
+>    Équatio » de `charte.html` et le nom de l'établissement de `dossier.html`,
+>    conservés — les deux pages sont `noindex`. **Corollaire à tenir : rendre une de
+>    ces pages visible OBLIGE à retirer ces mentions d'abord.**
+> ⚠️ Rappel de fond : `noindex` cache des moteurs de recherche, il ne rend RIEN privé —
+> ces pages restent lisibles par quiconque a leur adresse.
+
 > **20/08 — LA FILE DES 8 REMARQUES EST SOLDÉE.** Tout est poussé et vérifié sur le
 > site servi (https://inerweb.fr) :
 > 1. **PWA** : le site s'installe sur téléphone et se consulte hors-ligne (atelier,
@@ -396,7 +426,7 @@ registre généré · chaîne de l’intervention p1 + p3 + p5.
 3. **Le gabarit commun** dont le fichier de voix fait partie. Trois heures, et les vingt cours
    suivants coûtent trois fois moins à intégrer.
 4. **Les cours restants**, par poids : `g3` (5) · `g5b` (5) · `g13` (5) · `g5a` (4) · `g6b` (4).
-   Commande détaillée dans `C:\Users\henni\OneDrive\Bureau\COURS-INTERACTIFS-A-FABRIQUER.md`.
+   Commande détaillée dans `~\OneDrive\Bureau\COURS-INTERACTIFS-A-FABRIQUER.md`.
 5. **L'adressage `?extrait=`** — envoyer deux écrans en réponse à une question d'élève. Suppose
    des identifiants d'écrans **stables et en toutes lettres** ; le Tome 4 ne les a pas.
 6. **Le Bac Pro MFER.** Le référentiel existe déjà :

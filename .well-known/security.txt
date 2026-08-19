@@ -1,0 +1,6 @@
+Contact: mailto:inerweb.fh@gmail.com
+Contact: https://github.com/frigorx/pilote-fluides/issues
+Expires: 2027-08-20T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://inerweb.fr/.well-known/security.txt
+Policy: https://github.com/frigorx/pilote-fluides/blob/main/SECURITY.md

@@ -33,40 +33,58 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://inerweb.fr/formation.html">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#1b3a63">
   <link rel="apple-touch-icon" href="icones/apple-touch-icon-180.png">
   <title>inerWeb Pilote — Habilitation fluides frigorigènes (démonstrateur)</title>
   <meta name="description" content="Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote.">
-  <link rel="stylesheet" href="moteur/charte-edu.css?v=2a318eb392">
-  <link rel="stylesheet" href="moteur/impression.css?v=2a318eb392" media="print">
+  <link rel="stylesheet" href="moteur/charte-edu.css?v=4d014f616d">
+  <link rel="stylesheet" href="moteur/impression.css?v=4d014f616d" media="print">
 </head>
 <body>
+  <noscript>
+    <!-- L'application a besoin de JavaScript ; sans lui, dire quoi faire
+         plutôt que montrer une page blanche. -->
+    <div style="max-width:640px;margin:40px auto;padding:24px 28px;background:#fffdf8;
+                border:1px solid #d6dee7;border-radius:14px;color:#10233c;
+                font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif">
+      <h1 style="font-family:'Trebuchet MS',Calibri,Arial,sans-serif;color:#1b3a63;font-size:24px">
+        Formation habilitation fluides frigorigènes</h1>
+      <p>Cette application d'autoformation (catégories A1, A2, D, E) fonctionne
+         avec JavaScript, qui est désactivé dans votre navigateur.</p>
+      <p><a href="/" style="color:#1b3a63">← Retour à l'accueil</a> —
+         le plan des cours y reste consultable.</p>
+    </div>
+  </noscript>
   <div id="app"></div>
   <!-- Côté ÉLÈVE : BUILD ÉLÈVE, sans la couche pilote.
        Régénéré par `node build/build.mjs` après chaque modification du pack. -->
-  <script src="packs/fluides/pack.eleve.js?v=2a318eb392"></script>
+  <script src="packs/fluides/pack.eleve.js?v=4d014f616d"></script>
   <!-- Config optionnelle (scoring serveur, phase 2) -->
-  <script src="config.js?v=2a318eb392"></script>
+  <script src="config.js?v=4d014f616d"></script>
   <!-- Habillage sonore des planches animées : la table du pack, puis le
        mécanisme. Coupé par défaut, aucun son chargé tant qu'on ne le joue
        pas. Les deux fichiers sont facultatifs : sans eux, le moteur
        fonctionne à l'identique, en silence. -->
-  <script src="packs/fluides/sons.js?v=2a318eb392"></script>
-  <script src="moteur/sons.js?v=2a318eb392"></script>
+  <script src="packs/fluides/sons.js?v=4d014f616d"></script>
+  <script src="moteur/sons.js?v=4d014f616d"></script>
   <!-- Lecture à voix haute d'une fiche, à la demande : aide FLE/DYS.
        Facultatif, ne casse rien si absent. -->
   <script src="moteur/voix-index.js?v=20260806-1"></script>
   <script src="moteur/voix.js?v=20260806-1"></script>
-  <script src="moteur/lecture.js?v=2a318eb392"></script>
+  <script src="moteur/lecture.js?v=4d014f616d"></script>
   <!-- Moteur générique -->
-  <script src="moteur/moteur.js?v=2a318eb392"></script>
+  <script src="moteur/moteur.js?v=4d014f616d"></script>
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
-<script src="moteur/lisibilite.js?v=2a318eb392"></script>
-<script src="moteur/marque.js?v=2a318eb392" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/lisibilite.js?v=4d014f616d"></script>
+<script src="moteur/marque.js?v=4d014f616d" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
-  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+  // Le catch : certains navigateurs (vie privée renforcée, webviews)
+  // refusent l'enregistrement — le site marche pareil, juste sans hors-ligne.
+  if ("serviceWorker" in navigator)
+    navigator.serviceWorker.register("sw.js").catch(function () {});
 </script>
 </body>
 </html>

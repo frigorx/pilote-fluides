@@ -6,7 +6,7 @@
 
 Archive fournie :
 
-`C:\Users\henni\OneDrive\Bureau\25 26\Fiches méthodes + exercices CERFA.zip`
+`~\OneDrive\Bureau\25 26\Fiches méthodes + exercices CERFA.zip`
 
 SHA-256 : `07AD49E78CF116682DC8C35751253414189AE102663AFE2C0D849D18194020A2`
 

@@ -2,7 +2,7 @@
 
 ## Copie active
 
-C:\Users\henni\Desktop\inerweb full ia\detendeur-pedagogique
+~\Desktop\inerweb full ia\detendeur-pedagogique
 
 Le projet voisin voyant-liquide-pedagogique a fourni l’architecture générale et n’a pas été
 modifié. Ne pas répercuter automatiquement les changements dans une autre copie.

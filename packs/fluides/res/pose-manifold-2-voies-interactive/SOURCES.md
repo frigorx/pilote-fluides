@@ -2,7 +2,7 @@
 
 ## Archive de fiches métier fournie le 13 août 2026
 
-- `C:\Users\henni\OneDrive\Bureau\25 26\Fiches méthodes + exercices CERFA.zip` — SHA-256 `07AD49E78CF116682DC8C35751253414189AE102663AFE2C0D849D18194020A2`.
+- `~\OneDrive\Bureau\25 26\Fiches méthodes + exercices CERFA.zip` — SHA-256 `07AD49E78CF116682DC8C35751253414189AE102663AFE2C0D849D18194020A2`.
 - `01 Fiche méthode pose des manos.docx` — pose du manifold, mise au vide des lignes et passage en lecture.
 - `02 Fiche méthode dépose des manifolds avec EVM.docx` — dépose par retour du fluide des lignes et remise en état.
 - `03 Fiche métode MSP.docx` — mise sous pression à l’azote et recherche de fuite.
@@ -14,8 +14,8 @@ Les originaux restent dans le ZIP fourni. Ils n’ont pas été modifiés ni cop
 
 ## Production inerWeb explicitement fournie
 
-- `C:\Users\henni\Desktop\inerweb full ia\vanne-rotalock-pedagogique\animation-technique.html` — animation technique à réutiliser selon la demande du 13 août 2026.
-- `C:\Users\henni\Desktop\inerweb full ia\vanne-rotalock-pedagogique\simple-diagrams.js` — source des schémas fixes manuels, notamment la position arrière avec P après le siège et P1 côté circuit.
+- `~\Desktop\inerweb full ia\vanne-rotalock-pedagogique\animation-technique.html` — animation technique à réutiliser selon la demande du 13 août 2026.
+- `~\Desktop\inerweb full ia\vanne-rotalock-pedagogique\simple-diagrams.js` — source des schémas fixes manuels, notamment la position arrière avec P après le siège et P1 côté circuit.
 - `../vanne-service-interactive/vanne-3d.webp` et son `SOURCES.md` — rendu local en perspective d’après la géométrie constructeur, produit et autorisé par F. Henninot pour la reconnaissance pédagogique de l’organe.
 - `visuals.js` — adaptation SVG manuelle pour ce parcours : séparation clé/vanne, scènes ciblées, coupe P après siège arrière et commandes interactives.
 - `../svg/manifold-lecture.svg` — fonction des robinets d’un manifold 2 voies : lecture robinets fermés, communication avec la voie centrale lorsqu’un robinet est ouvert.

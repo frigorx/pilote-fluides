@@ -5,7 +5,7 @@
         <property name="saveddate-us" show="1">2021-12-23</property>
         <property name="saveddate-eu" show="1">23-12-2021</property>
         <property name="savedtime" show="1">18:12</property>
-        <property name="savedfilepath" show="1">C:/Users/henni/OneDrive/Bureau/CCF/CCF 2022/LE PLUS SIMPLE DU MOND.qet</property>
+        <property name="savedfilepath" show="1">~/OneDrive/Bureau/CCF/CCF 2022/LE PLUS SIMPLE DU MOND.qet</property>
     </properties>
     <newdiagrams>
         <border rows="8" rowsize="80" cols="17" colsize="60" displaycols="true" displayrows="true"/>

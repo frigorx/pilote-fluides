@@ -5,12 +5,12 @@
 Ce dossier est un **brouillon autonome**, créé hors des deux racines Pilote Fluides afin de ne pas arbitrer à la place de F. Henninot entre :
 
 - `C:\git\pilote-fluides` — dépôt GitHub canonique observé ;
-- `C:\Users\henni\Desktop\inerweb full ia\pilote-fluides` — copie Bureau divergente.
+- `~\Desktop\inerweb full ia\pilote-fluides` — copie Bureau divergente.
 
 Aucune synchronisation, publication ou indexation RAG n'a été effectuée.
 
 La V1, jugée trop proche d'une révision, est conservée intacte dans
-`C:\Users\henni\Desktop\inerweb full ia\fluides-glissement-pedagogique-v1-revision`.
+`~\Desktop\inerweb full ia\fluides-glissement-pedagogique-v1-revision`.
 
 ## Ce qui a été réemployé
 

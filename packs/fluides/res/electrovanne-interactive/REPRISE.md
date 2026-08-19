@@ -2,7 +2,7 @@
 
 ## Copie concernée
 
-`C:\Users\henni\Desktop\inerweb full ia\electrovanne-pedagogique`
+`~\Desktop\inerweb full ia\electrovanne-pedagogique`
 
 Ne pas reporter automatiquement les changements dans une autre copie de Pilote Fluides.
 
