@@ -1,0 +1,25 @@
+LE RÉGULATEUR ÉLECTRONIQUE — LIRE, RÉGLER, CÂBLER
+=================================================
+
+Station de la ligne 🎛 CE QUI SE RÈGLE, construite le 19/08/2026 dans le moteur
+d'écrans du pack. Elle rend publiable le fond du simulateur Régul'Froid, qui
+restait bloqué en privé : ici, aucune image, aucun extrait de notice — tous les
+visuels sont dessinés (voir SOURCES-IMAGES.md).
+
+- 24 écrans dans 5 dossiers : Comprendre, Programmer, Dégivrer, Câbler, Contrôler.
+- SIX ATELIERS MANIPULABLES :
+  · laboratoire deux fils (NTC, PTC, Pt1000) avec valeur ohmique et courbe ;
+  · le cycle consigne / différentiel, avec la MÉMOIRE d'état entre les seuils ;
+  · la correction d'affichage et ce qu'elle déplace vraiment ;
+  · trois façades de programmation (touches nommées · trois touches · code
+    d'accès), même moteur pour les trois — c'est le propos du dossier ;
+  · le dégivrage en cinq temps, égouttage et retard ventilateur compris ;
+  · le bornier : huit fils à poser, inversion phase/neutre refusée ET expliquée,
+    puis le plan de conversion d'un appareil à un autre.
+- Codes couverts : 9.04 (thermostats mécaniques et électroniques) et 6.03
+  (interrupteurs de sécurité et de contrôle), appui 9.10. Détail écran par écran
+  dans couverture.json.
+- Marques citées à titre descriptif, sans affiliation ; mention complète sur la
+  page d'accueil.
+
+Ouvrir : index.html (hors ligne, aucune dépendance distante).

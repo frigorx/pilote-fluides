@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Cours interactif : lire une sonde résistive, régler consigne et différentiel, programmer un régulateur électronique de froid, régler le dégivrage et câbler son bornier.">
+  <title>Le régulateur électronique — lire, régler, câbler | Pilote Fluides</title>
+  <link rel="stylesheet" href="styles.css?v=20260819-5">
+  <link rel="stylesheet" href="impression.css?v=20260819-2" media="print">
+</head>
+<body>
+  <a class="skip-link" href="#lesson-title">Aller au contenu de l’écran</a>
+
+  <header class="appbar">
+    <a class="brand" href="index.html" aria-label="Revenir au sommaire du cours">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 50" width="192" height="40" role="img" aria-label="inerWeb Fluide" style="flex:0 0 auto;display:block"><text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text><line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/><rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="80" height="24"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="195" y="27" text-anchor="middle">Fluide</text></svg>
+      <span><small>Pilote Fluides · Régulateur électronique</small></span>
+    </a>
+    <div class="appbar-actions">
+      <span class="mode-badge" id="mode-badge">Cours complet</span>
+      <button class="small-button" id="home-button" type="button" hidden>Sommaire</button>
+      <button class="small-button exit-button" id="exit-button" type="button" hidden>Quitter</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="home" id="home" aria-labelledby="home-title">
+      <div class="home-copy">
+        <p class="eyebrow">CE QUI SE RÈGLE · HABILITATION FLUIDES A1/A2</p>
+        <h1 id="home-title">Le régulateur électronique<br><span>lire, régler, câbler</span></h1>
+        <p class="home-intro">Une résistance au bout de deux fils, deux nombres à entrer, un contact qui commande. Manipulez les sondes, réglez le cycle, programmez trois façades, réglez un dégivrage complet, puis câblez le bornier — sans jamais toucher une machine sous tension.</p>
+        <div class="home-actions">
+          <button class="primary-button" id="start-button" type="button">Commencer le cours <span aria-hidden="true">→</span></button>
+          <span id="home-compte">24 écrans · 2 contrôles · environ 25 minutes</span>
+        </div>
+      </div>
+
+      <figure class="home-visual">
+        <svg viewBox="0 0 420 260" role="img" aria-labelledby="cover-t cover-d" class="schema cover">
+          <title id="cover-t">Un régulateur électronique de froid, dessiné</title>
+          <desc id="cover-d">Un boîtier avec un afficheur, quatre voyants et quatre touches, relié à une sonde par deux fils et à un compresseur par son contact.</desc>
+          <rect x="70" y="40" width="280" height="150" rx="14" class="boitier"></rect>
+          <rect x="96" y="66" width="150" height="58" rx="8" class="afficheur"></rect>
+          <text x="171" y="110" class="chiffres">4.6</text>
+          <text x="232" y="86" class="unite">°C</text>
+          <g class="voyants">
+            <circle cx="276" cy="76" r="7" class="on"></circle><text x="292" y="81" class="sous">froid</text>
+            <circle cx="276" cy="100" r="7"></circle><text x="292" y="105" class="sous">ventil.</text>
+            <circle cx="276" cy="124" r="7"></circle><text x="292" y="129" class="sous">dégivrage</text>
+          </g>
+          <g class="touches">
+            <rect x="96" y="140" width="46" height="32" rx="7"></rect><text x="119" y="161" class="touche">▲</text>
+            <rect x="150" y="140" width="46" height="32" rx="7"></rect><text x="173" y="161" class="touche">▼</text>
+            <rect x="204" y="140" width="60" height="32" rx="7"></rect><text x="234" y="161" class="touche">SET</text>
+            <rect x="272" y="140" width="60" height="32" rx="7"></rect><text x="302" y="161" class="touche">PRG</text>
+          </g>
+          <path class="fil signal" d="M70 100 H30 V210"></path>
+          <rect x="8" y="210" width="44" height="26" rx="6" class="bloc-petit"></rect>
+          <text x="30" y="228" class="sous">sonde</text>
+          <path class="fil phase" d="M350 150 H392 V210"></path>
+          <circle cx="392" cy="224" r="16" class="moteur"></circle>
+          <text x="392" y="230" class="titre">M</text>
+        </svg>
+        <figcaption>Tous les visuels de cette station sont dessinés ici — aucune photo, aucun extrait de notice.</figcaption>
+      </figure>
+
+      <nav class="dossier-grid" id="dossier-grid" aria-label="Ouvrir directement un dossier"></nav>
+      <p class="home-note"><strong>Garde-fou :</strong> les valeurs affichées sont des valeurs d’exercice. Sur une installation, la notice de la référence posée fait foi, le réglage se vérifie à l’instrument, et toute intervention se fait hors tension et consignée.</p>
+      <p class="home-note home-mentions"><strong>Marques citées à titre descriptif.</strong> Les appareils nommés dans ce cours le sont pour désigner du matériel réellement rencontré en atelier, sans lien ni accord avec leurs fabricants, dans un cadre pédagogique sans but commercial. Aucune documentation constructeur n’est reproduite : schémas, façades et textes sont écrits pour ce cours. À la demande d’un ayant droit, l’élément concerné est retiré immédiatement — <a href="mailto:contact@inerweb.fr">contact@inerweb.fr</a>.</p>
+    </section>
+
+    <section class="course-shell" id="course-shell" hidden aria-label="Cours interactif sur le régulateur électronique">
+      <aside class="course-rail">
+        <div class="rail-heading"><span id="rail-mode">PARCOURS</span><strong id="rail-progress">1 / 24</strong></div>
+        <nav class="stepper" id="stepper" aria-label="Progression par dossier"></nav>
+        <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+        <p id="progress-copy">Début du parcours</p>
+      </aside>
+
+      <article class="lesson-card" aria-labelledby="lesson-title">
+        <header class="lesson-header">
+          <div class="lesson-heading"><p class="eyebrow" id="lesson-kicker"></p><h2 id="lesson-title" tabindex="-1"></h2></div>
+          <div class="lesson-tools" aria-label="Outils de l’écran">
+            <button class="tool-button" id="copy-link" type="button" aria-label="Copier le lien de cet écran"><span aria-hidden="true">🔗</span><span class="tool-label">Copier</span></button>
+            <div class="speed-control" aria-label="Vitesse de la voix">
+              <button id="slower" type="button" aria-label="Ralentir la voix">−</button><span id="speed-value">0,95×</span><button id="faster" type="button" aria-label="Accélérer la voix">+</button>
+            </div>
+            <button class="tool-button voice-button" id="listen" type="button"><span aria-hidden="true">▶</span><span>Écouter</span></button>
+            <button class="tool-button" id="stop-voice" type="button" aria-label="Arrêter la voix" disabled><span aria-hidden="true">■</span><span class="tool-label">Arrêter</span></button>
+          </div>
+        </header>
+
+        <div class="lesson-content">
+          <div class="lesson-copy"><p id="lesson-text"></p><p class="action-prompt" id="action-prompt"></p></div>
+          <section class="activity-zone" id="activity-zone" aria-label="Activité de l’écran"></section>
+        </div>
+
+        <footer class="lesson-footer">
+          <button class="nav-button secondary" id="prev-button" type="button">← Précédent</button>
+          <div class="reference-box" id="reference-box"></div>
+          <button class="nav-button" id="next-button" type="button">Suivant →</button>
+        </footer>
+        <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+      </article>
+    </section>
+
+    <section class="print-book" id="print-book" aria-label="Version imprimable du cours"></section>
+  </main>
+
+  <script src="../../../../moteur/voix-index.js?v=20260806-1"></script>
+  <script src="../../../../moteur/voix.js?v=20260806-2"></script>
+  <script src="../../../../moteur/prof-vocal.js?v=20260806-1"></script>
+  <script src="app.js?v=20260819-3"></script>
+  <script src="../../../../moteur/lisibilite.js?v=20260802-1"></script>
+  <script src="../../../../moteur/marque.js?v=20260818-3" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
+  <script src="referentiel.js"></script>
+</body>
+</html>

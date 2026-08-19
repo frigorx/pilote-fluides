@@ -1,0 +1,13 @@
+{
+  "cours": "regulateur-electronique-interactif",
+  "titre": "Le régulateur électronique — lire, régler, câbler",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 24,
+  "codes": {
+    "9.04": ["chaine", "labo-sondes", "sonde-exacte", "cycle", "correction", "quiz-comprendre", "methode", "clavier-nomme", "clavier-trois", "clavier-code", "enregistrer", "pourquoi-degivrer", "cycle-degivrage", "qui-arrete", "sondes-cablage", "remplacement", "mission-negative", "quiz-final"],
+    "6.03": ["commande-pas-protege", "courts-cycles", "quiz-comprendre", "qui-arrete", "departs-degivrage", "depart-protege", "bornier", "remplacement", "quiz-final"]
+  },
+  "appui": {
+    "9.10": ["courts-cycles", "cycle-degivrage"]
+  }
+}

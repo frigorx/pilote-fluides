@@ -1,0 +1,53 @@
+/* =====================================================================
+   IMPRESSION — la fiche papier du cours
+   ---------------------------------------------------------------------
+   À l'écran, le cours est un parcours ; sur papier, c'est un document
+   suivi. On masque l'interface et on sort le livre construit par
+   buildPrintBook() : un écran par bloc, avec l'action demandée, la
+   correction des contrôles et les codes du référentiel.
+
+   Contraintes tenues : A4 portrait, corps 11,5 pt (lisible en salle et
+   pour un lecteur DYS), tout en noir sur blanc, aucun aplat de couleur
+   qui grise le texte, et pas de bloc coupé en deux pages.
+   ===================================================================== */
+
+@page { size: A4 portrait; margin: 16mm 15mm; }
+
+html, body {
+  width: auto !important; height: auto !important;
+  overflow: visible !important;
+  background: #fff !important; color: #000 !important;
+  font-size: 11.5pt !important; line-height: 1.5 !important;
+}
+
+/* L'interface entière disparaît : elle n'a pas de sens sur du papier. */
+.appbar, .skip-link, .home, .course-shell, .status-message { display: none !important; }
+
+.print-book { display: block !important; }
+
+.print-title { border-bottom: 2pt solid #000; padding-bottom: 5mm; margin-bottom: 7mm; }
+.print-title h1 { font-size: 20pt; margin: 0 0 3mm; color: #000 !important; }
+.print-title p { margin: 1.5mm 0; font-size: 10.5pt; }
+
+.print-screen {
+  break-inside: avoid; page-break-inside: avoid;
+  border: 1pt solid #000; border-radius: 0;
+  padding: 5mm 6mm; margin-bottom: 6mm;
+  background: #fff !important;
+}
+.print-screen h2 { font-size: 13.5pt; margin: 0 0 3mm; color: #000 !important; }
+.print-screen h3 { font-size: 11.5pt; margin: 4mm 0 1.5mm; text-transform: uppercase; letter-spacing: .04em; }
+.print-screen p { margin: 0 0 2.5mm; }
+.print-screen b, .print-screen strong { font-weight: 700; }
+
+/* La correction d'un contrôle se repère à sa bordure double, pas à sa couleur :
+   la fiche doit rester lisible sortie d'une imprimante noir et blanc. */
+.print-answer {
+  border: 3pt double #000; padding: 3mm 4mm; margin-top: 3mm;
+  background: #fff !important;
+}
+.print-codes { margin: 3mm 0 0; font-size: 9.5pt; border-top: .5pt solid #000; padding-top: 1.5mm; }
+
+/* La ligne de marque et le badge du référentiel restent : ils portent la
+   paternité et ce que le document valide. */
+#marque-inerweb { position: static !important; margin-top: 6mm; font-size: 9pt !important; }
