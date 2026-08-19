@@ -34,6 +34,7 @@ window.PLAN_DESC = {
  "pression-temperature-interactive": "Découverte interactive et racontée de la relation pression-température, de l’ébullition sous vide au glissement des fluides zéotropes.",
  "pupitre-reglage-interactif": "Cours interactif A1/A2 : régler thermostats, pressostats et limiteurs — consigne, différentiel, et la preuve à l’instrument.",
  "recuperation-fluide-interactive": "TP interactif inerWeb : raccorder un manifold 4 voies, récupérer le fluide avec une station Minimax-E, peser, auto-purger puis tirer l'installation au vide.",
+ "regulateur-electronique-interactif": "Cours interactif : lire une sonde résistive, régler consigne et différentiel, programmer un régulateur électronique de froid, régler le dégivrage et câbler son bornier.",
  "regulateurs-kv-pedagogiques": "Parcours inerWeb Édu pour comparer, comprendre et régler les régulateurs de pression KVP, KVL et KVR.",
  "surchauffe-sous-refroidissement-interactif": "Cours interactif professionnel : mesurer et calculer la surchauffe et le sous-refroidissement d’un circuit frigorifique.",
  "tome-3-technologie-organes": "Tome 3 interactif inerWeb Édu : reconnaître, situer et comprendre les organes d’un circuit frigorifique.",

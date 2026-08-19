@@ -7,8 +7,8 @@
 
 | Mesure | Résultat |
 |---|---:|
-| Cours interactifs recensés | **39** |
-| Cours avec anomalie critique automatisable | **5** |
+| Cours interactifs recensés | **40** |
+| Cours avec anomalie critique automatisable | **4** |
 | Cours avec dette documentaire ou de reprise | **25** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **9** |
 | SVG pédagogiques contrôlés | **46** |
@@ -36,7 +36,7 @@
 | `fil-conducteur-intervention` | ✓ | ✓ | ✓ | ✗ | absente | 1 | ✓ | 🟠 impression, réglage de lisibilité |
 | `film-effet-de-serre` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🔴 fonds forcés à l’impression |
 | `film-ozone` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🔴 fonds forcés à l’impression |
-| `filtre-deshydrateur-pedagogique` | ✓ | ✗ | ✓ | ✓ | absente | 17 | ✓ | 🔴 44 dépendance(s) distante(s) |
+| `filtre-deshydrateur-pedagogique` | ✓ | ✓ | ✓ | ✓ | absente | 17 | ✓ | 🟠 réglage de lisibilité |
 | `frise-vivante` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `froid-clim-academie` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `glissement-temperature` | ✓ | ✓ | ✓ | ✓ | commune | 2 | ✓ | 🟠 ancien fond #EEF2F6 (2) |
@@ -51,6 +51,7 @@
 | `pression-temperature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pupitre-reglage-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `recuperation-fluide-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
+| `regulateur-electronique-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `regulateur-kvl-pedagogique` | ✗ | ✓ | ✓ | ✗ | absente | — | — | 🔴 description |
 | `regulateurs-kv-pedagogiques` | ✓ | ✓ | ✓ | ✓ | absente | 8 | ✓ | 🟠 réglage de lisibilité |
 | `surchauffe-sous-refroidissement-interactif` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |

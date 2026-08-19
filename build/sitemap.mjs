@@ -13,7 +13,7 @@
    SORTIE   sitemap.xml
    USAGE    node build/sitemap.mjs   (lancé aussi par build.mjs)
    ===================================================================== */
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -43,6 +43,17 @@ for (const p of INDEXEES) {
     process.exit(1);
   }
   lignes.push("  <url><loc>" + p.url + "</loc></url>");
+}
+
+/* Contrôle inverse : une page publique ajoutee a la racine sans y penser
+   resterait hors du sitemap en silence. On ne l'ajoute PAS d'office (ce serait
+   decider de l'indexation a la place de l'auteur) — on la signale. */
+const listees = new Set(INDEXEES.map((p) => p.fichier));
+for (const fichier of readdirSync(RACINE).filter((f) => f.endsWith(".html"))) {
+  if (listees.has(fichier)) continue;
+  const html = readFileSync(resolve(RACINE, fichier), "utf8");
+  if (/name="robots"[^>]*noindex/.test(html)) continue;
+  console.warn("⚠ sitemap : " + fichier + " n'est ni dans la liste ni en noindex — a trancher");
 }
 
 writeFileSync(
