@@ -2,8 +2,32 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **20 août 2026** (la file des 8 remarques du 19 au soir est soldée ;
+> Dernière mise à jour : **20 août 2026** (+ station régulateur électronique, 19/08) (la file des 8 remarques du 19 au soir est soldée ;
 > l'état du 19/08 reste valable pour le reste).
+
+> **19/08 (session Régul'Froid) — NOUVELLE STATION EN LIGNE, et le journal des mises à jour.**
+> `packs/fluides/res/regulateur-electronique-interactif/` — **Le régulateur électronique**,
+> 24 écrans, 6 ateliers, sur la ligne 🎛 CE QUI SE RÈGLE (5 stations désormais). Elle reprend
+> le fond du simulateur **Régul'Froid** (dépôt privé `C:\gitegulfroid-simulateur`) qui restait
+> **non publiable** : notice constructeur redistribuée et photos sans droits, jusque dans son
+> historique git. Décision de F. Henninot : **les marques restent citées** (usage descriptif,
+> trois constructeurs, aucune affiliation), **seuls les visuels sont refaits** — la station ne
+> contient aucun fichier image ni PDF, tout est SVG et HTML/CSS. Mention de bonne foi sur son
+> accueil (pédagogique, non commercial, retrait immédiat sur demande). Le dépôt privé reste
+> intact : c'est la version de classe. **Vérité du chantier = le `REPRISE.md` de la station.**
+>
+> **Journal des mises à jour** (demande du même jour) : le bloc `#nouveautes` de l'accueil est
+> désormais l'endroit UNIQUE — nouveautés *et* corrections, par date, étiquetées, la plus
+> récente en haut, rien ne se supprime. Le volet « Actualités » ne duplique plus : il y renvoie.
+> Pour la prochaine mise à jour : une section `<h3>date</h3>` en haut du corps du journal, et la
+> date du `<summary>` au même jour.
+>
+> ⚠️ **Défaut de mise en page du gabarit, trouvé en vérifiant** : les items de grille valent
+> `min-width:auto`, donc la colonne d'atelier sort de sa carte et passe hors écran, masquée par
+> `body{overflow:hidden}`. Constaté aussi sur **pupitre-reglage-interactif** (~330 px hors champ).
+> Corrigé **localement** dans la nouvelle station seulement. Les autres stations restent à
+> vérifier — chantier à part. Même remarque pour la feuille d'impression du gabarit : celle du
+> pupitre visait un autre modèle de page, son livre imprimable ne sort pas.
 
 > **20/08 (2e passe) — DURCISSEMENT PUBLIÉ, bon à tirer de F. Henninot donné le jour même.**
 > La mission « reprise ciblée et durcissement » : SW durci (purge préfixée `inerweb-`, images revalidées, garde 8 Mo),
