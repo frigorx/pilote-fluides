@@ -94,6 +94,8 @@
     b.type = "button";
     b.title = "Lisibilité : taille du texte, police adaptée (DYS)";
     b.setAttribute("aria-label", "Réglages de lisibilité");
+    b.setAttribute("aria-expanded", "false");
+    b.setAttribute("aria-controls", "lisib-panneau");
     b.textContent = "Aa";
 
     var p = document.createElement("div");
@@ -111,7 +113,24 @@
     document.body.appendChild(b);
     document.body.appendChild(p);
 
-    b.addEventListener("click", function () { p.classList.toggle("ouvert"); });
+    /* Le bouton annonce son état, le panneau se ferme par Échap, et le
+       focus revient à ce qui l'a ouvert : sinon il reste dans le vide,
+       et rien ne dit au lecteur d'écran que le panneau est déplié. */
+    function basculer(ouvrir) {
+      p.classList.toggle("ouvert", ouvrir);
+      b.setAttribute("aria-expanded", ouvrir ? "true" : "false");
+    }
+    b.addEventListener("click", function () {
+      var ouvrir = !p.classList.contains("ouvert");
+      basculer(ouvrir);
+      if (ouvrir) document.getElementById("lisib-moins").focus();
+    });
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && p.classList.contains("ouvert")) {
+        basculer(false);
+        b.focus();
+      }
+    });
     document.getElementById("lisib-moins").addEventListener("click", function () {
       etat.taille = Math.max(MIN, etat.taille - PAS); memoriser(); appliquer();
     });

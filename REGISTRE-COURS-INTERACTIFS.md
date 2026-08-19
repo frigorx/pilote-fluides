@@ -72,7 +72,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `nomenclature-interactive` | g1c | — | 1.06 | 101 Ko |
 | `parcours-manometres` | **orphelin** | 27 | *appui : 4 codes* | 245 Ko |
 | `pose-manifold-2-voies-interactive` | p1 | 8 | 4.05 · 5.01 · 12.02 | 318 Ko |
-| `pose-manifold-interactive` | p1 | 6 | 4.05 · 5.01 · 5.02 · 3.03 · 3.04 | 89 Ko |
+| `pose-manifold-interactive` | p1 | 6 | 4.05 · 5.01 · 5.02 · 3.03 · 3.04 | 90 Ko |
 | `pression-temperature-interactive` | g1b | — | 1.02 · 1.03 | 151 Ko |
 | `pupitre-reglage-interactif` | g9b | 9 | 9.04 · 9.06 · 7.04 | 70 Ko |
 | `recuperation-fluide-interactive` | p2 | 8 | 5.01 · 5.02 · 5.03 · 5.05 · 5.06 | 184 Ko |

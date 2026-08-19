@@ -30,6 +30,11 @@
            color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
            font-family:var(--titre); text-decoration:none; }
   .evite:focus { left:8px; }
+  /* Le lien d'évitement ne déplace la page QUE si sa cible peut recevoir le
+     focus : sans tabindex, la tabulation suivante repartait du haut. Pas
+     d'anneau sur ce conteneur — le focus y est posé par programme, et
+     encadrer toute la page ne renseignerait personne. */
+  #contenu:focus { outline:none; }
   a:focus-visible, button:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
   body { margin:0; background:var(--fond); color:var(--txt);
          font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
@@ -106,7 +111,7 @@
   </div>
 </div>
 
-<div class="page" role="main" id="contenu">
+<div class="page" role="main" id="contenu" tabindex="-1">
 
   <h1>Espace formateurs</h1>
   <p class="chapo">Deux usages : <strong>se servir</strong> — projeter une ressource telle quelle en cours — et <strong>réemployer le moteur technique</strong> (sous licence MIT) dans vos propres pages. Les contenus de cours et les illustrations, eux, se projettent tels quels : ils ne se modifient pas (voir la licence ci-dessous).</p>
@@ -163,8 +168,8 @@
 </div>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=4657fcab36"></script>
+<script src="moteur/lisibilite.js?v=680789f696"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js. -->
-<script src="moteur/marque.js?v=4657fcab36" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=680789f696" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>
