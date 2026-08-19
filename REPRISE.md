@@ -5,63 +5,87 @@
 > Dernière mise à jour : **20 août 2026** (+ station régulateur électronique, 19/08) (la file des 8 remarques du 19 au soir est soldée ;
 > l'état du 19/08 reste valable pour le reste).
 
-> **20/08 (audit extérieur du site servi) — LOT 1 : LIENS MORTS ET FEUILLES D'IMPRESSION.**
-> Un audit en lecture seule du site publié (commit `7f37d1d`) a listé six familles de points.
-> Seul le lot ci-dessous ne demandait AUCUNE décision — il est fait, le reste attend F. Henninot.
-> · **Quatre destinations 404 réparées.** `chaleur-circuit-interactif` (tome 2) pointait vers
->   `../` et deux fois `../module/index.html` : aucun des deux n'existe. `bilan-thermique-…`
->   (tome 4) visait `circuit-organes-interactif`, le dossier réel est `circuit-organe-par-organe`.
->   `tome-3-technologie-organes` renvoyait deux fois vers un `../index.html` inexistant.
->   ⚠️ **La bonne cible de retour est `../../../../index.html#liste-cours`**, l'accueil PUBLIC et
->   son plan des cours — surtout pas `galerie.html`, qui reste cachée (décision du 20/08).
-> · **Deux feuilles d'impression rebranchées.** `compresseur-interactif` et
->   `pupitre-reglage-interactif` chargeaient un `impression.css` local qui n'a jamais existé ;
->   ils prennent la commune `../../../../moteur/impression.css`. ⚠️ Le lien n'est plus mort,
->   mais le rendu papier du pupitre reste à contrôler : le REPRISE du 19/08 note déjà que sa
->   feuille visait un autre modèle de page.
-> · **Sitemap : rien à corriger.** Les 3 URL sont une liste CONTRÔLÉE et documentée, pas un
->   oubli. Ajouté seulement le contrôle que l'en-tête du script annonçait sans le faire : toute
->   page HTML de la racine ni listée ni en `noindex` déclenche désormais un avertissement au
->   build. Il en sort un aujourd'hui — `formation.html`, dont la stratégie d'indexation attend
->   toujours d'être tranchée.
-> Vérifié sur serveur local, pas seulement sur disque : les 8 cibles répondent 200, l'ancre
-> `#liste-cours` existe, la feuille commune se charge bien en `media="print"` (38 règles),
-> console vide. Un vérificateur de liens passé sur les 91 pages HTML ne trouve plus aucune
-> cible absente (les 7 restants sont des gabarits JS et des exemples de code échappés).
+> **20/08 (2e audit extérieur du site servi) — QUATRE LOTS FAITS, NON POUSSÉS.**
+> Un audit en lecture seule du site publié (commit `7f37d1d`) a listé six familles de
+> points. Tri fait, fait par fait : plusieurs constats étaient déjà tranchés, ou faux.
+> Ordre suivi : d'abord tout ce qui ne demandait AUCUNE décision de F. Henninot.
 >
-> **CE QUE L'AUDIT LAISSE EN ATTENTE — rien de tout cela n'est fait :**
-> 1. **Les deux films chargent React, ReactDOM et Babel depuis `unpkg.com`**
->    (`film-ozone/support.js:1143-1147` et son jumeau `film-effet-de-serre`, exports Claude
->    Design). Donc : pas réellement hors ligne, une connexion du visiteur part vers un tiers,
->    la mention « aucun script tiers » des mentions légales est fausse, et `@babel/standalone`
->    compile du JSX dans le navigateur — ce qui interdit toute CSP stricte. Les films n'ont
->    par ailleurs ni `h1`, ni `main`, ni transcription. ⚠️ **`build/audit-conformite.mjs` ne
->    voit pas ces dépendances distantes** : il classe les deux films 🔴 pour un autre motif.
-> 2. **Aucun en-tête de sécurité** (CSP, HSTS, X-Content-Type-Options, Referrer-Policy,
->    Permissions-Policy, `frame-ancestors`). ⚠️ **Ce n'est pas un chantier de code** :
->    GitHub Pages ne sert aucun en-tête personnalisé. Il faut décider de passer, ou non, par
->    Cloudflare devant le domaine.
-> 3. **Le coffre accepte encore une phrase de passe de 4 caractères.** La conception est
->    saine (AES-256-GCM, PBKDF2-SHA256 600 000 tours), mais les fichiers chiffrés sont
->    publics : une phrase faible s'attaque hors ligne. À confirmer par F. Henninot — et si
->    elle est faible, rechiffrer ne suffit pas, l'ancienne version reste dans l'historique git.
-> 4. **Contraste insuffisant** : `#ff6b35` sur beige ≈ 2,52:1, blanc sur orange ≈ 2,84:1,
->    le gris `#8494a4` de la galerie ≈ 2,8-3,1:1 — le seuil est 4,5:1. Corriger veut dire
->    créer une variante foncée DANS la charte (`usine-contenu\00-charte\`), hors de ce dépôt.
-> 5. **Accessibilité** : le lien « Aller au contenu » déplace la page sans poser le focus ;
->    le volet Actualités garde ses liens atteignables au clavier quand il est fermé (`inert`) ;
->    le bouton `Aa` n'expose ni `aria-expanded` ni `aria-controls` et n'écoute pas Échap ;
->    le volet mange 24 % de l'accueil à 1366 px, 33 % à 1024 px.
-> 6. **SEO et mentions** : les ~60 modules de cours sont indexables mais hors sitemap et sans
->    canonical — les ajouter contredirait la décision « galerie cachée tant que la relecture
->    métier n'est pas faite », donc c'est un arbitrage, pas une correction. `mentions.html`
->    reste un brouillon non lié, avec ses champs ⟦à valider⟧ et son « aucun script tiers » faux.
-> · Points DNS/GitHub de l'audit **déjà écrits** dans `CHECKLIST-REGLAGES-EXTERIEURS.md` le
->   20/08 (4e enregistrement A `185.199.111.153` manquant, protection de `main`, TXT GitHub,
->   Search Console) — ils attendent F. Henninot, personne d'autre ne peut les faire.
->   Sur DMARC l'audit ignore la décision déjà prise : rien à publier tant qu'aucune adresse
->   @inerweb.fr n'envoie de courrier. ⚠️ Mais `regulateur-electronique-interactif` **affiche**
->   `contact@inerweb.fr` : soit cette boîte relève, soit l'adresse se retire.
+> **`665fdcf` — quatre destinations 404 et deux feuilles d'impression fantômes.**
+> `chaleur-circuit-interactif` (tome 2) pointait vers `../` et deux fois vers
+> `../module/index.html`, qui n'existent pas ; `bilan-thermique-…` (tome 4) visait
+> `circuit-organes-interactif` quand le dossier réel est `circuit-organe-par-organe` ;
+> `tome-3-technologie-organes` renvoyait deux fois vers un `../index.html` inexistant.
+> ⚠️ **La bonne cible de retour est `../../../../index.html#liste-cours`** — l'accueil
+> PUBLIC et son plan des cours, surtout pas `galerie.html`, qui reste cachée.
+> `compresseur-interactif` et `pupitre-reglage-interactif` chargeaient un
+> `impression.css` local qui n'a jamais existé : ils prennent la commune
+> `moteur/impression.css`. ⚠️ Le rendu papier du pupitre reste à contrôler (cf. 19/08).
+> Le sitemap, lui, n'avait pas de bug : ses 3 URL sont une liste CONTRÔLÉE. Ajouté
+> seulement le garde-fou que l'en-tête du script annonçait sans le faire — une page
+> HTML de la racine ni listée ni en `noindex` déclenche un avertissement au build.
+> Il en sort un : `formation.html`, dont l'indexation attend toujours d'être tranchée.
+>
+> **`0c59450` — le clavier.** Le lien « Aller au contenu » déplaçait la page sans poser
+> le focus : il n'évitait donc rien. Les cibles reçoivent `tabindex="-1"` — le dépôt
+> avait déjà la convention sur 18 cibles, 7 l'avaient manquée, c'est 25 sur 25.
+> Le volet « Actualités » replié n'est que poussé hors écran : ses cinq liens restaient
+> atteignables à la tabulation dans un panneau déjà déclaré `aria-hidden` — on tabulait
+> dans le vide. `inert` les sort du parcours ET de l'arbre d'accessibilité.
+> Le bouton `Aa` n'annonçait pas son état : `aria-expanded` + `aria-controls`, fermeture
+> par Échap, focus rendu — dans `moteur/lisibilite.js`, donc sur les 15 pages.
+> **Non touché volontairement** : le volet reste ouvert à l'arrivée sur ordinateur et
+> replié sur téléphone. C'est la décision du 19/08 ; l'audit y voyait un encombrement.
+>
+> **`513a533` — les deux films décrochés d'unpkg.com.** Ils y prenaient React, ReactDOM
+> et `@babel/standalone` À CHAQUE ouverture. Conséquences vérifiées : les films ne
+> pouvaient PAS être hors ligne (le service worker ignore les autres origines, donc ces
+> fichiers n'entraient jamais en cache — en atelier sans réseau, films morts) ; la
+> connexion du visiteur partait vers un tiers ; et Babel, 3,1 Mo, recompilait le JSX
+> dans le navigateur à chaque fois pour un résultat identique.
+> Le runtime prévoyait la sortie : `cdnScriptFor` lit `window.__resources`, une table
+> qui remplace une URL de CDN par un chemin local. Les pages la posent avant support.js,
+> React et ReactDOM viennent de `moteur/vendor/`. Babel disparaît complètement : le
+> runtime ne le réclame que pour les `.jsx` (`kindOf`), et les six `.jsx` sont
+> précompilés en `.js` — le `x-import` vise les `.js`.
+> `build/films.mjs` fait les deux et se relance ; il vérifie chaque fichier tiers contre
+> l'empreinte SHA-384 que support.js déclarait déjà. Les trois collent : c'est le même
+> code qu'avant, au bit près, servi depuis le site. Babel reste hors du dépôt.
+> ⚠️ **CE QUE ÇA NE RÈGLE PAS** : le runtime exécute ses modules par `new Function(...)`.
+> Une CSP stricte sans `unsafe-eval` reste donc impossible SUR CES DEUX PAGES tant
+> qu'elles passent par `x-import`. L'erreur console « Unexpected token '-' », levée dans
+> react-dom, EXISTAIT AVANT : elle n'empêche pas les films de tourner, non résolue.
+>
+> **`332e61c` — les films disent ce qu'ils racontent.** `h1`, `main`, et une
+> transcription dépliable (13 passages pour l'ozone, 15 pour l'effet de serre) extraite
+> des sous-titres DÉJÀ présents dans la source : rien d'inventé, c'est le texte que le
+> film affiche. ⚠️ **PIÈGE PAYÉ** : le runtime cale son rendu sur la chaîne de hauteurs
+> `html > body > #dc-root`. Le `<main>` intercalé la rompt — le film se rendait dans
+> **0 px de haut**, présent dans le DOM et invisible. D'où `main{height:100%}` dans les
+> deux pages : ne pas la retirer.
+>
+> **CE QUI RESTE — chacun attend une décision de F. Henninot :**
+> 1. **En-têtes de sécurité** (CSP, HSTS, X-Content-Type-Options, Referrer-Policy,
+>    Permissions-Policy, `frame-ancestors`). ⚠️ **Pas un chantier de code** : GitHub
+>    Pages ne sert aucun en-tête personnalisé. Décider de passer, ou non, par Cloudflare.
+> 2. **Coffre** : l'outil accepte encore une phrase de passe de 4 caractères et les
+>    fichiers chiffrés sont publics — une phrase faible s'attaque hors ligne. Si elle est
+>    faible, rechiffrer ne suffit pas : l'ancienne version reste dans l'historique git.
+> 3. **Contraste** : `#ff6b35` sur beige ≈ 2,52:1, blanc sur orange ≈ 2,84:1, le gris
+>    `#8494a4` ≈ 2,8-3,1:1, pour un seuil de 4,5:1. Corriger = créer une variante foncée
+>    DANS la charte (`usine-contenu\00-charte\`), hors de ce dépôt.
+> 4. **SEO des modules** : les ~60 cours sont indexables mais hors sitemap et sans
+>    canonical. Les y mettre contredirait « galerie cachée tant que la relecture métier
+>    n'est pas faite » : c'est un arbitrage, pas une correction.
+> 5. **`mentions.html`** : toujours un brouillon non lié, champs ⟦à valider⟧. Son
+>    « aucun script tiers » est redevenu VRAI avec `513a533`.
+> 6. **`contact@inerweb.fr`** est affiché par `regulateur-electronique-interactif` :
+>    soit la boîte relève, soit l'adresse se retire. (DMARC : décision du 20/08
+>    inchangée — rien à publier tant qu'aucune adresse n'envoie.)
+> · Points DNS/GitHub de l'audit **déjà écrits** dans `CHECKLIST-REGLAGES-EXTERIEURS.md`
+>   (4e enregistrement A `185.199.111.153`, protection de `main`, TXT GitHub, Search
+>   Console) : ils attendent F. Henninot, personne d'autre ne peut les faire.
+> · ⚠️ `build/audit-conformite.mjs` NE VOIT PAS les dépendances distantes : il classait
+>   les deux films 🔴 pour un tout autre motif. L'audit interne n'aurait jamais alerté.
 
 > **19/08 (session Régul'Froid) — NOUVELLE STATION EN LIGNE, et le journal des mises à jour.**
 > `packs/fluides/res/regulateur-electronique-interactif/` — **Le régulateur électronique**,
