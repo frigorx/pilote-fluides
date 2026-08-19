@@ -77,6 +77,7 @@
   .plan .legende-plan .rond { width:13px; height:13px; border-radius:50%;
                               border:3.5px solid var(--bleu-clair); background:#fff; display:inline-block; }
   .plan .legende-plan .rond.vu { background:var(--bleu-clair); }
+  .plan .legende-plan .rond.corr { box-shadow:0 0 0 2.5px #98a6b3; border-width:3px; margin:0 3px; }
   .plan .legende-plan button { font:inherit; font-size:13px; cursor:pointer; color:var(--mut);
                                background:none; border:1.5px solid var(--ligne); border-radius:999px;
                                padding:3px 12px; margin-left:auto; }
@@ -270,6 +271,7 @@
     <div class="legende-plan">
       <span class="puce-l"><span class="rond"></span> à visiter</span>
       <span class="puce-l"><span class="rond vu"></span> visitée</span>
+      <span class="puce-l"><span class="rond corr"></span> correspondance entre lignes</span>
       <span class="puce-l">🔒 code formateur</span>
       <span class="puce-l"><b id="trajet-n">0</b>&nbsp;/&nbsp;<span id="trajet-total">…</span> stations · ton trajet reste sur cet appareil</span>
       <button type="button" id="trajet-effacer">⟳ effacer mon trajet</button>
@@ -462,29 +464,46 @@
     jalon: "🏁 Technologue du cycle"
   };
 
-  /* --- Les quatre branches --- */
+  /* --- Les cinq branches. Le plan est une CARTE MÉMOIRE (métaphore métro
+         assumée, décision F. Henninot 19/08) : les correspondances entre
+         lignes SONT le contenu — le détendeur est un organe ET un réglage,
+         la fin de la ligne liquide débouche sur les réglages. Les colonnes
+         reliées par un couloir sont volontairement ADJACENTES : un couloir
+         qui traverserait une troisième ligne rendrait le plan illisible
+         (« la dernière fois à Paris je me suis perdu »). --- */
   var LIGNES = [
-    { nom: "🔧 LES ORGANES", sous: "CAP IFCA · BAC PRO MFER", couleur: "#1b3a63", x: 140,
+    { nom: "🔧 LES ORGANES", sous: "CAP IFCA · BAC PRO MFER", couleur: "#1b3a63", x: 130,
       jalon: "🏁 Technologue du circuit",
       stations: [
         cours("tome-3-technologie-organes", "Tome 3 — les organes",  "reconnaître et situer"),
-        cours("detendeur-interactif",       "Le détendeur",          "surchauffe et réglage"),
+        Object.assign(cours("detendeur-interactif", "Le détendeur", "surchauffe et réglage"), { corr: true }),
         cours("compresseur-interactif",     "Le compresseur",        "installer, régler, vérifier"),
         cours("module-compresseur",         "Module compresseur",    "le bloc hermétique"),
         cours("condenseur-interactif",      "Le condenseur",         "haute pression, ventilation"),
         cours("evaporateur-interactif",     "L’évaporateur",         "givre et dégivrage")
       ] },
-    { nom: "💧 LA LIGNE LIQUIDE", sous: "de la bouteille au détendeur", couleur: "#1e7e54", x: 400,
+    { nom: "🎛 CE QUI SE RÈGLE", sous: "consigne, différentiel, preuve", couleur: "#0e7490", x: 360,
+      jalon: "🏁 Réglages maîtrisés", depart_y: 1,
+      stations: [
+        /* Même cours que sur Les organes : c'est LA correspondance — un
+           détendeur s'apprend comme organe et se reprend comme réglage. */
+        Object.assign(cours("detendeur-interactif", "Le détendeur", "correspondance ↔ Organes"), { corr: true }),
+        cours("regulateurs-kv-pedagogiques", "Les régulateurs KV",    "la famille au complet"),
+        Object.assign(cours("pupitre-reglage-interactif", "Le pupitre de réglage", "consigne, différentiel"), { corr: true }),
+        { id: "pressostats", href: "https://frigorx.github.io/inerweb-pressostats/",
+          nom: "Les pressostats", sous: "KP · BP · HP, réglage réel" }
+      ] },
+    { nom: "💧 LA LIGNE LIQUIDE", sous: "de la bouteille au détendeur", couleur: "#1e7e54", x: 590,
       jalon: "🏁 Ligne liquide maîtrisée",
       stations: [
         cours("bouteille-liquide-pedagogique",  "La bouteille liquide",   "réserve et niveau"),
         cours("filtre-deshydrateur-pedagogique","Le filtre déshydrateur", "l’humidité, l’ennemie"),
         cours("voyant-liquide-pedagogique",     "Le voyant liquide",      "bulles et indicateur"),
-        cours("electrovanne-interactive",       "L’électrovanne",         "ouvrir, fermer, pump-down"),
-        cours("regulateurs-kv-pedagogiques",    "Les régulateurs KV",     "la famille au complet"),
-        cours("pupitre-reglage-interactif",     "Le pupitre de réglage",  "consigne, différentiel")
+        /* Fin de ligne en correspondance : après l'électrovanne, ce qui
+           reste de la ligne liquide… se règle. */
+        Object.assign(cours("electrovanne-interactive", "L’électrovanne", "correspondance ↔ Réglages"), { corr: true })
       ] },
-    { nom: "🧰 LES GESTES", sous: "l’atelier, le vrai geste pro", couleur: "#ff6b35", x: 660,
+    { nom: "🧰 LES GESTES", sous: "l’atelier, le vrai geste pro", couleur: "#ff6b35", x: 820,
       jalon: "🏁 Prêt à intervenir",
       stations: [
         cours("fil-conducteur-intervention",       "Le fil conducteur",     "l’intervention en 6 étapes"),
@@ -496,7 +515,7 @@
         cours("mission-bouteilles",                "Mission bouteilles",    "la bonne bouteille, le bon geste"),
         cours("chaine-intervention-interactive",   "La chaîne complète",    "tout enchaîner proprement")
       ] },
-    { nom: "🌍 FLUIDES & ENVIRONNEMENT", sous: "F-Gas, sécurité, climat", couleur: "#7a4fa0", x: 920,
+    { nom: "🌍 FLUIDES & ENVIRONNEMENT", sous: "F-Gas, sécurité, climat", couleur: "#7a4fa0", x: 1050,
       jalon: "🏁 Fluides maîtrisés",
       stations: [
         cours("frise-vivante",                        "La Frise des Fluides",    "l’histoire racontée", "frise-vivante.html"),
@@ -597,10 +616,23 @@
   }
 
   function gare(s, x, y, couleur, visite) {
-    var d = '<circle cx="' + x + '" cy="' + y + '" r="9" fill="' +
-            (visite ? couleur : "#ffffff") + '" stroke="' + couleur + '" stroke-width="4.5"></circle>';
+    var d = "";
+    /* Correspondance entre lignes : l'anneau externe gris, comme sur un
+       plan de métro — la pastille appartient à deux lignes à la fois. */
+    if (s.corr) d += '<circle cx="' + x + '" cy="' + y + '" r="15" fill="none" stroke="#98a6b3" stroke-width="2.5"></circle>';
+    d += '<circle cx="' + x + '" cy="' + y + '" r="9" fill="' +
+         (visite ? couleur : "#ffffff") + '" stroke="' + couleur + '" stroke-width="4.5"></circle>';
     if (visite) d += '<text class="coche" x="' + x + '" y="' + (y + 4) + '" text-anchor="middle">✓</text>';
     return d;
+  }
+
+  /* Couloir de correspondance entre deux lignes adjacentes : le double
+     trait des plans de métro — gris dessous, blanc dessus. */
+  function couloir(x1, x2, y) {
+    return '<line x1="' + x1 + '" y1="' + y + '" x2="' + x2 + '" y2="' + y +
+           '" stroke="#98a6b3" stroke-width="8" stroke-linecap="round"></line>' +
+           '<line x1="' + x1 + '" y1="' + y + '" x2="' + x2 + '" y2="' + y +
+           '" stroke="#ffffff" stroke-width="4" stroke-linecap="round"></line>';
   }
 
   function station(s, x, y, couleur, cote, visite) {
@@ -678,9 +710,17 @@
     });
     d.push(jalon(TRONC.jalon, 1170, TRONC_Y + 58));
 
+    /* Les couloirs de correspondance — dessinés AVANT les lignes pour
+       passer dessous. Deux couloirs, entre colonnes ADJACENTES seulement :
+       · Le détendeur : Organes (130) ↔ Ce qui se règle (360), rang 1 ;
+       · La fin de la ligne liquide : le pupitre (360) ↔ l'électrovanne (590). */
+    d.push(couloir(130, 360, DEBUT_Y + 1 * PAS));
+    d.push(couloir(360, 590, DEBUT_Y + 3 * PAS));
+
     /* Les branches */
     LIGNES.forEach(function (l) {
-      var fin = DEBUT_Y + (l.stations.length - 1) * PAS;
+      var y0 = DEBUT_Y + (l.depart_y || 0) * PAS;
+      var fin = y0 + (l.stations.length - 1) * PAS;
       d.push(flux("M " + HUB_X + " " + (TRONC_Y + 16) + " C " + HUB_X + " " + (TRONC_Y + 110) + " " +
                   l.x + " " + (PUCE_Y - 100) + " " + l.x + " " + (PUCE_Y - 17)));
       d.push(flux("M " + l.x + " " + (PUCE_Y - 17) + " V " + fin, l.couleur));
@@ -692,12 +732,21 @@
       d.push('<text class="puce" x="' + l.x + '" y="' + (PUCE_Y + 5) + '" text-anchor="middle">' + esc(l.nom) + "</text>");
       d.push('<text class="puce-s" x="' + l.x + '" y="' + (PUCE_Y + 35) + '" text-anchor="middle">' + esc(l.sous) + "</text>");
       l.stations.forEach(function (s, i) {
-        d.push(station(s, l.x, DEBUT_Y + i * PAS, l.couleur, "droite", t[s.id]));
+        d.push(station(s, l.x, y0 + i * PAS, l.couleur, "droite", t[s.id]));
       });
       d.push(jalon(l.jalon, l.x + 4, fin + 26));
       /* correspondance avec la ceinture */
       d.push('<circle cx="' + l.x + '" cy="' + CEINTURE_Y + '" r="7" fill="#ffffff" stroke="' + l.couleur + '" stroke-width="4"></circle>');
     });
+
+    /* La ligne de L'HUILE — annoncée, pas encore construite. Elle naîtra
+       du compresseur (c'est là que l'huile vit) : tracé pointillé gris,
+       cartouche « en développement », aucune station cliquable. */
+    d.push('<path d="M 130 ' + (DEBUT_Y + 2 * PAS) + ' H 56 V 830 H 118" stroke="#98a6b3" ' +
+           'stroke-width="6" stroke-dasharray="3 10" stroke-linecap="round" fill="none" opacity="0.8"></path>');
+    d.push('<rect x="118" y="815" width="128" height="30" rx="15" fill="#98a6b3"></rect>');
+    d.push('<text class="puce" x="182" y="835" text-anchor="middle">🛢 L’HUILE</text>');
+    d.push('<text class="puce-s" x="256" y="835" font-style="italic">ligne en développement — retour d’huile, circuit d’huile</text>');
 
     /* La ceinture S'ÉVALUER */
     d.push(flux("M 70 " + CEINTURE_Y + " H 1190", CEINTURE.couleur, 9));
@@ -757,10 +806,16 @@
   TOUTES = TOUTES.concat(CEINTURE.stations).concat(OUTILS.stations);
 
   function compte() {
-    var t = litTrajet(), n = 0;
-    TOUTES.forEach(function (s) { if (t[s.id]) n++; });
+    /* Par id UNIQUE : une station de correspondance figure sur deux lignes
+       mais reste UN cours — la visiter ne vaut qu'une fois. */
+    var t = litTrajet(), ids = {}, total = 0, n = 0;
+    TOUTES.forEach(function (s) {
+      if (ids[s.id]) return;
+      ids[s.id] = 1; total++;
+      if (t[s.id]) n++;
+    });
     document.getElementById("trajet-n").textContent = n;
-    document.getElementById("trajet-total").textContent = TOUTES.length;
+    document.getElementById("trajet-total").textContent = total;
   }
 
   document.getElementById("plan-svg").addEventListener("click", function (ev) {
