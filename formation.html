@@ -33,6 +33,9 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1b3a63">
+  <link rel="apple-touch-icon" href="icones/apple-touch-icon-180.png">
   <title>inerWeb Pilote — Habilitation fluides frigorigènes (démonstrateur)</title>
   <meta name="description" content="Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote.">
   <link rel="stylesheet" href="moteur/charte-edu.css?v=00b57f996b">
@@ -61,5 +64,9 @@
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
 <script src="moteur/lisibilite.js?v=00b57f996b"></script>
 <script src="moteur/marque.js?v=00b57f996b" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+<script>
+  // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
 </body>
 </html>

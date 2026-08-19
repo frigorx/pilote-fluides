@@ -54,6 +54,10 @@ const PAGES = [
   // 19/08/2026 — le site vitrine : l'accueil est devenu index.html, l'appli
   // de formation a déménagé sur formation.html, et deux pages l'accompagnent.
   "formation.html", "metier.html", "formateurs.html",
+  // 20/08/2026 — la page de secours du service worker (aucune référence
+  // versionnée dedans, présente ici pour la règle « toute page HTML
+  // nouvelle entre dans PAGES »).
+  "hors-ligne.html",
 ];
 
 function echapper(s) {
@@ -80,4 +84,14 @@ for (const page of PAGES) {
   total += n;
 }
 
-console.log("  version : " + version + " — " + total + " référence(s) datée(s) sur " + PAGES.length + " page(s)");
+/* Le service worker suit le même numéro : chaque build qui change moteur
+   ou contenu active un cache neuf chez les visiteurs (sa constante VERSION
+   n'est JAMAIS éditée à la main — voir l'en-tête de sw.js). */
+const sw = resolve(RACINE, "sw.js");
+if (existsSync(sw)) {
+  const avant = readFileSync(sw, "utf8");
+  const apres = avant.replace(/const VERSION = "[0-9a-f]*";/, 'const VERSION = "' + version + '";');
+  if (apres !== avant) writeFileSync(sw, apres, "utf8");
+}
+
+console.log("  version : " + version + " — " + total + " référence(s) datée(s) sur " + PAGES.length + " page(s) + sw.js");

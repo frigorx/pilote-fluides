@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Pas de réseau — inerWeb Édu</title>
+<!-- Page de secours servie par sw.js quand une page jamais visitée est
+     demandée sans réseau. Autonome : aucun script, aucune ressource
+     extérieure — elle doit s'afficher quand rien d'autre ne passe. -->
+<style>
+  body { margin:0; background:#f7f1e7; color:#1d2a38;
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif;
+         min-height:100vh; display:flex; align-items:center; justify-content:center; }
+  .carte { background:#fff; border:1px solid #d6dee7; border-radius:14px;
+           box-shadow:0 2px 10px rgba(27,58,99,.10); max-width:440px;
+           margin:20px; padding:28px 30px; text-align:center; }
+  .flocon { font-size:56px; line-height:1; }
+  h1 { font-family:'Trebuchet MS',Calibri,Arial,sans-serif; color:#1b3a63;
+       font-size:24px; margin:10px 0 8px; }
+  p { margin:0 0 18px; color:#5a6b7d; }
+  a, button { display:inline-block; padding:10px 22px; border-radius:999px;
+              font:bold 16px 'Trebuchet MS',Calibri,Arial,sans-serif;
+              text-decoration:none; cursor:pointer; margin:4px; }
+  a { background:#fff; color:#1b3a63; border:2px solid #2f5689; }
+  button { background:#1b3a63; color:#fff; border:none; }
+</style>
+</head>
+<body>
+  <div class="carte">
+    <div class="flocon" aria-hidden="true">❄️</div>
+    <h1>Pas de réseau ici</h1>
+    <p>Cette page n'a pas encore été visitée, elle n'est donc pas enregistrée
+       sur l'appareil. Les pages déjà ouvertes restent consultables.</p>
+    <button onclick="location.reload()">Réessayer</button>
+    <a href="/">Retour à l'accueil</a>
+  </div>
+</body>
+</html>
