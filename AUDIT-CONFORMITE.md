@@ -7,9 +7,9 @@
 
 | Mesure | Résultat |
 |---|---:|
-| Cours interactifs recensés | **37** |
+| Cours interactifs recensés | **39** |
 | Cours avec anomalie critique automatisable | **5** |
-| Cours avec dette documentaire ou de reprise | **23** |
+| Cours avec dette documentaire ou de reprise | **25** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **9** |
 | SVG pédagogiques contrôlés | **46** |
 | SVG sans titre / sans description textuelle | **3 / 41** |
@@ -39,11 +39,13 @@
 | `filtre-deshydrateur-pedagogique` | ✓ | ✗ | ✓ | ✓ | absente | 17 | ✓ | 🔴 44 dépendance(s) distante(s) |
 | `frise-vivante` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `froid-clim-academie` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `glissement-temperature` | ✓ | ✓ | ✓ | ✓ | commune | 2 | ✓ | 🟠 ancien fond #EEF2F6 (2) |
 | `hydrocarbures-a1-a2` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✗ | 🟠 SOURCES-IMAGES.md, ancien terme « module interactif » (1) |
 | `intervention-hydrocarbures-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `mission-bouteilles` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `module-compresseur` | ✗ | ✓ | ✓ | ✓ | absente | — | — | 🔴 description |
 | `nomenclature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `parcours-manometres` | ✓ | ✓ | ✓ | ✓ | commune | 18 | ✓ | 🟠 ancien fond #EEF2F6 (2) |
 | `pose-manifold-2-voies-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pose-manifold-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pression-temperature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |

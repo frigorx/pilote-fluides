@@ -73,6 +73,17 @@ function auditerCours(nom) {
   const runtime = tous.filter((f) => EXT_RUNTIME.has(extname(f).toLowerCase()));
   const media = tous.filter((f) => EXT_MEDIA.has(extname(f).toLowerCase()));
   const texte = runtime.map(lire).join("\n");
+  /* Deux anomalies critiques se cherchent par motif : le fond forcé à
+     l'impression et le thème sombre. Or `moteur/impression.css` porte en tête
+     la MISE EN GARDE « ne jamais écrire print-color-adjust:exact », et tout
+     cours qui embarque correctement cette feuille héritait donc d'un rouge.
+     Un faux rouge à côté d'un vrai — film-ozone et film-effet-de-serre en ont
+     un authentique — rend le tableau illisible pour un auditeur : il ne sait
+     plus lequel croire. On cherche donc ces deux motifs dans le code seul.
+     Une déclaration active n'est jamais dans un commentaire. */
+  const codeActif = texte
+    .replace(/\/\*[\s\S]*?\*\//g, " ")
+    .replace(/(^|[^:])\/\/[^\n]*/g, "$1 ");
   const html = lire(page);
   const titre = (html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1]?.trim() || "";
   const description = (html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)/i) || [])[1] || "";
@@ -84,8 +95,8 @@ function auditerCours(nom) {
   const serif = declarationsSerif(texte);
   const externes = dependancesExternes(texte);
   const sansAlt = imagesSansAlt(html);
-  const themeSombre = /prefers-color-scheme\s*:\s*dark/i.test(texte);
-  const impressionForcee = /(?:-webkit-)?print-color-adjust\s*:\s*exact/i.test(texte);
+  const themeSombre = /prefers-color-scheme\s*:\s*dark/i.test(codeActif);
+  const impressionForcee = /(?:-webkit-)?print-color-adjust\s*:\s*exact/i.test(codeActif);
   const ancienFond = (texte.match(/#eef2f6/gi) || []).length;
   const ancienTerme = (texte.match(/module interactif/gi) || []).length;
 

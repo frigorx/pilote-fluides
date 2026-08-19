@@ -2,8 +2,43 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **13 août 2026 au soir** (fusion des trois versions + trois organes ;
-> état détaillé du 2 août toujours valable pour le reste).
+> Dernière mise à jour : **19 août 2026** (deux cours ajoutés sur un sujet déjà couvert ;
+> état du 13 août au soir et état détaillé du 2 août toujours valables pour le reste).
+
+> **19/08 — deux cours ajoutés sur un sujet déjà couvert, branche `cours-manometres-et-glissement` (non poussée) :**
+> `parcours-manometres` (27 étapes + 5 briques indépendantes) et `glissement-temperature`
+> (13 scènes). **Décision de F. Henninot : le doublon est voulu.** « Je préfère avoir
+> 2 programmes qui couvrent les mêmes compétences plutôt que pas de programme du tout » —
+> niveau débutant et niveau confirmé sur la même notion. Ne pas proposer de fusion.
+>
+> **En revanche, aucun des deux ne revendique un code** : leurs `couverture.json` déclarent
+> tout en `appui`. Le doublon de COURS est voulu, le double comptage des CODES ne l'est pas —
+> devant un auditeur il affaiblit la preuve. Registre : **39 cours, toujours 99 codes couverts**.
+> Les deux sont **orphelins au registre** (aucune fiche `cartes.js` ne les appelle) mais
+> **atteignables depuis la galerie**, qui les a branchés seule au build. Le branchement sur
+> fiche reste à décider.
+>
+> Trois pièges payés ce jour-là :
+> 1. **Une brique n'est pas une copie.** Les 5 briques du parcours manomètres sont des
+>    tranches du même `app.js`, sélectionnées par `data-brique` sur `<html>`. Dupliquer les
+>    étapes ferait diverger les deux formes au premier correctif. Ne pas « simplifier » ça.
+> 2. **`shared/circuit.js` construisait ses chemins de symboles en dur.** Correct depuis un
+>    module, quatre 404 depuis une brique un cran plus bas. La racine se déduit maintenant
+>    du `src` du script, comme dans `lisibilite.js`. Le réflexe vaut pour tout fichier
+>    partagé appelé depuis deux profondeurs.
+> 3. **L'audit de conformité rendait un faux rouge.** `moteur/impression.css` porte en tête
+>    la mise en garde « ne jamais écrire print-color-adjust:exact » ; `audit-conformite.mjs`
+>    cherchait ce motif dans le texte brut, commentaires compris. Tout cours embarquant
+>    correctement cette feuille héritait d'un 🔴, à côté des vrais (film-ozone,
+>    film-effet-de-serre, qui ont la déclaration active). Les deux tests critiques sensibles
+>    au commentaire portent désormais sur le code seul.
+>
+> **Dette héritée, non traitée :** `#EEF2F6` (hors charte) vit dans `moteur/lisibilite.js`
+> et `moteur/charte-edu.css` ; tout cours qui embarque le réglage de lisibilité le porte, d'où
+> le 🟠 sur ces deux cours. Corriger les copies seules créerait une divergence avec le moteur :
+> c'est un chantier charte à mener sur le moteur, pas cours par cours.
+>
+> **Ni l'un ni l'autre n'a reçu le bon à tirer métier.** Pas de push, pas d'indexation RAG.
 
 > **13/08 au soir — deux chantiers clos le même soir :**
 > 1. **Les trois versions divergentes sont RÉUNIES et poussées** (`8145f86`, `06dd52d`) :
