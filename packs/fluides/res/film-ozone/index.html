@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Couche d'ozone et ODP — film narré</title>
 <meta name="description" content="Film animé narré (45 s) : la couche d’ozone, les CFC, l’ODP et le protocole de Montréal, 1987. Voix française, débit réglable, l’image se cale sur la voix.">
+<script>
+/* Les dépendances du runtime viennent du site, plus d'unpkg.com. `__resources`
+   est le point de substitution prévu par le runtime lui-même (`cdnScriptFor`
+   dans support.js) : il y lit un chemin local avant d'aller sur le réseau.
+   À déclarer AVANT support.js, sinon il est déjà parti chercher.
+   Les fichiers sont posés par `node build/films.mjs`, empreintes vérifiées.
+   @babel/standalone n'y figure pas : les .jsx sont précompilés en .js, donc
+   le runtime ne le réclame plus jamais (voir l'attribut `from` du x-import). */
+window.__resources = {
+  "https://unpkg.com/react@18.3.1/umd/react.production.min.js":
+    "../../../../moteur/vendor/react.production.min.js",
+  "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":
+    "../../../../moteur/vendor/react-dom.production.min.js"
+};
+</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -114,7 +129,7 @@ a:hover { color: #ff6b35; }
 })();
 </script>
 </helmet>
-<x-import component-from-global-scope="OzonePiece" from="./animations-v3.jsx ./tweaks-panel.jsx ./ozone.jsx" hint-size="100%,100%"></x-import>
+<x-import component-from-global-scope="OzonePiece" from="./animations-v3.js ./tweaks-panel.js ./ozone.js" hint-size="100%,100%"></x-import>
 </x-dc>
 <script src="../../../../moteur/marque.js" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
 </body>

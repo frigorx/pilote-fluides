@@ -13,7 +13,7 @@
 | Fiches qui en appellent au moins un | **50** |
 | Codes du référentiel couverts par un cours | **99** |
 | Codes encore expliqués par du texte seul | **0** |
-| Poids total des cours | **14.3 Mo** |
+| Poids total des cours | **14.5 Mo** |
 
 ## Anomalies
 
@@ -22,8 +22,8 @@
 Du travail fait que personne ne peut atteindre depuis le parcours.
 - `diagramme-enthalpique` — 724 Ko
 - `fil-conducteur-intervention` — 283 Ko
-- `film-effet-de-serre` — 1088 Ko
-- `film-ozone` — 945 Ko
+- `film-effet-de-serre` — 1204 Ko
+- `film-ozone` — 1051 Ko
 - `glissement-temperature` — 179 Ko
 - `parcours-manometres` — 245 Ko
 - `regulateur-electronique-interactif` — 164 Ko
@@ -59,8 +59,8 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `etancheite-interactive` | g4a, g4b, g4c | 27 | 4.01 · 4.02 · 4.03 · 4.04 · 4.05 · 4.06 · 4.07 · 4.08 · 4.09 | 68 Ko |
 | `evaporateur-interactif` | g8b | 27 | 8.02 · 8.03 · 8.04 · 8.06 · 8.07 · 8.10 · 8.11 · 8.05 · 8.09 | 166 Ko |
 | `fil-conducteur-intervention` | **orphelin** | — | — | 283 Ko |
-| `film-effet-de-serre` | **orphelin** | — | — | 1088 Ko |
-| `film-ozone` | **orphelin** | — | — | 945 Ko |
+| `film-effet-de-serre` | **orphelin** | — | — | 1204 Ko |
+| `film-ozone` | **orphelin** | — | — | 1051 Ko |
 | `filtre-deshydrateur-pedagogique` | g9 | 15 | 1.05 | 2683 Ko |
 | `frise-vivante` | c00 | 10 | 2.01 | 1178 Ko |
 | `froid-clim-academie` | g1e | — | 1.02 | 30 Ko |
