@@ -21,8 +21,38 @@ window.__resources = {
 };
 </script>
 <script src="./support.js"></script>
+<style>
+/* Le titre existe pour les lecteurs d'écran et pour la structure du document ;
+   le film, lui, est calé au pixel sur 1080x1080 — l'afficher le déformerait. */
+/* Le runtime cale son rendu sur une chaine de hauteurs html > body > #dc-root.
+   Le <main> intercale la rompt : sans cette regle, le film se rend dans 0 px
+   de haut — present dans le DOM, invisible a l ecran. */
+main { height: 100%; }
+.titre-du-film {
+  position: absolute; width: 1px; height: 1px; margin: -1px;
+  padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+/* La transcription : repliée, discrète, et surtout consultable — un film narré
+   sans texte écrit laisse dehors qui n'entend pas, qui lit lentement, ou qui
+   travaille dans un atelier bruyant. */
+.transcription {
+  position: fixed; top: 12px; left: 12px; z-index: 97; max-width: min(420px, 88vw);
+  background: #FFFDF8; border: 2px solid #1B3A63; border-radius: 12px;
+  font: 15px/1.45 Calibri, 'Segoe UI', sans-serif; color: #1B3A63;
+  box-shadow: 0 4px 14px rgba(27,58,99,.18);
+}
+.transcription > summary {
+  cursor: pointer; padding: 8px 14px; font-weight: 700; border-radius: 10px;
+}
+.transcription > summary:focus-visible { outline: 3px solid #FF6B35; outline-offset: 2px; }
+.transcription ol { margin: 0; padding: 0 16px 14px 34px; max-height: 62vh; overflow: auto; }
+.transcription li { margin: 6px 0; }
+@media print { .transcription { position: static; max-width: none; } }
+</style>
 </head>
 <body>
+<h1 class="titre-du-film">Couche d&#x27;ozone et ODP — Film narré de 45 secondes</h1>
+<main>
 <x-dc>
 <helmet>
 <style>
@@ -131,6 +161,25 @@ a:hover { color: #ff6b35; }
 </helmet>
 <x-import component-from-global-scope="OzonePiece" from="./animations-v3.js ./tweaks-panel.js ./ozone.js" hint-size="100%,100%"></x-import>
 </x-dc>
+</main>
+<details class="transcription">
+  <summary>Transcription du film (13 passages)</summary>
+  <ol>
+    <li>La couche d&#x27;ozone filtre les rayons ultraviolets.</li>
+    <li>Sans elle, les UV arriveraient directement au sol.</li>
+    <li>Un équipement qui fuit libère du CFC : R11, R12.</li>
+    <li>Ces molécules montent jusqu&#x27;à la stratosphère.</li>
+    <li>Le chlore qu&#x27;elles libèrent casse les molécules d&#x27;ozone.</li>
+    <li>Un seul atome de chlore en détruit des dizaines de milliers.</li>
+    <li>Le bouclier s&#x27;ouvre : les UV atteignent le sol.</li>
+    <li>L&#x27;ODP mesure ce pouvoir de destruction.</li>
+    <li>R11 : ODP = 1. R22 : 0,055. Les HFC : 0.</li>
+    <li>Protocole de Montréal, 1987 : les CFC sont interdits.</li>
+    <li>Tous les pays ont signé, et tous ont appliqué.</li>
+    <li>La couche d&#x27;ozone se reconstitue peu à peu.</li>
+    <li>Les HFC ne détruisent plus l&#x27;ozone… mais ils réchauffent le climat.</li>
+  </ol>
+</details>
 <script src="../../../../moteur/marque.js" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>
