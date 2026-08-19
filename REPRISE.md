@@ -34,6 +34,17 @@
 >    ces pages visible OBLIGE à retirer ces mentions d'abord.**
 > ⚠️ Rappel de fond : `noindex` cache des moteurs de recherche, il ne rend RIEN privé —
 > ces pages restent lisibles par quiconque a leur adresse.
+>
+> **PIÈGE PAYÉ le 20/08, trouvé en vérifiant le site servi : GitHub Pages fait tourner
+> Jekyll, qui NE PUBLIE PAS les fichiers et dossiers commençant par `.` ou `_`.**
+> `.well-known/security.txt` rendait 404, et avec lui les cinq outils de contrôle
+> (`_motifs.html`, `_controle.html`, `donnees/_liste.js`, `_verifier-icones.html`,
+> `_verifier-instants.html`) — invisibles en ligne depuis toujours, alors qu'ils
+> existent dans le dépôt. Aucun cours élève n'était touché. Corrigé par un fichier
+> **`.nojekyll`** vide à la racine : il désactive Jekyll (le site n'utilisait aucune
+> de ses fonctions, il n'y a pas de `_config.yml`) et tout est servi tel quel.
+> **Ne jamais supprimer ce fichier** ; et se souvenir que « le fichier est dans le
+> dépôt » ne prouve jamais « le fichier est servi ».
 
 > **20/08 — LA FILE DES 8 REMARQUES EST SOLDÉE.** Tout est poussé et vérifié sur le
 > site servi (https://inerweb.fr) :
