@@ -232,6 +232,7 @@
            (la v8, celle du README du dépôt Fluide — pas la page vitrine :
            correction F. Henninot, 19/08 au soir), la candidature ensuite. -->
       <a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/" target="_blank" rel="noopener"><strong>👀 Essayer la démonstration en ligne ▸</strong></a><br>
+      <a href="presentation-inerweb-fluide.pdf" target="_blank" rel="noopener">📄 Télécharger la présentation (PDF, 2 pages) ▸</a><br>
       <a href="mailto:inerweb.fh@gmail.com?subject=B%C3%AAta-test%20inerWeb%20Fluide">Puis se proposer comme bêta-testeur ▸</a></p>
     </div>
 
@@ -297,6 +298,22 @@
     <div class="flocon">❄️</div>
   </div>
 
+  <!-- Le mot de l'auteur — EN TÊTE de page (placement demandé par
+       F. Henninot après sa première navigation, 19/08) : qui parle,
+       avant le plan. Texte dicté par lui, mis en forme ; règles tenues :
+       projet personnel, aucune institution ni ancienne société nommée. -->
+  <div class="bloc" style="margin-top:26px;padding:18px 22px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
+    <div style="width:56px;height:56px;flex:none;border-radius:50%;background:#e7eff7;border:1.5px solid var(--ligne);display:flex;align-items:center;justify-content:center;font-size:26px">🧑‍🏫</div>
+    <div style="flex:1;min-width:240px">
+      <div class="surtitre" style="margin:0 0 6px">Le mot de l’auteur</div>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:15px;max-width:44em">Bonjour,</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:15px;max-width:44em">Technicien frigoriste pendant plusieurs années, j’enseigne aujourd’hui le froid et la climatisation. Ce site est un <strong>projet personnel</strong> : ma façon de transmettre le métier, avec des outils que je construis moi-même.</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:15px;max-width:44em">Tout reste en développement — des prototypes, des essais. Une erreur, une imprécision ? Dites-le-moi : c’est comme ça que le site s’améliore. Et si ces pages vous aident à découvrir le métier, à réviser ou à préparer l’attestation d’aptitude, elles auront fait leur travail.</p>
+      <p style="margin:0;color:var(--mut);font-size:14.5px"><strong style="color:var(--txt)">F. Henninot, enseignant en filière froid et climatisation</strong><br>
+      <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a></p>
+    </div>
+  </div>
+
   <div class="bloc plan" id="carte">
     <div class="titre-bloc">
       <h2>Le plan de formation</h2>
@@ -305,7 +322,7 @@
     <div class="legende-plan">
       <span class="puce-l"><span class="rond"></span> à visiter</span>
       <span class="puce-l"><span class="rond vu"></span> visitée</span>
-      <span class="puce-l"><span class="rond corr"></span> correspondance entre lignes</span>
+      <span class="puce-l"><span class="rond corr"></span> station sur deux lignes à la fois</span>
       <span class="puce-l">🔒 code formateur</span>
       <span class="puce-l"><b id="trajet-n">0</b>&nbsp;/&nbsp;<span id="trajet-total">…</span> stations · ton trajet reste sur cet appareil</span>
       <button type="button" id="trajet-effacer">⟳ effacer mon trajet</button>
@@ -445,22 +462,8 @@
     </a>
   </div>
 
-  <!-- Le mot de l'auteur — EMPLACEMENT posé le 19/08 : le texte personnel
-       sera écrit par F. Henninot lui-même. Ne rien inventer ici. -->
-  <div class="bloc" style="margin-top:34px;padding:22px 26px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
-    <div style="width:64px;height:64px;flex:none;border-radius:50%;background:#e7eff7;border:1.5px solid var(--ligne);display:flex;align-items:center;justify-content:center;font-size:30px">🧑‍🏫</div>
-    <div style="flex:1;min-width:240px">
-      <div class="surtitre" style="margin:0 0 6px">Le mot de l’auteur</div>
-      <!-- Texte dicté par F. Henninot le 19/08/2026, mis en forme. Règles
-           tenues : projet personnel, aucune institution nommée, aucune
-           ancienne société nommée, pas de promesse réglementaire datée. -->
-      <p style="margin:0 0 10px;color:var(--txt);font-size:15px;max-width:44em">Bonjour,</p>
-      <p style="margin:0 0 10px;color:var(--txt);font-size:15px;max-width:44em">Technicien frigoriste pendant plusieurs années, j’enseigne aujourd’hui le froid et la climatisation. Ce site est un <strong>projet personnel</strong> : ma façon de transmettre le métier, avec des outils que je construis moi-même.</p>
-      <p style="margin:0 0 10px;color:var(--txt);font-size:15px;max-width:44em">Tout reste en développement — des prototypes, des essais. Une erreur, une imprécision ? Dites-le-moi : c’est comme ça que le site s’améliore. Et si ces pages vous aident à découvrir le métier, à réviser ou à préparer l’attestation d’aptitude, elles auront fait leur travail.</p>
-      <p style="margin:0;color:var(--mut);font-size:14.5px"><strong style="color:var(--txt)">F. Henninot, enseignant en filière froid et climatisation</strong><br>
-      <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a></p>
-    </div>
-  </div>
+  <!-- (Le mot de l'auteur vivait ici, en bas — remonté en tête de page
+       sur retour de F. Henninot après sa première navigation, 19/08.) -->
 
 </div>
 
@@ -967,6 +970,10 @@
 
   var replie = false;
   try { replie = sessionStorage.getItem(CLE) === "oui"; } catch (e) {}
+  /* Sur téléphone, le volet ouvert mangeait tout l'écran (« un peu chargé
+     sur smartphone » — retour F. Henninot, 19/08) : il démarre replié, la
+     poignée « Infos ▸ » reste visible. Sur ordinateur, ouvert à l'arrivée. */
+  if (!replie && window.matchMedia && window.matchMedia("(max-width: 700px)").matches) replie = true;
   poser(replie);
   requestAnimationFrame(function () { v.classList.add("pret"); });
 
