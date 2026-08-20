@@ -101,6 +101,28 @@ window.CO2Visuals = (() => {
       </figure>`).join("")}</div></div>`;
   }
 
+  /* LES DEUX VUES EN PHASE. Le circuit et le diagramme portent la même
+     animation de 16 secondes. Ils sont posés par un seul innerHTML : leurs
+     horloges SMIL démarrent donc au même instant et le point qu'on suit dans
+     la centrale est celui qu'on voit se déplacer sur le tracé.
+     La couleur suit l'ÉTAT du fluide, pas son chemin — c'est le même code
+     dans les deux dessins, d'où la légende commune. */
+  function boosterDouble() {
+    const etats = [
+      ["#ff6b35", "gaz haute pression"],
+      ["#1b3a63", "liquide, puis détente"],
+      ["#9c8fd6", "vapeur de détente"],
+      ["#3a8fd6", "basse pression, évaporation"]
+    ];
+    return `<div class="visual-html co2-large"><div class="co2-double">
+      <figure><figcaption>Dans la centrale</figcaption>${SVG.boosterAnime || ""}</figure>
+      <figure><figcaption>Sur le diagramme log p/h</figcaption>${SVG.diagrammeBooster || ""}</figure>
+    </div>
+    <p class="co2-legende">${etats.map(([c, n]) =>
+      `<span><i style="background:${c}"></i>${echapper(n)}</span>`).join("")}</p>
+    </div>`;
+  }
+
   const TON = { ok: "ok", info: "info", attente: "wait", danger: "danger" };
 
   function cartes(v) {
@@ -155,15 +177,25 @@ window.CO2Visuals = (() => {
     </div></div>`;
   }
 
+  /* Une planche du fonds inerWeb, servie telle quelle. Elle porte son propre
+     style et ses propres animations : dans une balise <img>, elle s'anime donc
+     sans rien devoir à la page. Le texte de remplacement est OBLIGATOIRE — la
+     voix lit la légende, mais un lecteur d'écran lit celui-ci. */
+  function planche(v) {
+    return `<img class="co2-planche" src="illustrations/${echapper(v.fichier)}" alt="${echapper(v.alt || "")}">`;
+  }
+
   function render(v) {
     if (!v) return "";
     if (v.type === "svg") {
       if (v.nom === "etat-pt") return ETAT_PT;
       if (v.nom === "trois-flash") return troisFlash();
+      if (v.nom === "booster-double") return boosterDouble();
       if (v.nom === "booster-anime") return SVG.boosterAnime || "";
       if (v.nom === "diagramme-booster") return SVG.diagrammeBooster || "";
       return SVG[v.nom] || "";
     }
+    if (v.type === "image") return planche(v);
     if (v.type === "cartes") return cartes(v);
     if (v.type === "pastilles") return pastilles(v);
     if (v.type === "tableau") return tableau(v);

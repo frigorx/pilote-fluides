@@ -1,4 +1,4 @@
-# La ligne CO₂ / R744 — douze escales
+# La ligne CO₂ / R744 — treize escales, deux branches
 
 Module hors ligne du pack fluides. Aucune dépendance, aucune requête réseau.
 Ouvrir `index.html` ; une escale précise s'ouvre par `index.html?e=<identifiant>`.
@@ -16,12 +16,33 @@ même charte, même voix, même feuille d'impression que les modules pressostats
 `etat-pt` — le diagramme pression-température, que le chapitre « Carte d'identité »
 réclamait pour situer les trois points remarquables les uns par rapport aux autres.
 
-## Pourquoi douze escales et pas un parcours
+## Pourquoi treize escales et pas un parcours
 
 Le parcours d'origine durait 35 à 45 minutes d'un seul tenant. Un module long s'abandonne en
-cours de route ; une escale de sept minutes se termine. Chaque escale porte ses écrans, ses
-questions et son bilan, et la carte du site en fait douze stations d'une même ligne — sans
-dupliquer un octet de code. C'est le motif de la sous-station NRD, décidé le 20/08/2026.
+cours de route ; une escale de moins de dix minutes se termine. Chaque escale porte ses écrans,
+ses questions et son bilan, et la carte du site en fait autant de stations — sans dupliquer un
+octet de code. C'est le motif de la sous-station NRD, décidé le 20/08/2026.
+
+## Deux branches, parce qu'une seule ligne était trop lourde
+
+Décision de F. Henninot le même jour : « il y a trop de choses pour le CO₂, on va faire une
+branche centrale qui expliquera les différents types de centrales ».
+
+| branche | escales | ce qu'elle traite |
+|---|---|---|
+| **Le fluide** | 8 | pourquoi le CO₂, sa carte d'identité, le point critique, **le point triple et la mise en service**, les deux cycles, la HP optimale, la sécurité |
+| **Les centrales** | 5 | la centrale booster, son tracé, les familles d'architecture, les compresseurs, l'éjecteur |
+
+Le champ `branche` de chaque chapitre ne fait que grouper : un seul fichier derrière, et la
+barre des escales sépare visiblement les deux ensembles.
+
+## Les illustrations
+
+Cinq planches du fonds inerWeb, copiées dans `illustrations/` pour que le module reste
+autonome : la carte des risques du R-744 (ce que la classe A1 ne dit pas), la bouteille en
+coupe et ses deux robinets, le CO₂ qui remplit un local par le bas, la chaîne de détection, et
+le taux de remplissage d'une bouteille. Elles étaient déjà animées et avaient déjà réglé le
+piège du mouvement réduit : leur animation PORTE le contenu, elle ne se coupe pas.
 
 ## Ce qui a été corrigé au passage
 
@@ -33,15 +54,23 @@ dupliquer un octet de code. C'est le motif de la sous-station NRD, décidé le 2
   cliquer la première case validait tout sans rien lire. Les propositions sont désormais
   mélangées au rendu, et la rédaction a été rééquilibrée pour que la bonne réponse ne soit
   pas non plus la plus longue. Mesure : `node controle-quiz.mjs`.
+- **Le refroidissement adiabatique n'est pas une famille d'architecture.** La source le
+  rangeait avec la cascade et le booster ; c'est un système ajouté qui pulvérise de l'eau en
+  micro-gouttelettes dans l'air entrant, pour refroidir l'échangeur haute pression. Il ne
+  touche pas au circuit. Correction de F. Henninot, 20/08.
+- **Le point triple était cité, jamais expliqué.** Il a désormais son escale, avec ce qui en
+  découle sur le chantier : un circuit tiré au vide est très en dessous de 5,18 bar, donc la
+  charge commence en phase gazeuse et ne passe en liquide qu'une fois ce seuil dépassé.
 
 ## Les fichiers
 
 | fichier | rôle |
 |---|---|
 | `index.html` | la coquille : charte, barre des escales, outils de lecture |
-| `cours.js` | tout le contenu : 12 escales, 47 écrans, 31 questions, 12 bilans |
+| `cours.js` | tout le contenu : 13 escales, 53 écrans de leçon, 34 questions, 13 bilans |
 | `visuels-svg.js` | les douze dessins repris de la source, nettoyés |
-| `visuels.js` | le rendu : dessins, cartes, tableaux, chaînes, écrans de quiz et de bilan |
+| `visuels.js` | le rendu : dessins, planches, cartes, tableaux, chaînes, quiz et bilan |
+| `illustrations/` | les cinq planches du fonds inerWeb reprises par le module |
 | `moteur.js` | navigation, voix, quiz, bilan |
 | `couverture.json` | l'adossement au référentiel, et ce que le module NE tient PAS |
 | `controle-quiz.mjs` | mesure : la bonne réponse se devine-t-elle sans lire ? |

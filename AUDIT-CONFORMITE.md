@@ -28,7 +28,7 @@
 | `circuit-huile-interactif` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `circuit-organe-par-organe` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `clapet-differentiel-huile-pedagogique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `co2-r744` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `co2-r744` | ✓ | ✓ | ✓ | ✓ | commune | 5 | ✓ | 🟢 contrôle statique tenu |
 | `compresseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `condenseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
 | `cours-classes-securite` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |

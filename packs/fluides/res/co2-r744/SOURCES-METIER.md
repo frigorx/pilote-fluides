@@ -44,6 +44,29 @@ valeur, on utilise un diagramme R744 publié ou un logiciel de propriétés du f
 29 février 2016). Catégorie I pour tous équipements et toutes charges. » Ce régime est abrogé
 et ne connaissait pas de catégorie CO₂.
 
+## Les sources d'illustration consultées, et ce qui en a été fait
+
+**intarcon.com — « Réfrigération au CO₂ transcritique »**, lien fourni par F. Henninot le
+20/08/2026. Consultée pour vérifier le fond, PAS pour en reprendre les images : ce sont des
+illustrations d'un site commercial, elles ne peuvent pas entrer dans un module diffusé sous
+licence inerWeb. C'est la règle déjà appliquée au tutoriel Coolselector, resté non diffusable
+à cause des captures Danfoss.
+
+Ce que la consultation a apporté :
+- **le point ajouté à l'escale « La HP optimale »** : sur les courbes publiées (évaporation
+  −10 °C, surchauffe 10 K, sortie de refroidisseur de gaz 35 °C), le maximum de COP et le
+  maximum de puissance frigorifique ne sont pas à la même haute pression — la puissance
+  continue de monter un peu après le sommet du COP ;
+- confirmation de l'architecture booster décrite à l'escale 8 (bouteille flash, compresseurs
+  MT et BT, deux niveaux de température) ;
+- confirmation du vocabulaire de l'éjecteur (buse, gorge, chambre de mélange, diffuseur) et
+  de l'allure de pression le long du parcours ;
+- l'existence d'architectures à **sous-refroidissement externe** (par un petit circuit au
+  propane) que le module ne traite pas — piste d'escale, à décider.
+
+⚠️ **Si des schémas de ce type sont voulus dans le module, ils sont à REDESSINER** en SVG à
+la charte, pas à copier.
+
 ## Les affirmations métier à faire contrôler en priorité
 
 1. **Le groupe de maintien** (« parking unit ») et son comportement en coupure longue —

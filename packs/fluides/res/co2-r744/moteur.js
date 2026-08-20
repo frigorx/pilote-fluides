@@ -34,7 +34,7 @@
     progressFill: $("progressFill"), progressCount: $("progressCount"),
     speak: $("speakButton"), stop: $("stopButton"), speed: $("speedSelect"),
     reading: $("readingButton"), fullscreen: $("fullscreenButton"),
-    escales: $("escales"), courseName: $("courseName")
+    escales: $("escales"), courseName: $("courseName"), grid: $("lessonGrid")
   };
 
   const CHAPITRES = COURSE.chapitres;
@@ -85,11 +85,22 @@
   }
 
   /* --- La barre des escales : la ligne entière, toujours visible. ---- */
+  /* La barre montre la ligne entière, mais elle sépare visiblement les deux
+     groupes : le fluide, puis les machines. Sans ce repère, treize escales
+     d'affilée se lisent comme une liste — et c'est justement ce que le
+     découpage en branche cherche à éviter. */
   function poserEscales() {
-    ui.escales.innerHTML = CHAPITRES.map((c, i) => `
-      <button type="button" data-i="${i}" title="${echapper(c.titre)} — ${c.minutes} min">
+    const BR = COURSE.branches || {};
+    let precedente = null;
+    ui.escales.innerHTML = CHAPITRES.map((c, i) => {
+      const tete = c.branche && c.branche !== precedente && BR[c.branche]
+        ? `<span class="escales-groupe" aria-hidden="true">${echapper(BR[c.branche].nom)}</span>` : "";
+      precedente = c.branche;
+      return tete + `
+      <button type="button" data-i="${i}" data-branche="${echapper(c.branche || "")}" title="${echapper(c.titre)} — ${c.minutes} min">
         <span>${i + 1}</span>${echapper(c.court)}
-      </button>`).join("");
+      </button>`;
+    }).join("");
     ui.escales.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
       allerAuChapitre(Number(b.dataset.i));
     }));
@@ -149,6 +160,9 @@
   }
 
   function poserVisuel(item) {
+    /* Un écran « large » empile dessin et texte au lieu de les mettre côte à
+       côte : c'est ce qui rend lisibles les deux vues du booster ensemble. */
+    ui.grid.classList.toggle("large", !!item.large);
     ui.stage.innerHTML = VISUALS.render(item.visual);
     ui.stage.setAttribute("role", "img");
     ui.stage.setAttribute("aria-label", item.caption || "Schéma pédagogique");
@@ -219,6 +233,7 @@
   }
 
   function renderQuiz() {
+    ui.grid.classList.remove("large");
     const i = screen - courant().lessons.length;
     const q = courant().quiz[i];
     ui.kicker.textContent = `Questions · escale ${chap + 1}`;
@@ -310,7 +325,17 @@
      isolées, sinon « CO₂ » serait déjà découpé quand on arrive à « C ».
      ------------------------------------------------------------------ */
   const ORALISER = [
+    /* « la fin du XIXᵉ siècle » se prononçait « X A X » — le Louis Croix-V-Bâton
+       des Inconnus, relevé à l'écoute le 20/08. Le défaut venait du `\b` final :
+       après « ᵉ », qui n'est pas un caractère de mot, il ne peut pas y avoir de
+       frontière de mot, donc la règle ne s'appliquait jamais. */
+    [/\bXIX[ᵉe]?/g, "dix-neuvième"],
+    [/\bF[\s\u2011-]?Gas\s+III\b/gi, "F gaz trois"],
     [/\bF[\s\u2011-]?Gas\b/gi, "F gaz"],
+    [/\bTP BE CVC\b/g, "T P, B E, C V C"],
+    /* Les milliers s'écrivent avec une espace — « 3 922 » — et la voix y entend
+       deux nombres : « trois, neuf cent vingt-deux ». On les recolle pour elle. */
+    [/(\d)[\u202f\u00a0 ](\d{3})\b/g, "$1$2"],
     [/\bCO[₂2]\s?[ée]q\b/gi, "équivalent dioxyde de carbone"],
     [/CO₂/g, "dioxyde de carbone"],
     [/NH₃/g, "ammoniac"],

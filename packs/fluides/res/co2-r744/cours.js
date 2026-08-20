@@ -23,11 +23,21 @@ window.__INERWEB_COURSE__ = {
   version: "1.0.0-brouillon",
   status: "Relecture métier à faire",
   soustitre: "BAC PRO MFER · TP BE CVC · formation continue",
+  /* DEUX GROUPES D'ESCALES. Le fluide et ses lois d'un côté, les machines qui
+     l'emploient de l'autre — décision de F. Henninot le 20/08 : « il y a trop
+     de choses pour le CO₂, on va faire une branche centrale ». C'est le motif
+     de la famille KV, éclatée en branche le même jour. Un seul fichier :
+     `branche` ne fait que grouper, il ne duplique rien. */
+  branches: {
+    fluide: { nom: "Le fluide", sous: "ce que le R744 impose" },
+    centrales: { nom: "Les centrales", sous: "les machines qui l’emploient" }
+  },
   chapitres: [
 
 /* ------------------------------------------------------------------ 1 */
 {
   id: "pourquoi",
+  branche: "fluide",
   court: "Pourquoi le CO₂",
   titre: "Pourquoi le CO₂ revient dans nos installations",
   minutes: 6,
@@ -84,13 +94,9 @@ window.__INERWEB_COURSE__ = {
         "Manifold, flexibles, manomètres, raccords et détection sont spécifiques."
       ],
       callout: { type: "warning", title: "À vérifier sur la machine", text: "Les 120 bar sont un ordre de grandeur. La pression maximale admissible se lit sur la plaque de l'installation et dans la documentation du constructeur, jamais dans un cours." },
-      visual: { type: "cartes", titre: "Trois choses à changer",
-        items: [
-          { ton: "danger", titre: "L'outillage", texte: "Un manifold HFC classique n'est pas prévu pour ces pressions." },
-          { ton: "danger", titre: "La lecture", texte: "Au-dessus du point critique, la HP ne donne plus de température." },
-          { ton: "info", titre: "Le local", texte: "Détection de gaz et ventilation deviennent des organes de sécurité." }
-        ] },
-      caption: "Ce qui change concrètement quand on passe au R744."
+      visual: { type: "image", fichier: "co2-risques.svg",
+        alt: "La carte du R-744 classé A1 — peu toxique, ne brûle pas — et trois flèches vers les risques que cette classe ne couvre pas : la pression, sans commune mesure avec les autres fluides ; le froid, avec la neige carbonique vers −78,5 °C ; et l'effet physiologique en local fermé." },
+      caption: "La classe A1 ne parle que du poison et du feu. Les trois risques du R744 sont ailleurs : la pression, le froid, et l'air qu'il prend."
     },
     {
       id: "fil",
@@ -150,6 +156,7 @@ window.__INERWEB_COURSE__ = {
 /* ------------------------------------------------------------------ 2 */
 {
   id: "identite",
+  branche: "fluide",
   court: "Carte d'identité",
   titre: "La carte d'identité du R744",
   minutes: 7,
@@ -283,6 +290,7 @@ window.__INERWEB_COURSE__ = {
 /* ------------------------------------------------------------------ 3 */
 {
   id: "point-critique",
+  branche: "fluide",
   court: "Le point critique",
   titre: "Le point critique : la notion qui commande tout",
   minutes: 7,
@@ -403,7 +411,7 @@ window.__INERWEB_COURSE__ = {
       "Sous 5,18 bar : plus de liquide, de la neige carbonique.",
       "Référentiel travaillé : 13.15 — haute pression au point triple et formation de glace carbonique. En appui : 1.02, 1.03 et 11.06."
     ],
-    callout: { type: "key", title: "Escale suivante", text: "Le cycle subcritique : celui qui ressemble encore à ce que vous connaissez." },
+    callout: { type: "key", title: "Escale suivante", text: "Le point triple : l’autre extrémité de la courbe, et ce qu’elle impose à la mise en service." },
     visual: { type: "svg", nom: "cloche" },
     caption: "Bilan de l'escale « Le point critique »."
   }
@@ -411,7 +419,156 @@ window.__INERWEB_COURSE__ = {
 
 /* ------------------------------------------------------------------ 4 */
 {
+  id: "point-triple",
+  branche: "fluide",
+  court: "Le point triple",
+  titre: "Le point triple, et la mise en service",
+  minutes: 8,
+  resume: "Pourquoi la charge commence toujours en phase gazeuse.",
+  lessons: [
+    {
+      id: "trois-etats",
+      short: "Trois états",
+      kicker: "L'autre extrémité de la courbe",
+      title: "Le seul point où solide, liquide et vapeur coexistent",
+      lead: "Le point critique ferme la courbe de saturation par le haut. Le point triple la ferme par le bas : −56,6 °C et 5,18 bar. C'est le seul couple pression-température où les trois états du CO₂ existent en même temps.",
+      bullets: [
+        "Au-dessus de 5,18 bar : liquide et vapeur, la relation pression-température fonctionne normalement.",
+        "En dessous : le liquide n'existe plus du tout. Il ne reste que du solide et de la vapeur.",
+        "Le solide ne fond pas, il se sublime : il passe directement à l'état vapeur."
+      ],
+      callout: { type: "key", title: "Ce n'est pas une curiosité de laboratoire", text: "5,18 bar, c'est une pression qu'on traverse à chaque mise en service et à chaque récupération. C'est la limite basse de tout ce qu'on fait sur une installation R744." },
+      visual: { type: "svg", nom: "etat-pt" },
+      caption: "Le point triple ferme la courbe de saturation par le bas, comme le point critique la ferme par le haut."
+    },
+    {
+      id: "neige",
+      short: "Neige carbonique",
+      kicker: "Ce qui se forme, et ce que ça bloque",
+      title: "Sous 5,18 bar, le liquide se transforme en neige carbonique",
+      lead: "Détendre du R744 liquide vers une pression inférieure au point triple ne donne pas de la vapeur : cela donne du solide à −78,5 °C, dans le tuyau où ça se produit.",
+      bullets: [
+        "Ce bouchon se forme là où la pression chute : flexible de charge, filtre, détendeur, siège de vanne.",
+        "Il ne fond pas — il se sublime. Il faut réchauffer doucement et attendre.",
+        "Une vanne prise dans la glace carbonique donne exactement la sensation d'une vanne grippée."
+      ],
+      callout: { type: "warning", title: "Ne jamais forcer", text: "Forcer sur un organe bloqué par de la glace carbonique casse l'organe, pas le bouchon. Et chauffer une partie de circuit encore sous pression ne s'improvise pas : c'est la procédure du constructeur qui dit comment." },
+      visual: { type: "chaine", titre: "Comment naît un bouchon de glace",
+        etapes: ["Liquide sous pression", "Détente sous 5,18 bar", "Solide à −78,5 °C", "Organe bouché"] },
+      caption: "L'enchaînement qui conduit au bouchon de neige carbonique, à la charge comme à la récupération."
+    },
+    {
+      id: "premiere-charge",
+      short: "Première charge",
+      kicker: "Le piège de la mise en service",
+      title: "Un circuit qui vient d'être tiré au vide est très en dessous du point triple",
+      lead: "Après le tirage au vide, il reste quelques millibars dans l'installation. Y envoyer directement du R744 liquide, c'est le détendre sous 5,18 bar : il se solidifie dans le tuyau de charge avant même d'entrer dans la machine.",
+      bullets: [
+        "La charge commence donc en phase GAZEUSE, et seulement en phase gazeuse.",
+        "On monte la pression du circuit jusqu'à dépasser franchement le point triple.",
+        "Une fois cette pression atteinte, on peut passer en phase liquide pour finir la charge.",
+        "Le même raisonnement vaut après une intervention qui a vidé une partie du circuit."
+      ],
+      callout: { type: "key", title: "Le seuil, et la vraie valeur", text: "Le seuil physique est le point triple, 5,18 bar. En pratique on monte plus haut avant de basculer en liquide, avec une marge : c'est la procédure du constructeur qui donne la valeur à atteindre, pas un cours." },
+      visual: { type: "chaine", titre: "L'ordre des opérations à la mise en service",
+        etapes: ["Tirage au vide", "Charge en phase gazeuse", "Pression au-dessus du point triple", "Passage en phase liquide", "Charge terminée"] },
+      caption: "L'ordre de la première charge : le gaz d'abord, le liquide seulement ensuite."
+    },
+    {
+      id: "double-vanne",
+      short: "Double vanne",
+      kicker: "Sur la bouteille",
+      title: "Deux prises, et une seule est bonne au démarrage",
+      lead: "Une bouteille de R744 porte une prise en phase gazeuse et une prise en phase liquide. Se tromper de prise au moment de la première charge, c'est exactement envoyer du liquide dans un circuit vide.",
+      bullets: [
+        "Première charge : prise en phase gazeuse, bouteille debout.",
+        "Fin de charge : prise en phase liquide, selon la procédure et le mode de pesée.",
+        "Le marquage des prises et le sens de la bouteille se lisent avant de raccorder, pas après."
+      ],
+      callout: { type: "note", title: "Ce que dit le référentiel", text: "Les codes 13.03 et 13.11 portent exactement là-dessus : les exigences des cylindres et des doubles vannes, et la charge du système en R744 à l'état gazeux." },
+      visual: { type: "image", fichier: "bouteille-deux-robinets.svg",
+        alt: "Une bouteille en coupe, debout : la vapeur en haut, le liquide en bas. Le robinet vapeur prélève directement dans la partie haute ; le robinet liquide est relié à un tube plongeur qui descend jusqu'au fond. Une seule pression dans la bouteille, deux phases prélevées." },
+      caption: "La bouteille en coupe : le robinet du haut prélève de la vapeur, celui relié au tube plongeur prélève du liquide. Une seule pression, deux phases."
+    },
+    {
+      id: "autre-sens",
+      short: "Dans l'autre sens",
+      kicker: "À la récupération",
+      title: "Le même piège quand la pression descend",
+      lead: "Tout ce qui fait chuter la pression sous 5,18 bar alors qu'il reste du liquide dans le circuit fabrique du solide. La récupération et la dépressurisation sont donc les deux autres moments à risque.",
+      bullets: [
+        "On dépressurise lentement, par paliers, en suivant la procédure du site.",
+        "Un circuit qui refuse de se vider alors qu'il le devrait est peut-être bouché par de la glace.",
+        "Une purge à l'air libre expose en plus à la brûlure et charge le local en CO₂."
+      ],
+      callout: { type: "warning", title: "Trois moments, un seul seuil", text: "Première charge, dépressurisation, récupération : à chaque fois, la question est la même — la pression risque-t-elle de passer sous 5,18 bar avec du liquide encore présent ?" },
+      visual: { type: "pastilles", titre: "Où le point triple se rappelle à vous",
+        items: [
+          { ton: "danger", cle: "Charge", texte: "Circuit sous vide : commencer en phase gazeuse." },
+          { ton: "attente", cle: "Dépressurisation", texte: "Descendre lentement, par paliers." },
+          { ton: "danger", cle: "Récupération", texte: "Surveiller la pression tant qu'il reste du liquide." }
+        ] },
+      caption: "Les trois moments d'une intervention où la pression peut passer sous le point triple."
+    }
+  ],
+  quiz: [
+    {
+      id: "y-q1",
+      question: "Pourquoi commence-t-on toujours la charge d'un circuit R744 en phase gazeuse ?",
+      choices: [
+        "Parce que le compresseur ne doit jamais recevoir de liquide au démarrage de l'installation",
+        "Parce que le circuit vide est sous le point triple : le liquide s'y transformerait en neige carbonique",
+        "Parce que la bouteille se viderait trop vite et fausserait la pesée de la charge"
+      ],
+      answer: 1,
+      explanation: "Un circuit tiré au vide est à quelques millibars, très en dessous des 5,18 bar du point triple. Le liquide qu'on y enverrait se solidifierait dans le flexible et le premier organe rencontré."
+    },
+    {
+      id: "y-q2",
+      question: "Que trouve-t-on au point triple du CO₂ ?",
+      choices: [
+        "Les trois états ensemble : solide, liquide et vapeur",
+        "Le passage du liquide à l'état supercritique",
+        "La pression maximale admissible du circuit"
+      ],
+      answer: 0,
+      explanation: "Solide, liquide et vapeur coexistent, à −56,6 °C et 5,18 bar. L'état supercritique, lui, commence au point CRITIQUE, à 31,0 °C et 73,8 bar."
+    },
+    {
+      id: "y-q3",
+      question: "Une vanne refuse de s'ouvrir après une dépressurisation rapide. Quelle est la bonne réaction ?",
+      choices: [
+        "Forcer progressivement sur la commande jusqu'à ce qu'elle cède",
+        "Chauffer la vanne au chalumeau pour libérer le passage rapidement",
+        "Suspecter un bouchon de glace carbonique et suivre la procédure de réchauffage"
+      ],
+      answer: 2,
+      explanation: "La neige carbonique donne exactement la sensation d'une vanne grippée. Forcer casse l'organe ; chauffer une partie de circuit sous pression ne s'improvise pas."
+    }
+  ],
+  final: {
+    id: "y-bilan",
+    short: "Bilan",
+    kicker: "Escale terminée",
+    title: "Vous savez pourquoi la première charge se fait en gaz",
+    lead: "Le point triple n'est pas une valeur à réciter : c'est le seuil qui commande l'ordre des gestes à la mise en service et à la récupération.",
+    bullets: [
+      "5,18 bar et −56,6 °C : en dessous, le liquide n'existe pas, il se forme du solide à −78,5 °C.",
+      "Circuit sous vide : charge en phase gazeuse d'abord, phase liquide seulement après.",
+      "Dépressuriser lentement, et ne jamais forcer un organe bloqué.",
+      "Référentiel travaillé : 13.15 — l'importance de la haute pression au point triple et la formation de glace carbonique. En appui : 13.03, 13.11 et 5.02."
+    ],
+    callout: { type: "key", title: "Escale suivante", text: "Le cycle subcritique : celui qui ressemble encore à ce que vous connaissez." },
+    visual: { type: "chaine", titre: "L'ordre des opérations à la mise en service",
+      etapes: ["Tirage au vide", "Charge en phase gazeuse", "Pression au-dessus du point triple", "Passage en phase liquide", "Charge terminée"] },
+    caption: "Bilan de l'escale « Le point triple et la mise en service »."
+  }
+},
+
+/* ------------------------------------------------------------------ 5 */
+{
   id: "subcritique",
+  branche: "fluide",
   court: "Cycle subcritique",
   titre: "Le cycle subcritique, quand il fait frais",
   minutes: 6,
@@ -504,9 +661,10 @@ window.__INERWEB_COURSE__ = {
   }
 },
 
-/* ------------------------------------------------------------------ 5 */
+/* ------------------------------------------------------------------ 6 */
 {
   id: "transcritique",
+  branche: "fluide",
   court: "Cycle transcritique",
   titre: "Le cycle transcritique, quand il fait chaud",
   minutes: 8,
@@ -640,9 +798,10 @@ window.__INERWEB_COURSE__ = {
   }
 },
 
-/* ------------------------------------------------------------------ 6 */
+/* ------------------------------------------------------------------ 7 */
 {
   id: "hp-optimale",
+  branche: "fluide",
   court: "La HP optimale",
   titre: "La haute pression optimale : un réglage, pas une fatalité",
   minutes: 7,
@@ -673,9 +832,10 @@ window.__INERWEB_COURSE__ = {
         "Chaque courbe correspond à une température de sortie du refroidisseur de gaz.",
         "Chaque courbe passe par un maximum : c'est la haute pression optimale de ce point de fonctionnement.",
         "Plus il fait chaud, plus ce maximum se décale vers la droite, et plus le COP baisse.",
-        "Le régulateur pilote le détendeur haute pression pour tenir cette consigne."
+        "Le régulateur pilote le détendeur haute pression pour tenir cette consigne.",
+        "Attention : le maximum de COP et le maximum de puissance frigorifique ne sont pas à la même pression."
       ],
-      callout: { type: "note", title: "Une allure, pas un abaque", text: "Les valeurs exactes dépendent de la machine. Elles se lisent dans la documentation du régulateur ou du constructeur, jamais sur un graphique de cours." },
+      callout: { type: "key", title: "Deux maximums, pas un", text: "Sur les relevés publiés, la puissance frigorifique continue de monter un peu après que le COP a atteint son sommet. Monter la haute pression au-delà de l'optimum donne donc encore du froid — mais chaque bar en plus se paie en consommation. Le régulateur, lui, vise le COP." },
       visual: { type: "cartes", titre: "Ce que fait le régulateur, en boucle",
         items: [
           { ton: "info", titre: "Il mesure", texte: "La température de sortie du refroidisseur de gaz." },
@@ -753,15 +913,219 @@ window.__INERWEB_COURSE__ = {
       "Un échangeur encrassé fait monter la consigne et chuter le rendement.",
       "Référentiel travaillé : 13.17 — maintenir l'efficacité énergétique des équipements à haute pression. En appui : 11.06 et 11.04."
     ],
-    callout: { type: "key", title: "Escale suivante", text: "La centrale booster : chaque organe supplémentaire répond à un problème vu jusqu'ici." },
+    callout: { type: "key", title: "Escale suivante", text: "Sécurité et intervention : les trois risques du R744, et le cadre réglementaire. C’est la dernière escale de la ligne du fluide." },
     visual: { type: "svg", nom: "cop" },
     caption: "Bilan de l'escale « La HP optimale »."
   }
 },
 
-/* ------------------------------------------------------------------ 7 */
+/* ------------------------------------------------------------------ 8 */
+{
+  id: "securite",
+  branche: "fluide",
+  court: "Sécurité",
+  titre: "Sécurité et intervention sur une installation R744",
+  minutes: 9,
+  resume: "Trois risques, un cadre réglementaire, une catégorie B.",
+  lessons: [
+    {
+      id: "risque-pression",
+      short: "Pression",
+      kicker: "Premier risque",
+      title: "La pression, jusqu'à 120 bar côté haute pression",
+      lead: "Le R744 est A1 : il ne brûle pas et n'est pas toxique au sens de la classification. Le premier danger est purement mécanique.",
+      bullets: [
+        "Manifold, flexibles et manomètres doivent être prévus pour le CO₂ : un manifold HFC n'est pas adapté.",
+        "Un raccord ou un flexible non prévu pour la pression de service peut éclater.",
+        "La pression maximale admissible se lit sur la plaque de l'installation."
+      ],
+      callout: { type: "warning", title: "Vérification avant branchement", text: "Contrôler le marquage de pression de chaque élément du kit de mesure avant de le raccorder. Un flexible marqué pour du R404A n'a rien à faire sur une centrale CO₂." },
+      visual: { type: "cartes", titre: "Le matériel de mesure",
+        items: [
+          { ton: "danger", titre: "Interdit", texte: "Manifold, flexibles et manomètres HFC standard." },
+          { ton: "ok", titre: "Exigé", texte: "Matériel marqué pour la pression de service du R744." },
+          { ton: "info", titre: "À relever", texte: "La pression maximale admissible portée sur la plaque." }
+        ] },
+      caption: "Le matériel de mesure admis et refusé sur une installation R744."
+    },
+    {
+      id: "risque-asphyxie",
+      short: "Asphyxie",
+      kicker: "Deuxième risque",
+      title: "Le CO₂ est plus lourd que l'air et s'accumule en point bas",
+      lead: "C'est le risque qui tue. Une fuite dans un local technique enterré, une cave ou une fosse remplit le volume par le bas, là où se trouve l'intervenant.",
+      bullets: [
+        "Détection CO₂ et ventilation du local technique selon NF EN 378.",
+        "Ne jamais intervenir seul dans un local machine confiné.",
+        "Vérifier avant d'entrer que la détection est en service et que l'alarme n'est pas déjà déclenchée."
+      ],
+      callout: { type: "warning", title: "Un masque à cartouche ne protège de rien ici", text: "Il ne filtre pas le CO₂ et ne fabrique pas d'oxygène. Face à une atmosphère appauvrie en oxygène, seuls l'évacuation et la ventilation protègent." },
+      visual: { type: "image", fichier: "co2-point-bas.svg",
+        alt: "Un local en contrebas : le CO₂, plus lourd que l'air, s'écoule vers le bas et la nappe monte depuis le sol. Un technicien descend l'escalier et entre dans la nappe. L'air reste respirable à hauteur de visage alors qu'il est déjà mortel en bas des marches." },
+      caption: "Le gaz ne monte pas : il remplit le local par le bas. Respirable à hauteur de visage, mortel en bas de l'escalier."
+    },
+    {
+      id: "protection-locale",
+      short: "Protéger",
+      kicker: "Dans quel ordre",
+      title: "On protège d'abord le local, ensuite soi-même",
+      lead: "Face à une atmosphère qui peut devenir irrespirable, ce qui protège vient d'abord de l'installation du local — pas de ce qu'on porte sur soi.",
+      bullets: [
+        "Détection fixe du CO₂ en partie basse, là où le gaz s'accumule : un capteur en hauteur voit l'alerte trop tard.",
+        "Alarme sonore et lumineuse, à l'intérieur ET à l'extérieur du local, pour empêcher quelqu'un d'entrer.",
+        "Ventilation commandée par la détection.",
+        "L'organisation ensuite : jamais seul, consignes d'évacuation connues. La protection individuelle vient en dernier."
+      ],
+      callout: { type: "key", title: "Collective avant individuelle", text: "Une protection collective protège même celui qui n'y pense pas, et même le collègue qui vient vous chercher. C'est pour cela qu'elle passe devant." },
+      visual: { type: "image", fichier: "co2-protection.svg",
+        alt: "Le dispositif de protection d'un local au CO₂ : la concentration monte depuis le sol, le capteur fixe placé en partie basse la voit, son afficheur se remplit, la préalarme puis l'alarme se déclenchent à l'intérieur et à l'extérieur, et la ventilation démarre." },
+      caption: "La chaîne de détection : capteur en bas, afficheur, préalarme, alarme dedans et dehors, ventilation."
+    },
+    {
+      id: "risque-froid",
+      short: "Froid extrême",
+      kicker: "Troisième risque",
+      title: "À l'air libre, le CO₂ produit de la neige carbonique à −78,5 °C",
+      lead: "Toute détente à l'air libre — purge, ouverture de raccord, soupape qui lâche — fabrique du solide extrêmement froid.",
+      bullets: [
+        "Brûlure cryogénique immédiate au contact : gants adaptés et lunettes systématiques.",
+        "La neige carbonique peut boucher un circuit et bloquer une vanne.",
+        "En sublimant, elle libère un volume de gaz important dans le local."
+      ],
+      callout: { type: "warning", title: "Deux dangers en un", text: "Une purge à l'air libre expose à la brûlure ET fait monter la teneur en CO₂ du local. Elle ne se fait jamais « pour voir »." },
+      visual: { type: "chaine", titre: "Ce que produit une détente à l'air libre",
+        etapes: ["Ouverture", "Chute sous 5,18 bar", "Neige carbonique à −78,5 °C", "Brûlure et gaz dans le local"] },
+      caption: "Les conséquences d'une détente de R744 à l'air libre."
+    },
+    {
+      id: "bouteilles",
+      short: "Bouteilles",
+      kicker: "Récipients et étiquetage",
+      title: "Une bouteille de R744 ne se manipule pas comme une bouteille de HFC",
+      lead: "Les récipients sous pression de CO₂ ont leurs exigences propres, et le prélèvement ne se fait pas dans la même phase selon le modèle.",
+      bullets: [
+        "Étiquetage du fluide sur les récipients et sur les parties de l'installation qui en contiennent.",
+        "Bouteilles à double vanne : une prise en phase liquide, une prise en phase gazeuse — voir l'escale « Le point triple ».",
+        "La charge se fait en phase gazeuse tant que le circuit est sous le point triple.",
+        "Un récipient ne se remplit jamais à ras : il faut un volume libre pour que le liquide puisse se dilater."
+      ],
+      callout: { type: "note", title: "Ce que dit le référentiel", text: "Les codes 13.01 et 13.03 portent exactement là-dessus : prescriptions d'étiquetage, exigences des cylindres et des doubles vannes, extraction des gaz." },
+      visual: { type: "image", fichier: "secu-bouteille.svg",
+        alt: "Deux bouteilles comparées. À gauche, remplie à ras : quand la température monte, le liquide se dilate sans avoir de place et la pression grimpe très vite jusqu'à la rupture. À droite, un volume libre est laissé au-dessus du liquide, qui a où se dilater." },
+      caption: "Pourquoi une bouteille ne se remplit jamais à ras : sans volume libre, le liquide qui se dilate fait monter la pression jusqu'à la rupture."
+    },
+    {
+      id: "arret-securite",
+      short: "À l'arrêt",
+      kicker: "Machine éteinte",
+      title: "Le groupe de maintien, et ce qui se passe sans lui",
+      lead: "À l'arrêt, la pression remonte à la pression de saturation du local, environ 57 bar à 20 °C. Beaucoup de centrales portent un petit groupe qui l'empêche d'atteindre le tarage des soupapes.",
+      bullets: [
+        "Ce groupe de maintien fonctionne même quand la centrale est arrêtée.",
+        "En cas de coupure de courant prolongée, il s'arrête aussi : la pression monte.",
+        "La soupape peut alors lâcher du fluide : c'est prévu, mais le local doit être ventilé et détecté."
+      ],
+      callout: { type: "warning", title: "Après une coupure longue", text: "Ne pas entrer dans le local machine sans avoir vérifié la ventilation et la détection : de la vapeur de CO₂ a pu s'accumuler en partie basse pendant l'arrêt." },
+      visual: { type: "cartes", titre: "Trois situations à l'arrêt",
+        items: [
+          { ton: "ok", titre: "Groupe en service", texte: "La pression reste sous le tarage des soupapes." },
+          { ton: "attente", titre: "Coupure courte", texte: "La pression monte lentement, sans atteindre le tarage." },
+          { ton: "danger", titre: "Coupure longue", texte: "La soupape lâche : local à ventiler avant d'entrer." }
+        ] },
+      caption: "Le comportement de l'installation à l'arrêt, selon la durée de la coupure."
+    },
+    {
+      id: "categorie-b",
+      short: "Catégorie B",
+      kicker: "Le cadre réglementaire",
+      title: "Le R744 relève d'une catégorie d'attestation qui lui est propre",
+      lead: "Le régime F-Gas III a réorganisé les attestations d'aptitude. Le dioxyde de carbone n'est plus traité au milieu des gaz fluorés : il a sa catégorie.",
+      bullets: [
+        "Catégorie B : toutes les activités de l'article 4, pour le dioxyde de carbone R-744.",
+        "Elle s'appuie sur un groupe de compétences dédié, le groupe 13, qui n'est évalué que dans cette catégorie.",
+        "La catégorie D, elle, ne couvre que la récupération des gaz à effet de serre fluorés — donc pas le CO₂.",
+        "Le R744 n'étant pas un gaz fluoré, il n'entre dans aucun quota ; les règles de sécurité de la NF EN 378 s'appliquent pleinement."
+      ],
+      callout: { type: "key", title: "La source", text: "Arrêté du 21 novembre 2025, annexe II, transcrit dans le référentiel du pack. Il remplace le régime de l'arrêté du 29 février 2016, qui ne connaissait pas de catégorie CO₂." },
+      visual: { type: "comparatif", titre: "Les catégories du régime F-Gas III",
+        colonnes: ["Catégorie", "Périmètre"],
+        lignes: [
+          ["A1", "toutes activités, gaz fluorés et hydrocarbures"],
+          ["A2", "idem, limité aux faibles charges"],
+          ["B", "toutes activités, dioxyde de carbone R-744"],
+          ["C", "toutes activités, ammoniac R-717"],
+          ["D", "récupération des gaz fluorés seulement"],
+          ["E", "contrôles d'étanchéité sans accès au circuit"]
+        ],
+        note: "Extrait du référentiel du pack, arrêté du 21 novembre 2025." },
+      caption: "Les six catégories d'attestation, et la place du R744."
+    }
+  ],
+  quiz: [
+    {
+      id: "z-q1",
+      question: "Une fuite de CO₂ dans un local technique enterré : où le gaz s'accumule-t-il ?",
+      choices: ["En partie haute, comme la plupart des gaz de fuite", "En partie basse, car il est plus lourd que l'air", "Il se disperse uniformément dans tout le volume du local"],
+      answer: 1,
+      explanation: "Le CO₂ est plus lourd que l'air : il remplit le local par le bas, là où se trouve l'intervenant. C'est pourquoi la détection fixe se pose en partie basse."
+    },
+    {
+      id: "z-q2",
+      question: "Quelle catégorie d'attestation d'aptitude correspond aux installations au R-744 ?",
+      choices: ["La catégorie D", "La catégorie A2", "La catégorie B", "La catégorie E"],
+      answer: 2,
+      explanation: "La catégorie B est celle du dioxyde de carbone. La catégorie D ne couvre que la récupération des gaz fluorés, et ne concerne donc pas le CO₂."
+    },
+    {
+      id: "z-q3",
+      question: "Un masque à cartouche protège-t-il d'une atmosphère chargée en CO₂ ?",
+      choices: [
+        "Oui, à condition de choisir une cartouche adaptée au dioxyde de carbone",
+        "Non : il ne filtre pas le CO₂ et ne fournit pas d'oxygène",
+        "Oui, mais seulement le temps de rejoindre la sortie du local"
+      ],
+      answer: 1,
+      explanation: "Aucune cartouche ne retient le CO₂ et aucune ne fabrique d'oxygène. Seules la ventilation et l'évacuation protègent."
+    },
+    {
+      id: "z-q4",
+      question: "Vous arrivez sur une centrale R744 arrêtée depuis trois jours, après une coupure de courant. Quel est le premier réflexe ?",
+      choices: [
+        "Raccorder le manifold pour relever la pression du circuit",
+        "Vérifier la ventilation et la détection du local avant d'entrer",
+        "Redémarrer la centrale pour faire redescendre la pression"
+      ],
+      answer: 1,
+      explanation: "Le groupe de maintien s'est arrêté avec le courant : la soupape a pu lâcher du fluide dans le local. On sécurise l'atmosphère avant toute autre chose."
+    }
+  ],
+  final: {
+    id: "z-bilan",
+    short: "Bilan",
+    kicker: "La ligne du fluide est bouclée",
+    title: "Vous savez ce qui rend une intervention R744 différente",
+    lead: "Trois risques qui ne sont ni l'inflammabilité ni la toxicité, du matériel spécifique, et une catégorie d'attestation qui lui est propre.",
+    bullets: [
+      "Pression : matériel de mesure marqué pour le CO₂, plaque de l'installation relevée.",
+      "Asphyxie : détection en partie basse, ventilation, jamais seul.",
+      "Froid extrême : gants et lunettes, aucune détente à l'air libre sans nécessité.",
+      "Référentiel travaillé : 13.04, 13.16 et 13.01 · 13.03 pour les récipients. En appui : 11.03 et 13.14."
+    ],
+    callout: { type: "note", title: "Ce que ce module ne remplace pas", text: "Les codes 13.06 à 13.14 sont des épreuves pratiques : analyse de risques, épreuve de pression, tirage au vide, charge, contrôle d'étanchéité, rapport d'intervention. Ils se travaillent sur installation, pas sur écran." },
+    visual: { type: "pastilles", titre: "Les trois risques du R744",
+      items: [
+        { ton: "danger", cle: "Pression", texte: "Jusqu'à 120 bar environ, matériel spécifique." },
+        { ton: "danger", cle: "Asphyxie", texte: "Plus lourd que l'air, s'accumule en point bas." },
+        { ton: "danger", cle: "Froid", texte: "Neige carbonique à −78,5 °C à la détente." }
+      ] },
+    caption: "Bilan de l'escale « Sécurité et intervention »."
+  }
+},
+
+/* ------------------------------------------------------------------ 9 */
 {
   id: "booster",
+  branche: "centrales",
   court: "Centrale booster",
   titre: "La centrale booster CO₂ en supermarché",
   minutes: 8,
@@ -887,9 +1251,10 @@ window.__INERWEB_COURSE__ = {
   }
 },
 
-/* ------------------------------------------------------------------ 8 */
+/* ------------------------------------------------------------------ 10 */
 {
   id: "booster-diagramme",
+  branche: "centrales",
   court: "Sur le diagramme",
   titre: "Le booster, schéma et diagramme en parallèle",
   minutes: 8,
@@ -907,8 +1272,9 @@ window.__INERWEB_COURSE__ = {
         "Le même code de couleur est utilisé dans les deux vues."
       ],
       callout: { type: "note", title: "L'exemple suivi", text: "Basse température −32 °C (13,4 bar), moyenne température −8 °C (28,2 bar), pression intermédiaire 38 bar, haute pression 90 bar, sortie du refroidisseur de gaz 35 °C. Valeurs d'illustration." },
-      visual: { type: "svg", nom: "booster-anime" },
-      caption: "Trajet du fluide dans la centrale booster, avec les trois débits qui se séparent à la bouteille flash."
+      large: true,
+      visual: { type: "svg", nom: "booster-double" },
+      caption: "À gauche le trajet dans la centrale, à droite le même trajet sur le diagramme log p/h. Les deux animations tournent en phase : le point suivi dans le circuit est celui qui se déplace sur le tracé. Le bouton ⛶ de la barre du haut agrandit les deux vues."
     },
     {
       id: "separation",
@@ -1006,17 +1372,18 @@ window.__INERWEB_COURSE__ = {
   }
 },
 
-/* ------------------------------------------------------------------ 9 */
+/* ------------------------------------------------------------------ 11 */
 {
   id: "familles",
+  branche: "centrales",
   court: "Les architectures",
   titre: "Les familles d'architecture CO₂",
   minutes: 7,
-  resume: "Une seule question les distingue : que fait-on de la vapeur de détente ?",
+  resume: "Quatre familles, une seule question : que fait-on de la vapeur de détente ?",
   lessons: [
     {
       id: "cinq-familles",
-      short: "Cinq familles",
+      short: "Quatre familles",
       kicker: "« Centrale CO₂ » ne veut pas dire grand-chose",
       title: "Ce qui distingue une architecture d'une autre",
       lead: "Les architectures se différencient sur deux points seulement : la façon d'étager la compression, et ce qu'elles font de la vapeur de détente.",
@@ -1024,20 +1391,19 @@ window.__INERWEB_COURSE__ = {
         "Cascade : le CO₂ ne travaille qu'en subcritique, condensé par un circuit d'ammoniac ou de HFC.",
         "Booster simple : compression étagée sur un seul fluide, c'est le standard en supermarché.",
         "Booster avec compression parallèle : un compresseur reprend la vapeur à la pression intermédiaire.",
-        "Booster avec éjecteurs : la détente sert elle-même à remonter la vapeur.",
-        "Refroidissement adiabatique : ce n'est pas une architecture, c'est un accessoire du refroidisseur de gaz."
+        "Booster avec éjecteurs : la détente sert elle-même à remonter la vapeur."
       ],
       callout: { type: "note", title: "Où se trouve chaque famille", text: "La cascade se rencontre en entrepôt frigorifique et en agroalimentaire, pour les fortes puissances négatives. Le booster est le standard du supermarché." },
-      visual: { type: "comparatif", titre: "Les cinq familles",
+      visual: { type: "comparatif", titre: "Les quatre familles",
         colonnes: ["Architecture", "Ce qui la caractérise", "Terrain"],
         lignes: [
           ["Cascade", "CO₂ subcritique seul, pas de HP à réguler", "entrepôts, agroalimentaire"],
           ["Booster simple", "deux étages, vapeur détendue jusqu'à la BP MT", "supermarché"],
           ["Compression parallèle", "un compresseur reprend la vapeur à 38 bar", "supermarché, climat chaud"],
-          ["Éjecteurs", "la détente remonte elle-même la vapeur", "centrales récentes"],
-          ["Adiabatique", "on humidifie l'air du refroidisseur de gaz", "accessoire, en canicule"]
-        ] },
-      caption: "Les cinq familles d'installations au CO₂ et leur terrain d'emploi."
+          ["Éjecteurs", "la détente remonte elle-même la vapeur", "centrales récentes"]
+        ],
+        note: "Le refroidissement adiabatique ne figure pas dans ce tableau : ce n'est pas une architecture de circuit." },
+      caption: "Les quatre familles d'installations au CO₂ et leur terrain d'emploi."
     },
     {
       id: "cascade",
@@ -1076,19 +1442,20 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "adiabatique",
-      short: "Adiabatique",
-      kicker: "L'accessoire d'été",
-      title: "Humidifier l'air d'entrée fait redescendre la haute pression optimale",
-      lead: "Le refroidissement adiabatique n'est pas une architecture de circuit : c'est un dispositif posé sur le refroidisseur de gaz, qui abaisse la température de l'air qui le traverse.",
+      short: "L'adiabatique",
+      kicker: "Un complément, pas une famille",
+      title: "Le refroidissement adiabatique ne change pas le circuit : il refroidit l'air",
+      lead: "Ce n'est pas une architecture. C'est un système ajouté sur le refroidisseur de gaz — ou sur le condenseur en subcritique — qui pulvérise de l'eau en micro-gouttelettes dans l'air aspiré. En s'évaporant, cette eau prend de la chaleur à l'air : l'air entre plus froid dans l'échangeur.",
       bullets: [
-        "L'air passe dans un média humidifié avant d'entrer dans l'échangeur.",
-        "La sortie du refroidisseur de gaz est donc plus froide.",
-        "La consigne de haute pression redescend, et le COP remonte."
+        "Le circuit frigorifique, lui, n'est pas modifié : ni organe en plus, ni étage en plus.",
+        "Il se pose aussi bien sur une cascade que sur un booster ou une centrale à éjecteurs.",
+        "L'effet se voit en période chaude, quand l'air extérieur limite l'échange.",
+        "Il consomme de l'eau et demande son propre entretien : buses, filtration, traitement du calcaire."
       ],
-      callout: { type: "note", title: "Le lien avec l'escale 6", text: "Tout ce qui refroidit la sortie du refroidisseur de gaz déplace la haute pression optimale vers le bas. L'adiabatique agit exactement sur ce levier." },
+      callout: { type: "key", title: "Ce qu'il faut retenir de la distinction", text: "Cascade, booster, compression parallèle et éjecteur répondent à la question « que fait-on de la vapeur de détente ». L'adiabatique ne répond pas à cette question du tout : il fait baisser la température de l'air, donc celle de la sortie du refroidisseur de gaz — et c'est par là qu'il fait redescendre la consigne de haute pression (escale « La HP optimale »)." },
       visual: { type: "chaine", titre: "L'effet du refroidissement adiabatique",
-        etapes: ["Air humidifié", "Air plus froid", "Sortie plus froide", "Consigne HP plus basse", "COP meilleur"] },
-      caption: "La chaîne d'effets du refroidissement adiabatique en période chaude."
+        etapes: ["Eau pulvérisée en micro-gouttelettes", "L'eau s'évapore et refroidit l'air", "L'air entre plus froid dans l'échangeur", "Sortie du refroidisseur de gaz plus froide", "Consigne HP plus basse, COP meilleur"] },
+      caption: "La chaîne d'effets du refroidissement adiabatique : elle commence dans l'air, pas dans le circuit."
     }
   ],
   quiz: [
@@ -1116,14 +1483,14 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "f-q3",
-      question: "Le refroidissement adiabatique agit sur quel paramètre ?",
+      question: "Le refroidissement adiabatique, c'est quoi exactement ?",
       choices: [
-        "La température de l'air entrant dans le refroidisseur de gaz",
-        "La pression de la bouteille flash, donc la quantité de vapeur de détente",
-        "La surchauffe des meubles positifs"
+        "Une cinquième famille d'architecture, à côté de la cascade et du booster",
+        "Un système ajouté qui pulvérise de l'eau dans l'air entrant dans l'échangeur",
+        "Un mode de régulation du détendeur haute pression par temps chaud"
       ],
-      answer: 0,
-      explanation: "Il humidifie l'air d'entrée pour l'abaisser en température. La sortie du refroidisseur de gaz devient plus froide, donc la consigne de haute pression baisse."
+      answer: 1,
+      explanation: "Ce n'est pas une architecture : le circuit frigorifique n'est pas modifié. L'eau pulvérisée s'évapore, l'air entre plus froid dans l'échangeur, la sortie est plus froide et la consigne de haute pression redescend."
     }
   ],
   final: {
@@ -1135,6 +1502,7 @@ window.__INERWEB_COURSE__ = {
     bullets: [
       "Cascade : jamais de transcritique, pas de haute pression à régler.",
       "Booster simple, compression parallèle, éjecteur : trois destinations pour la même vapeur.",
+      "Le refroidissement adiabatique n'entre pas dans ce classement : il agit sur l'air, pas sur le circuit.",
       "Référentiel travaillé : 11.06 — différences de conception, compresseurs parallèles, éjecteurs, noyage partiel. En appui : 11.01 et 11.04."
     ],
     callout: { type: "key", title: "Escale suivante", text: "Les compresseurs et leur pilotage : en R744, la vitesse n'est pas un confort, c'est un organe de régulation." },
@@ -1143,9 +1511,10 @@ window.__INERWEB_COURSE__ = {
   }
 },
 
-/* ----------------------------------------------------------------- 10 */
+/* ------------------------------------------------------------------ 12 */
 {
   id: "compresseurs",
+  branche: "centrales",
   court: "Compresseurs",
   titre: "Compresseurs et pilotage moteur",
   minutes: 6,
@@ -1257,9 +1626,10 @@ window.__INERWEB_COURSE__ = {
   }
 },
 
-/* ----------------------------------------------------------------- 11 */
+/* ------------------------------------------------------------------ 13 */
 {
   id: "ejecteur",
+  branche: "centrales",
   court: "L'éjecteur",
   titre: "L'éjecteur : récupérer l'énergie de la détente",
   minutes: 7,
@@ -1352,202 +1722,9 @@ window.__INERWEB_COURSE__ = {
       "La maintenance porte sur les vannes de commande et les sondes, pas sur l'éjecteur.",
       "Référentiel travaillé : 11.06 — technologie des éjecteurs, éjecteur de liquide et de gaz. En appui : 11.04 et 13.17."
     ],
-    callout: { type: "key", title: "Escale suivante", text: "La dernière : sécurité et intervention, les trois risques du R744 et le cadre réglementaire." },
+    callout: { type: "note", title: "Fin de la branche", text: "C’est la dernière escale des centrales. La ligne du fluide, elle, se termine sur l’escale « Sécurité et intervention »." },
     visual: { type: "svg", nom: "ejecteur" },
     caption: "Bilan de l'escale « L'éjecteur »."
-  }
-},
-
-/* ------------------------------------------------------------------ 8 */
-{
-  id: "securite",
-  court: "Sécurité",
-  titre: "Sécurité et intervention sur une installation R744",
-  minutes: 9,
-  resume: "Trois risques, un cadre réglementaire, une catégorie B.",
-  lessons: [
-    {
-      id: "risque-pression",
-      short: "Pression",
-      kicker: "Premier risque",
-      title: "La pression, jusqu'à 120 bar côté haute pression",
-      lead: "Le R744 est A1 : il ne brûle pas et n'est pas toxique au sens de la classification. Le premier danger est purement mécanique.",
-      bullets: [
-        "Manifold, flexibles et manomètres doivent être prévus pour le CO₂ : un manifold HFC n'est pas adapté.",
-        "Un raccord ou un flexible non prévu pour la pression de service peut éclater.",
-        "La pression maximale admissible se lit sur la plaque de l'installation."
-      ],
-      callout: { type: "warning", title: "Vérification avant branchement", text: "Contrôler le marquage de pression de chaque élément du kit de mesure avant de le raccorder. Un flexible marqué pour du R404A n'a rien à faire sur une centrale CO₂." },
-      visual: { type: "cartes", titre: "Le matériel de mesure",
-        items: [
-          { ton: "danger", titre: "Interdit", texte: "Manifold, flexibles et manomètres HFC standard." },
-          { ton: "ok", titre: "Exigé", texte: "Matériel marqué pour la pression de service du R744." },
-          { ton: "info", titre: "À relever", texte: "La pression maximale admissible portée sur la plaque." }
-        ] },
-      caption: "Le matériel de mesure admis et refusé sur une installation R744."
-    },
-    {
-      id: "risque-asphyxie",
-      short: "Asphyxie",
-      kicker: "Deuxième risque",
-      title: "Le CO₂ est plus lourd que l'air et s'accumule en point bas",
-      lead: "C'est le risque qui tue. Une fuite dans un local technique enterré, une cave ou une fosse remplit le volume par le bas, là où se trouve l'intervenant.",
-      bullets: [
-        "Détection CO₂ et ventilation du local technique selon NF EN 378.",
-        "Ne jamais intervenir seul dans un local machine confiné.",
-        "Vérifier avant d'entrer que la détection est en service et que l'alarme n'est pas déjà déclenchée."
-      ],
-      callout: { type: "warning", title: "Un masque à cartouche ne protège de rien ici", text: "Il ne filtre pas le CO₂ et ne fabrique pas d'oxygène. Face à une atmosphère appauvrie en oxygène, seuls l'évacuation et la ventilation protègent." },
-      visual: { type: "pastilles", titre: "Dans quel ordre on se protège",
-        items: [
-          { ton: "ok", cle: "1", texte: "Protection collective : ventilation, détection fixe en partie basse, alarme." },
-          { ton: "attente", cle: "2", texte: "Organisation : jamais seul, consignes d'évacuation connues." },
-          { ton: "info", cle: "3", texte: "Protection individuelle : elle vient en dernier, pas en premier." }
-        ] },
-      caption: "L'ordre des protections face au risque d'asphyxie."
-    },
-    {
-      id: "risque-froid",
-      short: "Froid extrême",
-      kicker: "Troisième risque",
-      title: "À l'air libre, le CO₂ produit de la neige carbonique à −78,5 °C",
-      lead: "Toute détente à l'air libre — purge, ouverture de raccord, soupape qui lâche — fabrique du solide extrêmement froid.",
-      bullets: [
-        "Brûlure cryogénique immédiate au contact : gants adaptés et lunettes systématiques.",
-        "La neige carbonique peut boucher un circuit et bloquer une vanne.",
-        "En sublimant, elle libère un volume de gaz important dans le local."
-      ],
-      callout: { type: "warning", title: "Deux dangers en un", text: "Une purge à l'air libre expose à la brûlure ET fait monter la teneur en CO₂ du local. Elle ne se fait jamais « pour voir »." },
-      visual: { type: "chaine", titre: "Ce que produit une détente à l'air libre",
-        etapes: ["Ouverture", "Chute sous 5,18 bar", "Neige carbonique à −78,5 °C", "Brûlure et gaz dans le local"] },
-      caption: "Les conséquences d'une détente de R744 à l'air libre."
-    },
-    {
-      id: "bouteilles",
-      short: "Bouteilles",
-      kicker: "Récipients et étiquetage",
-      title: "Une bouteille de R744 ne se manipule pas comme une bouteille de HFC",
-      lead: "Les récipients sous pression de CO₂ ont leurs exigences propres, et le prélèvement ne se fait pas dans la même phase selon le modèle.",
-      bullets: [
-        "Étiquetage du fluide sur les récipients et sur les parties de l'installation qui en contiennent.",
-        "Bouteilles à double vanne : une prise en phase liquide, une prise en phase gazeuse.",
-        "La charge se fait en phase gazeuse pour éviter la formation de solide dans un circuit vide."
-      ],
-      callout: { type: "note", title: "Ce que dit le référentiel", text: "Les codes 13.01 et 13.03 portent exactement là-dessus : prescriptions d'étiquetage, exigences des cylindres et des doubles vannes, extraction des gaz." },
-      visual: { type: "tableau", titre: "Points de contrôle avant manipulation",
-        lignes: [
-          ["Étiquetage", "fluide identifié sur le récipient et sur l'installation"],
-          ["Double vanne", "savoir laquelle donne du liquide, laquelle donne du gaz"],
-          ["Charge", "en phase gazeuse tant que le circuit est vide"],
-          ["Zone de travail", "ventilée, détection en service, personne prévenue"]
-        ] },
-      caption: "Les points contrôlés avant toute manipulation de R744."
-    },
-    {
-      id: "arret-securite",
-      short: "À l'arrêt",
-      kicker: "Machine éteinte",
-      title: "Le groupe de maintien, et ce qui se passe sans lui",
-      lead: "À l'arrêt, la pression remonte à la pression de saturation du local, environ 57 bar à 20 °C. Beaucoup de centrales portent un petit groupe qui l'empêche d'atteindre le tarage des soupapes.",
-      bullets: [
-        "Ce groupe de maintien fonctionne même quand la centrale est arrêtée.",
-        "En cas de coupure de courant prolongée, il s'arrête aussi : la pression monte.",
-        "La soupape peut alors lâcher du fluide : c'est prévu, mais le local doit être ventilé et détecté."
-      ],
-      callout: { type: "warning", title: "Après une coupure longue", text: "Ne pas entrer dans le local machine sans avoir vérifié la ventilation et la détection : de la vapeur de CO₂ a pu s'accumuler en partie basse pendant l'arrêt." },
-      visual: { type: "cartes", titre: "Trois situations à l'arrêt",
-        items: [
-          { ton: "ok", titre: "Groupe en service", texte: "La pression reste sous le tarage des soupapes." },
-          { ton: "attente", titre: "Coupure courte", texte: "La pression monte lentement, sans atteindre le tarage." },
-          { ton: "danger", titre: "Coupure longue", texte: "La soupape lâche : local à ventiler avant d'entrer." }
-        ] },
-      caption: "Le comportement de l'installation à l'arrêt, selon la durée de la coupure."
-    },
-    {
-      id: "categorie-b",
-      short: "Catégorie B",
-      kicker: "Le cadre réglementaire",
-      title: "Le R744 relève d'une catégorie d'attestation qui lui est propre",
-      lead: "Le régime F-Gas III a réorganisé les attestations d'aptitude. Le dioxyde de carbone n'est plus traité au milieu des gaz fluorés : il a sa catégorie.",
-      bullets: [
-        "Catégorie B : toutes les activités de l'article 4, pour le dioxyde de carbone R-744.",
-        "Elle s'appuie sur un groupe de compétences dédié, le groupe 13, qui n'est évalué que dans cette catégorie.",
-        "La catégorie D, elle, ne couvre que la récupération des gaz à effet de serre fluorés — donc pas le CO₂.",
-        "Le R744 n'étant pas un gaz fluoré, il n'entre dans aucun quota ; les règles de sécurité de la NF EN 378 s'appliquent pleinement."
-      ],
-      callout: { type: "key", title: "La source", text: "Arrêté du 21 novembre 2025, annexe II, transcrit dans le référentiel du pack. Il remplace le régime de l'arrêté du 29 février 2016, qui ne connaissait pas de catégorie CO₂." },
-      visual: { type: "comparatif", titre: "Les catégories du régime F-Gas III",
-        colonnes: ["Catégorie", "Périmètre"],
-        lignes: [
-          ["A1", "toutes activités, gaz fluorés et hydrocarbures"],
-          ["A2", "idem, limité aux faibles charges"],
-          ["B", "toutes activités, dioxyde de carbone R-744"],
-          ["C", "toutes activités, ammoniac R-717"],
-          ["D", "récupération des gaz fluorés seulement"],
-          ["E", "contrôles d'étanchéité sans accès au circuit"]
-        ],
-        note: "Extrait du référentiel du pack, arrêté du 21 novembre 2025." },
-      caption: "Les six catégories d'attestation, et la place du R744."
-    }
-  ],
-  quiz: [
-    {
-      id: "z-q1",
-      question: "Une fuite de CO₂ dans un local technique enterré : où le gaz s'accumule-t-il ?",
-      choices: ["En partie haute, comme la plupart des gaz de fuite", "En partie basse, car il est plus lourd que l'air", "Il se disperse uniformément dans tout le volume du local"],
-      answer: 1,
-      explanation: "Le CO₂ est plus lourd que l'air : il remplit le local par le bas, là où se trouve l'intervenant. C'est pourquoi la détection fixe se pose en partie basse."
-    },
-    {
-      id: "z-q2",
-      question: "Quelle catégorie d'attestation d'aptitude correspond aux installations au R-744 ?",
-      choices: ["La catégorie D", "La catégorie A2", "La catégorie B", "La catégorie E"],
-      answer: 2,
-      explanation: "La catégorie B est celle du dioxyde de carbone. La catégorie D ne couvre que la récupération des gaz fluorés, et ne concerne donc pas le CO₂."
-    },
-    {
-      id: "z-q3",
-      question: "Un masque à cartouche protège-t-il d'une atmosphère chargée en CO₂ ?",
-      choices: [
-        "Oui, à condition de choisir une cartouche adaptée au dioxyde de carbone",
-        "Non : il ne filtre pas le CO₂ et ne fournit pas d'oxygène",
-        "Oui, mais seulement le temps de rejoindre la sortie du local"
-      ],
-      answer: 1,
-      explanation: "Aucune cartouche ne retient le CO₂ et aucune ne fabrique d'oxygène. Seules la ventilation et l'évacuation protègent."
-    },
-    {
-      id: "z-q4",
-      question: "Vous arrivez sur une centrale R744 arrêtée depuis trois jours, après une coupure de courant. Quel est le premier réflexe ?",
-      choices: [
-        "Raccorder le manifold pour relever la pression du circuit",
-        "Vérifier la ventilation et la détection du local avant d'entrer",
-        "Redémarrer la centrale pour faire redescendre la pression"
-      ],
-      answer: 1,
-      explanation: "Le groupe de maintien s'est arrêté avec le courant : la soupape a pu lâcher du fluide dans le local. On sécurise l'atmosphère avant toute autre chose."
-    }
-  ],
-  final: {
-    id: "z-bilan",
-    short: "Bilan",
-    kicker: "Ligne terminée",
-    title: "Vous savez ce qui rend une intervention R744 différente",
-    lead: "Trois risques qui ne sont ni l'inflammabilité ni la toxicité, du matériel spécifique, et une catégorie d'attestation qui lui est propre.",
-    bullets: [
-      "Pression : matériel de mesure marqué pour le CO₂, plaque de l'installation relevée.",
-      "Asphyxie : détection en partie basse, ventilation, jamais seul.",
-      "Froid extrême : gants et lunettes, aucune détente à l'air libre sans nécessité.",
-      "Référentiel travaillé : 13.04, 13.16 et 13.01 · 13.03 pour les récipients. En appui : 11.03 et 13.14."
-    ],
-    callout: { type: "note", title: "Ce que ce module ne remplace pas", text: "Les codes 13.06 à 13.14 sont des épreuves pratiques : analyse de risques, épreuve de pression, tirage au vide, charge, contrôle d'étanchéité, rapport d'intervention. Ils se travaillent sur installation, pas sur écran." },
-    visual: { type: "pastilles", titre: "Les trois risques du R744",
-      items: [
-        { ton: "danger", cle: "Pression", texte: "Jusqu'à 120 bar environ, matériel spécifique." },
-        { ton: "danger", cle: "Asphyxie", texte: "Plus lourd que l'air, s'accumule en point bas." },
-        { ton: "danger", cle: "Froid", texte: "Neige carbonique à −78,5 °C à la détente." }
-      ] },
-    caption: "Bilan de l'escale « Sécurité et intervention »."
   }
 }
 
