@@ -35,7 +35,7 @@ if (!mDonnees) {
 }
 const D = new Function(
   mDonnees[1] +
-  "; return { TRONC: TRONC, LIGNES: LIGNES, CEINTURE: CEINTURE, OUTILS: OUTILS, ELECTROTECH: ELECTROTECH, CORRESPONDANCES: CORRESPONDANCES };"
+  "; return { TRONC: TRONC, LIGNES: LIGNES, CO2: CO2, CEINTURE: CEINTURE, OUTILS: OUTILS, ELECTROTECH: ELECTROTECH, CORRESPONDANCES: CORRESPONDANCES };"
 )();
 
 function esc(v) {
@@ -64,6 +64,7 @@ function bloc(nom, sous, stations) {
 const groupes = [
   ["🚉 LE TRONC", "la théorie, du départ au diagramme", D.TRONC.stations.concat(D.TRONC.queue)],
   ...D.LIGNES.map((l) => [l.nom, l.sous, l.stations]),
+  [D.CO2.nom, D.CO2.sous, D.CO2.stations],
   [D.ELECTROTECH.nom, D.ELECTROTECH.sous, D.ELECTROTECH.stations],
   [D.CEINTURE.nom, D.CEINTURE.sous, D.CEINTURE.stations],
   [D.OUTILS.nom, D.OUTILS.sous, D.OUTILS.stations],

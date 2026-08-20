@@ -968,6 +968,13 @@ export const CARTES = [
         "🎧 Écouter la capsule : CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend",
         "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris."
       ) +
+      /* Correspondance vers l'escale « Sécurité » de la ligne CO₂ : la même
+         chose, en plus détaillé, avec le cadre réglementaire de la catégorie B. */
+      lienOutil(
+        "packs/fluides/res/co2-r744/index.html?e=securite",
+        "🧊 Aller plus loin : sécurité et intervention sur une installation R744",
+        "L'escale « Sécurité » de la ligne CO₂ — les trois risques, le matériel de mesure dédié, le groupe de maintien à l'arrêt, et la catégorie d'attestation qui s'applique. 9 minutes."
+      ) +
       schema("co2-point-bas.svg", "Animation : le CO₂ remplit le local par le bas ; un technicien descend l'escalier et entre dans la nappe. Respirable à hauteur de visage, mortel en bas de l'escalier.") +
       "<p><b>Ce qui arrive.</b> Le CO₂ — le R-744 — est classé <b>A1</b> : toxicité faible, non inflammable, PRP de 1. C'est la case la plus rassurante de toute la matrice. Et c'est exactement ce qui le rend dangereux : <b>sa classe n'annonce aucun des deux risques qui tuent réellement sur ces installations</b> — la <b>pression</b>, et l'<b>anoxie</b>. Qui retient « CO₂ = A1 = tranquille » a retenu quelque chose de faux.</p>" +
       "<p>Ce fluide entre aujourd'hui dans le parc : froid commercial, supermarchés, chambres froides. Vous en rencontrerez. Ce n'est plus un sujet de culture générale.</p>" +
@@ -4221,6 +4228,15 @@ export const CARTES = [
         "packs/fluides/res/capsules/index.html?c=g13",
         "🎧 Écouter la capsule : CO₂ et NH₃ — reconnaître, ne pas intervenir",
         "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 6 écrans, 5 minutes. Version imprimable et mode projection compris."
+      ) +
+      /* La ligne CO₂ ouvre le périmètre de la CATÉGORIE B, que ce pack ne
+         couvre pas (il couvre A1/A2/D/E). Le lien est donc posé ici comme
+         un ailleurs, pas comme une suite : cette fiche informe, la ligne
+         forme. Voir packs/fluides/res/co2-r744/README.md. */
+      lienOutil(
+        "packs/fluides/res/co2-r744/index.html",
+        "🧊 Suivre la ligne CO₂ / R744 — douze escales",
+        "Au-delà de la sensibilisation : le point critique, le cycle transcritique, la haute pression optimale, la centrale booster, l'éjecteur et l'intervention en sécurité. Chaque escale dure moins de dix minutes. ⚠️ Ce parcours relève de la catégorie B : il ne donne aucun droit d'intervention de plus."
       ) +
       schema("co2-nh3-compare.svg", "Deux comportements inverses : le CO₂, A1 et sans odeur, est plus lourd que l'air et descend (catégorie B) ; l'ammoniac, B2L et piquant, est plus léger que l'air et monte (catégorie C).") +
       "<p>Ce module <b>informe</b>, il ne qualifie pas. Une attestation A1 ou A2 ne donne <b>aucun " +

@@ -9754,6 +9754,13 @@ window.PILOTE_PROJECTION = {
        "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
       },
       {
+       "type": "experience",
+       "url": "packs/fluides/res/co2-r744/index.html",
+       "lancer": "🧊 Suivre la ligne CO₂ / R744 — douze escales",
+       "desc": "Au-delà de la sensibilisation : le point critique, le cycle transcritique, la haute pression optimale, la centrale booster, l'éjecteur et l'intervention en sécurité. Chaque escale dure moins de dix minutes. ⚠️ Ce parcours relève de la catégorie B : il ne donne aucun droit d'intervention de plus.",
+       "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir"
+      },
+      {
        "type": "schema",
        "src": "packs/fluides/res/svg/co2-nh3-compare.svg",
        "alt": "Deux comportements inverses : le CO₂, A1 et sans odeur, est plus lourd que l'air et descend (catégorie B) ; l'ammoniac, B2L et piquant, est plus léger que l'air et monte (catégorie C).",

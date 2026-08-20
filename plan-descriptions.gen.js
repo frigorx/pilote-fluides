@@ -9,6 +9,7 @@ window.PLAN_DESC = {
  "chaleur-circuit-interactif": "Habilitation Fluide, découverte du circuit frigorifique, tome 2 : thermodynamique appliquée, transferts de chaleur, saturation, surchauffe et sous-refroidissement.",
  "chaleur-interactive": "Découverte interactive et racontée : du glaçon à la casserole, puis de la vapeur liquéfiée à l’installation frigorifique.",
  "circuit-organe-par-organe": "Module d’auto-formation interactif sur le compresseur, le condenseur, le détendeur et l’évaporateur d’un circuit frigorifique.",
+ "co2-r744": "Module inerWeb Édu hors ligne : la ligne CO₂ / R744 en douze escales — point critique, cycle transcritique, haute pression optimale, centrale booster, éjecteur, sécurité.",
  "compresseur-interactif": "Cours interactif A1/A2 sur le compresseur : installer avec ses sécurités, régler en prouvant à l’instrument, vérifier l’huile et son retour.",
  "condenseur-interactif": "Cours interactif A1/A2 sur le condenseur : encrassement, haute pression, ventilation, installation, régulation, inspection et rapport.",
  "cours-classes-securite": "Cours interactif : lire une classe NF EN 378 (A1, A2L, A3, B2L…), le triangle du feu, le domaine d'explosivité et un cas réel d'accident.",
