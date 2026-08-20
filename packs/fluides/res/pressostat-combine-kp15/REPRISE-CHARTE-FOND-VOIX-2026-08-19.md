@@ -1,5 +1,10 @@
 # Reprise du 19 août 2026 — charte, fond, voix
 
+> ⚠️ **Sa section 3 est CADUQUE.** Les illustrations fixes ont été remplacées le
+> 20/08 par le film lui-même, qui tourne dans le module — voir
+> `REPRISE-ANIMATION-2026-08-20.md`. Le reste de ce journal (charte, voix, fond
+> mécanique, codes du référentiel) reste valable.
+
 Reprise du pack `PACK-PRESSOSTATS-KP1-KP5-KP15-2026-08-19` à la demande de F. Henninot :
 « mettre la charte inerWeb, corriger, regarder ce que ça dit, pédagogie et intérêts
 mécaniques », puis « la fonction vocale, c'est vraiment important : j'ai des élèves qui ne
