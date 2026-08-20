@@ -7,7 +7,7 @@
 
 | Mesure | Résultat |
 |---|---:|
-| Cours interactifs recensés | **63** |
+| Cours interactifs recensés | **64** |
 | Cours avec anomalie critique automatisable | **24** |
 | Cours avec dette documentaire ou de reprise | **46** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **10** |
@@ -28,6 +28,7 @@
 | `circuit-huile-interactif` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `circuit-organe-par-organe` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `clapet-differentiel-huile-pedagogique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `co2-r744` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `compresseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `condenseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
 | `cours-classes-securite` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
@@ -52,7 +53,7 @@
 | `mission-bouteilles` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `module-compresseur` | ✗ | ✓ | ✓ | ✓ | absente | — | — | 🔴 description |
 | `nomenclature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `parcours-manometres` | ✓ | ✓ | ✓ | ✓ | commune | 18 | ✓ | 🟠 ancien fond #EEF2F6 (2) |
+| `parcours-manometres` | ✓ | ✓ | ✓ | ✓ | commune | 6 | ✓ | 🟠 ancien fond #EEF2F6 (2) |
 | `pose-manifold-2-voies-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pose-manifold-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pression-temperature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
