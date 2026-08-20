@@ -2,8 +2,71 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **20 août 2026** (+ stations pressostats et régulateur électronique, 19/08) (la file des 8 remarques du 19 au soir est soldée ;
+> Dernière mise à jour : **20 août 2026** (+ la ligne CO₂ / R744, 20/08 au soir ; + stations pressostats et régulateur électronique, 19/08) (la file des 8 remarques du 19 au soir est soldée ;
 > l'état du 19/08 reste valable pour le reste).
+
+> **20/08 (soir) — LA LIGNE CO₂ / R744 OUVRE, ET AVEC ELLE LA CATÉGORIE B.**
+> `packs/fluides/res/co2-r744/` — **douze escales, 90 écrans, 31 questions, 152 narrations
+> enregistrées**. Transposé de deux parcours composés par F. Henninot sur Claude Design
+> (« co2Animate » puis « Anico2mate »), livrés en `.dc.html` : un format qui ne tourne pas
+> seul, il lui faut React et un `new Function` qui interdit toute CSP stricte. Le fond est
+> passé au format maison, charte et voix des modules pressostats.
+>
+> **DOUZE ESCALES, PAS UN PARCOURS.** L'original durait 35 à 45 minutes d'un seul tenant.
+> Chaque escale porte ses écrans, ses questions et son bilan, et s'ouvre seule par
+> `index.html?e=<identifiant>`. La carte du site en fait douze stations d'une même ligne
+> **sans dupliquer un octet de code** — le motif de la sous-station NRD, repris tel quel.
+>
+> ⚠️ **LE FAIT À RETENIR : le CO₂ n'est PAS la catégorie D.** L'arrêté du 21 novembre 2025,
+> transcrit dans `referentiel-2025.json`, crée une **catégorie B** dédiée au R-744 et un
+> **groupe G13 de 17 codes** qui n'est évalué que dans cette catégorie. La catégorie D ne
+> couvre que la récupération des gaz fluorés (ancienne catégorie III). Le pack couvre
+> A1/A2/D/E : cette ligne **ouvre le périmètre B** et ne change donc rien à la matrice 94/94.
+> La source citait l'arrêté du 29 février 2016 et « catégorie I pour tous équipements » :
+> régime abrogé, corrigé. Détail dans `res/co2-r744/SOURCES-METIER.md`.
+>
+> **LA VOIX EST ENREGISTRÉE, PAS SYNTHÉTISÉE.** 152 narrations produites avec la chaîne
+> Piper du dépôt (`fr_FR-siwis-medium`), la même voix que les 1 423 existantes ; l'index
+> passe à **1 575 entrées**, aucune perdue (les 31 que la reconstruction sortait ont été
+> réinjectées : leur texte a changé depuis leur enregistrement, c'est un autre chantier).
+> Mesure sur le parcours complet : **429 lectures, 429 servies par un fichier, 0 par la
+> synthèse**. Le tableau `ORALISER` de `moteur.js` reprend les règles du générateur et y
+> ajoute ce qui est propre au CO₂ — MT et BT en toutes lettres, COP épelé, PRP et ODP
+> développés. ⚠️ Pour refaire un enregistrement après correction :
+> `node res/co2-r744/voix-textes.mjs --ecrire` puis `collecter-narrations.mjs` puis
+> `generer-audios-piper.py --key <clé>`. **Piper n'est pas installé sur le poste** : il l'a
+> été dans `C:\git\_venv-piper` (modèle compris, 63 Mo) pour ce chantier.
+>
+> **LE QUIZ NE SE DEVINE PLUS.** Dans la source, les six bonnes réponses étaient toutes en
+> première position. Elles sont mélangées au rendu — **mélange déterministe**, tiré de
+> l'identifiant de la question : un tirage au sort à chaque affichage changerait le texte lu,
+> donc sa clé, et **aucun enregistrement ne pourrait plus lui correspondre**. La rédaction a
+> été rééquilibrée pour que la bonne réponse ne soit pas non plus la plus longue.
+> Mesure : `node res/co2-r744/controle-quiz.mjs` — 35 % au rang dominant, 29 % en longueur,
+> refus au-delà de 50 %.
+>
+> **CE QUE LA VÉRIFICATION A TROUVÉ** (et corrigé) : l'écran de gauche s'écrasait à 22 px
+> (la coquille du gabarit compte quatre rangées, la barre des escales en ajoutait une
+> cinquième) · le texte des questions était coupé de 25 px sans pouvoir défiler · cinq
+> chevauchements de textes dans les dessins ⚠️ **mesurés en coordonnées ÉCRAN** — `getBBox`
+> ignore les `transform`, et les libellés d'axe sont tournés : en coordonnées SVG, quatre
+> faux positifs et deux vrais défauts manqués · le réglage de lisibilité commun (zoom 160 %,
+> police DYS Lexend) faisait **sortir la barre « Retour / Continuer » de l'écran**, la page
+> ne devient défilable que lorsque le zoom dépasse 1 (classe `zoome`, posée par un
+> `MutationObserver`). Parcours complet des 429 écrans : 0 anomalie.
+>
+> **CE QUI RESTE SUR CETTE LIGNE :**
+> a. **la relecture métier** — rien n'a été contrôlé par un frigoriste ; les points à voir en
+>    priorité sont listés dans `SOURCES-METIER.md` ;
+> b. une **divergence à trancher dans le même site** : la fiche `cl3` « CO₂ : deux dangers
+>    mortels » refuse délibérément de donner un chiffre de pression, la ligne annonce
+>    « jusqu'à 120 bar » comme ordre de grandeur ;
+> c. **l'adossement au référentiel** de `couverture.json` est proposé par lecture des
+>    libellés, il attend validation ;
+> d. **inerWeb Fluide** : Franck veut la ligne dans le logiciel aussi. Le module s'y copie
+>    tel quel dans `pedagogie/co2-r744/` + une entrée dans `guide.html`, mais il faut
+>    trancher : **avec** les 152 MP3 (25 Mo dans un paquet distribué) ou **sans** (la voix
+>    du navigateur reprend la main, ~250 Ko). Pas fait, en attente de décision.
 
 > **19/08 (soir) — TROIS STATIONS PRESSOSTATS, EN LIGNE ET VÉRIFIÉES SUR LE SITE SERVI.**
 > `packs/fluides/res/pressostat-bp-kp1`, `-hp-kp5` et `-combine-kp15`, repris du pack
