@@ -855,6 +855,34 @@
   /* --- La ceinture : s'évaluer, du positionnement à l'examen blanc.
          Les stations 🔒 existent et s'ouvrent, mais leur carte est gardée
          par un portillon : le code se donne en formation. --- */
+  /* --- La ligne de L'HUILE : elle naît du compresseur, parce que c'est là
+         que l'huile vit, et suit son trajet jusqu'au diagnostic. Elle s'étendra
+         — d'autres modules viendront s'y greffer. Pour en ajouter un : une
+         ligne dans stations[], rien d'autre, les abscisses se recalculent. --- */
+  var HUILE = {
+    slug: "huile", nom: "🛢 L’HUILE", sous: "elle part du compresseur",
+    couleur: "#b06a00",
+    jalon: "🏁 Circuit d’huile maîtrisé",
+    stations: [
+      cours("technologie-huiles-frigorifiques",          "Les familles d’huile", "les six familles"),
+      cours("technologie-huiles-choix-controle",         "Choisir et contrôler", "grade et humidité"),
+      cours("retour-huile-naturel",                      "Le retour naturel", "vitesse et pente"),
+      cours("retour-huile-verifier",                     "Vérifier le retour", "calcul et régimes"),
+      cours("elements-circuit-huile",                    "Séparer et stocker", "les deux premiers"),
+      cours("elements-circuit-huile-regler",             "Mettre sous pression", "clapet, régulateurs"),
+      cours("separateur-huile-pedagogique",              "Le séparateur", "flotteur et retour"),
+      cours("reservoir-huile-pedagogique",               "Le réservoir", "réserve et niveaux"),
+      cours("clapet-differentiel-huile-pedagogique",     "Le clapet taré", "branche de pression"),
+      cours("regulateur-huile-mecanique-pedagogique",    "Le régulateur AC&R", "flotteur et pointeau"),
+      cours("traxoil-pedagogique",                       "TraxOil", "capteur et alarme"),
+      cours("traxoil-installer",                         "Monter le TraxOil", "modèles et montage"),
+      cours("pressostat-differentiel-huile-pedagogique", "Le pressostat", "P1 − P2, seuils"),
+      cours("pressostat-huile-securite",                 "Sécurité d’huile", "délai et coupure"),
+      cours("diagnostic-circuit-huile",                  "Diagnostiquer", "architecture"),
+      cours("diagnostic-circuit-huile-conclure",         "Conclure", "croiser et décider")
+    ]
+  };
+
   var CEINTURE = {
     slug: "evaluer", nom: "✅ S’ÉVALUER", sous: "QCM · examens blancs A1 · A2 · D · E",
     couleur: "#b06a00", jalon: "🏁 Prêt pour l’attestation",
@@ -952,7 +980,7 @@
      ------------------------------------------------------------------ */
   var W = 1280, HUB_X = 940, TRONC_Y = 80;
   var PUCE_Y = 252, DEBUT_Y = 330, PAS = 72;
-  var CEINTURE_Y = 960, OUTILS_Y = 1170, ELECTROTECH_Y = 1330, CORR_Y = 1490, H = 1610;
+  var CEINTURE_Y = 960, HUILE_Y = 1170, OUTILS_Y = 1380, ELECTROTECH_Y = 1540, CORR_Y = 1700, H = 1820;
 
   function esc(v) {
     return String(v).replace(/[&<>"']/g, function (c) {
@@ -1088,14 +1116,26 @@
       d.push('<circle cx="' + l.x + '" cy="' + CEINTURE_Y + '" r="7" fill="#ffffff" stroke="' + l.couleur + '" stroke-width="4"></circle>');
     });
 
-    /* La ligne de L'HUILE — annoncée, pas encore construite. Elle naîtra
-       du compresseur (c'est là que l'huile vit) : tracé pointillé gris,
-       cartouche « en développement », aucune station cliquable. */
-    d.push('<path d="M 130 ' + (DEBUT_Y + 2 * PAS) + ' H 56 V 830 H 118" stroke="#98a6b3" ' +
-           'stroke-width="6" stroke-dasharray="3 10" stroke-linecap="round" fill="none" opacity="0.8"></path>');
-    d.push('<rect x="118" y="815" width="128" height="30" rx="15" fill="#98a6b3"></rect>');
-    d.push('<text class="puce" x="182" y="835" text-anchor="middle">🛢 L’HUILE</text>');
-    d.push('<text class="puce-s" x="256" y="835" font-style="italic">ligne en développement — retour d’huile, circuit d’huile</text>');
+    /* La ligne de L'HUILE — la déviation naît du compresseur (c'est là que
+       l'huile vit) et mène à sa propre carte : dix stations, de la technologie
+       des huiles au diagnostic. Le trait ambre est celui de l'huile ; la
+       mention « brouillon » reste tant que la relecture métier n'est pas faite. */
+    d.push(flux("M 130 " + (DEBUT_Y + 2 * PAS) + " H 40 V " + HUILE_Y + " H 1210", HUILE.couleur, 8));
+    d.push('<polygon points="1210,' + (HUILE_Y - 8) + " 1226," + HUILE_Y + " 1210," + (HUILE_Y + 8) + '" fill="' + HUILE.couleur + '"></polygon>');
+    /* Correspondance au compresseur : c'est de là que part la déviation. */
+    d.push('<circle cx="130" cy="' + (DEBUT_Y + 2 * PAS) + '" r="7" fill="#ffffff" stroke="' + HUILE.couleur + '" stroke-width="4"></circle>');
+    var wh = Math.round(HUILE.nom.length * 7.4 + 30);
+    d.push('<a href="packs/fluides/res/circuit-huile-interactif/index.html"><g><title>Voir la ligne en détail — brouillon à relire</title>' +
+           '<rect x="70" y="' + (HUILE_Y - 84) + '" width="' + wh + '" height="30" rx="15" fill="' + HUILE.couleur + '"></rect>' +
+           '<text class="puce" x="' + (70 + wh / 2) + '" y="' + (HUILE_Y - 64) + '" text-anchor="middle">' + esc(HUILE.nom) + "</text></g></a>");
+    d.push('<text class="puce-s" x="' + (70 + wh / 2) + '" y="' + (HUILE_Y - 38) + '" text-anchor="middle">' + esc(HUILE.sous) + "</text>");
+    /* Abscisses réparties : ajouter une station ne demande aucune retouche ici. */
+    var nH = HUILE.stations.length;
+    HUILE.stations.forEach(function (s, i) {
+      var xh = Math.round(200 + i * (950 / (nH - 1)));
+      d.push(station(s, xh, HUILE_Y, HUILE.couleur, i % 2 ? "haut" : "bas", t[s.id]));
+    });
+    d.push(jalon(HUILE.jalon, 1090, HUILE_Y + 92));
 
     /* La ceinture S'ÉVALUER */
     d.push(flux("M 70 " + CEINTURE_Y + " H 1190", CEINTURE.couleur, 9));
