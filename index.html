@@ -898,16 +898,38 @@
   /* --- La ligne de L'HUILE : elle naît du compresseur, parce que c'est là
          que l'huile vit, et suit son trajet jusqu'au diagnostic. Elle s'étendra
          — d'autres modules viendront s'y greffer. Pour en ajouter un : une
-         ligne dans stations[], rien d'autre, les abscisses se recalculent. --- */
+         ligne dans stations[], rien d'autre, les abscisses se recalculent.
+
+         ⚠️ ELLE S'EST COUPÉE EN DEUX le 20/08/2026. À dix-sept stations, il ne
+         restait que 47 px entre deux pastilles — mesuré à l'écran : seize
+         collisions de libellés si on les mettait du même côté, et une lecture
+         en dents de scie sinon. C'est le motif déjà employé pour le CO₂ : le
+         FLUIDE d'un côté, le MATÉRIEL de l'autre, un seul jalon chacun. Le
+         découpage est celui de F. Henninot — quatre stations sur le fluide et
+         son retour, le reste sur le circuit. --- */
   var HUILE = {
-    slug: "huile", nom: "🛢 L’HUILE", sous: "elle part du compresseur",
+    slug: "huile", nom: "🛢 L’HUILE", sous: "le fluide et son retour",
     couleur: "#b06a00",
-    jalon: "🏁 Circuit d’huile maîtrisé",
+    jalon: "🏁 Le retour d’huile compris",
     stations: [
       cours("technologie-huiles-frigorifiques",          "Les familles d’huile", "rôles et familles"),
       cours("technologie-huiles-choix-controle",         "Choisir et contrôler", "grade, humidité"),
       cours("retour-huile-naturel",                      "Le retour naturel", "vitesse, pente, siphons"),
-      cours("retour-huile-verifier",                     "Vérifier le retour", "charge réduite, calcul"),
+      cours("retour-huile-verifier",                     "Vérifier le retour", "charge réduite, calcul")
+    ]
+  };
+
+  /* --- LE CIRCUIT D'HUILE : le matériel, de la séparation au diagnostic. La
+         branche prolonge la ligne du fluide, comme les centrales prolongent
+         celle du CO₂. Treize stations : c'est encore beaucoup, et l'alternance
+         des libellés y reste nécessaire — `cotes()` le décide seul. Si elle
+         devait encore grandir, c'est ici qu'il faudrait couper à nouveau,
+         entre les organes et la surveillance. --- */
+  var HUILE_CIRCUIT = {
+    slug: "huile-circuit", nom: "🛢 LE CIRCUIT D’HUILE", sous: "le matériel, jusqu’au diagnostic",
+    couleur: "#8a5200",
+    jalon: "🏁 Circuit d’huile maîtrisé",
+    stations: [
       cours("elements-circuit-huile",                    "Séparer et stocker", "séparateur, réservoir"),
       cours("elements-circuit-huile-regler",             "Sous pression", "clapet et régulateurs"),
       cours("separateur-huile-pedagogique",              "Le séparateur", "flotteur et retour"),
@@ -1079,9 +1101,14 @@
      ligne comme sur celle-ci.
      La bande du CO₂ s'intercale sous celle de l'huile — même mécanique : les
      quatre repères qui la suivent descendent d'autant. Les écarts entre bandes
-     sont inchangés, seule l'origine a bougé. */
-  var CEINTURE_Y = 1160, HUILE_Y = 1370, CO2_Y = 1590, CENTRALES_Y = 1810,
-      OUTILS_Y = 2020, ELECTROTECH_Y = 2180, CORR_Y = 2340, H = 2460;
+     sont inchangés, seule l'origine a bougé.
+     Le 20/08, la ligne de l'huile s'est coupée en deux : LE CIRCUIT D'HUILE
+     prend une bande de plus à 1590, et tout ce qui suivait descend de 220 px.
+     Les écarts entre bandes — 210, 220, 220, 220, 210, 160, 160, 120 — sont
+     là encore inchangés. */
+  var CEINTURE_Y = 1160, HUILE_Y = 1370, HUILE_CIRCUIT_Y = 1590, CO2_Y = 1810,
+      CENTRALES_Y = 2030, OUTILS_Y = 2240, ELECTROTECH_Y = 2400, CORR_Y = 2560,
+      H = 2680;
 
   function esc(v) {
     return String(v).replace(/[&<>"']/g, function (c) {
@@ -1111,6 +1138,28 @@
            '" stroke="#98a6b3" stroke-width="8" stroke-linecap="round"></line>' +
            '<line x1="' + x1 + '" y1="' + y + '" x2="' + x2 + '" y2="' + y +
            '" stroke="#ffffff" stroke-width="4" stroke-linecap="round"></line>';
+  }
+
+  /* --- DE QUEL CÔTÉ ÉCRIRE LES LIBELLÉS D'UNE LIGNE HORIZONTALE.
+         L'alternance haut/bas n'a qu'une raison d'être : empêcher deux libellés
+         voisins de se toucher. Elle était appliquée à TOUTES les lignes, par
+         principe — et elle coûte cher en lecture, l'œil montant et descendant à
+         chaque station. Mesuré à l'écran le 20/08 : sur les quatorze lignes de
+         trois stations ou plus, ONZE n'en avaient aucun besoin.
+         On la calcule donc au lieu de l'imposer. Les largeurs sont estimées au
+         même coefficient que les cartouches (7,4 px par caractère à 15 px, un
+         peu moins pour le sous-titre à 12 px) : c'est approximatif, mais la
+         marge de 12 px absorbe l'erreur, et le rendu se vérifie à l'écran en
+         comparant les getBoundingClientRect — jamais les getBBox, qui ignorent
+         les transform. --- */
+  function cotes(stations, pas) {
+    var large = 0;
+    stations.forEach(function (s) {
+      var n = ((s.verrou ? 2 : 0) + String(s.nom || "").length) * 7.4;
+      var u = String(s.sous || "").length * 6.2;
+      large = Math.max(large, n, u);
+    });
+    return large + 12 > pas;   /* true : il faut alterner */
   }
 
   function station(s, x, y, couleur, cote, visite) {
@@ -1186,9 +1235,10 @@
     d.push('<text class="dep" x="60" y="34" text-anchor="middle">DÉPART</text>');
     d.push('<text class="dep-s" x="60" y="51" text-anchor="middle">aucun prérequis</text>');
 
+    var altT = cotes(TRONC.stations, 110);
     TRONC.stations.forEach(function (s, i) {
       var x = 165 + i * 110;
-      d.push(station(s, x, TRONC_Y, TRONC.couleur, i % 2 ? "haut" : "bas", t[s.id]));
+      d.push(station(s, x, TRONC_Y, TRONC.couleur, altT && i % 2 ? "haut" : "bas", t[s.id]));
     });
     /* L'aiguillage, d'où tombent les quatre branches */
     d.push('<rect x="' + (HUB_X - 60) + '" y="' + (TRONC_Y - 16) + '" width="120" height="32" rx="16" fill="#1b3a63"></rect>');
@@ -1247,11 +1297,35 @@
     d.push('<text class="puce-s" x="' + (70 + wh / 2) + '" y="' + (HUILE_Y - 38) + '" text-anchor="middle">' + esc(HUILE.sous) + "</text>");
     /* Abscisses réparties : ajouter une station ne demande aucune retouche ici. */
     var nH = HUILE.stations.length;
+    var altH = cotes(HUILE.stations, 950 / (nH - 1));
     HUILE.stations.forEach(function (s, i) {
       var xh = Math.round(200 + i * (950 / (nH - 1)));
-      d.push(station(s, xh, HUILE_Y, HUILE.couleur, i % 2 ? "haut" : "bas", t[s.id]));
+      d.push(station(s, xh, HUILE_Y, HUILE.couleur, altH && i % 2 ? "haut" : "bas", t[s.id]));
     });
     d.push(jalon(HUILE.jalon, 1090, HUILE_Y + 92));
+
+    /* LE CIRCUIT D'HUILE prolonge la ligne du fluide : le trait sort par la
+       droite, redescend et repart — exactement comme la branche des centrales
+       prolonge celle du CO₂. C'est le même sens de lecture : on a compris le
+       fluide et son retour, on regarde maintenant le matériel qui s'en occupe.
+       Treize stations : `cotes()` y maintiendra l'alternance, elle y est
+       nécessaire. */
+    d.push(flux("M 1226 " + HUILE_Y + " H 1262 V " + HUILE_CIRCUIT_Y + " H 1210", HUILE_CIRCUIT.couleur, 8));
+    d.push('<polygon points="1210,' + (HUILE_CIRCUIT_Y - 8) + " 1226," + HUILE_CIRCUIT_Y + " 1210," + (HUILE_CIRCUIT_Y + 8) + '" fill="' + HUILE_CIRCUIT.couleur + '"></polygon>');
+    var wi = Math.round(HUILE_CIRCUIT.nom.length * 7.4 + 30);
+    d.push('<a href="packs/fluides/res/circuit-huile-interactif/index.html"><g><title>Voir la branche en détail — brouillon à relire</title>' +
+           '<rect x="70" y="' + (HUILE_CIRCUIT_Y - 84) + '" width="' + wi + '" height="30" rx="15" fill="' + HUILE_CIRCUIT.couleur + '"></rect>' +
+           '<text class="puce" x="' + (70 + wi / 2) + '" y="' + (HUILE_CIRCUIT_Y - 64) + '" text-anchor="middle">' + esc(HUILE_CIRCUIT.nom) + "</text></g></a>");
+    d.push('<text class="puce-s" x="' + (70 + wi / 2) + '" y="' + (HUILE_CIRCUIT_Y - 38) + '" text-anchor="middle">' + esc(HUILE_CIRCUIT.sous) + "</text>");
+    var nI = HUILE_CIRCUIT.stations.length;
+    var altI = cotes(HUILE_CIRCUIT.stations, 890 / (nI - 1));
+    HUILE_CIRCUIT.stations.forEach(function (s, i) {
+      /* Départ à 320, comme la branche des centrales : à 200, le libellé de la
+         deuxième station passait sous le sous-titre de la ligne. */
+      var xi = Math.round(320 + i * (890 / (nI - 1)));
+      d.push(station(s, xi, HUILE_CIRCUIT_Y, HUILE_CIRCUIT.couleur, altI && i % 2 ? "haut" : "bas", t[s.id]));
+    });
+    d.push(jalon(HUILE_CIRCUIT.jalon, 1090, HUILE_CIRCUIT_Y + 92));
 
     /* La ligne du CO₂ — elle part de « Classes de sécurité », sur la ligne
        FLUIDES : c'est là qu'on apprend qu'un fluide se lit par sa classe, et
@@ -1265,11 +1339,12 @@
            '<text class="puce" x="' + (70 + wq / 2) + '" y="' + (CO2_Y - 64) + '" text-anchor="middle">' + esc(CO2.nom) + "</text></g></a>");
     d.push('<text class="puce-s" x="' + (70 + wq / 2) + '" y="' + (CO2_Y - 38) + '" text-anchor="middle">' + esc(CO2.sous) + "</text>");
     var nQ = CO2.stations.length;
+    var altQ = cotes(CO2.stations, 920 / (nQ - 1));
     CO2.stations.forEach(function (s, i) {
       /* Départ rejeté à droite du cartouche : à 200, le libellé de la
          deuxième station passait sous le sous-titre de la ligne. */
       var xq = Math.round(250 + i * (920 / (nQ - 1)));
-      d.push(station(s, xq, CO2_Y, CO2.couleur, i % 2 ? "haut" : "bas", t[s.id]));
+      d.push(station(s, xq, CO2_Y, CO2.couleur, altQ && i % 2 ? "haut" : "bas", t[s.id]));
     });
     d.push(jalon(CO2.jalon, 1090, CO2_Y + 92));
 
@@ -1284,9 +1359,10 @@
            '<text class="puce" x="' + (70 + wn / 2) + '" y="' + (CENTRALES_Y - 64) + '" text-anchor="middle">' + esc(CENTRALES.nom) + "</text></g></a>");
     d.push('<text class="puce-s" x="' + (70 + wn / 2) + '" y="' + (CENTRALES_Y - 38) + '" text-anchor="middle">' + esc(CENTRALES.sous) + "</text>");
     var nN = CENTRALES.stations.length;
+    var altN = cotes(CENTRALES.stations, 850 / (nN - 1));
     CENTRALES.stations.forEach(function (s, i) {
       var xn = Math.round(320 + i * (850 / (nN - 1)));
-      d.push(station(s, xn, CENTRALES_Y, CENTRALES.couleur, i % 2 ? "haut" : "bas", t[s.id]));
+      d.push(station(s, xn, CENTRALES_Y, CENTRALES.couleur, altN && i % 2 ? "haut" : "bas", t[s.id]));
     });
     d.push(jalon(CENTRALES.jalon, 1090, CENTRALES_Y + 92));
 
@@ -1304,9 +1380,10 @@
        retrouvé plus court que la ligne le 20/08 (9e station ajoutée,
        8 coordonnées) — des cx="undefined" silencieux sur le plan. */
     var nS = CEINTURE.stations.length;
+    var altS = cotes(CEINTURE.stations, 910 / (nS - 1));
     CEINTURE.stations.forEach(function (s, i) {
       var x = Math.round(200 + i * (910 / (nS - 1)));
-      d.push(station(s, x, CEINTURE_Y, CEINTURE.couleur, i % 2 ? "haut" : "bas", t[s.id]));
+      d.push(station(s, x, CEINTURE_Y, CEINTURE.couleur, altS && i % 2 ? "haut" : "bas", t[s.id]));
     });
     d.push(jalon(CEINTURE.jalon, 1100, CEINTURE_Y + 62));
 
@@ -1320,8 +1397,9 @@
            '<text class="puce" x="' + (70 + wo / 2) + '" y="' + (OUTILS_Y - 64) + '" text-anchor="middle">' + esc(OUTILS.nom) + "</text></g></a>");
     d.push('<text class="puce-s" x="' + (70 + wo / 2) + '" y="' + (OUTILS_Y - 38) + '" text-anchor="middle">' + esc(OUTILS.sous) + "</text>");
     var xo = [320, 460, 600, 740, 880, 1020, 1160];
+    var altO = cotes(OUTILS.stations, 140);
     OUTILS.stations.forEach(function (s, i) {
-      d.push(station(s, xo[i], OUTILS_Y, OUTILS.couleur, i % 2 ? "haut" : "bas", t[s.id]));
+      d.push(station(s, xo[i], OUTILS_Y, OUTILS.couleur, altO && i % 2 ? "haut" : "bas", t[s.id]));
     });
 
     /* La ligne électrotechnique : même dessin que la boîte à outils, un
