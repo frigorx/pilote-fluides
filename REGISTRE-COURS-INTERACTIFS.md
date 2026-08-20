@@ -90,7 +90,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `circuit-organe-par-organe` | g6, g7, g8, g9 | — | 1.04 | 843 Ko |
 | `clapet-differentiel-huile-pedagogique` | **orphelin** | — | — | 1226 Ko |
 | `compresseur-interactif` | g6, g6b | 13 | 6.02 · 6.03 · 6.04 · 6.05 · 9.07 | 74 Ko |
-| `condenseur-interactif` | g7b | 25 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 · 7.06 · 7.08 | 77 Ko |
+| `condenseur-interactif` | g7b | 25 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 · 7.06 · 7.08 | 94 Ko |
 | `cours-classes-securite` | cl1 | — | 1.08 | 156 Ko |
 | `detendeur-interactif` | g9 | 14 | 1.04 · 9.10 · 9.03 | 175 Ko |
 | `diagnostic-circuit-huile` | **orphelin** | — | — | 905 Ko |

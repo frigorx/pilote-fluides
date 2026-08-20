@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" role="img" aria-labelledby="title desc">
+  <title id="title">Le condenseur sur le diagramme log p-h</title>
+  <desc id="desc">Sur un diagramme pression enthalpie, le condenseur correspond au trajet haute pression allant du point 2 à droite vers le point 3 à gauche. Le trajet comprend la désurchauffe dans la zone vapeur, la condensation sous la cloche puis le sous-refroidissement dans la zone liquide.</desc>
+  <defs>
+    <marker id="leftArrow" markerWidth="10" markerHeight="10" refX="2" refY="5" orient="auto"><path d="M10 0 0 5 10 10Z" fill="#C9451A"/></marker>
+    <style>
+      .axis{fill:none;stroke:#1B3A63;stroke-width:3;stroke-linecap:round}.dome{fill:#FBDCD2;fill-opacity:.55;stroke:#1B3A63;stroke-width:3}.grid{stroke:#AEBAC7;stroke-width:1;stroke-dasharray:6 7}.title{font:700 26px 'Trebuchet MS',sans-serif;fill:#1B3A63}.text{font:600 17px Calibri,'Segoe UI',sans-serif;fill:#10233C}.small{font:600 17px Calibri,'Segoe UI',sans-serif;fill:#5E6E82}.zone{font:800 17px Calibri,'Segoe UI',sans-serif;letter-spacing:.05em}.cond{fill:none;stroke:#C9451A;stroke-width:10;stroke-linecap:round}.cond-arrow{fill:none;stroke:#C9451A;stroke-width:3;stroke-dasharray:10 8;marker-end:url(#leftArrow);animation:move 2s linear infinite}.point{fill:#FFFDF8;stroke:#1B3A63;stroke-width:4}@keyframes move{to{stroke-dashoffset:-54}}
+    </style>
+  </defs>
+  <rect width="920" height="520" rx="24" fill="#FFFDF8"/>
+  <text x="460" y="38" text-anchor="middle" class="title">Le condenseur = le trajet haute pression, de 2 vers 3</text>
+
+  <path class="grid" d="M105 105H835M105 185H835M105 265H835M105 345H835M225 75V415M365 75V415M505 75V415M645 75V415M785 75V415"/>
+  <path class="axis" d="M105 70V415H850"/>
+  <text x="45" y="92" class="text">pression</text><text x="45" y="114" class="small">échelle log</text>
+  <text x="842" y="447" text-anchor="end" class="text">enthalpie h · énergie par kg →</text>
+
+  <path class="dome" d="M245 415C270 305 335 183 450 130C565 183 630 305 655 415Z"/>
+  <circle cx="450" cy="130" r="6" fill="#1B3A63"/><text x="450" y="112" text-anchor="middle" class="small">point critique</text>
+  <text x="170" y="320" class="zone" fill="#2563A6">LIQUIDE</text>
+  <text x="450" y="385" text-anchor="middle" class="zone" fill="#7D5A86">LIQUIDE + VAPEUR</text>
+  <text x="735" y="320" text-anchor="middle" class="zone" fill="#B83224">VAPEUR SURCHAUFFÉE</text>
+  <text x="287" y="390" class="small">courbe de bulle</text><text x="613" y="390" text-anchor="end" class="small">courbe de rosée</text>
+
+  <path class="cond" d="M760 205H175"/>
+  <path class="cond-arrow" d="M735 205H195"/>
+  <circle class="point" cx="760" cy="205" r="12"/><text x="760" y="210" text-anchor="middle" class="text">2</text>
+  <circle class="point" cx="175" cy="205" r="12"/><text x="175" y="210" text-anchor="middle" class="text">3</text>
+
+  <path d="M760 224v38H620" fill="none" stroke="#B83224" stroke-width="2"/>
+  <text x="690" y="284" text-anchor="middle" class="zone" fill="#B83224">DÉSURCHAUFFE</text>
+  <text x="690" y="304" text-anchor="middle" class="small">vapeur → vapeur</text>
+  <path d="M620 224v74H300" fill="none" stroke="#7D5A86" stroke-width="2"/>
+  <text x="460" y="320" text-anchor="middle" class="zone" fill="#684873">CONDENSATION</text>
+  <text x="460" y="340" text-anchor="middle" class="small">vapeur + liquide → liquide</text>
+  <path d="M300 224v38H175" fill="none" stroke="#2563A6" stroke-width="2"/>
+  <text x="238" y="284" text-anchor="middle" class="zone" fill="#2563A6">SOUS-REFROID.</text>
+  <text x="238" y="304" text-anchor="middle" class="small">liquide → liquide</text>
+
+  <rect x="165" y="468" width="590" height="34" rx="17" fill="#F7F1E7" stroke="#CAD3DE"/>
+  <text x="460" y="490" text-anchor="middle" class="text">La pression reste haute ; l’enthalpie diminue parce que le fluide cède de l’énergie.</text>
+</svg>

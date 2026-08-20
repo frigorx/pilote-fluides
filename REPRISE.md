@@ -139,6 +139,51 @@
 > · ⚠️ `build/audit-conformite.mjs` NE VOIT PAS les dépendances distantes : il classait
 >   les deux films 🔴 pour un tout autre motif. L'audit interne n'aurait jamais alerté.
 
+> **20/08 — VERDICT DE F. HENNINOT SUR LES BROUILLONS, ET LE CONDENSEUR FONDU.**
+> Les quatre chantiers sortis des branches lui ont été montrés en local, module par module.
+>
+> **QUATRE PROTOTYPES — À RETRAVAILLER DANS LE FUTUR, NE PAS PUBLIER.** Ses mots :
+> · `tirage-au-vide-interactif` — « certaines slides sont trop à retravailler, c'est un
+>   brouillon, je le garde dans l'état de brouillon à développer ». Son test passe pourtant
+>   (23 gestes en 2 voies, 26 en 4 voies) : **le code n'est pas le sujet, le contenu l'est.**
+> · `tutoriels-fluidiques` — « pareil, c'est un brouillon, pas encore opérationnel ».
+> · `manifold-interactive` — « à garder comme base de travail, mais on précise EN COURS
+>   D'ÉVOLUTION ; beaucoup de choses ont été cassées, scindées en étapes. Brouillon avancé
+>   éclaté en tranches. Pas encore assez bien fait pour être publié. » Son propre test
+>   échoue d'ailleurs : « Trois tutoriels doivent être présents dans ce lot ».
+> · `moteur/manipulation-fluidique` — « l'idée est bonne » (un socle commun à tous les
+>   gestes) « mais **la symbolique n'est pas bonne** : les symboles et compagnie, il y a trop
+>   de problèmes, pas assez précis, pas conforme à ce que je voulais ». À reprendre à la
+>   source, pas à rafistoler.
+> Ils vivent sur `codex/tutoriels-manipulation`. Rien n'est publié, rien n'est indexé.
+> ⚠️ Leurs propres fiches l'exigeaient déjà : « brouillon métier, aucune greffe portail,
+> publication ou indexation RAG avant le bon à tirer de F. Henninot ». Elles avaient raison.
+> ⚠️ Cinq questions restent sans réponse dans le tirage au vide, et elles ne peuvent venir
+> que de l'atelier : montage réel du vacuomètre, nom des voies du manifold 4 voies du
+> plateau, position des organes pour évacuer tous les volumes du circuit école, ordre
+> d'isolement propre à la pompe, support de traçabilité attendu.
+>
+> **LE CONDENSEUR, LUI, EST FONDU — et ce n'était PAS un doublon.** Mesuré avant de toucher
+> à quoi que ce soit : le module publié ne disait **pas un mot** du sous-refroidissement
+> (zéro occurrence), ni de la désurchauffe, ni du diagramme enthalpique. Il enseigne LE
+> GESTE (installer, régler, diagnostiquer, tracer) ; le brouillon du 11/08 enseignait CE QUI
+> SE PASSE. Deux moitiés, pas deux copies.
+> · Base conservée : le module publié (plus récent, ses interactions, ses codes).
+>   ⚠️ Son `app.js` (42 450 o au 14/08) DÉPASSE celui du brouillon (30 922 o) : reprendre le
+>   brouillon en bloc aurait été une régression.
+> · Greffé : trois écrans dont les **textes viennent du brouillon, repris tels quels** —
+>   rien de réécrit. `trois-zones` (Observer · 2, codes 1.02/1.04/7.01), `sous-refroidissement`
+>   (Vérifier · 5, codes 1.02/5.05/7.07, avec le point de bulle pour les mélanges à
+>   glissement) et `diagramme-condenseur` (Vérifier · 6). Le module passe de 25 à 28 écrans.
+> · Les trois SVG entrent dans `assets/`. **Harmonisation charte faite** : le diagramme
+>   portait du texte en 14 et 15 px — illisible à l'impression A4 — remonté à 17 px.
+>   L'orange #FF6B35 n'y porte que du tracé, jamais de texte : conforme.
+> · Vérifié en local : SVG servis en 200, écrans 2/28, 19/28 et 20/28 rendus, console vide,
+>   build en succès, audit interne 🟢 « contrôle statique tenu », et les trois SVG ont bien
+>   `<title>` et `<desc>` (ils ne rejoignent pas les 41 sans description).
+> ⚠️ **Le condenseur n'avait jamais été « oublié »** : il est en ligne depuis longtemps. Ce
+> qui manquait, c'était sa moitié théorique.
+
 > **20/08 — MÉNAGE DES CLONES : 414 Mo, et deux branches à trancher.**
 > Trois dossiers `pilote-fluides-*` traînaient à côté du dépôt. Vérifiés un par un AVANT
 > de toucher à quoi que ce soit — le ménage à l'aveugle aurait détruit du travail.
