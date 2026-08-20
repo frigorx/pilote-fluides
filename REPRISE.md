@@ -41,6 +41,32 @@
 > partir de la liste HTML du réseau, dans la même page : ajouter une station la rend
 > cherchable sans toucher ce code.
 >
+> **5. La page « Le métier » est refondue, et elle entre dans le plan.** Le fond vient d'un
+> plan composé par F. Henninot avec GPT, livré en `.dc.html` — un format qui charge React,
+> ReactDOM, Google Fonts et unsplash depuis l'extérieur. Il n'a PAS été posé tel quel : ça
+> aurait annulé le décrochage d'unpkg du 20/08 et rendu fausse la phrase « aucun script
+> tiers » des mentions légales. Le fond est transposé au format maison — cinq familles au
+> lieu de trois, un tableau de ce qu'on mesure, les classes NF EN 378, « est-ce pour moi »,
+> six renvois vers des stations. **Zéro requête extérieure, vérifié en ligne.**
+> ⚠️ **Une erreur réglementaire corrigée au passage, la même que celle de la ligne CO₂** :
+> le plan livré annonçait « cinq catégories, I à V » et l'arrêté du 29 février 2016 — et la
+> page en ligne portait déjà cette erreur. C'est l'arrêté du 21 novembre 2025 :
+> **six catégories A1, A2, B, C, D, E**, dont B et C sont neuves. Le CO₂ ne relève plus de la
+> D mais de la **B**.
+> La station « Découvrir le métier » ouvre le TRONC, avant « Du glaçon au circuit ». Une
+> fonction `page()` a été ajoutée — `cours()` ne construit que des adresses dans `res/`.
+> Le plan passe à **96 stations**.
+>
+> **DEUX PIÈGES DE PLUS, TROUVÉS EN VÉRIFIANT ET NON EN RELISANT.**
+> - Le hash de version ne couvrait toujours pas `metier.html` : refondre la page ne le
+>   faisait pas bouger. Le défaut n'était pas propre à `index.html` — il touche **toute page
+>   écrite à la main**. `lib-version.mjs` lit maintenant le dossier racine au lieu de tenir
+>   une liste, donc une page ajoutée est couverte le jour où elle apparaît.
+> - **La queue du tronc repartait de `i = 0`** pour calculer son côté. Ça tombait juste tant
+>   que le tronc gardait sept stations ; une station de plus en tête a inversé la parité et
+>   « Organe par organe » est venu recouvrir « Diagramme enthalpique » de 10 px. L'indice est
+>   désormais global : ajouter ou retirer une station ne peut plus décaler la queue.
+>
 > **DEUX ANGLES MORTS PRÉEXISTANTS, CORRIGÉS.**
 > - `index.html` n'entrait pas dans le hash de `lib-version.mjs`. Or le plan vit ENTIÈREMENT
 >   dans ce fichier : le modifier ne changeait ni les `?v=` ni le nom du cache du service
