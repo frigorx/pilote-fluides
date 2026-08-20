@@ -23,7 +23,7 @@
    `galerie.mjs` importe la même fonction pour ses propres `<script src>` :
    un seul calcul, jamais deux hash qui pourraient diverger.
    ===================================================================== */
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -72,8 +72,23 @@ const FICHIERS_SOURCES = [
      hasher tel quel se mordrait la queue — nouveau hash, donc nouveau
      contenu, donc nouveau hash. Les occurrences sont donc neutralisées avant
      le calcul, voir `calculerVersion()`. */
-  "index.html",
 ];
+
+/* TOUTES LES PAGES DE LA RACINE, et pas seulement index.html. Le 20/08, après
+   avoir ajouté index.html pour la carte, la page « Le métier » a été refondue :
+   le hash n'a PAS bougé, donc le service worker aurait continué de servir
+   l'ancienne. Le défaut n'était pas propre à index.html — il touche toute page
+   dont le contenu est écrit ici plutôt que dérivé d'un fichier de moteur.
+   On lit donc le dossier au lieu de tenir une liste : une page ajoutée est
+   couverte le jour où elle apparaît, sans que personne ait à y penser. Ce que
+   ça coûte : un .html oublié à la racine fait bouger le hash. C'est le bon sens
+   de l'échange — un cache invalidé pour rien ne casse rien, une page jamais
+   rafraîchie, si. */
+function pagesRacine() {
+  try {
+    return readdirSync(RACINE).filter((f) => f.endsWith(".html")).sort();
+  } catch (e) { return []; }
+}
 
 /* Les `?v=<hash>` et le VERSION du service worker sont remplacés par un
    marqueur fixe : deux fichiers qui ne diffèrent que par le hash déjà écrit
@@ -85,7 +100,7 @@ function sansHash(txt) {
 
 export function calculerVersion() {
   const h = createHash("sha256");
-  for (const f of FICHIERS_SOURCES) {
+  for (const f of FICHIERS_SOURCES.concat(pagesRacine())) {
     const p = resolve(RACINE, f);
     if (existsSync(p)) h.update(sansHash(readFileSync(p, "utf8").replace(/\r\n/g, "\n")));
   }

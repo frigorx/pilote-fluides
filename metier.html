@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="Le métier de frigoriste — inerWeb Édu">
-<meta property="og:description" content="C'est quoi, frigoriste ? Le métier, une journée type, et les formations du CAP au bureau d'études.">
+<meta property="og:description" content="Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://inerweb.fr/metier.html">
 <meta property="og:locale" content="fr_FR">
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://inerweb.fr/metier.html">
 <title>Le métier de frigoriste — inerWeb Édu</title>
-<meta name="description" content="C'est quoi, frigoriste ? Le métier, une journée type, et les formations du CAP au bureau d'études.">
+<meta name="description" content="Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études.">
 <style>
   /* Couleurs de la charte : texte --ink #10233c, carte --paper #fffdf8 —
      jamais de blanc pur (aligné 20/08). */
@@ -72,6 +72,34 @@
   .savoir { margin-top:14px; border-left:4px solid var(--ok); background:var(--ok-bg);
             border-radius:8px; padding:10px 14px; font-size:15px; }
   .savoir strong:first-child { color:var(--ok); }
+  /* Le « Où : » de chaque famille — c'est lui qui rend le métier concret pour
+     un élève de 2nde : il connaît le supermarché, pas le « froid commercial ». */
+  .tuile .ou { margin:6px 0 0; font-size:13.5px; color:var(--mut); }
+  .tuile .ou b { color:var(--txt); font-family:var(--titre); }
+  /* Tableaux : ils portent des valeurs, donc ils défilent seuls sur téléphone
+     plutôt que de pousser la page en largeur. */
+  .tab-cadre { overflow-x:auto; margin-top:12px; }
+  table.tab { border-collapse:collapse; width:100%; min-width:460px; font-size:14.5px; }
+  table.tab th, table.tab td { border:1px solid var(--ligne); padding:8px 11px; text-align:left; }
+  table.tab th { background:#eef3f9; font-family:var(--titre); color:var(--bleu); }
+  table.tab caption { caption-side:bottom; margin-top:8px; font-size:13.5px;
+                      color:var(--mut); text-align:left; }
+  /* Renvoi vers une station qui existe : le visiteur passe de la page au cours
+     sans repasser par le plan. */
+  .stations { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+  .stations a { display:block; flex:1; min-width:200px; text-decoration:none;
+                border:1.5px solid var(--ligne); border-radius:10px; padding:10px 13px;
+                background:#f3f7fb; color:var(--txt); }
+  .stations a:hover { border-color:var(--orange); }
+  .stations .etiq { display:block; font-family:var(--titre); font-size:11.5px;
+                    letter-spacing:.08em; color:var(--bleu); }
+  .stations .nom { display:block; font-family:var(--titre); font-size:16px; color:var(--bleu-clair); }
+  .stations .quoi { display:block; font-size:13.5px; color:var(--mut); }
+  .duo-listes { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+  .duo-listes ul { margin:8px 0 0; padding-left:20px; display:flex; flex-direction:column; gap:7px; }
+  .duo-listes h3 { margin:0; font-family:var(--titre); font-size:17px; color:var(--bleu); }
+  .piege { margin-top:12px; border-left:4px solid var(--orange); background:#fff3ed;
+           border-radius:8px; padding:10px 14px; font-size:15px; }
   .parcours { padding:22px 26px; }
   .parcours .etapes { display:flex; gap:10px; flex-wrap:wrap; align-items:stretch; }
   .etape { flex:1; min-width:170px; border:1.5px solid var(--ligne); border-radius:10px;
@@ -133,40 +161,197 @@
          pas d'image plutôt qu'une image approximative. -->
     <div style="padding:24px 28px">
       <div class="pastille">DÉCOUVRIR LE MÉTIER</div>
-      <h1>Frigoriste : celui qui fait tenir la chaîne du froid.</h1>
-      <p class="chapo">Sans lui, pas de supermarché, pas de vaccin conservé, pas de patinoire, pas de climatisation. Un métier <strong>technique, varié et recherché</strong>.</p>
+      <h1>Frigoriste, climaticien, technicien CVC.</h1>
+      <p class="chapo">Un supermarché, un vaccin, un bloc opératoire, une salle de serveurs, une
+      patinoire : derrière chacun, une machine à froid. Et quelqu’un qui sait la <strong>régler</strong>,
+      la <strong>dépanner</strong> — et le <strong>prouver</strong>.</p>
+      <p style="margin:10px 0 0;color:var(--mut);font-size:14.5px">Lecture : 5 à 10 minutes ·
+      aucun prérequis.</p>
     </div>
   </div>
 
-  <div class="surtitre">Ce qu’il fait, concrètement</div>
+  <div class="surtitre">Cinq familles, un même circuit</div>
+  <div class="bloc liste" style="padding-bottom:14px">
+    <p style="margin:0">Le compresseur, le condenseur, le détendeur, l’évaporateur : ce sont toujours
+    les <strong>mêmes quatre organes</strong>. Ce qui change, c’est la machine, le client et la taille
+    de l’installation.</p>
+  </div>
   <div class="tuiles">
     <div class="bloc tuile">
       <div class="emoji">🛒</div>
       <h3>Froid commercial</h3>
-      <p>Vitrines, chambres froides, meubles frigorifiques des magasins et des restaurants.</p>
+      <p>Vitrines, chambres froides, meubles frigorifiques, centrales de magasin. On y rencontre
+      de plus en plus le <strong>CO₂ (R-744)</strong>.</p>
+      <p class="ou"><b>Où :</b> supermarchés, restaurants, boulangeries, pharmacies.</p>
     </div>
     <div class="bloc tuile">
       <div class="emoji">🌡️</div>
       <h3>Climatisation &amp; pompes à chaleur</h3>
-      <p>Confort des bâtiments, chauffage par PAC, rénovation énergétique.</p>
+      <p>Le même circuit, retourné : la PAC prend la chaleur dehors et la rend dedans. Cœur de la
+      rénovation énergétique.</p>
+      <p class="ou"><b>Où :</b> logements, bureaux, commerces, tertiaire.</p>
     </div>
     <div class="bloc tuile">
       <div class="emoji">🏭</div>
       <h3>Froid industriel</h3>
-      <p>Agroalimentaire, entrepôts logistiques, process industriels, patinoires.</p>
+      <p>Grosses puissances, salles des machines, <strong>ammoniac (R-717)</strong> ou CO₂,
+      surveillance et consignation.</p>
+      <p class="ou"><b>Où :</b> agroalimentaire, entrepôts logistiques, patinoires, process.</p>
+    </div>
+    <div class="bloc tuile">
+      <div class="emoji">🏢</div>
+      <h3>CVC : chauffage, ventilation, air</h3>
+      <p>Le bâtiment complet : production de chaleur, réseaux d’eau, gaines, débits d’air,
+      traitement de l’air neuf.</p>
+      <p class="ou"><b>Où :</b> hôpitaux, écoles, immeubles de bureaux, salles blanches.</p>
+    </div>
+    <div class="bloc tuile">
+      <div class="emoji">📐</div>
+      <h3>Bureau d’études &amp; régulation</h3>
+      <p>On ne visse plus : on <strong>dimensionne</strong>, on chiffre, on programme la régulation
+      et on suit le chantier.</p>
+      <p class="ou"><b>Où :</b> bureaux d’études CVC, installateurs, exploitation, collectivités.</p>
     </div>
   </div>
 
   <div class="surtitre">Une journée type</div>
   <div class="bloc liste">
+    <p style="margin:0 0 12px">Deux à quatre interventions dans la journée, souvent seul en
+    camionnette, parfois en binôme sur un gros chantier. Rarement deux jours identiques.</p>
     <ul>
-      <li><strong>Diagnostiquer</strong> une panne : écouter, mesurer, comparer aux valeurs attendues.</li>
-      <li><strong>Intervenir</strong> sur le circuit : manifold, récupération du fluide, tirage au vide, charge.</li>
-      <li><strong>Régler</strong> : thermostats, pressostats, détendeurs — et prouver le réglage à l’instrument.</li>
-      <li><strong>Tracer</strong> : registre d’équipement, fiche d’intervention, pesée des fluides.</li>
-      <li><strong>Expliquer</strong> au client ce qui a été fait, et pourquoi.</li>
+      <li><strong>Diagnostiquer</strong> une panne : écouter le client, écouter la machine, mesurer.
+      Puis comparer aux valeurs attendues — pas à une impression.</li>
+      <li><strong>Intervenir</strong> sur le circuit : manifold, récupération du fluide, brasage,
+      tirage au vide, charge à la balance. Le geste propre, dans l’ordre.</li>
+      <li><strong>Régler</strong> : thermostats, pressostats, détendeurs, régulateur électronique —
+      et prouver le réglage à l’instrument.</li>
+      <li><strong>Tracer</strong> : registre d’équipement, fiche d’intervention, pesée des fluides.
+      Ce qui n’est pas écrit n’a pas été fait.</li>
+      <li><strong>Expliquer</strong> au client ce qui a été fait, et pourquoi. C’est la partie que
+      les jeunes techniciens sous-estiment le plus.</li>
     </ul>
-    <div class="savoir"><strong>Bon à savoir :</strong> la manipulation des fluides frigorigènes exige une <strong>attestation d’aptitude</strong> (catégories I à V). Elle se prépare — et inerWeb est là pour ça.</div>
+    <div class="stations">
+      <a href="packs/fluides/res/fil-conducteur-intervention/index.html">
+        <span class="etiq">STATION</span><span class="nom">Le fil conducteur</span>
+        <span class="quoi">L’intervention de bout en bout.</span></a>
+    </div>
+  </div>
+
+  <div class="surtitre">Ce qu’on mesure, ce qu’on prouve</div>
+  <div class="bloc liste">
+    <p style="margin:0">Un frigoriste ne dit pas « ça a l’air bon ». Il <strong>annonce une valeur</strong>,
+    dans une plage attendue. Voilà les grandeurs qu’on relève sur presque toutes les installations.</p>
+    <div class="tab-cadre">
+      <table class="tab">
+        <caption>Plages <strong>usuelles</strong>, données à titre indicatif : la valeur qui fait foi
+        est celle de la documentation du constructeur de l’installation.</caption>
+        <thead><tr><th>Grandeur</th><th>Où on la mesure</th><th>Plage usuelle</th></tr></thead>
+        <tbody>
+          <tr><td>Surchauffe</td><td>Sortie d’évaporateur</td><td>5 à 10 K</td></tr>
+          <tr><td>Sous-refroidissement</td><td>Sortie de condenseur</td><td>4 à 8 K</td></tr>
+          <tr><td>HP et BP</td><td>Au manifold, sur les vannes de service</td><td>En bar — préciser absolu ou relatif</td></tr>
+          <tr><td>COP / EER</td><td>Calculé : puissance utile / puissance absorbée</td><td>COP en chaud, EER en froid</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="stations">
+      <a href="packs/fluides/res/surchauffe-sous-refroidissement-interactif/index.html">
+        <span class="etiq">STATION</span><span class="nom">Surchauffe &amp; sous-refroidissement</span>
+        <span class="quoi">Les deux preuves du bon fonctionnement.</span></a>
+      <a href="packs/fluides/res/diagramme-enthalpique/index.html">
+        <span class="etiq">STATION</span><span class="nom">Diagramme enthalpique</span>
+        <span class="quoi">Le cycle tracé, point par point.</span></a>
+      <a href="packs/fluides/res/bilan-thermique-performance-interactif/index.html">
+        <span class="etiq">STATION</span><span class="nom">Bilan &amp; performance</span>
+        <span class="quoi">COP, EER, puissances.</span></a>
+    </div>
+  </div>
+
+  <div class="surtitre">Un métier réglementé</div>
+  <div class="bloc liste">
+    <p style="margin:0">Les fluides frigorigènes sont soit inflammables, soit toxiques, soit à effet
+    de serre — souvent plusieurs à la fois. D’où des classes de sécurité, une attestation d’aptitude,
+    et des contrôles d’étanchéité.</p>
+    <div class="tab-cadre">
+      <table class="tab">
+        <caption>Classification selon <strong>NF EN 378</strong> / ASHRAE 34.</caption>
+        <thead><tr><th>Classe</th><th>Ce que ça veut dire</th><th>Exemples</th></tr></thead>
+        <tbody>
+          <tr><td>A1</td><td>Faible toxicité, non inflammable</td><td>R-134a, R-410A, R-744 (CO₂)</td></tr>
+          <tr><td>A2L</td><td>Faible toxicité, faiblement inflammable</td><td>R-32, R-1234yf</td></tr>
+          <tr><td>A3</td><td>Faible toxicité, très inflammable</td><td>R-290 (propane), R-600a (isobutane)</td></tr>
+          <tr><td>B2L</td><td>Toxicité plus élevée, faiblement inflammable</td><td>R-717 (ammoniac)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="piege"><strong>Le piège classique :</strong> le R-290 est en <strong>A3</strong>,
+    pas en A2L. Et « A » n’a jamais voulu dire inoffensif — le CO₂ est A1, et il tue pourtant de
+    deux façons : la pression, et l’air qu’il prend en point bas.</div>
+
+    <!-- ⚠️ CES CATÉGORIES SONT CELLES DE L'ARRÊTÉ DU 21 NOVEMBRE 2025, transcrit
+         dans packs/fluides/referentiel-2025.json. La page annonçait « catégories
+         I à V » et l'arrêté du 29 février 2016 : régime ABROGÉ. Les catégories
+         romaines I à IV correspondent désormais à A1, A2, D et E ; B et C sont
+         NEUVES. Ne pas revenir en arrière sans relire le référentiel. -->
+    <h3 style="font-family:var(--titre);color:var(--bleu);margin:22px 0 0">L’attestation d’aptitude</h3>
+    <p style="margin:6px 0 0">Obligatoire pour manipuler les fluides. Depuis l’<strong>arrêté du
+    21 novembre 2025</strong>, elle se décline en <strong>six catégories</strong> — et deux d’entre
+    elles sont neuves, créées pour les fluides naturels.</p>
+    <div class="tab-cadre">
+      <table class="tab">
+        <caption>Arrêté du 21 novembre 2025 (NOR TECP2532494A), annexe II. La catégorie <strong>V</strong>,
+        distincte, couvre la climatisation des véhicules.</caption>
+        <thead><tr><th>Catégorie</th><th>Ce qu’elle autorise</th><th>Avant 2025</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A1</strong></td><td>Toutes les activités, gaz fluorés <em>et</em> hydrocarbures, sans limite de charge</td><td>I</td></tr>
+          <tr><td><strong>A2</strong></td><td>Les mêmes, limitées aux faibles charges (moins de 3 kg, ou 6 kg si hermétiquement scellé et étiqueté)</td><td>II</td></tr>
+          <tr><td><strong>B</strong></td><td>Toutes les activités, pour le <strong>dioxyde de carbone (R-744)</strong></td><td>— <em>neuve</em></td></tr>
+          <tr><td><strong>C</strong></td><td>Toutes les activités, pour l’<strong>ammoniac (R-717)</strong></td><td>— <em>neuve</em></td></tr>
+          <tr><td><strong>D</strong></td><td><strong>Récupération seule</strong> des gaz fluorés, sur les faibles charges</td><td>III</td></tr>
+          <tr><td><strong>E</strong></td><td>Contrôles d’étanchéité seuls, sans accéder au circuit frigorifique</td><td>IV</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="savoir"><strong>Ce qui change vraiment :</strong> le CO₂ ne relève plus de la
+    catégorie D. Il a désormais <strong>sa propre catégorie, la B</strong> — et la D ne couvre plus
+    que la récupération des gaz fluorés.</div>
+
+    <h3 style="font-family:var(--titre);color:var(--bleu);margin:22px 0 0">F-Gaz et étanchéité</h3>
+    <p style="margin:6px 0 0">Les règlements <strong>(UE) 517/2014</strong> et <strong>(UE) 2024/573</strong>
+    organisent la réduction progressive des HFC, les quotas et les contrôles périodiques d’étanchéité.
+    Conséquence concrète sur le terrain : on va vers les fluides à faible PRP — CO₂, propane, ammoniac.</p>
+    <div class="stations">
+      <a href="packs/fluides/res/cours-classes-securite/index.html">
+        <span class="etiq">STATION</span><span class="nom">Classes de sécurité</span>
+        <span class="quoi">Lire un fluide par sa classe — et ce que la classe ne dit pas.</span></a>
+      <a href="packs/fluides/res/co2-r744/index.html?e=pourquoi">
+        <span class="etiq">STATION</span><span class="nom">Pourquoi le CO₂</span>
+        <span class="quoi">Hors quota, mais 120 bar — et la catégorie B.</span></a>
+    </div>
+  </div>
+
+  <div class="surtitre">Est-ce que c’est pour moi ?</div>
+  <div class="bloc liste">
+    <div class="duo-listes">
+      <div>
+        <h3>Tu vas t’y retrouver si…</h3>
+        <ul>
+          <li>Tu aimes <strong>chercher une panne</strong> et comprendre pourquoi ça ne marche pas.</li>
+          <li>Tu es à l’aise avec tes mains <strong>et</strong> avec un chiffre.</li>
+          <li>Tu préfères <strong>bouger de site en site</strong> plutôt que rester au même poste.</li>
+          <li>Parler au client ne te fait pas peur.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>À savoir avant de se lancer</h3>
+        <ul>
+          <li>On travaille <strong>dehors, en hauteur, dans le froid</strong> — et parfois en toiture l’été.</li>
+          <li>Les <strong>astreintes</strong> existent : une chambre froide ne tombe pas en panne aux heures de bureau.</li>
+          <li>La <strong>sécurité n’est pas optionnelle</strong> : pression, électricité, fluides inflammables.</li>
+          <li>La technique évolue vite : on <strong>continue de se former</strong> toute sa carrière.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="surtitre">Se former</div>
@@ -218,8 +403,8 @@
 </div>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=2895b13900"></script>
+<script src="moteur/lisibilite.js?v=9b98f10a5a"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js. -->
-<script src="moteur/marque.js?v=2895b13900" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=9b98f10a5a" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>
