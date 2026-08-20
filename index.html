@@ -827,7 +827,7 @@
 
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
-<script src="plan-descriptions.gen.js?v=b8f02d67c9"></script>
+<script src="plan-descriptions.gen.js?v=5942acb905"></script>
 <script>
 /* =====================================================================
    LE PLAN DE FORMATION — généré depuis les données ci-dessous.
@@ -1416,8 +1416,16 @@
        fluide et son retour, on regarde maintenant le matériel qui s'en occupe.
        Treize stations : `cotes()` y maintiendra l'alternance, elle y est
        nécessaire. */
-    d.push(flux("M 1226 " + HUILE_Y + " H 1262 V " + HUILE_CIRCUIT_Y + " H 1210", HUILE_CIRCUIT.couleur, 8));
-    d.push('<polygon points="1210,' + (HUILE_CIRCUIT_Y - 8) + " 1226," + HUILE_CIRCUIT_Y + " 1210," + (HUILE_CIRCUIT_Y + 8) + '" fill="' + HUILE_CIRCUIT.couleur + '"></polygon>');
+    /* ⚠️ LE TRAIT DOIT TRAVERSER LA LIGNE, pas s'arrêter au bout de 50 px.
+       Le motif copié du CO₂ et des centrales finissait par « H 1210 » : le
+       trait descendait de la ligne parente puis mourait aussitôt, et les
+       stations flottaient sans rien qui les relie. F. Henninot l'a vu sur une
+       capture le 20/08 — « il manque certaines lignes ». Il court donc
+       maintenant jusqu'avant la première station, et la flèche est passée à
+       l'extrémité GAUCHE, retournée : elle marque la fin du parcours, dans le
+       sens où le trait est réellement lu. */
+    d.push(flux("M 1226 " + HUILE_Y + " H 1262 V " + HUILE_CIRCUIT_Y + " H 285", HUILE_CIRCUIT.couleur, 8));
+    d.push('<polygon points="285,' + (HUILE_CIRCUIT_Y - 8) + " 269," + HUILE_CIRCUIT_Y + " 285," + (HUILE_CIRCUIT_Y + 8) + '" fill="' + HUILE_CIRCUIT.couleur + '"></polygon>');
     var wi = Math.round(HUILE_CIRCUIT.nom.length * 7.4 + 30);
     d.push('<a href="packs/fluides/res/circuit-huile-interactif/index.html"><g><title>Voir la branche en détail — brouillon à relire</title>' +
            '<rect x="70" y="' + (HUILE_CIRCUIT_Y - 84) + '" width="' + wi + '" height="30" rx="15" fill="' + HUILE_CIRCUIT.couleur + '"></rect>' +
@@ -1442,7 +1450,11 @@
        FLUIDES : c'est là qu'on apprend qu'un fluide se lit par sa classe, et
        le R744 est le cas où cette lecture ne suffit plus (A1, et pourtant
        120 bar et l'asphyxie). Même dessin que la ligne de l'huile. */
-    d.push(flux("M 1050 " + (DEBUT_Y + 2 * PAS) + " H 1250 V " + CO2_Y + " H 1210", CO2.couleur, 8));
+    /* Même correction que pour le circuit d'huile : le trait s'arrêtait à
+       1210, donc 40 px après être descendu — la ligne du CO₂ n'avait aucun
+       trait sous ses huit stations depuis son ouverture. */
+    d.push(flux("M 1050 " + (DEBUT_Y + 2 * PAS) + " H 1250 V " + CO2_Y + " H 215", CO2.couleur, 8));
+    d.push('<polygon points="215,' + (CO2_Y - 8) + " 199," + CO2_Y + " 215," + (CO2_Y + 8) + '" fill="' + CO2.couleur + '"></polygon>');
     d.push('<circle cx="1050" cy="' + (DEBUT_Y + 2 * PAS) + '" r="7" fill="#ffffff" stroke="' + CO2.couleur + '" stroke-width="4"></circle>');
     var wq = Math.round(CO2.nom.length * 7.4 + 30);
     d.push('<a href="#ligne=' + CO2.slug + '"><g><title>Voir la ligne en détail</title>' +
@@ -1462,8 +1474,8 @@
     /* La branche des centrales prolonge la ligne du fluide : le trait sort par
        la droite, redescend et repart. C'est le sens même du découpage — on a
        compris le fluide, on regarde maintenant les machines. */
-    d.push(flux("M 1226 " + CO2_Y + " H 1262 V " + CENTRALES_Y + " H 1210", CENTRALES.couleur, 8));
-    d.push('<polygon points="1210,' + (CENTRALES_Y - 8) + " 1226," + CENTRALES_Y + " 1210," + (CENTRALES_Y + 8) + '" fill="' + CENTRALES.couleur + '"></polygon>');
+    d.push(flux("M 1226 " + CO2_Y + " H 1262 V " + CENTRALES_Y + " H 285", CENTRALES.couleur, 8));
+    d.push('<polygon points="285,' + (CENTRALES_Y - 8) + " 269," + CENTRALES_Y + " 285," + (CENTRALES_Y + 8) + '" fill="' + CENTRALES.couleur + '"></polygon>');
     var wn = Math.round(CENTRALES.nom.length * 7.4 + 30);
     d.push('<a href="#ligne=' + CENTRALES.slug + '"><g><title>Voir la branche en détail</title>' +
            '<rect x="70" y="' + (CENTRALES_Y - 84) + '" width="' + wn + '" height="30" rx="15" fill="' + CENTRALES.couleur + '"></rect>' +
@@ -1905,11 +1917,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=b8f02d67c9"></script>
-<script src="chiffres.gen.js?v=b8f02d67c9"></script>
+<script src="moteur/lisibilite.js?v=5942acb905"></script>
+<script src="chiffres.gen.js?v=5942acb905"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=b8f02d67c9" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=5942acb905" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
