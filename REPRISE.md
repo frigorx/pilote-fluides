@@ -139,6 +139,40 @@
 > · ⚠️ `build/audit-conformite.mjs` NE VOIT PAS les dépendances distantes : il classait
 >   les deux films 🔴 pour un tout autre motif. L'audit interne n'aurait jamais alerté.
 
+> **20/08 — MÉNAGE DES CLONES : 414 Mo, et deux branches à trancher.**
+> Trois dossiers `pilote-fluides-*` traînaient à côté du dépôt. Vérifiés un par un AVANT
+> de toucher à quoi que ce soit — le ménage à l'aveugle aurait détruit du travail.
+>
+> · **`pilote-fluides-codex-travail` → CORBEILLE (346 Mo).** Vrai clone séparé, 100 commits
+>   de retard, `voix.js` et `prof-vocal.js` plus ANCIENS que ceux d'ici, et **zéro fichier
+>   unique** (ses 1 423 MP3 étaient tous là). Le renvoi git `codex` qui pointait dessus a été
+>   retiré du dépôt.
+> · **`pilote-fluides-codex-tutoriels` (36 Mo) et `pilote-fluides-condenseur-brouillon`
+>   (32 Mo) → worktrees RETIRÉS, branches CONSERVÉES.** Ce n'étaient pas des clones : des
+>   worktrees de CE dépôt. Leur travail non commité a d'abord été commité sur place
+>   (`1cee7cf`, `7bae566`), il vit donc dans `.git` — retirer le dossier ne perd rien.
+>
+> ⚠️ **DEUX BRANCHES PORTENT DU TRAVAIL QUI N'EXISTE NULLE PART AILLEURS — à trancher :**
+> · `codex/tutoriels-manipulation` : `moteur/manipulation-fluidique` (+ .js/.css) et les
+>   modules `manifold-interactive`, `tirage-au-vide-interactif`, `tutoriels-fluidiques`.
+>   ⚠️ Ses versions de `pose-manifold-interactive`, `pose-manifold-2-voies-interactive` et
+>   `recuperation-fluide-interactive` sont PÉRIMÉES : le dépôt les a dépassées.
+> · `codex/refonte-condenseur` : trois SVG absents d'ici — `condenseur-trois-zones.svg`,
+>   `diagramme-condenseur-focus.svg`, `mesure-sous-refroidissement.svg` — plus
+>   `SOURCES-IMAGES.md` et un `styles.css` plus fourni (23 023 o contre 16 846 o ici, qui
+>   n'a pas bougé depuis le 02/08). ⚠️ Son `app.js` et son `index.html`, eux, sont DÉPASSÉS
+>   (42 450 o au 14/08 ici contre 30 922 o là-bas) : les reprendre serait revenir en arrière.
+>
+> Pour ressortir l'un des deux :
+> `git worktree add ..\pilote-fluides-<nom> codex/<branche>`
+>
+> ⚠️ **DEUX SESSIONS ONT TRAVAILLÉ SUR CE DOSSIER EN MÊME TEMPS le 20/08** (galerie,
+> pressostats, branche huile côté l'une ; audit et ménage côté l'autre). Un `git add -A`
+> a figé `galerie.html` et `REGISTRE-COURS-INTERACTIFS.md` en pleine course — registre à
+> 16,1 Mo et 7 médias au lieu de 34,2 Mo et 14. Rattrapé par `node build/build.mjs`
+> (`66fe8ca`), rien de perdu : ce sont des fichiers générés. **La leçon : sur un dossier
+> partagé, `git add -A` ramasse aussi ce qui n'est pas à soi.**
+
 > **19/08 (session Régul'Froid) — NOUVELLE STATION EN LIGNE, et le journal des mises à jour.**
 > `packs/fluides/res/regulateur-electronique-interactif/` — **Le régulateur électronique**,
 > 24 écrans, 6 ateliers, sur la ligne 🎛 CE QUI SE RÈGLE (5 stations désormais). Elle reprend
