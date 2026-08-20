@@ -35,7 +35,12 @@ if (!mDonnees) {
 }
 const D = new Function(
   mDonnees[1] +
-  "; return { TRONC: TRONC, LIGNES: LIGNES, CO2: CO2, CENTRALES: CENTRALES, CEINTURE: CEINTURE, OUTILS: OUTILS, ELECTROTECH: ELECTROTECH, CORRESPONDANCES: CORRESPONDANCES };"
+  /* HUILE et HUILE_CIRCUIT manquaient : dix-sept stations du plan n'ont
+     jamais figuré dans la liste du réseau ni dans son JSON-LD. Trouvé le
+     20/08 en branchant la recherche dessus — chercher « huile » ne ramenait
+     qu'un cours, et c'était « Le compresseur ». La liste se dit « la même
+     donnée que le plan » : elle doit l'être. */
+  "; return { TRONC: TRONC, LIGNES: LIGNES, HUILE: HUILE, HUILE_CIRCUIT: HUILE_CIRCUIT, CO2: CO2, CENTRALES: CENTRALES, CEINTURE: CEINTURE, OUTILS: OUTILS, ELECTROTECH: ELECTROTECH, CORRESPONDANCES: CORRESPONDANCES };"
 )();
 
 function esc(v) {
@@ -64,6 +69,8 @@ function bloc(nom, sous, stations) {
 const groupes = [
   ["🚉 LE TRONC", "la théorie, du départ au diagramme", D.TRONC.stations.concat(D.TRONC.queue)],
   ...D.LIGNES.map((l) => [l.nom, l.sous, l.stations]),
+  [D.HUILE.nom, D.HUILE.sous, D.HUILE.stations],
+  [D.HUILE_CIRCUIT.nom, D.HUILE_CIRCUIT.sous, D.HUILE_CIRCUIT.stations],
   [D.CO2.nom, D.CO2.sous, D.CO2.stations],
   [D.CENTRALES.nom, D.CENTRALES.sous, D.CENTRALES.stations],
   [D.ELECTROTECH.nom, D.ELECTROTECH.sous, D.ELECTROTECH.stations],
