@@ -127,6 +127,24 @@
   .bouton { align-self:flex-start; display:inline-block; padding:10px 22px; background:var(--bleu);
             color:#fff; font-weight:bold; text-decoration:none; border-radius:999px; white-space:nowrap; }
   .bouton:hover { background:var(--bleu-clair); color:#fff; }
+  .bouton.clair { background:transparent; color:var(--bleu); border:2px solid var(--bleu); }
+  .bouton.clair:hover { background:var(--bleu); color:#fff; }
+  .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+  /* SOMMAIRE — c'est lui qui rend la page parcourable au lieu d'être un long
+     déroulé : le visiteur voit en dix secondes ce qu'elle contient, et saute
+     où il veut. Repris du plan composé par F. Henninot. */
+  .sommaire { margin-top:16px; padding:18px 22px; }
+  .sommaire .titre-som { font-family:var(--titre); font-weight:bold; font-size:13px;
+                         letter-spacing:.6px; text-transform:uppercase; color:var(--mut); }
+  .sommaire ol { margin:10px 0 0; padding:0; list-style:none;
+                 display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:10px; }
+  .sommaire a { display:block; text-decoration:none; padding:10px 13px; border-radius:10px;
+                border:1.5px solid var(--ligne); background:#f3f7fb; color:var(--txt); }
+  .sommaire a:hover { border-color:var(--orange); }
+  .sommaire .quoi { display:block; font-family:var(--titre); font-size:16px; color:var(--bleu); }
+  .sommaire .sous { display:block; font-size:13.5px; color:var(--mut); }
+  /* Une ancre visée ne doit pas se coller au bord haut de la fenêtre. */
+  .surtitre[id] { scroll-margin-top:16px; }
 </style>
 </head>
 <body>
@@ -167,10 +185,35 @@
       la <strong>dépanner</strong> — et le <strong>prouver</strong>.</p>
       <p style="margin:10px 0 0;color:var(--mut);font-size:14.5px">Lecture : 5 à 10 minutes ·
       aucun prérequis.</p>
+      <div class="actions">
+        <a class="bouton" href="#familles">Voir les cinq familles ▾</a>
+        <a class="bouton clair" href="index.html#carte">Essayer un cours ▸</a>
+      </div>
     </div>
   </div>
 
-  <div class="surtitre">Cinq familles, un même circuit</div>
+  <!-- SUR CETTE PAGE — la table des matières du plan composé par F. Henninot.
+       Sans elle, la page est un long déroulé qu'on abandonne au tiers ; avec
+       elle, on voit ce qu'elle contient et on saute où on veut. -->
+  <nav class="bloc sommaire" aria-label="Sur cette page">
+    <span class="titre-som">Sur cette page</span>
+    <ol>
+      <li><a href="#familles"><span class="quoi">Cinq familles</span>
+          <span class="sous">où le froid se pratique</span></a></li>
+      <li><a href="#journee"><span class="quoi">Une journée type</span>
+          <span class="sous">ce qu’on fait vraiment</span></a></li>
+      <li><a href="#preuve"><span class="quoi">Mesurer, prouver</span>
+          <span class="sous">le cœur du métier</span></a></li>
+      <li><a href="#cadre"><span class="quoi">Un métier réglementé</span>
+          <span class="sous">classes, attestation, F-Gaz</span></a></li>
+      <li><a href="#pourmoi"><span class="quoi">Est-ce pour moi ?</span>
+          <span class="sous">ce qui plaît, ce qui pèse</span></a></li>
+      <li><a href="#former"><span class="quoi">Se former</span>
+          <span class="sous">de la 2nde au bureau d’études</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="surtitre" id="familles">Cinq familles, un même circuit</div>
   <div class="bloc liste" style="padding-bottom:14px">
     <p style="margin:0">Le compresseur, le condenseur, le détendeur, l’évaporateur : ce sont toujours
     les <strong>mêmes quatre organes</strong>. Ce qui change, c’est la machine, le client et la taille
@@ -214,7 +257,15 @@
     </div>
   </div>
 
-  <div class="surtitre">Une journée type</div>
+  <!-- « Un point commun » : ce qui relie les cinq familles, et qui amène
+       naturellement au cadre réglementaire plus bas. Repris du plan. -->
+  <div class="bloc liste" style="margin-top:16px">
+    <div class="savoir" style="margin-top:0"><strong>Un point commun :</strong> dans les cinq
+    familles, on manipule des fluides frigorigènes. Donc on passe par l’<strong>attestation
+    d’aptitude</strong>, et on trace ce qu’on fait. <a href="#cadre">Pourquoi c’est réglementé ▸</a></div>
+  </div>
+
+  <div class="surtitre" id="journee">Une journée type</div>
   <div class="bloc liste">
     <p style="margin:0 0 12px">Deux à quatre interventions dans la journée, souvent seul en
     camionnette, parfois en binôme sur un gros chantier. Rarement deux jours identiques.</p>
@@ -237,7 +288,7 @@
     </div>
   </div>
 
-  <div class="surtitre">Ce qu’on mesure, ce qu’on prouve</div>
+  <div class="surtitre" id="preuve">Ce qu’on mesure, ce qu’on prouve</div>
   <div class="bloc liste">
     <p style="margin:0">Un frigoriste ne dit pas « ça a l’air bon ». Il <strong>annonce une valeur</strong>,
     dans une plage attendue. Voilà les grandeurs qu’on relève sur presque toutes les installations.</p>
@@ -267,7 +318,7 @@
     </div>
   </div>
 
-  <div class="surtitre">Un métier réglementé</div>
+  <div class="surtitre" id="cadre">Un métier réglementé</div>
   <div class="bloc liste">
     <p style="margin:0">Les fluides frigorigènes sont soit inflammables, soit toxiques, soit à effet
     de serre — souvent plusieurs à la fois. D’où des classes de sécurité, une attestation d’aptitude,
@@ -330,7 +381,7 @@
     </div>
   </div>
 
-  <div class="surtitre">Est-ce que c’est pour moi ?</div>
+  <div class="surtitre" id="pourmoi">Est-ce que c’est pour moi ?</div>
   <div class="bloc liste">
     <div class="duo-listes">
       <div>
@@ -354,7 +405,7 @@
     </div>
   </div>
 
-  <div class="surtitre">Se former</div>
+  <div class="surtitre" id="former">Se former</div>
   <div class="bloc parcours">
     <div class="etapes">
       <div class="etape">
@@ -403,8 +454,8 @@
 </div>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=5942acb905"></script>
+<script src="moteur/lisibilite.js?v=08a84bd389"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js. -->
-<script src="moteur/marque.js?v=5942acb905" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=08a84bd389" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>
