@@ -454,6 +454,29 @@ examens blancs. Détail et mesures dans `usine-contenu/00-charte/MARQUE-ET-DROIT
 
 ### 🔊 POINT D'ÉTAPE — refonte des voix du 6 août
 
+> ⚠️ **CE QUI SUIT DÉCRIT L'ÉTAT DU 6 AOÛT. IL N'EST PLUS VRAI — mis à jour le 20/08/2026.**
+> Le texte ci-dessous dit « le dépôt canonique n'a pas été modifié » et « les MP3 doivent
+> recevoir le bon à tirer avant publication ». C'était exact ce jour-là. **Ce ne l'est plus**,
+> et cette formulation au présent a fait croire à F. Henninot, le 20/08, qu'un chantier
+> dormait quelque part.
+>
+> **L'état réel, vérifié sur le disque et sur le site servi le 20/08 :**
+> · `moteur/voix.js`, `moteur/prof-vocal.js` et `moteur/voix-index.js` sont DANS le dépôt
+>   canonique ; il porte **1 515 MP3** — plus que les 1 423 d'origine, les 24 capsules du
+>   13/08 s'y étant ajoutées.
+> · Les **1 423 MP3 du clone étaient TOUS présents** dans le canonique, sans exception.
+> · C'est **EN LIGNE** : un MP3 demandé à inerweb.fr répond 200, `moteur/voix.js` aussi.
+> · Le clone `C:\git\pilote-fluides-codex-travail` avait **100 commits de retard** et ses
+>   versions de `voix.js` et `prof-vocal.js` étaient plus ANCIENNES que celles du canonique.
+>   Il ne contenait plus rien d'unique : **envoyé à la corbeille le 20/08 (346 Mo)**, et le
+>   renvoi git `codex` qui pointait vers lui a été retiré du dépôt canonique.
+> · **L'écoute humaine des 5 h 50 : F. Henninot s'en charge (dit le 20/08).** Elle n'a donc
+>   pas eu lieu AVANT la publication, contrairement à ce que la consigne d'origine prévoyait.
+>
+> **La leçon, elle, se garde :** une fiche qui décrit un état passé au présent finit par
+> mentir. Dater l'état, toujours.
+
+
 Le chantier est réalisé dans le clone indépendant `C:\git\pilote-fluides-codex-travail`, branche
 `codex/mise-a-conformite-globale`. Le dépôt canonique `C:\git\pilote-fluides` n'a pas été modifié.
 
