@@ -826,7 +826,7 @@
 
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
-<script src="plan-descriptions.gen.js?v=172befeb08"></script>
+<script src="plan-descriptions.gen.js?v=2895b13900"></script>
 <script>
 /* =====================================================================
    LE PLAN DE FORMATION — généré depuis les données ci-dessous.
@@ -1405,11 +1405,16 @@
            '<text class="puce" x="' + (70 + wi / 2) + '" y="' + (HUILE_CIRCUIT_Y - 64) + '" text-anchor="middle">' + esc(HUILE_CIRCUIT.nom) + "</text></g></a>");
     d.push('<text class="puce-s" x="' + (70 + wi / 2) + '" y="' + (HUILE_CIRCUIT_Y - 38) + '" text-anchor="middle">' + esc(HUILE_CIRCUIT.sous) + "</text>");
     var nI = HUILE_CIRCUIT.stations.length;
-    var altI = cotes(HUILE_CIRCUIT.stations, 890 / (nI - 1));
+    var altI = cotes(HUILE_CIRCUIT.stations, 850 / (nI - 1));
     HUILE_CIRCUIT.stations.forEach(function (s, i) {
-      /* Départ à 320, comme la branche des centrales : à 200, le libellé de la
-         deuxième station passait sous le sous-titre de la ligne. */
-      var xi = Math.round(320 + i * (890 / (nI - 1)));
+      /* Départ à 320 et largeur 850, exactement comme la branche des centrales.
+         À 200, le libellé de la deuxième station passait sous le sous-titre de
+         la ligne ; et à 890 de largeur — l'erreur du premier jet, vue par
+         F. Henninot sur une capture — la treizième station tombait à x = 1210,
+         c'est-à-dire SOUS la flèche d'entrée du trait, libellé tronqué contre
+         le bord. Toutes les lignes du plan s'arrêtent entre 1110 et 1170 :
+         celle-ci ne doit pas faire exception. */
+      var xi = Math.round(320 + i * (850 / (nI - 1)));
       d.push(station(s, xi, HUILE_CIRCUIT_Y, HUILE_CIRCUIT.couleur, altI && i % 2 ? "haut" : "bas", t[s.id]));
     });
     d.push(jalon(HUILE_CIRCUIT.jalon, 1090, HUILE_CIRCUIT_Y + 92));
@@ -1881,11 +1886,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=172befeb08"></script>
-<script src="chiffres.gen.js?v=172befeb08"></script>
+<script src="moteur/lisibilite.js?v=2895b13900"></script>
+<script src="chiffres.gen.js?v=2895b13900"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=172befeb08" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=2895b13900" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
