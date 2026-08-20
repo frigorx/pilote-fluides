@@ -2082,3 +2082,27 @@ paragraphes ; les SVG sont bons pour les principes, pas pour reconnaître un obj
 ---
 
 *F. Henninot · inerWeb Édu — arrêté du 21 novembre 2025, règlement (UE) 2024/573.*
+
+---
+
+## La branche « L’HUILE » du plan — 20 août 2026
+
+Elle compte désormais **17 stations** : le séparateur à éclatement est entré au rang 8,
+entre le séparateur d’huile et le réservoir. 94 écrans, 97 questions, 1 h 55, une voix
+embarquée par station.
+
+La branche débordait, et **pas seulement à cause de la 17e station** : la mesure au
+navigateur montre que « Temporisation et sécurité » occupait déjà 159 px pour 117
+disponibles. Dix libellés du plan ont été recalibrés **à la source**, dans
+`atelier-animations/outils/ordonner-ligne.js` — les titres complets restent dans les
+modules, seuls les libellés du plan sont courts. 0 collision sur la branche après correction.
+
+⚠️ **Deux collisions subsistent sur le plan, hors branche huile**, sur la ligne des
+pressostats : « s’entraîner seul, KP1 et KP5 » avec « 🔒 Échauffement niv. 1 », et
+« 🏁 Réglages maîtrisés » avec « groupe par groupe ». Elles préexistaient et n’ont pas
+été traitées.
+
+**Ne pas modifier les modules de la rame huile ici** : ils sont engendrés depuis
+`atelier-animations`, et `node outils/copier-ligne-vers-pack.mjs` les réécrit à chaque
+passage. La vérité du chantier est dans
+`atelier-animations/refonte/CHANTIER-HUILE-TP-VOIX.md`.
