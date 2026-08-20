@@ -13,7 +13,7 @@
 | Fiches qui en appellent au moins un | **50** |
 | Codes du référentiel couverts par un cours | **99** |
 | Codes encore expliqués par du texte seul | **0** |
-| Poids total des cours | **36.5 Mo** |
+| Poids total des cours | **52.1 Mo** |
 
 ## Anomalies
 
@@ -21,12 +21,12 @@
 
 Du travail fait que personne ne peut atteindre depuis le parcours.
 - `circuit-huile-interactif` — 27 Ko
-- `clapet-differentiel-huile-pedagogique` — 1226 Ko
-- `diagnostic-circuit-huile` — 905 Ko
-- `diagnostic-circuit-huile-conclure` — 744 Ko
+- `clapet-differentiel-huile-pedagogique` — 2274 Ko
+- `diagnostic-circuit-huile` — 1687 Ko
+- `diagnostic-circuit-huile-conclure` — 1493 Ko
 - `diagramme-enthalpique` — 726 Ko
-- `elements-circuit-huile` — 863 Ko
-- `elements-circuit-huile-regler` — 893 Ko
+- `elements-circuit-huile` — 1499 Ko
+- `elements-circuit-huile-regler` — 1777 Ko
 - `fil-conducteur-intervention` — 283 Ko
 - `film-effet-de-serre` — 1214 Ko
 - `film-ozone` — 1061 Ko
@@ -34,22 +34,22 @@ Du travail fait que personne ne peut atteindre depuis le parcours.
 - `parcours-manometres` — 245 Ko
 - `pressostat-bp-kp1` — 1244 Ko
 - `pressostat-combine-kp15` — 931 Ko
-- `pressostat-differentiel-huile-pedagogique` — 937 Ko
+- `pressostat-differentiel-huile-pedagogique` — 1681 Ko
 - `pressostat-hp-kp5` — 1274 Ko
-- `pressostat-huile-securite` — 865 Ko
+- `pressostat-huile-securite` — 1652 Ko
 - `regulateur-electronique-interactif` — 164 Ko
-- `regulateur-huile-mecanique-pedagogique` — 1252 Ko
+- `regulateur-huile-mecanique-pedagogique` — 2415 Ko
 - `regulateur-kvl-pedagogique` — 2 Ko
 - `regulateur-kvr-nrd` — 355 Ko
-- `reservoir-huile-pedagogique` — 1354 Ko
-- `retour-huile-naturel` — 949 Ko
-- `retour-huile-verifier` — 1133 Ko
-- `separateur-eclatement-pedagogique` — 1581 Ko
-- `separateur-huile-pedagogique` — 1420 Ko
-- `technologie-huiles-choix-controle` — 1357 Ko
-- `technologie-huiles-frigorifiques` — 1238 Ko
-- `traxoil-installer` — 871 Ko
-- `traxoil-pedagogique` — 648 Ko
+- `reservoir-huile-pedagogique` — 2603 Ko
+- `retour-huile-naturel` — 1769 Ko
+- `retour-huile-verifier` — 2546 Ko
+- `separateur-eclatement-pedagogique` — 2768 Ko
+- `separateur-huile-pedagogique` — 2694 Ko
+- `technologie-huiles-choix-controle` — 2283 Ko
+- `technologie-huiles-frigorifiques` — 2211 Ko
+- `traxoil-installer` — 1661 Ko
+- `traxoil-pedagogique` — 1242 Ko
 
 ### 🟡 Sans couverture déclarée
 
@@ -91,18 +91,18 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `chaleur-interactive` | g1s | — | 1.02 | 160 Ko |
 | `circuit-huile-interactif` | **orphelin** | — | — | 27 Ko |
 | `circuit-organe-par-organe` | g6, g7, g8, g9 | — | 1.04 | 846 Ko |
-| `clapet-differentiel-huile-pedagogique` | **orphelin** | — | — | 1226 Ko |
-| `co2-r744` | cl3, g13 | 100 | 11.01 · 11.04 · 11.06 · 13.02 · 13.04 · 13.15 · 13.16 · 13.17 · 13.01 · 13.03 | 320 Ko |
+| `clapet-differentiel-huile-pedagogique` | **orphelin** | — | — | 2274 Ko |
+| `co2-r744` | cl3, g13 | 100 | 11.01 · 11.04 · 11.06 · 13.02 · 13.04 · 13.15 · 13.16 · 13.17 · 13.01 · 13.03 | 321 Ko |
 | `compresseur-interactif` | g6, g6b | 13 | 6.02 · 6.03 · 6.04 · 6.05 · 9.07 | 75 Ko |
 | `condenseur-interactif` | g7b | 25 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 · 7.06 · 7.08 | 95 Ko |
 | `cours-classes-securite` | cl1 | — | 1.08 | 156 Ko |
 | `detendeur-interactif` | g9 | 14 | 1.04 · 9.10 · 9.03 | 178 Ko |
-| `diagnostic-circuit-huile` | **orphelin** | — | — | 905 Ko |
-| `diagnostic-circuit-huile-conclure` | **orphelin** | — | — | 744 Ko |
+| `diagnostic-circuit-huile` | **orphelin** | — | — | 1687 Ko |
+| `diagnostic-circuit-huile-conclure` | **orphelin** | — | — | 1493 Ko |
 | `diagramme-enthalpique` | **orphelin** | — | — | 726 Ko |
 | `electrovanne-interactive` | g9 | 14 | 1.05 | 182 Ko |
-| `elements-circuit-huile` | **orphelin** | — | — | 863 Ko |
-| `elements-circuit-huile-regler` | **orphelin** | — | — | 893 Ko |
+| `elements-circuit-huile` | **orphelin** | — | — | 1499 Ko |
+| `elements-circuit-huile-regler` | **orphelin** | — | — | 1777 Ko |
 | `etancheite-interactive` | g4a, g4b, g4c | 27 | 4.01 · 4.02 · 4.03 · 4.04 · 4.05 · 4.06 · 4.07 · 4.08 · 4.09 | 68 Ko |
 | `evaporateur-interactif` | g8b | 27 | 8.02 · 8.03 · 8.04 · 8.06 · 8.07 · 8.10 · 8.11 · 8.05 · 8.09 | 168 Ko |
 | `fil-conducteur-intervention` | **orphelin** | — | — | 283 Ko |
@@ -123,27 +123,27 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `pression-temperature-interactive` | g1b | — | 1.02 · 1.03 | 153 Ko |
 | `pressostat-bp-kp1` | **orphelin** | 26 | 6.03 · 9.06 | 1244 Ko |
 | `pressostat-combine-kp15` | **orphelin** | 26 | 6.03 · 7.04 · 9.06 | 931 Ko |
-| `pressostat-differentiel-huile-pedagogique` | **orphelin** | — | — | 937 Ko |
+| `pressostat-differentiel-huile-pedagogique` | **orphelin** | — | — | 1681 Ko |
 | `pressostat-hp-kp5` | **orphelin** | 26 | 6.03 · 7.04 · 9.06 | 1274 Ko |
-| `pressostat-huile-securite` | **orphelin** | — | — | 865 Ko |
+| `pressostat-huile-securite` | **orphelin** | — | — | 1652 Ko |
 | `pupitre-reglage-interactif` | g9b | 9 | 9.04 · 9.06 · 7.04 | 71 Ko |
 | `recuperation-fluide-interactive` | p2 | 8 | 5.01 · 5.02 · 5.03 · 5.05 · 5.06 | 186 Ko |
 | `regulateur-electronique-interactif` | **orphelin** | 24 | 9.04 · 6.03 | 164 Ko |
-| `regulateur-huile-mecanique-pedagogique` | **orphelin** | — | — | 1252 Ko |
+| `regulateur-huile-mecanique-pedagogique` | **orphelin** | — | — | 2415 Ko |
 | `regulateur-kvl-pedagogique` | **orphelin** | — | — | 2 Ko |
 | `regulateur-kvr-nrd` | **orphelin** | 9 | 1.05 · 9.02 · 9.05 | 355 Ko |
 | `regulateurs-kv-pedagogiques` | g9b | 8 | 1.05 · 9.02 · 9.05 | 1141 Ko |
-| `reservoir-huile-pedagogique` | **orphelin** | — | — | 1354 Ko |
-| `retour-huile-naturel` | **orphelin** | — | — | 949 Ko |
-| `retour-huile-verifier` | **orphelin** | — | — | 1133 Ko |
-| `separateur-eclatement-pedagogique` | **orphelin** | — | — | 1581 Ko |
-| `separateur-huile-pedagogique` | **orphelin** | — | — | 1420 Ko |
+| `reservoir-huile-pedagogique` | **orphelin** | — | — | 2603 Ko |
+| `retour-huile-naturel` | **orphelin** | — | — | 1769 Ko |
+| `retour-huile-verifier` | **orphelin** | — | — | 2546 Ko |
+| `separateur-eclatement-pedagogique` | **orphelin** | — | — | 2768 Ko |
+| `separateur-huile-pedagogique` | **orphelin** | — | — | 2694 Ko |
 | `surchauffe-sous-refroidissement-interactif` | g1e | 13 | 5.05 · 4.05 · 1.03 · 1.06 | 102 Ko |
-| `technologie-huiles-choix-controle` | **orphelin** | — | — | 1357 Ko |
-| `technologie-huiles-frigorifiques` | **orphelin** | — | — | 1238 Ko |
+| `technologie-huiles-choix-controle` | **orphelin** | — | — | 2283 Ko |
+| `technologie-huiles-frigorifiques` | **orphelin** | — | — | 2211 Ko |
 | `tome-3-technologie-organes` | g6, g7, g8, g9, g9b | 112 | 1.04 · 1.05 · 6.01 · 7.01 · 8.01 · 9.01 | 1079 Ko |
-| `traxoil-installer` | **orphelin** | — | — | 871 Ko |
-| `traxoil-pedagogique` | **orphelin** | — | — | 648 Ko |
+| `traxoil-installer` | **orphelin** | — | — | 1661 Ko |
+| `traxoil-pedagogique` | **orphelin** | — | — | 1242 Ko |
 | `vanne-service-interactive` | p1, p5, g6b, g9b | 4 | 4.01 · 4.05 · 5.01 | 185 Ko |
 | `voyant-liquide-pedagogique` | g9 | 18 | 1.05 | 165 Ko |
 
