@@ -39,8 +39,8 @@
   <link rel="apple-touch-icon" href="icones/apple-touch-icon-180.png">
   <title>inerWeb Pilote — Habilitation fluides frigorigènes (démonstrateur)</title>
   <meta name="description" content="Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote.">
-  <link rel="stylesheet" href="moteur/charte-edu.css?v=9b98f10a5a">
-  <link rel="stylesheet" href="moteur/impression.css?v=9b98f10a5a" media="print">
+  <link rel="stylesheet" href="moteur/charte-edu.css?v=b8f02d67c9">
+  <link rel="stylesheet" href="moteur/impression.css?v=b8f02d67c9" media="print">
 </head>
 <body>
   <noscript>
@@ -60,25 +60,25 @@
   <div id="app"></div>
   <!-- Côté ÉLÈVE : BUILD ÉLÈVE, sans la couche pilote.
        Régénéré par `node build/build.mjs` après chaque modification du pack. -->
-  <script src="packs/fluides/pack.eleve.js?v=9b98f10a5a"></script>
+  <script src="packs/fluides/pack.eleve.js?v=b8f02d67c9"></script>
   <!-- Config optionnelle (scoring serveur, phase 2) -->
-  <script src="config.js?v=9b98f10a5a"></script>
+  <script src="config.js?v=b8f02d67c9"></script>
   <!-- Habillage sonore des planches animées : la table du pack, puis le
        mécanisme. Coupé par défaut, aucun son chargé tant qu'on ne le joue
        pas. Les deux fichiers sont facultatifs : sans eux, le moteur
        fonctionne à l'identique, en silence. -->
-  <script src="packs/fluides/sons.js?v=9b98f10a5a"></script>
-  <script src="moteur/sons.js?v=9b98f10a5a"></script>
+  <script src="packs/fluides/sons.js?v=b8f02d67c9"></script>
+  <script src="moteur/sons.js?v=b8f02d67c9"></script>
   <!-- Lecture à voix haute d'une fiche, à la demande : aide FLE/DYS.
        Facultatif, ne casse rien si absent. -->
   <script src="moteur/voix-index.js?v=20260806-1"></script>
   <script src="moteur/voix.js?v=20260806-1"></script>
-  <script src="moteur/lecture.js?v=9b98f10a5a"></script>
+  <script src="moteur/lecture.js?v=b8f02d67c9"></script>
   <!-- Moteur générique -->
-  <script src="moteur/moteur.js?v=9b98f10a5a"></script>
+  <script src="moteur/moteur.js?v=b8f02d67c9"></script>
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
-<script src="moteur/lisibilite.js?v=9b98f10a5a"></script>
-<script src="moteur/marque.js?v=9b98f10a5a" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/lisibilite.js?v=b8f02d67c9"></script>
+<script src="moteur/marque.js?v=b8f02d67c9" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)

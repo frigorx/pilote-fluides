@@ -827,7 +827,7 @@
 
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
-<script src="plan-descriptions.gen.js?v=9b98f10a5a"></script>
+<script src="plan-descriptions.gen.js?v=b8f02d67c9"></script>
 <script>
 /* =====================================================================
    LE PLAN DE FORMATION — généré depuis les données ci-dessous.
@@ -1342,7 +1342,16 @@
     d.push('<text class="aig" x="' + HUB_X + '" y="' + (TRONC_Y + 5) + '" text-anchor="middle">AIGUILLAGE</text>');
     TRONC.queue.forEach(function (s, i) {
       var x = 1055 + i * 115;
-      d.push(station(s, x, TRONC_Y, TRONC.couleur, i % 2 ? "bas" : "haut", t[s.id]));
+      /* L'alternance CONTINUE celle des stations : la queue n'est que le
+         prolongement du tronc après l'aiguillage, pas une ligne à part. Elle
+         repartait de zéro, ce qui marchait tant que le tronc gardait sept
+         stations — ajouter « Découvrir le métier » en tête a inversé la parité,
+         et « Organe par organe » est venu se poser sur « Diagramme
+         enthalpique », 10 px de recouvrement mesurés à l'écran le 20/08.
+         Avec l'indice global, ajouter ou retirer une station ne peut plus
+         décaler la queue. */
+      var j = TRONC.stations.length + i;
+      d.push(station(s, x, TRONC_Y, TRONC.couleur, altT && j % 2 ? "haut" : "bas", t[s.id]));
     });
     d.push(jalon(TRONC.jalon, 1170, TRONC_Y + 58));
 
@@ -1896,11 +1905,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=9b98f10a5a"></script>
-<script src="chiffres.gen.js?v=9b98f10a5a"></script>
+<script src="moteur/lisibilite.js?v=b8f02d67c9"></script>
+<script src="chiffres.gen.js?v=b8f02d67c9"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=9b98f10a5a" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=b8f02d67c9" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
