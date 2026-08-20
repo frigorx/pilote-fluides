@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "genereLe": "2026-08-20T15:25:11.982Z",
-  "total": 3211,
+  "genereLe": "2026-08-20T15:52:07.478Z",
+  "total": 3210,
   "narrations": [
     {
       "cle": "00060401-70",
@@ -1101,6 +1101,14 @@
       ]
     },
     {
+      "cle": "0a31b098-472",
+      "texte": "Deuxième organe. La vapeur retourne directement à l'aspiration. La vapeur séparée doit bien repartir quelque part. Une vanne la renvoie à l'aspiration moyenne température, sans passer par les évaporateurs. La vanne de gaz de détente court-circuite les meubles : cette vapeur n'a rien à y faire. Elle règle en même temps la pression de la bouteille intermédiaire. Ce que montre le schéma. Le chemin de la vapeur de détente, du détendeur haute pression jusqu'à l'aspiration.",
+      "type": "capture",
+      "sources": [
+        "packs/fluides/res/co2-r744/booster/bypass"
+      ]
+    },
+    {
       "cle": "0a4f8974-20",
       "texte": "Recommencer le cours",
       "type": "interface",
@@ -1722,14 +1730,6 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/chaine-intervention-interactive/app.js"
-      ]
-    },
-    {
-      "cle": "102f4fd0-7029",
-      "texte": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend. 🎧 Écouter la capsule : CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris. 🧊 Aller plus loin : sécurité et intervention sur une installation R744 ▸ L'escale « Sécurité » de la ligne CO₂ — les trois risques, le matériel de mesure dédié, le groupe de maintien à l'arrêt, et la catégorie d'attestation qui s'applique. 9 minutes. Ce qui arrive. Le CO₂ — le R-744 — est classé A1 : toxicité faible, non inflammable, PRP de 1. C'est la case la plus rassurante de toute la matrice. Et c'est exactement ce qui le rend dangereux : sa classe n'annonce aucun des deux risques qui tuent réellement sur ces installations — la pression , et l' anoxie . Qui retient « CO₂ = A1 = tranquille » a retenu quelque chose de faux. Ce fluide entre aujourd'hui dans le parc : froid commercial, supermarchés, chambres froides. Vous en rencontrerez. Ce n'est plus un sujet de culture générale. Premier danger : la pression. Une installation au CO₂ travaille à des pressions bien plus élevées que celles des fluides que vous connaissez — sans commune mesure. Cela change tout le matériel : manifold, flexibles, vannes, tout doit être dédié au CO₂ . Brancher un manifold ordinaire sur une installation au CO₂, c'est le faire éclater dans les mains. Les valeurs exactes dépendent du point de fonctionnement et se lisent dans la documentation constructeur ; ce qu'il faut retenir sans aucun chiffre, c'est qu' aucun réflexe acquis sur un R-134a ou un R-410A ne se transpose ici . Cette pression garde son danger machine à l'arrêt . Une installation au CO₂ arrêtée continue de monter en pression si elle se réchauffe : c'est pour cela qu'elle possède des dispositifs de sécurité qui lui sont propres. Une installation au CO₂ laissée sans surveillance après une coupure n'est pas une installation au repos. À la détente à l'air libre, le CO₂ peut passer directement à l'état solide : c'est la glace carbonique (ou neige carbonique). Double conséquence — une brûlure par le froid au contact de la peau, et un bouchon solide qui obstrue une vanne ou une tuyauterie. Et ce bouchon finit par fondre : le gaz qu'il libère alimente alors le second danger. Second danger : l'air qu'il vous prend. Le mot anoxie désigne le manque d'oxygène dans l'organisme. Vous avez rencontré ce danger dans la fiche « L'air qui manque » : un gaz prend la place de l'air respirable. Le CO₂ fait cela — mais il ne fait pas que cela , et c'est toute la différence. Deux mécanismes, pas un seul. L'azote agit uniquement par déplacement : il est inerte, il prend la place de l'oxygène sans réagir avec l'organisme. Le CO₂, lui, agit en plus par lui-même : il n'est pas inerte, il intervient dans la régulation de la respiration et devient nocif à des concentrations où l'oxygène restant serait encore suffisant. Autrement dit, le CO₂ peut vous mettre en danger avant d'avoir chassé assez d'oxygène pour qu'un contrôle du seul taux d'oxygène s'en alarme. C'est pourquoi, sur une installation au CO₂, un détecteur d'oxygène seul ne suffit pas : il faut une mesure du CO₂ lui-même. N'en concluez pas que les fluides fluorés sont inoffensifs : à forte concentration, ils agissent eux aussi sur l'organisme — effet sur le rythme du cœur, effet endormant. Leur fiche de données de sécurité le mentionne. « A » n'a jamais voulu dire inoffensif. Ce que vous ressentirez — et pourquoi c'est déjà tard. Contrairement à l'azote, qui ne prévient pas du tout, le CO₂ donne des signes : souffle court puis essoufflement violent , maux de tête , vertiges , bourdonnements, sueurs. La raison est celle vue en fiche « L'air qui manque » : c'est l'excès de gaz carbonique dans le sang qui commande l'envie de respirer. Ces signes sont votre seule chance — mais ils arrivent alors que vous êtes déjà dans la nappe , et à forte concentration la perte de connaissance suit en quelques instants. D'où une règle simple : essoufflement brutal ou mal de tête soudain dans un local technique, vous ressortez immédiatement . On ne cherche pas à comprendre sur place, on ne finit pas le geste en cours. Pourquoi on entre sans le savoir. Le CO₂ est incolore , inodore , et plus lourd que l'air . Il ne monte pas : il s'écoule et s'accumule dans les points bas — fosse, cave, sous-sol, local en contrebas, bas d'une chambre froide. Une zone peut être parfaitement respirable à hauteur de visage et déjà mortelle au niveau du sol, ou en bas de quelques marches. Descendre, c'est entrer dans la nappe. Attention à ne pas généraliser cette règle. « Plus lourd que l'air » vaut pour le CO₂ et pour la plupart des fluides fluorés — mais pas pour l'ammoniac (R-717), plus léger que l'air, qui se comporte à l'inverse : il monte. Le comportement d'un fluide se lit sur sa FDS, il ne se suppose jamais par analogie avec le fluide précédent. Comment ça arrive vraiment. Une installation au CO₂ en local technique enterré, une fuite lente pendant la nuit, porte fermée. Le gaz remplit le volume par le bas. Au matin, un technicien descend relever un paramètre. Rien ne se voit, rien ne se sent. À mi-escalier, il a mal à la tête et le souffle court — il met cela sur le compte de la fatigue et continue, parce qu'il n'en a que pour deux minutes. Il ne remonte pas. Puis vient le second accident, celui qui tue le plus souvent dans cette famille d'accidents : un collègue le voit au sol et descend le chercher, sans protection. La nappe est toujours là. Deux victimes au lieu d'une. Ce qu'il faut retenir. Le CO₂ est A1 , et pourtant il tue de deux façons : la pression et l' anoxie . Sa classe n'annonce ni l'une ni l'autre. Pressions sans commune mesure avec les fluides courants : matériel dédié au CO₂ , jamais un manifold ordinaire. Une installation au CO₂ à l'arrêt reste sous pression , et remonte en pression si elle se réchauffe. Glace carbonique à la détente : brûlure par le froid et bouchon . Le CO₂ déplace l'oxygène et agit par lui-même — l'azote, lui, est inerte. Un détecteur d'oxygène seul ne suffit pas . Essoufflement brutal, mal de tête, vertiges : on ressort tout de suite. Ces signes arrivent quand on est déjà dans la nappe. Incolore, inodore, plus lourd que l'air : il s'accumule en point bas . Pas vrai pour l'ammoniac. Le geste interdit. Descendre dans une fosse, une cave, un sous-sol ou tout local en contrebas abritant une installation au CO₂ après une fuite possible, sans avoir ventilé et mesuré . Et, si un collègue est au sol : descendre le chercher sans protection . Conséquence : vous entrez dans la nappe. Les signes que vous ressentirez — souffle coupé, mal de tête — arriveront trop tard pour remonter un escalier, et le sauveteur improvisé devient la seconde victime. C'est le scénario le plus fréquent de ces accidents. Interdit aussi : brancher du matériel non dédié au CO₂ sur une installation au CO₂. Sa pression n'a rien à voir avec ce que vous connaissez.",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#cl3"
       ]
     },
     {
@@ -5074,14 +5074,6 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/chaine-intervention-interactive/app.js"
-      ]
-    },
-    {
-      "cle": "2e53c10c-44",
-      "texte": "La haute pression tombe sous le point triple",
-      "type": "choix",
-      "sources": [
-        "packs/fluides/res/co2-r744/cours.js"
       ]
     },
     {
@@ -8613,6 +8605,14 @@
       ]
     },
     {
+      "cle": "4f5b3c64-983",
+      "texte": "Ce que le référentiel distingue. Éjecteur de gaz, éjecteur de liquide : même tuyère, deux emplois. Le principe ne change pas d'un type à l'autre : un fluide moteur haute pression en entraîne un second. Ce qui change, c'est le débit aspiré — et donc ce à quoi l'éjecteur sert. L'éjecteur de gaz aspire la vapeur de la bouteille flash : elle remonte à la pression intermédiaire sans passer par le compresseur moyenne température. L'éjecteur de liquide aspire le mélange qui sort des évaporateurs, repris au séparateur basse pression. Dans les deux cas, le fluide moteur est le même : le dioxyde de carbone haute pression qui sort du refroidisseur de gaz. Ce que l'éjecteur de liquide permet : Faire circuler dans l'évaporateur plus de liquide qu'il n'en évapore, sans pompe de circulation. L'échange s'améliore, et la sortie de meuble n'est plus en vapeur surchauffée mais en mélange. Ce que montre le schéma. Les deux types d'éjecteur : le débit aspiré diffère, la tuyère est la même.",
+      "type": "capture",
+      "sources": [
+        "packs/fluides/res/co2-r744/ejecteur/deux-types"
+      ]
+    },
+    {
       "cle": "4f6389e0-22",
       "texte": "Choisir une évaluation",
       "type": "interface",
@@ -8720,14 +8720,6 @@
       "sources": [
         "packs/fluides/res/pressostat-bp-kp1/index.html",
         "packs/fluides/res/pressostat-hp-kp5/index.html"
-      ]
-    },
-    {
-      "cle": "507e1698-93",
-      "texte": "La vanne de gaz de détente d'une centrale reste bloquée grande ouverte. Quel effet attendre ?",
-      "type": "feedback",
-      "sources": [
-        "packs/fluides/res/co2-r744/cours.js"
       ]
     },
     {
@@ -10376,6 +10368,14 @@
       "type": "narration",
       "sources": [
         "moteur/prof-vocal.js"
+      ]
+    },
+    {
+      "cle": "61a5a832-7256",
+      "texte": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend. 🎧 Écouter la capsule : CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris. 🧊 Aller plus loin : sécurité et intervention sur une installation R744 ▸ L'escale « Sécurité » de la ligne CO₂ — les trois risques, le matériel de mesure dédié, le groupe de maintien à l'arrêt, et la catégorie d'attestation qui s'applique. 9 minutes. Ce qui arrive. Le CO₂ — le R-744 — est classé A1 : toxicité faible, non inflammable, PRP de 1. C'est la case la plus rassurante de toute la matrice. Et c'est exactement ce qui le rend dangereux : sa classe n'annonce aucun des deux risques qui tuent réellement sur ces installations — la pression , et l' anoxie . Qui retient « CO₂ = A1 = tranquille » a retenu quelque chose de faux. Ce fluide entre aujourd'hui dans le parc : froid commercial, supermarchés, chambres froides. Vous en rencontrerez. Ce n'est plus un sujet de culture générale. Premier danger : la pression. Une installation au CO₂ travaille à des pressions bien plus élevées que celles des fluides que vous connaissez — sans commune mesure. Cela change tout le matériel : manifold, flexibles, vannes, tout doit être dédié au CO₂ . Brancher un manifold ordinaire sur une installation au CO₂, c'est le faire éclater dans les mains. Pour fixer l'ordre de grandeur : côté haute pression, une centrale transcritique travaille couramment jusqu'à 120 bar environ . La valeur exacte dépend du point de fonctionnement et se lit sur la plaque de l'installation et dans la documentation du constructeur, jamais dans un cours — et ce chiffre ne change rien à la règle : aucun réflexe acquis sur un R-134a ou un R-410A ne se transpose ici . Cette pression garde son danger machine à l'arrêt . Une installation au CO₂ arrêtée continue de monter en pression si elle se réchauffe : c'est pour cela qu'elle possède des dispositifs de sécurité qui lui sont propres. Une installation au CO₂ laissée sans surveillance après une coupure n'est pas une installation au repos. À la détente à l'air libre, le CO₂ peut passer directement à l'état solide : c'est la glace carbonique (ou neige carbonique). Double conséquence — une brûlure par le froid au contact de la peau, et un bouchon solide qui obstrue une vanne ou une tuyauterie. Et ce bouchon finit par fondre : le gaz qu'il libère alimente alors le second danger. Second danger : l'air qu'il vous prend. Le mot anoxie désigne le manque d'oxygène dans l'organisme. Vous avez rencontré ce danger dans la fiche « L'air qui manque » : un gaz prend la place de l'air respirable. Le CO₂ fait cela — mais il ne fait pas que cela , et c'est toute la différence. Deux mécanismes, pas un seul. L'azote agit uniquement par déplacement : il est inerte, il prend la place de l'oxygène sans réagir avec l'organisme. Le CO₂, lui, agit en plus par lui-même : il n'est pas inerte, il intervient dans la régulation de la respiration et devient nocif à des concentrations où l'oxygène restant serait encore suffisant. Autrement dit, le CO₂ peut vous mettre en danger avant d'avoir chassé assez d'oxygène pour qu'un contrôle du seul taux d'oxygène s'en alarme. C'est pourquoi, sur une installation au CO₂, un détecteur d'oxygène seul ne suffit pas : il faut une mesure du CO₂ lui-même. N'en concluez pas que les fluides fluorés sont inoffensifs : à forte concentration, ils agissent eux aussi sur l'organisme — effet sur le rythme du cœur, effet endormant. Leur fiche de données de sécurité le mentionne. « A » n'a jamais voulu dire inoffensif. Ce que vous ressentirez — et pourquoi c'est déjà tard. Contrairement à l'azote, qui ne prévient pas du tout, le CO₂ donne des signes : souffle court puis essoufflement violent , maux de tête , vertiges , bourdonnements, sueurs. La raison est celle vue en fiche « L'air qui manque » : c'est l'excès de gaz carbonique dans le sang qui commande l'envie de respirer. Ces signes sont votre seule chance — mais ils arrivent alors que vous êtes déjà dans la nappe , et à forte concentration la perte de connaissance suit en quelques instants. D'où une règle simple : essoufflement brutal ou mal de tête soudain dans un local technique, vous ressortez immédiatement . On ne cherche pas à comprendre sur place, on ne finit pas le geste en cours. Pourquoi on entre sans le savoir. Le CO₂ est incolore , inodore , et plus lourd que l'air . Il ne monte pas : il s'écoule et s'accumule dans les points bas — fosse, cave, sous-sol, local en contrebas, bas d'une chambre froide. Une zone peut être parfaitement respirable à hauteur de visage et déjà mortelle au niveau du sol, ou en bas de quelques marches. Descendre, c'est entrer dans la nappe. Attention à ne pas généraliser cette règle. « Plus lourd que l'air » vaut pour le CO₂ et pour la plupart des fluides fluorés — mais pas pour l'ammoniac (R-717), plus léger que l'air, qui se comporte à l'inverse : il monte. Le comportement d'un fluide se lit sur sa FDS, il ne se suppose jamais par analogie avec le fluide précédent. Comment ça arrive vraiment. Une installation au CO₂ en local technique enterré, une fuite lente pendant la nuit, porte fermée. Le gaz remplit le volume par le bas. Au matin, un technicien descend relever un paramètre. Rien ne se voit, rien ne se sent. À mi-escalier, il a mal à la tête et le souffle court — il met cela sur le compte de la fatigue et continue, parce qu'il n'en a que pour deux minutes. Il ne remonte pas. Puis vient le second accident, celui qui tue le plus souvent dans cette famille d'accidents : un collègue le voit au sol et descend le chercher, sans protection. La nappe est toujours là. Deux victimes au lieu d'une. Ce qu'il faut retenir. Le CO₂ est A1 , et pourtant il tue de deux façons : la pression et l' anoxie . Sa classe n'annonce ni l'une ni l'autre. Pressions sans commune mesure avec les fluides courants — jusqu'à 120 bar environ en haute pression transcritique : matériel dédié au CO₂ , jamais un manifold ordinaire. Une installation au CO₂ à l'arrêt reste sous pression , et remonte en pression si elle se réchauffe. Glace carbonique à la détente : brûlure par le froid et bouchon . Le CO₂ déplace l'oxygène et agit par lui-même — l'azote, lui, est inerte. Un détecteur d'oxygène seul ne suffit pas . Essoufflement brutal, mal de tête, vertiges : on ressort tout de suite. Ces signes arrivent quand on est déjà dans la nappe. Incolore, inodore, plus lourd que l'air : il s'accumule en point bas . Pas vrai pour l'ammoniac. Le geste interdit. Descendre dans une fosse, une cave, un sous-sol ou tout local en contrebas abritant une installation au CO₂ après une fuite possible, sans avoir ventilé et mesuré . Et, si un collègue est au sol : descendre le chercher sans protection . Conséquence : vous entrez dans la nappe. Les signes que vous ressentirez — souffle coupé, mal de tête — arriveront trop tard pour remonter un escalier, et le sauveteur improvisé devient la seconde victime. C'est le scénario le plus fréquent de ces accidents. Interdit aussi : brancher du matériel non dédié au CO₂ sur une installation au CO₂. Sa pression n'a rien à voir avec ce que vous connaissez.",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#cl3"
       ]
     },
     {
@@ -13270,14 +13270,6 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/pression-temperature-interactive/app.js"
-      ]
-    },
-    {
-      "cle": "7de485c8-72",
-      "texte": "Les meubles négatifs dégivrent en permanence et remontent en température",
-      "type": "choix",
-      "sources": [
-        "packs/fluides/res/co2-r744/cours.js"
       ]
     },
     {
@@ -22533,14 +22525,6 @@
       ]
     },
     {
-      "cle": "da73f83c-53",
-      "texte": "La centrale consomme sans produire davantage de froid",
-      "type": "choix",
-      "sources": [
-        "packs/fluides/res/co2-r744/cours.js"
-      ]
-    },
-    {
       "cle": "da78a9b0-65",
       "texte": "Avec R717 et un évaporateur noyé, quelles huiles sont courantes ?",
       "type": "feedback",
@@ -22570,6 +22554,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/clapet-differentiel-huile-pedagogique/module.js"
+      ]
+    },
+    {
+      "cle": "dab67147-818",
+      "texte": "Escale terminée. Vous savez ce que fait un éjecteur, et ce qu'il ne fait pas. Il récupère une partie de l'énergie de la détente, sans moteur ni pièce mobile. Il ne se règle pas, et son gain dépend de la saison. Trois temps : détente dans la tuyère, entraînement, recompression dans le diffuseur. Deux types : l'éjecteur de gaz aspire la vapeur de la bouteille, l'éjecteur de liquide aspire au séparateur basse pression. La maintenance porte sur les vannes de commande et les sondes, pas sur l'éjecteur. Référentiel travaillé : 11.06 — technologie des éjecteurs, éjecteur de liquide et de gaz. En appui : 11.04 et 13.17. Fin de la branche : C'est la dernière escale des centrales. La ligne du fluide, elle, se termine sur l'escale « Sécurité et intervention ». Ce que montre le schéma. Bilan de l'escale « L'éjecteur ».",
+      "type": "capture",
+      "sources": [
+        "packs/fluides/res/co2-r744/ejecteur/e-bilan"
       ]
     },
     {

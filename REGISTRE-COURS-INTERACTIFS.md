@@ -92,7 +92,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `circuit-huile-interactif` | **orphelin** | — | — | 27 Ko |
 | `circuit-organe-par-organe` | g6, g7, g8, g9 | — | 1.04 | 846 Ko |
 | `clapet-differentiel-huile-pedagogique` | **orphelin** | — | — | 1226 Ko |
-| `co2-r744` | cl3, g13 | 100 | 11.01 · 11.04 · 11.06 · 13.02 · 13.04 · 13.15 · 13.16 · 13.17 · 13.01 · 13.03 | 312 Ko |
+| `co2-r744` | cl3, g13 | 100 | 11.01 · 11.04 · 11.06 · 13.02 · 13.04 · 13.15 · 13.16 · 13.17 · 13.01 · 13.03 | 320 Ko |
 | `compresseur-interactif` | g6, g6b | 13 | 6.02 · 6.03 · 6.04 · 6.05 · 9.07 | 75 Ko |
 | `condenseur-interactif` | g7b | 25 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 · 7.06 · 7.08 | 95 Ko |
 | `cours-classes-securite` | cl1 | — | 1.08 | 156 Ko |
