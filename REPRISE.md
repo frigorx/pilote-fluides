@@ -66,6 +66,15 @@
 >   que le tronc gardait sept stations ; une station de plus en tête a inversé la parité et
 >   « Organe par organe » est venu recouvrir « Diagramme enthalpique » de 10 px. L'indice est
 >   désormais global : ajouter ou retirer une station ne peut plus décaler la queue.
+> - 🛑 **TROIS LIGNES N'AVAIENT PAS DE TRAIT — À VÉRIFIER À CHAQUE NOUVELLE BRANCHE.** Une
+>   branche descend de sa ligne parente par la droite, puis son `flux()` finissait par
+>   `H 1210` : le trait mourait 40 px après sa descente, et les stations flottaient sans rien
+>   qui les relie. Le CO₂ n'avait **jamais** eu de trait depuis son ouverture, ni de flèche ;
+>   les centrales non plus ; le circuit d'huile a hérité du défaut en copiant leur motif.
+>   Le trait doit courir **jusqu'avant la première station** (285 pour une branche qui démarre
+>   à 320, 215 pour le CO₂ qui démarre à 250) et la flèche se poser à l'extrémité **gauche**,
+>   retournée. Contrôle : lire le `d` du path et vérifier que le `H` final est inférieur au
+>   `cx` de la première pastille.
 >
 > **DEUX ANGLES MORTS PRÉEXISTANTS, CORRIGÉS.**
 > - `index.html` n'entrait pas dans le hash de `lib-version.mjs`. Or le plan vit ENTIÈREMENT
