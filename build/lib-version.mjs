@@ -60,13 +60,34 @@ const FICHIERS_SOURCES = [
   "moteur/illustration.js",
   "moteur/charte-edu.css",
   "moteur/impression.css",
+  /* index.html : le MÊME angle mort que projection.gen.js, trouvé le 20/08.
+     Le plan de formation — son tracé, ses lignes, ses stations, et depuis ce
+     jour la recherche — ne vit dans AUCUN fichier de moteur : tout est écrit
+     dans index.html. Couper une ligne en deux ou corriger le placement des
+     libellés ne changeait donc pas le hash. L'URL restait la même, le cache
+     du service worker gardait son nom, et le visiteur qui avait déjà ouvert
+     le site continuait de voir l'ancien plan — sans aucun moyen de savoir
+     qu'il en existait un nouveau.
+     ⚠️ Ce fichier CONTIENT le hash (les `?v=` que version.mjs y écrit) : le
+     hasher tel quel se mordrait la queue — nouveau hash, donc nouveau
+     contenu, donc nouveau hash. Les occurrences sont donc neutralisées avant
+     le calcul, voir `calculerVersion()`. */
+  "index.html",
 ];
+
+/* Les `?v=<hash>` et le VERSION du service worker sont remplacés par un
+   marqueur fixe : deux fichiers qui ne diffèrent que par le hash déjà écrit
+   doivent donner le MÊME hash, sinon le calcul ne converge jamais. */
+function sansHash(txt) {
+  return txt.replace(/\?v=[0-9a-f]{10}\b/g, "?v=@@")
+            .replace(/"[0-9a-f]{10}"/g, '"@@"');
+}
 
 export function calculerVersion() {
   const h = createHash("sha256");
   for (const f of FICHIERS_SOURCES) {
     const p = resolve(RACINE, f);
-    if (existsSync(p)) h.update(readFileSync(p, "utf8").replace(/\r\n/g, "\n"));
+    if (existsSync(p)) h.update(sansHash(readFileSync(p, "utf8").replace(/\r\n/g, "\n")));
   }
   return h.digest("hex").slice(0, 10);
 }

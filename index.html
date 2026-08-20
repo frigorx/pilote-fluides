@@ -105,6 +105,35 @@
 
   /* ---- Le plan de formation ---- */
   .plan { margin-top:30px; overflow:hidden; }
+
+  /* ---- Chercher un cours ----
+     Posé AU-DESSUS du plan : c'est le premier geste de qui sait ce qu'il
+     cherche, avant de parcourir la carte. Le panneau de résultats se
+     superpose au plan au lieu de le pousser — sinon toute la page saute à
+     chaque frappe. */
+  .plan .chercher { position:relative; padding:14px 24px 0; max-width:760px; }
+  .plan .chercher label { display:block; font-family:var(--titre); font-weight:bold;
+                          font-size:14px; color:var(--mut); margin-bottom:5px; }
+  .plan .chercher input { width:100%; padding:11px 16px; font:16px/1.4 inherit;
+                          color:var(--txt); background:var(--carte);
+                          border:2px solid var(--ligne); border-radius:999px; }
+  .plan .chercher input:focus { outline:3px solid var(--orange); outline-offset:2px;
+                                border-color:var(--bleu); }
+  .plan .q-etat { margin:6px 2px 0; font-size:13.5px; color:var(--mut); min-height:1.2em; }
+  .plan .q-res { position:absolute; z-index:30; left:24px; right:24px; margin:4px 0 0;
+                 padding:6px; list-style:none; max-height:52vh; overflow-y:auto;
+                 background:var(--carte); border:2px solid var(--ligne);
+                 border-radius:var(--r); box-shadow:var(--ombre); }
+  .plan .q-res li { margin:0; }
+  .plan .q-res a { display:block; padding:9px 12px; border-radius:9px;
+                   text-decoration:none; color:var(--txt); }
+  .plan .q-res a:hover, .plan .q-res a:focus,
+  .plan .q-res li[aria-selected="true"] a { background:#eef3f9; color:var(--bleu); outline:none; }
+  .plan .q-res b { font-family:var(--titre); }
+  /* La ligne d'appartenance : c'est elle qui répond à « où est-ce que ça
+     vit », pas seulement « ça existe ». */
+  .plan .q-res .q-ligne { display:block; font-size:13px; color:var(--mut); }
+  .plan .q-res mark { background:#ffe9b8; color:inherit; padding:0 1px; border-radius:3px; }
   .plan .legende-plan { display:flex; gap:14px; flex-wrap:wrap; align-items:center;
                         padding:8px 24px 0; font-size:13.5px; color:var(--mut); }
   .plan .legende-plan .puce-l { display:inline-flex; align-items:center; gap:6px; }
@@ -453,6 +482,22 @@
       <h2>Le plan de formation</h2>
       <span>Suis le fluide. Chaque station est un cours qui s’ouvre en un clic — et chaque <strong>cartouche de ligne</strong> ouvre le plan détaillé de la ligne.</span>
     </div>
+    <!-- CHERCHER UNE STATION — demandé par F. Henninot le 20/08 : « j'ai besoin
+         de quelque chose, je ne sais pas où aller ». Sa source n'est PAS un
+         index de plus : c'est la liste HTML du réseau, plus bas dans cette même
+         page, écrite au build par plan-liste.mjs. Ajouter un cours au plan le
+         rend donc cherchable sans toucher une ligne ici — et les deux ne
+         peuvent pas diverger, puisqu'il n'y en a qu'une.
+         Le champ reste caché tant que le script n'a pas construit l'index :
+         sans JavaScript, c'est la liste elle-même qui sert à trouver. -->
+    <div class="chercher" id="chercher" hidden>
+      <label for="q">Chercher un cours</label>
+      <input type="search" id="q" autocomplete="off" spellcheck="false"
+             placeholder="un mot : surchauffe, éjecteur, manifold, huile…"
+             role="combobox" aria-expanded="false" aria-controls="q-res" aria-autocomplete="list">
+      <p class="q-etat" id="q-etat" role="status" aria-live="polite"></p>
+      <ul class="q-res" id="q-res" role="listbox" aria-label="Résultats" hidden></ul>
+    </div>
     <div class="legende-plan">
       <span class="puce-l"><span class="rond"></span> à visiter</span>
       <span class="puce-l"><span class="rond vu"></span> visitée</span>
@@ -754,7 +799,7 @@
 
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
-<script src="plan-descriptions.gen.js?v=d604ed6662"></script>
+<script src="plan-descriptions.gen.js?v=0a07429a5e"></script>
 <script>
 /* =====================================================================
    LE PLAN DE FORMATION — généré depuis les données ci-dessous.
@@ -1587,6 +1632,172 @@
     if (ev.key === "Escape" && !v.classList.contains("replie")) replier();
   });
 })();
+
+/* ==================================================================
+   CHERCHER UN COURS
+   ------------------------------------------------------------------
+   L'index se construit au chargement À PARTIR DE LA LISTE HTML du
+   réseau — celle que build/plan-liste.mjs écrit plus bas dans cette
+   page. Pas de seconde source à tenir à jour : ajouter une station au
+   plan la rend cherchable, et les deux ne peuvent pas se contredire.
+   La description longue vient de PLAN_DESC (relevée des <meta> par
+   build/registre.mjs) : elle n'est pas affichée, elle sert à trouver
+   — chercher « asphyxie » doit ramener la sécurité R744 même si le
+   mot n'est ni dans le nom ni dans le sous-titre.
+   ================================================================== */
+(function () {
+  var boite = document.getElementById("chercher");
+  var champ = document.getElementById("q");
+  var res   = document.getElementById("q-res");
+  var etat  = document.getElementById("q-etat");
+  var liste = document.getElementById("liste-cours");
+  if (!boite || !champ || !res || !liste) return;
+
+  /* ech() du plan vit dans une AUTRE fonction anonyme : elle n'est pas
+     visible ici. On en refait une, plutôt que d'ouvrir la portée de
+     l'autre — ce qui obligerait à relire tout le script du plan. */
+  function ech(v) {
+    return String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  /* Comparer sans accent ni casse : « éjecteur » se trouve en tapant
+     « ejecteur », et « CO₂ » en tapant « co2 ». La plage des diacritiques
+     s'écrit en \u… et JAMAIS avec les caractères eux-mêmes : posés
+     directement, ils dépendent de l'encodage du fichier au moment où il
+     est servi. */
+  var IND = { "₂": "2", "²": "2", "’": "'" };
+  function pliant(s) {
+    return String(s || "")
+      .replace(/[₂²’]/g, function (c) { return IND[c]; })
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  }
+
+  /* Le slug du module, pour retrouver sa description : c'est l'avant-
+     dernier segment du chemin (…/res/<slug>/index.html). */
+  function slugDe(href) {
+    var m = String(href).match(/\/res\/([^\/]+)\//);
+    return m ? m[1] : "";
+  }
+
+  var index = [];
+  Array.prototype.forEach.call(liste.querySelectorAll("details"), function (d) {
+    var som = d.querySelector("summary");
+    /* Le libellé de ligne sans son compteur de stations : « 🔧 LES
+       ORGANES », pas « … · 6 stations ». */
+    var ligne = som ? som.cloneNode(true) : null;
+    if (ligne) { var n = ligne.querySelector(".n"); if (n) n.remove(); }
+    ligne = ligne ? ligne.textContent.trim() : "";
+    Array.prototype.forEach.call(d.querySelectorAll("li"), function (li) {
+      var a = li.querySelector("a"); if (!a) return;
+      var sd = li.querySelector(".d");
+      var nom = a.textContent.trim();
+      var sous = sd ? sd.textContent.replace(/^\s*—\s*/, "").trim() : "";
+      var desc = (window.PLAN_DESC || {})[slugDe(a.getAttribute("href"))] || "";
+      index.push({ nom: nom, sous: sous, ligne: ligne, href: a.getAttribute("href"),
+                   cible: a.getAttribute("target") || "",
+                   cle: pliant(nom + " " + sous + " " + ligne + " " + desc),
+                   cleNom: pliant(nom) });
+    });
+  });
+  if (!index.length) return;          /* rien à chercher : on laisse caché */
+  boite.hidden = false;
+
+  function surligne(texte, mots) {
+    var out = "", reste = texte, plie = pliant(texte);
+    /* On surligne sur le texte D'ORIGINE en s'appuyant sur les positions
+       trouvées dans sa version pliée : les deux ont la même longueur, le
+       pliage ne fait que remplacer caractère par caractère. */
+    var marques = [];
+    mots.forEach(function (m) {
+      var i = plie.indexOf(m);
+      while (i !== -1) { marques.push([i, i + m.length]); i = plie.indexOf(m, i + m.length); }
+    });
+    if (!marques.length) return ech(texte);
+    marques.sort(function (a, b) { return a[0] - b[0]; });
+    var pos = 0;
+    marques.forEach(function (mk) {
+      if (mk[0] < pos) return;
+      out += ech(texte.slice(pos, mk[0])) + "<mark>" + ech(texte.slice(mk[0], mk[1])) + "</mark>";
+      pos = mk[1];
+    });
+    return out + ech(texte.slice(pos));
+  }
+
+  var choix = -1, courants = [];
+
+  function vider() {
+    res.hidden = true; res.innerHTML = ""; courants = []; choix = -1;
+    champ.setAttribute("aria-expanded", "false");
+    etat.textContent = "";
+  }
+
+  function chercher() {
+    var q = pliant(champ.value).trim();
+    if (q.length < 2) { vider(); return; }
+    var mots = q.split(/\s+/);
+    var trouves = index.filter(function (e) {
+      return mots.every(function (m) { return e.cle.indexOf(m) !== -1; });
+    });
+    /* Ce qui matche le NOM passe devant : chercher « huile » doit donner
+       « Les familles d'huile » avant un cours qui la mentionne au détour
+       de sa description. */
+    trouves.sort(function (a, b) {
+      var na = mots.every(function (m) { return a.cleNom.indexOf(m) !== -1; }) ? 0 : 1;
+      var nb = mots.every(function (m) { return b.cleNom.indexOf(m) !== -1; }) ? 0 : 1;
+      return na - nb;
+    });
+    courants = trouves.slice(0, 8); choix = -1;
+
+    if (!trouves.length) {
+      res.hidden = true; res.innerHTML = "";
+      champ.setAttribute("aria-expanded", "false");
+      etat.textContent = "Aucun cours ne correspond à « " + champ.value.trim() + " ».";
+      return;
+    }
+    res.innerHTML = courants.map(function (e, i) {
+      var cible = e.cible ? ' target="' + ech(e.cible) + '" rel="noopener"' : "";
+      return '<li role="option" id="q-opt-' + i + '" aria-selected="false">' +
+             '<a href="' + ech(e.href) + '"' + cible + '>' +
+             "<b>" + surligne(e.nom, mots) + "</b>" +
+             (e.sous ? " — " + surligne(e.sous, mots) : "") +
+             '<span class="q-ligne">' + ech(e.ligne) + "</span></a></li>";
+    }).join("");
+    res.hidden = false;
+    champ.setAttribute("aria-expanded", "true");
+    etat.textContent = trouves.length > courants.length
+      ? trouves.length + " cours trouvés, les 8 premiers sont proposés."
+      : trouves.length + (trouves.length > 1 ? " cours trouvés." : " cours trouvé.");
+  }
+
+  function marquer(i) {
+    var lis = res.querySelectorAll("li");
+    Array.prototype.forEach.call(lis, function (li) { li.setAttribute("aria-selected", "false"); });
+    if (i < 0 || i >= lis.length) { champ.removeAttribute("aria-activedescendant"); return; }
+    lis[i].setAttribute("aria-selected", "true");
+    champ.setAttribute("aria-activedescendant", "q-opt-" + i);
+    lis[i].scrollIntoView({ block: "nearest" });
+  }
+
+  champ.addEventListener("input", chercher);
+  champ.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape") { champ.value = ""; vider(); return; }
+    if (res.hidden) return;
+    if (ev.key === "ArrowDown") { ev.preventDefault(); choix = Math.min(choix + 1, courants.length - 1); marquer(choix); }
+    else if (ev.key === "ArrowUp") { ev.preventDefault(); choix = Math.max(choix - 1, -1); marquer(choix); }
+    else if (ev.key === "Enter" && choix >= 0) {
+      ev.preventDefault();
+      var a = res.querySelectorAll("li")[choix].querySelector("a");
+      if (a) a.click();
+    }
+  });
+  /* Un clic ailleurs referme, mais pas un clic DANS les résultats : sinon
+     le panneau disparaît avant que le lien ne s'ouvre. */
+  document.addEventListener("click", function (ev) {
+    if (!boite.contains(ev.target)) vider();
+  });
+})();
 </script>
 
 <!-- Le journal s'ouvre pour de bon quand on suit un lien qui y mène : sinon on
@@ -1612,11 +1823,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=d604ed6662"></script>
-<script src="chiffres.gen.js?v=d604ed6662"></script>
+<script src="moteur/lisibilite.js?v=0a07429a5e"></script>
+<script src="chiffres.gen.js?v=0a07429a5e"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=d604ed6662" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=0a07429a5e" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
