@@ -7,9 +7,9 @@
 
 | Mesure | Résultat |
 |---|---:|
-| Cours interactifs recensés | **61** |
-| Cours avec anomalie critique automatisable | **22** |
-| Cours avec dette documentaire ou de reprise | **44** |
+| Cours interactifs recensés | **63** |
+| Cours avec anomalie critique automatisable | **24** |
+| Cours avec dette documentaire ou de reprise | **46** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **10** |
 | SVG pédagogiques contrôlés | **46** |
 | SVG sans titre / sans description textuelle | **3 / 41** |
@@ -66,10 +66,12 @@
 | `regulateur-electronique-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `regulateur-huile-mecanique-pedagogique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
 | `regulateur-kvl-pedagogique` | ✗ | ✓ | ✓ | ✗ | absente | — | — | 🔴 description |
+| `regulateur-kvr-nrd` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🔴 fonds forcés à l’impression |
 | `regulateurs-kv-pedagogiques` | ✓ | ✓ | ✓ | ✓ | absente | 8 | ✓ | 🟠 réglage de lisibilité |
 | `reservoir-huile-pedagogique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
 | `retour-huile-naturel` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
 | `retour-huile-verifier` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `separateur-eclatement-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `separateur-huile-pedagogique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
 | `surchauffe-sous-refroidissement-interactif` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |
 | `technologie-huiles-choix-controle` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |

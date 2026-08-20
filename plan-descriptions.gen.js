@@ -38,6 +38,7 @@ window.PLAN_DESC = {
  "pupitre-reglage-interactif": "Cours interactif A1/A2 : régler thermostats, pressostats et limiteurs — consigne, différentiel, et la preuve à l’instrument.",
  "recuperation-fluide-interactive": "TP interactif inerWeb : raccorder un manifold 4 voies, récupérer le fluide avec une station Minimax-E, peser, auto-purger puis tirer l'installation au vide.",
  "regulateur-electronique-interactif": "Cours interactif : lire une sonde résistive, régler consigne et différentiel, programmer un régulateur électronique de froid, régler le dégivrage et câbler son bornier.",
+ "regulateur-kvr-nrd": "Animation (92 s) : pourquoi la haute pression s’effondre quand l’air extérieur est froid, ce que fait le régulateur KVR à la sortie du condenseur, et pourquoi il faut lui adjoindre le clapet différentiel NRD pour repressuriser le réservoir. Symboles normalisés ou dessinés, au choix.",
  "regulateurs-kv-pedagogiques": "Parcours inerWeb Édu pour comparer, comprendre et régler les régulateurs de pression KVP, KVL et KVR.",
  "surchauffe-sous-refroidissement-interactif": "Cours interactif professionnel : mesurer et calculer la surchauffe et le sous-refroidissement d’un circuit frigorifique.",
  "tome-3-technologie-organes": "Tome 3 interactif inerWeb Édu : reconnaître, situer et comprendre les organes d’un circuit frigorifique.",

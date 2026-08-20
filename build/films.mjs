@@ -32,7 +32,8 @@
    films. Le gain ici est ailleurs, et il est réel : zéro requête vers un
    tiers, films vraiment hors ligne, 3,1 Mo et une compilation en moins.
 
-   ENTRÉE   les dossiers `packs/fluides/res/film-…` et leurs fichiers .jsx
+   ENTRÉE   tout dossier de `packs/fluides/res/` qui porte un `support.js`
+            (marque d'un export Claude Design) et ses fichiers .jsx
    SORTIE   les .js compilés à côté + moteur/vendor/{react,react-dom}...js
    USAGE    node build/films.mjs
    CACHE    Babel (3,1 Mo) n'entre pas dans le dépôt : il est gardé sous
@@ -95,12 +96,15 @@ async function rapatrier(nom, def) {
   return destination;
 }
 
+/* Le critère n'est pas le nom du dossier mais la PRÉSENCE du runtime : tout
+   export Claude Design pose son `support.js`. Les films s'appellent `film-…`,
+   la gare KVR + NRD non — et elle a exactement le même besoin. */
 const films = readdirSync(resolve(RACINE, "packs/fluides/res"))
-  .filter((d) => d.startsWith("film-"))
-  .map((d) => resolve(RACINE, "packs/fluides/res", d));
+  .map((d) => resolve(RACINE, "packs/fluides/res", d))
+  .filter((d) => existsSync(join(d, "support.js")));
 
 if (!films.length) {
-  console.log("Aucun dossier film-* : rien à faire.");
+  console.log("Aucun export Claude Design (pas de support.js) : rien à faire.");
   process.exit(0);
 }
 

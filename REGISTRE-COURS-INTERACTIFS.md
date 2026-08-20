@@ -9,11 +9,11 @@
 
 | | |
 |---|---|
-| Cours interactifs en place | **60** |
+| Cours interactifs en place | **62** |
 | Fiches qui en appellent au moins un | **50** |
 | Codes du référentiel couverts par un cours | **99** |
 | Codes encore expliqués par du texte seul | **0** |
-| Poids total des cours | **34.2 Mo** |
+| Poids total des cours | **36.1 Mo** |
 
 ## Anomalies
 
@@ -40,9 +40,11 @@ Du travail fait que personne ne peut atteindre depuis le parcours.
 - `regulateur-electronique-interactif` — 164 Ko
 - `regulateur-huile-mecanique-pedagogique` — 1252 Ko
 - `regulateur-kvl-pedagogique` — 2 Ko
+- `regulateur-kvr-nrd` — 340 Ko
 - `reservoir-huile-pedagogique` — 1354 Ko
 - `retour-huile-naturel` — 948 Ko
 - `retour-huile-verifier` — 1132 Ko
+- `separateur-eclatement-pedagogique` — 1580 Ko
 - `separateur-huile-pedagogique` — 1420 Ko
 - `technologie-huiles-choix-controle` — 1356 Ko
 - `technologie-huiles-frigorifiques` — 1238 Ko
@@ -69,6 +71,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 - `reservoir-huile-pedagogique`
 - `retour-huile-naturel`
 - `retour-huile-verifier`
+- `separateur-eclatement-pedagogique`
 - `separateur-huile-pedagogique`
 - `technologie-huiles-choix-controle`
 - `technologie-huiles-frigorifiques`
@@ -127,10 +130,12 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `regulateur-electronique-interactif` | **orphelin** | 24 | 9.04 · 6.03 | 164 Ko |
 | `regulateur-huile-mecanique-pedagogique` | **orphelin** | — | — | 1252 Ko |
 | `regulateur-kvl-pedagogique` | **orphelin** | — | — | 2 Ko |
+| `regulateur-kvr-nrd` | **orphelin** | 9 | 1.05 · 9.02 · 9.05 | 340 Ko |
 | `regulateurs-kv-pedagogiques` | g9b | 8 | 1.05 · 9.02 · 9.05 | 1140 Ko |
 | `reservoir-huile-pedagogique` | **orphelin** | — | — | 1354 Ko |
 | `retour-huile-naturel` | **orphelin** | — | — | 948 Ko |
 | `retour-huile-verifier` | **orphelin** | — | — | 1132 Ko |
+| `separateur-eclatement-pedagogique` | **orphelin** | — | — | 1580 Ko |
 | `separateur-huile-pedagogique` | **orphelin** | — | — | 1420 Ko |
 | `surchauffe-sous-refroidissement-interactif` | g1e | 13 | 5.05 · 4.05 · 1.03 · 1.06 | 101 Ko |
 | `technologie-huiles-choix-controle` | **orphelin** | — | — | 1356 Ko |

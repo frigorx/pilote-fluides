@@ -1,0 +1,14 @@
+{
+  "cours": "regulateur-kvr-nrd",
+  "titre": "Le KVR et le NRD — la pression de condensation par temps froid",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 9,
+  "codes": {
+    "1.05": ["installation", "effondrement", "reservoir"],
+    "9.02": ["kvr", "nrd"],
+    "9.05": ["kvr", "noyage", "regime"]
+  },
+  "appui": {
+    "9.09": ["recap"]
+  }
+}

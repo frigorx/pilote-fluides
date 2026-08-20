@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le KVR et le NRD — la pression de condensation par temps froid</title>
+<meta name="description" content="Animation (92 s) : pourquoi la haute pression s’effondre quand l’air extérieur est froid, ce que fait le régulateur KVR à la sortie du condenseur, et pourquoi il faut lui adjoindre le clapet différentiel NRD pour repressuriser le réservoir. Symboles normalisés ou dessinés, au choix.">
+<script>
+/* Les dépendances du runtime viennent du site, plus d'unpkg.com. `__resources`
+   est la table de substitution que support.js consulte avant d'aller chercher
+   quoi que ce soit dehors (cf. `cdnScriptFor`). Elle doit être posée AVANT le
+   chargement du runtime, et les .jsx sont précompilés en .js à côté : Babel
+   ne part donc jamais chez le visiteur. Voir build/films.mjs. */
+window.__resources = {
+  "https://unpkg.com/react@18.3.1/umd/react.production.min.js":
+    "../../../../moteur/vendor/react.production.min.js",
+  "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":
+    "../../../../moteur/vendor/react-dom.production.min.js"
+};
+</script>
+<script src="./support.js"></script>
+<style>
+/* Le runtime cale son rendu sur une chaîne de hauteurs html > body > #dc-root.
+   Le <main> intercalé la rompt : sans cette règle, l'animation se rend dans
+   0 px de haut — présente dans le DOM, invisible à l'écran. */
+main { height: 100%; }
+.titre-du-film {
+  position: absolute; width: 1px; height: 1px; margin: -1px;
+  padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+/* La transcription : repliée, discrète, et surtout consultable — une animation
+   sans texte écrit laisse dehors qui lit lentement, qui révise sans écran,
+   ou qui imprime sa fiche. */
+.transcription {
+  position: fixed; top: 12px; left: 12px; z-index: 97; max-width: min(440px, 88vw);
+  background: #FFFDF8; border: 2px solid #1B3A63; border-radius: 12px;
+  font: 15px/1.45 Calibri, 'Segoe UI', sans-serif; color: #1B3A63;
+  box-shadow: 0 4px 14px rgba(27,58,99,.18);
+}
+.transcription > summary {
+  cursor: pointer; padding: 8px 14px; font-weight: 700; border-radius: 10px;
+}
+.transcription > summary:focus-visible { outline: 3px solid #FF6B35; outline-offset: 2px; }
+.transcription ol { margin: 0; padding: 0 16px 14px 34px; max-height: 62vh; overflow: auto; }
+.transcription li { margin: 6px 0; }
+.transcription .etape { display: block; font-weight: 700; margin-top: 12px; }
+/* L'explication de l'étape en cours : fond ambré et filet, jamais la couleur
+   seule — le filet à gauche la désigne même en noir et blanc. */
+.transcription li[aria-current="true"] {
+  background: #FFF4E0; border-left: 4px solid #FF6B35;
+  margin-left: -14px; padding: 2px 8px 6px 10px; border-radius: 6px;
+}
+/* Le piège de sigle. Encadré « fragile / à surveiller » de la charte — et le
+   symbole ⚠ double la couleur, qui ne porte jamais seule une information. */
+.transcription .confusion {
+  margin: 4px 14px 14px; padding: 10px 12px;
+  background: #FFF4E0; border-left: 5px solid #B06A00; border-radius: 8px;
+  font-size: .95em;
+}
+@media print { .transcription { position: static; max-width: none; } }
+
+/* La barre d'étapes. Une animation de 92 secondes qui ne se reprend qu'au
+   début n'est pas utilisable en autonomie : l'élève qui bute sur le NRD doit
+   pouvoir y revenir seul, sans regarder les 59 secondes qui précèdent. C'est
+   aussi elle qui rend la sous-station NRD possible — `?etape=nrd` — sans
+   dupliquer un seul octet d'animation. */
+.etapes {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: 12px; z-index: 98;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;
+  background: #FFFDF8; border: 2px solid #1B3A63; border-radius: 999px;
+  padding: 7px 12px; box-shadow: 0 4px 14px rgba(27,58,99,.25);
+  max-width: 94vw;
+}
+.etapes button {
+  font: 600 14px Calibri, 'Segoe UI', sans-serif;
+  background: #FFFDF8; color: #1B3A63; border: 2px solid #84B7EC;
+  border-radius: 999px; padding: 5px 13px; cursor: pointer; min-height: 34px;
+}
+.etapes button:hover { border-color: #FF6B35; }
+.etapes button:focus-visible { outline: 3px solid #FF6B35; outline-offset: 2px; }
+/* L'étape en cours ne se signale pas par la seule couleur (charte) : elle
+   porte aussi le trait épais et la puce. */
+.etapes button[aria-current="true"] {
+  background: #1B3A63; color: #FFFDF8; border-color: #FF6B35; font-weight: 700;
+}
+.etapes button[aria-current="true"]::before { content: "▸ "; }
+/* Les deux commandes de lecture ne sont pas des étapes : bordure orange, la
+   couleur d'action de la charte, et un peu d'air avant la liste des étapes. */
+.etapes .cmd { border-color: #FF6B35; font-weight: 700; }
+.etapes .cmd + button:not(.cmd) { margin-left: 10px; }
+@media (max-width: 640px) { .etapes { gap: 4px; padding: 6px 8px; } .etapes button { padding: 4px 9px; } }
+@media print { .etapes { display: none; } }
+</style>
+</head>
+<body>
+<h1 class="titre-du-film">Le KVR et le NRD — tenir la pression de condensation par temps froid</h1>
+<main>
+<x-dc>
+<helmet>
+  <style>
+    /* Fond de page à la charte inerWeb (--cream), et non le beige du canvas. */
+    html, body { margin: 0; padding: 0; background: #f7f1e7; }
+    a { color: #1b3a63; }
+    a:hover { color: #ff6b35; }
+  </style>
+  <script>window.OM_SCENES = '[{"name":"Installation","dur":9,"desc":"Le circuit frigorifique complet apparaît, régime nominal par temps doux"},{"name":"Froid","dur":8,"desc":"L\'air extérieur tombe à −5 °C, la caméra se rapproche du condenseur"},{"name":"Effondrement","dur":12,"desc":"La pression de condensation chute, le liquide fait des bulles, le détendeur n\'a plus d\'écart de pression"},{"name":"KVR","dur":11,"desc":"La vanne KVR se pose à la sortie du condenseur, son tarage s\'affiche"},{"name":"Noyage","dur":10,"desc":"La KVR se ferme, le condenseur se noie de liquide et la HP remonte"},{"name":"Reservoir","dur":9,"desc":"Derrière la KVR le réservoir se dépressurise, le problème reste entier"},{"name":"NRD","dur":12,"desc":"Le by-pass de gaz chauds se trace, le clapet NRD s\'ouvre à 1,4 bar"},{"name":"Regime","dur":9,"desc":"Vue d\'ensemble, les deux organes tiennent le régime rétabli"},{"name":"Recap","dur":12,"desc":"Récapitulatif en trois points sur le schéma estompé"}]';</script>
+  <script>window.OM_PLAYBACK = '{"mode":"loop"}';</script>
+  <script>window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "schema": "Dessins",
+    "fluide": "R404A",
+    "showCaptions": true,
+    "showValues": true,
+    "motionEditor": false
+  }/*EDITMODE-END*/;</script>
+</helmet>
+<x-import component-from-global-scope="KvrNrdVideo" from="./animations-v3.js ./tweaks-panel.js ./kvr-nrd.js" hint-size="100%,100%"></x-import>
+</x-dc>
+</main>
+
+<nav class="etapes" id="etapes" aria-label="Les étapes de l’animation"></nav>
+
+<details class="transcription">
+  <summary>Les explications, étape par étape</summary>
+  <ol>
+    <li id="exp-installation"><span class="etape">Le régime normal</span>Une chambre froide, un condenseur à air, un détendeur. Par temps doux, la pression de condensation se tient autour de 15 bar en R‑404A. Le liquide arrive franc au détendeur : aucune bulle au voyant.</li>
+    <li id="exp-froid"><span class="etape">L’hiver arrive</span>L’air extérieur tombe à moins 5 degrés. Le condenseur, lui, a été choisi pour l’été. Avec cet air froid il échange beaucoup trop : il condense trop vite.</li>
+    <li id="exp-effondrement"><span class="etape">La haute pression s’effondre</span>La pression de condensation chute vers 6 bar. Or le détendeur travaille avec l’écart entre la haute et la basse pression : c’est cet écart qui pousse le liquide à travers son orifice. Sans écart, plus de débit. L’évaporateur est affamé, la chambre ne descend plus, et le voyant fait des bulles parce que le liquide se vaporise avant même d’arriver au détendeur.</li>
+    <li id="exp-kvr"><span class="etape">On pose la KVR</span>La KVR se monte à la sortie du condenseur. Elle mesure la pression en amont, celle du condenseur, et elle se ferme dès que cette pression passe sous son tarage. Sa plage de réglage va de 5 à 17,5 bar ; elle sort d’usine réglée à 10 bar.</li>
+    <li id="exp-noyage"><span class="etape">Le condenseur se noie</span>En se fermant, la KVR retient le liquide dans le condenseur. Le condenseur se noie : il reste moins de surface pour échanger, donc il condense moins bien, donc la pression remonte. C’est exactement le but recherché — on dégrade volontairement l’échange pour tenir la haute pression.</li>
+    <li id="exp-reservoir"><span class="etape">Mais le réservoir tombe</span>Seulement, le liquide retenu ne passe plus vers le réservoir. Derrière la KVR, la pression tombe. Or c’est le réservoir qui pousse le liquide jusqu’au détendeur. Le problème a été déplacé, pas résolu.</li>
+    <li id="exp-nrd"><span class="etape">Le clapet NRD</span>D’où le NRD. C’est une vanne différentielle montée en by‑pass entre le refoulement du compresseur et le réservoir. Elle s’ouvre dès que l’écart entre ces deux pressions dépasse 1,4 bar, et elle envoie du gaz chaud dans le réservoir pour le remettre en pression.</li>
+    <li id="exp-regime"><span class="etape">Le régime rétabli</span>Les deux organes travaillent ensemble : la KVR tient le condenseur, le NRD tient le réservoir. Le détendeur retrouve un écart suffisant, le liquide redevient franc au voyant, et l’installation refroidit de nouveau.</li>
+    <li id="exp-recap"><span class="etape">À retenir</span>Trois points. Un : par temps froid, ce qui manque c’est la haute pression, pas le fluide. Deux : la KVR noie le condenseur pour tenir cette pression. Trois : sans NRD, le réservoir reste bas et le détendeur ne débite toujours pas. Le réglage se fait en conditions représentatives, avec la notice de la machine, jamais de mémoire.</li>
+  </ol>
+  <p class="confusion">
+    <strong>⚠ NRD n’est pas NRV.</strong> Les deux sigles se ressemblent, les deux
+    organes se posent sur une tuyauterie, et ils ne font pas le même travail.
+    La <strong>NRD</strong> est une vanne <em>différentielle</em> : elle reste fermée
+    tant que l’écart de pression n’atteint pas 1,4 bar, puis elle laisse passer le
+    gaz chaud vers le réservoir. Le <strong>NRV</strong> est un simple
+    <em>clapet anti-retour</em> : il n’a pas de seuil de réglage, il impose
+    seulement un sens de circulation. On le rencontre d’ailleurs sur les lignes
+    de dégivrage par gaz chauds.
+  </p>
+  <p style="margin:0;padding:0 16px 14px;font-size:.92em">
+    Valeurs constructeur : NRD, ouverture à Δp = 1,4 bar ; KVR, plage de réglage
+    5 à 17,5 bar, réglage d’usine 10 bar. Aucun réglage chiffré ne se fait sans
+    la notice de la machine.
+  </p>
+</details>
+
+<!-- La voix du site. `voix-index.js` d'abord : il pose le catalogue des
+     narrations déjà enregistrées, et `voix.js` remplace alors la voix de
+     synthèse du navigateur par le fichier audio quand le texte y figure.
+     Un texte absent du catalogue se dit quand même — en voix de synthèse. -->
+<script src="../../../../moteur/voix-index.js"></script>
+<script src="../../../../moteur/voix.js"></script>
+
+<script>
+/* =====================================================================
+   La barre d'étapes, et l'entrée directe par `?etape=…`
+   ---------------------------------------------------------------------
+   Les temps ne sont écrits nulle part en dur : ils se cumulent depuis
+   OM_SCENES, la seule source. Retoucher une durée dans le canvas et
+   réexporter suffit — la barre suit.
+   Le runtime expose son transport par un événement DOM sur le cadre
+   (`data-om-seek-to-time-frame`), le même que la bande son des films
+   narrés utilise pour se synchroniser.
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  var scenes;
+  try { scenes = JSON.parse(window.OM_SCENES || "[]"); } catch (e) { scenes = []; }
+  if (!scenes.length) return;
+
+  /* Le nom d'étape tel qu'il s'écrit dans une adresse : sans accent, en bas
+     de casse. `?etape=nrd`, `?etape=effondrement`. */
+  function cle(s) {
+    return String(s).toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "");
+  }
+
+  /* Les libellés du plan : ceux d'OM_SCENES sont des noms de scène d'auteur
+     (« Regime », « Recap »), pas ce qu'on montre à un élève. */
+  var LIBELLES = {
+    installation: "Régime normal",
+    froid: "L’hiver arrive",
+    effondrement: "La HP s’effondre",
+    kvr: "On pose la KVR",
+    noyage: "Le condenseur se noie",
+    reservoir: "Le réservoir tombe",
+    nrd: "Le clapet NRD",
+    regime: "Régime rétabli",
+    recap: "À retenir"
+  };
+
+  var t = 0;
+  var etapes = scenes.map(function (s) {
+    var debut = t;
+    t += Number(s.dur) || 0;
+    return { cle: cle(s.name), debut: debut, libelle: LIBELLES[cle(s.name)] || s.name, desc: s.desc || "" };
+  });
+  var duree = t;
+
+  var cadre = null;
+  /* Le cadre entre dans le DOM AVANT que React n'ait posé son écouteur de
+     transport. Un saut envoyé dans cet intervalle part dans le vide — et
+     comme rien ne le signale, on croit avoir réussi. L'effet qui pose
+     l'écouteur pose aussi `data-om-sync-seek` : c'est donc cet attribut,
+     et non la seule présence du cadre, qui dit que la place est prête. */
+  function cadrePret() {
+    if (!cadre) cadre = document.querySelector("[data-om-exportable-video-with-duration-secs]");
+    if (!cadre || !cadre.hasAttribute("data-om-sync-seek")) return false;
+    /* Et la durée doit être établie. Elle s'installe en deux temps au
+       montage : trop tôt, le saut est rogné par le clamp du runtime, et
+       l'écouteur lui-même est reposé au changement de durée — l'événement
+       serait perdu deux fois plutôt qu'une. */
+    var d = parseFloat(cadre.getAttribute("data-om-exportable-video-with-duration-secs")) || 0;
+    return Math.round(d) === Math.round(duree);
+  }
+  function vaA(temps, force) {
+    if (!cadrePret() && !(force && cadre)) return false;
+    /* `sync: true` fait rendre le runtime dans la même tâche : l'image saute
+       net, sans passer par les images intermédiaires. `playing: false` évite
+       son mode « piloté par l'hôte », qui attend un flux de sauts continu
+       — celui de la bande son des films — et figerait l'image sans lui. */
+    cadre.dispatchEvent(new CustomEvent("data-om-seek-to-time-frame", {
+      detail: { time: Math.max(0, Math.min(temps, duree)), playing: false, sync: true }
+    }));
+    relance();
+    return true;
+  }
+
+  /* ── les commandes de lecture ─────────────────────────────────────────
+     Le runtime pose sa propre barre : fond noir, libellés anglais, et un
+     bouton « Export video ». Le fond sombre est exclu par la charte, et
+     l'export n'est pas l'affaire d'un élève. On la masque donc, et on pilote
+     ses boutons depuis la barre d'étapes — qui, elle, est à la charte. */
+  var natifPlay = null, natifDebut = null, monPlay = null, monEcoute = null;
+
+  /* ── la voix ──────────────────────────────────────────────────────────
+     Le texte lu est CELUI QUI EST ÉCRIT dans le panneau : une seule source,
+     donc jamais de décalage entre ce qu'on entend et ce qu'on lit. Rien ne
+     démarre sans un clic — c'est la règle du site, et celle des navigateurs. */
+  function texteEtape(i) {
+    var li = document.getElementById("exp-" + etapes[i].cle);
+    if (!li) return "";
+    /* Le titre de l'étape est un bloc à l'œil, mais `textContent` le colle au
+       corps : « Le clapet NRDD'où le NRD… ». On le détache et on pose un point,
+       sinon la voix bute sur le raccord. */
+    var titre = li.querySelector(".etape");
+    var copie = li.cloneNode(true);
+    var span = copie.querySelector(".etape");
+    if (span && span.parentNode) span.parentNode.removeChild(span);
+    var corps = copie.textContent.replace(/\s+/g, " ").trim();
+    var dit = (titre ? titre.textContent.trim() + ". " : "") + corps;
+    /* « by‑pass » et « R‑404A » portent un trait d'union insécable : bon pour
+       l'œil, hasardeux pour la synthèse vocale. On ne normalise que ce qui
+       part à la voix — le texte affiché garde ses traits insécables. */
+    return dit.replace(new RegExp(String.fromCharCode(8209), "g"), "-");
+  }
+  function parle() { return !!(window.speechSynthesis && speechSynthesis.speaking); }
+  function majEcoute() {
+    if (!monEcoute) return;
+    monEcoute.textContent = parle() ? "■ Stop" : "🔊 Écouter";
+    monEcoute.setAttribute("aria-label", parle()
+      ? "Arrêter la lecture de l’explication"
+      : "Écouter l’explication de l’étape en cours");
+  }
+  function ecoute() {
+    if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) return;
+    if (parle()) { speechSynthesis.cancel(); majEcoute(); return; }
+    var texte = texteEtape(courant);
+    if (!texte) return;
+    /* Le panneau s'ouvre : entendre sans pouvoir suivre des yeux ne sert ni
+       à qui lit lentement, ni à qui travaille dans un atelier bruyant. */
+    var det = document.querySelector(".transcription");
+    if (det) det.open = true;
+    var u = new SpeechSynthesisUtterance(texte);
+    u.lang = "fr-FR";
+    u.rate = 0.95;
+    u.onend = majEcoute;
+    u.onerror = majEcoute;
+    speechSynthesis.speak(u);
+    setTimeout(majEcoute, 60);
+  }
+
+  function enPause() {
+    /* Le glyphe dit l'état : un triangle (path) quand c'est à l'arrêt,
+       deux barres (rect) quand ça joue. */
+    return !!(natifPlay && natifPlay.querySelector("path"));
+  }
+  function majPlay() {
+    if (!monPlay) return;
+    monPlay.textContent = enPause() ? "▶ Lecture" : "⏸ Pause";
+    monPlay.setAttribute("aria-label", enPause() ? "Lancer la lecture" : "Mettre en pause");
+  }
+  /* Tout saut arrête l'horloge du runtime. Sans ce coup de pouce, cliquer une
+     étape figerait l'image au lieu de la jouer depuis là. */
+  function relance() { if (enPause() && natifPlay) natifPlay.click(); }
+
+  function brancheCommandes() {
+    natifPlay = document.querySelector('button[title^="Play/pause"]');
+    if (!natifPlay) return false;
+    var barreRuntime = natifPlay.parentElement;
+    natifDebut = barreRuntime.querySelector('button[title^="Return to start"]');
+    barreRuntime.style.display = "none";
+
+    monPlay = document.createElement("button");
+    monPlay.type = "button";
+    monPlay.className = "cmd";
+    monPlay.addEventListener("click", function () { natifPlay.click(); setTimeout(majPlay, 0); });
+
+    var monDebut = document.createElement("button");
+    monDebut.type = "button";
+    monDebut.className = "cmd";
+    monDebut.textContent = "↺ Début";
+    monDebut.setAttribute("aria-label", "Revenir au début de l’animation");
+    monDebut.addEventListener("click", function () { vaA(0); marque(0); });
+
+    monEcoute = document.createElement("button");
+    monEcoute.type = "button";
+    monEcoute.className = "cmd";
+    monEcoute.addEventListener("click", ecoute);
+
+    barre.insertBefore(monEcoute, barre.firstChild);
+    barre.insertBefore(monDebut, barre.firstChild);
+    barre.insertBefore(monPlay, barre.firstChild);
+    majPlay();
+    majEcoute();
+    new MutationObserver(majPlay).observe(natifPlay, { childList: true, subtree: true });
+    return true;
+  }
+
+  var barre = document.getElementById("etapes");
+  var boutons = etapes.map(function (e, i) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.textContent = e.libelle;
+    b.title = e.desc;
+    b.addEventListener("click", function () {
+      vaA(e.debut);
+      marque(i);
+      /* L'adresse suit le clic : l'élève qui tombe sur le NRD peut garder le
+         lien, et le professeur le coller dans un support. */
+      try { history.replaceState(null, "", "?etape=" + e.cle); } catch (err) {}
+    });
+    barre.appendChild(b);
+    return b;
+  });
+  var courant = 0;
+  function marque(i) {
+    courant = i;
+    boutons.forEach(function (b, j) {
+      if (j === i) b.setAttribute("aria-current", "true");
+      else b.removeAttribute("aria-current");
+    });
+    /* L'explication écrite suit l'étape : on lit toujours au même endroit ce
+       que l'image est en train de montrer. */
+    etapes.forEach(function (e, j) {
+      var li = document.getElementById("exp-" + e.cle);
+      if (!li) return;
+      if (j === i) li.setAttribute("aria-current", "true");
+      else li.removeAttribute("aria-current");
+    });
+    majEcoute();
+  }
+
+  /* La barre du runtime n'existe qu'une fois le composant monté : on la
+     guette. Si elle ne vient pas, la page reste utilisable — c'est sa barre
+     à elle qui resterait visible, pas un écran mort. */
+  var essaisCmd = 0;
+  var horlogeCmd = setInterval(function () {
+    if (brancheCommandes() || ++essaisCmd > 120) clearInterval(horlogeCmd);
+  }, 50);
+
+  /* Entrée directe. Le composant se monte de façon asynchrone : on réessaie
+     jusqu'à ce que le cadre existe, puis on s'arrête. Borné — une page qui
+     n'a pas monté au bout de 6 secondes ne montera plus, et la barre reste
+     utilisable à la main. */
+  var voulu = new URLSearchParams(location.search).get("etape");
+  if (!voulu) return;
+  var i = etapes.findIndex(function (e) { return e.cle === cle(voulu); });
+  if (i < 0) return;
+
+  var essais = 0;
+  var horloge = setInterval(function () {
+    if (vaA(etapes[i].debut)) { clearInterval(horloge); marque(i); return; }
+    if (++essais > 120) {
+      clearInterval(horloge);
+      /* Six secondes sans signal. Porte de sortie : un runtime qui
+         n'annoncerait pas `data-om-sync-seek` ne doit pas priver l'élève de
+         son étape — on tente en force, et la barre reste utilisable à la main. */
+      if (vaA(etapes[i].debut, true)) marque(i);
+    }
+  }, 50);
+})();
+</script>
+
+<script src="../../../../moteur/marque.js" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
+<!-- Le badge des codes couverts s'accroche à la ligne de marque : après elle. -->
+<script src="../../../../moteur/referentiel.js"></script>
+</body>
+</html>
