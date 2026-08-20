@@ -826,7 +826,7 @@
 
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
-<script src="plan-descriptions.gen.js?v=1522e848b2"></script>
+<script src="plan-descriptions.gen.js?v=172befeb08"></script>
 <script>
 /* =====================================================================
    LE PLAN DE FORMATION — généré depuis les données ci-dessous.
@@ -978,7 +978,22 @@
          en dents de scie sinon. C'est le motif déjà employé pour le CO₂ : le
          FLUIDE d'un côté, le MATÉRIEL de l'autre, un seul jalon chacun. Le
          découpage est celui de F. Henninot — quatre stations sur le fluide et
-         son retour, le reste sur le circuit. --- */
+         son retour, le reste sur le circuit.
+
+         🛑 AVANT DE RELANCER `ordonner-ligne.js` — LIRE CECI.
+         Cette liste de stations n'est PAS écrite à la main d'un bout à l'autre :
+         `C:\git\atelier-animations\outils\ordonner-ligne.js` l'écrit, en
+         cherchant « var HUILE = { » puis la première « stations: [ » qui suit,
+         et en remplaçant tout son contenu par SES DIX-SEPT stations.
+         Depuis la coupe du 20/08, ce comportement est FAUX : il rendrait à
+         HUILE les dix-sept, pendant que HUILE_CIRCUIT garderait ses treize —
+         trente stations, doublons partout, et la ligne de nouveau illisible.
+         Rien ne le signalerait : l'outil ne lit pas ce commentaire et ne
+         vérifie rien après écriture.
+         Il faut donc l'adapter AVANT de le relancer : quatre stations dans
+         HUILE, les treize suivantes dans HUILE_CIRCUIT. L'outil vit dans un
+         autre dépôt, qui avait du travail en cours le 20/08 au soir — c'est
+         pour cela qu'il n'a pas été corrigé dans la foulée. --- */
   var HUILE = {
     slug: "huile", nom: "🛢 L’HUILE", sous: "le fluide et son retour",
     couleur: "#b06a00",
@@ -1866,11 +1881,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=1522e848b2"></script>
-<script src="chiffres.gen.js?v=1522e848b2"></script>
+<script src="moteur/lisibilite.js?v=172befeb08"></script>
+<script src="chiffres.gen.js?v=172befeb08"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=1522e848b2" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=172befeb08" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)

@@ -2,8 +2,90 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **20 août 2026** (+ la ligne CO₂ / R744, 20/08 au soir ; + stations pressostats et régulateur électronique, 19/08) (la file des 8 remarques du 19 au soir est soldée ;
-> l'état du 19/08 reste valable pour le reste).
+> Dernière mise à jour : **20 août 2026, tard** (relecture métier CO₂ tranchée, fusion sur
+> `main` et mise en ligne, ligne de l'huile coupée en deux, recherche de cours ; + la ligne
+> CO₂ / R744, 20/08 au soir ; + stations pressostats et régulateur électronique, 19/08)
+> (la file des 8 remarques du 19 au soir est soldée ; l'état du 19/08 reste valable pour le reste).
+
+> ## 20/08 (tard) — TOUT EST EN LIGNE : `main` est à `11acffa`
+>
+> ⚠️ **Le worktree `C:\git\pilote-fluides` est resté à `ed95a43`** : les cinq commits de
+> cette session ont été poussés depuis le worktree `_wt-co2-r744`. Faire un `git pull`
+> avant d'y travailler, sinon le prochain chantier repart d'un plan périmé.
+>
+> **1. La relecture métier de la ligne CO₂ est tranchée.** Les six affirmations laissées en
+> suspens dans `res/co2-r744/SOURCES-METIER.md` sont passées devant F. Henninot, chacune sur
+> son texte réel. Le détail des décisions vit désormais dans **`res/co2-r744/RELECTURE-METIER.md`**
+> — c'est lui qui fait foi, pas SOURCES-METIER.md dont les numéros d'escale étaient périmés.
+> Confirmés sans changement : le groupe de maintien à l'arrêt, les technologies de compresseur,
+> les plages de surchauffe et de sous-refroidissement. **Retiré** : le diagnostic de la vanne
+> de gaz de détente bloquée ouverte (raisonnement déduit, jamais observé) — l'encadré, la puce
+> et la question `b-q3` avec. **Ajouté** : l'écran `deux-types` de l'escale éjecteur, qui
+> distingue enfin l'éjecteur de gaz de l'éjecteur de liquide comme le code 11.06 l'exige.
+> **Arbitré** : le site ne dit plus deux choses sur la pression — la fiche `cl3` du pack
+> s'aligne sur les 120 bar, alors qu'elle refusait tout chiffre tout en portant elle-même le
+> lien vers l'escale qui l'annonce.
+>
+> **2. La ligne de l'huile s'est coupée en deux.** Dix-sept stations sur une ligne, 47 px
+> entre pastilles : `🛢 L'HUILE` (4, le fluide et son retour) et `🛢 LE CIRCUIT D'HUILE`
+> (13, le matériel jusqu'au diagnostic), la branche prolongeant la première par la droite —
+> le motif des centrales sous le CO₂.
+>
+> **3. L'alternance des libellés se calcule au lieu de s'imposer.** `cotes()` compare la
+> largeur du plus long libellé au pas entre stations. Dix lignes sur quinze cessent de
+> zigzaguer. ⚠️ **Ce n'est pas le nombre de stations qui commande, c'est le libellé le plus
+> long** — et c'est presque toujours le SOUS-TITRE, pas le nom. La ligne CO₂ garde son
+> alternance à cause de « 31 °C · 73,8 bar · 57 bar à l'arrêt », 35 caractères.
+>
+> **4. On cherche un cours par un mot** — champ au-dessus du plan. Son index se construit à
+> partir de la liste HTML du réseau, dans la même page : ajouter une station la rend
+> cherchable sans toucher ce code.
+>
+> **DEUX ANGLES MORTS PRÉEXISTANTS, CORRIGÉS.**
+> - `index.html` n'entrait pas dans le hash de `lib-version.mjs`. Or le plan vit ENTIÈREMENT
+>   dans ce fichier : le modifier ne changeait ni les `?v=` ni le nom du cache du service
+>   worker — personne n'aurait vu la nouvelle carte. Même profil que l'angle mort de
+>   `projection.gen.js` (31/07). Le piège du correctif : le fichier contient le hash, donc les
+>   `?v=` sont neutralisés avant calcul, sinon ça ne converge jamais.
+> - **Dix-sept stations d'huile absentes de la liste du réseau** depuis toujours —
+>   `plan-liste.mjs` ne nommait pas `HUILE`. Elles manquaient aussi au JSON-LD de
+>   référencement. Passé de 12 lignes / 78 stations à **14 lignes / 95 stations**.
+>
+> **VÉRIFIÉ SUR LE SITE EN LIGNE**, pas en local : 234 textes du plan, **0 chevauchement**
+> mesuré en `getBoundingClientRect` ; « huile » ramène 17 cours au lieu d'un ; « éjecteur »
+> en ramène 2 au lieu de 13 ; les trois enregistrements neufs servis en 200.
+>
+> ⚠️ **Le service worker sert l'ancienne version au premier chargement après un déploiement.**
+> Pour vérifier une mise en ligne : `fetch(url, {cache:'reload'})` et comparer, ou vider
+> `caches` et désinscrire le SW. Ne jamais conclure « le déploiement a raté » sur ce que
+> montre la page.
+>
+> 🛑 **LE PIÈGE À NE PAS DÉCLENCHER : `ordonner-ligne.js` DÉTRUIRAIT LA COUPE.**
+> La liste des stations de l'huile n'est pas écrite à la main : elle est produite par
+> `C:\git\atelier-animations\outils\ordonner-ligne.js`, qui ouvre **directement**
+> `C:/git/pilote-fluides/index.html`, cherche `var HUILE = {` puis la première
+> `stations: [` qui suit, et remplace tout son contenu par ses **dix-sept** stations.
+> Depuis la coupe, ce comportement rendrait dix-sept stations à `HUILE` pendant que
+> `HUILE_CIRCUIT` garderait ses treize : **trente stations, doublons partout**, et la
+> ligne de nouveau illisible. L'outil ne vérifie rien après écriture et ne dirait rien.
+> **L'adapter AVANT de le relancer** — quatre stations dans `HUILE`, les treize suivantes
+> dans `HUILE_CIRCUIT`. Il n'a pas été corrigé dans la foulée parce que son dépôt avait
+> du travail non commité le 20/08 au soir : à faire avec la session qui le tient.
+> Un avertissement est aussi posé dans `index.html`, juste au-dessus de `var HUILE`.
+>
+> **CE QUI RESTE**
+> - L'écran `deux-types` de l'éjecteur **n'a été relu par aucun frigoriste** — décision de
+>   F. Henninot : il part en ligne et sera relu là. Point sensible : « la sortie de meuble
+>   n'est plus en vapeur surchauffée mais en mélange ».
+> - Adapter `ordonner-ligne.js` à la coupe (voir ci-dessus) — **avant tout autre chantier
+>   sur la ligne de l'huile**.
+> - L'adossement de la ligne CO₂ au référentiel (`couverture.json`) reste proposé par lecture
+>   des libellés.
+> - Les **53 anomalies** du registre et les **24 critiques** de l'audit sont préexistantes et
+>   n'ont pas été traitées.
+> - Le projet Claude Design du circuit d'huile contient encore **`Séparateur d'huile`**, non
+>   importé (`Retour d'huile` et `Séparateur à éclatement` le sont déjà — ce dernier est en
+>   ligne au rang 8 depuis l'après-midi du 20/08, avec son film en dix scènes).
 
 > **20/08 (soir) — LA LIGNE CO₂ / R744 OUVRE, ET AVEC ELLE LA CATÉGORIE B.**
 > `packs/fluides/res/co2-r744/` — **douze escales, 90 écrans, 31 questions, 152 narrations
