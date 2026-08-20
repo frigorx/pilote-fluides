@@ -4,8 +4,8 @@ window.PILOTE_VOIX_INDEX = {
   "voix": "fr_FR-siwis-medium",
   "moteur": "Piper 1.4.1 / VITS",
   "modeleFabrication": "fr_FR-siwis-medium.onnx",
-  "empreinteCorpus": "c9c7027e64accc33",
-  "narrationsAttendues": 3230,
+  "empreinteCorpus": "6fd9c8722cc41ef9",
+  "narrationsAttendues": 3211,
   "frequenceHz": 22050,
   "debitKbps": 48,
   "vitesse": 1.0,
@@ -634,11 +634,6 @@ window.PILOTE_VOIX_INDEX = {
       "fichier": "audio/11cf7c08-213.mp3",
       "sha256": "e590a4f7d974b37c",
       "octets": 82756
-    },
-    "12343a38-1049": {
-      "fichier": "audio/12343a38-1049.mp3",
-      "sha256": "227444af3af04e06",
-      "octets": 390426
     },
     "1255d1b9-44": {
       "fichier": "audio/1255d1b9-44.mp3",
@@ -5784,6 +5779,11 @@ window.PILOTE_VOIX_INDEX = {
       "fichier": "audio/b4adb3be-129.mp3",
       "sha256": "9dc0393f1cea001c",
       "octets": 46393
+    },
+    "b528f6bf-1115": {
+      "fichier": "audio/b528f6bf-1115.mp3",
+      "sha256": "70f4f56a26f61712",
+      "octets": 405002
     },
     "b5519734-6210": {
       "fichier": "audio/b5519734-6210.mp3",

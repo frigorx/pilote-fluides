@@ -355,6 +355,7 @@
     [/\bODP\b/g, "potentiel d’appauvrissement de la couche d’ozone"],
     [/\bEPI\b/g, "équipements de protection individuelle"],
     [/\bNF EN 378\b/g, "norme N F E N 378"],
+    [/⛶/g, "plein écran"],
     [/\bHFC\b/g, "H F C"],
     [/\bHCFC\b/g, "H C F C"],
     [/\bXIX[ᵉe]\b/g, "dix-neuvième"],

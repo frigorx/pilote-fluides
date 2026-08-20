@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "genereLe": "2026-08-20T15:15:05.209Z",
-  "total": 3230,
+  "genereLe": "2026-08-20T15:25:11.982Z",
+  "total": 3211,
   "narrations": [
     {
       "cle": "00060401-70",
@@ -1909,14 +1909,6 @@
       ]
     },
     {
-      "cle": "12343a38-1049",
-      "texte": "La synthèse de la ligne. Trois particules partent ensemble et se séparent à la bouteille. Le débit qui sort du refoulement moyenne température se sépare en trois à la bouteille flash : du liquide vers les meubles positifs, du liquide vers les meubles négatifs, et de la vapeur vers la dérivation. À gauche, le trajet dans la centrale. À droite, le même trajet sur le diagramme log P H. La couleur suit l'état du fluide, pas son chemin : chaud et comprimé, liquide sous pression, en évaporation, ou vapeur de détente. Le même code de couleur est utilisé dans les deux vues. L'exemple suivi : Basse température moins 32 degrés Celsius (13,4 bar), moyenne température moins 8 degrés Celsius (28,2 bar), pression intermédiaire 38 bar, haute pression 90 bar, sortie du refroidisseur de gaz 35 degrés Celsius. Valeurs d'illustration. Ce que montre le schéma. À gauche le trajet dans la centrale, à droite le même trajet sur le diagramme log P H. Les deux animations tournent en phase : le point suivi dans le circuit est celui qui se déplace sur le tracé.",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/booster-diagramme/double-vue"
-      ]
-    },
-    {
       "cle": "1255d1b9-44",
       "texte": "Commençons impérativement par l'évaporateur.",
       "type": "fragment",
@@ -2351,14 +2343,6 @@
       ]
     },
     {
-      "cle": "160c4dbf-478",
-      "texte": "Questions , escale 13. Un masque à cartouche protège-t-il d'une atmosphère chargée en dioxyde de carbone ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. Oui, à condition de choisir une cartouche adaptée au dioxyde de carbone. Réponse 2. Non : il ne filtre pas le dioxyde de carbone et ne fournit pas d'oxygène. Réponse 3. Oui, mais seulement le temps de rejoindre la sortie du local",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/securite/z-q3"
-      ]
-    },
-    {
       "cle": "162007d5-11",
       "texte": "Évaporateur",
       "type": "interface",
@@ -2652,14 +2636,6 @@
       ]
     },
     {
-      "cle": "18735c32-366",
-      "texte": "Questions , escale 11. Quelle technologie domine sur les centrales R 744 transcritiques ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. Le compresseur à piston semi-hermétique. Réponse 2. Le compresseur à vis, pour les fortes puissances. Réponse 3. Le compresseur scroll",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/compresseurs/k-q1"
-      ]
-    },
-    {
       "cle": "1873fff4-266",
       "texte": "Voir ce qu'aurait produit le mauvais choix. La pompe tourne encore et communique avec le circuit. Le technicien doit choisir. Ici, le mauvais bouton ne déclenche aucun appareil : il montre seulement la conséquence probable. Prenez la décision qui protège le circuit.",
       "type": "composition",
@@ -2918,14 +2894,6 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/module-compresseur/index.html"
-      ]
-    },
-    {
-      "cle": "1b14c4bb-443",
-      "texte": "Questions , escale 12. Dans un éjecteur, qu'est-ce qui aspire la vapeur basse pression ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. La dépression créée au col de la tuyère par l'accélération du fluide moteur. Réponse 2. La différence de densité entre le liquide et la vapeur. Réponse 3. Un petit moteur électrique intégré au corps de l'éjecteur",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/ejecteur/e-q1"
       ]
     },
     {
@@ -5057,14 +5025,6 @@
       ]
     },
     {
-      "cle": "2e090835-416",
-      "texte": "Questions , escale 8. Dans une centrale booster, où refoulent les compresseurs basse température ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. Dans le refroidisseur de gaz, comme les compresseurs moyenne température. Réponse 2. Dans la bouteille flash. Réponse 3. Dans l'aspiration des compresseurs moyenne température",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/booster/b-q2"
-      ]
-    },
-    {
       "cle": "2e1bbbf2-96",
       "texte": "Reprenons nos deux courbes. Pour le fluide pur, le changement d'état forme un palier horizontal.",
       "type": "voiceStep",
@@ -5771,14 +5731,6 @@
       ]
     },
     {
-      "cle": "34de8c0f-413",
-      "texte": "Questions , escale 8. À quoi sert la bouteille flash d'une centrale booster ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. À séparer le liquide de la vapeur formée à la détente. Réponse 2. À stocker la réserve de fluide de l'installation. Réponse 3. À maintenir la pression du circuit quand la centrale est à l'arrêt",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/booster/b-q1"
-      ]
-    },
-    {
       "cle": "34e7efbb-81",
       "texte": "Non — la ligne liquide porte réserve, filtre, voyant : pas le séparateur d'huile.",
       "type": "choix",
@@ -6109,14 +6061,6 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/retour-huile-verifier/module.js"
-      ]
-    },
-    {
-      "cle": "38449fee-347",
-      "texte": "Questions , escale 13. Quelle catégorie d'attestation d'aptitude correspond aux installations au R 744 ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. La catégorie A deux. Réponse 2. La catégorie B. Réponse 3. La catégorie E. Réponse 4. La catégorie D",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/securite/z-q2"
       ]
     },
     {
@@ -6932,14 +6876,6 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/co2-r744/cours.js"
-      ]
-    },
-    {
-      "cle": "3fd2e5bf-666",
-      "texte": "Escale terminée. Vous savez ce que fait un éjecteur, et ce qu'il ne fait pas. Il récupère une partie de l'énergie de la détente, sans moteur ni pièce mobile. Il ne se règle pas, et son gain dépend de la saison. Trois temps : détente dans la tuyère, entraînement, recompression dans le diffuseur. La maintenance porte sur les vannes de commande et les sondes, pas sur l'éjecteur. Référentiel travaillé : 11.06 — technologie des éjecteurs, éjecteur de liquide et de gaz. En appui : 11.04 et 13.17. Escale suivante : La dernière : sécurité et intervention, les trois risques du R 744 et le cadre réglementaire. Ce que montre le schéma. Bilan de l'escale « L'éjecteur ».",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/ejecteur/e-bilan"
       ]
     },
     {
@@ -8071,14 +8007,6 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/pose-manifold-2-voies-interactive/app.js"
-      ]
-    },
-    {
-      "cle": "49782103-436",
-      "texte": "Questions , escale 10. Que fait un compresseur parallèle sur une centrale booster ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. Il comprime l'air du refroidisseur de gaz pour améliorer l'échange. Réponse 2. Il double le compresseur de tête en cas de panne. Réponse 3. Il aspire la vapeur de détente directement à la pression intermédiaire",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/familles/f-q1"
       ]
     },
     {
@@ -10047,14 +9975,6 @@
       ]
     },
     {
-      "cle": "5d6a7a74-499",
-      "texte": "Questions , escale 11. Pourquoi la variation de vitesse compte-t-elle davantage sur une centrale R 744 ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. Parce que le variateur remplace le détendeur haute pression. Réponse 2. Parce que les compresseurs dioxyde de carbone ne supportent pas les démarrages directs. Réponse 3. Parce qu'un palier de puissance trop grossier déstabilise aussi la haute pression",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/compresseurs/k-q2"
-      ]
-    },
-    {
       "cle": "5d9e6bfc-72",
       "texte": "Le terme d'atelier renvoie au régulateur à flotteur monté sur le carter.",
       "type": "feedback",
@@ -11209,14 +11129,6 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/glissement-temperature/app.js"
-      ]
-    },
-    {
-      "cle": "689074fc-458",
-      "texte": "Questions , escale 9. Sur le diagramme, que représente le point B, juste après le détendeur haute pression ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. Un mélange de liquide et de vapeur, à environ 40 pour cent de vapeur. Réponse 2. De la vapeur surchauffée avant l'aspiration du compresseur. Réponse 3. Du liquide sous-refroidi prêt à partir vers les meubles",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/booster-diagramme/d-q1"
       ]
     },
     {
@@ -12457,14 +12369,6 @@
       ]
     },
     {
-      "cle": "74712d62-460",
-      "texte": "Questions , escale 10. Le refroidissement adiabatique, c'est quoi exactement ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. Une cinquième famille d'architecture, à côté de la cascade et du booster. Réponse 2. Un système ajouté qui pulvérise de l'eau dans l'air entrant dans l'échangeur. Réponse 3. Un mode de régulation du détendeur haute pression par temps chaud",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/familles/f-q3"
-      ]
-    },
-    {
       "cle": "7482091e-43",
       "texte": "Un régulateur défaillant, dans tous les cas",
       "type": "choix",
@@ -13098,14 +13002,6 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/traxoil-installer/module.js"
-      ]
-    },
-    {
-      "cle": "7a96dfea-536",
-      "texte": "Questions , escale 9. Pourquoi le point d'aspiration réel du compresseur moyenne température est-il plus chaud que la sortie des évaporateurs ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. Parce qu'il s'y mélange le refoulement des compresseurs basse température et la vapeur de détente. Réponse 2. Parce que la conduite d'aspiration n'est jamais parfaitement isolée. Réponse 3. Parce que le compresseur réchauffe le gaz avant de l'aspirer",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/booster-diagramme/d-q2"
       ]
     },
     {
@@ -14141,14 +14037,6 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/regulateur-electronique-interactif/app.js"
-      ]
-    },
-    {
-      "cle": "860e06f4-881",
-      "texte": "Ligne terminée. Vous savez ce qui rend une intervention R 744 différente. Trois risques qui ne sont ni l'inflammabilité ni la toxicité, du matériel spécifique, et une catégorie d'attestation qui lui est propre. Pression : matériel de mesure marqué pour le dioxyde de carbone, plaque de l'installation relevée. Asphyxie : détection en partie basse, ventilation, jamais seul. Froid extrême : gants et lunettes, aucune détente à l'air libre sans nécessité. Référentiel travaillé : 13.04, 13.16 et 13.01 , 13.03 pour les récipients. En appui : 11.03 et 13.14. Ce que ce module ne remplace pas : Les codes 13.06 à 13.14 sont des épreuves pratiques : analyse de risques, épreuve de pression, tirage au vide, charge, contrôle d'étanchéité, rapport d'intervention. Ils se travaillent sur installation, pas sur écran. Ce que montre le schéma. Bilan de l'escale « Sécurité et intervention ».",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/securite/z-bilan"
       ]
     },
     {
@@ -15908,14 +15796,6 @@
       ]
     },
     {
-      "cle": "995813c1-439",
-      "texte": "Questions , escale 13. Une fuite de dioxyde de carbone dans un local technique enterré : où le gaz s'accumule-t-il ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. En partie haute, comme la plupart des gaz de fuite. Réponse 2. Il se disperse uniformément dans tout le volume du local. Réponse 3. En partie basse, car il est plus lourd que l'air",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/securite/z-q1"
-      ]
-    },
-    {
       "cle": "9960721f-361",
       "texte": "Le feu exige une certaine proportion de gaz et d'air. Presque seulement de l'air : la flamme ne se propage pas. Dans la bonne proportion gaz-air, une ignition peut déclencher un feu ou une explosion. Avec beaucoup de gaz et trop peu d'air, pas de flamme ici — mais le nuage redevient dangereux en se diluant. Comparez les trois images, puis nommez les mélanges.",
       "type": "composition",
@@ -17355,14 +17235,6 @@
       ]
     },
     {
-      "cle": "a66d8b0b-492",
-      "texte": "Questions , escale 13. Vous arrivez sur une centrale R 744 arrêtée depuis trois jours, après une coupure de courant. Quel est le premier réflexe ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. Vérifier la ventilation et la détection du local avant d'entrer. Réponse 2. Raccorder le manifold pour relever la pression du circuit. Réponse 3. Redémarrer la centrale pour faire redescendre la pression",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/securite/z-q4"
-      ]
-    },
-    {
       "cle": "a6bb103c-55",
       "texte": "Pourquoi vérifier le fonctionnement à charge minimale ?",
       "type": "feedback",
@@ -18008,14 +17880,6 @@
       ]
     },
     {
-      "cle": "ac363509-522",
-      "texte": "Questions , escale 10. Sur une installation en cascade ammoniac/dioxyde de carbone, comment règle-t-on la haute pression optimale du dioxyde de carbone ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. Elle se règle automatiquement par la vanne de gaz de détente. Réponse 2. La question ne se pose pas : le dioxyde de carbone y reste subcritique. Réponse 3. Avec le détendeur haute pression, comme sur une centrale transcritique",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/familles/f-q2"
-      ]
-    },
-    {
       "cle": "ac4de70b-43",
       "texte": "BP · aspiration · trait bleu plein · T → C.",
       "type": "interface",
@@ -18029,14 +17893,6 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/chaleur-interactive/app.js"
-      ]
-    },
-    {
-      "cle": "ac9d5086-715",
-      "texte": "Escale terminée. La haute pression est une consigne, calculée en permanence. Il existe une haute pression optimale pour chaque température de sortie du refroidisseur de gaz : c'est le régulateur qui la calcule, et le détendeur haute pression qui la tient. Trop basse, la production de froid s'effondre ; trop haute, on consomme pour rien. Un échangeur encrassé fait monter la consigne et chuter le rendement. Référentiel travaillé : 13.17 — maintenir l'efficacité énergétique des équipements à haute pression. En appui : 11.06 et 11.04. Escale suivante : La centrale booster : chaque organe supplémentaire répond à un problème vu jusqu'ici. Ce que montre le schéma. Bilan de l'escale « La haute pression optimale ».",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/hp-optimale/h-bilan"
       ]
     },
     {
@@ -18844,6 +18700,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/module-compresseur/index.html"
+      ]
+    },
+    {
+      "cle": "b528f6bf-1115",
+      "texte": "La synthèse de la ligne. Trois particules partent ensemble et se séparent à la bouteille. Le débit qui sort du refoulement moyenne température se sépare en trois à la bouteille flash : du liquide vers les meubles positifs, du liquide vers les meubles négatifs, et de la vapeur vers la dérivation. À gauche, le trajet dans la centrale. À droite, le même trajet sur le diagramme log P H. La couleur suit l'état du fluide, pas son chemin : chaud et comprimé, liquide sous pression, en évaporation, ou vapeur de détente. Le même code de couleur est utilisé dans les deux vues. L'exemple suivi : Basse température moins 32 degrés Celsius (13,4 bar), moyenne température moins 8 degrés Celsius (28,2 bar), pression intermédiaire 38 bar, haute pression 90 bar, sortie du refroidisseur de gaz 35 degrés Celsius. Valeurs d'illustration. Ce que montre le schéma. À gauche le trajet dans la centrale, à droite le même trajet sur le diagramme log P H. Les deux animations tournent en phase : le point suivi dans le circuit est celui qui se déplace sur le tracé. Le bouton plein écran de la barre du haut agrandit les deux vues.",
+      "type": "capture",
+      "sources": [
+        "packs/fluides/res/co2-r744/booster-diagramme/double-vue"
       ]
     },
     {
@@ -21991,14 +21855,6 @@
       ]
     },
     {
-      "cle": "d410e98b-430",
-      "texte": "Questions , escale 12. Que devient la vapeur entraînée par l'éjecteur en sortie de diffuseur ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. Elle repart vers les évaporateurs basse température. Réponse 2. Elle est refoulée à la pression intermédiaire, vers la bouteille. Réponse 3. Elle est envoyée directement au refroidisseur de gaz",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/ejecteur/e-q2"
-      ]
-    },
-    {
       "cle": "d4131dcc-16",
       "texte": "Charge autorisée",
       "type": "choix",
@@ -22409,14 +22265,6 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/pressostat-combine-kp15/index.html"
-      ]
-    },
-    {
-      "cle": "d77acd4d-453",
-      "texte": "Questions , escale 8. La vanne de gaz de détente d'une centrale reste bloquée grande ouverte. Quel effet attendre ?. Choisissez, puis lisez l'explication. Ce que montre le schéma. Aucune donnée n'est transmise : le score reste dans ce navigateur. Réponse 1. La centrale consomme sans produire davantage de froid. Réponse 2. Les meubles négatifs dégivrent en permanence et remontent en température. Réponse 3. La haute pression tombe sous le point triple",
-      "type": "capture",
-      "sources": [
-        "packs/fluides/res/co2-r744/booster/b-q3"
       ]
     },
     {
