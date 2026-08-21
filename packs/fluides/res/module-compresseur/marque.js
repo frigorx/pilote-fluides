@@ -184,7 +184,14 @@
     "@media (max-width:560px){#marque-inerweb{font-size:0;gap:0}" +
     "#marque-inerweb svg{width:86px;height:18px}" +
     "#marque-inerweb.marque-document{font-size:10px;gap:6px}" +
-    "#marque-inerweb.marque-document .marque-droits{font-size:9.5px}}" +
+    "#marque-inerweb.marque-document .marque-droits{font-size:9.5px}" +
+    /* Cette page utilise body en flex. En mobile, un filigrane ajouté comme
+       enfant direct deviendrait une colonne supplémentaire et élargirait la
+       page. On reprend donc l'emprise compacte du mode fixe. */
+    "body>#marque-inerweb.marque-document{position:fixed;left:8px;right:auto;bottom:6px;" +
+    "width:86px;max-width:86px;margin:0;padding:0;border:0;pointer-events:none}" +
+    "body>#marque-inerweb.marque-document .marque-lic,body>#marque-inerweb.marque-document .marque-droits," +
+    "body>#marque-inerweb.marque-document .marque-referentiel{display:none}}" +
     /* à l'impression : fixe, donc répétée en pied de chaque feuille, ET
        mention longue visible — c'est la feuille papier qui circule et
        qui doit porter la preuve. */

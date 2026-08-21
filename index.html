@@ -191,6 +191,10 @@
   .vue-ligne .vl-det { color:var(--mut); font-size:13.5px; margin-top:2px; }
   .vue-ligne .vl-desc { color:var(--txt); font-size:13.5px; margin-top:6px;
                         line-height:1.45; max-width:34em; }
+  .vue-ligne .vl-support { display:inline-block; margin-top:7px; padding:3px 9px;
+                           border:1.5px solid #2f5689; border-radius:999px;
+                           color:#1b3a63; background:#eef5fc; font-size:12.5px;
+                           font-weight:bold; line-height:1.25; }
   /* Texte réservé aux lecteurs d'écran : l'état « visité » ne doit pas
      reposer sur la seule couleur du rond. */
   .lecteur-seul { position:absolute; width:1px; height:1px; overflow:hidden;
@@ -503,6 +507,7 @@
       <span class="puce-l"><span class="rond vu"></span> visitée</span>
       <span class="puce-l"><span class="rond corr"></span> station sur deux lignes à la fois</span>
       <span class="puce-l">🔒 code formateur</span>
+      <span class="puce-l">💻 PC/tablette conseillé = téléphone en consultation</span>
       <span class="puce-l"><b id="trajet-n">0</b>&nbsp;/&nbsp;<span id="trajet-total">…</span> stations · ton trajet reste sur cet appareil</span>
       <button type="button" id="trajet-effacer">⟳ effacer mon trajet</button>
     </div>
@@ -869,6 +874,22 @@
     return { id: "outil-" + fichier, href: OUTILLAGE + fichier + ".html",
              nom: nom, sous: sous };
   }
+
+  /* Le téléphone reste un support de consultation. Ces stations conservent
+     leurs schémas et leurs manipulations : un écran PC/tablette est simplement
+     annoncé avant l'ouverture quand la densité pédagogique le justifie. */
+  var SUPPORTS = {
+    "surchauffe-sous-refroidissement-interactif": true,
+    "diagramme-enthalpique": true,
+    "bilan-thermique-performance-interactif": true,
+    "module-compresseur": true,
+    "regulateur-electronique-interactif": true,
+    "pupitre-reglage-interactif": true,
+    "chaine-intervention-interactive": true,
+    "cours-classes-securite": true,
+    "etancheite-interactive": true,
+    "intervention-hydrocarbures-interactive": true
+  };
 
   /* --- Le tronc : la théorie, de la première notion au diagramme --- */
   var TRONC = {
@@ -1285,7 +1306,7 @@
     }
     var cible = s.meme_onglet ? "" : ' target="_blank" rel="noopener"';
     return '<a href="' + esc(s.href) + '"' + cible + ' data-station="' + esc(s.id) + '">' +
-           "<g><title>Ouvrir : " + esc(s.nom) + "</title>" +
+           "<g><title>Ouvrir : " + esc(s.nom) + (SUPPORTS[s.id] ? " — PC ou tablette conseillé" : "") + "</title>" +
            gare(s, x, y, couleur, visite) + t + "</g></a>";
   }
 
@@ -1624,6 +1645,7 @@
              (vu ? '<span class="lecteur-seul"> (déjà visité)</span>' : "") +
              '<div class="vl-det">' + esc(s.sous) + (s.verrou ? " — s’ouvre avec la phrase d’accès donnée en formation" : "") + "</div>" +
              (desc ? '<div class="vl-desc">' + esc(desc) + "</div>" : "") +
+             (SUPPORTS[s.id] ? '<span class="vl-support">💻 PC/tablette conseillé · téléphone en consultation</span>' : "") +
              (CORR_TXT[slug + ":" + s.id] ? '<div class="vl-corr">' + esc(CORR_TXT[slug + ":" + s.id]) + "</div>" : "") +
              '</span><span class="vl-go">▸</span></a>');
     });

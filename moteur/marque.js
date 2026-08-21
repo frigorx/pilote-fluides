@@ -181,10 +181,15 @@
     "opacity:.62;flex-wrap:wrap}" +
     "#marque-inerweb.marque-document .marque-lic{display:inline}" +
     "#marque-inerweb.marque-document .marque-droits{display:block}" +
+    /* Les cours 100dvh sortent tout leur contenu du flux. Une marque restée
+       en mode document se retrouverait alors en haut, sous l'en-tête. Le logo
+       de l'en-tête assure déjà la marque écran ; l'impression la réactive. */
+    "body.course-running>#marque-inerweb.marque-document,body.summary-running>#marque-inerweb.marque-document{display:none}" +
     "@media (max-width:560px){#marque-inerweb{font-size:0;gap:0}" +
     "#marque-inerweb svg{width:86px;height:18px}" +
     "#marque-inerweb.marque-document{font-size:10px;gap:6px}" +
-    "#marque-inerweb.marque-document .marque-droits{font-size:9.5px}}" +
+    "#marque-inerweb.marque-document .marque-droits{font-size:9.5px}" +
+    "#marque-inerweb.marque-document .marque-referentiel{max-width:100%;white-space:normal;overflow-wrap:anywhere}}" +
     /* à l'impression : fixe, donc répétée en pied de chaque feuille, ET
        mention longue visible — c'est la feuille papier qui circule et
        qui doit porter la preuve. */

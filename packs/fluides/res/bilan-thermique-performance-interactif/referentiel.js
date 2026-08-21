@@ -53,7 +53,7 @@
     badge.textContent = "· " + texte;
     /* La ligne de marque passe en font-size:0 sur petit écran pour ne garder
        que le logo : le badge suit la même règle, il disparaît avec le texte. */
-    badge.style.cssText = "font:inherit;letter-spacing:.01em;white-space:nowrap";
+    badge.style.cssText = "font:inherit;letter-spacing:.01em";
     marque.appendChild(badge);
   }
 

@@ -76,20 +76,20 @@ a:hover { color: #ff6b35; }
   var audio = new Audio(SRC);
   audio.preload = "auto";
   try { audio.preservesPitch = true; audio.webkitPreservesPitch = true; } catch (e) {}
-  var scene = null, dureeFilm = 0, raf = null;
+  var scene = null, duree_film = 0, raf = null;
 
   function trouveScene() {
     scene = document.querySelector("[data-om-exportable-video-with-duration-secs]");
-    if (scene) dureeFilm = parseFloat(scene.getAttribute("data-om-exportable-video-with-duration-secs")) || 0;
-    return !!scene && dureeFilm > 0;
+    if (scene) duree_film = parseFloat(scene.getAttribute("data-om-exportable-video-with-duration-secs")) || 0;
+    return !!scene && duree_film > 0;
   }
   function pousse(t, enLecture) {
     scene.dispatchEvent(new CustomEvent("data-om-seek-to-time-frame",
-      { detail: { time: Math.max(0, Math.min(t, dureeFilm)), playing: enLecture } }));
+      { detail: { time: Math.max(0, Math.min(t, duree_film)), playing: enLecture } }));
   }
   function synchronise() {
     if (audio.paused || audio.ended) return;
-    pousse((audio.currentTime / audio.duration) * dureeFilm, true);
+    pousse((audio.currentTime / audio.duration) * duree_film, true);
     raf = requestAnimationFrame(synchronise);
   }
 
@@ -113,10 +113,10 @@ a:hover { color: #ff6b35; }
      navigateurs intégrés (WhatsApp, lecteur de QR…) sans aucun signal
      détectable par le code — on ne peut qu'EXPLIQUER. L'aide apparaît
      à la première lecture, seulement sur ces appareils, puis s'efface. */
-  var aideFaite = false;
+  var aide_faite = false;
   function aideSilencieux() {
-    if (aideFaite) return;
-    aideFaite = true;
+    if (aide_faite) return;
+    aide_faite = true;
     var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
               (/Mac/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
     if (!ios) return;
@@ -141,7 +141,7 @@ a:hover { color: #ff6b35; }
     } else {
       audio.pause();
       if (raf) cancelAnimationFrame(raf);
-      pousse((audio.currentTime / audio.duration) * dureeFilm, false);
+      pousse((audio.currentTime / audio.duration) * duree_film, false);
       metBouton("▶ Reprendre");
     }
   });
@@ -153,7 +153,7 @@ a:hover { color: #ff6b35; }
   });
   audio.addEventListener("ended", function () {
     if (raf) cancelAnimationFrame(raf);
-    if (scene) pousse(dureeFilm, false);
+    if (scene) pousse(duree_film, false);
     metBouton("▶ Réécouter");
   });
 })();

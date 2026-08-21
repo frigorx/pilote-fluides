@@ -65,3 +65,16 @@ body.course-running,body.summary-running{height:100dvh;overflow:hidden}
   .summary-running .final-message{padding:10px}.summary-running .final-message h2{font-size:27px}.summary-running .pillars{font-size:9px}.summary-running .pillars span,.summary-running .pillars strong{padding:6px 8px}.summary-running .next-brick{padding:10px;margin:5px auto 0}.summary-running .next-brick strong{font-size:18px}.summary-running .next-brick span{font-size:10px}.summary-running footer{left:10px;right:10px}
 }
 @media print{.topbar-actions,.voice-controls,.lesson-footer,.start,.ambient,.next-tool,footer button{display:none!important}body{color:#000;background:#fff}.experience{width:100%}.hero,.module-shell{display:block;min-height:0}.stepper{display:none}.lesson-card,.zone-card,.hero-equations article,.refs,.next-brick{box-shadow:none;background:#fff}.interactive-zone{background:#fff}.final-message{padding:30px 0}@page{margin:15mm}}
+
+/* Les treize repères doivent se partager la largeur du téléphone : `1fr`
+   seul conserve la largeur minimale du texte dans certains navigateurs. */
+@media screen and (max-width:650px){
+  .stepper{grid-template-columns:repeat(13,minmax(0,1fr));gap:2px;min-width:0}
+  .stepper button{min-width:0;justify-content:center;padding:3px 1px}
+  .stepper button span{display:none}
+  body:not(.course-running) .lesson-top{display:grid;grid-template-columns:minmax(0,1fr);min-width:0}
+  body:not(.course-running) .voice-controls{min-width:0;max-width:100%;justify-content:flex-start}
+  body:not(.course-running) .voice-choice-control{min-width:0;max-width:100%}
+  body:not(.course-running) .voice-choice-control select{max-width:min(180px,100%)}
+  body:not(.course-running) .zone-grid{grid-template-columns:1fr}
+}

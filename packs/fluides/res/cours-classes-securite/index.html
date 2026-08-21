@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="inerweb-support" content="pc-tablette">
   <meta name="description" content="Cours interactif : lire une classe NF EN 378 (A1, A2L, A3, B2L…), le triangle du feu, le domaine d'explosivité et un cas réel d'accident.">
   <title>Classes de sécurité des fluides frigorigènes — cours interactif</title>
+  <link rel="stylesheet" href="../../../../moteur/support-appareil.css?v=20260821-2">
+  <script src="../../../../moteur/support-appareil.js?v=20260821-2" defer></script>
   <style>
     :root{--blue:#193b56;--ice:#e9f0ee;--steel:#bac5c8;--orange:#d87832;--green:#2d7958;--red:#a63d32;--ink:#2d3d45;--muted:#667277;--paper:#f5f1e8;--shadow:0 12px 30px #1c344326}
     *{box-sizing:border-box}
@@ -176,6 +179,14 @@
     #subtitle{max-width:500px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#4b6175;font-size:14px}
     .print-note{display:none}
     @media(max-width:800px){.grid2,.rule-list,.summary,.fire-lab,.a2l-focus{grid-template-columns:1fr}.class-ladder,.accident{grid-template-columns:1fr}.accident-step:not(:last-child):after{content:"↓";right:48%;top:auto;bottom:-27px}.matrix{grid-template-columns:75px repeat(4,minmax(120px,1fr));overflow-x:auto}.slide{min-height:auto}.game-options{grid-template-columns:repeat(2,1fr)}.head{flex-wrap:wrap}.progress-wrap{order:3;flex-basis:100%}.voice{margin-left:0}.hero-visual{height:330px}.person{right:2%}.cylinder{left:5%}}
+    @media(max-width:600px){
+      .head{width:100%;max-width:100%;padding:8px;gap:6px}
+      .brand{min-width:0;gap:0;font-size:0}.brand svg{width:132px;height:auto}
+      .progress-wrap{min-width:0}.tiny{min-width:44px;min-height:44px;padding:6px}
+      main{width:calc(100% - 16px);margin:12px auto}.slide{padding:18px 14px}
+      .nav{padding:8px;gap:6px;flex-wrap:wrap}.nav button{min-height:44px;padding:8px 11px}
+      .voice{width:100%;min-width:0}.rate{max-width:95px}#subtitle{max-width:100%;white-space:normal}
+    }
     @media print{header,footer,.interactive-only{display:none!important}.slide{display:block!important;min-height:0;box-shadow:none;break-after:page}.print-note{display:block}}
   </style>
   <link rel="stylesheet" href="../../../../moteur/impression.css" media="print">

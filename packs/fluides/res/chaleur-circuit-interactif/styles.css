@@ -636,7 +636,7 @@ input[type="range"]{width:100%;accent-color:var(--orange)}
 
 @media (max-width:1050px){
   .hero{grid-template-columns:1fr;padding-top:42px}.hero-visual{max-width:780px}.spiral-strip{grid-template-columns:1fr}.spiral-strip>i{display:none}
-  .stepper{grid-template-columns:repeat(12,92px)}
+  .stepper{grid-template-columns:repeat(12,minmax(0,1fr))}
   .two-column,.synthesis-layout{grid-template-columns:1fr}.circuit-board{min-height:430px}
   .formula-layout,.calculator-layout,.power-layout,.latent-layout{grid-template-columns:1fr}.formula-hero{min-height:210px}
   .calculation-warning,.pressure-note,.power-result{grid-column:1}
@@ -655,6 +655,15 @@ input[type="range"]{width:100%;accent-color:var(--orange)}
   .balance-equation>i{transform:rotate(90deg);text-align:center}.balance-card{width:100%}
   .takeaway{width:calc(100% - 20px);margin:34px auto;padding:24px}.takeaway-grid{grid-template-columns:1fr 1fr}.takeaway-actions{flex-wrap:wrap}
   .page-footer{display:grid;text-align:center}
+}
+
+/* Mobile : le sommaire de 12 étapes et les outils d'en-tête restent dans la
+   largeur disponible. Le contenu du cours n'est ni masqué ni supprimé. */
+@media (max-width:760px){
+  .brand{min-width:0}.brand svg{width:118px;height:auto}.brand>span{display:none}
+  .topbar-tools{min-width:0;flex-wrap:nowrap;gap:4px}.quiet-link,.quiet-button{min-width:0;max-width:82px;padding:6px;font-size:10px;line-height:1.1;text-align:center;white-space:normal}
+  .stepper{grid-template-columns:repeat(12,minmax(0,1fr));gap:2px;overflow:hidden}
+  .stepper button{min-width:0;padding:3px 1px}.stepper button b{display:none}
 }
 
 @media (max-width:480px){
@@ -739,10 +748,10 @@ body.course-running{height:100dvh;overflow:hidden;background:#eef2f6}
 @media (max-width:760px){
   .course-running .topbar{position:fixed;align-items:center}
   .course-running .course-shell{width:auto;margin:0;padding:5px}
-  .course-running .stepper{grid-template-columns:repeat(12,38px);overflow-x:auto}
+  .course-running .stepper{grid-template-columns:repeat(12,minmax(0,1fr));overflow:hidden}
   .course-running .stepper button b{display:none}
-  .course-running .lesson-heading{display:flex;padding:7px 9px}
-  .course-running .speech-panel{flex-wrap:nowrap}
+  .course-running .lesson-heading{display:grid;grid-template-columns:minmax(0,1fr);min-width:0;padding:7px 9px}
+  .course-running .speech-panel{min-width:0;max-width:100%;justify-content:flex-start;flex-wrap:wrap}
   .course-running .voice-control span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
   .course-running .voice-control select{width:108px}
   .course-running .lesson-zone{min-height:0;padding:5px 7px;overflow:auto}
