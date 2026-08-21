@@ -26,7 +26,8 @@ function compileInlineScripts(html, label) {
 }
 
 function checkOffline(html, label) {
-  check(!/(?:src|href)\s*=\s*["']https?:/i.test(html), `${label} ne charge aucune dépendance distante`);
+  const distantDependency = /<(?:script|img|iframe|audio|video|source)\b[^>]*\bsrc\s*=\s*["']https?:|<link\b(?=[^>]*\brel\s*=\s*["'](?:stylesheet|preload|modulepreload|icon)["'])[^>]*\bhref\s*=\s*["']https?:/i;
+  check(!distantDependency.test(html), `${label} ne charge aucune dépendance distante`);
   check(!/data:image\//i.test(html), `${label} ne contient pas d’image base64 opaque`);
   check(!/cdn|fonts\.googleapis|manufacturer/i.test(html), `${label} ne dépend ni d’un CDN ni du visuel constructeur écarté`);
 }

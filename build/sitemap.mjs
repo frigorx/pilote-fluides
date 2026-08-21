@@ -25,9 +25,21 @@ const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
      d'indexation à trancher par F. Henninot avant de l'y remettre.
    · galerie.html : noindex par décision (en réévaluation). */
 const INDEXEES = [
-  { fichier: "index.html",      url: "https://inerweb.fr/" },
-  { fichier: "metier.html",     url: "https://inerweb.fr/metier.html" },
+  { fichier: "index.html", url: "https://inerweb.fr/" },
+  { fichier: "metier.html", url: "https://inerweb.fr/metier.html" },
   { fichier: "formateurs.html", url: "https://inerweb.fr/formateurs.html" },
+  {
+    fichier: "packs/fluides/res/pressostat-combine-kp15/index.html",
+    url: "https://inerweb.fr/packs/fluides/res/pressostat-combine-kp15/index.html",
+  },
+  {
+    fichier: "packs/fluides/res/diagramme-enthalpique/index.html",
+    url: "https://inerweb.fr/packs/fluides/res/diagramme-enthalpique/index.html",
+  },
+  {
+    fichier: "packs/fluides/res/surchauffe-sous-refroidissement-interactif/index.html",
+    url: "https://inerweb.fr/packs/fluides/res/surchauffe-sous-refroidissement-interactif/index.html",
+  },
 ];
 
 const lignes = [];
@@ -40,6 +52,11 @@ for (const p of INDEXEES) {
   const html = readFileSync(chemin, "utf8");
   if (/name="robots"[^>]*noindex/.test(html)) {
     console.error("✗ sitemap : " + p.fichier + " porte un noindex — contradiction, corriger la liste ou la page");
+    process.exit(1);
+  }
+  const canonical = html.match(/<link\b[^>]*\brel=["']canonical["'][^>]*\bhref=["']([^"']+)["']/i)?.[1];
+  if (canonical !== p.url) {
+    console.error("✗ sitemap : " + p.fichier + " doit déclarer le canonical exact " + p.url);
     process.exit(1);
   }
   lignes.push("  <url><loc>" + p.url + "</loc></url>");

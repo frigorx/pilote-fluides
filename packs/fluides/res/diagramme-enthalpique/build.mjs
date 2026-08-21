@@ -27,18 +27,19 @@ function replaceTokens(template, values) {
   for (const [token, value] of Object.entries(values)) {
     output = output.replaceAll(`__${token}__`, value);
   }
-  const remaining = output.match(/__(?:DOCUMENT_TITLE|COURSE_CSS|MODULE_DATA|COURSE_CONFIG|COURSE_JS|HUB_CSS|CORE_IDS|HUB_JS)__/g);
+  const remaining = output.match(/__(?:DOCUMENT_TITLE|COURSE_CSS|MODULE_DATA|COURSE_CONFIG|COURSE_JS|MARQUE_JS|HUB_CSS|CORE_IDS|HUB_JS)__/g);
   if (remaining) throw new Error(`Jetons non remplacés : ${remaining.join(", ")}`);
   return output;
 }
 
-function renderCourse(moduleData, config) {
+function renderCourse(moduleData, config, marqueJs) {
   return replaceTokens(courseShell, {
     DOCUMENT_TITLE: config.documentTitle,
     COURSE_CSS: courseCss,
     MODULE_DATA: inlineJson(moduleData),
     COURSE_CONFIG: inlineJson(config),
-    COURSE_JS: courseJs
+    COURSE_JS: courseJs,
+    MARQUE_JS: marqueJs
   });
 }
 
@@ -54,15 +55,15 @@ const generated = [
   ["cours-complet.html", renderCourse(MODULES, {
     documentTitle: "Diagramme enthalpique — parcours modulable",
     defaultIds: CORE_IDS
-  })],
+  }, "../../../../moteur/marque.js")],
   ["cours-habilitation.html", renderCourse(MODULES.filter((module) => CORE_IDS.includes(module.id)), {
     documentTitle: "Diagramme enthalpique — essentiels habilitation",
     fixedIds: CORE_IDS
-  })],
+  }, "../../../../moteur/marque.js")],
   ["cours-toutes-courbes.html", renderCourse(MODULES, {
     documentTitle: "Diagramme enthalpique — toutes les familles",
     fixedIds: ALL_IDS
-  })]
+  }, "../../../../moteur/marque.js")]
 ];
 
 for (const module of MODULES) {
@@ -72,7 +73,7 @@ for (const module of MODULES) {
     renderCourse([module], {
       documentTitle: `Diagramme enthalpique — ${module.title}`,
       fixedIds: [module.id]
-    })
+    }, "../../../../../moteur/marque.js")
   ]);
 }
 

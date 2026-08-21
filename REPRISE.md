@@ -305,9 +305,10 @@
 > 3. **Contraste** : `#ff6b35` sur beige ≈ 2,52:1, blanc sur orange ≈ 2,84:1, le gris
 >    `#8494a4` ≈ 2,8-3,1:1, pour un seuil de 4,5:1. Corriger = créer une variante foncée
 >    DANS la charte (`usine-contenu\00-charte\`), hors de ce dépôt.
-> 4. **SEO des modules** : les ~60 cours sont indexables mais hors sitemap et sans
->    canonical. Les y mettre contredirait « galerie cachée tant que la relecture métier
->    n'est pas faite » : c'est un arbitrage, pas une correction.
+> 4. **SEO des autres modules** : le 21/08, F. Henninot a demandé une première mise en
+>    visibilité ciblée pour KP15, le diagramme enthalpique et surchauffe / sous-refroidissement.
+>    Ces trois pages ont un canonical et entrent dans le sitemap contrôlé. Les autres cours
+>    restent hors sitemap tant qu'ils ne sont pas arbitrés de la même manière.
 > 5. **`mentions.html`** : toujours un brouillon non lié, champs ⟦à valider⟧. Son
 >    « aucun script tiers » est redevenu VRAI avec `513a533`.
 > 6. **`contact@inerweb.fr`** est affiché par `regulateur-electronique-interactif` :
