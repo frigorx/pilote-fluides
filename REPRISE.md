@@ -2,10 +2,49 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
-> Dernière mise à jour : **20 août 2026, tard** (relecture métier CO₂ tranchée, fusion sur
-> `main` et mise en ligne, ligne de l'huile coupée en deux, recherche de cours ; + la ligne
-> CO₂ / R744, 20/08 au soir ; + stations pressostats et régulateur électronique, 19/08)
-> (la file des 8 remarques du 19 au soir est soldée ; l'état du 19/08 reste valable pour le reste).
+> Dernière mise à jour : **21 août 2026** (fonds vocal central passé entièrement en
+> edge-tts ; correctifs d'adaptabilité écran de ChatGPT repris et commités) — voir
+> ci-dessous. L'état du 20/08 (tard) reste valable pour le reste.
+
+> ## 21/08 — Le fonds vocal central passe entièrement en edge-tts
+>
+> Diagnostic complet dans `CONTROLE-VOIX-2026-08-21.md` (racine du dépôt) : la voix Piper
+> siwis-medium sifflait sur les consonnes (bruit de vocoder mesuré, +11 dB dans le haut du
+> spectre) et 51 % du corpus n'avait pas de MP3, donc basculait sur la voix du navigateur
+> en cours de station — c'est l'irrégularité que F. Henninot entendait.
+>
+> **Les 34 stations du fonds central sont refabriquées** : deux voix `edge-tts` affectées
+> par rôle — Rémy (`fr-FR-RemyMultilingualNeural`) pour les narrations et fiches suivies,
+> Vivienne (`fr-FR-VivienneMultilingualNeural`) pour les questions et corrections. La voix
+> change avec le rôle, jamais au hasard. 2 475 narrations sur 2 561 entrées de l'index,
+> **0 raté**. Choix de voix et règle d'alternance validés par F. Henninot après écoute
+> comparative (banc d'écoute et pages avant/après envoyées, non conservées dans le dépôt).
+>
+> ⚠️ **`edge-tts` envoie le texte des narrations à Microsoft au moment de la fabrication en
+> atelier** — jamais en séance, jamais chez le stagiaire, mais un appel réseau réel. Script
+> versionné : `build/voix/generer-audios-edge-tts.py`, qui exige `--confirmer` pour cette
+> raison. C'est déjà le régime des 20 stations de l'huile (Henri/Denise), dont la recette de
+> fabrication vit dans `atelier-animations`, pas ici.
+>
+> **Reste hors de ce chantier, volontairement** : les 3 stations muettes des Gestes (vanne
+> de service, manifold 2 et 4 voies) n'ont aucun texte au corpus — leur donner une voix
+> suppose d'écrire d'abord le texte pédagogique, un travail de contenu, pas de voix.
+>
+> ## 21/08 — Adaptabilité écran : travail de ChatGPT repris et commité
+>
+> Un lot non commité de ChatGPT touchait `index.html`, `moteur/marque.js`,
+> `moteur/referentiel.js` et une dizaine de pages de cours (support d'appareil, correctifs
+> responsive). Relu diff par diff, testé en navigateur à 375 px (aucun débordement
+> horizontal, page normale et mode cours actif), puis commité séparément du chantier voix.
+>
+> Deux choses : un nouveau panneau `moteur/support-appareil.js` qui recommande PC/tablette
+> sur 10 stations denses (diagramme enthalpique, régulateur électronique, pupitre de
+> réglage…) sans rien bloquer sur téléphone ; et la correction d'une largeur fantôme
+> (`repeat(12,92px)` → `minmax(0,1fr)`) sur trois stations qui débordaient sur petit écran.
+>
+> ⚠️ **Aucun push** — comme toujours sur ce dépôt, diffusion gelée sauf feu vert explicite.
+> Deux commits locaux distincts : `9fa5c49` (écran) et `ec6de62` (voix), tous deux au-dessus
+> de `582af32`.
 
 > ## 20/08 (tard) — TOUT EST EN LIGNE : `main` est à `11acffa`
 >
