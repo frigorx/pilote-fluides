@@ -145,6 +145,41 @@
   .sommaire .sous { display:block; font-size:13.5px; color:var(--mut); }
   /* Une ancre visée ne doit pas se coller au bord haut de la fenêtre. */
   .surtitre[id] { scroll-margin-top:16px; }
+
+  /* --- Domaines illustrés (V2 photos du 20/08, intégrée le 21/08) ---------
+     Les visuels sont des illustrations générées : la note de transparence en
+     fin de section n'est pas décorative, elle dit la part de l'IA. */
+  .heros-photo { margin:0; border-top:1px solid var(--ligne); }
+  .heros-photo img { display:block; width:100%; height:auto; }
+  .domaine { margin-top:16px; overflow:hidden; }
+  .domaine .tete { display:flex; gap:14px; align-items:flex-start; padding:18px 22px 12px; }
+  .domaine .numero { font-family:var(--titre); font-weight:bold; font-size:24px; color:var(--orange);
+                     line-height:1; flex:none; }
+  .domaine .tete h3 { margin:0 0 4px; font-family:var(--titre); font-size:19px; color:var(--bleu); }
+  .domaine .tete p { margin:0 0 6px; color:var(--mut); font-size:15px; }
+  .domaine .tete .ou { margin:0; font-size:14px; color:var(--mut); }
+  .cadre-photo { position:relative; }
+  .cadre-photo img { display:block; width:100%; height:auto; }
+  .reperes { position:absolute; inset:0; display:grid; grid-template-columns:repeat(3,1fr);
+             pointer-events:none; }
+  .reperes span { align-self:start; justify-self:start; margin:12px 0 0 12px;
+                  width:30px; height:30px; border-radius:50%; background:var(--bleu); color:#fff;
+                  font-family:var(--titre); font-weight:bold; font-size:15px;
+                  display:flex; align-items:center; justify-content:center;
+                  box-shadow:0 1px 6px rgba(16,35,60,.45); }
+  .legendes { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+  .legende { padding:14px 20px 16px; border-top:1px solid var(--ligne); }
+  .legende + .legende { border-left:1px solid var(--ligne); }
+  .legende h4 { margin:0 0 4px; font-family:var(--titre); font-size:15.5px; color:var(--bleu);
+                display:flex; align-items:center; gap:8px; }
+  .legende h4 b { width:22px; height:22px; flex:none; border-radius:50%; background:var(--bleu);
+                  color:#fff; font-size:13px; display:flex; align-items:center; justify-content:center; }
+  .legende p { margin:0; color:var(--mut); font-size:14.5px; }
+  @media (max-width:620px) { .legende + .legende { border-left:none; } }
+  .transparence { margin-top:16px; border-left:4px solid var(--bleu-clair); background:#f2f6fb;
+                  border-radius:8px; padding:12px 16px; font-size:14.5px; }
+  /* À l'impression, les photos partent : restent les textes et les légendes. */
+  @media print { .heros-photo, .cadre-photo { display:none; } .domaine { box-shadow:none; } }
 </style>
 </head>
 <body>
@@ -174,9 +209,6 @@
 <div class="page" role="main" id="contenu" tabindex="-1">
 
   <div class="bloc" style="margin-top:26px;overflow:hidden">
-    <!-- L'emplacement photo (atelier ou chantier) attend une image qui colle
-         parfaitement au propos — règle : l'objet montré décide. En attendant,
-         pas d'image plutôt qu'une image approximative. -->
     <div style="padding:24px 28px">
       <div class="pastille">DÉCOUVRIR LE MÉTIER</div>
       <h1>Frigoriste, climaticien, technicien CVC.</h1>
@@ -186,10 +218,16 @@
       <p style="margin:10px 0 0;color:var(--mut);font-size:14.5px">Lecture : 5 à 10 minutes ·
       aucun prérequis.</p>
       <div class="actions">
-        <a class="bouton" href="#familles">Voir les cinq familles ▾</a>
+        <a class="bouton" href="#familles">Voir les six domaines ▾</a>
         <a class="bouton clair" href="index.html#carte">Essayer un cours ▸</a>
       </div>
     </div>
+    <figure class="heros-photo">
+      <picture>
+        <source media="(max-width:720px)" srcset="photos/hero-techniciens-frigoristes-840.jpg">
+        <img src="photos/hero-techniciens-frigoristes-1440.jpg" width="1440" height="960" alt="Deux techniciens frigoristes sur une toiture technique contrôlent une installation avec un manifold à deux manomètres et une tablette.">
+      </picture>
+    </figure>
   </div>
 
   <!-- SUR CETTE PAGE — la table des matières du plan composé par F. Henninot.
@@ -198,7 +236,7 @@
   <nav class="bloc sommaire" aria-label="Sur cette page">
     <span class="titre-som">Sur cette page</span>
     <ol>
-      <li><a href="#familles"><span class="quoi">Cinq familles</span>
+      <li><a href="#familles"><span class="quoi">Six domaines</span>
           <span class="sous">où le froid se pratique</span></a></li>
       <li><a href="#journee"><span class="quoi">Une journée type</span>
           <span class="sous">ce qu’on fait vraiment</span></a></li>
@@ -213,57 +251,163 @@
     </ol>
   </nav>
 
-  <div class="surtitre" id="familles">Cinq familles, un même circuit</div>
+  <div class="surtitre" id="familles">Six domaines, dix-huit situations</div>
   <div class="bloc liste" style="padding-bottom:14px">
     <p style="margin:0">Le compresseur, le condenseur, le détendeur, l’évaporateur : ce sont toujours
     les <strong>mêmes quatre organes</strong>. Ce qui change, c’est la machine, le client et la taille
     de l’installation.</p>
   </div>
-  <div class="tuiles">
-    <div class="bloc tuile">
-      <div class="emoji">🛒</div>
-      <h3>Froid commercial</h3>
-      <p>Vitrines, chambres froides, meubles frigorifiques, centrales de magasin. On y rencontre
-      de plus en plus le <strong>CO₂ (R-744)</strong>.</p>
-      <p class="ou"><b>Où :</b> supermarchés, restaurants, boulangeries, pharmacies.</p>
+  <div class="bloc domaine" id="dom-commercial">
+    <div class="tete">
+      <div class="numero" aria-hidden="true">01</div>
+      <div>
+        <h3>Froid commercial</h3>
+        <p>Conserver les produits à la bonne température, de la petite boutique à la grande surface, tout en limitant les arrêts et les pertes.</p>
+        <p>On y rencontre de plus en plus le <strong>CO₂ (R-744)</strong>.</p>
+        <p class="ou"><b>Où :</b> supermarchés, restaurants, boulangeries, pharmacies.</p>
+      </div>
     </div>
-    <div class="bloc tuile">
-      <div class="emoji">🌡️</div>
-      <h3>Climatisation &amp; pompes à chaleur</h3>
-      <p>Le même circuit, retourné : la PAC prend la chaleur dehors et la rend dedans. Cœur de la
-      rénovation énergétique.</p>
-      <p class="ou"><b>Où :</b> logements, bureaux, commerces, tertiaire.</p>
+    <div class="cadre-photo">
+      <picture>
+        <source media="(max-width:720px)" srcset="photos/froid-commercial-triptyque-840.jpg">
+        <img src="photos/froid-commercial-triptyque-1440.jpg" width="1440" height="960" loading="lazy" alt="Trois scènes de froid commercial : intervention dans un rayon réfrigéré de supermarché, contrôle d’une chambre froide de boucherie et maintenance d’un petit groupe frigorifique dans une épicerie.">
+      </picture>
+      <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
     </div>
-    <div class="bloc tuile">
-      <div class="emoji">🏭</div>
-      <h3>Froid industriel</h3>
-      <p>Grosses puissances, salles des machines, <strong>ammoniac (R-717)</strong> ou CO₂,
-      surveillance et consignation.</p>
-      <p class="ou"><b>Où :</b> agroalimentaire, entrepôts logistiques, patinoires, process.</p>
+    <div class="legendes">
+        <div class="legende"><h4><b>1</b>GMS et supermarchés</h4><p>Meubles frigorifiques, réserves et installations centralisées pour de grands volumes de produits.</p></div>
+        <div class="legende"><h4><b>2</b>Boucheries et commerces de bouche</h4><p>Vitrines, laboratoires et chambres froides au plus près de la fabrication et de la vente.</p></div>
+        <div class="legende"><h4><b>3</b>Épiceries et petites surfaces</h4><p>Équipements compacts qui demandent une intervention rapide et adaptée au lieu.</p></div>
     </div>
-    <div class="bloc tuile">
-      <div class="emoji">🏢</div>
-      <h3>CVC : chauffage, ventilation, air</h3>
-      <p>Le bâtiment complet : production de chaleur, réseaux d’eau, gaines, débits d’air,
-      traitement de l’air neuf.</p>
-      <p class="ou"><b>Où :</b> hôpitaux, écoles, immeubles de bureaux, salles blanches.</p>
+  </div>
+
+  <div class="bloc domaine" id="dom-cuisine">
+    <div class="tete">
+      <div class="numero" aria-hidden="true">02</div>
+      <div>
+        <h3>Grande cuisine</h3>
+        <p>Un domaine à part entière&nbsp;: restaurants, cantines, cuisines centrales et établissements de santé utilisent du froid à chaque étape de la préparation.</p>
+        <p class="ou"><b>Où :</b> restaurants, cantines, cuisines centrales, établissements de santé.</p>
+      </div>
     </div>
-    <div class="bloc tuile">
-      <div class="emoji">📐</div>
-      <h3>Bureau d’études &amp; régulation</h3>
-      <p>On ne visse plus : on <strong>dimensionne</strong>, on chiffre, on programme la régulation
-      et on suit le chantier.</p>
-      <p class="ou"><b>Où :</b> bureaux d’études CVC, installateurs, exploitation, collectivités.</p>
+    <div class="cadre-photo">
+      <picture>
+        <source media="(max-width:720px)" srcset="photos/grande-cuisine-triptyque-840.jpg">
+        <img src="photos/grande-cuisine-triptyque-1440.jpg" width="1440" height="960" loading="lazy" alt="Trois scènes de grande cuisine : tables réfrigérées en restaurant, chambre froide de cuisine collective et maintenance d’une machine à glace.">
+      </picture>
+      <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
+    </div>
+    <div class="legendes">
+        <div class="legende"><h4><b>1</b>Restaurants et froid sous comptoir</h4><p>Tables, armoires et tours réfrigérés intégrés aux postes de préparation.</p></div>
+        <div class="legende"><h4><b>2</b>Cuisines collectives</h4><p>Chambres froides positives et négatives pour cantines, hôpitaux et cuisines centrales.</p></div>
+        <div class="legende"><h4><b>3</b>Équipements spécialisés</h4><p>Machines à glace, cellules de refroidissement et équipements adaptés au rythme du service.</p></div>
+    </div>
+  </div>
+
+  <div class="bloc domaine" id="dom-domestique">
+    <div class="tete">
+      <div class="numero" aria-hidden="true">03</div>
+      <div>
+        <h3>Climatisation domestique &amp; PAC</h3>
+        <p>Apporter du confort été comme hiver dans les logements, avec une installation soignée, bien dimensionnée et expliquée à l’occupant.</p>
+        <p>Le même circuit, retourné : la PAC prend la chaleur dehors et la rend dedans.</p>
+        <p class="ou"><b>Où :</b> logements, bureaux, commerces, tertiaire.</p>
+      </div>
+    </div>
+    <div class="cadre-photo">
+      <picture>
+        <source media="(max-width:720px)" srcset="photos/climatisation-domestique-triptyque-840.jpg">
+        <img src="photos/climatisation-domestique-triptyque-1440.jpg" width="1440" height="960" loading="lazy" alt="Trois scènes de climatisation domestique : unité intérieure murale, groupes extérieurs multisplit et pompe à chaleur air eau devant une maison.">
+      </picture>
+      <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
+    </div>
+    <div class="legendes">
+        <div class="legende"><h4><b>1</b>Splits intérieurs</h4><p>Pose, mise en service, entretien et recherche de panne dans les pièces de vie.</p></div>
+        <div class="legende"><h4><b>2</b>Groupes extérieurs et multisplit</h4><p>Plusieurs unités intérieures reliées à un même groupe, avec un réseau à organiser proprement.</p></div>
+        <div class="legende"><h4><b>3</b>Pompes à chaleur air/eau</h4><p>Chauffage et parfois eau chaude, en lien avec l’hydraulique et la régulation du logement.</p></div>
+    </div>
+  </div>
+
+  <div class="bloc domaine" id="dom-cvc">
+    <div class="tete">
+      <div class="numero" aria-hidden="true">04</div>
+      <div>
+        <h3>CVC tertiaire</h3>
+        <p>Dans les bureaux, magasins, écoles ou hôpitaux, le technicien agit sur le chauffage, la ventilation et le conditionnement d’air du bâtiment.</p>
+        <p class="ou"><b>Où :</b> hôpitaux, écoles, immeubles de bureaux, salles blanches.</p>
+      </div>
+    </div>
+    <div class="cadre-photo">
+      <picture>
+        <source media="(max-width:720px)" srcset="photos/cvc-tertiaire-triptyque-840.jpg">
+        <img src="photos/cvc-tertiaire-triptyque-1440.jpg" width="1440" height="960" loading="lazy" alt="Trois scènes de CVC tertiaire : rooftop sur un bâtiment, centrale de traitement d’air avec grand réseau de gaines et mesure du débit d’air à un diffuseur de plafond.">
+      </picture>
+      <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
+    </div>
+    <div class="legendes">
+        <div class="legende"><h4><b>1</b>Rooftops</h4><p>Unités de toiture qui traitent l’air de grands volumes comme les commerces et bâtiments tertiaires.</p></div>
+        <div class="legende"><h4><b>2</b>CTA et réseaux de gaines</h4><p>Centrales de traitement d’air, filtres, batteries, ventilateurs et distribution dans tout le bâtiment.</p></div>
+        <div class="legende"><h4><b>3</b>Bouches et diffuseurs</h4><p>Mesurer les températures et les débits pour vérifier le confort réellement obtenu dans les locaux.</p></div>
+    </div>
+  </div>
+
+  <div class="bloc domaine" id="dom-industriel">
+    <div class="tete">
+      <div class="numero" aria-hidden="true">05</div>
+      <div>
+        <h3>Froid industriel</h3>
+        <p>De fortes puissances et de grands volumes, avec une priorité constante&nbsp;: maintenir la production et la chaîne du froid en sécurité.</p>
+        <p>Grosses puissances, <strong>ammoniac (R-717)</strong> ou CO₂, surveillance et consignation.</p>
+        <p class="ou"><b>Où :</b> agroalimentaire, entrepôts logistiques, patinoires, process.</p>
+      </div>
+    </div>
+    <div class="cadre-photo">
+      <picture>
+        <source media="(max-width:720px)" srcset="photos/froid-industriel-triptyque-840.jpg">
+        <img src="photos/froid-industriel-triptyque-1440.jpg" width="1440" height="960" loading="lazy" alt="Trois scènes de froid industriel : grand groupe d’eau glacée, moteurs et compresseur de forte puissance en salle des machines, et vaste entrepôt frigorifique.">
+      </picture>
+      <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
+    </div>
+    <div class="legendes">
+        <div class="legende"><h4><b>1</b>Groupes d’eau glacée</h4><p>Chillers de forte puissance et circuits hydrauliques pour les procédés et les grands bâtiments.</p></div>
+        <div class="legende"><h4><b>2</b>Moteurs et compresseurs</h4><p>Salles des machines, équipements lourds, régulation et maintenance planifiée.</p></div>
+        <div class="legende"><h4><b>3</b>Entrepôts et grandes chambres froides</h4><p>Volumes importants, quais logistiques et continuité de la chaîne du froid.</p></div>
+    </div>
+  </div>
+
+  <div class="bloc domaine" id="dom-bureau">
+    <div class="tete">
+      <div class="numero" aria-hidden="true">06</div>
+      <div>
+        <h3>Bureau d’études &amp; préparation</h3>
+        <p>Avant le chantier, il faut transformer un besoin en solution réalisable&nbsp;: calculer, choisir, dessiner, chiffrer et coordonner.</p>
+        <p>On ne visse plus : on <strong>dimensionne</strong>, on chiffre, on programme la régulation.</p>
+        <p class="ou"><b>Où :</b> bureaux d’études CVC, installateurs, exploitation, collectivités.</p>
+      </div>
+    </div>
+    <div class="cadre-photo">
+      <picture>
+        <source media="(max-width:720px)" srcset="photos/bureau-etudes-triptyque-840.jpg">
+        <img src="photos/bureau-etudes-triptyque-1440.jpg" width="1440" height="960" loading="lazy" alt="Trois scènes de bureau d’études : conception CVC sur maquette numérique, calcul et dimensionnement sur plans, puis coordination de chantier avec une tablette.">
+      </picture>
+      <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
+    </div>
+    <div class="legendes">
+        <div class="legende"><h4><b>1</b>Conception BIM et plans</h4><p>Implanter les équipements et les réseaux en tenant compte des autres corps d’état.</p></div>
+        <div class="legende"><h4><b>2</b>Calcul et dimensionnement</h4><p>Évaluer les besoins, sélectionner le matériel, prévoir les débits et préparer le chiffrage.</p></div>
+        <div class="legende"><h4><b>3</b>Relevé et coordination de chantier</h4><p>Vérifier la réalité du site, anticiper les passages et transmettre les bonnes informations aux équipes.</p></div>
     </div>
   </div>
 
   <!-- « Un point commun » : ce qui relie les cinq familles, et qui amène
        naturellement au cadre réglementaire plus bas. Repris du plan. -->
   <div class="bloc liste" style="margin-top:16px">
-    <div class="savoir" style="margin-top:0"><strong>Un point commun :</strong> dans les cinq
-    familles, on manipule des fluides frigorigènes. Donc on passe par l’<strong>attestation
+    <div class="savoir" style="margin-top:0"><strong>Un point commun :</strong> dans les six
+    domaines, on manipule des fluides frigorigènes. Donc on passe par l’<strong>attestation
     d’aptitude</strong>, et on trace ce qu’on fait. <a href="#cadre">Pourquoi c’est réglementé ▸</a></div>
   </div>
+
+  <p class="transparence"><strong>À propos des images.</strong> Ces illustrations photoréalistes montrent des environnements types, pour rendre les domaines immédiatement reconnaissables. Elles ont été générées pour ce support&nbsp;: ce ne sont pas des photographies de personnes, d’entreprises ou de chantiers réels.</p>
 
   <div class="surtitre" id="journee">Une journée type</div>
   <div class="bloc liste">
