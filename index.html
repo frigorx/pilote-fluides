@@ -233,6 +233,18 @@
                          font-weight:bold; white-space:nowrap; }
   .nouveautes .nv-neuf { border:2px solid var(--orange); color:var(--orange); }
   .nouveautes .nv-corr { border-style:dashed; }
+  /* Le mot de l'auteur — REPLIÉ par défaut (demande de F. Henninot, 21/08) :
+     même famille que .nouveautes, la photo et le titre restent visibles fermés. */
+  .mot-auteur { background:var(--carte); border:1px solid var(--ligne); border-radius:10px;
+                margin-top:26px; padding:0; }
+  .mot-auteur summary { cursor:pointer; padding:18px 22px; min-height:44px; box-sizing:border-box;
+                        display:flex; gap:16px; align-items:center; list-style:none; }
+  .mot-auteur summary::-webkit-details-marker { display:none; }
+  .mot-auteur summary img { flex:none; border-radius:50%; background:#e7eff7;
+                            border:1.5px solid var(--ligne); }
+  .mot-auteur summary .surtitre { margin:0; }
+  .mot-auteur .ma-corps { padding:0 22px 18px calc(22px + 56px + 16px); }
+  .mot-auteur .ma-corps p { margin:0 0 10px; color:var(--txt); font-size:15px; max-width:44em; }
   .vue-ligne .vl-corr { margin-top:6px; font-size:12.5px; color:#5a6b7d; background:#eef2f6;
                         border-radius:999px; display:inline-block; padding:2px 10px; }
   .vue-ligne .vl-go { margin-left:auto; align-self:center; color:var(--orange); font-weight:bold; }
@@ -421,27 +433,31 @@
   </div>
 
   <!-- Le mot de l'auteur — EN TÊTE de page (placement demandé par
-       F. Henninot après sa première navigation, 19/08) : qui parle,
-       avant le plan. Texte dicté par lui, mis en forme ; règles tenues :
-       projet personnel, aucune institution ni ancienne société nommée. -->
-  <div class="bloc" style="margin-top:26px;padding:18px 22px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
-    <!-- Portrait dessiné de l'auteur (illustration, pas une photo), recadré sur
-         le visage : le décor d'origine portait la marque « inerWeb Fluide », qui
-         n'est pas celle de cette page. Servi en 112 px pour rester net sur les
-         écrans fins, affiché en 56. `alt` vide : le nom est juste à côté en
-         texte, un lecteur d'écran le lirait deux fois. Pas de chargement
-         différé — le bloc est dans le premier écran. -->
-    <img src="icones/auteur-112.webp" alt="" width="56" height="56"
-         style="flex:none;border-radius:50%;background:#e7eff7;border:1.5px solid var(--ligne)">
-    <div style="flex:1;min-width:240px">
-      <div class="surtitre" style="margin:0 0 6px">Le mot de l’auteur</div>
-      <p style="margin:0 0 10px;color:var(--txt);font-size:15px;max-width:44em">Bonjour,</p>
-      <p style="margin:0 0 10px;color:var(--txt);font-size:15px;max-width:44em">Technicien frigoriste pendant plusieurs années, j’enseigne aujourd’hui le froid et la climatisation. Ce site est un <strong>projet personnel</strong> : ma façon de transmettre le métier. Le contenu technique vient de mon expérience et de mon métier ; les outils, je les construis <strong>avec l’aide de l’intelligence artificielle</strong> — je conçois, je dirige, je vérifie, mais je n’écris pas seul.</p>
-      <p style="margin:0 0 10px;color:var(--txt);font-size:15px;max-width:44em">Tout reste en développement — des prototypes, des essais. Une erreur, une imprécision ? Dites-le-moi : c’est comme ça que le site s’améliore. Et si ces pages vous aident à découvrir le métier, à réviser ou à préparer l’attestation d’aptitude, elles auront fait leur travail.</p>
+       F. Henninot après sa première navigation, 19/08). Texte dicté par lui,
+       mis en forme ; règles tenues : projet personnel, aucune institution ni
+       ancienne société nommée. REPLIÉ par défaut depuis le 21/08 (même
+       famille que .nouveautes juste en dessous) : la photo et le titre
+       restent visibles fermés, personne n'est obligé de lire le texte. -->
+  <details class="mot-auteur">
+    <summary>
+      <!-- Portrait dessiné de l'auteur (illustration, pas une photo), recadré sur
+           le visage : le décor d'origine portait la marque « inerWeb Fluide », qui
+           n'est pas celle de cette page. Servi en 112 px pour rester net sur les
+           écrans fins, affiché en 56. `alt` vide : le nom est juste à côté en
+           texte, un lecteur d'écran le lirait deux fois. Pas de chargement
+           différé — le bloc est dans le premier écran. -->
+      <img src="icones/auteur-112.webp" alt="" width="56" height="56">
+      <span class="surtitre">Le mot de l’auteur</span>
+    </summary>
+    <div class="ma-corps">
+      <p>Bonjour,</p>
+      <p>Technicien frigoriste pendant plusieurs années, j’enseigne aujourd’hui le froid et la climatisation. Ce site est un <strong>projet personnel</strong> : ma façon de transmettre le métier. Le contenu technique vient de mon expérience et de mon métier ; les outils, je les construis <strong>avec l’aide de l’intelligence artificielle</strong> — je conçois, je dirige, je vérifie, mais je n’écris pas seul.</p>
+      <p>Tout reste en développement — des prototypes, des essais. Une erreur, une imprécision ? Dites-le-moi : c’est comme ça que le site s’améliore. Et si ces pages vous aident à découvrir le métier, à réviser ou à préparer l’attestation d’aptitude, elles auront fait leur travail.</p>
+      <p>Petite vidéo de présentation, portrait réalisé par la cellule communication d’EQUATIO Formation et Métier — <a href="https://youtu.be/VoUEp_3GV6c">youtu.be/VoUEp_3GV6c</a>.</p>
       <p style="margin:0;color:var(--mut);font-size:14.5px"><strong style="color:var(--txt)">F. Henninot, enseignant en filière froid et climatisation</strong><br>
       <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a></p>
     </div>
-  </div>
+  </details>
 
   <!-- ===================================================================
        NOUVEAUTÉS (demande de F. Henninot, 19/08/2026)
