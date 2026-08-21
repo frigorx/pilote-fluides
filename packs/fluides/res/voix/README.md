@@ -43,17 +43,32 @@ de l'arrêt sur question et de la remédiation. Il n'est relié à aucune page �
 
 ## Voix et droits
 
-- moteur de synthèse de fabrication : Piper 1.4.1 / VITS, logiciel GPL-3.0 ;
-- modèle français : `fr_FR-siwis-medium`, qualité medium, 22 050 Hz ;
-- données vocales SIWIS : voix française professionnelle, licence CC BY 4.0 ;
-- fichiers de modèle : conservés dans le cache de fabrication et jamais publiés avec le cours ;
+Le lot est mixte depuis le 21 août 2026. `moteur/voix-index.js` porte, entrée par entrée, un
+champ `voix` quand la synthèse n'est pas Piper — son absence signifie Piper.
+
+- fonds historique : Piper 1.4.1 / VITS, logiciel GPL-3.0, modèle `fr_FR-siwis-medium`
+  (22 050 Hz), données SIWIS sous licence CC BY 4.0 ;
+- tronc (9 stations, 706 narrations) : `edge-tts` (voix Microsoft Neural), deux voix affectées
+  par rôle — `fr-FR-RemyMultilingualNeural` pour les narrations suivies,
+  `fr-FR-VivienneMultilingualNeural` pour les questions et corrections ;
+- stations de l'huile (20 stations) : `edge-tts fr-FR-HenriNeural` / `fr-FR-DeniseNeural`,
+  fabriquées via `atelier-animations/refonte/voix/fabriquer-stations.mjs` ;
+- fichiers de modèle et outillage de fabrication : conservés hors dépôt, jamais publiés
+  avec le cours ;
 - livrables publiables : uniquement les MP3, cet avis et le code du lecteur.
 
-Sources de traçabilité :
+⚠️ `edge-tts` envoie le texte des narrations à Microsoft **au moment de la fabrication en
+atelier**, jamais en séance ni chez le stagiaire. Voir `build/voix/generer-audios-edge-tts.py`,
+qui exige `--confirmer` pour ce motif.
+
+Sources de traçabilité (fonds Piper) :
 
 - https://huggingface.co/rhasspy/piper-voices/blob/main/fr/fr_FR/siwis/medium/MODEL_CARD
 - https://github.com/OHF-Voice/piper1-gpl
 - https://datashare.ed.ac.uk/handle/10283/2353
+
+Contrôle et mesures ayant motivé le passage à edge-tts sur le tronc :
+`CONTROLE-VOIX-2026-08-21.md`, à la racine du dépôt.
 
 Ces narrations restent un lot à écouter et à valider par F. Henninot avant bon à tirer. Une voix
 naturelle ne valide ni la formulation métier, ni la prononciation des références de fluides.
@@ -86,3 +101,14 @@ python build\voix\verifier-audios.py `
   --audio packs\fluides\res\voix\audio `
   --index moteur\voix-index.js
 ```
+
+## Refaire une station du lot edge-tts (tronc)
+
+```powershell
+python -m pip install edge-tts
+python build\voix\generer-audios-edge-tts.py --modules chaleur-interactive --confirmer
+```
+
+`--modules` accepte plusieurs dossiers séparés par des virgules. Le script ne touche que les
+entrées des modules demandés : le fonds Piper et les autres stations edge-tts déjà fabriquées
+restent intacts. `--confirmer` est obligatoire — sans lui, rien n'est envoyé à Microsoft.

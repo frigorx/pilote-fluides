@@ -74,10 +74,17 @@ prétend le couvrir.
 ## 6. Les narrations vocales
 
 Les MP3 de `packs/fluides/res/voix/audio/` sont la mise en voix du contenu pédagogique : la
-licence CC BY-NC-ND 4.0 de la section 1 s'y applique donc. Ils sont fabriqués avec le modèle
-Piper `fr_FR-siwis-medium`, entraîné sur le corpus SIWIS sous licence CC BY 4.0.
+licence CC BY-NC-ND 4.0 de la section 1 s'y applique donc. Le lot est mixte :
+
+- une partie est fabriquée avec le modèle Piper `fr_FR-siwis-medium`, entraîné sur le corpus
+  SIWIS sous licence CC BY 4.0, entièrement local ;
+- les stations du tronc et de l'huile sont fabriquées avec `edge-tts` (voix Microsoft Neural).
+  Cet outil envoie le texte des narrations à Microsoft **au moment de la fabrication en
+  atelier** ; aucun appel réseau n'a lieu en séance, chez le stagiaire ou au chargement d'une
+  page. `moteur/voix-index.js` indique, entrée par entrée, quelle voix a servi.
+
 L'attribution et les sources sont conservées dans `packs/fluides/res/voix/README.md`.
-Le modèle et le logiciel Piper ne sont pas embarqués dans le site publié.
+Aucun modèle ni logiciel de fabrication n'est embarqué dans le site publié.
 
 ## 7. Usage en centre de formation — licence commerciale
 
