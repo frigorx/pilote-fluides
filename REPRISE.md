@@ -2,8 +2,27 @@
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
+
+> ## ▶ PROCHAINE SESSION — construire la branche des RÉGULATIONS
+>
+> Demande de F. Henninot, 21/08 : créer la branche annoncée le 20/08 au soir, encore
+> « en train de se créer ». **Ne pas foncer** : la ligne 🎛 CE QUI SE RÈGLE existe DÉJÀ
+> avec 10 stations (détendeur en correspondance, famille KV, KVR + NRD en sous-station,
+> pupitre, régulateur électronique, les 3 pressostats) — une ligne autonome ferait doublon.
+> Le code prévoit déjà la greffe (commentaire du NRD : « la future branche du dégivrage par
+> gaz chauds viendra s'y greffer »).
+>
+> **Règle de décision posée le 20/08** : un organe qui se règle → gare ou sous-station sur
+> la ligne existante, coût nul ; une famille d'installation entière (une PAC n'est pas un
+> réglage, c'est le circuit retourné) → sa propre ligne, coût une bande de 220 px ; au-delà
+> de HUIT stations, couper en deux dès le départ (seuil mesuré au-delà duquel les libellés
+> se recouvrent). Ne pas attendre les dix-sept comme la ligne de l'huile.
+>
+> Détail complet dans `poste-pilotage.mjs`, bloc `pilote`, aFaire.
+
 > Dernière mise à jour : **21 août 2026** (fonds vocal central passé entièrement en
-> edge-tts ; correctifs d'adaptabilité écran de ChatGPT repris et commités) — voir
+> edge-tts ; correctifs d'adaptabilité écran de ChatGPT repris et commités ; flèches et
+> croisement du plan corrigés) — voir
 > ci-dessous. L'état du 20/08 (tard) reste valable pour le reste.
 
 > ## 21/08 — Le fonds vocal central passe entièrement en edge-tts
