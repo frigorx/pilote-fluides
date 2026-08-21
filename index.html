@@ -1221,7 +1221,7 @@
   /* ------------------------------------------------------------------
      Rendu du plan. Géométrie calculée, jamais saisie par station.
      ------------------------------------------------------------------ */
-  var W = 1280, HUB_X = 940, TRONC_Y = 80;
+  var W = 1310, HUB_X = 940, TRONC_Y = 80;
   var PUCE_Y = 252, DEBUT_Y = 330, PAS = 72;
   /* Les repères horizontaux descendent de deux pas depuis le 20/08 :
      « Ce qui se règle » a gagné le KVR et sa sous-station NRD, et sa colonne
@@ -1462,7 +1462,11 @@
        l'extrémité GAUCHE, retournée : elle marque la fin du parcours, dans le
        sens où le trait est réellement lu. */
     d.push(flux("M 1226 " + HUILE_Y + " H 1262 V " + HUILE_CIRCUIT_Y + " H 285", HUILE_CIRCUIT.couleur, 8));
-    d.push('<polygon points="285,' + (HUILE_CIRCUIT_Y - 8) + " 269," + HUILE_CIRCUIT_Y + " 285," + (HUILE_CIRCUIT_Y + 8) + '" fill="' + HUILE_CIRCUIT.couleur + '"></polygon>');
+    /* La flèche marque la fin de LECTURE (dernière station, à droite), pas la
+       fin du tracé SVG (qui finit à gauche, où le trait ne fait que recevoir
+       le raccord venu de L'HUILE) — c'était le sens inversé avant cette
+       correction (21/08). Ligne terminale : même position que CEINTURE. */
+    d.push('<polygon points="1190,' + (HUILE_CIRCUIT_Y - 8) + " 1206," + HUILE_CIRCUIT_Y + " 1190," + (HUILE_CIRCUIT_Y + 8) + '" fill="' + HUILE_CIRCUIT.couleur + '"></polygon>');
     var wi = Math.round(HUILE_CIRCUIT.nom.length * 7.4 + 30);
     d.push('<a href="packs/fluides/res/circuit-huile-interactif/index.html"><g><title>Voir la branche en détail — brouillon à relire</title>' +
            '<rect x="70" y="' + (HUILE_CIRCUIT_Y - 84) + '" width="' + wi + '" height="30" rx="15" fill="' + HUILE_CIRCUIT.couleur + '"></rect>' +
@@ -1490,8 +1494,16 @@
     /* Même correction que pour le circuit d'huile : le trait s'arrêtait à
        1210, donc 40 px après être descendu — la ligne du CO₂ n'avait aucun
        trait sous ses huit stations depuis son ouverture. */
-    d.push(flux("M 1050 " + (DEBUT_Y + 2 * PAS) + " H 1250 V " + CO2_Y + " H 215", CO2.couleur, 8));
-    d.push('<polygon points="215,' + (CO2_Y - 8) + " 199," + CO2_Y + " 215," + (CO2_Y + 8) + '" fill="' + CO2.couleur + '"></polygon>');
+    /* La descente traverse toute la hauteur du plan (du niveau du compresseur
+       jusqu'à la ligne CO₂) : à x=1250, elle coupait le rail du CIRCUIT
+       D'HUILE, qui court jusqu'à x=1262. Décalée à 1290, hors de ce corridor
+       — d'où la largeur W élargie à 1310 pour lui garder de la marge. */
+    d.push(flux("M 1050 " + (DEBUT_Y + 2 * PAS) + " H 1290 V " + CO2_Y + " H 215", CO2.couleur, 8));
+    /* La flèche marque la fin de LECTURE (dernière station, à droite), pas la
+       fin du tracé SVG (qui finit à gauche) — c'était le sens inversé sur
+       cette ligne, HUILE_CIRCUIT et CENTRALES avant cette correction. Même
+       point que celui où la branche des CENTRALES prend le relais, en dessous. */
+    d.push('<polygon points="1210,' + (CO2_Y - 8) + " 1226," + CO2_Y + " 1210," + (CO2_Y + 8) + '" fill="' + CO2.couleur + '"></polygon>');
     d.push('<circle cx="1050" cy="' + (DEBUT_Y + 2 * PAS) + '" r="7" fill="#ffffff" stroke="' + CO2.couleur + '" stroke-width="4"></circle>');
     var wq = Math.round(CO2.nom.length * 7.4 + 30);
     d.push('<a href="#ligne=' + CO2.slug + '"><g><title>Voir la ligne en détail</title>' +
@@ -1512,7 +1524,9 @@
        la droite, redescend et repart. C'est le sens même du découpage — on a
        compris le fluide, on regarde maintenant les machines. */
     d.push(flux("M 1226 " + CO2_Y + " H 1262 V " + CENTRALES_Y + " H 285", CENTRALES.couleur, 8));
-    d.push('<polygon points="285,' + (CENTRALES_Y - 8) + " 269," + CENTRALES_Y + " 285," + (CENTRALES_Y + 8) + '" fill="' + CENTRALES.couleur + '"></polygon>');
+    /* Même correction de sens que HUILE_CIRCUIT : la flèche marque la fin de
+       lecture (dernière station), pas la fin du tracé SVG. */
+    d.push('<polygon points="1190,' + (CENTRALES_Y - 8) + " 1206," + CENTRALES_Y + " 1190," + (CENTRALES_Y + 8) + '" fill="' + CENTRALES.couleur + '"></polygon>');
     var wn = Math.round(CENTRALES.nom.length * 7.4 + 30);
     d.push('<a href="#ligne=' + CENTRALES.slug + '"><g><title>Voir la branche en détail</title>' +
            '<rect x="70" y="' + (CENTRALES_Y - 84) + '" width="' + wn + '" height="30" rx="15" fill="' + CENTRALES.couleur + '"></rect>' +
