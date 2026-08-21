@@ -1360,7 +1360,8 @@ body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mod
     ui.progressLabel.textContent = currentKind === "lesson" ? COURSE.lessons[screen].short : currentKind === "quiz" ? "Quiz" : "Bilan";
     ui.back.disabled = screen === 0;
     if (lectureSuivie) speak();
-    document.title = `${ui.title.textContent} — KP15 HP/BP`;
+    // Le titre de page décrit le cours complet pour les moteurs et reste stable
+    // pendant la navigation entre les étapes.
   }
 
   function move(delta) {
