@@ -13,7 +13,7 @@
 | Fiches qui en appellent au moins un | **50** |
 | Codes du référentiel couverts par un cours | **99** |
 | Codes encore expliqués par du texte seul | **0** |
-| Poids total des cours | **52.1 Mo** |
+| Poids total des cours | **63.1 Mo** |
 
 ## Anomalies
 
@@ -22,11 +22,11 @@
 Du travail fait que personne ne peut atteindre depuis le parcours.
 - `circuit-huile-interactif` — 26 Ko
 - `clapet-differentiel-huile-pedagogique` — 2274 Ko
-- `commande-directe-thermostat` — 1 Ko
-- `degivrage-electrique` — 1 Ko
-- `degivrage-gaz-chauds` — 1 Ko
-- `degivrage-inversion-cycle` — 1 Ko
-- `degivrage-naturel` — 1 Ko
+- `commande-directe-thermostat` — 1182 Ko
+- `degivrage-electrique` — 1123 Ko
+- `degivrage-gaz-chauds` — 1137 Ko
+- `degivrage-inversion-cycle` — 1129 Ko
+- `degivrage-naturel` — 1060 Ko
 - `diagnostic-circuit-huile` — 1687 Ko
 - `diagnostic-circuit-huile-conclure` — 1493 Ko
 - `diagramme-enthalpique` — 720 Ko
@@ -42,10 +42,10 @@ Du travail fait que personne ne peut atteindre depuis le parcours.
 - `pressostat-differentiel-huile-pedagogique` — 1681 Ko
 - `pressostat-hp-kp5` — 1271 Ko
 - `pressostat-huile-securite` — 1652 Ko
-- `protection-minimum-serie` — 1 Ko
-- `pump-down-ameliore` — 1 Ko
-- `pump-down-automatique` — 1 Ko
-- `pump-down-unique` — 1 Ko
+- `protection-minimum-serie` — 1162 Ko
+- `pump-down-ameliore` — 1105 Ko
+- `pump-down-automatique` — 1148 Ko
+- `pump-down-unique` — 1132 Ko
 - `regulateur-electronique-interactif` — 164 Ko
 - `regulateur-huile-mecanique-pedagogique` — 2415 Ko
 - `regulateur-kvl-pedagogique` — 2 Ko
@@ -54,7 +54,7 @@ Du travail fait que personne ne peut atteindre depuis le parcours.
 - `reservoir-huile-pedagogique` — 2603 Ko
 - `retour-huile-naturel` — 1769 Ko
 - `retour-huile-verifier` — 2544 Ko
-- `sans-degivrage-commande` — 1 Ko
+- `sans-degivrage-commande` — 1141 Ko
 - `separateur-eclatement-pedagogique` — 2767 Ko
 - `separateur-huile-pedagogique` — 2693 Ko
 - `technologie-huiles-choix-controle` — 2282 Ko
@@ -115,14 +115,14 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `circuit-organe-par-organe` | g6, g7, g8, g9 | — | 1.04 | 843 Ko |
 | `clapet-differentiel-huile-pedagogique` | **orphelin** | — | — | 2274 Ko |
 | `co2-r744` | cl3, g13 | 100 | 11.01 · 11.04 · 11.06 · 13.02 · 13.04 · 13.15 · 13.16 · 13.17 · 13.01 · 13.03 | 321 Ko |
-| `commande-directe-thermostat` | **orphelin** | — | — | 1 Ko |
+| `commande-directe-thermostat` | **orphelin** | — | — | 1182 Ko |
 | `compresseur-interactif` | g6, g6b | 13 | 6.02 · 6.03 · 6.04 · 6.05 · 9.07 | 74 Ko |
 | `condenseur-interactif` | g7b | 25 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 · 7.06 · 7.08 | 94 Ko |
 | `cours-classes-securite` | cl1 | — | 1.08 | 157 Ko |
-| `degivrage-electrique` | **orphelin** | — | — | 1 Ko |
-| `degivrage-gaz-chauds` | **orphelin** | — | — | 1 Ko |
-| `degivrage-inversion-cycle` | **orphelin** | — | — | 1 Ko |
-| `degivrage-naturel` | **orphelin** | — | — | 1 Ko |
+| `degivrage-electrique` | **orphelin** | — | — | 1123 Ko |
+| `degivrage-gaz-chauds` | **orphelin** | — | — | 1137 Ko |
+| `degivrage-inversion-cycle` | **orphelin** | — | — | 1129 Ko |
+| `degivrage-naturel` | **orphelin** | — | — | 1060 Ko |
 | `detendeur-interactif` | g9 | 14 | 1.04 · 9.10 · 9.03 | 175 Ko |
 | `diagnostic-circuit-huile` | **orphelin** | — | — | 1687 Ko |
 | `diagnostic-circuit-huile-conclure` | **orphelin** | — | — | 1493 Ko |
@@ -153,10 +153,10 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `pressostat-differentiel-huile-pedagogique` | **orphelin** | — | — | 1681 Ko |
 | `pressostat-hp-kp5` | **orphelin** | 26 | 6.03 · 7.04 · 9.06 | 1271 Ko |
 | `pressostat-huile-securite` | **orphelin** | — | — | 1652 Ko |
-| `protection-minimum-serie` | **orphelin** | — | — | 1 Ko |
-| `pump-down-ameliore` | **orphelin** | — | — | 1 Ko |
-| `pump-down-automatique` | **orphelin** | — | — | 1 Ko |
-| `pump-down-unique` | **orphelin** | — | — | 1 Ko |
+| `protection-minimum-serie` | **orphelin** | — | — | 1162 Ko |
+| `pump-down-ameliore` | **orphelin** | — | — | 1105 Ko |
+| `pump-down-automatique` | **orphelin** | — | — | 1148 Ko |
+| `pump-down-unique` | **orphelin** | — | — | 1132 Ko |
 | `pupitre-reglage-interactif` | g9b | 9 | 9.04 · 9.06 · 7.04 | 71 Ko |
 | `recuperation-fluide-interactive` | p2 | 8 | 5.01 · 5.02 · 5.03 · 5.05 · 5.06 | 184 Ko |
 | `regulateur-electronique-interactif` | **orphelin** | 24 | 9.04 · 6.03 | 164 Ko |
@@ -168,7 +168,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `reservoir-huile-pedagogique` | **orphelin** | — | — | 2603 Ko |
 | `retour-huile-naturel` | **orphelin** | — | — | 1769 Ko |
 | `retour-huile-verifier` | **orphelin** | — | — | 2544 Ko |
-| `sans-degivrage-commande` | **orphelin** | — | — | 1 Ko |
+| `sans-degivrage-commande` | **orphelin** | — | — | 1141 Ko |
 | `separateur-eclatement-pedagogique` | **orphelin** | — | — | 2767 Ko |
 | `separateur-huile-pedagogique` | **orphelin** | — | — | 2693 Ko |
 | `surchauffe-sous-refroidissement-interactif` | g1e | 13 | 5.05 · 4.05 · 1.03 · 1.06 | 102 Ko |
