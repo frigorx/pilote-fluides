@@ -3,27 +3,34 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
-> ## ▶ PROCHAINE SESSION — construire la branche des RÉGULATIONS
+> ## 22/08 — La ligne 🔌 LA RÉGULATION est en ligne
 >
-> Demande de F. Henninot, 21/08 : créer la branche annoncée le 20/08 au soir, encore
-> « en train de se créer ». **Ne pas foncer** : la ligne 🎛 CE QUI SE RÈGLE existe DÉJÀ
-> avec 10 stations (détendeur en correspondance, famille KV, KVR + NRD en sous-station,
-> pupitre, régulateur électronique, les 3 pressostats) — une ligne autonome ferait doublon.
-> Le code prévoit déjà la greffe (commentaire du NRD : « la future branche du dégivrage par
-> gaz chauds viendra s'y greffer »).
+> Le mandat du 21/08 (« construire la branche des régulations ») est **exécuté**, sous la
+> forme tranchée par F. Henninot le 22/08 au matin (brief
+> `atelier-animations/REPRISE-LIGNE-REGULATION-2026-08-22.md`) : une **ligne à part
+> entière**, pas une greffe — la rame « Les régules » de l'atelier, 10 stations de la
+> commande directe sans sécurité aux quatre dégivrages, et **deux correspondances** vers
+> 🎛 CE QUI SE RÈGLE (motif du détendeur, anneaux des deux côtés, aucun couloir) : le
+> pressostat BP entre la protection minimum et le pump-down, le régulateur électronique
+> en terminus.
 >
-> **Règle de décision posée le 20/08** : un organe qui se règle → gare ou sous-station sur
-> la ligne existante, coût nul ; une famille d'installation entière (une PAC n'est pas un
-> réglage, c'est le circuit retourné) → sa propre ligne, coût une bande de 220 px ; au-delà
-> de HUIT stations, couper en deux dès le départ (seuil mesuré au-delà duquel les libellés
-> se recouvrent). Ne pas attendre les dix-sept comme la ligne de l'huile.
+> La copie passe par un outil à liste blanche
+> (`atelier-animations/outils/copier-ligne-regules-vers-pack.mjs` : 11 coquilles +
+> catalog/engine/hub/styles, ~150 Ko, trois recollages, garde contre tout lien d'atelier
+> survivant). **Films, voix et tests restés à l'atelier** — personne n'a écouté les
+> narrations. Sur le plan : bande horizontale à 2250 entre les centrales et la boîte à
+> outils (tout ce qui suit descend de 220 px), cartouche vers le hub du pack, gares en
+> noindex comme celles de l'huile, compteur de trajet à 86.
 >
-> Détail complet dans `poste-pilotage.mjs`, bloc `pilote`, aFaire.
+> **Vérifié sur inerweb.fr en contre-cache après déploiement** : les 13 pages en 200,
+> `_regules-commun` servi (pas de piège Jekyll), liste crawlable à 15 lignes et
+> 108 stations, statut servi « Version en ligne — relecture métier en cours ».
+> Ce qui reste (validations de F. Henninot : films, narrations) vit dans
+> `poste-pilotage.mjs`, bloc `pilote`, aFaire.
 
-> Dernière mise à jour : **21 août 2026** (fonds vocal central passé entièrement en
-> edge-tts ; correctifs d'adaptabilité écran de ChatGPT repris et commités ; flèches et
-> croisement du plan corrigés) — voir
-> ci-dessous. L'état du 20/08 (tard) reste valable pour le reste.
+> Dernière mise à jour : **22 août 2026** (ligne LA RÉGULATION en ligne — voir ci-dessus).
+> L'état du 21/08 (fonds vocal edge-tts, correctifs d'écran, flèches du plan) et celui
+> du 20/08 (tard) restent valables pour le reste.
 
 > ## 21/08 — Le fonds vocal central passe entièrement en edge-tts
 >
