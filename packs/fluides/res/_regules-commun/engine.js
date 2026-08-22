@@ -12,9 +12,15 @@
 
   window.REGULE_MODULE = module;
 
+  var filmScreenCount = (module.films || []).length ? 1 : 0;
+  var lessonOffset = filmScreenCount;
+  var quizScreen = lessonOffset + module.lessons.length;
+  var totalScreens = quizScreen + 1;
+
   var state = {
     screen: 0,
     furthest: 0,
+    filmIndex: 0,
     quizIndex: 0,
     score: 0,
     answered: false,
@@ -33,7 +39,7 @@
       '<main class="app" id="app">',
       '  <header class="topbar">',
       '    <a class="brand" href="../regules-interactif/index.html" aria-label="Revenir à la carte Les régules">',
-      '      <span class="brand-name">inerWeb</span><span class="brand-edition">ÉDU</span>',
+      '      <img class="brand-logo" src="../_regules-commun/logo-inerweb-edu.svg" alt="inerWeb Édu">',
       '    </a>',
       '    <div class="module-heading"><p>' + escapeHtml(module.family) + ' · Station ' + module.number + '</p><h1>' + escapeHtml(module.title) + '</h1></div>',
     /* La voix est FABRIQUÉE (MP3 posés par voix/fabriquer-regules.mjs) : le
@@ -43,14 +49,9 @@
       '    <div class="tools" aria-label="Outils de lecture">',
       (catalog.voixFabriquee
         ? '      <button id="voice-button" class="tool-button" type="button" aria-label="Écouter cet écran" aria-pressed="false" title="Écouter l’écran">▶ <span>Écouter</span></button>' +
-          '<button id="stop-voice" class="tool-button" type="button" aria-label="Arrêter la voix" disabled title="Arrêter la voix">■ <span>Stop</span></button>'
+          '<button id="stop-voice" class="tool-button" type="button" aria-label="Arrêter la voix" disabled title="Arrêter la voix">■ <span>Stop</span></button>' +
+          '<span id="voice-status" class="voice-status" role="status">Voix arrêtée</span>'
         : ""),
-      /* Les films validés le 22/08 : le lien vit dans le catalogue (films par
-         module), le chemin est le même à l'atelier et dans le pack. */
-      (module.films || []).map(function (film) {
-        return '      <a class="tool-button" style="text-decoration:none" href="../_regules-commun/films/' +
-          escapeHtml(film.fichier) + '" target="_blank" rel="noopener" aria-label="Ouvrir le film : ' + escapeHtml(film.titre) + '">🎬 <span>' + escapeHtml(film.titre) + '</span></a>';
-      }).join(""),
       '      <button id="sources-button" class="tool-button" type="button" aria-label="Ouvrir les sources">ⓘ <span>Sources</span></button>',
       '    </div>',
       '  </header>',
@@ -71,11 +72,18 @@
 
   function buildNav() {
     var nav = document.getElementById("stations");
-    var items = module.lessons.map(function (lesson, index) {
-      return '<button type="button" class="station-tab" data-screen="' + index + '" aria-label="Écran ' + (index + 1) + ' : ' + escapeHtml(lesson.short) + '"><span>' + (index + 1) + '</span><b>' + escapeHtml(lesson.short) + '</b></button>';
+    var items = [];
+    if (filmScreenCount) {
+      items.push('<button type="button" class="station-tab film-tab" data-screen="0" aria-label="Étape 1 : regarder le film"><span>1</span><b>Film</b></button>');
+    }
+    module.lessons.forEach(function (lesson, index) {
+      var screen = lessonOffset + index;
+      var number = filmScreenCount ? "2." + (index + 1) : String(index + 1);
+      items.push('<button type="button" class="station-tab" data-screen="' + screen + '" aria-label="Cours, écran ' + (index + 1) + ' : ' + escapeHtml(lesson.short) + '"><span>' + number + '</span><b>' + escapeHtml(lesson.short) + '</b></button>');
     });
-    items.push('<button type="button" class="station-tab quiz-tab" data-screen="' + module.lessons.length + '" aria-label="Quiz final"><span>✓</span><b>Quiz</b></button>');
+    items.push('<button type="button" class="station-tab quiz-tab" data-screen="' + quizScreen + '" aria-label="Questionnaire final"><span>' + (filmScreenCount ? "3" : "✓") + '</span><b>Questionnaire</b></button>');
     nav.innerHTML = items.join("");
+    nav.style.setProperty("--screen-count", items.length);
     nav.addEventListener("click", function (event) {
       var button = event.target.closest("[data-screen]");
       if (button) { goTo(Number(button.getAttribute("data-screen"))); }
@@ -87,26 +95,14 @@
   }
 
   function ladderVisual(visual) {
-    var count = visual.rungs.length;
-    var gap = count > 2 ? 92 : 118;
-    var firstY = count > 2 ? 84 : 105;
-    var rungs = visual.rungs.map(function (rung, rungIndex) {
-      var y = firstY + rungIndex * gap;
-      var contacts = rung.contacts || [];
-      var usableStart = 120;
-      var usableEnd = 535;
-      var contactGap = (usableEnd - usableStart) / Math.max(contacts.length, 1);
-      var bits = ['<text x="18" y="' + (y - 22) + '" class="svg-rung-label">' + escapeHtml(rung.label) + '</text>', '<line x1="42" y1="' + y + '" x2="650" y2="' + y + '" class="wire"/>'];
-      contacts.forEach(function (contact, index) {
-        var x = usableStart + contactGap * index;
-        bits.push('<rect x="' + (x - 9) + '" y="' + (y - 28) + '" width="78" height="56" rx="8" class="symbol-bg"/>');
-        bits.push('<line x1="' + (x + 10) + '" y1="' + (y - 17) + '" x2="' + (x + 10) + '" y2="' + (y + 17) + '" class="contact"/><line x1="' + (x + 48) + '" y1="' + (y - 17) + '" x2="' + (x + 48) + '" y2="' + (y + 17) + '" class="contact"/>');
-        bits.push('<text x="' + (x + 29) + '" y="' + (y - 35) + '" text-anchor="middle" class="svg-code">' + escapeHtml(contact.code) + '</text><text x="' + (x + 29) + '" y="' + (y + 47) + '" text-anchor="middle" class="svg-label">' + escapeHtml(contact.label) + '</text>');
+    var rows = visual.rungs.map(function (rung) {
+      var contacts = (rung.contacts || []).map(function (contact) {
+        return '<span class="function-chip"><b>' + escapeHtml(contact.code) + '</b><small>' + escapeHtml(contact.label) + '</small></span>';
       });
-      bits.push('<ellipse cx="592" cy="' + y + '" rx="31" ry="24" class="coil"/><text x="592" y="' + (y + 5) + '" text-anchor="middle" class="svg-code">' + escapeHtml(rung.coil.code) + '</text><text x="592" y="' + (y + 47) + '" text-anchor="middle" class="svg-label">' + escapeHtml(rung.coil.label) + '</text>');
-      return bits.join("");
+      contacts.push('<span class="function-chip output"><b>' + escapeHtml(rung.coil.code) + '</b><small>' + escapeHtml(rung.coil.label) + '</small></span>');
+      return '<li class="function-row"><strong>' + escapeHtml(rung.label) + '</strong><div class="function-chain">' + contacts.join('<span class="function-arrow" aria-hidden="true">→</span>') + '</div></li>';
     }).join("");
-    return '<figure class="visual-figure ladder-figure"><svg viewBox="0 0 690 390" role="img" aria-label="' + escapeHtml(visual.label) + '"><title>' + escapeHtml(visual.label) + '</title><text x="345" y="30" text-anchor="middle" class="svg-title">' + escapeHtml(visual.title) + '</text><line x1="42" y1="50" x2="42" y2="350" class="rail"/><line x1="650" y1="50" x2="650" y2="350" class="rail"/><text x="42" y="374" text-anchor="middle" class="svg-code">L</text><text x="650" y="374" text-anchor="middle" class="svg-code">N</text>' + rungs + '</svg><figcaption>Schéma fonctionnel simplifié — les contacts réels se vérifient sur la notice constructeur.</figcaption></figure>';
+    return '<figure class="functional-figure" role="group" aria-label="' + escapeHtml(visual.label) + '"><div class="functional-head"><p>LECTURE FONCTIONNELLE</p><h3>' + escapeHtml(visual.title) + '</h3></div><ol>' + rows + '</ol><figcaption><strong>Ce n’est pas un schéma de câblage.</strong> Les symboles électriques non validés ont été retirés. Le film conserve la vue complète du fonctionnement.</figcaption></figure>';
   }
 
   function sequenceVisual(visual) {
@@ -153,12 +149,34 @@
 
   function renderLesson() {
     stopVoix();
-    var lesson = module.lessons[state.screen];
+    var lesson = module.lessons[state.screen - lessonOffset];
     state.sequenceStep = 0;
     var article = document.getElementById("lesson-card");
     article.className = "lesson-card";
     article.innerHTML = '<section class="copy-panel"><p class="kicker">' + escapeHtml(lesson.kicker) + '</p><h2>' + escapeHtml(lesson.title) + '</h2><p class="lead">' + escapeHtml(lesson.lead) + '</p><ul class="details">' + lesson.details.map(function (item) { return '<li>' + escapeHtml(item) + '</li>'; }).join("") + '</ul>' + boxMarkup(lesson.box) + '</section><section class="visual-panel" aria-label="Illustration pédagogique">' + visualMarkup(lesson.visual) + '</section>';
     bindSequence(lesson.visual);
+  }
+
+  function renderFilm() {
+    stopVoix();
+    var films = module.films || [];
+    var film = films[state.filmIndex] || films[0];
+    var article = document.getElementById("lesson-card");
+    article.className = "lesson-card film-screen";
+    var choices = films.length > 1
+      ? '<div class="film-choices" aria-label="Choisir le film">' + films.map(function (item, index) {
+          return '<button type="button" class="film-choice' + (index === state.filmIndex ? ' active' : '') + '" data-film-index="' + index + '">' + escapeHtml(item.titre) + '</button>';
+        }).join("") + '</div>'
+      : "";
+    var hasNarration = /08-pump-down-et-degivrage-electrique/.test(film.fichier);
+    article.innerHTML = '<section class="film-intro"><p class="kicker">1 · Commencer par le film</p><h2>' + escapeHtml(module.title) + '</h2><p class="lead">Regarde d’abord le fonctionnement complet : circuit fluidique, commande électrique et actions restent visibles ensemble.</p>' + choices + '<p class="film-audio-note">' + (hasNarration ? 'La voix du film se lance uniquement avec le bouton « Écouter les explications ».' : 'Ce film est visuel. La voix du cours est disponible à l’écran suivant.') + '</p><a class="film-open" href="../_regules-commun/films/' + escapeHtml(film.fichier) + '" target="_blank" rel="noopener">Ouvrir le film en grand ↗</a></section><section class="film-stage"><iframe id="film-frame" src="../_regules-commun/films/' + escapeHtml(film.fichier) + '" title="Film : ' + escapeHtml(film.titre) + '" loading="eager"></iframe></section>';
+    article.querySelectorAll("[data-film-index]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        state.filmIndex = Number(button.getAttribute("data-film-index"));
+        renderFilm();
+        updateChrome();
+      });
+    });
   }
 
   function bindSequence(visual) {
@@ -218,10 +236,12 @@
   }
 
   function goTo(index) {
-    if (index < 0 || index > module.lessons.length) { return; }
+    if (index < 0 || index > quizScreen) { return; }
     state.screen = index;
     state.furthest = Math.max(state.furthest, index);
-    if (index < module.lessons.length) { renderLesson(); } else { renderQuiz(); }
+    if (filmScreenCount && index === 0) { renderFilm(); }
+    else if (index < quizScreen) { renderLesson(); }
+    else { renderQuiz(); }
     updateChrome();
     focusContent();
   }
@@ -239,14 +259,22 @@
       tab.classList.toggle("visited", index <= state.furthest);
       tab.setAttribute("aria-current", active ? "step" : "false");
     });
-    var total = module.lessons.length + 1;
     var current = state.screen + 1;
-    document.getElementById("progress-text").textContent = "Écran " + current + " / " + total;
-    document.getElementById("progress-bar").style.width = (current / total * 100) + "%";
+    document.getElementById("progress-text").textContent = "Étape " + current + " / " + totalScreens;
+    document.getElementById("progress-bar").style.width = (current / totalScreens * 100) + "%";
     document.getElementById("previous-button").disabled = state.screen === 0;
     var next = document.getElementById("next-button");
-    next.disabled = state.screen === module.lessons.length;
-    next.textContent = state.screen === module.lessons.length - 1 ? "Lancer le quiz →" : "Suivant →";
+    next.disabled = state.screen === quizScreen;
+    next.textContent = filmScreenCount && state.screen === 0
+      ? "Passer au cours →"
+      : state.screen === quizScreen - 1
+        ? "Questionnaire final →"
+        : "Suivant →";
+    var voice = document.getElementById("voice-button");
+    if (voice) {
+      voice.disabled = filmScreenCount && state.screen === 0;
+      if (voice.disabled) { setVoiceStatus("Voix du cours à l’écran suivant"); }
+    }
   }
 
   function sourceMarkup() {
@@ -254,7 +282,7 @@
       var source = catalog.sources[key];
       return '<article class="source-item"><h3>' + escapeHtml(source.title) + '</h3><p>' + escapeHtml(source.use) + '</p><code>' + escapeHtml(source.location) + '</code></article>';
     }).join("");
-    return '<p class="status-chip">' + escapeHtml(catalog.status) + '</p><p>Les schémas sont des synthèses fonctionnelles originales. Ils ne remplacent ni la notice constructeur ni la vérification sur l’installation réelle.</p>' + items + '<p class="terminology-note"><strong>Repère de vocabulaire :</strong> les supports locaux emploient « pump-down amélioré », « single pump-down » et « tirage au vide unique amélioré ». Cette rame sépare leurs fonctions pour éviter de confondre relais anti-redémarrage et pressostat BP de sécurité.</p>';
+    return '<p class="status-chip">' + escapeHtml(catalog.status) + '</p><p>Les cours montrent des chaînes fonctionnelles et non des schémas de câblage. Les symboles électriques non validés ont été retirés. Toujours vérifier la notice constructeur et l’installation réelle.</p>' + items + '<p class="terminology-note"><strong>Repère de vocabulaire :</strong> les supports locaux emploient « pump-down amélioré », « single pump-down » et « tirage au vide unique amélioré ». Cette rame sépare leurs fonctions pour éviter de confondre relais anti-redémarrage et pressostat BP de sécurité.</p>';
   }
 
   function announce(text) { document.getElementById("live-status").textContent = text; }
@@ -264,15 +292,21 @@
      (l'énoncé seul, sans la livrer), q<n>-reponse.mp3 après. Le bilan reste
      muet : il annonce un score réel, un enregistrement figé mentirait. ── */
   var lecteur = null;
+  window.REGULE_VOICE_STATUS = { state: "stopped", src: "", currentTime: 0, error: "" };
 
   function fichierVoix() {
-    if (state.screen < module.lessons.length) {
-      return "voix/masculine/" + module.lessons[state.screen].id + ".mp3";
+    if (state.screen >= lessonOffset && state.screen < quizScreen) {
+      return "voix/masculine/" + module.lessons[state.screen - lessonOffset].id + ".mp3";
     }
     if (state.quizIndex < module.quiz.length) {
       return "voix/masculine/q" + (state.quizIndex + 1) + (state.answered ? "-reponse" : "") + ".mp3";
     }
     return null;
+  }
+
+  function setVoiceStatus(text) {
+    var status = document.getElementById("voice-status");
+    if (status) { status.textContent = text; }
   }
 
   function majBoutonVoix(texte, enCours) {
@@ -292,26 +326,50 @@
 
   function stopVoix() {
     if (lecteur) { lecteur.pause(); lecteur = null; }
+    window.REGULE_VOICE_STATUS.state = "stopped";
+    window.REGULE_VOICE_STATUS.currentTime = 0;
     majBoutonVoix("▶ <span>Écouter</span>", false);
+    setVoiceStatus("Voix arrêtée");
   }
 
   function ecouter() {
-    if (lecteur && !lecteur.paused) { lecteur.pause(); majBoutonVoix("▶ <span>Reprendre</span>", true); return; }
-    if (lecteur && lecteur.paused) { lecteur.play(); majBoutonVoix("Ⅱ <span>Pause</span>", true); return; }
+    if (lecteur && !lecteur.paused) { lecteur.pause(); window.REGULE_VOICE_STATUS.state = "paused"; majBoutonVoix("▶ <span>Reprendre</span>", true); setVoiceStatus("Voix en pause"); return; }
+    if (lecteur && lecteur.paused) {
+      lecteur.play().catch(function () { setVoiceStatus("Lecture bloquée"); });
+      majBoutonVoix("Ⅱ <span>Pause</span>", true);
+      return;
+    }
     var src = fichierVoix();
     if (!src) { return; }
     lecteur = new Audio(src);
+    lecteur.preload = "auto";
+    lecteur.volume = 1;
+    lecteur.muted = false;
+    window.REGULE_VOICE_STATUS = { state: "loading", src: src, currentTime: 0, error: "" };
+    setVoiceStatus("Chargement de la voix…");
+    lecteur.addEventListener("playing", function () {
+      window.REGULE_VOICE_STATUS.state = "playing";
+      setVoiceStatus("Voix en lecture · volume 100 %");
+      announce("Lecture audio en cours.");
+    });
+    lecteur.addEventListener("timeupdate", function () { window.REGULE_VOICE_STATUS.currentTime = lecteur ? lecteur.currentTime : 0; });
     lecteur.addEventListener("ended", stopVoix);
     lecteur.addEventListener("error", function () {
+      window.REGULE_VOICE_STATUS.state = "error";
+      window.REGULE_VOICE_STATUS.error = "audio-unavailable";
       lecteur = null;
       majBoutonVoix("▶ <span>Écouter</span>", false);
+      setVoiceStatus("Voix indisponible");
       announce("Le son de cet écran n’est pas disponible.");
     });
     var promesse = lecteur.play();
     if (promesse && promesse.catch) {
       promesse.catch(function () {
+        window.REGULE_VOICE_STATUS.state = "error";
+        window.REGULE_VOICE_STATUS.error = "playback-blocked";
         lecteur = null;
         majBoutonVoix("▶ <span>Écouter</span>", false);
+        setVoiceStatus("Lecture bloquée");
         announce("La lecture audio a été bloquée par le navigateur.");
       });
     }
@@ -347,6 +405,6 @@
   shell();
   buildNav();
   bindControls();
-  renderLesson();
+  if (filmScreenCount) { renderFilm(); } else { renderLesson(); }
   updateChrome();
 })();

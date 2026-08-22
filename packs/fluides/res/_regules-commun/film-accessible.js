@@ -51,13 +51,21 @@
     if (window.__filmCtl && window.__filmCtl.pause) { window.__filmCtl.pause(); }
   }
 
+  function classerContexte() {
+    var largeParent = false;
+    try { largeParent = window.self !== window.top && window.parent.innerWidth > 620; } catch (err) {}
+    document.documentElement.classList.toggle("inerweb-film-parent-large", largeParent);
+  }
+
   var note = document.createElement("p");
   note.className = "inerweb-film-orientation";
   note.setAttribute("role", "note");
   note.textContent = "Film technique au format 16:9 : passez le téléphone en paysage pour lire confortablement tous les repères.";
   document.body.appendChild(note);
+  classerContexte();
 
   new MutationObserver(ameliorer).observe(document.body, { childList: true, subtree: true });
+  window.addEventListener("resize", classerContexte);
   document.addEventListener("visibilitychange", function () { if (document.hidden) { arreter(); } });
   window.addEventListener("pagehide", arreter);
   ameliorer();

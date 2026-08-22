@@ -35,6 +35,10 @@ button[title="Télécharger la vidéo"] {
   display: none;
 }
 
+.inerweb-film-parent-large .inerweb-film-orientation {
+  display: none !important;
+}
+
 @media (max-width: 620px) and (orientation: portrait) {
   .inerweb-film-orientation {
     position: fixed;

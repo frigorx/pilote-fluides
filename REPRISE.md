@@ -5,6 +5,18 @@
 
 > ## 22/08 — La ligne 🔌 LA RÉGULATION est en ligne
 >
+> **Correctif après le premier essai humain de F. Henninot :** la première publication
+> mettait le cours et le questionnaire avant les films, affichait des pseudo-symboles
+> électriques dessinés par le moteur de page, utilisait un logo texte recréé et conservait
+> des recadrages de caméra malgré l'étiquette « caméra fixe ». Ces quatre choix ont été
+> retirés. Le parcours est désormais **film en vue générale fixe → cours → questionnaire** ;
+> les représentations électriques non validées des écrans de cours sont remplacées par une
+> lecture fonctionnelle explicitement non utilisable comme schéma de câblage ; le logo
+> officiel `inerWeb Édu` est restauré. La lecture vocale du cours affiche maintenant son
+> état et force volume 100 %, non muet ; le film 08 ne masque plus ses erreurs audio.
+> Cette correction reste une **version de relecture en ligne**, sans indexation RAG : la QA
+> technique ne vaut pas validation métier, pédagogique ni écoute humaine complète.
+>
 > Le mandat du 21/08 (« construire la branche des régulations ») est **exécuté**, sous la
 > forme tranchée par F. Henninot le 22/08 au matin (brief
 > `atelier-animations/REPRISE-LIGNE-REGULATION-2026-08-22.md`) : une **ligne à part
