@@ -365,8 +365,12 @@
 >    DANS la charte (`usine-contenu\00-charte\`), hors de ce dépôt.
 > 4. **SEO des autres modules** : le 21/08, F. Henninot a demandé une première mise en
 >    visibilité ciblée pour KP15, le diagramme enthalpique et surchauffe / sous-refroidissement.
->    Ces trois pages ont un canonical et entrent dans le sitemap contrôlé. Les autres cours
->    restent hors sitemap tant qu'ils ne sont pas arbitrés de la même manière.
+>    Le 22/08, sa demande d'améliorer encore l'indexation a ouvert un second lot cohérent :
+>    découverte du froid, thermodynamique du circuit, relation pression-température et rôle des
+>    quatre organes. Ces sept pages ont un canonical et entrent dans le sitemap contrôlé, qui
+>    compte désormais dix URL avec l'accueil, le métier et l'espace formateurs. Les autres cours
+>    restent hors sitemap tant qu'ils ne sont pas arbitrés de la même manière ; ne pas y faire
+>    entrer un module qui porte « brouillon », « prototype » ou « à valider ».
 > 5. **`mentions.html`** : toujours un brouillon non lié, champs ⟦à valider⟧. Son
 >    « aucun script tiers » est redevenu VRAI avec `513a533`.
 > 6. **`contact@inerweb.fr`** est affiché par `regulateur-electronique-interactif` :

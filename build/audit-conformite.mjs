@@ -55,8 +55,13 @@ function declarationsSerif(texte) {
 }
 
 function dependancesExternes(texte) {
-  const motif = /<(?:script|img|iframe|object|link|source|audio|video)\b[^>]*(?:src|href|data)\s*=\s*["']https?:\/\//gi;
-  return (texte.match(motif) || []).length;
+  const balises = texte.match(/<(?:script|img|iframe|object|link|source|audio|video)\b[^>]*>/gi) || [];
+  return balises.filter((balise) => {
+    /* Un canonical indique l'adresse publique de la page : il ne charge
+       aucune ressource et ne rompt donc pas le fonctionnement hors ligne. */
+    if (/^<link\b/i.test(balise) && /\brel\s*=\s*["']canonical["']/i.test(balise)) return false;
+    return /\b(?:src|href|data)\s*=\s*["']https?:\/\//i.test(balise);
+  }).length;
 }
 
 function imagesSansAlt(html) {

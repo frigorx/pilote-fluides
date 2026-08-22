@@ -29,6 +29,22 @@ const INDEXEES = [
   { fichier: "metier.html", url: "https://inerweb.fr/metier.html" },
   { fichier: "formateurs.html", url: "https://inerweb.fr/formateurs.html" },
   {
+    fichier: "packs/fluides/res/chaleur-interactive/index.html",
+    url: "https://inerweb.fr/packs/fluides/res/chaleur-interactive/index.html",
+  },
+  {
+    fichier: "packs/fluides/res/chaleur-circuit-interactif/index.html",
+    url: "https://inerweb.fr/packs/fluides/res/chaleur-circuit-interactif/index.html",
+  },
+  {
+    fichier: "packs/fluides/res/pression-temperature-interactive/index.html",
+    url: "https://inerweb.fr/packs/fluides/res/pression-temperature-interactive/index.html",
+  },
+  {
+    fichier: "packs/fluides/res/circuit-organe-par-organe/index.html",
+    url: "https://inerweb.fr/packs/fluides/res/circuit-organe-par-organe/index.html",
+  },
+  {
     fichier: "packs/fluides/res/pressostat-combine-kp15/index.html",
     url: "https://inerweb.fr/packs/fluides/res/pressostat-combine-kp15/index.html",
   },
@@ -54,9 +70,24 @@ for (const p of INDEXEES) {
     console.error("✗ sitemap : " + p.fichier + " porte un noindex — contradiction, corriger la liste ou la page");
     process.exit(1);
   }
+  const titre = html.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim();
+  if (!titre) {
+    console.error("✗ sitemap : " + p.fichier + " doit porter un titre HTML non vide");
+    process.exit(1);
+  }
+  const description = html.match(/<meta\b[^>]*\bname=["']description["'][^>]*\bcontent=["']([^"']+)["']/i)?.[1]?.trim();
+  if (!description) {
+    console.error("✗ sitemap : " + p.fichier + " doit porter une meta description non vide");
+    process.exit(1);
+  }
   const canonical = html.match(/<link\b[^>]*\brel=["']canonical["'][^>]*\bhref=["']([^"']+)["']/i)?.[1];
   if (canonical !== p.url) {
     console.error("✗ sitemap : " + p.fichier + " doit déclarer le canonical exact " + p.url);
+    process.exit(1);
+  }
+  const ogUrl = html.match(/<meta\b[^>]*\bproperty=["']og:url["'][^>]*\bcontent=["']([^"']+)["']/i)?.[1];
+  if (ogUrl !== p.url) {
+    console.error("✗ sitemap : " + p.fichier + " doit déclarer le og:url exact " + p.url);
     process.exit(1);
   }
   lignes.push("  <url><loc>" + p.url + "</loc></url>");
@@ -82,4 +113,4 @@ writeFileSync(
   lignes.join("\n") + "\n</urlset>\n",
   "utf8"
 );
-console.log("✓ sitemap.xml — " + lignes.length + " URL, toutes vérifiées (existence + absence de noindex)");
+console.log("✓ sitemap.xml — " + lignes.length + " URL, toutes vérifiées (existence + métadonnées + absence de noindex)");
