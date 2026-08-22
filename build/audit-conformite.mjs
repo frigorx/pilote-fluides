@@ -77,7 +77,20 @@ function auditerCours(nom) {
   const tous = fichiers(dossier);
   const runtime = tous.filter((f) => EXT_RUNTIME.has(extname(f).toLowerCase()));
   const media = tous.filter((f) => EXT_MEDIA.has(extname(f).toLowerCase()));
-  const texte = runtime.map(lire).join("\n");
+  const html = lire(page);
+  /* Une coquille légère peut partager sa feuille avec dix
+     stations voisines. Ne lire que son propre dossier déclarait alors à
+     tort « pas d'impression » ou « pas de charte ». On suit uniquement les
+     feuilles LOCALES réellement liées par la page : aucune requête,
+     aucun CDN, et aucun fichier voisin non utilisé. */
+  const lies = [];
+  for (const m of html.matchAll(/<(?:link|script)\b[^>]*(?:href|src)=["']([^"']+)["'][^>]*>/gi)) {
+    const url = m[1].split(/[?#]/)[0];
+    if (!url || /^(?:https?:|data:|\/\/)/i.test(url)) continue;
+    const cible = resolve(dirname(page), url);
+    if (existsSync(cible) && extname(cible).toLowerCase() === ".css") lies.push(cible);
+  }
+  const texte = [...new Set(runtime.concat(lies))].map(lire).join("\n");
   /* Deux anomalies critiques se cherchent par motif : le fond forcé à
      l'impression et le thème sombre. Or `moteur/impression.css` porte en tête
      la MISE EN GARDE « ne jamais écrire print-color-adjust:exact », et tout
@@ -89,7 +102,6 @@ function auditerCours(nom) {
   const codeActif = texte
     .replace(/\/\*[\s\S]*?\*\//g, " ")
     .replace(/(^|[^:])\/\/[^\n]*/g, "$1 ");
-  const html = lire(page);
   const titre = (html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1]?.trim() || "";
   const description = (html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)/i) || [])[1] || "";
   const langue = (html.match(/<html[^>]*\blang=["']([^"']+)/i) || [])[1] || "";

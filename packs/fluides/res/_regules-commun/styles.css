@@ -2,17 +2,18 @@
   color-scheme: light;
   --paper: #f7f1e7;
   --card: #fffdf8;
-  --ink: #233044;
+  --ink: #10233c;
   --blue: #1b3a63;
-  --blue-soft: #e8f0f7;
+  --blue-soft: #84b7ec;
+  --blue-pale: #e8f0f7;
   --orange: #ff6b35;
   --orange-text: #c9451a;
-  --green: #287a62;
-  --green-soft: #e4f2ec;
-  --red: #b73535;
-  --red-soft: #f8e9e7;
-  --yellow: #efb83f;
-  --line: #c9d2dc;
+  --green: #1e7e54;
+  --green-soft: #e3f5ec;
+  --red: #c0392b;
+  --red-soft: #fbe7e4;
+  --yellow: #b06a00;
+  --line: rgba(27, 58, 99, 0.16);
   --shadow: 0 9px 25px rgba(27, 58, 99, 0.1);
   --font-scale: 1;
 }
@@ -27,8 +28,16 @@ body {
   overflow: hidden;
   background: var(--paper);
   color: var(--ink);
-  font-family: "Trebuchet MS", Calibri, Arial, sans-serif;
+  font-family: Calibri, "Segoe UI", system-ui, Arial, sans-serif;
   font-size: calc(16px * var(--font-scale));
+}
+
+h1,
+h2,
+h3,
+.brand-name,
+.brand-edition {
+  font-family: "Trebuchet MS", Calibri, Arial, sans-serif;
 }
 
 button,
@@ -105,6 +114,7 @@ select:focus-visible,
   align-items: baseline;
   gap: 5px;
   width: max-content;
+  min-height: 44px;
   color: var(--blue);
   text-decoration: none;
 }
@@ -145,14 +155,14 @@ select:focus-visible,
 .tools #lisib-bouton,
 .hub-end #lisib-bouton {
   position: static !important;
-  width: 40px !important;
-  height: 40px !important;
-  flex: 0 0 40px;
+  width: 44px !important;
+  height: 44px !important;
+  flex: 0 0 44px;
   box-shadow: none !important;
 }
 .tool-button,
 .tools select {
-  min-height: 40px;
+  min-height: 44px;
   border: 1px solid #9fb0c2;
   border-radius: 9px;
   background: #fff;
@@ -161,7 +171,7 @@ select:focus-visible,
   font-size: 0.78rem;
   font-weight: 800;
 }
-.tool-button { padding: 7px 10px; }
+.tool-button { min-width: 44px; padding: 7px 10px; }
 .tool-button[aria-pressed="true"] { border-color: var(--orange-text); background: #fff0e9; color: var(--orange-text); }
 .tool-button:disabled { opacity: 0.45; cursor: default; }
 .tools select { padding: 5px 7px; }
@@ -212,7 +222,7 @@ select:focus-visible,
 
 .station-tab b { overflow: hidden; font-size: 0.8rem; line-height: 1.15; text-overflow: ellipsis; }
 .station-tab.visited { border-left-color: var(--green); }
-.station-tab.active { border-color: var(--blue); border-left-color: var(--orange); background: var(--blue-soft); box-shadow: var(--shadow); }
+.station-tab.active { border-color: var(--blue); border-left-color: var(--orange); background: var(--blue-pale); box-shadow: var(--shadow); }
 .station-tab.active span { border-color: var(--orange); background: #fff7f1; color: var(--orange-text); }
 .station-tab.quiz-tab { border-left-style: double; }
 
@@ -549,19 +559,20 @@ dialog::backdrop { background: rgba(27, 58, 99, 0.28); }
 
 @media (max-width: 620px) {
   .app { grid-template-rows: 52px minmax(0, 1fr) 56px; }
-  .topbar { grid-template-columns: 88px minmax(0, 1fr) auto; gap: 7px; padding: 5px 7px; }
+  .topbar { grid-template-columns: minmax(0, 1fr) auto; gap: 7px; padding: 5px 7px; }
+  .topbar > .brand { display: none; }
   .brand-name { font-size: 1rem; }
   .brand-name::before { width: 8px; height: 8px; margin-right: 3px; border-width: 2px; }
   .brand-edition { display: none; }
-  .module-heading p { font-size: 0.52rem; }
-  .module-heading h1 { font-size: 0.83rem; }
+  .module-heading p { display: none; }
+  .module-heading h1 { font-size: 0.85rem; line-height: 1.05; white-space: normal; }
   .tools { gap: 4px; }
   .tools #voice-rate,
   .tools #stop-voice { display: none; }
-  .tool-button { min-width: 38px; min-height: 38px; padding: 4px; font-size: 0.7rem; }
+  .tool-button { min-width: 44px; min-height: 44px; padding: 4px; font-size: 0.7rem; }
   .tools #lisib-bouton,
-  .hub-end #lisib-bouton { width: 36px !important; height: 36px !important; flex-basis: 36px; font-size: 0.8rem !important; }
-  .workbench { grid-template-columns: 1fr; grid-template-rows: 43px minmax(0, 1fr); gap: 7px; padding: 7px; }
+  .hub-end #lisib-bouton { width: 44px !important; height: 44px !important; flex-basis: 44px; font-size: 0.8rem !important; }
+  .workbench { grid-template-columns: 1fr; grid-template-rows: 44px minmax(0, 1fr); gap: 7px; padding: 7px; }
   .station-nav { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: 1fr; gap: 5px; }
   .station-tab { grid-template-columns: 1fr; place-items: center; padding: 3px; border-left-width: 1px; border-bottom: 4px solid #9aa8b6; text-align: center; }
   .station-tab.visited { border-left-color: var(--line); border-bottom-color: var(--green); }
@@ -573,23 +584,23 @@ dialog::backdrop { background: rgba(27, 58, 99, 0.28); }
   .copy-panel h2 { font-size: clamp(1.05rem, 5.2vw, 1.35rem); }
   .kicker { margin-bottom: 4px; font-size: 0.57rem; }
   .lead { margin: 7px 0 4px; font-size: 0.79rem; line-height: 1.25; }
-  .details { gap: 4px; margin: 3px 0 6px; font-size: 0.68rem; line-height: 1.22; }
+  .details { gap: 4px; margin: 3px 0 6px; font-size: 0.75rem; line-height: 1.2; }
   .details li { padding-left: 15px; }
   .lesson-box { padding: 6px 8px; border-left-width: 5px; }
   .lesson-box strong { font-size: 0.55rem; }
-  .lesson-box p { font-size: 0.65rem; line-height: 1.2; }
+  .lesson-box p { font-size: 0.72rem; line-height: 1.2; }
   .visual-panel { padding: 6px 8px; }
   .visual-figure svg { max-height: 24vh; }
   .visual-figure figcaption,
-  .visual-note { font-size: 0.53rem; }
+  .visual-note { font-size: 0.6rem; }
   .sequence-visual { padding: 3px; }
   .sequence-visual ol { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
   .sequence-step { grid-template-columns: 21px minmax(0, 1fr); min-width: 0; min-height: 44px; gap: 3px; padding: 3px; border-radius: 7px; }
   .sequence-step > span { width: 19px; height: 19px; font-size: 0.58rem; }
-  .sequence-step p { min-width: 0; overflow-wrap: anywhere; font-size: 0.5rem; line-height: 1.08; }
+  .sequence-step p { min-width: 0; overflow-wrap: anywhere; font-size: 0.56rem; line-height: 1.08; }
   .sequence-step::after { right: -7px; font-size: 0.8rem; }
   .sequence-controls { gap: 7px; margin-top: 5px; }
-  .sequence-controls button { min-height: 34px; padding: 4px 8px; font-size: 0.64rem; }
+  .sequence-controls button { min-height: 44px; padding: 4px 8px; font-size: 0.68rem; }
   .sequence-controls span { font-size: 0.61rem; }
   .sequence-visual > .visual-note { display: none; }
   .compare-visual { gap: 5px; }
@@ -610,24 +621,25 @@ dialog::backdrop { background: rgba(27, 58, 99, 0.28); }
   .score-medal small { margin-top: -12px; font-size: 0.72rem; }
   .summary-actions { gap: 6px; margin-top: 10px; }
   .bottombar { grid-template-columns: 92px minmax(80px, 1fr) 108px; gap: 6px; padding: 5px 7px; }
-  .nav-button { min-height: 42px; padding: 6px 8px; border-radius: 8px; font-size: 0.68rem; }
+  .nav-button { min-height: 44px; padding: 6px 8px; border-radius: 8px; font-size: 0.68rem; }
   .progress-wrap { grid-template-columns: 1fr; gap: 3px; text-align: center; font-size: 0.57rem; }
   .progress-track { height: 6px; }
-  .hub { grid-template-rows: 58px minmax(0, 1fr) 34px; padding: 0 7px; }
+  body.hub-page { height: auto; min-height: 100%; overflow-y: auto; }
+  .hub { grid-template-rows: 64px auto 44px; height: auto; min-height: 100dvh; padding: 0 10px; }
   .hub-head { grid-template-columns: 76px minmax(0, 1fr) 74px; gap: 4px; }
-  .hub-title p { font-size: 0.49rem; }
+  .hub-title p { font-size: 0.75rem; }
   .hub-title h1 { font-size: 1.2rem; }
   .hub-end { gap: 3px; }
   .hub-status { display: none; }
-  .rails { gap: 7px; padding: 7px 0; }
-  .rail-group { gap: 4px; }
-  .rail-group h2 { font-size: 0.53rem; }
-  .module-card { grid-template-columns: 30px minmax(0, 1fr) 12px; gap: 5px; padding: 4px; border-left-width: 4px; border-radius: 7px; }
-  .module-card .module-number { width: 27px; height: 27px; border-width: 2px; font-size: 0.7rem; }
-  .module-card h3 { font-size: 0.62rem; line-height: 1.08; }
-  .module-card p { font-size: 0.45rem; }
-  .module-card .arrow { font-size: 0.8rem; }
-  .hub-foot { font-size: 0.49rem; }
+  .rails { grid-template-columns: 1fr; gap: 14px; padding: 12px 0; }
+  .rail-group { grid-template-rows: auto repeat(5, minmax(64px, auto)); gap: 7px; }
+  .rail-group h2 { font-size: 0.75rem; }
+  .module-card { grid-template-columns: 42px minmax(0, 1fr) 22px; gap: 9px; min-height: 64px; padding: 7px 9px; border-left-width: 5px; border-radius: 9px; }
+  .module-card .module-number { width: 38px; height: 38px; border-width: 2px; font-size: 0.9rem; }
+  .module-card h3 { font-size: 0.9rem; line-height: 1.15; }
+  .module-card p { font-size: 0.78rem; line-height: 1.2; white-space: normal; }
+  .module-card .arrow { font-size: 1.1rem; }
+  .hub-foot { font-size: 0.75rem; }
 }
 
 @media (max-height: 700px) and (min-width: 621px) {

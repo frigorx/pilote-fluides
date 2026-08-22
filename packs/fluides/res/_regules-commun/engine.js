@@ -42,16 +42,16 @@
        fichier manquant reste muet. */
       '    <div class="tools" aria-label="Outils de lecture">',
       (catalog.voixFabriquee
-        ? '      <button id="voice-button" class="tool-button" type="button" aria-pressed="false" title="Écouter l’écran">▶ <span>Écouter</span></button>' +
-          '<button id="stop-voice" class="tool-button" type="button" disabled title="Arrêter la voix">■ <span>Stop</span></button>'
+        ? '      <button id="voice-button" class="tool-button" type="button" aria-label="Écouter cet écran" aria-pressed="false" title="Écouter l’écran">▶ <span>Écouter</span></button>' +
+          '<button id="stop-voice" class="tool-button" type="button" aria-label="Arrêter la voix" disabled title="Arrêter la voix">■ <span>Stop</span></button>'
         : ""),
       /* Les films validés le 22/08 : le lien vit dans le catalogue (films par
          module), le chemin est le même à l'atelier et dans le pack. */
       (module.films || []).map(function (film) {
         return '      <a class="tool-button" style="text-decoration:none" href="../_regules-commun/films/' +
-          escapeHtml(film.fichier) + '" target="_blank" rel="noopener">🎬 <span>' + escapeHtml(film.titre) + '</span></a>';
+          escapeHtml(film.fichier) + '" target="_blank" rel="noopener" aria-label="Ouvrir le film : ' + escapeHtml(film.titre) + '">🎬 <span>' + escapeHtml(film.titre) + '</span></a>';
       }).join(""),
-      '      <button id="sources-button" class="tool-button" type="button">ⓘ <span>Sources</span></button>',
+      '      <button id="sources-button" class="tool-button" type="button" aria-label="Ouvrir les sources">ⓘ <span>Sources</span></button>',
       '    </div>',
       '  </header>',
       '  <div class="workbench">',
@@ -259,30 +259,33 @@
 
   function announce(text) { document.getElementById("live-status").textContent = text; }
 
-  /* ── la voix fabriquée — des MP3 embarqués, jamais la synthèse du navigateur.
-     Écrans : voix/<genre>/<écran>.mp3. Questions : q<n>.mp3 avant la réponse
+  /* ── la voix fabriquée — 110 MP3 masculins embarqués, jamais la synthèse du navigateur.
+     Écrans : voix/masculine/<écran>.mp3. Questions : q<n>.mp3 avant la réponse
      (l'énoncé seul, sans la livrer), q<n>-reponse.mp3 après. Le bilan reste
      muet : il annonce un score réel, un enregistrement figé mentirait. ── */
   var lecteur = null;
 
-  function genreVoix() {
-    try { return localStorage.getItem("regules_voix") === "feminine" ? "feminine" : "masculine"; }
-    catch (err) { return "masculine"; }
-  }
-
   function fichierVoix() {
     if (state.screen < module.lessons.length) {
-      return "voix/" + genreVoix() + "/" + module.lessons[state.screen].id + ".mp3";
+      return "voix/masculine/" + module.lessons[state.screen].id + ".mp3";
     }
     if (state.quizIndex < module.quiz.length) {
-      return "voix/" + genreVoix() + "/q" + (state.quizIndex + 1) + (state.answered ? "-reponse" : "") + ".mp3";
+      return "voix/masculine/q" + (state.quizIndex + 1) + (state.answered ? "-reponse" : "") + ".mp3";
     }
     return null;
   }
 
   function majBoutonVoix(texte, enCours) {
     var bouton = document.getElementById("voice-button");
-    if (bouton) { bouton.innerHTML = texte; bouton.setAttribute("aria-pressed", enCours ? "true" : "false"); }
+    if (bouton) {
+      bouton.innerHTML = texte;
+      bouton.setAttribute("aria-pressed", enCours ? "true" : "false");
+      bouton.setAttribute("aria-label", texte.indexOf("Pause") >= 0
+        ? "Mettre la voix en pause"
+        : texte.indexOf("Reprendre") >= 0
+          ? "Reprendre la voix"
+          : "Écouter cet écran");
+    }
     var stop = document.getElementById("stop-voice");
     if (stop) { stop.disabled = !enCours; }
   }
@@ -305,7 +308,13 @@
       announce("Le son de cet écran n’est pas disponible.");
     });
     var promesse = lecteur.play();
-    if (promesse && promesse.catch) { promesse.catch(function () {}); }
+    if (promesse && promesse.catch) {
+      promesse.catch(function () {
+        lecteur = null;
+        majBoutonVoix("▶ <span>Écouter</span>", false);
+        announce("La lecture audio a été bloquée par le navigateur.");
+      });
+    }
     majBoutonVoix("Ⅱ <span>Pause</span>", true);
   }
 
@@ -331,6 +340,8 @@
       var tools = document.querySelector(".tools");
       if (accessibilityButton && tools) { tools.appendChild(accessibilityButton); }
     });
+    document.addEventListener("visibilitychange", function () { if (document.hidden) { stopVoix(); } });
+    window.addEventListener("pagehide", stopVoix);
   }
 
   shell();

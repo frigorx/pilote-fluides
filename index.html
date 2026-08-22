@@ -304,7 +304,7 @@
      revue croisée : elle descend sous l'en-tête, et les cibles tactiles
      s'élargissent. */
   @media (max-width: 700px) {
-    .volet-poignee { top:184px; padding:12px 15px; }
+    .volet-poignee { top:184px; right:0; left:auto; padding:12px 15px; border-radius:10px 0 0 10px; }
     .nav { gap:14px; }
     .nav a { padding:8px 2px 6px; }
   }
@@ -352,8 +352,8 @@
 
     <div class="volet-bloc">
       <h3>📰 Actualités</h3>
-      <p><strong>19 août 2026 — le réseau ouvre.</strong> 60 stations sur le plan, la formation habilitation complète dans l’application.<br>
-      🚧 <strong>Réseau en travaux</strong> : de nouvelles stations ouvrent régulièrement, et de nouvelles lignes — savoirs, gestes, électrotechnique, l’huile — viendront se greffer au plan.<br>
+      <p><strong>22 août 2026 — le réseau grandit.</strong> 108 stations sont maintenant visibles sur le plan.<br>
+      🚧 <strong>Réseau en travaux</strong> : les lignes Huile, Circuit d’huile, CO₂, Centrales, Régulation et Électrotechnique ont rejoint le parcours. Les contenus continuent d’être relus et améliorés.<br>
       <!-- Le détail vit dans le journal, sur l'accueil : un seul endroit tenu à
            jour, pas deux listes qui divergent au premier ajout. -->
       <a href="#nouveautes" data-vers-journal><strong>📔 Tout ce qui a changé, par date ▸</strong></a></p>
@@ -472,8 +472,19 @@
        qu'on y aille d'un clic.
        =================================================================== -->
   <details class="nouveautes" id="nouveautes">
-    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 19 août 2026</span></summary>
+    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 22 août 2026</span></summary>
     <div class="nv-corps">
+
+      <h3>22 août 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouvelle ligne</span><a href="packs/fluides/res/regules-interactif/index.html">La régulation</a>
+          <span class="d">— 12 stations sur le plan pour comprendre la commande directe, les protections, le pump-down et quatre méthodes de dégivrage. Les 10 stations du parcours proposent 3 leçons, 4 questions corrigées et une voix locale.</span></li>
+        <li><span class="nv-etiq">ajout</span><strong>Six films techniques</strong>
+          <span class="d">— lecture déclenchée par l’utilisateur, commandes tactiles agrandies et conseil de passage en paysage sur téléphone.</span></li>
+        <li><span class="nv-etiq nv-corr">correction</span><strong>Lecture mobile</strong>
+          <span class="d">— textes de la nouvelle ligne agrandis, carte du parcours en une colonne et couleurs remises sur la charte inerWeb.</span></li>
+        <li><span class="nv-etiq">progression</span><strong>108 stations</strong> <span class="d">— les nouvelles lignes Huile, Circuit d’huile, CO₂, Centrales, Régulation et Électrotechnique sont visibles depuis le plan.</span></li>
+      </ul>
 
       <h3>19 août 2026</h3>
       <ul>
@@ -865,7 +876,7 @@
 
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
-<script src="plan-descriptions.gen.js?v=00a1c0e8bf"></script>
+<script src="plan-descriptions.gen.js?v=0aa92a5595"></script>
 <script>
 /* =====================================================================
    LE PLAN DE FORMATION — généré depuis les données ci-dessous.
@@ -2041,11 +2052,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=00a1c0e8bf"></script>
-<script src="chiffres.gen.js?v=00a1c0e8bf"></script>
+<script src="moteur/lisibilite.js?v=0aa92a5595"></script>
+<script src="chiffres.gen.js?v=0aa92a5595"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=00a1c0e8bf" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=0aa92a5595" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)

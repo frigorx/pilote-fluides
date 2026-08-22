@@ -16,16 +16,18 @@
 >
 > La copie passe par un outil à liste blanche
 > (`atelier-animations/outils/copier-ligne-regules-vers-pack.mjs` : 11 coquilles +
-> catalog/engine/hub/styles, ~150 Ko, trois recollages, garde contre tout lien d'atelier
-> survivant). **Films, voix et tests restés à l'atelier** — personne n'a écouté les
-> narrations. Sur le plan : bande horizontale à 2250 entre les centrales et la boîte à
+> catalog/engine/hub/styles, trois recollages, garde contre tout lien d'atelier survivant).
+> Depuis la première mise en ligne, **110 MP3 masculins** (11 par station) et **six films
+> techniques autonomes** ont rejoint le dépôt public. Les films restent arrêtés au chargement ;
+> leurs commandes sont accessibles au toucher et la voix s'arrête quand la page est masquée.
+> Sur le plan : bande horizontale à 2250 entre les centrales et la boîte à
 > outils (tout ce qui suit descend de 220 px), cartouche vers le hub du pack, gares en
 > noindex comme celles de l'huile, compteur de trajet à 86.
 >
 > **Vérifié sur inerweb.fr en contre-cache après déploiement** : les 13 pages en 200,
 > `_regules-commun` servi (pas de piège Jekyll), liste crawlable à 15 lignes et
 > 108 stations, statut servi « Version en ligne — relecture métier en cours ».
-> Ce qui reste (validations de F. Henninot : films, narrations) vit dans
+> Ce qui reste (écoute humaine complète et validation métier finale des narrations) vit dans
 > `poste-pilotage.mjs`, bloc `pilote`, aFaire.
 
 > Dernière mise à jour : **22 août 2026** (ligne LA RÉGULATION en ligne — voir ci-dessus).

@@ -20,14 +20,15 @@ import { fileURLToPath } from "node:url";
 const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 /* Les pages destinées aux moteurs de recherche — et seulement elles.
-   · formation.html VOLONTAIREMENT absente (20/08/2026) : sa porte d'entrée
-     redirige vers la frise à chaque nouvelle session — stratégie
-     d'indexation à trancher par F. Henninot avant de l'y remettre.
+   · formation.html est la porte d'entrée de l'application : ses liens
+     profonds sont publics et sa page déclare son canonical. Elle rejoint
+     donc le sitemap le 22/08/2026 ; la frise d'accueil reste son introduction.
    · galerie.html : noindex par décision (en réévaluation). */
 const INDEXEES = [
   { fichier: "index.html", url: "https://inerweb.fr/" },
   { fichier: "metier.html", url: "https://inerweb.fr/metier.html" },
   { fichier: "formateurs.html", url: "https://inerweb.fr/formateurs.html" },
+  { fichier: "formation.html", url: "https://inerweb.fr/formation.html" },
   {
     fichier: "packs/fluides/res/chaleur-interactive/index.html",
     url: "https://inerweb.fr/packs/fluides/res/chaleur-interactive/index.html",

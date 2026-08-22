@@ -8,8 +8,8 @@
 | Mesure | Résultat |
 |---|---:|
 | Cours interactifs recensés | **75** |
-| Cours avec anomalie critique automatisable | **35** |
-| Cours avec dette documentaire ou de reprise | **57** |
+| Cours avec anomalie critique automatisable | **24** |
+| Cours avec dette documentaire ou de reprise | **32** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **10** |
 | SVG pédagogiques contrôlés | **46** |
 | SVG sans titre / sans description textuelle | **3 / 41** |
@@ -27,23 +27,23 @@
 | `chaleur-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `circuit-huile-interactif` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `circuit-organe-par-organe` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
-| `clapet-differentiel-huile-pedagogique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `clapet-differentiel-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `co2-r744` | ✓ | ✓ | ✓ | ✓ | commune | 5 | ✓ | 🟢 contrôle statique tenu |
-| `commande-directe-thermostat` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `commande-directe-thermostat` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `compresseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `condenseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
 | `cours-classes-securite` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
-| `degivrage-electrique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `degivrage-gaz-chauds` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `degivrage-inversion-cycle` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `degivrage-naturel` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `degivrage-electrique` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `degivrage-gaz-chauds` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `degivrage-inversion-cycle` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `degivrage-naturel` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `detendeur-interactif` | ✓ | ✓ | ✓ | ✓ | absente | 4 | ✓ | 🟠 réglage de lisibilité |
-| `diagnostic-circuit-huile` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `diagnostic-circuit-huile-conclure` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `diagnostic-circuit-huile` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `diagnostic-circuit-huile-conclure` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `diagramme-enthalpique` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |
 | `electrovanne-interactive` | ✓ | ✓ | ✓ | ✓ | absente | 5 | ✓ | 🟠 réglage de lisibilité |
-| `elements-circuit-huile` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `elements-circuit-huile-regler` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `elements-circuit-huile` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `elements-circuit-huile-regler` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `etancheite-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `evaporateur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 4 | ✗ | 🟠 SOURCES-IMAGES.md, ancien terme « module interactif » (2) |
 | `fil-conducteur-intervention` | ✓ | ✓ | ✓ | ✗ | absente | 1 | ✓ | 🟠 impression, réglage de lisibilité |
@@ -66,31 +66,31 @@
 | `pressostat-combine-kp15` | ✓ | ✓ | ✓ | ✓ | absente | 10 | ✓ | 🟠 réglage de lisibilité |
 | `pressostat-differentiel-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `pressostat-hp-kp5` | ✓ | ✓ | ✓ | ✓ | absente | 15 | ✓ | 🟠 réglage de lisibilité |
-| `pressostat-huile-securite` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `protection-minimum-serie` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `pump-down-ameliore` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `pump-down-automatique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `pump-down-unique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `pressostat-huile-securite` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `protection-minimum-serie` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `pump-down-ameliore` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `pump-down-automatique` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `pump-down-unique` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pupitre-reglage-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `recuperation-fluide-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
 | `regulateur-electronique-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `regulateur-huile-mecanique-pedagogique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `regulateur-huile-mecanique-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `regulateur-kvl-pedagogique` | ✗ | ✓ | ✓ | ✗ | absente | — | — | 🔴 description |
 | `regulateur-kvr-nrd` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🔴 fonds forcés à l’impression |
 | `regulateurs-kv-pedagogiques` | ✓ | ✓ | ✓ | ✓ | absente | 8 | ✓ | 🟠 réglage de lisibilité |
-| `regules-interactif` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `reservoir-huile-pedagogique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `retour-huile-naturel` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `regules-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `reservoir-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `retour-huile-naturel` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `retour-huile-verifier` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
-| `sans-degivrage-commande` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `sans-degivrage-commande` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `separateur-eclatement-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
-| `separateur-huile-pedagogique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `separateur-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `surchauffe-sous-refroidissement-interactif` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |
-| `technologie-huiles-choix-controle` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `technologie-huiles-frigorifiques` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `technologie-huiles-choix-controle` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `technologie-huiles-frigorifiques` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `tome-3-technologie-organes` | ✓ | ✓ | ✓ | ✓ | locale | 44 | ✗ | 🟠 SOURCES-IMAGES.md |
-| `traxoil-installer` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
-| `traxoil-pedagogique` | ✗ | ✓ | ✓ | ✗ | commune | — | — | 🔴 description |
+| `traxoil-installer` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `traxoil-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `vanne-service-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `voyant-liquide-pedagogique` | ✓ | ✓ | ✓ | ✓ | absente | 10 | ✓ | 🟠 réglage de lisibilité |
 

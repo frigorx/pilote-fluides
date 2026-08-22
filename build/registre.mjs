@@ -10,10 +10,11 @@
 
    RELEVÉ, JAMAIS SAISI. Un registre tenu à la main ment au bout de trois
    entrées : on ajoute un cours, on oublie de l'inscrire, et la liste
-   devient un piège. Celui-ci lit trois sources et les croise :
+   devient un piège. Celui-ci lit quatre sources et les croise :
      1. le DISQUE          — les index.html de packs/fluides/res/
      2. le BRANCHEMENT     — qui est appelé depuis quelle fiche (cartes.js)
-     3. la COUVERTURE      — couverture.json de chaque cours, croisé avec
+     3. LE PLAN D'ACCUEIL  — cours visibles depuis index.html
+     4. la COUVERTURE      — couverture.json de chaque cours, croisé avec
                              le référentiel
 
    IL SIGNALE CE QU'UNE LISTE MANUELLE NE VOIT JAMAIS
@@ -25,7 +26,7 @@
      · un code déclaré INCONNU du référentiel : une faute de frappe qui
        ferait croire à une couverture qui n'existe pas.
 
-   ENTRÉES  packs/fluides/res/ · packs/fluides/cartes.js ·
+   ENTRÉES  packs/fluides/res/ · packs/fluides/cartes.js · index.html ·
             packs/fluides/referentiel-2025.json
    SORTIE   REGISTRE-COURS-INTERACTIFS.md
    USAGE    node build/registre.mjs   (lancé aussi par build.mjs)
@@ -94,6 +95,15 @@ for (const c of CARTES) {
   }
 }
 
+/* Le plan est lui aussi un point d'entrée réel. Certaines nouvelles lignes
+   sont pédagogiquement autonomes avant d'être rattachées à une fiche du pack :
+   elles ne doivent pas être déclarées « inaccessibles » alors que l'accueil
+   les ouvre explicitement. */
+const accueil = readFileSync(resolve(RACINE, "index.html"), "utf8");
+const depuisAccueil = new Set();
+for (const m of accueil.matchAll(MOTIF)) depuisAccueil.add(m[1]);
+for (const m of accueil.matchAll(/\bcours\(\s*["']([a-z0-9-]+)["']/g)) depuisAccueil.add(m[1]);
+
 /* ---- 4. La couverture déclarée par chaque cours ---- */
 const cours = surDisque.map((nom) => {
   const dossier = join(RES, nom);
@@ -108,6 +118,7 @@ const cours = surDisque.map((nom) => {
   return {
     nom,
     fiches: appels.get(nom) || [],
+    accueil: depuisAccueil.has(nom),
     ko: Math.round(poids(dossier) / 1024),
     ecrans: couv ? couv.ecrans : null,
     titre: couv ? couv.titre : null,
@@ -138,7 +149,7 @@ for (const f of fichesSansCours)
 const codesTexteSeul = [...new Set(orphelinsTexte)];
 
 /* ---- 6. Les anomalies : c'est pour elles que ce fichier existe ---- */
-const orphelins = cours.filter((c) => !c.fiches.length);
+const orphelins = cours.filter((c) => !c.fiches.length && !c.accueil);
 const liensMorts = [...appels.keys()].filter((n) => !surDisque.includes(n));
 const sansCouverture = cours.filter((c) => !c.couverture);
 const codesFaux = cours.filter((c) => c.inconnus.length);
@@ -148,8 +159,8 @@ const L = [];
 L.push("# Registre des cours interactifs — pack habilitation fluides");
 L.push("");
 L.push("> **Fichier GÉNÉRÉ — ne pas le modifier à la main.** `node build/registre.mjs`");
-L.push("> (lancé aussi par `build/build.mjs`). Il relève trois sources et les croise : le");
-L.push("> disque, les appels depuis les fiches, et la couverture déclarée par chaque cours.");
+L.push("> (lancé aussi par `build/build.mjs`). Il relève quatre sources et les croise : le");
+L.push("> disque, les appels depuis les fiches, les entrées du plan d’accueil, et la couverture déclarée par chaque cours.");
 L.push("> Un registre tenu à la main ment au bout de trois entrées.");
 L.push("");
 L.push("## En un coup d'œil");
@@ -158,6 +169,7 @@ L.push("| | |");
 L.push("|---|---|");
 L.push(`| Cours interactifs en place | **${cours.length}** |`);
 L.push(`| Fiches qui en appellent au moins un | **${new Set(cours.flatMap((c) => c.fiches)).size}** |`);
+L.push(`| Cours accessibles depuis le plan d’accueil | **${cours.filter((c) => c.accueil).length}** |`);
 L.push(`| Codes du référentiel couverts par un cours | **${couvertsParUnCours.size}** |`);
 L.push(`| Codes encore expliqués par du texte seul | **${codesTexteSeul.length}** |`);
 L.push(`| Poids total des cours | **${Math.round(cours.reduce((a, c) => a + c.ko, 0) / 1024 * 10) / 10} Mo** |`);
@@ -176,9 +188,9 @@ if (!anomalies) {
     L.push("");
   }
   if (orphelins.length) {
-    L.push("### 🟠 Cours orphelins — présents, mais aucune fiche ne les appelle");
+    L.push("### 🟠 Cours orphelins — absents des fiches et du plan d’accueil");
     L.push("");
-    L.push("Du travail fait que personne ne peut atteindre depuis le parcours.");
+    L.push("Du travail fait que personne ne peut atteindre depuis les points d’entrée publics.");
     orphelins.forEach((c) => L.push(`- \`${c.nom}\` — ${c.ko} Ko`));
     L.push("");
   }
@@ -209,8 +221,9 @@ for (const c of cours) {
     : c.appui.length
       ? `*appui : ${c.appui.length} codes*`
       : "—";
+  const entrees = c.fiches.concat(c.accueil ? ["plan d’accueil"] : []);
   L.push(
-    `| \`${c.nom}\` | ${c.fiches.length ? c.fiches.join(", ") : "**orphelin**"} | ` +
+    `| \`${c.nom}\` | ${entrees.length ? entrees.join(", ") : "**orphelin**"} | ` +
     `${c.ecrans || "—"} | ${codes} | ${c.ko} Ko |`
   );
 }
