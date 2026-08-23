@@ -173,6 +173,71 @@ jusque-là. Vérifié **sur le site**, pas sur le dépôt :
 sur le site principal n'y mène (décision du point d.). On y accède par l'URL,
 pas autrement. C'est le régime voulu tant qu'une seule station est ouverte.
 
+## 🎙️ La voix est FABRIQUÉE (Piper, local) — 23/08
+
+La voix du navigateur faisait le travail, pas la qualité. Les 12 narrations sont
+maintenant synthétisées avec **Piper**, modèle `fr_FR-siwis-medium` — **rien ne
+sort de la machine**, donc aucun feu vert « service tiers » à demander.
+
+- `build/voix/collecter-narrations.mjs` balaie désormais **deux racines** :
+  `packs/fluides/res` et `legislation`. Il savait déjà lire `data-narration`.
+- Les MP3 vivent dans `packs/fluides/res/voix/audio/` — le magasin commun,
+  parce que `voix.js` les y cherche (audioBase déduite de son propre `src`).
+- **L'index embarqué est réduit à la station** : `voix-index.js`, 2,4 Ko pour
+  12 narrations, au lieu des 468 Ko de l'index global. Il se charge **avant**
+  `voix.js`, qui le lit à son exécution.
+- Une narration absente de l'index retombe sur la voix du navigateur : **la
+  station parle dans tous les cas**, même après une retouche de texte.
+
+**Refabriquer après avoir modifié un `data-narration`** :
+
+```
+node build/voix/collecter-narrations.mjs
+/c/git/_venv-piper/Scripts/python.exe build/voix/generer-audios-piper.py \
+  --model /c/git/_venv-piper/modeles/fr_FR-siwis-medium.onnx \
+  --corpus build/voix/corpus.json \
+  --output packs/fluides/res/voix/audio --index <index-temporaire> --key <clé>
+```
+puis réduire l'index à la station (voir `legislation/outils/`).
+
+⚠️ **Sinon l'audio ment** : le texte change à l'écran, l'ancien MP3 continue de
+jouer tant que sa clé n'a pas bougé — ou l'audio disparaît et la voix du
+navigateur reprend, sans prévenir.
+
+## 🗂️ La station 2 a son fond — en attente de validation
+
+`stations/aptitude-capacite/FOND.md`, rédigé le 23/08 (étape 1 du rail).
+C'est la **première correspondance de F-Gaz 3** : le maillage devient réel dès
+qu'elle ouvre.
+
+Ancré sur `packs/fluides/referentiel-2025.json`, pas sur des souvenirs :
+structure de l'examen (groupes obligatoires · **tirage au sort parmi G6 à G9** ·
+groupe spécifique de catégorie), **remise à niveau a minima tous les 7 ans** sous
+peine de suspension, **bascule des anciennes catégories avant le 12 mars 2029**.
+
+Message central, que le terrain n'a pas intégré : **l'attestation d'aptitude
+n'est plus acquise à vie.**
+
+Trois points y sont signalés comme à trancher, dont la durée de validité de
+l'attestation de **capacité** — absente du référentiel, qui ne couvre que
+l'aptitude : à sourcer ou à retirer de l'écran 4.
+
+## ⚠️ Une autre session prépare une « intégration globale »
+
+`CONSIGNES-INTEGRATION-GLOBALE.md` (racine, commit `5e4c56b`) a été écrit le
+23/08 par une session parallèle, à la demande de F. Henninot : une refonte
+déployée **en une seule action**, où « le jour J, on n'invente rien ».
+
+Son relevé d'état s'arrête à `c29f441` et annonce « rien en attente de push » —
+**c'est daté** : quatre commits ont été poussés après (voix Piper, brief visuel,
+`.gitattributes`, fond de la station 2). Refaire le relevé avant toute
+intégration : la vérité est le disque et le site servi.
+
+Ce document signale aussi un point qui touche ce réseau : **le contraste de
+`#ff6b35`** (≈ 2,52:1 sur beige) est sous le seuil de 4,5:1. La station n'utilise
+cet orange que pour le survol des liens ; son accent de sous-ligne est `#0f766e`,
+nettement plus foncé. À revoir si la charte crée une variante.
+
 ## ▶ PROCHAINE ACTION
 
 **Relecture métier des 12 écrans par F. Henninot**, en ligne :
