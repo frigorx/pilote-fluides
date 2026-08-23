@@ -103,13 +103,20 @@ station Traçabilité (BSD) — c'est le maillage.*
 
 Deux papiers, deux titulaires : l'**attestation d'aptitude** (la personne) et
 l'**attestation de capacité** (l'entreprise). L'arrêté du 21 novembre 2025
-redessine les catégories d'aptitude — **A1, A2, B, C, D, E** — parce que le
-règlement pousse vers les alternatives : le **CO₂ (catégorie B)** et
-l'**ammoniac (catégorie C)** entrent dans le champ de la formation. Un
-technicien qui n'évolue pas reste au bord du marché.
+redessine les catégories d'aptitude — **A1, A2, B, C, D, E**, auxquelles
+s'ajoute la **catégorie V** (climatisation des véhicules), qui relève d'un
+référentiel distinct. Ce redécoupage suit le règlement, qui pousse vers les
+alternatives : le **CO₂ (catégorie B)** et l'**ammoniac (catégorie C)** entrent
+dans le champ de la formation. Un technicien qui n'évolue pas reste au bord du
+marché.
+
+> **Corrigé le 23/08 après vérification** — le fond ne citait que six catégories.
+> `packs/fluides/referentiel-2025.json` en porte **sept** : V s'y ajoute, avec un
+> référentiel distinct (II.D). Arbitrage F. Henninot : rendre les sept.
 
 *Visuel : reprendre le SVG existant `aptitude-capacite.svg` du pack (personne /
-entreprise) en y ajoutant la rangée des six catégories.*
+entreprise) en y ajoutant les sept catégories, V étant encadrée en pointillé
+pour dire qu'elle se passe ailleurs.*
 
 ## Écran 7 — Le raisonnement du technicien (cœur BTS)
 
@@ -207,18 +214,23 @@ progression, ni `referentiel.js`, ni bandeau de marque — Code les greffe à
 l'étape 3 en reprenant le gabarit des cours existants du pack.
 
 ```
-fgaz-3-design/
-  station.html   les 8 écrans à la suite, un <section class="ecran" id="ecran-1">
+stations/fgaz-3/
+  index.html     les 8 écrans à la suite, un <section class="ecran" id="ecran-1">
                  … jusqu'à id="ecran-8", puis <section class="quiz"> (4 questions)
   styles.css     toute la mise en forme (aucun style en ligne dans le HTML)
-  svg/frise-generations.svg        écran 1
-  svg/phase-down.svg               écran 2
-  svg/conversion-teqco2.svg        écran 3
-  svg/deux-regimes.svg             écran 4
-  svg/aptitude-capacite-6cat.svg   écran 6 — reprise du SVG maison joint,
-                                   plus la rangée A1 · A2 · B · C · D · E
-  svg/raisonnement-technicien.svg  écran 7
+  svg/frise-generations.svg          écran 1
+  svg/phase-down.svg                 écran 2
+  svg/conversion-teqco2.svg          écran 3
+  svg/deux-regimes.svg               écran 4
+  svg/aptitude-capacite-categories.svg  écran 6 — reprise du SVG maison,
+                                     plus A1 · A2 · B · C · D · E · V
+  svg/raisonnement-technicien.svg    écran 7
 ```
+
+> **Deux écarts de nommage, assumés à la transposition (23/08).** Le fichier
+> s'appelle `index.html` et non `station.html` : c'est la convention maison, et
+> elle donne l'URL propre `stations/fgaz-3/`. Le SVG de l'écran 6 s'appelle
+> `…-categories` et non `…-6cat`, puisqu'il en porte sept.
 
 Écrans 5 et 8 : pas de SVG, mise en forme HTML seule (trois cartes / bilan).
 

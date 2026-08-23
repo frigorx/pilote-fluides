@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" role="img" aria-label="La formule tonnes équivalent CO2 égale charge en kilogrammes multipliée par le PRP divisée par mille. Deux installations de même charge, dix kilogrammes, sont comparées : une chambre froide au R-404A de PRP 3922 atteint 39,2 tonnes équivalent CO2, tandis qu'une climatisation au R-32 de PRP 675 n'atteint que 6,75 tonnes équivalent CO2. En bas, une échelle des PRP compare le CO2 à 1, le R-32 à 675, le R-410A à 2088 et le R-404A à 3922.">
+<title>La conversion qui pilote tout</title>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><cc:Work rdf:about=""><dc:title>La conversion qui pilote tout</dc:title><dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator><dc:date>2026</dc:date><cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/></cc:Work></rdf:RDF></metadata>
+<style>
+  .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .fo  { font:700 25px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .st  { font:700 16px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .lg  { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+  .ca  { font:400 15px Consolas,monospace; fill:#4a5b6e; }
+  .re  { font:700 27px Calibri,Segoe UI,sans-serif; fill:#0f766e; }
+  .pr  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .va  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+</style>
+<rect width="880" height="400" fill="#ffffff"/>
+
+<rect x="30" y="18" width="820" height="58" rx="8" fill="#e6f2f0" stroke="#0f766e" stroke-width="2"/>
+<text class="fo" x="440" y="55" text-anchor="middle">tonnes éq. CO₂  =  charge (kg)  ×  PRP  ÷  1000</text>
+
+<rect x="30" y="98" width="400" height="150" rx="8" fill="#fdf1ed" stroke="#e8b9a8" stroke-width="1.5"/>
+<g transform="translate(54,132)" fill="#c9451a"><rect x="0" y="10" width="26" height="52" rx="5"/><rect x="8" y="0" width="10" height="12" rx="3"/></g>
+<text class="st" x="110" y="128">Chambre froide au R-404A</text>
+<text class="lg" x="110" y="151">charge 10 kg · PRP 3922</text>
+<text class="ca" x="110" y="177">10 × 3922 ÷ 1000</text>
+<text class="re" x="110" y="219">39,2 t éq. CO₂</text>
+
+<rect x="450" y="98" width="400" height="150" rx="8" fill="#eef6f1" stroke="#a9cdb8" stroke-width="1.5"/>
+<g transform="translate(474,132)" fill="#1e7e54"><rect x="0" y="10" width="26" height="52" rx="5"/><rect x="8" y="0" width="10" height="12" rx="3"/></g>
+<text class="st" x="530" y="128">Climatisation au R-32</text>
+<text class="lg" x="530" y="151">charge 10 kg · PRP 675</text>
+<text class="ca" x="530" y="177">10 × 675 ÷ 1000</text>
+<text class="re" x="530" y="219">6,75 t éq. CO₂</text>
+
+<text class="t" x="30" y="278">Même charge, obligations différentes — l'échelle des PRP</text>
+
+<text class="pr" x="30" y="305">CO₂ (R-744)</text>
+<rect x="250" y="294" width="2" height="14" fill="#1b3a63"/>
+<text class="va" x="262" y="305">1</text>
+
+<text class="pr" x="30" y="330">R-32</text>
+<rect x="250" y="319" width="96" height="14" fill="#7bb9b3"/>
+<text class="va" x="356" y="330">675</text>
+
+<text class="pr" x="30" y="355">R-410A</text>
+<rect x="250" y="344" width="298" height="14" fill="#2c8b83"/>
+<text class="va" x="558" y="355">2088</text>
+
+<text class="pr" x="30" y="380">R-404A</text>
+<rect x="250" y="369" width="560" height="14" fill="#c9451a"/>
+<text class="va" x="820" y="380">3922</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 370" role="img" aria-label="Graphique en barres décroissantes représentant l'enveloppe annuelle de HFC pouvant être mise sur le marché, comptée en tonnes équivalent CO2. La première barre, en 2024, est la plus haute ; les suivantes rétrécissent par paliers jusqu'à une barre quasi nulle en 2050. Au-dessus des barres, des bouteilles de fluide se raréfient : trois, puis deux, puis une seule.">
+<title>Le phase-down : l'enveloppe qui rétrécit</title>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><cc:Work rdf:about=""><dc:title>Le phase-down : l'enveloppe qui rétrécit</dc:title><dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator><dc:date>2026</dc:date><cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/></cc:Work></rdf:RDF></metadata>
+<style>
+  .t  { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .lg { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+  .an { font:700 14px Calibri,Segoe UI,sans-serif; fill:#0f766e; }
+  .ax { font:400 13px Calibri,Segoe UI,sans-serif; fill:#637285; }
+  .co { font:700 14.5px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+</style>
+<rect width="880" height="370" fill="#ffffff"/>
+<text class="t" x="30" y="28">L'Union ne dit pas « interdit » : elle réduit l'enveloppe</text>
+
+<g fill="#0f766e">
+  <g transform="translate(113,49)"><rect x="0" y="7" width="16" height="21" rx="3"/><rect x="5" y="0" width="6" height="8" rx="2"/></g>
+  <g transform="translate(136,49)"><rect x="0" y="7" width="16" height="21" rx="3"/><rect x="5" y="0" width="6" height="8" rx="2"/></g>
+  <g transform="translate(159,49)"><rect x="0" y="7" width="16" height="21" rx="3"/><rect x="5" y="0" width="6" height="8" rx="2"/></g>
+  <g transform="translate(304,124)"><rect x="0" y="7" width="16" height="21" rx="3"/><rect x="5" y="0" width="6" height="8" rx="2"/></g>
+  <g transform="translate(327,124)"><rect x="0" y="7" width="16" height="21" rx="3"/><rect x="5" y="0" width="6" height="8" rx="2"/></g>
+  <g transform="translate(496,194)"><rect x="0" y="7" width="16" height="21" rx="3"/><rect x="5" y="0" width="6" height="8" rx="2"/></g>
+</g>
+
+<rect x="110" y="85"  width="70" height="180" fill="#0f766e"/>
+<rect x="200" y="120" width="70" height="145" fill="#2c8b83"/>
+<rect x="290" y="160" width="70" height="105" fill="#4fa199"/>
+<rect x="380" y="195" width="70" height="70"  fill="#7bb9b3"/>
+<rect x="470" y="230" width="70" height="35"  fill="#a8d0cc"/>
+<rect x="560" y="259" width="70" height="6"   fill="#a8d0cc"/>
+<line x1="645" y1="265" x2="770" y2="265" stroke="#c9451a" stroke-width="2.5" stroke-dasharray="7 5"/>
+
+<line x1="90" y1="70" x2="90" y2="265" stroke="#1b3a63" stroke-width="2"/>
+<line x1="90" y1="265" x2="800" y2="265" stroke="#1b3a63" stroke-width="2"/>
+<text class="ax" x="72" y="170" text-anchor="middle" transform="rotate(-90 72 170)">quantité mise sur le marché (t éq. CO₂)</text>
+
+<text class="an" x="145" y="288" text-anchor="middle">2024</text>
+<text class="ax" x="400" y="288" text-anchor="middle">des paliers successifs, fixés par le règlement</text>
+<text class="co" x="770" y="288" text-anchor="end">2050</text>
+
+<rect x="30" y="305" width="820" height="52" rx="8" fill="#fdf1ed" stroke="#e8b9a8" stroke-width="1.5"/>
+<text class="co" x="48" y="327">Les quotas vont aux producteurs et aux importateurs — jamais aux frigoristes.</text>
+<text class="lg" x="48" y="347">Le chantier, lui, subit l'effet : les fluides à fort PRP deviennent rares et chers. Le R-404A l'a montré le premier.</text>
+</svg>

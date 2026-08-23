@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 306" role="img" aria-label="Frise en escalier montant. Première marche, 2006 : F-Gas I, règlement 842/2006. Deuxième marche, plus haute, 2014 : F-Gas II, règlement 517/2014. Troisième marche, plus haute encore, 2024 : F-Gaz 3, règlement UE 2024/573. Un quatrième cadre en pointillé, le plus haut, porte l'horizon 2050 : zéro HFC neuf mis sur le marché.">
+<title>Trois textes, une marche de plus</title>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><cc:Work rdf:about=""><dc:title>Trois textes, une marche de plus</dc:title><dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator><dc:date>2026</dc:date><cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/></cc:Work></rdf:RDF></metadata>
+<style>
+  .t  { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .st { font:700 16px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .lg { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+  .an { font:700 15px Calibri,Segoe UI,sans-serif; fill:#0f766e; }
+  .fu { font:700 15px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+  .fl { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+</style>
+<rect width="880" height="306" fill="#ffffff"/>
+<text class="t" x="30" y="28">Trois textes, une marche de plus</text>
+
+<rect x="60"  y="190" width="200" height="60"  fill="#d8ebe8" stroke="#0f766e" stroke-width="1.5"/>
+<rect x="260" y="140" width="200" height="110" fill="#86bdb6" stroke="#0f766e" stroke-width="1.5"/>
+<rect x="460" y="85"  width="200" height="165" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<rect x="660" y="40"  width="180" height="210" fill="none" stroke="#c9451a" stroke-width="2" stroke-dasharray="7 5"/>
+
+<text class="st" x="160" y="155" text-anchor="middle">F-Gas I</text>
+<text class="lg" x="160" y="175" text-anchor="middle">règlement 842/2006</text>
+<text class="st" x="360" y="105" text-anchor="middle">F-Gas II</text>
+<text class="lg" x="360" y="125" text-anchor="middle">règlement 517/2014</text>
+<text class="st" x="560" y="50"  text-anchor="middle">F-Gaz 3</text>
+<text class="lg" x="560" y="70"  text-anchor="middle">règlement (UE) 2024/573</text>
+
+<text class="fu" x="750" y="32" text-anchor="middle">horizon 2050</text>
+<text class="fu" x="750" y="135" text-anchor="middle">zéro HFC neuf</text>
+<text class="fl" x="750" y="157" text-anchor="middle">mis sur le marché</text>
+
+<line x1="40" y1="250" x2="850" y2="250" stroke="#1b3a63" stroke-width="2"/>
+<text class="an" x="160" y="272" text-anchor="middle">2006</text>
+<text class="an" x="360" y="272" text-anchor="middle">2014</text>
+<text class="an" x="560" y="272" text-anchor="middle">2024</text>
+<text class="fu" x="750" y="272" text-anchor="middle">2050</text>
+
+<text class="lg" x="30" y="298">Un règlement s'applique tel quel dans toute l'Union : aucune transposition, aucun délai national.</text>
+</svg>

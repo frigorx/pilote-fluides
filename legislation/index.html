@@ -83,6 +83,7 @@
   .plan .legende-plan .rond { width:13px; height:13px; border-radius:50%;
                               border:3px dashed var(--bleu-clair); background:#fff; display:inline-block; }
   .plan .legende-plan .rond.corr { border-style:solid; box-shadow:0 0 0 2.5px #98a6b3; margin:0 3px; }
+  .plan .legende-plan .rond.ouvert { border-style:solid; }
   .plan .legende-plan .tete-l { display:inline-block; width:26px; height:13px;
                                 border-radius:999px; background:var(--bleu-clair); }
   .plan .defilant { overflow-x:auto; padding:6px 10px 4px; }
@@ -92,6 +93,15 @@
   .plan text { font-family:Calibri,sans-serif; }
   .plan .st   { fill:var(--bleu); font-size:15px; font-weight:bold; }
   .plan .sst  { fill:var(--mut); font-size:12px; }
+  /* Une station ouverte se signale AVANT le survol : la pastille pleine
+     ne suffit pas si on ne compare pas deux pastilles côte à côte. Le
+     soulignement rend le lien lisible seul, sans recourir à la couleur —
+     R5 : la couleur ne travaille jamais seule. */
+  .plan a .st.ouverte { text-decoration:underline; text-underline-offset:3px; }
+  .plan a { cursor:pointer; }
+  .plan a:hover .st.ouverte { fill:var(--orange); }
+  .plan a:hover .sst { fill:var(--orange); }
+  .plan a:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
   .plan .dep   { fill:var(--bleu); font-family:var(--titre); font-size:17px; font-weight:bold; }
   .plan .dep-s { fill:var(--mut); font-size:13px; }
   .plan .puce   { fill:#fff; font-family:var(--titre); font-size:14.5px; font-weight:bold; }
@@ -154,10 +164,11 @@
   <section class="bloc plan" id="carte" aria-label="Plan du réseau Législation">
     <div class="titre-bloc">
       <h2>🚇 Le plan du réseau</h2>
-      <span>2 lignes mères · 11 sous-lignes · 57 stations en préparation</span>
+      <span>2 lignes mères · 11 sous-lignes · 57 stations, dont 1 ouverte</span>
     </div>
     <div class="legende-plan">
       <span class="puce-l"><span class="tete-l"></span> tête de sous-ligne</span>
+      <span class="puce-l"><span class="rond ouvert"></span> station ouverte : le nom est souligné, on peut cliquer</span>
       <span class="puce-l"><span class="rond"></span> station en préparation</span>
       <span class="puce-l"><span class="rond corr"></span> anneau : correspondance (maillage interne ou autre réseau)</span>
     </div>
@@ -261,7 +272,7 @@
           ] },
         { id: "regl-fluidique", nom: "Fluidique & thermique", sous: "F-Gaz, EN 378, traçabilité", couleur: "#0f766e", corr: true,
           stations: [
-            { nom: "F-Gaz 3",             sous: "2024 : quotas, interdictions" },
+            { nom: "F-Gaz 3",             sous: "2024 : quotas, interdictions", href: "stations/fgaz-3/" },
             { nom: "Aptitude & capacité", sous: "personne & entreprise" },
             { nom: "NF EN 378",           sous: "classes, charges maxi", corr: true },
             { nom: "Traçabilité",         sous: "BSD, Trackdéchets", corr: true }
@@ -360,6 +371,24 @@
     return d;
   }
 
+  /* Une STATION OUVERTE : même géométrie que la station en préparation —
+     mêmes libellés au même endroit, l'œil ne doit pas avoir à se
+     réhabituer — mais la pastille devient PLEINE (trait continu, plus de
+     pointillé) et l'ensemble entre dans un lien. C'est le motif station()
+     du plan principal, moins le suivi de visite : tant qu'une seule
+     station est ouverte, une coche de progression n'apprend rien à
+     personne. Elle se pose le jour où la deuxième ouvre. */
+  function stationOuverte(s, x, y, couleur) {
+    var d = '<a href="' + esc(s.href) + '">' +
+            "<g><title>Ouvrir : " + esc(s.nom) + "</title>";
+    if (s.corr) d += '<circle cx="' + x + '" cy="' + y + '" r="13" fill="none" stroke="#98a6b3" stroke-width="2.5"></circle>';
+    d += '<circle cx="' + x + '" cy="' + y + '" r="7" fill="#ffffff" stroke="' + couleur +
+         '" stroke-width="4"></circle>';
+    d += '<text class="st ouverte" x="' + (x + 22) + '" y="' + (y - 3) + '">' + esc(s.nom) + "</text>" +
+         '<text class="sst" x="' + (x + 22) + '" y="' + (y + 13) + '">' + esc(s.sous) + "</text></g></a>";
+    return d;
+  }
+
   /* Une TÊTE de sous-ligne : la gare de jonction sur la ligne mère, le
      trait de la fille qui descend jusqu'après sa dernière station, son
      cartouche, puis ses stations en préparation. */
@@ -375,7 +404,8 @@
            '<text class="puce" x="' + x + '" y="' + (y + TETE_CART + 20) + '" text-anchor="middle">' + esc(f.nom) + "</text></g>");
     d.push('<text class="puce-s" x="' + x + '" y="' + (y + TETE_CART + 46) + '" text-anchor="middle">' + esc(f.sous) + "</text>");
     f.stations.forEach(function (s, i) {
-      d.push(stationPrep(s, x, y + ST_0 + i * ST_PAS, f.couleur));
+      var yy = y + ST_0 + i * ST_PAS;
+      d.push(s.href ? stationOuverte(s, x, yy, f.couleur) : stationPrep(s, x, yy, f.couleur));
     });
     return d.join("");
   }
@@ -401,7 +431,7 @@
   }
 
   var d = [];
-  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du réseau Législation inerWeb — deux lignes mères, onze sous-lignes, 57 stations en préparation">');
+  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du réseau Législation inerWeb — deux lignes mères, onze sous-lignes, 57 stations dont une ouverte : F-Gaz 3, sur la sous-ligne Fluidique et thermique">');
 
   /* Départ commun en tête : un court tronc vertical dessert les deux
      lignes mères (la verte dessous, la bleue par-dessus sur le segment
