@@ -4,9 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Film pédagogique inerWeb sur la migration de liquide frigorigène à l’arrêt et l’intérêt du pump-down.">
-<title>Régulation 02b · Migration de liquide — inerWeb Édu</title>
-<link rel="stylesheet" href="../film-accessible.css?v=20260822h">
+<title>Régulation 2b · Migration de liquide — inerWeb Édu</title>
+<link rel="stylesheet" href="../film-accessible.css">
 <script>try { localStorage.removeItem("animstage-v3:t"); } catch (err) {}</script>
 </head>
 <body>
@@ -2111,7 +2110,7 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
       var riseA = animate({ from: -18, to: -7.5, start: 0, end: tStart, ease: Easing.linear });
       var post = animate({ from: -7.5, to: -5.4, start: tStart, end: c.authoredTotal, ease: Easing.linear });
       var temp = T < tStart ? riseA(T) : post(T);
-      var cam = { cx: 1400, cy: 800, z: 0.58 };
+      var cam = camAt(T);
       var font = props.dys ? 'LexendLocal, "Trebuchet MS", sans-serif' : '"Trebuchet MS", Calibri, sans-serif';
       var keyIn = MOTION.enter(0, 1, CUES.Casse + 2.6, 0.9)(T);
       return /* @__PURE__ */ React.createElement(
@@ -2218,7 +2217,6 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
           height: 1080,
           bg: C.paper,
           scenes: window.OM_SCENES,
-          autoplay: false,
           playback: window.OM_PLAYBACK
         },
         /* @__PURE__ */ React.createElement(Piece, { captions: t.legendes !== false, dys: !!t.dys })
@@ -4214,6 +4212,6 @@ a:hover { color: #1b3a63; }
   }, 300);
 })();
 </script>
-<script src="../film-accessible.js?v=20260822h"></script>
+<script src="../film-accessible.js"></script>
 </body>
 </html>

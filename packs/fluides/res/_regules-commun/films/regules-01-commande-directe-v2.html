@@ -4,9 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Film pédagogique inerWeb sur la commande directe d’un compresseur frigorifique par thermostat.">
-<title>Régulation 01 · Commande directe — inerWeb Édu</title>
-<link rel="stylesheet" href="../film-accessible.css?v=20260822h">
+<title>Régulation 1 · Commande directe v2 — inerWeb Édu</title>
+<link rel="stylesheet" href="../film-accessible.css">
 <script>try { localStorage.removeItem("animstage-v3:t"); } catch (err) {}</script>
 </head>
 <body>
@@ -1898,7 +1897,23 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
     }
     function camFixed(T, droite) {
       var D = droite || 4180;
-      return { cx: (300 + D) / 2, cy: 1240, z: Math.min(1920 / (D - 260), 0.465) };
+      var croix = { cx: 1400, cy: 720, z: 0.74 };
+      var zTout = Math.min(1920 / (D - 260), 0.465);
+      var duo = { cx: (300 + D) / 2, cy: 830, z: Math.min(1920 / (D - 260), 0.52) };
+      var large = { cx: (300 + D) / 2, cy: 1240, z: zTout };
+      var V = [
+        { t: 0, v: { cx: 1420, cy: 1010, z: 0.9 } },
+        { t: 6, v: { cx: 2520 + (D - 2520) / 2, cy: 820, z: 0.66 } },
+        { t: 13, v: croix },
+        { t: 23, v: duo },
+        { t: 31, v: croix },
+        { t: 38, v: { cx: 1505, cy: 1980, z: 0.7 } },
+        { t: 44, v: large },
+        { t: 60, v: large }
+      ];
+      var k = V[0].v;
+      for (var i = 0; i < V.length; i++) if (T >= V[i].t) k = V[i].v;
+      return k;
     }
     function Chip(p) {
       var s = MOTION.pop(p.at)(p.T);
@@ -2417,7 +2432,22 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
       return CAM[CAM.length - 1];
     }
     function camFixed(T) {
-      return { cx: 2030, cy: 1240, z: 0.465 };
+      var croix = { cx: 1400, cy: 720, z: 0.74 };
+      var duo = { cx: 2030, cy: 830, z: 0.52 };
+      var large = { cx: 2030, cy: 1240, z: 0.465 };
+      var V = [
+        { t: 0, v: { cx: 1420, cy: 1010, z: 0.9 } },
+        { t: 6, v: { cx: 3140, cy: 820, z: 0.66 } },
+        { t: 13, v: croix },
+        { t: 23, v: duo },
+        { t: 31, v: croix },
+        { t: 38, v: { cx: 1505, cy: 1980, z: 0.7 } },
+        { t: 44, v: large },
+        { t: 60, v: large }
+      ];
+      var k = V[0].v;
+      for (var i = 0; i < V.length; i++) if (T >= V[i].t) k = V[i].v;
+      return k;
     }
     function Chip(p) {
       var s = MOTION.pop(p.at)(p.T);
@@ -2826,7 +2856,6 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
           height: 1080,
           bg: C.paper,
           scenes: window.OM_SCENES,
-          autoplay: false,
           playback: window.OM_PLAYBACK
         },
         /* @__PURE__ */ React.createElement(Piece, { captions: t.legendes !== false, dys: !!t.dys, fixedCam: t.zooms !== true })
@@ -4826,6 +4855,6 @@ a:hover { color: #1b3a63; }
   }, 300);
 })();
 </script>
-<script src="../film-accessible.js?v=20260822h"></script>
+<script src="../film-accessible.js"></script>
 </body>
 </html>

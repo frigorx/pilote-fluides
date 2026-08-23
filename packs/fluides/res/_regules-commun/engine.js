@@ -94,15 +94,35 @@
     return '<aside class="lesson-box ' + escapeHtml(box.type) + '"><strong>' + escapeHtml(box.label) + '</strong><p>' + escapeHtml(box.text) + '</p></aside>';
   }
 
+  /* ⚠️ NE PAS REMPLACER CE SCHÉMA PAR DU TEXTE.
+     Le 22/08, une passe extérieure a converti ce dessin en liste de puces
+     (« les symboles électriques non validés ont été retirés »). Ils l'étaient :
+     F. Henninot a relu et validé les symboles le 22/08 — pivot des contacts,
+     butée du contact à ouverture, organe de commande encadré. Un frigoriste
+     apprend à LIRE UN SCHÉMA ; une chaîne de puces ne l'enseigne pas.
+     Restauré le 23/08. La version en puces vit sur la branche
+     `gpt-regules-2026-08-22` si on veut la reprendre pour l'accessibilité. */
   function ladderVisual(visual) {
-    var rows = visual.rungs.map(function (rung) {
-      var contacts = (rung.contacts || []).map(function (contact) {
-        return '<span class="function-chip"><b>' + escapeHtml(contact.code) + '</b><small>' + escapeHtml(contact.label) + '</small></span>';
+    var count = visual.rungs.length;
+    var gap = count > 2 ? 92 : 118;
+    var firstY = count > 2 ? 84 : 105;
+    var rungs = visual.rungs.map(function (rung, rungIndex) {
+      var y = firstY + rungIndex * gap;
+      var contacts = rung.contacts || [];
+      var usableStart = 120;
+      var usableEnd = 535;
+      var contactGap = (usableEnd - usableStart) / Math.max(contacts.length, 1);
+      var bits = ['<text x="18" y="' + (y - 22) + '" class="svg-rung-label">' + escapeHtml(rung.label) + '</text>', '<line x1="42" y1="' + y + '" x2="650" y2="' + y + '" class="wire"/>'];
+      contacts.forEach(function (contact, index) {
+        var x = usableStart + contactGap * index;
+        bits.push('<rect x="' + (x - 9) + '" y="' + (y - 28) + '" width="78" height="56" rx="8" class="symbol-bg"/>');
+        bits.push('<line x1="' + (x + 10) + '" y1="' + (y - 17) + '" x2="' + (x + 10) + '" y2="' + (y + 17) + '" class="contact"/><line x1="' + (x + 48) + '" y1="' + (y - 17) + '" x2="' + (x + 48) + '" y2="' + (y + 17) + '" class="contact"/>');
+        bits.push('<text x="' + (x + 29) + '" y="' + (y - 35) + '" text-anchor="middle" class="svg-code">' + escapeHtml(contact.code) + '</text><text x="' + (x + 29) + '" y="' + (y + 47) + '" text-anchor="middle" class="svg-label">' + escapeHtml(contact.label) + '</text>');
       });
-      contacts.push('<span class="function-chip output"><b>' + escapeHtml(rung.coil.code) + '</b><small>' + escapeHtml(rung.coil.label) + '</small></span>');
-      return '<li class="function-row"><strong>' + escapeHtml(rung.label) + '</strong><div class="function-chain">' + contacts.join('<span class="function-arrow" aria-hidden="true">→</span>') + '</div></li>';
+      bits.push('<ellipse cx="592" cy="' + y + '" rx="31" ry="24" class="coil"/><text x="592" y="' + (y + 5) + '" text-anchor="middle" class="svg-code">' + escapeHtml(rung.coil.code) + '</text><text x="592" y="' + (y + 47) + '" text-anchor="middle" class="svg-label">' + escapeHtml(rung.coil.label) + '</text>');
+      return bits.join("");
     }).join("");
-    return '<figure class="functional-figure" role="group" aria-label="' + escapeHtml(visual.label) + '"><div class="functional-head"><p>LECTURE FONCTIONNELLE</p><h3>' + escapeHtml(visual.title) + '</h3></div><ol>' + rows + '</ol><figcaption><strong>Ce n’est pas un schéma de câblage.</strong> Les symboles électriques non validés ont été retirés. Le film conserve la vue complète du fonctionnement.</figcaption></figure>';
+    return '<figure class="visual-figure ladder-figure"><svg viewBox="0 0 690 390" role="img" aria-label="' + escapeHtml(visual.label) + '"><title>' + escapeHtml(visual.label) + '</title><text x="345" y="30" text-anchor="middle" class="svg-title">' + escapeHtml(visual.title) + '</text><line x1="42" y1="50" x2="42" y2="350" class="rail"/><line x1="650" y1="50" x2="650" y2="350" class="rail"/><text x="42" y="374" text-anchor="middle" class="svg-code">L</text><text x="650" y="374" text-anchor="middle" class="svg-code">N</text>' + rungs + '</svg><figcaption>Schéma fonctionnel simplifié — les contacts réels se vérifient sur la notice constructeur.</figcaption></figure>';
   }
 
   function sequenceVisual(visual) {
@@ -282,7 +302,7 @@
       var source = catalog.sources[key];
       return '<article class="source-item"><h3>' + escapeHtml(source.title) + '</h3><p>' + escapeHtml(source.use) + '</p><code>' + escapeHtml(source.location) + '</code></article>';
     }).join("");
-    return '<p class="status-chip">' + escapeHtml(catalog.status) + '</p><p>Les cours montrent des chaînes fonctionnelles et non des schémas de câblage. Les symboles électriques non validés ont été retirés. Toujours vérifier la notice constructeur et l’installation réelle.</p>' + items + '<p class="terminology-note"><strong>Repère de vocabulaire :</strong> les supports locaux emploient « pump-down amélioré », « single pump-down » et « tirage au vide unique amélioré ». Cette rame sépare leurs fonctions pour éviter de confondre relais anti-redémarrage et pressostat BP de sécurité.</p>';
+    return '<p class="status-chip">' + escapeHtml(catalog.status) + '</p><p>Les schémas sont des synthèses fonctionnelles originales. Ils ne remplacent ni la notice constructeur ni la vérification sur l’installation réelle.</p>' + items + '<p class="terminology-note"><strong>Repère de vocabulaire :</strong> les supports locaux emploient « pump-down amélioré », « single pump-down » et « tirage au vide unique amélioré ». Cette rame sépare leurs fonctions pour éviter de confondre relais anti-redémarrage et pressostat BP de sécurité.</p>';
   }
 
   function announce(text) { document.getElementById("live-status").textContent = text; }
