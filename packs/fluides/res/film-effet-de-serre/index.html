@@ -72,7 +72,18 @@ a:hover { color: #ff6b35; }
    Asservissement par l'événement de pilotage du cadre (data-om-seek-to-time-frame) ;
    le curseur ne règle que la vitesse du son, l'image suit — jamais de dérive. */
 (function () {
+  /* FENÊTRE UTILE DE LA BANDE SON — 23/08/2026, retour de F. Henninot.
+     Le fichier fabriqué contient, avant et après la narration, la lecture à
+     voix haute des CONSIGNES données au générateur (débit, respirations).
+     La voix commençait donc à parler avant la première image et continuait
+     après la dernière. Le MP3 n'est pas réencodé : on ne lit que sa fenêtre
+     utile, et l'image se cale sur elle.
+     Bornes MESURÉES sur l'enveloppe sonore (blocs de parole séparés d'au
+     moins 450 ms de silence) : préambule 0 → 4,3 s, narration 4,38 → 54,8 s,
+     appendice 55,2 → 57,8 s. Pour les recalculer après un nouvel
+     enregistrement, refaire cette mesure — ne jamais les deviner. */
   var SRC = "./voix-effet-de-serre.mp3";
+  var VOIX_DEBUT = 4.30, VOIX_FIN = 55.00;
   var audio = new Audio(SRC);
   audio.preload = "auto";
   try { audio.preservesPitch = true; audio.webkitPreservesPitch = true; } catch (e) {}
@@ -87,9 +98,22 @@ a:hover { color: #ff6b35; }
     scene.dispatchEvent(new CustomEvent("data-om-seek-to-time-frame",
       { detail: { time: Math.max(0, Math.min(t, duree_film)), playing: enLecture } }));
   }
+  /* L'avancement se compte sur la fenêtre utile, pas sur le fichier entier :
+     sans cela, l'image partirait avec le préambule et finirait en avance. */
+  function avancement() {
+    var p = (audio.currentTime - VOIX_DEBUT) / (VOIX_FIN - VOIX_DEBUT);
+    return Math.max(0, Math.min(1, p)) * duree_film;
+  }
   function synchronise() {
     if (audio.paused || audio.ended) return;
-    pousse((audio.currentTime / audio.duration) * duree_film, true);
+    if (audio.currentTime >= VOIX_FIN) {
+      audio.pause();
+      if (raf) cancelAnimationFrame(raf);
+      pousse(duree_film, false);
+      metBouton("▶ Revoir le film");
+      return;
+    }
+    pousse(avancement(), true);
     raf = requestAnimationFrame(synchronise);
   }
 
@@ -135,13 +159,15 @@ a:hover { color: #ff6b35; }
     if (!e.target || e.target.id !== "voix-bouton") return;
     if (!scene && !trouveScene()) { metBouton("… le film se charge, re-cliquer"); return; }
     if (audio.paused) {
-      if (audio.ended) audio.currentTime = 0;
+      if (audio.ended || audio.currentTime < VOIX_DEBUT || audio.currentTime >= VOIX_FIN) {
+        audio.currentTime = VOIX_DEBUT;
+      }
       audio.play().then(function () { metBouton("⏸ Pause"); synchronise(); aideSilencieux(); })
         .catch(function () { metBouton("▶ Le son n'a pas démarré — réessayer"); });
     } else {
       audio.pause();
       if (raf) cancelAnimationFrame(raf);
-      pousse((audio.currentTime / audio.duration) * duree_film, false);
+      pousse(avancement(), false);
       metBouton("▶ Reprendre");
     }
   });
