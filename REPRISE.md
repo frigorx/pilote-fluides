@@ -35,7 +35,8 @@
 > niveau BTS, ossature du manuel non suivie, **proposition à relire par
 > F. Henninot** : Thermique 6 (dont La RE2020, alimentée par le gisement du
 > Bureau) · Acoustique 5 · Incendie 5 · Électrique 6 · Fluidique & thermique 6
-> (F-Gas 2024, aptitude & capacité selon l'arrêté du 21/11/2025) ·
+> (« F-Gaz 3 » nommé ainsi à la demande de F. Henninot — règlement 2024/573 —,
+> aptitude & capacité selon l'arrêté du 21/11/2025) ·
 > Certifications 4 · Droit du travail 5 · Risques professionnels 6 (dont Zones
 > ATEX) · Déchets 5 · Impact environnemental 5 (dont TEWI). Toutes en pastille
 > pointillée, AUCUN lien. Maillage station-à-station : anneau sur une TÊTE =
