@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" role="img" aria-label="Le réflexe professionnel. À gauche, une fiche datée d'il y a deux ans, barrée : les seuils et les dates qu'elle porte ont pu changer. À droite, le texte en vigueur, qui seul fait foi. Entre les deux, une flèche indique le sens à prendre : toujours revenir au texte en vigueur. En bas, les quatre points du bilan de la station.">
+<title>Le texte en vigueur fait foi</title>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><cc:Work rdf:about=""><dc:title>Le texte en vigueur fait foi</dc:title><dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator><dc:date>2026</dc:date><cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/></cc:Work></rdf:RDF></metadata>
+<defs>
+  <marker id="vers" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#0f766e"/>
+  </marker>
+</defs>
+<style>
+  .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .ct  { font:700 16px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .lg  { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+  .mo  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#c9451a; }
+  .ok  { font:700 14px Calibri,Segoe UI,sans-serif; fill:#1e7e54; }
+  .bi  { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+  .pv  { fill:none; stroke:#c9451a; stroke-width:2; stroke-linecap:round; }
+  .pj  { fill:none; stroke:#1e7e54; stroke-width:2; stroke-linecap:round; }
+
+  /* R2 — le dessin est entier sans animation ; le mouvement n'est qu'une
+     entrée en scène, et seulement si le lecteur ne demande pas moins. */
+  @media (prefers-reduced-motion: no-preference) {
+    .fleche { animation: glisse 2.4s ease-in-out infinite; }
+    @keyframes glisse { 0%,100% { transform:translateX(0); } 50% { transform:translateX(7px); } }
+  }
+</style>
+<rect width="880" height="330" fill="#ffffff"/>
+<text class="t" x="30" y="28">Le réflexe professionnel</text>
+
+<!-- la vieille fiche -->
+<g transform="translate(60,52)">
+  <rect x="0" y="0" width="250" height="150" rx="8" fill="#fbe7e4" stroke="#c0392b" stroke-width="2" stroke-dasharray="8 5"/>
+  <path class="pv" d="M28,34 h150 M28,58 h150 M28,82 h110 M28,106 h130"/>
+  <!-- barré en diagonale : le trait porte le sens, pas la couleur (R5) -->
+  <path d="M14,140 L236,14" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>
+</g>
+<text class="mo" x="185" y="226" text-anchor="middle">La fiche d'il y a deux ans</text>
+<text class="lg" x="185" y="246" text-anchor="middle">seuils, dates, échéancier :</text>
+<text class="lg" x="185" y="264" text-anchor="middle">tout a pu bouger depuis</text>
+
+<!-- le passage -->
+<g class="fleche">
+  <line x1="340" y1="127" x2="424" y2="127" stroke="#0f766e" stroke-width="3.5" marker-end="url(#vers)"/>
+</g>
+<text class="lg" x="384" y="108" text-anchor="middle">toujours</text>
+
+<!-- le texte en vigueur -->
+<g transform="translate(470,52)">
+  <rect x="0" y="0" width="250" height="150" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2.5"/>
+  <path class="pj" d="M28,34 h150 M28,58 h150 M28,82 h110 M28,106 h130"/>
+  <circle cx="212" cy="122" r="16" fill="#1e7e54"/>
+  <path d="M204,122 l6,7 l12,-14" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text class="ok" x="595" y="226" text-anchor="middle">Le texte en vigueur</text>
+<text class="lg" x="595" y="246" text-anchor="middle">le règlement et son annexe,</text>
+<text class="lg" x="595" y="264" text-anchor="middle">à la date de l'affaire</text>
+
+<!-- le bilan en quatre points -->
+<line x1="30" y1="286" x2="850" y2="286" stroke="#d6dee7" stroke-width="1.5"/>
+<text class="bi" x="30" y="308">F-Gaz 3 = règlement 2024/573, cap 2050  ·  phase-down = enveloppe en t éq. CO₂ qui rétrécit, quotas aux producteurs</text>
+<text class="bi" x="30" y="326">t éq. CO₂ = charge × PRP ÷ 1000  ·  interdiction « neuf » ≠ restriction « maintenance » (recyclé ou régénéré)</text>
+</svg>

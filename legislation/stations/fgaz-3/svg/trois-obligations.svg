@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" role="img" aria-label="Les trois obligations héritées de F-Gas II. Un : les contrôles d'étanchéité, dont la fréquence dépend de seuils en tonnes équivalent CO2, cinq, cinquante et cinq cents ; au-delà du seuil haut, la détection devient automatique. Deux : la récupération obligatoire du fluide avant toute mise au rebut, la filière déchets ne traitant que la carcasse. Trois : le registre d'équipement tenu par l'exploitant, où chaque charge, chaque contrôle et chaque fuite laisse une trace.">
+<title>Trois obligations, resserrées</title>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><cc:Work rdf:about=""><dc:title>Trois obligations, resserrées</dc:title><dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator><dc:date>2026</dc:date><cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/></cc:Work></rdf:RDF></metadata>
+<style>
+  .t  { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .ct { font:700 16px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .lg { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+  .se { font:700 15px Calibri,Segoe UI,sans-serif; fill:#0f766e; }
+  .sl { font:400 12.5px Calibri,Segoe UI,sans-serif; fill:#637285; }
+  .p  { fill:none; stroke:#0f766e; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+
+  /* R2 — l'état VISIBLE est la base : le dessin est complet sans aucune
+     animation. Le mouvement n'est qu'une entrée en scène, et il ne se
+     déclenche que si le lecteur n'a pas demandé moins de mouvement. */
+  @media (prefers-reduced-motion: no-preference) {
+    .carte { animation: monte .5s ease-out backwards; }
+    .carte:nth-of-type(2) { animation-delay: .12s; }
+    .carte:nth-of-type(3) { animation-delay: .24s; }
+    @keyframes monte { from { opacity:0; transform:translateY(10px); } }
+  }
+</style>
+<rect width="880" height="340" fill="#ffffff"/>
+<text class="t" x="30" y="28">Ce qui se durcit sans changer de nature</text>
+
+<g class="carte">
+  <rect x="30" y="50" width="266" height="168" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5"/>
+  <line x1="30" y1="52" x2="296" y2="52" stroke="#0f766e" stroke-width="5"/>
+  <!-- loupe -->
+  <g transform="translate(58,92)">
+    <circle class="p" cx="0" cy="0" r="15"/>
+    <path class="p" d="M11,11 l14,14"/>
+  </g>
+  <text class="ct" x="92" y="88">Contrôles</text>
+  <text class="ct" x="92" y="108">d'étanchéité</text>
+  <text class="lg" x="52" y="142">Périodiques. Leur fréquence</text>
+  <text class="lg" x="52" y="160">dépend de la charge en t éq. CO₂,</text>
+  <text class="lg" x="52" y="178">pas du poids de fluide.</text>
+  <text class="lg" x="52" y="200">Au seuil haut : détection auto.</text>
+</g>
+
+<g class="carte">
+  <rect x="307" y="50" width="266" height="168" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5"/>
+  <line x1="307" y1="52" x2="573" y2="52" stroke="#0f766e" stroke-width="5"/>
+  <!-- bouteille + flèche de retour -->
+  <g transform="translate(335,74)">
+    <rect x="0" y="12" width="22" height="44" rx="5" fill="#0f766e"/>
+    <rect x="6" y="2" width="9" height="11" rx="3" fill="#0f766e"/>
+    <path class="p" d="M32,50 q18,-6 18,-24" stroke-dasharray="5 4"/>
+  </g>
+  <text class="ct" x="392" y="88">Récupération</text>
+  <text class="ct" x="392" y="108">obligatoire</text>
+  <text class="lg" x="329" y="142">Avant toute mise au rebut.</text>
+  <text class="lg" x="329" y="160">La filière déchets traite la</text>
+  <text class="lg" x="329" y="178">carcasse — jamais le fluide,</text>
+  <text class="lg" x="329" y="200">qui se récupère d'abord.</text>
+</g>
+
+<g class="carte">
+  <rect x="584" y="50" width="266" height="168" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5"/>
+  <line x1="584" y1="52" x2="850" y2="52" stroke="#0f766e" stroke-width="5"/>
+  <!-- registre -->
+  <g transform="translate(612,74)">
+    <rect class="p" x="0" y="0" width="40" height="52" rx="4"/>
+    <path class="p" d="M10,14 h20 M10,26 h20 M10,38 h12"/>
+  </g>
+  <text class="ct" x="669" y="88">Registre</text>
+  <text class="ct" x="669" y="108">d'équipement</text>
+  <text class="lg" x="606" y="142">Tenu par l'exploitant.</text>
+  <text class="lg" x="606" y="160">Chaque charge, chaque</text>
+  <text class="lg" x="606" y="178">contrôle, chaque fuite y</text>
+  <text class="lg" x="606" y="200">laisse une trace.</text>
+</g>
+
+<text class="t" x="30" y="256">Les seuils qui déclenchent, en tonnes équivalent CO₂</text>
+<line x1="60" y1="290" x2="820" y2="290" stroke="#1b3a63" stroke-width="2"/>
+<g fill="#0f766e">
+  <circle cx="150" cy="290" r="7"/>
+  <circle cx="400" cy="290" r="7"/>
+  <circle cx="650" cy="290" r="7"/>
+</g>
+<text class="se" x="150" y="278" text-anchor="middle">5</text>
+<text class="se" x="400" y="278" text-anchor="middle">50</text>
+<text class="se" x="650" y="278" text-anchor="middle">500</text>
+<text class="sl" x="150" y="312" text-anchor="middle">le contrôle commence</text>
+<text class="sl" x="400" y="312" text-anchor="middle">il se rapproche</text>
+<text class="sl" x="650" y="312" text-anchor="middle">détection automatique</text>
+<text class="sl" x="820" y="312" text-anchor="end">plus l'installation pèse, plus on la surveille</text>
+</svg>

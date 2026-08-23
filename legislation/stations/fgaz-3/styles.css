@@ -136,6 +136,26 @@ a:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
   padding:26px 30px 30px; margin:0 0 26px;
 }
 .slide h2:focus { outline:none; }
+
+/* R2 — l'écran est ENTIER sans aucune animation : l'état visible est la
+   base, le mouvement n'est qu'une entrée en scène. Un lecteur qui demande
+   moins de mouvement voit exactement le même contenu, tout de suite. */
+@media (prefers-reduced-motion: no-preference) {
+  .slide.active { animation:entree .38s ease-out; }
+  @keyframes entree { from { opacity:0; transform:translateY(14px); } }
+  .slide.active figure { animation:paraitre .5s ease-out .1s backwards; }
+  @keyframes paraitre { from { opacity:0; transform:scale(.985); } }
+  .outil--voix[aria-pressed="true"] { animation:souffle 1.6s ease-in-out infinite; }
+  @keyframes souffle { 50% { box-shadow:0 0 0 6px rgba(15,118,110,.18); } }
+  .quiz-options button { transition:border-color .18s, background .18s, transform .18s; }
+  .quiz-options button:hover:not(:disabled) { transform:translateX(3px); }
+}
+
+/* La vignette de rappel d'une question : plus petite que le schéma
+   d'origine, en trait tireté — elle rappelle, elle n'enseigne pas. */
+.vignette { max-width:430px; margin:20px 0 0; }
+.vignette img { border-style:dashed; border-color:#b9c6d3; }
+.vignette figcaption { font-size:.82rem; font-style:italic; }
 .numero {
   margin:0 0 4px;
   font-family:var(--titre); font-weight:bold; color:var(--sous-ligne);
