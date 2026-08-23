@@ -40,7 +40,7 @@
 > `_regules-commun` servi (pas de piège Jekyll), liste crawlable à 15 lignes et
 > 108 stations, statut servi « Version en ligne — relecture métier en cours ».
 > Ce qui reste (écoute humaine complète et validation métier finale des narrations) vit dans
-> `poste-pilotage.mjs`, bloc `pilote`, aFaire.
+> `poste-pilotage.mjs`, bloc `pilote`, aFaire ; mini-jeux « S'entraîner » pilotés sur la station 3 le 23/08, à déployer aux 9 autres après validation.
 
 > Dernière mise à jour : **22 août 2026** (ligne LA RÉGULATION en ligne — voir ci-dessus).
 > L'état du 21/08 (fonds vocal edge-tts, correctifs d'écran, flèches du plan) et celui
