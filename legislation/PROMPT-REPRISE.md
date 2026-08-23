@@ -77,110 +77,66 @@ autres.
    donner un `href` et reprendre le motif `station()` complet du plan principal
    (lien, trajet, coche) à la place de la pastille en pointillé.
 
-## ✅ ÉTAPE 2 FAITE — la station F-Gaz 3 est rendue (23/08)
+## ✅ LA PREMIÈRE STATION EST OUVERTE — F-Gaz 3, 23/08
 
-`/design consent` donné, le verrou est tombé. La station est **produite et
-vérifiée** dans un projet Claude Design dédié :
+Le rail a été déroulé en entier sur la première station. **57 stations, dont
+1 ouverte.** Elle vit dans le dépôt et nulle part ailleurs :
 
-> **Station F-Gaz 3 — inerWeb Législation**
-> `a10d6dab-39fd-439a-9359-05862309eb5c`
-> <https://claude.ai/design/p/a10d6dab-39fd-439a-9359-05862309eb5c?file=station.html>
+    legislation/stations/fgaz-3/
+      index.html   8 écrans + 4 questions + le maillage
+      styles.css   feuille autonome (le dossier reste déplaçable d'un bloc)
+      svg/         6 schémas : frise, phase-down, conversion, deux régimes,
+                   aptitude + les 7 catégories, raisonnement du technicien
+      FOND.md      le fond validé, mis à jour des arbitrages du 23/08
 
-Le projet de charte (`1394c5be-…`) n'a **pas** été touché : ses pièces ont été
-lues (`theme.json`, `styles.css`, `foundations/logo.html`), rien n'y a été écrit.
+Le plan (`index.html`) a gagné **`stationOuverte()`** : même géométrie que la
+pastille en préparation — l'œil ne doit pas se réhabituer — mais pastille pleine,
+nom souligné, et un lien. Compteur et légende suivent.
 
-**Livré, conforme à l'arborescence annoncée :** `station.html` (8 écrans + les
-4 questions + le maillage), `styles.css`, et les 6 SVG. Marque inerWeb, logo
-compact au cartouche « Législation ».
+**Vérifié sur le site local**, pas sur le code : console vide, plan → station en
+200, aucun débordement de 1265 px à 375 px, et **0 chevauchement sur les 110
+textes** des 6 SVG (mesure en `getBoundingClientRect`, jamais `getBBox`).
 
-**Contrôlé sur la page servie**, pas sur le code : console vide, 6 SVG en 200,
-**0 chevauchement et 0 débordement sur 110 textes** (mesure en
-`getBoundingClientRect`), aucun débordement horizontal de 1440 px à 375 px,
-curseurs de lisibilité opérants (17→24 px, contraste doux/standard/renforcé)
-sans jamais inverser le fond — R1 tenue.
+### Les quatre arbitrages de F. Henninot (23/08)
 
-### Trois écarts assumés, à connaître avant de reprendre
+1. **Sept catégories d'aptitude, pas six** — V ajoutée d'après
+   `referentiel-2025.json`, encadrée en pointillé (référentiel distinct II.D).
+   Le fond a été corrigé en conséquence.
+2. **HTML simple, pas `.dc.html`** — la page se lit et s'exporte, elle n'est pas
+   cliquable-éditable dans l'éditeur Design. Choix assumé : le format à runtime
+   de Design aurait compliqué la transposition.
+3. **Rapatrier ET rendre cliquable** dans la foulée, sans attendre la relecture.
+4. **Auditer les SVG du pack sans les corriger** → `AUDIT-SVG-DEBORDEMENTS.md`
+   à la racine : 19 fichiers sur 198 débordent dès que Calibri manque, contre 10
+   sur un poste Windows. `aptitude-capacite.svg` du pack garde son défaut ; seule
+   la copie de la station est saine.
 
-1. **Le SVG maison `packs/fluides/res/svg/aptitude-capacite.svg` a un défaut**
-   révélé au passage : ses deux lignes « Sans elle… » sortent de leur bloc, et
-   l'une sort du cadre de 36 unités. Invisible sur un poste où Calibri existe,
-   visible partout où le navigateur retombe sur un repli plus large. **Corrigé
-   dans la copie de la station, PAS dans le fichier maison** — hors périmètre,
-   à traiter à part.
-2. **Six catégories au fond, sept au référentiel.** `referentiel-2025.json`
-   porte aussi la **catégorie V** (climatisation des véhicules, référentiel
-   distinct II.D). Le fond validé n'en cite que six : les six sont rendues telles
-   quelles, et une ligne discrète signale que V relève d'un référentiel distinct.
-   Sans elle, le document aurait été inexact pour un BTS. **À valider.**
-3. **Format HTML simple, pas `.dc.html`.** Le canal Design pousse vers son
-   format à runtime propriétaire, qui aurait compliqué la transposition maison.
-   Conséquence : la page n'est pas cliquable-éditable dans l'éditeur Design,
-   elle se lit et s'exporte. Le réglage fin passe par les curseurs intégrés.
+### Ce qui n'a PAS été greffé, et pourquoi
+
+Le moteur du site est chargé (`lisibilite.js`, `marque.js`, en absolu). Trois
+choses ont été écartées **volontairement**, pas oubliées :
+
+- **les curseurs de lisibilité** rendus par Design : doublon avec le bouton
+  « Aa » de `lisibilite.js`, qui fait mieux (70→160 %, police DYS, mémorisé).
+  Le contraste disparaît avec eux : s'il manque vraiment, sa place est **dans**
+  `lisibilite.js`, pas dans une station ;
+- **la voix** : elle suppose de fabriquer les audios, donc un service tiers, donc
+  un feu vert séparé de F. Henninot ;
+- **le rail de progression écran par écran** et **`referentiel.js`** : le premier
+  n'apprend rien tant qu'une seule station existe, le second attend que le
+  référentiel BTS d'adossement soit tranché (point b ci-dessous). La page défile,
+  elle s'imprime, elle se lit.
 
 ## ▶ PROCHAINE ACTION
 
-**Étape 3 du rail : transposer au format maison.** Rapatrier les 8 fichiers
-depuis le projet Design, les poser sous `legislation/stations/fgaz-3/`, greffer
-le moteur (voix, rail de progression, `referentiel.js`, bandeau de marque) en
-reprenant le gabarit d'un cours existant — `packs/fluides/res/etancheite-interactive/`
-est le plus propre. Puis donner un `href` à la station dans le plan et remplacer
-sa pastille en pointillé par le motif `station()` complet (lien, trajet, coche).
+**Relecture métier des 8 écrans par F. Henninot**, sur le site local :
+`http://localhost:8124/legislation/stations/fgaz-3/` (le port 8123 était occupé
+par une autre session — entrée `pilote-fluides-legislation` dans
+`.claude/launch.json`).
 
-Avant de coder : **relecture métier des 8 écrans par F. Henninot** sur le lien
-ci-dessus, et arbitrage des trois écarts. Rien ne se transpose avant.
+La station s'annonce d'elle-même comme document de travail : l'attribut
+`data-prototype` sur `marque.js` affiche « Prototype — document de travail » en
+pied. **Il se retire une fois la relecture faite.**
 
-## Ce qui attend F. Henninot
+Ensuite seulement : la station 2, en repartant de l'étape 1 du rail.
 
-- a. la **relecture des 57 stations** proposées (noms, sous-titres, paires de
-  maillage) — conception Claude, rien de validé métier ;
-- b. le **référentiel BTS d'adossement** (FED ? autre ?) pour coder les stations ;
-- c. l'**hébergement définitif** : rester en `inerweb.fr/legislation/` ou dépôt /
-  sous-domaine séparé ;
-- d. la pose de la correspondance sur l'accueil du réseau technique, puis le push ;
-- e. trois **stations candidates** révélées par l'inventaire, non ajoutées :
-  Plan de prévention, Permis de feu, Gestes & postures (PRAP).
-
-## Gisements
-
-`GISEMENTS.md` (même dossier) : inventaire du 23/08 mené avec le moteur de
-recherche documentaire de l'usine — briques trouvées station par station.
-Bien dotées : Électrique, Fluidique, Risques pro, Déchets, Impact env.
-À créer de zéro : Certifications & normes, et tout ce qui touche à la DESP et au
-sprinkler (rien dans la base).
-
-Relancer une recherche :
-`cd C:\git\usine-contenu\moteur-recherche && node chercher.mjs "ma question" 6`
-(Ollama doit tourner ; ~13 980 fiches indexées).
-
-## Pièges déjà payés — ne pas les repayer
-
-- Le **DÉPART** posé sur une ligne mère s'écrase contre son cartouche : il vit
-  au-dessus, sur un court tronc vertical commun.
-- Le **trait d'une ligne doit courir au-delà de sa dernière station** (piège
-  documenté du plan principal : sinon les pastilles flottent sans rien qui les
-  relie). Contrôle : le `H` final du path > le `cx` de la dernière pastille.
-- Mesurer les chevauchements en **`getBoundingClientRect`**, jamais `getBBox`
-  (qui ignore les `transform`).
-- Ajouter une tête de sous-ligne **élargit le SVG** : penser `W`, la pointe de
-  flèche, la position du jalon et `min-width` de `.plan svg` ensemble.
-- Le **Bureau de F. Henninot = `~\OneDrive\Bureau\`**, mais le gisement RE2020
-  est sur `~\Desktop\` (hors OneDrive) : les deux existent.
-- **Diffusion gelée sur ce dépôt** : aucun push sans feu vert explicite.
-- Deux sessions ont déjà travaillé en parallèle sur ce dépôt : `git add -A`
-  ramasse ce qui n'est pas à soi — **ajouter fichier par fichier**.
-
-## Voir la page en local
-
-`.claude/launch.json` (dans l'espace de travail) déclare `pilote-fluides-local` :
-un serveur statique sur le port **8123** servant `C:/git/pilote-fluides`.
-La page : `http://localhost:8123/legislation/`.
-
-## Journal des commits (branche `main`, tous LOCAUX — rien poussé)
-
-- `98c0e87` — ouverture du 2e réseau (première forme, page à la racine)
-- `8d61e35` — réseau de réseaux maillé
-- `66049be` — bascule en satellite `legislation/` + 53 stations nommées
-- `396ff43` — « F-Gas 2024 » devient « F-Gaz 3 »
-- `bea217f` — inventaire des gisements
-- `7ed83aa` — fond de la station F-Gaz 3
-- `804165b` — la DESP en sous-ligne indépendante + Sprinkler & RIA
