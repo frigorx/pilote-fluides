@@ -275,16 +275,26 @@ function collectMainCards() {
 
 collectMainCards();
 
-for (const file of walkFiles(path.join(root, "packs/fluides/res"))) {
-  const relative = path.relative(root, file).replaceAll("\\", "/");
-  const code = fs.readFileSync(file, "utf8");
-  if (file.endsWith(".js")) collectScript(code, relative);
-  else {
-    for (const match of code.matchAll(/data-narration\s*=\s*(["'])([\s\S]*?)\1/gi)) {
-      ajouter(match[2], relative, "data-narration");
-    }
-    for (const match of code.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)) {
-      collectScript(match[1], relative);
+/* Deux gisements de narrations, et non plus un seul :
+   · packs/fluides/res — les cours du pack habilitation ;
+   · legislation      — les stations du 2e réseau (23/08/2026). Elles portent
+     leur narration en `data-narration` sur chaque écran, ce que la boucle
+     ci-dessous sait déjà lire. C'est un couplage d'OUTILLAGE seulement : la
+     station ne dépend de rien à l'exécution, le dossier reste déplaçable. */
+for (const racine of ["packs/fluides/res", "legislation"]) {
+  const dossier = path.join(root, racine);
+  if (!fs.existsSync(dossier)) continue;
+  for (const file of walkFiles(dossier)) {
+    const relative = path.relative(root, file).replaceAll("\\", "/");
+    const code = fs.readFileSync(file, "utf8");
+    if (file.endsWith(".js")) collectScript(code, relative);
+    else {
+      for (const match of code.matchAll(/data-narration\s*=\s*(["'])([\s\S]*?)\1/gi)) {
+        ajouter(match[2], relative, "data-narration");
+      }
+      for (const match of code.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)) {
+        collectScript(match[1], relative);
+      }
     }
   }
 }

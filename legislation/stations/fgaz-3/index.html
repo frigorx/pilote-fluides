@@ -304,10 +304,18 @@
 
 <!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
      divergence). voix.js donne la narration, prof-vocal.js enchaîne les
-     écrans tout seul et s'arrête sur les questions. voix-index.js n'est
-     PAS chargé : aucun audio n'est fabriqué pour cette station, la voix
-     du navigateur suffit — et l'index pèse 468 Ko pour rien.
+     écrans tout seul et s'arrête sur les questions.
+
+     L'INDEX EST LOCAL et il est chargé AVANT voix.js, qui le lit à son
+     exécution. Il ne porte que les 12 narrations de cette station (2,4 Ko),
+     là où l'index global du site en porte 2573 (468 Ko) : les voix
+     fabriquées avec Piper — modèle fr_FR-siwis-medium, entièrement local —
+     remplacent la voix du navigateur, qui reste le filet de secours si un
+     texte change sans que l'audio soit refait.
+     Régénérer : build/voix/collecter-narrations.mjs puis generer-audios-piper.py.
+
      data-prototype : la station attend sa relecture métier. -->
+<script src="voix-index.js"></script>
 <script src="https://inerweb.fr/moteur/voix.js"></script>
 <script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
 <script src="https://inerweb.fr/moteur/lisibilite.js"></script>
