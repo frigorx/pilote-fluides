@@ -116,28 +116,73 @@ textes** des 6 SVG (mesure en `getBoundingClientRect`, jamais `getBBox`).
    sur un poste Windows. `aptitude-capacite.svg` du pack garde son défaut ; seule
    la copie de la station est saine.
 
-### Ce qui n'a PAS été greffé, et pourquoi
+### 🔊 La station est PARLÉE et navigable (repris le 23/08, même journée)
 
-Le moteur du site est chargé (`lisibilite.js`, `marque.js`, en absolu). Trois
-choses ont été écartées **volontairement**, pas oubliées :
+Première version : une page qui défilait, sans voix. **C'était une erreur de
+cadrage** — F. Henninot a rappelé que la voix est le cœur de l'idée : « un prof
+qui explique chaque écran ». Repris le jour même.
+
+**La voix ne demande AUCUN service tiers.** `moteur/voix.js` le dit en clair :
+« un texte modifié ou absent de l'index retombe sur la voix du navigateur : le
+cours ne dépend donc jamais du lot audio ». La station n'a aucun audio fabriqué,
+elle parle donc entièrement en `speechSynthesis`. Le feu vert « service tiers »
+que j'avais réclamé n'avait pas lieu d'être.
+
+- **12 écrans navigables** (8 écrans + 4 questions), un seul à la fois, barre
+  d'outils collante : Écouter · Arrêter · progression · Précédent · Suivant.
+- **Une narration propre à chaque écran** (`data-narration`, 778 mots ≈ 4 min à
+  2,89 mots/s) : elle explique **ce que l'on voit**, elle ne relit pas le texte.
+- **`prof-vocal.js` s'active** (il cherche `#listen` et `#next`) et enchaîne les
+  écrans tout seul, en s'arrêtant sur les questions.
+- **Quiz interactif** : la réponse se choisit, la correction s'affiche avec le
+  mot « Juste » ou « À revoir » — R5, le mot porte le sens, pas la couleur.
+- **`voix-index.js` n'est PAS chargé** : 468 Ko d'index audio qui ne servent à
+  rien ici. Ne pas l'ajouter sans fabriquer les audios d'abord.
+
+⚠️ **Contrat à ne pas casser** : les identifiants `#listen`, `#next`, `#prev`,
+`#start`, `#stop-voice` et la classe `.slide.active` sont ce que `prof-vocal.js`
+cherche. Les renommer éteint le professeur vocal, sans erreur en console.
+
+### Ce qui n'a PAS été greffé, et pourquoi
 
 - **les curseurs de lisibilité** rendus par Design : doublon avec le bouton
   « Aa » de `lisibilite.js`, qui fait mieux (70→160 %, police DYS, mémorisé).
   Le contraste disparaît avec eux : s'il manque vraiment, sa place est **dans**
   `lisibilite.js`, pas dans une station ;
-- **la voix** : elle suppose de fabriquer les audios, donc un service tiers, donc
-  un feu vert séparé de F. Henninot ;
-- **le rail de progression écran par écran** et **`referentiel.js`** : le premier
-  n'apprend rien tant qu'une seule station existe, le second attend que le
-  référentiel BTS d'adossement soit tranché (point b ci-dessous). La page défile,
-  elle s'imprime, elle se lit.
+- **les audios fabriqués** (Piper / edge-tts) : la voix du navigateur suffit et
+  ne coûte rien. Fabriquer le lot améliorerait la qualité d'écoute — c'est un
+  chantier à part, avec le feu vert service tiers que cela suppose ;
+- **`referentiel.js`** : attend que le référentiel BTS d'adossement soit tranché
+  (point b ci-dessous) ;
+- **les activités manipulatoires** des cours du pack (glisser-déposer, schémas
+  cliquables) : la station reste lecture + questions.
+
+## 🚀 EN LIGNE depuis le 23/08 — mais pas annoncé
+
+**Le gel de diffusion a été levé par F. Henninot** (« tout mettre en ligne »).
+16 commits poussés, dont toute l'histoire du réseau Législation, jamais publiée
+jusque-là. Vérifié **sur le site**, pas sur le dépôt :
+
+| Adresse | État |
+|---|---|
+| <https://inerweb.fr/legislation/> | 200 · le plan, F-Gaz 3 cliquable |
+| <https://inerweb.fr/legislation/stations/fgaz-3/> | 200 · les 12 narrations présentes |
+| les 6 SVG de la station | 200 |
+
+**Le réseau reste volontairement invisible** : `noindex`, hors sitemap, et rien
+sur le site principal n'y mène (décision du point d.). On y accède par l'URL,
+pas autrement. C'est le régime voulu tant qu'une seule station est ouverte.
 
 ## ▶ PROCHAINE ACTION
 
-**Relecture métier des 8 écrans par F. Henninot**, sur le site local :
-`http://localhost:8124/legislation/stations/fgaz-3/` (le port 8123 était occupé
-par une autre session — entrée `pilote-fluides-legislation` dans
-`.claude/launch.json`).
+**Relecture métier des 12 écrans par F. Henninot**, en ligne :
+<https://inerweb.fr/legislation/stations/fgaz-3/> — ou en local si le serveur
+tourne (`http://localhost:8124/…`, entrée `pilote-fluides-legislation` dans
+`.claude/launch.json` ; le 8123 était occupé par une autre session).
+
+⚠️ **Le service worker du site sert des copies en cache** : après un
+déploiement, la page affichée peut mentir. Comparer avec un `fetch` en
+`cache:'reload'`, ou désinscrire le service worker, avant de crier au raté.
 
 La station s'annonce d'elle-même comme document de travail : l'attribut
 `data-prototype` sur `marque.js` affiche « Prototype — document de travail » en
