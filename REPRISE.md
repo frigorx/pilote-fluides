@@ -51,12 +51,15 @@
 > `getBoundingClientRect`, 53 pastilles, 12 anneaux, console vide, pied de
 > licence posé par le `marque.js` distant.
 >
-> 💎 **GISEMENT signalé par F. Henninot pour la sous-ligne Thermique** :
-> `C:\Users\henni\Desktop\re 2020 tp cvc\` (⚠️ le Desktop HORS OneDrive) — une
-> formation RE2020 complète d'octobre 2025 : docx élève/enseignant + PDF,
-> `Formation_Interactive.html`, QCM formatif, évaluation finale avec corrigé,
-> fiche mémo, schémas. Deux lots, « files (13) » semble le plus complet.
-> À transposer au format maison le moment venu, pas à recopier tel quel.
+> 💎 **GISEMENTS : voir `legislation/GISEMENTS.md`** — inventaire du 23/08 mené à la
+> demande de F. Henninot avec le moteur de recherche documentaire de l'usine
+> (`usine-contenu/moteur-recherche/chercher.mjs`, ~13 980 fiches) : briques trouvées
+> pour presque chaque sous-ligne (habilitation électrique en pptx, série « Impacts
+> gaz frigo » avec TEWI, circuit BSD complet, série « thèmes » droit des apprentis,
+> formation RE2020 d'oct. 2025 sur `~\Desktop\re 2020 tp cvc\` — le Desktop HORS
+> OneDrive). Bien dotées : Électrique, Fluidique, Risques pro, Déchets, Impact env.
+> À créer de zéro : Certifications & normes. Trois stations candidates révélées
+> (plan de prévention, permis de feu, PRAP) — à valider avant d'ajouter au plan.
 >
 > ⚠️ **EN ATTENTE DE F. HENNINOT — rien n'est en ligne, `index.html` PAS touché :**
 > a. la relecture des **53 stations proposées** (noms, sous-titres, paires de
