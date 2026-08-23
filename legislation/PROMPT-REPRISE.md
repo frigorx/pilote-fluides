@@ -77,29 +77,57 @@ autres.
    donner un `href` et reprendre le motif `station()` complet du plan principal
    (lien, trajet, coche) à la place de la pastille en pointillé.
 
+## ✅ ÉTAPE 2 FAITE — la station F-Gaz 3 est rendue (23/08)
+
+`/design consent` donné, le verrou est tombé. La station est **produite et
+vérifiée** dans un projet Claude Design dédié :
+
+> **Station F-Gaz 3 — inerWeb Législation**
+> `a10d6dab-39fd-439a-9359-05862309eb5c`
+> <https://claude.ai/design/p/a10d6dab-39fd-439a-9359-05862309eb5c?file=station.html>
+
+Le projet de charte (`1394c5be-…`) n'a **pas** été touché : ses pièces ont été
+lues (`theme.json`, `styles.css`, `foundations/logo.html`), rien n'y a été écrit.
+
+**Livré, conforme à l'arborescence annoncée :** `station.html` (8 écrans + les
+4 questions + le maillage), `styles.css`, et les 6 SVG. Marque inerWeb, logo
+compact au cartouche « Législation ».
+
+**Contrôlé sur la page servie**, pas sur le code : console vide, 6 SVG en 200,
+**0 chevauchement et 0 débordement sur 110 textes** (mesure en
+`getBoundingClientRect`), aucun débordement horizontal de 1440 px à 375 px,
+curseurs de lisibilité opérants (17→24 px, contraste doux/standard/renforcé)
+sans jamais inverser le fond — R1 tenue.
+
+### Trois écarts assumés, à connaître avant de reprendre
+
+1. **Le SVG maison `packs/fluides/res/svg/aptitude-capacite.svg` a un défaut**
+   révélé au passage : ses deux lignes « Sans elle… » sortent de leur bloc, et
+   l'une sort du cadre de 36 unités. Invisible sur un poste où Calibri existe,
+   visible partout où le navigateur retombe sur un repli plus large. **Corrigé
+   dans la copie de la station, PAS dans le fichier maison** — hors périmètre,
+   à traiter à part.
+2. **Six catégories au fond, sept au référentiel.** `referentiel-2025.json`
+   porte aussi la **catégorie V** (climatisation des véhicules, référentiel
+   distinct II.D). Le fond validé n'en cite que six : les six sont rendues telles
+   quelles, et une ligne discrète signale que V relève d'un référentiel distinct.
+   Sans elle, le document aurait été inexact pour un BTS. **À valider.**
+3. **Format HTML simple, pas `.dc.html`.** Le canal Design pousse vers son
+   format à runtime propriétaire, qui aurait compliqué la transposition maison.
+   Conséquence : la page n'est pas cliquable-éditable dans l'éditeur Design,
+   elle se lit et s'exporte. Le réglage fin passe par les curseurs intégrés.
+
 ## ▶ PROCHAINE ACTION
 
-**Envoyer `stations/fgaz-3/FOND.md` à Claude Design.** Toujours bloqué au 23/08
-sur le même point, reverrouillé lors de la deuxième tentative : la session n'est
-pas autorisée à joindre Claude Design → **F. Henninot doit taper
-`/design consent`** dans une session interactive, rien d'autre ne le débloque.
-Charte à utiliser : projet « Charte graphique inerWeb »
-(`1394c5be-3bc5-441f-93d9-251c89f48ba8`), 11 pièces déjà poussées le 13/08 —
-ne rien resynchroniser.
+**Étape 3 du rail : transposer au format maison.** Rapatrier les 8 fichiers
+depuis le projet Design, les poser sous `legislation/stations/fgaz-3/`, greffer
+le moteur (voix, rail de progression, `referentiel.js`, bandeau de marque) en
+reprenant le gabarit d'un cours existant — `packs/fluides/res/etancheite-interactive/`
+est le plus propre. Puis donner un `href` à la station dans le plan et remplacer
+sa pastille en pointillé par le motif `station()` complet (lien, trajet, coche).
 
-**Tout le reste est prêt, décidé et n'a plus à être rediscuté :**
-
-- le **livrable attendu** est spécifié en fin de `FOND.md` (arborescence exacte :
-  `station.html` + `styles.css` + 6 SVG nommés écran par écran), sans le moteur
-  maison — voix, rail et `referentiel.js` sont greffés par Code à l'étape 3 ;
-- **périmètre** tranché le 23/08 : Design rend **tout** (HTML + CSS + 6 SVG),
-  pas seulement les schémas ;
-- **marque** tranchée le 23/08 : **inerWeb** (question reposée, réponse
-  confirmée) ;
-- joindre `packs/fluides/res/svg/aptitude-capacite.svg`, base de l'écran 6.
-
-Dès le consentement : pousser le fond dans le projet Design et formuler la
-demande, **en une seule fois**.
+Avant de coder : **relecture métier des 8 écrans par F. Henninot** sur le lien
+ci-dessus, et arbitrage des trois écarts. Rien ne se transpose avant.
 
 ## Ce qui attend F. Henninot
 
