@@ -24,6 +24,35 @@
 ⚠️ Ce tableau est daté. **Le refaire au début du jour J** : la vérité est le
 disque et le site servi, jamais ce document.
 
+## 0. La décision de structure : inerWeb devient un ensemble de RÉSEAUX
+
+**Prise par F. Henninot le 23/08/2026, et elle commande la refonte.** On n'étoffe
+plus des lignes : on crée des **réseaux entiers**. Trois existent déjà ou sont en
+route — le réseau **thermo-techno** (le plan historique d'inerweb.fr), le réseau
+**Législation**, le réseau **hydraulique** (en cours de fabrication) — et il faut
+tabler sur **cinq à sept** à terme.
+
+**Ce que ça impose à l'accueil** : une **gare des réseaux**, posée **AU-DESSUS du
+plan**, avant la ligne générale — c'est-à-dire avant le DÉPART actuel. Elle ne
+mène pas à un cours : elle **aiguille vers un autre réseau**. C'est la première
+chose que voit un visiteur, et c'est ce qui rend l'ensemble extensible sans jamais
+retoucher les plans existants.
+
+Règles à tenir en la construisant :
+
+- **Une entrée par réseau**, avec son nom, sa couleur propre et une phrase qui dit
+  à qui il s'adresse — jamais une liste de liens nus.
+- Un réseau **en construction se déclare comme tel** (la Législation n'a qu'une
+  station ouverte sur 57) : promettre un réseau vide use la confiance.
+- **Aucun réseau ne dépend d'un autre pour fonctionner.** Chaque satellite reste
+  déplaçable d'un bloc vers son propre dépôt ou sous-domaine — c'est déjà le
+  contrat de `legislation/`, il vaut pour tous les suivants.
+- La gare vit dans `index.html` du site principal, **le fichier le plus disputé
+  entre sessions parallèles** : elle se pose pendant l'intégration globale, par la
+  session qui pilote, et par personne d'autre.
+- Prévoir la place de **sept réseaux** dès le dessin, pas de trois : ajouter le
+  quatrième ne doit pas obliger à tout redessiner.
+
 ## 1. Les décisions qui doivent être tranchées AVANT
 
 Aucune ne peut se prendre pendant le déploiement. Elles sont **toutes** de
