@@ -26,6 +26,10 @@ packs/fluides/res/docs/
 *.pdf
 # … sauf la plaquette de présentation Fluide, publiée par le volet (19/08)
 !presentation-inerweb-fluide.pdf
+# … et sauf le brief visuel du réseau Législation (23/08) : il doit pouvoir se
+#     télécharger et se transmettre à Claude Design. Il se régénère à partir du
+#     Markdown voisin : node/python legislation/outils/md2pdf.py
+!legislation/BRIEF-VISUELS.pdf
 .DS_Store
 Thumbs.db
 node_modules/
