@@ -122,6 +122,13 @@
 > **23/08 — premiers échantillons de voix écoutés par F. Henninot** (en mobilité) : jugés
 > corrects. L'écoute complète (110 MP3 + voix du film 8) et le test des trois mini-jeux
 > restent à faire tranquillement ; rien n'est validé en entier.
+> **23/08 — LA CAMÉRA DES FILMS NE BOUGE PLUS** (retour F. Henninot : les changements de
+> vue donnaient mal au cœur). Les 6 films sont au plan général permanent ; un SURLIGNEUR
+> (cadre ambre + voile jaune léger, `RK.Spot` du kit) marque la zone dont la voix parle,
+> aux mêmes instants que les anciens cadrages, et s'efface au cycle complet. Jamais rouge
+> ni orange : ces couleurs disent déjà « phase » et « retour neutre ». Liens films avec
+> `?v=` du catalogue ; version `2026-08-23c`. Vérifié SUR inerweb.fr (plan constant,
+> surligneur aux bonnes coordonnées, console vide).
 
 > Dernière mise à jour : **22 août 2026** (ligne LA RÉGULATION en ligne — voir ci-dessus).
 > L'état du 21/08 (fonds vocal edge-tts, correctifs d'écran, flèches du plan) et celui
