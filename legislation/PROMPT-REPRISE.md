@@ -50,9 +50,14 @@ technique (15 lignes, 108 stations) au lieu d'y empiler des stations.
 
 ## État au 23/08/2026
 
-**Le plan : 2 lignes mères · 11 sous-lignes · 57 stations, toutes EN PRÉPARATION**
-(pastille en pointillé, aucun lien). Mesuré sur la page servie : 144 textes,
-**0 chevauchement**, 0 débordement du cadre, console vide.
+**Le plan : 2 lignes mères · 11 sous-lignes · 57 stations — 56 en préparation
+(pastille en pointillé, aucun lien) et 1 ouverte** (F-Gaz 3, voir plus bas).
+Mesuré sur la page servie : 144 textes, **0 chevauchement**, 0 débordement du
+cadre, console vide.
+
+> **Le réseau n'est atteignable qu'en tapant son URL** : rien, sur le site
+> principal, ne pointe vers `/legislation/`. C'est voulu tant qu'une seule
+> station est ouverte — voir le point d. plus bas.
 
 - 📜 **LES RÉGLEMENTATIONS** (#1e40af) — 8 têtes : Thermique 6 · Acoustique 5 ·
   Incendie 6 (dont Sprinkler & RIA) · Électrique 6 · Fluidique & thermique 4 ·
@@ -140,3 +145,67 @@ pied. **Il se retire une fois la relecture faite.**
 
 Ensuite seulement : la station 2, en repartant de l'étape 1 du rail.
 
+## Ce qui attend F. Henninot
+
+- a. la **relecture des 57 stations** proposées (noms, sous-titres, paires de
+  maillage) — conception Claude, rien de validé métier ;
+- b. le **référentiel BTS d'adossement** (FED ? autre ?) pour coder les stations ;
+- c. l'**hébergement définitif** : rester en `inerweb.fr/legislation/` ou dépôt /
+  sous-domaine séparé ;
+- d. ~~la pose de la correspondance sur l'accueil du réseau technique~~ →
+  **TRANCHÉ le 23/08 : on attend.** Le réseau n'a qu'1 station ouverte sur 57 ;
+  brancher aujourd'hui enverrait le visiteur sur un plan où 56 pastilles ne
+  s'ouvrent pas — un lien vers du chantier. **Critère de déclenchement : 5 ou 6
+  stations ouvertes.** La passerelle reste donc à sens unique (Législation →
+  thermo-techno). Le jour venu, trois points à brancher, comme `sous-tension` et
+  `qcm-travail-hauteur` : la ligne 🔄 CORRESPONDANCES du plan (fonction `corr()`,
+  vers la ligne 1258 de `index.html` à la racine), le dépliant 🔄 CORRESPONDANCES
+  de l'accueil (vers la ligne 731), et la liste structurée `ItemList` du JSON-LD
+  (ligne 25). Le push reste gelé indépendamment de cela ;
+- e. trois **stations candidates** révélées par l'inventaire, non ajoutées :
+  Plan de prévention, Permis de feu, Gestes & postures (PRAP).
+
+## Gisements
+
+`GISEMENTS.md` (même dossier) : inventaire du 23/08 mené avec le moteur de
+recherche documentaire de l'usine — briques trouvées station par station.
+Bien dotées : Électrique, Fluidique, Risques pro, Déchets, Impact env.
+À créer de zéro : Certifications & normes, et tout ce qui touche à la DESP et au
+sprinkler (rien dans la base).
+
+Relancer une recherche :
+`cd C:\git\usine-contenu\moteur-recherche && node chercher.mjs "ma question" 6`
+(Ollama doit tourner ; ~13 980 fiches indexées).
+
+## Pièges déjà payés — ne pas les repayer
+
+- Le **DÉPART** posé sur une ligne mère s'écrase contre son cartouche : il vit
+  au-dessus, sur un court tronc vertical commun.
+- Le **trait d'une ligne doit courir au-delà de sa dernière station** (piège
+  documenté du plan principal : sinon les pastilles flottent sans rien qui les
+  relie). Contrôle : le `H` final du path > le `cx` de la dernière pastille.
+- Mesurer les chevauchements en **`getBoundingClientRect`**, jamais `getBBox`
+  (qui ignore les `transform`).
+- Ajouter une tête de sous-ligne **élargit le SVG** : penser `W`, la pointe de
+  flèche, la position du jalon et `min-width` de `.plan svg` ensemble.
+- Le **Bureau de F. Henninot = `~\OneDrive\Bureau\`**, mais le gisement RE2020
+  est sur `~\Desktop\` (hors OneDrive) : les deux existent.
+- **Diffusion gelée sur ce dépôt** : aucun push sans feu vert explicite.
+- Deux sessions ont déjà travaillé en parallèle sur ce dépôt : `git add -A`
+  ramasse ce qui n'est pas à soi — **ajouter fichier par fichier**.
+
+## Voir la page en local
+
+`.claude/launch.json` (dans l'espace de travail) déclare `pilote-fluides-local` :
+un serveur statique sur le port **8123** servant `C:/git/pilote-fluides`.
+La page : `http://localhost:8123/legislation/`.
+
+## Journal des commits (branche `main`, tous LOCAUX — rien poussé)
+
+- `98c0e87` — ouverture du 2e réseau (première forme, page à la racine)
+- `8d61e35` — réseau de réseaux maillé
+- `66049be` — bascule en satellite `legislation/` + 53 stations nommées
+- `396ff43` — « F-Gas 2024 » devient « F-Gaz 3 »
+- `bea217f` — inventaire des gisements
+- `7ed83aa` — fond de la station F-Gaz 3
+- `804165b` — la DESP en sous-ligne indépendante + Sprinkler & RIA
