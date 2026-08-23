@@ -79,11 +79,27 @@ autres.
 
 ## ▶ PROCHAINE ACTION
 
-**Envoyer `stations/fgaz-3/FOND.md` à Claude Design.** Bloqué le 23/08 sur un
-point que seul F. Henninot peut lever : la session n'était pas autorisée à
-joindre Claude Design → **il doit taper `/design consent`**. Charte à utiliser :
-projet « Charte graphique inerWeb » (`1394c5be-3bc5-441f-93d9-251c89f48ba8`),
-11 pièces déjà poussées le 13/08 — ne rien resynchroniser.
+**Envoyer `stations/fgaz-3/FOND.md` à Claude Design.** Toujours bloqué au 23/08
+sur le même point, reverrouillé lors de la deuxième tentative : la session n'est
+pas autorisée à joindre Claude Design → **F. Henninot doit taper
+`/design consent`** dans une session interactive, rien d'autre ne le débloque.
+Charte à utiliser : projet « Charte graphique inerWeb »
+(`1394c5be-3bc5-441f-93d9-251c89f48ba8`), 11 pièces déjà poussées le 13/08 —
+ne rien resynchroniser.
+
+**Tout le reste est prêt, décidé et n'a plus à être rediscuté :**
+
+- le **livrable attendu** est spécifié en fin de `FOND.md` (arborescence exacte :
+  `station.html` + `styles.css` + 6 SVG nommés écran par écran), sans le moteur
+  maison — voix, rail et `referentiel.js` sont greffés par Code à l'étape 3 ;
+- **périmètre** tranché le 23/08 : Design rend **tout** (HTML + CSS + 6 SVG),
+  pas seulement les schémas ;
+- **marque** tranchée le 23/08 : **inerWeb** (question reposée, réponse
+  confirmée) ;
+- joindre `packs/fluides/res/svg/aptitude-capacite.svg`, base de l'écran 6.
+
+Dès le consentement : pousser le fond dans le projet Design et formuler la
+demande, **en une seule fois**.
 
 ## Ce qui attend F. Henninot
 
