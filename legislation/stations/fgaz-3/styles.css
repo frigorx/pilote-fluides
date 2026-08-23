@@ -93,19 +93,57 @@ a:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
 }
 .chapeau p { margin:0; }
 
-.ecran {
+/* ---------- le départ ---------- */
+.depart { margin:34px 0 10px; }
+.bouton {
+  font-family:var(--titre); font-weight:bold; font-size:1.05rem;
+  border-radius:999px; padding:.7em 1.6em; cursor:pointer;
+  border:2px solid var(--sous-ligne); background:var(--sous-ligne); color:#fff;
+}
+.bouton:hover { background:var(--bleu); border-color:var(--bleu); }
+.depart-note { color:var(--mut); font-size:.95rem; margin:14px 0 0; max-width:60ch; }
+
+/* ---------- la barre d'outils ---------- */
+.barre-outils {
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  padding:12px 0 14px; margin-bottom:18px;
+  background:var(--fond); border-bottom:1px solid var(--ligne);
+}
+.outil {
+  font-family:var(--titre); font-weight:bold; font-size:.95rem;
+  border-radius:999px; padding:.42em 1.1em; cursor:pointer;
+  border:2px solid var(--bleu); background:transparent; color:var(--bleu);
+}
+.outil:hover:not(:disabled) { background:var(--bleu); color:#fff; }
+.outil:disabled { opacity:.42; cursor:default; }
+.outil--voix { border-color:var(--sous-ligne); color:var(--sous-ligne); }
+.outil--voix:hover:not(:disabled) { background:var(--sous-ligne); }
+.outil--voix[aria-pressed="true"] { background:var(--sous-ligne); color:#fff; }
+.outil--suite { background:var(--bleu); color:#fff; }
+.outil--suite:hover:not(:disabled) { background:var(--sous-ligne); border-color:var(--sous-ligne); }
+.progression {
+  flex:1 1 120px; min-width:90px; height:8px; border-radius:999px;
+  background:var(--ligne); overflow:hidden;
+}
+.progression span { display:block; height:100%; background:var(--sous-ligne); transition:width .25s; }
+.compteur { font-family:Consolas,monospace; color:var(--mut); font-size:.9rem; }
+
+/* ---------- un écran ---------- */
+.slide {
   background:var(--carte); border:1px solid var(--ligne);
   border-radius:var(--r); box-shadow:var(--ombre);
   padding:26px 30px 30px; margin:0 0 26px;
 }
+.slide h2:focus { outline:none; }
 .numero {
   margin:0 0 4px;
   font-family:var(--titre); font-weight:bold; color:var(--sous-ligne);
   text-transform:uppercase; letter-spacing:.08em; font-size:.78em;
 }
-.ecran p { margin:0 0 .9em; }
-.ecran ul, .ecran ol { margin:0 0 .9em; padding-left:1.3em; }
-.ecran li { margin-bottom:.45em; }
+.slide p { margin:0 0 .9em; }
+.slide ul, .slide ol { margin:0 0 .9em; padding-left:1.3em; }
+.slide li { margin-bottom:.45em; }
 
 figure { margin:22px 0 6px; }
 figure img { display:block; width:100%; height:auto;
@@ -144,36 +182,48 @@ th { font-family:var(--titre); color:var(--bleu); border-bottom-width:2px; }
 .trois-cartes h3 { color:var(--sous-ligne); }
 .trois-cartes p { margin:0; font-size:.96rem; }
 
-/* ---------- quiz ---------- */
-.quiz { margin-top:44px; }
-.question {
-  background:var(--carte); border:1px solid var(--ligne);
-  border-radius:var(--r); box-shadow:var(--ombre);
-  padding:22px 26px; margin:0 0 18px;
+/* ---------- le quiz ---------- */
+.slide.question { border-left:5px solid var(--sous-ligne); }
+.quiz-options { display:grid; gap:10px; margin:18px 0 0; }
+.quiz-options button {
+  text-align:left; font:inherit; cursor:pointer;
+  background:#fff; color:var(--txt);
+  border:2px solid var(--ligne); border-radius:var(--r);
+  padding:.7em 1em;
 }
-.question > p:first-child { font-weight:bold; }
-.question ol { margin:.6em 0 0; padding-left:1.5em; }
-.question li { margin-bottom:.35em; }
-details { margin-top:14px; border-top:1px solid var(--ligne); padding-top:12px; }
-summary { cursor:pointer; font-family:var(--titre); font-weight:bold; color:var(--sous-ligne); }
-details .bonne { font-weight:bold; color:var(--ok); }
-details p { margin:.6em 0 0; }
+.quiz-options button:hover:not(:disabled) { border-color:var(--sous-ligne); }
+.quiz-options button:disabled { cursor:default; }
+/* R5 — la couleur ne travaille jamais seule : le trait change de style,
+   et le mot « Juste » ou « À revoir » est écrit dans le retour. */
+.quiz-options button.juste  { border:3px double var(--ok);    background:var(--ok-bg); font-weight:bold; }
+.quiz-options button.faux   { border:3px dashed var(--echec); background:var(--echec-bg); }
+.quiz-options button.choisi { box-shadow:var(--ombre); }
+
+.feedback { margin:18px 0 0; padding:14px 18px; border-radius:var(--r); }
+.feedback--juste  { border-left:5px double var(--ok);    background:var(--ok-bg); }
+.feedback--revoir { border-left:4px dashed var(--echec); background:var(--echec-bg); }
 
 /* ---------- maillage ---------- */
 .maillage { margin-top:40px; }
 .maillage ul { padding-left:1.3em; }
 
 /* ---------- impression ---------- */
+/* Le papier ne navigue pas : TOUS les écrans sortent, dans l'ordre, avec
+   les réponses du quiz. app.js lève les `hidden` au beforeprint ; le CSS
+   force ce que l'attribut ne couvre pas. */
 @media print {
   @page { margin:15mm; }
   body { background:#fff; color:#000; font-size:12pt; }
   .entete { border-bottom:2px solid var(--bleu); }
-  .nav, .evite { display:none; }
+  .nav, .evite, .barre-outils, .depart { display:none !important; }
   .page { max-width:none; padding:0; }
-  .ecran, .question, .chapeau, .trois-cartes > div, figure { break-inside:avoid; page-break-inside:avoid; }
-  .ecran, .question, .chapeau { background:#fff; box-shadow:none; }
+  #accueil, #cours { display:block !important; }
+  .slide { display:block !important; background:#fff; box-shadow:none;
+           break-inside:avoid; page-break-inside:avoid; }
+  .chapeau, .trois-cartes > div, figure { break-inside:avoid; page-break-inside:avoid; }
+  .chapeau { background:#fff; box-shadow:none; }
   .encadre--cle, .encadre--piege, .encadre--note, .formule { background:#fff; }
+  .feedback { display:block !important; background:#fff; }
+  .quiz-options button { background:#fff; }
   h1, h2 { color:var(--bleu); }
-  details { display:block; }
-  summary { list-style:none; }
 }
