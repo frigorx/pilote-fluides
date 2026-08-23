@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>inerWeb Législation — réglementation &amp; sécurité-environnement</title>
+<meta name="description" content="Le réseau Législation d'inerWeb, niveau BTS : réglementations du bâtiment (thermique, acoustique, incendie, électrique, fluidique), certifications, droit du travail, prévention des risques, déchets et impact environnemental.">
+<!-- Réseau en construction : la page reste hors des moteurs de recherche
+     tant que les stations ne sont pas ouvertes et relues (même régime que
+     les brouillons). -->
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/">
+<!-- ===================================================================
+     LE RÉSEAU LÉGISLATION — « presque un autre site » (F. Henninot,
+     23/08) : une AUTRE MATIÈRE que le réseau thermo-techno. On ne les
+     mélange pas — ils se répondent par des correspondances. Cette page
+     se comporte donc en SATELLITE (le modèle de sous-tension et du
+     travail en hauteur) : identité propre, aucun menu du site
+     technique, marque chargée depuis inerweb.fr, liens sortants en
+     absolu. Le dossier legislation/ doit rester déplaçable d'un bloc
+     vers un dépôt ou un sous-domaine séparé, sans rien casser.
+     =================================================================== -->
+<style>
+  /* Couleurs de la charte (CHARTE-GRAPHIQUE.md § palette) : texte --ink
+     #10233c, carte --paper #fffdf8 — jamais de blanc pur. Même maison
+     que le site principal, identité de réseau distincte. */
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+          --ok:#1e7e54; --ok-bg:#e3f5ec;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange); }
+
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  #contenu:focus { outline:none; }
+  a:focus-visible, button:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+
+  .entete { background:var(--carte); border-bottom:1px solid var(--ligne); }
+  .entete .dedans { max-width:1080px; margin:0 auto; padding:12px 20px;
+                    display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+  .entete .marque { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .entete .reseau-nom { font-family:var(--titre); font-weight:bold; font-size:17px;
+                        color:var(--bleu); border-left:2px solid var(--ligne); padding-left:12px; }
+  .nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap;
+         font-family:var(--titre); font-size:15px; font-weight:bold; }
+  .nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px;
+           border-bottom:3px solid transparent; }
+  .nav a:hover { border-bottom-color:var(--ligne); color:var(--bleu); }
+
+  .page { max-width:1080px; margin:0 auto; padding:0 20px 18px; }
+
+  .accroche { margin:26px 0 0; }
+  .pastille { display:inline-block; font-size:12px; font-weight:bold; color:#fff;
+              background:var(--orange); padding:3px 12px; border-radius:999px;
+              white-space:nowrap; letter-spacing:.4px; margin-bottom:12px; }
+  h1 { margin:0 0 10px; font-family:var(--titre); font-weight:bold; font-size:38px;
+       line-height:1.15; color:var(--bleu); text-wrap:pretty; }
+  h1 em { font-style:normal; color:var(--orange); }
+  .chapo { margin:0 0 20px; font-size:18px; color:var(--mut); max-width:36em; text-wrap:pretty; }
+  .chapo strong { color:var(--txt); }
+
+  .bloc { background:var(--carte); border:1px solid var(--ligne);
+          border-radius:var(--r); box-shadow:var(--ombre); }
+  .bloc .titre-bloc { padding:18px 24px 0; display:flex; align-items:baseline;
+                      gap:14px; flex-wrap:wrap; }
+  .bloc .titre-bloc h2 { margin:0; font-family:var(--titre); font-size:22px; color:var(--bleu); }
+  .bloc .titre-bloc span { font-size:14px; color:var(--mut); }
+
+  /* ---- Le plan du réseau Législation ---- */
+  .plan { margin-top:30px; overflow:hidden; }
+  .plan .legende-plan { display:flex; gap:14px; flex-wrap:wrap; align-items:center;
+                        padding:8px 24px 0; font-size:13.5px; color:var(--mut); }
+  .plan .legende-plan .puce-l { display:inline-flex; align-items:center; gap:6px; }
+  .plan .legende-plan .rond { width:13px; height:13px; border-radius:50%;
+                              border:3px dashed var(--bleu-clair); background:#fff; display:inline-block; }
+  .plan .legende-plan .rond.corr { border-style:solid; box-shadow:0 0 0 2.5px #98a6b3; margin:0 3px; }
+  .plan .legende-plan .tete-l { display:inline-block; width:26px; height:13px;
+                                border-radius:999px; background:var(--bleu-clair); }
+  .plan .defilant { overflow-x:auto; padding:6px 10px 4px; }
+  .indice-glisser { display:none; text-align:center; font-size:13px; color:var(--mut); padding:2px 0 10px; }
+  @media (max-width: 700px) { .indice-glisser { display:block; } }
+  .plan svg { width:100%; min-width:1160px; display:block; }
+  .plan text { font-family:Calibri,sans-serif; }
+  .plan .st   { fill:var(--bleu); font-size:15px; font-weight:bold; }
+  .plan .sst  { fill:var(--mut); font-size:12px; }
+  .plan .dep   { fill:var(--bleu); font-family:var(--titre); font-size:17px; font-weight:bold; }
+  .plan .dep-s { fill:var(--mut); font-size:13px; }
+  .plan .puce   { fill:#fff; font-family:var(--titre); font-size:14.5px; font-weight:bold; }
+  .plan .puce-s { fill:var(--mut); font-size:12.5px; }
+  .plan .fin  { fill:var(--ok); font-family:var(--titre); font-size:13px; font-weight:bold; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .plan svg animate { display:none; }
+  }
+
+  /* ---- Correspondances ---- */
+  .corrs { margin-top:26px; padding:0 24px 20px; }
+  .corrs h3 { font-family:var(--titre); font-size:16px; color:var(--bleu); margin:16px 0 0; }
+  .corrs ul { margin:10px 0 0; padding-left:0; list-style:none; }
+  .corrs li { margin:12px 0; padding-left:26px; position:relative; }
+  .corrs li::before { content:""; position:absolute; left:2px; top:6px; width:11px; height:11px;
+                      border-radius:50%; background:#fff; border:3px solid var(--bleu-clair);
+                      box-shadow:0 0 0 2.5px #98a6b3; }
+  .corrs .c-nom { font-family:var(--titre); font-weight:bold; }
+  .corrs .c-det { color:var(--mut); font-size:14.5px; }
+</style>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="./" aria-label="inerWeb Législation — accueil du réseau">
+      <!-- Logo figé, charte § 3.4 : orange DU LOGO #e8914a, distinct de l'orange
+           du contenu. C'est aussi ce que marque.js reconnaît (aria-label
+           commençant par « inerWeb ») pour savoir que l'en-tête est marqué. -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Correspondance">
+      <a href="https://inerweb.fr/">⇄ Le réseau thermo-techno</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+  <div class="accroche">
+    <div class="pastille">NIVEAU BTS · RÉSEAU EN CONSTRUCTION</div>
+    <h1>Le réseau <em>Législation</em>.</h1>
+    <p class="chapo">Une <strong>autre matière</strong> que la thermo-techno : le cadre du métier —
+    réglementations, sécurité, environnement. Un réseau à part entière, et un réseau
+    de réseaux : sur chaque ligne mère, <strong>chaque station est le départ de sa propre
+    sous-ligne</strong>, et le tout se lit comme un <strong>maillage</strong> — les sous-réseaux se
+    répondent par des correspondances. Les stations ouvriront une à une.</p>
+  </div>
+
+  <section class="bloc plan" id="carte" aria-label="Plan du réseau Législation">
+    <div class="titre-bloc">
+      <h2>🚇 Le plan du réseau</h2>
+      <span>2 lignes mères · 10 sous-lignes · 53 stations en préparation</span>
+    </div>
+    <div class="legende-plan">
+      <span class="puce-l"><span class="tete-l"></span> tête de sous-ligne</span>
+      <span class="puce-l"><span class="rond"></span> station en préparation</span>
+      <span class="puce-l"><span class="rond corr"></span> anneau : correspondance (maillage interne ou autre réseau)</span>
+    </div>
+    <div class="defilant" id="plan-svg"></div>
+    <p class="indice-glisser">← Fais glisser la carte pour tout voir →</p>
+  </section>
+
+  <section class="bloc corrs" aria-label="Correspondances du maillage">
+    <div class="titre-bloc">
+      <h2>🔄 Les correspondances</h2>
+      <span>le maillage : les lignes se répondent</span>
+    </div>
+    <h3>Entre les sous-réseaux</h3>
+    <ul>
+      <li><span class="c-nom">L'habilitation (Électrique) ⇄ Les EPI (Risques professionnels)</span><br>
+        <span class="c-det">la règle d'un côté, le geste protégé de l'autre.</span></li>
+      <li><span class="c-nom">Traçabilité (Fluidique) ⇄ Déchets dangereux (Déchets)</span><br>
+        <span class="c-det">un fluide récupéré est un déchet dangereux tracé — BSD, Trackdéchets.</span></li>
+      <li><span class="c-nom">ACV &amp; carbone (Impact env.) ⇄ La RE2020 (Thermique)</span><br>
+        <span class="c-det">l'indicateur IC de la RE2020, c'est de l'analyse de cycle de vie.</span></li>
+      <li><span class="c-nom">Zones ATEX (Risques pro.) ⇄ NF EN 378 (Fluidique)</span><br>
+        <span class="c-det">A2L et A3 : la classe du fluide décide du zonage.</span></li>
+    </ul>
+    <h3>Vers les autres réseaux inerWeb</h3>
+    <ul>
+      <li><span class="c-nom">Électrique ⇄ ligne ⚡ ÉLECTROTECH du réseau thermo-techno</span><br>
+        <span class="c-det"><a href="https://frigorx.github.io/sous-tension/" target="_blank" rel="noopener">Sous tension</a> — lire et choisir les câbles.</span></li>
+      <li><span class="c-nom">Fluidique &amp; thermique ⇄ ligne 🌍 FLUIDES &amp; ENVIRONNEMENT</span><br>
+        <span class="c-det"><a href="https://frigorx.github.io/inerweb-fgaz/" target="_blank" rel="noopener">Mission F-GAZ</a> et
+        <a href="https://inerweb.fr/packs/fluides/res/cours-classes-securite/index.html" target="_blank" rel="noopener">Classes de sécurité</a>.</span></li>
+      <li><span class="c-nom">En hauteur (Risques pro.) ⇄ 🪜 Travail en hauteur</span><br>
+        <span class="c-det"><a href="https://frigorx.github.io/qcm-travail-hauteur/" target="_blank" rel="noopener">le QCM R408</a> — échafaudages, EPI.</span></li>
+      <li><span class="c-nom">PRP &amp; ODP (Impact env.) ⇄ les deux films du réseau thermo-techno</span><br>
+        <span class="c-det"><a href="https://inerweb.fr/packs/fluides/res/film-ozone/index.html" target="_blank" rel="noopener">Couche d'ozone &amp; ODP</a> et
+        <a href="https://inerweb.fr/packs/fluides/res/film-effet-de-serre/index.html" target="_blank" rel="noopener">Effet de serre &amp; PRP</a>.</span></li>
+    </ul>
+  </section>
+
+</div>
+
+<script>
+/* =====================================================================
+   LE PLAN DU RÉSEAU LÉGISLATION — un réseau de réseaux MAILLÉ
+   (décisions F. Henninot, 23/08) : deux lignes mères horizontales ;
+   chaque station d'une mère est la TÊTE d'une sous-ligne qui descend à
+   sa couleur. Les 53 stations sont NOMMÉES (proposition à relire) mais
+   EN PRÉPARATION : pastille en pointillé, aucun lien.
+   Anneau sur une TÊTE = correspondance vers un autre réseau inerWeb ;
+   anneau sur une STATION = maillage interne (ou sortie précise).
+   Quand une station ouvrira : lui donner un href et reprendre le motif
+   station() complet du plan principal (lien, trajet, coche).
+   RÉSERVE : une branche TECHNICO-COMMERCIAL viendra plus tard — une
+   bande sous la 2e ligne mère, tout ce qui suit descend d'autant.
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  var RESEAU = [
+    { nom: "📜 LES RÉGLEMENTATIONS", sous: "le cadre du métier",
+      couleur: "#1e40af", jalon: "🏁 Le cadre réglementaire est connu",
+      y: 210, x0: 170, pas: 205,
+      filles: [
+        { id: "regl-thermique", nom: "Thermique", sous: "RE2020 & RT existant", couleur: "#92400e",
+          stations: [
+            { nom: "Pourquoi une RT ?", sous: "de 1974 à la RE2020" },
+            { nom: "La RE2020",         sous: "Bbio · Cep · IC", corr: true },
+            { nom: "Le confort d'été",  sous: "DH, degrés-heures" },
+            { nom: "RT de l'existant",  sous: "rénover par élément" },
+            { nom: "Le DPE",            sous: "étiquettes & audit" },
+            { nom: "Les CEE",           sous: "financer les travaux" }
+          ] },
+        { id: "regl-acoustique", nom: "Acoustique", sous: "bruit & voisinage", couleur: "#6d28d9",
+          stations: [
+            { nom: "Le bruit en dB",   sous: "dB(A), niveaux" },
+            { nom: "Les seuils",       sous: "voisinage, émergence" },
+            { nom: "Mesurer",          sous: "sonomètre, protocole" },
+            { nom: "PAC & voisinage",  sous: "l'unité extérieure" },
+            { nom: "Traiter le bruit", sous: "plots, silencieux" }
+          ] },
+        { id: "regl-incendie", nom: "Incendie", sous: "ERP, coupe-feu", couleur: "#b91c1c",
+          stations: [
+            { nom: "Classer le bâti",   sous: "ERP · IGH · habitation" },
+            { nom: "Euroclasses",       sous: "réaction & résistance" },
+            { nom: "Le désenfumage",    sous: "le rôle du CVC" },
+            { nom: "Clapets coupe-feu", sous: "traversées, DAS" },
+            { nom: "Le SSI",            sous: "détection, asservis." }
+          ] },
+        { id: "regl-electrique", nom: "Électrique", sous: "NF C 15-100, habilitation", couleur: "#a16207", corr: true,
+          stations: [
+            { nom: "NF C 15-100",        sous: "la norme BT" },
+            { nom: "Terre & différentiel", sous: "protéger les personnes" },
+            { nom: "Protéger un circuit", sous: "sections & calibres" },
+            { nom: "Régimes de neutre",  sous: "TT · TN · IT" },
+            { nom: "L'habilitation",     sous: "B0 · BS · BR", corr: true },
+            { nom: "Consigner",          sous: "VAT, les 4 étapes" }
+          ] },
+        { id: "regl-fluidique", nom: "Fluidique & thermique", sous: "F-Gas · DESP · EN 378", couleur: "#0f766e", corr: true,
+          stations: [
+            { nom: "F-Gas 2024",          sous: "quotas, interdictions" },
+            { nom: "Aptitude & capacité", sous: "personne & entreprise" },
+            { nom: "La DESP",             sous: "PS, catégories, CE" },
+            { nom: "NF EN 378",           sous: "classes, charges maxi", corr: true },
+            { nom: "Suivi en service",    sous: "contrôles, requalif." },
+            { nom: "Traçabilité",         sous: "BSD, Trackdéchets", corr: true }
+          ] },
+        { id: "regl-certifs", nom: "Certifications & normes", sous: "RGE, QualiPAC, CE", couleur: "#3730a3",
+          stations: [
+            { nom: "Loi, norme ou DTU ?", sous: "qui oblige quoi" },
+            { nom: "Le marquage CE",      sous: "produits & DoP" },
+            { nom: "RGE & QualiPAC",      sous: "les qualifications" },
+            { nom: "Les garanties",       sous: "décennale, biennale" }
+          ] },
+        { id: "regl-travail", nom: "Droit du travail", sous: "contrats, obligations", couleur: "#9d174d",
+          stations: [
+            { nom: "Le contrat",      sous: "CDI, CDD, apprentissage" },
+            { nom: "Temps & paie",    sous: "durée, heures sup" },
+            { nom: "Droits & devoirs", sous: "employeur, salarié" },
+            { nom: "Se former",       sous: "CPF, VAE" },
+            { nom: "S'installer",     sous: "l'auto-entreprise" }
+          ] }
+      ] },
+    { nom: "🦺 SÉCURITÉ & ENVIRONNEMENT", sous: "prévenir, trier, mesurer l'impact",
+      couleur: "#166534", jalon: "🏁 Travailler propre et en sécurité",
+      y: 780, x0: 170, pas: 320,
+      filles: [
+        { id: "secu-risques", nom: "Risques professionnels", sous: "DUERP, EPI, gestes", couleur: "#c2410c",
+          stations: [
+            { nom: "Le DUERP",        sous: "évaluer les risques" },
+            { nom: "Les 9 principes", sous: "prévenir dans l'ordre" },
+            { nom: "Les EPI",         sous: "choisir & vérifier", corr: true },
+            { nom: "En hauteur",      sous: "échafaudages, R408", corr: true },
+            { nom: "Risque chimique", sous: "FDS, CMR, fluides" },
+            { nom: "Zones ATEX",      sous: "A2L, A3 : zonage", corr: true }
+          ] },
+        { id: "secu-dechets", nom: "Déchets", sous: "tri, BSD, filières", couleur: "#57534e",
+          stations: [
+            { nom: "Responsabilités",    sous: "producteur, détenteur" },
+            { nom: "Trier : 7 flux",     sous: "la benne juste" },
+            { nom: "Déchets dangereux",  sous: "BSD & Trackdéchets", corr: true },
+            { nom: "La REP bâtiment",    sous: "reprise, éco-organismes" },
+            { nom: "Valoriser",          sous: "réemploi, recyclage" }
+          ] },
+        { id: "secu-impact", nom: "Impact environnemental", sous: "PRP, cycle de vie", couleur: "#047857",
+          stations: [
+            { nom: "PRP & ODP",         sous: "l'impact d'un fluide", corr: true },
+            { nom: "Le TEWI",           sous: "direct + indirect" },
+            { nom: "ACV & carbone",     sous: "l'IC de la RE2020", corr: true },
+            { nom: "Écoconception",     sous: "ErP, étiquettes" },
+            { nom: "Montréal → Kigali", sous: "l'accord mondial" }
+          ] }
+      ] }
+  ];
+
+  /* --- Géométrie : calculée, jamais saisie par station. -------------- */
+  var W = 1620, DEP_Y = 140, H = 1330;
+  var TETE_CART = 38;      /* cartouche de tête, sous la gare de jonction */
+  var ST_0 = 124, ST_PAS = 66;   /* première station d'une colonne, puis le pas */
+
+  function esc(v) {
+    return String(v).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function flux(d, couleur, epaisseur) {
+    return '<path d="' + d + '" stroke="' + couleur + '" stroke-width="' + (epaisseur || 9) +
+           '" stroke-linecap="round" fill="none"></path>' +
+           '<path d="' + d + '" stroke="#ffffff" stroke-width="3" fill="none" ' +
+           'opacity="0.5" stroke-dasharray="6 14"></path>';
+  }
+
+  function jalon(texte, x, y) {
+    var w = Math.round(texte.length * 6.6 + 26);
+    return '<rect x="' + (x - w / 2) + '" y="' + y + '" width="' + w + '" height="28" rx="14" ' +
+           'fill="#e3f5ec" stroke="#1e7e54" stroke-width="1.5"></rect>' +
+           '<text class="fin" x="' + x + '" y="' + (y + 19) + '" text-anchor="middle">' + esc(texte) + "</text>";
+  }
+
+  /* Une STATION en préparation : pastille en pointillé, libellés à
+     droite (le motif colonne du plan principal), pas de lien. L'anneau
+     de correspondance reste plein — le maillage, lui, est déjà décidé. */
+  function stationPrep(s, x, y, couleur) {
+    var d = '<g><title>' + esc(s.nom) + " — station en préparation</title>";
+    if (s.corr) d += '<circle cx="' + x + '" cy="' + y + '" r="13" fill="none" stroke="#98a6b3" stroke-width="2.5"></circle>';
+    d += '<circle cx="' + x + '" cy="' + y + '" r="6.5" fill="#ffffff" stroke="' + couleur +
+         '" stroke-width="3.5" stroke-dasharray="4 3.5"></circle>';
+    d += '<text class="st" x="' + (x + 22) + '" y="' + (y - 3) + '">' + esc(s.nom) + "</text>" +
+         '<text class="sst" x="' + (x + 22) + '" y="' + (y + 13) + '">' + esc(s.sous) + "</text></g>";
+    return d;
+  }
+
+  /* Une TÊTE de sous-ligne : la gare de jonction sur la ligne mère, le
+     trait de la fille qui descend jusqu'après sa dernière station, son
+     cartouche, puis ses stations en préparation. */
+  function tete(f, x, y) {
+    var d = [];
+    var fin = ST_0 + (f.stations.length - 1) * ST_PAS + 14;
+    d.push(flux("M " + x + " " + y + " V " + (y + fin), f.couleur, 6));
+    if (f.corr) d.push('<circle cx="' + x + '" cy="' + y + '" r="15" fill="none" stroke="#98a6b3" stroke-width="2.5"></circle>');
+    d.push('<circle cx="' + x + '" cy="' + y + '" r="9" fill="#ffffff" stroke="' + f.couleur + '" stroke-width="4.5"></circle>');
+    var w = Math.round(f.nom.length * 7.4 + 30);
+    d.push('<g><title>' + esc(f.nom) + " — sous-ligne en préparation</title>" +
+           '<rect x="' + (x - w / 2) + '" y="' + (y + TETE_CART) + '" width="' + w + '" height="30" rx="15" fill="' + f.couleur + '"></rect>' +
+           '<text class="puce" x="' + x + '" y="' + (y + TETE_CART + 20) + '" text-anchor="middle">' + esc(f.nom) + "</text></g>");
+    d.push('<text class="puce-s" x="' + x + '" y="' + (y + TETE_CART + 46) + '" text-anchor="middle">' + esc(f.sous) + "</text>");
+    f.stations.forEach(function (s, i) {
+      d.push(stationPrep(s, x, y + ST_0 + i * ST_PAS, f.couleur));
+    });
+    return d.join("");
+  }
+
+  /* Une LIGNE MÈRE : cartouche à gauche, trait jusqu'à la flèche
+     (toujours au-delà de la dernière tête — piège documenté du plan
+     principal), puis les têtes de sous-lignes, puis le jalon sous la
+     plus longue colonne. */
+  function mere(l) {
+    var d = [];
+    d.push('<polygon points="1520,' + (l.y - 8) + " 1536," + l.y + " 1520," + (l.y + 8) + '" fill="' + l.couleur + '"></polygon>');
+    var wh = Math.round(l.nom.length * 7.4 + 30);
+    d.push('<rect x="70" y="' + (l.y - 84) + '" width="' + wh + '" height="30" rx="15" fill="' + l.couleur + '"></rect>' +
+           '<text class="puce" x="' + (70 + wh / 2) + '" y="' + (l.y - 64) + '" text-anchor="middle">' + esc(l.nom) + "</text>");
+    d.push('<text class="puce-s" x="' + (70 + wh / 2) + '" y="' + (l.y - 38) + '" text-anchor="middle">' + esc(l.sous) + "</text>");
+    var bas = 0;
+    l.filles.forEach(function (f, i) {
+      d.push(tete(f, l.x0 + i * l.pas, l.y));
+      bas = Math.max(bas, f.stations.length);
+    });
+    d.push(jalon(l.jalon, 1380, l.y + ST_0 + (bas - 1) * ST_PAS + 40));
+    return d.join("");
+  }
+
+  var d = [];
+  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du réseau Législation inerWeb — deux lignes mères, dix sous-lignes, 53 stations en préparation">');
+
+  /* Départ commun en tête : un court tronc vertical dessert les deux
+     lignes mères (la verte dessous, la bleue par-dessus sur le segment
+     partagé). Le DÉPART vit AU-DESSUS des cartouches — posé sur la
+     ligne, il venait s'écraser contre le cartouche de la ligne 1. */
+  d.push(flux("M 60 " + DEP_Y + " V " + RESEAU[1].y + " H 1520", RESEAU[1].couleur, 9));
+  d.push(flux("M 60 " + DEP_Y + " V " + RESEAU[0].y + " H 1520", RESEAU[0].couleur, 10));
+  d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="#ffffff" stroke="' + RESEAU[0].couleur + '" stroke-width="6"></circle>');
+  d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="none" stroke="' + RESEAU[0].couleur + '" stroke-width="2" opacity="0.6">' +
+         '<animate attributeName="r" values="16;30;16" dur="2.4s" repeatCount="indefinite"></animate>' +
+         '<animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"></animate></circle>');
+  d.push('<text class="dep" x="60" y="' + (DEP_Y - 46) + '" text-anchor="middle">DÉPART</text>');
+  d.push('<text class="dep-s" x="60" y="' + (DEP_Y - 29) + '" text-anchor="middle">niveau BTS</text>');
+
+  RESEAU.forEach(function (l) { d.push(mere(l)); });
+
+  d.push("</svg>");
+  document.getElementById("plan-svg").innerHTML = d.join("");
+})();
+</script>
+
+<!-- Lisibilité (bouton « Aa ») et marque : chargées DEPUIS LE SITE
+     PRINCIPAL, comme les autres satellites (décision du 20/08 : une
+     source, zéro divergence). Le pied de page — logo + licence — est
+     posé par marque.js, jamais écrit à la main. -->
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>

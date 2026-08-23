@@ -18,26 +18,37 @@
 > se répondent aussi ENTRE EUX (son exemple : Électrique ⇄ Risques professionnels,
 > par l'habilitation et les EPI).
 >
-> Page séparée `reglementation.html` — `noindex` (donc hors du garde-fou sitemap),
-> ajoutée à `PAGES` de `build/version.mjs`. Deux **lignes mères** : 📜 LES
-> RÉGLEMENTATIONS (#1e40af — 7 têtes : thermique, acoustique, incendie, électrique,
-> fluidique & thermique, certifications & normes, droit du travail) et 🦺 SÉCURITÉ &
-> ENVIRONNEMENT (#166534 — 3 têtes : risques professionnels, déchets, impact
-> environnemental). Chaque tête = gare de jonction + cartouche à SA couleur (10
-> teintes neuves, contraste blanc tenu) + colonne descendante à 3 emplacements
-> fantômes en pointillé — **les stations des sous-lignes restent à définir**.
-> Anneaux de correspondance sur Électrique / Fluidique / Risques pro / Impact env.
-> Bloc « Les correspondances » scindé : maillage interne (4 paires, 3 « à
-> confirmer ») puis sorties vers le réseau technique (Sous tension, Mission F-GAZ,
-> Classes de sécurité, les deux films). Quand une sous-ligne se remplira :
-> remplacer ses fantômes par le motif `station()` complet du plan principal.
-> Les couloirs du maillage se traceront entre STATIONS précises, pas entre lignes.
+> **Troisième décision, même jour : « on ne mélange pas la thermo-techno avec la
+> Législation — c'est PRESQUE UN AUTRE SITE. »** Le réseau vit donc en
+> **`legislation/index.html`** et se comporte en **SATELLITE** (le modèle de
+> sous-tension et du travail en hauteur, décision du 20/08) : identité propre
+> (« inerWeb Législation » dans l'en-tête, AUCUN menu du site technique — la seule
+> passerelle est une correspondance « ⇄ Le réseau thermo-techno »), `lisibilite.js`
+> et `marque.js` chargés EN ABSOLU depuis `https://inerweb.fr/moteur/`, liens
+> sortants en absolu. **Le dossier doit rester déplaçable d'un bloc** vers un dépôt
+> ou un sous-domaine séparé. Il n'entre PAS dans `PAGES` de `build/version.mjs`
+> (commentaire posé là-bas) ; `reglementation.html` (première forme, racine) est
+> SUPPRIMÉE. `noindex`, hors sitemap.
+>
+> **Quatrième décision : « tu es libre de créer, mieux que le livre. »** Les
+> 10 sous-lignes portent désormais **53 stations NOMMÉES** — conception Claude
+> niveau BTS, ossature du manuel non suivie, **proposition à relire par
+> F. Henninot** : Thermique 6 (dont La RE2020, alimentée par le gisement du
+> Bureau) · Acoustique 5 · Incendie 5 · Électrique 6 · Fluidique & thermique 6
+> (F-Gas 2024, aptitude & capacité selon l'arrêté du 21/11/2025) ·
+> Certifications 4 · Droit du travail 5 · Risques professionnels 6 (dont Zones
+> ATEX) · Déchets 5 · Impact environnemental 5 (dont TEWI). Toutes en pastille
+> pointillée, AUCUN lien. Maillage station-à-station : anneau sur une TÊTE =
+> correspondance vers un autre réseau ; sur une STATION = maillage interne.
+> 4 paires internes (habilitation⇄EPI, traçabilité⇄déchets dangereux,
+> ACV⇄RE2020, ATEX⇄EN 378) + 4 sorties externes.
 >
 > Piège payé : le DÉPART posé sur la ligne 1 s'écrasait contre son cartouche —
 > remonté au-dessus d'un court tronc vertical commun aux deux lignes mères.
-> Vérifié en local (serveur port 8123) : 28 textes du plan, **0 chevauchement**
-> mesuré en `getBoundingClientRect`, 30 fantômes, 4 anneaux, console vide, pied
-> `marque.js` posé.
+> Vérifié en local (serveur port 8123, `/legislation/`) : **134 textes,
+> 0 chevauchement et 0 débordement du cadre** mesurés en
+> `getBoundingClientRect`, 53 pastilles, 12 anneaux, console vide, pied de
+> licence posé par le `marque.js` distant.
 >
 > 💎 **GISEMENT signalé par F. Henninot pour la sous-ligne Thermique** :
 > `C:\Users\henni\Desktop\re 2020 tp cvc\` (⚠️ le Desktop HORS OneDrive) — une
@@ -47,12 +58,12 @@
 > À transposer au format maison le moment venu, pas à recopier tel quel.
 >
 > ⚠️ **EN ATTENTE DE F. HENNINOT — rien n'est en ligne, `index.html` PAS touché :**
-> a. intitulés et sous-titres des 10 têtes de sous-lignes (proposés par lecture du
->    sommaire, relecture métier à faire) et les 3 paires de maillage « à confirmer » ;
-> b. la matière de chaque sous-ligne : photos des pages intérieures du manuel
->    (ossature seulement), ou propositions à rédiger côté Claude ;
-> c. le nom de l'URL (`reglementation.html`) ;
-> d. la pose de la correspondance sur l'accueil, puis le push.
+> a. la relecture des **53 stations proposées** (noms, sous-titres, paires de
+>    maillage) — conception Claude, rien de validé métier ;
+> b. le **référentiel BTS d'adossement** (FED ? autre ?) pour coder les stations ;
+> c. l'**hébergement définitif** : rester en `inerweb.fr/legislation/` (état
+>    actuel) ou dépôt / sous-domaine séparé — le dossier est déplaçable d'un bloc ;
+> d. la pose de la correspondance sur l'accueil du réseau technique, puis le push.
 
 > ## 22/08 — La ligne 🔌 LA RÉGULATION est en ligne
 >

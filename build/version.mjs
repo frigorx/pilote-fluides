@@ -62,10 +62,11 @@ const PAGES = [
   // 20/08/2026 (durcissement) — la vraie page 404 et le brouillon des
   // mentions légales (non lié tant que non validé).
   "404.html", "mentions.html",
-  // 23/08/2026 — le 2e réseau (réglementation & sécurité-environnement),
-  // en construction, noindex tant que les stations ne sont pas ouvertes.
-  "reglementation.html",
 ];
+// 23/08/2026 — legislation/index.html n'entre PAS dans PAGES : le réseau
+// Législation est un SATELLITE (décision F. Henninot : « presque un autre
+// site ») — il charge lisibilite.js et marque.js en absolu depuis
+// https://inerweb.fr/moteur/, comme sous-tension et le travail en hauteur.
 
 function echapper(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
