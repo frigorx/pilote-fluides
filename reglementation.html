@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<link rel="apple-touch-icon" href="icones/apple-touch-icon-180.png">
+<title>Réglementation &amp; sécurité-environnement — inerWeb Édu</title>
+<meta name="description" content="Le deuxième réseau inerWeb Édu, niveau BTS : réglementations du bâtiment (thermique, acoustique, incendie, électrique, fluidique), certifications, droit du travail, prévention des risques, déchets et impact environnemental.">
+<!-- Réseau en construction : la page reste hors des moteurs de recherche
+     tant que les stations ne sont pas ouvertes et relues (même régime que
+     les brouillons — et garde-fou de build/sitemap.mjs). -->
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/reglementation.html">
+<style>
+  /* Couleurs de la charte (CHARTE-GRAPHIQUE.md § palette) : texte --ink
+     #10233c, carte --paper #fffdf8 — jamais de blanc pur. Socle repris
+     d'index.html pour que les deux réseaux soient une seule maison. */
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+          --ok:#1e7e54; --ok-bg:#e3f5ec;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange); }
+
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  #contenu:focus { outline:none; }
+  a:focus-visible, button:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+
+  .entete { background:var(--carte); border-bottom:1px solid var(--ligne); }
+  .entete .dedans { max-width:1080px; margin:0 auto; padding:12px 20px;
+                    display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+  .entete .marque { display:flex; align-items:center; text-decoration:none; }
+  .nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap;
+         font-family:var(--titre); font-size:16px; font-weight:bold; }
+  .nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px;
+           border-bottom:3px solid transparent; }
+  .nav a:hover { border-bottom-color:var(--ligne); color:var(--bleu); }
+  .nav a.ici { border-bottom-color:var(--orange); }
+
+  .page { max-width:1080px; margin:0 auto; padding:0 20px 18px; }
+
+  .accroche { margin:26px 0 0; }
+  .pastille { display:inline-block; font-size:12px; font-weight:bold; color:#fff;
+              background:var(--orange); padding:3px 12px; border-radius:999px;
+              white-space:nowrap; letter-spacing:.4px; margin-bottom:12px; }
+  h1 { margin:0 0 10px; font-family:var(--titre); font-weight:bold; font-size:38px;
+       line-height:1.15; color:var(--bleu); text-wrap:pretty; }
+  h1 em { font-style:normal; color:var(--orange); }
+  .chapo { margin:0 0 20px; font-size:18px; color:var(--mut); max-width:36em; text-wrap:pretty; }
+  .chapo strong { color:var(--txt); }
+  .boutons { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  .bouton { display:inline-block; padding:11px 24px; background:var(--bleu); color:#fff;
+            font-weight:bold; text-decoration:none; border-radius:999px; white-space:nowrap; }
+  .bouton:hover { background:var(--bleu-clair); color:#fff; }
+  .bouton.creux { padding:9px 22px; background:var(--carte); color:var(--bleu);
+                  border:2px solid var(--bleu-clair); }
+  .bouton.creux:hover { background:#e7eff7; color:var(--bleu); }
+
+  .bloc { background:var(--carte); border:1px solid var(--ligne);
+          border-radius:var(--r); box-shadow:var(--ombre); }
+  .bloc .titre-bloc { padding:18px 24px 0; display:flex; align-items:baseline;
+                      gap:14px; flex-wrap:wrap; }
+  .bloc .titre-bloc h2 { margin:0; font-family:var(--titre); font-size:22px; color:var(--bleu); }
+  .bloc .titre-bloc span { font-size:14px; color:var(--mut); }
+
+  /* ---- Le plan du 2e réseau ---- */
+  .plan { margin-top:30px; overflow:hidden; }
+  .plan .legende-plan { display:flex; gap:14px; flex-wrap:wrap; align-items:center;
+                        padding:8px 24px 0; font-size:13.5px; color:var(--mut); }
+  .plan .legende-plan .puce-l { display:inline-flex; align-items:center; gap:6px; }
+  .plan .legende-plan .rond { width:13px; height:13px; border-radius:50%;
+                              border:3px dashed var(--bleu-clair); background:#fff; display:inline-block; }
+  .plan .legende-plan .rond.corr { border-style:solid; box-shadow:0 0 0 2.5px #98a6b3; margin:0 3px; }
+  .plan .defilant { overflow-x:auto; padding:6px 10px 4px; }
+  .indice-glisser { display:none; text-align:center; font-size:13px; color:var(--mut); padding:2px 0 10px; }
+  @media (max-width: 700px) { .indice-glisser { display:block; } }
+  .plan svg { width:100%; min-width:980px; display:block; }
+  .plan text { font-family:Calibri,sans-serif; }
+  .plan .st   { fill:var(--bleu); font-size:15px; font-weight:bold; }
+  .plan .sst  { fill:var(--mut); font-size:12px; }
+  .plan .dep   { fill:var(--bleu); font-family:var(--titre); font-size:17px; font-weight:bold; }
+  .plan .dep-s { fill:var(--mut); font-size:13px; }
+  .plan .puce   { fill:#fff; font-family:var(--titre); font-size:14.5px; font-weight:bold; }
+  .plan .puce-s { fill:var(--mut); font-size:12.5px; }
+  .plan .fin  { fill:var(--ok); font-family:var(--titre); font-size:13px; font-weight:bold; }
+  /* Une station en préparation se lit à sa pastille en pointillé ET à son
+     libellé adouci — jamais à la seule couleur. */
+  .plan .prep text { opacity:.8; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .plan svg animate { display:none; }
+  }
+
+  /* ---- Correspondances vers le réseau technique ---- */
+  .corrs { margin-top:26px; padding:0 24px 20px; }
+  .corrs ul { margin:10px 0 0; padding-left:0; list-style:none; }
+  .corrs li { margin:12px 0; padding-left:26px; position:relative; }
+  .corrs li::before { content:""; position:absolute; left:2px; top:6px; width:11px; height:11px;
+                      border-radius:50%; background:#fff; border:3px solid var(--bleu-clair);
+                      box-shadow:0 0 0 2.5px #98a6b3; }
+  .corrs .c-nom { font-family:var(--titre); font-weight:bold; }
+  .corrs .c-det { color:var(--mut); font-size:14.5px; }
+
+  .retour { margin:26px 0 8px; }
+</style>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="index.html" aria-label="inerWeb Édu — accueil">
+      <!-- Logo figé, charte § 3.4 : orange DU LOGO #e8914a, distinct de l'orange
+           du contenu. C'est aussi ce que marque.js reconnaît (aria-label
+           commençant par « inerWeb ») pour savoir que l'en-tête est marqué. -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="galerie.html">Catalogue</a>
+      <a href="metier.html">Le métier</a>
+      <a href="formateurs.html">Formateurs</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+  <div class="accroche">
+    <div class="pastille">NIVEAU BTS · RÉSEAU EN CONSTRUCTION</div>
+    <h1>Le cadre du métier, <em>station par station</em>.</h1>
+    <p class="chapo">Un <strong>deuxième réseau</strong> à côté du plan technique : les réglementations
+    qui encadrent le froid et la climatisation, la sécurité et l'environnement. Les stations
+    ouvriront une à une — voici le tracé.</p>
+    <div class="boutons">
+      <a class="bouton creux" href="index.html">← Le réseau technique</a>
+    </div>
+  </div>
+
+  <section class="bloc plan" id="carte" aria-label="Plan du réseau réglementation et sécurité-environnement">
+    <div class="titre-bloc">
+      <h2>🚇 Le plan du 2<sup>e</sup> réseau</h2>
+      <span>2 lignes · 10 stations en préparation</span>
+    </div>
+    <div class="legende-plan">
+      <span class="puce-l"><span class="rond"></span> station en préparation</span>
+      <span class="puce-l"><span class="rond corr"></span> correspondance avec le réseau technique</span>
+    </div>
+    <div class="defilant" id="plan-svg"></div>
+    <p class="indice-glisser">← Fais glisser la carte pour tout voir →</p>
+  </section>
+
+  <section class="bloc corrs" aria-label="Correspondances avec le réseau technique">
+    <div class="titre-bloc">
+      <h2>🔄 Les correspondances</h2>
+      <span>ces cours du réseau technique existent déjà</span>
+    </div>
+    <ul>
+      <li><span class="c-nom">Électrique ⇄ ligne ⚡ ÉLECTROTECH</span><br>
+        <span class="c-det"><a href="https://frigorx.github.io/sous-tension/" target="_blank" rel="noopener">Sous tension</a> — lire et choisir les câbles.</span></li>
+      <li><span class="c-nom">Fluidique &amp; thermique ⇄ ligne 🌍 FLUIDES &amp; ENVIRONNEMENT</span><br>
+        <span class="c-det"><a href="https://frigorx.github.io/inerweb-fgaz/" target="_blank" rel="noopener">Mission F-GAZ</a> et
+        <a href="packs/fluides/res/cours-classes-securite/index.html" target="_blank" rel="noopener">Classes de sécurité</a>.</span></li>
+      <li><span class="c-nom">Impact environnemental ⇄ les deux films du réseau technique</span><br>
+        <span class="c-det"><a href="packs/fluides/res/film-ozone/index.html" target="_blank" rel="noopener">Couche d'ozone &amp; ODP</a> et
+        <a href="packs/fluides/res/film-effet-de-serre/index.html" target="_blank" rel="noopener">Effet de serre &amp; PRP</a>.</span></li>
+    </ul>
+  </section>
+
+  <p class="retour"><a href="index.html">← Revenir au plan principal</a></p>
+
+</div>
+
+<script>
+/* =====================================================================
+   LE PLAN DU 2e RÉSEAU — même vocabulaire visuel que le plan principal
+   (index.html), en version réduite : deux lignes horizontales, stations
+   en préparation (pastille en pointillé, pas de lien), anneaux de
+   correspondance vers le réseau technique.
+   Quand une station ouvrira : lui donner un href et reprendre le motif
+   station() complet du plan principal (lien, trajet, coche).
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  /* --- DONNÉES DU RÉSEAU --------------------------------------------
+     corr:true = la station aura une correspondance avec le réseau
+     technique (l'anneau gris des plans de métro).
+     RÉSERVE : une branche TECHNICO-COMMERCIAL viendra plus tard — elle
+     prendra une bande sous SECU_Y, comme les branches du plan principal
+     (tout ce qui suit descend d'autant, mécanique connue). ------------ */
+  var REGLEMENTATIONS = {
+    nom: "📜 LES RÉGLEMENTATIONS", sous: "le cadre du métier",
+    couleur: "#1e40af", jalon: "🏁 Le cadre réglementaire est connu",
+    stations: [
+      { id: "regl-thermique",  nom: "Thermique",               sous: "RE2020 & RT existant" },
+      { id: "regl-acoustique", nom: "Acoustique",              sous: "bruit & voisinage" },
+      { id: "regl-incendie",   nom: "Incendie",                sous: "ERP, coupe-feu" },
+      { id: "regl-electrique", nom: "Électrique",              sous: "NF C 15-100, habilitation", corr: true },
+      { id: "regl-fluidique",  nom: "Fluidique & thermique",   sous: "F-Gas · DESP · EN 378", corr: true },
+      { id: "regl-certifs",    nom: "Certifications & normes", sous: "RGE, QualiPAC, CE" },
+      { id: "regl-travail",    nom: "Droit du travail",        sous: "contrats, obligations" }
+    ]
+  };
+  var SECURITE_ENV = {
+    nom: "🦺 SÉCURITÉ & ENVIRONNEMENT", sous: "prévenir, trier, mesurer l'impact",
+    couleur: "#166534", jalon: "🏁 Travailler propre et en sécurité",
+    stations: [
+      { id: "secu-risques", nom: "Risques professionnels", sous: "DUERP, EPI, gestes" },
+      { id: "secu-dechets", nom: "Déchets",                sous: "tri, BSD, filières" },
+      { id: "secu-impact",  nom: "Impact environnemental", sous: "PRP, cycle de vie", corr: true }
+    ]
+  };
+
+  /* --- Géométrie : calculée, jamais saisie par station. -------------- */
+  var W = 1310, DEP_Y = 140, REGL_Y = 330, SECU_Y = 610, H = 780;
+
+  function esc(v) {
+    return String(v).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  /* De quel côté écrire les libellés — même calcul que le plan principal :
+     l'alternance haut/bas ne s'impose que si le plus long libellé dépasse
+     le pas entre stations (7,4 px par caractère de nom, 6,2 de sous-titre). */
+  function cotes(stations, pas) {
+    var large = 0;
+    stations.forEach(function (s) {
+      var n = String(s.nom || "").length * 7.4;
+      var u = String(s.sous || "").length * 6.2;
+      large = Math.max(large, n, u);
+    });
+    return large + 12 > pas;
+  }
+
+  /* Une station EN PRÉPARATION : pastille en pointillé, pas de lien.
+     L'anneau de correspondance reste plein — la correspondance, elle,
+     existe déjà (voir le bloc sous le plan). */
+  function stationPrep(s, x, y, couleur, cote) {
+    var d = '<g class="prep"><title>' + esc(s.nom) + " — station en préparation</title>";
+    if (s.corr) d += '<circle cx="' + x + '" cy="' + y + '" r="15" fill="none" stroke="#98a6b3" stroke-width="2.5"></circle>';
+    d += '<circle cx="' + x + '" cy="' + y + '" r="9" fill="#ffffff" stroke="' + couleur +
+         '" stroke-width="4" stroke-dasharray="4.5 4"></circle>';
+    var yn = cote === "haut" ? y - 34 : y + 32;
+    var ys = cote === "haut" ? y - 18 : y + 48;
+    d += '<text class="st" x="' + x + '" y="' + yn + '" text-anchor="middle">' + esc(s.nom) + "</text>" +
+         '<text class="sst" x="' + x + '" y="' + ys + '" text-anchor="middle">' + esc(s.sous) + "</text></g>";
+    return d;
+  }
+
+  function flux(d, couleur, epaisseur) {
+    return '<path d="' + d + '" stroke="' + couleur + '" stroke-width="' + (epaisseur || 9) +
+           '" stroke-linecap="round" fill="none"></path>' +
+           '<path d="' + d + '" stroke="#ffffff" stroke-width="3" fill="none" ' +
+           'opacity="0.5" stroke-dasharray="6 14"></path>';
+  }
+
+  function jalon(texte, x, y) {
+    var w = Math.round(texte.length * 6.6 + 26);
+    return '<rect x="' + (x - w / 2) + '" y="' + y + '" width="' + w + '" height="28" rx="14" ' +
+           'fill="#e3f5ec" stroke="#1e7e54" stroke-width="1.5"></rect>' +
+           '<text class="fin" x="' + x + '" y="' + (y + 19) + '" text-anchor="middle">' + esc(texte) + "</text>";
+  }
+
+  /* Cartouche de ligne + trait + stations + jalon. Le trait court du
+     départ jusqu'à la flèche, TOUJOURS au-delà de la dernière pastille
+     (piège documenté du plan principal : un trait qui meurt avant sa
+     première station laisse les pastilles flotter). */
+  function ligne(l, y, x0, pas) {
+    var d = [];
+    d.push('<polygon points="1210,' + (y - 8) + " 1226," + y + " 1210," + (y + 8) + '" fill="' + l.couleur + '"></polygon>');
+    var wh = Math.round(l.nom.length * 7.4 + 30);
+    d.push('<rect x="70" y="' + (y - 84) + '" width="' + wh + '" height="30" rx="15" fill="' + l.couleur + '"></rect>' +
+           '<text class="puce" x="' + (70 + wh / 2) + '" y="' + (y - 64) + '" text-anchor="middle">' + esc(l.nom) + "</text>");
+    d.push('<text class="puce-s" x="' + (70 + wh / 2) + '" y="' + (y - 38) + '" text-anchor="middle">' + esc(l.sous) + "</text>");
+    var alt = cotes(l.stations, pas);
+    l.stations.forEach(function (s, i) {
+      d.push(stationPrep(s, x0 + i * pas, y, l.couleur, alt && i % 2 ? "haut" : "bas"));
+    });
+    d.push(jalon(l.jalon, 1090, y + 92));
+    return d.join("");
+  }
+
+  var d = [];
+  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du 2e réseau inerWeb Édu — réglementations et sécurité-environnement, stations en préparation">');
+
+  /* Départ commun en tête : un court tronc vertical dessert les deux
+     lignes (le vert dessous, le bleu par-dessus sur le segment partagé).
+     Le DÉPART vit AU-DESSUS des cartouches — mesuré le 23/08 : posé sur
+     la ligne, il venait s'écraser contre le cartouche de la ligne 1. */
+  d.push(flux("M 60 " + DEP_Y + " V " + SECU_Y + " H 1210", SECURITE_ENV.couleur, 9));
+  d.push(flux("M 60 " + DEP_Y + " V " + REGL_Y + " H 1210", REGLEMENTATIONS.couleur, 10));
+  d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="#ffffff" stroke="' + REGLEMENTATIONS.couleur + '" stroke-width="6"></circle>');
+  d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="none" stroke="' + REGLEMENTATIONS.couleur + '" stroke-width="2" opacity="0.6">' +
+         '<animate attributeName="r" values="16;30;16" dur="2.4s" repeatCount="indefinite"></animate>' +
+         '<animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"></animate></circle>');
+  d.push('<text class="dep" x="60" y="' + (DEP_Y - 46) + '" text-anchor="middle">DÉPART</text>');
+  d.push('<text class="dep-s" x="60" y="' + (DEP_Y - 29) + '" text-anchor="middle">niveau BTS</text>');
+
+  d.push(ligne(REGLEMENTATIONS, REGL_Y, 170, 160));
+  d.push(ligne(SECURITE_ENV, SECU_Y, 170, 320));
+
+  d.push("</svg>");
+  document.getElementById("plan-svg").innerHTML = d.join("");
+})();
+</script>
+
+<!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
+<script src="moteur/lisibilite.js?v=c99a0da380"></script>
+<!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
+     écrit à la main : une page qui circule seule doit porter sa licence. -->
+<script src="moteur/marque.js?v=c99a0da380" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>

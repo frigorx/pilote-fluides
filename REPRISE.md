@@ -3,6 +3,38 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 23/08 — LE 2e RÉSEAU OUVRE EN CONSTRUCTION : `reglementation.html`
+>
+> Demande de F. Henninot (photos d'un sommaire de manuel servant d'**ossature
+> seulement** — structure reprise, aucun texte recopié) : un deuxième réseau pour
+> désengorger le plan technique. **Niveau BTS. Périmètre tranché : Réglementations +
+> Sécurité-Environnement seulement ; une branche TECHNICO-COMMERCIAL viendra plus
+> tard** (réserve notée en commentaire dans les données du plan).
+>
+> Page séparée `reglementation.html` — `noindex` (donc hors du garde-fou sitemap),
+> ajoutée à `PAGES` de `build/version.mjs`. Deux lignes, **10 stations EN
+> PRÉPARATION** (pastille en pointillé, aucun lien) : 📜 LES RÉGLEMENTATIONS
+> (7 : thermique, acoustique, incendie, électrique, fluidique & thermique,
+> certifications & normes, droit du travail — #1e40af) et 🦺 SÉCURITÉ &
+> ENVIRONNEMENT (3 : risques professionnels, déchets, impact environnemental —
+> #166534). Couleurs neuves, aucune collision avec les 15 lignes du plan principal.
+> Anneaux de correspondance sur Électrique / Fluidique / Impact env., et un bloc
+> HTML « Les correspondances » aux liens réels (Sous tension, Mission F-GAZ,
+> Classes de sécurité, les deux films). Vocabulaire visuel du plan principal
+> repris en version réduite ; quand une station ouvrira, lui donner un `href`
+> et reprendre le motif `station()` complet.
+>
+> Piège payé : le DÉPART posé sur la ligne 1 s'écrasait contre son cartouche —
+> remonté au-dessus d'un court tronc vertical commun aux deux lignes.
+> Vérifié en local (serveur port 8123) : haut/milieu/bas, console vide, pied
+> `marque.js` posé, alternance des libellés correcte.
+>
+> ⚠️ **EN ATTENTE DE F. HENNINOT — rien n'est en ligne, `index.html` PAS touché :**
+> a. intitulés et sous-titres des 10 stations (proposés par lecture du sommaire,
+>    relecture métier à faire — RE2020, NF C 15-100, DUERP, BSD… rien de validé) ;
+> b. le nom de l'URL (`reglementation.html`) ;
+> c. la pose de la correspondance sur l'accueil, puis le push.
+
 > ## 22/08 — La ligne 🔌 LA RÉGULATION est en ligne
 >
 > **Correctif après le premier essai humain de F. Henninot :** la première publication

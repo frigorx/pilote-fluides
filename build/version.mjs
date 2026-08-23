@@ -62,6 +62,9 @@ const PAGES = [
   // 20/08/2026 (durcissement) — la vraie page 404 et le brouillon des
   // mentions légales (non lié tant que non validé).
   "404.html", "mentions.html",
+  // 23/08/2026 — le 2e réseau (réglementation & sécurité-environnement),
+  // en construction, noindex tant que les stations ne sont pas ouvertes.
+  "reglementation.html",
 ];
 
 function echapper(s) {
