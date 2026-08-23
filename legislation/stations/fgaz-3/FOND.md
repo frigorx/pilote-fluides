@@ -199,3 +199,32 @@ parc. Détruire tout le parc du jour au lendemain n'est ni demandé ni possible.
 - Aucun nom propre, aucun établissement — non-nominatif strict.
 - Une seule demande cadrée : les 8 écrans + 4 questions de ce document, rien
   d'inventé, rien d'ajouté.
+
+### Livrable attendu — arborescence exacte
+
+Design rend un dossier autonome, **sans le moteur maison** : ni voix, ni rail de
+progression, ni `referentiel.js`, ni bandeau de marque — Code les greffe à
+l'étape 3 en reprenant le gabarit des cours existants du pack.
+
+```
+fgaz-3-design/
+  station.html   les 8 écrans à la suite, un <section class="ecran" id="ecran-1">
+                 … jusqu'à id="ecran-8", puis <section class="quiz"> (4 questions)
+  styles.css     toute la mise en forme (aucun style en ligne dans le HTML)
+  svg/frise-generations.svg        écran 1
+  svg/phase-down.svg               écran 2
+  svg/conversion-teqco2.svg        écran 3
+  svg/deux-regimes.svg             écran 4
+  svg/aptitude-capacite-6cat.svg   écran 6 — reprise du SVG maison joint,
+                                   plus la rangée A1 · A2 · B · C · D · E
+  svg/raisonnement-technicien.svg  écran 7
+```
+
+Écrans 5 et 8 : pas de SVG, mise en forme HTML seule (trois cartes / bilan).
+
+Chaque SVG : `viewBox` obligatoire, **aucune dimension figée en pixels**, texte
+en `<text>` réel — jamais vectorisé, jamais en image — et lisible une fois
+imprimé en A4 noir et blanc.
+
+Pièce jointe à l'envoi : `packs/fluides/res/svg/aptitude-capacite.svg` (base de
+l'écran 6).
