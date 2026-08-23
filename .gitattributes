@@ -1,0 +1,16 @@
+# Git convertit les fins de ligne des fichiers qu'il croit texte. Sur un
+# binaire, cette conversion le CORROMPT silencieusement — le fichier part en
+# ligne, et c'est le lecteur qui découvre qu'il ne s'ouvre pas.
+# Posé le 23/08/2026, après un « LF will be replaced by CRLF » sur un PDF.
+*.pdf   binary
+*.webp  binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.mp3   binary
+*.woff2 binary
+*.zip   binary
+*.onnx  binary
+
+# Le SVG est du texte : il se compare, il se relit dans un diff.
+*.svg   text
