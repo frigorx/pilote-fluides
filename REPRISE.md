@@ -41,6 +41,9 @@
 > 108 stations, statut servi « Version en ligne — relecture métier en cours ».
 > Ce qui reste (écoute humaine complète et validation métier finale des narrations) vit dans
 > `poste-pilotage.mjs`, bloc `pilote`, aFaire ; mini-jeux « S'entraîner » pilotés sur la station 3 le 23/08, à déployer aux 9 autres après validation.
+> **23/08 — premiers échantillons de voix écoutés par F. Henninot** (en mobilité) : jugés
+> corrects. L'écoute complète (110 MP3 + voix du film 8) et le test des trois mini-jeux
+> restent à faire tranquillement ; rien n'est validé en entier.
 
 > Dernière mise à jour : **22 août 2026** (ligne LA RÉGULATION en ligne — voir ci-dessus).
 > L'état du 21/08 (fonds vocal edge-tts, correctifs d'écran, flèches du plan) et celui
