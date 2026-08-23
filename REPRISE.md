@@ -44,6 +44,18 @@
 > 4 paires internes (habilitation⇄EPI, traçabilité⇄déchets dangereux,
 > ACV⇄RE2020, ATEX⇄EN 378) + 4 sorties externes.
 >
+> **Cinquième décision (même jour) : LA DESP EST UNE SOUS-LIGNE À PART ENTIÈRE**
+> (« générique, indépendante de la fluidique, au même titre que l'incendie et
+> l'acoustique »). 8e tête de la ligne mère RÉGLEMENTATIONS (#0c4a6e, 5 stations :
+> La directive · Catégories I à IV · Marquage & papiers · En service · Soupapes &
+> sécurités) ; la sous-ligne Fluidique lui cède « La DESP » et « Suivi en service »
+> et se recentre (4 stations). Et la DESP est TRANSVERSALE, dit F. Henninot :
+> station **« Sprinkler & RIA »** ajoutée à Incendie (l'eau incendie est un lot
+> CVC de bureau d'études, sous pression donc sous DESP) + deux paires de maillage
+> (Catégories DESP ⇄ NF EN 378 ; Sprinkler & RIA ⇄ La DESP). Le réseau passe à
+> **11 sous-lignes · 57 stations** (vérifié : 144 textes, 0 chevauchement).
+> La station validée « F-Gaz 3 » (FOND du même jour) n'est pas affectée.
+>
 > Piège payé : le DÉPART posé sur la ligne 1 s'écrasait contre son cartouche —
 > remonté au-dessus d'un court tronc vertical commun aux deux lignes mères.
 > Vérifié en local (serveur port 8123, `/legislation/`) : **134 textes,

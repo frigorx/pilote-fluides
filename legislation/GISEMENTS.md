@@ -53,9 +53,20 @@
 - `BASE\05_Ressources-Partagees\Froid-Climatisation\Nouvelle Reglementation Fluides
   Frigorigenes (1).pdf` → station **F-Gaz 3** (⚠️ vérifier la fraîcheur : le texte
   de référence est le règlement 2024/573 et l'arrêté du 21/11/2025 — 6 catégories).
-- `BASE\03_BAC-MFER\C3-Realiser\CERTIFICAT ETANCHEITE.docx` → station **Suivi en service**.
+- `BASE\03_BAC-MFER\C3-Realiser\CERTIFICAT ETANCHEITE.docx` → station **F-Gaz 3**
+  (les contrôles d'étanchéité).
 - Dépôts **centre habilitation fluides** (couverture 94/94 du référentiel
   d'attestation — LE gisement principal de cette sous-ligne) et **Mission F-GAZ**.
+
+### La DESP (sous-ligne créée le 23/08 — décision F. Henninot : indépendante de la fluidique)
+- `BASE\02_CAP-IFCA\C3-Realiser\groupe sécurité.pdf` — un accessoire de
+  protection expliqué (ballon ECS) → analogie d'entrée pour **Soupapes & sécurités**.
+- `BASE\05_Ressources-Partagees\Securite-Risques\tp_securite_pose_manifolds.html`
+  (+ corrigé) — manipuler sous pression → contexte pour **La directive**.
+- **À chercher / à créer** : catégories I-IV et PS × V, marquage CE des équipements
+  frigorifiques, requalification périodique et CTP (arrêté du 20/11/2017),
+  **sprinkler & RIA** (aucune brique repérée dans la base — station Incendie à
+  documenter, lot CVC de bureau d'études).
 
 ### Certifications & normes
 - `BASE\02_CAP-IFCA\Froid-Frigorifique\CERTIF QUALIGAZ.docx` → station **RGE & QualiPAC**.

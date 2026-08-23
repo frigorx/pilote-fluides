@@ -88,7 +88,7 @@
   .plan .defilant { overflow-x:auto; padding:6px 10px 4px; }
   .indice-glisser { display:none; text-align:center; font-size:13px; color:var(--mut); padding:2px 0 10px; }
   @media (max-width: 700px) { .indice-glisser { display:block; } }
-  .plan svg { width:100%; min-width:1160px; display:block; }
+  .plan svg { width:100%; min-width:1280px; display:block; }
   .plan text { font-family:Calibri,sans-serif; }
   .plan .st   { fill:var(--bleu); font-size:15px; font-weight:bold; }
   .plan .sst  { fill:var(--mut); font-size:12px; }
@@ -154,7 +154,7 @@
   <section class="bloc plan" id="carte" aria-label="Plan du réseau Législation">
     <div class="titre-bloc">
       <h2>🚇 Le plan du réseau</h2>
-      <span>2 lignes mères · 10 sous-lignes · 53 stations en préparation</span>
+      <span>2 lignes mères · 11 sous-lignes · 57 stations en préparation</span>
     </div>
     <div class="legende-plan">
       <span class="puce-l"><span class="tete-l"></span> tête de sous-ligne</span>
@@ -180,6 +180,10 @@
         <span class="c-det">l'indicateur IC de la RE2020, c'est de l'analyse de cycle de vie.</span></li>
       <li><span class="c-nom">Zones ATEX (Risques pro.) ⇄ NF EN 378 (Fluidique)</span><br>
         <span class="c-det">A2L et A3 : la classe du fluide décide du zonage.</span></li>
+      <li><span class="c-nom">Catégories I à IV (DESP) ⇄ NF EN 378 (Fluidique)</span><br>
+        <span class="c-det">le groupe du fluide (1 ou 2) entre dans le classement de l'équipement.</span></li>
+      <li><span class="c-nom">Sprinkler &amp; RIA (Incendie) ⇄ La DESP</span><br>
+        <span class="c-det">les réseaux d'eau incendie sont sous pression — un lot CVC en bureau d'études, soumis à la DESP.</span></li>
     </ul>
     <h3>Vers les autres réseaux inerWeb</h3>
     <ul>
@@ -243,7 +247,8 @@
             { nom: "Euroclasses",       sous: "réaction & résistance" },
             { nom: "Le désenfumage",    sous: "le rôle du CVC" },
             { nom: "Clapets coupe-feu", sous: "traversées, DAS" },
-            { nom: "Le SSI",            sous: "détection, asservis." }
+            { nom: "Le SSI",            sous: "détection, asservis." },
+            { nom: "Sprinkler & RIA",   sous: "eau incendie, lot CVC", corr: true }
           ] },
         { id: "regl-electrique", nom: "Électrique", sous: "NF C 15-100, habilitation", couleur: "#a16207", corr: true,
           stations: [
@@ -254,14 +259,20 @@
             { nom: "L'habilitation",     sous: "B0 · BS · BR", corr: true },
             { nom: "Consigner",          sous: "VAT, les 4 étapes" }
           ] },
-        { id: "regl-fluidique", nom: "Fluidique & thermique", sous: "F-Gas · DESP · EN 378", couleur: "#0f766e", corr: true,
+        { id: "regl-fluidique", nom: "Fluidique & thermique", sous: "F-Gaz, EN 378, traçabilité", couleur: "#0f766e", corr: true,
           stations: [
             { nom: "F-Gaz 3",             sous: "2024 : quotas, interdictions" },
             { nom: "Aptitude & capacité", sous: "personne & entreprise" },
-            { nom: "La DESP",             sous: "PS, catégories, CE" },
             { nom: "NF EN 378",           sous: "classes, charges maxi", corr: true },
-            { nom: "Suivi en service",    sous: "contrôles, requalif." },
             { nom: "Traçabilité",         sous: "BSD, Trackdéchets", corr: true }
+          ] },
+        { id: "regl-desp", nom: "La DESP", sous: "équipements sous pression", couleur: "#0c4a6e",
+          stations: [
+            { nom: "La directive",        sous: "2014/68/UE, PS > 0,5 bar" },
+            { nom: "Catégories I à IV",   sous: "PS × V, groupe du fluide", corr: true },
+            { nom: "Marquage & papiers",  sous: "CE, déclaration, notice" },
+            { nom: "En service",          sous: "requalification, CTP" },
+            { nom: "Soupapes & sécurités", sous: "accessoires de protection" }
           ] },
         { id: "regl-certifs", nom: "Certifications & normes", sous: "RGE, QualiPAC, CE", couleur: "#3730a3",
           stations: [
@@ -312,7 +323,7 @@
   ];
 
   /* --- Géométrie : calculée, jamais saisie par station. -------------- */
-  var W = 1620, DEP_Y = 140, H = 1330;
+  var W = 1790, DEP_Y = 140, H = 1330;
   var TETE_CART = 38;      /* cartouche de tête, sous la gare de jonction */
   var ST_0 = 124, ST_PAS = 66;   /* première station d'une colonne, puis le pas */
 
@@ -375,7 +386,7 @@
      plus longue colonne. */
   function mere(l) {
     var d = [];
-    d.push('<polygon points="1520,' + (l.y - 8) + " 1536," + l.y + " 1520," + (l.y + 8) + '" fill="' + l.couleur + '"></polygon>');
+    d.push('<polygon points="1690,' + (l.y - 8) + " 1706," + l.y + " 1690," + (l.y + 8) + '" fill="' + l.couleur + '"></polygon>');
     var wh = Math.round(l.nom.length * 7.4 + 30);
     d.push('<rect x="70" y="' + (l.y - 84) + '" width="' + wh + '" height="30" rx="15" fill="' + l.couleur + '"></rect>' +
            '<text class="puce" x="' + (70 + wh / 2) + '" y="' + (l.y - 64) + '" text-anchor="middle">' + esc(l.nom) + "</text>");
@@ -385,19 +396,19 @@
       d.push(tete(f, l.x0 + i * l.pas, l.y));
       bas = Math.max(bas, f.stations.length);
     });
-    d.push(jalon(l.jalon, 1380, l.y + ST_0 + (bas - 1) * ST_PAS + 40));
+    d.push(jalon(l.jalon, 1550, l.y + ST_0 + (bas - 1) * ST_PAS + 40));
     return d.join("");
   }
 
   var d = [];
-  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du réseau Législation inerWeb — deux lignes mères, dix sous-lignes, 53 stations en préparation">');
+  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du réseau Législation inerWeb — deux lignes mères, onze sous-lignes, 57 stations en préparation">');
 
   /* Départ commun en tête : un court tronc vertical dessert les deux
      lignes mères (la verte dessous, la bleue par-dessus sur le segment
      partagé). Le DÉPART vit AU-DESSUS des cartouches — posé sur la
      ligne, il venait s'écraser contre le cartouche de la ligne 1. */
-  d.push(flux("M 60 " + DEP_Y + " V " + RESEAU[1].y + " H 1520", RESEAU[1].couleur, 9));
-  d.push(flux("M 60 " + DEP_Y + " V " + RESEAU[0].y + " H 1520", RESEAU[0].couleur, 10));
+  d.push(flux("M 60 " + DEP_Y + " V " + RESEAU[1].y + " H 1690", RESEAU[1].couleur, 9));
+  d.push(flux("M 60 " + DEP_Y + " V " + RESEAU[0].y + " H 1690", RESEAU[0].couleur, 10));
   d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="#ffffff" stroke="' + RESEAU[0].couleur + '" stroke-width="6"></circle>');
   d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="none" stroke="' + RESEAU[0].couleur + '" stroke-width="2" opacity="0.6">' +
          '<animate attributeName="r" values="16;30;16" dur="2.4s" repeatCount="indefinite"></animate>' +
