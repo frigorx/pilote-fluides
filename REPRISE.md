@@ -11,29 +11,48 @@
 > Sécurité-Environnement seulement ; une branche TECHNICO-COMMERCIAL viendra plus
 > tard** (réserve notée en commentaire dans les données du plan).
 >
+> **Deuxième décision de F. Henninot, même jour : un RÉSEAU DE RÉSEAUX, et un
+> MAILLAGE.** Les dix entrées ne sont pas des stations terminales — chacune est la
+> TÊTE d'une sous-ligne à part entière (« l'acoustique, c'est une ligne ; l'incendie,
+> c'est une ligne »), et le tout se lit comme une carte mémoire : les sous-réseaux
+> se répondent aussi ENTRE EUX (son exemple : Électrique ⇄ Risques professionnels,
+> par l'habilitation et les EPI).
+>
 > Page séparée `reglementation.html` — `noindex` (donc hors du garde-fou sitemap),
-> ajoutée à `PAGES` de `build/version.mjs`. Deux lignes, **10 stations EN
-> PRÉPARATION** (pastille en pointillé, aucun lien) : 📜 LES RÉGLEMENTATIONS
-> (7 : thermique, acoustique, incendie, électrique, fluidique & thermique,
-> certifications & normes, droit du travail — #1e40af) et 🦺 SÉCURITÉ &
-> ENVIRONNEMENT (3 : risques professionnels, déchets, impact environnemental —
-> #166534). Couleurs neuves, aucune collision avec les 15 lignes du plan principal.
-> Anneaux de correspondance sur Électrique / Fluidique / Impact env., et un bloc
-> HTML « Les correspondances » aux liens réels (Sous tension, Mission F-GAZ,
-> Classes de sécurité, les deux films). Vocabulaire visuel du plan principal
-> repris en version réduite ; quand une station ouvrira, lui donner un `href`
-> et reprendre le motif `station()` complet.
+> ajoutée à `PAGES` de `build/version.mjs`. Deux **lignes mères** : 📜 LES
+> RÉGLEMENTATIONS (#1e40af — 7 têtes : thermique, acoustique, incendie, électrique,
+> fluidique & thermique, certifications & normes, droit du travail) et 🦺 SÉCURITÉ &
+> ENVIRONNEMENT (#166534 — 3 têtes : risques professionnels, déchets, impact
+> environnemental). Chaque tête = gare de jonction + cartouche à SA couleur (10
+> teintes neuves, contraste blanc tenu) + colonne descendante à 3 emplacements
+> fantômes en pointillé — **les stations des sous-lignes restent à définir**.
+> Anneaux de correspondance sur Électrique / Fluidique / Risques pro / Impact env.
+> Bloc « Les correspondances » scindé : maillage interne (4 paires, 3 « à
+> confirmer ») puis sorties vers le réseau technique (Sous tension, Mission F-GAZ,
+> Classes de sécurité, les deux films). Quand une sous-ligne se remplira :
+> remplacer ses fantômes par le motif `station()` complet du plan principal.
+> Les couloirs du maillage se traceront entre STATIONS précises, pas entre lignes.
 >
 > Piège payé : le DÉPART posé sur la ligne 1 s'écrasait contre son cartouche —
-> remonté au-dessus d'un court tronc vertical commun aux deux lignes.
-> Vérifié en local (serveur port 8123) : haut/milieu/bas, console vide, pied
-> `marque.js` posé, alternance des libellés correcte.
+> remonté au-dessus d'un court tronc vertical commun aux deux lignes mères.
+> Vérifié en local (serveur port 8123) : 28 textes du plan, **0 chevauchement**
+> mesuré en `getBoundingClientRect`, 30 fantômes, 4 anneaux, console vide, pied
+> `marque.js` posé.
+>
+> 💎 **GISEMENT signalé par F. Henninot pour la sous-ligne Thermique** :
+> `C:\Users\henni\Desktop\re 2020 tp cvc\` (⚠️ le Desktop HORS OneDrive) — une
+> formation RE2020 complète d'octobre 2025 : docx élève/enseignant + PDF,
+> `Formation_Interactive.html`, QCM formatif, évaluation finale avec corrigé,
+> fiche mémo, schémas. Deux lots, « files (13) » semble le plus complet.
+> À transposer au format maison le moment venu, pas à recopier tel quel.
 >
 > ⚠️ **EN ATTENTE DE F. HENNINOT — rien n'est en ligne, `index.html` PAS touché :**
-> a. intitulés et sous-titres des 10 stations (proposés par lecture du sommaire,
->    relecture métier à faire — RE2020, NF C 15-100, DUERP, BSD… rien de validé) ;
-> b. le nom de l'URL (`reglementation.html`) ;
-> c. la pose de la correspondance sur l'accueil, puis le push.
+> a. intitulés et sous-titres des 10 têtes de sous-lignes (proposés par lecture du
+>    sommaire, relecture métier à faire) et les 3 paires de maillage « à confirmer » ;
+> b. la matière de chaque sous-ligne : photos des pages intérieures du manuel
+>    (ossature seulement), ou propositions à rédiger côté Claude ;
+> c. le nom de l'URL (`reglementation.html`) ;
+> d. la pose de la correspondance sur l'accueil, puis le push.
 
 > ## 22/08 — La ligne 🔌 LA RÉGULATION est en ligne
 >

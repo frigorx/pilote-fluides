@@ -80,10 +80,12 @@
   .plan .legende-plan .rond { width:13px; height:13px; border-radius:50%;
                               border:3px dashed var(--bleu-clair); background:#fff; display:inline-block; }
   .plan .legende-plan .rond.corr { border-style:solid; box-shadow:0 0 0 2.5px #98a6b3; margin:0 3px; }
+  .plan .legende-plan .tete-l { display:inline-block; width:26px; height:13px;
+                                border-radius:999px; background:var(--bleu-clair); }
   .plan .defilant { overflow-x:auto; padding:6px 10px 4px; }
   .indice-glisser { display:none; text-align:center; font-size:13px; color:var(--mut); padding:2px 0 10px; }
   @media (max-width: 700px) { .indice-glisser { display:block; } }
-  .plan svg { width:100%; min-width:980px; display:block; }
+  .plan svg { width:100%; min-width:1160px; display:block; }
   .plan text { font-family:Calibri,sans-serif; }
   .plan .st   { fill:var(--bleu); font-size:15px; font-weight:bold; }
   .plan .sst  { fill:var(--mut); font-size:12px; }
@@ -92,9 +94,6 @@
   .plan .puce   { fill:#fff; font-family:var(--titre); font-size:14.5px; font-weight:bold; }
   .plan .puce-s { fill:var(--mut); font-size:12.5px; }
   .plan .fin  { fill:var(--ok); font-family:var(--titre); font-size:13px; font-weight:bold; }
-  /* Une station en préparation se lit à sa pastille en pointillé ET à son
-     libellé adouci — jamais à la seule couleur. */
-  .plan .prep text { opacity:.8; }
 
   @media (prefers-reduced-motion: reduce) {
     .plan svg animate { display:none; }
@@ -102,6 +101,7 @@
 
   /* ---- Correspondances vers le réseau technique ---- */
   .corrs { margin-top:26px; padding:0 24px 20px; }
+  .corrs h3 { font-family:var(--titre); font-size:16px; color:var(--bleu); margin:16px 0 0; }
   .corrs ul { margin:10px 0 0; padding-left:0; list-style:none; }
   .corrs li { margin:12px 0; padding-left:26px; position:relative; }
   .corrs li::before { content:""; position:absolute; left:2px; top:6px; width:11px; height:11px;
@@ -144,10 +144,12 @@
 
   <div class="accroche">
     <div class="pastille">NIVEAU BTS · RÉSEAU EN CONSTRUCTION</div>
-    <h1>Le cadre du métier, <em>station par station</em>.</h1>
-    <p class="chapo">Un <strong>deuxième réseau</strong> à côté du plan technique : les réglementations
-    qui encadrent le froid et la climatisation, la sécurité et l'environnement. Les stations
-    ouvriront une à une — voici le tracé.</p>
+    <h1>Le cadre du métier, <em>réseau par réseau</em>.</h1>
+    <p class="chapo">Un <strong>deuxième réseau</strong> à côté du plan technique — et un réseau de
+    réseaux : sur chaque ligne mère, <strong>chaque station est le départ de sa propre
+    sous-ligne</strong>. Le tout se lit comme un <strong>maillage</strong> : les sous-réseaux se
+    répondent par des correspondances — l'électrique et les risques professionnels,
+    par exemple. Les sous-lignes se construiront une à une — voici l'armature.</p>
     <div class="boutons">
       <a class="bouton creux" href="index.html">← Le réseau technique</a>
     </div>
@@ -156,11 +158,12 @@
   <section class="bloc plan" id="carte" aria-label="Plan du réseau réglementation et sécurité-environnement">
     <div class="titre-bloc">
       <h2>🚇 Le plan du 2<sup>e</sup> réseau</h2>
-      <span>2 lignes · 10 stations en préparation</span>
+      <span>2 lignes mères · 10 sous-lignes à construire</span>
     </div>
     <div class="legende-plan">
-      <span class="puce-l"><span class="rond"></span> station en préparation</span>
-      <span class="puce-l"><span class="rond corr"></span> correspondance avec le réseau technique</span>
+      <span class="puce-l"><span class="tete-l"></span> tête de sous-ligne</span>
+      <span class="puce-l"><span class="rond"></span> emplacement des futures stations</span>
+      <span class="puce-l"><span class="rond corr"></span> correspondance — maillage interne ou réseau technique</span>
     </div>
     <div class="defilant" id="plan-svg"></div>
     <p class="indice-glisser">← Fais glisser la carte pour tout voir →</p>
@@ -169,8 +172,20 @@
   <section class="bloc corrs" aria-label="Correspondances avec le réseau technique">
     <div class="titre-bloc">
       <h2>🔄 Les correspondances</h2>
-      <span>ces cours du réseau technique existent déjà</span>
+      <span>le maillage : les lignes se répondent</span>
     </div>
+    <h3>Entre les sous-réseaux</h3>
+    <ul>
+      <li><span class="c-nom">Électrique ⇄ Risques professionnels</span><br>
+        <span class="c-det">l'habilitation électrique, les EPI : la règle d'un côté, le geste protégé de l'autre.</span></li>
+      <li><span class="c-nom">Incendie ⇄ Risques professionnels</span><br>
+        <span class="c-det">permis de feu, évacuation — à confirmer.</span></li>
+      <li><span class="c-nom">Fluidique &amp; thermique ⇄ Déchets</span><br>
+        <span class="c-det">un fluide récupéré est un déchet dangereux tracé (BSD) — à confirmer.</span></li>
+      <li><span class="c-nom">Fluidique &amp; thermique ⇄ Impact environnemental</span><br>
+        <span class="c-det">F-Gas, PRP : la règle et sa raison d'être — à confirmer.</span></li>
+    </ul>
+    <h3>Vers le réseau technique</h3>
     <ul>
       <li><span class="c-nom">Électrique ⇄ ligne ⚡ ÉLECTROTECH</span><br>
         <span class="c-det"><a href="https://frigorx.github.io/sous-tension/" target="_blank" rel="noopener">Sous tension</a> — lire et choisir les câbles.</span></li>
@@ -189,80 +204,55 @@
 
 <script>
 /* =====================================================================
-   LE PLAN DU 2e RÉSEAU — même vocabulaire visuel que le plan principal
-   (index.html), en version réduite : deux lignes horizontales, stations
-   en préparation (pastille en pointillé, pas de lien), anneaux de
-   correspondance vers le réseau technique.
-   Quand une station ouvrira : lui donner un href et reprendre le motif
-   station() complet du plan principal (lien, trajet, coche).
+   LE PLAN DU 2e RÉSEAU — un réseau de réseaux (décision F. Henninot,
+   23/08) : deux lignes mères horizontales, et CHAQUE station d'une mère
+   est la TÊTE d'une sous-ligne qui descend, à sa couleur, avec des
+   emplacements fantômes en pointillé (les stations restent à définir).
+   Même vocabulaire visuel que le plan principal (index.html), réduit.
+   Quand une sous-ligne se remplira : remplacer ses fantômes par le motif
+   station() complet du plan principal (lien, libellés, trajet, coche).
    ===================================================================== */
 (function () {
   "use strict";
 
   /* --- DONNÉES DU RÉSEAU --------------------------------------------
-     corr:true = la station aura une correspondance avec le réseau
-     technique (l'anneau gris des plans de métro).
+     corr:true = la tête a une correspondance avec le réseau technique
+     (l'anneau gris des plans de métro).
      RÉSERVE : une branche TECHNICO-COMMERCIAL viendra plus tard — elle
-     prendra une bande sous SECU_Y, comme les branches du plan principal
-     (tout ce qui suit descend d'autant, mécanique connue). ------------ */
-  var REGLEMENTATIONS = {
-    nom: "📜 LES RÉGLEMENTATIONS", sous: "le cadre du métier",
-    couleur: "#1e40af", jalon: "🏁 Le cadre réglementaire est connu",
-    stations: [
-      { id: "regl-thermique",  nom: "Thermique",               sous: "RE2020 & RT existant" },
-      { id: "regl-acoustique", nom: "Acoustique",              sous: "bruit & voisinage" },
-      { id: "regl-incendie",   nom: "Incendie",                sous: "ERP, coupe-feu" },
-      { id: "regl-electrique", nom: "Électrique",              sous: "NF C 15-100, habilitation", corr: true },
-      { id: "regl-fluidique",  nom: "Fluidique & thermique",   sous: "F-Gas · DESP · EN 378", corr: true },
-      { id: "regl-certifs",    nom: "Certifications & normes", sous: "RGE, QualiPAC, CE" },
-      { id: "regl-travail",    nom: "Droit du travail",        sous: "contrats, obligations" }
-    ]
-  };
-  var SECURITE_ENV = {
-    nom: "🦺 SÉCURITÉ & ENVIRONNEMENT", sous: "prévenir, trier, mesurer l'impact",
-    couleur: "#166534", jalon: "🏁 Travailler propre et en sécurité",
-    stations: [
-      { id: "secu-risques", nom: "Risques professionnels", sous: "DUERP, EPI, gestes" },
-      { id: "secu-dechets", nom: "Déchets",                sous: "tri, BSD, filières" },
-      { id: "secu-impact",  nom: "Impact environnemental", sous: "PRP, cycle de vie", corr: true }
-    ]
-  };
+     prendra une bande sous la 2e ligne mère (tout ce qui suit descend
+     d'autant, mécanique connue du plan principal). ------------------- */
+  var RESEAU = [
+    { nom: "📜 LES RÉGLEMENTATIONS", sous: "le cadre du métier",
+      couleur: "#1e40af", jalon: "🏁 Le cadre réglementaire est connu",
+      y: 210, x0: 170, pas: 205,
+      filles: [
+        { id: "regl-thermique",  nom: "Thermique",               sous: "RE2020 & RT existant",      couleur: "#92400e" },
+        { id: "regl-acoustique", nom: "Acoustique",              sous: "bruit & voisinage",         couleur: "#6d28d9" },
+        { id: "regl-incendie",   nom: "Incendie",                sous: "ERP, coupe-feu",            couleur: "#b91c1c" },
+        { id: "regl-electrique", nom: "Électrique",              sous: "NF C 15-100, habilitation", couleur: "#a16207", corr: true },
+        { id: "regl-fluidique",  nom: "Fluidique & thermique",   sous: "F-Gas · DESP · EN 378",     couleur: "#0f766e", corr: true },
+        { id: "regl-certifs",    nom: "Certifications & normes", sous: "RGE, QualiPAC, CE",         couleur: "#3730a3" },
+        { id: "regl-travail",    nom: "Droit du travail",        sous: "contrats, obligations",     couleur: "#9d174d" }
+      ] },
+    { nom: "🦺 SÉCURITÉ & ENVIRONNEMENT", sous: "prévenir, trier, mesurer l'impact",
+      couleur: "#166534", jalon: "🏁 Travailler propre et en sécurité",
+      y: 620, x0: 170, pas: 320,
+      filles: [
+        { id: "secu-risques", nom: "Risques professionnels", sous: "DUERP, EPI, gestes", couleur: "#c2410c", corr: true },
+        { id: "secu-dechets", nom: "Déchets",                sous: "tri, BSD, filières", couleur: "#57534e" },
+        { id: "secu-impact",  nom: "Impact environnemental", sous: "PRP, cycle de vie",  couleur: "#047857", corr: true }
+      ] }
+  ];
 
-  /* --- Géométrie : calculée, jamais saisie par station. -------------- */
-  var W = 1310, DEP_Y = 140, REGL_Y = 330, SECU_Y = 610, H = 780;
+  /* --- Géométrie : calculée, jamais saisie par sous-ligne. ----------- */
+  var W = 1560, DEP_Y = 140, H = 940;
+  var TETE_CART = 38;    /* le cartouche de tête, sous la gare de jonction */
+  var FANTOME_0 = 128, FANTOME_PAS = 55, FILLE_FIN = 245;
 
   function esc(v) {
     return String(v).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
-  }
-
-  /* De quel côté écrire les libellés — même calcul que le plan principal :
-     l'alternance haut/bas ne s'impose que si le plus long libellé dépasse
-     le pas entre stations (7,4 px par caractère de nom, 6,2 de sous-titre). */
-  function cotes(stations, pas) {
-    var large = 0;
-    stations.forEach(function (s) {
-      var n = String(s.nom || "").length * 7.4;
-      var u = String(s.sous || "").length * 6.2;
-      large = Math.max(large, n, u);
-    });
-    return large + 12 > pas;
-  }
-
-  /* Une station EN PRÉPARATION : pastille en pointillé, pas de lien.
-     L'anneau de correspondance reste plein — la correspondance, elle,
-     existe déjà (voir le bloc sous le plan). */
-  function stationPrep(s, x, y, couleur, cote) {
-    var d = '<g class="prep"><title>' + esc(s.nom) + " — station en préparation</title>";
-    if (s.corr) d += '<circle cx="' + x + '" cy="' + y + '" r="15" fill="none" stroke="#98a6b3" stroke-width="2.5"></circle>';
-    d += '<circle cx="' + x + '" cy="' + y + '" r="9" fill="#ffffff" stroke="' + couleur +
-         '" stroke-width="4" stroke-dasharray="4.5 4"></circle>';
-    var yn = cote === "haut" ? y - 34 : y + 32;
-    var ys = cote === "haut" ? y - 18 : y + 48;
-    d += '<text class="st" x="' + x + '" y="' + yn + '" text-anchor="middle">' + esc(s.nom) + "</text>" +
-         '<text class="sst" x="' + x + '" y="' + ys + '" text-anchor="middle">' + esc(s.sous) + "</text></g>";
-    return d;
   }
 
   function flux(d, couleur, epaisseur) {
@@ -279,43 +269,64 @@
            '<text class="fin" x="' + x + '" y="' + (y + 19) + '" text-anchor="middle">' + esc(texte) + "</text>";
   }
 
-  /* Cartouche de ligne + trait + stations + jalon. Le trait court du
-     départ jusqu'à la flèche, TOUJOURS au-delà de la dernière pastille
-     (piège documenté du plan principal : un trait qui meurt avant sa
-     première station laisse les pastilles flotter). */
-  function ligne(l, y, x0, pas) {
+  /* Une TÊTE de sous-ligne : la gare de jonction sur la ligne mère, le
+     trait de la fille qui descend, son cartouche, et trois emplacements
+     fantômes en pointillé — les stations restent à définir. */
+  function tete(f, x, y) {
     var d = [];
-    d.push('<polygon points="1210,' + (y - 8) + " 1226," + y + " 1210," + (y + 8) + '" fill="' + l.couleur + '"></polygon>');
+    d.push(flux("M " + x + " " + y + " V " + (y + FILLE_FIN), f.couleur, 6));
+    if (f.corr) d.push('<circle cx="' + x + '" cy="' + y + '" r="15" fill="none" stroke="#98a6b3" stroke-width="2.5"></circle>');
+    d.push('<circle cx="' + x + '" cy="' + y + '" r="9" fill="#ffffff" stroke="' + f.couleur + '" stroke-width="4.5"></circle>');
+    var w = Math.round(f.nom.length * 7.4 + 30);
+    d.push('<g><title>' + esc(f.nom) + " — sous-ligne en préparation</title>" +
+           '<rect x="' + (x - w / 2) + '" y="' + (y + TETE_CART) + '" width="' + w + '" height="30" rx="15" fill="' + f.couleur + '"></rect>' +
+           '<text class="puce" x="' + x + '" y="' + (y + TETE_CART + 20) + '" text-anchor="middle">' + esc(f.nom) + "</text></g>");
+    d.push('<text class="puce-s" x="' + x + '" y="' + (y + TETE_CART + 46) + '" text-anchor="middle">' + esc(f.sous) + "</text>");
+    var g = ['<g opacity="0.6">'];
+    for (var i = 0; i < 3; i++) {
+      g.push('<circle cx="' + x + '" cy="' + (y + FANTOME_0 + i * FANTOME_PAS) +
+             '" r="6.5" fill="#ffffff" stroke="' + f.couleur +
+             '" stroke-width="3.5" stroke-dasharray="4 3.5"></circle>');
+    }
+    g.push("</g>");
+    d.push(g.join(""));
+    return d.join("");
+  }
+
+  /* Une LIGNE MÈRE : cartouche à gauche, trait jusqu'à la flèche
+     (toujours au-delà de la dernière tête — piège documenté du plan
+     principal), puis les têtes de sous-lignes. */
+  function mere(l) {
+    var d = [];
+    d.push('<polygon points="1480,' + (l.y - 8) + " 1496," + l.y + " 1480," + (l.y + 8) + '" fill="' + l.couleur + '"></polygon>');
     var wh = Math.round(l.nom.length * 7.4 + 30);
-    d.push('<rect x="70" y="' + (y - 84) + '" width="' + wh + '" height="30" rx="15" fill="' + l.couleur + '"></rect>' +
-           '<text class="puce" x="' + (70 + wh / 2) + '" y="' + (y - 64) + '" text-anchor="middle">' + esc(l.nom) + "</text>");
-    d.push('<text class="puce-s" x="' + (70 + wh / 2) + '" y="' + (y - 38) + '" text-anchor="middle">' + esc(l.sous) + "</text>");
-    var alt = cotes(l.stations, pas);
-    l.stations.forEach(function (s, i) {
-      d.push(stationPrep(s, x0 + i * pas, y, l.couleur, alt && i % 2 ? "haut" : "bas"));
+    d.push('<rect x="70" y="' + (l.y - 84) + '" width="' + wh + '" height="30" rx="15" fill="' + l.couleur + '"></rect>' +
+           '<text class="puce" x="' + (70 + wh / 2) + '" y="' + (l.y - 64) + '" text-anchor="middle">' + esc(l.nom) + "</text>");
+    d.push('<text class="puce-s" x="' + (70 + wh / 2) + '" y="' + (l.y - 38) + '" text-anchor="middle">' + esc(l.sous) + "</text>");
+    l.filles.forEach(function (f, i) {
+      d.push(tete(f, l.x0 + i * l.pas, l.y));
     });
-    d.push(jalon(l.jalon, 1090, y + 92));
+    d.push(jalon(l.jalon, 1340, l.y + FILLE_FIN + 15));
     return d.join("");
   }
 
   var d = [];
-  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du 2e réseau inerWeb Édu — réglementations et sécurité-environnement, stations en préparation">');
+  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du 2e réseau inerWeb Édu — réglementations et sécurité-environnement : deux lignes mères, dix sous-lignes en préparation">');
 
   /* Départ commun en tête : un court tronc vertical dessert les deux
-     lignes (le vert dessous, le bleu par-dessus sur le segment partagé).
-     Le DÉPART vit AU-DESSUS des cartouches — mesuré le 23/08 : posé sur
-     la ligne, il venait s'écraser contre le cartouche de la ligne 1. */
-  d.push(flux("M 60 " + DEP_Y + " V " + SECU_Y + " H 1210", SECURITE_ENV.couleur, 9));
-  d.push(flux("M 60 " + DEP_Y + " V " + REGL_Y + " H 1210", REGLEMENTATIONS.couleur, 10));
-  d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="#ffffff" stroke="' + REGLEMENTATIONS.couleur + '" stroke-width="6"></circle>');
-  d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="none" stroke="' + REGLEMENTATIONS.couleur + '" stroke-width="2" opacity="0.6">' +
+     lignes mères (la verte dessous, la bleue par-dessus sur le segment
+     partagé). Le DÉPART vit AU-DESSUS des cartouches — posé sur la
+     ligne, il venait s'écraser contre le cartouche de la ligne 1. */
+  d.push(flux("M 60 " + DEP_Y + " V " + RESEAU[1].y + " H 1480", RESEAU[1].couleur, 9));
+  d.push(flux("M 60 " + DEP_Y + " V " + RESEAU[0].y + " H 1480", RESEAU[0].couleur, 10));
+  d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="#ffffff" stroke="' + RESEAU[0].couleur + '" stroke-width="6"></circle>');
+  d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="none" stroke="' + RESEAU[0].couleur + '" stroke-width="2" opacity="0.6">' +
          '<animate attributeName="r" values="16;30;16" dur="2.4s" repeatCount="indefinite"></animate>' +
          '<animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"></animate></circle>');
   d.push('<text class="dep" x="60" y="' + (DEP_Y - 46) + '" text-anchor="middle">DÉPART</text>');
   d.push('<text class="dep-s" x="60" y="' + (DEP_Y - 29) + '" text-anchor="middle">niveau BTS</text>');
 
-  d.push(ligne(REGLEMENTATIONS, REGL_Y, 170, 160));
-  d.push(ligne(SECURITE_ENV, SECU_Y, 170, 320));
+  RESEAU.forEach(function (l) { d.push(mere(l)); });
 
   d.push("</svg>");
   document.getElementById("plan-svg").innerHTML = d.join("");
