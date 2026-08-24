@@ -1,0 +1,112 @@
+{
+  "id": "M",
+  "name": "Mesure et diagnostic",
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-m2",
+  "intent": "Observer, mesurer, comparer, vérifier une hypothèse, décider et rendre compte sans transformer une valeur isolée en panne.",
+  "stations": [
+    "mesurer",
+    "releves",
+    "equilibrage",
+    "tampon",
+    "decouplage",
+    "diagnostic",
+    "mission"
+  ],
+  "interchanges": [
+    {
+      "station": "mesurer",
+      "with": [
+        "P"
+      ],
+      "ownership": "Ligne P",
+      "reference": "../../stations/mesurer/index.html",
+      "state": "disponible en lecture seule"
+    },
+    {
+      "station": "equilibrage",
+      "with": [
+        "D"
+      ],
+      "ownership": "Ligne D",
+      "reference": "../../stations/equilibrage/index.html",
+      "state": "QA technique D disponible en lecture seule"
+    }
+  ],
+  "prerequisites": [
+    "Lire une boucle hydraulique simple",
+    "Distinguer débit et température",
+    "Conserver point, unité et état de fonctionnement"
+  ],
+  "levels": {
+    "TP": {
+      "objective": "Observer, choisir une mesure, relever avec contexte, vérifier une hypothèse puis rendre compte.",
+      "synthesis": "Conduire une intervention virtuelle sur une branche froide avec une seule action contrôlée."
+    },
+    "BTS": {
+      "objective": "Concevoir la stratégie de mesure, établir les bilans, comparer les hypothèses et justifier les limites.",
+      "synthesis": "Argumenter le diagnostic hydraulique et le bilan primaire-secondaire à partir de preuves traçables."
+    }
+  },
+  "estimatedDurationMinutes": {
+    "TP": 210,
+    "BTS": 300
+  },
+  "entryDiagnostic": {
+    "sharedEngine": "../../parcours-adaptatif.js",
+    "required": false,
+    "skillIds": [
+      "mesure",
+      "equilibrage",
+      "diagnostic",
+      "communication"
+    ]
+  },
+  "finalAssessment": {
+    "itemCount": 12,
+    "indicativeAcquiredThreshold": 0.7,
+    "essentialFamilies": [
+      "releves",
+      "tampon",
+      "decouplage",
+      "diagnostic",
+      "mission"
+    ],
+    "dimensions": [
+      "lire",
+      "classer-appliquer",
+      "mesurer-calculer",
+      "cause-effet",
+      "diagnostiquer"
+    ],
+    "distribution": {
+      "lire": 3,
+      "classer-appliquer": 3,
+      "mesurer-calculer": 2,
+      "cause-effet": 2,
+      "diagnostiquer": 2
+    },
+    "resultLabels": [
+      "ACQUIS",
+      "FRAGILE",
+      "À RENFORCER"
+    ],
+    "singleFinalStation": true,
+    "gradeScale": 20,
+    "route": "parcours.html?evaluation=1",
+    "scoreShownOnlyAtEnd": true
+  },
+  "sources": [
+    "../../EVALUATIONS.md",
+    "../../PARCOURS-SPIRALAIRE.md",
+    "RAG HAL local"
+  ],
+  "limits": [
+    "durées indicatives à valider",
+    "données pédagogiques de scénario",
+    "pas d’intervention réelle",
+    "pas de validation certificative",
+    "brouillon hors RAG"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1"
+}

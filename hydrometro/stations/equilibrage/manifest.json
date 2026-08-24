@@ -1,0 +1,107 @@
+{
+  "id": "equilibrage",
+  "title": "Équilibrage — Banc à trois branches",
+  "lines": [
+    "D",
+    "M"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-d2",
+  "levels": {
+    "TP": {
+      "objective": "Mesurer, régler une branche, stabiliser et remesurer.",
+      "learn": [
+        "Lire l’état initial.",
+        "Agir sur la branche favorisée.",
+        "Produire un compte rendu avant/après."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Équilibrer un banc pédagogique à trois branches par une action contrôlée."
+    },
+    "BTS": {
+      "objective": "Analyser la redistribution et critiquer le modèle à débit total fixe.",
+      "learn": [
+        "Quantifier les écarts.",
+        "Justifier la procédure.",
+        "Identifier les interactions réseau-pompe manquantes."
+      ],
+      "competencies": [
+        "BTS C2",
+        "BTS C7",
+        "BTS C8",
+        "BTS C14"
+      ],
+      "prompt": "Définir, exécuter et commenter une procédure d’équilibrage avec limites."
+    }
+  },
+  "modalities": [
+    "MESURE",
+    "RÉGLAGE",
+    "DIAGNOSTIC",
+    "COMPTE RENDU",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Banc à trois branches",
+    "rule": "Relever, régler A, stabiliser, remesurer et conclure.",
+    "success": "Trois débits à 1,00 L/min dans le modèle et limite explicitée.",
+    "feedback": "Prévision et nouveau relevé sont distingués."
+  },
+  "virtualPractice": {
+    "description": "Redistribution linéaire pédagogique à total fixé à 3,00 L/min.",
+    "measures": [
+      "L/min",
+      "%"
+    ],
+    "controls": [
+      "vanne A",
+      "séquence de contrôle"
+    ],
+    "limits": [
+      "Loi de réglage inventée pour l’exercice.",
+      "Point de fonctionnement de pompe non modélisé."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "mesurer",
+      "régler",
+      "expliquer",
+      "rendre compte"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md",
+    "RAG: Fiches Equilibrage réseau hydraulique.doc",
+    "RAG: equilibrage_reseaux_hydrauliques.pdf"
+  ],
+  "assets": [
+    "assets/vanne_manuelle.svg",
+    "assets/radiateur.svg",
+    "content.js#svg-scenes"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

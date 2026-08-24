@@ -1,0 +1,108 @@
+{
+  "id": "echangeur",
+  "title": "Échangeur",
+  "lines": [
+    "E"
+  ],
+  "status": "QA TECHNIQUE",
+  "levels": {
+    "TP": {
+      "objective": "Repérer les circuits primaire et secondaire et préparer les contrôles.",
+      "learn": [
+        "Identifier les quatre piquages.",
+        "Suivre les sens de circulation.",
+        "Distinguer symptôme et cause à vérifier."
+      ],
+      "competencies": [
+        "RNCP38748-BC01 maintenance préventive",
+        "RNCP38748-BC01 diagnostic"
+      ],
+      "prompt": "Reconstituer les deux circuits puis préparer les contrôles avant nettoyage."
+    },
+    "BTS": {
+      "objective": "Analyser le service d’un échangeur à partir des mesures.",
+      "learn": [
+        "Établir le bilan thermique.",
+        "Relier débits, températures et pincement.",
+        "Comparer pertes de charge et performance."
+      ],
+      "competencies": [
+        "BTS C2-3",
+        "BTS C3-1",
+        "BTS C8-3"
+      ],
+      "prompt": "Vérifier le service rendu à partir des quatre températures, des débits et de la pression différentielle."
+    }
+  },
+  "modalities": [
+    "IDENTIFICATION",
+    "TECHNOLOGIE",
+    "SCHÉMA",
+    "MESURE",
+    "DIAGNOSTIC",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Quatre piquages et modèle d’encrassement",
+    "rule": "Raccorder mentalement les deux circuits, puis faire varier une résistance interne qualitative.",
+    "success": "Activités réalisées et au moins 3 réponses sur 4 au contrôle formatif.",
+    "feedback": "Correction argumentée immédiate."
+  },
+  "virtualPractice": {
+    "description": "Échangeur simplifié en contre-courant avec indice d’encrassement.",
+    "measures": [
+      "P1",
+      "P2",
+      "S1",
+      "S2",
+      "débits",
+      "pression différentielle"
+    ],
+    "controls": [
+      "indice d’encrassement"
+    ],
+    "limits": [
+      "indices relatifs",
+      "pas de sélection réelle",
+      "pas de pincement universel"
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "appliquer",
+      "expliquer",
+      "diagnostiquer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../REFERENTIELS.md",
+    "RAG HAL local",
+    "bibliothèque de symboles inerWeb"
+  ],
+  "assets": [
+    "assets/echangeur_a_plaques.svg",
+    "SVG originaux intégrés dans content.js"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

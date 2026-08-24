@@ -1,0 +1,110 @@
+{
+  "id": "mission",
+  "title": "Mission réseau — Une branche reste froide",
+  "lines": [
+    "M"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-m2",
+  "levels": {
+    "TP": {
+      "objective": "Conduire l’enquête du constat au compte rendu avec une action contrôlée.",
+      "learn": [
+        "Localiser le symptôme.",
+        "Comparer au dossier.",
+        "Agir une fois et re-mesurer."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Intervenir virtuellement sur une branche froide et rendre compte."
+    },
+    "BTS": {
+      "objective": "Comparer les hypothèses et justifier la décision par les preuves.",
+      "learn": [
+        "Hiérarchiser les causes.",
+        "Choisir une vérification discriminante.",
+        "Argumenter la limite."
+      ],
+      "competencies": [
+        "BTS C2",
+        "BTS C7",
+        "BTS C8",
+        "BTS C12-C14"
+      ],
+      "prompt": "Étudier un déséquilibre local et défendre une décision."
+    }
+  },
+  "modalities": [
+    "MESURE",
+    "RÉGLAGE",
+    "DIAGNOSTIC",
+    "COMMUNICATION",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Une branche reste froide",
+    "rule": "Mener l’enquête complète avec une seule action justifiée.",
+    "success": "La décision suit les preuves du dossier et un nouveau relevé.",
+    "feedback": "Les causes concurrentes et les limites sont expliquées."
+  },
+  "virtualPractice": {
+    "description": "Intervention complète sur branche B.",
+    "measures": [
+      "m³/h",
+      "préréglage",
+      "état stabilisé"
+    ],
+    "controls": [
+      "indice",
+      "hypothèse",
+      "réglage",
+      "ordre du compte rendu"
+    ],
+    "limits": [
+      "Données pédagogiques du scénario.",
+      "Pas de réglage universel.",
+      "Pas d’intervention réelle."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "observer",
+      "comparer",
+      "régler",
+      "rendre compte"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md",
+    "doc/4584a37f80f942f3838ecd2f9d1ee56c"
+  ],
+  "assets": [
+    "assets/collecteur.svg",
+    "assets/radiateur.svg",
+    "assets/vanne_manuelle.svg",
+    "content.js#SVG-inline"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

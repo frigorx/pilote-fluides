@@ -1,0 +1,107 @@
+{
+  "id": "releves",
+  "title": "Relevés — La preuve exploitable",
+  "lines": [
+    "M"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-m2",
+  "levels": {
+    "TP": {
+      "objective": "Renseigner une fiche avant/après compréhensible par un tiers.",
+      "learn": [
+        "Choisir instrument et point.",
+        "Écrire valeur, unité et contexte.",
+        "Comparer après stabilisation."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Produire le relevé traçable d’une intervention."
+    },
+    "BTS": {
+      "objective": "Construire une comparaison défendable et en expliciter les limites.",
+      "learn": [
+        "Définir une stratégie de mesure.",
+        "Contrôler la comparabilité.",
+        "Argumenter sans généraliser."
+      ],
+      "competencies": [
+        "BTS C7",
+        "BTS C8",
+        "BTS C12-C14"
+      ],
+      "prompt": "Auditer la qualité d’une campagne avant/après."
+    }
+  },
+  "modalities": [
+    "MESURE",
+    "MÉTHODE",
+    "COMMUNICATION",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "La preuve exploitable",
+    "rule": "Construire une fiche puis comparer deux états connus.",
+    "success": "La comparaison conserve points, unités, mode et stabilisation.",
+    "feedback": "Chaque manque ou conclusion excessive est expliqué."
+  },
+  "virtualPractice": {
+    "description": "Fiche d’intervention avant/après.",
+    "measures": [
+      "m³/h",
+      "°C",
+      "date",
+      "heure"
+    ],
+    "controls": [
+      "instrument",
+      "point",
+      "unité",
+      "contexte",
+      "ordre"
+    ],
+    "limits": [
+      "Données pédagogiques du scénario.",
+      "Pas de mesure réelle ni de contrôle de calibre."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "choisir",
+      "relever",
+      "comparer",
+      "rendre compte"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "doc/99f9e9b6c1f6352e5a3c01697e7358f4",
+    "doc/f249306a3dde46e06585015f08a5a927",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "assets": [
+    "content.js#SVG-inline"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

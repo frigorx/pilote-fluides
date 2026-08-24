@@ -1,0 +1,107 @@
+{
+  "id": "diagnostic",
+  "title": "Diagnostic — Enquête hydraulique",
+  "lines": [
+    "M"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-m2",
+  "levels": {
+    "TP": {
+      "objective": "Demander les indices utiles, vérifier une hypothèse et rendre compte.",
+      "learn": [
+        "Décrire le symptôme.",
+        "Choisir une mesure utile.",
+        "Vérifier avant action."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Diagnostiquer une branche froide sans remplacer au hasard."
+    },
+    "BTS": {
+      "objective": "Comparer plusieurs hypothèses et construire une vérification discriminante.",
+      "learn": [
+        "Séparer donnée et interprétation.",
+        "Hiérarchiser les hypothèses.",
+        "Justifier la décision."
+      ],
+      "competencies": [
+        "BTS C2",
+        "BTS C7",
+        "BTS C8",
+        "BTS C12-C14"
+      ],
+      "prompt": "Construire un arbre d’enquête hydraulique argumenté."
+    }
+  },
+  "modalities": [
+    "MESURE",
+    "DIAGNOSTIC",
+    "COMMUNICATION",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Enquête hydraulique",
+    "rule": "Choisir les indices, formuler puis vérifier une hypothèse.",
+    "success": "La décision vient après une preuve discriminante.",
+    "feedback": "Les conclusions hâtives sont identifiées et expliquées."
+  },
+  "virtualPractice": {
+    "description": "Enquête sur une branche froide.",
+    "measures": [
+      "m³/h",
+      "état stabilisé",
+      "position réelle"
+    ],
+    "controls": [
+      "indice",
+      "classement",
+      "hypothèse",
+      "décision"
+    ],
+    "limits": [
+      "Données pédagogiques du scénario.",
+      "Pas de geste réel ni consignation."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "observer",
+      "interpréter",
+      "vérifier",
+      "décider"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md",
+    "doc/ac567c8d84529bd05b70f3e9b00f61cb"
+  ],
+  "assets": [
+    "assets/vanne_manuelle.svg",
+    "assets/radiateur.svg",
+    "content.js#SVG-inline"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

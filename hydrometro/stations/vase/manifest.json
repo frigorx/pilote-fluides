@@ -1,0 +1,105 @@
+{
+  "id": "vase",
+  "title": "Vase d’expansion",
+  "lines": [
+    "E"
+  ],
+  "status": "QA TECHNIQUE",
+  "levels": {
+    "TP": {
+      "objective": "Contrôler le vase d’expansion et son raccordement.",
+      "learn": [
+        "Identifier eau, membrane et gaz.",
+        "Repérer pression à froid et variation.",
+        "Distinguer symptôme, cause et conséquence."
+      ],
+      "competencies": [
+        "RNCP38748-BC01 maintenance",
+        "RNCP38748-BC01 diagnostic"
+      ],
+      "prompt": "Préparer les contrôles du vase sans neutraliser la sécurité."
+    },
+    "BTS": {
+      "objective": "Dimensionner l’expansion et vérifier la plage de pression.",
+      "learn": [
+        "Déterminer volume et dilatation.",
+        "Définir pressions minimale et maximale.",
+        "Justifier volume, précharge et implantation."
+      ],
+      "competencies": [
+        "BTS C3-3",
+        "BTS C4-1",
+        "BTS C8-1"
+      ],
+      "prompt": "Justifier le vase et son implantation à partir des données du projet."
+    }
+  },
+  "modalities": [
+    "IDENTIFICATION",
+    "TECHNOLOGIE",
+    "CALCUL",
+    "DIAGNOSTIC",
+    "SÉCURITÉ",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Pression sous contrôle",
+    "rule": "Faire varier dilatation et précharge dans un cas fictif.",
+    "success": "Activités réalisées et 3 réponses sur 4.",
+    "feedback": "États écrits, traits différenciés et explications."
+  },
+  "virtualPractice": {
+    "description": "Vase à membrane avec cycle thermique qualitatif.",
+    "measures": [
+      "précharge",
+      "pression à froid",
+      "pression à chaud"
+    ],
+    "controls": [
+      "indice thermique",
+      "précharge du cas"
+    ],
+    "limits": [
+      "cas fictif",
+      "pas de dimensionnement",
+      "pas d’intervention réelle"
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "appliquer",
+      "expliquer",
+      "sécuriser"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "RAG HAL : technologie vase d’expansion",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "assets": [
+    "assets/vase-expansion.svg",
+    "SVG originaux dans content.js"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

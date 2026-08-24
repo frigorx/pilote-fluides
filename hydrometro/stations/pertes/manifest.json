@@ -1,0 +1,106 @@
+{
+  "id": "pertes",
+  "title": "Pertes de charge",
+  "lines": [
+    "E",
+    "D"
+  ],
+  "status": "QA TECHNIQUE",
+  "levels": {
+    "TP": {
+      "objective": "Localiser une résistance hydraulique anormale.",
+      "learn": [
+        "Distinguer régulière et singulière.",
+        "Contrôler filtre, vanne et section.",
+        "Comparer pression amont-aval."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Organiser les contrôles de pression sans remplacer au hasard."
+    },
+    "BTS": {
+      "objective": "Calculer et vérifier les pertes de charge.",
+      "learn": [
+        "Établir longueurs, débits et singularités.",
+        "Exploiter calculs ou abaques.",
+        "Comparer calcul, mesure et hauteur disponible."
+      ],
+      "competencies": [
+        "BTS C3-3",
+        "BTS C7-4",
+        "BTS C8-3"
+      ],
+      "prompt": "Calculer le chemin critique puis définir les mesures de confirmation."
+    }
+  },
+  "modalities": [
+    "THÉORIE",
+    "CALCUL",
+    "SCHÉMA",
+    "RÉGLAGE",
+    "DIAGNOSTIC",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Chasse aux pertes",
+    "rule": "Classer, faire varier Q et le passage, puis localiser par Δp.",
+    "success": "Activités réalisées et 3 réponses sur 4.",
+    "feedback": "Correction et valeurs du modèle visibles."
+  },
+  "virtualPractice": {
+    "description": "Réseau simplifié avec vanne, filtre et prises de pression.",
+    "measures": [
+      "Q en m³/h",
+      "Δp en mCE"
+    ],
+    "controls": [
+      "débit",
+      "fermeture relative"
+    ],
+    "limits": [
+      "coefficients pédagogiques",
+      "pas d’abaque réel",
+      "pas de réglage terrain"
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "calculer",
+      "expliquer",
+      "diagnostiquer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "RAG HAL local : pertes de charge",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "assets": [
+    "assets/vanne_manuelle.svg",
+    "assets/filtre_hydraulique.svg",
+    "SVG originaux dans content.js"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

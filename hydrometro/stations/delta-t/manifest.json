@@ -1,0 +1,103 @@
+{
+  "id": "delta-t",
+  "title": "Écart ΔT",
+  "lines": [
+    "P"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-p1",
+  "levels": {
+    "TP": {
+      "objective": "Mesurer un écart départ-retour sans conclure trop vite.",
+      "learn": [
+        "Placer les sondes.",
+        "Attendre un régime exploitable.",
+        "Croiser ΔT, débit et état des organes."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Obtenir trois relevés comparables autour du même émetteur."
+    },
+    "BTS": {
+      "objective": "Définir un protocole de ΔT interprétable.",
+      "learn": [
+        "Définir les points.",
+        "Suivre le transitoire.",
+        "Discuter incertitude et charge."
+      ],
+      "competencies": [
+        "BTS C7-4",
+        "BTS C7-6",
+        "BTS C8-3"
+      ],
+      "prompt": "Argumenter l’acceptabilité d’un relevé de ΔT."
+    }
+  },
+  "modalities": [
+    "MESURE",
+    "DIAGNOSTIC",
+    "PRATIQUE VIRTUELLE",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Placement de sondes",
+    "rule": "Choisir deux points puis relever trois fois.",
+    "success": "A et B choisis ; stabilisation atteinte à la troisième mesure.",
+    "feedback": "Points comparables et évolution transitoire expliqués."
+  },
+  "virtualPractice": {
+    "description": "Évolution départ-retour d’un émetteur en régime transitoire.",
+    "measures": [
+      "°C",
+      "K"
+    ],
+    "controls": [
+      "points de sonde",
+      "attente et relevé"
+    ],
+    "limits": [
+      "ΔT isolé non diagnostique."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "mesurer",
+      "calculer",
+      "expliquer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "doc/7b8b74599765385bedc077ab123b9985",
+    "doc/d6a1457828f03bb431cfa16ebea32a7f",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "assets": [
+    "assets/radiateur.svg",
+    "index.html#dtSvg"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 7,
+    "sequence": [
+      "observer",
+      "comprendre",
+      "voir fonctionner",
+      "expliquer",
+      "se préparer",
+      "manipuler avec aide",
+      "résumer"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

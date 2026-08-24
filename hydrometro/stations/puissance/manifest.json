@@ -1,0 +1,103 @@
+{
+  "id": "puissance",
+  "title": "Puissance",
+  "lines": [
+    "P"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-p1",
+  "levels": {
+    "TP": {
+      "objective": "Estimer la puissance transportée par l’eau.",
+      "learn": [
+        "Utiliser P ≈ 1,16 × Q × ΔT.",
+        "Vérifier unités et ordre de grandeur.",
+        "Relier le résultat au besoin."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Atteindre une puissance cible avec Q et ΔT."
+    },
+    "BTS": {
+      "objective": "Dimensionner et vérifier une puissance hydraulique.",
+      "learn": [
+        "Calculer le débit de projet.",
+        "Comparer besoin et mesure.",
+        "Discuter l’approximation."
+      ],
+      "competencies": [
+        "BTS C3-3",
+        "BTS C8-1",
+        "BTS C8-3"
+      ],
+      "prompt": "Définir des mesures validant une puissance hydraulique."
+    }
+  },
+  "modalities": [
+    "CALCUL",
+    "THÉORIE",
+    "PRATIQUE VIRTUELLE",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Calcul à curseurs",
+    "rule": "Ajuster Q et ΔT.",
+    "success": "Puissance dans ±0,6 kW autour de 23,2 kW.",
+    "feedback": "Écart à la cible et sens de correction."
+  },
+  "virtualPractice": {
+    "description": "Jumeau simplifié puissance-débit-températures.",
+    "measures": [
+      "m³/h",
+      "K",
+      "kW"
+    ],
+    "controls": [
+      "débit",
+      "ΔT"
+    ],
+    "limits": [
+      "Coefficient 1,16 réservé ici à l’eau et aux unités indiquées."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "calculer",
+      "appliquer",
+      "expliquer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "doc/15f50c582a5991b4ea17fd71cae3de86",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "assets": [
+    "assets/radiateur.svg",
+    "index.html#powerSvg"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 7,
+    "sequence": [
+      "observer",
+      "comprendre",
+      "voir fonctionner",
+      "expliquer",
+      "se préparer",
+      "manipuler avec aide",
+      "résumer"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

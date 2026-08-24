@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>HydroMétro · Ligne M Mesure et diagnostic</title>
+  <link rel="stylesheet" href="parcours.css?v=20260823-m1">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div class="line-app">
+    <header class="topbar">
+      <div class="brand"><span class="line-badge" aria-hidden="true">M</span><span><strong>HydroMétro</strong><small>Mesure et diagnostic</small></span></div>
+      <div class="level-switch" role="group" aria-label="Profondeur pédagogique">
+        <button type="button" class="level-btn" data-level="CAP" aria-pressed="false">CAP</button><button type="button" class="level-btn is-active" data-level="TP" aria-pressed="true">Bac pro</button>
+        <button type="button" class="level-btn" data-level="BTS" aria-pressed="false">BTS</button>
+      </div>
+      <a href="../../index.html" class="plan-link">Plan</a>
+    </header>
+    <main id="main" tabindex="-1">
+      <section id="routeScreen" class="screen route-screen" aria-labelledby="routeTitle">
+        <div class="intro"><p class="kicker">Ligne M · sept stations + une évaluation</p><h1 id="routeTitle">Mesurer, vérifier, décider et rendre compte</h1><p id="levelObjective"></p></div>
+        <div class="line-track" id="lineTrack" aria-label="Parcours des stations"></div>
+        <div class="route-actions">
+          <p><strong>Correspondances :</strong> Mesurer renvoie vers la ligne P. Équilibrage renvoie vers la station QA technique de la ligne D, en lecture seule.</p>
+          <button type="button" id="startTest" class="primary evaluation-launch">8 · Station Évaluation · note /20</button>
+        </div>
+      </section>
+      <section id="testScreen" class="screen test-screen" hidden aria-labelledby="testTitle">
+        <nav id="testProgress" class="test-progress" aria-label="Progression du test"></nav>
+        <article class="test-card">
+          <div class="test-copy">
+            <p class="kicker" id="testCategory"></p>
+            <h1 id="testTitle" tabindex="-1"></h1>
+            <p id="testContext"></p>
+            <p id="levelDemand" class="level-demand"></p>
+            <div id="answers" class="answers" aria-live="polite"></div>
+          </div>
+          <div class="test-visual"><div id="testScene" class="test-scene"></div><p id="testEquivalent" class="equivalent"></p></div>
+        </article>
+      </section>
+      <section id="resultScreen" class="screen result-screen" hidden aria-labelledby="resultTitle">
+        <div class="result-card">
+          <p class="kicker">Bilan formatif de la ligne M</p><h1 id="resultTitle" tabindex="-1"></h1><p id="resultScore" class="result-score"></p><p id="resultExplain"></p><div id="remediation" class="remediation"></div>
+          <div class="result-actions"><button type="button" id="retryTest" class="secondary">Refaire le test</button><button type="button" id="backRoute" class="primary">Revoir les sept jalons</button></div>
+        </div>
+      </section>
+    </main>
+    <footer class="bottom-bar">
+      <p><strong>Limite :</strong> entraînement virtuel non certificatif. Les valeurs sont des données pédagogiques du scénario.</p>
+      <div class="nav-actions" id="testNavigation" hidden><button type="button" id="quitTest" class="secondary">Quitter le test</button><span id="itemCount"></span><button type="button" id="nextItem" class="primary" disabled>Activité suivante</button></div>
+    </footer>
+  </div>
+  <script src="parcours.js?v=20260823-global1"></script>
+  <script src="../../assets/logo-entete.js" defer></script>
+  <script src="../../assets/marque.js" data-cartouche="Hydro" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

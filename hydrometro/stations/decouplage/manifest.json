@@ -1,0 +1,104 @@
+{
+  "id": "decouplage",
+  "title": "Découplage — Trois régimes de débit",
+  "lines": [
+    "M"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-m2",
+  "levels": {
+    "TP": {
+      "objective": "Suivre les flux primaire, secondaire et interne dans trois régimes.",
+      "learn": [
+        "Repérer les deux boucles.",
+        "Comparer Qp et Qs.",
+        "Nommer le sens du transfert."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Identifier le régime de fonctionnement d’un découplage."
+    },
+    "BTS": {
+      "objective": "Établir les bilans de débit et les températures de mélange avec une convention explicite.",
+      "learn": [
+        "Écrire le bilan massique.",
+        "Calculer une moyenne pondérée.",
+        "Justifier les hypothèses."
+      ],
+      "competencies": [
+        "BTS C2",
+        "BTS C7",
+        "BTS C8"
+      ],
+      "prompt": "Comparer trois régimes primaire-secondaire."
+    }
+  },
+  "modalities": [
+    "SCHÉMA",
+    "MESURE",
+    "CALCUL",
+    "DIAGNOSTIC",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Trois régimes de débit",
+    "rule": "Faire varier Qp et Qs et vérifier le transfert interne.",
+    "success": "Les trois régimes, les sens et les bilans sont cohérents.",
+    "feedback": "Le régime et le transfert sont recalculés à chaque mouvement."
+  },
+  "virtualPractice": {
+    "description": "Séparateur primaire-secondaire à deux curseurs.",
+    "measures": [
+      "m³/h",
+      "°C"
+    ],
+    "controls": [
+      "Qp",
+      "Qs"
+    ],
+    "limits": [
+      "Données pédagogiques du scénario.",
+      "Eau, régime permanent, pertes négligées.",
+      "Pas de sélection de matériel."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "lire",
+      "calculer",
+      "expliquer",
+      "limiter"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md",
+    "doc/c0e3361b340893a5c8ca2d2b2ae0154c"
+  ],
+  "assets": [
+    "assets/pompe_debit_variable.svg",
+    "content.js#SVG-inline"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "P",
+  "name": "Principes",
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-p1",
+  "intent": "Comprendre, mesurer et expliquer les grandeurs et transferts d’une boucle hydraulique CVC.",
+  "stations": [
+    "boucle",
+    "energie",
+    "debit",
+    "delta-t",
+    "puissance",
+    "mesurer"
+  ],
+  "interchanges": [
+    {
+      "stationId": "debit",
+      "withLine": "E"
+    },
+    {
+      "stationId": "mesurer",
+      "withLine": "M"
+    }
+  ],
+  "prerequisites": [
+    "Lire une flèche de sens",
+    "Soustraire deux températures",
+    "Utiliser une unité"
+  ],
+  "levels": {
+    "TP": {
+      "objective": "Lire, mesurer et expliquer les grandeurs d’une boucle.",
+      "synthesis": "Produire un relevé Q et ΔT, estimer la puissance et rendre compte des limites."
+    },
+    "BTS": {
+      "objective": "Analyser, calculer et justifier une performance hydraulique.",
+      "synthesis": "Définir une stratégie de mesure, calculer la puissance et argumenter la cohérence du résultat."
+    }
+  },
+  "estimatedDurationMinutes": {
+    "TP": {
+      "min": 90,
+      "max": 120
+    },
+    "BTS": {
+      "min": 120,
+      "max": 150
+    }
+  },
+  "entryDiagnostic": {
+    "sharedEngine": "parcours-adaptatif.js",
+    "required": false,
+    "skillIds": [
+      "boucle",
+      "energie",
+      "debit",
+      "delta-t",
+      "puissance",
+      "mesurer"
+    ]
+  },
+  "finalAssessment": {
+    "itemCount": 12,
+    "indicativeAcquiredThreshold": 0.7,
+    "integerAcquiredMinimum": 9,
+    "dimensions": {
+      "lire": 3,
+      "appliquer": 3,
+      "mesurer-calculer": 2,
+      "expliquer": 2,
+      "diagnostiquer": 2
+    },
+    "essentialFamilies": [
+      "schema",
+      "units",
+      "dt",
+      "power",
+      "measure"
+    ],
+    "resultLabels": [
+      "acquis",
+      "fragile",
+      "à renforcer"
+    ],
+    "locksValidatedAnswer": true,
+    "remediationLinks": true,
+    "singleFinalStation": true,
+    "gradeScale": 20,
+    "route": "parcours.html?evaluation=1",
+    "scoreShownOnlyAtEnd": true
+  },
+  "sources": [
+    "../../EVALUATIONS.md",
+    "../../PARCOURS-SPIRALAIRE.md",
+    "../../INGENIERIE-PEDAGOGIQUE.md",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "limits": [
+    "Évaluation formative, non certificative.",
+    "Durées indicatives de conception, non mesurées avec un groupe.",
+    "Validation métier et pédagogique humaine requise.",
+    "Aucune donnée enregistrée."
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1"
+}

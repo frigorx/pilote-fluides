@@ -1,0 +1,108 @@
+{
+  "id": "plancher",
+  "title": "Plancher chauffant — Collecteur mystère",
+  "lines": [
+    "D"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-d2",
+  "levels": {
+    "TP": {
+      "objective": "Associer zones et boucles, lire les débitmètres et contrôler un réglage.",
+      "learn": [
+        "Repérer départ et retour.",
+        "Comparer mesure et cible.",
+        "Stabiliser puis remesurer toutes les boucles."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Identifier la boucle défavorisée puis vérifier un réglage contrôlable."
+    },
+    "BTS": {
+      "objective": "Analyser longueurs, débits visés et limites d’un collecteur modélisé.",
+      "learn": [
+        "Quantifier les écarts.",
+        "Séparer corrélation et cause.",
+        "Critiquer l’hypothèse de différence de pression maintenue."
+      ],
+      "competencies": [
+        "BTS C2",
+        "BTS C4",
+        "BTS C7",
+        "BTS C8"
+      ],
+      "prompt": "Justifier la boucle à régler à partir des données et proposer les contrôles réels."
+    }
+  },
+  "modalities": [
+    "IDENTIFICATION",
+    "MESURE",
+    "RÉGLAGE",
+    "COMPTE RENDU",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Collecteur mystère",
+    "rule": "Associer zones, boucles et cibles puis régler la boucle déficitaire.",
+    "success": "Repères conservés et contrôle avant/après complet.",
+    "feedback": "Écart à la cible calculé et limite expliquée."
+  },
+  "virtualPractice": {
+    "description": "Collecteur à trois boucles avec débits pédagogiques.",
+    "measures": [
+      "m",
+      "L/min",
+      "%"
+    ],
+    "controls": [
+      "associations",
+      "ouverture A",
+      "séquence"
+    ],
+    "limits": [
+      "Valeurs créées pour l’exercice.",
+      "Les interactions entre branches sont simplifiées."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "mesurer",
+      "régler",
+      "expliquer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md",
+    "RAG: plancher chauffant.pdf",
+    "RAG: equilibrage_reseaux_hydrauliques.pdf"
+  ],
+  "assets": [
+    "assets/collecteur.svg",
+    "assets/vanne_manuelle.svg",
+    "content.js#svg-scenes"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

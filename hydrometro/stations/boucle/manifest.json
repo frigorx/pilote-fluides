@@ -1,0 +1,109 @@
+{
+  "id": "boucle",
+  "title": "Boucle",
+  "lines": [
+    "P"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-p1-formative-prototype",
+  "levels": {
+    "TP": {
+      "objective": "Lire une boucle hydraulique avant toute intervention.",
+      "learn": [
+        "Repérer départ, retour et sens de circulation.",
+        "Identifier production, distribution et émetteur.",
+        "Vérifier la continuité fonctionnelle du circuit."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Reconstruire le trajet de l’eau et nommer chaque fonction."
+    },
+    "BTS": {
+      "objective": "Analyser l’architecture fonctionnelle d’une boucle hydraulique.",
+      "learn": [
+        "Distinguer structure et fonction.",
+        "Matérialiser les flux.",
+        "Justifier les limites du modèle."
+      ],
+      "competencies": [
+        "BTS C2-1",
+        "BTS C2-2",
+        "BTS C4-3"
+      ],
+      "prompt": "Produire le synoptique fonctionnel et délimiter le système."
+    }
+  },
+  "modalities": [
+    "EXPLICATION",
+    "SCHÉMA",
+    "ANIMATION SVG",
+    "MANIPULATION GUIDÉE",
+    "VOIX FACULTATIVE",
+    "SYNTHÈSE"
+  ],
+  "formativeJourney": {
+    "stepCount": 8,
+    "sequence": [
+      "observer",
+      "comprendre",
+      "suivre l’eau",
+      "nommer les rôles",
+      "relier eau et énergie",
+      "voir la solution",
+      "s’entraîner avec aide",
+      "résumer"
+    ],
+    "demonstrations": 5,
+    "animationStartsOnlyOnUserAction": true,
+    "visibleTextEquivalent": true,
+    "voice": "facultative, déclenchée au clic, sans autoplay",
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  },
+  "game": {
+    "type": "Reconstruction guidée sans score",
+    "rule": "Placer production, départ, émetteur et retour après la démonstration.",
+    "success": "Ordre exact et continuité visible.",
+    "feedback": "Indice progressif, première position à revoir et solution affichable sans pénalité."
+  },
+  "virtualPractice": {
+    "description": "Reconstruction accompagnée d’un circuit fermé simplifié avant l’évaluation.",
+    "measures": [],
+    "controls": [
+      "sélection de fonction",
+      "position 1 à 4",
+      "indice",
+      "solution",
+      "vérification sans score"
+    ],
+    "limits": [
+      "Pas de diamètres, pertes de charge ni organes de sécurité complets."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "appliquer",
+      "expliquer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../README.md",
+    "../../INGENIERIE-PEDAGOGIQUE.md",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "assets": [
+    "assets/pompe_debit_variable.svg",
+    "assets/radiateur.svg",
+    "station.js#scenes"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "X",
+  "name": "Nom de la ligne",
+  "status": "CADRAGE",
+  "intent": "Compétence globale visée.",
+  "stations": ["identifiant-stable-1", "identifiant-stable-2"],
+  "interchanges": [],
+  "prerequisites": [],
+  "levels": {
+    "TP": {
+      "objective": "Objectif de parcours niveau 4.",
+      "synthesis": "Mission de synthèse TP CVC."
+    },
+    "BTS": {
+      "objective": "Objectif de parcours niveau 5.",
+      "synthesis": "Étude de synthèse BTS FED."
+    }
+  },
+  "estimatedDurationMinutes": {
+    "TP": 0,
+    "BTS": 0
+  },
+  "entryDiagnostic": {
+    "sharedEngine": "parcours-adaptatif.js",
+    "required": false,
+    "skillIds": []
+  },
+  "finalAssessment": {
+    "itemCount": 12,
+    "singleFinalStation": true,
+    "gradeScale": 20,
+    "route": "parcours.html?evaluation=1",
+    "scoreShownOnlyAtEnd": true,
+    "indicativeAcquiredThreshold": 0.7,
+    "dimensions": ["lire", "appliquer", "mesurer-calculer", "expliquer", "diagnostiquer"],
+    "resultLabels": ["ACQUIS", "FRAGILE", "À RENFORCER"]
+  },
+  "sources": [],
+  "limits": []
+}

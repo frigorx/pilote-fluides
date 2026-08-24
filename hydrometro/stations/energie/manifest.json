@@ -1,0 +1,99 @@
+{
+  "id": "energie",
+  "title": "Énergie",
+  "lines": [
+    "P"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-p1",
+  "levels": {
+    "TP": {
+      "objective": "Relier circulation d’eau et transport de chaleur.",
+      "learn": [
+        "Distinguer énergie, température et débit.",
+        "Repérer où l’eau reçoit et cède de l’énergie.",
+        "Expliquer le trajet en régime stabilisé."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Ordonner et expliquer la chaîne énergétique de la boucle."
+    },
+    "BTS": {
+      "objective": "Délimiter la chaîne énergétique hydraulique.",
+      "learn": [
+        "Identifier les frontières.",
+        "Associer flux, puissance et énergie.",
+        "Commenter les limites du bilan."
+      ],
+      "competencies": [
+        "BTS C2-2",
+        "BTS C2-3",
+        "BTS C8-3"
+      ],
+      "prompt": "Construire un bilan qualitatif et en délimiter les frontières."
+    }
+  },
+  "modalities": [
+    "THÉORIE",
+    "SCHÉMA",
+    "CLASSEMENT",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Chaîne d’énergie",
+    "rule": "Ordonner production, eau, émetteur et local.",
+    "success": "Les quatre fonctions sont dans l’ordre du transfert.",
+    "feedback": "Le premier maillon incohérent est indiqué."
+  },
+  "virtualPractice": {
+    "description": "Distinction visuelle entre circulation d’eau et transfert d’énergie.",
+    "measures": [],
+    "controls": [
+      "ordre des cartes"
+    ],
+    "limits": [
+      "Pertes et rendement non quantifiés."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "relier",
+      "expliquer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../README.md",
+    "../../INGENIERIE-PEDAGOGIQUE.md",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "assets": [
+    "assets/radiateur.svg",
+    "index.html#energySvg"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 7,
+    "sequence": [
+      "observer",
+      "comprendre",
+      "voir fonctionner",
+      "expliquer",
+      "se préparer",
+      "manipuler avec aide",
+      "résumer"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

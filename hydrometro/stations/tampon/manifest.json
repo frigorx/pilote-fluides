@@ -1,0 +1,104 @@
+{
+  "id": "tampon",
+  "title": "Volume tampon — Quatre piquages",
+  "lines": [
+    "M"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-m2",
+  "levels": {
+    "TP": {
+      "objective": "Reconnaître le raccordement et attribuer seulement les fonctions visibles.",
+      "learn": [
+        "Lire deux et quatre piquages.",
+        "Distinguer volume nominal et utile.",
+        "Limiter la conclusion."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Identifier le rôle réel du ballon raccordé."
+    },
+    "BTS": {
+      "objective": "Analyser volume utile, transferts et découplage selon l’architecture.",
+      "learn": [
+        "Comparer les montages.",
+        "Analyser les transferts.",
+        "Justifier les limites."
+      ],
+      "competencies": [
+        "BTS C2",
+        "BTS C3",
+        "BTS C8"
+      ],
+      "prompt": "Comparer trois raccordements de volume tampon."
+    }
+  },
+  "modalities": [
+    "SCHÉMA",
+    "TECHNOLOGIE",
+    "DIAGNOSTIC",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Quatre piquages",
+    "rule": "Comparer trois raccordements et attribuer seulement les fonctions démontrées.",
+    "success": "Volume, inertie et découplage ne sont pas confondus.",
+    "feedback": "Chaque fonction supposée est reliée à la vérification manquante."
+  },
+  "virtualPractice": {
+    "description": "Comparaison qualitative de raccordements.",
+    "measures": [
+      "part de volume balayée"
+    ],
+    "controls": [
+      "raccordement",
+      "fonction",
+      "part balayée",
+      "ordre de vérification"
+    ],
+    "limits": [
+      "Pas de dimensionnement.",
+      "Pas de performance constructeur.",
+      "Données qualitatives de scénario."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "lire",
+      "comparer",
+      "expliquer",
+      "limiter"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "doc/9895eeea5b3a36c425e160feeb5ca75e",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "assets": [
+    "assets/ballon-tampon.svg",
+    "content.js#SVG-inline"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

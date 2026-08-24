@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 100" role="img" aria-labelledby="title desc">
+  <title id="title">Soupape de sécurité hydraulique</title>
+  <desc id="desc">Symbole pédagogique original d’une soupape à ressort avec entrée et évacuation.</desc>
+  <g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 67h29l14-18 14 18h29"/>
+    <path d="M55 49V24M43 24h24"/>
+    <path d="M47 20l16-8M47 12l16 8"/>
+    <path d="M55 67v24"/>
+  </g>
+  <circle cx="12" cy="67" r="3" fill="#1b3a63"/>
+  <circle cx="98" cy="67" r="3" fill="#1b3a63"/>
+  <circle cx="55" cy="92" r="3" fill="#c9451a"/>
+</svg>

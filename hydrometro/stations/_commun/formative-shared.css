@@ -1,0 +1,129 @@
+.voice-actions {
+  display: flex;
+  gap: .3rem;
+  align-items: center;
+}
+
+.topbar {
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+}
+
+.progress {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.voice-actions button {
+  min-height: 36px;
+  border-radius: 999px;
+  padding: .25rem .55rem;
+}
+
+.progress-step {
+  font: inherit;
+  color: #637285;
+}
+
+button.progress-step {
+  min-height: 34px;
+  border: 1px solid rgba(27,58,99,.22);
+  border-radius: 999px;
+  background: #fffdf8;
+  padding: .2rem .35rem;
+}
+
+button.progress-step.is-current {
+  border: 3px double #3d7fca;
+  color: #1b3a63;
+}
+
+button.progress-step.is-done {
+  border-style: double;
+  border-color: #1e7e54;
+  color: #155c3d;
+}
+
+.explain-first {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  align-content: center;
+  gap: .55rem;
+  padding: .25rem;
+}
+
+.explain-first p { margin: 0; }
+
+.explain-first .method {
+  color: #637285;
+  font-weight: 700;
+}
+
+.lesson-explanation {
+  padding: .55rem .65rem;
+  border: 5px double #1e7e54;
+  border-radius: 12px;
+  background: #e3f5ec;
+  color: #155c3d;
+  font-weight: 700;
+}
+
+.solution-btn {
+  border-style: dashed;
+  border-color: #b06a00;
+}
+
+.scene.is-demonstrating svg path,
+.scene.is-demonstrating svg circle,
+.scene.is-demonstrating svg rect,
+.scene.is-demonstrating svg text {
+  animation: hydro-explain-pulse 1.7s ease-in-out 1;
+}
+
+@keyframes hydro-explain-pulse {
+  0%, 100% { filter: none; opacity: 1; }
+  45% { filter: drop-shadow(0 0 5px rgba(201,69,26,.6)); opacity: .72; }
+}
+
+.formation-only-note {
+  border-left: 5px solid #3d7fca;
+  background: #f3f7fb;
+  border-radius: 10px;
+  padding: .35rem .5rem;
+  font-size: .88em;
+}
+
+@media (max-width: 760px) {
+  .voice-actions button span { display: none; }
+  .voice-actions button { min-width: 34px; padding: .2rem; }
+  .explain-first { gap: .3rem; }
+  .lesson-explanation { padding: .35rem .45rem; }
+}
+
+@media (max-width: 380px) and (max-height: 680px) {
+  .voice-actions { display: none; }
+  .explain-first .method { display: none; }
+}
+
+@media print {
+  .voice-actions, .explain-first button { display: none !important; }
+  .lesson-explanation { background: #fff; color: #000; box-shadow: none; }
+}
+
+/* Contrôles d'animation de flux (trajet de l'eau) — communs aux stations qui en déclarent. */
+.flux-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 8px; }
+.flux-controls button { min-height: 38px; padding: 5px 12px; border: 2px solid #1b3a63; border-radius: 10px; background: #fffdf8; color: #1b3a63; cursor: pointer; font-weight: 700; }
+.flux-controls button:hover { background: #eef3f8; }
+.flux-etat { flex: 1 1 240px; margin: 0; color: #10233c; font-size: 14px; }
+@media print { .flux-controls button { display: none; } }

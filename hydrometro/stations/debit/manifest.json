@@ -1,0 +1,104 @@
+{
+  "id": "debit",
+  "title": "Débit",
+  "lines": [
+    "P",
+    "E"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-p1",
+  "levels": {
+    "TP": {
+      "objective": "Mesurer et interpréter un débit de circulation.",
+      "learn": [
+        "Convertir les unités usuelles.",
+        "Lire un point de fonctionnement.",
+        "Contrôler la cohérence du relevé."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Atteindre le débit cible en agissant sur la pompe et le réseau."
+    },
+    "BTS": {
+      "objective": "Interpréter le point de fonctionnement pompe-réseau.",
+      "learn": [
+        "Croiser deux courbes.",
+        "Relier résistance et débit.",
+        "Justifier le réglage."
+      ],
+      "competencies": [
+        "BTS C3-3",
+        "BTS C7-5",
+        "BTS C7-6"
+      ],
+      "prompt": "Analyser le déplacement du point de fonctionnement."
+    }
+  },
+  "modalities": [
+    "MESURE",
+    "CALCUL",
+    "PRATIQUE VIRTUELLE",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Point de fonctionnement",
+    "rule": "Régler commande pompe et ouverture réseau.",
+    "success": "Débit entre 2,0 et 2,4 m³/h.",
+    "feedback": "Action conseillée selon débit trop faible ou trop fort."
+  },
+  "virtualPractice": {
+    "description": "Intersection de courbes quadratiques simplifiées.",
+    "measures": [
+      "m³/h",
+      "L/min"
+    ],
+    "controls": [
+      "commande pompe",
+      "ouverture réseau"
+    ],
+    "limits": [
+      "Courbes sans hauteur ni données constructeur."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "convertir",
+      "appliquer",
+      "expliquer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "doc/8cd7c9c5fb075a74a644dce47f2ed3d4",
+    "doc/d3ec313eedd0c5b3f03334a68ece8270",
+    "doc/8859f69f4fa906356309c898a33eaf97"
+  ],
+  "assets": [
+    "assets/pompe_debit_variable.svg",
+    "index.html#flowSvg"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 7,
+    "sequence": [
+      "observer",
+      "comprendre",
+      "voir fonctionner",
+      "expliquer",
+      "se préparer",
+      "manipuler avec aide",
+      "résumer"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

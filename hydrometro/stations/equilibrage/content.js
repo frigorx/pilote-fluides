@@ -1,0 +1,66 @@
+(() => {
+  "use strict";
+
+  const svg = (id, title, desc, body) => `<svg viewBox="0 0 760 430" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs><marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker></defs>${body}</svg>`;
+  const flows = (closure) => ({ a: 1.6 - .01 * closure, b: .85 + .0025 * closure, c: .55 + .0075 * closure });
+  const branchBars = (values) => [[210,"A",values.a],[380,"B",values.b],[550,"C",values.c]].map(([x,label,q]) => {
+    const h = q * 105;
+    const ok = Math.abs(q - 1) <= .05;
+    return `<g><rect x="${x-42}" y="${330-h}" width="84" height="${h}" rx="10" fill="${ok?"#e3f5ec":"#fff4e0"}" stroke="${ok?"#1e7e54":"#b06a00"}" stroke-width="${ok?5:4}" stroke-dasharray="${ok?"0":"6 5"}"/><text x="${x}" y="${350-h}" text-anchor="middle" font-size="17" font-weight="700">${q.toFixed(2)} L/min</text><text x="${x}" y="365" text-anchor="middle" font-size="16" font-weight="700">BRANCHE ${label}</text><text x="${x}" y="390" text-anchor="middle" font-size="13">cible 1,00 L/min</text></g>`;
+  }).join("");
+
+  const initialScene = svg("bal-initial", "État initial d’un banc à trois branches", "Données pédagogiques : A mesure 1,60 litre par minute, B 0,85 et C 0,55. La cible est 1,00 sur chaque branche. A est favorisée et C défavorisée.", `
+    <text x="380" y="34" text-anchor="middle" font-size="22" font-weight="700">ÉTAT INITIAL · DONNÉES PÉDAGOGIQUES</text>
+    <path d="M100 90H660M660 120V350M100 350H660" fill="none" stroke="#1b3a63" stroke-width="12" marker-end="url(#arr-bal-initial)"/>
+    ${branchBars(flows(0))}
+    <rect x="70" y="150" width="100" height="58" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/><text x="120" y="175" text-anchor="middle" font-size="14" font-weight="700">TOTAL</text><text x="120" y="197" text-anchor="middle" font-size="15">3,00 L/min</text>`);
+
+  const decisionScene = svg("bal-decision", "Choisir la branche à régler", "La branche A est au-dessus de sa cible. L’action pédagogique consiste à ajouter progressivement de la résistance sur A, puis à laisser le réseau se stabiliser avant un nouveau relevé.", `
+    <text x="380" y="38" text-anchor="middle" font-size="22" font-weight="700">AGIR SUR LA BRANCHE FAVORISÉE</text>
+    <path d="M110 110H650M650 110V330H110" fill="none" stroke="#1b3a63" stroke-width="12"/>
+    ${[220,380,540].map((x,i)=>`<g><path d="M${x} 110V330" stroke="#3d7fca" stroke-width="9"/><image href="assets/radiateur.svg" x="${x-43}" y="180" width="86" height="65"/>${i===0?`<image href="assets/vanne_manuelle.svg" x="${x-38}" y="120" width="76" height="45"/>`:""}<text x="${x}" y="285" text-anchor="middle" font-size="16" font-weight="700">${["A · 1,60","B · 0,85","C · 0,55"][i]} L/min</text></g>`).join("")}
+    <rect x="125" y="350" width="270" height="55" rx="13" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="6 5"/><text x="260" y="383" text-anchor="middle" font-size="15" font-weight="700">RÉGLAGE UNIQUE : VANNE A</text>`);
+
+  function predictionScene(closure = 40) {
+    const q = flows(closure);
+    return svg("bal-predict", "Prévision du modèle après réglage d’une vanne", `Pour une fermeture pédagogique de ${closure} pour cent sur A, le modèle prévoit A ${q.a.toFixed(2)}, B ${q.b.toFixed(2)} et C ${q.c.toFixed(2)} litres par minute. Ces valeurs ne sont pas des mesures et doivent être confirmées après stabilisation.`, `
+      <text x="380" y="34" text-anchor="middle" font-size="21" font-weight="700">PRÉVISION AVANT STABILISATION · MODÈLE À TOTAL FIXE</text>
+      ${branchBars(q)}
+      <rect x="55" y="75" width="245" height="72" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/><text x="177" y="104" text-anchor="middle" font-size="16" font-weight="700">FERMETURE VANNE A</text><text x="177" y="132" text-anchor="middle" font-size="20">${closure} %</text>
+      <rect x="450" y="75" width="255" height="72" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="6 5"/><text x="577" y="104" text-anchor="middle" font-size="15" font-weight="700">PRÉVISION, PAS UN RELEVÉ</text><text x="577" y="130" text-anchor="middle" font-size="14">Total fixé à 3,00 L/min</text>`);
+  }
+
+  const stableScene = svg("bal-stable", "Nouveau relevé après stabilisation pédagogique", "Après un réglage pédagogique de 60 pour cent sur la vanne A et stabilisation, les trois branches affichent chacune 1,00 litre par minute. Ce résultat appartient au modèle à débit total fixe.", `
+    <text x="380" y="35" text-anchor="middle" font-size="22" font-weight="700">NOUVEAU RELEVÉ APRÈS STABILISATION</text>
+    ${branchBars(flows(60))}
+    <rect x="180" y="70" width="400" height="70" rx="15" fill="#e3f5ec" stroke="#1e7e54" stroke-width="5"/><text x="380" y="99" text-anchor="middle" font-size="16" font-weight="700">RÉGLAGE PÉDAGOGIQUE RETENU : A = 60 %</text><text x="380" y="125" text-anchor="middle" font-size="14">Comparer à l’état initial, sans transposer ce pourcentage sur une vanne réelle.</text>`);
+
+  const reportScene = svg("bal-report", "Compte rendu d’équilibrage", "Le compte rendu contient l’état initial, l’action unique, la durée ou le critère de stabilisation, le nouveau relevé, la conclusion et les limites du modèle.", `
+    <text x="380" y="44" text-anchor="middle" font-size="23" font-weight="700">LA TRACE DE L’INTERVENTION</text>
+    ${[[120,"1","État initial"],[250,"2","Action"],[380,"3","Stable"],[510,"4","Nouveau relevé"],[640,"5","Conclusion"]].map(([x,n,t],i)=>`<g><circle cx="${x}" cy="205" r="38" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/><text x="${x}" y="212" text-anchor="middle" font-size="19" font-weight="700">${n}</text><text x="${x}" y="275" text-anchor="middle" font-size="13" font-weight="700">${t}</text>${i<4?`<path d="M${Number(x)+43} 205H${Number(x)+87}" stroke="#3d7fca" stroke-width="5" marker-end="url(#arr-bal-report)"/>`:""}</g>`).join("")}
+    <rect x="145" y="325" width="470" height="58" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="6 5"/><text x="380" y="360" text-anchor="middle" font-size="15" font-weight="700">UNE VANNE RÉELLE SE RÈGLE AVEC SA MÉTHODE ET SES DONNÉES</text>`);
+
+  window.STATION_CONFIG = {
+    code: "D5", id: "equilibrage", title: "Équilibrage — Banc à trois branches", next: "poursuivre vers la station Plancher chauffant",
+    levels: {
+      CAP: { objective: "Lire les trois débits et repérer celui qui manque à la cible.", assessment: "lire un débitmètre et comparer à la cible" },
+      TP: { objective: "Relever, régler une branche, stabiliser puis comparer les débits.", assessment: "respecter l’ordre de réglage et produire un compte rendu" },
+      BTS: { objective: "Analyser la redistribution des débits et justifier une procédure d’équilibrage.", assessment: "critiquer le modèle à débit total fixe et proposer les mesures réelles" }
+    },
+    steps: [
+      { short: "Relever", kicker: "état initial", title: "A est favorisée, C défavorisée", text: "Lis les trois débitmètres avant toute action.", cap: "Repère le débit le plus haut des trois.", tp: "Compare chaque valeur à la cible de 1,00 L/min.", bts: "Vérifie le débit total et distingue cible, mesure et écart.", scene: initialScene, equivalent: "État initial pédagogique : A 1,60, B 0,85 et C 0,55 L/min, pour un total de 3,00 L/min et une cible de 1,00 par branche.", action: { type: "choice", prompt: "Quelle branche est favorisée ?", options: [{label:"A : débit supérieur à la cible"},{label:"B : débit proche de la cible"},{label:"C : débit inférieur à la cible"}], correct: 0, explain: "A reçoit 0,60 L/min de plus que la cible, tandis que C est la plus défavorisée." } },
+      { short: "Décider", kicker: "action unique", title: "Ajouter de la résistance sur A", text: "Dans ce modèle, une seule vanne de réglage est proposée sur la branche favorisée.", cap: "Montre la vanne à régler sur la branche A.", tp: "Choisis l’action puis conserve les autres réglages.", bts: "Anticipe que toute action peut déplacer le point de fonctionnement réel.", scene: decisionScene, equivalent: "La vanne de réglage se trouve sur A, branche favorisée à 1,60 L/min.", action: { type: "choice", prompt: "Quelle action contrôlée tester en premier ?", options: [{label:"Fermer progressivement la vanne A"},{label:"Ouvrir davantage A"},{label:"Augmenter immédiatement la pompe"},{label:"Fermer la branche C"}], correct: 0, explain: "La résistance ajoutée sur la branche favorisée permet ici une redistribution vers B et C." } },
+      { short: "Régler", kicker: "prévoir", title: "Choisir un réglage, sans appeler cela une mesure", text: "Déplace la vanne A. Les valeurs affichées sont la prévision du modèle à débit total fixé.", cap: "Lis le nouveau débit après avoir bougé le curseur.", tp: "Cherche une prévision proche de 1,00 L/min par branche.", bts: "Analyse la conservation imposée et explique pourquoi une pompe réelle peut déplacer le total.", scene: predictionScene, equivalent: (v) => { const q=flows(v); return `Prévision pédagogique pour ${v} % : A ${q.a.toFixed(2)}, B ${q.b.toFixed(2)}, C ${q.c.toFixed(2)} L/min. Total 3,00 L/min.`; }, action: { type: "range", prompt: "Règle virtuellement la vanne A.", label: "Fermeture relative A", min: 0, max: 80, step: 10, value: 40, evaluate: (v) => { const q=flows(v), spread=Math.max(q.a,q.b,q.c)-Math.min(q.a,q.b,q.c); return {readout:`${v} %`,observation:`Prévision A ${q.a.toFixed(2)} · B ${q.b.toFixed(2)} · C ${q.c.toFixed(2)} L/min ; écart max ${spread.toFixed(2)}. Il faut encore stabiliser puis remesurer.`}; } } },
+      { short: "Stabiliser", kicker: "nouveau relevé", title: "Attendre, puis mesurer de nouveau", text: "La comparaison ne se fait pas pendant le transitoire. Le modèle retient 60 % pour obtenir sa cible.", cap: "Attends la stabilisation avant de relire les débits.", tp: "Ordonne mesurer, régler, stabiliser et remesurer.", bts: "Définis un critère de stabilité et conserve les conditions de comparaison.", scene: stableScene, equivalent: "Après réglage pédagogique de A à 60 pour cent et stabilisation, A, B et C valent 1,00 L/min dans le modèle.", action: { type: "sequence", prompt: "Ordonne la manipulation complète.", items: ["Remesurer les trois débits","Régler seulement la vanne A","Noter l’état initial","Attendre la stabilisation","Comparer à la cible"], correctOrder: [2,1,3,0,4], explain: "L’action doit être encadrée par deux relevés comparables séparés par une stabilisation." } },
+      { short: "Conclure", kicker: "rendre compte", title: "Écrire ce qui a changé et ce qui manque", text: "La conclusion sépare le résultat du modèle des réglages réels.", cap: "Note ce qui a changé après le réglage.", tp: "Consigne points, valeurs, action et état final.", bts: "Ajoute courbe pompe-réseau, méthode de vanne et incertitudes nécessaires.", scene: reportScene, equivalent: "Le compte rendu garde état initial, action unique, stabilisation, nouveau relevé, conclusion et limites.", action: { type: "choice", prompt: "Quelle conclusion est recevable ?", options: [{label:"Dans le modèle, 60 % sur A répartit 1,00 L/min par branche ; la vanne réelle exige sa procédure."},{label:"Toute vanne réelle doit être fermée à 60 %."},{label:"Le débit total réel restera toujours 3,00 L/min."}], correct: 0, explain: "Le résultat est reproductible dans la simulation, mais non transposable sans données et mesures réelles." } }
+    ],
+    quiz: [
+      { context: "A = 1,60 ; B = 0,85 ; C = 0,55 L/min. Cible = 1,00.", question: "Quelle branche est favorisée ?", options: ["A","B","C","Aucune"], correct: 0, explain: "A dépasse le plus la cible." },
+      { context: "Une seule action est autorisée dans le modèle.", question: "Quelle action est cohérente ?", options: ["Augmenter la résistance de A progressivement","Fermer C","Ouvrir A","Modifier trois vannes à la fois"], correct: 0, explain: "On agit sur la branche favorisée et on garde une cause identifiable." },
+      { context: "Le réglage vient d’être changé.", question: "Quelle étape précède la comparaison finale ?", options: ["Attendre la stabilisation","Conclure immédiatement","Effacer l’état initial","Augmenter la pompe"], correct: 0, explain: "Le transitoire ne fournit pas un relevé comparable." },
+      { context: "Le modèle obtient 1,00 L/min sur chaque branche à 60 %.", question: "Quelle limite faut-il écrire ?", options: ["Pourcentage pédagogique non transposable sans méthode de la vanne et mesures réelles","Réglage universel de toutes les vannes","Preuve d’une certification","Absence de besoin de contrôle"], correct: 0, explain: "La simulation utilise une loi inventée et annoncée pour l’exercice." }
+    ],
+    summaryScene: reportScene,
+    summaryEquivalent: "Synthèse : état initial, action unique, stabilisation, nouveau relevé, comparaison et compte rendu avec limites."
+  };
+})();

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>HydroMétro P2 — Énergie</title><link rel="stylesheet" href="station.css"></head>
+<body>
+  <header class="topbar"><div class="brand"><b>●</b> <span>inerWeb Édu</span></div><div class="titles"><div class="kicker">HydroMétro · Ligne P · Station 2</div><h1>Énergie — de la production au local</h1></div><div class="level-switch" aria-label="Profondeur"><button type="button" data-level="CAP" aria-pressed="false">CAP</button><button type="button" data-level="TP" aria-pressed="true">Bac pro</button><button type="button" data-level="BTS" aria-pressed="false">BTS</button></div></header>
+  <main>
+    <section id="activityView" class="stage">
+      <div class="brief"><span class="recall">Acquis : l’eau suit une boucle fermée.</span><span id="levelObjective" class="objective">Relier eau et transport de chaleur.</span><span id="activityStatus" class="status-pill">Chaîne vide</span></div>
+      <div class="workspace">
+        <div class="diagram-card">
+          <svg id="energySvg" viewBox="0 0 800 430" role="img" aria-labelledby="energyTitle energyDesc">
+            <title id="energyTitle">Chaîne énergétique d’une boucle de chauffage</title>
+            <desc id="energyDesc">La production transfère de l’énergie thermique à l’eau. L’eau circule dans le réseau puis l’émetteur transfère cette énergie au local. Les flèches bleues représentent l’eau ; les flèches orange représentent l’énergie.</desc>
+            <defs><marker id="arrB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#3d7fca"/></marker><marker id="arrO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#c9451a"/></marker></defs>
+            <rect x="18" y="25" width="764" height="380" rx="26" fill="#fffdf8" stroke="rgba(27,58,99,.18)"/>
+            <rect x="48" y="135" width="150" height="155" rx="18" fill="#f3f7fb" stroke="#1b3a63" stroke-width="3"/><text x="123" y="190" text-anchor="middle" class="svg-label">Production</text><path d="M89 249 Q123 188 157 249" fill="none" stroke="#c9451a" stroke-width="8"/><text x="123" y="274" text-anchor="middle" class="svg-small">donne de l’énergie</text>
+            <path class="svg-pipe" d="M198 170 H555 M555 260 H198"/><path class="svg-flow" marker-end="url(#arrB)" d="M230 170 H500"/><path class="svg-flow" marker-end="url(#arrB)" d="M520 260 H250"/>
+            <image href="assets/radiateur.svg" x="530" y="132" width="150" height="150" aria-hidden="true"/>
+            <rect x="675" y="102" width="85" height="220" rx="12" fill="#f7f1e7" stroke="#1b3a63" stroke-width="2"/><text x="718" y="205" text-anchor="middle" class="svg-label">Local</text><text x="718" y="228" text-anchor="middle" class="svg-small">usage</text>
+            <path id="energyPath1" class="svg-energy" marker-end="url(#arrO)" d="M155 118 H360" opacity="0"/><path id="energyPath2" class="svg-energy" marker-end="url(#arrO)" d="M415 118 H665" opacity="0"/>
+            <text x="365" y="318" text-anchor="middle" class="svg-small">L’eau transporte ; elle n’est pas l’énergie.</text>
+            <g id="chainLabels"><text x="120" y="70" text-anchor="middle" class="svg-label">1 · ?</text><text x="310" y="70" text-anchor="middle" class="svg-label">2 · ?</text><text x="500" y="70" text-anchor="middle" class="svg-label">3 · ?</text><text x="690" y="70" text-anchor="middle" class="svg-label">4 · ?</text></g>
+          </svg>
+        </div>
+        <section class="control-card"><h2>Mission : ordonne la chaîne</h2><p class="mission">Clique les quatre fonctions dans l’ordre du transfert.</p><p class="hint">Repère ce qui produit, transporte, transfère puis reçoit.</p>
+          <div id="energyCards" class="choice-grid"><button type="button" data-card="Émetteur">Émetteur</button><button type="button" data-card="Local">Local</button><button type="button" data-card="Production">Production</button><button type="button" data-card="Eau">Eau du réseau</button></div>
+          <div class="readout"><div class="metric">Flèche bleue<strong>Eau</strong></div><div class="metric">Flèche pointillée<strong>Énergie</strong></div></div>
+          <p id="feedback" class="feedback" aria-live="polite">Commence par l’équipement qui fournit l’énergie thermique.</p>
+          <div class="choice-grid push"><button id="undoCard" type="button">Retirer le dernier</button><button id="checkActivity" class="primary" type="button">Vérifier la chaîne</button></div>
+        </section>
+      </div>
+    </section>
+    <section id="quizView" class="quiz-view hidden"></section><section id="resultView" class="result-view hidden"></section>
+  </main>
+  <footer class="footer"><span class="footer-note">Brouillon local · aucune donnée enregistrée</span><nav class="footer-nav"><button id="infoButton" type="button">Objectifs</button><button id="startQuiz" class="accent" type="button" disabled>Questions finales</button><button id="backPlan" type="button">Retour HydroMétro</button></nav></footer>
+  <dialog id="infoDialog"><h2>Objectifs et limites</h2><div id="levelDetails"></div><p><strong>Limite :</strong> le modèle ne quantifie ni pertes thermiques ni rendement. La température indique un état ; l’énergie est un transfert.</p><div class="dialog-actions"><button id="closeInfo">Fermer</button></div></dialog>
+  <script src="shell.js?v=20260823-integration"></script><script src="../_commun/p-formation.js?v=20260823-global1"></script><script src="station.js?v=20260823-global1"></script>
+  <script src="../../assets/logo-entete.js" defer></script>
+  <script src="../../assets/marque.js" data-cartouche="Hydro" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body></html>

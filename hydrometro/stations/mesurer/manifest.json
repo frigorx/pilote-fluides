@@ -1,0 +1,109 @@
+{
+  "id": "mesurer",
+  "title": "Mesurer",
+  "lines": [
+    "P",
+    "M"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-p1",
+  "levels": {
+    "TP": {
+      "objective": "Choisir un instrument et produire un relevé exploitable.",
+      "learn": [
+        "Identifier les grandeurs.",
+        "Contrôler point et unité.",
+        "Tracer contexte et stabilisation."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Préparer la fiche de relevés avant l’intervention."
+    },
+    "BTS": {
+      "objective": "Concevoir une stratégie de mesure adaptée à une performance.",
+      "learn": [
+        "Choisir grandeurs, points et instruments.",
+        "Définir précision et répétabilité.",
+        "Organiser le traitement."
+      ],
+      "competencies": [
+        "BTS C7-1",
+        "BTS C7-5",
+        "BTS C8-2"
+      ],
+      "prompt": "Rédiger un protocole permettant de valider une performance."
+    }
+  },
+  "modalities": [
+    "MESURE",
+    "MÉTHODE",
+    "DIAGNOSTIC",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Valise de mesure",
+    "rule": "Compléter grandeur, point, unité, contexte et état.",
+    "success": "Les cinq dimensions sont cohérentes.",
+    "feedback": "Liste des dimensions manquantes ou incohérentes."
+  },
+  "virtualPractice": {
+    "description": "Préparation d’une campagne Q et ΔT.",
+    "measures": [
+      "m³/h",
+      "°C",
+      "K"
+    ],
+    "controls": [
+      "grandeur",
+      "point",
+      "unité",
+      "contexte",
+      "stabilisation"
+    ],
+    "limits": [
+      "Pas de geste réel ni de contrôle de calibre."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "choisir",
+      "tracer",
+      "justifier"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "doc/15f50c582a5991b4ea17fd71cae3de86",
+    "doc/d6a1457828f03bb431cfa16ebea32a7f",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "assets": [
+    "assets/pompe_debit_variable.svg",
+    "assets/radiateur.svg",
+    "index.html#measureSvg"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 7,
+    "sequence": [
+      "observer",
+      "comprendre",
+      "voir fonctionner",
+      "expliquer",
+      "se préparer",
+      "manipuler avec aide",
+      "résumer"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

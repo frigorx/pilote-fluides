@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <title>HydroMétro — Ligne D Distribution</title>
+  <link rel="stylesheet" href="parcours.css">
+</head>
+<body>
+  <a class="skip-link" href="#lineMain">Aller au parcours</a>
+  <header class="topbar">
+    <div class="brand" aria-label="inerWeb Édu"><b>●</b> <span>inerWeb Édu</span></div>
+    <div class="titles"><div class="kicker">HydroMétro · Parcours autonome</div><h1>Ligne D — Distribution</h1></div>
+    <div class="level-switch" role="group" aria-label="Profondeur pédagogique"><button type="button" data-level="CAP" aria-pressed="false">CAP</button><button type="button" data-level="TP" aria-pressed="true">Bac pro</button><button type="button" data-level="BTS" aria-pressed="false">BTS</button></div>
+  </header>
+
+  <main id="lineMain" tabindex="-1">
+    <section id="lineView" class="line-view" aria-labelledby="lineMission">
+      <div class="brief"><span class="recall">Suivre → comparer → résister → agir → mesurer → justifier.</span><span id="lineObjective" class="objective">Lire les architectures et contrôler la répartition des débits.</span><span class="status-pill">6 stations + 1 évaluation</span></div>
+      <div class="line-workspace">
+        <div class="line-map">
+          <svg viewBox="0 0 780 360" role="img" aria-labelledby="mapTitle mapDesc">
+            <title id="mapTitle">Plan de la ligne D Distribution</title>
+            <desc id="mapDesc">Six jalons dans l’ordre : Monotube, Bitube, Pertes de charge, Vanne trois voies, Équilibrage et Plancher chauffant. Pertes de charge est une correspondance appartenant à la ligne E. Équilibrage est aussi une correspondance avec la ligne M.</desc>
+            <path d="M65 180H715" fill="none" stroke="#1b3a63" stroke-width="18" stroke-linecap="round"/>
+            <path d="M65 180H715" fill="none" stroke="#ff6b35" stroke-width="6" stroke-dasharray="12 16" stroke-linecap="round"/>
+            <g font-family="Calibri, sans-serif" font-weight="700" text-anchor="middle">
+              <g transform="translate(75 180)"><circle r="30" fill="#fffdf8" stroke="#1b3a63" stroke-width="7"/><text y="6">1</text><text y="58">Monotube</text></g>
+              <g transform="translate(205 180)"><circle r="30" fill="#fffdf8" stroke="#1b3a63" stroke-width="7"/><text y="6">2</text><text y="58">Bitube</text></g>
+              <g transform="translate(335 180)"><circle r="35" fill="#fffdf8" stroke="#3d7fca" stroke-width="9"/><circle r="25" fill="none" stroke="#1b3a63" stroke-width="3"/><text y="6">3</text><text y="64">Pertes ↔ E</text></g>
+              <g transform="translate(465 180)"><circle r="30" fill="#fffdf8" stroke="#1b3a63" stroke-width="7"/><text y="6">4</text><text y="58">V3V</text></g>
+              <g transform="translate(595 180)"><circle r="35" fill="#fffdf8" stroke="#3d7fca" stroke-width="9"/><circle r="25" fill="none" stroke="#1b3a63" stroke-width="3"/><text y="6">5</text><text y="64">Équilibrage ↔ M</text></g>
+              <g transform="translate(715 180)"><circle r="30" fill="#fffdf8" stroke="#1b3a63" stroke-width="7"/><text y="6">6</text><text y="58">Plancher</text></g>
+            </g>
+            <text x="390" y="65" text-anchor="middle" class="svg-label">Chemins hydrauliques → résistances → réglage contrôlé</text>
+            <text x="390" y="325" text-anchor="middle" class="svg-small">Double cercle = correspondance · le jalon Pertes reste le module unique de la ligne E</text>
+          </svg>
+        </div>
+        <section class="station-panel">
+          <div><h2 id="lineMission">Apprends dans les six stations, puis termine par l’évaluation</h2><p id="levelSummary" class="mission">Bac pro : repérer, mesurer, régler et rendre compte.</p></div>
+          <div class="station-grid" aria-label="Jalons de la ligne D">
+            <a class="station-link" href="../../stations/monotube/index.html?line=D"><strong>1 · Monotube</strong><span>Suivez l’eau</span></a>
+            <a class="station-link" href="../../stations/bitube/index.html?line=D"><strong>2 · Bitube</strong><span>Réseau à construire</span></a>
+            <a class="station-link interchange" href="../../stations/pertes/index.html?line=D"><strong>3 · Pertes ↔ E</strong><span>Correspondance en lecture seule</span></a>
+            <a class="station-link" href="../../stations/v3v/index.html?line=D"><strong>4 · V3V</strong><span>Trois voies, une fonction</span></a>
+            <a class="station-link interchange" href="../../stations/equilibrage/index.html?line=D"><strong>5 · Équilibrage ↔ M</strong><span>Banc à trois branches</span></a>
+            <a class="station-link" href="../../stations/plancher/index.html?line=D"><strong>6 · Plancher</strong><span>Collecteur mystère</span></a>
+          </div>
+          <div class="line-actions"><button id="showContract" type="button">Objectifs et limites</button><button id="startAssessment" class="accent evaluation-launch" type="button">7 · Station Évaluation · note /20</button></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="assessmentView" class="assessment-view hidden" aria-label="Test formatif final"></section>
+    <section id="lineResultView" class="result-view hidden" aria-label="Résultat du test de ligne"></section>
+  </main>
+
+  <footer class="footer"><span class="footer-note">Brouillon formatif · aucune donnée enregistrée</span><nav class="footer-nav" aria-label="Navigation"><button id="overviewButton" type="button">Vue de la ligne</button><button id="restartButton" type="button" disabled>Recommencer</button><button id="backPlan" type="button">Retour HydroMétro</button></nav></footer>
+
+  <dialog id="contractDialog"><h2>Contrat de la ligne D</h2><div id="contractDetails"></div><p><strong>Correspondance Pertes :</strong> le lien ouvre `../../stations/pertes/index.html`. Aucune logique n’est copiée.</p><p><strong>Limites :</strong> données simulées et seuils formatifs ; aucune validation du titre professionnel ou du BTS. Les réglages réels exigent dossier, notice, mesures et procédure.</p><div class="dialog-actions"><button id="closeContract" type="button">Fermer</button></div></dialog>
+  <script src="parcours.js?v=20260823-global1"></script>
+  <script src="../../assets/logo-entete.js" defer></script>
+  <script src="../../assets/marque.js" data-cartouche="Hydro" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

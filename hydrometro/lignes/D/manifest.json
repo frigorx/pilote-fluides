@@ -1,0 +1,114 @@
+{
+  "id": "D",
+  "name": "Distribution",
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-d2",
+  "intent": "Suivre l’eau, comparer les chemins, observer les résistances, régler puis justifier la répartition des débits.",
+  "stations": [
+    "monotube",
+    "bitube",
+    "pertes",
+    "v3v",
+    "equilibrage",
+    "plancher"
+  ],
+  "interchanges": [
+    {
+      "station": "pertes",
+      "with": [
+        "E"
+      ],
+      "ownership": "Ligne E",
+      "reference": "../../stations/pertes/index.html",
+      "mode": "lecture seule"
+    },
+    {
+      "station": "equilibrage",
+      "with": [
+        "M"
+      ],
+      "ownership": "Ligne D",
+      "reference": "../../stations/equilibrage/index.html"
+    }
+  ],
+  "prerequisites": [
+    "Lire une boucle hydraulique",
+    "Distinguer départ et retour",
+    "Comparer un débit mesuré à une cible"
+  ],
+  "levels": {
+    "TP": {
+      "objective": "Lire les architectures et contrôler la répartition des débits.",
+      "synthesis": "Suivre un chemin, relever, régler, stabiliser et rendre compte."
+    },
+    "BTS": {
+      "objective": "Comparer les architectures, calculer et justifier les réglages avec leurs limites.",
+      "synthesis": "Analyser les chemins, les résistances, les bilans et les hypothèses du modèle."
+    }
+  },
+  "estimatedDurationMinutes": {
+    "TP": {
+      "min": 150,
+      "max": 190
+    },
+    "BTS": {
+      "min": 210,
+      "max": 270
+    }
+  },
+  "entryDiagnostic": {
+    "sharedEngine": "../../parcours-adaptatif.js",
+    "required": false,
+    "skillIds": [
+      "distribution",
+      "pertes",
+      "v3v",
+      "equilibrage",
+      "plancher"
+    ]
+  },
+  "finalAssessment": {
+    "itemCount": 12,
+    "indicativeAcquiredThreshold": 0.7,
+    "integerAcquiredMinimum": 9,
+    "essentialFamilies": [
+      "monotube",
+      "bitube",
+      "pertes",
+      "v3v",
+      "equilibrage",
+      "plancher"
+    ],
+    "dimensions": {
+      "lire": 3,
+      "classer-appliquer": 3,
+      "mesurer-calculer": 2,
+      "cause-effet": 2,
+      "diagnostiquer-argumenter": 2
+    },
+    "resultLabels": [
+      "ACQUIS",
+      "FRAGILE",
+      "À RENFORCER"
+    ],
+    "locksValidatedAnswer": true,
+    "remediationLinks": true,
+    "singleFinalStation": true,
+    "gradeScale": 20,
+    "route": "parcours.html?evaluation=1",
+    "scoreShownOnlyAtEnd": true
+  },
+  "sources": [
+    "../../EVALUATIONS.md",
+    "../../PARCOURS-SPIRALAIRE.md",
+    "../../INGENIERIE-PEDAGOGIQUE.md",
+    "RAG HAL local"
+  ],
+  "limits": [
+    "Durées et valeurs pédagogiques à valider.",
+    "Aucune intervention réelle.",
+    "Évaluation non certificative.",
+    "Brouillon non publié et hors RAG."
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1"
+}

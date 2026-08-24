@@ -1,0 +1,104 @@
+{
+  "id": "securite",
+  "title": "Sécurité",
+  "lines": [
+    "E"
+  ],
+  "status": "QA TECHNIQUE",
+  "levels": {
+    "TP": {
+      "objective": "Identifier et contrôler visuellement les organes de sécurité.",
+      "learn": [
+        "Repérer soupape, manomètre, vase et évacuation.",
+        "Vérifier accessibilité et rejet.",
+        "Ne jamais neutraliser une protection."
+      ],
+      "competencies": [
+        "RNCP38748-BC01 maintenance",
+        "RNCP38748 prévention et sécurité"
+      ],
+      "prompt": "Contrôler visuellement et signaler toute anomalie sans dérégler."
+    },
+    "BTS": {
+      "objective": "Définir et justifier la chaîne de protection.",
+      "learn": [
+        "Identifier les risques pression-température.",
+        "Choisir les fonctions de protection.",
+        "Intégrer prescriptions et dossier."
+      ],
+      "competencies": [
+        "BTS C3-1",
+        "BTS C5",
+        "BTS C4-1"
+      ],
+      "prompt": "Justifier chaque organe au regard du risque traité."
+    }
+  },
+  "modalities": [
+    "IDENTIFICATION",
+    "TECHNOLOGIE",
+    "SCHÉMA",
+    "SÉCURITÉ",
+    "DIAGNOSTIC",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Chaîne à sécuriser",
+    "rule": "Associer les fonctions, observer l’ouverture et ordonner la conduite sûre.",
+    "success": "Activités réalisées et 3 réponses sur 4.",
+    "feedback": "Correction argumentée et interdits écrits."
+  },
+  "virtualPractice": {
+    "description": "Montée en pression relative avec soupape et évacuation.",
+    "measures": [
+      "pression relative",
+      "phase",
+      "durée du rejet"
+    ],
+    "controls": [
+      "pression relative au seuil"
+    ],
+    "limits": [
+      "aucun tarage réel",
+      "aucun essai réel",
+      "pas de procédure complète"
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "appliquer",
+      "expliquer",
+      "sécuriser"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "RAG HAL : soupape et chaîne de protection",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "assets": [
+    "assets/soupape-securite.svg",
+    "SVG originaux dans content.js"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

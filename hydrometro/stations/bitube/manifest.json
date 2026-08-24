@@ -1,0 +1,105 @@
+{
+  "id": "bitube",
+  "title": "Bitube — Réseau à construire",
+  "lines": [
+    "D"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-d2",
+  "levels": {
+    "TP": {
+      "objective": "Raccorder chaque émetteur entre départ et retour et comparer les branches.",
+      "learn": [
+        "Reconnaître les branches parallèles.",
+        "Tracer chaque chemin hydraulique.",
+        "Repérer une branche favorisée."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Construire trois branches puis comparer réseau direct et retour inversé."
+    },
+    "BTS": {
+      "objective": "Comparer direct et retour inversé avec les résistances du chemin complet.",
+      "learn": [
+        "Comparer des architectures.",
+        "Inventorier longueurs et singularités.",
+        "Justifier les données manquantes."
+      ],
+      "competencies": [
+        "BTS C2",
+        "BTS C3",
+        "BTS C4",
+        "BTS C8"
+      ],
+      "prompt": "Établir les chemins puis argumenter une solution sans confondre longueur et perte réelle."
+    }
+  },
+  "modalities": [
+    "SCHÉMA",
+    "CONSTRUIRE",
+    "COMPARER",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Réseau à construire",
+    "rule": "Relier les émetteurs au départ et au retour puis comparer deux retours.",
+    "success": "Branches fonctionnelles et conclusion tenant compte des singularités.",
+    "feedback": "Raccordements et chemins explicités."
+  },
+  "virtualPractice": {
+    "description": "Comparaison de chemins bitube directs et inversés.",
+    "measures": [
+      "m",
+      "indice pédagogique sans unité"
+    ],
+    "controls": [
+      "associations",
+      "architecture",
+      "singularités"
+    ],
+    "limits": [
+      "L’indice n’est pas une perte de charge.",
+      "Diamètres et débits réels absents."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "construire",
+      "comparer",
+      "expliquer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md",
+    "RAG: distribution chauffage.pdf",
+    "RAG: TBF2016_devoir_n1_hydraulique.pdf"
+  ],
+  "assets": [
+    "assets/radiateur.svg",
+    "content.js#svg-scenes"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

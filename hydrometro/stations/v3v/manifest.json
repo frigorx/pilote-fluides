@@ -1,0 +1,107 @@
+{
+  "id": "v3v",
+  "title": "Vanne trois voies — Trois voies, une fonction",
+  "lines": [
+    "D"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-d2",
+  "levels": {
+    "TP": {
+      "objective": "Identifier A, B, AB et contrôler le sens de circulation.",
+      "learn": [
+        "Lire les marquages.",
+        "Distinguer mélange et répartition.",
+        "Contrôler l’effet après stabilisation."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Tracer les flèches puis expliquer la fonction obtenue."
+    },
+    "BTS": {
+      "objective": "Analyser le montage et un bilan de mélange simplifié.",
+      "learn": [
+        "Vérifier conservation du débit.",
+        "Calculer une température mélangée.",
+        "Relier commande et effet mesuré."
+      ],
+      "competencies": [
+        "BTS C2",
+        "BTS C4",
+        "BTS C7",
+        "BTS C8"
+      ],
+      "prompt": "Justifier la fonction, le sens et les limites de la vanne représentée."
+    }
+  },
+  "modalities": [
+    "IDENTIFICATION",
+    "SCHÉMA",
+    "CALCUL",
+    "RÉGLAGE",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Trois voies, une fonction",
+    "rule": "Nommer les ports, construire les flèches et doser un mélange.",
+    "success": "Mélange/répartition justifiés et notice réelle déclarée prioritaire.",
+    "feedback": "Sens correct montré avec mots et flèches."
+  },
+  "virtualPractice": {
+    "description": "V3V supposée à voie commune AB.",
+    "measures": [
+      "m³/h",
+      "°C"
+    ],
+    "controls": [
+      "identification",
+      "ordre des flux",
+      "part de débit"
+    ],
+    "limits": [
+      "AB commun est une hypothèse du module.",
+      "Le corps et la notice réels font foi."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "appliquer",
+      "calculer",
+      "expliquer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md",
+    "RAG: BacPro_S4_vannes_hydrauliques.pdf",
+    "RAG: La vanne trois voies (2).pdf",
+    "RAG: vanne 3 voies.doc"
+  ],
+  "assets": [
+    "assets/vanne_3_voies.svg",
+    "content.js#svg-scenes"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

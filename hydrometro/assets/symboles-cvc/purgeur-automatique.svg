@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 110" role="img" aria-labelledby="title desc">
+  <title id="title">Purgeur automatique</title>
+  <desc id="desc">Symbole pédagogique original d’un purgeur d’air vertical raccordé en partie basse.</desc>
+  <g fill="#fffdf8" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 31h32v47c0 10-32 10-32 0z"/>
+    <path d="M30 20h20v11H30zM40 86v18"/>
+    <path d="M33 13q7-7 14 0" fill="none" stroke="#c9451a" stroke-dasharray="4 4"/>
+  </g>
+</svg>

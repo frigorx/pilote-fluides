@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 180" role="img" aria-labelledby="title desc">
+  <title id="title">Ballon tampon à quatre piquages</title>
+  <desc id="desc">Symbole pédagogique original d’un volume tampon vertical entre une boucle primaire et une boucle secondaire.</desc>
+  <g fill="#fffdf8" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M29 22c0-14 62-14 62 0v136c0 14-62 14-62 0z"/>
+    <path d="M29 58H9M29 124H9M91 58h20M91 124h20"/>
+    <path d="M42 45h36M42 139h36" stroke="#84b7ec"/>
+  </g>
+  <circle cx="9" cy="58" r="3" fill="#c9451a"/>
+  <circle cx="111" cy="58" r="3" fill="#c9451a"/>
+  <circle cx="9" cy="124" r="3" fill="#3d7fca"/>
+  <circle cx="111" cy="124" r="3" fill="#3d7fca"/>
+</svg>

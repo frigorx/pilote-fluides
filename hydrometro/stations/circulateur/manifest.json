@@ -1,0 +1,104 @@
+{
+  "id": "circulateur",
+  "title": "Circulateur",
+  "lines": [
+    "E"
+  ],
+  "status": "QA TECHNIQUE",
+  "levels": {
+    "TP": {
+      "objective": "Contrôler et régler un circulateur en sécurité.",
+      "learn": [
+        "Identifier sens et commande.",
+        "Lire débit et pression différentielle.",
+        "Comparer l’effet d’un réglage."
+      ],
+      "competencies": [
+        "RNCP38748-BC01 maintenance",
+        "RNCP38748-BC01 optimisation"
+      ],
+      "prompt": "Relever l’état du circulateur et du réseau avant de régler."
+    },
+    "BTS": {
+      "objective": "Déterminer et analyser le point de fonctionnement.",
+      "learn": [
+        "Lire les courbes pompe et réseau.",
+        "Déterminer Q et H.",
+        "Analyser résistance et variation de vitesse."
+      ],
+      "competencies": [
+        "BTS C3-1",
+        "BTS C3-3",
+        "BTS C8-3"
+      ],
+      "prompt": "Placer le point de fonctionnement et justifier le réglage."
+    }
+  },
+  "modalities": [
+    "IDENTIFICATION",
+    "TECHNOLOGIE",
+    "RÉGLAGE",
+    "PRATIQUE VIRTUELLE",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Courbes croisées",
+    "rule": "Modifier réseau puis vitesse et lire l’intersection.",
+    "success": "Activités réalisées et 3 réponses sur 4.",
+    "feedback": "Valeurs du modèle et correction argumentée."
+  },
+  "virtualPractice": {
+    "description": "Banc de courbes pompe/réseau simplifié.",
+    "measures": [
+      "Q en m³/h",
+      "H en mCE",
+      "commande"
+    ],
+    "controls": [
+      "résistance K",
+      "vitesse relative"
+    ],
+    "limits": [
+      "courbes pédagogiques",
+      "pas de sélection constructeur",
+      "NPSH et rendement hors calcul de ce prototype"
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "appliquer",
+      "expliquer",
+      "régler"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "RAG HAL local : circulateurs et pompes",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md"
+  ],
+  "assets": [
+    "assets/pompe_debit_variable.svg",
+    "courbes SVG calculées dans content.js"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

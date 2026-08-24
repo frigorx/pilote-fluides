@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b3a63">
+  <title>HydroMétro — le réseau hydraulique autonome</title>
+  <meta name="description" content="Un réseau pédagogique autonome de 22 stations pour explorer l’hydraulique CVC par lignes et correspondances.">
+  <link rel="stylesheet" href="styles.css?v=20260823e">
+  <link rel="stylesheet" href="print.css?v=20260823d" media="print">
+</head>
+<body data-view="map">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <main id="contenu" tabindex="-1">
+    <section id="mapScreen" class="screen map-screen" aria-labelledby="mapTitle">
+      <header class="topbar">
+        <div class="brand" aria-label="HydroMétro, réseau hydraulique autonome">
+          <span class="brand-mark" aria-hidden="true">H</span>
+          <span><strong>HydroMétro</strong><small>réseau hydraulique autonome</small></span>
+        </div>
+        <div class="topbar-tools">
+          <nav class="nav-reseaux" aria-label="Correspondance">
+            <a href="https://inerweb.fr/">⇄ Le réseau thermo-techno</a>
+            <a href="https://inerweb.fr/legislation/">⇄ Législation</a>
+          </nav>
+          <button id="helpBtn" class="icon-button" type="button" aria-haspopup="dialog" aria-label="Mode d’emploi">? <span>Mode d’emploi</span></button>
+        </div>
+      </header>
+
+      <div class="map-heading">
+        <div>
+          <p class="eyebrow">Plan des savoirs · entrez où vous voulez</p>
+          <h1 id="mapTitle">Le métro des circuits d’eau</h1>
+        </div>
+        <p id="networkStatus" class="network-status" aria-live="polite">22 stations · 4 lignes · 4 correspondances</p>
+      </div>
+
+      <nav id="lineFilters" class="line-filters" aria-label="Choisir une ligne">
+        <button class="line-filter active" type="button" data-line="all" aria-pressed="true"><span class="filter-all" aria-hidden="true">4</span><span>Tout le réseau</span></button>
+        <button class="line-filter" type="button" data-line="P" aria-pressed="false"><span class="line-badge line-p">P</span><span>Principes</span></button>
+        <button class="line-filter" type="button" data-line="E" aria-pressed="false"><span class="line-badge line-e">E</span><span>Équipements</span></button>
+        <button class="line-filter" type="button" data-line="D" aria-pressed="false"><span class="line-badge line-d">D</span><span>Distribution</span></button>
+        <button class="line-filter" type="button" data-line="M" aria-pressed="false"><span class="line-badge line-m">M</span><span>Mesure & diagnostic</span></button>
+      </nav>
+
+      <div class="map-layout">
+        <section class="metro-panel" aria-label="Plan interactif du réseau hydraulique">
+          <svg id="metroMap" class="metro-map" viewBox="0 0 900 535" role="img" aria-labelledby="metroTitle metroDesc">
+            <title id="metroTitle">Plan HydroMétro à quatre lignes</title>
+            <desc id="metroDesc">Les lignes Principes, Équipements, Distribution et Mesure et diagnostic se croisent dans quatre stations de correspondance.</desc>
+          </svg>
+          <div id="mobileRoutes" class="mobile-routes" aria-label="Stations du réseau"></div>
+        </section>
+
+        <aside class="network-card" aria-labelledby="networkTitle">
+          <p class="eyebrow">Votre trajet</p>
+          <h2 id="networkTitle">Un réseau, pas un ordre imposé</h2>
+          <p>Choisissez une ligne ou une station. Les lignes P, E, D et M ouvrent leurs modules complets en QA technique.</p>
+          <button id="diagnosticCardBtn" class="button diagnostic-cta" type="button">Trouver mon trajet · 20 questions</button>
+          <div class="network-numbers" aria-label="Composition du réseau">
+            <span><strong>4</strong> lignes</span>
+            <span><strong>22</strong> stations</span>
+            <span><strong>4</strong> correspondances</span>
+          </div>
+          <div class="legend">
+            <h3>Repères</h3>
+            <p><span class="legend-dot" aria-hidden="true"></span> Station</p>
+            <p><span class="legend-interchange" aria-hidden="true"></span> Correspondance</p>
+            <p><span class="legend-playable" aria-hidden="true">▶</span> Module jouable</p>
+            <p><span class="legend-visited" aria-hidden="true">✓</span> Station visitée</p>
+          </div>
+          <p class="autonomy-note">Sans compte, sans connexion, sans installation. Les progrès restent seulement dans cette session.</p>
+        </aside>
+      </div>
+
+      <footer class="map-footer">
+        <span>La couleur est doublée par une lettre et un type de ligne.</span>
+        <div class="map-actions">
+          <button id="diagnosticBtn" class="button secondary" type="button">Positionnement initial</button>
+          <button id="firstStationBtn" class="button primary" type="button">Entrer par Boucle →</button>
+        </div>
+      </footer>
+    </section>
+
+    <section id="stationScreen" class="screen station-screen" hidden aria-labelledby="stationTitle">
+      <header class="topbar compact">
+        <button id="backToMapBtn" class="icon-button" type="button" aria-label="Retour au plan">← <span>Retour au plan</span></button>
+        <div class="compact-brand"><strong>HydroMétro</strong><span id="currentLineName">Ligne P · Principes</span></div>
+        <div class="topbar-tools">
+          <button id="readBtn" class="icon-button" type="button" aria-label="Lire la station" aria-pressed="false">▶ <span>Lire</span></button>
+          <button id="stopReadBtn" class="icon-button" type="button" aria-label="Arrêter la lecture" disabled>■ <span>Arrêter</span></button>
+        </div>
+      </header>
+
+      <nav id="routeStrip" class="route-strip" aria-label="Stations de la ligne active"></nav>
+
+      <div class="station-layout">
+        <article class="station-copy">
+          <div class="station-heading-row">
+            <span id="stationBadge" class="line-badge line-p">P</span>
+            <div>
+              <p id="stationKicker" class="eyebrow"></p>
+              <h1 id="stationTitle" tabindex="-1"></h1>
+            </div>
+          </div>
+          <p id="stationLead" class="station-lead"></p>
+          <div id="stationVisual" class="station-visual"></div>
+          <aside id="stationKey" class="station-key"></aside>
+          <div id="interchanges" class="interchanges" aria-label="Correspondances disponibles"></div>
+        </article>
+
+        <section class="challenge-card programme-card" aria-labelledby="programmeObjective">
+          <div class="challenge-topline">
+            <div>
+              <p class="eyebrow">Plan de la station</p>
+              <div id="levelSwitcher" class="level-switcher" aria-label="Choisir le niveau de lecture">
+                <button class="level-button" type="button" data-level="CAP" aria-pressed="false">CAP <small>N3</small></button><button class="level-button active" type="button" data-level="TP" aria-pressed="true">Bac pro <small>N4</small></button>
+                <button class="level-button" type="button" data-level="BTS" aria-pressed="false">BTS <small>N5</small></button>
+              </div>
+            </div>
+            <span id="visitStatus" class="status-pill ok">Cadrée ✓</span>
+          </div>
+          <h2 id="programmeObjective"></h2>
+          <div id="programmeFormats" class="programme-formats" aria-label="Modalités prévues"></div>
+          <div class="programme-columns">
+            <div>
+              <h3>À apprendre</h3>
+              <ul id="programmeLearn" class="programme-learn"></ul>
+            </div>
+          </div>
+          <div class="programme-prompt"><strong>Mission / prompt</strong><p id="programmePrompt"></p></div>
+          <div class="programme-game"><strong>Futur jeu</strong><p id="programmeGame"></p><small id="programmeVirtual"></small></div>
+          <p id="programmeStatus" class="model-note" role="status">Station cadrée. Le jeu et la pratique virtuelle seront développés indépendamment.</p>
+        </section>
+      </div>
+
+      <footer class="station-footer">
+        <button id="prevStationBtn" class="button secondary" type="button">← Station précédente</button>
+        <p id="stationProgress" aria-live="polite"></p>
+        <button id="nextStationBtn" class="button primary" type="button">Station suivante →</button>
+      </footer>
+    </section>
+
+    <section id="diagnosticScreen" class="screen diagnostic-screen" hidden aria-labelledby="diagnosticTitle">
+      <header class="topbar compact">
+        <button id="diagnosticMapBtn" class="icon-button" type="button" aria-label="Quitter le positionnement et revenir au plan">← <span>Retour au plan</span></button>
+        <div class="compact-brand"><strong>HydroMétro</strong><span>Positionnement initial</span></div>
+        <span class="draft-badge">SANS NOTE BLOQUANTE</span>
+      </header>
+
+      <div class="diagnostic-progress-row">
+        <div>
+          <p class="eyebrow">Carte de la compétence hydraulique</p>
+          <h1 id="diagnosticTitle" tabindex="-1">Trouvons le trajet utile</h1>
+        </div>
+        <div class="diagnostic-meter" aria-label="Progression du positionnement">
+          <span id="diagnosticProgressText">Question 1 sur 20</span>
+          <div class="meter-track" aria-hidden="true"><span id="diagnosticProgressBar"></span></div>
+        </div>
+      </div>
+
+      <div class="diagnostic-stage">
+        <section id="diagnosticQuestion" class="diagnostic-question" aria-labelledby="diagnosticPrompt">
+          <div class="diagnostic-visual-wrap">
+            <span id="diagnosticLineBadge" class="line-badge line-p">P</span>
+            <div id="diagnosticVisual" class="diagnostic-visual"></div>
+            <p>Observez le schéma, puis choisissez une réponse. La correction sert à apprendre.</p>
+          </div>
+          <article class="diagnostic-card">
+            <p id="diagnosticDomain" class="eyebrow"></p>
+            <h2 id="diagnosticPrompt"></h2>
+            <div id="diagnosticAnswers" class="answers" role="group" aria-label="Réponses proposées"></div>
+            <p id="diagnosticFeedback" class="feedback" role="status">Choisissez la réponse qui vous paraît la plus juste.</p>
+          </article>
+        </section>
+
+        <section id="diagnosticResult" class="diagnostic-result" hidden aria-labelledby="diagnosticResultTitle">
+          <article class="result-summary">
+            <p class="eyebrow">Profil de départ · pas une certification</p>
+            <div class="result-score-row"><strong id="diagnosticScore">0/20</strong><div><h2 id="diagnosticResultTitle">Votre trajet conseillé</h2><p id="diagnosticProfile"></p></div></div>
+            <div class="result-groups">
+              <div><h3>Points d’appui</h3><div id="diagnosticStrong" class="skill-chips"></div></div>
+              <div><h3>À renforcer</h3><div id="diagnosticReinforce" class="skill-chips reinforce"></div></div>
+            </div>
+            <p class="result-note">Toutes les stations restent accessibles. Le trajet proposé évite seulement les détours inutiles.</p>
+          </article>
+          <article class="competency-map">
+            <div><p class="eyebrow">Carte des compétences</p><h2>Vos repères hydrauliques</h2></div>
+            <div id="diagnosticSkillMap" class="skill-map" aria-label="Résultats par famille de compétences"></div>
+            <div><h3>Stations recommandées</h3><ol id="diagnosticRoute" class="recommended-route"></ol></div>
+          </article>
+        </section>
+      </div>
+
+      <footer class="diagnostic-footer">
+        <button id="diagnosticPrevBtn" class="button secondary" type="button">← Question précédente</button>
+        <p id="diagnosticFooterStatus" aria-live="polite">20 questions · environ 8 minutes · aucune donnée enregistrée</p>
+        <button id="diagnosticNextBtn" class="button primary" type="button" disabled>Question suivante →</button>
+        <button id="retryDiagnosticBtn" class="button secondary result-action" type="button" hidden>Refaire le test</button>
+        <button id="followRouteBtn" class="button primary result-action" type="button" hidden>Suivre ce trajet →</button>
+      </footer>
+    </section>
+  </main>
+
+  <dialog id="helpDialog" class="help-dialog" aria-labelledby="helpTitle">
+    <form method="dialog">
+      <div class="dialog-heading">
+        <div><p class="eyebrow">Mode d’emploi</p><h2 id="helpTitle">Voyagez librement</h2></div>
+        <button class="dialog-close" value="close" aria-label="Fermer">×</button>
+      </div>
+      <ol>
+        <li>Choisissez une ligne avec sa lettre.</li>
+        <li>Faites le positionnement initial pour obtenir un trajet conseillé, ou entrez librement dans le réseau.</li>
+        <li>Ouvrez une station sur le plan ou dans la liste. Les stations P, E, D et M lancent leur module complet.</li>
+        <li>À une correspondance, changez de ligne.</li>
+        <li>Choisissez la profondeur CAP, Bac pro ou BTS. Avec un filtre P, E, D ou M, le bouton d’entrée lance le parcours complet de la ligne.</li>
+      </ol>
+      <p>Le réseau ne délivre aucune certification et ne remplace pas la pratique sur une installation réelle.</p>
+      <button class="button primary" value="close">Compris</button>
+    </form>
+  </dialog>
+
+  <noscript>Ce module nécessite JavaScript, mais aucun accès au réseau n’est requis.</noscript>
+  <script src="parcours-adaptatif.js?v=20260823d" defer></script>
+  <script src="programme.js?v=20260823d" defer></script>
+  <script src="modules.js?v=20260823g" defer></script>
+  <script src="app.js?v=20260823h" defer></script>
+  <script src="assets/logo-entete.js" defer></script>
+  <script src="assets/marque.js" data-cartouche="Hydro" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

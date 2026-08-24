@@ -1,0 +1,104 @@
+{
+  "id": "monotube",
+  "title": "Monotube — Suivez l’eau",
+  "lines": [
+    "D"
+  ],
+  "status": "QA TECHNIQUE",
+  "version": "2026-08-23-d2",
+  "levels": {
+    "TP": {
+      "objective": "Suivre une boucle monotube à dérivations et contrôler amont, aval et bypass.",
+      "learn": [
+        "Suivre la boucle principale.",
+        "Distinguer dérivation et bypass.",
+        "Comparer des relevés stabilisés."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Tracer l’eau de la production au retour et rendre compte de l’influence amont-aval."
+    },
+    "BTS": {
+      "objective": "Analyser le partage de débit et le mélange thermique d’un modèle monotube.",
+      "learn": [
+        "Vérifier la conservation du débit.",
+        "Calculer une moyenne pondérée.",
+        "Expliciter les limites du modèle."
+      ],
+      "competencies": [
+        "BTS C2",
+        "BTS C4",
+        "BTS C8"
+      ],
+      "prompt": "Comparer les conditions d’entrée des émetteurs et critiquer les hypothèses du modèle."
+    }
+  },
+  "modalities": [
+    "SCHÉMA",
+    "SUIVRE",
+    "MESURE",
+    "CALCUL",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Suivez l’eau",
+    "rule": "Construire le trajet puis faire varier le partage émetteur/bypass.",
+    "success": "Trajet ordonné, débits conservés et conclusion limitée au modèle.",
+    "feedback": "Première erreur expliquée et trace visible."
+  },
+  "virtualPractice": {
+    "description": "Monotube à trois dérivations avec mélange simplifié.",
+    "measures": [
+      "m³/h",
+      "°C"
+    ],
+    "controls": [
+      "ordre du trajet",
+      "part de débit"
+    ],
+    "limits": [
+      "Valeurs pédagogiques.",
+      "Pertes de ligne et comportement réel des émetteurs non modélisés."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "appliquer",
+      "expliquer",
+      "calculer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md",
+    "RAG: distribution chauffage.pdf",
+    "RAG: BacPro_S4_structure_reseau_hydraulique.pdf"
+  ],
+  "assets": [
+    "assets/radiateur.svg",
+    "content.js#svg-scenes"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

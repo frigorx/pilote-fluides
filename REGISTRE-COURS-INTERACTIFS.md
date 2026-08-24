@@ -94,8 +94,8 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `etancheite-interactive` | g4a, g4b, g4c, plan d’accueil | 27 | 4.01 · 4.02 · 4.03 · 4.04 · 4.05 · 4.06 · 4.07 · 4.08 · 4.09 | 68 Ko |
 | `evaporateur-interactif` | g8b, plan d’accueil | 27 | 8.02 · 8.03 · 8.04 · 8.06 · 8.07 · 8.10 · 8.11 · 8.05 · 8.09 | 166 Ko |
 | `fil-conducteur-intervention` | plan d’accueil | — | — | 283 Ko |
-| `film-effet-de-serre` | plan d’accueil | — | — | 1207 Ko |
-| `film-ozone` | plan d’accueil | — | — | 1053 Ko |
+| `film-effet-de-serre` | plan d’accueil | — | — | 1208 Ko |
+| `film-ozone` | plan d’accueil | — | — | 1055 Ko |
 | `filtre-deshydrateur-pedagogique` | g9, plan d’accueil | 15 | 1.05 | 2683 Ko |
 | `frise-vivante` | c00, plan d’accueil | 10 | 2.01 | 1178 Ko |
 | `froid-clim-academie` | g1e, plan d’accueil | — | 1.02 | 30 Ko |

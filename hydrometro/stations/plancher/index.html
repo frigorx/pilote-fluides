@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>HydroMétro · Station</title>
+  <link rel="stylesheet" href="station.css">
+</head>
+<body>
+  <a class="skip-link" href="#stationMain">Aller à l’activité</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand" aria-label="inerWeb Édu, HydroMétro">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span><strong>HydroMétro</strong><small>Ligne D · Distribution</small></span>
+      </div>
+      <div class="level-switch" role="group" aria-label="Profondeur pédagogique">
+        <button type="button" class="level-btn" data-level="CAP" aria-pressed="false">CAP</button><button type="button" class="level-btn is-active" data-level="TP" aria-pressed="true">Bac pro</button>
+        <button type="button" class="level-btn" data-level="BTS" aria-pressed="false">BTS</button>
+      </div>
+      <a class="plan-link" href="../../index.html#visited=plancher" aria-label="Retour au plan HydroMétro">Plan</a>
+    </header>
+
+    <nav class="progress" id="progress" aria-label="Progression de la station"></nav>
+
+    <main id="stationMain" class="station-main" tabindex="-1">
+      <section class="lesson-card" aria-labelledby="stepTitle">
+        <div class="lesson-copy">
+          <p class="kicker" id="stepKicker"></p>
+          <h1 id="stationTitle"></h1>
+          <h2 id="stepTitle" tabindex="-1"></h2>
+          <p class="step-text" id="stepText"></p>
+          <div class="level-note" id="levelNote"></div>
+          <div class="action-panel" id="actionPanel" aria-live="polite"></div>
+        </div>
+        <div class="scene-panel">
+          <div id="scene" class="scene" aria-live="polite"></div>
+          <p class="scene-equivalent" id="sceneEquivalent"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bottom-bar">
+      <p class="limit"><strong>Limite :</strong> simulation virtuelle. Elle ne remplace ni intervention réelle, ni procédure du site, ni validation certificative.</p>
+      <div class="nav-actions">
+        <button type="button" id="prevBtn" class="secondary">Retour</button>
+        <span id="stepCount" aria-live="polite"></span>
+        <button type="button" id="nextBtn" class="primary">Continuer</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="content.js?v=20260823-d2"></script>
+  <script src="../_commun/formative-engine.js?v=20260823-global1"></script>
+  <script src="../../assets/logo-entete.js" defer></script>
+  <script src="../../assets/marque.js" data-cartouche="Hydro" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

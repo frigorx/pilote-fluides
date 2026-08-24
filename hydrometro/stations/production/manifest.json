@@ -1,0 +1,103 @@
+{
+  "id": "production",
+  "title": "Production",
+  "lines": [
+    "E"
+  ],
+  "status": "QA TECHNIQUE",
+  "levels": {
+    "TP": {
+      "objective": "Identifier les productions raccordées à un réseau d’eau.",
+      "learn": [
+        "Reconnaître plusieurs technologies de production.",
+        "Repérer départ, retour et points de contrôle.",
+        "Distinguer fonction, technologie et énergie."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Classer les producteurs et préparer les contrôles avant conclusion."
+    },
+    "BTS": {
+      "objective": "Comparer des solutions de production à partir du besoin et des données du projet.",
+      "learn": [
+        "Décoder les données de fonctionnement.",
+        "Comparer fonction et technologies.",
+        "Justifier une hypothèse à partir de mesures."
+      ],
+      "competencies": [
+        "BTS C2-1",
+        "BTS C3-1",
+        "BTS C3-2"
+      ],
+      "prompt": "Comparer les productions sans confondre fonction commune et technologie."
+    }
+  },
+  "modalities": [
+    "IDENTIFICATION",
+    "TECHNOLOGIE",
+    "SCHÉMA",
+    "DIAGNOSTIC",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Association et démarche ordonnée",
+    "rule": "Associer fonction, technologie et énergie, puis ordonner les contrôles.",
+    "success": "Chaque activité reçoit une correction; le contrôle formatif est acquis à 3 réponses sur 4.",
+    "feedback": "Correction immédiate argumentée, avec bonne réponse visible."
+  },
+  "virtualPractice": {
+    "description": "Profil de charge qualitatif à trois blocs.",
+    "measures": [
+      "température départ",
+      "température retour",
+      "débit"
+    ],
+    "controls": [
+      "besoin relatif"
+    ],
+    "limits": [
+      "pas de sélection produit",
+      "pas de rendement calculé",
+      "seuils de blocs pédagogiques"
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "appliquer",
+      "expliquer",
+      "vérifier"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "../../REFERENTIELS.md",
+    "../../rag/HYDROMETRO-INGENIERIE-VALIDEE.md",
+    "RAG HAL, recherche locale en lecture seule du 23 août 2026"
+  ],
+  "assets": [
+    "SVG originaux intégrés dans content.js"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

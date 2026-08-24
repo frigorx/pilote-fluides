@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" role="img" aria-labelledby="title desc">
+  <title id="title">Vase d’expansion à membrane</title>
+  <desc id="desc">Symbole pédagogique original d’un vase fermé vertical, avec membrane souple et raccord inférieur.</desc>
+  <g fill="#fffdf8" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 26c0-14 64-14 64 0v86c0 16-64 16-64 0z"/>
+    <path d="M28 72q32-18 64 0" fill="none" stroke-dasharray="8 6"/>
+    <path d="M60 124v18" fill="none"/>
+  </g>
+  <circle cx="60" cy="143" r="4" fill="#1b3a63"/>
+</svg>

@@ -1,0 +1,106 @@
+{
+  "id": "E",
+  "name": "Équipements",
+  "status": "QA TECHNIQUE",
+  "intent": "Identifier, contrôler, régler et diagnostiquer les organes en les reliant au comportement du réseau.",
+  "stations": [
+    "production",
+    "echangeur",
+    "debit",
+    "circulateur",
+    "pertes",
+    "vase",
+    "securite"
+  ],
+  "interchanges": [
+    {
+      "station": "debit",
+      "with": [
+        "P"
+      ],
+      "ownership": "Ligne P",
+      "reference": "../../stations/debit/index.html"
+    },
+    {
+      "station": "pertes",
+      "with": [
+        "D"
+      ],
+      "ownership": "Ligne E jusqu’à arbitrage d’intégration"
+    }
+  ],
+  "prerequisites": [
+    "Lire une boucle hydraulique simple",
+    "Distinguer départ et retour",
+    "Reconnaître débit et pression"
+  ],
+  "levels": {
+    "TP": {
+      "objective": "Identifier, contrôler et régler les organes par des observations et des mesures sûres.",
+      "synthesis": "Lire le réseau, relever les grandeurs, agir sur un réglage virtuel puis rendre compte."
+    },
+    "BTS": {
+      "objective": "Analyser les interactions, lire les courbes et justifier les hypothèses avec les limites du modèle.",
+      "synthesis": "Croiser bilans thermique et hydraulique, courbes et chaîne de protection."
+    }
+  },
+  "estimatedDurationMinutes": {
+    "TP": 175,
+    "BTS": 245
+  },
+  "entryDiagnostic": {
+    "sharedEngine": "../../parcours-adaptatif.js",
+    "required": false,
+    "skillIds": [
+      "equipements",
+      "debit",
+      "pression",
+      "diagnostic"
+    ]
+  },
+  "finalAssessment": {
+    "itemCount": 12,
+    "indicativeAcquiredThreshold": 0.7,
+    "essentialFamilies": [
+      "echangeur",
+      "circulateur",
+      "securite"
+    ],
+    "dimensions": [
+      "lire",
+      "classer-appliquer",
+      "mesurer-calculer",
+      "cause-effet",
+      "diagnostiquer"
+    ],
+    "distribution": {
+      "lire": 3,
+      "classer-appliquer": 3,
+      "mesurer-calculer": 2,
+      "cause-effet": 2,
+      "diagnostiquer": 2
+    },
+    "resultLabels": [
+      "ACQUIS",
+      "FRAGILE",
+      "À RENFORCER"
+    ],
+    "singleFinalStation": true,
+    "gradeScale": 20,
+    "route": "parcours.html?evaluation=1",
+    "scoreShownOnlyAtEnd": true
+  },
+  "sources": [
+    "../../EVALUATIONS.md",
+    "../../PARCOURS-SPIRALAIRE.md",
+    "RAG HAL local"
+  ],
+  "limits": [
+    "durées indicatives à valider",
+    "modèles pédagogiques",
+    "pas d’intervention réelle",
+    "pas de validation certificative",
+    "brouillon hors RAG"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "identifiant-stable",
+  "title": "Titre de la station",
+  "lines": [
+    "P"
+  ],
+  "status": "CADRAGE",
+  "levels": {
+    "TP": {
+      "objective": "Action professionnelle observable.",
+      "learn": [
+        "Acquis 1",
+        "Acquis 2",
+        "Acquis 3"
+      ],
+      "competencies": [
+        "Référence officielle"
+      ],
+      "prompt": "Mission professionnelle concise."
+    },
+    "BTS": {
+      "objective": "Analyse ou justification observable.",
+      "learn": [
+        "Acquis 1",
+        "Acquis 2",
+        "Acquis 3"
+      ],
+      "competencies": [
+        "BTS Cx-x"
+      ],
+      "prompt": "Étude ou mission de niveau BTS."
+    }
+  },
+  "modalities": [
+    "SCHÉMA",
+    "IDENTIFICATION"
+  ],
+  "game": {
+    "type": "À définir",
+    "rule": "À définir",
+    "success": "À définir",
+    "feedback": "À définir"
+  },
+  "virtualPractice": {
+    "description": "À définir",
+    "measures": [],
+    "controls": [],
+    "limits": []
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "identifier",
+      "appliquer",
+      "expliquer"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [],
+  "assets": [],
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "expliquer",
+      "montrer",
+      "manipuler avec aide",
+      "verbaliser",
+      "résumer"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  }
+}

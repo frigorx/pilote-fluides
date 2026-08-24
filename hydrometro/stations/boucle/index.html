@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <title>HydroMétro P1 — Comprendre une boucle</title>
+  <link rel="stylesheet" href="station.css?v=20260823-formative3">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="topbar">
+    <a class="brand" href="../../index.html#visited=boucle" aria-label="Retour au plan HydroMétro"><b aria-hidden="true">H</b><span><strong>HydroMétro</strong><small>Ligne P · Station 1</small></span></a>
+    <div class="titles"><div class="kicker">Formation guidée · débutant</div><h1>Boucle — suivre le trajet de l’eau</h1></div>
+    <div class="top-actions">
+      <div class="level-switch" aria-label="Profondeur pédagogique"><button type="button" data-level="CAP" aria-pressed="false">CAP</button><button type="button" data-level="TP" aria-pressed="true">Bac pro</button><button type="button" data-level="BTS" aria-pressed="false">BTS</button></div>
+      <div class="voice-actions" aria-label="Lecture vocale"><button id="listenButton" type="button" aria-label="Écouter l’étape">▶ <span>Écouter</span></button><button id="stopVoiceButton" type="button" aria-label="Arrêter la lecture" disabled>■ <span>Arrêter</span></button></div>
+    </div>
+  </header>
+
+  <nav id="courseProgress" class="course-progress" aria-label="Progression de la formation"></nav>
+
+  <main id="contenu">
+    <section id="activityView" class="course-view" aria-labelledby="stepTitle">
+      <article class="lesson-card">
+        <div class="lesson-copy">
+          <p id="stepKicker" class="lesson-kicker"></p>
+          <h2 id="stepTitle" tabindex="-1"></h2>
+          <p id="stepLead" class="step-lead"></p>
+          <div id="stepBody" class="step-body"></div>
+          <div id="levelNote" class="level-note"></div>
+          <p id="keyBox" class="key-box"></p>
+          <div id="lessonControls" class="lesson-controls"></div>
+        </div>
+        <div class="scene-panel">
+          <div id="scene" class="scene"></div>
+          <p id="sceneEquivalent" class="scene-equivalent" aria-live="polite"></p>
+        </div>
+      </article>
+    </section>
+
+    <section id="quizView" class="quiz-view hidden" aria-label="Questions finales"></section>
+    <section id="resultView" class="result-view hidden" aria-label="Bilan de station"></section>
+  </main>
+
+  <footer class="footer">
+    <span id="voiceStatus" class="footer-note" aria-live="polite">Formation visible et utilisable sans voix.</span>
+    <nav class="footer-nav" aria-label="Navigation de la station">
+      <button id="infoButton" type="button">Objectifs</button>
+      <button id="prevLesson" type="button">Retour</button>
+      <span id="stepCount" class="step-count" aria-live="polite"></span>
+      <button id="nextLesson" class="primary" type="button">Continuer</button>
+      <button id="startQuiz" class="accent hidden" type="button" disabled aria-hidden="true">Anciennes questions conservées</button>
+      <button id="backPlan" type="button">Plan</button>
+    </nav>
+  </footer>
+
+  <dialog id="infoDialog">
+    <h2>Objectifs et limites</h2>
+    <div id="levelDetails"></div>
+    <p><strong>Parcours :</strong> observer → comprendre → voir fonctionner → manipuler avec aide → résumer → répondre.</p>
+    <p><strong>Limite :</strong> l’exemple montre un circuit de chauffage fermé simplifié. Il ne représente ni les diamètres, ni les pertes de charge, ni tous les organes de sécurité d’une installation réelle.</p>
+    <div class="dialog-actions"><button id="closeInfo" type="button">Fermer</button></div>
+  </dialog>
+
+  <script src="shell.js?v=20260823-global1"></script>
+  <script src="station.js?v=20260823-global1"></script>
+  <script src="../../assets/logo-entete.js" defer></script>
+  <script src="../../assets/marque.js" data-cartouche="Hydro" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>
