@@ -117,7 +117,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `protection-minimum-serie` | plan d’accueil | — | — | 1162 Ko |
 | `pump-down-ameliore` | plan d’accueil | — | — | 1105 Ko |
 | `pump-down-automatique` | plan d’accueil | — | — | 1148 Ko |
-| `pump-down-unique` | plan d’accueil | — | — | 1133 Ko |
+| `pump-down-unique` | plan d’accueil | — | — | 1132 Ko |
 | `pupitre-reglage-interactif` | g9b, plan d’accueil | 9 | 9.04 · 9.06 · 7.04 | 71 Ko |
 | `recuperation-fluide-interactive` | p2, plan d’accueil | 8 | 5.01 · 5.02 · 5.03 · 5.05 · 5.06 | 184 Ko |
 | `regulateur-electronique-interactif` | plan d’accueil | 24 | 9.04 · 6.03 | 164 Ko |
@@ -129,7 +129,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `reservoir-huile-pedagogique` | plan d’accueil | — | — | 2603 Ko |
 | `retour-huile-naturel` | plan d’accueil | — | — | 1769 Ko |
 | `retour-huile-verifier` | plan d’accueil | — | — | 2544 Ko |
-| `sans-degivrage-commande` | plan d’accueil | — | — | 1142 Ko |
+| `sans-degivrage-commande` | plan d’accueil | — | — | 1141 Ko |
 | `separateur-eclatement-pedagogique` | plan d’accueil | — | — | 2767 Ko |
 | `separateur-huile-pedagogique` | plan d’accueil | — | — | 2693 Ko |
 | `surchauffe-sous-refroidissement-interactif` | g1e, plan d’accueil | 13 | 5.05 · 4.05 · 1.03 · 1.06 | 102 Ko |

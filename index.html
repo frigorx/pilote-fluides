@@ -145,6 +145,33 @@
                                background:none; border:1.5px solid var(--ligne); border-radius:999px;
                                padding:3px 12px; margin-left:auto; }
   .plan .legende-plan button:hover { border-color:var(--bleu-clair); color:var(--bleu); }
+
+  /* ---- LE CONNECTEUR VERS LES AUTRES RÉSEAUX ----
+     Décision de F. Henninot, 23/08 : inerWeb n'étoffe plus des lignes, il crée
+     des réseaux entiers (thermo-techno, Législation, hydraulique en cours ;
+     cinq à sept à terme). Ce connecteur se pose EN TÊTE du plan, avant le
+     départ de la première ligne : c'est la première chose qu'on voit, et
+     c'est par là qu'on change de réseau.
+     La grille accepte les suivants sans retouche : un réseau de plus = un
+     lien de plus, sa couleur passée en --c. */
+  .plan .reseaux { padding:16px 24px 0; }
+  .plan .reseaux .r-intro { margin:0 0 10px; font-family:var(--titre); font-weight:bold;
+                            font-size:14px; color:var(--mut); }
+  .plan .reseaux .r-grille { display:grid; gap:12px;
+                             grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
+  .plan .reseaux a { display:flex; align-items:center; gap:14px; text-decoration:none;
+                     background:var(--c); color:#fff; border-radius:var(--r);
+                     padding:15px 20px; min-height:64px;
+                     border:3px solid transparent; transition:transform .12s, border-color .12s; }
+  .plan .reseaux a:hover { transform:translateY(-2px); border-color:var(--orange); color:#fff; }
+  .plan .reseaux a .r-texte { flex:1; min-width:0; }
+  .plan .reseaux a .r-nom { display:block; font-family:var(--titre); font-weight:bold;
+                            font-size:18px; line-height:1.2; }
+  .plan .reseaux a .r-det { display:block; font-size:13.5px; opacity:.92; margin-top:3px; }
+  .plan .reseaux a .r-etat { flex:0 0 auto; font-size:12px; font-weight:bold;
+                             background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.55);
+                             border-radius:999px; padding:3px 10px; white-space:nowrap; }
+  .plan .reseaux a .r-fleche { flex:0 0 auto; font-size:22px; line-height:1; }
   .plan .defilant { overflow-x:auto; padding:6px 10px 4px; }
   .indice-glisser { display:none; text-align:center; font-size:13px; color:var(--mut); padding:2px 0 10px; }
   @media (max-width: 700px) { .indice-glisser { display:block; } }
@@ -513,6 +540,26 @@
       <h2>Le plan de formation</h2>
       <span>Suis le fluide. Chaque station est un cours qui s’ouvre en un clic — et chaque <strong>cartouche de ligne</strong> ouvre le plan détaillé de la ligne.</span>
     </div>
+    <!-- LE CONNECTEUR VERS LES AUTRES RÉSEAUX — demandé par F. Henninot le
+         23/08 : « un gros bouton, visible, au début de la première ligne, qui
+         nous amène à un nouveau réseau ». Il annonce cinq à sept réseaux à
+         terme (l'hydraulique est en fabrication) : la grille en accueille
+         autant sans retouche. L'état de construction est affiché — le réseau
+         Législation n'a qu'une station ouverte sur 57, et promettre un réseau
+         vide userait la confiance. -->
+    <div class="reseaux">
+      <p class="r-intro">Changer de réseau</p>
+      <div class="r-grille">
+        <a href="legislation/" style="--c:#1e40af">
+          <span class="r-texte">
+            <span class="r-nom">📜 Réseau Législation</span>
+            <span class="r-det">Réglementation, sécurité, environnement — niveau BTS</span>
+          </span>
+          <span class="r-etat">en construction</span>
+          <span class="r-fleche" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
     <!-- CHERCHER UNE STATION — demandé par F. Henninot le 20/08 : « j'ai besoin
          de quelque chose, je ne sais pas où aller ». Sa source n'est PAS un
          index de plus : c'est la liste HTML du réseau, plus bas dans cette même
@@ -876,7 +923,7 @@
 
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
-<script src="plan-descriptions.gen.js?v=0aa92a5595"></script>
+<script src="plan-descriptions.gen.js?v=963a5d24c5"></script>
 <script>
 /* =====================================================================
    LE PLAN DE FORMATION — généré depuis les données ci-dessous.
@@ -2052,11 +2099,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=0aa92a5595"></script>
-<script src="chiffres.gen.js?v=0aa92a5595"></script>
+<script src="moteur/lisibilite.js?v=963a5d24c5"></script>
+<script src="chiffres.gen.js?v=963a5d24c5"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=0aa92a5595" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=963a5d24c5" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)

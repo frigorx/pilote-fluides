@@ -8,8 +8,8 @@
 | Mesure | Résultat |
 |---|---:|
 | Cours interactifs recensés | **75** |
-| Cours avec anomalie critique automatisable | **24** |
-| Cours avec dette documentaire ou de reprise | **32** |
+| Cours avec anomalie critique automatisable | **35** |
+| Cours avec dette documentaire ou de reprise | **43** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **10** |
 | SVG pédagogiques contrôlés | **46** |
 | SVG sans titre / sans description textuelle | **3 / 41** |
@@ -29,14 +29,14 @@
 | `circuit-organe-par-organe` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `clapet-differentiel-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `co2-r744` | ✓ | ✓ | ✓ | ✓ | commune | 5 | ✓ | 🟢 contrôle statique tenu |
-| `commande-directe-thermostat` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `commande-directe-thermostat` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `compresseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `condenseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
 | `cours-classes-securite` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
-| `degivrage-electrique` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `degivrage-gaz-chauds` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `degivrage-inversion-cycle` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `degivrage-naturel` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `degivrage-electrique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `degivrage-gaz-chauds` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `degivrage-inversion-cycle` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `degivrage-naturel` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `detendeur-interactif` | ✓ | ✓ | ✓ | ✓ | absente | 4 | ✓ | 🟠 réglage de lisibilité |
 | `diagnostic-circuit-huile` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `diagnostic-circuit-huile-conclure` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
@@ -67,10 +67,10 @@
 | `pressostat-differentiel-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `pressostat-hp-kp5` | ✓ | ✓ | ✓ | ✓ | absente | 15 | ✓ | 🟠 réglage de lisibilité |
 | `pressostat-huile-securite` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
-| `protection-minimum-serie` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `pump-down-ameliore` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `pump-down-automatique` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `pump-down-unique` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `protection-minimum-serie` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `pump-down-ameliore` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `pump-down-automatique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `pump-down-unique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `pupitre-reglage-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `recuperation-fluide-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
 | `regulateur-electronique-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
@@ -78,11 +78,11 @@
 | `regulateur-kvl-pedagogique` | ✗ | ✓ | ✓ | ✗ | absente | — | — | 🔴 description |
 | `regulateur-kvr-nrd` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🔴 fonds forcés à l’impression |
 | `regulateurs-kv-pedagogiques` | ✓ | ✓ | ✓ | ✓ | absente | 8 | ✓ | 🟠 réglage de lisibilité |
-| `regules-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `regules-interactif` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `reservoir-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `retour-huile-naturel` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `retour-huile-verifier` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
-| `sans-degivrage-commande` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `sans-degivrage-commande` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `separateur-eclatement-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `separateur-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `surchauffe-sous-refroidissement-interactif` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |
