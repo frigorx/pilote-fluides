@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Fiches à valider — réseau Législation</title>
+<meta name="robots" content="noindex">
+<!-- PAGE GÉNÉRÉE par legislation/outils/fiches-a-valider.mjs — ne pas
+     éditer à la main : le prochain passage écraserait la correction.
+     La matière vient des FOND.md des stations, qui font foi. -->
+<style>
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f4ece0; --carte:#fffdf8; --ligne:#d6dee7;
+          --ok:#1e7e54; --ok-bg:#e3f5ec; --att:#b06a00; --att-bg:#fbf1de;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu-clair); }
+  a:hover { color:var(--orange); }
+  a:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+  .bandeau { background:var(--carte); border-bottom:1px solid var(--ligne); }
+  .bandeau .dedans { max-width:900px; margin:0 auto; padding:13px 18px;
+                     display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .bandeau .nom { font-family:var(--titre); font-weight:bold; font-size:17px; color:var(--bleu);
+                  border-left:2px solid var(--ligne); padding-left:13px; }
+  .bandeau .retour { margin-left:auto; font-size:14px; }
+  .page { max-width:900px; margin:0 auto; padding:0 18px 60px; }
+  h1 { font-family:var(--titre); font-size:29px; color:var(--bleu); margin:28px 0 8px;
+       line-height:1.2; text-wrap:balance; }
+  .chapo { color:var(--mut); margin:0 0 24px; max-width:62ch; }
+  .sommaire { background:var(--carte); border:1px solid var(--ligne); border-left:6px solid var(--bleu);
+              border-radius:var(--r); box-shadow:var(--ombre); padding:16px 22px; margin-bottom:30px; }
+  .sommaire h2 { font-family:var(--titre); font-size:17px; color:var(--bleu); margin:0 0 10px; }
+  .sommaire ul { margin:0; padding-left:22px; }
+  .sommaire li { margin:9px 0; }
+  .sommaire a { font-family:var(--titre); font-weight:bold; }
+  .sommaire .s-det { display:block; font-size:13.5px; color:var(--mut); }
+  .fiche { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r);
+           box-shadow:var(--ombre); padding:6px 26px 22px; margin-bottom:26px; }
+  .fiche.faite { opacity:.88; }
+  .f-etat { display:inline-block; font-family:var(--titre); font-weight:bold; font-size:13.5px;
+            border-radius:999px; padding:4px 13px; margin:18px 0 4px;
+            background:var(--att-bg); color:var(--att); border:1px solid var(--att); }
+  .fiche.faite .f-etat { background:var(--ok-bg); color:var(--ok); border-color:var(--ok); }
+  .fiche h2 { font-family:var(--titre); font-size:24px; color:var(--bleu); margin:10px 0 6px;
+              line-height:1.2; text-wrap:balance; }
+  .fiche h3 { font-family:var(--titre); font-size:19px; color:var(--bleu); margin:26px 0 6px;
+              padding-top:14px; border-top:1px solid var(--ligne); }
+  .fiche h4 { font-family:var(--titre); font-size:16px; color:var(--txt); margin:18px 0 4px; }
+  .fiche p { margin:10px 0; }
+  .fiche ul, .fiche ol { margin:10px 0; padding-left:26px; }
+  .fiche li { margin:6px 0; }
+  .fiche li.bonne { background:var(--ok-bg); border-radius:6px; padding:2px 8px; }
+  .fiche blockquote { margin:14px 0; padding:12px 18px; background:#f3f7fb;
+                      border-left:5px solid var(--bleu-clair); border-radius:0 8px 8px 0; }
+  .fiche blockquote p { margin:6px 0; font-size:15.5px; }
+  .fiche code { font-family:Consolas,'Courier New',monospace; font-size:14.5px;
+                background:var(--fond); padding:1px 6px; border-radius:4px; }
+  .fiche hr { border:0; border-top:2px solid var(--ligne); margin:26px 0; }
+  .defilant { overflow-x:auto; margin:14px 0; }
+  table { border-collapse:collapse; width:100%; font-size:15.5px; }
+  th, td { text-align:left; padding:9px 12px; border-bottom:1px solid var(--ligne); }
+  th { font-family:var(--titre); color:var(--bleu); font-size:14.5px; }
+  .f-retour { margin:24px 0 0; font-size:14px; }
+  .pied { color:var(--mut); font-size:14px; margin-top:30px; padding-top:16px;
+          border-top:1px solid var(--ligne); }
+  @media print {
+    body { background:#fff; font-size:12pt; }
+    .bandeau, .f-retour, .sommaire { display:none; }
+    .fiche { box-shadow:none; border:0; padding:0; }
+  }
+</style>
+</head>
+<body>
+<div class="bandeau">
+  <div class="dedans">
+    <a href="./" aria-label="inerWeb Législation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="140" height="32" role="img" aria-label="inerWeb Édu">
+<text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+<text fill="#1b3a63" font-family="Trebuchet MS, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+<text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+<line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+<rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+<text fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text></svg></a>
+    <span class="nom">Fiches à valider</span>
+    <a class="retour" href="./">← Le réseau Législation</a>
+  </div>
+</div>
+<div class="page" id="haut">
+  <h1>1 fiche attend ton feu vert</h1>
+  <p class="chapo">Le contenu d'une station avant sa fabrication : écrans, questions,
+  visuels prévus. Rien n'est produit tant que tu n'as pas dit que le fond est bon —
+  corriger un texte coûte une minute, corriger une station fabriquée coûte une journée.</p>
+
+  <div class="sommaire">
+    <h2>Les fiches</h2>
+    <ul>
+<li><a href="#aptitude-capacite">Aptitude &amp; capacité</a><span class="s-det">8 écrans · 4 questions — <b>à valider</b></span></li>
+<li><a href="#fgaz-3">F-Gaz 3</a><span class="s-det">8 écrans · 4 questions — déjà produite</span></li>
+    </ul>
+  </div>
+
+
+<section class="fiche" id="aptitude-capacite">
+  <p class="f-etat">⏳ En attente de ton feu vert</p>
+  <h2>Station « Aptitude &amp; capacité » — FOND à valider</h2>
+<blockquote>
+<p>Réseau Législation · sous-ligne Fluidique &amp; thermique · niveau BTS.</p>
+<p>Mini-station ≤ 10 min : 8 écrans + 4 questions.</p>
+<p>**Statut : FOND rédigé le 23/08/2026, EN ATTENTE de validation F. Henninot.</p>
+<p>Rien ne se produit avant ce feu vert** (étape 1 du rail).</p>
+<p></p>
+<p>C&#39;est la <b>deuxième station</b> du réseau, et la première correspondance de</p>
+<p>F-Gaz 3 — le maillage devient réel dès qu&#39;elle ouvre.</p>
+<p></p>
+<p><b>Sources internes, toutes vérifiables</b> : <code>packs/fluides/referentiel-2025.json</code></p>
+<p>(arrêté du 21 novembre 2025, NOR TECP2532494A, JORF du 10 décembre 2025,</p>
+<p>texte 9 sur 135) et le SVG maison <code>aptitude-capacite.svg</code>.</p>
+<p>Ligne maison conservée : les mécanismes s&#39;apprennent, les chiffres se</p>
+<p>vérifient sur le texte en vigueur.</p>
+<p>Adossement : ⟦codes BTS à compléter quand le référentiel cible sera tranché⟧.</p>
+</blockquote>
+<h3>Ce qui fait l&#39;intérêt de cette station</h3>
+<p>Une nouveauté que presque personne sur le terrain n&#39;a encore intégrée :</p>
+<p><b>l&#39;attestation d&#39;aptitude n&#39;est plus acquise à vie.</b> Le régime de 2025 impose</p>
+<p>une remise à niveau périodique, et fixe une échéance de bascule aux anciens</p>
+<p>titulaires. C&#39;est le message central, et il vaut mieux qu&#39;un élève l&#39;apprenne</p>
+<p>ici que par une suspension.</p>
+<h3>Objectif</h3>
+<p>À la fin de la station, l&#39;élève de BTS sait distinguer aptitude et capacité,</p>
+<p>dire qui détient quoi, situer sa propre catégorie, expliquer comment l&#39;aptitude</p>
+<p>s&#39;obtient (et pourquoi on ne peut pas faire d&#39;impasse), et surtout savoir que</p>
+<p>l&#39;attestation se <b>maintient</b> — avec quelle périodicité et quelle sanction.</p>
+<h3>Écran 1 — Deux papiers, deux titulaires</h3>
+<p>L&#39;<b>attestation d&#39;aptitude</b> concerne <b>la personne</b> : c&#39;est le technicien qui</p>
+<p>la détient, elle prouve qu&#39;il sait faire. L&#39;<b>attestation de capacité</b> concerne</p>
+<p><b>l&#39;entreprise</b> : elle prouve que la société dispose du personnel, de</p>
+<p>l&#39;outillage et des procédures.</p>
+<p><b>Il faut les deux, et l&#39;une ne remplace jamais l&#39;autre.</b> C&#39;est la confusion la</p>
+<p>plus fréquente du métier : « mon patron a la capacité, donc je peux y aller »</p>
+<p>est faux. Sans aptitude, vous ne pouvez pas intervenir — même dans une</p>
+<p>entreprise parfaitement en règle.</p>
+<p>*Visuel : le SVG maison <code>aptitude-capacite-categories.svg</code>, déjà produit pour</p>
+<p>F-Gaz 3 (partie haute seulement pour cet écran). Le copier dans le dossier de</p>
+<p>la station : chaque station reste autonome.*</p>
+<h3>Écran 2 — Comment l&#39;aptitude s&#39;obtient : on ne peut pas faire d&#39;impasse</h3>
+<p>L&#39;évaluation croise <b>une partie théorique et une partie pratique</b>. Elle porte</p>
+<p>sur des <b>groupes de compétences</b> :</p>
+<ul>
+<li>des <b>groupes obligatoires</b> pour tout le monde : G1, G2, G3, G4, G5, G10, G11 ;</li>
+<li><b>au moins un groupe tiré au sort</b> parmi G6, G7, G8 et G9 — et <i>le candidat ne sait pas, avant l&#39;évaluation, sur lequel il sera interrogé</i> ;</li>
+<li>un <b>groupe spécifique à la catégorie visée</b> : G12 pour A1 et A2, G13 pour B (le CO₂), G14 pour C (l&#39;ammoniac).</li>
+</ul>
+<p><b>Ce que le tirage au sort veut dire</b> : impossible de réviser trois groupes sur</p>
+<p>quatre en espérant passer entre les gouttes. Le dispositif est conçu pour ça.</p>
+<p>*Visuel à produire : <code>svg/structure-examen.svg</code> — trois blocs (obligatoires ·</p>
+<p>tirage au sort · spécifique catégorie), le bloc du tirage marqué d&#39;un point</p>
+<p>d&#39;interrogation et de ses quatre entrées possibles. Aucun texte sur une flèche.*</p>
+<h3>Écran 3 — Les sept catégories : laquelle vous concerne</h3>
+<p>Six catégories couvrent le froid fixe — <b>A1, A2, B, C, D, E</b> — et une</p>
+<p>septième, <b>V</b>, la climatisation des véhicules, relève d&#39;un référentiel</p>
+<p>distinct (II.D).</p>
+<p>Le point à retenir pour un BTS : **la catégorie borne ce que vous avez le droit</p>
+<p>de faire**, pas votre niveau de diplôme. Un titulaire E ne peut que contrôler</p>
+<p>l&#39;étanchéité, à condition de ne pas avoir à accéder au circuit. Un titulaire D</p>
+<p>ne peut que récupérer, et seulement sur les faibles charges.</p>
+<p><i>Visuel : <code>aptitude-capacite-categories.svg</code> (partie basse), déjà produit.</i></p>
+<h3>Écran 4 — La capacité : ce que l&#39;entreprise doit prouver</h3>
+<p>Trois piliers, et ils se contrôlent :</p>
+<ol>
+<li><b>Le personnel</b> — des techniciens titulaires de l&#39;aptitude, en nombre suffisant pour l&#39;activité déclarée ;</li>
+<li><b>L&#39;outillage</b> — les équipements de récupération, de détection et de mesure, maintenus et vérifiés ;</li>
+<li><b>Les procédures</b> — la traçabilité des interventions et des fluides.</li>
+</ol>
+<p>Une entreprise sans capacité ne peut pas exercer, même si tous ses techniciens</p>
+<p>sont attestés. La réciproque est vraie : l&#39;entreprise capable n&#39;autorise pas un</p>
+<p>technicien sans aptitude.</p>
+<p>*Visuel à produire : <code>svg/trois-piliers-capacite.svg</code> — trois colonnes</p>
+<p>(personnel · outillage · procédures) sous un même toit d&#39;entreprise, avec le</p>
+<p>rappel « et il faut aussi l&#39;aptitude de chacun » en bandeau.*</p>
+<p>⟦À vérifier avant production : durée de validité de l&#39;attestation de capacité et</p>
+<p>organisme délivrant — non présents dans <code>referentiel-2025.json</code>, qui ne couvre</p>
+<p>que l&#39;aptitude.⟧</p>
+<h3>Écran 5 — La nouveauté 2025 : elle n&#39;est plus à vie</h3>
+<p>C&#39;est le cœur de la station. Le régime issu de l&#39;arrêté du 21 novembre 2025</p>
+<p>instaure une <b>remise à niveau périodique</b> (annexe VII) :</p>
+<ul>
+<li><b>a minima tous les 7 ans</b>, à compter de la date de délivrance de l&#39;attestation d&#39;aptitude — ou de la dernière remise à niveau ;</li>
+<li>elle est dispensée par un <b>organisme de formation certifié Qualiopi</b>, la démonstration pratique étant réalisée par une <b>entité titulaire d&#39;une attestation de capacité</b> et une <b>personne titulaire d&#39;une aptitude</b> — les deux papiers de l&#39;écran 1 reviennent, à l&#39;autre bout de la chaîne ;</li>
+<li>elle concerne <b>A1, A2, B, C, D et E</b>. La catégorie <b>V en est exclue</b>.</li>
+</ul>
+<p><b>La sanction du défaut</b> : l&#39;attestation est <b>suspendue</b>. Le titulaire ne</p>
+<p>peut plus exercer jusqu&#39;à mise en conformité, dans un délai maximum de <b>3 ans</b>.</p>
+<p>*Visuel à produire : <code>svg/maintien-7-ans.svg</code> — une ligne de temps avec la</p>
+<p>délivrance, le jalon des 7 ans, puis deux issues qui divergent : remise à niveau</p>
+<p>faite (la ligne continue) ou non faite (la ligne se coupe, mention</p>
+<p>« suspendue »). Trait plein contre trait tireté — la couleur ne travaille</p>
+<p>jamais seule.*</p>
+<h3>Écran 6 — Les anciens titulaires : l&#39;échéance du 12 mars 2029</h3>
+<p>Ceux qui détiennent une attestation des <b>anciennes catégories I, II, III ou IV</b></p>
+<p>(règlements (UE) 2015/2067 ou (CE) 303/2008) doivent se mettre en conformité par</p>
+<p>une <b>remise à niveau ponctuelle</b> (annexe VIII), dispensée par un organisme</p>
+<p>formateur certifié — pas nécessairement l&#39;organisme évaluateur.</p>
+<p><b>Échéance : le 12 mars 2029.</b> Passé cette date, l&#39;ancienne attestation n&#39;est</p>
+<p><b>plus valide</b> : son titulaire doit repasser l&#39;examen complet.</p>
+<p>Dit autrement : un technicien attesté en 2018 qui ne fait rien redevient, en</p>
+<p>2029, un candidat.</p>
+<p>*Visuel à produire : <code>svg/bascule-2029.svg</code> — deux voies depuis l&#39;ancienne</p>
+<p>attestation : la remise à niveau ponctuelle (courte) qui rejoint le nouveau</p>
+<p>régime, et l&#39;inaction qui ramène à la case examen. Aucun texte sur les flèches.*</p>
+<h3>Écran 7 — Le raisonnement : quatre situations de terrain</h3>
+<ol>
+<li><b>« Je change d&#39;entreprise. »</b> → L&#39;aptitude vous suit : elle est à vous. Mais la nouvelle entreprise doit avoir sa <b>capacité</b>, sinon vous ne pouvez pas intervenir pour elle.</li>
+<li><b>« Mon entreprise a la capacité, je débute. »</b> → Il vous faut votre propre aptitude, dans la catégorie correspondant aux fluides manipulés.</li>
+<li><b>« Mon attestation date de 2018. »</b> → Ancien régime : la remise à niveau ponctuelle est à faire <b>avant le 12 mars 2029</b>.</li>
+<li><b>« Mon attestation date de 2026. »</b> → Nouveau régime : le compteur des <b>7 ans</b> court à partir de la délivrance.</li>
+</ol>
+<p>*Visuel à produire : <code>svg/quatre-situations.svg</code> — quatre cartes, chacune avec</p>
+<p>la situation et la réponse, sur le motif en cascade de la station F-Gaz 3.*</p>
+<h3>Écran 8 — Bilan et le réflexe</h3>
+<ul>
+<li>Aptitude = <b>la personne</b>. Capacité = <b>l&#39;entreprise</b>. Il faut les deux.</li>
+<li>L&#39;examen mêle groupes obligatoires, <b>au moins un groupe tiré au sort</b> parmi G6 à G9, et un groupe spécifique à la catégorie.</li>
+<li>La catégorie borne les <b>droits d&#39;intervention</b>, pas le niveau de diplôme.</li>
+<li><b>L&#39;attestation se maintient</b> : remise à niveau a minima tous les 7 ans, sous peine de suspension.</li>
+<li>Anciens titulaires : <b>12 mars 2029</b>, sinon retour à l&#39;examen.</li>
+</ul>
+<p>**Le réflexe professionnel : connaître la date de délivrance de sa propre</p>
+<p>attestation.** C&#39;est d&#39;elle que part le compteur.</p>
+<p>*Visuel à produire : <code>svg/bilan-aptitude.svg</code> — sur le modèle de</p>
+<p><code>le-reflexe.svg</code> : la carte d&#39;attestation avec sa date mise en évidence, et le</p>
+<p>compteur qui court.*</p>
+<h3>Les 4 questions (quiz)</h3>
+<blockquote>
+<p>Règle maison : bonnes réponses mélangées, longueurs équilibrées — contrôle</p>
+<p><code>mesure:banque</code> au montage.</p>
+</blockquote>
+<p><b>Q1.</b> Un technicien titulaire d&#39;une attestation d&#39;aptitude rejoint une</p>
+<p>entreprise qui n&#39;a pas d&#39;attestation de capacité. Que peut-il faire ?</p>
+<ul>
+<li>a) Intervenir : son aptitude suffit, elle est personnelle</li>
+<li class="bonne">b) Rien sur les gaz fluorés — il faut aussi la capacité de l&#39;entreprise ✔</li>
+<li>c) Intervenir uniquement sur les faibles charges</li>
+<li>d) Intervenir six mois, le temps que l&#39;entreprise régularise</li>
+</ul>
+<p>*Explication : les deux papiers sont nécessaires ensemble. L&#39;aptitude est à la</p>
+<p>personne et le suit, la capacité est à l&#39;entreprise. L&#39;une ne remplace jamais</p>
+<p>l&#39;autre.*</p>
+<p><b>Q2.</b> Lors de l&#39;évaluation, sur quels groupes le candidat est-il interrogé ?</p>
+<ul>
+<li>a) Uniquement sur les groupes obligatoires</li>
+<li>b) Sur les groupes qu&#39;il choisit dans son dossier</li>
+<li class="bonne">c) Sur les obligatoires, plus au moins un groupe tiré au sort parmi G6 à G9, plus le groupe spécifique à sa catégorie ✔</li>
+<li>d) Sur les quatorze groupes, sans exception</li>
+</ul>
+<p>*Explication : le tirage au sort est là pour empêcher l&#39;impasse — le candidat</p>
+<p>ne sait pas, avant l&#39;évaluation, lequel des quatre sortira.*</p>
+<p><b>Q3.</b> Une attestation d&#39;aptitude délivrée sous le régime de 2025 est valable :</p>
+<ul>
+<li>a) À vie, comme auparavant</li>
+<li>b) Cinq ans, puis elle doit être repassée entièrement</li>
+<li class="bonne">c) Tant qu&#39;une remise à niveau est faite a minima tous les 7 ans ✔</li>
+<li>d) Trois ans, renouvelable une seule fois</li>
+</ul>
+<p>*Explication : c&#39;est la nouveauté du régime. Sans remise à niveau, l&#39;attestation</p>
+<p>est suspendue et son titulaire ne peut plus exercer jusqu&#39;à mise en conformité,</p>
+<p>dans un délai maximum de trois ans.*</p>
+<p><b>Q4.</b> Un technicien détient une attestation de catégorie II obtenue en 2018.</p>
+<p>Que doit-il faire ?</p>
+<ul>
+<li>a) Rien : les anciennes catégories restent valides sans limite</li>
+<li class="bonne">b) Une remise à niveau ponctuelle avant le 12 mars 2029, sinon il devra repasser l&#39;examen ✔</li>
+<li>c) Repasser immédiatement l&#39;examen complet</li>
+<li>d) Demander la conversion automatique en catégorie A2</li>
+</ul>
+<p>*Explication : l&#39;ancien régime bascule vers le nouveau par une remise à niveau</p>
+<p>ponctuelle. Passé l&#39;échéance, l&#39;attestation n&#39;est plus valide et le titulaire</p>
+<p>redevient candidat.*</p>
+<h3>Maillage (correspondances de la station)</h3>
+<ul>
+<li><b>F-Gaz 3</b> (même sous-ligne) — pourquoi les catégories bougent : le règlement pousse vers le CO₂ et l&#39;ammoniac. <i>C&#39;est la correspondance réciproque : F-Gaz 3 pointe déjà vers ici.</i></li>
+<li><b>NF EN 378</b> (même sous-ligne) — ce que la classe du fluide impose en plus.</li>
+<li><b>Droit du travail</b> (autre sous-ligne) — l&#39;employeur et la qualification de ses salariés.</li>
+</ul>
+<h3>Consignes pour la production (à joindre au moment de l&#39;envoi)</h3>
+<ul>
+<li>Charte : projet « Charte graphique inerWeb » — couleurs, polices, logo, encadrés. Couleur d&#39;accent de la sous-ligne : <b>#0f766e</b>.</li>
+<li><b>Reprendre le gabarit de la station F-Gaz 3</b> : 12 écrans navigables, une narration <code>data-narration</code> par écran expliquant ce que l&#39;on VOIT, quiz interactif, une illustration par écran, fondu entre les écrans.</li>
+<li><b>Voix</b> : narrations fabriquées avec Piper (local) après validation du fond — <code>build/voix/collecter-narrations.mjs</code> puis <code>generer-audios-piper.py</code>, index réduit à la station.</li>
+<li>Sortie <b>HTML/SVG uniquement</b>, jamais de bitmap.</li>
+<li>Police lisible à l&#39;impression A4 noir et blanc (≥ 17 px pour le corps).</li>
+<li><b>Aucun texte posé sur un tracé, une flèche ou un schéma.</b></li>
+<li>Aucun nom propre, aucun établissement — non-nominatif strict.</li>
+<li><b>Six SVG à produire</b> (voir écrans 2, 4, 5, 6, 7, 8) et <b>un à copier</b> depuis F-Gaz 3 (<code>aptitude-capacite-categories.svg</code>).</li>
+</ul>
+<hr>
+<h3>⚠️ Ce qui reste à trancher avant production</h3>
+<ol>
+<li><b>Le fond doit être validé par F. Henninot</b> — c&#39;est l&#39;étape 1 du rail.</li>
+<li><b>Écran 4</b> : durée de validité et organisme délivrant l&#39;attestation de capacité ne figurent pas dans <code>referentiel-2025.json</code> (qui ne couvre que l&#39;aptitude). À sourcer, ou à retirer de l&#39;écran.</li>
+<li><b>Le référentiel BTS d&#39;adossement</b> n&#39;étant toujours pas tranché, les codes restent en ⟦…⟧ comme pour F-Gaz 3.</li>
+</ol>
+  <p class="f-retour"><a href="#haut">↑ Revenir à la liste</a></p>
+</section>
+
+<section class="fiche faite" id="fgaz-3">
+  <p class="f-etat">✓ Station déjà produite — relecture libre</p>
+  <h2>Station « F-Gaz 3 » — FOND à valider</h2>
+<blockquote>
+<p>Réseau Législation · sous-ligne Fluidique &amp; thermique · niveau BTS.</p>
+<p>Mini-station ≤ 10 min : 8 écrans + 4 questions.</p>
+<p>**Statut : FOND rédigé le 23/08/2026, EN ATTENTE de validation F. Henninot.</p>
+<p>Rien ne part vers Claude Design avant ce feu vert.**</p>
+<p></p>
+<p>Sources internes : modules <code>g0</code> (« Ce que la loi vous impose ») et <code>g2</code></p>
+<p>(« Impact environnemental et F-Gas ») du pack attestation — la station BTS</p>
+<p>monte d&#39;un cran : elle fait RAISONNER, pas réciter. Ligne maison conservée :</p>
+<p>les mécanismes s&#39;apprennent, les chiffres se vérifient sur le texte en vigueur.</p>
+<p>Adossement : codes 1.00 · 2.01 · 2.02 du référentiel attestation 2025 ;</p>
+<p>⟦codes BTS à compléter quand le référentiel cible sera tranché⟧.</p>
+</blockquote>
+<h3>Objectif</h3>
+<p>À la fin de la station, l&#39;élève de BTS sait situer le règlement (UE) 2024/573</p>
+<p>dans la lignée F-Gas, expliquer le mécanisme des quotas, convertir une charge en</p>
+<p>tonnes équivalent CO₂, et dérouler le raisonnement d&#39;un technicien devant un</p>
+<p>choix de fluide ou d&#39;équipement.</p>
+<h3>Écran 1 — Trois textes, une marche de plus</h3>
+<p>La réglementation européenne des gaz fluorés avance par générations :</p>
+<p><b>F-Gas I</b> (règlement 842/2006), <b>F-Gas II</b> (517/2014), et depuis mars 2024</p>
+<p><b>F-Gaz 3 : le règlement (UE) 2024/573</b>. C&#39;est un <b>règlement</b>, pas une</p>
+<p>directive : il s&#39;applique tel quel dans toute l&#39;Union, sans transposition.</p>
+<p>Côté français, l&#39;<b>arrêté du 21 novembre 2025</b> organise le terrain</p>
+<p>(attestations, contrôles). Chaque génération serre d&#39;un cran : F-Gaz 3 va</p>
+<p>jusqu&#39;à programmer la <b>sortie complète des HFC neufs à l&#39;horizon 2050</b>.</p>
+<p>*Visuel : frise à trois marches montantes 2006 → 2014 → 2024, la troisième</p>
+<p>marche pointant vers 2050.*</p>
+<h3>Écran 2 — Le mécanisme central : le phase-down</h3>
+<p>L&#39;Union ne dit pas « interdit du jour au lendemain » : elle **réduit</p>
+<p>l&#39;enveloppe**. Chaque année, une quantité maximale de HFC peut être mise sur le</p>
+<p>marché, comptée en <b>tonnes équivalent CO₂</b>, et répartie en <b>quotas</b> entre</p>
+<p><b>producteurs et importateurs</b> — pas entre les frigoristes. L&#39;enveloppe</p>
+<p>rétrécit par paliers jusqu&#39;à <b>zéro HFC neufs en 2050</b>.</p>
+<p>Conséquence directe en chantier : les fluides à fort PRP deviennent **rares et</p>
+<p>chers** — le R-404A l&#39;a montré le premier. Le marché pousse tout seul vers les</p>
+<p>bas PRP.</p>
+<p>*Visuel : entonnoir ou escalier descendant (l&#39;enveloppe qui rétrécit), avec les</p>
+<p>bonbonnes qui se raréfient. Pas de pourcentages par année : le mécanisme, pas le</p>
+<p>barème (qui se vérifie sur le texte).*</p>
+<h3>Écran 3 — La conversion qui pilote tout</h3>
+<blockquote>
+<p><b>tonnes éq. CO₂ = charge (kg) × PRP ÷ 1000</b></p>
+</blockquote>
+<p>Deux installations de même charge n&#39;ont pas les mêmes obligations si les</p>
+<p>fluides diffèrent :</p>
+<div class="defilant"><table><thead><tr><th>Installation</th><th>Charge</th><th>PRP</th><th>t éq. CO₂</th></tr></thead><tbody>
+<tr><td>Chambre froide au R-404A</td><td>10 kg</td><td>3922</td><td><b>39,2</b></td></tr>
+<tr><td>Climatisation au R-32</td><td>10 kg</td><td>675</td><td><b>6,75</b></td></tr>
+</tbody></table></div>
+<p>C&#39;est cette valeur — jamais le poids seul — qui déclenche les obligations.</p>
+<p>*Visuel : le calcul en gros, les deux bonbonnes comparées. Reprendre l&#39;échelle</p>
+<p>PRP du pack (CO₂ = 1 · R-32 = 675 · R-410A = 2088 · R-404A = 3922).*</p>
+<h3>Écran 4 — Les interdictions : neuf d&#39;abord, maintenance ensuite</h3>
+<p>Deux familles d&#39;interdictions, à ne pas confondre :</p>
+<ol>
+<li><b>Mise sur le marché d&#39;équipements neufs</b> : l&#39;annexe du règlement fixe un échéancier par catégorie d&#39;équipement et par seuil de PRP (2025 → 2035 : climatiseurs, pompes à chaleur, froid commercial… glissent vers les bas PRP puis les fluides naturels).</li>
+<li><b>Maintenance et entretien</b> : certains fluides à très fort PRP ne peuvent plus servir en appoint — avec des tolérances pour le fluide <b>recyclé ou régénéré</b>, afin que le parc existant vive sa fin de carrière.</li>
+</ol>
+<p><b>La règle maison</b> : ne pas apprendre l&#39;échéancier par cœur — savoir qu&#39;il</p>
+<p>existe, savoir <b>où</b> le vérifier (l&#39;annexe du règlement en vigueur), et</p>
+<p>vérifier à chaque affaire.</p>
+<p>*Visuel : deux colonnes « équipement neuf » / « entretien du parc », avec le</p>
+<p>pictogramme recyclé/régénéré côté entretien.*</p>
+<h3>Écran 5 — Ce qui se durcit sans changer de nature</h3>
+<p>Les obligations héritées de F-Gas II demeurent, resserrées :</p>
+<ul>
+<li><b>Contrôles d&#39;étanchéité</b> périodiques, déclenchés par seuils en t éq. CO₂ (5 / 50 / 500) — plus l&#39;installation « pèse » en équivalent CO₂, plus les contrôles sont fréquents ; au-delà du seuil haut, <b>détection automatique</b>.</li>
+<li><b>Récupération obligatoire</b> du fluide avant toute mise au rebut — la filière DEEE traite la carcasse, jamais le fluide.</li>
+<li><b>Registre d&#39;équipement</b> tenu par l&#39;exploitant : chaque charge, chaque contrôle, chaque fuite y laisse une trace.</li>
+</ul>
+<p>*Visuel : les trois obligations en trois cartes ; renvoi visuel discret vers la</p>
+<p>station Traçabilité (BSD) — c&#39;est le maillage.*</p>
+<h3>Écran 6 — Qui a le droit de toucher</h3>
+<p>Deux papiers, deux titulaires : l&#39;<b>attestation d&#39;aptitude</b> (la personne) et</p>
+<p>l&#39;<b>attestation de capacité</b> (l&#39;entreprise). L&#39;arrêté du 21 novembre 2025</p>
+<p>redessine les catégories d&#39;aptitude — <b>A1, A2, B, C, D, E</b>, auxquelles</p>
+<p>s&#39;ajoute la <b>catégorie V</b> (climatisation des véhicules), qui relève d&#39;un</p>
+<p>référentiel distinct. Ce redécoupage suit le règlement, qui pousse vers les</p>
+<p>alternatives : le <b>CO₂ (catégorie B)</b> et l&#39;<b>ammoniac (catégorie C)</b> entrent</p>
+<p>dans le champ de la formation. Un technicien qui n&#39;évolue pas reste au bord du</p>
+<p>marché.</p>
+<blockquote>
+<p><b>Corrigé le 23/08 après vérification</b> — le fond ne citait que six catégories.</p>
+<p><code>packs/fluides/referentiel-2025.json</code> en porte <b>sept</b> : V s&#39;y ajoute, avec un</p>
+<p>référentiel distinct (II.D). Arbitrage F. Henninot : rendre les sept.</p>
+</blockquote>
+<p>*Visuel : reprendre le SVG existant <code>aptitude-capacite.svg</code> du pack (personne /</p>
+<p>entreprise) en y ajoutant les sept catégories, V étant encadrée en pointillé</p>
+<p>pour dire qu&#39;elle se passe ailleurs.*</p>
+<h3>Écran 7 — Le raisonnement du technicien (cœur BTS)</h3>
+<p>Devant un choix de fluide ou d&#39;équipement, quatre questions, dans l&#39;ordre :</p>
+<ol>
+<li><b>Quel PRP ?</b></li>
+<li><b>Quelle charge → combien de t éq. CO₂ ?</b> (obligations, contrôles)</li>
+<li><b>Ce fluide restera-t-il disponible et abordable sous quota ?</b></li>
+<li><b>Une alternative bas PRP ou naturelle est-elle possible ici ?</b></li>
+</ol>
+<p>Le frigoriste de 2026 n&#39;est plus seulement un poseur : il <b>conseille</b> le</p>
+<p>client sur la trajectoire de son parc. C&#39;est une compétence commerciale autant</p>
+<p>que technique.</p>
+<p>*Visuel : les quatre questions en cascade, façon logigramme simple — aucun</p>
+<p>texte sur les flèches.*</p>
+<h3>Écran 8 — Bilan et le réflexe</h3>
+<ul>
+<li>F-Gaz 3 = règlement (UE) 2024/573, troisième génération, cap 2050.</li>
+<li>Phase-down = enveloppe en t éq. CO₂ qui rétrécit, quotas aux producteurs/importateurs.</li>
+<li>t éq. CO₂ = charge × PRP ÷ 1000 : la valeur qui déclenche tout.</li>
+<li>Interdictions « neuf » ≠ restrictions « maintenance » (recyclé/régénéré).</li>
+<li><b>Le réflexe professionnel : le texte en vigueur fait foi — jamais la fiche d&#39;il y a deux ans.</b></li>
+</ul>
+<h3>Les 4 questions (quiz)</h3>
+<blockquote>
+<p>Règle maison : bonnes réponses mélangées au rendu (mélange déterministe),</p>
+<p>longueurs équilibrées — contrôle <code>mesure:banque</code> au montage.</p>
+</blockquote>
+<p><b>Q1.</b> Le règlement (UE) 2024/573 est entré en application en mars 2024. Que</p>
+<p>remplace-t-il ?</p>
+<ul>
+<li>a) La directive européenne sur les gaz fluorés</li>
+<li class="bonne">b) Le règlement 517/2014, dit F-Gas II ✔</li>
+<li>c) Le protocole de Montréal</li>
+<li>d) L&#39;arrêté du 21 novembre 2025</li>
+</ul>
+<p>*Explication : la lignée est 842/2006 → 517/2014 → 2024/573. Montréal vise</p>
+<p>l&#39;ozone (CFC/HCFC), et l&#39;arrêté français applique le règlement, il ne le</p>
+<p>précède pas.*</p>
+<p><b>Q2.</b> Les quotas du phase-down sont attribués :</p>
+<ul>
+<li class="bonne">a) Aux producteurs et importateurs de HFC ✔</li>
+<li>b) À chaque entreprise d&#39;installation frigorifique</li>
+<li>c) À chaque État membre, qui les répartit</li>
+<li>d) Aux exploitants des installations</li>
+</ul>
+<p>*Explication : le quota se joue à la mise sur le marché. Le frigoriste, lui,</p>
+<p>subit l&#39;effet : rareté et prix des fluides à fort PRP.*</p>
+<p><b>Q3.</b> Une installation contient 8 kg de R-410A (PRP 2088). Sa charge en</p>
+<p>tonnes équivalent CO₂ vaut environ :</p>
+<ul>
+<li>a) 1,7 t éq. CO₂</li>
+<li>b) 8 t éq. CO₂</li>
+<li class="bonne">c) 16,7 t éq. CO₂ ✔</li>
+<li>d) 167 t éq. CO₂</li>
+</ul>
+<p>*Explication : 8 × 2088 ÷ 1000 = 16,7. C&#39;est cette valeur qui déclenche les</p>
+<p>obligations de contrôle d&#39;étanchéité, pas les 8 kg.*</p>
+<p><b>Q4.</b> Un fluide dont la mise sur le marché est interdite en équipement neuf :</p>
+<ul>
+<li>a) Ne peut plus jamais être utilisé, même en maintenance</li>
+<li class="bonne">b) Peut, selon l&#39;échéancier, encore servir en maintenance — notamment recyclé ou régénéré ✔</li>
+<li>c) Doit être détruit immédiatement dans toutes les installations</li>
+<li>d) Reste autorisé en neuf si le client signe une décharge</li>
+</ul>
+<p>*Explication : l&#39;interdiction « neuf » et les restrictions « maintenance » sont</p>
+<p>deux régimes distincts ; le recyclé/régénéré accompagne la fin de carrière du</p>
+<p>parc. Détruire tout le parc du jour au lendemain n&#39;est ni demandé ni possible.*</p>
+<h3>Maillage (correspondances de la station)</h3>
+<ul>
+<li><b>Aptitude &amp; capacité</b> (même sous-ligne) — qui a le droit de toucher.</li>
+<li><b>PRP &amp; ODP</b> (Impact environnemental) — d&#39;où vient le chiffre PRP.</li>
+<li><b>Traçabilité</b> (même sous-ligne) — le fluide récupéré devient déchet tracé.</li>
+</ul>
+<h3>Consignes pour Claude Design (à joindre telles quelles au moment de l&#39;envoi)</h3>
+<ul>
+<li>Charte : projet « Charte graphique inerWeb » (<code>1394c5be-3bc5-441f-93d9-251c89f48ba8</code>) — couleurs, polices, logo, encadrés existants. Couleur d&#39;accent de la sous-ligne : <b>#0f766e</b> (Fluidique &amp; thermique).</li>
+<li>Sortie <b>HTML/SVG uniquement</b>, jamais d&#39;image bitmap — le résultat sera transposé au format maison du site (motif des stations existantes).</li>
+<li>Police lisible à l&#39;impression A4 noir et blanc (≥ 17 px pour le corps).</li>
+<li><b>Aucun texte posé sur un tracé, une flèche ou un schéma.</b></li>
+<li>Curseurs de réglage lisibilité (taille de police, contraste) pour que F. Henninot ajuste sans itération payante.</li>
+<li>Aucun nom propre, aucun établissement — non-nominatif strict.</li>
+<li>Une seule demande cadrée : les 8 écrans + 4 questions de ce document, rien d&#39;inventé, rien d&#39;ajouté.</li>
+</ul>
+<h4>Livrable attendu — arborescence exacte</h4>
+<p>Design rend un dossier autonome, <b>sans le moteur maison</b> : ni voix, ni rail de</p>
+<p>progression, ni <code>referentiel.js</code>, ni bandeau de marque — Code les greffe à</p>
+<p>l&#39;étape 3 en reprenant le gabarit des cours existants du pack.</p>
+<p>```</p>
+<p>stations/fgaz-3/</p>
+<p>  index.html     les 8 écrans à la suite, un &lt;section class=&quot;ecran&quot; id=&quot;ecran-1&quot;&gt;</p>
+<p>                 … jusqu&#39;à id=&quot;ecran-8&quot;, puis &lt;section class=&quot;quiz&quot;&gt; (4 questions)</p>
+<p>  styles.css     toute la mise en forme (aucun style en ligne dans le HTML)</p>
+<p>  svg/frise-generations.svg          écran 1</p>
+<p>  svg/phase-down.svg                 écran 2</p>
+<p>  svg/conversion-teqco2.svg          écran 3</p>
+<p>  svg/deux-regimes.svg               écran 4</p>
+<p>  svg/aptitude-capacite-categories.svg  écran 6 — reprise du SVG maison,</p>
+<p>                                     plus A1 · A2 · B · C · D · E · V</p>
+<p>  svg/raisonnement-technicien.svg    écran 7</p>
+<p>```</p>
+<blockquote>
+<p><b>Deux écarts de nommage, assumés à la transposition (23/08).</b> Le fichier</p>
+<p>s&#39;appelle <code>index.html</code> et non <code>station.html</code> : c&#39;est la convention maison, et</p>
+<p>elle donne l&#39;URL propre <code>stations/fgaz-3/</code>. Le SVG de l&#39;écran 6 s&#39;appelle</p>
+<p><code>…-categories</code> et non <code>…-6cat</code>, puisqu&#39;il en porte sept.</p>
+</blockquote>
+<p>Écrans 5 et 8 : pas de SVG, mise en forme HTML seule (trois cartes / bilan).</p>
+<p>Chaque SVG : <code>viewBox</code> obligatoire, <b>aucune dimension figée en pixels</b>, texte</p>
+<p>en <code>&lt;text&gt;</code> réel — jamais vectorisé, jamais en image — et lisible une fois</p>
+<p>imprimé en A4 noir et blanc.</p>
+<p>Pièce jointe à l&#39;envoi : <code>packs/fluides/res/svg/aptitude-capacite.svg</code> (base de</p>
+<p>l&#39;écran 6).</p>
+  <p class="f-retour"><a href="#haut">↑ Revenir à la liste</a></p>
+</section>
+
+  <p class="pied">Page générée depuis les fonds des stations
+  (<code>legislation/outils/fiches-a-valider.mjs</code>) — jamais saisie à la main.
+  Ajouter une fiche la fait apparaître ici au prochain passage.
+  Document de travail, hors des moteurs de recherche.</p>
+</div>
+</body>
+</html>
