@@ -3,6 +3,27 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 24/08 (soir) — LE 3e RÉSEAU OUVRE : HydroMétro, servi à `/hydrometro/`
+>
+> **https://inerweb.fr/hydrometro/** — l'hydraulique CVC en carte de métro : 22 stations,
+> 4 lignes, trois profondeurs CAP N3 · Bac pro N4 · BTS N5, QCM mélangés, 100 % autonome
+> (aucune dépendance au moteur du site). Feu vert et validation de F. Henninot le 24/08.
+>
+> ⚠️ **`hydrometro/` est une COPIE SERVIE, pas un chantier.** La source de vérité est
+> l'ATELIER `C:\git\hydrometro` (son `PROMPT-REPRISE.md` décrit le régime des deux copies).
+> Toute correction se fait là-bas, puis se recopie ici — ne jamais éditer `hydrometro/`
+> directement. Même régime que `legislation/` : hors `PAGES` de version.mjs, hors sitemap,
+> déplaçable d'un bloc. Commit `0bbb9d5`, version `4b019d4430`.
+>
+> Connecteurs posés : entrée « 💧 HydroMétro » dans « Changer de réseau » du plan principal ;
+> « ⇄ HydroMétro » dans la nav du plan Législation ; et depuis la carte HydroMétro, retour
+> vers les deux autres réseaux. Vérifié sur le site servi en contre-cache : pages en 200,
+> connecteurs présents, **suite Playwright de l'atelier rejouée contre le site en ligne —
+> 84 contrôles de stations + 16 évaluations complètes, 4 formats, 0 échec.**
+>
+> Chantier évoqué par F. Henninot, non lancé : refondre l'accueil pour montrer
+> visuellement les 3 réseaux.
+
 > ## 23/08 — LE 2e RÉSEAU OUVRE EN CONSTRUCTION : `reglementation.html`
 >
 > Demande de F. Henninot (photos d'un sommaire de manuel servant d'**ossature
