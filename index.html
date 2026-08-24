@@ -458,24 +458,14 @@
 
 <div class="page" role="main" id="contenu" tabindex="-1">
 
-  <div class="accroche">
-    <div class="texte">
-      <div class="pastille">APPRENDRE ET DÉCOUVRIR LE FROID</div>
-      <h1>Regarde le métier de frigoriste, <em>station par station</em>.</h1>
-      <p class="chapo">Un plan, un fluide qui circule, des cours à chaque arrêt. Tu montes où tu veux — <strong>gratuit, sans compte</strong>.</p>
-      <div class="boutons">
-        <a class="bouton" href="#carte">Voir le plan ▾</a>
-        <a class="bouton creux" href="galerie.html">Tout le catalogue</a>
-      </div>
-    </div>
-    <div class="flocon">❄️</div>
-  </div>
-
-  <!-- BANNIÈRE inerWeb AquiBlue — demande de F. Henninot du 24/08 : « on
-       peut le mettre en ligne… le mettre en avant, avec un petit logo, une
-       petite bannière pour présenter ce que c'est ». Logo compact de la
-       charte § 3.4, cartouche « AquiBlue ». Règle absolue du projet :
-       aucun nom de marque d'instruments dans quoi que ce soit de visible. -->
+  <!-- BANNIÈRE inerWeb AquiBlue — EN TÊTE DE PAGE, avant même l'accroche.
+       F. Henninot, 24/08 : « je voulais qu'on la voie en première ligne, avec
+       le logo et une petite explication de ce que c'est ; c'est important de le
+       voir d'entrée de jeu, ça fait partie des moteurs qui peuvent donner de la
+       visibilité et du succès au logiciel ». Elle était posée bas de page, il ne
+       la voyait pas : elle est remontée tout en haut.
+       Logo compact de la charte § 3.4, cartouche « AquiBlue ». Règle absolue du
+       projet : aucun nom de marque d'instruments dans quoi que ce soit de visible. -->
   <aside class="bandeau-aquiblue" aria-label="inerWeb AquiBlue">
     <svg class="ba-logo" viewBox="0 0 260 50" role="img" aria-label="inerWeb AquiBlue">
       <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
@@ -494,6 +484,20 @@
       <a class="bouton creux" href="https://github.com/frigorx/aquiblue" rel="noopener">Code source</a>
     </div>
   </aside>
+
+  <div class="accroche">
+    <div class="texte">
+      <div class="pastille">APPRENDRE ET DÉCOUVRIR LE FROID</div>
+      <h1>Regarde le métier de frigoriste, <em>station par station</em>.</h1>
+      <p class="chapo">Un plan, un fluide qui circule, des cours à chaque arrêt. Tu montes où tu veux — <strong>gratuit, sans compte</strong>.</p>
+      <div class="boutons">
+        <a class="bouton" href="#carte">Voir le plan ▾</a>
+        <a class="bouton creux" href="galerie.html">Tout le catalogue</a>
+      </div>
+    </div>
+    <div class="flocon">❄️</div>
+  </div>
+
 
   <!-- Le mot de l'auteur — EN TÊTE de page (placement demandé par
        F. Henninot après sa première navigation, 19/08). Texte dicté par lui,
@@ -992,7 +996,7 @@
 
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
-<script src="plan-descriptions.gen.js?v=f98b5edc85"></script>
+<script src="plan-descriptions.gen.js?v=cd62f3ca41"></script>
 <script>
 /* =====================================================================
    LE PLAN DE FORMATION — généré depuis les données ci-dessous.
@@ -2168,11 +2172,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=f98b5edc85"></script>
-<script src="chiffres.gen.js?v=f98b5edc85"></script>
+<script src="moteur/lisibilite.js?v=cd62f3ca41"></script>
+<script src="chiffres.gen.js?v=cd62f3ca41"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=f98b5edc85" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=cd62f3ca41" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
