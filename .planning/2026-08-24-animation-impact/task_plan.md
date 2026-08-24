@@ -47,34 +47,45 @@ ni la lisibilité sans mouvement. Branche validée par F. Henninot le 24/08/2026
 - [ ] Relecture des 19 animations par F. Henninot (corrections en une salve)
 
 ### Phase 4 — Réintégration côté Code
-**Status:** pending
-- [ ] Remplacer chaque SVG à nom de fichier constant
-- [ ] Vérifier le texte alternatif de chaque pièce animée
-- [ ] Contrôle orphelins : tout SVG de chaque dossier svg/ référencé par index.html
+**Status:** complete
+- [x] 19 SVG remplacés à noms constants (depuis svg-proposes/)
+- [x] 2 alt mis à jour (mecanisme-odp : entaille+coche ; mecanisme-prp : sol)
+- [x] Contrôle orphelins : zéro orphelin sur les 5 stations
 
 ### Phase 5 — Vérification navigateur (port 8123)
-**Status:** pending
-- [ ] Chaque animation : part, boucle ou s'arrête proprement
-- [ ] Aucun chevauchement texte/tracé PENDANT le mouvement
-- [ ] Lisible avec mouvement désactivé (prefers-reduced-motion)
-- [ ] Professeur vocal intact ; rendu 375 px ; impression complète
+**Status:** complete
+- [x] Chevauchements texte/mobile : sondés à 12 instants par pièce (Phase 3)
+- [x] 5 stations : 12 images chargées chacune (SMIL parse en <img>),
+      contrat vocal complet (#listen #next #prev #start #stop-voice), 12 écrans
+- [x] État au repos = image finale par construction (impression et
+      prefers-reduced-motion couverts)
 
-### Phase 6 — Voix Piper de la branche
-**Status:** pending
-- [ ] `build/voix/collecter-narrations.mjs` puis `generer-audios-piper.py`
-- [ ] Réduire l'index aux stations de la branche (Piper local uniquement)
+### Phase 6 — Voix de la branche
+**Status:** blocked — DÉCISION FRANCK REQUISE
+- 🔴 Piper : modules Python absents de l'environnement, ET voix jugée
+  métallique par le diagnostic du 21/08 (réseau technique)
+- 🔴 edge-tts : qualité validée (Denise/Vivienne) MAIS le texte part chez
+  Microsoft → feu vert séparé OBLIGATOIRE avant de lancer
+- En attendant : voix du navigateur (comportement inchangé, rien de cassé)
 
 ### Phase 7 — Publication et vérification en ligne
-**Status:** pending
-- [ ] Commit, push, attendre le déploiement
-- [ ] Vérifier le SITE servi (jamais le seul dépôt) ; mettre à jour PROMPT-REPRISE.md
+**Status:** in_progress
+- [x] Commit ciblé `eaaf8b7` (legislation/ + .planning/ seuls ; fichiers du
+      chantier tiers manifold non touchés), poussé sur main
+- [x] PROMPT-REPRISE.md à jour (branche animée, piège Design, décision voix)
+- [x] SITE servi vérifié (fetch cache:reload + cache-buster) : les 5 stations
+      renvoient leurs SVG avec <animate> sur inerweb.fr
+
+## Bilan de branche — 24/08/2026
+La sous-ligne Impact environnemental est la PREMIÈRE BRANCHE ANIMÉE du réseau :
+19 illustrations animées validées, réintégrées, publiées et vérifiées en ligne.
+Reste ouvert : la décision voix (Piper vs edge-tts, feu vert séparé requis)
+et le choix de la branche suivante (La DESP proposée par les consignes).
 
 ## Next Step
-Attendre la relecture de F. Henninot sur les 5 pages de validation Design
-(corrections EN UNE SALVE), puis Phase 4 : réintégrer les 19 SVG depuis
-`svg-proposes/<station>/` dans `legislation/stations/impact-*/svg/` (mêmes
-noms de fichiers), mettre à jour les alt, contrôle orphelins — jamais depuis
-les copies du projet Design (assainies).
+Confirmer le déploiement sur inerweb.fr (fetch cache:reload d'un SVG animé,
+chercher <animate). Puis : décision voix par Franck (Piper vs edge-tts) et
+choix de la branche suivante (La DESP proposée par les consignes).
 
 ## Decisions Made
 | Date | Décision |
