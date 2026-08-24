@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validation — Station ACV & carbone — animations</title>
+<style>
+  body { margin:0; background:#f7f1e7; color:#10233c;
+         font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;
+         font-size:17px; line-height:1.6; }
+  .page { max-width:1180px; margin:0 auto; padding:24px 20px 60px; }
+  header.bandeau { display:flex; align-items:center; justify-content:space-between;
+         border-bottom:3px solid #047857; padding-bottom:14px; margin-bottom:8px; flex-wrap:wrap; gap:12px; }
+  .logo { line-height:1.15; }
+  .logo .mot { font-size:30px; color:#1b3a63; }
+  .logo .iner { font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; }
+  .logo .web { font-family:"Segoe Script","Comic Sans MS",cursive; }
+  .logo .ligne { border-top:2.5px solid #e8914a; margin-top:2px; position:relative; width:190px; }
+  .logo .cartouche { position:absolute; right:0; top:-13px; background:#e8914a; color:#fffdf8;
+         font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; font-size:13px;
+         padding:2px 10px; border-radius:10px; }
+  .logo .par { font-size:12.5px; color:#637285; margin-top:6px; }
+  h1 { font-family:"Trebuchet MS",Calibri,sans-serif; color:#1b3a63; font-size:27px; margin:18px 0 6px; }
+  a { color:#3d7fca; } a:hover { color:#1b3a63; }
+  .chapeau { color:#637285; margin:0 0 26px; }
+  .piece { background:#fffdf8; border:1.5px solid rgba(27,58,99,.16); border-radius:14px;
+         padding:22px 24px; margin-bottom:30px; }
+  h2 { font-family:"Trebuchet MS",Calibri,sans-serif; color:#047857; font-size:21px; margin:0 0 4px; }
+  .fichier { font-family:Consolas,monospace; font-size:14px; color:#637285; margin:0 0 14px; }
+  .scenario { border:1.5px solid rgba(27,58,99,.16); border-left:5px solid #3d7fca;
+         background:#fbfaf6; border-radius:8px; padding:10px 16px; margin:0 0 18px; font-size:15.5px; }
+  .scenario b { color:#1b3a63; }
+  .duo { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:860px){ .duo { grid-template-columns:1fr; } }
+  .cadre { border:1.5px solid rgba(27,58,99,.16); border-radius:10px; padding:10px; background:#fff; }
+  .cadre p.et { margin:0 0 8px; font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; font-size:15px; }
+  .cadre.avant p.et { color:#637285; }
+  .cadre.apres p.et { color:#047857; }
+  .cadre svg { width:100%; height:auto; display:block; }
+  .change { margin:14px 0 0; font-size:15.5px; }
+  .change b { color:#1b3a63; }
+  footer { color:#637285; font-size:14px; border-top:1.5px solid rgba(27,58,99,.16); padding-top:14px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="bandeau">
+  <div class="logo">
+    <div class="mot">❄️ <span class="iner">iner</span><span class="web">Web</span></div>
+    <div class="ligne"><span class="cartouche">Législation</span></div>
+    <div class="par">par F. Henninot</div>
+  </div>
+  <div style="text-align:right; color:#637285; font-size:14.5px;">
+    Branche Impact environnemental — direction validée le 24/08<br>3 illustrations animées à relire
+  </div>
+</header>
+
+<h1>Station « ACV & carbone » — les 3 animations proposées</h1>
+<p class="chapeau">À gauche l'illustration actuelle (fixe), à droite la version animée proposée.
+L'animation rejoue le scénario de la narration, puis l'image reste stable quelques secondes avant de reboucler.
+À l'arrêt (impression, PDF), la version animée montre exactement l'image finale complète.</p>
+
+<section class="piece">
+  <h2>Écran 1 — Les quatre étapes d'un cycle de vie</h2>
+  <p class="fichier">svg/quatre-etapes-acv.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> quatre blocs reliés par des flèches : fabriquer, transporter, exploiter, démolir — « exploiter » est plus large, c'est l'étape la plus longue.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img"
+     aria-labelledby="s1-t-qe" aria-describedby="s1-d-qe" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s1-t-qe">Les quatre étapes d'une analyse de cycle de vie</title>
+  <desc id="s1-d-qe">Quatre blocs alignés, reliés par des flèches dans l'ordre : fabriquer, transporter,
+    exploiter, démolir. Le bloc « exploiter » est le plus large des quatre, pour rappeler que
+    c'est en général l'étape la plus longue pour un équipement fixe. Une bande en bas indique que
+    ces quatre étapes ensemble forment l'analyse de cycle de vie, ou ACV.</desc>
+  <style>
+    .s1 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s1 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .s1 .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#fffdf8; }
+    .s1 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Le cycle de vie complet, en quatre étapes</text>
+
+  <rect x="20" y="70" width="150" height="90" rx="12" fill="#1b3a63"/>
+  <text class="num" x="95" y="94" text-anchor="middle">1</text>
+  <text class="qui" x="95" y="128" text-anchor="middle">Fabriquer</text>
+
+  <path d="M172,115 h48" stroke="#5a6b7d" stroke-width="3" marker-end="url(#s1-fa)"/>
+
+  <rect x="222" y="70" width="150" height="90" rx="12" fill="#1b3a63"/>
+  <text class="num" x="297" y="94" text-anchor="middle">2</text>
+  <text class="qui" x="297" y="128" text-anchor="middle">Transporter</text>
+
+  <path d="M374,115 h48" stroke="#5a6b7d" stroke-width="3" marker-end="url(#s1-fa)"/>
+
+  <rect x="424" y="60" width="230" height="110" rx="12" fill="#047857"/>
+  <text class="num" x="539" y="86" text-anchor="middle">3</text>
+  <text class="qui" x="539" y="120" text-anchor="middle">Exploiter</text>
+  <text class="num" x="539" y="144" text-anchor="middle" font-weight="normal" font-size="15">la plus longue étape</text>
+
+  <path d="M656,115 h48" stroke="#5a6b7d" stroke-width="3" marker-end="url(#s1-fa)"/>
+
+  <rect x="706" y="70" width="150" height="90" rx="12" fill="#1b3a63"/>
+  <text class="num" x="781" y="94" text-anchor="middle">4</text>
+  <text class="qui" x="781" y="128" text-anchor="middle">Démolir</text>
+
+  <defs>
+    <marker id="s1-fa" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="206" width="860" height="42" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="232" text-anchor="middle" font-weight="bold">Ensemble, ces quatre étapes forment l'analyse de cycle de vie (ACV)</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img"
+     aria-labelledby="s2-t-qe" aria-describedby="s2-d-qe" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s2-t-qe">Les quatre étapes d'une analyse de cycle de vie</title>
+  <desc id="s2-d-qe">Quatre blocs alignés, reliés par des flèches dans l'ordre : fabriquer, transporter,
+    exploiter, démolir. Le bloc « exploiter » est le plus large des quatre, pour rappeler que
+    c'est en général l'étape la plus longue pour un équipement fixe. Une bande en bas indique que
+    ces quatre étapes ensemble forment l'analyse de cycle de vie, ou ACV. L'animation construit
+    la chaîne bloc par bloc et élargit le bloc exploiter ; l'image fixe montre la chaîne complète.</desc>
+  <style>
+    .s2 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s2 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .s2 .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#fffdf8; }
+    .s2 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Le cycle de vie complet, en quatre étapes</text>
+
+  <g>
+    <rect x="20" y="70" width="150" height="90" rx="12" fill="#1b3a63"/>
+    <text class="num" x="95" y="94" text-anchor="middle">1</text>
+    <text class="qui" x="95" y="128" text-anchor="middle">Fabriquer</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.10;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <path d="M172,115 h48" stroke="#5a6b7d" stroke-width="3" marker-end="url(#s2-fa)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.12;0.15;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <rect x="222" y="70" width="150" height="90" rx="12" fill="#1b3a63"/>
+    <text class="num" x="297" y="94" text-anchor="middle">2</text>
+    <text class="qui" x="297" y="128" text-anchor="middle">Transporter</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.17;0.22;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <path d="M374,115 h48" stroke="#5a6b7d" stroke-width="3" marker-end="url(#s2-fa)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.24;0.27;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Exploiter : apparaît à la taille des autres, puis s'élargit -->
+  <g>
+    <rect x="424" y="60" width="230" height="110" rx="12" fill="#047857">
+      <animate attributeName="x" values="464;464;464;424;424" keyTimes="0;0.29;0.35;0.45;1" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="width" values="150;150;150;230;230" keyTimes="0;0.29;0.35;0.45;1" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="70;70;70;60;60" keyTimes="0;0.29;0.35;0.45;1" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="90;90;90;110;110" keyTimes="0;0.29;0.35;0.45;1" dur="14s" repeatCount="indefinite"/>
+    </rect>
+    <text class="num" x="539" y="86" text-anchor="middle">3</text>
+    <text class="qui" x="539" y="120" text-anchor="middle">Exploiter</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.29;0.33;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <text class="num" x="539" y="144" text-anchor="middle" font-weight="normal" font-size="15">la plus longue étape</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.45;0.50;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <path d="M656,115 h48" stroke="#5a6b7d" stroke-width="3" marker-end="url(#s2-fa)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.55;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <rect x="706" y="70" width="150" height="90" rx="12" fill="#1b3a63"/>
+    <text class="num" x="781" y="94" text-anchor="middle">4</text>
+    <text class="qui" x="781" y="128" text-anchor="middle">Démolir</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.57;0.62;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <defs>
+    <marker id="s2-fa" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="206" width="860" height="42" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <g>
+    <text class="band" x="450" y="232" text-anchor="middle" font-weight="bold">Ensemble, ces quatre étapes forment l'analyse de cycle de vie (ACV)</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.72;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> la chaîne se construit bloc par bloc ; « exploiter » apparaît à la taille des autres puis s'élargit — c'est l'étape la plus longue.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 3 — Transporter : de l'usine au chantier</h2>
+  <p class="fichier">svg/transporter.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> un appareil part de l'usine et rejoint le chantier en suivant la route en pointillé, camion schématique.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img"
+     aria-labelledby="s3-t-tr" aria-describedby="s3-d-tr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s3-t-tr">Transporter : de l'usine au chantier</title>
+  <desc id="s3-d-tr">Un appareil sur une palette part de l'usine, à gauche, et rejoint un chantier ou un
+    point d'installation, à droite, en suivant une route en pointillé. Un camion schématique
+    illustre le trajet. Une bande en bas rappelle que cette étape s'ajoute à l'empreinte de la
+    fabrication, avant même la mise en service.</desc>
+  <style>
+    .s3 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s3 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .s3 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Transporter : deuxième étape du cycle</text>
+
+  <!-- usine -->
+  <rect x="40" y="120" width="120" height="70" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <polygon points="40,120 100,90 160,120" fill="none" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="qui" x="100" y="212" text-anchor="middle">Usine</text>
+
+  <!-- route -->
+  <line x1="180" y1="180" x2="680" y2="180" stroke="#5a6b7d" stroke-width="4" stroke-dasharray="14 10"/>
+
+  <!-- camion -->
+  <rect x="360" y="150" width="80" height="40" rx="6" fill="#1b3a63"/>
+  <rect x="440" y="160" width="34" height="30" rx="4" fill="#2f5689"/>
+  <circle cx="380" cy="196" r="10" fill="#10233c"/>
+  <circle cx="450" cy="196" r="10" fill="#10233c"/>
+
+  <!-- chantier -->
+  <rect x="700" y="120" width="130" height="70" fill="#e6f2f0" stroke="#047857" stroke-width="2.5"/>
+  <text class="qui" x="765" y="212" text-anchor="middle">Chantier</text>
+
+  <rect x="20" y="238" width="860" height="42" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="264" text-anchor="middle" font-weight="bold">Le trajet s'ajoute à l'empreinte de fabrication, avant la mise en service.</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img"
+     aria-labelledby="s4-t-tr" aria-describedby="s4-d-tr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s4-t-tr">Transporter : de l'usine au chantier</title>
+  <desc id="s4-d-tr">Un appareil sur une palette part de l'usine, à gauche, et rejoint un chantier ou un
+    point d'installation, à droite, en suivant une route en pointillé. Un camion schématique
+    illustre le trajet. Une bande en bas rappelle que cette étape s'ajoute à l'empreinte de la
+    fabrication, avant même la mise en service. L'animation fait rouler le camion depuis l'usine,
+    roues tournantes ; l'image fixe le montre sur la route, comme la version imprimée.</desc>
+  <style>
+    .s4 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s4 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .s4 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Transporter : deuxième étape du cycle</text>
+
+  <!-- usine -->
+  <rect x="40" y="120" width="120" height="70" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <polygon points="40,120 100,90 160,120" fill="none" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="qui" x="100" y="212" text-anchor="middle">Usine</text>
+
+  <!-- route -->
+  <line x1="180" y1="180" x2="680" y2="180" stroke="#5a6b7d" stroke-width="4" stroke-dasharray="14 10"/>
+
+  <!-- camion : part de l'usine et s'arrête à sa position d'image fixe -->
+  <g>
+    <rect x="360" y="150" width="80" height="40" rx="6" fill="#1b3a63"/>
+    <rect x="440" y="160" width="34" height="30" rx="4" fill="#2f5689"/>
+    <g>
+      <circle cx="380" cy="196" r="10" fill="#10233c"/>
+      <line x1="380" y1="188" x2="380" y2="204" stroke="#fffdf8" stroke-width="2"/>
+      <animateTransform attributeName="transform" type="rotate" additive="replace"
+        values="0 380 196;0 380 196;720 380 196;720 380 196" keyTimes="0;0.10;0.45;1" dur="12s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <circle cx="450" cy="196" r="10" fill="#10233c"/>
+      <line x1="450" y1="188" x2="450" y2="204" stroke="#fffdf8" stroke-width="2"/>
+      <animateTransform attributeName="transform" type="rotate" additive="replace"
+        values="0 450 196;0 450 196;720 450 196;720 450 196" keyTimes="0;0.10;0.45;1" dur="12s" repeatCount="indefinite"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate" additive="replace"
+      values="-180,0;-180,0;0,0;0,0" keyTimes="0;0.10;0.45;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- chantier -->
+  <rect x="700" y="120" width="130" height="70" fill="#e6f2f0" stroke="#047857" stroke-width="2.5"/>
+  <text class="qui" x="765" y="212" text-anchor="middle">Chantier</text>
+
+  <rect x="20" y="238" width="860" height="42" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <g>
+    <text class="band" x="450" y="264" text-anchor="middle" font-weight="bold">Le trajet s'ajoute à l'empreinte de fabrication, avant la mise en service.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.50;0.58;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> le camion part de l'usine et roule, roues tournantes, jusqu'à sa position d'image fixe — celle que l'élève connaît.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 5 — Démolir : fin de vie, récupération et recyclage</h2>
+  <p class="fichier">svg/demolir.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> l'appareil en fin de vie se sépare en trois flux : récupération obligatoire du fluide, matériaux recyclés, et ce qui n'est pas récupéré compte aussi.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="s5-t-dm" aria-describedby="s5-d-dm" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s5-t-dm">Démolir : fin de vie, récupération et recyclage</title>
+  <desc id="s5-d-dm">Un appareil en fin de vie se sépare en trois flux. Le premier, vers une bouteille de
+    récupération, porte la mention récupération obligatoire du fluide. Le deuxième, vers un
+    symbole de recyclage, porte la mention matériaux recyclés. Le troisième, plus petit et en
+    rouge, porte la mention ce qui n'est pas récupéré compte aussi dans le bilan.</desc>
+  <style>
+    .s5 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s5 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .s5 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Démolir : la dernière étape, souvent oubliée</text>
+
+  <!-- appareil en fin de vie -->
+  <rect x="380" y="80" width="140" height="100" rx="10" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <text class="qui" x="450" y="136" text-anchor="middle">Fin de vie</text>
+
+  <!-- flux 1 : récupération fluide -->
+  <path d="M400,180 q-120,60 -230,60" stroke="#1b3a63" stroke-width="3" fill="none" marker-end="url(#s5-fd1)"/>
+  <rect x="60" y="240" width="200" height="60" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="qui" x="160" y="266" text-anchor="middle">récupération</text>
+  <text class="qui" x="160" y="284" text-anchor="middle">obligatoire du fluide</text>
+
+  <!-- flux 2 : recyclage matériaux -->
+  <path d="M500,180 q120,60 230,60" stroke="#047857" stroke-width="3" fill="none" marker-end="url(#s5-fd2)"/>
+  <rect x="640" y="240" width="200" height="60" rx="10" fill="#e6f2f0" stroke="#047857" stroke-width="2"/>
+  <text class="qui" x="740" y="266" text-anchor="middle">matériaux</text>
+  <text class="qui" x="740" y="284" text-anchor="middle">recyclés</text>
+
+  <!-- flux 3 : non récupéré -->
+  <path d="M450,180 v40" stroke="#c0392b" stroke-width="3" fill="none" marker-end="url(#s5-fd3)"/>
+  <rect x="350" y="222" width="200" height="46" rx="10" fill="#fbe7e4" stroke="#c0392b" stroke-width="2"/>
+  <text class="qui" x="450" y="250" text-anchor="middle" fill="#c0392b">ce qui n'est pas récupéré compte aussi</text>
+
+  <defs>
+    <marker id="s5-fd1" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1b3a63"/></marker>
+    <marker id="s5-fd2" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#047857"/></marker>
+    <marker id="s5-fd3" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c0392b"/></marker>
+  </defs>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="s6-t-dm" aria-describedby="s6-d-dm" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s6-t-dm">Démolir : fin de vie, récupération et recyclage</title>
+  <desc id="s6-d-dm">Un appareil en fin de vie se sépare en trois flux. Le premier, vers une bouteille de
+    récupération, porte la mention récupération obligatoire du fluide. Le deuxième, vers un
+    symbole de recyclage, porte la mention matériaux recyclés. Le troisième, plus petit et en
+    rouge, porte la mention ce qui n'est pas récupéré compte aussi dans le bilan. L'animation
+    sépare les trois flux l'un après l'autre ; l'image fixe les montre tous.</desc>
+  <style>
+    .s6 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s6 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .s6 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Démolir : la dernière étape, souvent oubliée</text>
+
+  <!-- appareil en fin de vie -->
+  <g>
+    <rect x="380" y="80" width="140" height="100" rx="10" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+    <text class="qui" x="450" y="136" text-anchor="middle">Fin de vie</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.12;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- flux 1 : récupération fluide -->
+  <g>
+    <path d="M400,180 q-120,60 -230,60" stroke="#1b3a63" stroke-width="3" fill="none" marker-end="url(#s6-fd1)"/>
+    <rect x="60" y="240" width="200" height="60" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+    <text class="qui" x="160" y="266" text-anchor="middle">récupération</text>
+    <text class="qui" x="160" y="284" text-anchor="middle">obligatoire du fluide</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.24;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <circle r="6" fill="#1b3a63" opacity="0">
+    <animateMotion path="M400,180 q-120,60 -230,60" keyPoints="0;0;1;1" keyTimes="0;0.16;0.26;1" calcMode="linear" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.18;0.24;0.27;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- flux 2 : recyclage matériaux -->
+  <g>
+    <path d="M500,180 q120,60 230,60" stroke="#047857" stroke-width="3" fill="none" marker-end="url(#s6-fd2)"/>
+    <rect x="640" y="240" width="200" height="60" rx="10" fill="#e6f2f0" stroke="#047857" stroke-width="2"/>
+    <text class="qui" x="740" y="266" text-anchor="middle">matériaux</text>
+    <text class="qui" x="740" y="284" text-anchor="middle">recyclés</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.38;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <circle r="6" fill="#047857" opacity="0">
+    <animateMotion path="M500,180 q120,60 230,60" keyPoints="0;0;1;1" keyTimes="0;0.30;0.40;1" calcMode="linear" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.30;0.32;0.38;0.41;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- flux 3 : non récupéré -->
+  <g>
+    <path d="M450,180 v40" stroke="#c0392b" stroke-width="3" fill="none" marker-end="url(#s6-fd3)"/>
+    <rect x="350" y="222" width="200" height="46" rx="10" fill="#fbe7e4" stroke="#c0392b" stroke-width="2"/>
+    <text class="qui" x="450" y="250" text-anchor="middle" fill="#c0392b">ce qui n'est pas récupéré compte aussi</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.44;0.52;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <defs>
+    <marker id="s6-fd1" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1b3a63"/></marker>
+    <marker id="s6-fd2" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#047857"/></marker>
+    <marker id="s6-fd3" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c0392b"/></marker>
+  </defs>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> les trois flux se séparent l'un après l'autre, une bille suit chaque trajet — les voies divergent sous les yeux de l'élève.</p>
+</section>
+<footer>
+  Les autres écrans de cette station restent fixes (comparaison côte à côte, carte d'identité,
+  raisonnement, bilan) : l'animation n'y apporterait rien.
+  Réseau Législation inerWeb — document de travail, non diffusé.
+</footer>
+
+</div>
+</body>
+</html>

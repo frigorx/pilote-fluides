@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validation — Station Le TEWI — animations</title>
+<style>
+  body { margin:0; background:#f7f1e7; color:#10233c;
+         font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;
+         font-size:17px; line-height:1.6; }
+  .page { max-width:1180px; margin:0 auto; padding:24px 20px 60px; }
+  header.bandeau { display:flex; align-items:center; justify-content:space-between;
+         border-bottom:3px solid #047857; padding-bottom:14px; margin-bottom:8px; flex-wrap:wrap; gap:12px; }
+  .logo { line-height:1.15; }
+  .logo .mot { font-size:30px; color:#1b3a63; }
+  .logo .iner { font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; }
+  .logo .web { font-family:"Segoe Script","Comic Sans MS",cursive; }
+  .logo .ligne { border-top:2.5px solid #e8914a; margin-top:2px; position:relative; width:190px; }
+  .logo .cartouche { position:absolute; right:0; top:-13px; background:#e8914a; color:#fffdf8;
+         font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; font-size:13px;
+         padding:2px 10px; border-radius:10px; }
+  .logo .par { font-size:12.5px; color:#637285; margin-top:6px; }
+  h1 { font-family:"Trebuchet MS",Calibri,sans-serif; color:#1b3a63; font-size:27px; margin:18px 0 6px; }
+  a { color:#3d7fca; } a:hover { color:#1b3a63; }
+  .chapeau { color:#637285; margin:0 0 26px; }
+  .piece { background:#fffdf8; border:1.5px solid rgba(27,58,99,.16); border-radius:14px;
+         padding:22px 24px; margin-bottom:30px; }
+  h2 { font-family:"Trebuchet MS",Calibri,sans-serif; color:#047857; font-size:21px; margin:0 0 4px; }
+  .fichier { font-family:Consolas,monospace; font-size:14px; color:#637285; margin:0 0 14px; }
+  .scenario { border:1.5px solid rgba(27,58,99,.16); border-left:5px solid #3d7fca;
+         background:#fbfaf6; border-radius:8px; padding:10px 16px; margin:0 0 18px; font-size:15.5px; }
+  .scenario b { color:#1b3a63; }
+  .duo { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:860px){ .duo { grid-template-columns:1fr; } }
+  .cadre { border:1.5px solid rgba(27,58,99,.16); border-radius:10px; padding:10px; background:#fff; }
+  .cadre p.et { margin:0 0 8px; font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; font-size:15px; }
+  .cadre.avant p.et { color:#637285; }
+  .cadre.apres p.et { color:#047857; }
+  .cadre svg { width:100%; height:auto; display:block; }
+  .change { margin:14px 0 0; font-size:15.5px; }
+  .change b { color:#1b3a63; }
+  footer { color:#637285; font-size:14px; border-top:1.5px solid rgba(27,58,99,.16); padding-top:14px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="bandeau">
+  <div class="logo">
+    <div class="mot">❄️ <span class="iner">iner</span><span class="web">Web</span></div>
+    <div class="ligne"><span class="cartouche">Législation</span></div>
+    <div class="par">par F. Henninot</div>
+  </div>
+  <div style="text-align:right; color:#637285; font-size:14.5px;">
+    Branche Impact environnemental — direction validée le 24/08<br>5 illustrations animées à relire
+  </div>
+</header>
+
+<h1>Station « Le TEWI » — les 5 animations proposées</h1>
+<p class="chapeau">À gauche l'illustration actuelle (fixe), à droite la version animée proposée.
+L'animation rejoue le scénario de la narration, puis l'image reste stable quelques secondes avant de reboucler.
+À l'arrêt (impression, PDF), la version animée montre exactement l'image finale complète.</p>
+
+<section class="piece">
+  <h2>Écran 1 — Le TEWI : une balance à deux plateaux</h2>
+  <p class="fichier">svg/balance-tewi.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> les deux plateaux se chargent tour à tour ; aucun n'est plus lourd par principe — la balance reste à l'équilibre, c'est le cas réel de chaque machine qui décide.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s1-t-bal" aria-describedby="s1-d-bal" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s1-t-bal">Le TEWI, une balance à deux plateaux</title>
+  <desc id="s1-d-bal">Une balance. Le pivot central porte la mention TEWI. Le plateau de gauche
+    porte la part directe : les fuites de fluide frigorigène, multipliées par le PRP du fluide.
+    Le plateau de droite porte la part indirecte : l'énergie électrique consommée par la machine,
+    multipliée par sa durée de vie. Les deux plateaux sont reliés au pivot par une chaîne, et la
+    balance est représentée à l'équilibre : aucun des deux poids n'est montré comme plus lourd que
+    l'autre par principe, c'est le cas réel de chaque machine qui décide. En bas, une bande résume
+    la formule : TEWI égale la part directe plus la part indirecte.</desc>
+  <style>
+    .s1 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s1 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#047857; }
+    .s1 .lbl { font-size:15px; fill:#10233c; }
+    .s1 .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .s1 .piv { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#fffdf8; }
+  </style>
+
+  <text class="ttl" x="450" y="34" text-anchor="middle">Le TEWI additionne deux poids</text>
+
+  <!-- Le fléau -->
+  <line x1="150" y1="120" x2="750" y2="120" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="450" y1="120" x2="450" y2="222" stroke="#1b3a63" stroke-width="4"/>
+
+  <!-- Le pivot -->
+  <polygon points="450,222 420,268 480,268" fill="#047857" stroke="#10233c" stroke-width="2"/>
+  <rect x="410" y="266" width="80" height="16" rx="4" fill="#047857"/>
+  <text class="piv" x="450" y="278" text-anchor="middle">TEWI</text>
+
+  <!-- Chaînes -->
+  <line x1="150" y1="120" x2="150" y2="176" stroke="#5a6b7d" stroke-width="2"/>
+  <line x1="750" y1="120" x2="750" y2="176" stroke="#5a6b7d" stroke-width="2"/>
+
+  <!-- Plateau gauche : part directe -->
+  <ellipse cx="150" cy="210" rx="140" ry="66" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <text class="qui" x="150" y="192" text-anchor="middle">Part directe</text>
+  <text class="lbl" x="150" y="216" text-anchor="middle">fuites de fluide frigorigène</text>
+  <text class="lbl" x="150" y="238" text-anchor="middle">× PRP du fluide</text>
+
+  <!-- Plateau droit : part indirecte -->
+  <ellipse cx="750" cy="210" rx="140" ry="66" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="qui" x="750" y="192" text-anchor="middle" fill="#1b3a63">Part indirecte</text>
+  <text class="lbl" x="750" y="216" text-anchor="middle">énergie électrique consommée</text>
+  <text class="lbl" x="750" y="238" text-anchor="middle">× durée de vie de la machine</text>
+
+  <!-- Bande formule -->
+  <rect x="20" y="316" width="860" height="46" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="344" text-anchor="middle">TEWI = part directe + part indirecte</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s2-t-bal" aria-describedby="s2-d-bal" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s2-t-bal">Le TEWI, une balance à deux plateaux</title>
+  <desc id="s2-d-bal">Une balance. Le pivot central porte la mention TEWI. Le plateau de gauche
+    porte la part directe : les fuites de fluide frigorigène, multipliées par le PRP du fluide.
+    Le plateau de droite porte la part indirecte : l'énergie électrique consommée par la machine,
+    multipliée par sa durée de vie. Les deux plateaux sont reliés au pivot par une chaîne, et la
+    balance est représentée à l'équilibre : aucun des deux poids n'est montré comme plus lourd que
+    l'autre par principe, c'est le cas réel de chaque machine qui décide. En bas, une bande résume
+    la formule : TEWI égale la part directe plus la part indirecte. L'animation charge les deux
+    plateaux l'un après l'autre, la balance restant à l'équilibre ; l'image fixe est complète.</desc>
+  <style>
+    .s2 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s2 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#047857; }
+    .s2 .lbl { font-size:15px; fill:#10233c; }
+    .s2 .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .s2 .piv { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#fffdf8; }
+  </style>
+
+  <text class="ttl" x="450" y="34" text-anchor="middle">Le TEWI additionne deux poids</text>
+
+  <!-- Le fléau -->
+  <line x1="150" y1="120" x2="750" y2="120" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="450" y1="120" x2="450" y2="222" stroke="#1b3a63" stroke-width="4"/>
+
+  <!-- Le pivot -->
+  <polygon points="450,222 420,268 480,268" fill="#047857" stroke="#10233c" stroke-width="2"/>
+  <rect x="410" y="266" width="80" height="16" rx="4" fill="#047857"/>
+  <text class="piv" x="450" y="278" text-anchor="middle">TEWI</text>
+
+  <!-- Chaînes -->
+  <line x1="150" y1="120" x2="150" y2="176" stroke="#5a6b7d" stroke-width="2"/>
+  <line x1="750" y1="120" x2="750" y2="176" stroke="#5a6b7d" stroke-width="2"/>
+
+  <!-- Plateau gauche : part directe (se charge en premier) -->
+  <ellipse cx="150" cy="210" rx="140" ry="66" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <g>
+    <text class="qui" x="150" y="192" text-anchor="middle">Part directe</text>
+    <text class="lbl" x="150" y="216" text-anchor="middle">fuites de fluide frigorigène</text>
+    <text class="lbl" x="150" y="238" text-anchor="middle">× PRP du fluide</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.10;0.20;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Plateau droit : part indirecte (se charge en second) -->
+  <ellipse cx="750" cy="210" rx="140" ry="66" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g>
+    <text class="qui" x="750" y="192" text-anchor="middle" fill="#1b3a63">Part indirecte</text>
+    <text class="lbl" x="750" y="216" text-anchor="middle">énergie électrique consommée</text>
+    <text class="lbl" x="750" y="238" text-anchor="middle">× durée de vie de la machine</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.32;0.42;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bande formule -->
+  <rect x="20" y="316" width="860" height="46" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <g>
+    <text class="band" x="450" y="344" text-anchor="middle">TEWI = part directe + part indirecte</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.54;0.62;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> les deux plateaux se chargent l'un après l'autre, la balance reste à l'équilibre, puis la formule s'affiche.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 2 — La part directe, en détail</h2>
+  <p class="fichier">svg/part-directe.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> « Suivez la chaîne de gauche à droite » : machine qui fuit × PRP du fluide = part directe en équivalent CO₂.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="s3-t-dir" aria-describedby="s3-d-dir" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s3-t-dir">La part directe : masse de fluide fuie multipliée par le PRP</title>
+  <desc id="s3-d-dir">Une chaîne de trois blocs reliés par des signes. Premier bloc : une machine
+    frigorifique schématique avec une goutte qui s'en échappe, portant la mention masse de fluide
+    fuie sur toute la durée de vie de la machine. Un signe multiplié. Deuxième bloc : une étiquette
+    portant la mention PRP du fluide, le pouvoir de réchauffement planétaire propre à chaque
+    fluide. Un signe égal. Troisième bloc, encadré en vert : la part directe, exprimée en
+    équivalent CO2. En bas, une phrase rappelle que plus la machine fuit et plus le fluide a un
+    PRP élevé, plus la part directe est lourde.</desc>
+  <style>
+    .s3 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s3 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#1b3a63; }
+    .s3 .lbl { font-size:15px; fill:#10233c; }
+    .s3 .op { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:36px; fill:#5a6b7d; }
+    .s3 .res { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .s3 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">La part directe, bloc par bloc</text>
+
+  <!-- Bloc 1 : masse fuie -->
+  <rect x="20" y="60" width="230" height="140" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="70" y="78" width="130" height="60" rx="8" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <circle cx="185" cy="130" r="9" fill="#1b3a63"/>
+  <path d="M185,130 q10,16 0,24 q-10,-8 0,-24 z" fill="#1b3a63"/>
+  <text class="qui" x="135" y="168" text-anchor="middle">Masse fuie</text>
+  <text class="lbl" x="135" y="188" text-anchor="middle">sur toute la vie de la machine</text>
+
+  <text class="op" x="278" y="145" text-anchor="middle">×</text>
+
+  <!-- Bloc 2 : PRP -->
+  <rect x="308" y="60" width="230" height="140" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="358" y="90" width="130" height="42" rx="8" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lbl" x="423" y="117" text-anchor="middle">étiquette du fluide</text>
+  <text class="qui" x="423" y="164" text-anchor="middle">PRP du fluide</text>
+  <text class="lbl" x="423" y="184" text-anchor="middle">propre à chaque fluide</text>
+
+  <text class="op" x="566" y="145" text-anchor="middle">=</text>
+
+  <!-- Bloc 3 : résultat -->
+  <rect x="596" y="60" width="284" height="140" rx="14" fill="#047857" stroke="#10233c" stroke-width="3"/>
+  <text class="res" x="738" y="118" text-anchor="middle">Part directe</text>
+  <text class="res" x="738" y="146" text-anchor="middle" font-size="16px">équivalent CO₂</text>
+  <text class="res" x="738" y="170" text-anchor="middle" font-size="14px" font-weight="normal">(fuites de la machine)</text>
+
+  <rect x="20" y="234" width="860" height="60" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="258" text-anchor="middle" font-weight="bold">Plus la machine fuit, plus le PRP du fluide est élevé,</text>
+  <text class="band" x="450" y="280" text-anchor="middle" font-weight="bold">plus la part directe pèse lourd.</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="s4-t-dir" aria-describedby="s4-d-dir" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s4-t-dir">La part directe : masse de fluide fuie multipliée par le PRP</title>
+  <desc id="s4-d-dir">Une chaîne de trois blocs reliés par des signes. Premier bloc : une machine
+    frigorifique schématique avec une goutte qui s'en échappe, portant la mention masse de fluide
+    fuie sur toute la durée de vie de la machine. Un signe multiplié. Deuxième bloc : une étiquette
+    portant la mention PRP du fluide, le pouvoir de réchauffement planétaire propre à chaque
+    fluide. Un signe égal. Troisième bloc, encadré en vert : la part directe, exprimée en
+    équivalent CO2. En bas, une phrase rappelle que plus la machine fuit et plus le fluide a un
+    PRP élevé, plus la part directe est lourde. L'animation déroule la chaîne bloc par bloc,
+    de gauche à droite ; l'image fixe montre la chaîne complète.</desc>
+  <style>
+    .s4 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s4 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#1b3a63; }
+    .s4 .lbl { font-size:15px; fill:#10233c; }
+    .s4 .op { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:36px; fill:#5a6b7d; }
+    .s4 .res { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .s4 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">La part directe, bloc par bloc</text>
+
+  <!-- Bloc 1 : masse fuie -->
+  <g>
+    <rect x="20" y="60" width="230" height="140" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <rect x="70" y="78" width="130" height="60" rx="8" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+    <circle cx="185" cy="130" r="9" fill="#1b3a63"/>
+    <path d="M185,130 q10,16 0,24 q-10,-8 0,-24 z" fill="#1b3a63"/>
+    <text class="qui" x="135" y="168" text-anchor="middle">Masse fuie</text>
+    <text class="lbl" x="135" y="188" text-anchor="middle">sur toute la vie de la machine</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.14;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- goutte mobile qui tombe de la machine (décor animé : invisible à l'arrêt) -->
+  <circle cx="185" cy="130" r="4" fill="#1b3a63" opacity="0">
+    <animate attributeName="cy" values="130;130;146;146" keyTimes="0;0.15;0.26;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.15;0.17;0.24;0.27;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <g>
+    <text class="op" x="278" y="145" text-anchor="middle">×</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.20;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bloc 2 : PRP -->
+  <g>
+    <rect x="308" y="60" width="230" height="140" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <rect x="358" y="90" width="130" height="42" rx="8" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+    <text class="lbl" x="423" y="117" text-anchor="middle">étiquette du fluide</text>
+    <text class="qui" x="423" y="164" text-anchor="middle">PRP du fluide</text>
+    <text class="lbl" x="423" y="184" text-anchor="middle">propre à chaque fluide</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.22;0.30;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <text class="op" x="566" y="145" text-anchor="middle">=</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.32;0.36;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bloc 3 : résultat -->
+  <g>
+    <rect x="596" y="60" width="284" height="140" rx="14" fill="#047857" stroke="#10233c" stroke-width="3"/>
+    <text class="res" x="738" y="118" text-anchor="middle">Part directe</text>
+    <text class="res" x="738" y="146" text-anchor="middle" font-size="16px">équivalent CO₂</text>
+    <text class="res" x="738" y="170" text-anchor="middle" font-size="14px" font-weight="normal">(fuites de la machine)</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.38;0.46;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <rect x="20" y="234" width="860" height="60" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <g>
+    <text class="band" x="450" y="258" text-anchor="middle" font-weight="bold">Plus la machine fuit, plus le PRP du fluide est élevé,</text>
+    <text class="band" x="450" y="280" text-anchor="middle" font-weight="bold">plus la part directe pèse lourd.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.60;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> la chaîne se déroule bloc par bloc, une goutte tombe de la machine pendant la première étape.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 3 — La part indirecte, en détail</h2>
+  <p class="fichier">svg/part-indirecte.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> même principe de chaîne : énergie consommée × durée de vie → réseau électrique du pays → part indirecte en équivalent CO₂.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="s5-t-ind" aria-describedby="s5-d-ind" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s5-t-ind">La part indirecte : énergie consommée sur toute la vie, convertie en CO2</title>
+  <desc id="s5-d-ind">Une chaîne de blocs. Premier bloc : un compteur électrique schématique portant
+    la mention énergie consommée sur toute la vie de la machine. Un signe multiplié. Deuxième
+    bloc : une horloge portant la mention durée de vie de la machine. Une flèche mène vers un
+    troisième bloc représentant le réseau électrique du pays où tourne la machine, avec la
+    mention l'électricité n'est jamais neutre à produire. Une dernière flèche mène au résultat,
+    encadré en vert : la part indirecte, exprimée en équivalent CO2.</desc>
+  <style>
+    .s5 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s5 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .s5 .lbl { font-size:15px; fill:#10233c; }
+    .s5 .op { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:32px; fill:#5a6b7d; }
+    .s5 .res { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .s5 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">La part indirecte, bloc par bloc</text>
+
+  <!-- Bloc 1 : énergie -->
+  <rect x="16" y="58" width="196" height="130" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="56" y="76" width="116" height="52" rx="6" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="114" y="106" text-anchor="middle" font-size="20px" font-weight="bold" fill="#5a6b7d">kWh</text>
+  <text class="qui" x="114" y="150" text-anchor="middle" font-size="16px">Énergie</text>
+  <text class="lbl" x="114" y="168" text-anchor="middle" font-size="13px">consommée</text>
+
+  <text class="op" x="234" y="130" text-anchor="middle">×</text>
+
+  <!-- Bloc 2 : durée de vie -->
+  <rect x="256" y="58" width="196" height="130" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="354" cy="102" r="26" fill="none" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="354" y1="102" x2="354" y2="86" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="354" y1="102" x2="366" y2="108" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="qui" x="354" y="150" text-anchor="middle" font-size="16px">Durée de vie</text>
+  <text class="lbl" x="354" y="168" text-anchor="middle" font-size="13px">de la machine</text>
+
+  <!-- Flèche vers réseau -->
+  <path d="M474,122 h60" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#s5-fl1)"/>
+
+  <!-- Bloc 3 : réseau électrique -->
+  <rect x="546" y="58" width="200" height="130" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <circle cx="646" cy="98" r="22" fill="none" stroke="#2f5689" stroke-width="3"/>
+  <line x1="646" y1="76" x2="646" y2="120" stroke="#2f5689" stroke-width="2"/>
+  <line x1="624" y1="98" x2="668" y2="98" stroke="#2f5689" stroke-width="2"/>
+  <text class="qui" x="646" y="148" text-anchor="middle" font-size="15px">Réseau électrique</text>
+  <text class="lbl" x="646" y="166" text-anchor="middle" font-size="13px">du pays où elle tourne</text>
+
+  <!-- Flèche vers résultat -->
+  <path d="M746,122 q34,0 34,26 l0,66" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#s5-fl2)"/>
+
+  <defs>
+    <marker id="s5-fl1" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5a6b7d"/>
+    </marker>
+    <marker id="s5-fl2" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+
+  <!-- Résultat -->
+  <rect x="546" y="220" width="334" height="76" rx="14" fill="#047857" stroke="#10233c" stroke-width="3"/>
+  <text class="res" x="713" y="252" text-anchor="middle">Part indirecte</text>
+  <text class="res" x="713" y="276" text-anchor="middle" font-size="15px" font-weight="normal">équivalent CO₂ (énergie consommée)</text>
+
+  <rect x="16" y="222" width="500" height="74" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="266" y="248" text-anchor="middle" font-weight="bold">L'électricité n'est jamais neutre à produire :</text>
+  <text class="band" x="266" y="270" text-anchor="middle" font-weight="bold">sa part de CO₂ dépend du réseau utilisé.</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="s6-t-ind" aria-describedby="s6-d-ind" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s6-t-ind">La part indirecte : énergie consommée sur toute la vie, convertie en CO2</title>
+  <desc id="s6-d-ind">Une chaîne de blocs. Premier bloc : un compteur électrique schématique portant
+    la mention énergie consommée sur toute la vie de la machine. Un signe multiplié. Deuxième
+    bloc : une horloge portant la mention durée de vie de la machine. Une flèche mène vers un
+    troisième bloc représentant le réseau électrique du pays où tourne la machine, avec la
+    mention l'électricité n'est jamais neutre à produire. Une dernière flèche mène au résultat,
+    encadré en vert : la part indirecte, exprimée en équivalent CO2. L'animation déroule la
+    chaîne bloc par bloc et fait tourner l'aiguille de l'horloge ; l'image fixe est complète.</desc>
+  <style>
+    .s6 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s6 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .s6 .lbl { font-size:15px; fill:#10233c; }
+    .s6 .op { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:32px; fill:#5a6b7d; }
+    .s6 .res { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .s6 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">La part indirecte, bloc par bloc</text>
+
+  <!-- Bloc 1 : énergie -->
+  <g>
+    <rect x="16" y="58" width="196" height="130" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <rect x="56" y="76" width="116" height="52" rx="6" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+    <text class="lbl" x="114" y="106" text-anchor="middle" font-size="20px" font-weight="bold" fill="#5a6b7d">kWh</text>
+    <text class="qui" x="114" y="150" text-anchor="middle" font-size="16px">Énergie</text>
+    <text class="lbl" x="114" y="168" text-anchor="middle" font-size="13px">consommée</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.12;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <text class="op" x="234" y="130" text-anchor="middle">×</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.14;0.18;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bloc 2 : durée de vie -->
+  <g>
+    <rect x="256" y="58" width="196" height="130" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="354" cy="102" r="26" fill="none" stroke="#5a6b7d" stroke-width="3"/>
+    <line x1="354" y1="102" x2="354" y2="86" stroke="#5a6b7d" stroke-width="3"/>
+    <g>
+      <line x1="354" y1="102" x2="366" y2="108" stroke="#5a6b7d" stroke-width="3"/>
+      <animateTransform attributeName="transform" type="rotate" additive="replace"
+        values="0 354 102;0 354 102;360 354 102;360 354 102" keyTimes="0;0.20;0.48;1" dur="12s" repeatCount="indefinite"/>
+    </g>
+    <text class="qui" x="354" y="150" text-anchor="middle" font-size="16px">Durée de vie</text>
+    <text class="lbl" x="354" y="168" text-anchor="middle" font-size="13px">de la machine</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.19;0.26;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Flèche vers réseau -->
+  <g>
+    <path d="M474,122 h60" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#s6-fl1)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.28;0.34;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bloc 3 : réseau électrique -->
+  <g>
+    <rect x="546" y="58" width="200" height="130" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+    <circle cx="646" cy="98" r="22" fill="none" stroke="#2f5689" stroke-width="3"/>
+    <line x1="646" y1="76" x2="646" y2="120" stroke="#2f5689" stroke-width="2"/>
+    <line x1="624" y1="98" x2="668" y2="98" stroke="#2f5689" stroke-width="2"/>
+    <text class="qui" x="646" y="148" text-anchor="middle" font-size="15px">Réseau électrique</text>
+    <text class="lbl" x="646" y="166" text-anchor="middle" font-size="13px">du pays où elle tourne</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.42;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Flèche vers résultat -->
+  <g>
+    <path d="M746,122 q34,0 34,26 l0,66" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#s6-fl2)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.44;0.50;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <defs>
+    <marker id="s6-fl1" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5a6b7d"/>
+    </marker>
+    <marker id="s6-fl2" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+
+  <!-- Résultat -->
+  <g>
+    <rect x="546" y="220" width="334" height="76" rx="14" fill="#047857" stroke="#10233c" stroke-width="3"/>
+    <text class="res" x="713" y="252" text-anchor="middle">Part indirecte</text>
+    <text class="res" x="713" y="276" text-anchor="middle" font-size="15px" font-weight="normal">équivalent CO₂ (énergie consommée)</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.60;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <rect x="16" y="222" width="500" height="74" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <g>
+    <text class="band" x="266" y="248" text-anchor="middle" font-weight="bold">L'électricité n'est jamais neutre à produire :</text>
+    <text class="band" x="266" y="270" text-anchor="middle" font-weight="bold">sa part de CO₂ dépend du réseau utilisé.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.68;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> la chaîne se déroule bloc par bloc et l'aiguille de l'horloge fait un tour complet — les années de service passent.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 4 — Piège n°1 : la machine gourmande</h2>
+  <p class="fichier">svg/piege-machine-gourmande.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> fluide propane PRP 3, peu de fuites : direct faible ; compteur poussé dans le rouge : indirect fort ; la balance penche côté indirect.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="s7-t-p1" aria-describedby="s7-d-p1" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s7-t-p1">Piège n°1 : un fluide bas PRP mais une machine mal dimensionnée</title>
+  <desc id="s7-d-p1">À gauche, une pompe à chaleur schématique porte l'étiquette propane, PRP 3, et la
+    mention peu de fuites : le direct est marqué faible. À droite, un compteur électrique dont
+    l'aiguille est poussée vers la zone rouge porte la mention consommation élevée, machine mal
+    dimensionnée : l'indirect est marqué fort. En bas, une balance penche nettement du côté de
+    l'indirect, avec la conclusion écrite : malgré un fluide bas PRP, l'indirect peut dominer le
+    TEWI.</desc>
+  <style>
+    .s7 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s7 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1e7e54; }
+    .s7 .lbl { font-size:15px; fill:#10233c; }
+    .s7 .lblr { font-size:15px; fill:#c0392b; }
+    .s7 .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Fluide bas PRP, mais machine gourmande</text>
+
+  <!-- PAC, fluide bas PRP -->
+  <rect x="30" y="56" width="380" height="150" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <rect x="60" y="76" width="150" height="86" rx="8" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="135" y="112" text-anchor="middle" font-weight="bold">Pompe à</text>
+  <text class="lbl" x="135" y="132" text-anchor="middle" font-weight="bold">chaleur</text>
+  <text class="lbl" x="135" y="150" text-anchor="middle" font-size="13px">fluide propane</text>
+  <circle cx="320" cy="104" r="7" fill="#1e7e54"/>
+  <text class="qui" x="320" y="132" text-anchor="middle" font-size="15px">PRP 3</text>
+  <text class="lbl" x="320" y="152" text-anchor="middle" font-size="13px">peu de fuites</text>
+  <text class="qui" x="220" y="188" text-anchor="middle" font-size="16px">Direct : faible</text>
+
+  <!-- Compteur, consommation élevée -->
+  <rect x="490" y="56" width="380" height="150" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="590" cy="112" r="40" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <line x1="590" y1="112" x2="616" y2="90" stroke="#c0392b" stroke-width="4"/>
+  <circle cx="590" cy="112" r="4" fill="#c0392b"/>
+  <text class="lblr" x="720" y="106" text-anchor="middle" font-size="15px">consommation</text>
+  <text class="lblr" x="720" y="126" text-anchor="middle" font-size="15px">élevée</text>
+  <text class="lblr" x="720" y="150" text-anchor="middle" font-size="13px">machine mal dimensionnée</text>
+  <text class="qui" x="680" y="188" text-anchor="middle" font-size="16px" fill="#c0392b">Indirect : fort</text>
+
+  <!-- Balance -->
+  <line x1="220" y1="238" x2="680" y2="266" stroke="#1b3a63" stroke-width="4"/>
+  <polygon points="450,238 428,278 472,278" fill="#5a6b7d" stroke="#10233c" stroke-width="2"/>
+  <line x1="220" y1="238" x2="220" y2="264" stroke="#5a6b7d" stroke-width="2"/>
+  <ellipse cx="220" cy="286" rx="70" ry="26" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+  <text class="lbl" x="220" y="292" text-anchor="middle" font-size="14px">direct</text>
+  <line x1="680" y1="266" x2="680" y2="298" stroke="#5a6b7d" stroke-width="2"/>
+  <ellipse cx="680" cy="320" rx="70" ry="26" fill="#fbe7e4" stroke="#c0392b" stroke-width="2"/>
+  <text class="lblr" x="680" y="326" text-anchor="middle" font-size="14px">indirect</text>
+
+  <rect x="20" y="360" width="860" height="30" rx="10" fill="none"/>
+  <text class="band" x="450" y="378" text-anchor="middle">Malgré un fluide « propre », l'indirect peut dominer le TEWI.</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="s8-t-p1" aria-describedby="s8-d-p1" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s8-t-p1">Piège n°1 : un fluide bas PRP mais une machine mal dimensionnée</title>
+  <desc id="s8-d-p1">À gauche, une pompe à chaleur schématique porte l'étiquette propane, PRP 3, et la
+    mention peu de fuites : le direct est marqué faible. À droite, un compteur électrique dont
+    l'aiguille est poussée vers la zone rouge porte la mention consommation élevée, machine mal
+    dimensionnée : l'indirect est marqué fort. En bas, une balance penche nettement du côté de
+    l'indirect, avec la conclusion écrite : malgré un fluide bas PRP, l'indirect peut dominer le
+    TEWI. L'animation fait monter l'aiguille dans le rouge puis pencher la balance ; l'image
+    fixe montre déjà la balance penchée.</desc>
+  <style>
+    .s8 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s8 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1e7e54; }
+    .s8 .lbl { font-size:15px; fill:#10233c; }
+    .s8 .lblr { font-size:15px; fill:#c0392b; }
+    .s8 .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Fluide bas PRP, mais machine gourmande</text>
+
+  <!-- PAC, fluide bas PRP -->
+  <g>
+    <rect x="30" y="56" width="380" height="150" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+    <rect x="60" y="76" width="150" height="86" rx="8" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+    <text class="lbl" x="135" y="112" text-anchor="middle" font-weight="bold">Pompe à</text>
+    <text class="lbl" x="135" y="132" text-anchor="middle" font-weight="bold">chaleur</text>
+    <text class="lbl" x="135" y="150" text-anchor="middle" font-size="13px">fluide propane</text>
+    <circle cx="320" cy="104" r="7" fill="#1e7e54"/>
+    <text class="qui" x="320" y="132" text-anchor="middle" font-size="15px">PRP 3</text>
+    <text class="lbl" x="320" y="152" text-anchor="middle" font-size="13px">peu de fuites</text>
+    <text class="qui" x="220" y="188" text-anchor="middle" font-size="16px">Direct : faible</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.13;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Compteur, consommation élevée : l'aiguille monte dans le rouge -->
+  <g>
+    <rect x="490" y="56" width="380" height="150" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+    <circle cx="590" cy="112" r="40" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+    <g>
+      <line x1="590" y1="112" x2="616" y2="90" stroke="#c0392b" stroke-width="4"/>
+      <animateTransform attributeName="transform" type="rotate" additive="replace"
+        values="-75 590 112;-75 590 112;0 590 112;0 590 112" keyTimes="0;0.18;0.30;1" dur="12s" repeatCount="indefinite"/>
+    </g>
+    <circle cx="590" cy="112" r="4" fill="#c0392b"/>
+    <text class="lblr" x="720" y="106" text-anchor="middle" font-size="15px">consommation</text>
+    <text class="lblr" x="720" y="126" text-anchor="middle" font-size="15px">élevée</text>
+    <text class="lblr" x="720" y="150" text-anchor="middle" font-size="13px">machine mal dimensionnée</text>
+    <text class="qui" x="680" y="188" text-anchor="middle" font-size="16px" fill="#c0392b">Indirect : fort</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.15;0.22;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Balance : à plat au départ, penche côté indirect -->
+  <line x1="220" y1="238" x2="680" y2="266" stroke="#1b3a63" stroke-width="4">
+    <animate attributeName="y1" values="252;252;238;238" keyTimes="0;0.34;0.46;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="252;252;266;266" keyTimes="0;0.34;0.46;1" dur="12s" repeatCount="indefinite"/>
+  </line>
+  <polygon points="450,238 428,278 472,278" fill="#5a6b7d" stroke="#10233c" stroke-width="2"/>
+  <g>
+    <line x1="220" y1="238" x2="220" y2="264" stroke="#5a6b7d" stroke-width="2"/>
+    <ellipse cx="220" cy="286" rx="70" ry="26" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="lbl" x="220" y="292" text-anchor="middle" font-size="14px">direct</text>
+    <animateTransform attributeName="transform" type="translate" additive="replace"
+      values="0,14;0,14;0,0;0,0" keyTimes="0;0.34;0.46;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="680" y1="266" x2="680" y2="298" stroke="#5a6b7d" stroke-width="2"/>
+    <ellipse cx="680" cy="320" rx="70" ry="26" fill="#fbe7e4" stroke="#c0392b" stroke-width="2"/>
+    <text class="lblr" x="680" y="326" text-anchor="middle" font-size="14px">indirect</text>
+    <animateTransform attributeName="transform" type="translate" additive="replace"
+      values="0,-14;0,-14;0,0;0,0" keyTimes="0;0.34;0.46;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <text class="band" x="450" y="378" text-anchor="middle">Malgré un fluide « propre », l'indirect peut dominer le TEWI.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.60;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> l'aiguille du compteur monte dans le rouge, puis la balance — d'abord à plat — penche nettement côté indirect.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 5 — Piège n°2 : la machine qui fuit</h2>
+  <p class="fichier">svg/piege-machine-qui-fuit.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> le miroir : R-404A qui fuit régulièrement : direct fort ; machine efficace, aiguille dans le vert : indirect faible ; la balance penche côté direct.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="s9-t-p2" aria-describedby="s9-d-p2" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s9-t-p2">Piège n°2 : un fluide à fort PRP qui fuit, sur une machine efficace</title>
+  <desc id="s9-d-p2">À gauche, un groupe de condensation schématique porte l'étiquette R-404A et
+    trois gouttes qui s'échappent, avec la mention fuites régulières : le direct est marqué fort.
+    À droite, un compteur électrique dont l'aiguille reste dans la zone verte porte la mention
+    machine efficace, faible consommation : l'indirect est marqué faible. En bas, une balance
+    penche nettement du côté du direct, avec la conclusion écrite : malgré une machine efficace,
+    le direct peut dominer le TEWI.</desc>
+  <style>
+    .s9 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s9 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .s9 .lbl { font-size:15px; fill:#10233c; }
+    .s9 .lblg { font-size:15px; fill:#1e7e54; }
+    .s9 .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Fluide fort PRP qui fuit, machine efficace</text>
+
+  <!-- Groupe de condensation, fluide fort PRP -->
+  <rect x="30" y="56" width="380" height="150" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <rect x="60" y="76" width="150" height="86" rx="8" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="135" y="106" text-anchor="middle" font-weight="bold">Groupe de</text>
+  <text class="lbl" x="135" y="126" text-anchor="middle" font-weight="bold">condensation</text>
+  <text class="lbl" x="135" y="148" text-anchor="middle" font-size="13px">fluide R-404A</text>
+  <circle cx="310" cy="96" r="6" fill="#c0392b"/>
+  <circle cx="326" cy="108" r="6" fill="#c0392b"/>
+  <circle cx="316" cy="122" r="6" fill="#c0392b"/>
+  <text class="qui" x="320" y="146" text-anchor="middle" font-size="14px">fuites</text>
+  <text class="qui" x="320" y="164" text-anchor="middle" font-size="14px">régulières</text>
+  <text class="qui" x="220" y="188" text-anchor="middle" font-size="16px">Direct : fort</text>
+
+  <!-- Compteur, faible consommation -->
+  <rect x="490" y="56" width="380" height="150" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="590" cy="112" r="40" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <line x1="590" y1="112" x2="566" y2="128" stroke="#1e7e54" stroke-width="4"/>
+  <circle cx="590" cy="112" r="4" fill="#1e7e54"/>
+  <text class="lblg" x="720" y="106" text-anchor="middle" font-size="15px">machine</text>
+  <text class="lblg" x="720" y="126" text-anchor="middle" font-size="15px">efficace</text>
+  <text class="lblg" x="720" y="150" text-anchor="middle" font-size="13px">faible consommation</text>
+  <text class="qui" x="680" y="188" text-anchor="middle" font-size="16px" fill="#1e7e54">Indirect : faible</text>
+
+  <!-- Balance, penche vers le direct (gauche) -->
+  <line x1="220" y1="266" x2="680" y2="238" stroke="#1b3a63" stroke-width="4"/>
+  <polygon points="450,238 428,278 472,278" fill="#5a6b7d" stroke="#10233c" stroke-width="2"/>
+  <line x1="220" y1="266" x2="220" y2="298" stroke="#5a6b7d" stroke-width="2"/>
+  <ellipse cx="220" cy="320" rx="70" ry="26" fill="#fbe7e4" stroke="#c0392b" stroke-width="2"/>
+  <text class="qui" x="220" y="326" text-anchor="middle" font-size="14px">direct</text>
+  <line x1="680" y1="238" x2="680" y2="264" stroke="#5a6b7d" stroke-width="2"/>
+  <ellipse cx="680" cy="286" rx="70" ry="26" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+  <text class="lblg" x="680" y="292" text-anchor="middle" font-size="14px">indirect</text>
+
+  <text class="band" x="450" y="378" text-anchor="middle">Malgré une machine efficace, le direct peut dominer le TEWI.</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="s10-t-p2" aria-describedby="s10-d-p2" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s10-t-p2">Piège n°2 : un fluide à fort PRP qui fuit, sur une machine efficace</title>
+  <desc id="s10-d-p2">À gauche, un groupe de condensation schématique porte l'étiquette R-404A et
+    trois gouttes qui s'échappent, avec la mention fuites régulières : le direct est marqué fort.
+    À droite, un compteur électrique dont l'aiguille reste dans la zone verte porte la mention
+    machine efficace, faible consommation : l'indirect est marqué faible. En bas, une balance
+    penche nettement du côté du direct, avec la conclusion écrite : malgré une machine efficace,
+    le direct peut dominer le TEWI. L'animation fait tomber les gouttes puis pencher la balance
+    côté direct ; l'image fixe montre déjà la balance penchée.</desc>
+  <style>
+    .s10 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s10 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .s10 .lbl { font-size:15px; fill:#10233c; }
+    .s10 .lblg { font-size:15px; fill:#1e7e54; }
+    .s10 .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Fluide fort PRP qui fuit, machine efficace</text>
+
+  <!-- Groupe de condensation, fluide fort PRP -->
+  <g>
+    <rect x="30" y="56" width="380" height="150" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+    <rect x="60" y="76" width="150" height="86" rx="8" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+    <text class="lbl" x="135" y="106" text-anchor="middle" font-weight="bold">Groupe de</text>
+    <text class="lbl" x="135" y="126" text-anchor="middle" font-weight="bold">condensation</text>
+    <text class="lbl" x="135" y="148" text-anchor="middle" font-size="13px">fluide R-404A</text>
+    <circle cx="310" cy="96" r="6" fill="#c0392b"/>
+    <circle cx="326" cy="108" r="6" fill="#c0392b"/>
+    <circle cx="316" cy="122" r="6" fill="#c0392b"/>
+    <text class="qui" x="320" y="146" text-anchor="middle" font-size="14px">fuites</text>
+    <text class="qui" x="320" y="164" text-anchor="middle" font-size="14px">régulières</text>
+    <text class="qui" x="220" y="188" text-anchor="middle" font-size="16px">Direct : fort</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.13;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- gouttes mobiles qui tombent (décor animé : invisibles à l'arrêt) -->
+  <circle cx="310" cy="102" r="4.5" fill="#c0392b" opacity="0">
+    <animate attributeName="cy" values="102;102;126;126" keyTimes="0;0.14;0.24;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.14;0.16;0.22;0.25;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="326" cy="108" r="4.5" fill="#c0392b" opacity="0">
+    <animate attributeName="cy" values="108;108;128;128" keyTimes="0;0.19;0.29;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.19;0.21;0.27;0.30;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Compteur, faible consommation : l'aiguille reste dans le vert -->
+  <g>
+    <rect x="490" y="56" width="380" height="150" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+    <circle cx="590" cy="112" r="40" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+    <g>
+      <line x1="590" y1="112" x2="566" y2="128" stroke="#1e7e54" stroke-width="4"/>
+      <animateTransform attributeName="transform" type="rotate" additive="replace"
+        values="50 590 112;50 590 112;0 590 112;0 590 112" keyTimes="0;0.18;0.30;1" dur="12s" repeatCount="indefinite"/>
+    </g>
+    <circle cx="590" cy="112" r="4" fill="#1e7e54"/>
+    <text class="lblg" x="720" y="106" text-anchor="middle" font-size="15px">machine</text>
+    <text class="lblg" x="720" y="126" text-anchor="middle" font-size="15px">efficace</text>
+    <text class="lblg" x="720" y="150" text-anchor="middle" font-size="13px">faible consommation</text>
+    <text class="qui" x="680" y="188" text-anchor="middle" font-size="16px" fill="#1e7e54">Indirect : faible</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.15;0.22;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Balance : à plat au départ, penche côté direct (gauche) -->
+  <line x1="220" y1="266" x2="680" y2="238" stroke="#1b3a63" stroke-width="4">
+    <animate attributeName="y1" values="252;252;266;266" keyTimes="0;0.34;0.46;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="252;252;238;238" keyTimes="0;0.34;0.46;1" dur="12s" repeatCount="indefinite"/>
+  </line>
+  <polygon points="450,238 428,278 472,278" fill="#5a6b7d" stroke="#10233c" stroke-width="2"/>
+  <g>
+    <line x1="220" y1="266" x2="220" y2="298" stroke="#5a6b7d" stroke-width="2"/>
+    <ellipse cx="220" cy="320" rx="70" ry="26" fill="#fbe7e4" stroke="#c0392b" stroke-width="2"/>
+    <text class="qui" x="220" y="326" text-anchor="middle" font-size="14px">direct</text>
+    <animateTransform attributeName="transform" type="translate" additive="replace"
+      values="0,-14;0,-14;0,0;0,0" keyTimes="0;0.34;0.46;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="680" y1="238" x2="680" y2="264" stroke="#5a6b7d" stroke-width="2"/>
+    <ellipse cx="680" cy="286" rx="70" ry="26" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="lblg" x="680" y="292" text-anchor="middle" font-size="14px">indirect</text>
+    <animateTransform attributeName="transform" type="translate" additive="replace"
+      values="0,14;0,14;0,0;0,0" keyTimes="0;0.34;0.46;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <text class="band" x="450" y="378" text-anchor="middle">Malgré une machine efficace, le direct peut dominer le TEWI.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.60;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> les gouttes s'échappent du groupe, l'aiguille reste dans le vert, puis la balance penche côté direct — le miroir exact du piège n°1.</p>
+</section>
+<footer>
+  Les autres écrans de cette station restent fixes (comparaison côte à côte, carte d'identité,
+  raisonnement, bilan) : l'animation n'y apporterait rien.
+  Réseau Législation inerWeb — document de travail, non diffusé.
+</footer>
+
+</div>
+</body>
+</html>

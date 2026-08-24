@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validation — Station Montréal → Kigali — animations</title>
+<style>
+  body { margin:0; background:#f7f1e7; color:#10233c;
+         font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;
+         font-size:17px; line-height:1.6; }
+  .page { max-width:1180px; margin:0 auto; padding:24px 20px 60px; }
+  header.bandeau { display:flex; align-items:center; justify-content:space-between;
+         border-bottom:3px solid #047857; padding-bottom:14px; margin-bottom:8px; flex-wrap:wrap; gap:12px; }
+  .logo { line-height:1.15; }
+  .logo .mot { font-size:30px; color:#1b3a63; }
+  .logo .iner { font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; }
+  .logo .web { font-family:"Segoe Script","Comic Sans MS",cursive; }
+  .logo .ligne { border-top:2.5px solid #e8914a; margin-top:2px; position:relative; width:190px; }
+  .logo .cartouche { position:absolute; right:0; top:-13px; background:#e8914a; color:#fffdf8;
+         font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; font-size:13px;
+         padding:2px 10px; border-radius:10px; }
+  .logo .par { font-size:12.5px; color:#637285; margin-top:6px; }
+  h1 { font-family:"Trebuchet MS",Calibri,sans-serif; color:#1b3a63; font-size:27px; margin:18px 0 6px; }
+  a { color:#3d7fca; } a:hover { color:#1b3a63; }
+  .chapeau { color:#637285; margin:0 0 26px; }
+  .piece { background:#fffdf8; border:1.5px solid rgba(27,58,99,.16); border-radius:14px;
+         padding:22px 24px; margin-bottom:30px; }
+  h2 { font-family:"Trebuchet MS",Calibri,sans-serif; color:#047857; font-size:21px; margin:0 0 4px; }
+  .fichier { font-family:Consolas,monospace; font-size:14px; color:#637285; margin:0 0 14px; }
+  .scenario { border:1.5px solid rgba(27,58,99,.16); border-left:5px solid #3d7fca;
+         background:#fbfaf6; border-radius:8px; padding:10px 16px; margin:0 0 18px; font-size:15.5px; }
+  .scenario b { color:#1b3a63; }
+  .duo { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:860px){ .duo { grid-template-columns:1fr; } }
+  .cadre { border:1.5px solid rgba(27,58,99,.16); border-radius:10px; padding:10px; background:#fff; }
+  .cadre p.et { margin:0 0 8px; font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; font-size:15px; }
+  .cadre.avant p.et { color:#637285; }
+  .cadre.apres p.et { color:#047857; }
+  .cadre svg { width:100%; height:auto; display:block; }
+  .change { margin:14px 0 0; font-size:15.5px; }
+  .change b { color:#1b3a63; }
+  footer { color:#637285; font-size:14px; border-top:1.5px solid rgba(27,58,99,.16); padding-top:14px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="bandeau">
+  <div class="logo">
+    <div class="mot">❄️ <span class="iner">iner</span><span class="web">Web</span></div>
+    <div class="ligne"><span class="cartouche">Législation</span></div>
+    <div class="par">par F. Henninot</div>
+  </div>
+  <div style="text-align:right; color:#637285; font-size:14.5px;">
+    Branche Impact environnemental — direction validée le 24/08<br>4 illustrations animées à relire
+  </div>
+</header>
+
+<h1>Station « Montréal → Kigali » — les 4 animations proposées</h1>
+<p class="chapeau">À gauche l'illustration actuelle (fixe), à droite la version animée proposée.
+L'animation rejoue le scénario de la narration, puis l'image reste stable quelques secondes avant de reboucler.
+À l'arrêt (impression, PDF), la version animée montre exactement l'image finale complète.</p>
+
+<section class="piece">
+  <h2>Écran 1 — Trois temps, un seul protocole</h2>
+  <p class="fichier">svg/frise-trois-temps.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> la frise en trois cases : Montréal 1987 (ozone), le relais des HFC (un souci apparaît), l'amendement de Kigali — un enchaînement, pas trois épisodes séparés.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="s1-t-frise" aria-describedby="s1-d-frise" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s1-t-frise">Trois temps : Montréal, le relais des HFC, puis Kigali</title>
+  <desc id="s1-d-frise">Trois cases reliées par des flèches. La première, encre bleu, porte le protocole de Montréal,
+    1987, dont la cible est de sauver la couche d'ozone en supprimant les CFC puis les HCFC. La deuxième, en ambre,
+    montre les HFC qui prennent le relais : sans chlore ni brome, ils règlent le problème de l'ozone, mais beaucoup
+    d'entre eux ont un PRP élevé, un nouveau souci apparaît. La troisième, verte, porte l'amendement de Kigali, qui
+    s'attaque à son tour aux HFC, cette fois pour leur PRP. Une bande en bas rappelle que Kigali est un amendement
+    au protocole de Montréal, pas un nouveau traité séparé.</desc>
+  <defs>
+    <marker id="s1-fl-fleche" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .s1 .bandeTitre { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .s1 .corpsGras { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .s1 .corps { font-size:15px; fill:#10233c; }
+    .s1 .note { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+  </style>
+
+  <!-- Colonne 1 : Montréal -->
+  <rect x="20" y="40" width="260" height="200" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="20" y="40" width="260" height="40" rx="12" fill="#1b3a63"/>
+  <rect x="20" y="66" width="260" height="14" fill="#1b3a63"/>
+  <text class="bandeTitre" x="150" y="66" text-anchor="middle">MONTRÉAL</text>
+  <text class="corpsGras" x="150" y="104" text-anchor="middle">Protocole de Montréal</text>
+  <text class="corps" x="150" y="128" text-anchor="middle">1987 · sauver la couche</text>
+  <text class="corps" x="150" y="148" text-anchor="middle">d'ozone</text>
+  <text class="corps" x="150" y="188" text-anchor="middle">Cible : les CFC,</text>
+  <text class="corps" x="150" y="208" text-anchor="middle">puis les HCFC</text>
+
+  <path d="M280,140 L316,140" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#s1-fl-fleche)"/>
+
+  <!-- Colonne 2 : relais HFC -->
+  <rect x="320" y="40" width="260" height="200" rx="12" fill="#fffdf8" stroke="#b06a00" stroke-width="3"/>
+  <rect x="320" y="40" width="260" height="40" rx="12" fill="#b06a00"/>
+  <rect x="320" y="66" width="260" height="14" fill="#b06a00"/>
+  <text class="bandeTitre" x="450" y="66" text-anchor="middle">LES HFC</text>
+  <text class="corpsGras" x="450" y="104" text-anchor="middle">Les HFC prennent</text>
+  <text class="corpsGras" x="450" y="124" text-anchor="middle">le relais</text>
+  <text class="corps" x="450" y="152" text-anchor="middle">sans chlore ni brome :</text>
+  <text class="corps" x="450" y="172" text-anchor="middle">ozone réglé</text>
+  <text class="corps" x="450" y="200" text-anchor="middle">mais souvent un PRP élevé</text>
+
+  <path d="M580,140 L616,140" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#s1-fl-fleche)"/>
+
+  <!-- Colonne 3 : Kigali -->
+  <rect x="620" y="40" width="260" height="200" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <rect x="620" y="40" width="260" height="40" rx="12" fill="#047857"/>
+  <rect x="620" y="66" width="260" height="14" fill="#047857"/>
+  <text class="bandeTitre" x="750" y="66" text-anchor="middle">KIGALI</text>
+  <text class="corpsGras" x="750" y="104" text-anchor="middle">Amendement de Kigali</text>
+  <text class="corps" x="750" y="128" text-anchor="middle">un ajout au protocole</text>
+  <text class="corps" x="750" y="148" text-anchor="middle">de Montréal</text>
+  <text class="corps" x="750" y="188" text-anchor="middle">Cible : le PRP</text>
+  <text class="corps" x="750" y="208" text-anchor="middle">des HFC</text>
+
+  <!-- Bande du bas -->
+  <rect x="20" y="270" width="860" height="52" rx="12" fill="#e9f5ef" stroke="#047857" stroke-width="2"/>
+  <text class="note" x="450" y="292" text-anchor="middle">Trois temps, un seul protocole</text>
+  <text class="note" x="450" y="312" text-anchor="middle">Kigali s'ajoute à Montréal — il ne le remplace pas</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="s2-t-frise" aria-describedby="s2-d-frise" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s2-t-frise">Trois temps : Montréal, le relais des HFC, puis Kigali</title>
+  <desc id="s2-d-frise">Trois cases reliées par des flèches. La première, encre bleu, porte le protocole de Montréal,
+    1987, dont la cible est de sauver la couche d'ozone en supprimant les CFC puis les HCFC. La deuxième, en ambre,
+    montre les HFC qui prennent le relais : sans chlore ni brome, ils règlent le problème de l'ozone, mais beaucoup
+    d'entre eux ont un PRP élevé, un nouveau souci apparaît. La troisième, verte, porte l'amendement de Kigali, qui
+    s'attaque à son tour aux HFC, cette fois pour leur PRP. Une bande en bas rappelle que Kigali est un amendement
+    au protocole de Montréal, pas un nouveau traité séparé. L'animation enchaîne les trois temps, flèche après
+    flèche ; l'image fixe montre la frise complète.</desc>
+  <defs>
+    <marker id="s2-fl-fleche" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .s2 .bandeTitre { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .s2 .corpsGras { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .s2 .corps { font-size:15px; fill:#10233c; }
+    .s2 .note { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+  </style>
+
+  <!-- Colonne 1 : Montréal -->
+  <g>
+    <rect x="20" y="40" width="260" height="200" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <rect x="20" y="40" width="260" height="40" rx="12" fill="#1b3a63"/>
+    <rect x="20" y="66" width="260" height="14" fill="#1b3a63"/>
+    <text class="bandeTitre" x="150" y="66" text-anchor="middle">MONTRÉAL</text>
+    <text class="corpsGras" x="150" y="104" text-anchor="middle">Protocole de Montréal</text>
+    <text class="corps" x="150" y="128" text-anchor="middle">1987 · sauver la couche</text>
+    <text class="corps" x="150" y="148" text-anchor="middle">d'ozone</text>
+    <text class="corps" x="150" y="188" text-anchor="middle">Cible : les CFC,</text>
+    <text class="corps" x="150" y="208" text-anchor="middle">puis les HCFC</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.12;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <path d="M280,140 L316,140" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#s2-fl-fleche)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.14;0.18;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Colonne 2 : relais HFC -->
+  <g>
+    <rect x="320" y="40" width="260" height="200" rx="12" fill="#fffdf8" stroke="#b06a00" stroke-width="3"/>
+    <rect x="320" y="40" width="260" height="40" rx="12" fill="#b06a00"/>
+    <rect x="320" y="66" width="260" height="14" fill="#b06a00"/>
+    <text class="bandeTitre" x="450" y="66" text-anchor="middle">LES HFC</text>
+    <text class="corpsGras" x="450" y="104" text-anchor="middle">Les HFC prennent</text>
+    <text class="corpsGras" x="450" y="124" text-anchor="middle">le relais</text>
+    <text class="corps" x="450" y="152" text-anchor="middle">sans chlore ni brome :</text>
+    <text class="corps" x="450" y="172" text-anchor="middle">ozone réglé</text>
+    <text class="corps" x="450" y="200" text-anchor="middle">mais souvent un PRP élevé</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.20;0.27;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <path d="M580,140 L616,140" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#s2-fl-fleche)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.29;0.33;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Colonne 3 : Kigali -->
+  <g>
+    <rect x="620" y="40" width="260" height="200" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+    <rect x="620" y="40" width="260" height="40" rx="12" fill="#047857"/>
+    <rect x="620" y="66" width="260" height="14" fill="#047857"/>
+    <text class="bandeTitre" x="750" y="66" text-anchor="middle">KIGALI</text>
+    <text class="corpsGras" x="750" y="104" text-anchor="middle">Amendement de Kigali</text>
+    <text class="corps" x="750" y="128" text-anchor="middle">un ajout au protocole</text>
+    <text class="corps" x="750" y="148" text-anchor="middle">de Montréal</text>
+    <text class="corps" x="750" y="188" text-anchor="middle">Cible : le PRP</text>
+    <text class="corps" x="750" y="208" text-anchor="middle">des HFC</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.35;0.42;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bande du bas -->
+  <rect x="20" y="270" width="860" height="52" rx="12" fill="#e9f5ef" stroke="#047857" stroke-width="2"/>
+  <g>
+    <text class="note" x="450" y="292" text-anchor="middle">Trois temps, un seul protocole</text>
+    <text class="note" x="450" y="312" text-anchor="middle">Kigali s'ajoute à Montréal — il ne le remplace pas</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.46;0.54;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> l'histoire s'enchaîne case par case, flèche après flèche, puis la bande rappelle que Kigali s'ajoute à Montréal.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 2 — Montréal, 1987 : le problème de l'ozone</h2>
+  <p class="fichier">svg/montreal-1987.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> les molécules Cl/Br montent vers la zone amincie de la couche d'ozone ; à droite, le document du protocole liste ses deux cibles : les CFC, puis les HCFC.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img"
+     aria-labelledby="s3-t-mtl" aria-describedby="s3-d-mtl" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s3-t-mtl">1987, le protocole de Montréal : le problème de l'ozone</title>
+  <desc id="s3-d-mtl">À gauche, un schéma de l'atmosphère : le soleil en haut, puis un bandeau représentant la couche
+    d'ozone, avec en son centre une zone plus claire et pointillée qui figure son amincissement. En dessous, trois
+    petites molécules portant chacune la lettre Cl ou Br montent vers cette zone claire, avec des flèches, pour
+    montrer que le chlore et le brome sont ceux qui attaquent l'ozone stratosphérique. À droite, un document
+    intitulé Protocole de Montréal, 1987, qui liste deux cibles dans l'ordre : d'abord les CFC, puis les HCFC.</desc>
+  <style>
+    .s3 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .s3 .lblGras { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .s3 .lbl { font-size:15px; fill:#10233c; }
+    .s3 .lblMut { font-size:15px; fill:#5a6b7d; }
+    .s3 .mol { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#fffdf8; }
+    .s3 .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+  </style>
+
+  <!-- ===== Partie gauche : l'atmosphère ===== -->
+  <rect x="20" y="20" width="400" height="320" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <circle cx="70" cy="66" r="26" fill="#b06a00"/>
+  <text class="lblMut" x="70" y="112" text-anchor="middle">soleil</text>
+
+  <!-- couche d'ozone : bandeau avec zone amincie au centre -->
+  <rect x="45" y="140" width="130" height="26" fill="#1b3a63"/>
+  <rect x="175" y="140" width="90" height="26" fill="#c7d6e6" stroke="#1b3a63" stroke-width="2" stroke-dasharray="5 4"/>
+  <rect x="265" y="140" width="130" height="26" fill="#1b3a63"/>
+  <text class="lblMut" x="220" y="188" text-anchor="middle">couche d'ozone</text>
+  <text class="lblMut" x="220" y="206" text-anchor="middle">la zone claire s'amincit</text>
+
+  <!-- molécules Cl/Br montant vers la zone amincie -->
+  <circle cx="150" cy="290" r="18" fill="#c0392b"/>
+  <text class="mol" x="150" y="295" text-anchor="middle">Cl</text>
+  <path d="M155,272 L200,168" stroke="#c0392b" stroke-width="2.5" fill="none" stroke-dasharray="4 4"/>
+
+  <circle cx="220" cy="300" r="18" fill="#c0392b"/>
+  <text class="mol" x="220" y="305" text-anchor="middle">Cl</text>
+  <path d="M220,282 L220,170" stroke="#c0392b" stroke-width="2.5" fill="none" stroke-dasharray="4 4"/>
+
+  <circle cx="290" cy="290" r="18" fill="#c0392b"/>
+  <text class="mol" x="290" y="295" text-anchor="middle">Br</text>
+  <path d="M285,272 L240,168" stroke="#c0392b" stroke-width="2.5" fill="none" stroke-dasharray="4 4"/>
+
+  <text class="lbl" x="220" y="330" text-anchor="middle" fill="#c0392b">le chlore et le brome attaquent l'ozone</text>
+
+  <!-- ===== Partie droite : le document ===== -->
+  <rect x="450" y="20" width="430" height="320" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="450" y="20" width="430" height="46" rx="14" fill="#1b3a63"/>
+  <rect x="450" y="52" width="430" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="665" y="52" text-anchor="middle">PROTOCOLE DE MONTRÉAL — 1987</text>
+  <text class="lblMut" x="665" y="90" text-anchor="middle">traité international pour sauver l'ozone</text>
+
+  <!-- cible 1 : CFC -->
+  <circle cx="500" cy="140" r="20" fill="#1b3a63"/>
+  <text class="num" x="500" y="146" text-anchor="middle">1</text>
+  <text class="lblGras" x="536" y="134">Les CFC</text>
+  <text class="lbl" x="536" y="156">supprimés progressivement</text>
+
+  <path d="M500,180 L500,208" stroke="#5a6b7d" stroke-width="2.5" fill="none"/>
+
+  <!-- cible 2 : HCFC -->
+  <circle cx="500" cy="240" r="20" fill="#1b3a63"/>
+  <text class="num" x="500" y="246" text-anchor="middle">2</text>
+  <text class="lblGras" x="536" y="234">Puis les HCFC</text>
+  <text class="lbl" x="536" y="256">supprimés à leur tour</text>
+
+  <rect x="470" y="284" width="380" height="42" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="1.5"/>
+  <text class="lbl" x="660" y="310" text-anchor="middle">deux familles : chlore ou brome dans la molécule</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img"
+     aria-labelledby="s4-t-mtl" aria-describedby="s4-d-mtl" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s4-t-mtl">1987, le protocole de Montréal : le problème de l'ozone</title>
+  <desc id="s4-d-mtl">À gauche, un schéma de l'atmosphère : le soleil en haut, puis un bandeau représentant la couche
+    d'ozone, avec en son centre une zone plus claire et pointillée qui figure son amincissement. En dessous, trois
+    petites molécules portant chacune la lettre Cl ou Br montent vers cette zone claire, avec des flèches, pour
+    montrer que le chlore et le brome sont ceux qui attaquent l'ozone stratosphérique. À droite, un document
+    intitulé Protocole de Montréal, 1987, qui liste deux cibles dans l'ordre : d'abord les CFC, puis les HCFC.
+    L'animation fait monter les molécules vers la zone amincie, puis déroule les deux cibles du document ;
+    l'image fixe est complète.</desc>
+  <style>
+    .s4 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .s4 .lblGras { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .s4 .lbl { font-size:15px; fill:#10233c; }
+    .s4 .lblMut { font-size:15px; fill:#5a6b7d; }
+    .s4 .mol { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#fffdf8; }
+    .s4 .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+  </style>
+
+  <!-- ===== Partie gauche : l'atmosphère ===== -->
+  <rect x="20" y="20" width="400" height="320" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <circle cx="70" cy="66" r="26" fill="#b06a00"/>
+  <text class="lblMut" x="70" y="112" text-anchor="middle">soleil</text>
+
+  <!-- couche d'ozone : bandeau avec zone amincie au centre -->
+  <rect x="45" y="140" width="130" height="26" fill="#1b3a63"/>
+  <rect x="175" y="140" width="90" height="26" fill="#c7d6e6" stroke="#1b3a63" stroke-width="2" stroke-dasharray="5 4"/>
+  <rect x="265" y="140" width="130" height="26" fill="#1b3a63"/>
+  <text class="lblMut" x="330" y="108" text-anchor="middle">couche d'ozone</text>
+  <text class="lblMut" x="330" y="126" text-anchor="middle">la zone claire s'amincit</text>
+
+  <!-- molécules Cl/Br montant vers la zone amincie -->
+  <circle cx="150" cy="290" r="18" fill="#c0392b"/>
+  <text class="mol" x="150" y="295" text-anchor="middle">Cl</text>
+  <path d="M155,272 L200,168" stroke="#c0392b" stroke-width="2.5" fill="none" stroke-dasharray="4 4"/>
+
+  <circle cx="220" cy="300" r="18" fill="#c0392b"/>
+  <text class="mol" x="220" y="305" text-anchor="middle">Cl</text>
+  <path d="M220,282 L220,170" stroke="#c0392b" stroke-width="2.5" fill="none" stroke-dasharray="4 4"/>
+
+  <circle cx="290" cy="290" r="18" fill="#c0392b"/>
+  <text class="mol" x="290" y="295" text-anchor="middle">Br</text>
+  <path d="M285,272 L240,168" stroke="#c0392b" stroke-width="2.5" fill="none" stroke-dasharray="4 4"/>
+
+  <!-- billes mobiles le long des trajets (décor animé : invisibles à l'arrêt) -->
+  <circle r="7" fill="#c0392b" opacity="0">
+    <animateMotion path="M155,272 L200,168" keyPoints="0;0;1;1" keyTimes="0;0.12;0.24;1" calcMode="linear" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.12;0.14;0.22;0.25;1" dur="14s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="7" fill="#c0392b" opacity="0">
+    <animateMotion path="M220,282 L220,170" keyPoints="0;0;1;1" keyTimes="0;0.16;0.28;1" calcMode="linear" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.18;0.26;0.29;1" dur="14s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="7" fill="#c0392b" opacity="0">
+    <animateMotion path="M285,272 L240,168" keyPoints="0;0;1;1" keyTimes="0;0.20;0.32;1" calcMode="linear" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.22;0.30;0.33;1" dur="14s" repeatCount="indefinite"/>
+  </circle>
+
+  <g>
+    <text class="lbl" x="220" y="330" text-anchor="middle" fill="#c0392b">le chlore et le brome attaquent l'ozone</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.36;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- ===== Partie droite : le document ===== -->
+  <rect x="450" y="20" width="430" height="320" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="450" y="20" width="430" height="46" rx="14" fill="#1b3a63"/>
+  <rect x="450" y="52" width="430" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="665" y="52" text-anchor="middle">PROTOCOLE DE MONTRÉAL — 1987</text>
+  <text class="lblMut" x="665" y="90" text-anchor="middle">traité international pour sauver l'ozone</text>
+
+  <!-- cible 1 : CFC -->
+  <g>
+    <circle cx="500" cy="140" r="20" fill="#1b3a63"/>
+    <text class="num" x="500" y="146" text-anchor="middle">1</text>
+    <text class="lblGras" x="536" y="134">Les CFC</text>
+    <text class="lbl" x="536" y="156">supprimés progressivement</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.38;0.46;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <path d="M500,180 L500,208" stroke="#5a6b7d" stroke-width="2.5" fill="none"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.47;0.50;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- cible 2 : HCFC -->
+  <g>
+    <circle cx="500" cy="240" r="20" fill="#1b3a63"/>
+    <text class="num" x="500" y="246" text-anchor="middle">2</text>
+    <text class="lblGras" x="536" y="234">Puis les HCFC</text>
+    <text class="lbl" x="536" y="256">supprimés à leur tour</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.51;0.58;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <rect x="470" y="284" width="380" height="42" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="1.5"/>
+    <text class="lbl" x="660" y="310" text-anchor="middle">deux familles : chlore ou brome dans la molécule</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.60;0.66;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> les molécules montent l'une après l'autre vers la zone amincie, puis le document déroule ses deux cibles dans l'ordre.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 4 — Mais un nouveau problème apparaît</h2>
+  <p class="fichier">svg/nouveau-probleme-prp.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> ODP nul : ozone réglé — mais le graphique de PRP s'étage du CO₂ à 1 (invisible à l'échelle) jusqu'au R-404A à 3922.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s5-t-prp" aria-describedby="s5-d-prp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s5-t-prp">Le nouveau problème : l'ozone est réglé, le climat pas</title>
+  <desc id="s5-d-prp">En haut à gauche, un badge vert rappelle que les HFC ont un ODP nul : l'ozone est réglé. À droite,
+    un graphique en barres horizontales compare le PRP de plusieurs fluides repères : le CO2 à 1, le R-32 à 675,
+    le R-410A à 2088 et le R-404A à 3922. La barre du CO2 est si courte qu'elle est presque invisible à cette
+    échelle, ce qui montre l'écart de grandeur avec les autres. Une bande du bas explique que beaucoup de HFC ont
+    un PRP élevé et réchauffent donc fortement le climat s'ils fuient, alors même que leur ODP est nul.</desc>
+  <style>
+    .s5 .lblGras { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .s5 .lbl { font-size:15px; fill:#10233c; }
+    .s5 .val { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .s5 .ok { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#1e7e54; }
+    .s5 .titreG { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .s5 .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Badge ODP nul -->
+  <rect x="20" y="20" width="230" height="90" rx="12" fill="#e9f5ef" stroke="#1e7e54" stroke-width="2.5"/>
+  <circle cx="52" cy="55" r="16" fill="#1e7e54"/>
+  <path d="M45,55 L50,62 L61,47" stroke="#fffdf8" stroke-width="3" fill="none"/>
+  <text class="ok" x="76" y="52">HFC</text>
+  <text class="ok" x="76" y="72">ODP nul</text>
+  <text class="lbl" x="35" y="94">ozone réglé pour eux</text>
+
+  <!-- Titre du graphique -->
+  <text class="titreG" x="300" y="40">PRP — quelques repères (échelle : CO₂ = 1)</text>
+
+  <!-- Axe -->
+  <line x1="300" y1="66" x2="300" y2="300" stroke="#5a6b7d" stroke-width="2"/>
+
+  <!-- Barre CO2, PRP = 1, quasi invisible à l'échelle -->
+  <text class="lbl" x="290" y="98" text-anchor="end">CO₂ (R-744)</text>
+  <rect x="300" y="86" width="2" height="24" fill="#1e7e54"/>
+  <text class="val" x="308" y="103">PRP = 1 — invisible à cette échelle</text>
+
+  <!-- Barre R-32 -->
+  <text class="lbl" x="290" y="152" text-anchor="end">R-32</text>
+  <rect x="300" y="140" width="83" height="24" fill="#b06a00"/>
+  <text class="val" x="391" y="157">675</text>
+
+  <!-- Barre R-410A -->
+  <text class="lbl" x="290" y="206" text-anchor="end">R-410A</text>
+  <rect x="300" y="194" width="255" height="24" fill="#b06a00"/>
+  <text class="val" x="563" y="211">2088</text>
+
+  <!-- Barre R-404A -->
+  <text class="lbl" x="290" y="260" text-anchor="end">R-404A</text>
+  <rect x="300" y="248" width="480" height="24" fill="#c0392b"/>
+  <text class="val" x="788" y="265">3922</text>
+
+  <!-- Bande du bas -->
+  <rect x="20" y="316" width="860" height="50" rx="12" fill="#fff4e0" stroke="#b06a00" stroke-width="2"/>
+  <text class="band" x="450" y="336" text-anchor="middle">Beaucoup de HFC ont un PRP élevé</text>
+  <text class="band" x="450" y="356" text-anchor="middle">s'ils fuient, ils réchauffent fortement le climat</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s6-t-prp" aria-describedby="s6-d-prp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s6-t-prp">Le nouveau problème : l'ozone est réglé, le climat pas</title>
+  <desc id="s6-d-prp">En haut à gauche, un badge vert rappelle que les HFC ont un ODP nul : l'ozone est réglé. À droite,
+    un graphique en barres horizontales compare le PRP de plusieurs fluides repères : le CO2 à 1, le R-32 à 675,
+    le R-410A à 2088 et le R-404A à 3922. La barre du CO2 est si courte qu'elle est presque invisible à cette
+    échelle, ce qui montre l'écart de grandeur avec les autres. Une bande du bas explique que beaucoup de HFC ont
+    un PRP élevé et réchauffent donc fortement le climat s'ils fuient, alors même que leur ODP est nul.
+    L'animation fait croître les barres l'une après l'autre, du CO2 au R-404A ; l'image fixe est complète.</desc>
+  <style>
+    .s6 .lblGras { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .s6 .lbl { font-size:15px; fill:#10233c; }
+    .s6 .val { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .s6 .ok { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#1e7e54; }
+    .s6 .titreG { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .s6 .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Badge ODP nul -->
+  <g>
+    <rect x="20" y="20" width="230" height="90" rx="12" fill="#e9f5ef" stroke="#1e7e54" stroke-width="2.5"/>
+    <circle cx="52" cy="55" r="16" fill="#1e7e54"/>
+    <path d="M45,55 L50,62 L61,47" stroke="#fffdf8" stroke-width="3" fill="none"/>
+    <text class="ok" x="76" y="52">HFC</text>
+    <text class="ok" x="76" y="72">ODP nul</text>
+    <text class="lbl" x="35" y="94">ozone réglé pour eux</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.04;0.11;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Titre du graphique et axe -->
+  <g>
+    <text class="titreG" x="300" y="40">PRP — quelques repères (échelle : CO₂ = 1)</text>
+    <line x1="300" y1="66" x2="300" y2="300" stroke="#5a6b7d" stroke-width="2"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.13;0.18;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Barre CO2, PRP = 1, quasi invisible à l'échelle -->
+  <g>
+    <text class="lbl" x="290" y="98" text-anchor="end">CO₂ (R-744)</text>
+    <rect x="300" y="86" width="2" height="24" fill="#1e7e54"/>
+    <text class="val" x="308" y="103">PRP = 1 — invisible à cette échelle</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.20;0.27;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Barre R-32 -->
+  <g>
+    <text class="lbl" x="290" y="152" text-anchor="end">R-32</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.29;0.33;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <rect x="300" y="140" width="83" height="24" fill="#b06a00">
+    <animate attributeName="width" values="0;0;83;83" keyTimes="0;0.30;0.38;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <g>
+    <text class="val" x="391" y="157">675</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.38;0.41;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Barre R-410A -->
+  <g>
+    <text class="lbl" x="290" y="206" text-anchor="end">R-410A</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.40;0.44;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <rect x="300" y="194" width="255" height="24" fill="#b06a00">
+    <animate attributeName="width" values="0;0;255;255" keyTimes="0;0.41;0.49;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <g>
+    <text class="val" x="563" y="211">2088</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.49;0.52;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Barre R-404A -->
+  <g>
+    <text class="lbl" x="290" y="260" text-anchor="end">R-404A</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.51;0.55;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <rect x="300" y="248" width="480" height="24" fill="#c0392b">
+    <animate attributeName="width" values="0;0;480;480" keyTimes="0;0.52;0.62;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <g>
+    <text class="val" x="788" y="265">3922</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.65;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bande du bas -->
+  <rect x="20" y="316" width="860" height="50" rx="12" fill="#fff4e0" stroke="#b06a00" stroke-width="2"/>
+  <g>
+    <text class="band" x="450" y="336" text-anchor="middle">Beaucoup de HFC ont un PRP élevé</text>
+    <text class="band" x="450" y="356" text-anchor="middle">s'ils fuient, ils réchauffent fortement le climat</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.67;0.73;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> les barres de PRP croissent l'une après l'autre, du CO₂ quasi invisible au R-404A rouge — l'écart de grandeur se construit sous les yeux.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 5 — L'amendement de Kigali</h2>
+  <p class="fichier">svg/amendement-kigali.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> la note verte de Kigali est agrafée au document de Montréal par un trombone : un ajout au texte, pas un nouveau traité.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="s7-t-kig" aria-describedby="s7-d-kig" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s7-t-kig">L'amendement de Kigali : un ajout au protocole de Montréal</title>
+  <desc id="s7-d-kig">Un grand document encre bleu porte le titre Protocole de Montréal, avec sa cible d'origine : les
+    CFC et les HCFC, par leur ODP. Une note plus petite, verte, est agrafée au coin supérieur droit du document et
+    porte le titre Amendement de Kigali ; un trombone la relie au document principal pour montrer qu'elle s'y
+    ajoute plutôt qu'elle ne le remplace. Cette note pointe vers une nouvelle cible : les HFC, mais cette fois pour
+    leur PRP et non plus pour leur ODP. Une bande du bas précise que Kigali n'est pas un nouveau traité séparé.</desc>
+  <style>
+    .s7 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .s7 .lblGras { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .s7 .lbl { font-size:15px; fill:#10233c; }
+    .s7 .lblMut { font-size:15px; fill:#5a6b7d; }
+    .s7 .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Document principal : Montréal -->
+  <rect x="40" y="30" width="480" height="260" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="40" y="30" width="480" height="46" rx="14" fill="#1b3a63"/>
+  <rect x="40" y="62" width="480" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="280" y="62" text-anchor="middle">PROTOCOLE DE MONTRÉAL</text>
+
+  <text class="lblGras" x="70" y="116">Cible d'origine</text>
+  <text class="lbl" x="70" y="140">les CFC, puis les HCFC</text>
+  <text class="lbl" x="70" y="164">évalués par leur ODP</text>
+
+  <line x1="70" y1="190" x2="490" y2="190" stroke="#d6dee7" stroke-width="2"/>
+
+  <text class="lblGras" x="70" y="222">Ce qu'il vise</text>
+  <text class="lbl" x="70" y="246">protéger la couche d'ozone</text>
+  <text class="lblMut" x="70" y="270">un traité international, 1987</text>
+
+  <!-- Trombone reliant les deux documents -->
+  <path d="M470,90 C 520,70 520,130 480,140" stroke="#5a6b7d" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+  <!-- Note agrafée : Kigali -->
+  <rect x="500" y="60" width="360" height="220" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <rect x="500" y="60" width="360" height="42" rx="12" fill="#047857"/>
+  <rect x="500" y="86" width="360" height="16" fill="#047857"/>
+  <text class="ttl" x="680" y="86" text-anchor="middle">AMENDEMENT DE KIGALI</text>
+
+  <text class="lblGras" x="524" y="132">Nouvelle cible</text>
+  <text class="lbl" x="524" y="156">les HFC</text>
+
+  <text class="lblGras" x="524" y="192">Ce qui change</text>
+  <text class="lbl" x="524" y="216">évalués cette fois par leur PRP</text>
+  <text class="lbl" x="524" y="240">et non plus par leur ODP</text>
+
+  <text class="lblMut" x="524" y="266">un ajout au texte, pas un nouveau traité</text>
+
+  <!-- Bande du bas -->
+  <rect x="40" y="304" width="820" height="30" rx="10" fill="#e9f5ef" stroke="#047857" stroke-width="1.5"/>
+  <text class="band" x="450" y="325" text-anchor="middle">Un protocole né pour l'ozone qui s'attaque, avec Kigali, au climat</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="s8-t-kig" aria-describedby="s8-d-kig" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s8-t-kig">L'amendement de Kigali : un ajout au protocole de Montréal</title>
+  <desc id="s8-d-kig">Un grand document encre bleu porte le titre Protocole de Montréal, avec sa cible d'origine : les
+    CFC et les HCFC, par leur ODP. Une note plus petite, verte, est agrafée au coin supérieur droit du document et
+    porte le titre Amendement de Kigali ; un trombone la relie au document principal pour montrer qu'elle s'y
+    ajoute plutôt qu'elle ne le remplace. Cette note pointe vers une nouvelle cible : les HFC, mais cette fois pour
+    leur PRP et non plus pour leur ODP. Une bande du bas précise que Kigali n'est pas un nouveau traité séparé.
+    L'animation fait glisser la note verte jusqu'à sa place sur le document, puis pose le trombone ; l'image
+    fixe est complète.</desc>
+  <style>
+    .s8 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .s8 .lblGras { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .s8 .lbl { font-size:15px; fill:#10233c; }
+    .s8 .lblMut { font-size:15px; fill:#5a6b7d; }
+    .s8 .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Document principal : Montréal -->
+  <g>
+    <rect x="40" y="30" width="480" height="260" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <rect x="40" y="30" width="480" height="46" rx="14" fill="#1b3a63"/>
+    <rect x="40" y="62" width="480" height="14" fill="#1b3a63"/>
+    <text class="ttl" x="280" y="62" text-anchor="middle">PROTOCOLE DE MONTRÉAL</text>
+    <text class="lblGras" x="70" y="116">Cible d'origine</text>
+    <text class="lbl" x="70" y="140">les CFC, puis les HCFC</text>
+    <text class="lbl" x="70" y="164">évalués par leur ODP</text>
+    <line x1="70" y1="190" x2="490" y2="190" stroke="#d6dee7" stroke-width="2"/>
+    <text class="lblGras" x="70" y="222">Ce qu'il vise</text>
+    <text class="lbl" x="70" y="246">protéger la couche d'ozone</text>
+    <text class="lblMut" x="70" y="270">un traité international, 1987</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.14;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Note agrafée : Kigali — glisse jusqu'à sa place -->
+  <g>
+    <rect x="500" y="60" width="360" height="220" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+    <rect x="500" y="60" width="360" height="42" rx="12" fill="#047857"/>
+    <rect x="500" y="86" width="360" height="16" fill="#047857"/>
+    <text class="ttl" x="680" y="86" text-anchor="middle">AMENDEMENT DE KIGALI</text>
+    <text class="lblGras" x="524" y="132">Nouvelle cible</text>
+    <text class="lbl" x="524" y="156">les HFC</text>
+    <text class="lblGras" x="524" y="192">Ce qui change</text>
+    <text class="lbl" x="524" y="216">évalués cette fois par leur PRP</text>
+    <text class="lbl" x="524" y="240">et non plus par leur ODP</text>
+    <text class="lblMut" x="524" y="266">un ajout au texte, pas un nouveau traité</text>
+    <animateTransform attributeName="transform" type="translate" additive="replace"
+      values="70,-80;70,-80;0,0;0,0" keyTimes="0;0.20;0.34;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;1" keyTimes="0;0.20;0.26;0.34;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Trombone reliant les deux documents (se pose après la note) -->
+  <g>
+    <path d="M470,90 C 520,70 520,130 480,140" stroke="#5a6b7d" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.42;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bande du bas -->
+  <rect x="40" y="304" width="820" height="30" rx="10" fill="#e9f5ef" stroke="#047857" stroke-width="1.5"/>
+  <g>
+    <text class="band" x="450" y="325" text-anchor="middle">Un protocole né pour l'ozone qui s'attaque, avec Kigali, au climat</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.46;0.54;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> la note verte GLISSE jusqu'à sa place sur le document, puis le trombone se pose — LE message de la station : un ajout, pas un remplacement.</p>
+</section>
+<footer>
+  Les autres écrans de cette station restent fixes (comparaison côte à côte, carte d'identité,
+  raisonnement, bilan) : l'animation n'y apporterait rien.
+  Réseau Législation inerWeb — document de travail, non diffusé.
+</footer>
+
+</div>
+</body>
+</html>

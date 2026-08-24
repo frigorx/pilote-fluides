@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validation — Station Écoconception — animations</title>
+<style>
+  body { margin:0; background:#f7f1e7; color:#10233c;
+         font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;
+         font-size:17px; line-height:1.6; }
+  .page { max-width:1180px; margin:0 auto; padding:24px 20px 60px; }
+  header.bandeau { display:flex; align-items:center; justify-content:space-between;
+         border-bottom:3px solid #047857; padding-bottom:14px; margin-bottom:8px; flex-wrap:wrap; gap:12px; }
+  .logo { line-height:1.15; }
+  .logo .mot { font-size:30px; color:#1b3a63; }
+  .logo .iner { font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; }
+  .logo .web { font-family:"Segoe Script","Comic Sans MS",cursive; }
+  .logo .ligne { border-top:2.5px solid #e8914a; margin-top:2px; position:relative; width:190px; }
+  .logo .cartouche { position:absolute; right:0; top:-13px; background:#e8914a; color:#fffdf8;
+         font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; font-size:13px;
+         padding:2px 10px; border-radius:10px; }
+  .logo .par { font-size:12.5px; color:#637285; margin-top:6px; }
+  h1 { font-family:"Trebuchet MS",Calibri,sans-serif; color:#1b3a63; font-size:27px; margin:18px 0 6px; }
+  a { color:#3d7fca; } a:hover { color:#1b3a63; }
+  .chapeau { color:#637285; margin:0 0 26px; }
+  .piece { background:#fffdf8; border:1.5px solid rgba(27,58,99,.16); border-radius:14px;
+         padding:22px 24px; margin-bottom:30px; }
+  h2 { font-family:"Trebuchet MS",Calibri,sans-serif; color:#047857; font-size:21px; margin:0 0 4px; }
+  .fichier { font-family:Consolas,monospace; font-size:14px; color:#637285; margin:0 0 14px; }
+  .scenario { border:1.5px solid rgba(27,58,99,.16); border-left:5px solid #3d7fca;
+         background:#fbfaf6; border-radius:8px; padding:10px 16px; margin:0 0 18px; font-size:15.5px; }
+  .scenario b { color:#1b3a63; }
+  .duo { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:860px){ .duo { grid-template-columns:1fr; } }
+  .cadre { border:1.5px solid rgba(27,58,99,.16); border-radius:10px; padding:10px; background:#fff; }
+  .cadre p.et { margin:0 0 8px; font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; font-size:15px; }
+  .cadre.avant p.et { color:#637285; }
+  .cadre.apres p.et { color:#047857; }
+  .cadre svg { width:100%; height:auto; display:block; }
+  .change { margin:14px 0 0; font-size:15.5px; }
+  .change b { color:#1b3a63; }
+  footer { color:#637285; font-size:14px; border-top:1.5px solid rgba(27,58,99,.16); padding-top:14px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="bandeau">
+  <div class="logo">
+    <div class="mot">❄️ <span class="iner">iner</span><span class="web">Web</span></div>
+    <div class="ligne"><span class="cartouche">Législation</span></div>
+    <div class="par">par F. Henninot</div>
+  </div>
+  <div style="text-align:right; color:#637285; font-size:14.5px;">
+    Branche Impact environnemental — direction validée le 24/08<br>3 illustrations animées à relire
+  </div>
+</header>
+
+<h1>Station « Écoconception » — les 3 animations proposées</h1>
+<p class="chapeau">À gauche l'illustration actuelle (fixe), à droite la version animée proposée.
+L'animation rejoue le scénario de la narration, puis l'image reste stable quelques secondes avant de reboucler.
+À l'arrêt (impression, PDF), la version animée montre exactement l'image finale complète.</p>
+
+<section class="piece">
+  <h2>Écran 1 — Concevoir pour durer</h2>
+  <p class="fichier">svg/concevoir-pour-durer.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> trois choix de conception convergent vers l'appareil ; deux barres comparent la durée de vie : la verte « dure longtemps », la grise « s'arrête plus tôt » sur une croix rouge.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s1-t-durer" aria-describedby="s1-d-durer" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s1-t-durer">Concevoir pour durer : trois choix qui allongent la vie de l'appareil</title>
+  <desc id="s1-d-durer">Trois cartes en haut : matériaux robustes, pièces standard plutôt que
+    propriétaires, conception qui vieillit bien. Trois flèches descendent de ces cartes vers un
+    encadré central « L'appareil ». Une flèche part de cet encadré vers un titre « Durée de vie
+    en service ». En dessous, deux barres horizontales comparent la durée : une barre verte
+    longue « Avec ces choix » se termine par le mot « dure longtemps » ; une barre grise plus
+    courte, en tirets, « Sans ces choix », se termine par une petite croix rouge et le mot
+    « s'arrête plus tôt ».</desc>
+  <defs>
+    <marker id="s1-fl-durer" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .s1 .hd { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .s1 .ti { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .s1 .lb { font-size:16px; fill:#10233c; }
+    .s1 .lb2 { font-size:15px; fill:#5a6b7d; }
+    .s1 .app { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .s1 .good { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#047857; }
+    .s1 .bad { font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <!-- trois cartes -->
+  <rect x="20" y="20" width="260" height="70" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="2.5"/>
+  <text class="hd" fill="#10233c" x="150" y="50" text-anchor="middle">MATÉRIAUX</text>
+  <text class="hd" fill="#10233c" x="150" y="72" text-anchor="middle">ROBUSTES</text>
+
+  <rect x="320" y="20" width="260" height="70" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="2.5"/>
+  <text class="hd" fill="#10233c" x="450" y="44" text-anchor="middle">PIÈCES STANDARD</text>
+  <text class="hd" fill="#10233c" x="450" y="65" text-anchor="middle" font-size="14px">(pas propriétaires)</text>
+
+  <rect x="620" y="20" width="260" height="70" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="2.5"/>
+  <text class="hd" fill="#10233c" x="750" y="50" text-anchor="middle">CONCEPTION QUI</text>
+  <text class="hd" fill="#10233c" x="750" y="72" text-anchor="middle">VIEILLIT BIEN</text>
+
+  <!-- flèches vers l'appareil -->
+  <line x1="150" y1="90" x2="385" y2="138" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#s1-fl-durer)"/>
+  <line x1="450" y1="90" x2="450" y2="138" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#s1-fl-durer)"/>
+  <line x1="750" y1="90" x2="515" y2="138" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#s1-fl-durer)"/>
+
+  <!-- l'appareil -->
+  <rect x="350" y="140" width="200" height="86" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="app" x="450" y="188" text-anchor="middle">L'APPAREIL</text>
+
+  <line x1="450" y1="226" x2="450" y2="256" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#s1-fl-durer)"/>
+
+  <text class="ti" x="450" y="278" text-anchor="middle">Durée de vie en service</text>
+
+  <!-- barre "avec ces choix" -->
+  <text class="lb" x="30" y="309" text-anchor="start">Avec ces choix</text>
+  <rect x="250" y="296" width="430" height="18" rx="8" fill="#047857"/>
+  <text class="good" x="696" y="309" text-anchor="start">dure longtemps</text>
+
+  <!-- barre "sans ces choix" -->
+  <text class="lb" x="30" y="343" text-anchor="start">Sans ces choix</text>
+  <rect x="250" y="330" width="220" height="18" rx="8" fill="none" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <line x1="486" y1="332" x2="498" y2="346" stroke="#c0392b" stroke-width="3"/>
+  <line x1="498" y1="332" x2="486" y2="346" stroke="#c0392b" stroke-width="3"/>
+  <text class="bad" x="510" y="343" text-anchor="start">s'arrête plus tôt</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s2-t-durer" aria-describedby="s2-d-durer" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s2-t-durer">Concevoir pour durer : trois choix qui allongent la vie de l'appareil</title>
+  <desc id="s2-d-durer">Trois cartes en haut : matériaux robustes, pièces standard plutôt que
+    propriétaires, conception qui vieillit bien. Trois flèches descendent de ces cartes vers un
+    encadré central « L'appareil ». Une flèche part de cet encadré vers un titre « Durée de vie
+    en service ». En dessous, deux barres horizontales comparent la durée : une barre verte
+    longue « Avec ces choix » se termine par le mot « dure longtemps » ; une barre grise plus
+    courte, en tirets, « Sans ces choix », se termine par une petite croix rouge et le mot
+    « s'arrête plus tôt ». L'animation fait progresser les deux barres ensemble : la grise
+    s'arrête tôt sur la croix, la verte continue ; l'image fixe montre le résultat complet.</desc>
+  <defs>
+    <marker id="s2-fl-durer" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .s2 .hd { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .s2 .ti { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .s2 .lb { font-size:16px; fill:#10233c; }
+    .s2 .lb2 { font-size:15px; fill:#5a6b7d; }
+    .s2 .app { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .s2 .good { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#047857; }
+    .s2 .bad { font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <!-- trois cartes -->
+  <g>
+    <rect x="20" y="20" width="260" height="70" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="2.5"/>
+    <text class="hd" fill="#10233c" x="150" y="50" text-anchor="middle">MATÉRIAUX</text>
+    <text class="hd" fill="#10233c" x="150" y="72" text-anchor="middle">ROBUSTES</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.04;0.09;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="320" y="20" width="260" height="70" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="2.5"/>
+    <text class="hd" fill="#10233c" x="450" y="44" text-anchor="middle">PIÈCES STANDARD</text>
+    <text class="hd" fill="#10233c" x="450" y="65" text-anchor="middle" font-size="14px">(pas propriétaires)</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.10;0.15;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="620" y="20" width="260" height="70" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="2.5"/>
+    <text class="hd" fill="#10233c" x="750" y="50" text-anchor="middle">CONCEPTION QUI</text>
+    <text class="hd" fill="#10233c" x="750" y="72" text-anchor="middle">VIEILLIT BIEN</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.21;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- flèches vers l'appareil -->
+  <g>
+    <line x1="150" y1="90" x2="385" y2="138" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#s2-fl-durer)"/>
+    <line x1="450" y1="90" x2="450" y2="138" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#s2-fl-durer)"/>
+    <line x1="750" y1="90" x2="515" y2="138" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#s2-fl-durer)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.22;0.28;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- l'appareil -->
+  <g>
+    <rect x="350" y="140" width="200" height="86" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <text class="app" x="450" y="188" text-anchor="middle">L'APPAREIL</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.29;0.35;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <line x1="450" y1="226" x2="450" y2="256" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#s2-fl-durer)"/>
+    <text class="ti" x="450" y="278" text-anchor="middle">Durée de vie en service</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.41;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- barre "avec ces choix" : progresse jusqu'au bout -->
+  <g>
+    <text class="lb" x="30" y="309" text-anchor="start">Avec ces choix</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.46;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <rect x="250" y="296" width="430" height="18" rx="8" fill="#047857">
+    <animate attributeName="width" values="0;0;430;430" keyTimes="0;0.44;0.62;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <g>
+    <text class="good" x="696" y="309" text-anchor="start">dure longtemps</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.63;0.68;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- barre "sans ces choix" : progresse au même rythme et s'arrête tôt -->
+  <g>
+    <text class="lb" x="30" y="343" text-anchor="start">Sans ces choix</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.46;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <rect x="250" y="330" width="220" height="18" rx="8" fill="none" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="7 6">
+    <animate attributeName="width" values="1;1;220;220" keyTimes="0;0.44;0.53;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <g>
+    <line x1="486" y1="332" x2="498" y2="346" stroke="#c0392b" stroke-width="3"/>
+    <line x1="498" y1="332" x2="486" y2="346" stroke="#c0392b" stroke-width="3"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.54;0.58;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <text class="bad" x="510" y="343" text-anchor="start">s'arrête plus tôt</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.56;0.60;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> les deux barres progressent ENSEMBLE, la grise s'arrête tôt sur la croix rouge, la verte continue — la différence de durée devient un événement.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 5 — Le lien avec le métier du froid : la part indirecte du TEWI</h2>
+  <p class="fichier">svg/lien-tewi.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> deux barres empilées : base grise identique (part directe, la fuite), part indirecte plus petite et verte pour l'appareil mieux classé, plus grande et ambrée pour l'autre.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s3-t-tewi" aria-describedby="s3-d-tewi" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s3-t-tewi">Le lien avec le TEWI : la part indirecte varie avec la classe énergie</title>
+  <desc id="s3-d-tewi">À gauche, l'icône d'une PAC ou d'un groupe de condensation, avec une flèche
+    vers deux barres empilées. Chaque barre a une base grise identique, « part directe, la fuite
+    de fluide », qui reste comparable. Au-dessus, une portion colorée, « part indirecte, la
+    consommation électrique » : plus petite et verte pour l'appareil mieux classé, plus grande et
+    ambrée pour l'appareil moins bien classé. Aucun chiffre n'est indiqué : seule la hauteur
+    relative des barres porte la comparaison, doublée par les mots « plus faible » et « plus
+    élevée ».</desc>
+  <defs>
+    <marker id="s3-fl-tewi" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .s3 .ti { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .s3 .lb { font-size:15px; fill:#10233c; }
+    .s3 .lb2 { font-size:14px; fill:#5a6b7d; }
+    .s3 .good { font-weight:bold; fill:#047857; font-size:15px; }
+    .s3 .warn { font-weight:bold; fill:#b06a00; font-size:15px; }
+  </style>
+
+  <!-- icône PAC / groupe de condensation -->
+  <rect x="30" y="190" width="180" height="90" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="120" cy="165" r="30" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <line x1="120" y1="140" x2="120" y2="190" stroke="#1b3a63" stroke-width="3"/>
+  <line x1="95"  y1="152" x2="145" y2="178" stroke="#1b3a63" stroke-width="3"/>
+  <line x1="145" y1="152" x2="95"  y2="178" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lb" x="120" y="300" text-anchor="middle">PAC / groupe de</text>
+  <text class="lb" x="120" y="318" text-anchor="middle">condensation</text>
+
+  <line x1="215" y1="235" x2="330" y2="235" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#s3-fl-tewi)"/>
+  <text class="lb2" x="272" y="220" text-anchor="middle">consommation</text>
+  <text class="lb2" x="272" y="255" text-anchor="middle">électrique sur sa vie</text>
+
+  <!-- barre 1 : mieux classé -->
+  <rect x="420" y="280" width="120" height="60" fill="#5a6b7d"/>
+  <rect x="420" y="230" width="120" height="50" fill="#047857"/>
+  <text class="ti" x="480" y="362" text-anchor="middle" font-size="15px">Mieux classé</text>
+
+  <!-- barre 2 : moins bien classé -->
+  <rect x="640" y="280" width="120" height="60" fill="#5a6b7d"/>
+  <rect x="640" y="150" width="120" height="130" fill="#b06a00"/>
+  <text class="ti" x="700" y="362" text-anchor="middle" font-size="15px">Moins bien classé</text>
+
+  <text class="lb2" x="480" y="30" text-anchor="middle">Part indirecte</text>
+  <text class="good" x="480" y="210" text-anchor="middle">plus faible</text>
+  <text class="warn" x="700" y="130" text-anchor="middle">plus élevée</text>
+
+  <text class="lb2" x="580" y="315" text-anchor="middle">part directe</text>
+  <text class="lb2" x="580" y="332" text-anchor="middle">(fuite de fluide) — reste comparable</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s4-t-tewi" aria-describedby="s4-d-tewi" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s4-t-tewi">Le lien avec le TEWI : la part indirecte varie avec la classe énergie</title>
+  <desc id="s4-d-tewi">À gauche, l'icône d'une PAC ou d'un groupe de condensation, avec une flèche
+    vers deux barres empilées. Chaque barre a une base grise identique, « part directe, la fuite
+    de fluide », qui reste comparable. Au-dessus, une portion colorée, « part indirecte, la
+    consommation électrique » : plus petite et verte pour l'appareil mieux classé, plus grande et
+    ambrée pour l'appareil moins bien classé. Aucun chiffre n'est indiqué : seule la hauteur
+    relative des barres porte la comparaison, doublée par les mots « plus faible » et « plus
+    élevée ». L'animation pose d'abord les deux bases grises identiques, puis fait grandir les
+    deux parts indirectes à des hauteurs différentes ; l'image fixe montre le résultat complet.</desc>
+  <defs>
+    <marker id="s4-fl-tewi" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .s4 .ti { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .s4 .lb { font-size:15px; fill:#10233c; }
+    .s4 .lb2 { font-size:14px; fill:#5a6b7d; }
+    .s4 .good { font-weight:bold; fill:#047857; font-size:15px; }
+    .s4 .warn { font-weight:bold; fill:#b06a00; font-size:15px; }
+  </style>
+
+  <!-- icône PAC / groupe de condensation -->
+  <g>
+    <rect x="30" y="190" width="180" height="90" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="120" cy="165" r="30" fill="none" stroke="#1b3a63" stroke-width="3"/>
+    <line x1="120" y1="140" x2="120" y2="190" stroke="#1b3a63" stroke-width="3"/>
+    <line x1="95"  y1="152" x2="145" y2="178" stroke="#1b3a63" stroke-width="3"/>
+    <line x1="145" y1="152" x2="95"  y2="178" stroke="#1b3a63" stroke-width="3"/>
+    <text class="lb" x="120" y="300" text-anchor="middle">PAC / groupe de</text>
+    <text class="lb" x="120" y="318" text-anchor="middle">condensation</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.04;0.11;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <line x1="215" y1="235" x2="330" y2="235" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#s4-fl-tewi)"/>
+    <text class="lb2" x="272" y="220" text-anchor="middle">consommation</text>
+    <text class="lb2" x="272" y="255" text-anchor="middle">électrique sur sa vie</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.13;0.19;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- bases grises identiques : la part directe reste comparable -->
+  <rect x="420" y="280" width="120" height="60" fill="#5a6b7d">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.21;0.27;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="640" y="280" width="120" height="60" fill="#5a6b7d">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.21;0.27;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <g>
+    <rect x="448" y="300" width="264" height="40" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="1.5"/>
+    <text class="lb2" x="580" y="317" text-anchor="middle" fill="#10233c">part directe (fuite de fluide)</text>
+    <text class="lb2" x="580" y="334" text-anchor="middle" fill="#10233c">— reste comparable —</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.28;0.33;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- part indirecte verte : grandit un peu -->
+  <rect x="420" y="230" width="120" height="50" fill="#047857">
+    <animate attributeName="y" values="280;280;230;230" keyTimes="0;0.36;0.44;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="height" values="0;0;50;50" keyTimes="0;0.36;0.44;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <g>
+    <text class="ti" x="480" y="362" text-anchor="middle" font-size="15px">Mieux classé</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.21;0.27;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- part indirecte ambrée : grandit beaucoup -->
+  <rect x="640" y="150" width="120" height="130" fill="#b06a00">
+    <animate attributeName="y" values="280;280;150;150" keyTimes="0;0.46;0.58;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="height" values="0;0;130;130" keyTimes="0;0.46;0.58;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <g>
+    <text class="ti" x="700" y="362" text-anchor="middle" font-size="15px">Moins bien classé</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.21;0.27;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <text class="lb2" x="480" y="30" text-anchor="middle">Part indirecte</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.42;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <text class="good" x="480" y="210" text-anchor="middle">plus faible</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.44;0.50;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <text class="warn" x="700" y="130" text-anchor="middle">plus élevée</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.58;0.64;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> les deux bases grises identiques se posent d'abord — la part directe reste comparable — puis les parts indirectes grandissent à des hauteurs différentes.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 6 — Le piège : un prix bas peut cacher un surcoût</h2>
+  <p class="fichier">svg/piege-prix-bas.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> deux lignes de coût cumulé : la verte part plus haut et monte doucement, l'ambrée part plus bas et monte plus vite ; elles se croisent — « le surcoût apparaît ».</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s5-t-piege" aria-describedby="s5-d-piege" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s5-t-piege">Le piège du prix bas : le coût cumulé sur la durée de vie</title>
+  <desc id="s5-d-piege">Un graphique à deux axes sans valeur chiffrée : en bas, le temps ; sur le
+    côté, le coût cumulé. Deux lignes partent de la gauche. La ligne verte pleine part d'un point
+    plus haut, « classe énergie meilleure, prix plus élevé au départ », et monte doucement. La
+    ligne ambrée en tirets part d'un point plus bas, « prix bas, mauvaise classe énergie », et
+    monte plus vite. Les deux lignes se croisent au milieu du graphique, avec la mention « le
+    surcoût apparaît », puis la ligne ambrée termine au-dessus de la ligne verte.</desc>
+  <defs>
+    <marker id="s5-fl-piege" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10233c"/>
+    </marker>
+  </defs>
+  <style>
+    .s5 .ti { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .s5 .ax { font-size:15px; fill:#10233c; }
+    .s5 .good { font-weight:bold; fill:#047857; font-size:15px; }
+    .s5 .warn { font-weight:bold; fill:#b06a00; font-size:15px; }
+    .s5 .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <text class="ti" x="450" y="26" text-anchor="middle">Coût cumulé sur la durée de vie de l'appareil</text>
+
+  <!-- axes -->
+  <line x1="100" y1="330" x2="100" y2="50"  stroke="#10233c" stroke-width="2.5" marker-end="url(#s5-fl-piege)"/>
+  <line x1="100" y1="330" x2="830" y2="330" stroke="#10233c" stroke-width="2.5" marker-end="url(#s5-fl-piege)"/>
+  <text class="ax" x="106" y="46" text-anchor="start">Coût cumulé</text>
+  <text class="ax" x="815" y="352" text-anchor="end">Temps →</text>
+
+  <!-- ligne verte : mieux classé, prix plus élevé au départ -->
+  <polyline points="140,250 300,225 480,205 660,190 800,178" fill="none" stroke="#047857" stroke-width="4"/>
+  <circle cx="140" cy="250" r="6" fill="#047857"/>
+  <text class="good" x="150" y="245" text-anchor="start">Classe énergie meilleure,</text>
+  <text class="good" x="150" y="263" text-anchor="start">prix plus élevé au départ</text>
+
+  <!-- ligne ambrée : mal classé, prix bas au départ -->
+  <polyline points="140,300 300,255 480,205 660,150 800,110" fill="none" stroke="#b06a00" stroke-width="4" stroke-dasharray="9 6"/>
+  <circle cx="140" cy="300" r="6" fill="#b06a00"/>
+  <text class="warn" x="150" y="318" text-anchor="start">Prix bas,</text>
+  <text class="warn" x="150" y="335" text-anchor="start">mauvaise classe énergie</text>
+
+  <!-- point de croisement -->
+  <circle cx="480" cy="205" r="7" fill="#10233c"/>
+  <line x1="480" y1="205" x2="530" y2="90" stroke="#10233c" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <rect x="495" y="55" width="200" height="34" rx="8" fill="#fff4e0" stroke="#b06a00" stroke-width="2"/>
+  <text class="warn" x="595" y="77" text-anchor="middle">le surcoût apparaît</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s6-t-piege" aria-describedby="s6-d-piege" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s6-t-piege">Le piège du prix bas : le coût cumulé sur la durée de vie</title>
+  <desc id="s6-d-piege">Un graphique à deux axes sans valeur chiffrée : en bas, le temps ; sur le
+    côté, le coût cumulé. Deux lignes partent de la gauche. La ligne verte pleine part d'un point
+    plus haut, « classe énergie meilleure, prix plus élevé au départ », et monte doucement. La
+    ligne ambrée en tirets part d'un point plus bas, « prix bas, mauvaise classe énergie », et
+    monte plus vite. Les deux lignes se croisent au milieu du graphique, avec la mention « le
+    surcoût apparaît », puis la ligne ambrée termine au-dessus de la ligne verte. L'animation
+    trace les deux lignes dans le temps et révèle le croisement ; l'image fixe est complète.</desc>
+  <defs>
+    <marker id="s6-fl-piege" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10233c"/>
+    </marker>
+    <mask id="s6-trace" maskUnits="userSpaceOnUse" x="90" y="40" width="760" height="310">
+      <rect x="100" y="40" width="800" height="310" fill="#ffffff">
+        <animate attributeName="width" values="0;0;740;740" keyTimes="0;0.26;0.56;1" dur="14s" repeatCount="indefinite"/>
+      </rect>
+    </mask>
+  </defs>
+  <style>
+    .s6 .ti { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .s6 .ax { font-size:15px; fill:#10233c; }
+    .s6 .good { font-weight:bold; fill:#047857; font-size:15px; }
+    .s6 .warn { font-weight:bold; fill:#b06a00; font-size:15px; }
+    .s6 .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <text class="ti" x="450" y="26" text-anchor="middle">Coût cumulé sur la durée de vie de l'appareil</text>
+
+  <!-- axes -->
+  <g>
+    <line x1="100" y1="330" x2="100" y2="50"  stroke="#10233c" stroke-width="2.5" marker-end="url(#s6-fl-piege)"/>
+    <line x1="100" y1="330" x2="830" y2="330" stroke="#10233c" stroke-width="2.5" marker-end="url(#s6-fl-piege)"/>
+    <text class="ax" x="106" y="46" text-anchor="start">Coût cumulé</text>
+    <text class="ax" x="815" y="352" text-anchor="end">Temps →</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.04;0.12;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- points de départ et mentions -->
+  <g>
+    <circle cx="140" cy="250" r="6" fill="#047857"/>
+    <text class="good" x="150" y="245" text-anchor="start">Classe énergie meilleure,</text>
+    <text class="good" x="150" y="263" text-anchor="start">prix plus élevé au départ</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.14;0.20;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="140" cy="300" r="6" fill="#b06a00"/>
+    <text class="warn" x="150" y="318" text-anchor="start">Prix bas,</text>
+    <text class="warn" x="150" y="335" text-anchor="start">mauvaise classe énergie</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.14;0.20;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- les deux lignes, tracées de gauche à droite par le même masque -->
+  <g mask="url(#s6-trace)">
+    <polyline points="140,250 300,225 480,205 660,190 800,178" fill="none" stroke="#047857" stroke-width="4"/>
+    <polyline points="140,300 300,255 480,205 660,150 800,110" fill="none" stroke="#b06a00" stroke-width="4" stroke-dasharray="9 6"/>
+  </g>
+
+  <!-- point de croisement -->
+  <g>
+    <circle cx="480" cy="205" r="7" fill="#10233c"/>
+    <line x1="480" y1="205" x2="530" y2="90" stroke="#10233c" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <rect x="495" y="55" width="200" height="34" rx="8" fill="#fff4e0" stroke="#b06a00" stroke-width="2"/>
+    <text class="warn" x="595" y="77" text-anchor="middle">le surcoût apparaît</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.50;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> les deux lignes se tracent dans le temps, le point de croisement et son cartouche apparaissent quand elles se rejoignent.</p>
+</section>
+<footer>
+  Les autres écrans de cette station restent fixes (comparaison côte à côte, carte d'identité,
+  raisonnement, bilan) : l'animation n'y apporterait rien.
+  Réseau Législation inerWeb — document de travail, non diffusé.
+</footer>
+
+</div>
+</body>
+</html>

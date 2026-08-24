@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validation — Station PRP &amp; ODP — animations</title>
+<style>
+  body { margin:0; background:#f7f1e7; color:#10233c;
+         font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;
+         font-size:17px; line-height:1.6; }
+  .page { max-width:1180px; margin:0 auto; padding:24px 20px 60px; }
+  header.bandeau { display:flex; align-items:center; justify-content:space-between;
+         border-bottom:3px solid #047857; padding-bottom:14px; margin-bottom:8px; flex-wrap:wrap; gap:12px; }
+  .logo { line-height:1.15; }
+  .logo .mot { font-size:30px; color:#1b3a63; }
+  .logo .iner { font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; }
+  .logo .web { font-family:"Segoe Script","Comic Sans MS",cursive; }
+  .logo .ligne { border-top:2.5px solid #e8914a; margin-top:2px; position:relative; width:190px; }
+  .logo .cartouche { position:absolute; right:0; top:-13px; background:#e8914a; color:#fffdf8;
+         font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; font-size:13px;
+         padding:2px 10px; border-radius:10px; }
+  .logo .par { font-size:12.5px; color:#637285; margin-top:6px; }
+  h1 { font-family:"Trebuchet MS",Calibri,sans-serif; color:#1b3a63; font-size:27px; margin:18px 0 6px; }
+  a { color:#3d7fca; } a:hover { color:#1b3a63; }
+  .chapeau { color:#637285; margin:0 0 26px; }
+  .piece { background:#fffdf8; border:1.5px solid rgba(27,58,99,.16); border-radius:14px;
+         padding:22px 24px; margin-bottom:30px; }
+  h2 { font-family:"Trebuchet MS",Calibri,sans-serif; color:#047857; font-size:21px; margin:0 0 4px; }
+  .fichier { font-family:Consolas,monospace; font-size:14px; color:#637285; margin:0 0 14px; }
+  .scenario { border:1.5px solid rgba(27,58,99,.16); border-left:5px solid #3d7fca;
+         background:#fbfaf6; border-radius:8px; padding:10px 16px; margin:0 0 18px; font-size:15.5px; }
+  .scenario b { color:#1b3a63; }
+  .duo { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:860px){ .duo { grid-template-columns:1fr; } }
+  .cadre { border:1.5px solid rgba(27,58,99,.16); border-radius:10px; padding:10px; background:#fff; }
+  .cadre p.et { margin:0 0 8px; font-family:"Trebuchet MS",Calibri,sans-serif; font-weight:bold; font-size:15px; }
+  .cadre.avant p.et { color:#637285; }
+  .cadre.apres p.et { color:#047857; }
+  .cadre svg { width:100%; height:auto; display:block; }
+  .change { margin:14px 0 0; font-size:15.5px; }
+  .change b { color:#1b3a63; }
+  footer { color:#637285; font-size:14px; border-top:1.5px solid rgba(27,58,99,.16); padding-top:14px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="bandeau">
+  <div class="logo">
+    <div class="mot">❄️ <span class="iner">iner</span><span class="web">Web</span></div>
+    <div class="ligne"><span class="cartouche">Législation</span></div>
+    <div class="par">par F. Henninot</div>
+  </div>
+  <div style="text-align:right; color:#637285; font-size:14.5px;">
+    Branche Impact environnemental — station pilote<br>4 illustrations animées à valider
+  </div>
+</header>
+
+<h1>Station « PRP &amp; ODP » — les 4 animations proposées</h1>
+<p class="chapeau">À gauche l'illustration actuelle (fixe), à droite la version animée proposée.
+L'animation rejoue le scénario de la narration, puis l'image reste stable quelques secondes avant de reboucler.
+À l'arrêt (impression, PDF), la version animée montre exactement l'image finale complète.</p>
+
+<section class="piece">
+  <h2>Écran 2 — L'ODP : comment une molécule attaque l'ozone</h2>
+  <p class="fichier">svg/mecanisme-odp.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> la molécule au chlore monte vers la couche et l'attaque — ODP non nul ; la molécule HFC monte vers la même couche, sans l'entamer — ODP nul.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s1-t-mo" aria-describedby="s1-d-mo" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s1-t-mo">Le mécanisme de l'ODP : le chlore ou le brome attaquent l'ozone</title>
+  <desc id="s1-d-mo">En haut, une bande représente la couche d'ozone stratosphérique. À gauche, une
+    molécule de CFC ou HCFC monte vers cette couche ; elle porte l'étiquette « contient du chlore
+    ou du brome » et une flèche rouge montre qu'elle abîme la couche à son contact, avec la
+    mention « ODP non nul ». À droite, une molécule de HFC monte elle aussi, mais porte l'étiquette
+    « ni chlore ni brome » et traverse la couche sans l'entamer, avec la mention « ODP nul », en
+    vert. En bas, une phrase résume : c'est la présence de chlore ou de brome qui décide, rien
+    d'autre.</desc>
+  <style>
+    .s1 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s1 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .s1 .lbl { font-size:15px; fill:#10233c; }
+    .s1 .ok { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1e7e54; }
+    .s1 .non { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .s1 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Ce qui rend l'ODP différent de zéro</text>
+
+  <!-- couche d'ozone -->
+  <rect x="20" y="56" width="860" height="34" rx="10" fill="#e6f2f0" stroke="#047857" stroke-width="2"/>
+  <text class="lbl" x="450" y="78" text-anchor="middle" font-weight="bold" fill="#047857">Couche d'ozone stratosphérique</text>
+
+  <!-- CFC / HCFC : gauche -->
+  <rect x="60" y="150" width="290" height="150" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="130" cy="210" r="24" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <text class="qui" x="130" y="216" text-anchor="middle" fill="#c0392b">Cl</text>
+  <text class="qui" x="240" y="200" text-anchor="middle">CFC / HCFC</text>
+  <text class="lbl" x="240" y="222" text-anchor="middle">contient chlore ou brome</text>
+  <text class="non" x="240" y="270" text-anchor="middle">ODP non nul</text>
+  <path d="M130,186 L130,96" stroke="#c0392b" stroke-width="4" stroke-dasharray="6 5" marker-end="url(#s1-fa)"/>
+
+  <!-- HFC : droite -->
+  <rect x="550" y="150" width="290" height="150" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="620" cy="210" r="24" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <text class="qui" x="620" y="216" text-anchor="middle" fill="#1e7e54">F</text>
+  <text class="qui" x="730" y="200" text-anchor="middle">HFC</text>
+  <text class="lbl" x="730" y="222" text-anchor="middle">ni chlore ni brome</text>
+  <text class="ok" x="730" y="270" text-anchor="middle">ODP nul</text>
+  <path d="M620,186 L620,96" stroke="#1e7e54" stroke-width="4" marker-end="url(#s1-fb)"/>
+
+  <defs>
+    <marker id="s1-fa" markerWidth="10" markerHeight="10" refX="5" refY="8" orient="auto">
+      <path d="M0,10 L5,0 L10,10 Z" fill="#c0392b"/>
+    </marker>
+    <marker id="s1-fb" markerWidth="10" markerHeight="10" refX="5" refY="8" orient="auto">
+      <path d="M0,10 L5,0 L10,10 Z" fill="#1e7e54"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="322" width="860" height="42" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="348" text-anchor="middle" font-weight="bold">C'est la présence de chlore ou de brome qui décide, rien d'autre.</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="s2-t-mo" aria-describedby="s2-d-mo" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s2-t-mo">Le mécanisme de l'ODP : le chlore ou le brome attaquent l'ozone</title>
+  <desc id="s2-d-mo">En haut, une bande représente la couche d'ozone stratosphérique. À gauche, une
+    molécule de CFC ou HCFC monte vers cette couche ; elle porte l'étiquette « contient du chlore
+    ou du brome » et une flèche rouge montre qu'elle abîme la couche à son contact : une entaille
+    rouge s'ouvre dans la bande, avec la mention « ODP non nul ». À droite, une molécule de HFC
+    monte elle aussi, mais porte l'étiquette « ni chlore ni brome » et traverse la couche sans
+    l'entamer — une coche verte le confirme — avec la mention « ODP nul ». En bas, une phrase
+    résume : c'est la présence de chlore ou de brome qui décide, rien d'autre. L'animation fait
+    monter les deux molécules l'une après l'autre ; l'image fixe montre déjà le résultat complet.</desc>
+  <style>
+    .s2 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s2 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .s2 .lbl { font-size:15px; fill:#10233c; }
+    .s2 .ok { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1e7e54; }
+    .s2 .non { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .s2 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <defs>
+    <linearGradient id="s2-ozone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d5ede8"/>
+      <stop offset="1" stop-color="#eef7f4"/>
+    </linearGradient>
+    <marker id="s2-fa" markerWidth="10" markerHeight="10" refX="5" refY="8" orient="auto">
+      <path d="M0,10 L5,0 L10,10 Z" fill="#c0392b"/>
+    </marker>
+    <marker id="s2-fb" markerWidth="10" markerHeight="10" refX="5" refY="8" orient="auto">
+      <path d="M0,10 L5,0 L10,10 Z" fill="#1e7e54"/>
+    </marker>
+  </defs>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Ce qui rend l'ODP différent de zéro</text>
+
+  <!-- couche d'ozone -->
+  <rect x="20" y="56" width="860" height="34" rx="10" fill="url(#s2-ozone)" stroke="#047857" stroke-width="2.5"/>
+  <text class="lbl" x="450" y="78" text-anchor="middle" font-weight="bold" fill="#047857">Couche d'ozone stratosphérique</text>
+
+  <!-- CFC / HCFC : gauche -->
+  <rect x="60" y="150" width="290" height="150" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="130" cy="210" r="24" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <text class="qui" x="130" y="216" text-anchor="middle" fill="#c0392b">Cl</text>
+  <text class="qui" x="240" y="200" text-anchor="middle">CFC / HCFC</text>
+  <text class="lbl" x="240" y="222" text-anchor="middle">contient chlore ou brome</text>
+  <text class="non" x="240" y="270" text-anchor="middle">ODP non nul</text>
+  <path d="M130,186 L130,98" stroke="#c0392b" stroke-width="4" stroke-dasharray="6 5" marker-end="url(#s2-fa)"/>
+
+  <!-- entaille dans la couche, au point d'impact (état final : visible) -->
+  <g id="s2-entaille">
+    <path d="M130,90 l-6,-9 l9,-8 l-7,-9" stroke="#c0392b" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M118,84 l-7,-6 M142,74 l8,-5" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+    <animate attributeName="opacity" values="0;0;0;1;1" keyTimes="0;0.04;0.30;0.36;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- molécule mobile gauche (décor animé : invisible à l'arrêt) -->
+  <g opacity="0">
+    <circle cx="130" cy="186" r="10" fill="#c0392b"/>
+    <animateTransform attributeName="transform" type="translate" additive="replace"
+      values="0,0;0,0;0,-88;0,-88" keyTimes="0;0.06;0.30;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.05;0.08;0.28;0.33;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- HFC : droite -->
+  <rect x="550" y="150" width="290" height="150" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="620" cy="210" r="24" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <text class="qui" x="620" y="216" text-anchor="middle" fill="#1e7e54">F</text>
+  <text class="qui" x="730" y="200" text-anchor="middle">HFC</text>
+  <text class="lbl" x="730" y="222" text-anchor="middle">ni chlore ni brome</text>
+  <text class="ok" x="730" y="270" text-anchor="middle">ODP nul</text>
+  <path d="M620,186 L620,52" stroke="#1e7e54" stroke-width="4" marker-end="url(#s2-fb)"/>
+
+  <!-- coche : la couche reste intacte (état final : visible) -->
+  <g id="s2-coche">
+    <circle cx="662" cy="42" r="13" fill="#1e7e54"/>
+    <path d="M655,42 l5,5 l9,-10" stroke="#fffdf8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <animate attributeName="opacity" values="0;0;0;1;1" keyTimes="0;0.04;0.50;0.56;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- molécule mobile droite (décor animé : invisible à l'arrêt) -->
+  <g opacity="0">
+    <circle cx="620" cy="186" r="10" fill="#1e7e54"/>
+    <animateTransform attributeName="transform" type="translate" additive="replace"
+      values="0,0;0,0;0,-146;0,-146" keyTimes="0;0.22;0.50;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.21;0.24;0.46;0.52;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <rect x="20" y="322" width="860" height="42" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="348" text-anchor="middle" font-weight="bold">C'est la présence de chlore ou de brome qui décide, rien d'autre.</text>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> les deux molécules montent l'une après l'autre ; à gauche une entaille rouge s'ouvre dans la couche à l'impact, à droite la molécule traverse et une coche verte confirme que la couche reste intacte.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 3 — Le PRP : comment une molécule retient la chaleur</h2>
+  <p class="fichier">svg/mecanisme-prp.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> « Suivez la chaleur. Le soleil réchauffe le sol, en bas. Le sol relâche de la chaleur infrarouge vers le haut. Une molécule en intercepte une partie et la renvoie vers le sol. »</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img"
+     aria-labelledby="s3-t-mp" aria-describedby="s3-d-mp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s3-t-mp">Le mécanisme du PRP : une molécule retient plus ou moins la chaleur</title>
+  <desc id="s3-d-mp">Le soleil en haut envoie des rayons vers la terre en bas. Une molécule de fluide,
+    représentée au centre dans l'atmosphère, renvoie une partie de la chaleur vers le sol au lieu
+    de la laisser s'échapper : des flèches ondulées rebondissent sur elle. Une échelle en bas
+    compare plusieurs fluides à une règle commune : le CO2, fixé à la valeur 1, sert de référence ;
+    chaque fluide reçoit un nombre qui dit combien de fois plus il retient la chaleur que le CO2.
+    La légende précise que l'échelle du PRP ne dépend jamais de l'ODP.</desc>
+  <style>
+    .s3 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s3 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .s3 .lbl { font-size:15px; fill:#10233c; }
+    .s3 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Comment une molécule retient la chaleur</text>
+
+  <!-- soleil -->
+  <circle cx="450" cy="70" r="20" fill="#b06a00"/>
+  <path d="M450,90 L410,140 M450,90 L490,140 M450,90 L450,150" stroke="#b06a00" stroke-width="3" fill="none"/>
+
+  <!-- molécule dans l'atmosphère -->
+  <rect x="20" y="150" width="860" height="90" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <circle cx="450" cy="195" r="18" fill="#1b3a63"/>
+  <path d="M420,180 q10,20 0,30 M480,180 q-10,20 0,30" stroke="#c0392b" stroke-width="3" fill="none"/>
+  <text class="qui" x="450" y="270" text-anchor="middle">La molécule renvoie une partie de la chaleur vers le sol</text>
+
+  <!-- échelle -->
+  <rect x="20" y="296" width="860" height="48" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text class="band" x="450" y="326" text-anchor="middle" font-weight="bold">PRP : combien de fois plus qu'un CO₂ (référence = 1) — indépendant de l'ODP</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="s4-t-mp" aria-describedby="s4-d-mp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s4-t-mp">Le mécanisme du PRP : une molécule retient plus ou moins la chaleur</title>
+  <desc id="s4-d-mp">Le soleil en haut envoie des rayons qui traversent l'atmosphère et réchauffent le
+    sol, dessiné en bas. Le sol relâche de la chaleur infrarouge vers le haut : une ondulation
+    rouge monte, rencontre la molécule de fluide au centre de l'atmosphère, et une partie repart
+    vers le sol — flèche rouge pleine, « renvoyée vers le sol » — tandis qu'une autre partie,
+    en gris tireté, s'échappe vers le haut. Une bande en bas rappelle l'échelle du PRP : combien
+    de fois plus qu'un CO2 fixé à 1, indépendamment de l'ODP. L'animation fait circuler la
+    chaleur ; l'image fixe montre déjà le trajet complet.</desc>
+  <style>
+    .s4 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s4 .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#1b3a63; }
+    .s4 .lbl { font-size:15px; fill:#10233c; }
+    .s4 .cap { font-size:14px; fill:#5a6b7d; }
+    .s4 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <defs>
+    <marker id="s4-pr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#c0392b"/>
+    </marker>
+    <marker id="s4-pg" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8a97a6"/>
+    </marker>
+    <marker id="s4-ps" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#b06a00"/>
+    </marker>
+  </defs>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Comment une molécule retient la chaleur</text>
+
+  <!-- atmosphère -->
+  <rect x="20" y="120" width="860" height="116" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="cap" x="36" y="140">atmosphère</text>
+
+  <!-- soleil et rayons vers le sol -->
+  <circle cx="160" cy="66" r="18" fill="#b06a00"/>
+  <path d="M160,66 m-26,0 h-12 M160,66 m26,0 h12 M160,66 m0,-26 v-12 M160,40 m-18,8 l-8,-8 M160,40 m18,8 l8,-8" stroke="#b06a00" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M178,80 L328,246" stroke="#b06a00" stroke-width="3" marker-end="url(#s4-ps)"/>
+  <text class="cap" x="212" y="110">le soleil réchauffe le sol</text>
+
+  <!-- photon mobile le long du rayon (décor animé : invisible à l'arrêt) -->
+  <circle r="7" fill="#b06a00" opacity="0">
+    <animateMotion path="M178,80 L322,240" keyPoints="0;0;1;1" keyTimes="0;0.05;0.20;1" calcMode="linear" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.05;0.07;0.18;0.21;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- molécule au centre -->
+  <circle cx="450" cy="178" r="18" fill="#1b3a63"/>
+  <circle cx="450" cy="178" r="18" fill="none" stroke="#c0392b" stroke-width="2" opacity="0">
+    <animate attributeName="r" values="18;18;30;30" keyTimes="0;0.40;0.50;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.6;0;0" keyTimes="0;0.40;0.45;0.52;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <text class="qui" x="640" y="170" text-anchor="middle">La molécule renvoie une partie</text>
+  <text class="qui" x="640" y="190" text-anchor="middle">de la chaleur vers le sol</text>
+
+  <!-- chaleur infrarouge : montée depuis le sol, renvoi vers le sol, échappée -->
+  <path id="s4-c-monte" d="M408,248 C398,226 424,214 436,192" stroke="#c0392b" stroke-width="3" fill="none" marker-end="url(#s4-pr)"/>
+  <text class="cap" x="330" y="212" text-anchor="middle" fill="#c0392b">le sol relâche l'infrarouge</text>
+  <path id="s4-c-retour" d="M464,192 C482,214 470,228 486,248" stroke="#c0392b" stroke-width="3" fill="none" marker-end="url(#s4-pr)"/>
+  <text class="cap" x="565" y="232" text-anchor="middle" fill="#c0392b">renvoyée vers le sol</text>
+  <path id="s4-c-echappe" d="M770,248 C760,210 782,170 772,116" stroke="#8a97a6" stroke-width="3" stroke-dasharray="7 6" fill="none" marker-end="url(#s4-pg)"/>
+  <text class="cap" x="790" y="104" text-anchor="middle" fill="#5a6b7d">une partie s'échappe</text>
+
+  <!-- billes de chaleur mobiles (décor animé : invisibles à l'arrêt) -->
+  <circle r="7" fill="#c0392b" opacity="0">
+    <animateMotion path="M408,248 C398,226 424,214 436,192" keyPoints="0;0;1;1" keyTimes="0;0.25;0.40;1" calcMode="linear" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.27;0.38;0.41;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="7" fill="#c0392b" opacity="0">
+    <animateMotion path="M464,192 C482,214 470,228 486,248" keyPoints="0;0;1;1" keyTimes="0;0.44;0.58;1" calcMode="linear" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.44;0.46;0.56;0.59;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6" fill="#8a97a6" opacity="0">
+    <animateMotion path="M770,248 C760,210 782,170 772,116" keyPoints="0;0;1;1" keyTimes="0;0.25;0.50;1" calcMode="linear" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.9;0.9;0;0" keyTimes="0;0.25;0.28;0.46;0.51;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- le sol -->
+  <rect x="20" y="252" width="860" height="30" fill="#f0e6d8" stroke="#b06a00" stroke-width="1.5"/>
+  <text class="cap" x="58" y="272" fill="#8a5a00" font-weight="bold">le sol</text>
+
+  <!-- échelle -->
+  <rect x="20" y="340" width="860" height="48" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text class="band" x="450" y="370" text-anchor="middle" font-weight="bold">PRP : combien de fois plus qu'un CO₂ (référence = 1) — indépendant de l'ODP</text>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> le sol, que la narration décrit mais que le dessin ne montrait pas, est ajouté ; la chaleur circule — rayon du soleil, infrarouge qui monte, une partie renvoyée vers le sol (rouge plein), une partie qui s'échappe (gris tireté).</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 5 — Repère à deux échelles : où se situent les fluides courants</h2>
+  <p class="fichier">svg/repere-deux-axes.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> six points s'alignent dans la colonne ODP nul, du plus bas au plus haut — ammoniac 0, CO₂ 1, propane 3, R-32 675, R-410A 2088, R-404A 3922.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="s5-t-re" aria-describedby="s5-d-re" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s5-t-re">Repère à deux axes : où se situent plusieurs fluides</title>
+  <desc id="s5-d-re">Un repère avec en abscisse l'ODP (nul à gauche, non nul à droite) et en ordonnée
+    le PRP (faible en bas, très élevé en haut). Tous les points placés dans la colonne ODP nul
+    sont des HFC ou des fluides naturels : l'ammoniac R-717 en bas avec un PRP de 0, le CO2 R-744
+    juste au-dessus avec un PRP de 1, le propane R-290 avec un PRP de 3, puis en montant le R-32
+    à 675, le R-410A à 2088 et le R-404A à 3922, le plus haut du repère. Une zone à droite, hachurée
+    et sans point chiffré, représente les CFC et HCFC : leur ODP est non nul, sans valeur donnée
+    ici. La légende rappelle que la position sur l'axe horizontal ne dit rien de la position sur
+    l'axe vertical.</desc>
+  <style>
+    .s5 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s5 .ax { font-size:15px; fill:#5a6b7d; }
+    .s5 .lbl { font-size:15px; fill:#10233c; font-weight:bold; }
+    .s5 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Chaque fluide a sa place sur les deux échelles</text>
+
+  <!-- axes -->
+  <line x1="140" y1="360" x2="820" y2="360" stroke="#10233c" stroke-width="2"/>
+  <line x1="140" y1="360" x2="140" y2="60" stroke="#10233c" stroke-width="2"/>
+  <text class="ax" x="480" y="386" text-anchor="middle">ODP — nul à gauche · non nul à droite →</text>
+  <text class="ax" x="70" y="210" text-anchor="middle" transform="rotate(-90 70 210)">PRP — faible en bas · très élevé en haut</text>
+
+  <!-- zone CFC/HCFC : ODP non nul -->
+  <rect x="620" y="60" width="200" height="300" fill="#fbe7e4" opacity="0.5"/>
+  <text class="lbl" x="720" y="90" text-anchor="middle" fill="#c0392b" font-size="15px">CFC / HCFC</text>
+  <text class="ax" x="720" y="108" text-anchor="middle">ODP non nul (sans valeur ici)</text>
+
+  <!-- points, colonne ODP nul -->
+  <circle cx="200" cy="350" r="8" fill="#047857"/>
+  <text class="lbl" x="240" y="354" font-size="15px">R-717 ammoniac · PRP 0</text>
+
+  <circle cx="200" cy="335" r="8" fill="#047857"/>
+  <text class="lbl" x="240" y="332" font-size="15px">R-744 CO₂ · PRP 1</text>
+
+  <circle cx="200" cy="322" r="8" fill="#047857"/>
+  <text class="lbl" x="240" y="316" font-size="15px">R-290 propane · PRP 3</text>
+
+  <circle cx="200" cy="230" r="8" fill="#1b3a63"/>
+  <text class="lbl" x="240" y="234" font-size="15px">R-32 · PRP 675</text>
+
+  <circle cx="200" cy="150" r="8" fill="#b06a00"/>
+  <text class="lbl" x="240" y="154" font-size="15px">R-410A · PRP 2088</text>
+
+  <circle cx="200" cy="80" r="8" fill="#c0392b"/>
+  <text class="lbl" x="240" y="84" font-size="15px">R-404A · PRP 3922</text>
+
+  <rect x="140" y="392" width="680" height="26" rx="10" fill="none"/>
+  <text class="band" x="480" y="410" text-anchor="middle">La colonne de gauche (ODP nul) contient les PRP les plus élevés comme les plus bas.</text>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="s6-t-re" aria-describedby="s6-d-re" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s6-t-re">Repère à deux axes : où se situent plusieurs fluides</title>
+  <desc id="s6-d-re">Un repère avec en abscisse l'ODP (nul à gauche, non nul à droite) et en ordonnée
+    le PRP (faible en bas, très élevé en haut). Tous les points placés dans la colonne ODP nul
+    sont des HFC ou des fluides naturels : l'ammoniac R-717 en bas avec un PRP de 0, le CO2 R-744
+    juste au-dessus avec un PRP de 1, le propane R-290 avec un PRP de 3, puis en montant le R-32
+    à 675, le R-410A à 2088 et le R-404A à 3922, le plus haut du repère. Une zone à droite,
+    hachurée et sans point chiffré, représente les CFC et HCFC : leur ODP est non nul, sans
+    valeur donnée ici. La légende rappelle que la position sur l'axe horizontal ne dit rien de
+    la position sur l'axe vertical. L'animation fait apparaître les six fluides l'un après
+    l'autre, du PRP le plus bas au plus élevé ; l'image fixe les montre déjà tous.</desc>
+  <style>
+    .s6 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .s6 .ax { font-size:15px; fill:#5a6b7d; }
+    .s6 .lbl { font-size:15px; fill:#10233c; font-weight:bold; }
+    .s6 .band { font-size:15px; fill:#10233c; }
+  </style>
+
+  <defs>
+    <pattern id="s6-hach" width="12" height="12" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#fdf1ef"/>
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#e8b8b0" stroke-width="3"/>
+    </pattern>
+    <marker id="s6-axf" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#10233c"/>
+    </marker>
+  </defs>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Chaque fluide a sa place sur les deux échelles</text>
+
+  <!-- zone CFC/HCFC : ODP non nul (hachurée : couleur + trame, jamais la couleur seule) -->
+  <rect x="620" y="60" width="200" height="300" fill="url(#s6-hach)" stroke="#e8b8b0" stroke-width="1.5"/>
+  <text class="lbl" x="720" y="90" text-anchor="middle" fill="#c0392b" font-size="15px">CFC / HCFC</text>
+  <text class="ax" x="720" y="108" text-anchor="middle">ODP non nul (sans valeur ici)</text>
+
+  <!-- axes -->
+  <line x1="140" y1="360" x2="830" y2="360" stroke="#10233c" stroke-width="2.5" marker-end="url(#s6-axf)"/>
+  <line x1="140" y1="360" x2="140" y2="52" stroke="#10233c" stroke-width="2.5" marker-end="url(#s6-axf)"/>
+  <text class="ax" x="480" y="386" text-anchor="middle">ODP — nul à gauche · non nul à droite →</text>
+  <text class="ax" x="70" y="210" text-anchor="middle" transform="rotate(-90 70 210)">PRP — faible en bas · très élevé en haut</text>
+
+  <!-- points, colonne ODP nul — apparition séquentielle du plus bas au plus haut -->
+  <g>
+    <circle cx="200" cy="350" r="8" fill="#047857" stroke="#fffdf8" stroke-width="2"/>
+    <text class="lbl" x="240" y="354" font-size="15px">R-717 ammoniac · PRP 0</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.10;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="200" cy="335" r="8" fill="#047857" stroke="#fffdf8" stroke-width="2"/>
+    <text class="lbl" x="240" y="332" font-size="15px">R-744 CO₂ · PRP 1</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.14;0.18;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="200" cy="322" r="8" fill="#047857" stroke="#fffdf8" stroke-width="2"/>
+    <text class="lbl" x="240" y="316" font-size="15px">R-290 propane · PRP 3</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.22;0.26;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="200" cy="230" r="8" fill="#1b3a63" stroke="#fffdf8" stroke-width="2"/>
+    <text class="lbl" x="240" y="234" font-size="15px">R-32 · PRP 675</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.32;0.36;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="200" cy="150" r="8" fill="#b06a00" stroke="#fffdf8" stroke-width="2"/>
+    <text class="lbl" x="240" y="154" font-size="15px">R-410A · PRP 2088</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.46;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="200" cy="80" r="8" fill="#c0392b" stroke="#fffdf8" stroke-width="2"/>
+    <text class="lbl" x="240" y="84" font-size="15px">R-404A · PRP 3922</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.56;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <g>
+    <text class="band" x="480" y="410" text-anchor="middle">La colonne de gauche (ODP nul) contient les PRP les plus élevés comme les plus bas.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.60;0.65;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> les six fluides apparaissent l'un après l'autre, dans l'ordre de la narration ; la zone CFC/HCFC est réellement hachurée (couleur + trame, jamais la couleur seule) ; les axes portent des pointes de flèche.</p>
+</section>
+
+<section class="piece">
+  <h2>Écran 6 — Cas métier : une chambre froide qui fuit</h2>
+  <p class="fichier">svg/cas-chambre-froide.svg</p>
+  <p class="scenario"><b>Scénario (narration existante) :</b> deux chambres identiques, une fuite de même masse des deux côtés ; à gauche le R-404A débouche sur un grand nuage rouge — impact ×3922 ; à droite le CO₂, petit nuage vert — impact ×1.</p>
+  <div class="duo">
+    <div class="cadre avant"><p class="et">AVANT — fixe</p><svg class="s7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="s7-t-cf" aria-describedby="s7-d-cf" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s7-t-cf">Cas métier : une chambre froide qui fuit, au R-404A puis au CO2</title>
+  <desc id="s7-d-cf">Deux chambres froides identiques, dessinées comme des armoires avec une porte et un
+    thermomètre. Chacune perd une goutte de fluide de taille identique, représentant la même masse
+    perdue. À gauche, la chambre au R-404A : la goutte est reliée à un grand nuage rouge marqué
+    « impact ×3922 par rapport au CO2 ». À droite, la chambre au CO2 : la goutte, de même taille,
+    est reliée à un petit nuage vert marqué « impact ×1, la référence ». En bas, une bande résume :
+    même masse perdue, impact climatique très différent — c'est le PRP qui fait la différence, pas
+    la quantité.</desc>
+  <style>
+    .s7 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .s7 .lbl { font-size:16px; fill:#10233c; }
+    .s7 .cap { font-size:15px; fill:#5a6b7d; }
+    .s7 .val { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; }
+  </style>
+
+  <!-- chambre R-404A -->
+  <rect x="40" y="60" width="140" height="170" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="55" y="75" width="110" height="120" rx="6" fill="#eef3f9" stroke="#2f5689" stroke-width="1.5"/>
+  <circle cx="150" cy="130" r="6" fill="#1b3a63"/>
+  <text class="ttl" x="110" y="252" text-anchor="middle">Chambre froide</text>
+  <text class="lbl" x="110" y="272" text-anchor="middle">R-404A (PRP 3922)</text>
+
+  <!-- goutte identique gauche -->
+  <path d="M240,150 q14,20 0,36 q-14,-16 0,-36 Z" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="cap" x="240" y="204" text-anchor="middle">fuite : même masse</text>
+  <line x1="270" y1="170" x2="330" y2="130" stroke="#c0392b" stroke-width="2.5" marker-end="url(#s7-fr1)"/>
+
+  <!-- grand nuage rouge -->
+  <ellipse cx="420" cy="110" rx="95" ry="60" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <text class="val" x="420" y="105" text-anchor="middle" fill="#c0392b">impact ×3922</text>
+  <text class="cap" x="420" y="128" text-anchor="middle">par rapport au CO₂</text>
+
+  <!-- séparation -->
+  <line x1="450" y1="60" x2="450" y2="360" stroke="#d6dee7" stroke-width="2"/>
+
+  <!-- chambre CO2 -->
+  <rect x="720" y="60" width="140" height="170" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="735" y="75" width="110" height="120" rx="6" fill="#eef3f9" stroke="#2f5689" stroke-width="1.5"/>
+  <circle cx="830" cy="130" r="6" fill="#1b3a63"/>
+  <text class="ttl" x="790" y="252" text-anchor="middle">Chambre froide</text>
+  <text class="lbl" x="790" y="272" text-anchor="middle">CO₂ (PRP 1)</text>
+
+  <!-- goutte identique droite -->
+  <path d="M660,150 q14,20 0,36 q-14,-16 0,-36 Z" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="cap" x="660" y="204" text-anchor="middle">fuite : même masse</text>
+  <line x1="630" y1="170" x2="580" y2="145" stroke="#047857" stroke-width="2.5" marker-end="url(#s7-fv1)"/>
+
+  <!-- petit nuage vert -->
+  <ellipse cx="530" cy="140" rx="34" ry="22" fill="#e6f2f0" stroke="#047857" stroke-width="3"/>
+  <text class="cap" x="530" y="145" text-anchor="middle" fill="#047857" font-weight="bold">×1</text>
+
+  <rect x="40" y="310" width="820" height="60" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lbl" x="450" y="336" text-anchor="middle">Même masse perdue, impact climatique très différent :</text>
+  <text class="lbl" x="450" y="358" text-anchor="middle">c'est le PRP qui fait la différence, pas la quantité.</text>
+
+  <defs>
+    <marker id="s7-fr1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#c0392b"/>
+    </marker>
+    <marker id="s7-fv1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#047857"/>
+    </marker>
+  </defs>
+</svg></div>
+    <div class="cadre apres"><p class="et">APRÈS — animé</p><svg class="s8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="s8-t-cf" aria-describedby="s8-d-cf" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="s8-t-cf">Cas métier : une chambre froide qui fuit, au R-404A puis au CO2</title>
+  <desc id="s8-d-cf">Deux chambres froides identiques. Chacune perd une goutte de fluide de taille
+    identique, représentant la même masse perdue. À gauche, la chambre au R-404A : la goutte est
+    reliée à un grand nuage rouge marqué « impact ×3922 par rapport au CO2 ». À droite, la
+    chambre au CO2 : la goutte, de même taille, est reliée à un petit nuage vert marqué « ×1,
+    la référence ». En bas, une bande résume : même masse perdue, impact climatique très
+    différent — c'est le PRP qui fait la différence, pas la quantité. L'animation fait partir
+    les deux nuages à la même taille, puis le nuage du R-404A gonfle 3922 fois plus ; l'image
+    fixe montre déjà le résultat final.</desc>
+  <style>
+    .s8 .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .s8 .lbl { font-size:16px; fill:#10233c; }
+    .s8 .cap { font-size:15px; fill:#5a6b7d; }
+    .s8 .val { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; }
+  </style>
+
+  <defs>
+    <path id="s8-nuage" d="M -95 20 C -95 -8 -70 -22 -50 -16 C -46 -44 -12 -54 8 -38 C 24 -56 62 -48 66 -24 C 92 -22 100 6 82 20 C 88 40 64 52 46 44 C 30 58 -10 58 -24 46 C -48 58 -78 48 -80 30 C -92 30 -95 26 -95 20 Z"/>
+    <marker id="s8-fr1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#c0392b"/>
+    </marker>
+    <marker id="s8-fv1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#047857"/>
+    </marker>
+  </defs>
+
+  <!-- séparation (dessinée sous les nuages : le grand nuage a le droit de déborder) -->
+  <line x1="450" y1="60" x2="450" y2="300" stroke="#d6dee7" stroke-width="2"/>
+
+  <!-- chambre R-404A -->
+  <rect x="40" y="60" width="140" height="170" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="55" y="75" width="110" height="120" rx="6" fill="#eef3f9" stroke="#2f5689" stroke-width="1.5"/>
+  <circle cx="150" cy="130" r="6" fill="#1b3a63"/>
+  <text class="ttl" x="110" y="252" text-anchor="middle">Chambre froide</text>
+  <text class="lbl" x="110" y="272" text-anchor="middle">R-404A (PRP 3922)</text>
+
+  <!-- goutte identique gauche -->
+  <path d="M240,150 q14,20 0,36 q-14,-16 0,-36 Z" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="cap" x="240" y="204" text-anchor="middle">fuite : même masse</text>
+  <g>
+    <line x1="268" y1="166" x2="330" y2="136" stroke="#c0392b" stroke-width="2.5" marker-end="url(#s8-fr1)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.20;0.27;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- goutte mobile gauche (décor animé : invisible à l'arrêt) -->
+  <circle r="6" fill="#5a6b7d" opacity="0">
+    <animateMotion path="M150,130 C176,118 214,124 238,150" keyPoints="0;0;1;1" keyTimes="0;0.08;0.19;1" calcMode="linear" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.10;0.17;0.20;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- grand nuage rouge : part de la taille du nuage vert, puis gonfle ×3922 -->
+  <g transform="translate(415,116)">
+    <g>
+      <use href="#s8-nuage" fill="#fbe7e4" stroke="#c0392b" stroke-width="3" vector-effect="non-scaling-stroke"/>
+      <animateTransform attributeName="transform" type="scale" additive="replace"
+        values="0.36;0.36;0.36;1;1" keyTimes="0;0.28;0.34;0.58;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.24;0.30;1" dur="12s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  <g>
+    <text class="val" x="415" y="112" text-anchor="middle" fill="#c0392b">impact ×3922</text>
+    <text class="cap" x="415" y="135" text-anchor="middle">par rapport au CO₂</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.58;0.65;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- chambre CO2 -->
+  <rect x="720" y="60" width="140" height="170" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="735" y="75" width="110" height="120" rx="6" fill="#eef3f9" stroke="#2f5689" stroke-width="1.5"/>
+  <circle cx="830" cy="130" r="6" fill="#1b3a63"/>
+  <text class="ttl" x="790" y="252" text-anchor="middle">Chambre froide</text>
+  <text class="lbl" x="790" y="272" text-anchor="middle">CO₂ (PRP 1)</text>
+
+  <!-- goutte identique droite -->
+  <path d="M660,150 q14,20 0,36 q-14,-16 0,-36 Z" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="cap" x="660" y="204" text-anchor="middle">fuite : même masse</text>
+  <g>
+    <line x1="632" y1="166" x2="576" y2="148" stroke="#047857" stroke-width="2.5" marker-end="url(#s8-fv1)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.20;0.27;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- goutte mobile droite (décor animé : invisible à l'arrêt) -->
+  <circle r="6" fill="#5a6b7d" opacity="0">
+    <animateMotion path="M830,130 C804,118 690,126 662,150" keyPoints="0;0;1;1" keyTimes="0;0.08;0.19;1" calcMode="linear" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.10;0.17;0.20;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- petit nuage vert : la référence, il ne bouge pas -->
+  <g transform="translate(530,142)">
+    <g>
+      <use href="#s8-nuage" fill="#e6f2f0" stroke="#047857" stroke-width="3" vector-effect="non-scaling-stroke" transform="scale(0.36)"/>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.24;0.30;1" dur="12s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  <g>
+    <text class="cap" x="530" y="147" text-anchor="middle" fill="#047857" font-weight="bold">×1</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.36;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <rect x="40" y="310" width="820" height="60" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lbl" x="450" y="336" text-anchor="middle">Même masse perdue, impact climatique très différent :</text>
+  <text class="lbl" x="450" y="358" text-anchor="middle">c'est le PRP qui fait la différence, pas la quantité.</text>
+</svg></div>
+  </div>
+  <p class="change"><b>Ce qui change :</b> la goutte s'échappe de chaque chambre, les deux nuages naissent à la même taille, puis celui du R-404A gonfle jusqu'à ×3922 — c'est le geste pédagogique central ; les nuages ont une vraie silhouette de nuage.</p>
+</section>
+<footer>
+  Les écrans restés fixes de cette station (écran 1 « deux impacts », écran 4 « carte R-410A »,
+  écrans 7-8 raisonnement et bilan) ne sont pas animés : comparaison côte à côte ou carte d'identité,
+  l'animation n'y apporterait rien. Réseau Législation inerWeb — document de travail, non diffusé.
+</footer>
+
+</div>
+</body>
+</html>

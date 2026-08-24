@@ -56,9 +56,21 @@ technique au lieu d'y empiler des stations.
 Déchets (5) · Impact environnemental (5).
 **Partielle** : Fluidique & thermique — F-Gaz 3 et Aptitude & capacité, sur 4.
 
-239 illustrations (**fixes**), 29 fonds rédigés. Chaque station : 12 écrans
-(8 + 4 questions), 12 narrations, une illustration par écran, quiz corrigé,
-`data-prototype` posé.
+239 illustrations (220 fixes, **19 animées** — voir ci-dessous), 29 fonds rédigés.
+Chaque station : 12 écrans (8 + 4 questions), 12 narrations, une illustration par
+écran, quiz corrigé, `data-prototype` posé.
+
+**▶ 24/08 — PREMIÈRE BRANCHE ANIMÉE : Impact environnemental.** Les 19 illustrations
+qui gagnaient à bouger (sur 40) sont passées en SVG animé SMIL autonome — sans script,
+état au repos = image finale (impression intacte), boucle 12-14 s avec temps de repos.
+Validées par F. Henninot sur pages avant/après du projet Design
+« Législation — Animations Impact environnemental » (`78a71ea1-d37d-40bb-bc59-638296de8064`).
+Plan, tri écran par écran et SOURCES des SVG : `.planning/2026-08-24-animation-impact/`.
+⚠️ **Claude Design ASSAINIT les .svg à l'écriture** (animate/style retirés du stockage
+même) : pour les branches suivantes, sources SVG en local, validation par pages HTML
+à SVG inline (le HTML n'est pas assaini) — jamais récupérer un SVG depuis Design.
+Deux défauts hérités corrigés au passage : légende gris sur gris de `lien-tewi`,
+trajets sur texte de `montreal-1987`.
 
 Sur le plan, une station ouverte porte son **nom souligné** — pas seulement une
 pastille pleine. C'est le correctif du défaut signalé le 24/08 : « il n'y a aucun
@@ -127,9 +139,15 @@ projet « Charte graphique inerWeb » (`1394c5be-3bc5-441f-93d9-251c89f48ba8`),
 3. **Le référentiel BTS d'adossement** (FED ? autre ?) : non tranché, donc aucune
    station ne porte ses codes de tâches et de savoirs.
 4. **La voix fabriquée** : seule F-Gaz 3 a ses 12 MP3 (Piper, local). Les 28 autres
-   parlent avec la voix du navigateur. Fabrication :
-   `build/voix/collecter-narrations.mjs` puis `generer-audios-piper.py`, puis
-   réduire l'index à la station.
+   parlent avec la voix du navigateur. ⚠️ **Décision à prendre par F. Henninot** :
+   le diagnostic du 21/08 (réseau technique, `CONTROLE-VOIX-2026-08-21.md`) a jugé
+   la voix Piper métallique et le fonds central est passé en `edge-tts`
+   (Denise/Vivienne, validées après écoute) — mais edge-tts envoie le texte à
+   Microsoft : **feu vert séparé obligatoire** avant de l'employer pour la
+   Législation (consigne « service tiers pendant la fabrication »). Piper n'est
+   par ailleurs pas installé dans l'environnement Claude Code (modules Python
+   absents). Chaînes : `build/voix/collecter-narrations.mjs` puis
+   `generer-audios-piper.py` OU `generer-audios-edge-tts.py --confirmer`.
 5. **L'hébergement définitif** : rester en `inerweb.fr/legislation/` ou partir en
    dépôt / sous-domaine séparé. Le dossier est déplaçable d'un bloc.
 
