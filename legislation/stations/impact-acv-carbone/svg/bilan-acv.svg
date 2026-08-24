@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img"
+     aria-labelledby="t-bil" aria-describedby="d-bil" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bil">Bilan : le cycle complet, le TEWI, l'indicateur carbone</title>
+  <desc id="d-bil">En haut, quatre petits cercles numérotés de 1 à 4 reliés par de courtes flèches :
+    fabriquer, transporter, exploiter, démolir. En dessous, deux encadrés de rappel côte à côte : le TEWI,
+    qui ne mesure que l'étape exploiter (fuites de fluide et énergie consommée), et l'indicateur carbone de
+    la RE2020, qui mesure la construction et l'exploitation du bâtiment entier, donc son cycle de vie
+    complet. Une bande en bas donne le réflexe : ne jamais juger un équipement sur sa seule consommation.</desc>
+  <style>
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .etp { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:14.5px; fill:#10233c; }
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lbl { font-size:15.5px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .note{ font-size:15px; fill:#5a6b7d; font-style:italic; }
+    .arr { fill:#5a6b7d; }
+  </style>
+
+  <!-- Rangée des quatre étapes -->
+  <line x1="160" y1="65" x2="330" y2="65" stroke="#5a6b7d" stroke-width="3"/>
+  <polygon class="arr" points="322,55 322,75 340,65"/>
+  <line x1="390" y1="65" x2="560" y2="65" stroke="#5a6b7d" stroke-width="3"/>
+  <polygon class="arr" points="552,55 552,75 570,65"/>
+  <line x1="620" y1="65" x2="790" y2="65" stroke="#5a6b7d" stroke-width="3"/>
+  <polygon class="arr" points="782,55 782,75 800,65"/>
+
+  <circle cx="130" cy="65" r="30" fill="#047857"/>
+  <text class="num" x="130" y="72" text-anchor="middle">1</text>
+  <text class="etp" x="130" y="112" text-anchor="middle">FABRIQUER</text>
+
+  <circle cx="360" cy="65" r="30" fill="#047857"/>
+  <text class="num" x="360" y="72" text-anchor="middle">2</text>
+  <text class="etp" x="360" y="112" text-anchor="middle">TRANSPORTER</text>
+
+  <circle cx="590" cy="65" r="30" fill="#047857"/>
+  <text class="num" x="590" y="72" text-anchor="middle">3</text>
+  <text class="etp" x="590" y="112" text-anchor="middle">EXPLOITER</text>
+
+  <circle cx="820" cy="65" r="30" fill="#047857"/>
+  <text class="num" x="820" y="72" text-anchor="middle">4</text>
+  <text class="etp" x="820" y="112" text-anchor="middle">DÉMOLIR</text>
+
+  <!-- Deux encadrés de rappel -->
+  <rect x="30" y="140" width="410" height="100" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="30" y="140" width="410" height="36" rx="14" fill="#1b3a63"/>
+  <rect x="30" y="162" width="410" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="235" y="164" text-anchor="middle">TEWI</text>
+  <text class="lbl" x="235" y="200" text-anchor="middle">Fuites de fluide + énergie consommée</text>
+  <text class="lbl" x="235" y="224" text-anchor="middle">= l'étape EXPLOITER seule.</text>
+
+  <rect x="460" y="140" width="410" height="100" rx="14" fill="#fffdf8" stroke="#b06a00" stroke-width="3"/>
+  <rect x="460" y="140" width="410" height="36" rx="14" fill="#b06a00"/>
+  <rect x="460" y="162" width="410" height="14" fill="#b06a00"/>
+  <text class="ttl" x="665" y="164" text-anchor="middle">Ic — RE2020</text>
+  <text class="lbl" x="665" y="200" text-anchor="middle">Construction + exploitation du bâtiment</text>
+  <text class="lbl" x="665" y="224" text-anchor="middle">= le cycle de vie complet.</text>
+
+  <!-- Bande formule -->
+  <rect x="20" y="264" width="860" height="50" rx="14" fill="#e3f5ec" stroke="#047857" stroke-width="2"/>
+  <text class="band" x="450" y="294" text-anchor="middle">Le réflexe : ne jamais juger un équipement sur sa seule consommation</text>
+
+  <text class="note" x="450" y="342" text-anchor="middle">C'est le cycle complet — de la fabrication à la démolition — qui compte.</text>
+</svg>

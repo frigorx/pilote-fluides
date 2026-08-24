@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-ld" aria-describedby="d-ld" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ld">Les limites du DPE : une méthode conventionnelle, sensible aux données</title>
+  <desc id="d-ld">Deux résultats sont comparés pour un même logement. À gauche, le résultat du DPE,
+    issu d'une méthode conventionnelle avec des hypothèses d'usage standard. À droite, la
+    consommation réellement observée sur les factures, qui peut être différente selon la façon
+    dont les occupants utilisent réellement le logement. Un point d'interrogation marque l'écart
+    possible entre les deux. En dessous, une note rappelle que le résultat dépend aussi de la
+    qualité des données saisies sur le logement.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:16px; fill:#92400e; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Une méthode conventionnelle, pas une mesure directe</text>
+
+  <rect x="60" y="60" width="330" height="170" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="225" y="95" text-anchor="middle" font-size="16" fill="#10233c" font-weight="bold">Résultat du DPE</text>
+  <text class="lbl" x="225" y="130" text-anchor="middle">méthode conventionnelle</text>
+  <text class="lbl" x="225" y="155" text-anchor="middle">hypothèses d'usage standard</text>
+  <text class="lbl" x="225" y="195" text-anchor="middle">(occupation, température</text>
+  <text class="lbl" x="225" y="215" text-anchor="middle">de consigne, etc.)</text>
+
+  <circle cx="450" cy="145" r="30" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <text class="foc" x="450" y="156" text-anchor="middle" font-size="26">?</text>
+
+  <rect x="510" y="60" width="330" height="170" rx="12" fill="#eef1f4" stroke="#98a6b3" stroke-width="2.5"/>
+  <text class="lbl" x="675" y="95" text-anchor="middle" font-size="16" fill="#10233c" font-weight="bold">Consommation réelle</text>
+  <text class="lbl" x="675" y="130" text-anchor="middle">observée sur les factures</text>
+  <text class="lbl" x="675" y="165" text-anchor="middle">dépend de l'usage réel</text>
+  <text class="lbl" x="675" y="185" text-anchor="middle">des occupants</text>
+
+  <rect x="60" y="260" width="780" height="60" rx="10" fill="#fff4e0" stroke="#92400e" stroke-width="2"/>
+  <text class="lbl" x="450" y="285" text-anchor="middle" fill="#10233c" font-weight="bold">Le résultat dépend aussi de la qualité des données saisies</text>
+  <text class="lbl" x="450" y="305" text-anchor="middle">sur le logement — surface, isolation, équipements.</text>
+</svg>

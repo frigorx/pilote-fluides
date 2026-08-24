@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="t-dda" aria-describedby="d-dda" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dda">Les déchets dangereux ne se mélangent jamais</title>
+  <desc id="d-dda">Une bouteille de fluide et un bidon d'huile, écartés des bennes de tri du bâtiment,
+    reliés par une flèche vers un contenant à part marqué d'un pictogramme de danger. Une croix rouge
+    barre le chemin qui les mènerait vers les bennes de tri classiques.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#57534e; }
+  </style>
+
+  <!-- Bennes de tri classique, à gauche -->
+  <polygon points="60,140 130,140 122,220 68,220" fill="#eef0ee" stroke="#57534e" stroke-width="3"/>
+  <polygon points="160,140 230,140 222,220 168,220" fill="#eef0ee" stroke="#57534e" stroke-width="3"/>
+  <text class="lbl" x="95" y="240" text-anchor="middle">Métaux</text>
+  <text class="lbl" x="195" y="240" text-anchor="middle">Bois</text>
+
+  <!-- Croix rouge sur le chemin interdit -->
+  <path d="M 320 120 L 260 160" stroke="#c0392b" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 260 120 L 320 160" stroke="#c0392b" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Bouteille de fluide et bidon d'huile -->
+  <rect x="360" y="130" width="44" height="80" rx="10" fill="#eef0ee" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="374" y="114" width="16" height="18" fill="#eef0ee" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="382" y="228" text-anchor="middle">Fluide</text>
+
+  <rect x="440" y="140" width="54" height="70" rx="6" fill="#eef0ee" stroke="#10233c" stroke-width="2.5"/>
+  <rect x="454" y="126" width="26" height="16" fill="#eef0ee" stroke="#10233c" stroke-width="2"/>
+  <text class="lbl" x="467" y="228" text-anchor="middle">Huile</text>
+
+  <!-- Flèche vers contenant à part -->
+  <path d="M 510 165 H 620" stroke="#c0392b" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <polygon points="620,153 644,165 620,177" fill="#c0392b"/>
+
+  <!-- Contenant à part, pictogramme danger -->
+  <rect x="660" y="110" width="180" height="130" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <polygon points="750,130 776,175 724,175" fill="none" stroke="#c0392b" stroke-width="4"/>
+  <text class="ttl" x="750" y="167" text-anchor="middle" fill="#c0392b">!</text>
+  <text class="ttl" x="750" y="205" text-anchor="middle" fill="#c0392b">Filière à part,</text>
+  <text class="ttl" x="750" y="225" text-anchor="middle" fill="#c0392b">tracée</text>
+
+  <rect x="140" y="262" width="620" height="40" rx="10" fill="#eef0ee" stroke="#57534e" stroke-width="2"/>
+  <text class="band" x="450" y="288" text-anchor="middle">Jamais dans une benne de tri classique — jamais en tout-venant</text>
+</svg>

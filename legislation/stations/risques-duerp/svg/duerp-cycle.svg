@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-cy" aria-describedby="d-cy" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cy">Le DUERP : un cycle qui pilote la prévention</title>
+  <desc id="d-cy">Trois cases reliées par des flèches en boucle : évaluer les risques de chaque
+    situation de travail, consigner le résultat par écrit dans le document, tenir ce document à
+    jour. Une flèche courbe reboucle de la troisième case vers la première, montrant que le
+    document se relit et se complète au fil du temps. Au centre de la boucle, le sigle DUERP.
+    En bas, une bande affirme que c'est un outil de pilotage de la prévention, et non un papier
+    oublié dans un tiroir ; une petite icône de tiroir barrée illustre ce refus.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .centre{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#c2410c; }
+    .petit{ font-size:13px; fill:#5a6b7d; }
+  </style>
+
+  <!-- Boucle : trois cases -->
+  <rect x="30" y="30" width="230" height="90" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="30" y="30" width="230" height="34" rx="12" fill="#1b3a63"/>
+  <rect x="30" y="48" width="230" height="16" fill="#1b3a63"/>
+  <text class="ttl" x="145" y="52" text-anchor="middle">1. ÉVALUER</text>
+  <text class="lbl" x="145" y="82" text-anchor="middle">les risques de chaque</text>
+  <text class="lbl" x="145" y="102" text-anchor="middle">situation de travail</text>
+
+  <rect x="335" y="30" width="230" height="90" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="335" y="30" width="230" height="34" rx="12" fill="#1b3a63"/>
+  <rect x="335" y="48" width="230" height="16" fill="#1b3a63"/>
+  <text class="ttl" x="450" y="52" text-anchor="middle">2. CONSIGNER</text>
+  <text class="lbl" x="450" y="82" text-anchor="middle">le résultat par écrit,</text>
+  <text class="lbl" x="450" y="102" text-anchor="middle">dans le document</text>
+
+  <rect x="640" y="30" width="230" height="90" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="640" y="30" width="230" height="34" rx="12" fill="#1b3a63"/>
+  <rect x="640" y="48" width="230" height="16" fill="#1b3a63"/>
+  <text class="ttl" x="755" y="52" text-anchor="middle">3. TENIR À JOUR</text>
+  <text class="lbl" x="755" y="82" text-anchor="middle">relire et compléter</text>
+  <text class="lbl" x="755" y="102" text-anchor="middle">au fil du temps</text>
+
+  <!-- flèches droites -->
+  <defs>
+    <marker id="fl-cy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <line x1="262" y1="75" x2="333" y2="75" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#fl-cy)"/>
+  <line x1="567" y1="75" x2="638" y2="75" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#fl-cy)"/>
+
+  <!-- boucle de retour, courbe sous les trois cases -->
+  <path d="M755,120 C755,175 145,175 145,122" fill="none" stroke="#c2410c" stroke-width="2.5" stroke-dasharray="1,0" marker-end="url(#fl-cy)"/>
+  <text class="centre" x="450" y="168" text-anchor="middle">DUERP</text>
+  <text class="petit" x="450" y="186" text-anchor="middle">le document se relit, il ne se referme pas</text>
+
+  <!-- bande basse -->
+  <rect x="30" y="220" width="840" height="52" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="410" y="252" text-anchor="middle">Un outil de PILOTAGE de la prévention</text>
+
+  <!-- icône tiroir barré -->
+  <g transform="translate(760,225)">
+    <rect x="0" y="0" width="60" height="42" rx="4" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="6" y="8" width="48" height="12" rx="2" fill="none" stroke="#5a6b7d" stroke-width="1.5"/>
+    <circle cx="30" cy="14" r="1.6" fill="#5a6b7d"/>
+    <line x1="4" y1="4" x2="56" y2="38" stroke="#c0392b" stroke-width="2.5"/>
+  </g>
+  <text class="petit" x="790" y="292" text-anchor="middle">pas un tiroir</text>
+</svg>

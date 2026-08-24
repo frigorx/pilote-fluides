@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-prp" aria-describedby="d-prp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-prp">Le nouveau problème : l'ozone est réglé, le climat pas</title>
+  <desc id="d-prp">En haut à gauche, un badge vert rappelle que les HFC ont un ODP nul : l'ozone est réglé. À droite,
+    un graphique en barres horizontales compare le PRP de plusieurs fluides repères : le CO2 à 1, le R-32 à 675,
+    le R-410A à 2088 et le R-404A à 3922. La barre du CO2 est si courte qu'elle est presque invisible à cette
+    échelle, ce qui montre l'écart de grandeur avec les autres. Une bande du bas explique que beaucoup de HFC ont
+    un PRP élevé et réchauffent donc fortement le climat s'ils fuient, alors même que leur ODP est nul.</desc>
+  <style>
+    .lblGras{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl{ font-size:15px; fill:#10233c; }
+    .val{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .ok{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#1e7e54; }
+    .titreG{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Badge ODP nul -->
+  <rect x="20" y="20" width="230" height="90" rx="12" fill="#e9f5ef" stroke="#1e7e54" stroke-width="2.5"/>
+  <circle cx="52" cy="55" r="16" fill="#1e7e54"/>
+  <path d="M45,55 L50,62 L61,47" stroke="#fffdf8" stroke-width="3" fill="none"/>
+  <text class="ok" x="76" y="52">HFC</text>
+  <text class="ok" x="76" y="72">ODP nul</text>
+  <text class="lbl" x="35" y="94">ozone réglé pour eux</text>
+
+  <!-- Titre du graphique -->
+  <text class="titreG" x="300" y="40">PRP — quelques repères (échelle : CO₂ = 1)</text>
+
+  <!-- Axe -->
+  <line x1="300" y1="66" x2="300" y2="300" stroke="#5a6b7d" stroke-width="2"/>
+
+  <!-- Barre CO2, PRP = 1, quasi invisible à l'échelle -->
+  <text class="lbl" x="290" y="98" text-anchor="end">CO₂ (R-744)</text>
+  <rect x="300" y="86" width="2" height="24" fill="#1e7e54"/>
+  <text class="val" x="308" y="103">PRP = 1 — invisible à cette échelle</text>
+
+  <!-- Barre R-32 -->
+  <text class="lbl" x="290" y="152" text-anchor="end">R-32</text>
+  <rect x="300" y="140" width="83" height="24" fill="#b06a00"/>
+  <text class="val" x="391" y="157">675</text>
+
+  <!-- Barre R-410A -->
+  <text class="lbl" x="290" y="206" text-anchor="end">R-410A</text>
+  <rect x="300" y="194" width="255" height="24" fill="#b06a00"/>
+  <text class="val" x="563" y="211">2088</text>
+
+  <!-- Barre R-404A -->
+  <text class="lbl" x="290" y="260" text-anchor="end">R-404A</text>
+  <rect x="300" y="248" width="480" height="24" fill="#c0392b"/>
+  <text class="val" x="788" y="265">3922</text>
+
+  <!-- Bande du bas -->
+  <rect x="20" y="316" width="860" height="50" rx="12" fill="#fff4e0" stroke="#b06a00" stroke-width="2"/>
+  <text class="band" x="450" y="336" text-anchor="middle">Beaucoup de HFC ont un PRP élevé</text>
+  <text class="band" x="450" y="356" text-anchor="middle">s'ils fuient, ils réchauffent fortement le climat</text>
+</svg>

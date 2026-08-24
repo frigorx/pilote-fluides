@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img"
+     aria-labelledby="t-tr" aria-describedby="d-tr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-tr">Transporter : de l'usine au chantier</title>
+  <desc id="d-tr">Un appareil sur une palette part de l'usine, à gauche, et rejoint un chantier ou un
+    point d'installation, à droite, en suivant une route en pointillé. Un camion schématique
+    illustre le trajet. Une bande en bas rappelle que cette étape s'ajoute à l'empreinte de la
+    fabrication, avant même la mise en service.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Transporter : deuxième étape du cycle</text>
+
+  <!-- usine -->
+  <rect x="40" y="120" width="120" height="70" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <polygon points="40,120 100,90 160,120" fill="none" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="qui" x="100" y="212" text-anchor="middle">Usine</text>
+
+  <!-- route -->
+  <line x1="180" y1="180" x2="680" y2="180" stroke="#5a6b7d" stroke-width="4" stroke-dasharray="14 10"/>
+
+  <!-- camion -->
+  <rect x="360" y="150" width="80" height="40" rx="6" fill="#1b3a63"/>
+  <rect x="440" y="160" width="34" height="30" rx="4" fill="#2f5689"/>
+  <circle cx="380" cy="196" r="10" fill="#10233c"/>
+  <circle cx="450" cy="196" r="10" fill="#10233c"/>
+
+  <!-- chantier -->
+  <rect x="700" y="120" width="130" height="70" fill="#e6f2f0" stroke="#047857" stroke-width="2.5"/>
+  <text class="qui" x="765" y="212" text-anchor="middle">Chantier</text>
+
+  <rect x="20" y="238" width="860" height="42" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="264" text-anchor="middle" font-weight="bold">Le trajet s'ajoute à l'empreinte de fabrication, avant la mise en service.</text>
+</svg>

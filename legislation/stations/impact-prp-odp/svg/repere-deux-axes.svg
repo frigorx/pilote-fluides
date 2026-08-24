@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-re" aria-describedby="d-re" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-re">Repère à deux axes : où se situent plusieurs fluides</title>
+  <desc id="d-re">Un repère avec en abscisse l'ODP (nul à gauche, non nul à droite) et en ordonnée
+    le PRP (faible en bas, très élevé en haut). Tous les points placés dans la colonne ODP nul
+    sont des HFC ou des fluides naturels : l'ammoniac R-717 en bas avec un PRP de 0, le CO2 R-744
+    juste au-dessus avec un PRP de 1, le propane R-290 avec un PRP de 3, puis en montant le R-32
+    à 675, le R-410A à 2088 et le R-404A à 3922, le plus haut du repère. Une zone à droite, hachurée
+    et sans point chiffré, représente les CFC et HCFC : leur ODP est non nul, sans valeur donnée
+    ici. La légende rappelle que la position sur l'axe horizontal ne dit rien de la position sur
+    l'axe vertical.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .ax  { font-size:15px; fill:#5a6b7d; }
+    .lbl { font-size:15px; fill:#10233c; font-weight:bold; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Chaque fluide a sa place sur les deux échelles</text>
+
+  <!-- axes -->
+  <line x1="140" y1="360" x2="820" y2="360" stroke="#10233c" stroke-width="2"/>
+  <line x1="140" y1="360" x2="140" y2="60" stroke="#10233c" stroke-width="2"/>
+  <text class="ax" x="480" y="386" text-anchor="middle">ODP — nul à gauche · non nul à droite →</text>
+  <text class="ax" x="70" y="210" text-anchor="middle" transform="rotate(-90 70 210)">PRP — faible en bas · très élevé en haut</text>
+
+  <!-- zone CFC/HCFC : ODP non nul -->
+  <rect x="620" y="60" width="200" height="300" fill="#fbe7e4" opacity="0.5"/>
+  <text class="lbl" x="720" y="90" text-anchor="middle" fill="#c0392b" font-size="15px">CFC / HCFC</text>
+  <text class="ax" x="720" y="108" text-anchor="middle">ODP non nul (sans valeur ici)</text>
+
+  <!-- points, colonne ODP nul -->
+  <circle cx="200" cy="350" r="8" fill="#047857"/>
+  <text class="lbl" x="240" y="354" font-size="15px">R-717 ammoniac · PRP 0</text>
+
+  <circle cx="200" cy="335" r="8" fill="#047857"/>
+  <text class="lbl" x="240" y="332" font-size="15px">R-744 CO₂ · PRP 1</text>
+
+  <circle cx="200" cy="322" r="8" fill="#047857"/>
+  <text class="lbl" x="240" y="316" font-size="15px">R-290 propane · PRP 3</text>
+
+  <circle cx="200" cy="230" r="8" fill="#1b3a63"/>
+  <text class="lbl" x="240" y="234" font-size="15px">R-32 · PRP 675</text>
+
+  <circle cx="200" cy="150" r="8" fill="#b06a00"/>
+  <text class="lbl" x="240" y="154" font-size="15px">R-410A · PRP 2088</text>
+
+  <circle cx="200" cy="80" r="8" fill="#c0392b"/>
+  <text class="lbl" x="240" y="84" font-size="15px">R-404A · PRP 3922</text>
+
+  <rect x="140" y="392" width="680" height="26" rx="10" fill="none"/>
+  <text class="band" x="480" y="410" text-anchor="middle">La colonne de gauche (ODP nul) contient les PRP les plus élevés comme les plus bas.</text>
+</svg>

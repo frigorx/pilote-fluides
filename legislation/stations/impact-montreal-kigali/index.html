@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Montréal → Kigali — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le protocole de Montréal, le relais des HFC, et l'amendement de Kigali — l'histoire en trois temps, du problème de l'ozone à celui du climat.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/impact-montreal-kigali/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Impact environnemental.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     styles.css et app.js sont une COPIE LITTÉRALE du socle commun de la
+     station aptitude-capacite (même réseau) : ne pas les modifier ici,
+     y compris leurs commentaires qui parlent d'une autre station — c'est
+     voulu, ce sont des fichiers partagés. La variable --sous-ligne y
+     reste #0f766e ; les illustrations SVG de CETTE station utilisent en
+     revanche l'accent propre à la sous-ligne Impact environnemental,
+     #047857, cohérent avec le plan du réseau (legislation/index.html).
+
+     PROTOTYPE NON RELU : data-prototype posé sur marque.js. Aucune date
+     précise n'est écrite hormis 1987 (protocole de Montréal) — les
+     autres dates ne sont pas sourcées dans ce chantier, voir FOND.md.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Impact environnemental · niveau BTS</p>
+  <h1>Montréal → Kigali — l'histoire en trois temps</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez expliquer pourquoi le protocole de Montréal a d'abord visé les CFC et les HCFC, pourquoi les HFC les ont remplacés, quel nouveau problème ces HFC ont posé malgré un ozone sauvé, et ce que change l'amendement de Kigali — le tout comme un <strong>enchaînement logique</strong>, pas une liste de dates à apprendre par cœur.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la frise en trois cases. À gauche, en bleu encre, le protocole de Montréal : 1987, sauver la couche d'ozone, en visant d'abord les CFC puis les HCFC. Au centre, en ambre, le relais des HFC : ils remplacent les CFC et les HCFC, mais un souci apparaît, souligné en ambre. À droite, en vert, l'amendement de Kigali. Une flèche relie chaque case à la suivante : c'est un enchaînement, pas trois épisodes séparés. Et la bande du bas insiste : Kigali s'ajoute à Montréal, il ne le remplace pas.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Trois temps, un seul protocole</h2>
+    <p>L'histoire se lit en trois temps, dans l'ordre : le <strong>protocole de Montréal</strong>, en 1987, pour sauver la couche d'ozone ; le <strong>relais des HFC</strong>, qui règle ce problème d'ozone mais en ouvre un autre ; et l'<strong>amendement de Kigali</strong>, qui vient s'ajouter au même texte pour s'occuper de ce second problème.</p>
+    <p>Retenez l'enchaînement plutôt que des dates : chaque temps répond au problème laissé ouvert par le précédent. Seule <strong>1987</strong> est une date à connaître ici.</p>
+    <figure>
+      <img src="svg/frise-trois-temps.svg" alt="Trois cases reliées par des flèches : le protocole de Montréal en 1987 qui vise la couche d'ozone, le relais des HFC qui règle l'ozone mais ouvre un problème de climat, et l'amendement de Kigali qui s'attaque à ce problème. Une bande rappelle que Kigali s'ajoute à Montréal, il ne le remplace pas.">
+      <figcaption>Trois cases, deux flèches : un enchaînement, pas trois histoires séparées.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="À gauche, un schéma de l'atmosphère : le soleil, puis la couche d'ozone représentée par un bandeau bleu, avec une zone plus claire au centre qui figure son amincissement. En dessous, des molécules marquées Cl ou Br montent vers cette zone claire : ce sont le chlore et le brome qui attaquent l'ozone. À droite, le document du protocole de Montréal, 1987, avec deux cibles numérotées dans l'ordre : un, les CFC ; deux, les HCFC, visés à leur tour.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Montréal, 1987 : le problème de l'ozone</h2>
+    <p>Le protocole de Montréal est un <strong>traité international</strong> signé en <strong>1987</strong> pour protéger la couche d'ozone stratosphérique. Sa cible : des molécules contenant du <strong>chlore ou du brome</strong>, qui attaquent l'ozone quand elles montent dans l'atmosphère.</p>
+    <p>Le texte vise d'abord les <strong>CFC</strong>, supprimés progressivement, puis, dans un second temps, les <strong>HCFC</strong>, qui en contiennent aussi mais en moindre quantité.</p>
+    <figure>
+      <img src="svg/montreal-1987.svg" alt="À gauche, un schéma de l'atmosphère avec le soleil et la couche d'ozone amincie au centre, vers laquelle montent des molécules marquées Cl ou Br. À droite, le document du protocole de Montréal, 1987, listant deux cibles dans l'ordre : les CFC, puis les HCFC.">
+      <figcaption>Chlore et brome : le point commun des deux familles visées.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Deux cartes reliées par une flèche. À gauche, encadrée en rouge et barrée, la carte des CFC et des HCFC : elle porte la mention contient du chlore ou du brome, attaque l'ozone, retirés par le protocole de Montréal. À droite, encadrée en vert avec une coche, la carte des HFC : sans chlore ni brome, ODP nul, le problème de l'ozone est réglé pour eux. La bande du bas résume : le relais règle l'ozone, il ne dit encore rien du climat.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Les HFC prennent le relais</h2>
+    <p>Les <strong>HFC</strong> remplacent progressivement les CFC et les HCFC parce qu'ils <strong>ne contiennent ni chlore ni brome</strong> : leur <strong>ODP est nul</strong>. Pour cette famille de fluides, le problème de l'ozone est réglé.</p>
+    <p>C'est un vrai succès du protocole de Montréal — mais il ne dit rien, à ce stade, d'un autre impact possible de ces mêmes fluides.</p>
+    <figure>
+      <img src="svg/relais-hfc.svg" alt="Deux cartes reliées par une flèche : à gauche, les CFC et les HCFC, barrés, contiennent du chlore ou du brome et attaquent l'ozone ; à droite, les HFC, sans chlore ni brome, ODP nul, le problème de l'ozone est réglé pour eux.">
+      <figcaption>ODP nul : l'ozone est réglé pour les HFC.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="En haut à gauche, un badge vert : HFC, ODP nul, ozone réglé pour eux. À droite, un graphique en barres horizontales compare le PRP de plusieurs fluides : le CO2 à 1, une barre si courte qu'elle est presque invisible à cette échelle ; le R-32 à 675 ; le R-410A à 2088 ; le R-404A à 3922, la barre la plus longue, en rouge. La bande du bas résume : beaucoup de HFC ont un PRP élevé, ils réchauffent fortement le climat s'ils fuient.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Mais un nouveau problème apparaît</h2>
+    <p>L'ozone est réglé — le climat, pas forcément. Beaucoup de HFC ont un <strong>PRP élevé</strong> : s'ils fuient, ils réchauffent fortement le climat, même si leur ODP reste nul.</p>
+    <p>Quelques repères de PRP pour situer l'écart : le <strong>CO₂ (R-744)</strong> vaut 1, le <strong>R-32</strong> vaut 675, le <strong>R-410A</strong> vaut 2088, le <strong>R-404A</strong> vaut 3922. C'est le sujet de la station <strong>PRP &amp; ODP</strong>, à laquelle celle-ci se raccroche.</p>
+    <figure>
+      <img src="svg/nouveau-probleme-prp.svg" alt="Un badge vert rappelle que les HFC ont un ODP nul. Un graphique en barres compare le PRP de quatre fluides repères : CO2 à 1 (barre presque invisible), R-32 à 675, R-410A à 2088, R-404A à 3922. Une bande résume : beaucoup de HFC ont un PRP élevé et réchauffent fortement le climat s'ils fuient.">
+      <figcaption>L'écart de grandeur entre le CO₂ et le R-404A dit tout du problème.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Un grand document bleu encre porte le protocole de Montréal, avec sa cible d'origine : les CFC et les HCFC, évalués par leur ODP. Une note plus petite, verte, est agrafée au coin, reliée par un trombone : l'amendement de Kigali. Elle pointe vers une nouvelle cible, les HFC, mais cette fois évalués par leur PRP. La bande du bas insiste : un ajout au texte, pas un nouveau traité.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">L'amendement de Kigali</h2>
+    <p>L'amendement de Kigali est un <strong>amendement au protocole de Montréal</strong> — pas un nouveau traité séparé. Il s'attaque à son tour aux <strong>HFC</strong>, mais cette fois pour leur <strong>PRP</strong>, et non plus pour leur ODP.</p>
+    <p>Le même texte international traite donc, dans l'ordre, deux problèmes différents avec deux outils différents : l'ODP pour l'ozone, le PRP pour le climat.</p>
+    <figure>
+      <img src="svg/amendement-kigali.svg" alt="Un document bleu porte le protocole de Montréal avec sa cible d'origine, les CFC et les HCFC évalués par leur ODP. Une note verte agrafée au coin, l'amendement de Kigali, pointe vers une nouvelle cible : les HFC, évalués cette fois par leur PRP.">
+      <figcaption>Une note agrafée, pas un nouveau document : Kigali s'ajoute à Montréal.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="En haut, une case bleue porte le protocole de Montréal. Deux branches en partent : à gauche, l'objectif initial, la couche d'ozone, présent depuis l'origine du texte. À droite, en vert, l'objectif ajouté, le climat, par l'amendement de Kigali. Une ligne pointillée descend de cette branche vers une case séparée : F-Gaz 3, le règlement européen, qui applique la même logique à l'échelle de l'Union européenne.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Pourquoi c'est notable</h2>
+    <p>Un protocole conçu pour l'ozone qui se met, avec Kigali, à traiter du <strong>climat</strong> : c'est ce qui rend ce texte particulier. L'objectif d'origine ne disparaît pas, un second s'y ajoute.</p>
+    <p>Cette même logique — réduire progressivement les HFC pour leur PRP — se retrouve dans <strong>F-Gaz 3</strong>, le règlement européen du même réseau : il l'applique à l'échelle de l'Union européenne.</p>
+    <figure>
+      <img src="svg/ozone-vers-climat.svg" alt="Le protocole de Montréal se ramifie en deux objectifs : à gauche, l'objectif initial, la couche d'ozone ; à droite, l'objectif ajouté par Kigali, le climat. Une ligne pointillée relie cet objectif à une case séparée, le règlement européen F-Gaz 3, qui applique la même logique à l'échelle de l'Union européenne.">
+      <figcaption>Même logique, deux échelles : le traité international, puis le règlement européen.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre cartes numérotées. Première : je remplace un vieux CFC, il faut le repérer au chlore et viser un remplaçant sans chlore ni brome. Deuxième : ma machine tourne au HFC à PRP élevé, conforme pour l'ozone mais sous surveillance pour le climat. Troisième : je choisis un fluide à faible PRP, CO2, propane ou ammoniac, un choix qui anticipe la suite. Quatrième : je vois HCFC sur une étiquette, un fluide encore visé par Montréal, en retrait progressif.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : quatre situations de terrain</h2>
+    <ol>
+      <li><strong>« Je remplace un vieux CFC. »</strong> → Le repérer : il contient du chlore, c'est lui que Montréal vise en premier. Le remplacer par un fluide sans chlore ni brome.</li>
+      <li><strong>« Ma machine tourne au HFC, PRP élevé. »</strong> → Conforme pour l'ozone, ODP nul. Sous surveillance pour le climat, via Kigali et F-Gaz 3.</li>
+      <li><strong>« Je choisis un fluide à faible PRP. »</strong> → CO₂, propane, ammoniac : des exemples au PRP très bas. Un choix qui anticipe la suite du mouvement engagé par Kigali.</li>
+      <li><strong>« Je vois HCFC sur une étiquette. »</strong> → Un fluide historique, avec du chlore, visé lui aussi par Montréal. En retrait progressif.</li>
+    </ol>
+    <figure>
+      <img src="svg/quatre-situations.svg" alt="Quatre cartes numérotées : remplacer un vieux CFC, utiliser une machine à HFC à PRP élevé, choisir un fluide à faible PRP, lire une étiquette HCFC. Chacune porte sa réponse.">
+      <figcaption>Dans les quatre cas, la même logique : chlore et brome pour l'ozone, PRP pour le climat.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Trois cases reliées par des flèches reprennent la frise du début. Montréal, 1987 : une coche verte, ozone réglé. Le relais des HFC : une coche verte pour l'ozone, une alerte ambre pour le climat. L'amendement de Kigali : une coche verte, climat pris en compte. La bande du bas résume le mécanisme en une phrase, et signale le lien avec F-Gaz 3, qui applique la même logique à l'échelle européenne.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan : le mécanisme, en une phrase</h2>
+    <ul>
+      <li><strong>Montréal, 1987</strong> : protéger la couche d'ozone, en visant les CFC puis les HCFC — des molécules au chlore ou au brome.</li>
+      <li><strong>Les HFC</strong> les remplacent : sans chlore ni brome, l'<strong>ODP est réglé</strong>.</li>
+      <li>Mais beaucoup de HFC ont un <strong>PRP élevé</strong> : l'ozone est sauvé, le climat pas.</li>
+      <li><strong>Kigali</strong> s'ajoute à Montréal pour s'attaquer aux HFC, cette fois par leur PRP.</li>
+      <li><strong>F-Gaz 3</strong>, même réseau, applique cette logique à l'échelle de l'Union européenne.</li>
+    </ul>
+    <p class="formule">ODP réglé par Montréal → PRP resté ouvert → Kigali s'en charge</p>
+    <figure>
+      <img src="svg/bilan-montreal-kigali.svg" alt="Trois cases reliées par des flèches reprennent les trois temps : Montréal 1987 avec une coche ozone réglé, le relais des HFC avec une coche ozone et une alerte climat, l'amendement de Kigali avec une coche climat pris en compte. Une bande résume le mécanisme et signale le lien avec F-Gaz 3.">
+      <figcaption>Un seul protocole, deux enjeux traités l'un après l'autre.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Que visait le protocole de Montréal, signé en 1987 ? Revoyez le schéma de l'écran deux si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Que visait le protocole de Montréal (1987) ?</h2>
+    <figure class="vignette">
+      <img src="svg/montreal-1987.svg" alt="Vignette de rappel : l'atmosphère avec la couche d'ozone amincie et les molécules de chlore ou de brome qui l'attaquent, et le document du protocole de Montréal listant les CFC puis les HCFC.">
+      <figcaption>Rappel de l'écran 2 — le problème de l'ozone.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Lutter contre le réchauffement climatique</button>
+      <button type="button" data-answer="bonne">Protéger la couche d'ozone, en supprimant progressivement les CFC puis les HCFC</button>
+      <button type="button" data-answer="c">Réduire l'inflammabilité des fluides frigorigènes</button>
+      <button type="button" data-answer="d">Améliorer l'efficacité énergétique des appareils</button>
+    </div>
+    <p class="feedback" hidden data-explication="Montréal vise l'ozone, pas le climat : le réchauffement climatique est le sujet de Kigali, plus tard. L'inflammabilité et l'efficacité énergétique ne sont pas l'objet de ce protocole."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Pourquoi les HFC ont-ils été choisis pour remplacer les CFC et les HCFC ? Reprenez la carte de l'écran trois avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Pourquoi les HFC ont-ils remplacé les CFC et les HCFC ?</h2>
+    <figure class="vignette">
+      <img src="svg/relais-hfc.svg" alt="Vignette de rappel : la carte des CFC et des HCFC barrée, et la carte des HFC, sans chlore ni brome, ODP nul.">
+      <figcaption>Rappel de l'écran 3 — le relais des HFC.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Parce qu'une norme européenne l'imposerait</button>
+      <button type="button" data-answer="b">Parce qu'ils seraient moins chers à produire</button>
+      <button type="button" data-answer="c">Parce qu'ils n'auraient aucun PRP</button>
+      <button type="button" data-answer="bonne">Parce qu'ils ne contiennent ni chlore ni brome : leur ODP est nul, ce qui réglait le problème de l'ozone</button>
+    </div>
+    <p class="feedback" hidden data-explication="C'est l'absence de chlore et de brome qui règle l'ozone, pas une norme européenne (c'est Kigali, un texte international, puis F-Gaz 3 côté UE) ni un critère de coût. Et les HFC ont bien un PRP, souvent élevé : c'est justement le sujet de l'écran suivant."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Quel nouveau problème les HFC ont-ils créé, malgré un ODP nul ? Regardez le graphique en barres de l'écran quatre si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Quel nouveau problème les HFC ont-ils créé ?</h2>
+    <figure class="vignette">
+      <img src="svg/nouveau-probleme-prp.svg" alt="Vignette de rappel : le badge ODP nul des HFC et le graphique en barres comparant le PRP de plusieurs fluides.">
+      <figcaption>Rappel de l'écran 4 — l'ozone réglé, le climat pas.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Ils détruiraient l'ozone plus fortement que les CFC</button>
+      <button type="button" data-answer="bonne">Beaucoup ont un PRP élevé, donc un fort impact sur le réchauffement climatique s'ils fuient</button>
+      <button type="button" data-answer="c">Ils n'auraient strictement aucun impact environnemental</button>
+      <button type="button" data-answer="d">Ils seraient aujourd'hui interdits partout dans le monde sans exception</button>
+    </div>
+    <p class="feedback" hidden data-explication="Les HFC ne contiennent pas de chlore ni de brome : ils ne détruisent pas l'ozone, au contraire de la première proposition. Ils ne sont pas non plus sans impact : leur PRP souvent élevé pèse sur le climat. Et l'interdiction totale et sans exception n'est pas la réalité du dispositif, construit comme une réduction progressive."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Qu'est-ce que l'amendement de Kigali ? Souvenez-vous du document agrafé de l'écran cinq.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce que l'amendement de Kigali ?</h2>
+    <figure class="vignette">
+      <img src="svg/amendement-kigali.svg" alt="Vignette de rappel : le document du protocole de Montréal avec, agrafée à son coin, la note de l'amendement de Kigali qui vise les HFC par leur PRP.">
+      <figcaption>Rappel de l'écran 5 — un ajout au texte, pas un nouveau traité.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un traité entièrement nouveau, sans lien avec Montréal</button>
+      <button type="button" data-answer="b">Un texte qui ne concernerait que les CFC</button>
+      <button type="button" data-answer="bonne">Un amendement au protocole de Montréal qui s'attaque à son tour aux HFC, cette fois pour leur PRP</button>
+      <button type="button" data-answer="d">Le nom du règlement européen F-Gaz 3</button>
+    </div>
+    <p class="feedback" hidden data-explication="Kigali s'ajoute à Montréal, ce n'est pas un texte séparé, et il vise les HFC — pas les CFC, déjà traités par le texte d'origine. F-Gaz 3 est l'outil européen qui applique une logique proche, mais Kigali est l'accord international : les deux sont liés, mais ce n'est pas le même texte."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme sur les autres stations du
+     réseau : il se lit dès l'accueil. F-Gaz 3 est un VRAI lien, puisque
+     la station existe. RE2020 et NF EN 378 restent annoncées sans lien —
+     on ne promet pas une porte fermée. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../fgaz-3/"><strong>F-Gaz 3 — le règlement (UE) 2024/573</strong></a> (même sous-ligne)
+      — le règlement européen qui applique cette même logique de réduction progressive des HFC.</li>
+    <li><strong>La RE2020</strong> (sous-ligne Thermique) — en préparation.</li>
+    <li><strong>NF EN 378</strong> (même sous-ligne) — en préparation.</li>
+  </ul>
+  <p>F-Gaz 3 est ouverte : le lien fonctionne. Les deux autres stations sont
+  en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (une source, zéro divergence). voix.js
+     donne la narration, prof-vocal.js enchaîne les écrans tout seul et
+     s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

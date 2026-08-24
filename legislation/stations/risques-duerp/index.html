@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Le DUERP — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : à quoi sert le document unique d'évaluation des risques professionnels, qui l'écrit, ce qu'on y trouve, et le réflexe à avoir avant d'intervenir sur un site qui n'est pas le sien.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/risques-duerp/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Risques professionnels.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #start #listen
+     #stop-voice #prev #next #progression-index #progression-barre et les
+     classes .slide / .slide.active sont le CONTRAT du professeur vocal —
+     ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur, comme aptitude-capacite.
+
+     Aucun chiffre incertain dans cette station : périodicité de mise à
+     jour du DUERP, seuils d'effectif et sanctions ne sont pas sourcés en
+     interne — voir FOND.md, § Points non chiffrés.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Risques professionnels · niveau BTS</p>
+  <h1>Le DUERP — un document qui pilote la prévention</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez à quoi sert le document unique d'évaluation des risques professionnels, qui l'écrit et avec qui, ce qu'on y trouve, et pourquoi vous avez intérêt à le consulter — ou à en réclamer l'équivalent — avant d'intervenir sur un site qui n'est pas le vôtre.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez le schéma : trois cases reliées en boucle. Un, évaluer les risques de chaque situation de travail. Deux, consigner le résultat par écrit, dans le document. Trois, tenir ce document à jour. Une flèche orange reboucle de la troisième case vers la première : le document se relit, il ne se referme jamais. En bas, la bande rappelle que c'est un outil de pilotage de la prévention. Et à droite, une petite icône de tiroir barré d'un trait rouge : ce n'est surtout pas un papier qu'on range et qu'on oublie.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Un document qui pilote, pas qui dort</h2>
+    <p>L'employeur doit évaluer les risques de chaque situation de travail dans l'entreprise, et consigner ce résultat par écrit dans un document : le <strong>document unique d'évaluation des risques professionnels</strong> (DUERP).</p>
+    <p><strong>Ce n'est pas un papier rangé dans un tiroir.</strong> C'est un outil de pilotage de la prévention, qui se tient à jour au fil des situations de travail rencontrées.</p>
+    <figure>
+      <img src="svg/duerp-cycle.svg" alt="Trois cases reliées par des flèches en boucle : évaluer les risques de chaque situation de travail, consigner le résultat par écrit, tenir le document à jour. Une flèche reboucle vers la première case. En bas, une bande dit que c'est un outil de pilotage de la prévention, avec une icône de tiroir barré.">
+      <figcaption>Le document se relit, il ne se referme pas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Regardez le centre du schéma : une case orange, l'employeur. C'est lui qui rédige le document et qui en porte la responsabilité. Mais deux flèches entrent dans sa case, depuis la gauche : l'une part des techniciens, ce qu'ils vivent sur le terrain ; l'autre part des représentants du personnel, quand il y en a. L'employeur ne travaille pas seul : il transforme ces informations en document, à droite. Et en bas, une bande barrée en rouge rappelle ce que ce n'est pas : un document rédigé seul, depuis un bureau, loin des postes de travail.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Qui l'écrit, et avec qui</h2>
+    <p>C'est <strong>l'employeur</strong> qui rédige le document et en porte la responsabilité.</p>
+    <p>Mais il ne l'écrit pas seul, depuis un bureau, loin des postes de travail : il s'appuie sur ceux qui connaissent le terrain — <strong>les techniciens</strong> eux-mêmes, et les <strong>représentants du personnel</strong> quand il y en a.</p>
+    <figure>
+      <img src="svg/duerp-redaction.svg" alt="Au centre, une case orange « l'employeur, rédacteur et responsable ». Deux flèches entrent depuis la gauche, l'une venant des techniciens et de ce qu'ils vivent sur le terrain, l'autre des représentants du personnel. Une flèche sort vers le document rédigé. En bas, une case barrée rappelle qu'il ne se rédige pas seul, depuis un bureau.">
+      <figcaption>Il ne se rédige pas seul, loin des postes de travail.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Trois colonnes numérotées, reliées par des flèches. Un, les situations de travail identifiées, poste par poste. Deux, en orange, les risques repérés pour chacune de ces situations. Trois, les mesures de prévention retenues. Une bande sous les colonnes rassemble ces trois éléments dans le document. Et en bas, une phrase en italique précise ce qui n'est volontairement pas montré ici : le format exact et la périodicité de mise à jour, fixés par les textes en vigueur, pas inventés sur ce schéma.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Ce qu'on y trouve concrètement</h2>
+    <p>Le document rassemble, pour chaque situation de travail rencontrée dans l'entreprise :</p>
+    <ul>
+      <li>les <strong>situations de travail</strong> identifiées, poste par poste ;</li>
+      <li>les <strong>risques</strong> repérés pour chacune d'elles ;</li>
+      <li>les <strong>mesures de prévention</strong> retenues.</li>
+    </ul>
+    <p>Le format exact et la périodicité de mise à jour dépendent des textes en vigueur — non repris ici.</p>
+    <figure>
+      <img src="svg/duerp-contenu.svg" alt="Trois colonnes numérotées reliées par des flèches : les situations de travail identifiées, les risques repérés pour chacune, les mesures de prévention retenues. Une bande rassemble ces trois éléments dans le document. Une note précise que le format et la périodicité de mise à jour ne sont pas fixés sur ce schéma.">
+      <figcaption>Trois colonnes, un même document.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="À gauche, un bâtiment simple représente un site inconnu, avec un point d'interrogation orange au-dessus du technicien qui lui fait face. À droite, un document tenu prêt : une flèche orange part de ce document vers le technicien. En bas, une bande explique ce que l'expérience du métier, seule, ne suffit pas à deviner : coactivité, accès, engins, atmosphère particulière.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Pourquoi un technicien a intérêt à le lire</h2>
+    <p>Avant d'intervenir sur un site qui n'est pas le sien, le document de prévention du site renseigne sur des risques que le technicien <strong>ne peut pas deviner seul</strong>, en arrivant avec sa seule expérience du métier.</p>
+    <figure>
+      <img src="svg/duerp-avant-intervention.svg" alt="Un technicien face à un bâtiment représentant un site inconnu, un point d'interrogation au-dessus de lui. Une flèche part d'un document, à droite, vers le technicien. Une bande liste ce que le document peut révéler : coactivité, accès, engins, atmosphère particulière.">
+      <figcaption>Des risques propres au site, pas au métier.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Au centre, un groupe de condensation posé sur une toiture, avec un technicien qui intervient dessus. Autour, quatre encadrés, un à chaque coin, reliés par un trait pointillé fin vers la toiture : coactivité avec d'autres corps de métier, accès particulier pour monter, engins de levage à proximité, zone à atmosphère particulière. Ce sont des informations que seul le document du site pouvait donner.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Exemple : une recharge en toiture</h2>
+    <p>Avant une intervention de recharge de fluide sur un groupe de condensation en toiture d'un site industriel, le document de prévention du site peut signaler :</p>
+    <ul>
+      <li>une <strong>coactivité</strong> avec d'autres corps de métier ;</li>
+      <li>un <strong>accès particulier</strong> pour monter en toiture ;</li>
+      <li>des <strong>engins de levage</strong> à proximité ;</li>
+      <li>une <strong>zone à atmosphère particulière</strong>.</li>
+    </ul>
+    <figure>
+      <img src="svg/duerp-exemple-toiture.svg" alt="Un groupe de condensation sur une toiture, avec un technicien qui intervient dessus. Quatre encadrés en coin, reliés par des traits pointillés vers la toiture : coactivité, accès particulier, engins de levage, zone à atmosphère particulière.">
+      <figcaption>Quatre risques propres au site, invisibles depuis le sol.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Deux documents côte à côte, comme deux cartes d'identité. À gauche, en bleu, le DUERP de mon employeur : ma propre entreprise. À droite, en orange, le document du site visité : l'entreprise du site. Entre les deux, un signe différent de. En bas, la bande rappelle : deux documents, deux responsables, à ne pas confondre.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Deux documents, deux responsables</h2>
+    <p>Le <strong>DUERP de votre propre employeur</strong> couvre votre entreprise. Le site où vous intervenez a le sien, souvent formalisé, en cas de coactivité avec une entreprise extérieure, par un <strong>document de prévention propre au chantier</strong>.</p>
+    <p><strong>Deux documents, deux responsables — à ne pas confondre.</strong></p>
+    <figure>
+      <img src="svg/duerp-deux-documents.svg" alt="Deux documents côte à côte. À gauche, le DUERP de l'employeur, responsable : sa propre entreprise. À droite, le document de prévention du site visité, responsable : l'entreprise du site. Entre les deux, un signe différent de.">
+      <figcaption>Deux documents, deux responsables.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="À gauche, le technicien porte une bulle de parole orange qui liste les questions à poser : coactivité, accès particulier, engins de levage, zone particulière. Une flèche pointillée orange part vers la droite, où le responsable du site tient un document. Le geste résumé au centre : demander à voir le document. En bas, une bande rappelle que ce réflexe vaut avant toute intervention, sur tout site qui n'est pas le vôtre.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le réflexe avant un site inconnu</h2>
+    <p>Sur un site que vous ne connaissez pas, <strong>demandez à voir le document</strong>, ou posez au responsable du site les questions qu'il contiendrait : coactivité, accès, engins présents, zones particulières.</p>
+    <figure>
+      <img src="svg/duerp-reflexe-demander.svg" alt="Un technicien porte une bulle de parole listant les questions à poser : coactivité, accès, engins, atmosphère particulière. Une flèche pointillée part vers un responsable du site qui tient un document.">
+      <figcaption>Demander, avant d'intervenir.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="À gauche, un document barré d'un trait rouge : pas un papier administratif. Une flèche orange épaisse le relie à une clé, à droite : une source d'information. En dessous, une bande résume les quatre points de la station : l'évaluation est consignée et tenue à jour, elle s'écrit avec le terrain, deux documents à ne pas confondre, et le réflexe de le demander avant toute intervention sur un site inconnu.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>L'évaluation des risques est <strong>consignée par écrit</strong> et <strong>tenue à jour</strong>.</li>
+      <li>Elle s'écrit avec ceux qui connaissent le terrain, pas seul depuis un bureau.</li>
+      <li>Le <strong>DUERP de votre employeur</strong> et le <strong>document du site visité</strong> sont deux documents distincts.</li>
+      <li>Avant un site inconnu, vous avez intérêt à le consulter — ou à en poser les questions.</li>
+    </ul>
+    <p class="formule">Le réflexe : demander le document avant d'intervenir sur un site qui n'est pas le vôtre.</p>
+    <figure>
+      <img src="svg/duerp-bilan.svg" alt="Un document barré relié par une flèche à une clé, avec la mention « une source d'information ». En dessous, une bande résume les points de la station.">
+      <figcaption>Une source d'information, pas un papier administratif.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. À quoi sert vraiment le document unique d'évaluation des risques professionnels ? Reprenez le schéma de l'écran un avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">À quoi sert vraiment le DUERP ?</h2>
+    <figure class="vignette">
+      <img src="svg/duerp-cycle.svg" alt="Vignette de rappel : le cycle évaluer, consigner, tenir à jour, avec la mention outil de pilotage de la prévention.">
+      <figcaption>Rappel de l'écran 1 — un document qui pilote.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">À lister le matériel de l'entreprise, à jour chaque année</button>
+      <button type="button" data-answer="bonne">À consigner l'évaluation des risques de chaque situation de travail, et à la tenir à jour</button>
+      <button type="button" data-answer="c">À remplacer les habilitations personnelles de chaque technicien</button>
+      <button type="button" data-answer="d">À servir de compte-rendu, rédigé après chaque accident</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le DUERP consigne l'évaluation des risques de chaque situation de travail et se tient à jour ; ce n'est ni un inventaire de matériel, ni un dossier d'habilitations, ni un compte-rendu d'accident."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Qui écrit le document, et avec qui ? Reprenez le schéma de l'écran deux si besoin.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Qui écrit le document ?</h2>
+    <figure class="vignette">
+      <img src="svg/duerp-redaction.svg" alt="Vignette de rappel : la case de l'employeur recevant des flèches depuis les techniciens et les représentants du personnel.">
+      <figcaption>Rappel de l'écran 2 — pas rédigé seul.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un cabinet extérieur, sans lien avec l'entreprise</button>
+      <button type="button" data-answer="b">Le technicien seul, sur le poste qu'il occupe</button>
+      <button type="button" data-answer="c">Les représentants du personnel seuls, sans l'employeur</button>
+      <button type="button" data-answer="bonne">L'employeur, avec la contribution de ceux qui connaissent le terrain</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le document n'est pas écrit depuis un bureau isolé : c'est l'employeur qui le rédige et le porte, avec la contribution des techniciens et, s'il y en a, des représentants du personnel."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question, sur l'exemple filé de la toiture. Avant une recharge de fluide sur un groupe en toiture d'un site industriel, quel risque le document de prévention du site peut-il signaler, que le technicien ne peut pas deviner seul ? Revoyez l'écran cinq si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Avant une recharge en toiture, que peut signaler le document du site ?</h2>
+    <figure class="vignette">
+      <img src="svg/duerp-exemple-toiture.svg" alt="Vignette de rappel : un groupe de condensation en toiture entouré de quatre risques signalés — coactivité, accès, engins, atmosphère particulière.">
+      <figcaption>Rappel de l'écran 5 — des risques propres au site.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">La présence d'engins de levage ou d'autres entreprises travaillant au même endroit</button>
+      <button type="button" data-answer="b">Le type de fluide frigorigène présent dans le circuit</button>
+      <button type="button" data-answer="c">La marque de l'appareil de récupération à utiliser</button>
+      <button type="button" data-answer="d">La date de la prochaine visite de contrôle réglementaire</button>
+    </div>
+    <p class="feedback" hidden data-explication="La coactivité, l'accès particulier, les engins de levage ou une zone à atmosphère particulière sont propres au site et ne se devinent pas ; le fluide ou le matériel se connaissent par ailleurs."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un technicien intervient chez un client. Quel document concerne les risques propres à ce site ? Souvenez-vous de l'écran six et de ses deux documents.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un technicien intervient chez un client : quel document le concerne ?</h2>
+    <figure class="vignette">
+      <img src="svg/duerp-deux-documents.svg" alt="Vignette de rappel : deux documents côte à côte, celui de l'employeur et celui du site visité, séparés par un signe différent de.">
+      <figcaption>Rappel de l'écran 6 — deux documents, deux responsables.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le DUERP de son propre employeur</button>
+      <button type="button" data-answer="b">Le carnet d'entretien de l'appareil</button>
+      <button type="button" data-answer="bonne">Le document de prévention du site, formalisé par l'entreprise du site</button>
+      <button type="button" data-answer="d">Le contrat commercial signé entre les deux entreprises</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le DUERP de son employeur couvre sa propre entreprise ; c'est le document du site — souvent un plan de prévention en cas de coactivité — qui signale les risques propres au site visité."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme dans le gabarit : il se lit
+     dès l'accueil. La correspondance annoncée n'a pas encore de porte
+     ouverte : on ne promet pas un lien qui casserait. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>L'habilitation</strong> (sous-ligne Électrique) — la règle d'un côté, le geste protégé de l'autre.</li>
+  </ul>
+  <p>Cette station est en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

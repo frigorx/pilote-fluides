@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-ts" aria-describedby="d-ts" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ts">Trois exigences distinctes, sans compensation entre elles</title>
+  <desc id="d-ts">Trois jauges verticales séparées, une pour Bbio, une pour Cep, une pour IC.
+    Chaque jauge porte une zone haute hachurée marquée « au-delà : le projet échoue sur ce
+    point ». En dessous, une phrase indique qu'un très bon résultat sur une jauge ne rattrape pas
+    un mauvais résultat sur une autre : les trois doivent être respectées chacune de son côté.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#92400e; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .band{ font-size:15px; fill:#10233c; font-weight:bold; }
+  </style>
+
+  <!-- trois jauges -->
+  <rect x="110" y="40" width="90" height="200" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="110" y="40" width="90" height="45" fill="#fbe7e4" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="ttl" x="155" y="270">Bbio</text>
+
+  <rect x="405" y="40" width="90" height="200" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="405" y="40" width="90" height="45" fill="#fbe7e4" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="ttl" x="450" y="270">Cep</text>
+
+  <rect x="700" y="40" width="90" height="200" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="700" y="40" width="90" height="45" fill="#fbe7e4" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="ttl" x="745" y="270">IC</text>
+
+  <text class="lbl" x="155" y="300" text-anchor="middle">zone haute : échec</text>
+  <text class="lbl" x="450" y="300" text-anchor="middle">zone haute : échec</text>
+  <text class="lbl" x="745" y="300" text-anchor="middle">zone haute : échec</text>
+
+  <rect x="30" y="315" width="840" height="1" fill="none"/>
+  <text class="band" x="450" y="325" text-anchor="middle" font-size="14">Un très bon résultat sur une jauge ne rattrape pas un mauvais résultat sur une autre.</text>
+</svg>

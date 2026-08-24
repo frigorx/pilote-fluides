@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-gvc" aria-describedby="d-gvc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-gvc">Pourquoi la distinction compte pour le client</title>
+  <desc id="d-gvc">Deux colonnes comparées, sans valeur chiffrée. La colonne « par élément »
+    porte trois mentions : léger, rapide, un seul composant amélioré. La colonne « globale »
+    porte trois mentions : étude plus lourde, ambition plus grande, tout le bâtiment amélioré
+    ensemble.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+  </style>
+
+  <rect x="40" y="30" width="390" height="280" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="ttl" x="235" y="65" text-anchor="middle">Par élément</text>
+  <text class="lbl" x="235" y="120" text-anchor="middle">léger</text>
+  <text class="lbl" x="235" y="160" text-anchor="middle">rapide à mettre en œuvre</text>
+  <text class="lbl" x="235" y="200" text-anchor="middle">un seul composant amélioré</text>
+  <text class="lbl" x="235" y="240" text-anchor="middle">à chaque intervention</text>
+
+  <rect x="470" y="30" width="390" height="280" rx="14" fill="#fff4e0" stroke="#92400e" stroke-width="3.5"/>
+  <text class="ttl" x="665" y="65" text-anchor="middle" fill="#92400e">Globale</text>
+  <text class="lbl" x="665" y="120" text-anchor="middle">étude plus lourde</text>
+  <text class="lbl" x="665" y="160" text-anchor="middle">ambition de résultat plus grande</text>
+  <text class="lbl" x="665" y="200" text-anchor="middle">tout le bâtiment</text>
+  <text class="lbl" x="665" y="240" text-anchor="middle">amélioré ensemble</text>
+</svg>

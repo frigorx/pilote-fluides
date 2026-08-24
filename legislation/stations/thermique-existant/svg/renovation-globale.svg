@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-rg" aria-describedby="d-rg" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rg">La rénovation globale : le bâtiment entier est jugé comme un ensemble</title>
+  <desc id="d-rg">Une maison en trait épais, dont les murs, la toiture, les fenêtres et le système
+    de chauffage sont tous mis en évidence en même temps. Une accolade réunit ces quatre éléments
+    vers une seule jauge de performance globale, sans valeur chiffrée, avec la mention « le
+    bâtiment est jugé comme un ensemble, pas composant par composant ».</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:15px; fill:#92400e; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Tout le bâtiment, jugé ensemble</text>
+
+  <polygon points="130,190 260,110 390,190" fill="none" stroke="#92400e" stroke-width="3.5"/>
+  <rect x="150" y="190" width="220" height="110" fill="none" stroke="#92400e" stroke-width="3.5"/>
+  <rect x="150" y="190" width="12" height="110" fill="#fff4e0" stroke="#92400e" stroke-width="1.5"/>
+  <rect x="358" y="190" width="12" height="110" fill="#fff4e0" stroke="#92400e" stroke-width="1.5"/>
+  <rect x="190" y="220" width="60" height="80" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <rect x="270" y="220" width="60" height="35" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+
+  <path d="M 395 150 C 500 150, 500 175, 570 175" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="570,175 552,168 552,183" fill="#92400e"/>
+
+  <rect x="590" y="60" width="90" height="220" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="590" y="60" width="90" height="70" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="lbl" x="635" y="300" text-anchor="middle">niveau global</text>
+
+  <rect x="710" y="90" width="170" height="150" rx="12" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="foc" x="795" y="130" text-anchor="middle">jugé comme</text>
+  <text class="foc" x="795" y="150" text-anchor="middle">un ensemble</text>
+  <text class="lbl" x="795" y="185" text-anchor="middle">bâti et systèmes</text>
+  <text class="lbl" x="795" y="205" text-anchor="middle">réunis dans un</text>
+  <text class="lbl" x="795" y="225" text-anchor="middle">seul résultat</text>
+</svg>

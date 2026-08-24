@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="t-ic" aria-describedby="d-ic" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ic">Ce que mesure l'indicateur carbone de la RE2020</title>
+  <desc id="d-ic">Un bâtiment schématique au centre, entouré de deux zones : à gauche, la zone
+    « construction », qui reprend les étapes fabriquer et transporter vues plus tôt ; à droite, la
+    zone « exploitation », qui reprend l'étape exploiter. Une accolade englobe les deux zones avec
+    la mention indicateur carbone (Ic) : c'est le cycle de vie complet du bâtiment qui est mesuré,
+    pas seulement sa consommation d'électricité annuelle.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">L'indicateur carbone (Ic) de la RE2020</text>
+
+  <!-- bâtiment -->
+  <rect x="380" y="80" width="140" height="120" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <polygon points="380,80 450,44 520,80" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <text class="qui" x="450" y="146" text-anchor="middle">Bâtiment</text>
+
+  <!-- zone construction -->
+  <rect x="60" y="70" width="270" height="140" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2.5"/>
+  <text class="qui" x="195" y="150" text-anchor="middle">Construction</text>
+  <text class="qui" x="195" y="170" text-anchor="middle" font-size="15" font-weight="normal">fabriquer + transporter</text>
+
+  <!-- zone exploitation -->
+  <rect x="570" y="70" width="270" height="140" rx="12" fill="#e6f2f0" stroke="#047857" stroke-width="2.5"/>
+  <text class="qui" x="705" y="150" text-anchor="middle">Exploitation</text>
+  <text class="qui" x="705" y="170" text-anchor="middle" font-size="15" font-weight="normal">énergie + fluides</text>
+
+  <rect x="20" y="244" width="860" height="56" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text class="band" x="450" y="266" text-anchor="middle" font-weight="bold">L'Ic mesure le cycle de vie complet du bâtiment,</text>
+  <text class="band" x="450" y="286" text-anchor="middle" font-weight="bold">construction et exploitation ensemble.</text>
+</svg>

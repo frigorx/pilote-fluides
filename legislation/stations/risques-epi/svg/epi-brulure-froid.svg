@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-5" aria-describedby="d-5" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-5">Le mécanisme de la brûlure par le froid</title>
+  <desc id="d-5">Une main schématique reçoit une projection de fluide représentée par des gouttes bleu pâle.
+    À l'endroit du contact, une zone de la peau est colorée en blanc-bleuté pour indiquer le gel, à côté d'un
+    flocon de neige stylisé. Une bande en bas rappelle que la détente brutale du fluide absorbe la chaleur de
+    la peau, un mécanisme aux conséquences proches d'une brûlure thermique.</desc>
+  <style>
+    .peau{ fill:#fde9d0; stroke:#10233c; stroke-width:2.5; }
+    .gel{ fill:#dbeafe; stroke:#1b3a63; stroke-width:2; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Main -->
+  <path class="peau" d="M300 260 v-110 q0 -18 18 -18 q18 0 18 18 v50
+                        q0 -18 18 -18 q18 0 18 18 v40
+                        q0 -18 18 -18 q18 0 18 18 v40
+                        q0 -14 14 -14 q14 0 14 14 v60 q0 30 -30 30 h-70 q-18 0 -18 -18 z"/>
+
+  <!-- Zone gelée -->
+  <ellipse class="gel" cx="330" cy="150" rx="34" ry="26"/>
+
+  <!-- Flocon -->
+  <g stroke="#1b3a63" stroke-width="3" stroke-linecap="round">
+    <line x1="470" y1="90" x2="470" y2="140"/>
+    <line x1="445" y1="115" x2="495" y2="115"/>
+    <line x1="452" y1="98" x2="488" y2="132"/>
+    <line x1="488" y1="98" x2="452" y2="132"/>
+  </g>
+
+  <!-- Gouttes de fluide -->
+  <path d="M420 60 q10 16 0 26 q-10 -10 0 -26 z" fill="#c6dcf5" stroke="#1b3a63" stroke-width="1.5"/>
+  <path d="M400 90 q8 12 0 20 q-8 -8 0 -20 z" fill="#c6dcf5" stroke="#1b3a63" stroke-width="1.5"/>
+
+  <text class="lbl" x="590" y="115" text-anchor="start">Brûlure par le froid</text>
+  <text x="590" y="140" font-size="15" fill="#5a6b7d">contact avec le fluide</text>
+  <text x="590" y="160" font-size="15" fill="#5a6b7d">qui se détend brutalement</text>
+
+  <rect x="30" y="255" width="840" height="56" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="290" text-anchor="middle">La détente brutale absorbe la chaleur de la peau : effet proche d'une brûlure</text>
+</svg>

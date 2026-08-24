@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img"
+     aria-labelledby="t-fac" aria-describedby="d-fac" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-fac">Ce qui fait varier chaque part du TEWI, à machine identique</title>
+  <desc id="d-fac">Trois cartes en haut. La première, durée de vie de la machine, envoie une
+    flèche vers la part directe et une flèche vers la part indirecte : plus une machine tourne
+    longtemps, plus les deux parts ont le temps de s'accumuler. La deuxième, taux de fuite annuel
+    réel, envoie une flèche vers la seule part directe : plus la machine fuit chaque année, plus
+    cette part grossit. La troisième, réseau électrique du pays où elle tourne, envoie une flèche
+    vers la seule part indirecte : plus ce réseau émet de CO2 par kilowattheure, plus cette part
+    grossit. En bas, deux zones reçoivent les flèches : la part directe à gauche, en vert, la part
+    indirecte à droite, en bleu.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl { font-size:14px; fill:#5a6b7d; }
+    .zone{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Ce qui fait varier chaque part, à machine identique</text>
+
+  <!-- Cartes -->
+  <rect x="20" y="56" width="270" height="130" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="qui" x="155" y="94" text-anchor="middle">Durée de vie</text>
+  <text class="qui" x="155" y="114" text-anchor="middle">de la machine</text>
+  <text class="lbl" x="155" y="140" text-anchor="middle">plus elle tourne longtemps,</text>
+  <text class="lbl" x="155" y="158" text-anchor="middle">plus les deux parts s'accumulent</text>
+
+  <rect x="315" y="56" width="270" height="130" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="qui" x="450" y="94" text-anchor="middle">Taux de fuite</text>
+  <text class="qui" x="450" y="114" text-anchor="middle">annuel réel</text>
+  <text class="lbl" x="450" y="140" text-anchor="middle">plus la machine fuit chaque année,</text>
+  <text class="lbl" x="450" y="158" text-anchor="middle">plus la part directe grossit</text>
+
+  <rect x="610" y="56" width="270" height="130" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="qui" x="745" y="94" text-anchor="middle">Réseau électrique</text>
+  <text class="qui" x="745" y="114" text-anchor="middle">du pays où elle tourne</text>
+  <text class="lbl" x="745" y="140" text-anchor="middle">plus il émet de CO₂ par kWh,</text>
+  <text class="lbl" x="745" y="158" text-anchor="middle">plus la part indirecte grossit</text>
+
+  <!-- Flèches -->
+  <defs>
+    <marker id="f1" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <path d="M120,186 C110,240 140,270 190,300" stroke="#5a6b7d" stroke-width="2.5" fill="none" marker-end="url(#f1)"/>
+  <path d="M195,186 C420,260 560,270 630,300" stroke="#5a6b7d" stroke-width="2.5" fill="none" marker-end="url(#f1)"/>
+  <path d="M450,186 L280,300" stroke="#5a6b7d" stroke-width="2.5" fill="none" marker-end="url(#f1)"/>
+  <path d="M745,186 L730,300" stroke="#5a6b7d" stroke-width="2.5" fill="none" marker-end="url(#f1)"/>
+
+  <!-- Zones -->
+  <rect x="90" y="310" width="300" height="90" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <text class="zone" x="240" y="360" text-anchor="middle" fill="#1e7e54">Part directe</text>
+
+  <rect x="510" y="310" width="300" height="90" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="zone" x="660" y="360" text-anchor="middle" fill="#1b3a63">Part indirecte</text>
+</svg>

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Zones ATEX — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le mécanisme d'une atmosphère explosive, la classification de sécurité des fluides A1/A2L/A2/A3, le piège du R290, et ce que ça change dans la pièce et sur le matériel.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/risques-atex/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Risques professionnels.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Risques professionnels · niveau BTS</p>
+  <h1>Zones ATEX — quand un fluide inflammable change la donne</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez comment se forme une atmosphère explosive, situer un fluide sur l'échelle A1 / A2L / A2 / A3, éviter le piège classique du R290, et dire ce que la classe d'un fluide change dans un local et sur le matériel utilisé.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Un nuage de gaz se mélange à l'air ambiant. À proximité, une étincelle est représentée : c'est le contact entre ce mélange et une source d'inflammation qui peut déclencher une explosion.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Le mécanisme d'une atmosphère explosive</h2>
+    <p>Une atmosphère explosive se forme quand un <strong>gaz ou une vapeur inflammable</strong> se mélange à l'air dans une proportion qui peut s'enflammer au contact d'une <strong>source d'inflammation</strong> — une étincelle, une flamme, une surface chaude.</p>
+    <figure>
+      <img src="svg/atex-mecanisme.svg" alt="Un nuage de gaz se mélangeant à l'air, à proximité d'une étincelle représentant une source d'inflammation.">
+      <figcaption>Le mélange seul ne suffit pas : il faut aussi une source d'inflammation.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Quatre cases alignées, de la moins à la plus inflammable : A1 non inflammable, A2L faiblement inflammable, A2 inflammable, A3 très inflammable. Chaque case porte des exemples de fluides.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">La classification de sécurité des fluides</h2>
+    <p>NF EN 378 et ASHRAE 34 classent les fluides selon leur inflammabilité : <strong>A1</strong> non inflammable (R134a, R410A, R744/CO₂), <strong>A2L</strong> faiblement inflammable (R32, R1234yf, R454B), <strong>A2</strong> inflammable (R152a), <strong>A3</strong> très inflammable (R290, R600a).</p>
+    <p>Le point à retenir : un fluide A2L ou A3 change tout ce qui suit — un A1 ne pose pas ce problème.</p>
+    <figure>
+      <img src="svg/atex-classification.svg" alt="Quatre cases alignées de la moins à la plus inflammable : A1, A2L, A2, A3, chacune avec des exemples de fluides.">
+      <figcaption>Quatre classes, une intensité d'inflammabilité croissante.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Le fluide R290 est représenté avec l'étiquette A3 correcte, et l'étiquette A2L barrée d'une croix rouge : c'est l'erreur la plus fréquente à ne pas commettre.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le piège classique : R290 n'est pas A2L</h2>
+    <p>Le <strong>R290</strong>, le propane, est un <strong>hydrocarbure pur</strong> : il est classé <strong>A3</strong>, très inflammable — <strong>jamais A2L</strong>. Confondre les deux est une erreur fréquente : les précautions à prendre ne sont pas les mêmes.</p>
+    <figure>
+      <img src="svg/atex-piege-r290.svg" alt="Le fluide R290 avec l'étiquette A3 correcte et l'étiquette A2L barrée d'une croix rouge.">
+      <figcaption>Un hydrocarbure pur est A3, pas A2L.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Un local technique est représenté avec un groupe de condensation, une flèche de ventilation, et une flamme nue barrée d'une croix rouge : ce sont les deux précautions attendues dans la pièce.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Dans la pièce : ventilation et absence de source d'inflammation</h2>
+    <p>Un local contenant un groupe chargé en fluide A2L ou A3 impose une <strong>ventilation adaptée</strong> et l'<strong>absence de sources d'inflammation</strong> à proximité — pas de flamme nue, pas d'appareillage électrique non conçu pour la zone.</p>
+    <figure>
+      <img src="svg/atex-local.svg" alt="Un local technique avec un groupe de condensation, une flèche de ventilation, et une flamme nue barrée.">
+      <figcaption>Deux précautions attendues dans la pièce : ventiler, écarter les sources d'inflammation.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Deux appareils électriques sont représentés côte à côte : celui de gauche porte un marquage ATEX et une coche verte, celui de droite, un appareil standard, porte une croix rouge.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Sur le matériel : un appareillage conçu pour la zone</h2>
+    <p>Dans une zone où une atmosphère explosive peut apparaître, le matériel électrique utilisé doit être <strong>conçu pour cet usage</strong> — un matériel dit « ATEX », marqué en conséquence.</p>
+    <figure>
+      <img src="svg/atex-materiel.svg" alt="Deux appareils électriques côte à côte : l'un marqué ATEX avec une coche verte, l'autre un appareil standard marqué d'une croix rouge.">
+      <figcaption>Un appareil standard n'a rien à faire dans une zone à risque.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="La scène montre une bouteille de recharge R290 dans un local technique, et un chalumeau de brasage à proximité marqué d'un point d'alerte : la flamme du brasage est justement la source d'inflammation à éviter ici.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Exemple : une recharge de R290 en local mal ventilé</h2>
+    <p>Avant une recharge de fluide R290 dans un local technique mal ventilé, le raisonnement doit s'enclencher avant de sortir le matériel de brasage à flamme nue — le brasage produit justement une <strong>flamme</strong>, source d'inflammation.</p>
+    <figure>
+      <img src="svg/atex-exemple-recharge.svg" alt="Une bouteille de recharge de fluide R290 dans un local technique, et un chalumeau de brasage à proximité marqué d'un point d'alerte.">
+      <figcaption>Le chalumeau et la recharge ne se croisent pas sans réflexion.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Une fiche récapitulative porte deux cases : ventilation vérifiée, absence de source d'inflammation confirmée. C'est le réflexe avant toute intervention sur un fluide A2L ou A3.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le réflexe avant d'intervenir sur un A2L ou A3</h2>
+    <p>Avant une intervention sur un circuit chargé en fluide A2L ou A3, vérifier la <strong>ventilation du local</strong> et l'<strong>absence de source d'inflammation</strong> — ne pas traiter cette intervention comme celle d'un fluide A1.</p>
+    <figure>
+      <img src="svg/atex-reflexe.svg" alt="Une fiche récapitulative avec deux cases cochées : ventilation vérifiée, absence de source d'inflammation confirmée.">
+      <figcaption>Le réflexe avant toute intervention sur un A2L ou A3.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Une fiche bilan reprend les points de la station : le mécanisme, l'échelle A1 à A3, le piège du R290, et les deux précautions à prendre dans la pièce et sur le matériel.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Une atmosphère explosive naît du mélange d'un gaz inflammable et de l'air, au contact d'une <strong>source d'inflammation</strong>.</li>
+      <li><strong>A1</strong> non inflammable, <strong>A2L</strong> faiblement inflammable, <strong>A2</strong> inflammable, <strong>A3</strong> très inflammable.</li>
+      <li>Piège classique : le <strong>R290 est A3</strong>, jamais A2L.</li>
+      <li>Dans la pièce : ventilation, absence de flamme nue. Sur le matériel : appareillage conçu pour la zone.</li>
+      <li>Le réflexe : ne jamais traiter un A2L ou A3 comme un A1.</li>
+    </ul>
+    <p class="formule">Le réflexe : la classe du fluide décide de la ventilation et du matériel, pas l'habitude.</p>
+    <figure>
+      <img src="svg/atex-bilan.svg" alt="Une fiche bilan reprenant les points clés : le mécanisme, l'échelle A1 à A3, le piège du R290, les précautions dans la pièce et sur le matériel.">
+      <figcaption>La classe du fluide décide, pas l'habitude.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Une atmosphère explosive se forme quand ? Revoyez le nuage de gaz et l'étincelle de l'écran un.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Une atmosphère explosive se forme quand…</h2>
+    <figure class="vignette">
+      <img src="svg/atex-mecanisme.svg" alt="Vignette de rappel : le nuage de gaz mélangé à l'air, près d'une étincelle.">
+      <figcaption>Rappel de l'écran 1 — le mélange et la source d'inflammation.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un fluide frigorigène est stocké à basse température</button>
+      <button type="button" data-answer="bonne">Un gaz inflammable se mélange à l'air dans une proportion qui peut s'enflammer au contact d'une source d'inflammation</button>
+      <button type="button" data-answer="b">Un compresseur fonctionne à pleine charge</button>
+      <button type="button" data-answer="c">Un circuit est ouvert à l'air libre, quel que soit le fluide</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le mécanisme suppose un gaz inflammable, un mélange avec l'air dans une certaine proportion, et une source d'inflammation. Le stockage à basse température, la pleine charge d'un compresseur ou l'ouverture d'un circuit ne suffisent pas seuls."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Le R290, le propane, est classé comment ? Revoyez le piège de l'écran trois.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Le R290 (propane) est classé…</h2>
+    <figure class="vignette">
+      <img src="svg/atex-piege-r290.svg" alt="Vignette de rappel : le R290 avec l'étiquette A3 correcte et l'étiquette A2L barrée.">
+      <figcaption>Rappel de l'écran 3 — le piège classique.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">A2L, comme le R32</button>
+      <button type="button" data-answer="b">A1, comme le R134a</button>
+      <button type="button" data-answer="bonne">A3, très inflammable, car c'est un hydrocarbure pur</button>
+      <button type="button" data-answer="c">B2L, comme l'ammoniac</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le R290 est un hydrocarbure pur, classé A3, très inflammable. Ce n'est ni un HFC à faible PRP comme le R32 (A2L), ni un fluide non inflammable comme le R134a (A1), ni un fluide toxique comme l'ammoniac (B2L)."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un local contenant un groupe chargé en fluide A3 impose quoi ? Revoyez le local technique de l'écran quatre.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Un local contenant un groupe chargé en fluide A3 impose…</h2>
+    <figure class="vignette">
+      <img src="svg/atex-local.svg" alt="Vignette de rappel : le local technique avec ventilation et flamme nue barrée.">
+      <figcaption>Rappel de l'écran 4 — ventilation et absence de source d'inflammation.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Une ventilation adaptée et l'absence de sources d'inflammation à proximité</button>
+      <button type="button" data-answer="a">Uniquement une signalisation sur la porte du local</button>
+      <button type="button" data-answer="b">Un éclairage plus puissant, rien d'autre</button>
+      <button type="button" data-answer="c">Un contrôle de température renforcé, sans autre précaution</button>
+    </div>
+    <p class="feedback" hidden data-explication="La ventilation et l'absence de sources d'inflammation sont les deux précautions attendues. Une signalisation, un meilleur éclairage ou un contrôle de température seuls ne répondent pas au risque réel."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Avant une recharge de R290 dans un local mal ventilé, quel raisonnement s'enclenche ? Revoyez la scène de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Avant une recharge de R290 dans un local mal ventilé, quel raisonnement s'enclenche ?</h2>
+    <figure class="vignette">
+      <img src="svg/atex-exemple-recharge.svg" alt="Vignette de rappel : la bouteille de recharge R290 et le chalumeau de brasage marqué d'un point d'alerte.">
+      <figcaption>Rappel de l'écran 6 — la recharge et le chalumeau ne se croisent pas sans réflexion.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Sortir directement le chalumeau de brasage, la recharge est prioritaire</button>
+      <button type="button" data-answer="b">Ouvrir juste une fenêtre après la recharge, par précaution</button>
+      <button type="button" data-answer="c">Considérer que le R290 se comporte comme un fluide A1</button>
+      <button type="button" data-answer="bonne">Vérifier la ventilation et écarter toute source d'inflammation, dont le chalumeau de brasage, avant d'intervenir</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le R290 est A3 : la ventilation se vérifie et les sources d'inflammation s'écartent avant d'intervenir, pas après. Sortir le chalumeau en premier, ventiler après coup, ou traiter le R290 comme un A1 ignorent le risque réel."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme sur les autres stations du
+     réseau : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>L'habilitation</strong> (sous-ligne Électrique) — la règle d'un côté, le geste protégé de l'autre.</li>
+    <li><strong>NF EN 378</strong> (sous-ligne Fluidique) — la norme complète de classification et de sécurité des fluides, dont cette station ne montre qu'un aspect.</li>
+  </ul>
+  <p>Ces deux stations sont en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

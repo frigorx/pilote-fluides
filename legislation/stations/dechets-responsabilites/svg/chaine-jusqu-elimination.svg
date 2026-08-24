@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="t-cje" aria-describedby="d-cje" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cje">La responsabilité va jusqu'à l'élimination ou la valorisation finale</title>
+  <desc id="d-cje">Une chaîne de maillons sans rupture visible, du chantier jusqu'à un symbole de
+    traitement final. Quatre maillons se suivent : chantier, collecte, transport, traitement — chacun
+    représentant une étape, reliés bout à bout par le même trait, sans coupure. Une bande en dessous
+    précise que c'est cette continuité que prouve la traçabilité, maillon par maillon.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <!-- Le fil de la chaîne, continu, sous les maillons -->
+  <path d="M 90 110 H 810" stroke="#57534e" stroke-width="6" fill="none"/>
+
+  <!-- Maillon 1 : chantier -->
+  <rect x="30" y="70" width="140" height="80" rx="40" fill="#57534e"/>
+  <text class="ttl" x="100" y="106" text-anchor="middle">CHANTIER</text>
+  <text class="ttl" x="100" y="126" text-anchor="middle">(origine)</text>
+  <text class="lbl" x="100" y="176" text-anchor="middle">le déchet naît ici</text>
+
+  <!-- Maillon 2 : collecte -->
+  <rect x="230" y="70" width="140" height="80" rx="40" fill="#57534e"/>
+  <text class="ttl" x="300" y="116" text-anchor="middle">COLLECTE</text>
+  <text class="lbl" x="300" y="176" text-anchor="middle">1er maillon</text>
+
+  <!-- Maillon 3 : transport -->
+  <rect x="430" y="70" width="140" height="80" rx="40" fill="#57534e"/>
+  <text class="ttl" x="500" y="116" text-anchor="middle">TRANSPORT</text>
+  <text class="lbl" x="500" y="176" text-anchor="middle">2e maillon</text>
+
+  <!-- Maillon 4 : traitement final -->
+  <rect x="630" y="60" width="240" height="100" rx="16" fill="#1e7e54"/>
+  <text class="ttl" x="750" y="100" text-anchor="middle">TRAITEMENT FINAL</text>
+  <text class="ttl" x="750" y="122" text-anchor="middle">(élimination ou</text>
+  <text class="ttl" x="750" y="142" text-anchor="middle">valorisation)</text>
+  <text class="lbl" x="750" y="188" text-anchor="middle">la responsabilité s'arrête ici</text>
+
+  <!-- Petits ronds marquant chaque jonction, sans rupture du fil -->
+  <circle cx="200" cy="110" r="7" fill="#fffdf8" stroke="#57534e" stroke-width="4"/>
+  <circle cx="400" cy="110" r="7" fill="#fffdf8" stroke="#57534e" stroke-width="4"/>
+  <circle cx="600" cy="110" r="7" fill="#fffdf8" stroke="#57534e" stroke-width="4"/>
+
+  <!-- La bande -->
+  <rect x="30" y="230" width="840" height="66" rx="14" fill="#eef0ee" stroke="#57534e" stroke-width="2"/>
+  <text class="band" x="450" y="258" text-anchor="middle">Pas jusqu'à la première remise — jusqu'à l'élimination ou la valorisation finale</text>
+  <text class="lbl" x="450" y="282" text-anchor="middle" fill="#10233c">c'est ce que prouve la traçabilité, maillon par maillon</text>
+</svg>

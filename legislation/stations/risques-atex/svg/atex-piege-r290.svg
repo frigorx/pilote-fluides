@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-3" aria-describedby="d-3" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-3">Le piège : le R290 est A3, jamais A2L</title>
+  <desc id="d-3">Une carte nommée R290 (propane) porte l'étiquette A3 correcte, entourée en vert avec une
+    coche. À côté, l'étiquette A2L est barrée d'une grande croix rouge, pour signaler l'erreur classique de
+    classification.</desc>
+  <style>
+    .carte{ fill:#fffdf8; stroke:#d6dee7; stroke-width:2; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .cls{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:34px; }
+  </style>
+
+  <rect class="carte" x="60" y="50" width="260" height="240" rx="16"/>
+  <text class="lbl" x="190" y="90" text-anchor="middle">R290</text>
+  <text x="190" y="112" text-anchor="middle" font-size="14" fill="#5a6b7d">(propane)</text>
+  <text x="190" y="140" text-anchor="middle" font-size="14" fill="#5a6b7d">hydrocarbure pur</text>
+
+  <!-- Étiquette A3 correcte -->
+  <rect x="380" y="70" width="180" height="90" rx="12" fill="#fbe7e4" stroke="#1e7e54" stroke-width="4"/>
+  <text class="cls" x="470" y="120" text-anchor="middle" fill="#c0392b">A3</text>
+  <circle cx="530" cy="90" r="16" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <path d="M522 90 l6 6 l12 -13" fill="none" stroke="#1e7e54" stroke-width="3" stroke-linecap="round"/>
+  <text x="470" y="145" text-anchor="middle" font-size="13" fill="#5a6b7d">correct</text>
+
+  <!-- Étiquette A2L barrée -->
+  <rect x="380" y="190" width="180" height="90" rx="12" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <text class="cls" x="470" y="240" text-anchor="middle" fill="#b06a00">A2L</text>
+  <line x1="390" y1="200" x2="550" y2="270" stroke="#c0392b" stroke-width="6"/>
+  <text x="470" y="260" text-anchor="middle" font-size="13" fill="#c0392b">incorrect</text>
+
+  <text x="700" y="100" font-size="15" fill="#10233c" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold">Règle simple :</text>
+  <text x="700" y="130" font-size="14" fill="#10233c">un hydrocarbure pur</text>
+  <text x="700" y="150" font-size="14" fill="#10233c">(propane, isobutane)</text>
+  <text x="700" y="170" font-size="14" fill="#10233c">est toujours A3</text>
+</svg>

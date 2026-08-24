@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-cc" aria-describedby="d-cc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cc">Le confort d'été, la nouveauté de la RE2020 qui concerne directement le climaticien</title>
+  <desc id="d-cc">Deux cartes reliées par une flèche. À gauche, la carte « confort d'été », l'un
+    des volets nouveaux de la RE2020 déjà vus dans la station précédente. À droite, une carte
+    « climatisation, votre futur métier », avec un bloc extérieur de climatiseur stylisé. La
+    flèche entre les deux porte la mention « concerne directement ».</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .fl  { font-size:16px; fill:#92400e; font-weight:bold; font-family:'Trebuchet MS',Calibri,sans-serif; }
+  </style>
+
+  <rect x="40" y="70" width="330" height="200" rx="14" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <text class="ttl" x="205" y="115" text-anchor="middle">Confort d'été</text>
+  <text class="lbl" x="205" y="150" text-anchor="middle">volet nouveau</text>
+  <text class="lbl" x="205" y="170" text-anchor="middle">de la RE2020</text>
+  <circle cx="205" cy="220" r="30" fill="none" stroke="#92400e" stroke-width="3"/>
+  <line x1="205" y1="195" x2="205" y2="245" stroke="#92400e" stroke-width="2"/>
+  <line x1="180" y1="220" x2="230" y2="220" stroke="#92400e" stroke-width="2"/>
+
+  <line x1="385" y1="170" x2="535" y2="170" stroke="#92400e" stroke-width="4"/>
+  <polygon points="535,170 517,160 517,180" fill="#92400e"/>
+  <text class="fl" x="460" y="145" text-anchor="middle">concerne</text>
+  <text class="fl" x="460" y="163" text-anchor="middle">directement</text>
+
+  <rect x="550" y="70" width="310" height="200" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <text class="ttl" x="705" y="115" text-anchor="middle">La climatisation,</text>
+  <text class="ttl" x="705" y="138" text-anchor="middle">votre métier</text>
+  <rect x="655" y="180" width="100" height="65" rx="8" fill="none" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="685" cy="212" r="18" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <circle cx="725" cy="212" r="18" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+</svg>

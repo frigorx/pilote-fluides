@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" role="img"
+     aria-labelledby="t-esd" aria-describedby="d-esd" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-esd">Un établi de frigoriste, sept déchets identifiés</title>
+  <desc id="d-esd">Sept objets posés sur un établi, chacun avec son étiquette : le cuivre et les métaux,
+    un bidon d'huile usagée, une bouteille de fluide récupéré, un filtre déshydrateur, un carton
+    d'emballage, un groupe hors d'usage et une chute d'isolant. Chacun a sa propre filière, mais le
+    même principe de responsabilité s'applique à tous.</desc>
+  <style>
+    .lbl1 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .lbl2 { font-size:15px; fill:#5a6b7d; }
+    .trait { stroke:#57534e; stroke-width:2.6; fill:#eef0ee; }
+  </style>
+
+  <!-- 1. Cuivre / métaux : tube enroulé -->
+  <g class="trait">
+    <path d="M 55 190 a 35 35 0 1 1 70 0 a 24 24 0 1 1 -48 0 a 13 13 0 1 1 26 0" fill="none"/>
+  </g>
+  <text class="lbl1" x="90" y="248" text-anchor="middle">Cuivre</text>
+  <text class="lbl2" x="90" y="266" text-anchor="middle">et métaux</text>
+
+  <!-- 2. Bidon d'huile usagée -->
+  <g>
+    <rect class="trait" x="192" y="130" width="60" height="86" rx="6"/>
+    <rect class="trait" x="205" y="112" width="34" height="20" rx="3"/>
+    <path d="M 200 150 H 244" stroke="#57534e" stroke-width="2"/>
+  </g>
+  <text class="lbl1" x="222" y="248" text-anchor="middle">Huile</text>
+  <text class="lbl2" x="222" y="266" text-anchor="middle">usagée</text>
+
+  <!-- 3. Bouteille de fluide récupéré -->
+  <g class="trait">
+    <rect x="322" y="118" width="64" height="100" rx="20"/>
+    <rect x="342" y="98" width="24" height="22" rx="4"/>
+    <circle cx="354" cy="92" r="8" fill="#57534e" stroke="none"/>
+  </g>
+  <text class="lbl1" x="354" y="248" text-anchor="middle">Fluide</text>
+  <text class="lbl2" x="354" y="266" text-anchor="middle">récupéré</text>
+
+  <!-- 4. Filtre déshydrateur -->
+  <g class="trait">
+    <rect x="454" y="150" width="70" height="46" rx="10"/>
+    <path d="M 440 173 H 454 M 524 173 H 538" stroke-width="4"/>
+  </g>
+  <text class="lbl1" x="486" y="248" text-anchor="middle">Filtre</text>
+  <text class="lbl2" x="486" y="266" text-anchor="middle">déshydrateur</text>
+
+  <!-- 5. Carton d'emballage -->
+  <g class="trait">
+    <rect x="584" y="140" width="70" height="70" rx="4"/>
+    <path d="M 584 140 L 604 122 H 674 L 654 140 Z"/>
+    <path d="M 654 140 V 210 L 674 192 V 122 Z"/>
+    <path d="M 584 175 H 654 M 619 140 V 210" stroke-width="1.6"/>
+  </g>
+  <text class="lbl1" x="628" y="248" text-anchor="middle">Carton</text>
+  <text class="lbl2" x="628" y="266" text-anchor="middle">emballage</text>
+
+  <!-- 6. Groupe hors d'usage -->
+  <g class="trait">
+    <rect x="714" y="128" width="88" height="90" rx="8"/>
+    <circle cx="758" cy="150" r="16" fill="none"/>
+    <path d="M 758 138 V 162 M 746 150 H 770" stroke-width="2"/>
+    <path d="M 726 190 H 790 M 726 200 H 790" stroke-width="2"/>
+  </g>
+  <text class="lbl1" x="758" y="248" text-anchor="middle">Groupe</text>
+  <text class="lbl2" x="758" y="266" text-anchor="middle">hors d'usage</text>
+
+  <!-- 7. Chute d'isolant -->
+  <g class="trait">
+    <path d="M 852 150 L 900 140 L 934 158 L 918 200 L 872 210 L 848 182 Z"/>
+    <path d="M 862 168 L 906 158 M 866 186 L 900 178" stroke-width="1.6"/>
+  </g>
+  <text class="lbl1" x="890" y="248" text-anchor="middle">Chute</text>
+  <text class="lbl2" x="890" y="266" text-anchor="middle">d'isolant</text>
+
+  <!-- L'établi -->
+  <rect x="20" y="286" width="940" height="24" rx="4" fill="#57534e"/>
+  <rect x="40" y="310" width="16" height="46" fill="#57534e"/>
+  <rect x="924" y="310" width="16" height="46" fill="#57534e"/>
+
+  <text font-size="15" fill="#5a6b7d" font-style="italic" x="490" y="374" text-anchor="middle">Sept déchets, sept filières — le même principe de responsabilité pour chacun.</text>
+</svg>

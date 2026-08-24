@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-ct" aria-describedby="d-ct" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ct">Ce que contient le DUERP : trois colonnes qui s'enchaînent</title>
+  <desc id="d-ct">Trois colonnes reliées par des flèches horizontales : les situations de travail
+    identifiées, les risques repérés pour chacune, les mesures de prévention retenues. Les trois
+    colonnes convergent vers une icône de document en bas au centre. Une bande en dessous précise
+    que le format et la périodicité de mise à jour ne sont pas fixés sur ce schéma.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .band{ font-size:15px; fill:#5a6b7d; font-style:italic; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#fffdf8; }
+  </style>
+
+  <!-- colonne 1 -->
+  <rect x="20" y="24" width="260" height="150" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="150" cy="54" r="18" fill="#1b3a63"/>
+  <text class="num" x="150" y="61" text-anchor="middle">1</text>
+  <text class="lbl" x="150" y="92" text-anchor="middle" font-weight="bold">Situations de travail</text>
+  <text class="lbl" x="150" y="116" text-anchor="middle">identifiées</text>
+  <text class="lbl" x="150" y="146" text-anchor="middle">poste par poste,</text>
+  <text class="lbl" x="150" y="164" text-anchor="middle">tâche par tâche</text>
+
+  <!-- colonne 2 -->
+  <rect x="320" y="24" width="260" height="150" rx="12" fill="#fffdf8" stroke="#c2410c" stroke-width="3"/>
+  <circle cx="450" cy="54" r="18" fill="#c2410c"/>
+  <text class="num" x="450" y="61" text-anchor="middle">2</text>
+  <text class="lbl" x="450" y="92" text-anchor="middle" font-weight="bold">Risques repérés</text>
+  <text class="lbl" x="450" y="116" text-anchor="middle">pour chacune</text>
+  <text class="lbl" x="450" y="146" text-anchor="middle">de ces situations</text>
+  <text class="lbl" x="450" y="164" text-anchor="middle">de travail</text>
+
+  <!-- colonne 3 -->
+  <rect x="620" y="24" width="260" height="150" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="750" cy="54" r="18" fill="#1b3a63"/>
+  <text class="num" x="750" y="61" text-anchor="middle">3</text>
+  <text class="lbl" x="750" y="92" text-anchor="middle" font-weight="bold">Mesures de</text>
+  <text class="lbl" x="750" y="116" text-anchor="middle">prévention</text>
+  <text class="lbl" x="750" y="146" text-anchor="middle">retenues pour</text>
+  <text class="lbl" x="750" y="164" text-anchor="middle">chaque risque</text>
+
+  <defs>
+    <marker id="fl-ct" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <line x1="282" y1="99" x2="318" y2="99" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#fl-ct)"/>
+  <line x1="582" y1="99" x2="618" y2="99" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#fl-ct)"/>
+
+  <!-- bande basse -->
+  <rect x="20" y="204" width="860" height="46" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lbl" x="450" y="233" text-anchor="middle" font-weight="bold">Le document rassemble ces trois éléments, situation par situation</text>
+
+  <text class="band" x="450" y="284" text-anchor="middle">Format et périodicité de mise à jour : fixés par les textes en vigueur, non repris ici</text>
+</svg>

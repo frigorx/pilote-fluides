@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Valoriser — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la hiérarchie des cinq niveaux de traitement d'un déchet — prévention, réemploi, recyclage, valorisation énergétique, élimination — avec un exemple concret du métier du froid à chaque niveau.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/dechets-valoriser/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Déchets.
+     Gabarit structurel : aptitude-capacite (sous-ligne Fluidique &
+     thermique). Contenu propre à cette station, validé dans FOND.md.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Déchets · niveau BTS</p>
+  <h1>Valoriser — la hiérarchie des traitements</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous connaissez l'ordre de préférence des modes de traitement d'un déchet — prévention, réemploi, recyclage, valorisation énergétique, élimination — et vous savez situer les déchets que vous produisez dans cet ordre.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez l'escalier. Cinq marches, empilées, et leur largeur diminue du haut vers le bas. En haut, la marche la plus large : la prévention. En bas, la plus étroite : l'élimination. Cette forme n'est pas décorative : elle dit que les cinq niveaux ne sont pas équivalents, ils sont classés. Le meilleur traitement est celui qui évite le déchet avant même qu'il existe ; le pire se contente de l'éliminer, sans rien en tirer. Entre les deux, réemploi, recyclage et valorisation énergétique, dans cet ordre précis.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Un ordre, pas une liste</h2>
+    <p>Les modes de traitement d'un déchet ne sont pas équivalents : ils sont <strong>classés dans un ordre de préférence</strong>. Le meilleur traitement est celui qui évite le déchet ; le pire est celui qui se contente de l'éliminer.</p>
+    <p>Cinq niveaux, du plus souhaitable au moins souhaitable : <strong>prévention → réemploi → recyclage → valorisation énergétique → élimination.</strong></p>
+    <figure>
+      <img src="svg/escalier-cinq-niveaux.svg" alt="Un escalier à cinq marches, la plus large en haut — prévention — et la plus étroite en bas — élimination. Chaque marche est étiquetée : réemploi, recyclage, valorisation énergétique entre les deux.">
+      <figcaption>La largeur de chaque marche traduit l'ordre de préférence, du haut vers le bas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Une balance. À gauche, un plateau plein, en trait continu vert : le geste — récupérer un fluide plutôt que le rejeter. À droite, un plateau presque vide, en trait tireté : le déchet qui aurait été produit si ce geste n'avait pas eu lieu, et qui, grâce à lui, n'existe pas. La prévention ne traite rien : elle empêche le déchet de naître. Récupérer un fluide, choisir un matériel qui dure, éviter le suremballage — chaque geste de ce type est de la prévention.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Prévention : ne pas produire le déchet</h2>
+    <p>Le premier niveau ne traite pas le déchet : il l'<strong>évite</strong>. Récupérer un fluide plutôt que le laisser s'échapper, choisir un matériel qui dure, éviter le suremballage : chaque geste qui empêche un déchet de naître est de la prévention.</p>
+    <figure>
+      <img src="svg/balance-prevention.svg" alt="Une balance : d'un côté un geste qui évite un déchet, la récupération plutôt que le rejet ; de l'autre le déchet qui aurait été produit sans ce geste, représenté en trait tireté car il n'existe pas.">
+      <figcaption>Chaque geste qui évite un déchet est de la prévention.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Une bouteille de fluide récupéré, à gauche, reliée par une flèche courte et directe à la même machine, à droite. Aucune étape entre les deux : pas de transformation, pas de four, rien. C'est ce qui distingue le réemploi du recyclage. La matière garde sa forme : elle est simplement remise en service, sur la machine dont elle vient.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Réemploi : remettre en service tel quel</h2>
+    <p>Le deuxième niveau remet un objet ou une matière en service <strong>sans la transformer</strong>. Un fluide récupéré, propre et identifié, réemployé sur la même machine, en est l'exemple direct. Réemployer n'est pas recycler : la matière garde sa forme.</p>
+    <figure>
+      <img src="svg/reemploi-meme-machine.svg" alt="Une bouteille de fluide récupéré reliée directement à la même machine par une flèche courte, sans passer par aucune étape de transformation.">
+      <figcaption>Réemployer n'est pas recycler : la matière garde sa forme.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Des chutes de cuivre, à gauche, irrégulières. Une flèche les fait entrer dans un four stylisé, au centre : c'est la transformation. Une seconde flèche en ressort, vers la droite, où la matière reparaît sous une forme neuve et régulière — du cuivre prêt à resservir. Contrairement au réemploi de l'écran précédent, ici la matière change d'état avant de resservir.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Recyclage : transformer pour redonner une matière première</h2>
+    <p>Le troisième niveau <strong>transforme</strong> un déchet pour en refaire une matière première. Le cuivre de tuyauterie fondu pour redevenir du cuivre neuf, un fluide régénéré ou recyclé en usine : la matière change d'état avant de resservir.</p>
+    <figure>
+      <img src="svg/recyclage-cuivre.svg" alt="Des chutes de cuivre entrant dans un symbole de transformation, un four stylisé, et ressortant sous forme de matière neuve.">
+      <figcaption>La matière est transformée avant de resservir.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Un déchet non recyclable, à gauche. Une flèche l'amène dans une chambre d'incinération maîtrisée, surmontée d'une cheminée — un symbole différent du four de l'écran précédent, parce qu'ici il ne s'agit pas de refaire de la matière. Une seconde flèche en sort vers une source de chaleur. Ce niveau ne redonne rien de matériel : il tire une énergie du déchet, par combustion contrôlée.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Valorisation énergétique : le déchet devient une source de chaleur</h2>
+    <p>Le quatrième niveau ne redonne pas de matière : il tire une <strong>énergie</strong> du déchet, le plus souvent par combustion contrôlée. C'est le cas de certains déchets qui ne peuvent être ni évités, ni réemployés, ni recyclés — certains isolants, par exemple.</p>
+    <figure>
+      <img src="svg/valorisation-energetique.svg" alt="Un déchet non recyclable entrant dans un symbole d'incinération maîtrisée, distinct du four de transformation en matière, avec une flèche vers une source de chaleur.">
+      <figcaption>Ici, pas de matière neuve : une énergie tirée du déchet.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="En haut, la marche la plus étroite de l'escalier : élimination. Une flèche à sens unique en descend vers un caisson scellé, marqué d'un cadenas : destruction ou stockage final. Aucune flèche ne remonte : un panneau le confirme, aucun retour. C'est le dernier recours, réservé à ce qui ne peut suivre aucun des niveaux précédents.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Élimination : le dernier recours</h2>
+    <p>Le cinquième niveau ne récupère ni matière ni énergie : il <strong>détruit ou stocke</strong> le déchet, sans autre usage. C'est le dernier recours, réservé à ce qui ne peut suivre aucun des niveaux précédents — par exemple, un fluide frigorigène non réutilisable et non valorisable, détruit dans une installation dédiée.</p>
+    <figure>
+      <img src="svg/elimination-dernier-recours.svg" alt="La marche la plus étroite de l'escalier, élimination, reliée par une flèche à sens unique à un symbole de destruction et de stockage final, avec un panneau indiquant qu'aucun retour n'est possible.">
+      <figcaption>Aucune flèche de retour : c'est bien le dernier recours.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre cartes, en cascade, chacune reliée à son niveau. Un fluide récupéré, propre, réemployé sur la même machine : réemploi. Des chutes de cuivre envoyées en fonderie : recyclage. Une chute d'isolant non recyclable, valorisée en énergie : valorisation énergétique. Un fluide non réutilisable, non valorisable, détruit : élimination. Un même métier, quatre déchets, quatre niveaux de l'escalier.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : quatre déchets d'un frigoriste, quatre niveaux</h2>
+    <ol>
+      <li><strong>Un fluide récupéré, propre, réemployé sur la même machine</strong> → réemploi.</li>
+      <li><strong>Des chutes de cuivre envoyées en fonderie</strong> → recyclage.</li>
+      <li><strong>Une chute d'isolant non recyclable, valorisée en énergie</strong> → valorisation énergétique.</li>
+      <li><strong>Un fluide non réutilisable, non valorisable, détruit</strong> → élimination.</li>
+    </ol>
+    <figure>
+      <img src="svg/quatre-exemples-metier.svg" alt="Quatre cartes en cascade, chacune reliée à son niveau de traitement : réemploi, recyclage, valorisation énergétique, élimination.">
+      <figcaption>Un même métier fournit un exemple concret à chaque niveau.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan. Le même escalier qu'à l'écran un, mais chaque marche, à partir du réemploi, porte maintenant son exemple du métier du froid : le fluide réemployé, les chutes de cuivre, l'isolant valorisé, le fluide détruit. En dessous, le réflexe à retenir : avant d'éliminer un déchet, se demander s'il ne pouvait pas être évité, réemployé, recyclé, ou valorisé en énergie.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Les modes de traitement sont classés dans un ordre de préférence, pas équivalents.</li>
+      <li><strong>Prévention</strong> : éviter le déchet. <strong>Réemploi</strong> : remettre en service tel quel. <strong>Recyclage</strong> : transformer en matière première. <strong>Valorisation énergétique</strong> : en tirer une énergie. <strong>Élimination</strong> : dernier recours.</li>
+      <li>Un même métier — le froid — fournit un exemple concret à chaque niveau.</li>
+      <li>L'élimination n'est jamais le premier choix : c'est ce qui reste quand rien d'autre n'est possible.</li>
+    </ul>
+    <p class="formule">Le réflexe : avant d'éliminer un déchet, se demander s'il ne pouvait pas être évité, réemployé, recyclé, ou valorisé en énergie.</p>
+    <figure>
+      <img src="svg/bilan-valoriser.svg" alt="L'escalier des cinq niveaux, avec les quatre exemples du métier du froid positionnés sur les marches réemploi, recyclage, valorisation énergétique et élimination.">
+      <figcaption>Cinq niveaux, un même métier, un exemple à chaque marche.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Parmi les quatre propositions, quel est le mode de traitement le plus souhaitable pour un déchet ? Reprenez l'escalier de l'écran un si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Quel est le mode de traitement le plus souhaitable pour un déchet ?</h2>
+    <figure class="vignette">
+      <img src="svg/escalier-cinq-niveaux.svg" alt="Vignette de rappel : l'escalier des cinq niveaux, du plus souhaitable en haut au moins souhaitable en bas.">
+      <figcaption>Rappel de l'écran 1 — l'ordre des cinq niveaux.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le recyclage, toujours</button>
+      <button type="button" data-answer="bonne">La prévention — éviter que le déchet soit produit</button>
+      <button type="button" data-answer="c">La valorisation énergétique</button>
+      <button type="button" data-answer="d">L'élimination, si elle est bien contrôlée</button>
+    </div>
+    <p class="feedback" hidden data-explication="La prévention est le premier niveau : elle évite le déchet avant même qu'il existe."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un fluide récupéré, propre, réemployé sur la machine dont il vient : à quel niveau correspond ce geste ? Reprenez l'écran trois si besoin.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un fluide récupéré, propre, réemployé sur la machine dont il vient : quel niveau ?</h2>
+    <figure class="vignette">
+      <img src="svg/reemploi-meme-machine.svg" alt="Vignette de rappel : une bouteille de fluide récupéré reliée directement à la même machine, sans transformation.">
+      <figcaption>Rappel de l'écran 3 — le réemploi, sans transformation.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Recyclage</button>
+      <button type="button" data-answer="b">Valorisation énergétique</button>
+      <button type="button" data-answer="bonne">Réemploi — la matière garde sa forme, sans transformation</button>
+      <button type="button" data-answer="d">Élimination</button>
+    </div>
+    <p class="feedback" hidden data-explication="Réemployer n'est pas recycler : rien n'est transformé, l'objet ou la matière est remis en service tel quel."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Des chutes de cuivre fondues pour redevenir du cuivre neuf : quel niveau ? Regardez l'écran quatre si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Des chutes de cuivre fondues pour redevenir du cuivre neuf : quel niveau ?</h2>
+    <figure class="vignette">
+      <img src="svg/recyclage-cuivre.svg" alt="Vignette de rappel : des chutes de cuivre entrant dans un four stylisé et ressortant sous forme de matière neuve.">
+      <figcaption>Rappel de l'écran 4 — le recyclage transforme la matière.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Réemploi</button>
+      <button type="button" data-answer="bonne">Recyclage — la matière est transformée pour redonner une matière première</button>
+      <button type="button" data-answer="c">Prévention</button>
+      <button type="button" data-answer="d">Élimination</button>
+    </div>
+    <p class="feedback" hidden data-explication="Contrairement au réemploi, le recyclage transforme la matière avant qu'elle resserve."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Quand l'élimination est-elle le bon choix ? Souvenez-vous de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Quand l'élimination est-elle le bon choix ?</h2>
+    <figure class="vignette">
+      <img src="svg/elimination-dernier-recours.svg" alt="Vignette de rappel : la marche élimination, reliée par une flèche à sens unique à un symbole de destruction et de stockage final, sans retour possible.">
+      <figcaption>Rappel de l'écran 6 — le dernier recours, sans retour.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">C'est toujours le choix le plus simple, donc le premier envisagé</button>
+      <button type="button" data-answer="bonne">Uniquement quand aucun des niveaux précédents n'est possible</button>
+      <button type="button" data-answer="c">Dès qu'un déchet est dangereux, sans autre examen</button>
+      <button type="button" data-answer="d">Jamais : l'élimination n'existe plus dans la hiérarchie actuelle</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'élimination est le dernier niveau, réservé à ce qui ne peut suivre aucun des niveaux précédents."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme sur aptitude-capacite : il se
+     lit dès l'accueil. Les deux correspondances restent annoncées sans
+     lien — on ne promet pas une porte fermée. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>Traçabilité</strong> (sous-ligne Fluidique &amp; thermique, en préparation) — le registre qui suit chaque fluide, du plein au vide.</li>
+    <li><strong>Impact environnemental</strong> (en préparation) — ce que chaque niveau change pour l'environnement.</li>
+  </ul>
+  <p>Les deux stations sont en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

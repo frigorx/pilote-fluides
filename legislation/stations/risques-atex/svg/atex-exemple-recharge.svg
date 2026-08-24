@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-6" aria-describedby="d-6" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-6">Exemple filé : recharge de R290 en local mal ventilé</title>
+  <desc id="d-6">Une bouteille de recharge de fluide R290 est posée dans un local technique. À proximité, un
+    chalumeau de brasage éteint est représenté avec un point d'alerte orange, rappelant que sa flamme est
+    justement la source d'inflammation à écarter avant toute intervention.</desc>
+  <style>
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <rect x="40" y="60" width="820" height="230" fill="none" stroke="#2f5689" stroke-width="2" rx="10"/>
+
+  <!-- Bouteille R290 -->
+  <rect x="150" y="120" width="80" height="150" rx="14" fill="#dbeafe" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="175" y="95" width="30" height="30" rx="6" fill="#dbeafe" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="190" y="200" text-anchor="middle" fill="#1b3a63">R290</text>
+  <text x="190" y="300" text-anchor="middle" font-size="13" fill="#5a6b7d">bouteille de recharge</text>
+
+  <!-- Chalumeau avec alerte -->
+  <path d="M600 220 l50 -50 l16 8 l-42 50 z" fill="#5a6b7d" stroke="#10233c" stroke-width="2"/>
+  <circle cx="700" cy="130" r="26" fill="#fff4e0" stroke="#c2410c" stroke-width="4"/>
+  <text x="700" y="139" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="30" fill="#c2410c">!</text>
+  <text class="lbl" x="650" y="300" text-anchor="middle">Chalumeau de brasage</text>
+</svg>

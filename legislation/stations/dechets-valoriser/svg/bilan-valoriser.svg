@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" role="img"
+     aria-labelledby="t-bil" aria-describedby="d-bil" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bil">Bilan : l'escalier des cinq niveaux avec les quatre exemples du métier</title>
+  <desc id="d-bil">Le même escalier des cinq niveaux qu'à l'écran 1, mais chaque marche à partir du
+    réemploi porte maintenant son exemple concret du métier du froid : réemploi, un fluide
+    récupéré réemployé sur la même machine ; recyclage, des chutes de cuivre en fonderie ;
+    valorisation énergétique, un isolant non recyclable valorisé ; élimination, un fluide
+    détruit. Sous l'escalier, le réflexe à retenir : avant d'éliminer un déchet, se demander s'il
+    ne pouvait pas être évité, réemployé, recyclé, ou valorisé en énergie.</desc>
+  <style>
+    .marche { fill:#fffdf8; stroke:#57534e; stroke-width:3; }
+    .num   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .sub   { font-size:14px; fill:#5a6b7d; }
+    .ex    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:13px; }
+    .form  { font-size:16px; font-weight:bold; fill:#10233c; }
+  </style>
+
+  <!-- Marche 1 — Prévention (pas d'exemple : elle évite le déchet avant qu'il existe) -->
+  <rect class="marche" x="40" y="40" width="820" height="70" rx="10"/>
+  <text class="num" x="450" y="66" text-anchor="middle">1 — PRÉVENTION</text>
+  <text class="sub" x="450" y="86" text-anchor="middle">éviter que le déchet soit produit</text>
+
+  <!-- Marche 2 — Réemploi -->
+  <rect class="marche" x="110" y="124" width="680" height="70" rx="10"/>
+  <text class="num" x="450" y="148" text-anchor="middle">2 — RÉEMPLOI</text>
+  <text class="sub" x="450" y="166" text-anchor="middle">remettre en service tel quel</text>
+  <text class="ex" x="450" y="184" text-anchor="middle" fill="#1e7e54">Ex. fluide récupéré, réemployé sur la même machine</text>
+
+  <!-- Marche 3 — Recyclage -->
+  <rect class="marche" x="180" y="208" width="540" height="70" rx="10"/>
+  <text class="num" x="450" y="232" text-anchor="middle">3 — RECYCLAGE</text>
+  <text class="sub" x="450" y="250" text-anchor="middle">transformer en matière première</text>
+  <text class="ex" x="450" y="268" text-anchor="middle" fill="#b06a00">Ex. chutes de cuivre en fonderie</text>
+
+  <!-- Marche 4 — Valorisation énergétique -->
+  <rect class="marche" x="250" y="292" width="400" height="70" rx="10"/>
+  <text class="num" x="450" y="316" text-anchor="middle">4 — VALORISATION ÉNERG.</text>
+  <text class="sub" x="450" y="334" text-anchor="middle">en tirer une énergie</text>
+  <text class="ex" x="450" y="352" text-anchor="middle" fill="#c0392b">Ex. isolant non recyclable valorisé</text>
+
+  <!-- Marche 5 — Élimination -->
+  <rect class="marche" x="320" y="376" width="260" height="70" rx="10"/>
+  <text class="num" x="450" y="400" text-anchor="middle">5 — ÉLIMINATION</text>
+  <text class="sub" x="450" y="418" text-anchor="middle">dernier recours</text>
+  <text class="ex" x="450" y="436" text-anchor="middle" fill="#5a6b7d">Ex. fluide détruit</text>
+
+  <!-- le réflexe -->
+  <rect x="40" y="470" width="820" height="90" rx="14" fill="#f2f0ee" stroke="#57534e" stroke-width="2"/>
+  <text class="form" x="450" y="500" text-anchor="middle">Le réflexe : avant d'éliminer un déchet,</text>
+  <text class="form" x="450" y="522" text-anchor="middle">se demander s'il ne pouvait pas être évité,</text>
+  <text class="form" x="450" y="544" text-anchor="middle">réemployé, recyclé, ou valorisé en énergie.</text>
+
+</svg>

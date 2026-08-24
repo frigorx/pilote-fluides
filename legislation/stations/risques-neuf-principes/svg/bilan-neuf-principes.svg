@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 560" role="img"
+     aria-labelledby="t-bnp" aria-describedby="d-bnp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bnp">Bilan : les neuf principes cochés, dans l'ordre</title>
+  <desc id="d-bnp">Une liste verticale de neuf cases à cocher, toutes cochées, numérotées de 1 à 9 dans
+    l'ordre : éviter les risques, évaluer ce qui ne peut être évité, combattre à la source, adapter le
+    travail à l'homme, suivre l'évolution technique, remplacer par moins dangereux, planifier la
+    prévention, protection collective d'abord, donner les instructions appropriées. En bas, séparée par un
+    trait, une dixième ligne encadrée en orange avec un contour tireté rappelle que l'équipement de
+    protection individuelle vient après ces neuf principes, en dernier recours seulement.</desc>
+  <style>
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#fffdf8; }
+    .txt  { font-size:16px; fill:#10233c; }
+    .txt-last { font-size:15px; font-weight:bold; fill:#c2410c; }
+    .check{ font-size:18px; fill:#1e7e54; font-weight:bold; }
+  </style>
+
+  <!-- 9 lignes, pas 46px -->
+  <!-- ligne générique répétée -->
+  <g>
+    <circle cx="30" cy="34" r="15" fill="#1b3a63"/><text class="num" x="30" y="39" text-anchor="middle">1</text>
+    <rect x="54" y="20" width="24" height="24" rx="4" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="check" x="66" y="38" text-anchor="middle">✓</text>
+    <text class="txt" x="92" y="39">Éviter les risques</text>
+  </g>
+  <g>
+    <circle cx="30" cy="80" r="15" fill="#1b3a63"/><text class="num" x="30" y="85" text-anchor="middle">2</text>
+    <rect x="54" y="66" width="24" height="24" rx="4" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="check" x="66" y="84" text-anchor="middle">✓</text>
+    <text class="txt" x="92" y="85">Évaluer ce qui ne peut pas être évité</text>
+  </g>
+  <g>
+    <circle cx="30" cy="126" r="15" fill="#1b3a63"/><text class="num" x="30" y="131" text-anchor="middle">3</text>
+    <rect x="54" y="112" width="24" height="24" rx="4" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="check" x="66" y="130" text-anchor="middle">✓</text>
+    <text class="txt" x="92" y="131">Combattre les risques à la source</text>
+  </g>
+  <g>
+    <circle cx="30" cy="172" r="15" fill="#1b3a63"/><text class="num" x="30" y="177" text-anchor="middle">4</text>
+    <rect x="54" y="158" width="24" height="24" rx="4" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="check" x="66" y="176" text-anchor="middle">✓</text>
+    <text class="txt" x="92" y="177">Adapter le travail à l'homme</text>
+  </g>
+  <g>
+    <circle cx="30" cy="218" r="15" fill="#1b3a63"/><text class="num" x="30" y="223" text-anchor="middle">5</text>
+    <rect x="54" y="204" width="24" height="24" rx="4" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="check" x="66" y="222" text-anchor="middle">✓</text>
+    <text class="txt" x="92" y="223">Suivre l'évolution de la technique</text>
+  </g>
+  <g>
+    <circle cx="30" cy="264" r="15" fill="#1b3a63"/><text class="num" x="30" y="269" text-anchor="middle">6</text>
+    <rect x="54" y="250" width="24" height="24" rx="4" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="check" x="66" y="268" text-anchor="middle">✓</text>
+    <text class="txt" x="92" y="269">Remplacer par ce qui l'est moins</text>
+  </g>
+  <g>
+    <circle cx="30" cy="310" r="15" fill="#1b3a63"/><text class="num" x="30" y="315" text-anchor="middle">7</text>
+    <rect x="54" y="296" width="24" height="24" rx="4" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="check" x="66" y="314" text-anchor="middle">✓</text>
+    <text class="txt" x="92" y="315">Planifier la prévention</text>
+  </g>
+  <g>
+    <circle cx="30" cy="356" r="15" fill="#1b3a63"/><text class="num" x="30" y="361" text-anchor="middle">8</text>
+    <rect x="54" y="342" width="24" height="24" rx="4" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="check" x="66" y="360" text-anchor="middle">✓</text>
+    <text class="txt" x="92" y="361">Protection collective d'abord</text>
+  </g>
+  <g>
+    <circle cx="30" cy="402" r="15" fill="#1b3a63"/><text class="num" x="30" y="407" text-anchor="middle">9</text>
+    <rect x="54" y="388" width="24" height="24" rx="4" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="check" x="66" y="406" text-anchor="middle">✓</text>
+    <text class="txt" x="92" y="407">Donner les instructions appropriées</text>
+  </g>
+
+  <line x1="16" y1="436" x2="804" y2="436" stroke="#d6dee7" stroke-width="2"/>
+
+  <!-- rappel EPI -->
+  <rect x="16" y="456" width="788" height="70" rx="12" fill="#fffdf8" stroke="#c2410c" stroke-width="3" stroke-dasharray="7,4"/>
+  <text class="txt-last" x="40" y="486">Et seulement après les neuf : l'équipement individuel</text>
+  <text class="txt-last" x="40" y="510">— toujours le dernier recours, jamais le premier réflexe</text>
+</svg>

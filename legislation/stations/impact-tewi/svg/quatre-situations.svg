@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" role="img"
+     aria-labelledby="t-4s" aria-describedby="d-4s" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-4s">Quatre réflexes pour raisonner sur le TEWI</title>
+  <desc id="d-4s">Quatre cartes numérotées de un à quatre, disposées en grille. Carte un : deux
+    fluides différents sur une même machine, il faut comparer le PRP mais aussi la consommation.
+    Carte deux : un même fluide sur deux machines, celle qui consomme le plus ou qui dure le plus
+    longtemps pèse plus lourd côté indirect, même à fuite égale. Carte trois : un fluide bas PRP
+    sur une machine gourmande, il ne faut pas conclure trop vite, l'indirect peut suffire à faire
+    pencher la balance. Carte quatre : un fluide fort PRP sur une machine étanche, il ne faut pas
+    non plus conclure trop vite, le direct reste faible si les fuites sont rares.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#fffdf8; }
+    .sit { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; font-style:italic; }
+    .rep { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Quatre réflexes pour raisonner sur le TEWI</text>
+
+  <!-- Carte 1 -->
+  <rect x="20" y="56" width="420" height="180" rx="14" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <circle cx="56" cy="92" r="20" fill="#047857"/>
+  <text class="num" x="56" y="99" text-anchor="middle">1</text>
+  <text class="sit" x="90" y="88" font-size="15px">« Deux fluides différents,</text>
+  <text class="sit" x="90" y="108" font-size="15px">même machine. »</text>
+  <line x1="40" y1="126" x2="420" y2="126" stroke="#d6dee7" stroke-width="1.5"/>
+  <text class="rep" x="40" y="152">Comparez le PRP des deux fluides,</text>
+  <text class="rep" x="40" y="174">mais regardez aussi si la</text>
+  <text class="rep" x="40" y="196">consommation d'énergie est la même.</text>
+
+  <!-- Carte 2 -->
+  <rect x="460" y="56" width="420" height="180" rx="14" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <circle cx="496" cy="92" r="20" fill="#047857"/>
+  <text class="num" x="496" y="99" text-anchor="middle">2</text>
+  <text class="sit" x="530" y="88" font-size="15px">« Même fluide,</text>
+  <text class="sit" x="530" y="108" font-size="15px">deux machines. »</text>
+  <line x1="480" y1="126" x2="860" y2="126" stroke="#d6dee7" stroke-width="1.5"/>
+  <text class="rep" x="480" y="152">Celle qui consomme le plus ou qui</text>
+  <text class="rep" x="480" y="174">dure le plus longtemps pèse plus</text>
+  <text class="rep" x="480" y="196">lourd côté indirect, même à fuite égale.</text>
+
+  <!-- Carte 3 -->
+  <rect x="20" y="256" width="420" height="188" rx="14" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <circle cx="56" cy="292" r="20" fill="#047857"/>
+  <text class="num" x="56" y="299" text-anchor="middle">3</text>
+  <text class="sit" x="90" y="288" font-size="15px">« Fluide bas PRP,</text>
+  <text class="sit" x="90" y="308" font-size="15px">machine gourmande. »</text>
+  <line x1="40" y1="326" x2="420" y2="326" stroke="#d6dee7" stroke-width="1.5"/>
+  <text class="rep" x="40" y="352">Ne concluez pas trop vite :</text>
+  <text class="rep" x="40" y="374">l'indirect peut suffire à faire</text>
+  <text class="rep" x="40" y="396">pencher la balance.</text>
+
+  <!-- Carte 4 -->
+  <rect x="460" y="256" width="420" height="188" rx="14" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <circle cx="496" cy="292" r="20" fill="#047857"/>
+  <text class="num" x="496" y="299" text-anchor="middle">4</text>
+  <text class="sit" x="530" y="288" font-size="15px">« Fluide fort PRP,</text>
+  <text class="sit" x="530" y="308" font-size="15px">machine étanche. »</text>
+  <line x1="480" y1="326" x2="860" y2="326" stroke="#d6dee7" stroke-width="1.5"/>
+  <text class="rep" x="480" y="352">Ne concluez pas trop vite non plus :</text>
+  <text class="rep" x="480" y="374">le direct reste faible si les fuites</text>
+  <text class="rep" x="480" y="396">sont rares.</text>
+</svg>

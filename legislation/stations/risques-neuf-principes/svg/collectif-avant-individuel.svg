@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-ci" aria-describedby="d-ci" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ci">La protection collective avant la protection individuelle</title>
+  <desc id="d-ci">Deux bandes empilées. En haut, en vert, « protection collective » : une icône de cadenas
+    de consignation et une icône de garde-corps, avec le texte « protège tout le monde qui s'approche ».
+    En bas, en orange avec un contour tireté, « protection individuelle » : une icône de gants isolants et
+    une icône de harnais, avec le texte « protège seulement celui qui la porte, et seulement si elle est
+    bien réglée ». Une flèche verticale entre les deux bandes porte le mot « d'abord » en haut et « puis,
+    en complément » en bas.</desc>
+  <style>
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .tit  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .mut  { font-size:14px; fill:#5a6b7d; font-style:italic; }
+    .fl   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#1b3a63; }
+  </style>
+
+  <!-- Bande COLLECTIF -->
+  <rect x="20" y="16" width="860" height="150" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <rect x="20" y="16" width="860" height="40" rx="14" fill="#1e7e54"/>
+  <rect x="20" y="42" width="860" height="14" fill="#1e7e54"/>
+  <text class="tit" x="450" y="43" text-anchor="middle">PROTECTION COLLECTIVE — principe 8</text>
+
+  <!-- cadenas de consignation -->
+  <rect x="90" y="90" width="46" height="34" rx="6" fill="none" stroke="#1e7e54" stroke-width="3"/>
+  <path d="M100 90 v-16 a13 13 0 0 1 26 0 v16" fill="none" stroke="#1e7e54" stroke-width="3"/>
+  <text class="mut" x="113" y="142" text-anchor="middle">consignation</text>
+
+  <!-- garde-corps -->
+  <line x1="230" y1="124" x2="230" y2="86" stroke="#1e7e54" stroke-width="4"/>
+  <line x1="270" y1="124" x2="270" y2="90" stroke="#1e7e54" stroke-width="4"/>
+  <line x1="230" y1="86" x2="270" y2="90" stroke="#1e7e54" stroke-width="4"/>
+  <line x1="230" y1="106" x2="270" y2="108" stroke="#1e7e54" stroke-width="4"/>
+  <text class="mut" x="250" y="142" text-anchor="middle">garde-corps</text>
+
+  <text class="lbl" x="560" y="105" text-anchor="middle">Protège tout le monde qui s'approche,</text>
+  <text class="lbl" x="560" y="127" text-anchor="middle">même sans y penser soi-même</text>
+
+  <!-- flèche centrale -->
+  <line x1="450" y1="172" x2="450" y2="222" stroke="#1b3a63" stroke-width="3" marker-end="url(#fdown)"/>
+  <text class="fl" x="470" y="185">d'abord</text>
+  <text class="fl" x="470" y="214">puis, en complément</text>
+
+  <!-- Bande INDIVIDUEL -->
+  <rect x="20" y="234" width="860" height="150" rx="14" fill="#fffdf8" stroke="#c2410c" stroke-width="3" stroke-dasharray="8,5"/>
+  <rect x="20" y="234" width="860" height="40" rx="14" fill="#c2410c"/>
+  <rect x="20" y="260" width="860" height="14" fill="#c2410c"/>
+  <text class="tit" x="450" y="261" text-anchor="middle">PROTECTION INDIVIDUELLE — en dernier</text>
+
+  <!-- gants -->
+  <ellipse cx="113" cy="325" rx="24" ry="30" fill="#fff4e0" stroke="#c2410c" stroke-width="2.5"/>
+  <text class="mut" x="113" y="360" text-anchor="middle">gants isolants</text>
+
+  <!-- harnais -->
+  <circle cx="250" cy="308" r="10" fill="#fff4e0" stroke="#c2410c" stroke-width="2.5"/>
+  <line x1="250" y1="318" x2="250" y2="345" stroke="#c2410c" stroke-width="3"/>
+  <line x1="232" y1="330" x2="268" y2="330" stroke="#c2410c" stroke-width="3"/>
+  <text class="mut" x="250" y="360" text-anchor="middle">harnais</text>
+
+  <text class="lbl" x="560" y="323" text-anchor="middle">Protège seulement celui qui la porte,</text>
+  <text class="lbl" x="560" y="345" text-anchor="middle">et seulement si elle est bien réglée</text>
+
+  <defs>
+    <marker id="fdown" markerWidth="10" markerHeight="10" refX="5" refY="8" orient="auto">
+      <path d="M0,0 L5,10 L10,0 Z" fill="#1b3a63"/>
+    </marker>
+  </defs>
+</svg>

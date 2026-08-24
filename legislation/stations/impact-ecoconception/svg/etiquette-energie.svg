@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-etiq" aria-describedby="d-etiq" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-etiq">L'étiquette énergie : une classe résumée par une lettre</title>
+  <desc id="d-etiq">À gauche, sept bandes horizontales empilées, de la plus longue à la plus
+    courte, chacune portant une lettre de A à G et une couleur allant du vert au rouge : le
+    principe d'une échelle de classes, donné à titre d'exemple, le nombre exact de classes
+    pouvant varier selon le type d'appareil. Une flèche partant d'une bande du milieu pointe
+    vers le texte « la classe de cet appareil », à titre d'illustration du mécanisme, sans note
+    réelle attribuée. À droite, une loupe posée sur une étiquette et une étiquette de prix,
+    avec le texte « ce que le client regarde avant d'acheter, sans connaître le détail
+    technique ».</desc>
+  <style>
+    .lt   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .ti   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lb   { font-size:16px; fill:#10233c; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <text class="ti" x="230" y="26" text-anchor="middle">Principe de l'étiquette (exemple)</text>
+
+  <!-- sept bandes, A la plus longue et verte, G la plus courte et rouge -->
+  <rect x="40"  y="40"  width="420" height="26" fill="#047857"/>
+  <text class="lt" x="55" y="59">A</text>
+  <rect x="40"  y="72"  width="380" height="26" fill="#2e8b57"/>
+  <text class="lt" x="55" y="91">B</text>
+  <rect x="40"  y="104" width="340" height="26" fill="#7a9a3a"/>
+  <text class="lt" x="55" y="123">C</text>
+  <rect x="40"  y="136" width="300" height="26" fill="#b0a12e"/>
+  <text class="lt" x="55" y="155">D</text>
+  <rect x="40"  y="168" width="260" height="26" fill="#c98a2e"/>
+  <text class="lt" x="55" y="187">E</text>
+  <rect x="40"  y="200" width="220" height="26" fill="#c0602b"/>
+  <text class="lt" x="55" y="219">F</text>
+  <rect x="40"  y="232" width="180" height="26" fill="#c0392b"/>
+  <text class="lt" x="55" y="251">G</text>
+
+  <text class="note" x="40" y="282">Échelle de lettres, ici de A à G à titre d'exemple —</text>
+  <text class="note" x="40" y="302">le nombre de classes varie selon le type d'appareil.</text>
+
+  <!-- flèche vers une bande du milieu, à titre d'illustration -->
+  <line x1="470" y1="149" x2="560" y2="149" stroke="#5a6b7d" stroke-width="2.5"/>
+  <polygon points="466,149 480,143 480,155" fill="#5a6b7d"/>
+  <text class="lb" x="570" y="144" text-anchor="start">la classe de</text>
+  <text class="lb" x="570" y="164" text-anchor="start">cet appareil</text>
+  <text class="note" x="570" y="184" text-anchor="start">(illustration du principe)</text>
+
+  <!-- loupe -->
+  <circle cx="740" cy="290" r="34" fill="none" stroke="#1b3a63" stroke-width="5"/>
+  <line x1="764" y1="314" x2="800" y2="350" stroke="#1b3a63" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- étiquette de prix -->
+  <rect x="700" y="60" width="150" height="70" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="716" cy="76" r="4" fill="#1b3a63"/>
+  <text class="lb" x="775" y="102" text-anchor="middle" font-weight="bold">Prix</text>
+
+  <text class="ti" x="775" y="330" text-anchor="middle" font-size="16px">Ce que le client regarde</text>
+  <text class="ti" x="775" y="350" text-anchor="middle" font-size="16px">avant d'acheter</text>
+</svg>

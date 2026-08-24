@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-7" aria-describedby="d-7" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-7">Le réflexe avant d'intervenir sur un fluide A2L ou A3</title>
+  <desc id="d-7">Une fiche récapitulative porte deux cases cochées en vert : « ventilation vérifiée » et
+    « absence de source d'inflammation confirmée ».</desc>
+  <style>
+    .fiche{ fill:#fffdf8; stroke:#d6dee7; stroke-width:2; }
+    .ttl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <rect class="fiche" x="180" y="40" width="540" height="240" rx="16"/>
+  <rect x="180" y="40" width="540" height="50" rx="16" fill="#c2410c"/>
+  <rect x="180" y="66" width="540" height="16" fill="#c2410c"/>
+  <text class="ttl" x="450" y="73" text-anchor="middle">Avant d'intervenir sur A2L / A3</text>
+
+  <g>
+    <rect x="220" y="120" width="34" height="34" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+    <path d="M228 138 l8 8 l18 -20" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+    <text class="lbl" x="275" y="144">Ventilation vérifiée</text>
+  </g>
+  <g>
+    <rect x="220" y="190" width="34" height="34" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+    <path d="M228 208 l8 8 l18 -20" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+    <text class="lbl" x="275" y="214">Absence de source d'inflammation confirmée</text>
+  </g>
+</svg>

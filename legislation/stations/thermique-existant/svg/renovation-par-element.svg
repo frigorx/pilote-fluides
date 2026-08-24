@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-rpe" aria-describedby="d-rpe" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rpe">La rénovation par élément : le composant remplacé doit atteindre son propre niveau</title>
+  <desc id="d-rpe">Une maison en trait fin et léger, sur laquelle une seule fenêtre est mise en
+    évidence en trait épais. Une flèche part de cette fenêtre vers une jauge verticale marquée
+    d'une zone haute à atteindre, sans valeur chiffrée, avec la mention « niveau minimal fixé par
+    arrêté pour ce type de composant ». Le reste de la maison n'est pas concerné par cette
+    exigence.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:15px; fill:#92400e; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Un seul composant, une seule exigence</text>
+
+  <polygon points="150,220 280,140 410,220" fill="none" stroke="#98a6b3" stroke-width="2"/>
+  <rect x="170" y="220" width="220" height="110" fill="none" stroke="#98a6b3" stroke-width="2"/>
+  <rect x="200" y="250" width="70" height="80" fill="none" stroke="#98a6b3" stroke-width="2"/>
+  <rect x="310" y="250" width="60" height="50" fill="#fff4e0" stroke="#92400e" stroke-width="4"/>
+  <line x1="340" y1="250" x2="340" y2="300" stroke="#92400e" stroke-width="2"/>
+  <line x1="310" y1="275" x2="370" y2="275" stroke="#92400e" stroke-width="2"/>
+
+  <path d="M 375 250 C 460 200, 520 190, 570 175" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="570,175 552,172 558,188" fill="#92400e"/>
+
+  <rect x="590" y="60" width="90" height="220" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="590" y="60" width="90" height="55" fill="#fbe7e4" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="lbl" x="635" y="300" text-anchor="middle">niveau minimal</text>
+
+  <rect x="710" y="90" width="170" height="150" rx="12" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="foc" x="795" y="130" text-anchor="middle">fixé par arrêté</text>
+  <text class="lbl" x="795" y="160" text-anchor="middle">pour ce type</text>
+  <text class="lbl" x="795" y="180" text-anchor="middle">de composant</text>
+  <text class="lbl" x="795" y="210" text-anchor="middle">— le reste du bâti</text>
+  <text class="lbl" x="795" y="230" text-anchor="middle">n'est pas concerné</text>
+</svg>

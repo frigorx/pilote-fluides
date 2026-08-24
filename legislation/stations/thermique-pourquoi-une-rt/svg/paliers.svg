@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-pa" aria-describedby="d-pa" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pa">Une réglementation qui se renforce par étapes successives</title>
+  <desc id="d-pa">Un escalier de cinq marches montantes, de gauche à droite. La première marche,
+    basse, porte l'étiquette « 1974 : première génération ». Les marches suivantes, sans date
+    précise, portent l'étiquette générique « génération suivante : exigence resserrée ». La
+    dernière marche, la plus haute, porte l'étiquette « RT2012 : dernière génération avant la
+    rupture ». Une flèche continue au-dessus de l'escalier montre le sens de la marche : toujours
+    vers plus d'exigence, jamais vers moins.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .flux{ font-size:15px; fill:#10233c; font-weight:bold; font-family:'Trebuchet MS',Calibri,sans-serif; }
+  </style>
+
+  <text class="flux" x="450" y="34" text-anchor="middle">toujours plus d'exigence — jamais un relâchement</text>
+  <path d="M 60 52 L 840 52" stroke="#92400e" stroke-width="3" fill="none"/>
+  <polygon points="840,52 822,44 822,60" fill="#92400e"/>
+
+  <!-- escalier : 5 marches montantes -->
+  <rect x="60"  y="260" width="140" height="50" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <rect x="210" y="225" width="140" height="85" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <rect x="360" y="190" width="140" height="120" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <rect x="510" y="150" width="140" height="160" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <rect x="660" y="105" width="180" height="205" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+
+  <text class="ttl" x="130" y="280" text-anchor="middle">1974</text>
+  <text class="lbl" x="130" y="298" text-anchor="middle">1ʳᵉ génération</text>
+
+  <text class="lbl" x="280" y="250" text-anchor="middle">génération</text>
+  <text class="lbl" x="280" y="268" text-anchor="middle">suivante</text>
+
+  <text class="lbl" x="430" y="215" text-anchor="middle">exigence</text>
+  <text class="lbl" x="430" y="233" text-anchor="middle">resserrée</text>
+
+  <text class="lbl" x="580" y="175" text-anchor="middle">exigence</text>
+  <text class="lbl" x="580" y="193" text-anchor="middle">resserrée</text>
+
+  <text class="ttl" x="750" y="130" text-anchor="middle">RT2012</text>
+  <text class="lbl" x="750" y="150" text-anchor="middle">dernière génération</text>
+  <text class="lbl" x="750" y="168" text-anchor="middle">avant la rupture</text>
+</svg>

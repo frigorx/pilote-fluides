@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-bc" aria-describedby="d-bc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bc">Bilan : mesurer en degrés-heures, traiter dans l'ordre</title>
+  <desc id="d-bc">Un thermomètre stylisé à gauche, portant la mention degrés-heures d'inconfort,
+    à côté des quatre étapes de la hiérarchie déjà vues, en plus petit : protection solaire,
+    inertie, ventilation nocturne, climatiser en dernier recours. Une bande en bas résume la
+    station.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .band{ font-size:15px; fill:#10233c; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#fffdf8; }
+  </style>
+
+  <rect x="40" y="30" width="140" height="220" rx="30" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <circle cx="110" cy="220" r="34" fill="#92400e"/>
+  <rect x="94" y="60" width="32" height="150" rx="16" fill="#fffdf8" stroke="#92400e" stroke-width="2.5"/>
+  <text class="lbl" x="110" y="275" text-anchor="middle" font-size="14">degrés-heures</text>
+  <text class="lbl" x="110" y="292" text-anchor="middle" font-size="14">d'inconfort</text>
+
+  <rect x="230" y="40"  width="620" height="42" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <circle cx="255" cy="61" r="13" fill="#1b3a63"/><text class="num" x="255" y="66" text-anchor="middle">1</text>
+  <text class="ttl" x="560" y="66" text-anchor="middle">Protection solaire</text>
+
+  <rect x="230" y="92"  width="620" height="42" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <circle cx="255" cy="113" r="13" fill="#1b3a63"/><text class="num" x="255" y="118" text-anchor="middle">2</text>
+  <text class="ttl" x="560" y="118" text-anchor="middle">Inertie thermique</text>
+
+  <rect x="230" y="144" width="620" height="42" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <circle cx="255" cy="165" r="13" fill="#1b3a63"/><text class="num" x="255" y="170" text-anchor="middle">3</text>
+  <text class="ttl" x="560" y="170" text-anchor="middle">Ventilation nocturne</text>
+
+  <rect x="230" y="196" width="620" height="42" rx="8" fill="#fff4e0" stroke="#92400e" stroke-width="2.5"/>
+  <circle cx="255" cy="217" r="13" fill="#92400e"/><text class="num" x="255" y="222" text-anchor="middle">4</text>
+  <text class="ttl" x="560" y="222" text-anchor="middle" fill="#92400e">Climatiser, en dernier recours</text>
+
+  <rect x="40" y="290" width="810" height="40" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="445" y="315" text-anchor="middle">Une aire cumulée à mesurer, un ordre de leviers à respecter avant de climatiser.</text>
+</svg>

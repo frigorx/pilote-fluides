@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Les CEE — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le mécanisme des certificats d'économies d'énergie — l'État oblige les vendeurs d'énergie à financer des travaux — et ce que ça change concrètement pour un client qui installe une pompe à chaleur.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/thermique-cee/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Thermique.
+     Sixième et dernière des six stations de la sous-ligne.
+
+     GABARIT repris à la lettre de aptitude-capacite/. Même écart assumé
+     que les cinq stations précédentes : styles.css et app.js copiés
+     littéralement (variable --sous-ligne:#0f766e), accent #92400e
+     réservé aux SVG.
+
+     Aucun montant d'aide, aucun taux, aucun nom de fournisseur d'énergie
+     ni de dispositif commercial n'est inscrit : ces montants évoluent
+     trimestriellement et se vérifient au moment du devis.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Thermique · niveau BTS</p>
+  <h1>Les CEE — comment on finance vos chantiers</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez pourquoi les vendeurs d'énergie financent des travaux, comment le certificat prouve leur obligation remplie, et ce que ça change concrètement pour un client qui installe une pompe à chaleur avec vous.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Un bâtiment institutionnel stylisé, l'État, envoie une flèche vers trois icônes génériques de vendeurs d'énergie, sans aucun nom de marque : une prise électrique, une flamme de gaz, un symbole de carburant. La flèche porte la mention obligation d'économies d'énergie. Ces trois vendeurs sont désignés dans le texte réglementaire par le mot obligés.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Le mécanisme : une obligation aux vendeurs d'énergie</h2>
+    <p>L'État impose aux <strong>vendeurs d'énergie</strong> — électricité, gaz, carburants — une <strong>obligation d'économies d'énergie</strong>. On les appelle les <strong>obligés</strong>.</p>
+    <p>Ce ne sont pas les clients qui sont obligés de faire des travaux : c'est le vendeur d'énergie qui doit prouver qu'il a contribué à en faire réaliser, à l'échelle du pays.</p>
+    <figure>
+      <img src="svg/obligation-vendeurs.svg" alt="Un bâtiment institutionnel, l'État, envoie une flèche « obligation » vers trois icônes génériques de vendeurs d'énergie, dits obligés.">
+      <figcaption>Une obligation fixée par l'État aux vendeurs d'énergie.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Un vendeur d'énergie générique, à gauche, envoie une flèche d'argent vers un chantier de travaux, à droite : une maison avec un technicien qui pose une isolation. La flèche porte la mention finance. Le message : c'est en payant pour des travaux d'économie d'énergie que l'obligation commence à se remplir.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Remplir l'obligation : financer des travaux</h2>
+    <p>Pour remplir son obligation, un vendeur d'énergie <strong>finance des travaux d'économie d'énergie</strong> chez ses clients — isolation, changement de chauffage, ventilation.</p>
+    <p>C'est ce financement qui devient, pour vous et vos clients, une <strong>aide</strong> sur le coût des travaux.</p>
+    <figure>
+      <img src="svg/financer-travaux.svg" alt="Un vendeur d'énergie envoie une flèche « finance » vers un chantier de travaux d'économie d'énergie, avec un technicien posant une isolation.">
+      <figcaption>L'obligation se remplit en finançant des travaux, pas en payant une taxe.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Des travaux réalisés, à gauche, donnent lieu à un certificat, au centre, timbré d'un sceau. Une pile de plusieurs certificats semblables est représentée à droite, avec la mention à produire en nombre suffisant pour remplir l'obligation fixée par l'État. Le certificat est la trace, la preuve écrite que les travaux ont bien eu lieu.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le certificat, preuve de l'obligation remplie</h2>
+    <p>Chaque chantier financé donne lieu à un <strong>certificat d'économie d'énergie (CEE)</strong> : la preuve écrite que des travaux ont bien été réalisés.</p>
+    <p>Le vendeur d'énergie doit réunir suffisamment de certificats pour prouver, à l'État, qu'il a rempli son obligation. C'est ce qui donne son nom au dispositif.</p>
+    <figure>
+      <img src="svg/certificat-preuve.svg" alt="Des travaux réalisés donnent lieu à un certificat timbré, puis à une pile de certificats à produire en nombre suffisant pour l'obligation.">
+      <figcaption>Le certificat, la trace écrite des travaux réalisés.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Une pompe à chaleur stylisée est installée devant une maison. À côté, une barre représentant le prix des travaux est divisée en deux zones : une zone haute, hachurée en rouge, le montant initial ; une zone basse, en vert, ce qui reste réellement à charge du client une fois l'aide déduite. Aucune valeur chiffrée n'est inscrite : c'est le principe qui compte.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Ce que ça change pour le client</h2>
+    <p>Pour votre client, le résultat concret est une <strong>aide</strong> qui réduit le <strong>reste à charge</strong> sur le prix des travaux — par exemple l'installation d'une pompe à chaleur.</p>
+    <p>Le montant exact de cette aide dépend du dossier, de l'énergie remplacée et du fournisseur choisi : il n'y a pas de chiffre unique à retenir, il se vérifie devis par devis.</p>
+    <figure>
+      <img src="svg/aide-client.svg" alt="Une pompe à chaleur installée devant une maison, et une barre de prix divisée en montant initial et reste à charge réduit par l'aide.">
+      <figcaption>Une aide qui réduit le reste à charge — le montant se vérifie devis par devis.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Un circuit fermé de quatre cases reliées par des flèches en boucle. L'État envoie une flèche obligation vers le vendeur d'énergie. Le vendeur d'énergie envoie une flèche finance vers le client. Le client envoie une flèche travaux réalisés vers le certificat. Le certificat envoie une flèche preuve, qui revient vers l'État. La boucle se referme exactement là où elle a commencé.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le circuit concret : qui paie qui</h2>
+    <p>Le circuit se referme en boucle : l'<strong>État</strong> fixe l'obligation, le <strong>vendeur d'énergie</strong> finance, le <strong>client</strong> fait réaliser les travaux, le <strong>certificat</strong> revient prouver que l'obligation est remplie.</p>
+    <p>Comprendre cette boucle aide à comprendre pourquoi l'aide existe : ce n'est pas un cadeau, c'est la contrepartie d'une obligation légale.</p>
+    <figure>
+      <img src="svg/circuit-qui-paie-qui.svg" alt="Un circuit en boucle : État, obligation, vendeur d'énergie, finance, client, travaux réalisés, certificat, preuve, retour à l'État.">
+      <figcaption>Une boucle complète — l'aide est la contrepartie d'une obligation légale.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Deux techniciens face au même chantier de pompe à chaleur. Le premier porte un badge marqué d'une coche verte, avec la mention installateur qualifié, les travaux comptent pour le certificat. Le second porte un badge barré d'une croix rouge, avec la mention sans qualification reconnue, les travaux ne comptent pas pour le certificat. Le chantier est identique ; seul le badge du professionnel change l'issue.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le rôle de l'installateur qualifié</h2>
+    <p>Pour que les travaux comptent dans le dispositif, ils doivent en général être réalisés par un <strong>professionnel qualifié</strong> — une reconnaissance dont le détail fait l'objet d'une autre station, « RGE &amp; QualiPAC », en préparation.</p>
+    <p>Sans cette qualification, le même chantier, bien réalisé, peut ne pas ouvrir droit à l'aide.</p>
+    <figure>
+      <img src="svg/role-rge.svg" alt="Deux techniciens face au même chantier : l'un avec un badge de qualification reconnue, l'autre sans, avec des issues différentes pour le certificat.">
+      <figcaption>Le même chantier, deux issues selon le badge du professionnel.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Une ligne de temps en trois étapes, encadrée en vert : devis, puis validation de l'aide, puis travaux, avec une coche à la fin. En dessous, le même enchaînement mais dans le désordre, encadré en rouge : devis, puis travaux déjà commencés, puis aide demandée trop tard, avec une croix à la fin. La mention rappelle que l'aide n'est plus possible une fois les travaux commencés sans validation préalable.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le réflexe : valider l'aide avant de démarrer</h2>
+    <p>L'ordre des étapes compte : <strong>devis</strong>, puis <strong>validation de l'aide</strong>, et seulement ensuite <strong>travaux</strong>. Démarrer le chantier avant d'avoir fait valider l'aide peut la faire perdre définitivement.</p>
+    <p>C'est un réflexe à transmettre au client dès le premier rendez-vous, avant de signer quoi que ce soit.</p>
+    <figure>
+      <img src="svg/reflexe-avant-travaux.svg" alt="Deux lignes de temps : devis, validation de l'aide, travaux, avec une coche ; et devis, travaux commencés, aide demandée trop tard, avec une croix.">
+      <figcaption>L'ordre compte : l'aide se valide avant les travaux, jamais après.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le circuit en boucle de l'écran cinq réapparaît, plus petit, à gauche : État, vendeur d'énergie, client, certificat. À droite, une bande résume les quatre points de la station.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>L'État impose une <strong>obligation d'économies d'énergie</strong> aux vendeurs d'énergie.</li>
+      <li>Ils la remplissent en <strong>finançant des travaux</strong>, contre un <strong>certificat</strong> comme preuve.</li>
+      <li>Le client bénéficie d'une <strong>aide</strong> qui réduit le reste à charge — montant à vérifier devis par devis.</li>
+      <li>Les travaux doivent être réalisés par un <strong>professionnel qualifié</strong> pour ouvrir droit à l'aide.</li>
+    </ul>
+    <p class="formule">Le réflexe : faire valider l'aide avant de démarrer les travaux, jamais après.</p>
+    <figure>
+      <img src="svg/bilan-cee.svg" alt="Le circuit en boucle État, vendeur d'énergie, client, certificat, à côté d'une bande résumant les quatre points de la station.">
+      <figcaption>Une obligation qui se transforme en aide sur vos chantiers.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Qui est légalement obligé de faire économiser de l'énergie ? Regardez le schéma de l'écran un si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Qui est légalement « obligé » dans le dispositif CEE ?</h2>
+    <figure class="vignette">
+      <img src="svg/obligation-vendeurs.svg" alt="Vignette de rappel : l'État envoie une flèche obligation vers trois vendeurs d'énergie génériques.">
+      <figcaption>Rappel de l'écran 1 — les vendeurs d'énergie, pas les clients.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Les clients qui achètent une pompe à chaleur</button>
+      <button type="button" data-answer="bonne">Les vendeurs d'énergie, appelés les obligés</button>
+      <button type="button" data-answer="b">Les installateurs, quelle que soit leur qualification</button>
+      <button type="button" data-answer="c">Uniquement les propriétaires de logements mal classés au DPE</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'obligation légale d'économies d'énergie pèse sur les vendeurs d'énergie, appelés les obligés — pas sur les clients ni sur les installateurs."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Que prouve un certificat d'économie d'énergie ? Reprenez le schéma de l'écran trois si besoin.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Que prouve un certificat d'économie d'énergie ?</h2>
+    <figure class="vignette">
+      <img src="svg/certificat-preuve.svg" alt="Vignette de rappel : des travaux réalisés donnent lieu à un certificat, puis à une pile de certificats.">
+      <figcaption>Rappel de l'écran 3 — la trace écrite des travaux réalisés.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Que le client a bien payé sa facture d'énergie</button>
+      <button type="button" data-answer="b">Que l'installateur est qualifié RGE</button>
+      <button type="button" data-answer="bonne">Que des travaux d'économie d'énergie ont bien été réalisés</button>
+      <button type="button" data-answer="c">Que le logement a atteint l'étiquette A du DPE</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le certificat d'économie d'énergie est la preuve écrite qu'un chantier a bien été réalisé — c'est cette preuve que le vendeur d'énergie doit accumuler pour remplir son obligation."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Pourquoi les travaux doivent-ils être réalisés par un professionnel qualifié ? Regardez les deux techniciens de l'écran six si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Pourquoi la qualification du professionnel compte-t-elle ?</h2>
+    <figure class="vignette">
+      <img src="svg/role-rge.svg" alt="Vignette de rappel : deux techniciens face au même chantier, l'un qualifié, l'autre non, avec des issues différentes.">
+      <figcaption>Rappel de l'écran 6 — le même chantier, deux issues différentes.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Elle ne compte pas : seul le résultat des travaux importe</button>
+      <button type="button" data-answer="bonne">Sans qualification reconnue, les travaux peuvent ne pas ouvrir droit à l'aide</button>
+      <button type="button" data-answer="b">Elle ne concerne que les gros chantiers de rénovation globale</button>
+      <button type="button" data-answer="c">Elle détermine uniquement le prix de la main-d'œuvre</button>
+    </div>
+    <p class="feedback" hidden data-explication="La qualification du professionnel conditionne souvent l'ouverture du droit à l'aide : un chantier bien réalisé sans installateur qualifié peut ne pas compter pour le certificat."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Quand faut-il faire valider l'aide, par rapport aux travaux ? Souvenez-vous des deux lignes de temps de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Quand valider l'aide, par rapport aux travaux ?</h2>
+    <figure class="vignette">
+      <img src="svg/reflexe-avant-travaux.svg" alt="Vignette de rappel : deux lignes de temps, l'une avec devis puis validation puis travaux, l'autre avec travaux commencés avant validation.">
+      <figcaption>Rappel de l'écran 7 — l'ordre compte, avant, jamais après.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Après les travaux, une fois la facture réglée</button>
+      <button type="button" data-answer="bonne">Avant de démarrer les travaux, après le devis</button>
+      <button type="button" data-answer="b">Peu importe : l'ordre n'a aucune influence</button>
+      <button type="button" data-answer="c">Uniquement si le client le demande explicitement</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'aide doit être validée avant le démarrage des travaux, après le devis. Commencer le chantier avant peut faire perdre l'aide définitivement."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours. Une correspondance interne réelle
+     vers la station sœur qui précède, et une correspondance externe
+     annoncée sans lien : RGE & QualiPAC, sur une autre sous-ligne encore
+     en préparation. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../thermique-dpe/"><strong>Le DPE</strong></a> (même sous-ligne)
+      — un DPE défavorable révèle souvent les travaux à financer.</li>
+    <li><strong>RGE &amp; QualiPAC</strong> (sous-ligne Certifications, en préparation)
+      — les aides exigent un installateur qualifié.</li>
+  </ul>
+  <p>La première correspondance est ouverte : le lien fonctionne. La seconde
+  est en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

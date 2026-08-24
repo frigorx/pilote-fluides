@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-rp" aria-describedby="d-rp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rp">Ce que la RT2012 mesurait, et ce qu'elle ne mesurait pas</title>
+  <desc id="d-rp">Une grande carte « RT2012 ». À l'intérieur, un cercle plein, entouré d'un trait
+    continu, porte la mention « consommation d'énergie du bâtiment neuf » : c'est ce que la
+    RT2012 mesurait. À côté, deux cercles en trait pointillé et barrés d'une croix portent les
+    mentions « impact carbone » et « confort d'été » : ces deux volets n'existaient pas dans la
+    RT2012.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <rect x="20" y="20" width="860" height="300" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="20" y="20" width="860" height="46" rx="14" fill="#1b3a63"/>
+  <rect x="20" y="52" width="860" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="450" y="52" text-anchor="middle">RT2012 — le périmètre mesuré</text>
+
+  <!-- cercle mesuré : consommation -->
+  <circle cx="180" cy="210" r="90" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <text class="qui" x="180" y="200" text-anchor="middle">Consommation</text>
+  <text class="qui" x="180" y="222" text-anchor="middle">d'énergie</text>
+  <text class="lbl" x="180" y="244" text-anchor="middle">du bâtiment neuf</text>
+
+  <!-- cercle absent : carbone -->
+  <circle cx="470" cy="210" r="80" fill="none" stroke="#98a6b3" stroke-width="3" stroke-dasharray="6 6"/>
+  <text class="qui" x="470" y="204" text-anchor="middle" fill="#5a6b7d">Impact carbone</text>
+  <text class="lbl" x="470" y="228" text-anchor="middle">absent de la RT2012</text>
+  <line x1="410" y1="150" x2="530" y2="270" stroke="#5a6b7d" stroke-width="2.5"/>
+  <line x1="530" y1="150" x2="410" y2="270" stroke="#5a6b7d" stroke-width="2.5"/>
+
+  <!-- cercle absent : confort d'été -->
+  <circle cx="720" cy="210" r="80" fill="none" stroke="#98a6b3" stroke-width="3" stroke-dasharray="6 6"/>
+  <text class="qui" x="720" y="204" text-anchor="middle" fill="#5a6b7d">Confort d'été</text>
+  <text class="lbl" x="720" y="228" text-anchor="middle">absent de la RT2012</text>
+  <line x1="660" y1="150" x2="780" y2="270" stroke="#5a6b7d" stroke-width="2.5"/>
+  <line x1="780" y1="150" x2="660" y2="270" stroke="#5a6b7d" stroke-width="2.5"/>
+</svg>

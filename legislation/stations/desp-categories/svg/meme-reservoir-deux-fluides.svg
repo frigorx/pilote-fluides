@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-res" aria-describedby="d-res" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-res">Un même réservoir, deux fluides, deux catégories</title>
+  <desc id="d-res">Deux cartes identiques représentant le même réservoir, même PS, même volume. À
+    gauche, rempli d'un fluide du groupe 2 : la carte indique une catégorie plus basse. À droite,
+    rempli d'un fluide du groupe 1, dangereux : la carte indique une catégorie plus haute. Une bande
+    centrale rappelle que seule la nature du fluide change entre les deux cartes.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .res { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; }
+    .note{ font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Carte gauche : groupe 2 -->
+  <rect x="20" y="20" width="400" height="290" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <rect x="20" y="20" width="400" height="42" rx="14" fill="#1e7e54"/>
+  <rect x="20" y="48" width="400" height="14" fill="#1e7e54"/>
+  <text class="ttl" x="220" y="48" text-anchor="middle">RÉSERVOIR TAMPON</text>
+  <rect x="170" y="80" width="100" height="90" rx="12" fill="#1e7e54"/>
+  <rect x="205" y="60" width="30" height="24" fill="#5a6b7d"/>
+  <text class="lbl" x="220" y="196" text-anchor="middle">PS identique</text>
+  <text class="lbl" x="220" y="220" text-anchor="middle">Volume identique</text>
+  <text class="lbl" x="220" y="250" text-anchor="middle" font-weight="bold">Fluide du groupe 2</text>
+  <text class="lbl" x="220" y="270" text-anchor="middle">(non dangereux)</text>
+  <text class="res" x="220" y="298" text-anchor="middle" fill="#1e7e54">→ catégorie plus basse</text>
+
+  <!-- Carte droite : groupe 1 -->
+  <rect x="480" y="20" width="400" height="290" rx="14" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <rect x="480" y="20" width="400" height="42" rx="14" fill="#c0392b"/>
+  <rect x="480" y="48" width="400" height="14" fill="#c0392b"/>
+  <text class="ttl" x="680" y="48" text-anchor="middle">RÉSERVOIR TAMPON</text>
+  <rect x="630" y="80" width="100" height="90" rx="12" fill="#c0392b"/>
+  <rect x="665" y="60" width="30" height="24" fill="#5a6b7d"/>
+  <text class="lbl" x="680" y="196" text-anchor="middle">PS identique</text>
+  <text class="lbl" x="680" y="220" text-anchor="middle">Volume identique</text>
+  <text class="lbl" x="680" y="250" text-anchor="middle" font-weight="bold">Fluide du groupe 1</text>
+  <text class="lbl" x="680" y="270" text-anchor="middle">(dangereux)</text>
+  <text class="res" x="680" y="298" text-anchor="middle" fill="#c0392b">→ catégorie plus haute</text>
+
+  <!-- Signe = entre les deux -->
+  <text x="450" y="180" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="40" fill="#5a6b7d">≠</text>
+
+  <text class="note" x="450" y="352" text-anchor="middle">Même construction, même PS, même volume — seul le fluide change.</text>
+</svg>

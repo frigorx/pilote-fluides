@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-tewi" aria-describedby="d-tewi" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-tewi">Le lien avec le TEWI : la part indirecte varie avec la classe énergie</title>
+  <desc id="d-tewi">À gauche, l'icône d'une PAC ou d'un groupe de condensation, avec une flèche
+    vers deux barres empilées. Chaque barre a une base grise identique, « part directe, la fuite
+    de fluide », qui reste comparable. Au-dessus, une portion colorée, « part indirecte, la
+    consommation électrique » : plus petite et verte pour l'appareil mieux classé, plus grande et
+    ambrée pour l'appareil moins bien classé. Aucun chiffre n'est indiqué : seule la hauteur
+    relative des barres porte la comparaison, doublée par les mots « plus faible » et « plus
+    élevée ».</desc>
+  <defs>
+    <marker id="fl-tewi" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .ti  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lb  { font-size:15px; fill:#10233c; }
+    .lb2 { font-size:14px; fill:#5a6b7d; }
+    .good{ font-weight:bold; fill:#047857; font-size:15px; }
+    .warn{ font-weight:bold; fill:#b06a00; font-size:15px; }
+  </style>
+
+  <!-- icône PAC / groupe de condensation -->
+  <rect x="30" y="190" width="180" height="90" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="120" cy="165" r="30" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <line x1="120" y1="140" x2="120" y2="190" stroke="#1b3a63" stroke-width="3"/>
+  <line x1="95"  y1="152" x2="145" y2="178" stroke="#1b3a63" stroke-width="3"/>
+  <line x1="145" y1="152" x2="95"  y2="178" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lb" x="120" y="300" text-anchor="middle">PAC / groupe de</text>
+  <text class="lb" x="120" y="318" text-anchor="middle">condensation</text>
+
+  <line x1="215" y1="235" x2="330" y2="235" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#fl-tewi)"/>
+  <text class="lb2" x="272" y="220" text-anchor="middle">consommation</text>
+  <text class="lb2" x="272" y="255" text-anchor="middle">électrique sur sa vie</text>
+
+  <!-- barre 1 : mieux classé -->
+  <rect x="420" y="280" width="120" height="60" fill="#5a6b7d"/>
+  <rect x="420" y="230" width="120" height="50" fill="#047857"/>
+  <text class="ti" x="480" y="362" text-anchor="middle" font-size="15px">Mieux classé</text>
+
+  <!-- barre 2 : moins bien classé -->
+  <rect x="640" y="280" width="120" height="60" fill="#5a6b7d"/>
+  <rect x="640" y="150" width="120" height="130" fill="#b06a00"/>
+  <text class="ti" x="700" y="362" text-anchor="middle" font-size="15px">Moins bien classé</text>
+
+  <text class="lb2" x="480" y="30" text-anchor="middle">Part indirecte</text>
+  <text class="good" x="480" y="210" text-anchor="middle">plus faible</text>
+  <text class="warn" x="700" y="130" text-anchor="middle">plus élevée</text>
+
+  <text class="lb2" x="580" y="315" text-anchor="middle">part directe</text>
+  <text class="lb2" x="580" y="332" text-anchor="middle">(fuite de fluide) — reste comparable</text>
+</svg>

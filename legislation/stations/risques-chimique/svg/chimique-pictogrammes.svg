@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-2" aria-describedby="d-2" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-2">Quatre familles de pictogrammes de danger, en losange</title>
+  <desc id="d-2">Quatre losanges schématiques à bord épais orange, sur fond blanc, chacun contenant une
+    silhouette simple représentant une famille de danger, non identique à un pictogramme officiel : une
+    flamme pour inflammable, une goutte tombant sur une surface pour corrosif, une silhouette d'alerte
+    simplifiée pour toxique, un point d'exclamation pour danger pour la santé. Chaque losange est nommé
+    en dessous.</desc>
+  <style>
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Inflammable -->
+  <rect x="55" y="60" width="140" height="140" fill="#fffdf8" stroke="#c2410c" stroke-width="6" transform="rotate(45 125 130)"/>
+  <path d="M125 95 q18 30 0 50 q-18 -10 -8 -25 q-14 5 -14 20 q-10 -25 22 -45 z" fill="#c2410c"/>
+  <text class="lbl" x="125" y="230" text-anchor="middle">Inflammable</text>
+
+  <!-- Corrosif -->
+  <rect x="285" y="60" width="140" height="140" fill="#fffdf8" stroke="#c2410c" stroke-width="6" transform="rotate(45 355 130)"/>
+  <path d="M340 95 q10 14 0 24 q-10 -8 0 -24 z" fill="#c2410c"/>
+  <rect x="335" y="140" width="40" height="14" rx="4" fill="none" stroke="#c2410c" stroke-width="3"/>
+  <line x1="330" y1="160" x2="380" y2="160" stroke="#c2410c" stroke-width="3"/>
+  <text class="lbl" x="355" y="230" text-anchor="middle">Corrosif</text>
+
+  <!-- Toxique -->
+  <rect x="515" y="60" width="140" height="140" fill="#fffdf8" stroke="#c2410c" stroke-width="6" transform="rotate(45 585 130)"/>
+  <circle cx="585" cy="120" r="20" fill="none" stroke="#c2410c" stroke-width="4"/>
+  <line x1="573" y1="108" x2="597" y2="132" stroke="#c2410c" stroke-width="4"/>
+  <line x1="597" y1="108" x2="573" y2="132" stroke="#c2410c" stroke-width="4"/>
+  <line x1="585" y1="140" x2="585" y2="155" stroke="#c2410c" stroke-width="4"/>
+  <text class="lbl" x="585" y="230" text-anchor="middle">Toxique</text>
+
+  <!-- Danger santé -->
+  <rect x="745" y="60" width="140" height="140" fill="#fffdf8" stroke="#c2410c" stroke-width="6" transform="rotate(45 815 130)"/>
+  <line x1="815" y1="100" x2="815" y2="140" stroke="#c2410c" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="815" cy="158" r="5" fill="#c2410c"/>
+  <text class="lbl" x="815" y="230" text-anchor="middle">Danger santé</text>
+</svg>

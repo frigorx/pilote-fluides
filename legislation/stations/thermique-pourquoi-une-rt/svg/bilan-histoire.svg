@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-bh" aria-describedby="d-bh" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bh">Bilan : de 1974 à la RE2020, une ligne continue</title>
+  <desc id="d-bh">Une ligne de temps horizontale avec quatre jalons. Premier jalon : 1974, choc
+    pétrolier, première réglementation. Deuxième jalon, sans date : générations suivantes,
+    exigence resserrée à chaque fois. Troisième jalon : RT2012, dernière génération centrée sur
+    la seule consommation d'énergie. Quatrième jalon, marqué en évidence : RE2020, qui ajoute le
+    carbone et le confort d'été. En bas, une bande résume trois points de la station.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <line x1="60" y1="120" x2="840" y2="120" stroke="#5a6b7d" stroke-width="3"/>
+
+  <circle cx="120" cy="120" r="12" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <text class="ttl" x="120" y="90" text-anchor="middle">1974</text>
+  <text class="lbl" x="120" y="150" text-anchor="middle">choc pétrolier,</text>
+  <text class="lbl" x="120" y="168" text-anchor="middle">1ʳᵉ réglementation</text>
+
+  <circle cx="360" cy="120" r="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="ttl" x="360" y="90" text-anchor="middle" font-size="15">générations</text>
+  <text class="lbl" x="360" y="150" text-anchor="middle">exigence resserrée</text>
+  <text class="lbl" x="360" y="168" text-anchor="middle">à chaque étape</text>
+
+  <circle cx="600" cy="120" r="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="ttl" x="600" y="90" text-anchor="middle">RT2012</text>
+  <text class="lbl" x="600" y="150" text-anchor="middle">seule la</text>
+  <text class="lbl" x="600" y="168" text-anchor="middle">consommation</text>
+
+  <circle cx="800" cy="120" r="15" fill="#fff4e0" stroke="#92400e" stroke-width="4"/>
+  <text class="ttl" x="800" y="90" text-anchor="middle" fill="#92400e">RE2020</text>
+  <text class="lbl" x="800" y="150" text-anchor="middle">+ carbone</text>
+  <text class="lbl" x="800" y="168" text-anchor="middle">+ confort d'été</text>
+
+  <rect x="60" y="230" width="780" height="90" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="258" text-anchor="middle" font-weight="bold">Une histoire par paliers, née d'une crise économique — pas d'abord écologique.</text>
+  <text class="band" x="450" y="282" text-anchor="middle">La RE2020 n'est pas un palier de plus : elle ajoute deux volets absents de la RT2012.</text>
+  <text class="band" x="450" y="306" text-anchor="middle">Réflexe : les mécanismes s'apprennent, les chiffres se vérifient sur le texte en vigueur.</text>
+</svg>

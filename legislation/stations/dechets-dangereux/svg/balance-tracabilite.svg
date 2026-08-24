@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-bal" aria-describedby="d-bal" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bal">La traçabilité prouve, une déclaration se contente d'affirmer</title>
+  <desc id="d-bal">Une balance stylisée à deux plateaux. Sur le plateau de gauche, plus haut, la
+    mention « je déclare avoir bien géré ». Sur le plateau de droite, plus bas donc plus lourd, la
+    mention « je peux le prouver, maillon par maillon ». Le plateau de droite est relié à trois petits
+    maillons représentant les étapes du bordereau de suivi.</desc>
+  <style>
+    .lbl { font-size:16px; fill:#10233c; font-weight:bold; }
+    .petit { font-size:14.5px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <!-- Pied et fléau de la balance -->
+  <rect x="444" y="80" width="12" height="150" fill="#57534e"/>
+  <rect x="380" y="222" width="140" height="16" rx="6" fill="#57534e"/>
+  <circle cx="450" cy="80" r="10" fill="#57534e"/>
+  <line x1="450" y1="80" x2="180" y2="120" stroke="#57534e" stroke-width="6"/>
+  <line x1="450" y1="80" x2="720" y2="150" stroke="#57534e" stroke-width="6"/>
+
+  <!-- Plateau gauche : je déclare (plus haut, plus léger) -->
+  <line x1="180" y1="120" x2="140" y2="168" stroke="#5a6b7d" stroke-width="2"/>
+  <line x1="180" y1="120" x2="220" y2="168" stroke="#5a6b7d" stroke-width="2"/>
+  <path d="M 130 168 Q 180 200 230 168" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3"/>
+  <rect x="90" y="30" width="180" height="76" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="lbl" x="180" y="60" text-anchor="middle" font-size="15px">« Je déclare</text>
+  <text class="lbl" x="180" y="82" text-anchor="middle" font-size="15px">avoir bien géré »</text>
+
+  <!-- Plateau droit : je peux prouver (plus bas, plus lourd) -->
+  <line x1="720" y1="150" x2="672" y2="206" stroke="#5a6b7d" stroke-width="2"/>
+  <line x1="720" y1="150" x2="768" y2="206" stroke="#5a6b7d" stroke-width="2"/>
+  <path d="M 660 206 Q 720 244 780 206" fill="#efece9" stroke="#57534e" stroke-width="4"/>
+  <rect x="620" y="46" width="200" height="94" rx="12" fill="#efece9" stroke="#57534e" stroke-width="4"/>
+  <text class="lbl" x="720" y="78" text-anchor="middle" font-size="15px">« Je peux le prouver,</text>
+  <text class="lbl" x="720" y="100" text-anchor="middle" font-size="15px">maillon par maillon »</text>
+  <circle cx="670" cy="122" r="9" fill="none" stroke="#57534e" stroke-width="2.5"/>
+  <circle cx="720" cy="122" r="9" fill="none" stroke="#57534e" stroke-width="2.5"/>
+  <circle cx="770" cy="122" r="9" fill="none" stroke="#57534e" stroke-width="2.5"/>
+  <line x1="679" y1="122" x2="711" y2="122" stroke="#57534e" stroke-width="2"/>
+  <line x1="729" y1="122" x2="761" y2="122" stroke="#57534e" stroke-width="2"/>
+
+  <!-- Bande de conclusion -->
+  <rect x="60" y="270" width="780" height="52" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="302" text-anchor="middle">La traçabilité PROUVE, étape par étape — une déclaration se contente d'affirmer</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-grp" aria-describedby="d-grp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-grp">Le groupe du fluide : dangereux ou non</title>
+  <desc id="d-grp">Deux colonnes. À gauche, le groupe 1 : les fluides dangereux, explosifs,
+    inflammables, toxiques ou comburants. À droite, le groupe 2 : tous les autres fluides. Une bande
+    en bas rappelle que ce repère de dangerosité est le même que celui utilisé par la norme NF EN 378
+    pour classer les fluides frigorigènes, de A1 à B3.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .band{ font-size:15.5px; fill:#10233c; }
+    .note{ font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Groupe 1 : dangereux -->
+  <rect x="20" y="20" width="420" height="210" rx="14" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <rect x="20" y="20" width="420" height="46" rx="14" fill="#c0392b"/>
+  <rect x="20" y="52" width="420" height="14" fill="#c0392b"/>
+  <text class="ttl" x="230" y="52" text-anchor="middle">GROUPE 1 — fluide dangereux</text>
+  <text class="lbl" x="50" y="102">— explosif</text>
+  <text class="lbl" x="50" y="132">— inflammable</text>
+  <text class="lbl" x="50" y="162">— toxique</text>
+  <text class="lbl" x="50" y="192">— comburant</text>
+  <text class="lbl" x="230" y="222" text-anchor="middle" font-weight="bold">classement plus sévère, à PS et volume égaux</text>
+
+  <!-- Groupe 2 : les autres -->
+  <rect x="460" y="20" width="420" height="210" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <rect x="460" y="20" width="420" height="46" rx="14" fill="#1e7e54"/>
+  <rect x="460" y="52" width="420" height="14" fill="#1e7e54"/>
+  <text class="ttl" x="670" y="52" text-anchor="middle">GROUPE 2 — les autres fluides</text>
+  <text class="lbl" x="670" y="132" text-anchor="middle">ni explosif, ni inflammable,</text>
+  <text class="lbl" x="670" y="158" text-anchor="middle">ni toxique, ni comburant</text>
+  <text class="lbl" x="670" y="222" text-anchor="middle" font-weight="bold">classement moins sévère, à PS et volume égaux</text>
+
+  <!-- Bande NF EN 378 -->
+  <rect x="20" y="256" width="860" height="60" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="280" text-anchor="middle" font-weight="bold">Même repère de dangerosité que la norme NF EN 378</text>
+  <text class="band" x="450" y="302" text-anchor="middle">A1, A2L, A2, A3, B1, B2L, B2, B3 — inflammable ou toxique au sens de cette norme rejoint le groupe 1</text>
+
+  <text class="note" x="450" y="348" text-anchor="middle">Le groupe du fluide n'est jamais une variable secondaire du classement.</text>
+</svg>

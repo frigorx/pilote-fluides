@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Les EPI — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi l'équipement de protection individuelle vient en dernier, comment le choisir et le vérifier, et ce que le froid impose de spécifique — brûlure par le froid, projection de fluide, huile.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/risques-epi/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Risques professionnels.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Risques professionnels · niveau BTS</p>
+  <h1>Les EPI — le dernier maillon, pas le premier réflexe</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez pourquoi l'équipement de protection individuelle vient en dernier dans la prévention, comment en choisir un adapté au risque réel de la tâche, comment le vérifier et le remplacer, et ce que le froid impose de spécifique : brûlure par le froid, projection de fluide, huile.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la chaîne à trois maillons. Le premier, en vert, c'est supprimer le risque. Le second, en bleu, c'est protéger collectivement, pour tout le monde en même temps. Le troisième maillon, mis en évidence en orange, porte les lettres EPI : c'est le dernier de la chaîne, pas le premier. Il ne s'active que si les deux précédents n'ont pas suffi.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">L'EPI : le dernier maillon, pas le premier réflexe</h2>
+    <p>Un <strong>équipement de protection individuelle</strong> (EPI) protège une seule personne à la fois : un gant, une paire de lunettes, une paire de chaussures. Ce n'est pas rien, mais ce n'est jamais la première réponse à un risque.</p>
+    <p><strong>La prévention suit un ordre</strong> : supprimer le risque d'abord, le protéger collectivement ensuite — pour tout le monde en même temps —, et l'équipement individuel seulement en dernier, quand les deux premiers n'ont pas suffi ou n'étaient pas possibles.</p>
+    <figure>
+      <img src="svg/epi-dernier-maillon.svg" alt="Une chaîne à trois maillons : supprimer le risque, protéger collectivement, puis l'équipement de protection individuelle en dernier, ce dernier maillon étant mis en évidence en orange.">
+      <figcaption>Le troisième maillon ne s'active que si les deux premiers n'ont pas suffi.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Regardez le tableau. À gauche, la tâche : une recharge de fluide. Au centre, le risque réel : une projection de fluide. À droite, deux équipements : en haut, barré d'une croix rouge, un gant de manutention ordinaire, qui ne protège de rien ici. En bas, entouré en vert, la paire de gants et de lunettes adaptée à ce risque précis.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Choisir l'EPI adapté au risque réel</h2>
+    <p>Un EPI ne se choisit pas par habitude : il se choisit selon le <strong>risque réel de la tâche du jour</strong>. Un gant de manutention protège les mains d'une coupure ou d'un écrasement — il ne protège ni d'une projection de fluide frigorigène, ni d'une brûlure par le froid.</p>
+    <p>Avant une tâche, la question est toujours la même : quel est le risque exact, et quel équipement le couvre vraiment ?</p>
+    <figure>
+      <img src="svg/epi-choisir-adapte.svg" alt="Un tableau : la tâche « recharge de fluide », le risque « projection de fluide », puis deux équipements — un gant de manutention barré d'une croix, et des gants avec lunettes adaptés entourés en vert.">
+      <figcaption>Le bon EPI répond au risque de la tâche, pas à une habitude.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Deux silhouettes côte à côte. À gauche, la lunette est bien en place sur les yeux, une coche verte le confirme. À droite, la même lunette est remontée sur le front : une croix rouge rappelle que remontée, elle ne protège plus rien.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Porter : vérifier avant, ajuster correctement</h2>
+    <p>Un EPI se <strong>vérifie avant chaque usage</strong> : son état, sa propreté. Il se <strong>porte correctement</strong>, pas approximativement — des lunettes remontées sur le front, un gant mal ajusté, ne protègent de rien.</p>
+    <figure>
+      <img src="svg/epi-porter-correctement.svg" alt="Deux silhouettes : à gauche, des lunettes correctement portées sur les yeux avec une coche verte ; à droite, les mêmes lunettes remontées sur le front avec une croix rouge.">
+      <figcaption>Un EPI mal porté n'est plus un EPI.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Une fiche de vérification avec deux gants. Le gant de gauche, percé, porte une croix rouge et la mention à changer. Le gant de droite, en bon état, porte une coche verte.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Vérifier et remplacer : un EPI abîmé se change</h2>
+    <p>Un gant percé, une lunette rayée : ils <strong>se changent</strong>, ils ne se réparent pas. Un EPI abîmé n'offre plus la protection pour laquelle il a été choisi.</p>
+    <figure>
+      <img src="svg/epi-verifier-remplacer.svg" alt="Une fiche de vérification avec deux gants : à gauche un gant percé marqué d'une croix rouge et de la mention « à changer », à droite un gant en bon état marqué d'une coche verte.">
+      <figcaption>Abîmé, un EPI ne se répare pas — il se change.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Une main reçoit une projection de fluide. À l'endroit du contact, la peau est représentée blanchie, avec un flocon à côté : c'est le signe que le froid brutal du fluide qui se détend produit un effet proche d'une brûlure.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Ce que le froid impose : la brûlure par le froid</h2>
+    <p>Un fluide frigorigène qui se détend brutalement s'évapore et absorbe la chaleur autour de lui — y compris celle de la peau. Le contact direct <strong>gèle la peau</strong>, un mécanisme dont les conséquences se rapprochent d'une brûlure thermique.</p>
+    <figure>
+      <img src="svg/epi-brulure-froid.svg" alt="Une main recevant une projection de fluide : à l'endroit du contact, la peau est représentée blanchie, avec un flocon à côté rappelant le mécanisme de la brûlure par le froid.">
+      <figcaption>La détente brutale du fluide absorbe la chaleur de la peau.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="À gauche, un point de purge d'où part un jet vers une silhouette dont le visage est protégé par une visière. À droite, une goutte étiquetée huile, à côté d'une main gantée.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Ce que le froid impose : projection et huile</h2>
+    <p>Une purge ou l'ouverture d'un circuit peuvent projeter du fluide liquide vers le visage ou les mains : d'où la protection oculaire et des gants adaptés. L'huile frigorigène récupérée, elle, est <strong>glissante et irritante</strong> au contact prolongé de la peau.</p>
+    <figure>
+      <img src="svg/epi-projection-huile.svg" alt="À gauche, un point de purge d'où part un jet vers une silhouette au visage protégé par une visière. À droite, une goutte d'huile à côté d'une main gantée.">
+      <figcaption>Deux risques distincts, deux protections adaptées.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre pictogrammes alignés : un gant, une paire de lunettes, une chaussure de sécurité, une protection auditive. Chacun porte son nom en dessous.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Les familles d'EPI du métier</h2>
+    <p>Quatre familles reviennent sans cesse en froid et climatisation : des <strong>gants</strong> adaptés au risque froid, des <strong>lunettes ou un écran facial</strong>, des <strong>chaussures de sécurité</strong>, et une <strong>protection auditive</strong> pour les interventions bruyantes — près d'un compresseur ou d'un groupe en fonctionnement.</p>
+    <figure>
+      <img src="svg/epi-familles.svg" alt="Quatre pictogrammes alignés, chacun avec son nom en dessous : un gant, une paire de lunettes, une chaussure de sécurité, une protection auditive.">
+      <figcaption>Quatre familles, quatre risques différents.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Une fiche récapitulative avec trois cases à cocher : adapté à la tâche, en bon état, bien porté. C'est le réflexe à avoir avant chaque intervention.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>L'EPI est le <strong>dernier maillon</strong> de la prévention, jamais le premier réflexe.</li>
+      <li>Il se choisit selon le <strong>risque réel</strong> de la tâche, pas par habitude.</li>
+      <li>Il se <strong>vérifie avant chaque usage</strong> et se porte correctement.</li>
+      <li>Un EPI abîmé <strong>se remplace</strong>, il ne se répare pas.</li>
+      <li>Le froid impose des risques spécifiques : brûlure par le froid, projection de fluide, huile.</li>
+    </ul>
+    <p class="formule">Le réflexe : avant de commencer, l'EPI est-il adapté à CETTE tâche, en bon état, bien porté ?</p>
+    <figure>
+      <img src="svg/epi-bilan.svg" alt="Une fiche récapitulative avec trois cases à cocher : adapté à la tâche, en bon état, bien porté.">
+      <figcaption>Trois questions à se poser avant de commencer.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Avant une intervention risquée, quel doit être le premier réflexe ? Revoyez la chaîne à trois maillons si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Avant une intervention risquée, quel doit être le premier réflexe ?</h2>
+    <figure class="vignette">
+      <img src="svg/epi-dernier-maillon.svg" alt="Vignette de rappel : la chaîne à trois maillons, l'EPI en dernier.">
+      <figcaption>Rappel de l'écran 1 — la chaîne à trois maillons.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Mettre tout de suite l'EPI le plus protecteur disponible</button>
+      <button type="button" data-answer="bonne">Se demander si le risque peut être supprimé ou protégé collectivement avant de penser à l'EPI</button>
+      <button type="button" data-answer="b">Reporter systématiquement l'intervention à un autre jour</button>
+      <button type="button" data-answer="c">Demander à un collègue de la faire à sa place</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'EPI est le dernier maillon : on cherche d'abord à supprimer le risque, puis à le protéger collectivement. Reporter systématiquement ou faire porter le risque à un collègue n'est pas une réponse de prévention."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un technicien doit faire une recharge de fluide : quel est le bon réflexe pour l'EPI ? Reprenez le tableau de l'écran deux avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un technicien doit faire une recharge de fluide. Quel est le bon réflexe EPI ?</h2>
+    <figure class="vignette">
+      <img src="svg/epi-choisir-adapte.svg" alt="Vignette de rappel : le tableau tâche, risque et équipement, avec le gant de manutention barré.">
+      <figcaption>Rappel de l'écran 2 — le bon EPI répond au risque réel.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Choisir des gants et une protection oculaire adaptés au risque de projection</button>
+      <button type="button" data-answer="a">Prendre les gants de manutention habituels, plus rapides à enfiler</button>
+      <button type="button" data-answer="b">Ne rien porter : une recharge de fluide est une tâche propre</button>
+      <button type="button" data-answer="c">Porter uniquement des lunettes, les mains ne risquent rien</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le gant de manutention protège des coupures, pas d'une projection de fluide ni d'une brûlure par le froid : l'EPI se choisit selon le risque réel de la tâche, jamais par habitude ou par commodité."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un technicien trouve un gant percé dans son sac. Que doit-il faire ? Revoyez la fiche de vérification de l'écran quatre si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Un technicien trouve un gant percé dans son sac. Que doit-il faire ?</h2>
+    <figure class="vignette">
+      <img src="svg/epi-verifier-remplacer.svg" alt="Vignette de rappel : le gant percé marqué d'une croix rouge à côté du gant en bon état marqué d'une coche verte.">
+      <figcaption>Rappel de l'écran 4 — abîmé, un EPI se change.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le porter quand même, la déchirure est petite</button>
+      <button type="button" data-answer="b">Le retourner pour cacher le trou côté paume</button>
+      <button type="button" data-answer="c">Le doubler avec un second gant fin</button>
+      <button type="button" data-answer="bonne">Le remplacer : un EPI abîmé ne protège plus, il se change</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un EPI abîmé n'offre plus la protection prévue. Le porter quand même, le retourner ou le doubler ne rétablit pas la protection perdue — seul le remplacement le fait."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Pourquoi le contact avec un fluide qui se détend brutalement peut-il brûler la peau ? Souvenez-vous du mécanisme de l'écran cinq.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Pourquoi le contact avec un fluide qui se détend brutalement peut-il brûler la peau ?</h2>
+    <figure class="vignette">
+      <img src="svg/epi-brulure-froid.svg" alt="Vignette de rappel : la main recevant une projection de fluide, avec la peau blanchie et un flocon.">
+      <figcaption>Rappel de l'écran 5 — le mécanisme de la brûlure par le froid.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Parce que le fluide est toujours à très haute température</button>
+      <button type="button" data-answer="b">Parce que le fluide est acide au contact de la peau</button>
+      <button type="button" data-answer="bonne">Parce que le fluide s'évapore brutalement et absorbe la chaleur de la peau</button>
+      <button type="button" data-answer="c">Parce que le fluide colle et irrite la peau durablement</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le mécanisme est thermique : la détente brutale du fluide absorbe la chaleur autour de lui, y compris celle de la peau, avec un effet proche d'une brûlure. Ce n'est ni une question de température élevée, ni d'acidité, ni de collage."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme sur les autres stations du
+     réseau : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>L'habilitation</strong> (sous-ligne Électrique) — la règle d'un côté, le geste protégé de l'autre.</li>
+  </ul>
+  <p>Cette station est en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

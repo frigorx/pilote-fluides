@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-rp" aria-describedby="d-rp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rp">Le registre : la mémoire écrite du producteur</title>
+  <desc id="d-rp">Un carnet ouvert avec des lignes stylisées portant les mots date, déchet, quantité,
+    destinataire, posé à côté d'un établi de frigoriste. Une bande rappelle que sans ce registre, la
+    responsabilité ne peut pas se prouver, même si elle a été correctement assumée.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#57534e; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .ent { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16.5px; fill:#10233c; }
+  </style>
+
+  <!-- L'établi, à droite, en fond -->
+  <rect x="560" y="230" width="320" height="18" rx="4" fill="#d6dee7"/>
+  <rect x="576" y="248" width="14" height="40" fill="#d6dee7"/>
+  <rect x="850" y="248" width="14" height="40" fill="#d6dee7"/>
+  <!-- un objet posé sur l'établi, discret -->
+  <rect x="640" y="180" width="50" height="50" rx="8" fill="#eef0ee" stroke="#b9c6d3" stroke-width="2.5"/>
+  <text class="ent" x="665" y="256" text-anchor="middle">établi</text>
+
+  <!-- Le carnet ouvert -->
+  <path d="M 60 60 L 400 44 L 400 300 L 60 320 Z" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+  <path d="M 400 44 L 520 60 L 520 320 L 400 300 Z" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+  <path d="M 400 44 V 300" stroke="#57534e" stroke-width="3"/>
+
+  <!-- Les lignes du registre, page de gauche -->
+  <text class="ttl" x="80" y="92">Registre</text>
+  <path d="M 78 112 H 384 M 78 140 H 384 M 78 168 H 384 M 78 196 H 384 M 78 224 H 384 M 78 252 H 384" stroke="#d6dee7" stroke-width="2"/>
+
+  <!-- Les quatre colonnes citées, page de droite -->
+  <text class="ent" x="416" y="90">date</text>
+  <text class="ent" x="416" y="130">déchet</text>
+  <text class="ent" x="416" y="170">quantité</text>
+  <text class="ent" x="416" y="210">destinataire</text>
+  <path d="M 416 106 H 500 M 416 146 H 500 M 416 186 H 500 M 416 226 H 500 M 416 256 H 500 M 416 280 H 500" stroke="#d6dee7" stroke-width="2"/>
+
+  <!-- La bande -->
+  <rect x="30" y="330" width="840" height="40" rx="12" fill="#eef0ee" stroke="#57534e" stroke-width="2"/>
+  <text class="band" x="450" y="356" text-anchor="middle">Sans registre, la responsabilité ne peut pas se prouver — même bien assumée</text>
+</svg>

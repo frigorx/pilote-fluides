@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 355" role="img"
+     aria-labelledby="t-eli" aria-describedby="d-eli" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-eli">Élimination : le dernier recours, sans retour possible</title>
+  <desc id="d-eli">En haut à gauche, la marche « élimination », la plus étroite, en bas de
+    l'escalier des cinq niveaux. Une flèche à sens unique en descend vers un symbole de
+    destruction et de stockage final, un caisson scellé marqué d'un cadenas. Aucune flèche ne
+    revient vers le haut : un panneau « aucun retour » le confirme. En bas, la phrase :
+    l'élimination est réservée à ce qui ne peut suivre aucun des niveaux précédents.</desc>
+  <style>
+    .marche { fill:#fffdf8; stroke:#57534e; stroke-width:3; }
+    .cadre  { fill:#fffdf8; stroke:#c0392b; stroke-width:3; }
+    .ttl    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lbl    { font-size:15px; fill:#5a6b7d; }
+    .stop   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#c0392b; }
+  </style>
+
+  <!-- rappel : la marche 5, la plus étroite, en bas de l'escalier -->
+  <rect class="marche" x="260" y="30" width="380" height="60" rx="10"/>
+  <text class="ttl" x="450" y="56" text-anchor="middle">5 — ÉLIMINATION</text>
+  <text class="lbl" x="450" y="76" text-anchor="middle">dernier recours</text>
+
+  <!-- flèche à sens unique, sans retour -->
+  <line x1="450" y1="94" x2="450" y2="164" stroke="#c0392b" stroke-width="4"/>
+  <polygon points="450,180 438,156 462,156" fill="#c0392b"/>
+
+  <!-- caisson scellé : destruction / stockage final -->
+  <rect class="cadre" x="360" y="188" width="180" height="90" rx="10"/>
+  <rect x="428" y="212" width="44" height="34" rx="6" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <path d="M438 212 v-14 q0 -12 12 -12 q12 0 12 12 v14" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <text class="ttl" x="450" y="306" text-anchor="middle">Destruction / stockage final</text>
+
+  <!-- panneau aucun retour -->
+  <circle cx="640" cy="233" r="34" fill="#fffdf8" stroke="#c0392b" stroke-width="4"/>
+  <line x1="620" y1="213" x2="660" y2="253" stroke="#c0392b" stroke-width="4"/>
+  <text class="stop" x="640" y="298" text-anchor="middle">Aucun retour</text>
+
+  <text x="450" y="342" text-anchor="middle" font-size="16" font-weight="bold" fill="#10233c">Réservée à ce qui ne peut suivre aucun des niveaux précédents.</text>
+</svg>

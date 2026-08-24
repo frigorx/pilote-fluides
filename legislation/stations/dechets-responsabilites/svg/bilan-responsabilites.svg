@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-br" aria-describedby="d-br" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-br">Bilan : la chaîne complète, et le maillon qui protège</title>
+  <desc id="d-br">Une chaîne complète du chantier à la filière finale : chantier, collecte, transport,
+    puis filière finale. Un maillon supplémentaire, « vérification », est mis en évidence en couleur et
+    en trait plus épais avant le transport : c'est lui qui décide si la responsabilité s'arrête net ou
+    continue de peser sur le frigoriste. Une bande rappelle le réflexe : avant de remettre un déchet,
+    vérifier que celui qui le reçoit est autorisé à le recevoir.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15.5px; fill:#fffdf8; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <!-- Le fil de la chaîne -->
+  <path d="M 90 120 H 810" stroke="#57534e" stroke-width="6" fill="none"/>
+
+  <!-- Chantier -->
+  <rect x="30" y="82" width="140" height="76" rx="38" fill="#57534e"/>
+  <text class="ttl" x="100" y="116" text-anchor="middle">CHANTIER</text>
+  <text class="ttl" x="100" y="136" text-anchor="middle">(origine)</text>
+
+  <!-- Collecte -->
+  <rect x="220" y="82" width="140" height="76" rx="38" fill="#57534e"/>
+  <text class="ttl" x="290" y="126" text-anchor="middle">COLLECTE</text>
+
+  <!-- Vérification, mise en évidence -->
+  <rect x="400" y="66" width="160" height="108" rx="16" fill="#b06a00" stroke="#10233c" stroke-width="3"/>
+  <text class="ttl" x="480" y="106" text-anchor="middle">VÉRIFICATION</text>
+  <text class="ttl" x="480" y="126" text-anchor="middle">le repreneur est-il</text>
+  <text class="ttl" x="480" y="146" text-anchor="middle">autorisé ?</text>
+
+  <!-- Transport -->
+  <rect x="600" y="82" width="120" height="76" rx="38" fill="#57534e"/>
+  <text class="ttl" x="660" y="126" text-anchor="middle">TRANSPORT</text>
+
+  <!-- Filière finale -->
+  <rect x="740" y="66" width="130" height="108" rx="16" fill="#1e7e54"/>
+  <text class="ttl" x="805" y="106" text-anchor="middle">FILIÈRE</text>
+  <text class="ttl" x="805" y="126" text-anchor="middle">FINALE</text>
+  <text class="ttl" x="805" y="146" text-anchor="middle">(élimination)</text>
+
+  <text class="lbl" x="100" y="180" text-anchor="middle">le déchet naît</text>
+  <text class="lbl" x="290" y="180" text-anchor="middle">1er maillon</text>
+  <text class="lbl" x="480" y="196" text-anchor="middle" fill="#10233c" font-weight="bold">le maillon qui protège</text>
+  <text class="lbl" x="660" y="180" text-anchor="middle">2e maillon</text>
+  <text class="lbl" x="805" y="196" text-anchor="middle">la responsabilité s'arrête ici</text>
+
+  <!-- La bande -->
+  <rect x="20" y="240" width="860" height="80" rx="14" fill="#eef0ee" stroke="#57534e" stroke-width="2"/>
+  <text class="band" x="450" y="270" text-anchor="middle">Le réflexe</text>
+  <text class="lbl" x="450" y="296" text-anchor="middle" fill="#10233c" font-size="16">avant de remettre un déchet, vérifier que celui qui le reçoit</text>
+  <text class="lbl" x="450" y="316" text-anchor="middle" fill="#10233c" font-size="16">est autorisé à le recevoir</text>
+</svg>

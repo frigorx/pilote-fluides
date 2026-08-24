@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-6" aria-describedby="d-6" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-6">Deux risques du circuit : la projection de fluide et l'huile</title>
+  <desc id="d-6">À gauche, un point de purge schématique (un petit robinet) d'où part un jet de gouttelettes
+    vers une silhouette de visage protégée par une visière. À droite, une goutte étiquetée « huile » posée
+    à côté d'une main gantée.</desc>
+  <style>
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .sub{ font-size:14px; fill:#5a6b7d; }
+  </style>
+
+  <!-- Purge -->
+  <rect x="60" y="150" width="60" height="34" rx="6" fill="#fde9d0" stroke="#10233c" stroke-width="2.5"/>
+  <circle cx="150" cy="167" r="14" fill="#fffdf8" stroke="#10233c" stroke-width="2.5"/>
+  <text class="sub" x="90" y="205" text-anchor="middle">point de purge</text>
+
+  <!-- Jet -->
+  <path d="M164 167 q30 -10 60 -6" stroke="#1b3a63" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+  <circle cx="230" cy="150" r="5" fill="#c6dcf5" stroke="#1b3a63"/>
+  <circle cx="250" cy="140" r="5" fill="#c6dcf5" stroke="#1b3a63"/>
+  <circle cx="270" cy="132" r="5" fill="#c6dcf5" stroke="#1b3a63"/>
+
+  <!-- Visage protégé -->
+  <circle cx="330" cy="150" r="60" fill="#fde9d0" stroke="#10233c" stroke-width="2.5"/>
+  <path d="M290 118 q40 -22 80 0 l6 26 q-46 -18 -92 0 z" fill="#dbeafe" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="330" y="240" text-anchor="middle">Visage protégé</text>
+  <text class="sub" x="330" y="262" text-anchor="middle">par une visière</text>
+
+  <!-- Huile -->
+  <path d="M650 90 q22 30 0 50 q-22 -20 0 -50 z" fill="#e9d9b0" stroke="#b06a00" stroke-width="2.5"/>
+  <text class="sub" x="650" y="160" text-anchor="middle">huile</text>
+
+  <!-- Main gantée -->
+  <path d="M700 220 v-70 q0 -14 14 -14 q14 0 14 14 v34
+           q0 -14 14 -14 q14 0 14 14 v26
+           q0 -12 12 -12 q12 0 12 12 v50 q0 24 -24 24 h-50 q-14 0 -14 -14 z"
+        fill="#fde9d0" stroke="#10233c" stroke-width="2.5"/>
+  <text class="lbl" x="740" y="270" text-anchor="middle">Main gantée</text>
+
+  <rect x="30" y="290" width="840" height="34" rx="10" fill="none"/>
+</svg>

@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Écoconception — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : concevoir un appareil pour qu'il dure, se répare et consomme moins, l'étiquette énergie comme repère du client, et le piège du prix d'achat bas.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/impact-ecoconception/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Impact environnemental.
+     Correspondance directe avec la station « impact-tewi » du même réseau :
+     un appareil mieux classé consomme moins d'électricité sur sa vie, donc
+     pèse moins lourd sur la part indirecte de son impact.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     ⚠️ PROTOTYPE NON RELU (data-prototype sur marque.js) : fond rédigé,
+     en attente de relecture métier avant diffusion.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Impact environnemental · niveau BTS</p>
+  <h1>Écoconception — concevoir pour durer et consommer moins</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez ce que vise l'écoconception, comment un appareil se pense pour durer, se réparer et consommer moins, comment lire l'étiquette énergie avant d'acheter — et pourquoi un prix bas peut cacher un surcoût sur toute la durée de vie de l'appareil.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez les trois cartes en haut : matériaux robustes, pièces standard plutôt que propriétaires, conception qui vieillit bien. Trois flèches descendent vers l'appareil au centre. En dessous, deux barres comparent la durée de vie en service : la barre verte, longue, avec ces choix, se termine par « dure longtemps ». La barre grise, en tirets et plus courte, sans ces choix, se termine par une petite croix rouge et « s'arrête plus tôt ». Ce sont ces trois choix, pris dès la conception, qui font la différence.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Concevoir pour durer</h2>
+    <p>Un appareil se pense avant de se construire. Dès la conception, on choisit des <strong>matériaux robustes</strong> et des <strong>pièces standard</strong>, plutôt que des pièces propriétaires qu'on ne trouve que chez un seul fabricant.</p>
+    <p>Une <strong>conception qui vieillit bien</strong> tient plus longtemps en service. C'est le premier pilier de l'écoconception : <strong>durer</strong>.</p>
+    <figure>
+      <img src="svg/concevoir-pour-durer.svg" alt="Trois cartes — matériaux robustes, pièces standard, conception qui vieillit bien — reliées par des flèches à un encadré central « l'appareil ». En dessous, une barre verte longue « avec ces choix » qui dure longtemps, contre une barre grise en tirets plus courte « sans ces choix » qui s'arrête plus tôt.">
+      <figcaption>Trois choix de conception nourrissent la durée de vie de l'appareil.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Deux cartes face à face. À gauche, en rouge, le boîtier scellé : un cadenas fermé, une clé barrée d'une croix, la mention « pas d'accès ». À droite, en vert, le panneau démontable : des vis visibles à chaque coin, une clé libre, la mention « accès possible ». En bas, un axe en dégradé du vert au rouge illustre le principe de l'indice de réparabilité, de « facile à réparer » à « difficile à réparer » — sans pointeur, sans note chiffrée : c'est le principe du classement qui est montré, pas la note d'un appareil précis.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Concevoir pour se réparer</h2>
+    <p>Un appareil réparable a des <strong>pièces accessibles</strong> : pas de boîtier scellé qui empêche toute intervention. Il faut pouvoir ouvrir, démonter, changer une pièce.</p>
+    <p>Il faut aussi que les <strong>pièces détachées restent disponibles</strong> dans le temps. Un appareil non réparable finit à la benne plus vite — même s'il fonctionnait encore, en partie.</p>
+    <p>Un <strong>indice de réparabilité</strong> existe pour informer sur cette facilité d'intervention. Il ne donne pas de garantie chiffrée pour un appareil précis : il situe seulement l'appareil sur une échelle, du plus facile au plus difficile à réparer.</p>
+    <figure>
+      <img src="svg/concevoir-pour-reparer.svg" alt="Deux cartes : boîtier scellé avec cadenas et clé barrée, mention « pas d'accès » ; panneau démontable avec vis visibles et clé libre, mention « accès possible ». En bas, un axe en dégradé illustre le principe de l'indice de réparabilité, de facile à difficile à réparer, sans note attribuée.">
+      <figcaption>Accès aux pièces d'un côté, boîtier scellé de l'autre — et l'échelle de réparabilité entre les deux.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Trois cartes. La première, dimensionnement juste : un cadran avec une aiguille pointée sur la zone centrale, verte, entre « trop petit » et « trop grand ». La deuxième, régulation efficace : un thermostat schématique. La troisième, isolation soignée : une coupe de mur avec une couche hachurée entre deux parois. Trois flèches convergent vers un encadré final, en bas, consommation réduite sur toute la vie de l'appareil.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Concevoir pour consommer moins</h2>
+    <p>Un appareil bien <strong>dimensionné</strong> n'est ni surdimensionné, ni sous-dimensionné : il correspond au besoin réel, ce qui limite les pertes.</p>
+    <p>Une <strong>régulation efficace</strong> ajuste le fonctionnement à la demande. Une <strong>isolation soignée</strong> limite les déperditions. Ensemble, ces choix réduisent la consommation sur toute la durée de vie de l'appareil.</p>
+    <figure>
+      <img src="svg/concevoir-pour-consommer-moins.svg" alt="Trois cartes — dimensionnement juste avec un cadran centré sur la zone verte, régulation efficace avec un thermostat, isolation soignée avec une coupe de mur isolé — reliées par des flèches à un encadré « consommation réduite sur toute la vie de l'appareil ».">
+      <figcaption>Trois leviers agissent ensemble sur la consommation : dimensionnement, régulation, isolation.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="À gauche, sept bandes empilées, de la plus longue et verte à la plus courte et rouge, chacune portant une lettre de A à G : le principe d'une échelle de classes, donné à titre d'exemple. Une flèche part d'une bande du milieu vers le texte « la classe de cet appareil » — c'est une illustration du mécanisme, pas la note d'un appareil réel. À droite, une loupe posée sur une étiquette de prix : ce que le client regarde avant d'acheter, sans connaître le détail technique.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">L'étiquette énergie : ce que le client lit avant d'acheter</h2>
+    <p>Au moment de l'achat, le client ne connaît pas les détails techniques de l'appareil. L'<strong>étiquette énergie</strong> lui donne un repère simple : une <strong>classe</strong> qui résume l'efficacité énergétique.</p>
+    <p>Le principe est une échelle de lettres — par exemple de A à G selon la famille d'appareil : plus la lettre est proche du haut de l'échelle, plus l'appareil est efficace.</p>
+    <figure>
+      <img src="svg/etiquette-energie.svg" alt="Sept bandes empilées, de A (verte, longue) à G (rouge, courte), illustrant le principe d'une échelle de classes à titre d'exemple. Une flèche pointe une bande du milieu avec la mention « la classe de cet appareil ». À droite, une loupe sur une étiquette de prix, avec le texte « ce que le client regarde avant d'acheter ».">
+      <figcaption>La classe se lit avant l'achat, sans connaître le détail technique de l'appareil.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="À gauche, l'icône d'une PAC ou d'un groupe de condensation, avec une flèche vers deux barres empilées. Chaque barre a une base grise identique, la part directe, la fuite de fluide — elle reste comparable. Au-dessus, une portion colorée, la part indirecte, la consommation électrique : plus petite et verte pour l'appareil mieux classé, plus grande et ambrée pour l'appareil moins bien classé. Aucun chiffre : seule la hauteur des barres porte la comparaison, doublée par les mots « plus faible » et « plus élevée ».">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le lien avec le métier du froid : la part indirecte du TEWI</h2>
+    <p>Une <strong>PAC</strong> ou un <strong>groupe de condensation</strong> mieux classé consomme moins d'électricité sur toute sa vie. Cette consommation, ce n'est pas une fuite de fluide frigorigène : c'est la <strong>part indirecte</strong> de l'impact de l'appareil.</p>
+    <p>C'est le lien avec le <strong>TEWI</strong>, vu dans une autre station du même réseau : un appareil qui consomme moins pèse moins lourd sur cette part indirecte, sur toute sa durée de vie.</p>
+    <figure>
+      <img src="svg/lien-tewi.svg" alt="Icône d'une PAC ou d'un groupe de condensation, avec une flèche vers deux barres empilées : une base grise identique, part directe, fuite de fluide ; au-dessus, une portion colorée plus petite et verte pour l'appareil mieux classé, plus grande et ambrée pour l'appareil moins bien classé, part indirecte, consommation électrique.">
+      <figcaption>Moins de consommation électrique sur la vie de l'appareil, moins de poids sur la part indirecte de son impact.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Un graphique sans valeur chiffrée : en bas, le temps ; sur le côté, le coût cumulé. La ligne verte pleine part d'un point plus haut, classe énergie meilleure, prix plus élevé au départ, et monte doucement. La ligne ambrée en tirets part d'un point plus bas, prix bas, mauvaise classe énergie, et monte plus vite. Les deux lignes se croisent au milieu, avec la mention « le surcoût apparaît », puis la ligne ambrée termine au-dessus de la verte.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le piège : un prix bas peut cacher un surcoût</h2>
+    <p>Un appareil moins cher à l'achat peut avoir une <strong>mauvaise classe énergie</strong>. Sur sa durée de vie, il consomme plus d'électricité que prévu.</p>
+    <p>Le <strong>surcoût</strong> apparaît plus tard : sur la facture d'électricité, et sur l'impact environnemental. Le prix d'achat seul ne dit rien du coût total sur la vie de l'appareil.</p>
+    <figure>
+      <img src="svg/piege-prix-bas.svg" alt="Graphique du coût cumulé dans le temps, sans valeur chiffrée : une ligne verte pleine part plus haut et monte doucement (classe énergie meilleure, prix plus élevé au départ) ; une ligne ambrée en tirets part plus bas et monte plus vite (prix bas, mauvaise classe énergie), les deux lignes se croisant avec la mention « le surcoût apparaît ».">
+      <figcaption>Le prix d'achat grimpe doucement dans le temps quand la classe énergie est mauvaise.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre cartes numérotées. Première, en vert : un appareil bien conçu qui dure, se répare et consomme peu — il pèse souvent moins lourd sur sa vie entière. Deuxième, en rouge : un boîtier scellé, sans vis visibles — peu réparable. Troisième, en bleu : l'étiquette énergie collée sur l'appareil — à lire avant d'acheter. Quatrième, en ambre : un prix d'achat très bas avec une mauvaise classe énergie — le surcoût peut apparaître plus tard.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : quatre situations de terrain</h2>
+    <ol>
+      <li><strong>« Un appareil bien conçu, qui dure, se répare et consomme peu. »</strong> → Il pèse souvent moins lourd sur sa vie entière, même s'il coûte un peu plus à l'achat.</li>
+      <li><strong>« Un boîtier scellé, sans vis visibles. »</strong> → Appareil peu réparable : pièces détachées difficiles à obtenir, voire indisponibles.</li>
+      <li><strong>« L'étiquette énergie collée sur l'appareil. »</strong> → Elle donne la classe d'efficacité : à lire avant d'acheter, pas après.</li>
+      <li><strong>« Un prix d'achat très bas, mais une mauvaise classe énergie. »</strong> → Le surcoût peut apparaître plus tard, sur la facture d'électricité et sur l'impact environnemental.</li>
+    </ol>
+    <figure>
+      <img src="svg/quatre-situations.svg" alt="Quatre cartes numérotées : appareil bien conçu qui dure, se répare et consomme peu ; boîtier scellé sans vis visibles ; étiquette énergie collée sur l'appareil ; prix d'achat très bas avec mauvaise classe énergie. Chacune porte sa réponse.">
+      <figcaption>Dans les quatre cas, la même question : est-ce que l'appareil dure, se répare et consomme peu ?</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Trois cartes en haut, durer, se réparer, consommer moins, reliées par des flèches à l'appareil au centre. Une flèche part de l'appareil vers une étiquette énergie miniature à droite, avec la mention « repère du client, avant l'achat ». La bande du bas résume les trois piliers de l'écoconception.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan : durer, se réparer, consommer moins</h2>
+    <ul>
+      <li><strong>Durer</strong> : matériaux robustes, pièces standard, conception qui vieillit bien.</li>
+      <li><strong>Se réparer</strong> : pièces accessibles, pièces détachées disponibles dans le temps.</li>
+      <li><strong>Consommer moins</strong> : dimensionnement juste, régulation efficace, isolation soignée.</li>
+      <li><strong>L'étiquette énergie</strong> résume l'efficacité pour le client, avant l'achat.</li>
+      <li>Un prix d'achat bas peut cacher un <strong>surcoût</strong> sur toute la durée de vie de l'appareil.</li>
+    </ul>
+    <p class="formule">Le réflexe : lire l'étiquette énergie avant d'acheter, pas seulement le prix.</p>
+    <figure>
+      <img src="svg/bilan-ecoconception.svg" alt="Trois cartes — durer, se réparer, consommer moins — reliées par des flèches à un encadré central « l'appareil », lui-même relié à une étiquette énergie miniature portant la mention « repère du client, avant l'achat ». Une bande résume les trois piliers.">
+      <figcaption>Les trois piliers de l'écoconception, et l'étiquette comme repère du client.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Que vise l'écoconception d'un appareil ? Souvenez-vous du bilan de l'écran huit : durer, se réparer, consommer moins.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Que vise l'écoconception d'un appareil ?</h2>
+    <figure class="vignette">
+      <img src="svg/bilan-ecoconception.svg" alt="Vignette de rappel : les trois piliers de l'écoconception reliés à l'appareil, puis à l'étiquette énergie comme repère du client.">
+      <figcaption>Rappel de l'écran 8 — les trois piliers, ensemble.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Uniquement baisser le prix d'achat</button>
+      <button type="button" data-answer="bonne">Concevoir un appareil qui dure, se répare et consomme moins sur toute sa vie</button>
+      <button type="button" data-answer="c">Uniquement accélérer sa fabrication</button>
+      <button type="button" data-answer="d">Uniquement plaire visuellement au client</button>
+    </div>
+    <p class="feedback" hidden data-explication="Baisser le prix ne garantit ni durée ni sobriété ; accélérer la fabrication ignore la durée de vie et la réparabilité ; plaire visuellement ne dit rien de la consommation ni de la réparabilité. L'écoconception vise ensemble durer, se réparer et consommer moins."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Que permet un appareil conçu pour être réparable ? Reprenez la comparaison de l'écran deux avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Que permet un appareil conçu pour être réparable ?</h2>
+    <figure class="vignette">
+      <img src="svg/concevoir-pour-reparer.svg" alt="Vignette de rappel : boîtier scellé contre panneau démontable, et l'axe du principe de l'indice de réparabilité.">
+      <figcaption>Rappel de l'écran 2 — accès aux pièces et disponibilité dans le temps.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un boîtier scellé rendrait l'appareil plus réparable</button>
+      <button type="button" data-answer="b">La réparabilité n'aurait aucun effet sur l'impact environnemental</button>
+      <button type="button" data-answer="bonne">Des pièces accessibles et des pièces détachées disponibles, ce qui prolonge sa durée de vie et réduit les déchets</button>
+      <button type="button" data-answer="d">Seul le prix déterminerait la réparabilité</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un boîtier scellé interdit justement l'intervention, il réduit la réparabilité au lieu de l'augmenter ; l'impact environnemental dépend directement de la durée de vie, donc de la réparabilité ; le prix seul ne dit rien sur l'accès aux pièces. Un appareil réparable a des pièces accessibles et des pièces détachées disponibles dans le temps."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Que signale l'étiquette énergie à l'achat ? Regardez à nouveau l'échelle de lettres de l'écran quatre si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Que signale l'étiquette énergie à l'achat ?</h2>
+    <figure class="vignette">
+      <img src="svg/etiquette-energie.svg" alt="Vignette de rappel : l'échelle de lettres de A à G et la loupe posée sur l'étiquette, ce que le client regarde avant d'acheter.">
+      <figcaption>Rappel de l'écran 4 — la classe, avant même la mise en service.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">La classe d'efficacité énergétique de l'appareil, avant même de le mettre en service</button>
+      <button type="button" data-answer="b">La durée de la garantie</button>
+      <button type="button" data-answer="c">La charge de fluide frigorigène de l'appareil</button>
+      <button type="button" data-answer="d">Uniquement son niveau sonore</button>
+    </div>
+    <p class="feedback" hidden data-explication="La garantie est une donnée commerciale distincte ; la charge de fluide figure sur la plaque signalétique, pas sur l'étiquette énergie ; le niveau sonore n'est pas ce que l'étiquette résume. L'étiquette énergie informe sur la classe d'efficacité énergétique, avant la mise en service."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un appareil moins cher à l'achat mais mal classé sur l'étiquette énergie : que peut-il se passer ? Souvenez-vous du graphique de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un appareil moins cher à l'achat mais mal classé : que peut-il se passer ?</h2>
+    <figure class="vignette">
+      <img src="svg/piege-prix-bas.svg" alt="Vignette de rappel : le graphique du coût cumulé, avec la ligne du prix bas et mauvaise classe énergie qui dépasse la ligne de la meilleure classe.">
+      <figcaption>Rappel de l'écran 6 — le surcoût apparaît sur la durée.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le prix d'achat refléterait toujours le coût total sur la vie de l'appareil</button>
+      <button type="button" data-answer="b">La classe énergie n'aurait aucun impact sur le coût d'exploitation</button>
+      <button type="button" data-answer="c">Une mauvaise classe énergie ne concernerait que le bruit</button>
+      <button type="button" data-answer="bonne">Il peut coûter plus cher sur sa durée de vie, en argent et en impact environnemental, à cause de sa consommation électrique</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le prix d'achat ne montre pas la consommation sur la durée de vie ; la classe énergie agit justement sur le coût d'exploitation via la consommation électrique ; elle ne concerne pas le bruit mais l'efficacité. Un appareil mal classé consomme plus d'électricité sur sa vie, ce qui pèse sur la part indirecte de son impact — le lien avec le TEWI."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. Aucun lien
+     réel pour cette station : les deux correspondances annoncées sont
+     encore en préparation sur le plan du réseau. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>La RE2020</strong> (sous-ligne Thermique) — les exigences de conception qui pèsent sur les bâtiments et leurs équipements.</li>
+    <li><strong>NF EN 378</strong> (même sous-ligne) — ce que la classe du fluide impose en plus, au-delà de l'étiquette énergie.</li>
+  </ul>
+  <p>Les deux stations sont en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

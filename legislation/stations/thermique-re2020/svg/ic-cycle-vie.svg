@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-ic" aria-describedby="d-ic" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ic">L'IC est une analyse de cycle de vie, pas une photo de l'usage seul</title>
+  <desc id="d-ic">Un cercle de quatre étapes reliées par des flèches courbes qui tournent : la
+    fabrication des matériaux, la construction du bâtiment, l'usage sur toute la durée de vie, et
+    la fin de vie et le devenir des déchets. Le mot « IC » est inscrit au centre du cercle,
+    entouré des quatre étapes.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .sig { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:30px; fill:#92400e; }
+  </style>
+
+  <text class="ttl" x="450" y="28" text-anchor="middle">L'IC compte tout le cycle de vie du bâtiment</text>
+
+  <circle cx="450" cy="185" r="95" fill="none" stroke="#d6dee7" stroke-width="2"/>
+  <circle cx="450" cy="185" r="55" fill="#fff4e0" stroke="#92400e" stroke-width="3.5"/>
+  <text class="sig" x="450" y="196" text-anchor="middle">IC</text>
+
+  <!-- quatre étapes -->
+  <rect x="380" y="40" width="140" height="55" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="450" y="63" text-anchor="middle">Fabrication</text>
+  <text class="lbl" x="450" y="82" text-anchor="middle">des matériaux</text>
+
+  <rect x="650" y="158" width="150" height="55" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="725" y="181" text-anchor="middle">Construction</text>
+  <text class="lbl" x="725" y="200" text-anchor="middle">du bâtiment</text>
+
+  <rect x="380" y="275" width="140" height="55" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="450" y="298" text-anchor="middle">Usage sur toute</text>
+  <text class="lbl" x="450" y="317" text-anchor="middle">la durée de vie</text>
+
+  <rect x="100" y="158" width="150" height="55" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="175" y="181" text-anchor="middle">Fin de vie</text>
+  <text class="lbl" x="175" y="200" text-anchor="middle">et déchets</text>
+
+  <!-- flèches courbes -->
+  <path d="M 520 75 A 130 130 0 0 1 660 175" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="660,175 645,163 655,182" fill="#92400e"/>
+  <path d="M 720 213 A 130 130 0 0 1 520 300" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="520,300 538,296 528,312" fill="#92400e"/>
+  <path d="M 380 300 A 130 130 0 0 1 250 195" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="250,195 260,210 245,215" fill="#92400e"/>
+  <path d="M 250 158 A 130 130 0 0 1 380 75" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="380,75 365,80 372,63" fill="#92400e"/>
+</svg>

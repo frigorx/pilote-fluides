@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-cmp" aria-describedby="d-cmp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cmp">Inspection et requalification périodiques : deux contrôles, deux profondeurs</title>
+  <desc id="d-cmp">Deux cases côte à côte. À gauche, l'inspection périodique : une case plus basse,
+    avec une loupe, pour un contrôle visuel et fonctionnel. À droite, la requalification périodique :
+    une case plus haute, avec une jauge de pression, pour une remise à l'épreuve plus approfondie.
+    Une étiquette entre les deux cases indique que la requalification est plus poussée. Une bande en
+    bas précise que l'une ne remplace pas l'autre : chacune a son propre rythme, fixé par la
+    réglementation en vigueur.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .pill { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Inspection périodique -->
+  <rect x="20" y="90" width="380" height="160" rx="14" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <rect x="20" y="90" width="380" height="42" rx="14" fill="#0c4a6e"/>
+  <rect x="20" y="118" width="380" height="14" fill="#0c4a6e"/>
+  <text class="ttl" x="210" y="118" text-anchor="middle">INSPECTION PÉRIODIQUE</text>
+  <circle cx="210" cy="172" r="18" fill="none" stroke="#0c4a6e" stroke-width="4"/>
+  <line x1="223" y1="185" x2="240" y2="202" stroke="#0c4a6e" stroke-width="4" stroke-linecap="round"/>
+  <text class="lbl" x="210" y="224" text-anchor="middle">contrôle visuel et fonctionnel</text>
+
+  <!-- Requalification périodique : case plus haute -->
+  <rect x="500" y="40" width="380" height="240" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="500" y="40" width="380" height="42" rx="14" fill="#1b3a63"/>
+  <rect x="500" y="68" width="380" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="690" y="68" text-anchor="middle">REQUALIFICATION PÉRIODIQUE</text>
+  <circle cx="690" cy="140" r="26" fill="none" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="690" y1="140" x2="705" y2="118" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>
+  <line x1="664" y1="140" x2="716" y2="140" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="690" y="192" text-anchor="middle">remise à l'épreuve —</text>
+  <text class="lbl" x="690" y="214" text-anchor="middle">contrôle plus approfondi</text>
+  <text class="lbl" x="690" y="244" text-anchor="middle">qu'une inspection courante</text>
+
+  <!-- Étiquette entre les deux -->
+  <rect x="405" y="146" width="90" height="48" rx="10" fill="#eaf2f6" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="pill" x="450" y="166" text-anchor="middle" fill="#5a6b7d">plus</text>
+  <text class="pill" x="450" y="184" text-anchor="middle" fill="#5a6b7d">poussée</text>
+
+  <!-- Bande du bas -->
+  <rect x="20" y="304" width="860" height="56" rx="14" fill="#eaf2f6" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="328" text-anchor="middle">L'une ne remplace pas l'autre : chacune a son rythme propre,</text>
+  <text class="band" x="450" y="350" text-anchor="middle">fixé par la réglementation en vigueur</text>
+</svg>

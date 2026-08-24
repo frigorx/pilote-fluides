@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-de" aria-describedby="d-de" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-de">Deux impacts, deux échelles différentes : l'ODP et le PRP</title>
+  <desc id="d-de">Deux cartes côte à côte. À gauche, l'ODP : le potentiel de destruction de l'ozone,
+    illustré par une couche d'ozone entamée. À droite, le PRP : le pouvoir de réchauffement
+    planétaire, illustré par une flèche de chaleur retenue dans l'atmosphère. Entre les deux, un
+    signe « différent de » : ce sont deux mécanismes indépendants, mesurés par deux échelles qui
+    n'ont rien à voir l'une avec l'autre. En bas, la phrase fausse la plus répandue du métier est
+    barrée : « il ne touche pas l'ozone donc il est propre ».</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#047857; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .neq { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:34px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .faux{ font-size:16px; fill:#c0392b; font-style:italic; }
+  </style>
+
+  <!-- ODP -->
+  <rect x="20" y="20" width="380" height="176" rx="14" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <rect x="20" y="20" width="380" height="42" rx="14" fill="#047857"/>
+  <rect x="20" y="48" width="380" height="14" fill="#047857"/>
+  <text class="ttl" x="210" y="48" text-anchor="middle">ODP — L'OZONE</text>
+  <!-- couche d'ozone entamée -->
+  <path d="M60,110 Q210,86 360,110" fill="none" stroke="#5a6b7d" stroke-width="6" stroke-dasharray="14 8"/>
+  <path d="M190,104 L230,116" stroke="#c0392b" stroke-width="5"/>
+  <text class="qui" x="210" y="150" text-anchor="middle">Détruit l'ozone</text>
+  <text class="lbl" x="210" y="176" text-anchor="middle">molécule avec chlore ou brome</text>
+
+  <text class="neq" x="450" y="120" text-anchor="middle">≠</text>
+
+  <!-- PRP -->
+  <rect x="500" y="20" width="380" height="176" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="500" y="20" width="380" height="42" rx="14" fill="#1b3a63"/>
+  <rect x="500" y="48" width="380" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="690" y="48" text-anchor="middle">PRP — LE CLIMAT</text>
+  <path d="M650,120 q20,-30 40,0 q20,-30 40,0" fill="none" stroke="#c0392b" stroke-width="5"/>
+  <text class="qui" x="690" y="150" text-anchor="middle" fill="#1b3a63">Retient la chaleur</text>
+  <text class="lbl" x="690" y="176" text-anchor="middle">quel que soit son ODP</text>
+
+  <rect x="20" y="224" width="860" height="42" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="250" text-anchor="middle">Deux mécanismes, deux échelles — l'un ne dit rien de l'autre</text>
+
+  <text class="faux" x="450" y="298" text-anchor="middle">« Il ne touche pas l'ozone donc il est propre »</text>
+  <line x1="248" y1="293" x2="652" y2="293" stroke="#c0392b" stroke-width="2.5"/>
+  <text class="lbl" x="450" y="322" text-anchor="middle">Un ODP nul ne dit rien du PRP : les deux se lisent séparément.</text>
+</svg>

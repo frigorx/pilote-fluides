@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-ac" aria-describedby="d-ac" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ac">Ce que ça change pour le client : une aide sur le coût des travaux</title>
+  <desc id="d-ac">Une pompe à chaleur stylisée est installée devant une maison. À côté, une
+    étiquette de prix est représentée à moitié barrée, avec une portion réduite en couleur : le
+    montant restant à la charge du client, plus petit que le prix initial. La mention « aide du
+    vendeur d'énergie, sans valeur chiffrée » accompagne le schéma.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:15px; fill:#1e7e54; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Une aide qui réduit le reste à charge</text>
+
+  <polygon points="90,190 190,120 290,190" fill="none" stroke="#10233c" stroke-width="3"/>
+  <rect x="110" y="190" width="160" height="100" fill="none" stroke="#10233c" stroke-width="3"/>
+  <rect x="150" y="220" width="80" height="70" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="175" cy="248" r="12" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <circle cx="205" cy="248" r="12" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+
+  <!-- prix : barre initiale et reste à charge -->
+  <rect x="400" y="90" width="120" height="220" rx="10" fill="#eef1f4" stroke="#98a6b3" stroke-width="2.5"/>
+  <rect x="400" y="90" width="120" height="140" fill="#fbe7e4" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="400" y="230" width="120" height="80" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2.5"/>
+  <text class="lbl" x="460" y="330" text-anchor="middle">prix des travaux</text>
+
+  <path d="M 400 160 C 340 145, 300 145, 260 145" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="lbl" x="330" y="130" text-anchor="middle" font-size="13" fill="#c0392b">montant initial</text>
+
+  <rect x="560" y="130" width="290" height="140" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <text class="foc" x="705" y="170" text-anchor="middle">aide du vendeur</text>
+  <text class="foc" x="705" y="192" text-anchor="middle">d'énergie</text>
+  <text class="lbl" x="705" y="225" text-anchor="middle">réduit le reste</text>
+  <text class="lbl" x="705" y="245" text-anchor="middle">à charge du client</text>
+</svg>

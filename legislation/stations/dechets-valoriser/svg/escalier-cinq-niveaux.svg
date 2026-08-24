@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img"
+     aria-labelledby="t-esc" aria-describedby="d-esc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-esc">L'escalier des cinq niveaux de traitement d'un déchet</title>
+  <desc id="d-esc">Cinq marches empilées, la plus large en haut et la plus étroite en bas, dans
+    l'ordre de préférence décroissant. En haut, la plus large : prévention, éviter le déchet.
+    Puis réemploi, remettre en service tel quel. Puis recyclage, transformer en matière première.
+    Puis valorisation énergétique, en tirer une énergie. En bas, la plus étroite : élimination,
+    dernier recours. Une flèche verticale à gauche descend de « le plus souhaitable » en haut à
+    « le moins souhaitable » en bas.</desc>
+  <style>
+    .marche { fill:#fffdf8; stroke:#57534e; stroke-width:3; }
+    .num   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .sub   { font-size:15px; fill:#5a6b7d; }
+    .rep   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px;
+             fill:#5a6b7d; text-transform:uppercase; letter-spacing:.04em; }
+  </style>
+
+  <!-- flèche verticale d'ordre, à gauche des marches -->
+  <line x1="20" y1="55" x2="20" y2="410" stroke="#5a6b7d" stroke-width="3"/>
+  <polygon points="20,420 12,404 28,404" fill="#5a6b7d"/>
+
+  <text class="rep" x="34" y="40" text-anchor="start">Le plus souhaitable</text>
+  <text class="rep" x="34" y="452" text-anchor="start">Le moins souhaitable</text>
+
+  <!-- Marche 1 — Prévention (820 large) -->
+  <rect class="marche" x="40" y="50" width="820" height="62" rx="10"/>
+  <text class="num" x="450" y="76" text-anchor="middle">1 — PRÉVENTION</text>
+  <text class="sub" x="450" y="98" text-anchor="middle">éviter que le déchet soit produit</text>
+
+  <!-- Marche 2 — Réemploi (680 large) -->
+  <rect class="marche" x="110" y="126" width="680" height="62" rx="10"/>
+  <text class="num" x="450" y="152" text-anchor="middle">2 — RÉEMPLOI</text>
+  <text class="sub" x="450" y="174" text-anchor="middle">remettre en service tel quel</text>
+
+  <!-- Marche 3 — Recyclage (540 large) -->
+  <rect class="marche" x="180" y="202" width="540" height="62" rx="10"/>
+  <text class="num" x="450" y="228" text-anchor="middle">3 — RECYCLAGE</text>
+  <text class="sub" x="450" y="250" text-anchor="middle">transformer en matière première</text>
+
+  <!-- Marche 4 — Valorisation énergétique (400 large) -->
+  <rect class="marche" x="250" y="278" width="400" height="62" rx="10"/>
+  <text class="num" x="450" y="304" text-anchor="middle">4 — VALORISATION ÉNERGÉTIQUE</text>
+  <text class="sub" x="450" y="326" text-anchor="middle">en tirer une énergie</text>
+
+  <!-- Marche 5 — Élimination (260 large) -->
+  <rect class="marche" x="320" y="354" width="260" height="62" rx="10"/>
+  <text class="num" x="450" y="380" text-anchor="middle">5 — ÉLIMINATION</text>
+  <text class="sub" x="450" y="402" text-anchor="middle">dernier recours</text>
+
+</svg>

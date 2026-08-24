@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-ag" aria-describedby="d-ag" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ag">Lire l'étiquette : sept lettres de A à G</title>
+  <desc id="d-ag">Sept bandes horizontales empilées, chacune plus longue que la précédente, de
+    haut en bas. Chaque bande porte une lettre, de A en haut à G en bas, et un mot : A, très
+    performant ; B ; C ; D ; E ; F ; G en bas, très peu performant. La longueur croissante des
+    bandes porte l'information autant que la teinte, qui passe du plus clair au plus soutenu.</desc>
+  <style>
+    .ltr { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .lbl { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ltr" x="450" y="26" text-anchor="middle" fill="#10233c" font-size="18">De A, très performant, à G, très peu performant</text>
+
+  <rect x="120" y="45"  width="140" height="34" fill="#1e7e54"/>
+  <text class="ltr" x="140" y="68">A</text>
+  <text class="lbl" x="275" y="68">très performant</text>
+
+  <rect x="120" y="82"  width="200" height="34" fill="#3f9d6e"/>
+  <text class="ltr" x="140" y="105">B</text>
+  <text class="lbl" x="335" y="105">performant</text>
+
+  <rect x="120" y="119" width="260" height="34" fill="#8fbf5a"/>
+  <text class="ltr" x="140" y="142">C</text>
+  <text class="lbl" x="395" y="142">plutôt performant</text>
+
+  <rect x="120" y="156" width="320" height="34" fill="#e0c23c"/>
+  <text class="ltr" x="140" y="179" fill="#10233c">D</text>
+  <text class="lbl" x="455" y="179">moyen</text>
+
+  <rect x="120" y="193" width="380" height="34" fill="#e2953f"/>
+  <text class="ltr" x="140" y="216">E</text>
+  <text class="lbl" x="515" y="216">peu performant</text>
+
+  <rect x="120" y="230" width="440" height="34" fill="#c0392b"/>
+  <text class="ltr" x="140" y="253">F</text>
+  <text class="lbl" x="575" y="253">très peu performant</text>
+
+  <rect x="120" y="267" width="500" height="34" fill="#8b1e14"/>
+  <text class="ltr" x="140" y="290">G</text>
+  <text class="lbl" x="635" y="290">extrêmement peu performant</text>
+</svg>

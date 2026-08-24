@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-oi" aria-describedby="d-oi" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-oi">Le DPE déclenche une obligation d'information</title>
+  <desc id="d-oi">Un panneau « à vendre / à louer » planté devant une maison porte l'étiquette du
+    DPE affichée dessus. Une flèche relie ce panneau à un document remis, avec la mention « fourni
+    à l'acheteur ou au locataire, avant la signature ». Le message : l'étiquette doit être visible
+    dès l'annonce, pas seulement révélée plus tard.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:15px; fill:#92400e; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Visible dès l'annonce, remis avant la signature</text>
+
+  <polygon points="130,200 220,130 310,200" fill="none" stroke="#10233c" stroke-width="3"/>
+  <rect x="150" y="200" width="140" height="90" fill="none" stroke="#10233c" stroke-width="3"/>
+
+  <!-- panneau à vendre -->
+  <rect x="60" y="170" width="80" height="55" rx="6" fill="#fffdf8" stroke="#92400e" stroke-width="2.5"/>
+  <text class="lbl" x="100" y="192" text-anchor="middle" font-size="13">À VENDRE</text>
+  <rect x="90" y="205" width="20" height="14" fill="#8fbf5a"/>
+  <text class="lbl" x="100" y="216" text-anchor="middle" font-size="11" fill="#10233c">C</text>
+  <line x1="100" y1="225" x2="100" y2="255" stroke="#5a6b7d" stroke-width="4"/>
+
+  <path d="M 330 230 C 420 250, 470 250, 540 230" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="540,230 522,224 526,240" fill="#92400e"/>
+
+  <rect x="560" y="150" width="260" height="130" rx="12" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <rect x="600" y="175" width="90" height="115" fill="#fffdf8" stroke="#92400e" stroke-width="2"/>
+  <line x1="612" y1="195" x2="678" y2="195" stroke="#92400e" stroke-width="2"/>
+  <line x1="612" y1="212" x2="678" y2="212" stroke="#92400e" stroke-width="2"/>
+  <line x1="612" y1="229" x2="678" y2="229" stroke="#92400e" stroke-width="2"/>
+  <text class="foc" x="760" y="200" text-anchor="middle">fourni</text>
+  <text class="lbl" x="760" y="225" text-anchor="middle">avant la</text>
+  <text class="lbl" x="760" y="245" text-anchor="middle">signature</text>
+</svg>

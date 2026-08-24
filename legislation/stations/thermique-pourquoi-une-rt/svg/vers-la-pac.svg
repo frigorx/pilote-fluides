@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-pac" aria-describedby="d-pac" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pac">Pourquoi l'indicateur carbone pousse vers la pompe à chaleur</title>
+  <desc id="d-pac">Deux systèmes de chauffage comparés. À gauche, une flamme stylisée représentant
+    une énergie carbonée, avec la mention « pénalisée par l'indicateur carbone de la RE2020 ».
+    À droite, un bloc extérieur de pompe à chaleur stylisé, avec la mention « favorisée : peu de
+    carbone à l'usage ». Une balance simplifiée entre les deux penche du côté de la pompe à
+    chaleur.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .neg { font-size:15px; fill:#c0392b; font-weight:bold; }
+    .pos { font-size:15px; fill:#1e7e54; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">L'indicateur carbone fait pencher le choix</text>
+
+  <!-- balance -->
+  <line x1="450" y1="55" x2="450" y2="90" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="240" y1="70" x2="660" y2="115" stroke="#5a6b7d" stroke-width="3"/>
+  <circle cx="450" cy="70" r="6" fill="#5a6b7d"/>
+
+  <!-- côté carboné, plateau bas -->
+  <line x1="240" y1="70" x2="240" y2="130" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="180" y="130" width="120" height="8" rx="4" fill="#c0392b"/>
+
+  <!-- côté PAC, plateau haut -->
+  <line x1="660" y1="115" x2="660" y2="150" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="600" y="150" width="120" height="8" rx="4" fill="#1e7e54"/>
+
+  <!-- flamme -->
+  <rect x="130" y="180" width="220" height="130" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="2.5"/>
+  <path d="M 240 200 C 220 225, 218 245, 240 260 C 262 245, 260 225, 240 200 Z" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <text class="neg" x="240" y="288" text-anchor="middle">pénalisée par</text>
+  <text class="neg" x="240" y="305" text-anchor="middle">l'indicateur carbone</text>
+
+  <!-- PAC -->
+  <rect x="550" y="180" width="220" height="130" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2.5"/>
+  <rect x="620" y="215" width="80" height="55" rx="6" fill="none" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="660" cy="242" r="20" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <line x1="660" y1="228" x2="660" y2="256" stroke="#1e7e54" stroke-width="2"/>
+  <line x1="646" y1="242" x2="674" y2="242" stroke="#1e7e54" stroke-width="2"/>
+  <text class="pos" x="660" y="300" text-anchor="middle">favorisée : peu de</text>
+  <text class="pos" x="660" y="317" text-anchor="middle">carbone à l'usage</text>
+</svg>

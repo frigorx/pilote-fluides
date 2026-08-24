@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img"
+     aria-labelledby="t-acc" aria-describedby="d-acc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-acc">Ce qui accompagne un équipement sous pression conforme</title>
+  <desc id="d-acc">Un équipement sous pression, représenté au centre par une silhouette simple, est
+    relié par quatre traits fins à quatre étiquettes disposées autour de lui, sans jamais chevaucher
+    son dessin : le marquage CE apposé sur l'équipement, la déclaration de conformité établie par le
+    fabricant, la notice d'instructions qui l'accompagne, et ses accessoires de sécurité qui le
+    protègent contre un dépassement de sa PS.</desc>
+  <style>
+    .fam  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#0c4a6e; }
+    .lbl  { font-size:14.5px; fill:#10233c; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- L'équipement, au centre -->
+  <rect x="390" y="140" width="120" height="140" rx="18" fill="#fffdf8" stroke="#10233c" stroke-width="3"/>
+  <rect x="410" y="120" width="80" height="24" rx="6" fill="#fffdf8" stroke="#10233c" stroke-width="3"/>
+  <text class="lbl" x="450" y="216" text-anchor="middle" font-weight="bold">équipement</text>
+
+  <!-- Traits vers les 4 étiquettes -->
+  <line x1="410" y1="150" x2="220" y2="70"  stroke="#8fa0b0" stroke-width="2"/>
+  <line x1="490" y1="150" x2="680" y2="70"  stroke="#8fa0b0" stroke-width="2"/>
+  <line x1="410" y1="270" x2="220" y2="308" stroke="#8fa0b0" stroke-width="2"/>
+  <line x1="490" y1="270" x2="680" y2="308" stroke="#8fa0b0" stroke-width="2"/>
+
+  <!-- Étiquette 1 : marquage CE -->
+  <rect x="60" y="30" width="240" height="70" rx="10" fill="#fffdf8" stroke="#0c4a6e" stroke-width="2.5"/>
+  <text class="fam" x="180" y="56" text-anchor="middle">Marquage CE</text>
+  <text class="lbl" x="180" y="78" text-anchor="middle">apposé sur l'équipement</text>
+
+  <!-- Étiquette 2 : déclaration de conformité -->
+  <rect x="600" y="30" width="240" height="70" rx="10" fill="#fffdf8" stroke="#0c4a6e" stroke-width="2.5"/>
+  <text class="fam" x="720" y="56" text-anchor="middle" font-size="15">Déclaration de conformité</text>
+  <text class="lbl" x="720" y="78" text-anchor="middle">établie par le fabricant</text>
+
+  <!-- Étiquette 3 : notice d'instructions -->
+  <rect x="60" y="270" width="240" height="70" rx="10" fill="#fffdf8" stroke="#0c4a6e" stroke-width="2.5"/>
+  <text class="fam" x="180" y="296" text-anchor="middle">Notice d'instructions</text>
+  <text class="lbl" x="180" y="318" text-anchor="middle">fournie avec l'équipement</text>
+
+  <!-- Étiquette 4 : accessoires de sécurité -->
+  <rect x="600" y="270" width="240" height="70" rx="10" fill="#fffdf8" stroke="#0c4a6e" stroke-width="2.5"/>
+  <text class="fam" x="720" y="296" text-anchor="middle" font-size="15">Accessoires de sécurité</text>
+  <text class="lbl" x="720" y="318" text-anchor="middle">protègent contre un dépassement de la PS</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-4sit" aria-describedby="d-4sit" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-4sit">Quatre situations de terrain, quatre réponses</title>
+  <desc id="d-4sit">Quatre cartes numérotées de 1 à 4, disposées en deux lignes de deux. Carte 1 :
+    un appareil bien conçu, qui dure, se répare et consomme peu, pèse souvent moins lourd sur sa
+    vie entière. Carte 2 : un boîtier scellé, sans vis visibles, est peu réparable. Carte 3 :
+    l'étiquette énergie collée sur l'appareil se lit avant de l'acheter. Carte 4 : un prix
+    d'achat très bas avec une mauvaise classe énergie peut faire apparaître un surcoût plus
+    tard.</desc>
+  <style>
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .ti  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lb  { font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <!-- carte 1 -->
+  <rect x="30" y="20" width="410" height="170" rx="12" fill="#fffdf8" stroke="#d6dee7" stroke-width="1.5"/>
+  <rect x="30" y="20" width="6" height="170" fill="#047857"/>
+  <circle cx="66" cy="56" r="18" fill="#047857"/>
+  <text class="num" x="66" y="63" text-anchor="middle">1</text>
+  <text class="ti" x="98" y="52">Appareil bien conçu :</text>
+  <text class="ti" x="98" y="72">dure, se répare, consomme peu</text>
+  <text class="lb" x="98" y="105">Il pèse souvent moins lourd</text>
+  <text class="lb" x="98" y="123">sur sa vie entière, même s'il</text>
+  <text class="lb" x="98" y="141">coûte un peu plus à l'achat.</text>
+
+  <!-- carte 2 -->
+  <rect x="460" y="20" width="410" height="170" rx="12" fill="#fffdf8" stroke="#d6dee7" stroke-width="1.5"/>
+  <rect x="460" y="20" width="6" height="170" fill="#c0392b"/>
+  <circle cx="496" cy="56" r="18" fill="#c0392b"/>
+  <text class="num" x="496" y="63" text-anchor="middle">2</text>
+  <text class="ti" x="528" y="52">Boîtier scellé,</text>
+  <text class="ti" x="528" y="72">sans vis visibles</text>
+  <text class="lb" x="528" y="105">Appareil peu réparable :</text>
+  <text class="lb" x="528" y="123">pièces détachées difficiles</text>
+  <text class="lb" x="528" y="141">à obtenir, voire indisponibles.</text>
+
+  <!-- carte 3 -->
+  <rect x="30" y="210" width="410" height="170" rx="12" fill="#fffdf8" stroke="#d6dee7" stroke-width="1.5"/>
+  <rect x="30" y="210" width="6" height="170" fill="#1b3a63"/>
+  <circle cx="66" cy="246" r="18" fill="#1b3a63"/>
+  <text class="num" x="66" y="253" text-anchor="middle">3</text>
+  <text class="ti" x="98" y="242">Étiquette énergie collée</text>
+  <text class="ti" x="98" y="262">sur l'appareil</text>
+  <text class="lb" x="98" y="295">Elle donne la classe</text>
+  <text class="lb" x="98" y="313">d'efficacité : à lire avant</text>
+  <text class="lb" x="98" y="331">d'acheter, pas après.</text>
+
+  <!-- carte 4 -->
+  <rect x="460" y="210" width="410" height="170" rx="12" fill="#fffdf8" stroke="#d6dee7" stroke-width="1.5"/>
+  <rect x="460" y="210" width="6" height="170" fill="#b06a00"/>
+  <circle cx="496" cy="246" r="18" fill="#b06a00"/>
+  <text class="num" x="496" y="253" text-anchor="middle">4</text>
+  <text class="ti" x="528" y="242">Prix d'achat très bas,</text>
+  <text class="ti" x="528" y="262">mauvaise classe énergie</text>
+  <text class="lb" x="528" y="295">Le surcoût peut apparaître</text>
+  <text class="lb" x="528" y="313">plus tard : électricité et</text>
+  <text class="lb" x="528" y="331">impact environnemental.</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img"
+     aria-labelledby="t-mp" aria-describedby="d-mp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-mp">Le mécanisme du PRP : une molécule retient plus ou moins la chaleur</title>
+  <desc id="d-mp">Le soleil en haut envoie des rayons vers la terre en bas. Une molécule de fluide,
+    représentée au centre dans l'atmosphère, renvoie une partie de la chaleur vers le sol au lieu
+    de la laisser s'échapper : des flèches ondulées rebondissent sur elle. Une échelle en bas
+    compare plusieurs fluides à une règle commune : le CO2, fixé à la valeur 1, sert de référence ;
+    chaque fluide reçoit un nombre qui dit combien de fois plus il retient la chaleur que le CO2.
+    La légende précise que l'échelle du PRP ne dépend jamais de l'ODP.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Comment une molécule retient la chaleur</text>
+
+  <!-- soleil -->
+  <circle cx="450" cy="70" r="20" fill="#b06a00"/>
+  <path d="M450,90 L410,140 M450,90 L490,140 M450,90 L450,150" stroke="#b06a00" stroke-width="3" fill="none"/>
+
+  <!-- molécule dans l'atmosphère -->
+  <rect x="20" y="150" width="860" height="90" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <circle cx="450" cy="195" r="18" fill="#1b3a63"/>
+  <path d="M420,180 q10,20 0,30 M480,180 q-10,20 0,30" stroke="#c0392b" stroke-width="3" fill="none"/>
+  <text class="qui" x="450" y="270" text-anchor="middle">La molécule renvoie une partie de la chaleur vers le sol</text>
+
+  <!-- échelle -->
+  <rect x="20" y="296" width="860" height="48" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text class="band" x="450" y="326" text-anchor="middle" font-weight="bold">PRP : combien de fois plus qu'un CO₂ (référence = 1) — indépendant de l'ODP</text>
+</svg>

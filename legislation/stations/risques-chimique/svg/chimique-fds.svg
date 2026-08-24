@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-1" aria-describedby="d-1" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-1">La fiche de données de sécurité, posée à côté du bidon</title>
+  <desc id="d-1">Un bidon schématique est posé à côté d'une fiche. La fiche porte trois zones nommées :
+    dangers, précautions d'emploi, conduite à tenir. Une loupe orange survole la fiche, rappelant qu'elle
+    se lit avant l'usage du produit.</desc>
+  <style>
+    .fiche{ fill:#fffdf8; stroke:#d6dee7; stroke-width:2; }
+    .zone{ fill:#eef3f9; stroke:#2f5689; stroke-width:1.5; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+  </style>
+
+  <!-- Bidon -->
+  <rect x="60" y="140" width="120" height="140" rx="10" fill="#dbeafe" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="95" y="110" width="50" height="30" rx="6" fill="#dbeafe" stroke="#1b3a63" stroke-width="2.5"/>
+  <text x="120" y="240" text-anchor="middle" font-size="14" fill="#5a6b7d">produit</text>
+
+  <!-- Fiche -->
+  <rect class="fiche" x="260" y="40" width="580" height="260" rx="14"/>
+  <text x="550" y="76" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="19" fill="#10233c">Fiche de données de sécurité</text>
+
+  <rect class="zone" x="290" y="100" width="160" height="60" rx="8"/>
+  <text class="lbl" x="370" y="135" text-anchor="middle">Dangers</text>
+
+  <rect class="zone" x="470" y="100" width="160" height="60" rx="8"/>
+  <text class="lbl" x="550" y="127" text-anchor="middle">Précautions</text>
+  <text class="lbl" x="550" y="145" text-anchor="middle">d'emploi</text>
+
+  <rect class="zone" x="650" y="100" width="160" height="60" rx="8"/>
+  <text class="lbl" x="730" y="127" text-anchor="middle">Conduite à</text>
+  <text class="lbl" x="730" y="145" text-anchor="middle">tenir</text>
+
+  <!-- Loupe -->
+  <circle cx="640" cy="220" r="28" fill="none" stroke="#c2410c" stroke-width="6"/>
+  <line x1="660" y1="240" x2="690" y2="270" stroke="#c2410c" stroke-width="7" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-champ" aria-describedby="d-champ" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-champ">Le champ de la DESP : des équipements croisés au quotidien</title>
+  <desc id="d-champ">Trois équipements dessinés en schéma : une bouteille de fluide frigorigène, un
+    réservoir tampon (ou bouteille anti-coup de bélier), et un séparateur d'huile. Une flèche part
+    des trois vers un badge « DESP ». Une bande en bas indique qu'un équipement entre dans le champ
+    de la DESP au-delà d'un seuil de pression maximale admissible, la PS, sans indiquer de valeur.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .badge{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:30px; fill:#0c4a6e; }
+    .sub  { font-size:15px; fill:#5a6b7d; }
+    .band { font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Carte 1 : bouteille de fluide frigorigène -->
+  <rect x="20" y="20" width="260" height="200" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="120" y="45" width="60" height="90" rx="10" fill="#1b3a63"/>
+  <ellipse cx="150" cy="45" rx="30" ry="9" fill="#1b3a63"/>
+  <rect x="142" y="25" width="16" height="20" fill="#5a6b7d"/>
+  <text class="ttl" x="150" y="165" text-anchor="middle">Bouteille de fluide</text>
+  <text class="ttl" x="150" y="184" text-anchor="middle">frigorigène</text>
+
+  <!-- Carte 2 : réservoir tampon / anti-coup de bélier -->
+  <rect x="320" y="20" width="260" height="200" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="410" y="55" width="80" height="70" rx="14" fill="#1b3a63"/>
+  <rect x="440" y="30" width="20" height="28" fill="#5a6b7d"/>
+  <text class="ttl" x="450" y="165" text-anchor="middle">Réservoir tampon,</text>
+  <text class="ttl" x="450" y="184" text-anchor="middle">bouteille anti-coup de bélier</text>
+
+  <!-- Carte 3 : séparateur d'huile -->
+  <rect x="620" y="20" width="260" height="200" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="715" y="45" width="70" height="95" rx="18" fill="#1b3a63"/>
+  <rect x="740" y="25" width="18" height="20" fill="#5a6b7d"/>
+  <line x1="715" y1="90" x2="645" y2="90" stroke="#5a6b7d" stroke-width="4"/>
+  <text class="ttl" x="750" y="165" text-anchor="middle">Séparateur d'huile</text>
+
+  <!-- Flèche vers le badge -->
+  <path d="M 450 230 L 450 265" stroke="#0c4a6e" stroke-width="4" fill="none" marker-end="url(#fl-champ)"/>
+  <defs>
+    <marker id="fl-champ" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0c4a6e"/>
+    </marker>
+  </defs>
+
+  <!-- Badge DESP -->
+  <rect x="300" y="270" width="300" height="80" rx="14" fill="#eef3f9" stroke="#0c4a6e" stroke-width="3"/>
+  <text class="badge" x="450" y="308" text-anchor="middle">DESP</text>
+  <text class="sub" x="450" y="332" text-anchor="middle">directive équipements sous pression</text>
+
+  <!-- Bande explicative -->
+  <rect x="20" y="368" width="860" height="42" rx="12" fill="#fbf1de" stroke="#b06a00" stroke-width="2"/>
+  <text class="band" x="450" y="394" text-anchor="middle">Un équipement entre dans son champ au-delà d'un seuil de pression maximale admissible (PS)</text>
+</svg>

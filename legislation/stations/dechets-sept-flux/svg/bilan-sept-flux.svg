@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" role="img"
+     aria-labelledby="t-bsf" aria-describedby="d-bsf" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bsf">Bilan : le réflexe, identifier la matière puis chercher sa benne</title>
+  <desc id="d-bsf">En haut, la formule du réflexe : identifier la matière, puis chercher la benne
+    qui lui correspond. En dessous, un établi résume les déchets d'un frigoriste — cuivre, cartons,
+    bois, isolant, gaines — chacun relié par une flèche courte à sa benne : métaux, papier-carton,
+    bois, tout-venant. À part, séparés par un trait pointillé rouge, les déchets dangereux — fluide
+    récupéré, huile usagée — rejoignent une filière à part, jamais une benne de tri classique.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; font-weight:bold; text-anchor:middle; }
+    .form{ font-family:Consolas,monospace; font-weight:bold; font-size:17px; fill:#10233c; text-anchor:middle; }
+  </style>
+
+  <!-- la formule du réflexe -->
+  <rect x="180" y="16" width="640" height="52" rx="14" fill="#f4f0ec" stroke="#57534e" stroke-width="3"/>
+  <text class="form" x="500" y="49">Identifier la matière → chercher sa benne</text>
+
+  <!-- l'établi -->
+  <rect x="30" y="140" width="700" height="16" rx="4" fill="#57534e"/>
+  <rect x="45" y="156" width="16" height="55" fill="#5a6b7d"/>
+  <rect x="700" y="156" width="16" height="55" fill="#5a6b7d"/>
+
+  <!-- déchets sur l'établi -->
+  <g>
+    <rect x="70" y="100" width="10" height="28" rx="4" fill="#b06a00"/>
+    <rect x="85" y="92" width="10" height="36" rx="4" fill="#b06a00"/>
+    <text class="lbl" x="90" y="85" font-size="14">Cuivre</text>
+  </g>
+  <g>
+    <rect x="200" y="98" width="46" height="32" fill="none" stroke="#57534e" stroke-width="3"/>
+    <text class="lbl" x="223" y="85" font-size="14">Cartons</text>
+  </g>
+  <g>
+    <line x1="330" y1="112" x2="380" y2="112" stroke="#b06a00" stroke-width="6" stroke-linecap="round"/>
+    <text class="lbl" x="355" y="85" font-size="14">Bois</text>
+  </g>
+  <g>
+    <rect x="460" y="98" width="50" height="30" fill="#d6dee7" stroke="#5a6b7d" stroke-width="2"/>
+    <text class="lbl" x="485" y="85" font-size="14">Isolant</text>
+  </g>
+  <g>
+    <path d="M590,120 q10,-26 20,0 q10,-26 20,0" fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round"/>
+    <text class="lbl" x="620" y="85" font-size="14">Gaines</text>
+  </g>
+
+  <!-- flèches vers les bennes -->
+  <g stroke="#10233c" stroke-width="2.5" fill="none" marker-end="url(#f1)">
+    <line x1="90" y1="165" x2="95" y2="250"/>
+    <line x1="223" y1="165" x2="240" y2="250"/>
+    <line x1="355" y1="165" x2="360" y2="250"/>
+    <line x1="485" y1="165" x2="480" y2="250"/>
+    <line x1="620" y1="165" x2="600" y2="250"/>
+  </g>
+  <defs>
+    <marker id="f1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10233c"/>
+    </marker>
+  </defs>
+
+  <!-- bennes -->
+  <g>
+    <polygon points="60,260 130,260 122,340 68,340" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <text class="lbl" x="95" y="360" font-size="14">Métaux</text>
+  </g>
+  <g>
+    <polygon points="205,260 275,260 267,340 213,340" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <text class="lbl" x="240" y="360" font-size="14">Papier-carton</text>
+  </g>
+  <g>
+    <polygon points="325,260 395,260 387,340 333,340" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <text class="lbl" x="360" y="360" font-size="14">Bois</text>
+  </g>
+  <g>
+    <polygon points="445,260 515,260 507,340 453,340" fill="#fffdf8" stroke="#b06a00" stroke-width="3" stroke-dasharray="6 5"/>
+    <text class="lbl" x="480" y="360" font-size="14" fill="#b06a00">Tout-venant</text>
+  </g>
+
+  <!-- déchets dangereux, filière à part -->
+  <line x1="770" y1="60" x2="770" y2="400" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 6"/>
+  <text class="lbl" x="770" y="50" font-size="14" fill="#c0392b">à part</text>
+
+  <rect x="800" y="150" width="34" height="60" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="860" y="160" width="50" height="50" rx="6" fill="#fffdf8" stroke="#b06a00" stroke-width="3"/>
+  <text class="lbl" x="855" y="235" font-size="14">Fluide, huile</text>
+
+  <path d="M855,225 C855,255 855,270 855,290" fill="none" stroke="#c0392b" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#f2)"/>
+  <defs>
+    <marker id="f2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <rect x="800" y="300" width="110" height="60" rx="10" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <text class="lbl" x="855" y="326" font-size="14" fill="#c0392b">Filière à part</text>
+  <text class="lbl" x="855" y="346" font-size="14" fill="#c0392b">tracée</text>
+
+  <!-- bande finale -->
+  <rect x="20" y="390" width="960" height="56" rx="14" fill="#f4f0ec" stroke="#57534e" stroke-width="2"/>
+  <text class="lbl" x="500" y="415" font-size="15" font-weight="normal">Trier conserve la valeur d'une matière — les déchets dangereux</text>
+  <text class="lbl" x="500" y="435" font-size="15" font-weight="normal">ne rejoignent jamais une benne de tri classique.</text>
+</svg>

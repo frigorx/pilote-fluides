@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-res" aria-describedby="d-res" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-res">Sur le terrain : le réservoir en service depuis des années</title>
+  <desc id="d-res">Un schéma simplifié d'installation frigorifique : compresseur, condenseur et
+    évaporateur reliés par des lignes, avec un réservoir et un séparateur d'huile mis en évidence par
+    un encadré en pointillé. À côté, un technicien en intervention de maintenance, avec une bulle de
+    texte posée à distance des tracés, qui pose la question : suivi à jour ? Le texte rappelle qu'un
+    tel réservoir reste, lui aussi, un équipement sous pression suivi dans le temps.</desc>
+  <style>
+    .lbl    { font-size:15px; fill:#10233c; }
+    .lblw   { font-size:15px; fill:#fffdf8; font-weight:bold; }
+    .encTtl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#0c4a6e; }
+    .note   { font-size:15px; fill:#5a6b7d; font-style:italic; }
+    .bulle  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Installation frigorifique simplifiée -->
+  <rect x="40" y="60" width="120" height="70" rx="10" fill="#1b3a63"/>
+  <text class="lblw" x="100" y="100" text-anchor="middle">Compresseur</text>
+
+  <line x1="160" y1="95" x2="260" y2="95" stroke="#5a6b7d" stroke-width="5"/>
+
+  <rect x="260" y="60" width="120" height="70" rx="10" fill="#1b3a63"/>
+  <text class="lblw" x="320" y="100" text-anchor="middle">Condenseur</text>
+
+  <line x1="320" y1="130" x2="320" y2="220" stroke="#5a6b7d" stroke-width="5"/>
+  <line x1="320" y1="220" x2="100" y2="220" stroke="#5a6b7d" stroke-width="5"/>
+  <line x1="100" y1="220" x2="100" y2="130" stroke="#5a6b7d" stroke-width="5"/>
+
+  <rect x="40" y="250" width="120" height="70" rx="10" fill="#1b3a63"/>
+  <text class="lblw" x="100" y="290" text-anchor="middle">Évaporateur</text>
+
+  <line x1="100" y1="250" x2="100" y2="130" stroke="#5a6b7d" stroke-width="5"/>
+
+  <!-- Réservoir / séparateur d'huile mis en évidence -->
+  <rect x="210" y="235" width="170" height="100" rx="10" fill="none" stroke="#0c4a6e" stroke-width="4" stroke-dasharray="10 8"/>
+  <rect x="225" y="250" width="60" height="70" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="300" y="255" width="50" height="60" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="encTtl" x="295" y="228" text-anchor="middle">réservoir / séparateur d'huile</text>
+
+  <!-- Technicien -->
+  <circle cx="620" cy="150" r="22" fill="#fffdf8" stroke="#10233c" stroke-width="4"/>
+  <line x1="620" y1="172" x2="620" y2="240" stroke="#10233c" stroke-width="6" stroke-linecap="round"/>
+  <line x1="620" y1="195" x2="580" y2="220" stroke="#10233c" stroke-width="6" stroke-linecap="round"/>
+  <line x1="620" y1="195" x2="660" y2="220" stroke="#10233c" stroke-width="6" stroke-linecap="round"/>
+  <line x1="620" y1="240" x2="595" y2="290" stroke="#10233c" stroke-width="6" stroke-linecap="round"/>
+  <line x1="620" y1="240" x2="645" y2="290" stroke="#10233c" stroke-width="6" stroke-linecap="round"/>
+  <text class="note" x="620" y="320" text-anchor="middle">maintenance</text>
+
+  <!-- Bulle de texte -->
+  <rect x="590" y="30" width="220" height="70" rx="16" fill="#eaf2f6" stroke="#0c4a6e" stroke-width="2"/>
+  <polygon points="640,100 660,100 630,124" fill="#eaf2f6" stroke="#0c4a6e" stroke-width="2"/>
+  <text class="bulle" x="700" y="60" text-anchor="middle">Ce réservoir a-t-il</text>
+  <text class="bulle" x="700" y="82" text-anchor="middle">un suivi à jour ?</text>
+</svg>

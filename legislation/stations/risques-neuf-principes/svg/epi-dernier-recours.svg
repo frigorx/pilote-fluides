@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-edr" aria-describedby="d-edr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-edr">L'équipement de protection individuelle, dernier maillon de la chaîne</title>
+  <desc id="d-edr">Une chaîne de trois maillons reliés par des flèches. Premier maillon : « ce qui a déjà
+    été fait », regroupant éviter le risque et la protection collective. Deuxième maillon, principe 9 :
+    « instructions données », une icône de formation. Troisième maillon, plus petit que les deux
+    précédents et tracé en orange avec un contour tireté : « équipement individuel, dernier maillon »,
+    contenant les icônes d'un gant, d'un casque et d'un harnais. Sous ce troisième maillon, trois
+    étiquettes : personnel, vérifié avant chaque usage, remplacé s'il est abîmé. Une phrase au-dessus du
+    troisième maillon dit qu'un équipement de protection individuelle n'est pas une solution, mais l'aveu
+    que le reste n'a pas suffi ou n'était pas possible.</desc>
+  <style>
+    .tit  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#1b3a63; }
+    .tit-last { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#c2410c; }
+    .lbl  { font-size:14px; fill:#10233c; }
+    .tag  { font-size:13px; fill:#5a6b7d; }
+    .aveu { font-size:15px; fill:#c2410c; font-weight:bold; }
+  </style>
+
+  <!-- maillon 1 -->
+  <rect x="20" y="140" width="230" height="110" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="2.5"/>
+  <text class="tit" x="135" y="166" text-anchor="middle" fill="#1e7e54">CE QUI A DÉJÀ ÉTÉ FAIT</text>
+  <text class="lbl" x="135" y="192" text-anchor="middle">éviter le risque,</text>
+  <text class="lbl" x="135" y="212" text-anchor="middle">protection collective</text>
+  <text class="lbl" x="135" y="234" text-anchor="middle">déjà posées</text>
+
+  <line x1="256" y1="195" x2="316" y2="195" stroke="#1b3a63" stroke-width="3" marker-end="url(#fr)"/>
+
+  <!-- maillon 2 : instructions, principe 9 -->
+  <rect x="322" y="140" width="230" height="110" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="tit" x="437" y="166" text-anchor="middle">INSTRUCTIONS DONNÉES</text>
+  <circle cx="400" cy="205" r="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <line x1="418" y1="198" x2="466" y2="198" stroke="#1b3a63" stroke-width="2"/>
+  <line x1="418" y1="208" x2="466" y2="208" stroke="#1b3a63" stroke-width="2"/>
+  <line x1="418" y1="218" x2="450" y2="218" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="437" y="240" text-anchor="middle">principe 9 — former avant le geste</text>
+
+  <line x1="558" y1="195" x2="618" y2="195" stroke="#1b3a63" stroke-width="3" marker-end="url(#fr)"/>
+
+  <!-- maillon 3 : EPI, plus petit, accent -->
+  <text class="aveu" x="770" y="90" text-anchor="middle">Un EPI n'est pas une solution :</text>
+  <text class="aveu" x="770" y="112" text-anchor="middle">c'est l'aveu que le reste n'a pas suffi</text>
+  <rect x="640" y="150" width="220" height="90" rx="14" fill="#fffdf8" stroke="#c2410c" stroke-width="3" stroke-dasharray="7,4"/>
+  <text class="tit-last" x="750" y="174" text-anchor="middle">EPI — DERNIER MAILLON</text>
+  <ellipse cx="680" cy="205" rx="14" ry="18" fill="#fff4e0" stroke="#c2410c" stroke-width="2"/>
+  <path d="M735 190 a15 15 0 0 1 30 0 v10 h-30 z" fill="#fff4e0" stroke="#c2410c" stroke-width="2"/>
+  <circle cx="810" cy="196" r="7" fill="#fff4e0" stroke="#c2410c" stroke-width="2"/>
+  <line x1="810" y1="203" x2="810" y2="222" stroke="#c2410c" stroke-width="2.5"/>
+  <line x1="797" y1="212" x2="823" y2="212" stroke="#c2410c" stroke-width="2.5"/>
+
+  <!-- étiquettes -->
+  <rect x="640" y="266" width="66" height="28" rx="8" fill="#fff4e0" stroke="#c2410c" stroke-width="1.5"/>
+  <text class="tag" x="673" y="284" text-anchor="middle">personnel</text>
+  <rect x="712" y="266" width="120" height="28" rx="8" fill="#fff4e0" stroke="#c2410c" stroke-width="1.5"/>
+  <text class="tag" x="772" y="284" text-anchor="middle">vérifié avant usage</text>
+  <rect x="640" y="300" width="192" height="28" rx="8" fill="#fff4e0" stroke="#c2410c" stroke-width="1.5"/>
+  <text class="tag" x="736" y="318" text-anchor="middle">remplacé s'il est abîmé</text>
+
+  <defs>
+    <marker id="fr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1b3a63"/>
+    </marker>
+  </defs>
+</svg>

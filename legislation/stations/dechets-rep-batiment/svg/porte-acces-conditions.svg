@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" role="img"
+     aria-labelledby="t-po" aria-describedby="d-po" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-po">La porte du point de reprise : gratuit, sous conditions</title>
+  <desc id="d-po">Une porte de point de reprise au centre. À gauche, une flèche pleine verte part
+    d'un déchet trié et correspondant à la filière, traverse la porte et débouche sur un accès marqué
+    d'une coche verte. À droite, une flèche tiretée rouge part d'un déchet mélangé ou hors périmètre
+    et s'arrête avant la porte, bloquée par une croix rouge : le refus.</desc>
+  <defs>
+    <marker id="fl-v2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e7e54"/>
+    </marker>
+    <marker id="fl-r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; text-anchor:middle; }
+    .lbl { font-size:15px; fill:#10233c; text-anchor:middle; }
+    .etat { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; text-anchor:middle; }
+  </style>
+
+  <text class="ttl" x="450" y="24">POINT DE REPRISE</text>
+  <rect x="405" y="35" width="90" height="190" rx="6" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="480" cy="130" r="5" fill="#1b3a63"/>
+
+  <!-- Chemin de gauche : accès -->
+  <rect x="30" y="70" width="220" height="110" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="140" y="115">Déchet trié et</text>
+  <text class="lbl" x="140" y="135">correspondant</text>
+  <text class="lbl" x="140" y="155">à la filière</text>
+
+  <line x1="255" y1="125" x2="400" y2="125" stroke="#1e7e54" stroke-width="5" marker-end="url(#fl-v2)"/>
+
+  <circle cx="520" cy="125" r="20" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2.5"/>
+  <path d="M511,125 l7,8 l14,-16" fill="none" stroke="#1e7e54" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="etat" x="520" y="172" fill="#1e7e54">ACCÈS</text>
+
+  <!-- Chemin de droite : refus -->
+  <rect x="650" y="70" width="220" height="110" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="8 6"/>
+  <text class="lbl" x="760" y="115">Déchet mélangé</text>
+  <text class="lbl" x="760" y="135">ou hors du</text>
+  <text class="lbl" x="760" y="155">périmètre</text>
+
+  <line x1="645" y1="125" x2="619" y2="125" stroke="#c0392b" stroke-width="5" stroke-dasharray="10 7" marker-end="url(#fl-r2)"/>
+
+  <circle cx="595" cy="125" r="20" fill="#fbe7e4" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="586" y1="116" x2="604" y2="134" stroke="#c0392b" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="604" y1="116" x2="586" y2="134" stroke="#c0392b" stroke-width="3.5" stroke-linecap="round"/>
+  <text class="etat" x="595" y="172" fill="#c0392b">REFUS</text>
+</svg>

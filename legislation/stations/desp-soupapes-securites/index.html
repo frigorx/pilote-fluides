@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Soupapes &amp; sécurités — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : les accessoires de sécurité des équipements sous pression — soupape de sûreté, pressostat de sécurité, disque de rupture — et l'ordre dans lequel ils protègent l'équipement.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/desp-soupapes-securites/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne « La DESP ».
+     Cinquième et dernière station de cette sous-ligne sur le plan du
+     réseau (legislation/index.html) : La directive · Catégories I à IV ·
+     Marquage & papiers · En service · Soupapes & sécurités. C'est la
+     PREMIÈRE des cinq à être construite — les quatre autres n'ont encore
+     que leur styles.css et app.js, pas d'index.html.
+
+     Régime SATELLITE, sur le modèle de la station « Aptitude & capacité » :
+     identité propre, moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     Fond rédigé le 24/08/2026 (voir FOND.md) — EN ATTENTE de relecture
+     métier par F. Henninot (data-prototype sur marque.js, plus bas).
+     Aucun chiffre de tarage, de pression ou de pourcentage : la station
+     enseigne le mécanisme et l'ordre des accessoires, pas un barème.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">La DESP · niveau BTS</p>
+  <h1>Soupapes &amp; sécurités — les accessoires qui protègent l'équipement</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez reconnaître les trois accessoires de sécurité d'un équipement sous pression, expliquer comment chacun agit, dans quel ordre ils interviennent — et le réflexe à avoir : comparer le tarage indiqué à la PS de la plaque de l'équipement.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez le schéma. Au centre, l'équipement sous pression, avec sa PS indiquée sur une plaque. Autour, trois cartes reliées à l'équipement par un trait : à gauche la soupape de sûreté, au centre le pressostat de sécurité, à droite le disque de rupture. La bande du bas rappelle qu'ils protègent tous le même équipement contre le même risque : dépasser sa PS.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Trois accessoires, un même rôle</h2>
+    <p>La directive DESP encadre les équipements sous pression au-delà d'un seuil de <strong>pression maximale admissible</strong>, notée <strong>PS</strong>. Pour éviter que cette PS ne soit dépassée, l'équipement porte des <strong>accessoires de sécurité</strong>.</p>
+    <p>Cette station en présente trois : la <strong>soupape de sûreté</strong>, le <strong>pressostat de sécurité</strong> et le <strong>disque de rupture</strong>. Chacun agit d'une manière différente, mais tous protègent le même équipement contre le même risque.</p>
+    <figure>
+      <img src="svg/trois-accessoires.svg" alt="Au centre, un équipement sous pression portant une plaque PS. Trois cartes l'entourent, reliées à l'équipement : la soupape de sûreté, le pressostat de sécurité, le disque de rupture. Une bande rappelle qu'ils protègent tous l'équipement contre le dépassement de sa PS.">
+      <figcaption>Trois familles, un même rôle : protéger contre le dépassement de la PS.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Deux panneaux côte à côte. À gauche, la soupape fermée : le ressort presse le clapet sur son siège, la pression monte dessous sans s'échapper. À droite, la soupape ouverte : le clapet est soulevé, un espace apparaît, et l'excès de pression s'évacue par le haut. La bande du bas rappelle qu'elle se referme d'elle-même quand la pression redescend.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">La soupape de sûreté : elle s'ouvre, puis se referme</h2>
+    <p>La soupape de sûreté est un dispositif <strong>mécanique</strong>. Tant que la pression reste sous son <strong>seuil de tarage</strong>, elle reste fermée. Dès que la pression dépasse ce seuil, elle <strong>s'ouvre pour évacuer l'excès</strong> — elle laisse échapper de la matière. Quand la pression redescend, elle <strong>se referme d'elle-même</strong>.</p>
+    <p>On la trouve par exemple sur une <strong>bouteille de fluide frigorigène</strong> ou sur un réservoir.</p>
+    <figure>
+      <img src="svg/soupape-coupe.svg" alt="Deux coupes schématiques : à gauche, la soupape fermée, le clapet posé sur son siège sous le seuil de tarage ; à droite, la soupape ouverte, le clapet soulevé et l'excès de pression qui s'évacue vers le haut.">
+      <figcaption>Elle s'ouvre au-delà du seuil, puis se referme d'elle-même.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Un schéma électrique vertical, à lire de haut en bas comme sur toute commande : la phase en rouge en haut, passant par un porte-fusible, puis le contact du pressostat. À droite, l'explication : quand la pression atteint le seuil, ce contact s'ouvre, la bobine du contacteur retombe, et le compresseur s'arrête — sans qu'aucune matière ne soit évacuée.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le pressostat de sécurité : il coupe avant</h2>
+    <p>Le pressostat de sécurité est un dispositif <strong>électrique</strong>. Il <strong>coupe le fonctionnement</strong> — typiquement le compresseur — dès que la pression atteint son seuil. Contrairement à la soupape, il <strong>n'évacue rien</strong> : il agit en amont, avant que la pression n'ait besoin d'être relâchée.</p>
+    <p>Sur un groupe de production de froid, on le désigne souvent par <strong>pressostat HP</strong>, pour haute pression.</p>
+    <figure>
+      <img src="svg/pressostat-schema.svg" alt="Schéma électrique vertical : la phase en haut, un porte-fusible, le contact du pressostat, la bobine du contacteur, le neutre en bas. À droite, l'explication : quand la pression atteint le seuil, le contact s'ouvre, la bobine retombe, le compresseur s'arrête, sans rien évacuer.">
+      <figcaption>Il coupe avant que la soupape n'ait besoin d'agir.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Deux panneaux côte à côte. À gauche, la membrane intacte, tendue en travers du circuit. À droite, la membrane rompue : une déchirure nette, et des flèches qui montrent la matière s'échapper d'un coup, sans ouverture progressive.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Le disque de rupture : une membrane qui cède d'un coup</h2>
+    <p>Le disque de rupture est une <strong>membrane calibrée</strong>, montée sur le circuit. Tant que la pression reste sous son seuil, elle reste intacte. Au-delà, elle <strong>cède d'un coup</strong> — elle ne s'ouvre pas progressivement comme une soupape.</p>
+    <p>On l'utilise notamment quand une ouverture progressive ne convient pas : par exemple sur un <strong>circuit à l'ammoniac ou au CO2</strong>, où la pression peut monter très vite.</p>
+    <figure>
+      <img src="svg/disque-rupture.svg" alt="Deux coupes de circuit : à gauche, la membrane du disque de rupture intacte, tendue en travers du tuyau ; à droite, la membrane rompue, avec des flèches montrant la matière s'échapper d'un coup.">
+      <figcaption>Utile quand une ouverture progressive ne convient pas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Une ligne représente la pression, croissante de gauche à droite, sans aucun chiffre. Un premier repère, en bleu, marque le pressostat : c'est là qu'il coupe. Plus loin sur la ligne, un second repère, en vert, marque la soupape : c'est là qu'elle s'ouvre, en dernier recours. Tout à droite, un trait rouge marque la limite de l'équipement, sa PS, à ne jamais atteindre.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">La hiérarchie de protection : qui agit en premier</h2>
+    <p>Les deux accessoires n'interviennent normalement pas au même moment. Le <strong>pressostat agit tôt</strong> : il coupe le fonctionnement avant que la pression ne continue à monter. La <strong>soupape agit en dernier recours</strong> : elle protège si la pression est quand même montée trop haut, juste avant la limite mécanique de l'équipement.</p>
+    <p><strong>Normalement, le pressostat agit avant que la soupape n'ait besoin de s'ouvrir.</strong></p>
+    <figure>
+      <img src="svg/hierarchie-protection.svg" alt="Une ligne de pression croissante, sans graduation chiffrée. Un repère bleu marque le pressostat, qui coupe tôt. Plus loin, un repère vert marque la soupape, qui protège en dernier recours. Tout à droite, un trait rouge marque la limite de l'équipement, sa PS.">
+      <figcaption>Le pressostat coupe, la soupape protège en dernier recours.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="À gauche, la plaque de l'équipement avec sa PS. À droite, l'étiquette de l'accessoire de sécurité, avec son tarage. Une flèche entre les deux montre que le tarage est toujours fixé en dessous de la PS — sans qu'aucun chiffre ne soit donné ici : c'est le texte en vigueur qui fixe la règle.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le tarage se lit par rapport à la PS</h2>
+    <p>Le seuil de déclenchement d'un accessoire de sécurité — son <strong>tarage</strong> — n'est pas fixé au hasard. Il est établi <strong>en dessous de la PS</strong> de l'équipement qu'il protège, la pression maximale admissible inscrite sur sa plaque, <strong>selon les règles du texte en vigueur</strong>.</p>
+    <p>Un accessoire de sécurité se choisit donc toujours en fonction de l'équipement qu'il équipe, jamais isolément.</p>
+    <figure>
+      <img src="svg/tarage-vs-ps.svg" alt="À gauche, la plaque de l'équipement avec sa PS. À droite, l'étiquette de l'accessoire avec son tarage. Une flèche entre les deux indique que le tarage est fixé en dessous de la PS, sans chiffre donné.">
+      <figcaption>Le tarage se fixe toujours par rapport à la PS de l'équipement.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Un tableau à trois colonnes, une par accessoire. Chaque ligne compare un critère : le type de mécanisme, si l'accessoire évacue de la matière, et s'il se referme après usage. La soupape et le pressostat se referment d'eux-mêmes ; le disque de rupture, lui, ne se referme pas — il doit être remplacé.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Comparatif : trois mécanismes, un même objectif</h2>
+    <p>Trois mécanismes différents, chacun avec ses propres réglages :</p>
+    <ul>
+      <li>la <strong>soupape</strong> est mécanique, évacue de la matière, puis <strong>se referme seule</strong> ;</li>
+      <li>le <strong>pressostat</strong> est électrique, <strong>n'évacue rien</strong>, et se referme seul quand la pression redescend ;</li>
+      <li>le <strong>disque de rupture</strong> est une membrane, évacue d'un coup, et <strong>ne se referme pas</strong> — il doit être remplacé après usage.</li>
+    </ul>
+    <figure>
+      <img src="svg/comparatif-accessoires.svg" alt="Tableau à trois colonnes comparant la soupape, le pressostat et le disque de rupture sur trois critères : le mécanisme, si l'accessoire évacue de la matière, et s'il se referme après usage.">
+      <figcaption>Trois mécanismes, un même objectif : ne jamais dépasser la PS.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="À gauche, une carte d'accessoire de sécurité avec son tarage. À droite, la plaque de l'équipement avec sa PS. Une flèche entre les deux porte le réflexe final : toujours comparer le tarage indiqué à la PS de la plaque. La bande du bas résume les points de la station.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>La DESP encadre les équipements sous pression au-delà d'un seuil de <strong>PS</strong>.</li>
+      <li>Trois accessoires : la <strong>soupape</strong> (mécanique, évacue), le <strong>pressostat</strong> (électrique, coupe sans évacuer), le <strong>disque de rupture</strong> (membrane, cède d'un coup).</li>
+      <li><strong>Hiérarchie</strong> : le pressostat agit avant que la soupape n'ait besoin de s'ouvrir.</li>
+      <li>Le <strong>tarage</strong> se fixe toujours en dessous de la PS de l'équipement, selon le texte en vigueur.</li>
+    </ul>
+    <p class="formule">Le réflexe : comparer le tarage indiqué sur l'accessoire à la PS inscrite sur la plaque de l'équipement.</p>
+    <figure>
+      <img src="svg/reflexe-tarage.svg" alt="À gauche, une carte d'accessoire de sécurité avec son tarage. À droite, la plaque de l'équipement avec sa PS. Une flèche entre les deux porte le réflexe : comparer le tarage à la PS. Une bande résume les points de la station.">
+      <figcaption>C'est le tarage comparé à la PS qui tranche.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Reprenez le schéma de la soupape de sûreté, fermée puis ouverte. Que se passe-t-il quand la pression dépasse le seuil de tarage ?">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">La soupape de sûreté : que se passe-t-il quand le tarage est dépassé ?</h2>
+    <figure class="vignette">
+      <img src="svg/soupape-coupe.svg" alt="Vignette de rappel : la soupape fermée puis ouverte, le clapet soulevé et l'excès de pression qui s'évacue.">
+      <figcaption>Rappel de l'écran 2 — fermée, puis ouverte.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Elle coupe le compresseur avant que la pression ne redescende</button>
+      <button type="button" data-answer="bonne">Elle s'ouvre pour évacuer l'excès de pression, puis se referme quand la pression redescend</button>
+      <button type="button" data-answer="c">Elle cède d'un coup et doit être remplacée</button>
+      <button type="button" data-answer="d">Elle reste fermée tant que la pression n'a pas doublé</button>
+    </div>
+    <p class="feedback" hidden data-explication="La soupape est un dispositif mécanique : elle s'ouvre au-delà du seuil de tarage pour évacuer l'excès de pression, puis se referme quand la pression redescend."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Reprenez le schéma du pressostat de sécurité. Que fait-il, et à quel moment agit-il par rapport à la soupape ?">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Le pressostat de sécurité : que fait-il, et à quel moment ?</h2>
+    <figure class="vignette">
+      <img src="svg/pressostat-schema.svg" alt="Vignette de rappel : le schéma électrique vertical du pressostat, phase en haut, contact et bobine, neutre en bas.">
+      <figcaption>Rappel de l'écran 3 — il coupe, sans rien évacuer.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Il évacue l'excès de pression, comme la soupape</button>
+      <button type="button" data-answer="b">Il agit uniquement après que la soupape s'est ouverte</button>
+      <button type="button" data-answer="bonne">Il coupe le fonctionnement, sans rien évacuer, avant la soupape</button>
+      <button type="button" data-answer="d">Il se referme seul quand la pression atteint zéro</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le pressostat est un dispositif électrique : il coupe le fonctionnement dès que la pression atteint son seuil, sans rien évacuer, normalement avant que la soupape n'ait besoin de s'ouvrir."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Reprenez le schéma du disque de rupture, intact puis rompu. Pourquoi choisit-on parfois ce dispositif plutôt qu'une soupape ?">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Pourquoi utilise-t-on parfois un disque de rupture plutôt qu'une soupape ?</h2>
+    <figure class="vignette">
+      <img src="svg/disque-rupture.svg" alt="Vignette de rappel : la membrane du disque de rupture, intacte puis rompue d'un coup.">
+      <figcaption>Rappel de l'écran 4 — intacte, puis rompue d'un coup.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Parce que la pression peut monter trop vite pour une ouverture progressive</button>
+      <button type="button" data-answer="b">Parce qu'il coûte moins cher qu'une soupape de sûreté</button>
+      <button type="button" data-answer="c">Parce qu'il se referme automatiquement après avoir cédé</button>
+      <button type="button" data-answer="d">Parce que la réglementation l'impose sur tout équipement sous pression</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le disque de rupture cède d'un coup : il convient quand une ouverture progressive, comme celle d'une soupape, ne suffit pas — par exemple sur un circuit à l'ammoniac ou au CO2."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Reprenez le schéma du tarage et de la PS. Comment sait-on si le tarage d'un accessoire convient à un équipement donné ?">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Comment sait-on si le tarage d'un accessoire de sécurité convient à un équipement ?</h2>
+    <figure class="vignette">
+      <img src="svg/tarage-vs-ps.svg" alt="Vignette de rappel : la plaque de l'équipement avec sa PS et l'étiquette de l'accessoire avec son tarage, fixé en dessous.">
+      <figcaption>Rappel de l'écran 6 — le tarage se lit face à la PS.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">En comparant sa date de fabrication à celle de l'équipement</button>
+      <button type="button" data-answer="b">En mesurant la température ambiante au moment de l'installation</button>
+      <button type="button" data-answer="c">Le tarage est le même pour tous les équipements, quelle que soit leur PS</button>
+      <button type="button" data-answer="bonne">En le comparant à la PS inscrite sur la plaque de l'équipement</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le tarage d'un accessoire de sécurité est fixé en dessous de la PS de l'équipement qu'il protège, selon les règles du texte en vigueur — jamais choisi isolément."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme sur les autres stations du
+     réseau : il se lit dès l'accueil. NF EN 378 n'a pas encore de station
+     construite, donc pas de lien — on ne promet pas une porte fermée. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>NF EN 378</strong> (même sous-ligne, en préparation) — les accessoires de sécurité et leurs exigences propres au circuit frigorifique sont aussi encadrés par cette norme.</li>
+  </ul>
+  <p>Cette station est en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-ps" aria-describedby="d-ps" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ps">La protection solaire bloque le soleil haut d'été, laisse passer le soleil bas d'hiver</title>
+  <desc id="d-ps">Une maison avec un débord de toit, un brise-soleil, au-dessus d'une baie vitrée.
+    Deux trajets de rayons sont dessinés : un rayon d'été, avec un soleil haut dans le ciel, qui
+    est arrêté par le débord avant d'atteindre la vitre ; un rayon d'hiver, avec un soleil bas,
+    qui passe sous le débord et entre par la vitre. Une légende associe chaque trajet à sa
+    saison.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .ete { font-size:15px; fill:#c0392b; font-weight:bold; }
+    .hiv { font-size:15px; fill:#1b3a63; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Le débord arrête le soleil haut, laisse passer le soleil bas</text>
+
+  <!-- maison avec débord -->
+  <rect x="300" y="150" width="300" height="150" fill="none" stroke="#10233c" stroke-width="3"/>
+  <rect x="330" y="80" width="260" height="18" fill="#5a6b7d"/>
+  <rect x="360" y="200" width="120" height="90" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+
+  <!-- soleil d'été, haut -->
+  <circle cx="150" cy="70" r="22" fill="#fff4e0" stroke="#c0392b" stroke-width="2.5"/>
+  <path d="M 172 85 L 330 92" fill="none" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <line x1="330" y1="92" x2="330" y2="98" stroke="#c0392b" stroke-width="3"/>
+  <text class="ete" x="150" y="45" text-anchor="middle">été</text>
+
+  <!-- soleil d'hiver, bas -->
+  <circle cx="90" cy="230" r="20" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <path d="M 110 232 L 360 235" fill="none" stroke="#1b3a63" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <text class="hiv" x="90" y="270" text-anchor="middle">hiver</text>
+
+  <rect x="640" y="120" width="230" height="150" rx="12" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="755" y="155" text-anchor="middle" fill="#c0392b" font-weight="bold">été : rayon arrêté</text>
+  <text class="lbl" x="755" y="178" text-anchor="middle">avant la vitre</text>
+  <text class="lbl" x="755" y="220" text-anchor="middle" fill="#1b3a63" font-weight="bold">hiver : rayon admis,</text>
+  <text class="lbl" x="755" y="243" text-anchor="middle">passe sous le débord</text>
+</svg>

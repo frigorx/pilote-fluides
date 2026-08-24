@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="t-relais" aria-describedby="d-relais" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-relais">Le relais des HFC : sans chlore ni brome, l'ozone est réglé</title>
+  <desc id="d-relais">Deux cartes de molécules reliées par une flèche. À gauche, la carte CFC et HCFC, encadrée en
+    rouge et barrée, porte la mention « contient du chlore ou du brome » : elle attaque l'ozone. À droite, la carte
+    HFC, encadrée en vert avec une coche, porte la mention « sans chlore ni brome » et « ODP nul » : le problème de
+    l'ozone est réglé pour cette famille. Une bande du bas résume : le relais règle l'ozone, mais ne dit rien du
+    climat.</desc>
+  <style>
+    .ttl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lblGras{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl{ font-size:15px; fill:#10233c; }
+    .ok{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#1e7e54; }
+    .non{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#c0392b; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Carte CFC / HCFC, retirés -->
+  <rect x="20" y="20" width="370" height="190" rx="14" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <rect x="20" y="20" width="370" height="42" rx="14" fill="#c0392b"/>
+  <rect x="20" y="48" width="370" height="14" fill="#c0392b"/>
+  <text class="ttl" x="205" y="48" text-anchor="middle">CFC ET HCFC</text>
+  <text class="non" x="205" y="100" text-anchor="middle">contient du chlore ou du brome</text>
+  <text class="lbl" x="205" y="128" text-anchor="middle">attaque l'ozone stratosphérique</text>
+  <line x1="80" y1="150" x2="330" y2="150" stroke="#c0392b" stroke-width="2.5"/>
+  <text class="non" x="205" y="180" text-anchor="middle">retirés par le protocole de Montréal</text>
+
+  <!-- Flèche -->
+  <defs>
+    <marker id="fl2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <path d="M390,115 L508,115" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#fl2)"/>
+  <text class="lbl" x="449" y="100" text-anchor="middle" fill="#5a6b7d">remplacés par</text>
+
+  <!-- Carte HFC, ODP nul -->
+  <rect x="510" y="20" width="370" height="190" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <rect x="510" y="20" width="370" height="42" rx="14" fill="#1e7e54"/>
+  <rect x="510" y="48" width="370" height="14" fill="#1e7e54"/>
+  <text class="ttl" x="695" y="48" text-anchor="middle">LES HFC</text>
+  <text class="ok" x="695" y="100" text-anchor="middle">sans chlore ni brome</text>
+  <text class="lbl" x="695" y="128" text-anchor="middle">ODP nul</text>
+  <circle cx="620" cy="172" r="17" fill="#1e7e54"/>
+  <path d="M612,172 L618,180 L630,164" stroke="#fffdf8" stroke-width="3" fill="none"/>
+  <text class="ok" x="720" y="178" text-anchor="middle">le problème de l'ozone est réglé</text>
+
+  <!-- Bande du bas -->
+  <rect x="20" y="232" width="860" height="60" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="258" text-anchor="middle">Le relais règle l'ozone</text>
+  <text class="band" x="450" y="280" text-anchor="middle">— il ne dit encore rien du climat</text>
+</svg>

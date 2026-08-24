@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-1" aria-describedby="d-1" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-1">Trois lieux d'intervention en hauteur, ordinaires dans le métier</title>
+  <desc id="d-1">Un bâtiment schématique en coupe. Trois zones sont marquées d'un repère orange : la toiture
+    en haut à gauche, une terrasse technique au centre portant un groupe de condensation, et ce même groupe
+    de condensation mis en évidence à droite. Une légende sous chaque zone la nomme.</desc>
+  <style>
+    .mur{ fill:#eef3f9; stroke:#2f5689; stroke-width:2; }
+    .toit{ fill:#fde9d0; stroke:#10233c; stroke-width:2.5; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .pt{ fill:#c2410c; }
+  </style>
+
+  <rect class="mur" x="120" y="150" width="660" height="150"/>
+  <polygon class="toit" points="100,150 450,60 800,150"/>
+
+  <!-- Toiture -->
+  <circle class="pt" cx="450" cy="95" r="9"/>
+  <text class="lbl" x="450" y="45" text-anchor="middle">Toiture</text>
+
+  <!-- Terrasse technique avec groupe -->
+  <rect x="600" y="150" width="120" height="40" fill="#fffdf8" stroke="#2f5689" stroke-width="2"/>
+  <rect x="620" y="120" width="80" height="32" rx="4" fill="#dbeafe" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle class="pt" cx="660" cy="150" r="9"/>
+  <text class="lbl" x="660" y="105" text-anchor="middle">Terrasse technique</text>
+
+  <!-- Groupe de condensation isolé -->
+  <rect x="260" y="200" width="90" height="50" rx="6" fill="#dbeafe" stroke="#1b3a63" stroke-width="2.5"/>
+  <line x1="270" y1="215" x2="340" y2="215" stroke="#1b3a63" stroke-width="2"/>
+  <line x1="270" y1="230" x2="340" y2="230" stroke="#1b3a63" stroke-width="2"/>
+  <circle class="pt" cx="305" cy="200" r="9"/>
+  <text class="lbl" x="305" y="278" text-anchor="middle">Groupe de condensation</text>
+</svg>

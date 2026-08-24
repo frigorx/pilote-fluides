@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-tps" aria-describedby="d-tps" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-tps">Le tarage se lit par rapport à la PS de l'équipement</title>
+  <desc id="d-tps">À gauche, la plaque de l'équipement portant sa pression maximale admissible, la
+    PS. À droite, l'étiquette de l'accessoire de sécurité portant son tarage. Une flèche entre les
+    deux montre que le tarage est toujours fixé en dessous de la PS, sans qu'aucun chiffre ne soit
+    donné : c'est le texte en vigueur qui fixe la règle. Un accessoire de sécurité se choisit donc
+    en fonction de l'équipement qu'il protège, jamais isolément.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <!-- Plaque de l'équipement -->
+  <rect x="40" y="40" width="330" height="180" rx="14" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <rect x="40" y="40" width="330" height="42" rx="14" fill="#0c4a6e"/>
+  <rect x="40" y="68" width="330" height="14" fill="#0c4a6e"/>
+  <text class="ttl" x="205" y="68" text-anchor="middle">PLAQUE DE L'ÉQUIPEMENT</text>
+  <text class="lbl" x="205" y="130" text-anchor="middle">pression maximale admissible</text>
+  <rect x="140" y="150" width="130" height="46" rx="10" fill="#0c4a6e"/>
+  <text class="ttl" x="205" y="182" text-anchor="middle" font-size="22px">PS</text>
+
+  <!-- Flèche : tarage sous la PS -->
+  <path d="M 390 130 H 530" stroke="#5a6b7d" stroke-width="4" fill="none"/>
+  <polygon points="530,130 512,120 512,140" fill="#5a6b7d"/>
+  <text class="lbl" x="460" y="112" text-anchor="middle">fixé EN DESSOUS</text>
+
+  <!-- Étiquette de l'accessoire -->
+  <rect x="550" y="40" width="310" height="180" rx="14" fill="#fffdf8" stroke="#b06a00" stroke-width="3"/>
+  <rect x="550" y="40" width="310" height="42" rx="14" fill="#b06a00"/>
+  <rect x="550" y="68" width="310" height="14" fill="#b06a00"/>
+  <text class="ttl" x="705" y="68" text-anchor="middle">ÉTIQUETTE DE L'ACCESSOIRE</text>
+  <text class="lbl" x="705" y="130" text-anchor="middle">seuil de tarage</text>
+  <rect x="645" y="150" width="120" height="46" rx="10" fill="#b06a00"/>
+  <text class="ttl" x="705" y="182" text-anchor="middle" font-size="17px">TARAGE</text>
+
+  <!-- Bande du bas -->
+  <rect x="40" y="250" width="820" height="60" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="275" text-anchor="middle">Le tarage se fixe toujours par rapport à la PS de l'équipement qu'il protège,</text>
+  <text class="band" x="450" y="297" text-anchor="middle">selon les règles du texte en vigueur — jamais choisi isolément</text>
+</svg>

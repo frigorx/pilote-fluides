@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-te" aria-describedby="d-te" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-te">Les trois exigences de la RE2020</title>
+  <desc id="d-te">Trois cartes côte à côte, de largeur égale. La première, Bbio, porte la mention
+    « le besoin du bâti, indépendant des équipements ». La deuxième, Cep, porte la mention « la
+    consommation d'énergie, tous usages ». La troisième, IC, porte la mention « l'impact carbone,
+    sur tout le cycle de vie ». Une bande sous les trois cartes indique qu'elles sont contrôlées
+    ensemble, sans compensation possible entre elles.</desc>
+  <style>
+    .sig { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:30px; fill:#92400e; }
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .band{ font-size:15px; fill:#10233c; font-weight:bold; }
+  </style>
+
+  <rect x="30"  y="30" width="260" height="190" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="sig" x="160" y="90" text-anchor="middle">Bbio</text>
+  <text class="ttl" x="160" y="125" text-anchor="middle">le besoin du bâti</text>
+  <text class="lbl" x="160" y="150" text-anchor="middle">indépendant</text>
+  <text class="lbl" x="160" y="170" text-anchor="middle">des équipements</text>
+
+  <rect x="320" y="30" width="260" height="190" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="sig" x="450" y="90" text-anchor="middle">Cep</text>
+  <text class="ttl" x="450" y="125" text-anchor="middle">la consommation</text>
+  <text class="lbl" x="450" y="150" text-anchor="middle">d'énergie,</text>
+  <text class="lbl" x="450" y="170" text-anchor="middle">tous usages</text>
+
+  <rect x="610" y="30" width="260" height="190" rx="14" fill="#fff4e0" stroke="#92400e" stroke-width="3.5"/>
+  <text class="sig" x="740" y="90" text-anchor="middle">IC</text>
+  <text class="ttl" x="740" y="125" text-anchor="middle">l'impact carbone</text>
+  <text class="lbl" x="740" y="150" text-anchor="middle">sur tout le</text>
+  <text class="lbl" x="740" y="170" text-anchor="middle">cycle de vie</text>
+
+  <rect x="30" y="250" width="840" height="60" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="286" text-anchor="middle">Contrôlées ensemble — aucune compensation entre les trois</text>
+</svg>

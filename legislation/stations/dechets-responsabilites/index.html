@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Responsabilités — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : qui est producteur, qui est détenteur, jusqu'où va la responsabilité d'un déchet, les filières d'un chantier de froid, le cas du fluide récupéré et le rôle du registre.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/dechets-responsabilites/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Déchets.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     Fond : legislation/stations/dechets-responsabilites/FOND.md.
+     ÉCART AVEC LE FOND : aucun. Les numéros d'article listés dans le
+     fond sous « À sourcer » (Code de l'environnement) ne sont repris
+     nulle part dans cette page, conformément à la consigne du fond.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Déchets · niveau BTS</p>
+  <h1>Responsabilités — qui répond du déchet</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez distinguer producteur et détenteur d'un déchet, dire pourquoi la responsabilité ne s'arrête pas à la remise du déchet à un tiers, et appliquer ce principe aux déchets qu'un frigoriste produit réellement sur un chantier.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez les deux personnages reliés par une flèche grise, sans aucun texte écrit dessus. À gauche, en gris foncé, le producteur : c'est son activité qui fait naître le déchet, dépose d'un filtre, vidange d'une huile, sortie d'un groupe. À droite, en bleu, le détenteur : celui qui a la garde du déchet à cet instant, et cela peut très bien être le producteur lui-même. La bande du bas résume l'essentiel : ce ne sont pas deux règles différentes, mais deux maillons de la même chaîne.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Deux mots, une seule chaîne : producteur, détenteur</h2>
+    <p>Le <strong>producteur</strong> est celui dont l'activité fait naître le déchet — le frigoriste qui dépose un filtre déshydrateur usagé, qui vidange une huile, qui sort un ancien groupe de son emballage. Le <strong>détenteur</strong> est celui qui a la garde du déchet à un instant donné : cela peut être le producteur lui-même, ou la personne à qui il l'a remis — le transporteur, le collecteur, l'entreprise de traitement.</p>
+    <p>Les deux mots ne désignent pas deux règles différentes : ils désignent deux maillons de la <strong>même chaîne de responsabilité</strong>.</p>
+    <figure>
+      <img src="svg/chaine-producteur-detenteur.svg" alt="Deux personnages reliés par une flèche « le déchet passe de main en main », sans texte sur la flèche, chacun étiqueté producteur ou détenteur.">
+      <figcaption>Deux étiquettes, une seule chaîne de responsabilité.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Un chemin en deux tronçons, tous deux partant du même chantier, à gauche. Suivez le trait plein vert vers le haut : il mène à un repreneur autorisé, avec une coche, et le dossier est soldé pour ce maillon. Suivez maintenant le trait tireté rouge vers le bas : il mène à un repreneur non autorisé, avec une croix, et la mention en gras rappelle que la responsabilité reste engagée. En bas à gauche, l'encadré donne le réflexe à retenir : vérifier avant de remettre.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">La responsabilité ne s'arrête pas à la remise</h2>
+    <p>Remettre un déchet à quelqu'un d'autre ne solde pas le dossier. Celui qui remet un déchet doit s'assurer que celui qui le reçoit est <strong>autorisé</strong> à le prendre en charge. Un frigoriste qui confie ses fluides récupérés ou ses métaux à un repreneur non autorisé reste responsable si ce déchet finit mal géré.</p>
+    <p><strong>Le réflexe : vérifier, avant de remettre, que le destinataire a le droit de recevoir ce déchet-là.</strong></p>
+    <figure>
+      <img src="svg/remise-responsabilite.svg" alt="Un chemin en deux tronçons partant du chantier : chantier vers repreneur autorisé, en trait plein avec une coche verte, et chantier vers repreneur non autorisé, en trait tireté avec une croix rouge, avec la mention « la responsabilité reste » sur ce second tronçon.">
+      <figcaption>Le trait change de style selon que le repreneur est autorisé, ou non.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Une chaîne de maillons sans aucune coupure visible, du chantier à gauche jusqu'au grand maillon vert à droite, le traitement final. Entre les deux, la collecte puis le transport prolongent le même fil gris. Chaque petit rond marque une jonction, mais le trait ne se rompt jamais. La bande du bas précise que c'est cette continuité, maillon par maillon, que la traçabilité vient prouver.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Jusqu'où : l'élimination ou la valorisation finale</h2>
+    <p>Le principe se prolonge <strong>jusqu'à l'élimination ou la valorisation finale</strong> du déchet — pas jusqu'à la première remise. C'est pour cela que la traçabilité existe (voir la station Déchets dangereux) : elle prouve, maillon par maillon, que le déchet a bien atteint une filière autorisée.</p>
+    <figure>
+      <img src="svg/chaine-jusqu-elimination.svg" alt="Une chaîne de maillons du chantier jusqu'à un symbole de traitement final, en passant par la collecte et le transport, chaque maillon représentant une étape, sans rupture visible dans la chaîne.">
+      <figcaption>Le trait ne se rompt jamais, du chantier à la filière finale.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Un établi de frigoriste, avec sept objets posés dessus, chacun avec sa propre étiquette en dessous : un tube de cuivre enroulé, un bidon d'huile, une bouteille de fluide récupéré avec sa vanne, un filtre déshydrateur, un carton d'emballage, un groupe hors d'usage avec sa grille, et une chute d'isolant aux bords irréguliers. Sept formes différentes, pour bien montrer que ce sont sept objets distincts, chacun avec sa propre filière.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Les déchets d'un chantier de froid, un par un</h2>
+    <p>Un frigoriste ne produit pas un seul type de déchet. Sur un même chantier :</p>
+    <ul>
+      <li>le <strong>cuivre et les métaux</strong> — valorisables, souvent revendus ;</li>
+      <li>les <strong>huiles usagées</strong> ;</li>
+      <li>les <strong>fluides frigorigènes récupérés</strong> ;</li>
+      <li>les <strong>filtres déshydrateurs</strong> ;</li>
+      <li>les <strong>emballages</strong> (cartons, palettes) ;</li>
+      <li>les <strong>équipements en fin de vie</strong> (groupes, unités) ;</li>
+      <li>les <strong>déchets de chantier</strong> (isolants, gaines).</li>
+    </ul>
+    <p>Chacun a sa propre filière, mais le même principe de responsabilité s'applique à tous.</p>
+    <figure>
+      <img src="svg/etabli-sept-dechets.svg" alt="Un établi de frigoriste avec sept objets identifiés : cuivre, bidon d'huile, bouteille de récupération, filtre, carton, groupe hors d'usage, chute d'isolant, chacun avec son étiquette.">
+      <figcaption>Sept déchets, sept filières — le même principe pour chacun.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Au centre gauche, une bouteille de fluide récupéré, avec sa vanne au sommet. Deux flèches en partent. Suivez celle du haut, en trait plein vert : elle mène à l'encadré « réemployé sur la même machine », et précise que ce fluide reste un fluide en service, pas un déchet. Suivez maintenant celle du bas, en trait tireté rouge : elle mène à l'encadré « non réutilisable », et précise que ce fluide devient un déchet dangereux. La phrase du bas rappelle que dans les deux cas, c'est le même frigoriste qui reste responsable.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le cas du fluide récupéré</h2>
+    <p>Un fluide récupéré n'est pas systématiquement un déchet : s'il est réemployé sur la même machine, il reste un fluide en service (voir la station Cycle matière). Mais s'il n'est <strong>pas réutilisable</strong> — contaminé, mélangé, non identifiable — il devient un <strong>déchet</strong>, et un déchet dangereux (voir la station Déchets dangereux). C'est le même frigoriste, producteur, qui reste responsable de son devenir.</p>
+    <figure>
+      <img src="svg/embranchement-fluide-recupere.svg" alt="Un embranchement depuis une bouteille de fluide récupéré : une flèche vers « réemployé sur la même machine : reste un fluide » et une flèche vers « non réutilisable : devient un déchet dangereux ».">
+      <figcaption>Deux devenirs possibles, une seule responsabilité.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Un carnet ouvert, posé devant un établi dessiné en fond, discret. Sur la page de gauche, des lignes vides représentent le registre lui-même. Sur la page de droite, quatre mots sont écrits l'un sous l'autre : date, déchet, quantité, destinataire — ce sont les colonnes que le producteur doit tenir à jour. La bande du bas rappelle l'essentiel : sans ce carnet, rien ne peut se prouver.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le registre : la mémoire écrite du producteur</h2>
+    <p>Le producteur ou le détenteur tient la trace de ce qu'il produit, remet et fait traiter. Cette mémoire écrite — le registre — est ce qui permet de répondre à une question simple en cas de contrôle : « ce déchet, où est-il allé ? ». Sans registre, la responsabilité ne peut pas se prouver, même si elle a été correctement assumée.</p>
+    <figure>
+      <img src="svg/registre-producteur.svg" alt="Un carnet ouvert avec des lignes stylisées « date, déchet, quantité, destinataire », posé à côté d'un établi.">
+      <figcaption>Sans registre, la bonne pratique ne peut pas se prouver.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Trois cartes empilées, chacune numérotée dans un rond gris foncé. La première rapporte la phrase d'un frigoriste qui a confié ses chutes de cuivre à un ferrailleur de passage, avec la réponse en dessous. La deuxième rapporte l'idée fausse « ce n'est plus mon problème une fois le camion parti ». La troisième rapporte le cas d'un frigoriste sans registre, malgré de bonnes pratiques. Dans les trois cartes, la phrase en gras porte la même idée : la responsabilité se prouve, elle ne se suppose pas.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : trois situations de terrain</h2>
+    <ol>
+      <li><strong>« J'ai donné mes chutes de cuivre à un ferrailleur qui passait. »</strong> → Il faut vérifier que ce repreneur est autorisé — sinon la responsabilité du frigoriste reste engagée.</li>
+      <li><strong>« Le déchet a quitté mon camion, ce n'est plus mon problème. »</strong> → Faux : la responsabilité suit le déchet jusqu'à son élimination ou sa valorisation finale, pas jusqu'à la remise.</li>
+      <li><strong>« Je n'ai pas de registre, mais j'ai toujours confié mes déchets au bon endroit. »</strong> → Sans trace écrite, cette bonne pratique ne peut pas se prouver en cas de contrôle.</li>
+    </ol>
+    <figure>
+      <img src="svg/trois-situations-responsabilite.svg" alt="Trois cartes en cascade, chacune avec une situation de terrain et sa réponse : le ferrailleur non vérifié, le camion qui repart, l'absence de registre.">
+      <figcaption>Trois situations, un même raisonnement.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan. Une chaîne complète traverse l'écran, du chantier à gauche jusqu'à la filière finale en vert à droite. Au milieu de cette chaîne, un maillon orange se détache nettement des autres : la vérification. C'est lui qui décide si la responsabilité s'arrête net, ou continue de peser sur le frigoriste. La bande du bas reprend le réflexe professionnel en une phrase.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Producteur : qui fait naître le déchet. Détenteur : qui en a la garde à un instant donné.</li>
+      <li>La responsabilité <strong>suit le déchet</strong> jusqu'à son élimination ou sa valorisation finale.</li>
+      <li>Remettre un déchet à un tiers non autorisé n'éteint pas la responsabilité.</li>
+      <li>Un frigoriste produit des déchets très variés — chacun a sa filière, tous suivent le même principe.</li>
+      <li>Le registre est la preuve écrite de la bonne gestion.</li>
+    </ul>
+    <p class="formule">Le réflexe : avant de remettre un déchet, vérifier que celui qui le reçoit est autorisé à le recevoir.</p>
+    <figure>
+      <img src="svg/bilan-responsabilites.svg" alt="Une chaîne complète du chantier à la filière finale, avec le maillon « vérification » mis en évidence en couleur et en trait plus épais.">
+      <figcaption>Le maillon « vérification » est celui qui protège.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un frigoriste confie ses fluides récupérés à un repreneur qu'il ne connaît pas, sans vérifier son autorisation, et le repreneur les gère mal. Choisissez parmi les quatre propositions ce que risque le frigoriste.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Que risque le frigoriste qui n'a pas vérifié le repreneur ?</h2>
+    <figure class="vignette">
+      <img src="svg/remise-responsabilite.svg" alt="Vignette de rappel : le chemin en deux tronçons, vers un repreneur autorisé ou vers un repreneur non autorisé.">
+      <figcaption>Rappel de l'écran 2 — la remise ne solde pas le dossier.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Rien, il n'est plus détenteur du déchet</button>
+      <button type="button" data-answer="bonne">Sa responsabilité reste engagée : il n'a pas vérifié l'autorisation du repreneur</button>
+      <button type="button" data-answer="c">Rien, seul le repreneur est responsable</button>
+      <button type="button" data-answer="d">Une amende automatique, quel que soit le contexte</button>
+    </div>
+    <p class="feedback" hidden data-explication="La responsabilité suit le déchet ; remettre à un tiers non vérifié ne l'éteint pas."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Qu'est-ce qui distingue le producteur du détenteur d'un déchet ? Reprenez le schéma de l'écran un avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce qui distingue le producteur du détenteur ?</h2>
+    <figure class="vignette">
+      <img src="svg/chaine-producteur-detenteur.svg" alt="Vignette de rappel : deux personnages reliés par une flèche, étiquetés producteur et détenteur.">
+      <figcaption>Rappel de l'écran 1 — deux maillons de la même chaîne.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le producteur est toujours une entreprise, le détenteur toujours une personne</button>
+      <button type="button" data-answer="bonne">Le détenteur est celui qui a la garde du déchet à un instant donné, le producteur celui dont l'activité l'a fait naître</button>
+      <button type="button" data-answer="c">Ce sont deux mots pour la même personne, toujours</button>
+      <button type="button" data-answer="d">Le détenteur n'a aucune obligation</button>
+    </div>
+    <p class="feedback" hidden data-explication="Les deux notions décrivent deux maillons possibles de la même chaîne — le producteur peut aussi être détenteur."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Jusqu'où va la responsabilité d'un producteur de déchet ? Souvenez-vous de la chaîne sans rupture de l'écran trois.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Jusqu'où va la responsabilité d'un producteur de déchet ?</h2>
+    <figure class="vignette">
+      <img src="svg/chaine-jusqu-elimination.svg" alt="Vignette de rappel : la chaîne de maillons du chantier jusqu'au traitement final, sans rupture visible.">
+      <figcaption>Rappel de l'écran 3 — jusqu'à la filière finale.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Jusqu'à ce qu'il quitte le chantier</button>
+      <button type="button" data-answer="b">Jusqu'à la remise au premier transporteur</button>
+      <button type="button" data-answer="bonne">Jusqu'à l'élimination ou la valorisation finale du déchet</button>
+      <button type="button" data-answer="d">Elle s'arrête dès qu'un bordereau est signé</button>
+    </div>
+    <p class="feedback" hidden data-explication="C'est tout le sens du principe — la responsabilité ne s'arrête pas à un maillon intermédiaire."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Pourquoi un frigoriste tient-il un registre de ses déchets ? Souvenez-vous du carnet de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Pourquoi un frigoriste tient-il un registre de ses déchets ?</h2>
+    <figure class="vignette">
+      <img src="svg/registre-producteur.svg" alt="Vignette de rappel : un carnet ouvert avec les colonnes date, déchet, quantité, destinataire.">
+      <figcaption>Rappel de l'écran 6 — la mémoire écrite du producteur.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Pour justifier ses achats de matériel</button>
+      <button type="button" data-answer="bonne">C'est la preuve écrite qu'il a bien géré ses déchets, utile en cas de contrôle</button>
+      <button type="button" data-answer="c">Uniquement pour la comptabilité de l'entreprise</button>
+      <button type="button" data-answer="d">Ce n'est utile que pour les déchets non dangereux</button>
+    </div>
+    <p class="feedback" hidden data-explication="Sans trace écrite, une bonne pratique réelle ne peut pas être démontrée."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme sur les autres stations : il
+     se lit dès l'accueil. Les deux correspondances ne sont pas encore
+     ouvertes : pas de lien, on ne promet pas une porte fermée. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>Traçabilité</strong> (sous-ligne Fluidique &amp; thermique, en préparation).</li>
+    <li><strong>Impact environnemental</strong> (en préparation).</li>
+  </ul>
+  <p>Les deux stations sont en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

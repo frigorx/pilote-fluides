@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-dd" aria-describedby="d-dd" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dd">Deux documents, deux responsables : ne pas les confondre</title>
+  <desc id="d-dd">Deux documents côte à côte. À gauche, le DUERP de l'employeur du technicien,
+    responsable : sa propre entreprise. À droite, le document de prévention du site où il
+    intervient, souvent formalisé en cas de coactivité avec une entreprise extérieure, responsable
+    : l'entreprise du site. Entre les deux, un signe « différent de ». Une bande en bas rappelle
+    que ce sont deux documents et deux responsables, à ne pas confondre.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#c2410c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .signe{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:34px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <!-- DUERP de l'employeur -->
+  <rect x="20" y="20" width="380" height="176" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="20" y="20" width="380" height="42" rx="14" fill="#1b3a63"/>
+  <rect x="20" y="48" width="380" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="210" y="48" text-anchor="middle">LE DUERP DE MON EMPLOYEUR</text>
+  <text class="qui" x="210" y="94" text-anchor="middle" fill="#1b3a63">Ma propre entreprise</text>
+  <text class="lbl" x="210" y="122" text-anchor="middle">couvre les situations de travail</text>
+  <text class="lbl" x="210" y="146" text-anchor="middle">de mon entreprise</text>
+  <text class="lbl" x="210" y="170" text-anchor="middle">responsable : mon employeur</text>
+
+  <!-- signe différent -->
+  <text class="signe" x="450" y="122" text-anchor="middle">≠</text>
+
+  <!-- document du site -->
+  <rect x="500" y="20" width="380" height="176" rx="14" fill="#fffdf8" stroke="#c2410c" stroke-width="3"/>
+  <rect x="500" y="20" width="380" height="42" rx="14" fill="#c2410c"/>
+  <rect x="500" y="48" width="380" height="14" fill="#c2410c"/>
+  <text class="ttl" x="690" y="48" text-anchor="middle">LE DOCUMENT DU SITE VISITÉ</text>
+  <text class="qui" x="690" y="94" text-anchor="middle">L'entreprise du site</text>
+  <text class="lbl" x="690" y="122" text-anchor="middle">souvent un plan de prévention</text>
+  <text class="lbl" x="690" y="146" text-anchor="middle">en cas de coactivité</text>
+  <text class="lbl" x="690" y="170" text-anchor="middle">responsable : l'entreprise du site</text>
+
+  <!-- bande -->
+  <rect x="20" y="224" width="860" height="48" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="253" text-anchor="middle">Deux documents, deux responsables — à ne pas confondre</text>
+
+  <text class="lbl" x="450" y="308" text-anchor="middle">Sur un site qui n'est pas le vôtre, c'est le document du site qui vous concerne</text>
+</svg>

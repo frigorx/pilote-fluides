@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-it" aria-describedby="d-it" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-it">L'inertie thermique retarde et adoucit le pic de chaleur intérieur</title>
+  <desc id="d-it">Deux courbes de température intérieure sur une même journée chaude. La courbe en
+    trait pointillé, pour un mur léger et peu inertiel, monte vite et atteint un pic élevé en
+    milieu d'après-midi. La courbe en trait plein, pour un mur lourd et inertiel, monte lentement,
+    atteint un pic plus bas, et décalé en soirée. Une coupe de mur épais est dessinée à côté,
+    avec une flèche montrant la chaleur qui met du temps à le traverser.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .leg { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Un mur épais retarde et adoucit le pic de chaleur</text>
+
+  <line x1="80" y1="230" x2="560" y2="230" stroke="#10233c" stroke-width="2"/>
+  <line x1="80" y1="230" x2="80" y2="70" stroke="#10233c" stroke-width="2"/>
+  <text class="lbl" x="320" y="255" text-anchor="middle">une journée chaude</text>
+
+  <!-- mur léger : pic haut et rapide -->
+  <path d="M 80 210 C 160 90, 220 90, 280 110 C 340 130, 420 190, 560 200"
+        fill="none" stroke="#c0392b" stroke-width="3" stroke-dasharray="7 6"/>
+
+  <!-- mur lourd : pic bas et décalé -->
+  <path d="M 80 215 C 200 190, 300 150, 380 140 C 440 133, 500 150, 560 175"
+        fill="none" stroke="#1e7e54" stroke-width="3"/>
+
+  <!-- coupe de mur épais -->
+  <rect x="620" y="60" width="70" height="220" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="lbl" x="655" y="50" text-anchor="middle" font-size="14">mur épais</text>
+  <path d="M 600 100 L 660 130" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="660,130 645,124 650,140" fill="#92400e"/>
+  <path d="M 660 170 L 720 200" fill="none" stroke="#92400e" stroke-width="2.5" stroke-dasharray="5 5"/>
+  <polygon points="720,200 705,197 712,212" fill="#92400e"/>
+  <text class="lbl" x="800" y="115" text-anchor="middle" font-size="14">chaleur</text>
+  <text class="lbl" x="800" y="205" text-anchor="middle" font-size="14">retardée</text>
+
+  <rect x="80" y="295" width="480" height="1" fill="none"/>
+  <text class="leg" x="90" y="300" fill="#c0392b" font-size="14">– – – mur léger : pic élevé, rapide</text>
+  <text class="leg" x="330" y="300" fill="#1e7e54" font-size="14">—— mur lourd : pic bas, décalé</text>
+</svg>

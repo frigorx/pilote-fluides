@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" role="img"
+     aria-labelledby="t-3b" aria-describedby="d-3b" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-3b">L'éco-organisme, intermédiaire entre le financement et le terrain</title>
+  <desc id="d-3b">Trois blocs reliés par des flèches sans texte : le metteur sur le marché, qui paie
+    une éco-contribution ; l'éco-organisme agréé, qui organise la collecte et le traitement ; le point
+    de reprise, qui reçoit les déchets triés. Chaque bloc porte son rôle et son verbe d'action.</desc>
+  <defs>
+    <marker id="fl3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10233c"/>
+    </marker>
+  </defs>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .verbe { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#57534e; }
+    .lbl { font-size:15px; fill:#10233c; }
+  </style>
+
+  <rect x="20" y="30" width="260" height="160" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="20" y="30" width="260" height="44" rx="12" fill="#1b3a63"/>
+  <rect x="20" y="58" width="260" height="16" fill="#1b3a63"/>
+  <text class="ttl" x="150" y="58" text-anchor="middle">METTEUR SUR LE MARCHÉ</text>
+  <text class="verbe" x="150" y="112" text-anchor="middle">paie</text>
+  <text class="lbl" x="150" y="145" text-anchor="middle">verse une éco-contribution</text>
+  <text class="lbl" x="150" y="167" text-anchor="middle">pour chaque produit vendu</text>
+
+  <rect x="320" y="30" width="260" height="160" rx="12" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+  <rect x="320" y="30" width="260" height="44" rx="12" fill="#57534e"/>
+  <rect x="320" y="58" width="260" height="16" fill="#57534e"/>
+  <text class="ttl" x="450" y="58" text-anchor="middle">ÉCO-ORGANISME AGRÉÉ</text>
+  <text class="verbe" x="450" y="112" text-anchor="middle">organise</text>
+  <text class="lbl" x="450" y="145" text-anchor="middle">la collecte et le traitement,</text>
+  <text class="lbl" x="450" y="167" text-anchor="middle">à la place du metteur sur le marché</text>
+
+  <rect x="620" y="30" width="260" height="160" rx="12" fill="#fffdf8" stroke="#10233c" stroke-width="3"/>
+  <rect x="620" y="30" width="260" height="44" rx="12" fill="#10233c"/>
+  <rect x="620" y="58" width="260" height="16" fill="#10233c"/>
+  <text class="ttl" x="750" y="58" text-anchor="middle">POINT DE REPRISE</text>
+  <text class="verbe" x="750" y="112" text-anchor="middle">reçoit</text>
+  <text class="lbl" x="750" y="145" text-anchor="middle">les déchets triés</text>
+  <text class="lbl" x="750" y="167" text-anchor="middle">déposés par les professionnels</text>
+
+  <line x1="280" y1="110" x2="315" y2="110" stroke="#10233c" stroke-width="3" marker-end="url(#fl3)"/>
+  <line x1="580" y1="110" x2="615" y2="110" stroke="#10233c" stroke-width="3" marker-end="url(#fl3)"/>
+</svg>

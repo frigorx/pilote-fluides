@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-4" aria-describedby="d-4" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-4">L'équipement individuel : harnais, longe, point d'ancrage</title>
+  <desc id="d-4">Une silhouette porte un harnais schématique relié par une longe en trait tireté à un point
+    d'ancrage fixé en hauteur. Une bande en bas précise que cet équipement n'intervient qu'en dernier
+    recours, quand la protection collective est impossible ou insuffisante.</desc>
+  <style>
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Point d'ancrage -->
+  <rect x="560" y="60" width="60" height="18" rx="4" fill="#fde9d0" stroke="#c2410c" stroke-width="3"/>
+  <text x="590" y="52" text-anchor="middle" font-size="14" fill="#5a6b7d">point d'ancrage</text>
+
+  <!-- Longe -->
+  <path d="M590 78 Q470 150 400 210" fill="none" stroke="#c2410c" stroke-width="4" stroke-dasharray="10 8"/>
+
+  <!-- Silhouette -->
+  <circle cx="380" cy="180" r="24" fill="#fde9d0" stroke="#10233c" stroke-width="2.5"/>
+  <rect x="358" y="204" width="44" height="66" rx="14" fill="#fde9d0" stroke="#10233c" stroke-width="2.5"/>
+  <path d="M362 214 L398 260 M398 214 L362 260" stroke="#c2410c" stroke-width="4"/>
+
+  <rect x="30" y="270" width="840" height="56" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="305" text-anchor="middle">N'intervient que si la protection collective est impossible ou insuffisante</text>
+</svg>

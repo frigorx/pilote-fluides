@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-bl" aria-describedby="d-bl" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bl">Bilan : une source d'information, pas un papier administratif</title>
+  <desc id="d-bl">À gauche, une icône de document barrée d'un trait, avec la mention « pas un
+    papier administratif ». Une flèche relie ce document à droite à une icône de clé, avec la
+    mention « une source d'information avant chaque intervention ». En bas, une bande résume les
+    points de la station : évaluation consignée et tenue à jour, écrite avec le terrain, deux
+    documents à ne pas confondre, le réflexe de le demander avant d'intervenir sur un site
+    inconnu.</desc>
+  <style>
+    .lbl { font-size:15px; fill:#10233c; }
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .band{ font-size:14.5px; fill:#10233c; }
+    .petit{ font-size:13px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- document, à gauche -->
+  <rect x="70" y="30" width="150" height="120" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <rect x="86" y="50" width="118" height="8" fill="#5a6b7d"/>
+  <rect x="86" y="70" width="118" height="6" fill="#d6dee7"/>
+  <rect x="86" y="86" width="118" height="6" fill="#d6dee7"/>
+  <rect x="86" y="102" width="80" height="6" fill="#d6dee7"/>
+  <line x1="75" y1="35" x2="215" y2="145" stroke="#c0392b" stroke-width="2.5"/>
+  <text class="petit" x="145" y="168" text-anchor="middle">pas un papier administratif</text>
+
+  <!-- flèche -->
+  <defs>
+    <marker id="fl-bl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c2410c"/>
+    </marker>
+  </defs>
+  <line x1="235" y1="90" x2="620" y2="90" stroke="#c2410c" stroke-width="3" marker-end="url(#fl-bl)"/>
+
+  <!-- clé, à droite -->
+  <g transform="translate(660,60)">
+    <circle cx="30" cy="30" r="26" fill="none" stroke="#c2410c" stroke-width="6"/>
+    <rect x="52" y="24" width="70" height="12" fill="#c2410c"/>
+    <rect x="104" y="36" width="10" height="16" fill="#c2410c"/>
+    <rect x="118" y="24" width="10" height="24" fill="#c2410c"/>
+  </g>
+  <text class="petit" x="770" y="168" text-anchor="middle">une source d'information</text>
+
+  <!-- bande résumé -->
+  <rect x="30" y="196" width="840" height="126" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="ttl" x="450" y="222" text-anchor="middle">À retenir</text>
+  <text class="band" x="60" y="248">— l'évaluation des risques est consignée par écrit et tenue à jour</text>
+  <text class="band" x="60" y="270">— elle s'écrit avec ceux qui connaissent le terrain, pas seul depuis un bureau</text>
+  <text class="band" x="60" y="292">— le document de mon employeur et celui du site visité sont deux documents distincts</text>
+  <text class="band" x="60" y="314">— le réflexe : le demander avant toute intervention sur un site qui n'est pas le mien</text>
+</svg>

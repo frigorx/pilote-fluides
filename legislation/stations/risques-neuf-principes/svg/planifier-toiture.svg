@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" role="img"
+     aria-labelledby="t-pt" aria-describedby="d-pt" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pt">Remplacer par moins dangereux, et planifier avant une intervention en toiture</title>
+  <desc id="d-pt">Deux bandes empilées. En haut, principe 6 « remplacer » : un flacon marqué d'une tête de
+    mort barré par une flèche vers un flacon plus clair marqué d'une coche, avec le texte « produit
+    dangereux remplacé par un produit qui l'est moins, quand c'est possible ». En bas, principe 7
+    « planifier » : le profil d'un toit avec une échelle et un technicien au pied. Une bulle barrée en
+    rouge contient la question « quel harnais ? » posée trop tard. Une bulle validée en vert contient la
+    question « peut-on éviter d'y monter, ou protéger le bord avant d'y aller ? », avec un garde-corps déjà
+    posé sur le bord du toit, avant que le technicien ne monte.</desc>
+  <style>
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .tit  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .mut  { font-size:14px; fill:#5a6b7d; font-style:italic; }
+    .bulle-non { font-size:14px; fill:#c0392b; font-weight:bold; }
+    .bulle-oui { font-size:14px; fill:#1e7e54; font-weight:bold; }
+  </style>
+
+  <!-- Bande 1 : REMPLACER -->
+  <rect x="16" y="16" width="868" height="128" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <circle cx="46" cy="46" r="18" fill="#c2410c"/><text class="num" x="46" y="52" text-anchor="middle">6</text>
+  <text class="tit" x="46" y="90" text-anchor="start">REMPLACER</text>
+
+  <rect x="220" y="40" width="46" height="66" rx="6" fill="#fbe7e4" stroke="#c0392b" stroke-width="2"/>
+  <text x="243" y="80" text-anchor="middle" font-size="22" fill="#c0392b">✕</text>
+  <text class="mut" x="243" y="126" text-anchor="middle">produit agressif</text>
+
+  <line x1="284" y1="73" x2="360" y2="73" stroke="#1e7e54" stroke-width="3" marker-end="url(#f3)"/>
+
+  <rect x="374" y="40" width="46" height="66" rx="6" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+  <text x="397" y="80" text-anchor="middle" font-size="22" fill="#1e7e54">✓</text>
+  <text class="mut" x="397" y="126" text-anchor="middle">produit moins dangereux</text>
+
+  <text class="lbl" x="620" y="65" text-anchor="middle">Un décapant, un fluide, un solvant :</text>
+  <text class="lbl" x="620" y="87" text-anchor="middle">remplacer ce qui est dangereux</text>
+  <text class="lbl" x="620" y="109" text-anchor="middle">par ce qui l'est moins, quand possible</text>
+
+  <!-- Bande 2 : PLANIFIER -->
+  <rect x="16" y="160" width="868" height="288" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <circle cx="46" cy="190" r="18" fill="#c2410c"/><text class="num" x="46" y="196" text-anchor="middle">7</text>
+  <text class="tit" x="46" y="234" text-anchor="start">PLANIFIER</text>
+
+  <!-- toit -->
+  <polygon points="120,420 420,420 420,360 270,300 120,360" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <!-- garde-corps posé sur le bord, AVANT la montée -->
+  <line x1="120" y1="360" x2="120" y2="320" stroke="#1e7e54" stroke-width="4"/>
+  <line x1="150" y1="360" x2="150" y2="326" stroke="#1e7e54" stroke-width="4"/>
+  <line x1="120" y1="320" x2="150" y2="326" stroke="#1e7e54" stroke-width="4"/>
+  <text class="bulle-oui" x="135" y="300">garde-corps posé</text>
+
+  <!-- échelle + technicien au pied -->
+  <line x1="440" y1="420" x2="500" y2="320" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="452" y1="420" x2="512" y2="320" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="443" y1="400" x2="509" y2="400" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="446" y1="370" x2="512" y2="370" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="449" y1="340" x2="515" y2="340" stroke="#5a6b7d" stroke-width="3"/>
+  <circle cx="440" cy="428" r="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+
+  <!-- bulle barrée : mauvaise première question -->
+  <rect x="560" y="200" width="300" height="60" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <text class="bulle-non" x="710" y="228" text-anchor="middle">« Quel harnais choisir ? »</text>
+  <text class="mut" x="710" y="248" text-anchor="middle">— posée trop tard, au pied de l'échelle</text>
+
+  <!-- bulle validée : bonne première question -->
+  <rect x="560" y="280" width="300" height="90" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2.5"/>
+  <text class="bulle-oui" x="710" y="305" text-anchor="middle">« Peut-on éviter d'y monter,</text>
+  <text class="bulle-oui" x="710" y="325" text-anchor="middle">ou protéger le bord</text>
+  <text class="bulle-oui" x="710" y="345" text-anchor="middle">avant d'y aller ? »</text>
+  <text class="mut" x="710" y="364" text-anchor="middle">— décidée avant le déplacement</text>
+
+  <defs>
+    <marker id="f3" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1e7e54"/>
+    </marker>
+  </defs>
+</svg>

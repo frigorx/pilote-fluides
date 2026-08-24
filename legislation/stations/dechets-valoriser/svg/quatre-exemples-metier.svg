@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-qua" aria-describedby="d-qua" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-qua">Quatre déchets d'un frigoriste, quatre niveaux</title>
+  <desc id="d-qua">Quatre cartes en cascade, chacune reliée à son niveau de traitement. Un fluide
+    récupéré, propre, réemployé sur la même machine : réemploi. Des chutes de cuivre envoyées en
+    fonderie : recyclage. Une chute d'isolant non recyclable, valorisée en énergie : valorisation
+    énergétique. Un fluide non réutilisable et non valorisable, détruit : élimination.</desc>
+  <style>
+    .carte  { fill:#fffdf8; stroke:#57534e; stroke-width:3; }
+    .num    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .ttl    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl    { font-size:15px; fill:#5a6b7d; }
+    .badge  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; }
+  </style>
+
+  <!-- carte 1 : réemploi -->
+  <rect class="carte" x="30" y="20" width="210" height="150" rx="12"/>
+  <circle cx="60" cy="50" r="18" fill="#57534e"/>
+  <text class="num" x="60" y="56" text-anchor="middle">1</text>
+  <text class="ttl" x="135" y="90" text-anchor="middle">Fluide récupéré,</text>
+  <text class="ttl" x="135" y="110" text-anchor="middle">propre, réemployé</text>
+  <text class="lbl" x="135" y="128" text-anchor="middle">sur la même machine</text>
+  <rect x="65" y="140" width="140" height="24" rx="12" fill="#e6ece8" stroke="#1e7e54" stroke-width="2"/>
+  <text class="badge" x="135" y="157" text-anchor="middle" fill="#1e7e54">RÉEMPLOI</text>
+
+  <!-- carte 2 : recyclage -->
+  <rect class="carte" x="255" y="70" width="210" height="150" rx="12"/>
+  <circle cx="285" cy="100" r="18" fill="#57534e"/>
+  <text class="num" x="285" y="106" text-anchor="middle">2</text>
+  <text class="ttl" x="360" y="140" text-anchor="middle">Chutes de cuivre</text>
+  <text class="ttl" x="360" y="160" text-anchor="middle">envoyées</text>
+  <text class="lbl" x="360" y="178" text-anchor="middle">en fonderie</text>
+  <rect x="290" y="190" width="140" height="24" rx="12" fill="#fdf1e2" stroke="#b06a00" stroke-width="2"/>
+  <text class="badge" x="360" y="207" text-anchor="middle" fill="#b06a00">RECYCLAGE</text>
+
+  <!-- carte 3 : valorisation énergétique -->
+  <rect class="carte" x="480" y="120" width="220" height="150" rx="12"/>
+  <circle cx="500" cy="142" r="16" fill="#57534e"/>
+  <text class="num" x="500" y="148" text-anchor="middle">3</text>
+  <text class="ttl" x="590" y="192" text-anchor="middle">Chute d'isolant</text>
+  <text class="ttl" x="590" y="212" text-anchor="middle">non recyclable,</text>
+  <text class="lbl" x="590" y="230" text-anchor="middle">valorisée en énergie</text>
+  <rect x="510" y="242" width="160" height="24" rx="12" fill="#fdece7" stroke="#c0392b" stroke-width="2"/>
+  <text class="badge" x="590" y="259" text-anchor="middle" fill="#c0392b" font-size="14">VALORISATION</text>
+
+  <!-- carte 4 : élimination -->
+  <rect class="carte" x="700" y="170" width="200" height="150" rx="12"/>
+  <circle cx="730" cy="200" r="18" fill="#57534e"/>
+  <text class="num" x="730" y="206" text-anchor="middle">4</text>
+  <text class="ttl" x="800" y="240" text-anchor="middle">Fluide non réutilisable,</text>
+  <text class="ttl" x="800" y="260" text-anchor="middle">non valorisable,</text>
+  <text class="lbl" x="800" y="278" text-anchor="middle">détruit</text>
+  <rect x="730" y="290" width="140" height="24" rx="12" fill="#f2eeee" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="badge" x="800" y="307" text-anchor="middle" fill="#5a6b7d">ÉLIMINATION</text>
+
+</svg>

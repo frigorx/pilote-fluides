@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-reparer" aria-describedby="d-reparer" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-reparer">Concevoir pour se réparer : boîtier scellé contre panneau démontable</title>
+  <desc id="d-reparer">Deux cartes côte à côte. À gauche, « boîtier scellé » : un rectangle fermé
+    avec un cadenas dessiné et une clé barrée d'une croix rouge, sous-titré « pas d'accès ». À
+    droite, « panneau démontable » : un rectangle avec quatre vis visibles à ses coins et une clé
+    non barrée, sous-titré « accès possible, pièces détachées disponibles ». En bas de l'image,
+    un axe horizontal représente le principe de l'indice de réparabilité, sans pointeur ni note
+    chiffrée : à gauche « facile à réparer », à droite « difficile à réparer ».</desc>
+  <style>
+    .hd  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .ti  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lb  { font-size:16px; fill:#10233c; }
+    .lb2 { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- boîtier scellé -->
+  <rect x="40" y="20" width="380" height="52" rx="12" fill="#c0392b"/>
+  <text class="hd" x="230" y="53" text-anchor="middle">BOÎTIER SCELLÉ</text>
+  <rect x="40" y="72" width="380" height="190" fill="#fffdf8" stroke="#c0392b" stroke-width="2.5"/>
+  <!-- cadenas -->
+  <rect x="195" y="150" width="70" height="55" rx="8" fill="none" stroke="#c0392b" stroke-width="4"/>
+  <path d="M210,150 v-20 a20,20 0 0 1 40,0 v20" fill="none" stroke="#c0392b" stroke-width="4"/>
+  <circle cx="230" cy="177" r="6" fill="#c0392b"/>
+  <!-- clé barrée -->
+  <g transform="translate(120,175)">
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#5a6b7d" stroke-width="4"/>
+    <line x1="10" y1="10" x2="55" y2="10" stroke="#5a6b7d" stroke-width="4"/>
+    <line x1="45" y1="4" x2="45" y2="16" stroke="#5a6b7d" stroke-width="4"/>
+    <line x1="55" y1="4" x2="55" y2="16" stroke="#5a6b7d" stroke-width="4"/>
+    <line x1="-16" y1="-16" x2="60" y2="26" stroke="#c0392b" stroke-width="4"/>
+  </g>
+  <text class="lb" x="230" y="240" text-anchor="middle" font-weight="bold" fill="#c0392b">Pas d'accès</text>
+
+  <!-- panneau démontable -->
+  <rect x="480" y="20" width="380" height="52" rx="12" fill="#047857"/>
+  <text class="hd" x="670" y="53" text-anchor="middle">PANNEAU DÉMONTABLE</text>
+  <rect x="480" y="72" width="380" height="190" fill="#fffdf8" stroke="#047857" stroke-width="2.5"/>
+  <rect x="600" y="130" width="140" height="90" rx="8" fill="none" stroke="#047857" stroke-width="3"/>
+  <circle cx="608" cy="138" r="5" fill="#047857"/>
+  <circle cx="732" cy="138" r="5" fill="#047857"/>
+  <circle cx="608" cy="212" r="5" fill="#047857"/>
+  <circle cx="732" cy="212" r="5" fill="#047857"/>
+  <!-- clé libre -->
+  <g transform="translate(670,175)">
+    <circle cx="-40" cy="0" r="14" fill="none" stroke="#047857" stroke-width="4"/>
+    <line x1="-26" y1="0" x2="19" y2="0" stroke="#047857" stroke-width="4"/>
+    <line x1="9" y1="-6" x2="9" y2="6" stroke="#047857" stroke-width="4"/>
+    <line x1="19" y1="-6" x2="19" y2="6" stroke="#047857" stroke-width="4"/>
+  </g>
+  <text class="lb" x="670" y="240" text-anchor="middle" font-weight="bold" fill="#047857">Accès possible</text>
+
+  <text class="lb2" x="230" y="290" text-anchor="middle">pièces détachées : plus difficiles à obtenir dans le temps</text>
+  <text class="lb2" x="670" y="290" text-anchor="middle">pièces détachées disponibles dans le temps</text>
+
+  <!-- axe indice de réparabilité -->
+  <text class="ti" x="450" y="330" text-anchor="middle">Indice de réparabilité — principe du classement</text>
+  <rect x="150" y="345" width="600" height="16" rx="8" fill="url(#grad-rep)"/>
+  <defs>
+    <linearGradient id="grad-rep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#047857"/>
+      <stop offset="1" stop-color="#c0392b"/>
+    </linearGradient>
+  </defs>
+  <text class="lb" x="150" y="336" text-anchor="start">Facile à réparer</text>
+  <text class="lb" x="750" y="336" text-anchor="end">Difficile à réparer</text>
+</svg>

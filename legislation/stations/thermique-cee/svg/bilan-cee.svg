@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-bc2" aria-describedby="d-bc2" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bc2">Bilan : une obligation qui finance vos chantiers</title>
+  <desc id="d-bc2">Le circuit en boucle de l'écran 5 réapparaît, plus petit, à gauche : État,
+    vendeur d'énergie, client, certificat. À droite, une bande résume les points de la station.</desc>
+  <style>
+    .lbl { font-size:14px; fill:#10233c; font-weight:bold; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <rect x="30" y="40" width="150" height="55" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="105" y="72" text-anchor="middle">L'État</text>
+
+  <rect x="230" y="40" width="150" height="55" rx="8" fill="#eef1f4" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="305" y="72" text-anchor="middle">Vendeur</text>
+
+  <rect x="230" y="220" width="150" height="55" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+  <text class="lbl" x="305" y="252" text-anchor="middle">Client</text>
+
+  <rect x="30" y="220" width="150" height="55" rx="8" fill="#fff4e0" stroke="#92400e" stroke-width="2"/>
+  <text class="lbl" x="105" y="252" text-anchor="middle">Certificat</text>
+
+  <path d="M 180 67 L 225 67" stroke="#92400e" stroke-width="2.5" fill="none"/>
+  <polygon points="225,67 210,61 210,73" fill="#92400e"/>
+  <path d="M 305 95 L 305 215" stroke="#92400e" stroke-width="2.5" fill="none"/>
+  <polygon points="305,215 298,200 312,200" fill="#92400e"/>
+  <path d="M 225 247 L 180 247" stroke="#92400e" stroke-width="2.5" fill="none"/>
+  <polygon points="180,247 195,241 195,253" fill="#92400e"/>
+  <path d="M 105 220 L 105 95" stroke="#92400e" stroke-width="2.5" fill="none"/>
+  <polygon points="105,95 98,110 112,110" fill="#92400e"/>
+
+  <rect x="430" y="40" width="440" height="270" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="650" y="75" text-anchor="middle" font-weight="bold">Les CEE en quatre points</text>
+  <text class="band" x="455" y="115">— l'État oblige les vendeurs d'énergie à faire</text>
+  <text class="band" x="470" y="140">économiser de l'énergie ;</text>
+  <text class="band" x="455" y="175">— ils financent des travaux et récupèrent</text>
+  <text class="band" x="470" y="200">un certificat comme preuve ;</text>
+  <text class="band" x="455" y="235">— le client bénéficie d'une aide, si l'installateur</text>
+  <text class="band" x="470" y="260">est qualifié ;</text>
+  <text class="band" x="455" y="290">— l'aide se valide avant les travaux, pas après.</text>
+</svg>

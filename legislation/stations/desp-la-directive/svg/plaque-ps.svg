@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-pla" aria-describedby="d-pla" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pla">La PS sur la plaque signalétique : la référence de l'équipement</title>
+  <desc id="d-pla">Une plaque signalétique d'équipement, avec des lignes vierges pour le fabricant, le
+    type et le numéro de série, puis une ligne encadrée en couleur pour la PS, la pression maximale
+    admissible, elle aussi laissée vierge car sa valeur est propre à chaque équipement et fixée par
+    son fabricant. Une flèche relie cette ligne à un encadré à droite qui explique que la PS sert de
+    référence pour la suite : le classement de l'équipement et le tarage de ses accessoires de
+    sécurité.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .champ{ font-size:15.5px; fill:#5a6b7d; }
+    .ps   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#0c4a6e; }
+    .lbl  { font-size:16px; fill:#10233c; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- La plaque -->
+  <rect x="40" y="40" width="380" height="260" rx="12" fill="#fffdf8" stroke="#10233c" stroke-width="3"/>
+  <rect x="40" y="40" width="380" height="42" rx="12" fill="#1b3a63"/>
+  <rect x="40" y="66" width="380" height="16" fill="#1b3a63"/>
+  <text class="ttl" x="230" y="67" text-anchor="middle">PLAQUE SIGNALÉTIQUE</text>
+
+  <text class="champ" x="60" y="112">Fabricant</text>
+  <line x1="150" y1="112" x2="400" y2="112" stroke="#d6dee7" stroke-width="2"/>
+
+  <text class="champ" x="60" y="148">Type / modèle</text>
+  <line x1="180" y1="148" x2="400" y2="148" stroke="#d6dee7" stroke-width="2"/>
+
+  <text class="champ" x="60" y="184">N° de série</text>
+  <line x1="160" y1="184" x2="400" y2="184" stroke="#d6dee7" stroke-width="2"/>
+
+  <!-- Ligne PS, encadrée -->
+  <rect x="52" y="204" width="356" height="40" rx="8" fill="#eef3f9" stroke="#0c4a6e" stroke-width="2.5"/>
+  <text class="ps" x="64" y="230">PS</text>
+  <text class="champ" x="100" y="230" font-size="14.5">pression maximale admissible</text>
+  <line x1="330" y1="230" x2="398" y2="230" stroke="#0c4a6e" stroke-width="2"/>
+
+  <text class="champ" x="60" y="272">Volume</text>
+  <line x1="140" y1="272" x2="400" y2="272" stroke="#d6dee7" stroke-width="2"/>
+
+  <!-- Flèche vers l'encadré -->
+  <path d="M 420 224 H 480" stroke="#0c4a6e" stroke-width="4" fill="none"/>
+  <polygon points="480,214 500,224 480,234" fill="#0c4a6e"/>
+
+  <!-- Encadré d'explication -->
+  <rect x="510" y="150" width="360" height="150" rx="12" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <text class="lbl" x="530" y="184" font-weight="bold" fill="#0c4a6e">La PS : la référence</text>
+  <text class="lbl" x="530" y="212" font-size="15">fixée par le fabricant,</text>
+  <text class="lbl" x="530" y="234" font-size="15">gravée sur la plaque —</text>
+  <text class="lbl" x="530" y="264" font-size="15">elle sert ensuite au classement</text>
+  <text class="lbl" x="530" y="286" font-size="15">et au tarage des sécurités</text>
+
+  <text class="note" x="450" y="322" text-anchor="middle">Toujours vérifier la PS sur la plaque de l'équipement, jamais par estimation.</text>
+</svg>

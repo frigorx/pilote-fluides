@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>ACV &amp; carbone — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : les quatre étapes d'une analyse de cycle de vie — fabriquer, transporter, exploiter, démolir — et ce que mesure réellement l'indicateur carbone de la RE2020.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/impact-acv-carbone/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Impact environnemental.
+     Correspondance directe avec la station « impact-tewi » du même réseau :
+     le TEWI n'est qu'une partie de l'étape « exploiter » de l'ACV.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     styles.css et app.js sont une copie LITTÉRALE du socle du réseau
+     (aptitude-capacite) : la variable --sous-ligne y reste #0f766e à
+     dessein, l'accent #047857 de cette sous-ligne n'habille que les SVG.
+
+     ⚠️ PROTOTYPE NON RELU (data-prototype sur marque.js) : fond rédigé,
+     en attente de relecture métier avant diffusion.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Impact environnemental · niveau BTS</p>
+  <h1>ACV &amp; carbone — mesurer tout le cycle de vie</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez nommer les quatre étapes d'une analyse de cycle de vie, situer le TEWI dans ce cycle, et expliquer ce que mesure réellement l'indicateur carbone de la RE2020 : pas seulement la consommation, mais le cycle de vie complet du bâtiment.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Quatre blocs alignés, reliés par des flèches : fabriquer, transporter, exploiter, démolir. Regardez le troisième bloc, exploiter : il est plus large que les autres, parce que c'est en général l'étape la plus longue pour un équipement fixe. En bas, la bande rappelle que ces quatre étapes ensemble forment l'analyse de cycle de vie, l'ACV.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Les quatre étapes d'un cycle de vie</h2>
+    <p>L'<strong>analyse de cycle de vie</strong> (ACV) mesure l'impact environnemental d'un équipement sur <strong>toutes ses étapes</strong>, pas seulement son fonctionnement : <strong>fabriquer</strong>, <strong>transporter</strong>, <strong>exploiter</strong>, <strong>démolir</strong>.</p>
+    <figure>
+      <img src="svg/quatre-etapes-acv.svg" alt="Quatre blocs alignés reliés par des flèches : fabriquer, transporter, exploiter, démolir. Le bloc exploiter est plus large, pour rappeler que c'est en général l'étape la plus longue pour un équipement fixe.">
+      <figcaption>Ensemble, ces quatre étapes forment l'analyse de cycle de vie.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Une usine schématique avec une cheminée. Deux flèches y entrent : l'une, matières premières extraites, l'autre, énergie industrielle. Une flèche en sort vers un appareil neuf, posé sur une palette. L'empreinte de cette étape existe avant même que l'appareil ne soit mis en route.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Fabriquer : l'empreinte avant même la mise en route</h2>
+    <p>Extraire les <strong>matières premières</strong>, consommer de l'<strong>énergie industrielle</strong> pour les transformer : l'empreinte existe avant même que l'appareil ne soit mis en route.</p>
+    <figure>
+      <img src="svg/fabriquer.svg" alt="Une usine avec une cheminée. Deux flèches entrent : matières premières extraites, énergie industrielle. Une flèche sort vers un appareil neuf posé sur une palette.">
+      <figcaption>L'empreinte commence avant la mise en route de l'appareil.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Un appareil sur une palette part de l'usine, à gauche, et rejoint un chantier, à droite, en suivant une route en pointillé, avec un camion schématique. Cette étape s'ajoute à l'empreinte de la fabrication, avant même la mise en service.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Transporter : de l'usine au chantier</h2>
+    <p>De l'usine jusqu'au chantier ou au point d'installation : le trajet s'ajoute à l'empreinte de fabrication, avant même la mise en service.</p>
+    <figure>
+      <img src="svg/transporter.svg" alt="Un appareil sur une palette part de l'usine et rejoint un chantier en suivant une route en pointillé, avec un camion schématique.">
+      <figcaption>Le trajet compte, lui aussi, avant la mise en service.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Un appareil en fonctionnement, entouré d'une flèche circulaire qui représente les années de service. Deux étiquettes en sortent : énergie consommée, et fluide frigorigène. C'est exactement ce que mesure le TEWI, vu dans une autre station du même réseau.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Exploiter : la plus longue étape, en général</h2>
+    <p>Pour un équipement fixe, l'<strong>exploitation</strong> dure toute la vie de l'installation : <strong>énergie</strong> consommée et <strong>fluide</strong> frigorigène. C'est exactement ce que mesure le <strong>TEWI</strong>, vu dans une autre station du même réseau.</p>
+    <figure>
+      <img src="svg/exploiter.svg" alt="Un appareil en fonctionnement entouré d'une flèche circulaire représentant les années de service. Deux étiquettes : énergie consommée, fluide frigorigène.">
+      <figcaption>C'est exactement ce que mesure le TEWI : la partie exploitation du cycle de vie.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Un appareil en fin de vie se sépare en trois flux. Le premier, vers une zone bleue, récupération obligatoire du fluide. Le deuxième, vers une zone verte, matériaux recyclés. Le troisième, plus petit et rouge, ce qui n'est pas récupéré compte aussi dans le bilan.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Démolir : fin de vie, récupération et recyclage</h2>
+    <p>Fin de vie : <strong>récupération obligatoire du fluide</strong>, démontage, <strong>recyclage</strong> ou mise au rebut des matériaux. Ce qui n'est <strong>pas</strong> récupéré pèse aussi dans le bilan.</p>
+    <figure>
+      <img src="svg/demolir.svg" alt="Un appareil en fin de vie se sépare en trois flux : récupération obligatoire du fluide, matériaux recyclés, et ce qui n'est pas récupéré, qui compte aussi dans le bilan.">
+      <figcaption>Ce qui n'est pas récupéré compte aussi dans le bilan.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Un bâtiment au centre, entouré de deux zones : à gauche, construction, qui reprend fabriquer et transporter ; à droite, exploitation, qui reprend l'étape exploiter. La bande du bas résume : l'indicateur carbone mesure le cycle de vie complet du bâtiment, pas seulement sa consommation annuelle.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Ce que mesure l'indicateur carbone de la RE2020</h2>
+    <p>L'<strong>indicateur carbone (Ic)</strong> de la RE2020, réglementation thermique des bâtiments neufs, mesure le <strong>cycle de vie complet</strong> du bâtiment : construction <strong>et</strong> exploitation, ensemble.</p>
+    <figure>
+      <img src="svg/indicateur-carbone-re2020.svg" alt="Un bâtiment entouré de deux zones : construction, qui reprend fabriquer et transporter, et exploitation, qui reprend l'étape exploiter. L'indicateur carbone mesure les deux ensemble.">
+      <figcaption>Le cycle de vie complet du bâtiment, construction et exploitation ensemble.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre cartes numérotées. Un : les quatre étapes d'une ACV, lesquelles, dans quel ordre. Deux : l'étape la plus longue pour un équipement fixe. Trois : ce que mesure vraiment l'indicateur carbone de la RE2020. Quatre : le lien entre l'ACV d'un équipement et son TEWI. Aucune carte ne donne la réponse : c'est à vous de l'appliquer.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : quatre situations de terrain</h2>
+    <ol>
+      <li><strong>« Quelles sont les quatre étapes d'une ACV ? »</strong> → Fabriquer, transporter, exploiter, démolir, dans cet ordre.</li>
+      <li><strong>« Quelle étape pèse le plus longtemps pour un équipement fixe ? »</strong> → L'exploitation, car elle dure toute la vie de l'installation.</li>
+      <li><strong>« Que mesure l'indicateur carbone de la RE2020 ? »</strong> → Le cycle de vie complet du bâtiment, construction et exploitation.</li>
+      <li><strong>« Quel est le lien entre l'ACV et le TEWI ? »</strong> → Le TEWI est une partie de l'ACV, centrée sur l'étape exploiter.</li>
+    </ol>
+    <figure>
+      <img src="svg/quatre-situations.svg" alt="Quatre cartes numérotées : les quatre étapes d'une ACV, l'étape la plus longue pour un équipement fixe, ce que mesure l'indicateur carbone RE2020, le lien entre ACV et TEWI.">
+      <figcaption>Dans les quatre cas, la même question : à quelle étape du cycle est-ce qu'on regarde ?</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Les quatre étapes en rangée réduite, reliées par des flèches. En dessous, deux encadrés : le TEWI, qui ne mesure que l'étape exploiter, et l'indicateur carbone de la RE2020, qui mesure construction et exploitation ensemble. En bas, le réflexe : ne jamais juger un équipement sur sa seule consommation.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan : le cycle complet, du berceau à la démolition</h2>
+    <ul>
+      <li>Quatre étapes : <strong>fabriquer, transporter, exploiter, démolir</strong>.</li>
+      <li>L'<strong>exploitation</strong> est en général la plus longue pour un équipement fixe.</li>
+      <li>Le <strong>TEWI</strong> n'est qu'une partie de l'étape exploiter (fuites + énergie).</li>
+      <li>L'<strong>indicateur carbone</strong> de la RE2020 couvre le cycle de vie complet du bâtiment.</li>
+      <li>Ce qui n'est pas récupéré à la démolition compte aussi dans le bilan.</li>
+    </ul>
+    <p class="formule">Le réflexe : ne jamais juger un équipement sur sa seule consommation.</p>
+    <figure>
+      <img src="svg/bilan-acv.svg" alt="Les quatre étapes du cycle de vie en rangée réduite. Deux encadrés de rappel : le TEWI, qui ne mesure que l'étape exploiter, et l'indicateur carbone de la RE2020, qui mesure le cycle de vie complet.">
+      <figcaption>C'est le cycle complet, de la fabrication à la démolition, qui compte.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Quelles sont les quatre étapes d'une analyse de cycle de vie ? Reprenez l'écran un si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Quelles sont les quatre étapes d'une analyse de cycle de vie ?</h2>
+    <figure class="vignette">
+      <img src="svg/quatre-etapes-acv.svg" alt="Vignette de rappel : les quatre blocs fabriquer, transporter, exploiter, démolir, reliés par des flèches.">
+      <figcaption>Rappel de l'écran 1 — les quatre étapes.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Uniquement fabriquer et exploiter</button>
+      <button type="button" data-answer="bonne">Fabriquer, transporter, exploiter, démolir</button>
+      <button type="button" data-answer="c">Uniquement la phase d'exploitation</button>
+      <button type="button" data-answer="d">Uniquement la fin de vie</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'ACV couvre les quatre étapes ensemble. Se limiter à la fabrication et l'exploitation, à l'exploitation seule ou à la fin de vie seule laisse de côté des étapes qui pèsent, elles aussi, dans le bilan."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Pour un équipement fixe, quelle étape pèse en général le plus longtemps dans le cycle de vie ? Reprenez l'écran quatre si besoin.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Pour un équipement fixe, quelle étape pèse le plus longtemps ?</h2>
+    <figure class="vignette">
+      <img src="svg/exploiter.svg" alt="Vignette de rappel : un appareil en fonctionnement entouré d'une flèche circulaire représentant les années de service.">
+      <figcaption>Rappel de l'écran 4 — l'exploitation.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La fabrication, car les matières premières seraient toujours les plus polluantes</button>
+      <button type="button" data-answer="b">Le transport, à cause des distances</button>
+      <button type="button" data-answer="bonne">L'exploitation, car elle dure toute la durée de vie de l'installation, énergie et fluide compris</button>
+      <button type="button" data-answer="d">La démolition, à cause des déchets</button>
+    </div>
+    <p class="feedback" hidden data-explication="Fabrication, transport et démolition sont des étapes ponctuelles ; l'exploitation, elle, s'étale sur toute la durée de vie de l'installation, ce qui en fait en général l'étape la plus longue."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Que mesure l'indicateur carbone de la RE2020 ? Reprenez l'écran six si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Que mesure l'indicateur carbone de la RE2020 ?</h2>
+    <figure class="vignette">
+      <img src="svg/indicateur-carbone-re2020.svg" alt="Vignette de rappel : un bâtiment entouré des deux zones construction et exploitation.">
+      <figcaption>Rappel de l'écran 6 — le cycle complet du bâtiment.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Uniquement la consommation d'électricité annuelle du bâtiment</button>
+      <button type="button" data-answer="b">Uniquement les émissions du chantier de construction</button>
+      <button type="button" data-answer="bonne">L'impact carbone du bâtiment sur l'ensemble de son cycle de vie, construction et exploitation comprises</button>
+      <button type="button" data-answer="d">Uniquement le confort thermique perçu par les occupants</button>
+    </div>
+    <p class="feedback" hidden data-explication="Se limiter à la consommation annuelle, au chantier seul ou au confort perçu ne couvre qu'une partie du cycle. L'indicateur carbone mesure la construction et l'exploitation ensemble, sur l'ensemble du cycle de vie du bâtiment."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Quel est le lien entre l'ACV d'un équipement frigorifique et son TEWI ? Reprenez l'écran huit si besoin.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Quel est le lien entre l'ACV d'un équipement et son TEWI ?</h2>
+    <figure class="vignette">
+      <img src="svg/bilan-acv.svg" alt="Vignette de rappel : le TEWI, qui ne mesure que l'étape exploiter, et l'indicateur carbone, qui mesure le cycle de vie complet.">
+      <figcaption>Rappel de l'écran 8 — le TEWI, une partie du cycle complet.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le TEWI et l'ACV mesureraient exactement la même chose</button>
+      <button type="button" data-answer="b">Le TEWI couvrirait aussi la fabrication de la machine</button>
+      <button type="button" data-answer="bonne">Le TEWI est une partie de l'ACV, centrée sur l'étape d'exploitation ; l'ACV couvre en plus la fabrication, le transport et la démolition</button>
+      <button type="button" data-answer="d">L'ACV ne concernerait que le transport</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le TEWI ne regarde que les fuites et l'énergie de l'étape exploiter. L'ACV va plus loin : elle couvre aussi la fabrication, le transport et la démolition. Les deux ne mesurent donc pas le même périmètre."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. Aucun lien
+     réel pour cette station : les deux correspondances annoncées sont
+     encore en préparation sur le plan du réseau. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>La RE2020</strong> (sous-ligne Thermique) — le détail de l'indicateur carbone, construction et exploitation.</li>
+    <li><strong>NF EN 378</strong> (même sous-ligne) — ce que la classe du fluide impose en plus, sur l'étape exploitation.</li>
+  </ul>
+  <p>Les deux stations sont en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

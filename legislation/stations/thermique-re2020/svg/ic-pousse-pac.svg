@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-icp" aria-describedby="d-icp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-icp">L'IC pèse plus lourd pour une énergie carbonée que pour une pompe à chaleur</title>
+  <desc id="d-icp">Deux colonnes de barres, sans valeur chiffrée. À gauche, une chaudière au gaz :
+    sa barre d'impact carbone est haute. À droite, une pompe à chaleur : sa barre d'impact
+    carbone est basse. Une ligne pointillée horizontale marque le seuil à ne pas dépasser ; la
+    barre de gauche la franchit, celle de droite reste en dessous.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .neg { font-size:15px; fill:#c0392b; font-weight:bold; }
+    .pos { font-size:15px; fill:#1e7e54; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="28" text-anchor="middle">L'IC : deux choix, deux résultats</text>
+
+  <line x1="80" y1="120" x2="820" y2="120" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="8 6"/>
+  <text class="lbl" x="820" y="112" text-anchor="end" font-size="13" fill="#5a6b7d">seuil à respecter</text>
+
+  <!-- chaudière gaz : barre haute -->
+  <rect x="220" y="60" width="110" height="220" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <rect x="255" y="230" width="40" height="55" rx="6" fill="#fffdf8" stroke="#c0392b" stroke-width="2.5"/>
+  <text class="lbl" x="275" y="310" text-anchor="middle">chaudière gaz</text>
+  <text class="neg" x="275" y="90" text-anchor="middle">au-dessus</text>
+  <text class="neg" x="275" y="108" text-anchor="middle">du seuil</text>
+
+  <!-- pompe à chaleur : barre basse -->
+  <rect x="570" y="180" width="110" height="100" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <rect x="595" y="205" width="60" height="45" rx="6" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <circle cx="625" cy="227" r="14" fill="none" stroke="#1e7e54" stroke-width="2"/>
+  <text class="lbl" x="625" y="310" text-anchor="middle">pompe à chaleur</text>
+  <text class="pos" x="625" y="165" text-anchor="middle">sous le seuil</text>
+</svg>

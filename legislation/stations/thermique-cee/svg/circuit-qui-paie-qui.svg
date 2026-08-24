@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-cq" aria-describedby="d-cq" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cq">Le circuit complet : qui paie qui, du texte au chantier</title>
+  <desc id="d-cq">Un circuit fermé de quatre cases reliées par des flèches en boucle. L'État fixe
+    une obligation au vendeur d'énergie ; le vendeur d'énergie finance des travaux chez le client ;
+    le client fait réaliser les travaux par un professionnel ; les travaux réalisés donnent lieu à
+    un certificat qui revient prouver, auprès de l'État, que l'obligation du vendeur d'énergie est
+    remplie.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .fl  { font-size:13px; fill:#92400e; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="24" text-anchor="middle">Un circuit fermé, en boucle</text>
+
+  <rect x="60" y="60" width="180" height="70" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="150" y="100" text-anchor="middle" font-weight="bold">L'État</text>
+
+  <rect x="660" y="60" width="180" height="70" rx="10" fill="#eef1f4" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="lbl" x="750" y="90" text-anchor="middle" font-weight="bold">Vendeur</text>
+  <text class="lbl" x="750" y="110" text-anchor="middle" font-weight="bold">d'énergie</text>
+
+  <rect x="660" y="230" width="180" height="70" rx="10" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2.5"/>
+  <text class="lbl" x="750" y="270" text-anchor="middle" font-weight="bold">Client</text>
+
+  <rect x="60" y="230" width="180" height="70" rx="10" fill="#fff4e0" stroke="#92400e" stroke-width="2.5"/>
+  <text class="lbl" x="150" y="260" text-anchor="middle" font-weight="bold">Certificat</text>
+  <text class="lbl" x="150" y="280" text-anchor="middle" font-weight="bold">(preuve)</text>
+
+  <path d="M 245 95 L 655 95" fill="none" stroke="#92400e" stroke-width="3"/>
+  <polygon points="655,95 637,88 637,102" fill="#92400e"/>
+  <text class="fl" x="450" y="80" text-anchor="middle">obligation</text>
+
+  <path d="M 750 135 L 750 225" fill="none" stroke="#92400e" stroke-width="3"/>
+  <polygon points="750,225 743,207 757,207" fill="#92400e"/>
+  <text class="fl" x="800" y="182" text-anchor="middle">finance</text>
+
+  <path d="M 655 265 L 245 265" fill="none" stroke="#92400e" stroke-width="3"/>
+  <polygon points="245,265 263,258 263,272" fill="#92400e"/>
+  <text class="fl" x="450" y="250" text-anchor="middle">travaux réalisés</text>
+
+  <path d="M 150 225 L 150 135" fill="none" stroke="#92400e" stroke-width="3"/>
+  <polygon points="150,135 143,153 157,153" fill="#92400e"/>
+  <text class="fl" x="100" y="182" text-anchor="middle">preuve</text>
+</svg>

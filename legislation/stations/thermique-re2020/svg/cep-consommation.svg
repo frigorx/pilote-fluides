@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-cep" aria-describedby="d-cep" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cep">Le Cep additionne tous les usages d'énergie du bâtiment</title>
+  <desc id="d-cep">Cinq blocs empilés dans une même colonne, chacun représentant un poste de
+    consommation d'énergie : chauffage, refroidissement, eau chaude sanitaire, éclairage,
+    auxiliaires. Une accolade à droite les réunit sous l'étiquette Cep, la consommation totale
+    d'énergie primaire.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .sig { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#92400e; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Le Cep additionne tous les usages</text>
+
+  <rect x="60" y="55"  width="380" height="42" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="80" y="82">Chauffage</text>
+
+  <rect x="60" y="105" width="380" height="42" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="80" y="132">Refroidissement</text>
+
+  <rect x="60" y="155" width="380" height="42" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="80" y="182">Eau chaude sanitaire</text>
+
+  <rect x="60" y="205" width="380" height="42" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="80" y="232">Éclairage</text>
+
+  <rect x="60" y="255" width="380" height="42" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="80" y="282">Auxiliaires (pompes, ventilateurs)</text>
+
+  <path d="M 460 60 Q 500 175 460 292" fill="none" stroke="#92400e" stroke-width="3"/>
+
+  <rect x="560" y="130" width="280" height="90" rx="14" fill="#fff4e0" stroke="#92400e" stroke-width="3.5"/>
+  <text class="sig" x="700" y="170" text-anchor="middle">Cep</text>
+  <text class="lbl" x="700" y="196" text-anchor="middle" font-size="15">consommation totale</text>
+  <text class="lbl" x="700" y="215" text-anchor="middle" font-size="15">d'énergie primaire</text>
+</svg>

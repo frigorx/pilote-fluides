@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-dp" aria-describedby="d-dp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dp">Le DPE : une méthode standardisée, pas une lecture de factures</title>
+  <desc id="d-dp">Un appareil photo stylisé capture une maison : l'image représente le diagnostic.
+    À côté, deux chemins partent de la maison. L'un mène à un document « méthode standardisée »,
+    calculée à partir des caractéristiques du logement. L'autre, en trait pointillé et barré,
+    mène à une pile de factures réelles, marquée « ce n'est pas ce que le DPE lit ».</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:15px; fill:#92400e; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Une photographie standardisée, pas une lecture de factures</text>
+
+  <polygon points="90,180 170,120 250,180" fill="none" stroke="#10233c" stroke-width="3"/>
+  <rect x="110" y="180" width="120" height="90" fill="none" stroke="#10233c" stroke-width="3"/>
+
+  <!-- appareil photo -->
+  <rect x="60" y="60" width="60" height="42" rx="6" fill="#fffdf8" stroke="#92400e" stroke-width="2.5"/>
+  <circle cx="90" cy="81" r="14" fill="none" stroke="#92400e" stroke-width="2.5"/>
+
+  <path d="M 260 190 C 340 150, 380 150, 440 130" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="440,130 422,127 427,143" fill="#92400e"/>
+
+  <rect x="450" y="60" width="230" height="150" rx="12" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <text class="foc" x="565" y="100" text-anchor="middle">méthode</text>
+  <text class="foc" x="565" y="122" text-anchor="middle">standardisée</text>
+  <text class="lbl" x="565" y="155" text-anchor="middle">calculée à partir des</text>
+  <text class="lbl" x="565" y="175" text-anchor="middle">caractéristiques du logement</text>
+
+  <path d="M 260 220 C 340 260, 380 260, 440 270" fill="none" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <polygon points="440,270 422,264 425,280" fill="#5a6b7d"/>
+
+  <rect x="450" y="240" width="230" height="80" rx="12" fill="#eef1f4" stroke="#98a6b3" stroke-width="2.5"/>
+  <rect x="470" y="255" width="60" height="50" fill="none" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="465" y1="250" x2="535" y2="310" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="lbl" x="620" y="275" text-anchor="middle">pas les</text>
+  <text class="lbl" x="620" y="293" text-anchor="middle">factures réelles</text>
+</svg>

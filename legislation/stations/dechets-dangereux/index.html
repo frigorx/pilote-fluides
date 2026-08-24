@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Déchets dangereux — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce qui classe un déchet dangereux, le fluide récupéré non réutilisable, le bordereau de suivi (BSD) et sa version numérique, et ce qu'un frigoriste trace vraiment sur un chantier.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/dechets-dangereux/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Déchets.
+     Copie structurelle du gabarit aptitude-capacite. Correspondance
+     réelle vers ../fgaz-3/ (récupération obligatoire du fluide, en amont
+     de ce que devient ce fluide s'il n'est pas réutilisable).
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     ÉCART ASSUMÉ AVEC LE FOND : ni le nom exact de la plateforme
+     numérique de traçabilité, ni sa date de bascule obligatoire, ne sont
+     cités — non sourcés (voir FOND.md, § « à sourcer »). La station
+     parle d'un « registre national numérique », sans nom propre ni date.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Déchets · niveau BTS</p>
+  <h1>Déchets dangereux — BSD et traçabilité</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez ce qui rend un déchet dangereux, vous savez qu'un fluide récupéré non réutilisable en est un, vous connaissez l'existence et le rôle du bordereau de suivi (BSD) et de sa version numérique, et vous savez ce que la traçabilité prouve.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez les trois objets. À gauche, une bouteille de fluide frigorigène, surmontée d'un pictogramme de danger. Au centre, un bidon d'huile usagée, lui aussi surmonté du même pictogramme. À droite, un carton d'emballage, bien plus gros que les deux autres, mais sans aucun pictogramme. C'est le point de cet écran : ce n'est pas la taille qui décide, c'est la nature. Une petite bouteille de fluide est dangereuse ; un grand carton ne l'est pas.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Ce qui rend un déchet dangereux</h2>
+    <p>Un déchet est dit « dangereux » quand il porte une <strong>propriété de danger</strong> : il peut être inflammable, toxique, corrosif, ou nocif pour les milieux naturels. Ce n'est pas une question de quantité, mais de nature.</p>
+    <p>Une huile usagée, un fluide frigorigène non réutilisable, un solvant : leur nature seule suffit à les classer dangereux, <strong>même en petite quantité</strong>.</p>
+    <figure>
+      <img src="svg/nature-vs-quantite.svg" alt="Une bouteille de fluide frigorigène et un bidon d'huile, chacun surmonté d'un pictogramme de danger, à côté d'un carton d'emballage bien plus volumineux mais sans pictogramme : c'est la nature qui décide, pas le volume.">
+      <figcaption>Le carton est plus gros, mais seuls les deux autres portent une propriété de danger.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici le cas concret que le frigoriste croise en premier. La bouteille porte une étiquette : non réutilisable. Contaminé, mélangé, ou tout simplement plus identifiable, ce fluide récupéré ne peut plus servir. La flèche vous montre où il part : vers le pictogramme du déchet dangereux. Ce n'est plus un fluide en attente de réemploi, c'est un déchet, et un déchet dangereux.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le fluide récupéré non réutilisable : un cas concret</h2>
+    <p>Le métier du frigoriste croise ce cas en premier : un fluide récupéré qui n'est <strong>pas réutilisable</strong> — contaminé, mélangé, non identifiable — devient un déchet, et c'est un déchet dangereux.</p>
+    <p>Il suit alors la filière des déchets dangereux, <strong>pas une benne de tri classique</strong>.</p>
+    <figure>
+      <img src="svg/fluide-non-reutilisable.svg" alt="Une bouteille de récupération de fluide frigorigène avec une étiquette « non réutilisable », et une flèche vers un pictogramme de déchet dangereux.">
+      <figcaption>Non réutilisable : le fluide change de statut, il devient un déchet dangereux.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Trois maillons, reliés par une même bande : c'est le bordereau de suivi. Producteur, transporteur, traiteur — chacun appose sa marque sur ce document qui les traverse tous. C'est ce document qui répond à la question : ce déchet dangereux, par où est-il passé, et où a-t-il fini ?">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le bordereau de suivi : la mémoire du déchet dangereux</h2>
+    <p>Le <strong>bordereau de suivi des déchets (BSD)</strong> accompagne un déchet dangereux à chaque étape : sa production, son transport, son traitement. Chaque intervenant y appose sa trace.</p>
+    <p>C'est ce document qui permet de répondre à la question : « ce déchet dangereux, par où est-il passé, et où a-t-il fini ? ».</p>
+    <figure>
+      <img src="svg/chaine-bsd.svg" alt="Une chaîne en trois maillons — producteur, transporteur, traiteur — chacun apposant une marque sur un même document, le bordereau de suivi des déchets, qui les traverse.">
+      <figcaption>Trois intervenants, un même document qui les traverse tous.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Le document papier, marqué d'un trait en diagonale, a laissé la place à un écran : un registre national numérique. On y retrouve la même chaîne de traçabilité, les mêmes maillons. Chaque mouvement de déchet dangereux y est enregistré et consultable. Le principe ne change pas — assurer la traçabilité — seul le support a changé.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Le bordereau existe aujourd'hui sous forme numérique</h2>
+    <p>Le BSD papier a laissé place à un <strong>registre national numérique</strong> : chaque mouvement de déchet dangereux y est enregistré, consultable, et ne peut plus se perdre dans une pile de papiers.</p>
+    <p>Le principe ne change pas — assurer la traçabilité — <strong>seul le support a changé</strong>.</p>
+    <figure>
+      <img src="svg/bsd-papier-vers-numerique.svg" alt="Un document papier marqué d'un trait diagonal, avec une flèche vers un écran affichant la même chaîne de traçabilité, pour montrer la continuité du principe.">
+      <figcaption>Même chaîne, même suivi : seul le support a changé.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Une balance stylisée. Sur le plateau de gauche : je déclare avoir bien géré. Sur le plateau de droite, relié aux maillons du bordereau, et plus lourd : je peux le prouver, maillon par maillon. C'est la différence entre une simple déclaration et la traçabilité : elle prouve, étape par étape, que le déchet dangereux a bien atteint une filière autorisée.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Pourquoi la traçabilité, et pas seulement une déclaration</h2>
+    <p>Une simple déclaration dirait « j'ai bien géré mes déchets ». La traçabilité va plus loin : elle <strong>prouve</strong>, étape par étape, que chaque déchet dangereux a bien atteint une filière autorisée.</p>
+    <p>C'est ce qui permet à un producteur de démontrer sa responsabilité, même longtemps après (voir la station Responsabilités).</p>
+    <figure>
+      <img src="svg/balance-tracabilite.svg" alt="Une balance stylisée : d'un côté « je déclare avoir bien géré », de l'autre « je peux le prouver, maillon par maillon », le second plateau plus lourd.">
+      <figcaption>Le plateau qui pèse le plus lourd est celui qui peut se prouver.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Sur cet établi de frigoriste, un cadre rouge en tireté isole ce qui exige un suivi tracé : la bouteille de fluide non réutilisable, le bidon d'huile usagée, le filtre déshydrateur contaminé. Tous les trois sont reliés au bordereau de suivi. À droite, hors de ce cadre : la chute de cuivre et le carton. Ceux-là suivent la filière classique de tri, pas le bordereau.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Ce qu'un frigoriste trace vraiment</h2>
+    <p>Sur un chantier de froid, les déchets qui exigent un suivi tracé sont d'abord : les <strong>fluides frigorigènes récupérés non réutilisables</strong>, les <strong>huiles usagées</strong>, et certains <strong>filtres déshydrateurs</strong> contaminés.</p>
+    <p>Le cuivre, les cartons, le bois trié n'entrent pas dans ce suivi : ils suivent la filière classique de tri (voir la station Trier : les 7 flux).</p>
+    <figure>
+      <img src="svg/etabli-dechets-traces.svg" alt="Un établi de frigoriste où les déchets dangereux (fluide non réutilisable, huile, filtre contaminé) sont encadrés en rouge et reliés au bordereau, tandis que le cuivre et le carton restent hors de ce cadre.">
+      <figcaption>Dans le cadre rouge, ce qui se trace. En dehors, ce qui suit le tri classique.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Trois cartes empilées, trois idées reçues du terrain. Première : mon fluide n'est plus identifiable, mais la quantité est petite. Réponse : la quantité ne change rien. Deuxième : j'ai rempli un bordereau papier, c'est suffisant. Réponse : le principe reste bon, mais le suivi passe par le registre numérique. Troisième : personne n'a demandé de bordereau, donc je n'en fais pas. Réponse : le bordereau accompagne tout déchet dangereux, systématiquement, sans qu'on ait à le demander.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : trois situations de terrain</h2>
+    <ol>
+      <li><strong>« Mon fluide récupéré n'est plus identifiable, mais la quantité est petite. »</strong> → La quantité ne change rien : c'est la nature du déchet qui le classe dangereux.</li>
+      <li><strong>« J'ai rempli un bordereau papier, c'est suffisant. »</strong> → Le principe reste bon, mais le suivi passe aujourd'hui par le registre numérique — se renseigner sur l'outil en vigueur.</li>
+      <li><strong>« Personne n'a demandé de bordereau, donc je n'en fais pas. »</strong> → Le bordereau n'est pas une option sur demande : il accompagne tout déchet dangereux, systématiquement.</li>
+    </ol>
+    <figure>
+      <img src="svg/trois-situations-dangereux.svg" alt="Trois cartes en cascade, chacune avec une situation de terrain entre guillemets et sa réponse.">
+      <figcaption>Trois idées reçues, une même réponse : la nature du déchet décide, sans exception.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan. Une chaîne complète du chantier au traitement final : chantier, producteur, déclaration numérique, traitement final. Le maillon du milieu, la déclaration numérique, est mis en évidence par un double contour : c'est lui qui porte la preuve. La bande du bas résume les cinq points de la station. Et le réflexe professionnel : tout déchet qui porte une propriété de danger se trace, sans exception liée à la quantité.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Un déchet est dangereux par sa <strong>nature</strong>, pas par sa quantité.</li>
+      <li>Un fluide récupéré non réutilisable est un déchet dangereux.</li>
+      <li>Le BSD trace un déchet dangereux du producteur au traitement final.</li>
+      <li>Le suivi passe aujourd'hui par un registre numérique.</li>
+      <li>Un frigoriste trace surtout ses fluides non réutilisables, ses huiles usagées, ses filtres contaminés.</li>
+    </ul>
+    <p class="formule">Le réflexe : tout déchet qui porte une propriété de danger se trace, sans exception liée à la quantité.</p>
+    <figure>
+      <img src="svg/bilan-dangereux.svg" alt="Une chaîne de traçabilité complète, du chantier au traitement final, avec le maillon « déclaration numérique » mis en évidence.">
+      <figcaption>Du chantier au traitement final, la chaîne ne se rompt pas.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Qu'est-ce qui classe un déchet comme dangereux ? Choisissez parmi les quatre propositions.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce qui classe un déchet comme « dangereux » ?</h2>
+    <figure class="vignette">
+      <img src="svg/nature-vs-quantite.svg" alt="Vignette de rappel : la bouteille de fluide et le bidon d'huile portant un pictogramme de danger, à côté d'un carton plus gros mais sans pictogramme.">
+      <figcaption>Rappel de l'écran 1 — la nature, pas la quantité.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Sa quantité, au-delà d'un certain volume</button>
+      <button type="button" data-answer="bonne">Sa nature — inflammable, toxique, corrosif ou nocif pour les milieux</button>
+      <button type="button" data-answer="c">Le fait qu'il vienne d'un chantier de froid</button>
+      <button type="button" data-answer="d">Son prix de revente</button>
+    </div>
+    <p class="feedback" hidden data-explication="C'est la propriété de danger qui classe le déchet, quelle que soit la quantité."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un fluide frigorigène récupéré, contaminé et non identifiable, c'est quoi ? Reprenez le schéma de l'écran deux avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un fluide frigorigène récupéré, contaminé et non identifiable, est :</h2>
+    <figure class="vignette">
+      <img src="svg/fluide-non-reutilisable.svg" alt="Vignette de rappel : la bouteille de récupération étiquetée « non réutilisable » et la flèche vers le pictogramme de déchet dangereux.">
+      <figcaption>Rappel de l'écran 2 — non réutilisable, donc déchet dangereux.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un fluide en attente de réemploi</button>
+      <button type="button" data-answer="bonne">Un déchet dangereux, à tracer jusqu'à son traitement final</button>
+      <button type="button" data-answer="c">Un déchet classique, comme le cuivre</button>
+      <button type="button" data-answer="d">Un fluide qui peut être remis dans le circuit après filtrage sur chantier</button>
+    </div>
+    <p class="feedback" hidden data-explication="Non réutilisable, il devient un déchet — et sa nature en fait un déchet dangereux."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. À quoi sert le bordereau de suivi des déchets ? Regardez la chaîne à trois maillons de l'écran trois si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">À quoi sert le bordereau de suivi des déchets (BSD) ?</h2>
+    <figure class="vignette">
+      <img src="svg/chaine-bsd.svg" alt="Vignette de rappel : les trois maillons producteur, transporteur, traiteur, reliés par le bordereau de suivi des déchets.">
+      <figcaption>Rappel de l'écran 3 — un document qui traverse trois intervenants.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">À fixer le prix de revente du déchet</button>
+      <button type="button" data-answer="bonne">À tracer un déchet dangereux à chaque étape, jusqu'à son traitement final</button>
+      <button type="button" data-answer="c">Il ne concerne que les déchets non dangereux</button>
+      <button type="button" data-answer="d">Il remplace le registre du producteur</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le BSD est la mémoire écrite du parcours d'un déchet dangereux, maillon par maillon."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Parmi les déchets d'un chantier de froid, lequel exige un suivi tracé ? Souvenez-vous de l'établi de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Parmi les déchets d'un chantier de froid, lequel exige un suivi tracé ?</h2>
+    <figure class="vignette">
+      <img src="svg/etabli-dechets-traces.svg" alt="Vignette de rappel : l'établi de frigoriste avec, dans un cadre rouge, les déchets dangereux reliés au bordereau, et hors cadre, le cuivre et le carton.">
+      <figcaption>Rappel de l'écran 6 — dans le cadre rouge, ce qui se trace.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Les chutes de cuivre</button>
+      <button type="button" data-answer="b">Les cartons d'emballage</button>
+      <button type="button" data-answer="bonne">Un fluide frigorigène récupéré non réutilisable</button>
+      <button type="button" data-answer="d">Les palettes de livraison</button>
+    </div>
+    <p class="feedback" hidden data-explication="Seuls les déchets qui portent une propriété de danger — comme un fluide non réutilisable — exigent ce suivi."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme sur aptitude-capacite : il se
+     lit dès l'accueil. F-Gaz 3 est un VRAI lien, puisque la station
+     existe. Les deux autres restent annoncées sans lien — on ne promet
+     pas une porte fermée. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../fgaz-3/"><strong>F-Gaz 3 — le règlement (UE) 2024/573</strong></a> (même sous-ligne)
+      — la récupération obligatoire du fluide avant élimination de l'équipement, en amont de ce que
+      devient ce fluide s'il n'est pas réutilisable.</li>
+    <li><strong>Traçabilité</strong> (sous-ligne Fluidique &amp; thermique, en préparation).</li>
+    <li><strong>Impact environnemental</strong> (en préparation).</li>
+  </ul>
+  <p>F-Gaz 3 est ouverte : le lien fonctionne. Les deux autres stations sont
+  en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

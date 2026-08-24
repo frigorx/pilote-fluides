@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-2" aria-describedby="d-2" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-2">Trois types d'accès et leur vérification</title>
+  <desc id="d-2">Trois pictogrammes alignés : un escalier fixe, une trappe de toiture, une échelle à
+    crinoline (échelle munie d'un arceau de protection). Une loupe orange surmonte l'ensemble, rappelant
+    que l'état de l'accès se vérifie avant de l'emprunter.</desc>
+  <style>
+    .cadre{ fill:#fffdf8; stroke:#d6dee7; stroke-width:2; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Loupe -->
+  <circle cx="450" cy="55" r="24" fill="none" stroke="#c2410c" stroke-width="5"/>
+  <line x1="468" y1="73" x2="490" y2="95" stroke="#c2410c" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Escalier -->
+  <rect class="cadre" x="30" y="100" width="250" height="180" rx="14"/>
+  <polyline points="70,250 100,250 100,225 130,225 130,200 160,200 160,175 190,175"
+            fill="none" stroke="#1b3a63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="lbl" x="155" y="262" text-anchor="middle">Escalier fixe</text>
+
+  <!-- Trappe -->
+  <rect class="cadre" x="325" y="100" width="250" height="180" rx="14"/>
+  <rect x="390" y="180" width="120" height="14" fill="#10233c"/>
+  <rect x="390" y="140" width="120" height="40" fill="#fde9d0" stroke="#10233c" stroke-width="2.5" transform="rotate(-18 450 160)"/>
+  <text class="lbl" x="450" y="262" text-anchor="middle">Trappe de toiture</text>
+
+  <!-- Échelle à crinoline -->
+  <rect class="cadre" x="620" y="100" width="250" height="180" rx="14"/>
+  <line x1="700" y1="130" x2="700" y2="255" stroke="#1b3a63" stroke-width="6"/>
+  <line x1="740" y1="130" x2="740" y2="255" stroke="#1b3a63" stroke-width="6"/>
+  <line x1="700" y1="150" x2="740" y2="150" stroke="#1b3a63" stroke-width="5"/>
+  <line x1="700" y1="180" x2="740" y2="180" stroke="#1b3a63" stroke-width="5"/>
+  <line x1="700" y1="210" x2="740" y2="210" stroke="#1b3a63" stroke-width="5"/>
+  <path d="M685 140 a35 35 0 0 1 70 0" fill="none" stroke="#5a6b7d" stroke-width="4"/>
+  <text class="lbl" x="745" y="262" text-anchor="middle">Échelle à crinoline</text>
+</svg>

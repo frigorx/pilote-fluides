@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>PRP &amp; ODP — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi le PRP et l'ODP sont deux impacts distincts, le piège de l'ODP nul pris pour un fluide propre, et le repère à deux échelles pour situer les fluides courants.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/impact-prp-odp/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Impact environnemental.
+     Copie structurelle du gabarit « aptitude-capacite » : mêmes classes,
+     mêmes identifiants, même ordre de sections, même contrat vocal.
+
+     styles.css et app.js sont une copie LITTÉRALE de ceux de la station
+     aptitude-capacite (socle commun au réseau) : ne pas les modifier ici.
+     La variable --sous-ligne y reste #0f766e (teinte de Fluidique &
+     thermique) même si le contenu de cette station relève de la
+     sous-ligne Impact environnemental (#047857, utilisée dans les SVG).
+     C'est un écart assumé entre le chrome du site et l'illustration.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     data-prototype : station non relue par F. Henninot, à valider avant
+     diffusion. Voir FOND.md pour les points laissés « à sourcer ».
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Impact environnemental · niveau BTS</p>
+  <h1>PRP &amp; ODP — deux impacts à ne pas confondre</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez que le PRP et l'ODP mesurent deux choses différentes, par deux mécanismes différents. Vous savez expliquer pourquoi un fluide à ODP nul peut réchauffer fortement le climat, et quelle règle appliquer quand deux sources donnent deux valeurs de PRP.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez les deux cadres. À gauche, l'ODP : une bande d'ozone en tirets, avec une cassure rouge — c'est ce qui arrive quand une molécule contient du chlore ou du brome. À droite, le PRP : une ondulation rouge qui représente la chaleur retenue, quel que soit l'ODP de la molécule. Entre les deux, un signe différent de : ce sont deux mécanismes séparés. En bas, la phrase fausse la plus répandue du métier est barrée : il ne touche pas l'ozone donc il est propre. Un ODP nul ne dit rien du PRP.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Deux impacts, deux mécanismes</h2>
+    <p>Le <strong>PRP</strong> (pouvoir de réchauffement planétaire) et l'<strong>ODP</strong> (potentiel de destruction de l'ozone) mesurent deux choses <strong>différentes</strong>, par deux mécanismes <strong>indépendants</strong>. Connaître l'un ne dit rien de l'autre.</p>
+    <p>Un fluide peut avoir un <strong>ODP nul</strong> — il ne touche pas la couche d'ozone — et un <strong>PRP très élevé</strong> — il réchauffe fortement le climat s'il fuit. « Il ne touche pas l'ozone donc il est propre » est un raisonnement <strong>faux</strong>, et pourtant très répandu sur le terrain.</p>
+    <figure>
+      <img src="svg/deux-echelles.svg" alt="Deux cadres côte à côte : à gauche l'ODP, une bande d'ozone tiretée marquée d'une cassure rouge et de la mention « détruit l'ozone » pour une molécule avec chlore ou brome ; à droite le PRP, une ondulation de chaleur rouge et la mention « retient la chaleur », quel que soit l'ODP. Entre les deux, un signe différent de. En bas, la phrase « il ne touche pas l'ozone donc il est propre » est barrée.">
+      <figcaption>Deux mécanismes séparés — l'un ne dit rien de l'autre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Regardez la bande verte en haut : la couche d'ozone. À gauche, une molécule de CFC ou HCFC porte un atome de chlore ; une flèche rouge en tirets monte vers la couche et l'attaque, avec la mention ODP non nul. À droite, une molécule de HFC porte du fluor, sans chlore ni brome ; une flèche pleine verte monte vers la même couche, sans l'entamer, avec la mention ODP nul. La bande du bas résume : c'est la présence de chlore ou de brome qui décide, rien d'autre.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">L'ODP : comment une molécule attaque l'ozone</h2>
+    <p>Une molécule attaque la couche d'ozone stratosphérique si elle contient du <strong>chlore</strong> ou du <strong>brome</strong>. C'est le cas des <strong>CFC</strong> et des <strong>HCFC</strong> : leur ODP n'est pas nul.</p>
+    <p>Les <strong>HFC</strong> ne contiennent ni chlore ni brome : ils ne réagissent pas avec l'ozone. Leur <strong>ODP est nul</strong> — quelle que soit par ailleurs leur teneur en fluor.</p>
+    <figure>
+      <img src="svg/mecanisme-odp.svg" alt="En haut, une bande représente la couche d'ozone stratosphérique. À gauche, une molécule de CFC ou HCFC porte un atome de chlore ; une flèche rouge en tirets monte l'attaquer, avec la mention ODP non nul. À droite, une molécule de HFC porte du fluor, sans chlore ni brome ; une flèche verte pleine monte sans l'entamer, avec la mention ODP nul. En bas : c'est la présence de chlore ou de brome qui décide, rien d'autre.">
+      <figcaption>Chlore ou brome présents : l'ozone est attaqué. Absents : il ne l'est pas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Suivez la chaleur. Le soleil réchauffe le sol, en bas. Le sol relâche de la chaleur infrarouge vers le haut. Une molécule dans l'atmosphère en intercepte une partie et la renvoie vers le sol — c'est le mécanisme du PRP, indépendant de l'ODP. En bas, une échelle fixe un seul repère : le CO2, à la valeur 1.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le PRP : comment une molécule retient la chaleur</h2>
+    <p>Indépendamment de l'ozone, une molécule retient plus ou moins la chaleur dans l'atmosphère : elle intercepte une partie du rayonnement infrarouge relâché par le sol et en renvoie une partie vers le bas.</p>
+    <p>Cette capacité est mesurée sur une <strong>échelle comparée au CO₂</strong>, fixé par convention à <strong>1</strong>. Plus une molécule retient de chaleur, plus son PRP est élevé — et ce mécanisme ne dépend en rien de son ODP.</p>
+    <figure>
+      <img src="svg/mecanisme-prp.svg" alt="Le soleil en haut envoie des rayons vers le sol. Une molécule au centre, dans l'atmosphère, renvoie vers le sol une partie de la chaleur infrarouge relâchée par le sol, représentée par des lignes ondulées rouges. En bas, une échelle indique : PRP, combien de fois plus qu'un CO2 pris comme référence à 1, indépendant de l'ODP.">
+      <figcaption>Plus une molécule retient de chaleur, plus son PRP grimpe — sans lien avec son ODP.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="La carte du R-410A, un fluide très utilisé en froid et en climatisation. À gauche, le bloc ODP : une coche verte, nul. À droite, le bloc PRP : un triangle d'alerte ambre, 2088. En bas, la phrase il ne touche pas l'ozone donc il est propre est barrée, suivie de la conclusion : s'il fuit, il réchauffe 2088 fois plus qu'une même masse de CO2.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Le piège concret : un HFC très utilisé</h2>
+    <p>Le <strong>R-410A</strong>, très présent en froid et en climatisation, a un <strong>ODP nul</strong> : c'est un HFC, il ne détruit pas l'ozone. Mais son <strong>PRP est de 2088</strong>.</p>
+    <p>« Il ne touche pas l'ozone donc il est propre » est <strong>faux</strong> : s'il fuit, il réchauffe le climat 2088 fois plus qu'une même masse de CO₂. L'ODP nul ne dit rien de l'impact climatique.</p>
+    <figure>
+      <img src="svg/piege-odp-nul.svg" alt="Une carte centrée sur le R-410A. Deux blocs de statistiques : à gauche, l'ODP marqué « nul » avec une coche verte ; à droite, le PRP marqué « 2088 » avec un triangle d'alerte ambre. En bas, la phrase « il ne touche pas l'ozone donc il est propre » est barrée en rouge, suivie de : s'il fuit, il réchauffe 2088 fois plus qu'une même masse de CO2.">
+      <figcaption>ODP nul, PRP 2088 : deux réponses différentes à deux questions différentes.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Un repère à deux axes. En bas, l'axe de l'ODP : nul à gauche, non nul à droite. À gauche, l'axe du PRP, de faible en bas à très élevé en haut. Six points s'alignent dans la colonne ODP nul, du plus bas au plus haut : ammoniac à zéro, CO2 à un, propane à trois, R-32 à six cent soixante-quinze, R-410A à deux mille quatre-vingt-huit, R-404A à trois mille neuf cent vingt-deux. À droite, une zone teintée rappelle que les CFC et les HCFC, non représentés ici, se placent dans la colonne ODP non nul.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Repère à deux échelles : où se situent les fluides courants</h2>
+    <p>Tous les fluides ci-dessous ont un <strong>ODP nul</strong> — ce sont des HFC ou des fluides naturels, sans chlore ni brome. Et pourtant, leur <strong>PRP</strong> s'étend sur une plage immense :</p>
+    <ul>
+      <li>Ammoniac (R-717) : PRP <strong>0</strong></li>
+      <li>CO₂ (R-744) : PRP <strong>1</strong></li>
+      <li>Propane (R-290) : PRP <strong>3</strong></li>
+      <li>R-32 : PRP <strong>675</strong></li>
+      <li>R-410A : PRP <strong>2088</strong></li>
+      <li>R-404A : PRP <strong>3922</strong></li>
+    </ul>
+    <p>Les CFC et les HCFC, eux, se placent dans la colonne <strong>ODP non nul</strong> : ce sont les seuls fluides concernés par la destruction de l'ozone.</p>
+    <figure>
+      <img src="svg/repere-deux-axes.svg" alt="Un repère avec en abscisse l'ODP, nul à gauche et non nul à droite, et en ordonnée le PRP, faible en bas et très élevé en haut. Six points s'alignent dans la colonne ODP nul : ammoniac R-717 en bas avec un PRP de 0, CO2 R-744 avec un PRP de 1, propane R-290 avec un PRP de 3, puis en montant R-32 à 675, R-410A à 2088 et R-404A à 3922 tout en haut. Une zone à droite, teintée et sans point chiffré, représente les CFC et HCFC.">
+      <figcaption>Même colonne ODP nul, PRP du simple à plus de 3900 fois : les deux échelles ne se recouvrent pas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Deux chambres froides identiques, chacune avec une fuite de même masse — la goutte est dessinée à l'identique des deux côtés. À gauche, la chambre au R-404A : la fuite débouche sur un grand nuage rouge, impact fois 3922. À droite, la chambre au CO2 : la fuite, de même taille, débouche sur un petit nuage vert, impact fois 1.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Cas métier : une chambre froide qui fuit</h2>
+    <p>Deux chambres froides perdent la <strong>même masse</strong> de fluide par une fuite identique — l'une au <strong>R-404A</strong> (PRP 3922), l'autre au <strong>CO₂</strong> (PRP 1).</p>
+    <p>La masse perdue est la même. L'<strong>impact climatique</strong> ne l'est pas : c'est le PRP qui multiplie l'effet de la fuite, pas la quantité de fluide.</p>
+    <figure>
+      <img src="svg/cas-chambre-froide.svg" alt="Deux chambres froides identiques. Chacune perd une goutte de fluide de taille identique, représentant la même masse. À gauche, la chambre au R-404A : la goutte est reliée à un grand nuage rouge marqué impact fois 3922 par rapport au CO2. À droite, la chambre au CO2 : la goutte, de même taille, est reliée à un petit nuage vert marqué impact fois 1, la référence.">
+      <figcaption>Même masse perdue, impact climatique très différent.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre cartes numérotées. Chacune pose une situation, une question, et la réponse qui évite le piège : un ODP nul ne suffit pas à conclure, deux sources divergentes imposent de retenir la plus élevée, une fuite se juge par masse fois PRP, et le bilan rappelle de toujours lire les deux échelles ensemble.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : quatre réflexes de terrain</h2>
+    <ol>
+      <li><strong>« Un fluide a un ODP nul. »</strong> → Ce n'est pas une preuve d'innocuité climatique : regardez son PRP.</li>
+      <li><strong>« Deux sources donnent deux PRP différents. »</strong> → Retenez toujours la valeur la <strong>plus élevée</strong>.</li>
+      <li><strong>« Une fuite se produit. »</strong> → La masse seule ne dit rien : c'est <strong>masse × PRP</strong> qui donne l'impact réel.</li>
+      <li><strong>« Bilan. »</strong> → ODP et PRP se lisent <strong>toujours ensemble</strong>, jamais l'un à la place de l'autre.</li>
+    </ol>
+    <figure>
+      <img src="svg/quatre-situations.svg" alt="Quatre cartes numérotées : un fluide a un ODP nul (est-il sans impact climatique ? non, regardez son PRP) ; deux sources donnent deux PRP différents (laquelle retenir ? la plus élevée) ; une fuite se produit (la masse suffit-elle ? non, masse fois PRP) ; bilan (comment lire l'ODP et le PRP ? toujours ensemble, jamais l'un à la place de l'autre).">
+      <figcaption>Dans les quatre cas, le même réflexe : ne jamais conclure sur une seule échelle.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan. À gauche, l'ODP représenté comme un interrupteur à deux positions : nul ou non nul. À droite, le PRP représenté comme une barre en dégradé, du vert au rouge, une échelle continue comparée au CO2. En bas, le schéma de la règle du doublon : deux barres de hauteurs différentes, et une flèche qui monte vers la plus haute — celle qu'on retient.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan : deux échelles, un piège à éviter</h2>
+    <ul>
+      <li>L'<strong>ODP</strong> est une échelle <strong>binaire</strong> : chlore ou brome présents, ou non.</li>
+      <li>Le <strong>PRP</strong> est une échelle <strong>continue</strong>, comparée au CO₂ = 1, sans lien avec l'ODP.</li>
+      <li>« ODP nul donc propre » est un raisonnement <strong>faux</strong> : le R-410A (ODP nul, PRP 2088) en est l'exemple.</li>
+      <li>Même masse perdue, impact très différent selon le fluide : c'est le PRP qui décide.</li>
+      <li>Deux sources, deux valeurs de PRP : retenez toujours la <strong>plus élevée</strong>.</li>
+    </ul>
+    <p class="formule">Le réflexe : ODP et PRP, deux échelles à lire ensemble, jamais l'une à la place de l'autre.</p>
+    <figure>
+      <img src="svg/bilan-prp-odp.svg" alt="Deux blocs en haut : à gauche, l'ODP représenté comme un interrupteur à deux positions, nul ou non nul. À droite, le PRP représenté comme une barre en dégradé du vert au rouge, une échelle continue comparée au CO2. En bas, un schéma de la règle du doublon de sources : deux barres verticales de hauteurs différentes, avec une flèche vers le haut et la mention en cas de doublon, retenir la valeur la plus élevée.">
+      <figcaption>Deux échelles indépendantes, une seule règle en cas de doublon : le plus élevé.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un fluide a un ODP nul et un PRP de 2088. Reprenez la carte du R-410A avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Un fluide a un ODP nul et un PRP de 2088. Que peut-on en conclure ?</h2>
+    <figure class="vignette">
+      <img src="svg/piege-odp-nul.svg" alt="Vignette de rappel : la carte du R-410A, ODP nul à gauche, PRP 2088 à droite, avec la phrase « il ne touche pas l'ozone donc il est propre » barrée.">
+      <figcaption>Rappel de l'écran 4 — le piège du R-410A.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Il ne détruit pas l'ozone, mais il réchauffe fortement le climat s'il fuit</button>
+      <button type="button" data-answer="b">Il ne présente aucun risque environnemental</button>
+      <button type="button" data-answer="c">Un PRP aussi élevé voudrait dire qu'il attaque l'ozone</button>
+      <button type="button" data-answer="d">Un ODP nul rendrait son PRP sans importance</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un PRP de 2088 est un risque climatique réel, pas une absence de risque. Le PRP ne renseigne pas sur l'ozone : ce sont deux mécanismes séparés, l'un dépend du chlore ou du brome, l'autre de la chaleur retenue. Et un ODP nul ne rend pas le PRP sans importance : c'est justement le piège de cet écran."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Qu'est-ce qui rend l'ODP d'une molécule différent de zéro ? Reprenez le schéma du chlore et de l'ozone.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce qui rend l'ODP d'une molécule différent de zéro ?</h2>
+    <figure class="vignette">
+      <img src="svg/mecanisme-odp.svg" alt="Vignette de rappel : à gauche une molécule de CFC ou HCFC attaque la couche d'ozone, à droite une molécule de HFC ne l'attaque pas.">
+      <figcaption>Rappel de l'écran 2 — chlore ou brome décident.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Une teneur élevée en fluor</button>
+      <button type="button" data-answer="b">Une masse molaire élevée</button>
+      <button type="button" data-answer="bonne">La présence de chlore ou de brome dans la molécule</button>
+      <button type="button" data-answer="d">Le fait d'être utilisé en circuit direct plutôt qu'indirect</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le fluor ne casse pas l'ozone : les HFC en contiennent et ont pourtant un ODP nul. La masse molaire n'entre pas dans ce mécanisme. Circuit direct ou indirect est une question d'installation, pas de chimie de la molécule."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Deux sources donnent deux valeurs de PRP différentes pour le même fluide. Souvenez-vous de la règle du doublon, écran huit.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Deux sources donnent deux PRP différents pour le même fluide. Quelle règle appliquer ?</h2>
+    <figure class="vignette">
+      <img src="svg/bilan-prp-odp.svg" alt="Vignette de rappel : le schéma de la règle du doublon, deux barres de hauteurs différentes et une flèche vers la plus haute.">
+      <figcaption>Rappel de l'écran 8 — en cas de doublon, le plus élevé.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Faire la moyenne des deux valeurs</button>
+      <button type="button" data-answer="bonne">Retenir la valeur la plus élevée</button>
+      <button type="button" data-answer="c">Retenir la valeur la plus ancienne</button>
+      <button type="button" data-answer="d">Retenir la valeur la plus basse, par prudence commerciale</button>
+    </div>
+    <p class="feedback" hidden data-explication="La moyenne masquerait une partie du risque réel. L'ancienneté d'une source ne dit rien de sa fiabilité. Retenir la valeur la plus basse minimiserait l'impact affiché : la règle maison retient toujours la valeur la plus pénalisante."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Une chambre froide au R-717, ammoniac, et une chambre froide au R-404A perdent la même masse par une fuite identique. Reprenez le schéma des deux chambres froides.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Une chambre froide au R-717 et une au R-404A perdent la même masse par une fuite identique. Que peut-on dire de leur impact climatique ?</h2>
+    <figure class="vignette">
+      <img src="svg/cas-chambre-froide.svg" alt="Vignette de rappel : deux chambres froides perdant la même masse de fluide, l'une reliée à un grand nuage rouge, l'autre à un petit nuage vert.">
+      <figcaption>Rappel de l'écran 6 — même masse, impact différent.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Impact identique, seule la masse compte</button>
+      <button type="button" data-answer="b">La fuite d'ammoniac pèserait plus lourd, car son ODP est nul</button>
+      <button type="button" data-answer="c">Aucune fuite n'aurait d'impact climatique, seul l'ODP compterait</button>
+      <button type="button" data-answer="bonne">La fuite au R-404A pèse beaucoup plus lourd en équivalent CO₂</button>
+    </div>
+    <p class="feedback" hidden data-explication="La masse ne suffit pas à juger l'impact : c'est masse × PRP qui compte, et le R-404A a un PRP de 3922 contre un PRP nul pour l'ammoniac. L'ODP nul de l'ammoniac ne dit rien de son PRP — c'est confondre les deux échelles. Et le PRP existe indépendamment de l'ODP : dire que seul l'ODP compterait est faux."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../fgaz-3/"><strong>F-Gaz 3 — le règlement (UE) 2024/573</strong></a> (même sous-ligne)
+      — pourquoi les catégories bougent : le règlement pousse vers le CO₂ et l'ammoniac.</li>
+    <li><strong>La RE2020</strong> (sous-ligne Thermique) — en préparation.</li>
+    <li><strong>NF EN 378</strong> — en préparation.</li>
+  </ul>
+  <p>F-Gaz 3 est ouverte : le lien fonctionne. Les deux autres stations sont
+  en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (une source, zéro divergence). voix.js
+     donne la narration, prof-vocal.js enchaîne les écrans tout seul et
+     s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

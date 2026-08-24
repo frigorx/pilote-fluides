@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-2" aria-describedby="d-2" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-2">Choisir l'EPI adapté au risque réel de la tâche</title>
+  <desc id="d-2">À gauche, une carte indique la tâche : recharge de fluide. Une flèche mène à une carte centrale
+    indiquant le risque réel : projection de fluide. À droite, deux réponses possibles : en haut, un gant de
+    manutention barré d'une grande croix rouge avec la mention « ne protège pas de ce risque » ; en bas, une
+    paire de gants et de lunettes entourée d'un trait vert avec la mention « adaptée à ce risque ».</desc>
+  <style>
+    .carte{ fill:#fffdf8; stroke:#d6dee7; stroke-width:2; }
+    .ttl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .sub{ font-size:15px; fill:#5a6b7d; }
+    .fleche{ stroke:#5a6b7d; stroke-width:3; fill:none; }
+    .non{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#c0392b; }
+    .oui{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#1e7e54; }
+  </style>
+
+  <!-- Tâche -->
+  <rect class="carte" x="20" y="120" width="190" height="100" rx="14"/>
+  <text class="ttl" x="115" y="160" text-anchor="middle">La tâche</text>
+  <text class="sub" x="115" y="186" text-anchor="middle">Recharge de fluide</text>
+
+  <path class="fleche" d="M212 170 L268 170" marker-end="url(#f2)"/>
+
+  <!-- Risque -->
+  <rect class="carte" x="280" y="120" width="190" height="100" rx="14" stroke="#c2410c" stroke-width="3"/>
+  <text class="ttl" x="375" y="160" text-anchor="middle" fill="#c2410c">Le risque réel</text>
+  <text class="sub" x="375" y="186" text-anchor="middle">Projection de fluide</text>
+
+  <path class="fleche" d="M472 170 L528 170" marker-end="url(#f2)"/>
+  <defs>
+    <marker id="f2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+
+  <!-- Mauvais choix -->
+  <rect class="carte" x="540" y="40" width="340" height="90" rx="14"/>
+  <rect x="562" y="55" width="60" height="42" rx="8" fill="#fff" stroke="#5a6b7d" stroke-width="2"/>
+  <text x="592" y="82" text-anchor="middle" font-size="13" fill="#5a6b7d">gant</text>
+  <line x1="555" y1="45" x2="880" y2="125" stroke="#c0392b" stroke-width="4"/>
+  <text class="non" x="660" y="80" text-anchor="middle">Gant de manutention</text>
+  <text class="non" x="660" y="102" text-anchor="middle">— ne protège pas ici</text>
+
+  <!-- Bon choix -->
+  <rect class="carte" x="540" y="150" width="340" height="90" rx="14" stroke="#1e7e54" stroke-width="3"/>
+  <rect x="562" y="165" width="60" height="42" rx="8" fill="#fff" stroke="#1e7e54" stroke-width="2"/>
+  <text x="592" y="192" text-anchor="middle" font-size="13" fill="#1e7e54">gant</text>
+  <circle cx="622" cy="186" r="16" fill="none" stroke="#fff" stroke-width="2"/>
+  <text class="oui" x="700" y="190" text-anchor="middle">Gants + lunettes adaptés</text>
+  <text class="oui" x="700" y="212" text-anchor="middle">— protègent de ce risque</text>
+
+  <rect x="20" y="260" width="860" height="56" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text x="450" y="295" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="17" fill="#10233c">Le bon EPI répond au risque réel de la tâche du jour, pas à une habitude</text>
+</svg>

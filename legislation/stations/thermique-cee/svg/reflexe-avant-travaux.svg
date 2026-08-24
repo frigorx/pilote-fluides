@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-rat" aria-describedby="d-rat" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rat">Le réflexe : valider l'aide avant de commencer les travaux</title>
+  <desc id="d-rat">Une ligne de temps avec trois étapes : devis, validation de l'aide, puis
+    travaux. Une coche verte est posée sur l'ordre devis puis validation puis travaux. À côté, un
+    ordre inversé est barré d'une croix rouge : travaux commencés avant toute validation de
+    l'aide, avec la mention « l'aide n'est plus possible après coup ».</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .pos { font-size:14px; fill:#1e7e54; font-weight:bold; }
+    .neg { font-size:14px; fill:#c0392b; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">L'ordre des étapes compte</text>
+
+  <!-- bon ordre -->
+  <rect x="60" y="55" width="780" height="90" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="120" cy="100" r="18" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <text class="lbl" x="120" y="106" text-anchor="middle" font-weight="bold">1</text>
+  <text class="lbl" x="120" y="132" text-anchor="middle" font-size="13">devis</text>
+
+  <path d="M 150 100 L 340 100" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <polygon points="340,100 322,93 322,107" fill="#1e7e54"/>
+
+  <circle cx="400" cy="100" r="18" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <text class="lbl" x="400" y="106" text-anchor="middle" font-weight="bold">2</text>
+  <text class="lbl" x="400" y="132" text-anchor="middle" font-size="13">validation de l'aide</text>
+
+  <path d="M 430 100 L 620 100" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <polygon points="620,100 602,93 602,107" fill="#1e7e54"/>
+
+  <circle cx="680" cy="100" r="18" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <text class="lbl" x="680" y="106" text-anchor="middle" font-weight="bold">3</text>
+  <text class="lbl" x="680" y="132" text-anchor="middle" font-size="13">travaux</text>
+
+  <circle cx="800" cy="100" r="18" fill="none" stroke="#1e7e54" stroke-width="3"/>
+  <path d="M 792 100 L 798 107 L 810 92" fill="none" stroke="#1e7e54" stroke-width="3"/>
+
+  <!-- mauvais ordre -->
+  <rect x="60" y="175" width="780" height="90" rx="12" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="120" cy="220" r="18" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <text class="lbl" x="120" y="226" text-anchor="middle" font-weight="bold">1</text>
+  <text class="lbl" x="120" y="252" text-anchor="middle" font-size="13">devis</text>
+
+  <path d="M 150 220 L 340 220" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <polygon points="340,220 322,213 322,227" fill="#c0392b"/>
+
+  <circle cx="400" cy="220" r="18" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <text class="lbl" x="400" y="226" text-anchor="middle" font-weight="bold">2</text>
+  <text class="lbl" x="400" y="252" text-anchor="middle" font-size="13">travaux déjà commencés</text>
+
+  <path d="M 430 220 L 620 220" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <polygon points="620,220 602,213 602,227" fill="#c0392b"/>
+
+  <circle cx="680" cy="220" r="18" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <text class="lbl" x="680" y="226" text-anchor="middle" font-weight="bold">3</text>
+  <text class="lbl" x="680" y="252" text-anchor="middle" font-size="13">aide demandée</text>
+
+  <circle cx="800" cy="220" r="18" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <line x1="793" y1="213" x2="807" y2="227" stroke="#c0392b" stroke-width="3"/>
+  <line x1="807" y1="213" x2="793" y2="227" stroke="#c0392b" stroke-width="3"/>
+
+  <text class="neg" x="450" y="310" text-anchor="middle">L'aide n'est plus possible après coup : l'ordre compte.</text>
+</svg>

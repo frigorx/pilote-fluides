@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-di" aria-describedby="d-di" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-di">Deux indicateurs combinés : le moins bon des deux l'emporte</title>
+  <desc id="d-di">Deux jauges séparées, l'une marquée consommation d'énergie, l'autre marquée
+    émissions de gaz à effet de serre. Chacune porte un résultat représenté par une position sur
+    l'échelle, sans valeur chiffrée. Une flèche part de la jauge la moins bonne des deux vers une
+    étiquette finale unique, avec la mention « c'est le moins bon des deux résultats qui
+    détermine l'étiquette ».</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:15px; fill:#92400e; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle" font-size="18">Deux indicateurs, une seule étiquette</text>
+
+  <rect x="60" y="60" width="90" height="200" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="105" cy="130" r="9" fill="#1b3a63"/>
+  <text class="ttl" x="105" y="285" text-anchor="middle">Consommation</text>
+  <text class="ttl" x="105" y="303" text-anchor="middle">d'énergie</text>
+
+  <rect x="230" y="60" width="90" height="200" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="275" cy="190" r="9" fill="#c0392b"/>
+  <text class="ttl" x="275" y="285" text-anchor="middle">Émissions de</text>
+  <text class="ttl" x="275" y="303" text-anchor="middle">gaz à effet de serre</text>
+
+  <path d="M 300 190 C 400 190, 450 190, 520 175" fill="none" stroke="#92400e" stroke-width="3"/>
+  <polygon points="520,175 502,168 505,184" fill="#92400e"/>
+  <text class="lbl" x="410" y="160" text-anchor="middle" font-size="14">le moins bon des deux</text>
+
+  <rect x="540" y="90" width="300" height="140" rx="12" fill="#fff4e0" stroke="#92400e" stroke-width="3.5"/>
+  <text class="foc" x="690" y="140" text-anchor="middle">détermine</text>
+  <text class="foc" x="690" y="162" text-anchor="middle">l'étiquette finale</text>
+  <text class="lbl" x="690" y="195" text-anchor="middle">un seul résultat combiné</text>
+</svg>

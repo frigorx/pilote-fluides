@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-bd" aria-describedby="d-bd" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bd">Bilan : mesurer, étiqueter, informer — avec des limites connues</title>
+  <desc id="d-bd">L'échelle de sept bandes de A à G réapparaît, plus petite, à gauche. À droite,
+    une bande résume les points de la station : méthode standardisée, deux indicateurs combinés,
+    obligation d'information, restriction possible, et limites de la méthode.</desc>
+  <style>
+    .ltr { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#fffdf8; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <rect x="40" y="30" width="80" height="24" fill="#1e7e54"/><text class="ltr" x="50" y="47">A</text>
+  <rect x="40" y="56" width="110" height="24" fill="#3f9d6e"/><text class="ltr" x="50" y="73">B</text>
+  <rect x="40" y="82" width="140" height="24" fill="#8fbf5a"/><text class="ltr" x="50" y="99">C</text>
+  <rect x="40" y="108" width="170" height="24" fill="#e0c23c"/><text class="ltr" x="50" y="125" fill="#10233c">D</text>
+  <rect x="40" y="134" width="200" height="24" fill="#e2953f"/><text class="ltr" x="50" y="151">E</text>
+  <rect x="40" y="160" width="230" height="24" fill="#c0392b"/><text class="ltr" x="50" y="177">F</text>
+  <rect x="40" y="186" width="260" height="24" fill="#8b1e14"/><text class="ltr" x="50" y="203">G</text>
+
+  <rect x="340" y="30" width="520" height="270" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="600" y="65" text-anchor="middle" font-weight="bold">Le DPE en cinq points</text>
+  <text class="band" x="370" y="100">— une méthode standardisée, pas les factures réelles ;</text>
+  <text class="band" x="370" y="130">— deux indicateurs combinés, le moins bon l'emporte ;</text>
+  <text class="band" x="370" y="160">— une échelle de A à G, à fournir dès l'annonce ;</text>
+  <text class="band" x="370" y="190">— un classement défavorable peut restreindre la location ;</text>
+  <text class="band" x="370" y="220">— une méthode aux limites connues, à garder en tête.</text>
+</svg>

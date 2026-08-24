@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-dr" aria-describedby="d-dr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dr">Le disque de rupture, intact puis rompu</title>
+  <desc id="d-dr">Deux coupes de circuit côte à côte. À gauche, la membrane du disque de rupture est
+    intacte, tendue en travers du tuyau, sous son seuil. À droite, elle est rompue : une déchirure
+    nette traverse la membrane, et des flèches montrent la matière s'échapper d'un coup, sans
+    ouverture progressive. Une bande en bas rappelle que ce dispositif convient quand une ouverture
+    progressive ne suffit pas, avec l'exemple d'un circuit à l'ammoniac ou au CO2.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Panneau gauche : intacte -->
+  <rect x="20" y="20" width="410" height="230" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <rect x="20" y="20" width="410" height="40" rx="14" fill="#1e7e54"/>
+  <rect x="20" y="46" width="410" height="14" fill="#1e7e54"/>
+  <text class="ttl" x="225" y="47" text-anchor="middle">INTACTE — sous le seuil</text>
+
+  <!-- tuyau horizontal -->
+  <rect x="70" y="130" width="310" height="50" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <!-- membrane tendue, ligne droite -->
+  <line x1="225" y1="120" x2="225" y2="190" stroke="#10233c" stroke-width="5"/>
+  <text class="lbl" x="225" y="215" text-anchor="middle">membrane calibrée</text>
+
+  <!-- Panneau droit : rompue -->
+  <rect x="470" y="20" width="410" height="230" rx="14" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <rect x="470" y="20" width="410" height="40" rx="14" fill="#c0392b"/>
+  <rect x="470" y="46" width="410" height="14" fill="#c0392b"/>
+  <text class="ttl" x="675" y="47" text-anchor="middle">ROMPUE — au-delà du seuil</text>
+
+  <rect x="520" y="130" width="310" height="50" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <!-- membrane déchirée -->
+  <path d="M675 120 l-8 20 l16 8 l-16 8 l16 8 l-8 26" fill="none" stroke="#c0392b" stroke-width="4"/>
+  <!-- flèches d'échappement, de part et d'autre -->
+  <line x1="650" y1="100" x2="640" y2="60" stroke="#c0392b" stroke-width="2.5"/>
+  <polygon points="640,50 632,70 649,66" fill="#c0392b"/>
+  <line x1="700" y1="100" x2="710" y2="60" stroke="#c0392b" stroke-width="2.5"/>
+  <polygon points="710,50 702,70 719,66" fill="#c0392b"/>
+  <text class="lbl" x="675" y="215" text-anchor="middle">rupture d'un coup</text>
+
+  <!-- Bande du bas -->
+  <rect x="20" y="270" width="860" height="52" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="293" text-anchor="middle">Utilisé quand une ouverture progressive, comme celle d'une soupape, ne convient pas</text>
+  <text class="band" x="450" y="313" text-anchor="middle">— après rupture, le disque doit être remplacé</text>
+
+  <text class="note" x="450" y="358" text-anchor="middle">Exemple : un circuit à l'ammoniac ou au CO2, où la pression peut monter très vite</text>
+</svg>

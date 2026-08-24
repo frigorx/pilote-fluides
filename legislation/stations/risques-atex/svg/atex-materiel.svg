@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-5" aria-describedby="d-5" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-5">Le matériel électrique conçu pour la zone</title>
+  <desc id="d-5">Deux boîtiers électriques schématiques côte à côte. Celui de gauche porte l'inscription
+    ATEX et une coche verte. Celui de droite, un appareil standard, porte une croix rouge indiquant qu'il
+    n'a pas sa place dans une zone où une atmosphère explosive peut apparaître.</desc>
+  <style>
+    .boitier{ fill:#eef3f9; stroke:#1b3a63; stroke-width:2.5; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <!-- Appareil ATEX -->
+  <rect class="boitier" x="120" y="80" width="180" height="140" rx="10" stroke="#1e7e54"/>
+  <text x="210" y="140" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="20" fill="#1e7e54">ATEX</text>
+  <circle cx="210" cy="180" r="20" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <path d="M200 180 l7 8 l16 -18" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+  <text class="lbl" x="210" y="248" text-anchor="middle">Conçu pour la zone</text>
+
+  <!-- Appareil standard -->
+  <rect class="boitier" x="600" y="80" width="180" height="140" rx="10" stroke="#c0392b"/>
+  <text x="690" y="140" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="16" fill="#5a6b7d">Standard</text>
+  <circle cx="690" cy="180" r="20" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <path d="M680 170 l20 20 M700 170 l-20 20" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+  <text class="lbl" x="690" y="248" text-anchor="middle" fill="#c0392b">Pas dans cette zone</text>
+</svg>

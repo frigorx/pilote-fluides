@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-plq" aria-describedby="d-plq" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-plq">Le marquage CE, sur la plaque signalétique d'un réservoir de fluide frigorigène</title>
+  <desc id="d-plq">Une plaque signalétique fixée sur un réservoir de fluide frigorigène. Elle porte
+    plusieurs champs : le nom du fabricant, la pression maximale admissible notée PS, un numéro
+    de série, et dans un encadré à part, le marquage CE. Une bande en dessous précise que le
+    marquage CE ne remplace aucun des autres champs : il s'ajoute à eux, sur la même plaque.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .champ{ font-size:15px; fill:#5a6b7d; }
+    .val  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .ce   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#0c4a6e; }
+    .band { font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Le réservoir, à gauche, tout simple -->
+  <rect x="30" y="70" width="120" height="180" rx="24" fill="#eef3f9" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="30" y1="118" x2="150" y2="118" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="champ" x="90" y="270" text-anchor="middle">réservoir</text>
+
+  <!-- La plaque, fixée dessus -->
+  <rect x="190" y="30" width="670" height="250" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="190" y="30" width="670" height="42" rx="14" fill="#1b3a63"/>
+  <rect x="190" y="58" width="670" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="525" y="58" text-anchor="middle">PLAQUE SIGNALÉTIQUE</text>
+
+  <!-- Colonne des champs -->
+  <text class="champ" x="222" y="112">Fabricant</text>
+  <text class="val" x="222" y="136">indiqué sur la plaque</text>
+  <line x1="222" y1="150" x2="560" y2="150" stroke="#d6dee7" stroke-width="2"/>
+
+  <text class="champ" x="222" y="178">Pression maximale admissible</text>
+  <text class="val" x="222" y="202">PS — valeur propre à l'équipement</text>
+  <line x1="222" y1="216" x2="560" y2="216" stroke="#d6dee7" stroke-width="2"/>
+
+  <text class="champ" x="222" y="244">Numéro de série (éventuel)</text>
+  <text class="val" x="222" y="266">identifie l'exemplaire</text>
+
+  <!-- L'encadré CE, à part -->
+  <rect x="600" y="96" width="230" height="150" rx="12" fill="#eef3f9" stroke="#0c4a6e" stroke-width="3"/>
+  <circle cx="715" cy="155" r="34" fill="none" stroke="#0c4a6e" stroke-width="3"/>
+  <text class="ce" x="715" y="166" text-anchor="middle">CE</text>
+  <text class="champ" x="715" y="216" text-anchor="middle" fill="#10233c">le marquage</text>
+  <text class="champ" x="715" y="234" text-anchor="middle" fill="#10233c">de conformité</text>
+
+  <!-- La bande -->
+  <rect x="30" y="296" width="830" height="34" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="445" y="318" text-anchor="middle">Le marquage CE s'ajoute aux autres champs — il n'en remplace aucun</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-ene" aria-describedby="d-ene" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ene">L'énergie stockée dans un équipement sous pression, et sa libération brutale</title>
+  <desc id="d-ene">À gauche, un équipement sous pression représenté par une enveloppe fermée, avec de
+    petites flèches marquant, tout autour de sa paroi intérieure, la pression exercée sur l'enveloppe :
+    une énergie mécanique emmagasinée, invisible tant que l'enveloppe résiste. Une flèche horizontale
+    relie cette enveloppe à une seconde zone, marquée « si l'enveloppe cède », montrant une forme
+    éclatée en étoile qui représente une libération brutale. En bas, une bande explique qu'une rupture
+    libère, en une fraction de seconde, une énergie mécanique comparable à celle d'un phénomène
+    violent, et une note rappelle que c'est cette énergie stockée, pas le fluide lui-même, qui justifie
+    une réglementation propre aux équipements sous pression.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lbl  { font-size:16px; fill:#10233c; }
+    .lblb { font-size:16px; fill:#10233c; font-weight:bold; }
+    .cle  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .band { font-size:16px; fill:#10233c; font-weight:bold; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Boîte gauche : l'équipement sous pression -->
+  <rect x="40" y="40" width="330" height="220" rx="16" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <rect x="40" y="40" width="330" height="42" rx="16" fill="#0c4a6e"/>
+  <rect x="40" y="66" width="330" height="16" fill="#0c4a6e"/>
+  <text class="ttl" x="205" y="67" text-anchor="middle">ÉQUIPEMENT SOUS PRESSION</text>
+
+  <!-- flèches de pression tout autour de la paroi intérieure -->
+  <polygon points="205,100 197,116 213,116" fill="#0c4a6e"/>
+  <polygon points="205,232 197,216 213,216" fill="#0c4a6e"/>
+  <polygon points="80,166 96,158 96,174" fill="#0c4a6e"/>
+  <polygon points="330,166 314,158 314,174" fill="#0c4a6e"/>
+
+  <text class="lblb" x="205" y="160" text-anchor="middle">Énergie mécanique</text>
+  <text class="lblb" x="205" y="182" text-anchor="middle">emmagasinée</text>
+  <text class="lbl" x="205" y="204" text-anchor="middle">invisible tant que l'enveloppe résiste</text>
+
+  <!-- Flèche de liaison -->
+  <text class="lbl" x="450" y="136" text-anchor="middle">si l'enveloppe cède</text>
+  <path d="M 372 152 H 528" stroke="#5a6b7d" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <polygon points="528,140 552,152 528,164" fill="#5a6b7d"/>
+
+  <!-- Boîte droite : la libération -->
+  <rect x="560" y="40" width="300" height="220" rx="16" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <rect x="560" y="40" width="300" height="42" rx="16" fill="#c0392b"/>
+  <rect x="560" y="66" width="300" height="16" fill="#c0392b"/>
+  <text class="ttl" x="710" y="67" text-anchor="middle">SI L'ENVELOPPE CÈDE</text>
+
+  <!-- forme éclatée en étoile -->
+  <polygon points="710,108 725,142 762,138 733,162 745,198 710,178 675,198 687,162 658,138 695,142"
+           fill="#c0392b"/>
+  <line x1="710" y1="90" x2="710" y2="70" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+  <line x1="778" y1="150" x2="800" y2="150" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+  <line x1="642" y1="150" x2="620" y2="150" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+
+  <text class="cle" x="710" y="232" text-anchor="middle">libération brutale</text>
+
+  <!-- Bande du bas -->
+  <rect x="40" y="284" width="820" height="60" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="308" text-anchor="middle">Une rupture libère, en une fraction de seconde, une énergie mécanique</text>
+  <text class="band" x="450" y="330" text-anchor="middle">comparable à celle d'un phénomène violent</text>
+
+  <text class="note" x="450" y="368" text-anchor="middle">C'est l'énergie stockée — pas le fluide lui-même — qui justifie une réglementation propre.</text>
+</svg>

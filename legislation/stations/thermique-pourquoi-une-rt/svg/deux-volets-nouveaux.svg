@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-dv" aria-describedby="d-dv" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dv">Ce que la RE2020 ajoute vraiment par rapport à la RT2012</title>
+  <desc id="d-dv">Trois cercles côte à côte, tous pleins cette fois. Le premier, dans le style
+    déjà connu, porte « consommation d'énergie » : il existait déjà dans la RT2012. Les deux
+    suivants, encadrés d'un trait plus épais pour marquer la nouveauté, portent « impact carbone »
+    et « confort d'été » : ce sont les deux volets que la RT2012 ne mesurait pas.</desc>
+  <style>
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .neuf{ font-size:14px; fill:#92400e; font-weight:bold; font-family:'Trebuchet MS',Calibri,sans-serif; }
+  </style>
+
+  <text class="qui" x="450" y="30" text-anchor="middle" font-size="18">RE2020 — trois volets mesurés ensemble</text>
+
+  <circle cx="160" cy="200" r="85" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="qui" x="160" y="195" text-anchor="middle">Consommation</text>
+  <text class="lbl" x="160" y="217" text-anchor="middle">d'énergie</text>
+  <text class="lbl" x="160" y="290" text-anchor="middle">déjà mesurée par la RT2012</text>
+
+  <circle cx="450" cy="200" r="85" fill="#fff4e0" stroke="#92400e" stroke-width="4"/>
+  <text class="qui" x="450" y="195" text-anchor="middle">Impact</text>
+  <text class="qui" x="450" y="217" text-anchor="middle">carbone</text>
+  <text class="neuf" x="450" y="290" text-anchor="middle">nouveau avec la RE2020</text>
+
+  <circle cx="740" cy="200" r="85" fill="#fff4e0" stroke="#92400e" stroke-width="4"/>
+  <text class="qui" x="740" y="195" text-anchor="middle">Confort</text>
+  <text class="qui" x="740" y="217" text-anchor="middle">d'été</text>
+  <text class="neuf" x="740" y="290" text-anchor="middle">nouveau avec la RE2020</text>
+</svg>

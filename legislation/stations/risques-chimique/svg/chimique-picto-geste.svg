@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-3" aria-describedby="d-3" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-3">Le pictogramme inflammable commande deux gestes</title>
+  <desc id="d-3">À gauche, le losange inflammable. Une flèche part vers deux conséquences à droite : en
+    haut, une flamme barrée d'une croix rouge pour rappeler d'éloigner toute source d'inflammation ; en
+    bas, un symbole de ventilation (flèches circulaires) pour rappeler d'aérer le local.</desc>
+  <style>
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .fleche{ stroke:#5a6b7d; stroke-width:3; fill:none; }
+  </style>
+
+  <!-- Pictogramme -->
+  <rect x="60" y="90" width="140" height="140" fill="#fffdf8" stroke="#c2410c" stroke-width="6" transform="rotate(45 130 160)"/>
+  <path d="M130 125 q18 30 0 50 q-18 -10 -8 -25 q-14 5 -14 20 q-10 -25 22 -45 z" fill="#c2410c"/>
+  <text class="lbl" x="130" y="290" text-anchor="middle">Inflammable</text>
+
+  <path class="fleche" d="M215 130 Q300 90 380 100" marker-end="url(#f3)"/>
+  <path class="fleche" d="M215 190 Q300 230 380 220" marker-end="url(#f3)"/>
+  <defs>
+    <marker id="f3" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+
+  <!-- Flamme barrée -->
+  <rect x="400" y="60" width="220" height="90" rx="12" fill="#fbe7e4" stroke="#c0392b" stroke-width="2.5"/>
+  <path d="M480 80 q16 26 0 44 q-16 -8 -7 -22 q-12 4 -12 18 q-9 -22 19 -40 z" fill="#c0392b"/>
+  <line x1="415" y1="72" x2="545" y2="138" stroke="#c0392b" stroke-width="4"/>
+  <text class="lbl" x="565" y="112" fill="#c0392b">Éloigner toute</text>
+  <text class="lbl" x="565" y="132" fill="#c0392b">flamme</text>
+
+  <!-- Ventilation -->
+  <rect x="400" y="180" width="220" height="90" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2.5"/>
+  <path d="M450 200 a30 30 0 1 1 -20 20" fill="none" stroke="#1e7e54" stroke-width="5"/>
+  <path d="M425 218 l6 -14 l14 6 z" fill="#1e7e54"/>
+  <text class="lbl" x="565" y="232" fill="#1e7e54">Ventiler le</text>
+  <text class="lbl" x="565" y="252" fill="#1e7e54">local</text>
+</svg>

@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Les 9 principes — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : les neuf principes de prévention des risques professionnels, leur ordre, et pourquoi l'équipement de protection individuelle vient toujours en dernier.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/risques-neuf-principes/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Risques professionnels.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #start, #listen,
+     #stop-voice, #prev, #next, #progression-index, #progression-barre et
+     les classes .slide / .slide.active sont le CONTRAT du professeur
+     vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur, comme aptitude-capacite.
+
+     Sujet : les neuf principes généraux de prévention. Message central :
+     un équipement de protection individuelle n'est pas une solution,
+     c'est l'aveu que la suppression du risque et la protection
+     collective n'ont pas suffi ou n'étaient pas possibles.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Risques professionnels · niveau BTS</p>
+  <h1>Les 9 principes — l'EPI n'est jamais le premier réflexe</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez que la prévention suit un <strong>ordre</strong> — les neuf principes du code du travail — et vous savez placer l'équipement de protection individuelle où il doit être : <strong>en dernier</strong>, jamais en premier.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez cette liste verticale de neuf rangées. Chaque rangée porte une barre dont la longueur diminue de haut en bas : plus on descend, moins la mesure est efficace à elle seule. Tout en haut, éviter les risques. Tout en bas, plus courte que les autres, tracée en orange avec un contour tireté : l'équipement individuel, marqué dernier recours. Ce n'est pas une liste de neuf conseils au même niveau, c'est un ordre. Un technicien qui commence par choisir son casque ou ses gants a sauté toute la hiérarchie.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Une hiérarchie, pas une liste</h2>
+    <p>Le code du travail fixe <strong>neuf principes</strong> de prévention des risques professionnels. Ce ne sont pas neuf conseils au même niveau : ils sont <strong>classés</strong>, du plus efficace au moins efficace.</p>
+    <p>Tout en haut : <strong>supprimer le risque</strong>. Tout en bas : <strong>l'équipement de protection individuelle</strong> — casque, gants, harnais. Un technicien qui commence par choisir son équipement a sauté toute la hiérarchie.</p>
+    <figure>
+      <img src="svg/hierarchie-pyramide.svg" alt="Liste verticale des neuf principes, numérotés de 1 à 9, chacun porté par une barre dont la longueur diminue de haut en bas. La neuvième rangée, plus courte, en orange et en tireté, porte le texte équipement individuel, dernier recours.">
+      <figcaption>Neuf rangées, un seul ordre : on commence en haut, on ne finit qu'en bas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Trois cartes numérotées un, deux, trois. Première carte, éviter : un local technique dont le compresseur a été déplacé de l'intérieur, marqué d'une croix, vers l'extérieur, avec une flèche verte. Deuxième carte, évaluer : le même local fermé, avec un panneau d'avertissement et une loupe, pour estimer le risque d'anoxie si le fluide s'échappe. Troisième carte, combattre à la source : le local équipé d'un détecteur de fuite et de flèches de ventilation. Les trois numéros sont en orange : ce sont les trois premiers barreaux de l'échelle.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Éviter, évaluer, combattre à la source</h2>
+    <ul>
+      <li><strong>Éviter le risque</strong> : concevoir une installation qui n'expose personne — loger le compresseur en extérieur plutôt que dans un local exigu, choisir un fluide moins dangereux dès l'étude.</li>
+      <li><strong>Évaluer ce qui ne peut pas être évité</strong> : avant d'entrer dans un local technique fermé, mesurer le risque d'anoxie si une charge de fluide venait à s'échapper.</li>
+      <li><strong>Combattre le risque à la source</strong> : poser une détection de fuite et une ventilation mécanique dans le local, plutôt que de compter sur la seule vigilance du technicien.</li>
+    </ul>
+    <figure>
+      <img src="svg/eviter-evaluer-combattre.svg" alt="Trois cartes : éviter, avec le compresseur déplacé à l'extérieur du local ; évaluer, avec un panneau d'avertissement sur le risque d'anoxie en local fermé ; combattre à la source, avec un détecteur de fuite et une ventilation.">
+      <figcaption>Trois réflexes, dans l'ordre : on ne saute jamais directement au troisième.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Deux cartes, numéros quatre et cinq. À gauche, adapter le travail à l'homme : un établi de brasure à hauteur réglable, une double flèche verte montrant qu'il se règle sur la taille du technicien, pas l'inverse. À droite, suivre l'évolution de la technique : un œil barré représentant le contrôle visuel seul, une flèche verte vers un détecteur électronique de fuite entouré en vert. On remplace l'ancien outil par le nouveau quand il existe et qu'il reste accessible.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Adapter le poste, suivre la technique</h2>
+    <ul>
+      <li><strong>Adapter le travail à l'homme</strong> : le poste, l'outillage et les méthodes s'adaptent au technicien — pas l'inverse. Un établi de brasure à bonne hauteur, un accès aux vannes sans contorsion.</li>
+      <li><strong>Tenir compte de l'évolution de la technique</strong> : remplacer le contrôle visuel seul par un détecteur de fuite électronique, quand un outil fiable existe et reste accessible pour le chantier.</li>
+    </ul>
+    <figure>
+      <img src="svg/adapter-technique.svg" alt="Deux cartes : adapter le travail à l'homme, avec un établi de brasure à hauteur réglable ; suivre l'évolution de la technique, avec un contrôle visuel barré remplacé par un détecteur électronique.">
+      <figcaption>Le poste s'adapte au technicien, et l'outil suit le progrès disponible.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Deux bandes empilées. En haut, principe six, remplacer : un flacon marqué d'une tête de mort barré, une flèche verte vers un flacon plus clair marqué d'une coche. En bas, principe sept, planifier : le profil d'un toit avec un garde-corps déjà posé sur le bord, et une échelle à côté avec un technicien au pied. Deux bulles : l'une barrée en rouge contient la question quel harnais choisir, posée trop tard. L'autre, validée en vert, contient la vraie première question : peut-on éviter d'y monter, ou protéger le bord avant d'y aller, décidée avant le déplacement.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Remplacer, puis planifier avant de partir</h2>
+    <p><strong>Remplacer ce qui est dangereux par ce qui l'est moins</strong> : un produit agressif par un produit moins nocif, un fluide à fort impact par un fluide de substitution, quand c'est possible.</p>
+    <p><strong>Planifier la prévention</strong> : l'anticiper, pas la subir. Sur une intervention en toiture, la première question n'est pas « quel harnais ? » posée au pied de l'échelle. C'est « peut-on éviter d'y monter, ou protéger le bord du toit avant d'y aller ? » — et cette question se décide <strong>avant</strong> le déplacement.</p>
+    <figure>
+      <img src="svg/planifier-toiture.svg" alt="En haut, un produit dangereux remplacé par un produit moins nocif. En bas, un toit avec un garde-corps déjà posé sur le bord, une bulle barrée avec la question quel harnais posée trop tard, et une bulle validée avec la question peut-on éviter d'y monter ou protéger le bord avant d'y aller.">
+      <figcaption>La bonne question se pose avant de partir, pas au pied de l'échelle.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Deux bandes empilées, séparées par une flèche verticale. En haut, en vert, protection collective : un cadenas de consignation et un garde-corps, avec le texte protège tout le monde qui s'approche. La flèche au centre porte le mot d'abord en haut, et puis en complément en bas. En bas, en orange avec un contour tireté, protection individuelle : des gants isolants et un harnais, avec le texte protège seulement celui qui la porte, et seulement si elle est bien réglée.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le collectif avant l'individuel</h2>
+    <p>Sur un <strong>dégivrage</strong> ou une <strong>intervention électrique</strong>, la première question est « peut-on couper et consigner l'installation ? » — avant de penser aux gants isolants.</p>
+    <p>La <strong>consignation</strong> et le <strong>garde-corps</strong> sont des mesures <strong>collectives</strong> : elles protègent quiconque s'approche, même sans y penser soi-même. Les <strong>gants isolants</strong> et le <strong>harnais</strong> sont des mesures <strong>individuelles</strong> : elles ne protègent que celui qui les porte, et seulement s'il les porte correctement.</p>
+    <figure>
+      <img src="svg/collectif-avant-individuel.svg" alt="Deux bandes : en haut, protection collective, cadenas de consignation et garde-corps, protège tout le monde ; en bas, protection individuelle, gants isolants et harnais, protège seulement celui qui la porte.">
+      <figcaption>La flèche centrale résume l'ordre : le collectif d'abord, l'individuel en complément.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Une chaîne de trois maillons. Le premier regroupe ce qui a déjà été fait : éviter le risque et la protection collective. Le deuxième, principe neuf, montre une icône de formation : les instructions données avant le geste. Le troisième maillon, plus petit que les deux autres, tracé en orange avec un contour tireté, contient les icônes d'un gant, d'un casque et d'un harnais : l'équipement individuel, dernier maillon. Au-dessus, en orange : un EPI n'est pas une solution, c'est l'aveu que le reste n'a pas suffi. En dessous, trois étiquettes : personnel, vérifié avant chaque usage, remplacé s'il est abîmé.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">L'EPI : le dernier maillon, jamais le premier</h2>
+    <p>Le neuvième principe est de <strong>donner les instructions appropriées</strong> aux travailleurs — former, informer, avant le geste. Et puis, seulement après, vient l'équipement individuel.</p>
+    <p><strong>Un équipement de protection individuelle n'est pas une solution</strong> : c'est l'aveu que tout le reste — la suppression du risque, la protection collective — n'a pas suffi ou n'était pas possible. Le harnais ne remplace pas le garde-corps qu'on n'a pas posé ; les gants isolants ne remplacent pas la consignation qu'on n'a pas faite.</p>
+    <p>C'est pourquoi l'EPI est <strong>personnel</strong>, <strong>vérifié avant chaque usage</strong>, et <strong>remplacé dès qu'il est abîmé</strong> : il est la dernière ligne, pas la première.</p>
+    <figure>
+      <img src="svg/epi-dernier-recours.svg" alt="Chaîne de trois maillons : ce qui a déjà été fait, éviter et collectif ; instructions données, principe neuf ; et l'équipement individuel, plus petit, en orange, dernier maillon, avec trois étiquettes : personnel, vérifié avant usage, remplacé si abîmé.">
+      <figcaption>Le maillon orange n'existe que parce que les deux premiers ne suffisent pas toujours.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Cinq étapes numérotées, reliées par une flèche qui descend en escalier, sur fond d'un toit avec un groupe extérieur posé dessus. Étape un, éviter, en bleu : le faire depuis le sol ou une nacelle. Étape deux, évaluer : hauteur, état du toit, météo. Étape trois, collectif, encadrée en vert : garde-corps posé avant que quiconque monte. Étape quatre, planifier : créneau et matériel prévus à l'avance. Étape cinq, la dernière, encadrée en orange avec un contour tireté : instructions données au technicien, puis le harnais, comme un dernier filet.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Un raisonnement filé : le groupe en toiture</h2>
+    <ol>
+      <li><strong>Éviter</strong> : peut-on intervenir depuis le sol ou une nacelle plutôt que de monter ?</li>
+      <li><strong>Évaluer</strong> : hauteur, état du toit, météo du jour.</li>
+      <li><strong>Collectif</strong> : garde-corps ou ligne de vie posée avant que quiconque monte.</li>
+      <li><strong>Planifier</strong> : créneau et matériel prévus à l'avance, pas improvisés sur place.</li>
+      <li><strong>Instructions, puis EPI</strong> : le technicien sait comment s'accrocher ; le harnais vient en dernier filet, si la protection collective ne suffit pas entièrement.</li>
+    </ol>
+    <figure>
+      <img src="svg/raisonnement-toiture-groupe.svg" alt="Cinq étapes numérotées en escalier sur fond d'un toit : éviter, évaluer, collectif avec garde-corps posé avant la montée, planifier, puis instructions et EPI en dernier filet.">
+      <figcaption>Le même toit, mais parcouru dans l'ordre — pas en commençant par le harnais.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="La liste des neuf principes revient, mais cette fois toutes les cases sont cochées en vert, dans l'ordre. En bas, séparée par un trait, une dixième ligne encadrée en orange avec un contour tireté rappelle qu'après ces neuf principes vient encore l'équipement individuel, toujours en dernier recours, jamais en premier réflexe.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ol>
+      <li>Éviter les risques.</li>
+      <li>Évaluer ce qui ne peut pas être évité.</li>
+      <li>Combattre les risques à la source.</li>
+      <li>Adapter le travail à l'homme.</li>
+      <li>Suivre l'évolution de la technique.</li>
+      <li>Remplacer par ce qui l'est moins.</li>
+      <li>Planifier la prévention.</li>
+      <li>Protection collective d'abord.</li>
+      <li>Donner les instructions appropriées.</li>
+    </ol>
+    <p class="formule">Le réflexe : un EPI n'est jamais le premier choix, il vient après les neuf.</p>
+    <figure>
+      <img src="svg/bilan-neuf-principes.svg" alt="Liste des neuf principes, cases toutes cochées, dans l'ordre. En bas, une ligne encadrée en orange rappelle que l'équipement individuel vient après, toujours en dernier recours.">
+      <figcaption>Neuf cases cochées, et un rappel qui ne se coche jamais tout seul : l'EPI vient après.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un technicien doit intervenir sur un circuit de fluide frigorigène. Dans la hiérarchie des neuf principes, quelle question vient en premier ? Regardez la liste verticale de l'écran un si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Sur un circuit de fluide frigorigène, quelle question vient en premier ?</h2>
+    <figure class="vignette">
+      <img src="svg/hierarchie-pyramide.svg" alt="Vignette de rappel : la liste verticale des neuf principes, du plus efficace en haut à l'équipement individuel en bas.">
+      <figcaption>Rappel de l'écran 1 — une hiérarchie, pas une liste.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Quel équipement de protection individuelle porter</button>
+      <button type="button" data-answer="bonne">Peut-on éviter le risque avant toute autre mesure</button>
+      <button type="button" data-answer="b">Quelles instructions donner une fois sur place</button>
+      <button type="button" data-answer="c">Quelle protection collective installer en second</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le premier principe est d'éviter le risque. Ce n'est qu'à défaut de pouvoir l'éviter qu'on évalue, qu'on combat à la source, puis qu'on descend vers la protection collective et, en dernier, l'équipement individuel."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Avant un dégivrage ou une intervention électrique, consigner l'installation est une mesure de quel type ? Reprenez les deux bandes de l'écran cinq avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Consigner l'installation avant d'intervenir, c'est une mesure…</h2>
+    <figure class="vignette">
+      <img src="svg/collectif-avant-individuel.svg" alt="Vignette de rappel : la bande collective, cadenas de consignation et garde-corps, au-dessus de la bande individuelle, gants isolants et harnais.">
+      <figcaption>Rappel de l'écran 5 — le collectif avant l'individuel.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Individuelle, qui protège uniquement celui qui la réalise</button>
+      <button type="button" data-answer="b">Facultative si le technicien porte des gants isolants</button>
+      <button type="button" data-answer="bonne">Collective, qui protège tous ceux qui pourraient s'approcher</button>
+      <button type="button" data-answer="c">Qui remplace l'attestation d'habilitation électrique</button>
+    </div>
+    <p class="feedback" hidden data-explication="La consignation protège quiconque s'approche de l'installation, même sans y penser soi-même : c'est une mesure collective. Les gants isolants ne protègent que celui qui les porte, et seulement s'ils sont bien utilisés."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Que signifie devoir porter un équipement de protection individuelle sur une intervention ? Regardez la chaîne de l'écran six si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Devoir porter un EPI sur une intervention, ça signifie…</h2>
+    <figure class="vignette">
+      <img src="svg/epi-dernier-recours.svg" alt="Vignette de rappel : la chaîne à trois maillons se terminant par l'équipement individuel, plus petit, en orange, marqué dernier maillon.">
+      <figcaption>Rappel de l'écran 6 — le dernier maillon, jamais le premier.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">C'est la première mesure à prendre, avant toute autre</button>
+      <button type="button" data-answer="b">C'est une mesure facultative, laissée au choix du technicien</button>
+      <button type="button" data-answer="c">C'est une mesure qui dispense de toute autre protection</button>
+      <button type="button" data-answer="bonne">C'est le signe que la suppression et le collectif n'ont pas suffi</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un EPI n'est pas une solution en soi : c'est l'aveu que la suppression du risque et la protection collective n'ont pas suffi ou n'étaient pas possibles. Il vient en dernier, jamais en premier."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Avant une intervention sur un groupe posé en toiture, quelle est la première question à se poser ? Souvenez-vous des deux bulles de l'écran quatre.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Avant d'intervenir sur un groupe en toiture, la première question est…</h2>
+    <figure class="vignette">
+      <img src="svg/planifier-toiture.svg" alt="Vignette de rappel : le toit avec la bulle barrée quel harnais et la bulle validée peut-on éviter d'y monter ou protéger le bord avant d'y aller.">
+      <figcaption>Rappel de l'écran 4 — planifier avant de partir.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Peut-on éviter d'y monter, ou protéger le bord avant d'y aller</button>
+      <button type="button" data-answer="a">Quel harnais choisir pour l'intervention</button>
+      <button type="button" data-answer="b">Combien de temps va durer l'intervention</button>
+      <button type="button" data-answer="c">Quelle météo est prévue pour la journée</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le harnais est une question d'équipement individuel, donc la dernière. La première question porte sur l'évitement et la protection collective : peut-on ne pas monter, ou protéger le bord du toit avant d'y aller — décidé avant le déplacement."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme sur les autres stations : il
+     se lit dès l'accueil. La correspondance annoncée n'a pas encore de
+     lien, la station visée n'existe pas encore. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>L'habilitation</strong> (sous-ligne Électrique) — la règle d'un côté, le geste protégé de l'autre.</li>
+  </ul>
+  <p>Cette station est en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

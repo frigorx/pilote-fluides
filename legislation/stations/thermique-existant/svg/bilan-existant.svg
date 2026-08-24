@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-be" aria-describedby="d-be" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-be">Bilan : deux logiques de rénovation, un même cadre distinct du neuf</title>
+  <desc id="d-be">Les deux cartes « par élément » et « globale » réapparaissent, plus petites,
+    côte à côte, réunies sous la mention « RT existant ». En dessous, une bande résume les points
+    de la station.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <rect x="80" y="30" width="330" height="120" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="ttl" x="245" y="65" text-anchor="middle">Par élément</text>
+  <text class="ttl" x="245" y="95" text-anchor="middle" font-size="14" font-weight="normal">le composant remplacé,</text>
+  <text class="ttl" x="245" y="115" text-anchor="middle" font-size="14" font-weight="normal">seul, doit atteindre son niveau</text>
+
+  <rect x="480" y="30" width="330" height="120" rx="12" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <text class="ttl" x="645" y="65" text-anchor="middle" fill="#92400e">Globale</text>
+  <text class="ttl" x="645" y="95" text-anchor="middle" font-size="14" font-weight="normal">le bâtiment entier,</text>
+  <text class="ttl" x="645" y="115" text-anchor="middle" font-size="14" font-weight="normal">jugé comme un ensemble</text>
+
+  <rect x="60" y="180" width="780" height="130" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="215" text-anchor="middle" font-weight="bold">Rénover obéit à un cadre distinct de celui du neuf : la RT existant.</text>
+  <text class="band" x="450" y="245" text-anchor="middle">Remplacer un composant déclenche une exigence sur ce composant seul.</text>
+  <text class="band" x="450" y="270" text-anchor="middle">Une rénovation globale juge le bâtiment entier, bâti et systèmes réunis.</text>
+  <text class="band" x="450" y="295" text-anchor="middle">Aucune des deux valeurs de seuil n'est à mémoriser : elles se vérifient.</text>
+</svg>

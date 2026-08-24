@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-piege" aria-describedby="d-piege" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-piege">Le piège du prix bas : le coût cumulé sur la durée de vie</title>
+  <desc id="d-piege">Un graphique à deux axes sans valeur chiffrée : en bas, le temps ; sur le
+    côté, le coût cumulé. Deux lignes partent de la gauche. La ligne verte pleine part d'un point
+    plus haut, « classe énergie meilleure, prix plus élevé au départ », et monte doucement. La
+    ligne ambrée en tirets part d'un point plus bas, « prix bas, mauvaise classe énergie », et
+    monte plus vite. Les deux lignes se croisent au milieu du graphique, avec la mention « le
+    surcoût apparaît », puis la ligne ambrée termine au-dessus de la ligne verte.</desc>
+  <defs>
+    <marker id="fl-piege" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10233c"/>
+    </marker>
+  </defs>
+  <style>
+    .ti  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .ax  { font-size:15px; fill:#10233c; }
+    .good{ font-weight:bold; fill:#047857; font-size:15px; }
+    .warn{ font-weight:bold; fill:#b06a00; font-size:15px; }
+    .note{ font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <text class="ti" x="450" y="26" text-anchor="middle">Coût cumulé sur la durée de vie de l'appareil</text>
+
+  <!-- axes -->
+  <line x1="100" y1="330" x2="100" y2="50"  stroke="#10233c" stroke-width="2.5" marker-end="url(#fl-piege)"/>
+  <line x1="100" y1="330" x2="830" y2="330" stroke="#10233c" stroke-width="2.5" marker-end="url(#fl-piege)"/>
+  <text class="ax" x="106" y="46" text-anchor="start">Coût cumulé</text>
+  <text class="ax" x="815" y="352" text-anchor="end">Temps →</text>
+
+  <!-- ligne verte : mieux classé, prix plus élevé au départ -->
+  <polyline points="140,250 300,225 480,205 660,190 800,178" fill="none" stroke="#047857" stroke-width="4"/>
+  <circle cx="140" cy="250" r="6" fill="#047857"/>
+  <text class="good" x="150" y="245" text-anchor="start">Classe énergie meilleure,</text>
+  <text class="good" x="150" y="263" text-anchor="start">prix plus élevé au départ</text>
+
+  <!-- ligne ambrée : mal classé, prix bas au départ -->
+  <polyline points="140,300 300,255 480,205 660,150 800,110" fill="none" stroke="#b06a00" stroke-width="4" stroke-dasharray="9 6"/>
+  <circle cx="140" cy="300" r="6" fill="#b06a00"/>
+  <text class="warn" x="150" y="318" text-anchor="start">Prix bas,</text>
+  <text class="warn" x="150" y="335" text-anchor="start">mauvaise classe énergie</text>
+
+  <!-- point de croisement -->
+  <circle cx="480" cy="205" r="7" fill="#10233c"/>
+  <line x1="480" y1="205" x2="530" y2="90" stroke="#10233c" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <rect x="495" y="55" width="200" height="34" rx="8" fill="#fff4e0" stroke="#b06a00" stroke-width="2"/>
+  <text class="warn" x="595" y="77" text-anchor="middle">le surcoût apparaît</text>
+</svg>

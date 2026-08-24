@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="t-cc" aria-describedby="d-cc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cc">Le dossier technique, présenté sur le chantier</title>
+  <desc id="d-cc">À gauche, une loupe symbolise un contrôle sur chantier. Une flèche pointe vers
+    un dossier ouvert tenu par le frigoriste, qui contient la déclaration de conformité et la
+    notice d'instructions. En dessous, une bande rappelle que c'est ce dossier, gardé depuis le
+    montage, qui doit pouvoir être présenté.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .small{ font-size:14.5px; fill:#5a6b7d; }
+    .band { font-size:16px; fill:#10233c; }
+    .fl   { stroke:#8fa0b0; stroke-width:3; fill:none; }
+  </style>
+
+  <!-- La loupe : le contrôle -->
+  <circle cx="150" cy="120" r="60" fill="none" stroke="#b06a00" stroke-width="8"/>
+  <line x1="192" y1="162" x2="230" y2="200" stroke="#b06a00" stroke-width="10" stroke-linecap="round"/>
+  <text class="ttl" x="150" y="210" text-anchor="middle" fill="#b06a00">CONTRÔLE</text>
+
+  <!-- La flèche -->
+  <path class="fl" d="M 268 130 H 360"/>
+  <polygon points="360,121 380,130 360,139" fill="#8fa0b0"/>
+
+  <!-- Le dossier ouvert, tenu -->
+  <rect x="410" y="40" width="440" height="180" rx="14" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <line x1="630" y1="40" x2="630" y2="220" stroke="#0c4a6e" stroke-width="2"/>
+
+  <text class="lbl" x="520" y="70" text-anchor="middle" font-weight="bold">Déclaration</text>
+  <text class="small" x="520" y="90" text-anchor="middle">de conformité</text>
+  <line x1="440" y1="106" x2="600" y2="106" stroke="#d6dee7" stroke-width="2"/>
+  <line x1="440" y1="120" x2="600" y2="120" stroke="#d6dee7" stroke-width="2"/>
+  <line x1="440" y1="134" x2="580" y2="134" stroke="#d6dee7" stroke-width="2"/>
+
+  <text class="lbl" x="740" y="70" text-anchor="middle" font-weight="bold">Notice</text>
+  <text class="small" x="740" y="90" text-anchor="middle">d'instructions</text>
+  <line x1="660" y1="106" x2="820" y2="106" stroke="#d6dee7" stroke-width="2"/>
+  <line x1="660" y1="120" x2="820" y2="120" stroke="#d6dee7" stroke-width="2"/>
+  <line x1="660" y1="134" x2="800" y2="134" stroke="#d6dee7" stroke-width="2"/>
+
+  <text class="lbl" x="630" y="200" text-anchor="middle" font-weight="bold">le dossier du frigoriste</text>
+
+  <!-- La bande -->
+  <rect x="30" y="252" width="820" height="46" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="440" y="274" text-anchor="middle">C'est le dossier gardé depuis le montage</text>
+  <text class="band" x="440" y="292" text-anchor="middle">qui doit pouvoir être présenté</text>
+</svg>

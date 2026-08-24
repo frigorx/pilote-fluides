@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-p2" aria-describedby="d-p2" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-p2">Piège n°2 : un fluide à fort PRP qui fuit, sur une machine efficace</title>
+  <desc id="d-p2">À gauche, un groupe de condensation schématique porte l'étiquette R-404A et
+    trois gouttes qui s'échappent, avec la mention fuites régulières : le direct est marqué fort.
+    À droite, un compteur électrique dont l'aiguille reste dans la zone verte porte la mention
+    machine efficace, faible consommation : l'indirect est marqué faible. En bas, une balance
+    penche nettement du côté du direct, avec la conclusion écrite : malgré une machine efficace,
+    le direct peut dominer le TEWI.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .lblg{ font-size:15px; fill:#1e7e54; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Fluide fort PRP qui fuit, machine efficace</text>
+
+  <!-- Groupe de condensation, fluide fort PRP -->
+  <rect x="30" y="56" width="380" height="150" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <rect x="60" y="76" width="150" height="86" rx="8" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="135" y="106" text-anchor="middle" font-weight="bold">Groupe de</text>
+  <text class="lbl" x="135" y="126" text-anchor="middle" font-weight="bold">condensation</text>
+  <text class="lbl" x="135" y="148" text-anchor="middle" font-size="13px">fluide R-404A</text>
+  <circle cx="310" cy="96" r="6" fill="#c0392b"/>
+  <circle cx="326" cy="108" r="6" fill="#c0392b"/>
+  <circle cx="316" cy="122" r="6" fill="#c0392b"/>
+  <text class="qui" x="320" y="146" text-anchor="middle" font-size="14px">fuites</text>
+  <text class="qui" x="320" y="164" text-anchor="middle" font-size="14px">régulières</text>
+  <text class="qui" x="220" y="188" text-anchor="middle" font-size="16px">Direct : fort</text>
+
+  <!-- Compteur, faible consommation -->
+  <rect x="490" y="56" width="380" height="150" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="590" cy="112" r="40" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <line x1="590" y1="112" x2="566" y2="128" stroke="#1e7e54" stroke-width="4"/>
+  <circle cx="590" cy="112" r="4" fill="#1e7e54"/>
+  <text class="lblg" x="720" y="106" text-anchor="middle" font-size="15px">machine</text>
+  <text class="lblg" x="720" y="126" text-anchor="middle" font-size="15px">efficace</text>
+  <text class="lblg" x="720" y="150" text-anchor="middle" font-size="13px">faible consommation</text>
+  <text class="qui" x="680" y="188" text-anchor="middle" font-size="16px" fill="#1e7e54">Indirect : faible</text>
+
+  <!-- Balance, penche vers le direct (gauche) -->
+  <line x1="220" y1="266" x2="680" y2="238" stroke="#1b3a63" stroke-width="4"/>
+  <polygon points="450,238 428,278 472,278" fill="#5a6b7d" stroke="#10233c" stroke-width="2"/>
+  <line x1="220" y1="266" x2="220" y2="298" stroke="#5a6b7d" stroke-width="2"/>
+  <ellipse cx="220" cy="320" rx="70" ry="26" fill="#fbe7e4" stroke="#c0392b" stroke-width="2"/>
+  <text class="qui" x="220" y="326" text-anchor="middle" font-size="14px">direct</text>
+  <line x1="680" y1="238" x2="680" y2="264" stroke="#5a6b7d" stroke-width="2"/>
+  <ellipse cx="680" cy="286" rx="70" ry="26" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+  <text class="lblg" x="680" y="292" text-anchor="middle" font-size="14px">indirect</text>
+
+  <text class="band" x="450" y="378" text-anchor="middle">Malgré une machine efficace, le direct peut dominer le TEWI.</text>
+</svg>

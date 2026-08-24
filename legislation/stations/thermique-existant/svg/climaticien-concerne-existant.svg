@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-cce" aria-describedby="d-cce" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cce">Le climaticien est concerné à chaque remplacement d'équipement</title>
+  <desc id="d-cce">Un bloc extérieur de pompe à chaleur stylisé remplace une ancienne chaudière,
+    avec une flèche de transformation entre les deux. Une étiquette reliée à la nouvelle pompe à
+    chaleur porte la mention « doit respecter le niveau minimal fixé pour ce type d'équipement,
+    sans valeur inscrite ici ». Le message : ce n'est pas une règle abstraite, c'est directement
+    le geste professionnel du remplacement qui la déclenche.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .foc { font-size:15px; fill:#1e7e54; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Un geste de métier, une exigence qui s'applique</text>
+
+  <!-- ancienne chaudière -->
+  <rect x="120" y="150" width="100" height="120" rx="8" fill="none" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <text class="lbl" x="170" y="290" text-anchor="middle">ancienne chaudière</text>
+  <line x1="115" y1="145" x2="225" y2="275" stroke="#5a6b7d" stroke-width="2.5"/>
+
+  <path d="M 240 210 L 400 210" fill="none" stroke="#92400e" stroke-width="4"/>
+  <polygon points="400,210 382,200 382,220" fill="#92400e"/>
+  <text class="lbl" x="320" y="195" text-anchor="middle" font-size="14">remplacée par</text>
+
+  <!-- pompe à chaleur installée -->
+  <rect x="420" y="160" width="140" height="100" rx="10" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="460" cy="210" r="20" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <circle cx="520" cy="210" r="20" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <text class="lbl" x="490" y="290" text-anchor="middle">pompe à chaleur installée</text>
+
+  <path d="M 560 170 L 640 130" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <polygon points="640,130 622,128 628,144" fill="#1e7e54"/>
+
+  <rect x="650" y="50" width="220" height="140" rx="12" fill="#fffdf8" stroke="#1e7e54" stroke-width="2.5"/>
+  <text class="foc" x="760" y="90" text-anchor="middle">doit respecter</text>
+  <text class="foc" x="760" y="112" text-anchor="middle">le niveau minimal</text>
+  <text class="lbl" x="760" y="140" text-anchor="middle">fixé pour ce type</text>
+  <text class="lbl" x="760" y="160" text-anchor="middle">d'équipement</text>
+</svg>

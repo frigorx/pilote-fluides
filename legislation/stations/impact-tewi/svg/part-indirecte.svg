@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-ind" aria-describedby="d-ind" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ind">La part indirecte : énergie consommée sur toute la vie, convertie en CO2</title>
+  <desc id="d-ind">Une chaîne de blocs. Premier bloc : un compteur électrique schématique portant
+    la mention énergie consommée sur toute la vie de la machine. Un signe multiplié. Deuxième
+    bloc : une horloge portant la mention durée de vie de la machine. Une flèche mène vers un
+    troisième bloc représentant le réseau électrique du pays où tourne la machine, avec la
+    mention l'électricité n'est jamais neutre à produire. Une dernière flèche mène au résultat,
+    encadré en vert : la part indirecte, exprimée en équivalent CO2.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .op  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:32px; fill:#5a6b7d; }
+    .res { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">La part indirecte, bloc par bloc</text>
+
+  <!-- Bloc 1 : énergie -->
+  <rect x="16" y="58" width="196" height="130" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="56" y="76" width="116" height="52" rx="6" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="114" y="106" text-anchor="middle" font-size="20px" font-weight="bold" fill="#5a6b7d">kWh</text>
+  <text class="qui" x="114" y="150" text-anchor="middle" font-size="16px">Énergie</text>
+  <text class="lbl" x="114" y="168" text-anchor="middle" font-size="13px">consommée</text>
+
+  <text class="op" x="234" y="130" text-anchor="middle">×</text>
+
+  <!-- Bloc 2 : durée de vie -->
+  <rect x="256" y="58" width="196" height="130" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="354" cy="102" r="26" fill="none" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="354" y1="102" x2="354" y2="86" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="354" y1="102" x2="366" y2="108" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="qui" x="354" y="150" text-anchor="middle" font-size="16px">Durée de vie</text>
+  <text class="lbl" x="354" y="168" text-anchor="middle" font-size="13px">de la machine</text>
+
+  <!-- Flèche vers réseau -->
+  <path d="M474,122 h60" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#fl1)"/>
+
+  <!-- Bloc 3 : réseau électrique -->
+  <rect x="546" y="58" width="200" height="130" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <circle cx="646" cy="98" r="22" fill="none" stroke="#2f5689" stroke-width="3"/>
+  <line x1="646" y1="76" x2="646" y2="120" stroke="#2f5689" stroke-width="2"/>
+  <line x1="624" y1="98" x2="668" y2="98" stroke="#2f5689" stroke-width="2"/>
+  <text class="qui" x="646" y="148" text-anchor="middle" font-size="15px">Réseau électrique</text>
+  <text class="lbl" x="646" y="166" text-anchor="middle" font-size="13px">du pays où elle tourne</text>
+
+  <!-- Flèche vers résultat -->
+  <path d="M746,122 q34,0 34,26 l0,66" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#fl2)"/>
+
+  <defs>
+    <marker id="fl1" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5a6b7d"/>
+    </marker>
+    <marker id="fl2" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+
+  <!-- Résultat -->
+  <rect x="546" y="220" width="334" height="76" rx="14" fill="#047857" stroke="#10233c" stroke-width="3"/>
+  <text class="res" x="713" y="252" text-anchor="middle">Part indirecte</text>
+  <text class="res" x="713" y="276" text-anchor="middle" font-size="15px" font-weight="normal">équivalent CO₂ (énergie consommée)</text>
+
+  <rect x="16" y="222" width="500" height="74" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="266" y="248" text-anchor="middle" font-weight="bold">L'électricité n'est jamais neutre à produire :</text>
+  <text class="band" x="266" y="270" text-anchor="middle" font-weight="bold">sa part de CO₂ dépend du réseau utilisé.</text>
+</svg>

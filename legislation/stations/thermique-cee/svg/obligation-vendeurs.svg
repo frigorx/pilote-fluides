@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-ov" aria-describedby="d-ov" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ov">L'État impose une obligation d'économies d'énergie aux vendeurs d'énergie</title>
+  <desc id="d-ov">Un bâtiment institutionnel stylisé, représentant l'État, envoie une flèche vers
+    trois icônes de vendeurs d'énergie génériques — une pompe à essence, une prise électrique, une
+    flamme de gaz — sans aucun nom de marque. La flèche porte la mention « obligation
+    d'économies d'énergie ».</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:15px; fill:#92400e; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Une obligation fixée par l'État</text>
+
+  <polygon points="130,190 220,120 310,190" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="150" y="190" width="140" height="90" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="205" y="220" width="30" height="60" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="220" y="305" text-anchor="middle" font-size="16" fill="#10233c" font-weight="bold">L'État</text>
+
+  <path d="M 330 200 C 430 170, 480 170, 560 175" fill="none" stroke="#92400e" stroke-width="3"/>
+  <polygon points="560,175 542,167 543,183" fill="#92400e"/>
+  <text class="foc" x="440" y="155" text-anchor="middle">obligation</text>
+
+  <rect x="580" y="60" width="90" height="90" rx="10" fill="#eef1f4" stroke="#5a6b7d" stroke-width="2.5"/>
+  <rect x="600" y="90" width="50" height="14" fill="#5a6b7d"/>
+  <circle cx="610" cy="130" r="8" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <circle cx="640" cy="130" r="8" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="625" y="170" text-anchor="middle" font-size="13">énergie 1</text>
+
+  <rect x="700" y="60" width="90" height="90" rx="10" fill="#eef1f4" stroke="#5a6b7d" stroke-width="2.5"/>
+  <circle cx="745" cy="105" r="16" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <line x1="745" y1="120" x2="745" y2="140" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="lbl" x="745" y="170" text-anchor="middle" font-size="13">énergie 2</text>
+
+  <rect x="580" y="180" width="210" height="90" rx="10" fill="#eef1f4" stroke="#5a6b7d" stroke-width="2.5"/>
+  <path d="M 660 200 C 645 225, 643 245, 660 260 C 677 245, 675 225, 660 200 Z" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="lbl" x="720" y="235" text-anchor="middle" font-size="13">énergie 3</text>
+  <text class="lbl" x="685" y="295" text-anchor="middle">vendeurs d'énergie, dits « obligés »</text>
+</svg>

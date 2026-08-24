@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-cmp" aria-describedby="d-cmp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cmp">Ce qui change vraiment entre la RT2012 et la RE2020</title>
+  <desc id="d-cmp">Deux colonnes face à face. La colonne RT2012 contient une seule case pleine,
+    consommation d'énergie. La colonne RE2020 contient quatre cases pleines : besoin du bâti,
+    consommation d'énergie, impact carbone, confort d'été. Les cases communes aux deux colonnes
+    sont alignées à la même hauteur pour montrer ce qui est repris et ce qui est ajouté.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .neuf{ font-size:14px; fill:#92400e; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="230" y="34" text-anchor="middle" fill="#5a6b7d">RT2012</text>
+  <text class="ttl" x="670" y="34" text-anchor="middle" fill="#92400e">RE2020</text>
+
+  <rect x="90" y="150" width="280" height="50" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="230" y="181" text-anchor="middle">Consommation d'énergie</text>
+
+  <rect x="530" y="60"  width="280" height="50" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="670" y="91" text-anchor="middle">Besoin du bâti (Bbio)</text>
+  <text class="neuf" x="670" y="128" text-anchor="middle">nouveau</text>
+
+  <rect x="530" y="150" width="280" height="50" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="670" y="181" text-anchor="middle">Consommation d'énergie</text>
+
+  <rect x="530" y="220" width="280" height="50" rx="8" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <text class="lbl" x="670" y="251" text-anchor="middle">Impact carbone (IC)</text>
+  <text class="neuf" x="670" y="285" text-anchor="middle">nouveau</text>
+
+  <rect x="530" y="292" width="280" height="40" rx="8" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <text class="lbl" x="670" y="317" text-anchor="middle" font-size="14">Confort d'été</text>
+</svg>

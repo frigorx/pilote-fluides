@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-frise" aria-describedby="d-frise" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-frise">Trois temps : Montréal, le relais des HFC, puis Kigali</title>
+  <desc id="d-frise">Trois cases reliées par des flèches. La première, encre bleu, porte le protocole de Montréal,
+    1987, dont la cible est de sauver la couche d'ozone en supprimant les CFC puis les HCFC. La deuxième, en ambre,
+    montre les HFC qui prennent le relais : sans chlore ni brome, ils règlent le problème de l'ozone, mais beaucoup
+    d'entre eux ont un PRP élevé, un nouveau souci apparaît. La troisième, verte, porte l'amendement de Kigali, qui
+    s'attaque à son tour aux HFC, cette fois pour leur PRP. Une bande en bas rappelle que Kigali est un amendement
+    au protocole de Montréal, pas un nouveau traité séparé.</desc>
+  <defs>
+    <marker id="fl-fleche" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .bandeTitre{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .corpsGras{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .corps{ font-size:15px; fill:#10233c; }
+    .note{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+  </style>
+
+  <!-- Colonne 1 : Montréal -->
+  <rect x="20" y="40" width="260" height="200" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="20" y="40" width="260" height="40" rx="12" fill="#1b3a63"/>
+  <rect x="20" y="66" width="260" height="14" fill="#1b3a63"/>
+  <text class="bandeTitre" x="150" y="66" text-anchor="middle">MONTRÉAL</text>
+  <text class="corpsGras" x="150" y="104" text-anchor="middle">Protocole de Montréal</text>
+  <text class="corps" x="150" y="128" text-anchor="middle">1987 · sauver la couche</text>
+  <text class="corps" x="150" y="148" text-anchor="middle">d'ozone</text>
+  <text class="corps" x="150" y="188" text-anchor="middle">Cible : les CFC,</text>
+  <text class="corps" x="150" y="208" text-anchor="middle">puis les HCFC</text>
+
+  <path d="M280,140 L316,140" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#fl-fleche)"/>
+
+  <!-- Colonne 2 : relais HFC -->
+  <rect x="320" y="40" width="260" height="200" rx="12" fill="#fffdf8" stroke="#b06a00" stroke-width="3"/>
+  <rect x="320" y="40" width="260" height="40" rx="12" fill="#b06a00"/>
+  <rect x="320" y="66" width="260" height="14" fill="#b06a00"/>
+  <text class="bandeTitre" x="450" y="66" text-anchor="middle">LES HFC</text>
+  <text class="corpsGras" x="450" y="104" text-anchor="middle">Les HFC prennent</text>
+  <text class="corpsGras" x="450" y="124" text-anchor="middle">le relais</text>
+  <text class="corps" x="450" y="152" text-anchor="middle">sans chlore ni brome :</text>
+  <text class="corps" x="450" y="172" text-anchor="middle">ozone réglé</text>
+  <text class="corps" x="450" y="200" text-anchor="middle">mais souvent un PRP élevé</text>
+
+  <path d="M580,140 L616,140" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#fl-fleche)"/>
+
+  <!-- Colonne 3 : Kigali -->
+  <rect x="620" y="40" width="260" height="200" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <rect x="620" y="40" width="260" height="40" rx="12" fill="#047857"/>
+  <rect x="620" y="66" width="260" height="14" fill="#047857"/>
+  <text class="bandeTitre" x="750" y="66" text-anchor="middle">KIGALI</text>
+  <text class="corpsGras" x="750" y="104" text-anchor="middle">Amendement de Kigali</text>
+  <text class="corps" x="750" y="128" text-anchor="middle">un ajout au protocole</text>
+  <text class="corps" x="750" y="148" text-anchor="middle">de Montréal</text>
+  <text class="corps" x="750" y="188" text-anchor="middle">Cible : le PRP</text>
+  <text class="corps" x="750" y="208" text-anchor="middle">des HFC</text>
+
+  <!-- Bande du bas -->
+  <rect x="20" y="270" width="860" height="52" rx="12" fill="#e9f5ef" stroke="#047857" stroke-width="2"/>
+  <text class="note" x="450" y="292" text-anchor="middle">Trois temps, un seul protocole</text>
+  <text class="note" x="450" y="312" text-anchor="middle">Kigali s'ajoute à Montréal — il ne le remplace pas</text>
+</svg>

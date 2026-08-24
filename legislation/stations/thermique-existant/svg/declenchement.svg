@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-dc" aria-describedby="d-dc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dc">Remplacer un composant déclenche l'exigence, seule pour ce composant</title>
+  <desc id="d-dc">Une clé plate stylisée retire une ancienne chaudière et une nouvelle chaudière
+    la remplace. Une flèche part de ce remplacement vers une étiquette « déclenche l'exigence par
+    élément, sur ce composant seulement ». Le reste du bâtiment, dessiné en trait fin autour,
+    n'est pas concerné par ce déclenchement.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:15px; fill:#92400e; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Le geste qui déclenche l'exigence</text>
+
+  <polygon points="80,240 230,140 380,240" fill="none" stroke="#98a6b3" stroke-width="2"/>
+  <rect x="110" y="240" width="240" height="70" fill="none" stroke="#98a6b3" stroke-width="2"/>
+
+  <!-- ancienne chaudière, remplacée -->
+  <rect x="150" y="255" width="60" height="45" rx="6" fill="none" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="5 5"/>
+  <line x1="145" y1="250" x2="215" y2="305" stroke="#5a6b7d" stroke-width="2.5"/>
+
+  <!-- clé plate -->
+  <rect x="220" y="150" width="90" height="26" rx="8" fill="#92400e" transform="rotate(-30 265 163)"/>
+
+  <!-- nouvelle chaudière -->
+  <rect x="255" y="255" width="60" height="45" rx="6" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+
+  <path d="M 400 230 C 470 200, 520 195, 570 190" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="570,190 552,184 555,200" fill="#92400e"/>
+
+  <rect x="590" y="130" width="290" height="120" rx="12" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <text class="foc" x="735" y="165" text-anchor="middle">déclenche l'exigence</text>
+  <text class="foc" x="735" y="185" text-anchor="middle">par élément</text>
+  <text class="lbl" x="735" y="215" text-anchor="middle">sur ce composant</text>
+  <text class="lbl" x="735" y="235" text-anchor="middle">seulement</text>
+</svg>

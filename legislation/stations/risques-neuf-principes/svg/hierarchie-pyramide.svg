@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 600" role="img"
+     aria-labelledby="t-hp" aria-describedby="d-hp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-hp">Les neuf principes rangés par priorité, du plus efficace au dernier recours</title>
+  <desc id="d-hp">Une liste verticale de neuf rangées, numérotées de 1 à 9. Chaque rangée porte une barre
+    horizontale dont la longueur diminue de haut en bas, et un texte à droite qui nomme le principe.
+    Les huit premières rangées sont en bleu : éviter les risques, évaluer ce qui ne peut être évité,
+    combattre à la source, adapter le travail à l'homme, suivre l'évolution technique, remplacer par
+    moins dangereux, planifier la prévention, protection collective d'abord. La neuvième rangée, tout en
+    bas, est plus courte que les autres, tracée en orange avec un contour tireté, et porte le texte
+    « équipement individuel — dernier recours ». Une légende en haut indique « le plus efficace » et une
+    légende en bas indique « le moins efficace, utilisé en dernier ».</desc>
+  <style>
+    .lgd  { font-size:15px; font-style:italic; fill:#5a6b7d; }
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .txt  { font-size:16px; fill:#10233c; }
+    .txt-last { font-size:16px; font-weight:bold; fill:#c2410c; }
+    .tag  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:14px; fill:#c2410c; }
+  </style>
+
+  <text class="lgd" x="20" y="34">↑ Le plus efficace — on commence toujours par là</text>
+
+  <!-- 9 rangées : y de départ 56, hauteur de pas 58 -->
+  <!-- Rangée 1 -->
+  <circle cx="34" cy="80" r="18" fill="#1b3a63"/><text class="num" x="34" y="86" text-anchor="middle">1</text>
+  <rect x="62" y="68" width="620" height="26" rx="6" fill="#1b3a63"/>
+  <text class="txt" x="700" y="86">Éviter les risques</text>
+
+  <!-- Rangée 2 -->
+  <circle cx="34" cy="138" r="18" fill="#1b3a63"/><text class="num" x="34" y="144" text-anchor="middle">2</text>
+  <rect x="62" y="126" width="560" height="26" rx="6" fill="#1b3a63"/>
+  <text class="txt" x="640" y="144">Évaluer ce qui ne peut pas être évité</text>
+
+  <!-- Rangée 3 -->
+  <circle cx="34" cy="196" r="18" fill="#1b3a63"/><text class="num" x="34" y="202" text-anchor="middle">3</text>
+  <rect x="62" y="184" width="500" height="26" rx="6" fill="#1b3a63"/>
+  <text class="txt" x="580" y="202">Combattre les risques à la source</text>
+
+  <!-- Rangée 4 -->
+  <circle cx="34" cy="254" r="18" fill="#1b3a63"/><text class="num" x="34" y="260" text-anchor="middle">4</text>
+  <rect x="62" y="242" width="440" height="26" rx="6" fill="#1b3a63"/>
+  <text class="txt" x="520" y="260">Adapter le travail à l'homme</text>
+
+  <!-- Rangée 5 -->
+  <circle cx="34" cy="312" r="18" fill="#1b3a63"/><text class="num" x="34" y="318" text-anchor="middle">5</text>
+  <rect x="62" y="300" width="380" height="26" rx="6" fill="#1b3a63"/>
+  <text class="txt" x="460" y="318">Suivre l'évolution de la technique</text>
+
+  <!-- Rangée 6 -->
+  <circle cx="34" cy="370" r="18" fill="#1b3a63"/><text class="num" x="34" y="376" text-anchor="middle">6</text>
+  <rect x="62" y="358" width="320" height="26" rx="6" fill="#1b3a63"/>
+  <text class="txt" x="400" y="376">Remplacer par ce qui l'est moins</text>
+
+  <!-- Rangée 7 -->
+  <circle cx="34" cy="428" r="18" fill="#1b3a63"/><text class="num" x="34" y="434" text-anchor="middle">7</text>
+  <rect x="62" y="416" width="260" height="26" rx="6" fill="#1b3a63"/>
+  <text class="txt" x="340" y="434">Planifier la prévention</text>
+
+  <!-- Rangée 8 -->
+  <circle cx="34" cy="486" r="18" fill="#1b3a63"/><text class="num" x="34" y="492" text-anchor="middle">8</text>
+  <rect x="62" y="474" width="200" height="26" rx="6" fill="#1b3a63"/>
+  <text class="txt" x="280" y="492">Protection collective d'abord</text>
+
+  <!-- Rangée 9 : EPI, dernier recours, en accent -->
+  <circle cx="34" cy="548" r="18" fill="#c2410c"/><text class="num" x="34" y="554" text-anchor="middle">9</text>
+  <rect x="62" y="534" width="140" height="28" rx="6" fill="#fffdf8" stroke="#c2410c" stroke-width="3" stroke-dasharray="6,4"/>
+  <text class="txt-last" x="220" y="554">Équipement individuel</text>
+  <text class="tag" x="220" y="576">DERNIER RECOURS — pas la première idée</text>
+
+  <text class="lgd" x="20" y="596">↓ Le moins efficace — on n'y arrive qu'en dernier</text>
+</svg>

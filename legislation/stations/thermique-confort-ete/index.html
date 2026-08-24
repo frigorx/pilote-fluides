@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Le confort d'été — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la nouveauté de la RE2020 qui concerne directement le climaticien — mesurer l'inconfort en degrés-heures, et traiter d'abord par la conception avant de climatiser.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/thermique-confort-ete/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Thermique.
+     Troisième des six stations de la sous-ligne.
+
+     GABARIT repris à la lettre de aptitude-capacite/. Même écart assumé
+     que les deux stations précédentes de la sous-ligne : styles.css et
+     app.js copiés littéralement (variable --sous-ligne:#0f766e), accent
+     #92400e réservé aux SVG.
+
+     Aucune valeur de DH n'est inscrite : les degrés-heures se mesurent,
+     leur seuil réglementaire se vérifie sur le texte en vigueur.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Thermique · niveau BTS</p>
+  <h1>Le confort d'été — la nouveauté qui vous concerne</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez comment se mesure l'inconfort d'été — en degrés-heures — et dans quel ordre le traiter : la conception d'abord, la climatisation en dernier recours, dimensionnée sur ce qu'il reste à couvrir.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Deux cartes reliées par une flèche. À gauche, la carte confort d'été, l'un des volets nouveaux de la RE2020, déjà vus dans la station précédente. À droite, une carte climatisation, votre futur métier, avec un bloc extérieur de climatiseur stylisé. La flèche entre les deux porte la mention concerne directement : c'est le seul des volets de la RE2020 qui touche votre spécialité de si près.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Une nouveauté qui vous concerne directement</h2>
+    <p>Parmi les volets ajoutés par la RE2020, le <strong>confort d'été</strong> est celui qui touche le plus directement votre métier : c'est un contrôle sur la <strong>surchauffe</strong> — et une bonne partie du traitement passe par la climatisation.</p>
+    <p>La RT2012 ne mesurait pas ce volet. La RE2020 en fait un contrôle à part entière, avec son propre indicateur.</p>
+    <figure>
+      <img src="svg/climaticien-concerne.svg" alt="Deux cartes reliées par une flèche « concerne directement » : confort d'été, volet nouveau de la RE2020, et climatisation, votre futur métier.">
+      <figcaption>Le volet de la RE2020 qui touche le plus directement votre spécialité.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Un graphique sans valeur chiffrée. L'axe vertical porte la mention température intérieure, l'axe horizontal porte la mention temps, sur toute la période chaude. Une ligne pointillée horizontale marque le seuil de confort. Une courbe de température monte et descend plusieurs fois au-dessus et en dessous de ce seuil, et chaque fois qu'elle dépasse, la zone entre la courbe et le seuil est remplie en couleur. C'est la somme de toutes ces surfaces, sur toute la période, qui donne les degrés-heures d'inconfort.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Mesurer l'inconfort : les degrés-heures</h2>
+    <p>Le confort d'été se mesure en <strong>degrés-heures d'inconfort (DH)</strong>. Ce n'est pas une température maximale instantanée : c'est une <strong>aire cumulée</strong>, qui additionne à la fois combien de degrés on dépasse le seuil de confort, et combien de temps ce dépassement dure.</p>
+    <p>Deux logements qui atteignent la même température de pointe peuvent avoir des DH très différents, si l'un reste chaud une heure et l'autre toute la journée.</p>
+    <figure>
+      <img src="svg/degres-heures.svg" alt="Un graphique température en fonction du temps, avec un seuil de confort en pointillé et une courbe qui le dépasse plusieurs fois ; les zones de dépassement sont remplies, leur somme donne les degrés-heures.">
+      <figcaption>DH = la surface cumulée au-dessus du seuil, pas un pic instantané.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Quatre blocs empilés en escalier descendant, numérotés de un à quatre. Premier bloc, le plus large : protection solaire. Deuxième : inertie thermique. Troisième : ventilation nocturne. Quatrième bloc, le plus étroit et d'une autre couleur : climatiser, en dernier recours. Une flèche verticale à gauche montre l'ordre dans lequel ces leviers sont mobilisés — les trois premiers avant même d'envisager le quatrième.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">La hiérarchie : la conception avant la climatisation</h2>
+    <p>Traiter le confort d'été suit un <strong>ordre</strong> : la <strong>protection solaire</strong>, puis l'<strong>inertie thermique</strong>, puis la <strong>ventilation nocturne</strong> — et seulement ensuite, si besoin, la <strong>climatisation</strong>.</p>
+    <p>Ce n'est pas une question de goût : la climatisation reste souvent nécessaire, mais elle vient <strong>en dernier</strong>, sur ce que les trois premiers leviers n'ont pas suffi à traiter.</p>
+    <figure>
+      <img src="svg/hierarchie-conception.svg" alt="Quatre blocs en escalier, numérotés : protection solaire, inertie thermique, ventilation nocturne, puis climatiser en dernier recours.">
+      <figcaption>Trois leviers de conception avant d'envisager le quatrième.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Une maison avec un débord de toit au-dessus d'une baie vitrée. Deux trajets de rayons sont dessinés : un rayon d'été, soleil haut dans le ciel, arrêté par le débord avant d'atteindre la vitre ; un rayon d'hiver, soleil bas, qui passe sous le débord et entre par la vitre. La même forme architecturale bloque la chaleur en été et laisse entrer la lumière en hiver.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Premier levier : la protection solaire</h2>
+    <p>Un <strong>débord de toit</strong>, un <strong>brise-soleil</strong> ou une orientation étudiée des baies bloquent le soleil <strong>haut</strong> de l'été, qui arrive presque à la verticale, sans bloquer le soleil <strong>bas</strong> de l'hiver, qui passe dessous.</p>
+    <p>C'est le levier le plus efficace, parce qu'il agit <strong>avant même que la chaleur n'entre</strong> dans le bâtiment.</p>
+    <figure>
+      <img src="svg/protection-solaire.svg" alt="Une maison avec un débord de toit : le rayon du soleil d'été, haut, est arrêté avant la vitre ; le rayon du soleil d'hiver, bas, passe sous le débord et entre.">
+      <figcaption>La même forme bloque la chaleur d'été et laisse entrer la lumière d'hiver.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Deux courbes de température intérieure sur une même journée chaude. La courbe en trait pointillé, pour un mur léger, monte vite et atteint un pic élevé en milieu d'après-midi. La courbe en trait plein, pour un mur lourd, monte lentement, atteint un pic plus bas, décalé en soirée. À droite, une coupe de mur épais montre une flèche de chaleur qui met du temps à le traverser.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Deuxième levier : l'inertie thermique</h2>
+    <p>Un mur <strong>lourd</strong> — béton, terre cuite, pierre — met du temps à laisser passer la chaleur. Il <strong>stocke</strong> une partie de l'énergie reçue le jour, et la restitue plus tard, quand l'air extérieur s'est déjà rafraîchi.</p>
+    <p>Résultat : le pic de température intérieure est à la fois <strong>plus bas</strong> et <strong>plus tardif</strong> qu'avec un mur léger.</p>
+    <figure>
+      <img src="svg/inertie-thermique.svg" alt="Deux courbes de température intérieure : mur léger, pic élevé et rapide en pointillé ; mur lourd, pic bas et décalé en trait plein. À côté, une coupe de mur épais avec la chaleur retardée.">
+      <figcaption>Un pic plus bas, et décalé plus tard dans la journée.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Une maison de nuit, sous un ciel étoilé, fenêtres ouvertes. Une flèche bleue d'air frais entre par une fenêtre basse, une flèche orange d'air chaud sort par une fenêtre haute : l'air frais de la nuit balaie la chaleur accumulée pendant la journée, avant que le bâtiment ne reparte pour une nouvelle journée chaude.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Troisième levier : la ventilation nocturne</h2>
+    <p>La nuit, l'air extérieur redevient plus frais que l'air intérieur. Ouvrir les fenêtres — ou piloter une ventilation mécanique la nuit — permet de <strong>purger la chaleur accumulée</strong> pendant la journée.</p>
+    <p>Le bâtiment repart chaque matin d'une température plus basse, ce qui réduit d'autant la surchauffe du jour suivant.</p>
+    <figure>
+      <img src="svg/ventilation-nocturne.svg" alt="Une maison de nuit, fenêtres ouvertes : une flèche d'air frais entre par une fenêtre basse, une flèche d'air chaud sort par une fenêtre haute.">
+      <figcaption>L'air frais de la nuit balaie la chaleur du jour, avant le lendemain.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Une grande barre verticale représente le besoin de rafraîchissement de départ, en bas. Trois étapes viennent la réduire, une pour chaque levier déjà vu : protection solaire, inertie, ventilation nocturne. Ce qui reste en haut de la barre, plus petit, porte la mention besoin résiduel. À droite, un climatiseur stylisé est relié à ce reste par une flèche : c'est seulement lui qu'il doit couvrir, et c'est sur lui qu'il se dimensionne.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le dernier recours : climatiser sur ce qu'il reste</h2>
+    <p>Une fois les trois leviers de conception mobilisés, il reste souvent un <strong>besoin résiduel</strong> — les degrés-heures que la conception seule ne suffit pas à effacer. C'est ce reste que la <strong>climatisation</strong> doit couvrir.</p>
+    <p>Le changement pour le métier : la climatisation n'est plus le <strong>premier réflexe</strong> d'un projet, mais un <strong>dimensionnement</strong> calculé après les leviers passifs — pas moins nécessaire, mais pensé différemment.</p>
+    <figure>
+      <img src="svg/climatiser-dernier-recours.svg" alt="Une barre de besoin réduite par trois étapes, protection solaire, inertie, ventilation nocturne ; ce qui reste, le besoin résiduel, est couvert par un climatiseur dimensionné sur ce reste.">
+      <figcaption>La climatisation se dimensionne sur le besoin résiduel, pas sur le besoin de départ.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Un thermomètre stylisé à gauche porte la mention degrés-heures d'inconfort. À droite, les quatre étapes de la hiérarchie réapparaissent, plus petites : protection solaire, inertie, ventilation nocturne, puis climatiser en dernier recours. Une bande en bas résume la station.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Le confort d'été se mesure en <strong>degrés-heures d'inconfort (DH)</strong> — une aire cumulée, pas un pic instantané.</li>
+      <li>Trois leviers de <strong>conception</strong> se mobilisent d'abord : protection solaire, inertie, ventilation nocturne.</li>
+      <li>La <strong>climatisation</strong> vient en dernier, dimensionnée sur le besoin résiduel.</li>
+      <li>C'est le volet de la RE2020 qui concerne le plus directement votre métier.</li>
+    </ul>
+    <p class="formule">Le réflexe : mesurer en degrés-heures, traiter dans l'ordre — conception, puis climatisation.</p>
+    <figure>
+      <img src="svg/bilan-confort-ete.svg" alt="Un thermomètre marqué degrés-heures d'inconfort, à côté des quatre étapes de la hiérarchie et d'une bande résumant la station.">
+      <figcaption>Une aire à mesurer, un ordre de leviers à respecter.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Le confort d'été se mesure comment ? Regardez le graphique de l'écran deux si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Le confort d'été se mesure comment ?</h2>
+    <figure class="vignette">
+      <img src="svg/degres-heures.svg" alt="Vignette de rappel : un graphique température-temps avec un seuil de confort et des zones de dépassement remplies.">
+      <figcaption>Rappel de l'écran 2 — une aire cumulée, pas un pic instantané.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Par la température maximale atteinte à un instant donné</button>
+      <button type="button" data-answer="bonne">En degrés-heures, une aire cumulée au-dessus d'un seuil, sur toute la période</button>
+      <button type="button" data-answer="b">Par le nombre de jours où le climatiseur fonctionne</button>
+      <button type="button" data-answer="c">Par la moyenne des températures de toute l'année</button>
+    </div>
+    <p class="feedback" hidden data-explication="Les degrés-heures additionnent l'ampleur du dépassement et sa durée, sur toute la période chaude — pas seulement la température de pointe."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Dans quel ordre les leviers du confort d'été se mobilisent-ils ? Reprenez l'escalier de l'écran trois si besoin.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Dans quel ordre traiter le confort d'été ?</h2>
+    <figure class="vignette">
+      <img src="svg/hierarchie-conception.svg" alt="Vignette de rappel : quatre blocs en escalier, protection solaire, inertie, ventilation nocturne, puis climatiser en dernier recours.">
+      <figcaption>Rappel de l'écran 3 — la conception avant la climatisation.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Climatiser d'abord, la conception ne sert qu'en complément</button>
+      <button type="button" data-answer="b">Ventilation nocturne, puis protection solaire, puis inertie, puis climatiser</button>
+      <button type="button" data-answer="bonne">Protection solaire, inertie, ventilation nocturne, puis climatiser en dernier recours</button>
+      <button type="button" data-answer="c">Inertie seule : les autres leviers ne sont pas nécessaires</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'ordre est : protection solaire, inertie thermique, ventilation nocturne — et seulement ensuite, si besoin, la climatisation."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Pourquoi un débord de toit bloque-t-il le soleil d'été sans bloquer celui d'hiver ? Regardez les deux trajets de rayons de l'écran quatre.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Pourquoi un débord bloque-t-il l'été sans bloquer l'hiver ?</h2>
+    <figure class="vignette">
+      <img src="svg/protection-solaire.svg" alt="Vignette de rappel : le rayon d'été, haut, arrêté par le débord ; le rayon d'hiver, bas, passant dessous.">
+      <figcaption>Rappel de l'écran 4 — la même forme, deux effets selon la saison.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le débord change de position entre l'été et l'hiver</button>
+      <button type="button" data-answer="b">Le vitrage change de couleur selon la saison</button>
+      <button type="button" data-answer="bonne">Le soleil est plus haut en été et plus bas en hiver : le même débord arrête l'un et laisse passer l'autre</button>
+      <button type="button" data-answer="c">Le débord ne bloque que la lumière, jamais la chaleur</button>
+    </div>
+    <p class="feedback" hidden data-explication="La hauteur du soleil dans le ciel change avec la saison. Un débord bien dimensionné arrête le soleil haut de l'été et laisse passer le soleil bas de l'hiver, sans bouger."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Sur quoi se dimensionne la climatisation, dans la logique de cette station ? Repensez à la barre réduite de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Sur quoi se dimensionne la climatisation ?</h2>
+    <figure class="vignette">
+      <img src="svg/climatiser-dernier-recours.svg" alt="Vignette de rappel : une barre de besoin réduite par trois leviers, le reste couvert par un climatiseur.">
+      <figcaption>Rappel de l'écran 7 — sur le besoin résiduel, pas sur le besoin de départ.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Sur le besoin de rafraîchissement total, avant tout levier de conception</button>
+      <button type="button" data-answer="bonne">Sur le besoin résiduel, une fois les leviers de conception mobilisés</button>
+      <button type="button" data-answer="b">Sur la surface habitable, sans tenir compte des leviers passifs</button>
+      <button type="button" data-answer="c">Sur le nombre d'occupants du logement uniquement</button>
+    </div>
+    <p class="feedback" hidden data-explication="La climatisation vient en dernier recours : elle se dimensionne sur ce qu'il reste à traiter une fois la protection solaire, l'inertie et la ventilation nocturne mobilisées."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours. Deux correspondances internes
+     réelles vers des stations sœurs de la même sous-ligne. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../thermique-re2020/"><strong>La RE2020</strong></a> (même sous-ligne)
+      — le confort d'été est l'un des trois volets nouveaux de la RE2020.</li>
+    <li><a href="../thermique-existant/"><strong>RT de l'existant</strong></a> (même sous-ligne)
+      — le confort d'été compte aussi dans les projets de rénovation.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

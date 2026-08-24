@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="t-dm" aria-describedby="d-dm" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dm">Démolir : fin de vie, récupération et recyclage</title>
+  <desc id="d-dm">Un appareil en fin de vie se sépare en trois flux. Le premier, vers une bouteille de
+    récupération, porte la mention récupération obligatoire du fluide. Le deuxième, vers un
+    symbole de recyclage, porte la mention matériaux recyclés. Le troisième, plus petit et en
+    rouge, porte la mention ce qui n'est pas récupéré compte aussi dans le bilan.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Démolir : la dernière étape, souvent oubliée</text>
+
+  <!-- appareil en fin de vie -->
+  <rect x="380" y="80" width="140" height="100" rx="10" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <text class="qui" x="450" y="136" text-anchor="middle">Fin de vie</text>
+
+  <!-- flux 1 : récupération fluide -->
+  <path d="M400,180 q-120,60 -230,60" stroke="#1b3a63" stroke-width="3" fill="none" marker-end="url(#fd1)"/>
+  <rect x="60" y="240" width="200" height="60" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="qui" x="160" y="266" text-anchor="middle">récupération</text>
+  <text class="qui" x="160" y="284" text-anchor="middle">obligatoire du fluide</text>
+
+  <!-- flux 2 : recyclage matériaux -->
+  <path d="M500,180 q120,60 230,60" stroke="#047857" stroke-width="3" fill="none" marker-end="url(#fd2)"/>
+  <rect x="640" y="240" width="200" height="60" rx="10" fill="#e6f2f0" stroke="#047857" stroke-width="2"/>
+  <text class="qui" x="740" y="266" text-anchor="middle">matériaux</text>
+  <text class="qui" x="740" y="284" text-anchor="middle">recyclés</text>
+
+  <!-- flux 3 : non récupéré -->
+  <path d="M450,180 v40" stroke="#c0392b" stroke-width="3" fill="none" marker-end="url(#fd3)"/>
+  <rect x="350" y="222" width="200" height="46" rx="10" fill="#fbe7e4" stroke="#c0392b" stroke-width="2"/>
+  <text class="qui" x="450" y="250" text-anchor="middle" fill="#c0392b">ce qui n'est pas récupéré compte aussi</text>
+
+  <defs>
+    <marker id="fd1" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1b3a63"/></marker>
+    <marker id="fd2" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#047857"/></marker>
+    <marker id="fd3" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c0392b"/></marker>
+  </defs>
+</svg>

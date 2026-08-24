@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-cha" aria-describedby="d-cha" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cha">Le champ d'application de la directive : quatre familles d'équipements</title>
+  <desc id="d-cha">Un toit marqué « la directive — équipements sous pression » surmonte quatre
+    colonnes : les récipients (bouteilles, réservoirs, séparateurs), les tuyauteries qui transportent
+    le fluide sous pression, les accessoires sous pression qui assurent une fonction de service, et
+    les accessoires de sécurité qui protègent l'équipement. Une bande sous les colonnes précise que
+    la directive s'applique aussi aux ensembles, quand plusieurs équipements sont assemblés pour
+    former un tout fonctionnel.</desc>
+  <style>
+    .toit { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .fam  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#0c4a6e; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .band { font-size:16px; fill:#10233c; font-weight:bold; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Le toit : la directive -->
+  <path d="M 450 20 L 870 90 L 30 90 Z" fill="#0c4a6e"/>
+  <rect x="30" y="90" width="840" height="38" fill="#0c4a6e"/>
+  <text class="toit" x="450" y="115" text-anchor="middle">LA DIRECTIVE — équipements sous pression</text>
+
+  <!-- Colonne 1 : récipients -->
+  <rect x="30" y="150" width="195" height="150" rx="12" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <text class="fam" x="127" y="180" text-anchor="middle">Récipients</text>
+  <line x1="50" y1="194" x2="205" y2="194" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="127" y="220" text-anchor="middle">bouteilles,</text>
+  <text class="lbl" x="127" y="242" text-anchor="middle">réservoirs,</text>
+  <text class="lbl" x="127" y="264" text-anchor="middle">séparateurs</text>
+
+  <!-- Colonne 2 : tuyauteries -->
+  <rect x="245" y="150" width="195" height="150" rx="12" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <text class="fam" x="342" y="180" text-anchor="middle">Tuyauteries</text>
+  <line x1="265" y1="194" x2="420" y2="194" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="342" y="220" text-anchor="middle">transportent le</text>
+  <text class="lbl" x="342" y="242" text-anchor="middle">fluide sous</text>
+  <text class="lbl" x="342" y="264" text-anchor="middle">pression</text>
+
+  <!-- Colonne 3 : accessoires sous pression -->
+  <rect x="460" y="150" width="195" height="150" rx="12" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <text class="fam" x="557" y="180" text-anchor="middle" font-size="15.5">Accessoires sous pression</text>
+  <line x1="480" y1="194" x2="635" y2="194" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="557" y="220" text-anchor="middle">assurent une</text>
+  <text class="lbl" x="557" y="242" text-anchor="middle">fonction de</text>
+  <text class="lbl" x="557" y="264" text-anchor="middle">service</text>
+
+  <!-- Colonne 4 : accessoires de sécurité -->
+  <rect x="675" y="150" width="195" height="150" rx="12" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <text class="fam" x="772" y="180" text-anchor="middle" font-size="15.5">Accessoires de sécurité</text>
+  <line x1="695" y1="194" x2="850" y2="194" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="772" y="220" text-anchor="middle">protègent</text>
+  <text class="lbl" x="772" y="242" text-anchor="middle">l'équipement</text>
+  <text class="lbl" x="772" y="264" text-anchor="middle">contre sa PS</text>
+
+  <!-- Bande : ensembles -->
+  <rect x="30" y="322" width="840" height="48" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="352" text-anchor="middle">S'applique aussi aux ENSEMBLES, quand plusieurs équipements sont assemblés</text>
+
+  <text class="note" x="450" y="392" text-anchor="middle">Quatre familles, un même texte — et leurs assemblages en font partie aussi.</text>
+</svg>

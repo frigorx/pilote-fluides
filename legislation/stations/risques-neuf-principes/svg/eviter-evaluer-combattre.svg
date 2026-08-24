@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-eec" aria-describedby="d-eec" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-eec">Trois principes sur un circuit de fluide frigorigène : éviter, évaluer, combattre à la source</title>
+  <desc id="d-eec">Trois cartes côte à côte, chacune numérotée. Carte 1, « éviter » : un local technique où le
+    compresseur a été déplacé à l'extérieur du bâtiment, avec une flèche montrant le déplacement depuis
+    l'intérieur, marqué d'une croix, vers l'extérieur. Carte 2, « évaluer » : un local fermé avec un
+    panneau d'avertissement triangulaire et le texte « risque d'anoxie si le fluide s'échappe », observé
+    à la loupe. Carte 3, « combattre à la source » : le même local équipé d'un détecteur de fuite au mur
+    et de flèches de ventilation, avec le texte « détection et ventilation, pas seulement la vigilance ».</desc>
+  <style>
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .tit  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .mut  { font-size:14px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Carte 1 : ÉVITER -->
+  <rect x="16" y="16" width="276" height="348" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <circle cx="46" cy="46" r="18" fill="#c2410c"/><text class="num" x="46" y="52" text-anchor="middle">1</text>
+  <text class="tit" x="154" y="52" text-anchor="middle">ÉVITER</text>
+  <!-- bâtiment -->
+  <rect x="50" y="90" width="192" height="120" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="70" y="120" width="40" height="30" fill="#fbe7e4" stroke="#c0392b" stroke-width="2"/>
+  <line x1="72" y1="122" x2="108" y2="148" stroke="#c0392b" stroke-width="2"/>
+  <line x1="108" y1="122" x2="72" y2="148" stroke="#c0392b" stroke-width="2"/>
+  <text class="mut" x="90" y="168" text-anchor="middle">à l'intérieur</text>
+  <line x1="150" y1="135" x2="260" y2="135" stroke="#1e7e54" stroke-width="3" marker-end="url(#fleche1)"/>
+  <rect x="256" y="120" width="40" height="30" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+  <text class="mut" x="276" y="168" text-anchor="middle">à l'extérieur</text>
+  <text class="lbl" x="154" y="200" text-anchor="middle">Concevoir sans exposer</text>
+  <text class="lbl" x="154" y="222" text-anchor="middle">personne, dès l'étude</text>
+  <text class="mut" x="154" y="330" text-anchor="middle">compresseur logé hors</text>
+  <text class="mut" x="154" y="348" text-anchor="middle">du local, pas dedans</text>
+
+  <!-- Carte 2 : ÉVALUER -->
+  <rect x="312" y="16" width="276" height="348" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <circle cx="342" cy="46" r="18" fill="#c2410c"/><text class="num" x="342" y="52" text-anchor="middle">2</text>
+  <text class="tit" x="450" y="52" text-anchor="middle">ÉVALUER</text>
+  <rect x="356" y="90" width="188" height="120" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <polygon points="450,110 476,156 424,156" fill="#fff4e0" stroke="#b06a00" stroke-width="2.5"/>
+  <text x="450" y="150" text-anchor="middle" font-size="20" font-weight="bold" fill="#b06a00">!</text>
+  <circle cx="500" cy="185" r="16" fill="none" stroke="#1b3a63" stroke-width="2.5"/>
+  <line x1="511" y1="196" x2="524" y2="209" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="450" y="234" text-anchor="middle">Local fermé : risque</text>
+  <text class="lbl" x="450" y="256" text-anchor="middle">d'anoxie si le fluide fuit</text>
+  <text class="mut" x="450" y="330" text-anchor="middle">avant d'entrer, on mesure</text>
+  <text class="mut" x="450" y="348" text-anchor="middle">ce que l'on ne peut pas éviter</text>
+
+  <!-- Carte 3 : COMBATTRE À LA SOURCE -->
+  <rect x="608" y="16" width="276" height="348" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <circle cx="638" cy="46" r="18" fill="#c2410c"/><text class="num" x="638" y="52" text-anchor="middle">3</text>
+  <text class="tit" x="746" y="52" text-anchor="middle">COMBATTRE À LA SOURCE</text>
+  <rect x="652" y="90" width="188" height="120" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <circle cx="672" cy="110" r="7" fill="#1e7e54"/>
+  <path d="M700 190 q 20 -30 40 0 q 20 -30 40 0" fill="none" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="746" y="234" text-anchor="middle">Détecteur au mur et</text>
+  <text class="lbl" x="746" y="256" text-anchor="middle">ventilation mécanique</text>
+  <text class="mut" x="746" y="330" text-anchor="middle">on n'attend pas que le</text>
+  <text class="mut" x="746" y="348" text-anchor="middle">technicien reste vigilant seul</text>
+
+  <defs>
+    <marker id="fleche1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1e7e54"/>
+    </marker>
+  </defs>
+</svg>

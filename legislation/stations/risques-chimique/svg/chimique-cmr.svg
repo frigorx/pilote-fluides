@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-4" aria-describedby="d-4" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-4">Les trois lettres CMR et leur signification</title>
+  <desc id="d-4">Trois cartes alignées, chacune surmontée d'une grande lettre : C, M, R. Sous chaque lettre,
+    une silhouette simple et une courte phrase expliquent la signification : cancérogène favorise
+    l'apparition de cancers, mutagène altère le matériel génétique, reprotoxique nuit à la fertilité ou au
+    développement de l'enfant.</desc>
+  <style>
+    .carte{ fill:#fffdf8; stroke:#d6dee7; stroke-width:2; }
+    .let{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:44px; fill:#c2410c; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .sub{ font-size:13px; fill:#5a6b7d; }
+  </style>
+
+  <!-- C -->
+  <rect class="carte" x="30" y="40" width="260" height="260" rx="14"/>
+  <text class="let" x="160" y="95" text-anchor="middle">C</text>
+  <path d="M120 150 q40 -20 80 0" fill="none" stroke="#5a6b7d" stroke-width="3"/>
+  <path d="M120 175 q40 -30 80 -5" fill="none" stroke="#c2410c" stroke-width="3"/>
+  <text class="lbl" x="160" y="230" text-anchor="middle">Cancérogène</text>
+  <text class="sub" x="160" y="252" text-anchor="middle">favorise l'apparition</text>
+  <text class="sub" x="160" y="268" text-anchor="middle">de cancers</text>
+
+  <!-- M -->
+  <rect class="carte" x="320" y="40" width="260" height="260" rx="14"/>
+  <text class="let" x="450" y="95" text-anchor="middle">M</text>
+  <path d="M420 140 q30 20 0 40 M480 140 q-30 20 0 40" fill="none" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="420" y1="160" x2="480" y2="160" stroke="#c2410c" stroke-width="3"/>
+  <text class="lbl" x="450" y="230" text-anchor="middle">Mutagène</text>
+  <text class="sub" x="450" y="252" text-anchor="middle">altère le matériel</text>
+  <text class="sub" x="450" y="268" text-anchor="middle">génétique</text>
+
+  <!-- R -->
+  <rect class="carte" x="610" y="40" width="260" height="260" rx="14"/>
+  <text class="let" x="740" y="95" text-anchor="middle">R</text>
+  <path d="M740 165 v-25 M740 140 q-14 0 -14 14 M740 140 q14 0 14 14" fill="none" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="lbl" x="740" y="220" text-anchor="middle">Reprotoxique</text>
+  <text class="sub" x="740" y="242" text-anchor="middle">nuit à la fertilité ou</text>
+  <text class="sub" x="740" y="258" text-anchor="middle">au développement de l'enfant</text>
+</svg>

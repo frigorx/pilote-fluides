@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" role="img"
+     aria-labelledby="t-rbm" aria-describedby="d-rbm" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rbm">Une rangée de bennes par famille de matière, plus une benne tout-venant à part</title>
+  <desc id="d-rbm">Une rangée de sept bennes, chacune étiquetée par une famille de matière : métaux,
+    bois, plastiques, verre, papier-carton, plâtre, et une fraction minérale ou inerte. À droite,
+    séparée du reste par un trait pointillé et le mot « à part », une benne « tout-venant »,
+    réservée à ce qui ne peut vraiment être trié dans aucune de ces familles.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; font-weight:bold; text-anchor:middle; }
+    .sep { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <text class="ttl" x="500" y="34" text-anchor="middle">Les bennes d'un chantier, par grande famille de matière</text>
+
+  <!-- sept bennes triées, en rangée -->
+  <g>
+    <!-- Métaux -->
+    <polygon points="20,120 100,120 92,220 28,220" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <rect x="12" y="108" width="96" height="14" rx="4" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <rect x="42" y="140" width="36" height="10" fill="#5a6b7d"/>
+    <rect x="46" y="155" width="28" height="10" fill="#5a6b7d"/>
+    <text class="lbl" x="60" y="240">Métaux</text>
+
+    <!-- Bois -->
+    <polygon points="128,120 208,120 200,220 136,220" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <rect x="120" y="108" width="96" height="14" rx="4" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <line x1="140" y1="145" x2="196" y2="145" stroke="#b06a00" stroke-width="6"/>
+    <line x1="140" y1="163" x2="196" y2="163" stroke="#b06a00" stroke-width="6"/>
+    <text class="lbl" x="168" y="240">Bois</text>
+
+    <!-- Plastiques -->
+    <polygon points="236,120 316,120 308,220 244,220" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <rect x="228" y="108" width="96" height="14" rx="4" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <path d="M256,165 q20,-30 40,0" fill="none" stroke="#1e7e54" stroke-width="6" stroke-linecap="round"/>
+    <text class="lbl" x="276" y="240">Plastiques</text>
+
+    <!-- Verre -->
+    <polygon points="344,120 424,120 416,220 352,220" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <rect x="336" y="108" width="96" height="14" rx="4" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <path d="M376,140 v14 q0,10 8,10 q8,0 8,-10 v-14 z" fill="none" stroke="#1b3a63" stroke-width="4"/>
+    <text class="lbl" x="384" y="240">Verre</text>
+
+    <!-- Papier-carton -->
+    <polygon points="452,120 532,120 524,220 460,220" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <rect x="444" y="108" width="96" height="14" rx="4" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <rect x="470" y="140" width="34" height="26" fill="none" stroke="#57534e" stroke-width="4"/>
+    <line x1="470" y1="153" x2="504" y2="153" stroke="#57534e" stroke-width="3"/>
+    <text class="lbl" x="492" y="240">Papier-carton</text>
+
+    <!-- Plâtre -->
+    <polygon points="560,120 640,120 632,220 568,220" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <rect x="552" y="108" width="96" height="14" rx="4" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <rect x="584" y="142" width="32" height="22" fill="#d6dee7" stroke="#5a6b7d" stroke-width="2"/>
+    <text class="lbl" x="600" y="240">Plâtre</text>
+
+    <!-- Minérale / inerte -->
+    <polygon points="668,120 748,120 740,220 676,220" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <rect x="660" y="108" width="96" height="14" rx="4" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <polygon points="690,166 700,142 715,150 722,166" fill="#5a6b7d"/>
+    <text class="lbl" x="708" y="240">Minérale, inerte</text>
+  </g>
+
+  <!-- séparation : trait pointillé -->
+  <line x1="800" y1="90" x2="800" y2="260" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="6 6"/>
+  <text class="sep" x="800" y="80" text-anchor="middle">à part</text>
+
+  <!-- benne tout-venant, en retrait -->
+  <g>
+    <polygon points="840,140 930,140 920,240 850,240" fill="#fffdf8" stroke="#b06a00" stroke-width="3" stroke-dasharray="7 5"/>
+    <rect x="832" y="128" width="106" height="14" rx="4" fill="#fffdf8" stroke="#b06a00" stroke-width="3"/>
+    <text class="lbl" x="885" y="260" fill="#b06a00">Tout-venant</text>
+  </g>
+
+  <!-- bande d'explication -->
+  <rect x="20" y="300" width="960" height="130" rx="14" fill="#f4f0ec" stroke="#57534e" stroke-width="2"/>
+  <text class="lbl" x="500" y="335" text-anchor="middle" font-size="16" font-weight="normal">Sept familles de matière, chacune sa benne — plus une benne « tout-venant »</text>
+  <text class="lbl" x="500" y="365" text-anchor="middle" font-size="16" font-weight="normal">réservée à ce qui ne peut vraiment être trié dans aucune de ces familles.</text>
+  <text class="sep" x="500" y="405" text-anchor="middle" font-style="italic">Composition exacte des flux à vérifier sur le texte en vigueur avant impression finale.</text>
+</svg>

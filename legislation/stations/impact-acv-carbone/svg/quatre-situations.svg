@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-qs" aria-describedby="d-qs" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-qs">Quatre situations de terrain à raisonner</title>
+  <desc id="d-qs">Quatre cartes numérotées en grille. Carte 1 : quelles sont les quatre étapes d'une
+    ACV. Carte 2 : quelle étape pèse le plus longtemps pour un équipement fixe. Carte 3 : que
+    mesure l'indicateur carbone de la RE2020. Carte 4 : quel est le lien entre l'ACV d'un
+    équipement et son TEWI. Aucune carte ne donne la réponse : elles servent de rappel visuel.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#047857; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl { font-size:14px; fill:#5a6b7d; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Quatre situations, un même raisonnement à appliquer</text>
+
+  <rect x="30" y="56" width="400" height="120" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="num" x="60" y="88">1</text>
+  <text class="qui" x="230" y="112" text-anchor="middle">Les quatre étapes d'une ACV</text>
+  <text class="lbl" x="230" y="140" text-anchor="middle">lesquelles, dans quel ordre ?</text>
+
+  <rect x="470" y="56" width="400" height="120" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="num" x="500" y="88">2</text>
+  <text class="qui" x="670" y="112" text-anchor="middle">L'étape la plus longue</text>
+  <text class="lbl" x="670" y="140" text-anchor="middle">pour un équipement fixe ?</text>
+
+  <rect x="30" y="196" width="400" height="120" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="num" x="60" y="228">3</text>
+  <text class="qui" x="230" y="252" text-anchor="middle">L'indicateur carbone RE2020</text>
+  <text class="lbl" x="230" y="280" text-anchor="middle">que mesure-t-il vraiment ?</text>
+
+  <rect x="470" y="196" width="400" height="120" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="num" x="500" y="228">4</text>
+  <text class="qui" x="670" y="252" text-anchor="middle">ACV et TEWI</text>
+  <text class="lbl" x="670" y="280" text-anchor="middle">quel est le lien entre les deux ?</text>
+</svg>

@@ -1,0 +1,249 @@
+/* =====================================================================
+   Station « F-Gaz 3 » — réseau inerWeb Législation
+   ---------------------------------------------------------------------
+   Feuille AUTONOME : le dossier legislation/ doit rester déplaçable d'un
+   bloc vers un dépôt ou un sous-domaine séparé, sans rien casser. On ne
+   dépend donc d'aucune feuille du site principal — seulement des deux
+   scripts du moteur (lisibilite.js, marque.js), chargés en absolu.
+
+   Palette : celle du satellite (index.html du réseau), plus l'accent de
+   la sous-ligne Fluidique & thermique (#0f766e).
+
+   R1 — aucun thème sombre, nulle part : le support est clair, l'encre
+   est sombre. Pas de @media (prefers-color-scheme: dark) ici, jamais.
+   R3 — le réglage de lisibilité n'est PAS ici : c'est le bouton « Aa »
+   de lisibilite.js (taille 70→160 %, police DYS Lexend, mémorisé pour
+   toutes les pages). Une seule source, zéro divergence.
+   ===================================================================== */
+
+:root {
+  --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35;
+  --orange-deep:#c9451a;
+  --txt:#10233c; --mut:#5a6b7d;
+  --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+  --ok:#1e7e54; --ok-bg:#e3f5ec;
+  --echec:#c0392b; --echec-bg:#fbe7e4;
+  --fragile:#b06a00; --fragile-bg:#fff4e0;
+
+  /* accent de la sous-ligne Fluidique & thermique */
+  --sous-ligne:#047857;
+  --sous-ligne-bg:#e1ede5;
+
+  --r:14px;
+  --ombre:0 2px 10px rgba(27,58,99,.10);
+  --titre:'Trebuchet MS',Calibri,Arial,sans-serif;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0; background:var(--fond); color:var(--txt);
+  font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif;
+}
+
+h1, h2, h3 { font-family:var(--titre); color:var(--bleu); font-weight:bold; }
+h1 { font-size:2rem; letter-spacing:-.015em; margin:0 0 .2em; }
+h2 { font-size:1.4rem; margin:0 0 .5em; }
+h3 { color:var(--txt); font-size:1.1rem; margin:0 0 .4em; }
+p { text-wrap:pretty; }
+
+a { color:var(--bleu); }
+a:hover { color:var(--orange); }
+
+.evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+         color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+         font-family:var(--titre); text-decoration:none; }
+.evite:focus { left:8px; }
+#contenu:focus { outline:none; }
+a:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+
+/* ---------- en-tête : le motif exact du plan du réseau ---------- */
+.entete { background:var(--carte); border-bottom:1px solid var(--ligne); }
+.entete .dedans { max-width:1080px; margin:0 auto; padding:12px 20px;
+                  display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+.entete .marque { display:flex; align-items:center; gap:12px; text-decoration:none; }
+.entete .reseau-nom { font-family:var(--titre); font-weight:bold; font-size:17px;
+                      color:var(--bleu); border-left:2px solid var(--ligne); padding-left:12px; }
+.nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap;
+       font-family:var(--titre); font-size:15px; font-weight:bold; }
+.nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px;
+         border-bottom:3px solid transparent; }
+.nav a:hover { border-bottom-color:var(--ligne); color:var(--bleu); }
+
+/* ---------- corps ---------- */
+.page { max-width:1000px; margin:0 auto; padding:30px 20px 60px; }
+
+.fil-sous-ligne {
+  font-family:var(--titre); font-weight:bold; font-size:.82rem;
+  text-transform:uppercase; letter-spacing:.08em;
+  color:var(--sous-ligne); margin:0 0 6px;
+}
+.sous-titre { color:var(--mut); margin:0 0 26px; }
+
+.chapeau {
+  background:var(--carte); border:1px solid var(--ligne);
+  border-left:5px double var(--sous-ligne);
+  border-radius:var(--r); box-shadow:var(--ombre);
+  padding:22px 26px; margin:0 0 38px;
+}
+.chapeau .mot {
+  display:block; margin-bottom:6px;
+  font-family:var(--titre); font-weight:bold; color:var(--sous-ligne);
+  text-transform:uppercase; letter-spacing:.08em; font-size:.82em;
+}
+.chapeau p { margin:0; }
+
+/* ---------- le départ ---------- */
+.depart { margin:34px 0 10px; }
+.bouton {
+  font-family:var(--titre); font-weight:bold; font-size:1.05rem;
+  border-radius:999px; padding:.7em 1.6em; cursor:pointer;
+  border:2px solid var(--sous-ligne); background:var(--sous-ligne); color:#fff;
+}
+.bouton:hover { background:var(--bleu); border-color:var(--bleu); }
+.depart-note { color:var(--mut); font-size:.95rem; margin:14px 0 0; max-width:60ch; }
+
+/* ---------- la barre d'outils ---------- */
+.barre-outils {
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  padding:12px 0 14px; margin-bottom:18px;
+  background:var(--fond); border-bottom:1px solid var(--ligne);
+}
+.outil {
+  font-family:var(--titre); font-weight:bold; font-size:.95rem;
+  border-radius:999px; padding:.42em 1.1em; cursor:pointer;
+  border:2px solid var(--bleu); background:transparent; color:var(--bleu);
+}
+.outil:hover:not(:disabled) { background:var(--bleu); color:#fff; }
+.outil:disabled { opacity:.42; cursor:default; }
+.outil--voix { border-color:var(--sous-ligne); color:var(--sous-ligne); }
+.outil--voix:hover:not(:disabled) { background:var(--sous-ligne); }
+.outil--voix[aria-pressed="true"] { background:var(--sous-ligne); color:#fff; }
+.outil--suite { background:var(--bleu); color:#fff; }
+.outil--suite:hover:not(:disabled) { background:var(--sous-ligne); border-color:var(--sous-ligne); }
+.progression {
+  flex:1 1 120px; min-width:90px; height:8px; border-radius:999px;
+  background:var(--ligne); overflow:hidden;
+}
+.progression span { display:block; height:100%; background:var(--sous-ligne); transition:width .25s; }
+.compteur { font-family:Consolas,monospace; color:var(--mut); font-size:.9rem; }
+
+/* ---------- un écran ---------- */
+.slide {
+  background:var(--carte); border:1px solid var(--ligne);
+  border-radius:var(--r); box-shadow:var(--ombre);
+  padding:26px 30px 30px; margin:0 0 26px;
+}
+.slide h2:focus { outline:none; }
+
+/* R2 — l'écran est ENTIER sans aucune animation : l'état visible est la
+   base, le mouvement n'est qu'une entrée en scène. Un lecteur qui demande
+   moins de mouvement voit exactement le même contenu, tout de suite. */
+@media (prefers-reduced-motion: no-preference) {
+  .slide.active { animation:entree .38s ease-out; }
+  @keyframes entree { from { opacity:0; transform:translateY(14px); } }
+  .slide.active figure { animation:paraitre .5s ease-out .1s backwards; }
+  @keyframes paraitre { from { opacity:0; transform:scale(.985); } }
+  .outil--voix[aria-pressed="true"] { animation:souffle 1.6s ease-in-out infinite; }
+  @keyframes souffle { 50% { box-shadow:0 0 0 6px rgba(15,118,110,.18); } }
+  .quiz-options button { transition:border-color .18s, background .18s, transform .18s; }
+  .quiz-options button:hover:not(:disabled) { transform:translateX(3px); }
+}
+
+/* La vignette de rappel d'une question : plus petite que le schéma
+   d'origine, en trait tireté — elle rappelle, elle n'enseigne pas. */
+.vignette { max-width:430px; margin:20px 0 0; }
+.vignette img { border-style:dashed; border-color:#b9c6d3; }
+.vignette figcaption { font-size:.82rem; font-style:italic; }
+.numero {
+  margin:0 0 4px;
+  font-family:var(--titre); font-weight:bold; color:var(--sous-ligne);
+  text-transform:uppercase; letter-spacing:.08em; font-size:.78em;
+}
+.slide p { margin:0 0 .9em; }
+.slide ul, .slide ol { margin:0 0 .9em; padding-left:1.3em; }
+.slide li { margin-bottom:.45em; }
+
+figure { margin:22px 0 6px; }
+figure img { display:block; width:100%; height:auto;
+             border:1px solid var(--ligne); border-radius:10px; background:#fff; }
+figcaption { margin-top:8px; color:var(--mut); font-size:.88rem; }
+
+.formule {
+  font-family:Consolas,monospace;
+  background:var(--sous-ligne-bg); border:2px solid var(--sous-ligne);
+  border-radius:var(--r); padding:14px 18px;
+  text-align:center; font-size:1.12rem;
+}
+
+table { border-collapse:collapse; width:100%; margin:16px 0; }
+th, td { border:1px solid #999; padding:.5em .7em; text-align:left; }
+th { font-family:var(--titre); color:var(--bleu); border-bottom-width:2px; }
+/* aucune zébrure : c'est la moitié du tableau à l'encre */
+
+/* R5 — couleur + style de trait + mot. Le trait porte le sens, pas la
+   surface : c'est lui qui survit à l'impression en noir et blanc. */
+.encadre { border-radius:var(--r); padding:16px 20px 16px 22px; margin:18px 0; }
+.encadre--cle   { border-left:5px double var(--ok); background:var(--ok-bg); }
+.encadre--piege { border-left:4px dashed var(--orange-deep); background:var(--echec-bg); }
+.encadre--note  { border-left:3px dotted var(--orange-deep); background:var(--fragile-bg); }
+.encadre > .mot { display:block; margin-bottom:6px; font-family:var(--titre); font-weight:bold; }
+.encadre--cle   > .mot { color:var(--ok); }
+.encadre--piege > .mot { color:var(--orange-deep); }
+.encadre--note  > .mot { color:var(--orange-deep); text-transform:uppercase;
+                         letter-spacing:.08em; font-size:.82em; }
+.encadre p { margin:0; }
+
+.trois-cartes { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+                gap:16px; margin:18px 0; }
+.trois-cartes > div { border:1px solid var(--ligne); border-left:4px solid var(--sous-ligne);
+                      border-radius:var(--r); padding:16px 18px; background:#fff; }
+.trois-cartes h3 { color:var(--sous-ligne); }
+.trois-cartes p { margin:0; font-size:.96rem; }
+
+/* ---------- le quiz ---------- */
+.slide.question { border-left:5px solid var(--sous-ligne); }
+.quiz-options { display:grid; gap:10px; margin:18px 0 0; }
+.quiz-options button {
+  text-align:left; font:inherit; cursor:pointer;
+  background:#fff; color:var(--txt);
+  border:2px solid var(--ligne); border-radius:var(--r);
+  padding:.7em 1em;
+}
+.quiz-options button:hover:not(:disabled) { border-color:var(--sous-ligne); }
+.quiz-options button:disabled { cursor:default; }
+/* R5 — la couleur ne travaille jamais seule : le trait change de style,
+   et le mot « Juste » ou « À revoir » est écrit dans le retour. */
+.quiz-options button.juste  { border:3px double var(--ok);    background:var(--ok-bg); font-weight:bold; }
+.quiz-options button.faux   { border:3px dashed var(--echec); background:var(--echec-bg); }
+.quiz-options button.choisi { box-shadow:var(--ombre); }
+
+.feedback { margin:18px 0 0; padding:14px 18px; border-radius:var(--r); }
+.feedback--juste  { border-left:5px double var(--ok);    background:var(--ok-bg); }
+.feedback--revoir { border-left:4px dashed var(--echec); background:var(--echec-bg); }
+
+/* ---------- maillage ---------- */
+.maillage { margin-top:40px; }
+.maillage ul { padding-left:1.3em; }
+
+/* ---------- impression ---------- */
+/* Le papier ne navigue pas : TOUS les écrans sortent, dans l'ordre, avec
+   les réponses du quiz. app.js lève les `hidden` au beforeprint ; le CSS
+   force ce que l'attribut ne couvre pas. */
+@media print {
+  @page { margin:15mm; }
+  body { background:#fff; color:#000; font-size:12pt; }
+  .entete { border-bottom:2px solid var(--bleu); }
+  .nav, .evite, .barre-outils, .depart { display:none !important; }
+  .page { max-width:none; padding:0; }
+  #accueil, #cours { display:block !important; }
+  .slide { display:block !important; background:#fff; box-shadow:none;
+           break-inside:avoid; page-break-inside:avoid; }
+  .chapeau, .trois-cartes > div, figure { break-inside:avoid; page-break-inside:avoid; }
+  .chapeau { background:#fff; box-shadow:none; }
+  .encadre--cle, .encadre--piege, .encadre--note, .formule { background:#fff; }
+  .feedback { display:block !important; background:#fff; }
+  .quiz-options button { background:#fff; }
+  h1, h2 { color:var(--bleu); }
+}

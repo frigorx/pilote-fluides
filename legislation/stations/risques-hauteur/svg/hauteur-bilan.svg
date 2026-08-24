@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-8" aria-describedby="d-8" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-8">La fiche du réflexe : avant de monter</title>
+  <desc id="d-8">Une fiche récapitulative porte quatre cases cochées en vert : « accès vérifié »,
+    « protection collective en place », « échafaudage contrôlé si utilisé », « matériel sorti seulement
+    après ces vérifications ».</desc>
+  <style>
+    .fiche{ fill:#fffdf8; stroke:#d6dee7; stroke-width:2; }
+    .ttl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <rect class="fiche" x="140" y="30" width="620" height="290" rx="16"/>
+  <rect x="140" y="30" width="620" height="48" rx="16" fill="#c2410c"/>
+  <rect x="140" y="54" width="620" height="14" fill="#c2410c"/>
+  <text class="ttl" x="450" y="60" text-anchor="middle">Avant de monter</text>
+
+  <g>
+    <rect x="180" y="100" width="32" height="32" rx="7" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+    <path d="M188 117 l7 7 l16 -18" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+    <text class="lbl" x="230" y="123">Accès vérifié</text>
+  </g>
+  <g>
+    <rect x="180" y="152" width="32" height="32" rx="7" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+    <path d="M188 169 l7 7 l16 -18" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+    <text class="lbl" x="230" y="175">Protection collective en place</text>
+  </g>
+  <g>
+    <rect x="180" y="204" width="32" height="32" rx="7" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+    <path d="M188 221 l7 7 l16 -18" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+    <text class="lbl" x="230" y="227">Échafaudage contrôlé, si utilisé</text>
+  </g>
+  <g>
+    <rect x="180" y="256" width="32" height="32" rx="7" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+    <path d="M188 273 l7 7 l16 -18" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+    <text class="lbl" x="230" y="279">Matériel sorti seulement après</text>
+  </g>
+</svg>

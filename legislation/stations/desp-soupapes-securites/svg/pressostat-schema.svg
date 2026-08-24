@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-pr" aria-describedby="d-pr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pr">Le pressostat de sécurité, schéma de commande</title>
+  <desc id="d-pr">Un schéma électrique vertical, lu de haut en bas : la phase en rouge en haut,
+    passant par un porte-fusible, puis par le contact du pressostat, puis par la bobine du
+    contacteur, jusqu'au neutre en orange en bas. À droite, une explication : quand la pression
+    atteint le seuil du pressostat, son contact s'ouvre, la bobine retombe et le compresseur
+    s'arrête, sans qu'aucune matière ne soit évacuée. Une note précise que ce dispositif est
+    souvent appelé pressostat HP, pour haute pression, sur un groupe de production de froid.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#0c4a6e; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .lblb { font-size:15px; fill:#10233c; font-weight:bold; }
+    .pha  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#c0392b; }
+    .neu  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#b06a00; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Colonne verticale : phase en haut (rouge), neutre en bas (orange) -->
+  <text class="pha" x="140" y="34" text-anchor="middle">PHASE</text>
+  <line x1="140" y1="42" x2="140" y2="90" stroke="#c0392b" stroke-width="4"/>
+
+  <!-- porte-fusible, en tête -->
+  <rect x="110" y="90" width="60" height="34" fill="none" stroke="#10233c" stroke-width="2.5"/>
+  <line x1="120" y1="98" x2="160" y2="116" stroke="#10233c" stroke-width="2.5"/>
+  <text class="lbl" x="185" y="112" text-anchor="start">porte-fusible</text>
+  <line x1="140" y1="124" x2="140" y2="168" stroke="#c0392b" stroke-width="4"/>
+
+  <!-- contact du pressostat, normalement fermé -->
+  <circle cx="140" cy="176" r="6" fill="#10233c"/>
+  <line x1="140" y1="182" x2="140" y2="222" stroke="#c0392b" stroke-width="4"/>
+  <circle cx="140" cy="228" r="6" fill="#10233c"/>
+  <text class="lbl" x="185" y="205" text-anchor="start">contact du pressostat</text>
+  <text class="lbl" x="185" y="225" text-anchor="start">(s'ouvre au seuil)</text>
+
+  <line x1="140" y1="234" x2="140" y2="270" stroke="#c0392b" stroke-width="4"/>
+
+  <!-- bobine du contacteur -->
+  <rect x="105" y="270" width="70" height="50" rx="8" fill="none" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lblb" x="140" y="300" text-anchor="middle" fill="#1b3a63">KM</text>
+  <text class="lbl" x="185" y="300" text-anchor="start">bobine du contacteur</text>
+
+  <line x1="140" y1="320" x2="140" y2="360" stroke="#b06a00" stroke-width="4"/>
+  <text class="neu" x="140" y="386" text-anchor="middle">NEUTRE</text>
+
+  <!-- Colonne d'explication, à droite -->
+  <rect x="460" y="20" width="420" height="330" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="ttl" x="486" y="56">Un dispositif ÉLECTRIQUE</text>
+  <text class="lbl" x="486" y="90">— il coupe le fonctionnement</text>
+  <text class="lbl" x="486" y="114">(typiquement le compresseur)</text>
+  <text class="lbl" x="486" y="150">dès que la pression atteint</text>
+  <text class="lbl" x="486" y="174">le seuil du pressostat ;</text>
+  <text class="lbl" x="486" y="210">normalement AVANT que la</text>
+  <text class="lbl" x="486" y="234">soupape n'ait besoin de s'ouvrir ;</text>
+  <text class="lbl" x="486" y="270">et sans rien évacuer.</text>
+  <text class="note" x="486" y="316">souvent appelé « pressostat HP »</text>
+  <text class="note" x="486" y="336">sur un groupe de production de froid</text>
+
+  <text class="note" x="450" y="400" text-anchor="middle">Lecture verticale : phase en haut, neutre en bas — comme tout schéma de commande</text>
+</svg>

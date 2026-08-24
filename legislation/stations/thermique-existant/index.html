@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>RT de l'existant — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : les règles de la thermique en rénovation, quand on remplace un équipement ou qu'on isole, et la différence entre une rénovation élément par élément et une rénovation globale.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/thermique-existant/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Thermique.
+     Quatrième des six stations de la sous-ligne.
+
+     GABARIT repris à la lettre de aptitude-capacite/. Même écart assumé
+     que les stations précédentes : styles.css et app.js copiés
+     littéralement (variable --sous-ligne:#0f766e), accent #92400e
+     réservé aux SVG.
+
+     Aucune valeur de niveau minimal (par élément ou global) n'est
+     inscrite : ces niveaux sont fixés par arrêté et évoluent.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Thermique · niveau BTS</p>
+  <h1>RT de l'existant — rénover, un cadre à part</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez que rénover obéit à un cadre distinct du neuf, vous distinguez la rénovation par élément de la rénovation globale, et vous savez ce que remplacer un équipement déclenche concrètement pour vous.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Un point de départ, un bâtiment, se sépare en deux chemins. Le chemin du haut mène à une carte bâtiment neuf, RE2020, déjà vue dans une autre station. Le chemin du bas, mis en évidence, mène à une carte bâtiment existant, RT existant : c'est le sujet de cette station, un cadre pensé pour rénover, pas pour construire.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Rénover : un cadre différent du neuf</h2>
+    <p>La <strong>RE2020</strong>, vue dans les stations précédentes, s'applique aux <strong>bâtiments neufs</strong>. Un bâtiment déjà construit relève d'un cadre distinct, la <strong>RT existant</strong>.</p>
+    <p>Ce n'est pas une simple version allégée de la RE2020 : c'est un cadre pensé spécifiquement pour les <strong>travaux sur l'existant</strong> — remplacer, isoler, rénover.</p>
+    <figure>
+      <img src="svg/cadre-different-neuf.svg" alt="Un bâtiment se sépare en deux chemins : vers RE2020 pour le neuf, déjà vu ailleurs, et vers RT existant pour le bâtiment existant, sujet de cette station.">
+      <figcaption>Un cadre pensé pour rénover, pas pour construire.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Deux cartes face à face. À gauche, par élément : une seule fenêtre est mise en évidence sur une maison en trait fin, on ne juge que le composant remplacé. À droite, globale : la maison entière est encadrée, murs, toiture et fenêtres tous mis en évidence ensemble, on juge le bâtiment dans son ensemble, bâti et systèmes réunis.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Deux logiques : par élément ou globale</h2>
+    <p>La RT existant se décline en deux logiques. La <strong>rénovation par élément</strong> : on remplace un composant, seul ce composant est jugé. La <strong>rénovation globale</strong> : on rénove tout ou une grosse partie, c'est le bâtiment entier qui est jugé.</p>
+    <p>Les deux écrans suivants détaillent chacune de ces logiques.</p>
+    <figure>
+      <img src="svg/deux-logiques.svg" alt="Deux cartes : par élément, une seule fenêtre mise en évidence sur une maison en trait fin ; globale, la maison entière encadrée, murs, toiture et fenêtres ensemble.">
+      <figcaption>Un seul composant jugé, ou tout le bâtiment jugé ensemble.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Une maison en trait fin et léger, sur laquelle une seule fenêtre est mise en évidence en trait épais et en couleur. Une flèche part de cette fenêtre vers une jauge verticale, dont la zone haute est marquée sans valeur chiffrée : niveau minimal fixé par arrêté pour ce type de composant. Le reste de la maison, tout autour, n'est pas concerné par cette exigence.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">La rénovation par élément</h2>
+    <p>Quand on remplace <strong>un seul composant</strong> — une fenêtre, une chaudière, une isolation de toiture — ce composant doit atteindre un <strong>niveau de performance minimal</strong>, fixé par arrêté pour son type.</p>
+    <p>Le reste du bâtiment n'est pas concerné : c'est une exigence <strong>ciblée</strong>, pas une exigence sur l'ensemble.</p>
+    <figure>
+      <img src="svg/renovation-par-element.svg" alt="Une maison en trait fin avec une fenêtre mise en évidence, reliée par une flèche à une jauge de niveau minimal fixé par arrêté, sans le reste du bâti concerné.">
+      <figcaption>Un seul composant, une seule exigence — le reste du bâti n'est pas concerné.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Une maison en trait épais, dont les murs, la toiture, les fenêtres et le système de chauffage sont tous mis en évidence en même temps. Une flèche réunit ces éléments vers une seule jauge de performance globale, sans valeur chiffrée : le bâtiment est jugé comme un ensemble, pas composant par composant.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La rénovation globale</h2>
+    <p>Quand les travaux portent sur <strong>tout ou une grosse partie</strong> du bâtiment, la performance est jugée au niveau du <strong>bâtiment entier</strong> — bâti et systèmes réunis dans un seul résultat, sur une logique proche de celle du neuf.</p>
+    <p>C'est une démarche plus <strong>ambitieuse</strong>, et une étude plus lourde qu'une simple rénovation par élément.</p>
+    <figure>
+      <img src="svg/renovation-globale.svg" alt="Une maison en trait épais, murs, toiture, fenêtres et système de chauffage tous mis en évidence, réunis vers une seule jauge de performance globale.">
+      <figcaption>Le bâtiment jugé comme un ensemble, pas composant par composant.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Une clé plate stylisée retire une ancienne chaudière, dessinée en pointillé et barrée, et une nouvelle chaudière la remplace, en couleur. Une flèche part de ce remplacement vers une étiquette : déclenche l'exigence par élément, sur ce composant seulement. Le reste du bâtiment, tout autour en trait fin, n'est pas concerné par ce déclenchement.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le mécanisme du déclenchement</h2>
+    <p>C'est le <strong>geste de remplacement</strong> lui-même qui déclenche l'exigence par élément. Changer une chaudière, poser une isolation, remplacer des fenêtres : chacun de ces gestes active la règle, <strong>sur ce composant précis</strong>.</p>
+    <p>Il n'y a pas besoin d'un projet de rénovation globale pour être concerné : une seule intervention suffit à déclencher l'exigence sur elle-même.</p>
+    <figure>
+      <img src="svg/declenchement.svg" alt="Une clé plate retire une ancienne chaudière barrée, une nouvelle la remplace, une flèche mène à une étiquette : déclenche l'exigence par élément, sur ce composant seulement.">
+      <figcaption>Le geste de remplacement déclenche l'exigence, sur ce composant seul.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Un bloc extérieur de pompe à chaleur remplace une ancienne chaudière barrée d'une croix, avec une flèche de transformation entre les deux. Une étiquette reliée à la nouvelle pompe à chaleur porte la mention doit respecter le niveau minimal fixé pour ce type d'équipement. Le message : ce n'est pas une règle abstraite, c'est directement votre geste professionnel qui la déclenche.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le climaticien concerné : à chaque remplacement</h2>
+    <p>Quand vous remplacez une <strong>chaudière</strong> par une <strong>pompe à chaleur</strong>, ou que vous installez un nouvel équipement, c'est votre <strong>intervention</strong> qui déclenche l'exigence par élément — pas un projet de rénovation décidé ailleurs.</p>
+    <p>L'équipement posé doit respecter le <strong>niveau minimal</strong> fixé pour son type. C'est un point à vérifier avant de proposer un devis, pas après.</p>
+    <figure>
+      <img src="svg/climaticien-concerne-existant.svg" alt="Une pompe à chaleur remplace une ancienne chaudière barrée, reliée à une étiquette : doit respecter le niveau minimal fixé pour ce type d'équipement.">
+      <figcaption>Le remplacement que vous faites déclenche l'exigence, directement.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Deux colonnes comparées, sans valeur chiffrée. La colonne par élément porte trois mentions : léger, rapide à mettre en œuvre, un seul composant amélioré à chaque intervention. La colonne globale porte trois mentions : étude plus lourde, ambition de résultat plus grande, tout le bâtiment amélioré ensemble.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Pourquoi la distinction compte pour le client</h2>
+    <p>Une rénovation <strong>par élément</strong> est légère et rapide, mais elle ne garantit pas une amélioration d'ensemble : chaque geste isolé peut être conforme sans que le bâtiment progresse beaucoup au global.</p>
+    <p>Une rénovation <strong>globale</strong> demande une étude plus lourde, mais vise un résultat d'ensemble — souvent utile quand le client cherche une vraie amélioration, par exemple avant une vente ou une mise en location.</p>
+    <figure>
+      <img src="svg/globale-vs-element-client.svg" alt="Deux colonnes comparées : par élément, léger et rapide, un seul composant amélioré ; globale, étude plus lourde, tout le bâtiment amélioré ensemble.">
+      <figcaption>Léger et ciblé, ou lourd et ambitieux : le choix dépend du besoin du client.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Les deux cartes par élément et globale réapparaissent, plus petites, côte à côte, réunies sous la mention RT existant. En dessous, une bande résume les points de la station.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Rénover obéit à un cadre <strong>distinct du neuf</strong> : la RT existant.</li>
+      <li>La rénovation <strong>par élément</strong> juge uniquement le composant remplacé.</li>
+      <li>La rénovation <strong>globale</strong> juge le bâtiment entier, bâti et systèmes réunis.</li>
+      <li>C'est le <strong>geste de remplacement</strong> qui déclenche l'exigence — directement votre intervention.</li>
+    </ul>
+    <p class="formule">Le réflexe : un composant remplacé engage ce composant ; un projet global engage tout le bâtiment.</p>
+    <figure>
+      <img src="svg/bilan-existant.svg" alt="Les deux cartes par élément et globale réunies sous la mention RT existant, avec une bande résumant la station.">
+      <figcaption>Deux logiques, un même cadre distinct du neuf.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un bâtiment déjà construit relève de quel cadre réglementaire ? Regardez le schéma de l'écran un si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Un bâtiment déjà construit relève de quel cadre ?</h2>
+    <figure class="vignette">
+      <img src="svg/cadre-different-neuf.svg" alt="Vignette de rappel : un bâtiment se sépare vers RE2020 pour le neuf ou vers RT existant pour l'existant.">
+      <figcaption>Rappel de l'écran 1 — un cadre distinct du neuf.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">De la RE2020, exactement comme un bâtiment neuf</button>
+      <button type="button" data-answer="bonne">De la RT existant, un cadre distinct pensé pour rénover</button>
+      <button type="button" data-answer="b">D'aucun cadre réglementaire tant qu'on ne construit pas</button>
+      <button type="button" data-answer="c">De la RT2012, qui reste le seul texte applicable à l'existant</button>
+    </div>
+    <p class="feedback" hidden data-explication="La RE2020 s'applique au neuf. Un bâtiment déjà construit relève d'un cadre distinct, la RT existant, pensé pour les travaux de rénovation."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Quand vous remplacez une seule chaudière, qu'est-ce qui est jugé ? Reprenez le schéma de l'écran trois si besoin.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Remplacer une seule chaudière : qu'est-ce qui est jugé ?</h2>
+    <figure class="vignette">
+      <img src="svg/renovation-par-element.svg" alt="Vignette de rappel : une seule fenêtre mise en évidence sur une maison en trait fin, reliée à une jauge de niveau minimal.">
+      <figcaption>Rappel de l'écran 3 — un seul composant, une seule exigence.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La performance globale de tout le bâtiment</button>
+      <button type="button" data-answer="bonne">Uniquement la chaudière remplacée, contre son niveau minimal propre</button>
+      <button type="button" data-answer="b">Rien : un remplacement isolé n'entraîne aucune exigence</button>
+      <button type="button" data-answer="c">Le bâti seul, isolation et fenêtres, jamais les équipements</button>
+    </div>
+    <p class="feedback" hidden data-explication="La rénovation par élément juge uniquement le composant remplacé, ici la chaudière, contre le niveau minimal fixé pour son type. Le reste du bâtiment n'est pas concerné."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Qu'est-ce qui déclenche concrètement l'exigence par élément ? Repensez à la clé plate de l'écran cinq.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce qui déclenche l'exigence par élément ?</h2>
+    <figure class="vignette">
+      <img src="svg/declenchement.svg" alt="Vignette de rappel : une clé plate retire une ancienne chaudière et une nouvelle la remplace, reliée à une étiquette déclenche l'exigence.">
+      <figcaption>Rappel de l'écran 5 — le geste de remplacement lui-même.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un projet de rénovation globale décidé par le propriétaire</button>
+      <button type="button" data-answer="bonne">Le geste de remplacement du composant lui-même</button>
+      <button type="button" data-answer="b">Une inspection administrative programmée à l'avance</button>
+      <button type="button" data-answer="c">Le dépassement d'un âge minimal du bâtiment</button>
+    </div>
+    <p class="feedback" hidden data-explication="C'est le geste de remplacement d'un composant — chaudière, fenêtres, isolation — qui déclenche l'exigence par élément, sur ce composant précis."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Quelle différence sépare une rénovation par élément d'une rénovation globale, du point de vue du client ? Souvenez-vous des deux colonnes de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Quelle différence pour le client, entre les deux logiques ?</h2>
+    <figure class="vignette">
+      <img src="svg/globale-vs-element-client.svg" alt="Vignette de rappel : deux colonnes, par élément léger et rapide, globale plus lourde et plus ambitieuse.">
+      <figcaption>Rappel de l'écran 7 — léger et ciblé, ou lourd et ambitieux.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Aucune : les deux logiques donnent toujours le même résultat</button>
+      <button type="button" data-answer="bonne">La rénovation par élément est ciblée et rapide ; la rénovation globale est plus lourde mais plus ambitieuse sur le résultat</button>
+      <button type="button" data-answer="b">La rénovation globale est toujours interdite sur l'existant</button>
+      <button type="button" data-answer="c">La rénovation par élément concerne uniquement les logements neufs</button>
+    </div>
+    <p class="feedback" hidden data-explication="La rénovation par élément est légère et rapide mais ciblée sur un seul composant. La rénovation globale demande une étude plus lourde, mais vise une amélioration d'ensemble du bâtiment."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours. Deux correspondances internes
+     réelles vers des stations sœurs de la même sous-ligne. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../thermique-confort-ete/"><strong>Le confort d'été</strong></a> (même sous-ligne)
+      — le confort d'été compte aussi dans les projets de rénovation.</li>
+    <li><a href="../thermique-dpe/"><strong>Le DPE</strong></a> (même sous-ligne)
+      — un DPE défavorable pousse souvent vers ces travaux de rénovation.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

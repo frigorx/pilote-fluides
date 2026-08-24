@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-5" aria-describedby="d-5" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-5">Un échafaudage vérifié, avec son étiquette de contrôle</title>
+  <desc id="d-5">Une structure d'échafaudage schématique, composée de montants et de plateaux, porte une
+    étiquette accrochée marquée d'une coche verte et de la mention « vérifié ». Une bande en bas rappelle
+    que toute modification annule cette vérification.</desc>
+  <style>
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Structure -->
+  <g stroke="#1b3a63" stroke-width="5" fill="none">
+    <line x1="200" y1="80" x2="200" y2="260"/>
+    <line x1="340" y1="80" x2="340" y2="260"/>
+    <line x1="480" y1="80" x2="480" y2="260"/>
+    <line x1="200" y1="110" x2="480" y2="110"/>
+    <line x1="200" y1="170" x2="480" y2="170"/>
+    <line x1="200" y1="230" x2="480" y2="230"/>
+    <line x1="200" y1="110" x2="340" y2="170"/>
+    <line x1="340" y1="110" x2="480" y2="170"/>
+    <line x1="200" y1="170" x2="340" y2="230"/>
+    <line x1="340" y1="170" x2="480" y2="230"/>
+  </g>
+  <rect x="190" y="106" width="300" height="8" fill="#fde9d0" stroke="#10233c" stroke-width="1.5"/>
+  <rect x="190" y="166" width="300" height="8" fill="#fde9d0" stroke="#10233c" stroke-width="1.5"/>
+
+  <!-- Étiquette -->
+  <rect x="550" y="90" width="220" height="90" rx="10" fill="#fffdf8" stroke="#c2410c" stroke-width="3"/>
+  <line x1="550" y1="120" x2="530" y2="70" stroke="#5a6b7d" stroke-width="2"/>
+  <circle cx="590" cy="135" r="18" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <path d="M580 135 l7 8 l16 -18" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+  <text x="625" y="130" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="17" fill="#10233c">Vérifié</text>
+  <text x="625" y="152" font-size="13" fill="#5a6b7d">par une personne</text>
+  <text x="625" y="168" font-size="13" fill="#5a6b7d">compétente</text>
+
+  <rect x="30" y="270" width="840" height="56" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="305" text-anchor="middle">Toute modification annule la vérification précédente</text>
+</svg>

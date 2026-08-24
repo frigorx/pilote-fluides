@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-4" aria-describedby="d-4" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-4">Dans la pièce : ventilation et absence de flamme nue</title>
+  <desc id="d-4">Un local technique contient un groupe chargé en fluide A2L ou A3. Une flèche de ventilation
+    traverse le local d'une entrée d'air vers une sortie. Une flamme nue est représentée barrée d'une croix
+    rouge, rappelant qu'aucune source d'inflammation ne doit s'y trouver.</desc>
+  <style>
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+  </style>
+
+  <rect x="40" y="60" width="820" height="230" fill="none" stroke="#2f5689" stroke-width="2" rx="10"/>
+
+  <!-- Groupe -->
+  <rect x="120" y="180" width="140" height="70" rx="8" fill="#dbeafe" stroke="#1b3a63" stroke-width="2.5"/>
+  <line x1="140" y1="200" x2="240" y2="200" stroke="#1b3a63" stroke-width="2"/>
+  <line x1="140" y1="220" x2="240" y2="220" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="190" y="270" text-anchor="middle">Groupe (A2L/A3)</text>
+
+  <!-- Ventilation -->
+  <path d="M320 100 h480" stroke="#1e7e54" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#f4)"/>
+  <defs>
+    <marker id="f4" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1e7e54"/>
+    </marker>
+  </defs>
+  <text class="lbl" x="560" y="90" text-anchor="middle" fill="#1e7e54">Ventilation adaptée</text>
+
+  <!-- Flamme barrée -->
+  <path d="M650 220 q16 -26 0 -44 q-16 8 -7 22 q-12 -4 -12 -18 q-9 22 19 40 z" fill="#c0392b"/>
+  <line x1="620" y1="180" x2="690" y2="255" stroke="#c0392b" stroke-width="5"/>
+  <text class="lbl" x="655" y="285" text-anchor="middle" fill="#c0392b">Pas de flamme nue</text>
+</svg>

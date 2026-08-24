@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Le DPE — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce que mesure le diagnostic de performance énergétique, comment se lit l'étiquette de A à G, ce qu'il déclenche pour un propriétaire, et ses limites.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/thermique-dpe/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Thermique.
+     Cinquième des six stations de la sous-ligne.
+
+     GABARIT repris à la lettre de aptitude-capacite/. Même écart assumé
+     que les stations précédentes : styles.css et app.js copiés
+     littéralement (variable --sous-ligne:#0f766e), accent #92400e
+     réservé aux SVG.
+
+     Aucune lettre ni date précise de restriction de location n'est
+     inscrite : ce calendrier évolue et se vérifie sur le texte en
+     vigueur. Voir FOND.md, § « À sourcer ».
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Thermique · niveau BTS</p>
+  <h1>Le DPE — lire l'étiquette, connaître ses limites</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez ce que mesure le DPE, comment se lit son étiquette de A à G, ce qu'il déclenche pour un propriétaire qui vend ou loue, et pourquoi ce résultat n'est pas une lecture directe des factures.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Un appareil photo stylisé capture une maison. Deux chemins partent ensuite de cette maison. L'un mène à un document méthode standardisée, calculée à partir des caractéristiques du logement — c'est le vrai chemin du DPE. L'autre, en trait pointillé et barré, mène à une pile de factures réelles, avec la mention ce n'est pas ce que le DPE lit. Le message central de cet écran : le DPE ne consulte jamais vos factures.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Le DPE : une photographie standardisée</h2>
+    <p>Le <strong>diagnostic de performance énergétique</strong> estime la consommation et les émissions d'un logement à partir d'une <strong>méthode standardisée</strong> : les caractéristiques du bâti et des équipements, pas les factures réelles des occupants.</p>
+    <p>C'est un point à retenir avant tout le reste : deux logements identiques sur le papier reçoivent le même DPE, même si leurs occupants consomment très différemment.</p>
+    <figure>
+      <img src="svg/dpe-photographie.svg" alt="Une maison photographiée mène vers un document de méthode standardisée ; un second chemin, barré, mène vers une pile de factures réelles, non consultées par le DPE.">
+      <figcaption>Une méthode standardisée, pas une lecture de factures.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Deux jauges séparées. La première, consommation d'énergie, porte un repère sur son échelle. La seconde, émissions de gaz à effet de serre, porte un repère plus défavorable sur la sienne. Une flèche part de la jauge la moins bonne des deux vers une étiquette finale unique, avec la mention c'est le moins bon des deux résultats qui détermine l'étiquette.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Deux indicateurs combinés</h2>
+    <p>Le DPE combine deux résultats : la <strong>consommation d'énergie</strong> et les <strong>émissions de gaz à effet de serre</strong> du logement.</p>
+    <p>L'étiquette finale retient <strong>le moins bon des deux</strong>. Un logement excellent sur l'un des deux indicateurs, mais mauvais sur l'autre, reçoit l'étiquette du moins bon résultat.</p>
+    <figure>
+      <img src="svg/deux-indicateurs.svg" alt="Deux jauges, consommation d'énergie et émissions de gaz à effet de serre, reliées à une étiquette finale unique déterminée par le moins bon des deux résultats.">
+      <figcaption>Le moins bon des deux résultats détermine l'étiquette.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Sept bandes horizontales empilées, chacune plus longue que la précédente. En haut, la bande A, la plus courte, très performant. En bas, la bande G, la plus longue, extrêmement peu performant. Chaque bande porte sa lettre et un mot qui la qualifie. La longueur et la teinte croissantes portent l'information ensemble, du plus clair en haut au plus soutenu en bas.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Lire l'étiquette : de A à G</h2>
+    <p>L'échelle du DPE va de <strong>A</strong>, le plus performant, à <strong>G</strong>, le moins performant. Sept lettres, sept classes.</p>
+    <p>C'est cette lettre qui apparaît sur les annonces immobilières, et c'est elle qui déclenche les conséquences vues dans les écrans suivants.</p>
+    <figure>
+      <img src="svg/etiquette-a-g.svg" alt="Sept bandes empilées de A, en haut, très performant, à G, en bas, extrêmement peu performant, de longueur et de teinte croissantes.">
+      <figcaption>Sept lettres, sept classes — de A, le meilleur, à G, le moins bon.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Un panneau à vendre planté devant une maison porte l'étiquette du DPE affichée directement sur le panneau. Une flèche relie ce panneau à un document, remis avant la signature. Le message : l'étiquette doit être visible dès l'annonce, pas seulement révélée au moment de signer.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Ce que le DPE déclenche : l'obligation d'information</h2>
+    <p>Le DPE doit être <strong>affiché dès l'annonce</strong> de vente ou de location, et <strong>fourni</strong> à l'acheteur ou au locataire avant la signature.</p>
+    <p>Ce n'est pas une formalité facultative : un propriétaire qui vend ou loue son bien doit disposer d'un DPE valide, et le communiquer.</p>
+    <figure>
+      <img src="svg/obligation-info.svg" alt="Un panneau à vendre portant l'étiquette DPE, relié à un document fourni avant la signature.">
+      <figcaption>Visible dès l'annonce, remis avant la signature.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Une annonce de location porte une étiquette dans la zone la plus défavorable de l'échelle, sans lettre précise indiquée. Un cadenas est posé dessus, avec la mention restriction de location possible selon l'étiquette et le calendrier en vigueur. Ni lettre ni date ne sont écrites : c'est le mécanisme qui est montré, pas le seuil exact — il se vérifie sur le texte en vigueur.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Ce que le DPE déclenche : la restriction de location</h2>
+    <p>Au-delà de l'information, un logement <strong>mal classé</strong> peut voir sa mise en location <strong>restreinte</strong>. Le mécanisme existe ; la lettre exacte et le calendrier précis évoluent et se vérifient sur le texte en vigueur.</p>
+    <p>C'est une conséquence concrète, pas seulement symbolique : un mauvais DPE peut empêcher de louer un bien tant que rien n'est fait.</p>
+    <figure>
+      <img src="svg/restriction-location.svg" alt="Une annonce de location avec une étiquette défavorable et un cadenas, marqué restriction de location possible selon l'étiquette et le calendrier en vigueur.">
+      <figcaption>Un mauvais classement peut empêcher la location — le mécanisme, pas le seuil exact.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Une étiquette défavorable, à gauche, est reliée par une flèche à une pompe à chaleur stylisée représentant des travaux, puis à une étiquette plus favorable, à droite, plus haute sur l'échelle. Aucune lettre précise n'est inscrite : seule la position sur l'échelle, du bas vers le haut, porte le message.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le lien avec vos travaux</h2>
+    <p>Des travaux d'amélioration — remplacer une chaudière par une <strong>pompe à chaleur</strong>, isoler — peuvent faire <strong>remonter l'étiquette</strong> d'un logement.</p>
+    <p>C'est souvent ce qui pousse un propriétaire à investir : sortir un logement de la zone défavorable, pour lever une restriction ou améliorer son attractivité. Le financement de ces travaux est le sujet de la station suivante.</p>
+    <figure>
+      <img src="svg/lien-travaux.svg" alt="Une étiquette défavorable reliée par une flèche à une pompe à chaleur puis à une étiquette plus favorable.">
+      <figcaption>Des travaux peuvent faire remonter l'étiquette.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Deux résultats sont comparés pour un même logement. À gauche, le résultat du DPE, issu d'une méthode conventionnelle avec des hypothèses d'usage standard. À droite, la consommation réellement observée sur les factures, qui dépend de l'usage réel des occupants. Un point d'interrogation entre les deux marque l'écart possible. En dessous, une note rappelle que le résultat dépend aussi de la qualité des données saisies sur le logement.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Les limites du DPE</h2>
+    <p>Le DPE repose sur une méthode <strong>conventionnelle</strong>, avec des hypothèses d'usage standard. La <strong>consommation réelle</strong> d'un logement dépend de la façon dont ses occupants l'utilisent, et peut s'écarter du résultat du DPE.</p>
+    <p>Le résultat dépend aussi de la <strong>qualité des données</strong> saisies sur le logement — surface, isolation, équipements. Une donnée mal renseignée fausse l'étiquette.</p>
+    <figure>
+      <img src="svg/limites-dpe.svg" alt="Le résultat du DPE, méthode conventionnelle, comparé à la consommation réelle observée sur les factures, avec un point d'interrogation entre les deux et une note sur la qualité des données.">
+      <figcaption>Une méthode conventionnelle, pas une mesure directe.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="L'échelle de sept bandes de A à G réapparaît, plus petite, à gauche. À droite, une bande résume les cinq points de la station : méthode standardisée, deux indicateurs combinés, obligation d'information, restriction possible, et limites de la méthode.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Le DPE est une <strong>méthode standardisée</strong>, pas une lecture des factures réelles.</li>
+      <li>Il combine <strong>deux indicateurs</strong> : consommation d'énergie et émissions de gaz à effet de serre, le moins bon l'emporte.</li>
+      <li>Son échelle va de <strong>A à G</strong>, à afficher dès l'annonce.</li>
+      <li>Un mauvais classement peut <strong>restreindre la location</strong> — le seuil exact se vérifie sur le texte en vigueur.</li>
+      <li>C'est une méthode aux <strong>limites connues</strong> : à garder en tête face à un client.</li>
+    </ul>
+    <p class="formule">Le réflexe : le DPE éclaire, il ne remplace jamais la facture réelle.</p>
+    <figure>
+      <img src="svg/bilan-dpe.svg" alt="L'échelle de sept bandes de A à G à côté d'une bande résumant les cinq points de la station.">
+      <figcaption>Mesurer, étiqueter, informer — avec des limites connues.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Sur quoi se base le DPE pour estimer la performance d'un logement ? Regardez le schéma de l'écran un si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Sur quoi se base le DPE ?</h2>
+    <figure class="vignette">
+      <img src="svg/dpe-photographie.svg" alt="Vignette de rappel : une maison photographiée mène vers une méthode standardisée, pas vers les factures réelles.">
+      <figcaption>Rappel de l'écran 1 — une méthode standardisée, pas les factures.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Sur les factures d'énergie des trois dernières années</button>
+      <button type="button" data-answer="bonne">Sur une méthode standardisée, à partir des caractéristiques du bâti et des équipements</button>
+      <button type="button" data-answer="b">Sur une déclaration sur l'honneur du propriétaire, sans vérification</button>
+      <button type="button" data-answer="c">Sur la moyenne des DPE des logements voisins</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le DPE utilise une méthode standardisée, calculée à partir des caractéristiques du logement, pas une lecture directe des factures réelles des occupants."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un logement est excellent sur les émissions de gaz à effet de serre mais mauvais sur la consommation d'énergie. Quelle étiquette reçoit-il ? Reprenez le schéma de l'écran deux si besoin.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Excellent sur un indicateur, mauvais sur l'autre : quelle étiquette ?</h2>
+    <figure class="vignette">
+      <img src="svg/deux-indicateurs.svg" alt="Vignette de rappel : deux jauges reliées à une étiquette finale déterminée par le moins bon des deux résultats.">
+      <figcaption>Rappel de l'écran 2 — le moins bon des deux résultats l'emporte.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">L'étiquette du meilleur des deux résultats</button>
+      <button type="button" data-answer="b">Une étiquette moyenne entre les deux résultats</button>
+      <button type="button" data-answer="bonne">L'étiquette du moins bon des deux résultats</button>
+      <button type="button" data-answer="c">Aucune étiquette : le DPE ne peut pas trancher</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le DPE combine consommation d'énergie et émissions de gaz à effet de serre, et retient le moins bon des deux résultats pour l'étiquette finale."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Quand un propriétaire doit-il fournir le DPE ? Regardez le panneau de l'écran quatre si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Quand le DPE doit-il être fourni ?</h2>
+    <figure class="vignette">
+      <img src="svg/obligation-info.svg" alt="Vignette de rappel : un panneau à vendre avec l'étiquette DPE, relié à un document fourni avant la signature.">
+      <figcaption>Rappel de l'écran 4 — visible dès l'annonce, remis avant la signature.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Uniquement si l'acheteur ou le locataire le demande expressément</button>
+      <button type="button" data-answer="bonne">Dès l'annonce, puis remis avant la signature</button>
+      <button type="button" data-answer="b">Uniquement après la signature, dans le mois qui suit</button>
+      <button type="button" data-answer="c">Uniquement pour les logements neufs</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le DPE doit être affiché dès l'annonce de vente ou de location, et fourni à l'acheteur ou au locataire avant la signature."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Pourquoi le résultat du DPE peut-il différer des factures réelles d'un logement ? Repensez à la comparaison de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Pourquoi le DPE peut-il différer des factures réelles ?</h2>
+    <figure class="vignette">
+      <img src="svg/limites-dpe.svg" alt="Vignette de rappel : le résultat du DPE, méthode conventionnelle, comparé à la consommation réelle, avec un point d'interrogation entre les deux.">
+      <figcaption>Rappel de l'écran 7 — une méthode conventionnelle, pas une mesure directe.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le DPE est toujours identique aux factures, sans exception</button>
+      <button type="button" data-answer="bonne">Le DPE utilise des hypothèses d'usage standard, différentes de l'usage réel des occupants</button>
+      <button type="button" data-answer="b">Les factures ne peuvent jamais être comparées à un DPE</button>
+      <button type="button" data-answer="c">Le DPE mesure uniquement l'eau, jamais l'énergie</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le DPE repose sur une méthode conventionnelle avec des hypothèses d'usage standard. La consommation réelle dépend de l'usage effectif des occupants, ce qui peut créer un écart."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours. Deux correspondances internes
+     réelles vers des stations sœurs de la même sous-ligne. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../thermique-existant/"><strong>RT de l'existant</strong></a> (même sous-ligne)
+      — un DPE défavorable pousse souvent vers ces travaux de rénovation.</li>
+    <li><a href="../thermique-cee/"><strong>Les CEE</strong></a> (même sous-ligne)
+      — comment financer les travaux que le DPE révèle nécessaires.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

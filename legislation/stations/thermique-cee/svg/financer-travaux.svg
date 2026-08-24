@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-ft" aria-describedby="d-ft" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ft">Pour remplir l'obligation, le vendeur d'énergie finance des travaux</title>
+  <desc id="d-ft">Un vendeur d'énergie générique, à gauche, envoie une flèche d'argent vers un
+    chantier de travaux d'économie d'énergie, à droite : une maison avec un technicien qui pose
+    une isolation. La flèche porte la mention « finance ».</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:15px; fill:#92400e; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">L'obligation se remplit en finançant des travaux</text>
+
+  <rect x="60" y="110" width="140" height="140" rx="10" fill="#eef1f4" stroke="#5a6b7d" stroke-width="2.5"/>
+  <circle cx="130" cy="160" r="18" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <line x1="130" y1="178" x2="130" y2="200" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="lbl" x="130" y="235" text-anchor="middle">vendeur</text>
+  <text class="lbl" x="130" y="253" text-anchor="middle">d'énergie</text>
+
+  <path d="M 215 175 C 280 175, 300 175, 350 175" fill="none" stroke="#92400e" stroke-width="3"/>
+  <polygon points="350,175 332,168 332,182" fill="#92400e"/>
+  <text class="foc" x="280" y="155" text-anchor="middle">finance</text>
+
+  <polygon points="440,190 540,120 640,190" fill="none" stroke="#10233c" stroke-width="3"/>
+  <rect x="460" y="190" width="160" height="100" fill="none" stroke="#10233c" stroke-width="3"/>
+  <rect x="460" y="190" width="12" height="100" fill="#fff4e0" stroke="#92400e" stroke-width="1.5"/>
+  <rect x="608" y="190" width="12" height="100" fill="#fff4e0" stroke="#92400e" stroke-width="1.5"/>
+
+  <!-- technicien stylisé -->
+  <circle cx="700" cy="220" r="14" fill="none" stroke="#1b3a63" stroke-width="2.5"/>
+  <line x1="700" y1="234" x2="700" y2="270" stroke="#1b3a63" stroke-width="2.5"/>
+  <line x1="700" y1="245" x2="730" y2="255" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="720" y="245" width="30" height="16" fill="#fff4e0" stroke="#92400e" stroke-width="2"/>
+
+  <text class="lbl" x="540" y="305" text-anchor="middle">travaux d'économie d'énergie</text>
+</svg>

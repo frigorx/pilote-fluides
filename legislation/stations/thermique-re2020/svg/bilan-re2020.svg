@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-br" aria-describedby="d-br" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-br">Bilan : les trois exigences de la RE2020, contrôlées ensemble</title>
+  <desc id="d-br">Les trois cartes Bbio, Cep et IC de l'écran 1 réapparaissent, plus petites, en
+    ligne. Une accolade les réunit sous la mention « RE2020 ». En dessous, une bande résume trois
+    points de la station : le Bbio mesure le bâti seul, le Cep additionne tous les usages, l'IC
+    compte tout le cycle de vie et pousse vers la pompe à chaleur.</desc>
+  <style>
+    .sig { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#92400e; }
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <rect x="60"  y="30" width="220" height="110" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="sig" x="170" y="70" text-anchor="middle">Bbio</text>
+  <text class="ttl" x="170" y="100" text-anchor="middle">le bâti seul</text>
+
+  <rect x="340" y="30" width="220" height="110" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="sig" x="450" y="70" text-anchor="middle">Cep</text>
+  <text class="ttl" x="450" y="100" text-anchor="middle">tous les usages</text>
+
+  <rect x="620" y="30" width="220" height="110" rx="12" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
+  <text class="sig" x="730" y="70" text-anchor="middle">IC</text>
+  <text class="ttl" x="730" y="100" text-anchor="middle">tout le cycle de vie</text>
+
+  <rect x="60" y="180" width="780" height="130" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="215" text-anchor="middle" font-weight="bold">Trois exigences distinctes, contrôlées ensemble — pas de compensation.</text>
+  <text class="band" x="450" y="245" text-anchor="middle">Le Bbio juge le bâti seul ; le Cep additionne tous les usages d'énergie.</text>
+  <text class="band" x="450" y="270" text-anchor="middle">L'IC compte tout le cycle de vie et pénalise les énergies carbonées :</text>
+  <text class="band" x="450" y="295" text-anchor="middle">c'est ce qui pousse vers la pompe à chaleur.</text>
+</svg>

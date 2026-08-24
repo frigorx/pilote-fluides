@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-bal" aria-describedby="d-bal" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bal">Une balance : le geste de prévention face au déchet évité</title>
+  <desc id="d-bal">Une balance à deux plateaux. À gauche, un plateau plein en trait continu vert :
+    le geste de prévention, récupérer un fluide plutôt que le rejeter. À droite, un plateau en
+    trait tireté gris, presque vide : le déchet qui aurait été produit sans ce geste, et qui
+    n'existe donc pas. En bas, la phrase : chaque geste qui empêche un déchet de naître est de la
+    prévention.</desc>
+  <style>
+    .tige   { stroke:#57534e; stroke-width:6; stroke-linecap:round; }
+    .pivot  { fill:#57534e; }
+    .plein  { fill:#fffdf8; stroke:#1e7e54; stroke-width:3; }
+    .vide   { fill:#fffdf8; stroke:#5a6b7d; stroke-width:3; stroke-dasharray:9 7; }
+    .ttl    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; }
+    .lbl    { font-size:15px; fill:#10233c; }
+    .cap    { font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <!-- pied de la balance -->
+  <rect x="410" y="256" width="80" height="16" rx="4" fill="#57534e"/>
+  <polygon points="450,140 410,256 490,256" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+  <circle class="pivot" cx="450" cy="140" r="9"/>
+
+  <!-- fléau -->
+  <line class="tige" x1="150" y1="140" x2="750" y2="140"/>
+
+  <!-- côté gauche : le geste -->
+  <line class="tige" x1="170" y1="140" x2="170" y2="190" stroke-width="3"/>
+  <line class="tige" x1="230" y1="140" x2="230" y2="190" stroke-width="3"/>
+  <rect class="plein" x="90" y="190" width="200" height="90" rx="14"/>
+  <text class="ttl" x="190" y="216" text-anchor="middle" fill="#1e7e54">LE GESTE</text>
+  <!-- icône : flèche de récupération vers un contenant -->
+  <rect x="150" y="230" width="26" height="34" rx="4" fill="#fffdf8" stroke="#1e7e54" stroke-width="2.5"/>
+  <path d="M186 247 h34 m0 0 l-10 -8 m10 8 l-10 8" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <text class="lbl" x="290" y="252" text-anchor="end" fill="#1e7e54" font-weight="bold">récupérer</text>
+
+  <!-- côté droit : le déchet évité -->
+  <line class="tige" x1="670" y1="140" x2="670" y2="190" stroke-width="3"/>
+  <line class="tige" x1="730" y1="140" x2="730" y2="190" stroke-width="3"/>
+  <rect class="vide" x="610" y="190" width="200" height="90" rx="14"/>
+  <text class="ttl" x="710" y="216" text-anchor="middle" fill="#5a6b7d">ÉVITÉ</text>
+  <!-- icône : poubelle barrée -->
+  <path d="M690 232 h30 l-3 30 h-24 z" fill="none" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <line x1="685" y1="228" x2="725" y2="228" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <line x1="682" y1="222" x2="728" y2="270" stroke="#5a6b7d" stroke-width="2.5"/>
+
+  <!-- légendes sous les plateaux -->
+  <text class="cap" x="190" y="308" text-anchor="middle">Récupérer un fluide plutôt</text>
+  <text class="cap" x="190" y="326" text-anchor="middle">que le rejeter</text>
+  <text class="cap" x="710" y="308" text-anchor="middle">Le déchet qui aurait été</text>
+  <text class="cap" x="710" y="326" text-anchor="middle">produit sans ce geste</text>
+
+  <text x="450" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#10233c">Chaque geste qui évite un déchet est de la prévention.</text>
+</svg>

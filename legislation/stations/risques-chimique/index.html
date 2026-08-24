@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Risque chimique — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : lire une fiche de données de sécurité, comprendre les pictogrammes de danger, savoir ce qu'est un produit CMR, et ce que le brasage, les solvants et l'huile imposent en froid et climatisation.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/risques-chimique/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Risques professionnels.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Risques professionnels · niveau BTS</p>
+  <h1>Risque chimique — lire la fiche avant d'ouvrir le bidon</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez lire une fiche de données de sécurité, reconnaître ce que change un pictogramme de danger, dire ce que signifie qu'un produit est classé CMR, et situer ces risques dans les gestes du métier : brasage, nettoyage au solvant, huile récupérée.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Une fiche est posée à côté d'un bidon. Trois zones sont marquées sur la fiche : les dangers, les précautions d'emploi, la conduite à tenir en cas d'exposition. Une loupe rappelle que cette fiche se lit avant d'ouvrir le bidon, pas après.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">La fiche de données de sécurité (FDS)</h2>
+    <p>Pour tout produit chimique, le fournisseur doit remettre une <strong>fiche de données de sécurité</strong> : elle décrit les dangers du produit, les précautions d'emploi, et la conduite à tenir en cas d'exposition.</p>
+    <p>Le réflexe : la <strong>consulter avant d'utiliser</strong> un produit qu'on ne connaît pas, et savoir où elle est rangée sur le site.</p>
+    <figure>
+      <img src="svg/chimique-fds.svg" alt="Une fiche de données de sécurité posée à côté d'un bidon, avec trois zones marquées : dangers, précautions d'emploi, conduite à tenir. Une loupe rappelle que la fiche se lit avant l'usage.">
+      <figcaption>La fiche se lit avant d'ouvrir le bidon, pas après.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Quatre losanges à bord orange sont alignés, chacun avec une silhouette simple à l'intérieur et son nom en dessous : une flamme pour inflammable, une goutte sur une main pour corrosif, une silhouette d'alerte pour toxique, un point d'exclamation pour danger pour la santé.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le losange, un danger</h2>
+    <p>Les dangers d'un produit chimique sont signalés par des <strong>pictogrammes en forme de losange</strong>. Chaque losange porte une silhouette simple qui désigne une famille de danger : inflammable, corrosif, toxique, dangereux pour la santé — il en existe d'autres, comme le danger pour l'environnement ou le gaz sous pression.</p>
+    <figure>
+      <img src="svg/chimique-pictogrammes.svg" alt="Quatre pictogrammes en losange à bord orange, chacun nommé en dessous : inflammable, corrosif, toxique, danger pour la santé.">
+      <figcaption>Un losange, une famille de danger.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Le pictogramme inflammable, à gauche, est relié par une flèche à deux conséquences représentées à droite : une flamme barrée, pour rappeler d'éloigner toute source d'inflammation, et un symbole de ventilation, pour rappeler d'aérer le local.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Un pictogramme change le geste</h2>
+    <p>Un pictogramme n'est pas décoratif : il commande un geste précis. Face à un produit <strong>inflammable</strong>, le réflexe est d'éloigner toute flamme ou source d'inflammation, et de <strong>ventiler</strong> le local où il est utilisé.</p>
+    <figure>
+      <img src="svg/chimique-picto-geste.svg" alt="Le pictogramme inflammable relié à deux conséquences : une flamme barrée et un symbole de ventilation.">
+      <figcaption>Voir le pictogramme, c'est savoir quel geste adopter.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Trois cartes alignées portent chacune une lettre : C, M, R. Sous chaque lettre, une silhouette simple et une phrase expliquent ce que la lettre signifie."
+  >
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Les substances CMR</h2>
+    <p>Un produit peut être classé <strong>CMR</strong> :</p>
+    <ul>
+      <li><strong>C</strong>ancérogène — favorise l'apparition de cancers ;</li>
+      <li><strong>M</strong>utagène — altère le matériel génétique ;</li>
+      <li><strong>R</strong>eprotoxique — nuit à la fertilité ou au développement de l'enfant.</li>
+    </ul>
+    <p>Certains solvants de nettoyage ou certains flux de brasage peuvent être concernés : <strong>c'est la FDS qui le dit, pas la mémoire</strong>.</p>
+    <figure>
+      <img src="svg/chimique-cmr.svg" alt="Trois cartes nommées C, M, R, chacune avec une silhouette simple et sa signification : cancérogène, mutagène, reprotoxique.">
+      <figcaption>Trois lettres, trois dangers distincts.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Un bidon sans étiquette lisible porte un point d'interrogation. Une flèche pointe vers la fiche de données de sécurité posée à côté : c'est elle qui répond, pas le souvenir qu'on pourrait avoir du produit."
+  >
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le réflexe : la FDS le dit, pas la mémoire</h2>
+    <p>« Je crois que ce produit n'est pas dangereux » n'est jamais une réponse suffisante. La classification exacte d'un produit — CMR ou non, quels pictogrammes — se lit sur sa <strong>fiche de données de sécurité</strong>, pas dans le souvenir qu'on en a.</p>
+    <figure>
+      <img src="svg/chimique-reflexe-fds.svg" alt="Un bidon marqué d'un point d'interrogation, relié par une flèche à la fiche de données de sécurité posée à côté, qui seule répond à la question.">
+      <figcaption>La classification se lit, elle ne se devine pas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Une torche de brasage chauffe un tube en local technique. Un panache de fumée s'élève de la pièce chauffée, et une flèche de ventilation traverse le local pour l'évacuer."
+  >
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le brasage en local technique dégage des fumées</h2>
+    <p>Un brasage chauffe le métal et le flux utilisé : cette combinaison dégage des <strong>fumées</strong> qui imposent une <strong>ventilation</strong> du local, surtout dans un espace fermé.</p>
+    <figure>
+      <img src="svg/chimique-brasage-fumees.svg" alt="Une torche de brasage chauffant un tube en local technique, avec un panache de fumée et une flèche de ventilation traversant le local.">
+      <figcaption>Le flux et le métal chauffé dégagent des fumées à évacuer.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="À gauche, un flacon de solvant dégage des vapeurs vers une silhouette dont le nez et la main sont marqués. À droite, une goutte d'huile récupérée porte l'étiquette déchet chimique."
+  >
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Solvant de nettoyage et huile récupérée</h2>
+    <p>Un nettoyage de circuit au solvant expose la <strong>peau</strong> et les <strong>voies respiratoires</strong>. L'huile frigorigène récupérée, elle, est un <strong>déchet chimique</strong> : elle ne se manipule pas à mains nues de façon prolongée.</p>
+    <figure>
+      <img src="svg/chimique-solvant-huile.svg" alt="Un flacon de solvant dégageant des vapeurs vers une silhouette dont le nez et la main sont marqués, et une goutte d'huile récupérée étiquetée déchet chimique.">
+      <figcaption>Deux produits du quotidien, deux précautions différentes.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Une fiche récapitulative porte trois cases cochées : FDS lue avant usage, pictogrammes identifiés, EPI adapté au danger repéré."
+  >
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>La <strong>FDS</strong> décrit les dangers, les précautions, la conduite à tenir.</li>
+      <li>Un <strong>pictogramme</strong> commande un geste précis, il n'est pas décoratif.</li>
+      <li>Un produit <strong>CMR</strong> peut être cancérogène, mutagène ou reprotoxique.</li>
+      <li>Le brasage, les solvants et l'huile récupérée sont des risques chimiques ordinaires du métier.</li>
+      <li>La classification d'un produit se lit sur la FDS, elle ne se devine pas.</li>
+    </ul>
+    <p class="formule">Le réflexe : lire la FDS avant d'ouvrir le bidon, pas après un incident.</p>
+    <figure>
+      <img src="svg/chimique-bilan.svg" alt="Une fiche récapitulative avec trois cases cochées : FDS lue avant usage, pictogrammes identifiés, EPI adapté au danger repéré.">
+      <figcaption>Trois vérifications avant tout produit chimique.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Avant d'utiliser un produit chimique inconnu, quel est le réflexe ? Revoyez la fiche de l'écran un si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Avant d'utiliser un produit chimique inconnu, quel est le réflexe ?</h2>
+    <figure class="vignette">
+      <img src="svg/chimique-fds.svg" alt="Vignette de rappel : la fiche de données de sécurité posée à côté d'un bidon.">
+      <figcaption>Rappel de l'écran 1 — la FDS se lit avant l'usage.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Consulter sa fiche de données de sécurité (FDS)</button>
+      <button type="button" data-answer="a">Sentir le produit pour juger s'il est dangereux</button>
+      <button type="button" data-answer="b">Demander à un collègue s'il l'a déjà utilisé</button>
+      <button type="button" data-answer="c">L'utiliser normalement, la prudence suffit</button>
+    </div>
+    <p class="feedback" hidden data-explication="La FDS est le document de référence, remis par le fournisseur. Sentir un produit, se fier au souvenir d'un collègue, ou simplement « faire attention » ne renseignent pas sur ses dangers réels."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. À quoi sert un pictogramme de danger sur un bidon ? Revoyez les losanges de l'écran deux et le lien avec le geste à l'écran trois.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un pictogramme de danger sur un bidon sert à…</h2>
+    <figure class="vignette">
+      <img src="svg/chimique-picto-geste.svg" alt="Vignette de rappel : le pictogramme inflammable relié à une flamme barrée et un symbole de ventilation.">
+      <figcaption>Rappel de l'écran 3 — un pictogramme commande un geste.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Décorer l'emballage du produit</button>
+      <button type="button" data-answer="bonne">Indiquer un danger précis et donc le geste à adopter (ventiler, éloigner une flamme, se protéger)</button>
+      <button type="button" data-answer="b">Indiquer uniquement le pays de fabrication</button>
+      <button type="button" data-answer="c">Remplacer la lecture de la FDS</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le pictogramme signale un danger précis et le geste qui en découle. Il n'est ni décoratif, ni une information de fabrication, et il ne remplace pas la FDS — il la complète."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Que signifie qu'un produit est classé CMR ? Revoyez les trois cartes de l'écran quatre.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Que signifie qu'un produit est classé CMR ?</h2>
+    <figure class="vignette">
+      <img src="svg/chimique-cmr.svg" alt="Vignette de rappel : les trois cartes C, M, R et leur signification.">
+      <figcaption>Rappel de l'écran 4 — trois lettres, trois dangers.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Qu'il est corrosif, moisi et radioactif</button>
+      <button type="button" data-answer="b">Qu'il est réservé aux usages militaires</button>
+      <button type="button" data-answer="bonne">Qu'il peut être cancérogène, mutagène, ou toxique pour la reproduction</button>
+      <button type="button" data-answer="c">Qu'il est classé comme combustible à risque</button>
+    </div>
+    <p class="feedback" hidden data-explication="CMR signifie cancérogène, mutagène, reprotoxique. Les autres propositions attribuent aux lettres des significations qui n'ont rien à voir avec la classification réelle."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Pourquoi un brasage en local technique doit-il être ventilé ? Revoyez la scène de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Pourquoi un brasage en local technique doit-il être ventilé ?</h2>
+    <figure class="vignette">
+      <img src="svg/chimique-brasage-fumees.svg" alt="Vignette de rappel : la torche de brasage, le panache de fumée et la flèche de ventilation.">
+      <figcaption>Rappel de l'écran 6 — le flux et le métal chauffé dégagent des fumées.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Pour refroidir plus vite la pièce brasée</button>
+      <button type="button" data-answer="b">Pour éviter la buée sur les lunettes du technicien</button>
+      <button type="button" data-answer="c">Pour économiser le gaz de la torche</button>
+      <button type="button" data-answer="bonne">Parce que le flux et l'oxydation du métal chauffé dégagent des fumées à évacuer</button>
+    </div>
+    <p class="feedback" hidden data-explication="La ventilation évacue les fumées produites par le flux et le métal chauffé. Refroidir la pièce, éviter la buée ou économiser le gaz ne sont pas les raisons de cette précaution."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme sur les autres stations du
+     réseau : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>L'habilitation</strong> (sous-ligne Électrique) — la règle d'un côté, le geste protégé de l'autre.</li>
+  </ul>
+  <p>Cette station est en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

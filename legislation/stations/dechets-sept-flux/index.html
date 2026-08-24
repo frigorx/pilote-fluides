@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Trier : les 7 flux — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : trier à la source, les familles de bennes d'un chantier, ce qu'un frigoriste produit vraiment, pourquoi trier, la benne juste, et le cas des déchets dangereux.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/dechets-sept-flux/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Déchets.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     ÉCART ASSUMÉ AVEC LE FOND : la composition exacte des « 7 flux »
+     (liste précise des matières couvertes) et le texte qui les instaure
+     ne sont pas sourcés — voir FOND.md, § « à sourcer ». La station
+     enseigne le mécanisme du tri à la source, pas une liste officielle.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Déchets · niveau BTS</p>
+  <h1>Trier : les 7 flux — la benne juste</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez qu'un chantier de bâtiment doit trier ses déchets <strong>à la source, par matière</strong>, vous savez nommer les familles de déchets <strong>qu'un frigoriste produit vraiment</strong>, et vous savez choisir <strong>la bonne benne</strong> sur un chantier.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez les deux scènes. À gauche, une benne unique où toutes les matières sont mélangées, marquée d'une croix rouge : à éviter. À droite, plusieurs bennes séparées par matière — cuivre, bois, carton, plastique — marquées d'une coche verte : tri correct. Trier à la source veut dire séparer les déchets dès leur production, matière par matière, plutôt que tout mélanger dans une seule benne.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Trier à la source : le principe</h2>
+    <p>Sur un chantier, chaque matière suit sa propre filière : le cuivre n'est pas traité comme le bois, le verre n'est pas traité comme le plâtre. <strong>Trier à la source</strong> veut dire séparer les déchets dès leur production, matière par matière, plutôt que de tout mélanger dans une seule benne.</p>
+    <figure>
+      <img src="svg/benne-unique-vs-triees.svg" alt="À gauche, une benne unique mélangée marquée d'une croix rouge. À droite, plusieurs bennes séparées par matière, marquées d'une coche verte.">
+      <figcaption>Une seule benne mélangée, contre plusieurs bennes triées par matière.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Regardez la rangée de bennes : métaux, bois, plastiques, verre, papier-carton, plâtre, et une fraction minérale ou inerte — sept familles, chacune sa benne. À droite, séparée par un trait pointillé, la benne tout-venant : elle ne reçoit que ce qui ne peut vraiment être trié dans aucune de ces familles.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Une famille de bennes, pas une seule</h2>
+    <p>Un chantier de bâtiment organise ses bennes par grande famille de matière : métaux, bois, plastiques, verre, papier-carton, plâtre, et une fraction minérale ou inerte. Une benne « tout venant » reste réservée à ce qui ne peut vraiment être trié dans aucune de ces familles.</p>
+    <figure>
+      <img src="svg/rangee-bennes-matiere.svg" alt="Une rangée de sept bennes étiquetées par famille de matière : métaux, bois, plastiques, verre, papier-carton, plâtre, minérale ou inerte. À part, séparée par un trait pointillé, la benne tout-venant.">
+      <figcaption>Sept familles, chacune sa benne — plus une benne à part pour ce qui ne se trie pas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Voici l'établi d'un frigoriste : cinq déchets qu'il produit vraiment — cuivre, cartons et palettes, chutes de bois, chutes d'isolant, gaines — chacun relié par une flèche courte à sa benne. Le cuivre et les gaines métalliques rejoignent les métaux, les cartons le papier-carton, le bois le bois, et l'isolant part le plus souvent en tout-venant, car il n'est souvent pas recyclable.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Ce qu'un frigoriste trie vraiment</h2>
+    <p>Sur son chantier, un frigoriste produit surtout : du <strong>cuivre</strong> (tuyauterie), des <strong>cartons et palettes</strong> (emballages), des <strong>chutes de bois</strong> (supports, palettes), des <strong>chutes d'isolant</strong> (souvent non recyclables, direction tout-venant), et parfois des <strong>gaines</strong> métalliques ou plastiques. Il ne produit presque jamais de plâtre ou de verre — mais il travaille souvent sur un chantier commun avec d'autres corps de métier, et partage leurs bennes.</p>
+    <figure>
+      <img src="svg/etabli-frigoriste-tri.svg" alt="Un établi de frigoriste avec cinq déchets identifiés — cuivre, cartons, bois, isolant, gaines — chacun relié par une flèche courte vers sa benne.">
+      <figcaption>Cinq déchets, chacun sa flèche vers la bonne benne.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Suivez les deux chemins depuis le même tas de cuivre. En trait plein vert, le chemin trié mène vers le recyclage : la matière garde sa valeur récupérable. En trait tireté rouge, le chemin mélangé mène vers le tout-venant : une filière moins favorable, donc un coût.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Pourquoi trier : deux raisons, pas une seule</h2>
+    <p>Trier n'est pas qu'une contrainte administrative. Une matière triée peut être <strong>recyclée</strong> — le cuivre trié vaut plus que le cuivre mélangé à d'autres déchets. Une matière mélangée part le plus souvent en benne tout-venant, donc en filière moins favorable. Trier, c'est aussi une question de coût et de valeur récupérable.</p>
+    <figure>
+      <img src="svg/cuivre-trie-vs-melange.svg" alt="Deux chemins depuis un même tas de cuivre : trié, en trait plein vert vers le recyclage ; mélangé, en trait tireté rouge vers le tout-venant.">
+      <figcaption>Même matière, deux destins : la valeur récupérée, ou le coût du tout-venant.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Une main tient un déchet, un point d'interrogation au-dessus : quelle est sa matière ? La flèche verte montre le réflexe : chercher, parmi les bennes du chantier, celle qui correspond — ici la benne métaux, entourée en vert et marquée d'une coche.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">La benne juste : un réflexe avant de jeter</h2>
+    <p>Avant de jeter un déchet, la question à se poser est toujours la même : « quelle est sa matière, et quelle benne lui correspond ? ». Se tromper de benne ne rend pas le tri caduc pour les autres déchets, mais dégrade la filière de la benne où l'erreur a été commise.</p>
+    <figure>
+      <img src="svg/main-benne-juste.svg" alt="Une main tenant un déchet face à plusieurs bennes, avec un point d'interrogation, puis une flèche verte vers la bonne benne, entourée et cochée.">
+      <figcaption>Le réflexe : identifier la matière, puis chercher sa benne.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="À gauche, les bennes de tri classiques du chantier. À droite, séparés par un trait pointillé, un fluide récupéré non réutilisable et de l'huile usagée. Une flèche rouge les mène vers un contenant à part, marqué d'un pictogramme de danger : jamais une benne de tri classique, jamais le tout-venant.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le cas particulier : les déchets dangereux ne se mélangent jamais</h2>
+    <p>Certains déchets d'un chantier de froid ne rentrent dans aucune des familles de tri « bâtiment » : les fluides récupérés non réutilisables, les huiles usagées. Ils suivent une filière à part, tracée (voir la station Déchets dangereux) — jamais la benne tout-venant, jamais une benne de tri classique.</p>
+    <figure>
+      <img src="svg/dechets-dangereux-a-part.svg" alt="Une bouteille de fluide et un bidon d'huile, écartés des bennes de tri du bâtiment par une croix rouge, reliés par une flèche vers un contenant à part marqué d'un pictogramme de danger.">
+      <figcaption>Jamais dans une benne de tri classique — jamais en tout-venant.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Trois cartes, trois idées reçues du chantier, chacune suivie de sa réponse. Chutes de cuivre en petite quantité, isolant qui ne se recycle pas, fluide récupéré hors d'usage : dans les trois cas, c'est la matière qui décide de la benne, jamais la quantité ni la commodité.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : trois situations de chantier</h2>
+    <ol>
+      <li><strong>« Je n'ai que quelques chutes de cuivre, autant les mettre dans la benne tout-venant. »</strong> → Non : même en petite quantité, le cuivre trié garde sa valeur et sa filière de recyclage.</li>
+      <li><strong>« L'isolant ne se recycle pas, je le mets où je veux. »</strong> → Non : il va dans la benne qui correspond à sa nature, même si elle mène au tout-venant — pas dans une benne de matière triée.</li>
+      <li><strong>« Mon fluide récupéré n'est plus bon, je le mets avec les métaux. »</strong> → Non : un déchet dangereux ne rejoint jamais une benne de tri classique.</li>
+    </ol>
+    <figure>
+      <img src="svg/trois-situations-tri.svg" alt="Trois cartes en cascade, chacune une idée reçue de chantier suivie de sa réponse « Non » et de l'explication.">
+      <figcaption>Trois idées reçues, trois fois la même réponse : la matière décide.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan reprend la formule du réflexe, en haut : identifier la matière, puis chercher sa benne. En dessous, l'établi résume les flèches vers les bonnes bennes, et à part, séparée en rouge, la filière tracée des déchets dangereux.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Trier à la source sépare les déchets par matière, dès leur production.</li>
+      <li>Un chantier organise ses bennes par grande famille de matière, plus une benne tout-venant pour ce qui ne se trie pas.</li>
+      <li>Un frigoriste produit surtout du cuivre, des emballages, du bois et des chutes d'isolant.</li>
+      <li>Trier conserve la valeur d'une matière recyclable.</li>
+      <li>Les déchets dangereux ne rejoignent jamais une benne de tri classique.</li>
+    </ul>
+    <p class="formule">Le réflexe : avant de jeter, identifier la matière, puis chercher sa benne.</p>
+    <figure>
+      <img src="svg/bilan-sept-flux.svg" alt="La formule du réflexe, identifier la matière puis chercher sa benne, au-dessus d'un établi résumant les flèches vers les bonnes bennes, avec à part la filière des déchets dangereux.">
+      <figcaption>Le réflexe résumé, de la matière à la bonne benne.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Sur un chantier de froid, où vont les chutes de cuivre ? Reprenez l'établi de l'écran trois si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Sur un chantier de froid, où vont les chutes de cuivre ?</h2>
+    <figure class="vignette">
+      <img src="svg/etabli-frigoriste-tri.svg" alt="Vignette de rappel : l'établi du frigoriste et ses flèches vers les bonnes bennes.">
+      <figcaption>Rappel de l'écran 3 — l'établi du frigoriste.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Dans la benne tout-venant, comme le reste</button>
+      <button type="button" data-answer="bonne">Dans la benne métaux, triée à part</button>
+      <button type="button" data-answer="c">Elles ne se trient pas, trop peu de volume</button>
+      <button type="button" data-answer="d">Dans la benne des fluides dangereux</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le cuivre garde sa valeur récupérable seulement s'il est trié à part, même en petite quantité."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Pourquoi trier les déchets d'un chantier plutôt que tout mélanger ? Souvenez-vous des deux chemins du cuivre, à l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Pourquoi trier les déchets d'un chantier plutôt que tout mélanger ?</h2>
+    <figure class="vignette">
+      <img src="svg/cuivre-trie-vs-melange.svg" alt="Vignette de rappel : les deux chemins depuis un même tas de cuivre, trié ou mélangé.">
+      <figcaption>Rappel de l'écran 4 — deux chemins, deux destins.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">C'est seulement une obligation administrative sans autre effet</button>
+      <button type="button" data-answer="bonne">Une matière triée peut être recyclée, une matière mélangée part plus souvent en filière moins favorable</button>
+      <button type="button" data-answer="c">Cela ne change rien à la filière finale</button>
+      <button type="button" data-answer="d">Cela accélère uniquement le nettoyage du chantier</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le tri conditionne la filière et la valeur récupérable de la matière, pas seulement la propreté du chantier."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un fluide récupéré non réutilisable : dans quelle benne du chantier va-t-il ? Regardez le schéma de l'écran six si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Un fluide récupéré non réutilisable : dans quelle benne du chantier va-t-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/dechets-dangereux-a-part.svg" alt="Vignette de rappel : le fluide et l'huile, écartés des bennes de tri, vers un contenant à part marqué d'un pictogramme de danger.">
+      <figcaption>Rappel de l'écran 6 — jamais avec les bennes de tri.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Dans la benne métaux, puisque la bouteille est métallique</button>
+      <button type="button" data-answer="b">Dans la benne tout-venant</button>
+      <button type="button" data-answer="bonne">Dans aucune benne de tri classique : il suit une filière à part, tracée</button>
+      <button type="button" data-answer="d">Dans la benne bois, faute de benne dédiée</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un déchet dangereux ne rejoint jamais une benne de tri « bâtiment », classique ou tout-venant."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un frigoriste hésite sur la benne d'un déchet inconnu. Que doit-il faire ? Souvenez-vous du réflexe de l'écran cinq.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un frigoriste hésite sur la benne d'un déchet inconnu. Que doit-il faire ?</h2>
+    <figure class="vignette">
+      <img src="svg/main-benne-juste.svg" alt="Vignette de rappel : une main tenant un déchet, un point d'interrogation, une flèche vers la bonne benne.">
+      <figcaption>Rappel de l'écran 5 — le réflexe de la benne juste.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Choisir la benne la plus proche</button>
+      <button type="button" data-answer="bonne">Identifier d'abord la matière du déchet, puis chercher la benne qui lui correspond</button>
+      <button type="button" data-answer="c">Le laisser de côté, ce n'est pas son rôle</button>
+      <button type="button" data-answer="d">Le mettre systématiquement en benne tout-venant par précaution</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le réflexe part toujours de la matière, pas de la benne la plus pratique."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. Les deux
+     correspondances sont annoncées sans lien — on ne promet pas une porte
+     fermée. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>Traçabilité</strong> (sous-ligne Fluidique &amp; thermique, en préparation) — comment un déchet dangereux, une fois écarté, reste suivi jusqu'à sa filière.</li>
+    <li><strong>Impact environnemental</strong> (en préparation) — ce que le tri change, au-delà du chantier.</li>
+  </ul>
+  <p>Ces deux stations sont en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

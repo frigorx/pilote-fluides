@@ -89,6 +89,7 @@
   .ouvert .o-nom { display:block; font-family:var(--titre); font-weight:bold; font-size:19px;
                    line-height:1.2; }
   .ouvert .o-det { display:block; font-size:13.5px; opacity:.92; margin-top:4px; }
+  .ouvert .o-liste { margin:0 0 14px; font-size:15.5px; max-width:64ch; }
   .ouvert .o-note { margin:12px 0 0; font-size:14px; color:var(--mut); max-width:64ch; }
 
   /* ---- Le plan du réseau Législation ---- */
@@ -185,24 +186,25 @@
        bandeau, hors du plan : il dit l'état réel et donne l'accès direct.
        À tenir à jour quand une station ouvre — c'est deux nombres et un lien. -->
   <div class="ouvert">
-    <p class="o-etat"><b>2 stations ouvertes</b> sur 57</p>
+    <p class="o-etat"><b>29 stations ouvertes</b> sur 57</p>
+    <p class="o-liste"><b>Cinq sous-lignes sont complètes</b> — Thermique, La DESP,
+    Risques professionnels, Déchets, Impact environnemental — et la sous-ligne
+    Fluidique &amp; thermique compte deux stations sur quatre.</p>
     <a class="o-lien" href="stations/fgaz-3/">
-      <span class="o-nom">📜 F-Gaz 3 — le règlement (UE) 2024/573</span>
+      <span class="o-nom">📜 Commencer par F-Gaz 3 — le règlement (UE) 2024/573</span>
       <span class="o-det">12 écrans, 4 questions, narration audio — environ 10 minutes</span>
     </a>
-    <a class="o-lien" href="stations/aptitude-capacite/">
-      <span class="o-nom">📜 Aptitude &amp; capacité — qui a le droit de toucher</span>
-      <span class="o-det">12 écrans, 4 questions — environ 10 minutes</span>
-    </a>
-    <p class="o-note">Les 55 autres stations sont dessinées sur le plan ci-dessous,
-    mais leur cours n'est pas encore écrit : leur pastille reste en pointillé et
-    ne s'ouvre pas.</p>
+    <p class="o-note">Sur le plan ci-dessous, <strong>une station ouverte porte son nom
+    souligné</strong> et s'ouvre d'un clic. Les 28 autres sont encore en préparation :
+    leur pastille reste en pointillé. Les cours ouverts n'ont pas encore été relus par
+    un professionnel — certaines valeurs réglementaires y sont volontairement absentes
+    plutôt qu'approximatives.</p>
   </div>
 
   <section class="bloc plan" id="carte" aria-label="Plan du réseau Législation">
     <div class="titre-bloc">
       <h2>🚇 Le plan du réseau</h2>
-      <span>2 lignes mères · 11 sous-lignes · 57 stations, dont 1 ouverte</span>
+      <span>2 lignes mères · 11 sous-lignes · 57 stations, dont 29 ouvertes</span>
     </div>
     <div class="legende-plan">
       <span class="puce-l"><span class="tete-l"></span> tête de sous-ligne</span>
@@ -275,12 +277,12 @@
       filles: [
         { id: "regl-thermique", nom: "Thermique", sous: "RE2020 & RT existant", couleur: "#92400e",
           stations: [
-            { nom: "Pourquoi une RT ?", sous: "de 1974 à la RE2020" },
-            { nom: "La RE2020",         sous: "Bbio · Cep · IC", corr: true },
-            { nom: "Le confort d'été",  sous: "DH, degrés-heures" },
-            { nom: "RT de l'existant",  sous: "rénover par élément" },
-            { nom: "Le DPE",            sous: "étiquettes & audit" },
-            { nom: "Les CEE",           sous: "financer les travaux" }
+            { nom: "Pourquoi une RT ?", sous: "de 1974 à la RE2020", href: "stations/thermique-pourquoi-une-rt/" },
+            { nom: "La RE2020",         sous: "Bbio · Cep · IC", href: "stations/thermique-re2020/", corr: true },
+            { nom: "Le confort d'été",  sous: "DH, degrés-heures", href: "stations/thermique-confort-ete/" },
+            { nom: "RT de l'existant",  sous: "rénover par élément", href: "stations/thermique-existant/" },
+            { nom: "Le DPE",            sous: "étiquettes & audit", href: "stations/thermique-dpe/" },
+            { nom: "Les CEE",           sous: "financer les travaux", href: "stations/thermique-cee/" }
           ] },
         { id: "regl-acoustique", nom: "Acoustique", sous: "bruit & voisinage", couleur: "#6d28d9",
           stations: [
@@ -317,11 +319,11 @@
           ] },
         { id: "regl-desp", nom: "La DESP", sous: "équipements sous pression", couleur: "#0c4a6e",
           stations: [
-            { nom: "La directive",        sous: "2014/68/UE, PS > 0,5 bar" },
-            { nom: "Catégories I à IV",   sous: "PS × V, groupe du fluide", corr: true },
-            { nom: "Marquage & papiers",  sous: "CE, déclaration, notice" },
-            { nom: "En service",          sous: "requalification, CTP" },
-            { nom: "Soupapes & sécurités", sous: "accessoires de protection" }
+            { nom: "La directive",        sous: "2014/68/UE, PS > 0,5 bar", href: "stations/desp-la-directive/" },
+            { nom: "Catégories I à IV",   sous: "PS × V, groupe du fluide", href: "stations/desp-categories/", corr: true },
+            { nom: "Marquage & papiers",  sous: "CE, déclaration, notice", href: "stations/desp-marquage-papiers/" },
+            { nom: "En service",          sous: "requalification, CTP", href: "stations/desp-en-service/" },
+            { nom: "Soupapes & sécurités", sous: "accessoires de protection", href: "stations/desp-soupapes-securites/" }
           ] },
         { id: "regl-certifs", nom: "Certifications & normes", sous: "RGE, QualiPAC, CE", couleur: "#3730a3",
           stations: [
@@ -345,28 +347,28 @@
       filles: [
         { id: "secu-risques", nom: "Risques professionnels", sous: "DUERP, EPI, gestes", couleur: "#c2410c",
           stations: [
-            { nom: "Le DUERP",        sous: "évaluer les risques" },
-            { nom: "Les 9 principes", sous: "prévenir dans l'ordre" },
-            { nom: "Les EPI",         sous: "choisir & vérifier", corr: true },
-            { nom: "En hauteur",      sous: "échafaudages, R408", corr: true },
-            { nom: "Risque chimique", sous: "FDS, CMR, fluides" },
-            { nom: "Zones ATEX",      sous: "A2L, A3 : zonage", corr: true }
+            { nom: "Le DUERP",        sous: "évaluer les risques", href: "stations/risques-duerp/" },
+            { nom: "Les 9 principes", sous: "prévenir dans l'ordre", href: "stations/risques-neuf-principes/" },
+            { nom: "Les EPI",         sous: "choisir & vérifier", href: "stations/risques-epi/", corr: true },
+            { nom: "En hauteur",      sous: "échafaudages, R408", href: "stations/risques-hauteur/", corr: true },
+            { nom: "Risque chimique", sous: "FDS, CMR, fluides", href: "stations/risques-chimique/" },
+            { nom: "Zones ATEX",      sous: "A2L, A3 : zonage", href: "stations/risques-atex/", corr: true }
           ] },
         { id: "secu-dechets", nom: "Déchets", sous: "tri, BSD, filières", couleur: "#57534e",
           stations: [
-            { nom: "Responsabilités",    sous: "producteur, détenteur" },
-            { nom: "Trier : 7 flux",     sous: "la benne juste" },
-            { nom: "Déchets dangereux",  sous: "BSD & Trackdéchets", corr: true },
-            { nom: "La REP bâtiment",    sous: "reprise, éco-organismes" },
-            { nom: "Valoriser",          sous: "réemploi, recyclage" }
+            { nom: "Responsabilités",    sous: "producteur, détenteur", href: "stations/dechets-responsabilites/" },
+            { nom: "Trier : 7 flux",     sous: "la benne juste", href: "stations/dechets-sept-flux/" },
+            { nom: "Déchets dangereux",  sous: "BSD & Trackdéchets", href: "stations/dechets-dangereux/", corr: true },
+            { nom: "La REP bâtiment",    sous: "reprise, éco-organismes", href: "stations/dechets-rep-batiment/" },
+            { nom: "Valoriser",          sous: "réemploi, recyclage", href: "stations/dechets-valoriser/" }
           ] },
         { id: "secu-impact", nom: "Impact environnemental", sous: "PRP, cycle de vie", couleur: "#047857",
           stations: [
-            { nom: "PRP & ODP",         sous: "l'impact d'un fluide", corr: true },
-            { nom: "Le TEWI",           sous: "direct + indirect" },
-            { nom: "ACV & carbone",     sous: "l'IC de la RE2020", corr: true },
-            { nom: "Écoconception",     sous: "ErP, étiquettes" },
-            { nom: "Montréal → Kigali", sous: "l'accord mondial" }
+            { nom: "PRP & ODP",         sous: "l'impact d'un fluide", href: "stations/impact-prp-odp/", corr: true },
+            { nom: "Le TEWI",           sous: "direct + indirect", href: "stations/impact-tewi/" },
+            { nom: "ACV & carbone",     sous: "l'IC de la RE2020", href: "stations/impact-acv-carbone/", corr: true },
+            { nom: "Écoconception",     sous: "ErP, étiquettes", href: "stations/impact-ecoconception/" },
+            { nom: "Montréal → Kigali", sous: "l'accord mondial", href: "stations/impact-montreal-kigali/" }
           ] }
       ] }
   ];

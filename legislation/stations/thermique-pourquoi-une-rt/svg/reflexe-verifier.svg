@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-rv" aria-describedby="d-rv" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rv">Le réflexe professionnel : vérifier le texte en vigueur, pas la mémoire</title>
+  <desc id="d-rv">Deux façons de faire, comparées. À gauche, une valeur chiffrée ancienne, barrée
+    d'une croix rouge, sous la mention « une valeur apprise il y a longtemps peut avoir changé ».
+    À droite, un document surmonté d'une loupe et d'une coche verte, sous la mention « le texte
+    en vigueur, vérifié au moment du chantier ». Une flèche va de la valeur barrée vers le
+    document.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .neg { font-size:15px; fill:#c0392b; font-weight:bold; }
+    .pos { font-size:15px; fill:#1e7e54; font-weight:bold; }
+    .chif{ font-family:Consolas,monospace; font-size:30px; fill:#5a6b7d; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Le mécanisme s'apprend, le chiffre se vérifie</text>
+
+  <!-- valeur ancienne barrée -->
+  <rect x="60" y="70" width="300" height="200" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="2.5"/>
+  <text class="chif" x="210" y="170" text-anchor="middle">≈ ?</text>
+  <line x1="120" y1="150" x2="300" y2="200" stroke="#c0392b" stroke-width="3"/>
+  <line x1="300" y1="150" x2="120" y2="200" stroke="#c0392b" stroke-width="3"/>
+  <text class="neg" x="210" y="240" text-anchor="middle">une valeur apprise il y a</text>
+  <text class="neg" x="210" y="258" text-anchor="middle">longtemps peut avoir changé</text>
+
+  <line x1="375" y1="170" x2="525" y2="170" stroke="#92400e" stroke-width="4"/>
+  <polygon points="525,170 507,160 507,180" fill="#92400e"/>
+
+  <!-- document vérifié -->
+  <rect x="540" y="70" width="300" height="200" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2.5"/>
+  <rect x="650" y="100" width="80" height="100" fill="#fffdf8" stroke="#1e7e54" stroke-width="2.5"/>
+  <line x1="662" y1="118" x2="718" y2="118" stroke="#1e7e54" stroke-width="2"/>
+  <line x1="662" y1="134" x2="718" y2="134" stroke="#1e7e54" stroke-width="2"/>
+  <line x1="662" y1="150" x2="718" y2="150" stroke="#1e7e54" stroke-width="2"/>
+  <circle cx="740" cy="165" r="16" fill="none" stroke="#1e7e54" stroke-width="3"/>
+  <line x1="751" y1="176" x2="765" y2="190" stroke="#1e7e54" stroke-width="3"/>
+  <text class="pos" x="690" y="240" text-anchor="middle">le texte en vigueur,</text>
+  <text class="pos" x="690" y="258" text-anchor="middle">vérifié au moment du chantier</text>
+</svg>

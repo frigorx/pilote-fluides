@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-fnr" aria-describedby="d-fnr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-fnr">Le fluide récupéré non réutilisable devient un déchet dangereux</title>
+  <desc id="d-fnr">À gauche, une bouteille de récupération de fluide frigorigène, portant une étiquette
+    « non réutilisable ». Une flèche part de cette bouteille vers la droite, jusqu'à un pictogramme de
+    danger accompagné du mot « déchet dangereux ». Une bande en bas rappelle que ce fluide suit la
+    filière des déchets dangereux, pas une benne de tri classique.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .etq { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#c0392b; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .danger { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+  </style>
+
+  <!-- Bouteille de récupération -->
+  <rect x="80" y="60" width="120" height="24" rx="8" fill="#5a6b7d"/>
+  <rect x="60" y="84" width="160" height="150" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="60" y="118" width="160" height="26" fill="#1b3a63"/>
+  <text class="ttl" x="140" y="136" text-anchor="middle">RÉCUPÉRATION</text>
+
+  <!-- Étiquette « non réutilisable » -->
+  <rect x="48" y="196" width="184" height="46" rx="8" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <text class="etq" x="140" y="225" text-anchor="middle">NON RÉUTILISABLE</text>
+
+  <text class="lbl" x="140" y="270" text-anchor="middle">Contaminé, mélangé,</text>
+  <text class="lbl" x="140" y="292" text-anchor="middle">non identifiable</text>
+
+  <!-- Flèche vers le pictogramme -->
+  <line x1="248" y1="150" x2="560" y2="150" stroke="#57534e" stroke-width="6"/>
+  <polygon points="560,150 534,134 534,166" fill="#57534e"/>
+
+  <!-- Pictogramme de danger -->
+  <polygon points="700,70 760,180 640,180" fill="#fbe7e4" stroke="#c0392b" stroke-width="4"/>
+  <text x="700" y="160" text-anchor="middle" font-weight="bold" font-size="40px" fill="#c0392b">!</text>
+  <text class="danger" x="700" y="216" text-anchor="middle">DÉCHET DANGEREUX</text>
+
+  <!-- Bande de conclusion -->
+  <rect x="580" y="242" width="300" height="60" rx="10" fill="#efece9" stroke="#57534e" stroke-width="2"/>
+  <text class="band" x="730" y="266" text-anchor="middle" font-size="15px">Filière des déchets</text>
+  <text class="band" x="730" y="288" text-anchor="middle" font-size="15px">dangereux — pas le tri classique</text>
+</svg>

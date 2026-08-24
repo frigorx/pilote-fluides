@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>En hauteur — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : l'accès avant l'équipement, la protection collective avant l'individuelle, l'échafaudage vérifié, et le réflexe avant de monter sur une toiture ou une terrasse technique.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/risques-hauteur/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Risques professionnels.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Risques professionnels · niveau BTS</p>
+  <h1>En hauteur — l'accès et la protection avant l'équipement</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez pourquoi le travail en hauteur est une composante ordinaire du métier frigoriste, dans quel ordre penser les protections — l'accès, le collectif, puis l'individuel —, ce qu'implique un échafaudage vérifié, et le réflexe à avoir avant de monter.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez le bâtiment. Trois zones sont marquées : la toiture, la terrasse technique, et un groupe de condensation posé en hauteur. Ce sont des lieux d'intervention ordinaires pour un frigoriste, pas des exceptions.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Un risque du quotidien, pas de l'exceptionnel</h2>
+    <p>Un frigoriste passe une part réelle de son temps en hauteur : accès aux groupes de condensation, toitures, terrasses techniques. Ce n'est pas un risque occasionnel, c'est une <strong>composante ordinaire</strong> du métier.</p>
+    <figure>
+      <img src="svg/hauteur-constat.svg" alt="Un bâtiment avec trois zones marquées : une toiture, une terrasse technique, et un groupe de condensation posé en hauteur.">
+      <figcaption>Trois lieux d'intervention courants, pas des exceptions.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Trois types d'accès sont représentés : un escalier fixe, une trappe de toiture, une échelle à crinoline. Une loupe au-dessus rappelle que l'état de cet accès se vérifie avant de l'emprunter.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">L'accès, avant l'équipement</h2>
+    <p>Avant de penser à l'équipement de protection, il faut penser à la <strong>voie d'accès elle-même</strong> : un escalier fixe, une trappe, une échelle à crinoline. Un accès dégradé est déjà un risque, avant même d'arriver en hauteur.</p>
+    <figure>
+      <img src="svg/hauteur-acces.svg" alt="Trois types d'accès représentés côte à côte : un escalier fixe, une trappe de toiture, une échelle à crinoline, surmontés d'une loupe rappelant la vérification de leur état.">
+      <figcaption>L'état de l'accès se vérifie avant de l'emprunter.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Le bord d'une toiture est équipé d'un garde-corps, mis en évidence en orange : c'est la protection qui profite à toute personne qui accède à ce toit, avant même de penser à un harnais individuel.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Protection collective d'abord</h2>
+    <p>La protection collective profite à <strong>tout le monde en même temps</strong> : garde-corps, garde-corps périphérique de toiture, filet. Elle se met en place avant de penser à l'équipement individuel.</p>
+    <figure>
+      <img src="svg/hauteur-collectif.svg" alt="Le bord d'une toiture équipé d'un garde-corps mis en évidence en orange, présenté comme la protection à installer avant tout équipement individuel.">
+      <figcaption>Le garde-corps profite à toute personne présente, pas à une seule.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Un harnais relié par une longe à un point d'ancrage est représenté. La légende rappelle que cet équipement n'intervient qu'en dernier, quand aucun garde-corps ne peut être installé.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">L'équipement individuel, seulement si le collectif ne suffit pas</h2>
+    <p><strong>Harnais, longe, point d'ancrage vérifié</strong> : cet équipement individuel n'intervient que lorsque la protection collective est impossible ou insuffisante.</p>
+    <figure>
+      <img src="svg/hauteur-individuel.svg" alt="Un harnais relié par une longe à un point d'ancrage vérifié, avec la mention qu'il n'intervient qu'en dernier recours, quand un garde-corps ne peut pas être installé.">
+      <figcaption>Le dernier recours, pas le premier réflexe.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Un échafaudage est représenté avec une étiquette de vérification accrochée à sa structure : c'est la trace qu'une personne compétente l'a contrôlé avant l'usage.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">L'échafaudage : monté, vérifié, jamais modifié sans revérification</h2>
+    <p>Un échafaudage se monte <strong>selon la notice du fabricant</strong>. Il se fait <strong>vérifier par une personne compétente</strong> avant l'usage. Une fois modifié, il doit être revérifié avant de remonter dessus.</p>
+    <figure>
+      <img src="svg/hauteur-echafaudage.svg" alt="Un échafaudage avec une étiquette de vérification accrochée à sa structure, trace du contrôle par une personne compétente avant l'usage.">
+      <figcaption>L'étiquette de contrôle est la preuve, pas un détail.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Une silhouette de technicien se tient au pied de l'accès, une fiche à la main. Deux cases sont représentées : l'accès est vérifié, le garde-corps est en place. Le matériel reste encore au sol.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le réflexe : vérifier avant de sortir le matériel</h2>
+    <p>Avant de sortir le matériel d'intervention, le réflexe est de <strong>vérifier l'état de l'accès et la présence des protections collectives</strong> — pas après être monté.</p>
+    <figure>
+      <img src="svg/hauteur-reflexe-avant.svg" alt="Un technicien au pied de l'accès, une fiche à la main avec deux cases : accès vérifié, garde-corps en place. Le matériel reste encore au sol.">
+      <figcaption>Vérifier avant de monter, pas une fois en haut.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="La scène montre une terrasse technique avec un groupe de condensation, atteinte par une trappe et un escalier à crinoline. Un garde-corps entoure la terrasse : c'est ce que le technicien vérifie avant de sortir son matériel.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Exemple : un groupe de condensation en terrasse technique</h2>
+    <p>Avant une intervention sur un groupe de condensation posé en terrasse technique, accessible par une trappe et un escalier à crinoline, le technicien <strong>vérifie l'accès et le garde-corps</strong> de la terrasse avant de sortir son matériel.</p>
+    <figure>
+      <img src="svg/hauteur-exemple-terrasse.svg" alt="Une terrasse technique avec un groupe de condensation, atteinte par une trappe et un escalier à crinoline, entourée d'un garde-corps.">
+      <figcaption>L'exemple complet : accès, garde-corps, puis matériel.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Une fiche récapitulative avec des cases cochées reprend les points de la station : composante ordinaire du métier, accès vérifié avant l'équipement, collectif avant individuel, échafaudage contrôlé.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Le travail en hauteur est une <strong>composante ordinaire</strong> du métier, pas une exception.</li>
+      <li>L'<strong>accès</strong> se vérifie avant l'équipement.</li>
+      <li>La <strong>protection collective</strong> vient avant la protection individuelle.</li>
+      <li>L'échafaudage se vérifie <strong>avant usage et après toute modification</strong>.</li>
+      <li>Le réflexe : vérifier l'accès et les protections collectives avant de sortir le matériel.</li>
+    </ul>
+    <p class="formule">Le réflexe : avant de monter, l'accès et le garde-corps sont-ils vérifiés ?</p>
+    <figure>
+      <img src="svg/hauteur-bilan.svg" alt="Une fiche récapitulative avec plusieurs cases cochées, reprenant les points clés de la station sur le travail en hauteur.">
+      <figcaption>Vérifier avant de monter, chaque fois.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Le travail en hauteur dans le métier frigoriste est de quelle nature ? Revoyez le bâtiment et ses trois zones si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Le travail en hauteur dans le métier frigoriste est…</h2>
+    <figure class="vignette">
+      <img src="svg/hauteur-constat.svg" alt="Vignette de rappel : le bâtiment avec ses trois zones d'intervention en hauteur.">
+      <figcaption>Rappel de l'écran 1 — trois lieux d'intervention courants.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un cas rare, réservé aux couvreurs</button>
+      <button type="button" data-answer="b">Une tâche annuelle, pour l'entretien des toitures uniquement</button>
+      <button type="button" data-answer="bonne">Une composante ordinaire du métier — toitures, terrasses techniques, groupes en hauteur</button>
+      <button type="button" data-answer="c">Une tâche réservée aux techniciens les plus expérimentés</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le métier impose des interventions régulières en hauteur, pas seulement pour les couvreurs, pas seulement une fois par an, et pas réservées aux plus expérimentés."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Sur un toit, quelle protection s'installe en premier ? Revoyez le garde-corps de l'écran trois.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Sur un toit, quelle protection s'installe en premier ?</h2>
+    <figure class="vignette">
+      <img src="svg/hauteur-collectif.svg" alt="Vignette de rappel : le garde-corps de toiture mis en évidence en orange.">
+      <figcaption>Rappel de l'écran 3 — la protection collective avant l'individuelle.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Un garde-corps ou une protection collective équivalente, avant tout équipement individuel</button>
+      <button type="button" data-answer="a">Un harnais individuel pour chaque intervenant</button>
+      <button type="button" data-answer="b">Un système d'alarme sonore en cas de chute</button>
+      <button type="button" data-answer="c">Une consigne orale rappelée avant l'accès</button>
+    </div>
+    <p class="feedback" hidden data-explication="La protection collective profite à tout le monde et s'installe avant l'équipement individuel. Un harnais, une alarme ou une simple consigne orale ne remplacent pas un garde-corps."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un échafaudage a été légèrement modifié depuis sa dernière vérification. Que doit faire le technicien ? Revoyez l'étiquette de vérification de l'écran cinq.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Un échafaudage a été légèrement modifié depuis sa dernière vérification. Que doit faire le technicien ?</h2>
+    <figure class="vignette">
+      <img src="svg/hauteur-echafaudage.svg" alt="Vignette de rappel : l'échafaudage avec son étiquette de vérification.">
+      <figcaption>Rappel de l'écran 5 — vérifié avant usage, jamais après modification sans contrôle.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">L'utiliser normalement, la modification est mineure</button>
+      <button type="button" data-answer="b">Le vérifier lui-même rapidement avant de monter</button>
+      <button type="button" data-answer="c">Attendre la prochaine vérification programmée</button>
+      <button type="button" data-answer="bonne">Le faire revérifier par une personne compétente avant toute utilisation</button>
+    </div>
+    <p class="feedback" hidden data-explication="Toute modification d'un échafaudage annule la vérification précédente : il doit être recontrôlé par une personne compétente avant réutilisation. L'utiliser tel quel, s'auto-vérifier sans compétence reconnue, ou attendre une échéance programmée ne suffisent pas."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Avant d'intervenir sur le groupe de condensation de la terrasse technique, que vérifie le technicien ? Revoyez l'exemple de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Avant d'intervenir sur le groupe de condensation de la terrasse technique, que vérifie le technicien ?</h2>
+    <figure class="vignette">
+      <img src="svg/hauteur-exemple-terrasse.svg" alt="Vignette de rappel : la terrasse technique, la trappe, l'escalier à crinoline et le garde-corps.">
+      <figcaption>Rappel de l'écran 7 — l'accès et le garde-corps avant le matériel.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Uniquement l'état du groupe de condensation lui-même</button>
+      <button type="button" data-answer="bonne">L'état de l'accès (trappe, escalier) et la présence du garde-corps de la terrasse</button>
+      <button type="button" data-answer="b">La météo du jour, rien d'autre</button>
+      <button type="button" data-answer="c">La disponibilité d'un collègue pour l'accompagner</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'accès et les protections collectives se vérifient avant de sortir le matériel. Se limiter au groupe, à la météo ou à la présence d'un collègue ignore l'essentiel : l'accès en sécurité."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme sur les autres stations du
+     réseau : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>L'habilitation</strong> (sous-ligne Électrique) — la règle d'un côté, le geste protégé de l'autre.</li>
+    <li><a href="https://frigorx.github.io/qcm-travail-hauteur/" target="_blank" rel="noopener">Le quiz d'entraînement travail en hauteur <span aria-hidden="true">↗</span></a> (autre réseau inerWeb, ouvert) — pour s'entraîner plus loin sur le même sujet.</li>
+  </ul>
+  <p>L'habilitation est en préparation sur le plan du réseau. Le quiz d'entraînement, lui, est déjà en ligne.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

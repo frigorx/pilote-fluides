@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-mo" aria-describedby="d-mo" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-mo">Le mécanisme de l'ODP : le chlore ou le brome attaquent l'ozone</title>
+  <desc id="d-mo">En haut, une bande représente la couche d'ozone stratosphérique. À gauche, une
+    molécule de CFC ou HCFC monte vers cette couche ; elle porte l'étiquette « contient du chlore
+    ou du brome » et une flèche rouge montre qu'elle abîme la couche à son contact, avec la
+    mention « ODP non nul ». À droite, une molécule de HFC monte elle aussi, mais porte l'étiquette
+    « ni chlore ni brome » et traverse la couche sans l'entamer, avec la mention « ODP nul », en
+    vert. En bas, une phrase résume : c'est la présence de chlore ou de brome qui décide, rien
+    d'autre.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .ok  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1e7e54; }
+    .non { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Ce qui rend l'ODP différent de zéro</text>
+
+  <!-- couche d'ozone -->
+  <rect x="20" y="56" width="860" height="34" rx="10" fill="#e6f2f0" stroke="#047857" stroke-width="2"/>
+  <text class="lbl" x="450" y="78" text-anchor="middle" font-weight="bold" fill="#047857">Couche d'ozone stratosphérique</text>
+
+  <!-- CFC / HCFC : gauche -->
+  <rect x="60" y="150" width="290" height="150" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="130" cy="210" r="24" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <text class="qui" x="130" y="216" text-anchor="middle" fill="#c0392b">Cl</text>
+  <text class="qui" x="240" y="200" text-anchor="middle">CFC / HCFC</text>
+  <text class="lbl" x="240" y="222" text-anchor="middle">contient chlore ou brome</text>
+  <text class="non" x="240" y="270" text-anchor="middle">ODP non nul</text>
+  <path d="M130,186 L130,96" stroke="#c0392b" stroke-width="4" stroke-dasharray="6 5" marker-end="url(#fa)"/>
+
+  <!-- HFC : droite -->
+  <rect x="550" y="150" width="290" height="150" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="620" cy="210" r="24" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <text class="qui" x="620" y="216" text-anchor="middle" fill="#1e7e54">F</text>
+  <text class="qui" x="730" y="200" text-anchor="middle">HFC</text>
+  <text class="lbl" x="730" y="222" text-anchor="middle">ni chlore ni brome</text>
+  <text class="ok" x="730" y="270" text-anchor="middle">ODP nul</text>
+  <path d="M620,186 L620,96" stroke="#1e7e54" stroke-width="4" marker-end="url(#fb)"/>
+
+  <defs>
+    <marker id="fa" markerWidth="10" markerHeight="10" refX="5" refY="8" orient="auto">
+      <path d="M0,10 L5,0 L10,10 Z" fill="#c0392b"/>
+    </marker>
+    <marker id="fb" markerWidth="10" markerHeight="10" refX="5" refY="8" orient="auto">
+      <path d="M0,10 L5,0 L10,10 Z" fill="#1e7e54"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="322" width="860" height="42" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="348" text-anchor="middle" font-weight="bold">C'est la présence de chlore ou de brome qui décide, rien d'autre.</text>
+</svg>

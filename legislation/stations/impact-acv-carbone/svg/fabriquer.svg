@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="t-fa" aria-describedby="d-fa" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-fa">Fabriquer : l'empreinte avant même la mise en route</title>
+  <desc id="d-fa">Une usine schématique avec une cheminée. Deux flèches entrent dans l'usine : l'une
+    porte la mention matières premières extraites, l'autre la mention énergie industrielle. Une
+    flèche sort de l'usine vers un appareil frigorifique fini, encore neuf, posé sur une palette.
+    Une bande en bas rappelle que l'empreinte de la fabrication existe avant même que l'appareil
+    ne soit mis en route.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Fabriquer : la première étape du cycle</text>
+
+  <!-- usine -->
+  <rect x="330" y="110" width="240" height="110" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="370" y="70" width="30" height="60" fill="#5a6b7d"/>
+  <polygon points="330,110 450,60 570,110" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <text class="qui" x="450" y="180" text-anchor="middle">Usine</text>
+
+  <!-- flèche matières premières -->
+  <path d="M60,150 h250" stroke="#1b3a63" stroke-width="3" marker-end="url(#fa1)"/>
+  <text class="lbl" x="180" y="140" text-anchor="middle">matières premières extraites</text>
+
+  <!-- flèche énergie -->
+  <path d="M60,230 h250" stroke="#b06a00" stroke-width="3" marker-end="url(#fa2)"/>
+  <text class="lbl" x="180" y="220" text-anchor="middle">énergie industrielle</text>
+
+  <!-- appareil fini -->
+  <path d="M620,150 h150" stroke="#047857" stroke-width="3" marker-end="url(#fa3)"/>
+  <rect x="790" y="120" width="90" height="90" rx="8" fill="#e6f2f0" stroke="#047857" stroke-width="3"/>
+  <text class="qui" x="835" y="170" text-anchor="middle" font-size="15">appareil</text>
+  <text class="qui" x="835" y="188" text-anchor="middle" font-size="15">neuf</text>
+
+  <defs>
+    <marker id="fa1" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1b3a63"/></marker>
+    <marker id="fa2" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#b06a00"/></marker>
+    <marker id="fa3" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#047857"/></marker>
+  </defs>
+
+  <rect x="20" y="256" width="860" height="44" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="284" text-anchor="middle" font-weight="bold">L'empreinte existe avant même la mise en route de l'appareil.</text>
+</svg>

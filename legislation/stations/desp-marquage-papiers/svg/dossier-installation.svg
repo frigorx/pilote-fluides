@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-di" aria-describedby="d-di" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-di">Ce que l'installateur doit conserver après le montage</title>
+  <desc id="d-di">À gauche, deux documents reçus avec l'équipement : la déclaration de conformité
+    et la notice d'instructions. Une flèche les fait entrer dans un dossier ouvert, à droite,
+    intitulé « dossier de l'installation », que l'installateur conserve. Une bande en bas précise
+    que ce dossier est celui qui sera demandé lors d'un contrôle.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .small{ font-size:14.5px; fill:#5a6b7d; }
+    .band { font-size:16px; fill:#10233c; }
+    .fl   { stroke:#8fa0b0; stroke-width:3; fill:none; }
+  </style>
+
+  <!-- Les deux documents reçus -->
+  <rect x="30" y="40" width="230" height="90" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="145" y="70" text-anchor="middle" font-weight="bold" fill="#1b3a63">Déclaration</text>
+  <text class="small" x="145" y="92" text-anchor="middle">de conformité</text>
+  <line x1="50" y1="106" x2="240" y2="106" stroke="#d6dee7" stroke-width="2"/>
+  <line x1="50" y1="116" x2="200" y2="116" stroke="#d6dee7" stroke-width="2"/>
+
+  <rect x="30" y="150" width="230" height="90" rx="10" fill="#fffdf8" stroke="#1e7e54" stroke-width="2.5"/>
+  <text class="lbl" x="145" y="180" text-anchor="middle" font-weight="bold" fill="#1e7e54">Notice</text>
+  <text class="small" x="145" y="202" text-anchor="middle">d'instructions</text>
+  <line x1="50" y1="216" x2="240" y2="216" stroke="#d6dee7" stroke-width="2"/>
+  <line x1="50" y1="226" x2="200" y2="226" stroke="#d6dee7" stroke-width="2"/>
+
+  <!-- La flèche -->
+  <path class="fl" d="M 270 140 C 330 140 330 140 380 140"/>
+  <polygon points="380,131 400,140 380,149" fill="#8fa0b0"/>
+
+  <!-- Le dossier -->
+  <rect x="420" y="70" width="450" height="200" rx="4" fill="#eef3f9" stroke="#0c4a6e" stroke-width="3"/>
+  <path d="M 420 70 L 470 40 H 700 L 750 70 Z" fill="#0c4a6e"/>
+  <text class="ttl" x="595" y="62" text-anchor="middle">DOSSIER DE L'INSTALLATION</text>
+  <rect x="450" y="106" width="180" height="130" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="2" transform="rotate(-4 540 171)"/>
+  <rect x="500" y="120" width="180" height="130" rx="6" fill="#fffdf8" stroke="#1e7e54" stroke-width="2" transform="rotate(3 590 185)"/>
+  <text class="lbl" x="595" y="256" text-anchor="middle" font-weight="bold">conservé par l'installateur</text>
+
+  <!-- La bande -->
+  <rect x="30" y="292" width="840" height="34" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="314" text-anchor="middle">C'est ce dossier qui sera demandé lors d'un contrôle</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-bil" aria-describedby="d-bil" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bil">Bilan : le TEWI se juge sur le cycle complet, jamais sur le seul fluide</title>
+  <desc id="d-bil">En haut, la formule TEWI égale part directe plus part indirecte. À gauche, une
+    étiquette de fluide barrée d'un trait rouge porte la mention juger sur le fluide seul :
+    insuffisant. À droite, une machine frigorifique entourée d'une flèche circulaire porte la
+    mention il faut regarder le cycle complet de la machine, du fluide comme de l'énergie. En
+    bas, une bande résume le message : le TEWI additionne les deux parts sur toute la vie de la
+    machine.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .form{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#047857; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Le bilan</text>
+
+  <rect x="220" y="46" width="460" height="52" rx="14" fill="#e6f2f0" stroke="#047857" stroke-width="2.5"/>
+  <text class="form" x="450" y="79" text-anchor="middle">TEWI = part directe + part indirecte</text>
+
+  <!-- Fluide seul : insuffisant -->
+  <rect x="30" y="130" width="380" height="180" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <rect x="170" y="156" width="100" height="60" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="220" y="182" text-anchor="middle" font-size="13px">fluide</text>
+  <text class="lbl" x="220" y="200" text-anchor="middle" font-size="13px">PRP seul</text>
+  <line x1="150" y1="146" x2="290" y2="228" stroke="#c0392b" stroke-width="4"/>
+  <text class="qui" x="220" y="250" text-anchor="middle" fill="#c0392b">Juger sur le fluide seul :</text>
+  <text class="qui" x="220" y="272" text-anchor="middle" fill="#c0392b">insuffisant</text>
+  <text class="lbl" x="220" y="294" text-anchor="middle" font-size="13px">le PRP ne dit rien de la consommation</text>
+
+  <!-- Cycle complet -->
+  <rect x="490" y="130" width="380" height="180" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <rect x="620" y="176" width="100" height="60" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="670" y="212" text-anchor="middle" font-size="13px">machine</text>
+  <path d="M600,150 A80,80 0 1 1 590,270" fill="none" stroke="#1e7e54" stroke-width="4" marker-end="url(#fc)"/>
+  <defs>
+    <marker id="fc" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1e7e54"/>
+    </marker>
+  </defs>
+  <text class="qui" x="670" y="282" text-anchor="middle" fill="#1e7e54">Le cycle complet :</text>
+  <text class="qui" x="670" y="302" text-anchor="middle" fill="#1e7e54" font-size="14px">fluide et énergie</text>
+
+  <rect x="20" y="336" width="860" height="52" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="368" text-anchor="middle">Juger un système sur son fluide seul est une erreur : il faut le cycle complet.</text>
+</svg>

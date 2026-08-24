@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>En service — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la vie de l'équipement sous pression après l'installation — inspections périodiques, requalification, dossier d'exploitation et responsabilité de l'exploitant.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/desp-en-service/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne DESP.
+     Elle regarde la phase d'exploitation de l'équipement sous pression :
+     ce qui se passe une fois l'équipement installé et mis en service.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     RIGUEUR FACTUELLE : aucune périodicité chiffrée n'est donnée pour les
+     inspections ni pour la requalification périodique — ces valeurs
+     varient selon l'équipement et ne sont pas sourcées ici. La station
+     enseigne le mécanisme (qui fait quoi, quoi consulter), pas un
+     calendrier. Voir FOND.md, section « Ce qui reste à trancher ».
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">La DESP · niveau BTS</p>
+  <h1>En service — la vie de l'équipement après l'installation</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez qu'un équipement sous pression reste suivi tout au long de sa vie : inspections périodiques, requalification, dossier d'exploitation tenu à jour — et vous savez qui, de l'exploitant ou du fabricant, en est responsable.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la ligne du temps. Elle part d'un point marqué fabrication et marquage, passe par un point marqué mise en service, puis s'allonge sur un long segment encadré en bleu : c'est l'exploitation, la vie de l'équipement en service. Ce segment se termine par une flèche ouverte, sans date : cette période dure tant que l'équipement reste en usage. C'est elle que cette station explore.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Après l'installation, une autre vie commence</h2>
+    <p>La directive DESP encadre l'équipement dès sa fabrication : marquage, déclaration de conformité, notice d'instructions. Mais son rôle ne s'arrête pas là. Une fois l'équipement installé et mis en service, il entre dans une période longue — l'<strong>exploitation</strong> — pendant laquelle il reste suivi.</p>
+    <p>Cette station regarde cette période : ce qui doit être vérifié pendant que l'équipement fonctionne, et qui en est responsable.</p>
+    <figure>
+      <img src="svg/ligne-vie-equipement.svg" alt="Une ligne de temps part de la fabrication et du marquage, passe par la mise en service, puis se prolonge par un long segment encadré marqué exploitation, terminé par une flèche ouverte car cette période dure tant que l'équipement reste en usage.">
+      <figcaption>Le segment encadré, c'est celui que cette station explore.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Un équipement sous pression, à gauche, relié par une ligne en pointillé à plusieurs loupes identiques, régulièrement espacées, sans aucune date inscrite : chaque loupe représente une inspection périodique. Au-dessus de la ligne, une note rappelle que le rythme exact est fixé par la réglementation en vigueur. En dessous, deux encadrés précisent ce que cherche l'inspection : la conformité à l'état de référence, et une dégradation repérée avant de devenir dangereuse.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Les inspections périodiques : vérifier que rien n'a bougé</h2>
+    <p>Tout au long de la vie de l'équipement, des <strong>inspections périodiques</strong> ont lieu. Leur rythme est fixé par la réglementation en vigueur — <strong>à vérifier sur le texte applicable à l'équipement concerné</strong>, jamais au jugé.</p>
+    <p>Ce qu'elles cherchent :</p>
+    <ul>
+      <li>que l'équipement reste <strong>conforme à son état de référence</strong> ;</li>
+      <li>qu'une <strong>dégradation</strong> — corrosion, fissure, fuite naissante — soit repérée <strong>avant de devenir dangereuse</strong>.</li>
+    </ul>
+    <figure>
+      <img src="svg/inspections-periodiques.svg" alt="Un équipement sous pression relié à une série de loupes identiques, régulièrement espacées et sans date, représentant les inspections périodiques. Deux encadrés rappellent qu'elles vérifient la conformité à l'état de référence et détectent une dégradation avant qu'elle devienne dangereuse.">
+      <figcaption>Aucune date sur ce schéma : le rythme se lit sur le texte applicable.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Deux cases côte à côte. À gauche, une case plus basse : l'inspection périodique, avec une loupe, pour un contrôle visuel et fonctionnel. À droite, une case plus haute : la requalification périodique, avec une jauge, pour une remise à l'épreuve plus approfondie. Une étiquette entre les deux indique que la requalification est plus poussée. En bas, une bande rappelle que l'une ne remplace pas l'autre : chacune a son propre rythme, fixé par la réglementation en vigueur.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">La requalification périodique : un contrôle plus profond</h2>
+    <p>À un rythme lui aussi fixé par la réglementation en vigueur, l'équipement subit une <strong>requalification périodique</strong> : une <strong>remise à l'épreuve</strong>, plus approfondie qu'une inspection courante.</p>
+    <p>L'inspection et la requalification ne se remplacent pas : elles se complètent, chacune à son rythme propre — à vérifier, là encore, sur le texte applicable à l'équipement concerné.</p>
+    <figure>
+      <img src="svg/inspection-vs-requalification.svg" alt="Deux cases : l'inspection périodique, contrôle visuel et fonctionnel, et la requalification périodique, remise à l'épreuve plus approfondie. Une bande rappelle que l'une ne remplace pas l'autre, chacune ayant son rythme propre fixé par la réglementation en vigueur.">
+      <figcaption>La case de droite est plus grande : un contrôle plus profond, pas un simple doublon.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Un classeur ouvert, avec un onglet marqué dossier d'exploitation, et trois volets côte à côte. Premier volet : la documentation d'origine, marquage, déclaration de conformité, notice. Deuxième volet : l'historique des inspections et des requalifications. Troisième volet : les réparations ou modifications éventuelles. En bas, une note rappelle qu'un seul classeur, tenu à jour par l'exploitant, sert de mémoire à l'équipement.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Le dossier d'exploitation : la mémoire de l'équipement</h2>
+    <p>L'exploitant tient à jour un <strong>dossier d'exploitation</strong> qui rassemble :</p>
+    <ul>
+      <li>la <strong>documentation d'origine</strong> : marquage, déclaration de conformité, notice d'instructions ;</li>
+      <li>l'<strong>historique des inspections et des requalifications</strong> ;</li>
+      <li>les <strong>réparations ou modifications</strong> éventuelles.</li>
+    </ul>
+    <p>Ce dossier est la mémoire de l'équipement : c'est lui qu'on consulte pour savoir où il en est, et ce qu'il reste à faire.</p>
+    <figure>
+      <img src="svg/dossier-exploitation.svg" alt="Un classeur ouvert marqué dossier d'exploitation, avec trois volets : la documentation d'origine (marquage, déclaration de conformité, notice), l'historique des inspections et requalifications, et les réparations ou modifications éventuelles.">
+      <figcaption>Trois volets, un seul classeur, tenu à jour par l'exploitant.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Un bâtiment marqué l'exploitant, l'entreprise qui utilise l'équipement, avec trois flèches vers trois tâches : faire réaliser les inspections et requalifications dans les délais, tenir le dossier d'exploitation à jour, retirer de service un équipement qui ne serait plus conforme. À part, un petit bâtiment grisé marqué le fabricant est relié par un trait barré, pour rappeler que ce n'est pas forcément la même entreprise.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Qui doit s'en occuper : l'exploitant</h2>
+    <p>C'est l'<strong>exploitant</strong> — l'entreprise qui utilise l'équipement, pas forcément celle qui l'a fabriqué — qui doit :</p>
+    <ul>
+      <li><strong>faire réaliser</strong> les inspections et les requalifications <strong>dans les délais</strong> ;</li>
+      <li><strong>tenir le dossier d'exploitation à jour</strong> ;</li>
+      <li><strong>retirer de service</strong> un équipement qui ne serait plus conforme.</li>
+    </ul>
+    <figure>
+      <img src="svg/exploitant-responsable.svg" alt="Un bâtiment marqué l'exploitant, avec trois flèches vers trois tâches : faire réaliser les inspections et requalifications dans les délais, tenir le dossier d'exploitation à jour, retirer de service un équipement non conforme. Un bâtiment grisé à part, marqué le fabricant, est relié par un trait barré.">
+      <figcaption>Le fabricant et l'exploitant ne sont pas forcément la même entreprise.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Une bouteille de fluide frigorigène posée sur une étagère d'atelier, avec une étiquette d'identification. À côté, une icône de calendrier sans aucune date, marquée d'un point d'interrogation. Un encadré précise qu'une bouteille de ce type reste un équipement sous pression, suivi dans le temps, même si elle ressemble à un simple contenant de stockage.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Sur le terrain : la bouteille qui vieillit en atelier</h2>
+    <p>Une bouteille de fluide frigorigène qui reste plusieurs années en atelier n'est pas un simple contenant : c'est un <strong>équipement sous pression</strong>, avec son propre suivi dans le temps.</p>
+    <p>Le frigoriste qui la manipule en routine doit garder ce réflexe : elle aussi peut avoir un dossier, elle aussi peut être concernée par une inspection ou une requalification.</p>
+    <figure>
+      <img src="svg/bouteille-atelier.svg" alt="Une bouteille de fluide frigorigène sur une étagère d'atelier, avec une étiquette et, à côté, un calendrier sans date marqué d'un point d'interrogation. Un encadré précise qu'elle reste un équipement sous pression suivi dans le temps.">
+      <figcaption>Aucune date sur ce calendrier : c'est le texte applicable qui la donne.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Un schéma simplifié d'installation frigorifique : compresseur, condenseur et évaporateur reliés par des lignes. Un réservoir et un séparateur d'huile sont mis en évidence par un encadré en pointillé. À côté, un technicien en intervention de maintenance, avec une bulle de texte posant la question : ce réservoir a-t-il un suivi à jour ?">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Sur le terrain : le réservoir en service depuis des années</h2>
+    <p>Un réservoir ou un séparateur d'huile installé sur une installation frigorifique en fonctionnement depuis des années reste, lui aussi, un <strong>équipement sous pression suivi dans le temps</strong>.</p>
+    <p>Un frigoriste qui intervient en maintenance sur une installation ancienne doit savoir que ces équipements ont un suivi réglementaire dans la durée, <strong>pas seulement au moment de leur pose</strong>.</p>
+    <figure>
+      <img src="svg/reservoir-installation.svg" alt="Un schéma d'installation frigorifique avec compresseur, condenseur et évaporateur, où un réservoir et un séparateur d'huile sont mis en évidence par un encadré en pointillé. Un technicien en maintenance se demande, dans une bulle de texte, si ce réservoir a un suivi à jour.">
+      <figcaption>Le réservoir a un suivi, même s'il n'est en place que depuis des années.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Quatre petites cases en haut rappellent les quatre points de la station : les inspections vérifient la conformité, la requalification est plus approfondie, le dossier d'exploitation rassemble tout, l'exploitant est responsable du suivi. En bas, une bande met en évidence le réflexe final : consulter le dossier d'exploitation et le texte réglementaire en vigueur pour connaître l'échéance exacte de l'équipement concerné.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Des <strong>inspections périodiques</strong> vérifient la conformité et repèrent une dégradation avant qu'elle devienne dangereuse.</li>
+      <li>La <strong>requalification périodique</strong> est un contrôle plus profond, à un rythme propre.</li>
+      <li>Le <strong>dossier d'exploitation</strong> rassemble la documentation d'origine, l'historique des contrôles et les réparations.</li>
+      <li>C'est l'<strong>exploitant</strong>, pas forcément le fabricant, qui doit tout suivre — et retirer de service si besoin.</li>
+    </ul>
+    <p class="formule">Le réflexe : consulter le dossier d'exploitation et le texte réglementaire en vigueur pour connaître l'échéance exacte de l'équipement concerné.</p>
+    <figure>
+      <img src="svg/bilan-desp-service.svg" alt="Quatre cases résumant les inspections, la requalification, le dossier d'exploitation et la responsabilité de l'exploitant. Une bande finale met en évidence le réflexe : consulter le dossier d'exploitation et le texte réglementaire en vigueur.">
+      <figcaption>Le dossier plus le texte en vigueur : c'est là qu'est l'échéance exacte.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Qu'est-ce qui distingue une requalification périodique d'une inspection périodique ? Reprenez le schéma des deux cases de l'écran trois avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Une requalification, qu'est-ce qui la distingue d'une inspection ?</h2>
+    <figure class="vignette">
+      <img src="svg/inspection-vs-requalification.svg" alt="Vignette de rappel : les deux cases, inspection périodique et requalification périodique, avec la bande rappelant que l'une ne remplace pas l'autre.">
+      <figcaption>Rappel de l'écran 3 — deux contrôles, deux profondeurs.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Elle a lieu au même moment que l'inspection, avec le même contenu</button>
+      <button type="button" data-answer="bonne">Elle est un contrôle plus approfondi, une remise à l'épreuve, à un rythme propre</button>
+      <button type="button" data-answer="c">Elle remplace l'inspection, qui devient inutile une fois faite</button>
+      <button type="button" data-answer="d">Elle est optionnelle : l'exploitant peut choisir de ne pas la faire</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'inspection et la requalification ne se remplacent pas : elles se complètent. La requalification est une remise à l'épreuve, plus approfondie qu'une inspection courante, à un rythme qui lui est propre."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Qui doit faire réaliser les inspections et les requalifications dans les délais, et tenir le dossier d'exploitation à jour ? Reprenez le schéma de l'écran cinq.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Qui doit faire réaliser les contrôles et tenir le dossier à jour ?</h2>
+    <figure class="vignette">
+      <img src="svg/exploitant-responsable.svg" alt="Vignette de rappel : l'exploitant, relié à trois tâches, et le fabricant à part, relié par un trait barré.">
+      <figcaption>Rappel de l'écran 5 — l'exploitant, pas forcément le fabricant.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le fabricant de l'équipement, seul responsable après la vente</button>
+      <button type="button" data-answer="b">L'organisme qui a apposé le marquage lors de la fabrication</button>
+      <button type="button" data-answer="bonne">L'exploitant, l'entreprise qui utilise l'équipement</button>
+      <button type="button" data-answer="d">Le technicien qui intervient ponctuellement pour une réparation</button>
+    </div>
+    <p class="feedback" hidden data-explication="C'est l'exploitant, l'entreprise qui utilise l'équipement, qui doit faire réaliser les contrôles dans les délais, tenir le dossier à jour, et retirer de service un équipement non conforme. Ce n'est pas forcément le fabricant."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Quelle est la périodicité exacte des inspections et des requalifications périodiques ? Regardez à nouveau le schéma des loupes de l'écran deux.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">La périodicité des inspections et requalifications est…</h2>
+    <figure class="vignette">
+      <img src="svg/inspections-periodiques.svg" alt="Vignette de rappel : un équipement relié à des loupes identiques et espacées, sans aucune date, avec la note sur le rythme fixé par la réglementation en vigueur.">
+      <figcaption>Rappel de l'écran 2 — aucune date sur le schéma.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La même pour tous les équipements sous pression, sans exception</button>
+      <button type="button" data-answer="b">Déduite du volume de l'équipement, jamais du texte réglementaire</button>
+      <button type="button" data-answer="c">Applicable seulement aux équipements neufs, pas aux anciens</button>
+      <button type="button" data-answer="bonne">Fixée par la réglementation en vigueur, à vérifier sur le texte applicable à l'équipement concerné</button>
+    </div>
+    <p class="feedback" hidden data-explication="Il n'existe pas un chiffre unique valable pour tous les équipements. Le rythme des inspections comme celui des requalifications se vérifie sur le texte réglementaire applicable à l'équipement concerné."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un frigoriste intervient en maintenance sur une installation ancienne et repère un réservoir sous pression en service depuis des années. Que doit-il garder à l'esprit ? Souvenez-vous de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un réservoir en service depuis des années : que garder à l'esprit ?</h2>
+    <figure class="vignette">
+      <img src="svg/reservoir-installation.svg" alt="Vignette de rappel : le réservoir et le séparateur d'huile mis en évidence sur le schéma d'installation, avec la bulle de texte du technicien.">
+      <figcaption>Rappel de l'écran 7 — le suivi ne s'arrête pas à la pose.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Il a, lui aussi, un suivi réglementaire dans le temps, à vérifier dans le dossier d'exploitation</button>
+      <button type="button" data-answer="b">Il échappe au suivi réglementaire : seuls les équipements neufs sont concernés</button>
+      <button type="button" data-answer="c">Seul un réservoir affichant une date de fabrication récente doit être suivi</button>
+      <button type="button" data-answer="d">Le suivi ne concerne que les bouteilles de fluide, jamais les réservoirs fixes</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un réservoir ou un séparateur d'huile en service depuis des années reste un équipement sous pression suivi dans le temps, pas seulement au moment de sa pose. Le dossier d'exploitation en garde la trace."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>NF EN 378</strong> (même sous-ligne, en préparation) — le suivi en service croise aussi les contrôles propres au circuit frigorifique que fixe cette norme.</li>
+  </ul>
+  <p>Cette station est en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

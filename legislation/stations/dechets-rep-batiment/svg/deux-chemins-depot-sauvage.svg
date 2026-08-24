@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img"
+     aria-labelledby="t-2c" aria-describedby="d-2c" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-2c">Deux chemins depuis le même tas de déchets de chantier</title>
+  <desc id="d-2c">Un tas de déchets de chantier au centre. Vers la droite, un trait plein vert mène à
+    un point de reprise proche, marqué d'une coche verte. Vers la gauche, un trait tireté rouge mène
+    à un terrain vague, marqué d'une croix rouge : c'est le dépôt sauvage. Le style du trait, plein ou
+    tireté, distingue les deux chemins autant que la couleur.</desc>
+  <defs>
+    <marker id="fl-vert" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e7e54"/>
+    </marker>
+    <marker id="fl-rouge" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; }
+    .lbl { font-size:15px; fill:#10233c; text-anchor:middle; }
+    .mut { font-size:15px; fill:#5a6b7d; text-anchor:middle; }
+  </style>
+
+  <!-- Le tas de déchets -->
+  <polygon points="450,120 390,210 510,210" fill="#5a6b7d"/>
+  <text class="lbl" x="450" y="235">Tas de déchets de chantier</text>
+
+  <!-- Chemin vers le point de reprise -->
+  <line x1="505" y1="200" x2="645" y2="168" stroke="#1e7e54" stroke-width="5" marker-end="url(#fl-vert)"/>
+  <rect x="650" y="90" width="200" height="120" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="700" cy="130" r="16" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2.5"/>
+  <path d="M692,130 l6,7 l12,-14" fill="none" stroke="#1e7e54" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="ttl" x="750" y="165" text-anchor="middle" fill="#1e7e54">Point de reprise</text>
+  <text class="lbl" x="750" y="186">trait plein : accès</text>
+
+  <!-- Chemin vers le terrain vague -->
+  <line x1="395" y1="200" x2="255" y2="168" stroke="#c0392b" stroke-width="5" stroke-dasharray="12 8" marker-end="url(#fl-rouge)"/>
+  <rect x="50" y="90" width="200" height="120" rx="14" fill="#fffdf8" stroke="#c0392b" stroke-width="3" stroke-dasharray="10 6"/>
+  <circle cx="100" cy="130" r="16" fill="#fbe7e4" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="93" y1="123" x2="107" y2="137" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>
+  <line x1="107" y1="123" x2="93" y2="137" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>
+  <text class="ttl" x="150" y="165" text-anchor="middle" fill="#c0392b">Terrain vague</text>
+  <text class="lbl" x="150" y="186">trait tireté : abandon</text>
+
+  <text class="mut" x="450" y="280">Le trait plein mène au dépôt organisé ; le trait tireté mène au dépôt sauvage</text>
+</svg>

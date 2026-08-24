@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-vn" aria-describedby="d-vn" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-vn">La ventilation nocturne purge la chaleur accumulée avant le lendemain</title>
+  <desc id="d-vn">Une maison de nuit, sous un ciel étoilé, avec ses fenêtres ouvertes. Une flèche
+    bleue d'air frais entre par une fenêtre basse, une flèche orange d'air chaud sort par une
+    fenêtre haute : l'air frais de la nuit balaie la chaleur accumulée pendant la journée, avant
+    que le bâtiment ne reparte pour une nouvelle journée chaude.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">L'air frais de la nuit balaie la chaleur du jour</text>
+
+  <rect x="0" y="45" width="900" height="230" fill="#1b3a63" opacity="0.06"/>
+  <circle cx="120" cy="80" r="3" fill="#5a6b7d"/>
+  <circle cx="200" cy="60" r="2.5" fill="#5a6b7d"/>
+  <circle cx="770" cy="70" r="3" fill="#5a6b7d"/>
+  <circle cx="820" cy="100" r="2.5" fill="#5a6b7d"/>
+  <circle cx="60" cy="130" r="2.5" fill="#5a6b7d"/>
+
+  <polygon points="330,220 450,130 570,220" fill="none" stroke="#10233c" stroke-width="3"/>
+  <rect x="350" y="220" width="200" height="120" fill="none" stroke="#10233c" stroke-width="3"/>
+
+  <!-- fenêtre basse : air frais entrant -->
+  <rect x="380" y="270" width="55" height="55" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <path d="M 250 297 L 375 297" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <polygon points="375,297 358,289 358,305" fill="#1b3a63"/>
+  <text class="lbl" x="250" y="280" text-anchor="middle" fill="#1b3a63" font-weight="bold">air frais</text>
+
+  <!-- fenêtre haute : air chaud sortant -->
+  <rect x="465" y="240" width="55" height="45" fill="#fff4e0" stroke="#92400e" stroke-width="2.5"/>
+  <path d="M 525 262 L 650 240" fill="none" stroke="#92400e" stroke-width="3"/>
+  <polygon points="650,240 632,238 638,254" fill="#92400e"/>
+  <text class="lbl" x="700" y="230" text-anchor="middle" fill="#92400e" font-weight="bold">air chaud évacué</text>
+</svg>

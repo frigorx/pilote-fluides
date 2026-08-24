@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-pr" aria-describedby="d-pr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pr">Le point de reprise : où va le déchet de chantier</title>
+  <desc id="d-pr">Un bâtiment « point de reprise, REP bâtiment » avec trois bennes triées devant sa
+    façade — isolants, gaines, chutes de matériaux de pose, chacune identifiée par un nom et une
+    forme de couvercle différente. À gauche, un camion de chantier dépose des déchets triés vers les
+    bennes, par une flèche tiretée légendée.</desc>
+  <defs>
+    <marker id="fl-pr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#57534e"/>
+    </marker>
+  </defs>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .lbl-b { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .mut { font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <!-- Le bâtiment -->
+  <polygon points="555,60 710,-10 865,60" fill="#5a6b7d" transform="translate(0,20)"/>
+  <rect x="560" y="80" width="300" height="200" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="560" y="80" width="300" height="40" fill="#1b3a63"/>
+  <text class="ttl" x="710" y="105" text-anchor="middle">POINT DE REPRISE — REP BÂTIMENT</text>
+  <rect x="685" y="200" width="50" height="80" fill="#10233c"/>
+
+  <!-- Trois bennes triées -->
+  <rect x="580" y="230" width="60" height="50" rx="4" fill="#1b3a63"/>
+  <path d="M580,230 q30,-22 60,0 z" fill="#1b3a63"/>
+  <text class="lbl-b" x="610" y="325" text-anchor="middle">Isolants</text>
+
+  <rect x="660" y="230" width="60" height="50" rx="4" fill="#5a6b7d"/>
+  <rect x="660" y="216" width="60" height="14" rx="4" fill="#5a6b7d"/>
+  <text class="lbl-b" x="690" y="325" text-anchor="middle">Gaines</text>
+
+  <rect x="740" y="230" width="60" height="50" rx="4" fill="#57534e"/>
+  <polygon points="740,230 800,230 790,212 750,212" fill="#57534e"/>
+  <text class="lbl-b" x="770" y="325" text-anchor="middle">Chutes de pose</text>
+
+  <text class="mut" x="710" y="360" text-anchor="middle">trois bennes, trois natures — chaque couvercle a sa forme</text>
+
+  <!-- Le camion de chantier -->
+  <text class="lbl-b" x="150" y="150" text-anchor="middle">Camion de chantier</text>
+  <rect x="70" y="230" width="70" height="60" rx="6" fill="#5a6b7d"/>
+  <rect x="140" y="200" width="170" height="90" rx="6" fill="#fffdf8" stroke="#10233c" stroke-width="3"/>
+  <circle cx="105" cy="296" r="16" fill="#10233c"/>
+  <circle cx="230" cy="296" r="16" fill="#10233c"/>
+  <circle cx="280" cy="296" r="16" fill="#10233c"/>
+
+  <line x1="320" y1="245" x2="555" y2="245" stroke="#57534e" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#fl-pr)"/>
+  <rect x="330" y="180" width="230" height="42" rx="10" fill="#fffdf8" stroke="#57534e" stroke-width="2"/>
+  <text class="lbl-b" x="445" y="207" text-anchor="middle">dépose des déchets triés</text>
+</svg>

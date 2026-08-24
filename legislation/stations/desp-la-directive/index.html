@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>La directive — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi une réglementation propre aux équipements sous pression, le champ d'application de la directive dite DESP, la notion de pression maximale admissible (PS), et des exemples ancrés dans le froid — bouteille de fluide, réservoir, séparateur d'huile, condenseur, tuyauterie.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/desp-la-directive/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne « La DESP ».
+     Première des cinq stations de la sous-ligne. Suivront : les
+     catégories (desp-categories), le marquage et les papiers
+     (desp-marquage-papiers), le suivi en service (desp-en-service), les
+     soupapes et sécurités (desp-soupapes-securites) — non ouvertes,
+     donc non liées ici.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     RIGUEUR FACTUELLE : aucun chiffre de seuil de pression n'est avancé
+     nulle part dans cette station — le mécanisme est enseigné, pas un
+     barème. Voir FOND.md, section « à sourcer ».
+
+     Fond rédigé le 24/08/2026, EN ATTENTE de relecture métier
+     (F. Henninot). Copie structurelle du gabarit de la station
+     « Aptitude & capacité ». -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">La DESP · niveau BTS</p>
+  <h1>La directive — pourquoi une réglementation pour le sous pression</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez pourquoi les équipements sous pression relèvent d'un texte à part, ce que couvre son champ d'application, ce qu'est la pression maximale admissible (PS), et pourquoi elle est la référence de tout le reste — ancré dans des équipements frigorifiques que vous connaissez.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez le schéma. À gauche, un équipement fermé : les petites flèches tout autour de sa paroi intérieure représentent la pression qui pousse sur l'enveloppe. C'est de l'énergie mécanique emmagasinée, et elle reste invisible tant que l'enveloppe tient. Suivez la flèche vers la droite : si l'enveloppe cède, cette énergie se libère d'un coup. La forme éclatée en étoile représente cette libération brutale. En bas, la bande le dit noir sur blanc : une rupture libère, en une fraction de seconde, une énergie mécanique comparable à celle d'un phénomène violent. C'est cette énergie stockée, pas le fluide lui-même, qui justifie un texte à part.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">L'énergie qui ne se voit pas</h2>
+    <p>Un volume fermé, rempli d'un fluide sous pression, stocke de l'<strong>énergie mécanique</strong>. Tant que l'enveloppe résiste, cette énergie reste invisible. Si l'enveloppe cède, elle se libère d'un coup.</p>
+    <p>Une rupture brutale d'un récipient sous pression libère, en une fraction de seconde, une <strong>énergie mécanique comparable à celle d'un phénomène violent</strong> : projection de fragments, onde de choc, déplacement d'air. C'est cette énergie stockée — pas le fluide lui-même — qui justifie une réglementation propre aux équipements sous pression.</p>
+    <figure>
+      <img src="svg/energie-stockee.svg" alt="Un équipement sous pression avec des flèches marquant la pression sur sa paroi intérieure, relié par une flèche à une forme éclatée en étoile représentant la libération brutale de l'énergie si l'enveloppe cède.">
+      <figcaption>C'est l'énergie stockée, pas le fluide, qui justifie ce texte.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Un toit, quatre colonnes. Le toit porte le nom du texte : la directive, équipements sous pression. Première colonne : les récipients, bouteilles, réservoirs, séparateurs. Deuxième : les tuyauteries, qui transportent le fluide sous pression. Troisième : les accessoires sous pression, ceux qui assurent une fonction de service. Quatrième : les accessoires de sécurité, ceux qui protègent l'équipement. Et la bande du bas ajoute un point important : le texte s'applique aussi aux ensembles, quand plusieurs équipements sont assemblés pour former un tout fonctionnel.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le champ d'application de la directive</h2>
+    <p>La directive dite <strong>DESP</strong> (directive équipements sous pression) encadre la conception et la fabrication des équipements destinés à contenir un fluide sous pression :</p>
+    <ul>
+      <li>les <strong>récipients</strong> — bouteilles, réservoirs, séparateurs ;</li>
+      <li>les <strong>tuyauteries</strong> qui transportent le fluide sous pression ;</li>
+      <li>les <strong>accessoires sous pression</strong>, qui remplissent une fonction de service ;</li>
+      <li>les <strong>accessoires de sécurité</strong>, qui protègent l'équipement.</li>
+    </ul>
+    <p>Elle s'applique aussi aux <strong>ensembles</strong>, quand plusieurs équipements sont assemblés pour former un tout fonctionnel.</p>
+    <figure>
+      <img src="svg/champ-application.svg" alt="Un toit marqué la directive, équipements sous pression, surmontant quatre colonnes : récipients, tuyauteries, accessoires sous pression, accessoires de sécurité. Une bande précise que la directive s'applique aussi aux ensembles.">
+      <figcaption>Quatre familles, un même texte — et leurs assemblages en font partie aussi.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Cinq cartes, cinq équipements que vous connaissez déjà. La bouteille de fluide frigorigène, le réservoir de liquide, le séparateur d'huile et le condenseur portent tous l'étiquette récipient. La tuyauterie frigorifique qui les relie porte l'étiquette tuyauterie. La bande du bas rappelle la règle : chacun entre dans le champ de la directive dès qu'il dépasse le seuil de pression fixé par le texte.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Ancrée dans le froid : des exemples que vous connaissez</h2>
+    <p>Ces catégories ne sont pas abstraites : elles décrivent des équipements que vous manipulez.</p>
+    <ul>
+      <li>une <strong>bouteille de fluide frigorigène</strong> est un récipient sous pression ;</li>
+      <li>un <strong>réservoir de liquide</strong> aussi ;</li>
+      <li>un <strong>séparateur d'huile</strong> également ;</li>
+      <li>un <strong>condenseur</strong>, côté haute pression, l'est aussi ;</li>
+      <li>la <strong>tuyauterie frigorifique</strong> qui les relie relève, elle, de la catégorie « tuyauterie ».</li>
+    </ul>
+    <p>Chacun de ces équipements entre dans le champ de la directive dès qu'il dépasse le <strong>seuil de pression fixé par le texte</strong>.</p>
+    <figure>
+      <img src="svg/equipements-froid.svg" alt="Cinq cartes : bouteille de fluide frigorigène, réservoir de liquide, séparateur d'huile et condenseur étiquetés récipient, tuyauterie frigorifique étiquetée tuyauterie. Une bande rappelle que chacun entre dans le champ dès le seuil du texte franchi.">
+      <figcaption>Des équipements familiers, au sens de la directive.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Une colonne verticale représente la pression, croissante vers le haut. Elle est coupée en deux par un trait tireté orange, marqué seuil fixé par le texte. En dessous, la zone hachurée : hors du champ de la DESP. Au-dessus, la zone pleine, en bleu foncé : dans le champ de la DESP. L'encadré à droite précise ce que croise ce seuil : la pression, avec le volume de l'équipement, ou le diamètre pour une tuyauterie. Aucun chiffre n'est donné : c'est le principe qui compte.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Le seuil qui fait entrer dans le champ</h2>
+    <p>Tous les équipements contenant un fluide ne relèvent pas de la directive : elle s'applique <strong>au-delà d'un seuil de pression fixé par le texte</strong>. En dessous, l'équipement reste hors du champ de la DESP — il peut relever d'autres règles, plus légères.</p>
+    <p>Ce seuil se lit dans le texte en vigueur, en croisant la pression avec le volume de l'équipement (ou le diamètre pour une tuyauterie). Retenez le principe, pas un chiffre : c'est la plaque de l'équipement et le texte en vigueur qui tranchent, cas par cas.</p>
+    <figure>
+      <img src="svg/seuil-champ.svg" alt="Une colonne de pression coupée par un trait tireté marqué seuil fixé par le texte : en dessous, hachurée, hors du champ de la DESP ; au-dessus, dans le champ de la DESP. Un encadré précise que le seuil croise la pression avec le volume ou le diamètre.">
+      <figcaption>Le principe compte, pas un chiffre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Voici une plaque signalétique. Fabricant, type, numéro de série : des lignes encore vierges. Puis une ligne encadrée en bleu foncé : PS, pression maximale admissible, elle aussi vierge, car sa valeur est propre à chaque équipement et fixée par son fabricant. Une flèche part de cette ligne vers l'encadré de droite : la PS est la référence, c'est elle qui sert ensuite au classement de l'équipement et au tarage de ses accessoires de sécurité.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">La PS, pression maximale admissible</h2>
+    <p>La <strong>pression maximale admissible</strong>, notée <strong>PS</strong>, est la pression que l'équipement est conçu pour supporter. Elle est fixée par le fabricant, et elle figure sur la <strong>plaque signalétique</strong> de l'équipement.</p>
+    <p>La PS n'est pas qu'une donnée technique parmi d'autres : c'est la <strong>référence</strong> à partir de laquelle tout le reste se construit — le classement de l'équipement, et le tarage de ses accessoires de sécurité.</p>
+    <figure>
+      <img src="svg/plaque-ps.svg" alt="Une plaque signalétique avec des lignes vierges pour le fabricant, le type et le numéro de série, une ligne encadrée pour la PS, et un encadré expliquant que la PS sert de référence pour le classement et le tarage des sécurités.">
+      <figcaption>Toujours vérifier la PS sur la plaque, jamais par estimation.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Une boîte centrale, marquée PS, pression maximale admissible. Deux flèches en partent. Celle de gauche mène à une boîte : le classement en catégorie, qui croise la PS, le volume ou le diamètre, et la dangerosité du fluide — une note ajoute que plus la catégorie est élevée, plus l'intervention d'un organisme extérieur est requise. Celle de droite mène à une autre boîte : le tarage des accessoires de sécurité, soupape, pressostat de sécurité, réglés pour intervenir avant que la PS ne soit dépassée.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">La PS, référence du classement et de la sécurité</h2>
+    <p>À partir de la PS, deux choses se règlent :</p>
+    <ul>
+      <li>le <strong>classement en catégorie</strong> de l'équipement, qui croise la PS, le volume (ou le diamètre pour une tuyauterie) et la dangerosité du fluide — plus la catégorie est élevée, plus l'intervention d'un organisme extérieur est requise ;</li>
+      <li>le <strong>tarage des accessoires de sécurité</strong> — soupape, pressostat de sécurité — qui doivent intervenir avant que la pression ne dépasse la PS.</li>
+    </ul>
+    <p>Le détail des catégories fait l'objet d'une autre station : retenez ici que tout part de la PS.</p>
+    <figure>
+      <img src="svg/ps-reference.svg" alt="Une boîte PS reliée par deux flèches à deux boîtes : le classement en catégorie, qui croise PS, volume et dangerosité du fluide, et le tarage des accessoires de sécurité, réglés pour intervenir avant la PS.">
+      <figcaption>Tout part de la PS.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Un équipement, au centre, relié par quatre traits fins à quatre étiquettes qui l'entourent sans jamais le recouvrir. En haut à gauche : le marquage CE, apposé sur l'équipement. En haut à droite : la déclaration de conformité, établie par le fabricant. En bas à gauche : la notice d'instructions, fournie avec l'équipement. En bas à droite : les accessoires de sécurité, qui le protègent contre un dépassement de sa PS.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Ce qui accompagne l'équipement</h2>
+    <p>Un équipement sous pression entrant dans le champ de la directive est accompagné de plusieurs éléments :</p>
+    <ul>
+      <li>le <strong>marquage CE</strong>, apposé sur l'équipement ;</li>
+      <li>une <strong>déclaration de conformité</strong>, établie par le fabricant ;</li>
+      <li>une <strong>notice d'instructions</strong>, qui accompagne l'équipement ;</li>
+      <li>ses <strong>accessoires de sécurité</strong>, qui le protègent contre un dépassement de sa PS.</li>
+    </ul>
+    <p>Ces éléments seront détaillés dans une autre station : ici, retenez qu'ils ne sont pas optionnels.</p>
+    <figure>
+      <img src="svg/accompagnement.svg" alt="Un équipement au centre, relié à quatre étiquettes qui l'entourent : marquage CE, déclaration de conformité, notice d'instructions, accessoires de sécurité.">
+      <figcaption>Quatre éléments qui suivent l'équipement, pas des options.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan. La bande du haut résume les cinq points de la station : l'énergie stockée justifie la réglementation, les récipients, tuyauteries et accessoires en relèvent dès le seuil du texte franchi, et la PS gravée sur la plaque est la référence de tout le reste — classement, tarage des sécurités, marquage et papiers. En bas, quatre pastilles annoncent la suite de la sous-ligne La DESP : les catégories, le marquage et les papiers, le suivi en service, les soupapes et sécurités. Le réflexe à retenir : ouvrir la plaque signalétique et lire la PS.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li><strong>L'énergie stockée</strong> dans un équipement sous pression justifie une réglementation propre.</li>
+      <li>Le champ d'application couvre <strong>récipients, tuyauteries, accessoires sous pression et accessoires de sécurité</strong>, seuls ou en ensembles.</li>
+      <li>Des équipements frigorifiques familiers en relèvent dès qu'ils dépassent le <strong>seuil de pression fixé par le texte</strong>.</li>
+      <li>La <strong>PS</strong>, pression maximale admissible, est gravée sur la plaque signalétique : c'est la <strong>référence</strong> de tout le reste.</li>
+      <li>Marquage CE, déclaration de conformité, notice et accessoires de sécurité accompagnent l'équipement conforme.</li>
+    </ul>
+    <p>Cette station est la première d'une série de cinq sur la DESP ; suivront les catégories, le marquage et les papiers, le suivi en service, et les soupapes et sécurités.</p>
+    <p class="formule">Le réflexe : ouvrir la plaque signalétique et lire la PS.</p>
+    <figure>
+      <img src="svg/bilan-directive.svg" alt="Une bande résumant les cinq points de la station, avec la PS comme référence centrale, et quatre pastilles annonçant la suite de la sous-ligne La DESP : catégories, marquage et papiers, en service, soupapes et sécurités.">
+      <figcaption>C'est de la PS que part tout le reste.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Pourquoi une réglementation propre aux équipements sous pression existe-t-elle ? Souvenez-vous du schéma de l'écran un.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Pourquoi une réglementation propre aux équipements sous pression ?</h2>
+    <figure class="vignette">
+      <img src="svg/energie-stockee.svg" alt="Vignette de rappel : un équipement sous pression relié par une flèche à une forme éclatée en étoile représentant la libération brutale de l'énergie stockée.">
+      <figcaption>Rappel de l'écran 1 — l'énergie qui ne se voit pas.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Parce que le fluide frigorigène est toujours dangereux à respirer</button>
+      <button type="button" data-answer="bonne">Parce que l'énergie stockée se libère brutalement si l'enveloppe cède</button>
+      <button type="button" data-answer="c">Parce que ces équipements sont plus chers à fabriquer que les autres</button>
+      <button type="button" data-answer="d">Parce que la réglementation européenne impose une directive par métier</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'énergie stockée dans un volume sous pression est la raison d'être de la directive : c'est elle qui se libère d'un coup si l'enveloppe rompt, indépendamment du fluide ou du coût de fabrication."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un séparateur d'huile installé sur un circuit frigorifique relève-t-il de la directive ? Reprenez le schéma de l'écran trois.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un séparateur d'huile : relève-t-il de la directive ?</h2>
+    <figure class="vignette">
+      <img src="svg/equipements-froid.svg" alt="Vignette de rappel : cinq équipements frigorifiques, dont le séparateur d'huile, étiquetés récipient ou tuyauterie.">
+      <figcaption>Rappel de l'écran 3 — des équipements familiers, au sens de la directive.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Non, seuls les récipients de stockage de fluide neuf sont concernés</button>
+      <button type="button" data-answer="b">Non, seule la bouteille de fluide frigorigène l'est, pas les autres équipements</button>
+      <button type="button" data-answer="c">Oui, mais uniquement s'il est fabriqué hors de l'Union européenne</button>
+      <button type="button" data-answer="bonne">Oui, comme tout équipement sous pression du circuit dépassant le seuil fixé par le texte</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le séparateur d'huile, comme le condenseur, le réservoir de liquide ou la tuyauterie, est un équipement sous pression au sens de la directive dès qu'il dépasse le seuil de pression fixé par le texte — l'origine de fabrication ou le type d'usage ne change rien à ce principe."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Que désigne la PS inscrite sur la plaque signalétique ? Regardez la plaque de l'écran cinq si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Que désigne la PS inscrite sur la plaque signalétique ?</h2>
+    <figure class="vignette">
+      <img src="svg/plaque-ps.svg" alt="Vignette de rappel : une plaque signalétique avec une ligne encadrée pour la PS, reliée à un encadré expliquant qu'elle sert de référence.">
+      <figcaption>Rappel de l'écran 5 — la PS, la référence.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">La pression maximale que l'équipement est conçu pour supporter</button>
+      <button type="button" data-answer="b">La pression de service mesurée le jour du contrôle</button>
+      <button type="button" data-answer="c">La pression atmosphérique du lieu d'installation</button>
+      <button type="button" data-answer="d">La pression minimale en dessous de laquelle l'équipement doit être vidangé</button>
+    </div>
+    <p class="feedback" hidden data-explication="La PS, pression maximale admissible, est fixée par le fabricant et gravée sur la plaque. C'est une donnée de conception, pas une mesure instantanée ni une donnée liée au lieu d'installation."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. À quoi sert la PS, une fois connue ? Souvenez-vous des deux flèches de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">À quoi sert la PS, une fois connue ?</h2>
+    <figure class="vignette">
+      <img src="svg/ps-reference.svg" alt="Vignette de rappel : une boîte PS reliée par deux flèches au classement en catégorie et au tarage des accessoires de sécurité.">
+      <figcaption>Rappel de l'écran 6 — tout part de la PS.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">À calculer la consommation électrique de l'installation</button>
+      <button type="button" data-answer="b">À fixer la date de la prochaine visite de maintenance</button>
+      <button type="button" data-answer="bonne">À servir de référence pour classer l'équipement et tarer ses accessoires de sécurité</button>
+      <button type="button" data-answer="d">À déterminer le prix de vente de l'équipement</button>
+    </div>
+    <p class="feedback" hidden data-explication="La PS est la référence : elle sert de base au classement en catégorie de l'équipement et au tarage des accessoires de sécurité, qui doivent intervenir avant qu'elle ne soit dépassée."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../fgaz-3/"><strong>F-Gaz 3 — le règlement (UE) 2024/573</strong></a>
+      — le champ d'application des deux textes touche les mêmes équipements de fluidique.</li>
+    <li><strong>NF EN 378</strong> (même sous-ligne, en préparation) — le groupe du fluide décide du classement en catégorie DESP.</li>
+    <li><strong>Sprinkler &amp; RIA</strong> (sous-ligne Incendie, en préparation) — les réseaux d'eau incendie sont eux aussi sous pression et relèvent du même cadre.</li>
+  </ul>
+  <p>F-Gaz 3 est ouverte : le lien fonctionne. Les deux autres stations sont
+  en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

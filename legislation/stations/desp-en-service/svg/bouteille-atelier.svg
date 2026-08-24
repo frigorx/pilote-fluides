@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-bout" aria-describedby="d-bout" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bout">Sur le terrain : la bouteille qui vieillit en atelier</title>
+  <desc id="d-bout">Une bouteille de fluide frigorigène posée sur une étagère d'atelier, avec une
+    étiquette d'identification. À côté, une icône de calendrier sans aucune date, marquée d'un point
+    d'interrogation, pour rappeler qu'un rythme de suivi existe mais qu'il se vérifie sur le texte
+    applicable. Un encadré précise qu'une bouteille de ce type reste un équipement sous pression,
+    suivi dans le temps, même si elle ressemble à un simple contenant de stockage.</desc>
+  <style>
+    .lbl   { font-size:15px; fill:#10233c; }
+    .lblb  { font-size:15px; fill:#10233c; font-weight:bold; }
+    .note  { font-size:15px; fill:#5a6b7d; font-style:italic; }
+    .encTtl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#0c4a6e; }
+  </style>
+
+  <!-- Étagère d'atelier -->
+  <line x1="40" y1="300" x2="360" y2="300" stroke="#5a6b7d" stroke-width="6"/>
+  <text class="note" x="200" y="326" text-anchor="middle">atelier</text>
+
+  <!-- Bouteille -->
+  <rect x="140" y="100" width="80" height="200" rx="24" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="164" y="70" width="32" height="34" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="140" y="180" width="80" height="34" rx="4" fill="#eaf2f6" stroke="#0c4a6e" stroke-width="2"/>
+  <text class="lbl" x="180" y="202" text-anchor="middle" font-size="15px">étiquette</text>
+
+  <!-- Calendrier sans date -->
+  <rect x="500" y="90" width="150" height="130" rx="12" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <rect x="500" y="90" width="150" height="30" rx="12" fill="#0c4a6e"/>
+  <rect x="500" y="108" width="150" height="12" fill="#0c4a6e"/>
+  <line x1="530" y1="80" x2="530" y2="104" stroke="#0c4a6e" stroke-width="5" stroke-linecap="round"/>
+  <line x1="620" y1="80" x2="620" y2="104" stroke="#0c4a6e" stroke-width="5" stroke-linecap="round"/>
+  <text class="lblb" x="575" y="185" text-anchor="middle" font-size="34px">?</text>
+
+  <!-- Encadré explicatif -->
+  <rect x="680" y="90" width="200" height="180" rx="12" fill="#eaf2f6" stroke="#0c4a6e" stroke-width="2"/>
+  <text class="encTtl" x="780" y="120" text-anchor="middle">Pas un simple</text>
+  <text class="encTtl" x="780" y="142" text-anchor="middle">contenant</text>
+  <text class="lbl" x="780" y="172" text-anchor="middle">un équipement</text>
+  <text class="lbl" x="780" y="194" text-anchor="middle">sous pression,</text>
+  <text class="lbl" x="780" y="216" text-anchor="middle">suivi dans le temps</text>
+
+  <text class="lbl" x="450" y="352" text-anchor="middle">Une bouteille de fluide frigorigène a, elle aussi, son propre suivi réglementaire.</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-1" aria-describedby="d-1" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-1">Le mécanisme d'une atmosphère explosive</title>
+  <desc id="d-1">Un nuage de gaz bleu pâle se mélange à un nuage d'air gris clair, formant une zone commune
+    au centre. À proximité de cette zone, une étincelle orange est représentée. Une légende explique que le
+    mélange seul ne suffit pas : il faut aussi le contact avec une source d'inflammation.</desc>
+  <style>
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Nuage de gaz -->
+  <ellipse cx="280" cy="140" rx="140" ry="80" fill="#c6dcf5" opacity=".8"/>
+  <text class="lbl" x="220" y="140" text-anchor="middle" fill="#1b3a63">Gaz</text>
+
+  <!-- Nuage d'air -->
+  <ellipse cx="420" cy="140" rx="140" ry="80" fill="#e6e9ef" opacity=".8"/>
+  <text class="lbl" x="480" y="140" text-anchor="middle" fill="#5a6b7d">Air</text>
+
+  <!-- Étincelle -->
+  <g stroke="#c2410c" stroke-width="4" stroke-linecap="round">
+    <line x1="620" y1="90" x2="620" y2="130"/>
+    <line x1="600" y1="110" x2="640" y2="110"/>
+    <line x1="605" y1="95" x2="635" y2="125"/>
+    <line x1="635" y1="95" x2="605" y2="125"/>
+  </g>
+  <text class="lbl" x="620" y="60" text-anchor="middle" fill="#c2410c">Source d'inflammation</text>
+
+  <rect x="30" y="255" width="840" height="56" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="290" text-anchor="middle">Le mélange seul ne suffit pas : il faut aussi le contact avec une source d'inflammation</text>
+</svg>

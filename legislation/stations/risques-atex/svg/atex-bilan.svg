@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-8" aria-describedby="d-8" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-8">Bilan : la classe du fluide décide</title>
+  <desc id="d-8">Une fiche bilan résume quatre points en cases cochées : le mécanisme du mélange et de la
+    source d'inflammation, l'échelle A1 à A3, le piège du R290 classé A3, et les deux précautions à prendre
+    dans la pièce et sur le matériel.</desc>
+  <style>
+    .fiche{ fill:#fffdf8; stroke:#d6dee7; stroke-width:2; }
+    .ttl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <rect class="fiche" x="140" y="30" width="620" height="290" rx="16"/>
+  <rect x="140" y="30" width="620" height="48" rx="16" fill="#c2410c"/>
+  <rect x="140" y="54" width="620" height="14" fill="#c2410c"/>
+  <text class="ttl" x="450" y="60" text-anchor="middle">La classe du fluide décide</text>
+
+  <g>
+    <rect x="180" y="100" width="32" height="32" rx="7" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+    <path d="M188 117 l7 7 l16 -18" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+    <text class="lbl" x="230" y="123">Mélange + source d'inflammation</text>
+  </g>
+  <g>
+    <rect x="180" y="152" width="32" height="32" rx="7" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+    <path d="M188 169 l7 7 l16 -18" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+    <text class="lbl" x="230" y="175">Échelle A1, A2L, A2, A3</text>
+  </g>
+  <g>
+    <rect x="180" y="204" width="32" height="32" rx="7" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+    <path d="M188 221 l7 7 l16 -18" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+    <text class="lbl" x="230" y="227">R290 = A3, jamais A2L</text>
+  </g>
+  <g>
+    <rect x="180" y="256" width="32" height="32" rx="7" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+    <path d="M188 273 l7 7 l18 -20" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+    <text class="lbl" x="230" y="279">Ventilation + matériel adapté</text>
+  </g>
+</svg>

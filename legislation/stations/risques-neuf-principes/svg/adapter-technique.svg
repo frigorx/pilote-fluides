@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-at" aria-describedby="d-at" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-at">Adapter le travail à l'homme, et suivre l'évolution de la technique</title>
+  <desc id="d-at">Deux cartes côte à côte. Carte 4, « adapter le travail à l'homme » : un établi de brasure
+    dont la hauteur est réglable, avec une double flèche verticale montrant qu'il se règle à la taille du
+    technicien plutôt que l'inverse. Carte 5, « suivre l'évolution de la technique » : à gauche un simple
+    œil barré représentant le contrôle visuel seul, à droite un détecteur électronique de fuite entouré,
+    avec une flèche qui va du premier vers le second.</desc>
+  <style>
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .tit  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .mut  { font-size:14px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Carte 4 : ADAPTER LE TRAVAIL À L'HOMME -->
+  <rect x="16" y="16" width="420" height="348" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <circle cx="46" cy="46" r="18" fill="#c2410c"/><text class="num" x="46" y="52" text-anchor="middle">4</text>
+  <text class="tit" x="226" y="52" text-anchor="middle">ADAPTER LE TRAVAIL À L'HOMME</text>
+
+  <!-- établi réglable -->
+  <rect x="140" y="200" width="180" height="14" fill="#1b3a63"/>
+  <rect x="150" y="214" width="14" height="90" fill="#5a6b7d"/>
+  <rect x="296" y="214" width="14" height="90" fill="#5a6b7d"/>
+  <line x1="230" y1="120" x2="230" y2="196" stroke="#1e7e54" stroke-width="3" marker-start="url(#fh1)" marker-end="url(#fh2)"/>
+  <!-- silhouette technicien -->
+  <circle cx="230" cy="150" r="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="226" y="240" text-anchor="middle">Établi de brasure réglable :</text>
+  <text class="lbl" x="226" y="262" text-anchor="middle">le poste s'adapte au technicien</text>
+  <text class="mut" x="226" y="330" text-anchor="middle">pas l'inverse — ni dos courbé,</text>
+  <text class="mut" x="226" y="348" text-anchor="middle">ni accès en contorsion</text>
+
+  <!-- Carte 5 : SUIVRE L'ÉVOLUTION TECHNIQUE -->
+  <rect x="464" y="16" width="420" height="348" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <circle cx="494" cy="46" r="18" fill="#c2410c"/><text class="num" x="494" y="52" text-anchor="middle">5</text>
+  <text class="tit" x="674" y="52" text-anchor="middle">SUIVRE L'ÉVOLUTION TECHNIQUE</text>
+
+  <ellipse cx="560" cy="190" rx="34" ry="20" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <circle cx="560" cy="190" r="9" fill="#5a6b7d"/>
+  <line x1="530" y1="164" x2="590" y2="216" stroke="#c0392b" stroke-width="2.5"/>
+  <text class="mut" x="560" y="234" text-anchor="middle">contrôle visuel seul</text>
+
+  <line x1="606" y1="190" x2="686" y2="190" stroke="#1e7e54" stroke-width="3" marker-end="url(#fleche2)"/>
+
+  <rect x="700" y="164" width="66" height="52" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2.5"/>
+  <circle cx="733" cy="184" r="6" fill="#1e7e54"/>
+  <text class="mut" x="733" y="234" text-anchor="middle">détecteur électronique</text>
+  <text class="lbl" x="674" y="280" text-anchor="middle">Remplacer l'outil ancien</text>
+  <text class="lbl" x="674" y="302" text-anchor="middle">quand un outil fiable existe</text>
+  <text class="mut" x="674" y="340" text-anchor="middle">et reste accessible pour le chantier</text>
+
+  <defs>
+    <marker id="fh1" markerWidth="10" markerHeight="10" refX="5" refY="0" orient="auto">
+      <path d="M0,10 L5,0 L10,10 Z" fill="#1e7e54"/>
+    </marker>
+    <marker id="fh2" markerWidth="10" markerHeight="10" refX="5" refY="10" orient="auto">
+      <path d="M0,0 L5,10 L10,0 Z" fill="#1e7e54"/>
+    </marker>
+    <marker id="fleche2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1e7e54"/>
+    </marker>
+  </defs>
+</svg>

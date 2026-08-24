@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-cyc" aria-describedby="d-cyc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cyc">Le cycle de la REP : qui paie la fin de vie d'un produit</title>
+  <desc id="d-cyc">Trois étapes reliées par des flèches : mise sur le marché, utilisation, fin de vie.
+    Une flèche de retour, plus épaisse et de couleur distincte, repart de la fin de vie vers la mise
+    sur le marché ; elle porte l'étiquette « responsabilité et financement », rappelant que c'est celui
+    qui a mis le produit sur le marché qui organise et finance sa fin de vie.</desc>
+  <defs>
+    <marker id="fl-sobre" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10233c"/>
+    </marker>
+    <marker id="fl-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#57534e"/>
+    </marker>
+  </defs>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .accent { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#57534e; }
+  </style>
+
+  <rect x="40" y="30" width="230" height="130" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="40" y="30" width="230" height="44" rx="12" fill="#1b3a63"/>
+  <rect x="40" y="58" width="230" height="16" fill="#1b3a63"/>
+  <text class="ttl" x="155" y="58" text-anchor="middle">MISE SUR LE MARCHÉ</text>
+  <text class="lbl" x="155" y="105" text-anchor="middle">un produit ou matériau</text>
+  <text class="lbl" x="155" y="130" text-anchor="middle">de construction est vendu</text>
+
+  <rect x="335" y="30" width="230" height="130" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3"/>
+  <rect x="335" y="30" width="230" height="44" rx="12" fill="#5a6b7d"/>
+  <rect x="335" y="58" width="230" height="16" fill="#5a6b7d"/>
+  <text class="ttl" x="450" y="58" text-anchor="middle">UTILISATION</text>
+  <text class="lbl" x="450" y="105" text-anchor="middle">le produit est posé</text>
+  <text class="lbl" x="450" y="130" text-anchor="middle">et sert sur le chantier</text>
+
+  <rect x="630" y="30" width="230" height="130" rx="12" fill="#fffdf8" stroke="#10233c" stroke-width="3"/>
+  <rect x="630" y="30" width="230" height="44" rx="12" fill="#10233c"/>
+  <rect x="630" y="58" width="230" height="16" fill="#10233c"/>
+  <text class="ttl" x="745" y="58" text-anchor="middle">FIN DE VIE</text>
+  <text class="lbl" x="745" y="105" text-anchor="middle">le produit devient</text>
+  <text class="lbl" x="745" y="130" text-anchor="middle">un déchet de chantier</text>
+
+  <line x1="270" y1="95" x2="330" y2="95" stroke="#10233c" stroke-width="3" marker-end="url(#fl-sobre)"/>
+  <line x1="565" y1="95" x2="625" y2="95" stroke="#10233c" stroke-width="3" marker-end="url(#fl-sobre)"/>
+
+  <path d="M 745,160 Q 450,340 155,160" fill="none" stroke="#57534e" stroke-width="5" marker-end="url(#fl-accent)"/>
+
+  <rect x="270" y="266" width="360" height="66" rx="12" fill="#fffdf8" stroke="#57534e" stroke-width="2.5"/>
+  <text class="accent" x="450" y="294" text-anchor="middle">RESPONSABILITÉ ET FINANCEMENT</text>
+  <text class="lbl" x="450" y="318" text-anchor="middle">portés par celui qui a mis le produit sur le marché</text>
+</svg>

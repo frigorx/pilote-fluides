@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 410" role="img"
+     aria-labelledby="t-ovc" aria-describedby="d-ovc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ovc">Un protocole pour l'ozone qui se met à traiter du climat</title>
+  <desc id="d-ovc">En haut, une case porte le protocole de Montréal. Deux branches en partent : à gauche, l'objectif
+    initial, la couche d'ozone, présent depuis l'origine du texte ; à droite, l'objectif ajouté par l'amendement de
+    Kigali, le climat. Une ligne en tirets descend de la branche Kigali vers une case séparée, en bas, qui porte le
+    règlement européen F-Gaz 3 : elle applique cette même logique de réduction progressive des HFC, mais à l'échelle
+    de l'Union européenne plutôt qu'au niveau international.</desc>
+  <defs>
+    <marker id="fl3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .ttl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lblGras{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl{ font-size:15px; fill:#10233c; }
+    .lblMut{ font-size:15px; fill:#5a6b7d; }
+    .etq{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <!-- Case du haut : le protocole -->
+  <rect x="260" y="20" width="380" height="70" rx="12" fill="#1b3a63"/>
+  <text class="ttl" x="450" y="52" text-anchor="middle">PROTOCOLE DE MONTRÉAL</text>
+  <text class="ttl" x="450" y="76" text-anchor="middle" font-size="14px">un seul texte, deux objectifs au fil du temps</text>
+
+  <!-- Branches -->
+  <path d="M400,90 C 300,120 220,120 200,150" stroke="#1b3a63" stroke-width="3" fill="none" marker-end="url(#fl3)"/>
+  <path d="M500,90 C 600,120 680,120 700,150" stroke="#047857" stroke-width="3" fill="none" marker-end="url(#fl3)"/>
+
+  <!-- Case gauche : ozone -->
+  <rect x="60" y="160" width="280" height="120" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lblGras" x="200" y="192" text-anchor="middle">Objectif initial</text>
+  <text class="lblGras" x="200" y="216" text-anchor="middle">la couche d'ozone</text>
+  <text class="lbl" x="200" y="244" text-anchor="middle">présent depuis l'origine</text>
+  <text class="lbl" x="200" y="264" text-anchor="middle">du protocole</text>
+
+  <!-- Case droite : climat / Kigali -->
+  <rect x="560" y="160" width="280" height="120" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <text class="lblGras" x="700" y="192" text-anchor="middle">Objectif ajouté</text>
+  <text class="lblGras" x="700" y="216" text-anchor="middle">le climat</text>
+  <text class="lbl" x="700" y="244" text-anchor="middle">par l'amendement</text>
+  <text class="lbl" x="700" y="264" text-anchor="middle">de Kigali</text>
+
+  <!-- Ligne pointillée vers F-Gaz 3 -->
+  <path d="M700,280 L700,320" stroke="#047857" stroke-width="2.5" fill="none" stroke-dasharray="5 5" marker-end="url(#fl3)"/>
+  <text class="etq" x="716" y="304">même logique</text>
+
+  <!-- Case F-Gaz 3 -->
+  <rect x="500" y="330" width="380" height="42" rx="10" fill="#e9f5ef" stroke="#047857" stroke-width="2"/>
+  <text class="lblGras" x="690" y="356" text-anchor="middle">F-Gaz 3 — le règlement européen</text>
+
+  <text class="lblMut" x="230" y="360">échelle : traité international</text>
+  <text class="lblMut" x="620" y="392">échelle : Union européenne</text>
+</svg>

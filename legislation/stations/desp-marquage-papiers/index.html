@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Marquage &amp; papiers — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le marquage CE, la déclaration de conformité, la notice d'instructions et le dossier que l'installateur doit conserver — ce qui accompagne un équipement sous pression conforme à la directive DESP.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/desp-marquage-papiers/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne La DESP.
+     Troisième des cinq stations DESP prévues sur le plan du réseau
+     (La directive · Catégories I à IV · Marquage & papiers · En service ·
+     Soupapes & sécurités) — la seule construite pour l'instant.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     styles.css et app.js sont copiés à l'identique depuis la station
+     « Aptitude & capacité » (--sous-ligne reste #0f766e, voulu, ne pas
+     toucher) ; les SVG de cette station utilisent l'accent propre à la
+     sous-ligne DESP, #0c4a6e.
+
+     data-prototype : la station attend sa relecture métier avant
+     production des audios et retrait de la mention.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">La DESP · niveau BTS</p>
+  <h1>Marquage &amp; papiers — ce qui accompagne l'équipement</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez reconnaître le marquage CE sur la plaque signalétique, dire qui délivre la déclaration de conformité, ce que précise la notice d'instructions, et ce que vous devez conserver après un montage — le dossier qu'on vous demandera lors d'un contrôle.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez le schéma. En haut, l'équipement conforme. Trois traits en partent, vers trois cartes. Première carte : le marquage CE, apposé directement sur la plaque de l'équipement. Deuxième carte : la déclaration de conformité, un document délivré par le fabricant. Troisième carte : la notice d'instructions, fournie avec l'équipement. La bande du bas le dit sans détour : sans ces trois pièces, l'équipement n'est pas complet. Ce sont elles que cette station détaille, une par une.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Trois pièces accompagnent l'équipement</h2>
+    <p>Un équipement sous pression conforme à la directive DESP n'arrive jamais seul. Trois pièces l'accompagnent : le <strong>marquage CE</strong>, apposé sur sa plaque signalétique ; la <strong>déclaration de conformité</strong>, délivrée par le fabricant ; et la <strong>notice d'instructions</strong>, fournie avec l'équipement.</p>
+    <p>Cette station suit ces trois pièces, du fabricant jusqu'au dossier que vous devrez présenter sur un chantier.</p>
+    <figure>
+      <img src="svg/trois-pieces.svg" alt="Un équipement conforme relié à trois cartes : le marquage CE apposé sur la plaque, la déclaration de conformité délivrée par le fabricant, la notice d'instructions fournie avec l'équipement. Une bande rappelle que sans ces trois pièces, l'équipement n'est pas complet.">
+      <figcaption>Trois pièces, une seule règle : elles vont ensemble.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici une plaque signalétique, fixée sur un réservoir de fluide frigorigène. Elle porte plusieurs champs : le fabricant, la pression maximale admissible notée PS — une valeur propre à chaque équipement — et, s'il y en a un, un numéro de série. À droite, dans un encadré à part, le marquage CE. Regardez bien : il ne remplace aucun des autres champs, il s'ajoute à eux, sur la même plaque. Une plaque avec seulement le CE et rien d'autre serait une plaque incomplète.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le marquage CE, sur la plaque signalétique</h2>
+    <p>Le marquage CE est apposé <strong>sur la plaque signalétique</strong> de l'équipement, à côté des autres informations qui y figurent : le <strong>fabricant</strong>, la <strong>pression maximale admissible</strong> — la <strong>PS</strong> — et, selon les équipements, un <strong>numéro de série</strong>.</p>
+    <p>Le marquage CE <strong>s'ajoute</strong> à ces champs, il n'en remplace aucun. Sur une bouteille de fluide frigorigène ou un réservoir, la PS est gravée à côté du CE : c'est elle qui donne la limite de l'équipement.</p>
+    <figure>
+      <img src="svg/plaque-signaletique.svg" alt="La plaque signalétique d'un réservoir de fluide frigorigène, avec les champs fabricant, pression maximale admissible PS et numéro de série, et à part, le marquage CE dans un encadré. Une bande précise que le marquage CE s'ajoute aux autres champs, sans en remplacer aucun.">
+      <figcaption>Le CE est un champ parmi d'autres — pas un remplaçant.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Ce document, c'est la déclaration de conformité. Regardez d'où elle part : du fabricant, à gauche. Elle porte quatre rubriques : l'équipement concerné, la directive visée, le fabricant qui la délivre, et une mention conforme, encadrée en vert. Elle rejoint ensuite l'équipement livré, à droite : c'est avec lui qu'elle voyage. C'est le fabricant, et lui seul, qui l'établit et qui la délivre.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">La déclaration de conformité</h2>
+    <p>La <strong>déclaration de conformité</strong> est un document délivré par le <strong>fabricant</strong>. Elle atteste que l'équipement respecte les exigences de la directive DESP. Elle identifie l'équipement concerné, la directive visée, et le fabricant qui la délivre.</p>
+    <p>Elle accompagne l'équipement dès sa livraison — c'est une pièce que vous recevez, jamais une pièce que vous rédigez vous-même.</p>
+    <figure>
+      <img src="svg/declaration-conformite.svg" alt="Le fabricant délivre la déclaration de conformité, un document avec les rubriques équipement concerné, directive visée, fabricant, et une mention conforme. Le document rejoint ensuite l'équipement livré.">
+      <figcaption>Une pièce que l'on reçoit, jamais que l'on rédige soi-même.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="La notice d'instructions, elle, se lit en trois bandes. Première bande : les conditions d'utilisation, comment faire fonctionner l'équipement. Deuxième bande : l'entretien, ce qui doit être vérifié. Troisième bande, encadrée en orange parce qu'elle porte une limite : les limites de l'équipement, et notamment la pression maximale admissible, la PS. En bas, un exemple concret : la notice livrée avec un condenseur ou un séparateur d'huile, comme celles que vous manipulez en atelier.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La notice d'instructions</h2>
+    <p>La <strong>notice d'instructions</strong> doit être fournie avec l'équipement. Elle précise les <strong>conditions d'utilisation</strong>, les opérations d'<strong>entretien</strong>, et les <strong>limites</strong> de l'équipement — dont sa <strong>PS</strong>.</p>
+    <p>Sur le terrain : c'est la notice qui accompagne, par exemple, un condenseur ou un séparateur d'huile livré par le fabricant. Elle ne s'improvise pas et elle ne se devine pas — elle doit être fournie.</p>
+    <figure>
+      <img src="svg/notice-instructions.svg" alt="Un document en trois bandes : conditions d'utilisation, entretien, et limites de l'équipement dont la pression maximale admissible PS. En bas, l'exemple de la notice livrée avec un condenseur ou un séparateur d'huile.">
+      <figcaption>Trois bandes, une seule à retenir en premier : les limites, dont la PS.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Regardez la flèche : à gauche, les deux documents reçus avec l'équipement, la déclaration de conformité et la notice. Ils entrent dans le dossier, à droite, intitulé dossier de l'installation. C'est vous, l'installateur, qui le conservez, une fois le montage terminé. La bande du bas donne la raison : c'est ce dossier qui sera demandé lors d'un contrôle. Ne pas le garder, c'est ne pas pouvoir répondre le jour venu.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Ce que l'installateur doit conserver</h2>
+    <p>Une fois le montage terminé, l'installateur — vous, ou votre entreprise — doit <strong>conserver</strong> la documentation reçue avec l'équipement : la déclaration de conformité et la notice d'instructions. Ces deux pièces rejoignent le <strong>dossier de l'installation</strong>.</p>
+    <p>La durée pendant laquelle ce dossier doit être conservé est fixée par la réglementation en vigueur — à vérifier sur le texte applicable au moment du montage.</p>
+    <figure>
+      <img src="svg/dossier-installation.svg" alt="La déclaration de conformité et la notice d'instructions entrent, par une flèche, dans le dossier de l'installation, conservé par l'installateur. Une bande précise que c'est ce dossier qui sera demandé lors d'un contrôle.">
+      <figcaption>Les documents reçus ne se jettent pas : ils entrent dans le dossier.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Voici la situation qui suit, sur le chantier. À gauche, une loupe : le contrôle. Une flèche pointe vers le dossier ouvert, tenu par le frigoriste, qui contient la déclaration de conformité d'un côté et la notice de l'autre. La bande du bas est la conclusion de tout ce qui précède : c'est le dossier gardé depuis le montage qui doit pouvoir être présenté. Pas reconstitué sur place, pas promis pour plus tard : présenté.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le dossier technique, présenté sur le chantier</h2>
+    <p>Lors d'un contrôle ou d'une inspection, c'est ce <strong>dossier de l'installation</strong> qui est demandé : la déclaration de conformité et la notice d'instructions, celles reçues avec l'équipement et conservées depuis le montage.</p>
+    <p>Un frigoriste qui ne peut pas le présenter n'a pas de preuve à montrer — même si l'équipement, lui, porte bien son marquage CE.</p>
+    <figure>
+      <img src="svg/controle-chantier.svg" alt="Une loupe symbolisant un contrôle pointe vers un dossier ouvert tenu par le frigoriste, contenant la déclaration de conformité et la notice d'instructions. Une bande rappelle que c'est le dossier gardé depuis le montage qui doit pouvoir être présenté.">
+      <figcaption>Le jour du contrôle, c'est ce dossier qu'on ouvre — pas la mémoire du technicien.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre cartes, quatre situations de terrain. Première, en bleu foncé : je reçois un équipement neuf sans notice. Réponse : ne pas l'installer sans la réclamer au fabricant, elle doit être fournie. Deuxième, en bleu : un contrôle demande le dossier de l'installation. Réponse : présenter la déclaration et la notice, conservées depuis le montage. Troisième, en orange : la plaque porte le CE mais pas de PS lisible. Réponse : un champ manque, la plaque n'est pas complète, à signaler. Quatrième, en vert : je ne retrouve plus la déclaration de conformité. Réponse : la redemander au fabricant, elle se reconstitue, elle ne s'improvise pas.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : quatre situations de terrain</h2>
+    <ol>
+      <li><strong>« Je reçois un équipement neuf, sans notice. »</strong> → Ne pas l'installer sans la réclamer au fabricant : elle doit être fournie.</li>
+      <li><strong>« Un contrôle demande le dossier de l'installation. »</strong> → Présenter la déclaration de conformité et la notice, conservées depuis le montage.</li>
+      <li><strong>« La plaque porte le CE mais pas de PS lisible. »</strong> → Un champ manque : ce n'est pas une plaque complète, à signaler.</li>
+      <li><strong>« Je ne retrouve plus la déclaration de conformité. »</strong> → La redemander au fabricant : elle se reconstitue, elle ne s'improvise pas.</li>
+    </ol>
+    <figure>
+      <img src="svg/quatre-situations-marquage.svg" alt="Quatre cartes numérotées : recevoir un équipement neuf sans notice, un contrôle qui demande le dossier de l'installation, une plaque sans PS lisible, une déclaration de conformité égarée. Chacune porte sa réponse.">
+      <figcaption>Dans les quatre cas, la même question : qui doit fournir quoi, et qui doit le garder.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan. À gauche, la plaque : fabricant, PS, numéro de série, et le marquage CE qui s'y ajoute. À droite, le dossier : la déclaration de conformité et la notice, conservées. Une double flèche relie les deux, parce qu'ils s'accompagnent toujours. La bande du bas résume la station en deux lignes. Et le réflexe professionnel, celui à garder : vérifier la plaque, et vérifier le dossier technique fourni par le fabricant.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Le <strong>marquage CE</strong> est apposé sur la plaque, à côté du fabricant, de la PS et du numéro de série.</li>
+      <li>La <strong>déclaration de conformité</strong> est délivrée par le fabricant et accompagne l'équipement.</li>
+      <li>La <strong>notice d'instructions</strong> précise conditions d'utilisation, entretien et limites — dont la PS.</li>
+      <li>L'<strong>installateur conserve</strong> ce qu'il reçoit : ces pièces rejoignent le dossier de l'installation.</li>
+      <li>C'est ce <strong>dossier</strong> qui est demandé lors d'un contrôle ou d'une inspection.</li>
+    </ul>
+    <p class="formule">Le réflexe : vérifier la plaque, et vérifier le dossier technique fourni par le fabricant.</p>
+    <figure>
+      <img src="svg/bilan-marquage.svg" alt="La plaque signalétique avec le marquage CE et la PS, reliée par une double flèche au dossier contenant la déclaration de conformité et la notice. Une bande résume les points clés de la station.">
+      <figcaption>Le CE sur la plaque, le dossier dans les mains : les deux s'accompagnent.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un équipement porte bien le marquage CE sur sa plaque, mais le fabricant n'a fourni ni déclaration de conformité, ni notice d'instructions. Que faut-il faire ? Choisissez parmi les quatre propositions.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Le CE est sur la plaque, mais rien d'autre n'a été fourni. Que faire ?</h2>
+    <figure class="vignette">
+      <img src="svg/trois-pieces.svg" alt="Vignette de rappel : les trois pièces qui accompagnent l'équipement, le marquage CE, la déclaration de conformité et la notice d'instructions.">
+      <figcaption>Rappel de l'écran 1 — trois pièces, et il en manque deux.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Installer : le marquage CE suffit à lui seul</button>
+      <button type="button" data-answer="bonne">Réclamer les deux documents manquants au fabricant avant d'aller plus loin</button>
+      <button type="button" data-answer="c">Rédiger soi-même une déclaration de conformité</button>
+      <button type="button" data-answer="d">Installer, et demander les documents après coup si besoin</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le marquage CE ne remplace ni la déclaration de conformité ni la notice : les trois pièces s'accompagnent. La déclaration et la notice sont délivrées par le fabricant, jamais rédigées par l'installateur."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Sur la plaque signalétique d'une bouteille de fluide frigorigène, à côté de quelles informations trouve-t-on le marquage CE ? Reprenez le schéma de l'écran deux avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Sur la plaque, à côté de quoi trouve-t-on le marquage CE ?</h2>
+    <figure class="vignette">
+      <img src="svg/plaque-signaletique.svg" alt="Vignette de rappel : la plaque signalétique avec ses champs fabricant, PS et numéro de série, et le marquage CE dans un encadré à part.">
+      <figcaption>Rappel de l'écran 2 — le CE s'ajoute, il ne remplace rien.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Rien : le marquage CE est seul sur la plaque</button>
+      <button type="button" data-answer="b">Uniquement le numéro de série</button>
+      <button type="button" data-answer="bonne">Le fabricant, la pression maximale admissible (PS), et éventuellement un numéro de série</button>
+      <button type="button" data-answer="d">Le prix et la date d'achat</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le marquage CE figure aux côtés des autres champs de la plaque, il ne les remplace pas. La PS, en particulier, donne la limite propre à l'équipement."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Que précise la notice d'instructions fournie avec un équipement, comme un condenseur ou un séparateur d'huile ? Regardez les trois bandes de l'écran quatre si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Que précise la notice d'instructions ?</h2>
+    <figure class="vignette">
+      <img src="svg/notice-instructions.svg" alt="Vignette de rappel : la notice d'instructions en trois bandes, conditions d'utilisation, entretien, et limites dont la PS.">
+      <figcaption>Rappel de l'écran 4 — trois bandes, dont une sur les limites.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Uniquement le prix de l'équipement</button>
+      <button type="button" data-answer="bonne">Les conditions d'utilisation, l'entretien, et les limites — dont la PS</button>
+      <button type="button" data-answer="c">La liste des autres clients du fabricant</button>
+      <button type="button" data-answer="d">Rien : elle n'est pas obligatoire</button>
+    </div>
+    <p class="feedback" hidden data-explication="La notice doit être fournie avec l'équipement : elle précise comment l'utiliser, comment l'entretenir, et ses limites, dont la pression maximale admissible."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Lors d'un contrôle sur un chantier, que doit pouvoir présenter le frigoriste ? Souvenez-vous du dossier de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Lors d'un contrôle sur chantier, que doit présenter le frigoriste ?</h2>
+    <figure class="vignette">
+      <img src="svg/controle-chantier.svg" alt="Vignette de rappel : le dossier ouvert, tenu par le frigoriste, contenant la déclaration de conformité et la notice d'instructions.">
+      <figcaption>Rappel de l'écran 6 — le dossier gardé depuis le montage.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Rien, le marquage CE sur l'équipement suffit</button>
+      <button type="button" data-answer="b">Une attestation d'aptitude personnelle</button>
+      <button type="button" data-answer="bonne">Le dossier de l'installation : la déclaration de conformité et la notice, conservées depuis le montage</button>
+      <button type="button" data-answer="d">Une facture d'achat de l'équipement</button>
+    </div>
+    <p class="feedback" hidden data-explication="C'est le dossier de l'installation, constitué à partir de la documentation reçue avec l'équipement, qui est demandé lors d'un contrôle — pas une simple facture ni le seul marquage visible sur l'équipement."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours. Une seule correspondance listée :
+     NF EN 378 est en préparation, aucune autre station DESP ni fgaz-3 ne
+     sont liées ici (décision du fond : pas de lien vers un dossier qui
+     n'existe pas encore, et Sprinkler & RIA reste réservé à la station
+     desp-la-directive). -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>NF EN 378</strong> (même sous-ligne, en préparation) — la notice d'instructions et le marquage renvoient aussi aux exigences propres au fluide que fixe cette norme.</li>
+  </ul>
+  <p>Cette station est en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

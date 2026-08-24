@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>La RE2020 — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : les trois exigences de la RE2020 — Bbio, Cep, IC — ce qui change vraiment par rapport à la RT2012, et pourquoi l'indicateur carbone pousse vers la pompe à chaleur.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/thermique-re2020/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Thermique.
+     Deuxième des six stations de la sous-ligne.
+
+     GABARIT repris à la lettre de aptitude-capacite/. ÉCART ASSUMÉ
+     IDENTIQUE À thermique-pourquoi-une-rt/ : styles.css et app.js sont
+     une copie littérale (variable --sous-ligne:#0f766e conservée),
+     l'accent #92400e de la sous-ligne Thermique n'est appliqué que dans
+     les SVG.
+
+     Aucun chiffre de seuil (valeurs Bbio, Cep, IC, DH) n'est inscrit :
+     ces seuils évoluent et se vérifient sur le texte en vigueur. Voir
+     FOND.md, § « À sourcer ».
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Thermique · niveau BTS</p>
+  <h1>La RE2020 — trois exigences, pas une de plus</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez nommer et distinguer les trois exigences de la RE2020 — Bbio, Cep, IC —, dire pourquoi elles se contrôlent ensemble sans compensation, et expliquer pourquoi l'impact carbone pousse le choix vers la pompe à chaleur.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Trois cartes de même largeur, côte à côte. La première, Bbio, porte la mention le besoin du bâti, indépendant des équipements. La deuxième, Cep, porte la mention la consommation d'énergie, tous usages. La troisième, IC, encadrée plus large, porte la mention l'impact carbone, sur tout le cycle de vie. En bas, une bande rappelle qu'elles sont contrôlées ensemble, sans compensation possible entre elles : ce sera la règle qui revient tout au long de la station.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Les trois exigences de la RE2020</h2>
+    <p>La RE2020 ne se résume pas à un chiffre. Elle repose sur <strong>trois exigences distinctes</strong> : le <strong>Bbio</strong>, le besoin bioclimatique du bâti ; le <strong>Cep</strong>, la consommation d'énergie ; l'<strong>IC</strong>, l'impact carbone.</p>
+    <p>Les trois écrans suivants détaillent chacune. Retenez déjà ceci : elles ne se compensent pas entre elles.</p>
+    <figure>
+      <img src="svg/trois-exigences.svg" alt="Trois cartes côte à côte : Bbio, le besoin du bâti indépendant des équipements ; Cep, la consommation d'énergie tous usages ; IC, l'impact carbone sur tout le cycle de vie. Une bande indique qu'elles sont contrôlées ensemble, sans compensation.">
+      <figcaption>Trois exigences distinctes — la station détaille chacune.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Une maison compacte, bien orientée vers le soleil, dont les murs portent une couche d'isolation hachurée : ce sont les trois facteurs qui pèsent sur le Bbio, écrits en dessous, orientation, compacité, isolation. À droite, une chaudière et un climatiseur sont dessinés en trait pointillé et barrés d'une croix : le message est que les équipements n'entrent pas dans le calcul du Bbio. Regardez bien cette séparation : c'est le point le plus souvent confondu par les élèves.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Bbio : le besoin bioclimatique</h2>
+    <p>Le <strong>Bbio</strong> mesure la <strong>qualité du bâti</strong> — orientation, forme compacte, isolation — <strong>indépendamment des équipements</strong> installés dedans.</p>
+    <p>Deux bâtiments identiques dans leur bâti ont le même Bbio, qu'on y installe une chaudière ou une pompe à chaleur. C'est justement pour ça qu'un Bbio existe à côté du Cep : il juge le bâti seul, avant tout choix d'équipement.</p>
+    <figure>
+      <img src="svg/bbio-besoin.svg" alt="Une maison compacte, orientée vers le soleil et isolée : les facteurs du Bbio. À côté, une chaudière et un climatiseur barrés d'une croix, hors du calcul du Bbio.">
+      <figcaption>Le Bbio juge le bâti seul, avant tout choix d'équipement.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Cinq blocs empilés dans une colonne, chacun représentant un poste de consommation : chauffage, refroidissement, eau chaude sanitaire, éclairage, auxiliaires comme les pompes et les ventilateurs. Une accolade à droite réunit les cinq blocs sous l'étiquette Cep, la consommation totale d'énergie primaire. Le message : le Cep ne regarde pas que le chauffage, il additionne tous les usages du bâtiment.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Cep : la consommation d'énergie</h2>
+    <p>Le <strong>Cep</strong> additionne <strong>tous les usages</strong> d'énergie du bâtiment : chauffage, refroidissement, eau chaude sanitaire, éclairage, auxiliaires.</p>
+    <p>C'est l'héritier direct de ce que mesurait la RT2012 — mais dans la RE2020, il n'est plus seul : il partage la place avec le Bbio et l'IC.</p>
+    <figure>
+      <img src="svg/cep-consommation.svg" alt="Cinq blocs empilés : chauffage, refroidissement, eau chaude sanitaire, éclairage, auxiliaires, réunis sous l'étiquette Cep, consommation totale d'énergie primaire.">
+      <figcaption>Le Cep additionne tous les usages — pas seulement le chauffage.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Un cercle de quatre étapes reliées par des flèches courbes qui tournent dans le même sens : la fabrication des matériaux, la construction du bâtiment, l'usage sur toute la durée de vie, et la fin de vie avec le devenir des déchets. Au centre, le mot IC. Le message : l'impact carbone ne se limite pas à ce qui se passe une fois le bâtiment habité, il remonte jusqu'à la fabrication des matériaux et va jusqu'à leur fin de vie.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">IC : l'impact carbone, une analyse de cycle de vie</h2>
+    <p>L'<strong>IC</strong> est le volet le plus nouveau. Il ne mesure pas seulement l'énergie consommée pendant l'usage : il additionne l'impact carbone de la <strong>fabrication des matériaux</strong>, de la <strong>construction</strong>, de l'<strong>usage</strong> et de la <strong>fin de vie</strong> du bâtiment.</p>
+    <p>C'est ce qu'on appelle une <strong>analyse de cycle de vie</strong> — la même logique que la station « ACV &amp; carbone », en préparation sur une autre sous-ligne.</p>
+    <figure>
+      <img src="svg/ic-cycle-vie.svg" alt="Un cercle de quatre étapes reliées par des flèches : fabrication des matériaux, construction du bâtiment, usage sur toute la durée de vie, fin de vie et déchets, autour du mot IC.">
+      <figcaption>L'IC remonte jusqu'à la fabrication des matériaux, et va jusqu'à leur fin de vie.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Trois jauges verticales séparées, une pour Bbio, une pour Cep, une pour IC. Chaque jauge porte une zone haute hachurée en rouge, marquée au-delà : le projet échoue sur ce point. En dessous, la phrase confirme qu'un très bon résultat sur une jauge ne rattrape pas un mauvais résultat sur une autre : les trois doivent être respectées, chacune de son côté.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Trois seuils distincts, pas de compensation</h2>
+    <p>Chaque exigence a son <strong>propre seuil à ne pas dépasser</strong>. Ce n'est pas une moyenne des trois : c'est un contrôle <strong>indépendant</strong> sur chacune.</p>
+    <p>Concrètement : un bâtiment excellent sur l'IC mais qui dépasse son seuil de Bbio <strong>ne passe pas</strong>. Le très bon résultat sur l'un ne rattrape jamais un dépassement sur l'autre.</p>
+    <figure>
+      <img src="svg/trois-seuils-distincts.svg" alt="Trois jauges séparées, Bbio, Cep, IC, chacune avec une zone haute d'échec. Un très bon résultat sur une jauge ne rattrape pas un mauvais résultat sur une autre.">
+      <figcaption>Trois contrôles indépendants — jamais une moyenne des trois.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Deux colonnes face à face. À gauche, RT2012, avec une seule case pleine, consommation d'énergie. À droite, RE2020, avec quatre cases pleines : besoin du bâti, consommation d'énergie, impact carbone, confort d'été. Les deux cases consommation d'énergie sont alignées à la même hauteur dans les deux colonnes, pour montrer que ce volet est repris ; les trois autres cases de la colonne RE2020 portent la mention nouveau.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Ce qui change vraiment par rapport à la RT2012</h2>
+    <p>La RT2012 ne contrôlait que la <strong>consommation d'énergie</strong>. La RE2020 reprend ce volet dans le Cep, et en ajoute <strong>trois autres</strong> : le besoin du bâti, l'impact carbone, et le confort d'été.</p>
+    <p>Ce n'est donc pas un simple durcissement du même calcul : c'est un <strong>élargissement du périmètre</strong> mesuré.</p>
+    <figure>
+      <img src="svg/comparaison-rt2012-re2020.svg" alt="Deux colonnes : RT2012 avec une seule case, consommation d'énergie ; RE2020 avec quatre cases, besoin du bâti, consommation d'énergie, impact carbone, confort d'été, les trois dernières marquées nouveau.">
+      <figcaption>Un élargissement du périmètre mesuré, pas un simple durcissement.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Deux colonnes de barres, sans aucune valeur chiffrée. À gauche, une chaudière au gaz : sa barre d'impact carbone est haute, elle franchit la ligne pointillée du seuil à respecter. À droite, une pompe à chaleur : sa barre est basse, elle reste sous le seuil. Le message est visuel avant d'être écrit : à bâti identique, le choix de l'équipement change directement le résultat sur l'IC.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Pourquoi ça pousse vers la pompe à chaleur</h2>
+    <p>L'IC compte l'impact carbone de l'<strong>énergie utilisée</strong> sur toute la durée de vie du bâtiment. Une énergie carbonée pèse plus lourd dans ce calcul.</p>
+    <p>À bâti identique, choisir une <strong>pompe à chaleur</strong> plutôt qu'une chaudière au gaz change directement le résultat sur l'IC — et donc la capacité du projet à passer sous le seuil.</p>
+    <figure>
+      <img src="svg/ic-pousse-pac.svg" alt="Deux barres sans valeur chiffrée : chaudière gaz, impact carbone au-dessus du seuil ; pompe à chaleur, impact carbone sous le seuil.">
+      <figcaption>À bâti identique, le choix de l'équipement change le résultat sur l'IC.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Les trois cartes Bbio, Cep, IC réapparaissent, plus petites, en ligne, réunies sous la mention RE2020. En dessous, une bande résume trois points : le Bbio juge le bâti seul, le Cep additionne tous les usages, l'IC compte tout le cycle de vie et pousse vers la pompe à chaleur.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>La RE2020 repose sur <strong>trois exigences distinctes</strong> : Bbio, Cep, IC.</li>
+      <li>Le <strong>Bbio</strong> juge le bâti seul, indépendamment des équipements.</li>
+      <li>Le <strong>Cep</strong> additionne tous les usages d'énergie — l'héritier de la RT2012.</li>
+      <li>L'<strong>IC</strong> compte tout le cycle de vie, et <strong>pousse vers la pompe à chaleur</strong>.</li>
+      <li>Les trois seuils sont <strong>contrôlés séparément</strong> : jamais de compensation entre eux.</li>
+    </ul>
+    <p class="formule">Le réflexe : trois exigences, trois contrôles — jamais une moyenne des trois.</p>
+    <figure>
+      <img src="svg/bilan-re2020.svg" alt="Les trois cartes Bbio, Cep, IC réunies sous la mention RE2020, avec une bande résumant les points de la station.">
+      <figcaption>Trois exigences, contrôlées ensemble, sans compensation.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Que mesure le Bbio ? Regardez la maison de l'écran deux si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Que mesure le Bbio ?</h2>
+    <figure class="vignette">
+      <img src="svg/bbio-besoin.svg" alt="Vignette de rappel : une maison compacte, orientée et isolée, et des équipements barrés d'une croix, hors du calcul du Bbio.">
+      <figcaption>Rappel de l'écran 2 — le bâti seul, sans les équipements.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La performance de la chaudière ou de la pompe à chaleur installée</button>
+      <button type="button" data-answer="bonne">La qualité du bâti — orientation, compacité, isolation — indépendamment des équipements</button>
+      <button type="button" data-answer="b">L'impact carbone des matériaux de construction</button>
+      <button type="button" data-answer="c">La consommation d'eau chaude sanitaire</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le Bbio juge le bâti seul : orientation, compacité, isolation. Les équipements installés n'entrent pas dans son calcul, contrairement au Cep."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Le Cep additionne quels usages ? Reprenez la colonne de blocs de l'écran trois si besoin.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Le Cep additionne quels usages d'énergie ?</h2>
+    <figure class="vignette">
+      <img src="svg/cep-consommation.svg" alt="Vignette de rappel : cinq blocs de consommation réunis sous l'étiquette Cep.">
+      <figcaption>Rappel de l'écran 3 — tous les usages, pas seulement le chauffage.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Uniquement le chauffage</button>
+      <button type="button" data-answer="b">Uniquement le chauffage et l'eau chaude sanitaire</button>
+      <button type="button" data-answer="bonne">Chauffage, refroidissement, eau chaude sanitaire, éclairage et auxiliaires</button>
+      <button type="button" data-answer="c">Uniquement les auxiliaires, pompes et ventilateurs</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le Cep additionne tous les usages d'énergie du bâtiment : chauffage, refroidissement, eau chaude sanitaire, éclairage et auxiliaires — pas seulement le chauffage."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un bâtiment obtient un excellent résultat sur l'IC mais dépasse le seuil du Bbio. Que se passe-t-il ? Repensez aux trois jauges de l'écran cinq.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Excellent sur l'IC, mais Bbio dépassé : le projet passe-t-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/trois-seuils-distincts.svg" alt="Vignette de rappel : trois jauges séparées Bbio, Cep, IC, chacune avec une zone haute d'échec.">
+      <figcaption>Rappel de l'écran 5 — pas de compensation entre les trois exigences.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Oui : le bon résultat sur l'IC compense le dépassement du Bbio</button>
+      <button type="button" data-answer="bonne">Non : chaque exigence a son propre seuil, sans compensation entre elles</button>
+      <button type="button" data-answer="b">Oui, mais seulement si le Cep est lui aussi excellent</button>
+      <button type="button" data-answer="c">Non, mais seulement pour les bâtiments tertiaires</button>
+    </div>
+    <p class="feedback" hidden data-explication="Les trois exigences sont contrôlées séparément. Un excellent résultat sur l'une ne rattrape jamais un dépassement sur une autre."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Pourquoi l'indicateur carbone de la RE2020 pousse-t-il vers la pompe à chaleur ? Souvenez-vous des deux barres de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Pourquoi l'IC pousse-t-il vers la pompe à chaleur ?</h2>
+    <figure class="vignette">
+      <img src="svg/ic-pousse-pac.svg" alt="Vignette de rappel : deux barres, chaudière gaz au-dessus du seuil de l'IC, pompe à chaleur en dessous.">
+      <figcaption>Rappel de l'écran 7 — le choix de l'équipement change le résultat sur l'IC.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Parce que la pompe à chaleur est obligatoire dans la RE2020</button>
+      <button type="button" data-answer="bonne">Parce que l'IC compte tout le cycle de vie et pénalise les énergies carbonées à l'usage</button>
+      <button type="button" data-answer="b">Parce que le Bbio impose un équipement électrique</button>
+      <button type="button" data-answer="c">Parce que le Cep interdit le gaz depuis la RE2020</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'IC additionne l'impact carbone sur tout le cycle de vie, énergie comprise. Une énergie carbonée pèse plus lourd dans ce calcul, ce qui fait pencher le choix vers la pompe à chaleur — ce n'est pas une obligation directe."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours. Deux correspondances internes
+     réelles (stations sœurs déjà écrites) et une correspondance externe
+     annoncée sans lien : ACV & carbone, sur une autre sous-ligne encore
+     en préparation. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../thermique-pourquoi-une-rt/"><strong>Pourquoi une RT ?</strong></a> (même sous-ligne)
+      — l'histoire qui mène à la RE2020, et ce que la RT2012 mesurait déjà.</li>
+    <li><a href="../thermique-confort-ete/"><strong>Le confort d'été</strong></a> (même sous-ligne)
+      — le détail du volet DH, seulement annoncé ici à l'écran 6.</li>
+    <li><strong>ACV &amp; carbone</strong> (sous-ligne Impact environnemental, en préparation)
+      — l'indicateur IC de la RE2020 est de l'analyse de cycle de vie.</li>
+  </ul>
+  <p>Les deux premières stations sont ouvertes : les liens fonctionnent. La
+  troisième est en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

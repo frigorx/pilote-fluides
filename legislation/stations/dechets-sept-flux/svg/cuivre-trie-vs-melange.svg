@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-ctm" aria-describedby="d-ctm" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ctm">Deux chemins depuis un même tas de cuivre : trié ou mélangé</title>
+  <desc id="d-ctm">Un même tas de cuivre part sur deux chemins possibles. Le chemin du haut, en
+    trait plein vert, mène vers une benne triée puis vers le recyclage : le cuivre garde sa valeur
+    récupérable. Le chemin du bas, en trait tireté rouge, mène vers la benne tout-venant : le
+    cuivre mélangé perd sa valeur et représente un coût. Trier n'est donc pas qu'une contrainte
+    administrative, c'est aussi une question de valeur récupérable.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lbl  { font-size:15px; fill:#10233c; text-anchor:middle; }
+    .mot  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; text-anchor:middle; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Un même tas de cuivre, deux destins</text>
+
+  <!-- le tas de cuivre, point de départ -->
+  <circle cx="160" cy="150" r="16" fill="#b06a00"/>
+  <circle cx="185" cy="135" r="14" fill="#b06a00"/>
+  <circle cx="150" cy="120" r="13" fill="#b06a00"/>
+  <circle cx="180" cy="105" r="12" fill="#b06a00"/>
+  <text class="mot" x="165" y="195">Tas de cuivre</text>
+
+  <!-- chemin du haut : trié -->
+  <path d="M215,120 C300,60 380,60 460,90" fill="none" stroke="#1e7e54" stroke-width="5" marker-end="url(#fh)"/>
+  <text class="mot" x="330" y="55" fill="#1e7e54">TRIÉ</text>
+
+  <!-- chemin du bas : mélangé -->
+  <path d="M215,175 C300,235 380,235 460,205" fill="none" stroke="#c0392b" stroke-width="5" stroke-dasharray="10 7" marker-end="url(#fb)"/>
+  <text class="mot" x="330" y="260" fill="#c0392b">MÉLANGÉ</text>
+
+  <defs>
+    <marker id="fh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e7e54"/>
+    </marker>
+    <marker id="fb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <!-- destination du haut : recyclage -->
+  <rect x="470" y="55" width="380" height="90" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <text class="mot" x="660" y="90" fill="#1e7e54">Recyclage</text>
+  <text class="lbl" x="660" y="118">Le cuivre trié garde sa valeur récupérable</text>
+
+  <!-- destination du bas : tout-venant -->
+  <rect x="470" y="180" width="380" height="90" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <text class="mot" x="660" y="215" fill="#c0392b">Tout-venant</text>
+  <text class="lbl" x="660" y="243">Le cuivre mélangé part en filière moins favorable</text>
+
+  <!-- bande de synthèse -->
+  <rect x="40" y="320" width="820" height="72" rx="14" fill="#f4f0ec" stroke="#57534e" stroke-width="2"/>
+  <text class="mot" x="450" y="352" fill="#10233c">Trier n'est pas qu'une contrainte administrative</text>
+  <text class="lbl" x="450" y="378">c'est aussi une question de coût et de valeur récupérable</text>
+</svg>

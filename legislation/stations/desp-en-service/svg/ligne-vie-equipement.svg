@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img"
+     aria-labelledby="t-ligne" aria-describedby="d-ligne" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ligne">La vie de l'équipement : de la fabrication à l'exploitation</title>
+  <desc id="d-ligne">Une ligne de temps part d'un point marqué fabrication et marquage, passe par un
+    point marqué mise en service, puis se prolonge par un long segment encadré marqué exploitation,
+    qui se termine par une flèche ouverte : cette période n'a pas de fin fixée sur le schéma, elle
+    dure tant que l'équipement reste en usage. C'est cette période que la station regarde.</desc>
+  <style>
+    .noeud  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#5a6b7d; }
+    .actif  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#0c4a6e; }
+    .lbl    { font-size:15px; fill:#10233c; }
+    .note   { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Point : fabrication et marquage -->
+  <circle cx="70" cy="150" r="14" fill="#fffdf8" stroke="#5a6b7d" stroke-width="5"/>
+  <text class="noeud" x="70" y="108" text-anchor="middle">Fabrication</text>
+  <text class="noeud" x="70" y="128" text-anchor="middle">et marquage</text>
+
+  <line x1="84" y1="150" x2="228" y2="150" stroke="#d6dee7" stroke-width="6"/>
+
+  <!-- Point : mise en service -->
+  <circle cx="245" cy="150" r="14" fill="#fffdf8" stroke="#5a6b7d" stroke-width="5"/>
+  <text class="noeud" x="245" y="108" text-anchor="middle">Mise en</text>
+  <text class="noeud" x="245" y="128" text-anchor="middle">service</text>
+
+  <line x1="259" y1="150" x2="326" y2="150" stroke="#d6dee7" stroke-width="6"/>
+
+  <!-- Bloc : exploitation -->
+  <rect x="326" y="112" width="470" height="76" rx="16" fill="#eaf2f6" stroke="#0c4a6e" stroke-width="3"/>
+  <text class="actif" x="561" y="156" text-anchor="middle">Exploitation — la vie de l'équipement en service</text>
+
+  <line x1="796" y1="150" x2="852" y2="150" stroke="#0c4a6e" stroke-width="6"/>
+  <polygon points="852,138 876,150 852,162" fill="#0c4a6e"/>
+
+  <text class="note" x="561" y="228" text-anchor="middle">Aucune fin fixée sur ce schéma : l'exploitation dure tant que l'équipement reste en usage.</text>
+  <text class="lbl" x="561" y="256" text-anchor="middle">C'est cette période que la station explore.</text>
+</svg>

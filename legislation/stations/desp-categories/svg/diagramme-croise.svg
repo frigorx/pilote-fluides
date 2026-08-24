@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img"
+     aria-labelledby="t-diag" aria-describedby="d-diag" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-diag">Le diagramme croisé : la frontière qui bouge avec le fluide</title>
+  <desc id="d-diag">Un repère à deux axes, sans aucune graduation chiffrée : la pression maximale
+    admissible en abscisse, le volume ou le diamètre en ordonnée. Les catégories I, II, III et IV sont
+    placées de l'origine vers le coin opposé, en s'élevant avec les deux axes. Deux lignes de
+    frontière traversent le repère : une ligne en tirets, plus proche de l'origine, pour un fluide du
+    groupe 1, dangereux ; une ligne pleine, plus loin de l'origine, pour un fluide du groupe 2. Une
+    légende sous le repère explique chaque ligne par son tracé, pas seulement par sa couleur.</desc>
+  <style>
+    .ax   { font-size:16px; fill:#10233c; font-weight:bold; }
+    .cat  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .leg  { font-size:15.5px; fill:#10233c; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Axes -->
+  <line x1="110" y1="400" x2="110" y2="40" stroke="#10233c" stroke-width="3" marker-end="url(#fl-ax1)"/>
+  <line x1="110" y1="400" x2="860" y2="400" stroke="#10233c" stroke-width="3" marker-end="url(#fl-ax2)"/>
+  <defs>
+    <marker id="fl-ax1" markerWidth="10" markerHeight="10" refX="5" refY="8" orient="auto"><path d="M0,10 L5,0 L10,10 z" fill="#10233c"/></marker>
+    <marker id="fl-ax2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#10233c"/></marker>
+  </defs>
+  <text class="ax" x="860" y="424" text-anchor="end">Pression maximale admissible (PS) →</text>
+  <text class="ax" x="46" y="220" text-anchor="middle" transform="rotate(-90 46 220)">↑ Volume (ou diamètre)</text>
+
+  <!-- Frontière groupe 1 : plus proche de l'origine, tiretée -->
+  <path d="M 110 210 Q 200 210 340 400" stroke="#c0392b" stroke-width="3.5" fill="none" stroke-dasharray="10 8"/>
+
+  <!-- Frontière groupe 2 : plus loin de l'origine, pleine -->
+  <path d="M 110 90 Q 400 90 700 400" stroke="#1e7e54" stroke-width="3.5" fill="none"/>
+
+  <!-- Repères de catégories, croissants en s'éloignant de l'origine -->
+  <circle cx="200" cy="360" r="20" fill="#eef3f9" stroke="#0c4a6e" stroke-width="2"/>
+  <text class="cat" x="200" y="366" text-anchor="middle">I</text>
+  <circle cx="360" cy="300" r="20" fill="#eef3f9" stroke="#0c4a6e" stroke-width="2"/>
+  <text class="cat" x="360" y="306" text-anchor="middle">II</text>
+  <circle cx="540" cy="220" r="20" fill="#eef3f9" stroke="#0c4a6e" stroke-width="2"/>
+  <text class="cat" x="540" y="226" text-anchor="middle">III</text>
+  <circle cx="740" cy="130" r="20" fill="#eef3f9" stroke="#0c4a6e" stroke-width="2"/>
+  <text class="cat" x="740" y="136" text-anchor="middle">IV</text>
+
+  <!-- Légende, en bande sous le repère -->
+  <rect x="140" y="436" width="620" height="66" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="1.5"/>
+  <line x1="164" y1="460" x2="204" y2="460" stroke="#c0392b" stroke-width="3.5" stroke-dasharray="8 6"/>
+  <text class="leg" x="216" y="465">tirets — frontière pour un fluide du groupe 1 : plus proche de l'origine</text>
+  <line x1="164" y1="486" x2="204" y2="486" stroke="#1e7e54" stroke-width="3.5"/>
+  <text class="leg" x="216" y="491">trait plein — frontière pour un fluide du groupe 2 : plus loin de l'origine</text>
+</svg>

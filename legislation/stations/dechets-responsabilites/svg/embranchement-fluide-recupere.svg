@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-efr" aria-describedby="d-efr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-efr">Le fluide récupéré : deux devenirs possibles</title>
+  <desc id="d-efr">Une bouteille de fluide récupéré, avec deux flèches qui en partent. La première,
+    vers le haut, mène à un encadré « réemployé sur la même machine : reste un fluide » — il n'est pas
+    un déchet. La seconde, vers le bas, mène à un encadré « non réutilisable : devient un déchet
+    dangereux » — contaminé, mélangé ou non identifiable. Dans les deux cas, c'est le même frigoriste,
+    producteur, qui reste responsable de son devenir.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; }
+    .lbl { font-size:15.5px; fill:#10233c; }
+    .note{ font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- La bouteille de fluide récupéré, au centre gauche -->
+  <rect x="40" y="150" width="90" height="130" rx="26" fill="#eef0ee" stroke="#57534e" stroke-width="3"/>
+  <rect x="66" y="120" width="38" height="32" rx="6" fill="#eef0ee" stroke="#57534e" stroke-width="3"/>
+  <circle cx="85" cy="112" r="9" fill="#57534e"/>
+  <text class="ttl" x="85" y="222" text-anchor="middle" fill="#57534e">FLUIDE</text>
+  <text class="ttl" x="85" y="242" text-anchor="middle" fill="#57534e">RÉCUPÉRÉ</text>
+
+  <!-- Branche haute : réemployé sur la même machine -->
+  <path d="M 150 190 C 260 190 280 100 400 100 H 470" stroke="#1e7e54" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <polygon points="470,88 494,100 470,112" fill="#1e7e54"/>
+  <rect x="510" y="40" width="360" height="130" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <text class="ttl" x="530" y="72" fill="#1e7e54">Réemployé sur la même machine</text>
+  <text class="lbl" x="530" y="100">le fluide reste en service</text>
+  <text class="lbl" x="530" y="124">— ce n'est pas un déchet</text>
+  <text class="lbl" x="530" y="152" fill="#5a6b7d" font-style="italic">(voir la station Cycle matière)</text>
+
+  <!-- Branche basse : non réutilisable -->
+  <path d="M 150 240 C 260 240 280 320 400 320 H 470" stroke="#c0392b" stroke-width="8" stroke-linecap="round" fill="none" stroke-dasharray="16 12"/>
+  <polygon points="470,308 494,320 470,332" fill="#c0392b"/>
+  <rect x="510" y="260" width="360" height="130" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <text class="ttl" x="530" y="292" fill="#c0392b">Non réutilisable</text>
+  <text class="lbl" x="530" y="318">contaminé, mélangé, non identifiable</text>
+  <text class="lbl" x="530" y="342">— devient un déchet dangereux</text>
+  <text class="lbl" x="530" y="370" fill="#5a6b7d" font-style="italic">(voir la station Déchets dangereux)</text>
+
+  <text class="note" x="450" y="410" text-anchor="middle">C'est le même frigoriste, producteur, qui reste responsable de son devenir.</text>
+</svg>

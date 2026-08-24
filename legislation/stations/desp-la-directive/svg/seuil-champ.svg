@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-seu" aria-describedby="d-seu" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-seu">Le seuil qui fait entrer un équipement dans le champ de la directive</title>
+  <desc id="d-seu">Une colonne verticale représente la pression, croissante vers le haut, une flèche
+    le long de son bord gauche le confirme. La colonne est coupée en deux zones par un trait tireté
+    horizontal marqué « seuil fixé par le texte ». La zone du bas, hachurée, porte l'étiquette « hors
+    du champ de la DESP, en dessous du seuil » ; la zone du haut, en couleur pleine, porte l'étiquette
+    « dans le champ de la DESP, au-delà du seuil ». Un encadré à droite du trait tireté précise que ce
+    seuil croise la pression avec le volume de l'équipement, ou le diamètre pour une tuyauterie.
+    Aucune valeur chiffrée n'apparaît sur le schéma.</desc>
+  <style>
+    .lbl  { font-size:16px; fill:#10233c; }
+    .lblb { font-size:16px; fill:#10233c; font-weight:bold; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <defs>
+    <pattern id="hachure" width="14" height="14" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#eef3f9"/>
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#aebccb" stroke-width="3"/>
+    </pattern>
+  </defs>
+
+  <!-- flèche de pression croissante -->
+  <line x1="330" y1="300" x2="330" y2="50" stroke="#5a6b7d" stroke-width="3"/>
+  <polygon points="330,38 320,58 340,58" fill="#5a6b7d"/>
+  <text class="lbl" x="330" y="30" text-anchor="middle" fill="#5a6b7d">pression</text>
+
+  <!-- la colonne -->
+  <rect x="380" y="50" width="140" height="250" rx="8" fill="#fffdf8" stroke="#10233c" stroke-width="3"/>
+  <rect x="383" y="188" width="134" height="109" fill="url(#hachure)"/>
+  <rect x="383" y="53" width="134" height="132" fill="#0c4a6e"/>
+
+  <!-- trait du seuil -->
+  <line x1="350" y1="186" x2="620" y2="186" stroke="#b06a00" stroke-width="4" stroke-dasharray="14 8"/>
+  <polygon points="600,186 614,178 614,194" fill="#b06a00"/>
+
+  <!-- étiquettes des deux zones (à gauche de la colonne, pas dessus) -->
+  <rect x="20" y="60" width="290" height="70" rx="10" fill="#fffdf8" stroke="#0c4a6e" stroke-width="2.5"/>
+  <text class="band" x="165" y="86" text-anchor="middle" fill="#0c4a6e">DANS LE CHAMP DE LA DESP</text>
+  <text class="lbl" x="165" y="110" text-anchor="middle">au-delà du seuil</text>
+
+  <rect x="20" y="210" width="290" height="70" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="band" x="165" y="236" text-anchor="middle" fill="#5a6b7d">HORS DU CHAMP DE LA DESP</text>
+  <text class="lbl" x="165" y="260" text-anchor="middle">en dessous du seuil</text>
+
+  <!-- encadré du seuil, à droite -->
+  <rect x="630" y="146" width="250" height="90" rx="10" fill="#fbf1de" stroke="#b06a00" stroke-width="2.5"/>
+  <text class="lblb" x="650" y="170" fill="#b06a00">Seuil fixé par le texte</text>
+  <text class="lbl" x="650" y="194" font-size="14.5">croise la pression avec</text>
+  <text class="lbl" x="650" y="212" font-size="14.5">le volume (ou le diamètre</text>
+  <text class="lbl" x="650" y="230" font-size="14.5">pour une tuyauterie)</text>
+
+  <text class="note" x="450" y="322" text-anchor="middle">Le principe compte, pas un chiffre : c'est la plaque et le texte en vigueur qui tranchent.</text>
+</svg>

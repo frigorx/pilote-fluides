@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-7" aria-describedby="d-7" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-7">Exemple filé : le groupe de condensation en terrasse technique</title>
+  <desc id="d-7">Une terrasse technique entourée d'un garde-corps orange accueille un groupe de
+    condensation. L'accès se fait par une trappe reliée à un escalier à crinoline, représentés sur la
+    gauche. Chaque élément — trappe, escalier, garde-corps, groupe — est nommé.</desc>
+  <style>
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+  </style>
+
+  <!-- Terrasse -->
+  <rect x="260" y="200" width="560" height="30" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+
+  <!-- Garde-corps -->
+  <line x1="260" y1="200" x2="260" y2="130" stroke="#c2410c" stroke-width="6" stroke-linecap="round"/>
+  <line x1="260" y1="150" x2="800" y2="150" stroke="#c2410c" stroke-width="6" stroke-linecap="round"/>
+  <line x1="260" y1="180" x2="800" y2="180" stroke="#c2410c" stroke-width="6" stroke-linecap="round"/>
+  <line x1="800" y1="200" x2="800" y2="130" stroke="#c2410c" stroke-width="6" stroke-linecap="round"/>
+  <text class="lbl" x="800" y="118" text-anchor="middle">Garde-corps</text>
+
+  <!-- Groupe de condensation -->
+  <rect x="560" y="150" width="120" height="50" rx="6" fill="#dbeafe" stroke="#1b3a63" stroke-width="2.5"/>
+  <line x1="575" y1="165" x2="665" y2="165" stroke="#1b3a63" stroke-width="2"/>
+  <line x1="575" y1="180" x2="665" y2="180" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="620" y="245" text-anchor="middle">Groupe de condensation</text>
+
+  <!-- Trappe + escalier à crinoline -->
+  <rect x="150" y="180" width="70" height="20" fill="#10233c"/>
+  <rect x="150" y="150" width="70" height="30" fill="#fde9d0" stroke="#10233c" stroke-width="2.5" transform="rotate(-16 185 165)"/>
+  <text class="lbl" x="185" y="118" text-anchor="middle">Trappe</text>
+
+  <line x1="185" y1="200" x2="185" y2="300" stroke="#1b3a63" stroke-width="6"/>
+  <line x1="215" y1="200" x2="215" y2="300" stroke="#1b3a63" stroke-width="6"/>
+  <line x1="185" y1="220" x2="215" y2="220" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="185" y1="250" x2="215" y2="250" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="185" y1="280" x2="215" y2="280" stroke="#1b3a63" stroke-width="4"/>
+  <path d="M172 210 a30 30 0 0 1 60 0" fill="none" stroke="#5a6b7d" stroke-width="4"/>
+  <text class="lbl" x="200" y="325" text-anchor="middle">Escalier à crinoline</text>
+</svg>

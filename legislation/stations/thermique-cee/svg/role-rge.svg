@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-rr" aria-describedby="d-rr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rr">Les travaux doivent être réalisés par un professionnel qualifié</title>
+  <desc id="d-rr">Deux techniciens stylisés face à un chantier de pompe à chaleur. Le premier porte
+    un badge marqué d'une coche, avec la mention « installateur qualifié : les travaux comptent
+    pour le certificat ». Le second porte un badge barré d'une croix, avec la mention « sans
+    qualification reconnue : les travaux ne comptent pas ». Le même chantier, deux issues
+    différentes selon le badge du professionnel.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .pos { font-size:14px; fill:#1e7e54; font-weight:bold; }
+    .neg { font-size:14px; fill:#c0392b; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Le badge du professionnel décide si les travaux comptent</text>
+
+  <!-- technicien qualifié -->
+  <rect x="60" y="70" width="330" height="230" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="225" cy="140" r="20" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <line x1="225" y1="160" x2="225" y2="205" stroke="#1e7e54" stroke-width="2.5"/>
+  <line x1="225" y1="175" x2="190" y2="195" stroke="#1e7e54" stroke-width="2.5"/>
+  <line x1="225" y1="175" x2="260" y2="195" stroke="#1e7e54" stroke-width="2.5"/>
+  <circle cx="270" cy="150" r="16" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <path d="M 262 150 L 268 157 L 280 143" fill="none" stroke="#1e7e54" stroke-width="3"/>
+  <text class="pos" x="225" y="235" text-anchor="middle">installateur qualifié</text>
+  <text class="lbl" x="225" y="258" text-anchor="middle">les travaux comptent</text>
+  <text class="lbl" x="225" y="276" text-anchor="middle">pour le certificat</text>
+
+  <!-- technicien non qualifié -->
+  <rect x="510" y="70" width="330" height="230" rx="12" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="675" cy="140" r="20" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="675" y1="160" x2="675" y2="205" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="675" y1="175" x2="640" y2="195" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="675" y1="175" x2="710" y2="195" stroke="#c0392b" stroke-width="2.5"/>
+  <circle cx="720" cy="150" r="16" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <line x1="712" y1="142" x2="728" y2="158" stroke="#c0392b" stroke-width="3"/>
+  <line x1="728" y1="142" x2="712" y2="158" stroke="#c0392b" stroke-width="3"/>
+  <text class="neg" x="675" y="235" text-anchor="middle">sans qualification reconnue</text>
+  <text class="lbl" x="675" y="258" text-anchor="middle">les travaux ne comptent</text>
+  <text class="lbl" x="675" y="276" text-anchor="middle">pas pour le certificat</text>
+</svg>

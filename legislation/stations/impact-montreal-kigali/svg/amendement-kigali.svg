@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-kig" aria-describedby="d-kig" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-kig">L'amendement de Kigali : un ajout au protocole de Montréal</title>
+  <desc id="d-kig">Un grand document encre bleu porte le titre Protocole de Montréal, avec sa cible d'origine : les
+    CFC et les HCFC, par leur ODP. Une note plus petite, verte, est agrafée au coin supérieur droit du document et
+    porte le titre Amendement de Kigali ; un trombone la relie au document principal pour montrer qu'elle s'y
+    ajoute plutôt qu'elle ne le remplace. Cette note pointe vers une nouvelle cible : les HFC, mais cette fois pour
+    leur PRP et non plus pour leur ODP. Une bande du bas précise que Kigali n'est pas un nouveau traité séparé.</desc>
+  <style>
+    .ttl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lblGras{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .lbl{ font-size:15px; fill:#10233c; }
+    .lblMut{ font-size:15px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Document principal : Montréal -->
+  <rect x="40" y="30" width="480" height="260" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="40" y="30" width="480" height="46" rx="14" fill="#1b3a63"/>
+  <rect x="40" y="62" width="480" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="280" y="62" text-anchor="middle">PROTOCOLE DE MONTRÉAL</text>
+
+  <text class="lblGras" x="70" y="116">Cible d'origine</text>
+  <text class="lbl" x="70" y="140">les CFC, puis les HCFC</text>
+  <text class="lbl" x="70" y="164">évalués par leur ODP</text>
+
+  <line x1="70" y1="190" x2="490" y2="190" stroke="#d6dee7" stroke-width="2"/>
+
+  <text class="lblGras" x="70" y="222">Ce qu'il vise</text>
+  <text class="lbl" x="70" y="246">protéger la couche d'ozone</text>
+  <text class="lblMut" x="70" y="270">un traité international, 1987</text>
+
+  <!-- Trombone reliant les deux documents -->
+  <path d="M470,90 C 520,70 520,130 480,140" stroke="#5a6b7d" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+  <!-- Note agrafée : Kigali -->
+  <rect x="500" y="60" width="360" height="220" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <rect x="500" y="60" width="360" height="42" rx="12" fill="#047857"/>
+  <rect x="500" y="86" width="360" height="16" fill="#047857"/>
+  <text class="ttl" x="680" y="86" text-anchor="middle">AMENDEMENT DE KIGALI</text>
+
+  <text class="lblGras" x="524" y="132">Nouvelle cible</text>
+  <text class="lbl" x="524" y="156">les HFC</text>
+
+  <text class="lblGras" x="524" y="192">Ce qui change</text>
+  <text class="lbl" x="524" y="216">évalués cette fois par leur PRP</text>
+  <text class="lbl" x="524" y="240">et non plus par leur ODP</text>
+
+  <text class="lblMut" x="524" y="266">un ajout au texte, pas un nouveau traité</text>
+
+  <!-- Bande du bas -->
+  <rect x="40" y="304" width="820" height="30" rx="10" fill="#e9f5ef" stroke="#047857" stroke-width="1.5"/>
+  <text class="band" x="450" y="325" text-anchor="middle">Un protocole né pour l'ozone qui s'attaque, avec Kigali, au climat</text>
+</svg>

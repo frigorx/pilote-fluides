@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-2" aria-describedby="d-2" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-2">La classification de sécurité des fluides selon l'inflammabilité</title>
+  <desc id="d-2">Quatre cases alignées de gauche à droite, la teinte de leur bordure s'intensifiant du vert
+    au rouge : A1 non inflammable avec les exemples R134a, R410A, R744 ; A2L faiblement inflammable avec les
+    exemples R32, R1234yf, R454B ; A2 inflammable avec l'exemple R152a ; A3 très inflammable avec les
+    exemples R290, R600a.</desc>
+  <style>
+    .cadre{ fill:#fffdf8; stroke-width:4; }
+    .cls{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; }
+    .sub{ font-size:13px; fill:#5a6b7d; }
+    .ex{ font-size:13px; fill:#10233c; }
+  </style>
+
+  <rect class="cadre" x="30" y="60" width="195" height="220" rx="14" stroke="#1e7e54"/>
+  <text class="cls" x="127" y="115" text-anchor="middle" fill="#1e7e54">A1</text>
+  <text class="sub" x="127" y="140" text-anchor="middle">non inflammable</text>
+  <text class="ex" x="127" y="175" text-anchor="middle">R134a</text>
+  <text class="ex" x="127" y="195" text-anchor="middle">R410A</text>
+  <text class="ex" x="127" y="215" text-anchor="middle">R744 (CO₂)</text>
+
+  <rect class="cadre" x="245" y="60" width="195" height="220" rx="14" stroke="#b06a00"/>
+  <text class="cls" x="342" y="115" text-anchor="middle" fill="#b06a00">A2L</text>
+  <text class="sub" x="342" y="140" text-anchor="middle">faiblement inflammable</text>
+  <text class="ex" x="342" y="175" text-anchor="middle">R32</text>
+  <text class="ex" x="342" y="195" text-anchor="middle">R1234yf</text>
+  <text class="ex" x="342" y="215" text-anchor="middle">R454B</text>
+
+  <rect class="cadre" x="460" y="60" width="195" height="220" rx="14" stroke="#c2410c"/>
+  <text class="cls" x="557" y="115" text-anchor="middle" fill="#c2410c">A2</text>
+  <text class="sub" x="557" y="140" text-anchor="middle">inflammable</text>
+  <text class="ex" x="557" y="175" text-anchor="middle">R152a</text>
+
+  <rect class="cadre" x="675" y="60" width="195" height="220" rx="14" stroke="#c0392b" stroke-width="6"/>
+  <text class="cls" x="772" y="115" text-anchor="middle" fill="#c0392b">A3</text>
+  <text class="sub" x="772" y="140" text-anchor="middle">très inflammable</text>
+  <text class="ex" x="772" y="175" text-anchor="middle">R290</text>
+  <text class="ex" x="772" y="195" text-anchor="middle">R600a</text>
+</svg>

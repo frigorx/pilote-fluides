@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-plaque" aria-describedby="d-plaque" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-plaque">Le réflexe : lire la plaque et la notice</title>
+  <desc id="d-plaque">À gauche, une plaque signalétique d'équipement avec quatre champs : PS, volume,
+    fluide et catégorie, chacun suivi d'une ligne vide plutôt que d'une valeur inventée. À droite, une
+    notice du fabricant représentée par un carnet. Une bande en bas rappelle que la catégorie ne se
+    devine pas : elle se lit sur la plaque et dans la documentation.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .band{ font-size:16px; fill:#10233c; font-weight:bold; }
+  </style>
+
+  <!-- Plaque signalétique -->
+  <rect x="20" y="20" width="440" height="250" rx="12" fill="#eef3f9" stroke="#0c4a6e" stroke-width="3"/>
+  <rect x="20" y="20" width="440" height="42" rx="12" fill="#0c4a6e"/>
+  <rect x="20" y="48" width="440" height="14" fill="#0c4a6e"/>
+  <text class="ttl" x="240" y="48" text-anchor="middle">PLAQUE SIGNALÉTIQUE</text>
+
+  <text class="lbl" x="50" y="100">PS :</text>
+  <line x1="90" y1="100" x2="430" y2="100" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="50" y="140">Volume :</text>
+  <line x1="150" y1="140" x2="430" y2="140" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="50" y="180">Fluide :</text>
+  <line x1="140" y1="180" x2="430" y2="180" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="50" y="230" font-weight="bold">Catégorie :</text>
+  <line x1="175" y1="230" x2="430" y2="230" stroke="#0c4a6e" stroke-width="3"/>
+
+  <!-- Notice du fabricant -->
+  <rect x="520" y="20" width="360" height="250" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="520" y="20" width="360" height="42" rx="12" fill="#1b3a63"/>
+  <rect x="520" y="48" width="360" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="700" y="48" text-anchor="middle">NOTICE DU FABRICANT</text>
+  <rect x="560" y="90" width="280" height="12" fill="#1b3a63"/>
+  <rect x="560" y="118" width="280" height="12" fill="#d6dee7"/>
+  <rect x="560" y="146" width="280" height="12" fill="#d6dee7"/>
+  <rect x="560" y="174" width="200" height="12" fill="#d6dee7"/>
+  <rect x="560" y="210" width="280" height="12" fill="#d6dee7"/>
+  <rect x="560" y="238" width="180" height="12" fill="#d6dee7"/>
+
+  <!-- Bande du bas -->
+  <rect x="20" y="300" width="860" height="60" rx="12" fill="#fbf1de" stroke="#b06a00" stroke-width="2"/>
+  <text class="band" x="450" y="335" text-anchor="middle">La catégorie ne se devine pas : elle se lit, sur la plaque et dans la notice.</text>
+</svg>

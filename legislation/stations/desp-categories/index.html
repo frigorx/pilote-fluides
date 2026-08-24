@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Catégories I à IV — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la logique du classement DESP en catégories I à IV — pression, volume, groupe du fluide, et le contrôle qui monte avec la catégorie.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/desp-categories/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Fluidique & thermique.
+     Sujet : la logique du classement DESP en catégories I à IV. Aucun
+     seuil chiffré de pression, de volume ou de catégorie n'est donné :
+     seule la LOGIQUE du croisement pression × volume × groupe du fluide
+     est enseignée, conformément à la consigne de production.
+
+     Régime SATELLITE, gabarit repris à l'identique de la station
+     aptitude-capacite (structure, styles.css, app.js).
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. Voir
+     FOND.md, section « Ce qui reste à trancher avant production ».
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">La DESP · niveau BTS</p>
+  <h1>Catégories I à IV — la logique du classement</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez situer un équipement sous pression — bouteille, réservoir, séparateur — dans la logique du classement DESP : pourquoi la pression, le volume et le fluide se croisent, pourquoi la catégorie borne le niveau de contrôle, et pourquoi deux équipements identiques peuvent relever de catégories différentes selon ce qu'ils contiennent.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez les trois équipements dessinés en haut : une bouteille de fluide frigorigène, un réservoir tampon ou une bouteille anti-coup de bélier, et un séparateur d'huile. Une flèche part des trois vers un badge DESP, la directive équipements sous pression. En bas, une bande rappelle la règle d'entrée : un équipement relève de la DESP au-delà d'un seuil de pression maximale admissible, la PS. Aucun chiffre n'est donné ici : ce sont des équipements que vous croisez couramment sur un chantier, et chacun peut relever de ce texte.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">La DESP : quels équipements sont concernés</h2>
+    <p>La directive européenne relative aux équipements sous pression (DESP) encadre la conception, la fabrication et le contrôle des équipements qui contiennent un fluide sous pression, dès que leur <strong>pression maximale admissible</strong> — la PS — dépasse un seuil fixé par le texte. En dessous, l'équipement n'entre pas dans son champ.</p>
+    <p>Pour un frigoriste, elle concerne des équipements croisés au quotidien : une <strong>bouteille de fluide frigorigène</strong>, un <strong>réservoir tampon</strong>, une <strong>bouteille anti-coup de bélier</strong>, un <strong>séparateur d'huile</strong>. Chacun contient un fluide sous pression, donc chacun peut relever de la DESP.</p>
+    <figure>
+      <img src="svg/desp-champ.svg" alt="Une bouteille de fluide frigorigène, un réservoir tampon et un séparateur d'huile, reliés par une flèche à un badge « DESP », avec la mention qu'un équipement entre dans son champ au-delà d'un seuil de pression maximale admissible (PS).">
+      <figcaption>Ce sont des équipements que vous croisez sur un chantier — chacun peut relever de la DESP.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Trois cartes en haut, chacune reliée par une flèche à une case unique en bas. Première carte : la pression maximale admissible, la PS. Deuxième carte : le volume de l'équipement, ou le diamètre pour une tuyauterie. Troisième carte : le groupe du fluide, dangereux ou non. Les trois flèches convergent vers la case du bas, marquée la catégorie, de un à quatre. En dessous, une note rappelle que changer un seul de ces trois critères peut suffire à changer la catégorie.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Trois critères croisés, pas un seul</h2>
+    <p>La catégorie d'un équipement ne dépend jamais d'un seul chiffre. Elle résulte du croisement de trois éléments : la <strong>pression maximale admissible</strong> (PS), le <strong>volume</strong> de l'équipement — ou le <strong>diamètre</strong>, pour une tuyauterie — et le <strong>groupe du fluide</strong> qu'il contient.</p>
+    <p>Plus la combinaison pression-volume est élevée, et plus le fluide est dangereux, plus la catégorie retenue est haute. <strong>Changez un seul des trois critères, et la catégorie peut changer avec lui.</strong></p>
+    <figure>
+      <img src="svg/trois-criteres.svg" alt="Trois cartes — la PS, le volume ou le diamètre, et le groupe du fluide — reliées par des flèches convergentes à une case unique « la catégorie, de I à IV »." >
+      <figcaption>Trois entrées, un seul résultat : la catégorie ne se lit jamais sur un critère isolé.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Deux colonnes côte à côte. À gauche, en rouge, le groupe un : fluide explosif, inflammable, toxique ou comburant. À droite, en vert, le groupe deux : tous les autres fluides. En bas, une bande bleue relie ce classement à la norme NF EN 378, celle qui range les fluides frigorigènes en A1, A2L, A2, A3, B1, B2L, B2 et B3 : un fluide inflammable ou toxique au sens de cette norme rejoint le groupe un de la DESP.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le groupe du fluide : dangereux ou non</h2>
+    <p>La DESP range chaque fluide dans l'un de deux groupes. Le <strong>groupe 1</strong> rassemble les fluides <strong>dangereux</strong> : explosifs, inflammables, toxiques ou comburants. Le <strong>groupe 2</strong> rassemble tous les autres.</p>
+    <p>Cette dangerosité est le même repère que celui utilisé par la norme <strong>NF EN 378</strong> pour classer les fluides frigorigènes (A1, A2L, A2, A3, B1, B2L, B2, B3) : un fluide inflammable ou toxique au sens de cette norme relève du groupe 1 de la DESP. À PS et volume égaux, un équipement contenant un fluide du groupe 1 est classé plus sévèrement qu'un équipement contenant un fluide du groupe 2.</p>
+    <figure>
+      <img src="svg/groupes-fluide.svg" alt="Deux colonnes : le groupe 1, fluides dangereux — explosif, inflammable, toxique, comburant — et le groupe 2, les autres fluides. Une bande rappelle le repère commun avec la norme NF EN 378.">
+      <figcaption>Le même repère de dangerosité que la norme NF EN 378 — appliqué ici au classement DESP.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Un repère à deux axes, sans aucun chiffre inscrit. En abscisse, la pression maximale admissible. En ordonnée, le volume ou le diamètre. Les catégories un, deux, trois et quatre sont placées en s'éloignant de l'origine, vers le coin opposé. Deux lignes traversent le repère : une ligne en tirets rouges, plus proche de l'origine, pour un fluide du groupe un, dangereux ; une ligne pleine verte, plus loin de l'origine, pour un fluide du groupe deux. La légende en bas explique chaque ligne par son tracé, pas seulement par sa couleur : la frontière se rapproche de l'origine quand le fluide est dangereux.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Le diagramme croisé : la frontière qui bouge</h2>
+    <p>Imaginez deux axes : la pression maximale admissible en abscisse, le volume — ou le diamètre — en ordonnée. Plus on avance sur les deux axes à la fois, plus on entre dans les catégories hautes.</p>
+    <p>Ce diagramme n'est pas fixe : <strong>le groupe du fluide déplace la frontière</strong> entre les catégories. Pour un fluide du <strong>groupe 1</strong>, la frontière se rapproche de l'origine — une combinaison pression-volume plus modeste suffit à atteindre une catégorie plus haute. Pour un fluide du <strong>groupe 2</strong>, il faut aller plus loin sur les deux axes pour changer de catégorie.</p>
+    <figure>
+      <img src="svg/diagramme-croise.svg" alt="Un repère à deux axes sans graduation chiffrée, pression en abscisse et volume ou diamètre en ordonnée, avec les catégories I à IV placées en s'éloignant de l'origine, et deux lignes de frontière : en tirets pour un fluide du groupe 1, plus proche de l'origine, en trait plein pour un fluide du groupe 2, plus loin.">
+      <figcaption>Les axes ne portent aucune graduation chiffrée : c'est la logique du croisement qui compte, pas un seuil précis.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Quatre marches montantes, de la catégorie un à la catégorie quatre. La première marche, la plus basse, porte la mention évaluation assurée par le fabricant seul. Les marches deux et trois montent progressivement, avec un contrôle qui s'alourdit. La quatrième marche, la plus haute, porte la mention inspection par un organisme notifié. Une flèche verticale à droite montre que le contrôle par un organisme extérieur grandit avec la hauteur des marches.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Plus la catégorie monte, plus le contrôle est lourd</h2>
+    <p>Les catégories DESP vont de I à IV. Ce n'est pas qu'un classement : c'est aussi une échelle de contrôle. En <strong>catégorie I</strong>, la plus basse, le fabricant peut assurer seul l'évaluation de conformité de son équipement.</p>
+    <p>Plus on monte vers la <strong>catégorie IV</strong>, plus l'intervention d'un <strong>organisme extérieur</strong> — un organisme notifié — devient nécessaire, jusqu'à l'<strong>inspection de l'équipement par un tiers</strong> pour les catégories les plus hautes. Un équipement plus dangereux ou plus sollicité est donc davantage surveillé, à toutes les étapes de sa vie.</p>
+    <figure>
+      <img src="svg/echelle-categories.svg" alt="Quatre marches montantes de la catégorie I à la catégorie IV : la première porte la mention « évaluation assurée par le fabricant seul », la dernière porte la mention « inspection par un organisme notifié », avec une flèche montrant que le contrôle grandit avec la hauteur des marches.">
+      <figcaption>Le contrôle grandit avec la catégorie — jusqu'à l'inspection par un organisme extérieur.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Deux cartes identiques représentant le même réservoir tampon, avec la même PS et le même volume inscrits sur chacune. À gauche, en vert, le réservoir est rempli d'un fluide du groupe deux : la carte conclut catégorie plus basse. À droite, en rouge, le même réservoir est rempli d'un fluide du groupe un, dangereux : la carte conclut catégorie plus haute. Un signe différent, entre les deux cartes, rappelle que seule la nature du fluide a changé.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Un même réservoir, deux fluides, deux catégories</h2>
+    <p>Prenez un réservoir tampon, ou une bouteille anti-coup de bélier, de forme et de volume identiques. Sa catégorie DESP n'est pas figée par sa seule construction : elle dépend aussi de <strong>ce qu'il contient</strong>.</p>
+    <p>Rempli d'un fluide du <strong>groupe 2</strong>, ce réservoir peut relever d'une catégorie donnée. Rempli d'un fluide du <strong>groupe 1</strong> — parce qu'il est inflammable ou toxique —, le même réservoir, à pression et volume identiques, peut basculer dans une catégorie plus haute. <strong>Le fluide change la catégorie, pas seulement le contenant.</strong></p>
+    <figure>
+      <img src="svg/meme-reservoir-deux-fluides.svg" alt="Deux cartes représentant le même réservoir tampon, même PS et même volume : à gauche rempli d'un fluide du groupe 2, catégorie plus basse ; à droite rempli d'un fluide du groupe 1, catégorie plus haute.">
+      <figcaption>Même PS, même volume, même forme — mais pas le même fluide, donc pas la même catégorie.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Un équipement au centre, relié par quatre traits à quatre éléments qui l'accompagnent. En haut, le marquage CE. À gauche, la déclaration de conformité, représentée par un document. À droite, la notice d'instructions, un autre document. En bas, un accessoire de sécurité, avec la mention qu'il protège contre le dépassement de la PS.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Ce qui accompagne l'équipement</h2>
+    <p>Un équipement sous pression conforme à la DESP porte le <strong>marquage CE</strong> et s'accompagne d'une <strong>déclaration de conformité</strong> établie par le fabricant. Une <strong>notice d'instructions</strong> doit aussi être fournie : elle précise les conditions d'utilisation, de montage et de maintenance.</p>
+    <p>Des <strong>accessoires de sécurité</strong> complètent l'équipement — une soupape, par exemple — pour protéger contre le dépassement de la PS. Ils font partie intégrante de l'équipement, au même titre que le réservoir ou la bouteille eux-mêmes.</p>
+    <figure>
+      <img src="svg/accompagnement-equipement.svg" alt="Un équipement au centre relié à quatre éléments : le marquage CE, la déclaration de conformité, la notice d'instructions, et un accessoire de sécurité qui protège contre le dépassement de la PS.">
+      <figcaption>Quatre pièces qui suivent l'équipement, pas seulement une plaque.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="À gauche, une plaque signalétique avec quatre champs : PS, volume, fluide, catégorie — chacun suivi d'une ligne vide plutôt que d'un chiffre inventé. À droite, une notice du fabricant représentée par un carnet de lignes. En bas, une bande rappelle le réflexe : la catégorie ne se devine pas, elle se lit sur la plaque et dans la notice.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Le réflexe : lire la plaque et la notice</h2>
+    <ul>
+      <li>La <strong>PS</strong>, le <strong>volume</strong> (ou le diamètre) et le <strong>groupe du fluide</strong> se croisent pour donner la catégorie.</li>
+      <li>Groupe 1 = fluide <strong>dangereux</strong> (explosif, inflammable, toxique, comburant). Groupe 2 = les autres.</li>
+      <li>Plus la catégorie monte, plus le <strong>contrôle par un organisme extérieur</strong> est lourd.</li>
+      <li>Marquage CE, déclaration de conformité, notice et accessoires de sécurité <strong>accompagnent l'équipement</strong>.</li>
+      <li>La catégorie ne se recalcule pas sur le terrain : elle se lit sur la <strong>plaque</strong> et dans la <strong>notice</strong>.</li>
+    </ul>
+    <p class="formule">Le réflexe : vérifier la plaque de l'équipement et la documentation du fabricant.</p>
+    <figure>
+      <img src="svg/plaque-reflexe.svg" alt="Une plaque signalétique avec quatre champs vides — PS, volume, fluide, catégorie — et à côté une notice du fabricant, avec la mention que la catégorie ne se devine pas mais se lit.">
+      <figcaption>La catégorie ne se devine pas : elle se lit, sur la plaque et dans la notice.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Quels trois éléments se croisent pour donner la catégorie d'un équipement ? Reprenez le schéma de l'écran deux avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Quels trois éléments se croisent pour donner la catégorie ?</h2>
+    <figure class="vignette">
+      <img src="svg/trois-criteres.svg" alt="Vignette de rappel : trois cartes convergeant vers une case unique « la catégorie ».">
+      <figcaption>Rappel de l'écran 2 — trois entrées, un seul résultat.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Seulement la pression maximale admissible (PS)</button>
+      <button type="button" data-answer="b">Le volume et la marque du fabricant uniquement</button>
+      <button type="button" data-answer="bonne">La PS, le volume (ou le diamètre), et le groupe du fluide</button>
+      <button type="button" data-answer="d">Le groupe du fluide et la date de fabrication</button>
+    </div>
+    <p class="feedback" hidden data-explication="La catégorie ne se lit jamais sur un seul critère : c'est le croisement de la pression, du volume (ou du diamètre) et du groupe du fluide qui la détermine."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Qu'est-ce qui distingue le groupe un du groupe deux ? Reprenez le schéma de l'écran trois avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce qui distingue le groupe 1 du groupe 2 ?</h2>
+    <figure class="vignette">
+      <img src="svg/groupes-fluide.svg" alt="Vignette de rappel : deux colonnes, le groupe 1 des fluides dangereux et le groupe 2 des autres fluides.">
+      <figcaption>Rappel de l'écran 3 — dangereux, ou pas.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Le groupe 1 rassemble les fluides dangereux (explosif, inflammable, toxique, comburant), le groupe 2 les autres</button>
+      <button type="button" data-answer="b">Le groupe 1 concerne les gros volumes, le groupe 2 les petits</button>
+      <button type="button" data-answer="c">Le groupe 1 est réservé aux fluides frigorigènes, le groupe 2 aux autres fluides</button>
+      <button type="button" data-answer="d">Le groupe 1 dépend du fabricant, le groupe 2 dépend de l'installateur</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le groupe 1 rassemble les fluides dangereux au sens de la DESP — la même dangerosité qui structure le classement NF EN 378 des fluides frigorigènes."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un réservoir tampon change de fluide, sans changer de PS ni de volume. Que peut-il arriver à sa catégorie ? Souvenez-vous de l'écran six.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Un réservoir tampon change de fluide, sans changer de PS ni de volume. Sa catégorie…</h2>
+    <figure class="vignette">
+      <img src="svg/meme-reservoir-deux-fluides.svg" alt="Vignette de rappel : le même réservoir, même PS, même volume, mais deux fluides et deux catégories différentes.">
+      <figcaption>Rappel de l'écran 6 — le fluide change, la catégorie aussi.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Ne peut jamais changer, elle est fixée à la construction</button>
+      <button type="button" data-answer="b">Change uniquement si le réservoir change de couleur</button>
+      <button type="button" data-answer="c">Dépend désormais de la date de la dernière visite</button>
+      <button type="button" data-answer="bonne">Peut changer, car le groupe du fluide fait partie du classement</button>
+    </div>
+    <p class="feedback" hidden data-explication="À PS et volume identiques, un changement de fluide peut suffire à changer la catégorie : le groupe du fluide est un des trois critères du classement."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Plus la catégorie DESP d'un équipement est élevée, qu'est-ce que cela change ? Reprenez l'échelle de l'écran cinq avant de répondre.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Plus la catégorie DESP est élevée, qu'est-ce que cela change ?</h2>
+    <figure class="vignette">
+      <img src="svg/echelle-categories.svg" alt="Vignette de rappel : quatre marches montantes, de l'auto-certification du fabricant à l'inspection par un organisme notifié.">
+      <figcaption>Rappel de l'écran 5 — le contrôle grandit avec la catégorie.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Rien : le contrôle est identique quelle que soit la catégorie</button>
+      <button type="button" data-answer="bonne">L'intervention d'un organisme extérieur devient nécessaire, jusqu'à l'inspection par un tiers</button>
+      <button type="button" data-answer="c">L'équipement n'a plus besoin de marquage CE</button>
+      <button type="button" data-answer="d">Seule la couleur réglementaire de l'équipement change</button>
+    </div>
+    <p class="feedback" hidden data-explication="Plus la catégorie monte, plus le contrôle est lourd : d'une auto-certification du fabricant en catégorie basse jusqu'à l'inspection par un organisme notifié dans les catégories les plus hautes."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours. Une seule correspondance mentionnée
+     ici : NF EN 378, dont le groupe de fluide alimente directement la
+     notion de dangerosité utilisée par le classement DESP. Aucun lien
+     vers les autres stations DESP (pas encore ouvertes) ni vers Sprinkler
+     & RIA (mentionnée ailleurs dans le réseau, pas ici). -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>NF EN 378</strong> (même sous-ligne, en préparation)
+      — c'est le groupe du fluide au sens de cette norme (A1, A2L, A2, A3, B1, B2L, B2, B3) qui alimente la notion de dangerosité utilisée par le classement DESP : la correspondance est directe.</li>
+  </ul>
+  <p>Cette station est en préparation avec les autres du réseau : les liens ouvriront au fur et à mesure.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (une source, zéro divergence). voix.js
+     donne la narration, prof-vocal.js enchaîne les écrans tout seul et
+     s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

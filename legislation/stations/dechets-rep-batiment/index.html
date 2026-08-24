@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>La REP bâtiment — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la responsabilité élargie du producteur (REP) appliquée au bâtiment, le rôle de l'éco-organisme, et le réflexe du point de reprise pour les déchets de chantier d'un frigoriste.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/dechets-rep-batiment/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Déchets.
+     Gabarit structurel : aptitude-capacite (sous-ligne Fluidique &
+     thermique). Régime SATELLITE : identité propre, une seule
+     passerelle (le plan du réseau), moteur chargé en absolu depuis
+     inerweb.fr. Le dossier legislation/ doit rester déplaçable d'un
+     bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     ÉCART ASSUMÉ AVEC LE FOND : aucune date d'entrée en vigueur de la
+     REP bâtiment n'est citée, ni les conditions précises de gratuité
+     d'un point de reprise — le FOND.md les signale lui-même comme
+     « à sourcer » avant impression. Non devinées, comme le fond le
+     prévoit.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Déchets · niveau BTS</p>
+  <h1>La REP bâtiment — reprise et éco-organismes</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous comprenez le principe de responsabilité élargie du producteur (REP) appliqué aux matériaux du bâtiment, vous savez ce qu'est un éco-organisme, et vous savez utiliser un point de reprise pour les déchets d'un chantier de froid.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez les trois étapes reliées par des flèches : mise sur le marché, utilisation, fin de vie. Une flèche plus épaisse repart de la fin de vie et revient vers la mise sur le marché : elle porte l'étiquette responsabilité et financement. C'est la boucle qui résume tout le principe : celui qui a mis le produit sur le marché reste responsable jusqu'au bout, y compris financièrement.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Qui paie la fin de vie d'un produit</h2>
+    <p>Le principe de la <strong>responsabilité élargie du producteur (REP)</strong> fait porter le coût et l'organisation de la fin de vie d'un produit sur celui qui l'a mis sur le marché — fabricant ou distributeur — et non sur celui qui le jette.</p>
+    <p>Ce principe existe déjà pour d'autres familles de produits ; il s'applique aussi aux <strong>matériaux et produits de construction du bâtiment</strong>.</p>
+    <figure>
+      <img src="svg/cycle-rep.svg" alt="Un produit suivant un cycle : mise sur le marché, utilisation, fin de vie, avec une flèche de retour vers le metteur sur le marché portant la mention responsabilité et financement.">
+      <figcaption>La boucle se referme : responsabilité et financement reviennent à celui qui a mis le produit sur le marché.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Trois blocs reliés par de simples flèches, sans texte dessus. À gauche, le metteur sur le marché : il paie. Au centre, l'éco-organisme agréé : il organise, avec l'argent reçu. À droite, le point de reprise : il reçoit les déchets triés apportés par les professionnels.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">L'éco-organisme : qui organise concrètement</h2>
+    <p>Le metteur sur le marché ne gère pas lui-même chaque déchet : il verse une <strong>éco-contribution</strong> à un <strong>éco-organisme agréé</strong>, qui organise à sa place la collecte et le traitement des déchets issus de ces produits.</p>
+    <p>L'éco-organisme est l'intermédiaire entre le financement et le terrain.</p>
+    <figure>
+      <img src="svg/trois-blocs-eco-organisme.svg" alt="Un schéma en trois blocs : metteur sur le marché, qui paie ; éco-organisme, qui organise ; point de reprise, qui reçoit — reliés par des flèches sans texte dessus.">
+      <figcaption>Metteur sur le marché, éco-organisme, point de reprise : trois rôles, un même dispositif.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Regardez le bâtiment à droite, le point de reprise, avec ses trois bennes triées devant la façade : isolants, gaines, chutes de pose — chaque benne a un couvercle de forme différente pour bien la distinguer. À gauche, un camion de chantier dépose ses déchets triés, suivant la flèche tiretée.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le point de reprise : où va le déchet de chantier</h2>
+    <p>Un <strong>point de reprise</strong> est un lieu où un professionnel du bâtiment peut déposer les déchets triés issus de ses chantiers, financé par le dispositif REP.</p>
+    <p>Pour un frigoriste, cela concerne surtout les matériaux du bâtiment qu'il manipule à la marge de son cœur de métier : <strong>isolants, gaines, chutes de matériaux de pose</strong>.</p>
+    <figure>
+      <img src="svg/point-de-reprise.svg" alt="Un point de reprise stylisé, bâtiment avec bennes triées pour isolants, gaines et chutes de pose, et un camion de chantier qui y dépose des déchets triés.">
+      <figcaption>Trois bennes, trois natures : le point de reprise organise ce que le chantier a déjà trié.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Sur l'établi, deux zones. À gauche, cadre plein : la zone REP bâtiment, avec l'isolant de tuyauterie et la gaine, chacun étiqueté REP. À droite, cadre en tirets : la zone des autres filières, le cœur de métier du frigoriste — fluide récupéré, cuivre, filtre — étiquetés autre filière. Le trait du cadre, plein ou tireté, distingue les deux familles autant que leur position.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Ce que la REP change pour le frigoriste</h2>
+    <p>La REP ne concerne pas le cœur de métier du frigoriste — le cuivre, les fluides, les filtres suivent leurs propres filières (voir les autres stations de cette sous-ligne).</p>
+    <p>Elle concerne les <strong>matériaux de construction et de second œuvre</strong> qu'il utilise en périphérie de son intervention : isolation de tuyauterie, gaines, supports.</p>
+    <figure>
+      <img src="svg/etabli-rep-frigoriste.svg" alt="Un établi de frigoriste avec deux zones : à gauche, cadre plein, la REP bâtiment avec isolant et gaine ; à droite, cadre en tirets, les autres filières avec fluide, cuivre et filtre.">
+      <figcaption>Même établi, deux circuits : la REP bâtiment pour la périphérie, d'autres filières pour le métier.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Un même tas de déchets de chantier, et deux chemins possibles. Vers la droite, un trait plein vert mène à un point de reprise proche, marqué d'une coche. Vers la gauche, un trait tireté rouge mène à un terrain vague, marqué d'une croix : c'est le dépôt sauvage. Le style du trait, plein ou tireté, porte autant de sens que sa couleur.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Pourquoi ce dispositif existe</h2>
+    <p>Avant un dispositif organisé, les déchets de chantier sans filière évidente finissaient parfois en <strong>dépôt sauvage</strong> — abandonnés plutôt que traités.</p>
+    <p>Le maillage de points de reprise, financé par ceux qui mettent les produits sur le marché, vise à rendre le dépôt correct plus simple que l'abandon.</p>
+    <figure>
+      <img src="svg/deux-chemins-depot-sauvage.svg" alt="Deux chemins depuis un même tas de déchets de chantier : un trait plein vers un point de reprise proche, et un trait tireté avec une croix rouge vers un terrain vague.">
+      <figcaption>Le trait plein mène au dépôt organisé ; le trait tireté mène au dépôt sauvage.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Une porte de point de reprise au centre. À gauche, un déchet trié et correspondant à la filière : la flèche pleine verte traverse la porte jusqu'à la coche d'accès. À droite, un déchet mélangé ou hors périmètre : la flèche tiretée rouge s'arrête avant la porte, bloquée par la croix du refus.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Gratuit, sous conditions</h2>
+    <p>L'accès à un point de reprise est en général gratuit pour un professionnel, mais <strong>sous conditions</strong> : le déchet doit être trié par nature, et correspondre aux matériaux couverts par la filière.</p>
+    <p>Un déchet mal trié ou hors périmètre peut être refusé.</p>
+    <figure>
+      <img src="svg/porte-acces-conditions.svg" alt="Une porte de point de reprise avec deux flèches : déchet trié et correspondant, accès marqué d'une coche verte ; déchet mélangé ou hors périmètre, refus marqué d'une croix rouge.">
+      <figcaption>Le tri conditionne l'accès : trié et correspondant, ça passe ; mélangé ou hors périmètre, c'est refusé.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Trois cartes numérotées, chacune avec une situation entre guillemets à gauche et sa réponse à droite, séparées par une flèche. Lisez-les dans l'ordre : chercher le point de reprise, vérifier le tri en cas de refus, et reconnaître le dépôt sauvage quand la solution de facilité s'y substitue.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : trois situations de terrain</h2>
+    <ol>
+      <li><strong>« Je ne sais pas où déposer les chutes d'isolant de mon chantier. »</strong> → Chercher un point de reprise du dispositif REP bâtiment, financé pour cela.</li>
+      <li><strong>« Le point de reprise a refusé mon dépôt. »</strong> → Vérifier le tri : un déchet mélangé ou hors périmètre peut être refusé.</li>
+      <li><strong>« C'est plus simple de laisser les chutes sur le chantier voisin. »</strong> → C'est un dépôt sauvage, précisément ce que le dispositif REP cherche à éviter.</li>
+    </ol>
+    <figure>
+      <img src="svg/trois-situations-rep.svg" alt="Trois cartes numérotées en cascade : chaque carte présente une situation de terrain entre guillemets et sa réponse.">
+      <figcaption>Dans les trois cas, la même question : où déposer, et pourquoi trier avant.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="La chaîne complète, du chantier au point de reprise, en trois maillons : chantier, tri, point de reprise. Le maillon du tri est mis en évidence, dans une couleur distincte. En dessous, un encadré rappelle le réflexe : trier avant de déposer, chercher le point de reprise plutôt que le terrain vague.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>La REP fait porter la fin de vie d'un produit sur celui qui l'a mis sur le marché.</li>
+      <li>L'éco-organisme organise concrètement la collecte, financée par une éco-contribution.</li>
+      <li>Le point de reprise est l'endroit où déposer les déchets triés d'un chantier.</li>
+      <li>Pour un frigoriste, la REP bâtiment concerne surtout les matériaux périphériques : isolants, gaines — pas le cœur de son métier.</li>
+      <li>L'accès est en général gratuit, mais sous condition de tri correct.</li>
+    </ul>
+    <p class="formule">Le réflexe : trier avant de déposer, et chercher le point de reprise plutôt que le terrain vague.</p>
+    <figure>
+      <img src="svg/bilan-rep-batiment.svg" alt="La chaîne du chantier au point de reprise en trois maillons, avec le maillon du tri mis en évidence dans une couleur distincte, et un encadré rappelant le réflexe : trier avant de déposer.">
+      <figcaption>Le maillon central, c'est le tri : sans lui, rien d'autre ne fonctionne.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Que signifie le principe de responsabilité élargie du producteur ? Reprenez le schéma de l'écran un si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Que signifie le principe de responsabilité élargie du producteur (REP) ?</h2>
+    <figure class="vignette">
+      <img src="svg/cycle-rep.svg" alt="Vignette de rappel : le cycle mise sur le marché, utilisation, fin de vie, avec la flèche de retour responsabilité et financement.">
+      <figcaption>Rappel de l'écran 1 — le cycle et la flèche de retour.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le producteur du déchet paie toujours, quel que soit le déchet</button>
+      <button type="button" data-answer="bonne">Celui qui a mis le produit sur le marché finance et organise sa fin de vie</button>
+      <button type="button" data-answer="c">Seul l'État finance la fin de vie des produits du bâtiment</button>
+      <button type="button" data-answer="d">Chaque chantier organise sa propre filière de traitement</button>
+    </div>
+    <p class="feedback" hidden data-explication="La REP déplace la responsabilité de fin de vie vers le metteur sur le marché, pas vers celui qui utilise ou jette le produit."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Quel est le rôle d'un éco-organisme ? Reprenez le schéma de l'écran deux si besoin.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Quel est le rôle d'un éco-organisme ?</h2>
+    <figure class="vignette">
+      <img src="svg/trois-blocs-eco-organisme.svg" alt="Vignette de rappel : les trois blocs metteur sur le marché, éco-organisme, point de reprise.">
+      <figcaption>Rappel de l'écran 2 — le bloc du milieu organise.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Il vend les matériaux de construction aux entreprises</button>
+      <button type="button" data-answer="bonne">Il organise, avec l'éco-contribution reçue, la collecte et le traitement des déchets</button>
+      <button type="button" data-answer="c">Il contrôle les chantiers pour vérifier le port des EPI</button>
+      <button type="button" data-answer="d">Il remplace le registre du producteur de déchets</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'éco-organisme est l'intermédiaire opérationnel entre le financement REP et le terrain."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Pour un frigoriste, quels déchets relèvent le plus souvent de la REP bâtiment ? Reprenez l'établi de l'écran quatre si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Pour un frigoriste, quels déchets relèvent le plus souvent de la REP bâtiment ?</h2>
+    <figure class="vignette">
+      <img src="svg/etabli-rep-frigoriste.svg" alt="Vignette de rappel : l'établi avec la zone REP bâtiment à gauche et les autres filières à droite.">
+      <figcaption>Rappel de l'écran 4 — deux zones sur le même établi.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Les fluides frigorigènes récupérés</button>
+      <button type="button" data-answer="b">Le cuivre de tuyauterie</button>
+      <button type="button" data-answer="bonne">Les isolants et gaines utilisés en périphérie de l'intervention</button>
+      <button type="button" data-answer="d">Les huiles usagées</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le cœur de métier du frigoriste (fluides, cuivre, huiles) suit d'autres filières ; la REP bâtiment concerne les matériaux de construction qu'il utilise en périphérie."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Pourquoi un point de reprise refuse-t-il le plus souvent un dépôt ? Reprenez la porte de l'écran six si besoin.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un point de reprise refuse un dépôt de chantier. Pourquoi, le plus souvent ?</h2>
+    <figure class="vignette">
+      <img src="svg/porte-acces-conditions.svg" alt="Vignette de rappel : la porte du point de reprise, accès à gauche, refus à droite.">
+      <figcaption>Rappel de l'écran 6 — trié et correspondant, ou refusé.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Parce que le dépôt est gratuit uniquement le matin</button>
+      <button type="button" data-answer="bonne">Parce que le déchet est mal trié ou hors du périmètre de la filière</button>
+      <button type="button" data-answer="c">Parce que les points de reprise n'acceptent aucun professionnel</button>
+      <button type="button" data-answer="d">Parce que le camion du chantier n'est pas autorisé à circuler</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'accès est conditionné à un tri correct et à un déchet couvert par la filière."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. Les deux
+     correspondances sont annoncées sans lien — on ne promet pas une porte
+     fermée. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>Traçabilité</strong> (sous-ligne Fluidique &amp; thermique) — en préparation.</li>
+    <li><strong>Impact environnemental</strong> — en préparation.</li>
+  </ul>
+  <p>Ces deux stations sont en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

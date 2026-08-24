@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-nvq" aria-describedby="d-nvq" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-nvq">Ce qui classe un déchet dangereux : la nature, pas la quantité</title>
+  <desc id="d-nvq">Trois objets côte à côte. À gauche, une petite bouteille de fluide frigorigène
+    surmontée d'un pictogramme de danger. Au centre, un bidon d'huile usagée, lui aussi surmonté
+    d'un pictogramme de danger. À droite, un grand carton d'emballage, bien plus volumineux que les
+    deux autres, sans aucun pictogramme : il n'est pas dangereux. Une bande en bas conclut que c'est
+    la nature du déchet qui décide, jamais sa quantité.</desc>
+  <style>
+    .lbl  { font-size:16px; fill:#10233c; }
+    .lblb { font-size:16px; fill:#10233c; font-weight:bold; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .petit{ font-size:15px; fill:#5a6b7d; }
+    .danger { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#c0392b; }
+    .ok   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#57534e; }
+  </style>
+
+  <!-- Pictogramme de danger : triangle rouge avec point d'exclamation -->
+  <g id="picto-danger">
+    <polygon points="0,-34 30,20 -30,20" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+    <text x="0" y="12" text-anchor="middle" font-weight="bold" font-size="26px" fill="#c0392b">!</text>
+  </g>
+
+  <!-- Bouteille de fluide frigorigène -->
+  <use href="#picto-danger" x="130" y="60"/>
+  <rect x="100" y="96" width="60" height="18" rx="6" fill="#5a6b7d"/>
+  <rect x="88" y="114" width="84" height="150" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="88" y="150" width="84" height="24" fill="#1b3a63"/>
+  <text class="lblb" x="130" y="166" text-anchor="middle" fill="#fffdf8" font-size="14px">FLUIDE</text>
+  <text class="lbl" x="130" y="290" text-anchor="middle">Bouteille de fluide</text>
+  <text class="lbl" x="130" y="310" text-anchor="middle">frigorigène</text>
+  <text class="danger" x="130" y="336" text-anchor="middle">DANGER</text>
+
+  <!-- Bidon d'huile usagée -->
+  <use href="#picto-danger" x="380" y="60"/>
+  <rect x="340" y="98" width="80" height="16" fill="none" stroke="#5a6b7d" stroke-width="6" stroke-linecap="round"/>
+  <rect x="320" y="112" width="120" height="130" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="320" y="140" width="120" height="24" fill="#1b3a63"/>
+  <text class="lblb" x="380" y="157" text-anchor="middle" fill="#fffdf8" font-size="14px">HUILE</text>
+  <text class="lbl" x="380" y="290" text-anchor="middle">Bidon d'huile</text>
+  <text class="lbl" x="380" y="310" text-anchor="middle">usagée</text>
+  <text class="danger" x="380" y="336" text-anchor="middle">DANGER</text>
+
+  <!-- Carton d'emballage, plus grand, non dangereux -->
+  <rect x="610" y="70" width="230" height="172" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="610" y1="70" x2="725" y2="156" stroke="#5a6b7d" stroke-width="2"/>
+  <line x1="840" y1="70" x2="725" y2="156" stroke="#5a6b7d" stroke-width="2"/>
+  <circle cx="725" cy="52" r="24" fill="#eef3f9" stroke="#5a6b7d" stroke-width="3"/>
+  <text x="725" y="60" text-anchor="middle" font-weight="bold" font-size="22px" fill="#5a6b7d">✓</text>
+  <text class="lbl" x="725" y="290" text-anchor="middle">Carton d'emballage</text>
+  <text class="petit" x="725" y="310" text-anchor="middle">(plus volumineux que les deux autres)</text>
+  <text class="ok" x="725" y="336" text-anchor="middle">NON DANGEREUX</text>
+
+  <!-- Bande de conclusion -->
+  <rect x="20" y="356" width="860" height="34" rx="10" fill="#efece9" stroke="#57534e" stroke-width="2"/>
+  <text class="band" x="450" y="378" text-anchor="middle">C'est la NATURE du déchet qui décide — jamais sa quantité</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-bil" aria-describedby="d-bil" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bil">Bilan : Montréal, le relais des HFC, Kigali</title>
+  <desc id="d-bil">Trois cases alignées, reliées par des flèches, reprennent les trois temps de la station : le
+    protocole de Montréal en 1987 avec une coche verte « ozone réglé », le relais des HFC avec une coche verte pour
+    l'ozone mais une alerte ambre pour le climat, et l'amendement de Kigali avec une coche verte « climat pris en
+    compte ». En dessous, une bande rappelle le mécanisme en une phrase et signale le lien avec le règlement F-Gaz 3,
+    qui applique la même logique à l'échelle de l'Union européenne.</desc>
+  <defs>
+    <marker id="fl4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .ttl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#fffdf8; }
+    .lblGras{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .lbl{ font-size:15px; fill:#10233c; }
+    .ok{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#1e7e54; }
+    .alerte{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#b06a00; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Case 1 : Montréal -->
+  <rect x="20" y="30" width="260" height="180" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="20" y="30" width="260" height="38" rx="12" fill="#1b3a63"/>
+  <rect x="20" y="54" width="260" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="150" y="55" text-anchor="middle">MONTRÉAL — 1987</text>
+  <circle cx="55" cy="102" r="15" fill="#1e7e54"/>
+  <path d="M48,102 L53,108 L63,94" stroke="#fffdf8" stroke-width="2.5" fill="none"/>
+  <text class="ok" x="78" y="107">ozone réglé</text>
+  <text class="lbl" x="40" y="140">cible : CFC puis HCFC,</text>
+  <text class="lbl" x="40" y="160">évalués par leur ODP</text>
+  <text class="lbl" x="40" y="188">traité international</text>
+
+  <path d="M280,120 L316,120" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#fl4)"/>
+
+  <!-- Case 2 : relais HFC -->
+  <rect x="320" y="30" width="260" height="180" rx="12" fill="#fffdf8" stroke="#b06a00" stroke-width="3"/>
+  <rect x="320" y="30" width="260" height="38" rx="12" fill="#b06a00"/>
+  <rect x="320" y="54" width="260" height="14" fill="#b06a00"/>
+  <text class="ttl" x="450" y="55" text-anchor="middle">LE RELAIS DES HFC</text>
+  <circle cx="355" cy="102" r="15" fill="#1e7e54"/>
+  <path d="M348,102 L353,108 L363,94" stroke="#fffdf8" stroke-width="2.5" fill="none"/>
+  <text class="ok" x="378" y="107">ozone : réglé</text>
+  <text class="alerte" x="340" y="140">climat : PRP souvent élevé</text>
+  <text class="lbl" x="340" y="168">sans chlore ni brome,</text>
+  <text class="lbl" x="340" y="188">mais pas neutre pour le climat</text>
+
+  <path d="M580,120 L616,120" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#fl4)"/>
+
+  <!-- Case 3 : Kigali -->
+  <rect x="620" y="30" width="260" height="180" rx="12" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <rect x="620" y="30" width="260" height="38" rx="12" fill="#047857"/>
+  <rect x="620" y="54" width="260" height="14" fill="#047857"/>
+  <text class="ttl" x="750" y="55" text-anchor="middle">L'AMENDEMENT DE KIGALI</text>
+  <circle cx="655" cy="102" r="15" fill="#1e7e54"/>
+  <path d="M648,102 L653,108 L663,94" stroke="#fffdf8" stroke-width="2.5" fill="none"/>
+  <text class="ok" x="678" y="107">climat : pris en compte</text>
+  <text class="lbl" x="640" y="140">cible : les HFC,</text>
+  <text class="lbl" x="640" y="160">évalués par leur PRP</text>
+  <text class="lbl" x="640" y="188">ajout au même protocole</text>
+
+  <!-- Bande du bas -->
+  <rect x="20" y="240" width="860" height="120" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="268" text-anchor="middle">ODP réglé par Montréal → PRP resté ouvert → Kigali s'en charge</text>
+  <text class="lbl" x="450" y="298" text-anchor="middle">Un seul protocole, deux enjeux traités l'un après l'autre :</text>
+  <text class="lbl" x="450" y="320" text-anchor="middle">d'abord la couche d'ozone, puis le climat</text>
+  <text class="lblGras" x="450" y="348" text-anchor="middle" fill="#047857">F-Gaz 3 applique cette même logique à l'échelle de l'Union européenne</text>
+</svg>

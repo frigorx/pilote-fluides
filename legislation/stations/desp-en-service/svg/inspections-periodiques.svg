@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-insp" aria-describedby="d-insp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-insp">Les inspections périodiques : vérifier que rien n'a bougé</title>
+  <desc id="d-insp">Un équipement sous pression à gauche, relié par une ligne en pointillé à une série
+    de loupes identiques, régulièrement espacées, sans aucune date inscrite : chaque loupe représente
+    une inspection périodique. Une note au-dessus de la ligne précise que le rythme exact est fixé par
+    la réglementation en vigueur. En dessous, deux encadrés rappellent ce que l'inspection cherche :
+    que l'équipement reste conforme à son état de référence, et qu'une dégradation — corrosion,
+    fissure, fuite naissante — soit repérée avant de devenir dangereuse.</desc>
+  <style>
+    .lbl    { font-size:15px; fill:#10233c; }
+    .note   { font-size:15px; fill:#5a6b7d; font-style:italic; }
+    .encTtl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#0c4a6e; }
+    .ellip  { font-size:22px; fill:#5a6b7d; }
+  </style>
+
+  <!-- Équipement sous pression -->
+  <rect x="30" y="110" width="90" height="120" rx="20" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="30" y="110" width="90" height="24" rx="12" fill="#1b3a63"/>
+  <text class="lbl" x="75" y="252" text-anchor="middle">Équipement</text>
+  <text class="lbl" x="75" y="270" text-anchor="middle">sous pression</text>
+
+  <!-- Ligne en pointillé -->
+  <line x1="132" y1="170" x2="800" y2="170" stroke="#d6dee7" stroke-width="4" stroke-dasharray="10 10"/>
+
+  <text class="note" x="470" y="128" text-anchor="middle">Rythme fixé par la réglementation en vigueur — aucune date figée ici</text>
+
+  <!-- Loupes : inspections -->
+  <g>
+    <circle cx="270" cy="170" r="17" fill="#fffdf8" stroke="#0c4a6e" stroke-width="4"/>
+    <line x1="282" y1="182" x2="299" y2="199" stroke="#0c4a6e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g>
+    <circle cx="440" cy="170" r="17" fill="#fffdf8" stroke="#0c4a6e" stroke-width="4"/>
+    <line x1="452" y1="182" x2="469" y2="199" stroke="#0c4a6e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g>
+    <circle cx="610" cy="170" r="17" fill="#fffdf8" stroke="#0c4a6e" stroke-width="4"/>
+    <line x1="622" y1="182" x2="639" y2="199" stroke="#0c4a6e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text class="ellip" x="740" y="180" text-anchor="middle">…</text>
+
+  <!-- Deux encadrés : ce que cherche l'inspection -->
+  <rect x="132" y="310" width="330" height="76" rx="14" fill="#eaf2f6" stroke="#0c4a6e" stroke-width="2"/>
+  <text class="encTtl" x="297" y="334" text-anchor="middle">Conformité</text>
+  <text class="lbl" x="297" y="358" text-anchor="middle">l'équipement correspond-il</text>
+  <text class="lbl" x="297" y="376" text-anchor="middle">toujours à son état de référence ?</text>
+
+  <rect x="480" y="310" width="330" height="76" rx="14" fill="#eaf2f6" stroke="#0c4a6e" stroke-width="2"/>
+  <text class="encTtl" x="645" y="334" text-anchor="middle">Dégradation</text>
+  <text class="lbl" x="645" y="358" text-anchor="middle">repérée avant de devenir</text>
+  <text class="lbl" x="645" y="376" text-anchor="middle">dangereuse (corrosion, fissure, fuite)</text>
+</svg>

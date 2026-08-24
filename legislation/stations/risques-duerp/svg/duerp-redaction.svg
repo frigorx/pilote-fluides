@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-rd" aria-describedby="d-rd" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rd">Qui écrit le DUERP : l'employeur, avec la contribution du terrain</title>
+  <desc id="d-rd">Au centre, une case marquée « l'employeur, rédacteur et responsable ». Deux flèches
+    entrent dans cette case depuis la gauche : l'une part d'une case « les techniciens, ce qu'ils
+    vivent sur le terrain », l'autre d'une case « les représentants du personnel, s'il y en a ».
+    Une flèche sort de la case centrale vers la droite, vers une case « le document rédigé ». En
+    bas, une case barrée en rouge représente un bureau isolé, avec la mention qu'il ne se rédige
+    pas seul, loin des postes de travail.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .faux{ font-size:14px; fill:#c0392b; font-style:italic; }
+  </style>
+
+  <!-- sources, à gauche -->
+  <rect x="20" y="20" width="230" height="80" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="135" y="52" text-anchor="middle" font-weight="bold">Les techniciens</text>
+  <text class="lbl" x="135" y="74" text-anchor="middle">ce qu'ils vivent</text>
+  <text class="lbl" x="135" y="92" text-anchor="middle">sur le terrain</text>
+
+  <rect x="20" y="130" width="230" height="80" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="135" y="158" text-anchor="middle" font-weight="bold">Les représentants</text>
+  <text class="lbl" x="135" y="180" text-anchor="middle">du personnel,</text>
+  <text class="lbl" x="135" y="198" text-anchor="middle">s'il y en a</text>
+
+  <!-- centre : l'employeur -->
+  <rect x="330" y="70" width="240" height="120" rx="14" fill="#fffdf8" stroke="#c2410c" stroke-width="3"/>
+  <rect x="330" y="70" width="240" height="38" rx="14" fill="#c2410c"/>
+  <rect x="330" y="90" width="240" height="18" fill="#c2410c"/>
+  <text class="ttl" x="450" y="94" text-anchor="middle">L'EMPLOYEUR</text>
+  <text class="lbl" x="450" y="134" text-anchor="middle">rédige le document</text>
+  <text class="lbl" x="450" y="156" text-anchor="middle">et en porte</text>
+  <text class="lbl" x="450" y="176" text-anchor="middle">la responsabilité</text>
+
+  <!-- droite : le document -->
+  <rect x="650" y="70" width="230" height="120" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="2.5"/>
+  <rect x="650" y="70" width="230" height="38" rx="14" fill="#1e7e54"/>
+  <rect x="650" y="90" width="230" height="18" fill="#1e7e54"/>
+  <text class="ttl" x="765" y="94" text-anchor="middle">LE DOCUMENT</text>
+  <text class="lbl" x="765" y="140" text-anchor="middle">écrit avec la</text>
+  <text class="lbl" x="765" y="162" text-anchor="middle">contribution du terrain</text>
+
+  <defs>
+    <marker id="fl-rd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <path d="M250,60 L328,110" fill="none" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#fl-rd)"/>
+  <path d="M250,170 L328,150" fill="none" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#fl-rd)"/>
+  <line x1="572" y1="130" x2="648" y2="130" stroke="#5a6b7d" stroke-width="2.5" marker-end="url(#fl-rd)"/>
+
+  <!-- bande basse : ce que ce n'est pas -->
+  <rect x="20" y="250" width="860" height="60" rx="14" fill="#fdf1ee" stroke="#c0392b" stroke-width="2"/>
+  <line x1="60" y1="264" x2="120" y2="296" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="120" y1="264" x2="60" y2="296" stroke="#c0392b" stroke-width="2.5"/>
+  <text class="faux" x="480" y="272" text-anchor="middle">Il ne se rédige pas seul, depuis un bureau,</text>
+  <text class="band" x="480" y="296" text-anchor="middle">loin des postes de travail</text>
+</svg>

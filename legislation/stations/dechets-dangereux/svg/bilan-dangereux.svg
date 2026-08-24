@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-bild" aria-describedby="d-bild" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bild">Le réflexe : tout déchet dangereux se trace, sans exception liée à la quantité</title>
+  <desc id="d-bild">Une chaîne de traçabilité complète en quatre maillons, du chantier au traitement
+    final : chantier, producteur, déclaration numérique, traitement final. Le maillon « déclaration
+    numérique », au centre, est mis en évidence par un double contour. Une bande en bas résume les
+    points clés de la station.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:14.5px; fill:#fffdf8; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .cle { font-size:15.5px; fill:#10233c; }
+    .note{ font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- La chaîne -->
+  <line x1="100" y1="110" x2="800" y2="110" stroke="#d6dee7" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Maillon 1 : chantier -->
+  <rect x="60" y="70" width="140" height="80" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="60" y="70" width="140" height="30" rx="12" fill="#1b3a63"/>
+  <rect x="60" y="88" width="140" height="12" fill="#1b3a63"/>
+  <text class="ttl" x="130" y="91">CHANTIER</text>
+  <text class="lbl" x="130" y="130" text-anchor="middle" font-size="13.5px">le déchet naît</text>
+
+  <!-- Maillon 2 : producteur -->
+  <rect x="260" y="70" width="140" height="80" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="260" y="70" width="140" height="30" rx="12" fill="#1b3a63"/>
+  <rect x="260" y="88" width="140" height="12" fill="#1b3a63"/>
+  <text class="ttl" x="330" y="91">PRODUCTEUR</text>
+  <text class="lbl" x="330" y="130" text-anchor="middle" font-size="13.5px">émet le BSD</text>
+
+  <!-- Maillon 3 : déclaration numérique — mis en évidence -->
+  <rect x="455" y="60" width="160" height="100" rx="14" fill="#efece9" stroke="#57534e" stroke-width="5"/>
+  <rect x="447" y="52" width="176" height="116" rx="18" fill="none" stroke="#57534e" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="455" y="60" width="160" height="30" rx="14" fill="#57534e"/>
+  <rect x="455" y="78" width="160" height="12" fill="#57534e"/>
+  <text class="ttl" x="535" y="81">DÉCLARATION NUMÉRIQUE</text>
+  <text class="lbl" x="535" y="118" text-anchor="middle" font-size="13.5px">registre national,</text>
+  <text class="lbl" x="535" y="138" text-anchor="middle" font-size="13.5px">chaque mouvement enregistré</text>
+
+  <!-- Maillon 4 : traitement final -->
+  <rect x="680" y="70" width="150" height="80" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="680" y="70" width="150" height="30" rx="12" fill="#1b3a63"/>
+  <rect x="680" y="88" width="150" height="12" fill="#1b3a63"/>
+  <text class="ttl" x="755" y="91">TRAITEMENT FINAL</text>
+  <text class="lbl" x="755" y="130" text-anchor="middle" font-size="13.5px">le déchet trouve sa filière</text>
+
+  <!-- Bande de bilan -->
+  <rect x="20" y="200" width="860" height="90" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="cle" x="450" y="226" text-anchor="middle">Nature, pas quantité · fluide non réutilisable = déchet dangereux</text>
+  <text class="cle" x="450" y="250" text-anchor="middle">BSD du producteur au traitement · suivi par registre numérique</text>
+  <text class="cle" x="450" y="274" text-anchor="middle">frigoriste : fluides non réutilisables, huiles, filtres contaminés</text>
+
+  <text class="note" x="450" y="318" text-anchor="middle">Tout déchet qui porte une propriété de danger se trace, sans exception liée à la quantité.</text>
+</svg>

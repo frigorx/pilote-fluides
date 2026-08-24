@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img"
+     aria-labelledby="t-tst" aria-describedby="d-tst" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-tst">Trois cartes en cascade : trois situations de chantier, trois réponses</title>
+  <desc id="d-tst">Trois cartes numérotées, en cascade. Carte 1 : « je n'ai que quelques chutes de
+    cuivre, autant les mettre dans la benne tout-venant » — non, même en petite quantité, le cuivre
+    trié garde sa valeur et sa filière de recyclage. Carte 2 : « l'isolant ne se recycle pas, je le
+    mets où je veux » — non, il va dans la benne qui correspond à sa nature, même si elle mène au
+    tout-venant, pas dans une benne de matière triée. Carte 3 : « mon fluide récupéré n'est plus
+    bon, je le mets avec les métaux » — non, un déchet dangereux ne rejoint jamais une benne de tri
+    classique.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; text-anchor:middle; }
+    .cit  { font-size:15px; fill:#10233c; font-style:italic; }
+    .non  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#c0392b; }
+    .rep  { font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="24" text-anchor="middle">Trois idées reçues sur le chantier — et la réponse</text>
+
+  <!-- Carte 1 -->
+  <g>
+    <rect x="30" y="46" width="800" height="118" rx="14" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <circle cx="65" cy="80" r="20" fill="#57534e"/>
+    <text class="num" x="65" y="87">1</text>
+    <text class="cit" x="98" y="78">« Je n'ai que quelques chutes de cuivre, autant les mettre</text>
+    <text class="cit" x="98" y="98">dans la benne tout-venant. »</text>
+    <text class="non" x="98" y="128">Non :</text>
+    <text class="rep" x="146" y="128">même en petite quantité, le cuivre trié garde sa valeur</text>
+    <text class="rep" x="98" y="148">et sa filière de recyclage.</text>
+  </g>
+
+  <!-- Carte 2 -->
+  <g>
+    <rect x="55" y="180" width="800" height="118" rx="14" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <circle cx="90" cy="214" r="20" fill="#57534e"/>
+    <text class="num" x="90" y="221">2</text>
+    <text class="cit" x="123" y="212">« L'isolant ne se recycle pas, je le mets où je veux. »</text>
+    <text class="non" x="123" y="252">Non :</text>
+    <text class="rep" x="171" y="252">il va dans la benne qui correspond à sa nature, même</text>
+    <text class="rep" x="123" y="272">si elle mène au tout-venant — pas dans une benne triée.</text>
+  </g>
+
+  <!-- Carte 3 -->
+  <g>
+    <rect x="80" y="314" width="800" height="140" rx="14" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+    <circle cx="115" cy="348" r="20" fill="#57534e"/>
+    <text class="num" x="115" y="355">3</text>
+    <text class="cit" x="148" y="346">« Mon fluide récupéré n'est plus bon, je le mets</text>
+    <text class="cit" x="148" y="366">avec les métaux. »</text>
+    <text class="non" x="148" y="396">Non :</text>
+    <text class="rep" x="196" y="396">un déchet dangereux ne rejoint jamais une benne</text>
+    <text class="rep" x="148" y="416">de tri classique.</text>
+  </g>
+</svg>

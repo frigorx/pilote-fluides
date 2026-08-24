@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-cbsd" aria-describedby="d-cbsd" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cbsd">Le bordereau de suivi : la mémoire du déchet dangereux</title>
+  <desc id="d-cbsd">Trois maillons alignés — producteur, transporteur, traiteur — reliés par une même
+    bande représentant le bordereau de suivi des déchets, qui les traverse tous. Chaque maillon appose
+    sa marque, un cachet numéroté, sur cette bande. En bas, la question à laquelle répond le bordereau :
+    ce déchet, par où est-il passé, et où a-t-il fini ?</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lbl { font-size:15.5px; fill:#10233c; }
+    .doc { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#57534e; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <!-- La bande du bordereau, qui traverse les trois maillons -->
+  <rect x="40" y="150" width="820" height="40" fill="#efece9" stroke="#57534e" stroke-width="2" stroke-dasharray="10 6"/>
+  <text class="doc" x="450" y="175" text-anchor="middle">BORDEREAU DE SUIVI DES DÉCHETS (BSD)</text>
+
+  <!-- Maillon 1 : producteur -->
+  <rect x="60" y="60" width="200" height="80" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="160" cy="30" r="18" fill="#1b3a63"/>
+  <text x="160" y="36" text-anchor="middle" fill="#fffdf8" font-weight="bold" font-size="17px">1</text>
+  <text class="lbl" x="160" y="94" text-anchor="middle" font-weight="bold">Producteur</text>
+  <text class="lbl" x="160" y="116" text-anchor="middle" font-size="14px">génère le déchet</text>
+  <!-- cachet sur la bande -->
+  <circle cx="160" cy="170" r="16" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <text x="160" y="176" text-anchor="middle" fill="#1b3a63" font-weight="bold" font-size="15px">✓</text>
+
+  <!-- Maillon 2 : transporteur -->
+  <rect x="350" y="60" width="200" height="80" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="450" cy="30" r="18" fill="#1b3a63"/>
+  <text x="450" y="36" text-anchor="middle" fill="#fffdf8" font-weight="bold" font-size="17px">2</text>
+  <text class="lbl" x="450" y="94" text-anchor="middle" font-weight="bold">Transporteur</text>
+  <text class="lbl" x="450" y="116" text-anchor="middle" font-size="14px">achemine le déchet</text>
+  <circle cx="450" cy="170" r="16" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <text x="450" y="176" text-anchor="middle" fill="#1b3a63" font-weight="bold" font-size="15px">✓</text>
+
+  <!-- Maillon 3 : traiteur -->
+  <rect x="640" y="60" width="200" height="80" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="740" cy="30" r="18" fill="#1b3a63"/>
+  <text x="740" y="36" text-anchor="middle" fill="#fffdf8" font-weight="bold" font-size="17px">3</text>
+  <text class="lbl" x="740" y="94" text-anchor="middle" font-weight="bold">Traiteur</text>
+  <text class="lbl" x="740" y="116" text-anchor="middle" font-size="14px">traite le déchet</text>
+  <circle cx="740" cy="170" r="16" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <text x="740" y="176" text-anchor="middle" fill="#1b3a63" font-weight="bold" font-size="15px">✓</text>
+
+  <!-- Bande de conclusion -->
+  <rect x="40" y="236" width="820" height="70" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="266" text-anchor="middle">« Ce déchet dangereux, par où est-il passé,</text>
+  <text class="band" x="450" y="290" text-anchor="middle">et où a-t-il fini ? »</text>
+</svg>

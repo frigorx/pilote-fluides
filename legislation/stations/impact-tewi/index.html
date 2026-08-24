@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Le TEWI — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le TEWI, l'impact total d'une machine frigorifique, sa part directe (les fuites de fluide) et sa part indirecte (l'énergie consommée), et pourquoi juger un système sur son seul fluide est une erreur.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/impact-tewi/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Impact environnemental.
+     Gabarit structurel repris à l'identique de la station
+     legislation/stations/aptitude-capacite/ (classes, identifiants,
+     ordre des sections). styles.css et app.js sont une COPIE LITTÉRALE
+     du socle commun du réseau — ne pas y toucher, y compris la variable
+     --sous-ligne qui reste #0f766e par cohérence de chantier. L'accent
+     #047857 (Impact environnemental) n'est utilisé QUE dans les SVG de
+     cette station.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     Fond rédigé le 24/08/2026. PROTOTYPE NON RELU — data-prototype posé
+     sur marque.js. Aucun chiffre de barème (répartition direct/indirect,
+     facteur d'émission électrique, durée de vie type) n'est avancé :
+     seul le mécanisme est enseigné. Voir FOND.md, section « à sourcer ».
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Impact environnemental · niveau BTS</p>
+  <h1>Le TEWI — l'impact total d'une machine</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez ce qu'est le TEWI, distinguer sa <strong>part directe</strong> (les fuites de fluide) et sa <strong>part indirecte</strong> (l'énergie consommée), repérer les deux pièges qui peuvent tromper un jugement rapide, et comprendre pourquoi juger un système sur son seul fluide est une erreur.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la balance. À gauche, le plateau de la part directe : les fuites de fluide frigorigène, multipliées par le PRP du fluide. À droite, le plateau de la part indirecte : l'énergie électrique consommée par la machine, multipliée par sa durée de vie. Les deux plateaux sont reliés au même pivot, marqué TEWI. Aucun des deux n'est dessiné plus lourd que l'autre par principe : c'est le cas réel de chaque machine qui décide laquelle penche. En bas, la bande donne la formule : TEWI égale part directe plus part indirecte.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Le TEWI : une balance à deux plateaux</h2>
+    <p>Le <strong>TEWI</strong> (Total Equivalent Warming Impact) mesure le poids climatique complet d'une machine frigorifique, sur toute sa vie. Il additionne deux parts :</p>
+    <ul>
+      <li>la <strong>part directe</strong> : les fuites de fluide frigorigène pendant la vie de la machine, converties en équivalent CO₂ grâce au PRP du fluide ;</li>
+      <li>la <strong>part indirecte</strong> : l'énergie électrique consommée par la machine pendant toute sa vie, elle aussi convertie en équivalent CO₂.</li>
+    </ul>
+    <p><strong>Il ne suffit pas de regarder un seul plateau.</strong> C'est la somme des deux qui donne le TEWI.</p>
+    <figure>
+      <img src="svg/balance-tewi.svg" alt="Une balance dont le pivot porte la mention TEWI. Le plateau de gauche porte la part directe, les fuites de fluide multipliées par le PRP. Le plateau de droite porte la part indirecte, l'énergie consommée multipliée par la durée de vie. Une bande en bas donne la formule : TEWI égale part directe plus part indirecte.">
+      <figcaption>Deux plateaux, un seul pivot : le TEWI est la somme des deux.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Suivez la chaîne de gauche à droite. Premier bloc : une machine frigorifique d'où s'échappe une goutte, avec la mention masse de fluide fuie sur toute la vie de la machine. Un signe multiplié. Deuxième bloc : une étiquette portant la mention PRP du fluide, une valeur propre à chaque fluide. Un signe égal. Troisième bloc, en vert : le résultat, la part directe, en équivalent CO2. En bas, la bande résume : plus la machine fuit et plus le PRP du fluide est élevé, plus la part directe pèse lourd.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">La part directe, en détail</h2>
+    <p>La part directe se construit en deux temps :</p>
+    <ol>
+      <li>on additionne toute la <strong>masse de fluide fuie</strong> pendant la vie de la machine ;</li>
+      <li>on la <strong>multiplie par le PRP</strong> du fluide utilisé.</li>
+    </ol>
+    <p>Le PRP dépend du fluide : à titre d'exemple, le CO₂ (R-744) a un PRP de 1, le propane un PRP de 3, l'ammoniac un PRP de 0. À l'inverse, des fluides comme le R-410A ou le R-404A ont des PRP nettement plus élevés. À masse fuie égale, le résultat n'est donc pas du tout le même selon le fluide choisi.</p>
+    <figure>
+      <img src="svg/part-directe.svg" alt="Une chaîne de trois blocs : une machine d'où s'échappe une goutte, portant la masse de fluide fuie sur toute la vie de la machine ; un signe multiplié ; une étiquette portant le PRP du fluide ; un signe égal ; un bloc vert donnant le résultat, la part directe en équivalent CO2.">
+      <figcaption>Masse fuie multipliée par le PRP : c'est tout le mécanisme de la part directe.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Même principe de chaîne, à droite cette fois. Premier bloc : un compteur électrique portant la mention énergie consommée sur toute la vie de la machine. Un signe multiplié. Deuxième bloc : une horloge portant la mention durée de vie de la machine. Une flèche mène vers un troisième bloc, le réseau électrique du pays où tourne la machine, avec la mention l'électricité n'est jamais neutre à produire. Une dernière flèche mène au résultat, en vert : la part indirecte, en équivalent CO2.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">La part indirecte, en détail</h2>
+    <p>La part indirecte se construit elle aussi en deux temps :</p>
+    <ol>
+      <li>on additionne toute l'<strong>énergie électrique consommée</strong> par la machine pendant sa vie ;</li>
+      <li>on la <strong>convertit en équivalent CO₂</strong> selon l'électricité utilisée.</li>
+    </ol>
+    <p><strong>L'électricité n'est jamais neutre à produire.</strong> Sa part de CO₂ dépend du réseau électrique sur lequel la machine tourne — un réseau n'émet pas la même chose qu'un autre. Une chambre froide, une PAC ou un groupe de condensation qui consomment beaucoup pèsent donc plus lourd sur cette part, quel que soit leur fluide.</p>
+    <figure>
+      <img src="svg/part-indirecte.svg" alt="Une chaîne de blocs : un compteur électrique portant l'énergie consommée ; un signe multiplié ; une horloge portant la durée de vie de la machine ; une flèche vers le réseau électrique du pays où elle tourne, l'électricité n'étant jamais neutre à produire ; une flèche vers le résultat vert, la part indirecte en équivalent CO2.">
+      <figcaption>Énergie consommée sur toute la vie, convertie selon le réseau électrique.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="À gauche, une pompe à chaleur au fluide propane, PRP 3, avec la mention peu de fuites : direct faible. À droite, un compteur électrique dont l'aiguille est poussée dans le rouge, avec la mention consommation élevée, machine mal dimensionnée : indirect fort. En bas, la balance penche nettement du côté indirect. La conclusion : malgré un fluide propre, l'indirect peut dominer le TEWI.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Piège n°1 : la machine gourmande</h2>
+    <p>Imaginez une <strong>PAC au propane</strong> (PRP 3, donc très bas). Elle fuit peu : sa part directe reste faible. Mais elle est <strong>mal dimensionnée</strong> et consomme beaucoup d'électricité sur toute sa vie.</p>
+    <p><strong>Sa part indirecte peut alors dominer le TEWI</strong>, malgré un fluide « propre ». Choisir un bon fluide ne suffit pas si la machine consomme trop.</p>
+    <figure>
+      <img src="svg/piege-machine-gourmande.svg" alt="À gauche, une pompe à chaleur au fluide propane, PRP 3, peu de fuites, direct faible. À droite, un compteur électrique dans le rouge, consommation élevée, machine mal dimensionnée, indirect fort. En bas, une balance penche du côté indirect avec la conclusion : malgré un fluide bas PRP, l'indirect peut dominer le TEWI.">
+      <figcaption>Un fluide bas PRP n'empêche pas une part indirecte lourde.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Le miroir de l'écran précédent. À gauche, un groupe de condensation au fluide R-404A, avec trois gouttes qui s'échappent et la mention fuites régulières : direct fort. À droite, un compteur électrique dont l'aiguille reste dans le vert, avec la mention machine efficace, faible consommation : indirect faible. En bas, la balance penche nettement du côté direct. La conclusion : malgré une machine efficace, le direct peut dominer le TEWI.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Piège n°2 : la machine qui fuit</h2>
+    <p>Le miroir du piège précédent. Imaginez un <strong>groupe de condensation au R-404A</strong> (PRP élevé), une machine par ailleurs efficace, qui consomme peu. Mais elle <strong>fuit régulièrement</strong>.</p>
+    <p><strong>Sa part directe peut alors dominer le TEWI</strong>, malgré une machine efficace. Une bonne efficacité énergétique ne compense pas un fluide qui s'échappe.</p>
+    <figure>
+      <img src="svg/piege-machine-qui-fuit.svg" alt="À gauche, un groupe de condensation au fluide R-404A, trois gouttes qui s'échappent, fuites régulières, direct fort. À droite, un compteur électrique dans le vert, machine efficace, faible consommation, indirect faible. En bas, une balance penche du côté direct avec la conclusion : malgré une machine efficace, le direct peut dominer le TEWI.">
+      <figcaption>Une machine économe en énergie n'empêche pas une part directe lourde.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Trois cartes en haut. La première, durée de vie de la machine, envoie une flèche vers chacun des deux plateaux du bas. La deuxième, taux de fuite annuel réel, envoie sa flèche uniquement vers la zone verte, part directe. La troisième, réseau électrique du pays où elle tourne, envoie sa flèche uniquement vers la zone bleue, part indirecte.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Ce qui fait varier chaque part</h2>
+    <p>À machine identique, plusieurs éléments changent le résultat :</p>
+    <ul>
+      <li>la <strong>durée de vie de la machine</strong> — plus elle tourne longtemps, plus les deux parts ont le temps de s'accumuler ;</li>
+      <li>le <strong>taux de fuite annuel réel</strong> — plus la machine fuit chaque année, plus la part directe grossit ;</li>
+      <li>le <strong>réseau électrique du pays</strong> où elle tourne — plus il émet de CO₂ par kilowattheure consommé, plus la part indirecte grossit.</li>
+    </ul>
+    <p>Aucun de ces éléments ne se lit sur la seule étiquette du fluide.</p>
+    <figure>
+      <img src="svg/facteurs-indirect.svg" alt="Trois cartes : durée de vie de la machine, avec une flèche vers la part directe et une flèche vers la part indirecte ; taux de fuite annuel réel, avec une flèche vers la seule part directe ; réseau électrique du pays, avec une flèche vers la seule part indirecte. En bas, deux zones reçoivent les flèches, part directe en vert et part indirecte en bleu.">
+      <figcaption>Trois leviers, mais pas les mêmes effets selon la part regardée.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre cartes numérotées. Première : deux fluides différents sur une même machine, il faut comparer le PRP mais aussi la consommation. Deuxième : un même fluide sur deux machines, celle qui consomme le plus ou qui dure le plus longtemps pèse plus lourd côté indirect. Troisième : un fluide bas PRP sur une machine gourmande, ne pas conclure trop vite, l'indirect peut suffire à faire pencher la balance. Quatrième : un fluide fort PRP sur une machine étanche, ne pas conclure trop vite non plus, le direct reste faible si les fuites sont rares.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : quatre réflexes de terrain</h2>
+    <ol>
+      <li><strong>« Deux fluides différents, même machine. »</strong> → Comparez le PRP des deux fluides, mais regardez aussi si la consommation d'énergie est la même.</li>
+      <li><strong>« Même fluide, deux machines. »</strong> → Celle qui consomme le plus ou qui dure le plus longtemps pèse plus lourd côté indirect, même à fuite égale.</li>
+      <li><strong>« Fluide bas PRP, machine gourmande. »</strong> → Ne concluez pas trop vite : l'indirect peut suffire à faire pencher la balance.</li>
+      <li><strong>« Fluide fort PRP, machine étanche. »</strong> → Ne concluez pas trop vite non plus : le direct reste faible si les fuites sont rares.</li>
+    </ol>
+    <figure>
+      <img src="svg/quatre-situations.svg" alt="Quatre cartes numérotées : deux fluides différents sur une même machine, un même fluide sur deux machines, un fluide bas PRP sur une machine gourmande, un fluide fort PRP sur une machine étanche. Chacune porte sa réponse.">
+      <figcaption>Dans les quatre cas, la même règle : ne jamais juger un seul côté de la balance.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan. En haut, la formule TEWI égale part directe plus part indirecte. À gauche, une étiquette de fluide barrée d'un trait rouge : juger sur le fluide seul est insuffisant. À droite, une machine entourée d'une flèche circulaire : il faut regarder le cycle complet, fluide et énergie. En bas, la bande résume le message de la station.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan : le cycle complet, jamais le seul fluide</h2>
+    <ul>
+      <li>Le <strong>TEWI</strong> additionne la <strong>part directe</strong> (fuites × PRP) et la <strong>part indirecte</strong> (énergie × durée de vie).</li>
+      <li>Une machine étanche mais gourmande peut peser <strong>plus lourd</strong> qu'une machine qui fuit un peu mais consomme peu.</li>
+      <li>La durée de vie, le taux de fuite réel et le réseau électrique font varier le résultat — rien de tout cela ne se lit sur l'étiquette du fluide.</li>
+      <li><strong>Juger un système sur son seul fluide est une erreur</strong> : il faut regarder le cycle complet.</li>
+    </ul>
+    <p class="formule">Le réflexe : TEWI = part directe + part indirecte, jamais l'une sans l'autre.</p>
+    <figure>
+      <img src="svg/bilan-tewi.svg" alt="En haut, la formule TEWI égale part directe plus part indirecte. À gauche, une étiquette de fluide barrée, juger sur le fluide seul est insuffisant. À droite, une machine entourée d'une flèche circulaire, il faut regarder le cycle complet, fluide et énergie.">
+      <figcaption>Le fluide seul ne dit rien du TEWI : c'est le cycle complet qui compte.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Qu'est-ce que le TEWI ? Revoyez la balance de l'écran un avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce que le TEWI ?</h2>
+    <figure class="vignette">
+      <img src="svg/balance-tewi.svg" alt="Vignette de rappel : la balance à deux plateaux, part directe et part indirecte, reliés au pivot TEWI.">
+      <figcaption>Rappel de l'écran 1 — deux plateaux, un seul pivot.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Uniquement l'impact des fuites de fluide</button>
+      <button type="button" data-answer="b">Uniquement l'impact de l'énergie consommée</button>
+      <button type="button" data-answer="bonne">La somme de l'impact direct des fuites (masse × PRP) et de l'impact indirect de l'énergie consommée sur toute la vie de la machine</button>
+      <button type="button" data-answer="d">La somme de l'ODP et du PRP du fluide</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le TEWI additionne les deux parts : ce n'est ni les fuites seules, ni l'énergie seule. Il ne faut pas non plus le confondre avec l'ODP et le PRP, qui sont deux propriétés du fluide, pas un bilan de machine."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Une machine utilise un fluide à très bas PRP mais consomme beaucoup d'électricité sur toute sa vie. Reprenez le piège de l'écran quatre avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Fluide très bas PRP, mais forte consommation sur toute la vie. Que peut-il se passer ?</h2>
+    <figure class="vignette">
+      <img src="svg/piege-machine-gourmande.svg" alt="Vignette de rappel : la pompe à chaleur au fluide bas PRP mais gourmande en électricité, et la balance qui penche vers l'indirect.">
+      <figcaption>Rappel de l'écran 4 — la machine gourmande.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La part directe domine toujours, quel que soit le fluide</button>
+      <button type="button" data-answer="b">Le TEWI ignore la consommation électrique</button>
+      <button type="button" data-answer="c">Un fluide à bas PRP garantit à lui seul un TEWI faible</button>
+      <button type="button" data-answer="bonne">La part indirecte peut dominer le TEWI malgré un fluide « propre »</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un fluide bas PRP limite la part directe, mais pas la part indirecte : si la machine consomme beaucoup, l'indirect peut suffire à faire pencher tout le TEWI. Le TEWI compte bien la consommation électrique, et rien ne garantit qu'un bon fluide suffise à lui seul."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Qu'est-ce qui fait varier la part indirecte du TEWI, à machine identique ? Revoyez les trois cartes de l'écran six si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce qui fait varier la part indirecte du TEWI, à machine identique ?</h2>
+    <figure class="vignette">
+      <img src="svg/facteurs-indirect.svg" alt="Vignette de rappel : les trois cartes des facteurs, durée de vie, taux de fuite annuel réel et réseau électrique, avec leurs flèches vers la part directe ou la part indirecte.">
+      <figcaption>Rappel de l'écran 6 — trois leviers, pas les mêmes effets.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">La durée de fonctionnement, la consommation d'énergie et le réseau électrique du pays où elle tourne</button>
+      <button type="button" data-answer="b">Uniquement le type de fluide utilisé</button>
+      <button type="button" data-answer="c">Uniquement la température extérieure du jour de la mesure</button>
+      <button type="button" data-answer="d">Uniquement la charge initiale de fluide à l'installation</button>
+    </div>
+    <p class="feedback" hidden data-explication="Ces trois éléments jouent sur l'énergie consommée et sa conversion en CO2, donc sur la part indirecte. Le type de fluide agit plutôt sur la part directe. La température d'un seul jour et la charge initiale ne représentent pas une vie entière de fonctionnement."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Pourquoi comparer deux machines seulement sur le PRP de leur fluide est-il insuffisant ? Souvenez-vous du bilan de l'écran huit.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Pourquoi comparer deux machines seulement sur le PRP de leur fluide est-il insuffisant ?</h2>
+    <figure class="vignette">
+      <img src="svg/bilan-tewi.svg" alt="Vignette de rappel : l'étiquette de fluide barrée, juger sur le fluide seul est insuffisant, et la machine entourée d'une flèche circulaire, le cycle complet.">
+      <figcaption>Rappel de l'écran 8 — le fluide seul ne suffit pas.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le PRP suffirait toujours à juger l'impact</button>
+      <button type="button" data-answer="bonne">Le TEWI additionne aussi la part indirecte liée à l'énergie consommée sur toute la vie ; le PRP seul ne dit rien de la consommation</button>
+      <button type="button" data-answer="c">Seule la marque de la machine compterait</button>
+      <button type="button" data-answer="d">Seul le prix d'achat compterait</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le PRP ne renseigne que sur la part directe. La marque et le prix ne mesurent aucun impact climatique. Il faut aussi regarder la part indirecte, liée à l'énergie consommée sur toute la vie de la machine."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours. Aucune des deux correspondances
+     n'existe encore comme station ouverte : pas de lien réel ici. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><strong>La RE2020</strong> (sous-ligne Thermique) — l'impact carbone d'un bâtiment sur son cycle de vie, le même principe étendu au-delà de la seule machine.</li>
+    <li><strong>NF EN 378</strong> (même sous-ligne) — ce que la classe du fluide impose en plus, indépendamment de son PRP.</li>
+  </ul>
+  <p>Ces deux stations sont en préparation sur le plan du réseau : aucun lien n'est encore ouvert.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

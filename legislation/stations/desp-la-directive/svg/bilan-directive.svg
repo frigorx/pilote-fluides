@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-bild" aria-describedby="d-bild" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bild">Bilan : tout part de la PS, et la suite de la sous-ligne « La DESP »</title>
+  <desc id="d-bild">Une bande résume les cinq points de la station : l'énergie stockée justifie la
+    réglementation, le champ d'application couvre récipients, tuyauteries et accessoires, des
+    équipements frigorifiques familiers en relèvent dès le seuil du texte franchi, la PS gravée sur
+    la plaque est la référence de tout le reste. En bas, quatre pastilles annoncent la suite de la
+    sous-ligne « La DESP » : les catégories, le marquage et les papiers, le suivi en service, les
+    soupapes et sécurités.</desc>
+  <style>
+    .cle  { font-size:16px; fill:#10233c; }
+    .fam  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:14.5px; fill:#fffdf8; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+    .lbl  { font-size:15px; fill:#10233c; font-weight:bold; }
+  </style>
+
+  <!-- Bande de bilan -->
+  <rect x="30" y="30" width="840" height="130" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="cle" x="450" y="62" text-anchor="middle">L'énergie stockée justifie la réglementation · récipients, tuyauteries et</text>
+  <text class="cle" x="450" y="86" text-anchor="middle">accessoires en relèvent, dès le seuil fixé par le texte franchi</text>
+  <text class="lbl" x="450" y="122" text-anchor="middle" fill="#0c4a6e">La PS, gravée sur la plaque, est la référence de tout le reste</text>
+  <text class="cle" x="450" y="146" text-anchor="middle">— classement, tarage des sécurités, marquage et papiers</text>
+
+  <!-- La suite : quatre pastilles -->
+  <text class="lbl" x="450" y="196" text-anchor="middle">La suite de la sous-ligne « La DESP »</text>
+
+  <rect x="30"  y="216" width="195" height="60" rx="30" fill="#0c4a6e"/>
+  <text class="fam" x="127" y="242" text-anchor="middle">Catégories</text>
+  <text class="fam" x="127" y="260" text-anchor="middle" font-size="12.5">I à IV</text>
+
+  <rect x="240" y="216" width="195" height="60" rx="30" fill="#0c4a6e"/>
+  <text class="fam" x="337" y="242" text-anchor="middle">Marquage &amp;</text>
+  <text class="fam" x="337" y="260" text-anchor="middle" font-size="12.5">papiers</text>
+
+  <rect x="450" y="216" width="195" height="60" rx="30" fill="#0c4a6e"/>
+  <text class="fam" x="547" y="242" text-anchor="middle">En service</text>
+
+  <rect x="660" y="216" width="205" height="60" rx="30" fill="#0c4a6e"/>
+  <text class="fam" x="762" y="242" text-anchor="middle">Soupapes &amp;</text>
+  <text class="fam" x="762" y="260" text-anchor="middle" font-size="12.5">sécurités</text>
+
+  <text class="note" x="450" y="316" text-anchor="middle">Le réflexe : ouvrir la plaque signalétique et lire la PS.</text>
+</svg>

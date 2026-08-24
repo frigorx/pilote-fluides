@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-et" aria-describedby="d-et" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-et">L'établi du frigoriste : deux familles de déchets à distinguer</title>
+  <desc id="d-et">Un établi de frigoriste avec deux zones. À gauche, cadre plein : la zone REP
+    bâtiment, isolant de tuyauterie et gaine, étiquetés « REP ». À droite, cadre en tirets : la zone
+    autres filières, cœur de métier — fluide récupéré, cuivre de tuyauterie, filtre — étiquetés
+    « autre filière ». Les deux familles reposent sur le même établi mais suivent des circuits
+    différents.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .lbl { font-size:15px; fill:#10233c; text-anchor:middle; }
+    .tag { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:12px; fill:#fffdf8; text-anchor:middle; }
+    .mut { font-size:15px; fill:#5a6b7d; text-anchor:middle; }
+  </style>
+
+  <!-- Zone REP bâtiment -->
+  <rect x="60" y="40" width="360" height="250" rx="14" fill="#fffdf8" stroke="#57534e" stroke-width="3"/>
+  <rect x="60" y="40" width="360" height="40" rx="14" fill="#57534e"/>
+  <rect x="60" y="60" width="360" height="20" fill="#57534e"/>
+  <text class="ttl" x="240" y="65" text-anchor="middle">REP BÂTIMENT — MATÉRIAUX PÉRIPHÉRIQUES</text>
+
+  <rect x="90" y="100" width="140" height="160" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="96" y="106" width="46" height="20" rx="5" fill="#57534e"/>
+  <text class="tag" x="119" y="120">REP</text>
+  <circle cx="160" cy="160" r="34" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <circle cx="160" cy="160" r="13" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="160" y="218">Isolant de</text>
+  <text class="lbl" x="160" y="238">tuyauterie</text>
+
+  <rect x="250" y="100" width="140" height="160" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="256" y="106" width="46" height="20" rx="5" fill="#57534e"/>
+  <text class="tag" x="279" y="120">REP</text>
+  <rect x="285" y="150" width="70" height="24" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <ellipse cx="285" cy="162" rx="6" ry="12" fill="#1b3a63"/>
+  <ellipse cx="355" cy="162" rx="6" ry="12" fill="#1b3a63"/>
+  <text class="lbl" x="320" y="218">Gaine de</text>
+  <text class="lbl" x="320" y="238">passage</text>
+
+  <!-- Zone autres filières -->
+  <rect x="460" y="40" width="380" height="250" rx="14" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3" stroke-dasharray="10 7"/>
+  <rect x="460" y="40" width="380" height="40" rx="14" fill="#5a6b7d"/>
+  <rect x="460" y="60" width="380" height="20" fill="#5a6b7d"/>
+  <text class="ttl" x="650" y="65" text-anchor="middle">AUTRES FILIÈRES — CŒUR DE MÉTIER</text>
+
+  <rect x="480" y="100" width="106" height="160" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="486" y="106" width="94" height="20" rx="5" fill="#5a6b7d"/>
+  <text class="tag" x="533" y="120">AUTRE FILIÈRE</text>
+  <rect x="513" y="150" width="40" height="66" rx="8" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="525" y="138" width="16" height="14" rx="3" fill="#5a6b7d"/>
+  <text class="lbl" x="533" y="236">Fluide</text>
+  <text class="lbl" x="533" y="252" font-size="13">récupéré</text>
+
+  <rect x="597" y="100" width="106" height="160" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="603" y="106" width="94" height="20" rx="5" fill="#5a6b7d"/>
+  <text class="tag" x="650" y="120">AUTRE FILIÈRE</text>
+  <path d="M620,215 v-30 h30 v-30 h30" fill="none" stroke="#5a6b7d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="lbl" x="650" y="236">Cuivre de</text>
+  <text class="lbl" x="650" y="252" font-size="13">tuyauterie</text>
+
+  <rect x="714" y="100" width="106" height="160" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="720" y="106" width="94" height="20" rx="5" fill="#5a6b7d"/>
+  <text class="tag" x="767" y="120">AUTRE FILIÈRE</text>
+  <rect x="747" y="148" width="40" height="68" rx="8" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+  <line x1="747" y1="166" x2="787" y2="166" stroke="#5a6b7d" stroke-width="2"/>
+  <line x1="747" y1="198" x2="787" y2="198" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="767" y="236">Filtre</text>
+  <text class="lbl" x="767" y="252" font-size="13">déshydrateur</text>
+
+  <!-- L'établi -->
+  <rect x="40" y="300" width="820" height="18" rx="4" fill="#5a6b7d"/>
+  <rect x="70" y="318" width="16" height="50" fill="#5a6b7d"/>
+  <rect x="814" y="318" width="16" height="50" fill="#5a6b7d"/>
+
+  <text class="mut" x="450" y="392">Même établi, deux circuits : la REP bâtiment pour la périphérie, d'autres filières pour le métier</text>
+</svg>

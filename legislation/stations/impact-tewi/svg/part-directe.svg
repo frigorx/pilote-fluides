@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img"
+     aria-labelledby="t-dir" aria-describedby="d-dir" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dir">La part directe : masse de fluide fuie multipliée par le PRP</title>
+  <desc id="d-dir">Une chaîne de trois blocs reliés par des signes. Premier bloc : une machine
+    frigorifique schématique avec une goutte qui s'en échappe, portant la mention masse de fluide
+    fuie sur toute la durée de vie de la machine. Un signe multiplié. Deuxième bloc : une étiquette
+    portant la mention PRP du fluide, le pouvoir de réchauffement planétaire propre à chaque
+    fluide. Un signe égal. Troisième bloc, encadré en vert : la part directe, exprimée en
+    équivalent CO2. En bas, une phrase rappelle que plus la machine fuit et plus le fluide a un
+    PRP élevé, plus la part directe est lourde.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#1b3a63; }
+    .lbl { font-size:15px; fill:#10233c; }
+    .op  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:36px; fill:#5a6b7d; }
+    .res { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .band{ font-size:15px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">La part directe, bloc par bloc</text>
+
+  <!-- Bloc 1 : masse fuie -->
+  <rect x="20" y="60" width="230" height="140" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="70" y="78" width="130" height="60" rx="8" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <circle cx="185" cy="130" r="9" fill="#1b3a63"/>
+  <path d="M185,130 q10,16 0,24 q-10,-8 0,-24 z" fill="#1b3a63"/>
+  <text class="qui" x="135" y="168" text-anchor="middle">Masse fuie</text>
+  <text class="lbl" x="135" y="188" text-anchor="middle">sur toute la vie de la machine</text>
+
+  <text class="op" x="278" y="145" text-anchor="middle">×</text>
+
+  <!-- Bloc 2 : PRP -->
+  <rect x="308" y="60" width="230" height="140" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="358" y="90" width="130" height="42" rx="8" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lbl" x="423" y="117" text-anchor="middle">étiquette du fluide</text>
+  <text class="qui" x="423" y="164" text-anchor="middle">PRP du fluide</text>
+  <text class="lbl" x="423" y="184" text-anchor="middle">propre à chaque fluide</text>
+
+  <text class="op" x="566" y="145" text-anchor="middle">=</text>
+
+  <!-- Bloc 3 : résultat -->
+  <rect x="596" y="60" width="284" height="140" rx="14" fill="#047857" stroke="#10233c" stroke-width="3"/>
+  <text class="res" x="738" y="118" text-anchor="middle">Part directe</text>
+  <text class="res" x="738" y="146" text-anchor="middle" font-size="16px">équivalent CO₂</text>
+  <text class="res" x="738" y="170" text-anchor="middle" font-size="14px" font-weight="normal">(fuites de la machine)</text>
+
+  <rect x="20" y="234" width="860" height="60" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="258" text-anchor="middle" font-weight="bold">Plus la machine fuit, plus le PRP du fluide est élevé,</text>
+  <text class="band" x="450" y="280" text-anchor="middle" font-weight="bold">plus la part directe pèse lourd.</text>
+</svg>

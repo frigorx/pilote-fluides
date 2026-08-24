@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-av" aria-describedby="d-av" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-av">Pourquoi lire le document avant d'intervenir sur un site inconnu</title>
+  <desc id="d-av">À gauche, une silhouette simple de technicien face à un site qu'il ne connaît pas,
+    représenté par un bâtiment. Une bulle de réflexion au-dessus de lui contient un point
+    d'interrogation. Une flèche part d'un document tenu par une main, à droite, vers le
+    technicien : ce document contient des informations que son expérience du métier seule ne lui
+    donne pas. En bas, une bande liste ce que le document peut révéler : coactivité, accès
+    particulier, engins, zones à atmosphère particulière.</desc>
+  <style>
+    .lbl { font-size:15px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .petit{ font-size:13px; fill:#5a6b7d; }
+  </style>
+
+  <!-- bâtiment inconnu -->
+  <rect x="40" y="90" width="150" height="100" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="65" y="112" width="26" height="26" fill="none" stroke="#5a6b7d" stroke-width="1.5"/>
+  <rect x="139" y="112" width="26" height="26" fill="none" stroke="#5a6b7d" stroke-width="1.5"/>
+  <rect x="100" y="150" width="30" height="40" fill="none" stroke="#5a6b7d" stroke-width="1.5"/>
+  <text class="petit" x="115" y="208" text-anchor="middle">site inconnu</text>
+
+  <!-- technicien -->
+  <circle cx="270" cy="110" r="15" fill="#fffdf8" stroke="#10233c" stroke-width="2.5"/>
+  <line x1="270" y1="125" x2="270" y2="165" stroke="#10233c" stroke-width="2.5"/>
+  <line x1="270" y1="138" x2="248" y2="158" stroke="#10233c" stroke-width="2.5"/>
+  <line x1="270" y1="138" x2="292" y2="158" stroke="#10233c" stroke-width="2.5"/>
+  <line x1="270" y1="165" x2="254" y2="195" stroke="#10233c" stroke-width="2.5"/>
+  <line x1="270" y1="165" x2="286" y2="195" stroke="#10233c" stroke-width="2.5"/>
+  <text class="petit" x="270" y="212" text-anchor="middle">le technicien</text>
+
+  <!-- bulle -->
+  <ellipse cx="325" cy="60" rx="36" ry="24" fill="#fffdf8" stroke="#c2410c" stroke-width="2.5"/>
+  <path d="M300,76 L288,92 L310,80 Z" fill="#fffdf8" stroke="#c2410c" stroke-width="2.5"/>
+  <text x="325" y="68" text-anchor="middle" font-size="24" font-weight="bold" fill="#c2410c">?</text>
+
+  <!-- document, à droite -->
+  <rect x="620" y="60" width="150" height="150" rx="8" fill="#fffdf8" stroke="#1e7e54" stroke-width="2.5"/>
+  <rect x="640" y="80" width="110" height="8" fill="#1e7e54"/>
+  <rect x="640" y="100" width="110" height="6" fill="#d6dee7"/>
+  <rect x="640" y="116" width="110" height="6" fill="#d6dee7"/>
+  <rect x="640" y="132" width="80" height="6" fill="#d6dee7"/>
+  <text class="petit" x="695" y="228" text-anchor="middle">document de prévention du site</text>
+
+  <!-- flèche du document vers le technicien -->
+  <defs>
+    <marker id="fl-av" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c2410c"/>
+    </marker>
+  </defs>
+  <path d="M615,140 C520,120 420,110 356,118" fill="none" stroke="#c2410c" stroke-width="2.5" marker-end="url(#fl-av)"/>
+
+  <!-- bande basse -->
+  <rect x="20" y="260" width="860" height="100" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="290" text-anchor="middle">Des risques que l'expérience du métier</text>
+  <text class="band" x="450" y="314" text-anchor="middle">ne suffit pas à deviner :</text>
+  <text class="lbl" x="450" y="342" text-anchor="middle">coactivité · accès · engins · atmosphère particulière</text>
+</svg>

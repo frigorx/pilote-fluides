@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-ex" aria-describedby="d-ex" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ex">Exemple filé : une recharge de fluide sur un groupe en toiture</title>
+  <desc id="d-ex">Au centre, un groupe de condensation posé sur une toiture, avec un technicien qui
+    intervient dessus. Quatre encadrés, un à chaque coin, relient par un trait fin vers la
+    toiture : coactivité avec d'autres corps de métier présents en même temps, accès particulier
+    pour monter en toiture, engins de levage à proximité, zone à atmosphère particulière. Ce sont
+    des risques propres au site, que le technicien ne peut pas deviner seul.</desc>
+  <style>
+    .lbl { font-size:14px; fill:#10233c; }
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .petit{ font-size:13px; fill:#5a6b7d; }
+    .trait{ stroke:#5a6b7d; stroke-width:1.5; stroke-dasharray:4,3; fill:none; }
+  </style>
+
+  <!-- toiture -->
+  <rect x="330" y="200" width="240" height="90" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="petit" x="450" y="298" text-anchor="middle">toiture du site industriel</text>
+
+  <!-- groupe de condensation -->
+  <rect x="368" y="150" width="164" height="58" rx="6" fill="#fffdf8" stroke="#c2410c" stroke-width="3"/>
+  <circle cx="405" cy="179" r="16" fill="none" stroke="#c2410c" stroke-width="2"/>
+  <circle cx="405" cy="179" r="4" fill="#c2410c"/>
+  <circle cx="460" cy="179" r="16" fill="none" stroke="#c2410c" stroke-width="2"/>
+  <circle cx="460" cy="179" r="4" fill="#c2410c"/>
+  <text class="petit" x="450" y="140" text-anchor="middle">groupe de condensation</text>
+
+  <!-- technicien -->
+  <circle cx="520" cy="192" r="10" fill="#fffdf8" stroke="#10233c" stroke-width="2"/>
+  <line x1="520" y1="202" x2="520" y2="222" stroke="#10233c" stroke-width="2"/>
+  <line x1="520" y1="208" x2="505" y2="200" stroke="#10233c" stroke-width="2"/>
+  <line x1="520" y1="222" x2="510" y2="240" stroke="#10233c" stroke-width="2"/>
+  <line x1="520" y1="222" x2="530" y2="240" stroke="#10233c" stroke-width="2"/>
+
+  <!-- quatre encadrés, un par coin -->
+  <rect x="20" y="20" width="240" height="76" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text class="ttl" x="140" y="42" text-anchor="middle">Coactivité</text>
+  <text class="lbl" x="140" y="64" text-anchor="middle">d'autres corps de métier</text>
+  <text class="lbl" x="140" y="82" text-anchor="middle">interviennent en même temps</text>
+
+  <rect x="640" y="20" width="240" height="76" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text class="ttl" x="760" y="42" text-anchor="middle">Accès particulier</text>
+  <text class="lbl" x="760" y="64" text-anchor="middle">pour monter</text>
+  <text class="lbl" x="760" y="82" text-anchor="middle">en toiture</text>
+
+  <rect x="20" y="304" width="240" height="76" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text class="ttl" x="140" y="326" text-anchor="middle">Engins de levage</text>
+  <text class="lbl" x="140" y="348" text-anchor="middle">à proximité</text>
+  <text class="lbl" x="140" y="366" text-anchor="middle">de la zone d'intervention</text>
+
+  <rect x="640" y="304" width="240" height="76" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text class="ttl" x="760" y="326" text-anchor="middle">Zone à atmosphère</text>
+  <text class="lbl" x="760" y="348" text-anchor="middle">particulière</text>
+  <text class="lbl" x="760" y="366" text-anchor="middle">signalée sur le site</text>
+
+  <!-- traits de rappel, fins et pointillés, vers la toiture -->
+  <path class="trait" d="M260,58 C300,90 320,140 336,205"/>
+  <path class="trait" d="M640,58 C600,90 580,140 564,205"/>
+  <path class="trait" d="M260,342 C300,320 320,290 340,282"/>
+  <path class="trait" d="M640,342 C600,320 580,290 560,282"/>
+</svg>

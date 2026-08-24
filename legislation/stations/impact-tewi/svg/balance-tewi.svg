@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-bal" aria-describedby="d-bal" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bal">Le TEWI, une balance à deux plateaux</title>
+  <desc id="d-bal">Une balance. Le pivot central porte la mention TEWI. Le plateau de gauche
+    porte la part directe : les fuites de fluide frigorigène, multipliées par le PRP du fluide.
+    Le plateau de droite porte la part indirecte : l'énergie électrique consommée par la machine,
+    multipliée par sa durée de vie. Les deux plateaux sont reliés au pivot par une chaîne, et la
+    balance est représentée à l'équilibre : aucun des deux poids n'est montré comme plus lourd que
+    l'autre par principe, c'est le cas réel de chaque machine qui décide. En bas, une bande résume
+    la formule : TEWI égale la part directe plus la part indirecte.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .qui  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#047857; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .piv  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#fffdf8; }
+  </style>
+
+  <text class="ttl" x="450" y="34" text-anchor="middle">Le TEWI additionne deux poids</text>
+
+  <!-- Le fléau -->
+  <line x1="150" y1="120" x2="750" y2="120" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="450" y1="120" x2="450" y2="222" stroke="#1b3a63" stroke-width="4"/>
+
+  <!-- Le pivot -->
+  <polygon points="450,222 420,268 480,268" fill="#047857" stroke="#10233c" stroke-width="2"/>
+  <rect x="410" y="266" width="80" height="16" rx="4" fill="#047857"/>
+  <text class="piv" x="450" y="278" text-anchor="middle">TEWI</text>
+
+  <!-- Chaînes -->
+  <line x1="150" y1="120" x2="150" y2="176" stroke="#5a6b7d" stroke-width="2"/>
+  <line x1="750" y1="120" x2="750" y2="176" stroke="#5a6b7d" stroke-width="2"/>
+
+  <!-- Plateau gauche : part directe -->
+  <ellipse cx="150" cy="210" rx="140" ry="66" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <text class="qui" x="150" y="192" text-anchor="middle">Part directe</text>
+  <text class="lbl" x="150" y="216" text-anchor="middle">fuites de fluide frigorigène</text>
+  <text class="lbl" x="150" y="238" text-anchor="middle">× PRP du fluide</text>
+
+  <!-- Plateau droit : part indirecte -->
+  <ellipse cx="750" cy="210" rx="140" ry="66" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="qui" x="750" y="192" text-anchor="middle" fill="#1b3a63">Part indirecte</text>
+  <text class="lbl" x="750" y="216" text-anchor="middle">énergie électrique consommée</text>
+  <text class="lbl" x="750" y="238" text-anchor="middle">× durée de vie de la machine</text>
+
+  <!-- Bande formule -->
+  <rect x="20" y="316" width="860" height="46" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="344" text-anchor="middle">TEWI = part directe + part indirecte</text>
+</svg>

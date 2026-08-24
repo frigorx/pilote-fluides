@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-rl" aria-describedby="d-rl" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rl">Un logement mal classé peut voir sa location restreinte</title>
+  <desc id="d-rl">Une annonce de location porte une étiquette DPE dans sa zone la plus défavorable
+    de l'échelle, sans lettre précise inscrite. Un cadenas est posé sur l'annonce, avec la mention
+    « restriction de location possible selon l'étiquette et le calendrier en vigueur ». Aucune
+    lettre ni date n'est indiquée : le mécanisme est montré, pas le seuil exact.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:15px; fill:#c0392b; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Le mécanisme : le classement peut restreindre la location</text>
+
+  <rect x="80" y="60" width="360" height="220" rx="12" fill="#fffdf8" stroke="#d6dee7" stroke-width="2.5"/>
+  <text class="lbl" x="260" y="90" text-anchor="middle" font-size="16" fill="#10233c" font-weight="bold">Annonce de location</text>
+  <rect x="110" y="110" width="300" height="80" fill="none" stroke="#98a6b3" stroke-width="2"/>
+  <rect x="130" y="205" width="60" height="34" fill="#8b1e14"/>
+  <text class="lbl" x="220" y="228" fill="#5a6b7d">étiquette défavorable</text>
+
+  <!-- cadenas -->
+  <circle cx="260" cy="255" r="0" fill="none"/>
+  <rect x="235" y="245" width="50" height="40" rx="6" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <path d="M 245 245 V 230 A 15 15 0 0 1 275 230 V 245" fill="none" stroke="#c0392b" stroke-width="4"/>
+
+  <rect x="490" y="90" width="340" height="160" rx="12" fill="#fbe7e4" stroke="#c0392b" stroke-width="2.5"/>
+  <text class="foc" x="660" y="130" text-anchor="middle">restriction de location</text>
+  <text class="foc" x="660" y="152" text-anchor="middle">possible</text>
+  <text class="lbl" x="660" y="185" text-anchor="middle">selon l'étiquette et le</text>
+  <text class="lbl" x="660" y="205" text-anchor="middle">calendrier en vigueur</text>
+</svg>

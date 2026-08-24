@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-dl" aria-describedby="d-dl" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dl">Deux logiques de rénovation : par élément ou globale</title>
+  <desc id="d-dl">Deux cartes face à face. À gauche, « par élément », illustrée par une seule
+    fenêtre isolée mise en évidence sur une maison en trait fin : on ne juge que le composant
+    remplacé. À droite, « globale », illustrée par une maison entière encadrée : on juge le
+    bâtiment dans son ensemble, bâti et systèmes réunis.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <rect x="30" y="30" width="390" height="280" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="ttl" x="225" y="65" text-anchor="middle">Par élément</text>
+  <polygon points="150,180 225,120 300,180" fill="none" stroke="#98a6b3" stroke-width="2"/>
+  <rect x="165" y="180" width="120" height="80" fill="none" stroke="#98a6b3" stroke-width="2"/>
+  <rect x="195" y="200" width="45" height="45" fill="#eef3f9" stroke="#1b3a63" stroke-width="3.5"/>
+  <text class="lbl" x="225" y="285" text-anchor="middle">seul le composant remplacé</text>
+  <text class="lbl" x="225" y="303" text-anchor="middle">est jugé</text>
+
+  <rect x="480" y="30" width="390" height="280" rx="14" fill="#fff4e0" stroke="#92400e" stroke-width="3.5"/>
+  <text class="ttl" x="675" y="65" text-anchor="middle" fill="#92400e">Globale</text>
+  <polygon points="600,180 675,120 750,180" fill="none" stroke="#92400e" stroke-width="3"/>
+  <rect x="615" y="180" width="120" height="80" fill="none" stroke="#92400e" stroke-width="3"/>
+  <rect x="615" y="180" width="10" height="80" fill="#fff4e0" stroke="#92400e" stroke-width="1.5"/>
+  <rect x="725" y="180" width="10" height="80" fill="#fff4e0" stroke="#92400e" stroke-width="1.5"/>
+  <rect x="645" y="200" width="45" height="45" fill="#eef3f9" stroke="#1b3a63" stroke-width="3.5"/>
+  <text class="lbl" x="675" y="285" text-anchor="middle">le bâtiment entier est jugé,</text>
+  <text class="lbl" x="675" y="303" text-anchor="middle">bâti et systèmes réunis</text>
+</svg>

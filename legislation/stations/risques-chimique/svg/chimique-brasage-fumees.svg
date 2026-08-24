@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-6" aria-describedby="d-6" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-6">Le brasage en local technique dégage des fumées à ventiler</title>
+  <desc id="d-6">Une torche de brasage chauffe un tube métallique. Un panache de fumée schématique
+    s'élève du point chauffé. Une flèche de ventilation traverse le local, d'une entrée d'air vers une
+    sortie, pour évacuer ces fumées.</desc>
+  <style>
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+  </style>
+
+  <!-- Local -->
+  <rect x="40" y="60" width="820" height="230" fill="none" stroke="#2f5689" stroke-width="2" rx="10"/>
+
+  <!-- Tube -->
+  <line x1="200" y1="220" x2="420" y2="220" stroke="#5a6b7d" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Torche -->
+  <path d="M310 220 l40 -40 l14 6 l-34 40 z" fill="#5a6b7d" stroke="#10233c" stroke-width="2"/>
+  <path d="M354 180 q14 10 4 24 q-6 -6 -2 -14 q-6 2 -6 10 q-8 -12 4 -20 z" fill="#c2410c"/>
+
+  <!-- Fumées -->
+  <path d="M320 200 q-10 -20 5 -35 q10 15 -2 25 q12 -5 8 -20 q14 20 -11 30 z" fill="#c6c9cf" opacity=".85"/>
+  <path d="M300 175 q-8 -16 4 -28" fill="none" stroke="#c6c9cf" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+
+  <!-- Flèche de ventilation -->
+  <path d="M100 100 h660" stroke="#1e7e54" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#f6)"/>
+  <defs>
+    <marker id="f6" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1e7e54"/>
+    </marker>
+  </defs>
+  <text class="lbl" x="450" y="90" text-anchor="middle" fill="#1e7e54">Ventilation du local</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-val" aria-describedby="d-val" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-val">Valorisation énergétique : le déchet non recyclable devient une source de chaleur</title>
+  <desc id="d-val">À gauche, un déchet non recyclable. Une flèche le fait entrer dans un symbole
+    d'incinération maîtrisée, une cheminée surmontée d'une flamme dans une chambre fermée, distinct
+    du four de la transformation en matière. Une seconde flèche en sort vers une source de chaleur,
+    représentée par des ondes de chaleur. En bas, la phrase : ce niveau ne redonne pas de matière,
+    il tire une énergie du déchet.</desc>
+  <style>
+    .cadre  { fill:#fffdf8; stroke:#57534e; stroke-width:3; }
+    .ttl    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lbl    { font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <!-- déchet non recyclable -->
+  <rect class="cadre" x="30" y="70" width="210" height="180" rx="14"/>
+  <path d="M90 115 q45 -20 70 5 q20 20 -5 45 q-25 25 -55 5 q-25 -18 -10 -55 z" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3" stroke-dasharray="7 5"/>
+  <text class="ttl" x="135" y="216" text-anchor="middle">Déchet non</text>
+  <text class="ttl" x="135" y="236" text-anchor="middle">recyclable</text>
+
+  <!-- flèche entrante -->
+  <line x1="245" y1="150" x2="335" y2="150" stroke="#57534e" stroke-width="4"/>
+  <polygon points="352,150 328,138 328,162" fill="#57534e"/>
+
+  <!-- chambre d'incinération maîtrisée avec cheminée -->
+  <rect x="375" y="150" width="90" height="80" rx="8" fill="#fffdf8" stroke="#57534e" stroke-width="3.5"/>
+  <rect x="405" y="80" width="30" height="70" fill="#fffdf8" stroke="#57534e" stroke-width="3.5"/>
+  <path d="M420 96 q-12 16 0 28 q12 -12 0 -28 z" fill="#b06a00"/>
+  <text class="ttl" x="420" y="256" text-anchor="middle">Incinération</text>
+  <text class="lbl" x="420" y="276" text-anchor="middle">maîtrisée</text>
+
+  <!-- flèche sortante -->
+  <line x1="490" y1="150" x2="580" y2="150" stroke="#57534e" stroke-width="4"/>
+  <polygon points="597,150 573,138 573,162" fill="#57534e"/>
+
+  <!-- source de chaleur -->
+  <rect class="cadre" x="620" y="70" width="250" height="180" rx="14"/>
+  <path d="M700 190 q10 -20 0 -35 M730 190 q10 -25 0 -45 M760 190 q10 -20 0 -35" fill="none" stroke="#b06a00" stroke-width="3.5" stroke-linecap="round"/>
+  <text class="ttl" x="745" y="216" text-anchor="middle">Source de chaleur</text>
+
+  <text x="450" y="312" text-anchor="middle" font-size="16" font-weight="bold" fill="#10233c">Ce niveau ne redonne pas de matière : il tire une énergie du déchet.</text>
+</svg>

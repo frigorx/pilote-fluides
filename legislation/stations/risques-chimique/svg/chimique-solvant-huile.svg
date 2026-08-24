@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-7" aria-describedby="d-7" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-7">Solvant de nettoyage et huile frigorigène récupérée</title>
+  <desc id="d-7">À gauche, un flacon de solvant dégage des vapeurs schématiques qui montent vers une
+    silhouette dont le nez et la main sont marqués d'un repère orange, signalant les deux voies
+    d'exposition : respiratoire et cutanée. À droite, une goutte d'huile porte l'étiquette « déchet
+    chimique », posée à côté d'une main gantée.</desc>
+  <style>
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#10233c; }
+    .sub{ font-size:13px; fill:#5a6b7d; }
+  </style>
+
+  <!-- Flacon solvant -->
+  <rect x="70" y="180" width="70" height="100" rx="8" fill="#dbeafe" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="90" y="155" width="30" height="28" rx="5" fill="#dbeafe" stroke="#1b3a63" stroke-width="2.5"/>
+  <text x="105" y="322" text-anchor="middle" class="sub">solvant</text>
+
+  <!-- Vapeurs -->
+  <path d="M105 150 q-8 -16 4 -28 q10 14 -2 24" fill="none" stroke="#c6c9cf" stroke-width="5" stroke-linecap="round"/>
+  <path d="M125 150 q-6 -18 6 -30" fill="none" stroke="#c6c9cf" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Silhouette exposée -->
+  <circle cx="270" cy="120" r="34" fill="#fde9d0" stroke="#10233c" stroke-width="2.5"/>
+  <circle cx="270" cy="128" r="6" fill="#c2410c"/>
+  <rect x="240" y="160" width="60" height="80" rx="16" fill="#fde9d0" stroke="#10233c" stroke-width="2.5"/>
+  <circle cx="300" cy="230" r="10" fill="none" stroke="#c2410c" stroke-width="3"/>
+
+  <!-- Huile -->
+  <path d="M650 90 q22 30 0 50 q-22 -20 0 -50 z" fill="#e9d9b0" stroke="#b06a00" stroke-width="2.5"/>
+  <rect x="590" y="150" width="130" height="34" rx="8" fill="#fff4e0" stroke="#b06a00" stroke-width="2.5"/>
+  <text class="lbl" x="655" y="172" text-anchor="middle" fill="#b06a00">Déchet chimique</text>
+
+  <!-- Main gantée -->
+  <path d="M760 250 v-70 q0 -14 14 -14 q14 0 14 14 v34
+           q0 -14 14 -14 q14 0 14 14 v26
+           q0 -12 12 -12 q12 0 12 12 v50 q0 24 -24 24 h-50 q-14 0 -14 -14 z"
+        fill="#fde9d0" stroke="#10233c" stroke-width="2.5"/>
+</svg>

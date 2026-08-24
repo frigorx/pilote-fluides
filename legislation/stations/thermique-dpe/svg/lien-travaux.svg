@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-lt" aria-describedby="d-lt" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-lt">Des travaux peuvent faire remonter l'étiquette</title>
+  <desc id="d-lt">Une étiquette DPE défavorable, à gauche, est reliée par une flèche à une pompe à
+    chaleur stylisée représentant des travaux d'amélioration, puis à une étiquette plus favorable,
+    à droite. Aucune lettre précise n'est indiquée sur les étiquettes, seulement leur position sur
+    l'échelle, du bas vers le haut.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .foc { font-size:15px; fill:#1e7e54; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Des travaux peuvent faire remonter l'étiquette</text>
+
+  <rect x="60" y="120" width="100" height="34" fill="#8b1e14"/>
+  <text class="lbl" x="110" y="175" text-anchor="middle">étiquette</text>
+  <text class="lbl" x="110" y="193" text-anchor="middle">défavorable</text>
+
+  <path d="M 175 137 L 300 137" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="300,137 282,130 282,144" fill="#92400e"/>
+
+  <rect x="320" y="90" width="140" height="100" rx="10" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="360" cy="140" r="18" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <circle cx="420" cy="140" r="18" fill="none" stroke="#1e7e54" stroke-width="2.5"/>
+  <text class="foc" x="390" y="215" text-anchor="middle">travaux</text>
+
+  <path d="M 475 137 L 610 100" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <polygon points="610,100 592,98 597,114" fill="#92400e"/>
+
+  <rect x="640" y="70" width="100" height="34" fill="#3f9d6e"/>
+  <text class="lbl" x="690" y="125" text-anchor="middle">étiquette</text>
+  <text class="lbl" x="690" y="143" text-anchor="middle">plus favorable</text>
+</svg>

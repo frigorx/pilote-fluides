@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img"
+     aria-labelledby="t-3p" aria-describedby="d-3p" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-3p">Trois pièces accompagnent l'équipement conforme</title>
+  <desc id="d-3p">En haut, un équipement sous pression schématisé, relié par trois traits à trois
+    cartes en dessous. Première carte : le marquage CE, apposé sur la plaque de l'équipement.
+    Deuxième carte : la déclaration de conformité, délivrée par le fabricant. Troisième carte :
+    la notice d'instructions, fournie avec l'équipement. Une bande en bas rappelle qu'un
+    équipement sans ces trois pièces n'est pas complet.</desc>
+  <style>
+    .eq   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .lien { stroke:#8fa0b0; stroke-width:2.5; fill:none; }
+  </style>
+
+  <!-- L'équipement, en haut -->
+  <rect x="330" y="16" width="240" height="52" rx="12" fill="#1b3a63"/>
+  <text class="eq" x="450" y="48" text-anchor="middle">L'ÉQUIPEMENT CONFORME</text>
+
+  <!-- Les trois liens -->
+  <path class="lien" d="M 420 68 C 360 100 220 100 175 128"/>
+  <path class="lien" d="M 450 68 L 450 128"/>
+  <path class="lien" d="M 480 68 C 540 100 680 100 725 128"/>
+
+  <!-- Carte 1 : le marquage CE -->
+  <rect x="40" y="128" width="270" height="164" rx="14" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <rect x="40" y="128" width="270" height="42" rx="14" fill="#0c4a6e"/>
+  <rect x="40" y="154" width="270" height="16" fill="#0c4a6e"/>
+  <text class="ttl" x="175" y="155" text-anchor="middle">LE MARQUAGE CE</text>
+  <circle cx="175" cy="212" r="26" fill="none" stroke="#0c4a6e" stroke-width="3"/>
+  <text x="175" y="222" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="22px" fill="#0c4a6e">CE</text>
+  <text class="lbl" x="175" y="260" text-anchor="middle">apposé sur la plaque</text>
+  <text class="lbl" x="175" y="280" text-anchor="middle">de l'équipement</text>
+
+  <!-- Carte 2 : la déclaration de conformité -->
+  <rect x="315" y="128" width="270" height="164" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="315" y="128" width="270" height="42" rx="14" fill="#1b3a63"/>
+  <rect x="315" y="154" width="270" height="16" fill="#1b3a63"/>
+  <text class="ttl" x="450" y="150" text-anchor="middle">LA DÉCLARATION</text>
+  <text class="ttl" x="450" y="166" text-anchor="middle">DE CONFORMITÉ</text>
+  <rect x="405" y="196" width="90" height="60" rx="4" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <line x1="416" y1="212" x2="484" y2="212" stroke="#8fa0b0" stroke-width="2"/>
+  <line x1="416" y1="224" x2="484" y2="224" stroke="#8fa0b0" stroke-width="2"/>
+  <line x1="416" y1="236" x2="460" y2="236" stroke="#8fa0b0" stroke-width="2"/>
+  <text class="lbl" x="450" y="275" text-anchor="middle">délivrée par le fabricant</text>
+
+  <!-- Carte 3 : la notice d'instructions -->
+  <rect x="590" y="128" width="270" height="164" rx="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <rect x="590" y="128" width="270" height="42" rx="14" fill="#1e7e54"/>
+  <rect x="590" y="154" width="270" height="16" fill="#1e7e54"/>
+  <text class="ttl" x="725" y="150" text-anchor="middle">LA NOTICE</text>
+  <text class="ttl" x="725" y="166" text-anchor="middle">D'INSTRUCTIONS</text>
+  <rect x="680" y="196" width="90" height="60" rx="4" fill="#eef3f9" stroke="#1e7e54" stroke-width="2"/>
+  <line x1="691" y1="210" x2="759" y2="210" stroke="#8fa0b0" stroke-width="2"/>
+  <line x1="691" y1="222" x2="759" y2="222" stroke="#8fa0b0" stroke-width="2"/>
+  <line x1="691" y1="234" x2="759" y2="234" stroke="#8fa0b0" stroke-width="2"/>
+  <line x1="691" y1="246" x2="735" y2="246" stroke="#8fa0b0" stroke-width="2"/>
+  <text class="lbl" x="725" y="275" text-anchor="middle">fournie avec l'équipement</text>
+
+  <!-- La bande -->
+  <rect x="40" y="312" width="820" height="40" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="337" text-anchor="middle">Sans ces trois pièces, l'équipement n'est pas complet</text>
+</svg>

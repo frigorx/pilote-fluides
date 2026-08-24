@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Pourquoi une RT ? — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la réglementation thermique française, née du choc pétrolier de 1974, renforcée par étapes jusqu'à la RT2012, puis remplacée par la RE2020 qui ajoute le carbone et le confort d'été.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/thermique-pourquoi-une-rt/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Thermique.
+     Première des six stations de la sous-ligne (accent #92400e, réservé
+     ici aux illustrations SVG — voir écart assumé plus bas).
+
+     GABARIT repris à la lettre de aptitude-capacite/ (réseau Législation,
+     sous-ligne Fluidique & thermique) : mêmes classes, même structure à
+     12 écrans, même contrat vocal.
+
+     ÉCART ASSUMÉ AVEC LE GABARIT : styles.css et app.js sont une copie
+     LITTÉRALE de aptitude-capacite (consigne du chantier), y compris la
+     variable --sous-ligne:#0f766e (teinte de la sous-ligne Fluidique &
+     thermique). L'accent propre à la sous-ligne Thermique, #92400e, n'est
+     donc appliqué que dans les SVG de cette station, pas dans l'habillage
+     de la page. Assumé, pas corrigé : la consigne demandait la copie
+     inchangée des deux fichiers.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur.
+
+     Aucun chiffre de seuil réglementaire n'est inscrit dans cette
+     station : les seuils évoluent souvent, ils se vérifient sur le texte
+     en vigueur. Voir FOND.md, § « À sourcer ».
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Thermique · niveau BTS</p>
+  <h1>Pourquoi une RT ? — de 1974 à la RE2020</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez pourquoi la réglementation thermique est née, comment elle s'est renforcée par étapes, ce que mesurait sa dernière génération avant la RE2020 — et ce que la RE2020 ajoute vraiment, plutôt qu'un simple durcissement de plus.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Deux maisons encadrent une date. À gauche, avant 1974 : une maison sans aucune couche d'isolation dessinée sur ses murs, et la mention qu'il n'existait alors aucune règle nationale d'isolation. Au centre, le jalon 1974 : un baril stylisé, et une flèche vers le bas qui rappelle que l'approvisionnement en pétrole devient incertain, à la suite du choc pétrolier. À droite, après 1974 : la même maison, mais ses murs portent maintenant une couche hachurée, l'isolation, et la mention de la première réglementation thermique française. Le point à retenir : ce n'est pas d'abord une préoccupation écologique qui a lancé la réglementation thermique, c'est une crise économique.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Le choc pétrolier, point de départ</h2>
+    <p>La <strong>réglementation thermique française</strong> n'est pas née d'abord d'une préoccupation écologique. Elle est née après le <strong>choc pétrolier de 1974</strong>, quand l'approvisionnement en énergie importée est devenu incertain et coûteux.</p>
+    <p>Avant cette date, aucune règle nationale n'imposait un niveau d'isolation aux bâtiments neufs. La première réglementation thermique répond à un problème d'<strong>indépendance énergétique</strong>, avant d'être un problème de climat.</p>
+    <figure>
+      <img src="svg/choc-petrolier.svg" alt="Deux maisons encadrent le jalon 1974 : à gauche, avant, une maison sans isolation ; au centre, le choc pétrolier et l'approvisionnement fragilisé ; à droite, après, une maison avec une couche d'isolation et la première réglementation thermique française.">
+      <figcaption>Une crise économique, pas d'abord une préoccupation écologique.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Un escalier de cinq marches montantes. La première marche, basse, porte la date 1974 et la mention première génération. Les marches suivantes montent l'une après l'autre, chacune portant la même mention : génération suivante, exigence resserrée — sans date précise inscrite dessus. La dernière marche, la plus haute, encadrée en couleur, porte le nom RT2012 et la mention dernière génération avant la rupture. Au-dessus de l'escalier, une flèche continue rappelle le sens : toujours vers plus d'exigence, jamais vers moins.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Une histoire par paliers</h2>
+    <p>Depuis 1974, plusieurs textes se sont succédé, <strong>chacun resserrant l'exigence</strong> par rapport au précédent. Aucun retour en arrière : la marche est toujours montante.</p>
+    <p>La dernière génération avant la rupture qui nous intéresse ici s'appelle la <strong>RT2012</strong>. C'est elle qu'il faut regarder de près, parce que c'est elle que la RE2020 remplace.</p>
+    <figure>
+      <img src="svg/paliers.svg" alt="Un escalier de cinq marches montantes : la première datée 1974, les suivantes marquées génération suivante avec une exigence resserrée à chaque fois, la dernière marquée RT2012, dernière génération avant la rupture.">
+      <figcaption>La marche est toujours montante — jamais de relâchement d'une génération à l'autre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Une grande carte RT2012. À l'intérieur, un cercle plein, en trait continu, porte la mention consommation d'énergie du bâtiment neuf : c'est ce que la RT2012 mesurait. À côté, deux cercles en trait pointillé, barrés d'une croix, portent les mentions impact carbone et confort d'été : ces deux volets n'existaient pas dans la RT2012. Regardez bien les croix : c'est tout l'écran suivant qui se prépare ici.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">RT2012 : la dernière génération avant la rupture</h2>
+    <p>La RT2012 mesurait la <strong>consommation d'énergie du bâtiment neuf</strong>. C'était déjà une approche globale et exigeante pour son époque.</p>
+    <p>Mais elle ne mesurait <strong>ni l'impact carbone</strong> des matériaux et de l'énergie, <strong>ni le confort d'été</strong>. Ces deux absences sont exactement ce que la RE2020 va combler.</p>
+    <figure>
+      <img src="svg/rt2012-perimetre.svg" alt="Une carte RT2012 avec un cercle plein « consommation d'énergie du bâtiment neuf » et deux cercles en pointillé barrés d'une croix, « impact carbone » et « confort d'été », absents de la RT2012.">
+      <figcaption>Ce que la RT2012 mesurait, et ce qu'elle ne mesurait pas encore.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Deux cartes reliées par une flèche. À gauche, la carte RT2012, grisée, avec la mention ancien texte, ne s'applique plus au dépôt de permis neuf. À droite, la carte RE2020, en couleur, avec la mention texte en vigueur pour le neuf. Entre les deux, une flèche porte le mot remplace, sans aucune date de bascule inscrite dessus : c'est un mécanisme à retenir, pas une date à mémoriser.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La RE2020 remplace la RT2012</h2>
+    <p>Pour les <strong>bâtiments neufs</strong>, la <strong>RE2020</strong> a remplacé la RT2012. Le texte de référence a changé — ce n'est plus la RT2012 qui s'applique à un dépôt de permis de construire aujourd'hui.</p>
+    <p>Retenez le mécanisme : un nouveau texte remplace l'ancien pour le neuf. La date exacte de bascule et les valeurs précises se vérifient sur le texte en vigueur au moment du dossier.</p>
+    <figure>
+      <img src="svg/rt2012-vers-re2020.svg" alt="Deux cartes reliées par une flèche « remplace » : à gauche RT2012, grisée, ancien texte ; à droite RE2020, en couleur, texte en vigueur pour le neuf.">
+      <figcaption>Un mécanisme à retenir : le nouveau texte remplace l'ancien pour le neuf.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Trois cercles côte à côte, tous pleins cette fois. Le premier, dans le style déjà vu, porte consommation d'énergie : il existait déjà dans la RT2012. Les deux suivants, encadrés d'un trait plus épais pour marquer la nouveauté, portent impact carbone et confort d'été : ce sont exactement les deux cercles qui étaient barrés d'une croix à l'écran trois. Ils ne sont plus absents, ils sont désormais mesurés au même titre que la consommation.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Ce que la RE2020 ajoute vraiment</h2>
+    <p>La RE2020 n'est pas qu'un durcissement de plus sur la consommation d'énergie. Elle ajoute <strong>deux volets entiers</strong> que la RT2012 ne mesurait pas : l'<strong>impact carbone</strong> — celui des matériaux et de l'énergie sur tout le cycle de vie du bâtiment — et le <strong>confort d'été</strong>.</p>
+    <p>C'est ce qui fait de la RE2020 une <strong>rupture</strong>, pas seulement un palier de plus dans l'escalier de l'écran 2.</p>
+    <figure>
+      <img src="svg/deux-volets-nouveaux.svg" alt="Trois cercles pleins : consommation d'énergie, déjà mesurée par la RT2012 ; impact carbone et confort d'été, encadrés plus épais, nouveaux avec la RE2020.">
+      <figcaption>Les deux cercles autrefois barrés d'une croix sont désormais mesurés.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Une balance simplifiée entre deux systèmes de chauffage. À gauche, une flamme stylisée représente une énergie carbonée : son plateau est bas, et la mention dit pénalisée par l'indicateur carbone. À droite, un bloc extérieur de pompe à chaleur stylisé : son plateau est haut, la mention dit favorisée, peu de carbone à l'usage. La balance penche visiblement du côté de la pompe à chaleur.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Pourquoi ça pousse vers la pompe à chaleur</h2>
+    <p>Le nouvel <strong>indicateur carbone</strong> compte l'impact des matériaux et de l'énergie sur tout le cycle de vie. Une énergie carbonée pèse plus lourd dans ce calcul qu'une solution qui émet peu de carbone à l'usage.</p>
+    <p>Résultat direct pour le métier : la RE2020 <strong>pénalise les énergies carbonées</strong> et <strong>favorise la pompe à chaleur</strong>. C'est un mécanisme de calcul, pas une interdiction — mais il fait clairement pencher le choix.</p>
+    <figure>
+      <img src="svg/vers-la-pac.svg" alt="Une balance entre une flamme, énergie carbonée pénalisée par l'indicateur carbone, et un bloc de pompe à chaleur, favorisé car peu de carbone à l'usage.">
+      <figcaption>Un mécanisme de calcul qui fait pencher le choix, pas une interdiction.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Deux façons de faire, comparées. À gauche, une valeur chiffrée ancienne, floue, barrée d'une grande croix rouge, avec la mention une valeur apprise il y a longtemps peut avoir changé. À droite, un document surmonté d'une loupe et d'une coche verte, avec la mention le texte en vigueur, vérifié au moment du chantier. Une flèche va de la valeur barrée vers le document : c'est le geste à prendre.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le réflexe : vérifier le texte en vigueur</h2>
+    <p>Les seuils réglementaires de la thermique du bâtiment <strong>changent souvent</strong>, par décret ou par arrêté. Une valeur apprise en formation peut ne plus être la bonne quelques années plus tard.</p>
+    <p>Le réflexe professionnel : retenir le <strong>mécanisme</strong> — ce que mesure le texte, ce qu'il compare, ce qu'il pénalise — et vérifier la <strong>valeur exacte</strong> sur le texte en vigueur au moment du chantier.</p>
+    <figure>
+      <img src="svg/reflexe-verifier.svg" alt="Une valeur chiffrée ancienne barrée d'une croix rouge, reliée par une flèche à un document vérifié, surmonté d'une loupe et d'une coche verte.">
+      <figcaption>Le mécanisme s'apprend ici. Le chiffre se vérifie sur le texte en vigueur.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Une ligne de temps horizontale avec quatre jalons. Premier jalon, 1974 : choc pétrolier, première réglementation. Deuxième jalon, sans date : les générations suivantes, exigence resserrée à chaque étape. Troisième jalon, RT2012 : seule la consommation d'énergie. Quatrième jalon, mis en évidence : RE2020, qui ajoute le carbone et le confort d'été. En bas, une bande résume les trois points de la station.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>La réglementation thermique est née d'une <strong>crise économique</strong>, le choc pétrolier de 1974 — pas d'abord d'une préoccupation écologique.</li>
+      <li>Elle s'est renforcée <strong>par paliers</strong>, jusqu'à la RT2012, qui ne mesurait que la consommation d'énergie.</li>
+      <li>La <strong>RE2020</strong> remplace la RT2012 pour le neuf, et ajoute deux volets entiers : le <strong>carbone</strong> et le <strong>confort d'été</strong>.</li>
+      <li>L'indicateur carbone <strong>pénalise les énergies carbonées</strong> et <strong>favorise la pompe à chaleur</strong>.</li>
+    </ul>
+    <p class="formule">Le réflexe : le mécanisme s'apprend, le chiffre se vérifie sur le texte en vigueur.</p>
+    <figure>
+      <img src="svg/bilan-histoire.svg" alt="Ligne de temps de 1974 à la RE2020 avec quatre jalons, et une bande résumant les trois points de la station.">
+      <figcaption>De 1974 à la RE2020 : une ligne continue, toujours plus exigeante.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Qu'est-ce qui a déclenché la toute première réglementation thermique française ? Regardez le jalon de l'écran un si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce qui a déclenché la première réglementation thermique ?</h2>
+    <figure class="vignette">
+      <img src="svg/choc-petrolier.svg" alt="Vignette de rappel : le jalon 1974, choc pétrolier, entre une maison sans isolation avant et une maison isolée après.">
+      <figcaption>Rappel de l'écran 1 — une crise économique, pas d'abord écologique.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Le choc pétrolier de 1974, qui a fragilisé l'approvisionnement en énergie</button>
+      <button type="button" data-answer="a">Un accord international sur le climat</button>
+      <button type="button" data-answer="b">Une catastrophe climatique en France</button>
+      <button type="button" data-answer="c">Une directive européenne sur le bâtiment</button>
+    </div>
+    <p class="feedback" hidden data-explication="La réglementation thermique française naît d'un problème d'indépendance énergétique après le choc pétrolier de 1974, pas d'abord d'une préoccupation écologique ou d'un texte européen."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Que mesurait la RT2012, et que ne mesurait-elle pas ? Reprenez le schéma de l'écran trois avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Que mesurait la RT2012 ?</h2>
+    <figure class="vignette">
+      <img src="svg/rt2012-perimetre.svg" alt="Vignette de rappel : la carte RT2012 avec un cercle plein consommation d'énergie et deux cercles barrés, carbone et confort d'été.">
+      <figcaption>Rappel de l'écran 3 — deux volets absents de la RT2012.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le carbone et le confort d'été, mais pas la consommation d'énergie</button>
+      <button type="button" data-answer="bonne">Uniquement la consommation d'énergie du bâtiment neuf</button>
+      <button type="button" data-answer="b">Uniquement le confort d'été</button>
+      <button type="button" data-answer="c">Le carbone, la consommation et le confort d'été, déjà les trois</button>
+    </div>
+    <p class="feedback" hidden data-explication="La RT2012 ne mesurait que la consommation d'énergie du bâtiment neuf. Le carbone et le confort d'été n'existaient pas encore dans son calcul."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Qu'est-ce que la RE2020 ajoute par rapport à la RT2012 ? Souvenez-vous des trois cercles pleins de l'écran cinq.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce que la RE2020 ajoute par rapport à la RT2012 ?</h2>
+    <figure class="vignette">
+      <img src="svg/deux-volets-nouveaux.svg" alt="Vignette de rappel : trois cercles pleins, consommation d'énergie déjà mesurée, carbone et confort d'été nouveaux avec la RE2020.">
+      <figcaption>Rappel de l'écran 5 — deux volets entiers, pas un simple durcissement.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Uniquement un durcissement du calcul de consommation d'énergie</button>
+      <button type="button" data-answer="bonne">Deux volets entiers, absents de la RT2012 : l'impact carbone et le confort d'été</button>
+      <button type="button" data-answer="b">L'obligation d'installer une pompe à chaleur dans tous les cas</button>
+      <button type="button" data-answer="c">De nouvelles sanctions financières, sans nouveau calcul</button>
+    </div>
+    <p class="feedback" hidden data-explication="La RE2020 ajoute deux volets que la RT2012 ne mesurait pas : l'impact carbone sur tout le cycle de vie, et le confort d'été. Ce n'est pas qu'un durcissement de plus."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Puisque les seuils réglementaires évoluent souvent, quel est le bon réflexe professionnel ? Repensez à la comparaison de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Quel est le bon réflexe face aux seuils réglementaires ?</h2>
+    <figure class="vignette">
+      <img src="svg/reflexe-verifier.svg" alt="Vignette de rappel : une valeur ancienne barrée d'une croix, reliée par une flèche à un document vérifié.">
+      <figcaption>Rappel de l'écran 7 — le mécanisme s'apprend, le chiffre se vérifie.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Se fier à la valeur apprise en formation : elle ne change jamais</button>
+      <button type="button" data-answer="bonne">Vérifier le texte en vigueur au moment du chantier plutôt que se fier à une valeur mémorisée</button>
+      <button type="button" data-answer="b">Ignorer les seuils : seul le mécanisme compte, jamais la valeur</button>
+      <button type="button" data-answer="c">Demander au client quelle valeur utiliser</button>
+    </div>
+    <p class="feedback" hidden data-explication="Les seuils réglementaires changent souvent. Le mécanisme s'apprend une fois ; la valeur exacte se vérifie sur le texte en vigueur au moment du chantier."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. Deux
+     correspondances internes réelles vers des stations sœurs de la même
+     sous-ligne (elles existent dans ce dossier), et rien d'autre : cette
+     première station n'a pas de correspondance externe à annoncer. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../thermique-re2020/"><strong>La RE2020</strong></a> (même sous-ligne)
+      — le détail des trois exigences qui remplacent la seule consommation d'énergie.</li>
+    <li><a href="../thermique-dpe/"><strong>Le DPE</strong></a> (même sous-ligne)
+      — comment cette histoire aboutit à l'étiquette que voit un propriétaire.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

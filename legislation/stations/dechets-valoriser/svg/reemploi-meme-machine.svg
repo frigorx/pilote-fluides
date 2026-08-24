@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img"
+     aria-labelledby="t-ree" aria-describedby="d-ree" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ree">Réemploi : le fluide récupéré retourne sur la même machine</title>
+  <desc id="d-ree">À gauche, une bouteille de fluide récupéré, propre et identifiée. Une flèche
+    courte et directe la relie à droite à la même machine, sans passer par aucune étape de
+    transformation entre les deux. En bas, la phrase : réemployer n'est pas recycler, la matière
+    garde sa forme.</desc>
+  <style>
+    .cadre  { fill:#fffdf8; stroke:#57534e; stroke-width:3; }
+    .ttl    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl    { font-size:15px; fill:#5a6b7d; }
+    .flechelbl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#1e7e54; }
+  </style>
+
+  <!-- bouteille de fluide récupéré -->
+  <rect class="cadre" x="60" y="60" width="240" height="200" rx="14"/>
+  <rect x="160" y="86" width="40" height="18" rx="3" fill="#57534e"/>
+  <polygon points="150,104 210,104 226,140 226,206 134,206 134,140"
+           fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <text class="ttl" x="180" y="228" text-anchor="middle">Fluide récupéré</text>
+  <text class="lbl" x="180" y="250" text-anchor="middle">propre, identifié</text>
+
+  <!-- flèche courte, sans étape intermédiaire -->
+  <line x1="315" y1="150" x2="565" y2="150" stroke="#1e7e54" stroke-width="4"/>
+  <polygon points="585,150 561,138 561,162" fill="#1e7e54"/>
+  <text class="flechelbl" x="450" y="126" text-anchor="middle">directement — sans transformation</text>
+
+  <!-- la même machine -->
+  <rect class="cadre" x="600" y="60" width="240" height="200" rx="14"/>
+  <rect x="640" y="90" width="160" height="90" rx="10" fill="#fffdf8" stroke="#57534e" stroke-width="2.5"/>
+  <circle cx="670" cy="135" r="16" fill="none" stroke="#57534e" stroke-width="2.5"/>
+  <circle cx="670" cy="135" r="6" fill="#57534e"/>
+  <line x1="700" y1="115" x2="780" y2="115" stroke="#57534e" stroke-width="2.5"/>
+  <line x1="700" y1="135" x2="780" y2="135" stroke="#57534e" stroke-width="2.5"/>
+  <line x1="700" y1="155" x2="780" y2="155" stroke="#57534e" stroke-width="2.5"/>
+  <text class="ttl" x="720" y="228" text-anchor="middle">La même machine</text>
+  <text class="lbl" x="720" y="250" text-anchor="middle">remise en service</text>
+
+  <text x="450" y="320" text-anchor="middle" font-size="16" font-weight="bold" fill="#10233c">Réemployer n'est pas recycler : la matière garde sa forme.</text>
+</svg>

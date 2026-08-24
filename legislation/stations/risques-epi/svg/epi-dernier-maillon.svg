@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-1" aria-describedby="d-1" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-1">La chaîne de la prévention : l'EPI est le dernier maillon</title>
+  <desc id="d-1">Trois maillons reliés par des flèches horizontales. Le premier maillon, vert, porte la mention
+    « 1. Supprimer le risque ». Le deuxième, bleu, porte « 2. Protéger collectivement ». Le troisième maillon,
+    plus grand et cerclé en orange (couleur d'accent de la sous-ligne Risques professionnels), porte
+    « 3. Équiper individuellement (EPI) » et la mention « en dernier ». Une bande en bas du schéma rappelle
+    que ce troisième maillon ne s'active que si les deux premiers n'ont pas suffi.</desc>
+  <style>
+    .boite{ fill:#fffdf8; stroke-width:3; }
+    .num{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:34px; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .sub{ font-size:15px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .fleche{ stroke:#5a6b7d; stroke-width:3; fill:none; }
+  </style>
+
+  <!-- Maillon 1 : supprimer -->
+  <rect class="boite" x="30" y="70" width="230" height="140" rx="16" stroke="#1e7e54"/>
+  <text class="num" x="145" y="128" text-anchor="middle" fill="#1e7e54">1</text>
+  <text class="lbl" x="145" y="164" text-anchor="middle">Supprimer</text>
+  <text class="sub" x="145" y="186" text-anchor="middle">le risque</text>
+
+  <path class="fleche" d="M262 140 L318 140" marker-end="url(#fl)"/>
+
+  <!-- Maillon 2 : protéger collectivement -->
+  <rect class="boite" x="330" y="70" width="230" height="140" rx="16" stroke="#1b3a63"/>
+  <text class="num" x="445" y="122" text-anchor="middle" fill="#1b3a63">2</text>
+  <text class="lbl" x="445" y="158" text-anchor="middle">Protéger</text>
+  <text class="sub" x="445" y="180" text-anchor="middle">collectivement</text>
+
+  <path class="fleche" d="M562 140 L618 140" marker-end="url(#fl)"/>
+
+  <!-- Maillon 3 : EPI, mis en évidence -->
+  <rect class="boite" x="630" y="55" width="240" height="170" rx="16" stroke="#c2410c" stroke-width="5"/>
+  <text class="num" x="750" y="115" text-anchor="middle" fill="#c2410c">3</text>
+  <text class="lbl" x="750" y="150" text-anchor="middle">Équiper</text>
+  <text class="sub" x="750" y="172" text-anchor="middle">individuellement (EPI)</text>
+  <text class="sub" x="750" y="196" text-anchor="middle" fill="#c2410c" font-weight="bold">— en dernier —</text>
+
+  <defs>
+    <marker id="fl" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+
+  <!-- Bande de bas -->
+  <rect x="30" y="255" width="840" height="56" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="290" text-anchor="middle">Le 3e maillon ne s'active que si les deux premiers n'ont pas suffi</text>
+</svg>

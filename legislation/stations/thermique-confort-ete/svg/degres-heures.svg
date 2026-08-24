@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-dh" aria-describedby="d-dh" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dh">Les degrés-heures : l'aire cumulée au-dessus du seuil de confort</title>
+  <desc id="d-dh">Un graphique sans valeur chiffrée. L'axe vertical porte la mention température
+    intérieure, l'axe horizontal porte la mention temps, sur toute la période chaude. Une ligne
+    horizontale pointillée marque le seuil de confort. Une courbe de température monte et
+    descend plusieurs fois au-dessus et en dessous de ce seuil. La zone comprise entre la courbe
+    et le seuil, à chaque fois que la courbe dépasse, est remplie en couleur : c'est cette
+    surface cumulée sur toute la période qui donne les degrés-heures d'inconfort.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:15px; fill:#5a6b7d; }
+    .band{ font-size:15px; fill:#10233c; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="26" text-anchor="middle">Les degrés-heures d'inconfort : une aire, pas un instant</text>
+
+  <line x1="80" y1="240" x2="820" y2="240" stroke="#10233c" stroke-width="2"/>
+  <line x1="80" y1="240" x2="80" y2="60" stroke="#10233c" stroke-width="2"/>
+  <text class="lbl" x="40" y="150" text-anchor="middle" transform="rotate(-90 40 150)">température</text>
+  <text class="lbl" x="450" y="270" text-anchor="middle">temps, sur toute la période chaude</text>
+
+  <line x1="80" y1="150" x2="820" y2="150" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="8 6"/>
+  <text class="lbl" x="820" y="142" text-anchor="end" font-size="14">seuil de confort</text>
+
+  <path d="M 80 200 C 150 100, 220 100, 280 150 C 340 200, 400 90, 460 90
+           C 520 90, 570 200, 630 150 C 690 100, 750 100, 820 190"
+        fill="none" stroke="#92400e" stroke-width="3"/>
+
+  <path d="M 150 150 C 200 105, 250 108, 280 150 Z" fill="#fff4e0" stroke="none" opacity="0.9"/>
+  <path d="M 400 150 C 430 90, 490 90, 520 150 Z" fill="#fff4e0" stroke="none" opacity="0.9"/>
+  <path d="M 660 150 C 690 108, 730 105, 780 150 Z" fill="#fff4e0" stroke="none" opacity="0.9"/>
+
+  <rect x="120" y="290" width="660" height="36" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="313" text-anchor="middle">DH = la surface cumulée au-dessus du seuil, sur toute la période</text>
+</svg>

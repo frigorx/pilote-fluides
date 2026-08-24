@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-dc" aria-describedby="d-dc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dc">La déclaration de conformité, délivrée par le fabricant</title>
+  <desc id="d-dc">À gauche, le fabricant, représenté par un atelier schématique. Une flèche part
+    vers un document au centre, la déclaration de conformité, qui porte quatre rubriques :
+    l'équipement concerné, la directive visée, le fabricant qui la délivre, et une mention
+    « conforme ». Le document part ensuite vers la droite, où il rejoint l'équipement livré.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .who  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#1b3a63; }
+    .conf { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#1e7e54; }
+    .fl   { stroke:#8fa0b0; stroke-width:3; fill:none; }
+  </style>
+
+  <!-- Le fabricant -->
+  <rect x="20" y="118" width="150" height="100" rx="12" fill="#eef3f9" stroke="#5a6b7d" stroke-width="3"/>
+  <rect x="46" y="146" width="98" height="44" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <line x1="46" y1="164" x2="144" y2="164" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="who" x="95" y="204" text-anchor="middle">le fabricant</text>
+
+  <!-- La flèche vers le document -->
+  <path class="fl" d="M 170 168 H 262"/>
+  <polygon points="262,159 282,168 262,177" fill="#8fa0b0"/>
+
+  <!-- Le document -->
+  <rect x="290" y="30" width="320" height="270" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="290" y="30" width="320" height="42" rx="14" fill="#1b3a63"/>
+  <rect x="290" y="58" width="320" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="450" y="58" text-anchor="middle">DÉCLARATION DE CONFORMITÉ</text>
+
+  <text class="lbl" x="316" y="108">Équipement concerné</text>
+  <line x1="316" y1="118" x2="584" y2="118" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="316" y="146">Directive visée</text>
+  <line x1="316" y1="156" x2="584" y2="156" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="316" y="184">Fabricant qui la délivre</text>
+  <line x1="316" y1="194" x2="584" y2="194" stroke="#d6dee7" stroke-width="2"/>
+
+  <rect x="316" y="218" width="268" height="52" rx="10" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2.5"/>
+  <text class="conf" x="450" y="250" text-anchor="middle">« conforme »</text>
+
+  <!-- La flèche vers l'équipement -->
+  <path class="fl" d="M 620 168 H 712"/>
+  <polygon points="712,159 732,168 712,177" fill="#8fa0b0"/>
+
+  <!-- L'équipement livré -->
+  <rect x="740" y="118" width="140" height="100" rx="12" fill="#eef3f9" stroke="#5a6b7d" stroke-width="3"/>
+  <rect x="762" y="140" width="96" height="56" rx="20" fill="none" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="who" x="810" y="204" text-anchor="middle">l'équipement</text>
+</svg>

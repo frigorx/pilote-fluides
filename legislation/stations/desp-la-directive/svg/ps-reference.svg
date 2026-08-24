@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-psr" aria-describedby="d-psr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-psr">La PS, référence du classement et de la sécurité</title>
+  <desc id="d-psr">Une boîte centrale marquée « PS, pression maximale admissible » est reliée par deux
+    flèches à deux boîtes placées plus bas. La première, à gauche, indique que la PS sert au
+    classement en catégorie de l'équipement, en croisant la PS, le volume ou le diamètre, et la
+    dangerosité du fluide ; une note précise que plus la catégorie est élevée, plus l'intervention
+    d'un organisme extérieur est requise. La seconde, à droite, indique que la PS sert au tarage des
+    accessoires de sécurité — soupape, pressostat de sécurité — réglés pour intervenir avant qu'elle
+    ne soit dépassée.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .fam  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16.5px; fill:#0c4a6e; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .note { font-size:14.5px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Boîte centrale : PS -->
+  <rect x="300" y="20" width="300" height="66" rx="14" fill="#0c4a6e"/>
+  <text class="ttl" x="450" y="48" text-anchor="middle">PS</text>
+  <text class="ttl" x="450" y="70" text-anchor="middle" font-size="15">pression maximale admissible</text>
+
+  <!-- Flèches -->
+  <path d="M 400 86 C 350 130 260 140 220 160" stroke="#5a6b7d" stroke-width="4" fill="none"/>
+  <polygon points="205,168 222,152 232,172" fill="#5a6b7d"/>
+
+  <path d="M 500 86 C 550 130 640 140 680 160" stroke="#5a6b7d" stroke-width="4" fill="none"/>
+  <polygon points="695,168 678,172 668,152" fill="#5a6b7d"/>
+
+  <!-- Boîte gauche : classement -->
+  <rect x="30" y="172" width="380" height="150" rx="12" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <text class="fam" x="220" y="202" text-anchor="middle">Classement en catégorie</text>
+  <line x1="60" y1="216" x2="380" y2="216" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="220" y="240" text-anchor="middle">croise la PS, le volume</text>
+  <text class="lbl" x="220" y="260" text-anchor="middle">(ou le diamètre) et la</text>
+  <text class="lbl" x="220" y="280" text-anchor="middle">dangerosité du fluide</text>
+  <text class="note" x="220" y="304" text-anchor="middle">plus la catégorie est élevée, plus un organisme extérieur intervient</text>
+
+  <!-- Boîte droite : tarage -->
+  <rect x="490" y="172" width="380" height="150" rx="12" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <text class="fam" x="680" y="202" text-anchor="middle">Tarage des accessoires de sécurité</text>
+  <line x1="520" y1="216" x2="840" y2="216" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="680" y="240" text-anchor="middle">soupape, pressostat de</text>
+  <text class="lbl" x="680" y="260" text-anchor="middle">sécurité — réglés pour</text>
+  <text class="lbl" x="680" y="280" text-anchor="middle">intervenir avant la PS</text>
+  <text class="note" x="680" y="304" text-anchor="middle">le détail de chaque catégorie fait l'objet d'une autre station</text>
+</svg>
