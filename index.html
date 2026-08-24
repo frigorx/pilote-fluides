@@ -86,6 +86,13 @@
   .bouton.creux { padding:9px 22px; background:var(--carte); color:var(--bleu);
                   border:2px solid var(--bleu-clair); }
   .bouton.creux:hover { background:#e7eff7; color:var(--bleu); }
+  /* La bannière AquiBlue (24/08) : logo de la charte + présentation + démo. */
+  .bandeau-aquiblue { margin:22px 0 0; padding:16px 20px; background:var(--carte);
+                      border:2px solid var(--bleu-clair); border-radius:var(--r);
+                      display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
+  .bandeau-aquiblue .ba-logo { width:200px; height:auto; flex:0 0 auto; }
+  .bandeau-aquiblue .ba-texte { flex:1; min-width:260px; font-size:15.5px; }
+  .bandeau-aquiblue .ba-boutons { display:flex; gap:10px; flex-wrap:wrap; }
   .flocon { font-size:96px; line-height:1; filter:drop-shadow(0 6px 12px rgba(27,58,99,.18));
             animation:derive 5s ease-in-out infinite; }
   @keyframes derive { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
@@ -464,6 +471,30 @@
     <div class="flocon">❄️</div>
   </div>
 
+  <!-- BANNIÈRE inerWeb AquiBlue — demande de F. Henninot du 24/08 : « on
+       peut le mettre en ligne… le mettre en avant, avec un petit logo, une
+       petite bannière pour présenter ce que c'est ». Logo compact de la
+       charte § 3.4, cartouche « AquiBlue ». Règle absolue du projet :
+       aucun nom de marque d'instruments dans quoi que ce soit de visible. -->
+  <aside class="bandeau-aquiblue" aria-label="inerWeb AquiBlue">
+    <svg class="ba-logo" viewBox="0 0 260 50" role="img" aria-label="inerWeb AquiBlue">
+      <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+      <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+      <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+      <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+      <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="100" height="24"/>
+      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="205" y="27" text-anchor="middle">AquiBlue</text>
+    </svg>
+    <p class="ba-texte"><strong>Nouveau — inerWeb AquiBlue.</strong> Les sondes de mesure Bluetooth
+      tracent le cycle frigorifique en direct sur le diagramme enthalpique. Logiciel libre et
+      gratuit (GPL-3.0), démonstration en ligne sans installation, espace professeur sur demande.</p>
+    <div class="ba-boutons">
+      <a class="bouton" href="aquiblue/">Essayer</a>
+      <a class="bouton creux" href="aquiblue/aquiblue-v1.4.0.zip" download>Télécharger</a>
+      <a class="bouton creux" href="https://github.com/frigorx/aquiblue" rel="noopener">Code source</a>
+    </div>
+  </aside>
+
   <!-- Le mot de l'auteur — EN TÊTE de page (placement demandé par
        F. Henninot après sa première navigation, 19/08). Texte dicté par lui,
        mis en forme ; règles tenues : projet personnel, aucune institution ni
@@ -509,6 +540,8 @@
 
       <h3>24 août 2026</h3>
       <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau logiciel</span><a href="aquiblue/">📡 inerWeb AquiBlue</a>
+          <span class="d">— acquisition de données Bluetooth : les sondes de mesure tracent le cycle frigorifique en direct sur le diagramme enthalpique. Démonstration en ligne sans installation, logiciel libre et gratuit (GPL-3.0) à télécharger, espace professeur sur demande.</span></li>
         <li><span class="nv-etiq nv-neuf">nouveau réseau</span><a href="hydrometro/">💧 HydroMétro</a>
           <span class="d">— l’hydraulique CVC en carte de métro : 22 stations sur 4 lignes (principes, équipements, distribution, mesure &amp; diagnostic), chaque station jouable à trois profondeurs — CAP · Bac pro · BTS —, positionnement initial en 20 questions et évaluations corrigées par ligne.</span></li>
         <li><span class="nv-etiq">progression</span><a href="legislation/">📜 Réseau Législation</a>
@@ -959,7 +992,7 @@
 
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
-<script src="plan-descriptions.gen.js?v=39156f9ce3"></script>
+<script src="plan-descriptions.gen.js?v=f98b5edc85"></script>
 <script>
 /* =====================================================================
    LE PLAN DE FORMATION — généré depuis les données ci-dessous.
@@ -2135,11 +2168,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=39156f9ce3"></script>
-<script src="chiffres.gen.js?v=39156f9ce3"></script>
+<script src="moteur/lisibilite.js?v=f98b5edc85"></script>
+<script src="chiffres.gen.js?v=f98b5edc85"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=39156f9ce3" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=f98b5edc85" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)

@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>inerWeb AquiBlue — Acquisition de données Bluetooth</title>
+<!-- inerWeb AquiBlue — logiciel libre sous GPL-3.0 (fichier LICENSE du projet).
+     Dérive de testo405i_mqtt (Vladimir Hulagov, GPL-3.0) pour l'initialisation
+     des sondes, côté serveur. Gratuit ; fourni sans garantie. -->
+
+<style>
+:root{--navy:#0f2d52;--navy-mid:#1a4a6e;--orange:#e8914a;--orange-hover:#d47a35;--orange-light:#f3b07a;--orange-warm:#fdf6ef;--turq:#2aafaf;--turq-light:#eef8f7;--good:#27ae60;--good-bg:#eef7f1;--bad:#e74c3c;--bad-bg:#fdeaea;--bg:#faf7f2;--bg-end:#f0ebe3;--card:#fff;--card-border:#ece4da;--text:#2c3e50;--muted:#5a7080;--shadow:0 4px 16px rgba(15,45,82,.07);--r-card:22px;--r-pill:999px;--font:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'Courier New',Consolas,monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:linear-gradient(180deg,var(--bg),var(--bg-end));background-attachment:fixed;color:var(--text);font-family:var(--font);font-size:15px;line-height:1.55;min-height:100vh}
+.app{max-width:1400px;margin:0 auto;padding:10px 14px}
+
+.hdr{background:linear-gradient(135deg,#0f2d52,#1a4a6e,#2aafaf);padding:12px 18px;display:flex;align-items:center;gap:12px;border-bottom:4px solid var(--orange);border-radius:0 0 0 40px;box-shadow:0 4px 20px rgba(15,45,82,.15);margin-bottom:14px}
+.logo-slot{background:rgba(255,255,255,.95);border-radius:14px;padding:4px 8px;display:flex;align-items:center}
+.hdr-center{flex:1;text-align:center}
+.hdr-center h1{font-size:1.05rem;font-weight:800;color:#fff;letter-spacing:2px}
+.hdr-center .sub{font-size:.7rem;color:rgba(255,255,255,.85)}
+.ver{display:inline-block;background:var(--orange);color:#fff;padding:2px 8px;border-radius:var(--r-pill);font-size:.58rem;font-weight:700;margin-left:4px}
+.hdr-status{background:rgba(255,255,255,.15);padding:6px 14px;border-radius:var(--r-pill);color:#fff;font-size:.75rem;font-weight:700;display:flex;align-items:center;gap:6px}
+.hdr-status .dot{width:10px;height:10px;border-radius:50%;background:var(--bad)}
+.hdr-status .dot.on{background:var(--good);box-shadow:0 0 8px rgba(39,174,96,.5)}
+
+.cd{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r-card);box-shadow:var(--shadow);overflow:hidden;margin-bottom:14px}
+.cd-in{padding:16px 20px}
+.cd-orange{border-top:4px solid var(--orange)}.cd-navy{border-top:4px solid var(--navy)}.cd-turq{border-top:4px solid var(--turq)}.cd-good{border-top:4px solid var(--good)}
+
+.sec-t{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin:0 0 10px;padding:3px 8px;border-radius:6px;display:inline-block}
+.sec-t.pr{color:var(--navy);background:rgba(15,45,82,.05)}
+.sec-t.tp{color:var(--orange);background:rgba(232,145,74,.08)}
+.sec-t.tq{color:var(--turq);background:rgba(42,175,175,.08)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 18px;font-family:var(--font);font-size:.82rem;font-weight:700;border:2px solid transparent;border-radius:var(--r-pill);cursor:pointer;transition:all .2s}
+.btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-o{background:var(--orange);color:#fff}.btn-o:hover:not(:disabled){background:var(--orange-hover)}
+.btn-n{background:var(--navy);color:#fff}.btn-n:hover:not(:disabled){background:var(--navy-mid)}
+.btn-d{background:var(--bad);color:#fff}
+.btn-ol{background:transparent;border-color:var(--card-border);color:var(--muted)}.btn-ol:hover:not(:disabled){border-color:var(--orange);color:var(--orange)}
+.btn-sm{padding:6px 12px;font-size:.72rem}
+
+.tabs{display:flex;gap:4px;margin-bottom:12px;overflow-x:auto}
+.tab{padding:7px 14px;border:2px solid var(--card-border);border-radius:14px 14px 0 0;background:var(--bg);font-size:.78rem;font-weight:700;cursor:pointer;color:var(--muted);transition:all .2s;white-space:nowrap;font-family:inherit}
+.tab.on{background:var(--card);border-bottom-color:var(--card);color:var(--navy)}
+.tab-pane{display:none}.tab-pane.on{display:block}
+/* Accessibilité : le focus clavier se voit toujours (jamais par la couleur seule). */
+.tab:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:4px}
+/* ── Confort de lecture (demande Franck 23/08 : DYS, agrandissement,
+   lunettes). Réglages PAR L'UTILISATEUR, mémorisés sur le poste. La police
+   « lisible » suit les recommandations DYS réelles : sans-serif large +
+   espacement des lettres et des mots + interligne — polices SYSTÈME,
+   rien à télécharger. Le contraste RENFORCE le texte (jamais de sombre). */
+html.cf-t115 body{zoom:1.15}
+html.cf-t130 body{zoom:1.3}
+html.cf-t150 body{zoom:1.5}
+html.cf-lisible body,html.cf-lisible button,html.cf-lisible input,html.cf-lisible select{font-family:Verdana,Arial,'Segoe UI',sans-serif!important;letter-spacing:.035em;word-spacing:.14em}
+html.cf-lisible body{line-height:1.7}
+html.cf-contraste{--text:#000;--muted:#1c2b36;--card-border:#9fb0c0}
+html.cf-contraste body{color:#000}
+#btn-confort{font-weight:800}
+#confort-panneau{position:absolute;right:16px;top:64px;z-index:60;background:#fff;border:2px solid var(--card-border);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;min-width:230px}
+#confort-panneau .cf-ligne{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:.8rem;font-weight:700;color:var(--text)}
+#confort-panneau button{border:2px solid var(--card-border);background:var(--bg);border-radius:10px;padding:5px 10px;font-weight:700;cursor:pointer;font-family:inherit;font-size:.8rem}
+#confort-panneau button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media print{#confort-panneau,#btn-confort{display:none!important}}
+/* Petits écrans (Lot 7, testé 390×844 et 360×640) : les lignes de sondes et de
+   saisie passent en multi-lignes, les états perdent leur largeur réservée.
+   Les min-width sont posés en style inline, d'où les !important. */
+@media (max-width:600px){
+  .hdr{flex-wrap:wrap;gap:6px}
+  .hdr-status{margin-left:0}
+  .sonde-row{flex-wrap:wrap}
+  .sonde-row .sr-batt,.sonde-row .sr-serie{min-width:0!important}
+  .sonde-row .sr-batt{margin-left:0!important;text-align:left!important}
+}
+
+/* ── Sondes détectées ── */
+.sondes-list{display:flex;flex-direction:column;gap:6px}
+.sonde-row{display:flex;align-items:center;gap:10px;background:var(--bg);border:2px solid var(--card-border);border-radius:14px;padding:8px 12px;transition:all .3s}
+.sonde-row.perdue{border-color:var(--bad);background:var(--bad-bg)}
+.sonde-row .sr-dot{width:11px;height:11px;border-radius:50%;background:var(--good);flex-shrink:0}
+.sonde-row.perdue .sr-dot{background:var(--bad);animation:pulse 1.2s infinite}
+.sonde-row .sr-serie{font-family:var(--mono);font-weight:800;font-size:.92rem;color:var(--navy);min-width:130px}
+.sonde-row .sr-modele{font-size:.72rem;color:var(--muted);min-width:80px}
+.sonde-row .sr-val{font-family:var(--mono);font-weight:800;font-size:1.05rem;color:var(--navy);margin-left:auto}
+.sonde-row .sr-batt{font-size:.68rem;color:var(--muted);min-width:44px;text-align:right}
+.sonde-row select{padding:5px 8px;border:2px solid var(--card-border);border-radius:10px;font-size:.75rem;font-weight:700;font-family:var(--font);color:var(--text);background:#fff;max-width:210px}
+.sonde-row select.ok{border-color:var(--good);background:var(--good-bg)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* ── KPI ── */
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:10px 0}
+.kpi{background:var(--bg);border:1px solid var(--card-border);border-radius:14px;padding:10px;text-align:center}
+.kpi .kv{font-family:var(--mono);font-size:1.25rem;font-weight:800;color:var(--navy)}
+.kpi .kv.warn{color:var(--bad)}
+.kpi .kl{font-size:.58rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:600;margin-top:2px}
+.kpi.k-sr{border-left:3px solid var(--turq)}
+.kpi.k-sc{border-left:3px solid var(--orange)}
+
+/* ── Diagramme ── */
+.diag-wrap{position:relative;background:#fff;border:1px solid var(--card-border);border-radius:14px;overflow:hidden}
+.diag-wrap svg{display:block;width:100%;height:auto}
+.diag-alerte{position:absolute;left:12px;bottom:10px;background:var(--bad-bg);color:var(--bad);border:1px dashed var(--bad);padding:6px 12px;border-radius:10px;font-size:.75rem;font-weight:700;display:none;max-width:420px}
+.diag-alerte.on{display:block}
+
+/* ── Défauts ── */
+.defauts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px}
+.defaut-btn{background:var(--bg);border:2px solid var(--card-border);border-radius:14px;padding:10px 12px;cursor:pointer;text-align:left;font-family:var(--font);transition:all .2s}
+.defaut-btn:hover{border-color:var(--orange-light)}
+.defaut-btn.on{border-color:var(--bad);background:var(--bad-bg)}
+.defaut-btn .d-nom{font-weight:800;font-size:.82rem;color:var(--navy)}
+.defaut-btn.on .d-nom{color:var(--bad)}
+.defaut-btn .d-indice{font-size:.68rem;color:var(--muted);margin-top:2px;line-height:1.35}
+
+.info-box{padding:12px;background:var(--orange-warm);border:1px dashed var(--orange-light);border-radius:12px;font-size:.8rem;line-height:1.6;margin:8px 0;color:#5a3e1e}
+.info-box strong{color:var(--orange)}
+.info-box.turq{background:var(--turq-light);border-color:#b8dfe0;color:#1a5050}
+.info-box.turq strong{color:var(--turq)}
+
+/* ── Parcours pédagogique ── */
+.etape{display:flex;gap:14px;margin-bottom:14px}
+.etape .e-num{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.etape.tp1 .e-num{background:var(--turq)}
+.etape.tp3 .e-num{background:var(--orange)}
+.etape.tp4 .e-num{background:var(--bad)}
+.etape .e-body{flex:1}
+.etape h3{font-size:.95rem;color:var(--navy);margin-bottom:3px}
+.etape p{font-size:.8rem;color:var(--muted);margin-bottom:4px}
+.etape .e-codes{font-size:.68rem;font-family:var(--mono);color:var(--navy);background:var(--bg);border:1px solid var(--card-border);border-radius:8px;padding:4px 8px;display:inline-block;margin-top:2px}
+
+.fluide-bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.fluide-bar select{padding:7px 10px;border:2px solid var(--card-border);border-radius:10px;font-weight:700;font-family:var(--font);background:#fff}
+.badge-fluide{font-size:.68rem;padding:3px 10px;border-radius:var(--r-pill);font-weight:700;background:var(--turq-light);color:var(--turq)}
+.badge-fluide.a3{background:var(--bad-bg);color:var(--bad)}
+
+.footer{text-align:center;padding:16px 0;font-size:.65rem;color:var(--muted)}
+.print-entete{display:none}
+/* Impression : fond blanc, texte noir, sans aplats de couleur (Lot 7).
+   Le bandeau de provenance des mesures RESTE imprimé : savoir si un relevé
+   était simulé ou réel fait partie de la traçabilité pédagogique. */
+@media print{
+  .print-entete{display:block!important;border:2px solid #000;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:.9rem;line-height:1.6}
+  .hdr,.tabs,.btn,.footer,#carte-bt,#status-bar,#bandeau-mode-boutons{display:none!important}
+  body,.app{background:#fff!important;color:#000!important}
+  .cd,.cd-in,.kpi,.info-box,.etape,.sonde-row{background:#fff!important;color:#000!important;box-shadow:none!important;border-color:#000!important}
+  .cd{border:1px solid #000!important;page-break-inside:avoid}
+  .sec-t,.e-codes,h1,h3,p,span,div{color:#000!important;background:#fff!important}
+  #bandeau-mode{background:#fff!important;color:#000!important;border:2px solid #000!important}
+  svg text{fill:#000!important}
+  svg{background:#fff!important}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+<header class="hdr">
+  <div class="logo-slot"><svg xmlns="http://www.w3.org/2000/svg" width="205" height="37" viewBox="0 0 178 32"><text fill="#0f2d52" font-size="20px" x="2" y="22">&#10052;</text><text fill="#0f2d52" font-family="Trebuchet MS,sans-serif" font-size="18" font-weight="bold" x="28" y="22">iner</text><text fill="#0f2d52" font-family="Segoe Script,Brush Script MT,cursive" font-size="18" x="62" y="22">Web</text><line stroke="#e8914a" stroke-width="2" x1="28" x2="105" y1="25" y2="25"/><rect fill="#e8914a" x="110" y="5" rx="4" width="62" height="18"/><text fill="#fff" font-family="system-ui" font-size="10" font-weight="bold" x="141" y="17" text-anchor="middle">AquiBlue</text></svg></div>
+  <div class="hdr-center">
+    <h1>AQUIBLUE <span class="ver">v1.3</span></h1>
+    <div class="sub">Acquisition de donn&eacute;es Bluetooth &middot; Diagramme enthalpique temps r&eacute;el &middot; Poste p&eacute;dagogique</div>
+  </div>
+  <div class="hdr-status" id="status-bar">
+    <span class="dot" id="dot-status"></span>
+    <span id="txt-status">Connexion&hellip;</span>
+    <button class="btn btn-ol btn-sm" id="btn-confort" style="margin-left:8px" onclick="confortOuvrir()"
+            title="Confort de lecture : taille du texte, police lisible, contraste" aria-expanded="false" aria-controls="confort-panneau">Aa</button>
+    <button class="btn btn-ol btn-sm" id="btn-eteindre" style="display:none;margin-left:8px"
+            onclick="eteindreBanc()" title="Arr&ecirc;te proprement le serveur du banc">&#9211; &Eacute;teindre</button>
+  </div>
+  <div id="confort-panneau" hidden>
+    <div class="cf-ligne">Taille du texte&nbsp;:
+      <button onclick="confortTaille('')" data-taille="">Normal</button>
+      <button onclick="confortTaille('cf-t115')" data-taille="cf-t115">Grand</button>
+      <button onclick="confortTaille('cf-t130')" data-taille="cf-t130">Tr&egrave;s grand</button>
+      <button onclick="confortTaille('cf-t150')" data-taille="cf-t150">Maxi</button>
+    </div>
+    <div class="cf-ligne">
+      <button id="cf-btn-lisible" onclick="confortBascule('cf-lisible',this)">Police lisible (DYS)</button>
+      <button id="cf-btn-contraste" onclick="confortBascule('cf-contraste',this)">Contraste +</button>
+    </div>
+  </div>
+</header>
+
+<!-- Bandeau de mode PERMANENT : la provenance des mesures est toujours visible,
+     jamais de simulé affiché comme réel (exigence du dossier de conformité). -->
+<div id="bandeau-mode" role="status" aria-live="polite" style="display:flex;align-items:center;gap:12px;padding:8px 16px;border-radius:12px;margin-bottom:12px;font-weight:800;font-size:.85rem">
+  <span id="bandeau-mode-txt">Mode&hellip;</span>
+  <span id="bandeau-mode-boutons" style="margin-left:auto;display:none;gap:6px">
+    <button class="btn btn-sm" id="btn-mode-sim" onclick="changerModeSource('SIMULATION')">Simulation</button>
+    <button class="btn btn-sm" id="btn-mode-reel" onclick="changerModeSource('REEL')">Sondes r&eacute;elles</button>
+  </span>
+</div>
+
+<div class="tabs" role="tablist" aria-label="Sections du banc">
+  <button class="tab on" id="tab-0" role="tab" aria-selected="true" aria-controls="pane-0" onclick="showTab(0)">&#128246; Sondes &amp; affectation</button>
+  <button class="tab" id="tab-1" role="tab" aria-selected="false" tabindex="-1" aria-controls="pane-1" onclick="showTab(1)">&#127777; Diagramme temps r&eacute;el</button>
+  <button class="tab" id="tab-2" role="tab" aria-selected="false" tabindex="-1" aria-controls="pane-2" onclick="showTab(2)">&#128295; Pupitre professeur</button>
+  <button class="tab" id="tab-3" role="tab" aria-selected="false" tabindex="-1" aria-controls="pane-rec" onclick="showTab(3)">&#9210; Enregistrement &amp; rejeu</button>
+  <button class="tab" id="tab-5" role="tab" aria-selected="false" tabindex="-1" aria-controls="pane-apropos" onclick="showTab(4)">&#8505; &Agrave; propos</button>
+</div>
+
+<!-- ═══════ TAB 0 : SONDES & AFFECTATION ═══════ -->
+<div class="tab-pane on" id="pane-0">
+
+<!-- Bannière d'accueil : le circuit frigorifique aux symboles d'atelier
+     (croix du frigoriste : détendeur à GAUCHE, compresseur à DROITE,
+     condenseur en HAUT, évaporateur en BAS), les sondes qui émettent, et
+     le poste qui reçoit. Décorative : masquée à l'impression, animation
+     coupée si l'utilisateur préfère réduire les mouvements. -->
+<div class="banniere-accueil" aria-hidden="true">
+<svg viewBox="0 0 780 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:860px;height:auto;display:block;margin:0 auto">
+  <style>
+    .flux-hp{stroke:#e8914a;stroke-width:3;fill:none;stroke-dasharray:7 6;animation:circule 1.6s linear infinite}
+    .flux-bp{stroke:#2aafaf;stroke-width:3;fill:none;stroke-dasharray:7 6;animation:circule 1.6s linear infinite}
+    @keyframes circule{to{stroke-dashoffset:-13}}
+    @media (prefers-reduced-motion: reduce){.flux-hp,.flux-bp{animation:none}}
+    .tuyau{stroke:#0f2d52;stroke-width:1.1;fill:none;opacity:.25}
+    .organe{fill:#fff;stroke:#0f2d52;stroke-width:2.4}
+    .etiq{font-family:'Segoe UI',system-ui,sans-serif;font-size:10px;fill:#0f2d52;font-weight:700}
+    .etiq-p{font-family:'Segoe UI',system-ui,sans-serif;font-size:9px;font-weight:800}
+    .onde{stroke:#2aafaf;stroke-width:1.8;fill:none}
+  </style>
+  <rect x="1" y="1" width="778" height="188" rx="16" fill="#f7fafc" stroke="#d8e0ea" stroke-width="1.5"/>
+
+  <!-- ══ boucle frigorifique (centre-gauche) ══ -->
+  <!-- HP : sortie compresseur → condenseur → détendeur (haut, orange) -->
+  <path class="flux-hp" d="M470 118 L470 46 L120 46 L120 88"/>
+  <!-- BP : détendeur → évaporateur → aspiration compresseur (bas, turquoise) -->
+  <path class="flux-bp" d="M120 112 L120 152 L470 152 L470 134"/>
+
+  <!-- condenseur (HAUT) : serpentin, chaleur évacuée -->
+  <rect class="organe" x="230" y="26" width="130" height="40" rx="8"/>
+  <path d="M242 46 l12-12 12 12 12-12 12 12 12-12 12 12 12-12 12 12 12-12 12 12" fill="none" stroke="#e8914a" stroke-width="2.2"/>
+  <path d="M262 20 v-8 M295 20 v-8 M328 20 v-8" stroke="#e8914a" stroke-width="2" />
+  <text class="etiq" x="295" y="80" text-anchor="middle">condenseur</text>
+
+  <!-- évaporateur (BAS) : serpentin, froid produit -->
+  <rect class="organe" x="230" y="132" width="130" height="40" rx="8"/>
+  <path d="M242 152 l12-12 12 12 12-12 12 12 12-12 12 12 12-12 12 12 12-12 12 12" fill="none" stroke="#2aafaf" stroke-width="2.2"/>
+  <text class="etiq" x="295" y="126" text-anchor="middle">&eacute;vaporateur</text>
+
+  <!-- détendeur (GAUCHE) : deux triangles opposés -->
+  <path class="organe" d="M108 88 L132 88 L108 112 L132 112 Z" stroke-linejoin="round"/>
+  <text class="etiq" x="100" y="104" text-anchor="end">d&eacute;tendeur</text>
+
+  <!-- compresseur (DROITE) : cercle, refoulement plus étroit que l'aspiration -->
+  <circle class="organe" cx="470" cy="126" r="17"/>
+  <path d="M459 116 L481 121 M459 136 L481 131" stroke="#0f2d52" stroke-width="2"/>
+  <text class="etiq" x="494" y="130">compresseur</text>
+
+  <!-- repères HP / BP -->
+  <text class="etiq-p" x="440" y="40" fill="#e8914a">HP</text>
+  <text class="etiq-p" x="440" y="166" fill="#2aafaf">BP</text>
+
+  <!-- manomètre BLE sur la ligne HP (boîtier hexagonal, il émet) -->
+  <path class="organe" d="M394 96 L416 96 L421 106 L416 116 L394 116 L389 106 Z" transform="translate(11,-62)"/>
+  <circle cx="416" cy="44" r="2.8" fill="#e8914a"/>
+  <line x1="416" y1="54" x2="416" y2="46" stroke="#0f2d52" stroke-width="2"/>
+  <path class="onde" d="M432 36 q6 8 0 16"/>
+
+  <!-- pince de température BLE sur la sortie évaporateur (elle émet) -->
+  <rect class="organe" x="404" y="158" width="24" height="16" rx="4"/>
+  <path d="M410 174 l-3 8 M422 174 l3 8" stroke="#0f2d52" stroke-width="2.4" stroke-linecap="round"/>
+  <path class="onde" d="M434 158 q6 8 0 16"/>
+
+  <!-- ══ ondes vers le poste ══ -->
+  <path class="onde" d="M548 84 q10 12 0 24" opacity=".9"/>
+  <path class="onde" d="M560 74 q16 22 0 44" opacity=".6"/>
+  <path class="onde" d="M572 64 q22 32 0 64" opacity=".35"/>
+
+  <!-- ══ le poste (droite) : portable + mini diagramme p-h ══ -->
+  <rect x="608" y="34" width="128" height="88" rx="6" fill="#fff" stroke="#0f2d52" stroke-width="2.4"/>
+  <rect x="616" y="42" width="112" height="72" rx="3" fill="#eef4fa"/>
+  <!-- mini diagramme dans l'écran -->
+  <line x1="624" y1="106" x2="722" y2="106" stroke="#0f2d52" stroke-width="1.4"/>
+  <line x1="624" y1="50" x2="624" y2="106" stroke="#0f2d52" stroke-width="1.4"/>
+  <path d="M636 104 Q672 52 708 104" fill="none" stroke="#9db3c8" stroke-width="1.6"/>
+  <path d="M637 72 L637 92 L697 92 L703 72 Z" fill="none" stroke="#e8914a" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M689 92 L697 92" stroke="#2aafaf" stroke-width="3"/>
+  <path d="M645 72 L637 72" stroke="#2aafaf" stroke-width="3"/>
+  <path d="M596 122 L748 122 L762 140 L582 140 Z" fill="#fff" stroke="#0f2d52" stroke-width="2.4"/>
+  <text class="etiq" x="672" y="156" text-anchor="middle">le cycle, en direct</text>
+</svg>
+</div>
+
+<div class="cd cd-navy" id="carte-bt" style="display:none"><div class="cd-in">
+  <div class="sec-t pr">Bluetooth du PC</div>
+  <div id="bt-bandeau" style="display:flex;align-items:center;gap:10px;font-size:1rem;font-weight:800;margin-bottom:6px">
+    <span id="bt-dot" style="width:14px;height:14px;border-radius:50%;background:#ccc;flex-shrink:0"></span>
+    <span id="bt-texte">Recherche de l&rsquo;adaptateur&hellip;</span>
+  </div>
+  <div id="bt-detail" style="font-size:.78rem;color:var(--muted);margin-bottom:6px"></div>
+  <div id="bt-sondes"></div>
+  <div id="bt-conseil" style="font-size:.72rem;color:var(--muted);margin-top:6px"></div>
+  <div style="margin-top:8px;text-align:right">
+    <button class="btn btn-ol btn-sm" onclick="purgerJournaux()"
+            title="Supprime les fichiers de capture Bluetooth enregistr&eacute;s sur ce poste">Effacer les journaux de capture</button>
+  </div>
+</div></div>
+
+<div class="cd cd-turq"><div class="cd-in">
+  <div class="sec-t tq">Le geste central du TP</div>
+  <div class="info-box turq">
+    <strong>Le num&eacute;ro de s&eacute;rie est &eacute;crit sur la sonde.</strong><br>
+    1. Pose ta sonde sur la machine.<br>
+    2. Lis son num&eacute;ro sur le bo&icirc;tier.<br>
+    3. Tape ce num&eacute;ro en face du bon point de mesure.<br>
+    D&egrave;s que HP et BP sont remplies, le cycle se dessine.
+    <strong>Une erreur de saisie ou de placement ne bloque rien</strong> : c&rsquo;est le diagramme qui la r&eacute;v&eacute;lera.
+  </div>
+</div></div>
+
+<div class="cd cd-good"><div class="cd-in">
+  <div class="sec-t" style="color:var(--good);background:var(--good-bg)">Points de mesure &mdash; saisir le num&eacute;ro de l&rsquo;appareil pos&eacute;</div>
+  <div class="sondes-list" id="points-list"></div>
+  <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
+    <button class="btn btn-ol btn-sm" onclick="effacerAffectations()">Tout effacer</button>
+    <span style="font-size:.72rem;color:var(--muted)" id="affect-etat">0 / 9 points aliment&eacute;s</span>
+  </div>
+</div></div>
+
+<div class="cd cd-navy"><div class="cd-in">
+  <div class="sec-t pr">Appareils du banc</div>
+  <div class="info-box turq" style="margin-top:0" id="radar-note">
+    Le radar de l&rsquo;application&nbsp;: tout appareil allum&eacute; &agrave; port&eacute;e appara&icirc;t ici, avec son &eacute;tat.
+  </div>
+  <div class="sondes-list" id="sondes-list"></div>
+</div></div>
+
+<div class="cd cd-orange"><div class="cd-in">
+  <div class="sec-t tp">Saisie manuelle &mdash; si une sonde manque</div>
+  <div class="info-box">
+    Une sonde absente ou d&eacute;connect&eacute;e n&rsquo;emp&ecirc;che pas le TP&nbsp;: l&rsquo;&eacute;l&egrave;ve rel&egrave;ve la valeur sur l&rsquo;instrument
+    et la saisit ici. Pour les pressions, il indique <strong>ce qu&rsquo;il a lu</strong>&nbsp;: pression relative (manom&egrave;tre),
+    pression absolue, ou temp&eacute;rature de saturation. Une sonde affect&eacute;e et connect&eacute;e
+    <strong>reprend toujours la main</strong> sur la saisie manuelle.
+  </div>
+  <div class="sondes-list" id="saisie-manuelle"></div>
+</div></div>
+</div>
+
+<!-- ═══════ TAB 1 : DIAGRAMME ═══════ -->
+<div class="tab-pane" id="pane-1">
+
+<!-- En-tête visible seulement à l'impression : le relevé PDF est auto-porteur
+     (date, fluide, provenance des mesures) pour le rapport de l'élève. -->
+<div class="print-entete" id="print-entete"></div>
+
+<div class="cd cd-orange"><div class="cd-in">
+  <div class="fluide-bar">
+    <div class="sec-t tp" style="margin:0">Diagramme de Mollier (log p &ndash; h)</div>
+    <span style="flex:1"></span>
+    <label style="font-size:.72rem;font-weight:700;color:var(--muted)">Fluide :</label>
+    <select id="sel-fluide" onchange="changerFluide()"></select>
+    <span class="badge-fluide" id="badge-fluide"></span>
+  </div>
+
+  <div class="diag-wrap">
+    <svg id="diag" viewBox="0 0 980 560" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div class="diag-alerte" id="diag-alerte" role="alert" aria-live="assertive"></div>
+  </div>
+
+  <div class="kpi-row" style="grid-template-columns:repeat(5,1fr)">
+    <div class="kpi k-sr"><div class="kv" id="kpi-surchauffe">—</div><div class="kl">Surchauffe (K)</div></div>
+    <div class="kpi k-sr"><div class="kv" id="kpi-surchauffe-tot">—</div><div class="kl">Surchauffe totale (K)</div></div>
+    <div class="kpi k-sc"><div class="kv" id="kpi-sousrefroid">—</div><div class="kl">Sous-refroid. (K)</div></div>
+    <div class="kpi k-sc"><div class="kv" id="kpi-sousrefroid-tot">—</div><div class="kl">Sous-refroid. total (K)</div></div>
+    <div class="kpi"><div class="kv" id="kpi-taux">—</div><div class="kl">Taux de compression</div></div>
+  </div>
+  <div class="kpi-row" style="grid-template-columns:repeat(5,1fr);margin-top:2px">
+    <div class="kpi"><div class="kv" id="kpi-tevap">—</div><div class="kl">T&deg; &eacute;vaporation</div></div>
+    <div class="kpi"><div class="kv" id="kpi-tcond">—</div><div class="kl">T&deg; condensation</div></div>
+    <div class="kpi"><div class="kv" id="kpi-dtair">—</div><div class="kl">&Delta;T air condenseur (K)</div></div>
+    <div class="kpi"><div class="kv" id="kpi-ambiance">—</div><div class="kl">Ambiance froid</div></div>
+    <div class="kpi"><div class="kv" id="kpi-trefoul">—</div><div class="kl">T&deg; refoulement estim&eacute;e</div></div>
+  </div>
+  <div class="info-box turq" style="margin-top:8px">
+    <strong>Rep&egrave;res de lecture&nbsp;:</strong>
+    la <strong>surchauffe</strong> se mesure en sortie d&rsquo;&eacute;vaporateur, la <strong>surchauffe totale</strong> &agrave; l&rsquo;entr&eacute;e du compresseur
+    (elle inclut le r&eacute;chauffage de la ligne d&rsquo;aspiration)&nbsp;;
+    le <strong>sous-refroidissement</strong> se mesure en sortie de condenseur, le <strong>total</strong> &agrave; l&rsquo;entr&eacute;e du d&eacute;tendeur.
+    Le <strong>&Delta;T air</strong> vient des deux thermom&egrave;tres d&rsquo;air pos&eacute;s sur l&rsquo;air repris et l&rsquo;air souffl&eacute; du condenseur.
+  </div>
+</div></div>
+</div>
+
+<!-- ═══════ TAB 2 : PUPITRE PROFESSEUR ═══════ -->
+<div class="tab-pane" id="pane-2">
+
+<div class="cd cd-orange"><div class="cd-in">
+  <div class="sec-t tp">Injection de d&eacute;fauts &mdash; TP 3 et TP 4</div>
+  <div class="info-box">
+    En s&eacute;ance r&eacute;elle, le d&eacute;faut se cr&eacute;e <strong>sur l&rsquo;installation</strong> (voile devant le condenseur, vanne&hellip;).
+    Ici, le d&eacute;monstrateur le simule pour montrer la d&eacute;formation du cycle. En TP&nbsp;4, ne pas montrer cet &eacute;cran aux &eacute;l&egrave;ves&nbsp;:
+    ils ne voient que le diagramme et doivent nommer la panne.
+  </div>
+  <div class="defauts-grid" id="defauts-grid"></div>
+  <div style="margin-top:10px">
+    <button class="btn btn-n btn-sm" onclick="reinitialiser()">Retour au fonctionnement nominal</button>
+  </div>
+</div></div>
+
+<div class="cd cd-navy"><div class="cd-in">
+  <div class="sec-t pr">Simulation d&rsquo;incidents de liaison</div>
+  <div class="info-box turq">
+    Couper une sonde montre ce que verra l&rsquo;&eacute;l&egrave;ve quand une sonde d&eacute;croche r&eacute;ellement (hors de port&eacute;e, batterie vide)&nbsp;:
+    l&rsquo;&eacute;tat passe en <strong>perdue</strong>, le point dispara&icirc;t du diagramme, le reste continue de tourner.
+  </div>
+  <div id="sondes-coupure" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+</div></div>
+</div>
+
+<!-- ═══════ TAB 3 : ENREGISTREMENT & REJEU ═══════ -->
+<div class="tab-pane" id="pane-rec">
+
+<div class="cd cd-good"><div class="cd-in">
+  <div class="sec-t" style="color:var(--good);background:var(--good-bg)">Enregistrement de la manipulation</div>
+  <div class="info-box turq">
+    L&rsquo;essai men&eacute; &agrave; l&rsquo;atelier s&rsquo;enregistre ici, puis se <strong>rejoue en acc&eacute;l&eacute;r&eacute; au tableau</strong>
+    sans remonter le banc&nbsp;: le diagramme et tous les indicateurs revivent la manipulation.
+  </div>
+  <div style="display:flex;gap:10px;align-items:end;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <label style="font-size:.65rem;font-weight:700;color:var(--muted);text-transform:uppercase">Intervalle (s)</label>
+      <input type="number" id="rec-intervalle" value="2" min="1" step="1" style="width:80px;padding:7px 8px;border:2px solid var(--card-border);border-radius:10px;font-family:var(--mono);font-weight:700;text-align:center">
+    </div>
+    <button class="btn btn-o" id="btn-rec-start" onclick="demarrerEnregistrement()">&#9210; D&eacute;marrer</button>
+    <button class="btn btn-d" id="btn-rec-stop" onclick="arreterEnregistrement()" disabled>&#9632; Arr&ecirc;ter</button>
+    <span class="rec-indicator stopped" id="rec-indicateur">&#9679; Arr&ecirc;t&eacute;</span>
+    <span style="font-size:.75rem;color:var(--muted)" id="rec-compteur">0 point</span>
+  </div>
+</div></div>
+
+<div class="cd cd-navy"><div class="cd-in">
+  <div class="sec-t pr">Rejeu acc&eacute;l&eacute;r&eacute;</div>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+    <label style="font-size:.72rem;font-weight:700;color:var(--muted)">Vitesse :</label>
+    <select id="rejeu-vitesse" style="padding:7px 10px;border:2px solid var(--card-border);border-radius:10px;font-weight:700;font-family:var(--font)">
+      <option value="5">&times; 5</option>
+      <option value="20" selected>&times; 20</option>
+      <option value="60">&times; 60</option>
+    </select>
+    <button class="btn btn-n" id="btn-rejeu" onclick="demarrerRejeu()">&#9654; Rejouer</button>
+    <button class="btn btn-ol" id="btn-rejeu-stop" onclick="arreterRejeu()" disabled>&#9632; Stop</button>
+    <span style="font-size:.78rem;font-weight:700;color:var(--orange)" id="rejeu-heure"></span>
+  </div>
+  <input type="range" id="rejeu-curseur" min="0" max="0" value="0" style="width:100%" oninput="allerAuPoint(this.value)">
+  <div class="info-box" style="margin-top:8px">
+    Pendant le rejeu, <strong>tous les onglets revivent l&rsquo;enregistrement</strong>&nbsp;: ouvrez le
+    diagramme pour voir le cycle se d&eacute;former exactement comme pendant l&rsquo;essai.
+  </div>
+</div></div>
+
+<div class="cd cd-turq"><div class="cd-in">
+  <div class="sec-t tq">Export</div>
+  <button class="btn btn-ol btn-sm" onclick="exporterEnregistrementCSV()">Exporter en CSV</button>
+  <button class="btn btn-ol btn-sm" onclick="imprimerReleve()" title="Ouvre l'impression du diagramme et des indicateurs — choisir « Enregistrer au format PDF »">Relev&eacute; papier / PDF</button>
+  <span style="font-size:.72rem;color:var(--muted);margin-left:8px">CSV : horodatage, chaque appareil, surchauffe, sous-refroidissement, taux &middot; PDF : diagramme + indicateurs, pour le rapport</span>
+</div></div>
+</div>
+
+<!-- ═══════ TAB 5 : À PROPOS ═══════ -->
+<div class="tab-pane" id="pane-apropos">
+
+<div class="cd cd-turq"><div class="cd-in">
+  <div class="sec-t tq">Comment &ccedil;a fonctionne</div>
+  <div class="etape tp1">
+    <div class="e-num">1</div>
+    <div class="e-body">
+      <h3>Des sondes de mesure sans fil</h3>
+      <p>Manom&egrave;tres et sondes de temp&eacute;rature du commerce, pos&eacute;s sur l&rsquo;installation frigorifique. Chacune &eacute;met ses mesures en Bluetooth basse consommation, plusieurs fois par seconde.</p>
+    </div>
+  </div>
+  <div class="etape">
+    <div class="e-num">2</div>
+    <div class="e-body">
+      <h3>Un poste de r&eacute;ception</h3>
+      <p>Un PC d&rsquo;atelier (hors r&eacute;seau, avec un simple dongle Bluetooth) re&ccedil;oit toutes les sondes en m&ecirc;me temps, d&eacute;code les mesures et les pousse vers cette page.</p>
+    </div>
+  </div>
+  <div class="etape tp3">
+    <div class="e-num">3</div>
+    <div class="e-body">
+      <h3>Le diagramme vivant</h3>
+      <p>Le cycle frigorifique se dessine et se d&eacute;forme en direct sur le diagramme enthalpique. Surchauffe, sous-refroidissement, taux de compression&nbsp;: tout se lit pendant que l&rsquo;installation tourne.</p>
+    </div>
+  </div>
+</div></div>
+
+<div class="cd cd-orange"><div class="cd-in">
+  <div class="sec-t tp">Ce logiciel</div>
+  <div class="info-box">
+    Cette page est un <strong>fichier unique et autonome</strong>&nbsp;: aucune installation, aucun serveur,
+    aucune connexion Internet. Elle fonctionne depuis une cl&eacute; USB ou un simple t&eacute;l&eacute;chargement,
+    par double-clic. Les sondes y sont <strong>simul&eacute;es</strong>&nbsp;: le banc respire, les d&eacute;fauts
+    s&rsquo;injectent depuis le pupitre professeur, et tous les gestes du TP se travaillent &agrave; l&rsquo;identique.
+    Quand le poste d&rsquo;acquisition r&eacute;el est lanc&eacute;, la m&ecirc;me page s&rsquo;y branche toute seule
+    et affiche alors les vraies sondes.
+  </div>
+</div></div>
+
+<div class="cd cd-good"><div class="cd-in">
+  <div class="sec-t" style="color:var(--good);background:var(--good-bg)">Enseignants &mdash; espace professeur</div>
+  <p style="font-size:.85rem;line-height:1.5">Les plans de s&eacute;ance, la feuille de guidance
+  &eacute;l&egrave;ve, la fiche de relev&eacute; et les supports imprimables (hybride num&eacute;rique +
+  papier) sont diffus&eacute;s &agrave; part, dans un <strong>espace professeur verrouill&eacute; par
+  code</strong>.<br>
+  Pour obtenir le code&nbsp;: e-mail &agrave; <strong>inerweb.fh@gmail.com</strong>, objet
+  <strong>&laquo;&nbsp;AquiBlue &mdash; demande de code&nbsp;&raquo;</strong>, en pr&eacute;cisant
+  votre &eacute;tablissement.</p>
+</div></div>
+
+<div class="cd cd-navy"><div class="cd-in">
+  <div class="sec-t pr">Cadre</div>
+  <div class="info-box turq">
+    Outil ind&eacute;pendant, non affili&eacute; &agrave; un fabricant d&rsquo;instruments de mesure.
+    L&rsquo;interop&eacute;rabilit&eacute; avec les sondes du commerce est obtenue par r&eacute;tro-ing&eacute;nierie,
+    licite en droit fran&ccedil;ais et europ&eacute;en&nbsp;; aucun code ni logo de constructeur n&rsquo;est
+    reproduit. Diffusion gratuite &agrave; usage p&eacute;dagogique et technique.
+  </div>
+</div></div>
+</div>
+
+<div class="footer">
+  inerWeb &mdash; Banc d&rsquo;acquisition Bluetooth &middot; d&eacute;monstrateur technologique &middot; Outil ind&eacute;pendant, non affili&eacute; &agrave; un fabricant d&rsquo;instruments &middot; &copy; 2026
+</div>
+</div>
+
+<script>
+/*FLUIDES-EMBARQUES-DEBUT*/var FLUIDES_EMBARQUEES={"R134a":{"nom":"R-134a","prp":1530,"securite":"A1","note":"Corps pur. Pas de glissement : la température de bulle et celle de rosée sont confondues.","glissement_max":0.0,"t_crit":101.06,"p_crit":40.593,"sat":[{"p":0.4,"tb":-44.595,"hl":142.392,"cpl":1.2468,"tr":-44.595,"hv":371.086,"sv":1.77134,"cpv":0.7352},{"p":0.4134,"tb":-43.994,"hl":143.143,"cpl":1.2478,"tr":-43.994,"hv":371.468,"sv":1.77038,"cpv":0.737},{"p":0.4273,"tb":-43.388,"hl":143.9,"cpl":1.2488,"tr":-43.388,"hv":371.853,"sv":1.76943,"cpv":0.7388},{"p":0.4416,"tb":-42.779,"hl":144.661,"cpl":1.2499,"tr":-42.779,"hv":372.24,"sv":1.76848,"cpv":0.7406},{"p":0.4565,"tb":-42.166,"hl":145.429,"cpl":1.2509,"tr":-42.166,"hv":372.629,"sv":1.76754,"cpv":0.7425},{"p":0.4718,"tb":-41.549,"hl":146.202,"cpl":1.252,"tr":-41.549,"hv":373.021,"sv":1.76661,"cpv":0.7443},{"p":0.4876,"tb":-40.928,"hl":146.98,"cpl":1.253,"tr":-40.928,"hv":373.415,"sv":1.76569,"cpv":0.7462},{"p":0.504,"tb":-40.303,"hl":147.764,"cpl":1.2541,"tr":-40.303,"hv":373.811,"sv":1.76478,"cpv":0.7481},{"p":0.5209,"tb":-39.674,"hl":148.554,"cpl":1.2552,"tr":-39.674,"hv":374.21,"sv":1.76387,"cpv":0.75},{"p":0.5384,"tb":-39.041,"hl":149.35,"cpl":1.2563,"tr":-39.041,"hv":374.611,"sv":1.76297,"cpv":0.7519},{"p":0.5565,"tb":-38.403,"hl":150.151,"cpl":1.2574,"tr":-38.403,"hv":375.015,"sv":1.76208,"cpv":0.7539},{"p":0.5752,"tb":-37.762,"hl":150.959,"cpl":1.2586,"tr":-37.762,"hv":375.421,"sv":1.76119,"cpv":0.7559},{"p":0.5945,"tb":-37.116,"hl":151.772,"cpl":1.2597,"tr":-37.116,"hv":375.83,"sv":1.76031,"cpv":0.7579},{"p":0.6144,"tb":-36.467,"hl":152.592,"cpl":1.2609,"tr":-36.467,"hv":376.241,"sv":1.75944,"cpv":0.7599},{"p":0.6351,"tb":-35.812,"hl":153.418,"cpl":1.2621,"tr":-35.812,"hv":376.654,"sv":1.75858,"cpv":0.762},{"p":0.6564,"tb":-35.154,"hl":154.25,"cpl":1.2633,"tr":-35.154,"hv":377.071,"sv":1.75772,"cpv":0.7641},{"p":0.6784,"tb":-34.491,"hl":155.088,"cpl":1.2645,"tr":-34.491,"hv":377.489,"sv":1.75688,"cpv":0.7662},{"p":0.7012,"tb":-33.824,"hl":155.933,"cpl":1.2657,"tr":-33.824,"hv":377.91,"sv":1.75604,"cpv":0.7683},{"p":0.7247,"tb":-33.153,"hl":156.784,"cpl":1.2669,"tr":-33.153,"hv":378.334,"sv":1.7552,"cpv":0.7705},{"p":0.749,"tb":-32.477,"hl":157.642,"cpl":1.2682,"tr":-32.477,"hv":378.76,"sv":1.75438,"cpv":0.7727},{"p":0.7742,"tb":-31.796,"hl":158.507,"cpl":1.2695,"tr":-31.796,"hv":379.189,"sv":1.75356,"cpv":0.7749},{"p":0.8002,"tb":-31.111,"hl":159.378,"cpl":1.2708,"tr":-31.111,"hv":379.62,"sv":1.75275,"cpv":0.7772},{"p":0.827,"tb":-30.421,"hl":160.256,"cpl":1.2721,"tr":-30.421,"hv":380.054,"sv":1.75195,"cpv":0.7795},{"p":0.8548,"tb":-29.726,"hl":161.141,"cpl":1.2734,"tr":-29.726,"hv":380.49,"sv":1.75116,"cpv":0.7818},{"p":0.8835,"tb":-29.027,"hl":162.032,"cpl":1.2748,"tr":-29.027,"hv":380.929,"sv":1.75037,"cpv":0.7841},{"p":0.9131,"tb":-28.323,"hl":162.931,"cpl":1.2761,"tr":-28.323,"hv":381.371,"sv":1.74959,"cpv":0.7865},{"p":0.9438,"tb":-27.615,"hl":163.837,"cpl":1.2775,"tr":-27.615,"hv":381.815,"sv":1.74882,"cpv":0.7889},{"p":0.9755,"tb":-26.901,"hl":164.751,"cpl":1.2789,"tr":-26.901,"hv":382.262,"sv":1.74806,"cpv":0.7913},{"p":1.0082,"tb":-26.182,"hl":165.671,"cpl":1.2803,"tr":-26.182,"hv":382.711,"sv":1.74731,"cpv":0.7938},{"p":1.0421,"tb":-25.459,"hl":166.599,"cpl":1.2818,"tr":-25.459,"hv":383.163,"sv":1.74656,"cpv":0.7963},{"p":1.0771,"tb":-24.73,"hl":167.535,"cpl":1.2832,"tr":-24.73,"hv":383.617,"sv":1.74582,"cpv":0.7989},{"p":1.1132,"tb":-23.997,"hl":168.478,"cpl":1.2847,"tr":-23.997,"hv":384.075,"sv":1.74509,"cpv":0.8014},{"p":1.1506,"tb":-23.258,"hl":169.429,"cpl":1.2862,"tr":-23.258,"hv":384.534,"sv":1.74436,"cpv":0.804},{"p":1.1892,"tb":-22.514,"hl":170.387,"cpl":1.2878,"tr":-22.514,"hv":384.997,"sv":1.74365,"cpv":0.8067},{"p":1.2291,"tb":-21.765,"hl":171.354,"cpl":1.2893,"tr":-21.765,"hv":385.462,"sv":1.74294,"cpv":0.8094},{"p":1.2704,"tb":-21.011,"hl":172.328,"cpl":1.2909,"tr":-21.011,"hv":385.929,"sv":1.74224,"cpv":0.8121},{"p":1.313,"tb":-20.251,"hl":173.311,"cpl":1.2925,"tr":-20.251,"hv":386.399,"sv":1.74155,"cpv":0.8149},{"p":1.3571,"tb":-19.486,"hl":174.302,"cpl":1.2941,"tr":-19.486,"hv":386.872,"sv":1.74086,"cpv":0.8177},{"p":1.4027,"tb":-18.715,"hl":175.301,"cpl":1.2958,"tr":-18.715,"hv":387.347,"sv":1.74019,"cpv":0.8205},{"p":1.4497,"tb":-17.939,"hl":176.309,"cpl":1.2975,"tr":-17.939,"hv":387.825,"sv":1.73952,"cpv":0.8234},{"p":1.4984,"tb":-17.157,"hl":177.325,"cpl":1.2992,"tr":-17.157,"hv":388.306,"sv":1.73886,"cpv":0.8264},{"p":1.5487,"tb":-16.37,"hl":178.35,"cpl":1.3009,"tr":-16.37,"hv":388.789,"sv":1.7382,"cpv":0.8293},{"p":1.6007,"tb":-15.577,"hl":179.384,"cpl":1.3027,"tr":-15.577,"hv":389.275,"sv":1.73756,"cpv":0.8324},{"p":1.6544,"tb":-14.779,"hl":180.427,"cpl":1.3045,"tr":-14.779,"hv":389.763,"sv":1.73692,"cpv":0.8354},{"p":1.71,"tb":-13.974,"hl":181.478,"cpl":1.3063,"tr":-13.974,"hv":390.254,"sv":1.73629,"cpv":0.8386},{"p":1.7674,"tb":-13.164,"hl":182.539,"cpl":1.3082,"tr":-13.164,"hv":390.748,"sv":1.73567,"cpv":0.8417},{"p":1.8267,"tb":-12.348,"hl":183.61,"cpl":1.31,"tr":-12.348,"hv":391.244,"sv":1.73505,"cpv":0.8449},{"p":1.888,"tb":-11.526,"hl":184.689,"cpl":1.312,"tr":-11.526,"hv":391.743,"sv":1.73445,"cpv":0.8482},{"p":1.9514,"tb":-10.697,"hl":185.778,"cpl":1.3139,"tr":-10.697,"hv":392.244,"sv":1.73385,"cpv":0.8515},{"p":2.0169,"tb":-9.863,"hl":186.877,"cpl":1.3159,"tr":-9.863,"hv":392.748,"sv":1.73325,"cpv":0.8549},{"p":2.0846,"tb":-9.023,"hl":187.986,"cpl":1.3179,"tr":-9.023,"hv":393.254,"sv":1.73267,"cpv":0.8583},{"p":2.1546,"tb":-8.176,"hl":189.104,"cpl":1.32,"tr":-8.176,"hv":393.762,"sv":1.73209,"cpv":0.8618},{"p":2.2269,"tb":-7.323,"hl":190.233,"cpl":1.3221,"tr":-7.323,"hv":394.274,"sv":1.73152,"cpv":0.8654},{"p":2.3017,"tb":-6.463,"hl":191.372,"cpl":1.3242,"tr":-6.463,"hv":394.787,"sv":1.73096,"cpv":0.869},{"p":2.3789,"tb":-5.598,"hl":192.522,"cpl":1.3264,"tr":-5.598,"hv":395.303,"sv":1.73041,"cpv":0.8726},{"p":2.4588,"tb":-4.725,"hl":193.682,"cpl":1.3286,"tr":-4.725,"hv":395.822,"sv":1.72986,"cpv":0.8764},{"p":2.5413,"tb":-3.847,"hl":194.852,"cpl":1.3308,"tr":-3.847,"hv":396.343,"sv":1.72932,"cpv":0.8802},{"p":2.6266,"tb":-2.961,"hl":196.034,"cpl":1.3331,"tr":-2.961,"hv":396.866,"sv":1.72879,"cpv":0.884},{"p":2.7148,"tb":-2.069,"hl":197.226,"cpl":1.3355,"tr":-2.069,"hv":397.391,"sv":1.72826,"cpv":0.888},{"p":2.8059,"tb":-1.17,"hl":198.43,"cpl":1.3379,"tr":-1.17,"hv":397.919,"sv":1.72774,"cpv":0.892},{"p":2.9001,"tb":-0.264,"hl":199.645,"cpl":1.3403,"tr":-0.264,"hv":398.449,"sv":1.72723,"cpv":0.896},{"p":2.9975,"tb":0.649,"hl":200.872,"cpl":1.3428,"tr":0.649,"hv":398.982,"sv":1.72673,"cpv":0.9002},{"p":3.0981,"tb":1.568,"hl":202.111,"cpl":1.3454,"tr":1.568,"hv":399.516,"sv":1.72623,"cpv":0.9044},{"p":3.2021,"tb":2.495,"hl":203.361,"cpl":1.348,"tr":2.495,"hv":400.053,"sv":1.72574,"cpv":0.9087},{"p":3.3096,"tb":3.429,"hl":204.623,"cpl":1.3506,"tr":3.429,"hv":400.591,"sv":1.72525,"cpv":0.9131},{"p":3.4207,"tb":4.37,"hl":205.898,"cpl":1.3533,"tr":4.37,"hv":401.132,"sv":1.72478,"cpv":0.9176},{"p":3.5355,"tb":5.319,"hl":207.185,"cpl":1.3561,"tr":5.319,"hv":401.674,"sv":1.7243,"cpv":0.9221},{"p":3.6542,"tb":6.275,"hl":208.485,"cpl":1.3589,"tr":6.275,"hv":402.219,"sv":1.72384,"cpv":0.9268},{"p":3.7769,"tb":7.238,"hl":209.798,"cpl":1.3618,"tr":7.238,"hv":402.765,"sv":1.72338,"cpv":0.9315},{"p":3.9036,"tb":8.209,"hl":211.124,"cpl":1.3648,"tr":8.209,"hv":403.314,"sv":1.72292,"cpv":0.9364},{"p":4.0347,"tb":9.187,"hl":212.463,"cpl":1.3678,"tr":9.187,"hv":403.863,"sv":1.72248,"cpv":0.9413},{"p":4.1701,"tb":10.173,"hl":213.815,"cpl":1.3709,"tr":10.173,"hv":404.415,"sv":1.72203,"cpv":0.9464},{"p":4.3101,"tb":11.167,"hl":215.182,"cpl":1.3741,"tr":11.167,"hv":404.968,"sv":1.7216,"cpv":0.9515},{"p":4.4548,"tb":12.169,"hl":216.562,"cpl":1.3774,"tr":12.169,"hv":405.522,"sv":1.72116,"cpv":0.9568},{"p":4.6043,"tb":13.179,"hl":217.956,"cpl":1.3807,"tr":13.179,"hv":406.078,"sv":1.72074,"cpv":0.9622},{"p":4.7589,"tb":14.196,"hl":219.365,"cpl":1.3841,"tr":14.196,"hv":406.635,"sv":1.72031,"cpv":0.9677},{"p":4.9186,"tb":15.222,"hl":220.789,"cpl":1.3876,"tr":15.222,"hv":407.194,"sv":1.7199,"cpv":0.9733},{"p":5.0838,"tb":16.256,"hl":222.227,"cpl":1.3912,"tr":16.256,"hv":407.753,"sv":1.71948,"cpv":0.979},{"p":5.2544,"tb":17.298,"hl":223.681,"cpl":1.3949,"tr":17.298,"hv":408.313,"sv":1.71907,"cpv":0.9849},{"p":5.4308,"tb":18.349,"hl":225.15,"cpl":1.3987,"tr":18.349,"hv":408.874,"sv":1.71867,"cpv":0.991},{"p":5.6131,"tb":19.408,"hl":226.635,"cpl":1.4026,"tr":19.408,"hv":409.436,"sv":1.71826,"cpv":0.9972},{"p":5.8015,"tb":20.475,"hl":228.136,"cpl":1.4067,"tr":20.475,"hv":409.998,"sv":1.71786,"cpv":1.0035},{"p":5.9963,"tb":21.551,"hl":229.654,"cpl":1.4108,"tr":21.551,"hv":410.561,"sv":1.71747,"cpv":1.01},{"p":6.1976,"tb":22.636,"hl":231.188,"cpl":1.415,"tr":22.636,"hv":411.123,"sv":1.71707,"cpv":1.0167},{"p":6.4056,"tb":23.73,"hl":232.739,"cpl":1.4194,"tr":23.73,"hv":411.686,"sv":1.71668,"cpv":1.0235},{"p":6.6206,"tb":24.832,"hl":234.307,"cpl":1.4239,"tr":24.832,"hv":412.249,"sv":1.71628,"cpv":1.0306},{"p":6.8429,"tb":25.944,"hl":235.893,"cpl":1.4286,"tr":25.944,"hv":412.811,"sv":1.71589,"cpv":1.0378},{"p":7.0726,"tb":27.064,"hl":237.496,"cpl":1.4334,"tr":27.064,"hv":413.373,"sv":1.7155,"cpv":1.0452},{"p":7.31,"tb":28.194,"hl":239.118,"cpl":1.4383,"tr":28.194,"hv":413.934,"sv":1.71511,"cpv":1.0529},{"p":7.5554,"tb":29.333,"hl":240.759,"cpl":1.4434,"tr":29.333,"hv":414.493,"sv":1.71472,"cpv":1.0608},{"p":7.809,"tb":30.481,"hl":242.418,"cpl":1.4487,"tr":30.481,"hv":415.052,"sv":1.71433,"cpv":1.0689},{"p":8.0711,"tb":31.639,"hl":244.098,"cpl":1.4542,"tr":31.639,"hv":415.609,"sv":1.71393,"cpv":1.0773},{"p":8.3421,"tb":32.806,"hl":245.796,"cpl":1.4598,"tr":32.806,"hv":416.164,"sv":1.71354,"cpv":1.086},{"p":8.6221,"tb":33.983,"hl":247.515,"cpl":1.4657,"tr":33.983,"hv":416.716,"sv":1.71313,"cpv":1.0949},{"p":8.9115,"tb":35.169,"hl":249.255,"cpl":1.4718,"tr":35.169,"hv":417.267,"sv":1.71273,"cpv":1.1042},{"p":9.2107,"tb":36.366,"hl":251.016,"cpl":1.4781,"tr":36.366,"hv":417.814,"sv":1.71232,"cpv":1.1137},{"p":9.5199,"tb":37.572,"hl":252.799,"cpl":1.4846,"tr":37.572,"hv":418.358,"sv":1.7119,"cpv":1.1237},{"p":9.8394,"tb":38.788,"hl":254.603,"cpl":1.4914,"tr":38.788,"hv":418.898,"sv":1.71148,"cpv":1.1339},{"p":10.1697,"tb":40.014,"hl":256.43,"cpl":1.4985,"tr":40.014,"hv":419.435,"sv":1.71105,"cpv":1.1446},{"p":10.5111,"tb":41.25,"hl":258.28,"cpl":1.5059,"tr":41.25,"hv":419.966,"sv":1.71061,"cpv":1.1557},{"p":10.864,"tb":42.497,"hl":260.154,"cpl":1.5136,"tr":42.497,"hv":420.493,"sv":1.71016,"cpv":1.1673},{"p":11.2287,"tb":43.754,"hl":262.052,"cpl":1.5216,"tr":43.754,"hv":421.013,"sv":1.7097,"cpv":1.1793},{"p":11.6056,"tb":45.021,"hl":263.975,"cpl":1.53,"tr":45.021,"hv":421.528,"sv":1.70923,"cpv":1.1919},{"p":11.9952,"tb":46.299,"hl":265.923,"cpl":1.5387,"tr":46.299,"hv":422.035,"sv":1.70874,"cpv":1.2051},{"p":12.3978,"tb":47.587,"hl":267.898,"cpl":1.5479,"tr":47.587,"hv":422.535,"sv":1.70823,"cpv":1.2188},{"p":12.814,"tb":48.886,"hl":269.899,"cpl":1.5576,"tr":48.886,"hv":423.026,"sv":1.70771,"cpv":1.2332},{"p":13.2441,"tb":50.196,"hl":271.928,"cpl":1.5677,"tr":50.196,"hv":423.508,"sv":1.70716,"cpv":1.2484},{"p":13.6887,"tb":51.517,"hl":273.985,"cpl":1.5784,"tr":51.517,"hv":423.98,"sv":1.7066,"cpv":1.2643},{"p":14.1482,"tb":52.848,"hl":276.071,"cpl":1.5896,"tr":52.848,"hv":424.441,"sv":1.70601,"cpv":1.2811},{"p":14.6232,"tb":54.191,"hl":278.187,"cpl":1.6014,"tr":54.191,"hv":424.89,"sv":1.7054,"cpv":1.2988},{"p":15.1141,"tb":55.544,"hl":280.334,"cpl":1.614,"tr":55.544,"hv":425.326,"sv":1.70475,"cpv":1.3176},{"p":15.6214,"tb":56.909,"hl":282.513,"cpl":1.6273,"tr":56.909,"hv":425.747,"sv":1.70407,"cpv":1.3375},{"p":16.1458,"tb":58.285,"hl":284.725,"cpl":1.6414,"tr":58.285,"hv":426.153,"sv":1.70336,"cpv":1.3587},{"p":16.6878,"tb":59.672,"hl":286.972,"cpl":1.6565,"tr":59.672,"hv":426.541,"sv":1.70261,"cpv":1.3813},{"p":17.248,"tb":61.071,"hl":289.253,"cpl":1.6726,"tr":61.071,"hv":426.91,"sv":1.70181,"cpv":1.4054},{"p":17.827,"tb":62.48,"hl":291.571,"cpl":1.6898,"tr":62.48,"hv":427.259,"sv":1.70097,"cpv":1.4313},{"p":18.4254,"tb":63.902,"hl":293.927,"cpl":1.7082,"tr":63.902,"hv":427.584,"sv":1.70007,"cpv":1.4593},{"p":19.0439,"tb":65.334,"hl":296.322,"cpl":1.7281,"tr":65.334,"hv":427.885,"sv":1.69912,"cpv":1.4894},{"p":19.6832,"tb":66.778,"hl":298.759,"cpl":1.7496,"tr":66.778,"hv":428.159,"sv":1.6981,"cpv":1.5221},{"p":20.3439,"tb":68.234,"hl":301.239,"cpl":1.773,"tr":68.234,"hv":428.402,"sv":1.69702,"cpv":1.5577},{"p":21.0268,"tb":69.701,"hl":303.764,"cpl":1.7985,"tr":69.701,"hv":428.612,"sv":1.69585,"cpv":1.5967},{"p":21.7327,"tb":71.179,"hl":306.337,"cpl":1.8264,"tr":71.179,"hv":428.785,"sv":1.6946,"cpv":1.6396},{"p":22.4622,"tb":72.669,"hl":308.959,"cpl":1.8571,"tr":72.669,"hv":428.917,"sv":1.69325,"cpv":1.687},{"p":23.2162,"tb":74.17,"hl":311.634,"cpl":1.8911,"tr":74.17,"hv":429.004,"sv":1.6918,"cpv":1.7398},{"p":23.9956,"tb":75.683,"hl":314.366,"cpl":1.9291,"tr":75.683,"hv":429.04,"sv":1.69022,"cpv":1.7989},{"p":24.8011,"tb":77.207,"hl":317.158,"cpl":1.9718,"tr":77.207,"hv":429.019,"sv":1.68851,"cpv":1.8658},{"p":25.6336,"tb":78.742,"hl":320.014,"cpl":2.0203,"tr":78.742,"hv":428.935,"sv":1.68664,"cpv":1.9419},{"p":26.4941,"tb":80.288,"hl":322.94,"cpl":2.0758,"tr":80.288,"hv":428.779,"sv":1.6846,"cpv":2.0295},{"p":27.3835,"tb":81.845,"hl":325.941,"cpl":2.1401,"tr":81.845,"hv":428.54,"sv":1.68236,"cpv":2.1315},{"p":28.3027,"tb":83.413,"hl":329.027,"cpl":2.2156,"tr":83.413,"hv":428.206,"sv":1.67989,"cpv":2.2519},{"p":29.2528,"tb":84.991,"hl":332.206,"cpl":2.3058,"tr":84.991,"hv":427.763,"sv":1.67715,"cpv":2.3962},{"p":30.2347,"tb":86.579,"hl":335.49,"cpl":2.4157,"tr":86.579,"hv":427.191,"sv":1.67409,"cpv":2.5725},{"p":31.2497,"tb":88.177,"hl":338.894,"cpl":2.5526,"tr":88.177,"hv":426.466,"sv":1.67065,"cpv":2.7928},{"p":32.2987,"tb":89.784,"hl":342.441,"cpl":2.7285,"tr":89.784,"hv":425.554,"sv":1.66674,"cpv":3.0764},{"p":33.3829,"tb":91.4,"hl":346.158,"cpl":2.9634,"tr":91.4,"hv":424.411,"sv":1.66226,"cpv":3.4554},{"p":34.5035,"tb":93.023,"hl":350.09,"cpl":3.2942,"tr":93.023,"hv":422.97,"sv":1.65702,"cpv":3.9881},{"p":35.6617,"tb":94.654,"hl":354.306,"cpl":3.7964,"tr":94.654,"hv":421.127,"sv":1.65075,"cpv":4.7929},{"p":36.8589,"tb":96.289,"hl":358.927,"cpl":4.6528,"tr":96.289,"hv":418.701,"sv":1.64298,"cpv":6.1519},{"p":38.0961,"tb":97.927,"hl":364.212,"cpl":6.4472,"tr":97.927,"hv":415.321,"sv":1.63273,"cpv":8.9459},{"p":39.375,"tb":99.564,"hl":370.929,"cpl":12.5121,"tr":99.564,"hv":409.917,"sv":1.61717,"cpv":18.0187}]},"R404A":{"nom":"R-404A","prp":4728,"securite":"A1","note":"Mélange quasi azéotrope : glissement très faible, mais PRP très élevé (sortie de service).","glissement_max":0.88,"t_crit":72.12,"p_crit":37.349,"sat":[{"p":0.4,"tb":-63.853,"hl":117.481,"cpl":1.2246,"tr":-62.975,"hv":329.582,"sv":1.67067,"cpv":0.7252},{"p":0.4132,"tb":-63.292,"hl":118.168,"cpl":1.2253,"tr":-62.418,"hv":329.923,"sv":1.6696,"cpv":0.727},{"p":0.4268,"tb":-62.728,"hl":118.861,"cpl":1.226,"tr":-61.858,"hv":330.266,"sv":1.66853,"cpv":0.7288},{"p":0.4409,"tb":-62.16,"hl":119.558,"cpl":1.2266,"tr":-61.295,"hv":330.612,"sv":1.66748,"cpv":0.7306},{"p":0.4554,"tb":-61.588,"hl":120.26,"cpl":1.2273,"tr":-60.727,"hv":330.959,"sv":1.66643,"cpv":0.7324},{"p":0.4704,"tb":-61.012,"hl":120.967,"cpl":1.2281,"tr":-60.156,"hv":331.309,"sv":1.66539,"cpv":0.7342},{"p":0.4859,"tb":-60.433,"hl":121.68,"cpl":1.2288,"tr":-59.582,"hv":331.661,"sv":1.66436,"cpv":0.7361},{"p":0.5019,"tb":-59.85,"hl":122.397,"cpl":1.2296,"tr":-59.003,"hv":332.015,"sv":1.66333,"cpv":0.738},{"p":0.5184,"tb":-59.263,"hl":123.119,"cpl":1.2304,"tr":-58.421,"hv":332.371,"sv":1.66232,"cpv":0.7399},{"p":0.5355,"tb":-58.673,"hl":123.847,"cpl":1.2312,"tr":-57.835,"hv":332.73,"sv":1.66131,"cpv":0.7418},{"p":0.5532,"tb":-58.079,"hl":124.579,"cpl":1.232,"tr":-57.245,"hv":333.09,"sv":1.6603,"cpv":0.7437},{"p":0.5714,"tb":-57.48,"hl":125.317,"cpl":1.2329,"tr":-56.651,"hv":333.453,"sv":1.65931,"cpv":0.7457},{"p":0.5902,"tb":-56.878,"hl":126.061,"cpl":1.2337,"tr":-56.054,"hv":333.819,"sv":1.65832,"cpv":0.7477},{"p":0.6097,"tb":-56.272,"hl":126.81,"cpl":1.2346,"tr":-55.452,"hv":334.186,"sv":1.65734,"cpv":0.7497},{"p":0.6297,"tb":-55.662,"hl":127.564,"cpl":1.2355,"tr":-54.846,"hv":334.556,"sv":1.65637,"cpv":0.7517},{"p":0.6505,"tb":-55.047,"hl":128.324,"cpl":1.2365,"tr":-54.236,"hv":334.928,"sv":1.65541,"cpv":0.7538},{"p":0.6719,"tb":-54.429,"hl":129.09,"cpl":1.2374,"tr":-53.622,"hv":335.303,"sv":1.65445,"cpv":0.7559},{"p":0.6941,"tb":-53.806,"hl":129.861,"cpl":1.2384,"tr":-53.004,"hv":335.679,"sv":1.65351,"cpv":0.758},{"p":0.7169,"tb":-53.18,"hl":130.639,"cpl":1.2394,"tr":-52.382,"hv":336.058,"sv":1.65257,"cpv":0.7601},{"p":0.7406,"tb":-52.549,"hl":131.422,"cpl":1.2405,"tr":-51.756,"hv":336.44,"sv":1.65163,"cpv":0.7622},{"p":0.765,"tb":-51.914,"hl":132.211,"cpl":1.2415,"tr":-51.125,"hv":336.823,"sv":1.65071,"cpv":0.7644},{"p":0.7902,"tb":-51.274,"hl":133.006,"cpl":1.2426,"tr":-50.49,"hv":337.209,"sv":1.64979,"cpv":0.7666},{"p":0.8162,"tb":-50.631,"hl":133.807,"cpl":1.2437,"tr":-49.85,"hv":337.598,"sv":1.64888,"cpv":0.7689},{"p":0.8431,"tb":-49.982,"hl":134.615,"cpl":1.2448,"tr":-49.207,"hv":337.988,"sv":1.64798,"cpv":0.7711},{"p":0.8709,"tb":-49.33,"hl":135.428,"cpl":1.2459,"tr":-48.558,"hv":338.382,"sv":1.64709,"cpv":0.7734},{"p":0.8996,"tb":-48.673,"hl":136.249,"cpl":1.2471,"tr":-47.906,"hv":338.777,"sv":1.64621,"cpv":0.7758},{"p":0.9292,"tb":-48.011,"hl":137.075,"cpl":1.2483,"tr":-47.248,"hv":339.175,"sv":1.64533,"cpv":0.7781},{"p":0.9598,"tb":-47.345,"hl":137.908,"cpl":1.2495,"tr":-46.587,"hv":339.575,"sv":1.64446,"cpv":0.7805},{"p":0.9915,"tb":-46.674,"hl":138.748,"cpl":1.2508,"tr":-45.92,"hv":339.978,"sv":1.6436,"cpv":0.7829},{"p":1.0241,"tb":-45.999,"hl":139.594,"cpl":1.2521,"tr":-45.249,"hv":340.383,"sv":1.64275,"cpv":0.7854},{"p":1.0579,"tb":-45.319,"hl":140.447,"cpl":1.2534,"tr":-44.573,"hv":340.79,"sv":1.64191,"cpv":0.7879},{"p":1.0927,"tb":-44.634,"hl":141.307,"cpl":1.2547,"tr":-43.893,"hv":341.2,"sv":1.64107,"cpv":0.7904},{"p":1.1287,"tb":-43.944,"hl":142.174,"cpl":1.2561,"tr":-43.208,"hv":341.612,"sv":1.64024,"cpv":0.7929},{"p":1.1659,"tb":-43.25,"hl":143.049,"cpl":1.2574,"tr":-42.517,"hv":342.027,"sv":1.63942,"cpv":0.7955},{"p":1.2043,"tb":-42.55,"hl":143.93,"cpl":1.2589,"tr":-41.822,"hv":342.444,"sv":1.63861,"cpv":0.7981},{"p":1.244,"tb":-41.846,"hl":144.818,"cpl":1.2603,"tr":-41.122,"hv":342.863,"sv":1.63781,"cpv":0.8008},{"p":1.285,"tb":-41.137,"hl":145.714,"cpl":1.2618,"tr":-40.417,"hv":343.285,"sv":1.63701,"cpv":0.8035},{"p":1.3273,"tb":-40.422,"hl":146.618,"cpl":1.2633,"tr":-39.707,"hv":343.71,"sv":1.63623,"cpv":0.8062},{"p":1.3711,"tb":-39.703,"hl":147.529,"cpl":1.2648,"tr":-38.992,"hv":344.136,"sv":1.63545,"cpv":0.809},{"p":1.4163,"tb":-38.978,"hl":148.447,"cpl":1.2664,"tr":-38.271,"hv":344.566,"sv":1.63468,"cpv":0.8118},{"p":1.4629,"tb":-38.248,"hl":149.374,"cpl":1.268,"tr":-37.546,"hv":344.997,"sv":1.63391,"cpv":0.8147},{"p":1.5111,"tb":-37.513,"hl":150.308,"cpl":1.2696,"tr":-36.815,"hv":345.431,"sv":1.63316,"cpv":0.8176},{"p":1.5609,"tb":-36.772,"hl":151.25,"cpl":1.2713,"tr":-36.079,"hv":345.867,"sv":1.63241,"cpv":0.8205},{"p":1.6124,"tb":-36.027,"hl":152.201,"cpl":1.273,"tr":-35.337,"hv":346.306,"sv":1.63167,"cpv":0.8235},{"p":1.6655,"tb":-35.275,"hl":153.16,"cpl":1.2747,"tr":-34.59,"hv":346.747,"sv":1.63094,"cpv":0.8265},{"p":1.7204,"tb":-34.519,"hl":154.127,"cpl":1.2765,"tr":-33.838,"hv":347.191,"sv":1.63022,"cpv":0.8296},{"p":1.777,"tb":-33.756,"hl":155.102,"cpl":1.2783,"tr":-33.08,"hv":347.637,"sv":1.6295,"cpv":0.8327},{"p":1.8356,"tb":-32.988,"hl":156.086,"cpl":1.2801,"tr":-32.316,"hv":348.085,"sv":1.6288,"cpv":0.8359},{"p":1.8961,"tb":-32.215,"hl":157.079,"cpl":1.282,"tr":-31.547,"hv":348.535,"sv":1.6281,"cpv":0.8391},{"p":1.9585,"tb":-31.436,"hl":158.081,"cpl":1.284,"tr":-30.772,"hv":348.988,"sv":1.62741,"cpv":0.8424},{"p":2.0231,"tb":-30.651,"hl":159.091,"cpl":1.2859,"tr":-29.991,"hv":349.444,"sv":1.62672,"cpv":0.8457},{"p":2.0897,"tb":-29.86,"hl":160.111,"cpl":1.2879,"tr":-29.204,"hv":349.901,"sv":1.62605,"cpv":0.8491},{"p":2.1586,"tb":-29.063,"hl":161.14,"cpl":1.29,"tr":-28.412,"hv":350.361,"sv":1.62538,"cpv":0.8525},{"p":2.2297,"tb":-28.26,"hl":162.178,"cpl":1.2921,"tr":-27.613,"hv":350.823,"sv":1.62472,"cpv":0.856},{"p":2.3032,"tb":-27.451,"hl":163.226,"cpl":1.2942,"tr":-26.809,"hv":351.288,"sv":1.62407,"cpv":0.8595},{"p":2.3791,"tb":-26.637,"hl":164.284,"cpl":1.2964,"tr":-25.998,"hv":351.754,"sv":1.62343,"cpv":0.8631},{"p":2.4575,"tb":-25.816,"hl":165.351,"cpl":1.2986,"tr":-25.182,"hv":352.223,"sv":1.62279,"cpv":0.8668},{"p":2.5384,"tb":-24.989,"hl":166.428,"cpl":1.3009,"tr":-24.359,"hv":352.694,"sv":1.62216,"cpv":0.8705},{"p":2.6221,"tb":-24.155,"hl":167.516,"cpl":1.3032,"tr":-23.529,"hv":353.167,"sv":1.62154,"cpv":0.8743},{"p":2.7085,"tb":-23.315,"hl":168.613,"cpl":1.3056,"tr":-22.694,"hv":353.642,"sv":1.62092,"cpv":0.8782},{"p":2.7977,"tb":-22.469,"hl":169.721,"cpl":1.308,"tr":-21.852,"hv":354.12,"sv":1.62032,"cpv":0.8821},{"p":2.8899,"tb":-21.616,"hl":170.84,"cpl":1.3105,"tr":-21.004,"hv":354.599,"sv":1.61972,"cpv":0.8861},{"p":2.9851,"tb":-20.757,"hl":171.969,"cpl":1.313,"tr":-20.149,"hv":355.081,"sv":1.61912,"cpv":0.8902},{"p":3.0835,"tb":-19.891,"hl":173.11,"cpl":1.3156,"tr":-19.287,"hv":355.564,"sv":1.61854,"cpv":0.8944},{"p":3.1851,"tb":-19.019,"hl":174.261,"cpl":1.3183,"tr":-18.419,"hv":356.049,"sv":1.61796,"cpv":0.8986},{"p":3.29,"tb":-18.14,"hl":175.424,"cpl":1.321,"tr":-17.544,"hv":356.536,"sv":1.61739,"cpv":0.9029},{"p":3.3984,"tb":-17.254,"hl":176.598,"cpl":1.3238,"tr":-16.662,"hv":357.025,"sv":1.61682,"cpv":0.9073},{"p":3.5104,"tb":-16.361,"hl":177.783,"cpl":1.3266,"tr":-15.774,"hv":357.516,"sv":1.61626,"cpv":0.9118},{"p":3.6261,"tb":-15.461,"hl":178.981,"cpl":1.3296,"tr":-14.878,"hv":358.009,"sv":1.61571,"cpv":0.9163},{"p":3.7455,"tb":-14.554,"hl":180.19,"cpl":1.3325,"tr":-13.975,"hv":358.503,"sv":1.61517,"cpv":0.921},{"p":3.869,"tb":-13.64,"hl":181.412,"cpl":1.3356,"tr":-13.066,"hv":358.998,"sv":1.61462,"cpv":0.9257},{"p":3.9964,"tb":-12.719,"hl":182.646,"cpl":1.3387,"tr":-12.149,"hv":359.495,"sv":1.61409,"cpv":0.9306},{"p":4.1281,"tb":-11.79,"hl":183.893,"cpl":1.342,"tr":-11.225,"hv":359.994,"sv":1.61356,"cpv":0.9355},{"p":4.2641,"tb":-10.854,"hl":185.153,"cpl":1.3453,"tr":-10.293,"hv":360.494,"sv":1.61304,"cpv":0.9406},{"p":4.4046,"tb":-9.911,"hl":186.425,"cpl":1.3486,"tr":-9.354,"hv":360.995,"sv":1.61252,"cpv":0.9457},{"p":4.5498,"tb":-8.961,"hl":187.711,"cpl":1.3521,"tr":-8.408,"hv":361.497,"sv":1.61201,"cpv":0.951},{"p":4.6997,"tb":-8.002,"hl":189.011,"cpl":1.3557,"tr":-7.454,"hv":362.0,"sv":1.6115,"cpv":0.9564},{"p":4.8545,"tb":-7.037,"hl":190.324,"cpl":1.3593,"tr":-6.493,"hv":362.504,"sv":1.61099,"cpv":0.9619},{"p":5.0145,"tb":-6.063,"hl":191.651,"cpl":1.3631,"tr":-5.524,"hv":363.009,"sv":1.61049,"cpv":0.9675},{"p":5.1797,"tb":-5.082,"hl":192.993,"cpl":1.3669,"tr":-4.547,"hv":363.515,"sv":1.61,"cpv":0.9732},{"p":5.3504,"tb":-4.093,"hl":194.349,"cpl":1.3709,"tr":-3.562,"hv":364.021,"sv":1.6095,"cpv":0.9791},{"p":5.5267,"tb":-3.095,"hl":195.719,"cpl":1.375,"tr":-2.569,"hv":364.527,"sv":1.60901,"cpv":0.9851},{"p":5.7088,"tb":-2.09,"hl":197.105,"cpl":1.3792,"tr":-1.569,"hv":365.034,"sv":1.60852,"cpv":0.9913},{"p":5.8969,"tb":-1.077,"hl":198.506,"cpl":1.3835,"tr":-0.56,"hv":365.541,"sv":1.60804,"cpv":0.9977},{"p":6.0912,"tb":-0.056,"hl":199.923,"cpl":1.388,"tr":0.457,"hv":366.047,"sv":1.60755,"cpv":1.0042},{"p":6.2919,"tb":0.974,"hl":201.355,"cpl":1.3926,"tr":1.482,"hv":366.553,"sv":1.60707,"cpv":1.0109},{"p":6.4992,"tb":2.012,"hl":202.804,"cpl":1.3973,"tr":2.515,"hv":367.059,"sv":1.60659,"cpv":1.0177},{"p":6.7133,"tb":3.058,"hl":204.269,"cpl":1.4022,"tr":3.557,"hv":367.564,"sv":1.6061,"cpv":1.0248},{"p":6.9345,"tb":4.113,"hl":205.751,"cpl":1.4072,"tr":4.608,"hv":368.067,"sv":1.60562,"cpv":1.0321},{"p":7.163,"tb":5.177,"hl":207.25,"cpl":1.4124,"tr":5.666,"hv":368.57,"sv":1.60513,"cpv":1.0396},{"p":7.399,"tb":6.249,"hl":208.767,"cpl":1.4178,"tr":6.734,"hv":369.071,"sv":1.60465,"cpv":1.0473},{"p":7.6428,"tb":7.33,"hl":210.301,"cpl":1.4234,"tr":7.81,"hv":369.57,"sv":1.60416,"cpv":1.0553},{"p":7.8947,"tb":8.419,"hl":211.854,"cpl":1.4292,"tr":8.895,"hv":370.067,"sv":1.60367,"cpv":1.0636},{"p":8.1548,"tb":9.518,"hl":213.426,"cpl":1.4352,"tr":9.989,"hv":370.562,"sv":1.60317,"cpv":1.0721},{"p":8.4235,"tb":10.625,"hl":215.016,"cpl":1.4413,"tr":11.092,"hv":371.053,"sv":1.60267,"cpv":1.081},{"p":8.701,"tb":11.742,"hl":216.626,"cpl":1.4478,"tr":12.203,"hv":371.542,"sv":1.60216,"cpv":1.0902},{"p":8.9877,"tb":12.868,"hl":218.256,"cpl":1.4544,"tr":13.324,"hv":372.027,"sv":1.60164,"cpv":1.0997},{"p":9.2839,"tb":14.003,"hl":219.906,"cpl":1.4614,"tr":14.455,"hv":372.508,"sv":1.60112,"cpv":1.1096},{"p":9.5898,"tb":15.147,"hl":221.577,"cpl":1.4686,"tr":15.594,"hv":372.984,"sv":1.60058,"cpv":1.12},{"p":9.9057,"tb":16.301,"hl":223.269,"cpl":1.4761,"tr":16.743,"hv":373.456,"sv":1.60004,"cpv":1.1308},{"p":10.2321,"tb":17.464,"hl":224.983,"cpl":1.484,"tr":17.901,"hv":373.922,"sv":1.59948,"cpv":1.142},{"p":10.5693,"tb":18.637,"hl":226.72,"cpl":1.4921,"tr":19.068,"hv":374.382,"sv":1.59891,"cpv":1.1538},{"p":10.9175,"tb":19.819,"hl":228.479,"cpl":1.5007,"tr":20.246,"hv":374.836,"sv":1.59833,"cpv":1.1662},{"p":11.2772,"tb":21.011,"hl":230.262,"cpl":1.5096,"tr":21.433,"hv":375.282,"sv":1.59773,"cpv":1.1791},{"p":11.6488,"tb":22.213,"hl":232.069,"cpl":1.519,"tr":22.629,"hv":375.721,"sv":1.59711,"cpv":1.1927},{"p":12.0326,"tb":23.424,"hl":233.9,"cpl":1.5288,"tr":23.836,"hv":376.151,"sv":1.59647,"cpv":1.207},{"p":12.4291,"tb":24.646,"hl":235.757,"cpl":1.5392,"tr":25.052,"hv":376.571,"sv":1.59581,"cpv":1.2221},{"p":12.8387,"tb":25.878,"hl":237.64,"cpl":1.5501,"tr":26.278,"hv":376.982,"sv":1.59512,"cpv":1.238},{"p":13.2617,"tb":27.119,"hl":239.551,"cpl":1.5615,"tr":27.514,"hv":377.381,"sv":1.59441,"cpv":1.2548},{"p":13.6986,"tb":28.371,"hl":241.488,"cpl":1.5736,"tr":28.761,"hv":377.769,"sv":1.59367,"cpv":1.2727},{"p":14.15,"tb":29.633,"hl":243.455,"cpl":1.5864,"tr":30.017,"hv":378.143,"sv":1.5929,"cpv":1.2916},{"p":14.6162,"tb":30.905,"hl":245.451,"cpl":1.6,"tr":31.284,"hv":378.503,"sv":1.59209,"cpv":1.3118},{"p":15.0978,"tb":32.188,"hl":247.477,"cpl":1.6145,"tr":32.56,"hv":378.847,"sv":1.59124,"cpv":1.3333},{"p":15.5953,"tb":33.481,"hl":249.536,"cpl":1.6298,"tr":33.847,"hv":379.174,"sv":1.59036,"cpv":1.3563},{"p":16.1092,"tb":34.784,"hl":251.627,"cpl":1.6463,"tr":35.145,"hv":379.483,"sv":1.58943,"cpv":1.381},{"p":16.6399,"tb":36.098,"hl":253.751,"cpl":1.6639,"tr":36.453,"hv":379.772,"sv":1.58845,"cpv":1.4075},{"p":17.1882,"tb":37.423,"hl":255.912,"cpl":1.6827,"tr":37.771,"hv":380.039,"sv":1.58741,"cpv":1.4361},{"p":17.7546,"tb":38.758,"hl":258.108,"cpl":1.7031,"tr":39.099,"hv":380.281,"sv":1.58631,"cpv":1.4671},{"p":18.3396,"tb":40.103,"hl":260.344,"cpl":1.7251,"tr":40.438,"hv":380.497,"sv":1.58515,"cpv":1.5008},{"p":18.9438,"tb":41.459,"hl":262.619,"cpl":1.7491,"tr":41.788,"hv":380.685,"sv":1.58391,"cpv":1.5375},{"p":19.568,"tb":42.826,"hl":264.937,"cpl":1.7751,"tr":43.148,"hv":380.84,"sv":1.5826,"cpv":1.5777},{"p":20.2128,"tb":44.204,"hl":267.299,"cpl":1.8037,"tr":44.518,"hv":380.96,"sv":1.58119,"cpv":1.6221},{"p":20.8788,"tb":45.592,"hl":269.707,"cpl":1.8352,"tr":45.899,"hv":381.041,"sv":1.57969,"cpv":1.6712},{"p":21.5667,"tb":46.99,"hl":272.165,"cpl":1.8701,"tr":47.29,"hv":381.079,"sv":1.57807,"cpv":1.7259},{"p":22.2773,"tb":48.399,"hl":274.676,"cpl":1.9091,"tr":48.692,"hv":381.069,"sv":1.57633,"cpv":1.7874},{"p":23.0114,"tb":49.819,"hl":277.243,"cpl":1.9528,"tr":50.104,"hv":381.005,"sv":1.57445,"cpv":1.8569},{"p":23.7696,"tb":51.249,"hl":279.87,"cpl":2.0025,"tr":51.525,"hv":380.88,"sv":1.57242,"cpv":1.9362},{"p":24.5528,"tb":52.69,"hl":282.562,"cpl":2.0593,"tr":52.957,"hv":380.686,"sv":1.5702,"cpv":2.0276},{"p":25.3618,"tb":54.14,"hl":285.326,"cpl":2.1251,"tr":54.399,"hv":380.414,"sv":1.56778,"cpv":2.1343},{"p":26.1974,"tb":55.601,"hl":288.168,"cpl":2.2024,"tr":55.85,"hv":380.052,"sv":1.56511,"cpv":2.2605},{"p":27.0606,"tb":57.071,"hl":291.098,"cpl":2.2947,"tr":57.311,"hv":379.585,"sv":1.56217,"cpv":2.4122},{"p":27.9523,"tb":58.551,"hl":294.125,"cpl":2.407,"tr":58.78,"hv":378.994,"sv":1.5589,"cpv":2.5981},{"p":28.8733,"tb":60.039,"hl":297.266,"cpl":2.547,"tr":60.258,"hv":378.256,"sv":1.55524,"cpv":2.8315},{"p":29.8246,"tb":61.537,"hl":300.538,"cpl":2.727,"tr":61.744,"hv":377.339,"sv":1.55109,"cpv":3.1331},{"p":30.8073,"tb":63.043,"hl":303.971,"cpl":2.9679,"tr":63.237,"hv":376.198,"sv":1.54632,"cpv":3.5381},{"p":31.8224,"tb":64.556,"hl":307.603,"cpl":3.3081,"tr":64.737,"hv":374.769,"sv":1.54077,"cpv":4.1105},{"p":32.8709,"tb":66.076,"hl":311.5,"cpl":3.8272,"tr":66.241,"hv":372.949,"sv":1.53413,"cpv":4.9794},{"p":33.954,"tb":67.601,"hl":315.776,"cpl":4.7192,"tr":67.749,"hv":370.565,"sv":1.52592,"cpv":6.4517}]},"R449A":{"nom":"R-449A","prp":1397,"securite":"A1","note":"Zéotrope de remplacement du R-404A. Glissement marqué : surchauffe sur la rosée, sous-refroidissement sur la bulle.","glissement_max":6.19,"t_crit":null,"p_crit":null,"sat":[{"p":0.4,"tb":-63.368,"hl":115.51,"cpl":1.2733,"tr":-57.182,"hv":366.828,"sv":1.83286,"cpv":0.7307},{"p":0.4133,"tb":-62.805,"hl":116.227,"cpl":1.2739,"tr":-56.624,"hv":367.168,"sv":1.83139,"cpv":0.7325},{"p":0.427,"tb":-62.239,"hl":116.948,"cpl":1.2745,"tr":-56.063,"hv":367.511,"sv":1.82993,"cpv":0.7343},{"p":0.4412,"tb":-61.67,"hl":117.675,"cpl":1.2751,"tr":-55.498,"hv":367.855,"sv":1.82847,"cpv":0.7361},{"p":0.4559,"tb":-61.097,"hl":118.406,"cpl":1.2758,"tr":-54.929,"hv":368.201,"sv":1.82701,"cpv":0.7379},{"p":0.471,"tb":-60.52,"hl":119.143,"cpl":1.2765,"tr":-54.357,"hv":368.55,"sv":1.82557,"cpv":0.7398},{"p":0.4867,"tb":-59.94,"hl":119.884,"cpl":1.2772,"tr":-53.781,"hv":368.9,"sv":1.82413,"cpv":0.7417},{"p":0.5028,"tb":-59.356,"hl":120.631,"cpl":1.2779,"tr":-53.202,"hv":369.252,"sv":1.82269,"cpv":0.7436},{"p":0.5195,"tb":-58.768,"hl":121.383,"cpl":1.2786,"tr":-52.619,"hv":369.606,"sv":1.82126,"cpv":0.7455},{"p":0.5368,"tb":-58.177,"hl":122.14,"cpl":1.2793,"tr":-52.032,"hv":369.962,"sv":1.81984,"cpv":0.7475},{"p":0.5546,"tb":-57.581,"hl":122.903,"cpl":1.2801,"tr":-51.441,"hv":370.32,"sv":1.81843,"cpv":0.7494},{"p":0.5731,"tb":-56.982,"hl":123.671,"cpl":1.2809,"tr":-50.847,"hv":370.68,"sv":1.81702,"cpv":0.7514},{"p":0.5921,"tb":-56.379,"hl":124.444,"cpl":1.2816,"tr":-50.248,"hv":371.042,"sv":1.81562,"cpv":0.7535},{"p":0.6118,"tb":-55.772,"hl":125.223,"cpl":1.2825,"tr":-49.646,"hv":371.406,"sv":1.81423,"cpv":0.7555},{"p":0.6321,"tb":-55.161,"hl":126.008,"cpl":1.2833,"tr":-49.04,"hv":371.772,"sv":1.81284,"cpv":0.7576},{"p":0.6531,"tb":-54.546,"hl":126.798,"cpl":1.2841,"tr":-48.43,"hv":372.14,"sv":1.81146,"cpv":0.7597},{"p":0.6748,"tb":-53.927,"hl":127.594,"cpl":1.285,"tr":-47.816,"hv":372.51,"sv":1.81008,"cpv":0.7618},{"p":0.6973,"tb":-53.304,"hl":128.396,"cpl":1.2859,"tr":-47.197,"hv":372.882,"sv":1.80871,"cpv":0.764},{"p":0.7204,"tb":-52.677,"hl":129.203,"cpl":1.2868,"tr":-46.575,"hv":373.257,"sv":1.80735,"cpv":0.7661},{"p":0.7444,"tb":-52.046,"hl":130.017,"cpl":1.2877,"tr":-45.948,"hv":373.633,"sv":1.806,"cpv":0.7684},{"p":0.7691,"tb":-51.41,"hl":130.837,"cpl":1.2886,"tr":-45.318,"hv":374.011,"sv":1.80465,"cpv":0.7706},{"p":0.7946,"tb":-50.77,"hl":131.662,"cpl":1.2896,"tr":-44.683,"hv":374.391,"sv":1.80331,"cpv":0.7729},{"p":0.821,"tb":-50.126,"hl":132.494,"cpl":1.2905,"tr":-44.044,"hv":374.773,"sv":1.80197,"cpv":0.7752},{"p":0.8483,"tb":-49.477,"hl":133.333,"cpl":1.2915,"tr":-43.4,"hv":375.157,"sv":1.80064,"cpv":0.7775},{"p":0.8765,"tb":-48.825,"hl":134.177,"cpl":1.2925,"tr":-42.753,"hv":375.544,"sv":1.79932,"cpv":0.7798},{"p":0.9056,"tb":-48.167,"hl":135.028,"cpl":1.2936,"tr":-42.1,"hv":375.932,"sv":1.79801,"cpv":0.7822},{"p":0.9357,"tb":-47.505,"hl":135.886,"cpl":1.2946,"tr":-41.444,"hv":376.323,"sv":1.7967,"cpv":0.7846},{"p":0.9668,"tb":-46.839,"hl":136.75,"cpl":1.2957,"tr":-40.783,"hv":376.715,"sv":1.7954,"cpv":0.7871},{"p":0.9989,"tb":-46.168,"hl":137.621,"cpl":1.2968,"tr":-40.117,"hv":377.11,"sv":1.7941,"cpv":0.7896},{"p":1.0321,"tb":-45.493,"hl":138.498,"cpl":1.2979,"tr":-39.447,"hv":377.506,"sv":1.79281,"cpv":0.7921},{"p":1.0664,"tb":-44.813,"hl":139.383,"cpl":1.2991,"tr":-38.772,"hv":377.905,"sv":1.79153,"cpv":0.7946},{"p":1.1019,"tb":-44.128,"hl":140.274,"cpl":1.3003,"tr":-38.093,"hv":378.305,"sv":1.79026,"cpv":0.7972},{"p":1.1385,"tb":-43.438,"hl":141.172,"cpl":1.3015,"tr":-37.409,"hv":378.708,"sv":1.78899,"cpv":0.7998},{"p":1.1763,"tb":-42.744,"hl":142.078,"cpl":1.3027,"tr":-36.72,"hv":379.113,"sv":1.78773,"cpv":0.8025},{"p":1.2154,"tb":-42.045,"hl":142.99,"cpl":1.3039,"tr":-36.026,"hv":379.52,"sv":1.78647,"cpv":0.8052},{"p":1.2558,"tb":-41.341,"hl":143.911,"cpl":1.3052,"tr":-35.328,"hv":379.929,"sv":1.78523,"cpv":0.8079},{"p":1.2975,"tb":-40.631,"hl":144.838,"cpl":1.3065,"tr":-34.624,"hv":380.34,"sv":1.78399,"cpv":0.8106},{"p":1.3406,"tb":-39.917,"hl":145.773,"cpl":1.3078,"tr":-33.916,"hv":380.753,"sv":1.78275,"cpv":0.8134},{"p":1.3852,"tb":-39.198,"hl":146.715,"cpl":1.3092,"tr":-33.203,"hv":381.168,"sv":1.78153,"cpv":0.8163},{"p":1.4312,"tb":-38.474,"hl":147.666,"cpl":1.3105,"tr":-32.484,"hv":381.585,"sv":1.7803,"cpv":0.8192},{"p":1.4787,"tb":-37.744,"hl":148.624,"cpl":1.3119,"tr":-31.761,"hv":382.004,"sv":1.77909,"cpv":0.8221},{"p":1.5279,"tb":-37.01,"hl":149.59,"cpl":1.3134,"tr":-31.032,"hv":382.425,"sv":1.77788,"cpv":0.825},{"p":1.5786,"tb":-36.27,"hl":150.564,"cpl":1.3148,"tr":-30.298,"hv":382.848,"sv":1.77668,"cpv":0.828},{"p":1.6311,"tb":-35.525,"hl":151.546,"cpl":1.3163,"tr":-29.559,"hv":383.273,"sv":1.77549,"cpv":0.8311},{"p":1.6853,"tb":-34.774,"hl":152.537,"cpl":1.3179,"tr":-28.815,"hv":383.7,"sv":1.7743,"cpv":0.8342},{"p":1.7413,"tb":-34.018,"hl":153.535,"cpl":1.3194,"tr":-28.065,"hv":384.129,"sv":1.77312,"cpv":0.8373},{"p":1.7991,"tb":-33.256,"hl":154.543,"cpl":1.321,"tr":-27.31,"hv":384.559,"sv":1.77195,"cpv":0.8405},{"p":1.8589,"tb":-32.489,"hl":155.559,"cpl":1.3226,"tr":-26.55,"hv":384.992,"sv":1.77078,"cpv":0.8437},{"p":1.9207,"tb":-31.716,"hl":156.583,"cpl":1.3243,"tr":-25.783,"hv":385.427,"sv":1.76962,"cpv":0.847},{"p":1.9845,"tb":-30.938,"hl":157.617,"cpl":1.326,"tr":-25.012,"hv":385.864,"sv":1.76847,"cpv":0.8503},{"p":2.0505,"tb":-30.153,"hl":158.66,"cpl":1.3277,"tr":-24.234,"hv":386.302,"sv":1.76732,"cpv":0.8537},{"p":2.1186,"tb":-29.363,"hl":159.711,"cpl":1.3295,"tr":-23.451,"hv":386.742,"sv":1.76618,"cpv":0.8571},{"p":2.189,"tb":-28.568,"hl":160.772,"cpl":1.3313,"tr":-22.663,"hv":387.185,"sv":1.76504,"cpv":0.8606},{"p":2.2617,"tb":-27.766,"hl":161.843,"cpl":1.3331,"tr":-21.868,"hv":387.629,"sv":1.76391,"cpv":0.8641},{"p":2.3369,"tb":-26.958,"hl":162.923,"cpl":1.335,"tr":-21.068,"hv":388.074,"sv":1.76279,"cpv":0.8677},{"p":2.4145,"tb":-26.144,"hl":164.012,"cpl":1.3369,"tr":-20.261,"hv":388.522,"sv":1.76167,"cpv":0.8713},{"p":2.4947,"tb":-25.324,"hl":165.112,"cpl":1.3389,"tr":-19.449,"hv":388.971,"sv":1.76056,"cpv":0.875},{"p":2.5776,"tb":-24.498,"hl":166.221,"cpl":1.3409,"tr":-18.631,"hv":389.422,"sv":1.75946,"cpv":0.8788},{"p":2.6633,"tb":-23.666,"hl":167.34,"cpl":1.343,"tr":-17.806,"hv":389.875,"sv":1.75836,"cpv":0.8826},{"p":2.7518,"tb":-22.827,"hl":168.47,"cpl":1.3451,"tr":-16.975,"hv":390.329,"sv":1.75727,"cpv":0.8865},{"p":2.8432,"tb":-21.982,"hl":169.61,"cpl":1.3472,"tr":-16.138,"hv":390.785,"sv":1.75618,"cpv":0.8904},{"p":2.9377,"tb":-21.13,"hl":170.761,"cpl":1.3494,"tr":-15.295,"hv":391.242,"sv":1.7551,"cpv":0.8944},{"p":3.0353,"tb":-20.272,"hl":171.923,"cpl":1.3517,"tr":-14.446,"hv":391.701,"sv":1.75402,"cpv":0.8985},{"p":3.1361,"tb":-19.407,"hl":173.095,"cpl":1.354,"tr":-13.59,"hv":392.161,"sv":1.75295,"cpv":0.9027},{"p":3.2403,"tb":-18.536,"hl":174.279,"cpl":1.3563,"tr":-12.727,"hv":392.623,"sv":1.75189,"cpv":0.9069},{"p":3.348,"tb":-17.658,"hl":175.473,"cpl":1.3587,"tr":-11.858,"hv":393.086,"sv":1.75083,"cpv":0.9112},{"p":3.4593,"tb":-16.773,"hl":176.68,"cpl":1.3612,"tr":-10.982,"hv":393.55,"sv":1.74977,"cpv":0.9156},{"p":3.5742,"tb":-15.881,"hl":177.898,"cpl":1.3637,"tr":-10.1,"hv":394.015,"sv":1.74873,"cpv":0.92},{"p":3.693,"tb":-14.982,"hl":179.127,"cpl":1.3663,"tr":-9.211,"hv":394.482,"sv":1.74768,"cpv":0.9245},{"p":3.8157,"tb":-14.076,"hl":180.369,"cpl":1.369,"tr":-8.315,"hv":394.95,"sv":1.74664,"cpv":0.9291},{"p":3.9425,"tb":-13.163,"hl":181.623,"cpl":1.3717,"tr":-7.412,"hv":395.418,"sv":1.74561,"cpv":0.9338},{"p":4.0735,"tb":-12.243,"hl":182.889,"cpl":1.3745,"tr":-6.502,"hv":395.888,"sv":1.74457,"cpv":0.9386},{"p":4.2088,"tb":-11.316,"hl":184.168,"cpl":1.3773,"tr":-5.585,"hv":396.358,"sv":1.74355,"cpv":0.9435},{"p":4.3486,"tb":-10.381,"hl":185.46,"cpl":1.3803,"tr":-4.662,"hv":396.83,"sv":1.74252,"cpv":0.9485},{"p":4.4931,"tb":-9.439,"hl":186.765,"cpl":1.3833,"tr":-3.73,"hv":397.302,"sv":1.7415,"cpv":0.9536},{"p":4.6424,"tb":-8.489,"hl":188.083,"cpl":1.3864,"tr":-2.792,"hv":397.774,"sv":1.74049,"cpv":0.9587},{"p":4.7967,"tb":-7.531,"hl":189.415,"cpl":1.3895,"tr":-1.847,"hv":398.247,"sv":1.73948,"cpv":0.964},{"p":4.9561,"tb":-6.566,"hl":190.76,"cpl":1.3928,"tr":-0.894,"hv":398.72,"sv":1.73847,"cpv":0.9694},{"p":5.1207,"tb":-5.593,"hl":192.12,"cpl":1.3961,"tr":0.067,"hv":399.193,"sv":1.73746,"cpv":0.9749},{"p":5.2909,"tb":-4.613,"hl":193.493,"cpl":1.3995,"tr":1.035,"hv":399.667,"sv":1.73645,"cpv":0.9805},{"p":5.4667,"tb":-3.624,"hl":194.882,"cpl":1.4031,"tr":2.011,"hv":400.14,"sv":1.73545,"cpv":0.9863},{"p":5.6483,"tb":-2.627,"hl":196.285,"cpl":1.4067,"tr":2.994,"hv":400.614,"sv":1.73445,"cpv":0.9922},{"p":5.836,"tb":-1.623,"hl":197.702,"cpl":1.4104,"tr":3.985,"hv":401.087,"sv":1.73345,"cpv":0.9982},{"p":6.0299,"tb":-0.61,"hl":199.136,"cpl":1.4143,"tr":4.984,"hv":401.559,"sv":1.73245,"cpv":1.0043},{"p":6.2303,"tb":0.412,"hl":200.584,"cpl":1.4182,"tr":5.99,"hv":402.031,"sv":1.73145,"cpv":1.0106},{"p":6.4373,"tb":1.441,"hl":202.049,"cpl":1.4223,"tr":7.005,"hv":402.502,"sv":1.73046,"cpv":1.017},{"p":6.6512,"tb":2.48,"hl":203.53,"cpl":1.4265,"tr":8.028,"hv":402.971,"sv":1.72946,"cpv":1.0236},{"p":6.8722,"tb":3.526,"hl":205.027,"cpl":1.4308,"tr":9.058,"hv":403.44,"sv":1.72846,"cpv":1.0304},{"p":7.1005,"tb":4.582,"hl":206.542,"cpl":1.4352,"tr":10.097,"hv":403.907,"sv":1.72746,"cpv":1.0374},{"p":7.3365,"tb":5.646,"hl":208.073,"cpl":1.4398,"tr":11.145,"hv":404.372,"sv":1.72646,"cpv":1.0445},{"p":7.5802,"tb":6.719,"hl":209.622,"cpl":1.4446,"tr":12.2,"hv":404.836,"sv":1.72545,"cpv":1.0518},{"p":7.8321,"tb":7.801,"hl":211.189,"cpl":1.4495,"tr":13.264,"hv":405.297,"sv":1.72444,"cpv":1.0594},{"p":8.0923,"tb":8.892,"hl":212.774,"cpl":1.4545,"tr":14.337,"hv":405.755,"sv":1.72343,"cpv":1.0671},{"p":8.3612,"tb":9.992,"hl":214.377,"cpl":1.4598,"tr":15.418,"hv":406.211,"sv":1.72241,"cpv":1.0751},{"p":8.6391,"tb":11.101,"hl":216.0,"cpl":1.4652,"tr":16.507,"hv":406.664,"sv":1.72139,"cpv":1.0834},{"p":8.9261,"tb":12.22,"hl":217.642,"cpl":1.4708,"tr":17.606,"hv":407.113,"sv":1.72036,"cpv":1.0919},{"p":9.2227,"tb":13.348,"hl":219.304,"cpl":1.4766,"tr":18.713,"hv":407.558,"sv":1.71933,"cpv":1.1006},{"p":9.5291,"tb":14.486,"hl":220.986,"cpl":1.4826,"tr":19.828,"hv":408.0,"sv":1.71828,"cpv":1.1097},{"p":9.8458,"tb":15.634,"hl":222.689,"cpl":1.4889,"tr":20.953,"hv":408.436,"sv":1.71723,"cpv":1.1191},{"p":10.1729,"tb":16.791,"hl":224.413,"cpl":1.4954,"tr":22.087,"hv":408.868,"sv":1.71617,"cpv":1.1288},{"p":10.5109,"tb":17.958,"hl":226.158,"cpl":1.5021,"tr":23.23,"hv":409.294,"sv":1.7151,"cpv":1.1389},{"p":10.8602,"tb":19.135,"hl":227.926,"cpl":1.5091,"tr":24.382,"hv":409.714,"sv":1.71401,"cpv":1.1494},{"p":11.221,"tb":20.322,"hl":229.717,"cpl":1.5164,"tr":25.543,"hv":410.128,"sv":1.71291,"cpv":1.1603},{"p":11.5939,"tb":21.519,"hl":231.531,"cpl":1.524,"tr":26.713,"hv":410.534,"sv":1.7118,"cpv":1.1716},{"p":11.9791,"tb":22.727,"hl":233.369,"cpl":1.532,"tr":27.892,"hv":410.933,"sv":1.71067,"cpv":1.1834},{"p":12.3771,"tb":23.945,"hl":235.231,"cpl":1.5402,"tr":29.081,"hv":411.324,"sv":1.70952,"cpv":1.1957},{"p":12.7884,"tb":25.173,"hl":237.119,"cpl":1.5489,"tr":30.279,"hv":411.706,"sv":1.70835,"cpv":1.2085},{"p":13.2133,"tb":26.412,"hl":239.032,"cpl":1.5579,"tr":31.487,"hv":412.078,"sv":1.70716,"cpv":1.222},{"p":13.6524,"tb":27.662,"hl":240.972,"cpl":1.5674,"tr":32.704,"hv":412.44,"sv":1.70595,"cpv":1.2361},{"p":14.106,"tb":28.922,"hl":242.939,"cpl":1.5773,"tr":33.931,"hv":412.791,"sv":1.70472,"cpv":1.2508},{"p":14.5747,"tb":30.194,"hl":244.934,"cpl":1.5878,"tr":35.168,"hv":413.129,"sv":1.70345,"cpv":1.2664},{"p":15.059,"tb":31.477,"hl":246.958,"cpl":1.5987,"tr":36.414,"hv":413.455,"sv":1.70216,"cpv":1.2827},{"p":15.5593,"tb":32.77,"hl":249.012,"cpl":1.6103,"tr":37.669,"hv":413.766,"sv":1.70084,"cpv":1.2999},{"p":16.0763,"tb":34.075,"hl":251.096,"cpl":1.6225,"tr":38.935,"hv":414.062,"sv":1.69948,"cpv":1.3181},{"p":16.6105,"tb":35.392,"hl":253.212,"cpl":1.6353,"tr":40.21,"hv":414.341,"sv":1.69808,"cpv":1.3374},{"p":17.1624,"tb":36.72,"hl":255.361,"cpl":1.649,"tr":41.495,"hv":414.603,"sv":1.69664,"cpv":1.3578},{"p":17.7327,"tb":38.059,"hl":257.544,"cpl":1.6634,"tr":42.789,"hv":414.846,"sv":1.69516,"cpv":1.3795},{"p":18.3219,"tb":39.411,"hl":259.762,"cpl":1.6788,"tr":44.093,"hv":415.068,"sv":1.69362,"cpv":1.4026},{"p":18.9307,"tb":40.774,"hl":262.015,"cpl":1.6952,"tr":45.407,"hv":415.267,"sv":1.69204,"cpv":1.4273},{"p":19.5597,"tb":42.149,"hl":264.307,"cpl":1.7127,"tr":46.731,"hv":415.442,"sv":1.6904,"cpv":1.4537},{"p":20.2096,"tb":43.536,"hl":266.638,"cpl":1.7315,"tr":48.065,"hv":415.591,"sv":1.68869,"cpv":1.4821},{"p":20.8811,"tb":44.935,"hl":269.01,"cpl":1.7517,"tr":49.408,"hv":415.711,"sv":1.68692,"cpv":1.5127},{"p":21.5749,"tb":46.347,"hl":271.424,"cpl":1.7734,"tr":50.761,"hv":415.799,"sv":1.68507,"cpv":1.5457},{"p":22.2918,"tb":47.771,"hl":273.884,"cpl":1.797,"tr":52.123,"hv":415.854,"sv":1.68314,"cpv":1.5816},{"p":23.0325,"tb":49.207,"hl":276.39,"cpl":1.8226,"tr":53.495,"hv":415.871,"sv":1.68112,"cpv":1.6206},{"p":23.7978,"tb":50.656,"hl":278.945,"cpl":1.8506,"tr":54.875,"hv":415.847,"sv":1.679,"cpv":1.6633},{"p":24.5885,"tb":52.118,"hl":281.553,"cpl":1.8813,"tr":56.266,"hv":415.778,"sv":1.67677,"cpv":1.7103},{"p":25.4055,"tb":53.592,"hl":284.215,"cpl":1.9152,"tr":57.665,"hv":415.66,"sv":1.67442,"cpv":1.7621},{"p":26.2497,"tb":55.08,"hl":286.937,"cpl":1.9529,"tr":59.073,"hv":415.488,"sv":1.67193,"cpv":1.8198},{"p":27.1219,"tb":56.58,"hl":289.721,"cpl":1.995,"tr":60.489,"hv":415.254,"sv":1.6693,"cpv":1.8843},{"p":28.0231,"tb":58.094,"hl":292.572,"cpl":2.0425,"tr":61.913,"hv":414.952,"sv":1.66649,"cpv":1.9571},{"p":28.9542,"tb":59.62,"hl":295.497,"cpl":2.0965,"tr":63.346,"hv":414.575,"sv":1.6635,"cpv":2.0398},{"p":29.9162,"tb":61.16,"hl":298.501,"cpl":2.1586,"tr":64.785,"hv":414.111,"sv":1.66028,"cpv":2.1348},{"p":30.9103,"tb":62.714,"hl":301.593,"cpl":2.2307,"tr":66.232,"hv":413.549,"sv":1.65682,"cpv":2.2451},{"p":32.9985,"tb":65.862,"hl":308.08,"cpl":2.4176,"tr":69.142,"hv":412.069,"sv":1.64899,"cpv":2.5297},{"p":34.095,"tb":67.457,"hl":311.503,"cpl":2.542,"tr":70.604,"hv":411.11,"sv":1.64451,"cpv":2.7181},{"p":35.2279,"tb":69.067,"hl":315.072,"cpl":2.6975,"tr":72.069,"hv":409.968,"sv":1.63955,"cpv":2.9524}]},"R290":{"nom":"R-290 (propane)","prp":3,"securite":"A3","note":"Hydrocarbure, corps pur. Classe A3 : inflammable. Charge et local réglementés.","glissement_max":0.0,"t_crit":96.74,"p_crit":42.512,"sat":[{"p":0.4,"tb":-61.223,"hl":58.155,"cpl":2.1675,"tr":-61.223,"hv":502.964,"sv":2.51578,"cpv":1.3406},{"p":0.4136,"tb":-60.599,"hl":59.51,"cpl":2.1698,"tr":-60.599,"hv":503.716,"sv":2.51315,"cpv":1.3436},{"p":0.4276,"tb":-59.971,"hl":60.874,"cpl":2.1721,"tr":-59.971,"hv":504.472,"sv":2.51054,"cpv":1.3466},{"p":0.4421,"tb":-59.339,"hl":62.25,"cpl":2.1745,"tr":-59.339,"hv":505.233,"sv":2.50795,"cpv":1.3497},{"p":0.4571,"tb":-58.702,"hl":63.636,"cpl":2.1769,"tr":-58.702,"hv":506.0,"sv":2.50537,"cpv":1.3528},{"p":0.4726,"tb":-58.061,"hl":65.034,"cpl":2.1793,"tr":-58.061,"hv":506.772,"sv":2.50281,"cpv":1.3559},{"p":0.4886,"tb":-57.416,"hl":66.443,"cpl":2.1818,"tr":-57.416,"hv":507.549,"sv":2.50027,"cpv":1.3591},{"p":0.5052,"tb":-56.766,"hl":67.862,"cpl":2.1843,"tr":-56.766,"hv":508.332,"sv":2.49774,"cpv":1.3623},{"p":0.5223,"tb":-56.112,"hl":69.294,"cpl":2.1868,"tr":-56.112,"hv":509.12,"sv":2.49524,"cpv":1.3656},{"p":0.54,"tb":-55.453,"hl":70.737,"cpl":2.1894,"tr":-55.453,"hv":509.913,"sv":2.49274,"cpv":1.3689},{"p":0.5583,"tb":-54.79,"hl":72.192,"cpl":2.192,"tr":-54.79,"hv":510.712,"sv":2.49027,"cpv":1.3723},{"p":0.5773,"tb":-54.122,"hl":73.658,"cpl":2.1947,"tr":-54.122,"hv":511.516,"sv":2.48781,"cpv":1.3757},{"p":0.5968,"tb":-53.45,"hl":75.137,"cpl":2.1974,"tr":-53.45,"hv":512.326,"sv":2.48538,"cpv":1.3791},{"p":0.6171,"tb":-52.773,"hl":76.628,"cpl":2.2001,"tr":-52.773,"hv":513.141,"sv":2.48296,"cpv":1.3826},{"p":0.638,"tb":-52.091,"hl":78.131,"cpl":2.2029,"tr":-52.091,"hv":513.962,"sv":2.48055,"cpv":1.3861},{"p":0.6597,"tb":-51.404,"hl":79.647,"cpl":2.2057,"tr":-51.404,"hv":514.788,"sv":2.47817,"cpv":1.3897},{"p":0.682,"tb":-50.712,"hl":81.176,"cpl":2.2086,"tr":-50.712,"hv":515.621,"sv":2.4758,"cpv":1.3933},{"p":0.7051,"tb":-50.016,"hl":82.717,"cpl":2.2115,"tr":-50.016,"hv":516.459,"sv":2.47346,"cpv":1.397},{"p":0.7291,"tb":-49.314,"hl":84.272,"cpl":2.2144,"tr":-49.314,"hv":517.302,"sv":2.47113,"cpv":1.4007},{"p":0.7538,"tb":-48.608,"hl":85.84,"cpl":2.2174,"tr":-48.608,"hv":518.152,"sv":2.46882,"cpv":1.4045},{"p":0.7793,"tb":-47.896,"hl":87.421,"cpl":2.2204,"tr":-47.896,"hv":519.007,"sv":2.46652,"cpv":1.4084},{"p":0.8058,"tb":-47.18,"hl":89.016,"cpl":2.2235,"tr":-47.18,"hv":519.869,"sv":2.46425,"cpv":1.4122},{"p":0.8331,"tb":-46.458,"hl":90.625,"cpl":2.2266,"tr":-46.458,"hv":520.736,"sv":2.46199,"cpv":1.4162},{"p":0.8614,"tb":-45.731,"hl":92.247,"cpl":2.2298,"tr":-45.731,"hv":521.609,"sv":2.45976,"cpv":1.4202},{"p":0.8906,"tb":-44.999,"hl":93.884,"cpl":2.2331,"tr":-44.999,"hv":522.488,"sv":2.45754,"cpv":1.4242},{"p":0.9208,"tb":-44.261,"hl":95.535,"cpl":2.2363,"tr":-44.261,"hv":523.373,"sv":2.45534,"cpv":1.4283},{"p":0.952,"tb":-43.518,"hl":97.201,"cpl":2.2397,"tr":-43.518,"hv":524.265,"sv":2.45317,"cpv":1.4325},{"p":0.9843,"tb":-42.769,"hl":98.882,"cpl":2.2431,"tr":-42.769,"hv":525.162,"sv":2.45101,"cpv":1.4367},{"p":1.0177,"tb":-42.015,"hl":100.578,"cpl":2.2465,"tr":-42.015,"hv":526.066,"sv":2.44887,"cpv":1.441},{"p":1.0522,"tb":-41.256,"hl":102.289,"cpl":2.25,"tr":-41.256,"hv":526.976,"sv":2.44675,"cpv":1.4453},{"p":1.0878,"tb":-40.491,"hl":104.015,"cpl":2.2535,"tr":-40.491,"hv":527.892,"sv":2.44465,"cpv":1.4497},{"p":1.1247,"tb":-39.72,"hl":105.757,"cpl":2.2571,"tr":-39.72,"hv":528.814,"sv":2.44257,"cpv":1.4542},{"p":1.1629,"tb":-38.943,"hl":107.515,"cpl":2.2608,"tr":-38.943,"hv":529.743,"sv":2.4405,"cpv":1.4587},{"p":1.2023,"tb":-38.16,"hl":109.289,"cpl":2.2645,"tr":-38.16,"hv":530.678,"sv":2.43846,"cpv":1.4633},{"p":1.2431,"tb":-37.372,"hl":111.08,"cpl":2.2683,"tr":-37.372,"hv":531.619,"sv":2.43644,"cpv":1.468},{"p":1.2852,"tb":-36.578,"hl":112.887,"cpl":2.2722,"tr":-36.578,"hv":532.567,"sv":2.43444,"cpv":1.4727},{"p":1.3288,"tb":-35.777,"hl":114.711,"cpl":2.2761,"tr":-35.777,"hv":533.521,"sv":2.43246,"cpv":1.4775},{"p":1.3739,"tb":-34.971,"hl":116.552,"cpl":2.2801,"tr":-34.971,"hv":534.481,"sv":2.4305,"cpv":1.4824},{"p":1.4205,"tb":-34.159,"hl":118.41,"cpl":2.2841,"tr":-34.159,"hv":535.449,"sv":2.42856,"cpv":1.4874},{"p":1.4687,"tb":-33.34,"hl":120.286,"cpl":2.2882,"tr":-33.34,"hv":536.422,"sv":2.42664,"cpv":1.4924},{"p":1.5185,"tb":-32.515,"hl":122.18,"cpl":2.2924,"tr":-32.515,"hv":537.402,"sv":2.42474,"cpv":1.4975},{"p":1.57,"tb":-31.683,"hl":124.092,"cpl":2.2967,"tr":-31.683,"hv":538.389,"sv":2.42286,"cpv":1.5027},{"p":1.6232,"tb":-30.846,"hl":126.023,"cpl":2.301,"tr":-30.846,"hv":539.383,"sv":2.42101,"cpv":1.508},{"p":1.6782,"tb":-30.001,"hl":127.972,"cpl":2.3054,"tr":-30.001,"hv":540.383,"sv":2.41917,"cpv":1.5133},{"p":1.7352,"tb":-29.15,"hl":129.94,"cpl":2.3099,"tr":-29.15,"hv":541.389,"sv":2.41735,"cpv":1.5188},{"p":1.794,"tb":-28.293,"hl":131.928,"cpl":2.3144,"tr":-28.293,"hv":542.402,"sv":2.41556,"cpv":1.5243},{"p":1.8548,"tb":-27.429,"hl":133.935,"cpl":2.3191,"tr":-27.429,"hv":543.422,"sv":2.41378,"cpv":1.5299},{"p":1.9177,"tb":-26.558,"hl":135.962,"cpl":2.3238,"tr":-26.558,"hv":544.449,"sv":2.41203,"cpv":1.5356},{"p":1.9828,"tb":-25.68,"hl":138.01,"cpl":2.3286,"tr":-25.68,"hv":545.482,"sv":2.4103,"cpv":1.5415},{"p":2.05,"tb":-24.795,"hl":140.078,"cpl":2.3335,"tr":-24.795,"hv":546.523,"sv":2.40859,"cpv":1.5474},{"p":2.1195,"tb":-23.903,"hl":142.166,"cpl":2.3384,"tr":-23.903,"hv":547.569,"sv":2.40689,"cpv":1.5534},{"p":2.1914,"tb":-23.004,"hl":144.276,"cpl":2.3435,"tr":-23.004,"hv":548.623,"sv":2.40523,"cpv":1.5595},{"p":2.2657,"tb":-22.098,"hl":146.408,"cpl":2.3487,"tr":-22.098,"hv":549.683,"sv":2.40358,"cpv":1.5657},{"p":2.3426,"tb":-21.185,"hl":148.561,"cpl":2.3539,"tr":-21.185,"hv":550.75,"sv":2.40195,"cpv":1.572},{"p":2.422,"tb":-20.264,"hl":150.737,"cpl":2.3593,"tr":-20.264,"hv":551.824,"sv":2.40034,"cpv":1.5784},{"p":2.5041,"tb":-19.336,"hl":152.936,"cpl":2.3647,"tr":-19.336,"hv":552.905,"sv":2.39876,"cpv":1.585},{"p":2.5891,"tb":-18.401,"hl":155.157,"cpl":2.3703,"tr":-18.401,"hv":553.992,"sv":2.3972,"cpv":1.5917},{"p":2.6769,"tb":-17.458,"hl":157.402,"cpl":2.3759,"tr":-17.458,"hv":555.086,"sv":2.39565,"cpv":1.5985},{"p":2.7676,"tb":-16.507,"hl":159.67,"cpl":2.3817,"tr":-16.507,"hv":556.186,"sv":2.39413,"cpv":1.6054},{"p":2.8615,"tb":-15.548,"hl":161.963,"cpl":2.3876,"tr":-15.548,"hv":557.294,"sv":2.39263,"cpv":1.6124},{"p":2.9585,"tb":-14.582,"hl":164.28,"cpl":2.3936,"tr":-14.582,"hv":558.407,"sv":2.39115,"cpv":1.6196},{"p":3.0589,"tb":-13.607,"hl":166.623,"cpl":2.3997,"tr":-13.607,"hv":559.528,"sv":2.38969,"cpv":1.6269},{"p":3.1626,"tb":-12.625,"hl":168.99,"cpl":2.4059,"tr":-12.625,"hv":560.655,"sv":2.38825,"cpv":1.6344},{"p":3.2698,"tb":-11.635,"hl":171.384,"cpl":2.4123,"tr":-11.635,"hv":561.789,"sv":2.38684,"cpv":1.642},{"p":3.3807,"tb":-10.636,"hl":173.804,"cpl":2.4188,"tr":-10.636,"hv":562.929,"sv":2.38544,"cpv":1.6498},{"p":3.4954,"tb":-9.629,"hl":176.251,"cpl":2.4254,"tr":-9.629,"hv":564.075,"sv":2.38406,"cpv":1.6577},{"p":3.6139,"tb":-8.614,"hl":178.725,"cpl":2.4322,"tr":-8.614,"hv":565.228,"sv":2.38271,"cpv":1.6658},{"p":3.7365,"tb":-7.59,"hl":181.226,"cpl":2.4391,"tr":-7.59,"hv":566.387,"sv":2.38137,"cpv":1.674},{"p":3.8632,"tb":-6.557,"hl":183.756,"cpl":2.4462,"tr":-6.557,"hv":567.553,"sv":2.38006,"cpv":1.6825},{"p":3.9942,"tb":-5.516,"hl":186.315,"cpl":2.4534,"tr":-5.516,"hv":568.724,"sv":2.37876,"cpv":1.6911},{"p":4.1296,"tb":-4.466,"hl":188.902,"cpl":2.4607,"tr":-4.466,"hv":569.902,"sv":2.37749,"cpv":1.6999},{"p":4.2697,"tb":-3.408,"hl":191.52,"cpl":2.4682,"tr":-3.408,"hv":571.085,"sv":2.37623,"cpv":1.7089},{"p":4.4145,"tb":-2.34,"hl":194.168,"cpl":2.4759,"tr":-2.34,"hv":572.275,"sv":2.37499,"cpv":1.7181},{"p":4.5642,"tb":-1.263,"hl":196.847,"cpl":2.4838,"tr":-1.263,"hv":573.47,"sv":2.37377,"cpv":1.7275},{"p":4.719,"tb":-0.177,"hl":199.557,"cpl":2.4918,"tr":-0.177,"hv":574.671,"sv":2.37257,"cpv":1.7371},{"p":4.879,"tb":0.918,"hl":202.299,"cpl":2.5001,"tr":0.918,"hv":575.877,"sv":2.37139,"cpv":1.747},{"p":5.0444,"tb":2.023,"hl":205.074,"cpl":2.5085,"tr":2.023,"hv":577.088,"sv":2.37023,"cpv":1.7571},{"p":5.2155,"tb":3.137,"hl":207.882,"cpl":2.5171,"tr":3.137,"hv":578.305,"sv":2.36908,"cpv":1.7675},{"p":5.3924,"tb":4.261,"hl":210.724,"cpl":2.5259,"tr":4.261,"hv":579.526,"sv":2.36796,"cpv":1.7781},{"p":5.5752,"tb":5.394,"hl":213.601,"cpl":2.535,"tr":5.394,"hv":580.753,"sv":2.36684,"cpv":1.789},{"p":5.7643,"tb":6.537,"hl":216.513,"cpl":2.5442,"tr":6.537,"hv":581.984,"sv":2.36575,"cpv":1.8002},{"p":5.9598,"tb":7.69,"hl":219.461,"cpl":2.5538,"tr":7.69,"hv":583.219,"sv":2.36467,"cpv":1.8117},{"p":6.1619,"tb":8.854,"hl":222.445,"cpl":2.5635,"tr":8.854,"hv":584.458,"sv":2.3636,"cpv":1.8234},{"p":6.3709,"tb":10.027,"hl":225.467,"cpl":2.5735,"tr":10.027,"hv":585.701,"sv":2.36255,"cpv":1.8356},{"p":6.5869,"tb":11.21,"hl":228.527,"cpl":2.5838,"tr":11.21,"hv":586.948,"sv":2.36151,"cpv":1.848},{"p":6.8103,"tb":12.404,"hl":231.625,"cpl":2.5943,"tr":12.404,"hv":588.197,"sv":2.36049,"cpv":1.8609},{"p":7.0412,"tb":13.609,"hl":234.764,"cpl":2.6051,"tr":13.609,"hv":589.45,"sv":2.35948,"cpv":1.8741},{"p":7.28,"tb":14.824,"hl":237.943,"cpl":2.6163,"tr":14.824,"hv":590.705,"sv":2.35848,"cpv":1.8877},{"p":7.5269,"tb":16.05,"hl":241.163,"cpl":2.6277,"tr":16.05,"hv":591.962,"sv":2.35749,"cpv":1.9017},{"p":7.7822,"tb":17.286,"hl":244.426,"cpl":2.6395,"tr":17.286,"hv":593.221,"sv":2.35651,"cpv":1.9162},{"p":8.0461,"tb":18.534,"hl":247.731,"cpl":2.6516,"tr":18.534,"hv":594.482,"sv":2.35554,"cpv":1.9311},{"p":8.3189,"tb":19.792,"hl":251.081,"cpl":2.6641,"tr":19.792,"hv":595.743,"sv":2.35457,"cpv":1.9466},{"p":8.601,"tb":21.062,"hl":254.476,"cpl":2.677,"tr":21.062,"hv":597.004,"sv":2.35362,"cpv":1.9625},{"p":8.8927,"tb":22.343,"hl":257.917,"cpl":2.6903,"tr":22.343,"hv":598.265,"sv":2.35266,"cpv":1.979},{"p":9.1943,"tb":23.635,"hl":261.405,"cpl":2.704,"tr":23.635,"hv":599.525,"sv":2.35171,"cpv":1.9962},{"p":9.5061,"tb":24.939,"hl":264.941,"cpl":2.7182,"tr":24.939,"hv":600.784,"sv":2.35076,"cpv":2.0139},{"p":9.8285,"tb":26.255,"hl":268.527,"cpl":2.7329,"tr":26.255,"hv":602.04,"sv":2.34982,"cpv":2.0323},{"p":10.1618,"tb":27.582,"hl":272.163,"cpl":2.748,"tr":27.582,"hv":603.293,"sv":2.34887,"cpv":2.0514},{"p":10.5064,"tb":28.922,"hl":275.85,"cpl":2.7637,"tr":28.922,"hv":604.543,"sv":2.34791,"cpv":2.0712},{"p":10.8627,"tb":30.273,"hl":279.591,"cpl":2.78,"tr":30.273,"hv":605.787,"sv":2.34695,"cpv":2.0919},{"p":11.231,"tb":31.636,"hl":283.386,"cpl":2.7969,"tr":31.636,"hv":607.026,"sv":2.34599,"cpv":2.1134},{"p":11.6119,"tb":33.012,"hl":287.236,"cpl":2.8145,"tr":33.012,"hv":608.259,"sv":2.34501,"cpv":2.1359},{"p":12.0057,"tb":34.4,"hl":291.144,"cpl":2.8328,"tr":34.4,"hv":609.483,"sv":2.34402,"cpv":2.1593},{"p":12.4128,"tb":35.801,"hl":295.11,"cpl":2.8518,"tr":35.801,"hv":610.699,"sv":2.34301,"cpv":2.1839},{"p":12.8338,"tb":37.214,"hl":299.136,"cpl":2.8716,"tr":37.214,"hv":611.904,"sv":2.34199,"cpv":2.2095},{"p":13.269,"tb":38.64,"hl":303.223,"cpl":2.8923,"tr":38.64,"hv":613.098,"sv":2.34094,"cpv":2.2365},{"p":13.719,"tb":40.078,"hl":307.374,"cpl":2.9139,"tr":40.078,"hv":614.278,"sv":2.33987,"cpv":2.2648},{"p":14.1842,"tb":41.53,"hl":311.591,"cpl":2.9366,"tr":41.53,"hv":615.443,"sv":2.33876,"cpv":2.2946},{"p":14.6652,"tb":42.994,"hl":315.874,"cpl":2.9604,"tr":42.994,"hv":616.592,"sv":2.33763,"cpv":2.326},{"p":15.1625,"tb":44.472,"hl":320.227,"cpl":2.9854,"tr":44.472,"hv":617.721,"sv":2.33645,"cpv":2.3591},{"p":15.6767,"tb":45.963,"hl":324.651,"cpl":3.0117,"tr":45.963,"hv":618.829,"sv":2.33523,"cpv":2.3942},{"p":16.2084,"tb":47.467,"hl":329.149,"cpl":3.0395,"tr":47.467,"hv":619.914,"sv":2.33395,"cpv":2.4314},{"p":16.758,"tb":48.985,"hl":333.723,"cpl":3.0688,"tr":48.985,"hv":620.973,"sv":2.33262,"cpv":2.471},{"p":17.3263,"tb":50.517,"hl":338.375,"cpl":3.1,"tr":50.517,"hv":622.003,"sv":2.33123,"cpv":2.5132},{"p":17.9139,"tb":52.062,"hl":343.109,"cpl":3.1331,"tr":52.062,"hv":623.001,"sv":2.32976,"cpv":2.5582},{"p":18.5214,"tb":53.62,"hl":347.927,"cpl":3.1683,"tr":53.62,"hv":623.962,"sv":2.32821,"cpv":2.6065},{"p":19.1495,"tb":55.193,"hl":352.833,"cpl":3.2061,"tr":55.193,"hv":624.883,"sv":2.32657,"cpv":2.6584},{"p":19.7989,"tb":56.779,"hl":357.83,"cpl":3.2465,"tr":56.779,"hv":625.76,"sv":2.32483,"cpv":2.7144},{"p":20.4703,"tb":58.379,"hl":362.922,"cpl":3.2901,"tr":58.379,"hv":626.587,"sv":2.32297,"cpv":2.7751},{"p":21.1645,"tb":59.993,"hl":368.113,"cpl":3.3373,"tr":59.993,"hv":627.358,"sv":2.32099,"cpv":2.8411},{"p":21.8822,"tb":61.621,"hl":373.408,"cpl":3.3885,"tr":61.621,"hv":628.066,"sv":2.31885,"cpv":2.9135},{"p":22.6243,"tb":63.263,"hl":378.813,"cpl":3.4444,"tr":63.263,"hv":628.705,"sv":2.31655,"cpv":2.9932},{"p":23.3915,"tb":64.919,"hl":384.332,"cpl":3.5057,"tr":64.919,"hv":629.265,"sv":2.31407,"cpv":3.0817},{"p":24.1848,"tb":66.589,"hl":389.973,"cpl":3.5735,"tr":66.589,"hv":629.737,"sv":2.31137,"cpv":3.1807},{"p":25.0049,"tb":68.273,"hl":395.743,"cpl":3.6489,"tr":68.273,"hv":630.109,"sv":2.30843,"cpv":3.2922},{"p":25.8529,"tb":69.971,"hl":401.65,"cpl":3.7334,"tr":69.971,"hv":630.369,"sv":2.30523,"cpv":3.4191},{"p":26.7296,"tb":71.683,"hl":407.705,"cpl":3.829,"tr":71.683,"hv":630.501,"sv":2.30171,"cpv":3.5648},{"p":27.6361,"tb":73.408,"hl":413.919,"cpl":3.9381,"tr":73.408,"hv":630.488,"sv":2.29784,"cpv":3.7338},{"p":28.5733,"tb":75.147,"hl":420.307,"cpl":4.0643,"tr":75.147,"hv":630.31,"sv":2.29357,"cpv":3.932},{"p":29.5423,"tb":76.9,"hl":426.885,"cpl":4.2121,"tr":76.9,"hv":629.939,"sv":2.28882,"cpv":4.1676},{"p":30.5441,"tb":78.665,"hl":433.674,"cpl":4.3882,"tr":78.665,"hv":629.346,"sv":2.28352,"cpv":4.4517},{"p":31.5799,"tb":80.444,"hl":440.7,"cpl":4.6019,"tr":80.444,"hv":628.489,"sv":2.27756,"cpv":4.8008},{"p":32.6509,"tb":82.235,"hl":447.998,"cpl":4.8679,"tr":82.235,"hv":627.318,"sv":2.27082,"cpv":5.2397},{"p":33.7581,"tb":84.038,"hl":455.614,"cpl":5.209,"tr":84.038,"hv":625.762,"sv":2.26312,"cpv":5.8075},{"p":34.9029,"tb":85.853,"hl":463.61,"cpl":5.6639,"tr":85.853,"hv":623.727,"sv":2.25419,"cpv":6.5708},{"p":36.0865,"tb":87.678,"hl":472.08,"cpl":6.3039,"tr":87.678,"hv":621.073,"sv":2.24369,"cpv":7.6512},{"p":37.3103,"tb":89.513,"hl":481.171,"cpl":7.2752,"tr":89.513,"hv":617.58,"sv":2.23103,"cpv":9.2974},{"p":38.5756,"tb":91.356,"hl":491.139,"cpl":8.9337,"tr":91.356,"hv":612.873,"sv":2.21521,"cpv":12.1068},{"p":39.8838,"tb":93.205,"hl":502.516,"cpl":12.4215,"tr":93.205,"hv":606.186,"sv":2.19421,"cpv":17.9585},{"p":41.2363,"tb":95.056,"hl":516.846,"cpl":24.3578,"tr":95.056,"hv":595.368,"sv":2.16225,"cpv":37.2729}]}};/*FLUIDES-EMBARQUES-FIN*/
+
+/* ═══════════ ÉTAT GLOBAL ═══════════ */
+var FLUIDES=FLUIDES_EMBARQUEES;   // tables embarquées : fichier autonome
+var fluideCourant='R449A';
+var mesures=[];            // dernières mesures reçues de la source
+var affectations={};       // cle de point de mesure -> numéro de série TAPÉ par l'élève
+var etatServeur=null;
+var MODE='autonome';       // TRANSPORT : 'serveur' si un serveur répond, sinon 'autonome'
+var modeSource='SIMULATION';  // PROVENANCE des mesures : 'SIMULATION' ou 'REEL'
+
+/* ═══════════ SIMULATEUR EMBARQUÉ ═══════════
+   Portage JavaScript de acquisition/simulateur.py : la page fonctionne seule
+   (clé USB, double-clic, mise en ligne). Si un serveur d'acquisition répond,
+   la page bascule d'elle-même dessus et cette simulation s'éteint. */
+var SIM=(function(){
+  var PARC=[
+    ['31207744','Manomètre BLE','pression','hp'],
+    ['31207891','Manomètre BLE','pression','bp'],
+    ['42118056','Pince T° BLE','temperature','sortie_condenseur'],
+    ['42118093','Pince T° BLE','temperature','entree_detendeur'],
+    ['42118117','Pince T° BLE','temperature','sortie_evaporateur'],
+    ['42118342','Pince T° BLE','temperature','entree_compresseur'],
+    ['42117905','Pince T° BLE','temperature','ambiance_froid'],
+    ['50034271','Thermomètre air BLE','temperature','air_reprise_condenseur'],
+    ['50034288','Thermomètre air BLE','temperature','air_souffle_condenseur']];
+  var NOMINAL={t_evaporation:-8,t_condensation:40,surchauffe:6,sous_refroidissement:5,
+    rechauffement_aspiration:2,refroidissement_liquide:1,
+    air_reprise_condenseur:25,ecart_air_condenseur:8,ambiance_froid:4};
+  var DEFAUTS={
+    condenseur_encrasse:{libelle:'Condenseur encrassé',indice:'La HP grimpe, l’air ressort plus chaud du condenseur.',
+      effets:{t_condensation:13,sous_refroidissement:-2,ecart_air_condenseur:5}},
+    detendeur_ferme:{libelle:'Détendeur trop fermé',indice:'La BP s’effondre et la surchauffe part très haut.',
+      effets:{t_evaporation:-11,surchauffe:16,sous_refroidissement:3,ambiance_froid:4}},
+    manque_charge:{libelle:'Manque de fluide',indice:'BP basse, surchauffe forte, plus de sous-refroidissement.',
+      effets:{t_evaporation:-8,surchauffe:12,sous_refroidissement:-4.8,t_condensation:-4,ambiance_froid:3}},
+    surcharge:{libelle:'Surcharge en fluide',indice:'HP haute et sous-refroidissement anormalement grand.',
+      effets:{t_condensation:9,sous_refroidissement:9,surchauffe:-2}},
+    evaporateur_givre:{libelle:'Évaporateur givré',indice:'BP qui descend lentement, la chambre ne tient plus.',
+      effets:{t_evaporation:-7,surchauffe:4,ambiance_froid:5}}};
+  var actifs={},coupees={},batteries={},t0=Date.now();
+  PARC.forEach(function(p){batteries[p[0]]=62+Math.floor(Math.random()*38)});
+  function bruit(k){return (Math.random()+Math.random()+Math.random()-1.5)*k}
+  function pointDeFonctionnement(){
+    var pf={};for(var k in NOMINAL)pf[k]=NOMINAL[k];
+    for(var c in actifs){var e=DEFAUTS[c].effets;for(var g in e)pf[g]+=e[g]}
+    var t=(Date.now()-t0)/1000;
+    pf.t_condensation+=1.6*Math.sin(t/47);
+    pf.t_evaporation+=0.9*Math.sin(t/31+1.2);
+    pf.surchauffe+=0.5*Math.sin(t/23+0.4);
+    pf.ambiance_froid+=0.7*Math.sin(t/61);
+    pf.surchauffe=Math.max(0.2,pf.surchauffe);
+    pf.sous_refroidissement=Math.max(0,pf.sous_refroidissement);
+    return pf;
+  }
+  function valeursParEmplacement(pf){
+    var pBP=pressionPourTsat(pf.t_evaporation,'tr');
+    var pHP=pressionPourTsat(pf.t_condensation,'tb');
+    var tSevap=pf.t_evaporation+pf.surchauffe;
+    var tScond=pf.t_condensation-pf.sous_refroidissement;
+    return {bp:pBP-P_ATMO,hp:pHP-P_ATMO,
+      sortie_evaporateur:tSevap,entree_compresseur:tSevap+pf.rechauffement_aspiration,
+      sortie_condenseur:tScond,entree_detendeur:tScond-pf.refroidissement_liquide,
+      air_reprise_condenseur:pf.air_reprise_condenseur,
+      air_souffle_condenseur:pf.air_reprise_condenseur+pf.ecart_air_condenseur,
+      ambiance_froid:pf.ambiance_froid};
+  }
+  return {
+    mesures:function(){
+      var v=valeursParEmplacement(pointDeFonctionnement());
+      return PARC.map(function(p){
+        var serie=p[0],modele=p[1],grandeur=p[2],empl=p[3];
+        if(coupees[serie])return {serie:serie,modele:modele,grandeur:grandeur,valeur:null,
+          unite:grandeur==='pression'?'bar':'°C',etat:'perdue',batterie:batteries[serie],horodatage:0,rssi:null};
+        var val=v[empl]+bruit(grandeur==='pression'?0.02:0.08);
+        return {serie:serie,modele:modele,grandeur:grandeur,valeur:Math.round(val*100)/100,
+          unite:grandeur==='pression'?'bar':'°C',etat:'connectee',batterie:batteries[serie],
+          horodatage:Date.now()/1000,rssi:-52-Math.floor(Math.random()*26)};
+      });
+    },
+    defauts:function(){
+      var l=[];for(var c in DEFAUTS)l.push({cle:c,libelle:DEFAUTS[c].libelle,indice:DEFAUTS[c].indice,actif:!!actifs[c]});
+      return l;
+    },
+    basculerDefaut:function(c){if(actifs[c])delete actifs[c];else actifs[c]=true},
+    basculerSonde:function(s){if(coupees[s])delete coupees[s];else coupees[s]=true},
+    reinitialiser:function(){actifs={};coupees={}}
+  };
+})();
+
+/* ═══════════ SOURCE UNIFIÉE (serveur ou simulation embarquée) ═══════════ */
+/* Toute ACTION part en POST JSON (durcissement Lot 5) : le GET ne modifie
+   jamais rien côté serveur. Les lectures restent des GET simples. */
+function ordonner(chemin,corps){
+  return fetch(chemin,{method:'POST',headers:{'Content-Type':'application/json'},
+                       body:JSON.stringify(corps||{})})
+         .then(function(r){return r.json()});
+}
+/* Échappement HTML : les noms de sondes viennent de la radio, on ne les
+   insère jamais tels quels dans la page (le serveur assainit déjà, ceci
+   est la deuxième ceinture). */
+function ech(t){
+  return String(t).replace(/[&<>"']/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+function obtenirMesures(cb){
+  if(MODE==='serveur'){
+    fetch('/api/mesures').then(function(r){return r.json()}).then(function(d){
+      modeSource=d.mode||'SIMULATION';
+      cb(d.mesures);
+    }).catch(function(){
+      document.getElementById('dot-status').classList.remove('on');
+      document.getElementById('txt-status').textContent='Serveur perdu';
+    });
+  } else {
+    // Fichier autonome : toujours de la simulation, valeurs fraîches.
+    modeSource='SIMULATION';
+    cb(SIM.mesures().map(function(m){m.source='simulation';m.qualite='ok';return m}));
+  }
+}
+function changerModeSource(valeur){
+  if(MODE!=='serveur')return;
+  ordonner('/api/mode',{valeur:valeur}).then(function(d){
+    modeSource=d.mode; affectations={};   // on repart propre : les séries diffèrent entre sim et réel
+    document.querySelectorAll('#points-list input').forEach(function(i){i.value=''});
+    majSondes();
+  });
+}
+function majBandeauMode(){
+  var b=document.getElementById('bandeau-mode');
+  var t=document.getElementById('bandeau-mode-txt');
+  var boutons=document.getElementById('bandeau-mode-boutons');
+  var reel=(modeSource==='REEL');
+  b.style.background=reel?'var(--good-bg)':'var(--orange-warm)';
+  b.style.color=reel?'#1a5a34':'#8a4b12';
+  b.style.border='2px solid '+(reel?'var(--good)':'var(--orange-light)');
+  t.innerHTML=reel
+    ? '🟢 MODE R&Eacute;EL — les mesures viennent de vos sondes Bluetooth.'
+    : '🟠 MODE SIMULATION — les valeurs affich&eacute;es sont simul&eacute;es, ce ne sont pas de vraies mesures.';
+  // Le choix du mode n'existe qu'avec le serveur (le fichier autonome est toujours simulé).
+  boutons.style.display=(MODE==='serveur')?'inline-flex':'none';
+  var bs=document.getElementById('btn-mode-sim'), br=document.getElementById('btn-mode-reel');
+  if(bs&&br){
+    bs.className='btn btn-sm '+(reel?'btn-ol':'btn-o');
+    br.className='btn btn-sm '+(reel?'btn-g':'btn-ol');
+  }
+}
+function obtenirDefauts(cb){
+  if(MODE==='serveur'){
+    fetch('/api/etat').then(function(r){return r.json()}).then(function(d){cb(d.defauts)}).catch(function(){});
+  } else cb(SIM.defauts());
+}
+function basculerDefautSource(cle,fait){
+  if(MODE==='serveur') ordonner('/api/defaut',{cle:cle}).then(fait);
+  else {SIM.basculerDefaut(cle);fait();}
+}
+function basculerSondeSource(serie,fait){
+  if(MODE==='serveur') ordonner('/api/sonde',{serie:serie}).then(fait);
+  else {SIM.basculerSonde(serie);fait();}
+}
+function reinitialiserSource(fait){
+  if(MODE==='serveur') ordonner('/api/reinitialiser').then(fait);
+  else {SIM.reinitialiser();fait();}
+}
+
+var POINTS_MESURE=[
+  {cle:'',            libelle:'— non affectée —'},
+  {cle:'hp',          libelle:'Pression HP',                       grandeur:'pression'},
+  {cle:'bp',          libelle:'Pression BP',                       grandeur:'pression'},
+  {cle:'sortie_condenseur',  libelle:'Sortie condenseur',          grandeur:'temperature'},
+  {cle:'entree_detendeur',   libelle:'Entrée détendeur',           grandeur:'temperature'},
+  {cle:'sortie_evaporateur', libelle:'Sortie évaporateur',         grandeur:'temperature'},
+  {cle:'entree_compresseur', libelle:'Entrée compresseur',         grandeur:'temperature'},
+  {cle:'air_reprise_condenseur', libelle:'Air repris condenseur',  grandeur:'temperature'},
+  {cle:'air_souffle_condenseur', libelle:'Air soufflé condenseur', grandeur:'temperature'},
+  {cle:'ambiance_froid',     libelle:'Ambiance volume froid',      grandeur:'temperature'},
+];
+var P_ATMO=1.013;
+
+/* ═══════════ ONGLETS ═══════════ */
+function showTab(n){
+  document.querySelectorAll('.tab').forEach(function(t,i){
+    var actif=(i===n);
+    t.classList.toggle('on',actif);
+    t.setAttribute('aria-selected',actif?'true':'false');
+    t.tabIndex=actif?0:-1;          // un seul arrêt de tabulation dans la barre
+  });
+  document.querySelectorAll('.tab-pane').forEach(function(p,i){p.classList.toggle('on',i===n)});
+}
+/* Navigation clavier du bandeau d'onglets : flèches gauche/droite, Début/Fin. */
+document.addEventListener('keydown',function(e){
+  if(!e.target.classList||!e.target.classList.contains('tab'))return;
+  var tabs=Array.prototype.filter.call(document.querySelectorAll('.tab'),
+    function(t){return t.offsetParent!==null});   // onglets visibles seulement
+  var i=tabs.indexOf(e.target);
+  if(i<0)return;
+  var cible=null;
+  if(e.key==='ArrowRight')cible=tabs[(i+1)%tabs.length];
+  else if(e.key==='ArrowLeft')cible=tabs[(i-1+tabs.length)%tabs.length];
+  else if(e.key==='Home')cible=tabs[0];
+  else if(e.key==='End')cible=tabs[tabs.length-1];
+  if(cible){e.preventDefault();cible.click();cible.focus()}
+});
+
+/* ═══════════ MODE PROFESSEUR / MODE ÉLÈVE (Lot 7) ═══════════
+   Par défaut la page s'ouvre en mode ÉLÈVE : le pupitre professeur
+   (injection de défauts, coupures simulées) est masqué — l'élève ne doit
+   pas voir quel défaut est injecté pendant un diagnostic. Le professeur
+   ouvre SA page avec ?prof=1 (raccourci dédié « Banc — professeur »).
+   C'est un cloisonnement pédagogique de poste local, pas une protection
+   contre un élève déterminé : aucune donnée sensible derrière. */
+var MODE_PROF=new URLSearchParams(location.search).has('prof');
+if(!MODE_PROF){
+  var tp=document.getElementById('tab-2');
+  if(tp)tp.style.display='none';
+}
+
+
+/* ═══════════ SONDES ═══════════ */
+function majSondes(){
+  if(rejeu.actif) return;   // pendant un rejeu, les mesures viennent de l'enregistrement
+  obtenirMesures(function(ms){
+    // Source UNIQUE : les mesures viennent toutes du mode actif (sim OU réel),
+    // jamais un mélange. Une mesure par (sonde, grandeur), avec sa provenance.
+    mesures=ms;
+    majBandeauMode();
+    var dot=document.getElementById('dot-status');
+    var txt=document.getElementById('txt-status');
+    dot.classList.add('on');
+    var series={};
+    mesures.forEach(function(m){series[m.serie]=(m.etat==='connectee')});
+    var nbSondes=Object.keys(series).length;
+    var nbCo=Object.keys(series).filter(function(s){return series[s]}).length;
+    txt.textContent=(modeSource==='SIMULATION'?'Simulation · ':'Réel · ')+nbCo+' / '+nbSondes+' appareils';
+    // Le bouton d'extinction n'a de sens qu'avec le serveur local.
+    var be=document.getElementById('btn-eteindre');
+    if(be) be.style.display=(MODE==='serveur')?'inline-flex':'none';
+    dessinerListeSondes();
+    majEtatPoints();
+    majEtatSaisieManuelle();
+    calculerEtTracer();
+  });
+}
+
+function dessinerListeSondes(){
+  var cont=document.getElementById('sondes-list');
+  // Regroupe les mesures par sonde (une sonde peut porter plusieurs grandeurs,
+  // ex. l'anémomètre : température + vitesse).
+  var parSonde={};
+  mesures.forEach(function(m){
+    var id='row-'+normaliserSerie(m.serie);
+    if(!parSonde[id]) parSonde[id]={serie:m.serie,modele:m.modele,etat:m.etat,batterie:m.batterie,vals:[]};
+    if(m.etat==='connectee') parSonde[id].etat='connectee';
+    if(m.batterie!==null && m.batterie!==undefined) parSonde[id].batterie=m.batterie;
+    if(m.valeur!==null) parSonde[id].vals.push(m.valeur.toFixed(m.grandeur==='pression'?2:1)+' '+m.unite);
+  });
+  // Retire les lignes de sondes disparues (changement de mode).
+  Array.prototype.slice.call(cont.children).forEach(function(el){
+    if(!parSonde[el.id]) el.remove();
+  });
+  Object.keys(parSonde).forEach(function(id){
+    var s=parSonde[id];
+    var ligne=document.getElementById(id);
+    if(!ligne){
+      ligne=document.createElement('div');
+      ligne.className='sonde-row';
+      ligne.id=id;
+      ligne.innerHTML=
+        '<span class="sr-dot"></span>'+
+        '<span class="sr-serie">N&deg; '+s.serie+'</span>'+
+        '<span class="sr-modele">'+s.modele+'</span>'+
+        '<span class="sr-val"></span>'+
+        '<span class="sr-batt"></span>';
+      cont.appendChild(ligne);
+    }
+    ligne.classList.toggle('perdue',s.etat!=='connectee');
+    ligne.querySelector('.sr-val').textContent=(s.etat!=='connectee')?'perdue':(s.vals.length?s.vals.join(' · '):'—');
+    ligne.querySelector('.sr-batt').textContent=(s.batterie!==null&&s.batterie!==undefined)?s.batterie+' %':'';
+  });
+}
+
+/* Rapprochement numéro tapé ↔ appareil détecté : on compare après avoir
+   retiré espaces, tirets et différences de casse. Aucun numéro n'est connu
+   d'avance : le parc de chaque établissement fonctionne tel quel. */
+function normaliserSerie(s){
+  return (s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+}
+
+function sondePourPoint(cle){
+  return sondePourPointDans(mesures,cle);
+}
+
+function construirePointsMesure(){
+  var cont=document.getElementById('points-list');
+  POINTS_MESURE.forEach(function(p){
+    if(p.cle==='')return;
+    var row=document.createElement('div');
+    row.className='sonde-row';
+    row.id='pt-'+p.cle;
+    row.innerHTML=
+      '<span class="sr-serie" style="min-width:185px;font-family:var(--font);font-size:.8rem">'+p.libelle+'</span>'+
+      '<input type="text" id="pt-serie-'+p.cle+'" placeholder="n° de série lu sur l\'appareil" '+
+        'oninput="affecterPoint(\''+p.cle+'\',this.value)" '+
+        'style="width:190px;padding:6px 10px;border:2px solid var(--card-border);border-radius:10px;font-family:var(--mono);font-weight:700">'+
+      '<span class="sr-batt" id="pt-etat-'+p.cle+'" style="min-width:230px;margin-left:auto;text-align:right"></span>';
+    cont.appendChild(row);
+  });
+}
+
+function affecterPoint(cle,saisie){
+  // On n'empêche RIEN : numéro inexistant, appareil déjà utilisé ailleurs,
+  // HP et BP inversées… le diagramme révélera l'incohérence.
+  saisie=saisie.trim();
+  if(saisie==='') delete affectations[cle];
+  else affectations[cle]=saisie;
+  majEtatPoints();
+  majEtatSaisieManuelle();
+  calculerEtTracer();
+}
+
+function majEtatPoints(){
+  var alimentes=0;
+  POINTS_MESURE.forEach(function(p){
+    if(p.cle==='')return;
+    var etat=document.getElementById('pt-etat-'+p.cle);
+    var champ=document.getElementById('pt-serie-'+p.cle);
+    if(!etat)return;
+    var saisie=affectations[p.cle];
+    if(!saisie){etat.textContent='';champ.style.borderColor='var(--card-border)';return}
+    var m=sondePourPoint(p.cle);
+    if(!m){
+      etat.textContent='aucun appareil détecté avec ce numéro';
+      etat.style.color='var(--muted)';
+      champ.style.borderColor='var(--card-border)';
+    } else if(m.etat!=='connectee'){
+      etat.textContent=m.modele+' — liaison perdue';
+      etat.style.color='var(--bad)';
+      champ.style.borderColor='var(--bad)';
+    } else if((m.qualite||'ok')!=='ok'){
+      etat.textContent=m.modele+' — mesure périmée (pas de trame récente)';
+      etat.style.color='var(--bad)';
+      champ.style.borderColor='var(--bad)';
+    } else {
+      etat.textContent=m.modele+' — '+m.valeur.toFixed(m.grandeur==='pression'?2:1)+' '+m.unite;
+      etat.style.color='var(--good)';
+      champ.style.borderColor='var(--good)';
+      alimentes++;
+    }
+  });
+  document.getElementById('affect-etat').textContent=alimentes+' / 9 points alimentés';
+}
+
+function effacerAffectations(){
+  affectations={};
+  document.querySelectorAll('#points-list input').forEach(function(i){i.value='';i.style.borderColor='var(--card-border)'});
+  majEtatPoints();
+  majEtatSaisieManuelle();
+  calculerEtTracer();
+}
+
+/* ═══════════ THERMO : interpolation dans les tables ═══════════ */
+function satPourP(p){
+  var sat=FLUIDES[fluideCourant].sat;
+  if(p<=sat[0].p) return sat[0];
+  if(p>=sat[sat.length-1].p) return sat[sat.length-1];
+  for(var i=0;i<sat.length-1;i++){
+    var a=sat[i],b=sat[i+1];
+    if(a.p<=p && p<=b.p){
+      var f=(p-a.p)/(b.p-a.p),r={};
+      for(var k in a) r[k]=a[k]+f*(b[k]-a[k]);
+      return r;
+    }
+  }
+  return sat[sat.length-1];
+}
+
+/* ═══════════ SAISIE MANUELLE ═══════════ */
+function construireSaisieManuelle(){
+  var cont=document.getElementById('saisie-manuelle');
+  POINTS_MESURE.forEach(function(p){
+    if(p.cle==='')return;
+    var row=document.createElement('div');
+    row.className='sonde-row';
+    row.id='sm-'+p.cle;
+    var inner='<span class="sr-serie" style="min-width:185px;font-family:var(--font);font-size:.8rem">'+p.libelle+'</span>';
+    if(p.grandeur==='pression'){
+      inner+='<select id="sm-mode-'+p.cle+'" onchange="calculerEtTracer();majEtatSaisieManuelle()">'+
+        '<option value="rel">bar — pression relative</option>'+
+        '<option value="abs">bar — pression absolue</option>'+
+        '<option value="tsat">°C — température de saturation</option></select>';
+    }
+    inner+='<input type="number" step="0.1" id="sm-val-'+p.cle+'" oninput="calculerEtTracer();majEtatSaisieManuelle()" placeholder="—" '+
+      'style="width:92px;padding:6px 8px;border:2px solid var(--card-border);border-radius:10px;font-family:var(--mono);font-weight:700;text-align:center">';
+    inner+='<span class="sr-batt" id="sm-etat-'+p.cle+'" style="min-width:170px;margin-left:auto;text-align:right"></span>';
+    row.innerHTML=inner;
+    cont.appendChild(row);
+  });
+}
+
+function pressionPourTsat(t,colonne){
+  var sat=FLUIDES[fluideCourant].sat;
+  if(t<=sat[0][colonne])return sat[0].p;
+  if(t>=sat[sat.length-1][colonne])return sat[sat.length-1].p;
+  for(var i=0;i<sat.length-1;i++){
+    if(sat[i][colonne]<=t && t<=sat[i+1][colonne]){
+      var f=(t-sat[i][colonne])/(sat[i+1][colonne]-sat[i][colonne]);
+      return sat[i].p+f*(sat[i+1].p-sat[i].p);
+    }
+  }
+  return null;
+}
+
+function saisieManuelle(cle){
+  var inp=document.getElementById('sm-val-'+cle);
+  if(!inp||inp.value===''||inp.disabled)return null;
+  var v=parseFloat(inp.value);
+  if(isNaN(v))return null;
+  var p=POINTS_MESURE.find(function(x){return x.cle===cle});
+  if(p.grandeur==='temperature')return v;
+  var mode=document.getElementById('sm-mode-'+cle).value;
+  if(mode==='rel')return v;
+  if(mode==='abs')return v-P_ATMO;
+  // Température de saturation : bulle côté HP, rosée côté BP (fluides à glissement)
+  var pabs=pressionPourTsat(v,cle==='hp'?'tb':'tr');
+  return pabs===null?null:pabs-P_ATMO;
+}
+
+function majEtatSaisieManuelle(){
+  POINTS_MESURE.forEach(function(p){
+    if(p.cle==='')return;
+    var inp=document.getElementById('sm-val-'+p.cle);
+    if(!inp)return;
+    var m=sondePourPoint(p.cle);
+    var alimente=!!(m && m.etat==='connectee');
+    var etat=document.getElementById('sm-etat-'+p.cle);
+    var mode=document.getElementById('sm-mode-'+p.cle);
+    inp.disabled=alimente;
+    if(mode)mode.disabled=alimente;
+    etat.textContent=alimente?('← appareil n° '+m.serie):(inp.value!==''?'valeur manuelle utilisée':'');
+    etat.style.color=alimente?'var(--good)':'var(--orange)';
+  });
+}
+
+/* ═══════════ LECTURE DES POINTS (appareil d'abord, saisie manuelle sinon) ═══════════ */
+function sondePourPointDans(ms,cle){
+  var saisie=normaliserSerie(affectations[cle]);
+  if(!saisie) return null;
+  var p=POINTS_MESURE.find(function(x){return x.cle===cle});
+  var grandeur=p?p.grandeur:'temperature';
+  // On ne retient que les mesures de la BONNE grandeur pour ce point (un
+  // manomètre ne peut pas alimenter une température). Égalité stricte de série
+  // d'abord ; sinon inclusion (le nom BLE contient le numéro gravé, ≥ 4 car.).
+  var candidates=ms.filter(function(m){return m.grandeur===grandeur});
+  var exact=candidates.find(function(m){return normaliserSerie(m.serie)===saisie});
+  if(exact) return exact;
+  if(saisie.length<4) return null;
+  return candidates.find(function(m){return normaliserSerie(m.serie).indexOf(saisie)!==-1})||null;
+}
+function valeurDuPointDans(ms,cle){
+  var m=sondePourPointDans(ms,cle);
+  // On n'utilise la mesure que si elle est connectée, fraîche et présente ;
+  // une mesure périmée ou perdue n'alimente pas le cycle (bascule en manuel).
+  if(m && m.etat==='connectee' && m.valeur!==null && (m.qualite||'ok')==='ok'){
+    return m.valeur;
+  }
+  return saisieManuelle(cle);
+}
+function valeurDuPoint(cle){
+  return valeurDuPointDans(mesures,cle);
+}
+
+/* ═══════════ ENREGISTREMENT & REJEU ═══════════ */
+var rec={actif:false,donnees:[],timer:null};
+var rejeu={actif:false,idx:0,timer:null};
+
+function capturerPoint(){
+  if(!mesures.length)return;
+  rec.donnees.push({
+    heure:new Date().toLocaleTimeString('fr-FR'),
+    fluide:fluideCourant,
+    mesures:JSON.parse(JSON.stringify(mesures))
+  });
+  document.getElementById('rec-compteur').textContent=rec.donnees.length+' point'+(rec.donnees.length>1?'s':'');
+  var c=document.getElementById('rejeu-curseur');
+  c.max=Math.max(0,rec.donnees.length-1);
+}
+
+function demarrerEnregistrement(){
+  if(rec.actif)return;
+  var intervalle=Math.max(1,parseInt(document.getElementById('rec-intervalle').value)||2);
+  rec.donnees=[];rec.actif=true;
+  capturerPoint();
+  rec.timer=setInterval(capturerPoint,intervalle*1000);
+  document.getElementById('btn-rec-start').disabled=true;
+  document.getElementById('btn-rec-stop').disabled=false;
+  var ind=document.getElementById('rec-indicateur');
+  ind.className='rec-indicator recording';
+  ind.innerHTML='&#9679; Enregistrement en cours';
+}
+
+function arreterEnregistrement(){
+  rec.actif=false;
+  clearInterval(rec.timer);rec.timer=null;
+  document.getElementById('btn-rec-start').disabled=false;
+  document.getElementById('btn-rec-stop').disabled=true;
+  var ind=document.getElementById('rec-indicateur');
+  ind.className='rec-indicator stopped';
+  ind.innerHTML='&#9679; Arr&ecirc;t&eacute; — '+rec.donnees.length+' points';
+}
+
+function afficherTrame(idx){
+  var f=rec.donnees[idx];
+  if(!f)return;
+  mesures=f.mesures;
+  if(f.fluide!==fluideCourant){
+    fluideCourant=f.fluide;
+    document.getElementById('sel-fluide').value=f.fluide;
+    majBadgeFluide();
+  }
+  dessinerListeSondes();
+  majEtatPoints();
+  majEtatSaisieManuelle();
+  calculerEtTracer();
+  document.getElementById('rejeu-curseur').value=idx;
+  document.getElementById('rejeu-heure').textContent='REJEU — '+f.heure+' ('+(idx+1)+'/'+rec.donnees.length+')';
+}
+
+function demarrerRejeu(){
+  if(rec.actif){alert('Arrêtez d’abord l’enregistrement.');return}
+  if(rec.donnees.length<2){alert('Aucun enregistrement à rejouer : lancez d’abord un enregistrement.');return}
+  var vitesse=parseInt(document.getElementById('rejeu-vitesse').value)||20;
+  var intervalle=Math.max(1,parseInt(document.getElementById('rec-intervalle').value)||2);
+  var delai=Math.max(80,intervalle*1000/vitesse);
+  rejeu.actif=true;rejeu.idx=0;
+  document.getElementById('btn-rejeu').disabled=true;
+  document.getElementById('btn-rejeu-stop').disabled=false;
+  rejeu.timer=setInterval(function(){
+    if(rejeu.idx>=rec.donnees.length){arreterRejeu();return}
+    afficherTrame(rejeu.idx);
+    rejeu.idx++;
+  },delai);
+}
+
+function arreterRejeu(){
+  rejeu.actif=false;
+  clearInterval(rejeu.timer);rejeu.timer=null;
+  document.getElementById('btn-rejeu').disabled=false;
+  document.getElementById('btn-rejeu-stop').disabled=true;
+  document.getElementById('rejeu-heure').textContent='';
+}
+
+function allerAuPoint(idx){
+  if(!rec.donnees.length)return;
+  if(!rejeu.actif){rejeu.actif=true;document.getElementById('btn-rejeu-stop').disabled=false}
+  rejeu.idx=parseInt(idx);
+  afficherTrame(rejeu.idx);
+}
+
+function calculsDepuisTrame(ms){
+  var pHPrel=valeurDuPointDans(ms,'hp'),pBPrel=valeurDuPointDans(ms,'bp');
+  if(pHPrel===null||pBPrel===null)return {};
+  var pHP=pHPrel+P_ATMO,pBP=pBPrel+P_ATMO;
+  var satBP=satPourP(pBP),satHP=satPourP(pHP);
+  var tSevap=valeurDuPointDans(ms,'sortie_evaporateur');
+  var tScond=valeurDuPointDans(ms,'sortie_condenseur');
+  return {
+    surchauffe:tSevap!==null?tSevap-satBP.tr:null,
+    sousrefroid:tScond!==null?satHP.tb-tScond:null,
+    taux:pHP/pBP};
+}
+
+function exporterEnregistrementCSV(){
+  if(!rec.donnees.length){alert('Aucune donnée : lancez d’abord un enregistrement.');return}
+  var series=rec.donnees[0].mesures.map(function(m){return m.serie});
+  var csv='Heure;'+series.join(';')+';Surchauffe (K);Sous-refroidissement (K);Taux de compression\n';
+  rec.donnees.forEach(function(f){
+    var parSerie={};
+    f.mesures.forEach(function(m){parSerie[m.serie]=(m.valeur!==null&&m.etat==='connectee')?m.valeur:''});
+    var k=calculsDepuisTrame(f.mesures);
+    function fmt(v,d){return (v===null||v===undefined||isNaN(v))?'':v.toFixed(d).replace('.',',')}
+    csv+=f.heure+';'+series.map(function(s){return (''+parSerie[s]).replace('.',',')}).join(';')+
+      ';'+fmt(k.surchauffe,1)+';'+fmt(k.sousrefroid,1)+';'+fmt(k.taux,2)+'\n';
+  });
+  var blob=new Blob(['﻿'+csv],{type:'text/csv;charset=utf-8;'});
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement('a');
+  var d=new Date();
+  a.href=url;
+  a.download='banc_acquisition_'+d.getFullYear()+('0'+(d.getMonth()+1)).slice(-2)+('0'+d.getDate()).slice(-2)+'_'+('0'+d.getHours()).slice(-2)+('0'+d.getMinutes()).slice(-2)+'.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function calculerEtTracer(){
+  if(!FLUIDES) return;
+  var pHPrel=valeurDuPoint('hp'), pBPrel=valeurDuPoint('bp');
+  var tSortieEvap=valeurDuPoint('sortie_evaporateur');
+  var tEntreeComp=valeurDuPoint('entree_compresseur');
+  var tSortieCond=valeurDuPoint('sortie_condenseur');
+  var tEntreeDet=valeurDuPoint('entree_detendeur');
+  var tAirRepris=valeurDuPoint('air_reprise_condenseur');
+  var tAirSouffle=valeurDuPoint('air_souffle_condenseur');
+  var tAmb=valeurDuPoint('ambiance_froid');
+
+  var cycle=null, alertes=[];
+  if(pHPrel!==null && pBPrel!==null){
+    var pHP=pHPrel+P_ATMO, pBP=pBPrel+P_ATMO;   // les manomètres donnent du relatif
+    if(pBP>pHP) alertes.push('La « BP » est plus haute que la « HP » : manomètres inversés ?');
+    var satBP=satPourP(pBP), satHP=satPourP(pHP);
+
+    // Sur fluide zéotrope : surchauffe sur la rosée, sous-refroidissement sur la bulle.
+    var surchauffe=(tSortieEvap!==null)?tSortieEvap-satBP.tr:null;
+    var surchauffeTot=(tEntreeComp!==null)?tEntreeComp-satBP.tr:null;
+    var sousrefroid=(tSortieCond!==null)?satHP.tb-tSortieCond:null;
+    var sousrefroidTot=(tEntreeDet!==null)?satHP.tb-tEntreeDet:null;
+
+    if(surchauffe!==null && surchauffe<-0.5) alertes.push('Surchauffe négative : sonde « sortie évaporateur » mal placée ou mal affectée ?');
+    if(sousrefroid!==null && sousrefroid<-0.5) alertes.push('Sous-refroidissement négatif : sonde « sortie condenseur » mal placée ou mal affectée ?');
+    if(surchauffe!==null && surchauffe>25) alertes.push('Surchauffe très élevée : valeur physiquement improbable en régime établi.');
+    if(surchauffe!==null && surchauffeTot!==null && surchauffeTot<surchauffe-0.5)
+      alertes.push('Surchauffe totale plus faible que la surchauffe : sondes aspiration inversées ?');
+    if(sousrefroid!==null && sousrefroidTot!==null && sousrefroidTot<sousrefroid-0.5)
+      alertes.push('Sous-refroidissement total plus faible qu’en sortie condenseur : sondes ligne liquide inversées ?');
+
+    cycle={pHP:pHP,pBP:pBP,satBP:satBP,satHP:satHP,
+           surchauffe:surchauffe,surchauffeTot:surchauffeTot,
+           sousrefroid:sousrefroid,sousrefroidTot:sousrefroidTot};
+  }
+
+  var dtAir=(tAirRepris!==null && tAirSouffle!==null)?tAirSouffle-tAirRepris:null;
+  if(dtAir!==null && dtAir<-0.5) alertes.push('ΔT air négatif : thermomètres repris/soufflé inversés ?');
+
+  majKPI(cycle,tAmb,dtAir);
+  tracerDiagramme(cycle);
+
+  var al=document.getElementById('diag-alerte');
+  if(alertes.length){al.textContent='⚠ '+alertes.join(' — ');al.classList.add('on')}
+  else al.classList.remove('on');
+}
+
+function majKPI(c,tAmb,dtAir){
+  function set(id,val,dec,unite,warn){
+    var el=document.getElementById(id);
+    var vide=(val===null||val===undefined||isNaN(val));
+    // Une valeur suspecte porte un ⚠ TEXTUEL : jamais l'information par la
+    // couleur seule (Lot 7).
+    el.textContent=vide?'—':((warn?'⚠ ':'')+val.toFixed(dec)+(unite||''));
+    el.classList.toggle('warn',!!warn);
+  }
+  if(!c){['kpi-surchauffe','kpi-surchauffe-tot','kpi-sousrefroid','kpi-sousrefroid-tot','kpi-taux','kpi-tevap','kpi-tcond','kpi-trefoul'].forEach(function(i){set(i,null)})}
+  else{
+    set('kpi-surchauffe',c.surchauffe,1,'',c.surchauffe!==null&&(c.surchauffe<0||c.surchauffe>25));
+    set('kpi-surchauffe-tot',c.surchauffeTot,1,'',c.surchauffeTot!==null&&(c.surchauffeTot<0||(c.surchauffe!==null&&c.surchauffeTot<c.surchauffe-0.5)));
+    set('kpi-sousrefroid',c.sousrefroid,1,'',c.sousrefroid!==null&&c.sousrefroid<0);
+    set('kpi-sousrefroid-tot',c.sousrefroidTot,1,'',c.sousrefroidTot!==null&&c.sousrefroidTot<0);
+    set('kpi-taux',c.pHP/c.pBP,2);
+    set('kpi-tevap',c.satBP.tr,1,' °C');
+    set('kpi-tcond',c.satHP.tb,1,' °C');
+    var t2=temperatureRefoulement(c);
+    set('kpi-trefoul',t2,0,' °C',t2!==null&&t2>110);
+  }
+  set('kpi-ambiance',tAmb,1,' °C');
+  set('kpi-dtair',dtAir,1,'',dtAir!==null&&dtAir<0);
+}
+
+function temperatureRefoulement(c){
+  // Même modèle que la compression du tracé : adiabatique de gaz parfait.
+  var T1=(c.satBP.tr+(c.surchauffe!==null?Math.max(0,c.surchauffe):0))+273.15;
+  var gamma=1.18;
+  return T1*Math.pow(c.pHP/c.pBP,(gamma-1)/gamma)-273.15;
+}
+
+/* ═══════════ DIAGRAMME log p – h ═══════════ */
+var DIAG={x0:70,x1:950,y0:520,y1:30,hMin:120,hMax:560,pMin:0.6,pMax:40};
+
+function X(h){return DIAG.x0+(h-DIAG.hMin)/(DIAG.hMax-DIAG.hMin)*(DIAG.x1-DIAG.x0)}
+function Y(p){
+  var l=Math.log(p),l0=Math.log(DIAG.pMin),l1=Math.log(DIAG.pMax);
+  return DIAG.y0+(l-l0)/(l1-l0)*(DIAG.y1-DIAG.y0);
+}
+
+function tracerDiagramme(cycle){
+  var svg=document.getElementById('diag');
+  var f=FLUIDES[fluideCourant];
+  var s='';
+
+  // Grille : isobares (log) et iso-enthalpes
+  [1,2,3,5,7,10,15,20,30,40].forEach(function(p){
+    if(p<DIAG.pMin||p>DIAG.pMax)return;
+    s+='<line x1="'+DIAG.x0+'" y1="'+Y(p)+'" x2="'+DIAG.x1+'" y2="'+Y(p)+'" stroke="#eef1f5" stroke-width="1"/>';
+    s+='<text x="'+(DIAG.x0-8)+'" y="'+(Y(p)+4)+'" text-anchor="end" font-size="11" fill="#5a7080">'+p+'</text>';
+  });
+  for(var h=150;h<=550;h+=50){
+    s+='<line x1="'+X(h)+'" y1="'+DIAG.y0+'" x2="'+X(h)+'" y2="'+DIAG.y1+'" stroke="#eef1f5" stroke-width="1"/>';
+    s+='<text x="'+X(h)+'" y="'+(DIAG.y0+16)+'" text-anchor="middle" font-size="11" fill="#5a7080">'+h+'</text>';
+  }
+  s+='<text x="'+((DIAG.x0+DIAG.x1)/2)+'" y="552" text-anchor="middle" font-size="12" fill="#2c3e50" font-weight="bold">Enthalpie h (kJ/kg)</text>';
+  s+='<text x="16" y="'+((DIAG.y0+DIAG.y1)/2)+'" text-anchor="middle" font-size="12" fill="#2c3e50" font-weight="bold" transform="rotate(-90 16 '+((DIAG.y0+DIAG.y1)/2)+')">Pression absolue (bar) — échelle log</text>';
+
+  // Cloche de saturation
+  var sat=f.sat,liq='',vap='';
+  sat.forEach(function(l,i){
+    var cmd=(i===0?'M':'L');
+    liq+=cmd+X(l.hl).toFixed(1)+' '+Y(l.p).toFixed(1)+' ';
+    vap+=cmd+X(l.hv).toFixed(1)+' '+Y(l.p).toFixed(1)+' ';
+  });
+  s+='<path d="'+liq+'" fill="none" stroke="#0f2d52" stroke-width="2.2"/>';
+  s+='<path d="'+vap+'" fill="none" stroke="#0f2d52" stroke-width="2.2"/>';
+  s+='<text x="'+(X(sat[sat.length-1].hl)-10)+'" y="'+(Y(sat[sat.length-1].p)-8)+'" font-size="10" fill="#0f2d52">liquide</text>';
+  s+='<text x="'+(X(sat[sat.length-1].hv)+6)+'" y="'+(Y(sat[sat.length-1].p)-8)+'" font-size="10" fill="#0f2d52">vapeur</text>';
+
+  // Isothermes repères dans la cloche (paliers de condensation/évaporation)
+  [-20,0,20,40].forEach(function(t){
+    var ligne=null;
+    for(var i=0;i<sat.length-1;i++){
+      if(sat[i].tb<=t&&t<=sat[i+1].tb){
+        var fr=(t-sat[i].tb)/(sat[i+1].tb-sat[i].tb),r={};
+        for(var k in sat[i]) r[k]=sat[i][k]+fr*(sat[i+1][k]-sat[i][k]);
+        ligne=r;break;
+      }
+    }
+    if(!ligne)return;
+    s+='<line x1="'+X(ligne.hl)+'" y1="'+Y(ligne.p)+'" x2="'+X(ligne.hv)+'" y2="'+Y(ligne.p)+'" stroke="#b8dfe0" stroke-width="1" stroke-dasharray="4 3"/>';
+    s+='<text x="'+(X((ligne.hl+ligne.hv)/2))+'" y="'+(Y(ligne.p)-4)+'" text-anchor="middle" font-size="9" fill="#2aafaf">'+t+' °C</text>';
+  });
+
+  // Le cycle
+  if(cycle){
+    var c=cycle;
+    // Point 1 : aspiration compresseur — surchauffe totale si mesurée, sinon surchauffe
+    var schAsp=(c.surchauffeTot!==null)?c.surchauffeTot:c.surchauffe;
+    var h1=c.satBP.hv+(schAsp!==null?Math.max(0,schAsp)*c.satBP.cpv:0);
+    // Point 3 : sortie condenseur (liquide sous-refroidi)
+    var h3=c.satHP.hl-(c.sousrefroid!==null?Math.max(0,c.sousrefroid)*c.satHP.cpl:0);
+    // Point 2 : refoulement — compression isentropique approchée depuis (h1, s1)
+    var h2=compressionIsentropique(c);
+    // Point 4 : sortie détendeur — isenthalpe
+    var h4=h3;
+
+    // Trapèze du cycle
+    var p1=[X(h1),Y(c.pBP)],p2=[X(h2),Y(c.pHP)],p3=[X(h3),Y(c.pHP)],p4=[X(h4),Y(c.pBP)];
+    s+='<path d="M'+p1+' L'+p2+' L'+p3+' L'+p4+' Z" fill="rgba(232,145,74,.09)" stroke="#e8914a" stroke-width="3" stroke-linejoin="round"/>';
+
+    // Marquage surchauffe (turquoise) et sous-refroidissement (bleu) sur les paliers.
+    // Sur l'aspiration : trait épais jusqu'à la sortie évaporateur, plus fin
+    // jusqu'au compresseur (réchauffage de ligne) — les deux surchauffes se voient.
+    if(c.surchauffe!==null){
+      var hSevap=X(c.satBP.hv+Math.max(0,c.surchauffe)*c.satBP.cpv);
+      s+='<line x1="'+X(c.satBP.hv)+'" y1="'+Y(c.pBP)+'" x2="'+hSevap+'" y2="'+p1[1]+'" stroke="#2aafaf" stroke-width="6" opacity=".55"/>';
+      s+='<line x1="'+hSevap+'" y1="'+Y(c.pBP)+'" x2="'+p1[0]+'" y2="'+p1[1]+'" stroke="#2aafaf" stroke-width="3" opacity=".4"/>';
+    } else {
+      s+='<line x1="'+X(c.satBP.hv)+'" y1="'+Y(c.pBP)+'" x2="'+p1[0]+'" y2="'+p1[1]+'" stroke="#2aafaf" stroke-width="5" opacity=".55"/>';
+    }
+    s+='<line x1="'+X(c.satHP.hl)+'" y1="'+Y(c.pHP)+'" x2="'+p3[0]+'" y2="'+p3[1]+'" stroke="#2563eb" stroke-width="5" opacity=".45"/>';
+
+    // Points numérotés — décalés à l'EXTÉRIEUR du tracé pour ne jamais le chevaucher
+    [[p1,'1',14,16],[p2,'2',14,-8],[p3,'3',-14,-8],[p4,'4',-14,16]].forEach(function(pt){
+      s+='<circle cx="'+pt[0][0]+'" cy="'+pt[0][1]+'" r="6" fill="#fff" stroke="#0f2d52" stroke-width="2.5"/>';
+      s+='<text x="'+(pt[0][0]+pt[2])+'" y="'+(pt[0][1]+pt[3])+'" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f2d52">'+pt[1]+'</text>';
+    });
+  } else {
+    s+='<text x="'+((DIAG.x0+DIAG.x1)/2)+'" y="'+((DIAG.y0+DIAG.y1)/2)+'" text-anchor="middle" font-size="15" fill="#5a7080">Affectez les deux manomètres (HP et BP) — ou saisissez les pressions à la main — pour voir le cycle</text>';
+  }
+
+  svg.innerHTML=s;
+}
+
+function compressionIsentropique(c){
+  // Approche pédagogique : h2 = h1 + cp_vapeur_HP × (T2s − T1), avec T2s estimée
+  // par compression adiabatique de gaz parfait sur le rapport de pression.
+  var h1=c.satBP.hv+(c.surchauffe!==null?Math.max(0,c.surchauffe)*c.satBP.cpv:0);
+  var T1=(c.satBP.tr+(c.surchauffe!==null?Math.max(0,c.surchauffe):0))+273.15;
+  var gamma=1.18;   // ordre de grandeur HFC vapeur — cale le refoulement vers 60-80 °C
+  var T2=T1*Math.pow(c.pHP/c.pBP,(gamma-1)/gamma);
+  return h1+c.satHP.cpv*(T2-T1);
+}
+
+/* ═══════════ FLUIDE ═══════════ */
+function remplirSelecteurFluides(){
+  var sel=document.getElementById('sel-fluide');
+  sel.innerHTML='';
+  for(var cle in FLUIDES){
+    var o=document.createElement('option');
+    o.value=cle;o.textContent=FLUIDES[cle].nom;
+    if(cle===fluideCourant)o.selected=true;
+    sel.appendChild(o);
+  }
+  majBadgeFluide();
+}
+function majBadgeFluide(){
+  var f=FLUIDES[fluideCourant];
+  var b=document.getElementById('badge-fluide');
+  b.textContent=f.securite+' · PRP '+f.prp+(f.glissement_max>1?' · glissement '+f.glissement_max.toFixed(1)+' K':'');
+  b.classList.toggle('a3',f.securite==='A3');
+}
+function changerFluide(){
+  fluideCourant=document.getElementById('sel-fluide').value;
+  if(MODE==='serveur') ordonner('/api/fluide',{cle:fluideCourant}).catch(function(){});
+  majBadgeFluide();
+  calculerEtTracer();
+}
+
+/* ═══════════ BLUETOOTH DU PC ═══════════ */
+function majBluetooth(){
+  var carte=document.getElementById('carte-bt');
+  carte.style.display='block';
+  var dot=document.getElementById('bt-dot');
+  var texte=document.getElementById('bt-texte');
+  var detail=document.getElementById('bt-detail');
+  var zone=document.getElementById('bt-sondes');
+  var conseil=document.getElementById('bt-conseil');
+
+  if(MODE==='autonome'){
+    dot.style.background='var(--orange)';
+    texte.textContent='Page de démonstration — le Bluetooth n’est pas utilisé ici';
+    detail.textContent='Toutes les sondes de cette page sont simulées. Pour voir vos vraies sondes, lancez l’application complète (« Lancer AquiBlue »).';
+    zone.innerHTML='';conseil.textContent='';
+    return;
+  }
+
+  fetch('/api/bluetooth').then(function(r){return r.json()}).then(function(bt){
+    if(bt.adaptateur) detail.textContent='Adaptateur : '+bt.adaptateur;
+    conseil.textContent=bt.conseil||'';
+    if(bt.disponible===null){
+      dot.style.background='#ccc';
+      texte.textContent='Premier scan en cours…';
+      return;
+    }
+    if(!bt.disponible){
+      dot.style.background='var(--bad)';
+      texte.textContent='Bluetooth coupé ou absent';
+      detail.textContent=bt.detail;
+      zone.innerHTML='';
+      return;
+    }
+    dot.style.background='var(--good)';
+    dot.style.boxShadow='0 0 8px rgba(39,174,96,.5)';
+    texte.textContent='Bluetooth actif — '+bt.appareils.length+' appareil'+(bt.appareils.length>1?'s':'')+
+      ' à portée, dont '+bt.sondes.length+' sonde'+(bt.sondes.length>1?'s':'')+' de mesure';
+    sondesReelles=bt.sondes;
+    if(bt.sondes.length){
+      var h='<div style="font-size:.72rem;font-weight:700;color:var(--good);margin:4px 0 2px">Vos sondes — elles apparaissent ici toutes seules dès qu’elles sont allumées :</div>';
+      bt.sondes.forEach(function(s){
+        var etat,couleur,action='';
+        if(s.etat==='detectee'){
+          etat='détectée';couleur='var(--muted)';
+          action='<button class="btn btn-g btn-sm" onclick="validerSonde(\''+ech(s.adresse)+'\',\''+ech(s.nom)+'\')">Ajouter au banc</button>';
+        } else if(s.etat==='connexion'){
+          etat='connexion en cours…';couleur='var(--orange)';
+        } else if(s.etat==='connectee'){
+          var m=s.mesures||{};
+          var lus=[];
+          if(m.temperature) lus.push(m.temperature.valeur.toFixed(1)+' °C');
+          if(m.pression) lus.push(m.pression.valeur.toFixed(2)+' bar'+(s.tare_pression?' (0 réglé)':''));
+          if(m.vitesse!==undefined && m.vitesse) lus.push(m.vitesse.valeur.toFixed(2)+' m/s');
+          etat=lus.length?('connectée — '+lus.join(' · ')):('connectée — '+s.trames+' trames');
+          couleur='var(--good)';
+          action='<button class="btn btn-ol btn-sm" onclick="devaliderSonde(\''+ech(s.adresse)+'\')">Retirer</button>';
+          if(m.pression){
+            action='<button class="btn btn-o btn-sm" onclick="tareSonde(\''+ech(s.adresse)+'\')">Mettre à 0</button>'+
+              (s.tare_pression?'<button class="btn btn-ol btn-sm" onclick="annulerTare(\''+ech(s.adresse)+'\')">Annuler 0</button>':'')+
+              action;
+          }
+        } else {
+          etat='liaison perdue — reconnexion automatique…';couleur='var(--bad)';
+          action='<button class="btn btn-ol btn-sm" onclick="devaliderSonde(\''+ech(s.adresse)+'\')">Retirer</button>';
+        }
+        h+='<div class="sonde-row" style="border-color:'+(s.etat==='connectee'?'var(--good)':'var(--card-border)')+(s.etat==='connectee'?';background:var(--good-bg)':'')+'">'+
+          '<span class="sr-dot" style="background:'+couleur+'"></span>'+
+          '<span class="sr-serie">'+ech(s.nom)+'</span>'+
+          '<span class="sr-batt" style="margin-left:auto;min-width:0;color:'+couleur+'">'+etat+'</span>'+action+'</div>';
+      });
+      zone.innerHTML=h;
+    } else {
+      zone.innerHTML='<div style="font-size:.78rem;color:var(--muted)">Aucune sonde allumée. '+
+        'Allume une sonde : elle apparaît ici en quelques secondes. '+
+        '<strong>Elle n’apparaît pas ?</strong> Coupe le Bluetooth du téléphone — il garde la sonde pour lui.</div>';
+    }
+  }).catch(function(){});
+}
+
+var sondesReelles=[];
+function validerSonde(adresse,nom){
+  ordonner('/api/valider',{adresse:adresse,nom:nom}).then(function(){majBluetooth()});
+}
+function devaliderSonde(adresse){
+  ordonner('/api/devalider',{adresse:adresse}).then(function(){majBluetooth()});
+}
+function tareSonde(adresse){
+  ordonner('/api/tare',{adresse:adresse}).then(function(d){
+    if(!d.ok) alert(d.detail||'Mise à zéro impossible.');
+    majBluetooth();
+  });
+}
+function annulerTare(adresse){
+  ordonner('/api/tare_annuler',{adresse:adresse}).then(function(){majBluetooth()});
+}
+/* ═══════════ CONFORT DE LECTURE (réglages utilisateur, par poste) ═══════════ */
+function confortLire(){
+  try{return JSON.parse(localStorage.getItem('aquiblue-confort'))||{}}catch(e){return{}}
+}
+function confortEcrire(c){
+  try{localStorage.setItem('aquiblue-confort',JSON.stringify(c))}catch(e){}
+}
+function confortAppliquer(){
+  var c=confortLire(), h=document.documentElement;
+  ['cf-t115','cf-t130','cf-t150','cf-lisible','cf-contraste'].forEach(function(k){h.classList.remove(k)});
+  if(c.taille)h.classList.add(c.taille);
+  if(c.lisible)h.classList.add('cf-lisible');
+  if(c.contraste)h.classList.add('cf-contraste');
+  document.querySelectorAll('#confort-panneau [data-taille]').forEach(function(b){
+    b.setAttribute('aria-pressed',(b.dataset.taille===(c.taille||''))?'true':'false');
+  });
+  var bl=document.getElementById('cf-btn-lisible'),bc=document.getElementById('cf-btn-contraste');
+  if(bl)bl.setAttribute('aria-pressed',c.lisible?'true':'false');
+  if(bc)bc.setAttribute('aria-pressed',c.contraste?'true':'false');
+}
+function confortOuvrir(){
+  var p=document.getElementById('confort-panneau'),b=document.getElementById('btn-confort');
+  p.hidden=!p.hidden; b.setAttribute('aria-expanded',p.hidden?'false':'true');
+}
+function confortTaille(t){
+  var c=confortLire(); c.taille=t; confortEcrire(c); confortAppliquer();
+}
+function confortBascule(k,btn){
+  var c=confortLire(), cle=(k==='cf-lisible')?'lisible':'contraste';
+  c[cle]=!c[cle]; confortEcrire(c); confortAppliquer();
+}
+confortAppliquer();
+
+/* Arrêt propre du serveur depuis la page (durcissement Lot 5) : évite de
+   tuer la console, le serveur ferme ses fichiers et ses connexions. */
+function eteindreBanc(){
+  if(!confirm('Éteindre le banc ? Les sondes seront déconnectées proprement.'))return;
+  ordonner('/api/arreter').catch(function(){}).then(function(){
+    document.getElementById('dot-status').classList.remove('on');
+    document.getElementById('txt-status').textContent='Banc arrêté — vous pouvez fermer cet onglet';
+    var be=document.getElementById('btn-eteindre'); if(be)be.style.display='none';
+  });
+}
+/* Relevé papier / PDF (rapport élève) : bascule sur le diagramme, remplit
+   l'en-tête d'impression, puis ouvre l'impression du navigateur — l'élève
+   choisit « Enregistrer au format PDF ». */
+function imprimerReleve(){
+  var e=document.getElementById('print-entete');
+  var d=new Date();
+  e.innerHTML='<strong>inerWeb AquiBlue — relevé de manipulation</strong><br>'+
+    'Date : '+d.toLocaleDateString('fr-FR')+' '+d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})+
+    ' · Fluide : '+ech(fluideCourant)+
+    ' · Provenance des mesures : '+(modeSource==='REEL'?'SONDES RÉELLES':'SIMULATION')+
+    '<br>Nom : ______________________ · Classe : ________';
+  showTab(1);
+  setTimeout(function(){window.print()},200);
+}
+/* Effacement volontaire des journaux de capture (journaux bornés + effacement). */
+function purgerJournaux(){
+  if(!confirm('Effacer tous les journaux de capture Bluetooth de ce poste ?'))return;
+  ordonner('/api/journaux/purger').then(function(d){
+    alert(d.ok?('Journaux effacés ('+d.supprimes+' fichier'+(d.supprimes>1?'s':'')+').'):'Effacement impossible.');
+  });
+}
+
+/* ═══════════ PUPITRE PROFESSEUR ═══════════ */
+function majPupitre(){
+  obtenirDefauts(function(defauts){
+    var grid=document.getElementById('defauts-grid');
+    grid.innerHTML='';
+    if(modeSource==='REEL'){
+      grid.innerHTML='<div class="info-box" style="grid-column:1/-1">En <strong>mode réel</strong>, les défauts ne se simulent pas : ils se créent sur l’installation elle-même (voile sur le condenseur, vanne…). Repassez en simulation pour injecter un défaut virtuel.</div>';
+      document.getElementById('sondes-coupure').innerHTML='';
+      return;
+    }
+    defauts.forEach(function(df){
+      var b=document.createElement('button');
+      b.className='defaut-btn'+(df.actif?' on':'');
+      b.innerHTML='<div class="d-nom">'+(df.actif?'⬤ ':'')+df.libelle+'</div><div class="d-indice">'+df.indice+'</div>';
+      b.onclick=function(){basculerDefautSource(df.cle,function(){majPupitre()})};
+      grid.appendChild(b);
+    });
+    var cont=document.getElementById('sondes-coupure');
+    cont.innerHTML='';
+    mesures.forEach(function(m){
+      var b=document.createElement('button');
+      var perdue=m.etat!=='connectee';
+      b.className='btn btn-sm '+(perdue?'btn-d':'btn-ol');
+      b.textContent=m.serie;
+      b.onclick=function(){basculerSondeSource(m.serie,function(){setTimeout(majPupitre,150)})};
+      cont.appendChild(b);
+    });
+  });
+}
+function reinitialiser(){
+  reinitialiserSource(function(){majPupitre()});
+}
+
+/* ═══════════ INIT ═══════════ */
+remplirSelecteurFluides();
+construirePointsMesure();
+construireSaisieManuelle();
+// Détection de la source : si un serveur d'acquisition répond, on s'y branche ;
+// sinon la simulation embarquée prend le relais (fichier ouvert en double-clic).
+(function(){
+  var demarre=false;
+  function demarrer(){
+    if(demarre)return; demarre=true;
+    majSondes(); majPupitre(); majBluetooth();
+    setInterval(majSondes,1000);
+    setInterval(majPupitre,4000);
+    if(MODE==='serveur') setInterval(majBluetooth,3000);
+    var note=document.getElementById('radar-note');
+    if(MODE==='serveur')
+      note.innerHTML='Les mesures ci-dessous sont <strong>encore simulées</strong> — le décodage des sondes réelles est l’étape suivante. Vos vraies sondes allumées s’affichent dans l’encadré « Bluetooth du PC » ci-dessus.';
+    else
+      note.innerHTML='Sondes <strong>simulées</strong> pour la démonstration : recopiez leurs numéros dans les points de mesure ci-dessus, le cycle se trace.';
+  }
+  var garde=setTimeout(function(){demarrer()},1500);
+  try{
+    fetch('/api/mesures').then(function(r){
+      // Un vrai serveur du banc répond en JSON. Un hébergement statique (ou
+      // un service worker qui sert une page de secours) répondrait du HTML :
+      // on reste alors en simulation autonome.
+      if(r.ok && ((r.headers.get('Content-Type')||'').indexOf('json')>=0)){MODE='serveur';}
+      clearTimeout(garde); demarrer();
+    }).catch(function(){clearTimeout(garde); demarrer();});
+  }catch(e){clearTimeout(garde); demarrer();}
+})();
+</script>
+</body>
+</html>
