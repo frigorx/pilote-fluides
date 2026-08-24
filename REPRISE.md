@@ -21,8 +21,13 @@
 > connecteurs présents, **suite Playwright de l'atelier rejouée contre le site en ligne —
 > 84 contrôles de stations + 16 évaluations complètes, 4 formats, 0 échec.**
 >
-> Chantier évoqué par F. Henninot, non lancé : refondre l'accueil pour montrer
-> visuellement les 3 réseaux.
+> **24/08 (plus tard) — L'ACCUEIL PRÉSENTE LES TROIS RÉSEAUX** (commit `9f5f0f3`,
+> version `39156f9ce3`, vérifié sur le site servi) : le connecteur devient « Les trois
+> réseaux inerWeb » — le réseau courant y figure (« vous êtes ici »), chaque carte porte
+> un motif de ligne de métro (⚠️ le motif annule le `min-width:980px` de `.plan svg`,
+> ne pas retirer ce garde). Journal des nouveautés : section du 24 août. ⚠️ Pendant ce
+> chantier, une session parallèle animait les SVG de la branche Impact (`legislation/`) —
+> commits croisés en ajouts explicites, aucun fichier partagé.
 
 > ## 23/08 — LE 2e RÉSEAU OUVRE EN CONSTRUCTION : `reglementation.html`
 >
