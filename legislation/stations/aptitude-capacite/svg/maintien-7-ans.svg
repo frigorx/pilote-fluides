@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-7ans" aria-describedby="d-7ans" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-7ans">L'attestation d'aptitude se maintient tous les sept ans</title>
+  <desc id="d-7ans">Une ligne de temps part de la délivrance de l'attestation et atteint un jalon
+    marqué « sept ans ». Là, deux issues divergent. Vers le haut, en trait plein : la remise à niveau
+    est faite, l'attestation reste valable et un nouveau compteur de sept ans repart. Vers le bas, en
+    trait tireté : la remise à niveau n'est pas faite, l'attestation est suspendue et son titulaire ne
+    peut plus exercer, avec un délai maximum de trois ans pour se mettre en conformité. Un encadré
+    précise que la remise à niveau est dispensée par un organisme certifié Qualiopi et concerne les
+    catégories A1, A2, B, C, D et E, la catégorie V étant exclue.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; }
+    .lbl  { font-size:16px; fill:#10233c; }
+    .lblb { font-size:16px; fill:#10233c; font-weight:bold; }
+    .jal  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Départ : la délivrance -->
+  <circle cx="70" cy="150" r="16" fill="#fffdf8" stroke="#0f766e" stroke-width="6"/>
+  <text class="ttl" x="70" y="112" text-anchor="middle" fill="#0f766e">Délivrance</text>
+  <text class="lbl" x="70" y="196" text-anchor="middle">le compteur</text>
+  <text class="lbl" x="70" y="216" text-anchor="middle">part d'ici</text>
+
+  <!-- Le tronc des 7 ans -->
+  <path d="M 86 150 H 360" stroke="#0f766e" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <text class="lbl" x="223" y="136" text-anchor="middle">l'attestation est valable</text>
+
+  <!-- Le jalon des 7 ans -->
+  <rect x="360" y="122" width="118" height="56" rx="14" fill="#b06a00"/>
+  <text class="jal" x="419" y="157" text-anchor="middle">7 ans</text>
+
+  <!-- Issue haute : remise à niveau faite -->
+  <path d="M 478 150 C 540 150 545 78 610 78 H 760" stroke="#1e7e54" stroke-width="9"
+        stroke-linecap="round" fill="none"/>
+  <polygon points="760,68 782,78 760,88" fill="#1e7e54"/>
+  <rect x="600" y="24" width="290" height="44" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+  <text class="ttl" x="745" y="52" text-anchor="middle" fill="#1e7e54">Remise à niveau faite</text>
+  <text class="lbl" x="745" y="108" text-anchor="middle">l'attestation continue —</text>
+  <text class="lblb" x="745" y="130" text-anchor="middle">un nouveau compteur repart</text>
+
+  <!-- Issue basse : rien fait -->
+  <path d="M 478 150 C 540 150 545 232 610 232 H 760" stroke="#c0392b" stroke-width="9"
+        stroke-linecap="round" fill="none" stroke-dasharray="18 12"/>
+  <polygon points="760,222 782,232 760,242" fill="#c0392b"/>
+  <rect x="600" y="252" width="290" height="44" rx="12" fill="#fbe9e7" stroke="#c0392b" stroke-width="2"/>
+  <text class="ttl" x="745" y="280" text-anchor="middle" fill="#c0392b">Attestation SUSPENDUE</text>
+  <text class="lbl" x="745" y="206" text-anchor="middle">rien n'est fait :</text>
+  <text class="lblb" x="745" y="322" text-anchor="middle">plus le droit d'exercer</text>
+  <text class="lbl" x="745" y="344" text-anchor="middle">3 ans au maximum pour régulariser</text>
+
+  <!-- Encadré des conditions -->
+  <rect x="20" y="252" width="540" height="92" rx="12" fill="#fffdf8" stroke="#2f5689" stroke-width="2"/>
+  <text class="ttl" x="40" y="278" fill="#1b3a63">La remise à niveau, en pratique</text>
+  <text class="lbl" x="40" y="302">organisme de formation certifié Qualiopi ; la démonstration pratique</text>
+  <text class="lbl" x="40" y="324">par une entité titulaire d'une capacité et une personne titulaire d'une aptitude</text>
+
+  <text class="note" x="450" y="382" text-anchor="middle">Concerne A1, A2, B, C, D et E — la catégorie V en est exclue. Trait plein : la voie qui continue. Trait tireté : celle qui se coupe.</text>
+</svg>

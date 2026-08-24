@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-exam" aria-describedby="d-exam" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-exam">La structure de l'évaluation d'aptitude</title>
+  <desc id="d-exam">Trois blocs côte à côte. À gauche, les groupes obligatoires pour tous : G1, G2,
+    G3, G4, G5, G10, G11. Au centre, un bloc marqué d'un point d'interrogation : au moins un groupe
+    tiré au sort parmi G6, G7, G8 et G9 — le candidat ne sait pas lequel avant l'évaluation. À droite,
+    le groupe spécifique à la catégorie visée : G12 pour A1 et A2, G13 pour B, le CO₂, et G14 pour C,
+    l'ammoniac. Sous les trois blocs, une bande rappelle que l'évaluation croise une partie théorique
+    et une partie pratique.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .grp  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .lbl  { font-size:16px; fill:#10233c; }
+    .lblc { font-size:16px; fill:#fffdf8; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+    .q    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:52px; fill:#b06a00; }
+  </style>
+
+  <!-- Bloc 1 : les obligatoires -->
+  <rect x="20" y="20" width="270" height="230" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <rect x="20" y="20" width="270" height="42" rx="14" fill="#0f766e"/>
+  <rect x="20" y="48" width="270" height="14" fill="#0f766e"/>
+  <text class="ttl" x="155" y="48" text-anchor="middle">Pour tout le monde</text>
+  <text class="grp" x="155" y="100" text-anchor="middle">G1 · G2 · G3</text>
+  <text class="grp" x="155" y="132" text-anchor="middle">G4 · G5</text>
+  <text class="grp" x="155" y="164" text-anchor="middle">G10 · G11</text>
+  <text class="lbl" x="155" y="205" text-anchor="middle">sept groupes obligatoires,</text>
+  <text class="lbl" x="155" y="227" text-anchor="middle">quelle que soit la catégorie</text>
+
+  <!-- Bloc 2 : le tirage au sort -->
+  <rect x="315" y="20" width="270" height="230" rx="14" fill="#fbf1de" stroke="#b06a00" stroke-width="3"/>
+  <rect x="315" y="20" width="270" height="42" rx="14" fill="#b06a00"/>
+  <rect x="315" y="48" width="270" height="14" fill="#b06a00"/>
+  <text class="ttl" x="450" y="48" text-anchor="middle">Tiré au sort</text>
+  <text class="q" x="450" y="118" text-anchor="middle">?</text>
+  <text class="grp" x="450" y="152" text-anchor="middle">G6 · G7 · G8 · G9</text>
+  <text class="lbl" x="450" y="192" text-anchor="middle">au moins un des quatre,</text>
+  <text class="lbl" x="450" y="214" text-anchor="middle">inconnu avant l'épreuve</text>
+
+  <!-- Bloc 3 : le groupe de catégorie -->
+  <rect x="610" y="20" width="270" height="230" rx="14" fill="#fffdf8" stroke="#1e40af" stroke-width="3"/>
+  <rect x="610" y="20" width="270" height="42" rx="14" fill="#1e40af"/>
+  <rect x="610" y="48" width="270" height="14" fill="#1e40af"/>
+  <text class="ttl" x="745" y="48" text-anchor="middle">Selon la catégorie</text>
+  <text class="grp" x="745" y="100" text-anchor="middle">G12 → A1 · A2</text>
+  <text class="grp" x="745" y="132" text-anchor="middle">G13 → B (CO₂)</text>
+  <text class="grp" x="745" y="164" text-anchor="middle">G14 → C (NH₃)</text>
+  <text class="lbl" x="745" y="205" text-anchor="middle">un seul groupe, celui de</text>
+  <text class="lbl" x="745" y="227" text-anchor="middle">la catégorie que vous visez</text>
+
+  <!-- Bande du bas : théorie + pratique -->
+  <rect x="20" y="278" width="860" height="52" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lbl" x="450" y="303" text-anchor="middle" font-weight="bold">Chaque groupe est évalué en THÉORIE et en PRATIQUE</text>
+  <text class="note" x="450" y="323" text-anchor="middle">réussir l'un sans l'autre ne donne pas l'attestation</text>
+
+  <text class="note" x="450" y="362" text-anchor="middle">Le tirage au sort existe pour empêcher l'impasse : on ne révise pas trois groupes sur quatre.</text>
+</svg>

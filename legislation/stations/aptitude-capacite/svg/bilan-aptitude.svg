@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-bil" aria-describedby="d-bil" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bil">Le réflexe : connaître la date de délivrance de son attestation</title>
+  <desc id="d-bil">Une carte d'attestation d'aptitude, avec sa catégorie et surtout sa date de
+    délivrance mise en évidence. À droite, un compteur montre les sept années qui courent depuis
+    cette date, sous forme de sept jalons dont les premiers sont franchis. Une bande rappelle les
+    cinq points de la station : aptitude pour la personne, capacité pour l'entreprise, un groupe
+    tiré au sort à l'examen, la catégorie qui borne les droits, et l'attestation qui se maintient.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fffdf8; }
+    .cat { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#0f766e; }
+    .lbl { font-size:15.5px; fill:#10233c; }
+    .dat { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:23px; fill:#b06a00; }
+    .an  { font-size:14px; fill:#5a6b7d; }
+    .cle { font-size:16px; fill:#10233c; }
+    .note{ font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- La carte d'attestation -->
+  <rect x="20" y="24" width="380" height="200" rx="16" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <rect x="20" y="24" width="380" height="44" rx="16" fill="#0f766e"/>
+  <rect x="20" y="52" width="380" height="16" fill="#0f766e"/>
+  <text class="ttl" x="210" y="53" text-anchor="middle">ATTESTATION D'APTITUDE</text>
+  <text class="lbl" x="44" y="96">La personne — c'est vous qui la détenez</text>
+  <text class="cat" x="44" y="136">Catégorie A1</text>
+  <line x1="44" y1="152" x2="376" y2="152" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="44" y="178">Délivrée le</text>
+  <text class="dat" x="140" y="180">14 mars 2026</text>
+  <rect x="36" y="158" width="330" height="30" rx="8" fill="none" stroke="#b06a00" stroke-width="2.5"/>
+  <text class="an" x="44" y="208">c'est de cette date que part le compteur</text>
+
+  <!-- Le compteur des 7 ans -->
+  <text class="lbl" x="440" y="48" font-weight="bold">Le compteur des 7 ans</text>
+  <line x1="446" y1="96" x2="860" y2="96" stroke="#d6dee7" stroke-width="7" stroke-linecap="round"/>
+  <line x1="446" y1="96" x2="620" y2="96" stroke="#0f766e" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="446" cy="96" r="11" fill="#0f766e"/>
+  <circle cx="515" cy="96" r="9" fill="#0f766e"/>
+  <circle cx="584" cy="96" r="9" fill="#0f766e"/>
+  <circle cx="653" cy="96" r="9" fill="#fffdf8" stroke="#8fa0b0" stroke-width="3"/>
+  <circle cx="722" cy="96" r="9" fill="#fffdf8" stroke="#8fa0b0" stroke-width="3"/>
+  <circle cx="791" cy="96" r="9" fill="#fffdf8" stroke="#8fa0b0" stroke-width="3"/>
+  <circle cx="860" cy="96" r="14" fill="#fbf1de" stroke="#b06a00" stroke-width="4"/>
+  <text class="an" x="446" y="126" text-anchor="middle">2026</text>
+  <text class="an" x="860" y="130" text-anchor="middle" font-weight="bold">2033</text>
+  <text class="lbl" x="653" y="158" text-anchor="middle">remise à niveau au plus tard ici</text>
+
+  <!-- La bande de bilan -->
+  <rect x="20" y="240" width="860" height="66" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="cle" x="450" y="266" text-anchor="middle">Aptitude = la personne · Capacité = l'entreprise · un groupe tiré au sort à l'examen</text>
+  <text class="cle" x="450" y="290" text-anchor="middle">la catégorie borne vos droits · et l'attestation se maintient, tous les 7 ans</text>
+
+  <text class="note" x="450" y="330" text-anchor="middle">La seule chose à savoir par cœur : la date sur votre propre attestation.</text>
+</svg>

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Aptitude &amp; capacité — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : aptitude pour la personne, capacité pour l'entreprise, la structure de l'examen, les sept catégories, et la nouveauté 2025 — l'attestation n'est plus acquise à vie.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/aptitude-capacite/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Fluidique & thermique.
+     Deuxième station du réseau, et première correspondance de F-Gaz 3 :
+     le maillage devient réel avec elle.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
+     donc avec la voix du navigateur. La fabrication Piper (locale) est
+     une étape à part — voir FOND.md, § production.
+
+     Fond rédigé le 23/08, feu vert de F. Henninot le 24/08.
+     ÉCART ASSUMÉ AVEC LE FOND : l'écran 4 ne mentionne ni durée de
+     validité ni organisme délivrant la capacité — ces deux points ne
+     figurent pas dans referentiel-2025.json (qui ne couvre que
+     l'aptitude) et n'étaient donc pas sourcés. Retirés plutôt que
+     devinés, comme le fond le prévoyait.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Fluidique &amp; thermique · niveau BTS</p>
+  <h1>Aptitude &amp; capacité — qui a le droit de toucher</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez distinguer aptitude et capacité, dire qui détient quoi, situer votre catégorie, expliquer comment l'aptitude s'obtient — et surtout qu'elle <strong>se maintient</strong> : depuis 2025, elle n'est plus acquise à vie.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez les deux documents côte à côte. À gauche, l'attestation d'aptitude : elle concerne la personne. C'est vous qui la détenez, elle prouve que vous savez faire, et elle vous suit si vous changez d'employeur. À droite, l'attestation de capacité : elle concerne l'entreprise. La société la détient, elle prouve qu'elle a le personnel, l'outillage et les procédures. Entre les deux, un signe plus : il faut les deux. Et en bas, barrée en rouge, la phrase fausse la plus fréquente du métier : mon patron a la capacité, donc je peux y aller. Non. Sans votre aptitude, vous n'intervenez pas, même dans une entreprise parfaitement en règle.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Deux papiers, deux titulaires</h2>
+    <p>L'<strong>attestation d'aptitude</strong> concerne <strong>la personne</strong> : c'est le technicien qui la détient, elle prouve qu'il sait faire. L'<strong>attestation de capacité</strong> concerne <strong>l'entreprise</strong> : elle prouve que la société dispose du personnel, de l'outillage et des procédures.</p>
+    <p><strong>Il faut les deux, et l'une ne remplace jamais l'autre.</strong> C'est la confusion la plus fréquente du métier : « mon patron a la capacité, donc je peux y aller » est faux. Sans aptitude, vous ne pouvez pas intervenir — même dans une entreprise parfaitement en règle.</p>
+    <figure>
+      <img src="svg/deux-papiers.svg" alt="Deux documents côte à côte : l'attestation d'aptitude, qui concerne la personne et la suit si elle change d'employeur, et l'attestation de capacité, qui concerne l'entreprise. Entre les deux, un signe plus. En bas, la phrase « mon patron a la capacité, donc je peux y aller » est barrée.">
+      <figcaption>Deux titulaires différents. L'un ne couvre pas l'autre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Trois blocs, et c'est celui du milieu qui compte. À gauche, en vert, les groupes obligatoires : G1 à G5, plus G10 et G11, pour tout le monde. À droite, en bleu, le groupe de votre catégorie : G12 si vous visez A1 ou A2, G13 pour la catégorie B, le CO2, G14 pour la catégorie C, l'ammoniac. Et au centre, le bloc marqué d'un grand point d'interrogation : au moins un groupe tiré au sort parmi G6, G7, G8 et G9. Vous ne savez pas, avant l'épreuve, lequel des quatre sortira. C'est fait exprès : on ne peut pas réviser trois groupes sur quatre en espérant passer entre les gouttes. Et la bande du bas rappelle que chaque groupe est évalué en théorie ET en pratique.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Comment l'aptitude s'obtient : pas d'impasse possible</h2>
+    <p>L'évaluation croise <strong>une partie théorique et une partie pratique</strong>, sur des <strong>groupes de compétences</strong> :</p>
+    <ul>
+      <li>des <strong>groupes obligatoires</strong> pour tout le monde : G1, G2, G3, G4, G5, G10, G11 ;</li>
+      <li><strong>au moins un groupe tiré au sort</strong> parmi G6, G7, G8 et G9 — et le candidat <em>ne sait pas, avant l'évaluation, sur lequel il sera interrogé</em> ;</li>
+      <li>un <strong>groupe spécifique à la catégorie visée</strong> : G12 pour A1 et A2, G13 pour B (le CO₂), G14 pour C (l'ammoniac).</li>
+    </ul>
+    <p><strong>Ce que le tirage au sort veut dire</strong> : impossible de réviser trois groupes sur quatre en espérant passer entre les gouttes. Le dispositif est conçu pour ça.</p>
+    <figure>
+      <img src="svg/structure-examen.svg" alt="Trois blocs : les groupes obligatoires G1 à G5, G10 et G11 ; un bloc marqué d'un point d'interrogation pour le groupe tiré au sort parmi G6 à G9 ; et le groupe de la catégorie visée, G12 pour A1 et A2, G13 pour B, G14 pour C. Une bande rappelle que chaque groupe est évalué en théorie et en pratique.">
+      <figcaption>Le point d'interrogation est le cœur du dispositif : il interdit l'impasse.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Sept catégories au total. Six couvrent le froid fixe : A1, A2, B, C, D et E. La septième, la catégorie V, concerne la climatisation des véhicules et relève d'un référentiel distinct. Le point à retenir, et il surprend souvent : c'est la catégorie qui borne ce que vous avez le droit de faire, pas votre niveau de diplôme. Un titulaire E ne peut que contrôler l'étanchéité, à condition de ne pas avoir à accéder au circuit. Un titulaire D ne peut que récupérer, et seulement sur les faibles charges. Un BTS n'y change rien : c'est le papier qui décide, pas le diplôme.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Les sept catégories : laquelle vous concerne</h2>
+    <p>Six catégories couvrent le froid fixe — <strong>A1, A2, B, C, D, E</strong> — et une septième, <strong>V</strong>, la climatisation des véhicules, relève d'un référentiel distinct.</p>
+    <p>Le point à retenir pour un BTS : <strong>la catégorie borne ce que vous avez le droit de faire</strong>, pas votre niveau de diplôme. Un titulaire E ne peut que contrôler l'étanchéité, à condition de ne pas avoir à accéder au circuit. Un titulaire D ne peut que récupérer, et seulement sur les faibles charges.</p>
+    <figure>
+      <img src="svg/aptitude-capacite-categories.svg" alt="Schéma des sept catégories d'attestation d'aptitude : A1, A2, B, C, D et E pour le froid fixe, et V pour la climatisation des véhicules, encadrée en pointillé car elle relève d'un référentiel distinct.">
+      <figcaption>Regardez la rangée des catégories, en bas du schéma : chacune ouvre des droits différents.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Un toit, trois colonnes. Le toit, c'est l'entreprise et son attestation de capacité. Il ne tient que si les trois colonnes tiennent. Première colonne, le personnel : des techniciens titulaires de l'aptitude, en nombre suffisant pour l'activité déclarée. Deuxième colonne, l'outillage : récupération, détection, mesure — des équipements maintenus et vérifiés, preuves à l'appui. Troisième colonne, les procédures : la traçabilité, le registre, le suivi des fluides entrés et sortis. Et regardez le socle, sous les colonnes : chaque intervenant doit avoir sa propre aptitude. Les deux papiers de l'écran un reviennent, à l'autre bout de la chaîne.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La capacité : ce que l'entreprise doit prouver</h2>
+    <p>Trois piliers, et ils se contrôlent :</p>
+    <ol>
+      <li><strong>Le personnel</strong> — des techniciens titulaires de l'aptitude, en nombre suffisant pour l'activité déclarée ;</li>
+      <li><strong>L'outillage</strong> — les équipements de récupération, de détection et de mesure, maintenus et vérifiés ;</li>
+      <li><strong>Les procédures</strong> — la traçabilité des interventions et des fluides.</li>
+    </ol>
+    <p>Une entreprise sans capacité ne peut pas exercer, même si tous ses techniciens sont attestés. La réciproque est vraie : l'entreprise capable n'autorise pas un technicien sans aptitude.</p>
+    <figure>
+      <img src="svg/trois-piliers-capacite.svg" alt="Un toit portant la mention « l'entreprise, attestation de capacité » repose sur trois colonnes : le personnel titulaire de l'aptitude, l'outillage de récupération, détection et mesure, et les procédures de traçabilité. Un socle rappelle que chaque intervenant doit avoir sa propre attestation d'aptitude.">
+      <figcaption>Le toit ne tient que si les trois colonnes tiennent — et le socle rappelle l'aptitude de chacun.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Voici le cœur de la station, et la nouveauté que presque personne n'a encore intégrée. Suivez la ligne : elle part de la délivrance de votre attestation, elle court, et elle atteint le jalon orange des sept ans. Là, deux issues divergent. Vers le haut, en trait plein vert : la remise à niveau est faite, l'attestation continue, un nouveau compteur de sept ans repart. Vers le bas, en trait tireté rouge : rien n'a été fait, et l'attestation est suspendue. Le titulaire n'a plus le droit d'exercer, avec trois ans au maximum pour se régulariser. L'encadré à gauche donne les conditions : un organisme certifié Qualiopi, et une démonstration pratique encadrée par une entité titulaire d'une capacité et une personne titulaire d'une aptitude.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">La nouveauté 2025 : elle n'est plus à vie</h2>
+    <p>C'est le point central de cette station. Le régime issu de l'<strong>arrêté du 21 novembre 2025</strong> instaure une <strong>remise à niveau périodique</strong> :</p>
+    <ul>
+      <li><strong>a minima tous les 7 ans</strong>, à compter de la date de délivrance de l'attestation — ou de la dernière remise à niveau ;</li>
+      <li>dispensée par un <strong>organisme de formation certifié Qualiopi</strong>, la démonstration pratique étant réalisée par une <strong>entité titulaire d'une attestation de capacité</strong> et une <strong>personne titulaire d'une aptitude</strong> ;</li>
+      <li>elle concerne <strong>A1, A2, B, C, D et E</strong>. La catégorie <strong>V en est exclue</strong>.</li>
+    </ul>
+    <p><strong>La sanction du défaut</strong> : l'attestation est <strong>suspendue</strong>. Le titulaire ne peut plus exercer jusqu'à mise en conformité, dans un délai maximum de <strong>3 ans</strong>.</p>
+    <figure>
+      <img src="svg/maintien-7-ans.svg" alt="Ligne de temps partant de la délivrance de l'attestation jusqu'à un jalon de sept ans, où deux voies divergent : en trait plein, la remise à niveau faite et un nouveau compteur qui repart ; en trait tireté, l'attestation suspendue avec trois ans au maximum pour régulariser.">
+      <figcaption>Trait plein : la voie qui continue. Trait tireté : celle qui se coupe.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Et pour ceux qui ont une ancienne attestation ? Regardez à gauche : catégories I, II, III ou IV, délivrées sous les anciens règlements. Deux voies en partent. La voie du haut, courte et en trait plein : une remise à niveau ponctuelle, dispensée par un organisme formateur certifié, qui fait rejoindre le nouveau régime et ses catégories A1 à E. La voie du bas, en tireté : ne rien faire. Au centre, le jalon orange donne la date : le 12 mars 2029. Passé cette date, l'ancienne attestation n'est plus valide, et son titulaire doit repasser l'examen complet. Dit autrement : un technicien attesté en 2018 qui ne bouge pas redevient, en 2029, un candidat.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Les anciens titulaires : l'échéance du 12 mars 2029</h2>
+    <p>Ceux qui détiennent une attestation des <strong>anciennes catégories I, II, III ou IV</strong> (règlements (UE) 2015/2067 ou (CE) 303/2008) doivent se mettre en conformité par une <strong>remise à niveau ponctuelle</strong>, dispensée par un organisme formateur certifié — pas nécessairement l'organisme évaluateur.</p>
+    <p><strong>Échéance : le 12 mars 2029.</strong> Passé cette date, l'ancienne attestation n'est <strong>plus valide</strong> : son titulaire doit repasser l'examen complet.</p>
+    <p>Dit autrement : un technicien attesté en 2018 qui ne fait rien redevient, en 2029, un candidat.</p>
+    <figure>
+      <img src="svg/bascule-2029.svg" alt="Depuis une ancienne attestation de catégorie I à IV, deux voies : en trait plein, la remise à niveau ponctuelle qui rejoint le nouveau régime A1 à E ; en trait tireté, l'inaction qui ramène à l'examen complet. Au centre, le jalon du 12 mars 2029.">
+      <figcaption>Deux voies, une date. La voie courte existe encore — jusqu'en 2029.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre cartes, quatre situations que vous rencontrerez. Première, en vert : je change d'entreprise. Votre aptitude vous suit, elle est à vous — mais la nouvelle entreprise doit avoir sa capacité, sinon vous n'intervenez pas pour elle. Deuxième : mon entreprise a la capacité, je débute. La capacité de l'entreprise ne vous couvre pas : il vous faut votre propre aptitude, dans la catégorie des fluides que vous manipulez. Troisième, en orange : mon attestation date de 2018. Ancien régime, donc remise à niveau ponctuelle avant le 12 mars 2029. Quatrième : mon attestation date de 2026. Nouveau régime, le compteur des sept ans court depuis la délivrance, prochaine échéance en 2033. Dans les quatre cas, la même question : qui détient quoi, et depuis quand.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le raisonnement : quatre situations de terrain</h2>
+    <ol>
+      <li><strong>« Je change d'entreprise. »</strong> → L'aptitude vous suit : elle est à vous. Mais la nouvelle entreprise doit avoir sa <strong>capacité</strong>, sinon vous ne pouvez pas intervenir pour elle.</li>
+      <li><strong>« Mon entreprise a la capacité, je débute. »</strong> → Il vous faut votre propre aptitude, dans la catégorie correspondant aux fluides manipulés.</li>
+      <li><strong>« Mon attestation date de 2018. »</strong> → Ancien régime : la remise à niveau ponctuelle est à faire <strong>avant le 12 mars 2029</strong>.</li>
+      <li><strong>« Mon attestation date de 2026. »</strong> → Nouveau régime : le compteur des <strong>7 ans</strong> court à partir de la délivrance.</li>
+    </ol>
+    <figure>
+      <img src="svg/quatre-situations.svg" alt="Quatre cartes numérotées : changer d'entreprise, débuter dans une entreprise qui a la capacité, détenir une attestation de 2018, détenir une attestation de 2026. Chacune porte sa réponse.">
+      <figcaption>Dans les quatre cas, la même question : qui détient quoi, et depuis quand.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan. À gauche, une carte d'attestation : la catégorie, et surtout la date de délivrance, encadrée en orange. C'est de cette date que part tout le reste. À droite, le compteur des sept ans : les premiers jalons sont franchis en vert, les suivants sont encore vides, et le grand cercle orange à droite marque l'échéance de la remise à niveau. La bande du bas résume les cinq points de la station. Et le réflexe professionnel, la seule chose vraiment à savoir par cœur : la date inscrite sur votre propre attestation.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Aptitude = <strong>la personne</strong>. Capacité = <strong>l'entreprise</strong>. Il faut les deux.</li>
+      <li>L'examen mêle groupes obligatoires, <strong>au moins un groupe tiré au sort</strong> parmi G6 à G9, et un groupe spécifique à la catégorie.</li>
+      <li>La catégorie borne les <strong>droits d'intervention</strong>, pas le niveau de diplôme.</li>
+      <li><strong>L'attestation se maintient</strong> : remise à niveau a minima tous les 7 ans, sous peine de suspension.</li>
+      <li>Anciens titulaires : <strong>12 mars 2029</strong>, sinon retour à l'examen.</li>
+    </ul>
+    <p class="formule">Le réflexe : connaître la date de délivrance de sa propre attestation.</p>
+    <figure>
+      <img src="svg/bilan-aptitude.svg" alt="Une carte d'attestation d'aptitude avec sa catégorie et sa date de délivrance encadrée, puis un compteur de sept ans dont les premiers jalons sont franchis, et une bande résumant les cinq points de la station.">
+      <figcaption>C'est de la date de délivrance que part le compteur.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un technicien titulaire d'une attestation d'aptitude rejoint une entreprise qui n'a pas d'attestation de capacité. Que peut-il faire ? Choisissez parmi les quatre propositions.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Il a l'aptitude, l'entreprise n'a pas la capacité. Que peut-il faire ?</h2>
+    <figure class="vignette">
+      <img src="svg/deux-papiers.svg" alt="Vignette de rappel : les deux attestations, celle de la personne et celle de l'entreprise, avec le signe plus entre elles.">
+      <figcaption>Rappel de l'écran 1 — deux papiers, deux titulaires.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Intervenir : son aptitude suffit, elle est personnelle</button>
+      <button type="button" data-answer="bonne">Rien sur les gaz fluorés — il faut aussi la capacité de l'entreprise</button>
+      <button type="button" data-answer="c">Intervenir uniquement sur les faibles charges</button>
+      <button type="button" data-answer="d">Intervenir six mois, le temps que l'entreprise régularise</button>
+    </div>
+    <p class="feedback" hidden data-explication="Les deux papiers sont nécessaires ensemble. L'aptitude est à la personne et le suit ; la capacité est à l'entreprise. L'une ne remplace jamais l'autre."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Lors de l'évaluation, sur quels groupes le candidat est-il interrogé ? Reprenez le schéma de l'écran deux avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Sur quels groupes le candidat est-il interrogé ?</h2>
+    <figure class="vignette">
+      <img src="svg/structure-examen.svg" alt="Vignette de rappel : les trois blocs de l'évaluation, dont celui du groupe tiré au sort marqué d'un point d'interrogation.">
+      <figcaption>Rappel de l'écran 2 — le bloc du milieu est tiré au sort.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Uniquement sur les groupes obligatoires</button>
+      <button type="button" data-answer="b">Sur les groupes qu'il choisit dans son dossier</button>
+      <button type="button" data-answer="bonne">Sur les obligatoires, plus un groupe tiré au sort parmi G6 à G9, plus celui de sa catégorie</button>
+      <button type="button" data-answer="d">Sur les quatorze groupes, sans exception</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le tirage au sort est là pour empêcher l'impasse : le candidat ne sait pas, avant l'évaluation, lequel des quatre sortira."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question, et c'est la nouveauté 2025. Une attestation d'aptitude délivrée sous le régime de 2025 est valable combien de temps ? Regardez la ligne de temps de l'écran cinq si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Une attestation délivrée sous le régime de 2025 est valable…</h2>
+    <figure class="vignette">
+      <img src="svg/maintien-7-ans.svg" alt="Vignette de rappel : la ligne de temps des sept ans et ses deux issues, remise à niveau faite ou attestation suspendue.">
+      <figcaption>Rappel de l'écran 5 — le jalon des 7 ans.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">À vie, comme auparavant</button>
+      <button type="button" data-answer="b">Cinq ans, puis elle doit être repassée entièrement</button>
+      <button type="button" data-answer="bonne">Tant qu'une remise à niveau est faite a minima tous les 7 ans</button>
+      <button type="button" data-answer="d">Trois ans, renouvelable une seule fois</button>
+    </div>
+    <p class="feedback" hidden data-explication="C'est la nouveauté du régime de 2025. Sans remise à niveau, l'attestation est suspendue : son titulaire ne peut plus exercer jusqu'à mise en conformité, dans un délai maximum de trois ans."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un technicien détient une attestation de catégorie deux, obtenue en 2018. Que doit-il faire ? Souvenez-vous des deux voies de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Une attestation de catégorie II obtenue en 2018 : que faire ?</h2>
+    <figure class="vignette">
+      <img src="svg/bascule-2029.svg" alt="Vignette de rappel : les deux voies depuis une ancienne attestation, la remise à niveau ponctuelle ou le retour à l'examen, et le jalon du 12 mars 2029.">
+      <figcaption>Rappel de l'écran 6 — la bascule du 12 mars 2029.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Rien : les anciennes catégories restent valides sans limite</button>
+      <button type="button" data-answer="bonne">Une remise à niveau ponctuelle avant le 12 mars 2029, sinon repasser l'examen</button>
+      <button type="button" data-answer="c">Repasser immédiatement l'examen complet</button>
+      <button type="button" data-answer="d">Demander la conversion automatique en catégorie A2</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'ancien régime bascule vers le nouveau par une remise à niveau ponctuelle. Passé l'échéance, l'attestation n'est plus valide et le titulaire redevient candidat."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, comme sur F-Gaz 3 : il se lit dès
+     l'accueil. Différence avec F-Gaz 3 : la première correspondance est
+     désormais un VRAI lien, puisque la station existe. Les deux autres
+     restent annoncées sans lien — on ne promet pas une porte fermée. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../fgaz-3/"><strong>F-Gaz 3 — le règlement (UE) 2024/573</strong></a> (même sous-ligne)
+      — pourquoi les catégories bougent : le règlement pousse vers le CO₂ et l'ammoniac.</li>
+    <li><strong>NF EN 378</strong> (même sous-ligne) — ce que la classe du fluide impose en plus.</li>
+    <li><strong>Droit du travail</strong> (autre sous-ligne) — l'employeur et la qualification de ses salariés.</li>
+  </ul>
+  <p>F-Gaz 3 est ouverte : le lien fonctionne. Les deux autres stations sont
+  en préparation sur le plan du réseau.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
+     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
+     cette station, elle parle donc avec la voix du navigateur. Pour lui
+     donner la voix Piper (locale) comme F-Gaz 3 :
+     build/voix/collecter-narrations.mjs puis generer-audios-piper.py,
+     puis réduire l'index à cette station.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="https://inerweb.fr/moteur/voix.js"></script>
+<script src="https://inerweb.fr/moteur/prof-vocal.js"></script>
+<script src="https://inerweb.fr/moteur/lisibilite.js"></script>
+<script src="https://inerweb.fr/moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

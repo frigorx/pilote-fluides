@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-2029" aria-describedby="d-2029" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-2029">Les anciennes catégories basculent avant le 12 mars 2029</title>
+  <desc id="d-2029">À gauche, une attestation des anciennes catégories I, II, III ou IV. Deux voies
+    en partent. La voie du haut, courte et en trait plein : une remise à niveau ponctuelle dispensée
+    par un organisme formateur certifié, qui fait rejoindre le nouveau régime et ses catégories A1,
+    A2, B, C, D, E. La voie du bas, en trait tireté : ne rien faire, et l'attestation n'est plus
+    valide après l'échéance — son titulaire redevient candidat et doit repasser l'examen complet.
+    Au centre, un jalon marque la date du 12 mars 2029.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; }
+    .lbl  { font-size:16px; fill:#10233c; }
+    .lblb { font-size:16px; fill:#10233c; font-weight:bold; }
+    .dat  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- La situation de départ -->
+  <rect x="20" y="128" width="215" height="110" rx="12" fill="#eef3f9" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="ttl" x="127" y="158" text-anchor="middle" fill="#1b3a63">Ancienne attestation</text>
+  <text class="lblb" x="127" y="186" text-anchor="middle">catégories I · II · III · IV</text>
+  <text class="lbl" x="127" y="212" text-anchor="middle">règlements 2015/2067</text>
+  <text class="lbl" x="127" y="230" text-anchor="middle">ou 303/2008</text>
+
+  <!-- Le jalon de la date -->
+  <rect x="392" y="150" width="150" height="66" rx="14" fill="#b06a00"/>
+  <text class="dat" x="467" y="178" text-anchor="middle">12 mars</text>
+  <text class="dat" x="467" y="202" text-anchor="middle">2029</text>
+  <text class="note" x="467" y="240" text-anchor="middle">l'échéance</text>
+
+  <!-- Voie haute : la remise à niveau ponctuelle -->
+  <path d="M 235 168 C 300 168 300 78 380 78 H 640" stroke="#1e7e54" stroke-width="9"
+        stroke-linecap="round" fill="none"/>
+  <polygon points="640,68 662,78 640,88" fill="#1e7e54"/>
+  <rect x="300" y="24" width="300" height="40" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+  <text class="ttl" x="450" y="51" text-anchor="middle" fill="#1e7e54">Remise à niveau ponctuelle</text>
+  <rect x="676" y="46" width="204" height="64" rx="12" fill="#fffdf8" stroke="#1e7e54" stroke-width="3"/>
+  <text class="lblb" x="778" y="74" text-anchor="middle">Nouveau régime</text>
+  <text class="lbl" x="778" y="96" text-anchor="middle">A1 · A2 · B · C · D · E</text>
+  <text class="lbl" x="450" y="112" text-anchor="middle">par un organisme formateur certifié</text>
+
+  <!-- Voie basse : ne rien faire -->
+  <path d="M 235 198 C 300 198 300 300 380 300 H 640" stroke="#c0392b" stroke-width="9"
+        stroke-linecap="round" fill="none" stroke-dasharray="18 12"/>
+  <polygon points="640,290 662,300 640,310" fill="#c0392b"/>
+  <rect x="300" y="316" width="300" height="40" rx="12" fill="#fbe9e7" stroke="#c0392b" stroke-width="2"/>
+  <text class="ttl" x="450" y="343" text-anchor="middle" fill="#c0392b">Ne rien faire</text>
+  <rect x="676" y="268" width="204" height="64" rx="12" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <text class="lblb" x="778" y="296" text-anchor="middle">Retour à l'examen</text>
+  <text class="lbl" x="778" y="318" text-anchor="middle">l'attestation n'est plus valide</text>
+
+  <text class="note" x="450" y="372" text-anchor="middle">Un technicien attesté en 2018 qui ne bouge pas redevient, en 2029, un candidat.</text>
+</svg>

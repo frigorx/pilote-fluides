@@ -81,6 +81,7 @@
             box-shadow:var(--ombre); padding:18px 22px; }
   .ouvert .o-etat { margin:0 0 12px; font-family:var(--titre); font-size:15px; color:var(--mut); }
   .ouvert .o-etat b { color:var(--bleu); font-size:17px; }
+  .ouvert .o-lien + .o-lien { margin-top:10px; }
   .ouvert .o-lien { display:block; text-decoration:none; background:var(--bleu); color:#fff;
                     border-radius:12px; padding:15px 20px; border:3px solid transparent;
                     transition:transform .12s, border-color .12s; }
@@ -184,12 +185,16 @@
        bandeau, hors du plan : il dit l'état réel et donne l'accès direct.
        À tenir à jour quand une station ouvre — c'est deux nombres et un lien. -->
   <div class="ouvert">
-    <p class="o-etat"><b>1 station ouverte</b> sur 57</p>
+    <p class="o-etat"><b>2 stations ouvertes</b> sur 57</p>
     <a class="o-lien" href="stations/fgaz-3/">
       <span class="o-nom">📜 F-Gaz 3 — le règlement (UE) 2024/573</span>
       <span class="o-det">12 écrans, 4 questions, narration audio — environ 10 minutes</span>
     </a>
-    <p class="o-note">Les 56 autres stations sont dessinées sur le plan ci-dessous,
+    <a class="o-lien" href="stations/aptitude-capacite/">
+      <span class="o-nom">📜 Aptitude &amp; capacité — qui a le droit de toucher</span>
+      <span class="o-det">12 écrans, 4 questions — environ 10 minutes</span>
+    </a>
+    <p class="o-note">Les 55 autres stations sont dessinées sur le plan ci-dessous,
     mais leur cours n'est pas encore écrit : leur pastille reste en pointillé et
     ne s'ouvre pas.</p>
   </div>
@@ -306,7 +311,7 @@
         { id: "regl-fluidique", nom: "Fluidique & thermique", sous: "F-Gaz, EN 378, traçabilité", couleur: "#0f766e", corr: true,
           stations: [
             { nom: "F-Gaz 3",             sous: "2024 : quotas, interdictions", href: "stations/fgaz-3/" },
-            { nom: "Aptitude & capacité", sous: "personne & entreprise" },
+            { nom: "Aptitude & capacité", sous: "personne & entreprise", href: "stations/aptitude-capacite/" },
             { nom: "NF EN 378",           sous: "classes, charges maxi", corr: true },
             { nom: "Traçabilité",         sous: "BSD, Trackdéchets", corr: true }
           ] },

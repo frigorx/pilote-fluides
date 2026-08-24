@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-cap" aria-describedby="d-cap" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cap">Les trois piliers de l'attestation de capacité</title>
+  <desc id="d-cap">Un toit d'entreprise repose sur trois colonnes. La première, le personnel :
+    des techniciens titulaires de l'attestation d'aptitude, en nombre suffisant pour l'activité
+    déclarée. La deuxième, l'outillage : les équipements de récupération, de détection et de mesure,
+    maintenus et vérifiés. La troisième, les procédures : la traçabilité des interventions et des
+    fluides. Sous les colonnes, un socle rappelle que l'entreprise capable n'autorise pas pour autant
+    un technicien sans aptitude — il faut les deux papiers.</desc>
+  <style>
+    .toit { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#fffdf8; }
+    .pil  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#0f766e; }
+    .lbl  { font-size:16px; fill:#10233c; }
+    .soc  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- Le toit : l'entreprise -->
+  <path d="M 450 20 L 860 96 L 40 96 Z" fill="#0f766e"/>
+  <rect x="40" y="96" width="820" height="40" fill="#0f766e"/>
+  <text class="toit" x="450" y="123" text-anchor="middle">L'ENTREPRISE — attestation de capacité</text>
+
+  <!-- Colonne 1 : personnel -->
+  <rect x="70" y="152" width="230" height="150" rx="12" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <text class="pil" x="185" y="182" text-anchor="middle">Le personnel</text>
+  <line x1="100" y1="196" x2="270" y2="196" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="185" y="222" text-anchor="middle">des techniciens titulaires</text>
+  <text class="lbl" x="185" y="244" text-anchor="middle">de l'aptitude, en nombre</text>
+  <text class="lbl" x="185" y="266" text-anchor="middle">suffisant pour l'activité</text>
+  <text class="lbl" x="185" y="288" text-anchor="middle">déclarée</text>
+
+  <!-- Colonne 2 : outillage -->
+  <rect x="335" y="152" width="230" height="150" rx="12" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <text class="pil" x="450" y="182" text-anchor="middle">L'outillage</text>
+  <line x1="365" y1="196" x2="535" y2="196" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="450" y="222" text-anchor="middle">récupération, détection,</text>
+  <text class="lbl" x="450" y="244" text-anchor="middle">mesure — les équipements</text>
+  <text class="lbl" x="450" y="266" text-anchor="middle">maintenus et vérifiés,</text>
+  <text class="lbl" x="450" y="288" text-anchor="middle">preuves à l'appui</text>
+
+  <!-- Colonne 3 : procédures -->
+  <rect x="600" y="152" width="230" height="150" rx="12" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <text class="pil" x="715" y="182" text-anchor="middle">Les procédures</text>
+  <line x1="630" y1="196" x2="800" y2="196" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lbl" x="715" y="222" text-anchor="middle">la traçabilité : registre,</text>
+  <text class="lbl" x="715" y="244" text-anchor="middle">fiches d'intervention,</text>
+  <text class="lbl" x="715" y="266" text-anchor="middle">suivi des fluides entrés</text>
+  <text class="lbl" x="715" y="288" text-anchor="middle">et sortis</text>
+
+  <!-- Socle : le rappel -->
+  <rect x="70" y="322" width="760" height="46" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="soc" x="450" y="351" text-anchor="middle">Et chaque intervenant doit avoir SA propre attestation d'aptitude</text>
+
+  <text class="note" x="450" y="392" text-anchor="middle">Une entreprise en règle n'autorise pas un technicien qui ne l'est pas.</text>
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 862" role="img" aria-label="Deux documents à ne pas confondre. L'attestation d'aptitude concerne la personne : c'est le technicien qui la détient, elle prouve qu'il sait faire. L'attestation de capacité concerne l'entreprise : personnel, outillage, procédures. Il faut les deux. En dessous, les sept catégories d'aptitude : A1 sans limite de charge, A2 limitée aux faibles charges, B pour le dioxyde de carbone, C pour l'ammoniac, D pour la récupération seule, E pour les contrôles d'étanchéité seuls, et V pour la climatisation des véhicules qui relève d'un référentiel distinct.">
+<title>Aptitude, capacité, et les sept catégories</title>
+<metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><cc:Work rdf:about=""><dc:title>Aptitude, capacité, et les sept catégories</dc:title><dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator><dc:date>2026</dc:date><cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/></cc:Work></rdf:RDF></metadata>
+<style>
+  .t   { font:700 19px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .st  { font:700 16px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .lg  { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+  .p   { fill:none; stroke:#1b3a63; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+  .ca  { font:700 26px Calibri,Segoe UI,sans-serif; fill:#1b3a63; }
+  .cb  { font:700 26px Calibri,Segoe UI,sans-serif; fill:#0f766e; }
+  .cv  { font:700 26px Calibri,Segoe UI,sans-serif; fill:#637285; }
+  .cl  { font:400 13.5px Calibri,Segoe UI,sans-serif; fill:#4a5b6e; }
+</style>
+
+<rect width="880" height="862" fill="#ffffff"/>
+<text class="t" x="30" y="32">Deux documents que tout le monde confond</text>
+
+<g transform="translate(30,54)">
+  <rect x="0" y="0" width="380" height="184" rx="8" fill="#eef6f1" stroke="#a9cdb8" stroke-width="1.5"/>
+  <g transform="translate(48,52)">
+    <circle class="p" cx="0" cy="0" r="16"/>
+    <path class="p" d="M0,16 v34 M0,24 l-18,12 M0,24 l18,12 M0,50 l-13,26 M0,50 l13,26"/>
+  </g>
+  <text class="st" x="110" y="46">Attestation d'APTITUDE</text>
+  <text class="lg" x="110" y="70">Elle concerne <tspan style="font-weight:700">la personne</tspan>.</text>
+  <text class="lg" x="110" y="92">C'est vous qui la détenez.</text>
+  <text class="lg" x="110" y="114">Elle prouve que vous <tspan style="font-weight:700">savez faire</tspan>.</text>
+  <text class="lg" x="30" y="158">Sans elle, vous ne pouvez pas intervenir,</text>
+  <text class="lg" x="30" y="176">même dans une entreprise en règle.</text>
+</g>
+
+<g transform="translate(470,54)">
+  <rect x="0" y="0" width="380" height="184" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5"/>
+  <g transform="translate(34,30)">
+    <path class="p" d="M0,66 v-42 l22,-16 22,16 v42 z"/>
+    <rect class="p" x="10" y="34" width="12" height="12"/>
+    <rect class="p" x="26" y="34" width="12" height="12"/>
+    <rect class="p" x="16" y="52" width="14" height="14"/>
+  </g>
+  <text class="st" x="110" y="46">Attestation de CAPACITÉ</text>
+  <text class="lg" x="110" y="70">Elle concerne <tspan style="font-weight:700">l'entreprise</tspan>.</text>
+  <text class="lg" x="110" y="92">C'est la société qui la détient.</text>
+  <text class="lg" x="110" y="114">Personnel, outillage, procédures.</text>
+  <text class="lg" x="30" y="158">Sans elle, l'entreprise ne peut pas exercer,</text>
+  <text class="lg" x="30" y="176">même avec des techniciens tous attestés.</text>
+</g>
+
+<g transform="translate(415,140)">
+  <circle cx="12" cy="0" r="17" fill="#1b3a63"/>
+  <text x="12" y="6" text-anchor="middle" style="font:700 17px Calibri;fill:#fff">+</text>
+</g>
+
+<rect x="30" y="256" width="820" height="46" rx="8" fill="#fdf1ed" stroke="#e8b9a8" stroke-width="1.5"/>
+<text x="48" y="278" style="font:700 14.5px Calibri;fill:#c9451a">Il faut les DEUX, et l'une ne remplace jamais l'autre.</text>
+<text class="lg" x="48" y="296">La confusion la plus fréquente du métier : « mon patron a la capacité, donc je peux y aller » est faux.</text>
+
+<text class="t" x="30" y="342">Les sept catégories d'aptitude — arrêté du 21 novembre 2025</text>
+
+<rect x="30"  y="356" width="400" height="104" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5"/>
+<text class="ca" x="46" y="390">A1</text>
+<text class="cl" x="46" y="414">Toutes les activités de l'article 4, pour les</text>
+<text class="cl" x="46" y="432">gaz fluorés et les hydrocarbures.</text>
+<text class="cl" x="46" y="450">Sans limite de charge.</text>
+
+<rect x="450" y="356" width="400" height="104" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5"/>
+<text class="ca" x="466" y="390">A2</text>
+<text class="cl" x="466" y="414">Comme A1, mais limité aux faibles charges :</text>
+<text class="cl" x="466" y="432">moins de 3 kg, ou moins de 6 kg si</text>
+<text class="cl" x="466" y="450">hermétiquement scellé et étiqueté.</text>
+
+<rect x="30"  y="470" width="400" height="104" rx="8" fill="#e6f2f0" stroke="#0f766e" stroke-width="2.5"/>
+<text class="cb" x="46" y="504">B</text>
+<text class="cl" x="46" y="528">Toutes les activités de l'article 4, pour le</text>
+<text class="cl" x="46" y="546">dioxyde de carbone (R-744 / CO₂).</text>
+
+<rect x="450" y="470" width="400" height="104" rx="8" fill="#e6f2f0" stroke="#0f766e" stroke-width="2.5"/>
+<text class="cb" x="466" y="504">C</text>
+<text class="cl" x="466" y="528">Toutes les activités de l'article 4, pour</text>
+<text class="cl" x="466" y="546">l'ammoniac (R-717 / NH₃).</text>
+
+<rect x="30"  y="584" width="400" height="104" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5"/>
+<text class="ca" x="46" y="618">D</text>
+<text class="cl" x="46" y="642">Récupération des gaz fluorés seulement,</text>
+<text class="cl" x="46" y="660">et sur les faibles charges (moins de 3 kg,</text>
+<text class="cl" x="46" y="678">ou 6 kg si hermétiquement scellé).</text>
+
+<rect x="450" y="584" width="400" height="104" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5"/>
+<text class="ca" x="466" y="618">E</text>
+<text class="cl" x="466" y="642">Contrôles d'étanchéité seulement, à</text>
+<text class="cl" x="466" y="660">condition de ne pas avoir à accéder au</text>
+<text class="cl" x="466" y="678">circuit frigorifique.</text>
+
+<rect x="30"  y="698" width="400" height="104" rx="8" fill="#f7fafc" stroke="#c9d4de" stroke-width="1.5" stroke-dasharray="7 5"/>
+<text class="cv" x="46" y="732">V</text>
+<text class="cl" x="46" y="756">Climatisation des véhicules, engins et</text>
+<text class="cl" x="46" y="774">matériels de l'article R. 311-1 du code</text>
+<text class="cl" x="46" y="792">de la route.</text>
+
+<text class="lg" x="470" y="730">B et C sont les alternatives encouragées :</text>
+<text class="lg" x="470" y="750">le CO₂ et l'ammoniac entrent dans le</text>
+<text class="lg" x="470" y="770">champ de la formation.</text>
+
+<text class="lg" x="30" y="832">Le contour tireté de V le rappelle : cette catégorie relève d'un référentiel distinct (II.D).</text>
+<text class="lg" x="30" y="852">Elle ne s'obtient pas avec les autres : c'est une formation à part.</text>
+</svg>
