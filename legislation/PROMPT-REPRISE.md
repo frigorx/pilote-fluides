@@ -122,6 +122,34 @@ doit taper `/design consent` dans la session qui en aura besoin. Charte à utili
 projet « Charte graphique inerWeb » (`1394c5be-3bc5-441f-93d9-251c89f48ba8`),
 11 pièces poussées le 13/08 — ne rien resynchroniser.
 
+## ✅ QUATRE DÉCISIONS DE F. HENNINOT — 24/08/2026 au soir
+
+Prises en réponse à des questions posées une par une. **Elles s'appliquent à la
+suite du chantier, il n'y a plus à les redemander.**
+
+1. **VOIX : `edge-tts`.** Feu vert donné pour la Législation, en connaissance de
+   cause : le texte des narrations part chez Microsoft **au moment de la
+   fabrication** — jamais en séance, jamais chez l'élève. Ce sont les voix qu'il a
+   validées à l'écoute sur le réseau technique le 21/08. Chaîne :
+   `build/voix/collecter-narrations.mjs` puis
+   `build/voix/generer-audios-edge-tts.py --confirmer`, puis réduire l'index à la
+   station. Piper est abandonné pour ce réseau (jugé métallique, et non installé).
+2. **BRANCHE SUIVANTE À ANIMER : La DESP** (5 stations). La pression qui monte
+   jusqu'au tarage, la soupape qui s'ouvre puis se referme, le pressostat qui coupe
+   avant : le mouvement y est physique. Dérouler `CONSIGNES-ANIMATION.md`.
+3. **VALEURS MANQUANTES : Claude cherche, F. Henninot valide.** Aller chercher
+   chaque valeur **aux sources officielles** (Légifrance, textes en vigueur), puis
+   lui livrer **un tableau valeur par valeur AVEC SA SOURCE**, qu'il arbitre en une
+   fois. Il ne fournit rien lui-même. ⚠️ Rien n'entre dans une station avant son
+   arbitrage : la règle « aucun chiffre non sourcé » reste entière.
+4. **RÉFÉRENTIEL D'ADOSSEMENT : l'attestation d'aptitude 2025**
+   (`packs/fluides/referentiel-2025.json`, arrêté du 21 novembre 2025), et non le
+   BTS FED. ⚠️ **Conséquence à assumer, elle lui a été dite** : ce référentiel
+   couvre les stations fluidiques, mais **ni le thermique, ni l'acoustique, ni
+   l'incendie, ni le droit du travail**. Les stations hors périmètre resteront donc
+   sans codes tant qu'une autre source n'est pas tranchée — ne pas leur inventer
+   d'adossement pour faire nombre.
+
 ## La dette — ce qui attend F. Henninot
 
 1. **Les valeurs réglementaires manquantes.** Consigne tenue à la production :
@@ -134,20 +162,18 @@ projet « Charte graphique inerWeb » (`1394c5be-3bc5-441f-93d9-251c89f48ba8`),
    d'explosivité ATEX, année de l'amendement de Kigali.
    **Les cours enseignent les mécanismes correctement ; il leur manque des chiffres,
    tous identifiés.** C'est une passe de complétion, pas une réécriture.
+   ▶ **Méthode tranchée le 24/08** : Claude cherche aux sources officielles et livre
+   un tableau valeur / source, F. Henninot arbitre en une fois (décision 3).
 2. **La relecture métier** : aucune des 29 stations n'a été relue par un
    professionnel. `data-prototype` posé partout.
-3. **Le référentiel BTS d'adossement** (FED ? autre ?) : non tranché, donc aucune
-   station ne porte ses codes de tâches et de savoirs.
-4. **La voix fabriquée** : seule F-Gaz 3 a ses 12 MP3 (Piper, local). Les 28 autres
-   parlent avec la voix du navigateur. ⚠️ **Décision à prendre par F. Henninot** :
-   le diagnostic du 21/08 (réseau technique, `CONTROLE-VOIX-2026-08-21.md`) a jugé
-   la voix Piper métallique et le fonds central est passé en `edge-tts`
-   (Denise/Vivienne, validées après écoute) — mais edge-tts envoie le texte à
-   Microsoft : **feu vert séparé obligatoire** avant de l'employer pour la
-   Législation (consigne « service tiers pendant la fabrication »). Piper n'est
-   par ailleurs pas installé dans l'environnement Claude Code (modules Python
-   absents). Chaînes : `build/voix/collecter-narrations.mjs` puis
-   `generer-audios-piper.py` OU `generer-audios-edge-tts.py --confirmer`.
+3. **Le référentiel d'adossement** : tranché le 24/08 — **attestation d'aptitude
+   2025**, pas le BTS FED (décision 4). Reste à faire : coder les stations
+   fluidiques ; les stations thermique, acoustique, incendie et droit du travail
+   restent hors périmètre, sans codes.
+4. **La voix fabriquée** : seule F-Gaz 3 a ses 12 MP3 (Piper). Les 28 autres parlent
+   avec la voix du navigateur. ▶ **Tranché le 24/08 : `edge-tts`** (décision 1), feu
+   vert donné. À fabriquer branche par branche, en commençant par celle qui est
+   animée (Impact environnemental), puis la DESP.
 5. **L'hébergement définitif** : rester en `inerweb.fr/legislation/` ou partir en
    dépôt / sous-domaine séparé. Le dossier est déplaçable d'un bloc.
 
