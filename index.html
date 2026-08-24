@@ -172,6 +172,11 @@
                              background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.55);
                              border-radius:999px; padding:3px 10px; white-space:nowrap; }
   .plan .reseaux a .r-fleche { flex:0 0 auto; font-size:22px; line-height:1; }
+  /* Le motif de ligne de métro des cartes : il annule le min-width:980px
+     posé plus bas sur `.plan svg` (qui vise le grand plan, pas lui). */
+  .plan .reseaux a .r-ligne { display:block; width:120px; min-width:0; height:12px;
+                              margin-top:8px; stroke:#fff; fill:#fff; opacity:.7;
+                              stroke-width:2; }
   .plan .defilant { overflow-x:auto; padding:6px 10px 4px; }
   .indice-glisser { display:none; text-align:center; font-size:13px; color:var(--mut); padding:2px 0 10px; }
   @media (max-width: 700px) { .indice-glisser { display:block; } }
@@ -379,8 +384,8 @@
 
     <div class="volet-bloc">
       <h3>📰 Actualités</h3>
-      <p><strong>22 août 2026 — le réseau grandit.</strong> 108 stations sont maintenant visibles sur le plan.<br>
-      🚧 <strong>Réseau en travaux</strong> : les lignes Huile, Circuit d’huile, CO₂, Centrales, Régulation et Électrotechnique ont rejoint le parcours. Les contenus continuent d’être relus et améliorés.<br>
+      <p><strong>24 août 2026 — trois réseaux.</strong> Le plan thermo-techno (108 stations), le réseau Législation (niveau BTS, en construction) et <strong>HydroMétro</strong>, le nouveau réseau d’hydraulique CVC (22 stations, trois profondeurs).<br>
+      🚧 <strong>Réseau en travaux</strong> : les contenus continuent d’être relus et améliorés.<br>
       <!-- Le détail vit dans le journal, sur l'accueil : un seul endroit tenu à
            jour, pas deux listes qui divergent au premier ajout. -->
       <a href="#nouveautes" data-vers-journal><strong>📔 Tout ce qui a changé, par date ▸</strong></a></p>
@@ -499,8 +504,18 @@
        qu'on y aille d'un clic.
        =================================================================== -->
   <details class="nouveautes" id="nouveautes">
-    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 22 août 2026</span></summary>
+    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 24 août 2026</span></summary>
     <div class="nv-corps">
+
+      <h3>24 août 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau réseau</span><a href="hydrometro/">💧 HydroMétro</a>
+          <span class="d">— l’hydraulique CVC en carte de métro : 22 stations sur 4 lignes (principes, équipements, distribution, mesure &amp; diagnostic), chaque station jouable à trois profondeurs — CAP · Bac pro · BTS —, positionnement initial en 20 questions et évaluations corrigées par ligne.</span></li>
+        <li><span class="nv-etiq">progression</span><a href="legislation/">📜 Réseau Législation</a>
+          <span class="d">— 29 stations ouvertes sur 57 : les sous-lignes Thermique, DESP, Risques professionnels, Déchets et Impact environnemental sont complètes.</span></li>
+        <li><span class="nv-etiq">ajout</span><strong>Les trois réseaux en tête de plan</strong>
+          <span class="d">— le plan de formation présente les trois réseaux et leurs correspondances ; on passe de l’un à l’autre depuis chaque carte.</span></li>
+      </ul>
 
       <h3>22 août 2026</h3>
       <ul>
@@ -540,20 +555,32 @@
       <h2>Le plan de formation</h2>
       <span>Suis le fluide. Chaque station est un cours qui s’ouvre en un clic — et chaque <strong>cartouche de ligne</strong> ouvre le plan détaillé de la ligne.</span>
     </div>
-    <!-- LE CONNECTEUR VERS LES AUTRES RÉSEAUX — demandé par F. Henninot le
-         23/08 : « un gros bouton, visible, au début de la première ligne, qui
-         nous amène à un nouveau réseau ». Il annonce cinq à sept réseaux à
-         terme (l'hydraulique, HydroMétro, a ouvert le 24/08) : la grille en
-         accueille autant sans retouche. L'état de construction est affiché — le réseau
-         Législation n'a qu'une station ouverte sur 57, et promettre un réseau
-         vide userait la confiance. -->
+    <!-- LES TROIS RÉSEAUX — évolution du connecteur demandé par F. Henninot
+         le 23/08 (« un gros bouton, visible, au début de la première ligne »),
+         élargie le 24/08 : « la page d'accueil avec les 3 réseaux visuels ».
+         Le réseau COURANT figure dans la grille avec « vous êtes ici » (sa
+         carte descend au plan) ; chaque carte porte un motif de ligne de
+         métro (aria-hidden, aucun texte sur le tracé). Cinq à sept réseaux à
+         terme : un réseau de plus = un lien de plus, sa couleur en --c.
+         L'état de construction reste affiché — promettre un réseau vide
+         userait la confiance. -->
     <div class="reseaux">
-      <p class="r-intro">Changer de réseau</p>
+      <p class="r-intro">Les trois réseaux inerWeb</p>
       <div class="r-grille">
+        <a href="#carte" style="--c:#0c4a6e">
+          <span class="r-texte">
+            <span class="r-nom">❄️ Le réseau thermo-techno</span>
+            <span class="r-det">Le métier de frigoriste — 108 stations · 15 lignes, du glaçon au diagnostic</span>
+            <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
+          </span>
+          <span class="r-etat">vous êtes ici</span>
+          <span class="r-fleche" aria-hidden="true">▾</span>
+        </a>
         <a href="legislation/" style="--c:#1e40af">
           <span class="r-texte">
             <span class="r-nom">📜 Réseau Législation</span>
-            <span class="r-det">Réglementation, sécurité, environnement — niveau BTS</span>
+            <span class="r-det">Réglementation, sécurité, environnement — niveau BTS · 29 stations ouvertes sur 57</span>
+            <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
           </span>
           <span class="r-etat">en construction</span>
           <span class="r-fleche" aria-hidden="true">→</span>
@@ -562,6 +589,7 @@
           <span class="r-texte">
             <span class="r-nom">💧 HydroMétro</span>
             <span class="r-det">L'hydraulique CVC — 22 stations, trois profondeurs CAP · Bac pro · BTS</span>
+            <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
           </span>
           <span class="r-etat">nouveau</span>
           <span class="r-fleche" aria-hidden="true">→</span>
@@ -931,7 +959,7 @@
 
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
-<script src="plan-descriptions.gen.js?v=4b019d4430"></script>
+<script src="plan-descriptions.gen.js?v=39156f9ce3"></script>
 <script>
 /* =====================================================================
    LE PLAN DE FORMATION — généré depuis les données ci-dessous.
@@ -2107,11 +2135,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=4b019d4430"></script>
-<script src="chiffres.gen.js?v=4b019d4430"></script>
+<script src="moteur/lisibilite.js?v=39156f9ce3"></script>
+<script src="chiffres.gen.js?v=39156f9ce3"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=4b019d4430" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=39156f9ce3" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
