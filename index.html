@@ -93,6 +93,12 @@
   .bandeau-aquiblue .ba-logo { width:200px; height:auto; flex:0 0 auto; }
   .bandeau-aquiblue .ba-texte { flex:1; min-width:260px; font-size:15.5px; }
   .bandeau-aquiblue .ba-boutons { display:flex; gap:10px; flex-wrap:wrap; }
+  /* HoCourant : même gabarit, bordure ambre tiretée — l'état « prototype »
+     se lit par la couleur, le trait ET le mot (charte § 4). */
+  .bandeau-hocourant { margin-top:14px; border:2px dashed #b06a00; }
+  .etiquette-proto { display:inline-block; background:#b06a00; color:#fff; font-weight:bold;
+                     font-size:12.5px; letter-spacing:.04em; border-radius:999px;
+                     padding:2px 10px; margin-right:8px; vertical-align:2px; }
   .flocon { font-size:96px; line-height:1; filter:drop-shadow(0 6px 12px rgba(27,58,99,.18));
             animation:derive 5s ease-in-out infinite; }
   @keyframes derive { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
@@ -482,6 +488,33 @@
       <a class="bouton" href="aquiblue/">Essayer</a>
       <a class="bouton creux" href="aquiblue/aquiblue-v1.4.0.zip" download>Télécharger</a>
       <a class="bouton creux" href="https://github.com/frigorx/aquiblue" rel="noopener">Code source</a>
+    </div>
+  </aside>
+
+  <!-- BANNIÈRE inerWeb HoCourant — prototype ouvert à l'essai (25/08).
+       Le nom se lit « au courant » et fait écho au symbole H0. Il remplace
+       « HabElec », écarté le 25/08 : habelec.fr est un centre de formation
+       Qualiopi sur le même objet, et « Habilec » est déjà une formation en
+       ligne à l'habilitation électrique.
+       La mention PROTOTYPE est un marqueur d'état : elle reste pleine et
+       colorée, doublée du trait tireté et du mot (charte § 4, trois canaux). -->
+  <aside class="bandeau-aquiblue bandeau-hocourant" aria-label="inerWeb HoCourant">
+    <svg class="ba-logo" viewBox="0 0 280 50" role="img" aria-label="inerWeb HoCourant">
+      <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+      <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+      <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+      <line stroke="#e8914a" stroke-width="2" x1="44" x2="166" y1="35" y2="35"/>
+      <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="118" height="24"/>
+      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="214" y="27" text-anchor="middle">HoCourant</text>
+    </svg>
+    <p class="ba-texte"><span class="etiquette-proto">PROTOTYPE</span>
+      <strong>inerWeb HoCourant — se préparer à l'habilitation électrique.</strong>
+      De B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle et
+      l'erreur ouvre la remédiation. L'enseignant distribue des codes de mission ; aucun compte,
+      aucune donnée personnelle. <em>Version de démonstration, contenus en cours de relecture
+      métier — ne pas s'en servir comme référence pour une opération réelle.</em></p>
+    <div class="ba-boutons">
+      <a class="bouton" href="hocourant/">Essayer le prototype</a>
     </div>
   </aside>
 
