@@ -3,6 +3,38 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 26/08 — L'ACCÈS ENSEIGNANT : la spec, et le socle au vert (AE-1)
+>
+> Chantier ouvert par F. Henninot pour préparer le **freemium** : remplacer le code
+> unique et partagé d'aujourd'hui par des **accès nominatifs à durée de vie d'un an**.
+> Spec complète : `.planning/2026-08-26-acces-enseignant/SPEC-ACCES-ENSEIGNANT.md`
+> (commit `df2f15e`) — **c'est elle qui fait foi**, elle porte les décisions et les lots.
+>
+> **▶ La décision qui commande tout : UN CODE PAR PRODUIT.** « Trois logiciels, trois
+> codes ; le jour où j'en mets un quatrième, j'ai un quatrième code. » Obtenir un code
+> ne donne PAS accès à inerWeb, il donne accès à **un** produit. Cinq produits déclarés
+> dans `build/produits.mjs` : habilitation · aquiblue · legislation · hydrometro ·
+> hocourant. Ajouter un produit = ajouter une ligne. ⚠️ **L'indice est gravé dans les
+> codes déjà émis** : jamais réordonner la table, jamais réutiliser un indice retiré.
+>
+> **Le renversement technique** : aujourd'hui la clé du coffre est *dérivée* du code
+> tapé (8 chiffres → clé faible, ~10 minutes face à du matériel dédié, c'est écrit dans
+> `coffre.mjs`). Demain elle est **tirée au hasard sur 256 bits** et le code la
+> **transporte**. La force ne dépend plus de ce que l'enseignant tape, et l'expiration
+> devient réelle : à la rentrée on rechiffre avec la clé de l'année, les anciens codes
+> ne savent plus rien ouvrir — au lieu d'une date qu'on contourne en reculant l'horloge.
+>
+> **AE-1 livré** (commit `6bd53c1`, **37 contrôles au vert**) : `produits.mjs`,
+> `lib-acces.mjs` (format des codes + chaîne de certification, **ECDSA P-256** et non
+> Ed25519 parce que WebCrypto le sert partout), `racine-acces.mjs`, `millesime.mjs`,
+> `test-acces.mjs`. Le filet prouve le cloisonnement, l'expiration réelle, et qu'un
+> titulaire ne peut ni se fabriquer un certificat ni signer une session pour autrui.
+> Code maître : 334 caractères. Code de session : 366. **Rien de visible n'a changé.**
+>
+> 🔴 **Deux gestes qui appartiennent à F. Henninot** : lancer `node build/racine-acces.mjs`
+> (clé irremplaçable, à sauvegarder hors ligne le jour même) et confirmer la liste des
+> produits. Reste ensuite AE-2 → AE-7.
+
 > ## 26/08 — Notes de chantier récupérées du fourre-tout
 >
 > Deux chantiers dont les notes dormaient dans `CLAUDE-ESPACE-TRAVAIL` sans
