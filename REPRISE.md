@@ -3,6 +3,25 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 26/08 (soir) — POUSSÉ ET EN LIGNE, mais la porte n'est pas branchée
+>
+> Feu vert de F. Henninot : **17 commits poussés** (`47ea96a..ef1d996`). Audit avant
+> push : aucun secret suivi par git, aucune clé privée dans un fichier versionné, le
+> registre et les coffres de millésime sont hors dépôt. Vérifié en ligne, hors service
+> worker : `activer.html` 200 · `demander-un-acces.html` 200 · `moteur/acces.js` 200,
+> et la clé publique servie est bien celle du poste.
+>
+> 🔴 **CE QUI N'EST PAS FAIT, ET QUI SE VOIT : LA BASCULE.** `docs/coffre/` reste
+> chiffré à l'ancien régime et les sept pages déchiffrent toujours par PBKDF2 sur le
+> code court. **Un code maître délivré aujourd'hui n'ouvre donc rien.** Il manque :
+> fabriquer et pousser `docs/coffre-2026/`, puis brancher les sept pages sur
+> `moteur/acces.js`. ⚠️ Et prévenir les collègues qui ont l'ancien code AVANT.
+> Tant que ce n'est pas fait, **ne rien annoncer au journal des nouveautés** : on
+> enverrait des gens demander des accès qui ne fonctionnent pas.
+>
+> Journal des nouveautés **volontairement non touché** ce jour : rien de ce qui a été
+> livré n'est encore utilisable par un visiteur.
+
 > ## 26/08 — L'ACCÈS ENSEIGNANT : la spec, et le socle au vert (AE-1)
 >
 > Chantier ouvert par F. Henninot pour préparer le **freemium** : remplacer le code
