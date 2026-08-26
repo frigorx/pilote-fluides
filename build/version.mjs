@@ -62,6 +62,10 @@ const PAGES = [
   // 20/08/2026 (durcissement) — la vraie page 404 et le brouillon des
   // mentions légales (non lié tant que non validé).
   "404.html", "mentions.html",
+  // 26/08/2026 (AE-4) — la page où un enseignant colle son code d'accès.
+  // `noindex`, hors sitemap : c'est un utilitaire, pas du contenu. Elle
+  // charge moteur/acces.js, qui doit donc être versionné comme les autres.
+  "activer.html",
 ];
 // 23/08/2026 — legislation/index.html n'entre PAS dans PAGES : le réseau
 // Législation est un SATELLITE (décision F. Henninot : « presque un autre

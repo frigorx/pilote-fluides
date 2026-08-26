@@ -16,6 +16,7 @@ import {
   pourProduit, MOTIFS, enJours,
 } from "./lib-acces.mjs";
 import { produitParId, produitParIndice, PRODUITS } from "./produits.mjs";
+import { readFileSync, existsSync } from "node:fs";
 
 let passes = 0;
 const echecs = [];
@@ -217,6 +218,50 @@ verifier("un code de session n'est pas accepté comme code maître",
   lireCodeMaitre(session, racine.publicKey, AUJOURD_HUI).motif === MOTIFS.VERSION_INCONNUE);
 verifier("un code maître n'est pas accepté comme code de session",
   lireCodeSession(martin.code, racine.publicKey, AUJOURD_HUI).motif === MOTIFS.VERSION_INCONNUE);
+
+/* ====================================================================
+   7. LE MIROIR — moteur/acces.js ne doit pas dériver du build
+   `acces.js` réimplémente le format pour le navigateur : il embarque sa
+   propre table de produits et la clé publique racine. Deux copies, donc
+   deux occasions de diverger. Ce contrôle ferme la porte.
+   ==================================================================== */
+section("7. Le miroir moteur/acces.js");
+
+const cheminMoteur = new URL("../moteur/acces.js", import.meta.url);
+let source = null;
+try { source = readFileSync(cheminMoteur, "utf8"); } catch { /* absent */ }
+
+verifier("moteur/acces.js existe", source !== null);
+
+if (source) {
+  /* La table des produits, ligne à ligne */
+  const declares = [...source.matchAll(/\{\s*indice:\s*(\d+),\s*id:\s*"([^"]+)"/g)]
+    .map((m) => ({ indice: Number(m[1]), id: m[2] }));
+  verifier("il déclare autant de produits que le build",
+    declares.length === PRODUITS.length, `${declares.length} contre ${PRODUITS.length}`);
+  const memesIndices = PRODUITS.every((p) =>
+    declares.some((d) => d.indice === p.indice && d.id === p.id));
+  verifier("chaque indice y désigne le même produit qu'au build", memesIndices);
+
+  /* Les constantes de format */
+  for (const [nom, valeur] of [["VERSION", 1], ["TYPE_MAITRE", "0x11"], ["TYPE_SEANCE", "0x21"]]) {
+    verifier(`la constante ${nom} y vaut ${valeur}`,
+      new RegExp(`${nom}\\s*=\\s*${valeur}\\b`).test(source));
+  }
+
+  /* La clé racine embarquée doit être CELLE du poste — quand elle existe */
+  const m = /CLE_RACINE\s*=\s*"([A-Za-z0-9_-]+)"/.exec(source);
+  verifier("une clé racine y est embarquée", !!m);
+  const fichierBrute = "C:/git/paquets/acces-inerweb/racine/cle-publique-brute.txt";
+  if (m && existsSync(fichierBrute)) {
+    const attendue = readFileSync(fichierBrute, "utf8").trim();
+    verifier("elle est bien la clé publique de ce poste", m[1] === attendue);
+    verifier("elle fait 65 octets une fois décodée",
+      Buffer.from(m[1], "base64url").length === 65);
+  } else if (m) {
+    console.log("  ▪ clé racine du poste absente — comparaison non faite (poste sans les secrets)");
+  }
+}
 
 /* ====================================================================
    Bilan

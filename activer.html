@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="robots" content="noindex, nofollow">
+<title>Activer un accès enseignant — inerWeb</title>
+<meta name="description" content="Ouvrir son accès enseignant inerWeb avec le code reçu. Un code par produit.">
+<style>
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --orange-clair:#ffe2d6;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+          --vert:#166534; --vert-clair:#dcfce7; --rouge:#9f1239; --rouge-clair:#ffe4e6;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  #contenu:focus { outline:none; }
+  a:focus-visible, button:focus-visible, textarea:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+  main { max-width:760px; margin:0 auto; padding:28px 20px 60px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:1.7rem; margin:.2em 0 .1em; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.15rem; margin:2em 0 .4em; }
+  .chapo { color:var(--mut); margin:0 0 1.6em; }
+  .carte { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r);
+           box-shadow:var(--ombre); padding:20px 22px; margin:0 0 20px; }
+  label { display:block; font-family:var(--titre); font-weight:bold; color:var(--bleu); margin:0 0 .4em; }
+  textarea { width:100%; min-height:110px; padding:12px 14px; border:2px solid var(--ligne);
+             border-radius:10px; background:#fff; color:var(--txt); resize:vertical;
+             font:15px/1.5 Consolas,'Courier New',monospace; word-break:break-all; }
+  button { font-family:var(--titre); font-weight:bold; font-size:1rem; cursor:pointer;
+           border:0; border-radius:999px; padding:12px 26px; background:var(--bleu); color:#fff; }
+  button:hover { background:var(--bleu-clair); }
+  button.discret { background:transparent; color:var(--rouge); border:1px solid var(--ligne);
+                   padding:6px 14px; font-size:.9rem; }
+  .rangee { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:14px; }
+  .verdict { margin-top:16px; padding:14px 16px; border-radius:10px; border-left:5px solid; display:none; }
+  .verdict.bon { display:block; background:var(--vert-clair); border-color:var(--vert); color:var(--vert); }
+  .verdict.mauvais { display:block; background:var(--rouge-clair); border-color:var(--rouge); color:var(--rouge); }
+  .verdict strong { display:block; font-family:var(--titre); font-size:1.05rem; margin-bottom:.2em; }
+  ul.acces { list-style:none; margin:0; padding:0; }
+  ul.acces li { display:flex; justify-content:space-between; align-items:center; gap:14px;
+                flex-wrap:wrap; padding:12px 0; border-bottom:1px solid var(--ligne); }
+  ul.acces li:last-child { border-bottom:0; }
+  .nomprod { font-family:var(--titre); font-weight:bold; color:var(--bleu); }
+  .detail { color:var(--mut); font-size:.92rem; }
+  .vide { color:var(--mut); font-style:italic; margin:0; }
+  .note { font-size:.93rem; color:var(--mut); border-left:3px solid var(--orange-clair); padding-left:14px; }
+</style>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+<main id="contenu" tabindex="-1">
+
+  <h1>Activer un accès enseignant</h1>
+  <p class="chapo">Collez ici le code que vous avez reçu. Il ouvre <strong>un</strong> produit
+  inerWeb — celui pour lequel il a été délivré. Si vous en avez plusieurs, collez-les l'un
+  après l'autre : ils s'ajoutent.</p>
+
+  <div class="carte">
+    <label for="code">Votre code d'accès</label>
+    <textarea id="code" spellcheck="false" autocomplete="off"
+              placeholder="Collez le code d'un bloc, tel qu'il vous a été envoyé."></textarea>
+    <div class="rangee">
+      <button id="ouvrir" type="button">Ouvrir mon accès</button>
+      <span class="detail">Rien n'est envoyé sur internet : la vérification se fait dans votre navigateur.</span>
+    </div>
+    <div class="verdict" id="verdict" role="status" aria-live="polite"></div>
+  </div>
+
+  <h2>Vos accès en cours</h2>
+  <div class="carte">
+    <ul class="acces" id="liste"></ul>
+    <p class="vide" id="aucun">Aucun accès ouvert sur cet appareil pour l'instant.</p>
+  </div>
+
+  <h2>Bon à savoir</h2>
+  <p class="note">
+    Votre code est <strong>personnel</strong> : il porte votre nom, et les documents que
+    vous consultez l'affichent en filigrane. Il est valable <strong>un an</strong> ; à la
+    rentrée suivante, un nouveau code vous sera envoyé — l'ancien cesse alors d'ouvrir quoi
+    que ce soit. L'accès est rangé <strong>dans ce navigateur</strong> : sur un autre
+    ordinateur, il faudra recoller le code. Sur un poste partagé, retirez votre accès en
+    partant.
+  </p>
+
+  <script src="moteur/lisibilite.js"></script>
+  <script src="moteur/acces.js"></script>
+  <script src="moteur/marque.js"></script>
+  <script>
+  (function () {
+    "use strict";
+    var A = window.inerwebAcces;
+    var champ = document.getElementById("code");
+    var verdict = document.getElementById("verdict");
+    var liste = document.getElementById("liste");
+    var aucun = document.getElementById("aucun");
+
+    function dire(bon, titre, detail) {
+      verdict.className = "verdict " + (bon ? "bon" : "mauvais");
+      verdict.innerHTML = "";
+      var t = document.createElement("strong"); t.textContent = titre;
+      verdict.appendChild(t);
+      if (detail) { verdict.appendChild(document.createTextNode(detail)); }
+    }
+
+    function peindre() {
+      var ouverts = A.liste();
+      liste.innerHTML = "";
+      aucun.style.display = ouverts.length ? "none" : "block";
+      ouverts.forEach(function (o) {
+        var li = document.createElement("li");
+        var g = document.createElement("div");
+        var n = document.createElement("div");
+        n.className = "nomprod"; n.textContent = o.produit.nom;
+        var d = document.createElement("div");
+        d.className = "detail";
+        d.textContent = o.acces.nom + " · valable jusqu'au " + o.acces.expireLe
+          + (o.acces.seance ? " · séance « " + o.acces.seance + " »" : "");
+        g.appendChild(n); g.appendChild(d);
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "discret"; b.textContent = "Retirer";
+        b.addEventListener("click", function () {
+          A.oublier(o.produit.id);
+          peindre();
+          dire(true, "Accès retiré.", o.produit.nom + " est refermé sur cet appareil.");
+        });
+        li.appendChild(g); li.appendChild(b);
+        liste.appendChild(li);
+      });
+    }
+
+    document.getElementById("ouvrir").addEventListener("click", function () {
+      var saisi = champ.value;
+      A.activer(saisi).then(function (r) {
+        if (r.ok) {
+          champ.value = "";
+          peindre();
+          dire(true, r.produit.nom + " est ouvert.",
+            "Accès de " + r.nom + ", valable jusqu'au " + r.expireLe + ".");
+          return;
+        }
+        /* Un code de séance collé ici plutôt que scanné : on l'accepte,
+           c'est la même porte. */
+        return A.activerSeance(saisi).then(function (s) {
+          if (s.ok) {
+            champ.value = "";
+            peindre();
+            dire(true, s.produit.nom + " est ouvert pour la séance.",
+              "Séance « " + s.libelle + " » ouverte par " + s.nom + ", jusqu'au " + s.finLe + ".");
+          } else {
+            dire(false, "Ce code n'a pas été accepté.", r.message);
+          }
+        });
+      });
+    });
+
+    /* Une séance passée dans l'adresse (QR code projeté en classe) s'ouvre seule. */
+    var dansAdresse = A.seanceDansAdresse();
+    if (dansAdresse) {
+      A.activerSeance(dansAdresse).then(function (s) {
+        peindre();
+        if (s.ok) {
+          dire(true, s.produit.nom + " est ouvert pour la séance.",
+            "Séance « " + s.libelle + " » ouverte par " + s.nom + ", jusqu'au " + s.finLe + ".");
+        } else {
+          dire(false, "Ce lien n'a pas été accepté.", s.message);
+        }
+      });
+    }
+
+    peindre();
+  })();
+  </script>
+</main>
+</body>
+</html>
