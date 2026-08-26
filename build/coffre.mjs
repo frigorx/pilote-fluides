@@ -38,6 +38,7 @@ import { randomBytes, pbkdf2Sync, createCipheriv } from "node:crypto";
 import { dirname, resolve, basename } from "node:path";
 import { fileURLToPath } from "node:url";
 import { homedir } from "node:os";
+import { produitParId } from "./produits.mjs";
 
 /* Les sources du poste : par homedir(), jamais un nom de compte en dur —
    ce script est publié avec le dépôt (durcissement du 20/08). */
@@ -45,23 +46,64 @@ const POSTE = homedir().replace(/\\/g, "/");
 
 const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const PRIVE = "C:/git/habilitation-fluide";
-const SORTIE = resolve(RACINE, "docs/coffre");
 const ITERATIONS = 600000;
+const MILLESIMES = "C:/git/paquets/acces-inerweb/millesimes";
 
-const code = process.argv[2];
-if (!code || code.length < 4) {
-  console.error("✗ usage : node build/coffre.mjs <code-d-acces>");
-  console.error("  (le code n'est pas stocké dans le dépôt — il se donne à chaque build)");
-  process.exit(1);
-}
-/* Les fichiers chiffrés sont PUBLICS et attaquables hors ligne, sans limite
-   d'essais : seule la longueur de la phrase protège (durcissement 20/08).
-   Avertissement non bloquant : les documents déjà chiffrés avec le code
-   actuel restent lisibles tant qu'on ne re-chiffre pas. */
-if (code.length < 12) {
-  console.warn("⚠ phrase d'accès courte (" + code.length + " caractères) : les fichiers");
-  console.warn("  du coffre étant téléchargeables, une phrase de 12 caractères ou plus");
-  console.warn("  (plusieurs mots) est fortement recommandée au prochain changement.");
+/* --------------------------------------------------------------------
+   DEUX RÉGIMES COHABITENT (AE-2, 26/08) — et c'est volontaire.
+
+   · ANCIEN : node build/coffre.mjs <code-d-acces>
+     écrit `docs/coffre/`, clé dérivée du code par PBKDF2. C'est ce qui
+     tourne aujourd'hui, ce que lisent les sept pages en ligne, et ce qui
+     ouvre la porte à vos collègues. INTACT tant que la page d'activation
+     n'existe pas (lot AE-4).
+
+   · NOUVEAU : node build/coffre.mjs <produit> --millesime <année>
+     écrit `docs/coffre-<année>/`, clé TIRÉE du millésime (256 bits, jamais
+     dérivée d'un mot de passe). Un dossier À CÔTÉ : rien n'est écrasé,
+     personne ne se retrouve dehors. La bascule se fera en AE-4, quand la
+     page saura lire un code maître — pas avant.
+   -------------------------------------------------------------------- */
+const args = process.argv.slice(2);
+const iMil = args.indexOf("--millesime");
+const MODE_MILLESIME = iMil >= 0;
+
+let code = null, produit = null, millesime = null, SORTIE;
+
+if (MODE_MILLESIME) {
+  const idProduit = args[0];
+  millesime = Number(args[iMil + 1]);
+  if (!idProduit || idProduit.startsWith("--") || !Number.isInteger(millesime)) {
+    console.error("✗ usage : node build/coffre.mjs <produit> --millesime <année>");
+    process.exit(1);
+  }
+  try {
+    produit = produitParId(idProduit);
+  } catch (e) {
+    console.error("✗ " + e.message);
+    process.exit(1);
+  }
+  SORTIE = resolve(RACINE, "docs/coffre-" + millesime);
+} else {
+  code = args[0];
+  if (!code || code.length < 4) {
+    console.error("✗ usage : node build/coffre.mjs <code-d-acces>");
+    console.error("       ou node build/coffre.mjs <produit> --millesime <année>   (nouveau régime)");
+    console.error("  (le code n'est pas stocké dans le dépôt — il se donne à chaque build)");
+    process.exit(1);
+  }
+  /* Les fichiers chiffrés sont PUBLICS et attaquables hors ligne, sans limite
+     d'essais : seule la longueur de la phrase protège (durcissement 20/08).
+     Avertissement non bloquant : les documents déjà chiffrés avec le code
+     actuel restent lisibles tant qu'on ne re-chiffre pas. */
+  if (code.length < 12) {
+    console.warn("⚠ phrase d'accès courte (" + code.length + " caractères) : les fichiers");
+    console.warn("  du coffre étant téléchargeables, une phrase de 12 caractères ou plus");
+    console.warn("  (plusieurs mots) est fortement recommandée au prochain changement.");
+    console.warn("  ▪ Le régime --millesime supprime cette limite : la clé n'est plus dérivée");
+    console.warn("    d'un mot de passe mais tirée au hasard sur 256 bits.");
+  }
+  SORTIE = resolve(RACINE, "docs/coffre");
 }
 
 /* --------------------------------------------------------------------
@@ -124,8 +166,28 @@ for (const d of DOCUMENTS) {
 }
 
 /* --- chiffrement --- */
-const sel = randomBytes(16);
-const cle = pbkdf2Sync(code, sel, ITERATIONS, 32, "sha256");
+let sel = null, cle;
+
+if (MODE_MILLESIME) {
+  /* La clé du coffre enseignant EST K-prof du millésime : 256 bits tirés au
+     hasard, jamais dérivés. Aucun PBKDF2 : il n'y a pas de mot de passe à
+     étirer. Le code maître la transportera (voir lib-acces.mjs). */
+  const fichier = `${MILLESIMES}/${produit.id}-${millesime}.json`;
+  if (!existsSync(fichier)) {
+    console.error("✗ millésime introuvable : " + fichier);
+    console.error("  Tirez-le d'abord : node build/millesime.mjs " + produit.id + " " + millesime);
+    process.exit(1);
+  }
+  const m = JSON.parse(readFileSync(fichier, "utf8"));
+  cle = Buffer.from(m.kProf, "base64url");
+  if (cle.length !== 32) {
+    console.error("✗ clé de millésime invalide dans " + fichier);
+    process.exit(1);
+  }
+} else {
+  sel = randomBytes(16);
+  cle = pbkdf2Sync(code, sel, ITERATIONS, 32, "sha256");
+}
 
 if (existsSync(SORTIE)) rmSync(SORTIE, { recursive: true, force: true });
 mkdirSync(SORTIE, { recursive: true });
@@ -152,14 +214,22 @@ for (const d of DOCUMENTS) {
   index.push(entree);
 }
 
-writeFileSync(
-  resolve(SORTIE, "index.json"),
-  JSON.stringify({ sel: sel.toString("base64"), iterations: ITERATIONS, documents: index }, null, 1) + "\n"
-);
+const enTete = MODE_MILLESIME
+  ? { produit: produit.id, indice: produit.indice, millesime, documents: index }
+  : { sel: sel.toString("base64"), iterations: ITERATIONS, documents: index };
 
-console.log("✓ coffre écrit → docs/coffre/ (" + index.length + " documents, " + Math.round(octets / 1024) + " Ko)");
+writeFileSync(resolve(SORTIE, "index.json"), JSON.stringify(enTete, null, 1) + "\n");
+
+const nomSortie = MODE_MILLESIME ? "docs/coffre-" + millesime + "/" : "docs/coffre/";
+console.log("✓ coffre écrit → " + nomSortie + " (" + index.length + " documents, " + Math.round(octets / 1024) + " Ko)");
 const parCat = {};
 for (const d of index) parCat[d.cat] = (parCat[d.cat] || 0) + 1;
 for (const [c, n] of Object.entries(parCat)) console.log("    " + c + " : " + n);
 if (absents) console.log("  ▪ " + absents + " document(s) absent(s) — dépôt privé non monté sur ce poste");
-console.log("  AES-256-GCM · PBKDF2-SHA256 " + ITERATIONS.toLocaleString("fr-FR") + " itérations · sel de 16 octets");
+if (MODE_MILLESIME) {
+  console.log("  AES-256-GCM · clé du millésime " + millesime + " (256 bits tirés, aucun mot de passe)");
+  console.log("  ▪ `docs/coffre/` n'a PAS été touché : le régime actuel reste en service");
+  console.log("    jusqu'à la page d'activation (lot AE-4).");
+} else {
+  console.log("  AES-256-GCM · PBKDF2-SHA256 " + ITERATIONS.toLocaleString("fr-FR") + " itérations · sel de 16 octets");
+}

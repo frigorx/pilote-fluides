@@ -272,13 +272,19 @@ Un lot = un commit, tout vert avant de passer au suivant.
 - **AE-1 — le socle.** `produits.mjs`, `millesime.mjs`, format des codes, vérification,
   chaîne de certification. Avec sa suite de tests et sa contre-épreuve : retirer la
   vérification doit faire rougir le filet.
-- **AE-2 — le premier coffre bascule.** `coffre.mjs` chiffre le produit `habilitation`
-  par sa clé de millésime ; les sept pages actuelles passent au nouveau régime. Rien de
-  visible ne change.
+- **AE-2 — le coffre au régime millésime, EN PARALLÈLE.** `coffre.mjs` sait chiffrer un
+  produit par sa clé de millésime et écrit dans `docs/coffre-<année>/`, **à côté** du
+  coffre en service. ⚠️ **Correction du 26/08** : la première rédaction de ce lot faisait
+  basculer `docs/coffre/` — les collègues qui ont le code actuel se seraient retrouvés
+  dehors, puisque aucune page ne sait encore lire un code maître. Les deux régimes
+  cohabitent donc, et la bascule n'a lieu qu'en AE-4.
 - **AE-3 — la délivrance.** `delivrer-acces.mjs`, registre local par produit, premier
   code délivré et prouvé sur banc.
-- **AE-4 — la page unique `activer`.** Un code collé ouvre **son** produit ; plusieurs
-  codes se cumulent sur la même page. Filigrane compris.
+- **AE-4 — la page unique `activer`, ET la bascule.** Un code collé ouvre **son**
+  produit ; plusieurs codes se cumulent sur la même page. Filigrane compris. C'est
+  seulement ici que `docs/coffre-<année>/` remplace `docs/coffre/` — et **les nouveaux
+  codes doivent être entre les mains des collègues avant**, sinon ils se retrouvent
+  dehors du jour au lendemain.
 - **AE-5 — l'étage 2.** Fabrication des codes de session, lien + QR code, contenu élève
   protégé.
 - **AE-6 — le deuxième produit : `aquiblue`.** C'est le lot qui **prouve le
