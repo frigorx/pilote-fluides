@@ -61,7 +61,32 @@ const html = `<!doctype html>
   .pied { margin-top:18pt; border-top:.75pt solid #666; padding-top:6pt;
           font-size:9.5pt; color:#333; }
   .empreinte { font:9.5pt 'Consolas','Courier New',monospace; word-break:break-all; }
+  /* Le bandeau d'aide ne sort jamais à l'impression : il est là pour l'écran. */
+  .ecran { background:#1b3a63; color:#fff; padding:14pt 16pt; margin:0 0 16pt;
+           border-radius:8pt; font-size:11pt; }
+  .ecran h3 { margin:0 0 6pt; font-size:12.5pt; }
+  .ecran ol { margin:6pt 0 0; padding-left:18pt; }
+  .ecran li { margin-bottom:4pt; }
+  .ecran button { font:bold 12pt inherit; cursor:pointer; border:0; border-radius:999px;
+                  padding:10pt 22pt; background:#ff6b35; color:#fff; margin-top:10pt; }
+  .ecran code { background:rgba(255,255,255,.15); padding:1pt 5pt; border-radius:3pt; }
+  @media print { .ecran { display:none !important; } }
 </style></head><body>
+
+<div class="ecran">
+  <h3>Pas d'imprimante ? Enregistrez en PDF.</h3>
+  <ol>
+    <li>Cliquez sur le bouton ci-dessous.</li>
+    <li>Dans « Destination » ou « Imprimante », choisissez
+        <strong>« Enregistrer au format PDF »</strong>.</li>
+    <li><strong>Rangez-le dans <code>C:\\git\\_secrets\\</code></strong> — surtout pas sur
+        le Bureau ni dans un dossier OneDrive ou Google Drive : ce fichier contient votre
+        clé en clair, il ne doit pas partir se synchroniser quelque part.</li>
+    <li>Dès que vous avez une clé USB, copiez-y ce PDF. C'est ça, la vraie sauvegarde :
+        un support qui n'est pas dans la machine.</li>
+  </ol>
+  <button type="button" onclick="window.print()">Imprimer ou enregistrer en PDF</button>
+</div>
 
 <h1>Clé racine des accès enseignant — inerWeb</h1>
 <p class="sous">Sauvegarde papier du ${aujourdhui}. Cette clé signe tous les codes d'accès,
@@ -106,7 +131,9 @@ ${publique ? `<p>Clé <em>publique</em> correspondante (celle du site, qui n'a r
 writeFileSync(SORTIE, html, "utf8");
 console.log("✓ fiche écrite : " + SORTIE);
 console.log("");
-console.log("  1. ouvrez-la, imprimez-la (Ctrl+P), rangez la feuille ;");
-console.log("  2. supprimez ensuite le fichier — il contient la clé en clair.");
+console.log("  1. ouvrez-la : le bouton en haut imprime, ou enregistre en PDF ;");
+console.log("  2. rangez la sortie hors des dossiers synchronisés (pas le Bureau,");
+console.log("     pas OneDrive, pas Google Drive) — C:/git/_secrets/ convient ;");
+console.log("  3. supprimez ensuite ce fichier HTML — il contient la clé en clair.");
 console.log("");
 console.log("  empreinte de la clé : " + empreinte.slice(0, 32) + "…");
