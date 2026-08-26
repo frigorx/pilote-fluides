@@ -3,6 +3,37 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 26/08 (nuit) — ✅ LA BASCULE EST FAITE, L'ESPACE ENSEIGNANT EST OUVERT
+>
+> F. Henninot : « personne ne détient l'ancien code ». La bascule était donc sans
+> risque. Commit `66715df`, poussé et **vérifié en ligne hors service worker** :
+> `docs/coffre-2026/index.json` → 200, `docs/coffre/index.json` → **404**.
+>
+> `documents.html` ne demande plus de code : elle lit l'accès rangé par `activer.html`,
+> ouvre `docs/coffre-<millésime>/` avec la clé transportée, et **pose le filigrane au
+> nom du porteur**. Sans accès : un message et deux liens, aucun document listé.
+>
+> **L'ancien `docs/coffre/` est SUPPRIMÉ** — il était chiffré par une clé dérivée d'un
+> code de 8 chiffres (« environ dix minutes face à du matériel dédié », dit `coffre.mjs`).
+> Le garder en ligne sans lecteur, c'était offrir une faiblesse pour rien.
+>
+> Le déchiffrement ne vit plus dans la page : il est délégué à `moteur/acces.js`, une
+> seule implémentation pour tout le site. `deriver()`, `essayer()`, PBKDF2 et
+> `cleCrypto` ont disparu de `documents.html`.
+>
+> **Deux oublis rattrapés en vérifiant** : `chiffres.mjs` comptait les documents dans
+> l'ancien coffre (il cherche désormais le millésime le plus récent et refuse de
+> deviner) ; et `documents.html` n'était pas dans `PAGES` de `version.mjs`, donc
+> `moteur/acces.js` n'était pas versionné — or c'est lui qui décide si un coffre
+> s'ouvre. Les deux sont entrés dans le casse-cache.
+>
+> Journal des nouveautés : **section du 26 août**, cette fois méritée.
+>
+> ⏭️ Reste : AE-5 (fabrique des codes de séance côté enseignant, lien + QR code) et
+> l'extension aux autres produits. Et **le portillon djb2 de `formateur.html` /
+> `projection.html`**, qui vit encore à côté du système nominatif — incohérence à
+> solder.
+
 > ## 26/08 (soir) — POUSSÉ ET EN LIGNE, mais la porte n'est pas branchée
 >
 > Feu vert de F. Henninot : **17 commits poussés** (`47ea96a..ef1d996`). Audit avant
