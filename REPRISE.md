@@ -3,6 +3,22 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 26/08 — Notes de chantier récupérées du fourre-tout
+>
+> Deux chantiers dont les notes dormaient dans `CLAUDE-ESPACE-TRAVAIL` sans
+> aucune sauvegarde (commit `bf77260`) :
+>
+> - `docs/durcissement-2026-08/` — rapport de durcissement du site du 20/08 et
+>   checklist des réglages extérieurs ;
+> - `docs/chantier-composants-circuit-2026-08/` — relevés du 13/08 sur la fusion
+>   du pack voix et l'état des dépôts.
+>
+> Ces deux derniers fichiers portaient les noms génériques `progress.md` et
+> `findings.md` : rangés **d'après leur contenu**, pas d'après leur nom — ils
+> avaient d'abord été mal orientés vers `progression-cap-ifca`.
+>
+> Le dépôt était par ailleurs propre. Aucun push.
+
 > ## 24/08 (soir) — LE 3e RÉSEAU OUVRE : HydroMétro, servi à `/hydrometro/`
 >
 > **https://inerweb.fr/hydrometro/** — l'hydraulique CVC en carte de métro : 22 stations,
