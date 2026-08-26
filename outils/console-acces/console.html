@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console des accès enseignant — inerWeb</title>
+<style>
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --orange-clair:#ffe2d6;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+          --vert:#166534; --vert-clair:#dcfce7; --rouge:#9f1239; --rouge-clair:#ffe4e6;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  header { background:var(--bleu); color:#fff; padding:18px 24px; }
+  header h1 { font-family:var(--titre); font-size:1.5rem; margin:0; }
+  header p { margin:.25em 0 0; opacity:.85; font-size:.95rem; }
+  main { max-width:940px; margin:0 auto; padding:24px 20px 70px; }
+  .carte { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r);
+           box-shadow:var(--ombre); padding:22px 24px; margin:0 0 22px; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.2rem; margin:0 0 .3em; }
+  .aide { color:var(--mut); font-size:.95rem; margin:0 0 1.1em; }
+  label { display:block; font-family:var(--titre); font-weight:bold; color:var(--bleu);
+          margin:14px 0 .3em; font-size:.98rem; }
+  input, select { width:100%; padding:11px 13px; border:2px solid var(--ligne);
+                  border-radius:10px; background:#fff; color:var(--txt); font:16px inherit; }
+  input:focus, select:focus, button:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+  .duo { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:640px) { .duo { grid-template-columns:1fr; } }
+  button { font-family:var(--titre); font-weight:bold; font-size:1.02rem; cursor:pointer;
+           border:0; border-radius:999px; padding:13px 28px; background:var(--bleu);
+           color:#fff; margin-top:18px; }
+  button:hover { background:var(--bleu-clair); }
+  button:disabled { background:#9fb0c2; cursor:not-allowed; }
+  button.second { background:transparent; color:var(--bleu); border:2px solid var(--bleu); }
+  button.second:hover { background:var(--orange-clair); }
+  .rangee { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  .etat { display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:10px;
+          margin:0 0 18px; border-left:5px solid; font-size:.97rem; }
+  .etat.bon { background:var(--vert-clair); border-color:var(--vert); color:var(--vert); }
+  .etat.souci { background:var(--rouge-clair); border-color:var(--rouge); color:var(--rouge); }
+  .verdict { margin-top:18px; padding:14px 16px; border-radius:10px; border-left:5px solid;
+             display:none; white-space:pre-wrap; }
+  .verdict.bon { display:block; background:var(--vert-clair); border-color:var(--vert); color:var(--vert); }
+  .verdict.mauvais { display:block; background:var(--rouge-clair); border-color:var(--rouge); color:var(--rouge); }
+  .verdict strong { display:block; font-family:var(--titre); font-size:1.05rem; margin-bottom:.3em; }
+  table { width:100%; border-collapse:collapse; margin-top:8px; }
+  th, td { text-align:left; padding:9px 8px; border-bottom:1px solid var(--ligne); font-size:.95rem; }
+  th { font-family:var(--titre); color:var(--bleu); font-size:.9rem; }
+  .vide { color:var(--mut); font-style:italic; }
+  .message { margin-top:16px; padding:16px; background:#fff; border:2px dashed var(--ligne);
+             border-radius:10px; white-space:pre-wrap; font:14px/1.55 Consolas,monospace;
+             max-height:230px; overflow:auto; word-break:break-all; }
+  .pastille { display:inline-block; padding:2px 9px; border-radius:999px; font-size:.82rem;
+              background:var(--orange-clair); color:#8a3d1a; font-weight:bold; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Console des accès enseignant</h1>
+  <p>Tout se fait ici, par clics. Rien ne sort de cet ordinateur.</p>
+</header>
+
+<main>
+  <div id="etatCle" class="etat bon">Vérification…</div>
+
+  <!-- ================= DONNER UN ACCÈS ================= -->
+  <section class="carte">
+    <h2>Donner un accès à quelqu'un</h2>
+    <p class="aide">Choisissez le produit, tapez le nom de la personne, cliquez.
+       Vous obtenez un message tout prêt à lui envoyer.</p>
+
+    <label for="produit">Quel produit ?</label>
+    <select id="produit"></select>
+
+    <div class="duo">
+      <div>
+        <label for="nom">Nom et prénom de la personne</label>
+        <input id="nom" placeholder="Marie Lefèvre" autocomplete="off">
+      </div>
+      <div>
+        <label for="courriel">Son adresse de courriel <span class="aide">(facultatif)</span></label>
+        <input id="courriel" placeholder="m.lefevre@ac-aix-marseille.fr" autocomplete="off">
+      </div>
+    </div>
+
+    <button id="creer" type="button">Créer l'accès</button>
+    <div class="verdict" id="verdictAcces" role="status" aria-live="polite"></div>
+    <div class="message" id="messagePret" style="display:none"></div>
+    <div class="rangee" id="apresCreation" style="display:none">
+      <button class="second" id="copier" type="button">Copier le message</button>
+      <button class="second" id="ouvrirDossier" type="button">Ouvrir le dossier des codes</button>
+    </div>
+  </section>
+
+  <!-- ================= QUI A UN ACCÈS ================= -->
+  <section class="carte">
+    <h2>Qui a un accès</h2>
+    <p class="aide">La liste reste sur cet ordinateur. Elle n'est jamais publiée.</p>
+    <div id="listeTitulaires"></div>
+  </section>
+
+  <!-- ================= LA RENTRÉE ================= -->
+  <section class="carte">
+    <h2>Préparer une nouvelle année</h2>
+    <p class="aide">À faire une fois par an, en août. Les accès de l'année précédente
+       cessent alors d'ouvrir quoi que ce soit.
+       <strong>Envoyez les nouveaux codes avant de publier</strong>, sinon vos collègues
+       se retrouvent dehors.</p>
+
+    <div class="duo">
+      <div>
+        <label for="produitAn">Quel produit ?</label>
+        <select id="produitAn"></select>
+      </div>
+      <div>
+        <label for="annee">Quelle année ?</label>
+        <input id="annee" type="number" min="2026" max="2100" step="1">
+      </div>
+    </div>
+
+    <div class="rangee">
+      <button id="tirer" type="button">1. Préparer les clés de l'année</button>
+      <button id="fabriquer" class="second" type="button">2. Fabriquer le coffre</button>
+    </div>
+    <div class="verdict" id="verdictAn" role="status" aria-live="polite"></div>
+    <div id="listeMillesimes" style="margin-top:16px"></div>
+  </section>
+
+  <!-- ================= LA CLÉ ================= -->
+  <section class="carte">
+    <h2>Mettre la clé à l'abri</h2>
+    <p class="aide">La clé signe tous vos accès. Si vous la perdez, vous ne pouvez plus
+       en donner un seul. Une feuille de papier dans un tiroir ne tombe jamais en panne.</p>
+    <div class="rangee">
+      <button id="fiche" type="button">Préparer la feuille à imprimer</button>
+    </div>
+    <div class="verdict" id="verdictFiche" role="status" aria-live="polite"></div>
+  </section>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var JETON = new URLSearchParams(location.search).get("j") || "";
+  var dernier = { texte: "", dossier: "" };
+
+  function api(chemin, donnees) {
+    var opts = { method: donnees ? "POST" : "GET" };
+    if (donnees) {
+      opts.headers = { "content-type": "application/json" };
+      opts.body = JSON.stringify(donnees);
+    }
+    return fetch(chemin + "?j=" + encodeURIComponent(JETON), opts).then(function (r) { return r.json(); });
+  }
+
+  function dire(id, bon, titre, detail) {
+    var b = document.getElementById(id);
+    b.className = "verdict " + (bon ? "bon" : "mauvais");
+    b.innerHTML = "";
+    var t = document.createElement("strong"); t.textContent = titre; b.appendChild(t);
+    if (detail) b.appendChild(document.createTextNode(detail));
+  }
+
+  function remplirProduits(liste) {
+    ["produit", "produitAn"].forEach(function (id) {
+      var s = document.getElementById(id);
+      s.innerHTML = "";
+      liste.forEach(function (p) {
+        var o = document.createElement("option");
+        o.value = p.id; o.textContent = p.nom;
+        s.appendChild(o);
+      });
+    });
+  }
+
+  function peindreTitulaires(t) {
+    var boite = document.getElementById("listeTitulaires");
+    if (!t.length) {
+      boite.innerHTML = '<p class="vide">Personne n\'a encore d\'accès.</p>';
+      return;
+    }
+    var lignes = t.map(function (x) {
+      return "<tr><td><strong>" + echapper(x.nom) + "</strong></td><td>" + echapper(x.produit)
+        + "</td><td>" + x.millesime + "</td><td>" + echapper(x.expireLe) + "</td></tr>";
+    }).join("");
+    boite.innerHTML = "<table><thead><tr><th>Personne</th><th>Produit</th><th>Année</th>"
+      + "<th>Valable jusqu'au</th></tr></thead><tbody>" + lignes + "</tbody></table>";
+  }
+
+  function peindreMillesimes(m) {
+    var boite = document.getElementById("listeMillesimes");
+    if (!m.length) { boite.innerHTML = '<p class="vide">Aucune année préparée pour l\'instant.</p>'; return; }
+    boite.innerHTML = "Années déjà préparées : " + m.map(function (x) {
+      return '<span class="pastille">' + echapper(x.produit) + " " + x.annee + "</span>";
+    }).join(" ");
+  }
+
+  function echapper(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  function rafraichir() {
+    return api("/etat").then(function (r) {
+      if (!r.ok) { document.getElementById("etatCle").className = "etat souci";
+                   document.getElementById("etatCle").textContent = r.message; return; }
+      var e = r.etat;
+      var bandeau = document.getElementById("etatCle");
+      if (e.cleRacine) {
+        bandeau.className = "etat bon";
+        bandeau.textContent = "Votre clé est en place. "
+          + (e.fichePresente ? "⚠ La feuille à imprimer existe encore : imprimez-la puis supprimez le fichier."
+                             : "Pensez à en garder une copie papier.");
+      } else {
+        bandeau.className = "etat souci";
+        bandeau.textContent = "Aucune clé n'a été trouvée. Rien ne pourra être délivré.";
+      }
+      remplirProduits(e.produits);
+      peindreTitulaires(e.titulaires);
+      peindreMillesimes(e.millesimes);
+      dernier.dossier = e.dossierCodes;
+      var an = document.getElementById("annee");
+      if (!an.value) an.value = e.anneeCourante;
+    });
+  }
+
+  document.getElementById("creer").addEventListener("click", function () {
+    var bouton = this;
+    bouton.disabled = true;
+    api("/delivrer", {
+      produit: document.getElementById("produit").value,
+      nom: document.getElementById("nom").value,
+      courriel: document.getElementById("courriel").value
+    }).then(function (r) {
+      bouton.disabled = false;
+      if (!r.ok) {
+        document.getElementById("messagePret").style.display = "none";
+        document.getElementById("apresCreation").style.display = "none";
+        dire("verdictAcces", false, "L'accès n'a pas été créé.", r.message);
+        return;
+      }
+      dire("verdictAcces", true, "C'est fait.",
+        "Copiez le message ci-dessous et envoyez-le à la personne.");
+      dernier.texte = r.texte || r.code || "";
+      var m = document.getElementById("messagePret");
+      m.textContent = dernier.texte; m.style.display = "block";
+      document.getElementById("apresCreation").style.display = "flex";
+      document.getElementById("nom").value = "";
+      document.getElementById("courriel").value = "";
+      rafraichir();
+    });
+  });
+
+  document.getElementById("copier").addEventListener("click", function () {
+    var b = this;
+    navigator.clipboard.writeText(dernier.texte).then(function () {
+      b.textContent = "Message copié ✓";
+      setTimeout(function () { b.textContent = "Copier le message"; }, 2500);
+    });
+  });
+
+  document.getElementById("ouvrirDossier").addEventListener("click", function () {
+    api("/ouvrir", { chemin: dernier.dossier });
+  });
+
+  document.getElementById("tirer").addEventListener("click", function () {
+    var bouton = this; bouton.disabled = true;
+    api("/millesime", {
+      produit: document.getElementById("produitAn").value,
+      annee: Number(document.getElementById("annee").value)
+    }).then(function (r) {
+      bouton.disabled = false;
+      dire("verdictAn", r.ok, r.ok ? "Les clés de l'année sont prêtes." : "Rien n'a été préparé.", r.message);
+      rafraichir();
+    });
+  });
+
+  document.getElementById("fabriquer").addEventListener("click", function () {
+    var bouton = this; bouton.disabled = true;
+    api("/coffre", {
+      produit: document.getElementById("produitAn").value,
+      annee: Number(document.getElementById("annee").value)
+    }).then(function (r) {
+      bouton.disabled = false;
+      dire("verdictAn", r.ok, r.ok ? "Le coffre est fabriqué." : "Le coffre n'a pas été fabriqué.", r.message);
+    });
+  });
+
+  document.getElementById("fiche").addEventListener("click", function () {
+    var bouton = this; bouton.disabled = true;
+    api("/fiche", {}).then(function (r) {
+      bouton.disabled = false;
+      if (!r.ok) { dire("verdictFiche", false, "La feuille n'a pas pu être préparée.", r.message); return; }
+      dire("verdictFiche", true, "La feuille s'ouvre dans une nouvelle fenêtre.",
+        "Imprimez-la (Ctrl+P), rangez-la, puis supprimez le fichier : il contient la clé en clair.");
+      api("/ouvrir", { chemin: r.chemin });
+      rafraichir();
+    });
+  });
+
+  rafraichir();
+})();
+</script>
+</body>
+</html>

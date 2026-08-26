@@ -28,8 +28,9 @@ Le millésime `habilitation-2026` est sauvegardé avec.
 
 C'est **la** sauvegarde qui ne tombe jamais en panne.
 
-1. Ouvrez ce fichier : `C:\git\paquets\acces-inerweb\racine\FICHE-A-IMPRIMER.html`
-   (double-clic, il s'ouvre dans le navigateur).
+1. Ouvrez la console (§ 3), section **« Mettre la clé à l'abri »**, et cliquez sur
+   **« Préparer la feuille à imprimer »**. Elle s'ouvre toute seule.
+   *(Sans la console : le fichier est `C:\git\paquets\acces-inerweb\racine\FICHE-A-IMPRIMER.html`.)*
 2. Imprimez-le (Ctrl+P). Une page A4.
 3. **Rangez la feuille hors de vue**, comme une pièce d'identité. Qui a ces lignes peut
    fabriquer un accès à n'importe lequel de vos produits, au nom de n'importe qui.
@@ -50,43 +51,46 @@ Aucun n'était branché le 26/08. Le jour où vous en branchez un, copiez-y le d
 
 ---
 
-## 3. Donner un accès à un collègue
+## 3. La console — vous n'avez jamais à taper de commande
 
-Une commande. Elle ne demande aucun code de votre part.
+Sur votre Bureau : **« Console des acces inerWeb »**. Double-cliquez.
 
-```
-node build/delivrer-acces.mjs habilitation "Prénom Nom" adresse@courriel.fr
-```
+Une petite fenêtre s'ouvre et vous dit qu'elle travaille — **vous n'avez rien à y taper**.
+Votre navigateur s'ouvre tout seul sur la console. Laissez la petite fenêtre ouverte
+tant que vous vous en servez ; pour arrêter, fermez-la.
 
-Ce qui se passe :
+Tout se fait dans le navigateur, par clics.
 
-1. l'outil fabrique un code **personnel**, valable jusqu'au 31 août suivant ;
-2. il l'écrit dans un fichier, sous `C:\git\paquets\acces-inerweb\codes\` ;
-3. il l'inscrit au registre `registre-acces.csv` — nominatif, **il reste sur votre poste**.
+### Donner un accès à un collègue
 
-**Le code ne s'affiche pas à l'écran** : ouvrez le fichier, copiez-le, envoyez-le à la
-personne. Le fichier contient déjà le texte à lui transmettre.
+1. Choisissez le produit dans la liste déroulante.
+2. Tapez le nom de la personne (son adresse de courriel si vous voulez).
+3. Cliquez sur **« Créer l'accès »**.
 
-Votre collègue va sur **`https://inerweb.fr/activer`**, colle le code, et son accès
-s'ouvre. Rien à installer, aucun compte à créer, aucun mot de passe.
+La console affiche alors le **message tout prêt** à lui envoyer. Un bouton
+**« Copier le message »** : vous le collez dans votre courriel, et c'est fini.
 
-**Un code par produit.** S'il doit aussi avoir AquiBlue, vous lui délivrez un second
-code — `node build/delivrer-acces.mjs aquiblue "Prénom Nom"`. Les deux se cumulent sur
-la même page.
+Votre collègue va sur **`https://inerweb.fr/activer`**, colle le code, son accès s'ouvre.
+Rien à installer, aucun compte à créer, aucun mot de passe.
+
+**Un code par produit.** S'il doit aussi avoir AquiBlue, refaites l'opération en
+choisissant AquiBlue : les deux accès se cumulent chez lui.
+
+### Voir qui a un accès
+
+La console affiche la liste : qui, quel produit, jusqu'à quand. Elle ne quitte jamais
+votre ordinateur.
 
 ---
 
 ## 4. Chaque rentrée — le rituel d'août
 
-Trois commandes par produit, une demi-heure en tout :
+Dans la console, section **« Préparer une nouvelle année »** :
 
-```
-node build/millesime.mjs habilitation 2027
-node build/coffre.mjs habilitation --millesime 2027
-node build/delivrer-acces.mjs habilitation "Prénom Nom" --millesime 2027
-```
-
-Puis `node build/build.mjs`, et vous envoyez les nouveaux codes.
+1. choisissez le produit et l'année (2027) ;
+2. cliquez **« 1. Préparer les clés de l'année »** ;
+3. cliquez **« 2. Fabriquer le coffre »** ;
+4. redonnez un accès à chaque collègue (section du dessus) et envoyez les nouveaux codes.
 
 Au matin de la rentrée, **les codes de l'an passé n'ouvrent plus rien** — non pas parce
 qu'on les refuse, mais parce que la clé qu'ils portaient ne déchiffre plus le coffre.
@@ -94,6 +98,9 @@ C'est ça, votre durée de vie d'un an.
 
 ⚠️ **Envoyez les nouveaux codes AVANT de publier le nouveau coffre**, sinon vos collègues
 se retrouvent dehors du jour au lendemain.
+
+> Les commandes existent toujours pour qui veut les taper — elles sont listées en
+> annexe, § 7. La console fait exactement la même chose, en cliquant.
 
 ---
 
@@ -120,3 +127,20 @@ Dit une fois, pour ne pas se raconter d'histoires :
 - Ce qu'il fait, et qui compte : le contenu publié n'existe **nulle part en clair**,
   chaque accès **porte un nom**, chaque document affiche ce nom **en filigrane**, et
   tout **expire au bout d'un an**.
+
+---
+
+## 7. Annexe — les commandes, pour qui veut les taper
+
+La console de la § 3 ne fait rien d'autre que lancer ces outils. Elles sont ici pour
+mémoire, et pour le jour où quelqu'un reprendra le chantier.
+
+| Ce que ça fait | Commande |
+|---|---|
+| Donner un accès | `node build/delivrer-acces.mjs <produit> "Prénom Nom" [courriel]` |
+| Préparer les clés d'une année | `node build/millesime.mjs <produit> <année>` |
+| Fabriquer le coffre d'une année | `node build/coffre.mjs <produit> --millesime <année>` |
+| Préparer la feuille à imprimer | `node build/fiche-cle-racine.mjs` |
+| Vérifier que tout tient | `node build/test-acces.mjs` |
+
+Produits : `habilitation` · `aquiblue` · `legislation` · `hydrometro` · `hocourant`.
