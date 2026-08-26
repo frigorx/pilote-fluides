@@ -111,7 +111,7 @@
   .tableau-large { overflow-x: auto; }
   footer { color: var(--mut); font-size: .9em; margin-top: 3em; }
 </style>
-  <link rel="stylesheet" href="moteur/impression.css" media="print">
+  <link rel="stylesheet" href="moteur/impression.css?v=db5afdee55" media="print">
 </head>
 <body>
 
@@ -124,24 +124,28 @@
 <main>
   <div class="avis">
     <b>Comment lire cette page.</b> Les documents <b>libres</b> s'ouvrent directement.
-    Les documents <span class="cad">🔒 protégés</span> sont chiffrés : saisissez le code d'accès une fois, ils s'ouvrent tous. Rien n'est déchiffré sans le code — pas même
-    en regardant le code source de la page.
-    À savoir : les fichiers chiffrés restent <b>téléchargeables par tous</b> —
-    la protection vaut ce que vaut la phrase d'accès, elle n'est pas un contrôle
-    d'accès de serveur. C'est pourquoi rien de réellement confidentiel
-    (sujets officiels, données nominatives) n'entre jamais ici, code ou pas.
+    Les documents <span class="cad">🔒 protégés</span> sont chiffrés : ils s'ouvrent
+    tous dès que votre <b>accès enseignant</b> est activé sur cet appareil. Rien n'est
+    déchiffré sans lui — pas même en regardant le code source de la page.
+    À savoir : les fichiers chiffrés restent <b>téléchargeables par tous</b> — c'est la
+    clé qui protège, pas le serveur, et cette clé change chaque rentrée. C'est pourquoi
+    rien de réellement confidentiel (sujets officiels, données nominatives) n'entre
+    jamais ici, accès ou pas. Les documents que vous ouvrez portent votre nom.
   </div>
 
   <h2>Libre — l'état du travail</h2>
   <div id="libres"></div>
 
-  <h2>🔒 Documents de travail — protégés par le code</h2>
+  <h2>🔒 Documents de travail — accès enseignant</h2>
   <div id="code-zone">
-    <input id="code" type="password" autocomplete="off" spellcheck="false"
-           autocapitalize="none" autocorrect="off"
-           placeholder="Le code d&#39;accès…" aria-label="Code d&#39;accès">
-    <button id="ok">Déverrouiller ▸</button>
-    <p id="etat" class="m" style="color:var(--mut)"></p>
+    <p id="etat" class="m" style="color:var(--mut)">⏳ Vérification de votre accès…</p>
+    <p id="invite" style="display:none;margin:.6em 0 0">
+      <a href="activer.html" id="lien-activer">Activer mon accès ▸</a>
+      <span class="m" style="color:var(--mut);display:block;margin-top:.4em">
+        Vous n'avez pas encore de code ?
+        <a href="demander-un-acces.html">Demandez-en un</a> — c'est gratuit.
+      </span>
+    </p>
   </div>
   <div id="proteges"></div>
 
@@ -163,6 +167,8 @@
   <div class="contenu" id="l-corps"></div>
 </div>
 
+<!-- Le moteur d'accès enseignant : il doit être là AVANT le script de la page. -->
+<script src="moteur/acces.js?v=db5afdee55"></script>
 <script>
 (function () {
   "use strict";
@@ -188,8 +194,12 @@
   ];
 
   var $ = function (id) { return document.getElementById(id); };
-  var CLE_ACCES = "pilote_acces_fluides-habilitation";
-  var cleCrypto = null, index = null;
+  var coffreOuvert = false, index = null;
+  /* 26/08/2026 — bascule sur l'accès enseignant nominatif. Le coffre n'est
+     plus ouvert par un code tapé (clé dérivée, donc faible) mais par la clé
+     du millésime que transporte le code personnel de chacun. Le dossier
+     dépend donc de l'année de l'accès : docs/coffre-<millesime>/. */
+  var DOSSIER = null;
 
   /* ================= rendu markdown (maison, sans bibliothèque) ======= */
   function esc(s) {
@@ -402,7 +412,7 @@
     p.textContent = d.desc;
     var q = document.createElement("p");
     q.style.cssText = "margin:0 0 .6em";
-    q.innerHTML = cleCrypto
+    q.innerHTML = coffreOuvert
       ? "Ce document est déverrouillé."
       : "Saisissez le code d'accès : <b>ce document s'ouvrira directement</b>" +
         (d.binaire ? " (téléchargement du fichier " + d.fichier.split(".").pop().toUpperCase() + ")" : "") + ".";
@@ -451,15 +461,15 @@
         zone.appendChild(h);
       }
       cats[cat].forEach(function (d) {
-        var etat = cleCrypto
+        var etat = coffreOuvert
           ? "<span class='ouvert'>" + (d.binaire ? "Déverrouillé — cliquer pour télécharger" : "Déverrouillé") + "</span>"
           : "<span class='cad'>🔒 Chiffré</span>";
-        var icone = cleCrypto ? (d.binaire ? "⬇ " : "📄 ") : "🔒 ";
+        var icone = coffreOuvert ? (d.binaire ? "⬇ " : "📄 ") : "🔒 ";
         var el = carte(
           icone + d.titre, d.desc,
           etat + " · " + Math.round(d.taille / 1024) + " Ko" + (d.binaire ? " · " + d.fichier.split(".").pop().toUpperCase() : ""),
           function () {
-            if (!cleCrypto) { $("code").focus(); return; }
+            if (!coffreOuvert) { location.href = "activer.html"; return; }
             if (d.binaire) telecharger(d); else lire(d);
           }
         );
@@ -475,19 +485,11 @@
     }
   }
 
-  /* Déchiffre et rend les octets bruts — commun à la lecture et au téléchargement. */
+  /* Déchiffre et rend les octets bruts — commun à la lecture et au
+     téléchargement. Le déchiffrement lui-même vit dans `moteur/acces.js` :
+     une seule implémentation pour tout le site, pas une copie par page. */
   function dechiffrer(d) {
-    return fetch("docs/coffre/" + d.id + ".enc").then(function (r) {
-      if (!r.ok) throw new Error("introuvable");
-      return r.arrayBuffer();
-    }).then(function (buf) {
-      var o = new Uint8Array(buf);
-      var iv = o.slice(0, 12), tag = o.slice(12, 28), corps = o.slice(28);
-      var charge = new Uint8Array(corps.length + tag.length);
-      charge.set(corps, 0);
-      charge.set(tag, corps.length);
-      return crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, cleCrypto, charge);
-    });
+    return window.inerwebAcces.ouvrirDocument("habilitation", DOSSIER + d.id + ".enc");
   }
 
   /* Fichiers Office : on ne les affiche pas, on les rend tels quels. */
@@ -507,95 +509,73 @@
   }
 
   function lire(d) {
-    fetch("docs/coffre/" + d.id + ".enc").then(function (r) {
-      if (!r.ok) throw new Error("introuvable");
-      return r.arrayBuffer();
-    }).then(function (buf) {
-      var o = new Uint8Array(buf);
-      var iv = o.slice(0, 12), tag = o.slice(12, 28), corps = o.slice(28);
-      // Web Crypto attend le tag d'authentification collé aux données
-      var charge = new Uint8Array(corps.length + tag.length);
-      charge.set(corps, 0);
-      charge.set(tag, corps.length);
-      return crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, cleCrypto, charge);
-    }).then(function (clair) {
+    dechiffrer(d).then(function (clair) {
       ouvrir(d.titre, new TextDecoder().decode(clair));
     }).catch(function (e) {
       alert("Impossible d'ouvrir ce document.\n(" + (e && e.message ? e.message : "erreur") + ")");
     });
   }
 
-  function deriver(code) {
-    return crypto.subtle.importKey("raw", new TextEncoder().encode(code), "PBKDF2", false, ["deriveKey"])
-      .then(function (base) {
-        return crypto.subtle.deriveKey(
-          { name: "PBKDF2", salt: b64versOctets(index.sel), iterations: index.iterations, hash: "SHA-256" },
-          base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]
-        );
-      });
-  }
+  /* ================= l'ouverture du coffre ==========================
+     26/08/2026 — plus de code tapé. Le coffre s'ouvre avec la clé du
+     millésime que transporte l'accès enseignant, rangé par la page
+     `activer.html`. Trois conséquences :
+       · la force ne dépend plus de la longueur d'un code ;
+       · l'accès porte un nom, et ce nom s'affiche en filigrane ;
+       · à la rentrée, la clé change et l'ancien accès n'ouvre plus rien.
+     ================================================================= */
+  function ouvrirLeCoffre() {
+    var A = window.inerwebAcces;
+    var acces = A ? A.accesDe("habilitation") : null;
 
-  function essayer(code) {
-    $("etat").className = "m";
-    $("etat").textContent = "⏳ Ouverture du coffre… comptez 5 à 10 secondes. "
-      + "Cette lenteur est voulue : c'est elle qui rend inutile de tester les codes au hasard.";
-    $("ok").disabled = true;
-    deriver(code).then(function (cle) {
-      // on valide en déchiffrant réellement le premier document
-      var t = index.documents[0];
-      return fetch("docs/coffre/" + t.id + ".enc")
-        .then(function (r) { return r.arrayBuffer(); })
-        .then(function (buf) {
-          var o = new Uint8Array(buf), iv = o.slice(0, 12), tag = o.slice(12, 28), corps = o.slice(28);
-          var charge = new Uint8Array(corps.length + tag.length);
-          charge.set(corps, 0); charge.set(tag, corps.length);
-          return crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, cle, charge);
-        })
-        .then(function () { cleCrypto = cle; });
-    }).then(function () {
-      try { localStorage.setItem(CLE_ACCES, "oui"); } catch (e) {}
-      $("etat").className = "m ouvert";
-      $("etat").textContent = "✓ Déverrouillé — " + index.documents.length + " documents lisibles.";
-      $("code").value = "";
-      $("code").disabled = true;
-      $("ok").textContent = "Déverrouillé";
+    if (!acces) {
+      $("etat").className = "m";
+      $("etat").textContent = "Ces documents s'ouvrent avec votre accès enseignant.";
+      $("invite").style.display = "block";
+      $("proteges").innerHTML = "";
+      return;
+    }
+
+    DOSSIER = "docs/coffre-" + acces.millesime + "/";
+    $("etat").textContent = "⏳ Ouverture du coffre…";
+
+    fetch(DOSSIER + "index.json").then(function (r) {
+      if (!r.ok) throw new Error("coffre " + acces.millesime + " absent");
+      return r.json();
+    }).then(function (j) {
+      index = j;
+      coffreOuvert = true;
       listerProteges();
-      // Venu du dossier par un lien ciblé : on ouvre le document demandé
-      // plutôt que de laisser le lecteur le chercher dans la liste.
+      vueCiblee();
+      /* Changer d'ancre ne recharge pas la page, et un retour arrière la
+         restaure telle quelle (bfcache) : sans ces deux écouteurs, cliquer
+         « le budget » après « le projet » réaffichait le projet. */
+      window.addEventListener("hashchange", function () { vueCiblee(); listerProteges(); });
+      window.addEventListener("pageshow", function (e) { if (e.persisted) { vueCiblee(); listerProteges(); } });
+
+      $("etat").className = "m ouvert";
+      $("etat").textContent = "✓ Ouvert — " + index.documents.length + " documents · accès de "
+        + acces.nom + ", valable jusqu'au " + acces.expireLe + ".";
+      $("invite").style.display = "none";
+      A.filigrane("habilitation");
+
+      /* Venu du dossier par un lien ciblé : on ouvre le document demandé
+         plutôt que de laisser le lecteur le chercher dans la liste. */
       var d = docVise();
       if (d) { if (d.binaire) telecharger(d); else lire(d); }
     }).catch(function () {
       $("etat").className = "m err";
-      $("etat").textContent = "Ce n'est pas le bon code.";
-      $("ok").disabled = false;
-      $("code").select();
-      $("code").focus();
+      $("etat").textContent = "Votre accès est valide, mais le coffre de l'année "
+        + acces.millesime + " n'est pas publié. Signalez-le : rien n'est perdu.";
+      $("proteges").innerHTML = "";
     });
   }
 
-  fetch("docs/coffre/index.json").then(function (r) { return r.json(); }).then(function (j) {
-    index = j;
-    listerProteges();
-    vueCiblee();
-    /* Changer d'ancre ne recharge pas la page, et un retour arrière la
-       restaure telle quelle (bfcache) : sans ces deux écouteurs, cliquer
-       « le budget » après « le projet » réaffichait le projet. */
-    window.addEventListener("hashchange", function () { vueCiblee(); listerProteges(); });
-    window.addEventListener("pageshow", function (e) { if (e.persisted) { vueCiblee(); listerProteges(); } });
-    $("ok").onclick = function () {
-      var c = $("code").value.trim();
-      if (c) essayer(c);
-    };
-    $("code").addEventListener("keydown", function (e) {
-      if (e.key === "Enter") $("ok").onclick();
-    });
-  }).catch(function () {
-    $("proteges").innerHTML = "<p class='err'>Coffre introuvable. Lancer <code>node build/coffre.mjs &lt;code&gt;</code>.</p>";
-  });
+  ouvrirLeCoffre();
 })();
 </script>
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
-<script src="moteur/lisibilite.js"></script>
-<script src="moteur/marque.js" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/lisibilite.js?v=db5afdee55"></script>
+<script src="moteur/marque.js?v=db5afdee55" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>

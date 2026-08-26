@@ -20,6 +20,25 @@ import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { CARTES } from "../packs/fluides/cartes.js";
+
+/* 26/08/2026 — le coffre a basculé sur les millésimes : il n'y a plus un
+   `docs/coffre/` unique mais un `docs/coffre-<année>/` par rentrée. On
+   compte dans le plus récent. Si aucun n'existe, on ne devine pas : on
+   arrête, plutôt que d'afficher un compteur faux sur les pages publiques
+   (c'est toute la raison d'être de ce script). */
+function compterDocumentsDuCoffre() {
+  const dossiers = readdirSync(resolve(RACINE, "docs"))
+    .filter((f) => /^coffre-\d{4}$/.test(f))
+    .sort();
+  if (!dossiers.length) {
+    throw new Error(
+      "aucun docs/coffre-<année>/ : fabriquez-en un avec\n" +
+      "  node build/coffre.mjs habilitation --millesime <année>"
+    );
+  }
+  const dernier = dossiers[dossiers.length - 1];
+  return JSON.parse(lire("docs/" + dernier + "/index.json")).documents.length;
+}
 import { PARCOURS, CADRE } from "../packs/fluides/parcours.js";
 
 const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -62,7 +81,7 @@ const C = {
   planches: readdirSync(resolve(RACINE, "packs/fluides/res/svg")).filter((f) => f.endsWith(".svg")).length,
   exercices: CARTES.filter((c) => c.type === "exercice").length,
   examens: CARTES.filter((c) => c.type === "examen").length,
-  documents: JSON.parse(lire("docs/coffre/index.json")).documents.length,
+  documents: compterDocumentsDuCoffre(),
   journees: PARCOURS.jours.length,
   heures: cadre.total_h + " h",
   heures_salle: hhmm(salle),

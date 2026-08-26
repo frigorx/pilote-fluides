@@ -42,6 +42,10 @@ const FICHIERS_VERSIONNES = [
   "moteur/sons.js",
   "moteur/lecture.js",
   "moteur/portillon.js",
+  // 26/08/2026 — le moteur d'accès enseignant. C'est LUI qui décide si un
+  // coffre s'ouvre : une version périmée servie par un navigateur serait le
+  // pire des caches. Il est donc versionné comme les autres.
+  "moteur/acces.js",
 ];
 
 // Les pages générées (galerie, matrice, planning, relecture) sont incluses :
@@ -66,6 +70,10 @@ const PAGES = [
   // `noindex`, hors sitemap : c'est un utilitaire, pas du contenu. Elle
   // charge moteur/acces.js, qui doit donc être versionné comme les autres.
   "activer.html",
+  // 26/08/2026 — documents.html n'y avait jamais figuré : tant qu'elle ne
+  // chargeait qu'elle-même, ça ne se voyait pas. Depuis la bascule elle
+  // charge moteur/acces.js, qui décide si le coffre s'ouvre.
+  "documents.html",
   // 26/08/2026 — le formulaire de demande d'accès. Il n'envoie rien : il
   // prépare un courriel que la personne relit et envoie elle-même, donc le
   // site ne reçoit et n'enregistre toujours rien. `noindex`, hors sitemap
