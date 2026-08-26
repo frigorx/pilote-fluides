@@ -66,6 +66,12 @@
   .compte div { text-align:center; }
   .compte b { display:block; font-family:var(--titre); font-size:1.7rem; color:var(--bleu); }
   .compte span { font-size:.88rem; color:var(--mut); }
+  textarea { width:100%; min-height:130px; padding:12px 14px; border:2px solid var(--ligne);
+             border-radius:10px; background:#fff; color:var(--txt); resize:vertical;
+             font:14px/1.5 Consolas,'Courier New',monospace; }
+  button.mini { margin:0; padding:5px 13px; font-size:.85rem; background:transparent;
+                color:var(--bleu); border:1px solid var(--ligne); }
+  button.mini:hover { background:var(--orange-clair); }
 </style>
 </head>
 <body>
@@ -77,6 +83,21 @@
 
 <main>
   <div id="etatCle" class="etat bon">Vérification…</div>
+
+  <!-- ================= COLLER LA DEMANDE ================= -->
+  <section class="carte">
+    <h2>Vous avez reçu une demande ? Collez-la ici</h2>
+    <p class="aide">Ouvrez le courriel reçu, sélectionnez tout (Ctrl+A), copiez (Ctrl+C),
+       collez ici. Les champs du dessous se remplissent tout seuls — vous n'avez rien à
+       retaper, cases comprises.</p>
+    <textarea id="colle" spellcheck="false"
+              placeholder="Collez ici le courriel de demande, tel quel."></textarea>
+    <div class="rangee">
+      <button id="lireDemande" type="button">Lire la demande</button>
+      <button id="viderColle" class="second" type="button">Effacer</button>
+    </div>
+    <div class="verdict" id="verdictColle" role="status" aria-live="polite"></div>
+  </section>
 
   <!-- ================= DONNER UN ACCÈS ================= -->
   <section class="carte">
@@ -132,8 +153,24 @@
   <!-- ================= QUI A UN ACCÈS ================= -->
   <section class="carte">
     <h2>Qui a un accès</h2>
-    <p class="aide">La liste reste sur cet ordinateur. Elle n'est jamais publiée.</p>
+    <p class="aide">La liste reste sur cet ordinateur. Elle n'est jamais publiée.
+       Si quelqu'un a perdu son code, cliquez sur « Revoir le code » : c'est le même,
+       inutile d'en créer un autre.</p>
     <div id="listeTitulaires"></div>
+    <div class="message" id="codeRetrouve" style="display:none"></div>
+    <div class="rangee" id="apresRetrouve" style="display:none">
+      <button class="second" id="copierRetrouve" type="button">Copier ce message</button>
+    </div>
+    <div class="verdict" id="verdictRetrouve" role="status" aria-live="polite"></div>
+  </section>
+
+  <!-- ================= LES CHIFFRES ================= -->
+  <section class="carte">
+    <h2>Vos chiffres</h2>
+    <p class="aide">Des totaux, jamais des noms. Le compte des établissements ne
+       retient que les personnes qui ont accepté de figurer dans les statistiques.</p>
+    <div class="compte" id="chiffres"></div>
+    <div id="chiffresProduits" class="aide"></div>
   </section>
 
   <!-- ================= ÉCRIRE À SES UTILISATEURS ================= -->
@@ -207,7 +244,11 @@
       opts.headers = { "content-type": "application/json" };
       opts.body = JSON.stringify(donnees);
     }
-    return fetch(chemin + "?j=" + encodeURIComponent(JETON), opts).then(function (r) { return r.json(); });
+    /* Le chemin peut DÉJÀ porter des paramètres (/code?produit=…) : coller un
+       second « ? » ferait perdre le jeton et la requête serait refusée. */
+    var separateur = chemin.indexOf("?") >= 0 ? "&" : "?";
+    return fetch(chemin + separateur + "j=" + encodeURIComponent(JETON), opts)
+      .then(function (r) { return r.json(); });
   }
 
   function dire(id, bon, titre, detail) {
@@ -245,11 +286,19 @@
       ].filter(Boolean).join(" · ") || "—";
       return "<tr><td><strong>" + echapper(x.nom) + "</strong><br><span class='vide'>"
         + echapper(x.etablissement || "") + "</span></td><td>" + echapper(x.produit)
-        + "</td><td>" + echapper(x.expireLe) + "</td><td>" + echapper(marques) + "</td></tr>";
+        + "</td><td>" + echapper(x.expireLe) + "</td><td>" + echapper(marques) + "</td>"
+        + "<td><button type='button' class='mini' data-produit='" + echapper(x.produit)
+        + "' data-numero='" + x.numero + "'>Revoir le code</button></td></tr>";
     }).join("");
     boite.innerHTML = "<table><thead><tr><th>Personne</th><th>Produit</th>"
-      + "<th>Valable jusqu'au</th><th>A accepté</th></tr></thead><tbody>"
+      + "<th>Valable jusqu'au</th><th>A accepté</th><th></th></tr></thead><tbody>"
       + lignes + "</tbody></table>";
+    /* Les gestionnaires se posent après coup : rien d'exécutable dans le HTML monté. */
+    boite.querySelectorAll("button.mini").forEach(function (b) {
+      b.addEventListener("click", function () {
+        window.revoirCode(b.dataset.produit, Number(b.dataset.numero));
+      });
+    });
   }
 
   function peindreMillesimes(m) {
@@ -258,6 +307,22 @@
     boite.innerHTML = "Années déjà préparées : " + m.map(function (x) {
       return '<span class="pastille">' + echapper(x.produit) + " " + x.annee + "</span>";
     }).join(" ");
+  }
+
+  function peindreChiffres(s) {
+    if (!s) return;
+    document.getElementById("chiffres").innerHTML =
+      "<div><b>" + s.personnes + "</b><span>personnes</span></div>" +
+      "<div><b>" + s.accesDelivres + "</b><span>accès délivrés</span></div>" +
+      "<div><b>" + s.encoreValides + "</b><span>encore valables</span></div>" +
+      "<div><b>" + s.perimes + "</b><span>périmés</span></div>" +
+      "<div><b>" + s.etablissements + "</b><span>établissements</span></div>";
+    var lignes = Object.keys(s.parProduit).map(function (p) {
+      return echapper(p) + " : " + s.parProduit[p];
+    });
+    document.getElementById("chiffresProduits").textContent = lignes.length
+      ? "Par produit — " + lignes.join(" · ")
+      : "";
   }
 
   function echapper(s) {
@@ -284,6 +349,7 @@
       remplirProduits(e.produits);
       peindreTitulaires(e.titulaires);
       peindreMillesimes(e.millesimes);
+      peindreChiffres(e.statistiques);
       dernier.dossier = e.dossierCodes;
       var an = document.getElementById("annee");
       if (!an.value) an.value = e.anneeCourante;
@@ -338,6 +404,128 @@
 
   document.getElementById("ouvrirDossier").addEventListener("click", function () {
     api("/ouvrir", { chemin: dernier.dossier });
+  });
+
+  /* ---- Lire une demande collée ----------------------------------------
+     Le formulaire du site écrit toujours les mêmes intitulés : on les
+     retrouve, sans se laisser piéger par les accents ni la casse. Ce qui
+     n'est pas reconnu n'est pas deviné : le champ reste vide. */
+  function sansAccent(s) {
+    return String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  }
+
+  function lireChamp(texte, intitule) {
+    var lignes = texte.split(/\r?\n/);
+    var cible = sansAccent(intitule);
+    for (var i = 0; i < lignes.length; i++) {
+      var l = lignes[i];
+      var sep = l.indexOf(":");
+      if (sep < 0) continue;
+      if (sansAccent(l.slice(0, sep)).trim() === cible) {
+        var v = l.slice(sep + 1).trim();
+        return /^\(non pr[eé]cis/i.test(v) ? "" : v;
+      }
+    }
+    return "";
+  }
+
+  document.getElementById("lireDemande").addEventListener("click", function () {
+    var texte = document.getElementById("colle").value;
+    if (!texte.trim()) {
+      dire("verdictColle", false, "Rien à lire.", "Collez d'abord le courriel reçu.");
+      return;
+    }
+    var nom = lireChamp(texte, "Nom");
+    var courriel = lireChamp(texte, "Courriel");
+    if (!nom && !courriel) {
+      dire("verdictColle", false, "Je ne reconnais pas cette demande.",
+        "Ce texte ne ressemble pas à un courriel produit par le formulaire du site. "
+        + "Vous pouvez saisir les champs à la main juste en dessous.");
+      return;
+    }
+
+    if (nom) document.getElementById("nom").value = nom;
+    if (courriel) document.getElementById("courriel").value = courriel;
+    var etab = lireChamp(texte, "Etablissement");
+    if (etab) document.getElementById("etablissement").value = etab;
+    var date = lireChamp(texte, "Date de la demande");
+    if (/^\d{4}-\d{2}-\d{2}$/.test(date)) document.getElementById("consentiLe").value = date;
+
+    /* Le produit est écrit « Nom lisible [identifiant] » : on prend l'identifiant. */
+    var demande = lireChamp(texte, "Ressources demandees");
+    var m = /\[([a-z-]+)\]/.exec(demande);
+    var produitLu = "";
+    if (m) {
+      var select = document.getElementById("produit");
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === m[1]) { select.selectedIndex = i; produitLu = select.options[i].text; }
+      }
+    }
+
+    /* Les cases : on ne coche QUE ce qui figure dans la liste « J'accepte ».
+       Chercher les mots dans tout le courriel cocherait une case parce qu'un
+       mot traîne dans une signature — un consentement ne se déduit pas d'un
+       mot au hasard. On ne lit donc que les lignes en tiret de ce bloc. */
+    var accepteBloc = "";
+    var lignesTexte = texte.split(/\r?\n/);
+    var dansBloc = false;
+    for (var k = 0; k < lignesTexte.length; k++) {
+      var ligne = lignesTexte[k].trim();
+      if (/^j'accepte\s*:?\s*$/i.test(sansAccent(ligne).replace(/’/g, "'"))) { dansBloc = true; continue; }
+      if (!dansBloc) continue;
+      if (/^[-•*]\s*/.test(ligne)) { accepteBloc += " " + sansAccent(ligne); continue; }
+      if (ligne === "") continue;      // ligne vide : le bloc peut se poursuivre
+      break;                            // toute autre phrase referme le bloc
+    }
+    var c = accepteBloc.indexOf("conditions d'utilisation") >= 0
+         || accepteBloc.indexOf("conditions d utilisation") >= 0;
+    var s = accepteBloc.indexOf("statistiques") >= 0;
+    var i2 = accepteBloc.indexOf("recevoir des informations") >= 0;
+    document.getElementById("cC").checked = c;
+    document.getElementById("cS").checked = s;
+    document.getElementById("cI").checked = i2;
+
+    var accepte = [c ? "conditions" : null, s ? "statistiques" : null, i2 ? "informations" : null]
+      .filter(Boolean).join(" · ") || "aucune case";
+    dire("verdictColle", true, "Demande lue : " + nom,
+      (produitLu ? produitLu + " · " : "") + "a accepté : " + accepte
+      + ". Vérifiez ci-dessous, puis cliquez sur « Créer l'accès ».");
+    document.getElementById("nom").scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  document.getElementById("viderColle").addEventListener("click", function () {
+    document.getElementById("colle").value = "";
+    document.getElementById("verdictColle").className = "verdict";
+  });
+
+  /* ---- Retrouver un code perdu ---- */
+  var retrouve = "";
+
+  window.revoirCode = function (produit, numero) {
+    api("/code?produit=" + encodeURIComponent(produit) + "&numero=" + numero).then(function (r) {
+      var boite = document.getElementById("codeRetrouve");
+      if (!r.ok) {
+        boite.style.display = "none";
+        document.getElementById("apresRetrouve").style.display = "none";
+        dire("verdictRetrouve", false, "Code introuvable.", r.message);
+        return;
+      }
+      retrouve = r.texte;
+      boite.textContent = r.texte;
+      boite.style.display = "block";
+      document.getElementById("apresRetrouve").style.display = "flex";
+      dire("verdictRetrouve", true, "C'est le même code qu'à la première fois.",
+        "Renvoyez-le simplement : inutile d'en créer un nouveau.");
+      boite.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  };
+
+  document.getElementById("copierRetrouve").addEventListener("click", function () {
+    var b = this;
+    navigator.clipboard.writeText(retrouve).then(function () {
+      b.textContent = "Message copié ✓";
+      setTimeout(function () { b.textContent = "Copier ce message"; }, 2500);
+    });
   });
 
   /* ---- Écrire à ses utilisateurs ---- */

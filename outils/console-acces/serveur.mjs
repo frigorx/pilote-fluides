@@ -58,8 +58,30 @@ function etat() {
       });
   }
 
+  /* Les statistiques — des totaux, jamais des noms. Seules comptent les
+     personnes qui ont accepté d'y figurer (lettre S). */
+  const consentantes = titulaires.filter((t) => t.consentements.includes("S"));
+  const etablissements = new Set(
+    consentantes.map((t) => (t.etablissement || "").trim().toLowerCase()).filter(Boolean)
+  );
+  const personnes = new Set(
+    titulaires.map((t) => (t.courriel || t.nom).trim().toLowerCase())
+  );
+  const parProduit = {};
+  for (const t of titulaires) parProduit[t.produit] = (parProduit[t.produit] || 0) + 1;
+  const aujourdhui = new Date().toISOString().slice(0, 10);
+
   return {
     cleRacine: existsSync(BASE + "/racine/cle-privee.pem"),
+    statistiques: {
+      personnes: personnes.size,
+      accesDelivres: titulaires.length,
+      acceptentStatistiques: consentantes.length,
+      etablissements: etablissements.size,
+      parProduit,
+      encoreValides: titulaires.filter((t) => t.expireLe >= aujourdhui).length,
+      perimes: titulaires.filter((t) => t.expireLe < aujourdhui).length,
+    },
     fichePresente: existsSync(BASE + "/racine/FICHE-A-IMPRIMER.html"),
     produits: PRODUITS.filter((p) => !p.retire).map((p) => ({
       id: p.id, nom: p.nom,
@@ -111,6 +133,31 @@ const serveur = createServer(async (req, rep) => {
   }
 
   if (url.pathname === "/etat") { json({ ok: true, etat: etat() }); return; }
+
+  /* Retrouver le code d'une personne qui l'a perdu. Il n'est pas
+     reconstitué : il est RELU dans le fichier écrit à la délivrance. */
+  if (url.pathname === "/code") {
+    const produit = url.searchParams.get("produit");
+    const numero = Number(url.searchParams.get("numero"));
+    if (!produit || !Number.isInteger(numero)) {
+      json({ ok: false, message: "Demande incomplète." }); return;
+    }
+    const debut = `${produit}-`;
+    const marque = `-${String(numero).padStart(3, "0")}-`;
+    const dossier = BASE + "/codes";
+    const trouve = existsSync(dossier)
+      ? readdirSync(dossier).find((f) => f.startsWith(debut) && f.includes(marque))
+      : null;
+    if (!trouve) {
+      json({ ok: false, message:
+        "Le fichier de ce code est introuvable. Il a pu être déplacé ou effacé — "
+        + "dans ce cas, délivrez-en simplement un nouveau." });
+      return;
+    }
+    const texte = readFileSync(dossier + "/" + trouve, "utf8");
+    json({ ok: true, texte, fichier: dossier + "/" + trouve });
+    return;
+  }
 
   /* La liste de diffusion — SEULEMENT ceux qui ont coché « je veux bien
      recevoir des informations ». Les autres n'y figurent jamais, même
