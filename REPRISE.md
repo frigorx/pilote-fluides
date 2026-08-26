@@ -57,7 +57,26 @@
 > Sa forme publique, qui n'a rien de secret, est dans `cle-publique-brute.txt` — elle ira
 > dans `moteur/acces.js` en AE-4.
 >
-> Reste AE-4 (la page `activer` et la bascule) → AE-7. À confirmer : la liste des produits.
+> > **AE-4 livré — LA PAGE, PAS LA BASCULE.** `moteur/acces.js` (miroir navigateur de
+> `lib-acces.mjs`, vérification **WebCrypto ECDSA P-256, aucun appel réseau**) et
+> `activer.html` — une seule page pour tous les produits, `noindex`, entrée dans `PAGES`
+> de `version.mjs`. Un code de séance passé dans l'adresse (`#s=…`) s'ouvre seul : c'est
+> le QR code projeté en classe. **Prouvé dans le navigateur** sur serveur local : code
+> accepté, accès rangé pour `habilitation` et pour lui seul, **un vrai document du coffre
+> déchiffré à l'écran**, code modifié d'un caractère refusé, saisie quelconque refusée,
+> filigrane posé (24 exemplaires au nom du porteur), console vide, **journal réseau sans
+> aucun appel extérieur**. Garde-fou ajouté au filet : `acces.js` réimplémentant le
+> format, le test compare désormais sa table de produits, ses constantes et sa clé racine
+> avec celles du build — **46 contrôles**.
+>
+> 🔴 **LA BASCULE RESTE À FAIRE, et elle ne se fait pas seule.** `docs/coffre/` est
+> toujours servi par l'ancien régime, les sept pages n'ont pas été touchées. Basculer
+> exige d'abord de **délivrer leurs codes aux collègues** — sinon ils se retrouvent
+> dehors du jour au lendemain. C'est un geste à décider, pas un lot à enchaîner.
+>
+> Reste ensuite AE-5 (fabrique des séances côté enseignant) → AE-7.
+> À confirmer : la liste des produits, et le logo de `activer.html` (inerWeb retenu par
+> défaut — c'est une page du site inerWeb ; à corriger si vous voulez le logo du lycée).
 
 > ## 26/08 — Notes de chantier récupérées du fourre-tout
 >
