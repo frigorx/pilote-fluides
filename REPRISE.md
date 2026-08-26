@@ -3,6 +3,22 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 26/08 — PISTES GARDÉES, non lancées (décision F. Henninot)
+>
+> **La remontée des bilans de séance.** Aujourd'hui l'élève télécharge un fichier
+> `bilan_….json` et le remet comme il peut. Sur trente machines, c'est le point
+> faible. Piste retenue mais **non lancée** : un **QR code affiché à l'écran** que le
+> formateur scanne en passant dans les rangs — le code de bilan encodé, rien à
+> transmettre, rien à installer.
+> ▶ F. Henninot : *« on verra ça plus tard… quand j'aurai 50, 100 personnes qui
+> passeront régulièrement dessus, on pourra avoir une vraie analyse »*. À rouvrir à
+> ce moment-là, pas avant.
+>
+> **L'échelle assumée**, et elle commande les arbitrages à venir : *« ce projet est
+> personnel, il a l'espoir de devenir plus grand mais restons humble — aujourd'hui
+> c'est mon outil pour moi »*. Une classe et quelques collègues, pas une plateforme.
+> Ne pas dimensionner pour un public qui n'existe pas encore.
+
 > ## 26/08 (nuit) — ✅ LA BASCULE EST FAITE, L'ESPACE ENSEIGNANT EST OUVERT
 >
 > F. Henninot : « personne ne détient l'ancien code ». La bascule était donc sans
