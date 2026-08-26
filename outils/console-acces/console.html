@@ -54,6 +54,18 @@
              max-height:230px; overflow:auto; word-break:break-all; }
   .pastille { display:inline-block; padding:2px 9px; border-radius:999px; font-size:.82rem;
               background:var(--orange-clair); color:#8a3d1a; font-weight:bold; }
+  fieldset.consent { border:2px solid var(--ligne); border-radius:12px; padding:12px 16px 16px;
+                     margin:20px 0 0; }
+  fieldset.consent legend { font-family:var(--titre); color:var(--bleu); font-weight:bold;
+                            padding:0 8px; font-size:.98rem; }
+  label.case { display:flex; align-items:flex-start; gap:10px; font-weight:normal;
+               font-family:inherit; color:var(--txt); margin:10px 0 0; cursor:pointer;
+               font-size:.97rem; }
+  label.case input { width:20px; height:20px; flex:0 0 auto; margin-top:2px; }
+  .compte { display:flex; gap:26px; flex-wrap:wrap; margin:4px 0 14px; }
+  .compte div { text-align:center; }
+  .compte b { display:block; font-family:var(--titre); font-size:1.7rem; color:var(--bleu); }
+  .compte span { font-size:.88rem; color:var(--mut); }
 </style>
 </head>
 <body>
@@ -86,6 +98,28 @@
       </div>
     </div>
 
+    <div class="duo">
+      <div>
+        <label for="etablissement">Son établissement <span class="aide">(facultatif)</span></label>
+        <input id="etablissement" placeholder="Lycée professionnel — Marseille" autocomplete="off">
+      </div>
+      <div>
+        <label for="consentiLe">Date de sa demande <span class="aide">(facultatif)</span></label>
+        <input id="consentiLe" type="date">
+      </div>
+    </div>
+
+    <fieldset class="consent">
+      <legend>Ce que cette personne a accepté <strong>dans sa demande</strong></legend>
+      <p class="aide">Recopiez ce qu'elle a coché. Ne cochez rien qu'elle n'ait pas accepté :
+         ces cases sont la trace de son consentement, pas une autorisation que vous donnez.</p>
+      <label class="case"><input type="checkbox" id="cC"> Les conditions d'utilisation</label>
+      <label class="case"><input type="checkbox" id="cS"> Que ses données comptent dans des
+        <strong>statistiques</strong> (nombre d'enseignants, d'établissements — jamais son nom)</label>
+      <label class="case"><input type="checkbox" id="cI"> Recevoir des <strong>informations</strong>
+        sur inerWeb par courriel</label>
+    </fieldset>
+
     <button id="creer" type="button">Créer l'accès</button>
     <div class="verdict" id="verdictAcces" role="status" aria-live="polite"></div>
     <div class="message" id="messagePret" style="display:none"></div>
@@ -100,6 +134,26 @@
     <h2>Qui a un accès</h2>
     <p class="aide">La liste reste sur cet ordinateur. Elle n'est jamais publiée.</p>
     <div id="listeTitulaires"></div>
+  </section>
+
+  <!-- ================= ÉCRIRE À SES UTILISATEURS ================= -->
+  <section class="carte">
+    <h2>Écrire à vos utilisateurs</h2>
+    <p class="aide">Seules les personnes qui ont coché « recevoir des informations » y
+       figurent. Les autres n'y sont jamais, même si elles ont un accès.</p>
+
+    <div class="compte" id="compteDiffusion"></div>
+
+    <div class="rangee">
+      <button id="preparerEnvoi" type="button">Préparer un courriel pour eux</button>
+      <button id="copierAdresses" class="second" type="button">Copier les adresses</button>
+    </div>
+    <p class="aide" style="margin-top:14px">
+      Les adresses se mettent en <strong>copie cachée</strong> : personne ne voit la liste
+      des autres. Pensez à laisser dans votre message une phrase du genre
+      « pour ne plus recevoir ces courriels, répondez STOP » — et à la respecter.
+    </p>
+    <div class="verdict" id="verdictDiffusion" role="status" aria-live="polite"></div>
   </section>
 
   <!-- ================= LA RENTRÉE ================= -->
@@ -183,11 +237,19 @@
       return;
     }
     var lignes = t.map(function (x) {
-      return "<tr><td><strong>" + echapper(x.nom) + "</strong></td><td>" + echapper(x.produit)
-        + "</td><td>" + x.millesime + "</td><td>" + echapper(x.expireLe) + "</td></tr>";
+      var c = x.consentements || "";
+      var marques = [
+        c.indexOf("C") >= 0 ? "conditions" : null,
+        c.indexOf("S") >= 0 ? "statistiques" : null,
+        c.indexOf("I") >= 0 ? "informations" : null
+      ].filter(Boolean).join(" · ") || "—";
+      return "<tr><td><strong>" + echapper(x.nom) + "</strong><br><span class='vide'>"
+        + echapper(x.etablissement || "") + "</span></td><td>" + echapper(x.produit)
+        + "</td><td>" + echapper(x.expireLe) + "</td><td>" + echapper(marques) + "</td></tr>";
     }).join("");
-    boite.innerHTML = "<table><thead><tr><th>Personne</th><th>Produit</th><th>Année</th>"
-      + "<th>Valable jusqu'au</th></tr></thead><tbody>" + lignes + "</tbody></table>";
+    boite.innerHTML = "<table><thead><tr><th>Personne</th><th>Produit</th>"
+      + "<th>Valable jusqu'au</th><th>A accepté</th></tr></thead><tbody>"
+      + lignes + "</tbody></table>";
   }
 
   function peindreMillesimes(m) {
@@ -225,16 +287,25 @@
       dernier.dossier = e.dossierCodes;
       var an = document.getElementById("annee");
       if (!an.value) an.value = e.anneeCourante;
+      return rafraichirDiffusion();
     });
   }
 
   document.getElementById("creer").addEventListener("click", function () {
     var bouton = this;
     bouton.disabled = true;
+    var coches = "";
+    if (document.getElementById("cC").checked) coches += "C";
+    if (document.getElementById("cS").checked) coches += "S";
+    if (document.getElementById("cI").checked) coches += "I";
+
     api("/delivrer", {
       produit: document.getElementById("produit").value,
       nom: document.getElementById("nom").value,
-      courriel: document.getElementById("courriel").value
+      courriel: document.getElementById("courriel").value,
+      etablissement: document.getElementById("etablissement").value,
+      consentements: coches,
+      consentiLe: document.getElementById("consentiLe").value
     }).then(function (r) {
       bouton.disabled = false;
       if (!r.ok) {
@@ -249,8 +320,10 @@
       var m = document.getElementById("messagePret");
       m.textContent = dernier.texte; m.style.display = "block";
       document.getElementById("apresCreation").style.display = "flex";
-      document.getElementById("nom").value = "";
-      document.getElementById("courriel").value = "";
+      ["nom", "courriel", "etablissement", "consentiLe"].forEach(function (id) {
+        document.getElementById(id).value = "";
+      });
+      ["cC", "cS", "cI"].forEach(function (id) { document.getElementById(id).checked = false; });
       rafraichir();
     });
   });
@@ -265,6 +338,48 @@
 
   document.getElementById("ouvrirDossier").addEventListener("click", function () {
     api("/ouvrir", { chemin: dernier.dossier });
+  });
+
+  /* ---- Écrire à ses utilisateurs ---- */
+  var diffusion = { adresses: [], cci: "" };
+
+  function rafraichirDiffusion() {
+    return api("/liste-diffusion").then(function (r) {
+      if (!r.ok) return;
+      diffusion = { adresses: r.adresses, cci: r.cci };
+      document.getElementById("compteDiffusion").innerHTML =
+        "<div><b>" + r.acceptent + "</b><span>acceptent d'être informés</span></div>" +
+        "<div><b>" + r.total + "</b><span>accès délivrés</span></div>" +
+        "<div><b>" + r.sansCourriel + "</b><span>sans adresse connue</span></div>";
+      var vide = r.acceptent === 0;
+      document.getElementById("preparerEnvoi").disabled = vide;
+      document.getElementById("copierAdresses").disabled = vide;
+    });
+  }
+
+  document.getElementById("preparerEnvoi").addEventListener("click", function () {
+    if (!diffusion.cci) return;
+    /* Les adresses partent en copie CACHÉE : personne ne voit la liste. */
+    var lien = "mailto:?bcc=" + encodeURIComponent(diffusion.cci)
+      + "&subject=" + encodeURIComponent("inerWeb — des nouvelles");
+    if (lien.length > 1900) {
+      dire("verdictDiffusion", false, "La liste est trop longue pour cette méthode.",
+        "Utilisez « Copier les adresses », puis collez-les dans le champ Copie cachée "
+        + "de votre messagerie.");
+      return;
+    }
+    dire("verdictDiffusion", true, "Votre messagerie s'ouvre.",
+      "Les " + diffusion.adresses.length + " adresses sont en copie cachée. "
+      + "Écrivez votre message, relisez, envoyez.");
+    location.href = lien;
+  });
+
+  document.getElementById("copierAdresses").addEventListener("click", function () {
+    var b = this;
+    navigator.clipboard.writeText(diffusion.cci).then(function () {
+      b.textContent = "Adresses copiées ✓";
+      setTimeout(function () { b.textContent = "Copier les adresses"; }, 2500);
+    });
   });
 
   document.getElementById("tirer").addEventListener("click", function () {

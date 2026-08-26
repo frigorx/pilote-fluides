@@ -53,7 +53,8 @@ function etat() {
       .map((l) => {
         const c = l.split(";");
         return { produit: c[0], numero: Number(c[1]), nom: c[2], courriel: c[3],
-                 millesime: Number(c[4]), delivreLe: c[5], expireLe: c[6] };
+                 etablissement: c[4], millesime: Number(c[5]), delivreLe: c[6],
+                 expireLe: c[7], consentements: c[8] || "", consentiLe: c[9] || "" };
       });
   }
 
@@ -111,6 +112,29 @@ const serveur = createServer(async (req, rep) => {
 
   if (url.pathname === "/etat") { json({ ok: true, etat: etat() }); return; }
 
+  /* La liste de diffusion — SEULEMENT ceux qui ont coché « je veux bien
+     recevoir des informations ». Les autres n'y figurent jamais, même
+     s'ils ont un accès. */
+  if (url.pathname === "/liste-diffusion") {
+    const tous = etat().titulaires;
+    const vus = new Set();
+    const destinataires = tous.filter((t) => {
+      if (!t.courriel || !t.consentements.includes("I")) return false;
+      const cle = t.courriel.toLowerCase();
+      if (vus.has(cle)) return false;   // une personne, un envoi
+      vus.add(cle); return true;
+    });
+    json({
+      ok: true,
+      total: tous.length,
+      acceptent: destinataires.length,
+      sansCourriel: tous.filter((t) => !t.courriel).length,
+      adresses: destinataires.map((t) => t.courriel),
+      cci: destinataires.map((t) => t.courriel).join(","),
+    });
+    return;
+  }
+
   if (req.method === "POST") {
     let corps = "";
     for await (const bout of req) corps += bout;
@@ -118,13 +142,16 @@ const serveur = createServer(async (req, rep) => {
     try { donnees = JSON.parse(corps || "{}"); } catch { /* défaut-refus plus bas */ }
 
     if (url.pathname === "/delivrer") {
-      const { produit, nom, courriel, millesime } = donnees;
+      const { produit, nom, courriel, millesime, etablissement, consentements, consentiLe } = donnees;
       if (!produit || !nom || !String(nom).trim()) {
         json({ ok: false, message: "Il manque le nom de la personne." }); return;
       }
       const args = [produit, String(nom).trim()];
       if (courriel && String(courriel).trim()) args.push(String(courriel).trim());
       if (millesime) args.push("--millesime", String(millesime));
+      if (etablissement) args.push("--etablissement", String(etablissement).trim());
+      if (consentements) args.push("--consentements", String(consentements));
+      if (consentiLe) args.push("--consenti-le", String(consentiLe));
       const r = await lancer("build/delivrer-acces.mjs", args);
       if (!r.ok) { json({ ok: false, message: nettoyer(r.erreur) || "La création a échoué." }); return; }
 

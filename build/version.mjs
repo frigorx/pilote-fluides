@@ -66,6 +66,11 @@ const PAGES = [
   // `noindex`, hors sitemap : c'est un utilitaire, pas du contenu. Elle
   // charge moteur/acces.js, qui doit donc être versionné comme les autres.
   "activer.html",
+  // 26/08/2026 — le formulaire de demande d'accès. Il n'envoie rien : il
+  // prépare un courriel que la personne relit et envoie elle-même, donc le
+  // site ne reçoit et n'enregistre toujours rien. `noindex`, hors sitemap
+  // tant que F. Henninot n'a pas donné son feu vert de publication.
+  "demander-un-acces.html",
 ];
 // 23/08/2026 — legislation/index.html n'entre PAS dans PAGES : le réseau
 // Législation est un SATELLITE (décision F. Henninot : « presque un autre

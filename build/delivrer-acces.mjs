@@ -41,7 +41,11 @@ const RACINE_PUBLIQUE = BASE + "/racine/cle-publique.pem";
 const MILLESIMES = BASE + "/millesimes";
 const CODES = BASE + "/codes";
 const REGISTRE = BASE + "/registre-acces.csv";
-const ENTETE = "produit;numero;titulaire;courriel;millesime;delivreLe;expireLe\n";
+/* 26/08 — trois colonnes ajoutées pour le consentement (demande de
+   F. Henninot). `consentements` porte des lettres : C = conditions
+   acceptées · S = statistiques agrégées autorisées · I = accepte de
+   recevoir des informations. Aucune n'est cochée d'office. */
+const ENTETE = "produit;numero;titulaire;courriel;etablissement;millesime;delivreLe;expireLe;consentements;consentiLe\n";
 
 /* --------------------------------------------------------------------
    Arguments
@@ -61,6 +65,11 @@ const [idProduit, nom, courriel] = positionnels;
 if (!idProduit || !nom) {
   console.error('✗ usage : node build/delivrer-acces.mjs <produit> "Nom Prénom" [courriel]');
   console.error("            [--millesime AAAA] [--expire AAAA-MM-JJ]");
+  console.error('            [--etablissement "Lycée …"]');
+  console.error("            [--consentements CSI] [--consenti-le AAAA-MM-JJ]");
+  console.error("");
+  console.error("  consentements : C = conditions · S = statistiques · I = informations");
+  console.error("  Ils recopient ce que la personne a coché — ils ne se supposent pas.");
   console.error("");
   console.error("  produits : " + PRODUITS.filter((p) => !p.retire).map((p) => p.id).join(" · "));
   process.exit(1);
@@ -104,6 +113,30 @@ if (!existsSync(REGISTRE)) {
   mkdirSync(BASE, { recursive: true });
   writeFileSync(REGISTRE, ENTETE, "utf8");
 }
+
+/* Un en-tête qui ne décrit plus ses colonnes est un piège silencieux : le
+   fichier se lit de travers sans rien signaler. On le remet d'aplomb tant
+   que rien n'est écrit dessous ; sinon on s'arrête et on demande. */
+{
+  const contenu = readFileSync(REGISTRE, "utf8");
+  const [premiere, ...suite] = contenu.split("\n");
+  if (premiere.trim() !== ENTETE.trim()) {
+    if (suite.filter(Boolean).length === 0) {
+      writeFileSync(REGISTRE, ENTETE, "utf8");
+    } else {
+      console.error("✗ le registre ne porte pas les colonnes attendues :");
+      console.error("  " + REGISTRE);
+      console.error("");
+      console.error("  attendu : " + ENTETE.trim());
+      console.error("  trouvé  : " + premiere.trim());
+      console.error("");
+      console.error("  Rien n'a été délivré. Mettez le fichier de côté et relancez, ou");
+      console.error("  corrigez sa première ligne à la main.");
+      process.exit(1);
+    }
+  }
+}
+
 const lignes = readFileSync(REGISTRE, "utf8").split("\n").slice(1).filter(Boolean);
 const numero = 1 + lignes
   .filter((l) => l.split(";")[0] === produit.id)
@@ -167,10 +200,23 @@ writeFileSync(fichierCode, [
   ``,
 ].join("\n"), "utf8");
 
+/* Les consentements ne s'inventent pas : ils viennent de ce que la personne
+   a coché dans sa demande. Rien n'est mis d'office. */
+const consentements = (option("consentements") ?? "").toUpperCase().replace(/[^CSI]/g, "");
+const consentiLe = option("consenti-le") ?? "";
+
 appendFileSync(REGISTRE, [
-  produit.id, numero, nom, courriel ?? "", millesime,
+  produit.id, numero, nettoyerChamp(nom), nettoyerChamp(courriel ?? ""),
+  nettoyerChamp(option("etablissement") ?? ""), millesime,
   new Date().toISOString().slice(0, 10), expireLe,
+  consentements, consentiLe,
 ].join(";") + "\n", "utf8");
+
+/* Un point-virgule ou un saut de ligne dans un champ casserait le registre
+   en silence : on les remplace, on ne les laisse pas passer. */
+function nettoyerChamp(v) {
+  return String(v).replace(/[;\r\n]+/g, " ").trim();
+}
 
 console.log(`✓ accès ${produit.id} n° ${numero} délivré à « ${nom} », valable jusqu'au ${expireLe}.`);
 console.log("");

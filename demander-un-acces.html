@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="robots" content="noindex, nofollow">
+<title>Demander un accès enseignant — inerWeb</title>
+<meta name="description" content="Demander un accès aux ressources enseignant d'inerWeb.">
+<style>
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --orange-clair:#ffe2d6;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+          --rouge:#9f1239; --rouge-clair:#ffe4e6;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  #contenu:focus { outline:none; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
+    { outline:3px solid var(--orange); outline-offset:2px; }
+  main { max-width:740px; margin:0 auto; padding:28px 20px 60px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:1.7rem; margin:.2em 0 .1em; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.12rem; margin:0 0 .5em; }
+  .chapo { color:var(--mut); margin:0 0 1.6em; }
+  .carte { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r);
+           box-shadow:var(--ombre); padding:22px 24px; margin:0 0 20px; }
+  label { display:block; font-family:var(--titre); font-weight:bold; color:var(--bleu);
+          margin:16px 0 .3em; }
+  label:first-of-type { margin-top:0; }
+  input, select { width:100%; padding:11px 13px; border:2px solid var(--ligne);
+                  border-radius:10px; background:#fff; color:var(--txt); font:16px inherit; }
+  .duo { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:620px) { .duo { grid-template-columns:1fr; } }
+  fieldset { border:2px solid var(--ligne); border-radius:12px; padding:12px 16px 16px; margin:0; }
+  legend { font-family:var(--titre); color:var(--bleu); font-weight:bold; padding:0 8px; }
+  label.case { display:flex; align-items:flex-start; gap:11px; font-weight:normal;
+               font-family:inherit; color:var(--txt); margin:12px 0 0; cursor:pointer; }
+  label.case input { width:21px; height:21px; flex:0 0 auto; margin-top:3px; }
+  .oblig { color:var(--rouge); font-weight:bold; }
+  button { font-family:var(--titre); font-weight:bold; font-size:1.05rem; cursor:pointer;
+           border:0; border-radius:999px; padding:14px 30px; background:var(--bleu);
+           color:#fff; margin-top:20px; }
+  button:hover { background:var(--bleu-clair); }
+  .verdict { margin-top:16px; padding:14px 16px; border-radius:10px; border-left:5px solid;
+             display:none; background:var(--rouge-clair); border-color:var(--rouge); color:var(--rouge); }
+  .verdict.montre { display:block; }
+  .note { font-size:.95rem; color:var(--mut); }
+  .note ul { margin:.4em 0 0; padding-left:20px; }
+  .note li { margin-bottom:.3em; }
+</style>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+<main id="contenu" tabindex="-1">
+
+  <h1>Demander un accès enseignant</h1>
+  <p class="chapo">Les ressources enseignant d'inerWeb — documents de formation, console,
+  projection — sont réservées aux enseignants et aux formateurs. L'accès est
+  <strong>gratuit</strong> et se demande ici.</p>
+
+  <div class="carte">
+    <h2>Comment ça se passe</h2>
+    <p class="note">Ce formulaire <strong>n'envoie rien tout seul</strong> : il prépare un
+    courriel que vous relisez et envoyez depuis votre propre messagerie. Vous recevrez en
+    retour un code personnel à coller sur la page d'activation. Comptez quelques jours :
+    c'est une personne qui répond, pas une machine.</p>
+  </div>
+
+  <form class="carte" id="formulaire" novalidate>
+    <div class="duo">
+      <div>
+        <label for="nom">Votre nom et prénom <span class="oblig">*</span></label>
+        <input id="nom" autocomplete="name" required>
+      </div>
+      <div>
+        <label for="courriel">Votre adresse de courriel <span class="oblig">*</span></label>
+        <input id="courriel" type="email" autocomplete="email" required>
+      </div>
+    </div>
+
+    <div class="duo">
+      <div>
+        <label for="etablissement">Votre établissement</label>
+        <input id="etablissement" placeholder="Lycée professionnel, CFA, centre de formation…">
+      </div>
+      <div>
+        <label for="matiere">Ce que vous enseignez</label>
+        <input id="matiere" placeholder="Froid et climatisation, électricité…">
+      </div>
+    </div>
+
+    <label for="produit">Quelles ressources demandez-vous ?</label>
+    <select id="produit">
+      <option value="habilitation">Habilitation fluides frigorigènes</option>
+      <option value="aquiblue">inerWeb AquiBlue</option>
+      <option value="legislation">Réseau Législation</option>
+      <option value="hydrometro">HydroMétro</option>
+      <option value="hocourant">inerWeb HoCourant</option>
+    </select>
+
+    <fieldset style="margin-top:22px">
+      <legend>Vos accords</legend>
+
+      <label class="case">
+        <input type="checkbox" id="cC">
+        <span><strong>J'accepte les conditions d'utilisation</strong> <span class="oblig">*</span><br>
+        <span class="note">Les ressources me sont fournies pour mon enseignement. Je ne les
+        redistribue pas, je ne les publie pas, je ne les revends pas. Mon code est personnel :
+        les documents que j'ouvre portent mon nom.</span></span>
+      </label>
+
+      <label class="case">
+        <input type="checkbox" id="cS">
+        <span><strong>J'accepte de compter dans les statistiques</strong><br>
+        <span class="note">Nombre d'enseignants, d'établissements, de matières — des totaux,
+        jamais mon nom.</span></span>
+      </label>
+
+      <label class="case">
+        <input type="checkbox" id="cI">
+        <span><strong>Je veux bien recevoir des informations sur inerWeb</strong><br>
+        <span class="note">Quelques courriels par an au plus. Je peux dire stop à tout moment,
+        et ça s'arrête.</span></span>
+      </label>
+    </fieldset>
+
+    <button type="submit">Préparer ma demande</button>
+    <div class="verdict" id="verdict" role="alert"></div>
+  </form>
+
+  <div class="carte">
+    <h2>Ce que deviennent vos informations</h2>
+    <div class="note">
+      <ul>
+        <li>Elles sont conservées <strong>sur un ordinateur personnel</strong>, hors ligne —
+            pas sur ce site, qui n'enregistre rien.</li>
+        <li>Elles servent à <strong>vous délivrer votre accès</strong> et à vous écrire si
+            vous l'avez accepté. À rien d'autre.</li>
+        <li><strong>Elles ne sont ni vendues, ni cédées, ni communiquées à qui que ce soit.</strong></li>
+        <li>Vous pouvez à tout moment demander à les voir, à les corriger ou à les effacer :
+            écrivez à <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a>.</li>
+        <li>Elles sont effacées quand votre accès n'est plus renouvelé.</li>
+      </ul>
+      <p style="margin-top:1em"><a href="mentions.html">Mentions légales et confidentialité</a></p>
+    </div>
+  </div>
+
+  <script src="moteur/lisibilite.js"></script>
+  <script src="moteur/marque.js"></script>
+  <script>
+  (function () {
+    "use strict";
+    var DESTINATAIRE = "inerweb.fh@gmail.com";
+    var verdict = document.getElementById("verdict");
+
+    function refuser(message, champ) {
+      verdict.textContent = message;
+      verdict.className = "verdict montre";
+      if (champ) document.getElementById(champ).focus();
+    }
+
+    document.getElementById("formulaire").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var nom = document.getElementById("nom").value.trim();
+      var courriel = document.getElementById("courriel").value.trim();
+
+      if (!nom) { refuser("Il manque votre nom.", "nom"); return; }
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(courriel)) {
+        refuser("Cette adresse de courriel ne semble pas valide.", "courriel"); return;
+      }
+      /* Les conditions sont la base de l'accès : sans elles, rien n'est délivré.
+         Les deux autres cases sont libres — et le resteront. */
+      if (!document.getElementById("cC").checked) {
+        refuser("Pour recevoir un accès, il faut accepter les conditions d'utilisation.", "cC");
+        return;
+      }
+      verdict.className = "verdict";
+
+      var select = document.getElementById("produit");
+      var accepte = [];
+      if (document.getElementById("cC").checked) accepte.push("- les conditions d'utilisation");
+      if (document.getElementById("cS").checked) accepte.push("- de compter dans les statistiques");
+      if (document.getElementById("cI").checked) accepte.push("- de recevoir des informations sur inerWeb");
+
+      var corps = [
+        "Bonjour,",
+        "",
+        "Je demande un accès enseignant à inerWeb.",
+        "",
+        "Nom : " + nom,
+        "Courriel : " + courriel,
+        "Établissement : " + (document.getElementById("etablissement").value.trim() || "(non précisé)"),
+        "Enseigne : " + (document.getElementById("matiere").value.trim() || "(non précisé)"),
+        "Ressources demandées : " + select.options[select.selectedIndex].text
+          + " [" + select.value + "]",
+        "",
+        "J'accepte :",
+      ].concat(accepte).concat([
+        "",
+        "Date de la demande : " + new Date().toISOString().slice(0, 10),
+        "",
+        "Cordialement,",
+        nom,
+      ]).join("\n");
+
+      window.location.href = "mailto:" + DESTINATAIRE
+        + "?subject=" + encodeURIComponent("Demande d'accès enseignant inerWeb — " + nom)
+        + "&body=" + encodeURIComponent(corps);
+    });
+  })();
+  </script>
+</main>
+</body>
+</html>
