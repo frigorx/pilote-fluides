@@ -164,6 +164,31 @@
     <div class="verdict" id="verdictRetrouve" role="status" aria-live="polite"></div>
   </section>
 
+  <!-- ================= LIRE UNE SÉANCE ================= -->
+  <section class="carte">
+    <h2>Lire une séance</h2>
+    <p class="aide">Déposez ici les bilans que vos élèves ont exportés (fichiers
+       <code>bilan_….json</code>). Vous verrez où l'on traîne, où l'on décroche, et ce
+       qui n'est pas passé. <strong>Aucun nom nulle part</strong> : ces bilans sont
+       anonymes, seul le groupe y figure.</p>
+
+    <div id="depot" style="border:2px dashed var(--ligne);border-radius:12px;
+         padding:26px 18px;text-align:center;background:#fff;cursor:pointer">
+      <strong style="font-family:var(--titre);color:var(--bleu)">Déposez les fichiers ici</strong>
+      <div class="aide" style="margin:.4em 0 0">ou cliquez pour les choisir</div>
+      <input type="file" id="fichiers" accept=".json,application/json" multiple hidden>
+    </div>
+
+    <div class="verdict" id="verdictSeance" role="status" aria-live="polite"></div>
+    <div id="resultatSeance" style="display:none">
+      <div class="compte" id="seanceChiffres" style="margin-top:20px"></div>
+      <div id="seanceTables"></div>
+      <div class="rangee">
+        <button class="second" id="viderSeance" type="button">Recommencer</button>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= LES CHIFFRES ================= -->
   <section class="carte">
     <h2>Vos chiffres</h2>
@@ -526,6 +551,159 @@
       b.textContent = "Message copié ✓";
       setTimeout(function () { b.textContent = "Copier ce message"; }, 2500);
     });
+  });
+
+  /* ---- Lire une séance -------------------------------------------------
+     Les bilans sont des fichiers déposés à la main : rien n'est collecté,
+     rien ne transite. On agrège, on affiche, on n'enregistre pas. */
+  var bilans = [];
+
+  function mmss(s) {
+    s = Math.round(s || 0);
+    var m = Math.floor(s / 60);
+    return m + " min " + (s % 60 < 10 ? "0" : "") + (s % 60) + " s";
+  }
+
+  function mediane(v) {
+    if (!v.length) return 0;
+    var t = v.slice().sort(function (a, b) { return a - b; });
+    var i = Math.floor(t.length / 2);
+    return t.length % 2 ? t[i] : (t[i - 1] + t[i]) / 2;
+  }
+
+  function lireLesBilans() {
+    if (!bilans.length) return;
+
+    var durees = bilans.map(function (b) { return b.duree_s || 0; }).filter(function (d) { return d > 0; });
+    var groupes = {}, niveaux = {}, tempsCarte = {}, vuesCarte = {}, ratesCarte = {}, derniere = {};
+
+    bilans.forEach(function (b) {
+      var g = (b.groupe || "sans groupe").trim() || "sans groupe";
+      groupes[g] = (groupes[g] || 0) + 1;
+      var n = b.mode || "non précisé";
+      niveaux[n] = (niveaux[n] || 0) + 1;
+
+      (b.cartes_vues || []).forEach(function (id) { vuesCarte[id] = (vuesCarte[id] || 0) + 1; });
+      var t = b.temps_par_carte || {};
+      Object.keys(t).forEach(function (id) {
+        if (!tempsCarte[id]) tempsCarte[id] = [];
+        tempsCarte[id].push(t[id]);
+      });
+      (b.rates || []).forEach(function (id) { ratesCarte[id] = (ratesCarte[id] || 0) + 1; });
+      /* Où s'arrête-t-on ? La dernière carte vue dit le décrochage. */
+      var vues = b.cartes_vues || [];
+      if (vues.length) { var d = vues[vues.length - 1]; derniere[d] = (derniere[d] || 0) + 1; }
+    });
+
+    document.getElementById("seanceChiffres").innerHTML =
+      "<div><b>" + bilans.length + "</b><span>bilans lus</span></div>" +
+      "<div><b>" + Object.keys(groupes).length + "</b><span>groupes</span></div>" +
+      "<div><b>" + mmss(mediane(durees)) + "</b><span>durée médiane</span></div>" +
+      /* Le zéro de garde contre le tableau vide écrasait le minimum : il ne
+         doit servir QUE si la liste est vide. */
+      "<div><b>" + (durees.length ? mmss(Math.min.apply(null, durees)) : "—")
+        + "</b><span>le plus rapide</span></div>" +
+      "<div><b>" + (durees.length ? mmss(Math.max.apply(null, durees)) : "—")
+        + "</b><span>le plus long</span></div>";
+
+    function table(titre, aide, lignes, entetes) {
+      if (!lignes.length) return "";
+      return "<h3 style='font-family:var(--titre);color:var(--bleu);font-size:1.02rem;"
+        + "margin:1.6em 0 .2em'>" + echapper(titre) + "</h3>"
+        + "<p class='aide' style='margin:0 0 .4em'>" + echapper(aide) + "</p>"
+        + "<table><thead><tr>" + entetes.map(function (e) { return "<th>" + echapper(e) + "</th>"; }).join("")
+        + "</tr></thead><tbody>" + lignes.join("") + "</tbody></table>";
+    }
+
+    var h = "";
+
+    h += table("Les groupes", "Combien de bilans par groupe, et leur durée médiane.",
+      Object.keys(groupes).sort().map(function (g) {
+        var d = bilans.filter(function (b) { return ((b.groupe || "sans groupe").trim() || "sans groupe") === g; })
+          .map(function (b) { return b.duree_s || 0; }).filter(function (x) { return x > 0; });
+        return "<tr><td><strong>" + echapper(g) + "</strong></td><td>" + groupes[g]
+          + "</td><td>" + mmss(mediane(d)) + "</td></tr>";
+      }), ["Groupe", "Bilans", "Durée médiane"]);
+
+    h += table("Les niveaux choisis", "La différenciation, telle qu'elle a été utilisée.",
+      Object.keys(niveaux).sort().map(function (n) {
+        return "<tr><td><strong>" + echapper(n) + "</strong></td><td>" + niveaux[n] + "</td></tr>";
+      }), ["Niveau", "Élèves"]);
+
+    h += table("Là où l'on passe le plus de temps",
+      "Temps médian par activité. Un temps très long peut vouloir dire trop difficile — ou trop bavard.",
+      Object.keys(tempsCarte).map(function (id) {
+        return { id: id, m: mediane(tempsCarte[id]), n: tempsCarte[id].length };
+      }).sort(function (a, b) { return b.m - a.m; }).slice(0, 12).map(function (x) {
+        return "<tr><td><strong>" + echapper(x.id) + "</strong></td><td>" + mmss(x.m)
+          + "</td><td>" + x.n + "</td></tr>";
+      }), ["Activité", "Temps médian", "Mesuré sur"]);
+
+    h += table("Ce qui n'est pas passé",
+      "Les activités les plus ratées. C'est là qu'il y a quelque chose à revoir — dans l'énoncé ou dans le cours.",
+      Object.keys(ratesCarte).map(function (id) {
+        return { id: id, r: ratesCarte[id], v: vuesCarte[id] || ratesCarte[id] };
+      }).sort(function (a, b) { return (b.r / b.v) - (a.r / a.v); }).slice(0, 12).map(function (x) {
+        return "<tr><td><strong>" + echapper(x.id) + "</strong></td><td>" + x.r + " / " + x.v
+          + "</td><td>" + Math.round(100 * x.r / x.v) + " %</td></tr>";
+      }), ["Activité", "Ratée / vue", "Part d'échec"]);
+
+    h += table("Là où l'on s'arrête",
+      "La dernière activité vue. Si plusieurs élèves s'arrêtent au même endroit, c'est un décrochage, pas un hasard.",
+      Object.keys(derniere).map(function (id) { return { id: id, n: derniere[id] }; })
+        .sort(function (a, b) { return b.n - a.n; }).slice(0, 10).map(function (x) {
+          return "<tr><td><strong>" + echapper(x.id) + "</strong></td><td>" + x.n + "</td></tr>";
+        }), ["Dernière activité", "Élèves"]);
+
+    document.getElementById("seanceTables").innerHTML = h;
+    document.getElementById("resultatSeance").style.display = "block";
+  }
+
+  function avalerFichiers(liste) {
+    var restants = liste.length, lus = 0, refuses = 0;
+    if (!restants) return;
+    Array.prototype.forEach.call(liste, function (f) {
+      var lecteur = new FileReader();
+      lecteur.onload = function () {
+        try {
+          var o = JSON.parse(lecteur.result);
+          /* Défaut-refus : ce qui ne ressemble pas à un bilan n'entre pas. */
+          if (o && o.pack && (o.cartes_vues || o.duree_s != null)) { bilans.push(o); lus++; }
+          else refuses++;
+        } catch (e) { refuses++; }
+        if (--restants === 0) {
+          dire("verdictSeance", lus > 0,
+            lus > 0 ? lus + " bilan(s) lu(s)." : "Aucun bilan lisible.",
+            refuses ? " " + refuses + " fichier(s) ignoré(s) : ce n'étaient pas des bilans." : "");
+          lireLesBilans();
+        }
+      };
+      lecteur.readAsText(f);
+    });
+  }
+
+  var depot = document.getElementById("depot");
+  var champFichiers = document.getElementById("fichiers");
+  depot.addEventListener("click", function () { champFichiers.click(); });
+  champFichiers.addEventListener("change", function () { avalerFichiers(champFichiers.files); });
+  ["dragenter", "dragover"].forEach(function (e) {
+    depot.addEventListener(e, function (ev) {
+      ev.preventDefault(); depot.style.borderColor = "var(--orange)";
+    });
+  });
+  ["dragleave", "drop"].forEach(function (e) {
+    depot.addEventListener(e, function (ev) {
+      ev.preventDefault(); depot.style.borderColor = "var(--ligne)";
+    });
+  });
+  depot.addEventListener("drop", function (ev) {
+    if (ev.dataTransfer && ev.dataTransfer.files) avalerFichiers(ev.dataTransfer.files);
+  });
+  document.getElementById("viderSeance").addEventListener("click", function () {
+    bilans = [];
+    document.getElementById("resultatSeance").style.display = "none";
+    document.getElementById("verdictSeance").className = "verdict";
+    champFichiers.value = "";
   });
 
   /* ---- Écrire à ses utilisateurs ---- */

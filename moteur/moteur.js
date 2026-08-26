@@ -102,6 +102,7 @@
     brancher(c, m);
     if (window.PiloteLecture) window.PiloteLecture.brancher(app, c);
     lancerChrono(c);
+    pointerCarte(c.id);
     if (S.historique[S.historique.length - 1] !== c.id) S.historique.push(c.id);
   }
 
@@ -127,6 +128,7 @@
     if (globs.length) { h += "<div class='sct'>Ressources utiles</div><div class='ressources'>"; globs.forEach(function (r) { h += lienRes(r); }); h += "</div>"; }
     h += "</div>" + pied({}) + voiles();
     app.innerHTML = h; nav(); commun();
+    pointerCarte(c.id);
     if (S.historique[S.historique.length - 1] !== c.id) S.historique.push(c.id);
   }
 
@@ -202,6 +204,7 @@
         effacerComp(); render();
       }
     };
+    pointerCarte(c.id);
     if (S.historique[S.historique.length - 1] !== c.id) S.historique.push(c.id);
   }
   function pastille(cls, n, lib) {
@@ -875,17 +878,69 @@
   function ouvrirVoile(h) { document.getElementById("voile-contenu").innerHTML = h; document.getElementById("voile").classList.add("on"); }
   function fermerVoile() { var v = document.getElementById("voile"); if (v) v.classList.remove("on"); }
 
-  /* --- Trace --- */
+  /* --- Trace ---
+     26/08/2026 — la trace gagne le GROUPE et le TEMPS PAR CARTE, pour que le
+     formateur puisse lire sa séance : où l'on traîne, où l'on décroche, ce qui
+     n'est pas passé. Elle reste ANONYME — aucun nom n'est demandé nulle part —
+     et elle ne part jamais toute seule : c'est l'élève qui l'exporte. */
+  var GROUPE_CLE = "pilote_groupe";
+
+  function lireGroupe() {
+    try { return localStorage.getItem(GROUPE_CLE) || ""; } catch (e) { return ""; }
+  }
+  function ecrireGroupe(g) {
+    try { if (g) localStorage.setItem(GROUPE_CLE, g); } catch (e) {}
+  }
+
+  /* Temps passé sur chaque carte : on ferme le compteur de la précédente en
+     arrivant sur la suivante. Pas de minuterie qui tourne, rien à arrêter. */
+  var tempsParCarte = {}, carteEnCours = null, entreeCarte = 0;
+
+  function pointerCarte(id) {
+    /* `var tempsParCarte` est déclaré ligne 897 mais appelé dès la ligne 105 :
+       le hoisting le rend visible, PAS initialisé. Si une carte s'affichait
+       avant que cette ligne ne s'exécute, on écrirait dans `undefined`. Ce
+       garde coûte trois mots et supprime la question. */
+    if (!tempsParCarte) tempsParCarte = {};
+    var t = nowSec();
+    if (carteEnCours && carteEnCours !== id) {
+      var d = t - entreeCarte;
+      /* Une carte laissée ouverte une heure fausse la moyenne : au-delà de
+         20 minutes on considère que l'élève est parti faire autre chose. */
+      if (d > 0 && d <= 1200) tempsParCarte[carteEnCours] = (tempsParCarte[carteEnCours] || 0) + d;
+    }
+    if (carteEnCours !== id) { carteEnCours = id; entreeCarte = t; }
+  }
+
   function traceObj() {
+    pointerCarte(carteEnCours); // fermer le compteur en cours
+    var rates = [];
+    for (var id in S.reponses) {
+      if (S.reponses.hasOwnProperty(id) && S.reponses[id] && !S.reponses[id].bonne) rates.push(id);
+    }
     return { pack: PACK.pack.id, version: PACK.pack.version, mode: S.modeId,
+      groupe: lireGroupe(),
       debut: S.debut, fin: nowSec(), duree_s: nowSec() - S.debut,
-      cartes_vues: S.historique.slice(), reponses: S.reponses, criteres: S.criteres,
+      cartes_vues: S.historique.slice(), temps_par_carte: tempsParCarte,
+      reponses: S.reponses, rates: rates, criteres: S.criteres,
       examen: S.examen ? { carte: S.examen.carteId, score: S.examen.score } : null };
   }
+
   function exporterTrace() {
+    var g = lireGroupe();
+    var saisi = window.prompt(
+      "Votre groupe ou votre classe ?\n\n"
+      + "C'est pour que le professeur puisse lire la séance de la classe.\n"
+      + "Aucun nom n'est demandé : votre bilan reste anonyme.",
+      g || "");
+    if (saisi === null) return;         // annulé : on n'exporte rien
+    ecrireGroupe(saisi.trim());
+
     var blob = new Blob([JSON.stringify(traceObj(), null, 2)], { type: "application/json" });
     var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "trace_" + PACK.pack.id + ".json"; document.body.appendChild(a); a.click(); a.remove();
+    a.download = "bilan_" + PACK.pack.id + (saisi.trim() ? "_" + saisi.trim().replace(/[^\w-]+/g, "-") : "")
+      + "_" + Math.floor(Date.now() / 1000) + ".json";
+    document.body.appendChild(a); a.click(); a.remove();
   }
 
   /* --- Scoring serveur (phase 2 : correction côté serveur, corrigé jamais livré).
