@@ -164,6 +164,17 @@ suite du chantier, il n'y a plus à les redemander.**
    tous identifiés.** C'est une passe de complétion, pas une réécriture.
    ▶ **Méthode tranchée le 24/08** : Claude cherche aux sources officielles et livre
    un tableau valeur / source, F. Henninot arbitre en une fois (décision 3).
+   ▶ **26/08 — FAIT pour la branche La DESP** : `VALEURS-A-VALIDER-DESP.md`
+   (commit `793dee3`). Les cinq stations y sont couvertes, valeur par valeur, avec
+   l'article exact — directive 2014/68/UE lue sur EUR-Lex, arrêté du 20/11/2017 en
+   version consolidée du jour (⚠️ modifié le 05/09/2025), décret 2015-799. Trouvé
+   entre autres : PS > 0,5 bar (champ), les seuils PS·V et PS·DN des tableaux 1 à 9,
+   **la surpression momentanée limitée à 10 % de la PS** (annexe I, 2.11.2 et 7.3),
+   accessoires de sécurité en catégorie IV, inspection 4 ans / requalification 10 ans,
+   dossier d'exploitation conservé toute la vie de l'équipement, contrôle DREAL
+   (L. 557-46). Non trouvé et non inventé : classement CLP fluide par fluide, tarages
+   NF EN 378 (norme payante), équation des courbes de l'annexe II, procédure de
+   sanction. 🔴 **AUCUNE station modifiée — en attente de l'arbitrage de F. Henninot.**
 2. **La relecture métier** : aucune des 29 stations n'a été relue par un
    professionnel. `data-prototype` posé partout.
 3. **Le référentiel d'adossement** : tranché le 24/08 — **attestation d'aptitude
