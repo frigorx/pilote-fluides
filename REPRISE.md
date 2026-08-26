@@ -31,9 +31,33 @@
 > titulaire ne peut ni se fabriquer un certificat ni signer une session pour autrui.
 > Code maître : 334 caractères. Code de session : 366. **Rien de visible n'a changé.**
 >
-> 🔴 **Deux gestes qui appartiennent à F. Henninot** : lancer `node build/racine-acces.mjs`
-> (clé irremplaçable, à sauvegarder hors ligne le jour même) et confirmer la liste des
-> produits. Reste ensuite AE-2 → AE-7.
+> **AE-2 livré** (commit `d4e0b1f`) : `coffre.mjs` sait chiffrer par millésime et écrit
+> dans `docs/coffre-<année>/`, **à côté** du coffre en service. ⚠️ **Correction de la
+> spec au passage** : sa première rédaction faisait basculer `docs/coffre/` dès ce lot —
+> les collègues qui ont le code actuel se seraient retrouvés dehors, aucune page ne
+> sachant encore lire un code maître. Les deux régimes cohabitent ; la bascule est
+> repoussée à AE-4, et **les nouveaux codes devront être distribués avant**.
+>
+> **AE-3 livré** (commit `22b63fa`) : `delivrer-acces.mjs` — numérotation par produit,
+> paire de clés propre au titulaire, certificat signé, registre local nominatif. Le code
+> **ne s'affiche jamais dans le terminal** : il est écrit dans un fichier prêt à copier.
+> Contre-épreuve avant livraison : le code est relu avec la clé **publique**, celle
+> qu'aura le site, et rien n'est délivré si la relecture échoue.
+>
+> **✅ PREUVE DE BOUT EN BOUT — 14 contrôles, 0 échec.** Clé racine créée, millésime 2026
+> tiré, coffre fabriqué, code délivré à un titulaire d'essai : avec la seule clé publique,
+> le site relit le code et **déchiffre un vrai document du coffre** (12 616 octets, titre
+> et taille conformes), refuse ce même code sur AquiBlue, refuse un octet modifié, refuse
+> le code au 1er septembre 2027, et accepte une séance fabriquée par le titulaire qui
+> porte son nom. L'essai a été effacé ensuite.
+>
+> 🔑 **La clé racine EXISTE** : `C:\git\paquets\acces-inerweb\racine\cle-privee.pem`.
+> 🔴 **Le seul geste qui reste à F. Henninot : la sauvegarder hors ligne** (clé USB
+> rangée ailleurs + impression). La perdre, c'est ne plus pouvoir délivrer un seul code.
+> Sa forme publique, qui n'a rien de secret, est dans `cle-publique-brute.txt` — elle ira
+> dans `moteur/acces.js` en AE-4.
+>
+> Reste AE-4 (la page `activer` et la bascule) → AE-7. À confirmer : la liste des produits.
 
 > ## 26/08 — Notes de chantier récupérées du fourre-tout
 >
