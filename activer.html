@@ -72,6 +72,25 @@
     <div class="verdict" id="verdict" role="status" aria-live="polite"></div>
   </div>
 
+  <!-- Élève : une séance est ouverte, il dit qui il est. Quatre caractères,
+       pas un lien de 400 : un élève sans téléphone doit pouvoir le taper. -->
+  <div class="carte" id="carteEleve" style="display:none">
+    <h2 style="margin-top:0">Qui êtes-vous dans cette séance ?</h2>
+    <p id="quelleSeance" class="detail" style="margin:0 0 1em"></p>
+    <label for="codeEleve">Votre code personnel</label>
+    <input id="codeEleve" type="text" maxlength="9" autocomplete="off" spellcheck="false"
+           autocapitalize="characters" autocorrect="off" inputmode="text"
+           placeholder="Les 4 caractères de votre carton"
+           style="width:100%; max-width:14em; padding:12px 14px; border:2px solid var(--ligne);
+                  border-radius:10px; background:#fff; color:var(--txt); text-transform:uppercase;
+                  font:1.4rem/1.3 'Trebuchet MS',Calibri,Arial,sans-serif; letter-spacing:.18em;">
+    <div class="rangee">
+      <button id="direQuiJeSuis" type="button">C'est moi</button>
+      <span class="detail">Votre professeur vous l'a donné. Ce n'est pas un mot de passe.</span>
+    </div>
+    <div class="verdict" id="verdictEleve" role="status" aria-live="polite"></div>
+  </div>
+
   <h2>Vos accès en cours</h2>
   <div class="carte">
     <ul class="acces" id="liste"></ul>
@@ -88,9 +107,9 @@
     partant.
   </p>
 
-  <script src="moteur/lisibilite.js?v=f3b8b50f37"></script>
-  <script src="moteur/acces.js?v=f3b8b50f37"></script>
-  <script src="moteur/marque.js?v=f3b8b50f37"></script>
+  <script src="moteur/lisibilite.js?v=1a471d5ff4"></script>
+  <script src="moteur/acces.js?v=1a471d5ff4"></script>
+  <script src="moteur/marque.js?v=1a471d5ff4"></script>
   <script>
   (function () {
     "use strict";
@@ -152,11 +171,56 @@
             peindre();
             dire(true, s.produit.nom + " est ouvert pour la séance.",
               "Séance « " + s.libelle + " » ouverte par " + s.nom + ", jusqu'au " + s.finLe + ".");
+            peindreEleve();
           } else {
             dire(false, "Ce code n'a pas été accepté.", r.message);
           }
         });
       });
+    });
+
+    /* --- L'élève dit qui il est ------------------------------------
+       On ne montre ce cadre QUE si une séance est ouverte et qu'aucun
+       numéro n'a encore été donné. Un enseignant qui vient chercher ses
+       documents n'a rien à faire ici. */
+    function peindreEleve() {
+      var carte = document.getElementById("carteEleve");
+      var quel = null;
+      (A.liste() || []).forEach(function (a) {
+        if (a.acces.seance && !A.numeroEleve(a.produit.id)) quel = a;
+      });
+      if (!quel) { carte.style.display = "none"; return null; }
+
+      carte.style.display = "block";
+      document.getElementById("quelleSeance").textContent =
+        "Séance « " + quel.acces.seance + " », ouverte par " + (quel.acces.seancePar || quel.acces.nom) + ".";
+      return quel.produit.id;
+    }
+
+    function direEleve(bon, titre, detail) {
+      var v = document.getElementById("verdictEleve");
+      v.className = "verdict " + (bon ? "bon" : "mauvais");
+      v.innerHTML = "";
+      var s = document.createElement("strong"); s.textContent = titre;
+      v.appendChild(s);
+      if (detail) v.appendChild(document.createTextNode(detail));
+    }
+
+    function jeSuis() {
+      var id = peindreEleve();
+      if (!id) return;
+      A.entrerCommeEleve(id, document.getElementById("codeEleve").value).then(function (r) {
+        if (!r.ok) { direEleve(false, "Ce code n'a pas été reconnu.", r.message); return; }
+        direEleve(true, "C'est noté : vous êtes l'élève " + (r.numero < 10 ? "0" : "") + r.numero + ".",
+          "Vos résultats porteront ce numéro. Votre nom n'est écrit nulle part.");
+        peindreEleve();
+        peindre();
+      });
+    }
+
+    document.getElementById("direQuiJeSuis").addEventListener("click", jeSuis);
+    document.getElementById("codeEleve").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") jeSuis();
     });
 
     /* Une séance passée dans l'adresse (QR code projeté en classe) s'ouvre seule. */
@@ -167,6 +231,7 @@
         if (s.ok) {
           dire(true, s.produit.nom + " est ouvert pour la séance.",
             "Séance « " + s.libelle + " » ouverte par " + s.nom + ", jusqu'au " + s.finLe + ".");
+          peindreEleve();
         } else {
           dire(false, "Ce lien n'a pas été accepté.", s.message);
         }
@@ -174,6 +239,7 @@
     }
 
     peindre();
+    peindreEleve();
   })();
   </script>
 </main>

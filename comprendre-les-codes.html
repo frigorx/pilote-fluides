@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="robots" content="noindex, nofollow">
+<title>Comprendre les codes inerWeb — guide de l'enseignant</title>
+<meta name="description" content="À quoi sert chaque code inerWeb, qui le détient, comment ouvrir une séance et récupérer les résultats des élèves.">
+<style>
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --orange-clair:#ffe2d6;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+          --vert:#166534; --vert-clair:#dcfce7; --rouge:#9f1239; --rouge-clair:#ffe4e6;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  #contenu:focus { outline:none; }
+  a { color:var(--bleu-clair); }
+  a:focus-visible, button:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+  main { max-width:800px; margin:0 auto; padding:28px 20px 70px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:1.8rem; margin:.2em 0 .1em; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.3rem; margin:2.2em 0 .5em;
+       padding-top:.6em; border-top:2px solid var(--ligne); }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.06rem; margin:1.6em 0 .3em; }
+  .chapo { color:var(--mut); font-size:1.05rem; margin:0 0 1.4em; }
+  .carte { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r);
+           box-shadow:var(--ombre); padding:20px 24px; margin:0 0 22px; }
+  .note { font-size:.95rem; color:var(--mut); border-left:3px solid var(--orange-clair);
+          padding-left:15px; margin:1.2em 0; }
+  .franc { background:var(--rouge-clair); border-left:5px solid var(--rouge); border-radius:10px;
+           padding:16px 20px; margin:1.4em 0; }
+  .franc strong { font-family:var(--titre); color:var(--rouge); display:block; margin-bottom:.25em; }
+  table { width:100%; border-collapse:collapse; margin:1.2em 0; font-size:.96rem; }
+  th, td { text-align:left; padding:11px 12px; border-bottom:1px solid var(--ligne);
+           vertical-align:top; }
+  th { font-family:var(--titre); color:var(--bleu); background:#fff; }
+  code { font:0.92em Consolas,'Courier New',monospace; background:#fff;
+         border:1px solid var(--ligne); border-radius:5px; padding:1px 6px; }
+
+  /* La chaîne : qui détient quoi, de haut en bas. */
+  .chaine { list-style:none; margin:1.2em 0; padding:0; counter-reset:etape; }
+  .chaine li { position:relative; padding:0 0 1.5em 3.2em; border-left:2px solid var(--ligne);
+               margin-left:1.1em; }
+  .chaine li:last-child { border-left-color:transparent; padding-bottom:0; }
+  .chaine li::before { counter-increment:etape; content:counter(etape);
+    position:absolute; left:-1.15em; top:0; width:2.3em; height:2.3em; border-radius:50%;
+    background:var(--bleu); color:#fff; font-family:var(--titre); font-weight:bold;
+    display:flex; align-items:center; justify-content:center; }
+  .chaine .quoi { font-family:var(--titre); font-weight:bold; color:var(--bleu); display:block; }
+  .chaine .qui { font-size:.9rem; color:var(--mut); }
+
+  .oui-non { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin:1.2em 0; }
+  .oui, .non { border-radius:12px; padding:16px 18px; }
+  .oui { background:var(--vert-clair); border-left:5px solid var(--vert); }
+  .non { background:var(--rouge-clair); border-left:5px solid var(--rouge); }
+  .oui h3, .non h3 { margin-top:0; }
+  .oui h3 { color:var(--vert); } .non h3 { color:var(--rouge); }
+  .oui ul, .non ul { margin:.4em 0 0; padding-left:1.2em; }
+  .oui li, .non li { margin:.35em 0; }
+  .bouton { display:inline-block; font-family:var(--titre); font-weight:bold; text-decoration:none;
+            border-radius:999px; padding:12px 26px; background:var(--bleu); color:#fff; margin-top:.6em; }
+  .bouton:hover { background:var(--bleu-clair); color:#fff; }
+</style>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+<main id="contenu" tabindex="-1">
+
+  <h1>Comprendre les codes inerWeb</h1>
+  <p class="chapo">Il y a trois codes différents dans inerWeb, et ils ne servent pas du tout
+  à la même chose. Cette page dit lequel fait quoi, qui le détient, et comment récupérer le
+  travail de vos élèves. Comptez cinq minutes.</p>
+
+  <h2>Les trois codes, en un tableau</h2>
+
+  <table>
+    <thead>
+      <tr><th>Le code</th><th>Il sert à</th><th>Qui l'a</th><th>À quoi il ressemble</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Votre code enseignant</strong></td>
+        <td>Ouvrir votre espace : les documents, et le droit d'ouvrir des séances à vos classes.</td>
+        <td>Vous seul. Il porte votre nom.</td>
+        <td>Une longue chaîne, ~330 caractères. Elle se <strong>colle</strong>, elle ne se tape pas.</td>
+      </tr>
+      <tr>
+        <td><strong>Le lien de séance</strong></td>
+        <td>Ouvrir un contenu à une classe, pour une durée que vous fixez.</td>
+        <td>Toute la classe. C'est le même pour tout le monde.</td>
+        <td>Un lien, et son QR code à projeter.</td>
+      </tr>
+      <tr>
+        <td><strong>Le code d'élève</strong></td>
+        <td>Dire <em>qui</em> est l'élève, pour que vous sachiez qui a fait quoi.</td>
+        <td>Un par élève. Vous les distribuez.</td>
+        <td>Quatre caractères, du type <code>7K2M</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note">Un quatrième code circule dans l'autre sens : le <strong>code de
+  restitution</strong>, que l'élève obtient à la fin et vous renvoie. C'est lui qui porte
+  ses résultats. Il fait une trentaine de caractères.</p>
+
+  <h2>Pourquoi ce n'est pas un simple mot de passe</h2>
+
+  <p>Un mot de passe partagé, ça circule. Au bout d'un an, tout le monde l'a, et vous ne
+  pouvez plus le retirer sans embêter ceux qui travaillent bien.</p>
+
+  <p>Ici, chaque code est <strong>fabriqué pour une personne</strong> et <strong>signé</strong>.
+  Trois conséquences concrètes :</p>
+
+  <ul>
+    <li><strong>Votre code porte votre nom</strong> — les documents que vous ouvrez l'affichent
+    en filigrane. Si un document se retrouve ailleurs, on sait par quel accès il est passé.</li>
+    <li><strong>Il expire au bout d'un an.</strong> Pas « une date qu'on peut contourner en
+    reculant l'horloge » : à la rentrée, les contenus sont rechiffrés avec la clé de l'année,
+    et l'ancien code ne sait plus rien ouvrir. Vous en recevez un nouveau.</li>
+    <li><strong>Vous fabriquez vos séances vous-même</strong>, sans jamais nous redemander
+    quoi que ce soit — et sans pouvoir fabriquer de code enseignant pour quelqu'un d'autre.</li>
+  </ul>
+
+  <p class="note">Tout se vérifie <strong>dans votre navigateur</strong>. Aucun code ne part
+  sur internet, il n'y a pas de compte à créer, pas de mot de passe à retenir, et aucun
+  serveur ne sait ce que vous faites.</p>
+
+  <h2>Le chemin complet d'une séance</h2>
+
+  <ol class="chaine">
+    <li>
+      <span class="quoi">Vous demandez un accès</span>
+      <span class="qui">Une fois par produit, une fois par an. Vous recevez votre code
+      enseignant par courriel.</span>
+    </li>
+    <li>
+      <span class="quoi">Vous le collez sur la page « Activer »</span>
+      <span class="qui">Une seule fois sur cet appareil. Il y reste rangé.</span>
+    </li>
+    <li>
+      <span class="quoi">Vous ouvrez une séance</span>
+      <span class="qui">Un nom (« CAP IFCA — groupe A »), une date de fin, un nombre d'élèves.
+      Vous obtenez un lien, un QR code, et la liste des codes d'élève.</span>
+    </li>
+    <li>
+      <span class="quoi">Vous distribuez</span>
+      <span class="qui">Le lien ou le QR pour entrer, et à chacun son code de quatre
+      caractères. La liste s'imprime et se découpe. <strong>Notez en face de chaque numéro
+      le nom de l'élève : cette feuille reste chez vous.</strong></span>
+    </li>
+    <li>
+      <span class="quoi">L'élève travaille</span>
+      <span class="qui">Il ouvre le lien, tape ses quatre caractères, et c'est tout. Aucun
+      compte, aucun nom demandé, rien à installer.</span>
+    </li>
+    <li>
+      <span class="quoi">Il vous renvoie son code de restitution</span>
+      <span class="qui">Une trentaine de caractères, obtenus en fin de séance. Par message,
+      par l'ENT, par courriel — le canal que vous utilisez déjà.</span>
+    </li>
+    <li>
+      <span class="quoi">Vous dépouillez</span>
+      <span class="qui">Vous collez tous les codes reçus d'un coup dans la page des séances,
+      et vous obtenez le tableau de la classe : score, réussite, durée, par élève.</span>
+    </li>
+  </ol>
+
+  <h2>Ce que le système protège, et ce qu'il ne protège pas</h2>
+
+  <p>Autant le dire une fois pour toutes, plutôt que de vous laisser le découvrir.</p>
+
+  <div class="oui-non">
+    <div class="oui">
+      <h3>Ce qui est vrai</h3>
+      <ul>
+        <li>Les contenus publiés ne sont lisibles <strong>nulle part en clair</strong>.</li>
+        <li>Chaque accès <strong>porte un nom</strong>, et le filigrane le rappelle.</li>
+        <li>Tout <strong>expire au bout d'un an</strong>, pour de bon.</li>
+        <li>Un code de séance <strong>ne peut pas survivre</strong> à l'accès qui l'a signé.</li>
+        <li>Un résultat modifié en route est <strong>détecté et écarté</strong>.</li>
+        <li>Un résultat venant d'une autre séance est <strong>refusé</strong>.</li>
+        <li><strong>Aucune donnée d'élève ne quitte votre salle.</strong> Aucun nom n'est
+        demandé nulle part.</li>
+      </ul>
+    </div>
+    <div class="non">
+      <h3>Ce qui n'est pas vrai</h3>
+      <ul>
+        <li>Ça <strong>n'empêche pas</strong> quelqu'un d'enregistrer ce qu'il voit à l'écran.
+        Aucune technique ne le fait, nulle part.</li>
+        <li>Ça <strong>ne referme pas</strong> une copie déjà prise.</li>
+        <li>Un lien de séance <strong>est un lien</strong> : publié sur un forum, il fonctionne
+        pour tout le monde jusqu'à sa date de fin.</li>
+        <li>Le code d'élève <strong>n'est pas une identité</strong> : un élève peut prendre
+        le numéro d'un autre s'il connaît son code.</li>
+        <li>Un élève peut <strong>gonfler son score</strong>. Le navigateur corrige les
+        réponses, donc il les connaît.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="franc">
+    <strong>Donc : ces résultats servent à suivre, pas à noter.</strong>
+    Ils vous disent qui a travaillé, qui a coincé, sur quoi revenir à la séance suivante.
+    Ils ne sont pas assez sûrs pour une note qui compte au bulletin — et un élève qui gonfle
+    son score se prive surtout lui-même. Une évaluation qui compte se fait devant vous.
+  </div>
+
+  <h2>Les questions qui reviennent</h2>
+
+  <h3>J'ai perdu mon code enseignant.</h3>
+  <p>Redemandez-en un. L'ancien reste valable jusqu'à sa date — hors ligne, on ne peut pas
+  révoquer un code déjà envoyé ; c'est la rentrée suivante qui le referme.</p>
+
+  <h3>Je change d'ordinateur.</h3>
+  <p>Recollez votre code sur le nouveau. Il est rangé dans le navigateur, pas dans un compte.
+  Sur un poste partagé, <strong>retirez votre accès en partant</strong>.</p>
+
+  <h3>Un élève n'a pas de téléphone pour scanner le QR.</h3>
+  <p>C'est prévu, et c'est même pour ça que le système est fait ainsi : le lien s'envoie
+  aussi par l'ENT ou par écrit, et le code d'élève ne fait que <strong>quatre caractères</strong>
+  — pas un lien de quatre cents à recopier.</p>
+
+  <h3>Deux élèves ont le même code.</h3>
+  <p>C'est rare, mais possible. Dans ce cas la page vous prévient, et ce code ne désigne
+  personne — plutôt que de faire travailler un élève sous le numéro d'un autre en silence.
+  Refabriquez la séance : elle tire de nouveaux codes.</p>
+
+  <h3>J'ai plus de 100 élèves sur une séance.</h3>
+  <p>La limite est fixée à 100 <strong>à titre provisoire</strong>. Elle n'est là que pour
+  borner le système tant qu'on découvre l'usage réel. Demandez-la plus haute, c'est un nombre
+  à changer.</p>
+
+  <h3>Un code de restitution a été refusé.</h3>
+  <p>Il vient d'une autre séance, ou il a été abîmé en chemin — un caractère perdu au
+  copier-coller suffit. Redemandez-le à l'élève plutôt que d'essayer de le deviner.</p>
+
+  <h3>Est-ce que je peux voir ce qu'un élève a fait chez lui, en direct ?</h3>
+  <p>Non. Rien ne remonte tout seul : il n'y a pas de serveur, c'est ce qui garantit qu'aucune
+  donnée d'élève ne circule. L'élève vous envoie son code quand il a fini.</p>
+
+  <h2>Pour commencer</h2>
+  <div class="carte">
+    <p style="margin-top:0">Trois pages, et c'est tout ce dont vous avez besoin :</p>
+    <ul>
+      <li><a href="activer.html"><strong>Activer</strong></a> — vous y collez votre code
+      enseignant, une fois.</li>
+      <li><a href="seances.html"><strong>Ouvrir une séance</strong></a> — vous y fabriquez
+      vos séances, vos codes d'élève, et vous y dépouillez les résultats.</li>
+      <li><a href="documents.html"><strong>Documents</strong></a> — les ressources de votre
+      espace enseignant.</li>
+    </ul>
+    <p><a class="bouton" href="seances.html">Ouvrir une séance ▸</a></p>
+    <p style="margin-bottom:0" class="note">Pas encore de code enseignant ?
+    <a href="demander-un-acces.html">Demandez-en un</a> — c'est gratuit, et nominatif.</p>
+  </div>
+
+  <script src="moteur/lisibilite.js?v=1a471d5ff4"></script>
+  <script src="moteur/marque.js?v=1a471d5ff4"></script>
+</main>
+</body>
+</html>

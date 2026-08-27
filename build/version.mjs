@@ -42,6 +42,9 @@ const FICHIERS_VERSIONNES = [
   "moteur/sons.js",
   "moteur/lecture.js",
   "moteur/portillon.js",
+  // 27/08/2026 (AE-5) — l'encodeur QR. Un navigateur qui en servirait une
+  // vieille version dessinerait des codes que personne ne peut scanner.
+  "moteur/qr.js",
   // 26/08/2026 — le moteur d'accès enseignant. C'est LUI qui décide si un
   // coffre s'ouvre : une version périmée servie par un navigateur serait le
   // pire des caches. Il est donc versionné comme les autres.
@@ -79,6 +82,14 @@ const PAGES = [
   // site ne reçoit et n'enregistre toujours rien. `noindex`, hors sitemap
   // tant que F. Henninot n'a pas donné son feu vert de publication.
   "demander-un-acces.html",
+  // 27/08/2026 (AE-5) — la fabrique des séances : l'enseignant y signe le
+  // lien et le QR code qu'il projettera en classe. `noindex`, hors sitemap,
+  // et sans effet pour qui n'a pas d'accès enseignant.
+  "seances.html",
+  // 27/08/2026 (AE-6) — la page qui explique les codes aux enseignants.
+  // F. Henninot : « aujourd'hui on a des codes mais on ne sait pas à quoi
+  // ils servent ». Elle est le point d'entrée de l'espace enseignant.
+  "comprendre-les-codes.html",
 ];
 // 23/08/2026 — legislation/index.html n'entre PAS dans PAGES : le réseau
 // Législation est un SATELLITE (décision F. Henninot : « presque un autre

@@ -13,7 +13,7 @@
 import {
   genererPaire, tirerClesMillesime, fabriquerCertificat, lireCertificat,
   fabriquerCodeMaitre, lireCodeMaitre, fabriquerCodeSession, lireCodeSession,
-  pourProduit, MOTIFS, enJours,
+  pourProduit, MOTIFS, enJours, identLisible,
 } from "./lib-acces.mjs";
 import { produitParId, produitParIndice, PRODUITS } from "./produits.mjs";
 import { readFileSync, existsSync } from "node:fs";
@@ -172,7 +172,7 @@ const session = fabriquerCodeSession({
   libelle: "CAP IFCA — groupe A",
 });
 
-const luSession = lireCodeSession(session, racine.publicKey, AUJOURD_HUI);
+const luSession = lireCodeSession(session.code, racine.publicKey, AUJOURD_HUI);
 verifier("une session fabriquée par le titulaire est acceptée", luSession.ok, luSession.motif);
 verifier("elle désigne son émetteur", luSession.ok && luSession.certificat.nom === "Martin Dubois");
 verifier("elle porte son libellé", luSession.ok && luSession.libelle === "CAP IFCA — groupe A");
@@ -181,7 +181,23 @@ verifier("elle reste dans son produit",
   luSession.ok && pourProduit(luSession, habilitation.indice).ok
   && pourProduit(luSession, aquiblue.indice).motif === MOTIFS.MAUVAIS_PRODUIT);
 verifier("elle tient dans un QR code (moins de 900 caractères)",
-  session.length < 900, `${session.length} caractères`);
+  session.code.length < 900, `${session.code.length} caractères`);
+
+/* L'identifiant de séance — ajouté le 27/08. Sans lui, deux séances de même
+   libellé et de même date étaient le MÊME code : le mardi ne se distinguait
+   pas du jeudi, et aucun bilan ne pourrait être rattaché à SA séance. */
+verifier("elle porte l'identifiant qui lui a été donné",
+  luSession.ok && luSession.identifiant.equals(session.identifiant));
+verifier("l'identifiant se montre en groupes lisibles",
+  /^[0-9A-F]{4}(-[0-9A-F]{4}){3}$/.test(identLisible(session.identifiant)),
+  identLisible(session.identifiant));
+
+const jumelle = fabriquerCodeSession({
+  certificatBrut: luMartin.certificatBrut, secret: luMartin.secret, kEleve: luMartin.kEleve,
+  finLe: "2026-12-20", libelle: "CAP IFCA — groupe A",   // mêmes libellé et date
+});
+verifier("deux séances de même libellé et même date restent deux séances distinctes",
+  jumelle.code !== session.code && !jumelle.identifiant.equals(session.identifiant));
 
 /* Le titulaire n'a JAMAIS eu la clé racine : on le prouve en montrant que
    sa clé ne sait pas signer un certificat que la racine validerait. */
@@ -203,7 +219,7 @@ const sessionBricolee = fabriquerCodeSession({
   libelle: "Session volée",
 });
 verifier("une session signée par un autre que le titulaire du certificat est refusée",
-  lireCodeSession(sessionBricolee, racine.publicKey, AUJOURD_HUI).motif === MOTIFS.SIGNATURE_INVALIDE);
+  lireCodeSession(sessionBricolee.code, racine.publicKey, AUJOURD_HUI).motif === MOTIFS.SIGNATURE_INVALIDE);
 
 /* Session périmée */
 const sessionFinie = fabriquerCodeSession({
@@ -211,11 +227,11 @@ const sessionFinie = fabriquerCodeSession({
   finLe: "2026-08-25", libelle: "Séance d'hier",
 });
 verifier("une session dont la date est passée est refusée",
-  lireCodeSession(sessionFinie, racine.publicKey, AUJOURD_HUI).motif === MOTIFS.EXPIRE);
+  lireCodeSession(sessionFinie.code, racine.publicKey, AUJOURD_HUI).motif === MOTIFS.EXPIRE);
 
 /* Un code de session lu comme un code maître, et l'inverse */
 verifier("un code de session n'est pas accepté comme code maître",
-  lireCodeMaitre(session, racine.publicKey, AUJOURD_HUI).motif === MOTIFS.VERSION_INCONNUE);
+  lireCodeMaitre(session.code, racine.publicKey, AUJOURD_HUI).motif === MOTIFS.VERSION_INCONNUE);
 verifier("un code maître n'est pas accepté comme code de session",
   lireCodeSession(martin.code, racine.publicKey, AUJOURD_HUI).motif === MOTIFS.VERSION_INCONNUE);
 
@@ -269,7 +285,7 @@ if (source) {
 console.log("\n" + "─".repeat(64));
 if (echecs.length === 0) {
   console.log(`✓ ${passes} contrôles, aucun échec.`);
-  console.log(`  code maître : ${martin.code.length} caractères · code de session : ${session.length} caractères`);
+  console.log(`  code maître : ${martin.code.length} caractères · code de session : ${session.code.length} caractères`);
   process.exit(0);
 } else {
   console.log(`✗ ${echecs.length} échec(s) sur ${passes + echecs.length} contrôles :`);

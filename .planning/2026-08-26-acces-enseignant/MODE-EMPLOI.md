@@ -83,6 +83,64 @@ votre ordinateur.
 
 ---
 
+## 3 bis. Ouvrir une séance à une classe (depuis le 27/08)
+
+Ceci ne se fait **pas** dans la console : ça se fait sur le site, dans votre navigateur,
+parce que c'est **vous** qui signez la séance, avec votre clé personnelle.
+
+1. Allez sur **`https://inerweb.fr/seances.html`**.
+2. Choisissez le produit, tapez un nom de séance (« CAP IFCA — groupe A »), une date de
+   fin.
+3. **« Fabriquer le code de séance »**. Vous obtenez un lien et son QR code.
+4. En classe : **« Projeter en grand »**. Les élèves scannent, le contenu s'ouvre. Rien
+   à dicter, aucune faute de frappe.
+
+Le bouton **« Copier le lien »** sert pour l'ENT ou un courriel ; **« Imprimer »** sort
+le QR sur papier. Vos séances restent listées en bas de la page, sur cet appareil.
+
+> ⚠️ **Il faut votre code d'accès enseignant sur cet appareil.** Sans lui, la page ne
+> propose rien — et c'est le but : fabriquer une séance revient à signer un accès en
+> votre nom.
+
+> ⚠️ **La console formateur et la page de projection ont changé de serrure.** Elles ne
+> s'ouvrent plus avec le code court qu'on donnait en salle : elles demandent le même
+> accès enseignant. Collez votre code une fois sur `activer.html`, et l'appareil est
+> ouvert. L'application élève, elle, reste libre sans aucun code.
+
+> Une séance ne peut jamais durer au-delà de votre propre accès. À la rentrée, tout se
+> referme ensemble.
+
+### Savoir qui a fait quoi, et récupérer les résultats
+
+En fabriquant la séance, indiquez **combien d'élèves**. Vous obtenez une planche de
+**cartons à découper** : un par élève, avec un code de quatre caractères.
+
+1. Imprimez, découpez, distribuez.
+2. **Notez le nom de chaque élève en face de son numéro, sur votre exemplaire.** Cette
+   feuille reste chez vous — aucun nom n'entre nulle part dans le système.
+3. L'élève ouvre le lien de la séance, tape ses quatre caractères, et travaille.
+4. En fin de séance, il obtient un **code de restitution** d'une trentaine de caractères.
+   Il vous l'envoie comme il veut : message, ENT, courriel.
+5. Retournez sur `seances.html`, section **« Récupérer les résultats »**, collez tous les
+   codes reçus d'un coup. Vous obtenez le tableau : score, réussite, durée, par élève,
+   et la moyenne de la classe.
+
+Un code qui vient d'une autre séance, ou qui a été abîmé en chemin, est écarté et
+signalé — jamais avalé en silence.
+
+> ⚠️ **Ces résultats servent à suivre, pas à noter.** Le sceau garantit qu'un code vient
+> bien de cette séance et n'a pas été abîmé. Il ne garantit pas qu'un élève n'a pas pris
+> le numéro d'un autre, ni gonflé son score : le navigateur corrige les réponses, donc
+> l'élève les connaît. Une évaluation qui compte au bulletin se fait devant vous.
+
+> **Limite provisoire : 100 élèves par séance.** Elle n'est là que pour borner le système
+> le temps de découvrir l'usage réel. C'est un nombre à changer, rien d'autre.
+
+**À faire lire aux collègues** : `https://inerweb.fr/comprendre-les-codes.html` explique
+les trois codes, le chemin complet d'une séance, et ce que le système ne fait pas.
+
+---
+
 ## 4. Chaque rentrée — le rituel d'août
 
 Dans la console, section **« Préparer une nouvelle année »** :

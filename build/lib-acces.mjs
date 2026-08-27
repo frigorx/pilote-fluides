@@ -37,7 +37,7 @@
    une date illisible ne s'interprète pas, un octet de trop fait échouer.
    ===================================================================== */
 import {
-  generateKeyPairSync, createPublicKey, createPrivateKey,
+  generateKeyPairSync, createPublicKey, createPrivateKey, createHmac,
   randomBytes, sign as signer, verify as verifier,
 } from "node:crypto";
 
@@ -52,6 +52,7 @@ const TAILLE_PUBLIQUE = 65; // point P-256 non compressé : 0x04 || x || y
 const TAILLE_SECRET = 32;   // scalaire privé, et clés de coffre
 const TAILLE_SIGNATURE = 64;
 const ENTETE_CERT = 74;     // octets avant le nom
+export const TAILLE_IDENT = 8; // identifiant de séance (étage 2)
 
 /* Les dates tiennent sur 2 octets : nombre de jours depuis le 1er janvier
    2026. De quoi voir venir jusqu'en 2205. */
@@ -67,6 +68,7 @@ export const MOTIFS = {
   SIGNATURE_INVALIDE: "SIGNATURE_INVALIDE",
   EXPIRE: "EXPIRE",
   MAUVAIS_PRODUIT: "MAUVAIS_PRODUIT",
+  AUTRE_SEANCE: "AUTRE_SEANCE",
 };
 
 /* ====================================================================
@@ -278,29 +280,60 @@ export function lireCodeMaitre(code, publiqueRacine, aujourdhui) {
      1-2   longueur du certificat de l'émetteur
      3..   certificat
      puis  K-élève (32)
+     puis  IDENTIFIANT de séance (8)
      puis  fin de validité (2)
      puis  longueur du libellé (1) + libellé
      puis  signature DU TITULAIRE (64) sur tout ce qui précède
+
+   POURQUOI UN IDENTIFIANT — ajouté le 27/08, avant toute émission
+   Sans lui, deux séances de même libellé et de même date de fin
+   produisaient EXACTEMENT le même code : « CAP IFCA groupe A » de mardi
+   ne se distinguait pas de celui de jeudi. Huit octets tirés au hasard
+   suffisent à les séparer, et ce sont eux qui permettront plus tard de
+   rattacher un bilan d'élève à SA séance — quelle que soit la voie de
+   remontée retenue. Le poser maintenant coûte huit octets ; le poser
+   après qu'un code a circulé coûte un changement de format.
    ==================================================================== */
 
-export function fabriquerCodeSession({ certificatBrut, secret, kEleve, finLe, libelle }) {
+/** Un identifiant de séance neuf : 8 octets tirés au hasard. */
+export function tirerIdentifiant() {
+  return randomBytes(TAILLE_IDENT);
+}
+
+/** L'identifiant tel qu'on le montre : 3F2A-91C7-B04D-5E16. */
+export function identLisible(ident) {
+  return (ident.toString("hex").toUpperCase().match(/.{4}/g) || []).join("-");
+}
+
+export function fabriquerCodeSession({ certificatBrut, secret, kEleve, finLe, libelle, identifiant }) {
   const libelleBrut = Buffer.from(String(libelle ?? ""), "utf8");
   if (libelleBrut.length > 255) throw new Error("libellé de session trop long");
   if (!Buffer.isBuffer(kEleve) || kEleve.length !== TAILLE_SECRET) throw new Error("kEleve : 32 octets attendus");
+
+  /* Tiré ici par défaut ; on peut l'imposer, mais seulement pour rejouer
+     une fabrication à l'identique en test. */
+  const ident = identifiant ?? tirerIdentifiant();
+  if (!Buffer.isBuffer(ident) || ident.length !== TAILLE_IDENT) {
+    throw new Error(`identifiant de séance : ${TAILLE_IDENT} octets attendus`);
+  }
 
   const tete = Buffer.alloc(3);
   tete[0] = TYPE_SESSION;
   tete.writeUInt16BE(certificatBrut.length, 1);
 
-  const queue = Buffer.alloc(3 + libelleBrut.length);
-  queue.writeUInt16BE(enJours(finLe), 0);
-  queue[2] = libelleBrut.length;
-  libelleBrut.copy(queue, 3);
+  const queue = Buffer.alloc(TAILLE_IDENT + 3 + libelleBrut.length);
+  ident.copy(queue, 0);
+  queue.writeUInt16BE(enJours(finLe), TAILLE_IDENT);
+  queue[TAILLE_IDENT + 2] = libelleBrut.length;
+  libelleBrut.copy(queue, TAILLE_IDENT + 3);
 
   const corps = Buffer.concat([tete, certificatBrut, kEleve, queue]);
   const publiqueBrute = certificatBrut.subarray(8, 8 + TAILLE_PUBLIQUE);
   const privee = priveeDepuisSecret(secret, publiqueBrute);
-  return Buffer.concat([corps, signe(corps, privee)]).toString("base64url");
+  return {
+    code: Buffer.concat([corps, signe(corps, privee)]).toString("base64url"),
+    identifiant: ident,
+  };
 }
 
 export function lireCodeSession(code, publiqueRacine, aujourdhui) {
@@ -312,10 +345,11 @@ export function lireCodeSession(code, publiqueRacine, aujourdhui) {
   const tailleCert = brut.readUInt16BE(1);
   const finCert = 3 + tailleCert;
   const finCle = finCert + TAILLE_SECRET;
-  if (brut.length < finCle + 3 + TAILLE_SIGNATURE) return { ok: false, motif: MOTIFS.ILLISIBLE };
+  const finIdent = finCle + TAILLE_IDENT;
+  if (brut.length < finIdent + 3 + TAILLE_SIGNATURE) return { ok: false, motif: MOTIFS.ILLISIBLE };
 
-  const tailleLibelle = brut[finCle + 2];
-  const finCorps = finCle + 3 + tailleLibelle;
+  const tailleLibelle = brut[finIdent + 2];
+  const finCorps = finIdent + 3 + tailleLibelle;
   if (brut.length !== finCorps + TAILLE_SIGNATURE) return { ok: false, motif: MOTIFS.ILLISIBLE };
 
   /* 1er maillon : le certificat vient-il bien de la racine ? La date du
@@ -330,15 +364,174 @@ export function lireCodeSession(code, publiqueRacine, aujourdhui) {
     return { ok: false, motif: MOTIFS.SIGNATURE_INVALIDE };
   }
 
-  const finLe = versISO(brut.readUInt16BE(finCle));
+  const finLe = versISO(brut.readUInt16BE(finIdent));
   if (aujourdhui != null && aujourdhui > finLe) return { ok: false, motif: MOTIFS.EXPIRE, finLe };
 
   return {
     ok: true,
     certificat: lu.certificat,
     kEleve: Buffer.from(brut.subarray(finCert, finCle)),
+    identifiant: Buffer.from(brut.subarray(finCle, finIdent)),
     finLe,
-    libelle: brut.subarray(finCle + 3, finCorps).toString("utf8"),
+    libelle: brut.subarray(finIdent + 3, finCorps).toString("utf8"),
+  };
+}
+
+/* ====================================================================
+   ÉTAGE 3 — LES CODES INDIVIDUELS D'ÉLÈVE (AE-6)
+   --------------------------------------------------------------------
+   POURQUOI UN CODE COURT, ET PAS UN LIEN PAR ÉLÈVE
+   Un lien de séance fait ~400 caractères. Un élève sans téléphone pour
+   scanner ne peut pas le taper : on l'exclurait. Le lien reste donc
+   COMMUN à la classe, et chaque élève tape en plus quatre caractères
+   qui disent QUI il est.
+
+   Le code est un HMAC de (identifiant de séance ‖ numéro) par la clé
+   élève, tronqué. Il se vérifie hors ligne : le navigateur a la clé par
+   le lien, il essaie les numéros et voit lequel correspond.
+
+   ⚠️ CE QUE ÇA NE PROUVE PAS. Tous les élèves d'une séance partagent la
+   même clé : qui a un code peut en calculer d'autres s'il comprend le
+   procédé. C'est un numéro d'appel, pas une identité. La note qui compte
+   au bulletin demande un serveur ; ceci sert au suivi.
+
+   L'ALPHABET est sans caractères ambigus — ni O/0, ni I/L/1. Un code se
+   dicte, se recopie, se lit de travers : c'est le premier défaut d'usage
+   à écarter.
+   ==================================================================== */
+
+export const ALPHABET = "23456789ABCDEFGHJKMNPQRSTVWXYZ"; // 30 signes, sans O0 IL1
+export const TAILLE_CODE_ELEVE = 4;
+export const ELEVES_MAX = 100; // garde-fou provisoire décidé le 27/08
+
+function sceau(cle, donnees) {
+  return createHmac("sha256", cle).update(donnees).digest();
+}
+
+/** Le code court de l'élève `numero` (1..ELEVES_MAX) dans cette séance. */
+export function codeEleve(kEleve, identifiant, numero) {
+  if (!Buffer.isBuffer(kEleve) || kEleve.length !== TAILLE_SECRET) throw new Error("kEleve : 32 octets attendus");
+  if (!Buffer.isBuffer(identifiant) || identifiant.length !== TAILLE_IDENT) throw new Error(`identifiant : ${TAILLE_IDENT} octets attendus`);
+  if (!Number.isInteger(numero) || numero < 1 || numero > ELEVES_MAX) {
+    throw new Error(`numéro d'élève hors du garde-fou (1 à ${ELEVES_MAX})`);
+  }
+
+  const entree = Buffer.alloc(TAILLE_IDENT + 2);
+  identifiant.copy(entree, 0);
+  entree.writeUInt16BE(numero, TAILLE_IDENT);
+
+  const h = sceau(kEleve, entree);
+  let code = "";
+  for (let i = 0; i < TAILLE_CODE_ELEVE; i++) code += ALPHABET[h[i] % ALPHABET.length];
+  return code;
+}
+
+/** La liste complète à distribuer : [{numero, code}, …]. */
+export function listeEleves(kEleve, identifiant, combien) {
+  const n = Math.min(Math.max(1, combien | 0), ELEVES_MAX);
+  const sortie = [];
+  for (let i = 1; i <= n; i++) sortie.push({ numero: i, code: codeEleve(kEleve, identifiant, i) });
+  return sortie;
+}
+
+/** Les codes qui apparaissent plus d'une fois dans une liste. */
+export function doublonsDe(liste) {
+  const vus = new Map();
+  for (const e of liste) vus.set(e.code, (vus.get(e.code) || 0) + 1);
+  return [...vus.entries()].filter(([, n]) => n > 1).map(([code]) => code);
+}
+
+/**
+ * À quel élève ce code correspond-il ? `null` si aucun — ou si plusieurs.
+ *
+ * On essaie tous les numéros — cent HMAC, c'est instantané, et ça évite de
+ * ranger quoi que ce soit. Le garde-fou n'est pas une donnée à surveiller :
+ * c'est la borne de cette boucle.
+ *
+ * ⚠️ ON NE S'ARRÊTE PAS AU PREMIER TROUVÉ. Quatre caractères font 810 000
+ * combinaisons : sur une classe de trente, deux élèves tirent le même code
+ * une fois sur deux mille environ. Rare, mais pas jamais — et s'arrêter au
+ * premier ferait travailler un élève sous le numéro d'un autre, en silence.
+ * Un code ambigu ne désigne donc personne, et l'enseignant est prévenu au
+ * moment où il fabrique sa liste (voir `doublonsDe`).
+ */
+export function retrouverEleve(kEleve, identifiant, saisi) {
+  if (typeof saisi !== "string") return null;
+  const propre = saisi.trim().toUpperCase().replace(/[\s-]/g, "");
+  if (propre.length !== TAILLE_CODE_ELEVE) return null;
+
+  let trouve = null;
+  for (let n = 1; n <= ELEVES_MAX; n++) {
+    if (codeEleve(kEleve, identifiant, n) !== propre) continue;
+    if (trouve !== null) return null; // ambigu : personne
+    trouve = n;
+  }
+  return trouve;
+}
+
+/* ====================================================================
+   LE BILAN DE RESTITUTION — ce que l'élève recopie à la fin
+     0     type/version (0x31)
+     1-8   identifiant de la séance
+     9-10  numéro d'élève
+     11-12 jour (jours depuis l'époque)
+     13-14 durée en minutes (plafonnée)
+     15-16 questions vues
+     17-18 bonnes réponses
+     19-26 sceau tronqué (8 octets) sur tout ce qui précède
+   → 27 octets, soit 36 caractères : ça se colle dans un message.
+
+   ⚠️ Le sceau prouve que le bilan vient de cette séance et qu'il n'a pas
+   été abîmé en chemin. Il ne prouve PAS que l'élève 07 est bien l'élève
+   07. Voir l'avertissement de l'étage 3.
+   ==================================================================== */
+
+export const TYPE_BILAN = 0x30 | VERSION; // 0x31
+const TAILLE_SCEAU_BILAN = 8;
+
+function borne(v, max) {
+  const n = Number(v);
+  if (!Number.isFinite(n) || n < 0) return 0;
+  return Math.min(Math.round(n), max);
+}
+
+export function fabriquerBilan(kEleve, { identifiant, numero, jour, dureeMin, vues, justes }) {
+  const corps = Buffer.alloc(19);
+  corps[0] = TYPE_BILAN;
+  identifiant.copy(corps, 1);
+  corps.writeUInt16BE(borne(numero, ELEVES_MAX), 9);
+  corps.writeUInt16BE(borne(enJours(jour), 0xffff), 11);
+  corps.writeUInt16BE(borne(dureeMin, 0xffff), 13);
+  corps.writeUInt16BE(borne(vues, 0xffff), 15);
+  corps.writeUInt16BE(borne(justes, 0xffff), 17);
+
+  const s = sceau(kEleve, corps).subarray(0, TAILLE_SCEAU_BILAN);
+  return Buffer.concat([corps, s]).toString("base64url");
+}
+
+export function lireBilan(code, kEleve, identifiantAttendu) {
+  const brut = decoder(code);
+  if (!brut) return { ok: false, motif: MOTIFS.ABSENT };
+  if (brut.length !== 19 + TAILLE_SCEAU_BILAN) return { ok: false, motif: MOTIFS.ILLISIBLE };
+  if (brut[0] !== TYPE_BILAN) return { ok: false, motif: MOTIFS.VERSION_INCONNUE };
+
+  const corps = brut.subarray(0, 19);
+  const attendu = sceau(kEleve, corps).subarray(0, TAILLE_SCEAU_BILAN);
+  if (!attendu.equals(brut.subarray(19))) return { ok: false, motif: MOTIFS.SIGNATURE_INVALIDE };
+
+  const identifiant = Buffer.from(corps.subarray(1, 9));
+  if (identifiantAttendu && !identifiant.equals(identifiantAttendu)) {
+    return { ok: false, motif: MOTIFS.AUTRE_SEANCE };
+  }
+
+  const vues = corps.readUInt16BE(15), justes = corps.readUInt16BE(17);
+  return {
+    ok: true, identifiant,
+    numero: corps.readUInt16BE(9),
+    jour: versISO(corps.readUInt16BE(11)),
+    dureeMin: corps.readUInt16BE(13),
+    vues, justes,
+    pourcent: vues ? Math.round((justes * 100) / vues) : 0,
   };
 }
 

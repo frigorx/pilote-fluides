@@ -926,7 +926,93 @@
       examen: S.examen ? { carte: S.examen.carteId, score: S.examen.score } : null };
   }
 
+  /* --- Le CODE DE RESTITUTION (AE-6, 27/08) -----------------------
+     Quand l'élève est entré dans une séance et a dit qui il était, son
+     bilan sort en CODE COURT plutôt qu'en fichier : une trentaine de
+     caractères qu'il colle dans un message, l'ENT, un courriel. Sur
+     trente machines, un fichier à rapatrier était le point faible ;
+     un texte à coller passe par les canaux qui existent déjà.
+
+     Le fichier JSON reste le comportement par défaut hors séance —
+     personne ne perd ce qu'il avait. */
+
+  /** L'accès qui porte une séance ET un numéro d'élève, s'il y en a un. */
+  function seanceDeLEleve() {
+    var A = window.inerwebAcces;
+    if (!A || typeof A.monBilan !== "function") return null;
+    var trouve = null;
+    (A.liste() || []).forEach(function (o) {
+      if (o.acces.seance && A.numeroEleve(o.produit.id)) trouve = o;
+    });
+    return trouve;
+  }
+
+  function montrerCodeRestitution(code, numero, libelle) {
+    var v = document.createElement("div");
+    v.setAttribute("role", "dialog");
+    v.setAttribute("aria-modal", "true");
+    v.style.cssText = "position:fixed; inset:0; z-index:99998; background:rgba(16,35,60,.55); "
+      + "display:flex; align-items:center; justify-content:center; padding:20px";
+    v.innerHTML =
+      "<div style=\"background:#fffdf8; border-radius:14px; padding:24px 26px; max-width:34em; "
+      + "font-family:Calibri,'Segoe UI',system-ui,sans-serif; line-height:1.6; color:#10233c\">"
+      + "<h2 style=\"font-family:'Trebuchet MS',Calibri,sans-serif; color:#1b3a63; margin:0 0 .3em; font-size:1.3em\">"
+      + "Votre bilan est prêt</h2>"
+      + "<p style='margin:0 0 1em; color:#5a6b7d'>Élève " + (numero < 10 ? "0" : "") + numero
+      + " — séance « " + String(libelle).replace(/[<>&]/g, "") + " ». Envoyez ce code à votre "
+      + "professeur : message, ENT, courriel, comme vous voulez.</p>"
+      + "<p id='mb-code' style=\"font:1.05em/1.5 Consolas,'Courier New',monospace; word-break:break-all; "
+      + "background:#fff; border:2px solid #d6dee7; border-radius:10px; padding:12px 14px; margin:0\">"
+      + code + "</p>"
+      + "<p style='margin:1.2em 0 0; display:flex; gap:10px; flex-wrap:wrap'>"
+      + "<button id='mb-copier' style=\"font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; "
+      + "border:0; border-radius:999px; padding:11px 22px; background:#1b3a63; color:#fff; cursor:pointer\">"
+      + "Copier le code</button>"
+      + "<button id='mb-fermer' style=\"font-family:'Trebuchet MS',Calibri,sans-serif; "
+      + "border:1px solid #d6dee7; background:transparent; border-radius:999px; padding:11px 22px; "
+      + "color:#1b3a63; cursor:pointer\">Fermer</button></p>"
+      + "<p style='margin:1em 0 0; font-size:.88em; color:#5a6b7d'>Votre nom n'apparaît pas : "
+      + "seul votre professeur sait quel numéro vous a été donné.</p>"
+      + "</div>";
+    document.body.appendChild(v);
+
+    var fermer = function () { if (v.parentNode) v.parentNode.removeChild(v); };
+    v.querySelector("#mb-fermer").onclick = fermer;
+    v.addEventListener("click", function (e) { if (e.target === v) fermer(); });
+    v.querySelector("#mb-copier").onclick = function () {
+      var b = v.querySelector("#mb-copier");
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).then(
+          function () { b.textContent = "Copié ✓"; },
+          function () { b.textContent = "Copiez-le à la main"; });
+      } else { b.textContent = "Copiez-le à la main"; }
+    };
+    v.querySelector("#mb-copier").focus();
+  }
+
   function exporterTrace() {
+    var t = traceObj();
+
+    /* Cas de la séance : un code court, pas un fichier. */
+    var o = seanceDeLEleve();
+    if (o) {
+      var vues = 0, justes = 0;
+      for (var id in t.reponses) {
+        if (!t.reponses.hasOwnProperty(id) || !t.reponses[id]) continue;
+        vues++;
+        if (t.reponses[id].bonne) justes++;
+      }
+      var A = window.inerwebAcces;
+      A.monBilan(o.produit.id, {
+        dureeMin: Math.round((t.duree_s || 0) / 60), vues: vues, justes: justes
+      }).then(function (r) {
+        if (r.ok) montrerCodeRestitution(r.code, A.numeroEleve(o.produit.id), o.acces.seance);
+        else window.alert("Le bilan n'a pas pu être fabriqué : " + (r.message || r.motif));
+      });
+      return;
+    }
+
+    /* Hors séance : le fichier, comme avant. */
     var g = lireGroupe();
     var saisi = window.prompt(
       "Votre groupe ou votre classe ?\n\n"
@@ -936,7 +1022,7 @@
     if (saisi === null) return;         // annulé : on n'exporte rien
     ecrireGroupe(saisi.trim());
 
-    var blob = new Blob([JSON.stringify(traceObj(), null, 2)], { type: "application/json" });
+    var blob = new Blob([JSON.stringify(t, null, 2)], { type: "application/json" });
     var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
     a.download = "bilan_" + PACK.pack.id + (saisi.trim() ? "_" + saisi.trim().replace(/[^\w-]+/g, "-") : "")
       + "_" + Math.floor(Date.now() / 1000) + ".json";

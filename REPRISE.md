@@ -3,6 +3,96 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 27/08 — ✅ AE-6 LIVRÉ : qui a fait quoi, et la page qui explique enfin les codes
+>
+> **La décision de F. Henninot, et elle commande le reste : pas de serveur.** Le coût
+> est évité tant que l'usage n'a pas décollé. Rouvert le jour venu ; Cloudflare est le
+> candidat gratuit à instruire à ce moment-là. ▶ Fait vérifié : **aucun hébergement web
+> chez OVH** (domaine + Zimbra seulement, site sur GitHub Pages) — un serveur serait les
+> 3-4 €/mois déjà prévus pour la monétisation, pas un coût déjà payé.
+>
+> **Comment on sait qui a fait quoi, sans serveur et sans nom.** Le lien de séance reste
+> COMMUN à la classe ; chaque élève tape en plus **quatre caractères** (`7K2M`) qui
+> disent son numéro. ▶ Le réflexe aurait été de fabriquer trente liens — il ne fallait
+> pas : un lien fait 400 caractères, un élève sans téléphone pour scanner ne peut pas le
+> taper, on l'aurait exclu. L'enseignant imprime une planche de cartons à découper et
+> note les noms en face des numéros ; **cette feuille reste chez lui, aucun nom n'entre
+> nulle part**.
+>
+> **La remontée.** En fin de séance, l'élève obtient un **code de restitution de 36
+> caractères** qu'il envoie par le canal qu'il utilise déjà (message, ENT, courriel).
+> L'enseignant colle le paquet en vrac dans `seances.html` → tableau de la classe, score,
+> réussite, durée, moyenne. Un code abîmé ou venu d'une autre séance est écarté et
+> signalé. Le fichier JSON reste le comportement hors séance : personne ne perd rien.
+>
+> ⚠️ **À redire chaque fois, c'est écrit dans les pages** : le sceau est un ANTI-ERREUR,
+> pas un anti-triche. Tous les élèves d'une séance partagent la même clé, et le
+> navigateur corrige donc l'élève a les réponses. Un élève peut prendre le numéro d'un
+> autre ou gonfler son score. **Ces résultats servent à suivre, pas à noter au bulletin.**
+>
+> **Le garde-fou à 100** est provisoire et augmentable — annoncé comme tel dans la page.
+> Il n'est pas une donnée à surveiller : c'est la borne de la boucle qui retrouve l'élève.
+>
+> **`comprendre-les-codes.html`** répond à la remarque de F. Henninot — « aujourd'hui on
+> a des codes mais on ne sait pas à quoi ils servent » : les trois codes en un tableau,
+> le chemin complet d'une séance en sept étapes, ce que le système protège **et ce qu'il
+> ne protège pas** côte à côte, et les questions qui reviennent.
+>
+> **150 contrôles au vert** (49 + 46 + 16 + 39), dont le nouveau `test-eleves.mjs`.
+> Deux choses trouvées en route : un test qui ne testait rien (condition toujours vraie,
+> remplacé), et le cas de collision désormais **provoqué** au banc plutôt que supposé
+> rare — l'enseignant est prévenu, et un code ambigu ne désigne personne.
+>
+> Vérifié dans le navigateur de bout en bout : séance → 12 cartons → l'élève tape
+> `jxw5` en minuscules et devient l'élève 03 → bilan de 36 caractères → dépouillement
+> « Élève 03, 14/20, 70 %, 37 min » avec le code abîmé écarté.
+> Détail : `.planning/2026-08-26-acces-enseignant/AE-6-SUIVI.md`.
+
+> ## 27/08 — ✅ AE-5 LIVRÉ : la fabrique des séances, et la porte formateur fermée
+>
+> **🔴 À FAIRE AVANT DE POUSSER, sinon vous vous fermez la porte à vous-même :**
+> `node build/delivrer-acces.mjs habilitation "Franck Henninot"` — puis coller le code
+> sur `activer.html`. Le portillon de `formateur.html` et `projection.html` n'accepte
+> plus le code court partagé. **Prévenir les collègues qui l'avaient**, avant la mise
+> en ligne : même leçon que la bascule du coffre la veille.
+>
+> **Ce qui existait déjà, et que j'ai failli réécrire :** le navigateur savait DÉJÀ
+> lire une séance (`lireCodeSeance`, `activerSeance`, `seanceDansAdresse` dans
+> `moteur/acces.js`), et `build/lib-acces.mjs` savait déjà en fabriquer. Il manquait
+> la fabrication CÔTÉ NAVIGATEUR — c'est l'enseignant qui signe, avec sa clé, chez lui.
+>
+> **L'identifiant de séance, posé juste à temps.** Sans lui, deux séances de même
+> libellé et de même date produisaient *exactement le même code* : « CAP IFCA groupe A »
+> du mardi ne se distinguait pas de celui du jeudi. Huit octets tirés au hasard, ajoutés
+> **avant qu'aucun code de séance n'ait circulé** — après, le format aurait été figé.
+> ▶ C'est aussi lui qui permettra de rattacher un bilan d'élève à SA séance, quelle que
+> soit la voie de remontée retenue. La voie n'est pas tranchée : F. Henninot veut en
+> parler d'abord (hors ligne par QR / serveur / fichier outillé).
+>
+> **Les pièces neuves :** `seances.html` (la fabrique : libellé + date → lien et QR,
+> mode projection plein écran, journal local des séances), `moteur/qr.js` (encodeur QR
+> autonome, zéro dépendance — un CDN aurait rompu la promesse « rien ne part sur
+> internet »), `build/test-fabrique.mjs` et `build/test-qr.mjs`.
+>
+> **96 contrôles au vert** (49 + 31 + 16). Le plus utile est `test-fabrique.mjs` : il
+> fait FABRIQUER une séance par `moteur/acces.js` et la fait LIRE par
+> `build/lib-acces.mjs`, puis l'inverse — comparer des constantes ne prouvait rien du
+> résultat, cet aller-retour rougit si un octet bouge d'un côté.
+>
+> **Le piège d'usage corrigé en chemin :** `activerSeance()` écrasait l'accès rangé.
+> L'enseignant qui scannait son propre QR pour vérifier perdait son code maître. Une
+> séance se pose maintenant SUR l'accès enseignant sans le remplacer.
+>
+> **Vérifié dans le navigateur**, pas seulement au banc : sans accès, la fabrique ne
+> montre aucun formulaire et l'appel direct renvoie `PAS_TITULAIRE` ; avec le code, une
+> séance se fabrique (QR version 16, correction M, 81 modules) ; le lien ouvre bien la
+> séance ; l'ancienne clé `pilote_acces_fluides-habilitation` **est encore dans le
+> navigateur et n'ouvre plus rien** — le pack pilote ne se charge pas.
+>
+> ⏭️ Reste : le scan par un vrai téléphone (F. Henninot seul peut le faire), la voie de
+> remontée des résultats à trancher, et l'extension aux autres produits (AE-6).
+> Détail complet : `.planning/2026-08-26-acces-enseignant/AE-5-SUIVI.md`.
+
 > ## 26/08 — PISTES GARDÉES, non lancées (décision F. Henninot)
 >
 > **La remontée des bilans de séance.** Aujourd'hui l'élève télécharge un fichier
