@@ -1,0 +1,178 @@
+:root{--navy:#1b3a63;--ink:#10233c;--blue:#3d7fca;--orange:#ff6b35;--orange-text:#c9451a;--cream:#f7f1e7;--paper:#fffdf8;--muted:#637285;--line:rgba(27,58,99,.18);--ok:#1e7e54;--bad:#c0392b;--wait:#b06a00;--shadow:0 16px 42px rgba(27,58,99,.12)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--cream);color:var(--ink);font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif}button,a{font:inherit}button{cursor:pointer}.topbar{height:72px;padding:10px clamp(12px,3vw,34px);display:flex;align-items:center;gap:18px;border-bottom:1px solid var(--line);background:var(--paper)}.brand{display:flex;align-items:center;text-decoration:none;flex:0 0 auto}.brand .logo{height:52px;width:auto;display:block}.signature{color:var(--muted);margin-left:10px}.title-block{display:flex;flex-direction:column;min-width:0}.title-block strong{font:700 22px "Trebuchet MS",Calibri,Arial,sans-serif;color:var(--navy)}.title-block span{font-size:13px;color:var(--muted)}.nav-reseaux{display:flex;gap:12px}.nav-reseaux a{color:var(--navy);font:700 12px "Trebuchet MS",Calibri,sans-serif;text-decoration:none;border-bottom:2px solid var(--line);padding-bottom:2px;white-space:nowrap}.nav-reseaux a:hover{border-bottom-color:var(--navy)}.voice-rate{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--muted);white-space:nowrap}.voice-rate input[type=range]{width:120px}.voice-rate output{color:var(--navy);font-family:Consolas,monospace;min-width:48px;text-align:right}.voice-pick{border:1px solid var(--line);background:var(--paper);color:var(--navy);border-radius:999px;padding:7px 11px;font:700 14px Calibri,"Segoe UI",sans-serif}.voice-pick[hidden]{display:none}.network-view{width:min(1220px,calc(100% - 24px));margin:auto;padding:16px 0}.intro{display:grid;grid-template-columns:1.2fr .8fr;align-items:end;gap:22px}.eyebrow{margin:0 0 4px;color:var(--orange-text);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px}.intro h1{margin:0;color:var(--navy);font:700 clamp(27px,4vw,45px)/1.05 "Trebuchet MS",Calibri,Arial,sans-serif}.intro>p{margin:0;color:var(--muted);line-height:1.5}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:14px 0}.level-switch{display:flex;gap:6px;background:var(--paper);padding:5px;border:1px solid var(--line);border-radius:999px}.level-switch button,.small-button,.lesson-nav button{border:1px solid var(--line);background:var(--paper);color:var(--navy);border-radius:999px;padding:8px 13px;font-weight:700}.level-switch button.active{background:var(--navy);color:white;border-color:var(--navy)}.primary{border:0!important;background:var(--navy)!important;color:white!important;border-radius:999px;padding:10px 18px;font-weight:800}.map-shell{height:min(63vh,650px);min-height:430px;background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.map-shell svg{display:block;width:100%;height:100%}.route{fill:none;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;opacity:.82}.station-node{cursor:pointer}.station-node circle{fill:var(--paper);stroke-width:5}.station-node:hover circle,.station-node:focus circle{fill:#fff4e0;stroke-width:8}.station-node text{font:700 13px Calibri,"Segoe UI",sans-serif;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:5px;stroke-linejoin:round}.station-node .code{font:800 11px Consolas,monospace;stroke-width:4px}.station-node:focus{outline:none}.line-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.line-chip{border:2px solid var(--line-color);border-radius:999px;background:var(--paper);padding:6px 10px;color:var(--ink);font-weight:700}.status-note{font-size:13px;color:var(--muted);margin:9px 3px}.station-view{height:calc(100dvh - 72px);padding:10px;display:grid;grid-template-columns:180px minmax(0,1fr);grid-template-rows:minmax(0,1fr);gap:10px;overflow:hidden}.station-view[hidden]{display:none}.station-rail,.lesson-card{background:var(--paper);border:1px solid var(--line);border-radius:18px}.station-rail{padding:10px;overflow:hidden}.station-progress{display:grid;gap:5px;margin-top:10px}.progress-stop{border:1px solid var(--line);background:transparent;text-align:left;border-radius:10px;padding:7px;color:var(--muted);font-size:12px}.progress-stop.current{border:2px solid var(--line-color);color:var(--ink);font-weight:800}.progress-stop.done::before{content:"✓ ";color:var(--ok)}.lesson-card{min-width:0;min-height:0;height:100%;padding:clamp(10px,1.6vw,22px);display:grid;grid-template-rows:auto minmax(0,1fr) auto;box-shadow:var(--shadow)}.lesson-head{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding-bottom:8px}.lesson-head h2{font:700 clamp(23px,3vw,38px)/1.05 "Trebuchet MS",Calibri,Arial,sans-serif;color:var(--navy);margin:0}.competence{margin:5px 0 0;color:var(--muted);font-size:13px}.lesson-actions{display:flex;gap:6px;align-items:flex-start}.lesson-grid{min-height:0;display:grid;grid-template-columns:minmax(250px,.85fr) minmax(390px,1.35fr);gap:16px;padding:12px 0}.lesson-copy{min-height:0;overflow:auto;line-height:1.5;background:linear-gradient(var(--paper) 34%,rgba(255,253,248,0)) top/100% 26px local no-repeat,linear-gradient(rgba(255,253,248,0),var(--paper) 66%) bottom/100% 26px local no-repeat,radial-gradient(farthest-side at 50% 0,rgba(27,58,99,.34),rgba(27,58,99,0)) top/100% 16px scroll no-repeat,radial-gradient(farthest-side at 50% 100%,rgba(27,58,99,.34),rgba(27,58,99,0)) bottom/100% 16px scroll no-repeat}.lesson-copy>p{margin-top:0}.method-box{display:grid;gap:4px;border-left:5px double var(--ok);padding:9px 11px;background:#f8fffb;border-radius:8px}.formula{font:700 clamp(15px,2vw,21px) Consolas,monospace;color:var(--navy);padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--cream)}.activity{min-height:0;border:1px solid var(--line);border-radius:16px;background:linear-gradient(#fff 34%,rgba(255,255,255,0)) top/100% 26px local no-repeat,linear-gradient(rgba(255,255,255,0),#fff 66%) bottom/100% 26px local no-repeat,radial-gradient(farthest-side at 50% 0,rgba(27,58,99,.3),rgba(27,58,99,0)) top/100% 14px scroll no-repeat,radial-gradient(farthest-side at 50% 100%,rgba(27,58,99,.3),rgba(27,58,99,0)) bottom/100% 14px scroll no-repeat,#fff;display:grid;align-content:safe center;overflow:auto;padding:14px}.scene{width:100%;max-height:42vh}.duct{fill:none;stroke:#84b7ec;stroke-width:34;stroke-linecap:round}.air-flow{fill:none;stroke:var(--blue);stroke-width:5;stroke-dasharray:12 14;animation:flow 1.4s linear infinite}.fan{transform-origin:center;animation:spin 2.5s linear infinite}.readout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.control-card{border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--paper)}.control-card label{display:block;font-weight:700;color:var(--navy)}input[type=range]{width:100%;accent-color:var(--blue)}.result{border-left:5px double var(--ok);padding:9px;margin-top:10px;background:#f3fbf7;border-radius:8px;font-weight:700;position:sticky;bottom:0;z-index:1;box-shadow:0 -6px 12px rgba(255,255,255,.9)}.choices{display:grid;gap:7px}.choices button{text-align:left;border:2px solid var(--line);background:var(--paper);border-radius:12px;padding:10px;color:var(--ink)}.choices button.correct{border:5px double var(--ok);background:#e3f5ec}.choices button.wrong{border:3px dashed var(--bad);background:#fbe7e4}.feedback{min-height:2.5em;margin:8px 0 0}.lesson-nav{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;border-top:1px solid var(--line);padding-top:9px}.lesson-nav button:last-child{justify-self:end}.lesson-nav span{font-size:13px;color:var(--muted)}button:focus-visible,a:focus-visible{outline:3px solid rgba(255,107,53,.5);outline-offset:3px}@keyframes flow{to{stroke-dashoffset:-52}}@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:760px){.topbar{height:58px;padding:7px 8px;gap:6px}.brand .logo{height:34px}.voice-rate{font-size:0;gap:4px;margin-left:auto}.voice-rate input[type=range]{width:48px}.voice-rate output{display:none}.voice-pick{font-size:11px;padding:5px 5px;max-width:58px}#voiceButton{font-size:0;padding:6px 9px}#voiceButton::first-letter{font-size:15px}.title-block span{display:none}.nav-reseaux{display:none}.network-view{width:calc(100% - 8px);padding:7px 0}.intro{grid-template-columns:1fr}.intro>p{display:none}.toolbar{margin:7px 0}.level-switch button{font-size:11px;padding:6px 8px}#startButton{font-size:11px;padding:8px 10px}.map-shell{height:calc(100dvh - 190px);min-height:380px}.line-legend,.status-note{display:none}.station-view{height:calc(100dvh - 58px);padding:4px;grid-template-columns:1fr;grid-template-rows:36px minmax(0,1fr)}.station-rail{display:flex;padding:3px;overflow-x:auto}.station-rail>.small-button{flex:0 0 auto;padding:4px 9px}.station-progress{display:flex;margin:0 0 0 5px;gap:3px}.progress-stop{width:34px;overflow:hidden;white-space:nowrap;padding:4px;font-size:0}.progress-stop::after{content:attr(data-index);font-size:11px}.lesson-card{border-radius:12px;padding:7px}.lesson-head h2{font-size:21px}.competence{font-size:10px}.lesson-actions .small-button{font-size:0;padding:6px}.lesson-actions .small-button::first-letter{font-size:15px}.lesson-grid{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:6px;padding:6px 0}.lesson-copy{font-size:12px;line-height:1.25}.method-box{padding:5px 8px}.formula{font-size:13px;padding:5px}.activity{padding:7px}.scene{max-height:27vh}.lesson-nav{gap:4px}.lesson-nav button{padding:6px 8px;font-size:11px}.lesson-nav span{font-size:10px}.readout{gap:4px}.control-card{padding:6px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.station-node:hover circle{stroke-width:6}}
+/* La carte : six tracés d'épaisseur égale, distingués par leur motif autant que par
+   leur couleur, et quatre formes de gare qui disent le rôle sans recourir à la teinte. */
+.route{fill:none;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;opacity:.9;transition:opacity .18s}
+.route[data-line="V"]{stroke-dasharray:26 10}
+.route[data-line="C"]{stroke-dasharray:14 9}
+.route[data-line="D"]{stroke-dasharray:46 10}
+.route[data-line="T"]{stroke-dasharray:30 9 6 9}
+.route[data-line="M"]{stroke-dasharray:8 9}
+.route.muted{opacity:.08}
+.station-node{transition:opacity .18s}
+.station-node.muted{opacity:.2}
+/* Couronne segmentée : un arc par ligne desservie, séparés par une coupure franche.
+   `butt` et non `round` : c'est ce qui garde la coupure nette en photocopie. */
+.gare-fond{fill:var(--paper);stroke:none}
+.gare-arc{fill:none;stroke-width:6;stroke-linecap:butt;stroke-dasharray:none}
+.major-interchange .gare-arc{stroke-width:7}
+.station-node .terminus{fill:var(--paper);stroke-width:5;stroke-dasharray:none}
+.station-node:hover .gare-fond,.station-node:focus .gare-fond{fill:#fff4e0}
+.station-node:hover .gare-arc,.station-node:focus .gare-arc{stroke-width:9}
+.station-node:hover .terminus,.station-node:focus .terminus{fill:#fff4e0;stroke-width:7}
+.station-node .station-label{font-size:15px;font-weight:700}
+.station-node.major-interchange .station-label{font-size:16px;font-weight:800}
+.station-node .code{font-size:12px}.line-chip.active{box-shadow:inset 0 0 0 2px var(--line-color);text-decoration:underline;text-underline-offset:3px}.interchange-switch{display:flex;align-items:center;gap:5px;min-height:26px;margin-top:4px;color:var(--muted);font-size:12px}.interchange-switch button{width:27px;height:25px;padding:0;border:2px solid var(--line-color);border-radius:999px;background:var(--paper);font-weight:800;color:var(--ink)}.interchange-switch button.active{background:var(--navy);color:white;box-shadow:0 0 0 2px var(--line-color)}
+@media(max-width:760px){.interchange-switch{min-height:20px;font-size:10px}.interchange-switch button{width:23px;height:21px;font-size:10px}.station-node .station-label{font-size:11px}}
+
+/* Parcours complet d'une station : découverte, compréhension, manipulation, vérification. */
+.lesson-card{grid-template-rows:auto auto minmax(0,1fr) auto}
+.phase-progress{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:9px 0;border-bottom:1px solid var(--line)}
+.phase-progress[hidden]{display:none}
+.method-box[hidden],.formula[hidden]{display:none}
+.phase-progress button{min-width:0;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--muted);padding:7px;font-size:12px;font-weight:800}
+.phase-progress button span{display:inline-grid;place-items:center;width:20px;height:20px;margin-right:5px;border-radius:50%;background:var(--cream);color:var(--navy)}
+.phase-progress button.active{border-color:var(--navy);background:var(--navy);color:#fff}
+.phase-progress button.active span{background:var(--orange);color:var(--ink)}
+.phase-progress button.done{border-color:var(--ok);color:var(--ok)}
+.phase-progress button:disabled{cursor:not-allowed;opacity:.45}
+.concept-panel{display:grid;gap:18px;align-content:center}
+.concept-flow,.method-sequence{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:9px}
+.concept-step{min-width:0;min-height:115px;display:grid;place-items:center;align-content:center;gap:9px;padding:14px;text-align:center;border:2px solid var(--blue);border-radius:16px;background:var(--paper);animation:concept-pulse 4.5s ease-in-out infinite;animation-delay:calc(var(--step)*1.5s)}
+.concept-step span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900}
+.concept-step strong{overflow-wrap:anywhere}
+.concept-arrow{align-self:center;color:var(--orange-text);font-size:28px;font-weight:900}
+.method-sequence .concept-step{border-color:var(--ok)}
+.concept-caption{margin:0;padding:10px;border-left:5px double var(--orange);background:#fff8ef;border-radius:8px;line-height:1.45}
+@keyframes concept-pulse{0%,26%,100%{background:var(--paper);transform:translateY(0)}10%{background:#fff0dc;transform:translateY(-5px)}}
+
+@media(max-width:760px){
+  .phase-progress{gap:3px;padding:5px 0}
+  .phase-progress button{padding:5px 2px;font-size:10px}
+  .phase-progress button span{width:17px;height:17px;margin-right:2px;font-size:10px}
+  .lesson-grid{padding:5px 0}
+  .concept-panel{gap:7px}
+  .concept-flow,.method-sequence{gap:3px}
+  .concept-step{min-height:74px;padding:5px;gap:4px;border-radius:9px;font-size:10px}
+  .concept-step span{width:20px;height:20px;font-size:10px}
+  .concept-arrow{font-size:15px}
+  .concept-caption{padding:5px;font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){.air-flow,.fan,.concept-step{animation:none}}
+
+/* ---------- Les primitives des scènes ----------
+   Chaque pièce se reconnaît à sa forme : gaine à parois parallèles, caisson à coins vifs,
+   batterie à serpentin et ailettes. La couleur ne fait que confirmer. */
+.scene{width:100%;max-height:44vh;overflow:visible}
+.pi-gaine{fill:none;stroke:var(--navy);stroke-width:3;stroke-linecap:square}
+/* L about d une gaine circulaire : l ellipse vue en bout de tube. Elle dit que la section
+   est ronde et pas carree, par la forme seule — donc elle tient en noir et blanc. */
+.pi-about{fill:none;stroke:var(--navy);stroke-width:2.5}
+.pi-flux{fill:none;stroke:var(--blue);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+/* L air coule : la file de chevrons se translate d exactement un pas, en boucle.
+   Un chevron de reserve dessine en amont et une decoupe rendent la boucle sans raccord. */
+.pi-coule{animation:pi-defile var(--duree,1.4s) linear infinite}
+@keyframes pi-defile{from{transform:translate(0,0)}to{transform:translate(var(--px,0px),var(--py,0px))}}
+.pi-caisson{fill:var(--paper);stroke:var(--navy);stroke-width:3}
+.pi-ailette{fill:none;stroke:var(--navy);stroke-width:1.5;opacity:.45}
+.pi-serpentin{fill:none;stroke:var(--navy);stroke-width:3.5;stroke-linecap:round}
+.pi-capteur{fill:var(--paper);stroke:var(--navy);stroke-width:2.5}
+.pi-tige{fill:none;stroke:var(--navy);stroke-width:2.5}
+.pi-point{fill:var(--orange);stroke:var(--navy);stroke-width:1.5}
+.pi-mot{font:14px Calibri,"Segoe UI",sans-serif;fill:var(--muted)}
+.pi-fort{font:700 15px Calibri,"Segoe UI",sans-serif;fill:var(--ink)}
+.pi-cote{fill:none;stroke:var(--muted);stroke-width:1.5}
+.pi-mur,.pi-sol{fill:none;stroke:var(--navy);stroke-width:4}
+.pi-contenant{fill:none;stroke:var(--navy);stroke-width:3}
+.pi-vapeur{fill:var(--blue)}
+.pi-fleche{fill:none;stroke:var(--orange-text);stroke-width:3;marker-end:url(#pointe)}
+.pi-eventail{marker-end:none}
+.pi-goutte{fill:var(--blue)}
+.pi-paroi{fill:#dbe8f6;stroke:var(--navy);stroke-width:3}
+.pi-coupe{fill:none;stroke:var(--orange-text);stroke-width:2.5;stroke-dasharray:7 6}
+.pi-section{fill:#dbe8f6;stroke:var(--navy);stroke-width:3}
+.pi-profil{fill:none;stroke:var(--blue);stroke-width:2.5;stroke-linecap:round}
+.pi-enveloppe{fill:none;stroke:var(--orange-text);stroke-width:2.5}
+.pi-plaque{fill:none;stroke:var(--navy);stroke-width:1.5;opacity:.45}
+.pi-axe{fill:none;stroke:var(--navy);stroke-width:2.5}
+.pi-marche{fill:none;stroke:var(--orange-text);stroke-width:3;stroke-linejoin:miter}
+.pi-repere{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 5}
+.pi-courbe{fill:none;stroke-width:3.5;stroke-linecap:round}
+.pi-ventilateur{stroke:var(--navy)}
+.pi-reseau{stroke:var(--orange-text);stroke-dasharray:12 7}
+.pi-croisement{fill:var(--orange);stroke:var(--navy);stroke-width:3}
+.pi-bac,.pi-siphon{fill:none;stroke:var(--navy);stroke-width:3}
+.pi-filtre{fill:var(--paper);stroke:var(--navy);stroke-width:3;stroke-dasharray:6 4}
+.pi-personne{fill:var(--paper);stroke:var(--navy);stroke-width:2.5}
+.pi-personne-corps{fill:none;stroke:var(--navy);stroke-width:2.5}
+.pi-liaison{fill:none;stroke:var(--muted);stroke-width:2;stroke-dasharray:5 5}
+.pi-souffle{fill:none;stroke:var(--navy);stroke-width:2}
+@media(max-width:760px){.scene{max-height:30vh}.pi-mot{font-size:12px}.pi-fort{font-size:13px}}
+/* Le mouvement s arrete, le dessin reste entier : le sens est porte par la forme du
+   chevron, jamais par le deplacement. */
+@media(prefers-reduced-motion:reduce){.pi-coule{animation:none}}
+/* En phase Manipuler, la scène partage la place avec les curseurs et le résultat.
+   Sans cette limite, le résultat du calcul passe sous la ligne de flottaison et
+   l'élève doit faire défiler pour voir ce que sa manipulation a produit. */
+.activity:has(.control-card) .scene{max-height:26vh}
+@media(max-width:760px){.activity:has(.control-card) .scene{max-height:18vh}}
+/* Même contrainte quand la manipulation est un choix : la scène, la question et les
+   propositions doivent tenir ensemble, y compris sur un écran de téléphone. */
+.activity:has(.choices) .scene{max-height:24vh}
+/* Sur un écran de téléphone, la question et ses trois propositions ne laissent pas
+   la place à une scène lisible : la rogner ne rendrait service à personne. On la retire
+   ici — l elève l a vue en Découvrir, et le texte équivalent reste dans la page. */
+@media(max-width:760px){.activity:has(.choices) .scene{display:none}}
+/* Les textes rédigés d'une station. `pre-line` garde les paragraphes de l'explication :
+   le raisonnement se lit par étapes, pas en un seul bloc. */
+#stationText{white-space:pre-line}
+.lecture{border-left:5px double var(--blue);background:#f4f8fd;border-radius:8px;padding:9px 11px;margin:10px 0 0}
+.limites{border-left:5px double var(--wait);background:#fff8ef;border-radius:8px;padding:9px 11px;margin:8px 0 0;font-size:15px;color:var(--muted)}
+.lecture[hidden],.limites[hidden]{display:none}
+@media(max-width:760px){.lecture,.limites{padding:5px 8px;font-size:12px}}
+/* En Comprendre, le raisonnement occupe plusieurs paragraphes : le texte prend la main,
+   sinon il défile dans une colonne étroite pendant que la moitié droite reste vide. */
+.lesson-grid[data-phase="0"] .scene{max-height:28vh}.lesson-grid[data-phase="0"] .concept-step{min-height:64px;padding:8px}.lesson-grid[data-phase="0"] .concept-panel{gap:9px}.lesson-grid[data-phase="0"] .concept-caption{padding:7px 10px;font-size:14px;line-height:1.4}.lesson-grid[data-phase="2"] .scene{max-height:27vh}.lesson-grid[data-phase="1"]{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}.lesson-grid[data-phase="1"] .method-sequence{gap:7px}.lesson-grid[data-phase="1"] .concept-step{min-height:0;padding:8px 9px;gap:6px;animation:none}.lesson-grid[data-phase="1"] .concept-step strong{font-size:14px;line-height:1.35}.lesson-grid[data-phase="1"] .concept-arrow{font-size:19px}.lesson-grid[data-phase="1"] .concept-panel{gap:9px;align-content:start}.lesson-grid[data-phase="1"] .concept-caption{padding:8px 11px;font-size:14px}.lesson-grid[data-phase="1"] .activity{align-content:start}.lesson-card:has(.lesson-grid[data-phase="1"]) .lesson-head h2{font-size:clamp(21px,2.1vw,27px)}.lesson-card:has(.lesson-grid[data-phase="1"]) .lesson-head{padding-bottom:5px}.lesson-card:has(.lesson-grid[data-phase="1"]) .competence{margin-top:2px;font-size:12px}.lesson-card:has(.lesson-grid[data-phase="1"]) .phase-progress{padding:6px 0}.lesson-card:has(.lesson-grid[data-phase="1"]) .lesson-grid{padding:9px 0}
+@media(max-width:760px){.lesson-grid[data-phase="1"]{grid-template-columns:1fr}}
+/* Sur téléphone, le texte et l'activité sont empilés. Tant que les stations étaient
+   vides, le texte tenait en trois lignes ; rempli, il pousse la scène hors du cadre.
+   On lui donne un plafond et il défile chez lui — forcer un partage à parts fixes
+   écrase l'activité quand le texte est court, ce qui est pire. */
+@media(max-width:760px){.lesson-copy{max-height:26vh;overflow:auto}}
+
+/* ---------- Les animations qui enseignent ----------
+   Chacune porte une notion, aucune n'est décorative. Toutes s'arrêtent sous
+   prefers-reduced-motion, et le dessin reste alors compréhensible. */
+
+/* L'air humide : c'est la CAPACITÉ de l'air qui grandit avec la température,
+   pas la quantité de vapeur. Le contenant respire, les points ne bougent pas. */
+.pi-capacite{transform-box:fill-box;transform-origin:bottom;animation:pi-respire 6s ease-in-out infinite}
+@keyframes pi-respire{0%,100%{transform:scaleY(.6)}45%,60%{transform:scaleY(1)}}
+
+/* Le point de rosée : la buée se dépose goutte après goutte sur la paroi froide. */
+.pi-goutte{animation:pi-buee 5s ease-in-out infinite;animation-delay:calc(var(--i,0)*.45s)}
+@keyframes pi-buee{0%,14%{opacity:0;transform:translateY(-5px)}34%,86%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(3px)}}
+
+/* Les pertes de charge : un repère descend le long du profil de pression. On voit
+   la pente douce des portions droites, puis la chute franche à chaque accident. */
+.pi-descente{fill:var(--orange);stroke:var(--paper);stroke-width:2;offset-distance:0%;animation:pi-parcours 7s linear infinite}
+@keyframes pi-parcours{from{offset-distance:0%}to{offset-distance:100%}}
+
+/* Le point de fonctionnement : il glisse le long de la courbe du ventilateur quand
+   le réseau se referme. C'est le déplacement qui se retient, pas la position. */
+.pi-glisse{offset-distance:58%;animation:pi-fonctionnement 6s ease-in-out infinite alternate}
+@keyframes pi-fonctionnement{from{offset-distance:36%}to{offset-distance:78%}}
+
+/* La mesure de débit : les relevés s'allument l'un après l'autre, puis on en fait
+   la moyenne. C'est la répartition dans la section qui compte, pas un point unique. */
+.pi-releve{animation:pi-releve-tour 7s linear infinite;animation-delay:calc(var(--i,0)*.32s)}
+@keyframes pi-releve-tour{0%,4%{fill:var(--paper);r:3}10%,58%{fill:var(--orange);r:5}70%,100%{fill:var(--paper);r:3}}
+
+@media(prefers-reduced-motion:reduce){
+  .pi-capacite,.pi-goutte,.pi-descente,.pi-glisse,.pi-releve{animation:none}
+  /* sans mouvement, la buée et les relevés doivent rester visibles */
+  .pi-goutte{opacity:1}
+  .pi-releve{fill:var(--orange)}
+}

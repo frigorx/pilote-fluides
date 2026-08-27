@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AéroRézo, réseau pédagogique aéraulique inerWeb du CAP au BTS.">
+  <title>AéroRézo — du CAP au BTS</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="print.css" media="print">
+</head>
+<body>
+  <header class="topbar">
+    <!-- Logo figé, § 3.4 de la charte : seul le mot du cartouche change d'un module à l'autre.
+         L'orange du logo est #e8914a, distinct de l'orange d'accent du contenu. -->
+    <a class="brand" href="./" aria-label="Accueil AéroRézo, un module inerWeb">
+      <svg class="logo" viewBox="0 0 310 66" role="img" aria-label="inerWeb AéroRézo">
+        <text fill="#1b3a63" font-size="36" x="10" y="50">❄️</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32" font-weight="bold" x="55" y="48">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32" x="115" y="48">Web</text>
+        <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+        <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="112" height="30"/>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" x="246" y="29" text-anchor="middle">AéroRézo</text>
+      </svg>
+    </a>
+    <div class="title-block"><span>De l’air observé à l’installation calculée</span></div>
+    <!-- Sans ces deux liens, un élève arrivé ici ne peut plus retourner au site :
+         le logo ramène à l'accueil d'AéroRézo, pas à inerWeb.
+         Chemins RELATIFS, et non l'adresse du site comme le fait HydroMétro :
+         `node tests/qa.mjs` refuse toute URL distante, parce que le réseau doit
+         rester utilisable hors ligne. Ils visent le dossier parent, c'est-à-dire
+         la racine du site une fois AéroRézo servi dedans. -->
+    <nav class="nav-reseaux" aria-label="Les autres réseaux inerWeb">
+      <a href="../">⇄ Le réseau thermo-techno</a>
+      <a href="../hydrometro/">⇄ HydroMétro</a>
+    </nav>
+    <!-- Réglage du débit de la voix : un élève qui apprend le français ralentit,
+         un élève qui révise accélère. Obligatoire — 00-charte/VOIX-ET-NARRATION.md. -->
+    <label class="voice-rate" for="voiceRate">Vitesse
+      <input type="range" id="voiceRate" min="0.6" max="1.4" step="0.05" value="0.95">
+      <output id="voiceRateOut" for="voiceRate">0,95×</output>
+    </label>
+    <select id="voicePick" class="voice-pick" aria-label="Voix de lecture" hidden></select>
+    <button id="voiceButton" class="small-button" type="button" aria-pressed="false">▶ Écouter</button>
+  </header>
+
+  <main id="app">
+    <section id="networkView" class="network-view" aria-labelledby="networkTitle">
+      <div class="intro">
+        <div><p id="networkStats" class="eyebrow">Réseau aéraulique · 6 lignes · 36 stations</p><h1 id="networkTitle">L’air se voit quand on sait le mesurer.</h1></div>
+        <p>Choisis ton niveau, puis une ligne. Le parcours va de la découverte au calcul et au diagnostic.</p>
+      </div>
+
+      <div class="toolbar" aria-label="Réglages du parcours">
+        <div class="level-switch" role="group" aria-label="Niveau de profondeur">
+          <button type="button" data-level="cap">CAP · N3</button>
+          <button type="button" data-level="bac" class="active" aria-pressed="true">Bac Pro · N4</button>
+          <button type="button" data-level="bts">BTS · N5</button>
+        </div>
+        <button id="startButton" class="primary" type="button">Commencer par les bases</button>
+      </div>
+
+      <div class="map-shell">
+        <svg id="networkMap" viewBox="0 0 1180 640" role="img" aria-labelledby="mapTitle mapDesc">
+          <title id="mapTitle">Plan interactif du réseau AéroRézo</title>
+          <desc id="mapDesc">Six lignes relient les stations Air, VMC, Distribution, Climatisation, CTA et Mesure-diagnostic.</desc>
+        </svg>
+      </div>
+      <div id="lineLegend" class="line-legend" aria-label="Lignes du réseau"></div>
+      <p class="status-note"><b>Brouillon technique local.</b> Les contenus devront recevoir un bon à tirer métier avant publication. <span class="signature">© inerWeb 2026</span></p>
+    </section>
+
+    <section id="stationView" class="station-view" hidden aria-live="polite">
+      <aside class="station-rail" aria-label="Progression dans la ligne">
+        <button id="backNetwork" class="small-button" type="button">← Réseau</button>
+        <div id="stationProgress" class="station-progress"></div>
+      </aside>
+      <article class="lesson-card">
+        <header class="lesson-head">
+          <div><p id="stationKicker" class="eyebrow"></p><h2 id="stationTitle"></h2><p id="stationCompetence" class="competence"></p><div id="interchangeSwitch" class="interchange-switch" aria-label="Correspondances de cette station"></div></div>
+          <div class="lesson-actions"><button id="stationVoice" class="small-button" type="button">▶ Écouter</button><button id="exitStation" class="small-button" type="button">Quitter</button></div>
+        </header>
+        <nav id="phaseProgress" class="phase-progress" aria-label="Étapes de la station"></nav>
+        <div class="lesson-grid">
+          <div class="lesson-copy">
+            <p id="stationText"></p>
+            <div id="methodBox" class="method-box"><strong>La méthode</strong><span id="stationMethod"></span></div>
+            <p id="stationFormula" class="formula"></p>
+            <p id="stationLecture" class="lecture"></p>
+            <p id="stationLimites" class="limites"></p>
+          </div>
+          <div id="activity" class="activity" aria-label="Manipulation interactive"></div>
+        </div>
+        <footer class="lesson-nav">
+          <button id="previousButton" type="button">← Station précédente</button>
+          <span id="stepStatus"></span>
+          <button id="nextButton" class="primary" type="button">Station suivante →</button>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+  <noscript>AéroRézo a besoin de JavaScript local pour afficher les stations. Aucun accès Internet n’est utilisé.</noscript>
+  <!-- MANIFESTES:DEBUT -->
+  <!-- Les 36 stations, chacune dans son dossier. Le réseau les charge comme des
+       briques : il ne recopie pas leur contenu. Liste tenue par outils/synchroniser-balises.mjs. -->
+  <script src="stations/air-circule/manifest.js"></script>
+  <script src="stations/pressions/manifest.js"></script>
+  <script src="stations/debit-vitesse/manifest.js"></script>
+  <script src="stations/hygrometrie/manifest.js"></script>
+  <script src="stations/rosee-psychro/manifest.js"></script>
+  <script src="stations/besoin-air/manifest.js"></script>
+  <script src="stations/simple-flux/manifest.js"></script>
+  <script src="stations/hygroreglable/manifest.js"></script>
+  <script src="stations/double-flux/manifest.js"></script>
+  <script src="stations/dimensionner-vmc/manifest.js"></script>
+  <script src="stations/conduits/manifest.js"></script>
+  <script src="stations/sections/manifest.js"></script>
+  <script src="stations/pertes-lineaires/manifest.js"></script>
+  <script src="stations/pertes-singulieres/manifest.js"></script>
+  <script src="stations/ventilateur-equilibrage/manifest.js"></script>
+  <script src="stations/apport-sensible/manifest.js"></script>
+  <script src="stations/apport-latent/manifest.js"></script>
+  <script src="stations/transmission/manifest.js"></script>
+  <script src="stations/internes-solaires/manifest.js"></script>
+  <script src="stations/air-neuf-selection/manifest.js"></script>
+  <script src="stations/architecture-cta/manifest.js"></script>
+  <script src="stations/melange-filtration/manifest.js"></script>
+  <script src="stations/batteries/manifest.js"></script>
+  <script src="stations/recuperation/manifest.js"></script>
+  <script src="stations/humidifier-reguler/manifest.js"></script>
+  <script src="stations/instruments/manifest.js"></script>
+  <script src="stations/mesure-debit/manifest.js"></script>
+  <script src="stations/pressions-reseau/manifest.js"></script>
+  <script src="stations/mesure-humidite/manifest.js"></script>
+  <script src="stations/diagnostic/manifest.js"></script>
+  <script src="stations/evaluation-a/manifest.js"></script>
+  <script src="stations/evaluation-v/manifest.js"></script>
+  <script src="stations/evaluation-d/manifest.js"></script>
+  <script src="stations/evaluation-c/manifest.js"></script>
+  <script src="stations/evaluation-t/manifest.js"></script>
+  <script src="stations/evaluation-m/manifest.js"></script>
+  <!-- MANIFESTES:FIN -->
+  <script src="programme.js"></script>
+  <script src="carte.js"></script>
+  <script src="scenes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
