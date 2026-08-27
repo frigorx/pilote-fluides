@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Console formateur — Habilitation fluides frigorigènes</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="moteur/charte-edu.css?v=f3b8b50f37">
-  <link rel="stylesheet" href="moteur/impression.css?v=f3b8b50f37" media="print">
+  <link rel="stylesheet" href="moteur/charte-edu.css?v=1a471d5ff4">
+  <link rel="stylesheet" href="moteur/impression.css?v=1a471d5ff4" media="print">
 </head>
 <body>
   <div id="app"></div>
@@ -15,20 +15,23 @@
        et rien à deviner — cette page est faite pour être projetée ou gardée
        sur l'écran de l'animateur.
 
-       CODE D'ACCÈS EXIGÉ (25/07) : rien ne se charge avant validation — ni le
-       pack pilote, ni le moteur. Rideau assumé, pas un coffre : voir l'en-tête
-       de `moteur/portillon.js` et REPRISE § 4. -->
+       ACCÈS ENSEIGNANT EXIGÉ (27/08) : rien ne se charge avant validation — ni
+       le pack pilote, ni le moteur. Ce n'est plus le code court partagé du
+       25/07 : depuis que cette console fabrique des séances, elle demande un
+       accès nominatif. Voir l'en-tête de `moteur/portillon.js` et REPRISE § 4.
+       `acces.js` passe AVANT le portillon : c'est lui qui juge. -->
   <script>window.PILOTE_MODE = "pilotage";</script>
-  <script src="moteur/portillon.js?v=f3b8b50f37"></script>
+  <script src="moteur/acces.js?v=1a471d5ff4"></script>
+  <script src="moteur/portillon.js?v=1a471d5ff4"></script>
   <script>
     Portillon.exiger("Console formateur", [
-      "packs/fluides/pack.pilote.js?v=f3b8b50f37",
-      "config.js?v=f3b8b50f37",
-      "moteur/moteur.js?v=f3b8b50f37"
+      "packs/fluides/pack.pilote.js?v=1a471d5ff4",
+      "config.js?v=1a471d5ff4",
+      "moteur/moteur.js?v=1a471d5ff4"
     ]);
   </script>
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
-<script src="moteur/lisibilite.js?v=f3b8b50f37"></script>
-<script src="moteur/marque.js?v=f3b8b50f37" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/lisibilite.js?v=1a471d5ff4"></script>
+<script src="moteur/marque.js?v=1a471d5ff4" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>

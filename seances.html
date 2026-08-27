@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="robots" content="noindex, nofollow">
+<title>Ouvrir une séance à une classe — inerWeb</title>
+<meta name="description" content="Fabriquer le code d'une séance : un lien et un QR code à projeter. Réservé aux titulaires d'un accès enseignant.">
+<style>
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --orange-clair:#ffe2d6;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+          --vert:#166534; --vert-clair:#dcfce7; --rouge:#9f1239; --rouge-clair:#ffe4e6;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  #contenu:focus { outline:none; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+  main { max-width:760px; margin:0 auto; padding:28px 20px 60px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:1.7rem; margin:.2em 0 .1em; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.15rem; margin:2em 0 .4em; }
+  .chapo { color:var(--mut); margin:0 0 1.6em; }
+  .carte { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r);
+           box-shadow:var(--ombre); padding:20px 22px; margin:0 0 20px; }
+  label { display:block; font-family:var(--titre); font-weight:bold; color:var(--bleu); margin:1em 0 .4em; }
+  label:first-child { margin-top:0; }
+  input, select { width:100%; padding:12px 14px; border:2px solid var(--ligne); border-radius:10px;
+                  background:#fff; color:var(--txt); font:16px/1.4 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  .aide { font-size:.9rem; color:var(--mut); margin:.35em 0 0; }
+  button { font-family:var(--titre); font-weight:bold; font-size:1rem; cursor:pointer;
+           border:0; border-radius:999px; padding:12px 26px; background:var(--bleu); color:#fff; }
+  button:hover { background:var(--bleu-clair); }
+  button.discret { background:transparent; color:var(--bleu); border:1px solid var(--ligne);
+                   padding:8px 18px; font-size:.92rem; }
+  button.discret:hover { background:var(--orange-clair); color:var(--txt); }
+  .rangee { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:18px; }
+  .verdict { margin-top:16px; padding:14px 16px; border-radius:10px; border-left:5px solid; display:none; }
+  .verdict.bon { display:block; background:var(--vert-clair); border-color:var(--vert); color:var(--vert); }
+  .verdict.mauvais { display:block; background:var(--rouge-clair); border-color:var(--rouge); color:var(--rouge); }
+  .verdict strong { display:block; font-family:var(--titre); font-size:1.05rem; margin-bottom:.2em; }
+  .note { font-size:.93rem; color:var(--mut); border-left:3px solid var(--orange-clair); padding-left:14px; }
+
+  /* Le résultat : le QR d'abord, il est ce qu'on vient chercher. */
+  #resultat { display:none; }
+  .qr { display:flex; justify-content:center; padding:8px 0 4px; }
+  .qr svg { max-width:100%; height:auto; border:1px solid var(--ligne); border-radius:8px; }
+  .lien { font:14px/1.5 Consolas,'Courier New',monospace; word-break:break-all;
+          background:#fff; border:1px solid var(--ligne); border-radius:10px; padding:12px 14px; margin:14px 0 0; }
+  .ident { font-family:var(--titre); font-weight:bold; color:var(--bleu); letter-spacing:.06em; }
+  ul.seances { list-style:none; margin:0; padding:0; }
+  ul.seances li { display:flex; justify-content:space-between; align-items:center; gap:14px;
+                  flex-wrap:wrap; padding:12px 0; border-bottom:1px solid var(--ligne); }
+  ul.seances li:last-child { border-bottom:0; }
+  .nomseance { font-family:var(--titre); font-weight:bold; color:var(--bleu); }
+  .detail { color:var(--mut); font-size:.92rem; }
+  .vide { color:var(--mut); font-style:italic; margin:0; }
+
+  /* Projection : le QR seul, aussi grand que l'écran le permet. */
+  #projection { position:fixed; inset:0; background:#fff; z-index:500; display:none;
+                flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:20px; }
+  #projection.ouverte { display:flex; }
+  #projection svg { width:min(78vh,78vw); height:auto; }
+  #projection .quoi { font-family:var(--titre); font-size:clamp(1.1rem,3vw,1.9rem); color:var(--bleu); text-align:center; }
+  #projection .ident { font-size:clamp(.9rem,2vw,1.2rem); color:var(--mut); }
+  textarea { width:100%; padding:12px 14px; border:2px solid var(--ligne); border-radius:10px;
+             background:#fff; color:var(--txt); resize:vertical;
+             font:14px/1.5 Consolas,'Courier New',monospace; word-break:break-all; }
+
+  /* Les cartons d'élève : faits pour être imprimés puis découpés. */
+  #cartonsCarte { display:none; }
+  .cartons { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin-top:14px; }
+  .carton { border:1px dashed var(--ligne); border-radius:10px; padding:10px 12px; background:#fff; }
+  .carton .num { font-size:.82rem; color:var(--mut); }
+  .carton .code { font-family:var(--titre); font-size:1.5rem; font-weight:bold;
+                  color:var(--bleu); letter-spacing:.14em; margin:.1em 0; }
+  .carton .nom { border-bottom:1px solid var(--ligne); height:1.4em; margin-top:.3em; }
+  .carton .quoi { font-size:.72rem; color:var(--mut); margin-top:.35em; }
+
+  /* Le tableau des résultats */
+  table.res { width:100%; border-collapse:collapse; margin-top:16px; font-size:.95rem; }
+  table.res th, table.res td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--ligne); }
+  table.res th { font-family:var(--titre); color:var(--bleu); }
+  table.res td.score { font-family:var(--titre); font-weight:bold; }
+  table.res tr.rate td { color:var(--rouge); }
+  .resume { margin-top:12px; font-size:.95rem; color:var(--mut); }
+
+  @media print {
+    .carte, h1, .chapo, .note, button, h2 { display:none; }
+    #resultat, #resultat .qr { display:block; }
+    #resultat .qr { display:flex; }
+    /* L'impression des cartons : eux seuls, en pleine page. */
+    body.impression-cartons #cartonsCarte { display:block; box-shadow:none; border:0; padding:0; }
+    body.impression-cartons #cartonsCarte h2 { display:block; }
+    body.impression-cartons #resultat, body.impression-cartons .no-print { display:none; }
+    body.impression-cartons .cartons { grid-template-columns:repeat(4,1fr); }
+    body.impression-cartons .carton { break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+<main id="contenu" tabindex="-1">
+
+  <h1>Ouvrir une séance à une classe</h1>
+  <p class="chapo">Vous fabriquez ici un <strong>lien et son QR code</strong>. En classe, vous
+  projetez le QR&nbsp;: les élèves le scannent et le contenu s'ouvre. Rien à dicter, rien à
+  installer, aucun compte à créer.</p>
+
+  <!-- Le garde. Sans accès enseignant, la page ne montre pas de formulaire :
+       elle dit pourquoi et où aller. -->
+  <div class="carte" id="barriere" style="display:none">
+    <h2 style="margin-top:0">Il faut d'abord votre accès enseignant</h2>
+    <p>Fabriquer une séance revient à <strong>signer</strong> un accès en votre nom. Cela
+    demande le code enseignant qui vous a été délivré — celui d'un produit précis.</p>
+    <p class="rangee">
+      <a href="activer.html"><button type="button">Coller mon code d'accès</button></a>
+      <a href="demander-un-acces.html" class="detail">Je n'en ai pas encore</a>
+    </p>
+  </div>
+
+  <div class="carte" id="fabrique" style="display:none">
+    <label for="produit">Le produit à ouvrir</label>
+    <select id="produit"></select>
+    <p class="aide" id="quiSigne"></p>
+
+    <label for="libelle">Le nom de la séance</label>
+    <input id="libelle" type="text" maxlength="80" placeholder="CAP IFCA — groupe A" autocomplete="off">
+    <p class="aide">Pour vous y retrouver. Les élèves ne le voient pas.</p>
+
+    <label for="fin">Ouverte jusqu'au</label>
+    <input id="fin" type="date">
+    <p class="aide" id="aideFin">Passé cette date, le lien n'ouvre plus rien.</p>
+
+    <label for="combien">Combien d'élèves</label>
+    <input id="combien" type="number" min="1" max="100" step="1" value="30">
+    <p class="aide">Chaque élève recevra un code personnel de quatre caractères, pour que
+    vous sachiez qui a fait quoi. <strong>Limite provisoire : 100 par séance.</strong>
+    Si vous en avez besoin de plus, demandez-le — c'est un nombre à changer, rien d'autre.</p>
+
+    <p class="rangee">
+      <button id="fabriquer" type="button">Fabriquer le code de séance</button>
+    </p>
+    <div class="verdict" id="verdict" role="status" aria-live="polite"></div>
+  </div>
+
+  <div class="carte" id="resultat">
+    <h2 style="margin-top:0" id="titreResultat"></h2>
+    <div class="qr" id="qr"></div>
+    <p class="detail" style="text-align:center">Séance <span class="ident" id="identifiant"></span></p>
+    <p class="lien" id="lien"></p>
+    <p class="rangee">
+      <button id="projeter" type="button">Projeter en grand</button>
+      <button id="copier" class="discret" type="button">Copier le lien</button>
+      <button id="imprimer" class="discret" type="button">Imprimer</button>
+    </p>
+  </div>
+
+  <div class="carte" id="cartonsCarte">
+    <h2 style="margin-top:0">Les codes de vos élèves</h2>
+    <p class="aide">Imprimez cette page, découpez, distribuez. Chaque élève ouvre le lien
+    de la séance puis tape <strong>ses quatre caractères</strong> — c'est ce qui vous
+    dira qui a fait quoi. Notez en face de chaque numéro le nom de l'élève :
+    <strong>cette correspondance reste chez vous</strong>, elle ne part nulle part.</p>
+    <div class="verdict" id="alerteDoublon"></div>
+    <div class="cartons" id="cartons"></div>
+    <p class="rangee no-print">
+      <button id="imprimerCartons" class="discret" type="button">Imprimer les codes</button>
+    </p>
+  </div>
+
+  <h2>Récupérer les résultats</h2>
+  <div class="carte" id="depouillement">
+    <p class="aide">En fin de séance, chaque élève obtient un <strong>code de
+    restitution</strong> — une trentaine de caractères. Il vous l'envoie comme il peut :
+    message, ENT, courriel. Collez-les tous ici, en vrac, et vous obtenez le tableau.</p>
+
+    <label for="seanceDepouillee">Pour quelle séance</label>
+    <select id="seanceDepouillee"></select>
+
+    <label for="recus">Les codes reçus</label>
+    <textarea id="recus" rows="5" spellcheck="false"
+      placeholder="Collez ici les codes, un par ligne ou séparés par des espaces."></textarea>
+
+    <p class="rangee">
+      <button id="lireResultats" type="button">Lire les résultats</button>
+    </p>
+    <div class="verdict" id="verdictDepouille"></div>
+    <div id="tableauResultats"></div>
+    <p class="note" style="margin-top:18px">Le sceau d'un code garantit qu'il vient de
+    cette séance et qu'il n'a pas été abîmé en route. <strong>Il ne garantit pas qu'un
+    élève n'a pas pris le numéro d'un autre, ni gonflé son score.</strong> Le navigateur
+    corrige les réponses, donc l'élève les connaît. C'est un outil de suivi, pas une note
+    de bulletin.</p>
+  </div>
+
+  <h2>Vos séances ouvertes</h2>
+  <div class="carte">
+    <ul class="seances" id="liste"></ul>
+    <p class="vide" id="aucune">Aucune séance fabriquée sur cet appareil pour l'instant.</p>
+  </div>
+
+  <h2>Bon à savoir</h2>
+  <p class="note">Un lien de séance <strong>est un lien</strong> : publié sur un forum, il
+  fonctionne pour tout le monde jusqu'à sa date de fin. Le contenu affiché porte votre nom en
+  filigrane — c'est ce qui rend le geste traçable. Une séance ne peut jamais durer au-delà de
+  votre propre accès&nbsp;: à la rentrée, tout se referme ensemble.</p>
+
+  <!-- La projection : le QR seul, sur fond blanc, sans rien autour. -->
+  <div id="projection" role="dialog" aria-modal="true" aria-label="QR code de la séance">
+    <p class="quoi" id="projQuoi"></p>
+    <div id="projQr"></div>
+    <p class="ident" id="projIdent"></p>
+    <button class="discret" id="fermerProjection" type="button">Fermer (Échap)</button>
+  </div>
+
+  <script src="moteur/lisibilite.js?v=1a471d5ff4"></script>
+  <script src="moteur/acces.js?v=1a471d5ff4"></script>
+  <script src="moteur/qr.js?v=1a471d5ff4"></script>
+  <script src="moteur/marque.js?v=1a471d5ff4"></script>
+  <script>
+  (function () {
+    "use strict";
+    var A = window.inerwebAcces, QR = window.inerwebQR;
+    var CLE_JOURNAL = "inerweb.seances";
+
+    var elBarriere = document.getElementById("barriere");
+    var elFabrique = document.getElementById("fabrique");
+    var elProduit = document.getElementById("produit");
+    var elQuiSigne = document.getElementById("quiSigne");
+    var elLibelle = document.getElementById("libelle");
+    var elFin = document.getElementById("fin");
+    var elAideFin = document.getElementById("aideFin");
+    var elVerdict = document.getElementById("verdict");
+    var elResultat = document.getElementById("resultat");
+
+    function dire(bon, titre, detail) {
+      elVerdict.className = "verdict " + (bon ? "bon" : "mauvais");
+      elVerdict.innerHTML = "";
+      var s = document.createElement("strong"); s.textContent = titre;
+      elVerdict.appendChild(s);
+      if (detail) elVerdict.appendChild(document.createTextNode(detail));
+    }
+
+    function enISO(d) { return d.toISOString().slice(0, 10); }
+
+    /* --- Les produits dont on est titulaire, et eux seuls --- */
+    function titulaires() {
+      return (A.liste() || []).filter(function (a) { return A.estTitulaire(a.produit.id); });
+    }
+
+    function nomProduit(id) {
+      var trouve = (A.liste() || []).filter(function (a) { return a.produit.id === id; })[0];
+      return trouve ? trouve.produit.nom : id;
+    }
+
+    function peindreProduits() {
+      var mes = titulaires();
+      if (!mes.length) { elBarriere.style.display = "block"; elFabrique.style.display = "none"; return null; }
+      elBarriere.style.display = "none";
+      elFabrique.style.display = "block";
+
+      elProduit.innerHTML = "";
+      mes.forEach(function (a) {
+        var o = document.createElement("option");
+        o.value = a.produit.id; o.textContent = a.produit.nom;
+        elProduit.appendChild(o);
+      });
+      return mes;
+    }
+
+    /* La date de fin proposée : dans une semaine, jamais au-delà de l'accès. */
+    function ajusterDates() {
+      var acces = A.accesDe(elProduit.value);
+      if (!acces) return;
+      var dans7 = new Date(Date.now() + 7 * 86400000);
+      var propose = enISO(dans7);
+      if (acces.expireLe && propose > acces.expireLe) propose = acces.expireLe;
+
+      elFin.min = enISO(new Date());
+      elFin.max = acces.expireLe || "";
+      elFin.value = propose;
+      elAideFin.textContent = "Passé cette date, le lien n'ouvre plus rien. Votre accès enseignant, lui, "
+        + "s'arrête le " + (acces.expireLe || "—") + " : une séance ne peut pas aller plus loin.";
+      elQuiSigne.textContent = "Signée par " + acces.nom + ".";
+    }
+
+    /* --- Le journal local des séances fabriquées --- */
+    function lireJournal() {
+      try { return JSON.parse(localStorage.getItem(CLE_JOURNAL) || "[]"); } catch (e) { return []; }
+    }
+    function ecrireJournal(j) {
+      try { localStorage.setItem(CLE_JOURNAL, JSON.stringify(j.slice(0, 30))); } catch (e) {}
+    }
+
+    function peindreJournal() {
+      var j = lireJournal(), liste = document.getElementById("liste");
+      var aucune = document.getElementById("aucune");
+      liste.innerHTML = "";
+      aucune.style.display = j.length ? "none" : "block";
+
+      j.forEach(function (s) {
+        var li = document.createElement("li");
+        var g = document.createElement("div");
+        var t = document.createElement("div"); t.className = "nomseance"; t.textContent = s.libelle;
+        var d = document.createElement("div"); d.className = "detail";
+        var finie = s.finLe < enISO(new Date());
+        d.textContent = s.produitNom + " · séance " + s.identifiant
+          + " · " + (finie ? "terminée le " : "jusqu'au ") + s.finLe;
+        g.appendChild(t); g.appendChild(d);
+
+        var b = document.createElement("button");
+        b.className = "discret"; b.type = "button"; b.textContent = finie ? "Revoir" : "Reprendre";
+        b.addEventListener("click", function () { montrer(s); peindreCartons(s); });
+
+        li.appendChild(g); li.appendChild(b);
+        liste.appendChild(li);
+      });
+    }
+
+    /* --- Montrer une séance : le QR d'abord --- */
+    function adresseDe(code) {
+      return location.origin + location.pathname.replace(/seances\.html$/, "activer.html") + "#s=" + code;
+    }
+
+    function montrer(s) {
+      var url = adresseDe(s.code);
+      document.getElementById("titreResultat").textContent = s.libelle;
+      document.getElementById("identifiant").textContent = s.identifiant;
+      document.getElementById("lien").textContent = url;
+      try {
+        document.getElementById("qr").innerHTML = QR.svg(url, { taille: 300, titre: s.libelle });
+      } catch (e) {
+        document.getElementById("qr").innerHTML = "";
+        dire(false, "Le QR code n'a pas pu être dessiné.", e.message);
+      }
+      elResultat.style.display = "block";
+      elResultat.scrollIntoView({ behavior: "smooth", block: "start" });
+      elResultat.dataset.url = url;
+      elResultat.dataset.libelle = s.libelle;
+      elResultat.dataset.ident = s.identifiant;
+    }
+
+    /* --- Les cartons d'élève : ce qu'on imprime et qu'on découpe --- */
+    function peindreCartons(s) {
+      var carte = document.getElementById("cartonsCarte");
+      var zone = document.getElementById("cartons");
+      var alerte = document.getElementById("alerteDoublon");
+      carte.style.display = "none";
+      alerte.className = "verdict";
+
+      A.elevesDeSeance(s.code, s.combien || 30).then(function (r) {
+        if (!r.ok) return;
+        zone.innerHTML = "";
+        r.eleves.forEach(function (e) {
+          var d = document.createElement("div"); d.className = "carton";
+          var n = document.createElement("div"); n.className = "num";
+          n.textContent = "Élève " + (e.numero < 10 ? "0" : "") + e.numero;
+          var c = document.createElement("div"); c.className = "code"; c.textContent = e.code;
+          var nom = document.createElement("div"); nom.className = "nom";
+          var q = document.createElement("div"); q.className = "quoi"; q.textContent = s.libelle;
+          d.appendChild(n); d.appendChild(c); d.appendChild(nom); d.appendChild(q);
+          zone.appendChild(d);
+        });
+        carte.style.display = "block";
+
+        /* Le cas rare mais réel : deux élèves, le même code. On ne le tait
+           pas — sans quoi l'un travaillerait sous le numéro de l'autre. */
+        if (r.doublons.length) {
+          alerte.className = "verdict mauvais";
+          alerte.innerHTML = "";
+          var t = document.createElement("strong");
+          t.textContent = "Deux élèves ont tiré le même code (" + r.doublons.join(", ") + ").";
+          alerte.appendChild(t);
+          alerte.appendChild(document.createTextNode(
+            "Ce code ne désignera personne, par sûreté. Refabriquez la séance : "
+            + "elle tirera un nouvel identifiant, donc de nouveaux codes."));
+        }
+      });
+    }
+
+    document.getElementById("imprimerCartons").addEventListener("click", function () {
+      document.body.classList.add("impression-cartons");
+      window.print();
+      setTimeout(function () { document.body.classList.remove("impression-cartons"); }, 500);
+    });
+
+    /* --- Le dépouillement --- */
+    function peindreChoixSeances() {
+      var sel = document.getElementById("seanceDepouillee");
+      var j = lireJournal();
+      sel.innerHTML = "";
+      j.forEach(function (s, i) {
+        var o = document.createElement("option");
+        o.value = String(i);
+        o.textContent = s.libelle + " — séance " + s.identifiant;
+        sel.appendChild(o);
+      });
+      document.getElementById("depouillement").style.display = j.length ? "block" : "none";
+    }
+
+    function direDepouille(bon, titre, detail) {
+      var v = document.getElementById("verdictDepouille");
+      v.className = "verdict " + (bon ? "bon" : "mauvais");
+      v.innerHTML = "";
+      var s = document.createElement("strong"); s.textContent = titre;
+      v.appendChild(s);
+      if (detail) v.appendChild(document.createTextNode(detail));
+    }
+
+    document.getElementById("lireResultats").addEventListener("click", function () {
+      var j = lireJournal();
+      var s = j[Number(document.getElementById("seanceDepouillee").value) || 0];
+      if (!s) return;
+
+      A.depouiller(s.code, document.getElementById("recus").value).then(function (r) {
+        var zone = document.getElementById("tableauResultats");
+        zone.innerHTML = "";
+        if (!r.ok) { direDepouille(false, "Cette séance n'a pas pu être relue.", r.message); return; }
+        if (!r.lignes.length) { direDepouille(false, "Aucun code lu.", "Collez les codes reçus dans le cadre au-dessus."); return; }
+
+        var bons = r.lignes.filter(function (l) { return l.lu.ok; });
+        var mauvais = r.lignes.filter(function (l) { return !l.lu.ok; });
+
+        var t = document.createElement("table"); t.className = "res";
+        t.innerHTML = "<thead><tr><th>Élève</th><th>Score</th><th>Réussite</th>"
+          + "<th>Durée</th><th>Le</th></tr></thead>";
+        var corps = document.createElement("tbody");
+
+        bons.sort(function (a, b) { return a.lu.numero - b.lu.numero; }).forEach(function (l) {
+          var tr = document.createElement("tr");
+          if (l.lu.pourcent < 50) tr.className = "rate";
+          [["Élève " + (l.lu.numero < 10 ? "0" : "") + l.lu.numero, ""],
+           [l.lu.justes + " / " + l.lu.vues, "score"],
+           [l.lu.pourcent + " %", "score"],
+           [l.lu.dureeMin + " min", ""],
+           [l.lu.jour, ""]].forEach(function (c) {
+            var td = document.createElement("td");
+            if (c[1]) td.className = c[1];
+            td.textContent = c[0];
+            tr.appendChild(td);
+          });
+          corps.appendChild(tr);
+        });
+        t.appendChild(corps);
+        zone.appendChild(t);
+
+        /* Une moyenne de classe, puisqu'on a tout sous les yeux. */
+        if (bons.length) {
+          var moyenne = Math.round(bons.reduce(function (a, l) { return a + l.lu.pourcent; }, 0) / bons.length);
+          var p = document.createElement("p"); p.className = "resume";
+          p.textContent = bons.length + " résultat(s) · moyenne de réussite " + moyenne + " %"
+            + " · " + bons.filter(function (l) { return l.lu.pourcent < 50; }).length + " sous la barre des 50 %.";
+          zone.appendChild(p);
+        }
+
+        if (mauvais.length) {
+          direDepouille(false, mauvais.length + " code(s) écarté(s) sur " + r.lignes.length + ".",
+            "Ils viennent d'une autre séance, ou ils ont été abîmés en chemin. "
+            + "Demandez-les à nouveau plutôt que de les deviner.");
+        } else {
+          direDepouille(true, bons.length + " résultat(s) lus.", "Tous authentiques pour cette séance.");
+        }
+      });
+    });
+
+    /* --- Fabriquer --- */
+    document.getElementById("fabriquer").addEventListener("click", function () {
+      var idProduit = elProduit.value;
+      A.fabriquerSeance(idProduit, { libelle: elLibelle.value, finLe: elFin.value })
+        .then(function (r) {
+          if (!r.ok) { dire(false, "La séance n'a pas été fabriquée.", r.message); return; }
+
+          var acces = A.accesDe(idProduit);
+          var entree = {
+            code: r.code, identifiant: r.identifiant, libelle: r.libelle, finLe: r.finLe,
+            produit: idProduit, produitNom: nomProduit(idProduit),
+            combien: Math.min(Math.max(1, Number(document.getElementById("combien").value) || 30), A.ELEVES_MAX),
+            par: acces ? acces.nom : ""
+          };
+          var j = lireJournal(); j.unshift(entree); ecrireJournal(j);
+
+          dire(true, "La séance est ouverte.",
+            "Distribuez les codes d'élève ci-dessous, puis projetez le QR ou envoyez le lien.");
+          elLibelle.value = "";
+          peindreJournal();
+          peindreChoixSeances();
+          montrer(entree);
+          peindreCartons(entree);
+        });
+    });
+
+    /* --- Copier, imprimer, projeter --- */
+    document.getElementById("copier").addEventListener("click", function () {
+      var url = elResultat.dataset.url || "";
+      var fini = function (bon) { dire(bon, bon ? "Lien copié." : "La copie n'a pas abouti.",
+        bon ? "Collez-le dans l'ENT ou un courriel." : "Sélectionnez le lien à la main."); };
+      if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { fini(true); }, function () { fini(false); });
+      else fini(false);
+    });
+
+    document.getElementById("imprimer").addEventListener("click", function () { window.print(); });
+
+    var elProj = document.getElementById("projection");
+    function ouvrirProjection() {
+      var url = elResultat.dataset.url;
+      if (!url) return;
+      document.getElementById("projQuoi").textContent = elResultat.dataset.libelle || "";
+      document.getElementById("projIdent").textContent = "Séance " + (elResultat.dataset.ident || "");
+      try {
+        document.getElementById("projQr").innerHTML = QR.svg(url, { taille: 900, titre: elResultat.dataset.libelle });
+      } catch (e) { return; }
+      elProj.classList.add("ouverte");
+      document.getElementById("fermerProjection").focus();
+    }
+    function fermerProjection() { elProj.classList.remove("ouverte"); }
+
+    document.getElementById("projeter").addEventListener("click", ouvrirProjection);
+    document.getElementById("fermerProjection").addEventListener("click", fermerProjection);
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") fermerProjection(); });
+
+    /* --- Démarrage --- */
+    elProduit.addEventListener("change", ajusterDates);
+    if (peindreProduits()) ajusterDates();
+    peindreJournal();
+    peindreChoixSeances();
+  })();
+  </script>
+</main>
+</body>
+</html>
