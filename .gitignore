@@ -30,6 +30,12 @@ packs/fluides/res/docs/
 #     télécharger et se transmettre à Claude Design. Il se régénère à partir du
 #     Markdown voisin : node/python legislation/outils/md2pdf.py
 !legislation/BRIEF-VISUELS.pdf
+# … et sauf le livret élève HoCourant (27/08) : c'est le support de cours du
+#     module, proposé au téléchargement depuis inerweb.fr/hocourant/. Création
+#     originale inerWeb, aucun droit tiers. ⚠️ 11,5 Mo — chaque nouvelle version
+#     pèse autant dans l'historique. L'atelier est C:\git\hocourant, cette copie
+#     ne s'édite jamais directement. Le corrigé formateur, lui, reste hors ligne.
+!hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf
 .DS_Store
 Thumbs.db
 node_modules/

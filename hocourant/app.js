@@ -113,6 +113,15 @@
           '<button class="btn btn-secondaire" data-aller="code">Changer de code</button></div></div>'
         : '<div class="btn-ligne"><button class="btn btn-primaire" data-aller="code">J\'ai un code de mission →</button>' +
           '<button class="btn btn-secondaire" data-aller="libre">Découvrir sans code</button></div>') +
+      '<div class="carte"><h2>Le livret papier</h2>' +
+      "<p>Le support de cours complet : dix chapitres, quatre-vingts questions, les activités " +
+      "à faire en atelier et le lexique. Sa page de garde porte ton nom — remplis-la, un livret " +
+      "perdu revient à son propriétaire.</p>" +
+      '<div class="btn-ligne"><a class="btn btn-secondaire" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf" download>' +
+      "Télécharger le livret (PDF, 110 pages, 11,5 Mo)</a></div>" +
+      '<div class="enc enc-note"><span class="enc-mot">À imprimer en A5</span>' +
+      "<p>En couleur comme en noir et blanc : le livret est fait pour les deux. Le corrigé " +
+      "est réservé au formateur et ne se télécharge pas ici.</p></div></div>" +
       '<div class="carte"><h2>Espace enseignant</h2>' +
       "<p>Générer les codes d'un groupe, ou lire le code qu'un élève rapporte.</p>" +
       '<div class="btn-ligne"><button class="btn btn-secondaire" data-aller="lot">Générer des codes</button>' +
