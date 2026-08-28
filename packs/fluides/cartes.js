@@ -1040,7 +1040,7 @@ export const CARTES = [
       "<p>Et un point que l'on ne peut pas se permettre d'ignorer : <b>un masque à cartouche ne protège pas contre le CO₂, ni contre le manque d'oxygène</b>. Une cartouche filtre certains polluants dans un air qui reste respirable ; elle ne fabrique pas d'oxygène et ne retient pas le CO₂. En atmosphère appauvrie ou chargée en CO₂, seul un appareil <b>isolant</b>, qui apporte son propre air, protège — un matériel dont l'usage relève d'équipes formées et entraînées pour cela, pas d'une improvisation de dépannage. <b>Pour vous, la protection n'est pas de porter un masque : c'est de ne pas entrer.</b></p>" +
       "<p><b>Devant une personne au sol.</b> On alerte, on ventile, on fait intervenir les secours — <b>on ne descend pas</b>. Retenir sa respiration ne protège de rien : on ne tient que quelques dizaines de secondes, et le réflexe respiratoire finit toujours par l'emporter, au fond de la fosse.</p>",
     blocs: [
-      { type: "cle", t: "Ce qu'il faut retenir", html: "<ul><li><b>EPC d'abord, EPI ensuite</b> : le collectif protège tout le monde en permanence, l'individuel ne protège que celui qui le porte.</li><li><b>Détection de gaz obligatoire</b> en local CO₂, par capteur <b>fixe</b>, placé <b>en partie basse</b>.</li><li>Alarmes sonores et visuelles <b>dedans et dehors</b> — celle de dehors prévient avant d'ouvrir la porte. Deux niveaux : préalarme, puis évacuation.</li><li>Le détecteur affiche des <b>ppm</b> : une part pour un million. L'air normal en contient déjà.</li><li>Les <b>seuils</b> se lisent sur l'appareil, sa documentation et la FDS — <b>jamais de mémoire d'un site à l'autre</b>.</li><li>Un capteur se <b>vérifie et se remplace</b> : une cellule morte reste allumée.</li><li>Signalisation à jour, <b>issues de secours dégagées</b>, ventilation adaptée : contrôlées en arrivant.</li><li><b>Un masque à cartouche ne protège ni du CO₂, ni du manque d'oxygène.</b> La vraie protection, c'est de ne pas entrer.</li><li>Et les règles qui ne changent jamais : <b>ventiler et mesurer avant d'entrer</b>, <b>jamais seul</b>, et devant une personne au sol : alerter, ventiler, <b>ne pas descendre</b>.</li></ul>" },
+      { type: "cle", t: "Ce qu'il faut retenir", html: "<ul><li><b>EPC d'abord, EPI ensuite</b> : le collectif protège tout le monde en permanence, l'individuel ne protège que celui qui le porte.</li><li><b>Détection de gaz dès que la norme l'impose</b> — selon la charge et le type de local — par capteur <b>fixe</b>, placé <b>en partie basse</b>. Si elle manque là où elle devrait être : signalement.</li><li>Alarmes sonores et visuelles <b>dedans et dehors</b> — celle de dehors prévient avant d'ouvrir la porte. Deux niveaux : préalarme, puis évacuation.</li><li>Le détecteur affiche des <b>ppm</b> : une part pour un million. L'air normal en contient déjà.</li><li>Les <b>seuils</b> se lisent sur l'appareil, sa documentation et la FDS — <b>jamais de mémoire d'un site à l'autre</b>.</li><li>Un capteur se <b>vérifie et se remplace</b> : une cellule morte reste allumée.</li><li>Signalisation à jour, <b>issues de secours dégagées</b>, ventilation adaptée : contrôlées en arrivant.</li><li><b>Un masque à cartouche ne protège ni du CO₂, ni du manque d'oxygène.</b> La vraie protection, c'est de ne pas entrer.</li><li>Et les règles qui ne changent jamais : <b>ventiler et mesurer avant d'entrer</b>, <b>jamais seul</b>, et devant une personne au sol : alerter, ventiler, <b>ne pas descendre</b>.</li></ul>" },
       { type: "piege", t: "Le geste interdit", html: "<p>Entrer dans un local CO₂ en se croyant protégé par un <b>masque à cartouche</b>, ou entrer alors que l'alarme extérieure est déclenchée.</p><p>Interdit aussi : considérer un détecteur comme fiable <b>parce que son voyant est allumé</b>. Une cellule usée continue de s'allumer sans plus rien mesurer : elle se vérifie et se remplace selon la documentation du fabricant.</p><p>Conséquence : on entre dans une atmosphère mortelle avec la certitude d'être protégé. C'est la configuration où l'on ne ressort pas.</p>" },
     ],
     question: {
@@ -1126,8 +1126,8 @@ export const CARTES = [
       "</ol>" +
       "<p>Le manomètre affiche une <b>pression relative</b> : pour obtenir la pression absolue, on ajoute environ " +
       "<b>1 bar</b>. La pince de température et le multimètre servent à la <b>méthode indirecte</b> de contrôle " +
-      "d'étanchéité : on compare les valeurs mesurées — surchauffe (plage normale <b>5 à 10 K</b>), " +
-      "sous-refroidissement (plage normale <b>4 à 8 K</b>), intensité absorbée — à celles attendues sur la fiche " +
+      "d'étanchéité : on compare les valeurs mesurées — surchauffe (plage indicative <b>5 à 10 K</b>), " +
+      "sous-refroidissement (plage indicative <b>4 à 8 K</b>), intensité absorbée — à celles attendues sur la fiche " +
       "constructeur. Un écart qui se creuse alerte, sans avoir ouvert le circuit.</p>" +
       lienOutil(
         "packs/fluides/res/chaine-intervention-interactive/index.html?dossier=manifold",
@@ -1643,7 +1643,7 @@ export const CARTES = [
       "<p>Les fluides frigorigènes peuvent réchauffer le climat s'ils s'échappent dans l'air. Deux niveaux de loi encadrent votre métier : le niveau européen et le niveau français.</p>" +
       "<p>Au niveau européen, le texte de base est le <b>règlement (UE) 2024/573</b>. C'est un <b>règlement</b>, jamais une « directive » : il s'applique directement dans tous les pays de l'Union, sans loi française pour le recopier. Il a remplacé l'ancien règlement 517/2014.</p>" +
       "<p>Au niveau français, l'<b>arrêté du 21 novembre 2025</b> — un texte signé par un ministre — précise comment appliquer ce règlement sur le terrain.</p>" +
-      "<p>Pour intervenir sur les fluides, il vous faut une <b>attestation d'aptitude</b> personnelle. Votre entreprise, elle, doit avoir une <b>attestation de capacité</b>. Ce sont deux papiers obligatoires, et ce n'est pas le même.</p>" +
+      "<p>Pour réaliser les <b>opérations réglementées</b> sur ces fluides — mise en service, entretien, contrôle d'étanchéité, récupération —, il vous faut une <b>attestation d'aptitude</b> personnelle. Votre entreprise, elle, doit avoir une <b>attestation de capacité</b>. Ce sont deux papiers obligatoires, et ce n'est pas le même.</p>" +
       "<p>Chaque équipement a un <b>registre</b> : un carnet qui garde la trace de chaque intervention (charge, contrôle, fuite, réparation). C'est l'<b>exploitant</b> (le propriétaire ou l'utilisateur de la machine) qui doit le tenir à jour, sur papier ou sur ordinateur.</p>" +
       "<p>Quand l'équipement est trop vieux ou cassé, il part dans la filière <b>DEEE</b> (déchets d'équipements électriques et électroniques). Cette filière s'occupe de la carcasse de la machine, pas du fluide : vous devez le récupérer avant, à part.</p>" +
       "<p>Enfin, l'<b>écoconception</b> : dès la fabrication, les constructeurs doivent concevoir des appareils qui durent plus longtemps et qui polluent moins.</p>",
@@ -1698,9 +1698,11 @@ export const CARTES = [
         t: "À retenir",
         html:
           "<b>Surchauffe</b> : le fluide sort de l'évaporateur un peu plus chaud que sa température " +
-          "d'évaporation — elle protège le compresseur du liquide. Repère : <b>5 à 10 K</b>.<br>" +
+          "d'évaporation — elle protège le compresseur du liquide. Repère d'apprentissage : <b>5 à 10 K</b>.<br>" +
           "<b>Sous-refroidissement</b> : le liquide sort du condenseur un peu plus froid que sa " +
-          "température de condensation — il garantit du liquide pur au détendeur. Repère : <b>4 à 8 K</b>.",
+          "température de condensation — il garantit du liquide pur au détendeur. Repère d'apprentissage : <b>4 à 8 K</b>.<br>" +
+          "Ces repères servent à comprendre, <b>jamais à régler</b> : sur une machine réelle, seules " +
+          "les valeurs du constructeur font foi.",
       },
       {
         type: "piege",
