@@ -2576,6 +2576,20 @@ export const CARTES = [
       "<p>Avant de sortir le moindre instrument, on <b>lit le registre</b> : quelle charge, quel fluide, " +
       "quelles fuites déjà détectées, qu'a-t-on réparé et quand. Un point déjà réparé est un point " +
       "<b>à recontrôler en priorité</b>, pas un point clos.</p>" +
+      "<p><b>Ce que le registre contient, et ce qu\'on y écrit en repartant.</b> Le registre est " +
+      "le carnet de santé de l\'équipement, tenu par l\'<b>exploitant</b>. On y trouve " +
+      "l\'identification de la machine, le <b>fluide</b> et la <b>charge nominale</b>, la date et " +
+      "le résultat de chaque contrôle d\'étanchéité, les quantités <b>ajoutées</b> et " +
+      "<b>récupérées</b> avec leur date, les fuites détectées et les réparations faites, et " +
+      "l\'identité de l\'intervenant et de son entreprise avec leurs attestations. Sur une " +
+      "installation qu\'on ne connaît pas, ces lignes disent en trois minutes ce qu\'une heure de " +
+      "mesures ne dirait pas : une machine qui a déjà fui deux fois au même endroit ne se " +
+      "contrôle pas comme une machine saine.</p>" +
+      "<p>En repartant, on écrit <b>ce qu\'on a fait, pas ce qu\'on a cru</b> : la date, la " +
+      "méthode de contrôle employée, le résultat, la quantité exacte manipulée pesée à la " +
+      "balance, et la nature de la réparation. Une charge d\'appoint sans quantité notée, une " +
+      "réparation sans recontrôle mentionné, et le registre ne prouve plus rien — ni pour le " +
+      "client, ni devant un contrôle.</p>" +
       "<p>Vient ensuite le <b>contrôle visuel et manuel</b>, sans électronique : traces d'huile " +
       "(le fluide entraîne l'huile en fuyant), corrosion, givre anormal, serrage des raccords " +
       "accessibles, état des fixations.</p>" +
@@ -3229,6 +3243,35 @@ export const CARTES = [
       "<p>Sur un condenseur à air, les <b>ventilateurs</b> forcent l'air à travers la batterie. " +
       "Une batterie encrassée, un ventilateur à l'arrêt, et la haute pression monte : la machine " +
       "consomme plus, et le pressostat HP finit par couper.</p>" +
+      "<p><b>Trois familles de condenseurs, trois façons d\'évacuer la même chaleur.</b> " +
+      "Le condenseur <b>à air</b> souffle l\'air ambiant à travers une batterie à ailettes : " +
+      "c\'est le plus répandu, le plus simple, et celui dont la haute pression suit la " +
+      "température extérieure. Le condenseur <b>à eau</b> échange avec un circuit d\'eau, à " +
+      "plaques ou multitubulaire : plus compact, moins bruyant, il tient une haute pression " +
+      "stable mais demande un circuit d\'eau et se prend l\'entartrage. Le condenseur " +
+      "<b>évaporatif</b> combine les deux en arrosant la batterie : très performant par temps " +
+      "chaud, il impose en contrepartie un traitement d\'eau et une surveillance sanitaire.</p>" +
+      "<p><b>La condensation se fait en trois temps, sur la même batterie.</b> À l\'entrée, la " +
+      "vapeur arrive <b>surchauffée</b> et perd d\'abord cette surchauffe. Au milieu, elle se " +
+      "<b>liquéfie</b> à température constante : c\'est là que le condenseur travaille le plus, " +
+      "et cette zone occupe la plus grande part de la surface. À la sortie, le liquide se " +
+      "<b>sous-refroidit</b>. Ce partage explique tout le reste : une batterie encrassée réduit " +
+      "la zone utile de liquéfaction, la pression monte pour compenser, et le compresseur " +
+      "consomme davantage pour le même froid.</p>" +
+      "<p><b>Ce que la haute pression raconte.</b> Sur un condenseur à air, la pression de " +
+      "condensation suit la température de l\'air entrant, à quelques kelvins près. Une pression " +
+      "anormalement haute par temps frais ne vient donc pas de la météo : batterie sale, " +
+      "ventilateur arrêté ou tournant à l\'envers, air qui court-circuite entre l\'entrée et la " +
+      "sortie, ou incondensables dans le circuit. Chacune de ces causes se vérifie à l\'œil ou à " +
+      "la main avant de brancher quoi que ce soit.</p>" +
+      "<p><b>Le rapport écrit, et l\'énergie qu\'il économise.</b> L\'état du condenseur se " +
+      "consigne : propreté de la batterie, état et sens des ventilateurs, températures d\'air " +
+      "entrant et sortant, pression de condensation, sous-refroidissement mesuré. Un écart noté " +
+      "à temps se corrige par un nettoyage ; ignoré, il devient une surchauffe du compresseur, " +
+      "une coupure au pressostat haute pression, puis une casse. <b>Tenir le condenseur propre " +
+      "et l\'air libre est le geste d\'efficacité énergétique le plus rentable de " +
+      "l\'installation</b> — et celui qui protège le mieux de la fuite, car une machine qui " +
+      "travaille en surpression permanente fatigue ses joints et ses brasures.</p>" +
       "<p>Les <b>incondensables</b> (air entré lors d'une intervention mal faite) se purgent " +
       "<b>à l'arrêt</b>, installation froide, avec récupération — jamais fluide en mouvement.</p>" +
       lienOutil(
@@ -3644,6 +3687,36 @@ export const CARTES = [
       "<p>Autour du détendeur, la ligne liquide porte le <b>filtre déshydrateur</b> (tamis moléculaire, " +
       "monté <b>dans le sens de la flèche</b>) et le <b>voyant</b>, qui renseigne sur deux choses : " +
       "la présence de bulles et, par sa pastille, l'humidité du circuit.</p>" +
+
+      "<p><b>Le bulbe : où il est posé décide de ce que le détendeur voit.</b> Le bulbe se fixe " +
+      "sur la ligne d\'aspiration, <b>en sortie d\'évaporateur</b>, sur une partie horizontale et " +
+      "<b>propre</b> — jamais sur une soudure, jamais sur un point bas où l\'huile s\'accumule. Il " +
+      "se serre avec son collier métallique, contact franc sur le tube, puis <b>s\'isole</b> : sans " +
+      "isolant, il sent la température du local et non celle du fluide, et le détendeur régule sur " +
+      "une information fausse. Sur un tube de faible diamètre, il se pose à midi ; sur un gros tube, " +
+      "à quatre ou huit heures, jamais dessous.</p>" +
+      "<p><b>Égalisation interne ou externe : la même vanne, deux montages.</b> Pour doser, le " +
+      "détendeur compare la pression du bulbe à la pression qui règne dans l\'évaporateur. En " +
+      "<b>égalisation interne</b>, il prend cette pression à l\'entrée de l\'évaporateur, par un " +
+      "passage percé dans le corps de la vanne : simple, et suffisant tant que l\'évaporateur ne " +
+      "fait pas perdre trop de pression entre son entrée et sa sortie. En <b>égalisation externe</b>, " +
+      "un petit tube capillaire va chercher la pression <b>à la sortie</b> de l\'évaporateur, juste " +
+      "à côté du bulbe. C\'est ce montage qu\'imposent les évaporateurs à forte perte de charge et " +
+      "ceux équipés d\'un distributeur de liquide : sans lui, la vanne croit la pression plus haute " +
+      "qu\'elle n\'est, ferme trop, et l\'évaporateur est sous-alimenté. Un détendeur à égalisation " +
+      "externe monté sans raccorder ce tube ne régule plus du tout.</p>" +
+      "<p><b>L\'électrovanne : elle ne dose pas, elle ouvre ou elle ferme.</b> Placée sur la ligne " +
+      "liquide, juste avant le détendeur, c\'est une vanne <b>tout ou rien</b> commandée par une " +
+      "bobine électrique. Elle ne remplace pas le détendeur et ne règle aucun débit : elle autorise " +
+      "ou interdit le passage du liquide. Elle porte une <b>flèche de sens</b>, et sa bobine se " +
+      "vérifie hors tension.</p>" +
+      "<p>Son usage le plus courant est l\'<b>arrêt par tirage au vide</b> (<i>pump down</i>) : à " +
+      "l\'arrêt, l\'électrovanne se ferme la première ; le compresseur continue de tourner et aspire " +
+      "le fluide resté dans l\'évaporateur jusqu\'à ce que le <b>pressostat basse pression</b> le " +
+      "coupe. Le fluide se retrouve rassemblé côté haute pression, dans le condenseur et la " +
+      "bouteille. Intérêt : au redémarrage, plus de liquide dans l\'évaporateur, donc <b>pas de coup " +
+      "de liquide</b> au compresseur. Un compresseur qui repart en courts-cycles avec une " +
+      "électrovanne collée ouverte, c\'est exactement ce que ce montage évite.</p>" +
       lienOutil(
         "packs/fluides/res/circuit-organe-par-organe/index.html",
         "🔧 Lancer le cours interactif : le circuit, organe par organe",
@@ -3756,6 +3829,46 @@ export const CARTES = [
       "circuit</b> — le plus souvent le compresseur — dès qu'un seuil de pression est franchi, " +
       "en haute comme en basse pression. Une régulation qui module, une sécurité qui coupe : " +
       "deux logiques, deux réglages.</p>" +
+
+      "<p><b>Les régulateurs de pression, chacun à sa place.</b> Sur le terrain, ces vannes " +
+      "portent des repères de catalogue — la série <b>KV</b> est la plus répandue — et chacune " +
+      "tient une pression <b>à un endroit précis du circuit</b>. Les confondre, c\'est régler la " +
+      "mauvaise vanne.</p>" +
+      "<p><b>KVP — régulateur de pression d\'évaporation.</b> Il se monte <b>à la sortie de " +
+      "l\'évaporateur</b>, sur l\'aspiration. Il empêche la pression d\'évaporation de descendre " +
+      "sous une valeur choisie, donc la température de descendre trop bas. C\'est lui qui tient une " +
+      "chambre à 0 °C sans geler la marchandise, et lui qui permet à plusieurs évaporateurs " +
+      "réglés à des températures différentes de travailler sur un même compresseur.</p>" +
+      "<p><b>KVL — régulateur de pression de carter.</b> Il se monte sur l\'aspiration, <b>juste " +
+      "avant le compresseur</b>. Il limite la pression qui arrive au compresseur au démarrage ou " +
+      "après un dégivrage, quand l\'évaporateur est encore chaud. Sans lui, le moteur force et " +
+      "peut disjoncter : il protège le compresseur, il ne règle pas la chambre.</p>" +
+      "<p><b>KVR — régulateur de pression de condensation.</b> Il se monte <b>à la sortie du " +
+      "condenseur</b>, souvent avec une vanne de mise en pression de la bouteille. Quand il fait " +
+      "froid dehors, la haute pression tombe et le détendeur n\'a plus assez d\'écart pour " +
+      "alimenter l\'évaporateur. Le KVR retient le liquide dans le condenseur pour <b>maintenir " +
+      "la haute pression</b> et rendre au détendeur sa pression de travail. C\'est le remède " +
+      "classique d\'une installation qui fonctionne l\'été et se dérègle l\'hiver.</p>" +
+      "<p><b>KVC — régulateur de capacité, ou vanne de by-pass des gaz chauds.</b> Il relie le " +
+      "refoulement à l\'aspiration. Quand la demande de froid tombe très bas, il renvoie une part " +
+      "des gaz chauds vers l\'aspiration pour que le compresseur garde du débit au lieu de " +
+      "s\'arrêter et de repartir sans cesse. Il <b>évite les courts-cycles</b> ; en revanche il " +
+      "consomme, et il ne se monte que là où le constructeur le prévoit.</p>" +
+      "<p><b>La règle de réglage est la même pour toutes.</b> On raccorde le manomètre sur la " +
+      "prise de la vanne, on tourne la vis <b>par petites touches</b>, et on <b>attend la " +
+      "stabilisation</b> avant de lire — une installation frigorifique ne répond jamais " +
+      "instantanément. Le sens de rotation et la plage se lisent sur la notice : aucune de ces " +
+      "vannes ne se règle à l\'oreille, et une vanne réglée sans manomètre n\'est pas réglée.</p>" +
+      "<p><b>La bouteille anti-coup de liquide</b> se place sur l\'aspiration, avant le " +
+      "compresseur. Elle recueille le liquide qui n\'a pas fini de s\'évaporer et ne laisse " +
+      "repartir que de la vapeur, en réadmettant l\'huile petit à petit par un orifice calibré. " +
+      "On la trouve là où la charge varie brutalement, et sur les installations à dégivrage par " +
+      "gaz chauds.</p>" +
+      "<p><b>Le pressostat différentiel d\'huile</b> ne surveille pas une pression, mais un " +
+      "<b>écart</b> : celui entre la pression d\'huile de la pompe du compresseur et la pression " +
+      "du carter. Si cet écart ne s\'établit pas dans le délai prévu par le constructeur, le " +
+      "compresseur n\'est pas lubrifié et l\'appareil coupe. Sur les compresseurs qui en sont " +
+      "équipés, il se réarme <b>à la main</b>, et jamais sans avoir cherché pourquoi il a coupé.</p>" +
       "<p>Le <b>séparateur d'huile</b> se place juste après le compresseur (à droite), avant le " +
       "condenseur (en haut). C'est là que passe en premier la vapeur chaude chargée d'huile. Il " +
       "retient cette huile puis la renvoie au carter du compresseur, automatiquement, dès que le " +
@@ -4022,6 +4135,24 @@ export const CARTES = [
       "<b>A3</b> : très inflammables. Ils s'imposent pourtant, parce que leur PRP est très bas et " +
       "leurs performances excellentes : on les trouve dans les réfrigérateurs domestiques, les " +
       "monoblocs, les vitrines, et de plus en plus dans les pompes à chaleur.</p>" +
+      "<p><b>L\'étiquetage : ce qui doit être lu avant même d\'ouvrir la machine.</b> Un " +
+      "équipement contenant un réfrigérant inflammable porte une <b>plaque signalétique</b> et " +
+      "un <b>marquage de danger</b> visibles : le fluide et sa quantité, le pictogramme de " +
+      "flamme, et la mention avertissant du risque. Sur les appareils concernés, un marquage " +
+      "rappelle que l\'entretien revient à une personne formée et que la machine ne doit être " +
+      "ni percée ni brûlée. Cette lecture est le <b>premier geste</b> de l\'intervention : elle " +
+      "décide de l\'outillage, du balisage et de la ventilation.</p>" +
+      "<p>Si la plaque manque ou reste illisible, on ne devine pas : l\'identification se cherche " +
+      "dans la documentation de la machine et dans le registre, jamais à l\'odeur ni à la couleur " +
+      "d\'une bouteille. Intervenir sur un fluide qu\'on n\'a pas identifié, c\'est risquer de " +
+      "braser sur un hydrocarbure.</p>" +
+      "<p><b>Efficacité énergétique : sur ces machines, elle se joue à la charge.</b> Les " +
+      "équipements aux hydrocarbures fonctionnent avec des charges <b>volontairement faibles</b>, " +
+      "et sont conçus pour cela. Une charge d\'appoint approximative, un échangeur encrassé ou un " +
+      "dégivrage mal réglé pèsent donc bien plus lourd qu\'ailleurs sur la consommation. Charger " +
+      "à la <b>balance</b>, selon la quantité inscrite sur la plaque, tenir les échangeurs " +
+      "propres et vérifier les réglages : sur ces installations, c\'est autant une mesure " +
+      "d\'énergie qu\'une mesure de sécurité.</p>" +
       "<p>Travailler dessus impose une <b>préparation dédiée</b> : analyse de risques avant " +
       "intervention, suppression de toute source d'ignition, <b>ventilation active</b>, outillage " +
       "et matériel électrique adaptés, détecteur de gaz. La charge admissible dépend du <b>volume " +
