@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     viewBox="0 0 1200 720" role="img" aria-label="Où se monte chaque régulateur de pression sur le circuit">
+  <metadata>
+    <rdf:RDF><cc:Work rdf:about="">
+      <dc:title>Chaque régulateur à sa place</dc:title>
+      <dc:description>Le circuit frigorifique et les quatre régulateurs de pression de la famille KV, chacun au point du circuit où il se monte : KVR en sortie de condenseur, KVC en dérivation entre refoulement et aspiration, KVP en sortie d'évaporateur, KVL juste avant le compresseur.</dc:description>
+      <dc:creator><cc:Agent><dc:title>F. Henninot (direction métier) et Claude (tracé SVG)</dc:title></cc:Agent></dc:creator>
+      <dc:source>Création originale inerWeb — pack Habilitation fluides frigorigènes</dc:source>
+      <dc:rights><cc:Agent><dc:title>© inerWeb, tous droits réservés</dc:title></cc:Agent></dc:rights>
+    </cc:Work></rdf:RDF>
+  </metadata>
+  <style>
+    .titre{font:700 38px "Trebuchet MS",sans-serif;fill:#1B3A63}
+    .organe{font:700 20px "Trebuchet MS",sans-serif;fill:#1B3A63}
+    .nom{font:700 26px "Trebuchet MS",sans-serif;fill:#C9451A}
+    .role{font:400 19px Calibri,sans-serif;fill:#33445a}
+    .pied{font:400 20px Calibri,sans-serif;fill:#5a6b7d}
+    .cadre{fill:#fff;stroke:#1B3A63;stroke-width:3.5}
+    .tuyau{fill:none;stroke:#1B3A63;stroke-width:6;stroke-linecap:round}
+    .hp{stroke:#C9451A}
+    .bypass{fill:none;stroke:#8fa3ba;stroke-width:4;stroke-dasharray:11 7;stroke-linecap:round}
+    .rappel{stroke:#8fa3ba;stroke-width:2;stroke-dasharray:6 5;fill:none}
+    .vanne{fill:#fff;stroke:#C9451A;stroke-width:4}
+    .etiq{fill:#FDF0EA;stroke:#C9451A;stroke-width:2.5;rx:10}
+  </style>
+
+  <rect width="1200" height="720" fill="#fff"/>
+  <text x="46" y="52" class="titre">Chaque régulateur à sa place</text>
+
+  <!-- ===== Étiquettes : les quatre coins, hors du circuit ===== -->
+  <g>
+    <rect x="46" y="82" width="290" height="64" class="etiq"/>
+    <text x="64" y="110" class="nom">KVR</text>
+    <text x="64" y="134" class="role">tient la haute pression</text>
+
+    <rect x="800" y="82" width="354" height="64" class="etiq"/>
+    <text x="818" y="110" class="nom">KVC</text>
+    <text x="818" y="134" class="role">by-pass des gaz chauds</text>
+
+    <rect x="46" y="576" width="330" height="64" class="etiq"/>
+    <text x="64" y="604" class="nom">KVP</text>
+    <text x="64" y="628" class="role">tient la pression d’évaporation</text>
+
+    <rect x="800" y="576" width="330" height="64" class="etiq"/>
+    <text x="818" y="604" class="nom">KVL</text>
+    <text x="818" y="628" class="role">protège le compresseur</text>
+  </g>
+
+  <!-- ===== Le circuit : croix du frigoriste =====
+       détendeur à GAUCHE, compresseur à DROITE,
+       condenseur en HAUT, évaporateur en BAS. -->
+  <g>
+    <path class="tuyau hp" d="M790 298 L790 215 L650 215"/>
+    <path class="tuyau hp" d="M430 215 L330 215 L330 313"/>
+    <path class="tuyau" d="M330 367 L330 460 L430 460"/>
+    <path class="tuyau" d="M650 460 L790 460 L790 382"/>
+
+    <rect x="430" y="185" width="220" height="60" class="cadre" rx="8"/>
+    <text x="540" y="222" class="organe" text-anchor="middle">CONDENSEUR</text>
+    <rect x="430" y="430" width="220" height="60" class="cadre" rx="8"/>
+    <text x="540" y="467" class="organe" text-anchor="middle">ÉVAPORATEUR</text>
+    <circle cx="790" cy="340" r="42" class="cadre"/>
+    <text x="790" y="340" class="organe" text-anchor="middle" dominant-baseline="middle">C</text>
+    <text x="700" y="352" class="organe" text-anchor="end">COMPRESSEUR</text>
+    <path d="M306 316 L354 364 L354 316 L306 364 Z" fill="#fff" stroke="#1B3A63" stroke-width="4"/>
+    <text x="296" y="346" class="organe" text-anchor="end">DÉTENDEUR</text>
+  </g>
+
+  <!-- ===== La dérivation du KVC, à l'écart du circuit ===== -->
+  <path class="bypass" d="M790 268 L1010 268 L1010 420 L790 420"/>
+
+  <!-- ===== Les quatre vannes, sur leur tronçon ===== -->
+  <g>
+    <rect x="361" y="196" width="38" height="38" class="vanne" rx="6"/>   <!-- KVR -->
+    <rect x="991" y="321" width="38" height="38" class="vanne" rx="6"/>   <!-- KVC -->
+    <rect x="641" y="441" width="38" height="38" class="vanne" rx="6"/>   <!-- KVP -->
+    <rect x="711" y="441" width="38" height="38" class="vanne" rx="6"/>   <!-- KVL -->
+  </g>
+
+  <!-- ===== Les traits de rappel, sans croiser un tuyau ===== -->
+  <g>
+    <path class="rappel" d="M380 196 L380 146"/>
+    <path class="rappel" d="M1029 340 L1090 340 L1090 146"/>
+    <path class="rappel" d="M660 479 L660 545 L200 545 L200 576"/>
+    <path class="rappel" d="M730 479 L730 560 L900 560 L900 576"/>
+  </g>
+
+  <text x="46" y="694" class="pied">Une vanne, un point du circuit, une pression tenue — les confondre, c’est régler la mauvaise.</text>
+</svg>

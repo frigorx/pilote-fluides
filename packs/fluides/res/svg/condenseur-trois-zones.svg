@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     viewBox="0 0 1200 720" role="img" aria-label="Les trois zones d'une batterie de condenseur">
+  <metadata>
+    <rdf:RDF><cc:Work rdf:about="">
+      <dc:title>Une batterie, trois zones</dc:title>
+      <dc:description>Le parcours du fluide dans un condenseur à air et les trois zones qu'il traverse : désurchauffe à l'entrée, condensation à température constante sur la plus grande part de la surface, sous-refroidissement à la sortie. Une batterie encrassée réduit la zone de condensation.</dc:description>
+      <dc:creator><cc:Agent><dc:title>F. Henninot (direction métier) et Claude (tracé SVG)</dc:title></cc:Agent></dc:creator>
+      <dc:source>Création originale inerWeb — pack Habilitation fluides frigorigènes</dc:source>
+      <dc:rights><cc:Agent><dc:title>© inerWeb, tous droits réservés</dc:title></cc:Agent></dc:rights>
+    </cc:Work></rdf:RDF>
+  </metadata>
+  <style>
+    .titre{font:700 38px "Trebuchet MS",sans-serif;fill:#1B3A63}
+    .zone{font:700 23px "Trebuchet MS",sans-serif}
+    .etat{font:400 19px Calibri,sans-serif;fill:#33445a}
+    .rep{font:400 18px Calibri,sans-serif;fill:#5a6b7d}
+    .cons{font:400 21px Calibri,sans-serif;fill:#33445a}
+    .cadre{fill:none;stroke:#1B3A63;stroke-width:3.5}
+    .air{fill:none;stroke:#84B7EC;stroke-width:5}
+    .tube{fill:none;stroke-width:20;stroke-linecap:butt}
+    .borne{stroke:#8fa3ba;stroke-width:2;stroke-dasharray:6 5}
+  </style>
+
+  <rect width="1200" height="720" fill="#fff"/>
+  <text x="46" y="52" class="titre">Une batterie, trois zones</text>
+
+  <!-- L'air qui traverse : trois filets, de gauche à droite -->
+  <g class="air">
+    <path d="M46 200 H140 M124 190 L140 200 L124 210"/>
+    <path d="M46 270 H140 M124 260 L140 270 L124 280"/>
+    <path d="M46 340 H140 M124 330 L140 340 L124 350"/>
+    <path d="M1060 200 H1154 M1138 190 L1154 200 L1138 210"/>
+    <path d="M1060 270 H1154 M1138 260 L1154 270 L1138 280"/>
+    <path d="M1060 340 H1154 M1138 330 L1154 340 L1138 350"/>
+  </g>
+  <text x="46" y="170" class="rep">air ambiant</text>
+  <text x="1154" y="170" class="rep" text-anchor="end">air réchauffé</text>
+
+  <!-- La batterie, et les ailettes suggérées -->
+  <rect x="180" y="150" width="840" height="260" class="cadre" rx="10"/>
+  <g stroke="#d6dee7" stroke-width="2">
+    <path d="M220 160 V400"/><path d="M300 160 V400"/><path d="M380 160 V400"/>
+    <path d="M460 160 V400"/><path d="M540 160 V400"/><path d="M620 160 V400"/>
+    <path d="M700 160 V400"/><path d="M780 160 V400"/><path d="M860 160 V400"/>
+    <path d="M940 160 V400"/>
+  </g>
+
+  <!-- Le fluide, d'un bout à l'autre : trois tronçons bout à bout.
+       La couleur ne porte pas l'information seule — chaque tronçon est
+       nommé, chiffré et borné sous la batterie. -->
+  <path class="tube" stroke="#C9451A" d="M180 280 H420"/>
+  <path class="tube" stroke="#1B3A63" d="M420 280 H860"/>
+  <path class="tube" stroke="#3D7FCA" d="M860 280 H1020"/>
+  <path d="M1020 280 H1064 M1048 268 L1064 280 L1048 292" fill="none" stroke="#3D7FCA" stroke-width="6"/>
+  <text x="150" y="248" class="rep" text-anchor="end">entrée</text>
+  <text x="1064" y="248" class="rep">sortie</text>
+
+  <!-- Les bornes de zones, prolongées sous la batterie -->
+  <g class="borne">
+    <path d="M420 150 V500"/>
+    <path d="M860 150 V500"/>
+  </g>
+
+  <!-- Les trois libellés, chacun centré sous SA zone -->
+  <g text-anchor="middle">
+    <text x="300" y="536" class="zone" fill="#C9451A">1 · DÉSURCHAUFFE</text>
+    <text x="300" y="566" class="etat">la vapeur perd sa surchauffe</text>
+    <text x="300" y="592" class="rep">la température descend</text>
+
+    <text x="640" y="536" class="zone" fill="#1B3A63">2 · CONDENSATION</text>
+    <text x="640" y="566" class="etat">la vapeur devient liquide</text>
+    <text x="640" y="592" class="rep">température CONSTANTE — la plus grande part de la surface</text>
+
+    <text x="940" y="536" class="zone" fill="#3D7FCA">3 · SOUS-REFROID.</text>
+    <text x="940" y="566" class="etat">le liquide se refroidit</text>
+    <text x="940" y="592" class="rep">repère : 4 à 8 K</text>
+  </g>
+
+  <text x="600" y="668" class="cons" text-anchor="middle">Une batterie encrassée réduit la zone 2 : la pression monte pour compenser,</text>
+  <text x="600" y="696" class="cons" text-anchor="middle">et le compresseur consomme davantage pour le même froid.</text>
+</svg>
