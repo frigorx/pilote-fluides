@@ -48,7 +48,7 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg-end));background-attac
 .tab-pane{display:none}.tab-pane.on{display:block}
 /* Accessibilité : le focus clavier se voit toujours (jamais par la couleur seule). */
 .tab:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:4px}
-/* ── Confort de lecture (demande Franck 23/08 : DYS, agrandissement,
+/* ── Confort de lecture (DYS, agrandissement,
    lunettes). Réglages PAR L'UTILISATEUR, mémorisés sur le poste. La police
    « lisible » suit les recommandations DYS réelles : sans-serif large +
    espacement des lettres et des mots + interligne — polices SYSTÈME,
@@ -160,7 +160,7 @@ html.cf-contraste body{color:#000}
 <header class="hdr">
   <div class="logo-slot"><svg xmlns="http://www.w3.org/2000/svg" width="205" height="37" viewBox="0 0 178 32"><text fill="#0f2d52" font-size="20px" x="2" y="22">&#10052;</text><text fill="#0f2d52" font-family="Trebuchet MS,sans-serif" font-size="18" font-weight="bold" x="28" y="22">iner</text><text fill="#0f2d52" font-family="Segoe Script,Brush Script MT,cursive" font-size="18" x="62" y="22">Web</text><line stroke="#e8914a" stroke-width="2" x1="28" x2="105" y1="25" y2="25"/><rect fill="#e8914a" x="110" y="5" rx="4" width="62" height="18"/><text fill="#fff" font-family="system-ui" font-size="10" font-weight="bold" x="141" y="17" text-anchor="middle">AquiBlue</text></svg></div>
   <div class="hdr-center">
-    <h1>AQUIBLUE <span class="ver">v1.3</span></h1>
+    <h1>AQUIBLUE <span class="ver">v1.5</span></h1>
     <div class="sub">Acquisition de donn&eacute;es Bluetooth &middot; Diagramme enthalpique temps r&eacute;el &middot; Poste p&eacute;dagogique</div>
   </div>
   <div class="hdr-status" id="status-bar">
@@ -200,7 +200,8 @@ html.cf-contraste body{color:#000}
   <button class="tab" id="tab-1" role="tab" aria-selected="false" tabindex="-1" aria-controls="pane-1" onclick="showTab(1)">&#127777; Diagramme temps r&eacute;el</button>
   <button class="tab" id="tab-2" role="tab" aria-selected="false" tabindex="-1" aria-controls="pane-2" onclick="showTab(2)">&#128295; Pupitre professeur</button>
   <button class="tab" id="tab-3" role="tab" aria-selected="false" tabindex="-1" aria-controls="pane-rec" onclick="showTab(3)">&#9210; Enregistrement &amp; rejeu</button>
-  <button class="tab" id="tab-5" role="tab" aria-selected="false" tabindex="-1" aria-controls="pane-apropos" onclick="showTab(4)">&#8505; &Agrave; propos</button>
+  <button class="tab" id="tab-4" role="tab" aria-selected="false" tabindex="-1" aria-controls="pane-util" onclick="showTab(4)">&#128207; Utilitaires de mesure</button>
+  <button class="tab" id="tab-5" role="tab" aria-selected="false" tabindex="-1" aria-controls="pane-apropos" onclick="showTab(5)">&#8505; &Agrave; propos</button>
 </div>
 
 <!-- ═══════ TAB 0 : SONDES & AFFECTATION ═══════ -->
@@ -316,6 +317,14 @@ html.cf-contraste body{color:#000}
 
 <div class="cd cd-good"><div class="cd-in">
   <div class="sec-t" style="color:var(--good);background:var(--good-bg)">Points de mesure &mdash; saisir le num&eacute;ro de l&rsquo;appareil pos&eacute;</div>
+  <div class="info-box turq" style="margin-top:0">
+    <label for="sel-config" style="font-weight:800">Configuration de pose :</label>
+    <select id="sel-config" onchange="appliquerConfiguration(this.value)"
+      style="margin-left:8px;padding:7px 10px;border:2px solid var(--card-border);border-radius:10px;font-weight:700;font-family:var(--font)"></select>
+    <button class="btn btn-ol btn-sm" id="btn-preremplir" style="margin-left:8px;display:none"
+      onclick="preremplirConfiguration()">Pré-remplir (démonstration)</button>
+    <div id="config-consigne" style="margin-top:10px;font-size:.84rem"></div>
+  </div>
   <div class="sondes-list" id="points-list"></div>
   <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
     <button class="btn btn-ol btn-sm" onclick="effacerAffectations()">Tout effacer</button>
@@ -340,6 +349,45 @@ html.cf-contraste body{color:#000}
     <strong>reprend toujours la main</strong> sur la saisie manuelle.
   </div>
   <div class="sondes-list" id="saisie-manuelle"></div>
+</div></div>
+
+<div class="cd" id="carte-releves"><div class="cd-in">
+  <div class="cd-tag">RELEVÉS À LA MAIN — CE QU'AUCUNE SONDE DU BANC NE DONNE</div>
+  <div class="info-box turq" style="margin-top:0">
+    Un ΔT ne vaut rien sans son débit, et une puissance électrique ne se
+    déduit pas d'une température. Ces trois valeurs se relèvent sur
+    l'instrument et se tapent ici. Tant qu'elles manquent, les grandeurs
+    qui en dépendent restent vides — elles ne sont jamais estimées.
+  </div>
+  <div class="sondes-list">
+    <div class="sonde-row">
+      <span class="sr-serie" style="min-width:230px;font-family:var(--font);font-size:.8rem">Débit d'air évaporateur</span>
+      <input type="number" step="10" min="0" id="aux-debit-air" oninput="calculerEtTracer()" placeholder="—"
+        style="width:110px;padding:6px 8px;border:2px solid var(--card-border);border-radius:10px;font-family:var(--mono);font-weight:700;text-align:center">
+      <span class="sr-modele">m³/h</span>
+      <span class="sr-batt" style="margin-left:auto;text-align:right;font-size:.72rem">vitesse moyenne × section</span>
+    </div>
+    <div class="sonde-row">
+      <span class="sr-serie" style="min-width:230px;font-family:var(--font);font-size:.8rem">Débit d'eau</span>
+      <input type="number" step="10" min="0" id="aux-debit-eau" oninput="calculerEtTracer()" placeholder="—"
+        style="width:110px;padding:6px 8px;border:2px solid var(--card-border);border-radius:10px;font-family:var(--mono);font-weight:700;text-align:center">
+      <span class="sr-modele">L/h</span>
+      <span class="sr-batt" style="margin-left:auto;text-align:right;font-size:.72rem">débitmètre ou compteur</span>
+    </div>
+    <div class="sonde-row">
+      <span class="sr-serie" style="min-width:230px;font-family:var(--font);font-size:.8rem">Puissance électrique absorbée</span>
+      <input type="number" step="10" min="0" id="aux-puissance" oninput="calculerEtTracer()" placeholder="—"
+        style="width:110px;padding:6px 8px;border:2px solid var(--card-border);border-radius:10px;font-family:var(--mono);font-weight:700;text-align:center">
+      <span class="sr-modele">W</span>
+      <span class="sr-batt" style="margin-left:auto;text-align:right;font-size:.72rem">puissance ACTIVE, pas U × I</span>
+    </div>
+  </div>
+  <div class="info-box" style="font-size:.78rem">
+    <strong>Le piège à faire vivre :</strong> multiplier la tension par
+    l'intensité donne la puissance <em>apparente</em>, pas la puissance
+    absorbée. Sur un compresseur l'écart atteint couramment 20 à 40 %, et
+    toujours dans le sens flatteur. Un COP calculé là-dessus est faux.
+  </div>
 </div></div>
 </div>
 
@@ -464,6 +512,21 @@ html.cf-contraste body{color:#000}
 </div>
 
 <!-- ═══════ TAB 5 : À PROPOS ═══════ -->
+<div class="tab-pane" id="pane-util">
+  <div class="cd"><div class="cd-in">
+    <div class="cd-tag">UTILITAIRES DE MESURE</div>
+    <div class="info-box turq" style="margin-top:0">
+      Chaque grandeur affiche sa formule. Quand une entrée manque, elle reste
+      vide et dit ce qui lui manque : <strong>rien n'est estimé, rien n'est
+      complété</strong>. Les ordres de grandeur indiqués sont ceux d'une
+      installation en bon état — ils se vérifient sur le banc de
+      l'établissement, ils ne se recopient pas d'un manuel.
+    </div>
+    <div id="profil-voies"></div>
+    <div id="utilitaires-liste"></div>
+  </div></div>
+</div>
+
 <div class="tab-pane" id="pane-apropos">
 
 <div class="cd cd-turq"><div class="cd-in">
@@ -556,7 +619,20 @@ var SIM=(function(){
     ['42118342','Pince T° BLE','temperature','entree_compresseur'],
     ['42117905','Pince T° BLE','temperature','ambiance_froid'],
     ['50034271','Thermomètre air BLE','temperature','air_reprise_condenseur'],
-    ['50034288','Thermomètre air BLE','temperature','air_souffle_condenseur']];
+    ['50034288','Thermomètre air BLE','temperature','air_souffle_condenseur'],
+    // Boîtier six voies : les prises n'ont pas de numéro de série, elles se
+    // désignent par leur marquage CH1..CH6. CH6 est volontairement posée sur
+    // un point froid — c'est ainsi qu'on voit la limite du matériel à l'œuvre.
+    ['BOITIER-6V CH1','boîtier multivoies','temperature','sortie_condenseur'],
+    ['BOITIER-6V CH2','boîtier multivoies','temperature','entree_detendeur'],
+    ['BOITIER-6V CH3','boîtier multivoies','temperature','air_reprise_condenseur'],
+    ['BOITIER-6V CH4','boîtier multivoies','temperature','air_souffle_condenseur'],
+    ['BOITIER-6V CH5','boîtier multivoies','temperature','ambiance_froid'],
+    ['BOITIER-6V CH6','boîtier multivoies','temperature','sortie_evaporateur']];
+  // Limite dure du boîtier, vérifiée au congélateur le 28/08/2026 : sous
+  // cette valeur il ne rend plus rien. La simulation DOIT mentir comme le
+  // matériel ment, sinon une recette verte ne prouverait rien de réel.
+  var BOITIER_MINI=1.0;
   var NOMINAL={t_evaporation:-8,t_condensation:40,surchauffe:6,sous_refroidissement:5,
     rechauffement_aspiration:2,refroidissement_liquide:1,
     air_reprise_condenseur:25,ecart_air_condenseur:8,ambiance_froid:4};
@@ -596,9 +672,18 @@ var SIM=(function(){
       sortie_condenseur:tScond,entree_detendeur:tScond-pf.refroidissement_liquide,
       air_reprise_condenseur:pf.air_reprise_condenseur,
       air_souffle_condenseur:pf.air_reprise_condenseur+pf.ecart_air_condenseur,
+      // Côté évaporateur : l'air repris est l'ambiance du volume froid, et
+      // l'air soufflé se rapproche de la température d'évaporation d'autant
+      // plus que l'échange est bon. Le refoulement suit la compression.
+      air_reprise_evaporateur:pf.ambiance_froid+2,
+      air_souffle_evaporateur:pf.ambiance_froid-(pf.ambiance_froid-pf.t_evaporation)*0.65,
+      refoulement:pf.t_condensation+28,
       ambiance_froid:pf.ambiance_froid};
   }
   return {
+    // Exposé pour le seul pré-remplissage de démonstration du professeur.
+    parc:function(){return PARC.map(function(p){
+      return {serie:p[0],modele:p[1],grandeur:p[2],emplacement:p[3]}})},
     mesures:function(){
       var v=valeursParEmplacement(pointDeFonctionnement());
       return PARC.map(function(p){
@@ -606,6 +691,9 @@ var SIM=(function(){
         if(coupees[serie])return {serie:serie,modele:modele,grandeur:grandeur,valeur:null,
           unite:grandeur==='pression'?'bar':'°C',etat:'perdue',batterie:batteries[serie],horodatage:0,rssi:null};
         var val=v[empl]+bruit(grandeur==='pression'?0.02:0.08);
+        if(modele==='boîtier multivoies'&&val<BOITIER_MINI)
+          return {serie:serie,modele:modele,grandeur:grandeur,valeur:null,unite:'°C',
+            etat:'connectee',horsPlage:true,batterie:null,horodatage:Date.now()/1000,rssi:null};
         return {serie:serie,modele:modele,grandeur:grandeur,valeur:Math.round(val*100)/100,
           unite:grandeur==='pression'?'bar':'°C',etat:'connectee',batterie:batteries[serie],
           horodatage:Date.now()/1000,rssi:-52-Math.floor(Math.random()*26)};
@@ -703,13 +791,197 @@ var POINTS_MESURE=[
   {cle:'bp',          libelle:'Pression BP',                       grandeur:'pression'},
   {cle:'sortie_condenseur',  libelle:'Sortie condenseur',          grandeur:'temperature'},
   {cle:'entree_detendeur',   libelle:'Entrée détendeur',           grandeur:'temperature'},
-  {cle:'sortie_evaporateur', libelle:'Sortie évaporateur',         grandeur:'temperature'},
-  {cle:'entree_compresseur', libelle:'Entrée compresseur',         grandeur:'temperature'},
+  {cle:'sortie_evaporateur', libelle:'Sortie évaporateur',         grandeur:'temperature', sousZero:true},
+  {cle:'entree_compresseur', libelle:'Entrée compresseur',         grandeur:'temperature', sousZero:true},
+  {cle:'refoulement',       libelle:'Refoulement compresseur',     grandeur:'temperature'},
+  {cle:'air_reprise_evaporateur', libelle:'Air repris évaporateur', grandeur:'temperature'},
+  // L'air soufflé par un évaporateur reste positif sur une installation
+  // positive — le domaine annoncé du boîtier. Sur une chambre négative il
+  // passe sous zéro : la voie se déclarera alors hors plage, et le message
+  // le dira. Refus dur seulement là où le froid est CERTAIN (le fluide en
+  // évaporation), signalement là où il dépend de l'installation.
+  {cle:'air_souffle_evaporateur', libelle:'Air soufflé évaporateur', grandeur:'temperature'},
   {cle:'air_reprise_condenseur', libelle:'Air repris condenseur',  grandeur:'temperature'},
   {cle:'air_souffle_condenseur', libelle:'Air soufflé condenseur', grandeur:'temperature'},
-  {cle:'ambiance_froid',     libelle:'Ambiance volume froid',      grandeur:'temperature'},
+  {cle:'ambiance_froid',     libelle:'Ambiance volume froid',      grandeur:'temperature', sousZero:true},
+  // Quatre points d'eau, pour le bilan hydraulique.
+  {cle:'eau_entree_evaporateur', libelle:'Eau entrée évaporateur',  grandeur:'temperature'},
+  {cle:'eau_sortie_evaporateur', libelle:'Eau sortie évaporateur',  grandeur:'temperature', sousZero:true},
+  {cle:'eau_entree_condenseur',  libelle:'Eau entrée condenseur',   grandeur:'temperature'},
+  {cle:'eau_sortie_condenseur',  libelle:'Eau sortie condenseur',   grandeur:'temperature'},
+  // Six points GÉNÉRIQUES, dont le libellé est donné par la configuration :
+  // le long d'un échangeur, sur une reprise, sur un réseau de gaines. Sans
+  // eux, les configurations « profil » n'auraient nulle part où se poser.
+  {cle:'voie_1', libelle:'Position 1', grandeur:'temperature', generique:true},
+  {cle:'voie_2', libelle:'Position 2', grandeur:'temperature', generique:true},
+  {cle:'voie_3', libelle:'Position 3', grandeur:'temperature', generique:true},
+  {cle:'voie_4', libelle:'Position 4', grandeur:'temperature', generique:true},
+  {cle:'voie_5', libelle:'Position 5', grandeur:'temperature', generique:true},
+  {cle:'voie_6', libelle:'Position 6', grandeur:'temperature', generique:true},
 ];
 var P_ATMO=1.013;
+
+/* ═══════════ CONFIGURATIONS DE POSE ═══════════
+   Les douze configurations du document de conception (dépôt privé), rendues
+   exécutables. Chacune dit OÙ poser, ce qu'il faut saisir à la main, et
+   quelles grandeurs elle permet — les autres sont masquées, parce qu'une
+   grandeur affichée que la pose ne permet pas de calculer n'apprend rien.
+
+   `points` : les seuls points affichés. null = tous (configuration libre).
+   `libelles` : renomme les six voies génériques selon la pose.
+   `familles` : les groupes d'utilitaires que la configuration autorise. */
+var FAMILLES_TOUTES=['evaporateur','condenseur','puissances'];
+
+var CONFIGURATIONS=[
+  {cle:'libre',lettre:'—',titre:'Configuration libre',niveau:'tous niveaux',
+   ressort:'Tous les points de mesure sont proposés. Choisissez une '+
+     'configuration pour ne garder que ceux dont vous avez besoin.',
+   points:null,libelles:{},saisies:[],familles:FAMILLES_TOUTES},
+
+  {cle:'A',lettre:'A',titre:'Le cycle complet',niveau:'N1 → N3',
+   ressort:'L’élève voit son cycle se dessiner à partir de ses propres '+
+     'mesures. Quand il déplace une sonde au mauvais endroit, le cycle se '+
+     'déforme — et c’est le diagramme qui le lui dit, pas le professeur.',
+   points:['hp','bp','sortie_evaporateur','entree_compresseur','refoulement',
+           'sortie_condenseur','entree_detendeur','ambiance_froid'],
+   libelles:{},saisies:['HP et BP au manomètre'],familles:['condenseur']},
+
+  {cle:'B',lettre:'B',titre:'Le profil du condenseur',niveau:'N2 → N3',
+   ressort:'Le diagramme enthalpique matérialisé sur le tube. On lit à l’œil '+
+     'nu les trois zones : la désurchauffe qui plonge, le palier de '+
+     'condensation, puis le sous-refroidissement. Le palier se situe à la '+
+     'température de saturation lue au manomètre : la boucle est bouclée.',
+   points:['hp','bp','voie_1','voie_2','voie_3','voie_4','voie_5','voie_6'],
+   libelles:{voie_1:'Entrée condenseur',voie_2:'Serpentine 2',voie_3:'Serpentine 3',
+             voie_4:'Serpentine 4',voie_5:'Serpentine 5',voie_6:'Sortie condenseur'},
+   saisies:['HP et BP au manomètre'],familles:[],profil:'condenseur'},
+
+  {cle:'C',lettre:'C',titre:'Le profil de l’évaporateur, ou l’art du détendeur',
+   niveau:'N2 → N3',
+   ressort:'La plus démonstrative des douze. On localise le point où la '+
+     'surchauffe commence. Surchauffe qui démarre tôt : évaporateur affamé. '+
+     'Qui ne démarre jamais : évaporateur noyé, danger pour le compresseur. '+
+     'Dans le dernier quart : réglage correct. L’élève règle le détendeur et '+
+     'voit le point de départ se déplacer le long de l’évaporateur.',
+   points:['bp','voie_1','voie_2','voie_3','voie_4','voie_5','voie_6'],
+   libelles:{voie_1:'Sortie du détendeur',voie_2:'Évaporateur 2',voie_3:'Évaporateur 3',
+             voie_4:'Évaporateur 4',voie_5:'Évaporateur 5',voie_6:'Aspiration'},
+   saisies:['BP au manomètre'],familles:[],profil:'evaporateur'},
+
+  {cle:'D',lettre:'D',titre:'L’homogénéité de la reprise et du soufflage',
+   niveau:'N1 → N2',
+   ressort:'Une seule sonde ment. Si la reprise est à 24, 24, 24 et le '+
+     'soufflage à 14, 18, 14, il ne s’agit pas d’un ΔT de 10 K : il y a un '+
+     'défaut de distribution, un filtre bouché ou un givrage local. La '+
+     'moyenne seule cache le défaut, la dispersion le révèle.',
+   points:['voie_1','voie_2','voie_3','voie_4','voie_5','voie_6'],
+   libelles:{voie_1:'Reprise gauche',voie_2:'Reprise centre',voie_3:'Reprise droite',
+             voie_4:'Soufflage gauche',voie_5:'Soufflage centre',voie_6:'Soufflage droite'},
+   saisies:[],familles:[],dispersion:true},
+
+  {cle:'E',lettre:'E',titre:'Les deux échangeurs et les deux réglages',niveau:'N2',
+   ressort:'La configuration de diagnostic généraliste : le bilan complet de '+
+     'la machine sur une seule page. L’élève apprend à lire une machine « en '+
+     'un coup d’œil » avant de chercher la panne.',
+   points:['hp','bp','air_reprise_evaporateur','air_souffle_evaporateur',
+           'air_reprise_condenseur','air_souffle_condenseur',
+           'sortie_evaporateur','entree_detendeur'],
+   libelles:{},saisies:['HP et BP au manomètre','Débit d’air, pour les puissances'],
+   familles:FAMILLES_TOUTES},
+
+  {cle:'F',lettre:'F',titre:'Le bilan hydraulique',niveau:'N3',
+   ressort:'Deux chemins indépendants vers la même puissance : le bilan d’eau '+
+     'et le diagramme enthalpique. Quand les deux ne tombent pas d’accord, '+
+     'l’élève doit chercher pourquoi — et c’est là qu’il apprend ce qu’est '+
+     'une incertitude de mesure.',
+   points:['hp','bp','eau_entree_evaporateur','eau_sortie_evaporateur',
+           'eau_entree_condenseur','eau_sortie_condenseur',
+           'sortie_evaporateur','entree_detendeur'],
+   libelles:{},saisies:['HP et BP au manomètre','Débit d’eau au débitmètre'],
+   familles:['puissances']},
+
+  {cle:'G',lettre:'G',titre:'Le coefficient de performance',niveau:'N3',
+   ressort:'L’écart entre le COP mesuré et la limite de Carnot est toujours '+
+     'défavorable, et c’est le sujet. Où sont passés les watts ? Rendement du '+
+     'moteur, pertes en ligne, échangeurs encrassés.',
+   points:['hp','bp','air_reprise_evaporateur','air_souffle_evaporateur',
+           'air_reprise_condenseur','air_souffle_condenseur',
+           'sortie_evaporateur','entree_detendeur'],
+   libelles:{},
+   saisies:['HP et BP au manomètre','Débit d’air','Puissance électrique ACTIVE '+
+     '— pas U × I, l’écart atteint 20 à 40 %'],
+   familles:['puissances']},
+
+  {cle:'H',lettre:'H',titre:'La machine dans le temps',niveau:'N2 → N3',
+   ressort:'Les phénomènes lents deviennent visibles : descente en '+
+     'température, cyclage du thermostat, stabilisation de la surchauffe '+
+     'après un démarrage, retour d’huile. Un élève qui regarde une machine '+
+     'dix minutes ne voit rien ; le rejeu accéléré lui montre son rythme. '+
+     'Lancez l’enregistrement dans l’onglet dédié.',
+   points:['hp','bp','sortie_evaporateur','entree_compresseur','refoulement',
+           'sortie_condenseur','entree_detendeur','ambiance_froid'],
+   libelles:{},saisies:['HP et BP au manomètre'],familles:['condenseur']},
+
+  {cle:'I',lettre:'I',titre:'Le réseau de gaines',niveau:'N2 → N3',
+   ressort:'L’air soufflé au caisson n’est pas celui qui arrive au bout du '+
+     'réseau. Recoupe AéroRézo.',
+   points:['voie_1','voie_2','voie_3','voie_4','voie_5','voie_6'],
+   libelles:{voie_1:'Sortie caisson',voie_2:'Tronçon 2',voie_3:'Tronçon 3',
+             voie_4:'Tronçon 4',voie_5:'Bouche 5',voie_6:'Bouche la plus éloignée'},
+   saisies:['Vitesses d’air relevées à l’anémomètre'],familles:[],dispersion:true},
+
+  {cle:'J',lettre:'J',titre:'Le relevé en aveugle',niveau:'N2 → N3',
+   ressort:'Inversion complète : le professeur pose les six sondes sans dire '+
+     'où. L’élève doit DÉDUIRE quelle sonde est où — la plus chaude au '+
+     'refoulement, la plus froide après le détendeur, celle qui vaut la '+
+     'température de saturation sur le palier. Une évaluation de '+
+     'compréhension qui ne se bachote pas, et se corrige en trente secondes.',
+   points:['voie_1','voie_2','voie_3','voie_4','voie_5','voie_6'],
+   libelles:{voie_1:'Sonde A',voie_2:'Sonde B',voie_3:'Sonde C',
+             voie_4:'Sonde D',voie_5:'Sonde E',voie_6:'Sonde F'},
+   saisies:[],familles:[],dispersion:true},
+
+  {cle:'K',lettre:'K',titre:'La chaîne de causalité',niveau:'N2 → N3',
+   ressort:'On dégrade volontairement le condenseur, et quatre grandeurs '+
+     'bougent ENSEMBLE : la HP monte, le refoulement monte, l’intensité '+
+     'monte, le sous-refroidissement se modifie. Impossible à montrer avec un '+
+     'seul instrument : il faut les voir en même temps pour saisir la '+
+     'simultanéité. Variante manque de charge : l’intensité BAISSE — et c’est '+
+     'ce qui distingue deux pannes qui se ressemblent.',
+   points:['hp','bp','sortie_evaporateur','refoulement','sortie_condenseur',
+           'entree_detendeur','air_reprise_condenseur','air_souffle_condenseur'],
+   libelles:{},saisies:['HP et BP au manomètre','Intensité absorbée à la pince'],
+   familles:['condenseur']},
+
+  {cle:'L',lettre:'L',titre:'Le bilan énergétique complet',niveau:'N3',
+   ressort:'Trois voies indépendantes vers la même machine : le côté air ou '+
+     'eau, le côté fluide frigorigène, le côté électrique. Elles ne tombent '+
+     'jamais exactement d’accord, et l’écart EST le sujet du TP.',
+   points:null,libelles:{},
+   saisies:['HP et BP','Débit d’air ou d’eau','Puissance électrique active'],
+   familles:FAMILLES_TOUTES},
+];
+
+var configCourante='libre';
+
+function configuration(){
+  return CONFIGURATIONS.find(function(c){return c.cle===configCourante})||CONFIGURATIONS[0];
+}
+
+/* Les points à afficher, avec le libellé que la configuration leur donne. */
+function pointsAffiches(){
+  var cf=configuration();
+  return POINTS_MESURE.filter(function(p){
+    if(p.cle==='')return false;
+    // Hors configuration nommée, les six voies génériques n'ont pas de sens :
+    // « Position 3 » ne veut rien dire tant qu'une pose ne l'a pas nommée.
+    if(cf.points===null)return !p.generique;
+    return cf.points.indexOf(p.cle)!==-1;
+  }).map(function(p){
+    var libelle=cf.libelles&&cf.libelles[p.cle]?cf.libelles[p.cle]:p.libelle;
+    return {cle:p.cle,libelle:libelle,grandeur:p.grandeur,sousZero:p.sousZero};
+  });
+}
 
 /* ═══════════ ONGLETS ═══════════ */
 function showTab(n){
@@ -820,14 +1092,76 @@ function normaliserSerie(s){
   return (s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
 }
 
+/* Une voie de boîtier six voies n'a pas de numéro de série : elle se désigne
+   par sa PRISE, CH1 à CH6, telle qu'elle est marquée sur le matériel. */
+var RE_PRISE=/^ch[1-6]$/;
+function estVoieDeBoitier(m){return !!m&&m.modele==='boîtier multivoies'}
+
+/* Limite dure du boîtier, vérifiée le 28/08/2026 : il ne mesure rien sous
+   1 °C. Un point qui peut descendre sous zéro ne doit pas être alimenté par
+   une de ses voies : la valeur disparaîtrait au moment précis où elle
+   devient intéressante, et l'élève y verrait une panne de la machine.
+
+   Mais « peut descendre sous zéro » dépend de L'INSTALLATION, pas du point.
+   Sur une climatisation, une pompe à chaleur ou une chambre positive,
+   l'évaporation est au-dessus de zéro et le boîtier convient parfaitement —
+   c'est même son domaine annoncé. Un refus absolu interdirait son meilleur
+   usage. La température d'évaporation, lue à la BP, tranche donc :
+     — évaporation inconnue  → refus, on ne parie pas ;
+     — évaporation négative  → refus, motif chiffré ;
+     — évaporation positive  → accepté, avec la réserve affichée.
+
+   C'est le seul endroit du logiciel où l'on empêche quelque chose : partout
+   ailleurs l'erreur d'affectation est permise parce que le diagramme la
+   révèle. Ici il ne la révélerait pas — il montrerait un trou. */
+var EVAPORATION_MINI=1.5;   // marge au-dessus de la borne du boîtier
+
+function temperatureEvaporation(){
+  var pBPrel=valeurDuPoint('bp');
+  if(pBPrel===null||!FLUIDES)return null;
+  return satPourP(pBPrel+P_ATMO).tr;   // rosée : fin du changement d'état
+}
+
+/* Début du changement d'état à la BP. Sur un corps pur il vaut la rosée ;
+   sur un mélange zéotrope il en est éloigné du GLISSEMENT — plus de 6 K sur
+   R-449A. */
+function temperatureBulleBP(){
+  var pBPrel=valeurDuPoint('bp');
+  if(pBPrel===null||!FLUIDES)return null;
+  return satPourP(pBPrel+P_ATMO).tb;
+}
+
+function temperatureCondensation(){
+  var pHPrel=valeurDuPoint('hp');
+  if(pHPrel===null||!FLUIDES)return null;
+  return satPourP(pHPrel+P_ATMO).tb;
+}
+
+function motifRefusVoie(cle,m){
+  var p=POINTS_MESURE.find(function(x){return x.cle===cle});
+  if(!p||!p.sousZero||!estVoieDeBoitier(m))return null;
+  var tEvap=temperatureEvaporation();
+  if(tEvap===null)
+    return 'voie de boîtier refusée : température d’évaporation inconnue '+
+           '(affectez la BP), et ce boîtier ne mesure rien sous 1 °C';
+  if(tEvap<EVAPORATION_MINI)
+    return 'voie de boîtier refusée : évaporation à '+tEvap.toFixed(1)+
+           ' °C, hors de sa plage (mini 1 °C) — il faut une sonde autonome';
+  return null;
+}
+
+function voieRefusee(cle,m){
+  return motifRefusVoie(cle,m)!==null;
+}
+
 function sondePourPoint(cle){
   return sondePourPointDans(mesures,cle);
 }
 
 function construirePointsMesure(){
   var cont=document.getElementById('points-list');
-  POINTS_MESURE.forEach(function(p){
-    if(p.cle==='')return;
+  cont.innerHTML='';
+  pointsAffiches().forEach(function(p){
     var row=document.createElement('div');
     row.className='sonde-row';
     row.id='pt-'+p.cle;
@@ -854,20 +1188,38 @@ function affecterPoint(cle,saisie){
 
 function majEtatPoints(){
   var alimentes=0;
-  POINTS_MESURE.forEach(function(p){
-    if(p.cle==='')return;
+  var affiches=pointsAffiches();
+  affiches.forEach(function(p){
     var etat=document.getElementById('pt-etat-'+p.cle);
     var champ=document.getElementById('pt-serie-'+p.cle);
     if(!etat)return;
     var saisie=affectations[p.cle];
     if(!saisie){etat.textContent='';champ.style.borderColor='var(--card-border)';return}
     var m=sondePourPoint(p.cle);
-    if(!m){
+    var refus=motifRefusVoie(p.cle,m);
+    if(refus){
+      etat.textContent=refus;
+      etat.style.color='var(--bad)';
+      champ.style.borderColor='var(--bad)';
+    } else if(!m&&RE_PRISE.test(normaliserSerie(saisie))){
+      // Une prise sans mesure a trois causes, toutes vraies à dire ainsi.
+      etat.textContent='prise sans mesure : vide, hors plage (mini 1 °C), ou deux boîtiers';
+      etat.style.color='var(--muted)';
+      champ.style.borderColor='var(--card-border)';
+    } else if(!m){
       etat.textContent='aucun appareil détecté avec ce numéro';
       etat.style.color='var(--muted)';
       champ.style.borderColor='var(--card-border)';
     } else if(m.etat!=='connectee'){
       etat.textContent=m.modele+' — liaison perdue';
+      etat.style.color='var(--bad)';
+      champ.style.borderColor='var(--bad)';
+    } else if(m.valeur===null){
+      // Connectée mais muette. Pour une voie de boîtier, c'est sa limite
+      // basse : le dire, plutôt que de laisser croire à une panne machine.
+      etat.textContent=estVoieDeBoitier(m)
+        ? m.modele+' — hors plage : ce boîtier ne mesure rien sous 1 °C'
+        : m.modele+' — connectée, aucune valeur reçue';
       etat.style.color='var(--bad)';
       champ.style.borderColor='var(--bad)';
     } else if((m.qualite||'ok')!=='ok'){
@@ -881,7 +1233,90 @@ function majEtatPoints(){
       alimentes++;
     }
   });
-  document.getElementById('affect-etat').textContent=alimentes+' / 9 points alimentés';
+  document.getElementById('affect-etat').textContent=
+    alimentes+' / '+affiches.length+' points alimentés';
+}
+
+/* Changer de configuration reconstruit les deux écrans et garde les
+   affectations des points qui restent affichés — repasser par « libre »
+   pour vérifier un détail ne doit pas effacer le travail de l'élève. */
+function appliquerConfiguration(cle){
+  configCourante=cle;
+  construirePointsMesure();
+  construireSaisieManuelle();
+  // Les points qui ne sont plus affichés ne doivent plus alimenter le cycle.
+  var visibles={};
+  pointsAffiches().forEach(function(p){visibles[p.cle]=true});
+  Object.keys(affectations).forEach(function(k){
+    if(!visibles[k])delete affectations[k];
+    else{var i=document.getElementById('pt-serie-'+k); if(i)i.value=affectations[k]}
+  });
+  afficherConsigneConfiguration();
+  majEtatPoints();
+  majEtatSaisieManuelle();
+  calculerEtTracer();
+}
+
+function afficherConsigneConfiguration(){
+  var cf=configuration();
+  var el=document.getElementById('config-consigne');
+  if(!el)return;
+  var html='';
+  if(cf.cle!=='libre'){
+    html+='<div style="font-weight:800;margin-bottom:4px">'+cf.lettre+' — '+cf.titre+
+      ' <span style="font-weight:700;color:var(--muted)">· '+cf.niveau+'</span></div>';
+    var poses=Object.keys(cf.libelles||{});
+    if(poses.length)
+      html+='<div style="margin-bottom:4px"><strong>Pose :</strong> '+
+        poses.map(function(k){return k.replace('voie_','sonde ')+' → '+cf.libelles[k]})
+             .join(' · ')+'</div>';
+    if(cf.saisies&&cf.saisies.length)
+      html+='<div style="margin-bottom:4px"><strong>À relever à la main :</strong> '+
+        cf.saisies.join(' · ')+'</div>';
+  }
+  html+='<div style="color:var(--muted)">'+cf.ressort+'</div>';
+  el.innerHTML=html;
+}
+
+/* Correspondance emplacement → numéro de sonde du parc SIMULÉ. Elle n'existe
+   qu'en simulation : sur du matériel réel, aucune sonde ne sait où elle est
+   posée — c'est tout l'objet du TP. Le pré-remplissage sert donc uniquement
+   au professeur qui démontre, et il est masqué en mode élève. */
+function preremplirConfiguration(){
+  if(!MODE_PROF)return;
+  var parEmplacement={};
+  (typeof SIM!=='undefined'&&SIM.parc?SIM.parc():[]).forEach(function(p){
+    if(!parEmplacement[p.emplacement])parEmplacement[p.emplacement]=p.serie;
+  });
+  var poses=0, manquants=[];
+  pointsAffiches().forEach(function(p){
+    var serie=parEmplacement[p.cle];
+    var champ=document.getElementById('pt-serie-'+p.cle);
+    if(serie&&champ){champ.value=serie; affectations[p.cle]=serie; poses++}
+    else manquants.push(p.libelle);
+  });
+  majEtatPoints(); majEtatSaisieManuelle(); calculerEtTracer();
+  var el=document.getElementById('config-consigne');
+  if(el&&manquants.length)
+    el.innerHTML+='<div style="margin-top:6px;color:var(--bad);font-weight:700">'+
+      poses+' point(s) pré-remplis. Aucune sonde simulée pour : '+
+      manquants.join(', ')+' — à poser et saisir.</div>';
+}
+
+function remplirSelecteurConfigurations(){
+  var sel=document.getElementById('sel-config');
+  if(!sel)return;
+  sel.innerHTML='';
+  CONFIGURATIONS.forEach(function(c){
+    var o=document.createElement('option');
+    o.value=c.cle;
+    o.textContent=(c.cle==='libre'?c.titre:c.lettre+' — '+c.titre+'  ('+c.niveau+')');
+    sel.appendChild(o);
+  });
+  sel.value=configCourante;
+  var btn=document.getElementById('btn-preremplir');
+  if(btn&&MODE_PROF)btn.style.display='';
+  afficherConsigneConfiguration();
 }
 
 function effacerAffectations(){
@@ -911,8 +1346,8 @@ function satPourP(p){
 /* ═══════════ SAISIE MANUELLE ═══════════ */
 function construireSaisieManuelle(){
   var cont=document.getElementById('saisie-manuelle');
-  POINTS_MESURE.forEach(function(p){
-    if(p.cle==='')return;
+  cont.innerHTML='';
+  pointsAffiches().forEach(function(p){
     var row=document.createElement('div');
     row.className='sonde-row';
     row.id='sm-'+p.cle;
@@ -987,11 +1422,21 @@ function sondePourPointDans(ms,cle){
   var candidates=ms.filter(function(m){return m.grandeur===grandeur});
   var exact=candidates.find(function(m){return normaliserSerie(m.serie)===saisie});
   if(exact) return exact;
+  // Une prise seule (CH1..CH6) fait trois caractères, donc sous le seuil
+  // d'inclusion : on la traite à part, par le suffixe. Avec deux boîtiers
+  // branchés la prise seule devient ambiguë — on refuse alors de choisir
+  // plutôt que de tirer au sort, et l'écran demande de préfixer le boîtier.
+  if(RE_PRISE.test(saisie)){
+    var prises=candidates.filter(function(m){
+      return normaliserSerie(m.serie).slice(-saisie.length)===saisie});
+    return prises.length===1?prises[0]:null;
+  }
   if(saisie.length<4) return null;
   return candidates.find(function(m){return normaliserSerie(m.serie).indexOf(saisie)!==-1})||null;
 }
 function valeurDuPointDans(ms,cle){
   var m=sondePourPointDans(ms,cle);
+  if(voieRefusee(cle,m)) m=null;   // bascule en saisie manuelle
   // On n'utilise la mesure que si elle est connectée, fraîche et présente ;
   // une mesure périmée ou perdue n'alimente pas le cycle (bascule en manuel).
   if(m && m.etat==='connectee' && m.valeur!==null && (m.qualite||'ok')==='ok'){
@@ -1042,6 +1487,9 @@ function arreterEnregistrement(){
   ind.innerHTML='&#9679; Arr&ecirc;t&eacute; — '+rec.donnees.length+' points';
 }
 
+/* Pendant un rejeu, TOUS les onglets doivent revivre l'enregistrement — y
+   compris les utilitaires et le profil, sans quoi l'élève rejouerait son
+   essai avec des grandeurs restées au présent. */
 function afficherTrame(idx){
   var f=rec.donnees[idx];
   if(!f)return;
@@ -1090,6 +1538,56 @@ function allerAuPoint(idx){
   afficherTrame(rejeu.idx);
 }
 
+/* Les entrées des utilitaires, tirées d'un jeu de mesures quelconque —
+   celui du direct, ou celui d'une trame enregistrée. Les relevés à la main
+   (débit, puissance) sont lus à l'instant de l'export : ils sont saisis une
+   fois pour l'essai, ils ne varient pas d'une trame à l'autre. */
+function entreesUtilitaires(ms){
+  return {
+    airRepriseEvap:valeurDuPointDans(ms,'air_reprise_evaporateur'),
+    airSouffleEvap:valeurDuPointDans(ms,'air_souffle_evaporateur'),
+    airRepriseCond:valeurDuPointDans(ms,'air_reprise_condenseur'),
+    airSouffleCond:valeurDuPointDans(ms,'air_souffle_condenseur'),
+    sortieCond:(valeurDuPointDans(ms,'sortie_condenseur')!==null
+      ? valeurDuPointDans(ms,'sortie_condenseur')
+      : valeurDuPointDans(ms,'entree_detendeur')),
+    refoulement:valeurDuPointDans(ms,'refoulement'),
+    eauEntree:valeurDuPointDans(ms,'eau_entree_evaporateur'),
+    eauSortie:valeurDuPointDans(ms,'eau_sortie_evaporateur'),
+    debitAir:releveManuel('aux-debit-air'),
+    debitEau:releveManuel('aux-debit-eau'),
+    puissanceElec:releveManuel('aux-puissance')};
+}
+
+/* Le cycle reconstruit depuis une trame, sans toucher à l'affichage. */
+function cycleDepuisTrame(ms){
+  var pHPrel=valeurDuPointDans(ms,'hp'),pBPrel=valeurDuPointDans(ms,'bp');
+  if(pHPrel===null||pBPrel===null||!FLUIDES)return null;
+  var pHP=pHPrel+P_ATMO,pBP=pBPrel+P_ATMO;
+  var satBP=satPourP(pBP),satHP=satPourP(pHP);
+  var tSevap=valeurDuPointDans(ms,'sortie_evaporateur');
+  var tEcomp=valeurDuPointDans(ms,'entree_compresseur');
+  var tScond=valeurDuPointDans(ms,'sortie_condenseur');
+  var tEdet=valeurDuPointDans(ms,'entree_detendeur');
+  return {pHP:pHP,pBP:pBP,satBP:satBP,satHP:satHP,
+    surchauffe:tSevap!==null?tSevap-satBP.tr:null,
+    surchauffeTot:tEcomp!==null?tEcomp-satBP.tr:null,
+    sousrefroid:tScond!==null?satHP.tb-tScond:null,
+    sousrefroidTot:tEdet!==null?satHP.tb-tEdet:null};
+}
+
+/* Toutes les grandeurs d'une trame, à plat : {libellé: valeur|null}. */
+function utilitairesDepuisTrame(ms){
+  var c=cycleDepuisTrame(ms);
+  var plat=[];
+  calculerUtilitaires(c,entreesUtilitaires(ms)).forEach(function(f){
+    f.grandeurs.forEach(function(g){
+      plat.push({libelle:g.libelle,unite:g.unite,dec:g.dec,valeur:g.valeur});
+    });
+  });
+  return plat;
+}
+
 function calculsDepuisTrame(ms){
   var pHPrel=valeurDuPointDans(ms,'hp'),pBPrel=valeurDuPointDans(ms,'bp');
   if(pHPrel===null||pBPrel===null)return {};
@@ -1106,14 +1604,23 @@ function calculsDepuisTrame(ms){
 function exporterEnregistrementCSV(){
   if(!rec.donnees.length){alert('Aucune donnée : lancez d’abord un enregistrement.');return}
   var series=rec.donnees[0].mesures.map(function(m){return m.serie});
-  var csv='Heure;'+series.join(';')+';Surchauffe (K);Sous-refroidissement (K);Taux de compression\n';
+  // Les colonnes calculées suivent les utilitaires : ce qui est affiché à
+  // l'écran doit se retrouver dans le fichier, sinon le relevé de l'élève et
+  // son export racontent deux histoires différentes.
+  var colonnes=utilitairesDepuisTrame(rec.donnees[0].mesures);
+  var enTetes=colonnes.map(function(g){
+    return g.libelle+(g.unite?' ('+g.unite+')':'')});
+  var csv='Configuration : '+configuration().titre+'\n';
+  csv+='Heure;'+series.join(';')+';Surchauffe (K);Sous-refroidissement (K);Taux de compression;'+enTetes.join(';')+'\n';
+  function fmt(v,d){return (v===null||v===undefined||isNaN(v))?'':v.toFixed(d).replace('.',',')}
   rec.donnees.forEach(function(f){
     var parSerie={};
     f.mesures.forEach(function(m){parSerie[m.serie]=(m.valeur!==null&&m.etat==='connectee')?m.valeur:''});
     var k=calculsDepuisTrame(f.mesures);
-    function fmt(v,d){return (v===null||v===undefined||isNaN(v))?'':v.toFixed(d).replace('.',',')}
+    var u=utilitairesDepuisTrame(f.mesures);
     csv+=f.heure+';'+series.map(function(s){return (''+parSerie[s]).replace('.',',')}).join(';')+
-      ';'+fmt(k.surchauffe,1)+';'+fmt(k.sousrefroid,1)+';'+fmt(k.taux,2)+'\n';
+      ';'+fmt(k.surchauffe,1)+';'+fmt(k.sousrefroid,1)+';'+fmt(k.taux,2)+
+      ';'+u.map(function(g){return fmt(g.valeur,g.dec)}).join(';')+'\n';
   });
   var blob=new Blob(['﻿'+csv],{type:'text/csv;charset=utf-8;'});
   var url=URL.createObjectURL(blob);
@@ -1165,11 +1672,416 @@ function calculerEtTracer(){
   if(dtAir!==null && dtAir<-0.5) alertes.push('ΔT air négatif : thermomètres repris/soufflé inversés ?');
 
   majKPI(cycle,tAmb,dtAir);
+  majProfil(cycle);
+  majUtilitaires(cycle,{
+    airRepriseEvap:valeurDuPoint('air_reprise_evaporateur'),
+    airSouffleEvap:valeurDuPoint('air_souffle_evaporateur'),
+    airRepriseCond:tAirRepris, airSouffleCond:tAirSouffle,
+    // « T° liquide » se relève en sortie de condenseur OU a l'entree du
+    // detendeur selon la configuration : on prend ce qui est instrumente.
+    sortieCond:(tSortieCond!==null?tSortieCond:valeurDuPoint('entree_detendeur')),
+    refoulement:valeurDuPoint('refoulement'),
+    eauEntree:null, eauSortie:null,
+    debitAir:releveManuel('aux-debit-air'),
+    debitEau:releveManuel('aux-debit-eau'),
+    puissanceElec:releveManuel('aux-puissance')});
   tracerDiagramme(cycle);
 
   var al=document.getElementById('diag-alerte');
   if(alertes.length){al.textContent='⚠ '+alertes.join(' — ');al.classList.add('on')}
   else al.classList.remove('on');
+}
+
+/* ═══════════ UTILITAIRES DE MESURE ═══════════
+   Les grandeurs que six températures et deux pressions permettent de tirer.
+   Source du fond : le document de conception du parc de sondes (dépôt privé).
+
+   Règle tenue partout ici : une grandeur dont une entrée manque n'est PAS
+   calculée. Elle reste vide et nomme ce qui lui manque. Une valeur estimée
+   sur une entrée absente serait pire qu'une case vide — l'élève ne pourrait
+   pas savoir qu'elle est fausse. */
+
+// Air à 20 °C sous 1013 hPa : 1,2 kg/m³ × 1005 J/(kg·K) = 1206 J/(m³·K),
+// soit 0,335 Wh/(m³·K). Eau : 4185 J/(kg·K) = 1,163 Wh/(L·K).
+var CHALEUR_AIR=0.335, CHALEUR_EAU=1.163;
+
+function releveManuel(id){
+  var el=document.getElementById(id);
+  if(!el||el.value==='')return null;
+  var v=parseFloat(el.value);
+  return isNaN(v)?null:v;
+}
+
+/* Fabrique une grandeur. `entrees` liste les couples [valeur, nom lisible] ;
+   si l'une est absente, la grandeur est vide et nomme les manquantes. */
+function grandeur(libelle,unite,dec,formule,repere,entrees,calcul){
+  // Piège : isNaN(objet) vaut true. Le cycle est un objet, pas un nombre —
+  // le tester comme un nombre le déclarait manquant alors qu'il était là,
+  // et le COP théorique restait vide sur un cycle pourtant complet.
+  var manque=entrees.filter(function(e){
+    return e[0]===null||e[0]===undefined||(typeof e[0]==='number'&&isNaN(e[0]))})
+                    .map(function(e){return e[1]});
+  var valeur=manque.length?null:calcul.apply(null,entrees.map(function(e){return e[0]}));
+  if(valeur!==null&&(isNaN(valeur)||!isFinite(valeur)))valeur=null;
+  return {libelle:libelle,unite:unite,dec:dec,formule:formule,repere:repere,
+          valeur:valeur,manque:manque};
+}
+
+/* Le gaz sort du compresseur PLUS chaud qu'il n'entre au condenseur : un
+   refoulement plus froid que la température de condensation est impossible.
+   C'est presque toujours une sonde posée ailleurs qu'au refoulement. On ne
+   masque pas la valeur — on dit qu'elle est impossible, et l'élève va voir
+   sa pose. Même esprit que les alertes du diagramme : révéler, pas bloquer. */
+function controleRefoulement(g,tCond){
+  if(g.valeur!==null&&tCond!==null&&g.valeur<tCond)
+    g.repere='⚠ plus froid que la condensation ('+tCond.toFixed(1)+
+      ' °C) : sonde posée ailleurs ?';
+  return g;
+}
+
+function calculerUtilitaires(c,v){
+  var tEvap=c?c.satBP.tr:null;      // rosée : la vraie référence de surchauffe
+  var tCond=c?c.satHP.tb:null;      // bulle : celle du sous-refroidissement
+  var familles=[];
+
+  familles.push({cle:'evaporateur',titre:'Côté évaporateur',grandeurs:[
+    grandeur('ΔT air évaporateur','K',1,'air repris − air soufflé',null,
+      [[v.airRepriseEvap,'air repris évaporateur'],[v.airSouffleEvap,'air soufflé évaporateur']],
+      function(a,b){return a-b}),
+    grandeur('DT1 évaporateur','K',1,'air repris − T° évaporation','6 à 8 K en climatisation',
+      [[v.airRepriseEvap,'air repris évaporateur'],[tEvap,'pression BP']],
+      function(a,b){return a-b}),
+    grandeur('Pincement évaporateur','K',1,'air soufflé − T° évaporation','3 à 6 K ; s\'il grandit : encrassé ou givré',
+      [[v.airSouffleEvap,'air soufflé évaporateur'],[tEvap,'pression BP']],
+      function(a,b){return a-b}),
+    grandeur('Efficacité évaporateur','',2,'(air repris − air soufflé) ÷ (air repris − T° évaporation)','0,6 à 0,8',
+      [[v.airRepriseEvap,'air repris évaporateur'],[v.airSouffleEvap,'air soufflé évaporateur'],[tEvap,'pression BP']],
+      function(a,b,e){return (a-e)===0?null:(a-b)/(a-e)})]});
+
+  familles.push({cle:'condenseur',titre:'Côté condenseur',grandeurs:[
+    grandeur('ΔT air condenseur','K',1,'air soufflé − air repris',null,
+      [[v.airSouffleCond,'air soufflé condenseur'],[v.airRepriseCond,'air repris condenseur']],
+      function(a,b){return a-b}),
+    grandeur('Écart au condenseur','K',1,'T° condensation − air repris','10 à 15 K ; s\'il grandit : encrassé ou ventilateur faible',
+      [[tCond,'pression HP'],[v.airRepriseCond,'air repris condenseur']],
+      function(a,b){return a-b}),
+    grandeur('Approche condenseur','K',1,'T° liquide − air repris','3 à 8 K',
+      [[v.sortieCond,'sortie condenseur ou entrée détendeur'],[v.airRepriseCond,'air repris condenseur']],
+      function(a,b){return a-b}),
+    grandeur('Efficacité condenseur','',2,'(air soufflé − air repris) ÷ (T° condensation − air repris)','0,6 à 0,8',
+      [[v.airSouffleCond,'air soufflé condenseur'],[v.airRepriseCond,'air repris condenseur'],[tCond,'pression HP']],
+      function(s,r,k){return (k-r)===0?null:(s-r)/(k-r)}),
+    controleRefoulement(
+      grandeur('Température de refoulement','°C',1,'mesurée au refoulement','au-delà de 110 °C : l\'huile vieillit vite',
+        [[v.refoulement,'refoulement compresseur']],function(a){return a}), tCond)]});
+
+  // Puissances : le débit est indispensable. Un ΔT seul ne donne RIEN, et
+  // c'est l'erreur la plus fréquente — d'où le refus de calculer sans lui.
+  var dtAirEvap=(v.airRepriseEvap!==null&&v.airSouffleEvap!==null)?v.airRepriseEvap-v.airSouffleEvap:null;
+  var dtEau=(v.eauEntree!==null&&v.eauSortie!==null)?v.eauEntree-v.eauSortie:null;
+  var pAir=(dtAirEvap!==null&&v.debitAir!==null)?v.debitAir*CHALEUR_AIR*dtAirEvap:null;
+
+  familles.push({cle:'puissances',titre:'Puissances et rendement',grandeurs:[
+    grandeur('Puissance côté air','W',0,'débit d\'air × 0,335 × ΔT air',null,
+      [[v.debitAir,'débit d\'air (relevé à la main)'],[dtAirEvap,'ΔT air évaporateur']],
+      function(q,dt){return q*CHALEUR_AIR*dt}),
+    grandeur('Puissance côté eau','W',0,'débit d\'eau × 1,163 × ΔT eau',null,
+      [[v.debitEau,'débit d\'eau (relevé à la main)'],[dtEau,'températures d\'eau']],
+      function(q,dt){return q*CHALEUR_EAU*dt}),
+    grandeur('COP mesuré','',2,'puissance utile ÷ puissance électrique absorbée','toujours plus faible que la limite de Carnot ci-dessous',
+      [[pAir,'puissance côté air'],[v.puissanceElec,'puissance électrique (relevée à la main)']],
+      function(u,e){return e===0?null:u/e}),
+    // La LIMITE physique, exacte : elle ne dépend que des deux températures.
+    // On n'affiche PAS un « COP théorique du cycle » tiré des enthalpies :
+    // le modèle de compression de cette page est calé pour PLACER le point
+    // de refoulement sur le diagramme, pas pour chiffrer un travail. Il
+    // donnait un COP inférieur au COP mesuré — donc un rendement au-dessus
+    // de la limite physique. Un chiffre faux, et faux dans le sens flatteur
+    // pour la théorie : exactement ce qu'un élève ne peut pas détecter seul.
+    grandeur('COP de Carnot (limite)','',2,'T° évaporation (K) ÷ (T° condensation − T° évaporation)','aucune machine ne peut le dépasser',
+      [[c,'les deux pressions']],function(cy){
+        var tE=cy.satBP.tr+273.15, tC=cy.satHP.tb+273.15;
+        return (tC-tE)<=0?null:tE/(tC-tE);
+      }),
+    grandeur('Rendement par rapport à Carnot','',2,'COP mesuré ÷ COP de Carnot','0,3 à 0,5 sur une machine réelle en bon état',
+      [[pAir,'puissance côté air'],[v.puissanceElec,'puissance électrique (relevée à la main)'],[c,'les deux pressions']],
+      function(u,e,cy){
+        var tE=cy.satBP.tr+273.15, tC=cy.satHP.tb+273.15;
+        if(e===0||(tC-tE)<=0)return null;
+        return (u/e)/(tE/(tC-tE));
+      })]});
+
+  return familles;
+}
+
+/* ═══════════ PROFIL DES SIX VOIES ═══════════
+   Six sondes en même temps ne donnent pas six valeurs : elles donnent une
+   FORME. Et une forme se reconnaît, là où six nombres alignés ne disent
+   rien. C'est le seul montage du parc qui permette de le montrer.
+
+   Sur l'évaporateur, la forme localise le point où la dernière goutte de
+   liquide s'évapore — le réglage du détendeur rendu visible. Sur le
+   condenseur, elle fait apparaître le palier de condensation, c'est-à-dire
+   le diagramme enthalpique matérialisé sur le tube.
+
+   Le tracé reste lisible en noir et blanc : chaque repère porte un texte,
+   jamais une couleur seule (charte inerWeb, impression A4). */
+
+var SEUIL_SURCHAUFFE=1.5;   // K au-dessus de la saturation : le liquide a disparu
+
+function voiesDuProfil(){
+  var cf=configuration();
+  var liste=[];
+  for(var i=1;i<=6;i++){
+    var cle='voie_'+i;
+    if(cf.points&&cf.points.indexOf(cle)===-1)continue;
+    liste.push({cle:cle,
+      libelle:(cf.libelles&&cf.libelles[cle])||('Position '+i),
+      valeur:valeurDuPoint(cle)});
+  }
+  return liste;
+}
+
+/* Où la surchauffe commence, et ce que cela dit du détendeur. */
+function lectureEvaporateur(voies,tEvap,tBulle){
+  if(tEvap===null)return null;
+  // Le glissement d'un mélange zéotrope fait monter la température DANS la
+  // zone de changement d'état, sans la moindre surchauffe. Le dire, sinon
+  // l'élève lit une surchauffe là où il n'y a que du changement d'état —
+  // et c'est l'erreur que le professeur passe une heure à défaire.
+  var glissement=(tBulle!==null&&tBulle!==undefined)?tEvap-tBulle:0;
+  var rang=null;
+  voies.forEach(function(v,i){
+    if(rang===null&&v.valeur!==null&&v.valeur>tEvap+SEUIL_SURCHAUFFE)rang=i+1;
+  });
+  var n=voies.length;
+  if(rang===null)
+    return {rang:null,verdict:'Aucune voie n’est en surchauffe : évaporateur '+
+      'NOYÉ. Le liquide va jusqu’à l’aspiration — danger pour le compresseur.'};
+  if(rang<=Math.ceil(n/2))
+    return {rang:rang,verdict:'La surchauffe démarre dès la voie '+rang+' sur '+n+
+      ' : évaporateur AFFAMÉ. La fin de l’échangeur ne sert qu’à surchauffer '+
+      'du gaz — de la surface perdue.'+
+      ((glissement>0.3)?' Vérifiez d’abord la zone grisée : avec un glissement '+
+        'de '+glissement.toFixed(1)+' K, une montée sous la rosée n’est PAS '+
+        'de la surchauffe.':'')};
+  var note=(glissement>0.3)
+    ? ' Attention : ce fluide a un glissement de '+glissement.toFixed(1)+
+      ' K — la montée AVANT la rosée n’est pas de la surchauffe, c’est le '+
+      'changement d’état (zone grisée).'
+    : '';
+  if(rang>=n-1)
+    return {rang:rang,verdict:'La surchauffe démarre à la voie '+rang+' sur '+n+
+      ' : réglage CORRECT. Le liquide occupe presque tout l’échangeur.'+note};
+  return {rang:rang,verdict:'La surchauffe démarre à la voie '+rang+' sur '+n+
+    ' : réglage intermédiaire. Fermer légèrement le détendeur repousserait '+
+    'le départ vers la fin de l’échangeur.'+note};
+}
+
+function lectureCondenseur(voies,tCond){
+  if(tCond===null)return null;
+  var surPalier=voies.filter(function(v){
+    return v.valeur!==null&&Math.abs(v.valeur-tCond)<=SEUIL_SURCHAUFFE}).length;
+  if(!surPalier)
+    return {verdict:'Aucune voie sur le palier de condensation ('+tCond.toFixed(1)+
+      ' °C) : sondes mal réparties, ou palier hors de la zone instrumentée.'};
+  return {verdict:surPalier+' voie(s) sur le palier de condensation ('+
+    tCond.toFixed(1)+' °C) — c’est le changement d’état, visible sur le tube. '+
+    'Avant : la désurchauffe. Après : le sous-refroidissement.'};
+}
+
+/* Dispersion : la moyenne cache le défaut, l'écart le révèle. */
+function dispersion(valeurs){
+  var v=valeurs.filter(function(x){return x!==null});
+  if(v.length<2)return null;
+  var moy=v.reduce(function(a,b){return a+b},0)/v.length;
+  return {n:v.length,moyenne:moy,mini:Math.min.apply(null,v),
+          maxi:Math.max.apply(null,v),ecart:Math.max.apply(null,v)-Math.min.apply(null,v)};
+}
+
+function tracerProfil(voies,reference,libelleRef,bas,libelleBas){
+  // Marge droite egale a la gauche : le libelle du dernier point est centre
+  // sur lui et depassait du cadre (constate a la recette, config D).
+  var L=900,H=300,g=68,d=68,h=28,b=64;
+  var connues=voies.filter(function(v){return v.valeur!==null}).map(function(v){return v.valeur});
+  if(reference!==null)connues.push(reference);
+  if(bas!==null&&bas!==undefined)connues.push(bas);
+  if(connues.length<2)return '';
+  var mini=Math.min.apply(null,connues),maxi=Math.max.apply(null,connues);
+  var marge=Math.max(1.5,(maxi-mini)*0.18);
+  mini-=marge; maxi+=marge;
+  var X=function(i){return g+i*(L-g-d)/Math.max(1,voies.length-1)};
+  var Y=function(t){return h+(maxi-t)/(maxi-mini)*(H-h-b)};
+  var s='<svg viewBox="0 0 '+L+' '+H+'" xmlns="http://www.w3.org/2000/svg" '+
+    'role="img" aria-label="Profil des températures le long de l’échangeur" '+
+    'style="width:100%;height:auto">';
+  s+='<line x1="'+g+'" y1="'+Y(maxi)+'" x2="'+g+'" y2="'+Y(mini)+'" '+
+     'stroke="currentColor" stroke-width="1.5" opacity=".45"/>';
+  [mini+marge,(mini+maxi)/2,maxi-marge].forEach(function(t){
+    s+='<line x1="'+g+'" y1="'+Y(t)+'" x2="'+(L-d)+'" y2="'+Y(t)+'" '+
+       'stroke="currentColor" stroke-width="1" opacity=".13"/>';
+    s+='<text x="'+(g-8)+'" y="'+(Y(t)+4)+'" text-anchor="end" font-size="12" '+
+       'fill="currentColor" opacity=".7">'+t.toFixed(1)+'</text>';
+  });
+  // Zone de changement d'état : sur un mélange zéotrope elle a une épaisseur
+  // (le glissement), et la température monte DEDANS sans aucune surchauffe.
+  // AUCUN texte ici : la courbe traverse justement cette zone, et un libellé
+  // posé dessus serait illisible — a fortiori à l'impression. Les repères
+  // sont nommés dans la légende, sous le graphique.
+  if(bas!==null&&bas!==undefined&&reference!==null&&Math.abs(reference-bas)>0.3){
+    s+='<rect x="'+g+'" y="'+Y(Math.max(reference,bas))+'" width="'+(L-g-d)+'" '+
+       'height="'+Math.abs(Y(bas)-Y(reference))+'" fill="currentColor" opacity=".10"/>';
+    s+='<line x1="'+g+'" y1="'+Y(bas)+'" x2="'+(L-d)+'" y2="'+Y(bas)+'" '+
+       'stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 4" opacity=".55"/>';
+  }
+  if(reference!==null)
+    s+='<line x1="'+g+'" y1="'+Y(reference)+'" x2="'+(L-d)+'" y2="'+Y(reference)+'" '+
+       'stroke="currentColor" stroke-width="2" stroke-dasharray="7 5" opacity=".8"/>';
+  var chemin='',precedent=null;
+  voies.forEach(function(v,i){
+    if(v.valeur===null){precedent=null;return}
+    chemin+=(precedent===null?'M':'L')+X(i)+' '+Y(v.valeur)+' ';
+    precedent=i;
+  });
+  s+='<path d="'+chemin+'" fill="none" stroke="currentColor" stroke-width="3"/>';
+  voies.forEach(function(v,i){
+    var x=X(i);
+    if(v.valeur!==null){
+      s+='<circle cx="'+x+'" cy="'+Y(v.valeur)+'" r="6" fill="currentColor"/>';
+      // Les etiquettes des points extremes sont decalees vers l'interieur :
+      // centrees, elles mordaient sur les graduations de l'axe.
+      var ancre=(i===0)?'start':(i===voies.length-1?'end':'middle');
+      var dx=(i===0)?-10:(i===voies.length-1?10:0);
+      s+='<text x="'+(x+dx)+'" y="'+(Y(v.valeur)-13)+'" text-anchor="'+ancre+'" '+
+         'font-size="13" font-weight="700" fill="currentColor">'+v.valeur.toFixed(1)+'</text>';
+    } else {
+      s+='<text x="'+x+'" y="'+(H-b+22)+'" text-anchor="middle" font-size="12" '+
+         'fill="currentColor" opacity=".55">pas de mesure</text>';
+    }
+    s+='<text x="'+x+'" y="'+(H-22)+'" text-anchor="middle" font-size="12" '+
+       'fill="currentColor" opacity=".85">'+v.libelle+'</text>';
+  });
+  return s+'</svg>';
+}
+
+function majProfil(c){
+  var cont=document.getElementById('profil-voies');
+  if(!cont)return;
+  var cf=configuration();
+  if(!cf.profil&&!cf.dispersion){cont.innerHTML='';return}
+
+  var voies=voiesDuProfil();
+  var mesurees=voies.filter(function(v){return v.valeur!==null}).length;
+  var html='<div class="cd-tag" style="margin-top:4px">'+cf.lettre+' — '+cf.titre+'</div>';
+
+  if(mesurees<2){
+    cont.innerHTML=html+'<div class="info-box">Il faut au moins deux voies '+
+      'mesurées pour lire une forme. '+mesurees+' pour l’instant : posez les '+
+      'sondes et affectez-les dans l’onglet « Sondes &amp; affectation ».</div>';
+    return;
+  }
+
+  // Chaque côté ne dépend QUE de sa propre pression : lire un évaporateur
+  // n'exige pas de brancher un manomètre HP, et l'inverse est vrai aussi.
+  var reference=null,libelleRef='',lecture=null,pressionAttendue='';
+  var bas=null,libelleBas='';
+  if(cf.profil==='evaporateur'){
+    reference=temperatureEvaporation(); libelleRef='Rosée (fin d’évaporation)';
+    bas=temperatureBulleBP(); libelleBas='Bulle';
+    pressionAttendue='la BP';
+    if(reference!==null)lecture=lectureEvaporateur(voies,reference,bas);
+  } else if(cf.profil==='condenseur'){
+    reference=temperatureCondensation(); libelleRef='Bulle (fin de condensation)';
+    pressionAttendue='la HP';
+    if(reference!==null)lecture=lectureCondenseur(voies,reference);
+  }
+
+  html+='<div style="margin:6px 0 2px">'+
+    tracerProfil(voies,reference,libelleRef,bas,libelleBas)+'</div>';
+
+  // Légende SOUS le graphique : jamais un mot par-dessus un tracé.
+  if(reference!==null){
+    var legende='<span style="font-weight:800">— — —</span> '+libelleRef+
+      ' : '+reference.toFixed(1)+' °C';
+    if(bas!==null&&Math.abs(reference-bas)>0.3)
+      legende+=' &nbsp;·&nbsp; <span style="font-weight:800">zone grisée</span> : '+
+        'changement d’état, de '+bas.toFixed(1)+' à '+reference.toFixed(1)+' °C '+
+        '(glissement '+Math.abs(reference-bas).toFixed(1)+' K) — la température '+
+        'y monte SANS surchauffe';
+    html+='<div style="font-size:.78rem;color:var(--muted);margin:2px 0 8px">'+
+      legende+'</div>';
+  }
+
+  if(lecture)
+    html+='<div class="info-box turq"><strong>Ce que la forme dit :</strong> '+
+      lecture.verdict+'</div>';
+  else if(cf.profil)
+    html+='<div class="info-box">Affectez <strong>'+pressionAttendue+'</strong> : '+
+      'sans la température de saturation, la forme se voit mais ne se lit pas.</div>';
+
+  if(cf.dispersion){
+    // Configuration D : deux groupes de trois (reprise / soufflage). Ailleurs,
+    // un seul groupe. La dispersion est le vrai sujet, pas la moyenne.
+    var groupes=(cf.cle==='D')
+      ? [{nom:'Reprise',v:voies.slice(0,3)},{nom:'Soufflage',v:voies.slice(3,6)}]
+      : [{nom:'Ensemble des voies',v:voies}];
+    html+='<div class="sondes-list">';
+    groupes.forEach(function(gr){
+      var d=dispersion(gr.v.map(function(x){return x.valeur}));
+      if(!d)return;
+      var alerte=d.ecart>2.0;
+      html+='<div class="sonde-row">'+
+        '<span class="sr-serie" style="min-width:170px;font-family:var(--font);font-size:.82rem">'+
+          gr.nom+'</span>'+
+        '<span class="sr-val" style="min-width:110px">'+d.moyenne.toFixed(1)+' °C</span>'+
+        '<span class="sr-modele" style="min-width:190px;font-size:.74rem">de '+
+          d.mini.toFixed(1)+' à '+d.maxi.toFixed(1)+' °C sur '+d.n+' voies</span>'+
+        '<span class="sr-batt" style="margin-left:auto;text-align:right;font-size:.74rem">'+
+          (alerte?'⚠ ':'')+'dispersion '+d.ecart.toFixed(1)+' K</span></div>';
+    });
+    html+='</div>';
+    var tout=dispersion(voies.map(function(x){return x.valeur}));
+    if(tout&&tout.ecart>2.0)
+      html+='<div class="info-box"><strong>La moyenne cache le défaut, la '+
+        'dispersion le révèle.</strong> Un écart de '+tout.ecart.toFixed(1)+' K '+
+        'entre les voies n’est pas du bruit de mesure : les six sondes ne '+
+        'diffèrent que de 0,2 K en ambiance commune. Cherchez un filtre '+
+        'partiellement bouché, un givrage local ou un défaut de distribution.</div>';
+  }
+  cont.innerHTML=html;
+}
+
+function majUtilitaires(c,v){
+  var cont=document.getElementById('utilitaires-liste');
+  if(!cont)return;
+  var autorisees=configuration().familles||FAMILLES_TOUTES;
+  var html='';
+  // Une grandeur que la pose ne permet pas de calculer n'apprend rien : la
+  // configuration masque les familles qu'elle ne sert pas.
+  var visibles=calculerUtilitaires(c,v).filter(function(f){
+    return autorisees.indexOf(f.cle)!==-1});
+  if(!visibles.length)
+    html='<div class="info-box" style="margin-top:12px">Cette configuration '+
+      'ne vise pas ces grandeurs : elle se lit sur le <strong>profil</strong> '+
+      'ou la <strong>dispersion</strong> des six voies, ci-dessus.</div>';
+  visibles.forEach(function(f){
+    html+='<div class="cd-tag" style="margin-top:14px">'+f.titre+'</div><div class="sondes-list">';
+    f.grandeurs.forEach(function(g){
+      var vide=(g.valeur===null);
+      var affiche=vide?'—':(g.valeur.toFixed(g.dec)+(g.unite?' '+g.unite:''));
+      var detail=vide
+        ? 'manque : '+g.manque.join(', ')
+        : (g.repere?g.repere:'');
+      html+='<div class="sonde-row"'+(vide?' style="opacity:.62"':'')+'>'+
+        '<span class="sr-serie" style="min-width:210px;font-family:var(--font);font-size:.82rem">'+g.libelle+'</span>'+
+        '<span class="sr-val" style="min-width:96px">'+affiche+'</span>'+
+        '<span class="sr-modele" style="min-width:250px;font-size:.72rem">'+g.formule+'</span>'+
+        '<span class="sr-batt" style="margin-left:auto;text-align:right;font-size:.72rem">'+detail+'</span>'+
+        '</div>';
+    });
+    html+='</div>';
+  });
+  cont.innerHTML=html;
 }
 
 function majKPI(c,tAmb,dtAir){
@@ -1531,6 +2443,7 @@ function reinitialiser(){
 remplirSelecteurFluides();
 construirePointsMesure();
 construireSaisieManuelle();
+remplirSelecteurConfigurations();
 // Détection de la source : si un serveur d'acquisition répond, on s'y branche ;
 // sinon la simulation embarquée prend le relais (fichier ouvert en double-clic).
 (function(){
