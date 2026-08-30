@@ -79,12 +79,12 @@ const Schemas = (() => {
 <g id="sMobile">
   <line id="sLame" x1="250" y1="200" x2="480" y2="200" stroke="${C.orange}" stroke-width="14" stroke-linecap="round"/>
 </g>
-<text x="300" y="160" text-anchor="middle" font-size="14" fill="${C.orange}">contact mobile</text>
+<text x="250" y="228" text-anchor="middle" font-size="14" fill="${C.orange}">contact mobile</text>
 
 <!-- ressort -->
 <path id="sRessort" d="M258 236 l16 12 l-24 12 l24 12 l-24 12 l24 12 l-16 10"
       fill="none" stroke="${C.bleu}" stroke-width="6" stroke-linejoin="round"/>
-<text x="330" y="300" text-anchor="middle" font-size="14" fill="${C.bleu}">le ressort — il rend le mouvement brusque</text>
+<text x="292" y="302" font-size="14" fill="${C.bleu}">le ressort — il rend le mouvement brusque</text>
 
 <!-- arc -->
 <g id="sArc" opacity="0">
@@ -361,8 +361,8 @@ ${col(540, 'apIsoler', 'Isoler et condamner', 'travailler derrière en sécurit�
     const lignes = L.map(([id, nom, a, b, c], i) => {
       const y = 108 + i * 40;
       const courant = id === idCourant;
-      const marque = (v, x) => `<text x="${x}" y="${y + 6}" text-anchor="middle" font-size="17" font-weight="800"
-        fill="${v ? C.vert : C.rouge}">${v ? '✔' : '✘'}</text>`;
+      const marque = (v, x) => `<text x="${x}" y="${y + 6}" text-anchor="middle" font-size="14" font-weight="800"
+        fill="${v ? C.vert : C.rouge}">${v ? '✔ oui' : '✘ non'}</text>`;
       return `
 <rect x="30" y="${y - 22}" width="760" height="36" rx="8"
       fill="${courant ? '#e3f5ec' : (i % 2 ? C.creme : C.papier)}"

@@ -200,7 +200,7 @@ ${bob(410, N2, C.orange)}
 <text x="350" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">Il ne rattrape jamais le champ — et c’est nécessaire</text>
 
 <circle cx="200" cy="164" r="86" fill="none" stroke="${C.trait}" stroke-width="14"/>
-<text x="200" y="72" text-anchor="middle" font-size="12" fill="${C.gris}">le stator</text>
+<text x="130" y="74" text-anchor="middle" font-size="12" fill="${C.gris}">le stator</text>
 <circle cx="200" cy="164" r="52" fill="none" stroke="${C.navy}" stroke-width="4"/>
 <text x="200" y="169" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">rotor</text>
 
@@ -393,7 +393,7 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
 <polyline points="${pts.join(' ')}" fill="none" stroke="${C.orange}" stroke-width="3"/>
 
 <text x="380" y="272" text-anchor="middle" font-size="13" fill="${C.gris}">La hauteur ne change jamais : c’est la durée pendant laquelle on laisse passer qui change.</text>
-<text x="112" y="120" font-size="13" font-weight="700" fill="${C.navy}">valeur efficace : ${eff} V</text>`;
+<text x="112" y="82" font-size="13" font-weight="700" fill="${C.navy}">valeur efficace : ${eff} V</text>`;
     };
     peindre();
     hote.appendChild(d);

@@ -29,21 +29,21 @@ const Signes = (() => {
 
     conducteur: {
       nom: 'Le trait', dit: 'un conducteur — un fil',
-      source: '114_connections/ · le trait de liaison, présent dans tous les symboles',
+      source: '10_electric/10_allpole/114_connections/ · le trait de liaison, présent dans tous les symboles',
       dessin: (x, y) => `<line x1="${x}" y1="${y - 20 * E}" x2="${x}" y2="${y + 20 * E}"
         stroke="${C.navy}" stroke-width="${T}"/>` },
 
     borne: {
       nom: 'Le point', dit: 'une connexion — les fils se touchent vraiment',
-      source: '114_connections/splice.svg',
-      dessin: (x, y) => `<circle cx="${x}" cy="${y}" r="${1.6 * E}" fill="${C.navy}"/>` },
+      source: '10_electric/10_allpole/114_connections/bod.svg',
+      dessin: (x, y) => `<circle cx="${x}" cy="${y}" r="${2 * E}" fill="${C.navy}"/>` },
 
     /* act_electromagnetique_no.svg :
          line   0,-20 → 0,-10        la borne du haut
          polyline -5,-10  0,10  0,20 la lame, pivot en bas, ouverte vers la gauche  */
     contact: {
       nom: 'Le trait incliné', dit: 'un contact — il s’ouvre et se ferme',
-      source: '310_relays_contactors_contacts/03_contacts/act_electromagnetique_no.svg',
+      source: '10_electric/10_allpole/310_relays_contactors_contacts/03_contacts/act_electromagnetique_no.svg',
       dessin: (x, y) => `
         <line x1="${x}" y1="${y - 20 * E}" x2="${x}" y2="${y - 10 * E}"
               stroke="${C.navy}" stroke-width="${T}"/>
@@ -51,19 +51,20 @@ const Signes = (() => {
                   fill="none" stroke="${C.orange}" stroke-width="${T}" stroke-linejoin="round"/>
         <circle cx="${x}" cy="${y + 10 * E}" r="${1.2 * E}" fill="${C.navy}"/>` },
 
-    /* sectionneur_general.svg : line -8,-10 → -12,-10
+    /* sectionneur_general.svg : line -8,-10 → -12,-10, et le même trait de 4
+       unités dans interrupteur_sectionneur_biphase.svg (2,-12 → -2,-12) :
        un trait horizontal court, centré sur la borne fixe. */
     sectionnement: {
       nom: 'La barre courte', dit: 'aptitude au sectionnement — on peut travailler derrière',
-      source: '200_fuses_protective_gears/20_disconnecting_switches/sectionneur_general.svg',
+      source: '10_electric/10_allpole/200_fuses_protective_gears/20_disconnecting_switches/sectionneur_general.svg',
       dessin: (x, y) => `
-        <line x1="${x - 2.5 * E}" y1="${y - 10 * E}" x2="${x + 2.5 * E}" y2="${y - 10 * E}"
+        <line x1="${x - 2 * E}" y1="${y - 10 * E}" x2="${x + 2 * E}" y2="${y - 10 * E}"
               stroke="${C.vert}" stroke-width="${T + 1}"/>` },
 
     /* pojistka3p.svg : rect x=7 y=-10 w=6 h=20, traversé par le conducteur. */
     rectangle: {
       nom: 'Le rectangle', dit: 'un fusible — le conducteur le traverse',
-      source: '200_fuses_protective_gears/10_fuses/pojistka3p.svg',
+      source: '10_electric/10_allpole/200_fuses_protective_gears/10_fuses/pojistka3p.svg',
       dessin: (x, y) => `
         <line x1="${x}" y1="${y - 20 * E}" x2="${x}" y2="${y + 20 * E}"
               stroke="${C.navy}" stroke-width="${T}"/>
@@ -72,17 +73,22 @@ const Signes = (() => {
         <line x1="${x}" y1="${y - 10 * E}" x2="${x}" y2="${y + 10 * E}"
               stroke="${C.navy}" stroke-width="${T}"/>` },
 
-    /* dis_mag_term_2f-1.svg : polyline 0,10  5,10  5,4  0,4
-       un crochet RECTANGULAIRE accolé au conducteur — le bilame. */
+    /* dis_mag_term_2f-1.svg : polyline 0,10  5,10  5,4  0,4 — soit 5 de large
+       sur 6 de haut. relais_therm4.svg (5 × 10) et comm_thermique.svg (8 × 9)
+       donnent la même forme : le crochet du bilame est à peu près carré, jamais
+       allongé vers le haut. C'est à cette forme que l'élève doit le reconnaître. */
     thermique: {
       nom: 'Le crochet rectangulaire', dit: 'déclencheur thermique — c’est un bilame',
-      source: '200_fuses_protective_gears/12_magneto_thermal_circuit_breakers/dis_mag_term_2f-1.svg',
+      source: '10_electric/10_allpole/200_fuses_protective_gears/12_magneto_thermal_circuit_breakers/dis_mag_term_2f-1.svg',
       dessin: (x, y) => `
-        <polyline points="${x},${y + 6 * E} ${x + 5 * E},${y + 6 * E} ${x + 5 * E},${y - 6 * E} ${x},${y - 6 * E}"
+        <polyline points="${x},${y + 3 * E} ${x + 5 * E},${y + 3 * E} ${x + 5 * E},${y - 3 * E} ${x},${y - 3 * E}"
                   fill="none" stroke="${C.rouge}" stroke-width="${T}" stroke-linejoin="miter"/>` },
 
-    /* Le déclencheur à maximum de courant se note « I> » sur dis_mag_term_2f-1.svg ;
-       la représentation française courante ajoute le demi-cercle de la bobine. */
+    /* dis_mag_term_2f-1.svg note le déclencheur à maximum de courant « I> ». Les
+       schémas français lui préfèrent le demi-cercle de la bobine vue en coupe,
+       posé sur sa base — c'est ce que la station 8.6 enseigne, et c'est ce que
+       l'élève trouvera chez Schneider ou Legrand. On ne mélange pas les deux
+       notations dans un même signe. */
     magnetique: {
       nom: 'Le demi-cercle', dit: 'déclencheur magnétique — la bobine qui claque',
       source: 'dis_mag_term_2f-1.svg (noté « I> ») · 310_.../01_coils/ pour la bobine',
@@ -90,14 +96,12 @@ const Signes = (() => {
         <path d="M${x} ${y + 5 * E} a${5 * E} ${5 * E} 0 0 1 ${10 * E} 0"
               fill="none" stroke="${C.bleu}" stroke-width="${T}"/>
         <line x1="${x}" y1="${y + 5 * E}" x2="${x + 10 * E}" y2="${y + 5 * E}"
-              stroke="${C.bleu}" stroke-width="${T}"/>
-        <text x="${x + 5 * E}" y="${y - 1 * E}" text-anchor="middle" font-size="${4 * E}"
-              font-style="italic" fill="${C.bleu}">I&gt;</text>` },
+              stroke="${C.bleu}" stroke-width="${T}"/>` },
 
     /* act_electromagnetique_no.svg : stroke-dasharray="6 3", de -15,0 à -3,0 */
     pointille: {
       nom: 'Le pointillé', dit: 'liaison mécanique — ce qui relie ce qui est loin',
-      source: '310_relays_contactors_contacts/03_contacts/act_electromagnetique_no.svg',
+      source: '10_electric/10_allpole/310_relays_contactors_contacts/03_contacts/act_electromagnetique_no.svg',
       dessin: (x, y) => `
         <line x1="${x - 12 * E}" y1="${y}" x2="${x + 12 * E}" y2="${y}"
               stroke="${C.gris}" stroke-width="${T - 1.5}" stroke-dasharray="${6 * E * 0.5} ${3 * E * 0.5}"/>` },
@@ -105,42 +109,38 @@ const Signes = (() => {
     /* 310_relays_contactors_contacts/01_coils/ : un rectangle traversé par le conducteur. */
     bobine: {
       nom: 'Le rectangle large', dit: 'une bobine — ce qui commande',
-      source: '310_relays_contactors_contacts/01_coils/bobine3.svg',
+      source: '10_electric/10_allpole/310_relays_contactors_contacts/01_coils/bobine3.svg',
       dessin: (x, y) => `
-        <line x1="${x}" y1="${y - 20 * E}" x2="${x}" y2="${y - 5 * E}"
+        <line x1="${x}" y1="${y - 20 * E}" x2="${x}" y2="${y - 8 * E}"
               stroke="${C.navy}" stroke-width="${T}"/>
-        <line x1="${x}" y1="${y + 5 * E}" x2="${x}" y2="${y + 20 * E}"
+        <line x1="${x}" y1="${y + 8 * E}" x2="${x}" y2="${y + 20 * E}"
               stroke="${C.navy}" stroke-width="${T}"/>
-        <rect x="${x - 7 * E}" y="${y - 5 * E}" width="${14 * E}" height="${10 * E}"
+        <rect x="${x - 14 * E}" y="${y - 8 * E}" width="${28 * E}" height="${16 * E}"
               fill="${C.papier}" stroke="${C.navy}" stroke-width="${T}"/>` },
 
     /* moteur_tri.svg / induction_motor : un cercle, une lettre, les traits d'arrivée. */
     machine: {
       nom: 'Le rond', dit: 'une machine — la lettre dedans dit laquelle',
-      source: '391_consumers_actuators/10_engines/moteur_tri.svg',
+      source: '10_electric/10_allpole/391_consumers_actuators/10_engines/moteur_tri.svg',
       dessin: (x, y, l) => `
         <circle cx="${x}" cy="${y}" r="${9 * E}" fill="${C.papier}"
                 stroke="${C.navy}" stroke-width="${T}"/>
         <text x="${x}" y="${y + 3 * E}" text-anchor="middle" font-size="${8 * E}"
               font-weight="700" fill="${C.navy}">${l || 'M'}</text>` },
 
-    /* 380_signaling_operating/20_push_buttons/ : le trait de commande manuelle
-       posé en travers de la lame. */
+    /* Commande manuelle générale, CEI 60617 : un trait horizontal posé en travers
+       de la lame, avec son petit montant. Ce n'est PAS le carré ouvert du
+       bouton-poussoir (poussoir.svg : polyline -7,-5 -10,-5 -10,5 -7,5), qui dit
+       « on appuie », alors que celui-ci dit seulement « une main agit ». */
     manuelle: {
       nom: 'Le trait de commande', dit: 'commande manuelle — une main agit',
-      source: '380_signaling_operating/20_push_buttons/',
+      source: 'CEI 60617 S00223 — à distinguer du carré de poussoir.svg',
       dessin: (x, y) => `
         <line x1="${x - 7 * E}" y1="${y - 13 * E}" x2="${x - 1 * E}" y2="${y - 13 * E}"
               stroke="${C.navy}" stroke-width="${T}"/>
         <line x1="${x - 4 * E}" y1="${y - 13 * E}" x2="${x - 4 * E}" y2="${y - 9 * E}"
               stroke="${C.navy}" stroke-width="${T - 1}"/>` },
 
-    temporisation: {
-      nom: 'Le demi-disque', dit: 'temporisation — le contact prend son temps',
-      source: '310_relays_contactors_contacts/01_coils/bobine_tempo_travail.svg',
-      dessin: (x, y) => `
-        <path d="M${x - 4 * E} ${y - 4 * E} a${4 * E} ${4 * E} 0 0 1 ${8 * E} 0 z"
-              fill="${C.orange}" stroke="${C.orange}" stroke-width="1"/>` }
   };
 
   /* ---------------------------------------------------------------- les mots

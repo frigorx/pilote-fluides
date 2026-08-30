@@ -195,7 +195,8 @@ ${[210, 310, 410].map((x, i) => `
 <!-- porte-contacts : la barre qui les tient tous -->
 <rect x="180" y="${256 + dy}" width="380" height="18" rx="4" fill="${C.navy}"/>
 <text x="640" y="${269 + dy}" font-size="12" fill="${C.navy}">porte-contacts</text>
-<text x="640" y="${285 + dy}" font-size="11" fill="${C.gris}">ils bougent tous ensemble</text>
+<text x="640" y="${285 + dy}" font-size="11" fill="${C.gris}">ils bougent</text>
+<text x="640" y="${299 + dy}" font-size="11" fill="${C.gris}">tous ensemble</text>
 
 <!-- armature mobile -->
 <rect x="250" y="${284 + dy}" width="240" height="26" rx="3" fill="#c9d6e6" stroke="${C.navy}" stroke-width="3"/>
