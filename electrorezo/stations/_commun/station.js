@@ -10,12 +10,27 @@ const Station = (() => {
   'use strict';
 
   const S = { contenu: null, temps: 0, niveau: 'CAP', vitesse: .95, voix: null, tour: 0,
-              faits: new Set(), nettoyages: [] };
+              genre: 'homme', mp3: true, faits: new Set(), nettoyages: [] };
   const $ = s => document.querySelector(s);
   const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x !== undefined) n.textContent = x; return n; };
 
   /* ---------------------------------------------------------------- la voix
-     La voix EXPLIQUE, elle ne lit pas l'écran — 00-charte/VOIX-ET-NARRATION.md. */
+     La voix EXPLIQUE, elle ne lit pas l'écran — 00-charte/VOIX-ET-NARRATION.md.
+
+     DEUX SOURCES, DANS CET ORDRE.
+     · Le MP3 fabriqué (edge-tts, Henri ou Denise) : la même voix sur tous
+       les postes, et elle marche hors ligne — en atelier, c'est ce qui
+       compte. C'est la voix du produit.
+     · La voix du navigateur, en repli : elle change d'un appareil à l'autre
+       et manque sur certains, mais elle n'a besoin d'aucun fichier.
+
+     On ne teste PAS la présence du MP3 par une requête : une station
+     s'ouvre aussi en double-clic, en file://, où fetch est interdit. On
+     tente de le jouer ; son erreur nous renseigne, et l'élève ne voit rien
+     passer. */
+
+  const GENRES = { homme: 'Henri', femme: 'Denise' };
+  let lecteur = null;                   /* l'<audio> en cours, s'il y en a un */
 
   function voixFrancaises() {
     if (!('speechSynthesis' in window)) return [];
@@ -34,6 +49,15 @@ const Station = (() => {
 
   function remplirVoix() {
     const sel = $('#voixPick'); if (!sel) return;
+    if (S.mp3) {
+      sel.classList.remove('hidden');
+      sel.innerHTML = '';
+      Object.entries(GENRES).forEach(([g, nom]) => {
+        const o = el('option', null, nom); o.value = g; sel.appendChild(o);
+      });
+      sel.value = S.genre;
+      return;
+    }
     const liste = voixFrancaises();
     if (liste.length < 2) { sel.classList.add('hidden'); return; }
     sel.classList.remove('hidden');
@@ -46,20 +70,55 @@ const Station = (() => {
 
   function couperVoix() {
     S.tour++;
+    if (lecteur) { lecteur.pause(); lecteur = null; }
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     const b = $('#btVoix'); if (b) { b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); }
   }
 
   function direNarration() {
     const b = $('#btVoix');
-    if (!('speechSynthesis' in window)) { b.textContent = 'Voix indisponible'; b.disabled = true; return; }
-    if (speechSynthesis.speaking && !speechSynthesis.paused) { speechSynthesis.pause(); b.textContent = '▶ Reprendre'; return; }
-    if (speechSynthesis.paused) { speechSynthesis.resume(); b.textContent = 'Ⅱ Pause'; return; }
 
-    const texte = (S.contenu.temps[S.temps].narration || '').trim();
+    /* déjà en train de parler : le bouton met en pause, puis reprend —
+       peu importe laquelle des deux sources est au travail. */
+    if (lecteur) {
+      if (lecteur.paused) { lecteur.play().catch(() => {}); b.textContent = 'Ⅱ Pause'; }
+      else { lecteur.pause(); b.textContent = '▶ Reprendre'; }
+      return;
+    }
+    if ('speechSynthesis' in window) {
+      if (speechSynthesis.speaking && !speechSynthesis.paused) { speechSynthesis.pause(); b.textContent = '▶ Reprendre'; return; }
+      if (speechSynthesis.paused) { speechSynthesis.resume(); b.textContent = 'Ⅱ Pause'; return; }
+    }
+
+    const t = S.contenu.temps[S.temps];
+    const texte = (t.narration || '').trim();
     if (!texte) return;
     couperVoix();
     const tour = ++S.tour;
+    if (S.mp3) jouerLeMp3(t, tour, b);
+    else direAuNavigateur(texte, tour, b);
+  }
+
+  function jouerLeMp3(t, tour, b) {
+    const a = new Audio('voix/' + S.genre + '/' + t.id + '.mp3');
+    a.playbackRate = S.vitesse;
+    a.addEventListener('playing', () => {
+      if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); } });
+    a.addEventListener('ended', () => {
+      if (tour === S.tour) { lecteur = null; b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); } });
+    a.addEventListener('error', () => {
+      /* pas de fichier ici : on ne réessaiera plus de la séance, le
+         sélecteur repasse aux voix du poste, et on dit quand même. */
+      if (tour !== S.tour) return;
+      lecteur = null; S.mp3 = false; remplirVoix();
+      direAuNavigateur((t.narration || '').trim(), tour, b);
+    });
+    lecteur = a;
+    a.play().catch(() => {});
+  }
+
+  function direAuNavigateur(texte, tour, b) {
+    if (!('speechSynthesis' in window)) { b.textContent = 'Voix indisponible'; b.disabled = true; return; }
     const u = new SpeechSynthesisUtterance(texte);
     u.lang = 'fr-FR'; u.rate = S.vitesse; u.pitch = 1;
     const v = meilleureVoix(); if (v) u.voice = v;
@@ -253,9 +312,17 @@ const Station = (() => {
     const rg = $('#vitesse'), out = $('#vitesseOut');
     rg.addEventListener('input', () => {
       S.vitesse = +rg.value; out.textContent = S.vitesse.toFixed(2).replace('.', ',') + '×';
-      couperVoix();   /* le réglage coupe la lecture en cours, sinon c'est un faux réglage */
+      /* Le MP3 change d'allure sans s'interrompre : l'élève entend le
+         réglage agir, ce qui vaut mieux qu'une coupure. La voix du poste,
+         elle, ne sait pas changer en cours de phrase — là il faut couper,
+         sinon le réglage ne servirait qu'au paragraphe suivant. */
+      if (lecteur) lecteur.playbackRate = S.vitesse;
+      else couperVoix();
     });
-    $('#voixPick').addEventListener('change', e => { S.voix = e.target.value; couperVoix(); });
+    $('#voixPick').addEventListener('change', e => {
+      if (S.mp3) S.genre = e.target.value; else S.voix = e.target.value;
+      couperVoix();
+    });
     if ('speechSynthesis' in window) {
       remplirVoix();
       speechSynthesis.onvoiceschanged = remplirVoix;
