@@ -21,7 +21,12 @@ ModeleSigne.construire({
   motVedette: 'disjoncteurMoteur',
 
   symbolesBiblio: [
-    { src: 'assets/dis_mag_term_2f-1.svg', alt: "Symbole normalisé d’un disjoncteur magnéto-thermique.", legende: "Un disjoncteur magnéto-thermique" }
+    { src: 'assets/disjonct-m_1f.svg',
+      alt: "Symbole normalisé d’un disjoncteur : le contact incliné, le crochet du thermique, et le demi-cercle du magnétique, traversé par le conducteur.",
+      legende: "Le demi-cercle, sur un vrai symbole" },
+    { src: 'assets/dis_mag_term_2f-1.svg',
+      alt: "Le même déclencheur, noté par un rectangle contenant « I supérieur » au lieu du demi-cercle.",
+      legende: "L’autre notation : un rectangle et « I> »" }
   ],
   duDessinAuPlan: [
     "Sur les symboles officiels, il se dessine aussi comme <strong>un rectangle contenant un demi-disque</strong>. La forme varie selon les éditions, l’idée ne varie jamais.",

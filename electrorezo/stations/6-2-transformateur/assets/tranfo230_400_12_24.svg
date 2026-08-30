@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15.0 -32.0 68.0 58.0" width="68" height="58">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -24.5 56 40" width="56" height="40">
 <!-- Transformateur 230/400-12/24V — converti de tranfo230_400_12_24.elmt par outils\elmt-vers-svg.py -->
-<rect x="-15.0" y="-32.0" width="68.0" height="58.0" fill="#ffffff"/>
+<rect x="-8" y="-24.5" width="56" height="40" fill="#ffffff"/>
 <path d="M 40.00,4.90 A 5.00,5.00 0 0 0 30.00,4.90" stroke="black" stroke-width="1" fill="none"/>
 <path d="M 10.00,5.00 A 5.00,5.00 0 0 0 0.00,5.00" stroke="black" stroke-width="1" fill="none"/>
 <path d="M 20.00,5.00 A 5.00,5.00 0 0 0 10.00,5.00" stroke="black" stroke-width="1" fill="none"/>

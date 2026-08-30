@@ -65,7 +65,12 @@ ModeleSigne.construire({
   motVedette: 'disjoncteurMoteur',
 
   symbolesBiblio: [
-    { src: 'assets/dis_mag_term_2f-2.svg', alt: 'Symbole normalisé d’un disjoncteur magnéto-thermique à deux pôles.', legende: 'Un symbole officiel, à déchiffrer' }
+    { src: 'assets/disjonct-m_1f.svg',
+      alt: 'Symbole normalisé d’un disjoncteur : contact incliné, crochet du thermique, demi-cercle du magnétique.',
+      legende: 'À déchiffrer : trois signes empilés' },
+    { src: 'assets/dis_mag_term_2f-2.svg',
+      alt: 'Symbole normalisé d’un disjoncteur magnéto-thermique à deux pôles, avec ses repères de bornes.',
+      legende: 'Le même appareil, écrit autrement' }
   ],
   duDessinAuPlan: [
     'Un dernier conseil, et il vaut pour toute une carrière : <strong>quand vous tombez sur un symbole inconnu, ne cherchez pas à deviner l’appareil</strong>.',
