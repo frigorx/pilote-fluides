@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-111 -53 207 134" width="207" height="134">
 <!-- Convertisseur de fréquence — converti de static_freq_converter.elmt par outils\elmt-vers-svg.py -->
-<rect x="-111" y="-53" width="207" height="134" fill="#ffffff"/>
+
 <polygon points="-52.1,-20.17 -56.7,-13.3 -47.49,-13.3" stroke="black" stroke-width="1" fill="none"/>
 <text x="-62" y="-41" font-family="Arial,sans-serif" font-size="4" fill="#000000">Rectifier</text>
 <text x="-9" y="-44" font-family="Arial,sans-serif" font-size="4" fill="#000000">DC Voltage

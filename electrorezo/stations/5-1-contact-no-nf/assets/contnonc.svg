@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-25.5 -25.5 31 51" width="31" height="51">
 <!-- Contact NO - NC — converti de contnonc.elmt par outils\elmt-vers-svg.py -->
-<rect x="-25.5" y="-25.5" width="31" height="51" fill="#ffffff"/>
+
 <polyline points="-15,-10 0,10 0,20" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-20" x2="0" y2="-10" stroke="black" stroke-width="1" fill="none"/>
 <polyline points="-20,-20 -20,-8 -12,-8" stroke="black" stroke-width="1" fill="none"/>

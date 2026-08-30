@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-7 -34.5 34 50" width="34" height="50">
 <!-- Interrupteur 2 positions — converti de 015_inter_2.elmt par outils\elmt-vers-svg.py -->
-<rect x="-7" y="-34.5" width="34" height="50" fill="#fffdf8"/>
+
 <line x1="9" y1="-13" x2="2" y2="1" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="20.00" cy="0.00" rx="1.50" ry="1.50" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="10.00" cy="-15.00" rx="1.50" ry="1.50" stroke="black" stroke-width="1" fill="none"/>

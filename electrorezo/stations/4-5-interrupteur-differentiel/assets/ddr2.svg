@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-25.2 -25.5 42.7 51" width="42.7" height="51">
 <!-- Disjoncteur différentiel — converti de ddr2.elmt par outils\elmt-vers-svg.py -->
-<rect x="-25.2" y="-25.5" width="42.7" height="51" fill="#fffdf8"/>
+
 <polyline points="10,20 10,10 3,-9" stroke="black" stroke-width="1" fill="none"/>
 <line x1="-10" y1="-20" x2="-10" y2="-10" stroke="black" stroke-width="1" fill="none"/>
 <line x1="10" y1="-20" x2="10" y2="-10" stroke="black" stroke-width="1" fill="none"/>

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15.5 -5.5 71 11" width="71" height="11">
 <!-- Cable 3 brins — converti de cable_3wires.elmt par outils\elmt-vers-svg.py -->
-<rect x="-15.5" y="-5.5" width="71" height="11" fill="#fffdf8"/>
+
 <line x1="-10" y1="0" x2="50" y2="0" stroke="black" stroke-width="1" fill="none"/>
 </svg>

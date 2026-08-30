@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-8.5 -25.5 17 51" width="17" height="51">
 <!-- Fusible 1p — converti de pojistka1p.elmt par outils\elmt-vers-svg.py -->
-<rect x="-8.5" y="-25.5" width="17" height="51" fill="#fffdf8"/>
+
 <rect x="-3" y="-10" width="6" height="20" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-20" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
 </svg>

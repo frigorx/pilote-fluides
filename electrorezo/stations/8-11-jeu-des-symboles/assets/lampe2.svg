@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15.5 -25.5 31 51" width="31" height="51">
 <!-- Lampe — converti de lampe2.elmt par outils\elmt-vers-svg.py -->
-<rect x="-15.5" y="-25.5" width="31" height="51" fill="#ffffff"/>
+
 <ellipse cx="0.00" cy="0.00" rx="10.00" ry="10.00" stroke="black" stroke-width="1" fill="none"/>
 <line x1="7" y1="-7" x2="-7" y2="7" stroke="black" stroke-width="1" fill="none"/>
 <line x1="-7" y1="-7" x2="7" y2="7" stroke="black" stroke-width="1" fill="none"/>

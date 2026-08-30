@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-58.2 -49 73.7 94" width="73.7" height="94">
 <!-- Disjoncteur Magnéto-thermique GV — converti de dis_mag_term_2f-1.elmt par outils\elmt-vers-svg.py -->
-<rect x="-58.2" y="-49" width="73.7" height="94" fill="#fffdf8"/>
+
 <polyline points="0,14 0,10 5,10 5,4 0,4 0,-6 -7,-25" stroke="black" stroke-width="1" fill="none"/>
 <text x="4" y="-40" font-family="Arial,sans-serif" font-size="4" fill="#000000">1</text>
 <text x="4" y="39" font-family="Arial,sans-serif" font-size="4" fill="#000000">2</text>

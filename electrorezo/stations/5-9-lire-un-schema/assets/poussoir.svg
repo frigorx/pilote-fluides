@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15.2 -25.5 20.7 51" width="20.7" height="51">
 <!-- Bouton poussoir — converti de poussoir.elmt par outils\elmt-vers-svg.py -->
-<rect x="-15.2" y="-25.5" width="20.7" height="51" fill="#ffffff"/>
+
 <polyline points="-5,-10 0,10 0,20" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-20" x2="0" y2="-10" stroke="black" stroke-width="1" fill="none"/>
 <line x1="-10" y1="0" x2="-3" y2="0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>

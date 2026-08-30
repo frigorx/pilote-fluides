@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-35.2 -25.5 40.7 51" width="40.7" height="51">
 <!-- Commutateur a 2 positions à clé — converti de commut_2_position_fixe.elmt par outils\elmt-vers-svg.py -->
-<rect x="-35.2" y="-25.5" width="40.7" height="51" fill="#ffffff"/>
+
 <text x="-12" y="-6.67" font-family="Arial,sans-serif" font-size="4" fill="#000000">1</text>
 <line x1="-15" y1="5" x2="-10" y2="-5" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
 <line x1="-20" y1="-5" x2="-15" y2="5" stroke="black" stroke-width="0.4" fill="none"/>

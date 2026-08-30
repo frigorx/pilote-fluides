@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-25.7 -25.5 31.2 51" width="31.2" height="51">
 <!-- Actionné par un dispositif électromagnétique NO — converti de act_electromagnetique_no.elmt par outils\elmt-vers-svg.py -->
-<rect x="-25.7" y="-25.5" width="31.2" height="51" fill="#fffdf8"/>
+
 <path d="M -18.00,3.00 A 2.50,3.00 0 0 0 -18.00,-3.00" stroke="black" stroke-width="0.4" fill="none"/>
 <line x1="-18" y1="3" x2="-18" y2="7" stroke="black" stroke-width="0.4" fill="none"/>
 <line x1="-18" y1="-7" x2="-18" y2="-3" stroke="black" stroke-width="0.4" fill="none"/>

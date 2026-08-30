@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20.2 -25.5 31.7 51" width="31.7" height="51">
 <!-- Contact simple (NF / tempo travail) — converti de con_simple_nf_tmp_t.elmt par outils\elmt-vers-svg.py -->
-<rect x="-20.2" y="-25.5" width="31.7" height="51" fill="#ffffff"/>
+
 <polyline points="5,-10 0,10 0,20" stroke="black" stroke-width="1" fill="none"/>
 <line x1="-14.8" y1="1.5" x2="2" y2="1.5" stroke="black" stroke-width="0.4" fill="none"/>
 <line x1="0" y1="-9" x2="6" y2="-9" stroke="black" stroke-width="1" fill="none"/>

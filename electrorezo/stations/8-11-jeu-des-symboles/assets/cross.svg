@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.5 -9.5 19 19" width="19" height="19">
 <!-- Croix — converti de cross.elmt par outils\elmt-vers-svg.py -->
-<rect x="-9.5" y="-9.5" width="19" height="19" fill="#fffdf8"/>
+
 <ellipse cx="0.00" cy="0.00" rx="1.00" ry="1.00" stroke="black" stroke-width="1" fill="black"/>
 <line x1="-4" y1="0" x2="4" y2="0" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-4" x2="0" y2="4" stroke="black" stroke-width="1" fill="none"/>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-24.5 -40.5 45 81" width="45" height="81">
 <!-- Transformateur triphasé — converti de transfo_tri.elmt par outils\elmt-vers-svg.py -->
-<rect x="-24.5" y="-40.5" width="45" height="81" fill="#ffffff"/>
+
 <line x1="0" y1="13" x2="-20" y2="13" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="13" x2="0" y2="8" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="13" x2="7" y2="20" stroke="black" stroke-width="1" fill="none"/>

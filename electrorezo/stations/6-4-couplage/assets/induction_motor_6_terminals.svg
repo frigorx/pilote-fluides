@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-45.5 -105.5 126.03 138.35" width="126.03" height="138.35">
 <!-- induction_motor_6_terminals — converti de induction_motor_6_terminals.elmt par outils\elmt-vers-svg.py -->
-<rect x="-45.5" y="-105.5" width="126.03" height="138.35" fill="#fffdf8"/>
+
 <text x="1" y="13" font-family="Arial,sans-serif" font-size="7" fill="#000000">V2</text>
 <text x="1" y="-85" font-family="Arial,sans-serif" font-size="7" fill="#000000">V1</text>
 <text x="21" y="-85" font-family="Arial,sans-serif" font-size="7" fill="#000000">W1</text>

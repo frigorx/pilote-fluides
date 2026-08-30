@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20.67 -25.5 26.17 51" width="26.17" height="51">
 <!-- Contact relais thermique (NO) — converti de contact_relais.elmt par outils\elmt-vers-svg.py -->
-<rect x="-20.67" y="-25.5" width="26.17" height="51" fill="#ffffff"/>
+
 <line x1="-12.63" y1="3" x2="-16.17" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="-12.63" y1="-2.31" x2="-12.63" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="-7.31" y1="-2.31" x2="-12.63" y2="-2.31" stroke="black" stroke-width="1" fill="none"/>

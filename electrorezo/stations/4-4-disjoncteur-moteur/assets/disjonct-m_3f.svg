@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-30.5 -35.5 61 61" width="61" height="61">
 <!-- Disjoncteur tripolaire — converti de disjonct-m_3f.elmt par outils\elmt-vers-svg.py -->
-<rect x="-30.5" y="-35.5" width="61" height="61" fill="#ffffff"/>
+
 <line x1="-20" y1="15.5" x2="-20" y2="20" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="15.5" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
 <path d="M -20.00,15.50 A 4.00,2.50 0 0 0 -20.00,10.50" stroke="black" stroke-width="1" fill="none"/>

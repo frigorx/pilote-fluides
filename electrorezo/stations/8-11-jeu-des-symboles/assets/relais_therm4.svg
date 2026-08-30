@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5.5 -25.5 36 51" width="36" height="51">
 <!-- Relais thermique — converti de relais_therm4.elmt par outils\elmt-vers-svg.py -->
-<rect x="-5.5" y="-25.5" width="36" height="51" fill="#fffdf8"/>
+
 <line x1="0" y1="-20" x2="0" y2="-5" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="5" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
 <line x1="5" y1="-5" x2="5" y2="5" stroke="black" stroke-width="1" fill="none"/>

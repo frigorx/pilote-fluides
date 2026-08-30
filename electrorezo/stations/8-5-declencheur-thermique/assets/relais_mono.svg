@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10.5 -25.67 46 51.17" width="46" height="51.17">
 <!-- Relais thermique mono — converti de relais_mono.elmt par outils\elmt-vers-svg.py -->
-<rect x="-10.5" y="-25.67" width="46" height="51.17" fill="#fffdf8"/>
+
 <text x="13" y="19.33" font-family="Arial,sans-serif" font-size="4" fill="#000000">4</text>
 <line x1="10" y1="15" x2="10" y2="20" stroke="black" stroke-width="1" fill="none"/>
 <text x="3" y="19.33" font-family="Arial,sans-serif" font-size="4" fill="#000000">2</text>

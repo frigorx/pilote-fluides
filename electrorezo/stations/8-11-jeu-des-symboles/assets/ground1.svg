@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-19.65 -26 38.27 46" width="38.27" height="46">
 <!-- Masse — converti de ground1.elmt par outils\elmt-vers-svg.py -->
-<rect x="-19.65" y="-26" width="38.27" height="46" fill="#fffdf8"/>
+
 <line x1="0" y1="-20" x2="0" y2="13" stroke="black" stroke-width="2" fill="none"/>
 <line x1="-13.65" y1="14" x2="12.62" y2="14" stroke="black" stroke-width="2" fill="none"/>
 </svg>

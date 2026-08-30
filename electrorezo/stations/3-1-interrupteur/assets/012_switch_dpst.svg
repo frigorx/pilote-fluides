@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-23.5 -35.5 42 50" width="42" height="50">
 <!-- Commutateur bipolaire n.o. — converti de 012_switch_dpst.elmt par outils\elmt-vers-svg.py -->
-<rect x="-23.5" y="-35.5" width="42" height="50" fill="#fffdf8"/>
+
 <ellipse cx="10.00" cy="-20.00" rx="1.75" ry="1.75" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="10.00" cy="0.00" rx="1.75" ry="1.75" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="-10.00" cy="0.00" rx="1.75" ry="1.75" stroke="black" stroke-width="1" fill="none"/>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-21.19 -25.5 38.69 51" width="38.69" height="51">
 <!-- Porte fusible 2P — converti de sectionneur_fusible_bi.elmt par outils\elmt-vers-svg.py -->
-<rect x="-21.19" y="-25.5" width="38.69" height="51" fill="#fffdf8"/>
+
 <polyline points="-15,-10 -10,10 -10,20" stroke="black" stroke-width="1" fill="none"/>
 <polyline points="5,-10 10,10 10,20" stroke="black" stroke-width="1" fill="none"/>
 <polygon points="4.31,-4.51 6.81,5.49 10.69,4.51 8.19,-5.49" stroke="black" stroke-width="1" fill="none"/>

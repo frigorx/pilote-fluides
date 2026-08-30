@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-45.44 -0.45 90.22 17.95" width="90.22" height="17.95">
 <!-- Cable 2 phases+terre — converti de cable.elmt par outils\elmt-vers-svg.py -->
-<rect x="-45.44" y="-0.45" width="90.22" height="17.95" fill="#fffdf8"/>
+
 <text x="12" y="9" font-family="Arial,sans-serif" font-size="4" fill="#000000">2</text>
 <line x1="26.95" y1="7.95" x2="30.95" y2="11.95" stroke="black" stroke-width="1" fill="none"/>
 <line x1="8" y1="8" x2="12" y2="12" stroke="black" stroke-width="1" fill="none"/>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-49.5 -25.5 57 51" width="57" height="51">
 <!-- Interrupteur sectionneur biphasé — converti de interrupteur_sectionneur_biphase.elmt par outils\elmt-vers-svg.py -->
-<rect x="-49.5" y="-25.5" width="57" height="51" fill="#fffdf8"/>
+
 <polyline points="-5,-10 0,10 0,20" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="-40.00" cy="12.00" rx="2.00" ry="2.00" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="-20.00" cy="-10.00" rx="2.00" ry="2.00" stroke="black" stroke-width="1" fill="none"/>

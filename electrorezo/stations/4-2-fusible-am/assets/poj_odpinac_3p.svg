@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-14.3 -19.5 62.8 40" width="62.8" height="40">
 <!-- Porte Fusible 3p — converti de poj_odpinac_3p.elmt par outils\elmt-vers-svg.py -->
-<rect x="-14.3" y="-19.5" width="62.8" height="40" fill="#fffdf8"/>
+
 <polygon points="2.8,8.73 -2.95,10.74 -8.8,-7 -3.17,-8.95" stroke="black" stroke-width="1" fill="none"/>
 <polygon points="42.8,8.73 37.05,10.74 31.2,-7 36.83,-8.95" stroke="black" stroke-width="1" fill="none"/>
 <polygon points="22.8,8.73 17.05,10.74 11.2,-7 16.83,-8.95" stroke="black" stroke-width="1" fill="none"/>

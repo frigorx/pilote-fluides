@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-16.2 -25.5 27.7 51" width="27.7" height="51">
 <!-- Arrêt d'urgence (NF) — converti de au.elmt par outils\elmt-vers-svg.py -->
-<rect x="-16.2" y="-25.5" width="27.7" height="51" fill="#ffffff"/>
+
 <polyline points="5,-10 0,10 0,20" stroke="black" stroke-width="1" fill="none"/>
 <line x1="-4" y1="-2" x2="-1" y2="0" stroke="black" stroke-width="0.4" fill="none"/>
 <path d="M -7.00,-5.00 A 4.00,5.00 0 0 0 -7.00,5.00" stroke="black" stroke-width="0.4" fill="none"/>

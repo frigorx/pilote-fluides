@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-25.5 -24.5 71 49" width="71" height="49">
 <!-- Electrovanne — converti de electrovanne.elmt par outils\elmt-vers-svg.py -->
-<rect x="-25.5" y="-24.5" width="71" height="49" fill="#ffffff"/>
+
 <line x1="0" y1="20" x2="0" y2="-20" stroke="black" stroke-width="1" fill="none"/>
 <rect x="-20" y="-10" width="40" height="20" rx="0" ry="0" stroke="black" stroke-width="1" fill="white"/>
 <line x1="23" y1="0" x2="32" y2="0" stroke="black" stroke-width="1" fill="none"/>

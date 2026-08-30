@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-38.5 -25.5 75 51" width="75" height="51">
 <!-- Sectionneur triphasé — converti de sectionneur_general.elmt par outils\elmt-vers-svg.py -->
-<rect x="-38.5" y="-25.5" width="75" height="51" fill="#fffdf8"/>
+
 <polyline points="-15,-10 -10,10 -10,20" stroke="black" stroke-width="1" fill="none"/>
 <polygon points="4,-6 8,-7 11,6 7,7" stroke="black" stroke-width="1" fill="none"/>
 <polygon points="24,-6 28,-7 31,6 27,7" stroke="black" stroke-width="1" fill="none"/>

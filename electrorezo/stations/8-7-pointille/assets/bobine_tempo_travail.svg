@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-19.5 -25.5 39 51" width="39" height="51">
 <!-- Bobine tempo travail — converti de bobine_tempo_travail.elmt par outils\elmt-vers-svg.py -->
-<rect x="-19.5" y="-25.5" width="39" height="51" fill="#fffdf8"/>
+
 <rect x="10" y="-8" width="4" height="16" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
 <rect x="-14" y="-8" width="28" height="16" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
 <line x1="14" y1="-8" x2="10" y2="8" stroke="black" stroke-width="1" fill="none"/>

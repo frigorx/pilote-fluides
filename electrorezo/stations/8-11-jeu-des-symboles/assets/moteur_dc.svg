@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20.5 -35.5 41 71" width="41" height="71">
 <!-- Moteur à courant continu — converti de moteur_dc.elmt par outils\elmt-vers-svg.py -->
-<rect x="-20.5" y="-35.5" width="41" height="71" fill="#ffffff"/>
+
 <ellipse cx="0.00" cy="0.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1" fill="none"/>
 <line x1="5" y1="18" x2="5" y2="14.5" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="18" x2="0" y2="30" stroke="black" stroke-width="1" fill="none"/>

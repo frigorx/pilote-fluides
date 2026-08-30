@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-14.5 -30.5 35 61" width="35" height="61">
 <!-- Transformateur monophasé — converti de transfo_mono.elmt par outils\elmt-vers-svg.py -->
-<rect x="-14.5" y="-30.5" width="35" height="61" fill="#ffffff"/>
+
 <ellipse cx="5.00" cy="5.00" rx="10.00" ry="10.00" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="5.00" cy="-5.00" rx="10.00" ry="10.00" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-25" x2="0" y2="-14" stroke="black" stroke-width="1" fill="none"/>
