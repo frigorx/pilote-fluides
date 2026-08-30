@@ -320,7 +320,7 @@ h2.dia{font-family:var(--police-titre);font-size:var(--t-h2);line-height:1.18;co
   .visuel{display:none}
 }
 </style>
-  <link rel="stylesheet" href="moteur/impression.css?v=6640935f91" media="print">
+  <link rel="stylesheet" href="moteur/impression.css?v=d0b2b1ff36" media="print">
 </head>
 <body>
 <div id="som" class="som"></div>
@@ -355,15 +355,15 @@ h2.dia{font-family:var(--police-titre);font-size:var(--t-h2);line-height:1.18;co
 
 <!-- Quelle image sur quel écran : la règle est isolée dans son fichier,
      elle servira aussi aux autres faces du pack. -->
-<script src="moteur/illustration.js?v=6640935f91"></script>
+<script src="moteur/illustration.js?v=d0b2b1ff36"></script>
 
 <!-- ACCÈS ENSEIGNANT EXIGÉ (27/08) : le support de salle est une page
      formateur. Le pack de projection ne se charge qu'après validation. Ce
      n'est plus le code court partagé du 25/07 : le portillon est devenu
      nominatif (voir l'en-tête de `moteur/portillon.js`). `acces.js` passe
      AVANT le portillon : c'est lui qui juge. -->
-<script src="moteur/acces.js?v=6640935f91"></script>
-<script src="moteur/portillon.js?v=6640935f91"></script>
+<script src="moteur/acces.js?v=d0b2b1ff36"></script>
+<script src="moteur/portillon.js?v=d0b2b1ff36"></script>
 <script>
 function demarrerProjection(){
   "use strict";
@@ -750,10 +750,10 @@ function demarrerProjection(){
 
   renderSommaire();
 }
-Portillon.exiger("Support de projection", ["packs/fluides/projection.gen.js?v=6640935f91"], demarrerProjection);
+Portillon.exiger("Support de projection", ["packs/fluides/projection.gen.js?v=d0b2b1ff36"], demarrerProjection);
 </script>
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
-<script src="moteur/lisibilite.js?v=6640935f91"></script>
-<script src="moteur/marque.js?v=6640935f91" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/lisibilite.js?v=d0b2b1ff36"></script>
+<script src="moteur/marque.js?v=d0b2b1ff36" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@ Présents dans plus de 40 % des cartes : ils valident sans discriminer.
 
 - `mesure` — 65 % des cartes (utilisé par 6.06, 7.07, 8.08)
 - `install` — 63 % des cartes (utilisé par 7.03, 8.03)
-- `raccord` — 46 % des cartes (utilisé par 4.01, 12.01)
+- `raccord` — 48 % des cartes (utilisé par 4.01, 12.01)
 - `direct` — 46 % des cartes (utilisé par 4.06, 12.11)
 - `arret` — 46 % des cartes (utilisé par 6.06)
 - `securite` — 44 % des cartes (utilisé par 11.01)

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-34.0 -49.0 68.0 98.0" width="68" height="98">
+<!-- Transformateur triphasé — converti de transfo_tri.elmt par outils\elmt-vers-svg.py -->
+<rect x="-34.0" y="-49.0" width="68.0" height="98.0" fill="#ffffff"/>
+<line x1="0" y1="13" x2="-20" y2="13" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="13" x2="0" y2="8" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="13" x2="7" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="13" x2="-7" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="21.5" x2="10" y2="35" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="25" x2="0" y2="35" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="-10.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="21.5" x2="-10" y2="35" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="10.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-35" x2="0" y2="-25" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-35" x2="10" y2="-21.5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="-35" x2="-10" y2="-21.5" stroke="black" stroke-width="1" fill="none"/>
+</svg>

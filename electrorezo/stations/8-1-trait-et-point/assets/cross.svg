@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-19.0 -19.0 38.0 38.0" width="38" height="38">
+<!-- Croix — converti de cross.elmt par outils\elmt-vers-svg.py -->
+<rect x="-19.0" y="-19.0" width="38.0" height="38.0" fill="#fffdf8"/>
+<ellipse cx="0.00" cy="0.00" rx="1.00" ry="1.00" stroke="black" stroke-width="1" fill="black"/>
+<line x1="-4" y1="0" x2="4" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-4" x2="0" y2="4" stroke="black" stroke-width="1" fill="none"/>
+</svg>

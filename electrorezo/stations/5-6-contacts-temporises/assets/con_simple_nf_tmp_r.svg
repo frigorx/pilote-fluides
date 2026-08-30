@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12.0 -34.0 38.0 68.0" width="38" height="68">
+<!-- Contact simple (NF / tempo repos) — converti de con_simple_nf_tmp_r.elmt par outils\elmt-vers-svg.py -->
+<rect x="-12.0" y="-34.0" width="38.0" height="68.0" fill="#ffffff"/>
+<line x1="2" y1="1.5" x2="12" y2="1.5" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="2" y1="-1.5" x2="12.5" y2="-1.5" stroke="black" stroke-width="0.4" fill="none"/>
+<polyline points="15,-10 10,10 10,20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-9" x2="16" y2="-9" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -3.00,5.00 A 5.00,5.00 0 0 0 -3.00,-5.00" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="10" y1="-20" x2="10" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+</svg>

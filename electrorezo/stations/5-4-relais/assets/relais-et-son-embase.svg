@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="460" height="300" role="img"
+     aria-label="Coupe d’un relais enfichable : bobine, circuit magnétique, armature attirée, ressort de rappel et contacts fins ; en dessous, l’embase à broches sur laquelle il se pose.">
+<rect width="460" height="300" fill="#fffdf8"/>
+<text x="230" y="28" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="15"
+      font-weight="700" fill="#1b3a63">Un relais, ouvert — et son embase</text>
+
+<!-- boîtier -->
+<rect x="104" y="44" width="180" height="164" rx="6" fill="none" stroke="#1b3a63" stroke-width="2.5"/>
+
+<!-- contacts fins, en haut -->
+<line x1="140" y1="56" x2="140" y2="76" stroke="#3d7fca" stroke-width="2.5"/>
+<line x1="140" y1="98" x2="140" y2="118" stroke="#3d7fca" stroke-width="2.5"/>
+<rect x="132" y="76" width="16" height="5" fill="#3d7fca"/>
+<rect x="132" y="93" width="16" height="5" fill="#3d7fca"/>
+<line x1="192" y1="56" x2="192" y2="76" stroke="#3d7fca" stroke-width="2.5"/>
+<line x1="192" y1="98" x2="192" y2="118" stroke="#3d7fca" stroke-width="2.5"/>
+<rect x="184" y="76" width="16" height="5" fill="#3d7fca"/>
+<rect x="184" y="93" width="16" height="5" fill="#3d7fca"/>
+<text x="300" y="70" font-family="Bitter,Georgia,serif" font-size="12" font-weight="700" fill="#3d7fca">des contacts fins</text>
+<text x="300" y="88" font-family="Bitter,Georgia,serif" font-size="11" fill="#637285">quelques ampères,</text>
+<text x="300" y="104" font-family="Bitter,Georgia,serif" font-size="11" fill="#637285">et pas de boîtier d’arc</text>
+<line x1="212" y1="80" x2="292" y2="76" stroke="#637285" stroke-width="1.4"/>
+
+<!-- porte-contacts -->
+<rect x="118" y="118" width="96" height="10" rx="2" fill="#1b3a63"/>
+<text x="300" y="126" font-family="Bitter,Georgia,serif" font-size="11" fill="#1b3a63">le porte-contacts</text>
+<line x1="216" y1="123" x2="292" y2="122" stroke="#637285" stroke-width="1.4"/>
+
+<!-- armature -->
+<rect x="126" y="132" width="80" height="14" rx="2" fill="#c9d6e6" stroke="#1b3a63" stroke-width="2"/>
+<text x="300" y="144" font-family="Bitter,Georgia,serif" font-size="11" fill="#1b3a63">l’armature mobile</text>
+<line x1="208" y1="140" x2="292" y2="140" stroke="#637285" stroke-width="1.4"/>
+
+<!-- ressort -->
+<path d="M116 122 L102 130 L116 138 L102 146 L116 154 L102 162" fill="none" stroke="#c9451a" stroke-width="2.5"/>
+<text x="92" y="176" text-anchor="end" font-family="Bitter,Georgia,serif" font-size="11" fill="#c9451a">le ressort</text>
+<line x1="96" y1="172" x2="106" y2="158" stroke="#c9451a" stroke-width="1.4"/>
+
+<!-- entrefer -->
+<line x1="126" y1="152" x2="206" y2="152" stroke="#c0392b" stroke-width="1.8" stroke-dasharray="5 4"/>
+
+<!-- bobine et circuit magnétique -->
+<rect x="126" y="158" width="80" height="14" rx="2" fill="#c9d6e6" stroke="#1b3a63" stroke-width="2"/>
+<rect x="140" y="176" width="54" height="24" rx="3" fill="none" stroke="#1b3a63" stroke-width="3"/>
+<text x="167" y="192" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12"
+      font-weight="700" fill="#1b3a63">bobine</text>
+<text x="300" y="192" font-family="Bitter,Georgia,serif" font-size="11" fill="#1b3a63">A1 · A2</text>
+<line x1="198" y1="188" x2="292" y2="188" stroke="#637285" stroke-width="1.4"/>
+
+<!-- broches -->
+<g stroke="#8a6d1f" stroke-width="4" stroke-linecap="round">
+  <line x1="126" y1="208" x2="126" y2="226"/><line x1="152" y1="208" x2="152" y2="226"/>
+  <line x1="178" y1="208" x2="178" y2="226"/><line x1="204" y1="208" x2="204" y2="226"/>
+  <line x1="230" y1="208" x2="230" y2="226"/><line x1="256" y1="208" x2="256" y2="226"/>
+</g>
+
+<!-- embase -->
+<rect x="104" y="230" width="180" height="34" rx="4" fill="#e8e2d6" stroke="#1b3a63" stroke-width="2.5"/>
+<g fill="#1b3a63">
+  <circle cx="126" cy="240" r="3"/><circle cx="152" cy="240" r="3"/><circle cx="178" cy="240" r="3"/>
+  <circle cx="204" cy="240" r="3"/><circle cx="230" cy="240" r="3"/><circle cx="256" cy="240" r="3"/>
+</g>
+<text x="194" y="258" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12" fill="#1b3a63">l’embase reste câblée</text>
+
+<text x="230" y="288" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12"
+      font-weight="700" fill="#1b3a63">On change le relais sans défaire un seul fil.</text>
+</svg>

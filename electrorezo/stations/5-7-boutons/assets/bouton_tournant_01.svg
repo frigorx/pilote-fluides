@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-16.0 -34.0 58.0 68.0" width="58" height="68">
+<!-- Bouton tournant 2 positions fixes, retrait de la clé à gauche — converti de bouton_tournant_01.elmt par outils\elmt-vers-svg.py -->
+<rect x="-16.0" y="-34.0" width="58.0" height="68.0" fill="#ffffff"/>
+<polyline points="30,20 30,10 24,-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="30" y1="-20" x2="30" y2="-9" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="8,-7 7,-5 9,-5" stroke="black" stroke-width="0.4" fill="black"/>
+<line x1="-6" y1="0" x2="11" y2="0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<ellipse cx="8.00" cy="-7.00" rx="0.50" ry="0.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="13" y1="3" x2="17" y2="-3" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<text x="6" y="-9" font-family="Arial,sans-serif" font-size="4" fill="#000000">1</text>
+<polyline points="-8,0 -9,4 -5,4 -6,0" stroke="black" stroke-width="0.4" fill="none"/>
+<polyline points="15,0 18,0 20,3 22,0 27,0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<ellipse cx="-7.01" cy="-2.01" rx="2.23" ry="2.23" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="13" y1="3" x2="9" y2="-3" stroke="black" stroke-width="0.4" fill="none"/>
+<polyline points="-3,4 0,4 0,-4 3,-4" stroke="black" stroke-width="0.4" fill="none"/>
+<text x="17" y="-9" font-family="Arial,sans-serif" font-size="4" fill="#000000">2</text>
+</svg>

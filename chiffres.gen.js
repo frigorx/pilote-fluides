@@ -3,7 +3,7 @@
 window.PILOTE_CHIFFRES = {
  "fiches": 44,
  "questions": 269,
- "diapositives": 571,
+ "diapositives": 585,
  "planches": 48,
  "exercices": 5,
  "examens": 22,
@@ -19,7 +19,7 @@ window.PILOTE_CHIFFRES = {
  "profondeur": "94 / 94",
  "competences": "99",
  "tracabilite": "94 / 94",
- "poids": "863 Ko"
+ "poids": "868 Ko"
 };
 document.addEventListener('DOMContentLoaded', function () {
   var n = 0;
