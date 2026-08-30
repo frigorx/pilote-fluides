@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: 'Le porte-fusible',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '3.1', quoi: "l’interrupteur" },
+  ],
+
   photos: [
     { src: 'assets/biblio/fusibles-et-outil.jpeg',
       alt: 'Cinq cartouches fusibles de formats différents posées côte à côte, du petit culot à la cartouche à couteaux de 125 ampères.',

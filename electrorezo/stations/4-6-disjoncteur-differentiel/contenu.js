@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "Le disjoncteur différentiel",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '4.5', quoi: "l’interrupteur différentiel" },
+    { id: '4.3', quoi: "le magnéto-thermique" },
+  ],
+
   photos: [
     { src: 'assets/biblio/disj-differentiel-c16.png', alt: "Photo d’un disjoncteur différentiel modulaire de calibre C16.",
       titre: "Deux appareils en un.", sous: "Il porte un calibre — C16 — et une sensibilité : 30 mA." },

@@ -419,6 +419,13 @@
     ligne: 6,
     kicker: 'ÉlectroRézo · Ligne 6 Machines · Station 4 · grand carrefour ⇄ lignes 1 et 2',
     titre: 'Le couplage de la plaque à bornes',
+
+    prerequis: [
+      { id: '6.3', quoi: "le moteur asynchrone" },
+      { id: '2.4', quoi: "la tension simple" },
+      { id: '2.5', quoi: "la composée" }
+    ],
+
     niveaux: [{ id: 'CAP', libelle: 'CAP' }, { id: 'BAC', libelle: 'Bac pro' }],
     credits: [
       { quoi: 'Photo « moteur et boîte à bornes »',

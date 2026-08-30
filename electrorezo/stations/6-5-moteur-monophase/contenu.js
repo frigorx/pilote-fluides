@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: "Le moteur monophasé",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '6.3', quoi: "le moteur asynchrone" },
+  ],
+
   photos: [
     { src: 'assets/biblio/condensateur-de-demarrage.png',
       alt: "Schéma d’un moteur asynchrone monophasé avec son condensateur permanent et son condensateur de démarrage.",

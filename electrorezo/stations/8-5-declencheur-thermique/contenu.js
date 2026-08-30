@@ -7,6 +7,10 @@ ModeleSigne.construire({
   lettre: 'thermique',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '4.3', quoi: "le déclencheur thermique" },
+  ],
+
   ceQuelleDit: "Un crochet courbe, accroché à un appareil de protection. Il dit : cet appareil surveille la chaleur, et il déclenche quand le courant dure trop longtemps au-dessus du normal.",
   ouOnLaVoit: "Sur le relais thermique, sur le disjoncteur magnéto-thermique, sur le disjoncteur moteur. Jamais seul : toujours accroché à un contact.",
 

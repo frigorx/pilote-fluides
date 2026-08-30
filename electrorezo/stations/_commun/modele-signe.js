@@ -114,6 +114,8 @@ const ModeleSigne = (() => {
       id: D.id, ligne: 8, kicker: D.kicker, titre: D.titre,
       niveaux: D.niveaux || [{ id: 'CAP', libelle: 'CAP' }, { id: 'BAC', libelle: 'Bac pro' }],
       credits: D.credits, correspondances: D.correspondances || [],
+      /* la spirale : ce qu'il faut avoir en tete, rappele par le moteur */
+      prerequis: D.prerequis || [],
       temps: [
         { id: 'decouvrir',   onglet: '1 · La lettre',    titre: 'La lettre',            monter: decouvrir,   narration: D.narration.decouvrir },
         { id: 'comprendre',  onglet: '2 · Sa forme',     titre: 'Pourquoi cette forme', monter: comprendre,  narration: D.narration.comprendre },

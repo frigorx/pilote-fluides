@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: "Le fusible aM",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '4.1', quoi: "le fusible gG" },
+  ],
+
   photos: [
     { src: 'assets/biblio/formats-de-cartouches.png', alt: "Les cinq formats de cartouche d’un catalogue constructeur : trois cylindriques de tailles croissantes, une à percuteur, et deux à couteaux.",
       titre: "Cinq formats, une même lettre.", sous: "Du petit cylindre au bloc à couteaux — la taille dit le calibre, pas la lettre." },

@@ -6,6 +6,11 @@ ModeleGrandeur.construire({
   titre: "Faire varier la tension",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.2', quoi: "la tension" },
+    { id: '6.3', quoi: "le moteur asynchrone" },
+  ],
+
   photos: [
     { src: 'assets/pourquoi-pas-la-tension.svg',
       alt: "Deux colonnes comparées : quand la tension passe de 400 à 280 volts, la vitesse ne perd que quelques tours par minute, tandis que le couple tombe à la moitié.",

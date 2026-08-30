@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "Les contacts temporisés",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '5.5', quoi: "le relais temporisé" },
+    { id: '5.1', quoi: "les contacts NO et NF" },
+  ],
+
   photos: [
     { src: 'assets/biblio/contact-auxiliaire-temporise.png',
       alt: "Trois types de contacts auxiliaires pour contacteur, dont un bloc temporisé.",

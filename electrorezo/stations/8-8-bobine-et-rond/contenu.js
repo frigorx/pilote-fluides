@@ -7,6 +7,11 @@ ModeleSigne.construire({
   lettre: 'bobine',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '5.2', quoi: "la bobine" },
+    { id: '6.3', quoi: "le moteur" },
+  ],
+
   ceQuelleDit: "Un rectangle barré : une bobine, ce qui commande. Un rond avec une lettre : une machine, ce qui consomme et travaille. D’un côté ce qui décide, de l’autre ce qui fait.",
   ouOnLaVoit: "La bobine en bas du circuit de commande, le rond en bas du circuit de puissance. Les deux schémas ont la même architecture.",
 

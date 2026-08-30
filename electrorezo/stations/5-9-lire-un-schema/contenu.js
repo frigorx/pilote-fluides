@@ -6,6 +6,12 @@ ModeleAppareil.construire({
   titre: "Lire un schéma : puissance et commande",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '5.2', quoi: "le contacteur" },
+    { id: '5.3', quoi: "l’auto-maintien" },
+    { id: '5.7', quoi: "les boutons" },
+  ],
+
   photos: [
     { src: 'assets/biblio/puissance-et-commande.jpeg',
       alt: "Deux schémas d’un démarrage direct : à gauche le schéma de puissance avec Q1, Q2, KM1 et le moteur M1 ; en dessous le schéma de commande avec S1, S2, le contact KM1 13-14 et la bobine KM1.",

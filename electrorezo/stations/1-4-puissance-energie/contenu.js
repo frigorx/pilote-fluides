@@ -6,6 +6,11 @@ ModeleGrandeur.construire({
   titre: "La puissance et l’énergie",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.2', quoi: "la tension" },
+    { id: '1.1', quoi: "le courant" },
+  ],
+
   photos: [
     { src: 'assets/biblio/compteur-kwh.jpeg',
       alt: "Photo d’un compteur électrique à totalisateur, affichant l’énergie consommée en kilowattheures.",

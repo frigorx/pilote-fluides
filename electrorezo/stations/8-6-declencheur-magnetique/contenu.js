@@ -7,6 +7,11 @@ ModeleSigne.construire({
   lettre: 'magnetique',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '4.3', quoi: "le déclencheur magnétique" },
+    { id: '8.5', quoi: "le crochet" },
+  ],
+
   ceQuelleDit: "Un demi-cercle traversé par le fil. Il dit : cet appareil surveille l’intensité, et il réagit tout de suite.",
   ouOnLaVoit: "Sur le disjoncteur magnéto-thermique et sur le disjoncteur moteur, presque toujours juste sous le crochet du thermique.",
 

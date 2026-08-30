@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "Le variateur de fréquence",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '7.3', quoi: "varier la fréquence" },
+    { id: '7.2', quoi: "le gradateur" },
+  ],
+
   photos: [
     { src: 'assets/biblio/pompes-et-variateurs.jpeg',
       alt: "Photo d’un groupe de pompes centrifuges équipées chacune de son variateur de fréquence.",

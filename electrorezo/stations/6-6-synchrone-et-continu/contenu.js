@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "Synchrone et courant continu",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '6.3', quoi: "le moteur asynchrone" },
+    { id: '1.5', quoi: "le continu" },
+  ],
+
   photos: [
     { src: 'assets/collecteur-et-balais.svg',
       alt: "Coupe d’un moteur à courant continu : deux aimants fixes marqués N et S dans le stator, un bobinage sur le rotor, et sous l’arbre un collecteur fendu en deux segments sur lesquels frottent deux balais reliés au plus et au moins.",

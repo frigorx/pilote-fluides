@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: "La bobine et l’électro-aimant",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.1', quoi: "le courant" },
+  ],
+
   photos: [
     { src: 'assets/biblio/bobine-et-ressort.jpeg',
       alt: "Coupe légendée d’un contacteur : le socle, la partie fixe et la partie mobile de l’électro-aimant, la bobine avec son repère de tension, la bague de déphasage, le ressort de rappel, les contacts fixe et mobile.",

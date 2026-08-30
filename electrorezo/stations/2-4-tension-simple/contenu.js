@@ -6,6 +6,10 @@ ModeleGrandeur.construire({
   titre: "La tension simple",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '2.3', quoi: "le triphasé" },
+  ],
+
   photos: [
     { src: 'assets/biblio/les-tensions-du-reseau.jpeg',
       alt: "Schéma des trois phases L1, L2, L3 et du neutre, avec trois flèches V1, V2, V3 partant du neutre vers chaque phase.",

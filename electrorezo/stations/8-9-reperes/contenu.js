@@ -7,6 +7,10 @@ ModeleSigne.construire({
   lettre: 'borne',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '8.1', quoi: "le trait et le point" },
+  ],
+
   ceQuelleDit: "Q1, KM2, F3, S1, H4. Des lettres et des chiffres, écrits à côté de chaque symbole. Ce ne sont pas des noms choisis au hasard : ce sont des codes.",
   ouOnLaVoit: "À côté de chaque appareil sur le plan, et sur l’étiquette collée sur l’appareil dans l’armoire.",
 

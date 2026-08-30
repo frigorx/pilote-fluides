@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "Le moteur asynchrone triphasé",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '2.6', quoi: "le champ tournant" },
+    { id: '6.1', quoi: "la bobine" },
+  ],
+
   photos: [
     { src: 'assets/biblio/moteur-en-coupe-numerotee.jpeg',
       alt: "Photographie d’un moteur asynchrone en coupe, avec ses cinq éléments numérotés : stator, rotor à cage d’écureuil, boîte à bornes, arbre, ventilateur ; à côté, le détail de la cage avec ses barres et ses anneaux.",

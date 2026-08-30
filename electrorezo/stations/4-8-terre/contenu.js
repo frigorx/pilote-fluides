@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "La terre et la liaison équipotentielle",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '2.1', quoi: "le conducteur de protection" },
+    { id: '1.8', quoi: "le défaut d’isolement" },
+  ],
+
   photos: [
     { src: 'assets/biblio/piquet-de-terre.png', alt: "Schéma d’installation d’un piquet de terre pour une installation électrique.",
       titre: "Le piquet.", sous: "Enfoncé dans le sol, relié au tableau par un conducteur vert et jaune." },

@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "Le câble : section et désignation",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.1', quoi: "le courant" },
+    { id: '1.4', quoi: "la puissance" },
+  ],
+
   photos: [
     { src: 'assets/biblio/cable-conducteurs.jpeg', alt: "Photo d’un câble électrique dont on voit les conducteurs internes bleu, vert-jaune et noir.",
       titre: "Sous la gaine.", sous: "Chaque conducteur a sa couleur, et chaque couleur a un sens." },

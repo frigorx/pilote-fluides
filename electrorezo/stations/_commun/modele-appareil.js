@@ -199,6 +199,8 @@ const ModeleAppareil = (() => {
       id: D.id, ligne: D.ligne, kicker: D.kicker, titre: D.titre,
       niveaux: D.niveaux || [{ id: 'CAP', libelle: 'CAP' }, { id: 'BAC', libelle: 'Bac pro' }],
       credits: D.credits, correspondances: D.correspondances || [],
+      /* la spirale : ce qu'il faut avoir en tete, rappele par le moteur */
+      prerequis: D.prerequis || [],
       temps: [
         { id: 'decouvrir',   onglet: '1 · Découvrir',   titre: 'L’objet',            monter: decouvrir,   narration: D.narration.decouvrir },
         { id: 'comprendre',  onglet: '2 · Comprendre',  titre: 'Ce qu’il y a dedans', monter: comprendre,  narration: D.narration.comprendre },

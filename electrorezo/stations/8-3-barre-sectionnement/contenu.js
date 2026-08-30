@@ -7,6 +7,11 @@ ModeleSigne.construire({
   lettre: 'sectionnement',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '3.2', quoi: "le sectionneur" },
+    { id: '8.2', quoi: "le contact" },
+  ],
+
   ceQuelleDit: "Une barre de trois millimètres, posée au bout d’un contact. Elle dit : derrière cet appareil-là, on peut aller travailler.",
   ouOnLaVoit: "Sur les sectionneurs, les interrupteurs-sectionneurs, les disjoncteurs moteur. Jamais sur un simple interrupteur.",
 

@@ -6,6 +6,10 @@ ModeleGrandeur.construire({
   titre: "Continu et alternatif",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.2', quoi: "la tension" },
+  ],
+
   photos: [
     { src: 'assets/deux-familles.svg',
       alt: "À gauche une batterie et sa trace continue, plate, avec un plus et un moins. À droite une prise du réseau et sa trace alternative, qui monte et descend, avec une phase et un neutre.",

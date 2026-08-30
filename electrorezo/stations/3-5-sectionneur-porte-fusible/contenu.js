@@ -7,6 +7,11 @@ ModeleAppareil.construire({
   titre: 'Le sectionneur porte-fusible',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '3.2', quoi: "le sectionneur" },
+    { id: '3.4', quoi: "le porte-fusible" },
+  ],
+
   photos: [
     { src: 'assets/biblio/porte-fusible-mural.jpeg',
       alt: 'Photo d’un porte-fusible modulaire de 32 ampères sous 380 volts, avec son levier basculant noir portant le repère N.',

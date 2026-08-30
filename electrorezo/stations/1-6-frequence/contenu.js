@@ -6,6 +6,10 @@ ModeleGrandeur.construire({
   titre: "La fréquence",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.5', quoi: "l’alternatif" },
+  ],
+
   photos: [
     { src: 'assets/cinquante-par-seconde.svg',
       alt: "Une seconde de signal du réseau : la sinusoïde répète son motif, et le dessin précise qu’il y en a cinquante par seconde sur le vrai réseau.",

@@ -6,6 +6,10 @@ ModeleGrandeur.construire({
   titre: "La tension composée",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '2.4', quoi: "la tension simple" },
+  ],
+
   photos: [
     { src: 'assets/biblio/entre-phases-et-vers-le-neutre.jpeg',
       alt: "Schéma des trois phases et du neutre, où les tensions simples sont figurées par des flèches partant du neutre.",

@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "L’interrupteur différentiel",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.8', quoi: "le défaut d’isolement" },
+    { id: '2.1', quoi: "le conducteur de protection" },
+  ],
+
   photos: [
     { src: 'assets/biblio/le-differentiel-dans-le-tableau.png',
       alt: "Un interrupteur différentiel 40 A, 30 milliampères de type AC, photographié à côté de son symbole : deux contacts repérés « interrupteur » et, en dessous, le tore repéré « déclencheur différentiel ».",
