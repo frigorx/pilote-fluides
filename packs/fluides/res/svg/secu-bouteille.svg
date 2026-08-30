@@ -61,7 +61,7 @@
         <path class="acc" d="M0,-22 v6 M0,16 v6 M-22,0 h6 M16,0 h6 M-16,-16 l4,4 M12,12 l4,4 M-16,16 l4,-4 M12,-12 l4,-4"/>
       </g>
     </g>
-    <text class="lg final" x="150" y="80" text-anchor="middle" opacity="0">
+    <text class="lg final" x="175" y="84" text-anchor="middle" opacity="0">
       <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.6s" fill="freeze"/>
       la température monte
     </text>
@@ -107,7 +107,7 @@
       <circle class="p" cx="0" cy="0" r="13"/>
       <path class="p" d="M0,-22 v6 M0,16 v6 M-22,0 h6 M16,0 h6 M-16,-16 l4,4 M12,12 l4,4 M-16,16 l4,-4 M12,-12 l4,-4"/>
     </g>
-    <text class="lg" x="150" y="80" text-anchor="middle">la température monte</text>
+    <text class="lg" x="175" y="84" text-anchor="middle">la température monte</text>
     <path class="p" d="M215,66 h44 m-10,-8 l10,8 -10,8"/>
 
     <g class="final" opacity="0">

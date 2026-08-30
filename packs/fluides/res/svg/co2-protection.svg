@@ -105,10 +105,12 @@
     </g>
     <text class="bad" x="52" y="90" text-anchor="middle" style="font-size:12px">alarme</text>
     <text class="bad" x="52" y="104" text-anchor="middle" style="font-size:12px">DEHORS</text>
-    <text class="lg i-rouge" x="40" y="176" style="font-size:12px;fill:#c9451a">
+    <!-- en drapeau droit contre la porte : à x=40 en drapeau gauche, la fin de
+         « avant d'ouvrir » passait sous le battant (relecture du 28/08) -->
+    <text class="lg i-rouge" x="92" y="176" text-anchor="end" style="font-size:12px;fill:#c9451a">
       <animate attributeName="fill" values="#4a5b6e;#4a5b6e;#c9451a;#c9451a" keyTimes="0;0.786;0.829;1" dur="14s" fill="freeze"/>
       on sait</text>
-    <text class="lg i-rouge" x="40" y="192" style="font-size:12px;fill:#c9451a">
+    <text class="lg i-rouge" x="92" y="192" text-anchor="end" style="font-size:12px;fill:#c9451a">
       <animate attributeName="fill" values="#4a5b6e;#4a5b6e;#c9451a;#c9451a" keyTimes="0;0.786;0.829;1" dur="14s" fill="freeze"/>
       avant d'ouvrir</text>
 
@@ -171,7 +173,7 @@
       <line class="p" x1="6" y1="23" x2="34" y2="23"/>
       <path class="p" d="M44,15 h16 m-6,-6 l6,6 -6,6"/>
     </g>
-    <text class="lg" x="472" y="112" text-anchor="middle" style="font-size:12px">ventilation</text>
+    <text class="lg" x="464" y="112" text-anchor="middle" style="font-size:12px">ventilation</text>
 
     <!-- lien capteur -> alarmes : il part de l'afficheur et remonte vers la
          sirène intérieure (il plongeait auparavant dans la nappe). -->
@@ -205,7 +207,10 @@
     <text class="bad" x="86" y="40">Un masque à</text>
     <text class="bad" x="86" y="58">cartouche ne protège</text>
     <text class="bad" x="86" y="76">PAS du CO₂.</text>
-    <text class="lg"  x="18" y="100">Il ne fabrique pas d'oxygène. La protection, c'est de ne pas entrer.</text>
+    <!-- sur une seule ligne, la phrase sortait du panneau ET du viewBox
+         (coupée après « La protection » — relecture du 28/08) -->
+    <text class="lg" x="18" y="92" style="font-size:12px">Il ne fabrique pas d'oxygène.</text>
+    <text class="lg" x="18" y="108" style="font-size:12px">La protection, c'est de ne pas entrer.</text>
   </g>
 
   <text class="lg" x="30" y="312">Un capteur se vérifie et se remplace selon la documentation du fabricant : une cellule usée reste allumée sans plus rien mesurer.</text>

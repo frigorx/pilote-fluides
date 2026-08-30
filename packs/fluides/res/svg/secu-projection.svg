@@ -57,6 +57,12 @@
       <path class="acc" d="M198,88 h56 m-12,-6 l12,6 -12,6"/>
       <path class="acc" d="M206,78 l40,-10" opacity="0.7"/>
       <path class="acc" d="M206,98 l40,10" opacity="0.7"/>
+    </g>
+    <!-- les mots du jet n'arrivent qu'une fois la silhouette en danger partie
+         (elle s'efface à 4,1 s) : à 2,6 s ils s'écrivaient en travers du
+         personnage — défaut de placement relevé à la relecture du 28/08 -->
+    <g class="final" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.4s" begin="4.4s" fill="freeze"/>
       <text class="bad" x="300" y="86">jet de liquide</text>
       <text class="lg"  x="300" y="106">souvent invisible</text>
     </g>
