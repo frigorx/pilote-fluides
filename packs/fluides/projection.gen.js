@@ -76,7 +76,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "schema",
        "src": "packs/fluides/res/svg/s1-double-accident.svg",
-       "alt": "Animation : la nappe de gaz monte dans le local fermé, le technicien descend et tombe, puis le collègue descend le secourir et devient la seconde victime. Deux victimes au lieu d'une.",
+       "alt": "Animation : la nappe de gaz monte dans le local fermé, le technicien descend et tombe, puis le collègue descend le secourir et devient la seconde victime.",
        "titre": "L'air qui manque — l'asphyxie"
       },
       {
@@ -101,7 +101,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<b>Ce danger n'a pas de code dans le référentiel d'examen</b> : l'épreuve ne vous interrogera pas dessus. Il figure pourtant dans ce module, parce qu'il peut vous tuer.",
+       "html": "<b>Ce danger n'a pas de code dans le référentiel d'examen</b> : l'épreuve ne vous interrogera pas dessus. Il est pourtant traité ici, et en premier : personne ne devrait entrer dans un local technique sans l'avoir en tête.",
        "titre": "L'air qui manque — l'asphyxie"
       },
       {
@@ -293,12 +293,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt, et une règle simple la gouverne : plus la température monte, plus la pression à l'intérieur du circuit monte aussi.",
+       "html": "<b>Ce qui arrive.</b> Un circuit frigorifique contient du fluide sous pression en permanence. Cette pression existe même quand la machine est à l'arrêt, et elle suit la température : plus le circuit chauffe, plus elle monte. Une paroi (bouteille, flexible, raccord, tuyauterie) résiste jusqu'à une certaine pression.",
        "titre": "Ce qui éclate — la pression"
       },
       {
        "type": "point",
-       "html": "Une paroi (bouteille, flexible, raccord, tuyauterie) résiste jusqu'à une certaine pression. Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Il n'y a là aucune réaction chimique, juste un rapport de force entre la pression qui pousse et la paroi qui retient.",
+       "html": "Au-delà, elle cède : elle se déforme, se fissure, ou éclate d'un coup. Il n'y a là aucune réaction chimique, juste un rapport de force entre la pression qui pousse et la paroi qui retient.",
        "titre": "Ce qui éclate — la pression"
       },
       {
@@ -313,12 +313,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<b>Comment ça arrive vraiment.</b> Sur un chantier, une bouteille de fluide oubliée dans un véhicule en plein été, vitres fermées, en est un exemple courant : l'habitacle chauffe fortement, la bouteille avec. Autre situation : un flexible de manifold ancien, jamais contrôlé, qui cède au moment où l'on ouvre une vanne.",
+       "html": "<b>Comment ça arrive vraiment.</b> Sur un chantier, une bouteille de fluide oubliée dans un véhicule en plein été, vitres fermées, en est un exemple courant : l'habitacle chauffe fortement, la bouteille avec. Un flexible de manifold ancien, jamais contrôlé, peut céder au moment où l'on ouvre une vanne.",
        "titre": "Ce qui éclate — la pression"
       },
       {
        "type": "point",
-       "html": "Autre situation encore : un tronçon de tuyauterie en toiture, isolé par deux vannes fermées pendant une réparation, laissé en plein soleil sans protection ni vérification avant de reprendre le travail dessus.",
+       "html": "Et un tronçon de tuyauterie en toiture, isolé par deux vannes fermées pendant une réparation, chauffe en plein soleil jusqu'à ce qu'on revienne travailler dessus sans l'avoir vérifié.",
        "titre": "Ce qui éclate — la pression"
       },
       {
@@ -541,7 +541,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Pour réaliser les <b>opérations réglementées</b> sur ces fluides (mise en service, entretien, contrôle d'étanchéité, récupération), il vous faut une <b>attestation d'aptitude</b> personnelle. Votre entreprise, elle, doit avoir une <b>attestation de capacité</b>. Ce sont deux papiers obligatoires, et ce n'est pas le même.",
+       "html": "Pour réaliser les <b>opérations réglementées</b> sur ces fluides (mise en service, entretien, contrôle d'étanchéité, récupération), il vous faut une <b>attestation d'aptitude</b> personnelle. Votre entreprise, elle, doit avoir une <b>attestation de capacité</b>. Les deux sont obligatoires, et l'un ne remplace pas l'autre.",
        "titre": "Ce que la loi vous impose"
       },
       {
@@ -1343,7 +1343,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "piege",
        "t": "Mélanges zéotropes : le glissement",
-       "html": "<p>Certains fluides sont des <b>mélanges zéotropes</b> : plusieurs fluides purs mélangés dont les composants ne s'évaporent pas ensemble. Résultat, pendant tout le changement d'état, la température n'est pas constante : elle <b>glisse</b>, on parle de <b>glissement</b>. Conséquence pratique : on charge et on soutire toujours ces mélanges en <b>phase liquide</b>, jamais en phase vapeur, sinon la composition change et le fluide qui reste dans la bouteille n'est plus le même.</p>",
+       "html": "<p>Certains fluides sont des <b>mélanges zéotropes</b> : plusieurs fluides purs mélangés dont les composants ne s'évaporent pas ensemble. Résultat, pendant tout le changement d'état, la température n'est pas constante : elle <b>glisse</b>, on parle de <b>glissement</b>. Voilà pourquoi on charge et on soutire toujours ces mélanges en <b>phase liquide</b>, jamais en phase vapeur, sinon la composition change et le fluide qui reste dans la bouteille n'est plus le même.</p>",
        "titre": "Unités, pression, thermodynamique utile"
       }
      ],
@@ -1617,17 +1617,17 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Voilà pourquoi une machine frigorifique ne travaille pas avec de l'air, mais avec un fluide qui <b>change d'état</b>. Sur le palier, le fluide encaisse beaucoup de chaleur sans s'échauffer : c'est exactement ce qu'on cherche. L'<b>évaporateur</b> fait bouillir le fluide, donc il <b>prend</b> de la chaleur au local. Le <b>condenseur</b> le liquéfie, donc il <b>rend</b> cette chaleur dehors. Toute la machine tient dans ces deux phrases.",
+       "html": "Voilà pourquoi une machine frigorifique ne travaille pas avec de l'air, mais avec un fluide qui <b>change d'état</b>. Sur le palier, le fluide encaisse beaucoup de chaleur sans s'échauffer : c'est exactement ce qu'on cherche. L'<b>évaporateur</b> fait bouillir le fluide, donc il <b>prend</b> de la chaleur au local. Le <b>condenseur</b> le liquéfie, donc il <b>rend</b> cette chaleur dehors. Compresseur et détendeur, eux, entretiennent l'écart de pression qui rend ces deux échanges possibles.",
        "titre": "Chaleur sensible et chaleur latente"
       },
       {
        "type": "point",
-       "html": "Deux mots du référentiel se posent ici, une fois pour toutes. La chaleur que l'évaporateur prend au local, rapportée à un kilo de fluide, s'appelle l'<b>effet de réfrigération</b> : c'est le froid produit, et c'est ce que l'on cherche à rendre le plus grand possible.",
+       "html": "Deux mots du référentiel trouvent leur place ici. La chaleur que l'évaporateur prend au local, rapportée à un kilo de fluide, s'appelle l'<b>effet de réfrigération</b> : c'est le froid produit, et c'est ce que l'on cherche à rendre le plus grand possible. Le compresseur, lui, ajoute au fluide sa propre chaleur en le comprimant : c'est la <b>chaleur de compression</b>.",
        "titre": "Chaleur sensible et chaleur latente"
       },
       {
        "type": "point",
-       "html": "Le compresseur, lui, ajoute au fluide sa propre chaleur en le comprimant : c'est la <b>chaleur de compression</b>. Le condenseur devra donc évacuer les deux : la chaleur prise au local <b>et</b> celle ajoutée par le compresseur. C'est pour cette raison qu'un condenseur évacue toujours plus de chaleur qu'un évaporateur n'en absorbe.",
+       "html": "Le condenseur devra donc évacuer les deux : la chaleur prise au local <b>et</b> celle ajoutée par le compresseur. C'est pour cette raison qu'un condenseur évacue toujours plus de chaleur qu'un évaporateur n'en absorbe.",
        "titre": "Chaleur sensible et chaleur latente"
       },
       {
@@ -1889,7 +1889,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "piege",
        "t": "L'échelle des pressions n'est pas une règle graduée",
-       "html": "Sur une échelle <b>logarithmique</b>, ce qui est constant n'est pas l'écart entre deux graduations, c'est le <b>rapport</b>. La même distance sépare 1 et 10, puis 10 et 100. Conséquence pratique : <b>on ne mesure pas une pression à la règle sur ce diagramme</b>, on lit la graduation. Les valeurs, elles, se prennent au manomètre et dans la table.",
+       "html": "Sur une échelle <b>logarithmique</b>, ce qui est constant n'est pas l'écart entre deux graduations, c'est le <b>rapport</b>. La même distance sépare 1 et 10, puis 10 et 100. Sur ce diagramme, <b>on ne mesure donc pas une pression à la règle</b>, on lit la graduation. Les valeurs, elles, se prennent au manomètre et dans la table.",
        "titre": "Lire un log p-h et une table de saturation"
       },
       {
@@ -2142,7 +2142,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "La mesure est toujours la même, et elle demande <b>deux instruments</b>. Le <b>manomètre</b> donne la pression ; la <b>table de saturation</b> du fluide traduit cette pression en température de changement d'état. Le <b>thermomètre de contact</b> donne la température réelle du tube. La différence entre les deux, c'est la valeur cherchée. Un seul instrument ne suffit jamais.",
+       "html": "La mesure est toujours la même, et elle demande <b>deux instruments</b>. Le <b>manomètre</b> donne la pression ; la <b>table de saturation</b> du fluide traduit cette pression en température de changement d'état. Le <b>thermomètre de contact</b> donne la température réelle du tube. La valeur cherchée est la différence entre les deux. Avec un seul instrument, on obtient une température ou une pression — pas une surchauffe.",
        "titre": "Surchauffe et sous-refroidissement"
       },
       {
@@ -2152,7 +2152,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Pourquoi la règle-t-on ? Pour deux raisons opposées, et il faut passer entre les deux. Une surchauffe <b>trop faible</b>, et du liquide arrive au compresseur : le liquide ne se comprime pas, la casse est immédiate. Une surchauffe <b>trop forte</b>, et le compresseur s'échauffe pendant que l'évaporateur travaille mal : le rendement chute. Repère usuel : <b>5 à 10 K</b>.",
+       "html": "La surchauffe se règle entre deux dérives opposées. Une surchauffe <b>trop faible</b>, et du liquide arrive au compresseur : le liquide ne se comprime pas, la casse est immédiate. Une surchauffe <b>trop forte</b>, et le compresseur s'échauffe pendant que l'évaporateur travaille mal : le rendement chute. Repère usuel : <b>5 à 10 K</b>.",
        "titre": "Surchauffe et sous-refroidissement"
       },
       {
@@ -3353,7 +3353,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Autre situation fréquente : un condensateur de moteur touché juste après la coupure du courant, alors qu'il est encore chargé. Autre situation encore : un outil métallique approché trop près de bornes sous tension dans une armoire électrique, sans contact direct, qui déclenche un arc électrique.",
+       "html": "Un condensateur de moteur touché juste après la coupure, encore chargé, blesse de la même façon. Et un outil métallique approché trop près de bornes sous tension peut déclencher un arc, sans le moindre contact.",
        "titre": "Consigner avant de toucher — le risque électrique"
       },
       {
@@ -4385,7 +4385,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Le manomètre affiche une <b>pression relative</b> : pour obtenir la pression absolue, on ajoute environ <b>1 bar</b>. La pince de température et le multimètre servent à la <b>méthode indirecte</b> de contrôle d'étanchéité : on compare les valeurs mesurées à celles attendues sur la fiche constructeur : surchauffe (plage indicative <b>5 à 10 K</b>), sous-refroidissement (plage indicative <b>4 à 8 K</b>), intensité absorbée. Un écart qui se creuse alerte, sans avoir ouvert le circuit.",
+       "html": "Le manomètre affiche une <b>pression relative</b> : pour obtenir la pression absolue, on ajoute environ <b>1 bar</b>. La pince de température et le multimètre servent à la <b>méthode indirecte</b> de contrôle d'étanchéité : on compare les valeurs mesurées à celles attendues sur la fiche constructeur : surchauffe (plage indicative <b>5 à 10 K</b>), sous-refroidissement (plage indicative <b>4 à 8 K</b>), intensité absorbée. Un écart qui se creuse d'une visite à l'autre alerte, sans qu'on ait ouvert le circuit.",
        "titre": "Le manifold — lire, brancher, ne pas polluer"
       },
       {
@@ -5967,12 +5967,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "La quantité de fluide qui entre ou sort d'un circuit se lit sur une <b>balance</b>, jamais sur un manomètre. Le manomètre dit comment la machine se comporte. La balance dit <b>combien</b> il y a de fluide.",
+       "html": "La quantité de fluide qui entre ou sort d'un circuit se lit sur une <b>balance</b>, jamais sur un manomètre. Le manomètre renseigne sur le comportement de la machine ; la balance, elle, dit <b>combien</b> il y a de fluide.",
        "titre": "La balance et la pesée — avant, après, ce qu'on note"
       },
       {
        "type": "point",
-       "html": "Avant toute pesée, on choisit une balance <b>adaptée</b> à la quantité attendue. On la pose à plat, stable, vérifiée. Une balance douteuse ne sert à rien : son résultat n'est pas fiable.",
+       "html": "Avant toute pesée, on choisit une balance <b>adaptée</b> à la quantité attendue. On la pose à plat, stable, vérifiée. Une balance douteuse fausse tout le geste : mieux vaut en changer avant de commencer.",
        "titre": "La balance et la pesée — avant, après, ce qu'on note"
       },
       {
@@ -6285,7 +6285,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Le compresseur est le <b>seul organe actif</b> du cycle : il aspire la vapeur basse pression et la refoule en haute pression. Tout le reste est passif.",
+       "html": "Le compresseur est le <b>seul organe actif</b> du cycle : il aspire la vapeur basse pression et la refoule en haute pression. Condenseur, détendeur et évaporateur ne font que subir ce mouvement.",
        "titre": "Le compresseur"
       },
       {
@@ -7328,7 +7328,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "piege",
        "t": "Un régulateur ne coupe rien",
-       "html": "Le <b>pressostat HP</b> est une sécurité : il <b>coupe</b> l'alimentation électrique du compresseur quand la pression devient dangereuse. Le <b>régulateur de pression de condensation</b> ne coupe rien du tout : c'est une vanne, elle <b>maintient</b> une pression. Deux organes, deux fonctions, deux réglages, et l'un ne remplace jamais l'autre.",
+       "html": "Le <b>pressostat HP</b> est une sécurité : il <b>coupe</b> l'alimentation électrique du compresseur quand la pression devient dangereuse. Le <b>régulateur de pression de condensation</b> ne coupe rien du tout : c'est une vanne, elle <b>maintient</b> une pression. Le pressostat coupe, la vanne maintient : l'un ne remplace jamais l'autre.",
        "titre": "Condenseur — installer, régler, vérifier"
       },
       {
@@ -7962,12 +7962,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Le cas typique est le <b>redémarrage après un arrêt long</b> : la pression est alors remontée dans tout le circuit, et sans lui le compresseur devrait avaler d'un coup beaucoup trop de vapeur. Trois régulateurs, trois endroits, trois raisons ; et aucun des trois ne coupe quoi que ce soit.",
+       "html": "Le cas typique est le <b>redémarrage après un arrêt long</b> : la pression est alors remontée dans tout le circuit, et sans lui le compresseur devrait avaler d'un coup beaucoup trop de vapeur. Chacun des trois tient une pression à un endroit différent du circuit, et aucun ne coupe quoi que ce soit : couper est le travail du pressostat.",
        "titre": "Évaporateur — installer, régler, vérifier"
       },
       {
        "type": "point",
-       "html": "Les <b>interrupteurs de sécurité et de contrôle</b>, les pressostats, protègent la machine, pas le produit. Ils coupent l'alimentation électrique du compresseur si la pression sort de la plage prévue. Deux organes, deux fonctions, deux réglages : on ne les confond pas.",
+       "html": "Les <b>interrupteurs de sécurité et de contrôle</b>, les pressostats, protègent la machine, pas le produit. Ils coupent l'alimentation électrique du compresseur si la pression sort de la plage prévue. Régulateur et pressostat n'ont ni la même fonction ni le même réglage : on ne les confond pas.",
        "titre": "Évaporateur — installer, régler, vérifier"
       },
       {
@@ -8718,12 +8718,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Dans les deux cas, il <b>coupe le circuit</b>, le plus souvent le compresseur, dès qu'un seuil de pression est franchi, en haute comme en basse pression. Une régulation qui module, une sécurité qui coupe : deux logiques, deux réglages.",
+       "html": "Dans les deux cas, il <b>coupe le circuit</b>, le plus souvent le compresseur, dès qu'un seuil de pression est franchi, en haute comme en basse pression. La régulation module, la sécurité coupe ; leurs réglages ne se confondent pas.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {
        "type": "point",
-       "html": "<b>Les régulateurs de pression, chacun à sa place.</b> Sur le terrain, ces vannes portent des repères de catalogue (la série <b>KV</b> est la plus répandue) et chacune tient une pression <b>à un endroit précis du circuit</b>. Les confondre, c'est régler la mauvaise vanne.",
+       "html": "<b>Les régulateurs de pression, chacun à sa place.</b> Sur le terrain, ces vannes portent des repères de catalogue (la série <b>KV</b> est la plus répandue) et chacune tient une pression <b>à un endroit précis du circuit</b>. Un repère mal lu, et l'on règle la mauvaise vanne.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {
@@ -9697,14 +9697,14 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "cle",
        "t": "Drop-in ou retrofit ?",
-       "html": "<b>Drop-in</b> : on change le fluide sans modifier l'installation.<br><b>Retrofit</b> : on change le fluide <b>et</b> ce qu'il faut adapter : huile, détendeur, joints. Annoncer un drop-in là où il faut un retrofit, c'est préparer une panne.",
+       "html": "<b>Drop-in</b> : on change le fluide sans modifier l'installation.<br><b>Retrofit</b> : on change le fluide <b>et</b> ce qu'il faut adapter : huile, détendeur, joints. Annoncer un drop-in là où il faut un retrofit prépare une panne.",
        "titre": "Substitution et efficacité énergétique"
       },
       {
        "type": "encadre",
        "genre": "piege",
        "t": "Le piège de l'année",
-       "html": "<b>Le R-290 est A3</b>, pas A2L. Tout hydrocarbure est très inflammable. Se tromper de classe, c'est se tromper d'EPI, de matériel électrique et de charge admissible. À l'inverse, le <b>CO₂ est A1</b> : toxicité faible, non inflammable, mais cette classe n'annonce ni sa <b>pression</b>, ni l'<b>atmosphère irrespirable</b> qu'une fuite crée en local fermé.",
+       "html": "<b>Le R-290 est A3</b>, pas A2L. Tout hydrocarbure est très inflammable. Une erreur de classe entraîne toutes les autres : EPI, matériel électrique, charge admissible. À l'inverse, le <b>CO₂ est A1</b> : toxicité faible, non inflammable, mais cette classe n'annonce ni sa <b>pression</b>, ni l'<b>atmosphère irrespirable</b> qu'une fuite crée en local fermé.",
        "titre": "Substitution et efficacité énergétique"
       },
       {
