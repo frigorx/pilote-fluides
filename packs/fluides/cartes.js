@@ -3361,6 +3361,21 @@ export const CARTES = [
       "sur la <b>haute</b> pression, en sortie de condenseur. Les deux autres — pression " +
       "d'évaporation et pression de carter — agissent du côté <b>basse</b> pression, et se voient " +
       "à la fiche de l'évaporateur.</p>" +
+      "<p>Le <b>rapport d'état</b> ne vaut que par ce qu'il permet de comparer. On y note donc les " +
+      "mesures ET leurs conditions : la <b>haute pression</b> relevée et la température de " +
+      "condensation qui lui correspond, la <b>température de l'air</b> à l'entrée de la batterie, " +
+      "l'écart entre les deux, le <b>sous-refroidissement</b>. On décrit ensuite ce que l'on a vu — " +
+      "ailettes couchées ou encrassées, ventilateur bruyant, trace d'huile, accès qui interdit tout " +
+      "nettoyage. Un relevé sans sa température extérieure ne se compare à rien : six mois plus tard, " +
+      "personne ne saura si la machine allait mieux ou plus mal.</p>" +
+      "<p>Le condenseur est l'organe où l'<b>énergie</b> se gagne ou se perd. À l'installation, " +
+      "l'emplacement décide de tout : de l'air libre à l'aspiration comme au refoulement, les " +
+      "distances du constructeur respectées, aucun <b>recyclage</b> de l'air chaud rejeté vers " +
+      "l'entrée, et un accès qui permette encore de nettoyer dans cinq ans. À l'entretien, une " +
+      "batterie propre tient la <b>pression de condensation</b> basse — et chaque kelvin gagné sur la " +
+      "condensation vaut environ <b>2 à 3 %</b> de consommation en moins. Un écart qui grandit entre " +
+      "la température de condensation et celle de l'air d'entrée, à charge égale, annonce " +
+      "l'encrassement bien avant que le pressostat ne coupe.</p>" +
       lienOutil(
         "packs/fluides/res/condenseur-interactif/index.html?dossier=observer",
         "🌬 Lancer le cours interactif : condenseur — installer, régler, vérifier",
@@ -3413,6 +3428,18 @@ export const CARTES = [
       "<p>C'est le point <b>froid</b> du circuit : le fluide y absorbe la chaleur du milieu à refroidir " +
       "et se vaporise. En sortie, il doit être <b>entièrement vapeur</b>, avec une <b>surchauffe de " +
       "5 à 10 K</b> — c'est ce qui protège le compresseur du coup de liquide.</p>" +
+      "<p>Dans le détail : le fluide arrive en <b>mélange liquide-vapeur</b>, détendu et froid. Il " +
+      "traverse la batterie en prenant la chaleur du milieu — l'air d'une chambre, l'eau d'un " +
+      "circuit — et se vaporise peu à peu. La dernière goutte disparaît avant la sortie ; au-delà, la " +
+      "vapeur continue de se réchauffer, et c'est cette <b>surchauffe</b> qui garantit qu'aucun " +
+      "liquide n'atteindra le compresseur. Tant que le fluide change d'état, sa température reste " +
+      "presque constante : c'est le <b>palier</b> d'évaporation, celui que le manomètre BP permet de " +
+      "lire à travers la table du fluide.</p>" +
+      "<p>Un évaporateur <b>fuit</b> là où on l'assemble et là où il souffre : raccords d'entrée et " +
+      "de sortie, coudes, soudures reprises après un choc, et perçages du bac. Le <b>dégivrage</b> " +
+      "ajoute sa part de fatigue — chauffe puis refroidissement, plusieurs fois par jour, sur les " +
+      "mêmes soudures. Une trace d'huile au bas d'une batterie ou dans le bac se lit donc comme un " +
+      "signe, jamais comme une salissure ordinaire.</p>" +
       "<p>Le <b>givre</b> est normal en froid négatif ; installé durablement, il isole la batterie et " +
       "fait chuter l'échange. D'où les cycles de <b>dégivrage</b> (air, résistance électrique, gaz " +
       "chauds). Un évaporateur qui givre <b>complètement</b> en fonctionnement signale d'abord un " +
@@ -3524,6 +3551,20 @@ export const CARTES = [
       "anomalies observées, risque pour le système, ce qui pourrait à terme provoquer une fuite. " +
       "Une batterie propre, un bon débit d'air et une surchauffe de <b>5 à 10 K</b> préservent " +
       "aussi l'<b>efficacité énergétique</b> de l'équipement.</p>" +
+      "<p>Le <b>rapport d'état</b> de l'évaporateur suit la même règle que celui du condenseur : les " +
+      "mesures avec leurs conditions. On y porte la <b>basse pression</b> et la température " +
+      "d'évaporation qui lui correspond, la <b>température de l'air</b> à l'entrée et à la sortie de " +
+      "la batterie, la <b>surchauffe</b> relevée. On décrit ensuite ce qui se voit : givre là où il ne " +
+      "devrait pas être, ailettes bouchées, ventilateur à l'arrêt, bac de condensats plein, écoulement " +
+      "gelé. Un dégivrage qui se déclenche sans dégivrer se lit dans le rapport bien avant de se voir " +
+      "dans la chambre.</p>" +
+      "<p>Côté <b>énergie</b>, l'évaporateur travaille d'autant mieux que sa température est " +
+      "<b>haute</b> : chaque kelvin gagné sur l'évaporation vaut lui aussi quelques pour cent de " +
+      "consommation. Un givre épais isole la batterie et fait tomber la BP ; le compresseur force " +
+      "alors pour rien. Le réglage du <b>dégivrage</b> décide donc autant que la propreté : trop " +
+      "fréquent, il se paie deux fois — en résistance chauffante, puis en froid à refaire ; trop rare, " +
+      "il laisse le givre s'installer. À l'installation, on laisse devant la batterie la place que le " +
+      "constructeur demande : aucun réglage ne rattrape un manque d'air.</p>" +
       lienOutil(
         "packs/fluides/res/evaporateur-interactif/index.html?dossier=observer",
         "❄ Lancer le cours interactif : évaporateur — installer, régler, vérifier",
@@ -4054,6 +4095,20 @@ export const CARTES = [
       "puissance électrique consommée. On l'améliore en <b>rapprochant</b> la température de " +
       "condensation de celle d'évaporation : condenseur propre, échangeurs bien dimensionnés, " +
       "réglages justes. Réduire la charge, enfin, améliore à la fois la sécurité et le rendement.</p>" +
+      "<p>Le rendement se joue aussi <b>à la conception</b>, avant tout réglage. Laisser la haute " +
+      "pression <b>descendre</b> quand l'air extérieur est froid — la <b>condensation flottante</b> — " +
+      "fait gagner beaucoup au compresseur, à condition que le détendeur suive : un thermostatique a " +
+      "besoin d'un écart de pression minimal, un <b>détendeur électronique</b> non. Faire <b>varier la " +
+      "vitesse</b> du compresseur et des ventilateurs colle la puissance au besoin réel et supprime les " +
+      "démarrages à répétition. Un <b>sous-refroidissement</b> soigné donne plus de froid pour la même " +
+      "compression. Enfin la chaleur rejetée au condenseur n'est pas perdue : un <b>désurchauffeur</b> " +
+      "peut la reprendre pour l'eau chaude.</p>" +
+      "<p>La <b>charge</b>, elle, se réduit d'abord par le choix des composants. Un échangeur à " +
+      "<b>plaques brasées</b> contient bien moins de fluide qu'un multitubulaire de même puissance ; " +
+      "un condenseur à <b>microcanaux</b> en contient moins qu'une batterie à tubes et ailettes. Chaque " +
+      "mètre de <b>ligne liquide</b> compte aussi, car le liquide est dense : rapprocher le groupe des " +
+      "postes, et choisir le diamètre juste plutôt que le plus large, retire des kilos à la machine. " +
+      "Une <b>bouteille</b> surdimensionnée, enfin, ne fait que stocker du fluide qui ne travaille pas.</p>" +
       "<p>Pour réduire la charge de fluide frigorigène, on peut aussi changer la <b>conception</b> du système. Dans un système à <b>boucle secondaire</b>, le fluide frigorigène reste confiné dans la machinerie, avec une charge réduite. Un fluide caloporteur — de l'<b>eau glacée</b> ou de l'<b>eau glycolée</b> — circule ensuite dans les postes (vitrines, centrales de traitement d'air) pour transporter le froid jusqu'à eux. Le fluide frigorigène ne quitte jamais la salle des machines.</p>" +
       "<p>Le système en <b>cascade</b> pousse cette logique plus loin : deux circuits frigorifiques séparés sont montés en série, chacun avec sa propre charge, réduite elle aussi. Le circuit basse température évacue sa chaleur dans le circuit haute température, qui la rejette à l'extérieur. Chaque circuit reste petit, donc plus facile à confiner en cas de fuite.</p>" +
       "<p>Chaque fluide de substitution a ses <b>avantages</b> et ses <b>inconvénients</b>, selon l'application et le <b>climat</b>. Le <b>CO₂</b> est performant en froid commercial, mais son efficacité baisse quand l'air extérieur est très chaud. Les <b>hydrocarbures</b> sont efficaces, mais leur inflammabilité limite la charge autorisée. L'<b>ammoniac</b> est réservé aux installations industrielles, à cause de sa toxicité. Il n'y a pas de meilleur fluide dans l'absolu : le choix se fait selon l'application, le climat du site, et la documentation constructeur, à faire valider avant tout choix.</p>" +

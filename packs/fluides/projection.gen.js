@@ -541,7 +541,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Pour intervenir sur les fluides, il vous faut une <b>attestation d'aptitude</b> personnelle. Votre entreprise, elle, doit avoir une <b>attestation de capacité</b>. Ce sont deux papiers obligatoires, et ce n'est pas le même.",
+       "html": "Pour réaliser les <b>opérations réglementées</b> sur ces fluides — mise en service, entretien, contrôle d'étanchéité, récupération —, il vous faut une <b>attestation d'aptitude</b> personnelle. Votre entreprise, elle, doit avoir une <b>attestation de capacité</b>. Ce sont deux papiers obligatoires, et ce n'est pas le même.",
        "titre": "Ce que la loi vous impose"
       },
       {
@@ -1332,7 +1332,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "cle",
        "t": "À retenir",
-       "html": "<b>Surchauffe</b> : le fluide sort de l'évaporateur un peu plus chaud que sa température d'évaporation — elle protège le compresseur du liquide. Repère : <b>5 à 10 K</b>.<br><b>Sous-refroidissement</b> : le liquide sort du condenseur un peu plus froid que sa température de condensation — il garantit du liquide pur au détendeur. Repère : <b>4 à 8 K</b>.",
+       "html": "<b>Surchauffe</b> : le fluide sort de l'évaporateur un peu plus chaud que sa température d'évaporation — elle protège le compresseur du liquide. Repère d'apprentissage : <b>5 à 10 K</b>.<br><b>Sous-refroidissement</b> : le liquide sort du condenseur un peu plus froid que sa température de condensation — il garantit du liquide pur au détendeur. Repère d'apprentissage : <b>4 à 8 K</b>.<br>Ces repères servent à comprendre, <b>jamais à régler</b> : sur une machine réelle, seules les valeurs du constructeur font foi.",
        "titre": "Unités, pression, thermodynamique utile"
       },
       {
@@ -2909,6 +2909,21 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
+       "html": "<b>Ce que le registre contient, et ce qu'on y écrit en repartant.</b> Le registre est le carnet de santé de l'équipement, tenu par l'<b>exploitant</b>. On y trouve l'identification de la machine, le <b>fluide</b> et la <b>charge nominale</b>, la date et le résultat de chaque contrôle d'étanchéité, les quantités <b>ajoutées</b> et <b>récupérées</b> avec leur date, les fuites détectées et les réparations faites, et l'identité de l'intervenant et de son entreprise avec leurs attestations.",
+       "titre": "Où fuit une installation ?"
+      },
+      {
+       "type": "point",
+       "html": "Sur une installation qu'on ne connaît pas, ces lignes disent en trois minutes ce qu'une heure de mesures ne dirait pas : une machine qui a déjà fui deux fois au même endroit ne se contrôle pas comme une machine saine.",
+       "titre": "Où fuit une installation ?"
+      },
+      {
+       "type": "point",
+       "html": "En repartant, on écrit <b>ce qu'on a fait, pas ce qu'on a cru</b> : la date, la méthode de contrôle employée, le résultat, la quantité exacte manipulée pesée à la balance, et la nature de la réparation. Une charge d'appoint sans quantité notée, une réparation sans recontrôle mentionné, et le registre ne prouve plus rien — ni pour le client, ni devant un contrôle.",
+       "titre": "Où fuit une installation ?"
+      },
+      {
+       "type": "point",
        "html": "Vient ensuite le <b>contrôle visuel et manuel</b>, sans électronique : traces d'huile (le fluide entraîne l'huile en fuyant), corrosion, givre anormal, serrage des raccords accessibles, état des fixations.",
        "titre": "Où fuit une installation ?"
       },
@@ -4368,7 +4383,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Le manomètre affiche une <b>pression relative</b> : pour obtenir la pression absolue, on ajoute environ <b>1 bar</b>. La pince de température et le multimètre servent à la <b>méthode indirecte</b> de contrôle d'étanchéité : on compare les valeurs mesurées — surchauffe (plage normale <b>5 à 10 K</b>), sous-refroidissement (plage normale <b>4 à 8 K</b>), intensité absorbée — à celles attendues sur la fiche constructeur. Un écart qui se creuse alerte, sans avoir ouvert le circuit.",
+       "html": "Le manomètre affiche une <b>pression relative</b> : pour obtenir la pression absolue, on ajoute environ <b>1 bar</b>. La pince de température et le multimètre servent à la <b>méthode indirecte</b> de contrôle d'étanchéité : on compare les valeurs mesurées — surchauffe (plage indicative <b>5 à 10 K</b>), sous-refroidissement (plage indicative <b>4 à 8 K</b>), intensité absorbée — à celles attendues sur la fiche constructeur. Un écart qui se creuse alerte, sans avoir ouvert le circuit.",
        "titre": "Le manifold — lire, brancher, ne pas polluer"
       },
       {
@@ -6936,6 +6951,41 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
+       "html": "<b>Trois familles de condenseurs, trois façons d'évacuer la même chaleur.</b> Le condenseur <b>à air</b> souffle l'air ambiant à travers une batterie à ailettes : c'est le plus répandu, le plus simple, et celui dont la haute pression suit la température extérieure. Le condenseur <b>à eau</b> échange avec un circuit d'eau, à plaques ou multitubulaire : plus compact, moins bruyant, il tient une haute pression stable mais demande un circuit d'eau et se prend l'entartrage.",
+       "titre": "Le condenseur"
+      },
+      {
+       "type": "point",
+       "html": "Le condenseur <b>évaporatif</b> combine les deux en arrosant la batterie : très performant par temps chaud, il impose en contrepartie un traitement d'eau et une surveillance sanitaire.",
+       "titre": "Le condenseur"
+      },
+      {
+       "type": "point",
+       "html": "<b>La condensation se fait en trois temps, sur la même batterie.</b> À l'entrée, la vapeur arrive <b>surchauffée</b> et perd d'abord cette surchauffe. Au milieu, elle se <b>liquéfie</b> à température constante : c'est là que le condenseur travaille le plus, et cette zone occupe la plus grande part de la surface.",
+       "titre": "Le condenseur"
+      },
+      {
+       "type": "point",
+       "html": "À la sortie, le liquide se <b>sous-refroidit</b>. Ce partage explique tout le reste : une batterie encrassée réduit la zone utile de liquéfaction, la pression monte pour compenser, et le compresseur consomme davantage pour le même froid.",
+       "titre": "Le condenseur"
+      },
+      {
+       "type": "point",
+       "html": "<b>Ce que la haute pression raconte.</b> Sur un condenseur à air, la pression de condensation suit la température de l'air entrant, à quelques kelvins près. Une pression anormalement haute par temps frais ne vient donc pas de la météo : batterie sale, ventilateur arrêté ou tournant à l'envers, air qui court-circuite entre l'entrée et la sortie, ou incondensables dans le circuit. Chacune de ces causes se vérifie à l'œil ou à la main avant de brancher quoi que ce soit.",
+       "titre": "Le condenseur"
+      },
+      {
+       "type": "point",
+       "html": "<b>Le rapport écrit, et l'énergie qu'il économise.</b> L'état du condenseur se consigne : propreté de la batterie, état et sens des ventilateurs, températures d'air entrant et sortant, pression de condensation, sous-refroidissement mesuré. Un écart noté à temps se corrige par un nettoyage ; ignoré, il devient une surchauffe du compresseur, une coupure au pressostat haute pression, puis une casse.",
+       "titre": "Le condenseur"
+      },
+      {
+       "type": "point",
+       "html": "<b>Tenir le condenseur propre et l'air libre est le geste d'efficacité énergétique le plus rentable de l'installation</b> — et celui qui protège le mieux de la fuite, car une machine qui travaille en surpression permanente fatigue ses joints et ses brasures.",
+       "titre": "Le condenseur"
+      },
+      {
+       "type": "point",
        "html": "Les <b>incondensables</b> (air entré lors d'une intervention mal faite) se purgent <b>à l'arrêt</b>, installation froide, avec récupération — jamais fluide en mouvement.",
        "titre": "Le condenseur"
       },
@@ -7239,6 +7289,26 @@ window.PILOTE_PROJECTION = {
        "titre": "Condenseur — installer, régler, vérifier"
       },
       {
+       "type": "point",
+       "html": "Le <b>rapport d'état</b> ne vaut que par ce qu'il permet de comparer. On y note donc les mesures ET leurs conditions : la <b>haute pression</b> relevée et la température de condensation qui lui correspond, la <b>température de l'air</b> à l'entrée de la batterie, l'écart entre les deux, le <b>sous-refroidissement</b>.",
+       "titre": "Condenseur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "On décrit ensuite ce que l'on a vu — ailettes couchées ou encrassées, ventilateur bruyant, trace d'huile, accès qui interdit tout nettoyage. Un relevé sans sa température extérieure ne se compare à rien : six mois plus tard, personne ne saura si la machine allait mieux ou plus mal.",
+       "titre": "Condenseur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "Le condenseur est l'organe où l'<b>énergie</b> se gagne ou se perd. À l'installation, l'emplacement décide de tout : de l'air libre à l'aspiration comme au refoulement, les distances du constructeur respectées, aucun <b>recyclage</b> de l'air chaud rejeté vers l'entrée, et un accès qui permette encore de nettoyer dans cinq ans.",
+       "titre": "Condenseur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "À l'entretien, une batterie propre tient la <b>pression de condensation</b> basse — et chaque kelvin gagné sur la condensation vaut environ <b>2 à 3 %</b> de consommation en moins. Un écart qui grandit entre la température de condensation et celle de l'air d'entrée, à charge égale, annonce l'encrassement bien avant que le pressostat ne coupe.",
+       "titre": "Condenseur — installer, régler, vérifier"
+      },
+      {
        "type": "encadre",
        "genre": "cle",
        "t": "Bien installer l'unité extérieure",
@@ -7538,6 +7608,21 @@ window.PILOTE_PROJECTION = {
       {
        "type": "point",
        "html": "C'est le point <b>froid</b> du circuit : le fluide y absorbe la chaleur du milieu à refroidir et se vaporise. En sortie, il doit être <b>entièrement vapeur</b>, avec une <b>surchauffe de 5 à 10 K</b> — c'est ce qui protège le compresseur du coup de liquide.",
+       "titre": "L'évaporateur"
+      },
+      {
+       "type": "point",
+       "html": "Dans le détail : le fluide arrive en <b>mélange liquide-vapeur</b>, détendu et froid. Il traverse la batterie en prenant la chaleur du milieu — l'air d'une chambre, l'eau d'un circuit — et se vaporise peu à peu. La dernière goutte disparaît avant la sortie ; au-delà, la vapeur continue de se réchauffer, et c'est cette <b>surchauffe</b> qui garantit qu'aucun liquide n'atteindra le compresseur.",
+       "titre": "L'évaporateur"
+      },
+      {
+       "type": "point",
+       "html": "Tant que le fluide change d'état, sa température reste presque constante : c'est le <b>palier</b> d'évaporation, celui que le manomètre BP permet de lire à travers la table du fluide.",
+       "titre": "L'évaporateur"
+      },
+      {
+       "type": "point",
+       "html": "Un évaporateur <b>fuit</b> là où on l'assemble et là où il souffre : raccords d'entrée et de sortie, coudes, soudures reprises après un choc, et perçages du bac. Le <b>dégivrage</b> ajoute sa part de fatigue — chauffe puis refroidissement, plusieurs fois par jour, sur les mêmes soudures. Une trace d'huile au bas d'une batterie ou dans le bac se lit donc comme un signe, jamais comme une salissure ordinaire.",
        "titre": "L'évaporateur"
       },
       {
@@ -7891,6 +7976,26 @@ window.PILOTE_PROJECTION = {
       {
        "type": "point",
        "html": "Toute visite se termine par un <b>rapport écrit</b> sur l'état de l'évaporateur : anomalies observées, risque pour le système, ce qui pourrait à terme provoquer une fuite. Une batterie propre, un bon débit d'air et une surchauffe de <b>5 à 10 K</b> préservent aussi l'<b>efficacité énergétique</b> de l'équipement.",
+       "titre": "Évaporateur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "Le <b>rapport d'état</b> de l'évaporateur suit la même règle que celui du condenseur : les mesures avec leurs conditions. On y porte la <b>basse pression</b> et la température d'évaporation qui lui correspond, la <b>température de l'air</b> à l'entrée et à la sortie de la batterie, la <b>surchauffe</b> relevée.",
+       "titre": "Évaporateur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "On décrit ensuite ce qui se voit : givre là où il ne devrait pas être, ailettes bouchées, ventilateur à l'arrêt, bac de condensats plein, écoulement gelé. Un dégivrage qui se déclenche sans dégivrer se lit dans le rapport bien avant de se voir dans la chambre.",
+       "titre": "Évaporateur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "Côté <b>énergie</b>, l'évaporateur travaille d'autant mieux que sa température est <b>haute</b> : chaque kelvin gagné sur l'évaporation vaut lui aussi quelques pour cent de consommation. Un givre épais isole la batterie et fait tomber la BP ; le compresseur force alors pour rien.",
+       "titre": "Évaporateur — installer, régler, vérifier"
+      },
+      {
+       "type": "point",
+       "html": "Le réglage du <b>dégivrage</b> décide donc autant que la propreté : trop fréquent, il se paie deux fois — en résistance chauffante, puis en froid à refaire ; trop rare, il laisse le givre s'installer. À l'installation, on laisse devant la batterie la place que le constructeur demande : aucun réglage ne rattrape un manque d'air.",
        "titre": "Évaporateur — installer, régler, vérifier"
       },
       {
@@ -8270,6 +8375,36 @@ window.PILOTE_PROJECTION = {
        "titre": "Le détendeur et les organes annexes"
       },
       {
+       "type": "point",
+       "html": "<b>Le bulbe : où il est posé décide de ce que le détendeur voit.</b> Le bulbe se fixe sur la ligne d'aspiration, <b>en sortie d'évaporateur</b>, sur une partie horizontale et <b>propre</b> — jamais sur une soudure, jamais sur un point bas où l'huile s'accumule. Il se serre avec son collier métallique, contact franc sur le tube, puis <b>s'isole</b> : sans isolant, il sent la température du local et non celle du fluide, et le détendeur régule sur une information fausse. Sur un tube de faible diamètre, il se pose à midi ; sur un gros tube, à quatre ou huit heures, jamais dessous.",
+       "titre": "Le détendeur et les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "<b>Égalisation interne ou externe : la même vanne, deux montages.</b> Pour doser, le détendeur compare la pression du bulbe à la pression qui règne dans l'évaporateur. En <b>égalisation interne</b>, il prend cette pression à l'entrée de l'évaporateur, par un passage percé dans le corps de la vanne : simple, et suffisant tant que l'évaporateur ne fait pas perdre trop de pression entre son entrée et sa sortie.",
+       "titre": "Le détendeur et les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "En <b>égalisation externe</b>, un petit tube capillaire va chercher la pression <b>à la sortie</b> de l'évaporateur, juste à côté du bulbe. C'est ce montage qu'imposent les évaporateurs à forte perte de charge et ceux équipés d'un distributeur de liquide : sans lui, la vanne croit la pression plus haute qu'elle n'est, ferme trop, et l'évaporateur est sous-alimenté. Un détendeur à égalisation externe monté sans raccorder ce tube ne régule plus du tout.",
+       "titre": "Le détendeur et les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "<b>L'électrovanne : elle ne dose pas, elle ouvre ou elle ferme.</b> Placée sur la ligne liquide, juste avant le détendeur, c'est une vanne <b>tout ou rien</b> commandée par une bobine électrique. Elle ne remplace pas le détendeur et ne règle aucun débit : elle autorise ou interdit le passage du liquide. Elle porte une <b>flèche de sens</b>, et sa bobine se vérifie hors tension.",
+       "titre": "Le détendeur et les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "Son usage le plus courant est l'<b>arrêt par tirage au vide</b> (<i>pump down</i>) : à l'arrêt, l'électrovanne se ferme la première ; le compresseur continue de tourner et aspire le fluide resté dans l'évaporateur jusqu'à ce que le <b>pressostat basse pression</b> le coupe. Le fluide se retrouve rassemblé côté haute pression, dans le condenseur et la bouteille.",
+       "titre": "Le détendeur et les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "Intérêt : au redémarrage, plus de liquide dans l'évaporateur, donc <b>pas de coup de liquide</b> au compresseur. Un compresseur qui repart en courts-cycles avec une électrovanne collée ouverte, c'est exactement ce que ce montage évite.",
+       "titre": "Le détendeur et les organes annexes"
+      },
+      {
        "type": "encadre",
        "genre": "cle",
        "t": "Sécurité électrique, sécurité mécanique",
@@ -8582,6 +8717,51 @@ window.PILOTE_PROJECTION = {
       {
        "type": "point",
        "html": "Dans les deux cas, il <b>coupe le circuit</b> — le plus souvent le compresseur — dès qu'un seuil de pression est franchi, en haute comme en basse pression. Une régulation qui module, une sécurité qui coupe : deux logiques, deux réglages.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "<b>Les régulateurs de pression, chacun à sa place.</b> Sur le terrain, ces vannes portent des repères de catalogue — la série <b>KV</b> est la plus répandue — et chacune tient une pression <b>à un endroit précis du circuit</b>. Les confondre, c'est régler la mauvaise vanne.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "<b>KVP — régulateur de pression d'évaporation.</b> Il se monte <b>à la sortie de l'évaporateur</b>, sur l'aspiration. Il empêche la pression d'évaporation de descendre sous une valeur choisie, donc la température de descendre trop bas. C'est lui qui tient une chambre à 0 °C sans geler la marchandise, et lui qui permet à plusieurs évaporateurs réglés à des températures différentes de travailler sur un même compresseur.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "<b>KVL — régulateur de pression de carter.</b> Il se monte sur l'aspiration, <b>juste avant le compresseur</b>. Il limite la pression qui arrive au compresseur au démarrage ou après un dégivrage, quand l'évaporateur est encore chaud. Sans lui, le moteur force et peut disjoncter : il protège le compresseur, il ne règle pas la chambre.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "<b>KVR — régulateur de pression de condensation.</b> Il se monte <b>à la sortie du condenseur</b>, souvent avec une vanne de mise en pression de la bouteille. Quand il fait froid dehors, la haute pression tombe et le détendeur n'a plus assez d'écart pour alimenter l'évaporateur.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "Le KVR retient le liquide dans le condenseur pour <b>maintenir la haute pression</b> et rendre au détendeur sa pression de travail. C'est le remède classique d'une installation qui fonctionne l'été et se dérègle l'hiver.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "<b>KVC — régulateur de capacité, ou vanne de by-pass des gaz chauds.</b> Il relie le refoulement à l'aspiration. Quand la demande de froid tombe très bas, il renvoie une part des gaz chauds vers l'aspiration pour que le compresseur garde du débit au lieu de s'arrêter et de repartir sans cesse. Il <b>évite les courts-cycles</b> ; en revanche il consomme, et il ne se monte que là où le constructeur le prévoit.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "<b>La règle de réglage est la même pour toutes.</b> On raccorde le manomètre sur la prise de la vanne, on tourne la vis <b>par petites touches</b>, et on <b>attend la stabilisation</b> avant de lire — une installation frigorifique ne répond jamais instantanément. Le sens de rotation et la plage se lisent sur la notice : aucune de ces vannes ne se règle à l'oreille, et une vanne réglée sans manomètre n'est pas réglée.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "<b>La bouteille anti-coup de liquide</b> se place sur l'aspiration, avant le compresseur. Elle recueille le liquide qui n'a pas fini de s'évaporer et ne laisse repartir que de la vapeur, en réadmettant l'huile petit à petit par un orifice calibré. On la trouve là où la charge varie brutalement, et sur les installations à dégivrage par gaz chauds.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "<b>Le pressostat différentiel d'huile</b> ne surveille pas une pression, mais un <b>écart</b> : celui entre la pression d'huile de la pompe du compresseur et la pression du carter. Si cet écart ne s'établit pas dans le délai prévu par le constructeur, le compresseur n'est pas lubrifié et l'appareil coupe. Sur les compresseurs qui en sont équipés, il se réarme <b>à la main</b>, et jamais sans avoir cherché pourquoi il a coupé.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {
@@ -9468,6 +9648,21 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
+       "html": "Le rendement se joue aussi <b>à la conception</b>, avant tout réglage. Laisser la haute pression <b>descendre</b> quand l'air extérieur est froid — la <b>condensation flottante</b> — fait gagner beaucoup au compresseur, à condition que le détendeur suive : un thermostatique a besoin d'un écart de pression minimal, un <b>détendeur électronique</b> non.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "Faire <b>varier la vitesse</b> du compresseur et des ventilateurs colle la puissance au besoin réel et supprime les démarrages à répétition. Un <b>sous-refroidissement</b> soigné donne plus de froid pour la même compression. Enfin la chaleur rejetée au condenseur n'est pas perdue : un <b>désurchauffeur</b> peut la reprendre pour l'eau chaude.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
+       "html": "La <b>charge</b>, elle, se réduit d'abord par le choix des composants. Un échangeur à <b>plaques brasées</b> contient bien moins de fluide qu'un multitubulaire de même puissance ; un condenseur à <b>microcanaux</b> en contient moins qu'une batterie à tubes et ailettes. Chaque mètre de <b>ligne liquide</b> compte aussi, car le liquide est dense : rapprocher le groupe des postes, et choisir le diamètre juste plutôt que le plus large, retire des kilos à la machine. Une <b>bouteille</b> surdimensionnée, enfin, ne fait que stocker du fluide qui ne travaille pas.",
+       "titre": "Substitution et efficacité énergétique"
+      },
+      {
+       "type": "point",
        "html": "Pour réduire la charge de fluide frigorigène, on peut aussi changer la <b>conception</b> du système. Dans un système à <b>boucle secondaire</b>, le fluide frigorigène reste confiné dans la machinerie, avec une charge réduite. Un fluide caloporteur — de l'<b>eau glacée</b> ou de l'<b>eau glycolée</b> — circule ensuite dans les postes (vitrines, centrales de traitement d'air) pour transporter le froid jusqu'à eux. Le fluide frigorigène ne quitte jamais la salle des machines.",
        "titre": "Substitution et efficacité énergétique"
       },
@@ -10348,6 +10543,31 @@ window.PILOTE_PROJECTION = {
       {
        "type": "point",
        "html": "Les hydrocarbures — <b>R-290</b> (propane), <b>R-600a</b> (isobutane) — sont classés <b>A3</b> : très inflammables. Ils s'imposent pourtant, parce que leur PRP est très bas et leurs performances excellentes : on les trouve dans les réfrigérateurs domestiques, les monoblocs, les vitrines, et de plus en plus dans les pompes à chaleur.",
+       "titre": "Hydrocarbures — le spécifique A1 et A2"
+      },
+      {
+       "type": "point",
+       "html": "<b>L'étiquetage : ce qui doit être lu avant même d'ouvrir la machine.</b> Un équipement contenant un réfrigérant inflammable porte une <b>plaque signalétique</b> et un <b>marquage de danger</b> visibles : le fluide et sa quantité, le pictogramme de flamme, et la mention avertissant du risque.",
+       "titre": "Hydrocarbures — le spécifique A1 et A2"
+      },
+      {
+       "type": "point",
+       "html": "Sur les appareils concernés, un marquage rappelle que l'entretien revient à une personne formée et que la machine ne doit être ni percée ni brûlée. Cette lecture est le <b>premier geste</b> de l'intervention : elle décide de l'outillage, du balisage et de la ventilation.",
+       "titre": "Hydrocarbures — le spécifique A1 et A2"
+      },
+      {
+       "type": "point",
+       "html": "Si la plaque manque ou reste illisible, on ne devine pas : l'identification se cherche dans la documentation de la machine et dans le registre, jamais à l'odeur ni à la couleur d'une bouteille. Intervenir sur un fluide qu'on n'a pas identifié, c'est risquer de braser sur un hydrocarbure.",
+       "titre": "Hydrocarbures — le spécifique A1 et A2"
+      },
+      {
+       "type": "point",
+       "html": "<b>Efficacité énergétique : sur ces machines, elle se joue à la charge.</b> Les équipements aux hydrocarbures fonctionnent avec des charges <b>volontairement faibles</b>, et sont conçus pour cela. Une charge d'appoint approximative, un échangeur encrassé ou un dégivrage mal réglé pèsent donc bien plus lourd qu'ailleurs sur la consommation.",
+       "titre": "Hydrocarbures — le spécifique A1 et A2"
+      },
+      {
+       "type": "point",
+       "html": "Charger à la <b>balance</b>, selon la quantité inscrite sur la plaque, tenir les échangeurs propres et vérifier les réglages : sur ces installations, c'est autant une mesure d'énergie qu'une mesure de sécurité.",
        "titre": "Hydrocarbures — le spécifique A1 et A2"
       },
       {
