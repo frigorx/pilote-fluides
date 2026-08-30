@@ -61,11 +61,19 @@ ModeleAppareil.construire({
   piege: "« Ça disjoncte souvent, je mets un calibre au-dessus. » Le calibre protège le <strong>câble</strong>, pas l’appareil branché. Augmenter le calibre sans changer la section, c’est laisser le câble chauffer sans protection.",
 
   symboles: [
-    { src: 'assets/dis_mag_term_3f-1.svg', alt: "Symbole normalisé d’un disjoncteur magnéto-thermique à trois pôles.", legende: "Trois pôles" },
-    { src: 'assets/dis_mag_term_2f-1.svg', alt: "Symbole normalisé d’un disjoncteur magnéto-thermique à deux pôles.", legende: "Deux pôles" }
+    { src: 'assets/disjonct-m_3f.svg',
+      alt: "Symbole normalisé d’un disjoncteur magnéto-thermique à trois pôles : sur chaque pôle, le contact incliné, le crochet du déclencheur thermique et le demi-cercle du déclencheur magnétique.",
+      legende: "Trois pôles — le crochet et le demi-cercle" },
+    { src: 'assets/disjonct-m_1fn.svg',
+      alt: "Symbole normalisé d’un disjoncteur magnéto-thermique un pôle plus neutre.",
+      legende: "Un pôle + neutre — celui des tableaux d’habitation" },
+    { src: 'assets/dis_mag_term_3f-1.svg',
+      alt: "Le même appareil, dessiné avec les repères de bornes 1-3-5 et 2-4-6, et le déclencheur magnétique noté « I supérieur ».",
+      legende: "Le même, avec les repères de bornes et la notation « I> »" }
   ],
   lecturePlan: [
     "Le symbole porte <strong>les deux signes</strong> : le crochet du thermique et le demi-cercle du magnétique. Voir stations 8.5 et 8.6.",
+    "<strong>Deux écritures du même appareil.</strong> Certains plans remplacent le demi-cercle par un rectangle contenant <em>I&gt;</em> — « au-dessus de tel courant ». C’est le même déclencheur, dit autrement. Un plan peut aussi porter les repères de bornes : 1-3-5 en entrée, 2-4-6 en sortie.",
     "<strong>Leur présence est la fiche technique de l’appareil</strong> : ce qu’il voit, et ce qu’il ne voit pas.",
     "Repère <strong>Q</strong> ou <strong>F</strong> selon les écoles ; calibre et courbe écrits à côté."
   ],

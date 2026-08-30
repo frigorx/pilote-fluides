@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-33.0 -34.0 48.0 68.0" width="48" height="68">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-27.71 -25.5 39.21 51" width="39.21" height="51">
 <!-- Fin de course  à came (NF) — converti de fin_de_course_came_nf.elmt par outils\elmt-vers-svg.py -->
-<rect x="-33.0" y="-34.0" width="48.0" height="68.0" fill="#ffffff"/>
+
 <line x1="-19" y1="-3" x2="3" y2="-3" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
 <polyline points="-20,-7.5 -20,-3 -15,-3" stroke="black" stroke-width="0.4" fill="none"/>
 <path d="M -20.00,-7.50 A 5.00,5.00 0 1 0 -15.02,-2.94" stroke="black" stroke-width="0.4" fill="none"/>

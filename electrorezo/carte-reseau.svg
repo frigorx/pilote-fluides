@@ -10,7 +10,7 @@
   <path d="M110.0 756.0 L1500.8 756.0" fill="none" stroke="#1e7e54" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M232.0 912.0 L1500.8 912.0" fill="none" stroke="#c9451a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M671.2 1068.0 L1647.2 1068.0" fill="none" stroke="#0f766e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M110.0 444.0 L1439.8 444.0" fill="none" stroke="#7c3aed" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M110.0 444.0 L1574.0 444.0" fill="none" stroke="#7c3aed" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <rect x="649.0" y="195.0" width="30" height="30" rx="8" fill="#1b3a63"/>
   <text x="664.0" y="216.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">1</text>
   <rect x="792.0" y="222.3" width="30" height="30" rx="8" fill="#0C4B88"/>
@@ -347,11 +347,17 @@
   <text x="1317.8" y="496.0" text-anchor="middle" font-size="12" font-weight="400" fill="#7c3aed">8.9  ⇄ 5</text>
   </a>
   <a href="stations/8-10-dechiffrer/index.html" aria-label="8.10 Déchiffrer">
-  <circle cx="1439.8" cy="444.0" r="21" fill="none" stroke="#7c3aed" stroke-width="3"/>
   <circle cx="1439.8" cy="444.0" r="10" fill="#fffdf8" stroke="#7c3aed" stroke-width="4"/>
   <circle cx="1439.8" cy="444.0" r="24" fill="transparent" class="cible"/>
-  <text x="1439.8" y="488.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Déchiffrer</text>
-  <text x="1439.8" y="504.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">8.10</text>
+  <text x="1439.8" y="480.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Déchiffrer</text>
+  <text x="1439.8" y="496.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">8.10</text>
+  </a>
+  <a href="stations/8-11-jeu-des-symboles/index.html" aria-label="8.11 Le jeu des symboles">
+  <circle cx="1574.0" cy="444.0" r="21" fill="none" stroke="#7c3aed" stroke-width="3"/>
+  <circle cx="1574.0" cy="444.0" r="10" fill="#fffdf8" stroke="#7c3aed" stroke-width="4"/>
+  <circle cx="1574.0" cy="444.0" r="24" fill="transparent" class="cible"/>
+  <text x="1574.0" y="410.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Le jeu des symboles</text>
+  <text x="1574.0" y="394.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">8.11</text>
   </a>
   <a href="stations/7-1-varier-la-tension/index.html" aria-label="7.1 Variation de tension">
   <circle cx="671.2" cy="1068.0" r="14" fill="#fffdf8" stroke="#0f766e" stroke-width="5"/>

@@ -139,15 +139,16 @@ const ModeleAppareil = (() => {
     function representer(hote) {
       const w = el('div', 'workspace');
       const g = carte('Le symbole normalisé');
-      const lect = el('div', 'lecture');
+      /* Le symbole a sa propre grille : dans celle des « metric », il
+         tombait a 82 pixels et ne se lisait plus. Voir .symboles dans
+         station.css. */
+      const lect = el('div', 'symboles');
       D.symboles.forEach(s => {
-        const b = el('div', 'metric');
-        b.appendChild(el('span', null, s.legende));
+        const b = document.createElement('figure');
         const i = document.createElement('img');
-        i.src = s.src; i.alt = s.alt;
-        i.style.width = '100%'; i.style.maxHeight = '180px'; i.style.objectFit = 'contain';
-        i.style.marginTop = '.3rem';
+        i.src = s.src; i.alt = s.alt; i.loading = 'lazy';
         b.appendChild(i);
+        b.appendChild(el('figcaption', null, s.legende));
         lect.appendChild(b);
       });
       g.appendChild(lect);

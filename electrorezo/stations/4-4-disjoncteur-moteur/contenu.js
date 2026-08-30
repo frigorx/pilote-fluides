@@ -56,7 +56,12 @@ ModeleAppareil.construire({
   piege: "Régler au jugé, ou régler au maximum « pour ne pas être embêté ». Le réglage n’est pas un confort : c’est ce qui fait que le moteur est protégé ou non. Et si le moteur est recouplé — étoile au lieu de triangle — l’intensité change : le réglage aussi.",
 
   symboles: [
-    { src: 'assets/dis_mag_term_3f-2.svg', alt: "Symbole normalisé d’un disjoncteur moteur à trois pôles.", legende: "Trois pôles, avec les deux déclencheurs" }
+    { src: 'assets/disjonct-m_3f.svg',
+      alt: "Symbole normalisé d’un disjoncteur à trois pôles : contact incliné, crochet du thermique, demi-cercle du magnétique, et la barre courte du sectionnement.",
+      legende: "Les trois signes : crochet, demi-cercle, barre" },
+    { src: 'assets/dis_mag_term_3f-2.svg',
+      alt: "Symbole normalisé d’un disjoncteur moteur à trois pôles, avec ses repères de bornes.",
+      legende: "Le même, avec les repères de bornes" }
   ],
   lecturePlan: [
     "Le symbole porte <strong>le crochet, le demi-cercle et souvent la barre</strong> du sectionnement : trois signes, trois capacités.",

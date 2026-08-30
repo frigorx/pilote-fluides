@@ -1,7 +1,7 @@
 /* ÉlectroRézo — la liste ordonnée des stations du réseau.
    ÉCRIT PAR outils/construire-reseau.mjs — ne pas modifier à la main.
    Relancer l'outil après toute création ou tout renommage de station.
-   58 stations, 8 lignes. */
+   59 stations, 8 lignes. */
 
 const RESEAU = {
   lignes: {
@@ -72,7 +72,8 @@ const RESEAU = {
     { id: '8.7', ligne: 8, dossier: '8-7-pointille', titre: 'Le pointillé' },
     { id: '8.8', ligne: 8, dossier: '8-8-bobine-et-rond', titre: 'La bobine et le rond' },
     { id: '8.9', ligne: 8, dossier: '8-9-reperes', titre: 'Les repères' },
-    { id: '8.10', ligne: 8, dossier: '8-10-dechiffrer', titre: 'Déchiffrer' }
+    { id: '8.10', ligne: 8, dossier: '8-10-dechiffrer', titre: 'Déchiffrer' },
+    { id: '8.11', ligne: 8, dossier: '8-11-jeu-des-symboles', titre: 'Le jeu des symboles' }
   ],
 
   /* la station qui suit celle-ci, ou null si c'est la dernière du réseau */

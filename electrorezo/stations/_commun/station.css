@@ -161,3 +161,41 @@ dialog h2{margin-top:0;color:var(--navy)}
 #creditsListe{padding-left:1.1rem}
 #creditsListe li{margin-bottom:.6rem}
 #creditsListe small{color:var(--muted)}
+
+/* ---------------------------------------------------------------- les symboles
+   Le symbole normalisé EST le sujet du quatrième temps. Rangé dans la grille
+   des « metric », il tombait à 82 pixels de large : à cette taille, un crochet
+   de bilame et un demi-cercle de déclencheur ne se distinguent pas, et l'élève
+   à qui on demande de reconnaître un signe sur un plan n'a rien vu.
+
+   Il lui faut donc sa propre grille : des vignettes qui s'élargissent tant
+   qu'il y a de la place, et jamais moins de 200 pixels de haut. Le tracé est
+   posé sur le papier, plus clair que la crème — un trait noir s'y détache
+   mieux, et c'est le fond des symboles de la bibliothèque. */
+.symboles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+          gap:.6rem;margin-top:.75rem}
+.symboles figure{margin:0;background:var(--paper);border:1px solid var(--line);
+                 border-radius:12px;padding:.55rem .6rem .4rem;
+                 display:flex;flex-direction:column;align-items:center}
+.symboles img{width:100%;max-width:300px;height:auto;min-height:200px;object-fit:contain}
+.symboles figcaption{font-size:.84em;color:var(--muted);margin-top:.4rem;text-align:center}
+@media (max-width:560px){.symboles img{min-height:150px}}
+
+/* ------------------------------------------------------- le jeu des symboles
+   Station 8.11. Le symbole y est posé seul, en grand : c'est lui la question,
+   il n'y a rien d'autre à regarder. Plus grand qu'ailleurs, donc — ici on ne
+   l'accompagne pas d'un texte, on demande de le reconnaître. */
+.symbole-jeu{margin:.2rem 0 .8rem;background:var(--paper);border:1px solid var(--line);
+             border-radius:14px;padding:1rem;display:flex;justify-content:center}
+.symbole-jeu img{width:auto;max-width:100%;height:auto;min-height:230px;max-height:300px;
+                 object-fit:contain}
+/* la bonne réponse se montre même quand on s'est trompé : c'est elle qu'on
+   doit repartir avec, pas le souvenir de son erreur */
+.choix button.bon{background:var(--ok-bg);border-color:var(--ok);color:#14603f;font-weight:700}
+.choix button.rate{background:var(--bad-bg);border-color:var(--bad);color:#8e2b20}
+.choix button:disabled{opacity:1;cursor:default}
+.famille{margin:1.1rem 0 0;padding-top:.8rem;border-top:1px solid var(--line)}
+.famille:first-of-type{border-top:0;padding-top:0}
+.famille h3{margin:0 0 .3rem;font-size:1em;color:var(--navy)}
+.famille p{margin:0 0 .3rem}
+@media (max-width:560px){.symbole-jeu img{min-height:170px}}

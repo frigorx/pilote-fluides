@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-34.0 -44.0 68.0 78.0" width="68" height="78">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-25.5 -35.5 54.5 66" width="54.5" height="66">
 <!-- Moteur série,DC — converti de moteur_serie_dc.elmt par outils\elmt-vers-svg.py -->
-<rect x="-34.0" y="-44.0" width="68.0" height="78.0" fill="#ffffff"/>
+
 <polyline points="-20,-30 -20,10 -15,10" stroke="black" stroke-width="1" fill="none"/>
 <polyline points="20,1 20,10 16,10" stroke="black" stroke-width="1" fill="none"/>
 <line x1="6" y1="14" x2="10" y2="14" stroke="black" stroke-width="1" fill="none"/>

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-34.0 -34.0 48.0 68.0" width="48" height="68">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-31.2 -25.5 42.7 51" width="42.7" height="51">
 <!-- Arrêt d'urgence - Tourner déverrouiller — converti de arret_urgence_tourner_deverouiller.elmt par outils\elmt-vers-svg.py -->
-<rect x="-34.0" y="-34.0" width="48.0" height="68.0" fill="#ffffff"/>
+
 <polyline points="3,0 -2,0 -4,3 -6,0 -10,0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
 <line x1="-13" y1="0" x2="-22" y2="0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
 <rect x="-13" y="-3" width="3" height="6" rx="0" ry="0" stroke="black" stroke-width="0.4" fill="none"/>
