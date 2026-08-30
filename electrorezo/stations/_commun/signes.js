@@ -29,12 +29,14 @@ const Signes = (() => {
 
     conducteur: {
       nom: 'Le trait', dit: 'un conducteur — un fil',
+      boite: [-1, -20, 1, 20],   /* en unités, autour du point d’ancrage */
       source: '10_electric/10_allpole/114_connections/ · le trait de liaison, présent dans tous les symboles',
       dessin: (x, y) => `<line x1="${x}" y1="${y - 20 * E}" x2="${x}" y2="${y + 20 * E}"
         stroke="${C.navy}" stroke-width="${T}"/>` },
 
     borne: {
       nom: 'Le point', dit: 'une connexion — les fils se touchent vraiment',
+      boite: [-2, -2, 2, 2],   /* en unités, autour du point d’ancrage */
       source: '10_electric/10_allpole/114_connections/bod.svg',
       dessin: (x, y) => `<circle cx="${x}" cy="${y}" r="${2 * E}" fill="${C.navy}"/>` },
 
@@ -43,6 +45,7 @@ const Signes = (() => {
          polyline -5,-10  0,10  0,20 la lame, pivot en bas, ouverte vers la gauche  */
     contact: {
       nom: 'Le trait incliné', dit: 'un contact — il s’ouvre et se ferme',
+      boite: [-5, -20, 1, 20],   /* en unités, autour du point d’ancrage */
       source: '10_electric/10_allpole/310_relays_contactors_contacts/03_contacts/act_electromagnetique_no.svg',
       dessin: (x, y) => `
         <line x1="${x}" y1="${y - 20 * E}" x2="${x}" y2="${y - 10 * E}"
@@ -56,6 +59,7 @@ const Signes = (() => {
        un trait horizontal court, centré sur la borne fixe. */
     sectionnement: {
       nom: 'La barre courte', dit: 'aptitude au sectionnement — on peut travailler derrière',
+      boite: [-2, -11, 2, -9],   /* en unités, autour du point d’ancrage */
       source: '10_electric/10_allpole/200_fuses_protective_gears/20_disconnecting_switches/sectionneur_general.svg',
       dessin: (x, y) => `
         <line x1="${x - 2 * E}" y1="${y - 10 * E}" x2="${x + 2 * E}" y2="${y - 10 * E}"
@@ -64,6 +68,7 @@ const Signes = (() => {
     /* pojistka3p.svg : rect x=7 y=-10 w=6 h=20, traversé par le conducteur. */
     rectangle: {
       nom: 'Le rectangle', dit: 'un fusible — le conducteur le traverse',
+      boite: [-3, -20, 3, 20],   /* en unités, autour du point d’ancrage */
       source: '10_electric/10_allpole/200_fuses_protective_gears/10_fuses/pojistka3p.svg',
       dessin: (x, y) => `
         <line x1="${x}" y1="${y - 20 * E}" x2="${x}" y2="${y + 20 * E}"
@@ -79,28 +84,34 @@ const Signes = (() => {
        allongé vers le haut. C'est à cette forme que l'élève doit le reconnaître. */
     thermique: {
       nom: 'Le crochet rectangulaire', dit: 'déclencheur thermique — c’est un bilame',
+      boite: [0, -3, 5, 3],   /* en unités, autour du point d’ancrage */
       source: '10_electric/10_allpole/200_fuses_protective_gears/12_magneto_thermal_circuit_breakers/dis_mag_term_2f-1.svg',
       dessin: (x, y) => `
         <polyline points="${x},${y + 3 * E} ${x + 5 * E},${y + 3 * E} ${x + 5 * E},${y - 3 * E} ${x},${y - 3 * E}"
                   fill="none" stroke="${C.rouge}" stroke-width="${T}" stroke-linejoin="miter"/>` },
 
-    /* dis_mag_term_2f-1.svg note le déclencheur à maximum de courant « I> ». Les
-       schémas français lui préfèrent le demi-cercle de la bobine vue en coupe,
-       posé sur sa base — c'est ce que la station 8.6 enseigne, et c'est ce que
-       l'élève trouvera chez Schneider ou Legrand. On ne mélange pas les deux
-       notations dans un même signe. */
+    /* disjonct-m_1f.svg, _3f.svg et jistic_3p.svg, tous trois d'accord :
+         path "M0,15.5 A 4,2.5 0 0 0 0,10.5"
+       Le déclencheur magnétique est un arc DONT LE CONDUCTEUR EST LA CORDE. Il
+       n'est pas posé à côté du fil comme une coupole : le fil le traverse de
+       part en part, et le ventre déborde d'un seul côté. Sur un symbole tracé
+       verticalement — les nôtres le sont tous — la corde est donc verticale.
+       (La bibliothèque note aussi le déclenchement par une croix ×, et
+       dis_mag_term_2f-1.svg par « I> » ; ce sont d'autres notations.) */
     magnetique: {
       nom: 'Le demi-cercle', dit: 'déclencheur magnétique — la bobine qui claque',
-      source: 'dis_mag_term_2f-1.svg (noté « I> ») · 310_.../01_coils/ pour la bobine',
+      boite: [-0.5, -2.5, 4, 2.5],   /* en unités, autour du point d’ancrage */
+      source: '10_electric/10_allpole/200_fuses_protective_gears/11_circuit_breakers/disjonct-m_1f.svg',
       dessin: (x, y) => `
-        <path d="M${x} ${y + 5 * E} a${5 * E} ${5 * E} 0 0 1 ${10 * E} 0"
-              fill="none" stroke="${C.bleu}" stroke-width="${T}"/>
-        <line x1="${x}" y1="${y + 5 * E}" x2="${x + 10 * E}" y2="${y + 5 * E}"
-              stroke="${C.bleu}" stroke-width="${T}"/>` },
+        <line x1="${x}" y1="${y - 2.5 * E}" x2="${x}" y2="${y + 2.5 * E}"
+              stroke="${C.navy}" stroke-width="${T}"/>
+        <path d="M${x} ${y + 2.5 * E} A ${4 * E} ${2.5 * E} 0 0 0 ${x} ${y - 2.5 * E}"
+              fill="none" stroke="${C.bleu}" stroke-width="${T}"/>` },
 
     /* act_electromagnetique_no.svg : stroke-dasharray="6 3", de -15,0 à -3,0 */
     pointille: {
       nom: 'Le pointillé', dit: 'liaison mécanique — ce qui relie ce qui est loin',
+      boite: [-12, -1, 12, 1],   /* en unités, autour du point d’ancrage */
       source: '10_electric/10_allpole/310_relays_contactors_contacts/03_contacts/act_electromagnetique_no.svg',
       dessin: (x, y) => `
         <line x1="${x - 12 * E}" y1="${y}" x2="${x + 12 * E}" y2="${y}"
@@ -109,6 +120,7 @@ const Signes = (() => {
     /* 310_relays_contactors_contacts/01_coils/ : un rectangle traversé par le conducteur. */
     bobine: {
       nom: 'Le rectangle large', dit: 'une bobine — ce qui commande',
+      boite: [-14, -20, 14, 20],   /* en unités, autour du point d’ancrage */
       source: '10_electric/10_allpole/310_relays_contactors_contacts/01_coils/bobine3.svg',
       dessin: (x, y) => `
         <line x1="${x}" y1="${y - 20 * E}" x2="${x}" y2="${y - 8 * E}"
@@ -121,6 +133,7 @@ const Signes = (() => {
     /* moteur_tri.svg / induction_motor : un cercle, une lettre, les traits d'arrivée. */
     machine: {
       nom: 'Le rond', dit: 'une machine — la lettre dedans dit laquelle',
+      boite: [-9, -9, 9, 9],   /* en unités, autour du point d’ancrage */
       source: '10_electric/10_allpole/391_consumers_actuators/10_engines/moteur_tri.svg',
       dessin: (x, y, l) => `
         <circle cx="${x}" cy="${y}" r="${9 * E}" fill="${C.papier}"
@@ -134,6 +147,7 @@ const Signes = (() => {
        « on appuie », alors que celui-ci dit seulement « une main agit ». */
     manuelle: {
       nom: 'Le trait de commande', dit: 'commande manuelle — une main agit',
+      boite: [-7, -14, -1, -9],   /* en unités, autour du point d’ancrage */
       source: 'CEI 60617 S00223 — à distinguer du carré de poussoir.svg',
       dessin: (x, y) => `
         <line x1="${x - 7 * E}" y1="${y - 13 * E}" x2="${x - 1 * E}" y2="${y - 13 * E}"
@@ -200,7 +214,7 @@ const Signes = (() => {
                fil(-6 * E * 0.6, 34 * E * 0.6),
                L('thermique', 0, 12 * E * 0.6), L('magnetique', 0, 34 * E * 0.6)); break;
       case 'contacteur':
-        g.push(L('bobine', -26 * E, 0), L('contact', 26 * E, 0), L('pointille', 0, 0)); break;
+        g.push(L('bobine', -14 * E, 0), L('contact', 29 * E, 0), L('pointille', 12 * E, 0)); break;
       case 'relaisThermique':
         g.push(L('contact', 0, -20 * E * 0.6), fil(0, 30 * E * 0.6),
                L('thermique', 0, 20 * E * 0.6)); break;
@@ -221,13 +235,24 @@ const Signes = (() => {
   }
 
   /* ------------------------------------------------ la lettre seule, en grand */
+  /* Isolee dans sa vignette, une barre de 4 unites serait un point et un
+     conducteur de 40 unites deborderait. On les met a la meme echelle
+     apparente — le trace, lui, ne bouge pas d'un demi-pixel. */
+  function cadrer(boite) {
+    const [ax, ay, bx, by] = boite;
+    const l = (bx - ax) * E, h = (by - ay) * E;
+    const k = Math.min(160 / l, 200 / h, 5);
+    return `translate(${(134 - k * (ax + bx) / 2 * E).toFixed(1)}, `
+         + `${(150 - k * (ay + by) / 2 * E).toFixed(1)}) scale(${k.toFixed(3)})`;
+  }
+
   function lettreSeule(nom, arg) {
     const L = LETTRES[nom];
     const d = svg('0 0 660 300', L.nom + ' : ' + L.dit);
     d.innerHTML = `
 <rect x="12" y="10" width="636" height="280" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <rect x="34" y="30" width="200" height="240" rx="12" fill="${C.creme}" stroke="${C.trait}"/>
-${L.dessin(134, 150, arg)}
+<g transform="${cadrer(L.boite)}">${L.dessin(0, 0, arg)}</g>
 <text x="446" y="118" text-anchor="middle" font-size="21" font-weight="700" fill="${C.navy}">${L.nom}</text>
 <text x="446" y="152" text-anchor="middle" font-size="16" fill="${C.gris}">${L.dit}</text>
 <text x="446" y="214" text-anchor="middle" font-size="12" fill="${C.gris}">tracé relevé sur le symbole normalisé</text>
@@ -242,7 +267,7 @@ ${L.dessin(134, 150, arg)}
     d.innerHTML = `
 <rect x="12" y="10" width="596" height="340" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="310" y="44" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${M.nom}</text>
-<rect x="180" y="62" width="260" height="230" rx="12" fill="${C.creme}" stroke="${C.trait}"/>
+<rect x="180" y="54" width="260" height="248" rx="12" fill="${C.creme}" stroke="${C.trait}"/>
 ${dessinerMot(cle, 310, 176)}
 <text x="310" y="324" text-anchor="middle" font-size="14" fill="${C.gris}">composé de : ${
   M.lettres.map(l => LETTRES[l].nom.toLowerCase()).join(' + ')}</text>`;
