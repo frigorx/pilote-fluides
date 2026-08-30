@@ -7,10 +7,14 @@ ModeleAppareil.construire({
   narration: NARRATION,
 
   photos: [
-    { src: 'assets/biblio/tableau-cartouches-am.png', alt: "Tableau de spécifications de cartouches fusibles de type aM, avec tensions et calibres.",
-      titre: "Le tableau du fabricant.", sous: "La lettre aM, et les calibres disponibles." },
-    { src: 'assets/biblio/fusibles-anciens.png', alt: "Photo de trois cartouches fusibles de types différents.",
-      titre: "La même apparence.", sous: "Rien ne distingue un aM d’un gG au premier coup d’œil, sauf ce qui est écrit dessus." }
+    { src: 'assets/biblio/formats-de-cartouches.png', alt: "Les cinq formats de cartouche d’un catalogue constructeur : trois cylindriques de tailles croissantes, une à percuteur, et deux à couteaux.",
+      titre: "Cinq formats, une même lettre.", sous: "Du petit cylindre au bloc à couteaux — la taille dit le calibre, pas la lettre." },
+    { src: 'assets/biblio/cartouches-marquees-am.jpeg',
+      alt: "Cinq cartouches posées côte à côte ; sur deux d’entre elles, la lettre aM est imprimée à côté du calibre.",
+      titre: "La même apparence.", sous: "Rien ne distingue un aM d’un gG au premier coup d’œil, sauf ces deux lettres." },
+    { src: 'assets/biblio/courbes-de-fusion.jpg',
+      alt: "Les courbes de fusion des cartouches gG à gauche et aM à droite : à courant égal, la cartouche aM met bien plus longtemps à fondre.",
+      titre: "Les deux, côte à côte.", sous: "Dans la zone du démarrage, le gG a déjà fondu. L’aM est encore intact." }
   ],
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 

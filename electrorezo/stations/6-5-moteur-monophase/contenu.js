@@ -11,8 +11,8 @@ ModeleAppareil.construire({
       alt: "Schéma d’un moteur asynchrone monophasé avec son condensateur permanent et son condensateur de démarrage.",
       titre: "Un ou deux condensateurs.", sous: "Le permanent reste, celui de démarrage se retire." },
     { src: 'assets/biblio/klixon-et-condensateurs.png',
-      alt: "Schéma de câblage d’un moteur monophasé de compresseur avec sa protection thermique Klixon et ses condensateurs.",
-      titre: "Sur un compresseur.", sous: "Avec sa protection thermique intégrée." }
+      alt: "Schéma de câblage d’un compresseur monophasé : le klixon en série sur le commun, le relais de démarrage, et le condensateur Cd marqué « non » du côté de l’auxiliaire, « oui » du côté du principal.",
+      titre: "Sur un compresseur.", sous: "Le klixon coupe si ça chauffe. Et le Cd se pose d’un côté seulement : le schéma dit lequel." }
   ],
 
   aQuoiCaSert: "À faire tourner quelque chose là où il n’y a pas de triphasé. Une maison, un petit atelier, un compresseur de réfrigérateur. Et pour cela, il faut lui fabriquer artificiellement le décalage que le triphasé donne gratuitement.",

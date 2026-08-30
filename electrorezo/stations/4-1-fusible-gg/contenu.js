@@ -7,10 +7,15 @@ ModeleAppareil.construire({
   narration: NARRATION,
 
   photos: [
-    { src: 'assets/biblio/fusibles-anciens.png', alt: "Photo de trois cartouches fusibles de types différents, dont une marquée 20 ampères.",
-      titre: "Des cartouches.", sous: "Un tube, du sable, un fil calibré. La lettre est écrite dessus." },
-    { src: 'assets/biblio/fusibles-et-outil.jpeg', alt: "Photo de plusieurs cartouches fusibles avec leur outil de mise en place.",
-      titre: "Et son outil.", sous: "On ne retire pas une cartouche à la main, et jamais sous tension." }
+    { src: 'assets/biblio/fusibles-et-outil.jpeg',
+      alt: "Cinq cartouches fusibles de formats différents posées côte à côte : une petite à culot, deux cylindriques, une grande cylindrique de 22 sur 58 et une à couteaux de 125 ampères. Le calibre et la lettre sont imprimés sur le corps de chacune.",
+      titre: "Tout est écrit sur le corps.", sous: "Le calibre en ampères, la tension, et la lettre. C’est là qu’on lit, jamais sur le dessin." },
+    { src: 'assets/biblio/courbes-de-fusion.jpg',
+      alt: "Les courbes de fusion normalisées : à gauche les cartouches de type gG, à droite celles de type aM, en temps de fusion selon l’intensité.",
+      titre: "Sa carte d’identité.", sous: "À gauche, le gG. Chaque courbe est un calibre : elle dit en combien de temps il fond." },
+    { src: 'assets/biblio/fusibles-anciens.png',
+      alt: "Photo d’anciens fusibles dits « à broches », en porcelaine, tels qu’on en trouve encore sur de vieilles installations.",
+      titre: "Les anciens.", sous: "Vous en rencontrerez encore. Même principe, un autre siècle." }
   ],
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 

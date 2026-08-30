@@ -7,10 +7,15 @@ ModeleAppareil.construire({
   narration: NARRATION,
 
   photos: [
-    { src: 'assets/biblio/disjoncteur-legrand-c16.png', alt: "Photo d’un disjoncteur modulaire blanc de calibre C16, avec sa manette noire.",
-      titre: "Un disjoncteur modulaire.", sous: "La lettre et le nombre écrits dessus disent tout : C16." },
-    { src: 'assets/biblio/disjoncteur-multipolaire.jpeg', alt: "Photo d’un disjoncteur multipolaire avec ses bornes en cuivre.",
-      titre: "En plusieurs pôles.", sous: "Un boîtier, une manette, et autant de pôles que de fils à couper." }
+    { src: 'assets/biblio/les-deux-declencheurs.jpg',
+      alt: "Deux phrases d’un document de cours, chacune suivie de son symbole : le déclencheur thermique, dessiné par un crochet rectangulaire, détecte les surcharges ; le déclencheur magnétique, dessiné par un demi-cercle, détecte les courts-circuits.",
+      titre: "Deux déclencheurs, deux signes.", sous: "Le crochet et le demi-cercle : vous les reconnaîtrez sur tous les plans." },
+    { src: 'assets/biblio/courbes-b-c-d.jpg',
+      alt: "Les trois courbes normalisées B, C et D selon la NF C 61-410. La bande de déclenchement magnétique va de 3 à 5 fois le calibre en courbe B, de 5 à 10 en courbe C, de 10 à 20 en courbe D.",
+      titre: "Ce que dit la lettre.", sous: "À partir de combien de fois le calibre la bobine claque. B, C, ou D." },
+    { src: 'assets/biblio/disjoncteurs-courbe-c.png',
+      alt: "Planche de deux disjoncteurs modulaires de courbe C, avec leurs caractéristiques et leur pouvoir de coupure.",
+      titre: "L’appareil.", sous: "Un boîtier, une manette, et deux caractères écrits dessus." }
   ],
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 

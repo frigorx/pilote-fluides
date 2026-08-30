@@ -7,14 +7,14 @@ ModeleAppareil.construire({
   narration: NARRATION,
 
   photos: [
-    { src: 'assets/biblio/fusibles-anciens.png',
-      alt: 'Photo de trois fusibles de types différents, dont un marqué 20 ampères.',
-      titre: 'Des cartouches.',
-      sous: 'Un tube, du sable, un fil de métal au milieu. C’est le fil qui travaille.' },
     { src: 'assets/biblio/fusibles-et-outil.jpeg',
-      alt: 'Photo de plusieurs cartouches fusibles de tailles différentes, accompagnées d’un outil de mise en place.',
-      titre: 'Un outil dédié.',
-      sous: 'On ne retire pas une cartouche à la main, et jamais sous tension.' }
+      alt: 'Cinq cartouches fusibles de formats différents posées côte à côte, du petit culot à la cartouche à couteaux de 125 ampères.',
+      titre: 'Ce que le porte-fusible porte.',
+      sous: 'Un tube, du sable, un fil de métal au milieu. C’est le fil qui travaille.' },
+    { src: 'assets/biblio/fusibles-anciens.png',
+      alt: 'Photo d’anciens fusibles dits « à broches », en porcelaine.',
+      titre: 'Les anciens.',
+      sous: 'Le porte-fusible a changé de forme. Le principe, lui, n’a pas bougé d’un siècle.' }
   ],
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 

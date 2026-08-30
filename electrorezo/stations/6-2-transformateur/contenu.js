@@ -10,9 +10,6 @@ ModeleAppareil.construire({
     { src: 'assets/biblio/primaire-et-secondaire.png',
       alt: "Schéma d’un transformateur : le circuit magnétique en fer, le bobinage primaire à gauche, le bobinage secondaire à droite, et le flux qui circule dans le fer.",
       titre: "Deux bobinages, un fer.", sous: "Aucun fil ne relie les deux côtés." },
-    { src: 'assets/biblio/poste-de-transformation.jpeg',
-      alt: "Schéma d’un poste de transformation haute tension alimentant un réseau de distribution.",
-      titre: "Le vôtre est dans la rue.", sous: "C’est lui qui abaisse la haute tension du quartier." },
     { src: 'assets/biblio/transformateur-de-bruleur.png',
       alt: "Schéma électrique d’un transformateur alimenté en 240 volts alternatif, dont le secondaire alimente des électrodes.",
       titre: "Et un qui élève.", sous: "Sur un brûleur, il monte à plusieurs milliers de volts." }
