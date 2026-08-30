@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 280" width="520" height="280" role="img"
+     aria-label="Une seconde de signal du réseau : cinquante allers-retours complets, cent passages par zéro. La fréquence compte les allers-retours, pas les passages.">
+<rect width="520" height="280" fill="#fffdf8"/>
+<text x="260" y="30" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="15"
+      font-weight="700" fill="#1b3a63">Une seconde de réseau</text>
+
+<line x1="40" y1="120" x2="480" y2="120" stroke="#637285" stroke-width="1.5"/>
+<path d="M40 120 Q51 76 62 120 Q73 164 84 120 Q95 76 106 120 Q117 164 128 120 Q139 76 150 120
+         Q161 164 172 120 Q183 76 194 120 Q205 164 216 120 Q227 76 238 120 Q249 164 260 120
+         Q271 76 282 120 Q293 164 304 120 Q315 76 326 120 Q337 164 348 120 Q359 76 370 120
+         Q381 164 392 120 Q403 76 414 120 Q425 164 436 120 Q447 76 458 120 Q469 164 480 120"
+      fill="none" stroke="#c9451a" stroke-width="2.5"/>
+
+<line x1="40" y1="182" x2="480" y2="182" stroke="#1b3a63" stroke-width="2"/>
+<line x1="40" y1="174" x2="40" y2="190" stroke="#1b3a63" stroke-width="2"/>
+<line x1="480" y1="174" x2="480" y2="190" stroke="#1b3a63" stroke-width="2"/>
+<text x="260" y="204" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12"
+      font-weight="700" fill="#1b3a63">une seconde</text>
+
+<text x="260" y="238" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="13" fill="#637285">Ce dessin en montre vingt pour rester lisible.</text>
+<text x="260" y="260" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="13"
+      font-weight="700" fill="#1b3a63">Sur le vrai réseau, il y en a cinquante — et cent passages par zéro.</text>
+</svg>

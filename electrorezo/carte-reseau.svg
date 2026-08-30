@@ -1,0 +1,405 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1200" width="1800" height="1200" font-family="Segoe UI, Trebuchet MS, sans-serif" role="img" aria-label="ÉlectroRézo, carte du réseau : huit lignes, cinquante-huit stations.">
+<rect width="1800" height="1200" fill="#f7f1e7"/>
+  <rect x="18" y="18" width="1764" height="1164" rx="18" fill="#fffdf8" stroke="rgba(27,58,99,.16)"/>
+  <text x="48.0" y="74.0" text-anchor="start" font-size="26" font-weight="700" fill="#1b3a63">ÉlectroRézo — la carte du réseau</text>
+  <text x="48.0" y="104.0" text-anchor="start" font-size="15" font-weight="400" fill="#637285">8 lignes · 58 stations · anneau épais = correspondance · double anneau = grand carrefour</text>
+  <path d="M720.0 210.0 L1500.8 210.0 L1500.8 1068.0" fill="none" stroke="#1b3a63" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M781.0 237.3 L781.0 912.0 L951.8 912.0 L951.8 1021.2 L1073.8 1021.2 L1134.8 1068.0" fill="none" stroke="#0C4B88" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M110.0 288.0 L781.0 288.0" fill="none" stroke="#5b4bd6" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M110.0 600.0 L1500.8 600.0" fill="none" stroke="#c0392b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M110.0 756.0 L1500.8 756.0" fill="none" stroke="#1e7e54" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M232.0 912.0 L1500.8 912.0" fill="none" stroke="#c9451a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M671.2 1068.0 L1647.2 1068.0" fill="none" stroke="#0f766e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M110.0 444.0 L1439.8 444.0" fill="none" stroke="#7c3aed" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="649.0" y="195.0" width="30" height="30" rx="8" fill="#1b3a63"/>
+  <text x="664.0" y="216.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">1</text>
+  <rect x="792.0" y="222.3" width="30" height="30" rx="8" fill="#0C4B88"/>
+  <text x="807.0" y="243.3" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">2</text>
+  <rect x="39.0" y="273.0" width="30" height="30" rx="8" fill="#5b4bd6"/>
+  <text x="54.0" y="294.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">3</text>
+  <rect x="39.0" y="585.0" width="30" height="30" rx="8" fill="#c0392b"/>
+  <text x="54.0" y="606.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">4</text>
+  <rect x="39.0" y="741.0" width="30" height="30" rx="8" fill="#1e7e54"/>
+  <text x="54.0" y="762.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">5</text>
+  <rect x="161.0" y="897.0" width="30" height="30" rx="8" fill="#c9451a"/>
+  <text x="176.0" y="918.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">6</text>
+  <rect x="600.2" y="1053.0" width="30" height="30" rx="8" fill="#0f766e"/>
+  <text x="615.2" y="1074.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">7</text>
+  <rect x="39.0" y="429.0" width="30" height="30" rx="8" fill="#7c3aed"/>
+  <text x="54.0" y="450.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">8</text>
+  <a href="stations/1-1-courant-intensite/index.html" aria-label="1.1 Intensité">
+  <circle cx="720.0" cy="210.0" r="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+  <circle cx="720.0" cy="210.0" r="24" fill="transparent" class="cible"/>
+  <text x="720.0" y="184.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Intensité</text>
+  <text x="720.0" y="168.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">1.1</text>
+  </a>
+  <a href="stations/1-2-tension/index.html" aria-label="1.2 Tension">
+  <circle cx="866.4" cy="210.0" r="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+  <circle cx="866.4" cy="210.0" r="24" fill="transparent" class="cible"/>
+  <text x="866.4" y="184.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Tension</text>
+  <text x="866.4" y="168.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">1.2</text>
+  </a>
+  <a href="stations/1-3-resistance-loi-ohm/index.html" aria-label="1.3 Résistance, loi d’Ohm">
+  <circle cx="1012.8" cy="210.0" r="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+  <circle cx="1012.8" cy="210.0" r="24" fill="transparent" class="cible"/>
+  <text x="1012.8" y="184.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Résistance, loi d’Ohm</text>
+  <text x="1012.8" y="168.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">1.3</text>
+  </a>
+  <a href="stations/1-4-puissance-energie/index.html" aria-label="1.4 Puissance et énergie">
+  <circle cx="1159.2" cy="210.0" r="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+  <circle cx="1159.2" cy="210.0" r="24" fill="transparent" class="cible"/>
+  <text x="1159.2" y="184.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Puissance et énergie</text>
+  <text x="1159.2" y="168.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">1.4</text>
+  </a>
+  <a href="stations/1-8-trois-defauts/index.html" aria-label="1.8 Les trois défauts">
+  <circle cx="1500.8" cy="600.0" r="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
+  <circle cx="1500.8" cy="600.0" r="24" fill="transparent" class="cible"/>
+  <text x="1524.8" y="605.0" text-anchor="start" font-size="14" font-weight="600" fill="#10233c">Les trois défauts</text>
+  <text x="1524.8" y="621.0" text-anchor="start" font-size="12" font-weight="400" fill="#1b3a63">1.8  ⇄ 3 · 4</text>
+  </a>
+  <a href="stations/1-9-mesurer/index.html" aria-label="1.9 Mesurer">
+  <circle cx="1500.8" cy="756.0" r="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
+  <circle cx="1500.8" cy="756.0" r="24" fill="transparent" class="cible"/>
+  <text x="1524.8" y="761.0" text-anchor="start" font-size="14" font-weight="600" fill="#10233c">Mesurer</text>
+  <text x="1524.8" y="777.0" text-anchor="start" font-size="12" font-weight="400" fill="#1b3a63">1.9  ⇄ 4 · 5</text>
+  </a>
+  <a href="stations/1-7-plaque-signaletique/index.html" aria-label="1.7 Plaque signalétique">
+  <circle cx="1500.8" cy="912.0" r="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
+  <circle cx="1500.8" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="1524.8" y="917.0" text-anchor="start" font-size="14" font-weight="600" fill="#10233c">Plaque signalétique</text>
+  <text x="1524.8" y="933.0" text-anchor="start" font-size="12" font-weight="400" fill="#1b3a63">1.7  ⇄ 4 · 6</text>
+  </a>
+  <a href="stations/1-5-continu-alternatif/index.html" aria-label="1.5 Continu et alternatif">
+  <circle cx="1500.8" cy="990.0" r="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+  <circle cx="1500.8" cy="990.0" r="24" fill="transparent" class="cible"/>
+  <text x="1520.8" y="995.0" text-anchor="start" font-size="14" font-weight="600" fill="#10233c">Continu et alternatif</text>
+  <text x="1520.8" y="1011.0" text-anchor="start" font-size="12" font-weight="400" fill="#637285">1.5</text>
+  </a>
+  <a href="stations/1-6-frequence/index.html" aria-label="1.6 La fréquence">
+  <circle cx="1500.8" cy="1068.0" r="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
+  <circle cx="1500.8" cy="1068.0" r="24" fill="transparent" class="cible"/>
+  <text x="1500.8" y="1104.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">La fréquence</text>
+  <text x="1500.8" y="1120.0" text-anchor="middle" font-size="12" font-weight="400" fill="#1b3a63">1.6  ⇄ 2 · 7</text>
+  </a>
+  <a href="stations/2-1-phase-neutre-pe/index.html" aria-label="2.1 Phase, neutre, PE">
+  <circle cx="781.0" cy="288.0" r="14" fill="#fffdf8" stroke="#0C4B88" stroke-width="5"/>
+  <circle cx="781.0" cy="288.0" r="24" fill="transparent" class="cible"/>
+  <text x="805.0" y="293.0" text-anchor="start" font-size="14" font-weight="600" fill="#10233c">Phase, neutre, PE</text>
+  <text x="805.0" y="309.0" text-anchor="start" font-size="12" font-weight="400" fill="#0C4B88">2.1  ⇄ 3 · 4</text>
+  </a>
+  <a href="stations/2-2-monophase/index.html" aria-label="2.2 Monophasé">
+  <circle cx="781.0" cy="522.0" r="10" fill="#fffdf8" stroke="#0C4B88" stroke-width="4"/>
+  <circle cx="781.0" cy="522.0" r="24" fill="transparent" class="cible"/>
+  <text x="801.0" y="527.0" text-anchor="start" font-size="14" font-weight="600" fill="#10233c">Monophasé</text>
+  <text x="801.0" y="543.0" text-anchor="start" font-size="12" font-weight="400" fill="#637285">2.2</text>
+  </a>
+  <a href="stations/2-3-triphase/index.html" aria-label="2.3 Triphasé">
+  <circle cx="781.0" cy="912.0" r="14" fill="#fffdf8" stroke="#0C4B88" stroke-width="5"/>
+  <circle cx="781.0" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="781.0" y="948.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Triphasé</text>
+  <text x="781.0" y="964.0" text-anchor="middle" font-size="12" font-weight="400" fill="#0C4B88">2.3  ⇄ 6</text>
+  </a>
+  <a href="stations/2-4-tension-simple/index.html" aria-label="2.4 Tension simple">
+  <circle cx="951.8" cy="1021.2" r="10" fill="#fffdf8" stroke="#0C4B88" stroke-width="4"/>
+  <circle cx="951.8" cy="1021.2" r="24" fill="transparent" class="cible"/>
+  <text x="931.8" y="1026.2" text-anchor="end" font-size="14" font-weight="600" fill="#10233c">Tension simple</text>
+  <text x="931.8" y="1042.2" text-anchor="end" font-size="12" font-weight="400" fill="#637285">2.4</text>
+  </a>
+  <a href="stations/2-5-tension-composee/index.html" aria-label="2.5 Tension composée">
+  <circle cx="1073.8" cy="1021.2" r="10" fill="#fffdf8" stroke="#0C4B88" stroke-width="4"/>
+  <circle cx="1073.8" cy="1021.2" r="24" fill="transparent" class="cible"/>
+  <text x="1073.8" y="995.2" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Tension composée</text>
+  <text x="1073.8" y="979.2" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">2.5</text>
+  </a>
+  <a href="stations/2-6-champ-tournant/index.html" aria-label="2.6 Champ tournant">
+  <circle cx="1134.8" cy="1068.0" r="14" fill="#fffdf8" stroke="#0C4B88" stroke-width="5"/>
+  <circle cx="1134.8" cy="1068.0" r="24" fill="transparent" class="cible"/>
+  <text x="1134.8" y="1104.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Champ tournant</text>
+  <text x="1134.8" y="1120.0" text-anchor="middle" font-size="12" font-weight="400" fill="#0C4B88">2.6  ⇄ 6 · 7</text>
+  </a>
+  <a href="stations/3-1-interrupteur/index.html" aria-label="3.1 Interrupteur">
+  <circle cx="110.0" cy="288.0" r="10" fill="#fffdf8" stroke="#5b4bd6" stroke-width="4"/>
+  <circle cx="110.0" cy="288.0" r="24" fill="transparent" class="cible"/>
+  <text x="110.0" y="262.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Interrupteur</text>
+  <text x="110.0" y="246.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">3.1</text>
+  </a>
+  <a href="stations/3-2-sectionneur/index.html" aria-label="3.2 Sectionneur">
+  <circle cx="244.2" cy="288.0" r="10" fill="#fffdf8" stroke="#5b4bd6" stroke-width="4"/>
+  <circle cx="244.2" cy="288.0" r="24" fill="transparent" class="cible"/>
+  <text x="244.2" y="324.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Sectionneur</text>
+  <text x="244.2" y="340.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">3.2</text>
+  </a>
+  <a href="stations/3-3-interrupteur-sectionneur/index.html" aria-label="3.3 Interrupteur-sectionneur">
+  <circle cx="378.4" cy="288.0" r="10" fill="#fffdf8" stroke="#5b4bd6" stroke-width="4"/>
+  <circle cx="378.4" cy="288.0" r="24" fill="transparent" class="cible"/>
+  <text x="378.4" y="262.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Interrupteur-sectionneur</text>
+  <text x="378.4" y="246.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">3.3</text>
+  </a>
+  <a href="stations/3-4-porte-fusible/index.html" aria-label="3.4 Porte-fusible">
+  <circle cx="512.6" cy="288.0" r="14" fill="#fffdf8" stroke="#5b4bd6" stroke-width="5"/>
+  <circle cx="512.6" cy="288.0" r="24" fill="transparent" class="cible"/>
+  <text x="512.6" y="324.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Porte-fusible</text>
+  <text x="512.6" y="340.0" text-anchor="middle" font-size="12" font-weight="400" fill="#5b4bd6">3.4  ⇄ 4</text>
+  </a>
+  <a href="stations/3-5-sectionneur-porte-fusible/index.html" aria-label="3.5 Sectionneur porte-fusible">
+  <circle cx="646.8" cy="288.0" r="14" fill="#fffdf8" stroke="#5b4bd6" stroke-width="5"/>
+  <circle cx="646.8" cy="288.0" r="24" fill="transparent" class="cible"/>
+  <text x="646.8" y="262.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Sectionneur porte-fusible</text>
+  <text x="646.8" y="246.0" text-anchor="middle" font-size="12" font-weight="400" fill="#5b4bd6">3.5  ⇄ 4</text>
+  </a>
+  <a href="stations/4-1-fusible-gg/index.html" aria-label="4.1 Fusible gG">
+  <circle cx="110.0" cy="600.0" r="10" fill="#fffdf8" stroke="#c0392b" stroke-width="4"/>
+  <circle cx="110.0" cy="600.0" r="24" fill="transparent" class="cible"/>
+  <text x="110.0" y="574.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Fusible gG</text>
+  <text x="110.0" y="558.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">4.1</text>
+  </a>
+  <a href="stations/4-2-fusible-am/index.html" aria-label="4.2 Fusible aM">
+  <circle cx="244.2" cy="600.0" r="10" fill="#fffdf8" stroke="#c0392b" stroke-width="4"/>
+  <circle cx="244.2" cy="600.0" r="24" fill="transparent" class="cible"/>
+  <text x="244.2" y="636.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Fusible aM</text>
+  <text x="244.2" y="652.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">4.2</text>
+  </a>
+  <a href="stations/4-3-disjoncteur-magneto-thermique/index.html" aria-label="4.3 Disjoncteur magnéto-thermique">
+  <circle cx="378.4" cy="600.0" r="10" fill="#fffdf8" stroke="#c0392b" stroke-width="4"/>
+  <circle cx="378.4" cy="600.0" r="24" fill="transparent" class="cible"/>
+  <text x="378.4" y="574.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Disjoncteur magnéto-thermique</text>
+  <text x="378.4" y="558.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">4.3</text>
+  </a>
+  <a href="stations/4-4-disjoncteur-moteur/index.html" aria-label="4.4 Disjoncteur moteur">
+  <circle cx="512.6" cy="600.0" r="14" fill="#fffdf8" stroke="#c0392b" stroke-width="5"/>
+  <circle cx="512.6" cy="600.0" r="24" fill="transparent" class="cible"/>
+  <text x="512.6" y="636.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Disjoncteur moteur</text>
+  <text x="512.6" y="652.0" text-anchor="middle" font-size="12" font-weight="400" fill="#c0392b">4.4  ⇄ 1</text>
+  </a>
+  <a href="stations/4-5-interrupteur-differentiel/index.html" aria-label="4.5 Interrupteur différentiel">
+  <circle cx="646.8" cy="600.0" r="10" fill="#fffdf8" stroke="#c0392b" stroke-width="4"/>
+  <circle cx="646.8" cy="600.0" r="24" fill="transparent" class="cible"/>
+  <text x="646.8" y="574.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Interrupteur différentiel</text>
+  <text x="646.8" y="558.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">4.5</text>
+  </a>
+  <a href="stations/4-6-disjoncteur-differentiel/index.html" aria-label="4.6 Disjoncteur différentiel">
+  <circle cx="915.2" cy="600.0" r="10" fill="#fffdf8" stroke="#c0392b" stroke-width="4"/>
+  <circle cx="915.2" cy="600.0" r="24" fill="transparent" class="cible"/>
+  <text x="915.2" y="636.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Disjoncteur différentiel</text>
+  <text x="915.2" y="652.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">4.6</text>
+  </a>
+  <a href="stations/4-7-relais-thermique/index.html" aria-label="4.7 Relais thermique">
+  <circle cx="1049.4" cy="600.0" r="14" fill="#fffdf8" stroke="#c0392b" stroke-width="5"/>
+  <circle cx="1049.4" cy="600.0" r="24" fill="transparent" class="cible"/>
+  <text x="1049.4" y="574.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Relais thermique</text>
+  <text x="1049.4" y="558.0" text-anchor="middle" font-size="12" font-weight="400" fill="#c0392b">4.7  ⇄ 5</text>
+  </a>
+  <a href="stations/4-8-terre/index.html" aria-label="4.8 Terre et équipotentialité">
+  <circle cx="1183.6" cy="600.0" r="14" fill="#fffdf8" stroke="#c0392b" stroke-width="5"/>
+  <circle cx="1183.6" cy="600.0" r="24" fill="transparent" class="cible"/>
+  <text x="1183.6" y="636.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Terre et équipotentialité</text>
+  <text x="1183.6" y="652.0" text-anchor="middle" font-size="12" font-weight="400" fill="#c0392b">4.8  ⇄ 2</text>
+  </a>
+  <a href="stations/4-9-cable-section/index.html" aria-label="4.9 Câble et section">
+  <circle cx="1317.8" cy="600.0" r="14" fill="#fffdf8" stroke="#c0392b" stroke-width="5"/>
+  <circle cx="1317.8" cy="600.0" r="24" fill="transparent" class="cible"/>
+  <text x="1317.8" y="574.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Câble et section</text>
+  <text x="1317.8" y="558.0" text-anchor="middle" font-size="12" font-weight="400" fill="#c0392b">4.9  ⇄ 1</text>
+  </a>
+  <a href="stations/5-1-contact-no-nf/index.html" aria-label="5.1 Contact NO / NF">
+  <circle cx="110.0" cy="756.0" r="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="5"/>
+  <circle cx="110.0" cy="756.0" r="24" fill="transparent" class="cible"/>
+  <text x="110.0" y="730.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Contact NO / NF</text>
+  <text x="110.0" y="714.0" text-anchor="middle" font-size="12" font-weight="400" fill="#1e7e54">5.1  ⇄ 3 · 4</text>
+  </a>
+  <a href="stations/5-2-contacteur/index.html" aria-label="5.2 Contacteur">
+  <circle cx="244.2" cy="756.0" r="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="5"/>
+  <circle cx="244.2" cy="756.0" r="24" fill="transparent" class="cible"/>
+  <text x="244.2" y="792.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Contacteur</text>
+  <text x="244.2" y="808.0" text-anchor="middle" font-size="12" font-weight="400" fill="#1e7e54">5.2  ⇄ 6</text>
+  </a>
+  <a href="stations/5-3-contact-auxiliaire/index.html" aria-label="5.3 Contact auxiliaire">
+  <circle cx="378.4" cy="756.0" r="10" fill="#fffdf8" stroke="#1e7e54" stroke-width="4"/>
+  <circle cx="378.4" cy="756.0" r="24" fill="transparent" class="cible"/>
+  <text x="378.4" y="730.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Contact auxiliaire</text>
+  <text x="378.4" y="714.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">5.3</text>
+  </a>
+  <a href="stations/5-4-relais/index.html" aria-label="5.4 Relais">
+  <circle cx="512.6" cy="756.0" r="10" fill="#fffdf8" stroke="#1e7e54" stroke-width="4"/>
+  <circle cx="512.6" cy="756.0" r="24" fill="transparent" class="cible"/>
+  <text x="512.6" y="792.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Relais</text>
+  <text x="512.6" y="808.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">5.4</text>
+  </a>
+  <a href="stations/5-5-relais-temporise/index.html" aria-label="5.5 Relais temporisé">
+  <circle cx="646.8" cy="756.0" r="10" fill="#fffdf8" stroke="#1e7e54" stroke-width="4"/>
+  <circle cx="646.8" cy="756.0" r="24" fill="transparent" class="cible"/>
+  <text x="646.8" y="730.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Relais temporisé</text>
+  <text x="646.8" y="714.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">5.5</text>
+  </a>
+  <a href="stations/5-6-contacts-temporises/index.html" aria-label="5.6 Contacts temporisés">
+  <circle cx="915.2" cy="756.0" r="10" fill="#fffdf8" stroke="#1e7e54" stroke-width="4"/>
+  <circle cx="915.2" cy="756.0" r="24" fill="transparent" class="cible"/>
+  <text x="915.2" y="792.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Contacts temporisés</text>
+  <text x="915.2" y="808.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">5.6</text>
+  </a>
+  <a href="stations/5-7-boutons/index.html" aria-label="5.7 Bouton-poussoir, sélecteur">
+  <circle cx="1049.4" cy="756.0" r="10" fill="#fffdf8" stroke="#1e7e54" stroke-width="4"/>
+  <circle cx="1049.4" cy="756.0" r="24" fill="transparent" class="cible"/>
+  <text x="1049.4" y="730.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Bouton-poussoir, sélecteur</text>
+  <text x="1049.4" y="714.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">5.7</text>
+  </a>
+  <a href="stations/5-8-securite-signalisation/index.html" aria-label="5.8 Arrêt d’urgence, voyant">
+  <circle cx="1183.6" cy="756.0" r="10" fill="#fffdf8" stroke="#1e7e54" stroke-width="4"/>
+  <circle cx="1183.6" cy="756.0" r="24" fill="transparent" class="cible"/>
+  <text x="1183.6" y="792.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Arrêt d’urgence, voyant</text>
+  <text x="1183.6" y="808.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">5.8</text>
+  </a>
+  <a href="stations/5-9-lire-un-schema/index.html" aria-label="5.9 Lire un schéma">
+  <circle cx="1317.8" cy="756.0" r="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="5"/>
+  <circle cx="1317.8" cy="756.0" r="24" fill="transparent" class="cible"/>
+  <text x="1317.8" y="730.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Lire un schéma</text>
+  <text x="1317.8" y="714.0" text-anchor="middle" font-size="12" font-weight="400" fill="#1e7e54">5.9  ⇄ 3 · 4 · 6</text>
+  </a>
+  <a href="stations/6-1-bobine-electro-aimant/index.html" aria-label="6.1 Bobine et électro-aimant">
+  <circle cx="232.0" cy="912.0" r="14" fill="#fffdf8" stroke="#c9451a" stroke-width="5"/>
+  <circle cx="232.0" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="232.0" y="886.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Bobine et électro-aimant</text>
+  <text x="232.0" y="870.0" text-anchor="middle" font-size="12" font-weight="400" fill="#c9451a">6.1  ⇄ 4 · 5</text>
+  </a>
+  <a href="stations/6-2-transformateur/index.html" aria-label="6.2 Transformateur">
+  <circle cx="390.6" cy="912.0" r="10" fill="#fffdf8" stroke="#c9451a" stroke-width="4"/>
+  <circle cx="390.6" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="390.6" y="948.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Transformateur</text>
+  <text x="390.6" y="964.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">6.2</text>
+  </a>
+  <a href="stations/6-3-moteur-asynchrone/index.html" aria-label="6.3 Moteur asynchrone triphasé">
+  <circle cx="549.2" cy="912.0" r="10" fill="#fffdf8" stroke="#c9451a" stroke-width="4"/>
+  <circle cx="549.2" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="549.2" y="886.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Moteur asynchrone triphasé</text>
+  <text x="549.2" y="870.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">6.3</text>
+  </a>
+  <a href="stations/6-4-couplage/index.html" aria-label="6.4 Couplage de la plaque à bornes">
+  <circle cx="951.8" cy="912.0" r="21" fill="none" stroke="#c9451a" stroke-width="3"/>
+  <circle cx="951.8" cy="912.0" r="14" fill="#fffdf8" stroke="#c9451a" stroke-width="5"/>
+  <circle cx="951.8" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="951.8" y="878.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Couplage de la plaque à bornes</text>
+  <text x="951.8" y="862.0" text-anchor="middle" font-size="12" font-weight="400" fill="#c9451a">6.4  ⇄ 1 · 2</text>
+  </a>
+  <a href="stations/6-5-moteur-monophase/index.html" aria-label="6.5 Moteur monophasé">
+  <circle cx="1134.8" cy="912.0" r="10" fill="#fffdf8" stroke="#c9451a" stroke-width="4"/>
+  <circle cx="1134.8" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="1134.8" y="948.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Moteur monophasé</text>
+  <text x="1134.8" y="964.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">6.5</text>
+  </a>
+  <a href="stations/6-6-synchrone-et-continu/index.html" aria-label="6.6 Synchrone et courant continu">
+  <circle cx="1269.0" cy="912.0" r="14" fill="#fffdf8" stroke="#c9451a" stroke-width="5"/>
+  <circle cx="1269.0" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="1269.0" y="886.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Synchrone et courant continu</text>
+  <text x="1269.0" y="870.0" text-anchor="middle" font-size="12" font-weight="400" fill="#c9451a">6.6  ⇄ 1</text>
+  </a>
+  <a href="stations/8-1-trait-et-point/index.html" aria-label="8.1 Le trait et le point">
+  <circle cx="110.0" cy="444.0" r="10" fill="#fffdf8" stroke="#7c3aed" stroke-width="4"/>
+  <circle cx="110.0" cy="444.0" r="24" fill="transparent" class="cible"/>
+  <text x="110.0" y="480.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Le trait et le point</text>
+  <text x="110.0" y="496.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">8.1</text>
+  </a>
+  <a href="stations/8-2-contact/index.html" aria-label="8.2 Le contact">
+  <circle cx="244.2" cy="444.0" r="10" fill="#fffdf8" stroke="#7c3aed" stroke-width="4"/>
+  <circle cx="244.2" cy="444.0" r="24" fill="transparent" class="cible"/>
+  <text x="244.2" y="418.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Le contact</text>
+  <text x="244.2" y="402.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">8.2</text>
+  </a>
+  <a href="stations/8-3-barre-sectionnement/index.html" aria-label="8.3 La barre du sectionnement">
+  <circle cx="378.4" cy="444.0" r="14" fill="#fffdf8" stroke="#7c3aed" stroke-width="5"/>
+  <circle cx="378.4" cy="444.0" r="24" fill="transparent" class="cible"/>
+  <text x="378.4" y="480.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">La barre du sectionnement</text>
+  <text x="378.4" y="496.0" text-anchor="middle" font-size="12" font-weight="400" fill="#7c3aed">8.3  ⇄ 3</text>
+  </a>
+  <a href="stations/8-4-rectangle/index.html" aria-label="8.4 Le rectangle">
+  <circle cx="512.6" cy="444.0" r="14" fill="#fffdf8" stroke="#7c3aed" stroke-width="5"/>
+  <circle cx="512.6" cy="444.0" r="24" fill="transparent" class="cible"/>
+  <text x="512.6" y="418.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Le rectangle</text>
+  <text x="512.6" y="402.0" text-anchor="middle" font-size="12" font-weight="400" fill="#7c3aed">8.4  ⇄ 3 · 4</text>
+  </a>
+  <a href="stations/8-5-declencheur-thermique/index.html" aria-label="8.5 Déclencheur thermique">
+  <circle cx="646.8" cy="444.0" r="14" fill="#fffdf8" stroke="#7c3aed" stroke-width="5"/>
+  <circle cx="646.8" cy="444.0" r="24" fill="transparent" class="cible"/>
+  <text x="646.8" y="480.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Déclencheur thermique</text>
+  <text x="646.8" y="496.0" text-anchor="middle" font-size="12" font-weight="400" fill="#7c3aed">8.5  ⇄ 4</text>
+  </a>
+  <a href="stations/8-6-declencheur-magnetique/index.html" aria-label="8.6 Déclencheur magnétique">
+  <circle cx="915.2" cy="444.0" r="14" fill="#fffdf8" stroke="#7c3aed" stroke-width="5"/>
+  <circle cx="915.2" cy="444.0" r="24" fill="transparent" class="cible"/>
+  <text x="915.2" y="418.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Déclencheur magnétique</text>
+  <text x="915.2" y="402.0" text-anchor="middle" font-size="12" font-weight="400" fill="#7c3aed">8.6  ⇄ 4</text>
+  </a>
+  <a href="stations/8-7-pointille/index.html" aria-label="8.7 Le pointillé">
+  <circle cx="1049.4" cy="444.0" r="14" fill="#fffdf8" stroke="#7c3aed" stroke-width="5"/>
+  <circle cx="1049.4" cy="444.0" r="24" fill="transparent" class="cible"/>
+  <text x="1049.4" y="480.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Le pointillé</text>
+  <text x="1049.4" y="496.0" text-anchor="middle" font-size="12" font-weight="400" fill="#7c3aed">8.7  ⇄ 5</text>
+  </a>
+  <a href="stations/8-8-bobine-et-rond/index.html" aria-label="8.8 La bobine et le rond">
+  <circle cx="1183.6" cy="444.0" r="14" fill="#fffdf8" stroke="#7c3aed" stroke-width="5"/>
+  <circle cx="1183.6" cy="444.0" r="24" fill="transparent" class="cible"/>
+  <text x="1183.6" y="418.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">La bobine et le rond</text>
+  <text x="1183.6" y="402.0" text-anchor="middle" font-size="12" font-weight="400" fill="#7c3aed">8.8  ⇄ 5 · 6</text>
+  </a>
+  <a href="stations/8-9-reperes/index.html" aria-label="8.9 Les repères">
+  <circle cx="1317.8" cy="444.0" r="14" fill="#fffdf8" stroke="#7c3aed" stroke-width="5"/>
+  <circle cx="1317.8" cy="444.0" r="24" fill="transparent" class="cible"/>
+  <text x="1317.8" y="480.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Les repères</text>
+  <text x="1317.8" y="496.0" text-anchor="middle" font-size="12" font-weight="400" fill="#7c3aed">8.9  ⇄ 5</text>
+  </a>
+  <a href="stations/8-10-dechiffrer/index.html" aria-label="8.10 Déchiffrer">
+  <circle cx="1439.8" cy="444.0" r="21" fill="none" stroke="#7c3aed" stroke-width="3"/>
+  <circle cx="1439.8" cy="444.0" r="10" fill="#fffdf8" stroke="#7c3aed" stroke-width="4"/>
+  <circle cx="1439.8" cy="444.0" r="24" fill="transparent" class="cible"/>
+  <text x="1439.8" y="488.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Déchiffrer</text>
+  <text x="1439.8" y="504.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">8.10</text>
+  </a>
+  <a href="stations/7-1-varier-la-tension/index.html" aria-label="7.1 Variation de tension">
+  <circle cx="671.2" cy="1068.0" r="14" fill="#fffdf8" stroke="#0f766e" stroke-width="5"/>
+  <circle cx="671.2" cy="1068.0" r="24" fill="transparent" class="cible"/>
+  <text x="671.2" y="1042.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Variation de tension</text>
+  <text x="671.2" y="1026.0" text-anchor="middle" font-size="12" font-weight="400" fill="#0f766e">7.1  ⇄ 1</text>
+  </a>
+  <a href="stations/7-2-variateur-tension/index.html" aria-label="7.2 Variateur de tension">
+  <circle cx="866.4" cy="1068.0" r="10" fill="#fffdf8" stroke="#0f766e" stroke-width="4"/>
+  <circle cx="866.4" cy="1068.0" r="24" fill="transparent" class="cible"/>
+  <text x="866.4" y="1104.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Variateur de tension</text>
+  <text x="866.4" y="1120.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">7.2</text>
+  </a>
+  <a href="stations/7-3-varier-la-frequence/index.html" aria-label="7.3 Variation de fréquence">
+  <circle cx="1256.8" cy="1068.0" r="14" fill="#fffdf8" stroke="#0f766e" stroke-width="5"/>
+  <circle cx="1256.8" cy="1068.0" r="24" fill="transparent" class="cible"/>
+  <text x="1256.8" y="1042.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Variation de fréquence</text>
+  <text x="1256.8" y="1026.0" text-anchor="middle" font-size="12" font-weight="400" fill="#0f766e">7.3  ⇄ 1 · 2</text>
+  </a>
+  <a href="stations/7-4-variateur-frequence/index.html" aria-label="7.4 Variateur de fréquence">
+  <circle cx="1647.2" cy="1068.0" r="21" fill="none" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="1647.2" cy="1068.0" r="10" fill="#fffdf8" stroke="#0f766e" stroke-width="4"/>
+  <circle cx="1647.2" cy="1068.0" r="24" fill="transparent" class="cible"/>
+  <text x="1647.2" y="1034.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Variateur de fréquence</text>
+  <text x="1647.2" y="1018.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">7.4</text>
+  </a>
+  <rect x="56" y="1145" width="26" height="18" rx="5" fill="#1b3a63"/>
+  <text x="69" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">1</text>
+  <text x="89" y="1158" font-size="14" fill="#10233c">Les grandeurs de l’électricité</text>
+  <rect x="326.5" y="1145" width="26" height="18" rx="5" fill="#0C4B88"/>
+  <text x="339.5" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">2</text>
+  <text x="359.5" y="1158" font-size="14" fill="#10233c">Les réseaux d’alimentation</text>
+  <rect x="568.8" y="1145" width="26" height="18" rx="5" fill="#5b4bd6"/>
+  <text x="581.8" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">3</text>
+  <text x="601.8" y="1158" font-size="14" fill="#10233c">Couper et isoler</text>
+  <rect x="740.5999999999999" y="1145" width="26" height="18" rx="5" fill="#c0392b"/>
+  <text x="753.5999999999999" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">4</text>
+  <text x="773.5999999999999" y="1158" font-size="14" fill="#10233c">Protéger</text>
+  <rect x="855.9999999999999" y="1145" width="26" height="18" rx="5" fill="#1e7e54"/>
+  <text x="868.9999999999999" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">5</text>
+  <text x="888.9999999999999" y="1158" font-size="14" fill="#10233c">Commander</text>
+  <rect x="978.4499999999998" y="1145" width="26" height="18" rx="5" fill="#c9451a"/>
+  <text x="991.4499999999998" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">6</text>
+  <text x="1011.4499999999998" y="1158" font-size="14" fill="#10233c">Machines et conversion</text>
+  <rect x="1192.5499999999997" y="1145" width="26" height="18" rx="5" fill="#0f766e"/>
+  <text x="1205.5499999999997" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">7</text>
+  <text x="1225.5499999999997" y="1158" font-size="14" fill="#10233c">Faire varier l’énergie</text>
+  <rect x="1406.6499999999996" y="1145" width="26" height="18" rx="5" fill="#7c3aed"/>
+  <text x="1419.6499999999996" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">8</text>
+  <text x="1439.6499999999996" y="1158" font-size="14" fill="#10233c">L’écriture du schéma</text>
+</svg>

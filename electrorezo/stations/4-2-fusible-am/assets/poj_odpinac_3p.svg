@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-16.0 -37.0 68.0 68.0" width="68" height="68">
+<!-- Porte Fusible 3p — converti de poj_odpinac_3p.elmt par outils\elmt-vers-svg.py -->
+<rect x="-16.0" y="-37.0" width="68.0" height="68.0" fill="#fffdf8"/>
+<polygon points="2.8,8.73 -2.95,10.74 -8.8,-7 -3.17,-8.95" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="42.8,8.73 37.05,10.74 31.2,-7 36.83,-8.95" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="22.8,8.73 17.05,10.74 11.2,-7 16.83,-8.95" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="34,-7.8 40,10 40,15" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-6,-7.8 0,10 0,15" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="14,-7.8 20,10 20,15" stroke="black" stroke-width="1" fill="none"/>
+<line x1="17" y1="-10" x2="23" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="37" y1="-10" x2="43" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-3" y1="-10" x2="3" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="0" x2="12" y2="0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<line x1="20" y1="0" x2="32" y2="0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<line x1="0" y1="-10" x2="0" y2="-15" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="-10" x2="20" y2="-15" stroke="black" stroke-width="1" fill="none"/>
+<line x1="40" y1="-10" x2="40" y2="-15" stroke="black" stroke-width="1" fill="none"/>
+</svg>

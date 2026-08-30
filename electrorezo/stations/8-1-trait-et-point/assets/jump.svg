@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14.0 -19.0 28.0 38.0" width="28" height="38">
+<!-- Saut — converti de jump.elmt par outils\elmt-vers-svg.py -->
+<rect x="-14.0" y="-19.0" width="28.0" height="38.0" fill="#fffdf8"/>
+<path d="M -0.00,3.00 A 3.00,3.00 0 0 0 0.00,-3.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-7" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="3" x2="0" y2="7" stroke="black" stroke-width="1" fill="none"/>
+</svg>

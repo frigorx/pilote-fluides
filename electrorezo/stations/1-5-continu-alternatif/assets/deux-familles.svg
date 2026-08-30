@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img"
+     aria-label="À gauche une batterie et sa trace continue, plate, avec un plus et un moins. À droite une prise du réseau et sa trace alternative, qui monte et descend, avec une phase et un neutre.">
+<rect width="520" height="300" fill="#fffdf8"/>
+
+<text x="130" y="28" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="15"
+      font-weight="700" fill="#1b3a63">Continu</text>
+
+<!-- une batterie -->
+<rect x="72" y="52" width="116" height="66" rx="5" fill="#c9d6e6" stroke="#1b3a63" stroke-width="2.5"/>
+<rect x="88" y="42" width="16" height="10" fill="#c0392b" stroke="#1b3a63" stroke-width="2"/>
+<rect x="156" y="42" width="16" height="10" fill="#1b3a63" stroke="#1b3a63" stroke-width="2"/>
+<text x="96" y="36" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="15"
+      font-weight="700" fill="#c0392b">+</text>
+<text x="164" y="36" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="17"
+      font-weight="700" fill="#1b3a63">−</text>
+<text x="130" y="92" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="13" fill="#1b3a63">batterie · 12 V</text>
+
+<!-- sa trace -->
+<line x1="40" y1="180" x2="220" y2="180" stroke="#637285" stroke-width="1.5"/>
+<line x1="40" y1="140" x2="220" y2="140" stroke="#c9451a" stroke-width="3.5"/>
+<text x="230" y="145" font-family="Bitter,Georgia,serif" font-size="11" fill="#c9451a">toujours pareil</text>
+
+<text x="130" y="222" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12" fill="#637285">Un plus et un moins.</text>
+<text x="130" y="242" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12"
+      font-weight="700" fill="#1b3a63">Les inverser a des conséquences.</text>
+<text x="130" y="268" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="11" fill="#637285">Batteries, alimentations,</text>
+<text x="130" y="284" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="11" fill="#637285">panneaux solaires, cartes.</text>
+
+<line x1="262" y1="44" x2="262" y2="288" stroke="rgba(27,58,99,.18)" stroke-width="2" stroke-dasharray="6 6"/>
+
+<text x="390" y="28" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="15"
+      font-weight="700" fill="#1b3a63">Alternatif</text>
+
+<!-- une prise -->
+<rect x="332" y="42" width="116" height="76" rx="10" fill="#e8e2d6" stroke="#1b3a63" stroke-width="2.5"/>
+<circle cx="366" cy="76" r="7" fill="#1b3a63"/>
+<circle cx="414" cy="76" r="7" fill="#1b3a63"/>
+<rect x="384" y="96" width="12" height="14" fill="#1e7e54" stroke="#1b3a63" stroke-width="1.5"/>
+<text x="390" y="136" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="13" fill="#1b3a63">le réseau · 230 V</text>
+
+<!-- sa trace -->
+<line x1="300" y1="180" x2="480" y2="180" stroke="#637285" stroke-width="1.5"/>
+<path d="M300 180 Q315 140 330 180 Q345 220 360 180 Q375 140 390 180 Q405 220 420 180 Q435 140 450 180 Q465 220 480 180"
+      fill="none" stroke="#c9451a" stroke-width="3.5"/>
+<text x="390" y="208" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="11" fill="#c9451a">50 allers-retours par seconde</text>
+
+<text x="390" y="242" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12" fill="#637285">Ni plus ni moins :</text>
+<text x="390" y="262" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12"
+      font-weight="700" fill="#1b3a63">une phase et un neutre.</text>
+<text x="390" y="286" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="11" fill="#637285">Ce ne sont pas deux fils identiques.</text>
+</svg>

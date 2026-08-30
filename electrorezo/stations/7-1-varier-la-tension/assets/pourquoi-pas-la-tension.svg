@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img"
+     aria-label="Quand la tension passe de 400 à 280 volts, la vitesse ne perd que quelques tours par minute, tandis que le couple tombe à la moitié et que l’intensité monte.">
+<rect width="520" height="300" fill="#fffdf8"/>
+<text x="260" y="30" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="15"
+      font-weight="700" fill="#1b3a63">De 400 volts à 280 volts</text>
+
+<text x="150" y="60" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="13" fill="#637285">400 V</text>
+<text x="330" y="60" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="13" fill="#637285">280 V</text>
+
+<!-- la vitesse -->
+<text x="60" y="98" text-anchor="end" font-family="Bitter,Georgia,serif" font-size="13" fill="#1b3a63">la vitesse</text>
+<rect x="76" y="80" width="148" height="24" rx="6" fill="#1b3a63"/>
+<rect x="256" y="80" width="144" height="24" rx="6" fill="#1b3a63"/>
+<text x="416" y="98" font-family="Bitter,Georgia,serif" font-size="12" fill="#637285">elle tient</text>
+
+<!-- le couple -->
+<text x="60" y="150" text-anchor="end" font-family="Bitter,Georgia,serif" font-size="13" fill="#c9451a">le couple</text>
+<rect x="76" y="132" width="148" height="24" rx="6" fill="#c9451a"/>
+<rect x="256" y="132" width="72" height="24" rx="6" fill="#c0392b"/>
+<rect x="328" y="132" width="72" height="24" rx="6" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="416" y="150" font-family="Bitter,Georgia,serif" font-size="12"
+      font-weight="700" fill="#c0392b">la moitié</text>
+
+<!-- l'intensité -->
+<text x="60" y="202" text-anchor="end" font-family="Bitter,Georgia,serif" font-size="13" fill="#1e7e54">l’intensité</text>
+<rect x="76" y="184" width="148" height="24" rx="6" fill="#1e7e54"/>
+<rect x="256" y="184" width="190" height="24" rx="6" fill="#1e7e54"/>
+<text x="456" y="202" font-family="Bitter,Georgia,serif" font-size="12" fill="#1e7e54">elle monte</text>
+
+<line x1="240" y1="70" x2="240" y2="218" stroke="rgba(27,58,99,.18)" stroke-width="2" stroke-dasharray="6 6"/>
+
+<text x="260" y="252" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="13"
+      font-weight="700" fill="#1b3a63">Le couple suit le carré de la tension.</text>
+<text x="260" y="276" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12.5" fill="#637285">70 % de la tension, c’est 0,7 × 0,7, soit à peine la moitié du couple.</text>
+</svg>

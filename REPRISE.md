@@ -3,6 +3,35 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 30/08 — LE 5e RÉSEAU OUVRE : ÉlectroRézo, servi à `/electrorezo/`
+>
+> **https://inerweb.fr/electrorezo/** — l'électrotechnique en carte de métro : **58 stations,
+> 8 lignes**, de l'ampère au variateur de fréquence. Niveau CAP → Bac pro, généraliste (ancrage
+> 2nde TNE, pas de référentiel de diplôme). Feu vert de F. Henninot le 30/08.
+>
+> Ce que le réseau apporte de neuf par rapport aux quatre autres :
+> · une **ligne 8 « L'écriture du schéma »** — le symbole traité comme un mot fait de lettres,
+>   dix signes qui permettent de lire des centaines de symboles sans dictionnaire ;
+> · **14 réglettes** où l'élève tourne un bouton et voit : la loi d'Ohm, le rapport de
+>   transformation, la loi U/f, le champ tournant qui s'inverse quand on échange deux phases ;
+> · les narrations écrites au registre **« professeur particulier »** — 3 h 10 de voix,
+>   texte pour l'oreille, jamais un collage de l'écran.
+>
+> ⚠️ **`electrorezo/` est une COPIE SERVIE, pas un chantier.** La vérité est l'ATELIER
+> `C:\git\electrorezo`. On ne corrige JAMAIS ici : on corrige là-bas, puis on relivre par
+> `node outils/livrer.mjs` — qui refuse de livrer si le contrôle des 58 stations n'est pas au
+> vert, et qui **écrase** entièrement ce dossier. Même régime que `hydrometro/`, `aerorezo/`
+> et `legislation/` : hors `PAGES` de `version.mjs`, hors sitemap, déplaçable d'un bloc.
+>
+> Connecteur posé : cinquième carte « ⚡ ÉlectroRézo » dans « Les cinq réseaux inerWeb » de
+> l'accueil (couleur `#7c3aed`, état **prototype**), et depuis l'accueil ÉlectroRézo, retour
+> vers les quatre autres réseaux.
+>
+> **État déclaré « prototype », et c'est exact : rien n'a encore été relu.** La voix n'a été
+> entendue par personne, aucun MP3 n'est fabriqué, et la mention « document de travail » de
+> `marque.js` est volontairement laissée sur les 58 pages. Elle se retire en enlevant
+> `data-prototype` du gabarit, dans l'atelier, quand la relecture sera faite.
+
 > ## ⏳ 30/08 — du travail attend une décision sur la branche `codex/tutoriels-manipulation`
 >
 > Elle porte **35 fichiers que `main` n'a pas** : le moteur `moteur/manipulation-fluidique/`

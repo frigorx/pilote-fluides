@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1b3a63">
+<title>ÉlectroRézo — Ligne 7</title>
+<meta name="description" content="Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie.">
+<link rel="stylesheet" href="../_commun/station.css">
+</head>
+<body>
+<a class="skip-link" href="#scene">Aller au contenu</a>
+
+<header class="topbar">
+  <div class="brand"><span>iner</span><span class="web">Web</span><span class="cartouche">ÉlectroRézo</span></div>
+  <div class="titles">
+    <div class="kicker" id="kicker"></div>
+    <h1 id="titre"></h1>
+  </div>
+  <div class="level-switch" id="niveaux"></div>
+</header>
+
+<nav class="temps" id="filTemps" aria-label="Les cinq temps de la station">
+  <div class="voix-box">
+    <button type="button" id="btVoix" aria-pressed="false">▶ Écouter</button>
+    <label for="vitesse">vitesse</label>
+    <input type="range" id="vitesse" min="0.6" max="1.4" step="0.05" value="0.95">
+    <output id="vitesseOut">0,95×</output>
+    <select id="voixPick" aria-label="Choisir la voix"></select>
+  </div>
+</nav>
+
+<main>
+  <div id="scene" tabindex="-1"></div>
+  <div class="corresp" id="corresp" aria-label="Correspondances de cette station"></div>
+</main>
+
+<footer class="footer">
+  <span class="footer-note">ÉlectroRézo · ligne 7 · brouillon — CC BY-NC-ND</span>
+  <nav class="footer-nav">
+    <button type="button" id="btObjectifs">Objectifs et limites</button>
+    <button type="button" id="btCredits">Crédits</button>
+    <button type="button" id="precedent">◀ Précédent</button>
+    <button type="button" class="primary" id="suivant">Suivant ▶</button>
+    <button type="button" id="btPlan">Retour au plan</button>
+  </nav>
+</footer>
+
+<dialog id="dlg">
+  <h2>Objectifs et limites</h2>
+  <div id="dlgTexte"></div>
+  <form method="dialog"><button>Fermer</button></form>
+</dialog>
+
+<dialog id="dlgCredits">
+  <h2>Crédits et sources</h2>
+  <ul id="creditsListe"></ul>
+  <p><small>Les documents cités appartiennent à leurs auteurs. Signalez-nous toute image à retirer :
+     elle sera remplacée.</small></p>
+  <form method="dialog"><button>Fermer</button></form>
+</dialog>
+
+<script src="narration.js"></script>
+<script src="../_commun/reseau.js"></script>
+<script src="../_commun/station.js"></script>
+<script src="../_commun/signes.js"></script>
+<script src="../_commun/schemas.js"></script>
+<script src="../_commun/schemas-grandeurs.js"></script>
+<script src="../_commun/schemas-machines.js"></script>
+<script src="../_commun/modele-appareil.js"></script>
+<script src="../_commun/modele-grandeur.js"></script>
+<script src="contenu.js"></script>
+<script src="../../assets/marque.js" data-cartouche="ÉlectroRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

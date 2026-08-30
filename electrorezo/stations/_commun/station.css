@@ -1,0 +1,163 @@
+/* ÉlectroRézo — coque commune à toutes les stations.
+   Écrite une fois, partagée par les 48. Charte inerWeb : pas de thème sombre,
+   fond crème, jamais de blanc pur. */
+
+:root{
+  --navy:#1b3a63; --ink:#10233c; --muted:#637285;
+  --cream:#f7f1e7; --paper:#fffdf8;
+  --blue:#3d7fca; --blue-soft:#84b7ec;
+  --orange:#ff6b35; --orange-deep:#c9451a; --logo:#e8914a;
+  --ok:#1e7e54; --ok-bg:#e3f5ec;
+  --bad:#c0392b; --bad-bg:#fbe7e4;
+  --wait:#b06a00; --wait-bg:#fff4e0;
+  --line:rgba(27,58,99,.18);
+  font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;
+  color:var(--ink); background:var(--cream);
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%}
+body{min-height:100dvh;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;
+     background:var(--cream);font-size:clamp(13px,1.12vw,17px);line-height:1.42}
+button,input,select{font:inherit}
+button{min-height:42px;border:2px solid var(--navy);border-radius:12px;background:var(--paper);
+       color:var(--navy);padding:.42rem .8rem;font-weight:700;cursor:pointer}
+button:hover:not(:disabled){border-color:var(--orange-deep);transform:translateY(-1px)}
+button:disabled{cursor:not-allowed;opacity:.55}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid rgba(255,107,53,.55);outline-offset:2px}
+.primary{background:var(--navy);color:#fff}
+.accent{background:var(--orange-deep);border-color:var(--orange-deep);color:#fff}
+.hidden{display:none!important}
+.skip-link{position:absolute;left:-999px}
+.skip-link:focus{left:.5rem;top:.5rem;background:var(--paper);padding:.4rem .7rem;z-index:20;border-radius:8px}
+
+/* ---------------- barre du haut ---------------- */
+.topbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:.8rem;
+        padding:.45rem .9rem;background:var(--paper);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;gap:.1rem;font-family:"Trebuchet MS",Calibri,Arial,sans-serif;
+       font-weight:800;color:var(--navy);white-space:nowrap;font-size:1.05em}
+.brand .web{color:var(--orange-deep)}
+.brand .cartouche{background:var(--logo);color:#fff;border-radius:7px;padding:.05rem .45rem;
+                  font-size:.72em;font-weight:700;margin-left:.4rem}
+.titles .kicker{font-size:.8em;color:var(--muted)}
+.titles h1{margin:.02rem 0 0;font-size:1.2em;color:var(--navy);font-family:"Trebuchet MS",Calibri,sans-serif}
+.level-switch{display:flex;gap:.3rem}
+.level-switch button{min-height:33px;padding:.15rem .6rem;font-size:.86em}
+.level-switch button[aria-pressed="true"]{background:var(--navy);color:#fff}
+
+/* ---------------- fil des cinq temps ---------------- */
+.temps{display:flex;gap:.3rem;align-items:center;padding:.4rem .9rem;background:var(--paper);
+       border-bottom:1px solid var(--line);overflow-x:auto}
+.temps button{min-height:34px;padding:.15rem .7rem;font-size:.86em;border-width:2px;white-space:nowrap}
+.temps button[aria-current="step"]{background:var(--navy);color:#fff}
+.temps button.fait{border-color:var(--ok);color:var(--ok)}
+.temps button.fait::before{content:"✔ ";font-weight:800}
+.voix-box{margin-left:auto;display:flex;align-items:center;gap:.4rem;white-space:nowrap}
+.voix-box button{min-height:34px;padding:.15rem .7rem;font-size:.86em}
+.voix-box label{font-size:.82em;color:var(--muted)}
+.voix-box input[type=range]{width:96px}
+.voix-box select{min-height:34px;border:2px solid var(--navy);border-radius:10px;background:var(--paper);
+                 padding:.1rem .4rem;font-size:.84em;max-width:150px}
+
+/* ---------------- scène ---------------- */
+main{padding:.85rem;overflow:auto}
+.workspace{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(310px,.85fr);gap:.85rem;
+           max-width:1560px;margin:0 auto;align-items:start}
+@media (max-width:1000px){.workspace{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:.9rem}
+.card h2{margin:.05rem 0 .5rem;font-size:1.05em;color:var(--navy);font-family:"Trebuchet MS",Calibri,sans-serif}
+.card p{margin:.4rem 0}
+svg.scene{display:block;width:100%;height:auto}
+.legende{margin:.5rem 0 0;font-size:.88em;color:var(--muted)}
+
+/* ---------------- commandes ---------------- */
+.champ{display:block;margin:.65rem 0 .12rem;font-weight:700;color:var(--navy)}
+select.large{width:100%;min-height:42px;border:2px solid var(--navy);border-radius:12px;
+             background:var(--paper);color:var(--ink);padding:.3rem .6rem}
+.choix{display:flex;gap:.5rem;margin-top:.3rem;flex-wrap:wrap}
+.choix button{flex:1 1 120px}
+.choix button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.lecture{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}
+.metric{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:.45rem .6rem}
+.metric span{display:block;font-size:.8em;color:var(--muted)}
+.metric strong{display:block;font-size:1.22em;color:var(--navy)}
+
+/* Les réglettes de la ligne 1 : l'élève tourne un bouton et voit ce qui bouge. */
+.reglette{display:grid;grid-template-columns:auto 1fr auto;align-items:center;
+          gap:.5rem;margin-top:.55rem}
+.reglette label{font-weight:700;color:var(--navy);white-space:nowrap}
+.reglette input[type=range]{width:100%;min-width:0;accent-color:var(--navy)}
+.reglette output{font-weight:700;color:var(--orange);min-width:5.5rem;text-align:right;
+                 font-variant-numeric:tabular-nums}
+
+.verdict{margin-top:.65rem;border-radius:12px;padding:.55rem .75rem;font-weight:600;
+         border:2px solid var(--line);background:var(--cream)}
+.verdict.ok{background:var(--ok-bg);border-color:var(--ok);color:#14603f}
+.verdict.bad{background:var(--bad-bg);border-color:var(--bad);color:#8e2b20}
+.verdict.wait{background:var(--wait-bg);border-color:var(--wait);color:#7d4b00}
+.verdict .signe{font-weight:800;margin-right:.35rem}
+
+/* ---------------- correspondances ---------------- */
+.corresp{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem}
+.corresp a,.corresp span.lien{display:inline-flex;align-items:center;gap:.3rem;text-decoration:none;
+  font-size:.84em;font-weight:700;border:2px solid var(--line);border-radius:999px;
+  padding:.12rem .6rem;color:var(--navy);background:var(--cream)}
+.pastille{width:18px;height:18px;border-radius:50%;display:inline-grid;place-items:center;
+          color:#fff;font-size:.7em;font-weight:800}
+
+/* ---------------- quiz ---------------- */
+.q{margin:0 0 .9rem;padding:.7rem .8rem;border:1px solid var(--line);border-radius:14px;background:var(--cream)}
+.q > p{margin:0 0 .5rem;font-weight:700;color:var(--navy)}
+.reponses{display:grid;gap:.35rem}
+.reponses button{text-align:left;justify-self:stretch;font-weight:500}
+.reponses button[data-etat="juste"]{background:var(--ok-bg);border-color:var(--ok);color:#14603f;font-weight:700}
+.reponses button[data-etat="faux"]{background:var(--bad-bg);border-color:var(--bad);color:#8e2b20}
+.pourquoi{margin:.5rem 0 0;font-size:.92em;padding:.45rem .6rem;border-radius:10px;
+          background:var(--paper);border:1px solid var(--line)}
+
+/* ---------------- mini-jeu ---------------- */
+.jeu-entete{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin-bottom:.6rem}
+.jeu-entete .compteur{font-weight:800;color:var(--navy)}
+.chrono{flex:1 1 140px;height:12px;border-radius:999px;background:var(--cream);
+        border:1px solid var(--line);overflow:hidden;min-width:120px}
+.chrono i{display:block;height:100%;background:var(--blue);width:100%}
+.chrono.presse i{background:var(--orange-deep)}
+.fiche{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:.7rem .8rem;margin-bottom:.6rem}
+.fiche dl{display:grid;grid-template-columns:auto 1fr;gap:.2rem .8rem;margin:.3rem 0 0}
+.fiche dt{font-weight:700;color:var(--muted)}
+.fiche dd{margin:0;font-weight:700;color:var(--navy)}
+.journal{margin:.6rem 0 0;padding:0;list-style:none;font-size:.92em}
+.journal li{padding:.25rem 0;border-top:1px solid var(--line)}
+.journal .bon{color:var(--ok);font-weight:700}
+.journal .rate{color:var(--bad);font-weight:700}
+
+/* ---------------- pied ---------------- */
+.footer{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;padding:.45rem .9rem;
+        background:var(--paper);border-top:1px solid var(--line)}
+.footer-note{font-size:.83em;color:var(--muted)}
+.footer-nav{margin-left:auto;display:flex;gap:.5rem;flex-wrap:wrap}
+dialog{border:2px solid var(--navy);border-radius:16px;max-width:660px;background:var(--paper);color:var(--ink)}
+dialog h2{margin-top:0;color:var(--navy)}
+
+@media print{
+  body{background:#fff}
+  .level-switch,.footer-nav,.voix-box,.temps button{display:none}
+  .card{break-inside:avoid}
+}
+
+/* ---------- bande visuelle : du général au particulier ---------- */
+.bande-visuelle{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+.bande-visuelle .fleche{font-size:2rem;color:var(--orange-deep);font-weight:800;line-height:1}
+.vignette{flex:1 1 260px;margin:0;background:var(--cream);border:1px solid var(--line);
+          border-radius:14px;padding:.55rem;min-width:240px}
+.vignette img{display:block;width:100%;height:auto;border-radius:9px;
+              border:1px solid var(--line);background:var(--paper)}
+.vignette figcaption{margin-top:.45rem;font-size:.9em;color:var(--muted);line-height:1.35}
+.vignette figcaption strong{color:var(--navy)}
+@media (max-width:620px){.bande-visuelle .fleche{transform:rotate(90deg);width:100%;text-align:center}}
+
+/* ---------- credit discret sous une image ---------- */
+.credit{margin:.3rem 0 0;font-size:.76em;color:var(--muted);opacity:.85;line-height:1.3}
+.vignette .credit{margin-top:.25rem}
+#creditsListe{padding-left:1.1rem}
+#creditsListe li{margin-bottom:.6rem}
+#creditsListe small{color:var(--muted)}

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1b3a63">
+<title>ÉlectroRézo — le réseau de l’électrotechnique</title>
+<meta name="description" content="ÉlectroRézo : 58 stations pour comprendre l’électrotechnique, de l’ampère au variateur de fréquence. Une voix qui explique, des schémas qui bougent, des questions pour vérifier.">
+<style>
+  :root { --creme:#f7f1e7; --papier:#fffdf8; --encre:#10233c;
+          --navy:#1b3a63; --gris:#637285; --trait:rgba(27,58,99,.16); }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--creme); color:var(--encre); line-height:1.55;
+         font-family:"Segoe UI","Trebuchet MS",sans-serif; }
+  header { background:var(--papier); border-bottom:1px solid var(--trait); padding:26px 18px 22px; }
+  .dedans { max-width:1080px; margin:0 auto; }
+  .marque { font-size:1.05rem; font-weight:700; color:var(--navy); letter-spacing:.02em; }
+  .marque .web { color:#c9451a; }
+  h1 { font-family:Bitter,Georgia,serif; font-size:2.1rem; margin:.35rem 0 .1rem; color:var(--navy); }
+  .sous { color:var(--gris); font-size:1.02rem; max-width:62ch; }
+  .compte { margin-top:14px; display:flex; gap:26px; flex-wrap:wrap; }
+  .compte div b { display:block; font-family:Bitter,Georgia,serif; font-size:1.5rem; color:var(--navy); line-height:1.1; }
+  .compte div span { font-size:.85rem; color:var(--gris); }
+
+  main { max-width:1080px; margin:0 auto; padding:22px 18px 48px; }
+  .portes { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-bottom:34px; }
+  .porte { background:var(--papier); border:1px solid var(--trait); border-left:6px solid var(--navy);
+           border-radius:14px; padding:16px 18px; }
+  .porte h3 { margin:0 0 .3rem; font-family:Bitter,Georgia,serif; font-size:1.12rem; color:var(--navy); }
+  .porte p { margin:0 0 .7rem; font-size:.94rem; color:var(--gris); }
+  .bouton { display:inline-block; background:var(--navy); color:#fff; text-decoration:none;
+            border-radius:10px; padding:.45rem .9rem; font-weight:600; font-size:.94rem; }
+  .bouton:hover, .bouton:focus { background:#12294a; }
+
+  .ligne { background:var(--papier); border:1px solid var(--trait); border-radius:14px;
+           padding:16px 18px 12px; margin-bottom:14px; }
+  .ligne h2 { display:flex; align-items:center; gap:.55rem; margin:0 0 .25rem;
+              font-family:Bitter,Georgia,serif; font-size:1.2rem; color:var(--navy); }
+  .pastille { display:inline-flex; align-items:center; justify-content:center;
+              width:30px; height:30px; border-radius:9px; background:var(--c); color:#fff;
+              font-size:1rem; font-weight:700; flex:none; }
+  .quoi { margin:0 0 .6rem; font-size:.94rem; color:var(--gris); max-width:74ch; }
+  .stations { list-style:none; margin:0; padding:0;
+              display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:6px; }
+  .stations a { display:block; text-decoration:none; color:var(--encre); font-size:.94rem;
+                border:1px solid var(--trait); border-radius:9px; padding:.4rem .6rem;
+                border-left:4px solid var(--c); background:var(--creme); }
+  .stations a:hover, .stations a:focus { background:#fff; border-color:var(--c); }
+  .stations b { color:var(--c); margin-right:.35rem; }
+
+  .atelier { margin-top:30px; border-top:1px solid var(--trait); padding-top:16px;
+             font-size:.9rem; color:var(--gris); }
+  .atelier a { color:var(--navy); }
+  .atelier ul { margin:.4rem 0 0; padding-left:1.1rem; }
+  @media print { body { background:#fff; } .porte, .ligne { break-inside:avoid; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="dedans">
+    <div class="marque">iner<span class="web">Web</span> · ÉlectroRézo</div>
+    <h1>Le réseau de l’électrotechnique</h1>
+    <p class="sous">De l’ampère au variateur de fréquence. Chaque station tient en moins de dix
+       minutes : on découvre, on comprend, on manipule, on lit le schéma, on vérifie.
+       Une voix explique, comme le ferait un professeur particulier.</p>
+    <div class="compte">
+      <div><b>58</b><span>stations</span></div>
+      <div><b>8</b><span>lignes</span></div>
+      <div><b>190 min</b><span>de voix</span></div>
+      <div><b>CAP → Bac pro</b><span>deux niveaux dans chaque station</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="portes">
+    <div class="porte">
+      <h3>🗺️ La carte du réseau</h3>
+      <p>Les huit lignes et leurs croisements, comme un plan de métro. Chaque station s’ouvre d’un clic.</p>
+      <a class="bouton" href="carte-reseau.html">Ouvrir la carte</a>
+    </div>
+    <div class="porte">
+      <h3>🚉 Par où commencer</h3>
+      <p>Si l’électricité vous est étrangère, prenez la ligne 1 à son début : l’intensité.</p>
+      <a class="bouton" href="stations/1-1-courant-intensite/index.html">Station 1.1 — l’intensité</a>
+    </div>
+    <div class="porte">
+      <h3>🔡 Lire un schéma</h3>
+      <p>La ligne 8 apprend à déchiffrer les symboles au lieu de les apprendre par cœur. Elle se suit seule.</p>
+      <a class="bouton" href="stations/8-1-trait-et-point/index.html">Station 8.1 — le trait et le point</a>
+    </div>
+  </div>
+
+
+    <section class="ligne" style="--c:#1b3a63">
+      <h2><span class="pastille">1</span> Les grandeurs de l’électricité</h2>
+      <p class="quoi">Ce qu’on mesure, et comment on le mesure. Commencez ici si l’électricité vous est étrangère.</p>
+      <ol class="stations">
+        <li><a href="stations/1-1-courant-intensite/index.html"><b>1.1</b> Le courant et l’intensité</a></li>
+        <li><a href="stations/1-2-tension/index.html"><b>1.2</b> La tension</a></li>
+        <li><a href="stations/1-3-resistance-loi-ohm/index.html"><b>1.3</b> La résistance et la loi d’Ohm</a></li>
+        <li><a href="stations/1-4-puissance-energie/index.html"><b>1.4</b> La puissance et l’énergie</a></li>
+        <li><a href="stations/1-5-continu-alternatif/index.html"><b>1.5</b> Continu et alternatif</a></li>
+        <li><a href="stations/1-6-frequence/index.html"><b>1.6</b> La fréquence</a></li>
+        <li><a href="stations/1-7-plaque-signaletique/index.html"><b>1.7</b> Lire une plaque signalétique</a></li>
+        <li><a href="stations/1-8-trois-defauts/index.html"><b>1.8</b> Les trois défauts</a></li>
+        <li><a href="stations/1-9-mesurer/index.html"><b>1.9</b> Mesurer : multimètre et pince</a></li>
+      </ol>
+    </section>
+
+    <section class="ligne" style="--c:#0C4B88">
+      <h2><span class="pastille">2</span> Les réseaux d’alimentation</h2>
+      <p class="quoi">Ce qui arrive dans les fils. Monophasé, triphasé, et le champ tournant qui fait démarrer les moteurs.</p>
+      <ol class="stations">
+        <li><a href="stations/2-1-phase-neutre-pe/index.html"><b>2.1</b> Phase, neutre et protection</a></li>
+        <li><a href="stations/2-2-monophase/index.html"><b>2.2</b> Le réseau monophasé</a></li>
+        <li><a href="stations/2-3-triphase/index.html"><b>2.3</b> Le réseau triphasé</a></li>
+        <li><a href="stations/2-4-tension-simple/index.html"><b>2.4</b> La tension simple</a></li>
+        <li><a href="stations/2-5-tension-composee/index.html"><b>2.5</b> La tension composée</a></li>
+        <li><a href="stations/2-6-champ-tournant/index.html"><b>2.6</b> Le champ tournant</a></li>
+      </ol>
+    </section>
+
+    <section class="ligne" style="--c:#5b4bd6">
+      <h2><span class="pastille">3</span> Couper et isoler</h2>
+      <p class="quoi">Arrêter n’est pas isoler. Cinq appareils, et la petite barre qui autorise à mettre les mains.</p>
+      <ol class="stations">
+        <li><a href="stations/3-1-interrupteur/index.html"><b>3.1</b> L’interrupteur</a></li>
+        <li><a href="stations/3-2-sectionneur/index.html"><b>3.2</b> Le sectionneur</a></li>
+        <li><a href="stations/3-3-interrupteur-sectionneur/index.html"><b>3.3</b> L’interrupteur-sectionneur</a></li>
+        <li><a href="stations/3-4-porte-fusible/index.html"><b>3.4</b> Le porte-fusible</a></li>
+        <li><a href="stations/3-5-sectionneur-porte-fusible/index.html"><b>3.5</b> Le sectionneur porte-fusible</a></li>
+      </ol>
+    </section>
+
+    <section class="ligne" style="--c:#c0392b">
+      <h2><span class="pastille">4</span> Protéger</h2>
+      <p class="quoi">Trois défauts, trois protections. Aucun appareil ne les couvre tous les trois.</p>
+      <ol class="stations">
+        <li><a href="stations/4-1-fusible-gg/index.html"><b>4.1</b> Le fusible gG</a></li>
+        <li><a href="stations/4-2-fusible-am/index.html"><b>4.2</b> Le fusible aM</a></li>
+        <li><a href="stations/4-3-disjoncteur-magneto-thermique/index.html"><b>4.3</b> Le disjoncteur magnéto-thermique</a></li>
+        <li><a href="stations/4-4-disjoncteur-moteur/index.html"><b>4.4</b> Le disjoncteur moteur</a></li>
+        <li><a href="stations/4-5-interrupteur-differentiel/index.html"><b>4.5</b> L’interrupteur différentiel</a></li>
+        <li><a href="stations/4-6-disjoncteur-differentiel/index.html"><b>4.6</b> Le disjoncteur différentiel</a></li>
+        <li><a href="stations/4-7-relais-thermique/index.html"><b>4.7</b> Le relais thermique</a></li>
+        <li><a href="stations/4-8-terre/index.html"><b>4.8</b> La terre et la liaison équipotentielle</a></li>
+        <li><a href="stations/4-9-cable-section/index.html"><b>4.9</b> Le câble : section et désignation</a></li>
+      </ol>
+    </section>
+
+    <section class="ligne" style="--c:#1e7e54">
+      <h2><span class="pastille">5</span> Commander</h2>
+      <p class="quoi">Comment un petit courant en commande un gros, et pourquoi la machine continue après qu’on a lâché le bouton.</p>
+      <ol class="stations">
+        <li><a href="stations/5-1-contact-no-nf/index.html"><b>5.1</b> Le contact : repos et travail</a></li>
+        <li><a href="stations/5-2-contacteur/index.html"><b>5.2</b> Le contacteur</a></li>
+        <li><a href="stations/5-3-contact-auxiliaire/index.html"><b>5.3</b> Le contact auxiliaire</a></li>
+        <li><a href="stations/5-4-relais/index.html"><b>5.4</b> Le relais électromécanique</a></li>
+        <li><a href="stations/5-5-relais-temporise/index.html"><b>5.5</b> Le relais temporisé</a></li>
+        <li><a href="stations/5-6-contacts-temporises/index.html"><b>5.6</b> Les contacts temporisés</a></li>
+        <li><a href="stations/5-7-boutons/index.html"><b>5.7</b> Bouton-poussoir et sélecteur</a></li>
+        <li><a href="stations/5-8-securite-signalisation/index.html"><b>5.8</b> Arrêt d’urgence et signalisation</a></li>
+        <li><a href="stations/5-9-lire-un-schema/index.html"><b>5.9</b> Lire un schéma : puissance et commande</a></li>
+      </ol>
+    </section>
+
+    <section class="ligne" style="--c:#c9451a">
+      <h2><span class="pastille">6</span> Machines et conversion</h2>
+      <p class="quoi">La bobine, le transformateur, les moteurs. Et le couplage de la plaque à bornes, le grand carrefour du réseau.</p>
+      <ol class="stations">
+        <li><a href="stations/6-1-bobine-electro-aimant/index.html"><b>6.1</b> La bobine et l’électro-aimant</a></li>
+        <li><a href="stations/6-2-transformateur/index.html"><b>6.2</b> Le transformateur</a></li>
+        <li><a href="stations/6-3-moteur-asynchrone/index.html"><b>6.3</b> Le moteur asynchrone triphasé</a></li>
+        <li><a href="stations/6-4-couplage/index.html"><b>6.4</b> Le couplage de la plaque à bornes</a></li>
+        <li><a href="stations/6-5-moteur-monophase/index.html"><b>6.5</b> Le moteur monophasé</a></li>
+        <li><a href="stations/6-6-synchrone-et-continu/index.html"><b>6.6</b> Synchrone et courant continu</a></li>
+      </ol>
+    </section>
+
+    <section class="ligne" style="--c:#0f766e">
+      <h2><span class="pastille">7</span> Faire varier l’énergie</h2>
+      <p class="quoi">Régler la vitesse d’un moteur. Ce qui ne marche pas, ce qui marche, et pourquoi.</p>
+      <ol class="stations">
+        <li><a href="stations/7-1-varier-la-tension/index.html"><b>7.1</b> Faire varier la tension</a></li>
+        <li><a href="stations/7-2-variateur-tension/index.html"><b>7.2</b> Le variateur de tension</a></li>
+        <li><a href="stations/7-3-varier-la-frequence/index.html"><b>7.3</b> Faire varier la fréquence</a></li>
+        <li><a href="stations/7-4-variateur-frequence/index.html"><b>7.4</b> Le variateur de fréquence</a></li>
+      </ol>
+    </section>
+
+    <section class="ligne" style="--c:#7c3aed">
+      <h2><span class="pastille">8</span> L’écriture du schéma</h2>
+      <p class="quoi">Un symbole est un mot fait de lettres. Dix lettres suffisent à lire des centaines de symboles.</p>
+      <ol class="stations">
+        <li><a href="stations/8-1-trait-et-point/index.html"><b>8.1</b> Le trait et le point</a></li>
+        <li><a href="stations/8-2-contact/index.html"><b>8.2</b> Le contact</a></li>
+        <li><a href="stations/8-3-barre-sectionnement/index.html"><b>8.3</b> La barre du sectionnement</a></li>
+        <li><a href="stations/8-4-rectangle/index.html"><b>8.4</b> Le rectangle</a></li>
+        <li><a href="stations/8-5-declencheur-thermique/index.html"><b>8.5</b> Le déclencheur thermique</a></li>
+        <li><a href="stations/8-6-declencheur-magnetique/index.html"><b>8.6</b> Le déclencheur magnétique</a></li>
+        <li><a href="stations/8-7-pointille/index.html"><b>8.7</b> Le pointillé</a></li>
+        <li><a href="stations/8-8-bobine-et-rond/index.html"><b>8.8</b> La bobine et le rond</a></li>
+        <li><a href="stations/8-9-reperes/index.html"><b>8.9</b> Les repères</a></li>
+        <li><a href="stations/8-10-dechiffrer/index.html"><b>8.10</b> Déchiffrer</a></li>
+      </ol>
+    </section>
+
+  <div class="atelier">
+    <strong>Les autres réseaux inerWeb</strong>
+    <ul>
+      <li><a href="../">❄️ Le réseau thermo-techno</a> — le métier de frigoriste.</li>
+      <li><a href="../hydrometro/">💧 HydroMétro</a> — l’hydraulique CVC.</li>
+      <li><a href="../aerorezo/">🌬️ AéroRézo</a> — l’air dans les gaines.</li>
+      <li><a href="../legislation/">📜 Réseau Législation</a> — réglementation et sécurité.</li>
+    </ul>
+    <p>Réseau en relecture : la voix n’a pas encore été entendue, et les textes
+       peuvent bouger. Signalez-nous ce qui cloche.</p>
+  </div>
+</main>
+
+<script src="assets/marque.js" data-cartouche="ÉlectroRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>
