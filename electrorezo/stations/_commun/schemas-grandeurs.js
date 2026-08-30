@@ -180,7 +180,7 @@ ${serie
 <text x="380" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${u === 0 ? 'Deux points au même potentiel — aucune tension' : 'Deux points à des potentiels différents'}</text>
 
 <line x1="120" y1="280" x2="640" y2="280" stroke="${C.navy}" stroke-width="2"/>
-<text x="120" y="300" font-size="12" fill="${C.gris}">une référence, choisie une fois pour toutes</text>
+<text x="124" y="272" font-size="12" fill="${C.gris}">une référence, choisie une fois pour toutes</text>
 
 <line x1="220" y1="${ha}" x2="320" y2="${ha}" stroke="${C.bleu}" stroke-width="7"/>
 <line x1="270" y1="${ha}" x2="270" y2="280" stroke="${C.bleu}" stroke-width="2" stroke-dasharray="5 5"/>
@@ -444,7 +444,7 @@ ${instrument(188, 142, 'W', C.bleu, 26)}
     const trace = (alt) => {
       const pts = [];
       for (let i = 0; i <= 600; i += 4) {
-        const y = alt ? 160 - 78 * Math.sin((i / 600) * Math.PI * 6) : 116;
+        const y = alt ? 130 - 62 * Math.sin((i / 600) * Math.PI * 6) : 90;
         pts.push((90 + i) + ',' + y.toFixed(1));
       }
       return pts.join(' ');
@@ -454,21 +454,21 @@ ${instrument(188, 142, 'W', C.bleu, 26)}
 <rect x="8" y="8" width="744" height="284" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="380" y="38" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${alt ? 'Alternatif — il change de sens sans arrêt' : 'Continu — il garde toujours le même sens'}</text>
 
-<line x1="90" y1="160" x2="700" y2="160" stroke="${C.navy}" stroke-width="2"/>
-<line x1="90" y1="60" x2="90" y2="250" stroke="${C.navy}" stroke-width="2"/>
-<text x="700" y="180" text-anchor="end" font-size="12" fill="${C.gris}">le temps →</text>
-<text x="82" y="70" text-anchor="end" font-size="12" fill="${C.gris}">+</text>
-<text x="82" y="250" text-anchor="end" font-size="12" fill="${C.gris}">−</text>
+<line x1="90" y1="130" x2="700" y2="130" stroke="${C.navy}" stroke-width="2"/>
+<line x1="90" y1="50" x2="90" y2="200" stroke="${C.navy}" stroke-width="2"/>
+<text x="700" y="212" text-anchor="end" font-size="12" fill="${C.gris}">le temps →</text>
+<text x="82" y="60" text-anchor="end" font-size="12" fill="${C.gris}">+</text>
+<text x="82" y="200" text-anchor="end" font-size="12" fill="${C.gris}">−</text>
 
 <polyline points="${trace(alt)}" fill="none" stroke="${C.orange}" stroke-width="4"/>
 
 ${alt
-  ? `<text x="380" y="218" text-anchor="middle" font-size="13" fill="${C.gris}">Cinquante allers-retours par seconde. Il passe cent fois par zéro.</text>
-     <text x="380" y="244" text-anchor="middle" font-size="13" fill="${C.gris}">Ce qu’on appelle « 230 V » n’est ni le maximum, ni la moyenne : c’est la valeur efficace.</text>
-     <text x="380" y="272" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">Le maximum, lui, monte à environ 325 V.</text>`
-  : `<text x="380" y="218" text-anchor="middle" font-size="13" fill="${C.gris}">Une batterie, une alimentation, un panneau photovoltaïque.</text>
-     <text x="380" y="244" text-anchor="middle" font-size="13" fill="${C.gris}">La valeur ne bouge pas, et le sens non plus. Il y a donc un plus et un moins.</text>
-     <text x="380" y="272" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">Les brancher à l’envers ne fait pas rien : là, le sens compte.</text>`}`;
+  ? `<text x="380" y="236" text-anchor="middle" font-size="13" fill="${C.gris}">Cinquante allers-retours par seconde. Il passe cent fois par zéro.</text>
+     <text x="380" y="258" text-anchor="middle" font-size="13" fill="${C.gris}">Ce qu’on appelle « 230 V » n’est ni le maximum, ni la moyenne : c’est la valeur efficace.</text>
+     <text x="380" y="280" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">Le maximum, lui, monte à environ 325 V.</text>`
+  : `<text x="380" y="236" text-anchor="middle" font-size="13" fill="${C.gris}">Une batterie, une alimentation, un panneau photovoltaïque.</text>
+     <text x="380" y="258" text-anchor="middle" font-size="13" fill="${C.gris}">La valeur ne bouge pas, et le sens non plus. Il y a donc un plus et un moins.</text>
+     <text x="380" y="280" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">Les brancher à l’envers ne fait pas rien : là, le sens compte.</text>`}`;
     };
     peindre(false);
     return bloc(d, [
@@ -539,7 +539,7 @@ ${alt
     const peindre = () => {
       const pts = [];
       for (let i = 0; i <= 560; i += 3) {
-        const y = 140 - 62 * Math.sin((i / 560) * Math.PI * 2 * (f / 12.5));
+        const y = 120 - 42 * Math.sin((i / 560) * Math.PI * 2 * (f / 12.5));
         pts.push((100 + i) + ',' + y.toFixed(1));
       }
       const tr = Math.round(f * 60);      /* vitesse de synchronisme, moteur 2 pôles */
@@ -547,9 +547,9 @@ ${alt
 <rect x="8" y="8" width="684" height="284" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="350" y="38" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">La fréquence, c’est le nombre d’allers-retours par seconde</text>
 
-<line x1="100" y1="140" x2="660" y2="140" stroke="${C.navy}" stroke-width="2"/>
+<line x1="100" y1="120" x2="660" y2="120" stroke="${C.navy}" stroke-width="2"/>
 <polyline points="${pts.join(' ')}" fill="none" stroke="${C.orange}" stroke-width="3.5"/>
-<text x="660" y="160" text-anchor="end" font-size="12" fill="${C.gris}">une seconde de signal</text>
+<text x="660" y="182" text-anchor="end" font-size="12" fill="${C.gris}">une seconde de signal</text>
 
 <rect x="100" y="216" width="240" height="60" rx="8" fill="${C.creme}" stroke="${C.trait}"/>
 <text x="220" y="238" text-anchor="middle" font-size="12" fill="${C.gris}">la fréquence</text>
@@ -560,8 +560,8 @@ ${alt
 <text x="480" y="266" text-anchor="middle" font-size="22" font-weight="700" fill="${C.navy}">${tr} tr/min</text>
 
 ${Math.abs(f - 50) < 0.6
-  ? `<text x="350" y="196" text-anchor="middle" font-size="14" font-weight="700" fill="${C.vert}">50 Hz — la fréquence du réseau européen</text>`
-  : `<text x="350" y="196" text-anchor="middle" font-size="13" fill="${C.gris}">Le réseau, lui, ne bouge pas de 50 Hz. Seul un variateur peut fabriquer cette valeur.</text>`}`;
+  ? `<text x="350" y="206" text-anchor="middle" font-size="14" font-weight="700" fill="${C.vert}">50 Hz — la fréquence du réseau européen</text>`
+  : `<text x="350" y="206" text-anchor="middle" font-size="13" fill="${C.gris}">Le réseau, lui, ne bouge pas de 50 Hz. Seul un variateur peut fabriquer cette valeur.</text>`}`;
     };
     peindre();
     hote.appendChild(d);
@@ -684,7 +684,7 @@ ${lignes.map(([, x, c], i) => `
 <path d="M288 152 L306 164 L292 170 L312 182" fill="none" stroke="${C.feu}" stroke-width="3"/>
 <rect x="440" y="130" width="76" height="72" rx="6" fill="none" stroke="rgba(27,58,99,.25)" stroke-width="4"/>
 <text x="478" y="174" text-anchor="middle" font-size="14" fill="rgba(27,58,99,.4)">charge</text>
-<text x="360" y="176" font-size="13" font-weight="700" fill="${C.rouge}">plus rien ne freine le courant</text>
+<text x="478" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="${C.rouge}">plus rien ne freine le courant</text>
 <text x="365" y="292" text-anchor="middle" font-size="13" fill="${C.gris}">Brutal, énorme, immédiat. Des milliers d’ampères en quelques millièmes de seconde. C’est la bobine qui voit ça.</text>`;
       } else {
         d.innerHTML = commun + `

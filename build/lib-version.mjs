@@ -90,6 +90,27 @@ function pagesRacine() {
   } catch (e) { return []; }
 }
 
+/* Même leçon, un cran plus loin : les réseaux servis (electrorezo/,
+   hocourant/, hydrometro/…) vivent dans leur dossier, et rien de ce
+   qu'ils contiennent n'entrait dans ce hash. Tant qu'il s'agissait de
+   scripts, le service worker les revalidait en arrière-plan et la
+   correction arrivait à la visite suivante. Mais il RANGE L'AUDIO À PART :
+   « cache d'abord, sans revalidation ». Une voix refaite serait donc
+   restée figée pour toujours chez qui l'avait déjà écoutée.
+
+   Chaque réseau dépose maintenant, à sa livraison, un `livraison.txt` qui
+   porte l'empreinte de son contenu. On les ramasse — sans liste à tenir,
+   pour les mêmes raisons que ci-dessus. */
+function livraisonsDesReseaux() {
+  try {
+    return readdirSync(RACINE, { withFileTypes: true })
+      .filter((e) => e.isDirectory() && !e.name.startsWith("."))
+      .map((e) => e.name + "/livraison.txt")
+      .filter((f) => existsSync(resolve(RACINE, f)))
+      .sort();
+  } catch (e) { return []; }
+}
+
 /* Les `?v=<hash>` et le VERSION du service worker sont remplacés par un
    marqueur fixe : deux fichiers qui ne diffèrent que par le hash déjà écrit
    doivent donner le MÊME hash, sinon le calcul ne converge jamais. */
@@ -100,7 +121,7 @@ function sansHash(txt) {
 
 export function calculerVersion() {
   const h = createHash("sha256");
-  for (const f of FICHIERS_SOURCES.concat(pagesRacine())) {
+  for (const f of FICHIERS_SOURCES.concat(pagesRacine(), livraisonsDesReseaux())) {
     const p = resolve(RACINE, f);
     if (existsSync(p)) h.update(sansHash(readFileSync(p, "utf8").replace(/\r\n/g, "\n")));
   }

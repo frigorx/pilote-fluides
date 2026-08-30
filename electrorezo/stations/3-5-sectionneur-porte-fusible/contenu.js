@@ -8,10 +8,14 @@ ModeleAppareil.construire({
   narration: NARRATION,
 
   photos: [
-    { src: 'assets/biblio/consignation-macaron.png',
-      alt: 'Photo d’un technicien en équipement de protection posant une chaîne et un macaron de consignation sur un appareil.',
-      titre: 'Ouvrir, puis condamner.',
-      sous: 'La poignée abaissée, le cadenas posé, le macaron accroché : alors seulement on intervient.' }
+    { src: 'assets/biblio/porte-fusible-mural.jpeg',
+      alt: 'Photo d’un porte-fusible modulaire de 32 ampères sous 380 volts, avec son levier basculant noir portant le repère N.',
+      titre: 'L’appareil.',
+      sous: 'La cartouche est portée par le levier : elle sort du circuit quand on l’abaisse.' },
+    { src: 'assets/biblio/appareillages-normalises.jpeg',
+      alt: 'Planche de symboles normalisés de l’appareillage d’installation, où figurent notamment le fusible sectionneur et le fusible interrupteur-sectionneur, à côté des fonctions sectionneur, interrupteur et disjoncteur.',
+      titre: 'Toute la famille, en symboles.',
+      sous: 'Cherchez « fusible sectionneur » : c’est l’assemblage que cette station décrit.' }
   ],
   creditPhoto: 'Photographie : base de connaissances inerWeb, document de cours. Détail dans « Crédits ».',
 

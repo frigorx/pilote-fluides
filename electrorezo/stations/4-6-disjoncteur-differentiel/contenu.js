@@ -9,8 +9,9 @@ ModeleAppareil.construire({
   photos: [
     { src: 'assets/biblio/disj-differentiel-c16.png', alt: "Photo d’un disjoncteur différentiel modulaire de calibre C16.",
       titre: "Deux appareils en un.", sous: "Il porte un calibre — C16 — et une sensibilité : 30 mA." },
-    { src: 'assets/biblio/disj-differentiel-dx3.jpeg', alt: "Photo d’un disjoncteur différentiel 40 A modulaire.",
-      titre: "Plus large.", sous: "Il occupe plus de place qu’un disjoncteur simple : il y a plus de choses dedans." }
+    { src: 'assets/biblio/disjoncteur-differentiel-hager.jpeg',
+      alt: "Photo d’un disjoncteur différentiel Hager de branchement, dont l’étiquette porte la mention « Disjoncteur différentiel » et ses caractéristiques.",
+      titre: "C’est écrit dessus.", sous: "Sur un appareil, le nom est imprimé. C’est le premier endroit à regarder." }
   ],
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 

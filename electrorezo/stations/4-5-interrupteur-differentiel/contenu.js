@@ -7,10 +7,12 @@ ModeleAppareil.construire({
   narration: NARRATION,
 
   photos: [
-    { src: 'assets/biblio/inter-differentiel-gris.png', alt: "Photo d’un interrupteur différentiel gris avec son bouton de test rouge.",
-      titre: "Le bouton de test.", sous: "Le bouton coloré n’est pas un décor : il crée un vrai défaut pour vérifier l’appareil." },
-    { src: 'assets/biblio/differentiel-hager.jpeg', alt: "Photo d’un dispositif de protection différentielle modulaire.",
-      titre: "En tête de rangée.", sous: "Il protège tous les circuits qui sont derrière lui." }
+    { src: 'assets/biblio/le-differentiel-dans-le-tableau.png',
+      alt: "Un interrupteur différentiel 40 A, 30 milliampères de type AC, photographié à côté de son symbole : deux contacts repérés « interrupteur » et, en dessous, le tore repéré « déclencheur différentiel ».",
+      titre: "L’appareil et son symbole.", sous: "Deux contacts, un tore — et rien d’autre. Le bouton bleu, c’est le test." },
+    { src: 'assets/biblio/tableau-residentiel-avec-differentiel.png',
+      alt: "Schéma d’un tableau résidentiel : le disjoncteur d’abonné, puis l’interrupteur différentiel 40 A / 30 mA en tête de rangée, et derrière lui les disjoncteurs divisionnaires alimentés par les peignes.",
+      titre: "En tête de rangée.", sous: "Il protège tous les circuits qui sont derrière lui — et eux seuls." }
   ],
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 

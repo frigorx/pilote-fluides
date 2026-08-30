@@ -66,14 +66,14 @@ const SchemasProtection = (() => {
 <text x="410" y="46" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">Combien de temps avant de fondre ?</text>
 <line x1="120" y1="320" x2="740" y2="320" stroke="${C.navy}" stroke-width="3"/>
 <line x1="120" y1="320" x2="120" y2="80" stroke="${C.navy}" stroke-width="3"/>
-<text x="740" y="348" text-anchor="end" font-size="13" fill="${C.gris}">courant qui traverse →</text>
+<text x="128" y="344" font-size="13" fill="${C.gris}">le courant qui traverse →</text>
 <text x="110" y="76" text-anchor="end" font-size="13" fill="${C.gris}">temps</text>
 <path id="cGG" d="M150 110 C 260 118 330 200 400 268 C 450 305 520 314 620 316"
       fill="none" stroke="${C.bleu}" stroke-width="6"/>
 <path id="cAM" d="M150 118 C 330 122 470 190 560 268 C 600 302 650 314 700 316"
       fill="none" stroke="${C.orange}" stroke-width="6" stroke-dasharray="12 8"/>
-<text x="250" y="150" font-size="15" font-weight="700" fill="${C.bleu}">gG — usage général</text>
-<text x="430" y="188" font-size="15" font-weight="700" fill="${C.orange}">aM — accompagnement moteur</text>
+<text x="158" y="98" font-size="15" font-weight="700" fill="${C.bleu}">gG — usage général</text>
+<text x="452" y="146" font-size="15" font-weight="700" fill="${C.orange}">aM — accompagnement moteur</text>
 <g id="pointeDem">
   <rect x="470" y="252" width="150" height="60" rx="10" fill="none" stroke="${C.vert}"
         stroke-width="3" stroke-dasharray="7 5"/>
@@ -107,8 +107,8 @@ const SchemasProtection = (() => {
 
 <g id="dBilame">
   <path id="lame" d="M180 110 h140" fill="none" stroke="${C.rouge}" stroke-width="10" stroke-linecap="round"/>
-  <text x="250" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="${C.rouge}">le bilame</text>
-  <text x="250" y="152" text-anchor="middle" font-size="13" fill="${C.gris}">il se courbe en chauffant — lentement</text>
+  <text x="250" y="134" text-anchor="middle" font-size="14" font-weight="700" fill="${C.rouge}">le bilame</text>
+  <text x="250" y="158" text-anchor="middle" font-size="13" fill="${C.gris}">il se courbe en chauffant — lentement</text>
 </g>
 
 <g id="dBobine">
@@ -165,8 +165,8 @@ const SchemasProtection = (() => {
 
 <line x1="120" y1="174" x2="560" y2="174" stroke="${C.orange}" stroke-width="6"/>
 <line x1="120" y1="228" x2="560" y2="228" stroke="${C.bleu}" stroke-width="6"/>
-<text x="130" y="160" font-size="13" font-weight="700" fill="${C.orange}">phase — ce qui part</text>
-<text x="130" y="252" font-size="13" font-weight="700" fill="${C.bleu}">neutre — ce qui revient</text>
+<text x="404" y="160" font-size="13" font-weight="700" fill="${C.orange}">phase — ce qui part</text>
+<text x="404" y="252" font-size="13" font-weight="700" fill="${C.bleu}">neutre — ce qui revient</text>
 
 <g id="fuite" opacity="0">
   <path d="M560 174 L640 174 L640 300" fill="none" stroke="${C.rouge}" stroke-width="6"/>
@@ -209,8 +209,8 @@ const SchemasProtection = (() => {
     const d = svg('0 0 840 470', 'Tableau des neuf stations de la ligne 4 et des trois défauts.');
     const lignes = L.map(([id, nom, a, b, c], i) => {
       const y = 128 + i * 36, courant = id === idCourant;
-      const m = (v, x) => `<text x="${x}" y="${y + 5}" text-anchor="middle" font-size="16"
-        font-weight="800" fill="${v ? C.vert : C.rouge}">${v ? '✔' : '✘'}</text>`;
+      const m = (v, x) => `<text x="${x}" y="${y + 5}" text-anchor="middle" font-size="13.5"
+        font-weight="800" fill="${v ? C.vert : C.rouge}">${v ? '✔ oui' : '✘ non'}</text>`;
       return `
 <rect x="24" y="${y - 20}" width="792" height="32" rx="7"
       fill="${courant ? '#e3f5ec' : (i % 2 ? C.creme : C.papier)}"

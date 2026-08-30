@@ -3,7 +3,7 @@
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Un demi-cercle, posé sur une base. C'est le compagnon du crochet que vous venez de voir,
+  decouvrir: `Un demi-cercle, traversé par le fil. C'est le compagnon du crochet que vous venez de voir,
 et on les trouve très souvent l'un sous l'autre sur le même symbole.
 Ce qu'il annonce : cet appareil surveille le courant, et il réagit tout de suite. Pas dans dix
 secondes. Tout de suite.`,

@@ -7,14 +7,15 @@ ModeleAppareil.construire({
   narration: NARRATION,
 
   photos: [
-    { src: 'assets/biblio/constitution-du-contacteur.png',
-      alt: "Planche détaillant la constitution d’un contacteur : la fixation, l’électro-aimant, la bobine et les contacts.",
-      titre: "Où on la trouve.", sous: "Dans un contacteur, c’est elle qui fait tout le travail." },
     { src: 'assets/biblio/bobine-et-ressort.jpeg',
-      alt: "Schéma technique d’un contacteur montrant la bobine, le ressort de rappel et le circuit magnétique.",
-      titre: "Bobine et ressort.", sous: "Deux forces opposées : l’aimant tire, le ressort résiste." }
+      alt: "Coupe légendée d’un contacteur : le socle, la partie fixe et la partie mobile de l’électro-aimant, la bobine avec son repère de tension, la bague de déphasage, le ressort de rappel, les contacts fixe et mobile.",
+      titre: "Tout est là, et tout est nommé.",
+      sous: "La bobine, le ressort qui s’y oppose, et la bague de déphasage qui l’empêche de vibrer." },
+    { src: 'assets/biblio/constitution-du-contacteur.png',
+      alt: "Les mêmes pièces, éclatées : la fixation, la partie fixe de l’électro-aimant, la bague de déphasage, la bobine, le ressort de rappel et le bloc des contacts.",
+      titre: "Séparées.",
+      sous: "Le même appareil, démonté. Repérez la bague de déphasage : c’est elle qui fait le silence." }
   ],
-
   aQuoiCaSert: "À transformer du courant en force. Un fil enroulé autour d’un morceau de fer, et voilà un aimant qu’on peut allumer et éteindre. C’est le point de départ de toute la ligne 6 — et de la moitié de la ligne 5.",
   ouOnLeTrouve: "Dans un contacteur, un relais, un électro-aimant de porte, une électrovanne, un frein de moteur. Chaque fois qu’un courant doit produire un mouvement franc, il y a une bobine.",
 

@@ -44,7 +44,7 @@ const SchemasReseaux = (() => {
 
 <!-- la charge -->
 <rect x="470" y="60" width="80" height="150" rx="6" fill="none" stroke="${C.navy}" stroke-width="4"/>
-<text x="510" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">la machine</text>
+<text x="510" y="78" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">la machine</text>
 <rect x="462" y="52" width="96" height="166" rx="8" fill="none" stroke="${C.gris}" stroke-width="2" stroke-dasharray="6 4"/>
 <text x="566" y="58" font-size="11" fill="${C.gris}">carcasse métallique</text>
 
@@ -178,10 +178,10 @@ ${cbe(2 * Math.PI / 3, C.navy, 3.5)}
 ${cbe(4 * Math.PI / 3, C.vert, 3.5)}
 ${avecSomme ? `<line x1="100" y1="170" x2="700" y2="170" stroke="${C.rouge}" stroke-width="5" stroke-dasharray="12 6"/>` : ''}
 
-<text x="716" y="120" text-anchor="end" font-size="13" font-weight="700" fill="${C.orange}">L1</text>
-<text x="716" y="142" text-anchor="end" font-size="13" font-weight="700" fill="${C.navy}">L2</text>
-<text x="716" y="164" text-anchor="end" font-size="13" font-weight="700" fill="${C.vert}">L3</text>
-${avecSomme ? `<text x="716" y="188" text-anchor="end" font-size="13" font-weight="700" fill="${C.rouge}">somme</text>` : ''}
+<text x="702" y="120" font-size="13" font-weight="700" fill="${C.orange}">L1</text>
+<text x="702" y="142" font-size="13" font-weight="700" fill="${C.navy}">L2</text>
+<text x="702" y="164" font-size="13" font-weight="700" fill="${C.vert}">L3</text>
+${avecSomme ? `<text x="702" y="188" font-size="13" font-weight="700" fill="${C.rouge}">somme</text>` : ''}
 
 <text x="380" y="266" text-anchor="middle" font-size="13" fill="${C.gris}">${avecSomme
   ? 'C’est pour cela qu’un neutre peut être plus fin que les phases : sur une installation équilibrée, il ne ramène presque rien.'
@@ -237,7 +237,7 @@ ${['L1 – N', 'L2 – N', 'L3 – N'].map((t, i) => `
 <text x="350" y="38" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${composee ? 'Entre deux phases : la tension composée' : 'Entre une phase et le neutre : la tension simple'}</text>
 
 <circle cx="${cx}" cy="${cy}" r="4" fill="${C.navy}"/>
-<text x="${cx - 10}" y="${cy + 20}" text-anchor="end" font-size="13" font-weight="700" fill="${C.bleu}">N</text>
+<text x="${cx + 14}" y="${cy - 8}" font-size="13" font-weight="700" fill="${C.bleu}">N</text>
 
 ${[[x1, y1, 'L1', C.orange], [x2, y2, 'L2', C.navy], [x3, y3, 'L3', C.vert]].map(([x, y, t, coul]) => `
 <line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"
@@ -381,7 +381,7 @@ ${B.map(b => {
 
 <text x="350" y="392" text-anchor="middle" font-size="13" fill="${C.gris}">Aucune pièce ne bouge. Ce sont les trois courants qui, en se décalant, font tourner leur effet combiné.</text>
 <text x="350" y="414" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">Le rotor n’a qu’à suivre. C’est tout le principe du moteur asynchrone.</text>
-<text x="530" y="300" text-anchor="middle" font-size="12.5" fill="${sens > 0 ? C.navy : C.orange}">${sens > 0 ? 'Câblage L1 · L2 · L3 — les bobines sont fixes' : 'L2 et L3 échangées — les bobines n’ont pas bougé, le champ tourne à l’envers'}</text>`;
+<text x="350" y="344" text-anchor="middle" font-size="12.5" fill="${sens > 0 ? C.navy : C.orange}">${sens > 0 ? 'Câblage L1 · L2 · L3 — les bobines sont fixes' : 'L2 et L3 échangées — les bobines, elles, n’ont pas bougé'}</text>`;
     };
     peindre();
     hote.appendChild(d);

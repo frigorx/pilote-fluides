@@ -7,13 +7,14 @@ ModeleAppareil.construire({
   narration: NARRATION,
 
   photos: [
-    { src: 'assets/biblio/moteur-a-courant-continu.jpeg',
-      alt: "Schéma du fonctionnement d’un moteur à courant continu à aimants permanents, avec son stator, son rotor, ses balais et son collecteur.",
-      titre: "Le moteur à courant continu.", sous: "Deux balais qui frottent sur un collecteur." },
-    { src: 'assets/biblio/aimants-permanents.jpeg',
-      alt: "Second schéma du moteur à courant continu à aimants permanents, détaillant le rôle du collecteur.",
-      titre: "Le collecteur.", sous: "C’est lui qui inverse le courant à chaque demi-tour." }
+    { src: 'assets/collecteur-et-balais.svg',
+      alt: "Coupe d’un moteur à courant continu : deux aimants fixes marqués N et S dans le stator, un bobinage sur le rotor, et sous l’arbre un collecteur fendu en deux segments sur lesquels frottent deux balais reliés au plus et au moins.",
+      titre: "Le moteur à courant continu.", sous: "Deux aimants fixes, deux balais, un anneau fendu. Pas de champ tournant du tout." },
+    { src: 'assets/biblio/polarites-qui-s-inversent.jpeg',
+      alt: "Deux vues d’un même moteur alternatif dont les polarités N et S du stator sont inversées de l’une à l’autre : toutes les centièmes de seconde elles s’inversent, et le rotor effectue un demi-tour.",
+      titre: "Le synchrone, lui, suit l’alternance.", sous: "Les polarités s’inversent cent fois par seconde, et le rotor reste accroché." }
   ],
+  creditPhoto: 'La coupe du moteur à courant continu est dessinée pour cette station : la base d’images n’en contient aucun. Détail dans « Crédits ».',
 
   aQuoiCaSert: "À situer l’asynchrone parmi les autres. Il existe deux autres grandes familles de moteurs, et connaître leurs qualités permet de comprendre pourquoi l’asynchrone a fini par gagner presque partout.",
   ouOnLeTrouve: "Le synchrone dans les alternateurs, les gros entraînements précis, les moteurs de vélo électrique. Le courant continu dans les outils portatifs, les jouets, les essuie-glaces, les démarreurs de voiture.",

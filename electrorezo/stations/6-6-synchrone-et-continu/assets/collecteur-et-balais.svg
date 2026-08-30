@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380" width="680" height="380" role="img"
+     aria-label="Le moteur à courant continu : deux aimants fixes, un bobinage sur le rotor, et un collecteur fendu sur lequel frottent deux balais. À chaque demi-tour, les balais changent de segment et le courant du rotor s’inverse.">
+<rect width="680" height="380" fill="#fffdf8"/>
+<text x="340" y="30" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="15"
+      font-weight="700" fill="#1b3a63">Pas de champ tournant : un collecteur</text>
+
+<!-- les deux aimants fixes du stator -->
+<rect x="34" y="86" width="52" height="120" rx="4" fill="#c0392b" stroke="#1b3a63" stroke-width="2.5"/>
+<text x="60" y="154" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="20"
+      font-weight="700" fill="#fffdf8">N</text>
+<rect x="278" y="86" width="52" height="120" rx="4" fill="#1b3a63" stroke="#1b3a63" stroke-width="2.5"/>
+<text x="304" y="154" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="20"
+      font-weight="700" fill="#fffdf8">S</text>
+<text x="182" y="74" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12" fill="#637285">le stator ne bouge pas — deux aimants</text>
+
+<!-- le rotor et son bobinage -->
+<circle cx="182" cy="146" r="58" fill="none" stroke="#1b3a63" stroke-width="3"/>
+<rect x="150" y="102" width="64" height="88" rx="6" fill="none" stroke="#c9451a" stroke-width="4"/>
+<text x="182" y="151" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12"
+      font-weight="700" fill="#c9451a">bobinage</text>
+<path d="M226 116 A 46 46 0 0 1 226 176" fill="none" stroke="#1e7e54" stroke-width="4"/>
+<path d="M218 168 L228 178 L236 168" fill="none" stroke="#1e7e54" stroke-width="4"/>
+
+<!-- l'arbre et le collecteur -->
+<line x1="182" y1="204" x2="182" y2="252" stroke="#1b3a63" stroke-width="4"/>
+<path d="M152 282 A 30 30 0 0 1 212 282 Z" fill="#c07a3e" stroke="#1b3a63" stroke-width="2.5"/>
+<path d="M152 282 A 30 30 0 0 0 212 282 Z" fill="#e0c9a6" stroke="#1b3a63" stroke-width="2.5"/>
+<line x1="182" y1="252" x2="182" y2="312" stroke="#1b3a63" stroke-width="2.5"/>
+
+<!-- les deux balais, de part et d'autre -->
+<rect x="112" y="270" width="30" height="24" rx="3" fill="#4a4a4a" stroke="#1b3a63" stroke-width="2"/>
+<rect x="222" y="270" width="30" height="24" rx="3" fill="#4a4a4a" stroke="#1b3a63" stroke-width="2"/>
+<line x1="112" y1="282" x2="64" y2="282" stroke="#c9451a" stroke-width="3.5"/>
+<line x1="252" y1="282" x2="300" y2="282" stroke="#1b3a63" stroke-width="3.5"/>
+<text x="58" y="287" text-anchor="end" font-family="Bitter,Georgia,serif" font-size="16"
+      font-weight="700" fill="#c9451a">+</text>
+<text x="306" y="288" font-family="Bitter,Georgia,serif" font-size="18" font-weight="700" fill="#1b3a63">−</text>
+
+<!-- les étiquettes, toutes sous le dessin : aucune ne croise un tracé -->
+<text x="127" y="324" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="11" fill="#637285">balai</text>
+<text x="237" y="324" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="11" fill="#637285">balai</text>
+<text x="182" y="348" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12"
+      font-weight="700" fill="#1b3a63">le collecteur</text>
+<text x="182" y="366" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="11" fill="#637285">un anneau fendu en deux</text>
+
+<line x1="372" y1="58" x2="372" y2="356" stroke="rgba(27,58,99,.18)" stroke-width="2" stroke-dasharray="6 6"/>
+
+<!-- ce que fait le collecteur -->
+<text x="526" y="86" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="13"
+      font-weight="700" fill="#1b3a63">Ce que fait le collecteur</text>
+<text x="396" y="118" font-family="Bitter,Georgia,serif" font-size="12.5" fill="#637285">Sans lui, le rotor ferait un demi-tour,</text>
+<text x="396" y="138" font-family="Bitter,Georgia,serif" font-size="12.5" fill="#637285">se retrouverait aligné avec l’aimant,</text>
+<text x="396" y="158" font-family="Bitter,Georgia,serif" font-size="12.5" fill="#637285">et s’arrêterait là.</text>
+
+<text x="396" y="196" font-family="Bitter,Georgia,serif" font-size="12.5" font-weight="700" fill="#1b3a63">À chaque demi-tour, les balais passent</text>
+<text x="396" y="216" font-family="Bitter,Georgia,serif" font-size="12.5" font-weight="700" fill="#1b3a63">d’un segment à l’autre.</text>
+<text x="396" y="240" font-family="Bitter,Georgia,serif" font-size="12.5" font-weight="700" fill="#1b3a63">Le courant du rotor s’inverse,</text>
+<text x="396" y="260" font-family="Bitter,Georgia,serif" font-size="12.5" font-weight="700" fill="#1b3a63">et il est relancé.</text>
+
+<text x="396" y="300" font-family="Bitter,Georgia,serif" font-size="12.5" fill="#c0392b">C’est ingénieux — et c’est aussi</text>
+<text x="396" y="320" font-family="Bitter,Georgia,serif" font-size="12.5" fill="#c0392b">la pièce qui s’use.</text>
+</svg>
