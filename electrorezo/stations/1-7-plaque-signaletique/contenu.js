@@ -6,6 +6,11 @@ ModeleGrandeur.construire({
   titre: "Lire une plaque signalétique",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.2', quoi: "la tension" },
+    { id: '1.4', quoi: "la puissance" },
+  ],
+
   photos: [
     { src: 'assets/biblio/plaque-leroy-somer.png',
       alt: "Photographie d’une plaque signalétique métallique d’un moteur asynchrone Leroy Somer, avec ses tensions, intensités, puissance, vitesse et facteur de puissance.",

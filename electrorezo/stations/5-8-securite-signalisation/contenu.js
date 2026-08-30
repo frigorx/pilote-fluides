@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "Arrêt d’urgence et signalisation",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '5.7', quoi: "les boutons" },
+    { id: '5.2', quoi: "le contacteur" },
+  ],
+
   photos: [
     { src: 'assets/biblio/pupitre-boutons-et-coup-de-poing.jpeg',
       alt: "Photo d’un pupitre portant plusieurs boutons-poussoirs noirs et un bouton rouge en champignon.",

@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: "Le contact auxiliaire",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '5.2', quoi: "le contacteur" },
+  ],
+
   photos: [
     { src: 'assets/biblio/bornes-a1-a2-et-auxiliaire.png',
       alt: "Schéma des bornes d’un contacteur Schneider : A1, A2, les contacts de puissance et le contact auxiliaire.",

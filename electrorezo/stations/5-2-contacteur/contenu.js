@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: "Le contacteur",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '5.1', quoi: "les contacts NO et NF" },
+  ],
+
   photos: [
     { src: 'assets/biblio/contacteur-lc1d09.png',
       alt: "Photo d’un contacteur Schneider LC1D09 TeSys, gris et blanc, avec ses bornes de raccordement.",

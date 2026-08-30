@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: 'L’interrupteur-sectionneur',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '3.1', quoi: "l’interrupteur" },
+    { id: '3.2', quoi: "le sectionneur" },
+  ],
+
   photos: [
     { src: 'assets/biblio/inter-sectionneur-proximite.png',
       alt: 'Photo d’un interrupteur rotatif noir à bande blanche, fixé sur un boîtier métallique.',

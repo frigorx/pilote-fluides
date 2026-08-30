@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: "Le variateur de tension",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '7.1', quoi: "pourquoi la tension ne suffit pas" },
+  ],
+
   photos: [
     { src: 'assets/gradateur-en-coupe.svg',
       alt: "Le principe du gradateur : un interrupteur électronique en série sur la phase, commandé à chaque alternance, qui laisse passer la fin de l’onde et coupe le début.",

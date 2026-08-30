@@ -6,6 +6,10 @@ ModeleGrandeur.construire({
   titre: "Phase, neutre et protection",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.2', quoi: "la tension" },
+  ],
+
   photos: [
     { src: 'assets/biblio/couleurs-des-conducteurs.png',
       alt: "Planche des couleurs normalisées : la phase dans toutes les couleurs sauf bleu et vert-jaune, le neutre toujours en bleu, la terre obligatoirement en vert et jaune.",

@@ -7,6 +7,8 @@ ModeleSigne.construire({
   lettre: 'conducteur',
   narration: NARRATION,
 
+  prerequis: [],   /* première de sa ligne : elle ne suppose rien */
+
   ceQuelleDit: 'Le trait, c’est un conducteur : un fil, une piste, quelque chose par où le courant peut passer. C’est la lettre la plus fréquente de toute l’écriture du schéma.',
   ouOnLaVoit: 'Partout. Un plan est fait de traits reliés entre eux ; tous les autres signes viennent s’insérer dessus.',
 

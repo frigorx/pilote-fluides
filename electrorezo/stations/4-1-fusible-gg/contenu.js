@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "Le fusible gG",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.8', quoi: "les trois défauts" },
+    { id: '3.4', quoi: "le porte-fusible" },
+  ],
+
   photos: [
     { src: 'assets/biblio/fusibles-et-outil.jpeg',
       alt: "Cinq cartouches fusibles de formats différents posées côte à côte : une petite à culot, deux cylindriques, une grande cylindrique de 22 sur 58 et une à couteaux de 125 ampères. Le calibre et la lettre sont imprimés sur le corps de chacune.",

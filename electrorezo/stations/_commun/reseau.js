@@ -84,5 +84,12 @@ const RESEAU = {
   avant(id) {
     const i = this.stations.findIndex(s => s.id === id);
     return i <= 0 ? null : this.stations[i - 1];
+  },
+
+  /* Le dossier d'une station, pour lui faire un lien depuis une autre.
+     Sert au rappel des prérequis, qui pointe en arrière. */
+  dossierDe(id) {
+    const s = this.stations.find(s => s.id === id);
+    return s ? s.dossier : null;
   }
 };

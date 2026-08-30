@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "Le disjoncteur magnéto-thermique",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.8', quoi: "les trois défauts" },
+    { id: '4.1', quoi: "le fusible" },
+  ],
+
   photos: [
     { src: 'assets/biblio/les-deux-declencheurs.jpg',
       alt: "Deux phrases d’un document de cours, chacune suivie de son symbole : le déclencheur thermique, dessiné par un crochet rectangulaire, détecte les surcharges ; le déclencheur magnétique, dessiné par un demi-cercle, détecte les courts-circuits.",

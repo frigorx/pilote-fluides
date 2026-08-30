@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: "Bouton-poussoir et sélecteur",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '5.1', quoi: "les contacts NO et NF" },
+  ],
+
   photos: [
     { src: 'assets/biblio/tete-corps-et-bloc.png',
       alt: "Planche légendée montrant les trois pièces d’un appareil de commande : la tête (tournante ou poussoir), le corps, et le bloc de contact.",

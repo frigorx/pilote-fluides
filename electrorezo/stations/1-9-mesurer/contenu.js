@@ -6,6 +6,12 @@ ModeleGrandeur.construire({
   titre: "Mesurer : multimètre et pince",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.1', quoi: "le courant" },
+    { id: '1.2', quoi: "la tension" },
+    { id: '1.3', quoi: "la résistance" },
+  ],
+
   photos: [
     { src: 'assets/biblio/multimetre-et-pince.jpeg',
       alt: "Photo d’un multimètre numérique et d’une pince ampèremétrique posés côte à côte.",

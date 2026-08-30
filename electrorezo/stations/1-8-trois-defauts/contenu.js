@@ -6,6 +6,11 @@ ModeleGrandeur.construire({
   titre: "Les trois défauts",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.1', quoi: "le courant" },
+    { id: '1.3', quoi: "la résistance" },
+  ],
+
   photos: [
     { src: 'assets/biblio/courbe-de-danger.jpeg',
       alt: "Courbe normalisée des zones temps-courant des effets du courant alternatif sur le corps humain, de la perception à la fibrillation cardiaque.",

@@ -6,6 +6,11 @@ ModeleGrandeur.construire({
   titre: "La résistance et la loi d’Ohm",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.1', quoi: "le courant" },
+    { id: '1.2', quoi: "la tension" },
+  ],
+
   photos: [
     { src: 'assets/biblio/loi-ohm-lampe.jpeg',
       alt: "Schéma d’une lampe traversée par 0,25 ampère, de résistance 20 ohms, avec le calcul U égale R fois I qui donne 5 volts.",

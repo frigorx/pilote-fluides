@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "Le transformateur",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '6.1', quoi: "la bobine" },
+    { id: '1.2', quoi: "la tension" },
+  ],
+
   photos: [
     { src: 'assets/biblio/primaire-et-secondaire.png',
       alt: "Schéma d’un transformateur : le circuit magnétique en fer, le bobinage primaire à gauche, le bobinage secondaire à droite, et le flux qui circule dans le fer.",

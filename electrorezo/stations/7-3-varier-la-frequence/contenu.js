@@ -6,6 +6,11 @@ ModeleGrandeur.construire({
   titre: "Faire varier la fréquence",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.6', quoi: "la fréquence" },
+    { id: '6.3', quoi: "le moteur asynchrone" },
+  ],
+
   photos: [
     { src: 'assets/la-vraie-solution.svg',
       alt: "Comparaison : en baissant la tension la vitesse ne bouge pas et le couple s’effondre ; en baissant la fréquence avec la tension qui suit, la vitesse baisse vraiment et le couple reste entier.",

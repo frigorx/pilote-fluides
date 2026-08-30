@@ -6,6 +6,8 @@ ModeleGrandeur.construire({
   titre: "Le courant et l’intensité",
   narration: NARRATION,
 
+  prerequis: [],   /* première de sa ligne : elle ne suppose rien */
+
   photos: [
     { src: 'assets/biblio/pince-affichant-1000-A.jpeg',
       alt: "Photo d’une pince ampèremétrique dont l’écran affiche une valeur de courant de 1000 ampères.",

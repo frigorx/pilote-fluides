@@ -6,6 +6,10 @@ ModeleGrandeur.construire({
   titre: "Le réseau triphasé",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '2.2', quoi: "le monophasé" },
+  ],
+
   photos: [
     { src: 'assets/biblio/trois-sinusoides-decalees.jpeg',
       alt: "Trois courbes sinusoïdales de même amplitude, décalées d’un tiers de période l’une par rapport à l’autre.",

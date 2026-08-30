@@ -8,6 +8,12 @@ ModeleSigne.construire({
   lettre: 'contact',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '8.5', quoi: "le crochet" },
+    { id: '8.6', quoi: "le demi-cercle" },
+    { id: '8.3', quoi: "la barre" },
+  ],
+
   ceQuelleDit: 'Vous connaissez l’alphabet : le trait, le point, le contact, la barre, le rectangle, le crochet, le demi-cercle, le pointillé, la bobine, le rond, les repères. Une dizaine de signes — et de quoi lire des centaines de symboles.',
   ouOnLaVoit: 'Partout, et surtout dans les symboles que personne ne vous a jamais montrés. C’est là que la méthode se prouve.',
 

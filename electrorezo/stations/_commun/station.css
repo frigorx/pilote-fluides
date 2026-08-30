@@ -199,3 +199,15 @@ dialog h2{margin-top:0;color:var(--navy)}
 .famille h3{margin:0 0 .3rem;font-size:1em;color:var(--navy)}
 .famille p{margin:0 0 .3rem}
 @media (max-width:560px){.symbole-jeu img{min-height:170px}}
+
+/* ------------------------------------------------------- le rappel des acquis
+   LA SPIRALE. Une ligne, en tête de station, qui nomme ce qu'il faut avoir en
+   tête et donne le chemin pour y retourner. Discrète par construction : celui
+   qui sait la traverse du regard, celui qui a oublié y trouve un clic plutôt
+   qu'une station qu'il ne comprend pas. */
+.prerequis{max-width:1180px;margin:0 auto .5rem;padding:.45rem .8rem;font-size:.9rem;
+           color:var(--muted);background:var(--cream);border:1px solid var(--line);
+           border-radius:10px}
+.prerequis strong{color:var(--navy);font-weight:700}
+.prerequis a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+.prerequis a:hover,.prerequis a:focus-visible{color:var(--orange)}

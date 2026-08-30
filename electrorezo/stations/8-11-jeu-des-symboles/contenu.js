@@ -90,6 +90,11 @@ Station.demarrer({
   kicker: 'ÉlectroRézo · Ligne 8 Lire un schéma · Station 11',
   titre: "Le jeu des symboles",
   narration: NARRATION,
+
+  prerequis: [
+    { id: '8.10', quoi: "déchiffrer un symbole" },
+    { id: '5.9', quoi: "lire un schéma" },
+  ],
   niveaux: [{ id: 'CAP', libelle: 'CAP' }, { id: 'BAC', libelle: 'Bac pro' }],
 
   temps: [

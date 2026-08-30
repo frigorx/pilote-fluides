@@ -6,6 +6,11 @@ ModeleAppareil.construire({
   titre: "Le disjoncteur moteur",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '4.3', quoi: "le magnéto-thermique" },
+    { id: '3.2', quoi: "le sectionnement" },
+  ],
+
   photos: [
     { src: 'assets/biblio/disjoncteurs-gv2.jpg', alt: "Schémas techniques de disjoncteurs moteurs magnéto-thermiques, avec leurs plages de réglage.",
       titre: "Les plages de réglage.", sous: "Chaque modèle couvre une plage : on choisit celle où tombe l’intensité du moteur." },

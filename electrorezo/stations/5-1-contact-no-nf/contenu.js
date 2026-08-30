@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: "Le contact : repos et travail",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '3.1', quoi: "le contact qui s’ouvre" },
+  ],
+
   photos: [
     { src: 'assets/biblio/trois-contacts-auxiliaires.png',
       alt: "Trois blocs de contacts pour contacteur, photographiés et légendés : instantané latéral, temporisé, instantané frontal.",

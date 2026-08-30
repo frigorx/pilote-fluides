@@ -359,6 +359,35 @@ const Station = (() => {
       });
     } else if (btC) btC.classList.add('hidden');
 
+    /* ------------------------------------------------- ce qu'il faut avoir en tête
+       LA SPIRALE. Une station ne se lit pas dans le vide : elle suppose des
+       choses vues avant. On les rappelle en une ligne, en tête, avec un lien
+       vers la station qui les explique — pas un resume, un chemin. Celui qui
+       sait passe outre sans y penser ; celui qui a oublie sait ou retourner
+       en un clic, au lieu de subir une station qu'il ne comprend pas.
+
+       Le rappel s'abrege de lui-meme au fil du parcours : les premieres
+       stations d'une ligne ne supposent rien, les suivantes s'appuient sur
+       ce qui vient d'etre vu, et les dernieres sur trois choses au plus. */
+    const avant = contenu.prerequis || [];
+    if (avant.length) {
+      const bande = el('p', 'prerequis');
+      bande.appendChild(el('strong', null, 'À avoir en tête : '));
+      avant.forEach((p, i) => {
+        if (i) bande.appendChild(document.createTextNode(' · '));
+        const d = (typeof RESEAU !== 'undefined' && RESEAU.dossierDe)
+          ? RESEAU.dossierDe(p.id) : null;
+        if (d) {
+          const a = document.createElement('a');
+          a.href = '../' + d + '/index.html';
+          a.textContent = p.quoi + ' (' + p.id + ')';
+          bande.appendChild(a);
+        } else bande.appendChild(document.createTextNode(p.quoi + ' (' + p.id + ')'));
+      });
+      const hote = $('#scene');
+      hote.parentNode.insertBefore(bande, hote);
+    }
+
     const corr = $('#corresp');
     (contenu.correspondances || []).forEach(c => {
       const s = el('span', 'lien');

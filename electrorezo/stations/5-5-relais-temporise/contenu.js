@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: "Le relais temporisé",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '5.4', quoi: "le relais" },
+  ],
+
   photos: [
     { src: 'assets/biblio/bloc-temporise-sur-contacteur.png',
       alt: "Schéma du câblage d’un contacteur équipé d’un bloc temporisé clipsé en façade.",

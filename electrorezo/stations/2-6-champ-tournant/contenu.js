@@ -6,6 +6,11 @@ ModeleGrandeur.construire({
   titre: "Le champ tournant",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '2.3', quoi: "le triphasé" },
+    { id: '1.6', quoi: "la fréquence" },
+  ],
+
   photos: [
     { src: 'assets/biblio/deux-contacteurs-pour-deux-sens.png',
       alt: "Schéma d’un moteur triphasé commandé par deux contacteurs K1 et K2, dont les raccordements diffèrent par l’échange de deux phases.",

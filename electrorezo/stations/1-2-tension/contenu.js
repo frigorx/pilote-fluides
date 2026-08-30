@@ -6,6 +6,10 @@ ModeleGrandeur.construire({
   titre: "La tension",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.1', quoi: "le courant" },
+  ],
+
   photos: [
     { src: 'assets/biblio/mesure-de-tension-sur-un-circuit.png',
       alt: "Schéma d’un multimètre relié par ses deux pointes de touche à un circuit, affichant une tension.",

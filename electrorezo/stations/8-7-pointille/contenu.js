@@ -7,6 +7,10 @@ ModeleSigne.construire({
   lettre: 'pointille',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '5.2', quoi: "le contacteur" },
+  ],
+
   ceQuelleDit: "Une ligne interrompue qui ne conduit aucun courant. Elle dit : ces deux pièces sont solidaires mécaniquement, même si elles sont loin l’une de l’autre sur le plan.",
   ouOnLaVoit: "Entre la bobine d’un contacteur et ses contacts, entre un bilame et le contact qu’il commande, partout où un appareil a plusieurs morceaux dispersés.",
 

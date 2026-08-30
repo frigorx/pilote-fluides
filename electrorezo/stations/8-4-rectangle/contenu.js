@@ -7,6 +7,11 @@ ModeleSigne.construire({
   lettre: 'rectangle',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '4.1', quoi: "le fusible" },
+    { id: '8.1', quoi: "le trait" },
+  ],
+
   ceQuelleDit: "Un rectangle posé sur le trait du circuit : ici, le courant traverse quelque chose. Pas un appareil qui s’ouvre — un élément que le courant doit franchir.",
   ouOnLaVoit: "Sur les fusibles surtout, mais aussi sur les résistances et sur bien d’autres éléments insérés dans un circuit.",
 

@@ -7,6 +7,10 @@ ModeleAppareil.construire({
   titre: 'L’interrupteur',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '1.1', quoi: "le courant" },
+  ],
+
   photos: [
     { src: 'assets/biblio/interrupteur.jpeg',
       alt: 'Photo d’un interrupteur électrique gris encastré dans un cadre blanc, avec deux barres de commande au centre.',

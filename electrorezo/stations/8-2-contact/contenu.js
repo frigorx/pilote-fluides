@@ -7,6 +7,11 @@ ModeleSigne.construire({
   lettre: 'contact',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '3.1', quoi: "l’interrupteur" },
+    { id: '8.1', quoi: "le trait et le point" },
+  ],
+
   ceQuelleDit: "Un trait incliné posé sur un point : ici, le circuit peut s’ouvrir ou se fermer. C’est la lettre la plus fréquente de tout le schéma, après le trait lui-même.",
   ouOnLaVoit: "Dans presque tous les symboles d’appareillage. Ce qui change d’un appareil à l’autre, ce sont les signes qu’on lui accroche.",
 

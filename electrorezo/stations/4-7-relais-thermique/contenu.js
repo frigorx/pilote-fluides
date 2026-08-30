@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: "Le relais thermique",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '4.3', quoi: "le déclencheur thermique" },
+  ],
+
   photos: [
     { src: 'assets/biblio/relais-schneider-lr2.png', alt: "Photo d’un relais thermique modulaire noir, avec sa molette de réglage et sa fenêtre de lecture.",
       titre: "La molette, encore.", sous: "Comme le disjoncteur moteur : on le règle sur l’intensité de la plaque." },

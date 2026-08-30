@@ -6,6 +6,10 @@ ModeleGrandeur.construire({
   titre: "Le réseau monophasé",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '2.1', quoi: "phase, neutre et PE" },
+  ],
+
   photos: [
     { src: 'assets/biblio/deux-fils-et-la-terre.png',
       alt: "Schéma de câblage d’un moteur monophasé avec sa phase, son neutre et sa terre.",

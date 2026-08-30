@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: "Le relais électromécanique",
   narration: NARRATION,
 
+  prerequis: [
+    { id: '5.2', quoi: "le contacteur" },
+  ],
+
   photos: [
     { src: 'assets/relais-et-son-embase.svg',
       alt: "Coupe d’un relais enfichable : bobine, circuit magnétique, armature attirée, ressort de rappel et contacts fins ; en dessous, l’embase à broches sur laquelle il se pose.",

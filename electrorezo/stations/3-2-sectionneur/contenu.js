@@ -6,6 +6,10 @@ ModeleAppareil.construire({
   titre: 'Le sectionneur',
   narration: NARRATION,
 
+  prerequis: [
+    { id: '3.1', quoi: "l’interrupteur" },
+  ],
+
   photos: [
     { src: 'assets/biblio/sectionneur.jpeg',
       alt: 'Photo d’un sectionneur blanc muni d’une poignée noire de manœuvre.',
