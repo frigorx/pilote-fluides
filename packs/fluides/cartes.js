@@ -985,7 +985,7 @@ export const CARTES = [
       "<p><b>Deux mécanismes, pas un seul.</b> L'azote agit uniquement par <b>déplacement</b> : il est inerte, il prend la place de l'oxygène sans réagir avec l'organisme. Le CO₂, lui, agit <b>en plus par lui-même</b> : il n'est pas inerte, il intervient dans la régulation de la respiration et devient nocif à des concentrations où l'oxygène restant serait encore suffisant. Autrement dit, le CO₂ peut vous mettre en danger <b>avant</b> d'avoir chassé assez d'oxygène pour qu'un contrôle du seul taux d'oxygène s'en alarme. C'est pourquoi, sur une installation au CO₂, <b>un détecteur d'oxygène seul ne suffit pas</b> : il faut une mesure du CO₂ lui-même.</p>" +
       "<p>N'en concluez pas que les fluides fluorés sont inoffensifs : à forte concentration, ils agissent eux aussi sur l'organisme — effet sur le rythme du cœur, effet endormant. Leur fiche de données de sécurité le mentionne. « A » n'a jamais voulu dire inoffensif.</p>" +
       "<p><b>Ce que vous ressentirez — et pourquoi c'est déjà tard.</b> Contrairement à l'azote, qui ne prévient pas du tout, le CO₂ <b>donne des signes</b> : souffle court puis <b>essoufflement violent</b>, <b>maux de tête</b>, <b>vertiges</b>, bourdonnements, sueurs. La raison est celle vue en fiche « L'air qui manque » : c'est l'excès de gaz carbonique dans le sang qui commande l'envie de respirer. Ces signes sont votre <b>seule chance</b> — mais ils arrivent alors que vous êtes <b>déjà dans la nappe</b>, et à forte concentration la perte de connaissance suit en quelques instants. D'où une règle simple : <b>essoufflement brutal ou mal de tête soudain dans un local technique, vous ressortez immédiatement</b>. On ne cherche pas à comprendre sur place, on ne finit pas le geste en cours.</p>" +
-      "<p><b>Pourquoi on entre sans le savoir.</b> Le CO₂ est <b>incolore</b>, <b>inodore</b>, et <b>plus lourd que l'air</b>. Il ne monte pas : il s'écoule et <b>s'accumule dans les points bas</b> — fosse, cave, sous-sol, local en contrebas, bas d'une chambre froide. Une zone peut être parfaitement respirable à hauteur de visage et déjà mortelle au niveau du sol, ou en bas de quelques marches. Descendre, c'est entrer dans la nappe.</p>" +
+      "<p><b>Pourquoi on entre sans le savoir.</b> Le CO₂ est <b>incolore</b>, <b>inodore</b>, et <b>plus lourd que l'air</b>. Il ne monte pas : il s'écoule et <b>s'accumule dans les points bas</b> — fosse, cave, sous-sol, local en contrebas, bas d'une chambre froide. Une zone peut être parfaitement respirable à hauteur de visage et déjà mortelle au niveau du sol, ou en bas de quelques marches. Descendre, c'est entrer dans la nappe. La répartition réelle dépend de la fuite et du local — un jet sous pression brasse le gaz, une ventilation le dilue : la nappe au point bas est le cas défavorable, celui qu'on suppose toujours tant qu'une <b>mesure</b> n'a pas dit le contraire.</p>" +
       "<p><b>Attention à ne pas généraliser cette règle.</b> « Plus lourd que l'air » vaut pour le CO₂ et pour la plupart des fluides fluorés — mais <b>pas pour l'ammoniac</b> (R-717), plus léger que l'air, qui se comporte à l'inverse : il monte. Le comportement d'un fluide se lit sur sa FDS, il ne se suppose jamais par analogie avec le fluide précédent.</p>" +
       "<p><b>Comment ça arrive vraiment.</b> Une installation au CO₂ en local technique enterré, une fuite lente pendant la nuit, porte fermée. Le gaz remplit le volume par le bas. Au matin, un technicien descend relever un paramètre. Rien ne se voit, rien ne se sent. À mi-escalier, il a mal à la tête et le souffle court — il met cela sur le compte de la fatigue et continue, parce qu'il n'en a que pour deux minutes. Il ne remonte pas. Puis vient le second accident, celui qui tue le plus souvent dans cette famille d'accidents : un collègue le voit au sol et descend le chercher, sans protection. La nappe est toujours là. <b>Deux victimes au lieu d'une.</b></p>",
     blocs: [
@@ -1500,7 +1500,7 @@ export const CARTES = [
       "<li>Calculer l'écart entre les deux pesées. C'est la quantité réelle, pas une estimation.</li>" +
       "<li>Reporter aussitôt le résultat au registre : date, quantité, intervenant.</li>" +
       "</ol>" +
-      "<p>Cas particulier : un fluide <b>zéotrope</b>, composé de plusieurs corps, se charge toujours en <b>phase liquide</b>. Le sortir en phase gazeuse changerait sa composition en cours de route.</p>" +
+      "<p>Cas particulier : un fluide <b>zéotrope</b>, composé de plusieurs corps, se <b>soutire toujours de la bouteille en phase liquide</b> : le sortir en phase gazeuse changerait sa composition en cours de route. Le mode d'introduction dans le circuit, lui, suit l'opération et la documentation constructeur.</p>" +
       lienOutil(
         "packs/fluides/res/mission-bouteilles/index.html",
         "🧪 Lancer le cours interactif : Mission Bouteilles — identifier, peser, ne jamais surremplir",
@@ -1644,11 +1644,11 @@ export const CARTES = [
       "<p>Au niveau européen, le texte de base est le <b>règlement (UE) 2024/573</b>. C'est un <b>règlement</b>, jamais une « directive » : il s'applique directement dans tous les pays de l'Union, sans loi française pour le recopier. Il a remplacé l'ancien règlement 517/2014.</p>" +
       "<p>Au niveau français, l'<b>arrêté du 21 novembre 2025</b> — un texte signé par un ministre — précise comment appliquer ce règlement sur le terrain.</p>" +
       "<p>Pour réaliser les <b>opérations réglementées</b> sur ces fluides — mise en service, entretien, contrôle d'étanchéité, récupération —, il vous faut une <b>attestation d'aptitude</b> personnelle. Votre entreprise, elle, doit avoir une <b>attestation de capacité</b>. Ce sont deux papiers obligatoires, et ce n'est pas le même.</p>" +
-      "<p>Chaque équipement a un <b>registre</b> : un carnet qui garde la trace de chaque intervention (charge, contrôle, fuite, réparation). C'est l'<b>exploitant</b> (le propriétaire ou l'utilisateur de la machine) qui doit le tenir à jour, sur papier ou sur ordinateur.</p>" +
+      "<p>Lorsqu'un équipement est <b>soumis au contrôle d'étanchéité</b>, il doit avoir un <b>registre</b> : un carnet qui garde la trace de chaque intervention (charge, contrôle, fuite, réparation). C'est l'<b>exploitant</b> (le propriétaire ou l'utilisateur de la machine) qui doit le tenir à jour, sur papier ou sur ordinateur.</p>" +
       "<p>Quand l'équipement est trop vieux ou cassé, il part dans la filière <b>DEEE</b> (déchets d'équipements électriques et électroniques). Cette filière s'occupe de la carcasse de la machine, pas du fluide : vous devez le récupérer avant, à part.</p>" +
       "<p>Enfin, l'<b>écoconception</b> : dès la fabrication, les constructeurs doivent concevoir des appareils qui durent plus longtemps et qui polluent moins.</p>",
     blocs: [
-      { type: "cle", t: "Ce qu'il faut retenir", html: "<ul><li>Le texte européen est un <b>règlement</b> — (UE) 2024/573 — jamais une « directive ».</li><li><b>Attestation d'aptitude</b> : c'est pour vous, la personne.</li><li><b>Attestation de capacité</b> : c'est pour l'entreprise.</li><li><b>Registre</b> de l'équipement : tenu par l'exploitant, papier ou électronique.</li><li><b>DEEE</b> : la filière de fin de vie de la machine, pas du fluide.</li></ul>" },
+      { type: "cle", t: "Ce qu'il faut retenir", html: "<ul><li>Le texte européen est un <b>règlement</b> — (UE) 2024/573 — jamais une « directive ».</li><li><b>Attestation d'aptitude</b> : c'est pour vous, la personne.</li><li><b>Attestation de capacité</b> : c'est pour l'entreprise.</li><li><b>Registre</b> : pour tout équipement soumis au contrôle d'étanchéité — tenu par l'exploitant, papier ou électronique.</li><li><b>DEEE</b> : la filière de fin de vie de la machine, pas du fluide.</li></ul>" },
       { type: "piege", t: "L'erreur classique", html: "<p>Apprendre par cœur un chiffre précis (seuil, date, délai) vu dans une ancienne fiche. Le régime des fluides a changé avec le <b>règlement (UE) 2024/573</b> et l'<b>arrêté du 21 novembre 2025</b>. Face à un chiffre, réflexe unique : vérifier le texte en vigueur, jamais le deviner.</p>" },
     ],
     question: {
@@ -1690,7 +1690,7 @@ export const CARTES = [
       "et la refoule en haute pression ; le <b>condenseur</b> évacue la chaleur et liquéfie ; " +
       "le <b>détendeur</b> fait chuter la pression ; l'<b>évaporateur</b> absorbe la chaleur du milieu " +
       "à refroidir. Basse pression du côté froid, haute pression du côté chaud.</p>" +
-      "<p>Une autre grandeur sert tous les jours au frigoriste : la <b>masse volumique</b> (on dit aussi <b>densité</b>). C'est la masse contenue dans un volume donné, en <b>kg/m³</b>. Pour un même fluide, la vapeur et le liquide n'ont pas du tout la même masse volumique : un litre de liquide pèse beaucoup plus lourd qu'un litre de vapeur. C'est pour ça qu'on charge un circuit en <b>phase liquide</b> plutôt qu'en vapeur : on fait entrer beaucoup plus de matière pour le même volume de bouteille, et le dimensionnement des tuyauteries en tient compte.</p>" +
+      "<p>Une autre grandeur sert tous les jours au frigoriste : la <b>masse volumique</b> (on dit aussi <b>densité</b>). C'est la masse contenue dans un volume donné, en <b>kg/m³</b>. Pour un même fluide, la vapeur et le liquide n'ont pas du tout la même masse volumique : un litre de liquide pèse beaucoup plus lourd qu'un litre de vapeur. Cette différence se retrouve dans le dimensionnement des tuyauteries. Pour charger un circuit, en revanche, elle ne décide de rien : le <b>mode d'introduction</b> du fluide, en phase liquide ou en phase vapeur, suit la <b>procédure du constructeur</b>. Une règle s'y ajoute pour les <b>mélanges zéotropes</b> : on les <b>soutire toujours de la bouteille en phase liquide</b>, car les sortir en vapeur changerait leur composition en route.</p>" +
       "<p>Sur le diagramme du fluide, la grandeur qu'on lit en abscisse s'appelle l'<b>enthalpie</b>. C'est l'énergie contenue dans un kilo de fluide, en <b>kJ/kg</b> (kilojoule par kilo). Elle sert à calculer ce que l'évaporateur absorbe et ce que le condenseur évacue : plus l'écart d'enthalpie entre l'entrée et la sortie est grand, plus l'échange de chaleur est important.</p>",
     blocs: [
       {
@@ -1814,9 +1814,9 @@ export const CARTES = [
         t: "Le palier des mélanges n'est pas plat",
         html:
           "Ce qui vient d'être dit vaut pour un <b>corps pur</b>. Dans un <b>mélange zéotrope</b> " +
-          "(les R-4xx), les composants ne bouillent pas tous à la même température : pendant le " +
+          "(nombre de mélanges de la série R-4xx), les composants ne bouillent pas tous à la même température : pendant le " +
           "changement d'état, la température <b>monte lentement</b> au lieu de rester fixe. " +
-          "C'est le <b>glissement</b>. Conséquence directe : le point de bulle et le point de rosée " +
+          "C'est le <b>glissement</b> — marqué sur certains mélanges, quasi nul sur d'autres. Conséquence directe : le point de bulle et le point de rosée " +
           "ne sont plus à la même température, et il faut savoir <b>lequel des deux</b> la table de " +
           "saturation vous donne avant de calculer quoi que ce soit.",
       },
@@ -1863,7 +1863,7 @@ export const CARTES = [
         "🫧 Lancer le cours interactif : faire bouillir sans feu",
         "12 étapes racontées : cloche à vide, relation pression–température, températures de saturation, évaporateur et condenseur, lecture manomètre–table, point de bulle, point de rosée, glissement des zéotropes et défi final — environ 15 minutes."
       ) +
-      schema("diagramme-logph.svg", "Le diagramme log p-h : la cloche sépare le liquide, le mélange et la vapeur surchauffée ; le cycle s'y trace en quatre transformations qui forment un rectangle.") +
+      schema("diagramme-logph.svg", "Le diagramme log p-h : la cloche sépare le liquide, le mélange et la vapeur surchauffée ; le cycle idéal s'y trace en quatre transformations qui forment un rectangle.") +
       "<p>Le <b>diagramme log p-h</b> raconte en image ce que la fiche précédente a raconté en mots. " +
       "Deux axes seulement. En <b>ordonnée</b>, la <b>pression</b>. En <b>abscisse</b>, l'<b>enthalpie</b> : " +
       "l'énergie contenue dans un kilo de fluide.</p>" +
@@ -1885,7 +1885,7 @@ export const CARTES = [
       "la <b>condensation</b>, à haute pression. Le trait <b>descendant de gauche</b> : la " +
       "<b>détente</b>. Le trait <b>horizontal du bas</b> : l'<b>évaporation</b>, à basse pression. " +
       "Compresseur à droite, condenseur en haut, détendeur à gauche, évaporateur en bas : " +
-      "<b>c'est la croix du frigoriste</b>. Le diagramme n'invente rien, il met le circuit à plat.</p>" +
+      "<b>c'est la croix du frigoriste</b>. Le diagramme n'invente rien, il met le circuit à plat.</p><p>Ce rectangle bien net est celui du <b>cycle idéal</b> : la détente y est supposée <b>isenthalpique</b> — à enthalpie constante, le trait tombe droit —, l'évaporation et la condensation <b>isobares</b> — à pression constante, les traits restent horizontaux —, et la compression sans pertes. Sur une machine réelle, les <b>pertes de charge</b> inclinent légèrement les paliers et la compression s'écarte du tracé idéal : le rectangle se déforme un peu.</p>" +
       "<p>Et c'est là que le diagramme devient un outil de terrain. Sur le trait du <b>bas</b>, ce qui " +
       "dépasse à droite de la courbe de rosée, c'est la <b>surchauffe</b>. Sur le trait du <b>haut</b>, " +
       "ce qui dépasse à gauche de la courbe de bulle, c'est le <b>sous-refroidissement</b>. " +
@@ -1944,7 +1944,7 @@ export const CARTES = [
       choix: ["La compression", "La condensation", "La détente", "L'évaporation"],
       bonne: 3,
       explication:
-        "Le trait du bas est celui de la basse pression : c'est l'évaporation. Le trait du haut, à haute pression, est la condensation ; le trait montant de droite est la compression ; le trait descendant de gauche est la détente. C'est la croix du frigoriste, mise à plat.",
+        "Le trait du bas est celui de la basse pression : c'est l'évaporation. Le trait du haut, à haute pression, est la condensation ; le trait montant de droite est la compression ; le trait descendant de gauche est la détente. C'est la croix du frigoriste, mise à plat. Ce rectangle est celui du cycle idéal — détente isenthalpique, paliers isobares : sur une machine réelle, pertes de charge et compression non idéale le déforment un peu.",
       remediation_vers: "g1b",
     },
     criteres: [
@@ -2028,13 +2028,13 @@ export const CARTES = [
         html:
           "<b>Surchauffe nulle</b>, ligne d'aspiration givrée → du liquide part vers le compresseur. " +
           "On agit <b>tout de suite</b>.<br>" +
-          "<b>Surchauffe élevée</b> → l'évaporateur est mal alimenté : détendeur trop fermé, " +
+          "<b>Surchauffe élevée</b> → l'évaporateur est mal alimenté : détendeur trop fermé ou déréglé, filtre encrassé, " +
           "ou charge insuffisante.<br>" +
           "<b>Sous-refroidissement effondré</b> → il manque du fluide, ou de la vapeur passe dans la " +
           "ligne liquide.<br>" +
           "<b>Sous-refroidissement anormalement élevé</b> → du liquide s'accumule dans le " +
           "condenseur : charge excessive, ou sortie de condenseur gênée.<br>" +
-          "Aucune de ces lectures ne conclut seule : c'est la <b>convergence</b> des indices qui " +
+          "Aucune de ces lectures ne conclut seule — une même valeur peut venir du circuit, de l'échange (débit d'air ou d'eau, charge thermique inhabituelle) ou de la <b>mesure elle-même</b> (sonde, manomètre) : c'est la <b>convergence</b> des indices qui " +
           "oriente le diagnostic.",
       },
       {
@@ -2150,7 +2150,7 @@ export const CARTES = [
       ],
       bonne: 1,
       explication:
-        "La série R-4xx désigne les mélanges zéotropes : plusieurs fluides assemblés, avec un glissement de température. La lettre majuscule finale (A, B, C) distingue les proportions du mélange.",
+        "La série R-4xx désigne les mélanges zéotropes : plusieurs fluides assemblés, avec un glissement de température dont l'ampleur varie d'un mélange à l'autre — quasi nul sur certains, plusieurs kelvins sur d'autres. La lettre majuscule finale (A, B, C) distingue les proportions du mélange.",
       remediation_vers: "g1c",
     },
     criteres: [
@@ -3653,7 +3653,7 @@ export const CARTES = [
       ],
       bonne: 1,
       explication:
-        "BP basse + surchauffe élevée + sous-refroidissement effondré + bulles au voyant : le circuit manque de fluide. C'est un diagnostic par méthode indirecte — il reste à localiser la fuite par méthode directe, puis à consigner.",
+        "BP basse + surchauffe élevée + sous-refroidissement effondré + bulles au voyant : le manque de fluide est l'hypothèse qui explique les quatre relevés à la fois. Avant de conclure, on écarte ce qui en imiterait une partie — restriction ou filtre encrassé, détendeur déréglé, charge thermique inhabituelle, débit d'air ou d'eau réduit, sonde ou manomètre en défaut. Ce tri fait, la méthode indirecte a dit son dernier mot : il reste à localiser la fuite par méthode directe, puis à consigner.",
       remediation_vers: "g4b",
     },
     criteres: [
@@ -4383,7 +4383,7 @@ export const CARTES = [
       "le condenseur laisse la place à un <b>refroidisseur de gaz</b>. Les cylindres, à double vanne, " +
       "ne se raccordent pas au matériel courant.</p>" +
       "<p><b>Ammoniac (R-717)</b> — classé <b>B2L</b> : <b>toxique</b> et faiblement inflammable. " +
-      "Fluide du froid industriel (agroalimentaire, entrepôts), jamais du résidentiel. " +
+      "Fluide très majoritairement du froid industriel (agroalimentaire, entrepôts) — pas d'usage résidentiel en pratique. " +
       "Son odeur piquante se perçoit très tôt — mais elle <b>ne remplace aucune mesure</b>, et elle " +
       "s'émousse à forte concentration : on ne se fie jamais à son nez pour décider. En cas de " +
       "fuite : <b>alerter, évacuer, ne jamais intervenir seul</b>.</p>" +

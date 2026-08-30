@@ -284,6 +284,15 @@ const CORRECTIONS = {
     explication:
       "En cas de fuite massive, on doit pouvoir sortir en poussant la porte, même en panique et même si la pression du local a monté. Le sens d'ouverture est un choix de sécurité.",
   },
+
+  /* Relecture métier du 30/08/2026 : « l'impact climatique est
+     négligeable » concluait sur tout le bilan alors que le GWP ne dit
+     que l'effet DIRECT d'une fuite — le bilan d'une installation dépend
+     aussi de sa consommation. */
+  v6_185: {
+    explication:
+      "GWP = 1 : la référence de l'échelle. Kilo pour kilo, une fuite de CO₂ pèse des milliers de fois moins qu'un HFC — c'est l'impact direct ; le bilan complet dépend aussi de l'efficacité de l'installation.",
+  },
 };
 
 /* --------------------------------------------------------------------- */

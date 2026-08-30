@@ -5723,11 +5723,8 @@
    "Sa couleur verte"
   ],
   "bonne": 1,
-  "explication": "Son GWP de 1 — Le CO₂ a le GWP de référence (1). Même en cas de fuite totale, l'impact climatique est négligeable par rapport aux HFC.",
+  "explication": "GWP = 1 : la référence de l'échelle. Kilo pour kilo, une fuite de CO₂ pèse des milliers de fois moins qu'un HFC — c'est l'impact direct ; le bilan complet dépend aussi de l'efficacité de l'installation.",
   "aide": "GWP = 1 = impact minimal. C'est la référence même du calcul.",
-  "remed": {
-   "texte": "Le CO₂ a le GWP de référence (1). Même en cas de fuite totale, l'impact climatique est négligeable par rapport aux HFC."
-  },
   "remediation_vers": "g13",
   "code": "2.02",
   "chapitre": "13",

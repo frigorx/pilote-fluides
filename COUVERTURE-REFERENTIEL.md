@@ -18,4 +18,4 @@
 
 ---
 
-*Référentiel conforme à la source amont (`habilitation-fluide`).*
+*Dépôt amont absent de cette machine : copie du référentiel non vérifiée.*

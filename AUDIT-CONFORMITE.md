@@ -11,8 +11,8 @@
 | Cours avec anomalie critique automatisable | **35** |
 | Cours avec dette documentaire ou de reprise | **43** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **10** |
-| SVG pédagogiques contrôlés | **46** |
-| SVG sans titre / sans description textuelle | **3 / 41** |
+| SVG pédagogiques contrôlés | **48** |
+| SVG sans titre / sans description textuelle | **5 / 43** |
 
 ## Contrôle des cours interactifs
 
@@ -58,7 +58,7 @@
 | `mission-bouteilles` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `module-compresseur` | ✗ | ✓ | ✓ | ✓ | absente | — | — | 🔴 description |
 | `nomenclature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `parcours-manometres` | ✓ | ✓ | ✓ | ✓ | commune | 18 | ✓ | 🟠 ancien fond #EEF2F6 (2) |
+| `parcours-manometres` | ✓ | ✓ | ✓ | ✓ | commune | 6 | ✓ | 🟠 ancien fond #EEF2F6 (2) |
 | `pose-manifold-2-voies-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pose-manifold-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pression-temperature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
@@ -96,8 +96,8 @@
 
 ## Titres et descriptions des SVG
 
-- Sans titre : `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `motif-flocon.svg`.
-- Sans description : `aptitude-capacite.svg`, `balayage-azote.svg`, `balayage-detecteur.svg`, `chaleur-sensible-latente.svg`, `charge-limite-local.svg`, `classes-securite.svg`, `co2-nh3-compare.svg`, `co2-point-bas.svg`, `co2-protection.svg`, `compresseurs.svg`, `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `detendeur-regulation.svg`, `detendeurs-ligne.svg`, `diagramme-logph.svg`, `echangeur-air.svg`, `epreuve-azote.svg`, `familles-fluides.svg`, `frise-histoire.svg`, `givre-degivrage.svg`, `intro-securite.svg`, `lecture-table.svg`, `lie-domaine.svg`, `manifold-lecture.svg`, `mesure-surchauffe.svg`, `motif-flocon.svg`, `nomenclature.svg`, `ordre-vannes.svg`, `pesee-charge.svg`, `prepa-chantier.svg`, `pression-absolue-relative.svg`, `prp-echelle.svg`, `recuperation.svg`, `s1-double-accident.svg`, `secu-bouteille.svg`, `secu-consignation.svg`, `secu-decomposition-ari.svg`, `secu-espace-clos.svg`, `secu-flamme.svg`, `secu-projection.svg`, `tirage-au-vide.svg`.
+- Sans titre : `condenseur-trois-zones.svg`, `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `motif-flocon.svg`, `regulateurs-kv-places.svg`.
+- Sans description : `aptitude-capacite.svg`, `balayage-azote.svg`, `balayage-detecteur.svg`, `chaleur-sensible-latente.svg`, `charge-limite-local.svg`, `classes-securite.svg`, `co2-nh3-compare.svg`, `co2-point-bas.svg`, `co2-protection.svg`, `compresseurs.svg`, `condenseur-trois-zones.svg`, `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `detendeur-regulation.svg`, `detendeurs-ligne.svg`, `diagramme-logph.svg`, `echangeur-air.svg`, `epreuve-azote.svg`, `familles-fluides.svg`, `frise-histoire.svg`, `givre-degivrage.svg`, `intro-securite.svg`, `lecture-table.svg`, `lie-domaine.svg`, `manifold-lecture.svg`, `mesure-surchauffe.svg`, `motif-flocon.svg`, `nomenclature.svg`, `ordre-vannes.svg`, `pesee-charge.svg`, `prepa-chantier.svg`, `pression-absolue-relative.svg`, `prp-echelle.svg`, `recuperation.svg`, `regulateurs-kv-places.svg`, `s1-double-accident.svg`, `secu-bouteille.svg`, `secu-consignation.svg`, `secu-decomposition-ari.svg`, `secu-espace-clos.svg`, `secu-flamme.svg`, `secu-projection.svg`, `tirage-au-vide.svg`.
 
 ## Ce que cet audit ne valide pas
 
