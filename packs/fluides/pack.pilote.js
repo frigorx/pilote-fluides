@@ -11389,7 +11389,7 @@ window.PILOTE_PACK = {
    "id": "c00",
    "type": "accueil",
    "titre": "Habilitation fluides frigorigènes",
-   "corps": "<p class=\"lead\">Quatre catégories, un seul référentiel : <b>A1</b> et <b>A2</b> couvrent toute l'activité, <b>D</b> la récupération seule, <b>E</b> le contrôle d'étanchéité sans ouvrir le circuit.</p><p>Choisis ton parcours — ou va directement <b>réviser par thème</b> : cet outil est fait pour t'accompagner <b>avant</b> la formation, <b>pendant</b> les périodes en entreprise et jusqu'à l'épreuve. Chaque question corrigée renvoie vers la fiche à relire. Progression conseillée en formation : <b>E → D → A2 → A1</b>.</p>",
+   "corps": "<p class=\"lead\">Quatre catégories, un seul référentiel : <b>A1</b> et <b>A2</b> couvrent toute l'activité, <b>D</b> la récupération seule, <b>E</b> le contrôle d'étanchéité sans ouvrir le circuit.</p><p>Choisissez votre parcours — ou allez directement <b>réviser par thème</b> : cet outil est fait pour vous accompagner <b>avant</b> la formation, <b>pendant</b> les périodes en entreprise et jusqu'à l'épreuve. Chaque question corrigée renvoie vers la fiche à relire. Progression conseillée en formation : <b>E → D → A2 → A1</b>.</p>",
    "menu_titre": "Choisir un parcours",
    "liens": [
     {
@@ -12080,7 +12080,7 @@ window.PILOTE_PACK = {
    "type": "menu",
    "titre": "Réviser par thème",
    "dc": "Auto-formation · avant, pendant, après",
-   "corps": "<p class=\"lead\">Cet espace est fait pour être utilisé <b>seul</b> : avant la formation pour arriver préparé, pendant les périodes de stage pour entretenir, avant l'épreuve pour cibler.</p><p>Chaque série corrige <b>immédiatement</b>, chaque erreur renvoie vers la fiche à relire, et le bilan de fin liste tes points faibles. Ton <b>score précédent</b> s'affiche à chaque nouvelle tentative : bats-le.</p>",
+   "corps": "<p class=\"lead\">Cet espace est fait pour être utilisé <b>seul</b> : avant la formation pour arriver préparé, pendant les périodes de stage pour entretenir, avant l'épreuve pour cibler.</p><p>Chaque série corrige <b>immédiatement</b>, chaque erreur renvoie vers la fiche à relire, et le bilan de fin liste vos points faibles. Votre <b>score précédent</b> s'affiche à chaque nouvelle tentative : battez-le.</p>",
    "menu_titre": "Choisir un thème",
    "liens": [
     {
@@ -14046,7 +14046,7 @@ window.PILOTE_PACK = {
     {
      "type": "cle",
      "t": "L'astuce du + 90",
-     "html": "Ajoute 90 au code, et tu lis directement C, H, F : <b>134 + 90 = 224</b> → C₂H₂F₄ (R-134a). <b>22 + 90 = 112</b> → C·H·F₂… plus un <b>chlore</b> pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. <b>290 + 90 = 380</b> → C₃H₈ : le propane, zéro fluor, zéro chlore."
+     "html": "Ajoutez 90 au code, et vous lisez directement C, H, F : <b>134 + 90 = 224</b> → C₂H₂F₄ (R-134a). <b>22 + 90 = 112</b> → C·H·F₂… plus un <b>chlore</b> pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. <b>290 + 90 = 380</b> → C₃H₈ : le propane, zéro fluor, zéro chlore."
     },
     {
      "type": "piege",
@@ -14196,7 +14196,7 @@ window.PILOTE_PACK = {
    "titre": "Quarante ans d'histoire : de l'ozone au climat",
    "dc": "G2 · code 2.01",
    "minuteur_s": 420,
-   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=g2a\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Quarante ans d'histoire : de l'ozone au climat ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/frise-histoire.svg\" alt=\"Frise : CFC années 1930, trou d'ozone 1985, Montréal 1987, Kyoto 1997, Paris 2015, Kigali 2016, F-Gas III 2024.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Dans les années 1930, les <b>CFC</b> sont des fluides « miracle » : stables, ni toxiques, ni inflammables. Cinquante ans plus tard, la facture arrive : en <b>1985</b>, on découvre le <b>trou dans la couche d'ozone</b> au-dessus de l'Antarctique — le chlore des CFC casse l'ozone qui filtre les <b>UV-B</b>. En <b>1987</b>, le <b>protocole de Montréal</b> organise leur sortie, puis celle des HCFC : la couche se répare, c'est le plus grand succès environnemental mondial.</p><p>Mais les remplaçants, les <b>HFC</b>, inoffensifs pour l'ozone, sont de puissants gaz à effet de serre. Le combat change de terrain : <b>Kyoto</b> (1997) les inscrit parmi les six gaz visés, l'<b>accord de Paris</b> (2015) fixe le cap des +1,5 °C, et l'<b>amendement de Kigali</b> (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations — celles de ton métier.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=g2a\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Quarante ans d'histoire : de l'ozone au climat ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris.</span></p><img src=\"packs/fluides/res/svg/frise-histoire.svg\" alt=\"Frise : CFC années 1930, trou d'ozone 1985, Montréal 1987, Kyoto 1997, Paris 2015, Kigali 2016, F-Gas III 2024.\" style=\"width:100%;height:auto;display:block;margin:0 0 18px;border:1px solid #d7e0e8;border-radius:8px\"><p>Dans les années 1930, les <b>CFC</b> sont des fluides « miracle » : stables, ni toxiques, ni inflammables. Cinquante ans plus tard, la facture arrive : en <b>1985</b>, on découvre le <b>trou dans la couche d'ozone</b> au-dessus de l'Antarctique — le chlore des CFC casse l'ozone qui filtre les <b>UV-B</b>. En <b>1987</b>, le <b>protocole de Montréal</b> organise leur sortie, puis celle des HCFC : la couche se répare, c'est le plus grand succès environnemental mondial.</p><p>Mais les remplaçants, les <b>HFC</b>, inoffensifs pour l'ozone, sont de puissants gaz à effet de serre. Le combat change de terrain : <b>Kyoto</b> (1997) les inscrit parmi les six gaz visés, l'<b>accord de Paris</b> (2015) fixe le cap des +1,5 °C, et l'<b>amendement de Kigali</b> (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations — celles de votre métier.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -14278,8 +14278,8 @@ window.PILOTE_PACK = {
      "html": "Un HFC a un <b>ODP nul</b> (il ne détruit pas l'ozone) et pourtant un <b>PRP fort</b>. Dire « il ne touche pas l'ozone, donc il est propre » est faux. Et un PRP bas ne veut pas dire zéro impact : la question des <b>PFAS</b> se pose désormais sur certains fluides à bas PRP."
     },
     {
-     "t": "À toi : la carte d identité du fluide",
-     "html": "<p style=\"margin:0 0 10px\">Choisis un fluide, entre une charge : les tonnes équivalent CO₂ se calculent. Compare deux fluides à charge égale — c est l exercice qui suit.</p><iframe src=\"packs/fluides/res/outils/fiche-fluide.html\" title=\"Carte d identité du fluide interactive\" style=\"width:100%;height:415px;border:0;background:#fff;border-radius:6px\" loading=\"lazy\"></iframe>"
+     "t": "À vous : la carte d identité du fluide",
+     "html": "<p style=\"margin:0 0 10px\">Choisissez un fluide, entrez une charge : les tonnes équivalent CO₂ se calculent. Comparez deux fluides à charge égale — c est l exercice qui suit.</p><iframe src=\"packs/fluides/res/outils/fiche-fluide.html\" title=\"Carte d identité du fluide interactive\" style=\"width:100%;height:415px;border:0;background:#fff;border-radius:6px\" loading=\"lazy\"></iframe>"
     }
    ],
    "question": {
@@ -14354,7 +14354,7 @@ window.PILOTE_PACK = {
    "titre": "Exercice — deux installations, deux impacts",
    "dc": "G2 · mise en situation",
    "minuteur_s": 420,
-   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x1\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Exercice — deux installations, deux impacts ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 5 minutes. Version imprimable et mode projection compris.</span></p><p>Tu interviens sur deux machines dans le même bâtiment.</p><ul><li><b>Machine A</b> — chambre froide, <b>12 kg</b> de <b>R-404A</b> (PRP = 3922).</li><li><b>Machine B</b> — climatisation, <b>12 kg</b> de <b>R-32</b> (PRP = 675).</li></ul><p>Même charge, même bâtiment, même exploitant. Calcule la charge en tonnes équivalent CO₂ de chacune avant de répondre.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x1\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Exercice — deux installations, deux impacts ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 5 minutes. Version imprimable et mode projection compris.</span></p><p>Vous intervenez sur deux machines dans le même bâtiment.</p><ul><li><b>Machine A</b> — chambre froide, <b>12 kg</b> de <b>R-404A</b> (PRP = 3922).</li><li><b>Machine B</b> — climatisation, <b>12 kg</b> de <b>R-32</b> (PRP = 675).</li></ul><p>Même charge, même bâtiment, même exploitant. Calcule la charge en tonnes équivalent CO₂ de chacune avant de répondre.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -14656,7 +14656,7 @@ window.PILOTE_PACK = {
      "html": "Toujours le même piège : ne pas confondre pression <b>relative</b> (lue au manomètre) et pression <b>absolue</b> (souvent utilisée dans les tables). Écart : environ 1 bar. Et un fluide n'a jamais la table d'un autre."
     },
     {
-     "t": "À toi : refais la lecture croisée",
+     "t": "À vous : refaites la lecture croisée",
      "html": "<p style=\"margin:0 0 10px\">Reprends la réglette : pression relative, conversion en absolu, température de saturation, écart avec la mesure. Hors plage → on soupçonne.</p><iframe src=\"packs/fluides/res/outils/reglette.html\" title=\"Réglette pression-température interactive\" style=\"width:100%;height:445px;border:0;background:#fff;border-radius:6px\" loading=\"lazy\"></iframe>"
     }
    ],
@@ -14847,7 +14847,7 @@ window.PILOTE_PACK = {
    "titre": "Détective — le contrôle qui tourne mal",
    "dc": "G4 · mise en situation · parcours E",
    "minuteur_s": 420,
-   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x4\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Détective — le contrôle qui tourne mal ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Contrôle périodique d'étanchéité chez un client. Le <b>registre</b> t'apprend qu'une fuite a été réparée il y a trois mois sur un raccord flare de la ligne liquide.</p><ul><li>Le contrôle visuel ne montre <b>rien</b> sur le raccord réparé.</li><li>Ton détecteur électronique <b>sonne</b> en passant près du condenseur — ventilateur en marche.</li><li>Sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier.</li></ul>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x4\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Détective — le contrôle qui tourne mal ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Contrôle périodique d'étanchéité chez un client. Le <b>registre</b> t'apprend qu'une fuite a été réparée il y a trois mois sur un raccord flare de la ligne liquide.</p><ul><li>Le contrôle visuel ne montre <b>rien</b> sur le raccord réparé.</li><li>Votre détecteur électronique <b>sonne</b> en passant près du condenseur — ventilateur en marche.</li><li>Sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier.</li></ul>",
    "blocs": [
     {
      "type": "piege",
@@ -15185,7 +15185,7 @@ window.PILOTE_PACK = {
    "titre": "Détective — la bouteille de récupération",
    "dc": "G5 · mise en situation · parcours D",
    "minuteur_s": 420,
-   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x3\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Détective — la bouteille de récupération ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Récupération sur une chambre froide avant remplacement d'un composant. Tu as pesé la bouteille <b>avant</b> de commencer — bon réflexe. La récupération avance, et la balance approche du <b>niveau maximal admissible</b> de la bouteille… mais il reste visiblement du fluide dans le circuit.</p><p>Sur l'étagère du fourgon : une bouteille de récupération <b>vide</b>, et une bouteille <b>entamée</b> qui contient déjà un autre fluide.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x3\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Détective — la bouteille de récupération ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Récupération sur une chambre froide avant remplacement d'un composant. Vous avez pesé la bouteille <b>avant</b> de commencer — bon réflexe. La récupération avance, et la balance approche du <b>niveau maximal admissible</b> de la bouteille… mais il reste visiblement du fluide dans le circuit.</p><p>Sur l'étagère du fourgon : une bouteille de récupération <b>vide</b>, et une bouteille <b>entamée</b> qui contient déjà un autre fluide.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -15195,7 +15195,7 @@ window.PILOTE_PACK = {
    ],
    "question": {
     "type": "qcm",
-    "enonce": "La bouteille atteint son niveau maximal et il reste du fluide à récupérer. Que fais-tu ?",
+    "enonce": "La bouteille atteint son niveau maximal et il reste du fluide à récupérer. Que faites-vous ?",
     "choix": [
      "Je complète un peu au-delà du niveau : quelques centaines de grammes ne changent rien",
      "Je bascule sur la bouteille vide, et je pèse celle-ci avant de continuer",
@@ -16036,7 +16036,7 @@ window.PILOTE_PACK = {
    "titre": "Exercice — la machine ne fait plus de froid",
    "dc": "G8 · G9 · mise en situation",
    "minuteur_s": 480,
-   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x2\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Exercice — la machine ne fait plus de froid ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Chambre froide positive. Le compresseur tourne, mais la température de la chambre ne descend plus. Tu relèves :</p><ul><li>basse pression <b>anormalement basse</b> ;</li><li>surchauffe à l'aspiration <b>très élevée</b>, de l'ordre de 20 K ;</li><li>sous-refroidissement <b>quasi nul</b>, <b>bulles</b> visibles au voyant liquide ;</li><li>aucune trace d'huile visible au premier examen.</li></ul><p>Rappels : surchauffe attendue 5 à 10 K, sous-refroidissement attendu 4 à 8 K.</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x2\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Exercice — la machine ne fait plus de froid ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Chambre froide positive. Le compresseur tourne, mais la température de la chambre ne descend plus. Vous relevez :</p><ul><li>basse pression <b>anormalement basse</b> ;</li><li>surchauffe à l'aspiration <b>très élevée</b>, de l'ordre de 20 K ;</li><li>sous-refroidissement <b>quasi nul</b>, <b>bulles</b> visibles au voyant liquide ;</li><li>aucune trace d'huile visible au premier examen.</li></ul><p>Rappels : surchauffe attendue 5 à 10 K, sous-refroidissement attendu 4 à 8 K.</p>",
    "blocs": [
     {
      "type": "cle",
@@ -16044,7 +16044,7 @@ window.PILOTE_PACK = {
      "html": "On ne conclut pas sur un relevé isolé : on cherche la cause qui explique <b>tous</b> les indices à la fois. Ici, trois indices convergent."
     },
     {
-     "t": "À toi : rejoue la panne sur le Diagramme Enthalpique+",
+     "t": "À vous : rejouez la panne sur le Diagramme Enthalpique+",
      "html": "<p style=\"margin:0 0 10px\">Entre les relevés de l’énoncé dans l’outil (fluide, BP, HP, températures) et regarde le cycle se tracer : la panne se VOIT sur le log p-h.</p><iframe src=\"https://frigorx.github.io/diagramme-enthalpique/\" title=\"Diagramme Enthalpique+ v3.2\" style=\"width:100%;height:760px;border:0;background:#fff;border-radius:6px\" loading=\"lazy\"></iframe>"
     }
    ],
@@ -16111,7 +16111,7 @@ window.PILOTE_PACK = {
      "sec": true
     }
    ],
-   "notes_pilote": "Exercice charnière : il rebranche les composants (G6-G9) sur l'étanchéité (G4). Le laisser chercher en binôme cinq minutes avant de corriger. Erreur fréquente : s'arrêter à « le détendeur est bouché » — plausible pour la surchauffe, mais n'explique ni le sous-refroidissement nul ni les bulles au voyant. Faire verbaliser pourquoi une seule cause explique les trois indices. Enchaîner : « et maintenant, comment localises-tu la fuite ? » → retour en G4c.",
+   "notes_pilote": "Exercice charnière : il rebranche les composants (G6-G9) sur l'étanchéité (G4). Le laisser chercher en binôme cinq minutes avant de corriger. Erreur fréquente : s'arrêter à « le détendeur est bouché » — plausible pour la surchauffe, mais n'explique ni le sous-refroidissement nul ni les bulles au voyant. Faire verbaliser pourquoi une seule cause explique les trois indices. Enchaîner : « et maintenant, comment localisez-vous la fuite ? » → retour en G4c.",
    "categories": [
     "A1",
     "A2",
@@ -16458,7 +16458,7 @@ window.PILOTE_PACK = {
      "html": "<b>Le R-290 est A3</b>, pas A2L. Tout hydrocarbure est très inflammable. Se tromper de classe, c'est se tromper d'EPI, de matériel électrique et de charge admissible. À l'inverse, le <b>CO₂ est A1</b> : toxicité faible, non inflammable — mais cette classe n'annonce ni sa <b>pression</b>, ni l'<b>atmosphère irrespirable</b> qu'une fuite crée en local fermé."
     },
     {
-     "t": "À toi : compare les candidats à la substitution",
+     "t": "À vous : comparez les candidats à la substitution",
      "html": "<p style=\"margin:0 0 10px\">Passe en revue R-290, R-1234yf, R-744, R-32 : classe de sécurité, PRP, glide. Le fluide « parfait » n existe pas — c est tout l objet de ce groupe.</p><iframe src=\"packs/fluides/res/outils/fiche-fluide.html\" title=\"Carte d identité du fluide interactive\" style=\"width:100%;height:415px;border:0;background:#fff;border-radius:6px\" loading=\"lazy\"></iframe>"
     },
     {
@@ -16885,7 +16885,7 @@ window.PILOTE_PACK = {
    "titre": "Détective — intervention sur monobloc R-290",
    "dc": "G12 · mise en situation · A1 et A2",
    "minuteur_s": 480,
-   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x5\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Détective — intervention sur monobloc R-290 ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Une vitrine réfrigérée au <b>R-290</b> à remplacer de compresseur, dans l'arrière-boutique d'une boulangerie : local <b>petit</b>, <b>sans ventilation</b>, un four à quelques mètres.</p><p>Ton collègue propose de « faire vite » : récupérer, ouvrir, braser le nouveau compresseur, recharger — comme sur un circuit HFC classique, « vu la petite charge ».</p>",
+   "corps": "<p class=\"lien-experience\" style=\"margin:16px 0\"><a href=\"packs/fluides/res/capsules/index.html?c=x5\" target=\"_blank\" rel=\"noopener\" style=\"display:inline-block;padding:10px 22px;background:#1b3a63;color:#fff;font-weight:700;text-decoration:none;border-radius:999px\">🎧 Écouter la capsule : Détective — intervention sur monobloc R-290 ▸</a><br><span style=\"font-size:13px;color:#5a6b7d;display:inline-block;margin-top:6px\">Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris.</span></p><p>Une vitrine réfrigérée au <b>R-290</b> à remplacer de compresseur, dans l'arrière-boutique d'une boulangerie : local <b>petit</b>, <b>sans ventilation</b>, un four à quelques mètres.</p><p>Votre collègue propose de « faire vite » : récupérer, ouvrir, braser le nouveau compresseur, recharger — comme sur un circuit HFC classique, « vu la petite charge ».</p>",
    "blocs": [
     {
      "type": "piege",
@@ -16895,7 +16895,7 @@ window.PILOTE_PACK = {
    ],
    "question": {
     "type": "qcm",
-    "enonce": "Que réponds-tu, analyse de risques en main ?",
+    "enonce": "Que répondez-vous, analyse de risques en main ?",
     "choix": [
      "D'accord : la charge est faible, les précautions HFC suffisent",
      "On ventile, on éloigne ou neutralise toute source d'ignition (four compris), on récupère, on inerte à l'azote — et seulement alors on chauffe",

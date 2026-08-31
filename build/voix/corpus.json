@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "genereLe": "2026-08-31T17:34:45.609Z",
+  "genereLe": "2026-08-31T20:15:36.125Z",
   "total": 3750,
   "narrations": [
     {
@@ -126,14 +126,6 @@
       "type": "composition",
       "sources": [
         "packs/fluides/res/condenseur-interactif/app.js"
-      ]
-    },
-    {
-      "cle": "00ae08d1-6244",
-      "texte": "Substitution et efficacité énergétique. Remplacer un fluide à fort PRP se fait dans deux directions : les fluides naturels (CO₂, ammoniac, hydrocarbures) et les fluides de synthèse à faible PRP ( HFO , HFC bas PRP). Il n'existe pas de fluide universel : le choix dépend de l'application, du climat, et de la sécurité du site. La classe de sécurité NF EN 378 commande tout le reste — EPI, zonage, détection, charge admissible dans le local : A1 (CO₂), A2L (R-32, R-1234yf), A3 (R-290), B2L (NH₃). Une classe ne dit pas seulement « ça brûle ou non ». Elle décrit la combustibilité et la propagation de la flamme : un A2L brûle difficilement et la flamme se propage lentement, un A3 s'enflamme facilement et la flamme court vite. De là découlent une charge maximale admissible et des limites d'occupation du local — plus le local est petit ou recevant du public, plus la charge autorisée est faible. Ces valeurs se déterminent selon la NF EN 378 et la doc constructeur, jamais à l'estime . Le stockage et le transport des fluides inflammables , toxiques ou à haute pression obéissent chacun à des règles propres. Et lorsqu'un site ne peut pas respecter les exigences de l' annexe IV du règlement (UE) 2024/573 pour des raisons de sécurité , des équipements dérogatoires restent permis : c'est une exception encadrée, qui se justifie par écrit, pas un passe-droit. Côté énergie, le COP est le rapport de la puissance frigorifique produite à la puissance électrique consommée. On l'améliore en rapprochant la température de condensation de celle d'évaporation : condenseur propre, échangeurs bien dimensionnés, réglages justes. Réduire la charge, enfin, améliore à la fois la sécurité et le rendement. Le rendement se joue aussi à la conception , avant tout réglage. Laisser la haute pression descendre quand l'air extérieur est froid — la condensation flottante — fait gagner beaucoup au compresseur, à condition que le détendeur suive : un thermostatique a besoin d'un écart de pression minimal, un détendeur électronique non. Faire varier la vitesse du compresseur et des ventilateurs colle la puissance au besoin réel et supprime les démarrages à répétition. Un sous-refroidissement soigné donne plus de froid pour la même compression. Enfin la chaleur rejetée au condenseur n'est pas perdue : un désurchauffeur peut la reprendre pour l'eau chaude. La charge , elle, se réduit d'abord par le choix des composants. Un échangeur à plaques brasées contient bien moins de fluide qu'un multitubulaire de même puissance ; un condenseur à microcanaux en contient moins qu'une batterie à tubes et ailettes. Chaque mètre de ligne liquide compte aussi, car le liquide est dense : rapprocher le groupe des postes, et choisir le diamètre juste plutôt que le plus large, retire des kilos à la machine. Une bouteille surdimensionnée, enfin, ne fait que stocker du fluide qui ne travaille pas. Pour réduire la charge de fluide frigorigène, on peut aussi changer la conception du système. Dans un système à boucle secondaire , le fluide frigorigène reste confiné dans la machinerie, avec une charge réduite. Un fluide caloporteur — de l' eau glacée ou de l' eau glycolée — circule ensuite dans les postes (vitrines, centrales de traitement d'air) pour transporter le froid jusqu'à eux. Le fluide frigorigène ne quitte jamais la salle des machines. Le système en cascade pousse cette logique plus loin : deux circuits frigorifiques séparés sont montés en série, chacun avec sa propre charge, réduite elle aussi. Le circuit basse température évacue sa chaleur dans le circuit haute température, qui la rejette à l'extérieur. Chaque circuit reste petit, donc plus facile à confiner en cas de fuite. Chaque fluide de substitution a ses avantages et ses inconvénients , selon l'application et le climat . Le CO₂ est performant en froid commercial, mais son efficacité baisse quand l'air extérieur est très chaud. Les hydrocarbures sont efficaces, mais leur inflammabilité limite la charge autorisée. L' ammoniac est réservé aux installations industrielles, à cause de sa toxicité. Il n'y a pas de meilleur fluide dans l'absolu : le choix se fait selon l'application, le climat du site, et la documentation constructeur, à faire valider avant tout choix. Une machine aux hydrocarbures n'est pas construite comme les autres. Tous les composants électriques en contact possible avec le gaz — relais, thermostats, ventilateurs — sont antidéflagrants ou non étincelants : ils sont conçus pour ne jamais produire d'étincelle qui pourrait enflammer le gaz. La charge de fluide est aussi limitée dès la conception. Enfin, l'implantation prévoit une ventilation adaptée : le propane est plus lourd que l'air, il s'accumule donc en bas, près du sol, en cas de fuite. 📐 Lancer le cours interactif : Tome 4 — bilan thermique et performance ▸ Du besoin thermique à la consommation électrique : parois, produits, air, puis COP, EER, SCOP, SEER et la lecture de la vraie étiquette européenne. Le bilan thermique lui-même dépasse le programme A1 — mais sans lui, « améliorer l efficacité énergétique » reste une formule. Drop-in ou retrofit ?. Drop-in : on change le fluide sans modifier l'installation. Retrofit : on change le fluide et ce qu'il faut adapter — huile, détendeur, joints. Annoncer un drop-in là où il faut un retrofit, c'est préparer une panne. Le piège de l'année. Le R-290 est A3 , pas A2L. Tout hydrocarbure est très inflammable. Se tromper de classe, c'est se tromper d'EPI, de matériel électrique et de charge admissible. À l'inverse, le CO₂ est A1 : toxicité faible, non inflammable — mais cette classe n'annonce ni sa pression , ni l' atmosphère irrespirable qu'une fuite crée en local fermé. À toi : compare les candidats à la substitution. Passe en revue R-290, R-1234yf, R-744, R-32 : classe de sécurité, PRP, glide. Le fluide « parfait » n existe pas — c est tout l objet de ce groupe. Hydrocarbures : une machine pas comme les autres. Antidéflagrant ou non étincelant : sur une machine aux hydrocarbures, tout composant électrique proche du gaz doit respecter cette règle, pour ne jamais produire d'étincelle. Et comme le propane est plus lourd que l'air, il s'accumule en bas en cas de fuite — la ventilation du local en tient compte dès la conception.",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#g11"
       ]
     },
     {
@@ -438,14 +430,6 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/chaleur-circuit-interactif/app.js"
-      ]
-    },
-    {
-      "cle": "037cef7e-920",
-      "texte": "Détective — le contrôle qui tourne mal. 🎧 Écouter la capsule : Détective — le contrôle qui tourne mal ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris. Contrôle périodique d'étanchéité chez un client. Le registre t'apprend qu'une fuite a été réparée il y a trois mois sur un raccord flare de la ligne liquide. Le contrôle visuel ne montre rien sur le raccord réparé. Ton détecteur électronique sonne en passant près du condenseur — ventilateur en marche. Sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier. Trois indices, trois réflexes. Un point réparé se recontrôle en priorité , même s'il semble propre. Une alerte détecteur près d'un ventilateur en marche se confirme brassage arrêté. Et une incohérence plaque/registre se signale — elle change la table de saturation à utiliser.",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#x4"
       ]
     },
     {
@@ -2085,6 +2069,14 @@
       ]
     },
     {
+      "cle": "10deb53c-487",
+      "texte": "Habilitation fluides frigorigènes. Quatre catégories, un seul référentiel : A1 et A2 couvrent toute l'activité, D la récupération seule, E le contrôle d'étanchéité sans ouvrir le circuit. Choisissez votre parcours — ou allez directement réviser par thème : cet outil est fait pour vous accompagner avant la formation, pendant les périodes en entreprise et jusqu'à l'épreuve. Chaque question corrigée renvoie vers la fiche à relire. Progression conseillée en formation : E → D → A2 → A1 .",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#c00"
+      ]
+    },
+    {
       "cle": "10e81d7a-164",
       "texte": "Horizontal ici, et juste après le filtre. Dans le montage étudié, le filtre-déshydrateur et le voyant sont horizontaux. Le voyant vient directement après le filtre.",
       "type": "composition",
@@ -2186,6 +2178,14 @@
       "type": "composition",
       "sources": [
         "packs/fluides/res/etancheite-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "12459364-999",
+      "texte": "Exercice — la machine ne fait plus de froid. 🎧 Écouter la capsule : Exercice — la machine ne fait plus de froid ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris. Chambre froide positive. Le compresseur tourne, mais la température de la chambre ne descend plus. Vous relevez : basse pression anormalement basse ; surchauffe à l'aspiration très élevée , de l'ordre de 20 K ; sous-refroidissement quasi nul , bulles visibles au voyant liquide ; aucune trace d'huile visible au premier examen. Rappels : surchauffe attendue 5 à 10 K, sous-refroidissement attendu 4 à 8 K. Méthode. On ne conclut pas sur un relevé isolé : on cherche la cause qui explique tous les indices à la fois. Ici, trois indices convergent. À vous : rejouez la panne sur le Diagramme Enthalpique+. Entre les relevés de l'énoncé dans l'outil (fluide, BP, HP, températures) et regarde le cycle se tracer : la panne se VOIT sur le log p-h.",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#x2"
       ]
     },
     {
@@ -5192,14 +5192,6 @@
       ]
     },
     {
-      "cle": "28211cd4-916",
-      "texte": "Détective — la bouteille de récupération. 🎧 Écouter la capsule : Détective — la bouteille de récupération ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris. Récupération sur une chambre froide avant remplacement d'un composant. Tu as pesé la bouteille avant de commencer — bon réflexe. La récupération avance, et la balance approche du niveau maximal admissible de la bouteille… mais il reste visiblement du fluide dans le circuit. Sur l'étagère du fourgon : une bouteille de récupération vide , et une bouteille entamée qui contient déjà un autre fluide. Ce qui ne se négocie pas. Le taux de remplissage maximal protège contre la dilatation du liquide : dépassé, la bouteille devient dangereuse à la première montée en température. Et un mélange de fluides est impossible à recycler ou régénérer : il part en destruction.",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#x3"
-      ]
-    },
-    {
       "cle": "282a4e3d-58",
       "texte": "Une hélice bloquée n'isole ni le moteur ni le compresseur.",
       "type": "choix",
@@ -7906,14 +7898,6 @@
       ]
     },
     {
-      "cle": "3e1bd95c-476",
-      "texte": "Habilitation fluides frigorigènes. Quatre catégories, un seul référentiel : A1 et A2 couvrent toute l'activité, D la récupération seule, E le contrôle d'étanchéité sans ouvrir le circuit. Choisis ton parcours — ou va directement réviser par thème : cet outil est fait pour t'accompagner avant la formation, pendant les périodes en entreprise et jusqu'à l'épreuve. Chaque question corrigée renvoie vers la fiche à relire. Progression conseillée en formation : E → D → A2 → A1 .",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#c00"
-      ]
-    },
-    {
       "cle": "3e22c352-11",
       "texte": "MISSION 290",
       "type": "interface",
@@ -7983,14 +7967,6 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/thermique-confort-ete/index.html"
-      ]
-    },
-    {
-      "cle": "3ed7791a-1695",
-      "texte": "Quarante ans d'histoire : de l'ozone au climat. 🎧 Écouter la capsule : Quarante ans d'histoire : de l'ozone au climat ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris. Dans les années 1930, les CFC sont des fluides « miracle » : stables, ni toxiques, ni inflammables. Cinquante ans plus tard, la facture arrive : en 1985 , on découvre le trou dans la couche d'ozone au-dessus de l'Antarctique — le chlore des CFC casse l'ozone qui filtre les UV-B . En 1987 , le protocole de Montréal organise leur sortie, puis celle des HCFC : la couche se répare, c'est le plus grand succès environnemental mondial. Mais les remplaçants, les HFC , inoffensifs pour l'ozone, sont de puissants gaz à effet de serre. Le combat change de terrain : Kyoto (1997) les inscrit parmi les six gaz visés, l' accord de Paris (2015) fixe le cap des +1,5 °C, et l' amendement de Kigali (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le règlement F-Gas traduit tout cela en quotas, interdictions et obligations — celles de ton métier. L'effet de serre en deux phrases. Le rayonnement solaire entre, la Terre renvoie de l'infrarouge, et certains gaz (CO₂, vapeur d'eau, méthane…) retiennent cette chaleur. Cet effet est vital — sans lui, il ferait environ −18 °C au lieu de +15 : c'est son renforcement par nos émissions qui pose problème. Ozone et climat : deux problèmes, pas un. L' ODP mesure l'attaque de l'ozone (affaire de chlore et de brome ) ; le PRP mesure l'effet de serre. Un HFC a un ODP nul et un PRP énorme : excellent élève d'un côté, cancre de l'autre. Ne jamais confondre les deux bulletins.",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#g2a"
       ]
     },
     {
@@ -8282,6 +8258,14 @@
       ]
     },
     {
+      "cle": "40b434ab-1740",
+      "texte": "Impact environnemental et F-Gas. 🎧 Écouter la capsule : Impact environnemental et F-Gas ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 6 minutes. Version imprimable et mode projection compris. Deux accords internationaux, deux problèmes différents. Le protocole de Montréal (1987) visait la couche d'ozone : il a fait disparaître les CFC puis les HCFC. La convention climat (Kyoto, Paris) vise le réchauffement : c'est elle qui s'attaque aux HFC, dont l'action sur l'ozone est nulle mais l'effet de serre considérable. Le PRP (potentiel de réchauffement planétaire, ou GWP) mesure cet effet, par kilogramme , en prenant le CO₂ comme étalon : PRP = 1 . L'impact réel d'une installation, lui, dépend aussi de la charge : c'est la tonne équivalent CO₂ . Le règlement (UE) 2024/573 — dit F-Gas III — organise la réduction progressive des quantités de HFC mises sur le marché ( phase-down ), attribue des quotas aux producteurs et importateurs, et interdit certains usages. Le calcul qui sert tous les jours. tonnes éq. CO₂ = charge (kg) × PRP ÷ 1000 C'est cette valeur — pas le poids de fluide — qui déclenche une partie des obligations. Deux installations de même charge n'ont pas les mêmes contraintes si les fluides diffèrent. ODP et PRP ne se confondent pas. Un HFC a un ODP nul (il ne détruit pas l'ozone) et pourtant un PRP fort . Dire « il ne touche pas l'ozone, donc il est propre » est faux. Et un PRP bas ne veut pas dire zéro impact : la question des PFAS se pose désormais sur certains fluides à bas PRP. À vous : la carte d identité du fluide. Choisissez un fluide, entrez une charge : les tonnes équivalent CO₂ se calculent. Comparez deux fluides à charge égale — c est l exercice qui suit.",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#g2"
+      ]
+    },
+    {
       "cle": "40b46e04-42",
       "texte": "Une pression absolue part du vide parfait.",
       "type": "fragment",
@@ -8560,6 +8544,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/surchauffe-sous-refroidissement-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "42f822e2-3085",
+      "texte": "Les familles de fluides et leurs codes. Derrière chaque code se cache une molécule , et trois atomes y décident de tout : le chlore détruit l'ozone — c'est lui qui a condamné les CFC puis les HCFC ; le fluor rend la molécule stable, donc durable dans l'atmosphère, donc à fort effet de serre ; l' hydrogène raccourcit la durée de vie. Les HFC ont éliminé le chlore (ozone sauvé), gardé le fluor (climat pénalisé). Les HFO ajoutent une double liaison fragile : la molécule casse en quelques jours, PRP ≈ 1. Les naturels — propane, isobutane, ammoniac, CO₂ — existent sans chimie de synthèse, chacun avec son revers : inflammabilité, toxicité ou pression. Et le numéro n'est pas un matricule : il décrit la molécule . Centaines + 1 = carbone, dizaines − 1 = hydrogène, unités = fluor — les liaisons restantes sont du chlore. Les mélanges et les fluides inorganiques ont leurs séries : 4xx, 5xx, 6xx, 7xx. 🧬 Lancer le cours interactif : décrypter un code de fluide ▸ 18 étapes racontées, une voix qui explique, et un atelier où vous assemblez vous-même la molécule R-22 (glisser-déposer) — environ 10 minutes. Un fluide de substitution ne se charge pas forcément « comme l'ancien ». On distingue deux cas. Le drop-in : le nouveau fluide est compatible avec l'huile et les composants déjà en place, la machine ne change pas, on vidange, on tire au vide, on recharge. Le retrofit : le nouveau fluide n'est pas compatible tel quel, il impose d'adapter la machine — huile, joints, détendeur — selon la documentation constructeur , avant toute recharge. Cette distinction n'est pas un détail administratif : un fluide de substitution ne se comporte pas forcément comme l'ancien sur chaque composant du circuit. Le détendeur a été calé pour une courbe de pression donnée ; avec un autre fluide, il peut ne plus détendre au bon point. Les joints ont été choisis pour une huile donnée ; une huile incompatible les fait gonfler ou durcir. C'est pour cela que seule la documentation constructeur dit si un couple machine/fluide est un simple drop-in ou impose un retrofit — jamais l'habitude ou le « ça a l'air pareil ». L'astuce du + 90. Ajoutez 90 au code, et vous lisez directement C, H, F : 134 + 90 = 224 → C₂H₂F₄ (R-134a). 22 + 90 = 112 → C·H·F₂… plus un chlore pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. 290 + 90 = 380 → C₃H₈ : le propane, zéro fluor, zéro chlore. Le code dit la molécule, pas le danger. R-32 et R-290 se ressemblent sur l'étiquette — l'un est A2L, l'autre A3. La famille chimique dit l' impact environnemental ; la classe NF EN 378 dit le risque de manipulation . Il faut les deux lectures, à chaque fois. Drop-in ou retrofit : ne pas deviner. Un fluide vendu comme « remplacement direct » n'est pas automatiquement un drop-in sur toutes les machines. Sans vérifier la documentation constructeur, on peut charger un fluide de substitution dans une machine qui aurait exigé un retrofit — huile non changée, détendeur non réglé. Le fluide tourne, mais la machine ne fonctionne plus comme prévu. Toujours vérifier avant de charger, jamais deviner.",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#g1c"
       ]
     },
     {
@@ -9469,14 +9461,6 @@
       ]
     },
     {
-      "cle": "49d66439-995",
-      "texte": "Exercice — la machine ne fait plus de froid. 🎧 Écouter la capsule : Exercice — la machine ne fait plus de froid ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris. Chambre froide positive. Le compresseur tourne, mais la température de la chambre ne descend plus. Tu relèves : basse pression anormalement basse ; surchauffe à l'aspiration très élevée , de l'ordre de 20 K ; sous-refroidissement quasi nul , bulles visibles au voyant liquide ; aucune trace d'huile visible au premier examen. Rappels : surchauffe attendue 5 à 10 K, sous-refroidissement attendu 4 à 8 K. Méthode. On ne conclut pas sur un relevé isolé : on cherche la cause qui explique tous les indices à la fois. Ici, trois indices convergent. À toi : rejoue la panne sur le Diagramme Enthalpique+. Entre les relevés de l'énoncé dans l'outil (fluide, BP, HP, températures) et regarde le cycle se tracer : la panne se VOIT sur le log p-h.",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#x2"
-      ]
-    },
-    {
       "cle": "49f9dfba-345",
       "texte": "La frontière est l'ouverture du circuit. Le même objectif — trouver une fuite — peut appeler des actes de périmètres différents. Le code 4.07 ne nécessite pas d'intervenir dans le circuit. Le code 4.06 couvre une méthode directe qui implique cette intervention. Classez la situation demandée : détecteur sur un raccord accessible, circuit fermé.",
       "type": "composition",
@@ -10013,6 +9997,14 @@
       "type": "voiceStep",
       "sources": [
         "packs/fluides/res/glissement-temperature/app.js"
+      ]
+    },
+    {
+      "cle": "4eafc781-922",
+      "texte": "Détective — le contrôle qui tourne mal. 🎧 Écouter la capsule : Détective — le contrôle qui tourne mal ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris. Contrôle périodique d'étanchéité chez un client. Le registre t'apprend qu'une fuite a été réparée il y a trois mois sur un raccord flare de la ligne liquide. Le contrôle visuel ne montre rien sur le raccord réparé. Votre détecteur électronique sonne en passant près du condenseur — ventilateur en marche. Sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier. Trois indices, trois réflexes. Un point réparé se recontrôle en priorité , même s'il semble propre. Une alerte détecteur près d'un ventilateur en marche se confirme brassage arrêté. Et une incohérence plaque/registre se signale — elle change la table de saturation à utiliser.",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#x4"
       ]
     },
     {
@@ -11143,14 +11135,6 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/_regules-commun/catalog.js"
-      ]
-    },
-    {
-      "cle": "58f9fdb7-605",
-      "texte": "Exercice — deux installations, deux impacts. 🎧 Écouter la capsule : Exercice — deux installations, deux impacts ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 5 minutes. Version imprimable et mode projection compris. Tu interviens sur deux machines dans le même bâtiment. Machine A — chambre froide, 12 kg de R-404A (PRP = 3922). Machine B — climatisation, 12 kg de R-32 (PRP = 675). Même charge, même bâtiment, même exploitant. Calcule la charge en tonnes équivalent CO₂ de chacune avant de répondre. Rappel de la formule. tonnes éq. CO₂ = charge (kg) × PRP ÷ 1000",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#x1"
       ]
     },
     {
@@ -12704,6 +12688,14 @@
       ]
     },
     {
+      "cle": "6645742d-1445",
+      "texte": "Méthode indirecte — mesurer et interpréter. La méthode indirecte ne détecte pas la fuite : elle détecte un fonctionnement anormal qui la trahit. On relève les pressions (BP et HP) au manomètre et les températures au thermomètre de contact, puis on compare à la table de saturation du fluide présent. Une pression plus basse que la valeur théorique attendue, une surchauffe qui grimpe au-delà des 5 à 10 K habituels, un sous-refroidissement qui s'effondre sous les 4 à 8 K : autant d'indices convergents d'un manque de charge. Le multimètre complète le tableau (intensité absorbée, cohérence électrique). 📊 Ouvrir directement la méthode indirecte ▸ Illustrations, instruments à associer et enquête guidée : les mesures soupçonnent une fuite sans prétendre la localiser. Trois instruments, trois informations. Manomètre (BP/HP) → écart avec la table de saturation. Thermomètre de contact → surchauffe et sous-refroidissement. Multimètre → cohérence électrique du compresseur. Un seul indice ne conclut rien ; c'est leur convergence qui oriente. Relatif ou absolu ?. Toujours le même piège : ne pas confondre pression relative (lue au manomètre) et pression absolue (souvent utilisée dans les tables). Écart : environ 1 bar. Et un fluide n'a jamais la table d'un autre. À vous : refaites la lecture croisée. Reprends la réglette : pression relative, conversion en absolu, température de saturation, écart avec la mesure. Hors plage → on soupçonne.",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#g4b"
+      ]
+    },
+    {
       "cle": "664d6ca1-15",
       "texte": "Voir le bilan ↓",
       "type": "interface",
@@ -13384,6 +13376,14 @@
       "type": "voiceStep",
       "sources": [
         "packs/fluides/res/pression-temperature-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "6bba4709-1697",
+      "texte": "Quarante ans d'histoire : de l'ozone au climat. 🎧 Écouter la capsule : Quarante ans d'histoire : de l'ozone au climat ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris. Dans les années 1930, les CFC sont des fluides « miracle » : stables, ni toxiques, ni inflammables. Cinquante ans plus tard, la facture arrive : en 1985 , on découvre le trou dans la couche d'ozone au-dessus de l'Antarctique — le chlore des CFC casse l'ozone qui filtre les UV-B . En 1987 , le protocole de Montréal organise leur sortie, puis celle des HCFC : la couche se répare, c'est le plus grand succès environnemental mondial. Mais les remplaçants, les HFC , inoffensifs pour l'ozone, sont de puissants gaz à effet de serre. Le combat change de terrain : Kyoto (1997) les inscrit parmi les six gaz visés, l' accord de Paris (2015) fixe le cap des +1,5 °C, et l' amendement de Kigali (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le règlement F-Gas traduit tout cela en quotas, interdictions et obligations — celles de votre métier. L'effet de serre en deux phrases. Le rayonnement solaire entre, la Terre renvoie de l'infrarouge, et certains gaz (CO₂, vapeur d'eau, méthane…) retiennent cette chaleur. Cet effet est vital — sans lui, il ferait environ −18 °C au lieu de +15 : c'est son renforcement par nos émissions qui pose problème. Ozone et climat : deux problèmes, pas un. L' ODP mesure l'attaque de l'ozone (affaire de chlore et de brome ) ; le PRP mesure l'effet de serre. Un HFC a un ODP nul et un PRP énorme : excellent élève d'un côté, cancre de l'autre. Ne jamais confondre les deux bulletins.",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#g2a"
       ]
     },
     {
@@ -17307,14 +17307,6 @@
       ]
     },
     {
-      "cle": "901bfdd6-859",
-      "texte": "Détective — intervention sur monobloc R-290. 🎧 Écouter la capsule : Détective — intervention sur monobloc R-290 ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris. Une vitrine réfrigérée au R-290 à remplacer de compresseur, dans l'arrière-boutique d'une boulangerie : local petit , sans ventilation , un four à quelques mètres. Ton collègue propose de « faire vite » : récupérer, ouvrir, braser le nouveau compresseur, recharger — comme sur un circuit HFC classique, « vu la petite charge ». « Petite charge » ne veut pas dire « petit risque ». Le R-290 est A3 : la charge est petite précisément parce que le fluide est très inflammable. Un local exigu non ventilé avec une source de flamme à proximité, c'est le scénario d'accident type — pas un chantier ordinaire.",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#x5"
-      ]
-    },
-    {
       "cle": "901cf780-48",
       "texte": "Point bas où une vapeur lourde peut s'accumuler.",
       "type": "feedback",
@@ -19204,14 +19196,6 @@
       ]
     },
     {
-      "cle": "9fb8301b-1442",
-      "texte": "Méthode indirecte — mesurer et interpréter. La méthode indirecte ne détecte pas la fuite : elle détecte un fonctionnement anormal qui la trahit. On relève les pressions (BP et HP) au manomètre et les températures au thermomètre de contact, puis on compare à la table de saturation du fluide présent. Une pression plus basse que la valeur théorique attendue, une surchauffe qui grimpe au-delà des 5 à 10 K habituels, un sous-refroidissement qui s'effondre sous les 4 à 8 K : autant d'indices convergents d'un manque de charge. Le multimètre complète le tableau (intensité absorbée, cohérence électrique). 📊 Ouvrir directement la méthode indirecte ▸ Illustrations, instruments à associer et enquête guidée : les mesures soupçonnent une fuite sans prétendre la localiser. Trois instruments, trois informations. Manomètre (BP/HP) → écart avec la table de saturation. Thermomètre de contact → surchauffe et sous-refroidissement. Multimètre → cohérence électrique du compresseur. Un seul indice ne conclut rien ; c'est leur convergence qui oriente. Relatif ou absolu ?. Toujours le même piège : ne pas confondre pression relative (lue au manomètre) et pression absolue (souvent utilisée dans les tables). Écart : environ 1 bar. Et un fluide n'a jamais la table d'un autre. À toi : refais la lecture croisée. Reprends la réglette : pression relative, conversion en absolu, température de saturation, écart avec la mesure. Hors plage → on soupçonne.",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#g4b"
-      ]
-    },
-    {
       "cle": "9fb873b2-35",
       "texte": "PVE seul, sans dispositif de retour",
       "type": "choix",
@@ -20564,6 +20548,14 @@
       "type": "fragment",
       "sources": [
         "packs/fluides/res/chaleur-circuit-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "aa229c94-607",
+      "texte": "Exercice — deux installations, deux impacts. 🎧 Écouter la capsule : Exercice — deux installations, deux impacts ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 5 minutes. Version imprimable et mode projection compris. Vous intervenez sur deux machines dans le même bâtiment. Machine A — chambre froide, 12 kg de R-404A (PRP = 3922). Machine B — climatisation, 12 kg de R-32 (PRP = 675). Même charge, même bâtiment, même exploitant. Calcule la charge en tonnes équivalent CO₂ de chacune avant de répondre. Rappel de la formule. tonnes éq. CO₂ = charge (kg) × PRP ÷ 1000",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#x1"
       ]
     },
     {
@@ -21964,14 +21956,6 @@
       ]
     },
     {
-      "cle": "b5a34d22-377",
-      "texte": "Réviser par thème. Cet espace est fait pour être utilisé seul : avant la formation pour arriver préparé, pendant les périodes de stage pour entretenir, avant l'épreuve pour cibler. Chaque série corrige immédiatement , chaque erreur renvoie vers la fiche à relire, et le bilan de fin liste tes points faibles. Ton score précédent s'affiche à chaque nouvelle tentative : bats-le.",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#m-rev"
-      ]
-    },
-    {
       "cle": "b5d8bff5-40",
       "texte": "adaptée à la charge et à la récupération",
       "type": "feedback",
@@ -22980,6 +22964,14 @@
       ]
     },
     {
+      "cle": "bda7c380-6246",
+      "texte": "Substitution et efficacité énergétique. Remplacer un fluide à fort PRP se fait dans deux directions : les fluides naturels (CO₂, ammoniac, hydrocarbures) et les fluides de synthèse à faible PRP ( HFO , HFC bas PRP). Il n'existe pas de fluide universel : le choix dépend de l'application, du climat, et de la sécurité du site. La classe de sécurité NF EN 378 commande tout le reste — EPI, zonage, détection, charge admissible dans le local : A1 (CO₂), A2L (R-32, R-1234yf), A3 (R-290), B2L (NH₃). Une classe ne dit pas seulement « ça brûle ou non ». Elle décrit la combustibilité et la propagation de la flamme : un A2L brûle difficilement et la flamme se propage lentement, un A3 s'enflamme facilement et la flamme court vite. De là découlent une charge maximale admissible et des limites d'occupation du local — plus le local est petit ou recevant du public, plus la charge autorisée est faible. Ces valeurs se déterminent selon la NF EN 378 et la doc constructeur, jamais à l'estime . Le stockage et le transport des fluides inflammables , toxiques ou à haute pression obéissent chacun à des règles propres. Et lorsqu'un site ne peut pas respecter les exigences de l' annexe IV du règlement (UE) 2024/573 pour des raisons de sécurité , des équipements dérogatoires restent permis : c'est une exception encadrée, qui se justifie par écrit, pas un passe-droit. Côté énergie, le COP est le rapport de la puissance frigorifique produite à la puissance électrique consommée. On l'améliore en rapprochant la température de condensation de celle d'évaporation : condenseur propre, échangeurs bien dimensionnés, réglages justes. Réduire la charge, enfin, améliore à la fois la sécurité et le rendement. Le rendement se joue aussi à la conception , avant tout réglage. Laisser la haute pression descendre quand l'air extérieur est froid — la condensation flottante — fait gagner beaucoup au compresseur, à condition que le détendeur suive : un thermostatique a besoin d'un écart de pression minimal, un détendeur électronique non. Faire varier la vitesse du compresseur et des ventilateurs colle la puissance au besoin réel et supprime les démarrages à répétition. Un sous-refroidissement soigné donne plus de froid pour la même compression. Enfin la chaleur rejetée au condenseur n'est pas perdue : un désurchauffeur peut la reprendre pour l'eau chaude. La charge , elle, se réduit d'abord par le choix des composants. Un échangeur à plaques brasées contient bien moins de fluide qu'un multitubulaire de même puissance ; un condenseur à microcanaux en contient moins qu'une batterie à tubes et ailettes. Chaque mètre de ligne liquide compte aussi, car le liquide est dense : rapprocher le groupe des postes, et choisir le diamètre juste plutôt que le plus large, retire des kilos à la machine. Une bouteille surdimensionnée, enfin, ne fait que stocker du fluide qui ne travaille pas. Pour réduire la charge de fluide frigorigène, on peut aussi changer la conception du système. Dans un système à boucle secondaire , le fluide frigorigène reste confiné dans la machinerie, avec une charge réduite. Un fluide caloporteur — de l' eau glacée ou de l' eau glycolée — circule ensuite dans les postes (vitrines, centrales de traitement d'air) pour transporter le froid jusqu'à eux. Le fluide frigorigène ne quitte jamais la salle des machines. Le système en cascade pousse cette logique plus loin : deux circuits frigorifiques séparés sont montés en série, chacun avec sa propre charge, réduite elle aussi. Le circuit basse température évacue sa chaleur dans le circuit haute température, qui la rejette à l'extérieur. Chaque circuit reste petit, donc plus facile à confiner en cas de fuite. Chaque fluide de substitution a ses avantages et ses inconvénients , selon l'application et le climat . Le CO₂ est performant en froid commercial, mais son efficacité baisse quand l'air extérieur est très chaud. Les hydrocarbures sont efficaces, mais leur inflammabilité limite la charge autorisée. L' ammoniac est réservé aux installations industrielles, à cause de sa toxicité. Il n'y a pas de meilleur fluide dans l'absolu : le choix se fait selon l'application, le climat du site, et la documentation constructeur, à faire valider avant tout choix. Une machine aux hydrocarbures n'est pas construite comme les autres. Tous les composants électriques en contact possible avec le gaz — relais, thermostats, ventilateurs — sont antidéflagrants ou non étincelants : ils sont conçus pour ne jamais produire d'étincelle qui pourrait enflammer le gaz. La charge de fluide est aussi limitée dès la conception. Enfin, l'implantation prévoit une ventilation adaptée : le propane est plus lourd que l'air, il s'accumule donc en bas, près du sol, en cas de fuite. 📐 Lancer le cours interactif : Tome 4 — bilan thermique et performance ▸ Du besoin thermique à la consommation électrique : parois, produits, air, puis COP, EER, SCOP, SEER et la lecture de la vraie étiquette européenne. Le bilan thermique lui-même dépasse le programme A1 — mais sans lui, « améliorer l efficacité énergétique » reste une formule. Drop-in ou retrofit ?. Drop-in : on change le fluide sans modifier l'installation. Retrofit : on change le fluide et ce qu'il faut adapter — huile, détendeur, joints. Annoncer un drop-in là où il faut un retrofit, c'est préparer une panne. Le piège de l'année. Le R-290 est A3 , pas A2L. Tout hydrocarbure est très inflammable. Se tromper de classe, c'est se tromper d'EPI, de matériel électrique et de charge admissible. À l'inverse, le CO₂ est A1 : toxicité faible, non inflammable — mais cette classe n'annonce ni sa pression , ni l' atmosphère irrespirable qu'une fuite crée en local fermé. À vous : comparez les candidats à la substitution. Passe en revue R-290, R-1234yf, R-744, R-32 : classe de sécurité, PRP, glide. Le fluide « parfait » n existe pas — c est tout l objet de ce groupe. Hydrocarbures : une machine pas comme les autres. Antidéflagrant ou non étincelant : sur une machine aux hydrocarbures, tout composant électrique proche du gaz doit respecter cette règle, pour ne jamais produire d'étincelle. Et comme le propane est plus lourd que l'air, il s'accumule en bas en cas de fuite — la ventilation du local en tient compte dès la conception.",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#g11"
+      ]
+    },
+    {
       "cle": "bdb19c68-101",
       "texte": "Dans quel ordre la fraction d'huile entraînée parcourt-elle le circuit de base après le compresseur ?",
       "type": "feedback",
@@ -23238,6 +23230,14 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/impact-tewi/index.html"
+      ]
+    },
+    {
+      "cle": "bfe78abd-861",
+      "texte": "Détective — intervention sur monobloc R-290. 🎧 Écouter la capsule : Détective — intervention sur monobloc R-290 ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris. Une vitrine réfrigérée au R-290 à remplacer de compresseur, dans l'arrière-boutique d'une boulangerie : local petit , sans ventilation , un four à quelques mètres. Votre collègue propose de « faire vite » : récupérer, ouvrir, braser le nouveau compresseur, recharger — comme sur un circuit HFC classique, « vu la petite charge ». « Petite charge » ne veut pas dire « petit risque ». Le R-290 est A3 : la charge est petite précisément parce que le fluide est très inflammable. Un local exigu non ventilé avec une source de flamme à proximité, c'est le scénario d'accident type — pas un chantier ordinaire.",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#x5"
       ]
     },
     {
@@ -25034,6 +25034,14 @@
       ]
     },
     {
+      "cle": "d04d131b-381",
+      "texte": "Réviser par thème. Cet espace est fait pour être utilisé seul : avant la formation pour arriver préparé, pendant les périodes de stage pour entretenir, avant l'épreuve pour cibler. Chaque série corrige immédiatement , chaque erreur renvoie vers la fiche à relire, et le bilan de fin liste vos points faibles. Votre score précédent s'affiche à chaque nouvelle tentative : battez-le.",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#m-rev"
+      ]
+    },
+    {
       "cle": "d0515f11-21",
       "texte": "eau + milieu → vapeur",
       "type": "interface",
@@ -26536,14 +26544,6 @@
       ]
     },
     {
-      "cle": "dbe06e93-3080",
-      "texte": "Les familles de fluides et leurs codes. Derrière chaque code se cache une molécule , et trois atomes y décident de tout : le chlore détruit l'ozone — c'est lui qui a condamné les CFC puis les HCFC ; le fluor rend la molécule stable, donc durable dans l'atmosphère, donc à fort effet de serre ; l' hydrogène raccourcit la durée de vie. Les HFC ont éliminé le chlore (ozone sauvé), gardé le fluor (climat pénalisé). Les HFO ajoutent une double liaison fragile : la molécule casse en quelques jours, PRP ≈ 1. Les naturels — propane, isobutane, ammoniac, CO₂ — existent sans chimie de synthèse, chacun avec son revers : inflammabilité, toxicité ou pression. Et le numéro n'est pas un matricule : il décrit la molécule . Centaines + 1 = carbone, dizaines − 1 = hydrogène, unités = fluor — les liaisons restantes sont du chlore. Les mélanges et les fluides inorganiques ont leurs séries : 4xx, 5xx, 6xx, 7xx. 🧬 Lancer le cours interactif : décrypter un code de fluide ▸ 18 étapes racontées, une voix qui explique, et un atelier où vous assemblez vous-même la molécule R-22 (glisser-déposer) — environ 10 minutes. Un fluide de substitution ne se charge pas forcément « comme l'ancien ». On distingue deux cas. Le drop-in : le nouveau fluide est compatible avec l'huile et les composants déjà en place, la machine ne change pas, on vidange, on tire au vide, on recharge. Le retrofit : le nouveau fluide n'est pas compatible tel quel, il impose d'adapter la machine — huile, joints, détendeur — selon la documentation constructeur , avant toute recharge. Cette distinction n'est pas un détail administratif : un fluide de substitution ne se comporte pas forcément comme l'ancien sur chaque composant du circuit. Le détendeur a été calé pour une courbe de pression donnée ; avec un autre fluide, il peut ne plus détendre au bon point. Les joints ont été choisis pour une huile donnée ; une huile incompatible les fait gonfler ou durcir. C'est pour cela que seule la documentation constructeur dit si un couple machine/fluide est un simple drop-in ou impose un retrofit — jamais l'habitude ou le « ça a l'air pareil ». L'astuce du + 90. Ajoute 90 au code, et tu lis directement C, H, F : 134 + 90 = 224 → C₂H₂F₄ (R-134a). 22 + 90 = 112 → C·H·F₂… plus un chlore pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. 290 + 90 = 380 → C₃H₈ : le propane, zéro fluor, zéro chlore. Le code dit la molécule, pas le danger. R-32 et R-290 se ressemblent sur l'étiquette — l'un est A2L, l'autre A3. La famille chimique dit l' impact environnemental ; la classe NF EN 378 dit le risque de manipulation . Il faut les deux lectures, à chaque fois. Drop-in ou retrofit : ne pas deviner. Un fluide vendu comme « remplacement direct » n'est pas automatiquement un drop-in sur toutes les machines. Sans vérifier la documentation constructeur, on peut charger un fluide de substitution dans une machine qui aurait exigé un retrofit — huile non changée, détendeur non réglé. Le fluide tourne, mais la machine ne fonctionne plus comme prévu. Toujours vérifier avant de charger, jamais deviner.",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#g1c"
-      ]
-    },
-    {
       "cle": "dbea9356-10",
       "texte": "Redémarrer",
       "type": "choix",
@@ -27215,14 +27215,6 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/diagnostic-circuit-huile/module.js"
-      ]
-    },
-    {
-      "cle": "e12e6fc2-1734",
-      "texte": "Impact environnemental et F-Gas. 🎧 Écouter la capsule : Impact environnemental et F-Gas ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 6 minutes. Version imprimable et mode projection compris. Deux accords internationaux, deux problèmes différents. Le protocole de Montréal (1987) visait la couche d'ozone : il a fait disparaître les CFC puis les HCFC. La convention climat (Kyoto, Paris) vise le réchauffement : c'est elle qui s'attaque aux HFC, dont l'action sur l'ozone est nulle mais l'effet de serre considérable. Le PRP (potentiel de réchauffement planétaire, ou GWP) mesure cet effet, par kilogramme , en prenant le CO₂ comme étalon : PRP = 1 . L'impact réel d'une installation, lui, dépend aussi de la charge : c'est la tonne équivalent CO₂ . Le règlement (UE) 2024/573 — dit F-Gas III — organise la réduction progressive des quantités de HFC mises sur le marché ( phase-down ), attribue des quotas aux producteurs et importateurs, et interdit certains usages. Le calcul qui sert tous les jours. tonnes éq. CO₂ = charge (kg) × PRP ÷ 1000 C'est cette valeur — pas le poids de fluide — qui déclenche une partie des obligations. Deux installations de même charge n'ont pas les mêmes contraintes si les fluides diffèrent. ODP et PRP ne se confondent pas. Un HFC a un ODP nul (il ne détruit pas l'ozone) et pourtant un PRP fort . Dire « il ne touche pas l'ozone, donc il est propre » est faux. Et un PRP bas ne veut pas dire zéro impact : la question des PFAS se pose désormais sur certains fluides à bas PRP. À toi : la carte d identité du fluide. Choisis un fluide, entre une charge : les tonnes équivalent CO₂ se calculent. Compare deux fluides à charge égale — c est l exercice qui suit.",
-      "type": "fiche",
-      "sources": [
-        "packs/fluides/cartes.js#g2"
       ]
     },
     {
@@ -28159,6 +28151,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/nomenclature-interactive/nomenclature.js"
+      ]
+    },
+    {
+      "cle": "e8abbc24-920",
+      "texte": "Détective — la bouteille de récupération. 🎧 Écouter la capsule : Détective — la bouteille de récupération ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris. Récupération sur une chambre froide avant remplacement d'un composant. Vous avez pesé la bouteille avant de commencer — bon réflexe. La récupération avance, et la balance approche du niveau maximal admissible de la bouteille… mais il reste visiblement du fluide dans le circuit. Sur l'étagère du fourgon : une bouteille de récupération vide , et une bouteille entamée qui contient déjà un autre fluide. Ce qui ne se négocie pas. Le taux de remplissage maximal protège contre la dilatation du liquide : dépassé, la bouteille devient dangereuse à la première montée en température. Et un mélange de fluides est impossible à recycler ou régénérer : il part en destruction.",
+      "type": "fiche",
+      "sources": [
+        "packs/fluides/cartes.js#x3"
       ]
     },
     {

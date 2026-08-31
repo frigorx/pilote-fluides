@@ -1071,7 +1071,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Mais les remplaçants, les <b>HFC</b>, inoffensifs pour l'ozone, sont de puissants gaz à effet de serre. Le combat change de terrain : <b>Kyoto</b> (1997) les inscrit parmi les six gaz visés, l'<b>accord de Paris</b> (2015) fixe le cap des +1,5 °C, et l'<b>amendement de Kigali</b> (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations — celles de ton métier.",
+       "html": "Mais les remplaçants, les <b>HFC</b>, inoffensifs pour l'ozone, sont de puissants gaz à effet de serre. Le combat change de terrain : <b>Kyoto</b> (1997) les inscrit parmi les six gaz visés, l'<b>accord de Paris</b> (2015) fixe le cap des +1,5 °C, et l'<b>amendement de Kigali</b> (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations — celles de votre métier.",
        "titre": "Quarante ans d'histoire : de l'ozone au climat"
       },
       {
@@ -2399,7 +2399,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "cle",
        "t": "L'astuce du + 90",
-       "html": "Ajoute 90 au code, et tu lis directement C, H, F : <b>134 + 90 = 224</b> → C₂H₂F₄ (R-134a). <b>22 + 90 = 112</b> → C·H·F₂… plus un <b>chlore</b> pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. <b>290 + 90 = 380</b> → C₃H₈ : le propane, zéro fluor, zéro chlore.",
+       "html": "Ajoutez 90 au code, et vous lisez directement C, H, F : <b>134 + 90 = 224</b> → C₂H₂F₄ (R-134a). <b>22 + 90 = 112</b> → C·H·F₂… plus un <b>chlore</b> pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. <b>290 + 90 = 380</b> → C₃H₈ : le propane, zéro fluor, zéro chlore.",
        "titre": "Les familles de fluides et leurs codes"
       },
       {
@@ -4290,7 +4290,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<ul><li>Le contrôle visuel ne montre <b>rien</b> sur le raccord réparé.</li><li>Ton détecteur électronique <b>sonne</b> en passant près du condenseur — ventilateur en marche.</li><li>Sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier.</li></ul>",
+       "html": "<ul><li>Le contrôle visuel ne montre <b>rien</b> sur le raccord réparé.</li><li>Votre détecteur électronique <b>sonne</b> en passant près du condenseur — ventilateur en marche.</li><li>Sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier.</li></ul>",
        "titre": "Détective — le contrôle qui tourne mal"
       },
       {
@@ -6170,7 +6170,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Récupération sur une chambre froide avant remplacement d'un composant. Tu as pesé la bouteille <b>avant</b> de commencer — bon réflexe. La récupération avance, et la balance approche du <b>niveau maximal admissible</b> de la bouteille… mais il reste visiblement du fluide dans le circuit.",
+       "html": "Récupération sur une chambre froide avant remplacement d'un composant. Vous avez pesé la bouteille <b>avant</b> de commencer — bon réflexe. La récupération avance, et la balance approche du <b>niveau maximal admissible</b> de la bouteille… mais il reste visiblement du fluide dans le circuit.",
        "titre": "Détective — la bouteille de récupération"
       },
       {
@@ -8234,7 +8234,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Chambre froide positive. Le compresseur tourne, mais la température de la chambre ne descend plus. Tu relèves :",
+       "html": "Chambre froide positive. Le compresseur tourne, mais la température de la chambre ne descend plus. Vous relevez :",
        "titre": "Exercice — la machine ne fait plus de froid"
       },
       {
@@ -8256,7 +8256,7 @@ window.PILOTE_PROJECTION = {
       }
      ],
      "questions": [],
-     "notes": "Exercice charnière : il rebranche les composants (G6-G9) sur l'étanchéité (G4). Le laisser chercher en binôme cinq minutes avant de corriger. Erreur fréquente : s'arrêter à « le détendeur est bouché » — plausible pour la surchauffe, mais n'explique ni le sous-refroidissement nul ni les bulles au voyant. Faire verbaliser pourquoi une seule cause explique les trois indices. Enchaîner : « et maintenant, comment localises-tu la fuite ? » → retour en G4c."
+     "notes": "Exercice charnière : il rebranche les composants (G6-G9) sur l'étanchéité (G4). Le laisser chercher en binôme cinq minutes avant de corriger. Erreur fréquente : s'arrêter à « le détendeur est bouché » — plausible pour la surchauffe, mais n'explique ni le sous-refroidissement nul ni les bulles au voyant. Faire verbaliser pourquoi une seule cause explique les trois indices. Enchaîner : « et maintenant, comment localisez-vous la fuite ? » → retour en G4c."
     },
     {
      "type": "cours",
@@ -11160,7 +11160,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Ton collègue propose de « faire vite » : récupérer, ouvrir, braser le nouveau compresseur, recharger — comme sur un circuit HFC classique, « vu la petite charge ».",
+       "html": "Votre collègue propose de « faire vite » : récupérer, ouvrir, braser le nouveau compresseur, recharger — comme sur un circuit HFC classique, « vu la petite charge ».",
        "titre": "Détective — intervention sur monobloc R-290"
       },
       {

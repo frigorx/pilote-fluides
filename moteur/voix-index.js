@@ -138,9 +138,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "025f1157-27": {
       "fichier": "audio/025f1157-27.mp3",
-      "sha256": "1dd5f7f9a49bf4b2",
-      "octets": 16704,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "22123242b4ccecb1",
+      "octets": 15840,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "ce1eb7d4b54ceb96"
     },
     "026cf7c5-49": {
       "fichier": "audio/026cf7c5-49.mp3",
@@ -372,9 +373,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "080dc41f-2096": {
       "fichier": "audio/080dc41f-2096.mp3",
-      "sha256": "3ca0f6334e80175d",
-      "octets": 801648,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "f36be360d90b016f",
+      "octets": 804240,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "03320c1facf488f1"
     },
     "082fb2a9-70": {
       "fichier": "audio/082fb2a9-70.mp3",
@@ -438,15 +440,17 @@ window.PILOTE_VOIX_INDEX = {
     },
     "090e34fe-15": {
       "fichier": "audio/090e34fe-15.mp3",
-      "sha256": "f3ef2be2425cced1",
-      "octets": 10656,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "9ae3335441ede32f",
+      "octets": 10080,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "6520919f2ed33841"
     },
     "09161b20-525": {
       "fichier": "audio/09161b20-525.mp3",
-      "sha256": "3d7066bd5491d189",
-      "octets": 231120,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "8091b4ff4c5b7b1e",
+      "octets": 225504,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a92d8fd2e3b7ff0a"
     },
     "093addc3-328": {
       "fichier": "audio/093addc3-328.mp3",
@@ -636,9 +640,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "0e83a655-38": {
       "fichier": "audio/0e83a655-38.mp3",
-      "sha256": "453f0ce7aa607bea",
-      "octets": 23616,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "ba941357b3a64a15",
+      "octets": 22752,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "aabad613a79ec537"
     },
     "0ef4495b-31": {
       "fichier": "audio/0ef4495b-31.mp3",
@@ -666,9 +671,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "0f82eada-51": {
       "fichier": "audio/0f82eada-51.mp3",
-      "sha256": "40b9fcc0db9ff310",
-      "octets": 30384,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "891ba8232e763229",
+      "octets": 30240,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "9ed1966eede44bfb"
     },
     "0fa7ab1f-272": {
       "fichier": "audio/0fa7ab1f-272.mp3",
@@ -762,9 +768,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "129676a3-477": {
       "fichier": "audio/129676a3-477.mp3",
-      "sha256": "8f921896ad847642",
-      "octets": 183024,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "a759370b1647f684",
+      "octets": 182736,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "aa88898d2b3126b0"
     },
     "12bd2b6a-36": {
       "fichier": "audio/12bd2b6a-36.mp3",
@@ -852,9 +859,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "146d3774-44": {
       "fichier": "audio/146d3774-44.mp3",
-      "sha256": "0557ffd12d56bf2b",
-      "octets": 26784,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "8bf91a45cf2e022c",
+      "octets": 26640,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "95e71ad120c79c1c"
     },
     "14722235-844": {
       "fichier": "audio/14722235-844.mp3",
@@ -1002,9 +1010,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "1781784e-2638": {
       "fichier": "audio/1781784e-2638.mp3",
-      "sha256": "cb3641dc3a5896da",
-      "octets": 1039104,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "34b33719014afa63",
+      "octets": 1044720,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "573e07df439336e2"
     },
     "1799927c-303": {
       "fichier": "audio/1799927c-303.mp3",
@@ -1740,9 +1749,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "29127429-430": {
       "fichier": "audio/29127429-430.mp3",
-      "sha256": "33ac1572f04dcccd",
-      "octets": 207792,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "4acf109ebf0fb864",
+      "octets": 203328,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "dd120252d751f511"
     },
     "295ddaaa-60": {
       "fichier": "audio/295ddaaa-60.mp3",
@@ -2256,9 +2266,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "36b33602-38": {
       "fichier": "audio/36b33602-38.mp3",
-      "sha256": "428500bae51d1d01",
-      "octets": 23616,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "43ed0632103c73c8",
+      "octets": 22752,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "dd32f7b38a9b1c34"
     },
     "371b36d2-25": {
       "fichier": "audio/371b36d2-25.mp3",
@@ -2694,9 +2705,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "43b809d7-21": {
       "fichier": "audio/43b809d7-21.mp3",
-      "sha256": "4d665c18173c1315",
-      "octets": 14976,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "09b34064bf8fb5be",
+      "octets": 14832,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "6578663c17d171ce"
     },
     "43f2b644-659": {
       "fichier": "audio/43f2b644-659.mp3",
@@ -2754,9 +2766,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "458d698a-4121": {
       "fichier": "audio/458d698a-4121.mp3",
-      "sha256": "38d687ad9a23bb83",
-      "octets": 1450656,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "e9f02e17f4d44f4c",
+      "octets": 1454544,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "eb02f8d800293730"
     },
     "45b7c293-25": {
       "fichier": "audio/45b7c293-25.mp3",
@@ -2802,9 +2815,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "474c07b2-35": {
       "fichier": "audio/474c07b2-35.mp3",
-      "sha256": "3949875f41f59efc",
-      "octets": 18864,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "3428e6d3473b1249",
+      "octets": 19008,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "55eeb9cb73cb6bb8"
     },
     "474d9ac5-56": {
       "fichier": "audio/474d9ac5-56.mp3",
@@ -2904,9 +2918,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "4a0c7e5f-4367": {
       "fichier": "audio/4a0c7e5f-4367.mp3",
-      "sha256": "72f7696bd65d518a",
-      "octets": 1562112,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "43dac830c4fbdabe",
+      "octets": 1563264,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "23869a858f67eb98"
     },
     "4a26effc-77": {
       "fichier": "audio/4a26effc-77.mp3",
@@ -2928,9 +2943,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "4a32bfa9-293": {
       "fichier": "audio/4a32bfa9-293.mp3",
-      "sha256": "e3ec22fcde0b814c",
-      "octets": 113760,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "67ad3a02472b8b04",
+      "octets": 113328,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "de0eaa441078a535"
     },
     "4a41c887-16": {
       "fichier": "audio/4a41c887-16.mp3",
@@ -3246,15 +3262,17 @@ window.PILOTE_VOIX_INDEX = {
     },
     "5356c272-2118": {
       "fichier": "audio/5356c272-2118.mp3",
-      "sha256": "cb5068f1bdab10bb",
-      "octets": 739872,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "5d472c3906e7a70c",
+      "octets": 743472,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "3abd6e9d0bf164bb"
     },
     "537e53b0-932": {
       "fichier": "audio/537e53b0-932.mp3",
-      "sha256": "c75d7ae3342d06fc",
-      "octets": 341424,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "71938f9cd546c113",
+      "octets": 342720,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "2492ad9cd069bf1f"
     },
     "53ee321c-84": {
       "fichier": "audio/53ee321c-84.mp3",
@@ -3264,9 +3282,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "543ca3f2-32": {
       "fichier": "audio/543ca3f2-32.mp3",
-      "sha256": "16c46f24123f5ea5",
-      "octets": 18000,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "ca690dd66faecbd7",
+      "octets": 17568,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "97e1b5ba4653833e"
     },
     "545322f2-295": {
       "fichier": "audio/545322f2-295.mp3",
@@ -3354,9 +3373,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "56d07ed9-21": {
       "fichier": "audio/56d07ed9-21.mp3",
-      "sha256": "964fca0c151dd921",
-      "octets": 21456,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "786aa18392cfec60",
+      "octets": 21312,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "51741731f75d7413"
     },
     "570ec93f-46": {
       "fichier": "audio/570ec93f-46.mp3",
@@ -3564,8 +3584,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "5d226ace-5616": {
       "fichier": "audio/5d226ace-5616.mp3",
-      "sha256": "8647c5467237d04d",
-      "octets": 2161998
+      "sha256": "13a1ee6c498e19cc",
+      "octets": 2303424,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a28af11476f663ed"
     },
     "5d383287-82": {
       "fichier": "audio/5d383287-82.mp3",
@@ -3761,9 +3783,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "637e2d1e-33": {
       "fichier": "audio/637e2d1e-33.mp3",
-      "sha256": "9b3d3481df875068",
-      "octets": 19296,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "0cc53c0ccb460c7f",
+      "octets": 19584,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "c5666e9a108c286b"
     },
     "6397cb63-27": {
       "fichier": "audio/6397cb63-27.mp3",
@@ -4115,9 +4138,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "6d9e7603-41": {
       "fichier": "audio/6d9e7603-41.mp3",
-      "sha256": "46e5b86ccbf577e1",
+      "sha256": "69d1946a78a92df6",
       "octets": 20304,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a30a4658a73518f6"
     },
     "6da35fb2-57": {
       "fichier": "audio/6da35fb2-57.mp3",
@@ -4157,9 +4181,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "6e37764a-37": {
       "fichier": "audio/6e37764a-37.mp3",
-      "sha256": "3f5fae4ae52425b2",
-      "octets": 21168,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "d8eae3202e9c6386",
+      "octets": 20736,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "b63f254cc88f9b87"
     },
     "6e6b3b1d-38": {
       "fichier": "audio/6e6b3b1d-38.mp3",
@@ -4331,9 +4356,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "71c4fa76-33": {
       "fichier": "audio/71c4fa76-33.mp3",
-      "sha256": "935d57f14423e4e0",
-      "octets": 17568,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "40e320aaacc94d9a",
+      "octets": 17424,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "b65007c5d8c2fa7d"
     },
     "71e5d74e-385": {
       "fichier": "audio/71e5d74e-385.mp3",
@@ -4703,9 +4729,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "7d81e578-472": {
       "fichier": "audio/7d81e578-472.mp3",
-      "sha256": "4795011ad66add36",
-      "octets": 204192,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "73e0cb5707b449c7",
+      "octets": 203040,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "efe29e005fb01bca"
     },
     "7dd826b8-67": {
       "fichier": "audio/7dd826b8-67.mp3",
@@ -4931,9 +4958,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "8485d29c-41": {
       "fichier": "audio/8485d29c-41.mp3",
-      "sha256": "4c4a59612446dafa",
-      "octets": 24336,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "d6730053a9399465",
+      "octets": 23904,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "fab808a458e3b50f"
     },
     "84a99453-18": {
       "fichier": "audio/84a99453-18.mp3",
@@ -5783,9 +5811,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "9b8a7100-1019": {
       "fichier": "audio/9b8a7100-1019.mp3",
-      "sha256": "23b5eb0a90895794",
-      "octets": 349488,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "88b73d029a89b9bb",
+      "octets": 312480,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "aeb7cf5ca2698dec"
     },
     "9b99b3aa-43": {
       "fichier": "audio/9b99b3aa-43.mp3",
@@ -6041,15 +6070,17 @@ window.PILOTE_VOIX_INDEX = {
     },
     "a05a6601-304": {
       "fichier": "audio/a05a6601-304.mp3",
-      "sha256": "92f2846c322c0209",
-      "octets": 154512,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "5cdd9711c5525150",
+      "octets": 151920,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "36852a0f7d14729a"
     },
     "a05c387a-27": {
       "fichier": "audio/a05c387a-27.mp3",
-      "sha256": "805dd2a2e4b2a321",
-      "octets": 16416,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "04aeddd2c4db190a",
+      "octets": 15840,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "c686eb78c41dcaf6"
     },
     "a07e389b-401": {
       "fichier": "audio/a07e389b-401.mp3",
@@ -6911,9 +6942,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "b72d6670-43": {
       "fichier": "audio/b72d6670-43.mp3",
-      "sha256": "9b495f2426f2ba0e",
-      "octets": 23184,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "bb6d53d32c100a50",
+      "octets": 22752,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "2d699a3d9efa523e"
     },
     "b7b1fa89-90": {
       "fichier": "audio/b7b1fa89-90.mp3",
@@ -7469,9 +7501,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "c84d384b-28": {
       "fichier": "audio/c84d384b-28.mp3",
-      "sha256": "a555bb40750627b6",
-      "octets": 17856,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "b23003ae6d440127",
+      "octets": 16560,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "311ac25b5faf2e30"
     },
     "c883a0ff-488": {
       "fichier": "audio/c883a0ff-488.mp3",
@@ -7613,9 +7646,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "cbd84aba-24": {
       "fichier": "audio/cbd84aba-24.mp3",
-      "sha256": "1b833cc18140abed",
-      "octets": 16272,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "ec5464eb18cf2d74",
+      "octets": 15984,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "dd54d9c1b780c32a"
     },
     "cbff1ad0-76": {
       "fichier": "audio/cbff1ad0-76.mp3",
@@ -7739,9 +7773,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "d0a2d8db-395": {
       "fichier": "audio/d0a2d8db-395.mp3",
-      "sha256": "628594e9ed5eecc1",
-      "octets": 137520,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "85e4790694b44a5a",
+      "octets": 136224,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "66718783c1b63200"
     },
     "d0acadc1-175": {
       "fichier": "audio/d0acadc1-175.mp3",
@@ -7757,9 +7792,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "d0dc9f7d-1880": {
       "fichier": "audio/d0dc9f7d-1880.mp3",
-      "sha256": "e69453284ac9872a",
-      "octets": 725904,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "59bb79d7718b4911",
+      "octets": 725472,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "86c60d2d466e7cd7"
     },
     "d0def9ba-560": {
       "fichier": "audio/d0def9ba-560.mp3",
@@ -8501,9 +8537,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "e64fa61c-28": {
       "fichier": "audio/e64fa61c-28.mp3",
-      "sha256": "949150fcdc2160d7",
-      "octets": 17712,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "465863032561f076",
+      "octets": 16992,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d0725cbe84519dbc"
     },
     "e6516384-67": {
       "fichier": "audio/e6516384-67.mp3",
@@ -8843,9 +8880,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "f1c24419-42": {
       "fichier": "audio/f1c24419-42.mp3",
-      "sha256": "b19201dd8939c413",
-      "octets": 20160,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "c6cf7fff59ec7806",
+      "octets": 19728,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "0174bff5f3320b60"
     },
     "f1e732dc-35": {
       "fichier": "audio/f1e732dc-35.mp3",
@@ -9023,9 +9061,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "f641200d-9": {
       "fichier": "audio/f641200d-9.mp3",
-      "sha256": "bf979092700d111b",
-      "octets": 8064,
-      "voix": "fr-FR-VivienneMultilingualNeural"
+      "sha256": "ada0f4e42a288519",
+      "octets": 10656,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "df2df3bc713a7906"
     },
     "f64916e9-26": {
       "fichier": "audio/f64916e9-26.mp3",
@@ -9071,9 +9110,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "f755cc94-2193": {
       "fichier": "audio/f755cc94-2193.mp3",
-      "sha256": "26b295c3b6652120",
-      "octets": 792864,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "f3bdb3183f54c9b5",
+      "octets": 801648,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "fa5e5ac63f3ee9f7"
     },
     "f7a4bb6b-165": {
       "fichier": "audio/f7a4bb6b-165.mp3",
@@ -9131,9 +9171,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "f877bf8b-22": {
       "fichier": "audio/f877bf8b-22.mp3",
-      "sha256": "1f311b1d6d512eb9",
-      "octets": 14544,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "fa2535e6083cc6ce",
+      "octets": 14256,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "b10221c2deda58d9"
     },
     "f8977f35-295": {
       "fichier": "audio/f8977f35-295.mp3",
@@ -16439,9 +16480,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "38fc4c95-37": {
       "fichier": "audio/38fc4c95-37.mp3",
-      "sha256": "770e707699014ead",
+      "sha256": "004c9b53e3fab9ac",
       "octets": 13536,
-      "voix": "fr-FR-VivienneMultilingualNeural"
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "b7dabe927f237fc5"
     },
     "390bdb60-10": {
       "fichier": "audio/390bdb60-10.mp3",
@@ -18581,9 +18623,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "ae4951c6-10": {
       "fichier": "audio/ae4951c6-10.mp3",
-      "sha256": "7ba9998d2ccefc39",
-      "octets": 10656,
-      "voix": "fr-FR-VivienneMultilingualNeural"
+      "sha256": "961933dad5a6238b",
+      "octets": 6480,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "b4d92528f877cff1"
     },
     "ae508d7b-36": {
       "fichier": "audio/ae508d7b-36.mp3",
@@ -19631,9 +19674,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "df54ba92-23": {
       "fichier": "audio/df54ba92-23.mp3",
-      "sha256": "8c0a4ec59a13e601",
+      "sha256": "eb87eb258e9ba3b2",
       "octets": 11376,
-      "voix": "fr-FR-VivienneMultilingualNeural"
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "719abae56886ebaf"
     },
     "df88c771-36": {
       "fichier": "audio/df88c771-36.mp3",
@@ -19699,7 +19743,8 @@ window.PILOTE_VOIX_INDEX = {
       "fichier": "audio/e1c174bd-19.mp3",
       "sha256": "2365acc82d6f7385",
       "octets": 10224,
-      "voix": "fr-FR-VivienneMultilingualNeural"
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "d83c1635ddefc643"
     },
     "e2063f71-48": {
       "fichier": "audio/e2063f71-48.mp3",
@@ -20273,9 +20318,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "02e098df-1955": {
       "fichier": "audio/02e098df-1955.mp3",
-      "sha256": "3ab2c7adac96fa23",
-      "octets": 701712,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "ec9f6e464ece7ba6",
+      "octets": 708048,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "2c82090d3bbffb21"
     },
     "037cef7e-920": {
       "fichier": "audio/037cef7e-920.mp3",
@@ -20285,9 +20331,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "0ce899f5-4456": {
       "fichier": "audio/0ce899f5-4456.mp3",
-      "sha256": "a7858f28e2574235",
-      "octets": 1522080,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "2cbf8c9e5e869061",
+      "octets": 1527984,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "42b696b9ea6b2056"
     },
     "0e97df02-211": {
       "fichier": "audio/0e97df02-211.mp3",
@@ -20345,15 +20392,17 @@ window.PILOTE_VOIX_INDEX = {
     },
     "4bfc3c07-4841": {
       "fichier": "audio/4bfc3c07-4841.mp3",
-      "sha256": "09b7c8587774010f",
-      "octets": 1619136,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "ee1e771c24fc9df2",
+      "octets": 1640304,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d09b57cebe43146d"
     },
     "56d892f8-4657": {
       "fichier": "audio/56d892f8-4657.mp3",
-      "sha256": "7a24dfadcbf09524",
-      "octets": 1579104,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "d7abcd539929c5d6",
+      "octets": 1580256,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "66f7b86909265b00"
     },
     "58f9fdb7-605": {
       "fichier": "audio/58f9fdb7-605.mp3",
@@ -20363,9 +20412,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "66708e74-2757": {
       "fichier": "audio/66708e74-2757.mp3",
-      "sha256": "c84cd2ca0c0f865f",
-      "octets": 1004976,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "b521d32666c6b88c",
+      "octets": 1013760,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d2de5cd6216319ac"
     },
     "66740df2-474": {
       "fichier": "audio/66740df2-474.mp3",
@@ -20375,9 +20425,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "750c2dbe-2115": {
       "fichier": "audio/750c2dbe-2115.mp3",
-      "sha256": "59c595f973c1a180",
-      "octets": 753408,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "11429ac2673f3715",
+      "octets": 756864,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "992443026047e50c"
     },
     "7cff6952-4667": {
       "fichier": "audio/7cff6952-4667.mp3",
@@ -20393,9 +20444,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "89d202b2-4850": {
       "fichier": "audio/89d202b2-4850.mp3",
-      "sha256": "bf2ad7d4d3915935",
-      "octets": 1752624,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "c964532b485eaa05",
+      "octets": 1753200,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "fd49cf00c4411bd5"
     },
     "901bfdd6-859": {
       "fichier": "audio/901bfdd6-859.mp3",
@@ -20405,9 +20457,10 @@ window.PILOTE_VOIX_INDEX = {
     },
     "90808098-4397": {
       "fichier": "audio/90808098-4397.mp3",
-      "sha256": "5f1456c5a5aa2956",
-      "octets": 1674576,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "696be3e0e6933225",
+      "octets": 1682496,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "007948981e863bde"
     },
     "9b0f191e-166": {
       "fichier": "audio/9b0f191e-166.mp3",
@@ -20423,15 +20476,17 @@ window.PILOTE_VOIX_INDEX = {
     },
     "a81c9b84-4530": {
       "fichier": "audio/a81c9b84-4530.mp3",
-      "sha256": "05af84a5bc4c31c0",
-      "octets": 1585008,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "312826bcc6985cbb",
+      "octets": 1586304,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "862608fc0adc94d1"
     },
     "b20bfdcf-2762": {
       "fichier": "audio/b20bfdcf-2762.mp3",
-      "sha256": "edd58a0cc7c7191c",
-      "octets": 994032,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "830e096f1e4e321e",
+      "octets": 997056,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "ddc0a9173d95e2d8"
     },
     "b22ee5fb-581": {
       "fichier": "audio/b22ee5fb-581.mp3",
@@ -20447,27 +20502,31 @@ window.PILOTE_VOIX_INDEX = {
     },
     "b9213198-2437": {
       "fichier": "audio/b9213198-2437.mp3",
-      "sha256": "d2381604be434050",
+      "sha256": "3c73e55e47b780f8",
       "octets": 891216,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "77d1effa17df8d78"
     },
     "b9c3917f-4970": {
       "fichier": "audio/b9c3917f-4970.mp3",
-      "sha256": "7d1e40000f6fe6e8",
-      "octets": 1770192,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "71c475b29e4ff953",
+      "octets": 1772640,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "c18b778c7dc4f08d"
     },
     "c6a1ea1b-4373": {
       "fichier": "audio/c6a1ea1b-4373.mp3",
-      "sha256": "34e997435d0fb2b5",
-      "octets": 1504224,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "49c53d90ef947e01",
+      "octets": 1511280,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "2c75230bc1c8ccdd"
     },
     "deaf25ef-2023": {
       "fichier": "audio/deaf25ef-2023.mp3",
-      "sha256": "60a621b4fb160164",
-      "octets": 748944,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "87def2f7b82033d3",
+      "octets": 749952,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "14d5f8583720d38c"
     },
     "e12e6fc2-1734": {
       "fichier": "audio/e12e6fc2-1734.mp3",
@@ -20483,15 +20542,17 @@ window.PILOTE_VOIX_INDEX = {
     },
     "e612926d-3489": {
       "fichier": "audio/e612926d-3489.mp3",
-      "sha256": "b9f4a2b6ed4510c1",
-      "octets": 1264464,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "294408be68f1bd58",
+      "octets": 1269360,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "6547b769a1f7dbc2"
     },
     "e8035d7e-3209": {
       "fichier": "audio/e8035d7e-3209.mp3",
-      "sha256": "32a0b3e46f5eac3f",
-      "octets": 1168560,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "8623084a8c65bf26",
+      "octets": 1169856,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "019ad42145b16e1f"
     },
     "f0a3fcf9-108": {
       "fichier": "audio/f0a3fcf9-108.mp3",
@@ -20507,15 +20568,192 @@ window.PILOTE_VOIX_INDEX = {
     },
     "ff38b3da-3855": {
       "fichier": "audio/ff38b3da-3855.mp3",
-      "sha256": "756c83e20d62bf5a",
-      "octets": 1373472,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "28a4d2392e065587",
+      "octets": 1383264,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "8d245a7bbb660bf5"
     },
     "ff834313-1443": {
       "fichier": "audio/ff834313-1443.mp3",
-      "sha256": "3a32a7112631db06",
-      "octets": 552096,
-      "voix": "fr-FR-RemyMultilingualNeural"
+      "sha256": "36c602695fb68e61",
+      "octets": 554544,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a7a46ab990c98d8b"
+    },
+    "10deb53c-487": {
+      "fichier": "audio/10deb53c-487.mp3",
+      "sha256": "45403696055c31ec",
+      "octets": 185760,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "ca37a2d49ddc87be"
+    },
+    "12459364-999": {
+      "fichier": "audio/12459364-999.mp3",
+      "sha256": "736b348853b40eb5",
+      "octets": 395568,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d3dc461ab68d19a6"
+    },
+    "231605df-5568": {
+      "fichier": "audio/231605df-5568.mp3",
+      "sha256": "a4b3e22151a8f6d3",
+      "octets": 1980720,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "046b95f46917608f"
+    },
+    "340289b7-4063": {
+      "fichier": "audio/340289b7-4063.mp3",
+      "sha256": "a53ec7e176b4ff0c",
+      "octets": 1445616,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "68b71142db1e0d2b"
+    },
+    "3c10fd89-2354": {
+      "fichier": "audio/3c10fd89-2354.mp3",
+      "sha256": "d11e4c78a170a767",
+      "octets": 926928,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "37fd9cb534406e25"
+    },
+    "40b434ab-1740": {
+      "fichier": "audio/40b434ab-1740.mp3",
+      "sha256": "0ad431eaa4bf79d4",
+      "octets": 782064,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "1870e3110dbf0565"
+    },
+    "42f822e2-3085": {
+      "fichier": "audio/42f822e2-3085.mp3",
+      "sha256": "228c5ac8d04134be",
+      "octets": 1269216,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "4a0a849d362b8a4a"
+    },
+    "49d24035-5242": {
+      "fichier": "audio/49d24035-5242.mp3",
+      "sha256": "18baba06ee650205",
+      "octets": 1843488,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d0f36fb3e7b8c648"
+    },
+    "4eafc781-922": {
+      "fichier": "audio/4eafc781-922.mp3",
+      "sha256": "45fc6bf54a84870a",
+      "octets": 352368,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "18b58f2e9662398f"
+    },
+    "6645742d-1445": {
+      "fichier": "audio/6645742d-1445.mp3",
+      "sha256": "77c1f9bc33bc8f35",
+      "octets": 564048,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a77cdd19a89f191c"
+    },
+    "68090833-3963": {
+      "fichier": "audio/68090833-3963.mp3",
+      "sha256": "29776a16179e201c",
+      "octets": 1361232,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d9cb6a9de0a21694"
+    },
+    "6bba4709-1697": {
+      "fichier": "audio/6bba4709-1697.mp3",
+      "sha256": "b2a7cc2e4aa180a5",
+      "octets": 703008,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "880aab05b40997dc"
+    },
+    "75595688-3126": {
+      "fichier": "audio/75595688-3126.mp3",
+      "sha256": "adc3d6a4885a22b3",
+      "octets": 1162944,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "c648623825b5c2ff"
+    },
+    "9124bb42-3102": {
+      "fichier": "audio/9124bb42-3102.mp3",
+      "sha256": "862ff9d5e9e6df5a",
+      "octets": 1077264,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "9fc2e951406b9221"
+    },
+    "9a0ccb8d-5353": {
+      "fichier": "audio/9a0ccb8d-5353.mp3",
+      "sha256": "74140868a70a1ee0",
+      "octets": 1852992,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "42927056f197e328"
+    },
+    "aa229c94-607": {
+      "fichier": "audio/aa229c94-607.mp3",
+      "sha256": "9bcfd244eb615594",
+      "octets": 353808,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "c3297e9c3ea5d283"
+    },
+    "bda7c380-6246": {
+      "fichier": "audio/bda7c380-6246.mp3",
+      "sha256": "076a8a33cb5558a0",
+      "octets": 2359440,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "837a4e2cd2cdf8d5"
+    },
+    "bfe78abd-861": {
+      "fichier": "audio/bfe78abd-861.mp3",
+      "sha256": "a8e9093351e14666",
+      "octets": 352080,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a14fa8cb45ba1955"
+    },
+    "cccbe16c-2889": {
+      "fichier": "audio/cccbe16c-2889.mp3",
+      "sha256": "e9aebd5268f78b13",
+      "octets": 1038672,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "62a3067189346e2d"
+    },
+    "ce9c72a5-5463": {
+      "fichier": "audio/ce9c72a5-5463.mp3",
+      "sha256": "64f1eaa6eca4fd5f",
+      "octets": 1897632,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "ded9a553ad438f99"
+    },
+    "d04d131b-381": {
+      "fichier": "audio/d04d131b-381.mp3",
+      "sha256": "ba069fb66f7678ce",
+      "octets": 133344,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "1d11b6ca2babf6e2"
+    },
+    "e8abbc24-920": {
+      "fichier": "audio/e8abbc24-920.mp3",
+      "sha256": "79670a58bcd7e6ba",
+      "octets": 339696,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d5a24ea8a6163b5a"
+    },
+    "61a5a832-7256": {
+      "fichier": "audio/61a5a832-7256.mp3",
+      "sha256": "680292de0056c9b4",
+      "octets": 2689344,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "90188c25d715308f"
+    },
+    "ac520246-6515": {
+      "fichier": "audio/ac520246-6515.mp3",
+      "sha256": "dace4b0b36d17c81",
+      "octets": 2376000,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d711dec23ed065b3"
+    },
+    "bbdca3c3-7686": {
+      "fichier": "audio/bbdca3c3-7686.mp3",
+      "sha256": "7fc9e82a19057977",
+      "octets": 2656368,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d8889086eb9843d9"
     }
   },
   "moteurEdgeTts": {

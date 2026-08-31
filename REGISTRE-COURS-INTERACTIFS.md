@@ -66,7 +66,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 
 | Cours | Appelé depuis | Écrans | Codes couverts | Poids |
 |---|---|---|---|---|
-| `bilan-thermique-performance-interactif` | g11, plan d’accueil | 16 | *appui : 12 codes* | 327 Ko |
+| `bilan-thermique-performance-interactif` | g11, plan d’accueil | 16 | *appui : 12 codes* | 328 Ko |
 | `bouteille-liquide-pedagogique` | g9b, plan d’accueil | 14 | 1.05 | 128 Ko |
 | `capsules` | s1, s2, s3, s4, s5, cl2, cl3, cl4, p4, p7, g0, g1d, g2a, g2, x1, g3, x4, g5a, g5b, x3, x2, g10, x5, g13 | 151 | 1.00 · 1.05 · 1.09 · 10.01 · 10.02 · 11.03 · 12.02 · 12.04 · 12.05 · 12.06 · 12.13 · 13.01 · 13.04 · 13.14 · 14.01 · 2.01 · 2.02 · 3.01 · 3.02 · 3.03 · 3.04 · 3.05 · 4.02 · 4.04 · 4.08 · 5.01 · 5.02 · 5.03 · 5.04 · 5.05 · 5.06 · 5.07 · 5.08 · 5.09 · 8.08 | 405 Ko |
 | `chaine-intervention-interactive` | p1, p3, p5, plan d’accueil | 25 | 3.03 · 3.04 · 4.05 · 5.01 · 5.02 | 61 Ko |
@@ -101,7 +101,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `froid-clim-academie` | g1e, plan d’accueil | — | 1.02 | 30 Ko |
 | `glissement-temperature` | plan d’accueil | 13 | *appui : 4 codes* | 179 Ko |
 | `hydrocarbures-a1-a2` | g12, plan d’accueil | 28 | 12.01 · 12.02 · 12.03 · 12.04 · 12.05 · 12.06 · 12.13 · 12.14 | 208 Ko |
-| `intervention-hydrocarbures-interactive` | g12b, plan d’accueil | 27 | 12.07 · 12.08 · 12.09 · 12.10 · 12.11 · 12.12 | 57 Ko |
+| `intervention-hydrocarbures-interactive` | g12b, plan d’accueil | 27 | 12.07 · 12.08 · 12.09 · 12.10 · 12.11 · 12.12 | 58 Ko |
 | `mission-bouteilles` | p6, plan d’accueil | — | 5.02 · 5.05 · 5.06 | 52 Ko |
 | `module-compresseur` | g6, plan d’accueil | 6 | 1.05 · 1.02 | 324 Ko |
 | `nomenclature-interactive` | g1c, plan d’accueil | — | 1.06 | 101 Ko |
@@ -123,7 +123,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `regulateur-electronique-interactif` | plan d’accueil | 24 | 9.04 · 6.03 | 164 Ko |
 | `regulateur-huile-mecanique-pedagogique` | plan d’accueil | — | — | 2415 Ko |
 | `regulateur-kvl-pedagogique` | **orphelin** | — | — | 2 Ko |
-| `regulateur-kvr-nrd` | plan d’accueil | 9 | 1.05 · 9.02 · 9.05 | 346 Ko |
+| `regulateur-kvr-nrd` | plan d’accueil | 9 | 1.05 · 9.02 · 9.05 | 347 Ko |
 | `regulateurs-kv-pedagogiques` | g9b, plan d’accueil | 8 | 1.05 · 9.02 · 9.05 | 1140 Ko |
 | `regules-interactif` | plan d’accueil | — | — | 1 Ko |
 | `reservoir-huile-pedagogique` | plan d’accueil | — | — | 2603 Ko |
