@@ -84,9 +84,24 @@ function prefixeAnneeFrise(year) {
   return `${year}, `;
 }
 
+/* Une feuille de style posée par `element.textContent = "..."` a la même forme, pour
+   l'analyseur, qu'une phrase à dire. Sept d'entre elles étaient entrées dans le corpus et
+   partaient à la synthèse : edge-tts a fini par refuser la plus longue, mais les autres
+   étaient bel et bien lues à voix haute. Ces motifs n'apparaissent dans aucun texte
+   pédagogique — éprouvé sur les 3 421 narrations : 7 rejets, aucun faux positif. */
+const RESSEMBLE_A_DU_CODE = [
+  /\{[^}]{0,120}[a-z-]{3,}\s*:\s*[^;}]{1,60}[;}]/,   /* une déclaration CSS entre accolades */
+  /!important/,
+  /\b\d+px\b/,
+  /<\/?[a-z][a-z0-9-]*[\s/>]/i,                      /* balise HTML ouvrante ou fermante */
+  /\bfunction\s*\(|=>\s*\{|\bvar\(--/,               /* JavaScript */
+  /@keyframes|@media\b/,
+];
+
 function ajouter(value, source, type = "narration") {
   const text = normaliser(value);
   if (text.length < 8) return;
+  if (RESSEMBLE_A_DU_CODE.some(motif => motif.test(text))) return;
   const key = cle(text);
   const current = items.get(key);
   if (current && current.texte !== text) {

@@ -11,12 +11,12 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Attends la stabilisation du capteur.",
-  bac: "Compare température sèche, HR et point de rosée.",
-  bts: "Place les points de mesure et interprète une transformation d’air.",
+  cap: "Attendez la stabilisation du capteur.",
+  bac: "Comparez température sèche, HR et point de rosée.",
+  bts: "Placez les points de mesure et interprétez une transformation d’air.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "Un air humide longe une paroi froide, et de la buée se forme. Rien n’a été ajouté : l’eau était déjà là, en vapeur, invisible. Deux nombres sont posés à côté du dessin, et tout se joue entre eux : la température de la paroi, et le point de rosée de l’air. Regarde lequel des deux est le plus bas. C’est cette comparaison, et elle seule, qui décide s’il y aura de l’eau.",
+  decouverte: "Un air humide longe une paroi froide, et de la buée se forme. Rien n’a été ajouté : l’eau était déjà là, en vapeur, invisible. Deux nombres sont posés à côté du dessin, et tout se joue entre eux : la température de la paroi, et le point de rosée de l’air. Regardez lequel des deux est le plus bas. C’est cette comparaison, et elle seule, qui décide s’il y aura de l’eau.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "Un hygromètre relève deux grandeurs à la fois : la température de l’air, dite température sèche, et son humidité relative, en pour cent. Le point de rosée, lui, n’est pas mesuré : il est calculé à partir des deux. C’est la température à laquelle cet air, refroidi sans qu’on lui ajoute ni ne lui retire d’eau, commencerait à en déposer.\n\nLe piège de cette mesure n’est ni dans l’appareil ni dans le calcul : il est dans le temps. Une sonde d’humidité ne donne pas sa valeur tout de suite. Elle doit se mettre à la température du lieu, et son élément sensible doit s’équilibrer avec l’air qui l’entoure. Cela prend plusieurs minutes, davantage encore si l’appareil sort d’un véhicule froid ou d’une poche chaude. Une valeur lue trop tôt est fausse, et rien à l’écran ne le signale : le chiffre s’affiche, net et rassurant. La parade est simple — on pose l’appareil, on fait autre chose, et on revient quand la valeur ne bouge plus.\n\nL’emplacement compte autant. Un relevé pris contre une paroi, dans un jet d’air soufflé, au-dessus d’une machine ou près d’une porte ne représente pas le local. On mesure dans l’air où se tiennent les occupants, à l’écart des sources chaudes et des courants directs.\n\nCe que le point de rosée permet ensuite, c’est de prévoir. Il annonce la température à ne pas franchir sur une surface : un conduit d’air froid mal isolé, une vitre, une paroi de chambre froide. Si cette surface descend au-dessous du point de rosée de l’air qui la longe, il y aura de l’eau — pas peut-être : il y en aura. C’est ainsi qu’on justifie une épaisseur d’isolant, ou qu’on explique une trace d’humidité au plafond.",
@@ -25,8 +25,8 @@
   formula: "T sèche (°C) + HR (%) → point de rosée (°C)",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Deux curseurs : la température sèche et l’humidité relative. Pose 27 degrés et 55 pour cent, et lis le point de rosée calculé. Sans toucher à l’humidité, descends la température à 20 degrés, et note de combien le point de rosée a suivi. Reviens à 27 degrés, puis monte l’humidité à 80 pour cent. Compare les deux déplacements : ils ne se produisent pas de la même façon.",
-  lecture: "Le point de rosée s’affiche en degrés sous les curseurs : c’est lui qu’on compare à la température des surfaces du local, jamais l’humidité relative seule. La valeur inscrite sur le dessin est celle du réglage de départ : elle ne se recalcule pas quand tu déplaces les curseurs. Retiens l’ordre de grandeur du premier essai : un air de bureau ordinaire a un point de rosée autour de la quinzaine de degrés, et un conduit d’air froid non isolé passe largement au-dessous.",
+  consigne: "Deux curseurs : la température sèche et l’humidité relative. Posez 27 degrés et 55 pour cent, et lisez le point de rosée calculé. Sans toucher à l’humidité, descendez la température à 20 degrés, et notez de combien le point de rosée a suivi. Revenez à 27 degrés, puis montez l’humidité à 80 pour cent. Comparez les deux déplacements : ils ne se produisent pas de la même façon.",
+  lecture: "Le point de rosée s’affiche en degrés sous les curseurs : c’est lui qu’on compare à la température des surfaces du local, jamais l’humidité relative seule. La valeur inscrite sur le dessin est celle du réglage de départ : elle ne se recalcule pas quand vous déplacez les curseurs. Retenez l’ordre de grandeur du premier essai : un air de bureau ordinaire a un point de rosée autour de la quinzaine de degrés, et un conduit d’air froid non isolé passe largement au-dessous.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */
   limites: "Le point de rosée affiché ici est une estimation, calculée à partir de deux valeurs supposées justes et prises à la pression atmosphérique ordinaire. Il ne remplace ni un diagramme de l’air humide, ni une note de calcul de condensation. Et il ne vaut que pour l’air réellement mesuré : un local n’est pas homogène, l’air d’un plafond n’est pas celui d’une plinthe.",

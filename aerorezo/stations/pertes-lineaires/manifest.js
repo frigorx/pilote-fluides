@@ -11,12 +11,12 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Observe la pression diminuer tout au long d’une gaine droite.",
-  bac: "Calcule la perte d’une portion droite à partir d’une valeur par mètre et d’une longueur relevée.",
-  bts: "Relie vitesse, diamètre, rugosité et longueur à la perte de charge d’un tronçon.",
+  cap: "Observez la pression diminuer tout au long d’une gaine droite.",
+  bac: "Calculez la perte d’une portion droite à partir d’une valeur par mètre et d’une longueur relevée.",
+  bts: "Reliez vitesse, diamètre, rugosité et longueur à la perte de charge d’un tronçon.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "Sous le tracé des gaines, une seconde courbe suit la pression le long du parcours. Elle ne fait que descendre, jamais remonter. Regarde comment elle descend : par endroits elle glisse doucement, régulièrement ; ailleurs elle tombe d’un coup, en marche d’escalier. Cette station ne s’occupe que de la pente douce. Les marches sont pour la station suivante.",
+  decouverte: "Sous le tracé des gaines, une seconde courbe suit la pression le long du parcours. Elle ne fait que descendre, jamais remonter. Regardez comment elle descend : par endroits elle glisse doucement, régulièrement ; ailleurs elle tombe d’un coup, en marche d’escalier. Cette station ne s’occupe que de la pente douce. Les marches sont pour la station suivante.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "L’air frotte contre la tôle sur toute la longueur du conduit. C’est un impôt, et il se paie au mètre : on l’exprime en pascals par mètre de gaine.\n\nTrois choses font monter cette valeur, et elles ne pèsent pas le même poids. La vitesse d’abord, et de très loin : la perte suit à peu près le carré de la vitesse, si bien qu’une vitesse doublée multiplie la perte au mètre par près de quatre. Le diamètre ensuite : dans une gaine étroite, aucune veine d’air n’est loin de la paroi, donc tout freine. La rugosité enfin — entre une tôle spiralée neuve et un flexible laissé détendu, l’écart ne se compte pas en pourcentage, il se compte en multiples.\n\nCette valeur ne se devine pas et ne se calcule pas de tête : on la lit dans une abaque ou dans un logiciel de dimensionnement, à partir du débit et du diamètre du tronçon. Un réseau de confort se dimensionne souvent autour de 0,8 à 1,5 Pa/m — c’est un ordre de grandeur de conception, à vérifier sur le projet, pas une valeur à réciter.\n\nReste à multiplier par la longueur, et c’est là que se perdent les études. Un plan est à plat : la descente sous une poutre, le contournement d’un tableau, la remontée après un obstacle n’y apparaissent pas. Une antenne dessinée sur 24 m se pose parfois sur 32 m. On relève la longueur sur le tracé réel, tronçon par tronçon, puis on additionne.",
@@ -25,8 +25,8 @@
   formula: "Δp linéaire = R × L  ·  R en Pa/m, lu dans l’abaque à partir du débit et du diamètre",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Laisse le troisième curseur à zéro : les accidents de parcours attendront la station suivante. Le plan annonce une antenne de 24 m à 0,8 Pa/m — lis la perte obtenue. Le métreur passe ensuite sur le chantier : la gaine contourne deux poutres et descend au tableau, elle mesure 32 m. Corrige la longueur et relis. Enfin, le faux plafond a imposé une gaine plus étroite : porte la perte au mètre à 1,6 Pa/m.",
-  lecture: "Le total s’affiche en pascals sous les curseurs. De 19,2 à 25,6 Pa : huit mètres absents du plan ont coûté un tiers de perte en plus, sans que personne ne les ait dessinés. Le passage en gaine plus étroite, lui, double le total d’un coup. Compare toujours ce total à un ordre de grandeur : une antenne de bureau se chiffre en dizaines de pascals. Si tu trouves des centaines, c’est que la gaine est trop petite ou le métré faux.",
+  consigne: "Laissez le troisième curseur à zéro : les accidents de parcours attendront la station suivante. Le plan annonce une antenne de 24 m à 0,8 Pa/m — lisez la perte obtenue. Le métreur passe ensuite sur le chantier : la gaine contourne deux poutres et descend au tableau, elle mesure 32 m. Corrigez la longueur et relisez. Enfin, le faux plafond a imposé une gaine plus étroite : portez la perte au mètre à 1,6 Pa/m.",
+  lecture: "Le total s’affiche en pascals sous les curseurs. De 19,2 à 25,6 Pa : huit mètres absents du plan ont coûté un tiers de perte en plus, sans que personne ne les ait dessinés. Le passage en gaine plus étroite, lui, double le total d’un coup. Comparez toujours ce total à un ordre de grandeur : une antenne de bureau se chiffre en dizaines de pascals. Si vous trouvez des centaines, c’est que la gaine est trop petite ou le métré faux.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */
   limites: "La perte au mètre n’est pas une constante du réseau. Elle change à chaque tronçon, dès qu’une dérivation emporte une partie du débit ou que le diamètre change. Un calcul sérieux découpe la branche en tronçons et les additionne ; le curseur de cette station n’en tient qu’un seul. Les fuites du réseau ne sont pas comptées non plus : une gaine mal étanchée perd de l’air, pas seulement de la pression.",

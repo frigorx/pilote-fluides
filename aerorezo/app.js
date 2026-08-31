@@ -128,7 +128,10 @@
     if(window.speechSynthesis.speaking&&!window.speechSynthesis.paused){window.speechSynthesis.pause();button.textContent="▶ Reprendre";return;}
     if(window.speechSynthesis.paused){window.speechSynthesis.resume();button.textContent="Ⅱ Pause";return;}
     stopVoice();
-    const text=voiceText();
+    /* la table de prononciation partagée avec le réseau principal : sans elle,
+       le navigateur épelle « HP », nomme les emoji et lit les symboles. */
+    const brut=voiceText();
+    const text=window.PILOTE_PRONONCIATION?window.PILOTE_PRONONCIATION.oraliser(brut):brut;
     const run=state.speechRun;
     const utterance=new SpeechSynthesisUtterance(text);
     utterance.lang="fr-FR";utterance.rate=state.vitesse;utterance.pitch=1;utterance.voice=bestVoice();

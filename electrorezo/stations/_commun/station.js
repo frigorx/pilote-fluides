@@ -119,7 +119,10 @@ const Station = (() => {
 
   function direAuNavigateur(texte, tour, b) {
     if (!('speechSynthesis' in window)) { b.textContent = 'Voix indisponible'; b.disabled = true; return; }
-    const u = new SpeechSynthesisUtterance(texte);
+    /* la table de prononciation partagée : ce chemin sert quand le MP3 manque ou
+       ne se charge pas, et il livrait jusqu'ici le texte brut à la synthèse. */
+    const dit = window.PILOTE_PRONONCIATION ? window.PILOTE_PRONONCIATION.oraliser(texte) : texte;
+    const u = new SpeechSynthesisUtterance(dit);
     u.lang = 'fr-FR'; u.rate = S.vitesse; u.pitch = 1;
     const v = meilleureVoix(); if (v) u.voice = v;
     u.onstart = () => { if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); } };

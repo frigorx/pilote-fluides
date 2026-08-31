@@ -11,12 +11,12 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Place correctement un appareil dans le flux.",
-  bac: "Transforme une vitesse moyenne et une section en débit.",
-  bts: "Réalise un profil ou une traversée et estime la qualité de la mesure.",
+  cap: "Placez correctement un appareil dans le flux.",
+  bac: "Transformez une vitesse moyenne et une section en débit.",
+  bts: "Réalisez un profil ou une traversée et estimez la qualité de la mesure.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "La gaine est traversée par une grille de points de relevé : douze, répartis dans la section, et pas un seul au milieu. En amont, une cote marque la longueur droite exigée avant le point de mesure. L’anémomètre entre par un seul trou et se déplace de point en point. Regarde la place que prennent ces douze relevés — c’est le prix d’un débit auquel on peut se fier.",
+  decouverte: "La gaine est traversée par une grille de points de relevé : douze, répartis dans la section, et pas un seul au milieu. En amont, une cote marque la longueur droite exigée avant le point de mesure. L’anémomètre entre par un seul trou et se déplace de point en point. Regardez la place que prennent ces douze relevés — c’est le prix d’un débit auquel on peut se fier.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "À la station Débit, vitesse, section, on a établi que l’air ne va pas à la même vitesse partout : rapide au centre, freiné contre la paroi. Mesurer un débit, c’est donc mesurer une vitesse moyenne, pas une vitesse.\n\nLa méthode s’appelle la traversée. On découpe la section en zones de même surface, on relève une vitesse au centre de chacune, et on fait la moyenne de ces relevés — chaque zone pèse ainsi le même poids. Douze points sur une gaine ronde de taille courante est un ordre de grandeur habituel ; le nombre exact et la position des points sont donnés par la méthode retenue pour le chantier, et ils changent avec la forme et la taille de la gaine. On multiplie ensuite cette moyenne par l’aire de la section, et on obtient le débit.\n\nRien de tout cela ne vaut si l’air arrive tordu. Un coude, un registre, un piquage juste en amont laissent un écoulement en tourbillon, où les vitesses n’ont plus aucun ordre. On cherche donc une longueur droite avant le point de mesure, de l’ordre de plusieurs fois le diamètre de la gaine, et une longueur plus courte après. La valeur exacte se lit dans le texte applicable au chantier ; elle ne s’invente pas.\n\nAux bouches, on ne traverse rien : on applique un cône qui ramasse tout l’air vers l’appareil. Trois pièges y attendent. Un cône mal plaqué laisse fuir de l’air sur le pourtour et fait chuter la valeur. Un cône de forme inadaptée à la bouche perturbe le jet. Et le cône lui-même ajoute une résistance qui freine un peu le débit qu’on cherche à mesurer : les appareils récents corrigent cet effet, les autres non.",
@@ -25,8 +25,8 @@
   formula: "Qᵥ = v moyenne × A  ·  m³/s × 3600 = m³/h",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Deux curseurs : la vitesse moyenne relevée et la section de la gaine. Pose 4,2 mètres par seconde sur 0,055 mètre carré, et note le débit obtenu. Imagine maintenant que tu n’aies relevé qu’un seul point, au centre : la vitesse y dépasse la moyenne d’environ un quart. Monte donc le curseur à 5,3 mètres par seconde, sans toucher à la section, et regarde le débit annoncé.",
-  lecture: "Le débit s’affiche en mètres cubes par heure : compare-le à celui que demande le plan, et pas à celui que tu espérais trouver. Un écart de quelques pour cent se discute ; un écart de vingt pour cent a une cause, et cette cause se cherche. L’écart entre tes deux essais est exactement l’erreur que commet une mesure prise au centre. Regarde son sens : elle gonfle toujours le résultat, et fait croire qu’une installation débite alors qu’elle est en dessous.",
+  consigne: "Deux curseurs : la vitesse moyenne relevée et la section de la gaine. Posez 4,2 mètres par seconde sur 0,055 mètre carré, et notez le débit obtenu. Imaginez maintenant que vous n’ayez relevé qu’un seul point, au centre : la vitesse y dépasse la moyenne d’environ un quart. Montez donc le curseur à 5,3 mètres par seconde, sans toucher à la section, et regardez le débit annoncé.",
+  lecture: "Le débit s’affiche en mètres cubes par heure : comparez-le à celui que demande le plan, et pas à celui que vous espériez trouver. Un écart de quelques pour cent se discute ; un écart de vingt pour cent a une cause, et cette cause se cherche. L’écart entre vos deux essais est exactement l’erreur que commet une mesure prise au centre. Regardez son sens : elle gonfle toujours le résultat, et fait croire qu’une installation débite alors qu’elle est en dessous.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */
   limites: "Le calcul suppose que la vitesse affichée est bien une moyenne, et que la section est pleine et connue. Il ne dit rien de l’incertitude du relevé, qui vient de l’appareil, du nombre de points et de la stabilité de l’air. Sur une installation en service, un débit se donne toujours avec la méthode qui l’a produit : sans elle, la valeur n’est pas vérifiable.",

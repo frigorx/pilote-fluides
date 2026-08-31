@@ -11,12 +11,12 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Repère un coude, un té, une réduction et un registre sur un réseau.",
-  bac: "Additionne les pertes linéaires et les pertes singulières d’une même branche.",
-  bts: "Calcule une perte singulière à partir d’un coefficient et de la pression dynamique.",
+  cap: "Repérez un coude, un té, une réduction et un registre sur un réseau.",
+  bac: "Additionnez les pertes linéaires et les pertes singulières d’une même branche.",
+  bts: "Calculez une perte singulière à partir d’un coefficient et de la pression dynamique.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "La même courbe de pression, regardée autrement. Cette fois, laisse la pente de côté et suis les marches : ces endroits où la pression tombe d’un coup, sans avoir parcouru le moindre mètre. Chacune tient sous un repère du dessin — un coude, un té où le réseau se sépare, une réduction. Trois accidents ici, bien alignés. Dans un faux plafond réel, il y en a quinze.",
+  decouverte: "La même courbe de pression, regardée autrement. Cette fois, laissez la pente de côté et suivez les marches : ces endroits où la pression tombe d’un coup, sans avoir parcouru le moindre mètre. Chacune tient sous un repère du dessin — un coude, un té où le réseau se sépare, une réduction. Trois accidents ici, bien alignés. Dans un faux plafond réel, il y en a quinze.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "Une pièce de trente centimètres peut coûter plus cher que dix mètres de gaine droite. La raison est simple : il ne s’agit plus de frottement. Dans un coude, la veine d’air ne suit pas sagement la paroi — elle se décolle, tourbillonne, se recolle plus loin. Ces tourbillons prennent de l’énergie à l’écoulement, et ils ne la rendent jamais.\n\nOn chiffre cette perte avec un coefficient sans unité, noté ζ et lu « zêta », qui ne dépend que de la forme de la pièce. On le multiplie par la pression dynamique de l’air, ρv²/2, c’est-à-dire par ce que coûterait d’arrêter cet air complètement.\n\nUn exemple à retenir. Dans une gaine où l’air va à 5 m/s, la pression dynamique vaut 0,5 × 1,2 × 5² = 15 Pa. Un coude à grand rayon, ζ ≈ 0,25, coûte donc 3,75 Pa. Le même coude à angle vif, ζ ≈ 1,2, en coûte 18 — soit autant que 22 m de gaine droite à 0,8 Pa/m. Un seul coude mal choisi efface tout le soin apporté au reste de la branche.\n\nLa vitesse tranche encore, comme partout sur cette ligne : puisque la perte suit le carré de la vitesse, une vitesse doublée quadruple ce que coûte chaque accident.\n\nEnfin, on additionne le tout sur la branche étudiée — celle du chemin le plus défavorisé, pas toutes les singularités du réseau. La perte totale de cette branche, c’est ce que le ventilateur devra fournir.",
@@ -25,7 +25,7 @@
   formula: "Δp singulière = ζ × ρv²/2  ·  Δp branche = R × L + somme des Δp singulières",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "La branche affichée fait 18 m de droit à 0,7 Pa/m. Mets d’abord les pertes singulières à zéro et lis ce que coûte le droit seul. Remonte-les ensuite à 32 Pa : deux coudes à grand rayon, un té de dérivation et une réduction, dans une gaine à 5 m/s. Compare les deux totaux. Le poseur remplace enfin les deux coudes à grand rayon par des coudes à angle vif, moins chers à l’achat : porte les pertes singulières à 60 Pa.",
+  consigne: "La branche affichée fait 18 m de droit à 0,7 Pa/m. Mettez d’abord les pertes singulières à zéro et lisez ce que coûte le droit seul. Remontez-les ensuite à 32 Pa : deux coudes à grand rayon, un té de dérivation et une réduction, dans une gaine à 5 m/s. Comparez les deux totaux. Le poseur remplace enfin les deux coudes à grand rayon par des coudes à angle vif, moins chers à l’achat : portez les pertes singulières à 60 Pa.",
   lecture: "12,6 Pa pour 18 m de droit ; 44,6 Pa une fois les accidents comptés. Quatre pièces qui tiennent dans un mètre coûtent deux fois et demie ce que coûtent les dix-huit mètres. Avec les coudes à angle vif, le total monte à 72,6 Pa : 28 Pa de plus, à fournir par le ventilateur à chaque heure de fonctionnement, pendant toute la vie du bâtiment. Le prix d’achat des deux coudes, lui, s’oublie le jour de la livraison.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */

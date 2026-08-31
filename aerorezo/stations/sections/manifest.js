@@ -11,21 +11,21 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Compare deux ouvertures et dis laquelle laisse passer le plus d’air.",
-  bac: "Calcule la section qu’exige un débit imposé, puis contrôle la vitesse obtenue.",
-  bts: "Compare une solution ronde et une solution rectangulaire à section utile et diamètre équivalent cohérents.",
+  cap: "Comparez deux ouvertures et dites laquelle laisse passer le plus d’air.",
+  bac: "Calculez la section qu’exige un débit imposé, puis contrôlez la vitesse obtenue.",
+  bts: "Comparez une solution ronde et une solution rectangulaire à section utile et diamètre équivalent cohérents.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "La cote sous la gaine annonce 315 mm. Ce nombre n’a pas été choisi en premier : il est arrivé en dernier, après un débit imposé par le plan et une vitesse décidée par le concepteur. Regarde la section coupée — c’est elle, la vraie inconnue de cette station. Le diamètre n’est que la façon de la commander chez le fournisseur.",
+  decouverte: "La cote sous la gaine annonce 315 mm. Ce nombre n’a pas été choisi en premier : il est arrivé en dernier, après un débit imposé par le plan et une vitesse décidée par le concepteur. Regardez la section coupée — c’est elle, la vraie inconnue de cette station. Le diamètre n’est que la façon de la commander chez le fournisseur.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "Ici le calcul se retourne. Sur un plan, on ne connaît pas la vitesse : on connaît un débit, imposé par les occupants et par l’usage du local. La vitesse, c’est le concepteur qui la choisit — c’est le seul endroit de la chaîne où quelqu’un décide.\n\nLa section s’en déduit seule : A = Qᵥ / v, avec le débit ramené à la seconde. Pour 1 400 m³/h à 5 m/s : 1 400 ÷ 3 600 = 0,389 m³/s, puis 0,389 ÷ 5 = 0,0778 m². Le diamètre suit : D = √(4A/π) = 0,315 m, soit 315 mm.\n\nLe résultat tombe rarement aussi rond. Les conduits circulaires se vendent dans une série fixe — 100, 125, 160, 200, 250, 315, 400, 500, 630 mm. On prend le diamètre juste au-dessus du calcul, puis on revient calculer la vitesse réelle dans ce diamètre-là, parce qu’elle a changé. C’est ce retour qui valide le choix, pas le calcul de départ.\n\nLe rectangulaire réserve un piège. À section égale, il ne se comporte pas comme un rond : il perd davantage, parce qu’il offre plus de paroi à l’air. On le dimensionne donc avec un diamètre équivalent — le diamètre du rond qui perdrait autant au mètre, au même débit. Un 500 × 160 mm a la section d’un rond de 319 mm, mais se comporte comme un rond de 298 mm. La section sert à la vitesse réelle, le diamètre équivalent sert aux pertes de charge : ce sont deux nombres différents, et on ne les échange pas.\n\nDernier piège, celui des unités : le plan est coté en millimètres, le calcul se mène en mètres et en mètres carrés. Un diamètre de 315 mm devient 0,315 m avant toute chose.",
 
-  method: "Pars du débit imposé et de la vitesse choisie pour trouver la section — puis reviens vérifier la vitesse réelle du diamètre que tu poses.",
+  method: "Partez du débit imposé et de la vitesse choisie pour trouver la section — puis revenez vérifier la vitesse réelle du diamètre que vous posez.",
   formula: "A = Qᵥ / v  ·  A cercle = πD²/4  ·  D = √(4A/π)  ·  A rectangle = largeur × hauteur",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Le plan demande 1 400 m³/h dans cette gaine. Laisse le diamètre sur 315 et cherche la vitesse qui donne ce débit. Le faux plafond ne laisse finalement passer qu’un 250 : sans toucher au débit demandé, ramène le diamètre à 250 et retrouve les 1 400 m³/h. Note la vitesse obtenue. Cherche enfin le plus petit diamètre qui garderait la vitesse sous 6 m/s — puis regarde s’il existe dans la série du commerce.",
+  consigne: "Le plan demande 1 400 m³/h dans cette gaine. Laissez le diamètre sur 315 et cherchez la vitesse qui donne ce débit. Le faux plafond ne laisse finalement passer qu’un 250 : sans toucher au débit demandé, ramenez le diamètre à 250 et retrouvez les 1 400 m³/h. Notez la vitesse obtenue. Cherchez enfin le plus petit diamètre qui garderait la vitesse sous 6 m/s — puis regardez s’il existe dans la série du commerce.",
   lecture: "Le débit s’affiche sous les curseurs, mais c’est la vitesse qu’il faut surveiller. À 315 mm elle vaut environ 5 m/s : le réseau est calme. À 250 mm elle approche 8 m/s : la gaine tiendrait, mais elle sifflerait, et chaque coude du réseau coûterait deux fois et demie plus de pression, parce que la perte suit le carré de la vitesse. Entre 250 et 315, le curseur propose des diamètres que personne ne fabrique.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */

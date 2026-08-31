@@ -15,21 +15,21 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Place les bouches et suis chaque branche jusqu’au caisson.",
-  bac: "Additionne les débits branche par branche et vérifie la vitesse obtenue.",
-  bts: "Dimensionne le réseau, évalue les pertes de charge et situe le point de fonctionnement.",
+  cap: "Placez les bouches et suivez chaque branche jusqu’au caisson.",
+  bac: "Additionnez les débits branche par branche et vérifiez la vitesse obtenue.",
+  bts: "Dimensionnez le réseau, évaluez les pertes de charge et situez le point de fonctionnement.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "Un réseau de VMC ressemble à un arbre, mais on le lit à l’envers. Les feuilles sont les bouches, chacune dans sa pièce, chacune avec son petit débit. Les branches se rejoignent, et à chaque jonction les débits s’additionnent. Le tronc, lui, arrive au caisson : il transporte tout ce que les bouches ont demandé. Regarde une jonction : ce qui sort n’est jamais plus grand que la somme de ce qui entre, et jamais plus petit non plus.",
+  decouverte: "Un réseau de VMC ressemble à un arbre, mais on le lit à l’envers. Les feuilles sont les bouches, chacune dans sa pièce, chacune avec son petit débit. Les branches se rejoignent, et à chaque jonction les débits s’additionnent. Le tronc, lui, arrive au caisson : il transporte tout ce que les bouches ont demandé. Regardez une jonction : ce qui sort n’est jamais plus grand que la somme de ce qui entre, et jamais plus petit non plus.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "Étudier un réseau, c’est répondre à deux questions dans l’ordre : quel débit passe où, et quelle taille de gaine pour le transporter.\n\nLe débit d’abord, et il se construit du bout vers la source. Chaque bouche porte le débit exigé pour sa pièce — cuisine, salle d’eau, WC —, débit qu’on cherche dans le texte applicable au projet, jamais de mémoire. On remonte ensuite branche par branche : à chaque jonction, le tronçon aval transporte la somme des débits qui le rejoignent. Arrivé au caisson, on connaît le débit total de l’installation. Une erreur classique consiste à reporter le débit d’une bouche sur tout un tronc, ou à additionner deux fois la même branche : le contrôle est simple, la somme des bouches doit se retrouver au tronc.\n\nLa taille de gaine ensuite. Elle ne se choisit pas au hasard, ni sur ce qui reste au magasin : elle découle du débit et de la vitesse qu’on s’autorise. C’est exactement la relation vue à la station Débit, vitesse, section — on multiplie la surface par la vitesse pour obtenir le débit, et on la retourne pour trouver la surface. En VMC de logement, on reste sur des vitesses modestes : trop vite, la gaine siffle et l’occupant coupe l’installation ; trop lentement, on encombre les combles et on paie de la gaine pour rien.\n\nReste ce qui décide vraiment du ventilateur : la résistance du réseau. Chaque mètre de gaine, chaque coude, chaque bouche et chaque filtre coûtent de la pression. Toutes les branches ne coûtent pas pareil : il y en a une qui coûte plus que les autres — la plus longue, ou la plus tortueuse. C’est elle, et elle seule, qui fixe la pression que le ventilateur doit fournir : si le chemin le plus difficile est desservi, les autres le sont d’office. On l’appelle le chemin le plus défavorisé.\n\nEt c’est là que l’ordre du métier se referme. Débits, puis sections, puis pertes de charge du chemin le plus défavorisé — alors seulement on choisit le caisson, en vérifiant qu’il fournit ce débit à cette pression. L’inverse est une installation qui tourne sans faire son travail.",
 
-  method: "Travaille branche par branche, du bout vers le caisson. Identifie ensuite le chemin le plus défavorisé : c’est lui qui commande le ventilateur.",
+  method: "Travaillez branche par branche, du bout vers le caisson. Identifiez ensuite le chemin le plus défavorisé : c’est lui qui commande le ventilateur.",
   formula: "Débits des bouches additionnés → débit du tronc ; surface × vitesse → section ; perte du chemin le plus défavorisé → ventilateur",
 
   /* Manipuler — une action précise. */
-  consigne: "Une branche doit transporter le débit de deux bouches. Règle le diamètre et la vitesse jusqu’à obtenir ce débit, puis regarde la vitesse obtenue : est-elle raisonnable pour un logement ? Réduis ensuite le diamètre d’un cran, comme si tu n’avais que cette gaine en stock, et observe la vitesse grimper. Demande-toi enfin ce que l’occupant entendra la nuit.",
+  consigne: "Une branche doit transporter le débit de deux bouches. Réglez le diamètre et la vitesse jusqu’à obtenir ce débit, puis regardez la vitesse obtenue : est-elle raisonnable pour un logement ? Réduisez ensuite le diamètre d’un cran, comme si vous n’aviez que cette gaine en stock, et observez la vitesse grimper. Demandez-vous enfin ce que l’occupant entendra la nuit.",
   lecture: "Une gaine trop petite transporte le bon débit — mais plus vite, donc plus bruyamment, et en coûtant plus de pression au ventilateur. Le débit affiché ne dit donc pas si le réseau est correct : c’est la vitesse qui tranche. Deux réseaux au même débit peuvent être l’un silencieux, l’autre insupportable.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */

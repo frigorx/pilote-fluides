@@ -43,9 +43,52 @@ LONGUES = {"fiche", "capture", "composition", "speak", "voiceStep",
            "narration", "data-narration", "s", "frise", "dynamique"}
 
 
+TABLE_DEFAUT = os.path.join(ICI, "prononciation.json")
+
+
+def _charger_table(chemin=TABLE_DEFAUT):
+    """La table de prononciation partagée avec le navigateur.
+
+    Une seule source pour les deux moteurs : moteur/prononciation.js en est
+    généré, et ce lecteur l'applique ici. Deux copies de 218 règles finiraient
+    par diverger, et le même mot serait bien dit d'un côté, mal de l'autre.
+
+    Deux conversions de syntaxe, la table étant écrite en notation JavaScript :
+    - les renvois de groupe $1 deviennent \\g<1>, et non \\1 : dans « $11 heure »,
+      « \\11 » désignerait le groupe 11, qui n'existe pas ; « \\g<1>1 » est sans
+      ambiguïté. C'est la panne exacte rencontrée sur la fiche « Catégorie E » ;
+    - les plages hors BMP \\u{1F000} deviennent \\U0001F000. La table les écrit
+      en notation JavaScript à dessein : \\U0001F000 y compilerait sans erreur
+      et y avalerait les lettres.
+    """
+    try:
+        with io.open(chemin, encoding="utf-8") as f:
+            regles = json.load(f)["regles"]
+    except (OSError, ValueError, KeyError):
+        return ()
+
+    compilees = []
+    for regle in regles:
+        motif = re.sub(r"\\u\{([0-9A-Fa-f]+)\}",
+                       lambda m: "\\U" + m.group(1).rjust(8, "0"), regle["motif"])
+        remplacement = re.sub(r"\$(\d)", r"\\g<\1>", regle["remplacement"])
+        try:
+            compilees.append((re.compile(motif), remplacement))
+        except re.error:
+            pass          # un motif inutilisable ne doit pas empêcher la fabrication
+    return tuple(compilees)
+
+
+TABLE = _charger_table()
+
+
 def oraliser(text):
-    """Reprise mot pour mot de generer-audios-piper.py — même prononciation
-    métier des deux côtés du lot mixte."""
+    """Prononciation métier. La table partagée passe EN PREMIER : plusieurs de ses
+    règles réécrivent des formules entières qui contiennent « HP », « CO₂ » ou
+    « °C » — si les règles historiques ci-dessous passaient d'abord, ces motifs
+    ne matcheraient plus. Les règles historiques restent ensuite, en filet."""
+    for motif, remplacement in TABLE:
+        text = motif.sub(remplacement, text)
     replacements = (
         (r"\bF[\s‑-]?Gas\b", "F gaz"),
         (r"\bkg\s*CO[₂2][eé]q?\b", "kilogrammes équivalent dioxyde de carbone"),
@@ -114,8 +157,12 @@ def dire(texte, voix, cible, debit):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--modules", required=True,
+    ap.add_argument("--modules", default="",
                     help="dossiers de station à couvrir, séparés par des virgules")
+    ap.add_argument("--sources", default="",
+                    help="fragments de chemin de source à couvrir, séparés par des "
+                         "virgules — pour les narrations qui ne vivent pas dans un "
+                         "dossier res/ (cartes.js, prof-vocal.js, legislation/…)")
     ap.add_argument("--corpus", default=CORPUS_DEFAUT)
     ap.add_argument("--audio", default=AUDIO_DEFAUT,
                     help="dossier des MP3 du pack (par défaut : le fonds central)")
@@ -137,6 +184,9 @@ def main():
         )
 
     modules = [m.strip() for m in args.modules.split(",") if m.strip()]
+    sources = [s.strip() for s in args.sources.split(",") if s.strip()]
+    if not modules and not sources:
+        raise SystemExit("Rien à faire : donner au moins --modules ou --sources.")
     os.makedirs(args.audio, exist_ok=True)
 
     with io.open(args.corpus, encoding="utf-8") as f:
@@ -145,11 +195,14 @@ def main():
     retenues = []
     for it in narrations:
         for s in (it.get("sources") or []):
-            if module_de(s) in modules:
+            chemin = str(s).replace("\\", "/")
+            if (modules and module_de(s) in modules) or \
+               any(fragment in chemin for fragment in sources):
                 retenues.append(it)
                 break
 
-    print("%d narrations à fabriquer pour : %s" % (len(retenues), ", ".join(modules)))
+    print("%d narrations à fabriquer pour : %s" % (
+        len(retenues), ", ".join(modules + sources)))
     print("  explique  : %s" % args.voix_explique)
     print("  interroge : %s" % args.voix_interroge)
     print("  débit     : %s" % args.debit)
@@ -172,12 +225,20 @@ def main():
         role = "explique" if it.get("type") in LONGUES else "interroge"
         voix = args.voix_explique if role == "explique" else args.voix_interroge
         cible = os.path.join(args.audio, cle + ".mp3")
-        deja_bonne_voix = payload["entrees"].get(cle, {}).get("voix") == voix
+        texte = oraliser(it.get("texte", ""))
+        if not texte:
+            continue
+        # Empreinte de ce que la voix DIT, pas de ce qui est écrit. La clé du MP3
+        # est le hash du texte source et ne bouge pas quand la table de
+        # prononciation évolue : sans cette seconde empreinte, un fichier gravé
+        # avec l'ancienne prononciation passerait pour à jour indéfiniment.
+        empreinte = hashlib.sha256(texte.encode("utf-8")).hexdigest()[:16]
+        ancienne = payload["entrees"].get(cle, {})
+        deja_bonne_voix = ancienne.get("voix") == voix
         pret = os.path.exists(cible) and os.path.getsize(cible) > 500
-        if args.force or not (deja_bonne_voix and pret):
-            texte = oraliser(it.get("texte", ""))
-            if not texte:
-                continue
+        # une entrée sans empreinte date d'avant la table : on la refait une fois.
+        a_jour = ancienne.get("empreinteTexte") == empreinte
+        if args.force or not (deja_bonne_voix and pret and a_jour):
             if not dire(texte, voix, cible, args.debit):
                 rates += 1
                 print("  RATÉ %s" % cle)
@@ -190,6 +251,7 @@ def main():
             "sha256": hashlib.sha256(donnees).hexdigest()[:16],
             "octets": len(donnees),
             "voix": voix,
+            "empreinteTexte": empreinte,
         }
         if position % 25 == 0:
             print("  %d / %d" % (position, len(retenues)))

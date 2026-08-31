@@ -1,0 +1,1320 @@
+{
+ "version": 1,
+ "etabliLe": "2026-08-31",
+ "source": "mesuré sur les 3 750 narrations de build/voix/corpus.json",
+ "convention": {
+  "groupes": "les renvois de groupe s’écrivent $1, $2… (JavaScript) ; le lecteur Python les convertit en \\1, \\2…",
+  "unicode": "les plages hors BMP s’écrivent \\u{1F000} (JavaScript) ; le lecteur Python les convertit en \\U0001F000. Ne JAMAIS écrire \\U0001F000 ici : ce motif compile en JavaScript sans erreur et y avale les lettres.",
+  "ordre": "l’ordre du tableau est signifiant : les motifs longs et spécifiques passent avant les courts et généraux."
+ },
+ "regles": [
+  {
+   "motif": "\\s*→\\s*$",
+   "remplacement": "",
+   "occurrences": 0,
+   "pourquoi": "flèche terminale : un chevron de bouton, pas un mot — avant la règle générale sur →"
+  },
+  {
+   "motif": "^[\\s\\S]*\\{[^{}]*:[^{}]*\\}[\\s\\S]*$",
+   "remplacement": "",
+   "occurrences": 0,
+   "pourquoi": "ORDRE 1 — FILET DE SÉCURITÉ, bloc A (purge). AVERTISSEMENT DE MÉTHODE : le corpus a été RÉGÉNÉRÉ pendant l'analyse (corpus.json est passé de 3421 à 3750 narrations, genereLe 2026-08-31T17:34:45Z). Toute la table est mesurée sur un instantané de cette version 3750 (scratchpad/corpus-snapshot.json). Les 7 narrations CSS que signalaient les tables d'entrée (028aa6f7-2590, 0b8cec5c-28, 0dd74d1c-1498, 1f9ac5dc-1869, 399e4d5c-962, 85b2bf42-1541, c0e1f360-70) ont DISPARU du corpus régénéré : la règle compte donc 0 occurrence aujourd'hui. Elle est conservée parce qu'elle est la seule protection possible côté prononciation si le collecteur réaspire du CSS, et parce qu'elle ne peut rien casser : sur 3750 textes, aucun texte français ne contient une déclaration {…:…}. [\\s\\S] et non (?s) : le drapeau inline est une SyntaxError en JavaScript. Renvoie la chaîne vide ; generer-audios-edge-tts.py fait déjà `if not texte: continue`, le portage JS doit faire de même."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])n°\\s*",
+   "remplacement": "$1numéro ",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 2 — bloc B (degré). DOIT passer avant toute règle sur °, sinon on produit « n degrés 1516 ». Clé cccbe16c-2889. NOTE DE PORTABILITÉ VALABLE POUR TOUTE LA TABLE : aucun \\b n'est employé au contact d'une lettre accentuée, d'un ² ou d'un ₂, parce que \\b est Unicode en Python et ASCII en JavaScript. Les bornes sont écrites en clair : LB = (^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³]) à gauche, RB = (?![A-Za-z0-9_À-ÖØ-öø-ÿ²³]) à droite. Le lookbehind est proscrit (Safari < 16.4), les groupes nommés et \\p{...} aussi. Les remplacements sont notés \\1 (Python) ; en JavaScript, écrire $1."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])T°",
+   "remplacement": "$1température",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 3 — bloc B. Clé 27fd8343-89. « T degrés trop élevée » est agrammatical ; le mot entier est restitué. Avant la règle générique du degré."
+  },
+  {
+   "motif": "(^|[^0-9])0\\s*°(?!\\s*[CFK])",
+   "remplacement": "$1 0 degré",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 4 — bloc B. Clé 20b1e515-16, angle vilebrequin, SINGULIER (« zéro degré », pas « degrés »). Le lookahead protège °C, °F, °K, traités plus loin par la règle existante ° C."
+  },
+  {
+   "motif": "(\\d)\\s*°(?!\\s*[CFK])",
+   "remplacement": "$1 degrés",
+   "occurrences": 0,
+   "pourquoi": "ORDRE 5 — bloc B, filet. 1 occurrence brute, 0 en cascade : la règle du 0° la consomme. Conservée car elle exige un chiffre à gauche (donc ne peut plus attraper « n° » ni « T° », désormais traités) et couvrira un futur « 90° »."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])kJ\\s*/\\s*kg(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1kilojoules par kilogramme",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 6 — bloc C (unités composées), première des dix. TOUT LE BLOC C DOIT PASSER AVANT le bloc M (oraliser existant) : sans cela \\bkg\\b, \\bkWh\\b et \\bW\\b ont déjà mordu et « kJ/kg » se dit « k J barre kilogrammes ». Clés d5400ab1-56, e591cb22-2949."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])kWh\\s*/\\s*an(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1kilowattheures par an",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 7 — bloc C. Avant M22 (\\bkWh\\b). Réserve assumée : « le kWh/an » donne « le kilowattheures par an » — défaut d'accord préexistant du bloc M, s muet, inaudible."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])kg\\s*/\\s*m³",
+   "remplacement": "$1kilogrammes par mètre cube",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 8 — bloc C. Volontairement sans borne droite : ³ est un caractère de mot en Python mais pas en JavaScript, une borne posée là divergerait entre les deux moteurs. Alternative ASCII « m3 » écartée : 0 occurrence mesurée."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])m³\\s*/\\s*h(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1mètres cubes par heure",
+   "occurrences": 4,
+   "pourquoi": "ORDRE 9 — bloc C. Avant les règles m³ et m² isolées. La classe de gauche exclut × (U+00D7) et ÷ (U+00F7) : l'intervalle À-ÿ les contient, À-ÖØ-öø-ÿ non — correction reprise des tables d'entrée et vérifiée."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])m³\\s*/\\s*s(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1mètres cubes par seconde",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 10 — bloc C. Clé 79b44c32-141. Enchaînement contrôlé : les cinq unités de cette narration sortent justes."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])mm²\\s*/\\s*s(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1millimètres carrés par seconde",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 11 — bloc C. Clé a3bcd8f1-40. IMPÉRATIF avant la règle mm² isolée, qui laisserait « /s » orphelin — écart mesuré : mm² tombe de 6 à 5 en cascade, c'est exactement cette consommation."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])m\\s*/\\s*s(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1mètres par seconde",
+   "occurrences": 5,
+   "pourquoi": "ORDRE 12 — bloc C, après m³/h et m³/s. La borne gauche interdit de mordre sur le m final d'un mot ou sur « kg/m³ » ; contrôle adversarial : aucun « km/s » dans le corpus."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])tr\\s*/\\s*min(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1tours par minute",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 13 — bloc C. Avant min/h et avant la règle « min » isolée, qui capteraient le min final."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])min\\s*/\\s*h(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1minutes par heure",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 14 — bloc C, après tr/min, avant « min » isolée. Clé ee94e952-49."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])L\\s*/\\s*min(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1litres par minute",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 15 — bloc C. INTERDICTION MAINTENUE : aucune règle sur « L » nu. Mesure refaite sur 3750 textes : \\bL\\b capte massivement l'article élidé français (L'évaporateur, L'huile…), une règle sur L seul détruirait des centaines de débuts de phrase. Seul le couple L/min est traité."
+  },
+  {
+   "motif": "(\\d)\\s*m\\s*×\\s*(\\d)\\s*m(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1 mètres sur $2 mètres",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 16 — bloc D (unités simples), en tête. DOIT passer avant la règle générale du × ET avant la règle « chiffre + m » : c'est le seul cas où × se dit « sur ». Écart mesuré : × tombe de 22 à 20 en cascade, ce sont ces deux-là. Clé e3d374d6-250."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])mm²",
+   "remplacement": "$1millimètres carrés",
+   "occurrences": 5,
+   "pourquoi": "ORDRE 17 — bloc D, avant m². Le métier dit « millimètres carrés », pas « millimètre au carré » : c'est pourquoi aucune règle générique sur l'exposant ² n'existe avant les unités. La borne gauche empêche que m² morde dans mm²."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])cm³",
+   "remplacement": "$1centimètres cubes",
+   "occurrences": 6,
+   "pourquoi": "ORDRE 18 — bloc D, avant m³. Clés 0c7831f4-17, 36138df6-54, 6b8f0dca-62, 7165fd8d-35, 8269086a-45, ee94e952-49."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])m²",
+   "remplacement": "$1mètres carrés",
+   "occurrences": 7,
+   "pourquoi": "ORDRE 19 — bloc D, après mm² et mm²/s. Pas de borne droite : \\b après ² fonctionne en Python et échoue en JavaScript, c'est le piège de portabilité que les tables d'entrée avaient repéré."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])m³",
+   "remplacement": "$1mètres cubes",
+   "occurrences": 0,
+   "pourquoi": "ORDRE 20 — bloc D, filet. 6 occurrences brutes, 0 en cascade : m³/h, m³/s et kg/m³ les ont toutes consommées. L'écart mesuré (−6) est la preuve directe que l'ordre du bloc C est nécessaire."
+  },
+  {
+   "motif": "(\\d)\\s+mm(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1 millimètres",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 21 — bloc D. L'espace obligatoire et la borne droite écartent les « padding:2mm 4mm » de CSS et les mm² : 15 correspondances sans garde-fous, 3 avec. Clés 4fd931a1-86, b5205dbb-75."
+  },
+  {
+   "motif": "(\\d)\\s+m(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1 mètres",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 22 — bloc D, la règle la plus exposée, donc placée après m², m³/h, m³/s, m/s et la règle m × m. Écart mesuré : 10 correspondances seule, 1 en cascade — les 9 autres sont des m/s et des dimensions déjà traités. 0 faux positif."
+  },
+  {
+   "motif": "(\\d)\\s+g(?![A-Za-z0-9_/À-ÖØ-öø-ÿ])",
+   "remplacement": "$1 grammes",
+   "occurrences": 4,
+   "pourquoi": "ORDRE 23 — bloc D. Le lookahead protège tout mot commençant par g et un futur g/s. Aucune collision avec \\bkg\\b (bloc M) : « 18 kg » n'offre pas la séquence chiffre-espace-g."
+  },
+  {
+   "motif": "(\\d)\\s+min(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1 minutes",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 24 — bloc D, en dernier des règles « min ». Sans la borne droite, la règle produirait « 6 minutesutes » sur les dizaines de « 6 minutes » déjà écrits en toutes lettres ; avec elle, seule la vraie abréviation reste (clé 136a26e9-359)."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Wh(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1wattheures",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 25 — bloc D. Les bornes excluent le Wh interne de kWh. Sans cette règle la comparaison puissance/énergie de la clé 8a6f7756-210 est muette d'un côté."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])ppm(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1P P M",
+   "occurrences": 7,
+   "pourquoi": "ORDRE 26 — bloc D. Épeler et non développer : le texte glose déjà le sigle, développer produirait « des parties par million — parties par million ». Cohérent avec le \\bQCM\\b → « Q C M » déjà en production."
+  },
+  {
+   "motif": "(^|[^0-9,.])(\\d{3,4})\\s*/\\s*(\\d{3,4})(?![0-9])(?!,\\d)",
+   "remplacement": "$1$2 barre $3",
+   "occurrences": 17,
+   "pourquoi": "ORDRE 27 — bloc E (nombres). 3 à 4 chiffres des DEUX côtés : la version à 4 chiffres à gauche ratait « 517/2014 », celle à 4 chiffres à droite ratait « 2024/573 », le règlement le plus cité du corpus. Les gardes neutralisent les décimales : testé, « 0,005 / 0,000531 » n'est pas capturé, « 2024/573, que » l'est. Doit passer AVANT la barre oblique entre lettres."
+  },
+  {
+   "motif": "(^|[^0-9,.])(\\d{1,2})\\.(\\d)(\\d)(?![0-9])",
+   "remplacement": "$1$2 point $3 $4",
+   "occurrences": 78,
+   "pourquoi": "ORDRE 28 — bloc E, deuxième plus gros volume de la table. Les codes de compétence F-Gas. Le découpage en deux groupes est nécessaire : « 07 » d'un bloc perdrait le zéro. Aucun décimal à point réel dans le corpus, les décimaux français sont à la virgule et ne sont pas touchés."
+  },
+  {
+   "motif": "(\\d) (\\d{3}) (\\d{3})(?![0-9])",
+   "remplacement": "$1$2$3",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 29 — bloc E. Les espaces de milliers sont supprimées par groupes capturants (une substitution statique ne peut pas « retirer des espaces »). La forme longue d'abord, sinon « 1 000 000 » sortirait à moitié recollé."
+  },
+  {
+   "motif": "(\\d) (\\d{3})(?![0-9])",
+   "remplacement": "$1$2",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 30 — bloc E, seconde moitié. Balayage complet : aucune autre suite chiffre-espace-triplet dans le corpus, donc aucun risque de souder deux nombres voisins indépendants. Ne mord ni sur « 4 h 15 » ni sur les énumérations."
+  },
+  {
+   "motif": "(^|[^0-9])1\\s*h\\s*(\\d{2})(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$11 heure $2",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 31 — bloc E. Traite l'accord AVANT la règle générale, sinon « 1 heures 30 ». En JavaScript, \\g<1> s'écrit $1 : c'est la seule référence de la table qui ne s'écrit pas \\1, parce qu'un chiffre suit immédiatement le groupe."
+  },
+  {
+   "motif": "(^|[^0-9])(\\d{1,2})\\s*h\\s*(\\d{2})(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1$2 heures $3",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 32 — bloc E, après la forme « 1 h ». Écart mesuré −2 : ce sont les deux « 1 h 30 » que la règle précédente a consommés. Les deux formats ne peuvent pas partager un gabarit de remplacement, d'où la scission."
+  },
+  {
+   "motif": "(^|[^0-9])(\\d{1,2})\\s*h(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])(?!\\s*\\d)",
+   "remplacement": "$1$2 heures",
+   "occurrences": 9,
+   "pourquoi": "ORDRE 33 — bloc E, en dernier des règles d'heure. Contre-épreuve : les autres « h » du corpus sont l'enthalpie massique h et le diagramme log p-h, jamais précédés d'un chiffre, tous intacts en sortie."
+  },
+  {
+   "motif": "(\\d)\\s*–\\s*(\\d+)(\\s*K)(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "de $1 à $2$3",
+   "occurrences": 8,
+   "pourquoi": "ORDRE 34 — bloc E, avant la règle des kelvins (le K du motif doit encore exister) et avant la règle du tiret entre chiffres. Restreinte aux plages suivies de K : sans cette restriction, 19 repérages de BORNES de pressostat (« 1–2 FERMÉ ») deviendraient des plages de valeurs, contresens direct sur un exercice de câblage."
+  },
+  {
+   "motif": "(\\d)–(\\d)",
+   "remplacement": "$1 $2",
+   "occurrences": 19,
+   "pourquoi": "ORDRE 35 — bloc E, seconde moitié de la règle précédente. Écart mesuré −8 : ce sont les plages en K déjà traitées. Ces 19 tirets restants sont tous des couples de bornes ; remplacés par une espace ils s'entendent « un deux », laissés tels quels edge-tts les énonce « moins » et fabrique une soustraction."
+  },
+  {
+   "motif": "(^|[^0-9])–(?![0-9])",
+   "remplacement": "$1-",
+   "occurrences": 7,
+   "pourquoi": "ORDRE 36 — bloc E. Les demi-cadratins restants sont tous en composition (température–énergie, pression–température, manomètre–table) ; le trait d'union ASCII est correctement lu en composition par la voix française."
+  },
+  {
+   "motif": "(\\d)\\s*K(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1 kelvins",
+   "occurrences": 35,
+   "pourquoi": "ORDRE 37 — bloc E, après les plages. L'exigence d'un chiffre à gauche est le garde-fou décisif : elle écarte « les points A à K » et « en °C ou K ». Aucune valeur « 1 K » n'existe, le pluriel est toujours juste. La règle jumelle déjà présente dans packs/fluides/res/co2-r744/moteur.js devient redondante et peut être retirée au profit de celle-ci."
+  },
+  {
+   "motif": "(\\d)\\s*k\\s*Ω",
+   "remplacement": "$1 kilo-ohms",
+   "occurrences": 5,
+   "pourquoi": "ORDRE 38 — bloc E. Contrôle exhaustif : Ω n'apparaît que précédé de k et d'un chiffre, aucun Ω orphelin ne subsiste. Le k minuscule est distinct du K kelvin, la table est sensible à la casse partout sauf pour F-Gas."
+  },
+  {
+   "motif": "XXᵉ",
+   "remplacement": "vingtième",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 39 — bloc E. Clé 097f2bf4-374. ᵉ est U+1D49, hors de toute classe de la table."
+  },
+  {
+   "motif": "⚠️?\\s*",
+   "remplacement": "Attention. ",
+   "occurrences": 33,
+   "pourquoi": "ORDRE 40 — bloc F (pictogrammes), EN TÊTE du bloc. Une par narration, toujours en ouverture d'avertissement. ⚠ est U+26A0 ; la classe de suppression du bloc F démarre à U+26A1, les deux règles ne se disputent rien — vérifié caractère par caractère sur l'inventaire complet des 87 caractères non-ASCII du corpus."
+  },
+  {
+   "motif": "[\\u{1F000}-\\u{1FAFF}]",
+   "remplacement": " ",
+   "occurrences": 100,
+   "pourquoi": "ORDRE 41 — bloc F. SEULE RÈGLE NON PORTABLE TELLE QUELLE, et l'erreur est silencieuse : en JavaScript sans drapeau u, \\U n'est pas une échappée, la classe devient [U0001F000-U0001FAFF] et supprime des LETTRES — mesuré, elle mangeait la première lettre de 3291 narrations. FORME JAVASCRIPT OBLIGATOIRE : [\\uD83C-\\uD83E][\\uDC00-\\uDFFF] (paire de surrogates, valable sans drapeau u, donc compatible Safari ancien). Avec cette correction, Python et Node donnent le même résultat sur les 3750 textes."
+  },
+  {
+   "motif": "([.!?:;,…])\\s*[▸▶]\\s*",
+   "remplacement": "$1 ",
+   "occurrences": 0,
+   "pourquoi": "ORDRE 42 — bloc F, garde-fou de la règle suivante. 0 occurrence aujourd'hui, conservée pour que la conversion du chevron en point ne puisse jamais produire un double point si un titre venait à se terminer par une ponctuation."
+  },
+  {
+   "motif": "\\s*[▸▶]\\s*",
+   "remplacement": ". ",
+   "occurrences": 80,
+   "pourquoi": "ORDRE 43 — bloc F, SCINDÉE des autres pictogrammes. ▸ et ▶ ne sont pas décoratifs, ce sont des SÉPARATEURS de titre : les supprimer collait deux phrases (« la L I E Le chapitre expliqué »). Convertis en point, la respiration est rendue. Écart mesuré sur la règle suivante : 159 correspondances seule, 78 en cascade, la différence est exactement ce bloc."
+  },
+  {
+   "motif": "[←↑↓↕-⇿⏩-⏺■-◿☀-⚟⚡-➿⟰-⟿⬀-⯿️]",
+   "remplacement": " ",
+   "occurrences": 78,
+   "pourquoi": "ORDRE 44 — bloc F, pictogrammes du plan multilingue de base. Classe construite sur l'inventaire réel, pas sur une plage devinée : elle exclut explicitement → (U+2192) et ↔ (U+2194), traités par le bloc M, et ⚠ (U+26A0), traité plus haut. Elle ne contient ni ∝ (U+221D), ni ≈, ni −, ni les tirets."
+  },
+  {
+   "motif": "\\s*—\\s*,?\\s*",
+   "remplacement": ", ",
+   "occurrences": 587,
+   "pourquoi": "ORDRE 45 — bloc G (ponctuation). LA RÈGLE AU PLUS GROS VOLUME DE LA TABLE : 587 occurrences sur 237 narrations. Le « ,? » optionnel absorbe le seul cas où un cadratin est suivi d'une virgule et éviterait une double virgule ; contrôle final : 0 double virgule sur 3750 textes."
+  },
+  {
+   "motif": "([.!?:;,…])\\s·\\s",
+   "remplacement": "$1 ",
+   "occurrences": 10,
+   "pourquoi": "ORDRE 46 — bloc G, garde-fou de la règle suivante. 10 narrations écrivent « …filtré. · Sortie… » : sans cette règle on produit un double point. La ponctuation fournit déjà la respiration, on ne remplace que par une espace."
+  },
+  {
+   "motif": "\\s·\\s",
+   "remplacement": ". ",
+   "occurrences": 217,
+   "pourquoi": "ORDRE 47 — bloc G, après le garde-fou (écart mesuré −10, exactement les cas ci-dessus). Le point médian sépare des libellés : le point rend la pause, la virgule non. Les espaces sont exigées des deux côtés, donc les 10 points médians COLLÉS (Vb·N·nb, π·(D²/4), C·H·F₂) ne sont PAS touchés : ils sont dans trois narrations qui relèvent de la réécriture humaine, et une règle « · = multiplié par » y ferait dire « C multiplié par H » sur une formule chimique."
+  },
+  {
+   "motif": "([^.])\\.\\s*\\.(?!\\.)",
+   "remplacement": "$1. ",
+   "occurrences": 12,
+   "pourquoi": "ORDRE 48 — bloc G, RÈGLE AJOUTÉE (absente des cinq tables). 12 narrations du corpus portent un double point issu d'une concaténation du collecteur ; à l'oral c'est une double coupure. Le [^.] devant et le (?!\\.) derrière protègent les trois vrais « … » en points de suspension (Compression…, En attente…, Cycle recommence…), vérifié."
+  },
+  {
+   "motif": "\\s*×\\s*",
+   "remplacement": " multiplié par ",
+   "occurrences": 20,
+   "pourquoi": "ORDRE 49 — bloc H (opérateurs). Après la règle m × m (écart mesuré −2). Les espaces sont absorbées par le motif ; la normalisation finale \\s+ → espace supprime les doublons."
+  },
+  {
+   "motif": "\\s*÷\\s*",
+   "remplacement": " divisé par ",
+   "occurrences": 9,
+   "pourquoi": "ORDRE 50 — bloc H. U+00F7 n'apparaît nulle part ailleurs, aucun faux positif possible."
+  },
+  {
+   "motif": "(\\d) / (\\d)",
+   "remplacement": "$1 divisé par $2",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 51 — bloc H. Espaces OBLIGATOIRES des deux côtés : c'est ce qui distingue la division du numéro de règlement (2024/573, déjà consommé), des unités composées (m³/h, déjà consommées) et des chaînes de choix (6/7/8/9)."
+  },
+  {
+   "motif": "\\s*≈\\s*",
+   "remplacement": " environ ",
+   "occurrences": 13,
+   "pourquoi": "ORDRE 52 — bloc H. Rendu contrôlé aussi sur les cas d'interface « P ≈ P_BP » → « P environ P basse pression »."
+  },
+  {
+   "motif": "\\s*∝\\s*",
+   "remplacement": " est proportionnel à ",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 53 — bloc H. Clé ab5c7913-15 ; la proportionnalité EST la réponse attendue de l'élève, la laisser muette vide la question."
+  },
+  {
+   "motif": "\\s*=\\s*(?=[-−+]?\\d)",
+   "remplacement": " égale ",
+   "occurrences": 29,
+   "pourquoi": "ORDRE 54 — bloc H. ARBITRAGE ENTRE LES CINQ TABLES : la table « nombres » disait « égale » pour les 75 « = », la table « symboles » proposait un partage. Le partage est retenu et mesuré : « égale » n'est juste que devant une valeur chiffrée. Le lookahead accepte un signe pour couvrir « = −10 », cette règle doit donc s'exécuter AVANT les règles du − et du +, sinon le signe est déjà devenu un mot."
+  },
+  {
+   "motif": "\\s*=\\s*",
+   "remplacement": ", c'est ",
+   "occurrences": 46,
+   "pourquoi": "ORDRE 55 — bloc H, catch-all après la règle du nombre (écart mesuré −29, exactement les égalités chiffrées). Avec « égale » partout on obtenait « SCOP égale chauffage sur une saison », « Propreté égale énergie » : du non-français. Les 46 cas restants ont été relus : « S C O P, c'est chauffage sur une saison », « Pression, c'est basse pression » — lisibles."
+  },
+  {
+   "motif": "\\s*−\\s*",
+   "remplacement": " moins ",
+   "occurrences": 17,
+   "pourquoi": "ORDRE 56 — bloc H, après les règles du =. Les 17 contextes sont 7 températures négatives et 10 soustractions ; « moins » convient aux deux. Aucun emploi de U+2212 comme tiret de mise en page : 0 faux positif."
+  },
+  {
+   "motif": "(\\s)-(\\s)",
+   "remplacement": "$1moins$2",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 57 — bloc H. Le trait d'union ASCII ENTOURÉ D'ESPACES n'existe que dans cette narration, deux fois, toujours comme signe moins ; les mots composés n'ont pas d'espaces et ne sont pas touchés. Élargie par rapport à la table d'entrée, qui n'attrapait que la soustraction chiffrée et laissait muette celle entre deux mots, dans la même phrase."
+  },
+  {
+   "motif": "\\+\\s*(?=\\d)",
+   "remplacement": " plus ",
+   "occurrences": 20,
+   "pourquoi": "ORDRE 58 — bloc H, avant le + entre mots. L'espace initiale du remplacement évite « 5plus 3 » ; la normalisation finale absorbe les surnuméraires."
+  },
+  {
+   "motif": "([A-Za-zÀ-ÖØ-öø-ÿ0-9])\\s\\+\\s(?=[A-Za-zÀ-ÖØ-öø-ÿ])",
+   "remplacement": "$1 et ",
+   "occurrences": 19,
+   "pourquoi": "ORDRE 59 — bloc H, après le + numérique. Élargie aux majuscules : le motif limité aux minuscules laissait muets « KVR + NRD » et « BP CORRECTE + HP CORRECTE », deux libellés où le + est justement le lien. RÉSERVE MESURÉE : sur la clé e49054c2-107, « Qcond = Qevap + Wcomp » devient « et » là où il faudrait « plus » — cette narration est portée à la liste de réécriture humaine pour cette raison précise."
+  },
+  {
+   "motif": "\\s<\\s",
+   "remplacement": " est inférieur à ",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 60 — bloc H. Les espaces obligatoires empêchent tout accrochage sur un chevron collé (sélecteurs CSS du type #dc-root>.sc-host). Clé 947da92a-17."
+  },
+  {
+   "motif": "\\s>\\s",
+   "remplacement": " est supérieur à ",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 61 — bloc H. Clé 487ab042-8 ; rendu contrôlé après le bloc M : « P est supérieur à P haute pression »."
+  },
+  {
+   "motif": "([A-Za-zÀ-ÖØ-öø-ÿ])_(?=[A-Za-zÀ-ÖØ-öø-ÿ])",
+   "remplacement": "$1 ",
+   "occurrences": 4,
+   "pourquoi": "ORDRE 62 — bloc H. DOIT passer avant le bloc M : l'underscore est un caractère de mot, donc \\bBP\\b ne voit pas le BP de « P_BP ». Une fois l'underscore devenu espace, la chaîne se résout en « P basse pression »."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])air\\s*/\\s*air(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1air-air",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 63 — bloc I, premier des trois garde-fous de la barre oblique. Sans lui : « PAC air et air », qui n'est pas français."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])NF\\s*/\\s*NO(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1N F ou N O",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 64 — bloc I. Normalement fermé et normalement ouvert sont EXCLUSIFS : « et » inverserait le sens. Cette règle traite aussi l'épellation, ce qui la place obligatoirement avant les règles NF et NO du bloc L — écart mesuré sur NF : 20 correspondances seule, 6 en cascade."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])SG\\s*/\\s*SGP(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1S G, S G P",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 65 — bloc I. Deux références de voyant alternatives : « et » laisserait croire à un seul modèle portant les deux noms. La virgule rend la pause."
+  },
+  {
+   "motif": "([A-Za-zÀ-ÖØ-öø-ÿ])/(?=[A-Za-zÀ-ÖØ-öø-ÿ])",
+   "remplacement": "$1 et ",
+   "occurrences": 20,
+   "pourquoi": "ORDRE 66 — bloc I, après les unités composées, les numéros de règlement et les trois garde-fous (écart mesuré : 39 correspondances seule, 20 en cascade). Classe de lettres resserrée : À-ÿ contient × et ÷, À-ÖØ-öø-ÿ non. Réserves assumées et relues : « log p/h » → « log p et h », « réglette P/T » → « réglette P et T », approximatifs mais intelligibles."
+  },
+  {
+   "motif": "rendement volumétrique\\s+ηv",
+   "remplacement": "rendement volumétrique",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 67 — bloc J (grec), déduplication placée juste avant la règle ηv. La clé 64d62ddd-58 écrit déjà le terme en toutes lettres : sans cette règle on produit « Le rendement volumétrique rendement volumétrique correspond »."
+  },
+  {
+   "motif": "ηv",
+   "remplacement": " le rendement volumétrique",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 68 — bloc J. Les 4 η du corpus sont TOUS des « ηv » : la règle porte sur le digramme, pas sur η seul, qui produirait « rendementv mesure la perte ». Écart mesuré −1 : la déduplication précédente."
+  },
+  {
+   "motif": "π",
+   "remplacement": " pi ",
+   "occurrences": 4,
+   "pourquoi": "ORDRE 69 — bloc J. U+03C0 n'existe dans aucun mot français, aucun faux positif possible."
+  },
+  {
+   "motif": "Δ",
+   "remplacement": "delta ",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 70 — bloc J. Pas d'espace initiale, pour ne pas couper un éventuel préfixe ; espace finale obligatoire, sinon « ΔT » donnerait « deltaT »."
+  },
+  {
+   "motif": "Σ",
+   "remplacement": " sigma ",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 71 — bloc J. CORRECTION D'ARBITRAGE : « somme de » produisait « Le signe somme de veut dire additionner », agrammatical. Le texte GLOSE déjà le symbole : il faut le NOMMER, pas le traduire."
+  },
+  {
+   "motif": "λ",
+   "remplacement": " lambda ",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 72 — bloc J, conductivité thermique. Clé 69213c78-266."
+  },
+  {
+   "motif": "θ",
+   "remplacement": " thêta ",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 73 — bloc J, angle vilebrequin. Rendu contrôlé en chaîne avec les règles = et ° : « thêta égale 0 degré, Cycle 1 »."
+  },
+  {
+   "motif": "Φ",
+   "remplacement": " phi ",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 74 — bloc J, flux thermique. Clé d18cc73e-144."
+  },
+  {
+   "motif": "Q̇",
+   "remplacement": "Q point",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 75 — bloc J. ATTENTION À LA RECOPIE : dans le corpus, Q̇ est un Q suivi du DIACRITIQUE COMBINANT U+0307, pas un caractère précomposé. Un éditeur qui normalise en NFC casserait le motif sans prévenir. Clés 036e6081-51 et 6126219d-54."
+  },
+  {
+   "motif": "ṁ",
+   "remplacement": "m point",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 76 — bloc J. Ici le corpus utilise le caractère PRÉCOMPOSÉ U+1E41, et non la séquence combinante du Q̇ : les deux notations ne sont pas interchangeables, d'où deux règles distinctes. Clés 53ee321c-84, 8afdccfb-99."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])CUT[\\s‑-]?OUT(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1keute aoute",
+   "occurrences": 13,
+   "pourquoi": "ORDRE 77 — bloc K (anglicismes). Étiquette gravée sur les pressostats KP1/KP5, conservée, pas traduite. « keute » et non « keut » : en français le t final est muet, la voix dirait « keu ». RÉSERVE : transcription à valider à l'oreille sur un échantillon avant lot complet. Le séparateur inclut U+2011 (trait d'union insécable), présent 17 fois dans le corpus."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])CUT[\\s‑-]?IN(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1keute inne",
+   "occurrences": 8,
+   "pourquoi": "ORDRE 78 — bloc K. « inne » est nécessaire : « IN » seul serait nasalisé en /ɛ̃/. Motifs disjoints de CUT OUT, aucune contrainte d'ordre entre eux."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])(et|est)\\s+DIFF(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1$2 le différentiel",
+   "occurrences": 6,
+   "pourquoi": "ORDRE 79 — bloc K. ARBITRAGE ENTRE DEUX TABLES : « DIFF → différentiel » produisait du français faux (« Quel est différentiel ? ») ; « DIFF → diff » ne disait rien. Les 6 contextes gauches sont tous « et » ou « est », sans exception : ancrée sur ces deux mots, la règle restitue l'article dans 6 cas sur 6."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])DIFF(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1diff",
+   "occurrences": 0,
+   "pourquoi": "ORDRE 80 — bloc K, filet fail-safe. PORTABILITÉ : le motif \\bDIFF\\b des tables d'entrée N'EST PAS portable — mesuré, 6 correspondances en Python, 7 en JavaScript, parce que \\b y est ASCII et s'ouvre entre DIFF et ÉRENTIEL. Le corpus contient « Le DIFFÉRENTIEL : l'écart entre le point d'action et le point de retour » (clé 6d8e11aa-353), qui serait mutilé en « Le diffÉRENTIEL ». Les bornes explicites donnent 6 correspondances dans les DEUX moteurs."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])RESET(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1rissette",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 81 — bloc K. Réarmement manuel du pressostat, pas un mot d'interface : les 3 contextes le confirment."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])booster(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1bousteur",
+   "occurrences": 22,
+   "pourquoi": "ORDRE 82 — bloc K. SCINDÉE PAR CASSE : le motif [Bb] unique décapitalisait les débuts de phrase et perturbait la segmentation d'edge-tts. Les 27 contextes (22 minuscules + 5 majuscules) ont été relus : tous désignent l'architecture CO₂ à deux étages, aucun n'est le verbe français booster."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Booster(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1Bousteur",
+   "occurrences": 5,
+   "pourquoi": "ORDRE 83 — bloc K, seconde moitié de la règle scindée. Majuscule conservée pour ne pas casser la prosodie de début de phrase."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])scrolls?(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1scrolle",
+   "occurrences": 13,
+   "pourquoi": "ORDRE 84 — bloc K, scindée par casse comme booster. Le s? est inerte (aucun pluriel dans le corpus) et sans danger, le s français étant muet."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Scrolls?(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1Scrolle",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 85 — bloc K, seconde moitié."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])pump[\\s‑-]?down(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1peumpe daoune",
+   "occurrences": 12,
+   "pourquoi": "ORDRE 86 — bloc K. Aucun mot français ne contient pump ni down : zéro faux positif possible. Les deux graphies (trait d'union et espace) sont couvertes."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])flash[\\s‑-]?gas(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1flache gasse",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 87 — bloc K. PIÈGE DE CODE À CONNAÎTRE : dans generer-audios-edge-tts.py le drapeau vaut `re.IGNORECASE if \"Gas\" in pattern else 0`. Ce motif est tout en minuscules, il reste donc sensible à la casse ; ne JAMAIS écrire un futur motif contenant littéralement « Gas », il basculerait silencieusement en insensible à la casse. Le portage JavaScript doit reproduire cette heuristique ou, mieux, porter le drapeau explicitement par règle."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])gas[\\s‑-]?coolers?(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1gasse couleur",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 88 — bloc K. Évite le contresens « gaz couler ». Aucune interaction avec la règle F-Gas : elle exige F + séparateur unique + gas."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])by[\\s‑-]?pass(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1baï passe",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 89 — bloc K. Aucun mot français ne commence par « by » suivi de « pass »."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])drop[\\s‑-]?in(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1drop inne",
+   "occurrences": 5,
+   "pourquoi": "ORDRE 90 — bloc K, scindée par casse."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Drop[\\s‑-]?in(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1Drop inne",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 91 — bloc K, seconde moitié."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])retrofits?(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1rétrofitte",
+   "occurrences": 7,
+   "pourquoi": "ORDRE 92 — bloc K, scindée par casse."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Retrofits?(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1Rétrofitte",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 93 — bloc K, seconde moitié."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])flares?(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1flère",
+   "occurrences": 9,
+   "pourquoi": "ORDRE 94 — bloc K. Faux positif recherché activement : aucun mot de la famille flair/flaire/flâne n'est atteint, le motif exige la suite exacte f-l-a-r-e entre deux bornes."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])burn[\\s‑-]?out(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1beurne aoute",
+   "occurrences": 4,
+   "pourquoi": "ORDRE 95 — bloc K. Le risque de contresens avec l'épuisement professionnel justifie une prononciation nettement anglaise. Pas de collision de casse avec CUT OUT (majuscules)."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])bi[\\s‑-]?flows?(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1bi flo",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 96 — bloc K. Les deux graphies du corpus (bi-flow, biflow) sont couvertes par le séparateur optionnel. Le motif impose flow après bi : il ne peut frapper ni bilan ni bidon."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])split(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1splitte",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 97 — bloc K, gain faible mais risque nul : « splitte » ne peut se lire que /split/. « monosplit » est exclu par la borne gauche, vérifié dans les deux moteurs."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])OIL(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1oïl",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 98 — bloc K. Marquage physique de la borne du pressostat différentiel d'huile. « oïl » est la seule graphie française qui produise /ɔjl/. Sensible à la casse, aucun risque sur un « oil » minuscule."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])ASHRAE(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1Achré",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 99 — bloc K. ARBITRAGE ENTRE DEUX TABLES : « ashraé » donne trois syllabes /aʃʁae/, « Achré » donne /aʃʁe/, conforme à l'usage. Un sigle non prononçable de 6 capitales fait basculer edge-tts imprévisiblement entre épellation et lecture littérale : les deux issues sont fausses. Le R interne n'ouvre aucune borne, la règle R + chiffre du bloc M ne s'y accroche pas."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Survey(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1Seurvé",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 100 — bloc K, motif resserré au seul mot qui pose problème. SUPPRESSIONS DE LA MÊME FAMILLE, assumées : Sherwood (« sh » est bien lu /ʃ/ en français), Rowland (« Rolanne » francise le nom en prénom féminin), Danfoss (« Dannefosse » risque un e muet audible), Midgley (« Midjeli » injecte un /dʒ/ qui n'existe pas dans le nom). Ces quatre règles cosmétiques pouvaient rendre la lecture pire."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Jr\\.",
+   "remplacement": "$1junior",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 101 — bloc K. Le seul défaut réel est le point d'abréviation, qui fait marquer une fin de phrase à la synthèse avant « synthétise ». Le nom est laissé tel quel. Le point est obligatoire dans le motif."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])slides(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1diapositives",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 102 — bloc K, seule vraie traduction de la table. Accord vérifié sur la phrase réelle : « les animations et les diapositives précédentes ». SUPPRESSION DE LA MÊME FAMILLE : « quiz », emprunt lexicalisé attesté, dont la transcription n'a pas pu être validée sans écoute."
+  },
+  {
+   "motif": "AT\\s?mosph([A-Za-zÀ-ÖØ-öø-ÿ]*)\\s?EX\\s?plos",
+   "remplacement": "atmosph$1 explos",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 103 — bloc L (sigles), en tête. Sensible à la casse, « AT » majuscule n'existe nulle part ailleurs. SUPPRESSIONS ASSOCIÉES, CRITIQUES : les pseudo-règles ATEX / PAC / LED des tables d'entrée sont éliminées — leur champ remplacement contenait la phrase « INCHANGÉ (se prononce déjà comme un mot) », qui aurait été SYNTHÉTISÉE dans l'audio. Un constat pédagogique ne s'écrit pas dans une table de substitution."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])F[\\s‑-]?[Gg][Aa][SsZz]\\s+III(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1F gaz trois",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 104 — bloc L, avant la règle F-Gaz générique et AVANT le bloc M. Le motif accepte s et z, majuscule et minuscule : la version des tables d'entrée était inopérante parce que la règle existante \\bF[\\s‑-]?Gas\\b avait déjà transformé « F-Gas III » en « F gaz III » avant qu'elle ne s'exécute, et « III » restait lu « i-i-i »."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])F[\\s‑-]?[Gg][Aa][SsZz](?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1F gaz",
+   "occurrences": 18,
+   "pourquoi": "ORDRE 105 — bloc L. RÈGLE ADDITIVE, la règle M01 existante n'est PAS modifiée : réécrire son motif en Ga[sz] lui ferait perdre son IGNORECASE, décidé par l'heuristique `if \"Gas\" in pattern`. Celle-ci est insensible à la casse par construction (classes de caractères), couvre F-Gaz et F-GAZ que l'existante ratait, et est idempotente. Conséquence mesurée : M01 tombe à 0 occurrence, elle devient un filet."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])HCFC(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1H C F C",
+   "occurrences": 14,
+   "pourquoi": "ORDRE 106 — bloc L, avant HFC et CFC par confort de lecture (l'ordre n'est pas indispensable : les bornes empêchent CFC de mordre dans HCFC). Aucun faux positif."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])HFC(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1H F C",
+   "occurrences": 34,
+   "pourquoi": "ORDRE 107 — bloc L. 34 correspondances, toutes le sigle chimique, aucun mot français heurté."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])HFO(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1H F O",
+   "occurrences": 7,
+   "pourquoi": "ORDRE 108 — bloc L. Aucune interaction avec la règle R + chiffre du bloc M, qui traite R-32 et R-1234yf indépendamment."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])CFC(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1C F C",
+   "occurrences": 18,
+   "pourquoi": "ORDRE 109 — bloc L. Aucune correspondance à l'intérieur de HCFC, borne vérifiée dans les deux moteurs."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])SCOP(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1S C O P",
+   "occurrences": 6,
+   "pourquoi": "ORDRE 110 — bloc L, avant COP (ordre de confort : les bornes suffisent)."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])SEER(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1S E E R",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 111 — bloc L, avant EER. Après remplacement, « S E E R » ne contient plus aucune sous-chaîne EER contiguë : pas de double application."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])COP(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1C O P",
+   "occurrences": 8,
+   "pourquoi": "ORDRE 112 — bloc L. Les 8 contextes inspectés un par un : aucun n'est un mot français ni un titre en capitales. Épeler garde audible la comparaison COP / EER / SCOP / SEER."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])EER(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1E E R",
+   "occurrences": 4,
+   "pourquoi": "ORDRE 113 — bloc L. Le corpus contient EER en 4 positions autonomes et 3 internes à SEER, correctement exclues."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])ODP(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1O D P",
+   "occurrences": 22,
+   "pourquoi": "ORDRE 114 — bloc L. RÉSERVE MAINTENUE : asymétrie avec la règle existante PRP → « potentiel de réchauffement planétaire ». Rendu contrôlé : « Un H F C a un O D P nul et un potentiel de réchauffement planétaire énorme » — audible mais compréhensible. Basculer PRP en « P R P » toucherait une règle en production sur d'autres modules : décision à part."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])PRG(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1potentiel de réchauffement global",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 115 — bloc L. Développement cohérent avec PRP et GWP du bloc M ; accord masculin singulier respecté. Le « PRG » du clavier de régulateur (clé du pupitre) est écrit « P R G » à la source et n'est pas concerné."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])LIE(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1L I E",
+   "occurrences": 9,
+   "pourquoi": "ORDRE 116 — bloc L, le contrôle le plus important du bloc. Les 9 correspondances inspectées individuellement : toutes sont le sigle, AUCUNE n'est le verbe ou le nom français « lie » en capitales. Le motif est sensible à la casse."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])LSE(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1L S E",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 117 — bloc L. Aucun faux positif."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])FDS(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1F D S",
+   "occurrences": 15,
+   "pourquoi": "ORDRE 118 — bloc L. 15 correspondances, toutes le sigle."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])EPC(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1E P C",
+   "occurrences": 7,
+   "pourquoi": "ORDRE 119 — bloc L. Aucune collision avec \\bEPI\\b du bloc M. Même réserve d'asymétrie que pour ODP, assumée."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])VAT(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1V A T",
+   "occurrences": 5,
+   "pourquoi": "ORDRE 120 — bloc L. Sigle de consignation, aucun mot français."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])ARI(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1A R I",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 121 — bloc L. Sensible à la casse, sans risque sur le prénom « Ari »."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])DEEE(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1D E E E",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 122 — bloc L."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])DESP(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1D E S P",
+   "occurrences": 9,
+   "pourquoi": "ORDRE 123 — bloc L. Passé de 2 à 9 occurrences dans le corpus régénéré (nouveau module équipements sous pression) : toutes vérifiées, toutes la directive."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])PFAS(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1P F A S",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 124 — bloc L."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])([NP])TC(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1$2 T C",
+   "occurrences": 8,
+   "pourquoi": "ORDRE 125 — bloc L. REMPLACEMENT NETTOYÉ : la version d'entrée portait « \\1 T C  (soit « N T C » et « P T C ») » — la glose entre parenthèses aurait été INJECTÉE dans les 8 narrations. Ce défaut affectait 9 règles des tables d'entrée, toutes corrigées de la même façon."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])POE(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1P O E",
+   "occurrences": 9,
+   "pourquoi": "ORDRE 126 — bloc L. 9 correspondances, toutes l'huile."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])PVE(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1P V E",
+   "occurrences": 4,
+   "pourquoi": "ORDRE 127 — bloc L."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])PAG(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1P A G",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 128 — bloc L. Aucune collision avec la règle P A / P B : celle-ci exige une borne après la lettre, PAG ne peut pas être coupé."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])MO,\\s*PAO\\s+(et|ou)\\s+AB(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1M O, P A O $2 A B",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 129 — bloc L. TROIS RÈGLES FUSIONNÉES : \\bMO\\b et \\bAB\\b sont les deux jetons de deux lettres les plus collisionnables qui soient (AB groupe sanguin, MO mégaoctet, initiales, titres en capitales) et LE CORPUS EST RÉGÉNÉRÉ À CHAQUE BUILD — la démonstration en a été faite pendant cette analyse même, 3421 → 3750 narrations. Le motif fusionné couvre les 2 phrases mesurées, traite les 6 sigles d'un coup et échoue proprement si la rédaction change."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])NF\\s+EN(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1N F E N",
+   "occurrences": 13,
+   "pourquoi": "ORDRE 130 — bloc L, avant NF. INTERDICTION ABSOLUE ASSOCIÉE : aucune règle sur \\bEN\\b nu. Mesure : les « EN » en capitales du corpus sont majoritairement le mot français EN dans des titres capitalisés ; une règle isolée détruirait des dizaines de phrases."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])NF(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1N F",
+   "occurrences": 6,
+   "pourquoi": "ORDRE 131 — bloc L. ÉCART MESURÉ LE PLUS PARLANT DE LA TABLE : 20 correspondances seule, 6 en cascade — NF EN en a consommé 13 et NF/NO une. Le chiffre 6 n'est juste QUE si l'ordre est respecté. Collision de sens confirmée : NF-norme et NF-contact coexistent ; épeler sert les deux, développer en « normalement fermé » casserait la phrase « La lettre F ou O indique la position normale »."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])NO(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1N O",
+   "occurrences": 4,
+   "pourquoi": "ORDRE 132 — bloc L, après NF/NO (écart mesuré −1). Aucun « NO » anglais ni espagnol dans le corpus."
+  },
+  {
+   "motif": "\\(UE\\)",
+   "remplacement": "U E",
+   "occurrences": 5,
+   "pourquoi": "ORDRE 133 — bloc L. Ancrage sur les parenthèses ; le remplacement les supprime, ce qui est voulu : « le règlement U E 2024 barre 573 »."
+  },
+  {
+   "motif": "\\(CE\\)",
+   "remplacement": "C E",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 134 — bloc L. PIÈGE CONFIRMÉ PAR LA MESURE : une règle \\bCE\\b nue frapperait 15 fois le titre capitalisé « OÙ ÇA FUIT, CE QU'ON CONTRÔLE ». L'ancrage sur les parenthèses est obligatoire."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])(marquage|le)\\s+CE(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1$2 C E",
+   "occurrences": 9,
+   "pourquoi": "ORDRE 135 — bloc L, RÈGLE AJOUTÉE pour le contenu apparu dans le corpus régénéré. Les 24 « CE » nus se répartissent en 15 titres « OÙ ÇA FUIT, CE QU'ON CONTRÔLE » (à ne pas toucher) et 9 marquages réels (« le marquage CE » ×7, « la plaque porte le CE », « seulement le CE »). L'ancrage sur les deux seuls déterminants observés isole exactement les 9 bons cas."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])IEC(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1I E C",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 136 — bloc L."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])ISO\\s+VG(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1iso V G",
+   "occurrences": 6,
+   "pourquoi": "ORDRE 137 — bloc L. ISO reste un mot, seul VG est épelé. La minuscule est sans conséquence, la voix ne lit pas la casse."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])SVG(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1S V G",
+   "occurrences": 16,
+   "pourquoi": "ORDRE 138 — bloc L, SOUS RÉSERVE EXPLICITE. 16 correspondances, toutes la même phrase de crédit technique répétée en pied de 16 fiches organes. La règle est sans risque mais traite un symptôme : ce crédit n'a rien à faire dans une narration audio. Porté à la liste de réécriture humaine."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])TP(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1T P",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 139 — bloc L. Faux positif sans conséquence de toute façon : tout « TP » en capitales se dit « té-pé »."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])BT(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1B T",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 140 — bloc L. L'épellation est correcte pour les deux sens (basse température, basse tension)."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])LP(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1L P",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 141 — bloc L. Deux étiquettes de banc. Sans conséquence si un futur « LP » d'établissement apparaissait."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])PS(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1P S",
+   "occurrences": 31,
+   "pourquoi": "ORDRE 142 — bloc L. Passé de 3 à 31 occurrences dans le corpus régénéré (module plaque signalétique / DESP). Les 31 contextes ont été relus : tous le marquage de pression maximale admissible, aucun post-scriptum — et l'épellation conviendrait de toute façon."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])P([AB])(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1P $2",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 143 — bloc L, glose retirée du remplacement. Aucune morsure dans PAG, PAO, PAC : la borne après la lettre l'interdit."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])UA(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1U A",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 144 — bloc L. Cas où le sigle EST le contenu de la phrase ; ne pas l'épeler rendrait l'explication absurde."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])AC&R(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1A C et R",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 145 — bloc L, motif verrouillé par les bornes (la version d'entrée était nue)."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])OM(\\d)(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1O M $2",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 146 — bloc L, glose retirée."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])KV([PLR])(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1K V $2",
+   "occurrences": 28,
+   "pourquoi": "ORDRE 147 — bloc L, SCINDÉE de la règle KV nu. Le motif [PLR]? optionnel des tables d'entrée produisait « K V  » avec double espace sur les KV nus — rattrapé par la normalisation Python, PAS par un pipeline JS qui ne la ferait pas. Deux motifs disjoints suppriment la dépendance. Aucun kilovolt dans le corpus, motif sensible à la casse."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])KV(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1K V",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 148 — bloc L, seconde moitié de la scission. Disjointe de la précédente (la lettre finale est un caractère de mot) : aucune contrainte d'ordre entre les deux."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])KP\\s?(\\d+)(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1K P $2",
+   "occurrences": 6,
+   "pourquoi": "ORDRE 149 — bloc L, glose retirée. Le chiffre reste un chiffre, la voix le lira « quinze » : c'est le résultat voulu."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])KM(\\d)(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1K M $2",
+   "occurrences": 9,
+   "pourquoi": "ORDRE 150 — bloc L. Le piège « kilomètre » est réel. Le motif exige un chiffre ; aucun « KM » nu dans le corpus, donc pas d'élargissement — en cas de doute on n'élargit pas."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])KA(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1K A",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 151 — bloc L. Sensible à la casse : « kA » kiloampère ne peut pas être touché."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])NRD(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1N R D",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 152 — bloc L."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Y(\\d)(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1Y $2",
+   "occurrences": 11,
+   "pourquoi": "ORDRE 153 — bloc L, glose retirée. 11 repères d'électrovanne."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])P([12])(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1P $2",
+   "occurrences": 29,
+   "pourquoi": "ORDRE 154 — bloc L, le plus gros volume du bloc. Les 29 correspondances inspectées une à une : tous des points de mesure de pression, aucune dans « Pt1000 ». Aucun chevauchement avec les classes de sécurité A1/A2L/B1/B2L du bloc M, vérifié en appliquant la table entière."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])([CDEQHL])(\\d)(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1$2 $3",
+   "occurrences": 16,
+   "pourquoi": "ORDRE 155 — bloc L, motif resserré de \\d{1,2} à \\d : les 16 correspondances sont toutes à un seul chiffre (D1, E1, C1, C2, L1, L2, L3, H1, H6, Q1) ; autoriser deux chiffres hacherait sans raison de futurs codes de norme. La classe de lettres exclut A, B, F, G, K, M, N, P, R, S, T, V, W, X, Y, Z. Rendu contrôlé sur « Tsat BP = −10 °C, E1 = −4 °C, C1 = +2 °C » : les °C sont convertis avant, les C1/C2 voisins restent intacts."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])G(\\d{1,2})(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1G $2",
+   "occurrences": 18,
+   "pourquoi": "ORDRE 156 — bloc L. \\d{1,2} maintenu ici, contrairement à la règle précédente, parce que G10 et G11 existent réellement. 18 correspondances, toutes des catégories d'attestation d'aptitude. Aucun faux positif."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])DPE(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1D P E",
+   "occurrences": 8,
+   "pourquoi": "ORDRE 157 — bloc L, RÈGLE AJOUTÉE pour le module RE2020 / performance du bâtiment apparu dans le corpus régénéré du 31/08 17:34. 8 correspondances, toutes le diagnostic de performance énergétique, aucun mot français atteint."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])ACV(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1A C V",
+   "occurrences": 4,
+   "pourquoi": "ORDRE 158 — bloc L, contenu nouveau. Analyse du cycle de vie ; 4 correspondances vérifiées."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])PMH(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1P M H",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 159 — bloc L, contenu nouveau. Point mort haut du compresseur ; 3 correspondances, toutes des libellés d'animation."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])REP(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1R E P",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 160 — bloc L, contenu nouveau. Responsabilité élargie du producteur ; les 3 contextes sont tous « REP bâtiment », aucun n'est une abréviation de « repère »."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])RT(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1R T",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 161 — bloc L, contenu nouveau. Réglementation thermique ; 2 correspondances, toutes deux « RT existant »."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])UV(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1U V",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 162 — bloc L. « UV-B » : le trait d'union n'est pas un caractère de mot, la borne droite passe et le rendu est « U V-B », correct."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])IC(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1I C",
+   "occurrences": 7,
+   "pourquoi": "ORDRE 163 — bloc L, contenu nouveau. Indicateur carbone de la RE2020 ; les 7 contextes sont tous l'indicateur, aucun mot français « ic » n'existe."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])annexe\\s+II(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1annexe deux",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 164 — bloc L. RÈGLE SCINDÉE : une alternance (II|III|IV) ne peut pas porter trois remplacements différents ; la version d'entrée écrivait la consigne en prose, qui aurait été synthétisée. La branche « annexe III » est SUPPRIMÉE : 0 occurrence mesurée. Aucune règle sur un chiffre romain nu n'est acceptable."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])annexe\\s+IV(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1annexe quatre",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 165 — bloc L, seconde moitié de la scission. Les seuls chiffres romains isolés du corpus sont « annexe II », « F-Gas III » et « annexe IV » : les trois sont couverts par des motifs ancrés."
+  },
+  {
+   "motif": "\\bF[\\s‑-]?Gas\\b",
+   "remplacement": "F gaz",
+   "occurrences": 0,
+   "pourquoi": "ORDRE 166 — BLOC M : les 28 règles de l'oraliser() EXISTANT, reprises telles quelles dans la table unique pour que le fichier JavaScript puisse être écrit à partir d'elle seule. Elles s'exécutent APRÈS tous les blocs A à L et AVANT le bloc Z. Celle-ci est la seule à porter le drapeau IGNORECASE (heuristique `if \"Gas\" in pattern`). Elle tombe à 0 occurrence, devenue filet."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])kg\\s*CO[₂2][eé]q?(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³₀-₉])",
+   "remplacement": "$1kilogrammes équivalent dioxyde de carbone",
+   "occurrences": 0,
+   "pourquoi": "ORDRE 167 — bloc M, MOTIF CORRIGÉ POUR LA PORTABILITÉ. Le \\b final de la version en production N'EST PAS portable : ₂ est un caractère de mot en Python, pas en JavaScript, si bien que « CO₂/NH₃ » se résolvait en Python mais pas en Node — 25 textes divergeaient, mesuré. Les quatre règles CO₂/NH₃ portent donc des bornes explicites, la borne droite étant étendue aux indices souscrits ₀-₉. Après correction : 0 divergence sur les 3750 textes. 0 occurrence aujourd'hui, filet conservé."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])CO[₂2][eé]q?(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³₀-₉])",
+   "remplacement": "$1équivalent dioxyde de carbone",
+   "occurrences": 0,
+   "pourquoi": "ORDRE 168 — bloc M, même correction de bornes. 0 occurrence dans le corpus actuel, filet."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])CO[₂2](?![A-Za-z0-9_À-ÖØ-öø-ÿ²³₀-₉])",
+   "remplacement": "$1dioxyde de carbone",
+   "occurrences": 112,
+   "pourquoi": "ORDRE 169 — bloc M, même correction de bornes. 112 occurrences : la plus grosse règle du bloc M. DOIT impérativement précéder les règles d'indice souscrit du bloc Z, sinon le dioxyde de carbone se dit « C O deux »."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])NH[₃3](?![A-Za-z0-9_À-ÖØ-öø-ÿ²³₀-₉])",
+   "remplacement": "$1ammoniac",
+   "occurrences": 5,
+   "pourquoi": "ORDRE 170 — bloc M, même correction de bornes. Vérifié que l'ordre protège l'ammoniac : « NH₃/CO₂ » donne « ammoniac et dioxyde de carbone » et non « NH trois »."
+  },
+  {
+   "motif": "\\bA[\\s‑-]?1\\b",
+   "remplacement": "A un",
+   "occurrences": 38,
+   "pourquoi": "ORDRE 171 — bloc M, règle existante inchangée. Classes de sécurité ; ordre interne du bloc M conservé mot pour mot (A2L avant A2, B2L avant B2)."
+  },
+  {
+   "motif": "\\bA[\\s‑-]?2[\\s‑-]?L\\b",
+   "remplacement": "A deux L",
+   "occurrences": 28,
+   "pourquoi": "ORDRE 172 — bloc M, règle existante inchangée, avant A2."
+  },
+  {
+   "motif": "\\bA[\\s‑-]?2\\b",
+   "remplacement": "A deux",
+   "occurrences": 16,
+   "pourquoi": "ORDRE 173 — bloc M, règle existante inchangée."
+  },
+  {
+   "motif": "\\bA[\\s‑-]?3\\b",
+   "remplacement": "A trois",
+   "occurrences": 41,
+   "pourquoi": "ORDRE 174 — bloc M, règle existante inchangée."
+  },
+  {
+   "motif": "\\bB[\\s‑-]?1\\b",
+   "remplacement": "B un",
+   "occurrences": 4,
+   "pourquoi": "ORDRE 175 — bloc M, règle existante inchangée."
+  },
+  {
+   "motif": "\\bB[\\s‑-]?2[\\s‑-]?L\\b",
+   "remplacement": "B deux L",
+   "occurrences": 12,
+   "pourquoi": "ORDRE 176 — bloc M, règle existante inchangée, avant B2."
+  },
+  {
+   "motif": "\\bB[\\s‑-]?2\\b",
+   "remplacement": "B deux",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 177 — bloc M, règle existante inchangée."
+  },
+  {
+   "motif": "\\bB[\\s‑-]?3\\b",
+   "remplacement": "B trois",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 178 — bloc M, règle existante inchangée."
+  },
+  {
+   "motif": "\\bHP\\b",
+   "remplacement": "haute pression",
+   "occurrences": 171,
+   "pourquoi": "ORDRE 179 — bloc M, règle existante inchangée. 171 occurrences : c'est elle qui rend indispensable la règle de l'underscore du bloc H (P_HP) et celle de la barre oblique du bloc I (BP/HP)."
+  },
+  {
+   "motif": "\\bBP\\b",
+   "remplacement": "basse pression",
+   "occurrences": 139,
+   "pourquoi": "ORDRE 180 — bloc M, règle existante inchangée."
+  },
+  {
+   "motif": "\\bPRP\\b",
+   "remplacement": "potentiel de réchauffement planétaire",
+   "occurrences": 54,
+   "pourquoi": "ORDRE 181 — bloc M, règle existante inchangée. Source de l'asymétrie signalée aux règles ODP et EPC ; sa modification est hors périmètre de cette unification."
+  },
+  {
+   "motif": "\\bGWP\\b",
+   "remplacement": "potentiel de réchauffement planétaire",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 182 — bloc M, règle existante inchangée."
+  },
+  {
+   "motif": "\\bEPI\\b",
+   "remplacement": "équipements de protection individuelle",
+   "occurrences": 20,
+   "pourquoi": "ORDRE 183 — bloc M, règle existante inchangée."
+  },
+  {
+   "motif": "\\bQCM\\b",
+   "remplacement": "Q C M",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 184 — bloc M, règle existante inchangée. C'est elle qui fixe la convention d'épellation « lettres séparées par une espace » reprise par tout le bloc L."
+  },
+  {
+   "motif": "\\bR[\\s‑-]?(\\d+[A-Za-z]*)\\b",
+   "remplacement": "R $1",
+   "occurrences": 240,
+   "pourquoi": "ORDRE 185 — bloc M, règle existante inchangée. 240 occurrences, la plus sollicitée de tout le pipeline. Aucune interaction avec les règles HFO, ASHRAE ou G(\\d) : vérifié en appliquant la table complète."
+  },
+  {
+   "motif": "°\\s*C\\b",
+   "remplacement": " degrés Celsius",
+   "occurrences": 37,
+   "pourquoi": "ORDRE 186 — bloc M, règle existante inchangée. Les trois règles de degré du bloc B la protègent en amont (n°, T°, 0°) et leurs lookaheads (?!\\s*[CFK]) lui laissent son texte : écart mesuré nul, aucune concurrence."
+  },
+  {
+   "motif": "\\bkWh\\b",
+   "remplacement": "kilowattheures",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 187 — bloc M, règle existante inchangée. Écart : kWh/an lui a été retiré par le bloc C, ce qui est le but."
+  },
+  {
+   "motif": "\\bkW\\b",
+   "remplacement": "kilowatts",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 188 — bloc M, règle existante inchangée."
+  },
+  {
+   "motif": "\\bkg\\b",
+   "remplacement": "kilogrammes",
+   "occurrences": 7,
+   "pourquoi": "ORDRE 189 — bloc M, règle existante inchangée. kJ/kg et kg/m³ lui ont été retirés par le bloc C : c'est exactement la collision que les tables d'entrée signalaient."
+  },
+  {
+   "motif": "\\bW\\b",
+   "remplacement": "watts",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 190 — bloc M, règle existante inchangée."
+  },
+  {
+   "motif": "%",
+   "remplacement": " pour cent",
+   "occurrences": 7,
+   "pourquoi": "ORDRE 191 — bloc M, règle existante inchangée. Elle expliquait à elle seule la nécessité de purger le CSS en tête de table (« color-mix(… 8%,transparent) » devenait « 8 pour cent,transparent ») ; le collecteur ayant été corrigé en amont, le risque n'est plus que théorique."
+  },
+  {
+   "motif": "→",
+   "remplacement": " vers ",
+   "occurrences": 161,
+   "pourquoi": "ORDRE 192 — bloc M, règle existante inchangée. → (U+2192) est EXPLICITEMENT EXCLU de la classe de suppression des pictogrammes du bloc F : sans cette exclusion, les 161 flèches seraient effacées avant d'arriver ici."
+  },
+  {
+   "motif": "↔",
+   "remplacement": " en relation avec ",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 193 — bloc M, règle existante inchangée. ↔ (U+2194) est lui aussi exclu de la classe du bloc F, pour la même raison."
+  },
+  {
+   "motif": "([A-Za-zÀ-ÖØ-öø-ÿ])/(?=[A-Za-zÀ-ÖØ-öø-ÿ])",
+   "remplacement": "$1 et ",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 194 — BLOC Z (après oraliser). RÈGLE AJOUTÉE, deuxième passe de la barre oblique. Défaut mesuré : le bloc M CRÉE de nouvelles barres obliques entre lettres en développant « NH₃/CO₂ » en « ammoniac/dioxyde de carbone » et « A1/A2 » en « A un/A deux » ; la passe du bloc I, qui s'exécute avant, ne peut pas les voir. Exactement 2 occurrences (clés 42296dbc-95 et a4337072-363)."
+  },
+  {
+   "motif": "₀",
+   "remplacement": " zéro ",
+   "occurrences": 3,
+   "pourquoi": "ORDRE 195 — bloc Z. Les cinq règles d'indice souscrit s'exécutent APRÈS le bloc M, faute de quoi elles détruisent CO₂ et NH₃ : c'est la contrainte d'ordre la plus lourde de conséquence de toute la table. Remplacement encadré de DEUX espaces, correction mesurée : avec une seule espace initiale, « C₃H₈ » donne « C troisH huit », les deux jetons se collent."
+  },
+  {
+   "motif": "₂",
+   "remplacement": " deux ",
+   "occurrences": 7,
+   "pourquoi": "ORDRE 196 — bloc Z. 7 occurrences résiduelles seulement : le bloc M a consommé les 112 CO₂. La table d'entrée annonçait une classe [₀₂₃₄₈] avec un remplacement rédigé en prose, inapplicable par substitution ; elle est éclatée en cinq règles littérales."
+  },
+  {
+   "motif": "₃",
+   "remplacement": " trois ",
+   "occurrences": 4,
+   "pourquoi": "ORDRE 197 — bloc Z. 4 occurrences résiduelles après la règle NH₃ du bloc M."
+  },
+  {
+   "motif": "₄",
+   "remplacement": " quatre ",
+   "occurrences": 1,
+   "pourquoi": "ORDRE 198 — bloc Z. Clé dbe06e93-3080."
+  },
+  {
+   "motif": "₈",
+   "remplacement": " huit ",
+   "occurrences": 2,
+   "pourquoi": "ORDRE 199 — bloc Z. Les indices ₁ ₅ ₆ ₇ ₉ ont 0 occurrence : aucune règle n'est écrite pour eux, une règle qui ne tire jamais donne une fausse assurance de couverture."
+  },
+  {
+   "motif": "^\\s*[.,;:]+\\s*",
+   "remplacement": "",
+   "occurrences": 9,
+   "pourquoi": "ORDRE 200 — bloc Z, RÈGLE AJOUTÉE. Défaut mesuré et corrigé : la conversion du chevron ▸/▶ en point (bloc F) fait commencer 9 narrations par « . ». Contrôle final : 0 ponctuation initiale sur 3750 textes."
+  },
+  {
+   "motif": "\\s+([.,…])",
+   "remplacement": "$1",
+   "occurrences": 398,
+   "pourquoi": "ORDRE 201 — DERNIÈRE RÈGLE, bloc Z. Volontairement limitée au point, à la virgule et aux points de suspension : la typographie française exige une espace devant ; : ! ?, on n'y touche pas. Elle nettoie l'espace avant point/virgule que le corpus porte déjà (« en liquide . Il rejette ») et celle que les règles d'indice souscrit créent (« C trois H huit . »). MESURE FINALE APRÈS ELLE, sur l'instantané 3750 : 0 espace avant point ou virgule, 0 double virgule, 0 ponctuation initiale, 0 accord « 1 heures » ou « 1 kelvins », 4 doubles points restants qui sont les vrais « … » en trois points ASCII. Après cette règle, appliquer la normalisation existante \\s+ → espace puis trim."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ 05de44d0-140",
+   "remplacement": "La section du tube, c'est pi multiplié par le diamètre au carré, le tout divisé par quatre. Ici : 3,14 multiplié par 26, multiplié encore par 26, puis divisé par quatre : environ 531 millimètres carrés. Si on oublie de diviser par quatre, on trouve 2124 millimètres carrés, et c'est faux. Et pi multiplié par le diamètre tout seul, ça donne le périmètre du tube, pas sa section.",
+   "occurrences": 1,
+   "pourquoi": "DIMENSION reecriture-humaine — NE PAS METTRE DANS LE MOTEUR (le motif sentinelle ⟦…⟧ ne peut matcher aucun texte : il est là pour que la ligne survive au même schéma). Source : packs/fluides/res/retour-huile-verifier/module.js. Sortie mécanique actuelle : « S, c'est pi multiplié par d² / 4 » — le d² et la barre oblique collée restent, aucune règle portable ne peut les traiter sans casser les unités. À réécrire à la source."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ 36138df6-54",
+   "remplacement": "Le débit théorique, c'est le volume balayé multiplié par la vitesse de rotation, multiplié par le nombre de cylindres. Ici : 80 centimètres cubes, multipliés par 1450 tours par minute, multipliés par deux cylindres. Ça fait 232 litres par minute, soit environ 13,9 mètres cubes par heure.",
+   "occurrences": 1,
+   "pourquoi": "DIMENSION reecriture-humaine. Source : packs/fluides/res/module-compresseur/index.html. Sortie mécanique : « Qth, c'est Vb·N·nb égale 80 centimètres cubes·1450·2 » — 4 des 10 points médians COLLÉS du corpus sont ici. Une règle « · = multiplié par » les traiterait mais dirait aussi « C multiplié par H » sur une formule chimique : le point médian collé est donc laissé intact et la narration réécrite à la source."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ 8269086a-45",
+   "remplacement": "Le volume balayé, c'est la section du piston multipliée par la course. La section, c'est pi multiplié par le diamètre au carré, divisé par quatre. Ici : pi multiplié par cinq au carré divisé par quatre, puis multiplié par quatre centimètres de course. On obtient environ 78,5 centimètres cubes.",
+   "occurrences": 1,
+   "pourquoi": "DIMENSION reecriture-humaine. Source : packs/fluides/res/module-compresseur/index.html. Porte 4 points médians collés et les seuls exposants portés par une variable (D², 5²) — c'est ce qui rend inutile ET dangereuse toute règle générique sur l'exposant ², qui entrerait en concurrence avec m² et mm²."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ dbe06e93-3080",
+   "remplacement": "Remplacer « 22 + 90 = 112 → C·H·F₂ » par : « 22 plus 90 égale 112 : un carbone, un hydrogène, deux fluors ».",
+   "occurrences": 1,
+   "pourquoi": "DIMENSION reecriture-humaine. Source : packs/fluides/cartes.js#g1c. Porte les 2 derniers points médians collés du corpus, sur une formule chimique où « multiplié par » serait un contresens. Le reste de la narration (règle du +90, indices souscrits, flèches) passe correctement par les règles mécaniques."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ 036e6081-51",
+   "remplacement": "La température s'exprime en degrés Celsius ou en kelvins. La quantité de chaleur, Q, s'exprime en joules. Et la puissance thermique, Q point, s'exprime en watts.",
+   "occurrences": 1,
+   "pourquoi": "DIMENSION reecriture-humaine. Source : packs/fluides/res/chaleur-circuit-interactif/app.js. Sortie mécanique : « en degrés Celsius ou K » — le K isolé n'est pas précédé d'un chiffre, la règle des kelvins ne peut pas le prendre sans ouvrir la porte aux « points A à K ». Seule la source peut écrire « ou en kelvins »."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ e49054c2-107",
+   "remplacement": "Le condenseur rejette l'énergie prise dedans plus le travail fourni au compresseur : la puissance rejetée au condenseur, c'est la puissance absorbée à l'évaporateur plus le travail fourni au compresseur.",
+   "occurrences": 1,
+   "pourquoi": "DIMENSION reecriture-humaine. Source : packs/fluides/res/chaleur-interactive/app.js. CAS LE PLUS INSTRUCTIF : la règle « + entre mots = et » y produit « Qcond, c'est Qevap et Wcomp », ce qui transforme une addition en énumération. C'est le seul faux sens de la règle sur ses 19 occurrences ; il ne se corrige pas par un motif (rien ne distingue « Qevap + Wcomp » de « particules + humidité »), seulement à la source."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ 98619e99-39",
+   "remplacement": "La surchauffe, c'est la température réelle moins la température de rosée.",
+   "occurrences": 1,
+   "pourquoi": "DIMENSION reecriture-humaine, priorité basse (confort de langue). Source : packs/fluides/res/pression-temperature-interactive/app.js. Sortie mécanique correcte mais sans articles : « Surchauffe, c'est température réelle moins rosée »."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ b6dab5a5-49",
+   "remplacement": "Le sous-refroidissement, c'est la température de bulle moins la température réelle.",
+   "occurrences": 1,
+   "pourquoi": "DIMENSION reecriture-humaine, priorité basse. Source : packs/fluides/res/pression-temperature-interactive/app.js. Même défaut d'articles que la précédente."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ 64763da7-75",
+   "remplacement": "La surchauffe, c'est la température du tube moins la température de saturation : sept moins deux, ça fait cinq kelvins.",
+   "occurrences": 1,
+   "pourquoi": "DIMENSION reecriture-humaine, priorité basse. Source : packs/fluides/res/detendeur-interactif/app.js. C'est la seule narration du corpus qui écrit ses soustractions avec un trait d'union ASCII ; la règle H « espace tiret espace » la rattrape, mais le résultat reste sans articles."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ 69213c78-266",
+   "remplacement": "Pour chaque couche, calculez la résistance : son épaisseur divisée par sa conductivité, le lambda. Le signe sigma veut dire additionner. […] Enfin, le coefficient U, c'est un divisé par la résistance totale.",
+   "occurrences": 1,
+   "pourquoi": "DIMENSION reecriture-humaine, priorité basse. Source : packs/fluides/res/bilan-thermique-performance-interactif/app.js. Sortie mécanique : « calculez R, c'est e divisé par lambda » — intelligible mais bancal, le « = » y est une consigne de calcul et non une définition."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ credit-SVG (16 clés)",
+   "remplacement": "Supprimer la phrase de la collecte : elle n'a pas à être narrée.",
+   "occurrences": 16,
+   "pourquoi": "DIMENSION reecriture-humaine — EXCLUSION AU COLLECTEUR, pas une règle de prononciation. Source : packs/fluides/res/tome-3-technologie-organes/index.html (16 dossiers). Clés : 0f6bc5d0-334, 15622ea8-439, 1842b341-429, 29be4a0c-394, 2fda560a-341, 32f14d8a-379, 33d49b6a-337, 3b7dc8f4-349, 4a27c920-358, 59018bde-352, 6e2459e0-346, 7aa8083e-352, 97e33550-359, a0c2866e-461, b98e1b76-447, bc2cc08b-390. La règle SVG du bloc L les rend audibles proprement en attendant, mais un crédit technique n'a rien à faire dans une capsule audio."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ double-point de concatenation (12 cles)",
+   "remplacement": "Retirer le point surnuméraire à la source (titre + corps concaténés sans séparateur).",
+   "occurrences": 12,
+   "pourquoi": "DIMENSION reecriture-humaine — défaut de collecte. Source principale : packs/fluides/res/glissement-temperature/app.js (10 des 12) et build/voix/collecter-narrations.mjs qui concatène titre et corps. Clés : 224b9cde-145, 3198df22-136, 4252a714-136, 42a668a1-195, 586af079-162, 6059c8f0-156, 657bdcd9-164, 657e547f-171, 944f6445-154, b44b4e18-145, c00eb799-175, fa9f3139-181. La règle G04 les rattrape à l'oral, mais la correction propre est à la source."
+  },
+  {
+   "motif": "⟦REECRITURE-HUMAINE⟧ narrations CSS (7 cles, deja corrigees en amont)",
+   "remplacement": "Rien à faire : le collecteur a été corrigé, ces 7 narrations ont disparu du corpus régénéré. Maintenir le rejet de toute valeur matchant /\\{[^{}]*:[^{}]*\\}/ dans la branche textContent de collecter-narrations.mjs.",
+   "occurrences": 0,
+   "pourquoi": "DIMENSION reecriture-humaine — POINT DE CONTRÔLE. Clés de l'ancien corpus (3421) : 028aa6f7-2590, 0b8cec5c-28, 0dd74d1c-1498, 1f9ac5dc-1869, 399e4d5c-962, 85b2bf42-1541, c0e1f360-70. Sources : packs/fluides/res/*/marque.js et packs/fluides/res/*/support.js. Elles ne sont plus dans le corpus du 31/08 17:34 : la correction amont a été faite. La règle A01 de la table reste en place comme filet, à 0 occurrence."
+  },
+  {
+   "motif": "([:;,.])\\s*,",
+   "remplacement": "$1",
+   "occurrences": 0,
+   "pourquoi": "ponctuation doublée par la règle du tiret cadratin"
+  },
+  {
+   "motif": ",\\s*,",
+   "remplacement": ",",
+   "occurrences": 0,
+   "pourquoi": "virgule doublée"
+  },
+  {
+   "motif": "\\s+([.,])",
+   "remplacement": "$1",
+   "occurrences": 0,
+   "pourquoi": "espace avant point ou virgule ; « ? » « ! » « : » gardent la leur, règle française"
+  }
+ ]
+}

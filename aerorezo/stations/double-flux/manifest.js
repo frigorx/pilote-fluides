@@ -16,9 +16,9 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Distingue les quatre flux : air neuf, soufflé, extrait, rejeté.",
-  bac: "Explique ce que l’échangeur récupère, et pourquoi les flux ne se mélangent pas.",
-  bts: "Calcule un rendement de récupération à partir de températures mesurées et analyse ses limites.",
+  cap: "Distinguez les quatre flux : air neuf, soufflé, extrait, rejeté.",
+  bac: "Expliquez ce que l’échangeur récupère, et pourquoi les flux ne se mélangent pas.",
+  bts: "Calculez un rendement de récupération à partir de températures mesurées et analysez ses limites.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
   decouverte: "Ici, deux ventilateurs tournent au lieu d’un. Le premier extrait l’air des pièces de service, comme en simple flux. Le second, lui, souffle de l’air neuf dans les pièces de vie — l’air n’entre plus par les fenêtres. Entre les deux, un bloc que l’air traverse : l’échangeur. L’air extrait y passe, tiède, et ressort refroidi vers l’extérieur. L’air neuf y passe, froid, et ressort réchauffé vers le logement. Les deux se croisent dans ce bloc sans jamais se toucher.",
@@ -26,11 +26,11 @@
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "Le mot double flux dit l’essentiel : deux ventilateurs, donc deux réseaux de gaines. On ne subit plus l’entrée d’air, on la maîtrise. Cela change quatre choses.\n\nD’abord, il faut nommer les flux, et ils sont quatre — c’est le premier réflexe à prendre. L’air neuf est celui qu’on prend dehors. L’air soufflé est ce même air une fois traversé l’échangeur et envoyé dans les pièces de vie. L’air extrait est celui qu’on retire des pièces de service. L’air rejeté est cet air extrait, une fois qu’il a cédé sa chaleur, renvoyé dehors. Les confondre rend tout schéma illisible, et toute mesure fausse.\n\nEnsuite, l’échangeur. L’air extrait sort du logement à la température du logement : le rejeter directement, c’est jeter tout le chauffage qu’il transporte. Dans l’échangeur, cet air tiède longe des parois minces de l’autre côté desquelles circule l’air neuf, froid. La chaleur traverse la paroi ; l’air, lui, ne la traverse pas. C’est tout l’enjeu, et c’est la question à se poser devant n’importe quel récupérateur : par où passerait l’air s’il y avait un défaut d’étanchéité ?\n\nTroisième changement, la filtration. Puisque l’air neuf entre par un point unique, on peut le filtrer avant de l’envoyer dans les chambres. C’est un vrai avantage en ville ou près d’un axe routier. Mais un filtre s’encrasse, et un filtre encrassé fait chuter le débit soufflé sans prévenir.\n\nEnfin, ce que ça coûte. Deux réseaux de gaines à faire passer, un caisson plus gros à loger, deux ventilateurs qui consomment, et un entretien qui ne se néglige pas. En hiver très froid, l’humidité de l’air extrait peut givrer dans l’échangeur : les appareils prévoient une protection, qu’il faut vérifier. En été, un contournement — le by-pass — permet de sauter l’échangeur quand l’air extérieur est plus frais que l’air intérieur : sans lui, on réchaufferait l’air neuf de la nuit, exactement l’inverse de ce qu’on cherche.",
 
-  method: "Trace séparément les quatre flux, et nomme-les. Vérifie ensuite qu’aucun endroit du schéma ne les fait se rejoindre.",
+  method: "Tracez séparément les quatre flux, et nommez-les. Vérifiez ensuite qu’aucun endroit du schéma ne les fait se rejoindre.",
   formula: "Efficacité = (T soufflé − T extérieur) / (T extrait − T extérieur)",
 
   /* Manipuler — une action précise. */
-  consigne: "Fais varier la température extérieure, celle de l’air extrait et celle de l’air soufflé, et regarde l’efficacité changer. Cherche d’abord un cas où elle dépasse cent pour cent : tu verras qu’il correspond toujours à un relevé impossible. Compare ensuite deux hivers, l’un doux et l’autre rigoureux, avec la même efficacité : l’écart de température récupéré n’est pas le même.",
+  consigne: "Faites varier la température extérieure, celle de l’air extrait et celle de l’air soufflé, et regardez l’efficacité changer. Cherchez d’abord un cas où elle dépasse cent pour cent : vous verrez qu’il correspond toujours à un relevé impossible. Comparez ensuite deux hivers, l’un doux et l’autre rigoureux, avec la même efficacité : l’écart de température récupéré n’est pas le même.",
   lecture: "L’efficacité se calcule sur trois températures, et chacune doit être relevée au bon endroit : l’air neuf avant l’échangeur, l’air soufflé après, l’air extrait à l’entrée. Une sonde placée après une batterie de chauffage donnerait une efficacité flatteuse et fausse : ce n’est plus l’échangeur qu’on mesure, c’est le chauffage.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */

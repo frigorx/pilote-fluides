@@ -14,22 +14,22 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Suis l’air dans la gaine et lis le débit affiché.",
-  bac: "Calcule un débit à partir d’une vitesse et d’une section.",
-  bts: "Dimensionne une section pour un débit imposé, puis vérifie la vitesse obtenue.",
+  cap: "Suivez l’air dans la gaine et lisez le débit affiché.",
+  bac: "Calculez un débit à partir d’une vitesse et d’une section.",
+  bts: "Dimensionnez une section pour un débit imposé, puis vérifiez la vitesse obtenue.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "Regarde la gaine coupée. L’air ne traverse pas la section à la même vitesse partout : il file au centre, et il traîne contre la paroi. Le trait rouge dessine ce profil. Retiens ce que tu vois — une mesure prise au centre seul ne dit pas ce qui traverse vraiment la gaine. C’est de là que viennent la plupart des débits faux relevés sur un chantier.",
+  decouverte: "Voici la gaine coupée. L’air ne traverse pas la section à la même vitesse partout : il file au centre, et il traîne contre la paroi. Le trait rouge dessine ce profil. Retenez ce que vous voyez — une mesure prise au centre seul ne dit pas ce qui traverse vraiment la gaine. C’est de là que viennent la plupart des débits faux relevés sur un chantier.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
-  explication: "Le débit, c’est le volume d’air qui passe à chaque seconde. Il ne dépend que de deux choses : la surface offerte à l’air, et la vitesse à laquelle il la traverse.\n\nD’abord la surface. Une gaine ronde de diamètre D offre une aire A = πD²/4. Attention à l’unité : le diamètre se lit en millimètres sur le plan, mais l’aire se calcule en mètres carrés. Un diamètre de 250 mm devient donc 0,250 m, et l’aire vaut 0,049 m².\n\nEnsuite la vitesse. Celle qu’on utilise est la vitesse moyenne sur toute la section — pas celle relevée au centre, qui est toujours la plus forte.\n\nLe débit vient alors seul. À 4 m/s dans cette gaine : Qv = 4 × 0,049 = 0,196 m³/s. Multiplie par 3 600 et tu obtiens 707 m³/h, l’unité qu’on lit sur les plans.\n\nLe contrôle de cohérence vient en dernier, et il est aussi important que le calcul. Dans un réseau de confort, la vitesse reste en général entre 3 et 6 m/s. Une vitesse de 15 m/s annonce du bruit dans les bouches ; une vitesse de 1 m/s annonce une gaine trop grosse, donc de la place et de l’argent perdus.",
+  explication: "Le débit, c’est le volume d’air qui passe à chaque seconde. Il ne dépend que de deux choses : la surface offerte à l’air, et la vitesse à laquelle il la traverse.\n\nD’abord la surface. Une gaine ronde de diamètre D offre une aire A = πD²/4. Attention à l’unité : le diamètre se lit en millimètres sur le plan, mais l’aire se calcule en mètres carrés. Un diamètre de 250 mm devient donc 0,250 m, et l’aire vaut 0,049 m².\n\nEnsuite la vitesse. Celle qu’on utilise est la vitesse moyenne sur toute la section — pas celle relevée au centre, qui est toujours la plus forte.\n\nLe débit vient alors seul. À 4 m/s dans cette gaine : Qv = 4 × 0,049 = 0,196 m³/s. Multipliez par 3 600 et vous obtenez 707 m³/h, l’unité qu’on lit sur les plans.\n\nLe contrôle de cohérence vient en dernier, et il est aussi important que le calcul. Dans un réseau de confort, la vitesse reste en général entre 3 et 6 m/s. Une vitesse de 15 m/s annonce du bruit dans les bouches ; une vitesse de 1 m/s annonce une gaine trop grosse, donc de la place et de l’argent perdus.",
 
-  method: "Convertis les unités, calcule la section utile, applique la relation — puis vérifie que la vitesse obtenue est plausible.",
+  method: "Convertissez les unités, calculez la section utile, appliquez la relation — puis vérifiez que la vitesse obtenue est plausible.",
   formula: "Qᵥ = v × A  ·  A = πD²/4  ·  m³/s × 3600 = m³/h",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Une gaine ronde de 250 mm doit transporter 700 m³/h. Règle la vitesse jusqu’à obtenir ce débit, et note la valeur trouvée. Ensuite, sans toucher à la vitesse, ramène le diamètre à 200 mm : regarde de combien le débit tombe. Enfin, retrouve les 700 m³/h avec ce nouveau diamètre — et regarde ce que devient la vitesse.",
-  lecture: "Le débit calculé s’affiche sous les curseurs. Compare-le au débit demandé par le plan. Compare ensuite la vitesse obtenue à la plage courante de 3 à 6 m/s : c’est elle qui dit si la gaine convient, pas le débit seul. Une gaine plus petite transporte le même débit, mais toujours plus vite — et le bruit suit.",
+  consigne: "Une gaine ronde de 250 mm doit transporter 700 m³/h. Réglez la vitesse jusqu’à obtenir ce débit, et notez la valeur trouvée. Ensuite, sans toucher à la vitesse, ramenez le diamètre à 200 mm : regardez de combien le débit tombe. Enfin, retrouvez les 700 m³/h avec ce nouveau diamètre — et regardez ce que devient la vitesse.",
+  lecture: "Le débit calculé s’affiche sous les curseurs. Comparez-le au débit demandé par le plan. Comparez ensuite la vitesse obtenue à la plage courante de 3 à 6 m/s : c’est elle qui dit si la gaine convient, pas le débit seul. Une gaine plus petite transporte le même débit, mais toujours plus vite — et le bruit suit.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */
   limites: "Ce calcul suppose un écoulement établi et une section pleine. Une gaine écrasée, un flexible plié, un coude ou un registre juste en amont changent le résultat. Sur une installation réelle, la vitesse se mesure — elle ne se déduit pas.",
