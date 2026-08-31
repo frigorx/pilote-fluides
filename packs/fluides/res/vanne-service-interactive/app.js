@@ -228,7 +228,7 @@
     },
     {
       kicker: "Écran 4 · Mini-jeux",
-      title: "À toi de manœuvrer et de décider",
+      title: "À vous de manœuvrer et de décider",
       intro: "Deux entraînements courts : repérer les éléments, puis choisir le geste adapté à une situation terrain.",
       visualTitle: "Jeu 1 · Repérage sur la vanne",
       hint: "Une question à la fois. La correction est immédiate.",
@@ -389,7 +389,7 @@
     }
 
     const question = questions[game.index];
-    let feedback = `<div class="neutral-box quiz-feedback"><strong>À toi :</strong> choisis une seule réponse.</div>`;
+    let feedback = `<div class="neutral-box quiz-feedback"><strong>À vous :</strong> choisissez une seule réponse.</div>`;
     if (game.answered) {
       const feedbackClass = game.correct ? "key-box" : "danger-box";
       const feedbackWord = game.correct ? "✓ CORRECT" : "✕ À REVOIR";
@@ -410,9 +410,9 @@
     elements.detail.innerHTML = gameDetailMarkup();
     elements.controls.innerHTML = `${gameTabsMarkup()}${gameActionMarkup()}`;
     elements.visualTitle.textContent = state.games.active === "locate" ? "Jeu 1 · Repérage sur la vanne" : "Jeu 2 · Décisions terrain";
-    elements.visualHint.textContent = game.done ? "Jeu terminé : consulte ton résultat." : "Réponds, lis la correction, puis continue.";
+    elements.visualHint.textContent = game.done ? "Jeu terminé : consultez votre résultat." : "Répondez, lisez la correction, puis continuez.";
     elements.caption.textContent = state.games.active === "locate"
-      ? "Clique directement sur la coupe de la vanne."
+      ? "Cliquez directement sur la coupe de la vanne."
       : "Une seule décision par situation.";
     wireGameNavigation();
   }
@@ -527,7 +527,7 @@
         <span class="game-summary-check" aria-hidden="true">✓</span>
         <strong>${state.games.active === "locate" ? "Repérage terminé" : "Situations terminées"}</strong>
         <span class="game-summary-score">${game.score}/${questions.length}</span>
-        <small>${bothDone ? `Bilan général : ${total}/${totalQuestions}` : "Passe à l’autre jeu quand tu es prêt."}</small>
+        <small>${bothDone ? `Bilan général : ${total}/${totalQuestions}` : "Passez à l’autre jeu quand vous êtes prêt."}</small>
       </div>`;
   }
 

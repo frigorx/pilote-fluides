@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "genereLe": "2026-08-31T17:34:45.609Z",
-  "total": 3750,
+  "genereLe": "2026-08-31T23:08:11.616Z",
+  "total": 3751,
   "narrations": [
     {
       "cle": "00060401-70",
@@ -7874,14 +7874,6 @@
       ]
     },
     {
-      "cle": "3db7375b-36",
-      "texte": "Jeu terminé : consulte ton résultat.",
-      "type": "interface",
-      "sources": [
-        "packs/fluides/res/vanne-service-interactive/app.js"
-      ]
-    },
-    {
       "cle": "3ddd11b0-118",
       "texte": "L'énergie absorbée par un kilogramme de fluide frigorigène dans l'évaporateur constitue l'effet frigorifique massique.",
       "type": "fragment",
@@ -10200,7 +10192,6 @@
       "texte": "Saisis ton résultat en bar.",
       "type": "interface",
       "sources": [
-        "packs/fluides/res/pressostat-bp-kp1/index.html",
         "packs/fluides/res/pressostat-hp-kp5/index.html"
       ]
     },
@@ -15209,14 +15200,6 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/traxoil-pedagogique/module.js"
-      ]
-    },
-    {
-      "cle": "7be4d0b3-42",
-      "texte": "Réponds, lis la correction, puis continue.",
-      "type": "interface",
-      "sources": [
-        "packs/fluides/res/vanne-service-interactive/app.js"
       ]
     },
     {
@@ -22169,6 +22152,14 @@
       ]
     },
     {
+      "cle": "b75c51b3-32",
+      "texte": "Saisissez votre résultat en bar.",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/pressostat-bp-kp1/index.html"
+      ]
+    },
+    {
       "cle": "b7600235-82",
       "texte": "Où se raccorde le flexible temporaire du manifold sur une Rotolock à deux prises ?",
       "type": "feedback",
@@ -22587,6 +22578,14 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/regulateurs-kv-pedagogiques/app.js"
+      ]
+    },
+    {
+      "cle": "ba847f29-45",
+      "texte": "Cliquez directement sur la coupe de la vanne.",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/vanne-service-interactive/app.js"
       ]
     },
     {
@@ -24084,14 +24083,6 @@
       ]
     },
     {
-      "cle": "c7fc8207-44",
-      "texte": "Clique directement sur la coupe de la vanne.",
-      "type": "interface",
-      "sources": [
-        "packs/fluides/res/vanne-service-interactive/app.js"
-      ]
-    },
-    {
       "cle": "c80939fc-55",
       "texte": "Un pressostat ouvre. Que doit faire la chaîne montrée ?",
       "type": "feedback",
@@ -24698,6 +24689,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/hydrocarbures-a1-a2/app.js"
+      ]
+    },
+    {
+      "cle": "cd0c3d7a-46",
+      "texte": "Répondez, lisez la correction, puis continuez.",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/vanne-service-interactive/app.js"
       ]
     },
     {
@@ -30784,6 +30783,14 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/dechets-valoriser/index.html"
+      ]
+    },
+    {
+      "cle": "ffdf2b4c-39",
+      "texte": "Jeu terminé : consultez votre résultat.",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/vanne-service-interactive/app.js"
       ]
     },
     {

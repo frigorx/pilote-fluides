@@ -200,8 +200,8 @@ export const CARTES = [
     corps:
       "<p class=\"lead\">Quatre catégories, un seul référentiel : <b>A1</b> et <b>A2</b> couvrent toute l'activité, " +
       "<b>D</b> la récupération seule, <b>E</b> le contrôle d'étanchéité sans ouvrir le circuit.</p>" +
-      "<p>Choisis ton parcours — ou va directement <b>réviser par thème</b> : cet outil est fait " +
-      "pour t'accompagner <b>avant</b> la formation, <b>pendant</b> les périodes en entreprise et " +
+      "<p>Choisissez votre parcours — ou allez directement <b>réviser par thème</b> : cet outil est fait " +
+      "pour vous accompagner <b>avant</b> la formation, <b>pendant</b> les périodes en entreprise et " +
       "jusqu'à l'épreuve. Chaque question corrigée renvoie vers la fiche à relire. " +
       "Progression conseillée en formation : <b>E → D → A2 → A1</b>.</p>",
     menu_titre: "Choisir un parcours",
@@ -481,8 +481,8 @@ export const CARTES = [
       "<p class=\"lead\">Cet espace est fait pour être utilisé <b>seul</b> : avant la formation pour " +
       "arriver préparé, pendant les périodes de stage pour entretenir, avant l'épreuve pour cibler.</p>" +
       "<p>Chaque série corrige <b>immédiatement</b>, chaque erreur renvoie vers la fiche à relire, " +
-      "et le bilan de fin liste tes points faibles. Ton <b>score précédent</b> s'affiche à chaque " +
-      "nouvelle tentative : bats-le.</p>",
+      "et le bilan de fin liste vos points faibles. Votre <b>score précédent</b> s'affiche à chaque " +
+      "nouvelle tentative : battez-le.</p>",
     menu_titre: "Choisir un thème",
     liens: [
       { vers: "ex-pos", icone: "🧭", titre: "Positionnement d'entrée — avant la formation", desc: "Situez-vous : 22 questions, tous thèmes, toujours les mêmes. Ce test ne compte pas, il sert à adapter la semaine." },
@@ -2124,7 +2124,7 @@ export const CARTES = [
         type: "cle",
         t: "L'astuce du + 90",
         html:
-          "Ajoute 90 au code, et tu lis directement C, H, F : " +
+          "Ajoutez 90 au code, et vous lisez directement C, H, F : " +
           "<b>134 + 90 = 224</b> → C₂H₂F₄ (R-134a). <b>22 + 90 = 112</b> → C·H·F₂… plus un " +
           "<b>chlore</b> pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. " +
           "<b>290 + 90 = 380</b> → C₃H₈ : le propane, zéro fluor, zéro chlore.",
@@ -2313,7 +2313,7 @@ export const CARTES = [
       "gaz visés, l'<b>accord de Paris</b> (2015) fixe le cap des +1,5 °C, et l'<b>amendement de " +
       "Kigali</b> (2016) fait entrer les HFC… dans le protocole de Montréal. En Europe, le " +
       "règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations — celles " +
-      "de ton métier.</p>",
+      "de votre métier.</p>",
     blocs: [
       {
         type: "cle",
@@ -2401,9 +2401,9 @@ export const CARTES = [
           "zéro impact : la question des <b>PFAS</b> se pose désormais sur certains fluides à bas PRP.",
       },
       {
-        t: "À toi : la carte d identité du fluide",
+        t: "À vous : la carte d identité du fluide",
         html:
-          "<p style=\"margin:0 0 10px\">Choisis un fluide, entre une charge : les tonnes équivalent CO₂ se calculent. Compare deux fluides à charge égale — c est l exercice qui suit.</p>" +
+          "<p style=\"margin:0 0 10px\">Choisissez un fluide, entrez une charge : les tonnes équivalent CO₂ se calculent. Comparez deux fluides à charge égale — c est l exercice qui suit.</p>" +
           outil("fiche-fluide.html", "Carte d identité du fluide interactive", 415),
       },
     ],
@@ -2688,9 +2688,9 @@ export const CARTES = [
           "Et un fluide n'a jamais la table d'un autre.",
       },
       {
-        t: "À toi : refais la lecture croisée",
+        t: "À vous : refaites la lecture croisée",
         html:
-          "<p style=\"margin:0 0 10px\">Reprends la réglette : pression relative, conversion en absolu, température de saturation, écart avec la mesure. Hors plage → on soupçonne.</p>" +
+          "<p style=\"margin:0 0 10px\">Reprenez la réglette : pression relative, conversion en absolu, température de saturation, écart avec la mesure. Hors plage → on soupçonne.</p>" +
           outil("reglette.html", "Réglette pression-température interactive", 445),
       },
     ],
@@ -3677,9 +3677,9 @@ export const CARTES = [
           "<b>tous</b> les indices à la fois. Ici, trois indices convergent.",
       },
       {
-        t: "À toi : rejoue la panne sur le Diagramme Enthalpique+",
+        t: "À vous : rejouez la panne sur le Diagramme Enthalpique+",
         html:
-          "<p style=\"margin:0 0 10px\">Entre les relevés de l’énoncé dans l’outil (fluide, BP, HP, températures) et regarde le cycle se tracer : la panne se VOIT sur le log p-h.</p>" +
+          "<p style=\"margin:0 0 10px\">Entrez les relevés de l’énoncé dans l’outil (fluide, BP, HP, températures) et regardez le cycle se tracer : la panne se VOIT sur le log p-h.</p>" +
           '<iframe src="https://frigorx.github.io/diagramme-enthalpique/" title="Diagramme Enthalpique+ v3.2" style="width:100%;height:760px;border:0;background:#fff;border-radius:6px" loading="lazy"></iframe>',
       },
     ],
@@ -4138,9 +4138,9 @@ export const CARTES = [
           "fuite crée en local fermé.",
       },
       {
-        t: "À toi : compare les candidats à la substitution",
+        t: "À vous : comparez les candidats à la substitution",
         html:
-          "<p style=\"margin:0 0 10px\">Passe en revue R-290, R-1234yf, R-744, R-32 : classe de sécurité, PRP, glide. Le fluide « parfait » n existe pas — c est tout l objet de ce groupe.</p>" +
+          "<p style=\"margin:0 0 10px\">Passez en revue R-290, R-1234yf, R-744, R-32 : classe de sécurité, PRP, glide. Le fluide « parfait » n existe pas — c est tout l objet de ce groupe.</p>" +
           outil("fiche-fluide.html", "Carte d identité du fluide interactive", 415),
       },
       { type: "cle", t: "Hydrocarbures : une machine pas comme les autres", html: "<b>Antidéflagrant</b> ou <b>non étincelant</b> : sur une machine aux hydrocarbures, tout composant électrique proche du gaz doit respecter cette règle, pour ne jamais produire d'étincelle. Et comme le propane est plus lourd que l'air, il s'accumule en bas en cas de fuite — la <b>ventilation</b> du local en tient compte dès la conception." },
