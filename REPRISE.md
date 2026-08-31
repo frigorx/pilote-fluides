@@ -3,6 +3,26 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 31/08 — LA VOIX UNIFIÉE EST EN LIGNE, et le site passe un contrôle complet
+>
+> **`voix-unifiee` (un commit, fait sur Millénium) est fusionnée dans `main` et servie.**
+> 946 MP3 au fonds commun `packs/fluides/res/voix/audio/`, et une **table de prononciation
+> partagée** : `build/voix/prononciation.json` fait foi → `moteur/prononciation.js` est
+> GÉNÉRÉ, branché sur 149 pages. La synthèse dit « mètres cubes par heure », « haute
+> pression », « P P M » au lieu d'épeler. ⚠️ On oralise À LA LECTURE, jamais avant
+> `textKey()` — oraliser les sources orphelinerait les 3 376 MP3. Narrations AéroRézo
+> passées au vouvoiement (sans risque : AéroRézo n'a aucun MP3 local ; ÉlectroRézo garde
+> ses 472 MP3, textes inchangés). La branche distante `voix-unifiee` reste à supprimer.
+>
+> **Contrôle complet du site le même jour** : 839 liens balayés — le seul défaut réel
+> était les 12 captures QA de `parcours-manometres/tests/screenshots/` listées par la
+> galerie alors que `.gitignore` les écarte du site (12 liens morts). Corrigé dans
+> `build/galerie.mjs` (le générateur saute `tests/screenshots`), galerie régénérée
+> (`fde85652`). Zéro erreur console sur l'accueil, formation et les quatre réseaux ;
+> zéro débordement mobile (accueil, galerie, métier, station ÉlectroRézo).
+> Rappel tenu : bandeaux AquiBlue/HoCourant EN TÊTE et tutoiement du héros = décisions
+> de F. Henninot (24-28/08), à ne pas « corriger ».
+
 > ## 30/08 — LE 5e RÉSEAU OUVRE : ÉlectroRézo, servi à `/electrorezo/`
 >
 > **https://inerweb.fr/electrorezo/** — l'électrotechnique en carte de métro : **58 stations,
