@@ -3,6 +3,23 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 31/08 (suite) — PLUS DE TUTOIEMENT NULLE PART : décision F. Henninot, exécutée
+>
+> **« Non, plus de tutoiement »** — la décision REMPLACE le choix du 28/08 (héros tutoyé).
+> Converti et EN LIGNE : la vitrine (`index`, `metier`, `partage` — commit `47ef73eb`),
+> puis les contenus narrés (`e1a772b0`) : 17 passages de `cartes.js` et ~60 dans les
+> capsules `x1`→`x5` (qui mélangeaient tu et vous dans le même paragraphe). **87 narrations
+> refabriquées en edge-tts sur feu vert explicite** (24 nouvelles, 62 remplacées sous le
+> même nom), index à 3 443 entrées. À savoir :
+> · les **écrans de capsule ne sont PAS au corpus MP3** (synthèse voulue, 13/08) — le
+>   collecteur ne lit pas `donnees/*.js` : une retouche de capsule ne coûte aucune voix ;
+> · l'identifiant `le-registre-parle-avant-toi` (x4) garde son nom — le changer casserait
+>   les ancres ; c'est un id technique, pas un texte affiché ;
+> · piège de recensement : `grep \b` casse sur les accents (« complètes » matche « tes ») —
+>   relire chaque occurrence à la main ;
+> · ⚠️ `fetch {cache:'reload'}` depuis une page contrôlée par le SW passe QUAND MÊME par
+>   lui — la preuve serveur, c'est `curl`.
+
 > ## 31/08 — LA VOIX UNIFIÉE EST EN LIGNE, et le site passe un contrôle complet
 >
 > **`voix-unifiee` (un commit, fait sur Millénium) est fusionnée dans `main` et servie.**
