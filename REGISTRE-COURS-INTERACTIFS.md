@@ -68,7 +68,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 |---|---|---|---|---|
 | `bilan-thermique-performance-interactif` | g11, plan d’accueil | 16 | *appui : 12 codes* | 328 Ko |
 | `bouteille-liquide-pedagogique` | g9b, plan d’accueil | 14 | 1.05 | 128 Ko |
-| `capsules` | s1, s2, s3, s4, s5, cl2, cl3, cl4, p4, p7, g0, g1d, g2a, g2, x1, g3, x4, g5a, g5b, x3, x2, g10, x5, g13 | 151 | 1.00 · 1.05 · 1.09 · 10.01 · 10.02 · 11.03 · 12.02 · 12.04 · 12.05 · 12.06 · 12.13 · 13.01 · 13.04 · 13.14 · 14.01 · 2.01 · 2.02 · 3.01 · 3.02 · 3.03 · 3.04 · 3.05 · 4.02 · 4.04 · 4.08 · 5.01 · 5.02 · 5.03 · 5.04 · 5.05 · 5.06 · 5.07 · 5.08 · 5.09 · 8.08 | 405 Ko |
+| `capsules` | s1, s2, s3, s4, s5, cl2, cl3, cl4, p4, p7, g0, g1d, g2a, g2, x1, g3, x4, g5a, g5b, x3, x2, g10, x5, g13 | 151 | 1.00 · 1.05 · 1.09 · 10.01 · 10.02 · 11.03 · 12.02 · 12.04 · 12.05 · 12.06 · 12.13 · 13.01 · 13.04 · 13.14 · 14.01 · 2.01 · 2.02 · 3.01 · 3.02 · 3.03 · 3.04 · 3.05 · 4.02 · 4.04 · 4.08 · 5.01 · 5.02 · 5.03 · 5.04 · 5.05 · 5.06 · 5.07 · 5.08 · 5.09 · 8.08 | 406 Ko |
 | `chaine-intervention-interactive` | p1, p3, p5, plan d’accueil | 25 | 3.03 · 3.04 · 4.05 · 5.01 · 5.02 | 61 Ko |
 | `chaleur-circuit-interactif` | g1a, plan d’accueil | — | 1.01 · 1.02 · 1.04 | 123 Ko |
 | `chaleur-interactive` | g1s, plan d’accueil | — | 1.02 | 158 Ko |
