@@ -72,6 +72,7 @@
     },
     steps: [
       {
+        narration: "Deux représentations du même appareil, et elles ne servent pas à la même chose. Le symbole est fait pour lire un schéma : il vous dit qu'il y a là un échangeur, et où il se raccorde. Il ne vous dit rien de ce qui se passe dedans. La coupe, elle, montre l'intérieur : des plaques empilées, et entre elles, alternativement, un circuit puis l'autre. Ces deux vues sont complémentaires. Sur le terrain, vous lirez des symboles ; pour comprendre pourquoi un échangeur se comporte comme il le fait, vous aurez besoin de l'image de l'intérieur.",
         short: "Identifier", kicker: "repérer", title: "Du symbole à la coupe",
         text: "Le symbole sert à lire le schéma. La coupe simplifiée explique ce que le symbole ne montre pas.",
         cap: "Reconnais l’échangeur à ses deux circuits séparés.", tp: "Reconnais l’échangeur et ses quatre piquages.", bts: "Distingue représentation normalisée, modèle et appareil réel.",
@@ -79,6 +80,7 @@
         action: { type: "choice", prompt: "Que représente la coupe ?", options: [{label:"Deux circuits séparés par des plaques"},{label:"Une cuve où les eaux se mélangent"},{label:"Un circulateur double"},{label:"Une soupape"}], correct: 0, explain: "Le transfert thermique traverse les plaques, mais les deux fluides restent séparés dans le modèle normal." }
       },
       {
+        narration: "Quatre piquages, deux chemins qui ne se rencontrent jamais. Le primaire entre d'un côté et ressort de l'autre. Le secondaire fait de même, dans le sens opposé. Ce sens opposé n'est pas un hasard de dessin : on l'appelle le contre-courant, et il permet un meilleur échange sur toute la longueur, parce que l'écart de température reste réparti au lieu de s'annuler à mi-parcours. Deux conseils pour le terrain : repérez toujours quel piquage appartient à quel circuit avant d'intervenir, et méfiez-vous des installations où les raccordements ont été refaits sans respecter le sens prévu.",
         short: "Fonction", kicker: "comprendre", title: "Quatre piquages, deux chemins",
         text: "Suis chaque circuit avec les mots et les flèches. Ici, les écoulements sont représentés en sens opposés.",
         cap: "Montre l’entrée et la sortie de chaque circuit.", tp: "Associe entrée et sortie de chaque circuit.", bts: "Explique l’intérêt du contre-courant sans en déduire un pincement universel.",
@@ -86,22 +88,25 @@
         action: { type: "match", prompt: "Associe les repères à leur chemin.", options:["Entrée primaire","Sortie primaire","Entrée secondaire","Sortie secondaire"], items:[{label:"P1",answer:0},{label:"P2",answer:1},{label:"S1",answer:2},{label:"S2",answer:3}], explain:"Chaque circuit possède sa propre entrée et sa propre sortie. Les raccordements réels se vérifient sur le dossier et la plaque constructeur." }
       },
       {
+        narration: "Faites maintenant varier l'encrassement et suivez deux effets en même temps. Le transfert de chaleur diminue : le dépôt sur les plaques fait obstacle au passage de la chaleur. Et la résistance hydraulique augmente : le passage se rétrécit, l'eau force davantage. Ces deux effets vont ensemble, et c'est ce qui rend le diagnostic possible. Un échangeur qui transfère moins sans que la perte de charge augmente ne souffre probablement pas d'encrassement : cherchez plutôt du côté du débit ou du régime de température. Deux symptômes qui devraient être liés et qui ne le sont pas, c'est une piste.",
         short: "Effet", kicker: "observer", title: "Faire varier l’encrassement",
-        text: "Déplace l’indice. Observe deux tendances liées : transfert thermique et résistance hydraulique.",
+        text: "Déplace l’indice. Observez deux tendances liées : transfert thermique et résistance hydraulique.",
         cap: "Suis la barre de transfert quand l’indice augmente.", tp: "Décris le symptôme sans conclure à une cause unique.", bts: "Relie la tendance à des mesures de températures, débits et pression différentielle.",
         scene: foulScene, equivalent:(value)=>`Indice relatif d’encrassement ${value} sur 100. Le modèle fait diminuer le transfert et augmenter la résistance.`,
         action:{ type:"range", prompt:"Modifie l’état interne simplifié.", label:"Indice d’encrassement", min:0,max:100,step:10,value:20, evaluate:(value)=>({readout:`${value}/100`, observation:value<40?"État peu encrassé dans le modèle.":value<80?"Le transfert baisse et la résistance augmente : des mesures sont nécessaires.":"État très dégradé dans le modèle. Il faut confirmer la cause avant toute décision."}) }
       },
       {
+        narration: "Quatre températures ne suffisent pas toujours à conclure, et voici pourquoi. Un secondaire moins chaud que prévu peut venir d'un échangeur encrassé, mais aussi d'un débit primaire insuffisant, ou d'un régime de température plus bas à l'entrée. Ces situations donnent des relevés de température qui se ressemblent. Ce qui les sépare, ce sont les débits des deux côtés, et la perte de charge. Vous retrouvez ici ce que vous avez vu à la station Puissance : une température seule ne dit rien sur l'énergie transportée, il faut toujours lui associer le débit.",
         short: "Mesurer", kicker: "mesurer", title: "Construire une preuve",
-        text: "Quatre températures seules ne suffisent pas toujours. Ajoute les débits et la perte de pression de chaque côté utile.",
-        cap: "Relève les quatre températures avant de conclure.", tp: "Prépare des relevés traçables dans un état stabilisé.", bts: "Utilise les quatre températures et les débits pour le bilan; compare la perte de charge au dossier.",
+        text: "Quatre températures seules ne suffisent pas toujours. Ajoutez les débits et la perte de pression de chaque côté utile.",
+        cap: "Relève les quatre températures avant de conclure.", tp: "Prépare des relevés traçables dans un état stabilisé.", bts: "Utilise les quatre températures et les débits pour le bilan; comparez la perte de charge au dossier.",
         scene: measure, equivalent:"Les points P1, P2, S1 et S2 portent les températures. Des prises de pression encadrent l’échangeur; les débits sont relevés sur les deux circuits.",
         action:{ type:"choice", prompt:"Quel jeu de relevés est le plus complet pour vérifier le service ?", options:[{label:"4 températures + 2 débits + Δp"},{label:"Une température extérieure"},{label:"Le bruit seul"},{label:"La couleur des plaques"}], correct:0, explain:"Le bilan thermique utilise températures et débits. La pression différentielle renseigne la résistance hydraulique dans les conditions relevées." }
       },
       {
+        narration: "Un échangeur ne se nettoie pas à l'aveugle : le démontage ou le nettoyage chimique coûte cher, immobilise l'installation, et fatigue les joints. La démarche est donc stricte. Établir l'état de service, relever quatre températures et les deux débits, mesurer la perte de charge, comparer au dossier, et seulement alors formuler l'hypothèse. Un mot de vigilance pour finir : sur un échangeur à plaques, une fuite interne fait communiquer les deux circuits sans que rien ne coule à l'extérieur. Rien ne se voit — ça se déduit d'une pression qui monte d'un côté et baisse de l'autre.",
         short: "Vérifier", kicker: "hypothèse", title: "Diagnostiquer sans nettoyer au hasard",
-        text: "Air, débit inadéquat ou encrassement peuvent produire des symptômes proches. Ordonne la démarche.",
+        text: "Air, débit inadéquat ou encrassement peuvent produire des symptômes proches. Ordonnez la démarche.",
         cap:"Signale l’anomalie sans nettoyer l’échangeur.", tp:"Signale l’anomalie et prépare le contrôle ciblé selon la procédure du site.", bts:"Croise bilan thermique et hydraulique avant de retenir puis tester une hypothèse.",
         scene:diag, equivalent:"La chaîne est : état connu, quatre températures et débits, perte de pression, comparaison, puis hypothèse.",
         action:{ type:"sequence", prompt:"Place les contrôles dans l’ordre.", items:["Définir l’état de service","Relever 4 T° et débits","Mesurer ou relever Δp","Comparer puis formuler l’hypothèse"], correctOrder:[0,1,2,3], explain:"Le nettoyage ou le remplacement vient seulement après une hypothèse étayée et la procédure adaptée." }

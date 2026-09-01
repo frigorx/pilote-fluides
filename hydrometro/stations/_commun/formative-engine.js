@@ -132,7 +132,7 @@
   }
 
   function renderChoice(action, step) {
-    els.actionPanel.innerHTML = `<p class="action-title">${escapeHtml(action.prompt)}</p><div class="choice-grid"></div><p class="formation-only-note">Entraînement sans score : la bonne réponse restera visible après ton choix.</p>`;
+    els.actionPanel.innerHTML = `<p class="action-title">${escapeHtml(action.prompt)}</p><div class="choice-grid"></div><p class="formation-only-note">Entraînement sans score : la bonne réponse restera visible après votre choix.</p>`;
     const grid = $(".choice-grid", els.actionPanel);
     action.options.forEach((option, index) => {
       const button = document.createElement("button");
