@@ -1347,7 +1347,20 @@
     render();
   }
 
+  /* Sur une leçon, le texte dit est ÉCRIT pour l'oreille (champ narration).
+     Jusqu'au 01/09/2026 le moteur clonait le panneau affiché dans tous les cas :
+     l'élève entendait la diapositive, et les 288 MP3 ont été fabriqués sur ce
+     texte-là. Sur une question, en revanche, lire l'énoncé affiché est voulu —
+     une question se dit telle qu'elle est posée. */
+  function narrationLecon() {
+    if (state.phase !== "lesson") return "";
+    var lecon = moduleData.lessons[state.lesson];
+    return lecon && typeof lecon.narration === "string" ? lecon.narration.trim() : "";
+  }
+
   function visibleSpeechText() {
+    var dite = narrationLecon();
+    if (dite) return dite;
     var copy = ui.lessonCard.querySelector(".copy-panel");
     if (!copy) return "";
     /* La voix de secours lisait TOUT le panneau : le rappel « Entraînement —
@@ -1386,11 +1399,13 @@
     french.sort(function (a, b) {
       var aFr = /^fr-FR$/i.test(a.lang || "") ? 2 : 0;
       var bFr = /^fr-FR$/i.test(b.lang || "") ? 2 : 0;
-      var aQuality = /(natural|neural|online|microsoft|google)/i.test(a.name || "") ? 1 : 0;
-      var bQuality = /(natural|neural|online|microsoft|google)/i.test(b.name || "") ? 1 : 0;
+      /* « microsoft » remontait les voix les plus anciennes du poste. */
+      var aQuality = /(natural|neural|online|multilingual)/i.test(a.name || "") ? 3 : 0;
+      var bQuality = /(natural|neural|online|multilingual)/i.test(b.name || "") ? 3 : 0;
       return (bFr + bQuality) - (aFr + aQuality);
     });
-    return french[0] || voices[0] || null;
+    /* jamais voices[0] : sans voix française, ce serait une voix anglaise. */
+    return french[0] || null;
   }
 
   function hasSpeech() {

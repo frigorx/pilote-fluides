@@ -1,5 +1,6 @@
 window.OIL_MODULE = {
   id: "elements-circuit-huile-regler",
+  narration: "Pour que l'huile circule du réservoir vers les compresseurs, il faut une petite différence de pression. C'est le rôle du clapet taré. Dans un système basse pression, il évacue vers l'aspiration l'excès de pression du réservoir, et maintient ainsi celui-ci à une pression réglée, légèrement au-dessus de l'aspiration et du carter. Ce petit écart suffit à faire circuler l'huile vers le régulateur sans l'alimenter brutalement. Retenez que la valeur de tarage n'est pas universelle : elle doit convenir au montage, aux variations d'aspiration et aux organes installés.",
   title: "La chaîne de l’huile : mettre sous pression et régler",
   subtitle: "LE CIRCUIT D’HUILE · STATION 6",
   codes: ["1.05", "6.05", "9.07"],
@@ -11,6 +12,7 @@ window.OIL_MODULE = {
   lessons: [
     {
       id: "differentiel",
+      narration: "Le régulateur mécanique de niveau, que les ateliers appellent souvent le pot A C et R, se monte à la place du voyant du carter. Son fonctionnement est simple et robuste : quand le niveau d'huile baisse, un flotteur descend, ouvre un pointeau, et laisse entrer l'huile ; quand le niveau remonte, le flotteur referme l'alimentation. Trois conditions pour qu'il travaille correctement : il doit être horizontal, adapté au compresseur, et alimenté avec le différentiel de pression prévu. Et voici sa limite, qu'il faut connaître : il ajoute l'huile manquante, mais il ne sait pas retirer un excès déjà présent dans le carter.",
       short: "Pousser",
       kicker: "Station 1 · Clapet taré",
       title: "Le clapet taré crée le différentiel utile",
@@ -24,6 +26,7 @@ window.OIL_MODULE = {
     },
     {
       id: "mecanique",
+      narration: "Le régulateur électronique va plus loin. Il remplace lui aussi le voyant du compresseur, mais il surveille plusieurs zones de niveau. Selon le modèle, un capteur détecte le niveau, des voyants indiquent l'état, et une électrovanne intégrée admet l'huile manquante. Il apporte surtout une fonction que le mécanique n'a pas : si le niveau ne revient pas dans le temps prévu, un contact transmet une alarme ou arrête le compresseur. C'est une vraie sécurité. Attention au choix du modèle : les versions O M trois, O M quatre et O M cinq n'ont pas le même domaine de pression. Vérifiez le modèle, le fluide, l'adaptateur, l'alimentation et la notice.",
       short: "AC&R",
       kicker: "Station 2 · Régulateur mécanique",
       title: "Le « pot AC&R » régule par flotteur et pointeau",
@@ -37,6 +40,7 @@ window.OIL_MODULE = {
     },
     {
       id: "traxoil",
+      narration: "Terminons par une distinction essentielle en diagnostic : un niveau bas et une pression d'huile ne racontent pas le même défaut. Le niveau décrit une réserve dans le carter. Le pressostat différentiel, lui, décrit la pression nette produite par une pompe à huile — ce sont deux grandeurs sans rapport direct. Pour un niveau bas, suivez la chaîne : réserve, vannes, filtre, régulateur, séparation, retour naturel. Pour une sécurité d'huile sur un compresseur à pompe, relevez la pression côté sortie de pompe et celle du carter, faites la différence, et tenez compte de la temporisation avant de conclure. Ne confondez jamais une alarme de niveau avec une sécurité de pression différentielle.",
       short: "TraxOil",
       kicker: "Station 3 · Régulation électronique",
       title: "TraxOil mesure, alimente et peut mettre en sécurité",
