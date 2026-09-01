@@ -278,8 +278,19 @@
     els.stepCount.textContent = `${current + 1} / ${config.steps.length}`;
   }
 
-  function currentVisibleText() {
-    return [els.stationTitle.innerText, els.stepTitle.innerText, els.stepText.innerText, els.levelNote.innerText, els.sceneEquivalent.innerText].filter(Boolean).join(". ");
+  /* Le texte dit à l'élève est un texte À PART, écrit pour l'oreille, rangé dans
+     `narration` à côté du texte affiché. Il n'est JAMAIS ramassé sur l'écran :
+     jusqu'au 01/09/2026 cette fonction concaténait cinq éléments du DOM, et
+     l'élève entendait le descriptif de la diapositive au lieu d'un professeur.
+     Une étape sans narration ne parle pas — mieux vaut se taire que réciter. */
+  function narrationCourante() {
+    const etape = config.steps[current];
+    if (!etape) return "";
+    if (typeof etape.narration === "string") return etape.narration.trim();
+    if (etape.narration && typeof etape.narration === "object") {
+      return String(etape.narration[level] || etape.narration.TP || "").trim();
+    }
+    return "";
   }
 
   function stopSpeech(message = "Lecture arrêtée.") {
@@ -294,13 +305,6 @@
     if (status && message) status.textContent = message;
   }
 
-  function bestFrenchVoice() {
-    return window.speechSynthesis.getVoices().sort((a, b) => {
-      const score = (voice) => ((voice.lang || "").toLowerCase() === "fr-fr" ? 100 : (voice.lang || "").toLowerCase().startsWith("fr") ? 60 : 0) + (/natural|naturel|neural|online|google|microsoft/i.test(voice.name || "") ? 25 : 0);
-      return score(b) - score(a);
-    })[0] || null;
-  }
-
   function speakCurrent() {
     if (!("speechSynthesis" in window)) return;
     const listen = $("#formationListen");
@@ -309,10 +313,13 @@
     if (speaking && paused) { window.speechSynthesis.resume(); paused = false; listen.innerHTML = "Ⅱ <span>Pause</span>"; status.textContent = "Lecture reprise."; return; }
     if (speaking) { window.speechSynthesis.pause(); paused = true; listen.innerHTML = "▶ <span>Reprendre</span>"; status.textContent = "Lecture en pause."; return; }
     stopSpeech("");
+    const dit = narrationCourante();
+    if (!dit) { status.textContent = "Cette étape n’a pas encore de narration. Tout reste écrit."; return; }
     const run = speechRun;
-    const utterance = new SpeechSynthesisUtterance(currentVisibleText());
-    utterance.lang = "fr-FR"; utterance.rate = .95; utterance.pitch = 1;
-    const voice = bestFrenchVoice(); if (voice) utterance.voice = voice;
+    const utterance = new SpeechSynthesisUtterance(dit);
+    /* débit, langue et choix de voix : réglage commun du site (§ 5 de la charte) */
+    if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.appliquer(utterance);
+    else { utterance.lang = "fr-FR"; utterance.rate = .95; utterance.pitch = 1; }
     utterance.onstart = () => { if (run !== speechRun) return; speaking = true; listen.innerHTML = "Ⅱ <span>Pause</span>"; stop.disabled = false; status.textContent = "Lecture de l’étape en cours."; };
     utterance.onend = () => { if (run !== speechRun) return; stopSpeech("Lecture terminée."); };
     utterance.onerror = (event) => { if (run !== speechRun || ["canceled", "interrupted"].includes(event.error)) return; stopSpeech("Voix indisponible. Tout le contenu reste écrit."); };
@@ -325,6 +332,7 @@
     actions.setAttribute("aria-label", "Lecture vocale facultative");
     actions.innerHTML = `<button id="formationListen" type="button" aria-label="Écouter l’étape">▶ <span>Écouter</span></button><button id="formationStop" type="button" aria-label="Arrêter la lecture" disabled>■ <span>Arrêter</span></button><span id="formationVoiceStatus" class="sr-only" aria-live="polite">Voix coupée.</span>`;
     $(".topbar").append(actions);
+    if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.monter(actions);
     $("#formationListen").addEventListener("click", speakCurrent);
     $("#formationStop").addEventListener("click", () => stopSpeech());
     if (!("speechSynthesis" in window)) { $("#formationListen").disabled = true; $("#formationVoiceStatus").textContent = "Voix indisponible. Tout le contenu reste écrit."; }
