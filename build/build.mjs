@@ -507,6 +507,20 @@ function main() {
     stdio: "inherit",
   });
 
+  /* --- l'annuaire des renvois du livre (f/index.html) : toutes les adresses
+     imprimées, en clair. C'est la page vers laquelle la 404 renvoie le
+     lecteur qui a mal recopié l'adresse sous un QR code. --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/annuaire-f.mjs")], {
+    stdio: "inherit",
+  });
+
+  /* --- les adresses imprimées dans le livre vivent-elles encore ? Un QR
+     parti chez l'imprimeur ne peut plus changer : ce contrôle refuse qu'une
+     adresse vendue disparaisse en silence. --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/verifier-adresses.mjs")], {
+    stdio: "inherit",
+  });
+
   /* --- audit global de conformité : autonomie, charte, impression,
      lisibilité, médias et traçabilité des droits. Il informe sans bloquer :
      une dette documentaire doit rester visible même quand le pack tourne. --- */
