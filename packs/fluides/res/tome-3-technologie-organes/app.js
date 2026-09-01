@@ -7,6 +7,7 @@ const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selec
    montage : les codes 6.01, 7.01, 8.01, 9.01 et 1.05 du référentiel exigent le
    principe de fonctionnement ET les risques de fuite associés. Un écran nommé,
    adressable par `?ecran=6`, est ce qui rend cette exigence vérifiable. */
+const ACCUEIL = { narration: "Bienvenue dans le tome 3. Vous allez passer en revue les organes d’un circuit frigorifique, un dossier à la fois. Pour chacun, sept écrans courts : le reconnaître, comprendre à quoi il sert, savoir ce qui entre et ce qui sort, voir ce qui se passe à l’intérieur, le situer dans le circuit et le monter correctement, connaître ses points de fuite, et retenir l’essentiel. Choisissez une famille, puis un dossier. Si vous débutez, commencez par le cycle principal : les quatre organes qui font le froid." };
 const SCREEN_NAMES = ["Reconnaître", "Fonction professionnelle", "Entrée et sortie", "Fonctionnement interne", "Situer et monter", "Où ça fuit", "Mémoriser"];
 const NB_ECRANS = SCREEN_NAMES.length;
 const FLOW = {
@@ -847,7 +848,7 @@ function voiceScore(voice) {
    jusqu'à la note « aide visuelle sans valeur de plan constructeur ». */
 function narrationCourante() {
   if ($("#home-view").hidden === false) {
-    return "Bienvenue dans le tome 3. Vous allez passer en revue les organes d’un circuit frigorifique, un dossier à la fois. Pour chacun, sept écrans courts : le reconnaître, comprendre à quoi il sert, savoir ce qui entre et ce qui sort, voir ce qui se passe à l’intérieur, le situer dans le circuit et le monter correctement, connaître ses points de fuite, et retenir l’essentiel. Choisissez une famille, puis un dossier. Si vous débutez, commencez par le cycle principal : les quatre organes qui font le froid.";
+    return ACCUEIL.narration;
   }
   const dossier = currentDossier;
   if (!dossier || !Array.isArray(dossier.narrations)) return "";

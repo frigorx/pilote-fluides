@@ -155,8 +155,43 @@ def dire(texte, voix, cible, debit):
             pass
 
 
+def _module_de(item):
+    """Le dossier de module d'une entrée du corpus.
+
+    Les sources ressemblent à `packs/fluides/res/<module>/app.js`,
+    `legislation/stations/<station>/index.html` ou `hydrometro/stations/<st>/…`.
+    On retient le dernier segment de dossier : c'est l'unité pédagogique que
+    l'élève parcourt d'un bout à l'autre."""
+    sources = item.get("sources") or []
+    if isinstance(sources, str):
+        sources = [sources]
+    if not sources:
+        return ""
+    chemin = str(sources[0]).replace("\\", "/").split("#")[0]
+    parts = [p for p in chemin.split("/") if p]
+    return parts[-2] if len(parts) >= 2 else (parts[0] if parts else "")
+
+
+def _voix_du_module(item):
+    """« m » ou « f », stable pour un module donné, et équilibré sur l'ensemble.
+
+    Un hachage du nom de module décide : le même module retombe toujours sur la
+    même voix, y compris lors d'une refabrication partielle, et la répartition
+    sur des centaines de modules tend vers la moitié de chaque. Choisir au fil
+    de l'eau donnerait un résultat qui change à chaque lot."""
+    nom = _module_de(item)
+    if not nom:
+        return "m"
+    empreinte = hashlib.sha1(nom.encode("utf-8")).digest()[0]
+    return "m" if empreinte % 2 == 0 else "f"
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--alternance-module", action="store_true",
+                    help="une voix par module, alternée pour tendre vers 50 %% "
+                         "de voix féminine et 50 %% de voix masculine, au lieu "
+                         "de l'affectation par rôle explique/interroge")
     ap.add_argument("--modules", default="",
                     help="dossiers de station à couvrir, séparés par des virgules")
     ap.add_argument("--sources", default="",
@@ -223,7 +258,15 @@ def main():
     for position, it in enumerate(retenues, 1):
         cle = it["cle"]
         role = "explique" if it.get("type") in LONGUES else "interroge"
-        voix = args.voix_explique if role == "explique" else args.voix_interroge
+        if args.alternance_module:
+            # Décision de F. Henninot du 01/09/2026 : « 50 % de voix féminine,
+            # 50 % de voix masculine, pas le choix entre les deux ». Un module
+            # entier garde donc UNE voix — un cours ne change pas de professeur
+            # en cours de route — et le module suivant prend l'autre. La parité
+            # se joue entre modules, pas à l'intérieur de l'un d'eux.
+            voix = args.voix_explique if _voix_du_module(it) == "m" else args.voix_interroge
+        else:
+            voix = args.voix_explique if role == "explique" else args.voix_interroge
         cible = os.path.join(args.audio, cle + ".mp3")
         texte = oraliser(it.get("texte", ""))
         if not texte:

@@ -219,6 +219,22 @@ function collectScript(code, source) {
       if (name === "narration" && Array.isArray(value)) {
         value.filter(item => typeof item === "string").forEach(item => ajouter(item, source, "fragment"));
       }
+      /* `narrations` au pluriel : un texte par écran, dans l'ordre des écrans.
+         C'est la forme du tome 3 (7 écrans par dossier) et du catalogue des
+         stations Principes d'HydroMétro. Sans cette ligne, les narrations
+         écrites le 01/09/2026 n'entraient pas au corpus, donc n'étaient jamais
+         fabriquées — le module restait en voix de synthèse sans qu'on le voie. */
+      if (name === "narrations" && Array.isArray(value)) {
+        value.filter(item => typeof item === "string").forEach(item => ajouter(item, source, "narration"));
+      }
+      /* `narration` en OBJET : une phase, un texte. C'est la forme d'AéroRézo
+         — decouvrir / comprendre / manipuler / verifier — conforme depuis le
+         27/08 mais invisible du corpus jusqu'ici, faute d'être lue. */
+      if (name === "narration" && value && typeof value === "object" && !Array.isArray(value)) {
+        Object.values(value)
+          .filter(item => typeof item === "string")
+          .forEach(item => ajouter(item, source, "narration"));
+      }
       if (["why", "explain", "feedback", "message", "q", "question", "prompt", "x"].includes(name) && typeof value === "string") {
         ajouter(value, source, "feedback");
       }
@@ -290,13 +306,19 @@ function collectMainCards() {
 
 collectMainCards();
 
-/* Deux gisements de narrations, et non plus un seul :
+/* Trois gisements de narrations, et non plus deux :
    · packs/fluides/res — les cours du pack habilitation ;
    · legislation      — les stations du 2e réseau (23/08/2026). Elles portent
      leur narration en `data-narration` sur chaque écran, ce que la boucle
      ci-dessous sait déjà lire. C'est un couplage d'OUTILLAGE seulement : la
-     station ne dépend de rien à l'exécution, le dossier reste déplaçable. */
-for (const racine of ["packs/fluides/res", "legislation"]) {
+     station ne dépend de rien à l'exécution, le dossier reste déplaçable ;
+   · hydrometro       — ajouté le 01/09/2026. Ce réseau était le seul à ne pas
+     être collecté : ses 110 narrations n'auraient jamais eu de MP3, et il
+     serait resté à la voix du navigateur sans que rien ne le signale ;
+   · aerorezo         — ajouté le 01/09/2026 pour la même raison. Ses 144
+     narrations (36 stations × 4 phases) étaient conformes depuis le 27/08 mais
+     n'avaient aucun fichier : elles se disaient à la voix du poste. */
+for (const racine of ["packs/fluides/res", "legislation", "hydrometro", "aerorezo"]) {
   const dossier = path.join(root, racine);
   if (!fs.existsSync(dossier)) continue;
   for (const file of walkFiles(dossier)) {
