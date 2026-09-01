@@ -11,9 +11,9 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Reconnais une gaine circulaire, une gaine rectangulaire et un flexible sur une installation.",
-  bac: "Choisis un conduit selon la place disponible, l’étanchéité, l’entretien et les pertes.",
-  bts: "Argumente forme, matériau, classe d’étanchéité, isolation et accessibilité au regard du projet.",
+  cap: "Reconnaissez une gaine circulaire, une gaine rectangulaire et un flexible sur une installation.",
+  bac: "Choisissez un conduit selon la place disponible, l’étanchéité, l’entretien et les pertes.",
+  bts: "Argumentez forme, matériau, classe d’étanchéité, isolation et accessibilité au regard du projet.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
   decouverte: "Le local est occupé. L’air entre par la façade, à gauche, et repart par le plafond, à droite. Entre les deux, le conduit n’est pas visible : il passe au-dessus du faux plafond, dans la hauteur qu’on lui a laissée. Cette hauteur est souvent arrêtée avant l’étude de ventilation. C’est pourtant elle qui commande la forme du conduit, bien avant le calcul.",
@@ -25,8 +25,8 @@
   formula: "Choix = usage + encombrement + pertes + acoustique + maintenance",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Sous le dessin, une question à trois réponses. Avant de cliquer, projette-toi cinq ans plus tard : le faux plafond est refermé, personne ne se souvient du tracé, et une bouche débite mal. Demande-toi laquelle des trois réponses te laisse encore une chance de trouver la panne. Choisis, puis lis la correction.",
-  lecture: "Une bonne réponse ne suffit pas : dis pourquoi les deux autres sont fausses. Cacher tous les organes donne un beau plafond et une installation muette — plus de trappe, plus de point de mesure, plus rien à régler le jour où ça va mal. Multiplier les flexibles fait gagner une heure à la pose et coûte des pascals tous les jours qui suivent.",
+  consigne: "Sous le dessin, une question à trois réponses. Avant de cliquer, projetez-vous cinq ans plus tard : le faux plafond est refermé, personne ne se souvient du tracé, et une bouche débite mal. Demandez-vous laquelle des trois réponses vous laisse encore une chance de trouver la panne. Choisissez, puis lisez la correction.",
+  lecture: "Une bonne réponse ne suffit pas : dites pourquoi les deux autres sont fausses. Cacher tous les organes donne un beau plafond et une installation muette — plus de trappe, plus de point de mesure, plus rien à régler le jour où ça va mal. Multiplier les flexibles fait gagner une heure à la pose et coûte des pascals tous les jours qui suivent.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */
   limites: "Cette station donne des critères de choix, pas un catalogue. Les dimensions disponibles, les classes d’étanchéité et les degrés de résistance au feu se lisent dans les documents du projet et dans les fiches des fabricants — ils changent selon le texte applicable et sa version.",

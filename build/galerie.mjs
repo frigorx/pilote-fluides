@@ -156,6 +156,10 @@ function releverMedias(dossier) {
   const parcourir = (sousChemin) => {
     for (const e of readdirSync(resolve(RES, dossier, sousChemin), { withFileTypes: true })) {
       const chemin = sousChemin ? sousChemin + "/" + e.name : e.name;
+      /* Les captures de contrôle qualité sont écartées du dépôt par la règle
+         .gitignore « tests/screenshots » des modules de res : présentes sur le
+         disque mais jamais en ligne — les lister ferait des liens morts. */
+      if (chemin === "tests/screenshots") continue;
       if (e.isDirectory()) parcourir(chemin);
       else if (EXT_MEDIA.has(e.name.slice(e.name.lastIndexOf(".")).toLowerCase())) trouves.push(chemin);
     }

@@ -15,22 +15,22 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Choisis une prise statique correcte.",
-  bac: "Mesure une différence de pression aux bornes d’un organe.",
-  bts: "Établis un bilan de pression et compare au point ventilateur/réseau.",
+  cap: "Choisissez une prise statique correcte.",
+  bac: "Mesurez une différence de pression aux bornes d’un organe.",
+  bts: "Établissez un bilan de pression et comparez au point ventilateur/réseau.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "Le dessin est le même qu’à la station des trois pressions, et c’est voulu : les prises ne changent pas quand on passe de l’étude au chantier. Ce qui change, c’est ce qu’on en fait. Ici, on ne cherche plus à comprendre une pression, on cherche un écart : entre l’amont et l’aval d’un filtre, entre le départ et l’extrémité d’une branche. Suis les deux liaisons qui rejoignent le manomètre — c’est leur différence qui parle.",
+  decouverte: "Le dessin est le même qu’à la station des trois pressions, et c’est voulu : les prises ne changent pas quand on passe de l’étude au chantier. Ce qui change, c’est ce qu’on en fait. Ici, on ne cherche plus à comprendre une pression, on cherche un écart : entre l’amont et l’aval d’un filtre, entre le départ et l’extrémité d’une branche. Suivez les deux liaisons qui rejoignent le manomètre — c’est leur différence qui parle.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "Sur un réseau, presque tout se lit en écart. Un manomètre différentiel a deux entrées : la haute et la basse. On branche la haute en amont de l’organe, la basse en aval. Ce qu’il affiche est la pression perdue en traversant cet organe.\n\nAvant la première mesure, on fait le zéro : les deux entrées à l’air libre, dans le local où l’on va travailler, et on remet l’appareil à zéro. Un zéro décalé de quelques pascals ne se voit sur aucun écran et fausse toutes les valeurs de la journée. On le refait après un changement de gamme ou un déplacement important.\n\nLe filtre est l’organe qu’on surveille le plus. Neuf, il oppose déjà une résistance ; en se chargeant de poussière, il en oppose de plus en plus, et l’écart à ses bornes monte. C’est ce nombre qui commande son remplacement, pas le calendrier. La valeur à ne pas dépasser est donnée par le fabricant du filtre et reprise dans le dossier de l’installation. Les classes de filtres ont d’ailleurs changé de nom : les anciennes lettres ont laissé la place à des classes qui disent quelle taille de poussière le filtre arrête. On lit la classe exigée dans le dossier du projet, on ne la récite pas de mémoire.\n\nSur un réseau de distribution, la même mesure sert à autre chose : suivre la pression le long d’une antenne pour trouver où elle se perd. On relève au départ, après les accidents marquants, puis au pied de la bouche la plus éloignée. Le chemin qui consomme le plus est celui qui commande la pression du ventilateur : c’est lui, et lui seul, qu’il faut satisfaire.",
 
-  method: "Repère les flexibles, le signe, le zéro et les prises avant de lire l’écran.",
+  method: "Repérez les flexibles, le signe, le zéro et les prises avant de lire l’écran.",
   formula: "Δp organe = p amont − p aval (Pa)",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Les curseurs donnent ici la pression relevée en un point du réseau. Pose 180 pascals de statique et 70 de dynamique : c’est un départ de gaine, juste après le ventilateur. Descends ensuite la statique à 60 pascals, comme si tu mesurais au pied de la bouche la plus éloignée, sans toucher à la dynamique. Les 120 pascals d’écart entre tes deux relevés sont ce que le trajet a consommé.",
-  lecture: "La totale affichée n’a d’intérêt qu’une fois comparée à une autre : un relevé seul ne dit rien, deux relevés encadrant un organe disent ce qu’il coûte. Sur un filtre, note la valeur au montage — c’est ta référence, et l’écart mesuré plus tard se lit par rapport à elle. Vérifie toujours le signe avant de conclure : deux flexibles inversés donnent la bonne valeur avec le mauvais signe, et le raisonnement part à l’envers.",
+  consigne: "Les curseurs donnent ici la pression relevée en un point du réseau. Posez 180 pascals de statique et 70 de dynamique : c’est un départ de gaine, juste après le ventilateur. Descendez ensuite la statique à 60 pascals, comme si vous mesuriez au pied de la bouche la plus éloignée, sans toucher à la dynamique. Les 120 pascals d’écart entre vos deux relevés sont ce que le trajet a consommé.",
+  lecture: "La totale affichée n’a d’intérêt qu’une fois comparée à une autre : un relevé seul ne dit rien, deux relevés encadrant un organe disent ce qu’il coûte. Sur un filtre, notez la valeur au montage — c’est votre référence, et l’écart mesuré plus tard se lit par rapport à elle. Vérifiez toujours le signe avant de conclure : deux flexibles inversés donnent la bonne valeur avec le mauvais signe, et le raisonnement part à l’envers.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */
   limites: "Aucun seuil n’est figé ici. La perte de charge finale d’un filtre est propre à son modèle, la pression disponible d’un ventilateur est propre à sa courbe, et les deux se lisent dans les documents de l’installation. Cette station montre le geste et le raisonnement, pas les valeurs d’un chantier. Enfin, une pression relevée pendant que le débit varie ne se compare à rien : on attend que l’installation soit stable.",

@@ -16,22 +16,22 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Place prise d’air, registres, filtres, batteries et ventilateur.",
-  bac: "Explique la fonction de chaque section et le sens de l’air.",
-  bts: "Compose une architecture répondant au besoin, aux pressions, à l’énergie et à la maintenance.",
+  cap: "Placez prise d’air, registres, filtres, batteries et ventilateur.",
+  bac: "Expliquez la fonction de chaque section et le sens de l’air.",
+  bts: "Composez une architecture répondant au besoin, aux pressions, à l’énergie et à la maintenance.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "Le trajet est numéroté de un à quatre : l’air est pris dehors, soufflé dans le local, repris, puis rejeté dehors. Regarde maintenant ce qu’il y a entre le repère un et le repère deux — un simple virage. C’est pourtant là que tient toute la centrale. Regarde aussi les deux traversées de mur : la prise et le rejet sont deux ouvertures différentes, et la distance qui les sépare n’est pas décorative.",
+  decouverte: "Le trajet est numéroté de un à quatre : l’air est pris dehors, soufflé dans le local, repris, puis rejeté dehors. Regardez maintenant ce qu’il y a entre le repère un et le repère deux — un simple virage. C’est pourtant là que tient toute la centrale. Regardez aussi les deux traversées de mur : la prise et le rejet sont deux ouvertures différentes, et la distance qui les sépare n’est pas décorative.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "Une centrale de traitement d’air n’est rien d’autre qu’un couloir d’air fermé, découpé en caissons posés bout à bout. Chaque caisson fait une chose, et une seule. C’est pour cela qu’on la lit dans le sens de l’air, jamais dans l’ordre où le schéma a été dessiné.\n\nL’ordre courant, côté soufflage : la prise d’air neuf et son registre, qui dose ce qu’on fait entrer ; le caisson de mélange, où l’air repris du local rejoint l’air neuf ; le filtre ; le récupérateur, quand il y en a un ; les batteries, chaude puis froide ; l’humidificateur s’il est prévu ; enfin le ventilateur de soufflage, qui pousse l’air traité dans les gaines. Côté reprise, l’air revient du local, traverse son propre filtre et le récupérateur, puis se partage : une part repart au mélange, l’autre est rejetée dehors. Ce sont les registres qui font ce partage.\n\nPourquoi le filtre avant les batteries, et jamais après ? Parce qu’une batterie est un serpentin noyé dans des ailettes serrées. Encrassée, elle ne se nettoie pas sur place : il faut démonter. Un filtre, lui, se change en quelques minutes. Le filtre protège ce qui vient après lui — c’est la règle qui commande l’ordre des caissons.\n\nRestent les points de mesure, à repérer dès la lecture du plan. Deux prises de pression de part et d’autre du filtre, pour suivre son encrassement. Une sonde après les batteries, c’est elle qui commande le chauffage et le refroidissement. Une sonde sur la reprise, qui donne l’état réel du local.\n\nEt une contrainte qu’on oublie sur le papier : les portes de visite. Une centrale se pose avec l’espace pour les ouvrir en grand et sortir un filtre. Une centrale calée contre un mur, porte côté mur, est une centrale qu’on n’entretiendra pas. La prise d’air, enfin, se place à l’écart du rejet, d’un parking ou d’une sortie de cuisine : sinon la centrale respire son propre air vicié, et rien ne le signale sur un afficheur.",
 
-  method: "Lis la centrale dans le sens de l’air, caisson par caisson, et nomme la fonction de chacun. Ce qui protège se place avant ce qu’il protège.",
+  method: "Lisez la centrale dans le sens de l’air, caisson par caisson, et nommez la fonction de chacun. Ce qui protège se place avant ce qu’il protège.",
   formula: "Prise d’air → registres → mélange → filtre → récupérateur → batteries → humidificateur → ventilateur → soufflage",
 
   /* Manipuler — une action précise. La scène de cette station n'a pas de curseur :
      l'élève compose l'ordre des caissons sur le trajet affiché. */
-  consigne: "Suis le trajet numéroté et nomme les quatre flux à voix haute. Place ensuite, entre le repère un et le repère deux, les caissons dans l’ordre : registres, mélange, filtre, batteries, ventilateur. Vérifie enfin trois points sur ta composition — le filtre est-il avant les batteries, la prise d’air est-elle éloignée du rejet, et reste-t-il devant chaque porte la place de l’ouvrir ?",
+  consigne: "Suivez le trajet numéroté et nommez les quatre flux à voix haute. Placez ensuite, entre le repère un et le repère deux, les caissons dans l’ordre : registres, mélange, filtre, batteries, ventilateur. Vérifiez enfin trois points sur votre composition — le filtre est-il avant les batteries, la prise d’air est-elle éloignée du rejet, et reste-t-il devant chaque porte la place de l’ouvrir ?",
   lecture: "Un filtre posé après la batterie garde la gaine propre et abandonne la batterie : l’air passera de moins en moins, et le nettoyage demandera de démonter. Une prise d’air trop proche du rejet fait reprendre à la centrale l’air qu’elle vient d’évacuer, sans qu’aucun voyant ne s’allume. Et une porte qu’on ne peut pas ouvrir en grand condamne l’entretien : la centrale est alors déjà en panne, à retardement.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */

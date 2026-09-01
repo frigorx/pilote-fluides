@@ -120,11 +120,25 @@
     if (reason) callHandler(current.utterance, "onerror", { type: "error", error: reason });
   }
 
+  /* Quand le navigateur prend le relais faute de MP3, il recevait jusqu'ici le texte
+     brut : « HP » était épelé, « → » lu « flèche », les emoji nommés. Les MP3, eux,
+     étaient fabriqués après passage dans oraliser(). Le même mot était donc bien dit
+     ici et mal dit là. On oralise à la lecture — et JAMAIS avant textKey(), qui doit
+     rester le hash du texte d'origine, sous peine d'orpheliner tous les fichiers. */
   function fallbackToNative(utterance) {
     clearAudio();
     lastMode = "natif";
     lastKey = textKey(utterance.text);
     observeNative(utterance);
+    var prononciation = window.PILOTE_PRONONCIATION;
+    if (prononciation && typeof utterance.text === "string") {
+      /* en place, sur l'objet lui-même : observeNative vient d'attacher ses écouteurs
+         à CETTE utterance, et faire parler une copie priverait le mode professeur de
+         l'événement de fin — l'enchaînement resterait bloqué. La table est idempotente
+         (vérifié sur les 3 750 narrations), une réécoute ne dégrade donc rien. */
+      var dit = prononciation.oraliser(utterance.text);
+      if (dit) utterance.text = dit;
+    }
     nativeSpeak(utterance);
   }
 

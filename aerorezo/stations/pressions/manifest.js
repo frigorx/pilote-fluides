@@ -14,12 +14,12 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Observe une pression dans une gaine sans confondre les prises.",
-  bac: "Différencie pression statique et pression dynamique.",
-  bts: "Utilise la relation entre pression totale, statique et dynamique.",
+  cap: "Observez une pression dans une gaine sans confondre les prises.",
+  bac: "Différenciez pression statique et pression dynamique.",
+  bts: "Utilisez la relation entre pression totale, statique et dynamique.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "Deux prises sont plantées dans la même gaine, à quelques centimètres l’une de l’autre, et elles ne donnent pas la même valeur. Celle de gauche est percée perpendiculairement à la paroi : l’air la longe sans la heurter. Celle de droite est un tube coudé, ouvert bien en face du flux : l’air vient buter dedans. Suis les deux liaisons qui descendent vers le manomètre — c’est la différence entre ces deux prises qui fait tout le métier de la mesure d’air.",
+  decouverte: "Deux prises sont plantées dans la même gaine, à quelques centimètres l’une de l’autre, et elles ne donnent pas la même valeur. Celle de gauche est percée perpendiculairement à la paroi : l’air la longe sans la heurter. Celle de droite est un tube coudé, ouvert bien en face du flux : l’air vient buter dedans. Suivez les deux liaisons qui descendent vers le manomètre — c’est la différence entre ces deux prises qui fait tout le métier de la mesure d’air.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "L’air en mouvement dans une gaine porte deux pressions à la fois, et il faut les séparer.\n\nLa pression statique est celle que l’air exerce sur la paroi, dans toutes les directions. C’est elle qui pousse une gaine à se gonfler ou à se plier. On la relève avec un simple trou percé perpendiculairement à la paroi, sans bavure, à un endroit où l’écoulement est calme. Dans une gaine placée du côté aspiration du ventilateur, elle est négative : le manomètre affiche un nombre au-dessous de zéro, et ce n’est pas une panne.\n\nLa pression dynamique est celle que l’air doit au seul fait d’avancer. Elle dépend de la vitesse et de la masse volumique de l’air, et elle est toujours positive. Elle ne se mesure pas directement : on la déduit.\n\nLa pression totale est la somme des deux. Le tube de Pitot la relève : ouvert face au flux, il reçoit à la fois la poussée de l’air et la pression exercée sur les parois. Sa prise latérale, elle, ne voit que la statique. Le manomètre branché entre les deux fait la soustraction et affiche la dynamique — d’où l’on tire la vitesse.\n\nDeux pièges coûtent cher. Un tube de Pitot mal orienté, même de quelques degrés, annonce moins que la réalité : on le tourne jusqu’à lire la valeur maximale. Et aux faibles vitesses, la pression dynamique devient si petite que le manomètre ne la distingue plus de son propre bruit de fond : autour de deux mètres par seconde, elle ne vaut plus que quelques pascals. C’est là que l’anémomètre à fil chaud reprend la main.",
@@ -28,8 +28,8 @@
   formula: "pₜ = pₛ + p_dyn (Pa)  ·  p_dyn = ½ ρv²  ·  ρ ≈ 1,2 kg/m³",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Deux curseurs : la pression statique et la pression dynamique. Pose 120 pascals de statique et 45 de dynamique, et lis la totale obtenue. Descends ensuite la statique au-dessous de zéro, comme dans une gaine en aspiration, sans toucher à la dynamique : la totale peut devenir négative à son tour, alors que la dynamique, elle, ne l’est jamais. Remonte enfin la dynamique jusqu’à 250 pascals : c’est l’air qui accélère.",
-  lecture: "La totale affichée est bien la somme des deux valeurs, jamais autre chose. Le signe compte autant que le nombre : une statique négative dit que la gaine est du côté où le ventilateur tire. La dynamique reste positive tant que l’air avance ; à zéro, l’air est arrêté. Et si tu cherches une vitesse, c’est la dynamique qu’il te faut — ni la totale, ni la statique.",
+  consigne: "Deux curseurs : la pression statique et la pression dynamique. Posez 120 pascals de statique et 45 de dynamique, et lisez la totale obtenue. Descendez ensuite la statique au-dessous de zéro, comme dans une gaine en aspiration, sans toucher à la dynamique : la totale peut devenir négative à son tour, alors que la dynamique, elle, ne l’est jamais. Remontez enfin la dynamique jusqu’à 250 pascals : c’est l’air qui accélère.",
+  lecture: "La totale affichée est bien la somme des deux valeurs, jamais autre chose. Le signe compte autant que le nombre : une statique négative dit que la gaine est du côté où le ventilateur tire. La dynamique reste positive tant que l’air avance ; à zéro, l’air est arrêté. Et si vous cherchez une vitesse, c’est la dynamique qu’il vous faut — ni la totale, ni la statique.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */
   limites: "La station additionne deux nombres : sur une installation, aucun appareil n’affiche les trois pressions ensemble. On en relève deux et on déduit la troisième. La masse volumique de l’air, prise ici autour de 1,2 kilogramme par mètre cube, change avec la température et l’altitude : en gaine chaude ou en montagne, la vitesse tirée de la pression dynamique demande une correction.",

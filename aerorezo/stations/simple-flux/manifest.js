@@ -15,9 +15,9 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Suis l’air neuf depuis la fenêtre jusqu’à la bouche d’extraction.",
-  bac: "Explique le balayage du logement et le rôle du passage sous les portes.",
-  bts: "Établis le schéma fonctionnel, répartis les débits et vérifie la compensation des transferts d’air.",
+  cap: "Suivez l’air neuf depuis la fenêtre jusqu’à la bouche d’extraction.",
+  bac: "Expliquez le balayage du logement et le rôle du passage sous les portes.",
+  bts: "Établissez le schéma fonctionnel, répartissez les débits et vérifiez la compensation des transferts d’air.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
   decouverte: "Un seul ventilateur tourne dans toute l’installation, et il est du côté de l’extraction. Il aspire l’air du logement et le rejette en toiture. Le logement se retrouve alors en légère dépression : il lui manque de l’air. Cet air manquant entre tout seul, par les entrées posées en haut des fenêtres du séjour et des chambres. Il traverse ensuite le logement, et ressort par les bouches de la cuisine, de la salle d’eau et des WC.",
@@ -25,12 +25,12 @@
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "Simple flux veut dire : un seul ventilateur, placé à l’extraction. C’est lui qui commande tout le reste. En aspirant, il abaisse la pression à l’intérieur du logement. L’air extérieur, resté à la pression normale, pousse alors naturellement par les entrées d’air. Aucun moteur ne le souffle : c’est la différence de pression qui le fait entrer.\n\nCe trajet porte un nom : le balayage. L’air neuf arrive dans les pièces où l’on vit — séjour, chambres. Il en ressort par les pièces où l’on salit l’air — cuisine, salle d’eau, WC. Le sens ne s’invente pas : on va toujours du plus propre vers le plus pollué, jamais l’inverse. C’est pour cela qu’on ne met jamais d’entrée d’air dans une cuisine.\n\nEntre les deux, il faut un passage. C’est le rôle du détalonnage : un espace laissé sous chaque porte, de l’ordre d’un à deux centimètres selon la pièce. Sans lui, la porte fermée bloque le balayage, la bouche d’extraction n’aspire plus grand-chose, et l’humidité reste dans la salle de bains. Une moquette épaisse ou un seuil rapporté suffisent à annuler l’installation entière.\n\nLes bouches d’extraction ne sont pas toutes identiques. Une bouche autoréglable garde à peu près le même débit quand la pression change : c’est le débit prévu, tout le temps. Une bouche hygroréglable, elle, s’ouvre davantage quand l’air est humide et se referme quand il redevient sec. La première est simple et prévisible ; la seconde suit l’occupation réelle et évite de chauffer de l’air pour rien.\n\nLes débits à respecter ne s’inventent pas et ne se retiennent pas par cœur : ils dépendent du nombre de pièces principales, de l’usage, et du texte réglementaire applicable au projet — dans sa version en vigueur. On les cherche à chaque affaire.",
 
-  method: "Repère d’abord les pièces de vie et les pièces de service, puis trace le trajet de l’air entre les deux — le matériel ne se choisit qu’après.",
+  method: "Repérez d’abord les pièces de vie et les pièces de service, puis tracez le trajet de l’air entre les deux — le matériel ne se choisit qu’après.",
   formula: "Entrée d’air → pièce de vie → passage sous la porte → pièce de service → extraction → rejet",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Suis la boucle affichée et nomme chacun des quatre flux à voix haute : l’air neuf, l’air qui traverse, l’air extrait, l’air rejeté. Place ensuite mentalement les entrées d’air et les bouches dans un logement de trois pièces : séjour, chambre, cuisine, salle d’eau, WC. Vérifie enfin qu’aucune bouche d’extraction ne se trouve dans une pièce de vie, et qu’aucune entrée d’air ne se trouve dans une pièce de service.",
-  lecture: "Si tu as placé une entrée d’air dans la cuisine, le balayage s’inverse : l’air chargé d’odeurs repart vers les chambres. Si tu as oublié le passage sous les portes, chaque pièce fermée devient une impasse — la bouche tire, mais rien ne vient. Dans les deux cas, le matériel est bon et l’installation ne fonctionne pas.",
+  consigne: "Suivez la boucle affichée et nommez chacun des quatre flux à voix haute : l’air neuf, l’air qui traverse, l’air extrait, l’air rejeté. Placez ensuite mentalement les entrées d’air et les bouches dans un logement de trois pièces : séjour, chambre, cuisine, salle d’eau, WC. Vérifiez enfin qu’aucune bouche d’extraction ne se trouve dans une pièce de vie, et qu’aucune entrée d’air ne se trouve dans une pièce de service.",
+  lecture: "Si vous avez placé une entrée d’air dans la cuisine, le balayage s’inverse : l’air chargé d’odeurs repart vers les chambres. Si vous avez oublié le passage sous les portes, chaque pièce fermée devient une impasse — la bouche tire, mais rien ne vient. Dans les deux cas, le matériel est bon et l’installation ne fonctionne pas.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */
   limites: "Le schéma présenté est celui d’un logement. Un bâtiment tertiaire ne se traite pas ainsi : les débits, le découpage des locaux et les contraintes de sécurité incendie y changent la logique. Par ailleurs, une VMC simple flux extrait sans récupérer : l’air rejeté emporte la chaleur du logement. C’est le point que la double flux vient corriger.",

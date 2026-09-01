@@ -14,9 +14,9 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Relie présence humaine et vapeur d’eau.",
-  bac: "Distingue charge sensible et charge latente.",
-  bts: "Calcule un bilan total à partir d’un écart d’enthalpie ou de charges séparées.",
+  cap: "Reliez présence humaine et vapeur d’eau.",
+  bac: "Distinguez charge sensible et charge latente.",
+  bts: "Calculez un bilan total à partir d’un écart d’enthalpie ou de charges séparées.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
   decouverte: "Les points de vapeur sont les mêmes des deux côtés de la scène. Chauffer n’en enlève aucun, et refroidir non plus. Cette eau-là ne part pas parce qu’on baisse la température : elle reste dans l’air tant qu’on ne l’a pas condensée quelque part. Une climatisation qui se contenterait de rafraîchir laisserait donc tous ces points en place — le thermomètre afficherait la bonne valeur, et le local resterait moite. C’est cet écart-là que la charge latente vient chiffrer.",
@@ -28,8 +28,8 @@
   formula: "P totale = P sensible + P latente  ·  P latente ≈ débit d’eau retirée × 2 500 kJ/kg  ·  1 g/s d’eau ≈ 2,5 kW",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Place l’air du local à 26 °C et 65 % d’humidité relative, puis note le point de rosée affiché. Fais descendre l’humidité relative à 50 % sans toucher à la température : le point de rosée tombe de plusieurs degrés. Ce que tu viens de simuler, c’est de l’eau retirée du local. Remonte enfin la température à 30 °C en laissant les 50 % en place, et regarde le point de rosée repartir vers le haut.",
-  lecture: "Le point de rosée affiché est la trace de l’eau réellement présente : il tombe dès qu’on retire de la vapeur, et il ne dit rien de ce que l’air pourrait porter. C’est aussi la température qu’il faut franchir pour déshumidifier. Compare-le à la température de la batterie froide de l’installation : si la batterie reste au-dessus, elle refroidit sans assécher, et la charge latente n’est pas traitée.",
+  consigne: "Placez l’air du local à 26 °C et 65 % d’humidité relative, puis notez le point de rosée affiché. Faites descendre l’humidité relative à 50 % sans toucher à la température : le point de rosée tombe de plusieurs degrés. Ce que vous venez de simuler, c’est de l’eau retirée du local. Remontez enfin la température à 30 °C en laissant les 50 % en place, et regardez le point de rosée repartir vers le haut.",
+  lecture: "Le point de rosée affiché est la trace de l’eau réellement présente : il tombe dès qu’on retire de la vapeur, et il ne dit rien de ce que l’air pourrait porter. C’est aussi la température qu’il faut franchir pour déshumidifier. Comparez-le à la température de la batterie froide de l’installation : si la batterie reste au-dessus, elle refroidit sans assécher, et la charge latente n’est pas traitée.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */
   limites: "Le simulateur donne un point de rosée, il ne chiffre pas une puissance latente. Pour la chiffrer, il faut la teneur en eau de l’air avant et après traitement, lue sur un diagramme de l’air humide ou dans une table : deux humidités relatives ne se soustraient pas. Les apports par personne et par usage viennent des données du projet. Enfin, une machine ne traite pas le sensible et le latent dans la proportion qu’on souhaite, mais dans celle dont elle est capable à ses conditions de fonctionnement.",

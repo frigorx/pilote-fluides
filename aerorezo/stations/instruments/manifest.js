@@ -11,22 +11,22 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Associe anémomètre, tube de Pitot, manomètre et hygromètre.",
-  bac: "Choisis l’instrument selon la grandeur et la précision attendue.",
-  bts: "Prépare une chaîne de mesure traçable : plage, résolution, incertitude et étalonnage.",
+  cap: "Associez anémomètre, tube de Pitot, manomètre et hygromètre.",
+  bac: "Choisissez l’instrument selon la grandeur et la précision attendue.",
+  bts: "Préparez une chaîne de mesure traçable : plage, résolution, incertitude et étalonnage.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "Voici un local et son installation : une entrée d’air en façade, une extraction au plafond, des personnes qui l’occupent. On te demande de vérifier que la ventilation fait son travail. Avant même d’ouvrir la mallette, deux choses manquent : ce qu’on va mesurer, et l’endroit exact où on le mesurera. Aucun appareil ne répond à cette question à ta place.",
+  decouverte: "Voici un local et son installation : une entrée d’air en façade, une extraction au plafond, des personnes qui l’occupent. On vous demande de vérifier que la ventilation fait son travail. Avant même d’ouvrir la mallette, deux choses manquent : ce qu’on va mesurer, et l’endroit exact où on le mesurera. Aucun appareil ne répond à cette question à votre place.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "Un appareil de mesure ne se choisit pas parce qu’il est dans la mallette. Il se choisit à partir de la grandeur cherchée : une vitesse d’air, un débit, un écart de pression, une température, une humidité. On écrit d’abord la grandeur et son unité. L’appareil vient après.\n\nPour les vitesses d’air, deux familles. L’anémomètre à fil chaud chauffe un fil très fin et mesure l’air qui le refroidit : il descend très bas en vitesse, ce qui le rend précieux dans une gaine calme ou devant une bouche d’extraction. Il est fragile, il craint la poussière, et il faut le tenir dans le bon sens. L’anémomètre à hélice compte les tours d’une petite hélice : plus robuste, plus à l’aise dans les vitesses élevées, et c’est lui qu’on retrouve au bout d’un cône de mesure sur les bouches.\n\nPour les pressions, le manomètre différentiel. Il ne lit pas une pression, il lit un écart entre deux prises : l’écart aux bornes d’un filtre, l’écart entre l’intérieur d’une gaine et le local. Associé à un tube de Pitot, il donne aussi une vitesse, en mesurant la poussée de l’air sur l’ouverture du tube.\n\nPour l’air humide, l’hygromètre : il relève ensemble la température et l’humidité relative, et calcule le point de rosée.\n\nReste le point de mesure, et c’est lui qui décide de ce que vaut le relevé. Le meilleur appareil du monde, posé au mauvais endroit, donne un chiffre juste sur une grandeur qui ne veut rien dire. Un anémomètre planté juste derrière un coude mesure un tourbillon, pas un débit.",
 
-  method: "Commence par écrire la grandeur, l’unité et l’endroit exact de la mesure.",
+  method: "Commencez par écrire la grandeur, l’unité et l’endroit exact de la mesure.",
   formula: "Grandeur → point de mesure → instrument → lecture",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Une seule question à l’écran, et elle vaut pour toute la ligne : quel appareil pour mesurer une différence de pression ? Avant de cliquer, nomme la grandeur cherchée et son unité, le pascal. Dis ensuite où tu poserais les deux prises sur une installation réelle. Choisis alors, et regarde si la réponse attendue est bien celle que ton raisonnement annonçait.",
-  lecture: "La bonne réponse s’affiche après le choix. Elle compte moins que le chemin qui y mène : grandeur, unité, point de mesure, puis appareil. Refais cette chaîne pour les trois autres instruments de la station — une vitesse dans une gaine calme, une vitesse au bout d’un cône, une humidité dans un local. Si tu ne sais pas dire l’unité, l’appareil n’est pas encore choisi.",
+  consigne: "Une seule question à l’écran, et elle vaut pour toute la ligne : quel appareil pour mesurer une différence de pression ? Avant de cliquer, nommez la grandeur cherchée et son unité, le pascal. Dites ensuite où vous poseriez les deux prises sur une installation réelle. Choisissez alors, et regardez si la réponse attendue est bien celle que votre raisonnement annonçait.",
+  lecture: "La bonne réponse s’affiche après le choix. Elle compte moins que le chemin qui y mène : grandeur, unité, point de mesure, puis appareil. Refaites cette chaîne pour les trois autres instruments de la station — une vitesse dans une gaine calme, une vitesse au bout d’un cône, une humidité dans un local. Si vous ne savez pas dire l’unité, l’appareil n’est pas encore choisi.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */
   limites: "Cette station montre quatre appareils : il en existe d’autres, et chaque modèle a sa plage d’emploi, sa résolution et son incertitude, écrites dans sa notice. Un appareil hors étalonnage donne une valeur fausse sans jamais prévenir. Et aucun instrument ne rattrape un point de mesure mal choisi : le relevé sera juste, il ne dira simplement rien de ce qu’on cherche.",

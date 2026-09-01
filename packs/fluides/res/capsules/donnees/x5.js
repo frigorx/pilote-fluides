@@ -9,7 +9,7 @@ CAPSULE.declarer({
   titre: "Détective — intervention sur monobloc R-290",
   surtitre: "HABILITATION FLUIDES · G12 · A1 · A2",
   duree: "environ 6 minutes",
-  intro: "Un compresseur à remplacer, un local exigu sans ventilation, un collègue pressé : le genre de situation banale qui tourne mal. Cette capsule ne refait pas le cours sur les hydrocarbures, elle te fait chercher.",
+  intro: "Un compresseur à remplacer, un local exigu sans ventilation, un collègue pressé : le genre de situation banale qui tourne mal. Cette capsule ne refait pas le cours sur les hydrocarbures, elle vous fait chercher.",
   codes: [
     { code: "12.04", libelle: "Conduire l'analyse de risques avant intervention" },
     { code: "12.05", libelle: "Préparer la zone : ventilation, ignition, EPI" },
@@ -21,7 +21,7 @@ CAPSULE.declarer({
     titre: "Une intervention à préparer avant d'agir",
     etapes: [
       { titre: "La situation", texte: "un cas de terrain" },
-      { titre: "Les indices", texte: "ce que tu observes" },
+      { titre: "Les indices", texte: "ce que vous observez" },
       { titre: "Le raisonnement", texte: "on élimine la fausse piste" },
       { titre: "La réponse", texte: "et ce qu'elle apprend" },
     ],
@@ -39,17 +39,17 @@ CAPSULE.declarer({
           { picto: "🧊", titre: "La vitrine", texte: "réfrigérée au R-290, compresseur à changer" },
           { picto: "🥖", titre: "L'arrière-boutique", texte: "local petit, sans ventilation, un four à quelques mètres", teinte: "danger" },
         ],
-        pied: "Ton collègue propose de faire vite. Toi, que réponds-tu ?",
+        pied: "Votre collègue propose de faire vite. Vous, que répondez-vous ?",
       },
-      texte: "<p>Une vitrine réfrigérée au <b>R-290</b> a besoin d'un nouveau compresseur, dans l'arrière-boutique d'une boulangerie : un local <b>petit</b>, <b>sans ventilation</b>, un four à quelques mètres.</p><p>Ton collègue propose de « faire vite » : récupérer, ouvrir, braser, recharger — comme sur un circuit classique. Toi, que réponds-tu, avant même de sortir un outil ?</p>",
-      dire: "Une vitrine réfrigérée au R deux cent quatre-vingt-dix, c'est du propane, a besoin d'un nouveau compresseur. Le chantier se trouve dans l'arrière-boutique d'une boulangerie : un local petit, sans ventilation, avec un four à quelques mètres. Ton collègue propose de faire vite : récupérer, ouvrir, braser le nouveau compresseur, recharger, comme sur un circuit classique, vu la petite charge. Toi, avant même de sortir un outil, que réponds-tu ? Prenez trente secondes avant de passer à l'écran suivant.",
+      texte: "<p>Une vitrine réfrigérée au <b>R-290</b> a besoin d'un nouveau compresseur, dans l'arrière-boutique d'une boulangerie : un local <b>petit</b>, <b>sans ventilation</b>, un four à quelques mètres.</p><p>Votre collègue propose de « faire vite » : récupérer, ouvrir, braser, recharger — comme sur un circuit classique. Vous, que répondez-vous, avant même de sortir un outil ?</p>",
+      dire: "Une vitrine réfrigérée au R deux cent quatre-vingt-dix, c'est du propane, a besoin d'un nouveau compresseur. Le chantier se trouve dans l'arrière-boutique d'une boulangerie : un local petit, sans ventilation, avec un four à quelques mètres. Votre collègue propose de faire vite : récupérer, ouvrir, braser le nouveau compresseur, recharger, comme sur un circuit classique, vu la petite charge. Vous, avant même de sortir un outil, que répondez-vous ? Prenez trente secondes avant de passer à l'écran suivant.",
       reference: "Fiche x5 · G12 · A1 · A2",
     },
 
     {
       id: "trois-indices-de-risque",
       titre: "Trois choses à regarder avant de commencer",
-      note: "Ce que tu observes",
+      note: "Ce que vous observez",
       visuel: {
         motif: "alerte",
         titre: "Ce qui doit t'arrêter avant le premier geste",
@@ -61,7 +61,7 @@ CAPSULE.declarer({
         pied: "Une charge faible, mais un contexte qui ne pardonne pas.",
       },
       texte: "<p>Le R-290 est <b>A3</b> : la charge est petite précisément <b>parce que</b> le fluide est très inflammable.</p><p>Un local exigu, sans ventilation, avec une source de flamme à proximité, c'est le scénario d'accident type — pas un chantier ordinaire.</p>",
-      dire: "Regardons les trois éléments qui doivent t'arrêter avant le premier geste. D'abord le fluide : le R deux cent quatre-vingt-dix est classé A trois, très inflammable. Et c'est précisément pour cela que sa charge admise reste petite : ce n'est pas un signe de faible risque, c'est la conséquence du risque. Ensuite le local : petit, sans ventilation, avec un four à quelques mètres. Enfin la proposition de ton collègue : faire comme sur un circuit classique. Une charge faible, dans ce contexte-là, ne veut pas dire un petit risque.",
+      dire: "Regardons les trois éléments qui doivent vous arrêter avant le premier geste. D'abord le fluide : le R deux cent quatre-vingt-dix est classé A trois, très inflammable. Et c'est précisément pour cela que sa charge admise reste petite : ce n'est pas un signe de faible risque, c'est la conséquence du risque. Ensuite le local : petit, sans ventilation, avec un four à quelques mètres. Enfin la proposition de votre collègue : faire comme sur un circuit classique. Une charge faible, dans ce contexte-là, ne veut pas dire un petit risque.",
       reference: "Code 12.04 · l'analyse de risques",
     },
 
@@ -80,7 +80,7 @@ CAPSULE.declarer({
         pied: "Petite charge ne veut pas dire petit risque.",
       },
       texte: "<p>« Comme un HFC » suppose que la charge, faible, protège. C'est l'inverse : la charge est faible <b>parce que</b> le fluide est inflammable.</p><p>Un fluide A3 impose sa propre séquence : ventiler, écarter toute flamme, récupérer, inerter à l'azote — et alors seulement chauffer.</p>",
-      dire: "La proposition de ton collègue part d'une idée fausse : que la petite charge protège, comme sur un HFC. Si c'était vraiment sans risque, on n'exigerait pas une charge aussi réduite. C'est l'inverse : la charge est petite justement parce que le fluide est inflammable. Un fluide classé A trois impose sa propre séquence, et elle ne ressemble pas à celle d'un HFC : ventiler, écarter toute flamme, le four compris, récupérer, inerter à l'azote, et alors seulement chauffer pour braser.",
+      dire: "La proposition de votre collègue part d'une idée fausse : que la petite charge protège, comme sur un HFC. Si c'était vraiment sans risque, on n'exigerait pas une charge aussi réduite. C'est l'inverse : la charge est petite justement parce que le fluide est inflammable. Un fluide classé A trois impose sa propre séquence, et elle ne ressemble pas à celle d'un HFC : ventiler, écarter toute flamme, le four compris, récupérer, inerter à l'azote, et alors seulement chauffer pour braser.",
       retenir: ["Petite charge ne veut pas dire petit risque : le R-290 est <b>A3</b>, inflammable."],
       reference: "Code 12.05 · préparer la zone",
     },
@@ -105,7 +105,7 @@ CAPSULE.declarer({
       dire: "Voici la séquence, dans l'ordre. On ventile le local. On écarte ou on neutralise toute source d'ignition, le four compris. On récupère le fluide du circuit. On inerte à l'azote. Et seulement maintenant, on chauffe pour braser, jamais avant. Un détecteur HFC classique n'est pas conçu pour les hydrocarbures : il faut l'appareil adapté.",
       reference: "Codes 12.05 · 12.06 · la réponse",
       controle: {
-        enonce: "Que réponds-tu, analyse de risques en main ?",
+        enonce: "Que répondez-vous, analyse de risques en main ?",
         choix: [
           "D'accord : la charge est faible, les précautions HFC suffisent",
           "On ventile, on éloigne ou neutralise toute source d'ignition (four compris), on récupère, on inerte à l'azote — et seulement alors on chauffe",

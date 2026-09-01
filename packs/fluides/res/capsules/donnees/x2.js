@@ -8,7 +8,7 @@ CAPSULE.declarer({
   titre: "Exercice — la machine ne fait plus de froid",
   surtitre: "HABILITATION FLUIDES · G8 · G9 · EXERCICE",
   duree: "environ 6 minutes",
-  intro: "Une chambre positive qui ne redescend plus, un compresseur qui tourne pourtant normalement : à toi de lire les indices avant de conclure. Cette capsule ne refait pas le cours sur les composants, elle te fait chercher, comme sur un vrai chantier.",
+  intro: "Une chambre positive qui ne redescend plus, un compresseur qui tourne pourtant normalement : à vous de lire les indices avant de conclure. Cette capsule ne refait pas le cours sur les composants, elle vous fait chercher, comme sur un vrai chantier.",
   codes: [
     { code: "4.04", libelle: "Interpréter des mesures par la méthode indirecte" },
     { code: "8.08", libelle: "Réaliser les mesures en fonctionnement" },
@@ -19,7 +19,7 @@ CAPSULE.declarer({
     titre: "Une panne à décoder, indice par indice",
     etapes: [
       { titre: "La situation", texte: "un cas de terrain" },
-      { titre: "Les indices", texte: "ce que tu mesures" },
+      { titre: "Les indices", texte: "ce que vous mesurez" },
       { titre: "Le raisonnement", texte: "on élimine les fausses pistes" },
       { titre: "La réponse", texte: "et ce qu'elle apprend" },
     ],
@@ -37,20 +37,20 @@ CAPSULE.declarer({
           { picto: "⚙", titre: "Le compresseur", texte: "il tourne, rien d'anormal à l'oreille" },
           { picto: "🌡", titre: "La chambre", texte: "la température ne redescend plus", teinte: "danger" },
         ],
-        pied: "Avant de sortir tes instruments : qu'est-ce qui peut expliquer ça ?",
+        pied: "Avant de sortir vos instruments : qu'est-ce qui peut expliquer ça ?",
       },
       texte: "<p>Chambre froide positive. Le compresseur tourne, rien d'anormal à l'oreille. Mais la température de la chambre ne redescend plus.</p><p>Avant de sortir la pince et le manifold : qu'est-ce qui peut expliquer qu'un compresseur qui tourne ne fasse plus de froid ?</p>",
-      dire: "Tu interviens sur une chambre froide positive. Le compresseur tourne, on l'entend, rien d'anormal de ce côté-là. Mais la température de la chambre ne redescend plus. Avant même de sortir la pince et le manifold, demande-toi : qu'est-ce qui peut expliquer qu'un compresseur qui tourne ne fasse plus de froid ? Prenez trente secondes avant de passer à l'écran suivant.",
+      dire: "Vous intervenez sur une chambre froide positive. Le compresseur tourne, on l'entend, rien d'anormal de ce côté-là. Mais la température de la chambre ne redescend plus. Avant même de sortir la pince et le manifold, demandez-vous : qu'est-ce qui peut expliquer qu'un compresseur qui tourne ne fasse plus de froid ? Prenez trente secondes avant de passer à l'écran suivant.",
       reference: "Fiche x2 · G8 · G9 · exercice",
     },
 
     {
       id: "quatre-releves",
       titre: "Quatre relevés, trois qui sortent du cadre",
-      note: "Ce que tu mesures",
+      note: "Ce que vous mesurez",
       visuel: {
         motif: "checklist",
-        titre: "Ce que tu relèves sur la machine",
+        titre: "Ce que vous relevez sur la machine",
         items: [
           { titre: "Basse pression", texte: "anormalement basse", refus: true },
           { titre: "Surchauffe à l'aspiration", texte: "très élevée, autour de 20 K", refus: true },
@@ -59,8 +59,8 @@ CAPSULE.declarer({
         ],
         pied: "Quatre relevés. Trois sortent nettement de la plage attendue.",
       },
-      texte: "<p>Tu prends tes mesures.</p><ul><li>Basse pression <b>anormalement basse</b>.</li><li>Surchauffe à l'aspiration <b>très élevée</b>, de l'ordre de 20 K, alors qu'on en attend 5 à 10.</li><li>Sous-refroidissement <b>quasi nul</b>, avec des <b>bulles</b> au voyant liquide, alors qu'on en attend 4 à 8.</li><li>Aucune trace d'huile visible au premier examen.</li></ul>",
-      dire: "Regardons ce que tu as sous les yeux. Premier relevé : la basse pression est anormalement basse. Deuxième relevé : la surchauffe à l'aspiration est très élevée, autour de vingt kelvins, alors qu'on en attend entre cinq et dix. Troisième relevé : le sous-refroidissement est quasi nul, avec des bulles au voyant liquide, alors qu'on en attend entre quatre et huit. Et au premier examen, tu ne vois aucune trace d'huile. Quatre relevés, et trois sortent nettement de la plage attendue.",
+      texte: "<p>Vous prenez vos mesures.</p><ul><li>Basse pression <b>anormalement basse</b>.</li><li>Surchauffe à l'aspiration <b>très élevée</b>, de l'ordre de 20 K, alors qu'on en attend 5 à 10.</li><li>Sous-refroidissement <b>quasi nul</b>, avec des <b>bulles</b> au voyant liquide, alors qu'on en attend 4 à 8.</li><li>Aucune trace d'huile visible au premier examen.</li></ul>",
+      dire: "Regardons ce que vous avez sous les yeux. Premier relevé : la basse pression est anormalement basse. Deuxième relevé : la surchauffe à l'aspiration est très élevée, autour de vingt kelvins, alors qu'on en attend entre cinq et dix. Troisième relevé : le sous-refroidissement est quasi nul, avec des bulles au voyant liquide, alors qu'on en attend entre quatre et huit. Et au premier examen, vous ne voyez aucune trace d'huile. Quatre relevés, et trois sortent nettement de la plage attendue.",
       reference: "Codes 4.04 · 8.08 · les relevés",
     },
 
@@ -91,7 +91,7 @@ CAPSULE.declarer({
       visuel: { svg: "diagramme-logph.svg", alt: "Le diagramme log pression-enthalpie : trois zones séparées par la courbe de bulle et la courbe de rosée, et le cycle qui s'y trace en quatre transformations. La surchauffe se lit sur le trait du bas, le sous-refroidissement sur le trait du haut." },
       legende: "L'outil pour rejouer la panne : on y place les relevés, et le cycle se trace tout seul.",
       texte: "<p>Les trois indices ensemble désignent un <b>manque de charge</b> : le circuit n'a plus assez de fluide.</p><p>Ce n'est qu'un diagnostic par méthode indirecte — il reste maintenant à <b>localiser la fuite</b> par méthode directe, puis à la consigner.</p>",
-      dire: "Mets les trois indices bout à bout : la basse pression qui s'effondre, la surchauffe qui grimpe, le sous-refroidissement qui disparaît avec des bulles au voyant. Les trois ensemble désignent la même cause : un manque de charge, le circuit n'a plus assez de fluide. C'est un diagnostic par méthode indirecte : il te dit qu'il manque du fluide, pas où il est parti. Il reste maintenant à localiser la fuite par méthode directe, puis à consigner ce que tu as fait.",
+      dire: "Mettez les trois indices bout à bout : la basse pression qui s'effondre, la surchauffe qui grimpe, le sous-refroidissement qui disparaît avec des bulles au voyant. Les trois ensemble désignent la même cause : un manque de charge, le circuit n'a plus assez de fluide. C'est un diagnostic par méthode indirecte : il vous dit qu'il manque du fluide, pas où il est parti. Il reste maintenant à localiser la fuite par méthode directe, puis à consigner ce que vous avez fait.",
       reference: "Codes 4.04 · 8.08 · le diagnostic",
       controle: {
         enonce: "Quelle hypothèse explique l'ensemble des relevés ?",
@@ -114,7 +114,7 @@ CAPSULE.declarer({
       legende: "La méthode indirecte dit qu'il manque du fluide. La méthode directe dit où il est parti — en général l'un de ces points.",
       texte: "<p>Trouver que le circuit manque de charge n'est pas la fin du travail.</p><p>C'est un diagnostic par méthode indirecte : il reste à <b>localiser la fuite</b> par méthode directe, sur les points qui fuient le plus souvent, puis à <b>consigner</b> ce qui a été trouvé et réparé.</p>",
       piege: "<p>L'erreur : s'arrêter au diagnostic et déclarer « il manque de charge » sans chercher la fuite. Une recharge sans fuite trouvée, c'est une fuite qui reviendra.</p>",
-      dire: "Dernier réflexe, et c'est celui qui coûte cher si on l'oublie. Trouver que le circuit manque de charge n'est pas la fin du travail. C'est un diagnostic par méthode indirecte : il te dit qu'il manque du fluide, pas à quel endroit. Il reste à localiser la fuite par méthode directe, en commençant par les points qui fuient le plus souvent. Puis à consigner ce que tu as trouvé et réparé. L'erreur classique, c'est de s'arrêter au diagnostic et de recharger sans avoir trouvé la fuite. Une recharge sans fuite trouvée, c'est une fuite qui reviendra.",
+      dire: "Dernier réflexe, et c'est celui qui coûte cher si on l'oublie. Trouver que le circuit manque de charge n'est pas la fin du travail. C'est un diagnostic par méthode indirecte : il vous dit qu'il manque du fluide, pas à quel endroit. Il reste à localiser la fuite par méthode directe, en commençant par les points qui fuient le plus souvent. Puis à consigner ce que vous avez trouvé et réparé. L'erreur classique, c'est de s'arrêter au diagnostic et de recharger sans avoir trouvé la fuite. Une recharge sans fuite trouvée, c'est une fuite qui reviendra.",
       retenir: ["Un diagnostic indirect donne une <b>cause probable</b>, pas un <b>endroit</b>.", "Étape suivante : localiser la fuite par méthode directe, puis consigner."],
       reference: "Codes 4.04 · 8.08 · le réflexe",
     },

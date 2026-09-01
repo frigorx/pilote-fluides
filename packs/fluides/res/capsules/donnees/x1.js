@@ -36,7 +36,7 @@ CAPSULE.declarer({
         lien: "=",
         pied: "Même bâtiment, même exploitant, même charge : 12 kg chacune.",
       },
-      texte: "<p>Tu interviens sur deux machines dans le même bâtiment.</p><p><b>Machine A</b> — chambre froide, 12 kg de R-404A (PRP = 3922). <b>Machine B</b> — climatisation, 12 kg de R-32 (PRP = 675).</p>",
+      texte: "<p>Vous intervenez sur deux machines dans le même bâtiment.</p><p><b>Machine A</b> — chambre froide, 12 kg de R-404A (PRP = 3922). <b>Machine B</b> — climatisation, 12 kg de R-32 (PRP = 675).</p>",
       dire: "Voici la situation. Vous intervenez sur deux machines, dans le même bâtiment, pour le même exploitant. Machine A : une chambre froide, avec douze kilos de R 404 A, dont le P R P vaut 3922. Machine B : une climatisation, avec douze kilos de R 32, dont le P R P vaut 675. Même poids de fluide, dans les deux cas.",
       reference: "G2 · mise en situation",
     },

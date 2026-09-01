@@ -3,6 +3,43 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 31/08 (suite) — PLUS DE TUTOIEMENT NULLE PART : décision F. Henninot, exécutée
+>
+> **« Non, plus de tutoiement »** — la décision REMPLACE le choix du 28/08 (héros tutoyé).
+> Converti et EN LIGNE : la vitrine (`index`, `metier`, `partage` — commit `47ef73eb`),
+> puis les contenus narrés (`e1a772b0`) : 17 passages de `cartes.js` et ~60 dans les
+> capsules `x1`→`x5` (qui mélangeaient tu et vous dans le même paragraphe). **87 narrations
+> refabriquées en edge-tts sur feu vert explicite** (24 nouvelles, 62 remplacées sous le
+> même nom), index à 3 443 entrées. À savoir :
+> · les **écrans de capsule ne sont PAS au corpus MP3** (synthèse voulue, 13/08) — le
+>   collecteur ne lit pas `donnees/*.js` : une retouche de capsule ne coûte aucune voix ;
+> · l'identifiant `le-registre-parle-avant-toi` (x4) garde son nom — le changer casserait
+>   les ancres ; c'est un id technique, pas un texte affiché ;
+> · piège de recensement : `grep \b` casse sur les accents (« complètes » matche « tes ») —
+>   relire chaque occurrence à la main ;
+> · ⚠️ `fetch {cache:'reload'}` depuis une page contrôlée par le SW passe QUAND MÊME par
+>   lui — la preuve serveur, c'est `curl`.
+
+> ## 31/08 — LA VOIX UNIFIÉE EST EN LIGNE, et le site passe un contrôle complet
+>
+> **`voix-unifiee` (un commit, fait sur Millénium) est fusionnée dans `main` et servie.**
+> 946 MP3 au fonds commun `packs/fluides/res/voix/audio/`, et une **table de prononciation
+> partagée** : `build/voix/prononciation.json` fait foi → `moteur/prononciation.js` est
+> GÉNÉRÉ, branché sur 149 pages. La synthèse dit « mètres cubes par heure », « haute
+> pression », « P P M » au lieu d'épeler. ⚠️ On oralise À LA LECTURE, jamais avant
+> `textKey()` — oraliser les sources orphelinerait les 3 376 MP3. Narrations AéroRézo
+> passées au vouvoiement (sans risque : AéroRézo n'a aucun MP3 local ; ÉlectroRézo garde
+> ses 472 MP3, textes inchangés). La branche distante `voix-unifiee` reste à supprimer.
+>
+> **Contrôle complet du site le même jour** : 839 liens balayés — le seul défaut réel
+> était les 12 captures QA de `parcours-manometres/tests/screenshots/` listées par la
+> galerie alors que `.gitignore` les écarte du site (12 liens morts). Corrigé dans
+> `build/galerie.mjs` (le générateur saute `tests/screenshots`), galerie régénérée
+> (`fde85652`). Zéro erreur console sur l'accueil, formation et les quatre réseaux ;
+> zéro débordement mobile (accueil, galerie, métier, station ÉlectroRézo).
+> Rappel tenu : bandeaux AquiBlue/HoCourant EN TÊTE et tutoiement du héros = décisions
+> de F. Henninot (24-28/08), à ne pas « corriger ».
+
 > ## 30/08 — LE 5e RÉSEAU OUVRE : ÉlectroRézo, servi à `/electrorezo/`
 >
 > **https://inerweb.fr/electrorezo/** — l'électrotechnique en carte de métro : **58 stations,
