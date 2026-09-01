@@ -1,6 +1,5 @@
 window.OIL_MODULE = {
   id: "elements-circuit-huile",
-  narration: "Reprenons le fil : le tracé et la vitesse du gaz restent indispensables, même quand on ajoute des organes de gestion d'huile. Sur une installation simple, l'huile revient directement au compresseur par le circuit frigorifique — c'est le retour naturel que vous connaissez. Sur une centrale, ou sur une installation exigeante, on va plus loin : on sépare une partie de l'huile dès le refoulement, puis on organise sa distribution. Mais retenez bien la limite de ces organes : ils améliorent la gestion, ils ne corrigent jamais une tuyauterie mal dimensionnée.",
   title: "La chaîne de l’huile : séparer et stocker",
   subtitle: "LE CIRCUIT D’HUILE · STATION 5",
   codes: ["1.05", "6.05", "9.07"],
@@ -12,7 +11,7 @@ window.OIL_MODULE = {
   lessons: [
     {
       id: "rappel-retour",
-      narration: "Voyons la chaîne complète, parce que chaque organe y a une place et une seule mission. Le mélange part du refoulement vers le séparateur, puis l'huile récupérée rejoint une réserve. À partir de là, deux branches partent, et elles ne font pas la même chose. La première, la conduite d'huile, va du réservoir vers le régulateur — mécanique ou électronique — qui gère le niveau du carter : c'est le trajet de l'huile liquide. La seconde relie la partie haute du réservoir à l'aspiration par un clapet taré : elle établit un différentiel de pression, elle ne transporte pas l'huile. Le schéma exact dépend du système — retour direct, basse pression, haute pression — et la notice fait foi.",
+      narration: "Reprenons le fil : le tracé et la vitesse du gaz restent indispensables, même quand on ajoute des organes de gestion d'huile. Sur une installation simple, l'huile revient directement au compresseur par le circuit frigorifique — c'est le retour naturel que vous connaissez. Sur une centrale, ou sur une installation exigeante, on va plus loin : on sépare une partie de l'huile dès le refoulement, puis on organise sa distribution. Mais retenez bien la limite de ces organes : ils améliorent la gestion, ils ne corrigent jamais une tuyauterie mal dimensionnée.",
       short: "Rappel",
       kicker: "Station 1 · Rappel spiralé",
       recall: true,
@@ -27,7 +26,7 @@ window.OIL_MODULE = {
     },
     {
       id: "chaine",
-      narration: "Le séparateur agit sur la ligne de refoulement. Le mélange gaz chaud et huile entre ; le ralentissement et la séparation interne font tomber une partie de l'huile. Le gaz poursuit vers le condenseur, et l'huile collectée repart selon le montage — vers le compresseur directement, ou vers une réserve. Une précision qui compte : un séparateur limite l'huile en circulation, il n'annonce jamais une séparation totale. Pour vérifier qu'il fonctionne, il faut recouper plusieurs indices — les niveaux, les températures, l'état de la conduite de retour, la stabilité dans le temps. Un seul indice ne suffit pas.",
+      narration: "Voyons la chaîne complète, parce que chaque organe y a une place et une seule mission. Le mélange part du refoulement vers le séparateur, puis l'huile récupérée rejoint une réserve. À partir de là, deux branches partent, et elles ne font pas la même chose. La première, la conduite d'huile, va du réservoir vers le régulateur — mécanique ou électronique — qui gère le niveau du carter : c'est le trajet de l'huile liquide. La seconde relie la partie haute du réservoir à l'aspiration par un clapet taré : elle établit un différentiel de pression, elle ne transporte pas l'huile. Le schéma exact dépend du système — retour direct, basse pression, haute pression — et la notice fait foi.",
       short: "Chaîne",
       kicker: "Station 2 · Vue d’ensemble",
       title: "Chaque organe a une place et une seule mission principale",
@@ -41,7 +40,7 @@ window.OIL_MODULE = {
     },
     {
       id: "separateur",
-      narration: "Le réservoir d'huile, que l'atelier appelle souvent le bouteillon, est une réserve tampon. Il stocke l'huile séparée et la rend disponible pour plusieurs compresseurs à la fois. Ses voyants permettent de suivre cette réserve, dans les limites prévues par le fabricant. Une confusion à éviter absolument : ce n'est pas le réservoir de liquide frigorigène. Fonction, raccordements et domaine de pression sont différents — l'un stocke de l'huile pour les carters, l'autre du fluide pour la ligne liquide. Et gardez en tête que le réservoir fournit une réserve commune : il ne décide pas, à lui seul, du niveau de chaque carter.",
+      narration: "Le séparateur agit sur la ligne de refoulement. Le mélange gaz chaud et huile entre ; le ralentissement et la séparation interne font tomber une partie de l'huile. Le gaz poursuit vers le condenseur, et l'huile collectée repart selon le montage — vers le compresseur directement, ou vers une réserve. Une précision qui compte : un séparateur limite l'huile en circulation, il n'annonce jamais une séparation totale. Pour vérifier qu'il fonctionne, il faut recouper plusieurs indices — les niveaux, les températures, l'état de la conduite de retour, la stabilité dans le temps. Un seul indice ne suffit pas.",
       short: "Séparer",
       kicker: "Station 3 · Séparateur d’huile",
       title: "Le séparateur agit sur la ligne de refoulement",
@@ -55,6 +54,7 @@ window.OIL_MODULE = {
     },
     {
       id: "reservoir",
+      narration: "Le réservoir d'huile, que l'atelier appelle souvent le bouteillon, est une réserve tampon. Il stocke l'huile séparée et la rend disponible pour plusieurs compresseurs à la fois. Ses voyants permettent de suivre cette réserve, dans les limites prévues par le fabricant. Une confusion à éviter absolument : ce n'est pas le réservoir de liquide frigorigène. Fonction, raccordements et domaine de pression sont différents — l'un stocke de l'huile pour les carters, l'autre du fluide pour la ligne liquide. Et gardez en tête que le réservoir fournit une réserve commune : il ne décide pas, à lui seul, du niveau de chaque carter.",
       short: "Réserver",
       kicker: "Station 4 · Réservoir d’huile",
       title: "Le « bouteillon » est une réserve tampon",

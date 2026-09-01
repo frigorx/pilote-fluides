@@ -1,6 +1,5 @@
 window.OIL_MODULE = {
   id: "technologie-huiles-frigorifiques",
-  narration: "Commençons par lever une ambiguïté qui gêne beaucoup de débutants. L'huile appartient au compresseur : c'est sa réserve de lubrification, elle vit dans son carter. Mais elle ne reste pas sagement là. Une petite fraction est entraînée par le gaz au refoulement, et cette fraction part faire le tour complet du circuit : condenseur, ligne liquide, détendeur, évaporateur, puis retour par l'aspiration. Il y a donc deux fluides qui circulent dans votre installation, et un seul fait le froid. L'huile, elle, doit protéger le compresseur tout en pouvant lui revenir.",
   title: "Les familles d’huile",
   subtitle: "LE CIRCUIT D’HUILE · STATION 1",
   codes: ["1.05", "5.08", "6.01", "6.05"],
@@ -12,7 +11,7 @@ window.OIL_MODULE = {
   lessons: [
     {
       id: "circuit-reel",
-      narration: "À quoi sert cette huile ? D'abord et avant tout, à séparer les pièces en mouvement. Elle forme un film qui empêche le contact métal contre métal — donc le frottement, l'échauffement et l'usure. C'est sa fonction vitale. Selon la technologie du compresseur, elle peut aussi assurer l'étanchéité des jeux internes et évacuer une partie de la chaleur. Mais attention : elle ne protège que si sa viscosité réelle, sa propreté et sa compatibilité restent adaptées. Et ces rôles secondaires ne sont pas les mêmes sur un piston, une vis, un scroll ou un compresseur ouvert.",
+      narration: "Commençons par lever une ambiguïté qui gêne beaucoup de débutants. L'huile appartient au compresseur : c'est sa réserve de lubrification, elle vit dans son carter. Mais elle ne reste pas sagement là. Une petite fraction est entraînée par le gaz au refoulement, et cette fraction part faire le tour complet du circuit : condenseur, ligne liquide, détendeur, évaporateur, puis retour par l'aspiration. Il y a donc deux fluides qui circulent dans votre installation, et un seul fait le froid. L'huile, elle, doit protéger le compresseur tout en pouvant lui revenir.",
       short: "Circuit",
       kicker: "Station 1 · Rappel spiralé",
       recall: true,
@@ -27,7 +26,7 @@ window.OIL_MODULE = {
     },
     {
       id: "roles-huile",
-      narration: "Suivons le trajet de l'huile entraînée, car il explique la plupart des problèmes. Le gaz chaud emporte au refoulement un brouillard ou un film d'huile. Cette huile traverse ensuite tous les organes avant de revenir avec le gaz d'aspiration. Le parcours est continu : refoulement, condenseur, ligne liquide, détendeur, évaporateur, conduite d'aspiration, compresseur. À chaque étape, elle peut rester coincée — une mauvaise miscibilité, une vitesse de gaz trop faible, un point bas mal placé, et l'huile s'accumule quelque part. Le bilan recherché est dynamique : ce qui part du compresseur doit pouvoir lui revenir pendant le fonctionnement.",
+      narration: "À quoi sert cette huile ? D'abord et avant tout, à séparer les pièces en mouvement. Elle forme un film qui empêche le contact métal contre métal — donc le frottement, l'échauffement et l'usure. C'est sa fonction vitale. Selon la technologie du compresseur, elle peut aussi assurer l'étanchéité des jeux internes et évacuer une partie de la chaleur. Mais attention : elle ne protège que si sa viscosité réelle, sa propreté et sa compatibilité restent adaptées. Et ces rôles secondaires ne sont pas les mêmes sur un piston, une vis, un scroll ou un compresseur ouvert.",
       short: "Fonctions",
       kicker: "Station 2 · Dans le compresseur",
       title: "Le film d’huile sépare les pièces en mouvement",
@@ -41,7 +40,7 @@ window.OIL_MODULE = {
     },
     {
       id: "trajet-huile",
-      narration: "Passons aux familles d'huile, et commençons par les trois familles à base hydrocarbonée. M O, pour huile minérale, issue du raffinage du pétrole. A B, pour alkylbenzène, une huile synthétique hydrocarbonée. Et P A O, pour polyalphaoléfine, également synthétique. Vous les rencontrerez surtout sur des applications historiques au R 22, avec des hydrocarbures, ou avec l'ammoniac. Une précision importante : ces sigles désignent une famille chimique, rien de plus. Ils ne donnent ni le grade de viscosité, ni la référence approuvée, ni la quantité à charger.",
+      narration: "Suivons le trajet de l'huile entraînée, car il explique la plupart des problèmes. Le gaz chaud emporte au refoulement un brouillard ou un film d'huile. Cette huile traverse ensuite tous les organes avant de revenir avec le gaz d'aspiration. Le parcours est continu : refoulement, condenseur, ligne liquide, détendeur, évaporateur, conduite d'aspiration, compresseur. À chaque étape, elle peut rester coincée — une mauvaise miscibilité, une vitesse de gaz trop faible, un point bas mal placé, et l'huile s'accumule quelque part. Le bilan recherché est dynamique : ce qui part du compresseur doit pouvoir lui revenir pendant le fonctionnement.",
       short: "Trajet",
       kicker: "Station 3 · Dans le circuit",
       title: "L’huile entraînée suit le fluide jusqu’au retour d’aspiration",
@@ -55,7 +54,7 @@ window.OIL_MODULE = {
     },
     {
       id: "familles-hydrocarbonees",
-      narration: "Voici maintenant les familles synthétiques des applications modernes. P O E, pour polyol ester — en français, ester de polyol. Dire simplement « polyester » est trop vague et prête à confusion. P A G, pour polyalkylène glycol. Et P V E, pour polyvinyl éther. Ces trois familles ont un point commun qui vous concerne directement : elles absorbent l'humidité de l'air, ce qui impose une manipulation soignée. Le P O E est très courant avec les fluides H F C et H F O ; le P A G se rencontre en climatisation automobile et sur certaines applications au dioxyde de carbone ou à l'ammoniac. Et retenez ceci : ces trois familles ne sont pas interchangeables, même si deux bidons portent le même grade de viscosité.",
+      narration: "Passons aux familles d'huile, et commençons par les trois familles à base hydrocarbonée. M O, pour huile minérale, issue du raffinage du pétrole. A B, pour alkylbenzène, une huile synthétique hydrocarbonée. Et P A O, pour polyalphaoléfine, également synthétique. Vous les rencontrerez surtout sur des applications historiques au R 22, avec des hydrocarbures, ou avec l'ammoniac. Une précision importante : ces sigles désignent une famille chimique, rien de plus. Ils ne donnent ni le grade de viscosité, ni la référence approuvée, ni la quantité à charger.",
       short: "MO · AB · PAO",
       kicker: "Station 4 · Familles 1 sur 2",
       title: "MO, AB et PAO : trois familles à base hydrocarbonée",
@@ -69,7 +68,7 @@ window.OIL_MODULE = {
     },
     {
       id: "familles-polaires",
-      narration: "Reste la question que tout le monde pose : quel fluide avec quelle huile ? Je vais vous donner des repères, et surtout vous dire pourquoi ce ne sont que des repères. Pour du R 22 ancien, on rencontre de l'huile minérale ou de l'alkylbenzène. Pour les H F C et H F O, surtout du polyol ester, parfois du polyvinyl éther ou du polyalkylène glycol. Pour l'ammoniac, minérale, polyalphaoléfine ou alkylbenzène. Pour le dioxyde de carbone, des esters ou des glycols spécialement formulés. Et voici le point capital : le fluide seul ne tranche jamais. C'est le modèle du compresseur, et sa liste d'huiles approuvées, qui décide de ce que vous avez le droit de mettre dedans.",
+      narration: "Voici maintenant les familles synthétiques des applications modernes. P O E, pour polyol ester — en français, ester de polyol. Dire simplement « polyester » est trop vague et prête à confusion. P A G, pour polyalkylène glycol. Et P V E, pour polyvinyl éther. Ces trois familles ont un point commun qui vous concerne directement : elles absorbent l'humidité de l'air, ce qui impose une manipulation soignée. Le P O E est très courant avec les fluides H F C et H F O ; le P A G se rencontre en climatisation automobile et sur certaines applications au dioxyde de carbone ou à l'ammoniac. Et retenez ceci : ces trois familles ne sont pas interchangeables, même si deux bidons portent le même grade de viscosité.",
       short: "POE · PAG · PVE",
       kicker: "Station 5 · Familles 2 sur 2",
       title: "POE, PAG et PVE : les familles synthétiques des applications modernes",
@@ -83,6 +82,7 @@ window.OIL_MODULE = {
     },
     {
       id: "huile-et-fluide",
+      narration: "Reste la question que tout le monde pose : quel fluide avec quelle huile ? Je vais vous donner des repères, et surtout vous dire pourquoi ce ne sont que des repères. Pour du R 22 ancien, on rencontre de l'huile minérale ou de l'alkylbenzène. Pour les H F C et H F O, surtout du polyol ester, parfois du polyvinyl éther ou du polyalkylène glycol. Pour l'ammoniac, minérale, polyalphaoléfine ou alkylbenzène. Pour le dioxyde de carbone, des esters ou des glycols spécialement formulés. Et voici le point capital : le fluide seul ne tranche jamais. C'est le modèle du compresseur, et sa liste d'huiles approuvées, qui décide de ce que vous avez le droit de mettre dedans.",
       short: "Fluide ↔ huile",
       kicker: "Station 6 · Associations usuelles",
       title: "Quel fluide avec quelle huile ? Voici les repères, pas une prescription",

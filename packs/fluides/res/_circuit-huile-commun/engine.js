@@ -1427,6 +1427,13 @@
 
   function voixFabriquee() {
     if (!moduleData.voix) return null;
+    /* Une leçon réécrite ne joue plus son ancien MP3 : le fichier dirait le
+       descriptif d'écran d'avant le 01/09/2026, pas la narration. Poser
+       `voixAJour: true` sur le module le jour où les MP3 sont refaits. */
+    if (state.phase === "lesson" && !moduleData.voixAJour) {
+      var l = moduleData.lessons[state.lesson];
+      if (l && typeof l.narration === "string" && l.narration.trim()) return null;
+    }
     var g = genreVoix();
     if (state.phase === "lesson") {
       var lecon = moduleData.lessons[state.lesson];

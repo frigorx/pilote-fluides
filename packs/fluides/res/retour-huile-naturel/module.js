@@ -1,6 +1,5 @@
 window.OIL_MODULE = {
   id: "retour-huile-naturel",
-  narration: "Reprenons ce que vous savez : une petite quantité d'huile quitte le compresseur avec le gaz de refoulement. Elle traverse une partie du circuit avant de retrouver son carter. Toute la question de cette station tient en une phrase : ce qui part doit pouvoir revenir. Un bon retour maintient un niveau stable dans le carter, sans remplir les tuyauteries ni les échangeurs. Et attention à la façon de lire un niveau : il traduit un équilibre entre ce qui part et ce qui revient, pas simplement la quantité que vous avez versée un jour.",
   title: "Le retour d’huile naturel",
   subtitle: "LE CIRCUIT D’HUILE · STATION 3",
   codes: ["1.05", "6.01", "6.05"],
@@ -12,7 +11,7 @@ window.OIL_MODULE = {
   lessons: [
     {
       id: "rappel-huile",
-      narration: "Le mot « naturel » induit en erreur, alors précisons-le. Retour naturel ne veut pas dire retour par gravité. Dans les lignes de vapeur, c'est le gaz lui-même qui entraîne le film et les gouttelettes d'huile vers le compresseur — il la pousse, il la porte. La tuyauterie, les vitesses et les régimes de fonctionnement doivent permettre ce transport. Et dans les zones où l'huile est miscible au fluide, son comportement dépend en plus du couple huile-fluide et de la température. Dire « l'huile redescend toute seule » est faux dès qu'il faut remonter une colonne, ou fonctionner à charge réduite.",
+      narration: "Reprenons ce que vous savez : une petite quantité d'huile quitte le compresseur avec le gaz de refoulement. Elle traverse une partie du circuit avant de retrouver son carter. Toute la question de cette station tient en une phrase : ce qui part doit pouvoir revenir. Un bon retour maintient un niveau stable dans le carter, sans remplir les tuyauteries ni les échangeurs. Et attention à la façon de lire un niveau : il traduit un équilibre entre ce qui part et ce qui revient, pas simplement la quantité que vous avez versée un jour.",
       short: "Rappel",
       kicker: "Station 1 · Rappel",
       recall: true,
@@ -27,7 +26,7 @@ window.OIL_MODULE = {
     },
     {
       id: "definition",
-      narration: "La vitesse du gaz est le paramètre central, et elle demande un compromis. Trop faible, le gaz n'entraîne plus l'huile, qui s'accumule. Trop élevée, les pertes de charge explosent et la performance chute. Le diamètre du tube se choisit donc pour concilier les deux. Le point délicat, c'est la charge minimale : un tube correctement dimensionné à pleine charge peut devenir surdimensionné quand l'installation tourne au ralenti, et la vitesse tombe sous le seuil d'entraînement. C'est pourquoi le dimensionnement se vérifie aux deux extrêmes — régime minimal et régime maximal. La bonne réponse n'est pas « le plus de vitesse possible », mais une plage compatible avec les deux exigences.",
+      narration: "Le mot « naturel » induit en erreur, alors précisons-le. Retour naturel ne veut pas dire retour par gravité. Dans les lignes de vapeur, c'est le gaz lui-même qui entraîne le film et les gouttelettes d'huile vers le compresseur — il la pousse, il la porte. La tuyauterie, les vitesses et les régimes de fonctionnement doivent permettre ce transport. Et dans les zones où l'huile est miscible au fluide, son comportement dépend en plus du couple huile-fluide et de la température. Dire « l'huile redescend toute seule » est faux dès qu'il faut remonter une colonne, ou fonctionner à charge réduite.",
       short: "Principe",
       kicker: "Station 2 · Définition",
       title: "Naturel ne veut pas dire : par gravité seulement",
@@ -41,7 +40,7 @@ window.OIL_MODULE = {
     },
     {
       id: "vitesse",
-      narration: "Sur les parties horizontales, c'est la pente qui guide l'huile. Sur une ligne d'aspiration, la pente prévue par la conception accompagne l'huile dans le sens du retour vers le compresseur. Ce qui la retient, ce sont les poches, les contre-pentes et les points bas non prévus — souvent créés lors d'une modification, quand on a dû contourner un obstacle. Ces défauts sont invisibles sur un plan et bien visibles sur le chantier. Prenez donc l'habitude de contrôler le trajet réel du tube : les niveaux, les points bas, et le sens de la pente. Les valeurs exactes viennent des règles du constructeur et du projet.",
+      narration: "La vitesse du gaz est le paramètre central, et elle demande un compromis. Trop faible, le gaz n'entraîne plus l'huile, qui s'accumule. Trop élevée, les pertes de charge explosent et la performance chute. Le diamètre du tube se choisit donc pour concilier les deux. Le point délicat, c'est la charge minimale : un tube correctement dimensionné à pleine charge peut devenir surdimensionné quand l'installation tourne au ralenti, et la vitesse tombe sous le seuil d'entraînement. C'est pourquoi le dimensionnement se vérifie aux deux extrêmes — régime minimal et régime maximal. La bonne réponse n'est pas « le plus de vitesse possible », mais une plage compatible avec les deux exigences.",
       short: "Vitesse",
       kicker: "Station 3 · Entraînement",
       title: "La vitesse du gaz doit rester suffisante",
@@ -55,7 +54,7 @@ window.OIL_MODULE = {
     },
     {
       id: "horizontales",
-      narration: "Reste le cas le plus difficile : la remontée. Quand la ligne d'aspiration doit monter, l'huile doit être portée vers le haut par le gaz, contre la gravité. Deux dispositifs encadrent cette remontée. Au pied de la colonne, un siphon recueille l'huile au point bas, de sorte que le débit de gaz puisse l'entraîner par portions successives — c'est un mécanisme par paquets, pas un écoulement continu. En haut, une boucle appelée contre-siphon limite un drainage inverse dans certaines configurations. Retenez qu'aucun de ces éléments n'est décoratif ni systématique : chaque boucle répond à une géométrie et à des régimes définis, et se prend sur le plan ou la notice.",
+      narration: "Sur les parties horizontales, c'est la pente qui guide l'huile. Sur une ligne d'aspiration, la pente prévue par la conception accompagne l'huile dans le sens du retour vers le compresseur. Ce qui la retient, ce sont les poches, les contre-pentes et les points bas non prévus — souvent créés lors d'une modification, quand on a dû contourner un obstacle. Ces défauts sont invisibles sur un plan et bien visibles sur le chantier. Prenez donc l'habitude de contrôler le trajet réel du tube : les niveaux, les points bas, et le sens de la pente. Les valeurs exactes viennent des règles du constructeur et du projet.",
       short: "Pentes",
       kicker: "Station 4 · Tuyauterie",
       title: "Les lignes horizontales guident l’huile",
@@ -69,6 +68,7 @@ window.OIL_MODULE = {
     },
     {
       id: "colonnes",
+      narration: "Reste le cas le plus difficile : la remontée. Quand la ligne d'aspiration doit monter, l'huile doit être portée vers le haut par le gaz, contre la gravité. Deux dispositifs encadrent cette remontée. Au pied de la colonne, un siphon recueille l'huile au point bas, de sorte que le débit de gaz puisse l'entraîner par portions successives — c'est un mécanisme par paquets, pas un écoulement continu. En haut, une boucle appelée contre-siphon limite un drainage inverse dans certaines configurations. Retenez qu'aucun de ces éléments n'est décoratif ni systématique : chaque boucle répond à une géométrie et à des régimes définis, et se prend sur le plan ou la notice.",
       short: "Siphons",
       kicker: "Station 5 · Remontées",
       title: "Siphon et contre-siphon encadrent la remontée",
