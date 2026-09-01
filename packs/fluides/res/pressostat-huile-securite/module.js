@@ -11,6 +11,7 @@ window.OIL_MODULE = {
   lessons: [
     {
       id: "demarrage",
+      narration: "Au démarrage, un compresseur à pompe à huile se trouve dans une situation particulière : la pression de lubrification n'est pas encore établie, puisque la pompe commence tout juste à tourner. Si la sécurité coupait immédiatement, la machine ne démarrerait jamais. C'est pourquoi le défaut apparent est provisoirement toléré, pendant un délai appelé temporisation. Mais soyez clair sur ce que permet ce délai : il autorise un démarrage normal, il n'autorise jamais une lubrification insuffisante durable. Passé ce temps, la pression doit être là.",
       short: "Démarrer",
       kicker: "Station 1 · Temporisation",
       title: "Au démarrage, le défaut apparent est provisoirement toléré",
@@ -24,6 +25,7 @@ window.OIL_MODULE = {
     },
     {
       id: "fonctionnement",
+      narration: "En fonctionnement, le principe est le même. Une chute brève de la pression nette relance la temporisation : si tout se rétablit, la machine continue. Une chute persistante, elle, doit arrêter le compresseur — c'est la protection qui joue son rôle. Et voici l'interdit de cette station : shunter le contact ou allonger le délai sans prescription supprime la protection du compresseur. Cela fait redémarrer la machine, ce qui ressemble à une réparation pendant quelques heures. En réalité, vous laissez tourner sans lubrification garantie une machine qui vient de vous signaler un problème.",
       short: "Surveiller",
       kicker: "Station 2 · En marche",
       title: "Une chute brève peut se rétablir ; une chute persistante doit arrêter",
@@ -37,6 +39,7 @@ window.OIL_MODULE = {
     },
     {
       id: "electrique",
+      narration: "Le contact du pressostat agit sur la chaîne de sécurité : il participe à ce qui autorise le contacteur ou l'automate à faire tourner le compresseur. Ce n'est donc pas un simple voyant, c'est un maillon de commande. Deux règles pour intervenir dessus. La première : on consigne avant toute ouverture du coffret — coupure, condamnation, vérification d'absence de tension. La seconde : on n'improvise jamais un pont électrique, même pour un essai, même cinq minutes. Un pont oublié reste en place, et personne ne le retrouve avant la casse.",
       short: "Sécurité",
       kicker: "Station 3 · Électricité",
       title: "Le contact agit sur la chaîne de sécurité",
@@ -50,6 +53,7 @@ window.OIL_MODULE = {
     },
     {
       id: "mesurer",
+      narration: "Le diagnostic exige deux pressions prises au même instant, et c'est ce qui le rend rigoureux. Relevez la pression côté sortie de pompe et celle du carter pendant le même régime de fonctionnement, puis calculez leur différence — c'est elle, la pression nette, qui compte. Suivez ensuite son évolution dans le temps, car un défaut peut n'apparaître qu'à chaud. Écrivez les deux pressions, la différence, la durée d'observation, le régime, et la date du prochain contrôle. Jamais une valeur isolée : elle ne prouverait rien et ne se comparerait à rien.",
       short: "Mesurer",
       kicker: "Station 4 · Diagnostic",
       title: "Le diagnostic exige deux pressions prises au même instant",
@@ -63,6 +67,7 @@ window.OIL_MODULE = {
     },
     {
       id: "conclure",
+      narration: "Terminons par la conclusion, et par une mise en garde qui vaut pour beaucoup de sécurités. Un réarmement réussi ne prouve pas que la lubrification est réparée. Le défaut peut disparaître quelques instants, puis revenir quand l'huile chauffe, quand elle mousse au redémarrage, ou quand le régime change. La démarche complète est toujours la même : observation, relevé des deux pressions, calcul de la différence, comparaison à la notice, cause probable, puis contrôle suivant planifié. Une sécurité qui s'est déclenchée mérite qu'on cherche pourquoi, même si la machine repart.",
       short: "Conclure",
       kicker: "Station 5 · Habilitation",
       title: "Un réarmement réussi ne prouve pas que la lubrification est réparée",

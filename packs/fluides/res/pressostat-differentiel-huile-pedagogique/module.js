@@ -11,6 +11,7 @@ window.OIL_MODULE = {
   lessons: [
     {
       id: "distinguer",
+      narration: "Trois organes de cette chaîne parlent d'huile, et ils sont régulièrement confondus. Le régulateur maintient un niveau dans un carter. Le clapet différentiel maintient la pression du réservoir. Et le pressostat différentiel, celui de cette station, protège la lubrification du compresseur. Trois missions, trois grandeurs, trois preuves différentes. Un niveau correct ne dit rien de la pression de lubrification, et une alimentation d'huile qui fonctionne ne garantit pas que la pompe travaille. Gardez ces trois plans séparés, et beaucoup de diagnostics deviennent simples.",
       short: "Distinguer",
       kicker: "Station 1 · Retour spiralé",
       recall: true,
@@ -25,6 +26,7 @@ window.OIL_MODULE = {
     },
     {
       id: "application",
+      narration: "Une précision technique avant d'aller plus loin : ce contrôle concerne un compresseur lubrifié par pompe. Cette pompe mécanique, entraînée par le compresseur lui-même, aspire l'huile du carter et l'envoie vers les paliers sous pression. C'est cette pression-là que le pressostat surveille. Tous les compresseurs n'en sont pas équipés : beaucoup se lubrifient par barbotage, sans pompe ni pression à contrôler. N'appliquez donc pas ce diagnostic à une machine sans avoir d'abord vérifié sa technologie de lubrification.",
       short: "Pompe",
       kicker: "Station 2 · Domaine",
       title: "Le contrôle concerne un compresseur lubrifié par pompe",
@@ -38,6 +40,7 @@ window.OIL_MODULE = {
     },
     {
       id: "prises",
+      narration: "Deux prises de pression construisent une seule information, et il faut les nommer avant de calculer. La prise repérée O I L reçoit la pression de sortie de pompe. La prise repérée L P reçoit la pression du carter, ou de l'aspiration prévue par le constructeur. Ce qui intéresse la sécurité, ce n'est ni l'une ni l'autre prise isolément : c'est leur différence, la pression nette réellement disponible pour les paliers. Prenez l'habitude de nommer les deux prises à voix haute avant de poser la soustraction — c'est ce qui évite d'inverser les valeurs.",
       short: "P1 − P2",
       kicker: "Station 3 · Raccordements",
       title: "Deux prises de pression construisent une seule information",
@@ -51,6 +54,7 @@ window.OIL_MODULE = {
     },
     {
       id: "seuils",
+      narration: "Attention à ne pas confondre deux réglages qui portent des noms voisins. Le seuil de sécurité fixe la valeur basse en dessous de laquelle la temporisation se déclenche : c'est le niveau de pression nette jugé insuffisant. Le différentiel de contact, lui, décrit l'écart entre le déclenchement et le retour à l'état normal — ce qu'on appelle aussi l'hystérésis. Et la temporisation est encore autre chose : c'est un délai. Seuil, hystérésis et délai sont trois données distinctes, et elles se lisent séparément dans la notice.",
       short: "Seuils",
       kicker: "Station 4 · Lecture",
       title: "Le seuil réglé et le différentiel de contact ne désignent pas la même chose",
@@ -64,6 +68,7 @@ window.OIL_MODULE = {
     },
     {
       id: "mecanisme",
+      narration: "Voyons le mécanisme. Dans un modèle mécanique, deux éléments sensibles reçoivent les deux pressions en opposition : l'une pousse dans un sens, l'autre dans l'autre. C'est la différence entre les deux qui déplace le mécanisme, et non leur valeur absolue. Quand cette différence tombe sous le seuil, le mécanisme bascule et lance la temporisation. Vous retrouvez le principe du pressostat simple, avec cette particularité d'être commandé par un écart. Explorez les états proposés à l'écran : ils montrent le comportement, sans ajouter de règle qui ne serait pas dans le texte.",
       short: "Mécanisme",
       kicker: "Station 5 · Fonctionnement",
       title: "Deux pressions opposées commandent un contact",
