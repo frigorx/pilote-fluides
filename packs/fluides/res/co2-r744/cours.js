@@ -45,6 +45,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "reglement",
+      narration: "Le dioxyde de carbone n'est pas un fluide nouveau : il servait déjà à la fin du dix-neuvième siècle, avant d'être abandonné vers mille neuf cent cinquante au profit des fluides de synthèse. Ce qui le ramène aujourd'hui, ce n'est pas une découverte technique — c'est la réglementation. Le règlement européen accélère la réduction des quantités d'hydrofluorocarbures mises sur le marché : un R 404 A, dont le pouvoir de réchauffement dépasse trois mille neuf cents, ou un R 410 A à deux mille, se raréfient et coûtent de plus en plus cher. Le R 744, lui, a un pouvoir de réchauffement de un et un potentiel de destruction de l'ozone nul : il n'entre dans aucun quota. Et s'il vaut un, c'est parce que c'est lui la référence — tous les autres se comptent en multiples de son effet.",
       short: "Réglementation",
       kicker: "Ce qui pousse le changement",
       title: "Les fluides à PRP élevé deviennent rares et chers",
@@ -63,6 +64,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "securite",
+      narration: "Du point de vue de la classification, le dioxyde de carbone est dans la case la plus favorable : A1, faible toxicité et pas de propagation de flamme. Il n'a donc pas de limite de charge liée à l'inflammabilité — contrairement au propane, qui est A3, et non A2L : cette confusion fait sous-estimer la charge admissible et le matériel exigé. Mais attention à ne pas conclure que le R 744 est sans danger. Ses risques sont simplement ailleurs : la pression, et l'asphyxie en local fermé. Un fluide qui ne brûle pas et n'empoisonne pas peut parfaitement tuer en remplaçant l'air d'un local.",
       short: "Sécurité",
       kicker: "Ce que le R744 apporte",
       title: "Classé A1 : faible toxicité, non inflammable",
@@ -84,6 +86,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "contrepartie",
+      narration: "Tout ce que le dioxyde de carbone fait gagner d'un côté se paie de l'autre — en pression, en matériel, en méthode. Côté haute pression, on rencontre des pressions de service de l'ordre de cent vingt bar en régime transcritique. Au-dessus de trente et un degrés, la condensation classique n'existe plus : le condenseur ne condense plus. Et le matériel suit : manifold, flexibles, manomètres, raccords et détection sont spécifiques, ils ne se prêtent pas d'une installation HFC. Une précision importante : les cent vingt bar sont un ordre de grandeur. La pression maximale admissible se lit sur la plaque de l'installation et dans la documentation du constructeur, jamais dans un cours.",
       short: "Contrepartie",
       kicker: "Ce que le R744 coûte",
       title: "Des pressions que le matériel HFC ne supporte pas",
@@ -100,6 +103,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "fil",
+      narration: "Voici le fil de tout ce parcours, et il tient en une phrase : le point critique du dioxyde de carbone est très bas. Le refroidisseur de gaz, le détendeur haute pression, la bouteille flash, le réglage de la haute pression — tout cela n'est qu'une conséquence de ce seul fait. Les chapitres deux et trois posent les points remarquables du fluide et ce que le point critique interdit. Les chapitres quatre à six présentent les deux régimes de fonctionnement, et la haute pression qui devient un réglage. Les chapitres sept et huit vous emmènent sur la centrale de supermarché, puis sur l'intervention en sécurité. Chaque escale se suffit à elle-même et dure moins de dix minutes : vous pouvez en faire une entre deux séances, dans l'ordre ou non.",
       short: "Le fil",
       kicker: "Le fil conducteur de la ligne",
       title: "Une seule idée commande tout le reste",
@@ -164,6 +168,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "fiche",
+      narration: "Trois points remarquables suffisent à expliquer presque tout le comportement du dioxyde de carbone. Le point critique : trente et un degrés et soixante-treize virgule huit bar. Le point triple : moins cinquante-six virgule six degrés et cinq virgule dix-huit bar. Et la sublimation à la pression atmosphérique, à moins soixante-dix-huit virgule cinq degrés — c'est la neige carbonique. Retenez surtout ce que le premier implique : un ambiant d'été à trente-deux degrés est déjà au-dessus du point critique. En France, une installation au R 744 travaille donc en transcritique une bonne partie de l'année. Ce n'est pas un cas exceptionnel, c'est le régime normal de l'été.",
       short: "La fiche",
       kicker: "Ce qui est à mémoriser",
       title: "Les valeurs qu'on retrouve sur tous les chantiers",
@@ -188,6 +193,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "diagramme-etat",
+      narration: "Situons ces trois points les uns par rapport aux autres. La courbe de saturation du dioxyde de carbone commence au point triple et s'arrête net au point critique. Entre moins cinquante-six degrés et trente et un degrés, liquide et vapeur coexistent, et la relation pression-température fonctionne comme vous en avez l'habitude. Au-dessus de trente et un degrés, la courbe s'arrête : il n'y a plus de couple pression-température du tout. Et sous cinq virgule dix-huit bar, le liquide n'existe pas — le solide passe directement en vapeur. Comparez avec ce que vous connaissez : un R 404 A a son point critique vers soixante-douze degrés, on ne le rencontre jamais en service. Celui du dioxyde de carbone est à trente et un degrés, donc on le franchit tous les étés.",
       short: "Trois points",
       kicker: "Sur le diagramme d'état",
       title: "Où se placent ces trois points l'un par rapport à l'autre",
@@ -203,6 +209,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "arret",
+      narration: "Voici un fait qui surprend toujours : une installation au R 744 à l'arrêt reste sous pression. Quand la machine s'arrête, la température du fluide rejoint celle du local, et la pression suit la courbe de saturation — à vingt degrés, cela fait environ cinquante-sept bar dans tout le circuit. Une installation éteinte n'est donc pas une installation détendue. C'est pourquoi beaucoup de centrales portent un groupe de maintien, qui empêche la pression de monter jusqu'au tarage des soupapes. Et après une longue coupure de courant, la soupape peut lâcher du fluide : le local doit rester ventilé et surveillé. Avant d'ouvrir quoi que ce soit sur une machine à l'arrêt, la procédure de dépressurisation du constructeur s'applique intégralement.",
       short: "À l'arrêt",
       kicker: "Machine éteinte",
       title: "Une installation à l'arrêt reste à 57 bar environ",
@@ -223,6 +230,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "volumetrique",
+      narration: "À froid produit égal, le dioxyde de carbone occupe bien moins de volume que les fluides de synthèse. Cela change l'allure de l'installation : à puissance égale, les compresseurs sont plus petits et les tuyauteries de plus faible diamètre — mais avec des épaisseurs de paroi bien plus fortes, pour tenir la pression. Une centrale au R 744 ne ressemble donc pas à une centrale HFC de même puissance : les tubes sont plus fins et les raccords plus massifs. Et une conséquence pratique à retenir : un litre de fluide en fuite représente davantage de froid perdu qu'avec un fluide de synthèse.",
       short: "Petits tubes",
       kicker: "Une conséquence visible",
       title: "Beaucoup de froid dans peu de volume",
@@ -298,6 +306,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "cloche",
+      narration: "Sur un diagramme pression-enthalpie, la cloche délimite la zone où liquide et vapeur coexistent : à sa gauche le liquide, à sa droite la vapeur, en dessous le mélange des deux. Son sommet est le point critique — et pour le dioxyde de carbone, ce sommet est à soixante-treize virgule huit bar seulement. Tant qu'on reste sous ce sommet, le palier de changement d'état est horizontal, exactement comme vous en avez l'habitude. Au-dessus, la cloche n'existe plus : le fluide ne change plus d'état. Une précision : le tracé montré ici sert à comprendre la forme. Pour relever des valeurs, utilisez un diagramme R 744 officiel ou un logiciel de propriétés du fluide.",
       short: "La cloche",
       kicker: "Sur le diagramme log p/h",
       title: "Le sommet de la cloche est très bas",
@@ -313,6 +322,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "ce-qui-disparait",
+      narration: "Au-dessus du point critique, quatre repères de métier cessent d'exister — et ce ne sont pas des détails de théorie, ce sont exactement les repères sur lesquels vous travaillez tous les jours. Plus de palier de changement d'état : il n'y a plus de condensation. Plus de relation pression-température : lire la haute pression ne donne plus une température. Le condenseur devient un refroidisseur de gaz, qu'on appelle aussi gas cooler. Et plus de sous-refroidissement à mesurer côté haute pression. Conséquence directe pour votre pratique : la réglette pression-température devient inutile de ce côté. Chercher quand même une température de condensation conduit à un faux diagnostic, et à des heures perdues.",
       short: "Ce qui disparaît",
       kicker: "Au-dessus du point critique",
       title: "Quatre repères de métier cessent d'exister",
@@ -334,6 +344,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "gas-cooler",
+      narration: "Un refroidisseur de gaz n'est pas un condenseur. Le composant y ressemble, il se pose au même endroit dans le circuit, mais il ne fait pas le même travail : le fluide y perd de la chaleur sans jamais changer d'état. Ce qu'on surveille n'est donc plus une température de condensation, mais la température de sortie, avec la haute pression. Et plus l'air extérieur est frais, plus cette sortie est froide, et meilleure est l'installation. Un point qui aide à comprendre : en hiver, le même échangeur condense vraiment — il redevient un condenseur. C'est le régime de fonctionnement qui décide du nom, pas la pièce elle-même.",
       short: "Gas cooler",
       kicker: "Le mot juste",
       title: "Un refroidisseur de gaz n'est pas un condenseur",
@@ -354,6 +365,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "point-triple",
+      narration: "Le point triple est le piège symétrique du point critique, et il ne se rencontre pas en fonctionnement normal — il se rencontre pendant vos interventions. Sous cinq virgule dix-huit bar, le dioxyde de carbone liquide n'existe pas : il se forme du solide à moins soixante-dix-huit virgule cinq degrés. Cette neige carbonique bouche le circuit, bloque une vanne, et fausse l'opération en cours. Le risque apparaît au tirage au vide et lors d'une dépressurisation trop rapide. D'où la règle : on dépressurise lentement. Une ouverture brutale fait chuter la pression sous le point triple et fabrique de la glace carbonique dans la tuyauterie ; la procédure du constructeur fixe le débit et les paliers.",
       short: "Point triple",
       kicker: "L'autre extrémité",
       title: "Sous 5,18 bar, il se forme de la neige carbonique",
@@ -428,6 +440,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "trois-etats",
+      narration: "Le point critique ferme la courbe de saturation par le haut ; le point triple la ferme par le bas — moins cinquante-six virgule six degrés et cinq virgule dix-huit bar. C'est le seul couple pression-température où les trois états du dioxyde de carbone existent en même temps. Au-dessus de cinq virgule dix-huit bar : liquide et vapeur, la relation pression-température fonctionne normalement. En dessous : le liquide n'existe plus du tout, il ne reste que du solide et de la vapeur. Et ce solide ne fond pas, il se sublime — il passe directement à l'état vapeur. Ce n'est pas une curiosité de laboratoire : cinq virgule dix-huit bar, c'est une pression qu'on traverse à chaque mise en service et à chaque récupération.",
       short: "Trois états",
       kicker: "L'autre extrémité de la courbe",
       title: "Le seul point où solide, liquide et vapeur coexistent",
@@ -443,6 +456,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "neige",
+      narration: "Détendre du R 744 liquide vers une pression inférieure au point triple ne donne pas de la vapeur : cela donne du solide à moins soixante-dix-huit degrés, dans le tuyau même où la détente se produit. Ce bouchon se forme là où la pression chute — flexible de charge, filtre, détendeur, siège de vanne. Et il ne fond pas : il se sublime. Il faut réchauffer doucement et attendre. Sachez reconnaître le symptôme : une vanne prise dans la glace carbonique donne exactement la sensation d'une vanne grippée. Ne forcez jamais — forcer sur un organe bloqué par de la glace casse l'organe, pas le bouchon. Et réchauffer une partie de circuit encore sous pression ne s'improvise pas : c'est la procédure du constructeur qui dit comment.",
       short: "Neige carbonique",
       kicker: "Ce qui se forme, et ce que ça bloque",
       title: "Sous 5,18 bar, le liquide se transforme en neige carbonique",
@@ -459,6 +473,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "premiere-charge",
+      narration: "Voici l'application la plus importante de tout ce chapitre. Après un tirage au vide, il reste quelques millibars dans l'installation — donc très en dessous du point triple. Y envoyer directement du R 744 liquide, c'est le détendre sous cinq virgule dix-huit bar : il se solidifie dans le tuyau de charge avant même d'entrer dans la machine. La charge commence donc en phase gazeuse, et seulement en phase gazeuse. On monte la pression du circuit jusqu'à dépasser franchement le point triple, et c'est seulement ensuite qu'on peut passer en phase liquide pour finir. Le même raisonnement vaut après toute intervention qui a vidé une partie du circuit. Le seuil physique est cinq virgule dix-huit bar, mais en pratique on monte plus haut avant de basculer, avec une marge : la valeur à atteindre vient de la procédure du constructeur.",
       short: "Première charge",
       kicker: "Le piège de la mise en service",
       title: "Un circuit qui vient d'être tiré au vide est très en dessous du point triple",
@@ -476,6 +491,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "double-vanne",
+      narration: "Une bouteille de R 744 porte deux prises : une en phase gazeuse, une en phase liquide. Se tromper de prise au moment de la première charge, c'est exactement envoyer du liquide dans un circuit vide — avec le résultat qu'on vient de voir. Première charge : prise en phase gazeuse, bouteille debout. Fin de charge : prise en phase liquide, selon la procédure et le mode de pesée. Le marquage des prises et le sens de la bouteille se lisent avant de raccorder, pas après. Le référentiel porte exactement là-dessus, aux codes treize point zéro trois et treize point onze : les exigences des cylindres et des doubles vannes, et la charge du système en R 744 à l'état gazeux.",
       short: "Double vanne",
       kicker: "Sur la bouteille",
       title: "Deux prises, et une seule est bonne au démarrage",
@@ -492,6 +508,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "autre-sens",
+      narration: "Le même piège existe dans l'autre sens, quand la pression descend. Tout ce qui fait chuter la pression sous cinq virgule dix-huit bar alors qu'il reste du liquide dans le circuit fabrique du solide. La récupération et la dépressurisation sont donc les deux autres moments à risque, au même titre que la charge. Retenez la symétrie : à la montée comme à la descente, on traverse le point triple, et on le traverse lentement, par paliers, selon la procédure. C'est la même précaution, appliquée dans les deux sens.",
       short: "Dans l'autre sens",
       kicker: "À la récupération",
       title: "Le même piège quand la pression descend",
@@ -576,6 +593,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "trace",
+      narration: "Tant que la haute pression reste sous soixante-treize virgule huit bar, le cycle du dioxyde de carbone se lit exactement comme celui d'un fluide de synthèse : compression, condensation, détente, évaporation. Le palier de condensation est horizontal, la température y reste constante. On mesure un vrai sous-refroidissement, en général de quatre à huit kelvins, et une vraie surchauffe en sortie d'évaporateur, de cinq à dix kelvins. C'est le régime que vous rencontrerez en hiver et à la mi-saison. L'exemple tracé prend une évaporation à moins dix degrés et une condensation à vingt-cinq degrés, soit environ soixante-quatre bar à la haute pression — des valeurs d'illustration, les vôtres viennent de la machine.",
       short: "Le tracé",
       kicker: "Régime d'hiver et de mi-saison",
       title: "Tant qu'on reste sous le point critique, il y a une vraie condensation",
@@ -591,6 +609,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "familier",
+      narration: "En régime subcritique, toutes vos mesures habituelles gardent leur sens. La réglette pression-température du R 744 s'utilise des deux côtés. La surchauffe se calcule comme toujours : température mesurée en sortie d'évaporateur moins température de saturation lue à la basse pression. Le sous-refroidissement de même, à la haute pression. Et les défauts se lisent de la même façon qu'ailleurs : manque de charge, encrassement, détendeur mal réglé. Une seule condition, mais elle est absolue : la réglette doit être celle du R 744. Chaque fluide a sa propre relation pression-température ; une réglette R 404 A appliquée au dioxyde de carbone donne des valeurs fausses.",
       short: "Ce qui reste",
       kicker: "Vos réflexes fonctionnent",
       title: "Les mesures habituelles gardent leur sens",
@@ -611,6 +630,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "change-deja",
+      narration: "Le cycle a la même forme, mais il ne se déroule pas du tout aux mêmes pressions — c'est le premier écart avec les habitudes prises sur un R 404 A. Pour les mêmes températures, les pressions du R 744 valent cinq à six fois celles d'un R 404 A. Et la cloche est étroite : près du point critique, la chaleur latente du dioxyde de carbone devient faible. Retenez cette dernière remarque, elle prépare la suite : une cloche étroite signifie qu'une détente produit beaucoup de vapeur, et on le paiera en régime transcritique. Conséquence immédiate pour vous : ne transposez jamais un réglage. Une consigne de haute pression, un tarage de soupape ou une valeur de pressostat pris sur une machine à fluide de synthèse n'ont aucun sens ici.",
       short: "Ce qui change",
       kicker: "Même en subcritique",
       title: "Les pressions sont cinq à six fois plus hautes",
@@ -672,6 +692,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "trace-trans",
+      narration: "Au-dessus de soixante-treize virgule huit bar, le point de fin de compression passe au-dessus du sommet de la cloche. Le fluide se refroidit ensuite en restant dans le même état : il n'y a plus de condensation du tout. La ligne de refroidissement reste horizontale en pression, mais elle ne traverse plus la cloche — le fluide perd seulement de l'enthalpie, sans changer d'état. Et voici la conséquence qui compte : le point de fin de détente tombe haut dans la cloche, donc avec beaucoup de vapeur. L'exemple tracé prend une évaporation à moins dix degrés, une haute pression à quatre-vingt-dix bar, et une sortie de refroidisseur de gaz à trente-cinq degrés.",
       short: "Le tracé",
       kicker: "Régime d'été",
       title: "Au-dessus de 73,8 bar, le refoulement sort de la cloche",
@@ -687,6 +708,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "consequences",
+      narration: "Quatre conséquences directes pour l'intervenant, et ce ne sont pas des conséquences théoriques : elles changent vos gestes de mesure. La haute pression ne se lit plus comme une température de condensation. On relève la température de sortie du refroidisseur de gaz, à la place du sous-refroidissement. La haute pression devient un paramètre à régler, et non plus une conséquence subie. Et il y a beaucoup de vapeur de détente à gérer. Attention au faux diagnostic classique : vouloir faire baisser la haute pression comme sur une machine à fluide de synthèse. En transcritique, une haute pression trop basse effondre la production de froid — c'est le sujet du chapitre suivant.",
       short: "Conséquences",
       kicker: "Sur le chantier",
       title: "Quatre conséquences directes pour l'intervenant",
@@ -708,6 +730,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "flash",
+      narration: "Parlons de cette vapeur de détente, ce qu'on appelle le flash gas. La cloche du dioxyde de carbone est étroite : quand on détend depuis la haute pression, une part importante du fluide se vaporise immédiatement. Sur l'exemple tracé, le titre de vapeur en fin de détente dépasse zéro virgule quarante — autrement dit, plus de quarante pour cent du débit masse entre dans l'évaporateur déjà à l'état vapeur. Or cette vapeur ne produit aucun froid : elle occupe de la place, elle provoque des pertes de charge, et il faut quand même la comprimer. C'est exactement le problème que résout l'architecture de la centrale : bouteille flash, dérivation de gaz de détente et éjecteur n'existent que pour traiter cette vapeur.",
       short: "Flash gas",
       kicker: "Ce que produit la détente",
       title: "Une grande partie du débit arrive en vapeur à l'évaporateur",
@@ -724,6 +747,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "mesures",
+      narration: "Sur une machine transcritique, un relevé complet ne comporte pas les mêmes lignes que sur une machine à fluide de synthèse. La basse pression et les surchauffes des évaporateurs restent inchangées. S'y ajoutent la haute pression réelle, et surtout la consigne de haute pression affichée par le régulateur. Puis la température de sortie du refroidisseur de gaz, et celle de l'air extérieur. Et enfin la pression et le niveau de la bouteille intermédiaire, quand la centrale en possède une. Retenez ceci : sans la consigne, le relevé ne veut rien dire. Une haute pression n'est ni bonne ni mauvaise en soi — elle se juge par rapport à la consigne que le régulateur a calculée pour la température du moment.",
       short: "Mesurer",
       kicker: "La méthode",
       title: "Ce qu'on relève, et dans quel ordre",
@@ -809,6 +833,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "pourquoi-optimum",
+      narration: "En transcritique, la haute pression devient un arbitrage. L'augmenter fait travailler davantage le compresseur — c'est un coût. Mais cela refroidit mieux le fluide et augmente l'effet frigorifique — c'est un gain. Trop bas, le fluide entre chaud dans la détente et l'effet frigorifique s'effondre. Trop haut, le compresseur consomme pour rien. Entre les deux existe une pression qui donne le meilleur coefficient de performance. Voilà ce qui rend le dioxyde de carbone particulier : sur une machine à fluide de synthèse, la haute pression est une conséquence de la condensation. Ici, c'est une consigne — quelqu'un doit la choisir, et c'est le régulateur qui le fait.",
       short: "L'optimum",
       kicker: "Deux effets contraires",
       title: "Monter la HP coûte du travail, mais rapporte du froid",
@@ -824,6 +849,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "lire-courbe",
+      narration: "Le régulateur ne choisit pas une valeur une fois pour toutes : il recalcule la consigne en permanence, à partir de la température de sortie du refroidisseur de gaz. Chaque température de sortie a sa propre pression optimale, et chaque courbe passe par un maximum. Plus il fait chaud, plus ce maximum se décale vers les hautes pressions, et plus le coefficient de performance baisse. Une nuance à connaître : sur les relevés publiés, la puissance frigorifique continue de monter un peu après que le rendement a atteint son sommet. Il y a donc deux maximums, et ils ne sont pas au même endroit — monter au-delà de l'optimum de rendement gagne un peu de froid en consommant beaucoup plus.",
       short: "Lire",
       kicker: "Sur le graphique",
       title: "Chaque température de sortie a sa propre pression optimale",
@@ -846,6 +872,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "detendeur-hp",
+      narration: "Voici une confusion fréquente, et elle conduit à dérégler une machine qui fonctionnait bien. Le détendeur haute pression fixe la haute pression : il contrôle la pression en amont, c'est son rôle. Les détendeurs des évaporateurs, eux, règlent la surchauffe de leur meuble. Ce sont deux organes différents, avec deux consignes différentes, et ils ne se remplacent pas. L'erreur à ne jamais commettre sur une machine transcritique : faire baisser la haute pression par réflexe, comme sur une installation à fluide de synthèse. Trop bas, l'effet frigorifique s'effondre — vous obtiendrez l'inverse de ce que vous cherchiez.",
       short: "Détendeur HP",
       kicker: "Le bon rôle du bon organe",
       title: "Le détendeur haute pression fixe la HP, il ne règle pas la surchauffe",
@@ -866,6 +893,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "energie",
+      narration: "Puisque la pression optimale dépend de la température de sortie, tout ce qui dégrade l'échange haute pression fait monter la consigne et chuter le rendement. Un refroidisseur de gaz encrassé, c'est une sortie plus chaude, donc une consigne plus haute, donc une consommation qui grimpe. Un ventilateur en défaut produit exactement le même effet, sans aucune alarme visible côté froid — la machine continue de produire, elle coûte simplement beaucoup plus cher. Nettoyer l'échangeur et vérifier les ventilateurs fait donc partie du maintien du rendement, pas seulement de l'entretien de propreté. Sur une machine à haute pression, ce geste a un effet direct et mesurable sur la facture.",
       short: "Énergie",
       kicker: "Ce qui se joue à l'entretien",
       title: "Un refroidisseur de gaz encrassé coûte immédiatement du COP",
@@ -930,6 +958,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "risque-pression",
+      narration: "Le R 744 est classé A1 : il ne brûle pas et n'est pas toxique au sens de la classification. Le premier danger est donc purement mécanique — c'est la pression, jusqu'à cent vingt bar côté haute pression. Conséquence directe sur votre matériel : manifold, flexibles et manomètres doivent être prévus pour le dioxyde de carbone. Un manifold pour fluide de synthèse n'est pas adapté, et un raccord ou un flexible non prévu pour la pression de service peut éclater. La vérification est simple et elle se fait avant de brancher : contrôlez le marquage de pression de chaque élément de votre kit de mesure. Un flexible marqué pour du R 404 A n'a rien à faire sur une machine au dioxyde de carbone.",
       short: "Pression",
       kicker: "Premier risque",
       title: "La pression, jusqu'à 120 bar côté haute pression",
@@ -950,6 +979,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "risque-asphyxie",
+      narration: "Voici le risque qui tue, et il n'a rien à voir avec la pression. Le dioxyde de carbone est plus lourd que l'air : il s'accumule en point bas. Une fuite dans un local technique enterré, une cave ou une fosse remplit le volume par le bas — exactement là où se trouve l'intervenant. Trois exigences en découlent : détection de dioxyde de carbone et ventilation du local selon la norme NF EN 378 ; ne jamais intervenir seul dans un local machine confiné ; et vérifier avant d'entrer que la détection est en service et que l'alarme n'est pas déjà déclenchée. Un point à graver : un masque à cartouche ne protège de rien ici. Il ne filtre pas le dioxyde de carbone et ne fabrique pas d'oxygène. Face à une atmosphère appauvrie, seules l'évacuation et la ventilation comptent.",
       short: "Asphyxie",
       kicker: "Deuxième risque",
       title: "Le CO₂ est plus lourd que l'air et s'accumule en point bas",
@@ -966,6 +996,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "protection-locale",
+      narration: "Face à une atmosphère qui peut devenir irrespirable, ce qui protège vient d'abord de l'installation du local, pas de ce qu'on porte sur soi. La détection fixe se place en partie basse, là où le gaz s'accumule : un capteur en hauteur voit l'alerte trop tard. L'alarme doit être sonore et lumineuse, à l'intérieur et à l'extérieur du local — pour empêcher quelqu'un d'entrer. La ventilation est commandée par cette détection. Et l'organisation vient ensuite : jamais seul, et quelqu'un qui sait que vous êtes là. Vous reconnaissez le principe des neuf principes de prévention : la protection collective passe devant l'individuelle, parce qu'elle protège même celui qui n'y pense pas — y compris le collègue qui viendrait vous chercher.",
       short: "Protéger",
       kicker: "Dans quel ordre",
       title: "On protège d'abord le local, ensuite soi-même",
@@ -983,6 +1014,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "risque-froid",
+      narration: "Toute détente à l'air libre — une purge, l'ouverture d'un raccord, une soupape qui lâche — fabrique du solide à moins soixante-dix-huit degrés. Deux dangers en même temps. La brûlure cryogénique, immédiate au contact : gants adaptés et lunettes systématiques. Et la neige carbonique qui peut boucher un circuit ou bloquer une vanne. À quoi s'ajoute un troisième effet : en sublimant, cette neige libère un volume de gaz important dans le local, donc elle fait monter la teneur en dioxyde de carbone de l'air que vous respirez. Une purge à l'air libre expose donc à la brûlure et à l'asphyxie à la fois. Elle ne se fait jamais « pour voir ».",
       short: "Froid extrême",
       kicker: "Troisième risque",
       title: "À l'air libre, le CO₂ produit de la neige carbonique à −78,5 °C",
@@ -999,6 +1031,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "bouteilles",
+      narration: "Une bouteille de R 744 ne se manipule pas comme une bouteille de fluide de synthèse. L'étiquetage du fluide est exigé sur les récipients et sur les parties de l'installation qui en contiennent. Les bouteilles à double vanne portent une prise en phase liquide et une en phase gazeuse — vous avez vu au chapitre du point triple pourquoi cette distinction est vitale. Et la charge se fait en phase gazeuse tant que le circuit est sous le point triple. Le référentiel porte exactement là-dessus, aux codes treize point zéro un et treize point zéro trois : prescriptions d'étiquetage, exigences des cylindres et des doubles vannes, extraction des gaz.",
       short: "Bouteilles",
       kicker: "Récipients et étiquetage",
       title: "Une bouteille de R744 ne se manipule pas comme une bouteille de HFC",
@@ -1016,6 +1049,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "arret-securite",
+      narration: "Reprenons ce qui se passe à l'arrêt. La pression remonte à la pression de saturation correspondant à la température du local — environ cinquante-sept bar à vingt degrés. Beaucoup de centrales portent un petit groupe de maintien qui empêche cette pression d'atteindre le tarage des soupapes, et il fonctionne même centrale arrêtée. Mais en cas de coupure de courant prolongée, ce groupe s'arrête lui aussi : la pression monte, et la soupape peut lâcher du fluide. C'est prévu, mais cela veut dire que du dioxyde de carbone a pu s'accumuler en partie basse pendant l'arrêt. Après une coupure longue, n'entrez donc pas dans le local machine sans avoir vérifié la ventilation et la détection.",
       short: "À l'arrêt",
       kicker: "Machine éteinte",
       title: "Le groupe de maintien, et ce qui se passe sans lui",
@@ -1036,6 +1070,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "categorie-b",
+      narration: "Un dernier point, réglementaire celui-là. Le régime F-Gaz trois a réorganisé les attestations d'aptitude, et le dioxyde de carbone n'est plus traité au milieu des gaz fluorés : il a sa propre catégorie, la catégorie B, qui couvre toutes les activités de l'article quatre pour le R 744. Elle s'appuie sur un groupe de compétences dédié, le groupe treize, évalué seulement dans cette catégorie. Attention à une confusion fréquente : la catégorie D ne couvre que la récupération des gaz à effet de serre fluorés — donc pas le dioxyde de carbone. La source est l'arrêté du vingt et un novembre deux mille vingt-cinq, annexe deux, qui remplace le régime de deux mille seize, lequel ne connaissait pas de catégorie propre au R 744.",
       short: "Catégorie B",
       kicker: "Le cadre réglementaire",
       title: "Le R744 relève d'une catégorie d'attestation qui lui est propre",
@@ -1133,6 +1168,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "architecture",
+      narration: "Voici l'architecture la plus répandue en grande distribution. Une seule centrale sert à la fois le froid négatif et le froid positif, avec un seul circuit de fluide. Le principe : les compresseurs basse température ne refoulent pas vers la haute pression — ils refoulent dans l'aspiration des compresseurs moyenne température. Ceux-ci, à leur tour, refoulent vers le refroidisseur de gaz. Et entre les deux niveaux, la bouteille flash sépare le liquide de la vapeur de détente. Avant toute intervention, lisez le schéma de tuyauterie et d'instrumentation de la centrale : c'est lui qui dit où sont les vannes d'isolement et les soupapes.",
       short: "L'architecture",
       kicker: "Ce que vous rencontrerez",
       title: "Deux niveaux de froid, une seule haute pression",
@@ -1148,6 +1184,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "bouteille-flash",
+      narration: "Pourquoi une bouteille intermédiaire ? Parce que la détente depuis la haute pression produit beaucoup de vapeur — vous l'avez vu, plus de quarante pour cent du débit. Envoyer ce mélange directement dans les meubles reviendrait à leur faire véhiculer une vapeur qui ne refroidit rien. La bouteille reçoit donc le mélange sortant du détendeur haute pression : seul le liquide part vers les détendeurs des meubles, tandis que la vapeur reste en partie haute, en attente d'être reprise. Cette bouteille travaille à une pression intermédiaire, entre la haute pression et l'aspiration moyenne température — c'est un troisième niveau de pression à connaître sur ces machines.",
       short: "Bouteille flash",
       kicker: "Premier organe",
       title: "Pourquoi une bouteille intermédiaire",
@@ -1168,6 +1205,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "bypass",
+      narration: "Cette vapeur séparée doit bien repartir quelque part. Une vanne, appelée vanne de gaz de détente, la renvoie directement à l'aspiration moyenne température, sans passer par les évaporateurs. Elle court-circuite les meubles, et c'est exactement ce qu'il faut : cette vapeur n'a rien à y faire, elle n'y produirait aucun froid et encombrerait le passage. Cette même vanne remplit un second rôle : elle règle la pression de la bouteille intermédiaire. Un seul organe, deux fonctions — et c'est pour cela qu'un défaut sur cette vanne se manifeste à la fois côté pression intermédiaire et côté aspiration.",
       short: "Gaz de détente",
       kicker: "Deuxième organe",
       title: "La vapeur retourne directement à l'aspiration",
@@ -1182,6 +1220,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "deux-etages",
+      narration: "Pourquoi parle-t-on de booster ? Parce que les compresseurs du froid négatif ne remontent pas seuls jusqu'à la haute pression : ils refoulent dans l'aspiration du froid positif, qui prend le relais. Imaginez l'inverse : un seul étage devrait comprimer depuis moins trente degrés jusqu'à quatre-vingt-dix bar — le taux de compression serait énorme, avec des températures de refoulement impossibles. En deux étages, chaque compresseur travaille dans une plage raisonnable. Conséquence pratique à retenir pour le diagnostic : un défaut sur l'étage moyenne température affecte immédiatement l'étage basse température, qui refoule dans son aspiration.",
       short: "Booster",
       kicker: "Troisième organe",
       title: "Pourquoi on dit « booster »",
@@ -1249,6 +1288,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "double-vue",
+      narration: "Suivons trois particules qui partent ensemble et se séparent à la bouteille flash. Le débit qui sort du refoulement moyenne température se divise en trois : du liquide vers les meubles positifs, du liquide vers les meubles négatifs, et de la vapeur de détente. Le même trajet se lit de deux façons — dans la centrale, et sur le diagramme pression-enthalpie. Un point de lecture important : la couleur suit l'état du fluide, pas son chemin — chaud et comprimé, liquide sous pression, en évaporation, ou vapeur de détente. L'exemple suivi prend une basse température à moins trente-deux degrés, une moyenne température à moins huit, une pression intermédiaire de trente-huit bar et une haute pression de quatre-vingt-dix bar.",
       short: "Les deux vues",
       kicker: "La synthèse de la ligne",
       title: "Trois particules partent ensemble et se séparent à la bouteille",
@@ -1265,6 +1305,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "separation",
+      narration: "Voici le point le plus important de tout le tracé. Après le détendeur haute pression, le fluide arrive en plein milieu de la cloche : sur cet exemple, près de quarante pour cent du débit masse est déjà de la vapeur. La bouteille sépare alors les deux : la vapeur part d'un côté, sans produire le moindre froid, et le liquide part de l'autre, vers les deux niveaux de température. Et voilà pourquoi ce point décide de tout : plus le fluide entre chaud dans la détente, plus il y a de vapeur inutile à recomprimer. C'est le lien direct entre la température de sortie du refroidisseur de gaz et le rendement de toute la centrale.",
       short: "La séparation",
       kicker: "Le point B du diagramme",
       title: "La détente haute pression amène le fluide en plein milieu de la cloche",
@@ -1280,6 +1321,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "melange-mt",
+      narration: "Le point d'aspiration réel du compresseur moyenne température n'est pas la sortie des évaporateurs : c'est un mélange de trois débits. La vapeur des évaporateurs moyenne température. Le refoulement des compresseurs basse température. Et la vapeur de détente venant de la bouteille. Ces trois flux se rejoignent avant l'aspiration, et le mélange est plus chaud que chacun d'eux pris séparément. C'est ce qui explique les températures de refoulement élevées qu'on relève sur les machines au R 744 — et pourquoi une aspiration plus chaude qu'attendu n'est pas forcément un défaut sur cette architecture.",
       short: "Le mélange",
       kicker: "À l'aspiration moyenne température",
       title: "Trois débits se rejoignent avant le compresseur",
@@ -1296,6 +1338,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "exercice",
+      narration: "Ce même tracé sert de support d'exercice en section supérieure. On relève les enthalpies aux différents points sur un diagramme officiel, on calcule le titre de vapeur après la détente haute pression, puis le débit dérivé en vapeur de détente. On en déduit la puissance frigorifique de chaque niveau de température, et le coefficient de performance de l'ensemble. Une précision honnête : le tracé montré ici est schématique, il sert à comprendre la forme du cycle, pas à relever des valeurs. Tout calcul se fait sur un diagramme R 744 officiel ou avec un logiciel de propriétés du fluide.",
       short: "Exercice",
       kicker: "TP BE CVC",
       title: "Ce qui se calcule à partir de ce tracé",
@@ -1370,6 +1413,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "cinq-familles",
+      narration: "Les architectures au dioxyde de carbone se différencient sur deux points seulement : la façon d'étager la compression, et ce qu'elles font de la vapeur de détente. Quatre familles. La cascade : le fluide ne travaille qu'en subcritique, condensé par un circuit d'ammoniac ou de fluide de synthèse. Le booster simple : compression étagée sur un seul fluide, c'est le standard en supermarché. Le booster avec compression parallèle : un compresseur dédié reprend la vapeur de la bouteille. Et l'éjecteur, qui la remonte autrement. Chacune a son terrain : la cascade en entrepôt frigorifique et en agroalimentaire pour les fortes puissances négatives, le booster en grande distribution.",
       short: "Quatre familles",
       kicker: "« Centrale CO₂ » ne veut pas dire grand-chose",
       title: "Ce qui distingue une architecture d'une autre",
@@ -1394,6 +1438,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "cascade",
+      narration: "En cascade, le dioxyde de carbone ne dépasse jamais son point critique. Un circuit haut, à l'ammoniac ou au fluide de synthèse, le condense dans un échangeur — il reste donc toujours sous la cloche. Conséquence : il n'y a ni refroidisseur de gaz, ni haute pression à réguler. Tout ce que vous avez appris sur le régime transcritique ne s'applique pas à cette famille. En revanche, la pression à l'arrêt et le risque d'asphyxie restent strictement identiques — ce sont des propriétés du fluide, pas du cycle. Ne confondez donc pas les deux mondes : sur une cascade, chercher une consigne de haute pression optimale n'a aucun sens, il n'y en a pas.",
       short: "Cascade",
       kicker: "La famille à part",
       title: "En cascade, le CO₂ ne dépasse jamais son point critique",
@@ -1414,6 +1459,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "ou-part-le-flash",
+      narration: "Entre les trois architectures transcritiques, tout le reste est identique : seule change la destination de la vapeur sortie de la bouteille. Booster simple : une vanne la détend jusqu'à l'aspiration moyenne température, autour de vingt-huit bar. Compression parallèle : un compresseur l'aspire directement à trente-huit bar et la refoule vers la haute pression. Éjecteur : la détente du fluide moteur la remonte. Pourquoi la compression parallèle fait-elle gagner ? Parce qu'elle supprime la détente de trente-huit à vingt-huit bar, et donc le travail de recompression qui allait avec. On ne détend plus pour recomprimer ensuite.",
       short: "Trois réponses",
       kicker: "La seule vraie différence",
       title: "Où part la vapeur de détente : trois réponses possibles",
@@ -1429,6 +1475,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "adiabatique",
+      narration: "Le refroidissement adiabatique n'est pas une architecture : c'est un système ajouté sur le refroidisseur de gaz — ou sur le condenseur en subcritique — qui pulvérise de l'eau pour refroidir l'air entrant. Le circuit frigorifique, lui, n'est pas modifié : ni organe en plus, ni étage en plus. Il se pose aussi bien sur une cascade que sur un booster ou une centrale à éjecteurs. Son effet se voit en période chaude, quand l'air extérieur limite l'échange. Retenez la distinction : cascade, booster, compression parallèle et éjecteur répondent à la question « que fait-on de la vapeur de détente ». L'adiabatique, lui, répond à « comment refroidir l'air ». Deux questions différentes.",
       short: "L'adiabatique",
       kicker: "Un complément, pas une famille",
       title: "Le refroidissement adiabatique ne change pas le circuit : il refroidit l'air",
@@ -1509,6 +1556,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "technologies",
+      narration: "Toutes les technologies de compresseur ne tiennent pas les pressions du dioxyde de carbone, et toutes ne couvrent pas les mêmes puissances. Le piston semi-hermétique domine le transcritique, pour sa tenue en pression et sa gamme de puissance. Le scroll se rencontre plutôt sur les petites puissances et les applications subcritiques. La vis équipe les fortes puissances, surtout en cascade et en subcritique. Une réserve avant d'affirmer quoi que ce soit sur une machine : la disponibilité réelle dépend de la gamme du constructeur, et le catalogue fait foi — pas une règle générale apprise en formation.",
       short: "Technologies",
       kicker: "Ce qu'on rencontre",
       title: "Le piston semi-hermétique domine le transcritique",
@@ -1530,6 +1578,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "pilotage",
+      narration: "En R 744, la haute pression doit être tenue en permanence. La manière dont on module la puissance des compresseurs fait donc partie du sujet, et pas seulement du confort d'exploitation. Trois solutions. La vitesse fixe, en tout ou rien : plusieurs compresseurs en parallèle mis en service par paliers — simple, mais avec des paliers grossiers et des démarrages fréquents. La variation de fréquence sur un compresseur de tête : réglage fin, moins de démarrages, basse pression plus stable. Et les moteurs à aimants permanents, qui poussent cette logique plus loin. Pourquoi cela compte davantage ici ? Sur une machine à fluide de synthèse, un palier grossier se traduit par du cyclage. Ici, il déstabilise en plus la haute pression.",
       short: "Pilotage",
       kicker: "Comment on module la puissance",
       title: "Vitesse fixe, variateur, ou moteur à aimants permanents",
@@ -1551,6 +1600,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "consequence-entretien",
+      narration: "Un compresseur à variateur ne se contrôle pas comme un compresseur à vitesse fixe, et cela change votre fiche d'intervention. Le relevé doit dire à quelle vitesse tournait la machine, sinon les valeurs mesurées ne veulent rien dire : comparer deux relevés faits à des vitesses différentes n'a aucun sens. Notez donc la fréquence ou le pourcentage de charge au moment du relevé. Et un signe à connaître : un défaut de variateur se manifeste souvent par une basse pression instable, avant tout autre symptôme. Une ligne suffit sur la fiche — quel compresseur tournait, à quelle vitesse, et quelle était la consigne de haute pression au même instant.",
       short: "À l'entretien",
       kicker: "Ce que ça change pour vous",
       title: "Un compresseur à variateur ne se contrôle pas comme un compresseur fixe",
@@ -1624,6 +1674,7 @@ window.__INERWEB_COURSE__ = {
   lessons: [
     {
       id: "principe",
+      narration: "L'éjecteur n'a rien d'un compresseur : c'est un tube profilé, sans aucune pièce mobile. Le fluide moteur haute pression y accélère dans une tuyère, sa pression chute — jusqu'à passer sous la pression d'aspiration. Cette dépression aspire alors la vapeur basse pression par un orifice latéral, et les deux débits se mélangent. Puis, dans le diffuseur, la vitesse se retransforme en pression : le mélange ressort à une pression intermédiaire, plus haute que celle de la vapeur aspirée. Le point clé : c'est la vitesse au col de la tuyère qui crée la dépression. Aucun moteur n'intervient — l'énergie vient du fluide haute pression lui-même, celle qu'on perdait jusqu'ici dans la détente.",
       short: "Le principe",
       kicker: "Ni moteur, ni pièce mobile",
       title: "Une tuyère transforme la pression en vitesse, puis la vitesse en pression",
@@ -1639,6 +1690,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "deux-types",
+      narration: "Deux types d'éjecteurs, même tuyère, deux emplois. L'éjecteur de gaz aspire la vapeur de la bouteille flash : elle remonte à la pression intermédiaire sans passer par le compresseur moyenne température — on économise ce travail de compression. L'éjecteur de liquide, lui, aspire le mélange qui sort des évaporateurs, repris au séparateur basse pression. Ce qu'il permet est remarquable : faire circuler dans l'évaporateur plus de liquide qu'il n'en évapore, sans aucune pompe de circulation. L'échange s'améliore, parce que la surface reste mouillée sur toute sa longueur au lieu de s'assécher en fin de parcours.",
       short: "Deux types",
       kicker: "Ce que le référentiel distingue",
       title: "Éjecteur de gaz, éjecteur de liquide : même tuyère, deux emplois",
@@ -1659,6 +1711,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "sur-le-cycle",
+      narration: "Sur le cycle, l’effet se voit tout de suite : une partie du débit remonte de vingt-huit à trente-huit bar sans passer par aucun compresseur. Ce que l’éjecteur remonte, le compresseur n’a plus à le comprimer. Deux gains se cumulent donc : le compresseur moyenne température voit passer moins de débit, et il comprime sur une plus faible amplitude de pression. Et l’énergie récupérée était auparavant intégralement perdue dans le détendeur haute pression. En pratique, on trouve presque toujours l’éjecteur associé à la compression parallèle : l’éjecteur remplit la bouteille de vapeur, le compresseur parallèle la reprend. Les deux dispositifs se complètent plus qu’ils ne se remplacent.",
       short: "Sur le cycle",
       kicker: "Ce que ça change",
       title: "Une partie du débit remonte de 28 à 38 bar sans compresseur",
@@ -1675,6 +1728,7 @@ window.__INERWEB_COURSE__ = {
     },
     {
       id: "en-pratique",
+      narration: "En pratique, on n’installe presque jamais un éjecteur seul. La raison est simple : le débit à traiter varie beaucoup dans la journée, et un éjecteur ne se règle pas — son taux d’entraînement découle de sa géométrie. On installe donc un bloc de plusieurs éjecteurs, mis en service un par un selon la charge. Côté maintenance, retenez qu’il n’y a aucune pièce mobile dans l’éjecteur lui-même : le contrôle porte sur les vannes de commande et sur les sondes. Une dernière prudence : le gain dépend fortement du point de fonctionnement, important en été et marginal en hiver. Ne citez jamais un pourcentage de gain sans nommer sa source et ses conditions.",
       short: "En pratique",
       kicker: "Sur une centrale réelle",
       title: "Un bloc de plusieurs éjecteurs, ouverts un par un",
