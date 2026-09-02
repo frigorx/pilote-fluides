@@ -59,7 +59,7 @@
     {
       short: "Le besoin",
       kicker: "CHAMBRE FROIDE · ÉTAPE 1",
-      title: "Avant la machine, regarder la chaleur",
+      title: "Avant la machine, regarder la chaleur", narration: "Avant de choisir une machine, il faut savoir ce qu'elle aura à faire. Cela veut dire repérer toute la chaleur qui entre dans la chambre ou qui y est produite. Quatre familles d'apports : ce qui traverse les parois, ce qu'apporte le produit lui-même, ce qu'apporte l'air qui entre, et ce que produisent les équipements et les personnes à l'intérieur. Aucune de ces familles ne se néglige : c'est leur somme qui donnera la puissance nécessaire, et une famille oubliée se paiera par une machine sous-dimensionnée.",
       text: "Avant de choisir la machine, repérez toute la chaleur qui entre ou qui est produite dans la chambre. Sélectionnez les quatre familles d’apports.",
       render: renderHeatSources,
       wire: wireHeatSources
@@ -67,7 +67,7 @@
     {
       short: "W ou kWh",
       kicker: "CHAMBRE FROIDE · ÉTAPE 2",
-      title: "Le watt n’est pas le kilowattheure",
+      title: "Le watt n’est pas le kilowattheure", narration: "Une confusion à lever tout de suite, parce qu'elle fausse toutes les discussions avec un client. La puissance décrit ce qui se passe maintenant : c'est un débit d'énergie, exprimé en watts ou en kilowatts. L'énergie, elle, compte ce qui s'est accumulé pendant une durée, en wattheures ou kilowattheures. Une machine de cinq kilowatts qui tourne deux heures consomme dix kilowattheures. Le watt dimensionne l'installation ; le wattheure remplit la facture. Ce sont deux questions différentes, et on ne répond pas à l'une avec l'unité de l'autre.",
       text: "La puissance décrit ce qui se passe maintenant : c’est un débit d’énergie, en W ou kW. L’énergie compte ce qui s’est accumulé pendant une durée, en Wh ou kWh. Donc E = P × t.",
       render: renderPowerEnergy,
       wire: wirePowerEnergy
@@ -75,7 +75,7 @@
     {
       short: "Parois",
       kicker: "CHAMBRE FROIDE · ÉTAPE 3",
-      title: "La chaleur traverse les parois",
+      title: "La chaleur traverse les parois", narration: "Voyons la chaleur qui traverse les parois. Le calcul se fait couche par couche. Convertissez d'abord l'épaisseur de chaque couche des millimètres vers les mètres — c'est l'erreur d'unité la plus fréquente. Pour chaque couche, divisez cette épaisseur par la conductivité du matériau : vous obtenez sa résistance thermique. Additionnez toutes les couches, ajoutez les résistances d'échange à l'intérieur et à l'extérieur, et vous tenez la résistance totale de la paroi. Plus elle est élevée, moins la chaleur passe.",
       text: "Convertissez d’abord l’épaisseur e de mm en m. Pour chaque couche, calculez R = e ÷ λ. Le signe Σ veut dire « additionner ». Rsi et Rse sont les résistances des surfaces. Enfin U = 1 ÷ R total : plus U est petit, mieux la paroi isole.",
       render: renderTransmission,
       wire: wireTransmission
@@ -83,7 +83,7 @@
     {
       short: "Produits",
       kicker: "CHAMBRE FROIDE · ÉTAPE 4",
-      title: "Le produit apporte aussi sa chaleur",
+      title: "Le produit apporte aussi sa chaleur", narration: "Le produit qu'on entrepose apporte sa propre chaleur, et deux calculs peuvent être nécessaires. Le sensible : refroidir le produit de sa température d'arrivée à sa température de conservation, sans changer son état. Et le latent : si le produit doit être congelé, il faut en plus retirer l'énergie du changement d'état — et celle-là est considérable. Si le produit ne change pas d'état, seul le sensible compte. Vérifiez donc toujours ce qu'on vous demande : refroidir n'est pas congeler, et l'écart de puissance entre les deux est énorme.",
       text: "Deux calculs peuvent être nécessaires. Le sensible refroidit le produit sans changer son état. Le latent retire l’énergie de congélation. Si le produit ne gèle pas, la masse à congeler vaut zéro.",
       render: renderProducts,
       wire: wireProducts
@@ -91,7 +91,7 @@
     {
       short: "Air et usages",
       kicker: "CHAMBRE FROIDE · ÉTAPE 5",
-      title: "Une porte ouverte change le bilan",
+      title: "Une porte ouverte change le bilan", narration: "Une porte qui s'ouvre change le bilan, et souvent plus qu'on ne le croit. L'air extérieur qui entre apporte de la chaleur sensible, et le plus souvent de l'humidité — qui devra être condensée sur l'évaporateur, puis dégivrée. S'ajoutent les personnes qui travaillent dans la chambre, l'éclairage, les moteurs de ventilateurs, et les résistances de dégivrage. Ces derniers postes ont un effet paradoxal : la machine consomme de l'énergie pour retirer la chaleur qu'elle produit elle-même.",
       text: "L’air extérieur apporte de la chaleur sensible et souvent de l’humidité. Les personnes, l’éclairage, les ventilateurs et le dégivrage ajoutent aussi des watts. Ces apports doivent être séparés pour savoir ensuite où agir.",
       render: renderOtherLoads,
       wire: wireOtherLoads
@@ -99,7 +99,7 @@
     {
       short: "Total froid",
       kicker: "CHAMBRE FROIDE · ÉTAPE 6",
-      title: "Additionner, puis tenir compte du temps de marche",
+      title: "Additionner, puis tenir compte du temps de marche", narration: "Une fois tous les apports additionnés, il reste une étape que beaucoup oublient : le temps de marche. Les apports arrivent pendant vingt-quatre heures, mais la machine ne tourne pas vingt-quatre heures — il faut du temps pour les dégivrages, et une marge. Si elle ne dispose que de dix-huit heures pour retirer ce qui est entré en vingt-quatre, elle doit travailler plus vite : on multiplie le bilan moyen par vingt-quatre, et on divise par dix-huit. Sauter cette étape, c'est choisir une machine qui ne rattrapera jamais son retard.",
       text: "Les apports arrivent pendant 24 h. Si la machine ne dispose que de 18 h pour les retirer, elle doit travailler plus vite : puissance = bilan moyen × 24 ÷ 18. Ce facteur de temps n’est pas une marge de sécurité.",
       render: renderColdBalance,
       wire: wireColdBalance
@@ -107,7 +107,7 @@
     {
       short: "Deux saisons",
       kicker: "CLIMATISATION · ÉTAPE 7",
-      title: "En hiver on compense, en été on extrait",
+      title: "En hiver on compense, en été on extrait", narration: "En chauffage et en refroidissement, on ne compte pas la même chose. En hiver, le local perd de la chaleur vers l'extérieur, et la machine compense ces pertes. En été, le local en reçoit — par le bâtiment, par le soleil, par l'air neuf, par les personnes et les appareils — et la machine extrait. Ce sont deux bilans distincts, avec des postes différents, et l'un ne se déduit pas de l'autre. C'est pourquoi une même pièce n'a pas le même besoin selon la saison.",
       text: "En chauffage, le local perd de la chaleur vers l’extérieur. En refroidissement, il en reçoit par le bâtiment, le soleil, l’air neuf, les personnes et les appareils. La même enveloppe est étudiée avec deux conditions de calcul différentes.",
       render: renderTwoSeasons,
       wire: wireTwoSeasons
@@ -115,7 +115,7 @@
     {
       short: "Chauffage",
       kicker: "CLIMATISATION · ÉTAPE 8",
-      title: "Bilan chaud : enveloppe plus air neuf",
+      title: "Bilan chaud : enveloppe plus air neuf", narration: "Le bilan chaud se compose de deux parties. La première concerne l'enveloppe : on additionne, pour toutes les parois, le produit du coefficient de transmission par la surface — ce qu'on note souvent UA. Multiplié par l'écart de température entre l'intérieur et l'extérieur, cela donne les pertes du bâtiment. La seconde partie estime les pertes liées à l'air neuf : l'air qui entre doit être réchauffé, et cela coûte de la puissance. Ces deux postes ensemble donnent le besoin de chauffage.",
       text: "UA signifie ici la somme de U × A pour toutes les parois. La première partie calcule les pertes de l’enveloppe. La seconde estime les pertes sensibles de l’air neuf avec 0,34 et un débit en m³/h.",
       render: renderHeating,
       wire: wireHeating
@@ -123,7 +123,7 @@
     {
       short: "Refroidissement",
       kicker: "CLIMATISATION · ÉTAPE 9",
-      title: "Bilan froid : sensible plus latent",
+      title: "Bilan froid : sensible plus latent", narration: "Le bilan froid se compose lui aussi de deux parties, mais différentes. Le sensible change la température de l'air : c'est ce que vous voyez au thermomètre. Le latent retire de l'eau de cet air : c'est ce que vous voyez aux condensats qui coulent du bac. La batterie froide traite les deux en même temps, et le latent peut représenter une part importante du total — surtout en ambiance humide. Un bilan froid qui ne compte que le sensible sous-estime le besoin réel.",
       text: "Le sensible change la température : on le voit au thermomètre. Le latent retire de l’eau de l’air : on le voit aux condensats. La batterie froide traite les deux, donc la puissance totale est leur somme.",
       render: renderCooling,
       wire: wireCooling
@@ -131,14 +131,14 @@
     {
       short: "Comparer",
       kicker: "CLIMATISATION · ÉTAPE 10",
-      title: "Le même local n’a pas le même besoin toute l’année",
+      title: "Le même local n’a pas le même besoin toute l’année", narration: "Retenez donc ceci : le même local n'a pas le même besoin toute l'année. La puissance de chauffage et la puissance de refroidissement viennent de scénarios distincts, calculés séparément. Et une mise en garde qui vaut pour toute votre carrière : on ne choisit pas une machine sur une règle au mètre carré. Ces règles d'atelier — tant de watts par mètre carré — ne tiennent compte ni de l'isolation, ni de l'orientation, ni des apports internes, ni de l'usage. Elles donnent parfois le bon résultat, et jamais la bonne raison.",
       text: "La puissance de chauffage et la puissance de refroidissement viennent de scénarios distincts. On ne choisit pas la machine sur une règle au mètre carré : on compare les deux bilans, les conditions de base et le fonctionnement attendu.",
       render: renderCompareLoads
     },
     {
       short: "COP et EER",
       kicker: "PERFORMANCE · ÉTAPE 11",
-      title: "À un instant : COP en chaud, EER en froid",
+      title: "À un instant : COP en chaud, EER en froid", narration: "Passons aux performances. À un instant donné, on compare ce que la machine rend à ce qu'elle consomme. En chauffage, ce rapport s'appelle le coefficient de performance : chaleur fournie divisée par électricité absorbée. En refroidissement, on parle d'efficacité énergétique : chaleur retirée divisée par électricité absorbée. Dans les deux cas, c'est un rapport sans unité, et il est supérieur à un — c'est tout l'intérêt d'une machine thermodynamique : elle déplace plus de chaleur qu'elle ne consomme d'énergie.",
       text: "Dans la convention courante de la climatisation, le COP compare la chaleur fournie à l’électricité absorbée en chauffage. L’EER compare la chaleur retirée à l’électricité absorbée en refroidissement. Dans le métier du froid, l’expression COP frigorifique peut aussi être rencontrée : il faut toujours lire la définition utilisée.",
       render: renderInstantPerformance,
       wire: wireInstantPerformance
@@ -146,7 +146,7 @@
     {
       short: "SCOP et SEER",
       kicker: "PERFORMANCE · ÉTAPE 12",
-      title: "Sur une saison, les conditions changent",
+      title: "Sur une saison, les conditions changent", narration: "Mais un rapport pris à un instant ne décrit pas une année. Sur une saison, les conditions changent : la température extérieure, la charge, les cycles. On utilise donc des indicateurs saisonniers — coefficient de performance saisonnier en chauffage, efficacité saisonnière en refroidissement. Le principe reste le même : ce qui est utile, divisé par ce qui est consommé. Mais la valeur réglementaire se calcule selon une méthode normalisée, avec des conditions définies. Deux machines ne se comparent que sur la même méthode.",
       text: "SCOP = chauffage sur une saison. SEER = refroidissement sur une saison. L’exercice montre le sens du rapport utile ÷ électrique. La valeur réglementaire d’une étiquette vient, elle, d’une méthode d’essai et de calcul normalisée.",
       render: renderSeasonalPerformance,
       wire: wireSeasonalPerformance
@@ -154,7 +154,7 @@
     {
       short: "Consommation",
       kicker: "PERFORMANCE · ÉTAPE 13",
-      title: "De l’énergie utile à l’électricité",
+      title: "De l’énergie utile à l’électricité", narration: "Pour estimer une consommation de projet, on divise le besoin utile par l'indicateur saisonnier. Attention à un piège très fréquent sur les étiquettes : le nombre de kilowattheures par an qui y est imprimé est **déjà** une consommation électrique. Le rediviser par le coefficient de performance serait compter deux fois l'avantage de la machine. Vérifiez toujours ce que représente le chiffre que vous manipulez — utile ou électrique — avant de le mettre dans un calcul.",
       text: "Pour une estimation de projet : électricité = besoin utile ÷ SCOP ou SEER. Attention : le kWh/an imprimé sur l’étiquette est déjà une consommation électrique conventionnelle. Ne le divisez pas une seconde fois.",
       render: renderConsumption,
       wire: wireConsumption
@@ -162,7 +162,7 @@
     {
       short: "Étiquette",
       kicker: "PERFORMANCE · ÉTAPE 14",
-      title: "Lire la vraie étiquette européenne",
+      title: "Lire la vraie étiquette européenne", narration: "L'étiquette énergétique européenne est un document officiel, dont chaque zone a une signification définie. Onze repères y figurent, et ils ne disent pas tous la même chose selon la famille d'appareil : une pompe à chaleur air-air n'affiche pas les mêmes informations qu'un appareil de froid commercial. Prenez l'habitude de la lire par zones plutôt que de retenir la seule lettre : la classe résume, les chiffres détaillent, et c'est dans les chiffres que se trouve ce qui vous permettra de comparer deux offres.",
       text: "La plaque ci-dessous est le visuel officiel de la Commission européenne. Les numéros 1 à 11 repèrent chaque information. Choisissez une famille pour la lire en grand, puis vérifiez toujours la colonne froid, la saison de chauffage et le bruit.",
       render: renderEnergyLabel,
       wire: wireEnergyLabel
@@ -170,7 +170,7 @@
     {
       short: "Le projet",
       kicker: "SYNTHÈSE · ÉTAPE 15",
-      title: "Un résultat doit pouvoir être défendu",
+      title: "Un résultat doit pouvoir être défendu", narration: "Un résultat de calcul ne vaut que par ses entrées. Notez donc systématiquement l'origine de chaque donnée : d'où viennent les dimensions — un plan, un relevé sur site ? Les températures — un cahier des charges, une hypothèse ? Les données produit, les performances constructeur ? Un bilan dont on peut retracer chaque entrée peut être discuté et corrigé. Un bilan sans sources ne peut être ni défendu ni repris, et il faudra tout recommencer à la moindre objection.",
       text: "Le calcul final ne vaut que par ses entrées. Notez l’origine des dimensions, des températures, des données produit et des performances constructeur.",
       render: renderProject,
       wire: wireProject
@@ -178,7 +178,7 @@
     {
       short: "Défi",
       kicker: "DÉFI FINAL · ÉTAPE 16",
-      title: "Du bilan à l’étiquette",
+      title: "Du bilan à l’étiquette", narration: "Le contrôle final passe en revue les unités, les postes du bilan et la lecture des performances. Chaque réponse est expliquée avant de passer à la suivante — l'objectif n'est pas de vous noter, mais de vérifier que la chaîne complète tient : du repérage des apports jusqu'à la lecture de l'étiquette. Si un maillon vous résiste, revenez à l'écran correspondant : ces notions s'appuient les unes sur les autres, et une confusion d'unité au début se propage jusqu'au bout.",
       text: "Dix questions pour vérifier les unités, les postes du bilan et la lecture des performances. Chaque réponse est expliquée avant de passer à la suivante.",
       zoneClass: "quiz-zone",
       render: quizMarkup,
@@ -547,7 +547,7 @@
   function speakCurrent() {
     if(!voiceEnabled)return;
     if(!("speechSynthesis" in window)){ $("#speech-warning").hidden=false; return; }
-    stopSpeech(); const run=++speechRun, utterance=new SpeechSynthesisUtterance(`${lessons[current].title}. ${lessons[current].text}`), voice=chosenVoice();
+    stopSpeech(); const run=++speechRun, utterance=new SpeechSynthesisUtterance(lessons[current].narration || ""), voice=chosenVoice();
     utterance.lang="fr-FR";utterance.rate=rates[rateIndex];utterance.pitch=1;if(voice)utterance.voice=voice;
     utterance.onstart=()=>{if(run===speechRun)setListenState("speaking");};
     utterance.onend=()=>{if(run===speechRun)setListenState("idle");};
