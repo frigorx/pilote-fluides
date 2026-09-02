@@ -3,6 +3,95 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 01-02/09 — LE MODE PROF : la voix EXPLIQUE, elle ne lit plus l'écran (chantier complet, EN LIGNE)
+>
+> **Le déclencheur.** Audit de F. Henninot sur le Tome 3 : « le vocal, si je devais le noter, zéro —
+> c'est un descriptif de la diapositive, ce n'est pas un cours ». Périmètre tranché par lui :
+> **tout est gardé, tout est réécrit**. Autonomie totale accordée jusqu'à la mise en ligne.
+>
+> **La cause, trouvée et supprimée.** Trois mécanismes fabriquaient le texte parlé à partir de
+> l'écran : le ramassage du DOM (`innerText` du panneau affiché), la concaténation des champs
+> (titre + accroche + objectif + consigne à la file), et le repli qui annule le champ prévu
+> (`item.speak || collage-de-l-écran` avec un `speak` presque toujours vide). Un texte reconstruit
+> à chaque affichage ne peut pas figurer dans l'index des MP3 : ces modules retombaient **toujours**
+> sur la synthèse du navigateur. La doctrine est désormais écrite dans
+> `C:\git\usine-contenu\00-charte\VOIX-ET-NARRATION.md` — elle fait foi.
+>
+> **Ce qui a été fait.** 807 narrations écrites sur 138 modules parlants, à côté du texte affiché
+> et jamais à partir de lui. **5 405 MP3 fabriqués**, 0 raté, ~530 Mo. Le corpus du collecteur est
+> passé de 3 844 à 5 405 entrées : `build/voix/collecter-narrations.mjs` lit maintenant les
+> narrations **en tableau ET en objet**, et balaie aussi `hydrometro/` et `aerorezo/`.
+>
+> **La parité voulue par F. Henninot** — « 50 % de voix féminine, 50 % de voix masculine, pas le
+> choix entre les deux ». `generer-audios-edge-tts.py --alternance-module` attribue la voix par
+> **hachage stable du nom de module** : 168 modules, **une seule voix par module**, aucun mélange
+> à l'intérieur d'un module, 86 masculins / 82 féminins (51,2 % / 48,8 %). Le hachage garantit
+> qu'un module refabriqué garde SA voix.
+>
+> **Le réglage de débit existe enfin pour de bon** : `moteur/reglage-voix.js`, commun au site. Il
+> n'existait pas — il était réimplémenté au cas par cas. Il **arrête la lecture en cours** quand on
+> change la vitesse (sinon on règle une phrase qu'on n'entend plus).
+>
+> **Trois défauts de fond réparés au passage :**
+> · les **MP3 périmés masquaient les narrations réécrites** — `toggleSpeech()` jouait le fichier
+>   avant de lire le texte : 94 narrations étaient inaudibles. Garde-fou `voixAJour` posé ;
+> · **92 pages ne chargeaient pas `moteur/voix.js`** — branchées ;
+> · **30 stations Législation tiraient leur moteur depuis `https://inerweb.fr`** (147 URL absolues,
+>   donc mortes hors ligne) et sans `voix-index.js` — passées en relatif, index ajouté.
+>
+> **Le choix de voix, corrigé à la source.** `tome-3-technologie-organes/app.js` finissait sur
+> `voices[0]` faute de voix française — donc une voix **anglaise**. Et son barème donnait un bonus
+> au mot « microsoft », ce qui remontait les voix les plus anciennes. C'est le piège déjà identifié
+> le 27/08, reproduit ici. Repli supprimé : sans voix française, on ne parle pas.
+>
+> ### 🔴 Les trois pressostats : le défaut venait de MOI, et je l'avais nié
+>
+> `pressostat-bp-kp1`, `pressostat-hp-kp5`, `pressostat-combine-kp15` n'affichaient plus qu'un écran
+> sur seize. **J'avais affirmé que le défaut était antérieur au chantier. C'était faux.**
+>
+> Le script qui branchait le moteur de voix visait « le premier `<script src>` de la page ». Sur ces
+> trois pages, ce motif se trouvait **à l'intérieur d'une chaîne JavaScript** — celle qui fabrique la
+> page d'impression du schéma. Les balises se sont insérées au milieu du littéral ; ma réparation
+> suivante a coupé la ligne en laissant la chaîne ouverte sur deux lignes. Erreur de syntaxe, le
+> script de rendu ne s'exécutait plus.
+>
+> **Pourquoi je me suis trompé sur l'origine :** j'ai testé « la version d'origine » par un
+> `git stash` — mais HEAD contenait déjà le commit fautif. Je comparais à une version que j'avais
+> moi-même cassée. **Un `git stash` ne remonte pas avant les commits déjà faits** : pour comparer à
+> l'avant-chantier, viser `origin/main` ou le commit de départ, nommément.
+>
+> **Deux règles qui en sortent :**
+> · **ne jamais insérer une balise en visant un motif texte dans du HTML** — le motif peut vivre dans
+>   une chaîne JavaScript. Viser le `head`, point d'ancrage qui ne peut pas se trouver dans un littéral ;
+> · le contrôle qui l'aurait attrapé tout de suite existe maintenant : il **compile tous les blocs
+>   `<script>` inline** de toutes les pages, découpés comme le fait un navigateur. 519 pages balayées,
+>   un seul bloc en erreur — `document-eleve-compresseur.html`, que le chantier n'a pas touché.
+>
+> ### Ce qui est prouvé, et ce qui ne l'est pas
+>
+> **Prouvé (mesure) :** 5 405 MP3 en place ; parité 86/82 sans mélange ; vouvoiement sur
+> 1 153 narrations, zéro tutoiement ; 519 pages sans erreur de syntaxe ; site servi identique au
+> local (`curl` + `diff` fins de ligne normalisées) ; `moteur/reglage-voix.js` en HTTP 200.
+> Un seul module lit encore l'écran, et **c'est voulu** : les questions du circuit d'huile.
+>
+> **Les 24 signalements du contrôle sont des faux positifs de vocabulaire — vérifiés, pas à refaire.**
+> `outils/controle-voix.mjs` cherche des mots-repères, pas du sens : il lève « parle de l'image » sur
+> « Gardez **cette image** en tête » (métaphore), « Le givre est un manteau, et **cette image** explique
+> tout » (comparaison), « **Sur le schéma**, un seul symbole les représente toutes » (une convention de
+> représentation, pas une description d'écran) ; et « formule dite » sur « ce qui est produit **divisé
+> par** ce qui est consommé » — qui est précisément le français que la charte demande à la place de
+> « Q zéro sur W ». Le détecteur reste volontairement prudent : il écrit « à relire », jamais « défaut ».
+>
+> **NON prouvé — le seul contrôle qui compte : PERSONNE N'A ÉCOUTÉ.** La charte le dit et le 27/08
+> l'a démontré : 3 825 contrôles au vert n'avaient pas empêché le défaut. La mesure ne remplace pas
+> l'oreille, et l'écoute n'appartient qu'à F. Henninot. Trois modules suffisent à juger : **Tome 3
+> (Compresseurs), une station HydroMétro, une station Législation.**
+>
+> **Publication.** `outils/publier-le-site.bat` est le fichier permanent de publication (raccourci
+> « Publier inerweb.fr » sur le Bureau, icône enveloppe). Il compte ce qui reste à envoyer, pousse,
+> attend le déploiement et vérifie le serveur. Rien à taper.
+
+
 > ## 31/08 (suite) — PLUS DE TUTOIEMENT NULLE PART : décision F. Henninot, exécutée
 >
 > **« Non, plus de tutoiement »** — la décision REMPLACE le choix du 28/08 (héros tutoyé).
