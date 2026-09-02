@@ -5,7 +5,7 @@
     title: "Énergie",
     nextHref: "../debit/index.html",
     nextLabel: "Station suivante : Débit",
-    successMessage: "Tu distingues la circulation de l’eau et le transfert d’énergie.",
+    successMessage: "Vous distinguez la circulation de l’eau et le transfert d’énergie.",
     levels: {
       CAP: { name: "CAP · niveau 3", objective: "Suivre l’eau qui transporte la chaleur vers le local.", learn: ["suivre l’eau dans le circuit", "nommer production et émetteur", "montrer où la chaleur arrive"] },
       TP: { name: "Bac pro · niveau 4", objective: "Relier eau et transport de chaleur.", learn: ["repérer réception et cession", "distinguer température et énergie", "expliquer le trajet"] },
@@ -48,7 +48,7 @@
       shell.unlockQuiz();
     } else {
       const bad = expected.findIndex((item, index) => order[index] !== item);
-      feedback.textContent = `Ordre à revoir dès l’étape ${bad + 1}. Demande-toi qui fournit, transporte, transfère et reçoit.`;
+      feedback.textContent = `Ordre à revoir dès l’étape ${bad + 1}. Demandez-vous qui fournit, transporte, transfère et reçoit.`;
       feedback.className = "feedback error";
       shell.setStatus("Chaîne à revoir", "bad");
     }

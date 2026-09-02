@@ -44,6 +44,7 @@ const lines = {
 const stations = {
   boucle: {
     title: "Boucle",
+    narration: "Première station, et c'est la plus importante pour se repérer. Un réseau de chauffage est une boucle fermée : l'eau part de la production, traverse les émetteurs, et revient au même endroit. Le départ et le retour ne sont pas deux installations, ce sont deux morceaux du même circuit. Retenez-le, parce que sur le terrain c'est là que les erreurs commencent : quand vous cherchez un défaut sur une branche, vous devez pouvoir suivre l'eau du départ jusqu'au retour sans perdre le fil. Si la boucle est coupée quelque part, une vanne fermée, un point haut plein d'air, la circulation s'arrête, même avec une pompe en parfait état.",
     kicker: "Se repérer",
     lines: ["P"], x: 75, y: 120, dx: 0, dy: -26, anchor: "middle",
     lead: "L’eau quitte la production, traverse le réseau puis revient. Le départ et le retour appartiennent au même circuit fermé.",
@@ -55,6 +56,7 @@ const stations = {
   },
   energie: {
     title: "Énergie",
+    narration: "Ici, une confusion qui coûte cher, et qu'il vaut mieux régler tout de suite. L'eau ne fabrique pas la chaleur. Elle la transporte. La chaleur est produite ailleurs, par une chaudière ou une pompe à chaleur, puis confiée à l'eau qui la porte jusqu'aux émetteurs. C'est pour ça qu'une eau très chaude ne garantit pas une pièce chaude : s'il n'y a pas de circulation, l'énergie reste sur place. Vous verrez plus loin, à la station Puissance, que la chaleur réellement transportée dépend d'un couple : la quantité d'eau qui circule, et l'écart de température qu'elle perd en route.",
     kicker: "Transporter la chaleur",
     lines: ["P"], x: 200, y: 120, dx: 0, dy: -26, anchor: "middle",
     lead: "L’eau transporte de l’énergie entre la production et les usages. Elle n’est pas elle-même la source de chaleur.",
@@ -66,6 +68,7 @@ const stations = {
   },
   debit: {
     title: "Débit",
+    narration: "Le débit, c'est la quantité d'eau qui passe en un temps donné. On le mesure en mètres cubes par heure ou en litres par minute. Le point délicat, c'est de savoir qui le décide. Beaucoup pensent que c'est la pompe. C'est faux, et c'est la source d'erreurs de réglage classiques. Le débit réel naît d'une rencontre entre deux choses : ce que la pompe est capable de fournir, et ce que le réseau oppose comme résistance. Fermez une vanne, la résistance monte, le débit baisse — pompe inchangée. C'est pour cela qu'après chaque intervention sur le réseau, on remesure : le point de fonctionnement a bougé.",
     kicker: "Correspondance P ↔ E",
     lines: ["P", "E"], x: 340, y: 120, dx: 25, dy: -26, anchor: "start",
     lead: "Le débit indique la quantité d’eau qui traverse une section pendant un temps donné. Il résulte de la pompe et de la résistance du réseau.",
@@ -77,6 +80,7 @@ const stations = {
   },
   "delta-t": {
     title: "Écart ΔT",
+    narration: "L'écart de température, ce qu'on appelle le delta T, compare deux valeurs : ce qui entre et ce qui sort. Il vous dit combien de chaleur l'eau a laissée en chemin. Mais attention, et c'est le piège de cette station : un écart tout seul ne nomme aucune panne. Un écart large peut venir d'un débit trop faible autant que d'une forte demande. Pour qu'il veuille dire quelque chose, il faut deux points de mesure comparables, sur le même émetteur, et une installation stabilisée. Prendre les deux températures pendant que le régime bouge encore, c'est mesurer du vent.",
     kicker: "Comparer deux températures",
     lines: ["P"], x: 500, y: 120, dx: 0, dy: -26, anchor: "middle",
     lead: "Le ΔT hydraulique compare la température de départ à celle du retour. Il doit être associé au débit pour raisonner sur la puissance.",
@@ -88,6 +92,7 @@ const stations = {
   },
   puissance: {
     title: "Puissance",
+    narration: "Cette station relie ce que vous avez vu aux deux précédentes. La chaleur réellement transportée dépend de deux facteurs à la fois : la quantité d'eau qui circule, et l'écart de température qu'elle perd en traversant l'émetteur. Multipliez l'un par l'autre, appliquez un coefficient propre à l'eau, et vous obtenez une puissance en kilowatts. Ce qu'il faut en retenir pour le chantier : si le débit double sans que l'écart change, la puissance transportée double aussi. Et surtout, un écart de température seul ne suffit jamais — sans le débit, vous ne pouvez rien conclure sur la puissance.",
     kicker: "Relier Q et ΔT",
     lines: ["P"], x: 650, y: 120, dx: 0, dy: -26, anchor: "middle",
     lead: "Pour l’eau, la relation pédagogique P ≈ 1,16 × Q × ΔT relie puissance, débit et écart de température.",
@@ -99,6 +104,7 @@ const stations = {
   },
   mesurer: {
     title: "Mesurer",
+    narration: "Ici on ne parle pas d'appareils, mais de méthode. Une valeur seule ne prouve rien. « Quarante-deux degrés », ce n'est pas un relevé : c'est un nombre en l'air. Ce qui en fait une preuve exploitable, c'est ce qui l'accompagne. Quelle grandeur, avec quel instrument, à quel endroit exactement, dans quelle unité, et dans quel état de fonctionnement. Ajoutez l'heure. Sur une intervention, c'est ce qui vous permettra de comparer un avant et un après, ou de justifier une décision devant un client. Un carnet de relevés bien tenu vaut mieux qu'une bonne mémoire.",
     kicker: "Correspondance P ↔ M",
     lines: ["P", "M"], x: 815, y: 120, dx: 0, dy: -26, anchor: "middle",
     lead: "Une grandeur devient utile si son point de mesure, son unité et l’état de fonctionnement sont connus.",
@@ -110,6 +116,7 @@ const stations = {
   },
   production: {
     title: "Production",
+    narration: "La production, c'est l'endroit où l'énergie entre dans l'eau. Ce qui compte d'abord, ce n'est pas la marque ni le modèle, c'est la fonction. Une chaudière, une pompe à chaleur ou un échangeur raccordé à un réseau de chaleur font le même travail vis-à-vis du circuit : ils réchauffent l'eau qui repart vers les usages. Prenez l'habitude de lire un schéma dans cet ordre — d'abord la fonction, ensuite le matériel. Vous comprendrez plus vite une installation inconnue, et vous ne vous perdrez pas dans des détails de constructeur avant d'avoir compris comment l'eau circule.",
     kicker: "Entrée de la ligne E",
     lines: ["E"], x: 340, y: 25, dx: 25, dy: 5, anchor: "start",
     lead: "La production transmet de l’énergie à l’eau. Le composant réel peut être une chaudière, une pompe à chaleur ou un échangeur.",
@@ -121,6 +128,7 @@ const stations = {
   },
   echangeur: {
     title: "Échangeur",
+    narration: "Un échangeur met en contact deux circuits pour qu'ils se transmettent de la chaleur, mais sans jamais mélanger les deux eaux. Le transfert traverse une paroi métallique : des plaques, le plus souvent. Cette séparation est le cœur du sujet. Elle permet de relier deux installations qui n'ont pas la même eau, pas la même pression, parfois pas le même propriétaire. Sur le terrain, ça veut aussi dire qu'une fuite interne d'échangeur est traître : les deux circuits communiquent alors qu'ils ne devraient pas, et rien ne coule à l'extérieur. Rien ne se voit — ça se déduit des pressions et des mesures.",
     kicker: "Séparer deux fluides",
     lines: ["E"], x: 340, y: 67, dx: 25, dy: 5, anchor: "start",
     lead: "Un échangeur transfère de l’énergie entre deux circuits sans les mélanger dans son fonctionnement normal.",
@@ -132,6 +140,7 @@ const stations = {
   },
   circulateur: {
     title: "Circulateur",
+    narration: "Le circulateur ne crée pas le débit tout seul, on l'a vu à la station Débit. Ce qu'il apporte, c'est l'énergie nécessaire pour vaincre ce qui freine l'eau : les frottements dans les tubes, les coudes, les vannes. Sans lui, l'eau s'arrête. Le réflexe à prendre : quand vous modifiez sa vitesse, vous ne modifiez pas qu'un chiffre. Le débit change, le bruit change, la consommation change. Un circulateur poussé au maximum peut siffler dans un réseau étroit et user prématurément l'installation. C'est pourquoi tout changement de réglage se termine par une mesure, jamais par une impression.",
     kicker: "Mettre l’eau en mouvement",
     lines: ["E"], x: 340, y: 200, dx: 25, dy: 5, anchor: "start",
     lead: "Le circulateur fournit l’énergie nécessaire pour vaincre les pertes de charge et maintenir la circulation.",
@@ -143,6 +152,7 @@ const stations = {
   },
   pertes: {
     title: "Pertes de charge",
+    narration: "Tout ce que l'eau traverse lui résiste : la longueur des tubes, chaque coude, chaque vanne, chaque filtre. Ces résistances s'additionnent le long du chemin, et c'est leur total qui fixe l'effort à fournir pour faire circuler l'eau. Ce qu'il faut comprendre pour le chantier : rétrécir un passage augmente fortement la résistance de cette branche, et le débit y chute. Un filtre encrassé produit exactement le même effet qu'une vanne à moitié fermée. Avant d'accuser une pompe, vérifiez donc ce qui se trouve sur son chemin. C'est souvent là que se cache le vrai problème.",
     kicker: "Correspondance E ↔ D",
     lines: ["E", "D"], x: 340, y: 305, dx: 0, dy: 36, anchor: "middle",
     lead: "Tubes, coudes, filtres et vannes s’opposent à l’écoulement. Leur effet cumulé influence le débit.",
@@ -154,6 +164,7 @@ const stations = {
   },
   vase: {
     title: "Vase d’expansion",
+    narration: "L'eau se dilate quand elle chauffe. Dans un circuit fermé, ce volume supplémentaire doit aller quelque part, sinon la pression monte jusqu'à faire ouvrir la soupape. Le vase d'expansion est cet endroit : une réserve qui encaisse la variation de volume et limite la montée en pression. Mais un vase n'est pas un organe de sécurité. Il accompagne, il ne protège pas. La soupape, elle, protège. Si vous voyez une installation dont la soupape crache régulièrement, ne cherchez pas d'abord la soupape : allez vérifier le vase, sa pression de gonflage et son état.",
     kicker: "Accompagner la dilatation",
     lines: ["E"], x: 340, y: 410, dx: 25, dy: 40, anchor: "start",
     lead: "Dans un réseau fermé, le vase reçoit une partie de la variation de volume de l’eau lorsque sa température change.",
@@ -165,6 +176,7 @@ const stations = {
   },
   securite: {
     title: "Sécurité",
+    narration: "Les organes de sécurité protègent l'installation et les personnes quand tout le reste a échoué. Soupape, thermostat, pressostat : chacun a un seuil de déclenchement, un tarage, et un chemin d'évacuation prévu. Deux règles de métier, et elles ne se négocient pas. La première : ces valeurs doivent correspondre à l'installation réelle, pas à celle du catalogue. La seconde, la plus importante : on ne condamne jamais un organe de sécurité pour faire taire un symptôme. Une sécurité qui se déclenche vous dit quelque chose. La neutraliser, c'est supprimer le messager et garder le problème.",
     kicker: "Sortie de la ligne E",
     lines: ["E"], x: 340, y: 500, dx: 25, dy: 5, anchor: "start",
     lead: "Les dispositifs de sécurité protègent l’installation. Leur présence, leur tarage et leur évacuation doivent correspondre au système réel.",
@@ -176,6 +188,7 @@ const stations = {
   },
   monotube: {
     title: "Monotube",
+    narration: "Dans une distribution monotube, tous les émetteurs se suivent sur une même boucle. L'eau traverse le premier, puis le deuxième, puis le troisième. Conséquence directe, et c'est ce qui distingue ce montage : chaque émetteur reçoit une eau déjà refroidie par ceux qui le précèdent. Le dernier de la boucle travaille donc dans des conditions moins favorables que le premier, c'est normal et c'est prévu à la conception. Sur une plainte du type « le radiateur du fond chauffe mal », commencez par identifier le type de distribution. En monotube, la position dans la boucle fait partie de l'explication.",
     kicker: "Entrée de la ligne D",
     lines: ["D"], x: 75, y: 305, dx: 0, dy: -25, anchor: "middle",
     lead: "Dans une distribution monotube, les émetteurs partagent une boucle principale et influencent les conditions rencontrées en aval.",
@@ -187,6 +200,7 @@ const stations = {
   },
   bitube: {
     title: "Bitube",
+    narration: "En bitube, chaque émetteur est raccordé à deux conduites communes : un départ et un retour. Les émetteurs sont donc en parallèle, et chacun reçoit une eau à peu près à la même température. C'est le montage le plus répandu. Mais parallèle ne veut pas dire identique : l'eau emprunte toujours le chemin le plus facile. Une branche proche de la pompe oppose moins de résistance qu'une branche au bout du réseau, et elle prend spontanément plus de débit. C'est précisément ce déséquilibre naturel que le réglage devra corriger, et vous verrez comment à la station Équilibrage.",
     kicker: "Distribuer en parallèle",
     lines: ["D"], x: 210, y: 305, dx: 0, dy: 29, anchor: "middle",
     lead: "Dans un réseau bitube, chaque émetteur est relié à un départ et à un retour communs, ce qui crée des branches en parallèle.",
@@ -198,6 +212,7 @@ const stations = {
   },
   v3v: {
     title: "Vanne trois voies",
+    narration: "Une vanne trois voies porte bien son nom : trois raccordements, et donc plusieurs fonctions possibles. Elle peut mélanger deux eaux de températures différentes pour obtenir la température voulue, ou au contraire répartir un débit vers deux directions. Et voilà le piège de cette station : la même vanne, physiquement identique, ne fait pas le même travail selon la façon dont elle est raccordée. Vous ne pouvez donc pas nommer sa fonction en la regardant. Il faut repérer les trois voies, suivre le sens de circulation, et seulement ensuite dire s'il s'agit d'un mélange ou d'une répartition.",
     kicker: "Mélanger ou répartir",
     lines: ["D"], x: 490, y: 305, dx: 0, dy: -25, anchor: "middle",
     lead: "Une vanne trois voies peut assurer des fonctions différentes selon le raccordement et le sens de circulation.",
@@ -209,6 +224,7 @@ const stations = {
   },
   equilibrage: {
     title: "Équilibrage",
+    narration: "Équilibrer, c'est corriger le déséquilibre naturel qu'on vient de voir en bitube : donner à chaque branche le débit dont elle a besoin, ni plus ni moins. On y arrive en ajoutant de la résistance là où l'eau passe trop facilement. La méthode compte autant que le geste. Une action, puis une attente pour que l'installation se stabilise, puis un nouveau relevé. Sans ce cycle, vous réglez à l'aveugle : chaque vanne que vous touchez modifie les autres branches. Et un équilibrage ne se raconte pas, il se prouve — par des valeurs avant et des valeurs après, relevées de la même façon.",
     kicker: "Correspondance D ↔ M",
     lines: ["D", "M"], x: 650, y: 305, dx: 0, dy: 29, anchor: "middle",
     lead: "L’équilibrage ajuste les résistances pour rapprocher le débit de chaque branche de son besoin.",
@@ -220,6 +236,7 @@ const stations = {
   },
   plancher: {
     title: "Plancher chauffant",
+    narration: "Un plancher chauffant est un réseau de boucles noyées dans la dalle, raccordées à des collecteurs. Chaque boucle est un long tube, et sa longueur détermine sa résistance. Les boucles ne sont pas toutes de la même longueur, donc elles n'ont pas naturellement le même débit — c'est pour ça que les collecteurs portent des réglages. Avant toute intervention, prenez le temps de repérer où arrive le départ, où repart le retour, et quelle boucle dessert quelle pièce. Une inertie de plancher se compte en heures : vous ne verrez pas l'effet de votre réglage tout de suite, et c'est normal.",
     kicker: "Sortie de la ligne D",
     lines: ["D"], x: 820, y: 305, dx: 0, dy: -25, anchor: "middle",
     lead: "Les boucles d’un plancher sont réparties par des collecteurs. Leur longueur et leur réglage influencent les débits.",
@@ -231,6 +248,7 @@ const stations = {
   },
   releves: {
     title: "Relevés",
+    narration: "Un relevé isolé ne prouve rien ; deux relevés comparables prouvent quelque chose. C'est toute la différence entre dire « ça marche mieux » et le démontrer. Pour que la comparaison tienne, il faut le même protocole des deux côtés : les mêmes points de mesure, les mêmes instruments, un état de fonctionnement équivalent, et l'heure notée. Vous retrouvez ici la méthode vue à la station Mesurer, appliquée dans le temps. Sur un chantier, c'est ce qui vous permet de justifier une intervention, de la facturer sans discussion, et de revenir un an plus tard en sachant d'où vous partiez.",
     kicker: "Comparer des états",
     lines: ["M"], x: 815, y: 210, dx: 25, dy: 5, anchor: "start",
     lead: "Un relevé devient une preuve lorsqu’il est daté, localisé et comparé dans des conditions connues.",
@@ -242,6 +260,7 @@ const stations = {
   },
   tampon: {
     title: "Volume tampon",
+    narration: "Un volume tampon, c'est de l'eau en réserve, et donc de l'inertie ajoutée au circuit. Son intérêt principal : éviter qu'un générateur démarre et s'arrête sans cesse, ce qu'on appelle des cycles courts, qui usent le matériel et dégradent le rendement. Mais un ballon ne fait pas ce qu'on croit simplement parce qu'il est là. Sa fonction réelle dépend entièrement de la façon dont il est piqué : en série, en parallèle, en bouteille de découplage. Deux ballons identiques raccordés différemment ne jouent pas le même rôle. Lisez le schéma des piquages avant d'attribuer une fonction.",
     kicker: "Stabiliser le fonctionnement",
     lines: ["M"], x: 540, y: 395, dx: 0, dy: 29, anchor: "middle",
     lead: "Un volume tampon ajoute de l’inertie et peut limiter certains cycles courts. Son rôle exact dépend du raccordement.",
@@ -253,6 +272,7 @@ const stations = {
   },
   decouplage: {
     title: "Découplage",
+    narration: "Le découplage répond à un problème concret : la production et la distribution n'ont pas toujours besoin du même débit. Un générateur peut exiger un débit minimal constant pendant que les émetteurs, eux, se ferment au fil de la journée. Le découplage sépare hydrauliquement les deux boucles pour que chacune trouve son compte, avec son propre circulateur. Bien conçu, il rend les deux réseaux indépendants. Mal dimensionné ou mal raccordé, il devient un point de mélange qui pénalise tout le monde. C'est pourquoi le sens de circulation dans la liaison commune mérite votre attention.",
     kicker: "Dissocier deux débits",
     lines: ["M"], x: 410, y: 395, dx: 0, dy: -22, anchor: "middle",
     lead: "Un découplage correctement conçu permet aux boucles primaire et secondaire de fonctionner avec des débits différents.",
@@ -264,6 +284,7 @@ const stations = {
   },
   diagnostic: {
     title: "Diagnostic",
+    narration: "Cette station rassemble tout ce qui précède. Un symptôme oriente, il ne conclut pas. « Cette pièce est froide » peut venir d'un manque de débit, d'un déséquilibre, d'air dans la boucle, d'un émetteur encrassé, ou d'une régulation mal réglée. Ces causes très différentes donnent le même symptôme. La démarche qui vous protège est toujours la même : décrire l'état de départ, relever les grandeurs utiles, formuler une hypothèse, la vérifier par une mesure ciblée, et seulement ensuite décider. Ce qui vous coûtera du temps, ce n'est jamais la mesure : c'est la pièce changée pour rien.",
     kicker: "Croiser les indices",
     lines: ["M"], x: 280, y: 395, dx: 0, dy: 29, anchor: "middle",
     lead: "Un symptôme oriente la recherche, mais plusieurs mesures concordantes sont nécessaires avant de retenir une cause.",
@@ -275,6 +296,7 @@ const stations = {
   },
   mission: {
     title: "Mission réseau",
+    narration: "Vous voilà au terminus, avec une situation réelle à traiter : une branche reste froide. Ne partez pas sur la première idée qui vient. Reprenez la démarche : décrivez l'état de l'installation, relevez ce qui est utile — températures de départ et de retour, débit, pression différentielle — puis comparez les chemins hydrauliques entre eux. C'est la comparaison entre une branche qui fonctionne et une branche qui ne fonctionne pas qui vous donnera la réponse. Et rappelez-vous : la bonne décision n'est pas celle qui vous paraît évidente, c'est celle que vos observations permettent de justifier.",
     kicker: "Terminus de la ligne M",
     lines: ["M"], x: 150, y: 395, dx: 0, dy: -22, anchor: "middle",
     lead: "Face à une branche froide, commencez par décrire l’état, relever les grandeurs utiles et comparer les chemins hydrauliques.",
@@ -720,10 +742,17 @@ function readStation() {
   }
   stopSpeech();
   const station = stations[currentStation];
-  const programme = stationPrograms[currentStation][activeLevel] || stationPrograms[currentStation].TP;
-  const utterance = new SpeechSynthesisUtterance(`${station.title}. ${station.lead} Objectif ${trainingFramework.levels[activeLevel]}. ${programme.objective} À apprendre. ${programme.learn.join(" ")} Mission. ${programme.prompt}`);
-  utterance.lang = "fr-FR";
-  utterance.rate = 0.95;
+  /* Texte écrit pour l'oreille. Avant le 01/09/2026, cette ligne collait bout à
+     bout le titre, l'accroche, l'objectif, la liste à apprendre et la consigne :
+     l'élève entendait le contenu de la fiche, pas un professeur qui présente. */
+  const dit = (station.narration || "").trim();
+  if (!dit) {
+    els.programmeStatus.textContent = "Cette station n’a pas encore de présentation parlée. Tout reste affiché.";
+    return;
+  }
+  const utterance = new SpeechSynthesisUtterance(dit);
+  if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.appliquer(utterance);
+  else { utterance.lang = "fr-FR"; utterance.rate = 0.95; }
   utterance.onend = stopSpeech;
   utterance.onerror = stopSpeech;
   els.read.setAttribute("aria-pressed", "true");
@@ -732,6 +761,7 @@ function readStation() {
   window.speechSynthesis.speak(utterance);
 }
 
+if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.monter(document.querySelector(".topbar-tools"));
 els.metroMap.innerHTML += mapMarkup();
 buildMobileRoutes();
 applyFilter("all");

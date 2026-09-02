@@ -5,7 +5,7 @@
     title: "Débit",
     nextHref: "../delta-t/index.html",
     nextLabel: "Station suivante : Écart ΔT",
-    successMessage: "Tu lis le débit comme le résultat commun de la pompe et du réseau.",
+    successMessage: "Vous lisez le débit comme le résultat commun de la pompe et du réseau.",
     levels: {
       CAP: { name: "CAP · niveau 3", objective: "Lire un débit avec son unité.", learn: ["lire le débit affiché", "reconnaître L/min et m³/h", "signaler un débit anormal"] },
       TP: { name: "Bac pro · niveau 4", objective: "Régler puis lire un débit.", learn: ["convertir m³/h et L/min", "observer pompe et réseau", "contrôler la cohérence"] },
@@ -55,7 +55,7 @@
     document.querySelector("#flowValue").textContent = `${formatted} m³/h`;
     document.querySelector("#svgFlowValue").textContent = formatted;
     document.querySelector("#litreValue").textContent = `${(currentFlow * 1000 / 60).toFixed(1).replace(".", ",")} L/min`;
-    feedback.textContent = currentFlow < 2 ? "Débit trop faible : augmente la pompe ou ouvre le réseau." : currentFlow > 2.4 ? "Débit trop fort : réduis la pompe ou augmente la résistance." : "La cible est atteinte. Valide le point obtenu.";
+    feedback.textContent = currentFlow < 2 ? "Débit trop faible : augmente la pompe ou ouvre le réseau." : currentFlow > 2.4 ? "Débit trop fort : réduisez la pompe ou augmente la résistance." : "La cible est atteinte. Valide le point obtenu.";
     feedback.className = currentFlow >= 2 && currentFlow <= 2.4 ? "feedback good" : "feedback";
   }
 

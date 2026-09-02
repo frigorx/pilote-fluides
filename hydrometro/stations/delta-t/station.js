@@ -5,7 +5,7 @@
     title: "Écart ΔT",
     nextHref: "../puissance/index.html",
     nextLabel: "Station suivante : Puissance",
-    successMessage: "Tu sais placer deux sondes comparables et attendre un état stabilisé.",
+    successMessage: "Vous savez placer deux sondes comparables et attendre un état stabilisé.",
     levels: {
       CAP: { name: "CAP · niveau 3", objective: "Lire la température au départ et au retour.", learn: ["lire une température affichée", "reconnaître départ et retour", "attendre avant de lire"] },
       TP: { name: "Bac pro · niveau 4", objective: "Placer deux sondes et attendre.", learn: ["choisir départ et retour", "attendre la stabilisation", "ne pas conclure sur ΔT seul"] },
@@ -52,7 +52,7 @@
     }
     resetSamples();
     renderProbes();
-    feedback.textContent = selected.size === 2 ? "Deux sondes posées. Lance le premier relevé." : "Choisis encore un point.";
+    feedback.textContent = selected.size === 2 ? "Deux sondes posées. Lancez le premier relevé." : "Choisis encore un point.";
     feedback.className = "feedback";
   }));
 
@@ -74,7 +74,7 @@
     document.querySelector("#dtReadout").textContent = `ΔT = ${sample.a} − ${sample.b} = ${delta} K`;
     if (sampleIndex < 3) {
       document.querySelector("#stabilityText").textContent = "État : encore transitoire";
-      feedback.textContent = "Les valeurs évoluent encore. Attends puis relève de nouveau.";
+      feedback.textContent = "Les valeurs évoluent encore. Attendez puis relève de nouveau.";
     } else {
       document.querySelector("#stabilityText").textContent = "État : stabilisé sur ce modèle";
       feedback.textContent = "Relevé exploitable : points comparables, trois mesures et ΔT stabilisé à 10 K.";

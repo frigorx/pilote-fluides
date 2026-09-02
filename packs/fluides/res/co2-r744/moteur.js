@@ -384,7 +384,20 @@
     return ORALISER.reduce((s, [motif, remplacement]) => s.replace(motif, remplacement), String(texte)).trim();
   }
 
+  /* Sur une leçon, le texte dit est ÉCRIT pour l'oreille. Jusqu'au 01/09/2026
+     cette fonction ramassait le kicker, le titre, l'accroche, chaque puce, l'encadré
+     et la légende du schéma : l'élève entendait la diapositive. Sur un QUIZ, la
+     lecture de l'écran est conservée — une question se dit telle qu'elle est posée. */
+  function narrationLecon() {
+    const c = courant();
+    if (!c || screen >= c.lessons.length) return "";
+    const l = c.lessons[screen];
+    return l && typeof l.narration === "string" ? pourLaVoix(l.narration) : "";
+  }
+
   function texteParle() {
+    const dite = narrationLecon();
+    if (dite) return dite;
     const parts = [ui.kicker.textContent, ui.title.textContent, ui.lead.textContent,
       ...Array.from(ui.list.querySelectorAll("li"), (li) => li.textContent)];
     if (!ui.callout.hidden) {

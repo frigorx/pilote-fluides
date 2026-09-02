@@ -965,7 +965,8 @@ const screens = [
   /* ======================= COMPRENDRE ======================= */
 
   screen({
-    id: "chaine", dossier: "comprendre", title: "Ce que fait vraiment un régulateur", kicker: "Comprendre · 1",
+    id: "chaine",
+    narration: "Commençons par une phrase qui va vous éviter beaucoup de confusion : un régulateur électronique ne fait pas de froid. Il fait quatre choses, toujours dans le même ordre. Il lit une résistance. Il la convertit en température. Il compare cette température à une consigne. Et il ferme ou ouvre un contact. C'est tout. Le froid, ce sont le compresseur et le circuit qui le produisent. Le régulateur ne fait que décider du moment. Gardez cette distinction : elle vous dira toujours si le défaut vient de la commande ou de la machine.", dossier: "comprendre", title: "Ce que fait vraiment un régulateur", kicker: "Comprendre · 1",
     codes: ["9.04"], level: "comprendre",
     text: "Un régulateur électronique ne « fait pas du froid ». Il fait quatre choses, toujours dans le même ordre : il <b>lit</b> une résistance au bout de deux fils, il la <b>convertit</b> en température, il la <b>compare</b> à la consigne, et il <b>ferme ou ouvre un contact</b>. Tout le reste — compresseur, ventilateur, résistance de dégivrage — obéit à ce contact.",
     prompt: "Suivez la chaîne, puis retenez où s’arrête le rôle du régulateur.",
@@ -974,7 +975,8 @@ const screens = [
   }),
 
   screen({
-    id: "commande-pas-protege", dossier: "comprendre", title: "Il commande, il ne protège pas", kicker: "Comprendre · 2",
+    id: "commande-pas-protege",
+    narration: "Voici la confusion la plus coûteuse de l'atelier : commander n'est pas protéger. Le régulateur décide de la marche normale — il arrête le froid à la consigne, il le relance au différentiel, il déclenche les dégivrages. Il travaille tous les jours, c'est son métier. Une sécurité, elle, n'agit qu'en dernier recours, quand tout le reste a échoué. Quand un régulateur est en défaut, l'installation s'arrête ou dérive ; quand une sécurité déclenche, c'est qu'un danger existe. On ne les règle pas de la même façon, et on ne les traite pas de la même façon.", dossier: "comprendre", title: "Il commande, il ne protège pas", kicker: "Comprendre · 2",
     codes: ["6.03"], level: "comprendre",
     text: "C’est la confusion la plus coûteuse de l’atelier. Le régulateur décide de la marche <b>normale</b> : il arrête le froid à la consigne, il le relance plus haut. La <b>protection</b> — thermique du moteur, pressostat de sécurité, disjoncteur — est un autre organe, sur un autre chemin. Un régulateur en panne ne doit jamais pouvoir détruire une machine.",
     prompt: "Le compresseur chauffe anormalement. Qui doit l’arrêter ?",
@@ -991,7 +993,8 @@ const screens = [
   }),
 
   screen({
-    id: "labo-sondes", dossier: "comprendre", title: "Le laboratoire deux fils", kicker: "Comprendre · 3",
+    id: "labo-sondes",
+    narration: "Comment une sonde parle-t-elle au régulateur ? Elle n'envoie ni chiffre ni signal : elle oppose une résistance qui change avec la température. Le régulateur mesure cette résistance et en déduit la température, à condition de savoir quelle famille de sonde est branchée. C'est un point mécanique important : deux fils, aucune électronique dans la sonde, aucune polarité. C'est ce qui rend ces sondes robustes — et c'est aussi ce qui explique le piège de l'écran suivant.", dossier: "comprendre", title: "Le laboratoire deux fils", kicker: "Comprendre · 3",
     codes: ["9.04"], level: "appliquer",
     text: "Une sonde de régulation n’envoie ni chiffre ni signal : elle oppose une <b>résistance</b> qui change avec la température. Trois familles se croisent en froid commercial : la <b>NTC</b>, dont la résistance descend quand la température monte ; la <b>PTC</b> et la <b>Pt1000</b>, dont la résistance monte. Choisissez une famille, déplacez la température, lisez.",
     prompt: "Comparez les trois familles à −20 °C, puis à +40 °C.",
@@ -1000,7 +1003,8 @@ const screens = [
   }),
 
   screen({
-    id: "sonde-exacte", dossier: "comprendre", title: "Le type de sonde se déclare, il ne se devine pas", kicker: "Comprendre · 4",
+    id: "sonde-exacte",
+    narration: "Le type de sonde se déclare, il ne se devine pas. Chaque régulateur possède un paramètre qui annonce quelle famille est raccordée. Si l'appareil attend une Pt mille et qu'on branche une sonde d'une autre famille, il mesure quand même une résistance, il affiche quand même une température — et cette température est fausse. Rien ne signale l'erreur : ni alarme, ni valeur aberrante, juste un écart. C'est le genre de défaut qui fait chercher partout ailleurs pendant des heures.", dossier: "comprendre", title: "Le type de sonde se déclare, il ne se devine pas", kicker: "Comprendre · 4",
     codes: ["9.04"], level: "appliquer",
     text: "Chaque régulateur possède un paramètre qui annonce <b>quelle famille</b> est raccordée. S’il attend une Pt1000 et qu’on branche une NTC, il lit une résistance qu’il traduit avec la mauvaise loi : l’affichage devient faux, sans qu’aucun défaut ne s’allume. Et une NTC 5 kΩ ne remplace pas une NTC 10 kΩ.",
     prompt: "Ouvrez les trois règles de la sonde.",
@@ -1013,7 +1017,8 @@ const screens = [
   }),
 
   screen({
-    id: "cycle", dossier: "comprendre", title: "Deux nombres, et une mémoire", kicker: "Comprendre · 5",
+    id: "cycle",
+    narration: "Deux nombres et une mémoire, c'est tout ce qui règle un régulateur. La consigne dit où le froid s'arrête. Le différentiel dit de combien la température doit remonter avant qu'il reparte. Et la mémoire, c'est le fait que ces valeurs doivent être enregistrées — nous y reviendrons, c'est le piège de l'écran treize. Vous retrouvez ici exactement les deux nombres du pupitre de réglage : consigne et différentiel, la même langue, quel que soit l'organe.", dossier: "comprendre", title: "Deux nombres, et une mémoire", kicker: "Comprendre · 5",
     codes: ["9.04"], level: "appliquer",
     text: "La <b>consigne</b> dit où le froid s’arrête. Le <b>différentiel</b> dit de combien la température doit remonter avant qu’il reparte. Entre les deux, il se passe quelque chose qu’on oublie souvent : <b>rien</b>. Le relais garde l’état qu’il avait. Déplacez la température lentement dans un sens, puis dans l’autre, et regardez le compresseur.",
     prompt: "Descendez sous la consigne, puis remontez doucement. À quel moment repart-il ?",
@@ -1022,7 +1027,8 @@ const screens = [
   }),
 
   screen({
-    id: "courts-cycles", dossier: "comprendre", title: "Le différentiel serré coûte cher", kicker: "Comprendre · 6",
+    id: "courts-cycles",
+    narration: "Un différentiel serré coûte cher, et c'est contre-intuitif. Le resserrer semble donner une chambre plus précise — la température varie moins, cela paraît mieux réglé. En réalité, la machine se met à battre : elle démarre et s'arrête sans arrêt, ce qu'on appelle les cycles courts. Chaque démarrage use le compresseur, dégrade le rendement, et perturbe le retour d'huile. Le différentiel n'est pas un défaut de précision qu'on cherche à réduire : c'est ce qui donne à la machine le temps de travailler.", dossier: "comprendre", title: "Le différentiel serré coûte cher", kicker: "Comprendre · 6",
     codes: ["6.03"], level: "comprendre",
     text: "Resserrer le différentiel semble donner une chambre « plus précise ». En réalité la machine se met à battre : elle démarre, s’arrête, redémarre. Chaque démarrage est le moment le plus dur de la vie d’un compresseur — courant d’appel, huile pas encore revenue. C’est pour ça que les régulateurs offrent un <b>temps minimal entre deux démarrages</b> : une sécurité de marche, pas un confort.",
     prompt: "Un différentiel très serré, qu’est-ce que ça produit ?",
@@ -1039,7 +1045,8 @@ const screens = [
   }),
 
   screen({
-    id: "correction", dossier: "comprendre", title: "La correction d’affichage", kicker: "Comprendre · 7",
+    id: "correction",
+    narration: "Tous les régulateurs proposent de décaler la valeur affichée. C'est utile dans un cas précis : quand un thermomètre étalonné, placé au bon endroit, montre un écart constant avec l'affichage. On corrige alors l'affichage pour qu'il dise la vérité. Mais attention à l'usage détourné : décaler l'affichage pour faire croire que la chambre est à la bonne température ne change rien à la température réelle des produits. La correction sert à rendre l'affichage honnête, jamais à masquer un problème.", dossier: "comprendre", title: "La correction d’affichage", kicker: "Comprendre · 7",
     codes: ["9.04"], level: "appliquer",
     text: "Tous les régulateurs proposent de <b>décaler</b> la valeur lue. C’est utile quand un thermomètre étalonné, placé au bon endroit, montre un écart constant avec l’afficheur. Mais attention : le régulateur ne régule pas sur la mesure, il régule sur la valeur <b>corrigée</b>. Un décalage oublié déplace toute la chambre.",
     prompt: "Appliquez une correction, puis regardez ce que le régulateur utilise réellement.",
@@ -1047,7 +1054,8 @@ const screens = [
   }),
 
   screen({
-    id: "quiz-comprendre", dossier: "comprendre", title: "Contrôle · lire avant de régler", kicker: "Comprendre · contrôle",
+    id: "quiz-comprendre",
+    narration: "Faisons le point avant de toucher un clavier. Une résistance, deux nombres, une mémoire : voilà tout ce qu'il faut avoir compris. Une sonde qui oppose une résistance et dont le type doit être déclaré. Une consigne et un différentiel, qui définissent le cycle. Et l'obligation d'enregistrer. Si ces trois idées sont claires, n'importe quel régulateur devient lisible, quelle que soit sa marque.", dossier: "comprendre", title: "Contrôle · lire avant de régler", kicker: "Comprendre · contrôle",
     codes: ["9.04", "6.03"], level: "evaluer",
     text: "Une résistance, deux nombres, une mémoire : c’est tout ce qu’il faut avoir compris avant de toucher un clavier.",
     prompt: "Quelle affirmation est juste ?",
@@ -1068,7 +1076,8 @@ const screens = [
   /* ======================= PROGRAMMER ======================= */
 
   screen({
-    id: "methode", dossier: "programmer", title: "Cinq gestes, sur n’importe quel appareil", kicker: "Programmer · 1",
+    id: "methode",
+    narration: "Devant un régulateur inconnu, personne n'appuie au hasard. Les claviers changent — une touche menu, un appui maintenu, un code d'accès — mais les cinq gestes sont toujours les mêmes : entrer dans les paramètres, circuler dans la liste, sélectionner un paramètre, modifier sa valeur, et enregistrer. Cherchez ces cinq gestes dans la notice de l'appareil que vous avez sous les yeux, et vous saurez le manœuvrer, même si vous ne l'aviez jamais vu.", dossier: "programmer", title: "Cinq gestes, sur n’importe quel appareil", kicker: "Programmer · 1",
     codes: ["9.04"], level: "comprendre",
     text: "Devant un régulateur inconnu, personne n’appuie au hasard. Les claviers changent — une touche menu, un appui maintenu, un code d’accès — mais la <b>suite des gestes</b>, elle, ne change pas : entrer, choisir, modifier, valider, enregistrer. Apprenez la suite : les appareils, eux, se remplacent.",
     prompt: "Retenez les cinq gestes, et surtout le dernier.",
@@ -1077,7 +1086,8 @@ const screens = [
   }),
 
   screen({
-    id: "clavier-nomme", dossier: "programmer", title: "Le clavier à touches nommées", kicker: "Programmer · 2",
+    id: "clavier-nomme",
+    narration: "Première famille de clavier : chaque touche porte son rôle. La touche M ouvre la liste des paramètres, les flèches circulent dans les codes, et M valide. C'est la famille la plus lisible, celle sur laquelle on apprend. Mais ne prenez pas cette disposition pour une norme : la touche qui valide sur cet appareil pourrait bien sortir du menu sur le suivant.", dossier: "programmer", title: "Le clavier à touches nommées", kicker: "Programmer · 2",
     codes: ["9.04"], level: "appliquer",
     text: "Première famille : un clavier où chaque touche porte son rôle. <kbd>M</kbd> ouvre la liste, les flèches circulent dans les codes, <kbd>M</kbd> passe en modification, <kbd>M</kbd> valide, <kbd>×</kbd> ramène à la température. C’est la façade la plus bavarde, et donc la plus simple pour comprendre le mécanisme.",
     prompt: "Réglez l’arrêt du froid à 2 °C, le différentiel à 3 K, et 5 minutes entre deux démarrages.",
@@ -1099,7 +1109,8 @@ const screens = [
   }),
 
   screen({
-    id: "clavier-trois", dossier: "programmer", title: "Le clavier à trois touches", kicker: "Programmer · 3",
+    id: "clavier-trois",
+    narration: "Deuxième famille : trois touches seulement, donc des appuis maintenus. Maintenir la flèche haute ouvre la liste ; la touche SET valide. C'est plus économique en boîtier, et beaucoup moins évident à deviner. Un point à connaître : quand un appareil demande un appui maintenu, la durée compte. Un appui trop bref ne fait rien, un appui trop long peut déclencher autre chose — un dégivrage manuel, par exemple.", dossier: "programmer", title: "Le clavier à trois touches", kicker: "Programmer · 3",
     codes: ["9.04"], level: "appliquer",
     text: "Deuxième famille : trois touches seulement, donc des <b>appuis maintenus</b>. Maintenir la flèche haute ouvre la liste ; <kbd>SET</kbd> lit la valeur puis l’enregistre ; maintenir la flèche basse lance un dégivrage. Les codes deviennent des repères — <b>r</b> pour la régulation, <b>d</b> pour le dégivrage, <b>o</b> pour la configuration.",
     prompt: "Chambre positive : arrêt à 2 °C, relance 3 K plus haut, dégivrage électrique toutes les 6 h qui s’arrête à 8 °C, sondes NTC 5 kΩ.",
@@ -1127,7 +1138,8 @@ const screens = [
   }),
 
   screen({
-    id: "clavier-code", dossier: "programmer", title: "Le clavier derrière un code", kicker: "Programmer · 4",
+    id: "clavier-code",
+    narration: "Troisième famille : les paramètres sont protégés par un code d'accès, et rangés par familles — sondes, régulation, dégivrage, alarmes. Le code n'est pas là pour vous embêter : il évite qu'un utilisateur non formé modifie un réglage en cherchant à faire plus froid. Le classement par familles, lui, vous aide : si vous cherchez une durée de dégivrage, vous savez dans quelle section regarder, sans parcourir toute la liste.", dossier: "programmer", title: "Le clavier derrière un code", kicker: "Programmer · 4",
     codes: ["9.04"], level: "appliquer",
     text: "Troisième famille : les paramètres sont protégés par un <b>code d’accès</b>, et rangés par familles — sondes, régulation, dégivrage, ventilateurs. Deux appuis maintenus encadrent le travail : l’un ouvre la porte, l’autre <b>enregistre</b>. Entre les deux, on est dans la mémoire de travail, pas dans l’appareil.",
     prompt: "Entrez le code 22, réglez sondes PTC, consigne 2 °C, différentiel 3 K, dégivrage toutes les 6 h — puis enregistrez.",
@@ -1151,7 +1163,8 @@ const screens = [
   }),
 
   screen({
-    id: "enregistrer", dossier: "programmer", title: "Modifier n’est pas enregistrer", kicker: "Programmer · 5",
+    id: "enregistrer",
+    narration: "Voici le dépannage le plus vexant du métier. Tout est bien réglé, la chambre descend, on repart satisfait — et à la première coupure de courant, l'appareil retrouve ses anciennes valeurs. Pourquoi ? Parce que modifier n'est pas enregistrer. Sur beaucoup de régulateurs, la valeur affichée change immédiatement mais n'est écrite en mémoire qu'après une validation explicite, ou après être sorti du menu correctement. Vérifiez toujours que vos réglages ont survécu — au besoin en coupant volontairement l'alimentation avant de partir.", dossier: "programmer", title: "Modifier n’est pas enregistrer", kicker: "Programmer · 5",
     codes: ["9.04"], level: "comprendre",
     text: "Le dépannage le plus vexant du métier : tout est bien réglé, la chambre descend, on repart — et à la première coupure de courant l’appareil retrouve ses anciennes valeurs. Une valeur affichée n’est pas une valeur écrite. Trois réflexes suffisent à ne jamais se faire avoir.",
     prompt: "Ouvrez les trois réflexes de fin de réglage.",
@@ -1168,7 +1181,8 @@ const screens = [
   /* ======================= DÉGIVRER ======================= */
 
   screen({
-    id: "pourquoi-degivrer", dossier: "degivrer", title: "Le givre est un manteau", kicker: "Dégivrer · 1",
+    id: "pourquoi-degivrer",
+    narration: "Le givre est un manteau, et cette image explique tout. L'air d'une chambre contient de l'eau. Au contact d'une batterie plus froide que zéro degré, cette eau gèle sur les ailettes. La couche s'épaissit, elle isole comme un manteau, et l'échange se dégrade — moins d'échange, surface plus froide, plus de givre. C'est pour interrompre cette spirale qu'existe le dégivrage, et c'est pourquoi il n'est pas une option sur une chambre négative.", dossier: "degivrer", title: "Le givre est un manteau", kicker: "Dégivrer · 1",
     codes: ["9.04"], level: "comprendre",
     text: "L’air d’une chambre contient de l’eau. Au contact d’une batterie plus froide que 0 °C, cette eau gèle sur les ailettes. Le givre <b>isole</b> l’échangeur et <b>bouche</b> le passage de l’air : l’évaporateur ne prend plus la chaleur de la chambre, la température monte alors que la machine tourne en continu. Dégivrer n’est pas un confort, c’est ce qui garde l’échange possible.",
     prompt: "Un évaporateur très givré, ça donne quoi ?",
@@ -1185,7 +1199,8 @@ const screens = [
   }),
 
   screen({
-    id: "cycle-degivrage", dossier: "degivrer", title: "Cinq temps, dont deux sans chauffe", kicker: "Dégivrer · 2",
+    id: "cycle-degivrage",
+    narration: "Un cycle de dégivrage ne se règle pas avec une seule valeur : il comporte cinq temps. Le froid normal. La chauffe. L'égouttage — l'eau doit partir avant qu'on relance, sinon elle regèle immédiatement. Le retard des ventilateurs, qui évite de souffler de l'air tiède et humide dans la chambre. Et le retour au froid. Deux de ces temps se passent sans chauffe, et ce sont justement ceux qu'on oublie de régler.", dossier: "degivrer", title: "Cinq temps, dont deux sans chauffe", kicker: "Dégivrer · 2",
     codes: ["9.04"], level: "appliquer",
     text: "Un cycle de dégivrage ne se règle pas avec une seule valeur. Parcourez les cinq temps : froid, chauffe, <b>égouttage</b>, <b>retard ventilateur</b>, reprise. Les deux du milieu ne chauffent rien et ne refroidissent rien — ce sont pourtant eux qui décident si la chambre reçoit de l’eau ou pas.",
     prompt: "Parcourez les cinq temps, puis mettez l’égouttage à zéro et regardez ce qu’on vous dit.",
@@ -1194,7 +1209,8 @@ const screens = [
   }),
 
   screen({
-    id: "qui-arrete", dossier: "degivrer", title: "Qui arrête le dégivrage ?", kicker: "Dégivrer · 3",
+    id: "qui-arrete",
+    narration: "Qui arrête le dégivrage ? Deux choses peuvent le faire. La sonde d'évaporateur, quand la batterie est assez chaude pour être propre — c'est le bon critère, celui qui s'adapte à la réalité. Ou la durée maximale, qui arrête au bout d'un temps donné — c'est un filet de sécurité, pas un mode de fonctionnement normal. Un dégivrage qui se termine systématiquement sur la durée maximale vous dit quelque chose : la sonde ne voit pas ce qu'elle devrait voir.", dossier: "degivrer", title: "Qui arrête le dégivrage ?", kicker: "Dégivrer · 3",
     codes: ["9.04", "6.03"], level: "appliquer",
     text: "Deux choses peuvent l’arrêter : la <b>sonde d’évaporateur</b>, quand la batterie est assez chaude pour être propre, ou la <b>durée maximale</b>, qui est une sécurité. Le bon fonctionnement, c’est la sonde. Si le cycle se termine toujours sur la durée maximale, quelque chose ne va pas : sonde mal placée, mal déclarée, résistance faible, ou intervalle trop court.",
     prompt: "Le dégivrage s’arrête toujours sur sa durée maximale. Que fait-on ?",
@@ -1211,7 +1227,8 @@ const screens = [
   }),
 
   screen({
-    id: "departs-degivrage", dossier: "degivrer", title: "Trois façons de partir", kicker: "Dégivrer · 4",
+    id: "departs-degivrage",
+    narration: "Trois façons de démarrer un dégivrage. L'horloge interne de l'appareil, à intervalles réguliers — le plus simple, et le moins adapté aux variations de charge. Une entrée extérieure : contact de porte, commande centralisée, ou autre automatisme. Ou une condition mesurée. Chaque méthode a sa logique, et il faut savoir laquelle est active sur l'installation devant vous avant de conclure qu'un dégivrage « ne part pas ».", dossier: "degivrer", title: "Trois façons de partir", kicker: "Dégivrer · 4",
     codes: ["6.03"], level: "comprendre",
     text: "Un dégivrage démarre par l’<b>horloge</b> de l’appareil, par une <b>entrée extérieure</b> (contact de porte, commande centralisée, autre régulateur), ou <b>à la main</b> par un appui maintenu. Beaucoup de régulateurs acceptent les trois — et la personne qui règle doit savoir lequel travaille chez elle, sinon les cycles se doublent.",
     prompt: "Ouvrez les trois départs possibles.",
@@ -1226,7 +1243,8 @@ const screens = [
   /* ======================= CÂBLER ======================= */
 
   screen({
-    id: "depart-protege", dossier: "cabler", title: "On ne part jamais du réseau nu", kicker: "Câbler · 1",
+    id: "depart-protege",
+    narration: "Passons au câblage, et commençons par une règle absolue : on ne part jamais du réseau nu. L'alimentation de l'ensemble part d'un départ déjà protégé — un disjoncteur, appelé Q un sur nos schémas. Ce n'est pas une préférence de dessinateur : sans protection en amont, un défaut sur le régulateur ou sur ce qu'il commande n'a rien pour l'arrêter. Le schéma se lit toujours de la protection vers l'organe, jamais l'inverse.", dossier: "cabler", title: "On ne part jamais du réseau nu", kicker: "Câbler · 1",
     codes: ["6.03"], level: "comprendre",
     text: "Avant toute chose : l’alimentation de l’ensemble part d’un <b>départ déjà protégé</b> — un disjoncteur, appelé Q1 sur nos schémas. Le régulateur n’est pas une protection : c’est un appareil de commande, alimenté comme les autres, et qui peut tomber en panne sans que cela devienne dangereux. Le compresseur, lui, garde sa propre protection.",
     prompt: "Où se trouve la protection du compresseur ?",
@@ -1243,7 +1261,8 @@ const screens = [
   }),
 
   screen({
-    id: "bornier", dossier: "cabler", title: "L’atelier de câblage", kicker: "Câbler · 2",
+    id: "bornier",
+    narration: "Le principe de câblage est toujours le même. L'appareil reçoit son alimentation. Chaque relais possède un commun, qu'on alimente en phase, et un contact qui part vers l'organe commandé — compresseur, résistance de dégivrage, ventilateurs. Une fois ce principe compris, n'importe quel bornier devient lisible : vous cherchez l'alimentation de l'appareil, puis les communs, puis les départs. Trois questions, dans cet ordre.", dossier: "cabler", title: "L’atelier de câblage", kicker: "Câbler · 2",
     codes: ["6.03"], level: "appliquer",
     text: "Le principe est toujours le même. L’appareil reçoit son <b>alimentation</b>. Chaque relais a un <b>commun</b>, qu’on alimente en phase, et une <b>sortie</b>, qui part vers le récepteur. Le récepteur retrouve le <b>neutre</b> de son côté. Posez les huit fils : alimentation, relais froid, relais dégivrage.",
     prompt: "Huit fils à poser. Cliquez un point, puis l’autre.",
@@ -1252,7 +1271,8 @@ const screens = [
   }),
 
   screen({
-    id: "sondes-cablage", dossier: "cabler", title: "Le câble de sonde n’est pas un câble de puissance", kicker: "Câbler · 3",
+    id: "sondes-cablage",
+    narration: "Le câble de sonde n'est pas un câble de puissance, et cela a des conséquences pratiques. Une sonde deux fils n'a pas de polarité : les deux sens sont bons, et c'est bien la seule liberté qu'elle offre. Tout le reste est contraint : on ne rallonge pas n'importe comment, on ne fait pas cheminer le câble de sonde le long d'un câble de puissance — les perturbations électromagnétiques y créent des mesures fantômes — et on ne le pince pas dans un passage de tôle. Une sonde perturbée donne une température qui varie sans raison.", dossier: "cabler", title: "Le câble de sonde n’est pas un câble de puissance", kicker: "Câbler · 3",
     codes: ["9.04"], level: "appliquer",
     text: "Une sonde deux fils n’a pas de polarité : les deux sens sont bons, et c’est bien la seule liberté qu’elle offre. Tout le reste est contraint — le chemin du câble, sa longueur, son voisinage. Un fil de mesure rangé le long des câbles de puissance ramène du parasite dans la mesure, et une mesure fausse fait régler faux.",
     prompt: "Ouvrez les trois règles du câble de sonde.",
@@ -1265,7 +1285,8 @@ const screens = [
   }),
 
   screen({
-    id: "remplacement", dossier: "cabler", title: "Remplacer : par fonction, jamais par numéro", kicker: "Câbler · 4",
+    id: "remplacement",
+    narration: "Le jour où l'appareil est mort, on en pose un autre — souvent d'une autre marque. Et voici le réflexe qui coûte cher : recopier les numéros de paramètres de l'ancien vers le nouveau. Chez un autre constructeur, le paramètre numéro cinq ne désigne pas du tout la même chose. On remplace par FONCTION : quelle était la consigne, quel était le différentiel, quelle durée de dégivrage, quel type de sonde. Puis on retrouve, dans la notice du nouvel appareil, le paramètre qui porte cette fonction.", dossier: "cabler", title: "Remplacer : par fonction, jamais par numéro", kicker: "Câbler · 4",
     codes: ["6.03", "9.04"], level: "appliquer",
     text: "Le jour où l’appareil est mort, on en pose un autre — souvent d’une autre marque. Le réflexe qui coûte cher : recopier les numéros de bornes. Deux appareils différents ne numérotent pas pareil. La méthode sûre tient en une phrase : relever la <b>fonction</b> de chaque fil sur l’ancien, retrouver cette fonction sur le nouveau, et vérifier ce qui ne se voit pas — type de sonde, calibre des relais.",
     prompt: "Établissez le plan de conversion, six décisions.",
@@ -1275,7 +1296,8 @@ const screens = [
   /* ======================= CONTRÔLER ======================= */
 
   screen({
-    id: "mission-negative", dossier: "controler", title: "Mission · chambre négative", kicker: "Contrôler · 1",
+    id: "mission-negative",
+    narration: "Passons à la mission. Chambre de produits surgelés : le froid doit s'arrêter à moins dix-huit degrés et repartir deux kelvins plus haut. Dégivrage électrique à intervalles réguliers. Vous avez tout ce qu'il faut pour régler — la consigne, le différentiel, le type de dégivrage. Prenez le temps d'identifier chaque paramètre par sa fonction avant d'entrer une valeur, et n'oubliez pas la dernière étape, celle qui fait tenir le réglage.", dossier: "controler", title: "Mission · chambre négative", kicker: "Contrôler · 1",
     codes: ["9.04"], level: "evaluer",
     text: "Chambre de produits surgelés. Le froid doit s’arrêter à <b>−18 °C</b> et repartir <b>2 K</b> plus haut. Dégivrage électrique <b>toutes les 6 h</b>, arrêté quand la batterie atteint <b>10 °C</b>, avec une sécurité de <b>45 min</b>. Sondes <b>Pt1000</b>. À vous : la façade est la même qu’à l’écran « clavier à trois touches ».",
     prompt: "Programmez les six valeurs, puis contrôlez.",
@@ -1302,7 +1324,8 @@ const screens = [
   }),
 
   screen({
-    id: "quiz-final", dossier: "controler", title: "Contrôle · régler et câbler", kicker: "Contrôler · 2",
+    id: "quiz-final",
+    narration: "Dernière vérification, sur ce qui distingue un réglage tenu d'un réglage approximatif. Un réglage tenu, c'est : des valeurs qui viennent du dossier et non de l'habitude, un type de sonde déclaré, un différentiel qui laisse la machine travailler, et un enregistrement vérifié. Un réglage approximatif, c'est la même manœuvre sans ces quatre points — et il ressemble au bon jusqu'à la première coupure de courant.", dossier: "controler", title: "Contrôle · régler et câbler", kicker: "Contrôler · 2",
     codes: ["9.04", "6.03"], level: "evaluer",
     text: "Une dernière vérification sur ce qui distingue un réglage tenu d’un réglage approximatif.",
     prompt: "Quelle intervention est correcte ?",
@@ -1320,7 +1343,8 @@ const screens = [
   }),
 
   screen({
-    id: "bilan", dossier: "controler", title: "Ce qu’il faut emporter", kicker: "Contrôler · bilan", level: "comprendre",
+    id: "bilan",
+    narration: "Ce qu'il faut emporter tient en peu de mots. Un régulateur lit une résistance, la compare à une consigne, et ferme un contact. Il commande, il ne protège pas. Deux nombres suffisent à le régler — consigne et différentiel — mais ils ne valent que s'ils sont enregistrés. Le type de sonde se déclare. Et un remplacement se fait par fonction, jamais par numéro de paramètre. Avec cela, vous êtes capable de reprendre un régulateur que vous n'avez jamais vu.", dossier: "controler", title: "Ce qu’il faut emporter", kicker: "Contrôler · bilan", level: "comprendre",
     text: "Un régulateur lit une résistance, la compare à une consigne, et ferme un contact. Il <b>commande</b>, il ne protège pas. Deux nombres suffisent à décrire son cycle — consigne et différentiel — et entre les deux, la mémoire de l’hystérésis fait respirer la machine. Les claviers changent, les cinq gestes non. Le dégivrage a cinq temps, dont deux sans chauffe. Et au bornier, chaque relais a un commun et une sortie, sur un départ toujours protégé.",
     prompt: "",
     render: () => statement({
@@ -1364,7 +1388,7 @@ async function copyCurrentLink(){const item=currentItem(); const url=new URL(loc
 function showStatus(message){clearTimeout(statusTimer);$("#status-message").textContent=message;statusTimer=setTimeout(()=>$("#status-message").textContent="",2600)}
 function bestFrenchVoice(){const voices=speechSynthesis.getVoices(); const ranked=voices.map(voice=>{const lang=(voice.lang||"").toLowerCase(),name=(voice.name||"").toLowerCase();let score=0;if(lang==="fr-fr")score+=50;else if(lang.startsWith("fr"))score+=25;if(/natural|naturel|neural|online|google|microsoft|denise|henri|julie|paul|hortense/.test(name))score+=12;return{voice,score};}).sort((a,b)=>b.score-a.score);return ranked[0]?.voice||voices[0]||null;}
 function speechSupported(){return "speechSynthesis" in window&&"SpeechSynthesisUtterance" in window}
-function speakCurrent(){if(!speechSupported()){showStatus("La voix n’est pas disponible. Le texte reste complet.");return;} stopSpeech(false); autoplay=true; const item=currentItem(); const token=++speechRun; const utterance=new SpeechSynthesisUtterance(item.speak||`${item.title}. ${stripHtml(item.text)} ${item.prompt}`); utterance.lang="fr-FR";utterance.pitch=1;utterance.rate=voiceRates[rateIndex];const voice=bestFrenchVoice();if(voice)utterance.voice=voice;utterance.onstart=()=>{if(token!==speechRun)return;speaking=true;paused=false;updateVoiceButtons();};utterance.onend=()=>{if(token!==speechRun)return;speaking=false;paused=false;updateVoiceButtons();};utterance.onerror=e=>{if(token!==speechRun||["canceled","interrupted"].includes(e.error))return;speaking=false;paused=false;updateVoiceButtons();showStatus("Lecture vocale indisponible.");};speechSynthesis.speak(utterance);}
+function speakCurrent(){if(!speechSupported()){showStatus("La voix n’est pas disponible. Le texte reste complet.");return;} stopSpeech(false); autoplay=true; const item=currentItem(); const token=++speechRun; const utterance=new SpeechSynthesisUtterance(item.narration || item.speak || ""); utterance.lang="fr-FR";utterance.pitch=1;if(window.PILOTE_VOIX_REGLAGE)window.PILOTE_VOIX_REGLAGE.appliquer(utterance);else utterance.rate=voiceRates[rateIndex];const voice=bestFrenchVoice();if(voice)utterance.voice=voice;utterance.onstart=()=>{if(token!==speechRun)return;speaking=true;paused=false;updateVoiceButtons();};utterance.onend=()=>{if(token!==speechRun)return;speaking=false;paused=false;updateVoiceButtons();};utterance.onerror=e=>{if(token!==speechRun||["canceled","interrupted"].includes(e.error))return;speaking=false;paused=false;updateVoiceButtons();showStatus("Lecture vocale indisponible.");};speechSynthesis.speak(utterance);}
 function toggleSpeech(){if(!speechSupported()){showStatus("La voix n’est pas disponible.");return;}if(speaking&&!paused){speechSynthesis.pause();paused=true;updateVoiceButtons();}else if(speaking&&paused){speechSynthesis.resume();paused=false;updateVoiceButtons();}else speakCurrent();}
 function stopSpeech(disableAutoplay=true){speechRun++;if(speechSupported())speechSynthesis.cancel();speaking=false;paused=false;if(disableAutoplay)autoplay=false;updateVoiceButtons();}
 function updateVoiceButtons(){const button=$("#listen");if(!button)return;button.innerHTML=paused?'<span aria-hidden="true">▶</span><span>Reprendre</span>':speaking?'<span aria-hidden="true">Ⅱ</span><span>Pause</span>':'<span aria-hidden="true">▶</span><span>Écouter</span>';$("#stop-voice").disabled=!speaking;$("#speed-value").textContent=voiceRates[rateIndex].toFixed(2).replace(".",",")+"×";}

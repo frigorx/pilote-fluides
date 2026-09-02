@@ -5,7 +5,7 @@
     title: "Mesurer",
     nextHref: "../../lignes/P/parcours.html",
     nextLabel: "Ouvrir le parcours de la ligne P",
-    successMessage: "Tu construis un relevé traçable avant d’interpréter une performance.",
+    successMessage: "Vous construisez un relevé traçable avant d’interpréter une performance.",
     levels: {
       CAP: { name: "CAP · niveau 3", objective: "Lire une valeur avec son unité.", learn: ["nommer le point mesuré", "lire la valeur et l’unité", "signaler un relevé douteux"] },
       TP: { name: "Bac pro · niveau 4", objective: "Préparer un relevé complet.", learn: ["choisir grandeur et instrument", "nommer point et unité", "noter contexte et stabilisation"] },

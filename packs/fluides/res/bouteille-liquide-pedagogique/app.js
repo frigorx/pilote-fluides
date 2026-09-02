@@ -76,6 +76,7 @@
 
   const lessons = [
     {
+      narration: "Devant vous, un réservoir sous pression, placé du côté haute pression du circuit. C'est un cylindre, souvent avec des raccords aux deux extrémités et parfois des accessoires vissés. La première chose à faire est de ne pas le confondre avec ses voisins : ce n'est ni un filtre, qui est bien plus petit, ni un séparateur d'aspiration, qui se trouve côté basse pression avant le compresseur. Le repère sûr, ce n'est pas la forme : c'est l'endroit où il est raccordé.",
       short: "Reconnaître",
       kicker: "Écran 1 · Observer",
       title: "Reconnaître la bouteille liquide",
@@ -89,6 +90,7 @@
       render: renderRecognise
     },
     {
+      narration: "Sa place est après le condenseur et avant le filtre. Le fluide, une fois condensé, rejoint la bouteille avant de repartir alimenter la ligne liquide. Cet ordre a du sens : on stocke d'abord, on nettoie ensuite, juste avant les organes sensibles. Quand vous raccordez sur un schéma, souvenez-vous d'une règle de lecture : les conduites se branchent sur les bornes des symboles, elles ne traversent jamais un organe. Un trait qui traverse un symbole est une erreur de tracé.",
       short: "Placer",
       kicker: "Écran 2 · Circuit",
       title: "Après le condenseur, avant le filtre",
@@ -102,6 +104,7 @@
       render: renderPlacement
     },
     {
+      narration: "Pourquoi une réserve ? Parce que la quantité de fluide présente dans les échangeurs n'est pas constante. Elle varie avec la température extérieure, avec la demande, avec le dégivrage. Sans réserve, l'installation serait tantôt en excès, tantôt en manque, plusieurs fois par jour. La bouteille absorbe ces variations. Le niveau à l'intérieur monte et descend, c'est normal — l'essentiel étant qu'il reste assez de liquide pour que la sortie soit toujours alimentée.",
       short: "Stocker",
       kicker: "Écran 3 · Fonction",
       title: "Une réserve qui absorbe les variations",
@@ -115,6 +118,7 @@
       render: renderStorage
     },
     {
+      narration: "Regardons à l'intérieur. Le liquide se rassemble en bas, la vapeur occupe la partie haute. C'est simplement la gravité qui organise cela. Et voici le point important : la sortie doit prélever du liquide, jamais de la vapeur. Si elle prenait de la vapeur, le détendeur en aval ne pourrait plus doser correctement, et l'installation perdrait en performance sans qu'on comprenne pourquoi. Deux pièces travaillent ensemble pour l'éviter : le tube plongeur et la vanne de départ.",
       short: "Ouvrir",
       kicker: "Écran 4 · Coupe",
       title: "Voir ce qui se passe à l’intérieur",
@@ -130,6 +134,7 @@
       render: renderInside
     },
     {
+      narration: "Le tube plongeur résout le problème de façon simple. Comme la sortie est souvent placée en hauteur, un tube descend à l'intérieur jusqu'au fond du réservoir, là où se trouve le liquide, puis remonte vers la sortie. Le fluide est donc prélevé en bas, quelle que soit la hauteur du raccord extérieur. C'est pour cette raison qu'une bouteille ne peut pas être montée dans n'importe quelle position : couchée alors qu'elle est conçue verticale, le tube plongeur ne plonge plus dans rien.",
       short: "Plongeur",
       kicker: "Écran 5 · Prélèvement",
       title: "Le tube plongeur va chercher le liquide",
@@ -143,6 +148,7 @@
       render: renderDipTube
     },
     {
+      narration: "Ne confondez jamais l'entrée et le départ liquide. L'entrée reçoit le fluide qui arrive du condenseur. La sortie alimente la ligne liquide vers le filtre et la détente. Les deux raccords peuvent se ressembler beaucoup sur certains modèles, et une inversion met la vapeur dans la ligne liquide. Le réflexe : vérifier le marquage sur l'appareil et la documentation du modèle avant tout raccordement. C'est un contrôle de trente secondes qui évite une remise en cause complète.",
       short: "Entrée / sortie",
       kicker: "Écran 6 · Raccordements",
       title: "Ne pas confondre entrée et départ liquide",
@@ -156,6 +162,7 @@
       render: renderConnections
     },
     {
+      narration: "La vanne de départ ouvre ou ferme le passage entre la bouteille et la ligne liquide. Ce n'est pas un détendeur, et elle ne se règle pas. Cette distinction est essentielle : on ne s'en sert pas pour doser un débit ou ajuster un fonctionnement. Elle a deux positions utiles — ouverte pour laisser passer, fermée pour isoler, notamment lors d'une intervention ou d'un pump-down. Une vanne de départ laissée à moitié ouverte crée une perte de charge parasite que personne ne cherchera.",
       short: "Vanne départ",
       kicker: "Écran 7 · Isolement",
       title: "La vanne de départ n’est pas un détendeur",
@@ -169,6 +176,7 @@
       render: renderValvePositions
     },
     {
+      narration: "Sur la vanne Rotalock étudiée, deux raccords de service coexistent, et ils n'ont pas la même fonction. Le repère à mémoriser est physique : la prise P se trouve près du carré de manœuvre, la prise P1 à l'opposé. Cette distinction compte au moment de brancher un manifold : selon la prise choisie et la position de la tige, vous mesurez soit la bouteille, soit la ligne. Prenez le temps de vous repérer sur la vanne elle-même — l'habitude prise sur une machine ne vaut pas pour une autre.",
       short: "Prise service",
       kicker: "Écran 8 · Accès",
       title: "P près du carré, P1 à l’opposé",
@@ -182,6 +190,7 @@
       render: renderServicePort
     },
     {
+      narration: "Le pump-down consiste à rassembler la charge du côté haute pression. On ferme la ligne liquide, le compresseur continue de tourner et vide la partie basse pression de son fluide, qui vient s'accumuler dans la bouteille. Vous verrez alors le niveau monter dans la bouteille pendant que la basse pression descend. C'est la manœuvre qui permet d'intervenir sur la partie basse pression sans récupérer toute la charge. C'est aussi ce que fait automatiquement une installation qui s'arrête proprement.",
       short: "Pump-down",
       kicker: "Écran 9 · Principe",
       title: "Rassembler la charge côté condenseur",
@@ -195,6 +204,7 @@
       render: renderPumpDown
     },
     {
+      narration: "La répartition du fluide dans le circuit change en permanence. Par temps froid, la condensation est plus efficace et davantage de liquide s'accumule côté haute pression. Quand l'évaporateur demande beaucoup, une plus grande part du fluide s'y trouve. Ces déplacements sont normaux, et c'est précisément ce que la bouteille absorbe. Retenez le mot juste : elle compense les variations d'inventaire liquide du circuit. Elle ne corrige pas une charge mal ajustée.",
       short: "Variations",
       kicker: "Écran 10 · Régime",
       title: "La charge se répartit autrement",
@@ -208,6 +218,7 @@
       render: renderVariations
     },
     {
+      narration: "Une bouteille ne se remplit pas au hasard, et c'est autant une question de sécurité que de bon fonctionnement. Elle doit conserver un volume libre pour les variations et pour la dilatation du liquide — un liquide qui se dilate dans un volume entièrement plein fait monter la pression très vite. Le dimensionnement se fait avec les données du constructeur, jamais avec un pourcentage retenu de mémoire. C'est une règle où l'à-peu-près n'a pas sa place.",
       short: "Dimensionner",
       kicker: "Écran 11 · Capacité",
       title: "Une bouteille ne se remplit pas au hasard",
@@ -221,6 +232,7 @@
       render: renderSizing
     },
     {
+      narration: "Il existe des bouteilles verticales et des bouteilles horizontales, et leurs prises sont adaptées à cette orientation. On ne choisit donc pas la position selon la place disponible dans le local. L'orientation fait partie de la conception du récipient : elle détermine où se trouve le liquide, où débouche le tube plongeur, et où sont les organes de sécurité. Poser une bouteille verticale à l'horizontale, c'est neutraliser tout ce qui a été calculé.",
       short: "Monter",
       kicker: "Écran 12 · Construction",
       title: "Verticale ou horizontale : suivre sa conception",
@@ -234,6 +246,7 @@
       render: renderMounting
     },
     {
+      narration: "Une bouteille est un équipement sous pression, et cela entraîne des obligations. Sa plaque porte des données que vous devez savoir lire : PS, la pression maximale admissible ; TS, les températures admissibles ; V, le volume. Ces valeurs conditionnent les contrôles et le choix des protections. Et il faut distinguer les rôles : la bouteille stocke, la soupape protège. La plaque et les accessoires de sécurité font partie du contrôle de l'installation, au même titre que l'étanchéité.",
       short: "Sécuriser",
       kicker: "Écran 13 · Pression",
       title: "DESP et protection contre la surpression",
@@ -248,6 +261,7 @@
       render: renderSafety
     },
     {
+      narration: "Le défi vous attend : six situations sur la fonction de l'organe, le prélèvement du liquide, la vanne de départ et la lecture de la plaque. Un fil conducteur pour vous aider : à chaque question, demandez-vous où se trouve le liquide et où se trouve la vapeur. La plupart des réponses en découlent. Et si vous hésitez entre bouteille liquide et bouteille anti-coup, revenez au repère qui ne trompe pas : côté haute pression après le condenseur, ou côté basse pression avant le compresseur.",
       short: "Défi",
       kicker: "Écran 14 · Vérifier",
       title: "Décider sans confondre les organes",
@@ -844,11 +858,12 @@
     const voices = window.speechSynthesis.getVoices();
     selectedVoice = voices.find((voice) => /^fr-FR$/i.test(voice.lang)) || voices.find((voice) => /^fr/i.test(voice.lang)) || null;
   }
+  /* Le texte dit à l'élève est écrit pour l'oreille dans le champ narration.
+     Jusqu'au 01/09/2026 cette fonction collait le titre, l'accroche, le HTML du
+     détail et la phrase « À retenir » : l'élève entendait la fiche, pas un cours. */
   function spokenText() {
     const lesson = lessons[current];
-    const temporary = document.createElement("div");
-    temporary.innerHTML = lesson.detail;
-    return `${lesson.title}. ${lesson.intro} ${temporary.textContent || ""} À retenir : ${lesson.takeaway}`.replace(/\s+/g, " ").trim();
+    return typeof lesson.narration === "string" ? lesson.narration.trim() : "";
   }
   function startSpeech() {
     if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) { announce("La lecture vocale n’est pas disponible sur cet appareil."); return; }
@@ -856,9 +871,11 @@
     if (speaking) { window.speechSynthesis.pause(); paused = true; updateVoiceButton(); return; }
     stopSpeech();
     const run = ++speechRun;
-    const utterance = new SpeechSynthesisUtterance(spokenText());
+    const ditVoix = spokenText();
+    if (!ditVoix) return;
+    const utterance = new SpeechSynthesisUtterance(ditVoix);
     utterance.lang = "fr-FR";
-    utterance.rate = voiceRate;
+    if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.appliquer(utterance);
     if (selectedVoice) utterance.voice = selectedVoice;
     utterance.onstart = () => { if (run !== speechRun) return; speaking = true; paused = false; updateVoiceButton(); };
     utterance.onend = utterance.onerror = () => { if (run !== speechRun) return; speaking = false; paused = false; updateVoiceButton(); };

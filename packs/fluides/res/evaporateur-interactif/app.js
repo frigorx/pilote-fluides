@@ -58,6 +58,7 @@ function screen(data) {
 const screens = [
   screen({
     id: "evaporateur-role",
+    narration: "Situons d'abord l'organe. Sur la Croix du Frigoriste, l'évaporateur occupe le point bas : il reçoit le fluide après le détendeur et absorbe la chaleur du milieu à refroidir. C'est là que le froid est produit, et nulle part ailleurs. Dans ce module, nous n'allons pas refaire la théorie de l'évaporation : nous allons regarder ce qui se passe autour — l'air, le givre, les sécurités, et les traces qu'il faut consigner. C'est le côté terrain de l'organe.",
     dossier: "observer",
     niveau: "decouvrir",
     short: "Position",
@@ -70,6 +71,7 @@ const screens = [
   }),
   screen({
     id: "batterie-reelle",
+    narration: "Trois zones à distinguer devant un évaporateur, et chacune a ses défauts propres. La batterie échange la chaleur : c'est elle qu'on regarde en premier. Les ventilateurs font passer l'air : sans eux, la batterie la plus propre n'échange rien. Et le bac, avec son évacuation, reçoit l'eau de condensation et de dégivrage. Cette troisième zone est la plus négligée, et c'est souvent d'elle que viennent les problèmes qu'on met le plus longtemps à comprendre.",
     dossier: "observer",
     niveau: "decouvrir",
     short: "Reconnaître",
@@ -82,6 +84,7 @@ const screens = [
   }),
   screen({
     id: "givre-naissance",
+    narration: "D'où vient le givre ? L'air qui traverse la batterie apporte de l'humidité. Au contact d'une surface suffisamment froide, cette humidité se dépose, et si la surface est sous zéro, elle gèle. Voilà le mécanisme. Mais attention à ne pas raccourcir : la température seule ne suffit pas à diagnostiquer quoi que ce soit. Une batterie qui givre en froid négatif fait exactement ce qu'on attend d'elle. Ce qui compte, c'est la répartition du givre, son épaisseur, et sa vitesse de formation.",
     dossier: "observer",
     niveau: "comprendre",
     short: "Naissance du givre",
@@ -95,6 +98,7 @@ const screens = [
   }),
   screen({
     id: "givre-debit-air",
+    narration: "Voyons maintenant pourquoi le givre pose problème quand il s'installe. La couche isole les ailettes, et elle rétrécit le passage de l'air. Deux effets qui vont dans le même sens : l'échange baisse. La température devient instable, l'équipement travaille davantage pour un résultat moindre, et le phénomène s'entretient lui-même — moins d'échange, surface plus froide, plus de givre. C'est une spirale, et c'est pour l'interrompre qu'existe le dégivrage.",
     dossier: "observer",
     niveau: "comprendre",
     short: "Débit d’air",
@@ -108,6 +112,7 @@ const screens = [
   }),
   screen({
     id: "diagnostic-givre",
+    narration: "Une batterie prise en glace vous dit qu'il y a un problème. Elle ne dit pas lequel. Plusieurs causes produisent le même signal : un défaut de débit d'air, une infiltration d'air humide, un réglage de dégivrage inadapté, un écoulement bouché, ou un problème d'alimentation en fluide. Cinq causes, un seul symptôme. C'est exactement la situation du condenseur avec sa haute pression : le symptôme oriente, il ne conclut pas.",
     dossier: "observer",
     niveau: "appliquer",
     short: "Interpréter",
@@ -121,6 +126,7 @@ const screens = [
   }),
   screen({
     id: "releve-normal",
+    narration: "Un relevé utile croise ce que l'on voit et ce que l'on mesure. Regardez l'aspect de la batterie — uniforme ou en plaques ? Vérifiez le débit d'air. Contrôlez l'évacuation des condensats. Et consultez l'historique du régulateur, qui vous dira combien de dégivrages ont eu lieu et s'ils se sont terminés normalement. Ces quatre éléments se lisent ensemble. Aucun voyant isolé, aucune valeur seule ne suffit à conclure.",
     dossier: "observer",
     niveau: "appliquer",
     short: "Relevé",
@@ -140,6 +146,7 @@ const screens = [
 
   screen({
     id: "degivrage-role",
+    narration: "Comprenez bien ce que fait le dégivrage : il retire un obstacle, il ne produit pas de froid. Il rend à la batterie son passage d'air et sa capacité d'échange, rien de plus. Cela a deux conséquences pratiques. Déclenché trop tard, la glace a déjà étouffé l'évaporateur et la production est perdue. Permanent ou excessif, il consomme de l'énergie et réchauffe ce qu'on cherche à refroidir. Le bon dégivrage est celui qui arrive juste à temps et s'arrête dès que le travail est fait.",
     dossier: "degivrer",
     niveau: "comprendre",
     short: "Pourquoi",
@@ -153,6 +160,7 @@ const screens = [
   }),
   screen({
     id: "degivrage-methodes",
+    narration: "Trois moyens existent pour dégivrer, avec un même objectif. À l'air : on arrête le froid et on laisse l'air ambiant faire fondre. Par résistance électrique : on chauffe la batterie. Par gaz chauds : on envoie le refoulement du compresseur dans l'évaporateur. La méthode dépend de l'installation et de son usage — on ne choisit pas, on constate. Votre travail consiste à identifier celle qui existe sur la machine, puis à suivre sa documentation, au lieu d'appliquer une durée apprise ailleurs.",
     dossier: "degivrer",
     niveau: "comprendre",
     short: "Méthodes",
@@ -166,6 +174,7 @@ const screens = [
   }),
   screen({
     id: "conduit-air-chaud",
+    narration: "Le conduit de dégivrage à l'air chaud s'inspecte, il ne se suppose pas. Cherchez trois choses : une perte d'étanchéité, une isolation abîmée, et un écoulement des condensats dégradé. Ces défauts n'arrêtent pas la machine, ils la dégradent en silence — de l'air chaud qui fuit là où il ne devrait pas, de la condensation qui se forme au mauvais endroit. Toute anomalie visible entre au rapport, même si elle ne provoque rien aujourd'hui.",
     dossier: "degivrer",
     niveau: "appliquer",
     short: "Conduit",
@@ -183,6 +192,7 @@ const screens = [
   }),
   screen({
     id: "minuterie-reglage",
+    narration: "Régler un cycle de dégivrage, c'est éviter deux excès symétriques. Trop rare ou trop court : la glace reste, et le problème s'aggrave à chaque cycle. Trop fréquent ou trop long : on consomme de l'énergie pour rien, et l'on perturbe la température du produit. Entre les deux, il y a un réglage juste — et il dépend de l'installation, du produit, de l'hygrométrie du local. Les valeurs viennent de la documentation et de l'observation du site, jamais d'une habitude d'atelier.",
     dossier: "degivrer",
     niveau: "appliquer",
     short: "Minuterie",
@@ -196,6 +206,7 @@ const screens = [
   }),
   screen({
     id: "egouttement-reprise",
+    narration: "La séquence de dégivrage comporte une étape qu'on oublie souvent : l'égouttage. On arrête la production de froid, on dégivre, puis on laisse l'eau partir avant de relancer. Sans ce temps d'écoulement, l'eau encore présente regèle immédiatement à la reprise, et vous vous retrouvez avec une couche de glace plus tenace que le givre de départ. La séquence exacte et la commande des ventilateurs pendant ces phases dépendent de l'installation.",
     dossier: "degivrer",
     niveau: "appliquer",
     short: "Reprise",
@@ -210,6 +221,7 @@ const screens = [
 
   screen({
     id: "securite-avant",
+    narration: "Avant toute intervention, deux protections vont ensemble. Pour l'électricité : la consignation — arrêter, isoler, verrouiller, vérifier l'absence de tension. Pour la pression : la mise en pression de contrôle se fait à l'azote seul. Jamais d'oxygène, jamais d'air comprimé. L'oxygène en présence d'huile peut provoquer une réaction violente ; l'air comprimé apporte de l'humidité dans le circuit. Ces deux règles ne souffrent aucune exception, aucune urgence de chantier.",
     dossier: "regler",
     niveau: "appliquer",
     short: "Avant d’agir",
@@ -223,6 +235,7 @@ const screens = [
   }),
   screen({
     id: "regulateur-role",
+    narration: "Le régulateur de pression d'évaporation, placé en sortie d'évaporateur, maintient une pression minimale. À quoi cela sert-il ? À protéger le produit — empêcher qu'une chambre descende trop bas — ou à équilibrer plusieurs évaporateurs qui travaillent à des températures différentes sur le même circuit. C'est une soupape mécanique : elle module un passage. Et notez bien ce qu'elle ne fait pas : elle ne coupe aucune alimentation électrique.",
     dossier: "regler",
     niveau: "comprendre",
     short: "Régulateur",
@@ -236,6 +249,7 @@ const screens = [
   }),
   screen({
     id: "regulateur-vs-pressostat",
+    narration: "Deux organes, deux verbes à ne pas confondre. Le régulateur module : il agit mécaniquement sur la pression d'évaporation, en permanence, sans électricité. Le pressostat commute : c'est un interrupteur, de contrôle ou de sécurité, qui agit sur la commande électrique. Le premier fait varier, le second ouvre ou ferme. Cette distinction revient sur chaque organe du circuit, et c'est elle qui vous dira où chercher devant un défaut.",
     dossier: "regler",
     niveau: "comprendre",
     short: "Ne pas confondre",
@@ -248,6 +262,7 @@ const screens = [
   }),
   screen({
     id: "reglage-constructeur",
+    narration: "Un réglage professionnel suit une boucle vérifiable, toujours la même. Identifier l'organe. Lire sa notice. Mesurer l'état actuel. Ajuster. Puis contrôler à nouveau. Sans documentation et sans modèle de fonctionnement, on ne transforme pas une valeur habituelle en réglage justifié — on reproduit une habitude. Et une habitude qui se transmet d'atelier en atelier finit par s'appliquer à des machines pour lesquelles elle n'a jamais été prévue.",
     dossier: "regler",
     niveau: "appliquer",
     short: "Méthode",
@@ -267,6 +282,7 @@ const screens = [
   }),
   screen({
     id: "mise-en-service",
+    narration: "Installer correctement, c'est penser à l'organe et à ses sécurités comme à un seul ensemble. Fixation, raccords, matériel de contrôle, dispositifs de sécurité, absence de fuite : ces cinq points forment un tout. Une belle batterie parfaitement posée, avec un raccord douteux ou un câble mal serré, n'est pas une installation réussie — c'est une panne qui attend son heure. Le jugement sur une installation se porte sur son maillon le plus faible.",
     dossier: "regler",
     niveau: "appliquer",
     short: "Mise en service",
@@ -286,6 +302,7 @@ const screens = [
 
   screen({
     id: "inspection-surface",
+    narration: "L'inspection visuelle cherche deux familles de choses : ce qui gêne l'échange, et ce qui prépare une fuite. Du givre installé, de l'encrassement, un ventilateur arrêté ou qui frotte relèvent de la première. La corrosion, une fixation détendue, de l'eau qui stagne relèvent de la seconde. Et l'eau qui stagne mérite votre attention : elle ronge la batterie et le bac lentement, et une fuite peut s'y développer sans laisser la moindre trace visible.",
     dossier: "verifier",
     niveau: "appliquer",
     short: "Surface",
@@ -299,6 +316,7 @@ const screens = [
   }),
   screen({
     id: "inspection-conduit",
+    narration: "Une anomalie de dégivrage se cherche sur tout le chemin de l'eau et de l'air, pas seulement sur la glace. Suivez le conduit, l'isolation, le bac, la pente d'écoulement, l'évacuation, et enfin les commandes qui terminent le cycle. Le défaut peut être à n'importe lequel de ces endroits. Un bac dont la pente est fausse, une évacuation partiellement bouchée, un siphon gelé : aucun de ces défauts ne se voit en regardant la batterie, et tous produisent une reprise en glace.",
     dossier: "verifier",
     niveau: "appliquer",
     short: "Conduit",
@@ -312,6 +330,7 @@ const screens = [
   }),
   screen({
     id: "conduites-position",
+    narration: "Les conduites de liquide et d'aspiration doivent être à leur place, et cela se vérifie plutôt que de se supposer. Une aspiration mal tracée piège l'huile, qui ne revient plus au compresseur. Une ligne liquide réchauffée sur son parcours arrive au détendeur avec des bulles. Dans les deux cas, la machine se dégrade sans panne franche — pas d'arrêt, pas d'alarme, juste des performances qui baissent et une usure qui s'accélère. Ce sont les défauts les plus difficiles à faire admettre, parce que rien ne s'arrête.",
     dossier: "verifier",
     niveau: "appliquer",
     short: "Conduites",
@@ -329,6 +348,7 @@ const screens = [
   }),
   screen({
     id: "interpretation-releve",
+    narration: "Un bon relevé mène à une action, pas à un diagnostic précipité. La structure qui fonctionne tient en trois temps : décrivez le signe constaté, indiquez le risque associé, puis nommez le contrôle suivant. Cette forme sépare clairement ce qui est observé de ce qui reste à confirmer — et elle protège celui qui écrit. Affirmer une cause qu'on n'a pas vérifiée engage votre responsabilité ; décrire un signe et proposer un contrôle, jamais.",
     dossier: "verifier",
     niveau: "appliquer",
     short: "Conclusion",
@@ -342,6 +362,7 @@ const screens = [
   }),
   screen({
     id: "rapport-etat",
+    narration: "Un rapport utile décrit, alerte et propose la suite. Écrivez ce que vous avez vu, le risque que cela représente, et la mesure à prendre. Et évitez le « rien à signaler » quand aucun contrôle précis n'est nommé : cette mention signifie littéralement que rien n'a été vérifié, ce qui n'est pas ce que vous voulez dire. Écrivez plutôt ce que vous avez contrôlé et trouvé conforme. C'est plus long de trois lignes, et cela vaut beaucoup mieux le jour où l'on vous demande des comptes.",
     dossier: "verifier",
     niveau: "evaluer",
     short: "Rapport",
@@ -356,6 +377,7 @@ const screens = [
 
   screen({
     id: "quiz-givre",
+    narration: "Premier contrôle. Une batterie est prise en glace et l'air passe mal. Quelle conclusion est la plus professionnelle ? Souvenez-vous de ce qu'on a vu : cinq causes différentes produisent ce symptôme. La conclusion professionnelle n'est donc pas de nommer une cause, mais de décrire le constat et d'annoncer le contrôle qui permettra de trancher.",
     dossier: "controle",
     niveau: "evaluer",
     short: "Question 1",
@@ -373,6 +395,7 @@ const screens = [
   }),
   screen({
     id: "quiz-degivrage",
+    narration: "Deuxième contrôle. Lors de l'inspection du conduit de dégivrage à l'air chaud, quel trio faut-il contrôler ? Revenez à l'écran neuf si vous hésitez : trois éléments y étaient nommés ensemble, et ils forment le chemin complet de l'air chaud et de l'eau.",
     dossier: "controle",
     niveau: "evaluer",
     short: "Question 2",
@@ -390,6 +413,7 @@ const screens = [
   }),
   screen({
     id: "quiz-regulation",
+    narration: "Troisième contrôle. Quel organe maintient une pression d'évaporation minimale sans couper l'électricité ? La réponse tient dans la distinction entre les deux verbes : moduler et commuter. L'un agit mécaniquement sur le passage du fluide, l'autre agit sur la commande électrique.",
     dossier: "controle",
     niveau: "evaluer",
     short: "Question 3",
@@ -407,6 +431,7 @@ const screens = [
   }),
   screen({
     id: "quiz-installation",
+    narration: "Quatrième contrôle. Quelle préparation respecte les deux protections essentielles rappelées dans ce module ? Rappelez-vous : elles concernent deux domaines différents — l'électricité d'un côté, la pression de l'autre — et elles vont toujours ensemble avant une intervention.",
     dossier: "controle",
     niveau: "evaluer",
     short: "Question 4",
@@ -424,6 +449,7 @@ const screens = [
   }),
   screen({
     id: "quiz-rapport",
+    narration: "Cinquième contrôle. Quel constat aide réellement la maintenance suivante ? Pensez à ce qui distingue un constat utile d'un jugement : le premier décrit un signe localisé et nomme un contrôle, le second exprime une opinion que personne ne pourra reprendre.",
     dossier: "controle",
     niveau: "evaluer",
     short: "Question 5",
@@ -441,6 +467,7 @@ const screens = [
   }),
   screen({
     id: "bilan",
+    narration: "Bilan de ce contrôle. Le seuil retenu est de quatre réponses justes sur cinq. Et une précision honnête pour finir : cet exercice entraîne et corrige, il ne remplace ni l'épreuve officielle, ni la validation de vos gestes sur une machine réelle, devant un formateur. Ce que vous avez travaillé ici, c'est le raisonnement. Le geste, lui, s'apprend en atelier.",
     dossier: "controle",
     niveau: "evaluer",
     short: "Bilan",
@@ -1134,10 +1161,10 @@ function speakCurrent() {
   stopSpeech(false);
   autoplay = true;
   const run = speechRun;
-  const utterance = new SpeechSynthesisUtterance(`${item.title}. ${item.text} ${item.prompt}`);
+  const utterance = new SpeechSynthesisUtterance(item.narration || "");
   utterance.lang = "fr-FR";
   utterance.pitch = 1;
-  utterance.rate = voiceRates[rateIndex];
+  if(window.PILOTE_VOIX_REGLAGE)window.PILOTE_VOIX_REGLAGE.appliquer(utterance);else utterance.rate=voiceRates[rateIndex];
   const voice = bestFrenchVoice();
   if (voice) utterance.voice = voice;
   utterance.onstart = () => {

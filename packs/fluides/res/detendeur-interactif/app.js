@@ -77,6 +77,7 @@
 
   const lessons = [
     {
+      narration: "Commençons par lire le circuit dans le sens du fluide, c'est la seule façon de ne pas se perdre. Le liquide haute pression descend du condenseur, traverse le détendeur, et entre dans l'évaporateur en basse pression. Repérez ensuite les trois attaches de l'organe : le corps est sur la ligne, à l'entrée de l'évaporateur ; le bulbe est en sortie d'évaporateur, sur l'aspiration ; et un capillaire les relie. Cette géométrie n'est pas un détail de montage — c'est le principe même de la régulation.",
       short: "Placer",
       kicker: "Écran 1 · Circuit",
       title: "Lire le circuit dans le sens du fluide",
@@ -91,6 +92,7 @@
       render: renderPlacement
     },
     {
+      narration: "Un détendeur thermostatique se reconnaît à deux ensembles. D'un côté, un corps qui dose le fluide, avec ses deux raccords. De l'autre, une tête surmontant le corps, reliée à un bulbe par un fin capillaire. C'est le bulbe qui signe l'organe : aucun autre composant du circuit n'a cette petite masse métallique sanglée sur un tube, à distance de son corps. Si vous le voyez, vous savez que vous avez affaire à une régulation thermostatique, et non à un capillaire ni à un détendeur électronique.",
       short: "Reconnaître",
       kicker: "Écran 2 · Appareil",
       title: "Reconnaître un détendeur thermostatique",
@@ -105,6 +107,7 @@
       render: renderRole
     },
     {
+      narration: "Nommons les pièces dans l'ordre où elles agissent, parce que c'est une chaîne. Le bulbe sent la température. La membrane reçoit la pression que le bulbe lui envoie et se déforme. La tige transmet ce déplacement. Le clapet, au bout, modifie la surface de passage. Bulbe, membrane, tige, clapet : retenez cet ordre, il vous servira pour tout diagnostic. Chaque maillon peut être en cause, et l'on remonte toujours la chaîne du symptôme vers la cause.",
       short: "Nommer",
       kicker: "Écran 3 · Construction",
       title: "Découvrir les pièces une par une",
@@ -120,6 +123,7 @@
       render: renderComponents
     },
     {
+      narration: "Voyons la détente elle-même. Le liquide haute pression franchit un orifice minuscule, et c'est ce passage étroit qui provoque la chute de pression. Deux pièces travaillent ensemble ici, et on les confond souvent : l'orifice — la buse — crée la détente, tandis que le clapet règle la surface de passage disponible. La buse fixe la capacité maximale, le clapet module en dessous. C'est pourquoi un détendeur trop grand ou trop petit ne se rattrape pas à la vis : la capacité vient de la buse.",
       short: "Détendre",
       kicker: "Écran 4 · Transformation",
       title: "Le clapet dose le passage",
@@ -134,6 +138,7 @@
       render: renderExpansion
     },
     {
+      narration: "La surchauffe est une comparaison entre deux températures, et il faut bien comprendre lesquelles. La première est celle du tube d'aspiration, donnée par le bulbe. La seconde est la température de saturation, celle à laquelle le fluide s'évapore à la pression du moment — vous la trouvez en lisant la pression puis en consultant la table du fluide. La différence entre les deux, c'est la surchauffe. Elle vous dit de combien la vapeur s'est réchauffée après la dernière goutte évaporée. Deux mesures cohérentes, et vous tenez le signal que le détendeur cherche à stabiliser.",
       short: "Calculer",
       kicker: "Écran 5 · Surchauffe",
       title: "La surchauffe compare deux températures",
@@ -147,6 +152,7 @@
       render: renderSuperheat
     },
     {
+      narration: "Trois forces s'affrontent sur la membrane, et leur équilibre décide de tout. La pression du bulbe pousse dans le sens de l'ouverture : plus la vapeur est chaude, plus elle pousse. En face, la pression d'évaporation et le ressort de réglage poussent dans le sens de la fermeture. La membrane compare, la tige transmet, le clapet obéit. La force dominante fixe la position du passage. C'est une balance mécanique permanente, sans électricité ni électronique.",
       short: "Équilibrer",
       kicker: "Écran 6 · Forces",
       title: "Trois forces déplacent un seul axe",
@@ -161,6 +167,7 @@
       render: renderForces
     },
     {
+      narration: "Regardons la boucle en mouvement, car c'est là que tout s'éclaire. La charge augmente, l'évaporateur travaille plus, la vapeur en sortie devient plus chaude : la surchauffe monte. Le bulbe se réchauffe, sa pression monte, la membrane pousse, le clapet s'ouvre davantage, le débit augmente, l'évaporateur est mieux alimenté — et la surchauffe redescend. Retenez la séquence : surchauffe qui monte, ouverture qui augmente, débit qui augmente, surchauffe qui redescend. Le système se corrige seul, en continu.",
       short: "Voir bouger",
       kicker: "Écran 7 · Boucle complète",
       title: "Le détendeur s’adapte à la charge",
@@ -176,6 +183,7 @@
       render: renderRegulationLoop
     },
     {
+      narration: "Le bulbe n'est pas un accessoire décoratif : son contact avec le tube d'aspiration commande directement l'ouverture. Un bulbe mal serré, posé sur une peinture épaisse, ou fixé sous le tube au lieu du dessus, mesure autre chose que ce qu'il devrait. Et s'il n'est pas isolé quand la notice le demande, il sent l'air du local. Retenez la formule : le bulbe mesure le tube, pas l'air autour. Un défaut de pose du bulbe donne exactement les symptômes d'un détendeur défectueux — et fait remplacer beaucoup d'organes en bon état.",
       short: "Poser bulbe",
       kicker: "Écran 8 · Capteur",
       title: "Fixer le bulbe sur le tube qu’il doit mesurer",
@@ -190,6 +198,7 @@
       render: renderBulb
     },
     {
+      narration: "L'égalisation transmet une pression sous la membrane, et elle ne détend rien. C'est un point de vocabulaire qui évite des confusions. Avec une égalisation interne, cette pression est prise dans le corps même du détendeur, juste après l'orifice. Avec une égalisation externe, une petite conduite va la chercher en sortie d'évaporateur. Pourquoi cette seconde version ? Parce que dès qu'il y a un distributeur ou une perte de charge notable dans l'évaporateur, la pression en sortie n'est plus celle qui règne dans le corps. La conception et la notice fixent le choix.",
       short: "Égaliser",
       kicker: "Écran 9 · Pression",
       title: "Séparer prise interne et prise externe",
@@ -204,6 +213,7 @@
       render: renderEqualization
     },
     {
+      narration: "Avant de toucher au réglage, vérifiez la buse. C'est elle qui fixe la capacité de base de l'organe, et le clapet ne peut moduler correctement que dans une plage adaptée. Un détendeur surdimensionné oscille : il ouvre trop, la surchauffe s'effondre, il referme, elle remonte. Un détendeur sous-dimensionné n'alimente jamais assez, quelle que soit la position de la vis. Dans les deux cas, tourner le réglage ne résoudra rien. On dimensionne d'abord ; on règle ensuite, et seulement si le diagnostic le justifie.",
       short: "Choisir buse",
       kicker: "Écran 10 · Dimensionnement",
       title: "Adapter la buse avant de toucher au réglage",
@@ -218,6 +228,7 @@
       render: renderOrifice
     },
     {
+      narration: "La vis de réglage modifie la compression du ressort et déplace l'équilibre mécanique. C'est tout ce qu'elle fait. Elle n'ajoute pas de fluide dans le circuit, elle n'augmente pas la capacité de la buse, elle ne remplace pas un nettoyage de condenseur. Voilà pourquoi on ne règle pas un détendeur pour compenser un autre problème. Et si vous devez régler, procédez par petites corrections : chacune demande une nouvelle stabilisation et une nouvelle mesure. Un quart de tour, puis on attend, puis on mesure.",
       short: "Régler",
       kicker: "Écran 11 · Méthode",
       title: "Régler seulement après avoir prouvé la cause",
@@ -231,6 +242,7 @@
       render: renderAdjustment
     },
     {
+      narration: "Le montage conditionne le fonctionnement plus que sur bien d'autres organes. La propreté d'abord : une particule sur un orifice minuscule le bouche. Le choix de la buse ensuite. Le filtre en amont, qui protège cet orifice. Le serrage aux couples prescrits, car les raccords à visser étanchent par la portée. Et la maîtrise de la chaleur au brasage, qui peut détruire l'élément thermostatique. La fiche du modèle fixe les raccords, les couples, la température admissible et le contrôle d'étanchéité. Elle n'est pas facultative.",
       short: "Installer",
       kicker: "Écran 12 · Montage",
       title: "Assembler et braser selon la notice",
@@ -244,6 +256,7 @@
       render: renderInstallation
     },
     {
+      narration: "Une surchauffe anormale est un symptôme, pas une cause. Trop élevée, elle peut venir d'une sous-alimentation — mais aussi d'un manque de charge, d'un filtre obstrué, d'une buse trop petite, d'un bulbe mal posé. Trop faible, elle annonce un risque de retour de liquide au compresseur, et c'est la situation la plus dangereuse. Dans les deux cas, la démarche est la même : recoupez la surchauffe avec les pressions, les températures et l'état général du circuit avant d'agir. Le détendeur est souvent accusé à tort.",
       short: "Diagnostiquer",
       kicker: "Écran 13 · Symptômes",
       title: "Sous-alimentation ou risque de retour liquide",
@@ -257,6 +270,7 @@
       render: renderDiagnosis
     },
     {
+      narration: "Le défi vous attend : six situations sur le rôle de l'organe, son placement, la surchauffe, l'égalisation, la buse et la méthode. Un conseil pour les aborder. Devant chaque cas, remontez la chaîne dans l'ordre : que mesure le bulbe, que reçoit la membrane, où se trouve l'équilibre, quelle est la position du clapet. Et gardez en tête la règle qui vous évitera les pires erreurs : on pose les mesures avant l'action, jamais l'inverse.",
       short: "Défi",
       kicker: "Écran 14 · Vérifier",
       title: "Décider sans dérégler l’installation",
@@ -945,11 +959,12 @@
       || null;
   }
 
+  /* Le texte dit à l'élève est écrit pour l'oreille dans le champ narration.
+     Jusqu'au 01/09/2026 cette fonction collait le titre, l'accroche, le HTML du
+     détail et la phrase « À retenir » : l'élève entendait la fiche, pas un cours. */
   function spokenText() {
     const lesson = lessons[current];
-    const temporary = document.createElement("div");
-    temporary.innerHTML = lesson.detail;
-    return `${lesson.title}. ${lesson.intro} ${temporary.textContent || ""} À retenir : ${lesson.takeaway}`.replace(/\s+/g, " ").trim();
+    return typeof lesson.narration === "string" ? lesson.narration.trim() : "";
   }
 
   function startSpeech() {
@@ -971,10 +986,12 @@
     }
     stopSpeech();
     const run = ++speechRun;
-    const utterance = new SpeechSynthesisUtterance(spokenText());
+    const ditVoix = spokenText();
+    if (!ditVoix) return;
+    const utterance = new SpeechSynthesisUtterance(ditVoix);
     utterance.lang = "fr-FR";
     utterance.pitch = 1;
-    utterance.rate = voiceRate;
+    if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.appliquer(utterance);
     if (selectedVoice) utterance.voice = selectedVoice;
     utterance.onstart = () => {
       if (run !== speechRun) return;

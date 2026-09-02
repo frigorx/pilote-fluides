@@ -99,6 +99,7 @@
     },
     steps: [
       {
+        narration: "Devant un bloc de production, ne commencez pas par la marque. Commencez par la fonction : que fait cet appareil pour le réseau d'eau ? Il lui donne de l'énergie. C'est tout, et c'est déjà l'essentiel pour lire l'installation. Le nom commercial, la référence, l'année, viendront plus tard, quand il s'agira de commander une pièce. Cette habitude de lecture vous rendra service devant une installation inconnue : vous comprendrez comment l'eau circule avant même de savoir de quel matériel il s'agit. C'est la démarche que vous avez déjà appliquée à la station Énergie, sur la chaîne complète.",
         short: "Identifier", kicker: "repérer", title: "Que fait ce bloc ?",
         text: "Le nom commercial ne suffit pas. Commence par la fonction rendue au réseau d’eau.",
         cap: "Montre le départ et le retour du générateur.",
@@ -119,6 +120,7 @@
         }
       },
       {
+        narration: "Fonction, technologie et énergie sont trois choses différentes, et les confondre mène à des raisonnements faux. La fonction, c'est produire de la chaleur pour le réseau. La technologie, c'est la façon d'y parvenir : combustion dans une chaudière, cycle thermodynamique dans une pompe à chaleur, échange avec un réseau de chaleur. L'énergie, c'est ce qu'on consomme : gaz, électricité, bois. Trois appareils très différents peuvent occuper la même fonction dans la boucle. Et vis-à-vis de l'hydraulique, ils se lisent de la même manière : une entrée, une sortie, un débit qui les traverse.",
         short: "Fonction", kicker: "comprendre", title: "Fonction, technologie, énergie",
         text: "Chaudière, pompe à chaleur et groupe d’eau glacée ne sont pas des synonymes. Ils peuvent pourtant occuper la fonction de production dans une boucle.",
         cap: "Montre la chaudière, la pompe à chaleur ou le groupe d’eau glacée.",
@@ -138,6 +140,7 @@
         }
       },
       {
+        narration: "Suivez l'eau, pas la couleur seule. Sur les schémas, le rouge désigne souvent le départ et le bleu le retour — c'est une convention commode, mais ce n'est qu'une convention. Sur une installation réelle, les tubes sont gris, calorifugés, parfois repeints, et personne n'a mis de couleur. Ce qui reste vrai en toutes circonstances, ce sont les mots départ et retour, le sens des flèches sur le schéma, et les points de mesure. Prenez l'habitude de vous appuyer sur ces repères-là : ils ne vous manqueront jamais, même sur un chantier où le dossier a disparu.",
         short: "Effet", kicker: "observer", title: "Suivre l’eau, pas la couleur seule",
         text: "Les mots départ et retour, les flèches et les points de mesure restent visibles. La couleur n’est qu’un repère supplémentaire.",
         cap: "Repère les deux sondes de température T1 et T2.",
@@ -158,6 +161,7 @@
         }
       },
       {
+        narration: "Faites varier le besoin et regardez la logique de charge. Quand la demande baisse, la production doit s'ajuster. Un générateur qui ne sait pas moduler s'arrête et redémarre sans cesse : ce sont les cycles courts, qui usent le matériel et dégradent le rendement. Vous verrez à la station Volume tampon comment on limite ce phénomène en ajoutant de l'inertie. Ce que ce modèle vous montre est une logique, pas une sélection : il ne dimensionne aucun équipement réel et ne remplace pas une étude.",
         short: "Régler", kicker: "mesurer et régler", title: "Le besoin évolue",
         text: "Déplace le besoin relatif. Le modèle montre seulement une logique de charge ; il ne sélectionne pas un équipement réel.",
         cap: "Compte les blocs allumés après avoir bougé le curseur.",
@@ -174,8 +178,9 @@
         }
       },
       {
+        narration: "Une température inattendue n'autorise jamais à remplacer un générateur. C'est la règle la plus coûteuse à ignorer de toute la ligne. Avant de mettre en cause la production, il faut avoir vérifié ce qui se trouve en aval : le débit qui la traverse, l'état des émetteurs, la position des vannes, la régulation. Une production correcte alimentant un réseau bloqué donne exactement les mêmes symptômes qu'une production défaillante. Ordonnez donc les contrôles du plus simple et du moins cher vers le plus lourd. On ne commence jamais un diagnostic par la pièce la plus chère.",
         short: "Vérifier", kicker: "hypothèse", title: "Mesurer avant de conclure",
-        text: "Une température inattendue n’autorise pas à remplacer le générateur. Ordonne les contrôles.",
+        text: "Une température inattendue n’autorise pas à remplacer le générateur. Ordonnez les contrôles.",
         cap: "Signale une température anormale sans rien démonter.",
         tp: "Prépare un compte rendu factuel avant toute action corrective.",
         bts: "Compare l’état mesuré au point attendu avant de justifier une cause probable.",

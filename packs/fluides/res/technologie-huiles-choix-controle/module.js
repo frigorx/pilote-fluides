@@ -11,6 +11,7 @@ window.OIL_MODULE = {
   lessons: [
     {
       id: "methode-choix",
+      narration: "Avant d'ouvrir un bidon, quatre vérifications, dans cet ordre. Un : relevez le modèle exact du compresseur et le fluide en place. Deux : consultez la notice ou la liste d'huiles approuvées par le fabricant. Trois : relevez la famille, le grade et la référence exigés. Quatre : contrôlez le bidon lui-même, son lot et son état. La bonne réponse à la question « quelle huile ? » n'est jamais « je prends une polyol ester » — c'est « je vérifie le modèle, le fluide, la liste approuvée, le grade et la référence ». Et si l'huile présente est inconnue, si un mélange est possible, ou si la référence manque : on suspend l'ajout et on applique la procédure du fabricant.",
       short: "Choisir",
       kicker: "Station 1 · Méthode terrain",
       title: "Quatre vérifications avant d’ouvrir un bidon",
@@ -24,6 +25,7 @@ window.OIL_MODULE = {
     },
     {
       id: "miscibilite-solubilite",
+      narration: "Deux mots se ressemblent et ne veulent pas dire la même chose : miscibilité et solubilité. La miscibilité décrit la capacité de l'huile et du fluide liquide à former une phase homogène — ils se mélangent ou ils se séparent. La solubilité décrit la quantité de fluide qui se dissout dans l'huile. Ces deux notions ont des conséquences très concrètes. Une bonne miscibilité aide le transport et le retour de l'huile ; une séparation de phases crée des accumulations dans un évaporateur ou un réservoir. Et le fluide dissous fluidifie l'huile : en fonctionnement, la viscosité réelle du mélange peut être bien plus faible que celle annoncée sur le bidon. Attention donc au raccourci : « très miscible » ne veut pas dire « meilleure lubrification ». Une forte dilution réduit le film d'huile.",
       short: "Mélanges",
       kicker: "Station 2 · Deux propriétés",
       title: "Miscibilité et solubilité ne veulent pas dire la même chose",
@@ -37,6 +39,7 @@ window.OIL_MODULE = {
     },
     {
       id: "grade-iso-vg",
+      narration: "Le grade I S O V G est une information précise, et elle est souvent mal comprise. Le nombre indique la viscosité de l'huile pure à quarante degrés, exprimée en millimètres carrés par seconde — l'unité que vous verrez aussi notée centistokes. Un grade trente-deux vaut donc environ trente-deux à cette température ; un grade quarante-six, environ quarante-six ; un grade soixante-huit, environ soixante-huit. Plus le nombre est élevé, plus l'huile pure est visqueuse. Et voici ce que ce nombre n'est pas : ce n'est pas une plage de température. Un grade trente-deux ne signifie ni moins trente-deux degrés, ni une limite à trente-deux degrés, ni l'autorisation de l'employer sur n'importe quelle machine. Famille chimique, grade, et référence approuvée sont trois informations différentes, et toutes nécessaires.",
       short: "ISO VG",
       kicker: "Station 3 · Lire le grade",
       title: "ISO VG 32, 46 ou 68 indique une viscosité à 40 °C",
@@ -50,6 +53,7 @@ window.OIL_MODULE = {
     },
     {
       id: "viscosite-temperature",
+      narration: "La viscosité n'est pas une constante : elle chute fortement quand la température monte. Prenons un exemple de fabricant, sur une huile polyol ester pure. Une B S E trente-deux vaut environ soixante-quatorze centistokes à vingt degrés, trente-deux à quarante degrés, et seulement six à cent degrés. Une B S E cinquante-cinq passe de cent quarante-sept à cinquante-cinq, puis à neuf. Retenez la tendance plus que les chiffres : entre le carter froid au démarrage et la zone chaude du refoulement, ce n'est pas la même huile qui travaille. Et le fluide dissous réduit encore cette viscosité. Le grade est mesuré à quarante degrés ; le fonctionnement, lui, se juge sur toute la plage de température.",
       short: "Température",
       kicker: "Station 4 · Comportement réel",
       title: "Quand la température monte, l’huile devient beaucoup plus fluide",
@@ -63,6 +67,7 @@ window.OIL_MODULE = {
     },
     {
       id: "hygroscopicite",
+      narration: "Les huiles polyol ester, polyalkylène glycol et polyvinyl éther sont hygroscopiques : elles captent l'humidité de l'air ambiant. Et cette eau se dissout dans l'huile — vous ne pouvez pas voir à l'œil qu'un bidon est sec. Les gestes qui protègent : préparez votre matériel avant d'ouvrir, utilisez un bidon d'origine fermé, limitez le temps d'ouverture, refermez immédiatement, et ne reversez jamais une huile déjà prélevée dans le bidon propre. Pourquoi tant de précautions ? Parce que l'eau favorise la corrosion, le gel au détendeur, et la dégradation de l'huile. Avec un ester, l'hydrolyse forme des acides qui attaquent le bobinage. Et un tirage au vide ne retire pas facilement l'eau déjà liée à l'huile.",
       short: "Humidité",
       kicker: "Station 5 · Hygroscopicité",
       title: "POE, PAG et PVE absorbent une eau qui peut rester invisible",
@@ -76,6 +81,7 @@ window.OIL_MODULE = {
     },
     {
       id: "acidite-test",
+      narration: "Terminons par le test d'acidité, et par ce qu'il n'est pas. Ce n'est ni un test de pH, ni un test d'humidité — ce sont trois mesures différentes. Un kit d'acidité utilise un prélèvement d'huile et des réactifs pour révéler si le niveau d'acide dépasse le seuil prévu par sa notice. La méthode : prélever un échantillon représentatif en sécurité, doser le volume prévu pour cette famille d'huile, ajouter les réactifs dans l'ordre, agiter, laisser les phases se séparer, puis comparer l'indicateur à la notice. Un résultat positif conduit à rechercher la cause, puis à appliquer la procédure de nettoyage, de filtration, de remplacement et de nouveau contrôle. Ces kits contiennent des produits chimiques : les équipements de protection, la fiche de données de sécurité et les règles d'élimination sont ceux de la notice exacte.",
       short: "Test acide",
       kicker: "Station 6 · Contrôler et décider",
       title: "Le test d’acidité n’est pas un test de pH ni un test d’humidité",

@@ -76,6 +76,7 @@
 
   const lessons = [
     {
+      narration: "Deux voyants côte à côte, et ils ne se valent pas. Tous deux ont une fenêtre qui permet de voir passer le fluide. Mais un seul possède en plus une pastille sensible à l'humidité, au centre. Cette différence décide de ce que l'appareil peut vous apprendre. Prenez donc l'habitude, devant un voyant, de commencer par cette question : y a-t-il une pastille ? Si la réponse est non, vous saurez que l'humidité du circuit restera invisible pour vous à cet endroit.",
       short: "Reconnaître",
       kicker: "Écran 1 · Observer",
       title: "Reconnaître les deux voyants liquides",
@@ -89,6 +90,7 @@
       render: renderRecognise
     },
     {
+      narration: "La position du voyant n'est pas laissée au hasard. Sur ce montage, il vient directement après le filtre déshydrateur, et les deux sont horizontaux. L'ordre compte : le filtre nettoie, le voyant montre le résultat. Placé avant le filtre, il vous montrerait un fluide non filtré, ce qui n'a aucun intérêt pour juger de l'état de la ligne liquide. Retenez la séquence de ce montage : filtre, puis voyant, puis organe de détente.",
       short: "Placer",
       kicker: "Écran 2 · Circuit",
       title: "Horizontal ici, et juste après le filtre",
@@ -102,6 +104,7 @@
       render: renderPlacement
     },
     {
+      narration: "Les deux éléments du voyant ne répondent pas à la même question. La fenêtre répond à : le fluide est-il entièrement liquide à cet endroit ? La pastille répond à : y a-t-il de l'humidité dans ce circuit ? Ce sont deux informations indépendantes. Vous pouvez très bien avoir une fenêtre parfaitement claire et une pastille qui signale de l'humidité, ou l'inverse. Ne mélangez jamais les deux lectures : elles concernent deux problèmes différents.",
       short: "Comparer",
       kicker: "Écran 3 · Fonctions",
       title: "Une lecture ou deux lectures",
@@ -115,6 +118,7 @@
       render: renderCompare
     },
     {
+      narration: "Regardons de quoi c'est fait. Le corps assure le raccordement à la ligne et résiste à la pression. La vitre isole le fluide tout en laissant voir : c'est une pièce d'étanchéité autant qu'un hublot d'observation. Et la pastille, quand elle existe, est un élément ajouté à l'intérieur, en contact avec le fluide. Comprendre cela vous évitera une erreur d'entretien : on ne nettoie pas l'intérieur d'un voyant, et une vitre devenue opaque ne se récupère pas — l'appareil se remplace.",
       short: "Ouvrir",
       kicker: "Écran 4 · Construction",
       title: "Voir les éléments du voyant",
@@ -130,6 +134,7 @@
       render: renderConstruction
     },
     {
+      narration: "Le voyant vous montre un état local et instantané : ce qui passe à cet endroit précis, à cette seconde précise. C'est peu, et c'est beaucoup. Peu, parce qu'un fluide correct ici ne dit rien de ce qui se passe ailleurs. Beaucoup, parce que c'est votre seule vision directe de l'intérieur du circuit. La conséquence pratique : observez pendant un régime de fonctionnement identifié et stabilisé. Un voyant regardé pendant un démarrage ou un dégivrage ne vous apprend rien d'exploitable.",
       short: "Observer",
       kicker: "Écran 5 · Circulation",
       title: "La fenêtre montre un état local",
@@ -143,6 +148,7 @@
       render: renderFlowStates
     },
     {
+      narration: "Un voyant plein, sans la moindre bulle, est un bon signe : il indique que le fluide arrive en liquide continu à cet endroit. Mais attention à la conclusion que vous en tirez. Cela ne prouve pas que la charge est exacte. Une installation légèrement surchargée donne aussi un voyant parfaitement clair. Un voyant clair vous dit qu'il n'y a pas de problème visible ici et maintenant — il ne certifie pas la quantité de fluide dans la machine. La charge se vérifie autrement.",
       short: "Liquide plein",
       kicker: "Écran 6 · Lecture",
       title: "Clair ne signifie pas « charge exacte »",
@@ -156,6 +162,7 @@
       render: renderClearReading
     },
     {
+      narration: "Des bulles vous disent qu'une partie du fluide s'est déjà vaporisée avant d'arriver là. C'est un signal, et il mérite d'être pris au sérieux. Mais voici l'erreur la plus coûteuse du métier : conclure aussitôt au manque de charge et compléter. Des bulles peuvent aussi venir d'une perte de charge en amont, d'un filtre qui commence à s'obstruer, d'une variation de charge, ou d'un régime transitoire. Bulles égale chercher la cause. Bulles ne veut pas dire ajouter du fluide.",
       short: "Bulles",
       kicker: "Écran 7 · Diagnostic",
       title: "Après le filtre, les bulles donnent un indice",
@@ -169,6 +176,7 @@
       render: renderBubbles
     },
     {
+      narration: "Sur un voyant équipé, la pastille change de couleur selon l'humidité présente dans le fluide. C'est une réaction chimique, pas un affichage électronique : elle prend un certain temps à s'établir, et elle dépend aussi de la température. Trois choses à vérifier avant de nommer un état : quel fluide circule, à quelle température, et que dit la légende du fabricant. La même couleur ne signifie pas la même chose sur toutes les marques.",
       short: "Humidité",
       kicker: "Écran 8 · Principe",
       title: "La pastille réagit à l’humidité",
@@ -182,6 +190,7 @@
       render: renderMoisturePrinciple
     },
     {
+      narration: "La couleur ne travaille jamais seule. Sur un voyant, elle s'accompagne toujours d'un mot, d'un contour, et d'une référence produit. C'est une règle de lecture, et c'est aussi une règle d'accessibilité : un technicien qui distingue mal certaines couleurs doit pouvoir lire l'information autrement. Lisez donc la légende imprimée sur l'appareil, celui que vous avez sous les yeux. Et laissez le temps à la pastille de se stabiliser avant de conclure : une lecture prise trop tôt après un démarrage peut être trompeuse.",
       short: "Lire couleur",
       kicker: "Écran 9 · Méthode",
       title: "Lire une couleur avec sa légende",
@@ -195,6 +204,7 @@
       render: renderMoistureReading
     },
     {
+      narration: "Sur un voyant simple, sans pastille, aucune couleur d'humidité n'est disponible. Cela paraît évident dit comme ça, et pourtant l'erreur se produit. Voici la formulation à retenir, parce qu'elle est exacte : l'absence de pastille est une absence d'information. Ce n'est pas un état « sec ». Si vous devez vous prononcer sur l'humidité d'un circuit équipé d'un voyant simple, vous ne pouvez pas le faire avec cet appareil — il faudra une autre méthode.",
       short: "Sans indicateur",
       kicker: "Écran 10 · Frontière",
       title: "Le voyant simple ne dit rien sur l’humidité",
@@ -208,6 +218,7 @@
       render: renderWithoutIndicator
     },
     {
+      narration: "Le voyant prend toute sa valeur quand vous le reliez au reste. Une observation seule reste une impression ; associée au régime du circuit et à des mesures cohérentes, elle devient un élément de diagnostic. Concrètement : notez ce que vous voyez, notez les pressions et températures du moment, notez l'état de fonctionnement. C'est l'ensemble qui parle. Un diagnostic solide combine toujours trois choses : ce qu'on observe, ce qu'on mesure, et ce que dit la documentation.",
       short: "Mesurer",
       kicker: "Écran 11 · Recouper",
       title: "Observer, puis mesurer",
@@ -221,6 +232,7 @@
       render: renderDiagnosis
     },
     {
+      narration: "Un voyant à braser est fragile pendant le montage. La chaleur dirigée vers le corps abîme le joint de la vitre et détruit la pastille d'humidité — et le dégât ne se voit pas tout de suite. Les précautions sont celles de tout organe sensible : protéger le corps, garder la flamme sur le raccord, chiffon humide, azote circulant. Chaque modèle a sa méthode, et la notice fait foi. Un voyant monté sans précaution peut fonctionner quelques semaines avant de fuir.",
       short: "Installer",
       kicker: "Écran 12 · Montage",
       title: "Protéger le voyant pendant le montage",
@@ -234,6 +246,7 @@
       render: renderInstallation
     },
     {
+      narration: "Ce point n'est pas négociable : un voyant est raccordé au fluide frigorigène, et c'est un composant sous pression. On ne l'ouvre jamais sur un circuit chargé. Cela peut paraître évident, mais la tentation existe devant une vitre encrassée. On observe sans démonter. Toute intervention sur cet organe suit une procédure professionnelle validée : récupération du fluide, mise en sécurité, et remplacement selon les règles. C'est autant une question de sécurité que de réglementation.",
       short: "Intervenir",
       kicker: "Écran 13 · Sécurité",
       title: "Ne jamais ouvrir un circuit sous pression",
@@ -247,6 +260,7 @@
       render: renderSafety
     },
     {
+      narration: "Vous voilà au défi. Six situations vont vérifier ce que vous avez compris : la place du voyant dans la ligne, la différence entre les deux variantes, la lecture des bulles, celle de l'humidité, et les précautions de montage. Un conseil pour aborder ces questions : à chaque fois, demandez-vous ce que le voyant peut réellement prouver, et ce qu'il ne fait que suggérer. Toute la difficulté de cet organe tient dans cette distinction — et c'est aussi ce qui sépare un technicien prudent d'un technicien qui change des pièces.",
       short: "Défi",
       kicker: "Écran 14 · Vérifier",
       title: "Décider sans surinterpréter le voyant",
@@ -705,11 +719,12 @@
       || null;
   }
 
+  /* Le texte dit à l'élève est écrit pour l'oreille dans le champ narration.
+     Jusqu'au 01/09/2026 cette fonction collait le titre, l'accroche, le HTML du
+     détail et la phrase « À retenir » : l'élève entendait la fiche, pas un cours. */
   function spokenText() {
     const lesson = lessons[current];
-    const temporary = document.createElement("div");
-    temporary.innerHTML = lesson.detail;
-    return `${lesson.title}. ${lesson.intro} ${temporary.textContent || ""} À retenir : ${lesson.takeaway}`.replace(/\s+/g, " ").trim();
+    return typeof lesson.narration === "string" ? lesson.narration.trim() : "";
   }
 
   function startSpeech() {
@@ -731,10 +746,12 @@
     }
     stopSpeech();
     const run = ++speechRun;
-    const utterance = new SpeechSynthesisUtterance(spokenText());
+    const ditVoix = spokenText();
+    if (!ditVoix) return;
+    const utterance = new SpeechSynthesisUtterance(ditVoix);
     utterance.lang = "fr-FR";
     utterance.pitch = 1;
-    utterance.rate = voiceRate;
+    if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.appliquer(utterance);
     if (selectedVoice) utterance.voice = selectedVoice;
     utterance.onstart = () => {
       if (run !== speechRun) return;

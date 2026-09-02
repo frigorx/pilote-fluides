@@ -91,7 +91,8 @@ function screen(data) {
 
 const screens = [
   screen({
-    id: "mission-290", dossier: "comprendre", niveau: "decouvrir", short: "Mission",
+    id: "mission-290",
+    narration: "Voici votre mission. Une armoire réfrigérée au R 290 doit être déplacée puis remise en service dans la réserve d'un commerce. Attention à ce qu'on attend de vous : votre rôle n'est pas de réciter que c'est un fluide A3. Votre rôle est de décider — autoriser l'intervention, ou la suspendre. Et cette décision se construit sur des preuves, pas sur une impression. Tout ce module vous conduit à ce moment-là.", dossier: "comprendre", niveau: "decouvrir", short: "Mission",
     title: "Mission 290 · autoriser ou suspendre l’intervention",
     text: "Une armoire réfrigérée au R-290 doit être déplacée puis remise en service dans la réserve d’un commerce. Votre rôle n’est pas de réciter A3 : vous devez réunir les preuves qui permettent de travailler sans improviser.",
     prompt: "Choisissez la toute première action.", codes: ["12.04"],
@@ -103,7 +104,8 @@ const screens = [
     ], render: renderChoice, wire: wireChoice
   }),
   screen({
-    id: "origine-propane", dossier: "comprendre", niveau: "decouvrir", short: "Origine",
+    id: "origine-propane",
+    narration: "Le R 290 n'est pas un nouveau gaz : c'est le code frigorifique du propane, une molécule que vous connaissez tous. Il provient du traitement du gaz naturel et du raffinage du pétrole. Et les hydrocarbures ne sont pas nouveaux en froid non plus — ils étaient utilisés bien avant les fluides de synthèse. Ce qui est nouveau, c'est leur retour dans des machines modernes, dans des commerces, à portée du public. Le fluide est ancien ; le contexte d'emploi, lui, a complètement changé.", dossier: "comprendre", niveau: "decouvrir", short: "Origine",
     title: "Le R-290 n’est pas un nouveau gaz",
     text: "R-290 est le code frigorifique du propane, C₃H₈. Il provient notamment du traitement du gaz naturel et du raffinage. Les hydrocarbures ont été essayés dès le début du XXᵉ siècle, puis délaissés au profit de fluides plus faciles à employer avec les techniques d’étanchéité de l’époque.",
     prompt: "Faites avancer la courte frise : deux idées suffisent.", codes: [],
@@ -111,7 +113,8 @@ const screens = [
     render: renderTimeline, wire: wireTimeline
   }),
   screen({
-    id: "pourquoi-r290", dossier: "comprendre", niveau: "comprendre", short: "Pourquoi",
+    id: "pourquoi-r290",
+    narration: "Pourquoi remettre du propane dans une machine frigorifique ? Pour deux raisons qui se cumulent. Un impact climatique direct très faible — son pouvoir de réchauffement vaut trois, contre plusieurs milliers pour certains fluides de synthèse. Et de bonnes propriétés thermodynamiques : il fonctionne bien, avec de bons rendements. Mais retenez la contrepartie, elle commande tout le reste : il ne rend pas l'installation moins dangereuse. Il déplace le risque du climat vers l'inflammation.", dossier: "comprendre", niveau: "comprendre", short: "Pourquoi",
     title: "Pourquoi remettre du propane dans une machine frigorifique ?",
     text: "Le R-290 revient parce qu’il conjugue un très faible impact climatique direct et de bonnes propriétés thermodynamiques. Mais il ne rend pas une ancienne machine compatible par magie : l’équipement doit avoir été conçu et approuvé pour un fluide inflammable.",
     prompt: "Retenez les trois raisons justes et écartez les deux pièges.", codes: ["12.14"],
@@ -119,7 +122,8 @@ const screens = [
     render: renderReasons, wire: wireReasons
   }),
   screen({
-    id: "rappel-a3", dossier: "comprendre", niveau: "comprendre", short: "Rappel A3",
+    id: "rappel-a3",
+    narration: "Cette mission suit une machine au R 290, mais la logique de prévention vaut pour toute la famille A3. Vous rencontrerez le R 600 et le R 600a — le butane et l'isobutane, très présents dans le froid domestique — ainsi que le R 1270, le propylène. Même famille, mêmes précautions. Ce que vous apprenez ici sur une armoire au propane s'appliquera devant un réfrigérateur à l'isobutane. Ne raisonnez pas fluide par fluide : raisonnez par classe d'inflammabilité.", dossier: "comprendre", niveau: "comprendre", short: "Rappel A3",
     title: "Le R-290 n’est qu’un exemple de la famille A3",
     text: "Cette mission suit une machine au R-290. La même logique de prévention concerne d’autres hydrocarbures A3 courants : R-600, R-600a, R-1270… La liste n’est pas à réciter : avant toute intervention, la plaque et la FDS donnent le fluide et sa classe.",
     prompt: "Repérez la famille, puis choisissez le réflexe qui restera valable demain.", codes: ["12.01"],
@@ -128,7 +132,8 @@ const screens = [
   }),
 
   screen({
-    id: "triangle-inflammation", dossier: "risques", niveau: "comprendre", short: "Triangle",
+    id: "triangle-inflammation",
+    narration: "Comprenez comment une fuite devient un accident, parce qu'aucune étape n'est facultative. Une fuite n'explose pas toute seule. La chaîne est la suivante : le fluide fuit, il se mélange à l'air et forme un nuage, puis ce nuage rencontre une source d'inflammation. Trois maillons. Et voici la bonne nouvelle : il suffit d'en supprimer un seul pour qu'il n'y ait pas d'accident. C'est exactement sur ces trois maillons que porteront toutes vos actions de prévention.", dossier: "risques", niveau: "comprendre", short: "Triangle",
     title: "Regardez comment une fuite A3 devient un accident",
     text: "Une fuite n’explose pas toute seule. L’accident se construit : le fluide A3 fuit, il forme un nuage avec l’air, puis ce nuage rencontre une étincelle ou une surface chaude. Selon le lieu, le résultat peut être une inflammation brutale ou une explosion.",
     prompt: "Déclenchez les trois moments dans l’ordre, puis coupez la chaîne.", codes: ["12.04"],
@@ -136,7 +141,8 @@ const screens = [
     render: renderFireTriangle, wire: wireFireTriangle
   }),
   screen({
-    id: "nuage-inflammable", dossier: "risques", niveau: "comprendre", short: "Concentration",
+    id: "nuage-inflammable",
+    narration: "Le feu exige une certaine proportion de gaz dans l'air, ni plus ni moins. Presque uniquement de l'air, avec très peu de gaz : la flamme ne se propage pas, le mélange est trop pauvre. Presque uniquement du gaz : il ne brûle pas non plus, faute d'oxygène. Entre les deux se trouve une plage où une ignition peut déclencher un feu ou une explosion. Cette plage explique pourquoi la ventilation protège si bien : elle maintient le mélange en dessous du seuil, dans la zone où rien ne peut se propager.", dossier: "risques", niveau: "comprendre", short: "Concentration",
     title: "Le feu exige une certaine proportion de gaz et d’air",
     text: "Presque seulement de l’air : la flamme ne se propage pas. Dans la bonne proportion gaz-air, une ignition peut déclencher un feu ou une explosion. Avec beaucoup de gaz et trop peu d’air, pas de flamme ici — mais le nuage redevient dangereux en se diluant.",
     prompt: "Comparez les trois images, puis nommez les mélanges.", codes: ["12.04"],
@@ -144,7 +150,8 @@ const screens = [
     render: renderConcentration, wire: wireConcentration
   }),
   screen({
-    id: "points-bas", dossier: "risques", niveau: "appliquer", short: "Point bas",
+    id: "points-bas",
+    narration: "Un point capital pour votre sécurité : les vapeurs de R 290, R 600, R 600a et R 1270 sont plus lourdes que l'air. Elles ne montent pas au plafond, elles descendent — vers le sol, vers une fosse, vers un caniveau, vers un sous-sol. C'est l'inverse du réflexe qu'on a avec le gaz de ville. Une fuite peut donc se concentrer à un endroit bas où personne ne pense à regarder, et y attendre une source d'inflammation. Repérez toujours les points bas de la zone avant de commencer.", dossier: "risques", niveau: "appliquer", short: "Point bas",
     title: "Ces hydrocarbures descendent vers les points bas",
     text: "Les vapeurs de R-290, R-600, R-600a et R-1270 sont plus lourdes que l’air : elles descendent vers le sol, une fosse ou un caniveau. A3 indique l’inflammabilité, pas la densité. Pour tout autre fluide, vérifiez la FDS.",
     prompt: "Lancez la fuite : repérez les deux dangers au sol.", codes: ["12.02", "12.04"],
@@ -152,7 +159,8 @@ const screens = [
     render: renderLowPoint, wire: wireLowPoint
   }),
   screen({
-    id: "conduite-fuite", dossier: "risques", niveau: "evaluer", short: "Fuite",
+    id: "conduite-fuite",
+    narration: "L'alarme sonne, ou vous suspectez une fuite. La consigne est simple, et elle ne se discute pas : ne cherchez pas la fuite. La mission s'arrête immédiatement, quel que soit le fluide A3 concerné. On s'éloigne, on éloigne les autres, on alerte. Chercher une fuite d'un fluide inflammable dans une zone où le mélange peut être dans sa plage d'inflammabilité, c'est se mettre soi-même dans le nuage — avec un détecteur qui est un appareil électrique. La recherche viendra après, dans des conditions maîtrisées.", dossier: "risques", niveau: "evaluer", short: "Fuite",
     title: "L’alarme sonne : ne cherchez pas la fuite",
     text: "Une alarme ou une fuite suspectée arrête immédiatement la mission, quel que soit le fluide A3. On s’éloigne, on éloigne les autres, on alerte et on applique la consigne du site. Dans le nuage, un interrupteur, un moteur ou un appareil ordinaire peut fournir l’étincelle manquante.",
     prompt: "Choisissez votre action dans les dix premières secondes.", codes: ["12.04", "12.13"],
@@ -161,7 +169,8 @@ const screens = [
   }),
 
   screen({
-    id: "dossier-machine", dossier: "mission", niveau: "appliquer", short: "Dossier",
+    id: "dossier-machine",
+    narration: "La plaque signalétique transforme la machine en données exploitables. Dans le dossier de cette mission, elle vous donne le fluide — R 290 —, la charge — cent cinquante-trois grammes — et l'exigence de surface minimale issue de la documentation du fabricant pour cet appareil. Ces trois informations ne sont pas décoratives : ce sont elles qui vont décider si la réserve proposée convient ou non. Sans plaque lisible, vous n'avez aucune base de décision.", dossier: "mission", niveau: "appliquer", short: "Dossier",
     title: "La plaque transforme la machine en données",
     text: "Le dossier de la mission indique R-290, une charge de 153 g et une exigence de surface minimale issue de la documentation fabricant pour cet appareil commercial autonome. Ces trois informations ont trois usages différents.",
     prompt: "Ouvrez les repères de la plaque.", codes: ["12.01", "12.03"],
@@ -169,7 +178,8 @@ const screens = [
     render: renderMachineDossier, wire: wireMachineDossier
   }),
   screen({
-    id: "calcul-surface", dossier: "mission", niveau: "appliquer", short: "Calcul",
+    id: "calcul-surface",
+    narration: "Le calcul de surface minimale se fait dans un cas documenté, jamais avec une formule universelle apprise par cœur. L'exemple publié par Danfoss, pour un appareil commercial autonome relevant de la norme IEC 60335-2-89, fait dépendre la surface de la charge. Retenez la méthode plutôt que le nombre : vous cherchez la valeur applicable à VOTRE appareil, dans SA documentation. Une formule appliquée hors de son domaine donne un résultat qui a l'air juste et qui ne l'est pas.", dossier: "mission", niveau: "appliquer", short: "Calcul",
     title: "Calculer dans un cas documenté, jamais avec une formule universelle",
     text: "Dans l’exemple publié par Danfoss pour un appareil commercial autonome relevant de l’IEC 60335-2-89, la surface minimale dépend de la charge et de la limite inférieure d’inflammabilité. Le calcul ci-dessous vaut uniquement pour ce cas documenté.",
     prompt: "Calculez la surface minimale et saisissez le résultat au dixième.", codes: ["12.03"],
@@ -177,7 +187,8 @@ const screens = [
     render: renderAreaCalculation, wire: wireAreaCalculation
   }),
   screen({
-    id: "choisir-zone", dossier: "mission", niveau: "evaluer", short: "Implantation",
+    id: "choisir-zone",
+    narration: "Confrontons maintenant les chiffres. La première zone proposée mesure trois mètres sur deux, soit six mètres carrés. Le dossier de cette machine exige sept virgule trois mètres carrés au minimum. La réserve est donc trop petite — ce n'est pas une appréciation, c'est une comparaison de deux nombres. Une seconde zone de six mètres sur quatre est disponible. Vingt-quatre mètres carrés : celle-là convient. La décision se prend sur cette comparaison, pas sur l'impression que la pièce paraît assez grande.", dossier: "mission", niveau: "evaluer", short: "Implantation",
     title: "La réserve proposée est trop petite",
     text: "La première zone mesure 3 m × 2 m, soit 6 m². Le dossier de cette machine exige 7,3 m² minimum. Une seconde zone de 6 m × 4 m est disponible après mise à l’écart du public.",
     prompt: "Choisissez la seule décision défendable.", codes: ["12.03", "12.04"],
@@ -189,7 +200,8 @@ const screens = [
     ], render: renderChoice, wire: wireChoice
   }),
   screen({
-    id: "inspection-zone", dossier: "mission", niveau: "appliquer", short: "Inspection",
+    id: "inspection-zone",
+    narration: "La surface est suffisante, mais la zone n'est pas prête pour autant. Entrez maintenant avec les yeux d'un technicien et cherchez quatre choses. Les sources d'ignition : prises, interrupteurs, appareils électriques, flammes. L'évacuation : l'issue est-elle dégagée ? La ventilation : l'air se renouvelle-t-il ? Et les personnes exposées : qui circule dans cette réserve pendant votre intervention ? Une zone conforme en surface peut être totalement inadaptée sur ces quatre points.", dossier: "mission", niveau: "appliquer", short: "Inspection",
     title: "Entrez dans la zone avec les yeux d’un technicien",
     text: "La surface est suffisante, mais la zone n’est pas prête. Cherchez les sources d’ignition, l’évacuation, la ventilation, les personnes exposées et les points où le gaz pourrait s’accumuler.",
     prompt: "Trouvez les six repères de la scène.", codes: ["12.04", "12.13"],
@@ -197,7 +209,8 @@ const screens = [
     render: renderWorksiteInspection, wire: wireWorksiteInspection
   }),
   screen({
-    id: "corriger-zone", dossier: "mission", niveau: "appliquer", short: "Corriger",
+    id: "corriger-zone",
+    narration: "Chaque danger identifié appelle une action vérifiable. « Faire attention » ne corrige rien du tout — c'est une intention, pas une mesure. Il faut une action observable par un tiers : retirer une source d'ignition, dégager l'issue, interdire l'accès, mettre en place une ventilation. Le test est simple : quelqu'un qui arrive après vous doit pouvoir constater que l'action a été faite. Si votre mesure ne se voit pas, elle n'existe pas.", dossier: "mission", niveau: "appliquer", short: "Corriger",
     title: "Chaque danger appelle une action vérifiable",
     text: "Une phrase comme « faire attention » ne corrige rien. Il faut une action observable : retirer une ignition, dégager l’issue, interdire l’accès, vérifier la ventilation et appliquer le dispositif prévu pour les points bas.",
     prompt: "Choisissez l’action correcte pour chaque défaut.", codes: ["12.04", "12.05", "12.13"],
@@ -205,7 +218,8 @@ const screens = [
     render: renderSiteCorrections, wire: wireSiteCorrections
   }),
   screen({
-    id: "decision-chantier", dossier: "mission", niveau: "evaluer", short: "GO / STOP",
+    id: "decision-chantier",
+    narration: "Le feu vert est une conclusion, jamais un réflexe. Il réunit quatre preuves, et il les réunit toutes : l'appareil est identifié, la surface est conforme au dossier, la zone est maîtrisée, et les moyens adaptés sont disponibles. Si une seule de ces preuves manque, la réponse n'est pas « on y va quand même en faisant attention » — c'est la suspension. Refuser une intervention n'est pas un échec professionnel : c'est le seul geste possible quand les conditions ne sont pas réunies.", dossier: "mission", niveau: "evaluer", short: "GO / STOP",
     title: "Le GO est une conclusion, jamais un réflexe",
     text: "La décision réunit quatre preuves : appareil identifié, surface conforme au dossier, zone maîtrisée et moyens adaptés disponibles. Si une preuve manque, l’intervention reste suspendue.",
     prompt: "Rétablissez les conditions si nécessaire, puis prononcez la décision.", codes: ["12.04", "12.05", "12.13"],
@@ -214,7 +228,8 @@ const screens = [
   }),
 
   screen({
-    id: "liste-outillage", dossier: "outillage", niveau: "comprendre", short: "Exigé",
+    id: "liste-outillage",
+    narration: "L'outillage pour hydrocarbures est nommé explicitement dans le texte réglementaire. Pour les catégories A1 et A2, l'arrêté français distingue la station de récupération adaptée aux fluides inflammables, le détecteur adapté, et les flexibles pour hydrocarbures avec obturateurs. Ce ne sont pas des recommandations de constructeur : ce sont des exigences. Un matériel prévu pour des fluides A1 non inflammables n'a pas les mêmes protections contre les étincelles ni la même étanchéité.", dossier: "outillage", niveau: "comprendre", short: "Exigé",
     title: "L’outillage hydrocarbures est nommé dans le texte",
     text: "Pour A1/A2, l’arrêté français distingue la station adaptée aux fluides inflammables, le détecteur adapté, les flexibles hydrocarbures avec obturateurs et le manifold hydrocarbures. S’ajoutent notamment bouteille par type de fluide, balance et thermomètre.",
     prompt: "Ouvrez chaque famille pour relier l’outil à sa fonction.", codes: ["12.02", "12.05"],
@@ -222,7 +237,8 @@ const screens = [
     render: renderRequiredTools, wire: wireRequiredTools
   }),
   screen({
-    id: "preuve-compatibilite", dossier: "outillage", niveau: "appliquer", short: "Preuve",
+    id: "preuve-compatibilite",
+    narration: "Attention à un raccourci répandu : la couleur de l'outil ne prouve rien. Un appareil peut être dédié aux hydrocarbures, ou compatible avec plusieurs familles de fluides — dans les deux cas, ce qui fait preuve, c'est le marquage sur l'appareil et sa documentation. Un flexible rouge n'est pas forcément un flexible hydrocarbures, et un appareil sans marquage particulier peut être parfaitement compatible si sa notice le dit. Lisez le marquage, pas la peinture.", dossier: "outillage", niveau: "appliquer", short: "Preuve",
     title: "La couleur de l’outil ne prouve rien",
     text: "Un appareil peut être dédié aux hydrocarbures ou compatible avec plusieurs familles. Dans les deux cas, la preuve est le marquage et la documentation du fabricant, pas l’habitude de l’atelier ni la couleur du carter.",
     prompt: "Choisissez la preuve qui autorise l’emploi.", codes: ["12.02"],
@@ -234,7 +250,8 @@ const screens = [
     ], render: renderChoice, wire: wireChoice
   }),
   screen({
-    id: "tri-outillage", dossier: "outillage", niveau: "appliquer", short: "Trier",
+    id: "tri-outillage",
+    narration: "Constituez maintenant votre poste de travail. Le véhicule contient trois catégories d'objets : du matériel dédié aux hydrocarbures, du matériel multi-compatible dont la documentation le confirme, et du matériel sans aucune preuve. Pour chacun, la décision est binaire : je le prends, ou je le laisse. Et le troisième cas ne se discute pas — un outil dont vous ne pouvez pas prouver la compatibilité reste au véhicule, même s'il a toujours fonctionné, même si c'est celui que vous utilisez d'habitude.", dossier: "outillage", niveau: "appliquer", short: "Trier",
     title: "Constituez le poste R-290",
     text: "Le véhicule contient du matériel dédié, du matériel multi-compatible documenté et du matériel sans preuve. Pour chaque objet, décidez : prendre ou écarter. Le module explique chaque verdict.",
     prompt: "Classez les dix objets, puis contrôlez le poste.", codes: ["12.02", "12.05"],
@@ -242,7 +259,8 @@ const screens = [
     render: renderToolSort, wire: wireToolSort
   }),
   screen({
-    id: "poste-pompe", dossier: "outillage", niveau: "evaluer", short: "Pompe",
+    id: "poste-pompe",
+    narration: "La pompe à vide mérite une attention particulière. Pour le service sur R 290 et R 600a, la documentation Danfoss demande une bonne ventilation et un refoulement de pompe conduit vers l'air extérieur. Pourquoi ? Parce que ce que la pompe rejette contient encore du fluide, et le rejeter dans la zone où vous travaillez revient à y créer vous-même un mélange inflammable. La pompe protège le circuit ; le conduit d'évacuation protège la pièce.", dossier: "outillage", niveau: "evaluer", short: "Pompe",
     title: "La pompe à vide ne doit pas rejeter dans la zone",
     text: "Pour le service R-290/R-600a, la documentation Danfoss demande une bonne ventilation et un refoulement de pompe à vide conduit vers l’air extérieur. Le matériel reste choisi selon sa notice et l’analyse de risques.",
     prompt: "Choisissez le montage qui éloigne le rejet de la zone de travail.", codes: ["12.02", "12.05"],
@@ -251,7 +269,8 @@ const screens = [
   }),
 
   screen({
-    id: "avant-ouvrir", dossier: "conduite", niveau: "appliquer", short: "Avant",
+    id: "avant-ouvrir",
+    narration: "Avant d'ouvrir le circuit, quatre verrous doivent être levés, et dans cet ordre. L'identification de l'appareil. L'analyse de la zone. La préparation de cette zone. Et la vérification du poste de travail. Le travail fluidique ne commence qu'après ces quatre étapes. Cette chronologie n'est pas une préférence pédagogique : c'est ce qui garantit qu'au moment où le circuit s'ouvre, plus aucune des conditions d'accident n'est réunie.", dossier: "conduite", niveau: "appliquer", short: "Avant",
     title: "Avant d’ouvrir : quatre verrous",
     text: "Le travail fluidique ne commence qu’après l’identification, l’analyse, la préparation de la zone et la vérification du poste. Cette chronologie évite de découvrir le danger avec le circuit déjà ouvert.",
     prompt: "Remettez les quatre verrous dans l’ordre.", codes: ["12.04", "12.05"],
@@ -264,7 +283,8 @@ const screens = [
     ], render: renderSequence, wire: wireSequence
   }),
   screen({
-    id: "recuperer-puis-azote", dossier: "conduite", niveau: "appliquer", short: "Récupérer",
+    id: "recuperer-puis-azote",
+    narration: "Récupérer d'abord, remplir à l'azote ensuite. Le référentiel exige de récupérer le fluide inflammable en sécurité, puis de remplir le système avec de l'azote. Pourquoi l'azote ? Parce qu'il est inerte : il ne brûle pas et n'entretient aucune combustion. Il chasse le fluide résiduel et empêche tout mélange inflammable de se reformer pendant que le circuit est ouvert. C'est le seul gaz admis pour cet usage — ni air comprimé, qui apporte de l'humidité, ni surtout oxygène.", dossier: "conduite", niveau: "appliquer", short: "Récupérer",
     title: "Récupérer d’abord, remplir à l’azote ensuite",
     text: "Le référentiel exige de récupérer le réfrigérant inflammable en sécurité puis de remplir le système avec de l’azote. L’azote est le seul gaz de mise en pression du module : jamais d’oxygène, jamais d’air comprimé.",
     prompt: "Construisez la séquence qui permet de remettre le circuit à l’étape suivante.", codes: ["12.06"],
@@ -277,7 +297,8 @@ const screens = [
     ], render: renderSequence, wire: wireSequence
   }),
   screen({
-    id: "vide-et-air-exterieur", dossier: "conduite", niveau: "evaluer", short: "Air extérieur",
+    id: "vide-et-air-exterieur",
+    narration: "Une précision qui évite un contresens grave. Conduire le rejet de la pompe à vide vers l'extérieur n'est pas rejeter la charge de fluide à l'atmosphère. La charge, elle, a déjà été récupérée dans les règles — c'est une obligation, et elle est faite. Le conduit concerne uniquement le refoulement résiduel de la pompe, selon la procédure. Ces deux gestes n'ont rien à voir, et les confondre reviendrait à croire qu'on vous demande une pratique interdite.", dossier: "conduite", niveau: "evaluer", short: "Air extérieur",
     title: "Conduire le rejet de pompe dehors n’est pas rejeter la charge",
     text: "Le fluide du circuit a déjà été récupéré. Le conduit vers l’extérieur concerne le refoulement résiduel de la pompe à vide selon la procédure du fabricant. Il ne transforme pas une mise à l’air du réfrigérant en méthode normale de récupération.",
     prompt: "Distinguez les deux opérations.", codes: ["12.02", "12.06"],
@@ -289,7 +310,8 @@ const screens = [
     ], render: renderChoice, wire: wireChoice
   }),
   screen({
-    id: "charge-exacte", dossier: "conduite", niveau: "appliquer", short: "Peser",
+    id: "charge-exacte",
+    narration: "La charge exacte protège aussi la performance, pas seulement la sécurité. Les petits circuits hydrocarbures contiennent très peu de fluide — cent cinquante-trois grammes dans notre cas — et ils sont donc extrêmement sensibles au moindre écart. Quelques grammes en trop ou en moins changent le comportement de la machine. On pèse donc la masse prescrite par la plaque, on maintient les échangeurs propres, et on ne complète jamais « au jugé ». Sur ces circuits, la balance n'est pas un accessoire.", dossier: "conduite", niveau: "appliquer", short: "Peser",
     title: "La charge exacte protège aussi la performance",
     text: "Les petits circuits hydrocarbures sont sensibles à l’écart de charge. On pèse la masse prescrite par la plaque, on maintient les échangeurs propres et les réglages conformes. On ne convertit pas au R-290 une machine qui n’a pas été approuvée pour ce fluide.",
     prompt: "Réglez la balance sur la charge de la mission : 153 g.", codes: ["12.01", "12.14"],
@@ -298,42 +320,48 @@ const screens = [
   }),
 
   screen({
-    id: "quiz-pourquoi", dossier: "controle", niveau: "evaluer", short: "Question 1",
+    id: "quiz-pourquoi",
+    narration: "Premier contrôle. Quelle phrase relie correctement l'intérêt du R 290 et sa limite majeure ? Rappelez-vous ce qui a été dit au troisième écran : deux avantages qui se cumulent, et une contrepartie qui ne s'annule pas. La bonne réponse tient les deux ensemble.", dossier: "controle", niveau: "evaluer", short: "Question 1",
     title: "Contrôle 1 · Pourquoi du R-290 ?",
     text: "Quelle phrase relie correctement l’intérêt du R-290 et sa limite majeure ?",
     prompt: "Choisissez, puis lisez la correction.", codes: ["12.14"],
     quiz: { answers: ["Faible impact direct et bonnes performances, mais risque A3", "Fluide sans danger utilisable dans toute machine", "Fluide choisi seulement parce qu’il coûte moins cher"], correct: 0, explanation: "Le R-290 présente un très faible impact climatique direct et de bonnes performances. Son inflammabilité A3 impose une conception et une intervention adaptées." }, render: renderQuiz, wire: wireQuiz
   }),
   screen({
-    id: "quiz-risque", dossier: "controle", niveau: "evaluer", short: "Question 2",
+    id: "quiz-risque",
+    narration: "Deuxième contrôle. Une fuite se dirige vers un caniveau. Quel danger faut-il intégrer ? Souvenez-vous de la propriété physique de ces vapeurs, et de ce qu'elle implique pour les points bas de la zone.", dossier: "controle", niveau: "evaluer", short: "Question 2",
     title: "Contrôle 2 · Le scénario d’inflammation",
     text: "Une fuite se dirige vers un caniveau. Quel danger faut-il intégrer ?",
     prompt: "Choisissez, puis lisez la correction.", codes: ["12.02", "12.04"],
     quiz: { answers: ["Aucun : le propane monte au plafond", "Accumulation en point bas et inflammation si une ignition est présente", "Seulement une baisse de performance"], correct: 1, explanation: "La vapeur de propane est plus lourde que l’air. Elle peut s’accumuler en point bas ; avec de l’air et une ignition, le mélange peut s’enflammer." }, render: renderQuiz, wire: wireQuiz
   }),
   screen({
-    id: "quiz-surface", dossier: "controle", niveau: "evaluer", short: "Question 3",
+    id: "quiz-surface",
+    narration: "Troisième contrôle. Le dossier de la machine demande sept virgule trois mètres carrés, la réserve n'en mesure que six. Que faites-vous ? La réponse ne dépend d'aucune appréciation personnelle : deux nombres se comparent, et la décision suit.", dossier: "controle", niveau: "evaluer", short: "Question 3",
     title: "Contrôle 3 · Surface documentée",
     text: "Le dossier de la machine demande 7,3 m². La réserve ne mesure que 6 m². Que faites-vous ?",
     prompt: "Choisissez, puis lisez la correction.", codes: ["12.03", "12.04"],
     quiz: { answers: ["Je commence : 1,3 m² d’écart est négligeable", "Je suspends dans cette pièce et recherche une zone conforme", "J’ouvre la porte et additionne le couloir"], correct: 1, explanation: "La limite vient du dossier applicable. On ne la corrige ni de mémoire ni en ajoutant un espace qui n’appartient pas à la pièce évaluée." }, render: renderQuiz, wire: wireQuiz
   }),
   screen({
-    id: "quiz-outillage", dossier: "controle", niveau: "evaluer", short: "Question 4",
+    id: "quiz-outillage",
+    narration: "Quatrième contrôle. Quel critère permet de retenir un détecteur pour la mission R 290 ? Rappelez-vous ce qui fait preuve, et ce qui n'en fait pas — l'apparence de l'appareil ne compte pas.", dossier: "controle", niveau: "evaluer", short: "Question 4",
     title: "Contrôle 4 · Compatibilité de l’outillage",
     text: "Quel critère permet de retenir un détecteur pour la mission R-290 ?",
     prompt: "Choisissez, puis lisez la correction.", codes: ["12.02", "12.05"],
     quiz: { answers: ["Sa couleur et son prix", "La mention HFC sur le boîtier", "La documentation qui le déclare adapté aux fluides inflammables"], correct: 2, explanation: "L’arrêté exige un détecteur adapté aux fluides inflammables. Le marquage et la documentation établissent cette compatibilité." }, render: renderQuiz, wire: wireQuiz
   }),
   screen({
-    id: "quiz-sequence", dossier: "controle", niveau: "evaluer", short: "Question 5",
+    id: "quiz-sequence",
+    narration: "Cinquième contrôle. Quel enchaînement respecte le référentiel avant la suite de l'intervention ? Il s'agit des quatre verrous, et leur ordre fait partie de la réponse.", dossier: "controle", niveau: "evaluer", short: "Question 5",
     title: "Contrôle 5 · Avant la suite pratique",
     text: "Quel enchaînement respecte le référentiel avant la suite de l’intervention ?",
     prompt: "Choisissez, puis lisez la correction.", codes: ["12.06"],
     quiz: { answers: ["Air comprimé puis récupération", "Récupération sûre puis remplissage à l’azote", "Oxygène puis tirage au vide"], correct: 1, explanation: "Le réfrigérant inflammable est récupéré en sécurité, puis le système est rempli à l’azote. Ni l’air comprimé ni l’oxygène ne sont utilisés pour la mise en pression." }, render: renderQuiz, wire: wireQuiz
   }),
   screen({
-    id: "bilan", dossier: "controle", niveau: "evaluer", short: "Bilan",
+    id: "bilan",
+    narration: "Bilan : le R 290 change le travail, pas seulement l'étiquette. Vous avez relié le choix du propane à toutes ses conséquences — le risque d'inflammation, l'analyse de zone, le calcul de surface documenté, l'outillage spécifique, et l'obligation de savoir suspendre. C'est ce dernier point qui fait le professionnel : décider d'arrêter quand les conditions ne sont pas réunies demande plus de compétence que de continuer en espérant que tout se passe bien.", dossier: "controle", niveau: "evaluer", short: "Bilan",
     title: "Bilan · le R-290 change le travail, pas seulement l’étiquette",
     text: "Vous avez relié le choix du propane à ses conséquences : risque d’inflammation, analyse de zone, calcul documenté, outillage spécifique et ordre récupération → azote. La suite g12b enseignera l’intervention sur le circuit.",
     prompt: "Consultez votre résultat ou recommencez le contrôle.", codes: [],
@@ -950,7 +978,7 @@ function speechSupported() { return "speechSynthesis" in window && "SpeechSynthe
 function speakCurrent() {
   if (!speechSupported()) { showStatus("La voix de synthèse n’est pas disponible. Tout le texte reste visible."); return; }
   const item = currentItem(); stopSpeech(false); autoplay = true; const run = speechRun;
-  const utterance = new SpeechSynthesisUtterance(`${item.title}. ${item.text} ${item.prompt}`); utterance.lang = "fr-FR"; utterance.pitch = 1; utterance.rate = voiceRates[rateIndex];
+  const utterance = new SpeechSynthesisUtterance(item.narration || ""); utterance.lang = "fr-FR"; utterance.pitch = 1; if(window.PILOTE_VOIX_REGLAGE)window.PILOTE_VOIX_REGLAGE.appliquer(utterance);else utterance.rate=voiceRates[rateIndex];
   const voice = bestFrenchVoice(); if (voice) utterance.voice = voice;
   utterance.onstart = () => { if (run !== speechRun) return; speaking = true; paused = false; updateVoiceButtons(); };
   utterance.onend = () => { if (run !== speechRun) return; speaking = false; paused = false; updateVoiceButtons(); };

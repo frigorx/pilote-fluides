@@ -82,6 +82,7 @@
 
   const lessons = [
     {
+      narration: "Une électrovanne est faite de deux parties qu'il faut apprendre à distinguer tout de suite. Le corps, en bas : c'est la partie frigorifique, celle qui conduit le fluide et résiste à la pression. La bobine, au-dessus : c'est l'actionneur électrique, qui vient s'emboîter autour d'un tube contenant le noyau mobile. Cette séparation est très pratique en intervention : la bobine se retire sans ouvrir le circuit. Elle explique aussi pourquoi un défaut de bobine n'est jamais une fuite de fluide.",
       short: "Reconnaître",
       kicker: "Écran 1 · Observer",
       title: "Reconnaître l’électrovanne complète",
@@ -95,6 +96,7 @@
       render: renderRecognise
     },
     {
+      narration: "Sur cette ligne liquide de référence, l'électrovanne se place avant le détendeur, et elle peut interrompre à distance l'arrivée de fluide. Pourquoi vouloir couper cette arrivée ? Ce n'est pas un but en soi. C'est ce qui permet de vider l'évaporateur avant l'arrêt du compresseur, pour qu'au redémarrage suivant, aucun liquide ne l'attende à l'aspiration. Autrement dit, couper la ligne liquide est un geste qui protège le compresseur — vous reconnaissez le piège du coup de liquide.",
       short: "Placer",
       kicker: "Écran 2 · Circuit",
       title: "Dans le circuit étudié, elle autorise ou bloque le passage",
@@ -108,6 +110,7 @@
       render: renderPlacement
     },
     {
+      narration: "La commande vient d'ailleurs : un thermostat, un automate, ou une chaîne de sécurité, selon le schéma électrique de l'installation. Cet ordre est de type tout ou rien : il n'y a pas de position intermédiaire. La bobine est alimentée ou elle ne l'est pas, et la vanne ouvre ou ferme. C'est là toute la différence avec un détendeur, qui module en continu. Une électrovanne ne dose rien : elle autorise ou elle interdit.",
       short: "Commander",
       kicker: "Écran 3 · Rôle",
       title: "Une commande électrique agit sur un passage fluidique",
@@ -121,6 +124,7 @@
       render: renderCommand
     },
     {
+      narration: "Regardons ce qui produit le mouvement. La bobine, traversée par le courant, crée un champ magnétique. Ce champ agit sur un noyau mobile en acier, logé dans un tube étanche. Le noyau se déplace et entraîne l'obturateur qui ferme le siège. Toute la chaîne tient en une phrase : le noyau transforme un effet magnétique en mouvement mécanique. Et remarquez la conception : le tube est étanche, le fluide reste à l'intérieur, la bobine à l'extérieur — elles ne se touchent jamais.",
       short: "Ouvrir",
       kicker: "Écran 4 · Construction",
       title: "Voir les pièces qui produisent le mouvement",
@@ -136,6 +140,7 @@
       render: renderConstruction
     },
     {
+      narration: "Voici ce que signifient les lettres NF. Sans courant dans la bobine, aucun champ magnétique ne maintient le noyau attiré ; un ressort le ramène, et le passage se ferme. Retenez la formule : électrovanne normalement fermée plus bobine hors tension égale passage fermé. C'est le comportement recherché sur une ligne liquide, parce qu'une coupure de courant doit fermer la ligne, jamais l'ouvrir. La position de repos d'un organe est toujours choisie pour que la panne soit du côté sûr.",
       short: "Hors tension",
       kicker: "Écran 5 · État normal",
       title: "NF : hors tension, la vanne est fermée",
@@ -149,6 +154,7 @@
       render: renderClosed
     },
     {
+      narration: "Alimentez maintenant la bobine. Le champ magnétique attire le noyau mobile, l'obturateur quitte son siège, et le passage s'ouvre. La chaîne complète, dans l'ordre : bobine alimentée, noyau attiré, siège dégagé, passage ouvert. C'est le principe de l'action directe, où le noyau agit lui-même sur l'orifice principal. Ce fonctionnement convient aux petites vannes ; sur des diamètres plus importants, la force magnétique ne suffirait pas, et il faut un autre principe.",
       short: "Alimenter",
       kicker: "Écran 6 · Action directe",
       title: "En action directe, le noyau agit sur l’orifice principal",
@@ -162,6 +168,7 @@
       render: renderOpen
     },
     {
+      narration: "Ce principe, c'est la commande assistée. Au lieu d'ouvrir directement le grand orifice, le noyau ouvre un petit orifice pilote ; la pression du fluide fait alors le travail et soulève l'obturateur principal. C'est ingénieux, mais cela impose une condition : il faut une pression différentielle minimale entre l'amont et l'aval pour que l'assistance fonctionne. Sur la ligne liquide étudiée, la pression amont est la haute pression. Sur une autre ligne, gardez le mot « amont » : c'est lui qui reste vrai partout.",
       short: "Comparer",
       kicker: "Écran 7 · Famille",
       title: "Action directe et commande assistée sont deux principes différents",
@@ -175,6 +182,7 @@
       render: renderPrinciples
     },
     {
+      narration: "Les lettres NF et NO décrivent l'état de la vanne hors tension, et rien d'autre. Normalement fermée : sans courant, le passage est fermé. Normalement ouverte : sans courant, le passage est ouvert. Vous ne pouvez donc pas déduire l'effet d'une alimentation sans avoir lu ce marquage. C'est une erreur de diagnostic fréquente : constater qu'une bobine est alimentée et en conclure que la vanne est ouverte, alors qu'il s'agit d'une normalement ouverte, donc fermée par le courant.",
       short: "Distinguer NF/NO",
       kicker: "Écran 8 · État de repos",
       title: "NF et NO décrivent l’état hors tension",
@@ -188,6 +196,7 @@
       render: renderNormalModes
     },
     {
+      narration: "Le corps de la vanne porte une flèche : elle indique le sens de circulation prévu. Une électrovanne montée à l'envers ne fonctionne pas comme prévu — sur beaucoup de modèles, la pression travaille alors contre l'obturateur au lieu de l'aider. L'orientation compte aussi : la plupart des modèles exigent la bobine vers le haut, pour que le noyau retombe correctement par gravité. Ces deux points, sens et orientation, viennent de la notice, jamais de l'encombrement disponible.",
       short: "Orienter",
       kicker: "Écran 9 · Sens",
       title: "Le sens et l’orientation viennent de la notice",
@@ -201,6 +210,7 @@
       render: renderOrientation
     },
     {
+      narration: "Une bobine ne se choisit pas sur son apparence. Une forme compatible ne garantit rien : il faut contrôler le marquage électrique — tension, fréquence, puissance — et vérifier que la référence correspond bien au corps de vanne utilisé. Une bobine sous-alimentée chauffe sans parvenir à ouvrir. Une bobine de tension supérieure grille. Comparez donc trois choses avant de monter : le schéma électrique de l'installation, la plaque de la bobine, et la compatibilité avec la vanne.",
       short: "Choisir bobine",
       kicker: "Écran 10 · Marquage",
       title: "La bobine doit correspondre à la commande et au corps",
@@ -214,6 +224,7 @@
       render: renderCoilChoice
     },
     {
+      narration: "Quand un brasage est prévu, la chaleur devient l'ennemi. Elle peut déformer une membrane ou détruire des joints si elle atteint le corps de la vanne, et le dégât ne se manifestera parfois que des semaines plus tard. Les gestes qui protègent : garder la flamme sur le raccord et non sur le corps, protéger le corps avec un écran thermique, et suivre la procédure du modèle. Sur beaucoup d'électrovannes, la notice impose aussi de déposer la bobine avant de braser.",
       short: "Installer",
       kicker: "Écran 11 · Montage",
       title: "Protéger le corps et respecter la notice",
@@ -227,6 +238,7 @@
       render: renderInstallation
     },
     {
+      narration: "Une règle de sécurité, à respecter sans exception : une bobine déposée ne doit jamais rester alimentée. Retirée du tube du noyau, elle perd les conditions prévues pour son refroidissement et pour la circulation du champ magnétique — elle chauffe très vite et grille, parfois en quelques minutes. L'ordre des gestes est donc toujours le même : je coupe l'alimentation, je consigne, et seulement ensuite je retire la bobine. Jamais l'inverse.",
       short: "Déposer bobine",
       kicker: "Écran 12 · Sécurité électrique",
       title: "Une bobine déposée ne doit jamais rester alimentée",
@@ -240,6 +252,7 @@
       render: renderCoilSafety
     },
     {
+      narration: "Pour diagnostiquer, reliez le symptôme à une famille de défauts. Une particule coincée sur le siège laisse passer un peu de fluide vanne fermée. Un orifice pilote obstrué empêche l'ouverture d'une vanne assistée, alors que la bobine fonctionne parfaitement. Une bobine mal alimentée n'ouvre pas du tout. Trois causes, trois symptômes différents. Et deux limites à respecter en toutes circonstances : on ne contourne jamais une sécurité, et on n'ouvre jamais un circuit sous pression.",
       short: "Diagnostiquer",
       kicker: "Écran 13 · Méthode",
       title: "Relier le symptôme à une famille de défauts",
@@ -253,6 +266,7 @@
       render: renderDiagnosis
     },
     {
+      narration: "Le défi rassemble tout : sept situations sur les repères NF et NO, le rôle de la bobine, les deux principes de fonctionnement, le montage et la sécurité. Une clé pour vous y retrouver : gardez toujours séparées trois choses qui se confondent facilement. L'ordre électrique — ce qui est commandé. L'état fluidique — ce qui se passe réellement dans la vanne. Et les limites de l'intervention — ce que vous avez le droit de faire. Presque toutes les erreurs de terrain viennent d'une confusion entre ces trois plans.",
       short: "Défi",
       kicker: "Écran 14 · Vérifier",
       title: "Relier commande, mouvement et sécurité",
@@ -869,11 +883,12 @@
       || null;
   }
 
+  /* Le texte dit à l'élève est écrit pour l'oreille dans le champ narration.
+     Jusqu'au 01/09/2026 cette fonction collait le titre, l'accroche, le HTML du
+     détail et la phrase « À retenir » : l'élève entendait la fiche, pas un cours. */
   function spokenText() {
     const lesson = lessons[current];
-    const temporary = document.createElement("div");
-    temporary.innerHTML = lesson.detail;
-    return `${lesson.title}. ${lesson.intro} ${temporary.textContent || ""} À retenir : ${lesson.takeaway}`.replace(/\s+/g, " ").trim();
+    return typeof lesson.narration === "string" ? lesson.narration.trim() : "";
   }
 
   function startSpeech() {
@@ -895,10 +910,12 @@
     }
     stopSpeech();
     const run = ++speechRun;
-    const utterance = new SpeechSynthesisUtterance(spokenText());
+    const ditVoix = spokenText();
+    if (!ditVoix) return;
+    const utterance = new SpeechSynthesisUtterance(ditVoix);
     utterance.lang = "fr-FR";
     utterance.pitch = 1;
-    utterance.rate = voiceRate;
+    if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.appliquer(utterance);
     if (selectedVoice) utterance.voice = selectedVoice;
     utterance.onstart = () => {
       if (run !== speechRun) return;

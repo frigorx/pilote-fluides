@@ -11,6 +11,7 @@ window.OIL_MODULE = {
   lessons: [
     {
       id: "charge-variable",
+      narration: "Voici le point que beaucoup d'installations découvrent trop tard : c'est à charge minimale que les défauts de retour apparaissent. Quand plusieurs compresseurs s'arrêtent, ou qu'un compresseur module vers le bas, le débit de gaz diminue — et avec lui la vitesse dans les conduites. Une colonne parfaitement dimensionnée à pleine charge devient alors trop grande pour entraîner l'huile. C'est le principe de la double montée : à faible charge, l'huile bouche la grande colonne au niveau de son siphon et force le gaz dans la petite, où la vitesse redevient suffisante. À pleine charge, les deux conduisent le mélange. Posez-vous donc toujours la question : le retour est-il correct à la charge minimale, et pas seulement au régime nominal ?",
       short: "Partiel",
       kicker: "Station 1 · Régimes",
       title: "La charge minimale révèle les défauts de retour",
@@ -24,6 +25,7 @@ window.OIL_MODULE = {
     },
     {
       id: "calcul-vitesse",
+      narration: "La vitesse du gaz ne se devine pas, elle se calcule : on divise le débit aspiré par la section de passage du tube. Réglez le diamètre intérieur, le régime et le débit, et regardez ce que devient la vitesse — puis ce que devient l'huile. Ce que la manipulation montre le plus vite, c'est qu'un tracé peut très bien convenir à pleine charge et ne plus rien entraîner du tout à charge réduite. Une précision honnête : le calcul vous donne une vitesse, c'est tout. Le repère auquel la comparer vient ensuite de la notice du constructeur et de l'étude de l'installation.",
       short: "Calcul",
       kicker: "Station 2 · Calcul",
       title: "Calculer la vitesse, et voir ce qu’elle change",
@@ -37,6 +39,7 @@ window.OIL_MODULE = {
     },
     {
       id: "circuit-complet",
+      narration: "Un circuit de retour se lit comme un chemin continu, du point de départ au point d'arrivée. Partez de la sortie de l'évaporateur et suivez la conduite jusqu'au carter, sans sauter d'étape : c'est ainsi qu'on repère les obstacles. Contrôlez dans l'ordre la pente, les points bas, le siphon en pied de colonne, la section de la montée, et la boucle haute quand il y en a une. Puis confrontez ce tracé aux débits minimal et maximal. Retenez la formule : un schéma fluidique se lit avec trois éléments ensemble — la géométrie, le débit, et le temps de fonctionnement.",
       short: "Circuit",
       kicker: "Station 3 · Lecture de plan",
       title: "Le retour naturel se lit comme un chemin continu",
@@ -50,6 +53,7 @@ window.OIL_MODULE = {
     },
     {
       id: "transitoires",
+      narration: "Le retour d'huile ne se juge pas sur un instant, mais sur une durée et sur plusieurs états de la machine. Les cycles trop courts envoient de l'huile sans laisser le temps à l'équilibre de se rétablir. Après un dégivrage, après une longue réduction de puissance, après un redémarrage, le niveau varie avant de se stabiliser — et ce qu'on lit pendant cette période ne veut rien dire. Une lecture instantanée du voyant ne suffit donc pas. Notez le régime, notez l'heure, et suivez l'évolution du niveau. C'est la même exigence de stabilisation que partout ailleurs en hydraulique et en frigorifique.",
       short: "Transitoires",
       kicker: "Station 4 · Temps",
       title: "Démarrages courts et changements de régime déplacent l’huile",
@@ -63,6 +67,7 @@ window.OIL_MODULE = {
     },
     {
       id: "methode",
+      narration: "Avant d'ajouter de l'huile, cherchez où elle est partie. C'est la règle qui distingue un dépannage d'un pansement. Un niveau bas peut venir d'un défaut de retour, d'une fuite, d'un régime transitoire, ou simplement d'une charge initiale incorrecte — quatre causes, quatre traitements différents. La démarche : observez le niveau dans les conditions prévues, relevez quels compresseurs sont actifs, examinez le tracé des tuyauteries. Recoupez ensuite température, pression, stabilité et historique. Et n'ajoutez l'huile approuvée qu'après avoir identifié le besoin réel. Une valeur isolée ne désigne jamais une panne : c'est l'ensemble niveau, régime, temps et tuyauterie qui construit le diagnostic.",
       short: "Vérifier",
       kicker: "Station 5 · Diagnostic",
       title: "Avant d’ajouter : chercher où l’huile est partie",
