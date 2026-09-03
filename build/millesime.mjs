@@ -28,8 +28,9 @@
 import { existsSync, mkdirSync, writeFileSync, readdirSync } from "node:fs";
 import { tirerClesMillesime } from "./lib-acces.mjs";
 import { produitParId, PRODUITS } from "./produits.mjs";
+import { MILLESIMES } from "./lieu-acces.mjs";
 
-const DOSSIER = "C:/git/paquets/acces-inerweb/millesimes";
+const DOSSIER = MILLESIMES;
 
 const [idProduit, anneeTexte] = process.argv.slice(2);
 if (!idProduit || !anneeTexte) {

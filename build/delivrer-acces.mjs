@@ -34,8 +34,8 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync } fr
 import { createPrivateKey, createPublicKey } from "node:crypto";
 import { genererPaire, fabriquerCertificat, fabriquerCodeMaitre, lireCodeMaitre } from "./lib-acces.mjs";
 import { produitParId, PRODUITS } from "./produits.mjs";
+import { BASE } from "./lieu-acces.mjs";
 
-const BASE = "C:/git/paquets/acces-inerweb";
 const RACINE_PRIVEE = BASE + "/racine/cle-privee.pem";
 const RACINE_PUBLIQUE = BASE + "/racine/cle-publique.pem";
 const MILLESIMES = BASE + "/millesimes";

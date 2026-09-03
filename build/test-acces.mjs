@@ -17,6 +17,7 @@ import {
 } from "./lib-acces.mjs";
 import { produitParId, produitParIndice, PRODUITS } from "./produits.mjs";
 import { readFileSync, existsSync } from "node:fs";
+import { RACINE_ACCES } from "./lieu-acces.mjs";
 
 let passes = 0;
 const echecs = [];
@@ -268,7 +269,7 @@ if (source) {
   /* La clé racine embarquée doit être CELLE du poste — quand elle existe */
   const m = /CLE_RACINE\s*=\s*"([A-Za-z0-9_-]+)"/.exec(source);
   verifier("une clé racine y est embarquée", !!m);
-  const fichierBrute = "C:/git/paquets/acces-inerweb/racine/cle-publique-brute.txt";
+  const fichierBrute = RACINE_ACCES + "/cle-publique-brute.txt";
   if (m && existsSync(fichierBrute)) {
     const attendue = readFileSync(fichierBrute, "utf8").trim();
     verifier("elle est bien la clé publique de ce poste", m[1] === attendue);

@@ -19,8 +19,9 @@
    ===================================================================== */
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { RACINE_ACCES } from "./lieu-acces.mjs";
 
-const DOSSIER = "C:/git/paquets/acces-inerweb/racine";
+const DOSSIER = RACINE_ACCES;
 const PRIVEE = DOSSIER + "/cle-privee.pem";
 const PUBLIQUE_BRUTE = DOSSIER + "/cle-publique-brute.txt";
 const SORTIE = DOSSIER + "/FICHE-A-IMPRIMER.html";

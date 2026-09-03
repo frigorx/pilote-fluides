@@ -11,7 +11,7 @@
       Même régime que `cle-maitre.key` de HAL.
 
    OÙ ELLE VIT
-      Privée  : C:/git/paquets/acces-inerweb/racine/cle-privee.pem
+      Privée  : C:/archives-inerweb/paquets/acces-inerweb/racine/cle-privee.pem
                 — HORS DÉPÔT. Le dépôt pilote-fluides est PUBLIC.
       Publique: le même dossier, plus une forme « brute » de 65 octets à
                 coller dans `moteur/acces.js` — c'est elle que le site
@@ -23,8 +23,9 @@
    ===================================================================== */
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { genererPaire } from "./lib-acces.mjs";
+import { RACINE_ACCES } from "./lieu-acces.mjs";
 
-const DOSSIER = "C:/git/paquets/acces-inerweb/racine";
+const DOSSIER = RACINE_ACCES;
 const PRIVEE = DOSSIER + "/cle-privee.pem";
 const PUBLIQUE = DOSSIER + "/cle-publique.pem";
 const BRUTE = DOSSIER + "/cle-publique-brute.txt";

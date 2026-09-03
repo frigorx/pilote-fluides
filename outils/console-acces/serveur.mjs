@@ -27,10 +27,10 @@ import { spawn } from "node:child_process";
 import { dirname, resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { PRODUITS } from "../../build/produits.mjs";
+import { BASE } from "../../build/lieu-acces.mjs";
 
 const ICI = dirname(fileURLToPath(import.meta.url));
 const RACINE = resolve(ICI, "../..");
-const BASE = "C:/git/paquets/acces-inerweb";
 const PORT = 2040;
 const JETON = randomBytes(16).toString("hex");
 

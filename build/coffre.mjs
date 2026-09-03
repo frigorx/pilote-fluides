@@ -39,6 +39,7 @@ import { dirname, resolve, basename } from "node:path";
 import { fileURLToPath } from "node:url";
 import { homedir } from "node:os";
 import { produitParId } from "./produits.mjs";
+import { MILLESIMES } from "./lieu-acces.mjs";
 
 /* Les sources du poste : par homedir(), jamais un nom de compte en dur —
    ce script est publié avec le dépôt (durcissement du 20/08). */
@@ -47,7 +48,6 @@ const POSTE = homedir().replace(/\\/g, "/");
 const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const PRIVE = "C:/git/habilitation-fluide";
 const ITERATIONS = 600000;
-const MILLESIMES = "C:/git/paquets/acces-inerweb/millesimes";
 
 /* --------------------------------------------------------------------
    DEUX RÉGIMES COHABITENT (AE-2, 26/08) — et c'est volontaire.
