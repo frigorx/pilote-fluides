@@ -198,6 +198,33 @@
     <div id="chiffresProduits" class="aide"></div>
   </section>
 
+  <!-- ================= LE TRAFIC DU SITE ================= -->
+  <section class="carte">
+    <h2>Le trafic du site</h2>
+    <p class="aide">Depuis le 3 septembre 2026, inerweb.fr passe derrière Cloudflare :
+       les visites se comptent côté serveur, sans une ligne de script dans vos pages.
+       Deux sources, qui ne disent pas la même chose.</p>
+
+    <div class="rangee">
+      <button id="voirVisites" type="button">Voir les visites</button>
+      <button id="voirRecherche" class="second" type="button">Voir la recherche Google</button>
+    </div>
+
+    <p class="aide" style="margin-top:14px">
+      <strong>Les visites</strong> (Cloudflare) : combien de fois vos pages ont été
+      demandées, depuis quels pays, sur ordinateur ou sur téléphone —
+      <em>toutes</em> les visites, y compris par lien direct ou par QR code.<br>
+      <strong>La recherche</strong> (Search Console) : ce que les gens tapent dans
+      Google pour vous trouver, et lesquelles de vos pages ressortent.
+    </p>
+
+    <p class="aide">
+      Ce qu'aucune des deux ne dira : la <strong>région</strong> des visiteurs — les
+      deux s'arrêtent au pays. Et les <strong>premiers jours ne veulent rien dire</strong> :
+      l'essentiel du trafic d'un site neuf, ce sont des robots qui scannent.
+    </p>
+  </section>
+
   <!-- ================= ÉCRIRE À SES UTILISATEURS ================= -->
   <section class="carte">
     <h2>Écrire à vos utilisateurs</h2>
@@ -722,6 +749,24 @@
       document.getElementById("copierAdresses").disabled = vide;
     });
   }
+
+
+  /* ---- Le trafic du site -----------------------------------------------
+     Deux liens, pas de chiffres rapatriés : les rapatrier exigerait un jeton
+     d'API Cloudflare, donc un secret de plus à garder sur le poste. Tant que
+     regarder le trafic reste un geste occasionnel, le lien suffit.
+     L'adresse Cloudflare ne porte PAS l'identifiant du compte (`:account` est
+     résolu par Cloudflare lui-même) : ce fichier vit dans un dépôt public. */
+  var TRAFIC = {
+    visites: "https://dash.cloudflare.com/?to=/:account/inerweb.fr/analytics/traffic",
+    recherche: "https://search.google.com/search-console?resource_id=sc-domain:inerweb.fr",
+  };
+  document.getElementById("voirVisites").addEventListener("click", function () {
+    window.open(TRAFIC.visites, "_blank", "noopener");
+  });
+  document.getElementById("voirRecherche").addEventListener("click", function () {
+    window.open(TRAFIC.recherche, "_blank", "noopener");
+  });
 
   document.getElementById("preparerEnvoi").addEventListener("click", function () {
     if (!diffusion.cci) return;
