@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Maquette — porte d'entrée inerweb.fr (proposition du 05/09/2026)</title>
+<style>
+  /* Jetons copiés de index.html (charte inerWeb). Pas de thème sombre, par règle. */
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --violet:#7a4fa0;
+    --vert:#1e7e54; --ambre:#b06a00; --hp:#c0392b;
+    --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+    --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+    --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font-size:16px; line-height:1.45;
+    font-family:Calibri,Carlito,'Segoe UI',Helvetica,Arial,sans-serif; }
+  a { color:var(--bleu); }
+
+  /* ---- Bandeau de maquette : n'existe pas sur le site ---- */
+  .maquette { position:sticky; top:0; z-index:9; background:#fff3cd; border-bottom:2px dashed var(--ambre);
+    color:#5a3a00; padding:8px 20px; font-size:14.5px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+  .maquette strong { color:#5a3a00; }
+  .maquette .bascule { margin-left:auto; display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .maquette button { font:inherit; font-size:14px; padding:6px 12px; border-radius:8px; cursor:pointer;
+    border:2px solid var(--ambre); background:#fff; color:#5a3a00; }
+  .maquette button[aria-pressed="true"] { background:var(--ambre); color:#fff; }
+
+  /* ---- En-tête : identique au site ---- */
+  .entete { background:var(--carte); border-bottom:1px solid var(--ligne); }
+  .entete .dedans { max-width:1080px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  .entete .marque { display:flex; align-items:center; text-decoration:none; }
+  .nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap; font-family:var(--titre); font-weight:bold; font-size:15px; }
+  .nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px; border-bottom:2px solid transparent; }
+  .nav a.ici { border-bottom-color:var(--orange); }
+  .page { max-width:1080px; margin:0 auto; padding:0 20px 24px; }
+
+  /* ---- Repères de lecture (n'existent pas sur le site) ---- */
+  .repere { display:flex; align-items:center; gap:10px; margin:30px 0 6px; color:var(--ambre); font-size:13px; font-weight:bold;
+    letter-spacing:.06em; text-transform:uppercase; }
+  .repere::after { content:""; flex:1; height:1px; background:var(--ambre); opacity:.5; }
+  .repere .num { display:inline-grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--ambre); color:#fff; font-size:14px; }
+
+  /* ---- Écran 1 : la porte d'entrée ---- */
+  .accroche { margin:20px 0 0; display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+  .accroche .texte { flex:1; min-width:280px; }
+  .pastille { display:inline-block; font-size:12px; font-weight:bold; color:#fff; background:var(--orange);
+    padding:4px 10px; border-radius:20px; letter-spacing:.08em; margin-bottom:12px; }
+  h1 { margin:0 0 10px; font-family:var(--titre); font-weight:bold; font-size:38px; line-height:1.12; color:var(--bleu); text-wrap:balance; }
+  h1 em { font-style:normal; color:var(--orange); }
+  .chapo { margin:0; font-size:18px; color:var(--mut); max-width:36em; text-wrap:pretty; }
+  .chapo strong { color:var(--txt); }
+  .flocon { font-size:96px; line-height:1; filter:drop-shadow(0 6px 12px rgba(27,58,99,.18)); }
+
+  /* Organigramme : un arbre en HTML — les traits ne passent jamais sous un texte. */
+  .orga { margin:26px 0 0; }
+  .o-racine { width:max-content; max-width:100%; margin:0 auto; padding:10px 26px; background:var(--bleu); color:#fff;
+    font-family:var(--titre); font-weight:bold; font-size:22px; border-radius:12px; text-align:center; }
+  .o-racine small { display:block; font-weight:normal; font-size:14px; opacity:.9; }
+  .o-tige { width:3px; height:24px; background:var(--bleu); margin:0 auto; }
+  .o-rail { height:3px; background:var(--bleu); margin:0 calc(16.66% - 6px); }
+  .o-colonnes { display:grid; grid-template-columns:repeat(3,1fr); gap:0 18px; }
+  .o-col { position:relative; padding-top:24px; }
+  .o-col::before { content:""; position:absolute; top:0; left:50%; width:3px; height:24px; margin-left:-1.5px; background:var(--bleu); }
+  .o-tete { text-align:center; font-family:var(--titre); font-weight:bold; color:var(--bleu); font-size:17px;
+    padding:10px 12px; border:2px solid var(--bleu); border-radius:10px; background:var(--carte); }
+  .o-tete small { display:block; font-weight:normal; color:var(--mut); font-size:13.5px; }
+  .o-liste { list-style:none; margin:12px 0 0; padding:0; display:grid; gap:8px; }
+  .o-liste > li > a { display:block; text-decoration:none; color:var(--txt); background:var(--carte);
+    border:1px solid var(--ligne); border-left:7px solid var(--c, var(--bleu)); border-radius:10px; padding:8px 12px; }
+  .o-liste > li > a:hover { border-color:var(--c, var(--bleu)); box-shadow:var(--ombre); }
+  .o-nom { display:block; font-family:var(--titre); font-weight:bold; font-size:16px; color:var(--bleu); }
+  .o-det { display:block; color:var(--mut); font-size:14px; }
+  .o-etat { display:inline-block; margin-left:6px; font-size:11.5px; font-weight:bold; letter-spacing:.04em; text-transform:uppercase;
+    padding:1px 7px; border-radius:12px; border:1.5px solid var(--mut); color:var(--mut); vertical-align:middle; }
+  .o-etat.neuf { border-color:var(--orange); color:var(--orange); }
+  .o-etat.propose { border-color:var(--ambre); color:var(--ambre); border-style:dashed; }
+  .o-sous { list-style:none; margin:6px 0 0 14px; padding:0 0 0 12px; border-left:2px solid var(--ligne); display:grid; gap:4px; }
+  .o-sous li { font-size:14px; color:var(--mut); }
+  .o-sous li b { color:var(--txt); font-weight:600; }
+  .orga[data-vue="5"] .v8 { display:none; }
+  .orga[data-vue="8"] .v5 { display:none; }
+  .o-lien-plan { text-align:center; margin:14px 0 0; font-size:15px; color:var(--mut); }
+
+  /* Les trois portes */
+  .portes-titre { margin:28px 0 10px; font-family:var(--titre); font-size:22px; color:var(--bleu); }
+  .portes { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; }
+  .porte-btn { display:grid; grid-template-columns:52px 1fr; gap:4px 12px; align-items:start; text-decoration:none; color:var(--txt);
+    background:var(--carte); border:2px solid var(--bleu); border-radius:var(--r); padding:14px 16px; box-shadow:var(--ombre); }
+  .porte-btn:hover { background:#e7eff7; }
+  .porte-btn .p-ico { grid-row:1 / span 2; font-size:36px; line-height:1; }
+  .porte-btn .p-titre { font-family:var(--titre); font-weight:bold; font-size:19px; color:var(--bleu); }
+  .porte-btn .p-det { color:var(--mut); font-size:14.5px; }
+  .porte-btn.forte { border-color:var(--orange); }
+  .porte-btn.forte .p-titre { color:var(--orange); }
+
+  /* ---- Blocs suivants ---- */
+  .bloc { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r); box-shadow:var(--ombre); margin:16px 0 0; overflow:hidden; }
+  .bloc .titre-bloc { padding:18px 24px 0; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; }
+  .bloc .titre-bloc h2 { margin:0; font-family:var(--titre); font-size:22px; color:var(--bleu); }
+  .bloc .titre-bloc span { font-size:14px; color:var(--mut); }
+  .inchange { margin:12px 24px 20px; padding:22px; border:2px dashed var(--ligne); border-radius:10px; color:var(--mut); text-align:center; font-size:15px; }
+  .inchange b { color:var(--txt); }
+
+  details.repli { background:var(--carte); border:1px solid var(--ligne); border-radius:10px; margin:12px 0 0; }
+  details.repli summary { cursor:pointer; padding:13px 18px; font-family:var(--titre); font-weight:bold; color:var(--bleu); font-size:15.5px; }
+  details.repli summary .n { color:var(--mut); font-weight:normal; }
+  details.repli .d { padding:0 18px 14px; color:var(--mut); font-size:15px; }
+
+  .outils-grille { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; padding:14px 24px 22px; }
+  .outil { display:flex; flex-direction:column; gap:8px; text-decoration:none; color:var(--txt); background:var(--fond);
+    border:1px solid var(--ligne); border-radius:10px; padding:14px 16px; }
+  .outil:hover { border-color:var(--bleu-clair); }
+  .outil svg { width:190px; height:auto; }
+  .outil h3 { margin:0; font-family:var(--titre); font-size:17px; color:var(--bleu); }
+  .outil p { margin:0; font-size:14.5px; color:var(--mut); flex:1; }
+  .outil .suite { font-weight:bold; color:var(--bleu); font-size:14.5px; }
+  .etiq { display:inline-block; font-size:11.5px; font-weight:bold; letter-spacing:.04em; padding:2px 8px; border-radius:12px; width:max-content; }
+  .etiq.neuf { border:2px solid var(--orange); color:var(--orange); }
+  .etiq.proto { background:var(--ambre); color:#fff; }
+  .etiq.beta { border:2px solid var(--bleu-clair); color:var(--bleu-clair); }
+
+  .tuiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:16px 0 0; }
+  .tuile { text-decoration:none; background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r); padding:16px; color:var(--txt); }
+  .tuile .emoji { font-size:30px; line-height:1; }
+  .tuile h3 { margin:6px 0 4px; font-family:var(--titre); font-size:17px; color:var(--bleu); }
+  .tuile p { margin:0; color:var(--mut); font-size:14.5px; }
+
+  .pied { margin:30px 0 0; color:var(--mut); font-size:14px; text-align:center; }
+
+  @media (max-width:760px) {
+    h1 { font-size:30px; }
+    .flocon { display:none; }
+    .o-colonnes { grid-template-columns:1fr; gap:16px; }
+    .o-rail, .o-tige, .o-col::before { display:none; }
+    .o-col { padding-top:0; }
+    .maquette .bascule { margin-left:0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="maquette" role="note">
+  <span>🧪 <strong>MAQUETTE</strong> — proposition pour l'accueil d'inerweb.fr, 05/09/2026. Rien n'est publié : les liens ouvrent le site actuel.</span>
+  <span class="bascule" aria-label="Choix de l'organigramme">
+    <span>Organigramme :</span>
+    <button type="button" data-vue-btn="5" aria-pressed="true">5 réseaux — aujourd'hui</button>
+    <button type="button" data-vue-btn="8" aria-pressed="false">8 réseaux — thermo-techno éclaté</button>
+  </span>
+</div>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="https://inerweb.fr/" aria-label="inerWeb Édu — accueil">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+    </a>
+    <nav class="nav">
+      <a class="ici" href="#">Accueil</a>
+      <a href="https://inerweb.fr/galerie.html">Catalogue</a>
+      <a href="#outils">Outils</a>
+      <a href="https://inerweb.fr/metier.html">Le métier</a>
+      <a href="https://inerweb.fr/formateurs.html">Formateurs</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main">
+
+  <div class="repere"><span class="num">1</span> Premier écran : ce qu'est inerWeb.fr, en une phrase et un organigramme</div>
+
+  <div class="accroche">
+    <div class="texte">
+      <div class="pastille">APPRENDRE LE FROID, LA CLIMATISATION ET L'ÉNERGIE</div>
+      <h1>Le métier de frigoriste, <em>station par station</em>.</h1>
+      <p class="chapo">Des cours interactifs rangés comme des lignes de métro — <strong>un réseau par domaine</strong> —,
+        des logiciels libres pour l'atelier et une formation à l'habilitation fluides.
+        <strong>Gratuit, sans compte.</strong> Un projet personnel d'enseignant frigoriste.</p>
+    </div>
+    <div class="flocon" aria-hidden="true">❄️</div>
+  </div>
+
+  <div class="orga" id="orga" data-vue="5" aria-label="Organigramme du site">
+    <div class="o-racine">❄️ inerWeb.fr <small>tout ce que le site propose, en un coup d'œil</small></div>
+    <div class="o-tige"></div>
+    <div class="o-rail"></div>
+    <div class="o-colonnes">
+
+      <div class="o-col">
+        <div class="o-tete">🚇 Les réseaux de cours <small>un plan de métro par domaine, un cours à chaque station</small></div>
+        <ul class="o-liste">
+          <li style="--c:#0c4a6e">
+            <a href="https://inerweb.fr/#carte">
+              <span class="o-nom">❄️ Thermo-techno <span class="o-etat">le cœur du métier</span></span>
+              <span class="o-det v5">108 stations · 15 lignes — du glaçon au diagnostic</span>
+              <span class="o-det v8">56 stations · 9 lignes — le cycle, les organes, les gestes, les fluides</span>
+            </a>
+            <ul class="o-sous v5">
+              <li><b>Le cycle</b> : 🚉 le tronc → 🔧 les organes → 🎛 ce qui se règle → 💧 la ligne liquide → 🧰 les gestes</li>
+              <li><b>Les fluides</b> : 🌍 fluides &amp; environnement · 🧊 le CO₂ · 🏭 les centrales CO₂</li>
+              <li><b>Le matériel</b> : 🔌 la régulation · 🛢 l'huile · 🛢 le circuit d'huile · ⚡ électrotech</li>
+              <li><b>Se situer</b> : ✅ s'évaluer · 🧰 la boîte à outils</li>
+            </ul>
+            <ul class="o-sous v8">
+              <li>🚉 le tronc → 🔧 les organes → 💧 la ligne liquide → 🧰 les gestes</li>
+              <li>🌍 fluides &amp; environnement · ⚡ électrotech · 🧰 boîte à outils · ✅ s'évaluer</li>
+            </ul>
+          </li>
+          <li class="v8" style="--c:#7b1e3d">
+            <a href="https://inerweb.fr/packs/fluides/res/regules-interactif/index.html">
+              <span class="o-nom">🔌 Régulation <span class="o-etat propose">proposé</span></span>
+              <span class="o-det">20 stations · 2 lignes — ce qui se règle, commander le froid, dégivrer</span>
+            </a>
+          </li>
+          <li class="v8" style="--c:#b06a00">
+            <a href="https://inerweb.fr/packs/fluides/res/technologie-huiles-frigorifiques/index.html">
+              <span class="o-nom">🛢 Huile <span class="o-etat propose">proposé</span></span>
+              <span class="o-det">17 stations · 2 lignes — le fluide, son retour, le circuit jusqu'au diagnostic</span>
+            </a>
+          </li>
+          <li class="v8" style="--c:#4338ca">
+            <a href="https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=pourquoi">
+              <span class="o-nom">🧊 CO₂ (R744) <span class="o-etat propose">proposé</span></span>
+              <span class="o-det">13 stations · 2 lignes — le fluide, puis les centrales qui l'emploient</span>
+            </a>
+          </li>
+          <li style="--c:#3d7fca">
+            <a href="https://inerweb.fr/hydrometro/">
+              <span class="o-nom">💧 HydroMétro <span class="o-etat neuf">nouveau</span></span>
+              <span class="o-det">L'hydraulique CVC — 22 stations, trois profondeurs CAP · Bac pro · BTS</span>
+            </a>
+          </li>
+          <li style="--c:#1b3a63">
+            <a href="https://inerweb.fr/aerorezo/">
+              <span class="o-nom">🌬️ AéroRézo <span class="o-etat">prototype</span></span>
+              <span class="o-det">L'aéraulique — 36 stations, trois profondeurs</span>
+            </a>
+          </li>
+          <li style="--c:#7c3aed">
+            <a href="https://inerweb.fr/electrorezo/">
+              <span class="o-nom">⚡ ÉlectroRézo <span class="o-etat">prototype</span></span>
+              <span class="o-det">L'électrotechnique — 58 stations, 8 lignes, CAP · Bac pro</span>
+            </a>
+          </li>
+          <li style="--c:#1e40af">
+            <a href="https://inerweb.fr/legislation/">
+              <span class="o-nom">📜 Législation <span class="o-etat">en construction</span></span>
+              <span class="o-det">Réglementation, sécurité, environnement — niveau BTS · 29 stations sur 57</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="o-col">
+        <div class="o-tete">🧰 Les outils <small>des logiciels libres et gratuits, pour l'atelier et la salle</small></div>
+        <ul class="o-liste">
+          <li style="--c:#e8914a">
+            <a href="https://inerweb.fr/aquiblue/">
+              <span class="o-nom">📡 AquiBlue <span class="o-etat neuf">nouveau</span></span>
+              <span class="o-det">Les sondes Bluetooth tracent le cycle en direct sur le diagramme enthalpique</span>
+            </a>
+          </li>
+          <li style="--c:#e8914a">
+            <a href="https://inerweb.fr/hocourant/">
+              <span class="o-nom">🔋 HoCourant <span class="o-etat">prototype</span></span>
+              <span class="o-det">Se préparer à l'habilitation électrique, de B0 à BR</span>
+            </a>
+          </li>
+          <li style="--c:#e8914a">
+            <a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/">
+              <span class="o-nom">🧊 inerWeb Fluide <span class="o-etat">bêta-test</span></span>
+              <span class="o-det">La traçabilité des fluides frigorigènes — CERFA, registre, bilan</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="o-col">
+        <div class="o-tete">📋 La formation habilitation <small>attestation fluides A1 · A2 · D · E</small></div>
+        <ul class="o-liste">
+          <li style="--c:#1e7e54">
+            <a href="https://inerweb.fr/formation.html">
+              <span class="o-nom">L'application de formation</span>
+              <span class="o-det">La semaine complète : 44 fiches, 269 questions, examens blancs</span>
+            </a>
+          </li>
+          <li style="--c:#1e7e54">
+            <a href="https://inerweb.fr/f/positionnement">
+              <span class="o-nom">🎯 Le test d'entrée</span>
+              <span class="o-det">Où j'en suis, avant tout — le positionnement</span>
+            </a>
+          </li>
+          <li style="--c:#1e7e54">
+            <a href="https://inerweb.fr/formateurs.html">
+              <span class="o-nom">🎓 Formateurs et enseignants</span>
+              <span class="o-det">Projeter en cours, ouvrir une séance, demander un accès aux documents</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="o-lien-plan">Chaque carte ouvre son réseau ou son outil. Le plan thermo-techno est juste en dessous ↓</p>
+  </div>
+
+  <h2 class="portes-titre">Par où commencer ?</h2>
+  <div class="portes">
+    <a class="porte-btn" href="https://inerweb.fr/metier.html">
+      <span class="p-ico" aria-hidden="true">🚉</span>
+      <span class="p-titre">Je découvre</span>
+      <span class="p-det">Départ, aucun prérequis : c'est quoi, frigoriste ? Puis le premier cours, du glaçon au circuit.</span>
+    </a>
+    <a class="porte-btn forte" href="https://inerweb.fr/f/positionnement">
+      <span class="p-ico" aria-hidden="true">🎯</span>
+      <span class="p-titre">Je me situe</span>
+      <span class="p-det">Le test d'entrée — où j'en suis, avant tout. Une dizaine de minutes, et le plan vous dit où monter.</span>
+    </a>
+    <a class="porte-btn" href="https://inerweb.fr/#chercher">
+      <span class="p-ico" aria-hidden="true">🔎</span>
+      <span class="p-titre">Je cherche un cours</span>
+      <span class="p-det">Un mot — surchauffe, manifold, huile — ou le catalogue complet, filtrable par thème.</span>
+    </a>
+  </div>
+
+  <details class="repli">
+    <summary>👤 Le mot de l'auteur <span class="n">— replié, comme aujourd'hui</span></summary>
+    <div class="d">Texte inchangé : technicien frigoriste devenu enseignant, projet personnel, vidéo de présentation, courriel.</div>
+  </details>
+  <details class="repli">
+    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 28 août 2026 — replié, comme aujourd'hui</span></summary>
+    <div class="d">Le journal daté, inchangé. C'est ici que vivent les annonces d'AquiBlue et de HoCourant, en plus du bloc « Les outils » plus bas.</div>
+  </details>
+
+  <div class="repere"><span class="num">2</span> Deuxième écran : le plan thermo-techno, inchangé</div>
+
+  <div class="bloc" id="carte">
+    <div class="titre-bloc">
+      <h2>Le plan de formation thermo-techno</h2>
+      <span>Suivez le fluide. Chaque station est un cours qui s'ouvre en un clic — chaque cartouche de ligne ouvre le plan de la ligne.</span>
+    </div>
+    <div class="inchange">
+      <b>Le plan actuel prend place ici, tel quel</b> : le champ « Chercher un cours », la légende, la carte SVG (108 stations, 15 lignes).<br>
+      Seul changement proposé sur la carte : une deuxième tête de ligne <b>🎯 Positionnement</b> à côté de <b>🚉 DÉPART</b>,
+      en plus de sa place dans la ceinture ✅ S'ÉVALUER.
+    </div>
+  </div>
+
+  <div class="repere"><span class="num">3</span> Troisième écran : les outils — les deux bandeaux d'aujourd'hui, descendus ici</div>
+
+  <div class="bloc" id="outils">
+    <div class="titre-bloc">
+      <h2>Les outils inerWeb</h2>
+      <span>Des logiciels libres et gratuits pour l'atelier et la salle. Démonstration en ligne, sans installation.</span>
+    </div>
+    <div class="outils-grille">
+      <a class="outil" href="https://inerweb.fr/aquiblue/">
+        <svg viewBox="0 0 260 50" role="img" aria-label="inerWeb AquiBlue">
+          <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+          <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+          <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+          <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+          <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="100" height="24"/>
+          <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="205" y="27" text-anchor="middle">AquiBlue</text>
+        </svg>
+        <span class="etiq neuf">NOUVEAU</span>
+        <h3>Les sondes tracent le cycle en direct</h3>
+        <p>Les sondes de mesure Bluetooth dessinent le cycle frigorifique sur le diagramme enthalpique : douze configurations de pose, pincements, profil de température. Toute valeur se saisit aussi à la main. Libre et gratuit (GPL-3.0).</p>
+        <span class="suite">Essayer · Télécharger · Code source ▸</span>
+      </a>
+      <a class="outil" href="https://inerweb.fr/hocourant/">
+        <svg viewBox="0 0 280 50" role="img" aria-label="inerWeb HoCourant">
+          <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+          <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+          <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+          <line stroke="#e8914a" stroke-width="2" x1="44" x2="166" y1="35" y2="35"/>
+          <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="118" height="24"/>
+          <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="214" y="27" text-anchor="middle">HoCourant</text>
+        </svg>
+        <span class="etiq proto">PROTOTYPE</span>
+        <h3>Se préparer à l'habilitation électrique</h3>
+        <p>De B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle et l'erreur ouvre la remédiation. Codes de mission distribués par l'enseignant ; aucun compte, aucune donnée personnelle. Contenus en cours de relecture métier.</p>
+        <span class="suite">Essayer le prototype ▸</span>
+      </a>
+      <a class="outil" href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/">
+        <svg viewBox="0 0 250 50" role="img" aria-label="inerWeb Fluide">
+          <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+          <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+          <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+          <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+          <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="86" height="24"/>
+          <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="198" y="27" text-anchor="middle">Fluide</text>
+        </svg>
+        <span class="etiq beta">CHERCHE DES BÊTA-TESTEURS</span>
+        <h3>La traçabilité des fluides frigorigènes</h3>
+        <p>CERFA, registre, bilan : le logiciel cherche des centres de formation et des professionnels pour l'essayer avant sa sortie. Démonstration en ligne, présentation en deux pages.</p>
+        <span class="suite">Essayer la démonstration ▸</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="repere"><span class="num">4</span> La suite : inchangée, dans l'ordre d'aujourd'hui</div>
+
+  <div class="bloc">
+    <div class="titre-bloc"><h2>Le réseau, en liste</h2><span>Les mêmes cours que sur le plan — téléphone, clavier, lecteur d'écran.</span></div>
+    <div class="inchange">Inchangé : les 15 lignes en accordéon.</div>
+  </div>
+  <div class="bloc">
+    <div class="titre-bloc"><h2>Entrer par le circuit</h2><span>Plutôt visuel ? Cliquez sur un organe pour ouvrir son cours.</span></div>
+    <div class="inchange">Inchangé : le schéma du circuit aux symboles normalisés, quatre organes cliquables.</div>
+  </div>
+
+  <div class="tuiles">
+    <a class="tuile" href="https://inerweb.fr/formation.html"><div class="emoji">📋</div><h3>La formation habilitation</h3><p>A1 · A2 · D · E — la semaine complète dans l'application.</p></a>
+    <a class="tuile" href="https://inerweb.fr/galerie.html"><div class="emoji">🧭</div><h3>Tout le catalogue</h3><p>Les ressources, filtrables par thème et par type.</p></a>
+    <a class="tuile" href="https://inerweb.fr/metier.html"><div class="emoji">🧑‍🔧</div><h3>Le métier</h3><p>C'est quoi, frigoriste ? Du CAP au bureau d'études.</p></a>
+    <a class="tuile" href="https://inerweb.fr/formateurs.html"><div class="emoji">🎓</div><h3>Formateurs</h3><p>Projeter en cours, réemployer le code, demander une adaptation.</p></a>
+  </div>
+
+  <p class="pied">Maquette côté Code (HTML autonome, sans dépendance). Le dossier d'analyse est à côté : <code>PROPOSITION.md</code>.</p>
+</div>
+
+<script>
+  (function () {
+    var orga = document.getElementById('orga');
+    var boutons = document.querySelectorAll('[data-vue-btn]');
+    boutons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        orga.setAttribute('data-vue', b.getAttribute('data-vue-btn'));
+        boutons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      });
+    });
+  })();
+</script>
+</body>
+</html>

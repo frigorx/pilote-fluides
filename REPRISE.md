@@ -3,6 +3,31 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 05/09 — LA PORTE D'ENTRÉE DE L'ACCUEIL : FAITE et poussée (`b06dbb7c`)
+>
+> Constat de F. Henninot : l'accueil n'était pas compréhensible — deux bandeaux de nouveautés
+> (AquiBlue, HoCourant) occupaient le premier écran avant le titre. Décision du jour : « faire
+> toute cette mise à jour, sans tout casser, et mettre en ligne ». Fait dans `index.html` (+ une
+> ligne de navigation dans `metier.html` et `formateurs.html`) : chapô d'identité, **organigramme
+> au premier écran** (réseaux de cours · outils · formation habilitation — il remplace la grille
+> « Les cinq réseaux » du bloc du plan), trois portes « Par où commencer ? » (Je découvre · Je me
+> situe → `formation.html?carte=ex-pos` · Je cherche un cours), bloc **« Les outils inerWeb »**
+> sous le plan (les deux bandeaux tels quels + inerWeb Fluide), entrée « Outils » dans la barre,
+> journal daté du 5 septembre. Données du plan (`index.html`, bloc DONNEES-PLAN) intactes.
+> Méthode : Fable en cadrage et vérification, un agent Sonnet sur les éditions à partir de
+> `docs/porte-entree-2026-09/BRIEF-EXECUTION.md` ; dossier d'analyse `PROPOSITION.md` et
+> maquette `maquette-accueil.html` au même endroit (Claude Design injoignable, 403).
+> Vérifié avant publication : contrôle de syntaxe (520 pages, seule erreur antérieure :
+> `document-eleve-compresseur.html`), `plan-liste.mjs` idempotent, 141 liens conservés, rendu
+> local sans débordement à 1280 et 375 px, plan dessiné, recherche active, console vide.
+> ✅ **Servi en ligne le 05/09 à 17:07** : `curl https://inerweb.fr/` (contre-cache) contient `id="reseaux"`,
+> `id="outils"` et « Par où commencer » ; `metier.html` sert l'entrée « Outils » ; `formation.html?carte=ex-pos` en 200.
+> ⚠️ Le site a un `sw.js` : un visiteur déjà venu doit recharger une fois (navigations réseau d'abord).
+> **Chantier suivant, non commencé** : l'éclatement en huit réseaux (Régulation ≈ 20 stations,
+> Huile 17, CO₂ 13) à deux conditions — sortir les données et le moteur de carte de la page dans
+> `moteur/` (une seule source), et une navigation commune entre réseaux ; puis une deuxième tête
+> de ligne « Positionnement » à côté de DÉPART sur la carte. Détail : `PROPOSITION.md`, § 4-5.
+
 > ## 01-02/09 — LE MODE PROF : la voix EXPLIQUE, elle ne lit plus l'écran (chantier complet, EN LIGNE)
 >
 > **Le déclencheur.** Audit de F. Henninot sur le Tome 3 : « le vocal, si je devais le noter, zéro —
