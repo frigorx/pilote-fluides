@@ -16,8 +16,9 @@ en ligne**, et sans créer une deuxième copie de la moindre donnée.
 
 ## Next Step
 
-Confier `BRIEF-PHASE-1.md` à un agent Sonnet (effort medium), puis relire son diff ligne à ligne et
-rejouer les mesures du rendu (mêmes valeurs que `findings.md` § 8).
+Attendre le feu vert de F. Henninot, puis `git push origin main` et vérifier le site servi contre-cache
+(`curl -H "Cache-Control: no-cache" https://inerweb.fr/moteur/plan-donnees.js?v=271cfd5475` en 200,
+`index.html` qui le référence, plan dessiné au navigateur). Ensuite seulement : le brief de la phase 2.
 
 ## Current Phase
 
@@ -48,8 +49,10 @@ reprend les douze noms en une ligne ; `plan-liste.mjs` et `registre.mjs` le lise
       d'où un 2e hash ; la 3e ne change plus un octet — prouvé par empreintes md5)
 - [x] rendu après = rendu avant : toutes les sondes identiques (`findings.md` § 8), `PLAN_DONNEES` = 12 groupes,
       5 `<script src>` en `?v=271cfd5475`, console sans erreur
-- [ ] commit local
-- [ ] feu vert de F. Henninot → `git push` → vérification du site servi (contre-cache)
+- [x] commit local `00cd12e1` (05/09 19:50 — 29 fichiers : le module, `index.html`, quatre scripts de
+      `build/`, les `?v=` de 22 pages et `sw.js`, le dossier du chantier)
+- [ ] feu vert de F. Henninot → `git push` → vérification du site servi (contre-cache :
+      `moteur/plan-donnees.js?v=271cfd5475` en 200, plan dessiné, console vide)
 
 ### Phase 2 — la navigation commune entre réseaux
 **Status:** pending

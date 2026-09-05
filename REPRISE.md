@@ -3,6 +3,33 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 05/09 (soir) — L'ÉCLATEMENT EN RÉSEAUX, PHASE 1 : une seule source, FAITE en local (`00cd12e1`), PAS POUSSÉE
+>
+> Chantier suivant de la porte d'entrée, ouvert le soir même. Plan, carte du code et brief dans
+> `docs/reseaux-2026-09/` (`task_plan.md`, `findings.md`, `BRIEF-PHASE-1.md`). Le bloc `DONNEES-PLAN`
+> (372 lignes) a quitté `index.html` pour **`moteur/plan-donnees.js`** (déplacé par script, jamais retapé ;
+> exposé sur `window.PLAN_DONNEES`) ; `index.html` le charge avant son moteur et reprend les douze noms
+> en une ligne ; `plan-liste.mjs` et `registre.mjs` lisent la source ; `version.mjs` et `lib-version.mjs`
+> la versionnent — sinon l'angle mort du 20/08 revenait. Le moteur de carte n'a pas bougé : il n'est pas
+> générique (bandes à ordonnées codées, 64 lignes couplées à des branches nommées), il bougera en phase 3.
+> **Prouvé, pas supposé** : instantané JSON des données identique avant/après (108 arrêts) ; rendu servi en
+> local identique sur chaque sonde (plan 62 414 caractères, empreinte `a74876ef`, 121 liens ; compteur
+> 0 / 86 ; recherche « huile » 17 cours ; console sans erreur) ; `plan-liste` 15 lignes / 108 stations et
+> idempotent ; `registre` 74 cours ; `controle-syntaxe` une seule erreur, antérieure ; hash `271cfd5475`
+> convergé à la 3e passe de `version.mjs` (la 1re pose un `?v=` sur une balise qui n'en avait pas).
+> Méthode : Fable en cadrage et contrôle, deux agents Sonnet sur brief écrit — le premier s'est arrêté, à
+> raison, sur un compte de lignes : les blocs que `plan-liste` régénère sont en LF, le reste en CRLF.
+> ⏳ **Attend le feu vert de F. Henninot pour `git push`** ; ensuite vérifier, contre-cache,
+> `moteur/plan-donnees.js?v=271cfd5475` en 200 et le plan dessiné sur https://inerweb.fr/.
+> **Trois défauts relevés, non corrigés (hors périmètre)** : `atelier-animations/outils/ordonner-ligne.js`
+> visait `index.html` pour réécrire la branche HUILE avec **17** stations alors qu'elle est coupée en 4 + 13
+> depuis le 20/08 — il s'arrête désormais proprement au lieu d'écrire faux ; `#ligne=huile` et
+> `#ligne=regules` (liens de retour gravés par l'atelier dans les modules) montrent tout le plan au lieu de
+> la ligne (pas dans `VUES`) ; `#ligne=co2` aussi (la regex de `rendre()`, `[a-z-]+`, refuse le chiffre).
+> **Suite** : phase 2 = une barre des cinq réseaux depuis une seule liste, en tête des cinq pages ;
+> phase 3 = les trois pages de réseau et le moteur filtrable. **Décision ouverte** pour la phase 3 : la
+> ligne « Ce qui se règle » reste au cœur ou part dans Régulation (`PROPOSITION.md`, § 4).
+
 > ## 05/09 — LA PORTE D'ENTRÉE DE L'ACCUEIL : FAITE et poussée (`b06dbb7c`)
 >
 > Constat de F. Henninot : l'accueil n'était pas compréhensible — deux bandeaux de nouveautés
@@ -23,7 +50,7 @@
 > ✅ **Servi en ligne le 05/09 à 17:07** : `curl https://inerweb.fr/` (contre-cache) contient `id="reseaux"`,
 > `id="outils"` et « Par où commencer » ; `metier.html` sert l'entrée « Outils » ; `formation.html?carte=ex-pos` en 200.
 > ⚠️ Le site a un `sw.js` : un visiteur déjà venu doit recharger une fois (navigations réseau d'abord).
-> **Chantier suivant, non commencé** : l'éclatement en huit réseaux (Régulation ≈ 20 stations,
+> **Chantier suivant, commencé le soir même (note au-dessus)** : l'éclatement en huit réseaux (Régulation ≈ 20 stations,
 > Huile 17, CO₂ 13) à deux conditions — sortir les données et le moteur de carte de la page dans
 > `moteur/` (une seule source), et une navigation commune entre réseaux ; puis une deuxième tête
 > de ligne « Positionnement » à côté de DÉPART sur la carte. Détail : `PROPOSITION.md`, § 4-5.
