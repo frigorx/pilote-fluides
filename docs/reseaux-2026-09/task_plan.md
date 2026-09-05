@@ -16,13 +16,13 @@ en ligne**, et sans créer une deuxième copie de la moindre donnée.
 
 ## Next Step
 
-Attendre le feu vert de F. Henninot, puis `git push origin main` et vérifier le site servi contre-cache
-(`curl -H "Cache-Control: no-cache" https://inerweb.fr/moteur/plan-donnees.js?v=271cfd5475` en 200,
-`index.html` qui le référence, plan dessiné au navigateur). Ensuite seulement : le brief de la phase 2.
+Ouvrir la phase 2 dans un nouveau chat (un chat par phase) : écrire `BRIEF-PHASE-2.md` — la barre des cinq
+réseaux depuis une seule liste (`moteur/reseaux.js`), posée en tête des quatre pages de réseau et de l'accueil,
+en liens relatifs. La décision « Ce qui se règle » (phase 3) reste à prendre par F. Henninot.
 
 ## Current Phase
 
-Phase 1 — une seule source.
+Phase 1 terminée et en ligne ; phase 2 (navigation commune) à ouvrir.
 
 ## Phases
 
@@ -33,7 +33,7 @@ et un outil d'un autre dépôt (`atelier-animations/outils/ordonner-ligne.js`) �
 données — déjà désynchronisé (17 stations pour une branche qui en a 4).
 
 ### Phase 1 — une seule source : `moteur/plan-donnees.js`
-**Status:** in_progress
+**Status:** complete (05/09 soir — poussée et servie, vérifiée en ligne)
 Sortir le bloc `DONNEES-PLAN` d'`index.html` dans `moteur/plan-donnees.js` — un **déplacement**, jamais
 une retape — exposé sur `window.PLAN_DONNEES` ; `index.html` le charge juste avant son moteur et en
 reprend les douze noms en une ligne ; `plan-liste.mjs` et `registre.mjs` le lisent ; `version.mjs` et
@@ -51,8 +51,11 @@ reprend les douze noms en une ligne ; `plan-liste.mjs` et `registre.mjs` le lise
       5 `<script src>` en `?v=271cfd5475`, console sans erreur
 - [x] commit local `00cd12e1` (05/09 19:50 — 29 fichiers : le module, `index.html`, quatre scripts de
       `build/`, les `?v=` de 22 pages et `sw.js`, le dossier du chantier)
-- [ ] feu vert de F. Henninot → `git push` → vérification du site servi (contre-cache :
-      `moteur/plan-donnees.js?v=271cfd5475` en 200, plan dessiné, console vide)
+- [x] feu vert de F. Henninot (05/09 ~20:05) → `git push` (`87709416..811a4b53`) → site servi vérifié
+      contre-cache 195 s plus tard : module en 200 et identique au local, `sw.js` en `271cfd5475`, page =
+      locale hors réécriture Cloudflare des e-mails, plan rendu = référence locale (`a74876ef`). Console :
+      quatre erreurs du script Cloudflare `email-decode` sur les `<a>` du SVG — bruit préexistant, pas de
+      notre code.
 
 ### Phase 2 — la navigation commune entre réseaux
 **Status:** pending
@@ -122,3 +125,6 @@ positionnement par réseau (PROPOSITION § 5).
   autre session ouverte sur ce dépôt. Serveur local `node` sur le port 8765 (script dans le bloc-notes de
   session) déclaré dans un `.claude/launch.json` **temporaire** du dossier de travail de session
   (`CLAUDE-ESPACE-TRAVAIL`) — **à retirer en fin de session**.
+- **05/09, 20:05-20:20** — feu vert de F. Henninot ; push `87709416..811a4b53` ; module servi 195 s après ;
+  page, module, `sw.js` et rendu vérifiés en ligne (détail dans la phase 1 ci-dessus). Serveur local arrêté,
+  `launch.json` temporaire retiré.

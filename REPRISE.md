@@ -3,7 +3,7 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
-> ## 05/09 (soir) — L'ÉCLATEMENT EN RÉSEAUX, PHASE 1 : une seule source, FAITE en local (`00cd12e1`), PAS POUSSÉE
+> ## 05/09 (soir) — L'ÉCLATEMENT EN RÉSEAUX, PHASE 1 : une seule source, FAITE, POUSSÉE et SERVIE (`00cd12e1`, `811a4b53`)
 >
 > Chantier suivant de la porte d'entrée, ouvert le soir même. Plan, carte du code et brief dans
 > `docs/reseaux-2026-09/` (`task_plan.md`, `findings.md`, `BRIEF-PHASE-1.md`). Le bloc `DONNEES-PLAN`
@@ -19,8 +19,18 @@
 > convergé à la 3e passe de `version.mjs` (la 1re pose un `?v=` sur une balise qui n'en avait pas).
 > Méthode : Fable en cadrage et contrôle, deux agents Sonnet sur brief écrit — le premier s'est arrêté, à
 > raison, sur un compte de lignes : les blocs que `plan-liste` régénère sont en LF, le reste en CRLF.
-> ⏳ **Attend le feu vert de F. Henninot pour `git push`** ; ensuite vérifier, contre-cache,
-> `moteur/plan-donnees.js?v=271cfd5475` en 200 et le plan dessiné sur https://inerweb.fr/.
+> ✅ **Poussée le 05/09 vers 20:05 sur feu vert de F. Henninot, servie 195 s après le push** — vérifié contre-cache :
+> `moteur/plan-donnees.js?v=271cfd5475` en 200 et identique au local (26 499 octets), `sw.js` en `271cfd5475`,
+> page servie = page locale à huit lignes près (les trois `mailto:` réécrits par Cloudflare et son script
+> `email-decode`), plan rendu en ligne = référence locale (empreinte `a74876ef`, 121 liens — mesurée après avoir
+> neutralisé, le temps d'un redessin, la marque de visite `corr-hauteur` du navigateur de test : une
+> correspondance visitée remplit son disque de la couleur de la ligne, même longueur, autre empreinte,
+> compteur inchangé puisque les correspondances sont hors compte).
+> ⚠️ Observation, pas de notre code : la console en ligne porte quatre `TypeError: o.href.indexOf is not a
+> function` venant de `/cdn-cgi/scripts/…/email-decode.min.js` — l'option Cloudflare « Email Address
+> Obfuscation » parcourt tous les `<a>` de la page et bute sur ceux du SVG du plan (leur `href` est un
+> `SVGAnimatedString`). Les trois e-mails sont tout de même décodés et cliquables. Bruit présent depuis le
+> passage derrière Cloudflare (`f621fd02`) ; se retire en désactivant l'option côté Cloudflare, si voulu.
 > **Trois défauts relevés, non corrigés (hors périmètre)** : `atelier-animations/outils/ordonner-ligne.js`
 > visait `index.html` pour réécrire la branche HUILE avec **17** stations alors qu'elle est coupée en 4 + 13
 > depuis le 20/08 — il s'arrête désormais proprement au lieu d'écrire faux ; `#ligne=huile` et
