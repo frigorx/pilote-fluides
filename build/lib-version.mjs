@@ -72,6 +72,10 @@ const FICHIERS_SOURCES = [
      hasher tel quel se mordrait la queue — nouveau hash, donc nouveau
      contenu, donc nouveau hash. Les occurrences sont donc neutralisées avant
      le calcul, voir `calculerVersion()`. */
+  /* 05/09/2026 — les données du plan, sorties d'index.html. La page reste
+     hashée par pagesRacine(), mais le plan ne vit plus dedans : sans cette
+     ligne, l'angle mort du 20/08 reviendrait par la fenêtre. */
+  "moteur/plan-donnees.js",
 ];
 
 /* TOUTES LES PAGES DE LA RACINE, et pas seulement index.html. Le 20/08, après

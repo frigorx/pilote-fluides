@@ -102,7 +102,13 @@ for (const c of CARTES) {
 const accueil = readFileSync(resolve(RACINE, "index.html"), "utf8");
 const depuisAccueil = new Set();
 for (const m of accueil.matchAll(MOTIF)) depuisAccueil.add(m[1]);
-for (const m of accueil.matchAll(/\bcours\(\s*["']([a-z0-9-]+)["']/g)) depuisAccueil.add(m[1]);
+/* 05/09/2026 — les données du plan ont quitté index.html pour moteur/plan-donnees.js
+   (une seule source, PROPOSITION § 4). La liste HTML générée dans index.html porte
+   encore les adresses des cours (MOTIF ci-dessus), mais build.mjs ne la régénère
+   qu'APRÈS ce script : on lit la source elle-même, pour voir un cours ajouté au
+   plan dès le build où il l'est. */
+const planDonnees = readFileSync(resolve(RACINE, "moteur/plan-donnees.js"), "utf8");
+for (const m of planDonnees.matchAll(/\bcours\(\s*["']([a-z0-9-]+)["']/g)) depuisAccueil.add(m[1]);
 
 /* ---- 4. La couverture déclarée par chaque cours ---- */
 const cours = surDisque.map((nom) => {

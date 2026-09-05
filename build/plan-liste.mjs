@@ -6,11 +6,11 @@
    page doit rester utilisable et compréhensible sans lui (durcissement du
    20/08/2026). Et une seconde liste TENUE À LA MAIN divergerait au premier
    cours ajouté : celle-ci est donc EXTRAITE du bloc de données du plan
-   (sentinelles DONNEES-PLAN dans index.html) et injectée en HTML statique
+   (sentinelles DONNEES-PLAN dans moteur/plan-donnees.js) et injectée en HTML statique
    (sentinelles LISTE-PLAN), avec le JSON-LD WebSite + ItemList
    (sentinelles JSON-LD).
 
-   ENTRÉE   index.html (bloc DONNEES-PLAN)
+   ENTRÉE   moteur/plan-donnees.js (bloc DONNEES-PLAN — dans index.html jusqu'au 05/09/2026)
    SORTIE   index.html (blocs LISTE-PLAN et JSON-LD réécrits, idempotent)
    USAGE    node build/plan-liste.mjs   (lancé aussi par build.mjs, AVANT
             version.mjs)
@@ -21,16 +21,18 @@ import { fileURLToPath } from "node:url";
 
 const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const CHEMIN = resolve(RACINE, "index.html");
+const DONNEES = resolve(RACINE, "moteur/plan-donnees.js");
 const SITE = "https://inerweb.fr/";
 
 let html = readFileSync(CHEMIN, "utf8");
+const source = readFileSync(DONNEES, "utf8");
 
 /* ---- 1. La donnée du plan, extraite et évaluée ---- */
-const mDonnees = html.match(
+const mDonnees = source.match(
   /\/\* DONNEES-PLAN — DEBUT[\s\S]*?\*\/([\s\S]*?)\/\* DONNEES-PLAN — FIN \*\//
 );
 if (!mDonnees) {
-  console.error("✗ plan-liste : sentinelles DONNEES-PLAN introuvables dans index.html");
+  console.error("✗ plan-liste : sentinelles DONNEES-PLAN introuvables dans moteur/plan-donnees.js");
   process.exit(1);
 }
 const D = new Function(

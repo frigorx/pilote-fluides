@@ -49,6 +49,10 @@ const FICHIERS_VERSIONNES = [
   // coffre s'ouvre : une version périmée servie par un navigateur serait le
   // pire des caches. Il est donc versionné comme les autres.
   "moteur/acces.js",
+  // 05/09/2026 — les données du plan de formation, sorties d'index.html
+  // (une seule source pour le plan et ses futures cartes par réseau). Un
+  // plan corrigé doit atteindre le visiteur qui garde l'onglet ouvert.
+  "moteur/plan-donnees.js",
 ];
 
 // Les pages générées (galerie, matrice, planning, relecture) sont incluses :
