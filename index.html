@@ -108,6 +108,54 @@
     .plan svg animate { display:none; }
   }
 
+  /* ---- L'ORGANIGRAMME (05/09/2026) : la porte d'entrée. F. Henninot :
+     « attaquer par l'organigramme, et dérouler le reste après ». Les
+     cartes des réseaux gardent leur style (.reseaux, ci-dessus, sorti du
+     bloc .plan) ; l'arbre n'ajoute que la racine, le rail et les trois
+     colonnes. Les traits relient des cartes, aucun texte ne passe dessus.
+     Sur téléphone : une colonne, pas de traits. ---- */
+  .orga { margin:26px 0 0; }
+  .o-racine { width:max-content; max-width:100%; margin:0 auto; padding:10px 26px;
+              background:var(--bleu); color:#fff; font-family:var(--titre); font-weight:bold;
+              font-size:22px; border-radius:12px; text-align:center; }
+  .o-racine small { display:block; font-weight:normal; font-size:14px; opacity:.9; }
+  .o-tige { width:3px; height:24px; background:var(--bleu); margin:0 auto; }
+  .o-rail { height:3px; background:var(--bleu); margin:0 calc(16.66% - 6px); }
+  .o-colonnes { display:grid; grid-template-columns:repeat(3,1fr); gap:0 18px; }
+  .o-col { position:relative; padding-top:24px; min-width:0; }
+  .o-col::before { content:""; position:absolute; top:0; left:50%; width:3px; height:24px;
+                   margin-left:-1.5px; background:var(--bleu); }
+  .o-tete { text-align:center; font-family:var(--titre); font-weight:bold; color:var(--bleu);
+            font-size:17px; padding:10px 12px; border:2px solid var(--bleu); border-radius:10px;
+            background:var(--carte); margin-bottom:12px; }
+  .o-tete small { display:block; font-weight:normal; color:var(--mut); font-size:13.5px; }
+  .o-sous { list-style:none; margin:-4px 0 0 14px; padding:0 0 0 12px;
+            border-left:2px solid var(--ligne); display:grid; gap:4px; }
+  .o-sous li { font-size:14px; color:var(--mut); }
+  .o-sous li b { color:var(--txt); font-weight:600; }
+  /* Les trois portes — même geste qu'ÉlectroRézo (ses trois portes) et
+     qu'HydroMétro (« Trouver mon trajet » à côté de la carte). */
+  .portes-titre { margin:28px 0 10px; font-family:var(--titre); font-size:22px; color:var(--bleu); }
+  .portes { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; }
+  .porte { display:grid; grid-template-columns:52px 1fr; gap:4px 12px; align-items:start;
+           text-decoration:none; color:var(--txt); background:var(--carte);
+           border:2px solid var(--bleu); border-radius:var(--r); padding:14px 16px; box-shadow:var(--ombre); }
+  .porte:hover { background:#e7eff7; }
+  .porte .p-ico { grid-row:1 / span 2; font-size:36px; line-height:1; }
+  .porte .p-titre { font-family:var(--titre); font-weight:bold; font-size:19px; color:var(--bleu); }
+  .porte .p-det { color:var(--mut); font-size:14.5px; }
+  .porte.forte { border-color:var(--orange); }
+  .porte.forte .p-titre { color:var(--orange); }
+  /* Les outils : les bandeaux AquiBlue / HoCourant / Fluide dans un bloc blanc, sous le plan. */
+  .outils .corps { padding:0 24px 22px; }
+  .outils .corps .bandeau-aquiblue { margin-top:14px; }
+  .bandeau-fluide { border:2px solid var(--bleu-clair); }
+  @media (max-width:760px) {
+    .o-colonnes { grid-template-columns:1fr; gap:16px; }
+    .o-rail, .o-tige, .o-col::before { display:none; }
+    .o-col { padding-top:0; }
+  }
+
   /* ---- Blocs blancs ---- */
   .bloc { background:var(--carte); border:1px solid var(--ligne);
           border-radius:var(--r); box-shadow:var(--ombre); }
@@ -167,27 +215,26 @@
      c'est par là qu'on change de réseau.
      La grille accepte les suivants sans retouche : un réseau de plus = un
      lien de plus, sa couleur passée en --c. */
-  .plan .reseaux { padding:16px 24px 0; }
-  .plan .reseaux .r-intro { margin:0 0 10px; font-family:var(--titre); font-weight:bold;
+  .reseaux { padding:0; }
+  .reseaux .r-intro { margin:0 0 10px; font-family:var(--titre); font-weight:bold;
                             font-size:14px; color:var(--mut); }
-  .plan .reseaux .r-grille { display:grid; gap:12px;
-                             grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
-  .plan .reseaux a { display:flex; align-items:center; gap:14px; text-decoration:none;
+  .reseaux .r-grille { display:grid; gap:12px; grid-template-columns:1fr; }
+  .reseaux a { display:flex; align-items:center; gap:14px; text-decoration:none;
                      background:var(--c); color:#fff; border-radius:var(--r);
                      padding:15px 20px; min-height:64px;
                      border:3px solid transparent; transition:transform .12s, border-color .12s; }
-  .plan .reseaux a:hover { transform:translateY(-2px); border-color:var(--orange); color:#fff; }
-  .plan .reseaux a .r-texte { flex:1; min-width:0; }
-  .plan .reseaux a .r-nom { display:block; font-family:var(--titre); font-weight:bold;
+  .reseaux a:hover { transform:translateY(-2px); border-color:var(--orange); color:#fff; }
+  .reseaux a .r-texte { flex:1; min-width:0; }
+  .reseaux a .r-nom { display:block; font-family:var(--titre); font-weight:bold;
                             font-size:18px; line-height:1.2; }
-  .plan .reseaux a .r-det { display:block; font-size:13.5px; opacity:.92; margin-top:3px; }
-  .plan .reseaux a .r-etat { flex:0 0 auto; font-size:12px; font-weight:bold;
+  .reseaux a .r-det { display:block; font-size:13.5px; opacity:.92; margin-top:3px; }
+  .reseaux a .r-etat { flex:0 0 auto; font-size:12px; font-weight:bold;
                              background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.55);
                              border-radius:999px; padding:3px 10px; white-space:nowrap; }
-  .plan .reseaux a .r-fleche { flex:0 0 auto; font-size:22px; line-height:1; }
+  .reseaux a .r-fleche { flex:0 0 auto; font-size:22px; line-height:1; }
   /* Le motif de ligne de métro des cartes : il annule le min-width:980px
      posé plus bas sur `.plan svg` (qui vise le grand plan, pas lui). */
-  .plan .reseaux a .r-ligne { display:block; width:120px; min-width:0; height:12px;
+  .reseaux a .r-ligne { display:block; width:120px; min-width:0; height:12px;
                               margin-top:8px; stroke:#fff; fill:#fff; opacity:.7;
                               stroke-width:2; }
   .plan .defilant { overflow-x:auto; padding:6px 10px 4px; }
@@ -456,6 +503,7 @@
     <nav class="nav">
       <a class="ici" href="index.html">Accueil</a>
       <a href="galerie.html">Catalogue</a>
+      <a href="#outils">Outils</a>
       <a href="metier.html">Le métier</a>
       <a href="formateurs.html">Formateurs</a>
     </nav>
@@ -464,67 +512,11 @@
 
 <div class="page" role="main" id="contenu" tabindex="-1">
 
-  <!-- BANNIÈRE inerWeb AquiBlue — EN TÊTE DE PAGE, avant même l'accroche.
-       F. Henninot, 24/08 : « je voulais qu'on la voie en première ligne, avec
-       le logo et une petite explication de ce que c'est ; c'est important de le
-       voir d'entrée de jeu, ça fait partie des moteurs qui peuvent donner de la
-       visibilité et du succès au logiciel ». Elle était posée bas de page, il ne
-       la voyait pas : elle est remontée tout en haut.
-       Logo compact de la charte § 3.4, cartouche « AquiBlue ». Règle absolue du
-       projet : aucun nom de marque d'instruments dans quoi que ce soit de visible. -->
-  <aside class="bandeau-aquiblue" aria-label="inerWeb AquiBlue">
-    <svg class="ba-logo" viewBox="0 0 260 50" role="img" aria-label="inerWeb AquiBlue">
-      <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
-      <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
-      <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
-      <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
-      <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="100" height="24"/>
-      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="205" y="27" text-anchor="middle">AquiBlue</text>
-    </svg>
-    <p class="ba-texte"><strong>Nouveau — inerWeb AquiBlue.</strong> Les sondes de mesure Bluetooth
-      tracent le cycle frigorifique en direct sur le diagramme enthalpique. Douze configurations de
-      pose, pincements et efficacités d'échangeur, profil de température le long d'un échangeur —
-      et toute valeur peut se saisir à la main quand l'instrument manque. Logiciel libre et
-      gratuit (GPL-3.0), démonstration en ligne sans installation, espace professeur sur demande.</p>
-    <div class="ba-boutons">
-      <a class="bouton" href="aquiblue/">Essayer</a>
-      <a class="bouton creux" href="aquiblue/aquiblue-v1.5.2.zip" download>Télécharger</a>
-      <a class="bouton creux" href="https://github.com/frigorx/aquiblue" rel="noopener">Code source</a>
-    </div>
-  </aside>
-
-  <!-- BANNIÈRE inerWeb HoCourant — prototype ouvert à l'essai (25/08).
-       Le nom se lit « au courant » et fait écho au symbole H0. Il remplace
-       « HabElec », écarté le 25/08 : habelec.fr est un centre de formation
-       Qualiopi sur le même objet, et « Habilec » est déjà une formation en
-       ligne à l'habilitation électrique.
-       La mention PROTOTYPE est un marqueur d'état : elle reste pleine et
-       colorée, doublée du trait tireté et du mot (charte § 4, trois canaux). -->
-  <aside class="bandeau-aquiblue bandeau-hocourant" aria-label="inerWeb HoCourant">
-    <svg class="ba-logo" viewBox="0 0 280 50" role="img" aria-label="inerWeb HoCourant">
-      <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
-      <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
-      <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
-      <line stroke="#e8914a" stroke-width="2" x1="44" x2="166" y1="35" y2="35"/>
-      <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="118" height="24"/>
-      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="214" y="27" text-anchor="middle">HoCourant</text>
-    </svg>
-    <p class="ba-texte"><span class="etiquette-proto">PROTOTYPE</span>
-      <strong>inerWeb HoCourant — se préparer à l'habilitation électrique.</strong>
-      De B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle et
-      l'erreur ouvre la remédiation. L'enseignant distribue des codes de mission ; aucun compte,
-      aucune donnée personnelle. <em>Version de démonstration, contenus en cours de relecture
-      métier — ne pas s'en servir comme référence pour une opération réelle.</em></p>
-    <div class="ba-boutons">
-      <a class="bouton" href="hocourant/">Essayer le prototype</a>
-    </div>
-  </aside>
-
   <div class="accroche">
     <div class="texte">
       <div class="pastille">APPRENDRE ET DÉCOUVRIR LE FROID</div>
       <h1>Regardez le métier de frigoriste, <em>station par station</em>.</h1>
-      <p class="chapo">Un plan, un fluide qui circule, des cours à chaque arrêt. Vous montez où vous voulez — <strong>gratuit, sans compte</strong>.</p>
+      <p class="chapo">Un plan de métro par domaine, un fluide qui circule, des cours à chaque arrêt — et des logiciels libres pour l'atelier. Vous montez où vous voulez : <strong>gratuit, sans compte</strong>, projet personnel d'un enseignant frigoriste.</p>
       <div class="boutons">
         <a class="bouton" href="#carte">Voir le plan ▾</a>
         <a class="bouton creux" href="galerie.html">Tout le catalogue</a>
@@ -533,6 +525,165 @@
     <div class="flocon">❄️</div>
   </div>
 
+  <!-- ===================================================================
+       L'ORGANIGRAMME — la porte d'entrée (F. Henninot, 05/09/2026) :
+       « la page d'accueil n'est pas compréhensible ; attaquer par
+       l'organigramme, et dérouler le reste après ». Il REMPLACE la grille
+       « Les cinq réseaux » qui vivait dans le bloc du plan (23-24/08) :
+       mêmes cartes, mêmes couleurs, remontées au premier écran et
+       complétées par deux branches — les outils et la formation.
+       Les bandeaux AquiBlue / HoCourant, qui ouvraient la page depuis le
+       24-25/08, descendent dans « Les outils inerWeb », après le plan :
+       le haut de page porte le permanent, pas la nouveauté
+       (docs/porte-entree-2026-09/PROPOSITION.md, § 2).
+       =================================================================== -->
+  <div class="orga" id="reseaux" aria-label="Tout ce que propose inerWeb.fr">
+    <div class="o-racine">❄️ inerWeb.fr <small>tout ce que le site propose, en un coup d’œil</small></div>
+    <div class="o-tige" aria-hidden="true"></div>
+    <div class="o-rail" aria-hidden="true"></div>
+    <div class="o-colonnes">
+
+      <div class="o-col reseaux">
+        <div class="o-tete">🚇 Les réseaux de cours <small>un plan de métro par domaine, un cours à chaque station</small></div>
+        <div class="r-grille">
+          <a href="#carte" style="--c:#0c4a6e">
+            <span class="r-texte">
+              <span class="r-nom">❄️ Le réseau thermo-techno</span>
+              <span class="r-det">Le métier de frigoriste — 108 stations · 15 lignes, du glaçon au diagnostic</span>
+              <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
+            </span>
+            <span class="r-etat">le cœur du métier</span>
+            <span class="r-fleche" aria-hidden="true">▾</span>
+          </a>
+          <ul class="o-sous" aria-label="Les lignes du réseau thermo-techno">
+            <li><b>Le cycle</b> : le tronc · les organes · ce qui se règle · la ligne liquide · les gestes</li>
+            <li><b>Les fluides</b> : fluides &amp; environnement · le CO₂ · les centrales CO₂</li>
+            <li><b>Le matériel</b> : la régulation · l’huile · le circuit d’huile · électrotech</li>
+            <li><b>Se situer</b> : s’évaluer · la boîte à outils</li>
+          </ul>
+          <a href="legislation/" style="--c:#1e40af">
+            <span class="r-texte">
+              <span class="r-nom">📜 Réseau Législation</span>
+              <span class="r-det">Réglementation, sécurité, environnement — niveau BTS · 29 stations ouvertes sur 57</span>
+              <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
+            </span>
+            <span class="r-etat">en construction</span>
+            <span class="r-fleche" aria-hidden="true">→</span>
+          </a>
+          <a href="hydrometro/" style="--c:#3d7fca">
+            <span class="r-texte">
+              <span class="r-nom">💧 HydroMétro</span>
+              <span class="r-det">L'hydraulique CVC — 22 stations, trois profondeurs CAP · Bac pro · BTS</span>
+              <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
+            </span>
+            <span class="r-etat">nouveau</span>
+            <span class="r-fleche" aria-hidden="true">→</span>
+          </a>
+          <a href="aerorezo/" style="--c:#1b3a63">
+            <span class="r-texte">
+              <span class="r-nom">🌬️ AéroRézo</span>
+              <span class="r-det">L'aéraulique — l'air dans les gaines · 36 stations, trois profondeurs CAP · Bac pro · BTS · en cours d'évaluation</span>
+              <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
+            </span>
+            <span class="r-etat">prototype</span>
+            <span class="r-fleche" aria-hidden="true">→</span>
+          </a>
+          <a href="electrorezo/" style="--c:#7c3aed">
+            <span class="r-texte">
+              <span class="r-nom">⚡ ÉlectroRézo</span>
+              <span class="r-det">L'électrotechnique — de l'ampère au variateur de fréquence · 58 stations, 8 lignes, CAP · Bac pro · relecture en cours</span>
+              <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
+            </span>
+            <span class="r-etat">prototype</span>
+            <span class="r-fleche" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="o-col reseaux">
+        <div class="o-tete">🧰 Les outils <small>des logiciels libres et gratuits, pour l’atelier et la salle</small></div>
+        <div class="r-grille">
+          <a href="aquiblue/" style="--c:#2f5689">
+            <span class="r-texte">
+              <span class="r-nom">📡 inerWeb AquiBlue</span>
+              <span class="r-det">Les sondes Bluetooth tracent le cycle en direct sur le diagramme enthalpique</span>
+            </span>
+            <span class="r-etat">nouveau</span>
+            <span class="r-fleche" aria-hidden="true">→</span>
+          </a>
+          <a href="hocourant/" style="--c:#2f5689">
+            <span class="r-texte">
+              <span class="r-nom">🔋 inerWeb HoCourant</span>
+              <span class="r-det">Se préparer à l’habilitation électrique, de B0 à BR</span>
+            </span>
+            <span class="r-etat">prototype</span>
+            <span class="r-fleche" aria-hidden="true">→</span>
+          </a>
+          <a href="#outils" style="--c:#2f5689">
+            <span class="r-texte">
+              <span class="r-nom">🧊 inerWeb Fluide</span>
+              <span class="r-det">La traçabilité des fluides frigorigènes — CERFA, registre, bilan</span>
+            </span>
+            <span class="r-etat">bêta-test</span>
+            <span class="r-fleche" aria-hidden="true">▾</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="o-col reseaux">
+        <div class="o-tete">📋 La formation habilitation <small>attestation fluides A1 · A2 · D · E</small></div>
+        <div class="r-grille">
+          <a href="formation.html" style="--c:#1e7e54">
+            <span class="r-texte">
+              <span class="r-nom">L’application de formation</span>
+              <span class="r-det">La semaine complète : <span data-ch="fiches">44</span> fiches, <span data-ch="questions">269</span> questions, examens blancs</span>
+            </span>
+            <span class="r-fleche" aria-hidden="true">→</span>
+          </a>
+          <a href="formation.html?carte=ex-pos" style="--c:#1e7e54">
+            <span class="r-texte">
+              <span class="r-nom">🎯 Le positionnement</span>
+              <span class="r-det">Où j’en suis, avant tout</span>
+            </span>
+            <span class="r-fleche" aria-hidden="true">→</span>
+          </a>
+          <a href="formateurs.html" style="--c:#1e7e54">
+            <span class="r-texte">
+              <span class="r-nom">🎓 Formateurs et enseignants</span>
+              <span class="r-det">Projeter en cours, ouvrir une séance, demander un accès aux documents</span>
+            </span>
+            <span class="r-fleche" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PAR OÙ COMMENCER — trois portes (F. Henninot, 05/09/2026 : « le
+       positionnement arrive trop tard, il devrait être une porte d'entrée
+       au niveau de Départ »). La deuxième porte ouvre la station
+       Positionnement du plan, pas un autre test : plusieurs portes vers
+       la même chose. La troisième mène au champ « Chercher un cours »,
+       en tête du plan. -->
+  <h2 class="portes-titre">Par où commencer ?</h2>
+  <div class="portes">
+    <a class="porte" href="metier.html">
+      <span class="p-ico" aria-hidden="true">🚉</span>
+      <span class="p-titre">Je découvre</span>
+      <span class="p-det">Départ, aucun prérequis : c’est quoi, frigoriste ? Puis le premier cours, du glaçon au circuit.</span>
+    </a>
+    <a class="porte forte" href="formation.html?carte=ex-pos">
+      <span class="p-ico" aria-hidden="true">🎯</span>
+      <span class="p-titre">Je me situe</span>
+      <span class="p-det">Le positionnement d’entrée — 22 questions qui ne comptent pas. Où j’en suis, avant tout.</span>
+    </a>
+    <a class="porte" href="#carte">
+      <span class="p-ico" aria-hidden="true">🔎</span>
+      <span class="p-titre">Je cherche un cours</span>
+      <span class="p-det">Un mot — surchauffe, manifold, huile — dans « Chercher un cours », en tête du plan.</span>
+    </a>
+  </div>
 
   <!-- Le mot de l'auteur — EN TÊTE de page (placement demandé par
        F. Henninot après sa première navigation, 19/08). Texte dicté par lui,
@@ -574,8 +725,16 @@
        qu'on y aille d'un clic.
        =================================================================== -->
   <details class="nouveautes" id="nouveautes">
-    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 28 août 2026</span></summary>
+    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 5 septembre 2026</span></summary>
     <div class="nv-corps">
+
+      <h3>5 septembre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouvelle porte d’entrée</span><a href="#reseaux">L’accueil s’ouvre sur l’organigramme</a>
+          <span class="d">— ce que propose le site, en un coup d’œil : les cinq réseaux de cours, les outils, la formation habilitation. Puis trois portes : « Je découvre », « Je me situe » (le positionnement, désormais au niveau du départ) et « Je cherche un cours ».</span></li>
+        <li><span class="nv-etiq">déplacement</span><a href="#outils">Les outils inerWeb</a>
+          <span class="d">— AquiBlue, HoCourant et inerWeb Fluide sont regroupés dans un bloc sous le plan ; les deux premiers ouvraient la page jusqu’ici.</span></li>
+      </ul>
 
       <h3>28 août 2026</h3>
       <ul>
@@ -638,67 +797,8 @@
 
   <div class="bloc plan" id="carte">
     <div class="titre-bloc">
-      <h2>Le plan de formation</h2>
+      <h2>Le plan de formation thermo-techno</h2>
       <span>Suivez le fluide. Chaque station est un cours qui s’ouvre en un clic — et chaque <strong>cartouche de ligne</strong> ouvre le plan détaillé de la ligne.</span>
-    </div>
-    <!-- LES TROIS RÉSEAUX — évolution du connecteur demandé par F. Henninot
-         le 23/08 (« un gros bouton, visible, au début de la première ligne »),
-         élargie le 24/08 : « la page d'accueil avec les 3 réseaux visuels ».
-         Le réseau COURANT figure dans la grille avec « vous êtes ici » (sa
-         carte descend au plan) ; chaque carte porte un motif de ligne de
-         métro (aria-hidden, aucun texte sur le tracé). Cinq à sept réseaux à
-         terme : un réseau de plus = un lien de plus, sa couleur en --c.
-         L'état de construction reste affiché — promettre un réseau vide
-         userait la confiance. -->
-    <div class="reseaux">
-      <p class="r-intro">Les cinq réseaux inerWeb</p>
-      <div class="r-grille">
-        <a href="#carte" style="--c:#0c4a6e">
-          <span class="r-texte">
-            <span class="r-nom">❄️ Le réseau thermo-techno</span>
-            <span class="r-det">Le métier de frigoriste — 108 stations · 15 lignes, du glaçon au diagnostic</span>
-            <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
-          </span>
-          <span class="r-etat">vous êtes ici</span>
-          <span class="r-fleche" aria-hidden="true">▾</span>
-        </a>
-        <a href="legislation/" style="--c:#1e40af">
-          <span class="r-texte">
-            <span class="r-nom">📜 Réseau Législation</span>
-            <span class="r-det">Réglementation, sécurité, environnement — niveau BTS · 29 stations ouvertes sur 57</span>
-            <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
-          </span>
-          <span class="r-etat">en construction</span>
-          <span class="r-fleche" aria-hidden="true">→</span>
-        </a>
-        <a href="hydrometro/" style="--c:#3d7fca">
-          <span class="r-texte">
-            <span class="r-nom">💧 HydroMétro</span>
-            <span class="r-det">L'hydraulique CVC — 22 stations, trois profondeurs CAP · Bac pro · BTS</span>
-            <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
-          </span>
-          <span class="r-etat">nouveau</span>
-          <span class="r-fleche" aria-hidden="true">→</span>
-        </a>
-        <a href="aerorezo/" style="--c:#1b3a63">
-          <span class="r-texte">
-            <span class="r-nom">🌬️ AéroRézo</span>
-            <span class="r-det">L'aéraulique — l'air dans les gaines · 36 stations, trois profondeurs CAP · Bac pro · BTS · en cours d'évaluation</span>
-            <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
-          </span>
-          <span class="r-etat">prototype</span>
-          <span class="r-fleche" aria-hidden="true">→</span>
-        </a>
-        <a href="electrorezo/" style="--c:#7c3aed">
-          <span class="r-texte">
-            <span class="r-nom">⚡ ÉlectroRézo</span>
-            <span class="r-det">L'électrotechnique — de l'ampère au variateur de fréquence · 58 stations, 8 lignes, CAP · Bac pro · relecture en cours</span>
-            <svg class="r-ligne" viewBox="0 0 120 12" aria-hidden="true"><line x1="4" y1="6" x2="116" y2="6"/><circle cx="18" cy="6" r="4"/><circle cx="60" cy="6" r="4"/><circle cx="102" cy="6" r="4"/></svg>
-          </span>
-          <span class="r-etat">prototype</span>
-          <span class="r-fleche" aria-hidden="true">→</span>
-        </a>
-      </div>
     </div>
     <!-- CHERCHER UNE STATION — demandé par F. Henninot le 20/08 : « j'ai besoin
          de quelque chose, je ne sais pas où aller ». Sa source n'est PAS un
@@ -728,6 +828,100 @@
     <div class="defilant"><div id="plan-svg"></div></div>
     <div class="indice-glisser">↔ Fais glisser la carte pour tout voir</div>
   </div>
+
+  <!-- ===================================================================
+       LES OUTILS inerWeb (05/09/2026). Les bandeaux AquiBlue et HoCourant
+       ouvraient la page depuis le 24-25/08 (F. Henninot : « je voulais qu'on
+       la voie en première ligne ») ; ils descendent ici à sa demande du
+       05/09 : l'accueil s'ouvre sur l'organigramme, et chaque logiciel garde
+       trois portes — sa carte dans l'organigramme, ce bloc, le journal.
+       Le troisième bandeau, inerWeb Fluide, reprend l'appel aux
+       bêta-testeurs du volet « Infos » : même gabarit, un logiciel de plus.
+       =================================================================== -->
+  <section class="bloc outils" id="outils" aria-labelledby="titre-outils">
+    <div class="titre-bloc">
+      <h2 id="titre-outils">Les outils inerWeb</h2>
+      <span>Des logiciels libres et gratuits pour l’atelier et la salle — démonstration en ligne, sans installation.</span>
+    </div>
+    <div class="corps">
+
+      <!-- BANNIÈRE inerWeb AquiBlue — a ouvert la page du 24/08 au 05/09, avant
+           même l'accroche ; descendue ici le 05/09 (voir le commentaire du bloc).
+           F. Henninot, 24/08 : « je voulais qu'on la voie en première ligne, avec
+           le logo et une petite explication de ce que c'est ; c'est important de le
+           voir d'entrée de jeu, ça fait partie des moteurs qui peuvent donner de la
+           visibilité et du succès au logiciel ». Elle était posée bas de page, il ne
+           la voyait pas : elle est remontée tout en haut.
+           Logo compact de la charte § 3.4, cartouche « AquiBlue ». Règle absolue du
+           projet : aucun nom de marque d'instruments dans quoi que ce soit de visible. -->
+      <aside class="bandeau-aquiblue" aria-label="inerWeb AquiBlue">
+        <svg class="ba-logo" viewBox="0 0 260 50" role="img" aria-label="inerWeb AquiBlue">
+          <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+          <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+          <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+          <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+          <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="100" height="24"/>
+          <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="205" y="27" text-anchor="middle">AquiBlue</text>
+        </svg>
+        <p class="ba-texte"><strong>Nouveau — inerWeb AquiBlue.</strong> Les sondes de mesure Bluetooth
+          tracent le cycle frigorifique en direct sur le diagramme enthalpique. Douze configurations de
+          pose, pincements et efficacités d'échangeur, profil de température le long d'un échangeur —
+          et toute valeur peut se saisir à la main quand l'instrument manque. Logiciel libre et
+          gratuit (GPL-3.0), démonstration en ligne sans installation, espace professeur sur demande.</p>
+        <div class="ba-boutons">
+          <a class="bouton" href="aquiblue/">Essayer</a>
+          <a class="bouton creux" href="aquiblue/aquiblue-v1.5.2.zip" download>Télécharger</a>
+          <a class="bouton creux" href="https://github.com/frigorx/aquiblue" rel="noopener">Code source</a>
+        </div>
+      </aside>
+
+      <!-- BANNIÈRE inerWeb HoCourant — prototype ouvert à l'essai (25/08).
+           Le nom se lit « au courant » et fait écho au symbole H0. Il remplace
+           « HabElec », écarté le 25/08 : habelec.fr est un centre de formation
+           Qualiopi sur le même objet, et « Habilec » est déjà une formation en
+           ligne à l'habilitation électrique.
+           La mention PROTOTYPE est un marqueur d'état : elle reste pleine et
+           colorée, doublée du trait tireté et du mot (charte § 4, trois canaux). -->
+      <aside class="bandeau-aquiblue bandeau-hocourant" aria-label="inerWeb HoCourant">
+        <svg class="ba-logo" viewBox="0 0 280 50" role="img" aria-label="inerWeb HoCourant">
+          <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+          <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+          <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+          <line stroke="#e8914a" stroke-width="2" x1="44" x2="166" y1="35" y2="35"/>
+          <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="118" height="24"/>
+          <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="214" y="27" text-anchor="middle">HoCourant</text>
+        </svg>
+        <p class="ba-texte"><span class="etiquette-proto">PROTOTYPE</span>
+          <strong>inerWeb HoCourant — se préparer à l'habilitation électrique.</strong>
+          De B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle et
+          l'erreur ouvre la remédiation. L'enseignant distribue des codes de mission ; aucun compte,
+          aucune donnée personnelle. <em>Version de démonstration, contenus en cours de relecture
+          métier — ne pas s'en servir comme référence pour une opération réelle.</em></p>
+        <div class="ba-boutons">
+          <a class="bouton" href="hocourant/">Essayer le prototype</a>
+        </div>
+      </aside>
+
+      <aside class="bandeau-aquiblue bandeau-fluide" aria-label="inerWeb Fluide">
+        <svg class="ba-logo" viewBox="0 0 250 50" role="img" aria-label="inerWeb Fluide">
+          <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+          <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+          <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+          <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+          <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="86" height="24"/>
+          <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="198" y="27" text-anchor="middle">Fluide</text>
+        </svg>
+        <p class="ba-texte"><strong>inerWeb Fluide — la traçabilité des fluides frigorigènes.</strong>
+          CERFA, registre, bilan : le logiciel cherche des centres de formation et des professionnels
+          pour l’essayer avant sa sortie. Démonstration en ligne, présentation en deux pages.</p>
+        <div class="ba-boutons">
+          <a class="bouton" href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/" target="_blank" rel="noopener">Essayer la démonstration</a>
+          <a class="bouton creux" href="presentation-inerweb-fluide.pdf" target="_blank" rel="noopener">Présentation (PDF)</a>
+          <a class="bouton creux" href="mailto:inerweb.fh@gmail.com?subject=B%C3%AAta-test%20inerWeb%20Fluide">Devenir bêta-testeur</a>
+        </div>
+      </aside>
+    </div>
+  </section>
 
   <!-- Le réseau EN LISTE : la même donnée que le plan, rendue en HTML
        sémantique au build — lisible par lecteur d'écran, utilisable sans
