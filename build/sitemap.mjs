@@ -20,15 +20,14 @@ import { fileURLToPath } from "node:url";
 const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 /* Les pages destinées aux moteurs de recherche — et seulement elles.
-   · formation.html est la porte d'entrée de l'application : ses liens
-     profonds sont publics et sa page déclare son canonical. Elle rejoint
-     donc le sitemap le 22/08/2026 ; la frise d'accueil reste son introduction.
+   · formation.html reste une porte d'entrée publique, mais elle redirige toute
+     nouvelle session vers la frise d'accueil. Google la classe donc comme
+     « Page avec redirection » : elle ne doit pas être annoncée dans le sitemap.
    · galerie.html : noindex par décision (en réévaluation). */
 const INDEXEES = [
   { fichier: "index.html", url: "https://inerweb.fr/" },
   { fichier: "metier.html", url: "https://inerweb.fr/metier.html" },
   { fichier: "formateurs.html", url: "https://inerweb.fr/formateurs.html" },
-  { fichier: "formation.html", url: "https://inerweb.fr/formation.html" },
   {
     fichier: "packs/fluides/res/chaleur-interactive/index.html",
     url: "https://inerweb.fr/packs/fluides/res/chaleur-interactive/index.html",
@@ -58,6 +57,11 @@ const INDEXEES = [
     url: "https://inerweb.fr/packs/fluides/res/surchauffe-sous-refroidissement-interactif/index.html",
   },
 ];
+
+/* Pages publiques volontairement absentes du sitemap, sans leur imposer un
+   noindex : formation.html reste accessible aux personnes, mais sa redirection
+   JavaScript en fait une mauvaise URL d'atterrissage pour un moteur. */
+const HORS_SITEMAP = new Set(["formation.html"]);
 
 const lignes = [];
 for (const p of INDEXEES) {
@@ -99,7 +103,7 @@ for (const p of INDEXEES) {
    decider de l'indexation a la place de l'auteur) — on la signale. */
 const listees = new Set(INDEXEES.map((p) => p.fichier));
 for (const fichier of readdirSync(RACINE).filter((f) => f.endsWith(".html"))) {
-  if (listees.has(fichier)) continue;
+  if (listees.has(fichier) || HORS_SITEMAP.has(fichier)) continue;
   const html = readFileSync(resolve(RACINE, fichier), "utf8");
   if (/name="robots"[^>]*noindex/.test(html)) continue;
   console.warn("⚠ sitemap : " + fichier + " n'est ni dans la liste ni en noindex — a trancher");
