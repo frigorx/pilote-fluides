@@ -1,5 +1,27 @@
 # Journal — inerWeb HoCourant
 
+## inc. 3 — 12/09/2026 — la question 3 du chapitre 1 s'aligne sur le livret v2.3
+
+Depuis l'inc. 2, sans entrée ici : renommage en HoCourant, mise en ligne le 25/08 sur
+`inerweb.fr/hocourant/` sous bandeau PROTOTYPE, livret papier filigrané téléchargeable
+depuis l'accueil (commits `150d1c1` → `d129167`).
+
+- « Quel élément peut aggraver un choc électrique ? » avec « toutes ces réponses » pour
+  bonne réponse : devinable par construction, le mélange n'y change rien. Refondue le
+  27/08 dans le livret v2.3, reportée ici à l'identique : « La gravité d'un choc
+  électrique dépend… » → intensité, durée, trajet et état de la peau ; deux distracteurs.
+  Image inchangée : elle vient du module (`SCENE_MODULE.M1`), pas de l'énoncé.
+- `questions.js?v=20260912b` dans `index.html` pour forcer le rechargement.
+  ⚠️ Piège payé le soir même : la clé `?v=20260912` a été demandée AVANT la fin du build
+  Pages, et le CDN a mis l'ANCIEN contenu en cache sous la clé neuve (max-age 14400,
+  soit 4 h). D'où le `b`. Règle : vérifier un déploiement avec une clé sonde aléatoire
+  (`index.html?probe=…`), jamais avec la clé réelle ; ne la demander qu'une fois le build vu.
+- Reprise : le bon à tirer du livret est donné depuis le 25/08 ; la mention contraire
+  datait du matin même.
+
+⏳ Toujours en attente : relecture métier des chiffres par Franck (le bandeau PROTOTYPE
+tombe après), puis recopie des contenus validés dans le livret (9 corrections).
+
 ## inc. 2 — 25/08/2026 — codes de mission, apprentissage par la question, images partout
 
 Trois demandes de Franck dans la même séance, dans cet ordre.
