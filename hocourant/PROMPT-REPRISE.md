@@ -12,8 +12,11 @@ Mandat de Franck du 24/08/2026 : carte blanche, charte inerWeb intégrale.
 ⚠️ **Le nom a changé le 25/08/2026.** « HabElec » est abandonné : habelec.fr est un centre
 de formation Qualiopi sur le même objet, et « Habilec » désigne une formation en ligne à
 l'habilitation électrique. Le produit s'appelle **HoCourant** — *au courant*, avec l'écho
-du symbole H0. ⚠️ Le LIVRET PAPIER de la chaîne « full ia » porte encore le nom HabElec :
-à renommer aussi avant toute diffusion.
+du symbole H0. Le LIVRET PAPIER de la chaîne « full ia » a été renommé le 25/08 lui aussi
+(`inerWeb.fr-HoCourant-Livret-eleve-A5` et `-Corrige-formateur-A5`, 109 et 34 pages,
+pied de page corrigé, PDF régénérés par LibreOffice — conversion vérifiée fidèle au
+fichier près). Bon à tirer donné le 25/08 sur la v2.2 ; v2.3 du 27/08 en ligne, filigranée ;
+restent 9 corrections métier (vérité : le `STATUT.md` de l'atelier du livret).
 
 ## Décisions du 25/08 (inc. 2) — à ne pas défaire
 
@@ -77,7 +80,7 @@ code altéré doit être rejeté). Contrôler 375 px sans défilement horizontal
 ## Ce qui reste (voir aussi la fiche mémoire project_habelec_livret)
 
 1. **Relecture métier de Franck** — chiffres et formulations (domaines, seuils mA,
-   distances 3 m / 0,30 m / 2 m, repères BS/BR). RIEN n'est publié avant son bon à tirer.
+   distances 3 m / 0,30 m / 2 m, repères BS/BR). En ligne depuis le 25/08 sous bandeau PROTOTYPE ; le bandeau tombe après sa relecture.
 2. **Feu vert de mise en ligne** : copie dans le site servi (même mécanique que
    HydroMétro : atelier ici, copie servie dans pilote-fluides — jamais éditée directement).
 3. Volet « test noté en classe » : deuxième référentiel dans `inerweb-habilitation`
