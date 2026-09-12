@@ -859,7 +859,7 @@ export const CARTES = [
       schema("classes-securite.svg", "Matrice complète des classes NF EN 378 : huit cases, toxicité en lignes, inflammabilité en colonnes.") +
       "<p><b>Ce que c'est.</b> La norme NF EN 378 (et la norme américaine ASHRAE 34, qui suit la même logique) attribue à chaque fluide frigorigène une <b>classe de sécurité</b> : A1, A2L, B2L, A3… Ce n'est pas un classement du plus dangereux au moins dangereux, mais la <b>combinaison de deux informations distinctes</b> : voilà pourquoi une classe s'écrit avec une lettre <i>et</i> un chiffre.</p>" +
       "<p><b>La lettre dit la toxicité.</b> <b>A</b> = toxicité faible. <b>B</b> = toxicité plus élevée. Attention au contresens : « A » ne signifie pas inoffensif. Un fluide de classe A peut vous asphyxier en chassant l'oxygène d'un local, ou se décomposer en gaz toxiques au contact d'une flamme. La frontière entre A et B se fixe sur une <b>valeur limite d'exposition</b> définie par la norme : la lettre parle donc de la toxicité <b>propre</b> du produit, pas de tous les dangers qu'il présente.</p>" +
-      "<p><b>Le chiffre dit l'inflammabilité.</b> <b>1</b> = le fluide ne propage pas de flamme. <b>2L</b> = faiblement inflammable, la flamme se propage lentement. <b>2</b> = inflammable. <b>3</b> = très inflammable. Le « L » de 2L vient de l'anglais <i>lower</i> : c'est une sous-catégorie du 2, créée pour distinguer les fluides dont la flamme se propage assez lentement pour changer les mesures de prévention.</p>" +
+      "<p><b>Le chiffre dit l'inflammabilité.</b> <b>1</b> = le fluide ne propage pas de flamme. <b>2L</b> = faiblement inflammable, la flamme se propage lentement. <b>2</b> = inflammable. <b>3</b> = très inflammable. Le « L » de 2L vient de l'anglais <i>lower</i> : c'est une sous-catégorie du 2, créée pour distinguer les fluides dont la flamme se propage assez lentement pour changer les mesures de prévention. La classe A2L a une règle chiffrée : sa vitesse de propagation de flamme ne dépasse pas 10 cm/s. C’est ce qui la sépare de l’A2 ; le R-32 et le R-1234yf sont A2L, le propane R-290 est A3.</p>" +
       "<p><b>Pourquoi deux axes et non un seul ?</b> Parce qu'un fluide peut être dangereux d'une manière sans l'être de l'autre, et que les protections ne sont pas les mêmes. Contre la toxicité, on ventile et on protège les voies respiratoires. Contre l'inflammabilité, on supprime les sources d'étincelle et on limite la quantité de fluide présente. Un fluide qui cumule les deux, comme l'ammoniac (B2L), exige les deux dispositifs à la fois. Un classement en une seule note ne permettrait pas de savoir <b>lequel</b> mettre en place.</p>" +
       "<p><b>La matrice complète.</b> Deux axes croisés donnent huit cases :</p>" +
       "<ul>" +
@@ -882,7 +882,7 @@ export const CARTES = [
       "</ul>" +
       "<p>Se tromper de classe, c'est donc se tromper de <b>dispositif tout entier</b> : matériel électrique inadapté, ventilation sous-dimensionnée, détecteur qui ne verra rien, local chargé au-delà de ce qu'il admet.</p>" +
       "<p><b>Le piège à ne jamais commettre.</b> Le <b>R-290 est de classe A3</b>, pas A2L. C'est du propane : un hydrocarbure, très inflammable. La confusion avec les A2L est fréquente, y compris dans des documents mal rédigés, et elle conduit à appliquer des précautions insuffisantes. Un repère simple et fiable : si le fluide est un <b>hydrocarbure</b> (propane, isobutane, propylène), il est <b>A3</b>. Les A2L sont des HFC comme le R-32, ou des HFO comme le R-1234yf.</p>" +
-      "<p><b>Où lire la classe.</b> Jamais de mémoire, et jamais par déduction à partir du nom commercial : la classe de sécurité figure sur la <b>fiche de données de sécurité (FDS)</b> du fluide, que le fournisseur doit vous remettre. Les valeurs qui en découlent (charges limites selon le local, seuils de détection) se lisent dans la <b>NF EN 378</b> et dans la documentation du constructeur. Savoir aller les chercher est une compétence en soi ; les réciter de tête est une source d'accident.</p>" +
+      "<p><b>Où lire la classe.</b> Jamais de mémoire, et jamais par déduction à partir du nom commercial : la classe de sécurité figure sur la <b>fiche de données de sécurité (FDS)</b> du fluide, que le fournisseur doit vous remettre. Les valeurs qui en découlent (charges limites selon le local, seuils de détection) se lisent dans la <b>NF EN 378</b> et dans la documentation du constructeur. La norme NF EN 378 classe aussi les locaux où se trouve la machine en trois catégories, selon l’occupation : a (accès général : public, logements), b (accès surveillé : bureaux, ateliers), c (accès réservé aux personnes autorisées : locaux techniques). La charge admissible dépend de la classe du fluide ET de la catégorie du local. Savoir aller les chercher est une compétence en soi ; les réciter de tête est une source d'accident.</p>" +
       lienOutil(
         "packs/fluides/res/cours-classes-securite/index.html",
         "🧯 Lancer le cours interactif : classes de sécurité",
@@ -931,7 +931,7 @@ export const CARTES = [
       "<p><b>L'appareil qui répond à cette question</b> s'appelle un <b>explosimètre</b>. Il ne mesure pas une quantité de gaz dans l'absolu : il affiche <b>un pourcentage de la LIE</b> du gaz recherché. Une valeur de 10 % LIE signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable. Cette mesure de <b>marge restante</b> rend l'appareil utilisable en pratique : l'alarme se déclenche bien avant que le mélange ne devienne explosif. Le seuil de réglage se fixe selon la procédure de l'entreprise et la documentation de l'appareil.</p>" +
       "<p>Un explosimètre se règle pour un gaz donné : un appareil réglé pour un gaz et utilisé pour un autre affiche un chiffre faux. Et il ne remplace ni un détecteur de fuite de fluide frigorigène, ni un détecteur d'oxygène : ce sont trois appareils différents, qui répondent à trois questions différentes.</p>" +
       "<p><b>Comment ça arrive vraiment.</b> Une petite fuite sur une unité au R-290, dans un local technique fermé et peu ventilé. Il n'y a rien à voir ni à sentir. Le gaz, plus lourd que l'air, s'accumule lentement près du sol. Un technicien entre, actionne l'interrupteur d'éclairage, branche une lampe baladeuse, ou pose un outil électroportatif sur le sol. L'étincelle du contact suffit. Il n'y avait aucun signe avant-coureur, et l'inflammation ne laisse pas le temps de reculer.</p>" +
-      "<p><b>ATEX</b> : le mot vient de « <b>AT</b>mosphère <b>EX</b>plosive ». Lorsqu'un local peut contenir une atmosphère explosive, il fait l'objet d'un <b>zonage</b> : on délimite les zones où ce risque existe, et on n'y admet que du matériel conçu pour ne pas enflammer l'atmosphère — ni par une <b>étincelle</b>, ni par une <b>surface trop chaude</b>, car une surface chaude suffit à allumer un mélange sans la moindre flamme. Cela vaut aussi pour ce que le technicien apporte avec lui : outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir <b>reconnaître</b> qu'il entre dans une telle zone et respecter ce qui y est affiché.</p>",
+      "<p><b>ATEX</b> : le mot vient de « <b>AT</b>mosphère <b>EX</b>plosive ». Lorsqu'un local peut contenir une atmosphère explosive, il fait l'objet d'un <b>zonage</b> : on délimite les zones où ce risque existe, et on n'y admet que du matériel conçu pour ne pas enflammer l'atmosphère — ni par une <b>étincelle</b>, ni par une <b>surface trop chaude</b>, car une surface chaude suffit à allumer un mélange sans la moindre flamme. Cela vaut aussi pour ce que le technicien apporte avec lui : outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir <b>reconnaître</b> qu'il entre dans une telle zone et respecter ce qui y est affiché. Pour un fluide inflammable, A2L compris, l’outillage est adapté : aucune source d’inflammation, poste ventilé, pompe à vide et station de récupération prévues pour ces fluides.</p>",
     blocs: [
       { type: "cle", t: "Ce qu'il faut retenir", html: "<ul><li>Un gaz inflammable ne brûle qu'entre deux bornes : <b>LIE</b> (limite inférieure) et <b>LSE</b> (limite supérieure). Entre les deux, une étincelle suffit.</li><li>Les valeurs sont <b>propres à chaque fluide</b> et se lisent sur sa FDS.</li><li>Un <b>explosimètre</b> affiche un pourcentage de la LIE : une marge restante, pas une quantité.</li><li>Il se règle <b>pour un gaz donné</b>, et ne remplace ni un détecteur de fuite, ni un détecteur d'oxygène.</li><li>Le <b>R-290 du froid n'est pas odorisé</b> : le nez n'avertit de rien.</li><li><b>ATEX</b> : dans une zone à atmosphère explosive, seul le matériel <b>prévu pour ces zones</b> peut entrer — y compris celui qu'on apporte. Il est contraint sur l'étincelle <b>et</b> sur sa température de surface.</li></ul>" },
       { type: "piege", t: "Le geste interdit", html: "<p>Entrer dans un local où une fuite de fluide inflammable est possible et y <b>actionner un interrupteur, brancher une lampe ou utiliser un outil électroportatif</b>, sans avoir contrôlé l'atmosphère à l'explosimètre.</p><p>Se fier à son odorat en est la variante la plus courante : le R-290 utilisé en froid ne contient pas l'odorisant du gaz domestique, et aucune odeur ne renseigne sur la distance à la LIE.</p><p>Conséquence : inflammation de tout le volume, sans aucun signe avant-coureur.</p>" },
@@ -1200,20 +1200,20 @@ export const CARTES = [
     corps:
       schema("recuperation.svg", "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.") +
       "<p>La <b>station de récupération</b> est un appareil autonome : elle aspire le fluide de l'installation et " +
-      "le transfère vers un <b>cylindre dédié</b>, posé sur une balance. Avant tout branchement, l'installation " +
+      "le transfère vers une <b>bouteille dédiée</b>, posée sur une balance. Avant tout branchement, l'installation " +
       "est <b>à l'arrêt et isolée</b>.</p>" +
       "<ol>" +
       "<li>Consigner électriquement l'installation à traiter.</li>" +
-      "<li>Vérifier l'étiquette du cylindre de récupération : le fluide indiqué doit être exactement celui de l'installation.</li>" +
-      "<li>Poser le cylindre sur la balance et noter la masse de départ, avant tout branchement.</li>" +
-      "<li>Vannes du groupe fermées, brancher le flexible d'entrée sur le circuit et le flexible de sortie sur le cylindre.</li>" +
+      "<li>Vérifier l'étiquette de la bouteille de récupération : le fluide indiqué doit être exactement celui de l'installation.</li>" +
+      "<li>Poser la bouteille sur la balance et noter la masse de départ, avant tout branchement.</li>" +
+      "<li>Vannes du groupe fermées, brancher le flexible d'entrée sur le circuit et le flexible de sortie sur la bouteille.</li>" +
       "<li>Mettre le groupe sous tension et le régler selon la fiche du fabricant.</li>" +
       "<li>Ouvrir les vannes dans l'ordre indiqué par le fabricant ; surveiller la pression et la masse affichée.</li>" +
       "<li>En fin de transfert, purger les flexibles avant de débrancher, minimum d'émission.</li>" +
-      "<li>Repeser le cylindre, noter la masse récupérée, consigner au registre.</li>" +
+      "<li>Repeser la bouteille, noter la masse récupérée, consigner au registre.</li>" +
       "</ol>" +
-      "<p>Le cylindre respecte le <b>taux de remplissage maximal</b> indiqué sur son étiquette : jamais rempli " +
-      "à ras. Le liquide se dilate avec la température : un cylindre trop plein est un danger.</p>" +
+      "<p>La bouteille respecte le <b>taux de remplissage maximal</b> indiqué sur son étiquette : jamais remplie " +
+      "à ras. Le liquide se dilate avec la température : une bouteille trop pleine est un danger.</p>" +
       lienOutil(
         "packs/fluides/res/recuperation-fluide-interactive/index.html",
         "🧰 Lancer le TP interactif : récupérer le fluide, geste par geste",
@@ -1229,24 +1229,24 @@ export const CARTES = [
       },
       {
         type: "piege",
-        t: "Un cylindre, un seul fluide",
+        t: "Une bouteille, un seul fluide",
         html:
           "Une étiquette qui ne correspond pas exactement au fluide de l'installation : on ne branche pas. " +
-          "Mélanger deux fluides rend le contenu du cylindre inutilisable pour le recyclage ou la régénération.",
+          "Mélanger deux fluides rend le contenu de la bouteille inutilisable pour le recyclage ou la régénération.",
       },
     ],
     question: {
       type: "qcm",
-      enonce: "Avant de brancher le cylindre de récupération, quelle vérification est obligatoire ?",
+      enonce: "Avant de brancher la bouteille de récupération, quelle vérification est obligatoire ?",
       choix: [
         "Que la balance est éteinte",
-        "Que l'étiquette du cylindre correspond exactement au fluide de l'installation",
-        "Que le cylindre est déjà à moitié plein",
+        "Que l'étiquette de la bouteille correspond exactement au fluide de l'installation",
+        "Que la bouteille est déjà à moitié pleine",
         "Que le groupe est débranché du secteur",
       ],
       bonne: 1,
       explication:
-        "Le fluide indiqué sur l'étiquette du cylindre doit être exactement celui de l'installation. Mélanger deux fluides différents rend le contenu du cylindre inutilisable pour le recyclage ou la régénération.",
+        "Le fluide indiqué sur l'étiquette de la bouteille doit être exactement celui de l'installation. Mélanger deux fluides différents rend le contenu de la bouteille inutilisable pour le recyclage ou la régénération.",
       remediation_vers: "p2",
     },
     criteres: [
@@ -1256,7 +1256,7 @@ export const CARTES = [
     notes_pilote:
       "Faire manipuler le groupe hors fluide : reconnaître le cordon secteur, le flexible d'entrée, le flexible " +
       "de sortie, l'ordre des vannes indiqué sur l'appareil. Insister sur la pesée, avant ET après — c'est la " +
-      "seule preuve de ce qui a été récupéré. Faire vérifier l'étiquette du cylindre à voix haute avant chaque " +
+      "seule preuve de ce qui a été récupéré. Faire vérifier l'étiquette de la bouteille à voix haute avant chaque " +
       "branchement, jamais de mémoire.",
   },
   {
@@ -1285,7 +1285,7 @@ export const CARTES = [
       "<li>Mettre la pompe en marche.</li>" +
       "<li>Observer l'aiguille du vacuomètre descendre.</li>" +
       "<li>Une fois le vide stabilisé (valeur cible selon la fiche constructeur), fermer d'abord la vanne côté circuit, puis seulement ensuite arrêter la pompe.</li>" +
-      "<li>Surveiller si le vide remonte, selon la pratique habituelle : une remontée signale une fuite ou de l'humidité résiduelle.</li>" +
+      "<li>Surveiller si le vide remonte, selon la pratique habituelle : une remontée signale une fuite ou de l'humidité résiduelle. Pompe isolée, on regarde le vacuomètre : si la pression remonte de plus de 100 µm en quelques minutes, il reste de l’humidité, ou le circuit fuit.</li>" +
       "</ol>" +
       "<p>L'ordre du neuvième geste protège le circuit : si la pompe s'arrête avant que la vanne soit fermée, " +
       "l'huile de la pompe peut être aspirée en sens inverse vers le circuit qu'on vient de mettre sous vide.</p>" +
@@ -1422,7 +1422,7 @@ export const CARTES = [
       "<li>S'il reste du fluide <b>emprisonné dans le flexible</b>, le récupérer par l'appareil déjà branché. Jamais le laisser partir à l'air libre.</li>" +
       "<li>Déconnecter seulement quand la pression est retombée et confirmée.</li>" +
       "</ol>" +
-      "<p>La même logique s'applique pour <b>vider ou remplir un cylindre</b>, en phase liquide comme en phase gazeuse. Une bouteille de réfrigérant a une prise dédiée à chaque phase, ou s'utilise dans un sens précis pour tirer du liquide. On suit toujours le marquage de la bouteille, jamais un raccord forcé.</p>" +
+      "<p>La même logique s'applique pour <b>vider ou remplir une bouteille</b>, en phase liquide comme en phase gazeuse. Une bouteille de réfrigérant a une prise dédiée à chaque phase, ou s'utilise dans un sens précis pour tirer du liquide. On suit toujours le marquage de la bouteille, jamais un raccord forcé.</p>" +
       lienOutil(
         "packs/fluides/res/chaine-intervention-interactive/index.html?dossier=deconnecter",
         "🧭 Lancer le cours interactif : la chaîne de l’intervention",
@@ -2104,7 +2104,8 @@ export const CARTES = [
       "<p>Derrière chaque code se cache une <b>molécule</b>, et trois atomes y décident de tout : " +
       "le <b>chlore</b> détruit l'ozone (c'est lui qui a condamné les CFC puis les HCFC) ; " +
       "le <b>fluor</b> rend la molécule stable, donc durable dans l'atmosphère, donc à fort effet " +
-      "de serre ; l'<b>hydrogène</b> raccourcit la durée de vie. Les <b>HFC</b> ont éliminé le " +
+      "de serre ; l'<b>hydrogène</b> raccourcit la durée de vie. Le R-12, sans hydrogène, chloré et fluoré, " +
+      "est un CFC — le R-22, qui garde un hydrogène, est un HCFC. Les <b>HFC</b> ont éliminé le " +
       "chlore (ozone sauvé), gardé le fluor (climat pénalisé). Les <b>HFO</b> ajoutent une double " +
       "liaison fragile : la molécule casse en quelques jours, PRP ≈ 1. Les <b>naturels</b> " +
       "(propane, isobutane, ammoniac, CO₂) existent sans chimie de synthèse, chacun avec son " +
@@ -2125,7 +2126,8 @@ export const CARTES = [
         t: "L'astuce du + 90",
         html:
           "Ajoutez 90 au code, et vous lisez directement C, H, F : " +
-          "<b>134 + 90 = 224</b> → C₂H₂F₄ (R-134a). <b>22 + 90 = 112</b> → C·H·F₂… plus un " +
+          "<b>134 + 90 = 224</b> → C₂H₂F₄ (R-134a). La lettre en fin de code, comme le <b>a</b> de R-134a, " +
+          "désigne un isomère : même formule, atomes arrangés autrement. <b>22 + 90 = 112</b> → C·H·F₂… plus un " +
           "<b>chlore</b> pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. " +
           "<b>290 + 90 = 380</b> → C₃H₈ : le propane, zéro fluor, zéro chlore.",
       },
@@ -2763,6 +2765,8 @@ export const CARTES = [
         html:
           "Un détecteur non étalonné donne une conformité qui ne vaut rien. Étalonnage périodique selon " +
           "la réglementation applicable, et <b>vérification au gaz de référence avant utilisation</b>. " +
+          "À défaut de fréquence fixée par le texte, le repère de bonne pratique est un étalonnage au " +
+          "moins une fois par an, et une vérification au gaz de référence avant chaque usage. " +
           "Le registre doit pouvoir dire avec quel appareil le contrôle a été fait.",
       },
     ],
@@ -2868,9 +2872,9 @@ export const CARTES = [
       schema("recuperation.svg", "Le montage de récupération : installation isolée, groupe de récupération, bouteille sur balance.") +
       "<p>Chaque connexion et chaque déconnexion est un <b>point de fuite</b> : le geste est lent, " +
       "contrôlé, flexibles purgés. Avant de récupérer, on <b>arrête et on isole</b> le système.</p>" +
-      "<p>Le <b>groupe de récupération</b> transfère le fluide vers un cylindre prévu pour, en phase " +
-      "gazeuse ou liquide selon la situation. Le cylindre respecte un <b>taux de remplissage maximal</b>, " +
-      "jamais rempli à ras : le liquide se dilate avec la température, et un cylindre plein est un " +
+      "<p>Le <b>groupe de récupération</b> transfère le fluide vers une bouteille prévue pour, en phase " +
+      "gazeuse ou liquide selon la situation. La bouteille respecte un <b>taux de remplissage maximal</b>, " +
+      "jamais remplie à ras : le liquide se dilate avec la température, et une bouteille pleine est un " +
       "danger. On <b>pèse avant</b>, sinon on ne saura jamais combien on a réellement récupéré.</p>" +
       "<p>L'<b>huile</b> du compresseur est contaminée par nature : elle se récupère à part, comme " +
       "un déchet dangereux. Elle ne se dégaze pas, elle ne se mélange pas au fluide.</p>" +
@@ -2891,15 +2895,15 @@ export const CARTES = [
         type: "piege",
         t: "Ne jamais mélanger",
         html:
-          "Deux fluides différents dans le même cylindre, et le contenu devient <b>impossible à " +
+          "Deux fluides différents dans la même bouteille, et le contenu devient <b>impossible à " +
           "recycler ou à régénérer</b> : il part en destruction, aux frais de l'entreprise. " +
-          "Un cylindre, un fluide, une étiquette.",
+          "Une bouteille, un fluide, une étiquette.",
       },
       { type: "cle", t: "Vider l'huile : le bon ordre", html: "<p>On vide l'huile <b>après</b> avoir récupéré le fluide, jamais avant : sinon on relâche dans l'air du fluide encore dissous dedans, sans même le mesurer. Récipient fermé et étiqueté, quantité notée, déchet dangereux avec bordereau : c'est le geste complet de la vidange.</p>" },
     ],
     question: {
       type: "qcm",
-      enonce: "Pourquoi ne remplit-on jamais un cylindre de récupération à ras bord ?",
+      enonce: "Pourquoi ne remplit-on jamais une bouteille de récupération à ras bord ?",
       choix: [
         "Pour qu'il reste transportable à la main",
         "Parce que le liquide se dilate avec la température : un taux de remplissage maximal doit être respecté",
@@ -2908,7 +2912,7 @@ export const CARTES = [
       ],
       bonne: 1,
       explication:
-        "Le fluide liquide se dilate quand la température monte. Un cylindre trop rempli n'a plus de volume d'expansion : le taux de remplissage maximal n'est pas une précaution, c'est une règle de sécurité.",
+        "Le fluide liquide se dilate quand la température monte. Une bouteille trop remplie n'a plus de volume d'expansion : le taux de remplissage maximal n'est pas une précaution, c'est une règle de sécurité.",
       remediation_vers: "g5a",
     },
     criteres: [
@@ -2921,7 +2925,7 @@ export const CARTES = [
     liens: [suite("g5b", "Peser, stocker, tracer"), SOMMAIRE],
     notes_pilote:
       "Cœur du parcours D : chaque stagiaire branche, purge et pèse lui-même, sans exception. " +
-      "L'anecdote qui marque mieux qu'un discours : un cylindre trop rempli laissé au soleil. " +
+      "L'anecdote qui marque mieux qu'un discours : une bouteille trop remplie laissée au soleil. " +
       "Relier systématiquement à G2 — un geste de récupération soigné est un geste écologique, pas " +
       "une contrainte administrative. Faire chercher sur le log p-h si le fluide observé est " +
       "sous-refroidi, saturé ou surchauffé avant de donner la réponse.",
@@ -2975,8 +2979,10 @@ export const CARTES = [
         type: "piege",
         t: "Stockage et transport",
         html:
-          "Cylindres arrimés, debout, étiquetés, à l'abri de la chaleur ; les fluides <b>inflammables</b> " +
-          "(hydrocarbures, A2L) obéissent en plus aux règles de leur classe. Conditions détaillées : " +
+          "Bouteilles arrimées, debout, étiquetées, à l'abri de la chaleur ; les fluides <b>inflammables</b> " +
+          "(hydrocarbures, A2L) obéissent en plus aux règles de leur classe. Une bouteille de récupération " +
+          "ne se remplit jamais au-delà de 80 % de sa capacité en liquide : au-dessus, une hausse de " +
+          "température la met en danger. Le taux exact est sur son étiquette. Conditions détaillées : " +
           "selon la réglementation applicable et la fiche de données de sécurité, à faire valider.",
       },
       { type: "piege", t: "Réemploi n'est pas retraitement", html: "On pourrait croire qu'un fluide récupéré doit toujours passer par le recyclage ou la régénération avant de resservir. C'est faux : réutiliser le fluide récupéré sur <b>sa machine d'origine</b>, chez le <b>même détenteur</b> (celui qui possède ou utilise cette machine), est légal et ne demande aucun retraitement." },
@@ -3001,7 +3007,7 @@ export const CARTES = [
     liens: [suite("x3", "Détective : la bouteille de récupération"), SOMMAIRE],
     notes_pilote:
       "Le geste à faire répéter : peser AVANT. Beaucoup de stagiaires pèsent après et déduisent — " +
-      "c'est faux dès qu'il reste du fluide dans le cylindre. Sur un groupe A2, insister sur la " +
+      "c'est faux dès qu'il reste du fluide dans la bouteille. Sur un groupe A2, insister sur la " +
       "précision : sur une charge de 800 g, 50 g d'écart changent le comportement de la machine. " +
       "Faire remplir un registre à chaque manipulation d'atelier, même en exercice.",
   },
@@ -3870,7 +3876,9 @@ export const CARTES = [
       "Électronique, il utilise un capteur relié à un module. Dans les deux cas, il <b>coupe le " +
       "circuit</b>, le plus souvent le compresseur, dès qu'un seuil de pression est franchi, " +
       "en haute comme en basse pression. La régulation module, la sécurité coupe ; leurs réglages " +
-      "ne se confondent pas.</p>" +
+      "ne se confondent pas. Le pressostat BP peut aussi servir de régulation : sur une petite " +
+      "chambre froide en pump down, c’est lui qui arrête et relance le compresseur selon la " +
+      "pression d’aspiration.</p>" +
 
       "<p><b>Les régulateurs de pression, chacun à sa place.</b> Sur le terrain, ces vannes " +
       "portent des repères de catalogue (la série <b>KV</b> est la plus répandue) et chacune " +
@@ -3895,7 +3903,9 @@ export const CARTES = [
       "refoulement à l\'aspiration. Quand la demande de froid tombe très bas, il renvoie une part " +
       "des gaz chauds vers l\'aspiration pour que le compresseur garde du débit au lieu de " +
       "s\'arrêter et de repartir sans cesse. Il <b>évite les courts-cycles</b> ; en revanche il " +
-      "consomme, et il ne se monte que là où le constructeur le prévoit.</p>" +
+      "consomme, et il ne se monte que là où le constructeur le prévoit. Sur une pompe à chaleur " +
+      "réversible, la vanne quatre voies inverse le sens du cycle : l’échangeur intérieur devient " +
+      "condenseur en hiver, évaporateur en été. Elle se commande, elle ne se règle pas.</p>" +
       "<p><b>La règle de réglage est la même pour toutes.</b> On raccorde le manomètre sur la " +
       "prise de la vanne, on tourne la vis <b>par petites touches</b>, et on <b>attend la " +
       "stabilisation</b> avant de lire : une installation frigorifique ne répond jamais " +
@@ -4018,7 +4028,10 @@ export const CARTES = [
       "<p>On ne brase <b>jamais</b> un circuit contenant du fluide : récupération, puis inertage à " +
       "l'azote. <b>EPI systématiques</b> au poste : lunettes, gants. Les tubes se cintrent " +
       "<b>à froid, à la cintreuse</b>, se coupent au coupe-tube et s'<b>ébavurent</b> : une bavure " +
-      "part avec le fluide et finit dans le compresseur.</p>",
+      "part avec le fluide et finit dans le compresseur. Avant de raccorder un flexible sur une " +
+      "vanne Schrader, purgez l’air du flexible : sinon vous l’envoyez dans le circuit. Un raccord " +
+      "dudgeonné demande un collet propre, fait avec une dudgeonnière calibrée : un collet mal " +
+      "formé fuit.</p>",
     blocs: [
       {
         type: "cle",
