@@ -2077,6 +2077,42 @@
         "Au-dessus de la cloche"
       ],
       "motif": "Les quatre zones du diagramme sont désignées par rapport à la cloche, au même format."
+    },
+    "q-g2-v6_005": {
+      "lot": 14,
+      "bonne": 1,
+      "choix": [
+        "Protocole de Montréal",
+        "Accord de Paris (COP21)",
+        "Amendement de Kigali",
+        "Protocole de Kyoto"
+      ],
+      "enonce": "Quel accord international de 2015 vise à contenir le réchauffement nettement sous 2 °C, en visant 1,5 °C ?",
+      "audit": "relecture du livre, 12/09/2026"
+    },
+    "q-g2-v6_037": {
+      "lot": 14,
+      "bonne": 2,
+      "choix": [
+        "2000",
+        "2010",
+        "2015",
+        "2020"
+      ],
+      "enonce": "Le R-22 (HCFC), même recyclé ou régénéré, est interdit pour la maintenance dans l'UE depuis :",
+      "audit": "relecture du livre, 12/09/2026"
+    },
+    "q-g10-84": {
+      "lot": 14,
+      "bonne": 1,
+      "choix": [
+        "N'importe quel outil",
+        "Une dudgeonnière calibrée",
+        "Un marteau et un burin",
+        "Une pince multiprise"
+      ],
+      "bonneReecrite": true,
+      "audit": "relecture du livre, 12/09/2026"
     }
   }
 }

@@ -1195,7 +1195,7 @@
   "dc": "G2",
   "niveau": 1,
   "type": "qcm",
-  "enonce": "Quel accord international de 2015 vise à limiter le réchauffement à +1,5°C ?",
+  "enonce": "Quel accord international de 2015 vise à contenir le réchauffement nettement sous 2 °C, en visant 1,5 °C ?",
   "choix": [
    "Protocole de Montréal",
    "Accord de Paris (COP21)",
@@ -1485,7 +1485,7 @@
   "dc": "G2",
   "niveau": 2,
   "type": "qcm",
-  "enonce": "Le R22 (HCFC) est interdit dans l'UE depuis :",
+  "enonce": "Le R-22 (HCFC), même recyclé ou régénéré, est interdit pour la maintenance dans l'UE depuis :",
   "choix": [
    "2000",
    "2010",
@@ -5028,7 +5028,7 @@
   "enonce": "Le surfaçage des collets (dudgeonnage) doit être réalisé avec :",
   "choix": [
    "N'importe quel outil",
-   "Une dudgeonnoire calibrée",
+   "Une dudgeonnière calibrée",
    "Un marteau et un burin",
    "Une pince multiprise"
   ],
