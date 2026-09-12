@@ -49,8 +49,8 @@ Côté questions : **269** au total, dont **252** rattachées à une compétence
 | **1.03** | A1 théo. · A2 théo. · E théo. | `g1b` | 7 | ✅ |
 | **1.04** | A1 théo. · A2 théo. · D théo. | `g1a` | 8 | ✅ |
 | **1.05** | A1 théo. · A2 théo. | `g1d` | 6 | ✅ |
-| **1.06** | A1 théo. · A2 théo. · D théo. · E théo. | `g1c` | 1 | ✅ |
-| **1.07** ★ | A1 théo. · A2 théo. · D théo. · E théo. | `g1c` | 3 | ✅ |
+| **1.06** | A1 théo. · A2 théo. · D théo. · E théo. | `g1c` `g13` | 1 | ✅ |
+| **1.07** ★ | A1 théo. · A2 théo. · D théo. · E théo. | `g1c` `g13` | 3 | ✅ |
 | **1.08** ★ | A1 théo. · A2 théo. · D théo. · E théo. | `cl1` `g11` | 4 | ✅ |
 | **1.09** ★ | — *(B)* | `g13` | 3 | 🔵 |
 | **1.10** ★ | — *(C)* | — | — | · |
@@ -156,6 +156,8 @@ Côté questions : **269** au total, dont **252** rattachées à une compétence
 
 - **Enseigné** — `g1c` Les familles de fluides et leurs codes *(+ question intégrée)*
   <br>Dit à l'élève : « Identifier la famille et les caractéristiques d'un fluide »
+- **Enseigné** — `g13` CO₂ et NH₃ — reconnaître, ne pas intervenir *(+ question intégrée)*
+  <br>Dit à l'élève : « Connaître le comportement du CO₂ et de l'ammoniac dans le cycle, et ce qui les sépare des fluides fluorés. »
 - **Interrogé** — 1 question(s) :
   - `pk-g1c-1` *(niveau 2, rangée en G1)* — Les codes R-32 et R-290 se ressemblent. Pourtant leurs classes de sécurité NF EN 378 sont très différentes. Que faut-il…
 
@@ -165,6 +167,8 @@ Côté questions : **269** au total, dont **252** rattachées à une compétence
 
 - **Enseigné** — `g1c` Les familles de fluides et leurs codes *(+ question intégrée)*
   <br>Dit à l'élève : « Décoder la nomenclature R-xyz et les séries de mélanges »
+- **Enseigné** — `g13` CO₂ et NH₃ — reconnaître, ne pas intervenir *(+ question intégrée)*
+  <br>Dit à l'élève : « Reconnaître les caractéristiques du CO₂ et de l'ammoniac face aux fluides fluorés : pression, toxicité, matériaux. »
 - **Interrogé** — 3 question(s) :
   - `q-g1-45` *(niveau 1, rangée en G1)* — Le R717 est :
   - `q-g12-v6_181` *(niveau 1, rangée en G12)* — Le R600a (isobutane) est utilisé principalement dans :
@@ -221,14 +225,14 @@ Côté questions : **269** au total, dont **252** rattachées à une compétence
   - `q-g2-5` *(niveau 1, rangée en G2)* — Le protocole de Montréal (1987) visait principalement :
   - `q-g2-v6_003` *(niveau 1, rangée en G2)* — L'amendement de Kigali (2016) ajoute au Protocole de Montréal la réduction progressive de :
   - `q-g2-v6_002` *(niveau 1, rangée en G2)* — Quel type de rayonnement la couche d'ozone filtre-t-elle principalement ?
-  - `q-g2-v6_005` *(niveau 1, rangée en G2)* — Quel accord international de 2015 vise à limiter le réchauffement à +1,5°C ?
+  - `q-g2-v6_005` *(niveau 1, rangée en G2)* — Quel accord international de 2015 vise à contenir le réchauffement nettement sous 2 °C, en visant 1,5 °C ?
   - `q-g2-v6_008` *(niveau 2, rangée en G2)* — Le Protocole de Kyoto (1997) cible combien de gaz à effet de serre ?
   - `q-g2-v6_010` *(niveau 1, rangée en G2)* — Le « trou dans la couche d'ozone » est localisé principalement au-dessus de :
   - `q-g2-v6_106` *(niveau 1, rangée en G2)* — Les principaux gaz à effet de serre naturels sont :
   - `q-g2-v6_107` *(niveau 2, rangée en G2)* — Sans l'effet de serre naturel, la température moyenne de la Terre serait d'environ :
   - `q-g2-v6_110` *(niveau 1, rangée en G2)* — Le Protocole de Montréal a principalement permis :
   - `q-g2-v6_114` *(niveau 1, rangée en G2)* — L'ODP (Ozone Depletion Potential) est lié à la présence dans la molécule de :
-  - `q-g2-v6_037` *(niveau 2, rangée en G2)* — Le R22 (HCFC) est interdit dans l'UE depuis :
+  - `q-g2-v6_037` *(niveau 2, rangée en G2)* — Le R-22 (HCFC), même recyclé ou régénéré, est interdit pour la maintenance dans l'UE depuis :
 
 #### 2.02 — ✅ enseigné et vérifié
 

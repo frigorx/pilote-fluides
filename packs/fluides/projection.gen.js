@@ -1206,7 +1206,7 @@ window.PILOTE_PROJECTION = {
        "dc": "G2",
        "niveau": 1,
        "type": "qcm",
-       "enonce": "Quel accord international de 2015 vise à limiter le réchauffement à +1,5°C ?",
+       "enonce": "Quel accord international de 2015 vise à contenir le réchauffement nettement sous 2 °C, en visant 1,5 °C ?",
        "choix": [
         "Protocole de Montréal",
         "Accord de Paris (COP21)",
@@ -2374,7 +2374,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Les <b>HFC</b> ont éliminé le chlore (ozone sauvé), gardé le fluor (climat pénalisé). Les <b>HFO</b> ajoutent une double liaison fragile : la molécule casse en quelques jours, PRP ≈ 1. Les <b>naturels</b> (propane, isobutane, ammoniac, CO₂) existent sans chimie de synthèse, chacun avec son revers : inflammabilité, toxicité ou pression.",
+       "html": "Le R-12, sans hydrogène, chloré et fluoré, est un CFC — le R-22, qui garde un hydrogène, est un HCFC. Les <b>HFC</b> ont éliminé le chlore (ozone sauvé), gardé le fluor (climat pénalisé). Les <b>HFO</b> ajoutent une double liaison fragile : la molécule casse en quelques jours, PRP ≈ 1.",
+       "titre": "Les familles de fluides et leurs codes"
+      },
+      {
+       "type": "point",
+       "html": "Les <b>naturels</b> (propane, isobutane, ammoniac, CO₂) existent sans chimie de synthèse, chacun avec son revers : inflammabilité, toxicité ou pression.",
        "titre": "Les familles de fluides et leurs codes"
       },
       {
@@ -2401,7 +2406,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "cle",
        "t": "L'astuce du + 90",
-       "html": "Ajoutez 90 au code, et vous lisez directement C, H, F : <b>134 + 90 = 224</b> → C₂H₂F₄ (R-134a). <b>22 + 90 = 112</b> → C·H·F₂… plus un <b>chlore</b> pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. <b>290 + 90 = 380</b> → C₃H₈ : le propane, zéro fluor, zéro chlore.",
+       "html": "Ajoutez 90 au code, et vous lisez directement C, H, F : <b>134 + 90 = 224</b> → C₂H₂F₄ (R-134a). La lettre en fin de code, comme le <b>a</b> de R-134a, désigne un isomère : même formule, atomes arrangés autrement. <b>22 + 90 = 112</b> → C·H·F₂… plus un <b>chlore</b> pour compléter : CHClF₂ — voilà pourquoi le R-22 est un HCFC interdit. <b>290 + 90 = 380</b> → C₃H₈ : le propane, zéro fluor, zéro chlore.",
        "titre": "Les familles de fluides et leurs codes"
       },
       {
@@ -3556,7 +3561,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "schema",
        "src": "packs/fluides/res/svg/epreuve-azote.svg",
-       "alt": "Montage de l épreuve de pression : bouteille d azote, manifold, circuit — oxygène et air comprimé barrés.",
+       "alt": "Montage de l’épreuve de pression : bouteille d’azote, manifold, circuit — oxygène et air comprimé barrés.",
        "titre": "Contrôles avant mise en service"
       },
       {
@@ -4079,7 +4084,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "piege",
        "t": "L'instrument aussi se contrôle",
-       "html": "Un détecteur non étalonné donne une conformité qui ne vaut rien. Étalonnage périodique selon la réglementation applicable, et <b>vérification au gaz de référence avant utilisation</b>. Le registre doit pouvoir dire avec quel appareil le contrôle a été fait.",
+       "html": "Un détecteur non étalonné donne une conformité qui ne vaut rien. Étalonnage périodique selon la réglementation applicable, et <b>vérification au gaz de référence avant utilisation</b>. À défaut de fréquence fixée par le texte, le repère de bonne pratique est un étalonnage au moins une fois par an, et une vérification au gaz de référence avant chaque usage. Le registre doit pouvoir dire avec quel appareil le contrôle a été fait.",
        "titre": "Méthode directe et consignation"
       }
      ],
@@ -4606,7 +4611,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<ol start=\"6\"><li>Ouvrir les deux vannes du manifold pour tirer sur l'ensemble du circuit.</li><li>Mettre la pompe en marche.</li><li>Observer l'aiguille du vacuomètre descendre.</li><li>Une fois le vide stabilisé (valeur cible selon la fiche constructeur), fermer d'abord la vanne côté circuit, puis seulement ensuite arrêter la pompe.</li><li>Surveiller si le vide remonte, selon la pratique habituelle : une remontée signale une fuite ou de l'humidité résiduelle.</li></ol>",
+       "html": "<ol start=\"6\"><li>Ouvrir les deux vannes du manifold pour tirer sur l'ensemble du circuit.</li><li>Mettre la pompe en marche.</li><li>Observer l'aiguille du vacuomètre descendre.</li><li>Une fois le vide stabilisé (valeur cible selon la fiche constructeur), fermer d'abord la vanne côté circuit, puis seulement ensuite arrêter la pompe.</li><li>Surveiller si le vide remonte, selon la pratique habituelle : une remontée signale une fuite ou de l'humidité résiduelle. Pompe isolée, on regarde le vacuomètre : si la pression remonte de plus de 100 µm en quelques minutes, il reste de l’humidité, ou le circuit fuit.</li></ol>",
        "titre": "Pompe à vide et vacuomètre — monter, tirer, lire"
       },
       {
@@ -4973,7 +4978,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Le <b>groupe de récupération</b> transfère le fluide vers un cylindre prévu pour, en phase gazeuse ou liquide selon la situation. Le cylindre respecte un <b>taux de remplissage maximal</b>, jamais rempli à ras : le liquide se dilate avec la température, et un cylindre plein est un danger. On <b>pèse avant</b>, sinon on ne saura jamais combien on a réellement récupéré.",
+       "html": "Le <b>groupe de récupération</b> transfère le fluide vers une bouteille prévue pour, en phase gazeuse ou liquide selon la situation. La bouteille respecte un <b>taux de remplissage maximal</b>, jamais remplie à ras : le liquide se dilate avec la température, et une bouteille pleine est un danger. On <b>pèse avant</b>, sinon on ne saura jamais combien on a réellement récupéré.",
        "titre": "Récupérer sans émettre"
       },
       {
@@ -5002,7 +5007,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "piege",
        "t": "Ne jamais mélanger",
-       "html": "Deux fluides différents dans le même cylindre, et le contenu devient <b>impossible à recycler ou à régénérer</b> : il part en destruction, aux frais de l'entreprise. Un cylindre, un fluide, une étiquette.",
+       "html": "Deux fluides différents dans la même bouteille, et le contenu devient <b>impossible à recycler ou à régénérer</b> : il part en destruction, aux frais de l'entreprise. Une bouteille, un fluide, une étiquette.",
        "titre": "Récupérer sans émettre"
       },
       {
@@ -5174,7 +5179,7 @@ window.PILOTE_PROJECTION = {
        ]
       }
      ],
-     "notes": "Cœur du parcours D : chaque stagiaire branche, purge et pèse lui-même, sans exception. L'anecdote qui marque mieux qu'un discours : un cylindre trop rempli laissé au soleil. Relier systématiquement à G2 — un geste de récupération soigné est un geste écologique, pas une contrainte administrative. Faire chercher sur le log p-h si le fluide observé est sous-refroidi, saturé ou surchauffé avant de donner la réponse."
+     "notes": "Cœur du parcours D : chaque stagiaire branche, purge et pèse lui-même, sans exception. L'anecdote qui marque mieux qu'un discours : une bouteille trop remplie laissée au soleil. Relier systématiquement à G2 — un geste de récupération soigné est un geste écologique, pas une contrainte administrative. Faire chercher sur le log p-h si le fluide observé est sous-refroidi, saturé ou surchauffé avant de donner la réponse."
     },
     {
      "type": "cours",
@@ -5324,7 +5329,7 @@ window.PILOTE_PROJECTION = {
        "type": "encadre",
        "genre": "piege",
        "t": "Stockage et transport",
-       "html": "Cylindres arrimés, debout, étiquetés, à l'abri de la chaleur ; les fluides <b>inflammables</b> (hydrocarbures, A2L) obéissent en plus aux règles de leur classe. Conditions détaillées : selon la réglementation applicable et la fiche de données de sécurité, à faire valider.",
+       "html": "Bouteilles arrimées, debout, étiquetées, à l'abri de la chaleur ; les fluides <b>inflammables</b> (hydrocarbures, A2L) obéissent en plus aux règles de leur classe. Une bouteille de récupération ne se remplit jamais au-delà de 80 % de sa capacité en liquide : au-dessus, une hausse de température la met en danger. Le taux exact est sur son étiquette. Conditions détaillées : selon la réglementation applicable et la fiche de données de sécurité, à faire valider.",
        "titre": "Peser, charger, stocker, tracer"
       },
       {
@@ -5522,7 +5527,7 @@ window.PILOTE_PROJECTION = {
        ]
       }
      ],
-     "notes": "Le geste à faire répéter : peser AVANT. Beaucoup de stagiaires pèsent après et déduisent — c'est faux dès qu'il reste du fluide dans le cylindre. Sur un groupe A2, insister sur la précision : sur une charge de 800 g, 50 g d'écart changent le comportement de la machine. Faire remplir un registre à chaque manipulation d'atelier, même en exercice."
+     "notes": "Le geste à faire répéter : peser AVANT. Beaucoup de stagiaires pèsent après et déduisent — c'est faux dès qu'il reste du fluide dans la bouteille. Sur un groupe A2, insister sur la précision : sur une charge de 800 g, 50 g d'écart changent le comportement de la machine. Faire remplir un registre à chaque manipulation d'atelier, même en exercice."
     },
     {
      "type": "cours",
@@ -5599,7 +5604,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "La même logique s'applique pour <b>vider ou remplir un cylindre</b>, en phase liquide comme en phase gazeuse. Une bouteille de réfrigérant a une prise dédiée à chaque phase, ou s'utilise dans un sens précis pour tirer du liquide. On suit toujours le marquage de la bouteille, jamais un raccord forcé.",
+       "html": "La même logique s'applique pour <b>vider ou remplir une bouteille</b>, en phase liquide comme en phase gazeuse. Une bouteille de réfrigérant a une prise dédiée à chaque phase, ou s'utilise dans un sens précis pour tirer du liquide. On suit toujours le marquage de la bouteille, jamais un raccord forcé.",
        "titre": "L'ordre des vannes — la chorégraphie de l'intervention"
       },
       {
@@ -5799,22 +5804,22 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "La <b>station de récupération</b> est un appareil autonome : elle aspire le fluide de l'installation et le transfère vers un <b>cylindre dédié</b>, posé sur une balance. Avant tout branchement, l'installation est <b>à l'arrêt et isolée</b>.",
+       "html": "La <b>station de récupération</b> est un appareil autonome : elle aspire le fluide de l'installation et le transfère vers une <b>bouteille dédiée</b>, posée sur une balance. Avant tout branchement, l'installation est <b>à l'arrêt et isolée</b>.",
        "titre": "La station de récupération — ce que c'est, comment on la branche"
       },
       {
        "type": "point",
-       "html": "Le cylindre respecte le <b>taux de remplissage maximal</b> indiqué sur son étiquette : jamais rempli à ras. Le liquide se dilate avec la température : un cylindre trop plein est un danger.",
+       "html": "La bouteille respecte le <b>taux de remplissage maximal</b> indiqué sur son étiquette : jamais remplie à ras. Le liquide se dilate avec la température : une bouteille trop pleine est un danger.",
        "titre": "La station de récupération — ce que c'est, comment on la branche"
       },
       {
        "type": "point",
-       "html": "<ol><li>Consigner électriquement l'installation à traiter.</li><li>Vérifier l'étiquette du cylindre de récupération : le fluide indiqué doit être exactement celui de l'installation.</li><li>Poser le cylindre sur la balance et noter la masse de départ, avant tout branchement.</li><li>Vannes du groupe fermées, brancher le flexible d'entrée sur le circuit et le flexible de sortie sur le cylindre.</li><li>Mettre le groupe sous tension et le régler selon la fiche du fabricant.</li></ol>",
+       "html": "<ol><li>Consigner électriquement l'installation à traiter.</li><li>Vérifier l'étiquette de la bouteille de récupération : le fluide indiqué doit être exactement celui de l'installation.</li><li>Poser la bouteille sur la balance et noter la masse de départ, avant tout branchement.</li><li>Vannes du groupe fermées, brancher le flexible d'entrée sur le circuit et le flexible de sortie sur la bouteille.</li><li>Mettre le groupe sous tension et le régler selon la fiche du fabricant.</li></ol>",
        "titre": "La station de récupération — ce que c'est, comment on la branche"
       },
       {
        "type": "point",
-       "html": "<ol start=\"6\"><li>Ouvrir les vannes dans l'ordre indiqué par le fabricant ; surveiller la pression et la masse affichée.</li><li>En fin de transfert, purger les flexibles avant de débrancher, minimum d'émission.</li><li>Repeser le cylindre, noter la masse récupérée, consigner au registre.</li></ol>",
+       "html": "<ol start=\"6\"><li>Ouvrir les vannes dans l'ordre indiqué par le fabricant ; surveiller la pression et la masse affichée.</li><li>En fin de transfert, purger les flexibles avant de débrancher, minimum d'émission.</li><li>Repeser la bouteille, noter la masse récupérée, consigner au registre.</li></ol>",
        "titre": "La station de récupération — ce que c'est, comment on la branche"
       },
       {
@@ -5827,8 +5832,8 @@ window.PILOTE_PROJECTION = {
       {
        "type": "encadre",
        "genre": "piege",
-       "t": "Un cylindre, un seul fluide",
-       "html": "Une étiquette qui ne correspond pas exactement au fluide de l'installation : on ne branche pas. Mélanger deux fluides rend le contenu du cylindre inutilisable pour le recyclage ou la régénération.",
+       "t": "Une bouteille, un seul fluide",
+       "html": "Une étiquette qui ne correspond pas exactement au fluide de l'installation : on ne branche pas. Mélanger deux fluides rend le contenu de la bouteille inutilisable pour le recyclage ou la régénération.",
        "titre": "La station de récupération — ce que c'est, comment on la branche"
       }
      ],
@@ -5912,7 +5917,7 @@ window.PILOTE_PROJECTION = {
        ]
       }
      ],
-     "notes": "Faire manipuler le groupe hors fluide : reconnaître le cordon secteur, le flexible d'entrée, le flexible de sortie, l'ordre des vannes indiqué sur l'appareil. Insister sur la pesée, avant ET après — c'est la seule preuve de ce qui a été récupéré. Faire vérifier l'étiquette du cylindre à voix haute avant chaque branchement, jamais de mémoire."
+     "notes": "Faire manipuler le groupe hors fluide : reconnaître le cordon secteur, le flexible d'entrée, le flexible de sortie, l'ordre des vannes indiqué sur l'appareil. Insister sur la pesée, avant ET après — c'est la seule preuve de ce qui a été récupéré. Faire vérifier l'étiquette de la bouteille à voix haute avant chaque branchement, jamais de mémoire."
     },
     {
      "type": "cours",
@@ -6280,7 +6285,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "schema",
        "src": "packs/fluides/res/svg/compresseurs.svg",
-       "alt": "Coupe animée d un compresseur à piston et les quatre technologies : piston, scroll, vis, rotatif.",
+       "alt": "Coupe animée d’un compresseur à piston et les quatre technologies : piston, scroll, vis, rotatif.",
        "titre": "Le compresseur"
       },
       {
@@ -6938,7 +6943,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "schema",
        "src": "packs/fluides/res/svg/echangeur-air.svg",
-       "alt": "Le condenseur à air : l air ambiant traverse la batterie poussé par le ventilateur et ressort réchauffé.",
+       "alt": "Le condenseur à air : l’air ambiant traverse la batterie poussé par le ventilateur et ressort réchauffé.",
        "titre": "Le condenseur"
       },
       {
@@ -8698,7 +8703,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "schema",
        "src": "packs/fluides/res/svg/detendeurs-ligne.svg",
-       "alt": "La ligne liquide et ses accessoires, dans l ordre : réserve de liquide, filtre déshydrateur, voyant, électrovanne, détendeur.",
+       "alt": "La ligne liquide et ses accessoires, dans l’ordre : réserve de liquide, filtre déshydrateur, voyant, électrovanne, détendeur.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {
@@ -8718,7 +8723,7 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "Dans les deux cas, il <b>coupe le circuit</b>, le plus souvent le compresseur, dès qu'un seuil de pression est franchi, en haute comme en basse pression. La régulation module, la sécurité coupe ; leurs réglages ne se confondent pas.",
+       "html": "Dans les deux cas, il <b>coupe le circuit</b>, le plus souvent le compresseur, dès qu'un seuil de pression est franchi, en haute comme en basse pression. La régulation module, la sécurité coupe ; leurs réglages ne se confondent pas. Le pressostat BP peut aussi servir de régulation : sur une petite chambre froide en pump down, c’est lui qui arrête et relance le compresseur selon la pression d’aspiration.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {
@@ -8748,7 +8753,12 @@ window.PILOTE_PROJECTION = {
       },
       {
        "type": "point",
-       "html": "<b>KVC — régulateur de capacité, ou vanne de by-pass des gaz chauds.</b> Il relie le refoulement à l'aspiration. Quand la demande de froid tombe très bas, il renvoie une part des gaz chauds vers l'aspiration pour que le compresseur garde du débit au lieu de s'arrêter et de repartir sans cesse. Il <b>évite les courts-cycles</b> ; en revanche il consomme, et il ne se monte que là où le constructeur le prévoit.",
+       "html": "<b>KVC — régulateur de capacité, ou vanne de by-pass des gaz chauds.</b> Il relie le refoulement à l'aspiration. Quand la demande de froid tombe très bas, il renvoie une part des gaz chauds vers l'aspiration pour que le compresseur garde du débit au lieu de s'arrêter et de repartir sans cesse.",
+       "titre": "Régler et contrôler les organes annexes"
+      },
+      {
+       "type": "point",
+       "html": "Il <b>évite les courts-cycles</b> ; en revanche il consomme, et il ne se monte que là où le constructeur le prévoit. Sur une pompe à chaleur réversible, la vanne quatre voies inverse le sens du cycle : l’échangeur intérieur devient condenseur en hiver, évaporateur en été. Elle se commande, elle ne se règle pas.",
        "titre": "Régler et contrôler les organes annexes"
       },
       {
@@ -9198,7 +9208,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "schema",
        "src": "packs/fluides/res/svg/balayage-azote.svg",
-       "alt": "Brasage sous balayage d azote : l azote traverse le tube pendant la chauffe et ressort librement.",
+       "alt": "Brasage sous balayage d’azote : l’azote traverse le tube pendant la chauffe et ressort librement.",
        "titre": "Tuyauterie et brasage sous azote"
       },
       {
@@ -9214,6 +9224,11 @@ window.PILOTE_PROJECTION = {
       {
        "type": "point",
        "html": "On ne brase <b>jamais</b> un circuit contenant du fluide : récupération, puis inertage à l'azote. <b>EPI systématiques</b> au poste : lunettes, gants. Les tubes se cintrent <b>à froid, à la cintreuse</b>, se coupent au coupe-tube et s'<b>ébavurent</b> : une bavure part avec le fluide et finit dans le compresseur.",
+       "titre": "Tuyauterie et brasage sous azote"
+      },
+      {
+       "type": "point",
+       "html": "Avant de raccorder un flexible sur une vanne Schrader, purgez l’air du flexible : sinon vous l’envoyez dans le circuit. Un raccord dudgeonné demande un collet propre, fait avec une dudgeonnière calibrée : un collet mal formé fuit.",
        "titre": "Tuyauterie et brasage sous azote"
       },
       {
@@ -9382,7 +9397,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "schema",
        "src": "packs/fluides/res/svg/epreuve-azote.svg",
-       "alt": "Le mano-détendeur monté sur la bouteille d azote sec, raccordé au manifold puis au circuit à éprouver, vanne par vanne — jamais d oxygène ni d air comprimé.",
+       "alt": "Le mano-détendeur monté sur la bouteille d’azote sec, raccordé au manifold puis au circuit à éprouver, vanne par vanne — jamais d oxygène ni d’air comprimé.",
        "titre": "La bouteille d'azote et son mano-détendeur"
       },
       {
@@ -9899,7 +9914,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "titre",
        "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir",
-       "dc": "G13 · G14 · information et sensibilisation",
+       "dc": "G13 · G14 · codes 1.06 · 1.07 · information et sensibilisation",
        "competences": [
         {
          "code": "13.01",
@@ -9938,6 +9953,32 @@ window.PILOTE_PROJECTION = {
          "lib": "Vérifier avant d'intervenir que la signalisation, les issues de secours, les capteurs et les alarmes du site sont bien en état.",
          "officiel": "Vérifier que les mesures de santé et de sécurité conformes aux règles applicables sont appliquées à l'emplacement du système (par exemple, panneaux de signalisation, issues de secours, capteurs de gaz, alarmes au gaz, etc.)",
          "epreuve": {},
+         "nouveau": true,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "1.06",
+         "lib": "Connaître le comportement du CO₂ et de l'ammoniac dans le cycle, et ce qui les sépare des fluides fluorés.",
+         "officiel": "Connaître le comportement spécifique, les paramètres physiques, les systèmes, les solutions, les déviances de tous les réfrigérants de substitution dans le cycle de réfrigération et les composants pour leur utilisation",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T",
+          "E": "T"
+         },
+         "nouveau": false,
+         "tirage_au_sort": false
+        },
+        {
+         "code": "1.07",
+         "lib": "Reconnaître les caractéristiques du CO₂ et de l'ammoniac face aux fluides fluorés : pression, toxicité, matériaux.",
+         "officiel": "Connaître les caractéristiques des hydrocarbures, du CO2, et du NH3 et des autres réfrigérants non fluorés par rapport aux réfrigérants à gaz à effet de serre fluorés",
+         "epreuve": {
+          "A1": "T",
+          "A2": "T",
+          "D": "T",
+          "E": "T"
+         },
          "nouveau": true,
          "tirage_au_sort": false
         }
@@ -10137,33 +10178,45 @@ window.PILOTE_PROJECTION = {
        ]
       },
       {
-       "id": "q-g13-283",
-       "dc": "G13",
+       "id": "pk-g1c-2",
+       "dc": "G1",
+       "code": "1.07",
        "niveau": 1,
        "type": "qcm",
-       "enonce": "Pourquoi installe-t-on des détecteurs de CO₂ dans les locaux abritant une installation au R-744 ?",
+       "enonce": "Le propane, l'isobutane, l'ammoniac et le CO₂ sont des fluides naturels. En quoi se distinguent-ils des HFC et des HFO, d'après la fiche ?",
        "choix": [
-        "Pour mesurer en continu les performances de l'installation",
-        "Parce que le CO₂ est inodore et incolore : une fuite est indétectable sans appareil",
-        "Parce que la réglementation impose un détecteur pour tous les fluides",
-        "Pour compter les ouvertures de porte de la chambre froide"
+        "Ils ont tous un fort effet de serre, comme les HFC classiques",
+        "Ils existent sans chimie de synthèse, contrairement aux HFC et HFO",
+        "Ils contiennent tous du fluor, comme les HFO récents",
+        "Ils ont été condamnés par le protocole de Montréal, au même titre que les CFC"
        ],
        "bonne": 1,
-       "explication": "Le CO₂ ne se voit pas et ne se sent pas : en cas de fuite dans un local fermé, il remplace l'air sans prévenir. Seul un détecteur alerte avant l'asphyxie.",
-       "aide": "CO2 invisible et inodore.",
-       "remediation_vers": "g13",
-       "code": "13.14",
-       "chapitre": "13",
-       "chapitre_titre": "CO₂ / R-744 : information et sensibilisation aux risques",
-       "chapitre_fichier": "CONTENU-13-G13-co2-information-risques.md",
-       "illustration": "illustrations/sup-cours-13-14-0382EBB2.webp",
+       "aide": "Relis la phrase sur les fluides « naturels ». De quoi n'ont-ils pas besoin, contrairement aux HFC et HFO ?",
+       "remed": {
+        "regle": "Les fluides naturels (propane, isobutane, ammoniac, CO₂) existent sans chimie de synthèse. Les HFC et les HFO sont des molécules fabriquées.",
+        "pourquoi": "C'est une des raisons du retour en force des fluides naturels. Ils n'ont pas le fort impact climatique des molécules de synthèse comme les HFC.",
+        "piege": "Confondre « fluide frigorigène » et « contient du fluor ». Les mots se ressemblent, mais les fluides naturels n'ont pas de fluor dans leur formule."
+       },
+       "remediation_vers": "g1c",
+       "explication": "Les fluides naturels (propane, isobutane, ammoniac, CO₂) existent sans chimie de synthèse. Les HFC et les HFO sont des molécules fabriquées.",
+       "origine": "pack",
+       "chapitre": "01",
+       "chapitre_titre": "Législation & thermodynamique élémentaire",
+       "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
+       "illustration": "illustrations/sup-cours-1-07-304B1178.png",
        "pose_niveau": "cours",
        "ressources": [
         {
-         "type": "image",
-         "libelle": "Co2 protection",
-         "chemin": "illustrations/co2-protection.svg"
+         "type": "page",
+         "libelle": "Nomenclature interactive",
+         "chemin": "nomenclature-interactive/index.html"
         }
+       ],
+       "categories": [
+        "A1",
+        "A2",
+        "D",
+        "E"
        ]
       }
      ],
@@ -10300,6 +10353,11 @@ window.PILOTE_PROJECTION = {
       {
        "type": "point",
        "html": "Cela vaut aussi pour ce que le technicien apporte avec lui : outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir <b>reconnaître</b> qu'il entre dans une telle zone et respecter ce qui y est affiché.",
+       "titre": "Explosif avant d'être perceptible — la LIE"
+      },
+      {
+       "type": "point",
+       "html": "Pour un fluide inflammable, A2L compris, l’outillage est adapté : aucune source d’inflammation, poste ventilé, pompe à vide et station de récupération prévues pour ces fluides.",
        "titre": "Explosif avant d'être perceptible — la LIE"
       },
       {
@@ -10890,7 +10948,7 @@ window.PILOTE_PROJECTION = {
       {
        "type": "schema",
        "src": "packs/fluides/res/svg/balayage-azote.svg",
-       "alt": "Brasage du composant remplacé sous balayage d azote : débit léger et continu, sortie libre — l épreuve sous pression vient ensuite, une fois le circuit refermé.",
+       "alt": "Brasage du composant remplacé sous balayage d’azote : débit léger et continu, sortie libre — l’épreuve sous pression vient ensuite, une fois le circuit refermé.",
        "titre": "Intervenir sur un circuit hydrocarbure"
       },
       {

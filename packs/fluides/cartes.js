@@ -4501,6 +4501,10 @@ export const CARTES = [
       { code: "14.01", libelle: "Reconnaître une installation NH₃ et la conduite à tenir", etat: "a_evaluer" },
       { code: "1.09", libelle: "Connaître les pressions élevées du CO₂, son diagramme log p/h, ses tables de saturation et le risque de glace carbonique." },
       { code: "13.14", libelle: "Vérifier avant d'intervenir que la signalisation, les issues de secours, les capteurs et les alarmes du site sont bien en état." },
+      /* Savoirs de TOUTES les catégories (1.06, 1.07) : ce que le CO₂ et le NH₃ ont de
+         différent, sans jamais y intervenir — l'épreuve A1/A2 impose une question dessus. */
+      { code: "1.06", libelle: "Connaître le comportement du CO₂ et de l'ammoniac dans le cycle, et ce qui les sépare des fluides fluorés." },
+      { code: "1.07", libelle: "Reconnaître les caractéristiques du CO₂ et de l'ammoniac face aux fluides fluorés : pression, toxicité, matériaux." },
     ],
     /* C'est ICI que la protection contre le CO₂ trouve sa place : le stagiaire
        vient de voir la pression, l'accumulation en point bas et le réflexe
