@@ -257,7 +257,7 @@ export const CARTES = [
         url: "galerie.html",
         icone: "🎬",
         titre: "Voir toutes les animations",
-        desc: "Les schémas animés du pack sur une seule page, chacun rejouable d un clic : ce qui se passe dans le local, dans le circuit, sur la balance.",
+        desc: "Les schémas animés du pack sur une seule page, chacun rejouable d’un clic : ce qui se passe dans le local, dans le circuit, sur la balance.",
       },
       /* Vue une seule fois automatiquement à l'ouverture d'index.html (voir
          le script en tête de <head>) : cette tuile n'est utile qu'ensuite,
@@ -325,7 +325,7 @@ export const CARTES = [
       { vers: "ex-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "12 questions fondamentales, seuil 60 %. Pour se lancer." },
       { vers: "ex-a1", icone: "📝", titre: "Examen blanc A1", desc: "20 questions tirées de tous les groupes." },
       { vers: "ex-defi", icone: "🔴", titre: "Défi technicien — niveau 2", desc: "15 diagnostics et mises en situation, seuil 80 %." },
-      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j en suis, compétence par compétence. Rien ne sort de votre navigateur." },
+      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j’en suis, compétence par compétence. Rien ne sort de votre navigateur." },
       { vers: "m-prat", icone: "🔧", titre: "Préparation pratique", desc: "Le matériel et les gestes, à revoir avant l atelier." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
@@ -372,7 +372,7 @@ export const CARTES = [
       { vers: "ex-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "12 questions fondamentales, seuil 60 %. Pour se lancer." },
       { vers: "ex-a2", icone: "📝", titre: "Examen blanc A2", desc: "15 questions tirées de tous les groupes." },
       { vers: "ex-defi", icone: "🔴", titre: "Défi technicien — niveau 2", desc: "15 diagnostics et mises en situation, seuil 80 %." },
-      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j en suis, compétence par compétence. Rien ne sort de votre navigateur." },
+      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j’en suis, compétence par compétence. Rien ne sort de votre navigateur." },
       { vers: "m-prat", icone: "🔧", titre: "Préparation pratique", desc: "Le matériel et les gestes, à revoir avant l atelier." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
@@ -401,7 +401,7 @@ export const CARTES = [
       { vers: "m-clas", icone: "☠", titre: "Classification des fluides et risques", desc: "Lire une classe NF EN 378 : ce que la case impose en EPI, ventilation et détection. Dont le CO₂.", primaire: true },
       { vers: "g0", icone: "§", titre: "Ce que la loi vous impose", desc: "G1 — règlement (UE) 2024/573, attestations, registre, DEEE." },
       { vers: "g1a", icone: "1", titre: "Bases : fluides, thermo utile, composants", desc: "G1 partiel — savoir de quoi on parle." },
-      { vers: "g1s", icone: "1", titre: "Chaleur sensible et chaleur latente", desc: "G1 · code 1.02 — pourquoi un fluide qui change d état, et pas de l air." },
+      { vers: "g1s", icone: "1", titre: "Chaleur sensible et chaleur latente", desc: "G1 · code 1.02 — pourquoi un fluide qui change d état, et pas de l’air." },
       { vers: "g1e", icone: "1", titre: "Dans quel état est le fluide ?", desc: "G1 · code 5.05 — sous-refroidi, saturé ou surchauffé : à savoir avant toute charge." },
       { vers: "g1c", icone: "1", titre: "Familles et codes des fluides", desc: "G1 — CFC, HCFC, HFC, HFO, naturels ; décoder R-134a." },
       { vers: "g2a", icone: "2", titre: "L'histoire : ozone et climat", desc: "G2 — effet de serre, trou d'ozone, Montréal, Kyoto, Kigali." },
@@ -413,7 +413,7 @@ export const CARTES = [
       { vers: "x3", icone: "🕵", titre: "Détective : la bouteille de récupération", desc: "Mise en situation — le niveau maxi est atteint." },
       { vers: "ex-d-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "8 questions fondamentales, seuil 60 %." },
       { vers: "ex-d", icone: "📝", titre: "Examen blanc D", desc: "10 questions sur le périmètre D." },
-      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j en suis, compétence par compétence. Rien ne sort de votre navigateur." },
+      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j’en suis, compétence par compétence. Rien ne sort de votre navigateur." },
       { vers: "m-prat", icone: "🔧", titre: "Préparation pratique", desc: "Le matériel et les gestes, à revoir avant l atelier." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
@@ -458,7 +458,7 @@ export const CARTES = [
       { vers: "x4", icone: "🕵", titre: "Détective : le contrôle qui tourne mal", desc: "Mise en situation — registre, détecteur, incohérence." },
       { vers: "ex-e-ech", icone: "🟢", titre: "Échauffement — niveau 1", desc: "8 questions fondamentales, seuil 60 %." },
       { vers: "ex-e", icone: "📝", titre: "Examen blanc E", desc: "10 questions sur le périmètre E." },
-      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j en suis, compétence par compétence. Rien ne sort de votre navigateur." },
+      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j’en suis, compétence par compétence. Rien ne sort de votre navigateur." },
       { vers: "m-prat", icone: "🔧", titre: "Préparation pratique", desc: "Le matériel et les gestes, à revoir avant l atelier." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
@@ -501,7 +501,7 @@ export const CARTES = [
       { vers: "rev-g13", icone: "13", titre: "CO₂ et NH₃", desc: "reconnaître, respecter les catégories, ne pas intervenir — 9 questions." },
       { vers: "ex-ech", icone: "🟢", titre: "Se tester — Échauffement (niveau 1)", desc: "12 questions fondamentales, tous thèmes, seuil 60 %." },
       { vers: "ex-defi", icone: "🔴", titre: "Se tester — Défi technicien (niveau 2)", desc: "15 diagnostics, tous thèmes, seuil 80 %." },
-      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j en suis, compétence par compétence. Rien ne sort de votre navigateur." },
+      { vers: "c-prog", icone: "📊", titre: "Ma progression", desc: "Où j’en suis, compétence par compétence. Rien ne sort de votre navigateur." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Revenir aux parcours." },
     ],
     notes_pilote:
@@ -530,9 +530,9 @@ export const CARTES = [
      l environnement. Ce module enseigne celle du frigoriste lui-même.
      Repris de « Découverte des métiers par le risque » (F. Henninot) :
      on garde la mécanique — carte de synthèse, question adossée à un
-     document professionnel, tri obligatoire/interdit — et l on renvoie
+     document professionnel, tri obligatoire/interdit — et l’on renvoie
      à la FICHE DE DONNÉES DE SÉCURITÉ du fluide plutôt qu à des valeurs
-     affirmées : elles varient d un fluide à l autre.
+     affirmées : elles varient d’un fluide à l’autre.
      ================================================================== */
   {
     id: "m-secu",
@@ -544,13 +544,13 @@ export const CARTES = [
       "<p>Le reste de cette formation vous apprend à protéger <b>l installation</b> et " +
       "<b>l environnement</b>. Ce module-ci vous apprend à vous protéger <b>vous</b>.</p>" +
       "<p>Cinq dangers, cinq fiches. Ce qui arrive, comment ça arrive vraiment, ce qui " +
-      "protège, et le geste qu on ne fait jamais.</p>",
+      "protège, et le geste qu’on ne fait jamais.</p>",
     menu_titre: "Les cinq dangers",
     liens: [
-      { vers: "s1", icone: "1", titre: "L'air qui manque — l'asphyxie", desc: "Le danger qu on ne sent pas venir : le fluide chasse l air respirable." },
+      { vers: "s1", icone: "1", titre: "L'air qui manque — l'asphyxie", desc: "Le danger qu’on ne sent pas venir : le fluide chasse l’air respirable." },
       { vers: "s2", icone: "2", titre: "Le froid brûle — projections et gelures", desc: "Le fluide liquide gèle la peau en un instant. Gants et lunettes, toujours." },
       { vers: "s3", icone: "3", titre: "La flamme interdite — décomposition du fluide", desc: "Chauffer un circuit non récupéré libère des gaz corrosifs et toxiques." },
-      { vers: "s4", icone: "4", titre: "Ce qui éclate — la pression", desc: "Un circuit reste sous pression à l arrêt. Une bouteille ne se chauffe jamais." },
+      { vers: "s4", icone: "4", titre: "Ce qui éclate — la pression", desc: "Un circuit reste sous pression à l’arrêt. Une bouteille ne se chauffe jamais." },
       { vers: "s5", icone: "5", titre: "Consigner avant de toucher — le risque électrique", desc: "Cinq étapes avant de toucher. Un arc électrique brûle sans contact." },
       { vers: "c00", icone: "↺", titre: "Retour au sommaire", desc: "Changer de parcours." },
     ],
@@ -558,7 +558,7 @@ export const CARTES = [
       "À passer AVANT tout le reste, et à reprendre avant la première manipulation. " +
       "Charte FrigorX : la sécurité se démontre et s impose, elle ne se découvre jamais " +
       "par l erreur. Faire ouvrir une VRAIE fiche de données de sécurité pendant la séance : " +
-      "c est le document que le stagiaire devra savoir consulter seul, sur chantier.",
+      "c’est le document que le stagiaire devra savoir consulter seul, sur chantier.",
   },
   {
     id: "s1",
@@ -1268,9 +1268,9 @@ export const CARTES = [
     corps:
       schema("tirage-au-vide.svg", "Animation : trois courbes de tirage au vide se tracent — la bonne descend et tient son palier ; l'humidité fait stagner la descente ; la fuite fait remonter le vide dès que la pompe est isolée.") +
       photo("pompe-a-vide.png", "Une pompe à vide d atelier.",
-            "La pompe à vide : elle aspire l air et l humidité du circuit. Vérifier son niveau d huile avant chaque usage.") +
+            "La pompe à vide : elle aspire l’air et l humidité du circuit. Vérifier son niveau d’huile avant chaque usage.") +
       photo("vacuometre.png", "Un vacuomètre électronique.",
-            "Le vacuomètre électronique : lui seul mesure vraiment le vide. Le manomètre du manifold n est pas assez précis pour cela.") +
+            "Le vacuomètre électronique : lui seul mesure vraiment le vide. Le manomètre du manifold n’est pas assez précis pour cela.") +
       "<p>Le <b>tirage au vide</b> retire l'air et l'humidité du circuit avant charge ; ce n'est pas du fluide " +
       "qu'on évacue ici, mais de l'air et de la vapeur d'eau : la question du rejet à l'atmosphère ne se pose pas " +
       "à ce stade. La <b>pompe à vide</b> aspire ; le <b>vacuomètre</b> électronique indique jusqu'où on est " +
@@ -1348,7 +1348,7 @@ export const CARTES = [
         "🎧 Écouter la capsule : La bouteille d'azote et son mano-détendeur",
         "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris."
       ) +
-      schema("epreuve-azote.svg", "Le mano-détendeur monté sur la bouteille d azote sec, raccordé au manifold puis au circuit à éprouver, vanne par vanne — jamais d oxygène ni d air comprimé.") +
+      schema("epreuve-azote.svg", "Le mano-détendeur monté sur la bouteille d’azote sec, raccordé au manifold puis au circuit à éprouver, vanne par vanne — jamais d oxygène ni d’air comprimé.") +
       "<p>Une bouteille d'azote ne se branche jamais directement sur un circuit. Entre les deux, il y a toujours un <b>mano-détendeur</b>. Il lit la pression de la bouteille. Il règle la pression envoyée dans le circuit. Sans lui, toute la pression de la bouteille part d'un coup — largement de quoi faire éclater un circuit.</p>" +
       "<p>Le mano-détendeur porte <b>deux cadrans</b>. Le premier indique ce qu'il reste dans la bouteille. Le second indique la pression réglée en sortie, celle qui part vers le circuit. On lit toujours les deux.</p>" +
       "<ol>" +
@@ -2403,7 +2403,7 @@ export const CARTES = [
       {
         t: "À vous : la carte d identité du fluide",
         html:
-          "<p style=\"margin:0 0 10px\">Choisissez un fluide, entrez une charge : les tonnes équivalent CO₂ se calculent. Comparez deux fluides à charge égale — c est l exercice qui suit.</p>" +
+          "<p style=\"margin:0 0 10px\">Choisissez un fluide, entrez une charge : les tonnes équivalent CO₂ se calculent. Comparez deux fluides à charge égale — c’est l exercice qui suit.</p>" +
           outil("fiche-fluide.html", "Carte d identité du fluide interactive", 415),
       },
     ],
@@ -2495,7 +2495,7 @@ export const CARTES = [
         "🎧 Écouter la capsule : Contrôles avant mise en service",
         "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 8 minutes. Version imprimable et mode projection compris."
       ) +
-      schema("epreuve-azote.svg", "Montage de l épreuve de pression : bouteille d azote, manifold, circuit — oxygène et air comprimé barrés.") +
+      schema("epreuve-azote.svg", "Montage de l’épreuve de pression : bouteille d’azote, manifold, circuit — oxygène et air comprimé barrés.") +
       "<p>Deux épreuves, deux buts, souvent enchaînées. L'<b>épreuve de résistance</b> vérifie que " +
       "l'assemblage tient mécaniquement. L'<b>épreuve d'étanchéité</b> vérifie qu'il ne laisse rien " +
       "passer. Les pressions d'épreuve se prennent <b>sur la documentation constructeur</b> et la " +
@@ -3079,7 +3079,7 @@ export const CARTES = [
         "🛠️ S'entraîner aux gestes : installer, régler, vérifier le compresseur",
         "13 écrans dans le moteur des modules condenseur et évaporateur : la plaque signalétique, l'assise et les sécurités, régler en prouvant à l'instrument, la vanne d'aspiration, l'huile et son retour, le séparateur — deux contrôles corrigés."
       ) +
-      schema("compresseurs.svg", "Coupe animée d un compresseur à piston et les quatre technologies : piston, scroll, vis, rotatif.") +
+      schema("compresseurs.svg", "Coupe animée d’un compresseur à piston et les quatre technologies : piston, scroll, vis, rotatif.") +
       "<p>Le compresseur est le <b>seul organe actif</b> du cycle : il aspire la vapeur basse pression " +
       "et la refoule en haute pression. Condenseur, détendeur et évaporateur ne font que subir ce mouvement.</p>" +
       "<p>Ses points de fuite privilégiés : <b>raccords, vannes de service, presse-étoupe, bornes " +
@@ -3237,7 +3237,7 @@ export const CARTES = [
     dc: "G7 · codes 7.01 · 7.04 · 7.06 · 7.08",
     minuteur_s: 300,
     corps:
-      schema("echangeur-air.svg", "Le condenseur à air : l air ambiant traverse la batterie poussé par le ventilateur et ressort réchauffé.") +
+      schema("echangeur-air.svg", "Le condenseur à air : l’air ambiant traverse la batterie poussé par le ventilateur et ressort réchauffé.") +
       "<p>Le condenseur <b>évacue vers l'extérieur</b> la chaleur prise dans l'évaporateur, plus celle " +
       "apportée par la compression. La vapeur haute pression s'y refroidit, se liquéfie, puis se " +
       "<b>sous-refroidit</b> : <b>4 à 8 K</b> en sortie, pour garantir du liquide pur au détendeur.</p>" +
@@ -3719,7 +3719,7 @@ export const CARTES = [
     minuteur_s: 300,
     corps:
       schema("detendeur-regulation.svg", "Animation en boucle : la charge thermique augmente, la surchauffe monte, le bulbe se réchauffe et pousse la membrane, le détendeur ouvre, l'évaporateur reçoit plus de fluide, la surchauffe redescend — la boucle qui se corrige toute seule.") +
-      schema("detendeurs-ligne.svg", "Les quatre types de détendeurs et la ligne liquide avec ses accessoires dans l ordre.") +
+      schema("detendeurs-ligne.svg", "Les quatre types de détendeurs et la ligne liquide avec ses accessoires dans l’ordre.") +
       "<p>Le détendeur fait chuter la pression et <b>dose le débit de liquide</b> envoyé à " +
       "l'évaporateur. Le <b>détendeur thermostatique</b> régule sur la <b>surchauffe</b> : son bulbe, " +
       "fixé sur la ligne d'aspiration, sent la température du gaz et ouvre ou ferme en conséquence. " +
@@ -3853,7 +3853,7 @@ export const CARTES = [
         "🎚️ S'entraîner au pupitre : consigne, différentiel, preuve",
         "Deux pupitres manipulables (thermostat de chambre froide, pressostat basse pression) : réglez la consigne et le différentiel, lisez les points d'action en direct, serrez trop le différentiel et voyez l'alerte de courts-cycles — puis un contrôle corrigé. Valeurs d'exercice : la notice fait foi."
       ) +
-      schema("detendeurs-ligne.svg", "La ligne liquide et ses accessoires, dans l ordre : réserve de liquide, filtre déshydrateur, voyant, électrovanne, détendeur.") +
+      schema("detendeurs-ligne.svg", "La ligne liquide et ses accessoires, dans l’ordre : réserve de liquide, filtre déshydrateur, voyant, électrovanne, détendeur.") +
       "<p>Autour du détendeur, d'autres organes se <b>règlent</b> et se <b>contrôlent</b>. Ils ne " +
       "dosent pas le fluide. Ils protègent l'installation et lui évitent de gaspiller de " +
       "l'énergie. Cette fiche en présente quatre : les thermostats, la soupape de régulation de " +
@@ -4008,7 +4008,7 @@ export const CARTES = [
         "🎧 Écouter la capsule : Tuyauterie et brasage sous azote",
         "Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 5 écrans, 6 minutes. Version imprimable et mode projection compris."
       ) +
-      schema("balayage-azote.svg", "Brasage sous balayage d azote : l azote traverse le tube pendant la chauffe et ressort librement.") +
+      schema("balayage-azote.svg", "Brasage sous balayage d’azote : l’azote traverse le tube pendant la chauffe et ressort librement.") +
       "<p>Braser un circuit frigorifique, ce n'est pas braser une tuyauterie d'eau. À la flamme, " +
       "l'intérieur du cuivre s'oxyde et forme une <b>calamine</b> noire qui se détache plus tard, " +
       "circule, et bouche le déshydrateur ou abîme le compresseur, des mois après, loin de la cause.</p>" +
@@ -4141,7 +4141,7 @@ export const CARTES = [
       {
         t: "À vous : comparez les candidats à la substitution",
         html:
-          "<p style=\"margin:0 0 10px\">Passe en revue R-290, R-1234yf, R-744, R-32 : classe de sécurité, PRP, glide. Le fluide « parfait » n existe pas : c est tout l objet de ce groupe.</p>" +
+          "<p style=\"margin:0 0 10px\">Passe en revue R-290, R-1234yf, R-744, R-32 : classe de sécurité, PRP, glide. Le fluide « parfait » n’existe pas : c’est tout l’objet de ce groupe.</p>" +
           outil("fiche-fluide.html", "Carte d identité du fluide interactive", 415),
       },
       { type: "cle", t: "Hydrocarbures : une machine pas comme les autres", html: "<b>Antidéflagrant</b> ou <b>non étincelant</b> : sur une machine aux hydrocarbures, tout composant électrique proche du gaz doit respecter cette règle, pour ne jamais produire d'étincelle. Et comme le propane est plus lourd que l'air, il s'accumule en bas en cas de fuite — la <b>ventilation</b> du local en tient compte dès la conception." },
@@ -4291,7 +4291,7 @@ export const CARTES = [
     dc: "G12 · codes 12.07 · 12.08 · 12.09 · 12.10 · 12.11 · 12.12",
     minuteur_s: 420,
     corps:
-      schema("balayage-azote.svg", "Brasage du composant remplacé sous balayage d azote : débit léger et continu, sortie libre — l épreuve sous pression vient ensuite, une fois le circuit refermé.") +
+      schema("balayage-azote.svg", "Brasage du composant remplacé sous balayage d’azote : débit léger et continu, sortie libre — l’épreuve sous pression vient ensuite, une fois le circuit refermé.") +
       "<p>Le circuit est déjà <b>récupéré</b> et <b>inerté à l'azote</b> : plus d'hydrocarbure ni d'air à l'intérieur. La zone est prête : <b>ventilée</b>, balisée, sans source d'inflammation, détecteur de gaz et extincteur à portée, outillage adapté.</p>" +
       "<p>Reste une dernière vérification avant le chalumeau : la <b>consignation électrique</b> de l'installation. Le <b>R-290 est A3</b>, très inflammable, pas un A2L comme le R-32. Tant que l'inertage n'est pas confirmé : <b>aucune flamme</b>.</p>" +
       "<p>Le mode opératoire suit ensuite toujours le même ordre :</p>" +
@@ -4410,7 +4410,7 @@ export const CARTES = [
     id: "g13",
     type: "cours",
     titre: "CO₂ et NH₃ — reconnaître, ne pas intervenir",
-    dc: "G13 · G14 · information et sensibilisation",
+    dc: "G13 · G14 · codes 1.06 · 1.07 · information et sensibilisation",
     minuteur_s: 300,
     corps:
       lienOutil(
