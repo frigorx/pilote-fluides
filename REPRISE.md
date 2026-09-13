@@ -12,14 +12,22 @@
 > `build/build.mjs`** : HydroMétro est hors des pages du build, et le piège `src/hub-shell.html` en
 > retard sur `index.html` (§ 7 de `PROMPT-REPRISE-SUITE.md`) tient toujours. Preuves et suite (lots 2 à 4)
 > dans `C:\git\hydrometro\PROMPT-REPRISE.md`.
-> 🔴 **Défaut du site mesuré au passage, à trancher** : la pastille « Mode prof vocal » de
-> `moteur/prof-vocal.js` (position fixe bas droite, 430 × 42 px) **recouvre « Continuer » des trois
-> gabarits de station HydroMétro** (`#pNext`, `#nextBtn`, `#nextLesson`) à 1366 × 768 comme à 375 × 812 :
-> sous le centre du bouton, `elementFromPoint` rend `#pilote-prof-toggle`, un élève clique le mode prof
-> au lieu d'avancer. Le Playwright HydroMétro contre le site ne passe qu'avec la pastille masquée
-> (`HYDROMETRO_MASQUER_PROF_VOCAL=1`). À vérifier sur AéroRézo, ÉlectroRézo et Législation (mêmes
-> pieds de page à droite ?). Pistes : déplacer / réduire la pastille dans le moteur, ou ne plus
-> l'injecter sur HydroMétro. Rien touché au moteur dans ce chat.
+> ✅ **Pastille « Mode prof vocal » corrigée (`moteur/prof-vocal.js` 1.1.0, commit `e1ecab45`, décision
+> déléguée par F. Henninot)**. Le défaut mesuré : la pastille flottante (fixe, bas droite, 430 × 42 px)
+> recouvrait « Continuer » des trois gabarits HydroMétro et « Comprendre → » d'AéroRézo, à 1366 × 768
+> comme à 375 × 812 (sous le centre du bouton, `elementFromPoint` rendait `#pilote-prof-toggle`) ;
+> Législation et packs n'avaient rien dans la bande du bas. La correction : `pointer-events:none` sur le
+> conteneur (auto sur bouton et carte) ; **le bouton `#pilote-prof-toggle` vit désormais hors du
+> conteneur**, inséré après « Arrêter » ou « Écouter » de la page quand cette commande est rendue
+> (HydroMétro ×3 dans `.voice-actions`/`.p-voice-actions`, AéroRézo dans `.lesson-actions`, packs dans
+> `.speech-panel`, Législation dans `.barre-outils` après « Commencer »), avec les classes du voisin et le
+> libellé « Prof vocal · … » (« Prof » aux largeurs étroites) ; un `MutationObserver` le remet quand la
+> page redessine ses commandes ; sans commande rendue il flotte comme avant, mais caché sous 650 px ;
+> la carte s'ouvre en bas à gauche. Preuves sur le serveur local : 12 pages × 3 formats sans commande
+> couverte ; test réseau HydroMétro 4 formats sans masquage. HydroMétro relivré à clé neuve
+> (`dfc46962`) ; **les autres réseaux tirent le moteur neuf à l'expiration de leur clé figée au CDN
+> (≤ 4 h)** — un `build` ou une relivraison les y amènerait tout de suite. Piège appris : `sed -i`
+> sous Git Bash réécrit un fichier CRLF en LF (rétabli par node avant commit).
 
 > ## 12/09 — AUDIT D'ÉTAT DES LIEUX DU SITE (« faire le touriste ») : écrit, NON commité, rien modifié au site
 >
