@@ -3,6 +3,24 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 13/09 — HydroMétro : lot 1 « technique commun » livré (commit `2129d402`, `hydrometro/` seul)
+>
+> Copie servie régénérée par `node outils/livrer.mjs --ecrire` depuis l'atelier `C:\git\hydrometro`
+> (`19be313`) : le script repose désormais **toutes** les clés `?v=AAAAMMJJ-HHMM` (scripts et feuilles
+> des 22 stations, les deux moteurs `formative-engine.js` / `p-formation.js` qui injectent leur feuille),
+> 16 `station.js` jamais chargés retirés, vouvoiement du panneau G3, couleurs de charte. **Aucun
+> `build/build.mjs`** : HydroMétro est hors des pages du build, et le piège `src/hub-shell.html` en
+> retard sur `index.html` (§ 7 de `PROMPT-REPRISE-SUITE.md`) tient toujours. Preuves et suite (lots 2 à 4)
+> dans `C:\git\hydrometro\PROMPT-REPRISE.md`.
+> 🔴 **Défaut du site mesuré au passage, à trancher** : la pastille « Mode prof vocal » de
+> `moteur/prof-vocal.js` (position fixe bas droite, 430 × 42 px) **recouvre « Continuer » des trois
+> gabarits de station HydroMétro** (`#pNext`, `#nextBtn`, `#nextLesson`) à 1366 × 768 comme à 375 × 812 :
+> sous le centre du bouton, `elementFromPoint` rend `#pilote-prof-toggle`, un élève clique le mode prof
+> au lieu d'avancer. Le Playwright HydroMétro contre le site ne passe qu'avec la pastille masquée
+> (`HYDROMETRO_MASQUER_PROF_VOCAL=1`). À vérifier sur AéroRézo, ÉlectroRézo et Législation (mêmes
+> pieds de page à droite ?). Pistes : déplacer / réduire la pastille dans le moteur, ou ne plus
+> l'injecter sur HydroMétro. Rien touché au moteur dans ce chat.
+
 > ## 12/09 — AUDIT D'ÉTAT DES LIEUX DU SITE (« faire le touriste ») : écrit, NON commité, rien modifié au site
 >
 > Dossier `docs/audit-site-2026-09/` : `AUDIT-ETAT-DES-LIEUX.md` (10 constats, 10 chantiers ordonnés
