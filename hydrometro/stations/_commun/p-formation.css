@@ -1,4 +1,6 @@
-body.p-course-active { grid-template-rows: auto auto minmax(0, 1fr) auto; }
+/* Colonne explicite : sans elle, la colonne implicite prend la largeur min-content de la barre du
+   haut (392 px à 375 px sur delta-t) et élargit toute la page. Correctif du 13/09/2026. */
+body.p-course-active { grid-template-rows: auto auto minmax(0, 1fr) auto; grid-template-columns: minmax(0, 1fr); }
 body.p-course-active .topbar { grid-template-columns: auto minmax(0, 1fr) auto auto; }
 
 .p-course-progress {
@@ -67,7 +69,13 @@ body.p-course-active .topbar { grid-template-columns: auto minmax(0, 1fr) auto a
 
 @media (max-width: 760px) {
   body.p-course-active { font-size: 12px; }
-  body.p-course-active .topbar { grid-template-columns: auto minmax(0,1fr) auto auto; }
+  /* Marque + titre + niveaux + actions vocales (avec le réglage de débit) ne tiennent pas sur
+     une rangée à 375 px : la barre passe en flex repliable, comme la Boucle (station.css:271-282)
+     et le gabarit formative (formative-shared.css:113-114). Correctif du 13/09/2026. */
+  body.p-course-active .topbar { display: flex; flex-wrap: wrap; align-items: center; row-gap: .25rem; }
+  body.p-course-active .brand { min-width: 0; }
+  body.p-course-active .titles { flex: 1 1 0; min-width: 0; }
+  body.p-course-active .p-voice-actions { flex-wrap: wrap; }
   .p-course-progress { min-height: 34px; gap: .18rem; padding: .2rem .3rem; }
   .p-course-progress button { min-height: 28px; padding: .1rem; }
   .p-course-progress .p-label { display: none; }
