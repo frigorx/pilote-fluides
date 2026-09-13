@@ -91,6 +91,8 @@ main { height: 100%; }
 @media (max-width: 640px) { .etapes { gap: 4px; padding: 6px 8px; } .etapes button { padding: 4px 9px; } }
 @media print { .etapes { display: none; } }
 </style>
+  <script src="../../../../moteur/plan-donnees.js"></script>
+  <script src="../../../../moteur/suivant.js" defer></script>
 </head>
 <body>
 <h1 class="titre-du-film">Le KVR et le NRD — tenir la pression de condensation par temps froid</h1>
@@ -230,7 +232,10 @@ main { height: 100%; }
     cadre.dispatchEvent(new CustomEvent("data-om-seek-to-time-frame", {
       detail: { time: Math.max(0, Math.min(temps, duree)), playing: false, sync: true }
     }));
-    relance();
+    /* On ne relance plus systématiquement : un saut respecte `enMarche` au lieu
+       de forcer la lecture — sinon l'entrée directe par ?etape= ferait bouger
+       l'image seule, avant tout clic (règle : rien ne bouge au chargement). */
+    if (enMarche) relance();
     return true;
   }
 
@@ -262,6 +267,9 @@ main { height: 100%; }
        part à la voix — le texte affiché garde ses traits insécables. */
     return dit.replace(new RegExp(String.fromCharCode(8209), "g"), "-");
   }
+  /* Arme le départ conjoint image + voix. Un saut (vaA) ne fait que la lire ;
+     seul un geste explicite — ▶ Lecture ou Écouter — la met à jour. */
+  var enMarche = false;
   function parle() { return !!(window.speechSynthesis && speechSynthesis.speaking); }
   function majEcoute() {
     if (!monEcoute) return;
@@ -272,7 +280,7 @@ main { height: 100%; }
   }
   function ecoute() {
     if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) return;
-    if (parle()) { speechSynthesis.cancel(); majEcoute(); return; }
+    if (parle()) { speechSynthesis.cancel(); majEcoute(); pauserLecture(); return; }
     var texte = texteEtape(courant);
     if (!texte) return;
     /* Le panneau s'ouvre : entendre sans pouvoir suivre des yeux ne sert ni
@@ -282,6 +290,9 @@ main { height: 100%; }
     var u = new SpeechSynthesisUtterance(texte);
     u.lang = "fr-FR";
     u.rate = 0.95;
+    /* Écouter lance aussi l'image, au moment précis où la voix démarre
+       réellement — pas avant, pas après. */
+    u.onstart = function () { enMarche = true; relance(); };
     u.onend = majEcoute;
     u.onerror = majEcoute;
     speechSynthesis.speak(u);
@@ -299,8 +310,12 @@ main { height: 100%; }
     monPlay.setAttribute("aria-label", enPause() ? "Lancer la lecture" : "Mettre en pause");
   }
   /* Tout saut arrête l'horloge du runtime. Sans ce coup de pouce, cliquer une
-     étape figerait l'image au lieu de la jouer depuis là. */
+     étape figerait l'image au lieu de la jouer depuis là — mais seulement
+     quand `enMarche` l'autorise (cf. vaA). */
   function relance() { if (enPause() && natifPlay) natifPlay.click(); }
+  /* Symétrique de relance() : un seul clic si l'image joue encore. Utilisée
+     quand la voix s'arrête, pour que l'image s'arrête avec elle. */
+  function pauserLecture() { enMarche = false; if (!enPause() && natifPlay) natifPlay.click(); }
 
   function brancheCommandes() {
     natifPlay = document.querySelector('button[title^="Play/pause"]');
@@ -312,7 +327,17 @@ main { height: 100%; }
     monPlay = document.createElement("button");
     monPlay.type = "button";
     monPlay.className = "cmd";
-    monPlay.addEventListener("click", function () { natifPlay.click(); setTimeout(majPlay, 0); });
+    monPlay.addEventListener("click", function () {
+      natifPlay.click();
+      setTimeout(function () {
+        majPlay();
+        /* Réutilisé tel quel par ▶ du lecteur : sans voix activée ici (pas de
+           mode « voix active » sur ce module), l'image joue seule ; mais la
+           mettre en pause arrête aussi la voix si elle parlait (symétrie). */
+        enMarche = !enPause();
+        if (!enMarche && parle()) { speechSynthesis.cancel(); majEcoute(); }
+      }, 0);
+    });
 
     var monDebut = document.createElement("button");
     monDebut.type = "button";
@@ -377,24 +402,28 @@ main { height: 100%; }
     if (brancheCommandes() || ++essaisCmd > 120) clearInterval(horlogeCmd);
   }, 50);
 
-  /* Entrée directe. Le composant se monte de façon asynchrone : on réessaie
-     jusqu'à ce que le cadre existe, puis on s'arrête. Borné — une page qui
-     n'a pas monté au bout de 6 secondes ne montera plus, et la barre reste
-     utilisable à la main. */
+  /* Le composant démarre lui-même en lecture. Ce premier saut, dès que le
+     cadre est prêt, l'arrête net : `enMarche` reste faux tant qu'aucun geste
+     n'a eu lieu, donc `vaA` ne relance rien (cf. plus haut). Sans ce saut,
+     l'image bougerait seule au chargement, y compris sans `?etape=`.
+     Entrée directe : `?etape=` choisit la cible ; sinon c'est le début.
+     Le composant se monte de façon asynchrone : on réessaie jusqu'à ce que
+     le cadre existe, puis on s'arrête. Borné — une page qui n'a pas monté
+     au bout de 6 secondes ne montera plus, et la barre reste utilisable à
+     la main. */
   var voulu = new URLSearchParams(location.search).get("etape");
-  if (!voulu) return;
-  var i = etapes.findIndex(function (e) { return e.cle === cle(voulu); });
-  if (i < 0) return;
+  var i = voulu ? etapes.findIndex(function (e) { return e.cle === cle(voulu); }) : -1;
+  var cible = i >= 0 ? etapes[i].debut : 0;
 
   var essais = 0;
   var horloge = setInterval(function () {
-    if (vaA(etapes[i].debut)) { clearInterval(horloge); marque(i); return; }
+    if (vaA(cible)) { clearInterval(horloge); if (i >= 0) marque(i); return; }
     if (++essais > 120) {
       clearInterval(horloge);
       /* Six secondes sans signal. Porte de sortie : un runtime qui
          n'annoncerait pas `data-om-sync-seek` ne doit pas priver l'élève de
          son étape — on tente en force, et la barre reste utilisable à la main. */
-      if (vaA(etapes[i].debut, true)) marque(i);
+      if (vaA(cible, true) && i >= 0) marque(i);
     }
   }, 50);
 })();

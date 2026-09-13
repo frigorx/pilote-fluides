@@ -55,8 +55,13 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
 .voix-box button{min-height:34px;padding:.15rem .7rem;font-size:.86em}
 .voix-box label{font-size:.82em;color:var(--muted)}
 .voix-box input[type=range]{width:96px}
-.voix-box select{min-height:34px;border:2px solid var(--navy);border-radius:10px;background:var(--paper);
-                 padding:.1rem .4rem;font-size:.84em;max-width:150px}
+
+/* Sous ~900 px, les cinq onglets et le bloc voix ne tiennent plus sur une
+   seule ligne : on passe à deux rangées plutôt que de laisser un onglet
+   coupé derrière un défilement invisible. */
+@media (max-width:900px){
+  .temps{flex-wrap:wrap}
+}
 
 /* ---------------- scène ---------------- */
 main{padding:.85rem;overflow:auto}

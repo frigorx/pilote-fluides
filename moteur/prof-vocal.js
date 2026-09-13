@@ -34,14 +34,19 @@
     : path.indexOf("nomenclature-interactive") >= 0 ? 1450
       : 620;
   var selectors = {
-    listen: ["#listen", "#listen-button", "#speak", "#play-button"],
-    next: ["#next", "#next-button"],
-    previous: ["#prev", "#previous", "#prev-button", "#previous-button"],
-    start: ["#start", "#start-course", "#start-button"],
-    exit: ["#exit-course", "#exit-button", "#home-button", "#rail-home", "#exit-dossier"],
-    stop: ["#stop-voice"],
-    scope: [".slide.active", "#activity-zone", "#zone", "#lesson-zone", "#interactive-zone", "#screen-content"],
-    quizNext: ["#quiz-next", ".quiz-next", "#nextGame", ".next-game"]
+    /* AéroRézo (stations/_commun/moteur.js) : stationVoice/previousButton/nextButton/
+       exitStation/backNetwork/startButton. HydroMétro a trois gabarits de stations :
+       formative-engine.js (formationListen/formationStop/nextBtn/prevBtn/actionPanel),
+       p-formation.js (pListen/pStop/pNext/pPrev/activityView), et la station boucle,
+       seule sur son propre moteur (listenButton/stopVoiceButton/nextLesson/prevLesson). */
+    listen: ["#listen", "#listen-button", "#speak", "#play-button", "#stationVoice", "#formationListen", "#pListen", "#listenButton"],
+    next: ["#next", "#next-button", "#nextButton", "#nextBtn", "#pNext", "#nextLesson"],
+    previous: ["#prev", "#previous", "#prev-button", "#previous-button", "#previousButton", "#prevBtn", "#pPrev", "#prevLesson"],
+    start: ["#start", "#start-course", "#start-button", "#startButton"],
+    exit: ["#exit-course", "#exit-button", "#home-button", "#rail-home", "#exit-dossier", "#exitStation", "#backNetwork"],
+    stop: ["#stop-voice", "#formationStop", "#pStop", "#stopVoiceButton"],
+    scope: [".slide.active", "#activity-zone", "#zone", "#lesson-zone", "#interactive-zone", "#screen-content", "#activity", "#actionPanel", "#activityView", "#quizView"],
+    quizNext: ["#quiz-next", ".quiz-next", "#nextGame", ".next-game", "#nextQuiz", "#nextLocal"]
   };
 
   function visible(element) {
@@ -188,7 +193,10 @@
   }
 
   function stageSignature() {
-    var candidates = ["#lesson-title", "#title", "#screen-title", "#scene-title", ".slide.active h2", "#stepCount", "#step-count", "#screen-count"];
+    /* #stepStatus : AéroRézo (« Comprendre · 2/4 · station 1/1 ») — sans lui, la signature ne
+       bougeait pas au changement de temps et le mode déclarait « Parcours terminé » dès le
+       deuxième écran (constaté le 12/09, lot F). */
+    var candidates = ["#lesson-title", "#title", "#screen-title", "#scene-title", ".slide.active h2", "#stepCount", "#step-count", "#screen-count", "#stepStatus"];
     return candidates.map(function (selector) {
       var node = document.querySelector(selector);
       return visible(node) ? node.textContent.trim() : "";

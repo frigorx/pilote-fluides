@@ -3,7 +3,7 @@
    ---------------------------------------------------------------------
    CONTRAT : feuille autonome, à inclure APRÈS la feuille de style de la
    page. Elle ne s'applique qu'à l'impression et à l'export PDF :
-     <link rel="stylesheet" href=".../moteur/impression.css" media="print">
+     <link rel="stylesheet" href=".../shared/impression.css" media="print">
    (le `media="print"` évite même de la télécharger à l'écran)
 
    PRINCIPE : le TRAIT porte le sens, pas la SURFACE.

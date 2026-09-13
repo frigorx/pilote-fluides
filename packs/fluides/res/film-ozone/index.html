@@ -40,7 +40,10 @@ main { height: 100%; }
    sans texte écrit laisse dehors qui n'entend pas, qui lit lentement, ou qui
    travaille dans un atelier bruyant. */
 .transcription {
-  position: fixed; top: 12px; left: 12px; z-index: 97; max-width: min(420px, 88vw);
+  /* Sous la bande du haut : le logo inerWeb (gauche) et le titre du film
+     (droite) occupent tous les deux le haut de l'image, à toutes largeurs —
+     la transcription se pose donc dessous, jamais dessus (mesuré à 800 px). */
+  position: fixed; top: 100px; left: 12px; z-index: 97; max-width: min(420px, 88vw);
   background: #FFFDF8; border: 2px solid #1B3A63; border-radius: 12px;
   font: 15px/1.45 Calibri, 'Segoe UI', sans-serif; color: #1B3A63;
   box-shadow: 0 4px 14px rgba(27,58,99,.18);
@@ -53,6 +56,8 @@ main { height: 100%; }
 .transcription li { margin: 6px 0; }
 @media print { .transcription { position: static; max-width: none; } }
 </style>
+  <script src="../../../../moteur/plan-donnees.js"></script>
+  <script src="../../../../moteur/suivant.js" defer></script>
 </head>
 <body>
 <h1 class="titre-du-film">Couche d&#x27;ozone et ODP — Film narré de 45 secondes</h1>
@@ -175,6 +180,16 @@ a:hover { color: #ff6b35; }
       metBouton("▶ Reprendre");
     }
   });
+  /* Le ▶ propre à la barre de transport du moteur (celle du composant, pas la
+     nôtre) doit lui aussi lancer la voix : on relaie son clic vers le bouton
+     « Écouter le film » existant, qui sait déjà tout faire. Pas de boucle à
+     craindre dans l'autre sens : pousse() ne clique jamais ce bouton, il ne
+     fait que pousser le temps à la scène. */
+  document.addEventListener("click", function (e) {
+    var natif = e.target && e.target.closest && e.target.closest('button[title^="Play/pause"]');
+    if (!natif) return;
+    document.getElementById("voix-bouton").click();
+  });
   document.addEventListener("input", function (e) {
     if (!e.target || e.target.id !== "voix-debit") return;
     var v = parseFloat(e.target.value);
@@ -186,6 +201,16 @@ a:hover { color: #ff6b35; }
     if (scene) pousse(duree_film, false);
     metBouton("▶ Réécouter");
   });
+
+  /* Le composant démarre lui-même en lecture. On l'arrête dès que le cadre
+     existe, avant tout clic : sans ce geste, l'image bougerait seule au
+     chargement pendant que la voix, elle, attend « Écouter le film ».
+     Borné à 6 s, comme les autres sondages de ce fichier. */
+  var essaisDepart = 0;
+  var horlogeDepart = setInterval(function () {
+    if (trouveScene()) { pousse(0, false); clearInterval(horlogeDepart); }
+    else if (++essaisDepart > 120) clearInterval(horlogeDepart);
+  }, 50);
 })();
 </script>
 </helmet>

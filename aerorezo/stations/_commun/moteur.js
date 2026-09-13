@@ -58,7 +58,6 @@
       <input type="range" id="voiceRate" min="0.6" max="1.4" step="0.05" value="0.95">
       <output id="voiceRateOut" for="voiceRate">0,95×</output>
     </label>
-    <select id="voicePick" class="voice-pick" aria-label="Voix de lecture" hidden></select>
     <button id="voiceButton" class="small-button" type="button" aria-pressed="false">▶ Écouter</button>
   </header>
 

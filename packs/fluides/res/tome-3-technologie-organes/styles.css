@@ -72,7 +72,7 @@ h1,h2,h3,h4{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--navy
 .app-shell{height:calc(100dvh - 62px);min-height:0}
 .home-view,.dossier-view{width:min(1260px,calc(100% - 24px));height:100%;margin:auto}
 
-.home-view{display:grid;grid-template-rows:auto auto auto minmax(0,1fr) auto;gap:9px;padding:12px 0 8px}
+.home-view{display:grid;grid-template-rows:auto auto auto minmax(0,1fr) auto;gap:9px;padding:12px 0 60px}
 .home-intro{display:grid;grid-template-columns:minmax(0,1fr) 170px;align-items:center;gap:18px}
 .home-intro h1{max-width:940px;margin:0;font-size:clamp(27px,4vw,49px);line-height:1.02;letter-spacing:-.025em}
 .home-intro h1 span{color:var(--orange-text)}

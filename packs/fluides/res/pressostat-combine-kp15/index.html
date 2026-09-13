@@ -791,6 +791,8 @@ body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mod
   <script src="../../../../moteur/prononciation.js?v=20260902-1"></script>
   <script src="../../../../moteur/voix.js?v=20260902-1"></script>
   <script src="../../../../moteur/reglage-voix.js?v=20260902-1"></script>
+  <script src="../../../../moteur/plan-donnees.js"></script>
+  <script src="../../../../moteur/suivant.js" defer></script>
 </head>
 <body>
   <div class="course-app" id="courseApp">
@@ -1073,6 +1075,9 @@ body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mod
   let screen = 0;
   let speechRun = 0;
   let speaking = false;
+  /* Vrai entre « Pause » et « Reprendre » : la synthèse native expose `paused`, mais un
+     MP3 du fonds commun (moteur/voix.js) ne le fait pas — on tient le drapeau ici. */
+  let pauseVoix = false;
   /* Un élève qui ne lit pas ne doit pas avoir à retrouver le bouton à chaque écran :
      « Écouter » arme la lecture suivie, « Stop » la désarme. */
   let lectureSuivie = false;
@@ -1094,6 +1099,7 @@ body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mod
   function stopSpeech() {
     speechRun += 1;
     speaking = false;
+    pauseVoix = false;
     if ("speechSynthesis" in window) window.speechSynthesis.cancel();
     ui.speak.setAttribute("aria-pressed", "false");
     ui.speak.innerHTML = "▶ <span>Écouter</span>";
@@ -1193,47 +1199,74 @@ body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mod
     }));
     /* Le moteur met TOUJOURS son horloge en pause quand on le déplace : c'est voulu, il
        est prévu pour un hôte qui lui pousse le temps image par image (le film narré du
-       site asservit ainsi son MP3). Nous, on veut que ça reparte tout seul — sinon
-       l'élève voit une image fixe, ce qui était exactement le défaut de la première
-       livraison. On relance donc la lecture par le bouton de la barre, une fois que
-       React a posé l'état de pause. Le bouton reste visible : qui veut arrêter, arrête. */
-    jetonRelance += 1;
-    surveillerLecture(jetonRelance, 0, null);
+       site asservit ainsi son MP3). On ne relance donc plus tout seul ici : l'image reste
+       figée jusqu'au clic qui lance la voix (cf. demarrerAnimation, appelée par speak()).
+       On raccorde une seule fois le ▶ propre au moteur, pour qu'un clic direct sur ce
+       bouton de transport lance aussi la voix — comme le clic sur « Écouter ». */
+    accrocherBoutonMoteur();
   }
 
-  /* Un jeton par placement : si l'élève change d'écran pendant la surveillance, celle
-     de l'écran précédent s'arrête au lieu de mettre le nouveau en pause. */
-  let jetonRelance = 0;
+  /* Le ▶ de la barre de transport du moteur doit aussi lancer la voix : on le raccorde,
+     une seule fois, au bouton « Écouter » déjà existant. `pilotageInterne` distingue ce
+     clic humain des clics que ce module envoie lui-même à ce bouton pour caler l'image
+     sur l'état de la voix (cf. demarrerAnimation / pauserAnimation ci-dessous). */
+  let boutonMoteurAccroche = false;
+  let pilotageInterne = false;
 
-  /* L'HORLOGE DU MOTEUR, PAS L'IMAGE.
-     Le moteur écrit sa position de lecture à chaque avance (clé `animstage-v3:t` du
-     stockage local de son cadre). C'est le seul signal fiable pour savoir s'il tourne :
-     comparer deux images ne marche pas, deux instants voisins d'une même scène peuvent
-     être identiques — et on mettait alors en pause un film qui tournait très bien.
+  function boutonMoteur() {
+    const doc = ui.animCadre && ui.animCadre.contentDocument;
+    return (doc && doc.querySelector('button[title^="Play/pause"]')) || null;
+  }
+
+  function accrocherBoutonMoteur() {
+    if (boutonMoteurAccroche) return;
+    const bouton = boutonMoteur();
+    if (!bouton) return;
+    boutonMoteurAccroche = true;
+    bouton.addEventListener("click", () => { if (!pilotageInterne) ui.speak.click(); });
+  }
+
+  /* L'ÉTAT DU MOTEUR SE LIT SUR SON BOUTON DE TRANSPORT.
+     Le moteur affiche un triangle (« lire ») quand il est en pause et deux barres
+     (« pause ») quand il joue : c'est le seul témoin fiable. Son horloge en stockage
+     local (`animstage-v3:t`) ne bouge pas pendant la lecture, et scruter le temps
+     affiché échoue dès que l'onglet passe en arrière-plan (le navigateur y gèle les
+     images). Une scrutation qui croyait le moteur figé cliquait huit fois de suite sur
+     lecture/pause — et laissait l'image arrêtée (défaut trouvé le 12/09 au soir).
 
      POURQUOI IL FAUT RELANCER. Le moteur met TOUJOURS son horloge en pause quand on le
      déplace : c'est voulu, il est prévu pour un hôte qui lui pousse le temps image par
-     image (le film narré du site asservit ainsi son MP3). Nous, on veut que ça reparte
-     tout seul — sinon l'élève voit une image fixe, ce qui était exactement le défaut de
-     la première livraison. Le bouton de la barre reste visible : qui veut arrêter, arrête. */
-  const CLE_HORLOGE = "animstage-v3:t";
-
-  function horlogeAnim() {
-    try {
-      const v = ui.animCadre.contentWindow.localStorage.getItem(CLE_HORLOGE);
-      return v === null ? null : Number(v);
-    } catch (erreur) { return null; }
+     image (le film narré du site asservit ainsi son MP3). Nous, on veut que l'image
+     reparte AVEC la voix — sinon l'élève voit une image fixe. Le bouton de la barre
+     reste visible : qui veut arrêter, arrête. */
+  function moteurEnLecture() {
+    const bouton = boutonMoteur();
+    return !!(bouton && bouton.querySelector("rect"));
   }
 
-  function surveillerLecture(jeton, tours, precedente) {
-    if (jeton !== jetonRelance || tours > 8) return;
-    const doc = ui.animCadre && ui.animCadre.contentDocument;
-    const t = horlogeAnim();
-    if (t !== null && precedente !== null && Math.abs(t - precedente) < 0.01) {
-      const bouton = doc && doc.querySelector('button[title^="Play/pause"]');
-      if (bouton) bouton.click();
+  function cliquerBoutonMoteur() {
+    const bouton = boutonMoteur();
+    if (!bouton) return false;
+    pilotageInterne = true;
+    bouton.click();
+    pilotageInterne = false;
+    return true;
+  }
+
+  /* Démarrer et mettre en pause l'image EN MÊME TEMPS que la voix : un seul clic, et
+     seulement si l'état du moteur n'est pas déjà le bon. Au démarrage, le moteur peut
+     ne pas avoir fini de monter (placerAnimation attend jusqu'à deux secondes) : on
+     repasse alors, au même rythme, tant que son bouton n'existe pas. */
+  function demarrerAnimation(essais) {
+    if (!boutonMoteur()) {
+      if ((essais || 0) < 20) setTimeout(() => demarrerAnimation((essais || 0) + 1), 100);
+      return;
     }
-    setTimeout(() => surveillerLecture(jeton, tours + 1, t), 220);
+    if (!moteurEnLecture()) cliquerBoutonMoteur();
+  }
+
+  function pauserAnimation() {
+    if (moteurEnLecture()) cliquerBoutonMoteur();
   }
 
   function renderLessonVisual(item) {
@@ -1424,10 +1457,12 @@ body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mod
       ui.speak.setAttribute("aria-pressed", "true");
       ui.speak.innerHTML = "❚❚ <span>Pause</span>";
       ui.stop.disabled = false;
+      demarrerAnimation();
     };
     const finish = () => {
       if (run !== speechRun) return;
       speaking = false;
+      pauseVoix = false;
       ui.speak.setAttribute("aria-pressed", "false");
       ui.speak.innerHTML = "▶ <span>Écouter</span>";
       ui.stop.disabled = true;
@@ -1440,17 +1475,28 @@ body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mod
   ui.back.addEventListener("click", () => move(-1));
   ui.next.addEventListener("click", () => move(1));
   ui.speak.addEventListener("click", () => {
-    if (speaking && window.speechSynthesis.speaking) {
-      window.speechSynthesis.pause(); speaking = false;
+    /* Un MP3 du fonds commun joue par moteur/voix.js : la synthèse native ne dit alors
+       ni `speaking` ni `paused`. On lit l'état du moteur commun (PiloteVoix.etat().actif)
+       et on tient le drapeau pauseVoix nous-mêmes. */
+    const mp3Actif = !!(window.PiloteVoix && window.PiloteVoix.etat().actif);
+    if (speaking && (window.speechSynthesis.speaking || mp3Actif)) {
+      window.speechSynthesis.pause(); speaking = false; pauseVoix = true;
       ui.speak.setAttribute("aria-pressed", "false");
       ui.speak.innerHTML = "▶ <span>Reprendre</span>";
-    } else if (window.speechSynthesis?.paused) {
-      window.speechSynthesis.resume(); speaking = true;
+      pauserAnimation();
+    } else if (window.speechSynthesis?.paused || pauseVoix) {
+      window.speechSynthesis.resume(); speaking = true; pauseVoix = false;
       ui.speak.setAttribute("aria-pressed", "true");
       ui.speak.innerHTML = "❚❚ <span>Pause</span>";
-    } else { lectureSuivie = true; speak(); }
+      demarrerAnimation();
+    } else {
+      lectureSuivie = true;
+      const item = COURSE.lessons[screen];
+      if (item && item.anim) placerAnimation(item.anim.scene, item.anim.decalage, 0);
+      speak();
+    }
   });
-  ui.stop.addEventListener("click", () => { lectureSuivie = false; stopSpeech(); });
+  ui.stop.addEventListener("click", () => { lectureSuivie = false; stopSpeech(); pauserAnimation(); });
   ui.reading.addEventListener("click", () => {
     const active = document.body.classList.toggle("reading-mode");
     ui.reading.setAttribute("aria-pressed", String(active));

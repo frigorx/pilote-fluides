@@ -3,6 +3,17 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 12/09 — AUDIT D'ÉTAT DES LIEUX DU SITE (« faire le touriste ») : écrit, NON commité, rien modifié au site
+>
+> Dossier `docs/audit-site-2026-09/` : `AUDIT-ETAT-DES-LIEUX.md` (10 constats, 10 chantiers ordonnés
+> en § 8), annexe A (corpus des voix), annexe B (243 stations), scripts dans `outils/`. Le fait le plus
+> utile : **AéroRézo change de voix au milieu d'une station** — `aerorezo/app.js` (l. 134) oralise le
+> texte AVANT le calcul de clé, 18 narrations sur 120 manquent leur MP3 et tombent sur la voix du
+> navigateur (14 stations sur 30). Correction = une ligne, dans l'atelier `C:\git\aerorezo` puis relivrée.
+> Le reste : quatre commandes vocales, lecteurs React désynchronisés de la voix, mode prof sur 48 pages
+> sur 304, 32 feuilles de style pour 32 modules, ligne Principes d'HydroMétro muette, 49 modules sans
+> lien vers une station suivante. Suite : F. Henninot choisit dans l'ordre du § 8.
+
 > ## 05/09 (soir) — L'ÉCLATEMENT EN RÉSEAUX, PHASE 1 : une seule source, FAITE, POUSSÉE et SERVIE (`00cd12e1`, `811a4b53`)
 >
 > Chantier suivant de la porte d'entrée, ouvert le soir même. Plan, carte du code et brief dans

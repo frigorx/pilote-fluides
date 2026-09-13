@@ -9,7 +9,7 @@
 const Station = (() => {
   'use strict';
 
-  const S = { contenu: null, temps: 0, niveau: 'CAP', vitesse: .95, voix: null, tour: 0,
+  const S = { contenu: null, temps: 0, niveau: 'CAP', vitesse: .95, tour: 0,
               genre: 'homme', mp3: true, faits: new Set(), nettoyages: [] };
   const $ = s => document.querySelector(s);
   const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x !== undefined) n.textContent = x; return n; };
@@ -29,8 +29,8 @@ const Station = (() => {
      tente de le jouer ; son erreur nous renseigne, et l'élève ne voit rien
      passer. */
 
-  const GENRES = { homme: 'Henri', femme: 'Denise' };
   let lecteur = null;                   /* l'<audio> en cours, s'il y en a un */
+  const CLE_VITESSE = 'pilote-voix-vitesse';   /* même clé que moteur/reglage-voix.js, pour tout le site */
 
   function voixFrancaises() {
     if (!('speechSynthesis' in window)) return [];
@@ -42,30 +42,8 @@ const Station = (() => {
   function meilleureVoix() {
     const fr = voixFrancaises();
     if (!fr.length) return null;
-    if (S.voix) { const v = fr.find(v => v.name === S.voix); if (v) return v; }
     const neuronale = /natural|neural|online|wavenet|studio/i;
     return fr.find(v => neuronale.test(v.name)) || fr[0];
-  }
-
-  function remplirVoix() {
-    const sel = $('#voixPick'); if (!sel) return;
-    if (S.mp3) {
-      sel.classList.remove('hidden');
-      sel.innerHTML = '';
-      Object.entries(GENRES).forEach(([g, nom]) => {
-        const o = el('option', null, nom); o.value = g; sel.appendChild(o);
-      });
-      sel.value = S.genre;
-      return;
-    }
-    const liste = voixFrancaises();
-    if (liste.length < 2) { sel.classList.add('hidden'); return; }
-    sel.classList.remove('hidden');
-    sel.innerHTML = '';
-    const neuronale = /natural|neural|online|wavenet|studio/i;
-    [...liste].sort((a, b) => (neuronale.test(b.name) ? 1 : 0) - (neuronale.test(a.name) ? 1 : 0))
-      .forEach(v => { const o = el('option', null, v.name.replace(/^Microsoft\s+/, '')); o.value = v.name; sel.appendChild(o); });
-    sel.value = (meilleureVoix() || liste[0]).name;
   }
 
   function couperVoix() {
@@ -107,10 +85,10 @@ const Station = (() => {
     a.addEventListener('ended', () => {
       if (tour === S.tour) { lecteur = null; b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); } });
     a.addEventListener('error', () => {
-      /* pas de fichier ici : on ne réessaiera plus de la séance, le
-         sélecteur repasse aux voix du poste, et on dit quand même. */
+      /* pas de fichier ici : on ne réessaiera plus de la séance — repli sur
+         la voix du poste, et on dit quand même. */
       if (tour !== S.tour) return;
-      lecteur = null; S.mp3 = false; remplirVoix();
+      lecteur = null; S.mp3 = false;
       direAuNavigateur((t.narration || '').trim(), tour, b);
     });
     lecteur = a;
@@ -118,13 +96,16 @@ const Station = (() => {
   }
 
   function direAuNavigateur(texte, tour, b) {
-    if (!('speechSynthesis' in window)) { b.textContent = 'Voix indisponible'; b.disabled = true; return; }
+    /* Repli du repli : aucune voix française sur ce poste (ou pas de
+       synthèse du tout). On ne parle pas dans une langue au hasard —
+       jamais voices[0]. */
+    const v = meilleureVoix();
+    if (!v) { b.textContent = 'Voix indisponible'; b.disabled = true; return; }
     /* la table de prononciation partagée : ce chemin sert quand le MP3 manque ou
        ne se charge pas, et il livrait jusqu'ici le texte brut à la synthèse. */
     const dit = window.PILOTE_PRONONCIATION ? window.PILOTE_PRONONCIATION.oraliser(texte) : texte;
     const u = new SpeechSynthesisUtterance(dit);
-    u.lang = 'fr-FR'; u.rate = S.vitesse; u.pitch = 1;
-    const v = meilleureVoix(); if (v) u.voice = v;
+    u.lang = 'fr-FR'; u.rate = S.vitesse; u.pitch = 1; u.voice = v;
     u.onstart = () => { if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); } };
     u.onend = u.onerror = () => { if (tour === S.tour) { b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); } };
     speechSynthesis.speak(u);
@@ -294,6 +275,12 @@ const Station = (() => {
   function demarrer(contenu) {
     S.contenu = contenu;
     S.niveau = contenu.niveaux[0].id;
+    /* Une voix par station, fixée par hachage — plus de choix à l'écran.
+       genre est calculé une fois dans reseau.js (même règle que le fonds
+       commun du site) : une station refabriquée garde sa voix. */
+    const fiche = (typeof RESEAU !== 'undefined' && RESEAU.stations)
+      ? RESEAU.stations.find(s => s.id === contenu.id) : null;
+    if (fiche && fiche.genre) S.genre = fiche.genre;
 
     $('#kicker').textContent = contenu.kicker;
     $('#titre').textContent = contenu.titre;
@@ -313,23 +300,20 @@ const Station = (() => {
 
     $('#btVoix').addEventListener('click', direNarration);
     const rg = $('#vitesse'), out = $('#vitesseOut');
+    /* Même clé de session que moteur/reglage-voix.js : le réglage vaut pour
+       toute la visite, pas station par station. */
+    try {
+      const mem = +sessionStorage.getItem(CLE_VITESSE);
+      if (mem >= .6 && mem <= 1.4) { S.vitesse = mem; rg.value = mem; out.textContent = mem.toFixed(2).replace('.', ',') + '×'; }
+    } catch (e) {}
     rg.addEventListener('input', () => {
       S.vitesse = +rg.value; out.textContent = S.vitesse.toFixed(2).replace('.', ',') + '×';
-      /* Le MP3 change d'allure sans s'interrompre : l'élève entend le
-         réglage agir, ce qui vaut mieux qu'une coupure. La voix du poste,
-         elle, ne sait pas changer en cours de phrase — là il faut couper,
-         sinon le réglage ne servirait qu'au paragraphe suivant. */
-      if (lecteur) lecteur.playbackRate = S.vitesse;
-      else couperVoix();
-    });
-    $('#voixPick').addEventListener('change', e => {
-      if (S.mp3) S.genre = e.target.value; else S.voix = e.target.value;
+      /* Le moteur de synthèse ignore un changement de débit en pleine phrase :
+         laisser croire le contraire serait un faux réglage. On coupe, comme
+         sur le reste du site (moteur/reglage-voix.js). */
       couperVoix();
+      try { sessionStorage.setItem(CLE_VITESSE, String(S.vitesse)); } catch (e) {}
     });
-    if ('speechSynthesis' in window) {
-      remplirVoix();
-      speechSynthesis.onvoiceschanged = remplirVoix;
-    } else { $('#btVoix').disabled = true; $('#btVoix').textContent = 'Voix indisponible'; }
 
     $('#precedent').addEventListener('click', () => {
       if (S.temps > 0) return allerAu(S.temps - 1);

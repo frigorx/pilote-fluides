@@ -108,11 +108,70 @@
     const next = document.createElement("button"); next.id = "pNext"; next.type = "button"; next.className = "primary"; next.textContent = "Continuer";
     footerNav.insertBefore(prev, startQuiz); footerNav.insertBefore(count, startQuiz); footerNav.insertBefore(next, startQuiz);
 
+    /* Repli local du réglage de débit : même plage, même pas, même défaut que
+       moteur/reglage-voix.js (injecté seulement à la livraison), pour que l'atelier
+       reste jouable seul. Sans stockage navigateur (l'atelier n'en a aucun) : le
+       réglage vaut pour l'écran, il repart au défaut à chaque rechargement. */
+    const reglageVoixLocal = (function () {
+      const PAS = [0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4];
+      const DEFAUT = 0.95;
+      let vitesse = DEFAUT;
+      function libelle(v) { return v.toFixed(2).replace(/0+$/, "").replace(/\.$/, "").replace(".", ",") + "×"; }
+      function habiller() {
+        if (document.getElementById("style-reglage-voix")) return;
+        const style = document.createElement("style");
+        style.id = "style-reglage-voix";
+        style.textContent = ".reglage-voix{display:inline-flex;align-items:center;gap:.35rem;border:2px solid currentColor;"
+          + "border-radius:999px;padding:.15rem .5rem;font:inherit;line-height:1}"
+          + ".reglage-voix button{min-width:2rem;min-height:2rem;border:0;background:transparent;color:inherit;"
+          + "font:inherit;font-size:1.15em;font-weight:700;cursor:pointer;border-radius:50%}"
+          + ".reglage-voix button:disabled{opacity:.35;cursor:default}"
+          + ".reglage-voix output{min-width:3.2em;text-align:center;font-variant-numeric:tabular-nums;font-weight:600}";
+        document.head.appendChild(style);
+      }
+      return {
+        vitesse: () => vitesse,
+        monter(conteneur) {
+          if (!conteneur || conteneur.querySelector("[data-voix-reglage]")) return;
+          habiller();
+          const bloc = document.createElement("div");
+          bloc.className = "reglage-voix";
+          bloc.setAttribute("data-voix-reglage", "");
+          bloc.setAttribute("role", "group");
+          bloc.setAttribute("aria-label", "Débit de la voix");
+          bloc.innerHTML = '<button type="button" data-voix-moins aria-label="Parler moins vite">−</button>'
+            + '<output aria-live="off">' + libelle(vitesse) + "</output>"
+            + '<button type="button" data-voix-plus aria-label="Parler plus vite">+</button>';
+          const sortie = bloc.querySelector("output");
+          const moins = bloc.querySelector("[data-voix-moins]");
+          const plus = bloc.querySelector("[data-voix-plus]");
+          function rafraichir() {
+            sortie.textContent = libelle(vitesse);
+            moins.disabled = vitesse <= PAS[0];
+            plus.disabled = vitesse >= PAS[PAS.length - 1];
+          }
+          function deplacer(sens) {
+            let i = PAS.indexOf(vitesse); if (i === -1) i = PAS.indexOf(DEFAUT);
+            const cible = Math.min(PAS.length - 1, Math.max(0, i + sens));
+            if (PAS[cible] === vitesse) return;
+            vitesse = PAS[cible];
+            rafraichir();
+            stopSpeech();
+          }
+          moins.addEventListener("click", () => deplacer(-1));
+          plus.addEventListener("click", () => deplacer(1));
+          rafraichir();
+          conteneur.appendChild(bloc);
+        }
+      };
+    })();
+
     const voice = document.createElement("div");
     voice.className = "p-voice-actions"; voice.setAttribute("aria-label", "Lecture vocale facultative");
     voice.innerHTML = `<button id="pListen" type="button" aria-label="Écouter l’étape">▶ <span>Écouter</span></button><button id="pStop" type="button" aria-label="Arrêter la lecture" disabled>■ <span>Arrêter</span></button><span id="pVoiceStatus" class="p-voice-status" aria-live="polite">Voix coupée.</span>`;
     $(".topbar").append(voice);
     if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.monter(voice);
+    else reglageVoixLocal.monter(voice);
 
     const total = lessons.length + 2;
     let current = 0;
@@ -162,7 +221,7 @@
       if (!dit) { $("#pVoiceStatus").textContent = "Cette étape n’a pas encore de narration. Tout reste écrit."; return; }
       const utterance = new SpeechSynthesisUtterance(dit);
       if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.appliquer(utterance);
-      else { utterance.lang = "fr-FR"; utterance.rate = .95; utterance.pitch = 1; }
+      else { utterance.lang = "fr-FR"; utterance.rate = reglageVoixLocal.vitesse(); utterance.pitch = 1; }
       utterance.onstart = () => { if (run !== speechRun) return; speaking = true; $("#pListen").innerHTML = "Ⅱ <span>Pause</span>"; $("#pStop").disabled = false; $("#pVoiceStatus").textContent = "Lecture en cours."; };
       utterance.onend = () => { if (run === speechRun) stopSpeech("Lecture terminée."); };
       utterance.onerror = (event) => { if (run === speechRun && !["canceled", "interrupted"].includes(event.error)) stopSpeech("Voix indisponible. Tout reste écrit."); };

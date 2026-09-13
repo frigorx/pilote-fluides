@@ -3,9 +3,16 @@
   const {levels,lines,stations,network}=window.AEROREZO;
   const scenes=window.AEROREZO_SCENES;
   const $=id=>document.getElementById(id);
-  /* `vitesse` : le débit de la voix, réglable par l'élève. Gardé en mémoire le temps de
-     la session seulement — le module ne stocke rien dans le navigateur, et la QA le vérifie. */
-  const state={level:"bac",route:"A",phase:0,current:null,visited:new Set(),phaseSeen:new Map(),speechRun:0,quiz:null,localCheck:null,vitesse:.95,voix:null};
+  /* `vitesse` : le débit de la voix, réglable par l'élève. Étape 3 du lot A : même clé de
+     session que le réglage commun (moteur/reglage-voix.js, constante CLE), pour que le
+     réglage soit le même d'un réseau à l'autre — seul stockage volontaire du module,
+     `tests/qa.mjs` le borne à cette clé précise. */
+  const CLE_VITESSE="pilote-voix-vitesse";
+  function lireVitesse(){
+    try{const v=Number(window.sessionStorage.getItem(CLE_VITESSE));if(v>=.6&&v<=1.4)return v;}catch(_){}
+    return .95;
+  }
+  const state={level:"bac",route:"A",phase:0,current:null,visited:new Set(),phaseSeen:new Map(),speechRun:0,quiz:null,localCheck:null,vitesse:lireVitesse()};
   const phaseKeys=["decouvrir","comprendre","manipuler","verifier"];
   const byLine=line=>stations.filter(s=>s.line===line);
   const routeStations=line=>network.routes[line].map(id=>stations.find(s=>s.id===id));
@@ -88,26 +95,15 @@
   function voixFrancaises(){
     return window.speechSynthesis.getVoices().filter(v=>v.lang.toLowerCase().startsWith("fr"));
   }
+  /* Sans voix française, on ne parle pas — règle du 01/09. Jamais de repli sur
+     voices[0] : ce serait une voix anglaise sur un poste qui n'a que ça. */
   function bestVoice(){
-    const choisie=state.voix&&voixFrancaises().find(v=>v.name===state.voix);
-    if(choisie) return choisie;
-    const fr=voixFrancaises(),voices=window.speechSynthesis.getVoices();
+    const fr=voixFrancaises();
+    if(!fr.length) return null;
     return fr.find(v=>/natural|neural|online/i.test(v.name))
       ||fr.find(v=>/google/i.test(v.name))
       ||fr.find(v=>v.lang.toLowerCase()==="fr-fr")
-      ||fr[0]||voices[0];
-  }
-  /* Quand la machine offre plusieurs voix françaises, l'élève choisit : aucune n'est
-     objectivement meilleure, et sur un poste sans voix neuronale l'écart entre elles est
-     le seul gain disponible. Le sélecteur reste caché s'il n'y a rien à choisir. */
-  function remplirVoix(){
-    const liste=voixFrancaises(),pick=$("voicePick");
-    if(!pick)return;
-    if(liste.length<2){pick.hidden=true;return;}
-    if(pick.options.length===liste.length)return;
-    const defaut=bestVoice();
-    pick.innerHTML=liste.map(v=>`<option value="${escapeText(v.name)}"${v.name===defaut?.name?" selected":""}>${escapeText(v.name.replace(/^Microsoft /,"").replace(/ - French \(France\)/,""))}</option>`).join("");
-    pick.hidden=false;
+      ||fr[0];
   }
 
   /* La voix EXPLIQUE, elle ne lit pas l'écran — 00-charte/VOIX-ET-NARRATION.md.
@@ -128,13 +124,15 @@
     if(window.speechSynthesis.speaking&&!window.speechSynthesis.paused){window.speechSynthesis.pause();button.textContent="▶ Reprendre";return;}
     if(window.speechSynthesis.paused){window.speechSynthesis.resume();button.textContent="Ⅱ Pause";return;}
     stopVoice();
-    /* la table de prononciation partagée avec le réseau principal : sans elle,
-       le navigateur épelle « HP », nomme les emoji et lit les symboles. */
+    /* Le texte part BRUT : c'est lui qui fixe la clé du MP3 dans moteur/voix.js (FNV-1a
+       du texte normalisé). L'oraliser ici changerait la clé et ferait manquer des MP3
+       déjà enregistrés — le repli navigateur oralise déjà lui-même (voix.js, fallbackToNative). */
+    const voix=bestVoice();
+    if(!voix){button.textContent="Voix indisponible";return;}
     const brut=voiceText();
-    const text=window.PILOTE_PRONONCIATION?window.PILOTE_PRONONCIATION.oraliser(brut):brut;
     const run=state.speechRun;
-    const utterance=new SpeechSynthesisUtterance(text);
-    utterance.lang="fr-FR";utterance.rate=state.vitesse;utterance.pitch=1;utterance.voice=bestVoice();
+    const utterance=new SpeechSynthesisUtterance(brut);
+    utterance.lang="fr-FR";utterance.rate=state.vitesse;if(window.PILOTE_VOIX_REGLAGE)utterance.rate=window.PILOTE_VOIX_REGLAGE.vitesse();utterance.pitch=1;utterance.voice=voix;
     utterance.onstart=()=>{if(run===state.speechRun){button.textContent="Ⅱ Pause";button.setAttribute("aria-pressed","true");}};
     utterance.onend=utterance.onerror=()=>{if(run===state.speechRun){button.textContent="▶ Écouter";button.setAttribute("aria-pressed","false");}};
     window.speechSynthesis.speak(utterance);
@@ -340,15 +338,23 @@
   /* Changer le débit en pleine phrase n'a aucun effet : le moteur de synthèse ne relit pas
      ce qu'il est en train de prononcer. On arrête donc, et l'élève relance au nouveau débit —
      sinon le curseur ment sur ce qu'il fait. */
-  if($("voiceRate")){
+  /* Le réglage commun (moteur/reglage-voix.js) n'existe qu'une fois le moteur injecté à la
+     livraison : sur le site, il remplace le curseur. À l'atelier, où il est toujours absent,
+     le curseur garde la main, aligné sur le commun (plage, pas, défaut, clé de session). */
+  if(window.PILOTE_VOIX_REGLAGE&&$("voiceRate")){
+    $("voiceRate").closest(".voice-rate").hidden=true;
+    const bloc=window.PILOTE_VOIX_REGLAGE.monter($("voiceButton").parentNode);
+    if(bloc)$("voiceButton").before(bloc);
+  }else if($("voiceRate")){
+    $("voiceRate").value=state.vitesse;
+    const out=$("voiceRateOut");if(out)out.textContent=state.vitesse.toFixed(2).replace(".",",")+"×";
     $("voiceRate").addEventListener("input",()=>{
       state.vitesse=+$("voiceRate").value;
+      try{window.sessionStorage.setItem(CLE_VITESSE,String(state.vitesse));}catch(_){}
       const out=$("voiceRateOut");if(out)out.textContent=state.vitesse.toFixed(2).replace(".",",")+"×";
     });
     $("voiceRate").addEventListener("change",()=>{if(window.speechSynthesis?.speaking)stopVoice();});
   }
-  if($("voicePick"))$("voicePick").addEventListener("change",()=>{state.voix=$("voicePick").value;if(window.speechSynthesis?.speaking)stopVoice();});
-  if("speechSynthesis" in window){remplirVoix();window.speechSynthesis.onvoiceschanged=remplirVoix;}
   document.addEventListener("visibilitychange",()=>{if(document.hidden)stopVoice();});window.addEventListener("beforeunload",stopVoice);
   document.addEventListener("keydown",e=>{
     if(!state.current)return;if(e.key==="Escape"){closeStation();return;}if(["INPUT","BUTTON"].includes(document.activeElement.tagName))return;

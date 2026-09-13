@@ -10,4 +10,4 @@ prévenir.
 Régime identique à `hydrometro/`, `aerorezo/` et `legislation/` : hors
 `PAGES` de `build/version.mjs`, hors sitemap, déplaçable d'un bloc.
 
-Livré le 2026-08-30.
+Livré le 2026-09-12.

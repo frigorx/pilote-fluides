@@ -255,14 +255,15 @@ h1, h2, h3 { font-family: "Trebuchet MS", sans-serif; }
 
 @media (max-width: 680px) {
   .screen { min-height: 500px; }
-  .map-screen { grid-template-rows: 44px auto auto minmax(0, 1fr) 42px; }
+  .map-screen { grid-template-rows: auto auto auto minmax(0, 1fr) 42px; }
   .station-screen { grid-template-rows: 44px 35px minmax(0, 1fr) 45px; }
   .diagnostic-screen { grid-template-rows: 44px 62px minmax(0, 1fr) 45px; }
-  .topbar { padding: 3px 6px; }
+  .topbar { padding: 3px 6px; flex-wrap: wrap; }
   .brand-mark { width: 33px; height: 33px; border-width: 2px; font-size: 18px; }
   .brand strong { font-size: 14px; }
   .brand small { font-size: 8px; }
   .draft-badge { padding: 3px 5px; font-size: 7px; }
+  .topbar-tools { flex-wrap: wrap; justify-content: flex-end; }
   .nav-reseaux { gap: 7px; }
   .nav-reseaux a { font-size: 10px; }
   .icon-button { min-height: 34px; padding: 3px 7px; font-size: 11px; }

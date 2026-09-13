@@ -1745,6 +1745,8 @@
   VUES[ELECTROTECH.slug] = ELECTROTECH;
   VUES[CO2.slug] = CO2;
   VUES[CENTRALES.slug] = CENTRALES;
+  VUES[HUILE.slug] = HUILE; VUES[HUILE_CIRCUIT.slug] = HUILE_CIRCUIT;
+  VUES[REGULES.slug] = REGULES;
 
   /* Ce que la correspondance signifie, dit en clair dans la vue. */
   var CORR_TXT = {
@@ -1789,7 +1791,7 @@
   }
 
   function rendre() {
-    var m = (location.hash || "").match(/^#ligne=([a-z-]+)$/);
+    var m = (location.hash || "").match(/^#ligne=([a-z0-9-]+)$/);
     if (m && VUES[m[1]]) dessinerLigne(m[1]); else dessiner();
     compte();
   }
@@ -1850,8 +1852,9 @@
   try { replie = sessionStorage.getItem(CLE) === "oui"; } catch (e) {}
   /* Sur téléphone, le volet ouvert mangeait tout l'écran (« un peu chargé
      sur smartphone » — retour F. Henninot, 19/08) : il démarre replié, la
-     poignée « Infos ▸ » reste visible. Sur ordinateur, ouvert à l'arrivée. */
-  if (!replie && window.matchMedia && window.matchMedia("(max-width: 700px)").matches) replie = true;
+     poignée « Infos ▸ » reste visible. Depuis le 12/09, replié partout à
+     l'arrivée : sur ordinateur, à 1 280 px, il couvrait le début du titre. */
+  if (!replie) replie = true;
   poser(replie);
   requestAnimationFrame(function () { v.classList.add("pret"); });
 
