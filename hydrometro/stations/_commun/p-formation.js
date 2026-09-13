@@ -81,7 +81,7 @@
     const id = window.location.pathname.split("/").filter(Boolean).slice(-2, -1)[0];
     const lessons = lessonsFor(id);
     const style = document.createElement("link");
-    style.rel = "stylesheet"; style.href = "../_commun/p-formation.css?v=20260913-2"; document.head.append(style);
+    style.rel = "stylesheet"; style.href = "../_commun/p-formation.css?v=20260913-1350"; document.head.append(style);
     document.body.classList.add("p-course-active");
 
     const $ = (selector, root = document) => root.querySelector(selector);
@@ -222,7 +222,7 @@
       const utterance = new SpeechSynthesisUtterance(dit);
       if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.appliquer(utterance);
       else { utterance.lang = "fr-FR"; utterance.rate = reglageVoixLocal.vitesse(); utterance.pitch = 1; }
-      utterance.onstart = () => { if (run !== speechRun) return; speaking = true; $("#pListen").innerHTML = "Ⅱ <span>Pause</span>"; $("#pStop").disabled = false; $("#pVoiceStatus").textContent = "Lecture en cours."; };
+      utterance.onstart = () => { if (run !== speechRun) return; speaking = true; $("#pListen").innerHTML = "Ⅱ <span>Pause</span>"; $("#pStop").disabled = false; $("#pVoiceStatus").textContent = "Lecture de l’étape en cours."; };
       utterance.onend = () => { if (run === speechRun) stopSpeech("Lecture terminée."); };
       utterance.onerror = (event) => { if (run === speechRun && !["canceled", "interrupted"].includes(event.error)) stopSpeech("Voix indisponible. Tout reste écrit."); };
       window.speechSynthesis.speak(utterance);

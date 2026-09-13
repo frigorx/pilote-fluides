@@ -44,7 +44,7 @@
 
   const style = document.createElement("link");
   style.rel = "stylesheet";
-  style.href = "../_commun/formative-shared.css?v=20260823-global1";
+  style.href = "../_commun/formative-shared.css?v=20260913-1350";
   document.head.append(style);
 
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -269,7 +269,7 @@
     const depth = step[level.toLowerCase()] || step.tp || (config.levels[level] || config.levels.TP).objective;
     els.levelNote.innerHTML = `<strong>${level === "CAP" ? "CAP" : level === "TP" ? "Bac pro" : "BTS"} :</strong> ${escapeHtml(depth)}`;
     renderScene(step, initialSceneValue(step));
-    els.actionPanel.innerHTML = `<div class="explain-first"><p><strong>1.</strong> Lis l’explication et observe le schéma.</p><p><strong>2.</strong> Affiche ce qu’il faut comprendre.</p><p><strong>3.</strong> Manipule ensuite sans score.</p><button type="button" class="primary" id="explainStep">Voir l’explication</button></div>`;
+    els.actionPanel.innerHTML = `<div class="explain-first"><p><strong>1.</strong> Lisez l’explication et observez le schéma.</p><p><strong>2.</strong> Affichez ce qu’il faut comprendre.</p><p><strong>3.</strong> Manipulez ensuite sans score.</p><button type="button" class="primary" id="explainStep">Voir l’explication</button></div>`;
     $("#explainStep").addEventListener("click", () => showExplanation(step));
     els.prevBtn.disabled = current === 0;
     els.nextBtn.disabled = true;

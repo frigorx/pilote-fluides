@@ -14,7 +14,7 @@
   --bad-bg: #fbe7e4;
   --wait: #b06a00;
   --wait-bg: #fff4e0;
-  --line: rgba(27, 58, 99, .18);
+  --line: rgba(27, 58, 99, .16);
   font-family: Calibri, "Segoe UI", system-ui, Arial, sans-serif;
   color: var(--ink);
   background: var(--cream);

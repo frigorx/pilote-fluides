@@ -518,6 +518,7 @@
       ["La production transmet de l’énergie à l’eau.", "Le départ conduit l’eau vers l’émetteur.", "L’eau traverse l’émetteur.", "Une partie de l’énergie est transférée à la pièce.", "Le retour ramène l’eau vers la production."]
     ));
     if (type === "flow") {
+      flowProgress = 0;
       positionFlowMarker(flowProgress);
       $("#playFlow").addEventListener("click", toggleFlow);
       $("#replayFlow").addEventListener("click", () => {
@@ -599,18 +600,6 @@
     renderProgress();
     updateNavigation();
     requestAnimationFrame(() => els.stepTitle.focus({ preventScroll: true }));
-  }
-
-  function bestFrenchVoice() {
-    const voices = window.speechSynthesis.getVoices();
-    const score = (voice) => {
-      const language = (voice.lang || "").toLowerCase();
-      const name = (voice.name || "").toLowerCase();
-      let value = language === "fr-fr" ? 100 : language.startsWith("fr") ? 60 : 0;
-      if (/natural|naturel|neural|online|google|microsoft/.test(name)) value += 25;
-      return value;
-    };
-    return voices.sort((a, b) => score(b) - score(a))[0] || null;
   }
 
   /* Texte écrit pour l'oreille, jamais ramassé sur l'écran : avant le 01/09/2026

@@ -51,7 +51,7 @@ button.progress-step.is-current {
 button.progress-step.is-done {
   border-style: double;
   border-color: #1e7e54;
-  color: #155c3d;
+  color: #1e7e54;
 }
 
 .explain-first {
@@ -75,7 +75,7 @@ button.progress-step.is-done {
   border: 5px double #1e7e54;
   border-radius: 12px;
   background: #e3f5ec;
-  color: #155c3d;
+  color: #1e7e54;
   font-weight: 700;
 }
 
@@ -127,6 +127,6 @@ button.progress-step.is-done {
 /* Contrôles d'animation de flux (trajet de l'eau) — communs aux stations qui en déclarent. */
 .flux-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 8px; }
 .flux-controls button { min-height: 38px; padding: 5px 12px; border: 2px solid #1b3a63; border-radius: 10px; background: #fffdf8; color: #1b3a63; cursor: pointer; font-weight: 700; }
-.flux-controls button:hover { background: #eef3f8; }
+.flux-controls button:hover { background: #f3f7fb; }
 .flux-etat { flex: 1 1 240px; margin: 0; color: #10233c; font-size: 14px; }
 @media print { .flux-controls button { display: none; } }
