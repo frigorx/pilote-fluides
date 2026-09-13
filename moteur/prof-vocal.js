@@ -81,7 +81,7 @@
   var userPaused = false;
 
   var style = document.createElement("style");
-  style.textContent = "#pilote-prof-vocal{position:fixed;right:12px;bottom:12px;z-index:2147483000;width:min(430px,calc(100vw - 24px));font-family:Calibri,\"Segoe UI\",system-ui,Arial,sans-serif;color:#10233c}#pilote-prof-toggle{float:right;border:2px solid #1b3a63;border-radius:999px;background:#fffdf8;color:#1b3a63;padding:9px 14px;font:700 14px/1.2 Calibri,\"Segoe UI\",system-ui,Arial,sans-serif;box-shadow:0 2px 10px rgba(27,58,99,.16);cursor:pointer}#pilote-prof-toggle[aria-pressed=true]{background:#1b3a63;color:#fff}#pilote-prof-toggle:focus-visible,.pilote-prof-action:focus-visible{outline:3px solid rgba(255,107,53,.45);outline-offset:3px}.pilote-prof-card{clear:both;margin-top:52px;padding:14px 16px;border:2px solid #1b3a63;border-radius:16px;background:#fffdf8;box-shadow:0 12px 34px rgba(27,58,99,.18)}.pilote-prof-card[data-kind=error]{border-style:dashed;border-color:#c0392b}.pilote-prof-card[data-kind=success]{border-style:double;border-width:5px;border-color:#1e7e54}.pilote-prof-title{margin:0 0 5px;color:#1b3a63;font:700 18px/1.2 \"Trebuchet MS\",Calibri,Arial,sans-serif}.pilote-prof-transcript{margin:0;line-height:1.45;text-align:left}.pilote-prof-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pilote-prof-action{min-height:40px;border:2px solid #1b3a63;border-radius:999px;background:#fffdf8;color:#1b3a63;padding:7px 12px;font:700 13px/1.2 Calibri,\"Segoe UI\",system-ui,Arial,sans-serif;cursor:pointer}.pilote-prof-action.primary{background:#1b3a63;color:#fff}.pilote-prof-action.replay{border-color:#c9451a;color:#c9451a}@media(max-width:650px){#pilote-prof-vocal{left:4px;right:4px;bottom:4px;width:auto}#pilote-prof-toggle{padding:7px 10px;font-size:12px}.pilote-prof-card{margin-top:44px;padding:10px 12px}.pilote-prof-title{font-size:16px}.pilote-prof-transcript{font-size:13px}.pilote-prof-action{min-height:36px;font-size:12px}}@media print{#pilote-prof-vocal{display:none!important}}";
+  style.textContent = "#pilote-prof-vocal{position:fixed;right:12px;bottom:12px;z-index:2147483000;width:min(430px,calc(100vw - 24px));pointer-events:none;font-family:Calibri,\"Segoe UI\",system-ui,Arial,sans-serif;color:#10233c}#pilote-prof-toggle{pointer-events:auto;float:right;border:2px solid #1b3a63;border-radius:999px;background:#fffdf8;color:#1b3a63;padding:9px 14px;font:700 14px/1.2 Calibri,\"Segoe UI\",system-ui,Arial,sans-serif;box-shadow:0 2px 10px rgba(27,58,99,.16);cursor:pointer}#pilote-prof-toggle[aria-pressed=true]{background:#1b3a63;color:#fff}#pilote-prof-toggle:focus-visible,.pilote-prof-action:focus-visible{outline:3px solid rgba(255,107,53,.45);outline-offset:3px}.pilote-prof-card{pointer-events:auto;clear:both;margin-top:52px;padding:14px 16px;border:2px solid #1b3a63;border-radius:16px;background:#fffdf8;box-shadow:0 12px 34px rgba(27,58,99,.18)}.pilote-prof-card[data-kind=error]{border-style:dashed;border-color:#c0392b}.pilote-prof-card[data-kind=success]{border-style:double;border-width:5px;border-color:#1e7e54}.pilote-prof-title{margin:0 0 5px;color:#1b3a63;font:700 18px/1.2 \"Trebuchet MS\",Calibri,Arial,sans-serif}.pilote-prof-transcript{margin:0;line-height:1.45;text-align:left}.pilote-prof-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pilote-prof-action{min-height:40px;border:2px solid #1b3a63;border-radius:999px;background:#fffdf8;color:#1b3a63;padding:7px 12px;font:700 13px/1.2 Calibri,\"Segoe UI\",system-ui,Arial,sans-serif;cursor:pointer}.pilote-prof-action.primary{background:#1b3a63;color:#fff}.pilote-prof-action.replay{border-color:#c9451a;color:#c9451a}#pilote-prof-vocal.pilote-prof-gauche{left:12px;right:auto}#pilote-prof-toggle.pilote-prof-encastre{float:none;margin:0;min-height:34px;padding:.2rem .6rem;font-size:13px;line-height:1.2;box-shadow:none;white-space:nowrap}@media(max-width:650px){#pilote-prof-vocal{left:4px;right:4px;bottom:4px;width:auto}#pilote-prof-vocal>#pilote-prof-toggle{display:none}#pilote-prof-toggle{padding:7px 10px;font-size:12px}.pilote-prof-card{margin-top:44px;padding:10px 12px}.pilote-prof-title{font-size:16px}.pilote-prof-transcript{font-size:13px}.pilote-prof-action{min-height:36px;font-size:12px}}@media print{#pilote-prof-vocal{display:none!important}}";
   document.head.appendChild(style);
 
   var root = document.createElement("section");
@@ -95,9 +95,47 @@
   var transcript = root.querySelector(".pilote-prof-transcript");
   var actions = root.querySelector(".pilote-prof-actions");
 
+  /* Le bouton du mode prof se range parmi les commandes de voix de la page quand elle en a
+     (HydroMétro : après « Arrêter » ; AéroRézo : après « Écouter »), pour ne jamais recouvrir
+     un bouton de la page. Sans commande de voix (Législation, packs), il reste flottant en bas
+     à droite. Constat du 13/09/2026 : flottant, il masquait « Continuer » des trois gabarits
+     HydroMétro et « Comprendre → » d'AéroRézo, à 1366 px comme à 375 px. Les pages qui
+     redessinent leurs commandes (AéroRézo) le perdent : l'observateur le remet en place ;
+     tant que la commande n'est pas rendue (Législation avant « Commencer »), il flotte. */
+  var encastre = false;
+  var encastrerTimer = 0;
+  function encastrer() {
+    if (encastre && document.body.contains(toggle)) return;
+    var ancre = firstVisible(selectors.stop) || firstVisible(selectors.listen);
+    var rendue = ancre && ancre.getBoundingClientRect().width > 0 && ancre.getBoundingClientRect().height > 0;
+    if (rendue && ancre.parentElement) {
+      toggle.className = (ancre.className ? ancre.className + " " : "") + "pilote-prof-encastre";
+      ancre.insertAdjacentElement("afterend", toggle);
+      root.classList.add("pilote-prof-gauche");
+      encastre = true;
+    } else if (!root.contains(toggle)) {
+      toggle.className = "";
+      root.insertBefore(toggle, card);
+      root.classList.remove("pilote-prof-gauche");
+      encastre = false;
+    }
+    setToggle(enabled ? "actif" : "arrêté");
+  }
+  function encastrerBientot() {
+    if (encastre && document.body.contains(toggle)) return;
+    window.clearTimeout(encastrerTimer);
+    encastrerTimer = window.setTimeout(encastrer, 60);
+  }
+  encastrer();
+  document.addEventListener("DOMContentLoaded", encastrer);
+  window.addEventListener("load", encastrer);
+  new MutationObserver(encastrerBientot).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["hidden", "class", "style"] });
+
   function setToggle(label) {
-    toggle.textContent = "Mode prof vocal · " + label;
+    if (encastre) toggle.innerHTML = "Prof <span>vocal · " + label + "</span>";
+    else toggle.textContent = "Mode prof vocal · " + label;
     toggle.setAttribute("aria-pressed", String(enabled));
+    toggle.setAttribute("aria-label", "Mode professeur vocal · " + label);
   }
 
   function clearTimers() {
@@ -204,7 +242,7 @@
   }
 
   function isIgnoredControl(element) {
-    if (!element || element.closest("#pilote-prof-vocal")) return true;
+    if (!element || element.closest("#pilote-prof-vocal") || element.closest("#pilote-prof-toggle")) return true;
     var ignored = selectors.listen.concat(selectors.next, selectors.previous, selectors.start, selectors.exit, selectors.stop, selectors.quizNext, ["[data-step]", ".step-button", "#voice-toggle", "#refs-toggle", "#source-toggle", "#sound-toggle", "#copy-link", "#slower", "#faster", "#pause"]);
     return ignored.some(function (selector) { return element.matches(selector) || !!element.closest(selector); });
   }
@@ -420,7 +458,7 @@
 
   document.addEventListener("click", function (event) {
     var button = event.target.closest && event.target.closest("button");
-    if (!button || button.closest("#pilote-prof-vocal")) return;
+    if (!button || button.closest("#pilote-prof-vocal") || button.id === "pilote-prof-toggle") return;
 
     if (matchesAny(button, selectors.exit) || matchesAny(button, selectors.stop)) {
       deactivate(false);
@@ -466,7 +504,7 @@
   window.addEventListener("beforeunload", function () { deactivate(false); });
 
   window.PiloteProfVocal = {
-    version: "1.0.0",
+    version: "1.1.0",
     activer: function () { activate(true); },
     arreter: function () { deactivate(false); },
     relire: replayCurrent,
