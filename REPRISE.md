@@ -3,6 +3,14 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 14/09 — HydroMétro : lots 2a, 2b, 3 et restes livrés (`a1b9a8cd` puis `7a6a5c36`, `hydrometro/` seul)
+>
+> Vouvoiement partout, 7 narrations par station P, texte hors tracé, libellés ≥ 20 unités, scène
+> élargie, nombres à virgule. **Piège repayé** : la sonde a demandé `content.js?v=<clé réelle>` avant la
+> fin du build → Cloudflare a servi l'ancien script sous la clé neuve pendant 4 h (`cf-cache-status:
+> HIT`) ; relivraison à clé neuve `20260914-0555`, sonde à aléa (`?x=…`) sur chaque fichier cette fois.
+> Aucun `build`. Lot 4 : croquis côté Code dans l'atelier, validation de F. Henninot avant tout code.
+
 > ## 13/09 — HydroMétro : lot 1 « technique commun » livré (commit `2129d402`, `hydrometro/` seul)
 >
 > Copie servie régénérée par `node outils/livrer.mjs --ecrire` depuis l'atelier `C:\git\hydrometro`
