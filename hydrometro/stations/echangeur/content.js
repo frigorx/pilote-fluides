@@ -15,13 +15,13 @@
     "À gauche, le symbole inerWeb validé de l’échangeur à plaques. À droite, une coupe pédagogique originale montre deux circuits séparés par des plaques.",
     `<rect x="25" y="75" width="230" height="270" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
      <image href="assets/echangeur_a_plaques.svg" x="68" y="115" width="144" height="144"/>
-     <text x="140" y="303" text-anchor="middle" font-size="18" font-weight="700">SYMBOLE VALIDÉ</text>
+     <text x="140" y="303" text-anchor="middle" font-size="19" font-weight="700">SYMBOLE VALIDÉ</text>
      <rect x="315" y="58" width="365" height="305" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
      ${Array.from({length:7},(_,i)=>`<path d="M${385+i*35} 110V312" stroke="${i%2 ? "#c9451a" : "#3d7fca"}" stroke-width="10" stroke-linecap="round"/>`).join("")}
      <path d="M335 125H390" stroke="#c9451a" stroke-width="10" marker-end="url(#arr-ex-symbol)"/><path d="M390 300H335" stroke="#c9451a" stroke-width="10" marker-end="url(#arr-ex-symbol)"/>
      <path d="M660 300H605" stroke="#3d7fca" stroke-width="10" marker-end="url(#arr-ex-symbol)"/><path d="M605 125H660" stroke="#3d7fca" stroke-width="10" marker-end="url(#arr-ex-symbol)"/>
-     <text x="360" y="92" text-anchor="middle" font-size="16" font-weight="700">PRIMAIRE</text><text x="632" y="92" text-anchor="middle" font-size="16" font-weight="700">SECONDAIRE</text>
-     <text x="498" y="340" text-anchor="middle" font-size="16">plaques : paroi de séparation</text>`);
+     <text x="360" y="92" text-anchor="middle" font-size="19" font-weight="700">PRIMAIRE</text><text x="632" y="92" text-anchor="middle" font-size="19" font-weight="700">SECONDAIRE</text>
+     <text x="498" y="392" text-anchor="middle" font-size="19">plaques : paroi de séparation</text>`);
 
   const circuits = shell("ex-circuits", "Deux circuits et quatre piquages",
     "Le primaire chaud circule de gauche en haut vers gauche en bas. Le secondaire plus froid circule en sens opposé de droite en bas vers droite en haut. Les eaux ne se mélangent pas dans ce modèle.",
@@ -29,7 +29,7 @@
      ${Array.from({length:9},(_,i)=>`<path d="M${275+i*22} 95V323" stroke="${i%2 ? "#c9451a" : "#3d7fca"}" stroke-width="8"/>`).join("")}
      <path d="M55 108H250" stroke="#c9451a" stroke-width="12" marker-end="url(#arr-ex-circuits)"/><path d="M250 310H55" stroke="#c9451a" stroke-width="12" marker-end="url(#arr-ex-circuits)"/>
      <path d="M665 310H470" stroke="#3d7fca" stroke-width="12" marker-end="url(#arr-ex-circuits)"/><path d="M470 108H665" stroke="#3d7fca" stroke-width="12" marker-end="url(#arr-ex-circuits)"/>
-     <g font-size="16" font-weight="700"><text x="145" y="82" text-anchor="middle">P1 · ENTRÉE PRIMAIRE</text><text x="145" y="347" text-anchor="middle">P2 · SORTIE PRIMAIRE</text><text x="575" y="82" text-anchor="middle">S2 · SORTIE SECONDAIRE</text><text x="575" y="347" text-anchor="middle">S1 · ENTRÉE SECONDAIRE</text></g>
+     <g font-size="19" font-weight="700"><text x="145" y="82" text-anchor="middle">P1 · ENTRÉE PRIMAIRE</text><text x="145" y="347" text-anchor="middle">P2 · SORTIE PRIMAIRE</text><text x="575" y="82" text-anchor="middle">S2 · SORTIE SECONDAIRE</text><text x="575" y="347" text-anchor="middle">S1 · ENTRÉE SECONDAIRE</text></g>
      <path d="M332 150h56M332 210h56M332 270h56" stroke="#b06a00" stroke-width="5" marker-end="url(#arr-ex-circuits)"/>
      <text x="360" y="42" text-anchor="middle" font-size="20" font-weight="700">TRANSFERT À TRAVERS LES PLAQUES</text>`);
 
@@ -42,26 +42,26 @@
        <rect x="210" y="70" width="300" height="270" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
        ${Array.from({length:8},(_,i)=>`<rect x="${245+i*31}" y="100" width="12" height="205" rx="5" fill="${i<fouled ? "url(#foul-ex-foul)" : (i%2 ? "url(#hot-ex-foul)" : "url(#cold-ex-foul)")}" stroke="${i<fouled ? "#b06a00" : "#1b3a63"}" stroke-width="2"/>`).join("")}
        <path d="M65 135H210" stroke="#c9451a" stroke-width="12" marker-end="url(#arr-ex-foul)"/><path d="M655 280H510" stroke="#3d7fca" stroke-width="12" marker-end="url(#arr-ex-foul)"/>
-       <g transform="translate(52 352)"><text x="0" y="0" font-size="16" font-weight="700">TRANSFERT : ${transfer}/100</text><text x="365" y="0" font-size="16" font-weight="700">RÉSISTANCE : ${resistance}/100</text></g>
-       <text x="360" y="383" text-anchor="middle" font-size="14">Tendance simulée : encrassement ↑ · échange ↓ · résistance hydraulique ↑</text>`);
+       <g transform="translate(52 352)"><text x="0" y="0" font-size="19" font-weight="700">TRANSFERT : ${transfer}/100</text><text x="365" y="0" font-size="19" font-weight="700">RÉSISTANCE : ${resistance}/100</text></g>
+       <text x="360" y="400" text-anchor="middle" font-size="19">Tendance simulée : encrassement ↑ · échange ↓ · résistance hydraulique ↑</text>`);
   };
 
   const measure = shell("ex-measure", "Mesurer aux quatre piquages",
     "Quatre sondes de température repérées P1, P2, S1, S2 et deux prises de pression encadrent l’échangeur. Les débits des deux circuits sont aussi nécessaires au bilan.",
     `<rect x="255" y="90" width="210" height="245" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
      ${Array.from({length:7},(_,i)=>`<path d="M${285+i*25} 120V305" stroke="${i%2 ? "#c9451a" : "#3d7fca"}" stroke-width="8"/>`).join("")}
-     ${[[155,115,"P1"],[155,305,"P2"],[565,305,"S1"],[565,115,"S2"]].map(([x,y,t])=>`<circle cx="${x}" cy="${y}" r="27" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="${x}" y="${y+6}" text-anchor="middle" font-size="17" font-weight="700">${t}</text>`).join("")}
+     ${[[155,115,"P1"],[155,305,"P2"],[565,305,"S1"],[565,115,"S2"]].map(([x,y,t])=>`<circle cx="${x}" cy="${y}" r="27" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="${x}" y="${y+6}" text-anchor="middle" font-size="19" font-weight="700">${t}</text>`).join("")}
      <path d="M182 115H255M255 305H182" stroke="#c9451a" stroke-width="10"/><path d="M538 305H465M465 115H538" stroke="#3d7fca" stroke-width="10"/>
-     <g transform="translate(267 35)"><circle cx="20" cy="20" r="18" fill="#fff4e0" stroke="#b06a00" stroke-width="3" stroke-dasharray="4 3"/><circle cx="165" cy="20" r="18" fill="#fff4e0" stroke="#b06a00" stroke-width="3" stroke-dasharray="4 3"/><text x="92" y="26" text-anchor="middle" font-size="15" font-weight="700">Δp échangeur</text></g>
-     <text x="360" y="382" text-anchor="middle" font-size="17" font-weight="700">TEMPÉRATURES + DÉBITS + PRESSION DIFFÉRENTIELLE</text>`);
+     <g transform="translate(267 35)"><circle cx="20" cy="20" r="18" fill="#fff4e0" stroke="#b06a00" stroke-width="3" stroke-dasharray="4 3"/><circle cx="230" cy="20" r="18" fill="#fff4e0" stroke="#b06a00" stroke-width="3" stroke-dasharray="4 3"/><text x="125" y="26" text-anchor="middle" font-size="19" font-weight="700">Δp échangeur</text></g>
+     <text x="360" y="382" text-anchor="middle" font-size="19" font-weight="700">TEMPÉRATURES + DÉBITS + PRESSION DIFFÉRENTIELLE</text>`);
 
   const diag = shell("ex-diag", "Diagnostic sans nettoyage au hasard",
     "La démarche part des conditions de service, relève quatre températures, les débits et la perte de pression, puis compare avant de formuler une hypothèse.",
     `<text x="360" y="70" text-anchor="middle" font-size="23" font-weight="700">UNE PISTE N’EST PAS UNE PREUVE</text>
-     <g fill="#fffdf8" stroke="#1b3a63" stroke-width="3">${["État connu", "4 T° + débits", "Δp", "Comparer"].map((t,i)=>`<rect x="${26+i*174}" y="145" width="145" height="90" rx="16"/><text x="${98+i*174}" y="198" text-anchor="middle" font-size="17" font-weight="700">${t}</text>`).join("")}</g>
+     <g fill="#fffdf8" stroke="#1b3a63" stroke-width="3">${["État connu", "4 T° + débits", "Δp", "Comparer"].map((t,i)=>`<rect x="${26+i*174}" y="145" width="145" height="90" rx="16"/><text x="${98+i*174}" y="198" text-anchor="middle" font-size="19" font-weight="700">${t}</text>`).join("")}</g>
      <path d="M171 190H198M345 190H372M519 190H546" stroke="#c9451a" stroke-width="6" marker-end="url(#arr-ex-diag)"/>
-     <rect x="170" y="282" width="380" height="70" rx="18" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="5 5"/>
-     <text x="360" y="313" text-anchor="middle" font-size="18" font-weight="700">HYPOTHÈSE : débit ? air ? encrassement ?</text><text x="360" y="338" text-anchor="middle" font-size="15">puis contrôle ciblé selon la procédure</text>`);
+     <rect x="60" y="282" width="600" height="70" rx="18" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="5 5"/>
+     <text x="360" y="313" text-anchor="middle" font-size="19" font-weight="700">HYPOTHÈSE : débit ? air ? encrassement ?</text><text x="360" y="338" text-anchor="middle" font-size="19">puis contrôle ciblé selon la procédure</text>`);
 
   window.STATION_CONFIG = {
     code: "E2", id: "echangeur", title: "Échangeur", next: "réinvestir le débit à la correspondance de la ligne P",
@@ -75,31 +75,31 @@
         narration: "Deux représentations du même appareil, et elles ne servent pas à la même chose. Le symbole est fait pour lire un schéma : il vous dit qu'il y a là un échangeur, et où il se raccorde. Il ne vous dit rien de ce qui se passe dedans. La coupe, elle, montre l'intérieur : des plaques empilées, et entre elles, alternativement, un circuit puis l'autre. Ces deux vues sont complémentaires. Sur le terrain, vous lirez des symboles ; pour comprendre pourquoi un échangeur se comporte comme il le fait, vous aurez besoin de l'image de l'intérieur.",
         short: "Identifier", kicker: "repérer", title: "Du symbole à la coupe",
         text: "Le symbole sert à lire le schéma. La coupe simplifiée explique ce que le symbole ne montre pas.",
-        cap: "Reconnais l’échangeur à ses deux circuits séparés.", tp: "Reconnais l’échangeur et ses quatre piquages.", bts: "Distingue représentation normalisée, modèle et appareil réel.",
+        cap: "Reconnaissez l’échangeur à ses deux circuits séparés.", tp: "Reconnaissez l’échangeur et ses quatre piquages.", bts: "Distinguez représentation normalisée, modèle et appareil réel.",
         scene: symbol, equivalent: "Le symbole validé est accompagné d’une coupe originale : des plaques séparent deux circuits.",
         action: { type: "choice", prompt: "Que représente la coupe ?", options: [{label:"Deux circuits séparés par des plaques"},{label:"Une cuve où les eaux se mélangent"},{label:"Un circulateur double"},{label:"Une soupape"}], correct: 0, explain: "Le transfert thermique traverse les plaques, mais les deux fluides restent séparés dans le modèle normal." }
       },
       {
         narration: "Quatre piquages, deux chemins qui ne se rencontrent jamais. Le primaire entre d'un côté et ressort de l'autre. Le secondaire fait de même, dans le sens opposé. Ce sens opposé n'est pas un hasard de dessin : on l'appelle le contre-courant, et il permet un meilleur échange sur toute la longueur, parce que l'écart de température reste réparti au lieu de s'annuler à mi-parcours. Deux conseils pour le terrain : repérez toujours quel piquage appartient à quel circuit avant d'intervenir, et méfiez-vous des installations où les raccordements ont été refaits sans respecter le sens prévu.",
         short: "Fonction", kicker: "comprendre", title: "Quatre piquages, deux chemins",
-        text: "Suis chaque circuit avec les mots et les flèches. Ici, les écoulements sont représentés en sens opposés.",
-        cap: "Montre l’entrée et la sortie de chaque circuit.", tp: "Associe entrée et sortie de chaque circuit.", bts: "Explique l’intérêt du contre-courant sans en déduire un pincement universel.",
+        text: "Suivez chaque circuit avec les mots et les flèches. Ici, les écoulements sont représentés en sens opposés.",
+        cap: "Montrez l’entrée et la sortie de chaque circuit.", tp: "Associez entrée et sortie de chaque circuit.", bts: "Expliquez l’intérêt du contre-courant sans en déduire un pincement universel.",
         scene: circuits, equivalent: "Le primaire va de P1 à P2. Le secondaire va de S1 à S2 en sens opposé. L’énergie traverse les plaques.",
-        action: { type: "match", prompt: "Associe les repères à leur chemin.", options:["Entrée primaire","Sortie primaire","Entrée secondaire","Sortie secondaire"], items:[{label:"P1",answer:0},{label:"P2",answer:1},{label:"S1",answer:2},{label:"S2",answer:3}], explain:"Chaque circuit possède sa propre entrée et sa propre sortie. Les raccordements réels se vérifient sur le dossier et la plaque constructeur." }
+        action: { type: "match", prompt: "Associez les repères à leur chemin.", options:["Entrée primaire","Sortie primaire","Entrée secondaire","Sortie secondaire"], items:[{label:"P1",answer:0},{label:"P2",answer:1},{label:"S1",answer:2},{label:"S2",answer:3}], explain:"Chaque circuit possède sa propre entrée et sa propre sortie. Les raccordements réels se vérifient sur le dossier et la plaque constructeur." }
       },
       {
         narration: "Faites maintenant varier l'encrassement et suivez deux effets en même temps. Le transfert de chaleur diminue : le dépôt sur les plaques fait obstacle au passage de la chaleur. Et la résistance hydraulique augmente : le passage se rétrécit, l'eau force davantage. Ces deux effets vont ensemble, et c'est ce qui rend le diagnostic possible. Un échangeur qui transfère moins sans que la perte de charge augmente ne souffre probablement pas d'encrassement : cherchez plutôt du côté du débit ou du régime de température. Deux symptômes qui devraient être liés et qui ne le sont pas, c'est une piste.",
         short: "Effet", kicker: "observer", title: "Faire varier l’encrassement",
-        text: "Déplace l’indice. Observez deux tendances liées : transfert thermique et résistance hydraulique.",
-        cap: "Suis la barre de transfert quand l’indice augmente.", tp: "Décris le symptôme sans conclure à une cause unique.", bts: "Relie la tendance à des mesures de températures, débits et pression différentielle.",
+        text: "Déplacez l’indice. Observez deux tendances liées : transfert thermique et résistance hydraulique.",
+        cap: "Suivez la barre de transfert quand l’indice augmente.", tp: "Décrivez le symptôme sans conclure à une cause unique.", bts: "Reliez la tendance à des mesures de températures, débits et pression différentielle.",
         scene: foulScene, equivalent:(value)=>`Indice relatif d’encrassement ${value} sur 100. Le modèle fait diminuer le transfert et augmenter la résistance.`,
-        action:{ type:"range", prompt:"Modifie l’état interne simplifié.", label:"Indice d’encrassement", min:0,max:100,step:10,value:20, evaluate:(value)=>({readout:`${value}/100`, observation:value<40?"État peu encrassé dans le modèle.":value<80?"Le transfert baisse et la résistance augmente : des mesures sont nécessaires.":"État très dégradé dans le modèle. Il faut confirmer la cause avant toute décision."}) }
+        action:{ type:"range", prompt:"Modifiez l’état interne simplifié.", label:"Indice d’encrassement", min:0,max:100,step:10,value:20, evaluate:(value)=>({readout:`${value}/100`, observation:value<40?"État peu encrassé dans le modèle.":value<80?"Le transfert baisse et la résistance augmente : des mesures sont nécessaires.":"État très dégradé dans le modèle. Il faut confirmer la cause avant toute décision."}) }
       },
       {
         narration: "Quatre températures ne suffisent pas toujours à conclure, et voici pourquoi. Un secondaire moins chaud que prévu peut venir d'un échangeur encrassé, mais aussi d'un débit primaire insuffisant, ou d'un régime de température plus bas à l'entrée. Ces situations donnent des relevés de température qui se ressemblent. Ce qui les sépare, ce sont les débits des deux côtés, et la perte de charge. Vous retrouvez ici ce que vous avez vu à la station Puissance : une température seule ne dit rien sur l'énergie transportée, il faut toujours lui associer le débit.",
         short: "Mesurer", kicker: "mesurer", title: "Construire une preuve",
         text: "Quatre températures seules ne suffisent pas toujours. Ajoutez les débits et la perte de pression de chaque côté utile.",
-        cap: "Relève les quatre températures avant de conclure.", tp: "Prépare des relevés traçables dans un état stabilisé.", bts: "Utilise les quatre températures et les débits pour le bilan; comparez la perte de charge au dossier.",
+        cap: "Relevez les quatre températures avant de conclure.", tp: "Préparez des relevés traçables dans un état stabilisé.", bts: "Utilisez les quatre températures et les débits pour le bilan; comparez la perte de charge au dossier.",
         scene: measure, equivalent:"Les points P1, P2, S1 et S2 portent les températures. Des prises de pression encadrent l’échangeur; les débits sont relevés sur les deux circuits.",
         action:{ type:"choice", prompt:"Quel jeu de relevés est le plus complet pour vérifier le service ?", options:[{label:"4 températures + 2 débits + Δp"},{label:"Une température extérieure"},{label:"Le bruit seul"},{label:"La couleur des plaques"}], correct:0, explain:"Le bilan thermique utilise températures et débits. La pression différentielle renseigne la résistance hydraulique dans les conditions relevées." }
       },
@@ -107,9 +107,9 @@
         narration: "Un échangeur ne se nettoie pas à l'aveugle : le démontage ou le nettoyage chimique coûte cher, immobilise l'installation, et fatigue les joints. La démarche est donc stricte. Établir l'état de service, relever quatre températures et les deux débits, mesurer la perte de charge, comparer au dossier, et seulement alors formuler l'hypothèse. Un mot de vigilance pour finir : sur un échangeur à plaques, une fuite interne fait communiquer les deux circuits sans que rien ne coule à l'extérieur. Rien ne se voit — ça se déduit d'une pression qui monte d'un côté et baisse de l'autre.",
         short: "Vérifier", kicker: "hypothèse", title: "Diagnostiquer sans nettoyer au hasard",
         text: "Air, débit inadéquat ou encrassement peuvent produire des symptômes proches. Ordonnez la démarche.",
-        cap:"Signale l’anomalie sans nettoyer l’échangeur.", tp:"Signale l’anomalie et prépare le contrôle ciblé selon la procédure du site.", bts:"Croise bilan thermique et hydraulique avant de retenir puis tester une hypothèse.",
+        cap:"Signalez l’anomalie sans nettoyer l’échangeur.", tp:"Signalez l’anomalie et préparez le contrôle ciblé selon la procédure du site.", bts:"Croisez bilan thermique et hydraulique avant de retenir puis tester une hypothèse.",
         scene:diag, equivalent:"La chaîne est : état connu, quatre températures et débits, perte de pression, comparaison, puis hypothèse.",
-        action:{ type:"sequence", prompt:"Place les contrôles dans l’ordre.", items:["Définir l’état de service","Relever 4 T° et débits","Mesurer ou relever Δp","Comparer puis formuler l’hypothèse"], correctOrder:[0,1,2,3], explain:"Le nettoyage ou le remplacement vient seulement après une hypothèse étayée et la procédure adaptée." }
+        action:{ type:"sequence", prompt:"Placez les contrôles dans l’ordre.", items:["Définir l’état de service","Relever 4 T° et débits","Mesurer ou relever Δp","Comparer puis formuler l’hypothèse"], correctOrder:[0,1,2,3], explain:"Le nettoyage ou le remplacement vient seulement après une hypothèse étayée et la procédure adaptée." }
       }
     ],
     quiz:[

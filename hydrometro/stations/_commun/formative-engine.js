@@ -44,7 +44,7 @@
 
   const style = document.createElement("link");
   style.rel = "stylesheet";
-  style.href = "../_commun/formative-shared.css?v=20260913-1430";
+  style.href = "../_commun/formative-shared.css?v=20260914-0536";
   document.head.append(style);
 
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -157,7 +157,7 @@
   }
 
   function renderRange(action, step) {
-    els.actionPanel.innerHTML = `<p class="action-title">${escapeHtml(action.prompt)}</p><div class="range-row"><label for="stationRange">${escapeHtml(action.label)}</label><output id="rangeReadout" class="readout"></output><input id="stationRange" type="range" min="${action.min}" max="${action.max}" step="${action.step}" value="${action.value}"></div><p class="formation-only-note">Fais varier la commande : le schéma et le texte décrivent l’effet.</p>`;
+    els.actionPanel.innerHTML = `<p class="action-title">${escapeHtml(action.prompt)}</p><div class="range-row"><label for="stationRange">${escapeHtml(action.label)}</label><output id="rangeReadout" class="readout"></output><input id="stationRange" type="range" min="${action.min}" max="${action.max}" step="${action.step}" value="${action.value}"></div><p class="formation-only-note">Faites varier la commande : le schéma et le texte décrivent l’effet.</p>`;
     const input = $("#stationRange");
     const readout = $("#rangeReadout");
     const update = (isUser) => {
@@ -173,7 +173,7 @@
   }
 
   function renderDualRange(action, step) {
-    els.actionPanel.innerHTML = `<p class="action-title">${escapeHtml(action.prompt)}</p><div class="dual-range">${action.controls.map((control) => `<div class="range-row"><label for="range-${control.id}">${escapeHtml(control.label)}</label><output id="readout-${control.id}" class="readout"></output><input id="range-${control.id}" data-dual="${control.id}" type="range" min="${control.min}" max="${control.max}" step="${control.step}" value="${control.value}"></div>`).join("")}</div><p class="formation-only-note">Compare les deux débits ; le sens interne est recalculé.</p>`;
+    els.actionPanel.innerHTML = `<p class="action-title">${escapeHtml(action.prompt)}</p><div class="dual-range">${action.controls.map((control) => `<div class="range-row"><label for="range-${control.id}">${escapeHtml(control.label)}</label><output id="readout-${control.id}" class="readout"></output><input id="range-${control.id}" data-dual="${control.id}" type="range" min="${control.min}" max="${control.max}" step="${control.step}" value="${control.value}"></div>`).join("")}</div><p class="formation-only-note">Comparez les deux débits ; le sens interne est recalculé.</p>`;
     const inputs = $$('[data-dual]', els.actionPanel);
     const update = (isUser) => {
       const values = Object.fromEntries(inputs.map((input) => [input.dataset.dual, Number(input.value)]));
@@ -192,7 +192,7 @@
     els.actionPanel.innerHTML = `<p class="action-title">${escapeHtml(action.prompt)}</p><div class="match-grid">${action.items.map((item, index) => `<label class="match-row"><span>${escapeHtml(item.label)}</span><select data-match="${index}">${optionMarkup}</select></label>`).join("")}</div><div class="choice-grid"><button type="button" class="verify-btn">Vérifier les associations</button><button type="button" class="solution-btn">Afficher la solution</button></div>`;
     const selects = $$('select', els.actionPanel);
     $(".verify-btn", els.actionPanel).addEventListener("click", () => {
-      if (selects.some((select) => select.value === "")) { setFeedback("Associe chaque élément avant de vérifier, ou affiche la solution."); return; }
+      if (selects.some((select) => select.value === "")) { setFeedback("Associez chaque élément avant de vérifier, ou affichez la solution."); return; }
       const correct = selects.every((select, index) => Number(select.value) === action.items[index].answer);
       selects.forEach((select, index) => {
         select.disabled = true;

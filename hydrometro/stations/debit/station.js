@@ -55,7 +55,7 @@
     document.querySelector("#flowValue").textContent = `${formatted} m³/h`;
     document.querySelector("#svgFlowValue").textContent = formatted;
     document.querySelector("#litreValue").textContent = `${(currentFlow * 1000 / 60).toFixed(1).replace(".", ",")} L/min`;
-    feedback.textContent = currentFlow < 2 ? "Débit trop faible : augmente la pompe ou ouvre le réseau." : currentFlow > 2.4 ? "Débit trop fort : réduisez la pompe ou augmente la résistance." : "La cible est atteinte. Valide le point obtenu.";
+    feedback.textContent = currentFlow < 2 ? "Débit trop faible : augmentez la pompe ou ouvrez le réseau." : currentFlow > 2.4 ? "Débit trop fort : réduisez la pompe ou augmentez la résistance." : "La cible est atteinte. Validez le point obtenu.";
     feedback.className = currentFlow >= 2 && currentFlow <= 2.4 ? "feedback good" : "feedback";
   }
 
@@ -67,7 +67,7 @@
       shell.setStatus("Débit cohérent", "ok");
       shell.unlockQuiz();
     } else {
-      feedback.textContent = "Le point n’est pas dans la plage 2,0 à 2,4 m³/h. Ajuste un seul réglage puis relis.";
+      feedback.textContent = "Le point n’est pas dans la plage 2,0 à 2,4 m³/h. Ajustez un seul réglage puis relisez.";
       feedback.className = "feedback error";
       shell.setStatus("Hors cible", "bad");
     }

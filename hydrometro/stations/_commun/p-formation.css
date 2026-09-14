@@ -30,7 +30,7 @@ body.p-course-active .topbar { grid-template-columns: auto minmax(0, 1fr) auto a
   height: 100%;
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(300px, .8fr) minmax(0, 1.2fr);
+  grid-template-columns: minmax(270px, .62fr) minmax(0, 1.38fr);
   gap: .55rem;
 }
 

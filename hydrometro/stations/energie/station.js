@@ -34,7 +34,7 @@
 
   cards.forEach((button) => button.addEventListener("click", () => {
     if (order.length < 4 && !order.includes(button.dataset.card)) order.push(button.dataset.card);
-    feedback.textContent = order.length < 4 ? "Continue jusqu’au local." : "Chaîne complète : vérifie-la.";
+    feedback.textContent = order.length < 4 ? "Continuez jusqu’au local." : "Chaîne complète : vérifiez-la.";
     feedback.className = "feedback";
     render();
   }));

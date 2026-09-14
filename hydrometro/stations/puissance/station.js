@@ -5,7 +5,7 @@
     title: "Puissance",
     nextHref: "../mesurer/index.html",
     nextLabel: "Station suivante : Mesurer",
-    successMessage: "Vous utilisez la formule avec les unités prévues et contrôles l’ordre de grandeur.",
+    successMessage: "Vous utilisez la formule avec les unités prévues et contrôlez l’ordre de grandeur.",
     levels: {
       CAP: { name: "CAP · niveau 3", objective: "Lire la puissance affichée et son unité.", learn: ["lire le débit et l’écart", "lire la puissance en kW", "comparer avec la valeur donnée"] },
       TP: { name: "Bac pro · niveau 4", objective: "Estimer la puissance transportée.", learn: ["appliquer la relation", "conserver les unités", "contrôler l’ordre de grandeur"] },
@@ -37,7 +37,7 @@
     document.querySelector("#targetGap").textContent = `${fr(gap)} kW`;
     document.querySelector("#tRetour").textContent = String(60 - delta);
     document.querySelector("#svgFormula").textContent = `1,16 × ${fr(q)} × ${delta} = ${fr(power)} kW`;
-    feedback.textContent = gap <= .6 ? "Cible atteinte. Vérifiez les unités puis valide." : power < target ? "Puissance trop faible : augmente Q, ΔT, ou les deux." : "Puissance trop forte : réduis Q, ΔT, ou les deux.";
+    feedback.textContent = gap <= .6 ? "Cible atteinte. Vérifiez les unités puis validez." : power < target ? "Puissance trop faible : augmentez Q, ΔT, ou les deux." : "Puissance trop forte : réduisez Q, ΔT, ou les deux.";
     feedback.className = gap <= .6 ? "feedback good" : "feedback";
   }
 
@@ -49,7 +49,7 @@
       shell.setStatus("Puissance atteinte", "ok");
       shell.unlockQuiz();
     } else {
-      feedback.textContent = "Le calcul est juste mais la cible n’est pas atteinte. Ajuste une grandeur puis recalcule.";
+      feedback.textContent = "Le calcul est juste mais la cible n’est pas atteinte. Ajustez une grandeur puis recalculez.";
       feedback.className = "feedback error";
       shell.setStatus("Écart à corriger", "bad");
     }

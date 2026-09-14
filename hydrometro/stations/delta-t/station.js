@@ -46,19 +46,19 @@
     if (selected.has(probe)) selected.delete(probe);
     else if (selected.size < 2) selected.add(probe);
     else {
-      feedback.textContent = "Retire une sonde avant d’en choisir une autre.";
+      feedback.textContent = "Retirez une sonde avant d’en choisir une autre.";
       feedback.className = "feedback error";
       return;
     }
     resetSamples();
     renderProbes();
-    feedback.textContent = selected.size === 2 ? "Deux sondes posées. Lancez le premier relevé." : "Choisis encore un point.";
+    feedback.textContent = selected.size === 2 ? "Deux sondes posées. Lancez le premier relevé." : "Choisissez encore un point.";
     feedback.className = "feedback";
   }));
 
   document.querySelector("#sampleButton").addEventListener("click", () => {
     if (!(selected.has("A") && selected.has("B"))) {
-      feedback.textContent = "Ces points n’encadrent pas l’émetteur étudié. Choisis A au départ et B au retour.";
+      feedback.textContent = "Ces points n’encadrent pas l’émetteur étudié. Choisissez A au départ et B au retour.";
       feedback.className = "feedback error";
       shell.setStatus("Points non comparables", "bad");
       return;
@@ -74,7 +74,7 @@
     document.querySelector("#dtReadout").textContent = `ΔT = ${sample.a} − ${sample.b} = ${delta} K`;
     if (sampleIndex < 3) {
       document.querySelector("#stabilityText").textContent = "État : encore transitoire";
-      feedback.textContent = "Les valeurs évoluent encore. Attendez puis relève de nouveau.";
+      feedback.textContent = "Les valeurs évoluent encore. Attendez puis relevez de nouveau.";
     } else {
       document.querySelector("#stabilityText").textContent = "État : stabilisé sur ce modèle";
       feedback.textContent = "Relevé exploitable : points comparables, trois mesures et ΔT stabilisé à 10 K.";

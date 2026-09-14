@@ -146,33 +146,33 @@
       lead: "Dans cet exemple de chauffage, l’eau transporte de l’énergie entre la production et la pièce.",
       body: ["La production transmet de l’énergie à l’eau. L’eau va jusqu’à l’émetteur, puis elle revient vers la production.", "L’eau n’est pas rejetée après l’émetteur : elle reste dans un circuit fermé."],
       key: "La clé : une boucle est un trajet continu qui revient à son point de départ.",
-      cap: "Montre la production, puis l’émetteur, sur le dessin.",
-      tp: "Repère où l’eau reçoit puis cède une partie de l’énergie.",
-      bts: "Délimite le système : production, distribution, émission et retour.",
+      cap: "Montrez la production, puis l’émetteur, sur le dessin.",
+      tp: "Repérez où l’eau reçoit puis cède une partie de l’énergie.",
+      bts: "Délimitez le système : production, distribution, émission et retour.",
       scene: scenes.need,
       equivalent: "La production transmet de l’énergie à l’eau. Le départ conduit l’eau vers l’émetteur de la pièce. Le retour ramène ensuite l’eau à la production.",
       control: "intro"
     },
     {
-      short: "Fermer", narration: "Voici le point qui doit être parfaitement clair avant d'aller plus loin. Le départ et le retour ne sont pas deux installations différentes. C'est le même trajet, la même eau, vue à deux moments de son parcours. Au départ, elle est chaude et part travailler. Au retour, elle est plus froide et revient se recharger. Beaucoup de débutants raisonnent comme s'il s'agissait de deux circuits séparés, et se retrouvent bloqués devant le moindre dépannage. Retenez la conséquence pratique : si un seul tronçon est coupé quelque part, plus rien ne circule — nulle part.", kicker: "2 · Comprendre", title: "Départ et retour : un seul trajet",
+      short: "Fermer", narration: "Voici le point qui doit être parfaitement clair avant d'aller plus loin. Le départ et le retour ne sont pas deux installations différentes. C'est le même trajet, la même eau, vue à deux moments de son parcours. Au départ, elle est chaude et part travailler. Au retour, elle est plus froide et revient se recharger. Beaucoup de débutants raisonnent comme s'il s'agissait de deux circuits séparés, et se retrouvent bloqués devant le moindre dépannage. La conséquence pratique est directe : si un seul tronçon est coupé quelque part, plus rien ne circule — nulle part.", kicker: "2 · Comprendre", title: "Départ et retour : un seul trajet",
       lead: "Le départ et le retour ne sont pas deux circuits indépendants.",
       body: ["Le départ emmène l’eau de la production vers l’émetteur. Le retour ramène cette même eau vers la production.", "Si un tronçon manque, le schéma ne démontre plus la continuité de la boucle."],
       key: "La clé : départ + usage + retour ferment le trajet.",
-      cap: "Suis la flèche du départ, puis celle du retour.",
-      tp: "Suis les flèches sans sauter de tronçon.",
-      bts: "Distingue la fonction des tronçons de leur position graphique.",
+      cap: "Suivez la flèche du départ, puis celle du retour.",
+      tp: "Suivez les flèches sans sauter de tronçon.",
+      bts: "Distinguez la fonction des tronçons de leur position graphique.",
       scene: scenes.closed,
       equivalent: "Le tracé est fermé. Le départ est nommé et fléché vers l’émetteur. Le retour est nommé, dessiné en tirets et fléché vers la production.",
       control: "none"
     },
     {
-      short: "Suivre", narration: "Lancez l'animation et suivez le repère qui fait le tour complet. Il quitte la production, emprunte le départ, traverse l'émetteur, puis revient par le retour. Ce que ce mouvement vous montre, et que le schéma figé ne dit pas, c'est la continuité : à aucun moment l'eau ne disparaît ni ne recommence ailleurs. Regardez surtout ce qui se passe à l'émetteur, car c'est le seul endroit où quelque chose change vraiment. L'eau y laisse une partie de sa chaleur, et repart moins chaude. Vous pouvez mettre en pause pour observer ce passage.", kicker: "3 · Voir fonctionner", title: "Suivez la même eau sur tout le trajet",
+      short: "Suivre", narration: "Lancez l'animation et suivez le repère qui fait le tour complet. Il quitte la production, emprunte le départ, traverse l'émetteur, puis revient par le retour. Ce que ce mouvement vous montre, et que le schéma figé ne dit pas, c'est la continuité : à aucun moment l'eau ne disparaît ni ne recommence ailleurs. C'est surtout à l'émetteur qu'il se passe quelque chose, car c'est le seul endroit où l'état de l'eau change vraiment. L'eau y laisse une partie de sa chaleur, et repart moins chaude. Vous pouvez mettre en pause pour observer ce passage.", kicker: "3 · Voir fonctionner", title: "Suivez la même eau sur tout le trajet",
       lead: "Lancez l’animation. Le repère EAU effectue un tour complet.",
       body: ["Il quitte la production, suit le départ, traverse l’émetteur, puis emprunte le retour.", "Vous pouvez mettre l’animation en pause ou la recommencer. Le texte décrit toujours ce qu’elle montre."],
       key: "La clé : après l’émetteur, l’eau continue vers le retour.",
-      cap: "Nomme chaque partie quand le repère EAU passe.",
+      cap: "Nommez chaque partie quand le repère EAU passe.",
       tp: "Nommer chaque partie au passage du repère EAU.",
-      bts: "Matérialise le sens positif choisi pour le flux hydraulique.",
+      bts: "Matérialisez le sens positif choisi pour le flux hydraulique.",
       scene: scenes.flow,
       equivalent: "État initial : le repère EAU se trouve au départ de la production. Le trajet complet est production, départ, émetteur, retour, puis production.",
       control: "flow"
@@ -182,9 +182,9 @@
       lead: "La production et le circulateur ne désignent pas la même fonction.",
       body: ["La production transmet de l’énergie à l’eau. Le circulateur permet le débit dans le réseau. L’émetteur transmet une partie de l’énergie à la pièce.", "Les conduites relient les fonctions et ferment le trajet."],
       key: "La clé : produire l’énergie, faire circuler l’eau et émettre dans la pièce sont trois rôles distincts.",
-      cap: "Montre la production, le circulateur, puis l’émetteur.",
-      tp: "Associe chaque organe à sa fonction observable.",
-      bts: "Sépare fonctions énergétiques et fonction hydraulique du circulateur.",
+      cap: "Montrez la production, le circulateur, puis l’émetteur.",
+      tp: "Associez chaque organe à sa fonction observable.",
+      bts: "Séparez fonctions énergétiques et fonction hydraulique du circulateur.",
       scene: scenes.roles,
       equivalent: "De gauche à droite : production, circulateur sur le départ, émetteur, puis conduites de retour. Chaque élément porte un nom et un rôle distinct.",
       control: "roles"
@@ -194,33 +194,33 @@
       lead: "Dans cet exemple de chauffage, l’eau transporte de l’énergie vers la pièce.",
       body: ["L’émetteur transfère une partie de cette énergie à la pièce. L’eau revient ensuite vers la production.", "Le départ et le retour restent les deux parties du même circuit hydraulique."],
       key: "La clé : l’eau circule dans la boucle ; l’énergie est transférée à la pièce.",
-      cap: "Repère l’émetteur, là où la chaleur part.",
-      tp: "Distingue le trajet de l’eau du transfert d’énergie.",
-      bts: "Ne confonds pas conservation du débit dans la boucle et bilan énergétique de l’émetteur.",
+      cap: "Repérez l’émetteur, là où la chaleur part.",
+      tp: "Distinguez le trajet de l’eau du transfert d’énergie.",
+      bts: "Ne confondez pas conservation du débit dans la boucle et bilan énergétique de l’émetteur.",
       scene: scenes.transfer,
       equivalent: "Le départ conduit l’eau vers l’émetteur. Trois traits tiretés indiquent le transfert d’énergie vers la pièce. Le retour ramène l’eau vers la production.",
       control: "transfer"
     },
     {
-      short: "Démonstration", narration: "Regardez d'abord la construction complète, avant qu'on vous demande de la refaire. L'ordre suit le trajet de l'eau : la production, puis le départ, puis l'émetteur, puis le retour. Ce n'est pas un ordre arbitraire à mémoriser — c'est simplement le chemin. Observez comment chaque fonction occupe une portion du même trajet continu, sans trou. Prenez le temps de cette observation : reproduire un montage qu'on a vraiment compris demande beaucoup moins d'efforts que retenir une suite de mots par cœur.", kicker: "6 · Regarder d’abord", title: "Observez la construction complète",
+      short: "Démonstration", narration: "Vous découvrez d'abord la construction complète telle qu'elle doit être, avant qu'on vous demande de la refaire. L'ordre suit le trajet de l'eau : la production, puis le départ, puis l'émetteur, puis le retour. Ce n'est pas un ordre arbitraire à mémoriser — c'est simplement le chemin. Observez comment chaque fonction occupe une portion du même trajet continu, sans trou. Prenez le temps de cette observation : reproduire un montage qu'on a vraiment compris demande beaucoup moins d'efforts que retenir une suite de mots par cœur.", kicker: "6 · Regarder d’abord", title: "Observez la construction complète",
       lead: "La solution est affichée avant de vous demander de la reproduire.",
       body: ["La démonstration suit l’ordre : production, départ, émetteur, retour.", "Regardez comment chaque fonction occupe une partie du même trajet continu."],
       key: "La clé : vous n’avez rien à deviner sur cet écran ; observez l’ordre et le sens.",
-      cap: "Repère les quatre mots pendant la démonstration.",
-      tp: "Répète les quatre mots pendant la démonstration.",
-      bts: "Repère le point de départ choisi et la convention de sens.",
+      cap: "Repérez les quatre mots pendant la démonstration.",
+      tp: "Répétez les quatre mots pendant la démonstration.",
+      bts: "Repérez le point de départ choisi et la convention de sens.",
       scene: scenes.construction,
       equivalent: "La solution complète reste visible : 1 production, 2 départ, 3 émetteur, 4 retour. L’animation met successivement ces quatre repères en évidence.",
       control: "construction"
     },
     {
-      short: "Essai guidé", narration: "À vous maintenant, sans note et sans score. Reproduisez le trajet en choisissant chaque fonction et sa place. Un indice reste disponible, et la solution aussi : les utiliser n'a aucune conséquence, ce n'est pas une évaluation. Si vous vous trompez, ne recommencez pas tout au hasard. Repérez le premier endroit où le trajet se rompt et corrigez à partir de là. C'est déjà la méthode de diagnostic que vous emploierez sur une installation réelle : remonter le chemin de l'eau jusqu'au premier point qui ne va pas.", kicker: "7 · Manipuler avec aide", title: "À vous, sans score",
+      short: "Essai guidé", narration: "À vous maintenant, sans note et sans score. Reproduisez le trajet en choisissant chaque fonction et sa place. Un indice reste disponible, et la solution aussi : les utiliser n'a aucune conséquence, ce n'est pas une évaluation. En cas d'erreur, mieux vaut ne pas tout reprendre au hasard : le bon réflexe consiste à repérer le premier endroit où le trajet se rompt, puis à corriger à partir de là. C'est déjà la méthode de diagnostic que vous emploierez sur une installation réelle : remonter le chemin de l'eau jusqu'au premier point qui ne va pas.", kicker: "7 · Manipuler avec aide", title: "À vous, sans score",
       lead: "Reproduisez le trajet. Vous pouvez demander un indice ou afficher la solution.",
       body: ["Choisissez une fonction, puis sa place. Vérifiez quand les quatre places sont remplies.", "Une erreur ne retire aucun point : elle sert à retrouver le premier tronçon à corriger."],
       key: "La clé : l’entraînement vient avant les questions finales.",
-      cap: "Suis l’aide affichée pour remettre les mots en ordre.",
-      tp: "Reconstruis le trajet avec l’aide disponible.",
-      bts: "Justifie l’ordre fonctionnel avant de poursuivre.",
+      cap: "Suivez l’aide affichée pour remettre les mots en ordre.",
+      tp: "Reconstruisez le trajet avec l’aide disponible.",
+      bts: "Justifiez l’ordre fonctionnel avant de poursuivre.",
       scene: "",
       equivalent: "Exercice guidé : quatre fonctions doivent être placées dans l’ordre production, départ, émetteur, retour. La solution peut être affichée sans pénalité.",
       control: "practice"
@@ -230,9 +230,9 @@
       lead: "La boucle étudiée est maintenant complète et expliquée.",
       body: ["Production → départ → émetteur → retour : ce trajet revient à son point de départ.", "Les flèches donnent le sens. Les mots et les styles de trait gardent l’information lisible sans dépendre de la couleur."],
       key: "La clé : la note viendra une seule fois, dans la station Évaluation située à la fin de la ligne P.",
-      cap: "Nomme le trajet à voix haute avant la station Énergie.",
-      tp: "Décris oralement le trajet avant de passer à la station Énergie.",
-      bts: "Énonce la frontière et les limites de ce modèle fonctionnel.",
+      cap: "Nommez le trajet à voix haute avant la station Énergie.",
+      tp: "Décrivez oralement le trajet avant de passer à la station Énergie.",
+      bts: "Énoncez la frontière et les limites de ce modèle fonctionnel.",
       scene: scenes.summary,
       equivalent: "Synthèse complète : la production, le départ, l’émetteur et le retour forment un trajet continu. Un circulateur permet la circulation sur la boucle.",
       control: "summary"
@@ -403,7 +403,7 @@
       </div>
       <div class="practice-choices" aria-label="Fonctions à placer">${names.map((name) => `<button type="button" data-part="${name}" aria-pressed="false">${name}</button>`).join("")}</div>
       <div class="practice-slots" aria-label="Positions du trajet">${names.map((_, index) => `<button type="button" data-slot="${index}">Place ${index + 1}</button>`).join("")}</div>
-      <p id="practiceFeedback" class="practice-feedback" aria-live="polite">Commence par la fonction qui transmet l’énergie à l’eau.</p>
+      <p id="practiceFeedback" class="practice-feedback" aria-live="polite">Commencez par la fonction qui transmet l’énergie à l’eau.</p>
     </div>`;
     wirePractice();
     renderPracticeState();
@@ -428,7 +428,7 @@
   function wirePractice() {
     $$('[data-part]', els.scene).forEach((button) => button.addEventListener("click", () => {
       selectedPart = button.dataset.part;
-      setPracticeFeedback(`Fonction choisie : ${selectedPart}. Place-la maintenant sur le trajet.`);
+      setPracticeFeedback(`Fonction choisie : ${selectedPart}. Placez-la maintenant sur le trajet.`);
       renderPracticeState();
     }));
     $$('[data-slot]', els.scene).forEach((button) => button.addEventListener("click", () => {
@@ -441,7 +441,7 @@
       placedParts[Number(button.dataset.slot)] = selectedPart;
       selectedPart = null;
       practiceComplete = false;
-      setPracticeFeedback("Fonction placée. Continue, puis vérifie sans score.");
+      setPracticeFeedback("Fonction placée. Continuez, puis vérifiez sans score.");
       renderPracticeState();
       updateNavigation();
     }));
@@ -544,7 +544,7 @@
     if (type === "practice") {
       $("#practiceHint").addEventListener("click", () => {
         const firstEmpty = placedParts.findIndex((part) => !part);
-        const hints = ["Commence par Production.", "Après la production vient le Départ.", "Le Départ conduit vers l’Émetteur.", "Après l’émetteur, place le Retour."];
+        const hints = ["Commencez par Production.", "Après la production vient le Départ.", "Le Départ conduit vers l’Émetteur.", "Après l’émetteur, placez le Retour."];
         setPracticeFeedback(firstEmpty >= 0 ? hints[firstEmpty] : "Les quatre places sont remplies. Vérifiez le trajet.");
       });
       $("#practiceSolution").addEventListener("click", () => {
@@ -552,7 +552,7 @@
         selectedPart = null;
         practiceComplete = true;
         renderPracticeState();
-        setPracticeFeedback("Solution montrée : Production → Départ → Émetteur → Retour. Relis-la, puis continue.", "good");
+        setPracticeFeedback("Solution montrée : Production → Départ → Émetteur → Retour. Relisez-la, puis continuez.", "good");
         updateNavigation();
       });
       $("#practiceCheck").addEventListener("click", () => {
@@ -563,7 +563,7 @@
           setPracticeFeedback("Trajet correct : la boucle est continue. Vous pouvez maintenant passer à la synthèse.", "good");
         } else {
           practiceComplete = false;
-          setPracticeFeedback(`À revoir à la place ${firstError + 1}. Utilisez l’indice ou affiche la solution.`, "error");
+          setPracticeFeedback(`À revoir à la place ${firstError + 1}. Utilisez l’indice ou affichez la solution.`, "error");
         }
         updateNavigation();
       });
