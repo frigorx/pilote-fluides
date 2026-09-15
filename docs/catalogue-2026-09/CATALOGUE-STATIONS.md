@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**273 stations** réparties en 9 réseaux.
+**281 stations** réparties en 10 réseaux.
 
 ## Plan thermo-techno — 72 stations
 
@@ -13,7 +13,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [La chaîne de l’intervention — manifold, vide et ordre des vannes](https://inerweb.fr/packs/fluides/res/chaine-intervention-interactive/) | — | — | 3.03 3.04 4.05 5.01 5.02 | Cours interactif commun aux fiches p1, p3 et p5 : manifold, raccordement, tirage au vide, isolement et déconnexion avec un minimum d’émissions. |
 | [La chaleur dans le circuit — grandeurs, transformations, puissance](https://inerweb.fr/packs/fluides/res/chaleur-circuit-interactif/) | — | — | 1.01 1.02 1.04 | Comprenez les transferts de chaleur, la saturation, la surchauffe et le sous-refroidissement dans un circuit frigorifique interactif. |
 | [Du glaçon au circuit — chaleur sensible et chaleur latente](https://inerweb.fr/packs/fluides/res/chaleur-interactive/) | — | — | 1.02 1.04 | Découvrez comment la chaleur se déplace, du glaçon aux changements d’état, puis comment le circuit frigorifique absorbe et rejette l’énergie. |
-| [Le circuit d’huile](https://inerweb.fr/packs/fluides/res/circuit-huile-interactif/) | — | — | — | Le tracé montre l’ordre du cours. Ce n’est pas un schéma fluidique. |
+| [Le circuit d’huile — ligne interactive inerWeb](https://inerweb.fr/packs/fluides/res/circuit-huile-interactif/) | — | — | — | Le tracé montre l’ordre du cours. Ce n’est pas un schéma fluidique. |
 | [Le circuit, organe par organe](https://inerweb.fr/packs/fluides/res/circuit-organe-par-organe/) | — | — | 1.04 6.01 7.01 8.01 9.01 | Comprenez le rôle du compresseur, du condenseur, du détendeur et de l’évaporateur dans un circuit frigorifique, avec schémas et exercices interactifs. |
 | [Le clapet différentiel d’huile](https://inerweb.fr/packs/fluides/res/clapet-differentiel-huile-pedagogique/) | — | — | — | — |
 | [La ligne CO₂ / R744 — le fluide en huit escales, les centrales en cinq](https://inerweb.fr/packs/fluides/res/co2-r744/) | — | — | 1.00 1.02 1.03 2.02 5.02 6.01 11.01 11.03 11.04 11.06 13.01 13.02 13.03 13.04 13.11 13.14 13.15 13.16 13.17 | Module inerWeb Édu hors ligne : la ligne CO₂ / R744 en douze escales — point critique, cycle transcritique, haute pression optimale, centrale booster, éjecteur, sécurité. |
@@ -34,9 +34,9 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [La chaîne de l’huile : mettre sous pression et régler](https://inerweb.fr/packs/fluides/res/elements-circuit-huile-regler/) | — | — | — | — |
 | [L’étanchéité — de l’indice à la preuve](https://inerweb.fr/packs/fluides/res/etancheite-interactive/) | — | — | 4.01 4.02 4.03 4.04 4.05 4.06 4.07 4.08 4.09 | Cours interactif réunissant g4a, g4b et g4c : registre, points de fuite, méthodes indirecte et directe, détecteur électronique et traçabilité. |
 | [Évaporateur — installer, régler, vérifier](https://inerweb.fr/packs/fluides/res/evaporateur-interactif/) | — | — | 8.02 8.03 8.04 8.05 8.06 8.07 8.09 8.10 8.11 | Module interactif A1 sur l’installation, le réglage et la vérification d’un évaporateur : givre, dégivrage, régulation, inspection et rapport d’état. |
-| [Le fil conducteur d'une intervention](https://inerweb.fr/packs/fluides/res/fil-conducteur-intervention/) | — | — | — | Une seule planche de synthèse : le parcours complet d'une intervention fluide en six étapes — comprendre, être autorisé, préparer, intervenir, contrôler, tracer. Animation et voix française locale, avec réglage de vitesse. |
-| [Effet de serre, PRP et climat](https://inerweb.fr/packs/fluides/res/film-effet-de-serre/) | — | — | — | Film animé narré (53 s) : l’effet de serre, le PRP des fluides frigorigènes et l’équivalence en kilomètres de voiture — R404A, R32, R290. Voix française, débit réglable, l’image se cale sur la voix. |
-| [Couche d'ozone et ODP](https://inerweb.fr/packs/fluides/res/film-ozone/) | — | — | — | Film animé narré (45 s) : la couche d’ozone, les CFC, l’ODP et le protocole de Montréal, 1987. Voix française, débit réglable, l’image se cale sur la voix. |
+| [Le fil conducteur d'une intervention — Pilote Fluides](https://inerweb.fr/packs/fluides/res/fil-conducteur-intervention/) | — | — | — | Une seule planche de synthèse : le parcours complet d'une intervention fluide en six étapes — comprendre, être autorisé, préparer, intervenir, contrôler, tracer. Animation et voix française locale, avec réglage de vitesse. |
+| [Effet de serre, PRP et climat — film narré](https://inerweb.fr/packs/fluides/res/film-effet-de-serre/) | — | — | — | Film animé narré (53 s) : l’effet de serre, le PRP des fluides frigorigènes et l’équivalence en kilomètres de voiture — R404A, R32, R290. Voix française, débit réglable, l’image se cale sur la voix. |
+| [Couche d'ozone et ODP — film narré](https://inerweb.fr/packs/fluides/res/film-ozone/) | — | — | — | Film animé narré (45 s) : la couche d’ozone, les CFC, l’ODP et le protocole de Montréal, 1987. Voix française, débit réglable, l’image se cale sur la voix. |
 | [Comprendre le filtre-déshydrateur](https://inerweb.fr/packs/fluides/res/filtre-deshydrateur-pedagogique/) | — | — | 1.05 7.05 9.08 12.07 | Parcours interactif pour comprendre le filtre-déshydrateur frigorifique, ses composants et ses variantes. |
 | [Académie froid-clim — cycle animé, simulateur et atelier panne](https://inerweb.fr/packs/fluides/res/froid-clim-academie/) | — | — | 1.02 1.04 5.05 | Cours interactifs et ludiques pour former aux bases du froid, de la climatisation et des fluides frigorigènes. |
 | [Pourquoi la température glisse ?](https://inerweb.fr/packs/fluides/res/glissement-temperature/) | — | — | 1.02 1.03 1.06 5.05 | Découverte racontée et illustrée des fluides zéotropes, azéotropes et du glissement de température, depuis la chaleur latente jusqu'au diagramme log p-h. |
@@ -62,7 +62,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Récupérer le fluide — manifold, station et bouteille, geste par geste](https://inerweb.fr/packs/fluides/res/recuperation-fluide-interactive/) | — | — | 3.03 3.04 5.01 5.02 5.03 5.05 5.06 | TP interactif inerWeb : raccorder un manifold 4 voies, récupérer le fluide avec une station Minimax-E, peser, auto-purger puis tirer l'installation au vide. |
 | [Le régulateur électronique — lire, régler, câbler](https://inerweb.fr/packs/fluides/res/regulateur-electronique-interactif/) | — | — | 6.03 9.04 9.10 | Cours interactif : lire une sonde résistive, régler consigne et différentiel, programmer un régulateur électronique de froid, régler le dégivrage et câbler son bornier. |
 | [Le régulateur d’huile mécanique AC&R](https://inerweb.fr/packs/fluides/res/regulateur-huile-mecanique-pedagogique/) | — | — | — | — |
-| [Le régulateur de pression de carter](https://inerweb.fr/packs/fluides/res/regulateur-kvl-pedagogique/) | — | — | — | Le module sur le seul régulateur de pression de carter (KVL) est remplacé par un parcours qui traite les trois : KVP maintient la pression d’évaporation, KVL protège le compresseur, KVR tient la haute pression. |
+| [Le régulateur de pression de carter — déplacé](https://inerweb.fr/packs/fluides/res/regulateur-kvl-pedagogique/) | — | — | — | Le module sur le seul régulateur de pression de carter (KVL) est remplacé par un parcours qui traite les trois : KVP maintient la pression d’évaporation, KVL protège le compresseur, KVR tient la haute pression. |
 | [Le KVR et le NRD — la pression de condensation par temps froid](https://inerweb.fr/packs/fluides/res/regulateur-kvr-nrd/) | — | — | 1.05 9.02 9.05 9.09 | Animation (92 s) : pourquoi la haute pression s’effondre quand l’air extérieur est froid, ce que fait le régulateur KVR à la sortie du condenseur, et pourquoi il faut lui adjoindre le clapet différentiel NRD pour repressuriser le réservoir. Symboles normalisés ou dessinés, au choix. |
 | [La famille des régulateurs KV — KVP, KVL, KVR](https://inerweb.fr/packs/fluides/res/regulateurs-kv-pedagogiques/) | — | — | 1.05 9.02 9.05 9.09 | Parcours inerWeb Édu pour comparer, comprendre et régler les régulateurs de pression KVP, KVL et KVR. |
 | [Les régules · inerWeb Édu](https://inerweb.fr/packs/fluides/res/regules-interactif/) | — | — | — | Ce parcours local interactif a besoin de JavaScript pour afficher ses stations. |
@@ -298,27 +298,40 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
-| [inerWeb AquiBlue](https://inerweb.fr/aquiblue/) | — | — | — | condenseur évaporateur détendeur compresseur HP BP le cycle, en direct Bluetooth du PC Recherche de l&rsquo;adaptateur&hellip; Effacer les journaux de capture Le geste central du TP Le numéro de série est écrit sur la sonde. 1. |
-| [inerWeb HoCourant](https://inerweb.fr/hocourant/) | — | — | — | S'entraîner en autonomie à l'habilitation électrique, de B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle. Sans compte, sans donnée personnelle. Prototype inerWeb. |
+| [Acquisition de données Bluetooth](https://inerweb.fr/aquiblue/) | — | — | — | condenseur évaporateur détendeur compresseur HP BP le cycle, en direct Bluetooth du PC Recherche de l&rsquo;adaptateur&hellip; Effacer les journaux de capture Le geste central du TP Le numéro de série est écrit sur la sonde. 1. |
+| [se préparer à l'habilitation électrique](https://inerweb.fr/hocourant/) | — | — | — | S'entraîner en autonomie à l'habilitation électrique, de B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle. Sans compte, sans donnée personnelle. Prototype inerWeb. |
 
 ## Pages du site — 16 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
 | [Charte graphique inerWeb](https://inerweb.fr/charte.html) | — | — | — | La charte graphique du pack fluides, montrée : palette, typographie, composants, règles absolues, volet impression et écarts constatés. |
-| [Comprendre les codes inerWeb](https://inerweb.fr/comprendre-les-codes.html) | — | — | — | À quoi sert chaque code inerWeb, qui le détient, comment ouvrir une séance et récupérer les résultats des élèves. |
-| [Documents du projet](https://inerweb.fr/documents.html) | — | — | — | Dispositif d'habilitation aux fluides frigorigènes — A1 · A2 · D · E · retour au portail |
-| [Centre d'habilitation fluides frigorigènes](https://inerweb.fr/dossier.html) | — | — | — | Projet d'ouverture d'un centre d'habilitation aux fluides frigorigènes au Lycée Jacques Raynaud. Dossier, budget prévisionnel et outil pédagogique en fonctionnement. |
+| [Comprendre les codes inerWeb — guide de l'enseignant](https://inerweb.fr/comprendre-les-codes.html) | — | — | — | À quoi sert chaque code inerWeb, qui le détient, comment ouvrir une séance et récupérer les résultats des élèves. |
+| [Documents du projet — Habilitation fluides frigorigènes](https://inerweb.fr/documents.html) | — | — | — | Dispositif d'habilitation aux fluides frigorigènes — A1 · A2 · D · E · retour au portail |
+| [Centre d'habilitation fluides frigorigènes — dossier de présentation](https://inerweb.fr/dossier.html) | — | — | — | Projet d'ouverture d'un centre d'habilitation aux fluides frigorigènes au Lycée Jacques Raynaud. Dossier, budget prévisionnel et outil pédagogique en fonctionnement. |
 | [Espace formateurs](https://inerweb.fr/formateurs.html) | — | — | — | Projeter une ressource inerWeb en cours, réemployer le moteur technique (MIT), demander une adaptation. Contenus CC BY-NC-ND 4.0. |
-| [inerWeb Pilote](https://inerweb.fr/formation.html) | — | — | — | Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote. |
-| [Bibliothèque d'animations et de supports](https://inerweb.fr/galerie.html) | — | — | — | Le catalogue inerWeb Édu : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables. |
-| [inerWeb Édu](https://inerweb.fr/index.html) | — | — | — | Le plan de formation inerWeb Édu : tous les cours interactifs du froid sur une carte de métro — théorie, organes, gestes, fluides, examens blancs. Gratuit, sans compte. |
-| [Matrice compétences × contenu × questions](https://inerweb.fr/matrice.html) | — | — | — | Pack habilitation fluides frigorigènes — catégories A1 · A2 · D · E · arrêté du 21 novembre 2025, annexe II.B (136 compétences). Généré par node build/matrice.mjs depuis le contenu publié : ce tableau ne se saisit pas, il se relève. |
+| [Habilitation fluides frigorigènes (démonstrateur)](https://inerweb.fr/formation.html) | — | — | — | Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote. |
+| [Bibliothèque d'animations et de supports — habilitation fluides frigorigènes](https://inerweb.fr/galerie.html) | — | — | — | Le catalogue inerWeb Édu : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables. |
+| [apprendre le froid, station par station](https://inerweb.fr/index.html) | — | — | — | Le plan de formation inerWeb Édu : tous les cours interactifs du froid sur une carte de métro — théorie, organes, gestes, fluides, examens blancs. Gratuit, sans compte. |
+| [Matrice compétences × contenu × questions — habilitation fluides](https://inerweb.fr/matrice.html) | — | — | — | Pack habilitation fluides frigorigènes — catégories A1 · A2 · D · E · arrêté du 21 novembre 2025, annexe II.B (136 compétences). Généré par node build/matrice.mjs depuis le contenu publié : ce tableau ne se saisit pas, il se relève. |
 | [Le métier de frigoriste](https://inerweb.fr/metier.html) | — | — | — | Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études. |
-| [Le lien à garder](https://inerweb.fr/partage.html) | — | — | — | Gratuit, sans compte, sans installation — il s'ouvre dans le navigateur, sur téléphone comme sur ordinateur. Gardez ce lien. |
-| [Planning de formation](https://inerweb.fr/planning.html) | — | — | — | Habilitation à la manipulation des fluides frigorigènes · arrêté du 21 novembre 2025 |
-| [Habilitation fluides frigorigènes](https://inerweb.fr/portail.html) | — | — | — | Dispositif de formation à l'habilitation aux fluides frigorigènes (A1, A2, D, E) — autoformation, projection en salle, préparation pratique. Construit sur le référentiel de l'arrêté du 21 novembre 2025. |
-| [La partie pratique](https://inerweb.fr/pratique.html) | — | — | — | TP formatif et évaluation de la manipulation fluidique : feuilles de guidance pas-à-pas, visas formateur, grille par compétence. Présentation. |
-| [Relecture](https://inerweb.fr/relecture.html) | — | — | — | Généré le 25/07/2026 depuis le pack publié (82 cartes, 269 questions). Pour chaque élément : ✅ = validé · ✏ = à corriger (noter la correction en marge). Les réponses correctes sont en vert gras . |
+| [Le lien à garder — Habilitation fluides frigorigènes](https://inerweb.fr/partage.html) | — | — | — | Gratuit, sans compte, sans installation — il s'ouvre dans le navigateur, sur téléphone comme sur ordinateur. Gardez ce lien. |
+| [Planning de formation — habilitation fluides frigorigènes](https://inerweb.fr/planning.html) | — | — | — | Habilitation à la manipulation des fluides frigorigènes · arrêté du 21 novembre 2025 |
+| [Habilitation fluides frigorigènes — dossier de présentation](https://inerweb.fr/portail.html) | — | — | — | Dispositif de formation à l'habilitation aux fluides frigorigènes (A1, A2, D, E) — autoformation, projection en salle, préparation pratique. Construit sur le référentiel de l'arrêté du 21 novembre 2025. |
+| [La partie pratique — manipulation fluidique](https://inerweb.fr/pratique.html) | — | — | — | TP formatif et évaluation de la manipulation fluidique : feuilles de guidance pas-à-pas, visas formateur, grille par compétence. Présentation. |
+| [Relecture — pack habilitation fluides (bon à tirer)](https://inerweb.fr/relecture.html) | — | — | — | Généré le 25/07/2026 depuis le pack publié (82 cartes, 269 questions). Pour chaque élément : ✅ = validé · ✏ = à corriger (noter la correction en marge). Les réponses correctes sont en vert gras . |
 | [Ouvrir une séance à une classe](https://inerweb.fr/seances.html) | — | — | — | Fabriquer le code d'une séance : un lien et un QR code à projeter. Réservé aux titulaires d'un accès enseignant. |
+
+## Modules externes — 8 stations
+
+| Station | Ligne | Niveaux | Codes | Sujet |
+|---|---|---|---|---|
+| [Sous tension — Parcours câbles électriques](https://frigorx.github.io/sous-tension/) | — | — | — | Apprendre à lire, comprendre et choisir les câbles électriques — sans jargon, en s'entraînant. Un parcours en trois séances, pour CAP, 2nde TNE et Bac Pro. |
+| [TD1 — Les fondamentaux du câble électrique](https://frigorx.github.io/sous-tension/sous-tension-TD1-fondamentaux.html) | — | — | — | Un câble mal choisi peut chauffer, s'user trop vite ou tomber en panne . Dans ce premier TD, tu vas apprendre à : |
+| [TD2 — Le monde du tableau électrique](https://frigorx.github.io/sous-tension/sous-tension-TD2-tableau-electrique.html) | — | — | — | Fils unifilaires, rigide ou souple : lesquels, où, pourquoi. |
+| [TD3 — Cas particuliers et dimensionnement](https://frigorx.github.io/sous-tension/sous-tension-TD3-cas-particuliers.html) | — | — | — | Câbles armés, blindés, aluminium, sécurité incendie — et les sections. |
+| [Évaluation — Les câbles électriques](https://frigorx.github.io/sous-tension/sous-tension-evaluation.html) | — | — | — | Les questions sont les mêmes pour tous : ce qui change, c'est la compétence du référentiel sur laquelle tu seras positionné. |
+| [TD Triphasé & Couplage Moteur](https://frigorx.github.io/sous-tension/td-triphase.html) | — | — | — | — |
+| [QCM — Le travail en hauteur](https://frigorx.github.io/qcm-travail-hauteur/) | — | — | — | — |
+| [Mission F-GAZ V6](https://frigorx.github.io/inerweb-fgaz/) | — | — | — | Téléchargez vos stats en CSV — par chapitre, sans aucune donnée personnelle |
 

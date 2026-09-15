@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 273,
+  "total": 281,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -95,7 +95,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "circuit-huile-interactif",
-      "titre": "Le circuit d’huile",
+      "titre": "Le circuit d’huile — ligne interactive inerWeb",
       "ligne": null,
       "resume": "Le tracé montre l’ordre du cours. Ce n’est pas un schéma fluidique.",
       "niveaux": null,
@@ -424,7 +424,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "fil-conducteur-intervention",
-      "titre": "Le fil conducteur d'une intervention",
+      "titre": "Le fil conducteur d'une intervention — Pilote Fluides",
       "ligne": null,
       "resume": "Une seule planche de synthèse : le parcours complet d'une intervention fluide en six étapes — comprendre, être autorisé, préparer, intervenir, contrôler, tracer. Animation et voix française locale, avec réglage de vitesse.",
       "niveaux": null,
@@ -436,7 +436,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "film-effet-de-serre",
-      "titre": "Effet de serre, PRP et climat",
+      "titre": "Effet de serre, PRP et climat — film narré",
       "ligne": null,
       "resume": "Film animé narré (53 s) : l’effet de serre, le PRP des fluides frigorigènes et l’équivalence en kilomètres de voiture — R404A, R32, R290. Voix française, débit réglable, l’image se cale sur la voix.",
       "niveaux": null,
@@ -448,7 +448,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "film-ozone",
-      "titre": "Couche d'ozone et ODP",
+      "titre": "Couche d'ozone et ODP — film narré",
       "ligne": null,
       "resume": "Film animé narré (45 s) : la couche d’ozone, les CFC, l’ODP et le protocole de Montréal, 1987. Voix française, débit réglable, l’image se cale sur la voix.",
       "niveaux": null,
@@ -862,7 +862,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "regulateur-kvl-pedagogique",
-      "titre": "Le régulateur de pression de carter",
+      "titre": "Le régulateur de pression de carter — déplacé",
       "ligne": null,
       "resume": "Le module sur le seul régulateur de pression de carter (KVL) est remplacé par un parcours qui traite les trois : KVP maintient la pression d’évaporation, KVL protège le compresseur, KVR tient la haute pression.",
       "niveaux": null,
@@ -3746,7 +3746,7 @@
     {
       "reseau": "Applications",
       "id": "aquiblue",
-      "titre": "inerWeb AquiBlue",
+      "titre": "Acquisition de données Bluetooth",
       "ligne": null,
       "resume": "condenseur évaporateur détendeur compresseur HP BP le cycle, en direct Bluetooth du PC Recherche de l&rsquo;adaptateur&hellip; Effacer les journaux de capture Le geste central du TP Le numéro de série est écrit sur la sonde. 1.",
       "niveaux": null,
@@ -3758,7 +3758,7 @@
     {
       "reseau": "Applications",
       "id": "hocourant",
-      "titre": "inerWeb HoCourant",
+      "titre": "se préparer à l'habilitation électrique",
       "ligne": null,
       "resume": "S'entraîner en autonomie à l'habilitation électrique, de B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle. Sans compte, sans donnée personnelle. Prototype inerWeb.",
       "niveaux": null,
@@ -3782,7 +3782,7 @@
     {
       "reseau": "Pages du site",
       "id": "comprendre-les-codes",
-      "titre": "Comprendre les codes inerWeb",
+      "titre": "Comprendre les codes inerWeb — guide de l'enseignant",
       "ligne": null,
       "resume": "À quoi sert chaque code inerWeb, qui le détient, comment ouvrir une séance et récupérer les résultats des élèves.",
       "niveaux": null,
@@ -3794,7 +3794,7 @@
     {
       "reseau": "Pages du site",
       "id": "documents",
-      "titre": "Documents du projet",
+      "titre": "Documents du projet — Habilitation fluides frigorigènes",
       "ligne": null,
       "resume": "Dispositif d'habilitation aux fluides frigorigènes — A1 · A2 · D · E · retour au portail",
       "niveaux": null,
@@ -3806,7 +3806,7 @@
     {
       "reseau": "Pages du site",
       "id": "dossier",
-      "titre": "Centre d'habilitation fluides frigorigènes",
+      "titre": "Centre d'habilitation fluides frigorigènes — dossier de présentation",
       "ligne": null,
       "resume": "Projet d'ouverture d'un centre d'habilitation aux fluides frigorigènes au Lycée Jacques Raynaud. Dossier, budget prévisionnel et outil pédagogique en fonctionnement.",
       "niveaux": null,
@@ -3830,7 +3830,7 @@
     {
       "reseau": "Pages du site",
       "id": "formation",
-      "titre": "inerWeb Pilote",
+      "titre": "Habilitation fluides frigorigènes (démonstrateur)",
       "ligne": null,
       "resume": "Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote.",
       "niveaux": null,
@@ -3842,7 +3842,7 @@
     {
       "reseau": "Pages du site",
       "id": "galerie",
-      "titre": "Bibliothèque d'animations et de supports",
+      "titre": "Bibliothèque d'animations et de supports — habilitation fluides frigorigènes",
       "ligne": null,
       "resume": "Le catalogue inerWeb Édu : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables.",
       "niveaux": null,
@@ -3854,7 +3854,7 @@
     {
       "reseau": "Pages du site",
       "id": "index",
-      "titre": "inerWeb Édu",
+      "titre": "apprendre le froid, station par station",
       "ligne": null,
       "resume": "Le plan de formation inerWeb Édu : tous les cours interactifs du froid sur une carte de métro — théorie, organes, gestes, fluides, examens blancs. Gratuit, sans compte.",
       "niveaux": null,
@@ -3866,7 +3866,7 @@
     {
       "reseau": "Pages du site",
       "id": "matrice",
-      "titre": "Matrice compétences × contenu × questions",
+      "titre": "Matrice compétences × contenu × questions — habilitation fluides",
       "ligne": null,
       "resume": "Pack habilitation fluides frigorigènes — catégories A1 · A2 · D · E · arrêté du 21 novembre 2025, annexe II.B (136 compétences). Généré par node build/matrice.mjs depuis le contenu publié : ce tableau ne se saisit pas, il se relève.",
       "niveaux": null,
@@ -3890,7 +3890,7 @@
     {
       "reseau": "Pages du site",
       "id": "partage",
-      "titre": "Le lien à garder",
+      "titre": "Le lien à garder — Habilitation fluides frigorigènes",
       "ligne": null,
       "resume": "Gratuit, sans compte, sans installation — il s'ouvre dans le navigateur, sur téléphone comme sur ordinateur. Gardez ce lien.",
       "niveaux": null,
@@ -3902,7 +3902,7 @@
     {
       "reseau": "Pages du site",
       "id": "planning",
-      "titre": "Planning de formation",
+      "titre": "Planning de formation — habilitation fluides frigorigènes",
       "ligne": null,
       "resume": "Habilitation à la manipulation des fluides frigorigènes · arrêté du 21 novembre 2025",
       "niveaux": null,
@@ -3914,7 +3914,7 @@
     {
       "reseau": "Pages du site",
       "id": "portail",
-      "titre": "Habilitation fluides frigorigènes",
+      "titre": "Habilitation fluides frigorigènes — dossier de présentation",
       "ligne": null,
       "resume": "Dispositif de formation à l'habilitation aux fluides frigorigènes (A1, A2, D, E) — autoformation, projection en salle, préparation pratique. Construit sur le référentiel de l'arrêté du 21 novembre 2025.",
       "niveaux": null,
@@ -3926,7 +3926,7 @@
     {
       "reseau": "Pages du site",
       "id": "pratique",
-      "titre": "La partie pratique",
+      "titre": "La partie pratique — manipulation fluidique",
       "ligne": null,
       "resume": "TP formatif et évaluation de la manipulation fluidique : feuilles de guidance pas-à-pas, visas formateur, grille par compétence. Présentation.",
       "niveaux": null,
@@ -3938,7 +3938,7 @@
     {
       "reseau": "Pages du site",
       "id": "relecture",
-      "titre": "Relecture",
+      "titre": "Relecture — pack habilitation fluides (bon à tirer)",
       "ligne": null,
       "resume": "Généré le 25/07/2026 depuis le pack publié (82 cartes, 269 questions). Pour chaque élément : ✅ = validé · ✏ = à corriger (noter la correction en marge). Les réponses correctes sont en vert gras .",
       "niveaux": null,
@@ -3958,6 +3958,102 @@
       "missionProf": null,
       "url": "https://inerweb.fr/seances.html",
       "chemin": "seances.html"
+    },
+    {
+      "reseau": "Modules externes",
+      "id": "sous-tension/index",
+      "titre": "Sous tension — Parcours câbles électriques",
+      "ligne": null,
+      "resume": "Apprendre à lire, comprendre et choisir les câbles électriques — sans jargon, en s'entraînant. Un parcours en trois séances, pour CAP, 2nde TNE et Bac Pro.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://frigorx.github.io/sous-tension/",
+      "chemin": "C:/git/sous-tension/index.html"
+    },
+    {
+      "reseau": "Modules externes",
+      "id": "sous-tension/sous-tension-TD1-fondamentaux",
+      "titre": "TD1 — Les fondamentaux du câble électrique",
+      "ligne": null,
+      "resume": "Un câble mal choisi peut chauffer, s'user trop vite ou tomber en panne . Dans ce premier TD, tu vas apprendre à :",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://frigorx.github.io/sous-tension/sous-tension-TD1-fondamentaux.html",
+      "chemin": "C:/git/sous-tension/sous-tension-TD1-fondamentaux.html"
+    },
+    {
+      "reseau": "Modules externes",
+      "id": "sous-tension/sous-tension-TD2-tableau-electrique",
+      "titre": "TD2 — Le monde du tableau électrique",
+      "ligne": null,
+      "resume": "Fils unifilaires, rigide ou souple : lesquels, où, pourquoi.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://frigorx.github.io/sous-tension/sous-tension-TD2-tableau-electrique.html",
+      "chemin": "C:/git/sous-tension/sous-tension-TD2-tableau-electrique.html"
+    },
+    {
+      "reseau": "Modules externes",
+      "id": "sous-tension/sous-tension-TD3-cas-particuliers",
+      "titre": "TD3 — Cas particuliers et dimensionnement",
+      "ligne": null,
+      "resume": "Câbles armés, blindés, aluminium, sécurité incendie — et les sections.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://frigorx.github.io/sous-tension/sous-tension-TD3-cas-particuliers.html",
+      "chemin": "C:/git/sous-tension/sous-tension-TD3-cas-particuliers.html"
+    },
+    {
+      "reseau": "Modules externes",
+      "id": "sous-tension/sous-tension-evaluation",
+      "titre": "Évaluation — Les câbles électriques",
+      "ligne": null,
+      "resume": "Les questions sont les mêmes pour tous : ce qui change, c'est la compétence du référentiel sur laquelle tu seras positionné.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://frigorx.github.io/sous-tension/sous-tension-evaluation.html",
+      "chemin": "C:/git/sous-tension/sous-tension-evaluation.html"
+    },
+    {
+      "reseau": "Modules externes",
+      "id": "sous-tension/td-triphase",
+      "titre": "TD Triphasé & Couplage Moteur",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://frigorx.github.io/sous-tension/td-triphase.html",
+      "chemin": "C:/git/sous-tension/td-triphase.html"
+    },
+    {
+      "reseau": "Modules externes",
+      "id": "qcm-travail-hauteur/index",
+      "titre": "QCM — Le travail en hauteur",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://frigorx.github.io/qcm-travail-hauteur/",
+      "chemin": "C:/git/qcm-travail-hauteur/index.html"
+    },
+    {
+      "reseau": "Modules externes",
+      "id": "inerweb-fgaz/index",
+      "titre": "Mission F-GAZ V6",
+      "ligne": null,
+      "resume": "Téléchargez vos stats en CSV — par chapitre, sans aucune donnée personnelle",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://frigorx.github.io/inerweb-fgaz/",
+      "chemin": "C:/git/inerweb-fgaz/index.html"
     }
   ]
 }

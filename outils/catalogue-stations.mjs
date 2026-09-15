@@ -99,8 +99,13 @@ function nettoyer(s) {
 function titreHtml(html) {
   const m = /<title>([\s\S]*?)<\/title>/i.exec(html || '');
   if (!m) return null;
-  // « Aptitude & capacité — inerWeb Législation » : on garde la partie utile
-  return nettoyer(m[1]).split(/\s+[—–|]\s+/)[0].trim() || null;
+  // « Aptitude & capacité — inerWeb Législation » : la seconde moitié est la
+  // signature du site, pas le sujet. Mais « TD1 — Les fondamentaux du câble »
+  // n'a pas de signature : tout couper au premier tiret perdait le sujet.
+  // On ne retire donc que les morceaux qui nomment le site.
+  const parts = nettoyer(m[1]).split(/\s+[—–|]\s+/)
+    .filter((p) => !/^inerWeb\b/i.test(p.trim()));
+  return parts.join(' — ').trim() || nettoyer(m[1]) || null;
 }
 
 function descriptionHtml(html) {
@@ -357,6 +362,39 @@ for (const app of [
       resume,
       chemin: f,
     });
+  }
+}
+
+/* --- Les modules hébergés ailleurs -----------------------------------
+   Le plan renvoie vers des parcours qui ne vivent pas dans ce dépôt : ils
+   sont publiés sur les pages GitHub, dans leur propre dépôt. Ils sont
+   pourtant en ligne, donc utilisables en classe, donc catalogués — sinon
+   « qu'est-ce que j'ai sur les câbles ? » ne les trouve jamais.
+   Un dépôt absent du disque est simplement sauté : `inerweb-pressostats`
+   est publié mais n'a pas de copie locale ici. */
+for (const ext of [
+  { racine: 'C:/git/sous-tension', base: 'https://frigorx.github.io/sous-tension/' },
+  { racine: 'C:/git/qcm-travail-hauteur', base: 'https://frigorx.github.io/qcm-travail-hauteur/' },
+  { racine: 'C:/git/inerweb-fgaz', base: 'https://frigorx.github.io/inerweb-fgaz/' },
+]) {
+  if (!fs.existsSync(ext.racine)) continue;
+  const pages = fs.readdirSync(ext.racine).filter((f) => f.endsWith('.html')).sort();
+  for (const f of pages) {
+    const html = lire(path.join(ext.racine, f)) || '';
+    // Ici on garde la page même sans résumé : ces parcours sont peu nombreux et
+    // tous liés depuis le plan, donc tous destinés à la classe. Son titre suffit
+    // à la retrouver, et la sauter reviendrait à la rendre introuvable.
+    const resume = descriptionHtml(html) || phrase(premierParagraphe(html));
+    ajouter({
+      reseau: 'Modules externes',
+      id: `${path.basename(ext.racine)}/${f.replace(/\.html$/, '')}`,
+      titre: titreHtml(html),
+      resume,
+      chemin: f === 'index.html' ? '' : f,
+    });
+    // L'adresse ne se compose pas comme les autres : elle ne part pas d'inerweb.fr.
+    stations[stations.length - 1].url = ext.base + (f === 'index.html' ? '' : f);
+    stations[stations.length - 1].chemin = `${ext.racine}/${f}`;
   }
 }
 
