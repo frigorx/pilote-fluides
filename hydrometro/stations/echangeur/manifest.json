@@ -6,6 +6,12 @@
   ],
   "status": "QA TECHNIQUE",
   "levels": {
+    "CAP": {
+      "competencies": [
+        "CAP C3.4",
+        "CAP C4.5"
+      ]
+    },
     "TP": {
       "objective": "Repérer les circuits primaire et secondaire et préparer les contrôles.",
       "learn": [

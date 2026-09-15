@@ -6,6 +6,11 @@
   ],
   "status": "QA TECHNIQUE",
   "levels": {
+    "CAP": {
+      "competencies": [
+        "CAP C3.4"
+      ]
+    },
     "TP": {
       "objective": "Identifier les productions raccordées à un réseau d’eau.",
       "learn": [

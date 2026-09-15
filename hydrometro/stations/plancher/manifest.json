@@ -7,6 +7,11 @@
   "status": "QA TECHNIQUE",
   "version": "2026-08-23-d2",
   "levels": {
+    "CAP": {
+      "competencies": [
+        "CAP C3.4"
+      ]
+    },
     "TP": {
       "objective": "Associer zones et boucles, lire les débitmètres et contrôler un réglage.",
       "learn": [

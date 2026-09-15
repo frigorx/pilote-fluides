@@ -7,6 +7,11 @@
   "status": "QA TECHNIQUE",
   "version": "2026-08-23-p1",
   "levels": {
+    "CAP": {
+      "competencies": [
+        "CAP C4.5"
+      ]
+    },
     "TP": {
       "objective": "Mesurer un écart départ-retour sans conclure trop vite.",
       "learn": [

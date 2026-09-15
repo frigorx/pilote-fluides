@@ -7,6 +7,12 @@
   "status": "QA TECHNIQUE",
   "version": "2026-08-23-m2",
   "levels": {
+    "CAP": {
+      "competencies": [
+        "CAP C4.4",
+        "CAP C4.5"
+      ]
+    },
     "TP": {
       "objective": "Conduire l’enquête du constat au compte rendu avec une action contrôlée.",
       "learn": [

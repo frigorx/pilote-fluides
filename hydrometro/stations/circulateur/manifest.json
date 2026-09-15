@@ -6,6 +6,12 @@
   ],
   "status": "QA TECHNIQUE",
   "levels": {
+    "CAP": {
+      "competencies": [
+        "CAP C4.4",
+        "CAP C4.5"
+      ]
+    },
     "TP": {
       "objective": "Contrôler et régler un circulateur en sécurité.",
       "learn": [

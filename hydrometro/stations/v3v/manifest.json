@@ -7,6 +7,12 @@
   "status": "QA TECHNIQUE",
   "version": "2026-08-23-d2",
   "levels": {
+    "CAP": {
+      "competencies": [
+        "CAP C3.4",
+        "CAP C4.4"
+      ]
+    },
     "TP": {
       "objective": "Identifier A, B, AB et contrôler le sens de circulation.",
       "learn": [

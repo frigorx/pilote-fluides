@@ -7,6 +7,11 @@
   "status": "QA TECHNIQUE",
   "version": "2026-08-23-m2",
   "levels": {
+    "CAP": {
+      "competencies": [
+        "CAP C3.4"
+      ]
+    },
     "TP": {
       "objective": "Reconnaître le raccordement et attribuer seulement les fonctions visibles.",
       "learn": [

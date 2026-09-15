@@ -6,6 +6,11 @@
   ],
   "status": "QA TECHNIQUE",
   "levels": {
+    "CAP": {
+      "competencies": [
+        "CAP C3.9"
+      ]
+    },
     "TP": {
       "objective": "Identifier et contrôler visuellement les organes de sécurité.",
       "learn": [
