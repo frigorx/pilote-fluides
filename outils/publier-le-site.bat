@@ -48,6 +48,11 @@ if "%CODE%"=="200" (
   echo     Le site inerweb.fr repond et sert la
   echo     nouvelle version.
   echo   ----------------------------------------
+  echo.
+  echo   Mise a jour de la memoire de Claude...
+  echo   ^(catalogue des stations, puis index RAG^)
+  echo.
+  call :MAJ_RAG
 ) else (
   echo   ----------------------------------------
   echo     Le site a repondu %CODE%.
@@ -70,3 +75,29 @@ echo   ----------------------------------------
 echo.
 echo   Appuyez sur une touche pour fermer.
 pause >nul
+goto :EOF
+
+REM ============================================================
+REM   MAJ_RAG — la memoire de Claude suit le site
+REM   Demande de Franck du 15/09/2026 : « a chaque fois qu on
+REM   ameliore, modifie ou corrige inerweb.fr, il faut
+REM   systematiquement une mise a jour du RAG ».
+REM   Deux temps : on releve ce que le site contient, puis on
+REM   l indexe. Un echec ici n annule JAMAIS la publication :
+REM   le site est deja en ligne, seul l index reste a rattraper.
+REM ============================================================
+:MAJ_RAG
+node C:\git\pilote-fluides\outils\catalogue-stations.mjs
+if errorlevel 1 (
+  echo   Le catalogue n a pas pu etre releve. Le site est en
+  echo   ligne, mais l index de Claude reste sur l ancienne
+  echo   version. Signalez-le a Claude.
+  goto :EOF
+)
+node C:\git\HAL-v3\scripts\indexer-stations-rag.js
+if errorlevel 1 (
+  echo   L index n a pas ete mis a jour ^(Ollama eteint ?^).
+  echo   Le site est en ligne. Relancez plus tard :
+  echo   node C:\git\HAL-v3\scripts\indexer-stations-rag.js
+)
+goto :EOF

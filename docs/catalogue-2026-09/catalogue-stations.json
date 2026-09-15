@@ -1,0 +1,3963 @@
+{
+  "site": "https://inerweb.fr/",
+  "total": 273,
+  "stations": [
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "bilan-thermique-performance-interactif",
+      "titre": "Tome 4 — Bilan thermique et performance énergétique",
+      "ligne": null,
+      "resume": "Cours interactif professionnel : bilan thermique d’une chambre froide, climatisation en chaud et en froid, COP, EER, SCOP et SEER.",
+      "niveaux": null,
+      "competences": [
+        "5.2",
+        "5.4",
+        "6.08",
+        "7.10",
+        "8.11",
+        "9.10",
+        "11.02",
+        "11.04",
+        "11.06",
+        "12.14",
+        "13.17",
+        "14.19"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/bilan-thermique-performance-interactif/",
+      "chemin": "packs/fluides/res/bilan-thermique-performance-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "bouteille-liquide-pedagogique",
+      "titre": "Comprendre la bouteille liquide",
+      "ligne": null,
+      "resume": "Parcours interactif pour comprendre la bouteille liquide frigorifique, son tube plongeur et sa vanne de départ liquide.",
+      "niveaux": null,
+      "competences": [
+        "1.05",
+        "7.05",
+        "12.07"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/bouteille-liquide-pedagogique/",
+      "chemin": "packs/fluides/res/bouteille-liquide-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "chaine-intervention-interactive",
+      "titre": "La chaîne de l’intervention — manifold, vide et ordre des vannes",
+      "ligne": null,
+      "resume": "Cours interactif commun aux fiches p1, p3 et p5 : manifold, raccordement, tirage au vide, isolement et déconnexion avec un minimum d’émissions.",
+      "niveaux": null,
+      "competences": [
+        "3.03",
+        "3.04",
+        "4.05",
+        "5.01",
+        "5.02"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/chaine-intervention-interactive/",
+      "chemin": "packs/fluides/res/chaine-intervention-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "chaleur-circuit-interactif",
+      "titre": "La chaleur dans le circuit — grandeurs, transformations, puissance",
+      "ligne": null,
+      "resume": "Comprenez les transferts de chaleur, la saturation, la surchauffe et le sous-refroidissement dans un circuit frigorifique interactif.",
+      "niveaux": null,
+      "competences": [
+        "1.01",
+        "1.02",
+        "1.04"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/chaleur-circuit-interactif/",
+      "chemin": "packs/fluides/res/chaleur-circuit-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "chaleur-interactive",
+      "titre": "Du glaçon au circuit — chaleur sensible et chaleur latente",
+      "ligne": null,
+      "resume": "Découvrez comment la chaleur se déplace, du glaçon aux changements d’état, puis comment le circuit frigorifique absorbe et rejette l’énergie.",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.04"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/chaleur-interactive/",
+      "chemin": "packs/fluides/res/chaleur-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "circuit-huile-interactif",
+      "titre": "Le circuit d’huile",
+      "ligne": null,
+      "resume": "Le tracé montre l’ordre du cours. Ce n’est pas un schéma fluidique.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/circuit-huile-interactif/",
+      "chemin": "packs/fluides/res/circuit-huile-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "circuit-organe-par-organe",
+      "titre": "Le circuit, organe par organe",
+      "ligne": null,
+      "resume": "Comprenez le rôle du compresseur, du condenseur, du détendeur et de l’évaporateur dans un circuit frigorifique, avec schémas et exercices interactifs.",
+      "niveaux": null,
+      "competences": [
+        "1.04",
+        "6.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/circuit-organe-par-organe/",
+      "chemin": "packs/fluides/res/circuit-organe-par-organe/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "clapet-differentiel-huile-pedagogique",
+      "titre": "Le clapet différentiel d’huile",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/clapet-differentiel-huile-pedagogique/",
+      "chemin": "packs/fluides/res/clapet-differentiel-huile-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "co2-r744",
+      "titre": "La ligne CO₂ / R744 — le fluide en huit escales, les centrales en cinq",
+      "ligne": null,
+      "resume": "Module inerWeb Édu hors ligne : la ligne CO₂ / R744 en douze escales — point critique, cycle transcritique, haute pression optimale, centrale booster, éjecteur, sécurité.",
+      "niveaux": null,
+      "competences": [
+        "1.00",
+        "1.02",
+        "1.03",
+        "2.02",
+        "5.02",
+        "6.01",
+        "11.01",
+        "11.03",
+        "11.04",
+        "11.06",
+        "13.01",
+        "13.02",
+        "13.03",
+        "13.04",
+        "13.11",
+        "13.14",
+        "13.15",
+        "13.16",
+        "13.17"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/co2-r744/",
+      "chemin": "packs/fluides/res/co2-r744/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "commande-directe-thermostat",
+      "titre": "La commande directe · Les régules · inerWeb Édu",
+      "ligne": null,
+      "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/commande-directe-thermostat/",
+      "chemin": "packs/fluides/res/commande-directe-thermostat/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "compresseur-interactif",
+      "titre": "Compresseur — installer, régler, vérifier",
+      "ligne": null,
+      "resume": "Cours interactif A1/A2 sur le compresseur : installer avec ses sécurités, régler en prouvant à l’instrument, vérifier l’huile et son retour.",
+      "niveaux": null,
+      "competences": [
+        "1.05",
+        "6.02",
+        "6.03",
+        "6.04",
+        "6.05",
+        "9.07"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/compresseur-interactif/",
+      "chemin": "packs/fluides/res/compresseur-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "condenseur-interactif",
+      "titre": "Condenseur — installer, régler, vérifier",
+      "ligne": null,
+      "resume": "Cours interactif A1/A2 sur le condenseur : encrassement, haute pression, ventilation, installation, régulation, inspection et rapport.",
+      "niveaux": null,
+      "competences": [
+        "7.02",
+        "7.03",
+        "7.05",
+        "7.06",
+        "7.07",
+        "7.08",
+        "7.09",
+        "7.10"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/condenseur-interactif/",
+      "chemin": "packs/fluides/res/condenseur-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "cours-classes-securite",
+      "titre": "Les classes de sécurité — deux lettres, deux dangers",
+      "ligne": null,
+      "resume": "Cours interactif : lire une classe NF EN 378 (A1, A2L, A3, B2L…), le triangle du feu, le domaine d'explosivité et un cas réel d'accident.",
+      "niveaux": null,
+      "competences": [
+        "1.08",
+        "11.03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/cours-classes-securite/",
+      "chemin": "packs/fluides/res/cours-classes-securite/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "degivrage-electrique",
+      "titre": "Le dégivrage électrique · Les régules · inerWeb Édu",
+      "ligne": null,
+      "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/degivrage-electrique/",
+      "chemin": "packs/fluides/res/degivrage-electrique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "degivrage-gaz-chauds",
+      "titre": "Le dégivrage par gaz chauds · Les régules · inerWeb Édu",
+      "ligne": null,
+      "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/degivrage-gaz-chauds/",
+      "chemin": "packs/fluides/res/degivrage-gaz-chauds/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "degivrage-inversion-cycle",
+      "titre": "Le dégivrage par inversion de cycle · Les régules · inerWeb Édu",
+      "ligne": null,
+      "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/degivrage-inversion-cycle/",
+      "chemin": "packs/fluides/res/degivrage-inversion-cycle/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "degivrage-naturel",
+      "titre": "Le dégivrage naturel · Les régules · inerWeb Édu",
+      "ligne": null,
+      "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/degivrage-naturel/",
+      "chemin": "packs/fluides/res/degivrage-naturel/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "detendeur-interactif",
+      "titre": "Le détendeur thermostatique en détail",
+      "ligne": null,
+      "resume": "Parcours interactif pour comprendre le détendeur thermostatique, la surchauffe et le réglage de l’alimentation de l’évaporateur.",
+      "niveaux": null,
+      "competences": [
+        "1.04",
+        "9.03",
+        "9.09",
+        "9.10",
+        "10.01"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/detendeur-interactif/",
+      "chemin": "packs/fluides/res/detendeur-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "diagnostic-circuit-huile",
+      "titre": "Diagnostic : lire l’architecture et le retour",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/diagnostic-circuit-huile/",
+      "chemin": "packs/fluides/res/diagnostic-circuit-huile/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "diagnostic-circuit-huile-conclure",
+      "titre": "Diagnostic : pression, distribution et conclusion",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/diagnostic-circuit-huile-conclure/",
+      "chemin": "packs/fluides/res/diagnostic-circuit-huile-conclure/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "diagramme-enthalpique",
+      "titre": "Diagramme enthalpique frigorifique interactif",
+      "ligne": null,
+      "resume": "Apprenez à lire un diagramme enthalpique frigorifique log p-h, courbe par courbe, avec parcours interactifs, quiz et exercices gratuits.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/diagramme-enthalpique/",
+      "chemin": "packs/fluides/res/diagramme-enthalpique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "electrovanne-interactive",
+      "titre": "L'électrovanne de ligne liquide",
+      "ligne": null,
+      "resume": "Parcours interactif pour comprendre le rôle, la commande, le montage et les limites de diagnostic d’une électrovanne frigorifique.",
+      "niveaux": null,
+      "competences": [
+        "1.05",
+        "9.02",
+        "9.09",
+        "10.01",
+        "12.07"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/electrovanne-interactive/",
+      "chemin": "packs/fluides/res/electrovanne-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "elements-circuit-huile",
+      "titre": "La chaîne de l’huile : séparer et stocker",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/elements-circuit-huile/",
+      "chemin": "packs/fluides/res/elements-circuit-huile/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "elements-circuit-huile-regler",
+      "titre": "La chaîne de l’huile : mettre sous pression et régler",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/elements-circuit-huile-regler/",
+      "chemin": "packs/fluides/res/elements-circuit-huile-regler/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "etancheite-interactive",
+      "titre": "L’étanchéité — de l’indice à la preuve",
+      "ligne": null,
+      "resume": "Cours interactif réunissant g4a, g4b et g4c : registre, points de fuite, méthodes indirecte et directe, détecteur électronique et traçabilité.",
+      "niveaux": null,
+      "competences": [
+        "4.01",
+        "4.02",
+        "4.03",
+        "4.04",
+        "4.05",
+        "4.06",
+        "4.07",
+        "4.08",
+        "4.09"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/etancheite-interactive/",
+      "chemin": "packs/fluides/res/etancheite-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "evaporateur-interactif",
+      "titre": "Évaporateur — installer, régler, vérifier",
+      "ligne": null,
+      "resume": "Module interactif A1 sur l’installation, le réglage et la vérification d’un évaporateur : givre, dégivrage, régulation, inspection et rapport d’état.",
+      "niveaux": null,
+      "competences": [
+        "8.02",
+        "8.03",
+        "8.04",
+        "8.05",
+        "8.06",
+        "8.07",
+        "8.09",
+        "8.10",
+        "8.11"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/evaporateur-interactif/",
+      "chemin": "packs/fluides/res/evaporateur-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "fil-conducteur-intervention",
+      "titre": "Le fil conducteur d'une intervention",
+      "ligne": null,
+      "resume": "Une seule planche de synthèse : le parcours complet d'une intervention fluide en six étapes — comprendre, être autorisé, préparer, intervenir, contrôler, tracer. Animation et voix française locale, avec réglage de vitesse.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/fil-conducteur-intervention/",
+      "chemin": "packs/fluides/res/fil-conducteur-intervention/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "film-effet-de-serre",
+      "titre": "Effet de serre, PRP et climat",
+      "ligne": null,
+      "resume": "Film animé narré (53 s) : l’effet de serre, le PRP des fluides frigorigènes et l’équivalence en kilomètres de voiture — R404A, R32, R290. Voix française, débit réglable, l’image se cale sur la voix.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/film-effet-de-serre/",
+      "chemin": "packs/fluides/res/film-effet-de-serre/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "film-ozone",
+      "titre": "Couche d'ozone et ODP",
+      "ligne": null,
+      "resume": "Film animé narré (45 s) : la couche d’ozone, les CFC, l’ODP et le protocole de Montréal, 1987. Voix française, débit réglable, l’image se cale sur la voix.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/film-ozone/",
+      "chemin": "packs/fluides/res/film-ozone/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "filtre-deshydrateur-pedagogique",
+      "titre": "Comprendre le filtre-déshydrateur",
+      "ligne": null,
+      "resume": "Parcours interactif pour comprendre le filtre-déshydrateur frigorifique, ses composants et ses variantes.",
+      "niveaux": null,
+      "competences": [
+        "1.05",
+        "7.05",
+        "9.08",
+        "12.07"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/filtre-deshydrateur-pedagogique/",
+      "chemin": "packs/fluides/res/filtre-deshydrateur-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "froid-clim-academie",
+      "titre": "Académie froid-clim — cycle animé, simulateur et atelier panne",
+      "ligne": null,
+      "resume": "Cours interactifs et ludiques pour former aux bases du froid, de la climatisation et des fluides frigorigènes.",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.04",
+        "5.05"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/froid-clim-academie/",
+      "chemin": "packs/fluides/res/froid-clim-academie/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "glissement-temperature",
+      "titre": "Pourquoi la température glisse ?",
+      "ligne": null,
+      "resume": "Découverte racontée et illustrée des fluides zéotropes, azéotropes et du glissement de température, depuis la chaleur latente jusqu'au diagramme log p-h.",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.03",
+        "1.06",
+        "5.05"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/glissement-temperature/",
+      "chemin": "packs/fluides/res/glissement-temperature/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "hydrocarbures-a1-a2",
+      "titre": "Mission 290 — autoriser ou suspendre",
+      "ligne": null,
+      "resume": "Mission interactive A1/A2 : pourquoi le R-290, risques d’inflammation, analyse de zone, calcul documenté, outillage hydrocarbures et conduite à tenir.",
+      "niveaux": null,
+      "competences": [
+        "12.01",
+        "12.02",
+        "12.03",
+        "12.04",
+        "12.05",
+        "12.06",
+        "12.13",
+        "12.14"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/hydrocarbures-a1-a2/",
+      "chemin": "packs/fluides/res/hydrocarbures-a1-a2/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "intervention-hydrocarbures-interactive",
+      "titre": "Intervenir sur un circuit hydrocarbure",
+      "ligne": null,
+      "resume": "Suite pratique de Mission 290 : parcours à embranchements pour ouvrir, remplacer, éprouver, tirer au vide, charger, contrôler et tracer sur un circuit hydrocarbure.",
+      "niveaux": null,
+      "competences": [
+        "12.07",
+        "12.08",
+        "12.09",
+        "12.10",
+        "12.11",
+        "12.12"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/intervention-hydrocarbures-interactive/",
+      "chemin": "packs/fluides/res/intervention-hydrocarbures-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "mission-bouteilles",
+      "titre": "Mission Bouteilles — prélever, remplir, peser",
+      "ligne": null,
+      "resume": "Auto-formation interactive sur les bouteilles de transfert et de récupération des fluides frigorigènes.",
+      "niveaux": null,
+      "competences": [
+        "5.02",
+        "5.05",
+        "5.06"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/mission-bouteilles/",
+      "chemin": "packs/fluides/res/mission-bouteilles/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "module-compresseur",
+      "titre": "Module Compresseur Frigorifique",
+      "ligne": null,
+      "resume": "Fil rouge : le compresseur ne « fabrique » pas le froid — il met le fluide en mouvement en augmentant pression et température.",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.05"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/module-compresseur/",
+      "chemin": "packs/fluides/res/module-compresseur/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "nomenclature-interactive",
+      "titre": "Décrypter le code d’un fluide — nomenclature R-xyz",
+      "ligne": null,
+      "resume": "Cours interactif : comprendre la désignation des fluides frigorigènes.",
+      "niveaux": null,
+      "competences": [
+        "1.06",
+        "1.07"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/nomenclature-interactive/",
+      "chemin": "packs/fluides/res/nomenclature-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "parcours-manometres",
+      "titre": "Parcours manomètres — lire l'instrument, comprendre le circuit",
+      "ligne": null,
+      "resume": "Deux modules inerWeb Édu pour lire les manomètres frigorifiques puis calculer surchauffes et sous-refroidissements.",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.03",
+        "1.06",
+        "5.05"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/parcours-manometres/",
+      "chemin": "packs/fluides/res/parcours-manometres/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pose-manifold-2-voies-interactive",
+      "titre": "Pose et dépose du manifold 2 voies sur vannes de service Rotolock",
+      "ligne": null,
+      "resume": "Entraîneur inerWeb pour comprendre, poser, utiliser et déposer un manifold 2 voies sur deux vannes de service Rotolock.",
+      "niveaux": null,
+      "competences": [
+        "3.03",
+        "3.04",
+        "4.05",
+        "5.01",
+        "12.02"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pose-manifold-2-voies-interactive/",
+      "chemin": "packs/fluides/res/pose-manifold-2-voies-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pose-manifold-interactive",
+      "titre": "Poser et déposer le manifold 4 voies — la voie de vide en plus",
+      "ligne": null,
+      "resume": "Atelier interactif inerWeb : contrôler, poser, tirer au vide, mettre en lecture et déposer un manifold 4 voies sur deux vannes de service.",
+      "niveaux": null,
+      "competences": [
+        "3.03",
+        "3.04",
+        "4.05",
+        "5.01",
+        "5.02"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pose-manifold-interactive/",
+      "chemin": "packs/fluides/res/pose-manifold-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pression-temperature-interactive",
+      "titre": "Pression et température — la relation de saturation",
+      "ligne": null,
+      "resume": "Comprenez la relation pression-température, l’ébullition sous vide, la saturation et le glissement des fluides frigorigènes avec une expérience interactive.",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pression-temperature-interactive/",
+      "chemin": "packs/fluides/res/pression-temperature-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pressostat-bp-kp1",
+      "titre": "Le pressostat BP de sécurité — comprendre, régler, prouver",
+      "ligne": null,
+      "resume": "Module inerWeb Édu hors ligne : comprendre et régler un pressostat basse pression de sécurité.",
+      "niveaux": null,
+      "competences": [
+        "1.01",
+        "1.04",
+        "3.01",
+        "4.05",
+        "6.03",
+        "6.07",
+        "9.06"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pressostat-bp-kp1/",
+      "chemin": "packs/fluides/res/pressostat-bp-kp1/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pressostat-combine-kp15",
+      "titre": "Le pressostat combiné KP15 — deux pressions, une chaîne d’arrêt",
+      "ligne": null,
+      "resume": "Comprendre le pressostat combiné Danfoss KP15 : fonctionnement HP/BP, réglage CUT IN/CUT OUT, différentiel, câblage A/B/C/D et contrôle.",
+      "niveaux": null,
+      "competences": [
+        "1.01",
+        "1.04",
+        "3.01",
+        "4.05",
+        "6.03",
+        "6.07",
+        "7.04",
+        "9.06"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pressostat-combine-kp15/",
+      "chemin": "packs/fluides/res/pressostat-combine-kp15/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pressostat-differentiel-huile-pedagogique",
+      "titre": "Le pressostat d’huile : la pression nette",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pressostat-differentiel-huile-pedagogique/",
+      "chemin": "packs/fluides/res/pressostat-differentiel-huile-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pressostat-hp-kp5",
+      "titre": "Le pressostat HP de sécurité — comprendre, régler, prouver",
+      "ligne": null,
+      "resume": "Module inerWeb Édu hors ligne : comprendre et régler un pressostat haute pression de sécurité.",
+      "niveaux": null,
+      "competences": [
+        "1.01",
+        "1.04",
+        "3.01",
+        "4.05",
+        "6.03",
+        "6.07",
+        "7.04",
+        "9.06"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pressostat-hp-kp5/",
+      "chemin": "packs/fluides/res/pressostat-hp-kp5/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pressostat-huile-securite",
+      "titre": "Le pressostat d’huile : temporisation et sécurité",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pressostat-huile-securite/",
+      "chemin": "packs/fluides/res/pressostat-huile-securite/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "protection-minimum-serie",
+      "titre": "La protection minimum · Les régules · inerWeb Édu",
+      "ligne": null,
+      "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/protection-minimum-serie/",
+      "chemin": "packs/fluides/res/protection-minimum-serie/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pump-down-ameliore",
+      "titre": "Le pump-down amélioré · Les régules · inerWeb Édu",
+      "ligne": null,
+      "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pump-down-ameliore/",
+      "chemin": "packs/fluides/res/pump-down-ameliore/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pump-down-automatique",
+      "titre": "Le pump-down automatique · Les régules · inerWeb Édu",
+      "ligne": null,
+      "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pump-down-automatique/",
+      "chemin": "packs/fluides/res/pump-down-automatique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pump-down-unique",
+      "titre": "Le pump-down unique · Les régules · inerWeb Édu",
+      "ligne": null,
+      "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pump-down-unique/",
+      "chemin": "packs/fluides/res/pump-down-unique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "pupitre-reglage-interactif",
+      "titre": "Le pupitre de réglage — consigne, différentiel, preuve",
+      "ligne": null,
+      "resume": "Cours interactif A1/A2 : régler thermostats, pressostats et limiteurs — consigne, différentiel, et la preuve à l’instrument.",
+      "niveaux": null,
+      "competences": [
+        "7.04",
+        "9.04",
+        "9.06"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/pupitre-reglage-interactif/",
+      "chemin": "packs/fluides/res/pupitre-reglage-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "recuperation-fluide-interactive",
+      "titre": "Récupérer le fluide — manifold, station et bouteille, geste par geste",
+      "ligne": null,
+      "resume": "TP interactif inerWeb : raccorder un manifold 4 voies, récupérer le fluide avec une station Minimax-E, peser, auto-purger puis tirer l'installation au vide.",
+      "niveaux": null,
+      "competences": [
+        "3.03",
+        "3.04",
+        "5.01",
+        "5.02",
+        "5.03",
+        "5.05",
+        "5.06"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/recuperation-fluide-interactive/",
+      "chemin": "packs/fluides/res/recuperation-fluide-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "regulateur-electronique-interactif",
+      "titre": "Le régulateur électronique — lire, régler, câbler",
+      "ligne": null,
+      "resume": "Cours interactif : lire une sonde résistive, régler consigne et différentiel, programmer un régulateur électronique de froid, régler le dégivrage et câbler son bornier.",
+      "niveaux": null,
+      "competences": [
+        "6.03",
+        "9.04",
+        "9.10"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/regulateur-electronique-interactif/",
+      "chemin": "packs/fluides/res/regulateur-electronique-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "regulateur-huile-mecanique-pedagogique",
+      "titre": "Le régulateur d’huile mécanique AC&R",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/regulateur-huile-mecanique-pedagogique/",
+      "chemin": "packs/fluides/res/regulateur-huile-mecanique-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "regulateur-kvl-pedagogique",
+      "titre": "Le régulateur de pression de carter",
+      "ligne": null,
+      "resume": "Le module sur le seul régulateur de pression de carter (KVL) est remplacé par un parcours qui traite les trois : KVP maintient la pression d’évaporation, KVL protège le compresseur, KVR tient la haute pression.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/regulateur-kvl-pedagogique/",
+      "chemin": "packs/fluides/res/regulateur-kvl-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "regulateur-kvr-nrd",
+      "titre": "Le KVR et le NRD — la pression de condensation par temps froid",
+      "ligne": null,
+      "resume": "Animation (92 s) : pourquoi la haute pression s’effondre quand l’air extérieur est froid, ce que fait le régulateur KVR à la sortie du condenseur, et pourquoi il faut lui adjoindre le clapet différentiel NRD pour repressuriser le réservoir. Symboles normalisés ou dessinés, au choix.",
+      "niveaux": null,
+      "competences": [
+        "1.05",
+        "9.02",
+        "9.05",
+        "9.09"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/regulateur-kvr-nrd/",
+      "chemin": "packs/fluides/res/regulateur-kvr-nrd/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "regulateurs-kv-pedagogiques",
+      "titre": "La famille des régulateurs KV — KVP, KVL, KVR",
+      "ligne": null,
+      "resume": "Parcours inerWeb Édu pour comparer, comprendre et régler les régulateurs de pression KVP, KVL et KVR.",
+      "niveaux": null,
+      "competences": [
+        "1.05",
+        "9.02",
+        "9.05",
+        "9.09"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/regulateurs-kv-pedagogiques/",
+      "chemin": "packs/fluides/res/regulateurs-kv-pedagogiques/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "regules-interactif",
+      "titre": "Les régules · inerWeb Édu",
+      "ligne": null,
+      "resume": "Ce parcours local interactif a besoin de JavaScript pour afficher ses stations.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/regules-interactif/",
+      "chemin": "packs/fluides/res/regules-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "reservoir-huile-pedagogique",
+      "titre": "Le réservoir d’huile",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/reservoir-huile-pedagogique/",
+      "chemin": "packs/fluides/res/reservoir-huile-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "retour-huile-naturel",
+      "titre": "Le retour d’huile naturel",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/retour-huile-naturel/",
+      "chemin": "packs/fluides/res/retour-huile-naturel/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "retour-huile-verifier",
+      "titre": "Vérifier le retour d’huile",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/retour-huile-verifier/",
+      "chemin": "packs/fluides/res/retour-huile-verifier/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "sans-degivrage-commande",
+      "titre": "Sans dégivrage commandé · Les régules · inerWeb Édu",
+      "ligne": null,
+      "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/sans-degivrage-commande/",
+      "chemin": "packs/fluides/res/sans-degivrage-commande/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "separateur-eclatement-pedagogique",
+      "titre": "Le séparateur à éclatement",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/separateur-eclatement-pedagogique/",
+      "chemin": "packs/fluides/res/separateur-eclatement-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "separateur-huile-pedagogique",
+      "titre": "Le séparateur d’huile",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/separateur-huile-pedagogique/",
+      "chemin": "packs/fluides/res/separateur-huile-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "surchauffe-sous-refroidissement-interactif",
+      "titre": "Surchauffe et sous-refroidissement",
+      "ligne": null,
+      "resume": "Apprenez à mesurer et calculer la surchauffe et le sous-refroidissement d’un circuit frigorifique, pas à pas, avec exercices et quiz.",
+      "niveaux": null,
+      "competences": [
+        "1.03",
+        "1.04",
+        "1.06",
+        "4.05",
+        "5.05"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/surchauffe-sous-refroidissement-interactif/",
+      "chemin": "packs/fluides/res/surchauffe-sous-refroidissement-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "technologie-huiles-choix-controle",
+      "titre": "Choisir et contrôler l’huile",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/technologie-huiles-choix-controle/",
+      "chemin": "packs/fluides/res/technologie-huiles-choix-controle/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "technologie-huiles-frigorifiques",
+      "titre": "Les familles d’huile",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/technologie-huiles-frigorifiques/",
+      "chemin": "packs/fluides/res/technologie-huiles-frigorifiques/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "tome-3-technologie-organes",
+      "titre": "Tome 3 — la technologie des organes",
+      "ligne": null,
+      "resume": "Tome 3 interactif inerWeb Édu : reconnaître, situer et comprendre les organes d’un circuit frigorifique.",
+      "niveaux": null,
+      "competences": [
+        "1.04",
+        "1.05",
+        "6.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/tome-3-technologie-organes/",
+      "chemin": "packs/fluides/res/tome-3-technologie-organes/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "traxoil-installer",
+      "titre": "TraxOil : monter et diagnostiquer",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/traxoil-installer/",
+      "chemin": "packs/fluides/res/traxoil-installer/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "traxoil-pedagogique",
+      "titre": "TraxOil : comment il travaille",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/traxoil-pedagogique/",
+      "chemin": "packs/fluides/res/traxoil-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "vanne-service-interactive",
+      "titre": "La vanne de service — trois positions, deux prises",
+      "ligne": null,
+      "resume": "Cours interactif sur la vanne de service à deux prises : les trois positions en coupe animée, la voie de service P et la prise permanente P1, le sens BP et HP, le geste de raccordement du manifold et deux mini-jeux corrigés.",
+      "niveaux": null,
+      "competences": [
+        "4.01",
+        "4.05",
+        "5.01",
+        "6.01",
+        "6.06"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/vanne-service-interactive/",
+      "chemin": "packs/fluides/res/vanne-service-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "voyant-liquide-pedagogique",
+      "titre": "Comprendre le voyant liquide",
+      "ligne": null,
+      "resume": "Parcours interactif pour comprendre le voyant liquide frigorifique, avec ou sans indicateur d’humidité.",
+      "niveaux": null,
+      "competences": [
+        "1.05",
+        "7.05",
+        "9.09",
+        "12.07"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/voyant-liquide-pedagogique/",
+      "chemin": "packs/fluides/res/voyant-liquide-pedagogique/"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/cl2",
+      "titre": "Explosif avant d'être perceptible — la LIE",
+      "ligne": null,
+      "resume": "Un gaz inflammable qui ne prévient de rien, et un appareil qui ne donne pas une quantité mais une marge restante : deux idées qui évitent l'accident. La suite explique comment les reconnaître, geste par geste.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=cl2",
+      "chemin": "packs/fluides/res/capsules/?c=cl2"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/cl3",
+      "titre": "CO₂ : deux dangers mortels — la pression et l'air qu'il vous prend",
+      "ligne": null,
+      "resume": "Le CO₂ est classé dans la case la plus rassurante de la matrice. C'est exactement ce qui le rend dangereux : sa classe ne dit rien de ce qui tue vraiment sur ces installations.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=cl3",
+      "chemin": "packs/fluides/res/capsules/?c=cl3"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/cl4",
+      "titre": "Se protéger du CO₂ — détection, EPC et EPI",
+      "ligne": null,
+      "resume": "Un local CO₂ bien équipé se reconnaît avant même d'y entrer. Cette capsule explique, dans l'ordre, ce qui protège tout le monde, ce qui protège vous seul — et ce qui, malgré les apparences, ne protège de rien.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=cl4",
+      "chemin": "packs/fluides/res/capsules/?c=cl4"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/g0",
+      "titre": "Ce que la loi vous impose",
+      "ligne": null,
+      "resume": "Deux textes, deux papiers, un carnet et une filière de fin de vie. Tout ce que la loi attend de vous tient en cinq idées — les voici une par une, expliquées à voix haute.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=g0",
+      "chemin": "packs/fluides/res/capsules/?c=g0"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/g10",
+      "titre": "Tuyauterie et brasage sous azote",
+      "ligne": null,
+      "resume": "Braser un circuit frigorifique sans azote, c'est fabriquer une panne pour plus tard. Ce chapitre vous montre le geste qui protège le cuivre pendant la chauffe, et celui qui protège le joint une fois le chalumeau éteint.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=g10",
+      "chemin": "packs/fluides/res/capsules/?c=g10"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/g13",
+      "titre": "CO₂ et NH₃ — reconnaître, ne pas intervenir",
+      "ligne": null,
+      "resume": "Ce module ne vous qualifie pas pour intervenir sur le CO₂ ou l'ammoniac. Il vous apprend à les reconnaître, et à savoir qu'il faut s'arrêter là.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=g13",
+      "chemin": "packs/fluides/res/capsules/?c=g13"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/g1d",
+      "titre": "Les organes qui trahissent une fuite",
+      "ligne": null,
+      "resume": "Neuf organes du circuit trahissent une fuite avant, pendant ou après qu'elle arrive. Les repérer, c'est déjà commencer le diagnostic.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=g1d",
+      "chemin": "packs/fluides/res/capsules/?c=g1d"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/g2",
+      "titre": "Impact environnemental et F-Gas",
+      "ligne": null,
+      "resume": "Un même kilo de fluide ne pèse pas pareil sur le climat : tout dépend de son PRP. Voici comment on calcule cet impact, et ce que le règlement F-Gas en fait.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=g2",
+      "chemin": "packs/fluides/res/capsules/?c=g2"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/g2a",
+      "titre": "Quarante ans d'histoire : de l'ozone au climat",
+      "ligne": null,
+      "resume": "Des fluides jugés parfaits dans les années 1930 aux quotas européens d'aujourd'hui : une histoire en deux temps, l'ozone puis le climat, racontée à voix haute.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=g2a",
+      "chemin": "packs/fluides/res/capsules/?c=g2a"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/g3",
+      "titre": "Contrôles avant mise en service",
+      "ligne": null,
+      "resume": "Une installation neuve ne démarre pas avant d'avoir passé deux épreuves de pression et un tirage au vide. Voici ces contrôles expliqués geste par geste, à voix haute.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=g3",
+      "chemin": "packs/fluides/res/capsules/?c=g3"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/g5a",
+      "titre": "Récupérer sans émettre",
+      "ligne": null,
+      "resume": "Récupérer un fluide, ce n'est jamais le laisser filer dans l'air pendant l'opération. Un geste lent, une bouteille pesée, une huile mise à part : voici la méthode expliquée à voix haute.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=g5a",
+      "chemin": "packs/fluides/res/capsules/?c=g5a"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/g5b",
+      "titre": "Peser, charger, stocker, tracer",
+      "ligne": null,
+      "resume": "Peser plutôt que deviner, choisir la bonne huile, ranger le cylindre au bon endroit, tout noter : voici les derniers gestes du fluide, expliqués à voix haute.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=g5b",
+      "chemin": "packs/fluides/res/capsules/?c=g5b"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/p4",
+      "titre": "La bouteille d'azote et son mano-détendeur",
+      "ligne": null,
+      "resume": "Une bouteille d'azote ne se branche jamais seule : il faut toujours un mano-détendeur entre les deux. Ce chapitre vous montre le montage, geste par geste, et le seul gaz qu'on a le droit d'y mettre.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=p4",
+      "chemin": "packs/fluides/res/capsules/?c=p4"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/p7",
+      "titre": "Préparation de chantier — risques, EPI, zone de travail",
+      "ligne": null,
+      "resume": "Avant le premier outil, deux choses se préparent : l'analyse de risques et la zone de travail. Ce chapitre vous montre l'ordre à suivre, et les points qui arrêtent un chantier avant qu'il commence.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=p7",
+      "chemin": "packs/fluides/res/capsules/?c=p7"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/s1",
+      "titre": "L'air qui manque — l'asphyxie",
+      "ligne": null,
+      "resume": "Un local fermé, une nuit, un gaz qui a pris la place de l'air. Ce risque ne prévient pas — voici pourquoi, et le seul réflexe qui protège.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=s1",
+      "chemin": "packs/fluides/res/capsules/?c=s1"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/s2",
+      "titre": "Le froid brûle — projections et gelures",
+      "ligne": null,
+      "resume": "Un flexible qu'on pense vide, un raccord qu'on desserre : le liquide qui reste jaillit et gèle la peau au contact. Le réflexe qui évite tout ça tient en un geste.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=s2",
+      "chemin": "packs/fluides/res/capsules/?c=s2"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/s3",
+      "titre": "La flamme interdite — décomposition du fluide",
+      "ligne": null,
+      "resume": "Une flamme, un fluide qu'on croit absent, un visage penché sur le brasage. Le fluide ne brûle pas comme un carburant : il se décompose, et ça se respire.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=s3",
+      "chemin": "packs/fluides/res/capsules/?c=s3"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/s4",
+      "titre": "Ce qui éclate — la pression",
+      "ligne": null,
+      "resume": "Une bouteille oubliée au soleil, un flexible fatigué, un tronçon isolé qu'on rouvre sans vérifier : la pression ne prévient jamais. Voici ce qui cède, et ce qui protège.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=s4",
+      "chemin": "packs/fluides/res/capsules/?c=s4"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/s5",
+      "titre": "Consigner avant de toucher — le risque électrique",
+      "ligne": null,
+      "resume": "Un disjoncteur qui semble couper l'armoire, un bornier qu'on touche sans vérifier : ce risque n'a pas de code à l'examen, mais il tue chaque année. Cinq étapes le préviennent.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=s5",
+      "chemin": "packs/fluides/res/capsules/?c=s5"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/x1",
+      "titre": "Exercice — deux installations, deux impacts",
+      "ligne": null,
+      "resume": "Deux machines, même charge de fluide, mais pas le même impact sur le climat. À vous de calculer avant de découvrir la réponse.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=x1",
+      "chemin": "packs/fluides/res/capsules/?c=x1"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/x2",
+      "titre": "Exercice — la machine ne fait plus de froid",
+      "ligne": null,
+      "resume": "Une chambre positive qui ne redescend plus, un compresseur qui tourne pourtant normalement : à vous de lire les indices avant de conclure.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=x2",
+      "chemin": "packs/fluides/res/capsules/?c=x2"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/x3",
+      "titre": "Détective — la bouteille de récupération",
+      "ligne": null,
+      "resume": "Une récupération en cours, une bouteille qui approche de sa limite, et deux bouteilles qui attendent sur l'étagère : laquelle choisir, et pourquoi ? Cette capsule ne refait pas le cours sur la récupération, elle vous fait chercher.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=x3",
+      "chemin": "packs/fluides/res/capsules/?c=x3"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/x4",
+      "titre": "Détective — le contrôle qui tourne mal",
+      "ligne": null,
+      "resume": "Un contrôle d'étanchéité chez un client, un détecteur qui sonne près d'un ventilateur en marche : fausse alerte, ou vraie fuite ? Cette capsule ne refait pas le cours sur les fuites, elle vous fait chercher.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=x4",
+      "chemin": "packs/fluides/res/capsules/?c=x4"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/x5",
+      "titre": "Détective — intervention sur monobloc R-290",
+      "ligne": null,
+      "resume": "Un compresseur à remplacer, un local exigu sans ventilation, un collègue pressé : le genre de situation banale qui tourne mal. Cette capsule ne refait pas le cours sur les hydrocarbures, elle vous fait chercher.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=x5",
+      "chemin": "packs/fluides/res/capsules/?c=x5"
+    },
+    {
+      "reseau": "Législation",
+      "id": "aptitude-capacite",
+      "titre": "Aptitude & capacité",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : aptitude pour la personne, capacité pour l'entreprise, la structure de l'examen, les sept catégories, et la nouveauté 2025 — l'attestation n'est plus acquise à vie.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : aptitude pour la personne, capacité pour l'entreprise, la structure de l'examen, les sept catégories, et la nouveauté 2025 — l'attestation n'est plus acquise à vie."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/aptitude-capacite/",
+      "chemin": "legislation/stations/aptitude-capacite/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "dechets-dangereux",
+      "titre": "Déchets dangereux",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce qui classe un déchet dangereux, le fluide récupéré non réutilisable, le bordereau de suivi (BSD) et sa version numérique, et ce qu'un frigoriste trace vraiment sur un chantier.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce qui classe un déchet dangereux, le fluide récupéré non réutilisable, le bordereau de suivi (BSD) et sa version numérique, et ce qu'un frigoriste trace vraiment sur un chantier."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/dechets-dangereux/",
+      "chemin": "legislation/stations/dechets-dangereux/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "dechets-rep-batiment",
+      "titre": "La REP bâtiment",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la responsabilité élargie du producteur (REP) appliquée au bâtiment, le rôle de l'éco-organisme, et le réflexe du point de reprise pour les déchets de chantier d'un frigoriste.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la responsabilité élargie du producteur (REP) appliquée au bâtiment, le rôle de l'éco-organisme, et le réflexe du point de reprise pour les déchets de chantier d'un frigoriste."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/dechets-rep-batiment/",
+      "chemin": "legislation/stations/dechets-rep-batiment/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "dechets-responsabilites",
+      "titre": "Responsabilités",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : qui est producteur, qui est détenteur, jusqu'où va la responsabilité d'un déchet, les filières d'un chantier de froid, le cas du fluide récupéré et le rôle du registre.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : qui est producteur, qui est détenteur, jusqu'où va la responsabilité d'un déchet, les filières d'un chantier de froid, le cas du fluide récupéré et le rôle du registre."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/dechets-responsabilites/",
+      "chemin": "legislation/stations/dechets-responsabilites/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "dechets-sept-flux",
+      "titre": "Trier : les 7 flux",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : trier à la source, les familles de bennes d'un chantier, ce qu'un frigoriste produit vraiment, pourquoi trier, la benne juste, et le cas des déchets dangereux.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : trier à la source, les familles de bennes d'un chantier, ce qu'un frigoriste produit vraiment, pourquoi trier, la benne juste, et le cas des déchets dangereux."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/dechets-sept-flux/",
+      "chemin": "legislation/stations/dechets-sept-flux/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "dechets-valoriser",
+      "titre": "Valoriser",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la hiérarchie des cinq niveaux de traitement d'un déchet — prévention, réemploi, recyclage, valorisation énergétique, élimination — avec un exemple concret du métier du froid à chaque niveau.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la hiérarchie des cinq niveaux de traitement d'un déchet — prévention, réemploi, recyclage, valorisation énergétique, élimination — avec un exemple concret du métier du froid à chaque niveau."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/dechets-valoriser/",
+      "chemin": "legislation/stations/dechets-valoriser/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "desp-categories",
+      "titre": "Catégories I à IV",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la logique du classement DESP en catégories I à IV — pression, volume, groupe du fluide, et le contrôle qui monte avec la catégorie.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la logique du classement DESP en catégories I à IV — pression, volume, groupe du fluide, et le contrôle qui monte avec la catégorie."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/desp-categories/",
+      "chemin": "legislation/stations/desp-categories/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "desp-en-service",
+      "titre": "En service",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la vie de l'équipement sous pression après l'installation — inspections périodiques, requalification, dossier d'exploitation et responsabilité de l'exploitant.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la vie de l'équipement sous pression après l'installation — inspections périodiques, requalification, dossier d'exploitation et responsabilité de l'exploitant."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/desp-en-service/",
+      "chemin": "legislation/stations/desp-en-service/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "desp-la-directive",
+      "titre": "La directive",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi une réglementation propre aux équipements sous pression, le champ d'application de la directive dite DESP, la notion de pression maximale admissible (PS), et des exemples ancrés dans le froid — bouteille de fluide, réservoir, séparateur d'huile, condenseur, tuyauterie.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi une réglementation propre aux équipements sous pression, le champ d'application de la directive dite DESP, la notion de pression maximale admissible (PS), et des exemples ancrés dans le froid — bouteille de fluide, réservoir, séparateur d'huile, condenseur, tuyauterie."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/desp-la-directive/",
+      "chemin": "legislation/stations/desp-la-directive/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "desp-marquage-papiers",
+      "titre": "Marquage & papiers",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le marquage CE, la déclaration de conformité, la notice d'instructions et le dossier que l'installateur doit conserver — ce qui accompagne un équipement sous pression conforme à la directive DESP.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le marquage CE, la déclaration de conformité, la notice d'instructions et le dossier que l'installateur doit conserver — ce qui accompagne un équipement sous pression conforme à la directive DESP."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/desp-marquage-papiers/",
+      "chemin": "legislation/stations/desp-marquage-papiers/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "desp-soupapes-securites",
+      "titre": "Soupapes & sécurités",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les accessoires de sécurité des équipements sous pression — soupape de sûreté, pressostat de sécurité, disque de rupture — et l'ordre dans lequel ils protègent l'équipement.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les accessoires de sécurité des équipements sous pression — soupape de sûreté, pressostat de sécurité, disque de rupture — et l'ordre dans lequel ils protègent l'équipement."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/desp-soupapes-securites/",
+      "chemin": "legislation/stations/desp-soupapes-securites/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "fgaz-3",
+      "titre": "F-Gaz 3, le règlement (UE) 2024/573",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la lignée F-Gas, le mécanisme des quotas, la conversion en tonnes équivalent CO2, les deux régimes d'interdiction et le raisonnement du technicien.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la lignée F-Gas, le mécanisme des quotas, la conversion en tonnes équivalent CO2, les deux régimes d'interdiction et le raisonnement du technicien."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/fgaz-3/",
+      "chemin": "legislation/stations/fgaz-3/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "impact-acv-carbone",
+      "titre": "ACV & carbone",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les quatre étapes d'une analyse de cycle de vie — fabriquer, transporter, exploiter, démolir — et ce que mesure réellement l'indicateur carbone de la RE2020.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les quatre étapes d'une analyse de cycle de vie — fabriquer, transporter, exploiter, démolir — et ce que mesure réellement l'indicateur carbone de la RE2020."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/impact-acv-carbone/",
+      "chemin": "legislation/stations/impact-acv-carbone/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "impact-ecoconception",
+      "titre": "Écoconception",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : concevoir un appareil pour qu'il dure, se répare et consomme moins, l'étiquette énergie comme repère du client, et le piège du prix d'achat bas.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : concevoir un appareil pour qu'il dure, se répare et consomme moins, l'étiquette énergie comme repère du client, et le piège du prix d'achat bas."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/impact-ecoconception/",
+      "chemin": "legislation/stations/impact-ecoconception/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "impact-montreal-kigali",
+      "titre": "Montréal → Kigali",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le protocole de Montréal, le relais des HFC, et l'amendement de Kigali — l'histoire en trois temps, du problème de l'ozone à celui du climat.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le protocole de Montréal, le relais des HFC, et l'amendement de Kigali — l'histoire en trois temps, du problème de l'ozone à celui du climat."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/impact-montreal-kigali/",
+      "chemin": "legislation/stations/impact-montreal-kigali/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "impact-prp-odp",
+      "titre": "PRP & ODP",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi le PRP et l'ODP sont deux impacts distincts, le piège de l'ODP nul pris pour un fluide propre, et le repère à deux échelles pour situer les fluides courants.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi le PRP et l'ODP sont deux impacts distincts, le piège de l'ODP nul pris pour un fluide propre, et le repère à deux échelles pour situer les fluides courants."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/impact-prp-odp/",
+      "chemin": "legislation/stations/impact-prp-odp/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "impact-tewi",
+      "titre": "Le TEWI",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le TEWI, l'impact total d'une machine frigorifique, sa part directe (les fuites de fluide) et sa part indirecte (l'énergie consommée), et pourquoi juger un système sur son seul fluide est une erreur.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le TEWI, l'impact total d'une machine frigorifique, sa part directe (les fuites de fluide) et sa part indirecte (l'énergie consommée), et pourquoi juger un système sur son seul fluide est une erreur."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/impact-tewi/",
+      "chemin": "legislation/stations/impact-tewi/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "risques-atex",
+      "titre": "Zones ATEX",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le mécanisme d'une atmosphère explosive, la classification de sécurité des fluides A1/A2L/A2/A3, le piège du R290, et ce que ça change dans la pièce et sur le matériel.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le mécanisme d'une atmosphère explosive, la classification de sécurité des fluides A1/A2L/A2/A3, le piège du R290, et ce que ça change dans la pièce et sur le matériel."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/risques-atex/",
+      "chemin": "legislation/stations/risques-atex/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "risques-chimique",
+      "titre": "Risque chimique",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : lire une fiche de données de sécurité, comprendre les pictogrammes de danger, savoir ce qu'est un produit CMR, et ce que le brasage, les solvants et l'huile imposent en froid et climatisation.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : lire une fiche de données de sécurité, comprendre les pictogrammes de danger, savoir ce qu'est un produit CMR, et ce que le brasage, les solvants et l'huile imposent en froid et climatisation."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/risques-chimique/",
+      "chemin": "legislation/stations/risques-chimique/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "risques-duerp",
+      "titre": "Le DUERP",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : à quoi sert le document unique d'évaluation des risques professionnels, qui l'écrit, ce qu'on y trouve, et le réflexe à avoir avant d'intervenir sur un site qui n'est pas le sien.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : à quoi sert le document unique d'évaluation des risques professionnels, qui l'écrit, ce qu'on y trouve, et le réflexe à avoir avant d'intervenir sur un site qui n'est pas le sien."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/risques-duerp/",
+      "chemin": "legislation/stations/risques-duerp/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "risques-epi",
+      "titre": "Les EPI",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi l'équipement de protection individuelle vient en dernier, comment le choisir et le vérifier, et ce que le froid impose de spécifique — brûlure par le froid, projection de fluide, huile.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi l'équipement de protection individuelle vient en dernier, comment le choisir et le vérifier, et ce que le froid impose de spécifique — brûlure par le froid, projection de fluide, huile."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/risques-epi/",
+      "chemin": "legislation/stations/risques-epi/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "risques-hauteur",
+      "titre": "En hauteur",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : l'accès avant l'équipement, la protection collective avant l'individuelle, l'échafaudage vérifié, et le réflexe avant de monter sur une toiture ou une terrasse technique.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : l'accès avant l'équipement, la protection collective avant l'individuelle, l'échafaudage vérifié, et le réflexe avant de monter sur une toiture ou une terrasse technique."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/risques-hauteur/",
+      "chemin": "legislation/stations/risques-hauteur/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "risques-neuf-principes",
+      "titre": "Les 9 principes",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les neuf principes de prévention des risques professionnels, leur ordre, et pourquoi l'équipement de protection individuelle vient toujours en dernier.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les neuf principes de prévention des risques professionnels, leur ordre, et pourquoi l'équipement de protection individuelle vient toujours en dernier."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/risques-neuf-principes/",
+      "chemin": "legislation/stations/risques-neuf-principes/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "thermique-cee",
+      "titre": "Les CEE",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le mécanisme des certificats d'économies d'énergie — l'État oblige les vendeurs d'énergie à financer des travaux — et ce que ça change concrètement pour un client qui installe une pompe à chaleur.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le mécanisme des certificats d'économies d'énergie — l'État oblige les vendeurs d'énergie à financer des travaux — et ce que ça change concrètement pour un client qui installe une pompe à chaleur."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/thermique-cee/",
+      "chemin": "legislation/stations/thermique-cee/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "thermique-confort-ete",
+      "titre": "Le confort d'été",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la nouveauté de la RE2020 qui concerne directement le climaticien — mesurer l'inconfort en degrés-heures, et traiter d'abord par la conception avant de climatiser.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la nouveauté de la RE2020 qui concerne directement le climaticien — mesurer l'inconfort en degrés-heures, et traiter d'abord par la conception avant de climatiser."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/thermique-confort-ete/",
+      "chemin": "legislation/stations/thermique-confort-ete/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "thermique-dpe",
+      "titre": "Le DPE",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce que mesure le diagnostic de performance énergétique, comment se lit l'étiquette de A à G, ce qu'il déclenche pour un propriétaire, et ses limites.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce que mesure le diagnostic de performance énergétique, comment se lit l'étiquette de A à G, ce qu'il déclenche pour un propriétaire, et ses limites."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/thermique-dpe/",
+      "chemin": "legislation/stations/thermique-dpe/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "thermique-existant",
+      "titre": "RT de l'existant",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les règles de la thermique en rénovation, quand on remplace un équipement ou qu'on isole, et la différence entre une rénovation élément par élément et une rénovation globale.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les règles de la thermique en rénovation, quand on remplace un équipement ou qu'on isole, et la différence entre une rénovation élément par élément et une rénovation globale."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/thermique-existant/",
+      "chemin": "legislation/stations/thermique-existant/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "thermique-pourquoi-une-rt",
+      "titre": "Pourquoi une RT ?",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la réglementation thermique française, née du choc pétrolier de 1974, renforcée par étapes jusqu'à la RT2012, puis remplacée par la RE2020 qui ajoute le carbone et le confort d'été.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la réglementation thermique française, née du choc pétrolier de 1974, renforcée par étapes jusqu'à la RT2012, puis remplacée par la RE2020 qui ajoute le carbone et le confort d'été."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/thermique-pourquoi-une-rt/",
+      "chemin": "legislation/stations/thermique-pourquoi-une-rt/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "thermique-re2020",
+      "titre": "La RE2020",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les trois exigences de la RE2020 — Bbio, Cep, IC — ce qui change vraiment par rapport à la RT2012, et pourquoi l'indicateur carbone pousse vers la pompe à chaleur.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les trois exigences de la RE2020 — Bbio, Cep, IC — ce qui change vraiment par rapport à la RT2012, et pourquoi l'indicateur carbone pousse vers la pompe à chaleur."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/thermique-re2020/",
+      "chemin": "legislation/stations/thermique-re2020/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "bitube",
+      "titre": "Bitube — Réseau à construire",
+      "ligne": "D",
+      "resume": "Raccorder chaque émetteur entre départ et retour et comparer les branches.",
+      "niveaux": {
+        "tp": "Raccorder chaque émetteur entre départ et retour et comparer les branches.",
+        "bts": "Comparer direct et retour inversé avec les résistances du chemin complet."
+      },
+      "competences": [
+        "BTS C2",
+        "BTS C3",
+        "BTS C4",
+        "BTS C8",
+        "CAP C3.4",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/bitube/",
+      "chemin": "hydrometro/stations/bitube/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "boucle",
+      "titre": "Boucle",
+      "ligne": "P",
+      "resume": "Lire une boucle hydraulique avant toute intervention.",
+      "niveaux": {
+        "tp": "Lire une boucle hydraulique avant toute intervention.",
+        "bts": "Analyser l’architecture fonctionnelle d’une boucle hydraulique."
+      },
+      "competences": [
+        "BTS C2-1",
+        "BTS C2-2",
+        "BTS C4-3",
+        "CAP C3.4",
+        "CAP C4.4",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/boucle/",
+      "chemin": "hydrometro/stations/boucle/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "circulateur",
+      "titre": "Circulateur",
+      "ligne": "E",
+      "resume": "Contrôler et régler un circulateur en sécurité.",
+      "niveaux": {
+        "tp": "Contrôler et régler un circulateur en sécurité.",
+        "bts": "Déterminer et analyser le point de fonctionnement."
+      },
+      "competences": [
+        "BTS C3-1",
+        "BTS C3-3",
+        "BTS C8-3",
+        "CAP C4.4",
+        "CAP C4.5",
+        "RNCP38748-BC01 maintenance",
+        "RNCP38748-BC01 optimisation"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/circulateur/",
+      "chemin": "hydrometro/stations/circulateur/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "debit",
+      "titre": "Débit",
+      "ligne": "P, E",
+      "resume": "Mesurer et interpréter un débit de circulation.",
+      "niveaux": {
+        "tp": "Mesurer et interpréter un débit de circulation.",
+        "bts": "Interpréter le point de fonctionnement pompe-réseau."
+      },
+      "competences": [
+        "BTS C3-3",
+        "BTS C7-5",
+        "BTS C7-6",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/debit/",
+      "chemin": "hydrometro/stations/debit/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "decouplage",
+      "titre": "Découplage — Trois régimes de débit",
+      "ligne": "M",
+      "resume": "Suivre les flux primaire, secondaire et interne dans trois régimes.",
+      "niveaux": {
+        "tp": "Suivre les flux primaire, secondaire et interne dans trois régimes.",
+        "bts": "Établir les bilans de débit et les températures de mélange avec une convention explicite."
+      },
+      "competences": [
+        "BTS C2",
+        "BTS C7",
+        "BTS C8",
+        "CAP C3.4",
+        "CAP C4.4",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/decouplage/",
+      "chemin": "hydrometro/stations/decouplage/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "delta-t",
+      "titre": "Écart ΔT",
+      "ligne": "P",
+      "resume": "Mesurer un écart départ-retour sans conclure trop vite.",
+      "niveaux": {
+        "tp": "Mesurer un écart départ-retour sans conclure trop vite.",
+        "bts": "Définir un protocole de ΔT interprétable."
+      },
+      "competences": [
+        "BTS C7-4",
+        "BTS C7-6",
+        "BTS C8-3",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/delta-t/",
+      "chemin": "hydrometro/stations/delta-t/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "diagnostic",
+      "titre": "Diagnostic — Enquête hydraulique",
+      "ligne": "M",
+      "resume": "Demander les indices utiles, vérifier une hypothèse et rendre compte.",
+      "niveaux": {
+        "tp": "Demander les indices utiles, vérifier une hypothèse et rendre compte.",
+        "bts": "Comparer plusieurs hypothèses et construire une vérification discriminante."
+      },
+      "competences": [
+        "BTS C12-C14",
+        "BTS C2",
+        "BTS C7",
+        "BTS C8",
+        "CAP C4.4",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/diagnostic/",
+      "chemin": "hydrometro/stations/diagnostic/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "echangeur",
+      "titre": "Échangeur",
+      "ligne": "E",
+      "resume": "Repérer les circuits primaire et secondaire et préparer les contrôles.",
+      "niveaux": {
+        "tp": "Repérer les circuits primaire et secondaire et préparer les contrôles.",
+        "bts": "Analyser le service d’un échangeur à partir des mesures."
+      },
+      "competences": [
+        "BTS C2-3",
+        "BTS C3-1",
+        "BTS C8-3",
+        "CAP C3.4",
+        "CAP C4.5",
+        "RNCP38748-BC01 diagnostic",
+        "RNCP38748-BC01 maintenance préventive"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/echangeur/",
+      "chemin": "hydrometro/stations/echangeur/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "energie",
+      "titre": "Énergie",
+      "ligne": "P",
+      "resume": "Relier circulation d’eau et transport de chaleur.",
+      "niveaux": {
+        "tp": "Relier circulation d’eau et transport de chaleur.",
+        "bts": "Délimiter la chaîne énergétique hydraulique."
+      },
+      "competences": [
+        "BTS C2-2",
+        "BTS C2-3",
+        "BTS C8-3",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/energie/",
+      "chemin": "hydrometro/stations/energie/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "equilibrage",
+      "titre": "Équilibrage — Banc à trois branches",
+      "ligne": "D, M",
+      "resume": "Mesurer, régler une branche, stabiliser et remesurer.",
+      "niveaux": {
+        "tp": "Mesurer, régler une branche, stabiliser et remesurer.",
+        "bts": "Analyser la redistribution et critiquer le modèle à débit total fixe."
+      },
+      "competences": [
+        "BTS C14",
+        "BTS C2",
+        "BTS C7",
+        "BTS C8",
+        "CAP C4.4",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/equilibrage/",
+      "chemin": "hydrometro/stations/equilibrage/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "mesurer",
+      "titre": "Mesurer",
+      "ligne": "P, M",
+      "resume": "Choisir un instrument et produire un relevé exploitable.",
+      "niveaux": {
+        "tp": "Choisir un instrument et produire un relevé exploitable.",
+        "bts": "Concevoir une stratégie de mesure adaptée à une performance."
+      },
+      "competences": [
+        "BTS C7-1",
+        "BTS C7-5",
+        "BTS C8-2",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/mesurer/",
+      "chemin": "hydrometro/stations/mesurer/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "mission",
+      "titre": "Mission réseau — Une branche reste froide",
+      "ligne": "M",
+      "resume": "Conduire l’enquête du constat au compte rendu avec une action contrôlée.",
+      "niveaux": {
+        "tp": "Conduire l’enquête du constat au compte rendu avec une action contrôlée.",
+        "bts": "Comparer les hypothèses et justifier la décision par les preuves."
+      },
+      "competences": [
+        "BTS C12-C14",
+        "BTS C2",
+        "BTS C7",
+        "BTS C8",
+        "CAP C4.4",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/mission/",
+      "chemin": "hydrometro/stations/mission/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "monotube",
+      "titre": "Monotube — Suivez l’eau",
+      "ligne": "D",
+      "resume": "Suivre une boucle monotube à dérivations et contrôler amont, aval et bypass.",
+      "niveaux": {
+        "tp": "Suivre une boucle monotube à dérivations et contrôler amont, aval et bypass.",
+        "bts": "Analyser le partage de débit et le mélange thermique d’un modèle monotube."
+      },
+      "competences": [
+        "BTS C2",
+        "BTS C4",
+        "BTS C8",
+        "CAP C3.4",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/monotube/",
+      "chemin": "hydrometro/stations/monotube/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "pertes",
+      "titre": "Pertes de charge",
+      "ligne": "E, D",
+      "resume": "Localiser une résistance hydraulique anormale.",
+      "niveaux": {
+        "tp": "Localiser une résistance hydraulique anormale.",
+        "bts": "Calculer et vérifier les pertes de charge."
+      },
+      "competences": [
+        "BTS C3-3",
+        "BTS C7-4",
+        "BTS C8-3",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/pertes/",
+      "chemin": "hydrometro/stations/pertes/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "plancher",
+      "titre": "Plancher chauffant — Collecteur mystère",
+      "ligne": "D",
+      "resume": "Associer zones et boucles, lire les débitmètres et contrôler un réglage.",
+      "niveaux": {
+        "tp": "Associer zones et boucles, lire les débitmètres et contrôler un réglage.",
+        "bts": "Analyser longueurs, débits visés et limites d’un collecteur modélisé."
+      },
+      "competences": [
+        "BTS C2",
+        "BTS C4",
+        "BTS C7",
+        "BTS C8",
+        "CAP C3.4",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/plancher/",
+      "chemin": "hydrometro/stations/plancher/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "production",
+      "titre": "Production",
+      "ligne": "E",
+      "resume": "Identifier les productions raccordées à un réseau d’eau.",
+      "niveaux": {
+        "tp": "Identifier les productions raccordées à un réseau d’eau.",
+        "bts": "Comparer des solutions de production à partir du besoin et des données du projet."
+      },
+      "competences": [
+        "BTS C2-1",
+        "BTS C3-1",
+        "BTS C3-2",
+        "CAP C3.4",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/production/",
+      "chemin": "hydrometro/stations/production/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "puissance",
+      "titre": "Puissance",
+      "ligne": "P",
+      "resume": "Estimer la puissance transportée par l’eau.",
+      "niveaux": {
+        "tp": "Estimer la puissance transportée par l’eau.",
+        "bts": "Dimensionner et vérifier une puissance hydraulique."
+      },
+      "competences": [
+        "BTS C3-3",
+        "BTS C8-1",
+        "BTS C8-3",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/puissance/",
+      "chemin": "hydrometro/stations/puissance/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "releves",
+      "titre": "Relevés — La preuve exploitable",
+      "ligne": "M",
+      "resume": "Renseigner une fiche avant/après compréhensible par un tiers.",
+      "niveaux": {
+        "tp": "Renseigner une fiche avant/après compréhensible par un tiers.",
+        "bts": "Construire une comparaison défendable et en expliciter les limites."
+      },
+      "competences": [
+        "BTS C12-C14",
+        "BTS C7",
+        "BTS C8",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/releves/",
+      "chemin": "hydrometro/stations/releves/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "securite",
+      "titre": "Sécurité",
+      "ligne": "E",
+      "resume": "Identifier et contrôler visuellement les organes de sécurité.",
+      "niveaux": {
+        "tp": "Identifier et contrôler visuellement les organes de sécurité.",
+        "bts": "Définir et justifier la chaîne de protection."
+      },
+      "competences": [
+        "BTS C3-1",
+        "BTS C4-1",
+        "BTS C5",
+        "CAP C3.9",
+        "RNCP38748 prévention et sécurité",
+        "RNCP38748-BC01 maintenance"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/securite/",
+      "chemin": "hydrometro/stations/securite/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "tampon",
+      "titre": "Volume tampon — Quatre piquages",
+      "ligne": "M",
+      "resume": "Reconnaître le raccordement et attribuer seulement les fonctions visibles.",
+      "niveaux": {
+        "tp": "Reconnaître le raccordement et attribuer seulement les fonctions visibles.",
+        "bts": "Analyser volume utile, transferts et découplage selon l’architecture."
+      },
+      "competences": [
+        "BTS C2",
+        "BTS C3",
+        "BTS C8",
+        "CAP C3.4",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/tampon/",
+      "chemin": "hydrometro/stations/tampon/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "v3v",
+      "titre": "Vanne trois voies — Trois voies, une fonction",
+      "ligne": "D",
+      "resume": "Identifier A, B, AB et contrôler le sens de circulation.",
+      "niveaux": {
+        "tp": "Identifier A, B, AB et contrôler le sens de circulation.",
+        "bts": "Analyser le montage et un bilan de mélange simplifié."
+      },
+      "competences": [
+        "BTS C2",
+        "BTS C4",
+        "BTS C7",
+        "BTS C8",
+        "CAP C3.4",
+        "CAP C4.4",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/v3v/",
+      "chemin": "hydrometro/stations/v3v/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "vase",
+      "titre": "Vase d’expansion",
+      "ligne": "E",
+      "resume": "Contrôler le vase d’expansion et son raccordement.",
+      "niveaux": {
+        "tp": "Contrôler le vase d’expansion et son raccordement.",
+        "bts": "Dimensionner l’expansion et vérifier la plage de pression."
+      },
+      "competences": [
+        "BTS C3-3",
+        "BTS C4-1",
+        "BTS C8-1",
+        "CAP C3.9",
+        "CAP C4.5",
+        "RNCP38748-BC01 diagnostic",
+        "RNCP38748-BC01 maintenance"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/vase/",
+      "chemin": "hydrometro/stations/vase/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "air-circule",
+      "titre": "L’air se déplace",
+      "ligne": "A",
+      "resume": "Suivez le trajet de l’air, du dehors jusqu’au rejet.",
+      "niveaux": {
+        "cap": "Suivez le trajet de l’air, du dehors jusqu’au rejet.",
+        "bac": "Reliez le déplacement de l’air à un écart de pression.",
+        "bts": "Distinguez pression statique, dynamique et totale dans le raisonnement réseau."
+      },
+      "competences": null,
+      "missionProf": "Lire le sens de circulation de l’air sur une installation, avant toute mesure.",
+      "url": "https://inerweb.fr/aerorezo/stations/air-circule/",
+      "chemin": "aerorezo/stations/air-circule/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "air-neuf-selection",
+      "titre": "Air neuf et sélection",
+      "ligne": "C",
+      "resume": "Vois que l’air extérieur doit être traité.",
+      "niveaux": {
+        "cap": "Vois que l’air extérieur doit être traité.",
+        "bac": "Calcule une puissance sensible de renouvellement d’air.",
+        "bts": "Croise bilan total, conditions d’air et sélection d’une solution sans confondre calcul et catalogue."
+      },
+      "competences": null,
+      "missionProf": "Chiffrer la charge apportée par le renouvellement d’air, puis vérifier une sélection sur les données du constructeur.",
+      "url": "https://inerweb.fr/aerorezo/stations/air-neuf-selection/",
+      "chemin": "aerorezo/stations/air-neuf-selection/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "apport-latent",
+      "titre": "Apport latent",
+      "ligne": "C",
+      "resume": "Reliez présence humaine et vapeur d’eau.",
+      "niveaux": {
+        "cap": "Reliez présence humaine et vapeur d’eau.",
+        "bac": "Distinguez charge sensible et charge latente.",
+        "bts": "Calculez un bilan total à partir d’un écart d’enthalpie ou de charges séparées."
+      },
+      "competences": null,
+      "missionProf": "Justifier la part d’humidité à retirer d’un local, et l’écart entre la puissance totale et la seule puissance sensible.",
+      "url": "https://inerweb.fr/aerorezo/stations/apport-latent/",
+      "chemin": "aerorezo/stations/apport-latent/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "apport-sensible",
+      "titre": "Apport sensible",
+      "ligne": "C",
+      "resume": "Associe une hausse de température à un apport sensible.",
+      "niveaux": {
+        "cap": "Associe une hausse de température à un apport sensible.",
+        "bac": "Calcule la puissance nécessaire pour changer la température d’un débit d’air.",
+        "bts": "Mène un bilan sensible avec débits massiques et conditions de calcul explicites."
+      },
+      "competences": null,
+      "missionProf": "Chiffrer la puissance nécessaire pour amener un débit d’air à la température voulue dans un local.",
+      "url": "https://inerweb.fr/aerorezo/stations/apport-sensible/",
+      "chemin": "aerorezo/stations/apport-sensible/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "architecture-cta",
+      "titre": "Lire une CTA",
+      "ligne": "T",
+      "resume": "Placez prise d’air, registres, filtres, batteries et ventilateur.",
+      "niveaux": {
+        "cap": "Placez prise d’air, registres, filtres, batteries et ventilateur.",
+        "bac": "Expliquez la fonction de chaque section et le sens de l’air.",
+        "bts": "Composez une architecture répondant au besoin, aux pressions, à l’énergie et à la maintenance."
+      },
+      "competences": null,
+      "missionProf": "Reconnaître, devant une centrale ouverte, la fonction de chaque caisson et l’ordre dans lequel l’air les traverse.",
+      "url": "https://inerweb.fr/aerorezo/stations/architecture-cta/",
+      "chemin": "aerorezo/stations/architecture-cta/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "batteries",
+      "titre": "Batteries chaude et froide",
+      "ligne": "T",
+      "resume": "Observez l’air se réchauffer ou se refroidir.",
+      "niveaux": {
+        "cap": "Observez l’air se réchauffer ou se refroidir.",
+        "bac": "Reliez puissance, débit d’air et écart de température.",
+        "bts": "Analysez batterie froide avec refroidissement sensible et déshumidification éventuelle."
+      },
+      "competences": null,
+      "missionProf": "Mettre en service une batterie froide et vérifier que l’eau qu’elle produit part réellement.",
+      "url": "https://inerweb.fr/aerorezo/stations/batteries/",
+      "chemin": "aerorezo/stations/batteries/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "besoin-air",
+      "titre": "Pourquoi ventiler ?",
+      "ligne": "V",
+      "resume": "Nomme ce qui salit l’air d’un logement occupé.",
+      "niveaux": {
+        "cap": "Nomme ce qui salit l’air d’un logement occupé.",
+        "bac": "Relie l’occupation d’un local à son besoin de renouvellement d’air.",
+        "bts": "Traduis un usage en débits de projet, à vérifier dans le texte applicable."
+      },
+      "competences": null,
+      "missionProf": "Justifier la présence d’une ventilation dans un logement, et énoncer l’ordre d’une étude.",
+      "url": "https://inerweb.fr/aerorezo/stations/besoin-air/",
+      "chemin": "aerorezo/stations/besoin-air/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "conduits",
+      "titre": "Choisir les conduits",
+      "ligne": "D",
+      "resume": "Reconnaissez une gaine circulaire, une gaine rectangulaire et un flexible sur une installation.",
+      "niveaux": {
+        "cap": "Reconnaissez une gaine circulaire, une gaine rectangulaire et un flexible sur une installation.",
+        "bac": "Choisissez un conduit selon la place disponible, l’étanchéité, l’entretien et les pertes.",
+        "bts": "Argumentez forme, matériau, classe d’étanchéité, isolation et accessibilité au regard du projet."
+      },
+      "competences": null,
+      "missionProf": "Choisir les conduits d’un réseau de ventilation dans la hauteur disponible, sans sacrifier l’étanchéité ni l’accès à l’entretien.",
+      "url": "https://inerweb.fr/aerorezo/stations/conduits/",
+      "chemin": "aerorezo/stations/conduits/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "debit-vitesse",
+      "titre": "Débit, vitesse, section",
+      "ligne": "A",
+      "resume": "Suivez l’air dans la gaine et lisez le débit affiché.",
+      "niveaux": {
+        "cap": "Suivez l’air dans la gaine et lisez le débit affiché.",
+        "bac": "Calculez un débit à partir d’une vitesse et d’une section.",
+        "bts": "Dimensionnez une section pour un débit imposé, puis vérifiez la vitesse obtenue."
+      },
+      "competences": null,
+      "missionProf": "Vérifier qu’une gaine posée transporte bien le débit prévu au plan.",
+      "url": "https://inerweb.fr/aerorezo/stations/debit-vitesse/",
+      "chemin": "aerorezo/stations/debit-vitesse/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "diagnostic",
+      "titre": "Diagnostiquer sans deviner",
+      "ligne": "M",
+      "resume": "Croisez débit faible, bruit et état du filtre.",
+      "niveaux": {
+        "cap": "Croisez débit faible, bruit et état du filtre.",
+        "bac": "Classez les hypothèses puis choisissez le prochain contrôle.",
+        "bts": "Séparez symptômes, mesures, hypothèses, test discriminant et décision."
+      },
+      "competences": null,
+      "missionProf": "Trouver la cause d’un défaut d’air sans démonter ni remplacer au hasard.",
+      "url": "https://inerweb.fr/aerorezo/stations/diagnostic/",
+      "chemin": "aerorezo/stations/diagnostic/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "dimensionner-vmc",
+      "titre": "Étudier un réseau VMC",
+      "ligne": "V",
+      "resume": "Placez les bouches et suivez chaque branche jusqu’au caisson.",
+      "niveaux": {
+        "cap": "Placez les bouches et suivez chaque branche jusqu’au caisson.",
+        "bac": "Additionnez les débits branche par branche et vérifiez la vitesse obtenue.",
+        "bts": "Dimensionnez le réseau, évaluez les pertes de charge et situez le point de fonctionnement."
+      },
+      "competences": null,
+      "missionProf": "Établir les débits d’un réseau de VMC branche par branche, et dire ce qui commande le choix du ventilateur.",
+      "url": "https://inerweb.fr/aerorezo/stations/dimensionner-vmc/",
+      "chemin": "aerorezo/stations/dimensionner-vmc/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "double-flux",
+      "titre": "VMC double flux",
+      "ligne": "V",
+      "resume": "Distinguez les quatre flux : air neuf, soufflé, extrait, rejeté.",
+      "niveaux": {
+        "cap": "Distinguez les quatre flux : air neuf, soufflé, extrait, rejeté.",
+        "bac": "Expliquez ce que l’échangeur récupère, et pourquoi les flux ne se mélangent pas.",
+        "bts": "Calculez un rendement de récupération à partir de températures mesurées et analysez ses limites."
+      },
+      "competences": null,
+      "missionProf": "Repérer et nommer les quatre flux sur une installation double flux, et contrôler l’efficacité annoncée.",
+      "url": "https://inerweb.fr/aerorezo/stations/double-flux/",
+      "chemin": "aerorezo/stations/double-flux/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "evaluation-a",
+      "titre": "Évaluation · Air & hygrométrie",
+      "ligne": "A",
+      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "niveaux": {
+        "cap": "Réinvestis les gestes et les correspondances du parcours.",
+        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifie les calculs et les décisions dans une installation complète."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/aerorezo/stations/evaluation-a/",
+      "chemin": "aerorezo/stations/evaluation-a/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "evaluation-c",
+      "titre": "Évaluation · Climatisation & apports",
+      "ligne": "C",
+      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "niveaux": {
+        "cap": "Réinvestis les gestes et les correspondances du parcours.",
+        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifie les calculs et les décisions dans une installation complète."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/aerorezo/stations/evaluation-c/",
+      "chemin": "aerorezo/stations/evaluation-c/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "evaluation-d",
+      "titre": "Évaluation · Distribution",
+      "ligne": "D",
+      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "niveaux": {
+        "cap": "Réinvestis les gestes et les correspondances du parcours.",
+        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifie les calculs et les décisions dans une installation complète."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/aerorezo/stations/evaluation-d/",
+      "chemin": "aerorezo/stations/evaluation-d/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "evaluation-m",
+      "titre": "Évaluation · Mesure & diagnostic",
+      "ligne": "M",
+      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "niveaux": {
+        "cap": "Réinvestis les gestes et les correspondances du parcours.",
+        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifie les calculs et les décisions dans une installation complète."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/aerorezo/stations/evaluation-m/",
+      "chemin": "aerorezo/stations/evaluation-m/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "evaluation-t",
+      "titre": "Évaluation · CTA",
+      "ligne": "T",
+      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "niveaux": {
+        "cap": "Réinvestis les gestes et les correspondances du parcours.",
+        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifie les calculs et les décisions dans une installation complète."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/aerorezo/stations/evaluation-t/",
+      "chemin": "aerorezo/stations/evaluation-t/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "evaluation-v",
+      "titre": "Évaluation · VMC",
+      "ligne": "V",
+      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "niveaux": {
+        "cap": "Réinvestis les gestes et les correspondances du parcours.",
+        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifie les calculs et les décisions dans une installation complète."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/aerorezo/stations/evaluation-v/",
+      "chemin": "aerorezo/stations/evaluation-v/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "humidifier-reguler",
+      "titre": "Humidifier, déshumidifier, réguler",
+      "ligne": "T",
+      "resume": "Distinguez température et humidité.",
+      "niveaux": {
+        "cap": "Distinguez température et humidité.",
+        "bac": "Observez l’action d’une consigne et d’un capteur.",
+        "bts": "Concevez une séquence de régulation cohérente, avec sécurités et modes économes."
+      },
+      "competences": null,
+      "missionProf": "Décider si l’air soufflé doit être humidifié ou séché, et régler la boucle qui s’en charge.",
+      "url": "https://inerweb.fr/aerorezo/stations/humidifier-reguler/",
+      "chemin": "aerorezo/stations/humidifier-reguler/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "hygrometrie",
+      "titre": "L’humidité relative",
+      "ligne": "A",
+      "resume": "Compare un air sec et un air humide à la même température.",
+      "niveaux": {
+        "cap": "Compare un air sec et un air humide à la même température.",
+        "bac": "Explique pourquoi l’humidité relative change quand la température change.",
+        "bts": "Relie température sèche, teneur en eau et humidité relative sans confondre les grandeurs."
+      },
+      "competences": null,
+      "missionProf": "Interpréter un relevé d’humidité relative en tenant compte de la température à laquelle il a été pris.",
+      "url": "https://inerweb.fr/aerorezo/stations/hygrometrie/",
+      "chemin": "aerorezo/stations/hygrometrie/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "hygroreglable",
+      "titre": "VMC hygroréglable",
+      "ligne": "V",
+      "resume": "Observe une bouche s’ouvrir quand l’air devient humide.",
+      "niveaux": {
+        "cap": "Observe une bouche s’ouvrir quand l’air devient humide.",
+        "bac": "Explique comment le débit suit l’occupation réelle du logement.",
+        "bts": "Vérifie la cohérence entre entrées d’air, bouches, groupe et domaine d’emploi du système."
+      },
+      "competences": null,
+      "missionProf": "Expliquer à un occupant pourquoi le débit de sa VMC varie, et vérifier qu’une bouche module encore.",
+      "url": "https://inerweb.fr/aerorezo/stations/hygroreglable/",
+      "chemin": "aerorezo/stations/hygroreglable/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "instruments",
+      "titre": "Choisir l’instrument",
+      "ligne": "M",
+      "resume": "Associez anémomètre, tube de Pitot, manomètre et hygromètre.",
+      "niveaux": {
+        "cap": "Associez anémomètre, tube de Pitot, manomètre et hygromètre.",
+        "bac": "Choisissez l’instrument selon la grandeur et la précision attendue.",
+        "bts": "Préparez une chaîne de mesure traçable : plage, résolution, incertitude et étalonnage."
+      },
+      "competences": null,
+      "missionProf": "Préparer une mesure sur une installation d’air : dire la grandeur, l’unité et le point avant de sortir un appareil.",
+      "url": "https://inerweb.fr/aerorezo/stations/instruments/",
+      "chemin": "aerorezo/stations/instruments/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "internes-solaires",
+      "titre": "Occupants, équipements et soleil",
+      "ligne": "C",
+      "resume": "Identifiez les sources internes et solaires.",
+      "niveaux": {
+        "cap": "Identifiez les sources internes et solaires.",
+        "bac": "Classez les apports par famille sans double comptage.",
+        "bts": "Utilisez les scénarios d’occupation, protections et données climatiques du projet."
+      },
+      "competences": null,
+      "missionProf": "Établir la part des apports qui ne se lit sur aucun plan : occupation, éclairage, équipements et soleil.",
+      "url": "https://inerweb.fr/aerorezo/stations/internes-solaires/",
+      "chemin": "aerorezo/stations/internes-solaires/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "melange-filtration",
+      "titre": "Mélange et filtration",
+      "ligne": "T",
+      "resume": "Suivez deux flux qui deviennent un air mélangé.",
+      "niveaux": {
+        "cap": "Suivez deux flux qui deviennent un air mélangé.",
+        "bac": "Calculez une température de mélange simple pour des débits comparables.",
+        "bts": "Réalisez le bilan massique/énergétique et suivez l’encrassement par pression différentielle."
+      },
+      "competences": null,
+      "missionProf": "Régler la part d’air neuf d’une centrale et décider, sur mesure, quand un filtre doit être remplacé.",
+      "url": "https://inerweb.fr/aerorezo/stations/melange-filtration/",
+      "chemin": "aerorezo/stations/melange-filtration/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "mesure-debit",
+      "titre": "Mesurer un débit",
+      "ligne": "M",
+      "resume": "Placez correctement un appareil dans le flux.",
+      "niveaux": {
+        "cap": "Placez correctement un appareil dans le flux.",
+        "bac": "Transformez une vitesse moyenne et une section en débit.",
+        "bts": "Réalisez un profil ou une traversée et estimez la qualité de la mesure."
+      },
+      "competences": null,
+      "missionProf": "Vérifier le débit réellement transporté par une gaine ou soufflé par une bouche.",
+      "url": "https://inerweb.fr/aerorezo/stations/mesure-debit/",
+      "chemin": "aerorezo/stations/mesure-debit/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "mesure-humidite",
+      "titre": "Mesurer température et humidité",
+      "ligne": "M",
+      "resume": "Attendez la stabilisation du capteur.",
+      "niveaux": {
+        "cap": "Attendez la stabilisation du capteur.",
+        "bac": "Comparez température sèche, HR et point de rosée.",
+        "bts": "Placez les points de mesure et interprétez une transformation d’air."
+      },
+      "competences": null,
+      "missionProf": "Relever l’état de l’air d’un local et annoncer où l’eau risque de se déposer.",
+      "url": "https://inerweb.fr/aerorezo/stations/mesure-humidite/",
+      "chemin": "aerorezo/stations/mesure-humidite/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "pertes-lineaires",
+      "titre": "Pertes de charge linéaires",
+      "ligne": "D",
+      "resume": "Observez la pression diminuer tout au long d’une gaine droite.",
+      "niveaux": {
+        "cap": "Observez la pression diminuer tout au long d’une gaine droite.",
+        "bac": "Calculez la perte d’une portion droite à partir d’une valeur par mètre et d’une longueur relevée.",
+        "bts": "Reliez vitesse, diamètre, rugosité et longueur à la perte de charge d’un tronçon."
+      },
+      "competences": null,
+      "missionProf": "Chiffrer ce qu’une branche de gaine droite fait perdre en pression, à partir de la longueur réellement posée.",
+      "url": "https://inerweb.fr/aerorezo/stations/pertes-lineaires/",
+      "chemin": "aerorezo/stations/pertes-lineaires/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "pertes-singulieres",
+      "titre": "Accidents de parcours",
+      "ligne": "D",
+      "resume": "Repérez un coude, un té, une réduction et un registre sur un réseau.",
+      "niveaux": {
+        "cap": "Repérez un coude, un té, une réduction et un registre sur un réseau.",
+        "bac": "Additionnez les pertes linéaires et les pertes singulières d’une même branche.",
+        "bts": "Calculez une perte singulière à partir d’un coefficient et de la pression dynamique."
+      },
+      "competences": null,
+      "missionProf": "Additionner les pertes d’une branche, accidents compris, pour établir la pression que le ventilateur devra fournir.",
+      "url": "https://inerweb.fr/aerorezo/stations/pertes-singulieres/",
+      "chemin": "aerorezo/stations/pertes-singulieres/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "pressions",
+      "titre": "Trois pressions",
+      "ligne": "A",
+      "resume": "Observez une pression dans une gaine sans confondre les prises.",
+      "niveaux": {
+        "cap": "Observez une pression dans une gaine sans confondre les prises.",
+        "bac": "Différenciez pression statique et pression dynamique.",
+        "bts": "Utilisez la relation entre pression totale, statique et dynamique."
+      },
+      "competences": null,
+      "missionProf": "Relever une pression dans une gaine sans confondre les prises, et en tirer une vitesse.",
+      "url": "https://inerweb.fr/aerorezo/stations/pressions/",
+      "chemin": "aerorezo/stations/pressions/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "pressions-reseau",
+      "titre": "Mesurer les pressions",
+      "ligne": "M",
+      "resume": "Choisissez une prise statique correcte.",
+      "niveaux": {
+        "cap": "Choisissez une prise statique correcte.",
+        "bac": "Mesurez une différence de pression aux bornes d’un organe.",
+        "bts": "Établissez un bilan de pression et comparez au point ventilateur/réseau."
+      },
+      "competences": null,
+      "missionProf": "Suivre l’état d’un filtre et repérer où un réseau perd sa pression.",
+      "url": "https://inerweb.fr/aerorezo/stations/pressions-reseau/",
+      "chemin": "aerorezo/stations/pressions-reseau/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "recuperation",
+      "titre": "Récupération d’énergie",
+      "ligne": "T",
+      "resume": "Repère les deux flux qui se croisent dans le récupérateur.",
+      "niveaux": {
+        "cap": "Repère les deux flux qui se croisent dans le récupérateur.",
+        "bac": "Calcule une efficacité à partir de trois températures relevées au bon endroit.",
+        "bts": "Compare performance, pertes de charge, risque de givre et stratégie de dérivation."
+      },
+      "competences": null,
+      "missionProf": "Contrôler sur site l’efficacité annoncée d’un récupérateur, et juger si elle vaut ce qu’elle coûte.",
+      "url": "https://inerweb.fr/aerorezo/stations/recuperation/",
+      "chemin": "aerorezo/stations/recuperation/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "rosee-psychro",
+      "titre": "Point de rosée et air humide",
+      "ligne": "A",
+      "resume": "Refroidis l’air jusqu’à voir apparaître la condensation.",
+      "niveaux": {
+        "cap": "Refroidis l’air jusqu’à voir apparaître la condensation.",
+        "bac": "Repère le point de rosée à partir de température et humidité relative.",
+        "bts": "Interprète refroidissement, déshumidification et réchauffage sur un diagramme psychrométrique."
+      },
+      "competences": null,
+      "missionProf": "Prévoir où l’eau va se déposer dans une installation, et s’assurer qu’elle peut en repartir.",
+      "url": "https://inerweb.fr/aerorezo/stations/rosee-psychro/",
+      "chemin": "aerorezo/stations/rosee-psychro/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "sections",
+      "titre": "Sections circulaires et rectangulaires",
+      "ligne": "D",
+      "resume": "Comparez deux ouvertures et dites laquelle laisse passer le plus d’air.",
+      "niveaux": {
+        "cap": "Comparez deux ouvertures et dites laquelle laisse passer le plus d’air.",
+        "bac": "Calculez la section qu’exige un débit imposé, puis contrôlez la vitesse obtenue.",
+        "bts": "Comparez une solution ronde et une solution rectangulaire à section utile et diamètre équivalent cohérents."
+      },
+      "competences": null,
+      "missionProf": "Déterminer la section des conduits d’un réseau à partir des débits du plan, puis vérifier la vitesse réelle des diamètres retenus.",
+      "url": "https://inerweb.fr/aerorezo/stations/sections/",
+      "chemin": "aerorezo/stations/sections/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "simple-flux",
+      "titre": "VMC simple flux",
+      "ligne": "V",
+      "resume": "Suivez l’air neuf depuis la fenêtre jusqu’à la bouche d’extraction.",
+      "niveaux": {
+        "cap": "Suivez l’air neuf depuis la fenêtre jusqu’à la bouche d’extraction.",
+        "bac": "Expliquez le balayage du logement et le rôle du passage sous les portes.",
+        "bts": "Établissez le schéma fonctionnel, répartissez les débits et vérifiez la compensation des transferts d’air."
+      },
+      "competences": null,
+      "missionProf": "Vérifier qu’un logement est correctement balayé : entrées d’air, passages sous les portes, bouches d’extraction au bon endroit.",
+      "url": "https://inerweb.fr/aerorezo/stations/simple-flux/",
+      "chemin": "aerorezo/stations/simple-flux/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "transmission",
+      "titre": "Parois et écarts de température",
+      "ligne": "C",
+      "resume": "Repérez mur, vitrage, toiture et plancher.",
+      "niveaux": {
+        "cap": "Repérez mur, vitrage, toiture et plancher.",
+        "bac": "Calculez un apport par transmission avec U, surface et écart de température.",
+        "bts": "Établissez les hypothèses et séparez les zones et régimes pertinents."
+      },
+      "competences": null,
+      "missionProf": "Chiffrer ce qui entre dans un local par son enveloppe, paroi par paroi, avec les données du projet.",
+      "url": "https://inerweb.fr/aerorezo/stations/transmission/",
+      "chemin": "aerorezo/stations/transmission/"
+    },
+    {
+      "reseau": "AéroRézo",
+      "id": "ventilateur-equilibrage",
+      "titre": "Ventilateur et équilibrage",
+      "ligne": "D",
+      "resume": "Vois le débit changer quand un registre bouge.",
+      "niveaux": {
+        "cap": "Vois le débit changer quand un registre bouge.",
+        "bac": "Place le point de fonctionnement au croisement de la courbe du réseau et de celle du ventilateur.",
+        "bts": "Équilibre les branches sans étrangler le réseau, puis contrôle le point de fonctionnement obtenu."
+      },
+      "competences": null,
+      "missionProf": "Établir le point de fonctionnement réel d’une installation, puis équilibrer les branches sans étrangler le réseau.",
+      "url": "https://inerweb.fr/aerorezo/stations/ventilateur-equilibrage/",
+      "chemin": "aerorezo/stations/ventilateur-equilibrage/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "1-1-courant-intensite",
+      "titre": "Le courant et l’intensité",
+      "ligne": "Ligne 1",
+      "resume": "Station autonome de la ligne 1 d’ÉlectroRézo : les grandeurs de l’électricité.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Partout, et jamais à l’œil nu. Un courant ne se voit pas, ne se sent pas, ne s’entend pas. On ne le connaît que par ce qu’il fait — chauffer un fil, faire tourner un moteur, allumer une lampe — ou par ce qu’un appareil en dit.",
+      "url": "https://inerweb.fr/electrorezo/stations/1-1-courant-intensite/",
+      "chemin": "electrorezo/stations/1-1-courant-intensite/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "1-2-tension",
+      "titre": "La tension",
+      "ligne": "Ligne 1",
+      "resume": "Station autonome de la ligne 1 d’ÉlectroRézo : les grandeurs de l’électricité.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Sur toutes les étiquettes du métier : 230 volts, 400 volts, 24 volts. Et dans la première question à se poser devant une installation — non pas « est-ce qu’il y a de la tension ? », mais « entre quels points ? ».",
+      "url": "https://inerweb.fr/electrorezo/stations/1-2-tension/",
+      "chemin": "electrorezo/stations/1-2-tension/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "1-3-resistance-loi-ohm",
+      "titre": "La résistance et la loi d’Ohm",
+      "ligne": "Ligne 1",
+      "resume": "Station autonome de la ligne 1 d’ÉlectroRézo : les grandeurs de l’électricité.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans un radiateur, où la résistance est voulue et sert à chauffer. Dans un câble, où elle est subie et fait perdre de l’énergie. Et dans un bobinage de moteur, où sa valeur mesurée dit s’il est sain ou grillé.",
+      "url": "https://inerweb.fr/electrorezo/stations/1-3-resistance-loi-ohm/",
+      "chemin": "electrorezo/stations/1-3-resistance-loi-ohm/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "1-4-puissance-energie",
+      "titre": "La puissance et l’énergie",
+      "ligne": "Ligne 1",
+      "resume": "Station autonome de la ligne 1 d’ÉlectroRézo : les grandeurs de l’électricité.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Les watts sont écrits sur tout : ampoules, radiateurs, moteurs, plaques de cuisson. Les kilowattheures, eux, ne sont écrits nulle part sur les appareils. Ils sont sur une seule chose : la facture.",
+      "url": "https://inerweb.fr/electrorezo/stations/1-4-puissance-energie/",
+      "chemin": "electrorezo/stations/1-4-puissance-energie/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "1-5-continu-alternatif",
+      "titre": "Continu et alternatif",
+      "ligne": "Ligne 1",
+      "resume": "Station autonome de la ligne 1 d’ÉlectroRézo : les grandeurs de l’électricité.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "L’alternatif partout où il y a une prise. Le continu dans les batteries, les alimentations, les panneaux photovoltaïques, et sur toutes les cartes électroniques — y compris celles qui sont dans une machine alimentée en alternatif.",
+      "url": "https://inerweb.fr/electrorezo/stations/1-5-continu-alternatif/",
+      "chemin": "electrorezo/stations/1-5-continu-alternatif/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "1-6-frequence",
+      "titre": "La fréquence",
+      "ligne": "Ligne 1",
+      "resume": "Station autonome de la ligne 1 d’ÉlectroRézo : les grandeurs de l’électricité.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Écrite sur toutes les plaques : 50 Hz. Et surtout, elle explique pourquoi un moteur asynchrone tourne à une vitesse et pas à une autre — et pourquoi il faut un variateur pour la changer.",
+      "url": "https://inerweb.fr/electrorezo/stations/1-6-frequence/",
+      "chemin": "electrorezo/stations/1-6-frequence/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "1-7-plaque-signaletique",
+      "titre": "Lire une plaque signalétique",
+      "ligne": "Ligne 1",
+      "resume": "Station autonome de la ligne 1 d’ÉlectroRézo : les grandeurs de l’électricité.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Rivetée sur le flanc de chaque moteur, collée sur chaque appareil. Elle est souvent sale, parfois illisible, jamais inutile. Quand elle a disparu, on perd des heures à retrouver ce qu’elle disait.",
+      "url": "https://inerweb.fr/electrorezo/stations/1-7-plaque-signaletique/",
+      "chemin": "electrorezo/stations/1-7-plaque-signaletique/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "1-8-trois-defauts",
+      "titre": "Les trois défauts",
+      "ligne": "Ligne 1",
+      "resume": "Station autonome de la ligne 1 d’ÉlectroRézo : les grandeurs de l’électricité.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Ces trois mots reviendront à chaque station de la ligne 4. Ils y servent de fil rouge : pour chaque appareil, on demandera lequel des trois il sait voir.",
+      "url": "https://inerweb.fr/electrorezo/stations/1-8-trois-defauts/",
+      "chemin": "electrorezo/stations/1-8-trois-defauts/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "1-9-mesurer",
+      "titre": "Mesurer : multimètre et pince",
+      "ligne": "Ligne 1",
+      "resume": "Station autonome de la ligne 1 d’ÉlectroRézo : les grandeurs de l’électricité.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans la caisse de tout électricien, et dans la vôtre. Savoir s’en servir n’est pas une option : c’est la différence entre diagnostiquer et deviner.",
+      "url": "https://inerweb.fr/electrorezo/stations/1-9-mesurer/",
+      "chemin": "electrorezo/stations/1-9-mesurer/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "2-1-phase-neutre-pe",
+      "titre": "Phase, neutre et protection",
+      "ligne": "Ligne 2",
+      "resume": "Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Derrière chaque prise, dans chaque boîte de dérivation, sur chaque appareil. C’est la première chose qu’on identifie en ouvrant un coffret, et c’est ce qui décide de ce qu’on a le droit de toucher.",
+      "url": "https://inerweb.fr/electrorezo/stations/2-1-phase-neutre-pe/",
+      "chemin": "electrorezo/stations/2-1-phase-neutre-pe/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "2-2-monophase",
+      "titre": "Le réseau monophasé",
+      "ligne": "Ligne 2",
+      "resume": "Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Toutes les prises domestiques, l’éclairage, les petits appareils. Et, en atelier, tout ce qui est commandé en 230 volts : les bobines de contacteur, les électrovannes, les régulations.",
+      "url": "https://inerweb.fr/electrorezo/stations/2-2-monophase/",
+      "chemin": "electrorezo/stations/2-2-monophase/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "2-3-triphase",
+      "titre": "Le réseau triphasé",
+      "ligne": "Ligne 2",
+      "resume": "Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans tous les ateliers, toutes les armoires industrielles, toutes les machines de plus de quelques kilowatts. Et dans la rue : le réseau de distribution est triphasé de bout en bout.",
+      "url": "https://inerweb.fr/electrorezo/stations/2-3-triphase/",
+      "chemin": "electrorezo/stations/2-3-triphase/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "2-4-tension-simple",
+      "titre": "La tension simple",
+      "ligne": "Ligne 2",
+      "resume": "Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Chaque maison reçoit une phase et le neutre : elle reçoit donc une tension simple. Les trois maisons voisines n’ont pas forcément la même phase, mais elles ont toutes la même tension.",
+      "url": "https://inerweb.fr/electrorezo/stations/2-4-tension-simple/",
+      "chemin": "electrorezo/stations/2-4-tension-simple/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "2-5-tension-composee",
+      "titre": "La tension composée",
+      "ligne": "Ligne 2",
+      "resume": "Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "C’est la tension de la puissance industrielle. Tous les moteurs d’atelier, tous les schémas de puissance, tous les gros appareils sont dessus.",
+      "url": "https://inerweb.fr/electrorezo/stations/2-5-tension-composee/",
+      "chemin": "electrorezo/stations/2-5-tension-composee/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "2-6-champ-tournant",
+      "titre": "Le champ tournant",
+      "ligne": "Ligne 2",
+      "resume": "Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans tous les moteurs triphasés de l’atelier. Et sur le terrain, ce champ décide d’une chose très concrète : le sens dans lequel la machine va tourner.",
+      "url": "https://inerweb.fr/electrorezo/stations/2-6-champ-tournant/",
+      "chemin": "electrorezo/stations/2-6-champ-tournant/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "3-1-interrupteur",
+      "titre": "L’interrupteur",
+      "ligne": "Ligne 3",
+      "resume": "Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/3-1-interrupteur/",
+      "chemin": "electrorezo/stations/3-1-interrupteur/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "3-2-sectionneur",
+      "titre": "Le sectionneur",
+      "ligne": "Ligne 3",
+      "resume": "Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/3-2-sectionneur/",
+      "chemin": "electrorezo/stations/3-2-sectionneur/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "3-3-interrupteur-sectionneur",
+      "titre": "L’interrupteur-sectionneur",
+      "ligne": "Ligne 3",
+      "resume": "Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/3-3-interrupteur-sectionneur/",
+      "chemin": "electrorezo/stations/3-3-interrupteur-sectionneur/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "3-4-porte-fusible",
+      "titre": "Le porte-fusible",
+      "ligne": "Ligne 3",
+      "resume": "Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/3-4-porte-fusible/",
+      "chemin": "electrorezo/stations/3-4-porte-fusible/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "3-5-sectionneur-porte-fusible",
+      "titre": "Le sectionneur porte-fusible",
+      "ligne": "Ligne 3",
+      "resume": "Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/3-5-sectionneur-porte-fusible/",
+      "chemin": "electrorezo/stations/3-5-sectionneur-porte-fusible/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "4-1-fusible-gg",
+      "titre": "Le fusible gG",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/4-1-fusible-gg/",
+      "chemin": "electrorezo/stations/4-1-fusible-gg/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "4-2-fusible-am",
+      "titre": "Le fusible aM",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/4-2-fusible-am/",
+      "chemin": "electrorezo/stations/4-2-fusible-am/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "4-3-disjoncteur-magneto-thermique",
+      "titre": "Le disjoncteur magnéto-thermique",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/4-3-disjoncteur-magneto-thermique/",
+      "chemin": "electrorezo/stations/4-3-disjoncteur-magneto-thermique/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "4-4-disjoncteur-moteur",
+      "titre": "Le disjoncteur moteur",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/4-4-disjoncteur-moteur/",
+      "chemin": "electrorezo/stations/4-4-disjoncteur-moteur/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "4-5-interrupteur-differentiel",
+      "titre": "L’interrupteur différentiel",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/4-5-interrupteur-differentiel/",
+      "chemin": "electrorezo/stations/4-5-interrupteur-differentiel/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "4-6-disjoncteur-differentiel",
+      "titre": "Le disjoncteur différentiel",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/4-6-disjoncteur-differentiel/",
+      "chemin": "electrorezo/stations/4-6-disjoncteur-differentiel/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "4-7-relais-thermique",
+      "titre": "Le relais thermique",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/4-7-relais-thermique/",
+      "chemin": "electrorezo/stations/4-7-relais-thermique/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "4-8-terre",
+      "titre": "La terre et la liaison équipotentielle",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/4-8-terre/",
+      "chemin": "electrorezo/stations/4-8-terre/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "4-9-cable-section",
+      "titre": "Le câble : section et désignation",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/4-9-cable-section/",
+      "chemin": "electrorezo/stations/4-9-cable-section/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "5-1-contact-no-nf",
+      "titre": "Le contact : repos et travail",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/5-1-contact-no-nf/",
+      "chemin": "electrorezo/stations/5-1-contact-no-nf/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "5-2-contacteur",
+      "titre": "Le contacteur",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/5-2-contacteur/",
+      "chemin": "electrorezo/stations/5-2-contacteur/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "5-3-contact-auxiliaire",
+      "titre": "Le contact auxiliaire",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/5-3-contact-auxiliaire/",
+      "chemin": "electrorezo/stations/5-3-contact-auxiliaire/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "5-4-relais",
+      "titre": "Le relais électromécanique",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/5-4-relais/",
+      "chemin": "electrorezo/stations/5-4-relais/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "5-5-relais-temporise",
+      "titre": "Le relais temporisé",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/5-5-relais-temporise/",
+      "chemin": "electrorezo/stations/5-5-relais-temporise/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "5-6-contacts-temporises",
+      "titre": "Les contacts temporisés",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/5-6-contacts-temporises/",
+      "chemin": "electrorezo/stations/5-6-contacts-temporises/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "5-7-boutons",
+      "titre": "Bouton-poussoir et sélecteur",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/5-7-boutons/",
+      "chemin": "electrorezo/stations/5-7-boutons/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "5-8-securite-signalisation",
+      "titre": "Arrêt d’urgence et signalisation",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/5-8-securite-signalisation/",
+      "chemin": "electrorezo/stations/5-8-securite-signalisation/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "5-9-lire-un-schema",
+      "titre": "Lire un schéma : puissance et commande",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/5-9-lire-un-schema/",
+      "chemin": "electrorezo/stations/5-9-lire-un-schema/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "6-1-bobine-electro-aimant",
+      "titre": "La bobine et l’électro-aimant",
+      "ligne": "Ligne 6",
+      "resume": "Station autonome de la ligne 6 d’ÉlectroRézo : machines et conversion d’énergie.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/6-1-bobine-electro-aimant/",
+      "chemin": "electrorezo/stations/6-1-bobine-electro-aimant/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "6-2-transformateur",
+      "titre": "Le transformateur",
+      "ligne": "Ligne 6",
+      "resume": "Station autonome de la ligne 6 d’ÉlectroRézo : machines et conversion d’énergie.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/6-2-transformateur/",
+      "chemin": "electrorezo/stations/6-2-transformateur/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "6-3-moteur-asynchrone",
+      "titre": "Le moteur asynchrone triphasé",
+      "ligne": "Ligne 6",
+      "resume": "Station autonome de la ligne 6 d’ÉlectroRézo : machines et conversion d’énergie.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/6-3-moteur-asynchrone/",
+      "chemin": "electrorezo/stations/6-3-moteur-asynchrone/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "6-4-couplage",
+      "titre": "L’atelier du lundi matin",
+      "ligne": "Ligne 6",
+      "resume": "Station autonome : poser les barrettes d’un moteur triphasé en étoile ou en triangle, et comprendre pourquoi.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/6-4-couplage/",
+      "chemin": "electrorezo/stations/6-4-couplage/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "6-5-moteur-monophase",
+      "titre": "Le moteur monophasé",
+      "ligne": "Ligne 6",
+      "resume": "Station autonome de la ligne 6 d’ÉlectroRézo : machines et conversion d’énergie.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/6-5-moteur-monophase/",
+      "chemin": "electrorezo/stations/6-5-moteur-monophase/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "6-6-synchrone-et-continu",
+      "titre": "Synchrone et courant continu",
+      "ligne": "Ligne 6",
+      "resume": "Station autonome de la ligne 6 d’ÉlectroRézo : machines et conversion d’énergie.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/6-6-synchrone-et-continu/",
+      "chemin": "electrorezo/stations/6-6-synchrone-et-continu/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "7-1-varier-la-tension",
+      "titre": "Faire varier la tension",
+      "ligne": "Ligne 7",
+      "resume": "Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Sur les variateurs de lumière, sur les ventilateurs à plusieurs vitesses, sur les résistances de chauffage régulées. Et — c’est le point important — presque jamais pour régler la vitesse d’un moteur asynchrone.",
+      "url": "https://inerweb.fr/electrorezo/stations/7-1-varier-la-tension/",
+      "chemin": "electrorezo/stations/7-1-varier-la-tension/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "7-2-variateur-tension",
+      "titre": "Le variateur de tension",
+      "ligne": "Ligne 7",
+      "resume": "Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/7-2-variateur-tension/",
+      "chemin": "electrorezo/stations/7-2-variateur-tension/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "7-3-varier-la-frequence",
+      "titre": "Faire varier la fréquence",
+      "ligne": "Ligne 7",
+      "resume": "Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Sur toutes les machines modernes à vitesse réglable : pompes, ventilateurs, convoyeurs, compresseurs de climatisation. C’est ce qui a transformé l’industrie ces trente dernières années.",
+      "url": "https://inerweb.fr/electrorezo/stations/7-3-varier-la-frequence/",
+      "chemin": "electrorezo/stations/7-3-varier-la-frequence/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "7-4-variateur-frequence",
+      "titre": "Le variateur de fréquence",
+      "ligne": "Ligne 7",
+      "resume": "Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/7-4-variateur-frequence/",
+      "chemin": "electrorezo/stations/7-4-variateur-frequence/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "8-1-trait-et-point",
+      "titre": "Le trait et le point",
+      "ligne": "Ligne 8",
+      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/8-1-trait-et-point/",
+      "chemin": "electrorezo/stations/8-1-trait-et-point/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "8-10-dechiffrer",
+      "titre": "Déchiffrer",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/8-10-dechiffrer/",
+      "chemin": "electrorezo/stations/8-10-dechiffrer/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "8-11-jeu-des-symboles",
+      "titre": "Le jeu des symboles",
+      "ligne": "Ligne 3",
+      "resume": "Le jeu des symboles : reconnaître les symboles normalisés vus dans tout le réseau ÉlectroRézo.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/8-11-jeu-des-symboles/",
+      "chemin": "electrorezo/stations/8-11-jeu-des-symboles/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "8-2-contact",
+      "titre": "Le contact",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/8-2-contact/",
+      "chemin": "electrorezo/stations/8-2-contact/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "8-3-barre-sectionnement",
+      "titre": "La barre du sectionnement",
+      "ligne": "Ligne 3",
+      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/8-3-barre-sectionnement/",
+      "chemin": "electrorezo/stations/8-3-barre-sectionnement/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "8-4-rectangle",
+      "titre": "Le rectangle",
+      "ligne": "Ligne 3",
+      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/8-4-rectangle/",
+      "chemin": "electrorezo/stations/8-4-rectangle/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "8-5-declencheur-thermique",
+      "titre": "Le déclencheur thermique",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/8-5-declencheur-thermique/",
+      "chemin": "electrorezo/stations/8-5-declencheur-thermique/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "8-6-declencheur-magnetique",
+      "titre": "Le déclencheur magnétique",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/8-6-declencheur-magnetique/",
+      "chemin": "electrorezo/stations/8-6-declencheur-magnetique/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "8-7-pointille",
+      "titre": "Le pointillé",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/8-7-pointille/",
+      "chemin": "electrorezo/stations/8-7-pointille/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "8-8-bobine-et-rond",
+      "titre": "La bobine et le rond",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/8-8-bobine-et-rond/",
+      "chemin": "electrorezo/stations/8-8-bobine-et-rond/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "8-9-reperes",
+      "titre": "Les repères",
+      "ligne": "Ligne 5",
+      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/8-9-reperes/",
+      "chemin": "electrorezo/stations/8-9-reperes/"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M1",
+      "titre": "Le danger électrique",
+      "ligne": "Palier P0",
+      "resume": "Le danger électrique, l'analyse avant d'agir, la prévention, les domaines de tension, les effets du courant sur le corps.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M1",
+      "chemin": "hocourant/?module=M1"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M2",
+      "titre": "Observer et analyser avant d'agir",
+      "ligne": "Palier P0",
+      "resume": "Le danger électrique, l'analyse avant d'agir, la prévention, les domaines de tension, les effets du courant sur le corps.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M2",
+      "chemin": "hocourant/?module=M2"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M3",
+      "titre": "Choisir les mesures de prévention",
+      "ligne": "Palier P0",
+      "resume": "Le danger électrique, l'analyse avant d'agir, la prévention, les domaines de tension, les effets du courant sur le corps.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M3",
+      "chemin": "hocourant/?module=M3"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M4",
+      "titre": "Les domaines de tension",
+      "ligne": "Palier P0",
+      "resume": "Le danger électrique, l'analyse avant d'agir, la prévention, les domaines de tension, les effets du courant sur le corps.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M4",
+      "chemin": "hocourant/?module=M4"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M5",
+      "titre": "Le courant et le corps humain",
+      "ligne": "Palier P0",
+      "resume": "Le danger électrique, l'analyse avant d'agir, la prévention, les domaines de tension, les effets du courant sur le corps.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M5",
+      "chemin": "hocourant/?module=M5"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M6",
+      "titre": "L'habilitation et ses symboles",
+      "ligne": "Palier P1",
+      "resume": "L'habilitation et ses symboles, les zones et distances, le rôle B0, la conduite en cas d'accident.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M6",
+      "chemin": "hocourant/?module=M6"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M7",
+      "titre": "Zones, distances et acteurs",
+      "ligne": "Palier P1",
+      "resume": "L'habilitation et ses symboles, les zones et distances, le rôle B0, la conduite en cas d'accident.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M7",
+      "chemin": "hocourant/?module=M7"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M8",
+      "titre": "Le parcours B0, H0 et H0V",
+      "ligne": "Palier P1",
+      "resume": "L'habilitation et ses symboles, les zones et distances, le rôle B0, la conduite en cas d'accident.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M8",
+      "chemin": "hocourant/?module=M8"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M9",
+      "titre": "Mettre en sécurité : la consignation",
+      "ligne": "Palier P2",
+      "resume": "Mettre un circuit en sécurité, les documents, l'intervention élémentaire BS, la manœuvre BE.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M9",
+      "chemin": "hocourant/?module=M9"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M10",
+      "titre": "BS et BE Manœuvre",
+      "ligne": "Palier P2",
+      "resume": "Mettre un circuit en sécurité, les documents, l'intervention élémentaire BS, la manœuvre BE.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M10",
+      "chemin": "hocourant/?module=M10"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M11",
+      "titre": "B1, B1V : exécuter des travaux",
+      "ligne": "Palier P3",
+      "resume": "L'exécutant de travaux électriques sous la direction d'un chargé de travaux, le voisinage renforcé.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M11",
+      "chemin": "hocourant/?module=M11"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M12",
+      "titre": "Incident, accident, incendie",
+      "ligne": "Palier P1",
+      "resume": "L'habilitation et ses symboles, les zones et distances, le rôle B0, la conduite en cas d'accident.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M12",
+      "chemin": "hocourant/?module=M12"
+    },
+    {
+      "reseau": "HoCourant",
+      "id": "M13",
+      "titre": "BR : l'intervention générale",
+      "ligne": "Palier P4",
+      "resume": "L'intervention générale BT de faible étendue : dépannage, mesures, remplacement, essais.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/?module=M13",
+      "chemin": "hocourant/?module=M13"
+    },
+    {
+      "reseau": "Applications",
+      "id": "aquiblue",
+      "titre": "inerWeb AquiBlue",
+      "ligne": null,
+      "resume": "condenseur évaporateur détendeur compresseur HP BP le cycle, en direct Bluetooth du PC Recherche de l&rsquo;adaptateur&hellip; Effacer les journaux de capture Le geste central du TP Le numéro de série est écrit sur la sonde. 1.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/aquiblue/",
+      "chemin": "aquiblue/"
+    },
+    {
+      "reseau": "Applications",
+      "id": "hocourant",
+      "titre": "inerWeb HoCourant",
+      "ligne": null,
+      "resume": "S'entraîner en autonomie à l'habilitation électrique, de B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle. Sans compte, sans donnée personnelle. Prototype inerWeb.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hocourant/",
+      "chemin": "hocourant/"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "charte",
+      "titre": "Charte graphique inerWeb",
+      "ligne": null,
+      "resume": "La charte graphique du pack fluides, montrée : palette, typographie, composants, règles absolues, volet impression et écarts constatés.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/charte.html",
+      "chemin": "charte.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "comprendre-les-codes",
+      "titre": "Comprendre les codes inerWeb",
+      "ligne": null,
+      "resume": "À quoi sert chaque code inerWeb, qui le détient, comment ouvrir une séance et récupérer les résultats des élèves.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/comprendre-les-codes.html",
+      "chemin": "comprendre-les-codes.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "documents",
+      "titre": "Documents du projet",
+      "ligne": null,
+      "resume": "Dispositif d'habilitation aux fluides frigorigènes — A1 · A2 · D · E · retour au portail",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/documents.html",
+      "chemin": "documents.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "dossier",
+      "titre": "Centre d'habilitation fluides frigorigènes",
+      "ligne": null,
+      "resume": "Projet d'ouverture d'un centre d'habilitation aux fluides frigorigènes au Lycée Jacques Raynaud. Dossier, budget prévisionnel et outil pédagogique en fonctionnement.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/dossier.html",
+      "chemin": "dossier.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "formateurs",
+      "titre": "Espace formateurs",
+      "ligne": null,
+      "resume": "Projeter une ressource inerWeb en cours, réemployer le moteur technique (MIT), demander une adaptation. Contenus CC BY-NC-ND 4.0.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/formateurs.html",
+      "chemin": "formateurs.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "formation",
+      "titre": "inerWeb Pilote",
+      "ligne": null,
+      "resume": "Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/formation.html",
+      "chemin": "formation.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "galerie",
+      "titre": "Bibliothèque d'animations et de supports",
+      "ligne": null,
+      "resume": "Le catalogue inerWeb Édu : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/galerie.html",
+      "chemin": "galerie.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "index",
+      "titre": "inerWeb Édu",
+      "ligne": null,
+      "resume": "Le plan de formation inerWeb Édu : tous les cours interactifs du froid sur une carte de métro — théorie, organes, gestes, fluides, examens blancs. Gratuit, sans compte.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/index.html",
+      "chemin": "index.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "matrice",
+      "titre": "Matrice compétences × contenu × questions",
+      "ligne": null,
+      "resume": "Pack habilitation fluides frigorigènes — catégories A1 · A2 · D · E · arrêté du 21 novembre 2025, annexe II.B (136 compétences). Généré par node build/matrice.mjs depuis le contenu publié : ce tableau ne se saisit pas, il se relève.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/matrice.html",
+      "chemin": "matrice.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "metier",
+      "titre": "Le métier de frigoriste",
+      "ligne": null,
+      "resume": "Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/metier.html",
+      "chemin": "metier.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "partage",
+      "titre": "Le lien à garder",
+      "ligne": null,
+      "resume": "Gratuit, sans compte, sans installation — il s'ouvre dans le navigateur, sur téléphone comme sur ordinateur. Gardez ce lien.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/partage.html",
+      "chemin": "partage.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "planning",
+      "titre": "Planning de formation",
+      "ligne": null,
+      "resume": "Habilitation à la manipulation des fluides frigorigènes · arrêté du 21 novembre 2025",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/planning.html",
+      "chemin": "planning.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "portail",
+      "titre": "Habilitation fluides frigorigènes",
+      "ligne": null,
+      "resume": "Dispositif de formation à l'habilitation aux fluides frigorigènes (A1, A2, D, E) — autoformation, projection en salle, préparation pratique. Construit sur le référentiel de l'arrêté du 21 novembre 2025.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/portail.html",
+      "chemin": "portail.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "pratique",
+      "titre": "La partie pratique",
+      "ligne": null,
+      "resume": "TP formatif et évaluation de la manipulation fluidique : feuilles de guidance pas-à-pas, visas formateur, grille par compétence. Présentation.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/pratique.html",
+      "chemin": "pratique.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "relecture",
+      "titre": "Relecture",
+      "ligne": null,
+      "resume": "Généré le 25/07/2026 depuis le pack publié (82 cartes, 269 questions). Pour chaque élément : ✅ = validé · ✏ = à corriger (noter la correction en marge). Les réponses correctes sont en vert gras .",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/relecture.html",
+      "chemin": "relecture.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "seances",
+      "titre": "Ouvrir une séance à une classe",
+      "ligne": null,
+      "resume": "Fabriquer le code d'une séance : un lien et un QR code à projeter. Réservé aux titulaires d'un accès enseignant.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/seances.html",
+      "chemin": "seances.html"
+    }
+  ]
+}
