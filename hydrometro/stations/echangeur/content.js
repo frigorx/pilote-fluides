@@ -33,6 +33,116 @@
      <path d="M332 150h56M332 210h56M332 270h56" stroke="#b06a00" stroke-width="5" marker-end="url(#arr-ex-circuits)"/>
      <text x="360" y="42" text-anchor="middle" font-size="20" font-weight="700">TRANSFERT À TRAVERS LES PLAQUES</text>`);
 
+  const circuitsAnimee = `<svg viewBox="0 0 760 430" role="img" aria-labelledby="ech-titre ech-desc" font-family="Calibri, 'Segoe UI', system-ui, Arial, sans-serif">
+  <title id="ech-titre">Échangeur à plaques : échange de chaleur à contre-courant</title>
+  <desc id="ech-desc">Le circuit primaire, chaud, entre en haut à gauche et ressort en bas à gauche refroidi. Le circuit secondaire, froid, entre en bas à droite et ressort en haut à droite réchauffé. Une paroi les sépare : la chaleur la traverse, l'eau jamais.</desc>
+  <defs>
+    <marker id="ech-fl-o" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="26" markerHeight="26" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#c9451a"/></marker>
+    <marker id="ech-fl-b" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="26" markerHeight="26" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#3d7fca"/></marker>
+  </defs>
+  <rect x="10" y="10" width="740" height="410" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text x="380" y="46" text-anchor="middle" font-size="22" font-weight="700" fill="#1b3a63">ÉCHANGE À CONTRE-COURANT</text>
+  <rect x="200" y="90" width="360" height="220" rx="16" fill="#f3f7fb" stroke="#1b3a63" stroke-width="3"/>
+  <g id="ech-primaire">
+    <path d="M60 140 H190" stroke="#c9451a" stroke-width="12" fill="none"/>
+    <path d="M200 140 H560" stroke="#e8875f" stroke-width="12" fill="none"/>
+    <path d="M200 140 H560" id="ech-primaire-flux" stroke="#fffdf8" stroke-width="4" stroke-dasharray="14 18" fill="none" opacity="0"/>
+    <path d="M60 140 H185" stroke="#c9451a" stroke-width="12" fill="none" marker-end="url(#ech-fl-o)"/>
+    <path d="M570 140 H700" stroke="#e8a37f" stroke-width="12" fill="none" marker-end="url(#ech-fl-o)"/>
+  </g>
+  <g id="ech-plaques">
+    <rect x="200" y="186" width="360" height="28" fill="#1b3a63" opacity=".85"/>
+    <g id="ech-chaleur" fill="#c9451a" opacity="0">
+      <path d="M260 178 l10 22 h-20z" transform="rotate(180 260 189)"/>
+      <path d="M340 178 l10 22 h-20z" transform="rotate(180 340 189)"/>
+      <path d="M420 178 l10 22 h-20z" transform="rotate(180 420 189)"/>
+      <path d="M500 178 l10 22 h-20z" transform="rotate(180 500 189)"/>
+    </g>
+  </g>
+  <g id="ech-secondaire">
+    <path d="M700 260 H570" stroke="#3d7fca" stroke-width="12" fill="none"/>
+    <path d="M560 260 H200" stroke="#7fa9dd" stroke-width="12" fill="none"/>
+    <path d="M560 260 H200" id="ech-secondaire-flux" stroke="#fffdf8" stroke-width="4" stroke-dasharray="14 18" fill="none" opacity="0"/>
+    <path d="M700 260 H575" stroke="#3d7fca" stroke-width="12" fill="none" marker-end="url(#ech-fl-b)"/>
+    <path d="M190 260 H60" stroke="#9fbfe6" stroke-width="12" fill="none" marker-end="url(#ech-fl-b)"/>
+  </g>
+  <g font-size="20" font-weight="700" text-anchor="middle">
+    <g id="ech-t1"><rect x="40" y="86" width="120" height="36" rx="10" fill="#fffdf8" stroke="#c9451a" stroke-width="2"/><text x="100" y="111" fill="#c9451a">T1 · chaud</text></g>
+    <g id="ech-t2"><rect x="600" y="86" width="140" height="36" rx="10" fill="#fffdf8" stroke="#8a97a8" stroke-width="2"/><text x="670" y="111" fill="#8a97a8">T2 · refroidi</text></g>
+    <g id="ech-t3"><rect x="600" y="280" width="140" height="36" rx="10" fill="#fffdf8" stroke="#3d7fca" stroke-width="2"/><text x="670" y="305" fill="#3d7fca">T3 · froid</text></g>
+    <g id="ech-t4"><rect x="30" y="280" width="140" height="36" rx="10" fill="#fffdf8" stroke="#8a97a8" stroke-width="2"/><text x="100" y="305" fill="#8a97a8">T4 · réchauffé</text></g>
+  </g>
+  <g font-size="20" font-weight="700" fill="#1b3a63">
+    <text x="60" y="180">PRIMAIRE</text>
+    <text x="700" y="240" text-anchor="end">SECONDAIRE</text>
+  </g>
+  <rect x="140" y="340" width="480" height="60" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text x="380" y="365" text-anchor="middle" font-size="20" fill="#10233c">La paroi laisse passer la chaleur, jamais l'eau.</text>
+  <text x="380" y="390" text-anchor="middle" font-size="20" fill="#637285">Les deux circuits vont en sens contraire : l'échange est meilleur.</text>
+</svg>
+<div class="flux-controls">
+  <button type="button" data-flux="lire">▶ Lancer l'échange</button>
+  <button type="button" data-flux="rejouer">↺ Recommencer</button>
+  <p class="flux-etat" aria-live="polite">Circuits à l'arrêt. Lancez l'échange : le texte décrit chaque phase.</p>
+</div>`;
+
+  function brancherEchange(scene) {
+    const fluxP = scene.querySelector("#ech-primaire-flux");
+    const fluxS = scene.querySelector("#ech-secondaire-flux");
+    const chaleur = scene.querySelector("#ech-chaleur");
+    const t2 = scene.querySelector("#ech-t2");
+    const t4 = scene.querySelector("#ech-t4");
+    const etat = scene.querySelector(".flux-etat");
+    const lire = scene.querySelector('[data-flux="lire"]');
+    const rejouer = scene.querySelector('[data-flux="rejouer"]');
+    if (!fluxP || !fluxS || !chaleur || !t2 || !t4 || !etat || !lire || !rejouer) return;
+    const neutre = "#8a97a8";
+    const messages = [
+      [0, "Le primaire chaud entre à gauche, le secondaire froid entre à droite : ils circulent en sens contraire."],
+      [.4, "La chaleur traverse la paroi ; l’eau, elle, ne passe jamais d’un circuit à l’autre."],
+      [.85, "En sortie : T2 est refroidi côté primaire, T4 est réchauffé côté secondaire."]
+    ];
+    function teindre(groupe, couleur) {
+      const rect = groupe.querySelector("rect"), texte = groupe.querySelector("text");
+      if (rect) rect.setAttribute("stroke", couleur);
+      if (texte) texte.setAttribute("fill", couleur);
+    }
+    let avancement = 0, enLecture = false, derniereFrame = 0;
+    function positionner(p) {
+      fluxP.style.opacity = p > 0 ? "1" : "0";
+      fluxS.style.opacity = p > 0 ? "1" : "0";
+      fluxP.setAttribute("stroke-dashoffset", String(-Math.round(p * 640)));
+      fluxS.setAttribute("stroke-dashoffset", String(-Math.round(p * 640)));
+      chaleur.style.opacity = p >= .35 ? "1" : "0";
+      teindre(t2, p >= .85 ? "#3d7fca" : neutre);
+      teindre(t4, p >= .85 ? "#c9451a" : neutre);
+      if (!enLecture && p === 0) return;
+      const message = messages.filter(([seuil]) => p >= seuil - 1e-6).pop();
+      if (message && etat.dataset.cle !== String(message[0])) { etat.dataset.cle = String(message[0]); etat.textContent = message[1]; }
+    }
+    function animer(temps) {
+      if (!enLecture) return;
+      if (!derniereFrame) derniereFrame = temps;
+      avancement = Math.min(1, avancement + (temps - derniereFrame) / 3200);
+      derniereFrame = temps;
+      positionner(avancement);
+      if (avancement >= 1) { enLecture = false; lire.textContent = "▶ Rejouer l’échange"; return; }
+      requestAnimationFrame(animer);
+    }
+    lire.addEventListener("click", () => {
+      if (enLecture) { enLecture = false; lire.textContent = "▶ Reprendre"; return; }
+      if (avancement >= 1) avancement = 0;
+      enLecture = true; derniereFrame = 0; lire.textContent = "Ⅱ Pause";
+      requestAnimationFrame(animer);
+    });
+    rejouer.addEventListener("click", () => {
+      enLecture = false; avancement = 0; delete etat.dataset.cle;
+      positionner(0); lire.textContent = "▶ Lancer l’échange";
+      etat.textContent = "Circuits à l’arrêt. Lancez l’échange : le texte décrit chaque phase.";
+    });
+    positionner(0);
+  }
+
   const foulScene = (value = 20) => {
     const transfer = Math.max(20, 100 - Math.round(value * .7));
     const resistance = Math.round(20 + value * .8);
@@ -82,9 +192,9 @@
       {
         narration: "Quatre piquages, deux chemins qui ne se rencontrent jamais. Le primaire entre d'un côté et ressort de l'autre. Le secondaire fait de même, dans le sens opposé. Ce sens opposé n'est pas un hasard de dessin : on l'appelle le contre-courant, et il permet un meilleur échange sur toute la longueur, parce que l'écart de température reste réparti au lieu de s'annuler à mi-parcours. Deux conseils pour le terrain : repérez toujours quel piquage appartient à quel circuit avant d'intervenir, et méfiez-vous des installations où les raccordements ont été refaits sans respecter le sens prévu.",
         short: "Fonction", kicker: "comprendre", title: "Quatre piquages, deux chemins",
-        text: "Suivez chaque circuit avec les mots et les flèches. Ici, les écoulements sont représentés en sens opposés.",
+        text: "Suivez chaque circuit avec les mots et les flèches, puis cliquez « Lancer l’échange » pour voir le flux et la chaleur traverser la paroi.",
         cap: "Montrez l’entrée et la sortie de chaque circuit.", tp: "Associez entrée et sortie de chaque circuit.", bts: "Expliquez l’intérêt du contre-courant sans en déduire un pincement universel.",
-        scene: circuits, equivalent: "Le primaire va de P1 à P2. Le secondaire va de S1 à S2 en sens opposé. L’énergie traverse les plaques.",
+        scene: circuitsAnimee, wire: brancherEchange, equivalent: "Le primaire va de P1 à P2. Le secondaire va de S1 à S2 en sens opposé. L’énergie traverse les plaques.",
         action: { type: "match", prompt: "Associez les repères à leur chemin.", options:["Entrée primaire","Sortie primaire","Entrée secondaire","Sortie secondaire"], items:[{label:"P1",answer:0},{label:"P2",answer:1},{label:"S1",answer:2},{label:"S2",answer:3}], explain:"Chaque circuit possède sa propre entrée et sa propre sortie. Les raccordements réels se vérifient sur le dossier et la plaque constructeur." }
       },
       {

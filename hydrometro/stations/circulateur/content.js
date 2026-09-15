@@ -53,6 +53,98 @@
        <rect x="92" y="88" width="166" height="48" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="4"/><text x="175" y="109" text-anchor="middle" font-size="19" font-weight="700">Q ≈ ${fr(qOp,1)} m³/h</text><text x="175" y="129" text-anchor="middle" font-size="19" font-weight="700">H ≈ ${fr(hOp,1)} mCE</text>`);
   }
 
+  const boucleAnimee = `<svg viewBox="0 0 760 430" role="img" aria-labelledby="cir-titre cir-desc" font-family="Calibri, 'Segoe UI', system-ui, Arial, sans-serif">
+  <title id="cir-titre">Circulateur : l'eau circule, le point de fonctionnement bouge avec la vanne</title>
+  <desc id="cir-desc">À gauche, une boucle avec un circulateur et une vanne : l'eau avance. À droite, le graphique hauteur-débit : la courbe de la pompe descend, la courbe du réseau monte, leur croisement est le point de fonctionnement. Fermer la vanne redresse la courbe du réseau et déplace le point vers moins de débit et plus de hauteur.</desc>
+  <defs>
+    <marker id="cir-fl" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="26" markerHeight="26" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#3d7fca"/></marker>
+  </defs>
+  <rect x="10" y="10" width="740" height="410" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <text x="380" y="46" text-anchor="middle" font-size="22" font-weight="700" fill="#1b3a63">LA POMPE ET LE RÉSEAU DÉCIDENT ENSEMBLE</text>
+  <g id="cir-boucle">
+    <path id="cir-trajet" d="M120 120 H300 V330 H120 Z" fill="none" stroke="#1b3a63" stroke-width="12"/>
+    <path d="M120 120 H300 V330 H120 Z" id="cir-ecoulement" fill="none" stroke="#7fa9dd" stroke-width="5" stroke-dasharray="12 16"/>
+    <g id="cir-pompe">
+      <circle cx="120" cy="225" r="36" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+      <path d="M100 245 L140 205" stroke="#1b3a63" stroke-width="3"/>
+      <path d="M120 189 V261 M84 225 H156" stroke="#1b3a63" stroke-width="3" opacity=".5"/>
+    </g>
+    <g id="cir-vanne">
+      <path d="M270 330 l14 -16 v32z M330 330 l-14 -16 v32z" fill="#fffdf8" stroke="#1b3a63" stroke-width="3" transform="translate(-90 0)"/>
+      <g id="cir-vanne-clapet" transform="rotate(0 210 330)"><rect x="207" y="300" width="6" height="30" fill="#c9451a"/></g>
+    </g>
+    <g id="cir-emetteur">
+      <rect x="180" y="96" width="60" height="48" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+      <path d="M192 104 V136 M204 104 V136 M216 104 V136 M228 104 V136" stroke="#1b3a63" stroke-width="2"/>
+    </g>
+    <g font-size="20" font-weight="700" fill="#1b3a63">
+      <rect x="40" y="270" width="150" height="34" rx="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="115" y="294" text-anchor="middle">CIRCULATEUR</text>
+      <rect x="150" y="350" width="120" height="34" rx="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="210" y="374" text-anchor="middle">VANNE</text>
+      <rect x="150" y="56" width="120" height="32" rx="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="210" y="79" text-anchor="middle">ÉMETTEUR</text>
+    </g>
+  </g>
+  <g id="cir-graphe">
+    <path d="M420 340 V110 M420 340 H720" stroke="#1b3a63" stroke-width="3" fill="none"/>
+    <text x="405" y="120" text-anchor="end" font-size="20" font-weight="700" fill="#1b3a63">H</text>
+    <text x="720" y="368" text-anchor="end" font-size="20" font-weight="700" fill="#1b3a63">Q</text>
+    <path id="cir-courbe-pompe" d="M430 140 C520 150 620 210 700 320" fill="none" stroke="#1b3a63" stroke-width="5"/>
+    <path id="cir-courbe-reseau" d="M430 335 Q560 320 690 150" fill="none" stroke="#c9451a" stroke-width="5"/>
+    <g id="cir-point" transform="translate(597 236)">
+      <circle r="11" fill="#fffdf8" stroke="#1e7e54" stroke-width="5"/>
+    </g>
+    <g font-size="20" font-weight="700">
+      <rect x="440" y="80" width="130" height="32" rx="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="505" y="103" text-anchor="middle" fill="#1b3a63">POMPE</text>
+      <rect x="590" y="80" width="140" height="32" rx="9" fill="#fffdf8" stroke="#c9451a" stroke-width="2"/><text x="660" y="103" text-anchor="middle" fill="#c9451a">RÉSEAU</text>
+      <g id="cir-point-cartouche"><rect x="470" y="255" width="200" height="34" rx="9" fill="#fffdf8" stroke="#1e7e54" stroke-width="2"/><text x="570" y="279" text-anchor="middle" fill="#1e7e54">POINT DE FONCTION.</text><path d="M590 255 L597 247" stroke="#1e7e54" stroke-width="2"/></g>
+    </g>
+  </g>
+  <rect x="60" y="392" width="640" height="24" fill="none"/>
+  <text x="380" y="410" text-anchor="middle" font-size="20" fill="#637285">Fermer la vanne : la courbe réseau se redresse, le point monte vers la gauche.</text>
+</svg>
+<div class="flux-controls">
+  <button type="button" data-flux="vanne">Fermer la vanne</button>
+  <p class="flux-etat" aria-live="polite">Vanne ouverte : le point de fonctionnement est à droite, débit maximal.</p>
+</div>`;
+
+  function brancherVanne(scene) {
+    const reseau = scene.querySelector("#cir-courbe-reseau");
+    const point = scene.querySelector("#cir-point");
+    const clapet = scene.querySelector("#cir-vanne-clapet");
+    const ecoulement = scene.querySelector("#cir-ecoulement");
+    const etat = scene.querySelector(".flux-etat");
+    const bouton = scene.querySelector('[data-flux="vanne"]');
+    if (!reseau || !point || !clapet || !ecoulement || !etat || !bouton) return;
+    const ouverte = { reseau: "M430 335 Q560 320 690 150", point: "translate(597 236)", clapet: 0, texte: "Vanne ouverte : le point de fonctionnement est à droite, débit maximal." };
+    const fermee = { reseau: "M430 335 Q450 220 520 150", point: "translate(478 176)", clapet: 80, texte: "Vanne fermée : moins de débit, plus de hauteur — le point a glissé sur la courbe pompe." };
+    let ferme = false, enCours = false, avancement = 0, derniereFrame = 0;
+    function melange(a, b, p) { return a + (b - a) * p; }
+    function positionner(p) {
+      const angle = melange(ouverte.clapet, fermee.clapet, p);
+      clapet.setAttribute("transform", `rotate(${angle.toFixed(1)} 210 330)`);
+      reseau.setAttribute("d", p < .5 ? ouverte.reseau : fermee.reseau);
+      const x = melange(597, 478, p), y = melange(236, 176, p);
+      point.setAttribute("transform", `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
+    }
+    function animer(temps) {
+      if (!enCours) return;
+      if (!derniereFrame) derniereFrame = temps;
+      const cible = ferme ? 1 : 0;
+      const pas = (temps - derniereFrame) / 900;
+      derniereFrame = temps;
+      avancement = cible === 1 ? Math.min(1, avancement + pas) : Math.max(0, avancement - pas);
+      positionner(avancement);
+      if (avancement === cible) { enCours = false; etat.textContent = ferme ? fermee.texte : ouverte.texte; return; }
+      requestAnimationFrame(animer);
+    }
+    bouton.addEventListener("click", () => {
+      ferme = !ferme;
+      bouton.textContent = ferme ? "Ouvrir la vanne" : "Fermer la vanne";
+      enCours = true; derniereFrame = 0;
+      requestAnimationFrame(animer);
+    });
+    positionner(0);
+  }
+
   const measurements = shell("circ-measure", "Points de mesure autour du circulateur",
     "Deux prises de pression encadrent le circulateur, un débitmètre est placé sur la boucle et la commande est relevée. Le bruit reste un symptôme, pas une mesure suffisante.",
     `<path d="M70 225H650" stroke="#1b3a63" stroke-width="15"/>
@@ -88,8 +180,8 @@
     },
     steps:[
       {short:"Identifier",narration: "Vous avez vu à la station Débit que la pompe ne décide pas seule du débit. Cette station va vous le montrer en manipulant. Un circulateur ne travaille jamais dans le vide : il agit dans une boucle, et il doit vaincre ce que cette boucle lui oppose. Deux informations vont donc toujours ensemble et ne se lisent jamais séparément : le débit qu'il fait passer, et la hauteur, c'est-à-dire l'effort qu'il doit fournir pour y arriver. Un circulateur n'a pas un débit : il a un couple débit-hauteur, qui dépend du réseau où vous le posez.", kicker:"repérer",title:"Débit et hauteur, ensemble",text:"Un circulateur agit dans une boucle. Son débit dépend aussi de la résistance du réseau.",cap:"Montrez le sens de l’écoulement avec la flèche.",tp:"Repérez le sens, la commande et les grandeurs Q et H.",bts:"Interprétez H comme énergie hydraulique par unité de poids, exprimée ici en mCE.",scene:symbol,equivalent:"Le circulateur est sur une boucle. La flèche indique l’écoulement. Les grandeurs affichées sont débit Q en mètre cube par heure et hauteur H en mètre de colonne d’eau.",action:{type:"choice",prompt:"Dans une boucle fermée, que représente surtout la hauteur du circulateur ?",options:[{label:"L’énergie pour vaincre les pertes de charge"},{label:"La hauteur du bâtiment seule"},{label:"La température de départ"},{label:"Le volume du vase"}],correct:0,explain:"Dans la boucle fermée simplifiée, la hauteur fournie compense principalement les pertes de charge du chemin hydraulique."}},
-      {short:"Courbes",narration: "Fermez progressivement la vanne et observez ce qui se passe. La courbe du réseau se redresse : à chaque débit, il faut désormais davantage de pression pour faire passer la même eau. Le point où les deux courbes se croisent glisse vers la gauche, vers un débit plus faible. Notez bien que la pompe, elle, n'a pas changé : c'est le réseau qui a changé. C'est exactement ce qui arrive quand un filtre s'encrasse, quand un clapet reste à demi ouvert, ou quand une vanne d'isolement a été refermée à moitié après une intervention. Le débit chute sans qu'on ait touché à la pompe.", kicker:"comprendre",title:"La pompe rencontre le réseau",text:"Fermez progressivement la vanne virtuelle : la résistance augmente et la courbe réseau se redresse.",cap:"Suivez le point qui se déplace sur le graphique.",tp:"Observez le déplacement du point de fonctionnement.",bts:"Lisez Q et H à l’intersection, sans isoler la courbe pompe du réseau.",scene:(value)=>curveScene({k:Number(value),speed:1,id:"circ-resistance"}),equivalent:(value)=>{const q=Math.sqrt(6/(Number(value)+.18));const h=Number(value)*q*q;return`Coefficient pédagogique du réseau ${fr(Number(value))}. Intersection approximative : ${fr(q,1)} m³/h et ${fr(h,1)} mCE.`;},action:{type:"range",prompt:"Modifiez la résistance du réseau.",label:"Coefficient K pédagogique",min:.15,max:1.2,step:.05,value:.5,evaluate:(value)=>{const q=Math.sqrt(6/(value+.18));const h=value*q*q;return{readout:`K ${fr(value)}`,observation:`Point du modèle : Q ≈ ${fr(q,1)} m³/h ; H ≈ ${fr(h,1)} mCE. Résistance plus forte : débit plus faible.`};}}},
-      {short:"Régler",narration: "Faites varier maintenant la vitesse. Cette fois, c'est la courbe de la pompe qui se déplace, et le réseau qui reste identique. Augmentez la vitesse, la pompe propose davantage à chaque niveau d'effort, et le point de croisement remonte vers un débit plus élevé. C'est le réglage le plus courant sur les circulateurs modernes. Mais soyez conscient de ce que vous achetez : plus de vitesse, c'est plus de débit, mais aussi plus de consommation, plus de bruit, et davantage de contrainte sur le réseau. Un circulateur poussé au maximum dans un réseau étroit finit par siffler.", kicker:"observer l’effet",title:"Changer la vitesse déplace la courbe pompe",text:"Faites varier la vitesse relative. Le réseau reste identique; la courbe pompe et son intersection changent.",cap:"Comparez le débit avant et après le réglage.",tp:"Comparez le débit avant et après, puis laissez stabiliser.",bts:"Le tracé applique un modèle simplifié des lois d’affinité; il ne remplace pas les courbes constructeur.",scene:(value)=>curveScene({k:.5,speed:Number(value)/100,id:"circ-speed"}),equivalent:(value)=>{const s=Number(value)/100,q=Math.sqrt(6*s*s/.68),h=.5*q*q;return`Vitesse relative ${value} pour cent. Point modélisé environ ${fr(q,1)} m³/h et ${fr(h,1)} mCE.`;},action:{type:"range",prompt:"Modifiez la vitesse relative.",label:"Vitesse relative",min:60,max:100,step:5,value:80,evaluate:(value)=>{const s=value/100,q=Math.sqrt(6*s*s/.68),h=.5*q*q;return{readout:`${value} %`,observation:`Q ≈ ${fr(q,1)} m³/h ; H ≈ ${fr(h,1)} mCE. Le réseau fixe avec la pompe le nouveau point.`};}}},
+      {short:"Courbes",narration: "Fermez progressivement la vanne et observez ce qui se passe. La courbe du réseau se redresse : à chaque débit, il faut désormais davantage de pression pour faire passer la même eau. Le point où les deux courbes se croisent glisse vers la gauche, vers un débit plus faible. Notez bien que la pompe, elle, n'a pas changé : c'est le réseau qui a changé. C'est exactement ce qui arrive quand un filtre s'encrasse, quand un clapet reste à demi ouvert, ou quand une vanne d'isolement a été refermée à moitié après une intervention. Le débit chute sans qu'on ait touché à la pompe.", kicker:"comprendre",title:"La pompe rencontre le réseau",text:"Fermez progressivement la vanne virtuelle : la résistance augmente et la courbe réseau se redresse. Le bouton « Fermer la vanne » de la boucle animée montre le même effet sur le point de fonctionnement.",cap:"Suivez le point qui se déplace sur le graphique.",tp:"Observez le déplacement du point de fonctionnement.",bts:"Lisez Q et H à l’intersection, sans isoler la courbe pompe du réseau.",scene:boucleAnimee,wire:brancherVanne,equivalent:(value)=>{const q=Math.sqrt(6/(Number(value)+.18));const h=Number(value)*q*q;return`Coefficient pédagogique du réseau ${fr(Number(value))}. Intersection approximative : ${fr(q,1)} m³/h et ${fr(h,1)} mCE.`;},action:{type:"range",prompt:"Modifiez la résistance du réseau.",label:"Coefficient K pédagogique",min:.15,max:1.2,step:.05,value:.5,evaluate:(value)=>{const q=Math.sqrt(6/(value+.18));const h=value*q*q;return{readout:`K ${fr(value)}`,observation:`Point du modèle : Q ≈ ${fr(q,1)} m³/h ; H ≈ ${fr(h,1)} mCE. Résistance plus forte : débit plus faible.`};}}},
+      {short:"Régler",narration: "Faites varier maintenant la vitesse. Cette fois, c'est la courbe de la pompe qui se déplace, et le réseau qui reste identique. Augmentez la vitesse, la pompe propose davantage à chaque niveau d'effort, et le point de croisement remonte vers un débit plus élevé. C'est le réglage le plus courant sur les circulateurs modernes. Mais soyez conscient de ce que vous achetez : plus de vitesse, c'est plus de débit, mais aussi plus de consommation, plus de bruit, et davantage de contrainte sur le réseau. Un circulateur poussé au maximum dans un réseau étroit finit par siffler.", kicker:"observer l’effet",title:"Changer la vitesse déplace la courbe pompe",text:"Faites varier la vitesse relative. Le réseau reste identique; la courbe pompe et son intersection changent. Le bouton « Fermer la vanne » de la boucle animée rappelle l’autre cause de déplacement : le réseau.",cap:"Comparez le débit avant et après le réglage.",tp:"Comparez le débit avant et après, puis laissez stabiliser.",bts:"Le tracé applique un modèle simplifié des lois d’affinité; il ne remplace pas les courbes constructeur.",scene:boucleAnimee,wire:brancherVanne,equivalent:(value)=>{const s=Number(value)/100,q=Math.sqrt(6*s*s/.68),h=.5*q*q;return`Vitesse relative ${value} pour cent. Point modélisé environ ${fr(q,1)} m³/h et ${fr(h,1)} mCE.`;},action:{type:"range",prompt:"Modifiez la vitesse relative.",label:"Vitesse relative",min:60,max:100,step:5,value:80,evaluate:(value)=>{const s=value/100,q=Math.sqrt(6*s*s/.68),h=.5*q*q;return{readout:`${value} %`,observation:`Q ≈ ${fr(q,1)} m³/h ; H ≈ ${fr(h,1)} mCE. Le réseau fixe avec la pompe le nouveau point.`};}}},
       {short:"Mesurer",narration: "Une règle de métier, maintenant, et elle n'est pas négociable. On ne diagnostique pas un circulateur à l'oreille. Un bruit peut venir d'air dans le circuit, d'une vitesse excessive, d'un roulement fatigué ou d'un défaut de fixation — quatre causes qui n'appellent pas la même réparation. Avant de toucher quoi que ce soit, relevez trois choses dans un état connu : la commande appliquée, le débit obtenu, et la pression différentielle aux bornes de la pompe. Ces trois valeurs, notées ensemble, valent tous les avis. Elles vous serviront aussi de point de comparaison après votre intervention.", kicker:"mesurer",title:"Relever avant de toucher",text:"Le bruit ne suffit pas. Relevez commande, débit et pression différentielle dans un état connu.",cap:"Relevez le débit et la commande avant de toucher.",tp:"Notez le mode, le débit et les pressions avant réglage.",bts:"Comparez le point relevé aux courbes et au besoin hydraulique.",scene:measurements,equivalent:"Le circulateur est encadré par deux prises de pression; le débit et la commande sont relevés. Le bruit est présenté comme symptôme complémentaire.",action:{type:"match",prompt:"Associez la grandeur à son usage.",options:["Débit du circuit","Hauteur fournie","État de commande"],items:[{label:"Q en m³/h",answer:0},{label:"Δp convertie selon le protocole",answer:1},{label:"Mode / vitesse",answer:2}],explain:"Ces relevés décrivent un point de fonctionnement et l’action de commande. Leur méthode dépend de l’installation et des instruments."}},
       {short:"Vérifier",narration: "Vous allez conduire un avant et un après complet. La discipline est celle que vous connaissez déjà : un seul changement à la fois, une attente pour que l'installation se stabilise, puis un nouveau relevé dans les mêmes conditions que le premier. Un réglage n'est pas terminé quand vous avez tourné le bouton : il est terminé quand vous pouvez montrer, chiffres à l'appui, ce qu'il a produit. C'est ce qui distingue un réglage d'un tâtonnement — et c'est aussi ce qui vous protège si quelqu'un conteste votre intervention six mois plus tard.", kicker:"hypothèse",title:"Régler sans remplacer au hasard",text:"Conduisez un avant/après. Un réglage n’est conclu qu’après stabilisation et nouveau relevé.",cap:"Signalez le bruit sans démonter le circulateur.",tp:"Rendez compte du symptôme, de l’action et de l’effet mesuré.",bts:"Vérifiez si l’intersection mesurée et la consommation répondent au besoin avant d’élargir le diagnostic.",scene:diagnosis,equivalent:"Six étapes : état initial, mesurer, régler, stabiliser, relever, conclure. Le bruit seul ne prouve pas une panne de pompe.",action:{type:"sequence",prompt:"Ordonnez le réglage contrôlé.",items:["Noter l’état initial","Relever Q et Δp","Modifier un réglage","Attendre la stabilisation"],correctOrder:[0,1,2,3],explain:"Après stabilisation, un nouveau relevé doit être comparé à l’état initial avant la conclusion."}}
     ],
