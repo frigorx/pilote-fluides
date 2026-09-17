@@ -401,7 +401,9 @@
      revue croisée : elle descend sous l'en-tête, et les cibles tactiles
      s'élargissent. */
   @media (max-width: 700px) {
-    .volet-poignee { top:184px; right:0; left:auto; padding:12px 15px; border-radius:10px 0 0 10px; }
+    .volet-poignee { position:static; display:block; width:100%; border-radius:0; padding:12px 16px;
+                     text-align:left; font-size:14.5px; box-shadow:none; }
+    .hall { margin-top:22px; }
     .nav { gap:14px; }
     .nav a { padding:8px 2px 6px; }
   }
@@ -576,7 +578,6 @@
     <p class="volet-pied">inerWeb est un <strong>projet personnel et indépendant</strong>, sans lien avec aucune institution — développé par inerweb.fr <em>(voir « Le mot de l’auteur », en bas de l’accueil)</em>. Les trois espaces libres ci-dessus sont proposés sans contrepartie à un établissement de formation qui souhaiterait s’en servir ; ils ne représentent aujourd’hui aucune structure.</p>
   </div>
 </aside>
-<button type="button" class="volet-poignee" id="volet-poignee" aria-label="Ouvrir le panneau d’actualités">Infos ▸</button>
 
 <div class="entete" role="banner">
   <div class="dedans">
@@ -603,6 +604,10 @@
     </nav>
   </div>
 </div>
+
+<!-- La poignée du volet : onglet fixé à gauche sur grand écran ; sur téléphone, une bande sous le menu
+     (17/09, F. Henninot : « le bandeau est trop impressionnant sur téléphone et masque le contenu »). -->
+<button type="button" class="volet-poignee" id="volet-poignee" aria-label="Ouvrir le panneau d’actualités">📰 Actualités &amp; espaces ▸</button>
 
 <div class="page" role="main" id="contenu" tabindex="-1">
 
@@ -1120,6 +1125,9 @@
   /* 17/09/2026 — F. Henninot : le volet est la vitrine (« la cerise sur le gâteau pour mon
      lycée »), il doit apparaître dès qu'on arrive. Le repli forcé du 12/09 est levé : il ne reste
      replié que si on l'a fermé dans cette session. */
+  /* Sur téléphone (≤ 700 px), le volet ouvert masquait tout le contenu (F. Henninot, 17/09) : il
+     démarre replié, sa poignée est une bande visible sous le menu. Ailleurs, ouvert à l'arrivée. */
+  if (window.matchMedia && window.matchMedia("(max-width: 700px)").matches) replie = true;
   poser(replie);
   requestAnimationFrame(function () { v.classList.add("pret"); });
 
@@ -1159,11 +1167,11 @@
 
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=6e99d979af"></script>
-<script src="chiffres.gen.js?v=6e99d979af"></script>
+<script src="moteur/lisibilite.js?v=1669d2e969"></script>
+<script src="chiffres.gen.js?v=1669d2e969"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=6e99d979af" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=1669d2e969" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
