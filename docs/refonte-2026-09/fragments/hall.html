@@ -1,0 +1,83 @@
+  <!-- ===================================================================
+       LE HALL (F. Henninot, 17/09/2026 : « l'effet waouh — oui bien sûr,
+       c'est un site qui fait ça, et je trouve tout de suite »). Il REMPLACE
+       l'accroche, l'organigramme et le plan qui vivaient ici : le plan du
+       thermo-techno a sa page (plan.html) ; l'accueil montre les réseaux,
+       leurs cartes, les chiffres relevés et les portes. Les blocs entre
+       sentinelles sont ÉCRITS par build/accueil.mjs depuis moteur/reseaux.js
+       et le catalogue — jamais à la main. -->
+  <section class="hall" aria-labelledby="titre-hall">
+    <div class="hall-texte">
+      <div class="pastille">GRATUIT · SANS COMPTE · EN FRANÇAIS</div>
+      <h1 id="titre-hall">Le froid et la climatisation, <em>station par station</em>.</h1>
+      <p class="chapo">Des cours interactifs qui parlent, rangés comme des lignes de métro : le froid, l’eau, l’air, l’électricité, la réglementation, l’habilitation. Du CAP au BTS, pour les élèves, les stagiaires et les professionnels — <strong>un projet personnel d’enseignant frigoriste</strong>.</p>
+      <form class="hall-recherche" action="plan.html" method="get" role="search" id="recherche-accueil">
+        <label for="q-accueil" class="sr-only">Chercher un cours</label>
+        <input type="search" id="q-accueil" name="q" placeholder="Chercher un cours : surchauffe, manifold, huile…" autocomplete="off" spellcheck="false">
+        <button type="submit" class="bouton">Chercher</button>
+      </form>
+      <div class="boutons">
+        <a class="bouton creux" href="#reseaux">Entrer dans un réseau ▾</a>
+        <a class="bouton creux" href="plan.html">Voir le grand plan</a>
+      </div>
+    </div>
+    <div class="hall-carte">
+      <!-- CARTE-RESEAUX DEBUT (générée par build/accueil.mjs — ne pas éditer à la main) -->
+      <!-- CARTE-RESEAUX FIN -->
+    </div>
+  </section>
+
+  <div class="chiffres" aria-label="Le site en chiffres">
+    <!-- CHIFFRES-ACCUEIL DEBUT (générés par build/accueil.mjs — ne pas éditer à la main) -->
+    <!-- CHIFFRES-ACCUEIL FIN -->
+  </div>
+
+  <section class="hall-reseaux" id="reseaux" aria-labelledby="titre-reseaux">
+    <h2 id="titre-reseaux">Six réseaux, une carte chacun</h2>
+    <p class="sous">Chaque réseau est un plan de métro : des lignes par thème, un cours à chaque station, une voix qui explique. Vous entrez où vous voulez, vous changez de ligne quand vous voulez.</p>
+    <div class="grille-reseaux">
+      <!-- RESEAUX DEBUT (générés par build/accueil.mjs — ne pas éditer à la main) -->
+      <!-- RESEAUX FIN -->
+    </div>
+  </section>
+
+  <!-- PAR OÙ COMMENCER — trois portes (F. Henninot, 05/09/2026). La deuxième
+       ouvre la station Positionnement du plan : plusieurs portes vers la
+       même chose. La troisième mène au champ de recherche du hall. -->
+  <h2 class="portes-titre">Par où commencer ?</h2>
+  <div class="portes">
+    <a class="porte" href="metier.html">
+      <span class="p-ico" aria-hidden="true">🚉</span>
+      <span class="p-titre">Je découvre</span>
+      <span class="p-det">Départ, aucun prérequis : c’est quoi, frigoriste ? Puis le premier cours, du glaçon au circuit.</span>
+    </a>
+    <a class="porte forte" href="formation.html?carte=ex-pos">
+      <span class="p-ico" aria-hidden="true">🎯</span>
+      <span class="p-titre">Je me situe</span>
+      <span class="p-det">Le positionnement d’entrée — 22 questions qui ne comptent pas. Où j’en suis, avant tout.</span>
+    </a>
+    <a class="porte" href="#q-accueil">
+      <span class="p-ico" aria-hidden="true">🔎</span>
+      <span class="p-titre">Je cherche un cours</span>
+      <span class="p-det">Un mot — surchauffe, manifold, huile — dans le champ de recherche, en haut de cette page.</span>
+    </a>
+  </div>
+
+  <h2 class="portes-titre">La formation à l’habilitation fluides</h2>
+  <div class="portes formation">
+    <a class="porte" href="formation.html">
+      <span class="p-ico" aria-hidden="true">📋</span>
+      <span class="p-titre">L’application de formation</span>
+      <span class="p-det">Attestation A1 · A2 · D · E — la semaine complète : <span data-ch="fiches">44</span> fiches, <span data-ch="questions">269</span> questions, examens blancs.</span>
+    </a>
+    <a class="porte" href="formation.html?carte=ex-pos">
+      <span class="p-ico" aria-hidden="true">🎯</span>
+      <span class="p-titre">Le positionnement</span>
+      <span class="p-det">Où j’en suis, avant tout — le même test que la porte « Je me situe ».</span>
+    </a>
+    <a class="porte" href="formateurs.html">
+      <span class="p-ico" aria-hidden="true">🎓</span>
+      <span class="p-titre">Formateurs et enseignants</span>
+      <span class="p-det">Projeter en cours, ouvrir une séance à une classe, demander un accès aux documents.</span>
+    </a>
+  </div>

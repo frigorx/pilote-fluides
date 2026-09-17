@@ -1,0 +1,158 @@
+<svg viewBox="0 0 900 535" role="img" aria-labelledby="metroTitle metroDesc" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"><title>Le plan d’HydroMétro</title>
+            
+            
+          <path data-line="P" d="M75 120 H815" aria-hidden="true" fill="none" stroke="rgb(201, 69, 26)" stroke-width="14px" stroke-linecap="round" stroke-linejoin="round" opacity="1" fill-opacity="1" stroke-opacity="1"/><path data-line="E" d="M340 25 V500" aria-hidden="true" fill="none" stroke="rgb(30, 126, 84)" stroke-width="14px" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4px, 4px" opacity="1" fill-opacity="1" stroke-opacity="1"/><path data-line="D" d="M75 305 H820" aria-hidden="true" fill="none" stroke="rgb(61, 127, 202)" stroke-width="18px" stroke-linecap="round" stroke-linejoin="round" opacity="1" fill-opacity="1" stroke-opacity="1"/><path data-line="M" d="M815 120 V205 Q815 250 650 305 Q610 320 540 395 H150" aria-hidden="true" fill="none" stroke="rgb(113, 80, 143)" stroke-width="14px" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="18px, 8px, 3px, 8px" opacity="1" fill-opacity="1" stroke-opacity="1"/><g data-station="boucle" data-lines="P" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="75" cy="120" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="energie" data-lines="P" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="200" cy="120" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="debit" data-lines="P E" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="340" cy="120" r="15" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="9px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      <circle cx="340" cy="120" r="8" fill="none" stroke="rgb(255, 253, 248)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+    </g><g data-station="delta-t" data-lines="P" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="500" cy="120" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="puissance" data-lines="P" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="650" cy="120" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="mesurer" data-lines="P M" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="815" cy="120" r="15" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="9px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      <circle cx="815" cy="120" r="8" fill="none" stroke="rgb(255, 253, 248)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+    </g><g data-station="production" data-lines="E" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="340" cy="25" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="echangeur" data-lines="E" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="340" cy="67" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="circulateur" data-lines="E" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="340" cy="200" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="pertes" data-lines="E D" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="340" cy="305" r="15" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="9px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      <circle cx="340" cy="305" r="8" fill="none" stroke="rgb(255, 253, 248)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+    </g><g data-station="vase" data-lines="E" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="340" cy="410" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="securite" data-lines="E" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="340" cy="500" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="monotube" data-lines="D" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="75" cy="305" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="bitube" data-lines="D" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="210" cy="305" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="v3v" data-lines="D" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="490" cy="305" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="equilibrage" data-lines="D M" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="650" cy="305" r="15" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="9px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      <circle cx="650" cy="305" r="8" fill="none" stroke="rgb(255, 253, 248)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+    </g><g data-station="plancher" data-lines="D" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="820" cy="305" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="releves" data-lines="M" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="815" cy="210" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="tampon" data-lines="M" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="540" cy="395" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="decouplage" data-lines="M" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="410" cy="395" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="diagnostic" data-lines="M" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="280" cy="395" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g><g data-station="mission" data-lines="M" fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+      <circle cx="150" cy="395" r="11" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+      
+      
+      
+      
+      
+    </g></svg>

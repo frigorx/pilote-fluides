@@ -1,0 +1,411 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1200" font-family="Segoe UI, Trebuchet MS, sans-serif" role="img" aria-label="ÉlectroRézo, carte du réseau : huit lignes, cinquante-huit stations." preserveAspectRatio="xMidYMid meet"><title>Le plan d’ÉlectroRézo</title>
+<rect width="1800" height="1200" fill="rgb(247, 241, 231)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <rect x="18" y="18" width="1764" height="1164" rx="18" fill="rgb(255, 253, 248)" stroke="rgba(27, 58, 99, 0.16)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  <path d="M720.0 210.0 L1500.8 210.0 L1500.8 1068.0" fill="none" stroke="rgb(27, 58, 99)" stroke-width="9px" stroke-linecap="round" stroke-linejoin="round" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <path d="M781.0 237.3 L781.0 912.0 L951.8 912.0 L951.8 1021.2 L1073.8 1021.2 L1134.8 1068.0" fill="none" stroke="rgb(12, 75, 136)" stroke-width="9px" stroke-linecap="round" stroke-linejoin="round" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <path d="M110.0 288.0 L781.0 288.0" fill="none" stroke="rgb(91, 75, 214)" stroke-width="9px" stroke-linecap="round" stroke-linejoin="round" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <path d="M110.0 600.0 L1500.8 600.0" fill="none" stroke="rgb(192, 57, 43)" stroke-width="9px" stroke-linecap="round" stroke-linejoin="round" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <path d="M110.0 756.0 L1500.8 756.0" fill="none" stroke="rgb(30, 126, 84)" stroke-width="9px" stroke-linecap="round" stroke-linejoin="round" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <path d="M232.0 912.0 L1500.8 912.0" fill="none" stroke="rgb(201, 69, 26)" stroke-width="9px" stroke-linecap="round" stroke-linejoin="round" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <path d="M671.2 1068.0 L1647.2 1068.0" fill="none" stroke="rgb(15, 118, 110)" stroke-width="9px" stroke-linecap="round" stroke-linejoin="round" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <path d="M110.0 444.0 L1574.0 444.0" fill="none" stroke="rgb(124, 58, 237)" stroke-width="9px" stroke-linecap="round" stroke-linejoin="round" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <rect x="649.0" y="195.0" width="30" height="30" rx="8" fill="rgb(27, 58, 99)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  <rect x="792.0" y="222.3" width="30" height="30" rx="8" fill="rgb(12, 75, 136)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  <rect x="39.0" y="273.0" width="30" height="30" rx="8" fill="rgb(91, 75, 214)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  <rect x="39.0" y="585.0" width="30" height="30" rx="8" fill="rgb(192, 57, 43)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  <rect x="39.0" y="741.0" width="30" height="30" rx="8" fill="rgb(30, 126, 84)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  <rect x="161.0" y="897.0" width="30" height="30" rx="8" fill="rgb(201, 69, 26)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  <rect x="600.2" y="1053.0" width="30" height="30" rx="8" fill="rgb(15, 118, 110)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  <rect x="39.0" y="429.0" width="30" height="30" rx="8" fill="rgb(124, 58, 237)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="720.0" cy="210.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="720.0" cy="210.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="866.4" cy="210.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="866.4" cy="210.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1012.8" cy="210.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1012.8" cy="210.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1159.2" cy="210.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1159.2" cy="210.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1500.8" cy="600.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1500.8" cy="600.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1500.8" cy="756.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1500.8" cy="756.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1500.8" cy="912.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1500.8" cy="912.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1500.8" cy="990.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1500.8" cy="990.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1500.8" cy="1068.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(27, 58, 99)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1500.8" cy="1068.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="781.0" cy="288.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(12, 75, 136)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="781.0" cy="288.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="781.0" cy="522.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(12, 75, 136)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="781.0" cy="522.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="781.0" cy="912.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(12, 75, 136)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="781.0" cy="912.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="951.8" cy="1021.2" r="10" fill="rgb(255, 253, 248)" stroke="rgb(12, 75, 136)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="951.8" cy="1021.2" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1073.8" cy="1021.2" r="10" fill="rgb(255, 253, 248)" stroke="rgb(12, 75, 136)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1073.8" cy="1021.2" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1134.8" cy="1068.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(12, 75, 136)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1134.8" cy="1068.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="110.0" cy="288.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(91, 75, 214)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="110.0" cy="288.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="244.2" cy="288.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(91, 75, 214)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="244.2" cy="288.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="378.4" cy="288.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(91, 75, 214)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="378.4" cy="288.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="512.6" cy="288.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(91, 75, 214)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="512.6" cy="288.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="646.8" cy="288.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(91, 75, 214)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="646.8" cy="288.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="110.0" cy="600.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(192, 57, 43)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="110.0" cy="600.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="244.2" cy="600.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(192, 57, 43)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="244.2" cy="600.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="378.4" cy="600.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(192, 57, 43)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="378.4" cy="600.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="512.6" cy="600.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(192, 57, 43)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="512.6" cy="600.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="646.8" cy="600.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(192, 57, 43)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="646.8" cy="600.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="915.2" cy="600.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(192, 57, 43)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="915.2" cy="600.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1049.4" cy="600.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(192, 57, 43)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1049.4" cy="600.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1183.6" cy="600.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(192, 57, 43)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1183.6" cy="600.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1317.8" cy="600.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(192, 57, 43)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1317.8" cy="600.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="110.0" cy="756.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(30, 126, 84)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="110.0" cy="756.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="244.2" cy="756.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(30, 126, 84)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="244.2" cy="756.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="378.4" cy="756.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(30, 126, 84)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="378.4" cy="756.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="512.6" cy="756.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(30, 126, 84)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="512.6" cy="756.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="646.8" cy="756.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(30, 126, 84)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="646.8" cy="756.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="915.2" cy="756.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(30, 126, 84)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="915.2" cy="756.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1049.4" cy="756.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(30, 126, 84)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1049.4" cy="756.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1183.6" cy="756.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(30, 126, 84)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1183.6" cy="756.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1317.8" cy="756.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(30, 126, 84)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1317.8" cy="756.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="232.0" cy="912.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(201, 69, 26)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="232.0" cy="912.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="390.6" cy="912.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(201, 69, 26)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="390.6" cy="912.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="549.2" cy="912.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(201, 69, 26)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="549.2" cy="912.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="951.8" cy="912.0" r="21" fill="none" stroke="rgb(201, 69, 26)" stroke-width="3px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="951.8" cy="912.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(201, 69, 26)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="951.8" cy="912.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1134.8" cy="912.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(201, 69, 26)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1134.8" cy="912.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1269.0" cy="912.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(201, 69, 26)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1269.0" cy="912.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="110.0" cy="444.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(124, 58, 237)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="110.0" cy="444.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="244.2" cy="444.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(124, 58, 237)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="244.2" cy="444.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="378.4" cy="444.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(124, 58, 237)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="378.4" cy="444.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="512.6" cy="444.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(124, 58, 237)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="512.6" cy="444.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="646.8" cy="444.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(124, 58, 237)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="646.8" cy="444.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="915.2" cy="444.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(124, 58, 237)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="915.2" cy="444.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1049.4" cy="444.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(124, 58, 237)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1049.4" cy="444.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1183.6" cy="444.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(124, 58, 237)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1183.6" cy="444.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1317.8" cy="444.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(124, 58, 237)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1317.8" cy="444.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1439.8" cy="444.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(124, 58, 237)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1439.8" cy="444.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1574.0" cy="444.0" r="21" fill="none" stroke="rgb(124, 58, 237)" stroke-width="3px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1574.0" cy="444.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(124, 58, 237)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1574.0" cy="444.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="671.2" cy="1068.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(15, 118, 110)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="671.2" cy="1068.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="866.4" cy="1068.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(15, 118, 110)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="866.4" cy="1068.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1256.8" cy="1068.0" r="14" fill="rgb(255, 253, 248)" stroke="rgb(15, 118, 110)" stroke-width="5px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1256.8" cy="1068.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <a fill="rgb(0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1">
+  <circle cx="1647.2" cy="1068.0" r="21" fill="none" stroke="rgb(15, 118, 110)" stroke-width="3px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1647.2" cy="1068.0" r="10" fill="rgb(255, 253, 248)" stroke="rgb(15, 118, 110)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  <circle cx="1647.2" cy="1068.0" r="24" fill="rgba(0, 0, 0, 0)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  </a>
+  <rect x="56" y="1145" width="26" height="18" rx="5" fill="rgb(27, 58, 99)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  <rect x="326.5" y="1145" width="26" height="18" rx="5" fill="rgb(12, 75, 136)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  <rect x="568.8" y="1145" width="26" height="18" rx="5" fill="rgb(91, 75, 214)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  <rect x="740.5999999999999" y="1145" width="26" height="18" rx="5" fill="rgb(192, 57, 43)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  <rect x="855.9999999999999" y="1145" width="26" height="18" rx="5" fill="rgb(30, 126, 84)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  <rect x="978.4499999999998" y="1145" width="26" height="18" rx="5" fill="rgb(201, 69, 26)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  <rect x="1192.5499999999997" y="1145" width="26" height="18" rx="5" fill="rgb(15, 118, 110)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+  <rect x="1406.6499999999996" y="1145" width="26" height="18" rx="5" fill="rgb(124, 58, 237)" stroke="none" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" fill-opacity="1" stroke-opacity="1"/>
+  
+  
+</svg>

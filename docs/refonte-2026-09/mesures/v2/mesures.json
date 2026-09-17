@@ -1,0 +1,824 @@
+[
+ {
+  "id": "accueil-v2",
+  "chemin": "/index.html",
+  "largeur": 375,
+  "erreur": null,
+  "titre": "inerWeb Édu — le froid et la climatisation, station par station",
+  "h1": "Le froid et la climatisation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 375,
+   "innerWidth": 375,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer"
+    },
+    "aire": 943
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Télécharger"
+    },
+    "aire": 1537
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Code source"
+    },
+    "aire": 1551
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Présentation (PDF)"
+    },
+    "aire": 1768
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 1421
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧑‍🔧 Le métier C’est quoi, frigoriste ? Les formations, du "
+    },
+    "aire": 800
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 739
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 759
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 1513
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 10830
+   }
+  ],
+  "policeMin": 9.5,
+  "sous14": 102,
+  "exemplesSous14": [
+   {
+    "taille": 12.5,
+    "tag": "div",
+    "id": null,
+    "classe": "volet-sous",
+    "texte": "Ce que cette page peut accueillir"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux."
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "HydroMétro"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "AéroRézo"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   }
+  ],
+  "hauteurPage": 8172,
+  "capture": "docs\\refonte-2026-09\\mesures\\v2\\accueil-v2-375.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "accueil-v2",
+  "chemin": "/index.html",
+  "largeur": 800,
+  "erreur": null,
+  "titre": "inerWeb Édu — le froid et la climatisation, station par station",
+  "h1": "Le froid et la climatisation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 800,
+   "innerWidth": 800,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 482
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer le prototype"
+    },
+    "aire": 1515
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer la démonstration"
+    },
+    "aire": 1421
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 1428
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 483
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 739
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧑‍🔧 Le métier C’est quoi, frigoriste ? Les formations, du "
+    },
+    "aire": 564
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧑‍🔧 Le métier C’est quoi, frigoriste ? Les formations, du "
+    },
+    "aire": 1513
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 636
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 766
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧑‍🔧 Le métier C’est quoi, frigoriste ? Les formations, du "
+    },
+    "aire": 684
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 4644
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 1608
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 1802
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 1870
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 1844
+   }
+  ],
+  "policeMin": 10.5,
+  "sous14": 102,
+  "exemplesSous14": [
+   {
+    "taille": 12.5,
+    "tag": "div",
+    "id": null,
+    "classe": "volet-sous",
+    "texte": "Ce que cette page peut accueillir"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux."
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "HydroMétro"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "AéroRézo"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   }
+  ],
+  "hauteurPage": 5103,
+  "capture": "docs\\refonte-2026-09\\mesures\\v2\\accueil-v2-800.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "accueil-v2",
+  "chemin": "/index.html",
+  "largeur": 1280,
+  "erreur": null,
+  "titre": "inerWeb Édu — le froid et la climatisation, station par station",
+  "h1": "Le froid et la climatisation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 1280,
+   "innerWidth": 1280,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer la démonstration"
+    },
+    "aire": 1421
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 1524
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 387
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 739
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 99
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧑‍🔧 Le métier C’est quoi, frigoriste ? Les formations, du "
+    },
+    "aire": 372
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧑‍🔧 Le métier C’est quoi, frigoriste ? Les formations, du "
+    },
+    "aire": 1513
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 2941
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 1704
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 908
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 998
+   }
+  ],
+  "policeMin": 10.5,
+  "sous14": 102,
+  "exemplesSous14": [
+   {
+    "taille": 12.5,
+    "tag": "div",
+    "id": null,
+    "classe": "volet-sous",
+    "texte": "Ce que cette page peut accueillir"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux."
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "HydroMétro"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "AéroRézo"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   }
+  ],
+  "hauteurPage": 3550,
+  "capture": "docs\\refonte-2026-09\\mesures\\v2\\accueil-v2-1280.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ }
+]

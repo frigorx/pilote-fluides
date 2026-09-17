@@ -1,0 +1,23 @@
+import { createRequire } from "node:module";
+import { createHash } from "node:crypto";
+import { writeFileSync } from "node:fs";
+const require = createRequire(import.meta.url);
+const { chromium } = require("C:/git/hydrometro/node_modules/playwright");
+const b = await chromium.launch({ channel: "chrome" });
+const ctx = await b.newContext({ serviceWorkers: "block", viewport: { width: 1280, height: 800 } });
+const page = await ctx.newPage();
+await page.goto("http://localhost:8791/" + process.argv[2], { waitUntil: "load" });
+await page.waitForTimeout(1500);
+const r = await page.evaluate(() => {
+  const svg = document.querySelector("#plan-svg svg");
+  const html = svg ? svg.outerHTML : "";
+  const compteur = (document.body.innerText.match(/\d+ \/ \d+/) || [""])[0];
+  const q = document.querySelector("#q");
+  return { longueurSvg: html.length, liens: svg ? svg.querySelectorAll("a").length : 0, compteur, recherche: !!q, html };
+});
+r.empreinte = createHash("md5").update(r.html).digest("hex").slice(0, 8); delete r.html;
+await page.fill("#q", "huile"); await page.waitForTimeout(600);
+r.resultatsHuile = await page.evaluate(() => (document.body.innerText.match(/(\d+) cours/) || [])[1] || null);
+console.log(JSON.stringify(r));
+writeFileSync(process.argv[3], JSON.stringify(r, null, 1));
+await b.close();
