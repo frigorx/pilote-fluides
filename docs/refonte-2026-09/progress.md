@@ -85,3 +85,10 @@
   `index.html#ligne=huile` → `plan.html` (4 stations), plan identique (62 414 / 121 / b4873d55), « huile » 17,
   téléphone 5 227 px sans débordement.
 - Rangement : serveur local arrêté, `launch.json` temporaire de CLAUDE-ESPACE-TRAVAIL retiré.
+
+## 17/09/2026, 20:50 — le volet sur téléphone (commit `639e0ce4`, version `1669d2e969`)
+- F. Henninot, sur le site en ligne : « le bandeau est trop impressionnant sur téléphone et masque le contenu ».
+  ≤ 700 px : replié à l'arrivée, poignée déplacée sous l'en-tête et transformée en bande pleine largeur
+  « 📰 Actualités & espaces ▸ » (dans le flux, ne masque rien) ; un tap ouvre le volet. Ordinateur inchangé.
+- Diagnostic Cloudflare pour GPT : « Bloquer les robots IA » renvoie 403 à ChatGPT-User, GPTBot, ClaudeBot ;
+  OAI-SearchBot, Claude-User, Googlebot, Bingbot passent. Conseil donné : autoriser ChatGPT-User seulement.
