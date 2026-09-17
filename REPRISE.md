@@ -3,6 +3,35 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 17/09 — L'ACCUEIL REFAIT EN HALL, LE PLAN SUR SA PAGE : EN LIGNE (`9370b0fe..97a9d4b4`, sept commits)
+>
+> Carte blanche de F. Henninot (« l'effet waouh, comprendre instantanément, aller vers le référencement »),
+> feu vert de publication le soir même. **`index.html`** = phrase explicite + carte SVG animée du réseau des
+> réseaux + quatre chiffres relevés (6 réseaux · 255 stations · 49 lignes · + de 6 600 narrations) + six
+> vignettes avec les vraies cartes des réseaux + portes + formation ; **le grand plan, la liste et le circuit ont
+> déménagé dans `plan.html`** (déplacement, rendu mesuré identique : SVG 62 414 car., 121 liens, empreinte
+> b4873d55, « huile » → 17). Les ancres gravées `#ligne=`, `#carte`, `#chercher`, `#q=` sur `index.html` sont
+> redirigées vers `plan.html` ; la recherche accepte `#q=` et `?q=` (formulaire de l'accueil, SearchAction du JSON-LD).
+> **Une seule source : `moteur/reseaux.js`** (nom, couleur, phrase, niveaux, état, entrée, raccourcis) →
+> **`build/accueil.mjs`** relève stations et lignes dans `docs/catalogue-2026-09/catalogue-stations.json`, compte
+> les MP3, et écrit entre sentinelles (`CARTE-RESEAUX`, `CHIFFRES-ACCUEIL`, `RESEAUX`, `JSON-LD-ACCUEIL`) ; il refuse
+> une adresse absente du disque. ⚠️ **Pas encore appelé par `build/build.mjs`** : le lancer à la main après tout
+> changement de `reseaux.js` ou du catalogue. Les cartes des réseaux : `icones/reseaux/*.svg`, extraites des pages
+> qui les dessinent par `docs/refonte-2026-09/outils/extraire-cartes-reseaux.mjs` (à relancer si une carte change ;
+> Playwright de `C:\git\hydrometro`, canal Chrome du poste, le navigateur téléchargé 1234 manque).
+> Chaîne : `plan-liste.mjs`, `registre.mjs`, `sitemap.mjs` (11 adresses), `version.mjs`, `sw.js` visent `plan.html` ;
+> « Le plan » dans la barre d'index, métier, formateurs. **Téléphone (≤ 640 px)** : rame de vignettes à défilement
+> aimanté, portes et tuiles compactes → 5 227 px (10 991 le matin). **Le volet « Infos » s'ouvre à l'arrivée**
+> (décision F. Henninot : « la cerise sur le gâteau pour mon lycée ») et, à partir de 1100 px, POUSSE la page de
+> 350 px au lieu de la couvrir ; en dessous il recouvre jusqu'à la croix. Versions `6e99d979af`.
+> Pièges vécus : le script du volet vivait DANS le script du plan ; la classe `.reseaux` de l'ancien organigramme.
+> Décisions prises sous carte blanche, à confirmer : « en relecture » (jamais « prototype ») sur l'accueil seul ;
+> HoCourant présenté comme réseau ; sitemap +`plan.html` seulement. Restes : CSS orphelin de l'ancien accueil dans
+> `index.html` et `plan.html` (inerte) ; `metier.html` : tableau des plages usuelles déborde à 375 px (antérieur) ;
+> le lot G laisse le détendeur et le KP1 muets (écran fixe) — assouplir la règle ou accepter. **L'audit
+> « mission 1 »** (cadrage rédigé avec GPT, `docs/refonte-2026-09/MISSION-2026-09-17.md`) est suspendu : outils,
+> brief et 81 captures mesurées restent dans `docs/refonte-2026-09/`. Journal : `progress.md`, plan : `task_plan.md`.
+
 > ## 14/09 — HydroMétro : lots 2a, 2b, 3 et restes livrés (`a1b9a8cd` puis `7a6a5c36`, `hydrometro/` seul)
 >
 > Vouvoiement partout, 7 narrations par station P, texte hors tracé, libellés ≥ 20 unités, scène
