@@ -406,6 +406,11 @@
     .nav a { padding:8px 2px 6px; }
   }
   @media (prefers-reduced-motion: reduce) { .volet.pret { transition:none; } }
+  /* 17/09/2026 : le volet s'ouvre à l'arrivée. Sur grand écran il POUSSE la page au lieu de la
+     couvrir — le plan n'est plus sur cette page, plus rien à recalculer à l'ouverture. */
+  .page { transition:margin-left .22s ease; }
+  @media (min-width:1100px) { body.volet-ouvert .page { margin-left:350px; margin-right:auto; } }
+  @media (prefers-reduced-motion: reduce) { .page { transition:none; } }
 
   /* ---- Les trois portes ---- */
   .tuiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -532,7 +537,7 @@
 
     <div class="volet-bloc">
       <h3>📰 Actualités</h3>
-      <p><strong>28 août 2026 — quatre réseaux.</strong> Le plan thermo-techno (108 stations), le réseau Législation (niveau BTS, en construction), <strong>HydroMétro</strong> (hydraulique CVC, 22 stations) et <strong>AéroRézo</strong>, le nouveau réseau d’aéraulique (36 stations, trois profondeurs) — prototype en cours d’évaluation.<br>
+      <p><strong>17 septembre 2026 — six réseaux, un nouvel accueil.</strong> Chaque réseau avec sa carte en vignette, le grand plan sur <a href="plan.html">sa propre page</a>, la recherche dès l'entrée. <strong>28 août 2026 — quatre réseaux.</strong> Le plan thermo-techno (108 stations), le réseau Législation (niveau BTS, en construction), <strong>HydroMétro</strong> (hydraulique CVC, 22 stations) et <strong>AéroRézo</strong>, le nouveau réseau d’aéraulique (36 stations, trois profondeurs) — prototype en cours d’évaluation.<br>
       🚧 <strong>Réseau en travaux</strong> : les contenus continuent d’être relus et améliorés.<br>
       <!-- Le détail vit dans le journal, sur l'accueil : un seul endroit tenu à
            jour, pas deux listes qui divergent au premier ajout. -->
@@ -1096,6 +1101,7 @@
        du parcours clavier ET de l'arbre d'accessibilité, d'un seul geste. */
     v.inert = replie;
     p.style.display = replie ? "block" : "none";
+    document.body.classList.toggle("volet-ouvert", !replie);
   }
   function replier() {
     poser(true);
@@ -1111,7 +1117,9 @@
      sur smartphone » — retour F. Henninot, 19/08) : il démarre replié, la
      poignée « Infos ▸ » reste visible. Depuis le 12/09, replié partout à
      l'arrivée : sur ordinateur, à 1 280 px, il couvrait le début du titre. */
-  if (!replie) replie = true;
+  /* 17/09/2026 — F. Henninot : le volet est la vitrine (« la cerise sur le gâteau pour mon
+     lycée »), il doit apparaître dès qu'on arrive. Le repli forcé du 12/09 est levé : il ne reste
+     replié que si on l'a fermé dans cette session. */
   poser(replie);
   requestAnimationFrame(function () { v.classList.add("pret"); });
 
@@ -1151,11 +1159,11 @@
 
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=a9a9dedaa7"></script>
-<script src="chiffres.gen.js?v=a9a9dedaa7"></script>
+<script src="moteur/lisibilite.js?v=6e99d979af"></script>
+<script src="chiffres.gen.js?v=6e99d979af"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=a9a9dedaa7" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=6e99d979af" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
