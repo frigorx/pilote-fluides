@@ -55,3 +55,28 @@
     .hall-recherche .bouton { align-self:flex-start; }
     .v-carte img { height:150px; }
   }
+  /* Téléphone : la page se PLIE au lieu de s'allonger (F. Henninot, 17/09 : « une grande page de
+     30 km de long… trouver des solutions hybrides »). Les six réseaux deviennent une rame à faire
+     glisser, une carte à la fois ; portes et tuiles passent en lignes compactes. Même page, même
+     contenu, aucun second site. */
+  .glisser { display:none; margin:0 0 8px; font-size:13.5px; color:var(--mut); }
+  @media (max-width:640px) {
+    .hall-texte .chapo { font-size:16.5px; }
+    .hall-texte h1 { font-size:31px; }
+    .grille-reseaux { display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory;
+                      padding:4px 2px 14px; scrollbar-width:thin; -webkit-overflow-scrolling:touch; }
+    .vignette { flex:0 0 86%; scroll-snap-align:center; }
+    .v-carte img { height:130px; }
+    .v-det { font-size:14.5px; }
+    .glisser { display:block; }
+    .portes { gap:10px; }
+    .porte { grid-template-columns:40px 1fr; padding:10px 12px; }
+    .porte .p-ico { font-size:26px; }
+    .porte .p-titre { font-size:17px; }
+    .porte .p-det { font-size:13.5px; }
+    .tuiles { grid-template-columns:repeat(2,1fr); gap:10px; }
+    .tuile { padding:12px; }
+    .tuile p { display:none; }
+    .tuile .emoji { font-size:26px; }
+    .tuile h3 { font-size:16px; }
+  }

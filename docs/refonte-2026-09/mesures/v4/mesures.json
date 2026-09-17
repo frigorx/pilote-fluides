@@ -1,0 +1,740 @@
+[
+ {
+  "id": "accueil-v2",
+  "chemin": "/index.html",
+  "largeur": 375,
+  "erreur": null,
+  "titre": "inerWeb Édu — le froid et la climatisation, station par station",
+  "h1": "Le froid et la climatisation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 375,
+   "innerWidth": 375,
+   "deborde": false
+  },
+  "horsCadre": [
+   {
+    "tag": "article",
+    "id": null,
+    "classe": "vignette",
+    "texte": "📜 Réseau Législation 29 stations · 11 lignes BTS en constru",
+    "gauche": 319,
+    "droite": 603
+   },
+   {
+    "tag": "div",
+    "id": null,
+    "classe": "v-corps",
+    "texte": "📜 Réseau Législation 29 stations · 11 lignes BTS en constru",
+    "gauche": 320,
+    "droite": 602
+   },
+   {
+    "tag": "h3",
+    "id": null,
+    "classe": "v-nom",
+    "texte": "📜 Réseau Législation",
+    "gauche": 338,
+    "droite": 584
+   },
+   {
+    "tag": "a",
+    "id": null,
+    "classe": "",
+    "texte": "📜 Réseau Législation",
+    "gauche": 338,
+    "droite": 534
+   },
+   {
+    "tag": "p",
+    "id": null,
+    "classe": "v-chiffres",
+    "texte": "29 stations · 11 lignes BTS en construction",
+    "gauche": 338,
+    "droite": 584
+   },
+   {
+    "tag": "span",
+    "id": null,
+    "classe": "v-etat",
+    "texte": "en construction",
+    "gauche": 344,
+    "droite": 439
+   },
+   {
+    "tag": "p",
+    "id": null,
+    "classe": "v-det",
+    "texte": "Le cadre du métier : réglementation, sécurité, environnement",
+    "gauche": 338,
+    "droite": 584
+   },
+   {
+    "tag": "p",
+    "id": null,
+    "classe": "v-entrees",
+    "texte": "▶ F-Gaz 3, le règlement 2024/573 La DESP Les EPI PRP & ODP",
+    "gauche": 338,
+    "droite": 584
+   },
+   {
+    "tag": "a",
+    "id": null,
+    "classe": "v-entree",
+    "texte": "▶ F-Gaz 3, le règlement 2024/573",
+    "gauche": 338,
+    "droite": 551
+   },
+   {
+    "tag": "a",
+    "id": null,
+    "classe": "",
+    "texte": "La DESP",
+    "gauche": 338,
+    "droite": 405
+   }
+  ],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer"
+    },
+    "aire": 943
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Télécharger"
+    },
+    "aire": 1537
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1343
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Code source"
+    },
+    "aire": 1551
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Code source"
+    },
+    "aire": 513
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer le prototype"
+    },
+    "aire": 1359
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Devenir bêta-testeur"
+    },
+    "aire": 1589
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation Entrer dans l’application ▸"
+    },
+    "aire": 608
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue Explorer ▸"
+    },
+    "aire": 1658
+   }
+  ],
+  "policeMin": 9.5,
+  "sous14": 114,
+  "exemplesSous14": [
+   {
+    "taille": 12.5,
+    "tag": "div",
+    "id": null,
+    "classe": "volet-sous",
+    "texte": "Ce que cette page peut accueillir"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux."
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "HydroMétro"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "AéroRézo"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   }
+  ],
+  "hauteurPage": 5295,
+  "capture": "docs\\refonte-2026-09\\mesures\\v4\\accueil-v2-375.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "accueil-v2",
+  "chemin": "/index.html",
+  "largeur": 800,
+  "erreur": null,
+  "titre": "inerWeb Édu — le froid et la climatisation, station par station",
+  "h1": "Le froid et la climatisation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 800,
+   "innerWidth": 800,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Télécharger"
+    },
+    "aire": 556
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer la démonstration"
+    },
+    "aire": 2446
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 1421
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 1428
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 8507
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 929
+   }
+  ],
+  "policeMin": 10.5,
+  "sous14": 103,
+  "exemplesSous14": [
+   {
+    "taille": 12.5,
+    "tag": "div",
+    "id": null,
+    "classe": "volet-sous",
+    "texte": "Ce que cette page peut accueillir"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux."
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "HydroMétro"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "AéroRézo"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   }
+  ],
+  "hauteurPage": 5116,
+  "capture": "docs\\refonte-2026-09\\mesures\\v4\\accueil-v2-800.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "accueil-v2",
+  "chemin": "/index.html",
+  "largeur": 1280,
+  "erreur": null,
+  "titre": "inerWeb Édu — le froid et la climatisation, station par station",
+  "h1": "Le froid et la climatisation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 1280,
+   "innerWidth": 1280,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 409
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 487
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer le prototype"
+    },
+    "aire": 35
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer la démonstration"
+    },
+    "aire": 2446
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 1421
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 1524
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 387
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 739
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 99
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧑‍🔧 Le métier C’est quoi, frigoriste ? Les formations, du "
+    },
+    "aire": 372
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧑‍🔧 Le métier C’est quoi, frigoriste ? Les formations, du "
+    },
+    "aire": 1513
+   }
+  ],
+  "policeMin": 10.5,
+  "sous14": 103,
+  "exemplesSous14": [
+   {
+    "taille": 12.5,
+    "tag": "div",
+    "id": null,
+    "classe": "volet-sous",
+    "texte": "Ce que cette page peut accueillir"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux."
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "HydroMétro"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "AéroRézo"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   }
+  ],
+  "hauteurPage": 3550,
+  "capture": "docs\\refonte-2026-09\\mesures\\v4\\accueil-v2-1280.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ }
+]

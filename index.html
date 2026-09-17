@@ -478,6 +478,31 @@
     .hall-recherche .bouton { align-self:flex-start; }
     .v-carte img { height:150px; }
   }
+  /* Téléphone : la page se PLIE au lieu de s'allonger (F. Henninot, 17/09 : « une grande page de
+     30 km de long… trouver des solutions hybrides »). Les six réseaux deviennent une rame à faire
+     glisser, une carte à la fois ; portes et tuiles passent en lignes compactes. Même page, même
+     contenu, aucun second site. */
+  .glisser { display:none; margin:0 0 8px; font-size:13.5px; color:var(--mut); }
+  @media (max-width:640px) {
+    .hall-texte .chapo { font-size:16.5px; }
+    .hall-texte h1 { font-size:31px; }
+    .grille-reseaux { display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory;
+                      padding:4px 2px 14px; scrollbar-width:thin; -webkit-overflow-scrolling:touch; }
+    .vignette { flex:0 0 86%; scroll-snap-align:center; }
+    .v-carte img { height:130px; }
+    .v-det { font-size:14.5px; }
+    .glisser { display:block; }
+    .portes { gap:10px; }
+    .porte { grid-template-columns:40px 1fr; padding:10px 12px; }
+    .porte .p-ico { font-size:26px; }
+    .porte .p-titre { font-size:17px; }
+    .porte .p-det { font-size:13.5px; }
+    .tuiles { grid-template-columns:repeat(2,1fr); gap:10px; }
+    .tuile { padding:12px; }
+    .tuile p { display:none; }
+    .tuile .emoji { font-size:26px; }
+    .tuile h3 { font-size:16px; }
+  }
 </style>
 </head>
 <body>
@@ -689,6 +714,7 @@
   <section class="hall-reseaux" id="reseaux" aria-labelledby="titre-reseaux">
     <h2 id="titre-reseaux">Six réseaux, une carte chacun</h2>
     <p class="sous">Chaque réseau est un plan de métro : des lignes par thème, un cours à chaque station, une voix qui explique. Vous entrez où vous voulez, vous changez de ligne quand vous voulez.</p>
+    <p class="glisser" aria-hidden="true">← Faites glisser pour voir les six réseaux →</p>
     <div class="grille-reseaux">
       <!-- RESEAUX DEBUT (générés par build/accueil.mjs — ne pas éditer à la main) -->
       <article class="vignette" style="--c:#0c4a6e">
@@ -1125,11 +1151,11 @@
 
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=f2f2389f5e"></script>
-<script src="chiffres.gen.js?v=f2f2389f5e"></script>
+<script src="moteur/lisibilite.js?v=a9a9dedaa7"></script>
+<script src="chiffres.gen.js?v=a9a9dedaa7"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=f2f2389f5e" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=a9a9dedaa7" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
