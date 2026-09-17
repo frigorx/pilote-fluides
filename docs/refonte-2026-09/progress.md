@@ -65,3 +65,12 @@
 - Restes connus, non traités : mentions « prototype / brouillon » sur les réseaux eux-mêmes (décision) ;
   têtes de réseau hors sitemap (décision) ; CSS orphelin de l'ancien accueil dans index.html et plan.html (inerte) ;
   tableau « Plages usuelles » de metier.html déborde à 375 px (antérieur) ; mission 1 de l'audit suspendue.
+
+## 17/09/2026, 21:10-21:45 — téléphone plié, volet rouvert (commits `640077e4`, `c6c64b07`)
+- F. Henninot : « adapté aux téléphones ? plutôt que 30 km, des solutions hybrides » → à ≤ 640 px : rame de
+  vignettes à défilement aimanté, portes et tuiles compactes, titre 31 px. 375 px : 10 991 → 8 172 → **5 227 px**.
+- F. Henninot : « le volet sur le côté est très très important, il doit apparaître dès qu'on se connecte, c'est la
+  cerise sur le gâteau pour mon lycée » → repli forcé du 12/09 levé ; ≥ 1100 px le volet POUSSE la page (350 px),
+  titre visible (mesuré 1280 et 1440) ; < 1100 px il recouvre, fermeture mémorisée pour la session. Actualité du
+  volet passée au 17/09. Son projet : d'autres lycées avec le logo de SON lycée, quand l'autorisation arrivera.
+- Versions `6e99d979af`. Arbre propre. **Toujours en attente du feu vert pour fusionner et pousser.**
