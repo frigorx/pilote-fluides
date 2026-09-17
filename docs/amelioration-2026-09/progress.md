@@ -15,6 +15,23 @@
   injecte désormais prononciation.js), livré par `node outils/livrer.mjs` (59 stations zéro défaut,
   28 hommes / 31 femmes).
 
+## Session 2 — 13/09/2026 (matin) — ⚠️ ARRÊT CHANTIER
+- Session 1 coupée pendant le lot G ; sur le disque : `moteur/suivant.js` (117 lignes, brique
+  relue : tronc + lignes + huile/co2/centrales/régules, stations uniques, `?ligne=`, silence sur
+  écran fixe ou bord bas déjà pris) et 49 pages branchées ; 24 modules laissés sans barre (ceux qui
+  ont déjà leur navigation, capsules comprises). `controle-syntaxe` : 521 pages, 1 erreur antérieure.
+- **Deux autres sessions travaillent sur les mêmes dépôts** (tâches lancées par F. Henninot depuis
+  les pastilles des lots B et D : gabarit `hub-shell.html` du diagramme enthalpique ; réglage de débit
+  de la station Boucle d'HydroMétro). L'une sert sa propre copie sur le port 8791 : mes contrôles du
+  lot G au navigateur (barre absente sur le détendeur, scripts absents sur le Tome 3) portaient sur
+  SES pages, pas sur les miennes — **non concluants**.
+- Commit local de protection `ffb5eaab` (268 fichiers, chemins explicites, `diagramme-enthalpique/`
+  laissé hors commit). Arrêt jusqu'au signal de F. Henninot.
+- **Reste pour la reprise** : vérifier le lot G sur un serveur propre (détendeur : « ← Tome 3 · ↑ Les
+  organes · Le compresseur → » ; tête et fin de ligne ; Tome 3 et pressostats : silence voulu),
+  `diagramme-enthalpique/index.html` (balises G à réconcilier avec l'autre session),
+  `node build/version.mjs`, second commit, puis push sur feu vert.
+
 ## Tests / preuves
 | Preuve | Résultat |
 |---|---|
