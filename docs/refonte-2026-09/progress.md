@@ -52,3 +52,16 @@
 | `controle-syntaxe` | 524 pages, 1 erreur antérieure |
 | sonde `index.html` (v2) | 375 : h 8 172, 0 débordement ; 800 : h 5 103 ; 1280 : h 3 550 ; volet `replie` = true, poignée visible |
 | captures | `mesures/v2/accueil-v2-1280.png`, `-375-ecran1/2/3.png` |
+
+## 17/09/2026, 20:30-21:10 — plan.html rendu par l'agent, intégré, tout commité sur la branche
+- Agent Sonnet (279 k tokens, 83 outils, 23 min) : plan.html + chaîne ; tous ses contrôles au vert (plan
+  identique : 62 414 / 121 / b4873d55 / 17 ; plan-liste idempotent ; registre 72 « plan » ; sitemap 11 ; ?q= et #q=).
+- Fable : `metier.html` 2 liens → `plan.html#carte` ; `build/version.mjs` ×2 → `f2f2389f5e` (convergé) ;
+  `controle-syntaxe` 524 pages / 1 erreur antérieure ; sonde v3 (5 pages × 3 largeurs) : 0 débordement,
+  console vide hors avertissement Playwright ; redirections vérifiées (`index.html#ligne=huile` → plan, 4 stations ;
+  `#q=huile` → 17 ; `#carte` → plan ; `plan.html?q=manifold` → 2).
+- Commits sur `accueil-2026-09-17` : `624742ad` (hall) puis `c59a7b25` (plan.html + chaîne + versions). Arbre propre.
+- **En attente : feu vert de F. Henninot pour fusionner dans `main` et pousser** (`outils/publier-le-site.bat` ou `git push`).
+- Restes connus, non traités : mentions « prototype / brouillon » sur les réseaux eux-mêmes (décision) ;
+  têtes de réseau hors sitemap (décision) ; CSS orphelin de l'ancien accueil dans index.html et plan.html (inerte) ;
+  tableau « Plages usuelles » de metier.html déborde à 375 px (antérieur) ; mission 1 de l'audit suspendue.
