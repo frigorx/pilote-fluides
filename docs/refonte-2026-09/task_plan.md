@@ -31,7 +31,41 @@ Lots de 6 à 8 agents par vague, deux vagues au plus par phase. Un chat par phas
 3. Le dépôt propre : le reste du lot G (« station suivante ») vérifié et commité en local.
 4. Rien n'est poussé sans feu vert explicite de F. Henninot (feedback_diffusion_gelee).
 
-## Phases
+## ⚡ Virage du 17/09 (19:30) — carte blanche sur l'accueil, la mission 1 est suspendue
+
+F. Henninot, après l'arrêt du workflow d'audit : « j'ai besoin de créer l'effet waouh, d'attaquer la
+diffusion ; quand je rentre dans le site je ne comprends pas ; je te donne carte blanche ; l'objectif
+c'est le référencement puis la visibilité par le réseautage ». Décision prise : refaire l'accueil
+maintenant, sur la branche `accueil-2026-09-17`, sans workflow ; l'audit (mission 1) reprendra ensuite
+si voulu, ses outils et mesures restent dans ce dossier.
+
+### Phase A — l'accueil « hall » (Fable) — **fait en local, commit `624742ad`**
+- `moteur/reseaux.js` : la liste des six réseaux, une seule source (nom, couleur, phrase, niveaux, état, entrée, raccourcis).
+- `build/accueil.mjs` : relève stations et lignes dans le catalogue, compte les MP3 sur le disque, écrit dans
+  `index.html` entre sentinelles : la carte animée du réseau des réseaux (SVG en ligne), les quatre chiffres,
+  les six vignettes, le JSON-LD (WebSite + SearchAction vers `plan.html?q=` + ItemList). Refuse une adresse absente.
+- `docs/refonte-2026-09/outils/extraire-cartes-reseaux.mjs` : les cartes SVG des réseaux, extraites des pages
+  qui les dessinent, rendues autonomes, sans texte → `icones/reseaux/*.svg` (HoCourant fabriquée : paliers).
+- `index.html` : chirurgie par repères (accroche + organigramme + portes → hall ; plan, liste, circuit et
+  moteur de carte retirés ; volet et journal conservés, leur script réinséré) ; barre : « Le plan » ;
+  redirection des ancres gravées `#ligne= #carte #chercher #q=` vers `plan.html` ; titre, description,
+  og, JSON-LD neufs ; entrée du 17/09 au journal.
+- Mesuré (sonde, SW bloqué) : 1280 px → 3 550 px de haut (7 437 avant), 375 px → 8 172 (10 991), 0 débordement,
+  volet replié, 81 Ko (162). Chevauchements restants = liens du journal replié (mesure, pas défaut, antérieur).
+
+### Phase B — `plan.html` et la chaîne (agent Sonnet sur `BRIEF-PLAN-PAGE.md`) — en cours
+Puis Fable : `metier.html` (2 liens `index.html#carte` → `plan.html#carte`), `build/version.mjs`, sitemap,
+contrôle de syntaxe, sonde index + plan + métier + formateurs à 3 largeurs, référence du plan sur `plan.html`,
+commit, **présentation à F. Henninot, feu vert avant tout push**.
+
+### Décisions prises sous carte blanche (à confirmer par F. Henninot)
+- Le grand plan quitte l'accueil pour `plan.html` ; l'accueil ne garde qu'une vignette recadrée.
+- Sur l'accueil, plus de « prototype / brouillon » : un discret « en relecture » (AéroRézo, ÉlectroRézo,
+  HoCourant) et « en construction » (Législation) — les bandeaux des réseaux eux-mêmes sont inchangés.
+- HoCourant est présenté comme un réseau (13 modules, 5 paliers), plus comme un outil.
+- Le sitemap ne gagne que `plan.html` ; ajouter les têtes de réseau (au moins HydroMétro) est un choix à lui.
+
+## Phases (cadrage initial, avant le virage)
 
 ### Phase 0 — cadrage et outillage (ce chat)
 **Status:** in_progress

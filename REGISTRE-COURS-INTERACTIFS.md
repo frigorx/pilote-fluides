@@ -14,7 +14,7 @@
 | Cours accessibles depuis le plan d’accueil | **72** |
 | Codes du référentiel couverts par un cours | **99** |
 | Codes encore expliqués par du texte seul | **0** |
-| Poids total des cours | **63.4 Mo** |
+| Poids total des cours | **63.5 Mo** |
 
 ## Anomalies
 
@@ -66,36 +66,36 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 
 | Cours | Appelé depuis | Écrans | Codes couverts | Poids |
 |---|---|---|---|---|
-| `bilan-thermique-performance-interactif` | g11, plan d’accueil | 16 | *appui : 12 codes* | 336 Ko |
+| `bilan-thermique-performance-interactif` | g11, plan d’accueil | 16 | *appui : 12 codes* | 337 Ko |
 | `bouteille-liquide-pedagogique` | g9b, plan d’accueil | 14 | 1.05 | 136 Ko |
 | `capsules` | s1, s2, s3, s4, s5, cl2, cl3, cl4, p4, p7, g0, g1d, g2a, g2, x1, g3, x4, g5a, g5b, x3, x2, g10, x5, g13 | 151 | 1.00 · 1.05 · 1.09 · 10.01 · 10.02 · 11.03 · 12.02 · 12.04 · 12.05 · 12.06 · 12.13 · 13.01 · 13.04 · 13.14 · 14.01 · 2.01 · 2.02 · 3.01 · 3.02 · 3.03 · 3.04 · 3.05 · 4.02 · 4.04 · 4.08 · 5.01 · 5.02 · 5.03 · 5.04 · 5.05 · 5.06 · 5.07 · 5.08 · 5.09 · 8.08 | 406 Ko |
 | `chaine-intervention-interactive` | p1, p3, p5, plan d’accueil | 25 | 3.03 · 3.04 · 4.05 · 5.01 · 5.02 | 61 Ko |
 | `chaleur-circuit-interactif` | g1a, plan d’accueil | — | 1.01 · 1.02 · 1.04 | 123 Ko |
 | `chaleur-interactive` | g1s, plan d’accueil | — | 1.02 | 158 Ko |
 | `circuit-huile-interactif` | plan d’accueil | — | — | 27 Ko |
-| `circuit-organe-par-organe` | g6, g7, g8, g9, plan d’accueil | — | 1.04 | 843 Ko |
+| `circuit-organe-par-organe` | g6, g7, g8, g9, plan d’accueil | — | 1.04 | 844 Ko |
 | `clapet-differentiel-huile-pedagogique` | plan d’accueil | — | — | 2278 Ko |
 | `co2-r744` | cl3, g13, plan d’accueil | 100 | 11.01 · 11.04 · 11.06 · 13.02 · 13.04 · 13.15 · 13.16 · 13.17 · 13.01 · 13.03 | 360 Ko |
-| `commande-directe-thermostat` | plan d’accueil | — | — | 1182 Ko |
+| `commande-directe-thermostat` | plan d’accueil | — | — | 1183 Ko |
 | `compresseur-interactif` | g6, g6b, plan d’accueil | 13 | 6.02 · 6.03 · 6.04 · 6.05 · 9.07 | 82 Ko |
-| `condenseur-interactif` | g7b, plan d’accueil | 25 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 · 7.06 · 7.08 | 108 Ko |
+| `condenseur-interactif` | g7b, plan d’accueil | 25 | 7.02 · 7.03 · 7.05 · 7.07 · 7.09 · 7.10 · 7.06 · 7.08 | 109 Ko |
 | `cours-classes-securite` | cl1, plan d’accueil | — | 1.08 | 157 Ko |
 | `degivrage-electrique` | plan d’accueil | — | — | 1123 Ko |
 | `degivrage-gaz-chauds` | plan d’accueil | — | — | 1138 Ko |
-| `degivrage-inversion-cycle` | plan d’accueil | — | — | 1129 Ko |
+| `degivrage-inversion-cycle` | plan d’accueil | — | — | 1130 Ko |
 | `degivrage-naturel` | plan d’accueil | — | — | 1060 Ko |
 | `detendeur-interactif` | g9, plan d’accueil | 14 | 1.04 · 9.10 · 9.03 | 184 Ko |
 | `diagnostic-circuit-huile` | plan d’accueil | — | — | 1690 Ko |
 | `diagnostic-circuit-huile-conclure` | plan d’accueil | — | — | 1496 Ko |
-| `diagramme-enthalpique` | plan d’accueil | — | — | 720 Ko |
+| `diagramme-enthalpique` | plan d’accueil | — | — | 721 Ko |
 | `electrovanne-interactive` | g9, plan d’accueil | 14 | 1.05 | 188 Ko |
 | `elements-circuit-huile` | plan d’accueil | — | — | 1502 Ko |
 | `elements-circuit-huile-regler` | plan d’accueil | — | — | 1779 Ko |
 | `etancheite-interactive` | g4a, g4b, g4c, plan d’accueil | 27 | 4.01 · 4.02 · 4.03 · 4.04 · 4.05 · 4.06 · 4.07 · 4.08 · 4.09 | 68 Ko |
 | `evaporateur-interactif` | g8b, plan d’accueil | 27 | 8.02 · 8.03 · 8.04 · 8.06 · 8.07 · 8.10 · 8.11 · 8.05 · 8.09 | 179 Ko |
 | `fil-conducteur-intervention` | plan d’accueil | — | — | 283 Ko |
-| `film-effet-de-serre` | plan d’accueil | — | — | 1208 Ko |
-| `film-ozone` | plan d’accueil | — | — | 1055 Ko |
+| `film-effet-de-serre` | plan d’accueil | — | — | 1210 Ko |
+| `film-ozone` | plan d’accueil | — | — | 1057 Ko |
 | `filtre-deshydrateur-pedagogique` | g9, plan d’accueil | 15 | 1.05 | 2684 Ko |
 | `frise-vivante` | c00, plan d’accueil | 10 | 2.01 | 1178 Ko |
 | `froid-clim-academie` | g1e, plan d’accueil | — | 1.02 | 30 Ko |
@@ -109,21 +109,21 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `pose-manifold-2-voies-interactive` | p1, plan d’accueil | 8 | 4.05 · 5.01 · 12.02 | 319 Ko |
 | `pose-manifold-interactive` | p1, plan d’accueil | 6 | 4.05 · 5.01 · 5.02 · 3.03 · 3.04 | 90 Ko |
 | `pression-temperature-interactive` | g1b, plan d’accueil | — | 1.02 · 1.03 | 151 Ko |
-| `pressostat-bp-kp1` | plan d’accueil | 26 | 6.03 · 9.06 | 1251 Ko |
-| `pressostat-combine-kp15` | plan d’accueil | 26 | 6.03 · 7.04 · 9.06 | 938 Ko |
+| `pressostat-bp-kp1` | plan d’accueil | 26 | 6.03 · 9.06 | 1253 Ko |
+| `pressostat-combine-kp15` | plan d’accueil | 26 | 6.03 · 7.04 · 9.06 | 940 Ko |
 | `pressostat-differentiel-huile-pedagogique` | plan d’accueil | — | — | 1684 Ko |
-| `pressostat-hp-kp5` | plan d’accueil | 26 | 6.03 · 7.04 · 9.06 | 1280 Ko |
+| `pressostat-hp-kp5` | plan d’accueil | 26 | 6.03 · 7.04 · 9.06 | 1282 Ko |
 | `pressostat-huile-securite` | plan d’accueil | — | — | 1655 Ko |
 | `protection-minimum-serie` | plan d’accueil | — | — | 1162 Ko |
 | `pump-down-ameliore` | plan d’accueil | — | — | 1105 Ko |
 | `pump-down-automatique` | plan d’accueil | — | — | 1149 Ko |
 | `pump-down-unique` | plan d’accueil | — | — | 1133 Ko |
 | `pupitre-reglage-interactif` | g9b, plan d’accueil | 9 | 9.04 · 9.06 · 7.04 | 75 Ko |
-| `recuperation-fluide-interactive` | p2, plan d’accueil | 8 | 5.01 · 5.02 · 5.03 · 5.05 · 5.06 | 189 Ko |
+| `recuperation-fluide-interactive` | p2, plan d’accueil | 8 | 5.01 · 5.02 · 5.03 · 5.05 · 5.06 | 190 Ko |
 | `regulateur-electronique-interactif` | plan d’accueil | 24 | 9.04 · 6.03 | 176 Ko |
 | `regulateur-huile-mecanique-pedagogique` | plan d’accueil | — | — | 2420 Ko |
 | `regulateur-kvl-pedagogique` | **orphelin** | — | — | 2 Ko |
-| `regulateur-kvr-nrd` | plan d’accueil | 9 | 1.05 · 9.02 · 9.05 | 347 Ko |
+| `regulateur-kvr-nrd` | plan d’accueil | 9 | 1.05 · 9.02 · 9.05 | 349 Ko |
 | `regulateurs-kv-pedagogiques` | g9b, plan d’accueil | 8 | 1.05 · 9.02 · 9.05 | 1141 Ko |
 | `regules-interactif` | plan d’accueil | — | — | 1 Ko |
 | `reservoir-huile-pedagogique` | plan d’accueil | — | — | 2608 Ko |

@@ -11,7 +11,8 @@
    (sentinelles JSON-LD).
 
    ENTRÉE   moteur/plan-donnees.js (bloc DONNEES-PLAN — dans index.html jusqu'au 05/09/2026)
-   SORTIE   index.html (blocs LISTE-PLAN et JSON-LD réécrits, idempotent)
+   SORTIE   plan.html (blocs LISTE-PLAN et JSON-LD réécrits, idempotent)
+            [17/09/2026 — le plan a quitté index.html pour plan.html, brief accueil-2026-09-17]
    USAGE    node build/plan-liste.mjs   (lancé aussi par build.mjs, AVANT
             version.mjs)
    ===================================================================== */
@@ -20,7 +21,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const CHEMIN = resolve(RACINE, "index.html");
+const CHEMIN = resolve(RACINE, "plan.html");
 const DONNEES = resolve(RACINE, "moteur/plan-donnees.js");
 const SITE = "https://inerweb.fr/";
 

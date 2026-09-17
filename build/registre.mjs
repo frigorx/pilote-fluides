@@ -97,11 +97,14 @@ for (const c of CARTES) {
 
 /* Le plan est lui aussi un point d'entrée réel. Certaines nouvelles lignes
    sont pédagogiquement autonomes avant d'être rattachées à une fiche du pack :
-   elles ne doivent pas être déclarées « inaccessibles » alors que l'accueil
-   les ouvre explicitement. */
-const accueil = readFileSync(resolve(RACINE, "index.html"), "utf8");
+   elles ne doivent pas être déclarées « inaccessibles » alors que le plan
+   les ouvre explicitement.
+   17/09/2026 — le plan a quitté index.html pour plan.html (brief
+   accueil-2026-09-17) : on lit désormais cette page-là. Variable renommée
+   pour ne pas laisser croire qu'elle vient encore de l'accueil. */
+const pagePlan = readFileSync(resolve(RACINE, "plan.html"), "utf8");
 const depuisAccueil = new Set();
-for (const m of accueil.matchAll(MOTIF)) depuisAccueil.add(m[1]);
+for (const m of pagePlan.matchAll(MOTIF)) depuisAccueil.add(m[1]);
 /* 05/09/2026 — les données du plan ont quitté index.html pour moteur/plan-donnees.js
    (une seule source, PROPOSITION § 4). La liste HTML générée dans index.html porte
    encore les adresses des cours (MOTIF ci-dessus), mais build.mjs ne la régénère

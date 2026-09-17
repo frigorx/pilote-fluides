@@ -1,0 +1,5297 @@
+[
+ {
+  "id": "accueil-v3",
+  "chemin": "/index.html",
+  "largeur": 375,
+  "erreur": null,
+  "titre": "inerWeb Édu — le froid et la climatisation, station par station",
+  "h1": "Le froid et la climatisation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 375,
+   "innerWidth": 375,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "input",
+     "id": "q-accueil",
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "button",
+     "id": "lisib-bouton",
+     "classe": "",
+     "texte": "Aa"
+    },
+    "aire": 556
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer"
+    },
+    "aire": 943
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Télécharger"
+    },
+    "aire": 1537
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1343
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Code source"
+    },
+    "aire": 1551
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Code source"
+    },
+    "aire": 513
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer le prototype"
+    },
+    "aire": 1359
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Devenir bêta-testeur"
+    },
+    "aire": 1589
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 2446
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 1421
+   }
+  ],
+  "policeMin": 9.5,
+  "sous14": 103,
+  "exemplesSous14": [
+   {
+    "taille": 12.5,
+    "tag": "div",
+    "id": null,
+    "classe": "volet-sous",
+    "texte": "Ce que cette page peut accueillir"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux."
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "HydroMétro"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "AéroRézo"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   }
+  ],
+  "hauteurPage": 8165,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\accueil-v3-375.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "accueil-v3",
+  "chemin": "/index.html",
+  "largeur": 800,
+  "erreur": null,
+  "titre": "inerWeb Édu — le froid et la climatisation, station par station",
+  "h1": "Le froid et la climatisation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 800,
+   "innerWidth": 800,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton creux",
+     "texte": "Télécharger"
+    },
+    "aire": 556
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer la démonstration"
+    },
+    "aire": 2446
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 1421
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 1428
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 8507
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🎓 Formateurs Projeter en cours, réemployer le code, demande"
+    },
+    "aire": 929
+   }
+  ],
+  "policeMin": 10.5,
+  "sous14": 103,
+  "exemplesSous14": [
+   {
+    "taille": 12.5,
+    "tag": "div",
+    "id": null,
+    "classe": "volet-sous",
+    "texte": "Ce que cette page peut accueillir"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux."
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "HydroMétro"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "AéroRézo"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   }
+  ],
+  "hauteurPage": 5116,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\accueil-v3-800.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "accueil-v3",
+  "chemin": "/index.html",
+  "largeur": 1280,
+  "erreur": null,
+  "titre": "inerWeb Édu — le froid et la climatisation, station par station",
+  "h1": "Le froid et la climatisation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 1280,
+   "innerWidth": 1280,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 409
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 487
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer le prototype"
+    },
+    "aire": 35
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "bouton",
+     "texte": "Essayer la démonstration"
+    },
+    "aire": 2446
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 1421
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "📋 La formation habilitation A1 · A2 · D · E — la semaine co"
+    },
+    "aire": 1524
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 387
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 739
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧭 Tout le catalogue 38 ressources, filtrables par thème et "
+    },
+    "aire": 99
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧑‍🔧 Le métier C’est quoi, frigoriste ? Les formations, du "
+    },
+    "aire": 372
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "tuile",
+     "texte": "🧑‍🔧 Le métier C’est quoi, frigoriste ? Les formations, du "
+    },
+    "aire": 1513
+   }
+  ],
+  "policeMin": 10.5,
+  "sous14": 103,
+  "exemplesSous14": [
+   {
+    "taille": 12.5,
+    "tag": "div",
+    "id": null,
+    "classe": "volet-sous",
+    "texte": "Ce que cette page peut accueillir"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux."
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "HydroMétro"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "strong",
+    "id": null,
+    "classe": "",
+    "texte": "AéroRézo"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   },
+   {
+    "taille": 13,
+    "tag": "p",
+    "id": null,
+    "classe": "",
+    "texte": "28 août 2026 — quatre réseaux. Le plan thermo-techno (108 st"
+   }
+  ],
+  "hauteurPage": 3550,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\accueil-v3-1280.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "plan",
+  "chemin": "/plan.html",
+  "largeur": 375,
+  "erreur": null,
+  "titre": "Le plan du réseau thermo-techno — inerWeb Édu",
+  "h1": "Le plan de formation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Le plan de formation inerWeb Édu : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 375,
+   "innerWidth": 375,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 146
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 328
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 460
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 136
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 210
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 355
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 124
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 138
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 254
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 616
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 370
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 226
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 284
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 465
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 444
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 380
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 393
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 435
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 431
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 384
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 407
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 305
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 73
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 73
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 146
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 38
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 499
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 768
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 814
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 575
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 528
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 323
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 271
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 428
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 424
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 320
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 721
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 276
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 413
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 180
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 48
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 86
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 136
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 166
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 118
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "✅ S’ÉVALUER — QCM · examens blancs A1 · A2 · D · E · 9 stati"
+    },
+    "aire": 2091
+   }
+  ],
+  "policeMin": 9.5,
+  "sous14": 158,
+  "exemplesSous14": [
+   {
+    "taille": 12,
+    "tag": "div",
+    "id": null,
+    "classe": "pastille",
+    "texte": "LE RÉSEAU THERMO-TECHNO"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "à visiter"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "visitée"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "station sur deux lignes à la fois"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "🔒 code formateur"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "💻 PC/tablette conseillé = téléphone en consultation"
+   },
+   {
+    "taille": 13.5,
+    "tag": "b",
+    "id": "trajet-n",
+    "classe": "",
+    "texte": "0"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "0 / 86 stations · votre trajet reste sur cet appareil"
+   }
+  ],
+  "hauteurPage": 6133,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\plan-375.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "plan",
+  "chemin": "/plan.html",
+  "largeur": 800,
+  "erreur": null,
+  "titre": "Le plan du réseau thermo-techno — inerWeb Édu",
+  "h1": "Le plan de formation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Le plan de formation inerWeb Édu : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 800,
+   "innerWidth": 800,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "button",
+     "id": "trajet-effacer",
+     "classe": "",
+     "texte": "⟳ effacer mon trajet"
+    },
+    "b": {
+     "tag": "button",
+     "id": "lisib-bouton",
+     "classe": "",
+     "texte": "Aa"
+    },
+    "aire": 39
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 146
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 328
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 460
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 136
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 210
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 355
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 124
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 138
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "button",
+     "id": "lisib-bouton",
+     "classe": "",
+     "texte": "Aa"
+    },
+    "aire": 478
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 254
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 616
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 370
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 226
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 284
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 465
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 444
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 380
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 393
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 435
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 431
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 384
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 407
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 305
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 73
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 73
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 146
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 38
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 499
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 768
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 814
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 575
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 528
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 323
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 271
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 428
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 424
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 320
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 721
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 276
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 413
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 180
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 48
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 86
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 136
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 166
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 118
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "✅ S’ÉVALUER — QCM · examens blancs A1 · A2 · D · E · 9 stati"
+    },
+    "aire": 1096
+   }
+  ],
+  "policeMin": 10.5,
+  "sous14": 157,
+  "exemplesSous14": [
+   {
+    "taille": 12,
+    "tag": "div",
+    "id": null,
+    "classe": "pastille",
+    "texte": "LE RÉSEAU THERMO-TECHNO"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "à visiter"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "visitée"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "station sur deux lignes à la fois"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "🔒 code formateur"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "💻 PC/tablette conseillé = téléphone en consultation"
+   },
+   {
+    "taille": 13.5,
+    "tag": "b",
+    "id": "trajet-n",
+    "classe": "",
+    "texte": "0"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "0 / 86 stations · votre trajet reste sur cet appareil"
+   }
+  ],
+  "hauteurPage": 5029,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\plan-800.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "plan",
+  "chemin": "/plan.html",
+  "largeur": 1280,
+  "erreur": null,
+  "titre": "Le plan du réseau thermo-techno — inerWeb Édu",
+  "h1": "Le plan de formation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Le plan de formation inerWeb Édu : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 1280,
+   "innerWidth": 1280,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 155
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 366
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 506
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 143
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 224
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 382
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 130
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 145
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 270
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 783
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 396
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 241
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 303
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 499
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 478
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 407
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 420
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 467
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 462
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 411
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 436
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 327
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 77
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 79
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 156
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 38
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 536
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 838
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 876
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 618
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 566
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 345
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 289
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 459
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 454
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 345
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 773
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 295
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 443
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 191
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 61
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 88
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 155
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 176
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 128
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "✅ S’ÉVALUER — QCM · examens blancs A1 · A2 · D · E · 9 stati"
+    },
+    "aire": 1096
+   }
+  ],
+  "policeMin": 10.5,
+  "sous14": 157,
+  "exemplesSous14": [
+   {
+    "taille": 12,
+    "tag": "div",
+    "id": null,
+    "classe": "pastille",
+    "texte": "LE RÉSEAU THERMO-TECHNO"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "à visiter"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "visitée"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "station sur deux lignes à la fois"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "🔒 code formateur"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "💻 PC/tablette conseillé = téléphone en consultation"
+   },
+   {
+    "taille": 13.5,
+    "tag": "b",
+    "id": "trajet-n",
+    "classe": "",
+    "texte": "0"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "0 / 86 stations · votre trajet reste sur cet appareil"
+   }
+  ],
+  "hauteurPage": 4815,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\plan-1280.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "plan-ligne-regules",
+  "chemin": "/plan.html#ligne=regules",
+  "largeur": 375,
+  "erreur": null,
+  "titre": "Le plan du réseau thermo-techno — inerWeb Édu",
+  "h1": "Le plan de formation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Le plan de formation inerWeb Édu : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 375,
+   "innerWidth": 375,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🔧 LES ORGANES — CAP IFCA · BAC PRO MFER · 6 stations"
+    },
+    "aire": 2796
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🔧 LES ORGANES — CAP IFCA · BAC PRO MFER · 6 stations"
+    },
+    "aire": 1490
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1479
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🎛 CE QUI SE RÈGLE — consigne, différentiel, preuve · 10 sta"
+    },
+    "aire": 3798
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 902
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 752
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "💧 LA LIGNE LIQUIDE — de la bouteille au détendeur · 4 stati"
+    },
+    "aire": 1842
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1666
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 766
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "💧 LA LIGNE LIQUIDE — de la bouteille au détendeur · 4 stati"
+    },
+    "aire": 1964
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 2536
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🧰 LES GESTES — l’atelier, le vrai geste pro · 8 stations"
+    },
+    "aire": 3784
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 410
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🧰 LES GESTES — l’atelier, le vrai geste pro · 8 stations"
+    },
+    "aire": 1790
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 915
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1054
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 2261
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1315
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🌍 FLUIDES & ENVIRONNEMENT — F-Gas, sécurité, climat · 8 sta"
+    },
+    "aire": 2704
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1920
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 511
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🌍 FLUIDES & ENVIRONNEMENT — F-Gas, sécurité, climat · 8 sta"
+    },
+    "aire": 3502
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 2311
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 491
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1925
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🛢 L’HUILE — le fluide et son retour · 4 stations"
+    },
+    "aire": 2507
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🎛 CE QUI SE RÈGLE — consigne, différentiel, preuve · 10 sta"
+    },
+    "aire": 3165
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🎛 CE QUI SE RÈGLE — consigne, différentiel, preuve · 10 sta"
+    },
+    "aire": 1011
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 902
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "💧 LA LIGNE LIQUIDE — de la bouteille au détendeur · 4 stati"
+    },
+    "aire": 2284
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "✅ S’ÉVALUER — QCM · examens blancs A1 · A2 · D · E · 9 stati"
+    },
+    "aire": 2091
+   }
+  ],
+  "policeMin": 9.5,
+  "sous14": 36,
+  "exemplesSous14": [
+   {
+    "taille": 12,
+    "tag": "div",
+    "id": null,
+    "classe": "pastille",
+    "texte": "LE RÉSEAU THERMO-TECHNO"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "à visiter"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "visitée"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "station sur deux lignes à la fois"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "🔒 code formateur"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "💻 PC/tablette conseillé = téléphone en consultation"
+   },
+   {
+    "taille": 13.5,
+    "tag": "b",
+    "id": "trajet-n",
+    "classe": "",
+    "texte": "0"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "0 / 86 stations · votre trajet reste sur cet appareil"
+   }
+  ],
+  "hauteurPage": 5464,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\plan-ligne-regules-375.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "plan-ligne-regules",
+  "chemin": "/plan.html#ligne=regules",
+  "largeur": 800,
+  "erreur": null,
+  "titre": "Le plan du réseau thermo-techno — inerWeb Édu",
+  "h1": "Le plan de formation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Le plan de formation inerWeb Édu : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 800,
+   "innerWidth": 800,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "button",
+     "id": "trajet-effacer",
+     "classe": "",
+     "texte": "⟳ effacer mon trajet"
+    },
+    "b": {
+     "tag": "button",
+     "id": "lisib-bouton",
+     "classe": "",
+     "texte": "Aa"
+    },
+    "aire": 39
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🔧 LES ORGANES — CAP IFCA · BAC PRO MFER · 6 stations"
+    },
+    "aire": 2796
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🔧 LES ORGANES — CAP IFCA · BAC PRO MFER · 6 stations"
+    },
+    "aire": 1490
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1479
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🎛 CE QUI SE RÈGLE — consigne, différentiel, preuve · 10 sta"
+    },
+    "aire": 3798
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 902
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 752
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "💧 LA LIGNE LIQUIDE — de la bouteille au détendeur · 4 stati"
+    },
+    "aire": 1842
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 918
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 766
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "💧 LA LIGNE LIQUIDE — de la bouteille au détendeur · 4 stati"
+    },
+    "aire": 1964
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1441
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 386
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 2536
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🧰 LES GESTES — l’atelier, le vrai geste pro · 8 stations"
+    },
+    "aire": 3784
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 988
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 410
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 2747
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🧰 LES GESTES — l’atelier, le vrai geste pro · 8 stations"
+    },
+    "aire": 1790
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 915
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1054
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 2261
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1315
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🌍 FLUIDES & ENVIRONNEMENT — F-Gas, sécurité, climat · 8 sta"
+    },
+    "aire": 2704
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1365
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1920
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1732
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 868
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🛢 L’HUILE — le fluide et son retour · 4 stations"
+    },
+    "aire": 1595
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 920
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "✅ S’ÉVALUER — QCM · examens blancs A1 · A2 · D · E · 9 stati"
+    },
+    "aire": 1096
+   }
+  ],
+  "policeMin": 10.5,
+  "sous14": 35,
+  "exemplesSous14": [
+   {
+    "taille": 12,
+    "tag": "div",
+    "id": null,
+    "classe": "pastille",
+    "texte": "LE RÉSEAU THERMO-TECHNO"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "à visiter"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "visitée"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "station sur deux lignes à la fois"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "🔒 code formateur"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "💻 PC/tablette conseillé = téléphone en consultation"
+   },
+   {
+    "taille": 13.5,
+    "tag": "b",
+    "id": "trajet-n",
+    "classe": "",
+    "texte": "0"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "0 / 86 stations · votre trajet reste sur cet appareil"
+   }
+  ],
+  "hauteurPage": 4166,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\plan-ligne-regules-800.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "plan-ligne-regules",
+  "chemin": "/plan.html#ligne=regules",
+  "largeur": 1280,
+  "erreur": null,
+  "titre": "Le plan du réseau thermo-techno — inerWeb Édu",
+  "h1": "Le plan de formation, station par station.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Le plan de formation inerWeb Édu : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 1280,
+   "innerWidth": 1280,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🔧 LES ORGANES — CAP IFCA · BAC PRO MFER · 6 stations"
+    },
+    "aire": 2796
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🔧 LES ORGANES — CAP IFCA · BAC PRO MFER · 6 stations"
+    },
+    "aire": 1490
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1479
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🎛 CE QUI SE RÈGLE — consigne, différentiel, preuve · 10 sta"
+    },
+    "aire": 3798
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 902
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 752
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "💧 LA LIGNE LIQUIDE — de la bouteille au détendeur · 4 stati"
+    },
+    "aire": 1842
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 918
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 766
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "💧 LA LIGNE LIQUIDE — de la bouteille au détendeur · 4 stati"
+    },
+    "aire": 1964
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1441
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 386
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 2536
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🧰 LES GESTES — l’atelier, le vrai geste pro · 8 stations"
+    },
+    "aire": 3784
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 988
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 410
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 2747
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🧰 LES GESTES — l’atelier, le vrai geste pro · 8 stations"
+    },
+    "aire": 1790
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 915
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1054
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 2261
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1315
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🌍 FLUIDES & ENVIRONNEMENT — F-Gas, sécurité, climat · 8 sta"
+    },
+    "aire": 2704
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1365
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1920
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1732
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 868
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "🛢 L’HUILE — le fluide et son retour · 4 stations"
+    },
+    "aire": 1595
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 920
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "aire": 1539
+   },
+   {
+    "a": {
+     "tag": "a",
+     "id": null,
+     "classe": "",
+     "texte": ""
+    },
+    "b": {
+     "tag": "summary",
+     "id": null,
+     "classe": "",
+     "texte": "✅ S’ÉVALUER — QCM · examens blancs A1 · A2 · D · E · 9 stati"
+    },
+    "aire": 1096
+   }
+  ],
+  "policeMin": 10.5,
+  "sous14": 35,
+  "exemplesSous14": [
+   {
+    "taille": 12,
+    "tag": "div",
+    "id": null,
+    "classe": "pastille",
+    "texte": "LE RÉSEAU THERMO-TECHNO"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "à visiter"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "visitée"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "station sur deux lignes à la fois"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "🔒 code formateur"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "💻 PC/tablette conseillé = téléphone en consultation"
+   },
+   {
+    "taille": 13.5,
+    "tag": "b",
+    "id": "trajet-n",
+    "classe": "",
+    "texte": "0"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "puce-l",
+    "texte": "0 / 86 stations · votre trajet reste sur cet appareil"
+   }
+  ],
+  "hauteurPage": 3868,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\plan-ligne-regules-1280.png",
+  "console": [
+   {
+    "type": "warning",
+    "texte": "Service Worker registration blocked by Playwright"
+   }
+  ],
+  "echecs": []
+ },
+ {
+  "id": "metier",
+  "chemin": "/metier.html",
+  "largeur": 375,
+  "erreur": null,
+  "titre": "Le métier de frigoriste — inerWeb Édu",
+  "h1": "Frigoriste, climaticien, technicien CVC.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 375,
+   "innerWidth": 375,
+   "deborde": false
+  },
+  "horsCadre": [
+   {
+    "tag": "table",
+    "id": null,
+    "classe": "tab",
+    "texte": "Plages usuelles, données à titre indicatif : la valeur qui f",
+    "gauche": 47,
+    "droite": 507
+   },
+   {
+    "tag": "caption",
+    "id": null,
+    "classe": "",
+    "texte": "Plages usuelles, données à titre indicatif : la valeur qui f",
+    "gauche": 47,
+    "droite": 507
+   },
+   {
+    "tag": "thead",
+    "id": null,
+    "classe": "",
+    "texte": "Grandeur Où on la mesure Plage usuelle",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "tr",
+    "id": null,
+    "classe": "",
+    "texte": "Grandeur Où on la mesure Plage usuelle",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "th",
+    "id": null,
+    "classe": "",
+    "texte": "Plage usuelle",
+    "gauche": 366,
+    "droite": 507
+   },
+   {
+    "tag": "tbody",
+    "id": null,
+    "classe": "",
+    "texte": "Surchauffe Sortie d’évaporateur 5 à 10 K Sous-refroidissemen",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "tr",
+    "id": null,
+    "classe": "",
+    "texte": "Surchauffe Sortie d’évaporateur 5 à 10 K",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "td",
+    "id": null,
+    "classe": "",
+    "texte": "5 à 10 K",
+    "gauche": 366,
+    "droite": 507
+   },
+   {
+    "tag": "tr",
+    "id": null,
+    "classe": "",
+    "texte": "Sous-refroidissement Sortie de condenseur 4 à 8 K",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "td",
+    "id": null,
+    "classe": "",
+    "texte": "4 à 8 K",
+    "gauche": 366,
+    "droite": 507
+   },
+   {
+    "tag": "tr",
+    "id": null,
+    "classe": "",
+    "texte": "HP et BP Au manifold, sur les vannes de service En bar — pré",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "td",
+    "id": null,
+    "classe": "",
+    "texte": "En bar — préciser absolu ou relatif",
+    "gauche": 366,
+    "droite": 507
+   },
+   {
+    "tag": "tr",
+    "id": null,
+    "classe": "",
+    "texte": "COP / EER Calculé : puissance utile / puissance absorbée COP",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "td",
+    "id": null,
+    "classe": "",
+    "texte": "COP en chaud, EER en froid",
+    "gauche": 366,
+    "droite": 507
+   },
+   {
+    "tag": "table",
+    "id": null,
+    "classe": "tab",
+    "texte": "Classification selon NF EN 378 / ASHRAE 34. Classe Ce que ça",
+    "gauche": 47,
+    "droite": 507
+   },
+   {
+    "tag": "caption",
+    "id": null,
+    "classe": "",
+    "texte": "Classification selon NF EN 378 / ASHRAE 34.",
+    "gauche": 47,
+    "droite": 507
+   },
+   {
+    "tag": "thead",
+    "id": null,
+    "classe": "",
+    "texte": "Classe Ce que ça veut dire Exemples",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "tr",
+    "id": null,
+    "classe": "",
+    "texte": "Classe Ce que ça veut dire Exemples",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "th",
+    "id": null,
+    "classe": "",
+    "texte": "Exemples",
+    "gauche": 324,
+    "droite": 507
+   },
+   {
+    "tag": "tbody",
+    "id": null,
+    "classe": "",
+    "texte": "A1 Faible toxicité, non inflammable R-134a, R-410A, R-744 (C",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "tr",
+    "id": null,
+    "classe": "",
+    "texte": "A1 Faible toxicité, non inflammable R-134a, R-410A, R-744 (C",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "td",
+    "id": null,
+    "classe": "",
+    "texte": "R-134a, R-410A, R-744 (CO₂)",
+    "gauche": 324,
+    "droite": 507
+   },
+   {
+    "tag": "tr",
+    "id": null,
+    "classe": "",
+    "texte": "A2L Faible toxicité, faiblement inflammable R-32, R-1234yf",
+    "gauche": 48,
+    "droite": 507
+   },
+   {
+    "tag": "td",
+    "id": null,
+    "classe": "",
+    "texte": "R-32, R-1234yf",
+    "gauche": 324,
+    "droite": 507
+   },
+   {
+    "tag": "tr",
+    "id": null,
+    "classe": "",
+    "texte": "A3 Faible toxicité, très inflammable R-290 (propane), R-600a",
+    "gauche": 48,
+    "droite": 507
+   }
+  ],
+  "chevauchements": [],
+  "policeMin": 9.5,
+  "sous14": 60,
+  "exemplesSous14": [
+   {
+    "taille": 12,
+    "tag": "div",
+    "id": null,
+    "classe": "pastille",
+    "texte": "DÉCOUVRIR LE MÉTIER"
+   },
+   {
+    "taille": 13,
+    "tag": "span",
+    "id": null,
+    "classe": "titre-som",
+    "texte": "SUR CETTE PAGE"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "où le froid se pratique"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "ce qu’on fait vraiment"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "le cœur du métier"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "classes, attestation, F-Gaz"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "ce qui plaît, ce qui pèse"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "de la 2nde au bureau d’études"
+   }
+  ],
+  "hauteurPage": 13090,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\metier-375.png",
+  "console": [],
+  "echecs": []
+ },
+ {
+  "id": "metier",
+  "chemin": "/metier.html",
+  "largeur": 800,
+  "erreur": null,
+  "titre": "Le métier de frigoriste — inerWeb Édu",
+  "h1": "Frigoriste, climaticien, technicien CVC.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 800,
+   "innerWidth": 800,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [],
+  "policeMin": 10.5,
+  "sous14": 60,
+  "exemplesSous14": [
+   {
+    "taille": 12,
+    "tag": "div",
+    "id": null,
+    "classe": "pastille",
+    "texte": "DÉCOUVRIR LE MÉTIER"
+   },
+   {
+    "taille": 13,
+    "tag": "span",
+    "id": null,
+    "classe": "titre-som",
+    "texte": "SUR CETTE PAGE"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "où le froid se pratique"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "ce qu’on fait vraiment"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "le cœur du métier"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "classes, attestation, F-Gaz"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "ce qui plaît, ce qui pèse"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "de la 2nde au bureau d’études"
+   }
+  ],
+  "hauteurPage": 10197,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\metier-800.png",
+  "console": [],
+  "echecs": []
+ },
+ {
+  "id": "metier",
+  "chemin": "/metier.html",
+  "largeur": 1280,
+  "erreur": null,
+  "titre": "Le métier de frigoriste — inerWeb Édu",
+  "h1": "Frigoriste, climaticien, technicien CVC.",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 1280,
+   "innerWidth": 1280,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [],
+  "policeMin": 10.5,
+  "sous14": 60,
+  "exemplesSous14": [
+   {
+    "taille": 12,
+    "tag": "div",
+    "id": null,
+    "classe": "pastille",
+    "texte": "DÉCOUVRIR LE MÉTIER"
+   },
+   {
+    "taille": 13,
+    "tag": "span",
+    "id": null,
+    "classe": "titre-som",
+    "texte": "SUR CETTE PAGE"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "où le froid se pratique"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "ce qu’on fait vraiment"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "le cœur du métier"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "classes, attestation, F-Gaz"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "ce qui plaît, ce qui pèse"
+   },
+   {
+    "taille": 13.5,
+    "tag": "span",
+    "id": null,
+    "classe": "sous",
+    "texte": "de la 2nde au bureau d’études"
+   }
+  ],
+  "hauteurPage": 10315,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\metier-1280.png",
+  "console": [],
+  "echecs": []
+ },
+ {
+  "id": "formateurs",
+  "chemin": "/formateurs.html",
+  "largeur": 375,
+  "erreur": null,
+  "titre": "Espace formateurs — inerWeb Édu",
+  "h1": "Espace formateurs",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Projeter une ressource inerWeb en cours, réemployer le moteur technique (MIT), demander une adaptation. Contenus CC BY-NC-ND 4.0.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 375,
+   "innerWidth": 375,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [],
+  "policeMin": 9.5,
+  "sous14": 3,
+  "exemplesSous14": [
+   {
+    "taille": 10,
+    "tag": "span",
+    "id": null,
+    "classe": "",
+    "texte": "© inerWeb 2026 · CC BY-NC-ND 4.0"
+   },
+   {
+    "taille": 10,
+    "tag": "span",
+    "id": null,
+    "classe": "marque-lic",
+    "texte": "· CC BY-NC-ND 4.0"
+   },
+   {
+    "taille": 9.5,
+    "tag": "span",
+    "id": null,
+    "classe": "marque-droits",
+    "texte": "© inerWeb 2026 — F. Henninot · CC BY-NC-ND 4.0 — citer inerW"
+   }
+  ],
+  "hauteurPage": 2362,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\formateurs-375.png",
+  "console": [],
+  "echecs": []
+ },
+ {
+  "id": "formateurs",
+  "chemin": "/formateurs.html",
+  "largeur": 800,
+  "erreur": null,
+  "titre": "Espace formateurs — inerWeb Édu",
+  "h1": "Espace formateurs",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Projeter une ressource inerWeb en cours, réemployer le moteur technique (MIT), demander une adaptation. Contenus CC BY-NC-ND 4.0.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 800,
+   "innerWidth": 800,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [],
+  "policeMin": 10.5,
+  "sous14": 3,
+  "exemplesSous14": [
+   {
+    "taille": 11,
+    "tag": "span",
+    "id": null,
+    "classe": "",
+    "texte": "© inerWeb 2026 · CC BY-NC-ND 4.0"
+   },
+   {
+    "taille": 11,
+    "tag": "span",
+    "id": null,
+    "classe": "marque-lic",
+    "texte": "· CC BY-NC-ND 4.0"
+   },
+   {
+    "taille": 10.5,
+    "tag": "span",
+    "id": null,
+    "classe": "marque-droits",
+    "texte": "© inerWeb 2026 — F. Henninot · CC BY-NC-ND 4.0 — citer inerW"
+   }
+  ],
+  "hauteurPage": 1367,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\formateurs-800.png",
+  "console": [],
+  "echecs": []
+ },
+ {
+  "id": "formateurs",
+  "chemin": "/formateurs.html",
+  "largeur": 1280,
+  "erreur": null,
+  "titre": "Espace formateurs — inerWeb Édu",
+  "h1": "Espace formateurs",
+  "lang": "fr",
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Projeter une ressource inerWeb en cours, réemployer le moteur technique (MIT), demander une adaptation. Contenus CC BY-NC-ND 4.0.",
+  "marque": true,
+  "debordement": {
+   "scrollWidth": 1280,
+   "innerWidth": 1280,
+   "deborde": false
+  },
+  "horsCadre": [],
+  "chevauchements": [],
+  "policeMin": 10.5,
+  "sous14": 3,
+  "exemplesSous14": [
+   {
+    "taille": 11,
+    "tag": "span",
+    "id": null,
+    "classe": "",
+    "texte": "© inerWeb 2026 · CC BY-NC-ND 4.0"
+   },
+   {
+    "taille": 11,
+    "tag": "span",
+    "id": null,
+    "classe": "marque-lic",
+    "texte": "· CC BY-NC-ND 4.0"
+   },
+   {
+    "taille": 10.5,
+    "tag": "span",
+    "id": null,
+    "classe": "marque-droits",
+    "texte": "© inerWeb 2026 — F. Henninot · CC BY-NC-ND 4.0 — citer inerW"
+   }
+  ],
+  "hauteurPage": 1231,
+  "capture": "docs\\refonte-2026-09\\mesures\\v3\\formateurs-1280.png",
+  "console": [],
+  "echecs": []
+ }
+]

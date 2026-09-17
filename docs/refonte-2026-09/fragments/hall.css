@@ -44,7 +44,7 @@
   .v-entrees a.v-entree:hover { filter:brightness(1.12); }
   .portes.formation .porte { --accent:#1e7e54; }
   @media (max-width:1000px) {
-    .hall { grid-template-columns:1fr; gap:22px; }
+    .hall { grid-template-columns:1fr; gap:22px; margin-top:56px; } /* sous la poignée « Infos », fixée à gauche */
     .grille-reseaux { grid-template-columns:repeat(2,1fr); }
   }
   @media (max-width:640px) {

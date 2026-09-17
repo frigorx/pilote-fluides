@@ -3,6 +3,7 @@
      se modifie LÀ-BAS, jamais ici. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://inerweb.fr/</loc></url>
+  <url><loc>https://inerweb.fr/plan.html</loc></url>
   <url><loc>https://inerweb.fr/metier.html</loc></url>
   <url><loc>https://inerweb.fr/formateurs.html</loc></url>
   <url><loc>https://inerweb.fr/packs/fluides/res/chaleur-interactive/index.html</loc></url>

@@ -33,3 +33,22 @@
 | `curl https://inerweb.fr/?sonde=…` | 200, 160 703 o, titre « inerWeb Édu — apprendre le froid, station par station » |
 | sonde-suivant (Playwright, Chrome) | diagramme : bloc présent ; détendeur hidden/hidden : silence ; KP1 visible/hidden : silence |
 | `sonder-rendu.mjs` | 81 mesures, 0 erreur de chargement, `mesures/mesures.json` |
+
+## Session 1 (suite) — 17/09/2026, 19:20-20:30 — carte blanche sur l'accueil
+- 19:15 workflow d'audit lancé (6 sondes) ; 19:20 F. Henninot : « on aurait préféré en parler avant » → arrêté
+  (aucun rapport rendu, quelques centaines de milliers de tokens). Discussion, puis carte blanche sur l'accueil.
+- Lot G du 13/09 commité sur `main` (`b3605de0`), branche `accueil-2026-09-17` ouverte, `plan.html` = copie d'`index.html`.
+- Référence du rendu du plan (index.html servi) : SVG 62 414 car., 121 liens, empreinte `b4873d55`, « huile » → 17.
+- Vignettes extraites : thermo 86 Ko (recadré 1310×1180), législation 41, hydro 11, aéro 29, électro 39, hocourant 2.
+- Agent Sonnet lancé sur `BRIEF-PLAN-PAGE.md` (plan.html + chaîne), complément envoyé : accepter `?q=`.
+- Accueil refait, deux défauts trouvés à la sonde et corrigés : volet ouvert (son script vivait dans le script
+  du plan retiré → réinséré seul), vignettes en couleur pleine (`.reseaux` de l'ancien organigramme → `.hall-reseaux`).
+- Commit `624742ad`. Journal : entrée du 17/09. Image de partage `og-inerweb-1200x630.png` regardée : générique, gardée.
+
+## Preuves (suite)
+| Preuve | Résultat |
+|---|---|
+| `node build/accueil.mjs` | 6 réseaux · 255 stations · 49 lignes · 6 611 MP3 ; thermo 96/15, législation 29/11, hydro 22/4, aéro 36/6, électro 59/8, hocourant 13/5 |
+| `controle-syntaxe` | 524 pages, 1 erreur antérieure |
+| sonde `index.html` (v2) | 375 : h 8 172, 0 débordement ; 800 : h 5 103 ; 1280 : h 3 550 ; volet `replie` = true, poignée visible |
+| captures | `mesures/v2/accueil-v2-1280.png`, `-375-ecran1/2/3.png` |

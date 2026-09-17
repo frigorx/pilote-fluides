@@ -26,6 +26,7 @@ const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
    · galerie.html : noindex par décision (en réévaluation). */
 const INDEXEES = [
   { fichier: "index.html", url: "https://inerweb.fr/" },
+  { fichier: "plan.html", url: "https://inerweb.fr/plan.html" },
   { fichier: "metier.html", url: "https://inerweb.fr/metier.html" },
   { fichier: "formateurs.html", url: "https://inerweb.fr/formateurs.html" },
   {

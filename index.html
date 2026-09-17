@@ -467,7 +467,7 @@
   .v-entrees a.v-entree:hover { filter:brightness(1.12); }
   .portes.formation .porte { --accent:#1e7e54; }
   @media (max-width:1000px) {
-    .hall { grid-template-columns:1fr; gap:22px; }
+    .hall { grid-template-columns:1fr; gap:22px; margin-top:56px; } /* sous la poignée « Infos », fixée à gauche */
     .grille-reseaux { grid-template-columns:repeat(2,1fr); }
   }
   @media (max-width:640px) {
@@ -846,8 +846,14 @@
        qu'on y aille d'un clic.
        =================================================================== -->
   <details class="nouveautes" id="nouveautes">
-    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 5 septembre 2026</span></summary>
+    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 17 septembre 2026</span></summary>
     <div class="nv-corps">
+
+      <h3>17 septembre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouvel accueil</span><a href="#reseaux">Six réseaux, une carte chacun</a>
+          <span class="d">— l’accueil montre enfin l’ampleur du site : les six réseaux de cours avec leur vraie carte en vignette, les chiffres relevés (stations, lignes, narrations), la recherche dès l’entrée et une station d’entrée par réseau. Le grand plan du thermo-techno a maintenant <a href="plan.html">sa propre page</a> ; les anciens liens y mènent toujours.</span></li>
+      </ul>
 
       <h3>5 septembre 2026</h3>
       <ul>
@@ -1119,11 +1125,11 @@
 
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=a28bc9adc0"></script>
-<script src="chiffres.gen.js?v=a28bc9adc0"></script>
+<script src="moteur/lisibilite.js?v=f2f2389f5e"></script>
+<script src="chiffres.gen.js?v=f2f2389f5e"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=a28bc9adc0" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=f2f2389f5e" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)

@@ -31,7 +31,7 @@
    Pièges tenus : réponses partielles (206, lecteurs audio) et réponses
    redirigées jamais mises en cache ; autres origines jamais touchées.
    ===================================================================== */
-const VERSION = "a28bc9adc0";
+const VERSION = "f2f2389f5e";
 const CACHE = "inerweb-" + VERSION;
 
 /* Le socle : ce qui doit marcher hors-ligne même si le visiteur n'a
@@ -39,6 +39,7 @@ const CACHE = "inerweb-" + VERSION;
 const SOCLE = [
   "/",
   "/index.html",
+  "/plan.html", // le plan a sa page depuis le 17/09/2026 (brief accueil-2026-09-17)
   "/formation.html",
   "/hors-ligne.html",
   "/favicon.svg",

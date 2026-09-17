@@ -60,7 +60,7 @@ const FICHIERS_VERSIONNES = [
 // correction de charte-edu.css ou d'impression.css resterait invisible sur
 // ces pages tant que le navigateur garde l'ancienne feuille en cache.
 const PAGES = [
-  "index.html", "formateur.html", "projection.html", "portail.html", "dossier.html",
+  "index.html", "plan.html", "formateur.html", "projection.html", "portail.html", "dossier.html",
   "charte.html", "galerie.html", "matrice.html", "planning.html", "relecture.html",
   "pratique.html", "partage.html",
   // 19/08/2026 — le site vitrine : l'accueil est devenu index.html, l'appli
