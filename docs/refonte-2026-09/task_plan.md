@@ -53,7 +53,7 @@ si voulu, ses outils et mesures restent dans ce dossier.
 - Mesuré (sonde, SW bloqué) : 1280 px → 3 550 px de haut (7 437 avant), 375 px → 8 172 (10 991), 0 débordement,
   volet replié, 81 Ko (162). Chevauchements restants = liens du journal replié (mesure, pas défaut, antérieur).
 
-### Phase B — `plan.html` et la chaîne (agent Sonnet sur `BRIEF-PLAN-PAGE.md`) — en cours
+### Phase B — `plan.html` et la chaîne (agent Sonnet sur `BRIEF-PLAN-PAGE.md`) — **fait, EN LIGNE le 17/09 à 20 h 33** (push `9370b0fe..69eb3f72`)
 Puis Fable : `metier.html` (2 liens `index.html#carte` → `plan.html#carte`), `build/version.mjs`, sitemap,
 contrôle de syntaxe, sonde index + plan + métier + formateurs à 3 largeurs, référence du plan sur `plan.html`,
 commit, **présentation à F. Henninot, feu vert avant tout push**.

@@ -74,3 +74,14 @@
   titre visible (mesuré 1280 et 1440) ; < 1100 px il recouvre, fermeture mémorisée pour la session. Actualité du
   volet passée au 17/09. Son projet : d'autres lycées avec le logo de SON lycée, quand l'autorisation arrivera.
 - Versions `6e99d979af`. Arbre propre. **Toujours en attente du feu vert pour fusionner et pousser.**
+
+## 17/09/2026, 20:25-20:40 — FEU VERT, EN LIGNE
+- Fusion `--ff-only` dans `main`, push `9370b0fe..9ffed20b`, branche supprimée ; catalogue relevé (282 entrées, plan.html
+  = page du site) et RAG réindexé (76 163 fragments) → push `97a9d4b4` ; REPRISE → push `69eb3f72`.
+- GitHub Pages a servi le nouvel accueil à 20:33:36 (7e sonde à 30 s). Vérifié en ligne, cache contourné :
+  accueil 87 Ko, hall + 6 vignettes + JSON-LD + redirection ; `plan.html` 200 avec plan et liste ; `sw.js` = `6e99d979af` ;
+  sitemap 11 adresses ; 6 SVG en 200 ; au navigateur : volet ouvert, page décalée de 350 px, 6 cartes chargées,
+  **console vide** (les erreurs `email-decode` de Cloudflare ont disparu de l'accueil avec le SVG du plan),
+  `index.html#ligne=huile` → `plan.html` (4 stations), plan identique (62 414 / 121 / b4873d55), « huile » 17,
+  téléphone 5 227 px sans débordement.
+- Rangement : serveur local arrêté, `launch.json` temporaire de CLAUDE-ESPACE-TRAVAIL retiré.
