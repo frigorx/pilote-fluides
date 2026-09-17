@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**281 stations** réparties en 10 réseaux.
+**282 stations** réparties en 10 réseaux.
 
 ## Plan thermo-techno — 72 stations
 
@@ -301,7 +301,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Acquisition de données Bluetooth](https://inerweb.fr/aquiblue/) | — | — | — | condenseur évaporateur détendeur compresseur HP BP le cycle, en direct Bluetooth du PC Recherche de l&rsquo;adaptateur&hellip; Effacer les journaux de capture Le geste central du TP Le numéro de série est écrit sur la sonde. 1. |
 | [se préparer à l'habilitation électrique](https://inerweb.fr/hocourant/) | — | — | — | S'entraîner en autonomie à l'habilitation électrique, de B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle. Sans compte, sans donnée personnelle. Prototype inerWeb. |
 
-## Pages du site — 16 stations
+## Pages du site — 17 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -312,10 +312,11 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Espace formateurs](https://inerweb.fr/formateurs.html) | — | — | — | Projeter une ressource inerWeb en cours, réemployer le moteur technique (MIT), demander une adaptation. Contenus CC BY-NC-ND 4.0. |
 | [Habilitation fluides frigorigènes (démonstrateur)](https://inerweb.fr/formation.html) | — | — | — | Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote. |
 | [Bibliothèque d'animations et de supports — habilitation fluides frigorigènes](https://inerweb.fr/galerie.html) | — | — | — | Le catalogue inerWeb Édu : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables. |
-| [apprendre le froid, station par station](https://inerweb.fr/index.html) | — | — | — | Le plan de formation inerWeb Édu : tous les cours interactifs du froid sur une carte de métro — théorie, organes, gestes, fluides, examens blancs. Gratuit, sans compte. |
+| [le froid et la climatisation, station par station](https://inerweb.fr/index.html) | — | — | — | Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte. |
 | [Matrice compétences × contenu × questions — habilitation fluides](https://inerweb.fr/matrice.html) | — | — | — | Pack habilitation fluides frigorigènes — catégories A1 · A2 · D · E · arrêté du 21 novembre 2025, annexe II.B (136 compétences). Généré par node build/matrice.mjs depuis le contenu publié : ce tableau ne se saisit pas, il se relève. |
 | [Le métier de frigoriste](https://inerweb.fr/metier.html) | — | — | — | Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études. |
 | [Le lien à garder — Habilitation fluides frigorigènes](https://inerweb.fr/partage.html) | — | — | — | Gratuit, sans compte, sans installation — il s'ouvre dans le navigateur, sur téléphone comme sur ordinateur. Gardez ce lien. |
+| [Le plan du réseau thermo-techno](https://inerweb.fr/plan.html) | — | — | — | Le plan de formation inerWeb Édu : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte. |
 | [Planning de formation — habilitation fluides frigorigènes](https://inerweb.fr/planning.html) | — | — | — | Habilitation à la manipulation des fluides frigorigènes · arrêté du 21 novembre 2025 |
 | [Habilitation fluides frigorigènes — dossier de présentation](https://inerweb.fr/portail.html) | — | — | — | Dispositif de formation à l'habilitation aux fluides frigorigènes (A1, A2, D, E) — autoformation, projection en salle, préparation pratique. Construit sur le référentiel de l'arrêté du 21 novembre 2025. |
 | [La partie pratique — manipulation fluidique](https://inerweb.fr/pratique.html) | — | — | — | TP formatif et évaluation de la manipulation fluidique : feuilles de guidance pas-à-pas, visas formateur, grille par compétence. Présentation. |

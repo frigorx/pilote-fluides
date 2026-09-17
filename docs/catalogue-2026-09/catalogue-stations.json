@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 281,
+  "total": 282,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -3854,9 +3854,9 @@
     {
       "reseau": "Pages du site",
       "id": "index",
-      "titre": "apprendre le froid, station par station",
+      "titre": "le froid et la climatisation, station par station",
       "ligne": null,
-      "resume": "Le plan de formation inerWeb Édu : tous les cours interactifs du froid sur une carte de métro — théorie, organes, gestes, fluides, examens blancs. Gratuit, sans compte.",
+      "resume": "Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -3898,6 +3898,18 @@
       "missionProf": null,
       "url": "https://inerweb.fr/partage.html",
       "chemin": "partage.html"
+    },
+    {
+      "reseau": "Pages du site",
+      "id": "plan",
+      "titre": "Le plan du réseau thermo-techno",
+      "ligne": null,
+      "resume": "Le plan de formation inerWeb Édu : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/plan.html",
+      "chemin": "plan.html"
     },
     {
       "reseau": "Pages du site",
