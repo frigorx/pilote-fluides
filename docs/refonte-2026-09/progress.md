@@ -92,3 +92,10 @@
   « 📰 Actualités & espaces ▸ » (dans le flux, ne masque rien) ; un tap ouvre le volet. Ordinateur inchangé.
 - Diagnostic Cloudflare pour GPT : « Bloquer les robots IA » renvoie 403 à ChatGPT-User, GPTBot, ClaudeBot ;
   OAI-SearchBot, Claude-User, Googlebot, Bingbot passent. Conseil donné : autoriser ChatGPT-User seulement.
+
+## 18/09/2026, matin — l'aperçu du volet sur téléphone
+- F. Henninot : « replié complètement c'est excessif ; quelque chose d'intermédiaire qui donne envie ; le téléphone
+  est le premier écran ». ≤ 700 px : la poignée devient une carte-aperçu (titre, actualité, appel, pastilles des
+  espaces, « Tout voir ▸ »), construite au chargement depuis les blocs du volet — une seule source. 161 px, dans le
+  flux, un toucher ouvre le volet. Piège vécu : `\s` passé par `node -e` a perdu son antislash → `/s+/` effaçait
+  les « s » (« eptembre ») ; corrigé par un script écrit sur disque, jamais en ligne de commande.
