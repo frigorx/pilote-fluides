@@ -99,3 +99,5 @@
   espaces, « Tout voir ▸ »), construite au chargement depuis les blocs du volet — une seule source. 161 px, dans le
   flux, un toucher ouvre le volet. Piège vécu : `\s` passé par `node -e` a perdu son antislash → `/s+/` effaçait
   les « s » (« eptembre ») ; corrigé par un script écrit sur disque, jamais en ligne de commande.
+- Lignes de l'aperçu forcées en bloc (un `<button>` n'applique pas toujours flex) : commit `2ebf7cb4`, version
+  `e48a68681b`, servie en ligne le 18/09 à 05:30 ; vérifié au navigateur : téléphone replié + aperçu, ordinateur ouvert.
