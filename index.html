@@ -404,6 +404,19 @@
     .volet-poignee { position:static; display:block; width:100%; border-radius:0; padding:12px 16px;
                      text-align:left; font-size:14.5px; box-shadow:none; }
     .hall { margin-top:22px; }
+    /* L'aperçu du volet (18/09) : une carte dans le flux, qui montre et qui invite. */
+    .volet-poignee.apercu { display:flex; flex-direction:column; gap:6px; background:var(--carte);
+                            color:var(--txt); border:1px solid var(--ligne); border-left:5px solid var(--orange);
+                            font-weight:normal; font-size:14px; line-height:1.4; cursor:pointer; }
+    .volet-poignee.apercu:hover { background:var(--carte); }
+    .ap-tete { display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+               font-family:var(--titre); font-weight:bold; font-size:14.5px; color:var(--bleu); }
+    .ap-tout { color:var(--orange); white-space:nowrap; }
+    .ap-actu { font-weight:bold; color:var(--txt); }
+    .ap-appel { color:var(--mut); font-size:13.5px; }
+    .ap-puces { display:flex; flex-wrap:wrap; gap:6px; margin-top:2px; }
+    .ap-puces span { background:#eef3f9; color:var(--bleu); border-radius:999px; padding:3px 10px;
+                     font-size:12.5px; font-weight:bold; }
     .nav { gap:14px; }
     .nav a { padding:8px 2px 6px; }
   }
@@ -1127,7 +1140,26 @@
      replié que si on l'a fermé dans cette session. */
   /* Sur téléphone (≤ 700 px), le volet ouvert masquait tout le contenu (F. Henninot, 17/09) : il
      démarre replié, sa poignée est une bande visible sous le menu. Ailleurs, ouvert à l'arrivée. */
-  if (window.matchMedia && window.matchMedia("(max-width: 700px)").matches) replie = true;
+  var telephone = !!(window.matchMedia && window.matchMedia("(max-width: 700px)").matches);
+  if (telephone) {
+    replie = true;
+    /* 18/09 — F. Henninot : « replié, personne ne le dépliera ; il faut quelque chose d'intermédiaire
+       qui donne envie ». La poignée devient un APERÇU : les titres lus dans le volet lui-même (une seule
+       source), jamais recopiés — l'actualité du jour, l'appel aux partenaires, les espaces en pastilles. */
+    var blocs = v.querySelectorAll(".volet-bloc");
+    var texte = function (el) { return el ? el.textContent.replace(/\s+/g, " ").trim() : ""; };
+    var span = function (classe, contenu) { var s = document.createElement("span"); s.className = classe; s.textContent = contenu; return s; };
+    p.className += " apercu";
+    p.textContent = "";
+    var tete = span("ap-tete", ""); tete.appendChild(span("", "📰 Actualités & espaces")); tete.appendChild(span("ap-tout", "Tout voir ▸"));
+    p.appendChild(tete);
+    var actu = blocs[0] && blocs[0].querySelector("strong");
+    if (actu) p.appendChild(span("ap-actu", texte(actu)));
+    if (blocs[1]) p.appendChild(span("ap-appel", texte(blocs[1].querySelector("h3")) + " — " + texte(blocs[1].querySelector("strong")) + " cherche des bêta-testeurs"));
+    var puces = span("ap-puces", "");
+    for (var i = 2; i < blocs.length; i++) { var h = blocs[i].querySelector("h3"); if (h) puces.appendChild(span("", texte(h))); }
+    p.appendChild(puces);
+  }
   poser(replie);
   requestAnimationFrame(function () { v.classList.add("pret"); });
 
@@ -1167,11 +1199,11 @@
 
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=1669d2e969"></script>
-<script src="chiffres.gen.js?v=1669d2e969"></script>
+<script src="moteur/lisibilite.js?v=56a0099558"></script>
+<script src="chiffres.gen.js?v=56a0099558"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=1669d2e969" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=56a0099558" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
