@@ -409,6 +409,9 @@
                             color:var(--txt); border:1px solid var(--ligne); border-left:5px solid var(--orange);
                             font-weight:normal; font-size:14px; line-height:1.4; cursor:pointer; }
     .volet-poignee.apercu:hover { background:var(--carte); }
+    .volet-poignee.apercu > span { display:block; margin-top:5px; } /* un <button> ignore parfois flex : chaque ligne en bloc */
+    .volet-poignee.apercu > .ap-tete { display:flex; margin-top:0; }
+    .volet-poignee.apercu > .ap-puces { display:flex; }
     .ap-tete { display:flex; justify-content:space-between; align-items:baseline; gap:10px;
                font-family:var(--titre); font-weight:bold; font-size:14.5px; color:var(--bleu); }
     .ap-tout { color:var(--orange); white-space:nowrap; }
@@ -1199,11 +1202,11 @@
 
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=56a0099558"></script>
-<script src="chiffres.gen.js?v=56a0099558"></script>
+<script src="moteur/lisibilite.js?v=e48a68681b"></script>
+<script src="chiffres.gen.js?v=e48a68681b"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=56a0099558" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=e48a68681b" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
