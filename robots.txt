@@ -1,6 +1,95 @@
-# inerWeb Édu — le site public est indexable ; les pages qui portent leur
-# propre noindex (galerie, redirections) le déclarent elles-mêmes.
+# =====================================================================
+#  inerWeb Édu — qui a le droit de lire ce site, et pour quoi faire
+#  ---------------------------------------------------------------------
+#  Révisé le 20/09/2026. La règle tient en une phrase :
+#
+#      On accepte d'être LU et CITÉ. On refuse d'être ASPIRÉ.
+#
+#  Il y a deux familles de robots d'intelligence artificielle, et les
+#  confondre coûte cher :
+#
+#   · les AGENTS À LA DEMANDE (ChatGPT-User, Perplexity-User…) vont
+#     chercher une page au moment où quelqu'un pose une question, et
+#     affichent le lien dans leur réponse. Ce sont eux qui amènent un
+#     élève ou un formateur jusqu'ici. On les accueille.
+#
+#   · les ASPIRATEURS D'ENTRAÎNEMENT (GPTBot, ClaudeBot, CCBot…)
+#     recopient le site pour entraîner un modèle. Rien ne revient, et
+#     le contenu est sous licence CC BY-NC-ND. On les refuse.
+#
+#  Ce fichier est une déclaration d'intention : il est respecté par les
+#  acteurs sérieux, il n'arrête personne d'autre. Le blocage réel se
+#  fait au niveau du réseau (Cloudflare).
+# =====================================================================
+
+# --- Tout le monde : le site est public et indexable ---
 User-agent: *
+Allow: /
+
+# --- Les aspirateurs d'entraînement : non ---
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: PanGu-Bot
+Disallow: /
+
+# --- Les agents qui lisent pour répondre à quelqu'un, et qui citent :
+#     bienvenue. C'est par là qu'on nous recommande. ---
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 Sitemap: https://inerweb.fr/sitemap.xml
