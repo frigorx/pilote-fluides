@@ -99,13 +99,13 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `filtre-deshydrateur-pedagogique` | g9, plan d’accueil | 15 | 1.05 | 2684 Ko |
 | `frise-vivante` | c00, plan d’accueil | 10 | 2.01 | 1178 Ko |
 | `froid-clim-academie` | g1e, plan d’accueil | — | 1.02 | 30 Ko |
-| `glissement-temperature` | plan d’accueil | 13 | *appui : 4 codes* | 180 Ko |
+| `glissement-temperature` | plan d’accueil | 13 | *appui : 4 codes* | 184 Ko |
 | `hydrocarbures-a1-a2` | g12, plan d’accueil | 28 | 12.01 · 12.02 · 12.03 · 12.04 · 12.05 · 12.06 · 12.13 · 12.14 | 222 Ko |
 | `intervention-hydrocarbures-interactive` | g12b, plan d’accueil | 27 | 12.07 · 12.08 · 12.09 · 12.10 · 12.11 · 12.12 | 69 Ko |
 | `mission-bouteilles` | p6, plan d’accueil | — | 5.02 · 5.05 · 5.06 | 52 Ko |
 | `module-compresseur` | g6, plan d’accueil | 6 | 1.05 · 1.02 | 324 Ko |
 | `nomenclature-interactive` | g1c, plan d’accueil | — | 1.06 | 101 Ko |
-| `parcours-manometres` | plan d’accueil | 27 | *appui : 4 codes* | 248 Ko |
+| `parcours-manometres` | plan d’accueil | 27 | *appui : 4 codes* | 252 Ko |
 | `pose-manifold-2-voies-interactive` | p1, plan d’accueil | 8 | 4.05 · 5.01 · 12.02 | 319 Ko |
 | `pose-manifold-interactive` | p1, plan d’accueil | 6 | 4.05 · 5.01 · 5.02 · 3.03 · 3.04 | 90 Ko |
 | `pression-temperature-interactive` | g1b, plan d’accueil | — | 1.02 · 1.03 | 151 Ko |

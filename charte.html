@@ -129,8 +129,12 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:14px}
 /* Les règles d'impression ne sont PAS ici : elles vivent dans la feuille
    commune moteur/impression.css, chargée ci-dessous en media="print".
    Elle doit venir APRÈS ce bloc pour l'emporter à spécificité égale. */
+
+/* Focus visible (20/09) : ces pages n en declaraient aucun et dependaient
+   du reglage par defaut du navigateur. Au clavier, on doit voir ou l on est. */
+:focus-visible{outline:3px solid #ff6b35;outline-offset:2px}
 </style>
-<link rel="stylesheet" href="moteur/impression.css?v=350dd464af" media="print">
+<link rel="stylesheet" href="moteur/impression.css?v=0943568385" media="print">
 </head>
 <body>
 
@@ -529,7 +533,7 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:14px}
   des 8 expériences de <code>packs/fluides/res/</code>.
 </footer>
 
-<script src="moteur/lisibilite.js?v=350dd464af"></script>
-<script src="moteur/marque.js?v=350dd464af" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/lisibilite.js?v=0943568385"></script>
+<script src="moteur/marque.js?v=0943568385" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>

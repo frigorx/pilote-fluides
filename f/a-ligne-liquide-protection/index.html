@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>ligne-liquide-protection — inerWeb HabFluide</title>
+<title>La ligne liquide : chaque organe protège le suivant — inerWeb HabFluide</title>
 <style>
 :root{--bleu:#1b3a63;--orange:#ff6b35;--mut:#5a6472;--ligne:#d6dee7}
 body{font-family:Calibri,Carlito,'Segoe UI',sans-serif;color:var(--bleu);background:#f4f7fa;margin:0;min-height:100vh;display:flex;flex-direction:column}
@@ -34,7 +34,7 @@ footer a{color:var(--mut)}
 <text fill="#ffffff" font-family="Segoe UI, Carlito, Calibri, Helvetica, sans-serif" font-size="14px" font-weight="bold" x="197.1" y="27" text-anchor="middle">HabFluide</text>
 </svg><span class="sous">— la planche en grand</span></header>
 <main>
-<h1>ligne-liquide-protection</h1>
+<h1>La ligne liquide : chaque organe protège le suivant</h1>
 <p class="note-fixe">Cette planche s’animera au fil des mises à jour du site — la voici en pleine taille.</p>
 <div id="scene"><p class="attente">Chargement de la planche…</p></div>
 <div class="actions">
@@ -55,7 +55,8 @@ footer a{color:var(--mut)}
     scene.innerHTML = '<p class="attente">L’animation n’a pas pu se charger ici — ' +
       '<a href="https://inerweb.fr/packs/fluides/res/svg/ligne-liquide-protection.svg">l’ouvrir directement<\/a>.</p>';
   });
-  document.getElementById('revoir').addEventListener('click', montrer);
+  var revoir = document.getElementById("revoir");
+  if (revoir) revoir.addEventListener("click", montrer);
 })();
 </script>
 </body>

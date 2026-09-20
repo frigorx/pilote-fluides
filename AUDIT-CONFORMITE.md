@@ -9,10 +9,10 @@
 |---|---:|
 | Cours interactifs recensés | **75** |
 | Cours avec anomalie critique automatisable | **35** |
-| Cours avec dette documentaire ou de reprise | **43** |
+| Cours avec dette documentaire ou de reprise | **37** |
 | Cours contenant des médias sans `SOURCES-IMAGES.md` | **10** |
 | SVG pédagogiques contrôlés | **72** |
-| SVG sans titre / sans description textuelle | **29 / 67** |
+| SVG sans titre / sans description textuelle | **27 / 67** |
 
 ## Contrôle des cours interactifs
 
@@ -46,9 +46,9 @@
 | `elements-circuit-huile-regler` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `etancheite-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `evaporateur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 4 | ✗ | 🟠 SOURCES-IMAGES.md, ancien terme « module interactif » (2) |
-| `fil-conducteur-intervention` | ✓ | ✓ | ✓ | ✗ | absente | 1 | ✓ | 🟠 impression, réglage de lisibilité |
-| `film-effet-de-serre` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🔴 fonds forcés à l’impression |
-| `film-ozone` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🔴 fonds forcés à l’impression |
+| `fil-conducteur-intervention` | ✓ | ✓ | ✓ | ✗ | commune | 1 | ✓ | 🟠 impression |
+| `film-effet-de-serre` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🔴 fonds forcés à l’impression |
+| `film-ozone` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🔴 fonds forcés à l’impression |
 | `filtre-deshydrateur-pedagogique` | ✓ | ✓ | ✓ | ✓ | absente | 17 | ✓ | 🟠 réglage de lisibilité |
 | `frise-vivante` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `froid-clim-academie` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
@@ -62,10 +62,10 @@
 | `pose-manifold-2-voies-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pose-manifold-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pression-temperature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `pressostat-bp-kp1` | ✓ | ✓ | ✓ | ✓ | absente | 14 | ✓ | 🟠 réglage de lisibilité |
-| `pressostat-combine-kp15` | ✓ | ✓ | ✓ | ✓ | absente | 10 | ✓ | 🟠 réglage de lisibilité |
+| `pressostat-bp-kp1` | ✓ | ✓ | ✓ | ✓ | commune | 14 | ✓ | 🟢 contrôle statique tenu |
+| `pressostat-combine-kp15` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✓ | 🟢 contrôle statique tenu |
 | `pressostat-differentiel-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
-| `pressostat-hp-kp5` | ✓ | ✓ | ✓ | ✓ | absente | 15 | ✓ | 🟠 réglage de lisibilité |
+| `pressostat-hp-kp5` | ✓ | ✓ | ✓ | ✓ | commune | 15 | ✓ | 🟢 contrôle statique tenu |
 | `pressostat-huile-securite` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `protection-minimum-serie` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `pump-down-ameliore` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
@@ -85,10 +85,10 @@
 | `sans-degivrage-commande` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `separateur-eclatement-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `separateur-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
-| `surchauffe-sous-refroidissement-interactif` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |
+| `surchauffe-sous-refroidissement-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `technologie-huiles-choix-controle` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `technologie-huiles-frigorifiques` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
-| `tome-3-technologie-organes` | ✓ | ✓ | ✓ | ✓ | locale | 44 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `tome-3-technologie-organes` | ✓ | ✓ | ✓ | ✓ | commune | 44 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `traxoil-installer` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `traxoil-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `vanne-service-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
@@ -96,7 +96,7 @@
 
 ## Titres et descriptions des SVG
 
-- Sans titre : `brasage-balayage-azote.svg`, `categories-champs.svg`, `classe-lettre-chiffre.svg`, `co2-local-protege.svg`, `co2-nh3-deux-risques.svg`, `code-nomme-classe-previent.svg`, `compresseurs-comparatif.svg`, `condenseur-ecart-encrassement.svg`, `condenseur-trois-zones.svg`, `consignation-cinq-etapes.svg`, `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `croix-frigoriste-etats.svg`, `deux-etages-deux-papiers.svg`, `givre-isole-machine-force.svg`, `ligne-liquide-protection.svg`, `logph-lecture.svg`, `mesures-surchauffe-sous-refroidissement.svg`, `motif-flocon.svg`, `quatre-leviers-energie.svg`, `r290-zone-intervention.svg`, `recherche-fuite-geste.svg`, `recuperation-securisee.svg`, `regulateurs-kv-places.svg`, `securite-decomposition-fluide.svg`, `securite-espace-clos.svg`, `securite-pression-residuelle.svg`, `securite-projection-fluide.svg`, `sequence-mise-en-service.svg`.
+- Sans titre : `brasage-balayage-azote.svg`, `categories-champs.svg`, `classe-lettre-chiffre.svg`, `co2-local-protege.svg`, `co2-nh3-deux-risques.svg`, `code-nomme-classe-previent.svg`, `compresseurs-comparatif.svg`, `condenseur-ecart-encrassement.svg`, `consignation-cinq-etapes.svg`, `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `croix-frigoriste-etats.svg`, `deux-etages-deux-papiers.svg`, `givre-isole-machine-force.svg`, `ligne-liquide-protection.svg`, `logph-lecture.svg`, `mesures-surchauffe-sous-refroidissement.svg`, `motif-flocon.svg`, `quatre-leviers-energie.svg`, `r290-zone-intervention.svg`, `recherche-fuite-geste.svg`, `recuperation-securisee.svg`, `securite-decomposition-fluide.svg`, `securite-espace-clos.svg`, `securite-pression-residuelle.svg`, `securite-projection-fluide.svg`, `sequence-mise-en-service.svg`.
 - Sans description : `aptitude-capacite.svg`, `balayage-azote.svg`, `balayage-detecteur.svg`, `brasage-balayage-azote.svg`, `categories-champs.svg`, `chaleur-sensible-latente.svg`, `charge-limite-local.svg`, `classe-lettre-chiffre.svg`, `classes-securite.svg`, `co2-local-protege.svg`, `co2-nh3-compare.svg`, `co2-nh3-deux-risques.svg`, `co2-point-bas.svg`, `co2-protection.svg`, `code-nomme-classe-previent.svg`, `compresseurs-comparatif.svg`, `compresseurs.svg`, `condenseur-ecart-encrassement.svg`, `condenseur-trois-zones.svg`, `consignation-cinq-etapes.svg`, `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `croix-frigoriste-etats.svg`, `detendeur-regulation.svg`, `detendeurs-ligne.svg`, `deux-etages-deux-papiers.svg`, `diagramme-logph.svg`, `echangeur-air.svg`, `epreuve-azote.svg`, `familles-fluides.svg`, `frise-histoire.svg`, `givre-degivrage.svg`, `givre-isole-machine-force.svg`, `intro-securite.svg`, `lecture-table.svg`, `lie-domaine.svg`, `ligne-liquide-protection.svg`, `logph-lecture.svg`, `manifold-lecture.svg`, `mesure-surchauffe.svg`, `mesures-surchauffe-sous-refroidissement.svg`, `motif-flocon.svg`, `nomenclature.svg`, `ordre-vannes.svg`, `pesee-charge.svg`, `prepa-chantier.svg`, `pression-absolue-relative.svg`, `prp-echelle.svg`, `quatre-leviers-energie.svg`, `r290-zone-intervention.svg`, `recherche-fuite-geste.svg`, `recuperation-securisee.svg`, `recuperation.svg`, `regulateurs-kv-places.svg`, `s1-double-accident.svg`, `secu-bouteille.svg`, `secu-consignation.svg`, `secu-decomposition-ari.svg`, `secu-espace-clos.svg`, `secu-flamme.svg`, `secu-projection.svg`, `securite-decomposition-fluide.svg`, `securite-espace-clos.svg`, `securite-pression-residuelle.svg`, `securite-projection-fluide.svg`, `sequence-mise-en-service.svg`, `tirage-au-vide.svg`.
 
 ## Ce que cet audit ne valide pas

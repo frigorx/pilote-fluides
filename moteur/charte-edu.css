@@ -267,3 +267,8 @@ button.ecouter.actif{background:var(--bleu);color:#fff;border-color:var(--bleu)}
   border-radius:999px;cursor:pointer}
 .choix-cours .c-txt:hover{background:#e7eff7}
 @media print{.choix-cours{display:none}}
+
+/* Focus visible (20/09) : la feuille partagee n en declarait aucun, donc
+   les pages qui s appuient dessus (dont formation.html) dependaient du
+   reglage par defaut du navigateur. Au clavier, on doit voir ou l on est. */
+:focus-visible{outline:3px solid #ff6b35;outline-offset:2px}

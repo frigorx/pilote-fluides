@@ -55,7 +55,8 @@ footer a{color:var(--mut)}
     scene.innerHTML = '<p class="attente">L’animation n’a pas pu se charger ici — ' +
       '<a href="https://inerweb.fr/packs/fluides/res/svg/circuit-complet-manifold.svg">l’ouvrir directement<\/a>.</p>';
   });
-  document.getElementById('revoir').addEventListener('click', montrer);
+  var revoir = document.getElementById("revoir");
+  if (revoir) revoir.addEventListener("click", montrer);
 })();
 </script>
 </body>

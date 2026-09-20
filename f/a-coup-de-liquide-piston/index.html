@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>coup-de-liquide-piston — inerWeb HabFluide</title>
+<title>Coup de liquide dans un compresseur à piston — inerWeb HabFluide</title>
 <style>
 :root{--bleu:#1b3a63;--orange:#ff6b35;--mut:#5a6472;--ligne:#d6dee7}
 body{font-family:Calibri,Carlito,'Segoe UI',sans-serif;color:var(--bleu);background:#f4f7fa;margin:0;min-height:100vh;display:flex;flex-direction:column}
@@ -34,7 +34,7 @@ footer a{color:var(--mut)}
 <text fill="#ffffff" font-family="Segoe UI, Carlito, Calibri, Helvetica, sans-serif" font-size="14px" font-weight="bold" x="197.1" y="27" text-anchor="middle">HabFluide</text>
 </svg><span class="sous">— la planche en mouvement</span></header>
 <main>
-<h1>coup-de-liquide-piston</h1>
+<h1>Coup de liquide dans un compresseur à piston</h1>
 
 <div id="scene"><p class="attente">Chargement de la planche…</p></div>
 <div class="actions">
@@ -55,7 +55,8 @@ footer a{color:var(--mut)}
     scene.innerHTML = '<p class="attente">L’animation n’a pas pu se charger ici — ' +
       '<a href="https://inerweb.fr/packs/fluides/res/svg/coup-de-liquide-piston.svg">l’ouvrir directement<\/a>.</p>';
   });
-  document.getElementById('revoir').addEventListener('click', montrer);
+  var revoir = document.getElementById("revoir");
+  if (revoir) revoir.addEventListener("click", montrer);
 })();
 </script>
 </body>
