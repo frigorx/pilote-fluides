@@ -103,7 +103,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `hydrocarbures-a1-a2` | g12, plan d’accueil | 28 | 12.01 · 12.02 · 12.03 · 12.04 · 12.05 · 12.06 · 12.13 · 12.14 | 222 Ko |
 | `intervention-hydrocarbures-interactive` | g12b, plan d’accueil | 27 | 12.07 · 12.08 · 12.09 · 12.10 · 12.11 · 12.12 | 69 Ko |
 | `mission-bouteilles` | p6, plan d’accueil | — | 5.02 · 5.05 · 5.06 | 52 Ko |
-| `module-compresseur` | g6, plan d’accueil | 6 | 1.05 · 1.02 | 324 Ko |
+| `module-compresseur` | g6, plan d’accueil | 6 | 1.05 · 1.02 | 325 Ko |
 | `nomenclature-interactive` | g1c, plan d’accueil | — | 1.06 | 101 Ko |
 | `parcours-manometres` | plan d’accueil | 27 | *appui : 4 codes* | 252 Ko |
 | `pose-manifold-2-voies-interactive` | p1, plan d’accueil | 8 | 4.05 · 5.01 · 12.02 | 319 Ko |

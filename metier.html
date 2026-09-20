@@ -65,7 +65,7 @@
   .tuiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
   .tuile { padding:20px 22px; display:flex; flex-direction:column; gap:6px; }
   .tuile .emoji { font-size:30px; line-height:1; }
-  .tuile h3 { margin:4px 0 0; font-family:var(--titre); font-size:18px; color:var(--bleu); }
+  .tuile h2 { margin:4px 0 0; font-family:var(--titre); font-size:18px; color:var(--bleu); }
   .tuile p { margin:0; color:var(--mut); font-size:14.5px; }
   .liste { padding:22px 26px; }
   .liste ul { margin:0; padding-left:22px; display:flex; flex-direction:column; gap:8px; }
@@ -97,7 +97,7 @@
   .stations .quoi { display:block; font-size:13.5px; color:var(--mut); }
   .duo-listes { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
   .duo-listes ul { margin:8px 0 0; padding-left:20px; display:flex; flex-direction:column; gap:7px; }
-  .duo-listes h3 { margin:0; font-family:var(--titre); font-size:17px; color:var(--bleu); }
+  .duo-listes h2 { margin:0; font-family:var(--titre); font-size:17px; color:var(--bleu); }
   .piege { margin-top:12px; border-left:4px solid var(--orange); background:#fff3ed;
            border-radius:8px; padding:10px 14px; font-size:15px; }
   .parcours { padding:22px 26px; }
@@ -121,7 +121,7 @@
   .temoin p { margin:0; font-style:italic; color:var(--mut); }
   .signature { margin:0; font-size:13.5px; color:var(--mut); }
   .essai { background:linear-gradient(180deg,#ffffff,#fff7f3); border-top:5px solid var(--orange); }
-  .essai h3 { margin:0; font-family:var(--titre); font-size:19px; color:var(--bleu); }
+  .essai h2 { margin:0; font-family:var(--titre); font-size:19px; color:var(--bleu); }
   .essai p { margin:0; color:var(--mut); font-size:15px; }
   .essai p strong { color:var(--txt); }
   .bouton { align-self:flex-start; display:inline-block; padding:10px 22px; background:var(--bleu);
@@ -155,7 +155,7 @@
   .domaine .tete { display:flex; gap:14px; align-items:flex-start; padding:18px 22px 12px; }
   .domaine .numero { font-family:var(--titre); font-weight:bold; font-size:24px; color:var(--orange);
                      line-height:1; flex:none; }
-  .domaine .tete h3 { margin:0 0 4px; font-family:var(--titre); font-size:19px; color:var(--bleu); }
+  .domaine .tete h2 { margin:0 0 4px; font-family:var(--titre); font-size:19px; color:var(--bleu); }
   .domaine .tete p { margin:0 0 6px; color:var(--mut); font-size:15px; }
   .domaine .tete .ou { margin:0; font-size:14px; color:var(--mut); }
   .cadre-photo { position:relative; }
@@ -170,9 +170,9 @@
   .legendes { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
   .legende { padding:14px 20px 16px; border-top:1px solid var(--ligne); }
   .legende + .legende { border-left:1px solid var(--ligne); }
-  .legende h4 { margin:0 0 4px; font-family:var(--titre); font-size:15.5px; color:var(--bleu);
+  .legende h3 { margin:0 0 4px; font-family:var(--titre); font-size:15.5px; color:var(--bleu);
                 display:flex; align-items:center; gap:8px; }
-  .legende h4 b { width:22px; height:22px; flex:none; border-radius:50%; background:var(--bleu);
+  .legende h3 b { width:22px; height:22px; flex:none; border-radius:50%; background:var(--bleu);
                   color:#fff; font-size:13px; display:flex; align-items:center; justify-content:center; }
   .legende p { margin:0; color:var(--mut); font-size:14.5px; }
   @media (max-width:620px) { .legende + .legende { border-left:none; } }
@@ -180,6 +180,11 @@
                   border-radius:8px; padding:12px 16px; font-size:14.5px; }
   /* À l'impression, les photos partent : restent les textes et les légendes. */
   @media print { .heros-photo, .cadre-photo { display:none; } .domaine { box-shadow:none; } }
+
+/* Les titres de bloc n etaient couverts par aucun selecteur : ils prenaient
+   la taille par defaut du navigateur. Fixee a la charte le 20/09, au moment
+   ou la hierarchie des titres a ete remise d aplomb (h3 -> h2, h4 -> h3). */
+.bloc h2{margin:0 0 6px;font-family:var(--titre);font-size:19px;color:var(--bleu)}
 </style>
 </head>
 <body>
@@ -263,7 +268,7 @@
     <div class="tete">
       <div class="numero" aria-hidden="true">01</div>
       <div>
-        <h3>Froid commercial</h3>
+        <h2>Froid commercial</h2>
         <p>Conserver les produits à la bonne température, de la petite boutique à la grande surface, tout en limitant les arrêts et les pertes.</p>
         <p>On y rencontre de plus en plus le <strong>CO₂ (R-744)</strong>.</p>
         <p class="ou"><b>Où :</b> supermarchés, restaurants, boulangeries, pharmacies.</p>
@@ -277,9 +282,9 @@
       <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
     </div>
     <div class="legendes">
-        <div class="legende"><h4><b>1</b>GMS et supermarchés</h4><p>Meubles frigorifiques, réserves et installations centralisées pour de grands volumes de produits.</p></div>
-        <div class="legende"><h4><b>2</b>Boucheries et commerces de bouche</h4><p>Vitrines, laboratoires et chambres froides au plus près de la fabrication et de la vente.</p></div>
-        <div class="legende"><h4><b>3</b>Épiceries et petites surfaces</h4><p>Équipements compacts qui demandent une intervention rapide et adaptée au lieu.</p></div>
+        <div class="legende"><h3><b>1</b>GMS et supermarchés</h3><p>Meubles frigorifiques, réserves et installations centralisées pour de grands volumes de produits.</p></div>
+        <div class="legende"><h3><b>2</b>Boucheries et commerces de bouche</h3><p>Vitrines, laboratoires et chambres froides au plus près de la fabrication et de la vente.</p></div>
+        <div class="legende"><h3><b>3</b>Épiceries et petites surfaces</h3><p>Équipements compacts qui demandent une intervention rapide et adaptée au lieu.</p></div>
     </div>
   </div>
 
@@ -287,7 +292,7 @@
     <div class="tete">
       <div class="numero" aria-hidden="true">02</div>
       <div>
-        <h3>Grande cuisine</h3>
+        <h2>Grande cuisine</h2>
         <p>Un domaine à part entière&nbsp;: restaurants, cantines, cuisines centrales et établissements de santé utilisent du froid à chaque étape de la préparation.</p>
         <p class="ou"><b>Où :</b> restaurants, cantines, cuisines centrales, établissements de santé.</p>
       </div>
@@ -300,9 +305,9 @@
       <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
     </div>
     <div class="legendes">
-        <div class="legende"><h4><b>1</b>Restaurants et froid sous comptoir</h4><p>Tables, armoires et tours réfrigérés intégrés aux postes de préparation.</p></div>
-        <div class="legende"><h4><b>2</b>Cuisines collectives</h4><p>Chambres froides positives et négatives pour cantines, hôpitaux et cuisines centrales.</p></div>
-        <div class="legende"><h4><b>3</b>Équipements spécialisés</h4><p>Machines à glace, cellules de refroidissement et équipements adaptés au rythme du service.</p></div>
+        <div class="legende"><h3><b>1</b>Restaurants et froid sous comptoir</h3><p>Tables, armoires et tours réfrigérés intégrés aux postes de préparation.</p></div>
+        <div class="legende"><h3><b>2</b>Cuisines collectives</h3><p>Chambres froides positives et négatives pour cantines, hôpitaux et cuisines centrales.</p></div>
+        <div class="legende"><h3><b>3</b>Équipements spécialisés</h3><p>Machines à glace, cellules de refroidissement et équipements adaptés au rythme du service.</p></div>
     </div>
   </div>
 
@@ -310,7 +315,7 @@
     <div class="tete">
       <div class="numero" aria-hidden="true">03</div>
       <div>
-        <h3>Climatisation domestique &amp; PAC</h3>
+        <h2>Climatisation domestique &amp; PAC</h2>
         <p>Apporter du confort été comme hiver dans les logements, avec une installation soignée, bien dimensionnée et expliquée à l’occupant.</p>
         <p>Le même circuit, retourné : la PAC prend la chaleur dehors et la rend dedans.</p>
         <p class="ou"><b>Où :</b> logements, bureaux, commerces, tertiaire.</p>
@@ -324,9 +329,9 @@
       <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
     </div>
     <div class="legendes">
-        <div class="legende"><h4><b>1</b>Splits intérieurs</h4><p>Pose, mise en service, entretien et recherche de panne dans les pièces de vie.</p></div>
-        <div class="legende"><h4><b>2</b>Groupes extérieurs et multisplit</h4><p>Plusieurs unités intérieures reliées à un même groupe, avec un réseau à organiser proprement.</p></div>
-        <div class="legende"><h4><b>3</b>Pompes à chaleur air/eau</h4><p>Chauffage et parfois eau chaude, en lien avec l’hydraulique et la régulation du logement.</p></div>
+        <div class="legende"><h3><b>1</b>Splits intérieurs</h3><p>Pose, mise en service, entretien et recherche de panne dans les pièces de vie.</p></div>
+        <div class="legende"><h3><b>2</b>Groupes extérieurs et multisplit</h3><p>Plusieurs unités intérieures reliées à un même groupe, avec un réseau à organiser proprement.</p></div>
+        <div class="legende"><h3><b>3</b>Pompes à chaleur air/eau</h3><p>Chauffage et parfois eau chaude, en lien avec l’hydraulique et la régulation du logement.</p></div>
     </div>
   </div>
 
@@ -334,7 +339,7 @@
     <div class="tete">
       <div class="numero" aria-hidden="true">04</div>
       <div>
-        <h3>CVC tertiaire</h3>
+        <h2>CVC tertiaire</h2>
         <p>Dans les bureaux, magasins, écoles ou hôpitaux, le technicien agit sur le chauffage, la ventilation et le conditionnement d’air du bâtiment.</p>
         <p class="ou"><b>Où :</b> hôpitaux, écoles, immeubles de bureaux, salles blanches.</p>
       </div>
@@ -347,9 +352,9 @@
       <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
     </div>
     <div class="legendes">
-        <div class="legende"><h4><b>1</b>Rooftops</h4><p>Unités de toiture qui traitent l’air de grands volumes comme les commerces et bâtiments tertiaires.</p></div>
-        <div class="legende"><h4><b>2</b>CTA et réseaux de gaines</h4><p>Centrales de traitement d’air, filtres, batteries, ventilateurs et distribution dans tout le bâtiment.</p></div>
-        <div class="legende"><h4><b>3</b>Bouches et diffuseurs</h4><p>Mesurer les températures et les débits pour vérifier le confort réellement obtenu dans les locaux.</p></div>
+        <div class="legende"><h3><b>1</b>Rooftops</h3><p>Unités de toiture qui traitent l’air de grands volumes comme les commerces et bâtiments tertiaires.</p></div>
+        <div class="legende"><h3><b>2</b>CTA et réseaux de gaines</h3><p>Centrales de traitement d’air, filtres, batteries, ventilateurs et distribution dans tout le bâtiment.</p></div>
+        <div class="legende"><h3><b>3</b>Bouches et diffuseurs</h3><p>Mesurer les températures et les débits pour vérifier le confort réellement obtenu dans les locaux.</p></div>
     </div>
   </div>
 
@@ -357,7 +362,7 @@
     <div class="tete">
       <div class="numero" aria-hidden="true">05</div>
       <div>
-        <h3>Froid industriel</h3>
+        <h2>Froid industriel</h2>
         <p>De fortes puissances et de grands volumes, avec une priorité constante&nbsp;: maintenir la production et la chaîne du froid en sécurité.</p>
         <p>Grosses puissances, <strong>ammoniac (R-717)</strong> ou CO₂, surveillance et consignation.</p>
         <p class="ou"><b>Où :</b> agroalimentaire, entrepôts logistiques, patinoires, process.</p>
@@ -371,9 +376,9 @@
       <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
     </div>
     <div class="legendes">
-        <div class="legende"><h4><b>1</b>Groupes d’eau glacée</h4><p>Chillers de forte puissance et circuits hydrauliques pour les procédés et les grands bâtiments.</p></div>
-        <div class="legende"><h4><b>2</b>Moteurs et compresseurs</h4><p>Salles des machines, équipements lourds, régulation et maintenance planifiée.</p></div>
-        <div class="legende"><h4><b>3</b>Entrepôts et grandes chambres froides</h4><p>Volumes importants, quais logistiques et continuité de la chaîne du froid.</p></div>
+        <div class="legende"><h3><b>1</b>Groupes d’eau glacée</h3><p>Chillers de forte puissance et circuits hydrauliques pour les procédés et les grands bâtiments.</p></div>
+        <div class="legende"><h3><b>2</b>Moteurs et compresseurs</h3><p>Salles des machines, équipements lourds, régulation et maintenance planifiée.</p></div>
+        <div class="legende"><h3><b>3</b>Entrepôts et grandes chambres froides</h3><p>Volumes importants, quais logistiques et continuité de la chaîne du froid.</p></div>
     </div>
   </div>
 
@@ -381,7 +386,7 @@
     <div class="tete">
       <div class="numero" aria-hidden="true">06</div>
       <div>
-        <h3>Bureau d’études &amp; préparation</h3>
+        <h2>Bureau d’études &amp; préparation</h2>
         <p>Avant le chantier, il faut transformer un besoin en solution réalisable&nbsp;: calculer, choisir, dessiner, chiffrer et coordonner.</p>
         <p>On ne visse plus : on <strong>dimensionne</strong>, on chiffre, on programme la régulation.</p>
         <p class="ou"><b>Où :</b> bureaux d’études CVC, installateurs, exploitation, collectivités.</p>
@@ -395,9 +400,9 @@
       <div class="reperes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
     </div>
     <div class="legendes">
-        <div class="legende"><h4><b>1</b>Conception BIM et plans</h4><p>Implanter les équipements et les réseaux en tenant compte des autres corps d’état.</p></div>
-        <div class="legende"><h4><b>2</b>Calcul et dimensionnement</h4><p>Évaluer les besoins, sélectionner le matériel, prévoir les débits et préparer le chiffrage.</p></div>
-        <div class="legende"><h4><b>3</b>Relevé et coordination de chantier</h4><p>Vérifier la réalité du site, anticiper les passages et transmettre les bonnes informations aux équipes.</p></div>
+        <div class="legende"><h3><b>1</b>Conception BIM et plans</h3><p>Implanter les équipements et les réseaux en tenant compte des autres corps d’état.</p></div>
+        <div class="legende"><h3><b>2</b>Calcul et dimensionnement</h3><p>Évaluer les besoins, sélectionner le matériel, prévoir les débits et préparer le chiffrage.</p></div>
+        <div class="legende"><h3><b>3</b>Relevé et coordination de chantier</h3><p>Vérifier la réalité du site, anticiper les passages et transmettre les bonnes informations aux équipes.</p></div>
     </div>
   </div>
 
@@ -490,7 +495,7 @@
          I à V » et l'arrêté du 29 février 2016 : régime ABROGÉ. Les catégories
          romaines I à IV correspondent désormais à A1, A2, D et E ; B et C sont
          NEUVES. Ne pas revenir en arrière sans relire le référentiel. -->
-    <h3 style="font-family:var(--titre);color:var(--bleu);margin:22px 0 0">L’attestation d’aptitude</h3>
+    <h2 style="font-family:var(--titre);color:var(--bleu);margin:22px 0 0">L’attestation d’aptitude</h2>
     <p style="margin:6px 0 0">Obligatoire pour manipuler les fluides. Depuis l’<strong>arrêté du
     21 novembre 2025</strong>, elle se décline en <strong>six catégories</strong> — et deux d’entre
     elles sont neuves, créées pour les fluides naturels.</p>
@@ -513,7 +518,7 @@
     catégorie D. Il a désormais <strong>sa propre catégorie, la B</strong> — et la D ne couvre plus
     que la récupération des gaz fluorés.</div>
 
-    <h3 style="font-family:var(--titre);color:var(--bleu);margin:22px 0 0">F-Gaz et étanchéité</h3>
+    <h2 style="font-family:var(--titre);color:var(--bleu);margin:22px 0 0">F-Gaz et étanchéité</h2>
     <p style="margin:6px 0 0">Les règlements <strong>(UE) 517/2014</strong> et <strong>(UE) 2024/573</strong>
     organisent la réduction progressive des HFC, les quotas et les contrôles périodiques d’étanchéité.
     Conséquence concrète sur le terrain : on va vers les fluides à faible PRP — CO₂, propane, ammoniac.</p>
@@ -531,7 +536,7 @@
   <div class="bloc liste">
     <div class="duo-listes">
       <div>
-        <h3>Vous allez vous y retrouver si…</h3>
+        <h2>Vous allez vous y retrouver si…</h2>
         <ul>
           <li>Vous aimez <strong>chercher une panne</strong> et comprendre pourquoi ça ne marche pas.</li>
           <li>Vous êtes à l’aise avec vos mains <strong>et</strong> avec un chiffre.</li>
@@ -540,7 +545,7 @@
         </ul>
       </div>
       <div>
-        <h3>À savoir avant de se lancer</h3>
+        <h2>À savoir avant de se lancer</h2>
         <ul>
           <li>On travaille <strong>dehors, en hauteur, dans le froid</strong> — et parfois en toiture l’été.</li>
           <li>Les <strong>astreintes</strong> existent : une chambre froide ne tombe pas en panne aux heures de bureau.</li>
@@ -591,7 +596,7 @@
       <p class="signature">— Prénom, fonction, entreprise <em>(à compléter)</em></p>
     </div>
     <div class="bloc carte-duo essai">
-      <h3>Envie d’essayer ?</h3>
+      <h2>Envie d’essayer ?</h2>
       <p>Le tronc du plan — <strong>la théorie, du glaçon au circuit</strong> — se fait en une heure, sans aucun prérequis.</p>
       <a class="bouton" href="plan.html#carte">Commencer le parcours ▸</a>
     </div>
@@ -600,8 +605,8 @@
 </div>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=0943568385"></script>
+<script src="moteur/lisibilite.js?v=9ece036d2b"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js. -->
-<script src="moteur/marque.js?v=0943568385" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=9ece036d2b" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>
