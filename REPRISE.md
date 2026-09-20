@@ -1574,11 +1574,27 @@ fausse le déroulé complet — l'indice, la remédiation, les ressources en vig
 par `build/convert.mjs`. Les mini-questions écrites à la main dans `cartes.js` sont hors
 banque : pas d'illustration, c'est normal.
 
-✅ **Droits des 80 images `bib-…` : tranché par F. Henninot le 13/08 au soir** — ces images
-sont **les siennes**, il les a créées ; la garde de push posée le matin est **levée**, et il
-n'y a plus à reposer la question à chaque intégration d'illustration. Les poses restent
-contrôlables dans `CONTROLE-POSES.html` côté Hub. (La diffusion du dépôt reste par ailleurs
-soumise à sa doctrine habituelle : rien n'est poussé sans son feu vert au cas par cas.)
+⚠️ **Droits des images `bib-…` — la règle du 13/08 est CORRIGÉE le 20/09/2026.** Le 13/08 au soir,
+F. Henninot avait tranché : « ces images sont les miennes, je les ai créées », garde de push levée,
+question close. **Le contrôle visuel des 26 images restantes, le 20/09, a montré que ce n'est pas
+vrai pour toutes** — non par mauvaise foi, mais parce que la bibliothèque mêlait ses propres photos
+et des images reprises ailleurs :
+
+- **15 images sur 26 sont neutres** (photo de matériel, sans marque ni personne) : aucun problème.
+- **3 ont été retirées le 20/09** — elles reproduisaient l'œuvre d'un tiers : une illustration
+  **ABC CLIM** (site d'un collègue : on le cite et on le lie, on ne recopie pas son travail),
+  une page de publicité **LENNOX EMEA** complète avec des personnes photographiées, et un manomètre
+  portant le **filigrane d'un site marchand**.
+- **8 portent un logo de marque** (Danfoss, Belimo, Airton, Alco/Emerson, Castel, Multichem) simplement
+  parce qu'il est écrit sur l'appareil photographié. Conservées : on ne peut pas montrer un pressostat
+  Danfoss sans voir « Danfoss ». **Reste à vérifier au cas par cas si ces photos sont bien les siennes**
+  ou reprises du web — le filigrane trouvé sur l'une prouve qu'au moins une venait d'ailleurs.
+
+**Nouvelle règle : une image `bib-…` ne s'intègre plus sans avoir été REGARDÉE.** Le nom de fichier
+ne dit rien de son contenu — deux fausses alertes l'ont montré le 20/09 (un fichier nommé
+`…ep1-2ifca-…correction…` n'est qu'une photo de climatiseur). Les poses restent contrôlables dans
+`CONTROLE-POSES.html` côté Hub. (La diffusion du dépôt reste soumise à la doctrine habituelle :
+rien n'est poussé sans feu vert au cas par cas.)
 
 ### ⏱ POINT D'ÉTAPE — au sortir de la journée du 31 juillet
 

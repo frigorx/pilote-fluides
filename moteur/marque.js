@@ -149,10 +149,21 @@
   }
 
   var css =
-    "#marque-inerweb{display:flex;align-items:center;gap:7px;opacity:.55;" +
+    /* L'opacité .55 du filigrane ne porte plus sur le conteneur mais sur ses
+       parties décoratives (20/09) : appliquée au bloc, elle tombait AUSSI sur
+       le lien légal et ramenait son contraste à ~1,9:1 — illisible, pour un
+       lien qui doit justement se donner à voir. Le filigrane garde exactement
+       la même apparence ; seul le lien passe à pleine opacité. */
+    "#marque-inerweb{display:flex;align-items:center;gap:7px;" +
     "user-select:none;font-family:'Segoe UI',Calibri,Arial,sans-serif;" +
     "font-size:11px;color:#637285;background:none;border:0;white-space:nowrap}" +
+    "#marque-inerweb > svg,#marque-inerweb > span{opacity:.55}" +
     "#marque-inerweb svg{display:block;flex:none}" +
+    /* Le lien légal : même discrétion que le reste du filigrane, mais
+       souligné pour se donner à voir, et cible de doigt suffisante. */
+    "#marque-inerweb .marque-mentions{color:#1b3a63;font-size:13px;" +
+    "text-decoration:underline;text-underline-offset:2px;padding:3px 0}" +
+    "#marque-inerweb .marque-mentions:hover{color:#0d2440}" +
     /* PIÈGE MESURÉ (18/08) : ajouter la licence à côté du logo fait passer le
        filigrane fixe de 200×24 à 420×47 px — deux lignes — et il recouvre
        alors le texte du cours. En mode fixe la marque garde donc l'emprise
@@ -178,7 +189,9 @@
     /* mode document : en fin de flux, sous un filet — ne recouvre rien */
     "#marque-inerweb.marque-document{position:static;margin:2.4em auto .6em;" +
     "padding-top:.7em;border-top:1px solid rgba(27,58,99,.16);max-width:1100px;" +
-    "opacity:.62;flex-wrap:wrap}" +
+    "flex-wrap:wrap}" +
+    /* même raison qu'en haut : l'opacité reste sur le décor, pas sur le lien. */
+    "#marque-inerweb.marque-document > svg,#marque-inerweb.marque-document > span{opacity:.62}" +
     "#marque-inerweb.marque-document .marque-lic{display:inline}" +
     "#marque-inerweb.marque-document .marque-droits{display:block}" +
     /* Les cours 100dvh sortent tout leur contenu du flux. Une marque restée
@@ -186,6 +199,10 @@
        de l'en-tête assure déjà la marque écran ; l'impression la réactive. */
     "body.course-running>#marque-inerweb.marque-document,body.summary-running>#marque-inerweb.marque-document{display:none}" +
     "@media (max-width:560px){#marque-inerweb{font-size:0;gap:0}" +
+    /* font-size:0 efface le texte du filigrane sur téléphone — mais le lien
+       légal, lui, doit rester atteignable partout (20/09). On lui rend sa
+       taille et l'espace qui le sépare du logo. */
+    "#marque-inerweb .marque-mentions{font-size:12px;margin-left:8px}" +
     "#marque-inerweb svg{width:86px;height:18px}" +
     "#marque-inerweb.marque-document{font-size:10px;gap:6px}" +
     "#marque-inerweb.marque-document .marque-droits{font-size:9.5px}" +
@@ -288,7 +305,11 @@
 
     el = document.createElement("div");
     el.id = "marque-inerweb";
-    el.setAttribute("aria-hidden", "true");
+    /* Plus d'aria-hidden depuis le 20/09 : ce bloc porte maintenant le lien
+       vers les mentions légales, et un lien dans un sous-arbre masqué serait
+       introuvable au clavier comme au lecteur d'écran. Le logo, lui, reste
+       annoncé une seule fois par son propre role="img" + aria-label. */
+    el.setAttribute("role", "contentinfo");
 
     var proto = R.prototype
       ? '<span class="marque-proto">Prototype — document de travail, ' +
@@ -298,6 +319,7 @@
       dessinerLogo(R.cartouche) +
       "<span>© inerWeb " + ANNEE +
       '<span class="marque-lic"> · ' + LIC.court + "</span></span>" +
+      '<a class="marque-mentions" href="/mentions.html">Mentions légales</a>' +
       '<span class="marque-droits">' + proto +
       "© inerWeb " + ANNEE + " — F. Henninot · " + LIC.long + "</span>";
 

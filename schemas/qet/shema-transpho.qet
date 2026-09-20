@@ -8401,8 +8401,7 @@ License: see http://qelectrotech.org/wiki/doc/elements_license</informations>
                                                 <elementInformation name="plant" show="1"/>
                                                 <elementInformation name="unity" show="1"/>
                                             </elementInformations>
-                                            <informations>Mickael Pouliquen
-mickael.pouliquen@gmail.com</informations>
+                                            <informations>Mickael Pouliquen</informations>
                                             <description>
                                                 <circle x="76" diameter="10" antialias="true" y="172" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
                                                 <rect width="8" height="15" x="87" antialias="false" rx="0" ry="0" y="96" style="line-style:normal;line-weight:hight;filling:blue;color:black"/>

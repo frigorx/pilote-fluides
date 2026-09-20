@@ -11521,8 +11521,7 @@ License: see http://qelectrotech.org/wiki/doc/elements_license</informations>
                                             <name lang="fr">LC1D09B7</name>
                                         </names>
                                         <elementInformations/>
-                                        <informations>Mickael Pouliquen
-mickael.pouliquen@gmail.com</informations>
+                                        <informations>Mickael Pouliquen</informations>
                                         <description>
                                             <circle x="76" diameter="10" antialias="true" y="172" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
                                             <rect x="87" ry="0" width="8" antialias="false" rx="0" height="15" y="96" style="line-style:normal;line-weight:hight;filling:blue;color:black"/>

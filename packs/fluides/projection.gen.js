@@ -1543,8 +1543,6 @@ window.PILOTE_PROJECTION = {
        "chapitre": "01",
        "chapitre_titre": "Législation & thermodynamique élémentaire",
        "chapitre_fichier": "CONTENU-01-G1-legislation-thermo.md",
-       "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
-       "pose_niveau": "exact",
        "ressources": [
         {
          "type": "image",
@@ -8134,8 +8132,6 @@ window.PILOTE_PROJECTION = {
        "chapitre": "08",
        "chapitre_titre": "Composant : évaporateurs à air et à liquide",
        "chapitre_fichier": "CONTENU-08-G8-evaporateurs.md",
-       "illustration": "illustrations/bib-14899-bac-pro-tfca-epreuve-u11-dossier-r-10f91ed0.jpeg",
-       "pose_niveau": "exact",
        "ressources": [
         {
          "type": "page",
@@ -9267,8 +9263,6 @@ window.PILOTE_PROJECTION = {
        "chapitre": "10",
        "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
        "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
-       "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
-       "pose_niveau": "exact",
        "ressources": [
         {
          "type": "image",
@@ -9304,8 +9298,6 @@ window.PILOTE_PROJECTION = {
        "chapitre": "10",
        "chapitre_titre": "Tuyauterie : monter un réseau étanche (soudage / brasage)",
        "chapitre_fichier": "CONTENU-10-G10-tuyauterie-brasage.md",
-       "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
-       "pose_niveau": "exact",
        "ressources": [
         {
          "type": "image",
@@ -11143,8 +11135,6 @@ window.PILOTE_PROJECTION = {
        "chapitre": "12",
        "chapitre_titre": "Spécifique A1/A2 : hydrocarbures (fluides inflammables)",
        "chapitre_fichier": "CONTENU-12-G12-hydrocarbures.md",
-       "illustration": "illustrations/bib-tp-balance-et-bouteille-2d63103c.png",
-       "pose_niveau": "exact",
        "ressources": [
         {
          "type": "image",
