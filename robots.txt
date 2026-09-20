@@ -1,32 +1,46 @@
 # =====================================================================
-#  inerWeb Édu — qui a le droit de lire ce site, et pour quoi faire
+#  inerWeb Édu — qui a le droit de lire ce site, et quoi
 #  ---------------------------------------------------------------------
-#  Révisé le 20/09/2026. La règle tient en une phrase :
+#  Révisé le 20/09/2026. Deux règles, et elles tiennent en deux phrases :
 #
-#      On accepte d'être LU et CITÉ. On refuse d'être ASPIRÉ.
+#      1. On accepte d'être LU et CITÉ. On refuse d'être ASPIRÉ.
+#      2. Le contenu pédagogique est public. L'atelier ne l'est pas.
 #
-#  Il y a deux familles de robots d'intelligence artificielle, et les
-#  confondre coûte cher :
+#  SUR LES ROBOTS D'IA — il y en a deux familles, et les confondre coûte
+#  cher. Les AGENTS À LA DEMANDE (ChatGPT-User, Perplexity-User…) vont
+#  lire une page au moment où quelqu'un pose une question, et affichent
+#  le lien dans leur réponse : ce sont eux qui amènent un élève ou un
+#  formateur jusqu'ici, on les accueille. Les ASPIRATEURS (GPTBot,
+#  ClaudeBot, CCBot…) recopient le site pour entraîner un modèle, sans
+#  rien rendre, sur un contenu en CC BY-NC-ND : on les refuse.
+#  Le piège tient au nom : chez OpenAI, GPTBot aspire et ChatGPT-User
+#  cite. Les agents de citation ne sont donc PAS listés ici — ils
+#  relèvent du groupe « * » ci-dessous, et y sont les bienvenus.
 #
-#   · les AGENTS À LA DEMANDE (ChatGPT-User, Perplexity-User…) vont
-#     chercher une page au moment où quelqu'un pose une question, et
-#     affichent le lien dans leur réponse. Ce sont eux qui amènent un
-#     élève ou un formateur jusqu'ici. On les accueille.
+#  ATTENTION EN MODIFIANT CE FICHIER : les groupes robots.txt n'héritent
+#  pas les uns des autres. Un robot qui trouve SON groupe ignore « * »
+#  entièrement. Donc tout groupe nommé doit redire ses interdictions.
 #
-#   · les ASPIRATEURS D'ENTRAÎNEMENT (GPTBot, ClaudeBot, CCBot…)
-#     recopient le site pour entraîner un modèle. Rien ne revient, et
-#     le contenu est sous licence CC BY-NC-ND. On les refuse.
-#
-#  Ce fichier est une déclaration d'intention : il est respecté par les
-#  acteurs sérieux, il n'arrête personne d'autre. Le blocage réel se
-#  fait au niveau du réseau (Cloudflare).
+#  Ce fichier est une déclaration : il est respecté par les acteurs
+#  sérieux, il n'arrête personne d'autre. Le blocage réel se fait au
+#  niveau du réseau (Cloudflare).
 # =====================================================================
 
-# --- Tout le monde : le site est public et indexable ---
+# --- Tout le monde, agents de citation compris ------------------------
+#     Le site est public et indexable, SAUF l'atelier : notes de
+#     chantier, briefs, audits, scripts de fabrication et console
+#     d'accès n'ont rien à faire dans un moteur de recherche.
 User-agent: *
 Allow: /
+Disallow: /docs/
+Disallow: /.planning/
+Disallow: /build/
+Disallow: /outils/
+Disallow: /f/ADRESSES-GRAVEES.json
+Disallow: /*.md$
+Disallow: /*.mjs$
 
-# --- Les aspirateurs d'entraînement : non ---
+# --- Les aspirateurs d'entraînement : rien, nulle part -----------------
 User-agent: GPTBot
 Disallow: /
 
@@ -63,33 +77,13 @@ Disallow: /
 User-agent: PanGu-Bot
 Disallow: /
 
-# --- Les agents qui lisent pour répondre à quelqu'un, et qui citent :
-#     bienvenue. C'est par là qu'on nous recommande. ---
-User-agent: ChatGPT-User
-Allow: /
+User-agent: ImagesiftBot
+Disallow: /
 
-User-agent: OAI-SearchBot
-Allow: /
+User-agent: Timpibot
+Disallow: /
 
-User-agent: Perplexity-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: MistralAI-User
-Allow: /
-
-User-agent: DuckAssistBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
+User-agent: Webzio-Extended
+Disallow: /
 
 Sitemap: https://inerweb.fr/sitemap.xml
