@@ -488,10 +488,10 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 408.8,
-    "y": 382.0
+    "x": 660.8,
+    "y": 164.0
    },
-   "ligne": 1
+   "ligne": 0
   },
   {
    "repere": "F1",
@@ -545,7 +545,7 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 632.0,
+    "x": 784.0,
     "y": 164.0
    },
    "ligne": 0
@@ -590,10 +590,10 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 405.6,
-    "y": 718.8
+    "x": 481.6,
+    "y": 532.8
    },
-   "ligne": 3
+   "ligne": 2
   },
   {
    "repere": "X1",
@@ -628,10 +628,10 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     ]
    ],
    "implantation": {
-    "x": 355.0,
-    "y": 552.0
+    "x": 431.0,
+    "y": 366.0
    },
-   "ligne": 2
+   "ligne": 1
   },
   {
    "repere": "X2",
@@ -666,10 +666,10 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     ]
    ],
    "implantation": {
-    "x": 393.0,
-    "y": 552.0
+    "x": 469.0,
+    "y": 366.0
    },
-   "ligne": 2
+   "ligne": 1
   },
   {
    "repere": "X3",
@@ -704,10 +704,10 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     ]
    ],
    "implantation": {
-    "x": 431.0,
-    "y": 552.0
+    "x": 507.0,
+    "y": 366.0
    },
-   "ligne": 2
+   "ligne": 1
   },
   {
    "repere": "X4",
@@ -742,15 +742,15 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     ]
    ],
    "implantation": {
-    "x": 469.0,
-    "y": 552.0
+    "x": 545.0,
+    "y": 366.0
    },
-   "ligne": 2
+   "ligne": 1
   }
  ],
  "platine": {
-  "largeur": 824,
-  "hauteur": 870,
+  "largeur": 976,
+  "hauteur": 684,
   "rangees": [
    {
     "y0": 84,
@@ -758,15 +758,11 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    },
    {
     "y0": 334.0,
-    "y1": 430.0
+    "y1": 398.0
    },
    {
-    "y0": 520.0,
-    "y1": 584.0
-   },
-   {
-    "y0": 674.0,
-    "y1": 786.0
+    "y0": 488.0,
+    "y1": 600.0
    }
   ],
   "goulottes_h": [
@@ -779,16 +775,12 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "y1": 312.0
    },
    {
-    "y0": 452.0,
-    "y1": 498.0
+    "y0": 420.0,
+    "y1": 466.0
    },
    {
-    "y0": 606.0,
-    "y1": 652.0
-   },
-   {
-    "y0": 808.0,
-    "y1": 854.0
+    "y0": 622.0,
+    "y1": 668.0
    }
   ],
   "goulottes_v": [
@@ -797,8 +789,8 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "x1": 62
    },
    {
-    "x0": 762,
-    "x1": 808
+    "x0": 914,
+    "x1": 960
    }
   ]
  },
