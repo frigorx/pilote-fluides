@@ -1127,7 +1127,7 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 243.0,
+    "x": 298.0,
     "y": 404.4
    },
    "ligne": 1
@@ -1196,7 +1196,7 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 427.0,
+    "x": 482.0,
     "y": 404.4
    },
    "ligne": 1
@@ -1253,8 +1253,8 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 258.4,
-    "y": 940.0
+    "x": 414.4,
+    "y": 956.0
    },
    "ligne": 4
   },
@@ -1310,10 +1310,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 690.4,
-    "y": 940.0
+    "x": 298.4,
+    "y": 1142.0
    },
-   "ligne": 4
+   "ligne": 5
   },
   {
    "repere": "Q6",
@@ -1355,10 +1355,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 856.0,
-    "y": 178.4
+    "x": 146.0,
+    "y": 404.4
    },
-   "ligne": 0
+   "ligne": 1
   },
   {
    "repere": "KM3",
@@ -1412,7 +1412,7 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 258.4,
+    "x": 353.4,
     "y": 584.0
    },
    "ligne": 2
@@ -1469,10 +1469,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 690.4,
-    "y": 584.0
+    "x": 182.4,
+    "y": 770.0
    },
-   "ligne": 2
+   "ligne": 3
   },
   {
    "repere": "F1",
@@ -1526,7 +1526,7 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 426.4,
+    "x": 521.4,
     "y": 584.0
    },
    "ligne": 2
@@ -1583,8 +1583,8 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 194.4,
-    "y": 762.0
+    "x": 350.4,
+    "y": 770.0
    },
    "ligne": 3
   },
@@ -1640,8 +1640,8 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 426.4,
-    "y": 762.0
+    "x": 582.4,
+    "y": 770.0
    },
    "ligne": 3
   },
@@ -1697,10 +1697,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 658.4,
-    "y": 762.0
+    "x": 150.4,
+    "y": 956.0
    },
-   "ligne": 3
+   "ligne": 4
   },
   {
    "repere": "F5",
@@ -1754,8 +1754,8 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 426.4,
-    "y": 940.0
+    "x": 582.4,
+    "y": 956.0
    },
    "ligne": 4
   },
@@ -1811,8 +1811,8 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 170.4,
-    "y": 1126.0
+    "x": 466.4,
+    "y": 1142.0
    },
    "ligne": 5
   },
@@ -1831,10 +1831,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    "bornes": [],
    "liaisons_internes": [],
    "implantation": {
-    "x": 792.4,
-    "y": 396.4
+    "x": 222.4,
+    "y": 582.4
    },
-   "ligne": 1
+   "ligne": 2
   },
   {
    "repere": "E2",
@@ -1864,10 +1864,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 420.0,
-    "y": 1124.4
+    "x": 168.0,
+    "y": 1326.4
    },
-   "ligne": 5
+   "ligne": 6
   },
   {
    "repere": "E3",
@@ -1897,10 +1897,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 540.0,
-    "y": 1124.4
+    "x": 288.0,
+    "y": 1326.4
    },
-   "ligne": 5
+   "ligne": 6
   },
   {
    "repere": "E4",
@@ -1930,10 +1930,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 660.0,
-    "y": 1124.4
+    "x": 408.0,
+    "y": 1326.4
    },
-   "ligne": 5
+   "ligne": 6
   },
   {
    "repere": "M1",
@@ -1975,10 +1975,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 786.4,
-    "y": 1122.8
+    "x": 534.4,
+    "y": 1324.8
    },
-   "ligne": 5
+   "ligne": 6
   },
   {
    "repere": "M2",
@@ -2020,8 +2020,8 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 186.4,
-    "y": 1308.8
+    "x": 686.4,
+    "y": 1324.8
    },
    "ligne": 6
   },
@@ -2065,10 +2065,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 338.4,
-    "y": 1308.8
+    "x": 202.4,
+    "y": 1510.8
    },
-   "ligne": 6
+   "ligne": 7
   },
   {
    "repere": "M4",
@@ -2110,10 +2110,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 490.4,
-    "y": 1308.8
+    "x": 354.4,
+    "y": 1510.8
    },
-   "ligne": 6
+   "ligne": 7
   },
   {
    "repere": "M5",
@@ -2155,10 +2155,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 642.4,
-    "y": 1308.8
+    "x": 506.4,
+    "y": 1510.8
    },
-   "ligne": 6
+   "ligne": 7
   },
   {
    "repere": "M6",
@@ -2200,10 +2200,10 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 794.4,
-    "y": 1308.8
+    "x": 658.4,
+    "y": 1510.8
    },
-   "ligne": 6
+   "ligne": 7
   },
   {
    "repere": "E5",
@@ -2220,7 +2220,7 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    "bornes": [],
    "liaisons_internes": [],
    "implantation": {
-    "x": 682.4,
+    "x": 737.4,
     "y": 402.8
    },
    "ligne": 1
@@ -2240,15 +2240,15 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    "bornes": [],
    "liaisons_internes": [],
    "implantation": {
-    "x": 572.4,
+    "x": 627.4,
     "y": 407.6
    },
    "ligne": 1
   }
  ],
  "platine": {
-  "largeur": 1000,
-  "hauteur": 1444,
+  "largeur": 880,
+  "hauteur": 1646,
   "rangees": [
    {
     "y0": 84,
@@ -2264,19 +2264,23 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
    },
    {
     "y0": 722.0,
-    "y1": 802.0
+    "y1": 818.0
    },
    {
-    "y0": 892.0,
-    "y1": 988.0
+    "y0": 908.0,
+    "y1": 1004.0
    },
    {
-    "y0": 1078.0,
-    "y1": 1174.0
+    "y0": 1094.0,
+    "y1": 1190.0
    },
    {
-    "y0": 1264.0,
-    "y1": 1360.0
+    "y0": 1280.0,
+    "y1": 1376.0
+   },
+   {
+    "y0": 1466.0,
+    "y1": 1562.0
    }
   ],
   "goulottes_h": [
@@ -2297,20 +2301,24 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
     "y1": 700.0
    },
    {
-    "y0": 824.0,
-    "y1": 870.0
+    "y0": 840.0,
+    "y1": 886.0
    },
    {
-    "y0": 1010.0,
-    "y1": 1056.0
+    "y0": 1026.0,
+    "y1": 1072.0
    },
    {
-    "y0": 1196.0,
-    "y1": 1242.0
+    "y0": 1212.0,
+    "y1": 1258.0
    },
    {
-    "y0": 1382.0,
-    "y1": 1428.0
+    "y0": 1398.0,
+    "y1": 1444.0
+   },
+   {
+    "y0": 1584.0,
+    "y1": 1630.0
    }
   ],
   "goulottes_v": [
@@ -2319,8 +2327,8 @@ window.CABLAGE_EXERCICES["negative-big-puissance"] = {
     "x1": 62
    },
    {
-    "x0": 938,
-    "x1": 984
+    "x0": 818,
+    "x1": 864
    }
   ]
  },

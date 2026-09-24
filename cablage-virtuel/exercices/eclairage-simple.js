@@ -169,7 +169,7 @@ window.CABLAGE_EXERCICES["eclairage-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 199.0,
+    "x": 259.0,
     "y": 318.0
    },
    "ligne": 1
@@ -202,10 +202,10 @@ window.CABLAGE_EXERCICES["eclairage-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 314.0,
-    "y": 318.0
+    "x": 259.0,
+    "y": 504.0
    },
-   "ligne": 1
+   "ligne": 2
   },
   {
    "repere": "N",
@@ -237,7 +237,7 @@ window.CABLAGE_EXERCICES["eclairage-simple"] = {
  ],
  "platine": {
   "largeur": 518,
-  "hauteur": 450,
+  "hauteur": 636,
   "rangees": [
    {
     "y0": 84,
@@ -246,6 +246,10 @@ window.CABLAGE_EXERCICES["eclairage-simple"] = {
    {
     "y0": 270.0,
     "y1": 366.0
+   },
+   {
+    "y0": 456.0,
+    "y1": 552.0
    }
   ],
   "goulottes_h": [
@@ -260,6 +264,10 @@ window.CABLAGE_EXERCICES["eclairage-simple"] = {
    {
     "y0": 388.0,
     "y1": 434.0
+   },
+   {
+    "y0": 574.0,
+    "y1": 620.0
    }
   ],
   "goulottes_v": [
